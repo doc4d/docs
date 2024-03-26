@@ -31,7 +31,7 @@ title: VP Get table dirty rows
 
 _vpAreaName_ には、4D View Pro エリアの名前を渡します。
 
-_tableName_ には、変更された行を取得したい表組みの名称を渡します。 Only modified columns bound to a [data context](vp-set-data-context.md) will be taken into account.
+_tableName_ には、変更された行を取得したい表組みの名称を渡します。 なお、[データコンテキスト](vp-set-data-context.md) にバインドされている列の変更のみが考慮されます。
 
 デフォルトでは、このコマンドを呼び出すと、現在のテーブルから _ダーティ_ のステータスをクリアします。 この状態をリセットせずに維持するには、_reset_ に `false` を渡します。
 
