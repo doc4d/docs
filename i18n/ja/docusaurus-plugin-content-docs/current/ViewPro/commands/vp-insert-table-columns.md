@@ -30,7 +30,7 @@ title: VP INSERT TABLE COLUMNS
 
 `VP INSERT TABLE COLUMNS` コマンドは、<!-- REF #_method_.VP INSERT TABLE COLUMNS.Summary -->_tableName_ で指定した表組みの _column_ で指定した列インデックスに、1つまたは _count_ で指定した数の空の列を挿入します<!-- END REF -->。
 
-When a column has been inserted with this command, you typically modify its contents using the [VP SET TABLE COLUMN ATTRIBUTES](vp-set-table-column-attributes.md) command.
+このコマンドで列を挿入した場合、通常は [VP SET TABLE COLUMN ATTRIBUTES](vp-set-table-column-attributes.md) コマンドを使用してその内容を編集します。
 
 _insertAfter_ パラメーターに以下の定数のいずれかを渡すことで、_column_ に指定した列インデックスの前または後に列を挿入するかを指定できます:
 
@@ -45,7 +45,7 @@ _tableName_ の表組みが存在しない場合、あるいはシートに十�
 
 #### 例題
 
-See examples for [VP INSERT TABLE ROWS](vp-insert-table-rows.md) and [VP SET TABLE COLUMN ATTRIBUTES](vp-set-table-column-attributes.md).
+[VP INSERT TABLE ROWS](vp-insert-table-rows.md) および [VP SET TABLE COLUMN ATTRIBUTES](vp-set-table-column-attributes.md) の例題を参照ください。
 
 #### 参照
 
