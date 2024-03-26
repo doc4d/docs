@@ -20,7 +20,7 @@ title: VP SET CELL STYLE
 
 _rangeObj_ 引数には、スタイルを適用したいセルのレンジを渡します。 _rangeObj_ に複数のセルが含まれる場合、スタイルはそれぞれのセルに割り当てられます。
 
-> Borders applied with `VP SET CELL STYLE` will be applied to each cell of the _rangeObj_, as opposed to the [VP SET BORDER](vp-set-border.md) command which applies borders to the _rangeObj_ as a whole.
+> `VP SET CELL STYLE` で適用された境界線は、_rangeObj_ の各セルに対して適用されます。これに対して [VP SET BORDER](vp-set-border.md) コマンドは境界線を _rangeObj_ のレンジ全体に対して適用されます。
 
 _styleObj_ にはスタイル設定を格納したオブジェクトを渡します。 既存のスタイルシートを使用することもできますし、新しいスタイルを作成することも可能です。 _styleObj_ に既存のスタイルシートと、追加のスタイル設定の両方が格納されている場合、既存のスタイルシートが先に適用され、そのあとに追加の設定が適用されます。
 
@@ -29,7 +29,7 @@ _styleObj_ にはスタイル設定を格納したオブジェクトを渡しま
 - _styleObj_ 引数として NULL値を渡した場合、_rangeObj_ のレンジのスタイルシートはすべて削除されます。
 - 属性に NULL値を指定すると、当該属性は _rangeObj_ から削除されます。
 
-For more information about style objects and style sheets, see the [Style Objects](../configuring.md#style-objects) paragraph.
+スタイルオブジェクトとスタイルシートの詳細については、[スタイルオブジェクト](../configuring.md#スタイルオブジェクト) を参照ください。
 
 #### 例題
 
