@@ -25,7 +25,7 @@ _vpAreaName_ には、4D View Pro エリアの名前を渡します。
 
 返されるオブジェクトには、ワークブック内のワークブックオプションの値 (デフォルト値および変更値) がすべて格納されています。
 
-The list of workbook options is referenced in [`VP SET WORKBOOK OPTIONS`'s description](vp-set-workbook-options.md).
+ワークブックオプションの一覧については [`VP SET WORKBOOK OPTIONS` の説明](vp-set-workbook-options.md) を参照ください。
 
 #### 例題
 
