@@ -24,9 +24,9 @@ title: VP Convert to picture
 - 4D View Pro ドキュメントを 4D Write Pro ドキュメントなど、他のドキュメントに埋め込みたい場合
 - 4D View Pro ドキュメントを、4D View Pro エリアに読み込まずに印刷したい場合
 
-_vpObject_ 引数には、変換したい 4D View Pro オブジェクトを渡します。 This object must have been previously parsed using [VP Export to object](vp-export-to-object.md) or saved using [VP EXPORT DOCUMENT](vp-export-document.md).
+_vpObject_ 引数には、変換したい 4D View Pro オブジェクトを渡します。 このオブジェクトは事前に [VP Export to object](vp-export-to-object.md) コマンドで解析するか、または [VP EXPORT DOCUMENT](vp-export-document.md) コマンドにより保存してある必要があります。
 
-> SVG conversion process requires that expressions and formats (cf. [Cell Format](../configuring.md#cell-format)) included in the 4D View Pro area be evaluated at least once, so that they can be correctly exported. 事前に評価されていないドキュメントを変換した場合、式や書式が予期せぬ形にレンダリングされている可能性があります。
+> 4D View Pro エリアに含まれている式や書式 ([セルフォーマット](../configuring.md#セルフォーマット) 参照) が正常に書き出されるよう、少なくともそれらが一度は評価されていることが SVG変換プロセスには必要です。 事前に評価されていないドキュメントを変換した場合、式や書式が予期せぬ形にレンダリングされている可能性があります。
 
 _rangeObj_ には、変換するセルのレンジを渡します。 この引数が省略された場合のデフォルトでは、ドキュメントのコンテンツ全体が変換されます。
 
@@ -42,7 +42,7 @@ _rangeObj_ には、変換するセルのレンジを渡します。 この引�
 - 非表示のカラム / 行
   \> 枠線の表示状態は <a href="#vp-set-print-info">VP SET PRINT INFO</a> で定義されたドキュメント属性に依存します。
 
-> Gridline visibility depends on document attribute defined with [VP SET PRINT INFO](vp-set-print-info.md).
+> 枠線の表示状態は [VP SET PRINT INFO](vp-set-print-info.md) で定義されたドキュメント属性に依存します。
 
 #### 戻り値
 
