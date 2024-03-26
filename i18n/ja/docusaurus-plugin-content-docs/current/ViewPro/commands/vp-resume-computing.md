@@ -21,11 +21,11 @@ title: VP RESUME COMPUTING
 
 _vpAreaName_ には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-> 4D View Pro 計算機能は停止/再開アクションを内部的にカウントしています。 Therefore, each execution of `VP RESUME COMPUTING` must be balanced by a corresponding execution of the [VP SUSPEND COMPUTING](vp-suspend-computing.md) command.
+> 4D View Pro 計算機能は停止/再開アクションを内部的にカウントしています。 そのため、`VP RESUME COMPUTING` コマンドの実行数は、[VP SUSPEND COMPUTING](vp-suspend-computing.md) コマンドの実行数と釣り合っていなければなりません。
 
 #### 例題
 
-See example in [VP SUSPEND COMPUTING](vp-suspend-computing.md).
+[VP SUSPEND COMPUTING](vp-suspend-computing.md) の例題を参照ください。
 
 #### 参照
 
