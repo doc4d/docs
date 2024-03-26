@@ -29,7 +29,7 @@ title: VP Get data context
 
 _sheet_ には、データコンテキストを取得するシートのインデックスを渡します。 インデックスを省略した場合、コマンドはカレントワークシートのデータコンテキストを返します。 ワークシートのコンテキストが存在しない場合、コマンドは `Null` を返します。
 
-The function returns an object or a collection depending on the type of data context set with [VP SET DATA CONTEXT](vp-set-data-context.md).
+[VP SET DATA CONTEXT](vp-set-data-context.md) により設定されたデータコンテキストの種類によって、関数はオブジェクトまたはコレクションを返します。
 
 #### 例題
 
