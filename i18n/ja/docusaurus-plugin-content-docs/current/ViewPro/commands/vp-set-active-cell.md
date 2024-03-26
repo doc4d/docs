@@ -17,7 +17,7 @@ title: VP SET ACTIVE CELL
 
 `VP SET ACTIVE CELL` コマンドは、<!-- REF #_method_.VP SET ACTIVE CELL.Summary -->指定したセルをアクティブセルにします<!-- END REF -->。
 
-In _rangeObj_, pass a range containing a single cell as an object (see [VP Cell](vp-cell.md)). _rangeObj_ 引数のレンジが単独セルのレンジでない場合、あるいは複数レンジを指定している場合、最初のレンジの先頭セルが使用されます。
+_rangeObj_ 引数には、単独のセルを格納するレンジオブジェクトを渡します ([VP Cell](vp-cell.md) 参照)。 _rangeObj_ 引数のレンジが単独セルのレンジでない場合、あるいは複数レンジを指定している場合、最初のレンジの先頭セルが使用されます。
 
 #### 例題
 
