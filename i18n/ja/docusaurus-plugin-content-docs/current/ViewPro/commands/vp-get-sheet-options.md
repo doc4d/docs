@@ -25,9 +25,9 @@ _vpAreaName_ には、4D View Pro エリアの名前を渡します。 存在し
 
 #### 返されるオブジェクト
 
-コマンドは、利用可能なシートオプションのカレント値をすべて格納したオブジェクトを返します。 An option value may have been modified by the user or by the [VP SET SHEET OPTIONS](vp-set-sheet-options.md) method.
+コマンドは、利用可能なシートオプションのカレント値をすべて格納したオブジェクトを返します。 オプションの値は、ユーザーあるいは [VP SET SHEET OPTIONS](vp-set-sheet-options.md) コマンドによって変更される可能性があります。
 
-To view the full list of the options, see [Sheet Options](../configuring.md#sheet-options).
+オプション一覧については、[シートオプション](../configuring.md#シートオプション) を参照ください。
 
 #### 例題
 
@@ -40,5 +40,5 @@ End if
 
 #### 参照
 
-[4D VIEW PRO SHEET OPTIONS](../configuring.md#sheet-options)<br/>
+[4D VIEW PRO シートオプション](../configuring.md#シートオプション)<br/>
 [VP SET SHEET OPTIONS](vp-set-sheet-options.md)
