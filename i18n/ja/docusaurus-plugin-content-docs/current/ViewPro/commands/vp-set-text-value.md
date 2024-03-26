@@ -19,11 +19,11 @@ title: VP SET TEXT VALUE
 
 `VP SET TEXT VALUE` コマンドは、<!-- REF #_method_.VP SET TEXT VALUE.Summary -->指定されたセルレンジにテキスト値を割り当てます<!-- END REF -->。
 
-In _rangeObj_, pass a range of the cell(s) (created for example with [`VP Cell`](vp-cell.md) or [`VP Column`](vp-column.md)) whose value you want to specify. _rangeObj_ 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
+_rangeObj_ には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](vp-cell.md) あるいは [`VP Column`](vp-column.md) で作成されたレンジ) を渡します。 _rangeObj_ 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
 _textValue_ 引数には、_rangeObj_ 引数のレンジに割り当てたいテキスト値を指定します。
 
-The optional _formatPattern_ defines a [pattern](../configuring.md#cell-format) for the _textValue_ parameter.
+任意の _formatPattern_ 引数は、_textValue_ に対する [パターン](../configuring.md#セルフォーマット) を定義します。
 
 #### 例題
 
@@ -33,5 +33,5 @@ VP SET TEXT VALUE(VP Cell("ViewProArea";3;2);"Test 4D View Pro")
 
 #### 参照
 
-[Cell Format](../configuring.md#cell-format)<br/>
+[セルフォーマット](../configuring.md#セルフォーマット)<br/>
 [VP SET VALUE](vp-set-value.md)
