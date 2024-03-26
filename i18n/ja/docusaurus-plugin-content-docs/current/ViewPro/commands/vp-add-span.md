@@ -45,6 +45,6 @@ _rangeObj_ には、セルのレンジオブジェクトを渡します。 レ�
 
 #### 参照
 
-[4D View Pro Range Object Properties](../getting-started.md#using-range-objects)<br/>
+[4D View Pro レンジオブジェクトプロパティ](../getting-started.md#レンジオブジェクトの使い方)<br/>
 [VP Get spans](vp-get-spans.md)<br/>
 [VP REMOVE SPAN](vp-remove-span.md)
