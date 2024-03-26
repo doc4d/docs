@@ -39,7 +39,7 @@ _insertAfter_ パラメーターに以下の定数のいずれかを渡すこと
 
 このコマンドは、シート内ではなく、_tableName_ の表組みに行を挿入します。 したがって、シートの総行数は、このコマンドの影響を受けません。 表組みより下側にデータがある場合は、挿入された行の数に応じて自動的に下に移動します。
 
-If the _tableName_ table is bound to a [data context](vp-set-data-context.md), the command inserts new, empty element(s) in the collection.
+_tableName_ の表組みが [データコンテキスト](vp-set-data-context.md) にバインドされている場合、このコマンドはコレクションに新しい空の要素を挿入します。
 
 _tableName_ の表組みが存在しない場合、あるいはシートに十分なスペースがない場合は、何も起こりません。
 
