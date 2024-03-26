@@ -44,7 +44,7 @@ _filePath_ には読み込むドキュメントのパスとファイル名を渡
 
 | 引数         |                     | タイプ         | 説明                                                                                                                                                                                                                                                                                                                     |
 | ---------- | ------------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| formula    |                     | 4D.Function | 読み込み終了時に実行させるコールバックメソッド。 You must use a formula returned by the [`Formula`](../../API/FunctionClass.md#formula) command. See [Passing a callback method (formula)](vp-export-document.md#passing-a-callback-method-formula).                                                                        |
+| formula    |                     | 4D.Function | 読み込み終了時に実行させるコールバックメソッド。 [`Formula`](../../API/FunctionClass.md#formula) コマンドの戻り値フォーミュラを使用する必要があります。 [コールバックメソッド (フォーミュラ) の渡し方](vp-export-document.md#コールバックメソッド-フォーミュラ-の渡し方) を参照ください。                                                                                                              |
 | password   |                     | text        | Microsoft Excel のみ (任意) - MS Excel ドキュメントの保護に使用されているパスワード。                                                                                                                                                                                                                                          |
 | csvOptions |                     | object      | CSV読み込みのオプション                                                                                                                                                                                                                                                                                                          |
 |            | range               | object      | 書き出されるデータの、最初のセルを格納しているセルレンジ。 指定されたレンジがセルレンジではない場合、レンジの最初のセルが使用されます。                                                                                                                                                                                                                                                   |
@@ -116,7 +116,7 @@ $params.range:=VP Cells("ViewProArea";0;0;2;5)
 VP IMPORT DOCUMENT("ViewProArea";"c:\\import\\my-file.txt";New object("csvOptions";$params))
 ```
 
-Here's the result:
+このようになります:
 ![example-import-csv](../../assets/en/ViewPro/vp-import-document-csv-result.png)
 
 #### 参照
