@@ -51,7 +51,7 @@ borderTop:{color:green,style:10}
 
 #### 参照
 
-[4D View Pro Style Objects and Style Sheets](../configuring.md#style-objects--style-sheets)<br/>
+[4D View Pro スタイルオブジェクトとスタイルシート](../configuring.md#スタイルオブジェクトとスタイルシート)<br/>
 [VP ADD STYLESHEET](vp-add-stylesheet.md)<br/>
 [VP Get stylesheets](vp-get-stylesheets.md)<br/>
 [VP REMOVE STYLESHEET](vp-remove-stylesheet.md)
