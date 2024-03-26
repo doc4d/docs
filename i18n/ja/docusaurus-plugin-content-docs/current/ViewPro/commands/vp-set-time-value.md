@@ -19,11 +19,11 @@ title: VP SET TIME VALUE
 
 `VP SET TIME VALUE` コマンドは、<!-- REF #_method_.VP SET TIME VALUE.Summary -->指定されたセルレンジに時間値を割り当てます<!-- END REF -->。
 
-In _rangeObj_, pass a range of the cell(s) (created for example with [`VP Cell`](vp-cell.md) or [`VP Column`](vp-column.md)) whose value you want to specify. _rangeObj_ 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
+_rangeObj_ には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](vp-cell.md) あるいは [`VP Column`](vp-column.md) で作成されたレンジ) を渡します。 _rangeObj_ 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
 _timeValue_ 引数には、_rangeObj_ 引数のレンジに割り当てる時間 (秒単位) を指定します。
 
-The optional _formatPattern_ defines a [pattern](../configuring.md#cell-format) for the _timeValue_ parameter.
+任意の _formatPattern_ 引数は、_timeValue_ に対する [パターン](../configuring.md#セルフォーマット) を定義します。
 
 #### 例題
 
@@ -37,6 +37,6 @@ VP SET TIME VALUE(VP Cell("ViewProArea";5;2);?12:15:06?;vk pattern long time)
 
 #### 参照
 
-[Cell Format](../configuring.md#cell-format)<br/>
+[セルフォーマット](../configuring.md#セルフォーマット)<br/>
 [VP SET DATE TIME VALUE](vp-set-date-time-value.md)<br/>
 [VP SET VALUE](vp-set-value.md)
