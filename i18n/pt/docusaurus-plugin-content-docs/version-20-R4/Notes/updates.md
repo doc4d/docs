@@ -19,7 +19,7 @@ Read [**What’s new in 4D v20 R4**](https://blog.4d.com/en-whats-new-in-4d-v20-
 - Novo comando [`HTTP Parse message`](../API/HTTPRequestClass.md#http-parse-message).
 - New [Non-blocking printing](../settings/compatibility.md) compatibility option.
 - Comandos da linguagem 4D: [Novidades de página](https://doc.4d.com/4Dv20R4/4D/20-R4/What-s-new.901-6655756.en.html) em doc.4d.com.
-- 4D Write Pro: [Página Novidades] (https\://doc.4d.com/4Dv20R4/4D/20-R4/What-s-new\.901-6683440.en.html) em doc.4d.com.
+- 4D Write Pro: [Página Novidades] (https://doc.4d.com/4Dv20R4/4D/20-R4/What-s-new.901-6683440.en.html) em doc.4d.com.
 - [**Lista de erros corrigida**](https://bugs.4d.fr/fixedbugslist?version=20_R4): lista de todos os bugs corrigidos em 4D v20 R4.
 
 #### Mudanças de comportamento
@@ -43,7 +43,7 @@ Read [**What’s new in 4D v20 R3**](https://blog.4d.com/en-whats-new-in-4d-v20-
 - New syntax for [declaring variadic parameters](../Concepts/parameters.md#declaring-variadic-parameters)
 - 4D View Pro: Support for the [import](../ViewPro/method-list.md#vp-import-from-blob) and [export](../ViewPro/method-list.md#vp-export-to-blob) of 4D View Pro documents in Blob format.
 - Comandos da linguagem 4D: [Novidades de página](https://doc.4d.com/4Dv20R3/4D/20-R3/What-s-new.901-6531224.en.html) em doc.4d.com.
-- 4D Write Pro: [Página Novidades] (https\://doc.4d.com/4Dv20R3/4D/20-R3/What-s-new\.901-6475174.en.html) em doc.4d.com.
+- 4D Write Pro: [Página Novidades] (https://doc.4d.com/4Dv20R3/4D/20-R3/What-s-new.901-6475174.en.html) em doc.4d.com.
 - [**Lista de erros corrigida**](https://bugs.4d.fr/fixedbugslist?version=20_R3): lista de todos os bugs corrigidos em 4D v20 R3.
 
 #### Mudanças de comportamento
@@ -67,7 +67,7 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 - New QUIC network layer [interface setting](../settings/client-server.md#network-layer).
 - 4D View Pro: Support of the **.sjs** file format for the [import](../ViewPro/method-list.md#vp-import-document) and [export](../ViewPro/method-list.md#vp-export-document) of documents.
 - Comandos da linguagem 4D: [Novidades de página](https://doc.4d.com/4Dv20R2/4D/20-R2/What-s-new.901-6398284.en.html) em doc.4d.com.
-- 4D Write Pro: [Página Novidades] (https\://doc.4d.com/4Dv20R2/4D/20-R2/What-s-new\.901-6390313.en.html) em doc.4d.com.
+- 4D Write Pro: [Página Novidades] (https://doc.4d.com/4Dv20R2/4D/20-R2/What-s-new.901-6390313.en.html) em doc.4d.com.
 - 4D Write Pro Interface: New [Table Wizard](../WritePro/writeprointerface.md).
 - [**Lista de erros corrigida**](https://bugs.4d.fr/fixedbugslist?version=20_R2): lista de todos os bugs corrigidos em 4D v20 R2.
 
@@ -140,7 +140,7 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 - TLS certificates are now automatically validated by 4D when sending HTTP requests with [`4D.HTTPRequest.new()`](../API/HTTPRequestClass.md#new), and rejected with an error if they are invalid. A new _option_ property allows you to control this validation.
 - TLS v1.0 and TLS v1.1 are deprecated, they are no longer supported as `Min TLS version` on 4D Server. Version 1.3 is now selected by default and is automatically used if `_o_TLSv1_0` or `_o_TLSv1_1` constants are set with [`SET DATABASE PARAMETER`](https://doc.4d.com/4dv20/help/command/en/page642.html).
 - For consistency, all buttons, checkboxes, and radio buttons are now rendered with a "3D" type at runtime: respectively `Object type 3D button`, `Object type 3D checkbox`, and `Object type 3D radio button` are returned by [`OBJECT Get type`](https://doc.4d.com/4dv20/help/command/en/page642.html) for these objects.
-- A partir do 4D v20, o [4D for Mobile] (https\://developer.4d.com/go-mobile/) não é mais instalado por padrão no ambiente 4D. To benefit from the 4D for Mobile development features in 4D, you need to [install the 4D Mobile App component](https://developer.4d.com/go-mobile/docs/getting-started/installation) in the ["Components"](../Project/architecture.md#components) folder of your projects. If a converted project uses features from the [4D Mobile App Server component](https://github.com/4d/4D-Mobile-App-Server#4d-mobile-app-server), make sure you also install it in the "Components" folder of the project.
+- A partir do 4D v20, o [4D for Mobile] (https://developer.4d.com/go-mobile/) não é mais instalado por padrão no ambiente 4D. To benefit from the 4D for Mobile development features in 4D, you need to [install the 4D Mobile App component](https://developer.4d.com/go-mobile/docs/getting-started/installation) in the ["Components"](../Project/architecture.md#components) folder of your projects. If a converted project uses features from the [4D Mobile App Server component](https://github.com/4d/4D-Mobile-App-Server#4d-mobile-app-server), make sure you also install it in the "Components" folder of the project.
 
 ## 4D v19 R8
 
@@ -156,7 +156,7 @@ Read [**What’s new in 4D v19 R8**](https://blog.4d.com/en-whats-new-in-4d-v19-
   - support of themes in tables: new [VP SET TABLE THEME](../ViewPro/method-list.md#vp-set-table-theme) and [VP Get table theme](../ViewPro/method-list.md#vp-get-table-theme) commands, support of theme options in [VP CREATE TABLE](../ViewPro/method-list.md#vp-create-table)
   - novo comando [VP Get table dirty rows](../ViewPro/method-list.md#vp-get-table-dirty-rows)
 - Comandos da linguagem 4D: [Novidades de página](https://doc.4d.com/4Dv19R8/4D/19-R8/What-s-new.901-6101683.en.html) em doc.4d.com.
-- 4D Write Pro: [Página Novidades] (https\://doc.4d.com/4Dv19R8/4D/19-R8/What-s-new\.901-6130471.en.html) em doc.4d.com.
+- 4D Write Pro: [Página Novidades] (https://doc.4d.com/4Dv19R8/4D/19-R8/What-s-new.901-6130471.en.html) em doc.4d.com.
 - [**Lista de erros corrigida**](https://bugs.4d.fr/fixedbugslist?version=19_R8): lista de todos os bugs corrigidos em 4D v19 R8.
 
 #### Mudanças de comportamento
@@ -180,12 +180,12 @@ Read [**What’s new in 4D v19 R7**](https://blog.4d.com/en-whats-new-in-4d-v19-
 - Component namespaces are now [displayed in the Explorer](../Extensions/develop-components.md#declaring-the-component-namespace).
 - Text area and Input form objects now support the [corner radius property](../FormObjects/properties_CoordinatesAndSizing.md#corner-radius).
 - Comandos da linguagem 4D: [Novidades de página](https://doc.4d.com/4Dv19R7/4D/19-R7/What-s-new.901-5944528.en.html) em doc.4d.com.
-- 4D Write Pro: [Página Novidades] (https\://doc.4d.com/4Dv19R7/4D/19-R7/What-s-new\.901-6011873.en.html) em doc.4d.com.
+- 4D Write Pro: [Página Novidades] (https://doc.4d.com/4Dv19R7/4D/19-R7/What-s-new.901-6011873.en.html) em doc.4d.com.
 - [**Lista de erros corrigida**](https://bugs.4d.fr/fixedbugslist?version=19_R7): lista de todos os bugs corrigidos em 4D v19 R7.
 
 #### Mudanças de comportamento
 
-- Para manter a consistência com as interfaces padrão (por exemplo, exploradores de arquivos do sistema operacional), as regras da caixa de listagem para seleção de linhas/arrastar e soltar foram modificadas. A continuous or discontinuous selection of rows can be dragged by simply clicking on and moving a selected row; the **Alt** key is not longer necessary (but can still be used like in previous previous). When the **Shift** or **Ctrl/Command** key is pressed, a mouse click is taken into account when the click is down. Para obter mais informações sobre arrastar e soltar em list boxes, consulte [esta postagem do blog] (https\:/blog.4d.com/list-boxes-say-goodbye-to-alt-key/) e faça download [deste projeto HDI 4D] (https\://github.com/4d-depot/HDI_LB_DragAndDrop).
+- Para manter a consistência com as interfaces padrão (por exemplo, exploradores de arquivos do sistema operacional), as regras da caixa de listagem para seleção de linhas/arrastar e soltar foram modificadas. A continuous or discontinuous selection of rows can be dragged by simply clicking on and moving a selected row; the **Alt** key is not longer necessary (but can still be used like in previous previous). When the **Shift** or **Ctrl/Command** key is pressed, a mouse click is taken into account when the click is down. Para obter mais informações sobre arrastar e soltar em list boxes, consulte [esta postagem do blog] (https:/blog.4d.com/list-boxes-say-goodbye-to-alt-key/) e faça download [deste projeto HDI 4D] (https://github.com/4d-depot/HDI_LB_DragAndDrop).
 - A numeração de compilação interna do 4D foi modificada a partir do 4D v19 R7:
   - as versões até 4D v19 R6 (inclusive) são numeradas como 282xxx,
   - releases from 4D v19 R7 will be numbered 100xxx.\
@@ -337,18 +337,18 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 
 ## Tabela da biblioteca
 
-| Biblioteca | Versão atual | Atualizado em 4D | Comentário                                                                                                    |
-| ---------- | ------------ | ---------------- | ------------------------------------------------------------------------------------------------------------- |
-| ICU        | 73.2         | 20.1             | Essa grande atualização força uma reconstrução automática dos índices alfanuméricos, de texto e de objetos.   |
-| CEF        | 118          | 20 R3            | Chromium 5993                                                                                                 |
-| Hunspell   | 7.3.27       | 20               | Usado para verificação ortográfica em formulários 4D e 4D Write Pro                                           |
-| PDFWriter  | 4.3          | 20               | Dependência FreeType na 12.2.1                                                                                |
-| SpreadJS   | 16.2.6       | 20 R4            | Motor 4D View Pro                                                                                             |
-| OpenSSL    | 3.2.0        | 20 R4            | Default TLS/SSL security level has been upgraded. See [Behavior changes](#behavior-changes) for release 20 R4 |
-| libZip     | 19.5         | 20               | Utilizado pelos componentes zip class, 4D Write Pro, svg e serverNet                                          |
-| LZMA       | 5.4.1        | 20               |                                                                                                               |
-| Zlib       | 14.1.6       | 20               |                                                                                                               |
-| webKit     | WKWebView    | 19               |                                                                                                               |
-| PHP        | 8.2.4        | 20               |                                                                                                               |
-| libldap    | 2.6.4        | 20 R3            |                                                                                                               |
-| libsasl    | 2.1.28       | 20               |                                                                                                               |
+| Biblioteca | Versão atual                           | Atualizado em 4D     | Comentário                                                                                                                    |
+| ---------- | -------------------------------------- | -------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| ICU        | 73.2                   | 20.1 | Essa grande atualização força uma reconstrução automática dos índices alfanuméricos, de texto e de objetos.   |
+| CEF        | 118                                    | 20 R3                | Chromium 5993                                                                                                                 |
+| Hunspell   | 7.3.27 | 20                   | Usado para verificação ortográfica em formulários 4D e 4D Write Pro                                                           |
+| PDFWriter  | 4.3                    | 20                   | Dependência FreeType na 12.2.1                                                                |
+| SpreadJS   | 16.2.6 | 20 R4                | Motor 4D View Pro                                                                                                             |
+| OpenSSL    | 3.2.0  | 20 R4                | Default TLS/SSL security level has been upgraded. See [Behavior changes](#behavior-changes) for release 20 R4 |
+| libZip     | 19.5                   | 20                   | Utilizado pelos componentes zip class, 4D Write Pro, svg e serverNet                                                          |
+| LZMA       | 5.4.1  | 20                   |                                                                                                                               |
+| Zlib       | 14.1.6 | 20                   |                                                                                                                               |
+| webKit     | WKWebView                              | 19                   |                                                                                                                               |
+| PHP        | 8.2.4  | 20                   |                                                                                                                               |
+| libldap    | 2.6.4  | 20 R3                |                                                                                                                               |
+| libsasl    | 2.1.28 | 20                   |                                                                                                                               |
