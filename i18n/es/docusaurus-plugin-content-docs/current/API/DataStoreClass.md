@@ -587,7 +587,7 @@ var $currentStamp : Real
 var $hasModifications : Boolean
 
 $currentStamp:=ds.getGlobalStamp()
-methodWhichCouldModifyEmployees //call some code
+methodWhichCouldModifyEmployees //ejecutar código 
 $hasModifications:=($currentStamp # ds.getGlobalStamp())
 ```
 
