@@ -73,9 +73,9 @@ title: EntitySelection
 
 任意の *settings* には、以下のプロパティを持つオブジェクトを渡せます:
 
-| プロパティ   | タイプ  | 説明                                                                                 |
-| ------- | ---- | ---------------------------------------------------------------------------------- |
-| context | Text | エンティティセレクションに適用されている [最適化コンテキスト](../ORDA/remoteDatastores.md#クライアントサーバーの最適化) のラベル。 |
+| プロパティ   | タイプ  | 説明                                                                                                           |
+| ------- | ---- | ------------------------------------------------------------------------------------------------------------ |
+| context | Text | Label for the [optimization context](../ORDA/client-server-optimization.md) applied to the entity selection. |
 
 
 #### 例題
@@ -870,6 +870,7 @@ $paths:=ds.Employee.all().distinctPaths("fullData")
 
 `dk stop dropping on first error` オプションを使用しない例:
 
+
 ```4d
  var $employees; $notDropped : cs.EmployeeSelection
  $employees:=ds.Employee.query("firstName=:1";"S@")
@@ -1658,11 +1659,12 @@ pathObjects コレクションには必要な数だけオブジェクトを追�
 
 
 ```4d
-// フォーミュラでの並べ替え
+// order by formula
  $sortedEntitySelection:=$entitySelection.orderBy("firstName asc, salary desc")
  $sortedEntitySelection:=$entitySelection.orderBy("firstName")
 
-  // コレクションでの並べ替えと、昇順・降順の指定
+
+  // order by collection with or without sort orders
  $orderColl:=New collection
  $orderColl.push(New object("propertyPath";"firstName";"descending";False))
  $orderColl.push(New object("propertyPath";"salary";"descending";True))
@@ -1670,6 +1672,7 @@ pathObjects コレクションには必要な数だけオブジェクトを追�
 
  $orderColl:=New collection
  $orderColl.push(New object("propertyPath";"manager.lastName"))
+
  $orderColl.push(New object("propertyPath";"salary"))
  $sortedEntitySelection:=$entitySelection.orderBy($orderColl)
 ```
