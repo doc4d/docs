@@ -107,7 +107,7 @@ Si vos applications 4D utilisent des connexions TLS, il est recommandé de mettr
 #### Points forts
 
 - 4D v20.2 est certifié sur macOS Sonoma (macOS 14).
-- (4D v20.1) Nouvelle propriété `plugins` dans le paramètre _options_ de la commande [`Compile project`] (https\://doc.4d.com/4dv20/help/command/en/page1760.html).
+- (4D v20.1) Nouvelle propriété `plugins` dans le paramètre _options_ de la commande [`Compile project`] (https://doc.4d.com/4dv20/help/command/en/page1760.html).
 - 4D Server intègre automatiquement plusieurs journaux : [Restauration automatique](../Backup/settings.md#automatic-restore).
 - [IMAP Transporter Class](../API/IMAPTransporterClass.md) : [`.getBoxInfo()`](../API/IMAPTransporterClass#getboxinfo) renvoie _id_, [`.selectBox()`](../API/IMAPTransporterClass.md#selectbox) renvoie _id_, _flags_ et _permanentFlags_, [`.addFlags()`](../API/IMAPTransporterClass.md#addflags) et [`.removeFlags()`](../API/IMAPTransporterClass.md#removeflags) prennent en charge les mots-clés personnalisés.
 - Nouvelles classes [WebSocketServer](../API/WebSocketServerClass.md) et [WebSocketConnection](../API/WebSocketConnectionClass.md) pour créer et gérer des connexions WebSocket depuis 4D.
@@ -163,7 +163,7 @@ Lisez [**Les nouveautés de 4D v19 R8**](https://blog.4d.com/fr-whats-new-in-4d-
 
 - Pour la conformité RFC de HTTP, la propriété [`HTTPRequestClass.response.headers`](../API/HTTPRequestClass.md#response) retourne maintenant tous les noms d'en-têtes **en minuscules**. Si vous voulez que votre code continue à fonctionner comme avant, utilisez la nouvelle propriété [`HTTPRequestClass.response.rawHeaders`](../API/HTTPRequestClass.md#response).
 - Lorsqu'une action standard est assignée à un [bouton bevel avec menu contextuel lié](../FormObjects/properties_TextAndPicture.md/#with-pop-up-menu), l'action standard n'est plus générée si une option de menu contextuel est sélectionnée.
-- Dans les zones Web utilisant blink (CEF), les dialogues affichés à partir de scripts externes sont désormais bloquants s'ils ne sont pas appelés à partir d'une fonction JS `setTimeout()`. Cela est dû aux mises à jour actuelles de CEF, dans lesquelles les dialogues affichés par des fonctions telles que `alert()` ou `print()` ne sont plus gérés par le système d'exploitation mais par la zone Web. Voir [`WA Evaluate JavaScript`](https://doc.4d.com/4dv19/help/command/en/page1029.html) et [`WA EXECUTE JAVASCRIPT`] (https\://doc.4d.com/4dv19/help/command/en/page1043.html).
+- Dans les zones Web utilisant blink (CEF), les dialogues affichés à partir de scripts externes sont désormais bloquants s'ils ne sont pas appelés à partir d'une fonction JS `setTimeout()`. Cela est dû aux mises à jour actuelles de CEF, dans lesquelles les dialogues affichés par des fonctions telles que `alert()` ou `print()` ne sont plus gérés par le système d'exploitation mais par la zone Web. Voir [`WA Evaluate JavaScript`](https://doc.4d.com/4dv19/help/command/en/page1029.html) et [`WA EXECUTE JAVASCRIPT`] (https://doc.4d.com/4dv19/help/command/en/page1043.html).
 
 ## 4D v19 R7
 
@@ -338,18 +338,18 @@ Si vos applications 4D utilisent des connexions TLS, il est recommandé de mettr
 
 ## Tableau des bibliothèques
 
-| Bibliothèque | Version courante | Mise à jour dans 4D | Commentaire                                                                                                                        |
-| ------------ | ---------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| ICU          | 73.2             | 20.1                | Cette mise à jour majeure entraîne une reconstruction automatique des index alphanumériques, texte et objets.                      |
-| CEF          | 118              | 20 R3               | Chromium 5993                                                                                                                      |
-| Hunspell     | 1.7.2            | 20                  | Utilisé pour la vérification orthographique dans les formulaires 4D et 4D Write Pro                                                |
-| PDFWriter    | 4.3              | 20                  | FreeType dependency dans 12.2.1                                                                                                    |
-| SpreadJS     | 16.2.6           | 20 R4               | Moteur 4D View Pro                                                                                                                 |
-| OpenSSL      | 3.2.0            | 20 R4               | Le niveau de sécurité TLS/SSL par défaut a été relevé. Voir [Changements de comportement](#behavior-changes) pour la version 20 R4 |
-| libZip       | 1.9.2            | 20                  | Utilisé par les classes zip, 4D Write Pro, les composants svg et serverNet                                                         |
-| LZMA         | 5.4.1            | 20                  |                                                                                                                                    |
-| Zlib         | 1.2.13           | 20                  |                                                                                                                                    |
-| webKit       | WKWebView        | 19                  |                                                                                                                                    |
-| PHP          | 8.2.4            | 20                  |                                                                                                                                    |
-| libldap      | 2.6.4            | 20 R3               |                                                                                                                                    |
-| libsasl      | 2.1.28           | 20                  |                                                                                                                                    |
+| Bibliothèque | Version courante                       | Mise à jour dans 4D  | Commentaire                                                                                                                                        |
+| ------------ | -------------------------------------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ICU          | 73.2                   | 20.1 | Cette mise à jour majeure entraîne une reconstruction automatique des index alphanumériques, texte et objets.                      |
+| CEF          | 118                                    | 20 R3                | Chromium 5993                                                                                                                                      |
+| Hunspell     | 1.7.2  | 20                   | Utilisé pour la vérification orthographique dans les formulaires 4D et 4D Write Pro                                                                |
+| PDFWriter    | 4.3                    | 20                   | FreeType dependency dans 12.2.1                                                                                    |
+| SpreadJS     | 16.2.6 | 20 R4                | Moteur 4D View Pro                                                                                                                                 |
+| OpenSSL      | 3.2.0  | 20 R4                | Le niveau de sécurité TLS/SSL par défaut a été relevé. Voir [Changements de comportement](#behavior-changes) pour la version 20 R4 |
+| libZip       | 1.9.2  | 20                   | Utilisé par les classes zip, 4D Write Pro, les composants svg et serverNet                                                                         |
+| LZMA         | 5.4.1  | 20                   |                                                                                                                                                    |
+| Zlib         | 1.2.13 | 20                   |                                                                                                                                                    |
+| webKit       | WKWebView                              | 19                   |                                                                                                                                                    |
+| PHP          | 8.2.4  | 20                   |                                                                                                                                                    |
+| libldap      | 2.6.4  | 20 R3                |                                                                                                                                                    |
+| libsasl      | 2.1.28 | 20                   |                                                                                                                                                    |
