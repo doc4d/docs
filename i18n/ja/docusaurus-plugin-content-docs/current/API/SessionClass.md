@@ -107,7 +107,7 @@ Webユーザーセッションの詳細については、[Webサーバーセッ�
 - [`Execute on server`](https://doc.4d.com/4dv20/help/command/ja/page373.html) コマンドで呼び出されるメソッド
 - `On Server Startup`、`On Server Shutdown`、`On Backup Startup`、`On Backup Shutdown`、および `On System event` データベースメソッド
 
-For information on stored procedures virtual user session, please refer to the [XXXX](XXX) page.
+For information on stored procedures virtual user session, please refer to the [4D Server and the 4D Language](https://doc.4d.com/4Dv20R5/4D/20-R5/4D-Server-and-the-4D-Language.300-6932726.en.html) page.
 
 #### 例題
 
@@ -541,19 +541,21 @@ End if
 
 クライアントの IP を `.storage` プロパティに保存します。 `On Web Authentication` データベースメソッドに以下のように記述できます:
 
+
 ```4d
 If (Session.storage.clientIP=Null) // 最初のアクセス
     Use (Session.storage)
         Session.storage.clientIP:=New shared object("value"; $clientIP)
     End use
 End if
-
 ```
+
 </TabItem>
 
 <TabItem value="Remote session example">
 
 同じセッションのプロセス間でデータを共有したい場合:
+
 
 ```4d
 Use (Session.storage)
