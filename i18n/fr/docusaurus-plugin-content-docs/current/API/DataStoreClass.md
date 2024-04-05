@@ -1175,11 +1175,11 @@ Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes
 
 
 <!-- REF #DataStoreClass.startRequestLog().Params -->
-| Paramètres | Type    |    | Description                                             |
-| ---------- | ------- | -- | ------------------------------------------------------- |
-| file       | 4D.File | -> | Objet File                                              |
-| options    | Integer | -> | Option d'enregistrement de réponse (serveur uniquement) |
-| reqNum     | Integer | -> | Number of requests to keep in memory (client only)      |
+| Paramètres | Type    |    | Description                                                  |
+| ---------- | ------- | -- | ------------------------------------------------------------ |
+| file       | 4D.File | -> | Objet File                                                   |
+| options    | Integer | -> | Option d'enregistrement de réponse (serveur uniquement)      |
+| reqNum     | Integer | -> | Nombre de requêtes à conserver en mémoire (client seulement) |
 <!-- END REF -->
 
 #### Description
