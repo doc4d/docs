@@ -130,8 +130,13 @@ El comando `Open datastore` <!-- REF #_command_.Open datastore.Summary -->conect
 La base de datos *connectionInfo* 4D debe estar disponible como almacén de datos remoto, es decir:
 
 * su servidor web debe ser lanzado con http y/o https activado,
-* su opción [**Exponer como servidor REST**](REST/configuration.md#starting-the-rest-server) debe estar marcada,
-* se dispone de al menos una licencia cliente.
+* the datastore must be exposed ([**Expose as REST server**](REST/configuration.md#starting-the-rest-server) option checked) as well as [dataclasses and attributes](../REST/configuration.md#exposing-tables-and-fields).
+
+:::note
+
+`Open datastore` requests rely on the 4D REST API and can require a 4D Client license to open the connection. Refer to the [user login mode section](../REST/authUsers.md#user-login-modes) to know how to configure the authentication depending on the selected current user login mode.
+
+:::
 
 Si no se encuentra ninguna base de datos coincidente, `Open datastore` devuelve **Null**.
 
@@ -441,19 +446,19 @@ Otras funcionalidades y servicios de 4D, como [backup](../Backup/backup.md), [vs
 Desea crear una copia de la carpeta de datos junto con su archivo de historial actual:
 
 ```4d
-$destination:=Folder(fk documents folder).folder("Archive") 
+$destination:=Folder(fk documents folder).folder("Archive")
 $destination.create()
 
-ds.flushAndLock() //Bloquear operaciones de escritura de otros procesos
+ds.flushAndLock() //Block write operations from other processes
 
-$dataFolder:=Folder(fk data folder) 
-$dataFolder.copyTo($destination) //Copiar la carpeta de datos
+$dataFolder:=Folder(fk data folder)
+$dataFolder.copyTo($destination) //Copy the data folder
 
-$oldJournalPath:=New log file //Cerrar el historial y crear uno nuevo
-$oldJournal:=File($oldJournalPath; fk platform path) 
-$oldJournal.moveTo($destination) //Guardar el antiguo historial con datos
+$oldJournalPath:=New log file //Close the journal and create a new one
+$oldJournal:=File($oldJournalPath; fk platform path)
+$oldJournal.moveTo($destination) //Save the old journal with data
 
-ds.unlock() //Nuestra copia ha terminado, ahora podemos desbloquear el datastore
+ds.unlock() //Our copy is over, we can now unlock the datastore
 ```
 
 #### Ver también
@@ -487,7 +492,7 @@ ds.unlock() //Nuestra copia ha terminado, ahora podemos desbloquear el datastore
 
 La función `.getAllRemoteContexts()` <!-- REF #DataStoreClass.getAllRemoteContexts().Summary -->devuelve una colección de objetos que contienen información sobre todos los contextos de optimización de activos en el almacén de datos<!-- END REF -->.
 
-> Para más información sobre cómo se pueden crear contextos, ver [client/server optimization](../ORDA/remoteDatastores.md#clientserver-optimization).
+> For more information on how contexts can be created, see [client/server optimization](../ORDA/client-server-optimization.md#optimization-context).
 
 Cada objeto de la colección devuelta contiene las propiedades listadas en la sección.[`.getRemoteContextInfo()`](#properties-of-the-returned-object).
 
@@ -582,7 +587,7 @@ var $currentStamp : Real
 var $hasModifications : Boolean
 
 $currentStamp:=ds.getGlobalStamp()
-methodWhichCouldModifyEmployees //ejecutar código 
+methodWhichCouldModifyEmployees //call some code
 $hasModifications:=($currentStamp # ds.getGlobalStamp())
 ```
 
@@ -685,7 +690,7 @@ En un almacén de datos remoto:
 
 La función `.getRemoteContextInfo()` <!-- REF #DataStoreClass.getRemoteContextInfo().Summary --> devuelve un objeto que contiene información sobre el contexto de optimización *contextName* en el datastore.<!-- END REF -->.
 
-Para más información sobre cómo se pueden crear contextos de optimización, ver [Optimización cliente/servidor](../ORDA/remoteDatastores.md#clientserver-optimization).
+For more information on how optimization contexts can be created, see [client/server optimization](../ORDA/client-server-optimization.md#optimization-context).
 
 #### Objeto devuelto
 
@@ -928,6 +933,7 @@ Si no se da *curPassphrase* o *curDataKey*, `.provideDataKey()` devuelve **null*
 ## .setAdminProtection()
 
 
+
 <details><summary>Histórico</summary>
 
 | Lanzamiento | Modificaciones |
@@ -1063,7 +1069,7 @@ Cuando se pasa un contexto a las funciones de clase ORDA, la optimización de la
 * la primera entidad no está totalmente cargada como se hace en el modo automático
 * las páginas de 80 entidades (o de `pageLength` entidades) se piden inmediatamente al servidor con sólo los atributos del contexto
 
-> Para más información sobre la creación de los contextos de optimización, consulte el [párrafo de optimización cliente/servidor](../ORDA/remoteDatastores.md#clientserver-optimization)
+> For more information on how optimization contexts are built, refer to the [client/server optimization paragraph](../ORDA/client-server-optimization.md#optimization-context)
 
 En *contextName*, pase el nombre del contexto de optimización para vincularlo a los atributos de la dataclass.
 
