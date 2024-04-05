@@ -107,7 +107,7 @@ Todos los procesos de procedimientos almacenados comparten la misma sesión virt
 - métodos llamados con el comando [`Execute on server`](https://doc.4d.com/4dv20/help/command/en/page373.html),
 - métodos base `On Server Startup`, `On Server Shutdown`, `On Backup Startup`, `On Backup Shutdown` y `On System event`
 
-Para obtener información sobre los procedimientos almacenados de sesión virtual de usuario, consulte la página [XXXX](XXX).
+For information on stored procedures virtual user session, please refer to the [4D Server and the 4D Language](https://doc.4d.com/4Dv20R5/4D/20-R5/4D-Server-and-the-4D-Language.300-6932726.en.html) page.
 
 #### Ejemplo
 
@@ -541,19 +541,21 @@ Esta propiedad es **sólo lectura** en sí misma pero devuelve un objeto de lect
 
 Desea almacenar la IP del cliente en la propiedad `.storage`. Puede escribir en el método base `On Web Authentication`:
 
+
 ```4d
 If (Session.storage.clientIP=Null) //primer acceso
     Use (Session.storage)
         Session.storage.clientIP:=New shared object("value"; $clientIP)
     End use
 End if
-
 ````
+
 </TabItem>
 
 <TabItem value="Remote session example">
 
 Quiere compartir datos entre procesos de la misma sesión:
+
 
 ```4d
 Use (Session.storage)
