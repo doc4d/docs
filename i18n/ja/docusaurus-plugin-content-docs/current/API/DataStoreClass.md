@@ -446,16 +446,16 @@ user / password / timeout / tls を指定してリモートデータストアに
 $destination:=Folder(fk documents folder).folder("Archive")
 $destination.create()
 
-ds.flushAndLock() //Block write operations from other processes
+ds.flushAndLock() // 他のプロセスからの書き込み操作をブロックします
 
 $dataFolder:=Folder(fk data folder)
-$dataFolder.copyTo($destination) //Copy the data folder
+$dataFolder.copyTo($destination) // データフォルダーをコピーします
 
-$oldJournalPath:=New log file //Close the journal and create a new one
+$oldJournalPath:=New log file // ジャーナルを閉じて、新しいものを作成します
 $oldJournal:=File($oldJournalPath; fk platform path)
-$oldJournal.moveTo($destination) //Save the old journal with data
+$oldJournal.moveTo($destination) // 閉じたジャーナルを保存します
 
-ds.unlock() //Our copy is over, we can now unlock the datastore
+ds.unlock() // コピー操作をおこなったので、データストアのロックを解除します
 ```
 
 #### 参照
@@ -489,7 +489,7 @@ ds.unlock() //Our copy is over, we can now unlock the datastore
 
 `.getAllRemoteContexts()` 関数は、 <!-- REF #DataStoreClass.getAllRemoteContexts().Summary -->データストア内のすべてのアクティブな最適化コンテキストに関する情報を格納するオブジェクトのコレクションを返します<!-- END REF -->。
 
-> For more information on how contexts can be created, see [client/server optimization](../ORDA/client-server-optimization.md#optimization-context).
+> コンテキストの作成に関する詳細については、[クライアント/サーバーの最適化](../ORDA/client-server-optimization.md#クライアントサーバーの最適化) を参照ください。
 
 返されたコレクション内の各オブジェクトは、[`.getRemoteContextInfo()`](#返されるオブジェクト) セクションに記載されているプロパティを持ちます。
 
@@ -584,7 +584,7 @@ var $currentStamp : Real
 var $hasModifications : Boolean
 
 $currentStamp:=ds.getGlobalStamp()
-methodWhichCouldModifyEmployees //call some code
+methodWhichCouldModifyEmployees // なんらかのコード
 $hasModifications:=($currentStamp # ds.getGlobalStamp())
 ```
 
@@ -687,7 +687,7 @@ $hasModifications:=($currentStamp # ds.getGlobalStamp())
 
 `.getRemoteContextInfo()` 関数は、 <!-- REF #DataStoreClass.getRemoteContextInfo().Summary --> *contextName* で指定したデータストアの最適化コンテキストに関する情報を格納するオブジェクトを返します<!-- END REF -->。
 
-For more information on how optimization contexts can be created, see [client/server optimization](../ORDA/client-server-optimization.md#optimization-context).
+最適化コンテキストの作成に関する詳細については、[クライアント/サーバーの最適化](../ORDA/client-server-optimization.md#クライアントサーバーの最適化) を参照ください。
 
 #### 返されるオブジェクト
 
@@ -1066,7 +1066,7 @@ ORDAクラスの関数にコンテキストを渡すと、RESTリクエストの
 * 自動モードのときとは異なり、先頭エンティティは完全にロードされません。
 * 80件のエンティティ (または `pageLength` に対応するエンティティ数) のページが直ちにサーバーに要求される際、コンテキストの属性のみが要求されます。
 
-> For more information on how optimization contexts are built, refer to the [client/server optimization paragraph](../ORDA/client-server-optimization.md#optimization-context)
+> 最適化コンテキストの作成に関する詳細については、[クライアント/サーバーの最適化](../ORDA/client-server-optimization.md#クライアントサーバーの最適化) を参照ください。
 
 *contextName* には、データクラス属性にリンクする最適化コンテキストの名前を渡します。
 
