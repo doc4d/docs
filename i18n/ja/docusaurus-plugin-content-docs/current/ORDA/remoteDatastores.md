@@ -1,6 +1,6 @@
 ---
 id: datastores
-title: Remote datastores
+title: リモートデータストア
 ---
 
 
