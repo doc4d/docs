@@ -5,13 +5,13 @@ title: リリースノート
 
 :::tip
 
-Read [**What’s new in 4D 19**](https://blog.4d.com/en-whats-new-in-4d-v19/), the blog post that lists all new features and enhancements in 4D 19 LTS.
+[**4D 19 の新機能**](https://blog.4d.com/ja-whats-new-in-4d-v19/): 4D 19 LTS の新機能と拡張機能をすべてリストアップしたブログ記事です。
 
 :::
 
 :::warning セキュリティに関する注記
 
-If your 4D applications use TLS connections, it is recommended that you upgrade to 4D 19.7 LTS build 288986 or higher. 詳細は [セキュリティ情報](https://blog.4d.com/ja/security-bulletin-two-cves-and-how-to-stay-secure/) を参照ください。
+4Dアプリケーションが TLS接続を使用する場合は、4D 19.7 LTS build 288986以上へのアップグレードが推奨されます。 詳細は [セキュリティ情報](https://blog.4d.com/ja/security-bulletin-two-cves-and-how-to-stay-secure/) を参照ください。
 
 :::
 
@@ -20,24 +20,24 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 
 #### ハイライト
 
-- [**Fixed bug list**](https://bugs.4d.fr/fixedbugslist?version=19.7): list of all bugs that have been fixed in 4D 19.7.
+- [**修正リスト**](https://4d-jp.github.io//2023/161/release-note-version-19/): 4D 19.7 で修正されたバグのリストです。
 
 
 ## 4D 19.6
 
 #### ハイライト
 
-- [**Fixed bug list**](https://bugs.4d.fr/fixedbugslist?version=19.6): list of all bugs that have been fixed in 4D 19.6.
+- [**修正リスト**](https://4d-jp.github.io//2023/41/release-note-version-19/): 4D 19.6 で修正されたバグのリストです。
 
 
 ## 4D 19.5
 
 #### ハイライト
 
-- 4D 19.5 is certified on Windows 11 22H2
-- 4D 19.5 is certified on macOS Ventura (macOS 13)
+- 4D 19.5 は Windows 11 22H2 対応です。
+- 4D 19.5 は macOS Ventura (macOS 13) 対応です。
 - SpreadJS のバージョンが更新されました (14.1.6)。
-- [**Fixed bug list**](https://bugs.4d.fr/fixedbugslist?version=19.5): list of all bugs that have been fixed in 4D 19.5.
+- [**修正リスト**](https://4d-jp.github.io/293/release-note-version-19/): 4D 19.5 で修正されたバグのリストです。
 
 
 ## 過去のリリース
@@ -52,7 +52,7 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 | ライブラリ    | 現在のバージョン  | 更新された 4D バージョン | 説明                                                        |
 | -------- | --------- | -------------- | --------------------------------------------------------- |
 | OpenSSL  | 1.1.1s    | 19.6           |                                                           |
-| SpreadJS | 14.1.6    | 19.5           | 4D iew Pro engine                                         |
+| SpreadJS | 14.1.6    | 19.5           | 4D View Pro エンジン                                          |
 | CEF      | 4324      | 19             | Chromium v88. Apple Silicon プラットフォーム上でのネイティブコンパイルを可能にします。 |
 | webKit   | WKWebView | 19             |                                                           |
 | ICU      | 68.1      | 18 R6          | このアップグレードにより、英数字とテキスト、オブジェクトのインデックスが自動的に再構築されます。          |
