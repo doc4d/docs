@@ -57,7 +57,7 @@ Read [**What’s new in 4D 20 R2**](https://blog.4d.com/en-whats-new-in-4d-v20-R
 
 :::warning セキュリティに関する注記
 
-If your 4D applications use TLS connections, it is recommended that you upgrade to 4D 20 R2 HF1 build 100440 or higher. 詳細は [セキュリティ情報](https://blog.4d.com/ja/security-bulletin-two-cves-and-how-to-stay-secure/) を参照ください。
+4Dアプリケーションが TLS接続を使用する場合は、4D 20 R2 HF1 build 100440以上へのアップグレードが推奨されます。 詳細は [セキュリティ情報](https://blog.4d.com/ja/security-bulletin-two-cves-and-how-to-stay-secure/) を参照ください。
 
 :::
 
@@ -81,32 +81,32 @@ Read [**What’s new in 4D 20**](https://blog.4d.com/en-whats-new-in-4d-v20/), t
 
 :::caution 4D v20.2 以降の4D Server に接続する最小クライアントバージョンについて
 
-For internal reasons, the version of remote clients connecting to 4D Server v20.2 and later must be at least 4D 20.2.
+内部的な理由により、4D 20.2 以降の 4D Server に接続するリモートクライアントのバージョンは、4D 20.2 以上でなければなりません。
 
 :::
 
 :::warning セキュリティに関する注記
 
-If your 4D applications use TLS connections, it is recommended that you upgrade to 4D 20.2 LTS build 100956 or higher. 詳細は [セキュリティ情報](https://blog.4d.com/ja/security-bulletin-two-cves-and-how-to-stay-secure/) を参照ください。
+4Dアプリケーションが TLS接続を使用する場合は、4D 20.2 LTS build 100956以上へのアップグレードが推奨されます。 詳細は [セキュリティ情報](https://blog.4d.com/ja/security-bulletin-two-cves-and-how-to-stay-secure/) を参照ください。
 
 :::
 
 #### インデックス再構築の警告
 
-4D 20 includes an ICU library update (see below) which will force an automatic rebuild of indexes of type alpha, text, and object. データファイルのサイズに応じて、この処理には時間がかかることがあるため、計画的なアップグレードが推奨されます。
+4D 20 では、ICUライブラリのアップデート (後述参照) により、文字列型、テキスト型、オブジェクト型のインデックスの再構築が強制されます。 データファイルのサイズに応じて、この処理には時間がかかることがあるため、計画的なアップグレードが推奨されます。
 
 :::caution 4D 20.1 index rebuild and client/server versions
 
-4D 20.1 also includes an ICU library update, which has the following consequences:
+4D 20.1 には ICUライブラリーのアップデートが含まれており、以下の影響があります:
 
 - 文字列型、テキスト型、オブジェクト型のインデックスの再構築が強制されます。
-- Because of sorting consistency, it requires that 4D remote clients and 4D Server use the same version: only remote 4D 20.1 can connect to 4D Server v20.1 and vice versa.
+- 並べ替えの一貫性のため、4Dリモートクライアントと 4Dサーバーは同じバージョンを使用する必要があります。4D 20.1 のリモートと 4D 20.1 の 4Dサーバーのみが互いに接続できます。
 
 :::
 
 #### ハイライト
 
-- 4D 20.2 is certified on macOS Sonoma (macOS 14).
+- 4D 20.2 は macOS Sonoma (macOS 14) 対応です。
 - (4D 20.1) New `plugins` property in the _options_ parameter for the [`Compile project`](https://doc.4d.com/4dv20/help/command/en/page1760.html) command.
 - 4D Server は、複数のジャーナルを自動的に統合します: [自動復元](../Backup/settings.md#自動復元)。
 - [IMAP Transporter クラス](../API/IMAPTransporterClass.md): [`.getBoxInfo()`](../API/IMAPTransporterClass.md#getboxinfo) が _id_ を返すようになりました。[`.selectBox()`](../API/IMAPTransporterClass.md#selectbox) が _id_, _flags_ および _permanentFlags_ を返すようになりました。[`.addFlags()`](../API/IMAPTransporterClass.md#addflags) と [`.removeFlags()`](../API/IMAPTransporterClass.md#removeflags) がカスタムキーワードをサポートするようになりました。
@@ -134,7 +134,7 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 
 #### 動作の変更
 
-- As of v20.2, 4D 20 LTS is no longer compatible with Windows Server 2012 R2.
+- v20.2 以降、4D 20 LTS は Windows Server 2012 R2 との互換性がなくなりました。
 - **警告**: [4D.FileHandle](../API/FileHandleClass.md) オブジェクトの [`offset`](../API/FileHandleClass.md#offset) の開始値が誤って 0 ではなく 1 に設定されていました。 **20.1 HF1** および **20 R2** のバージョンで 4D が修正され、この値が 0 になりました。
 - HTTP RFC に準拠するため、[`HTTPRequestClass.response.headers`](../API/HTTPRequestClass.md#response) プロパティは、すべてのヘッダー名を **小文字で** 返すようになりました。 以前と同じふるまいが必要な場合には、新しい [`HTTPRequestClass.response.rawHeaders`](../API/HTTPRequestClass.md#response) プロパティを使用します。
 - [`4D.HTTPRequest.new()`](../API/HTTPRequestClass.md#new) で HTTPリクエストを送信する際、TLS証明書が 4Dによって自動的に検証され、無効な場合はエラーで拒否されるようになりました。 新しい _option_ プロパティで、この検証を管理することができます。
@@ -186,8 +186,8 @@ Read [**What’s new in 4D 19 R7**](https://blog.4d.com/en-whats-new-in-4d-v19-r
 #### 動作の変更
 
 - 標準的なインターフェース (OS のファイルエクスプローラなど) との一貫性を保つため、行の選択/ドラッグ＆ドロップに関するリストボックスのルールが変更されました。 連続または不連続の選択行をクリックして移動するだけで、ドラッグできるようになり、**Alt** キーは不要になりました (ひきつづき以前のように使用することはできます)。 **Shift** または **Ctrl/Command** キーが押されている場合、マウスのクリックは押されたとき (マウスダウン) に考慮されます。 リストボックスでのドラッグ＆ドロップの詳細については、[このブログ記事](https:/blog.4d.com/list-boxes-say-goodbye-to-alt-key/) を参照し、[このHDI 4Dプロジェクト](https://github.com/4D-JP/HDI/releases/download/19r7/HDI_LB_DragAndDrop.zip) をダウンロードしてください。
-- The 4D internal build numbering has been modified as of 4D 19 R7:
-  - releases up to 4D 19 R6 (included) are numbered 282xxx,
+- 4D 19 R7 から 4D の内部ビルド番号が変更されました:
+  - 4D 19 R6 (含む) までのリリースは 282xxx の番号です。
   - releases from 4D 19 R7 will be numbered 100xxx.\
     なお、特定の 4Dバージョンは、ブランチ名とビルド番号により一意に識別されます。 ビルド番号は時系列に増加します。 ビルド番号は時系列に増加します。
 - Wakanda/4D Mobile REST プロトコルを使用してプロジェクトメソッドを呼び出す機能が削除されました。 [ORDAデータモデルクラス関数](../REST/ClassFunctions.md) または [/4DACTION URL](../WebServer/httpRequests.md#4daction) を代わりに使用することができます。
@@ -200,7 +200,7 @@ Read [**What’s new in 4D 19 R7**](https://blog.4d.com/en-whats-new-in-4d-v19-r
 - 4D iew Pro: new [VP CREATE TABLE](../ViewPro/method-list.md#vp-create-table) and [VP REMOVE TABLE](../ViewPro/method-list.md#vp-remove-table) commands to handle tables in sheets.
 - [Webデータエクスプローラー](../Admin/dataExplorer.md#基本) でリレート属性、計算属性、およびエイリアス属性を表示することができます。
 - 4D製品を改善し続けるために、実行中の 4D Server アプリケーションの使用状況データを自動的に収集します。 この処理はパフォーマンスに影響を与えません。 [4D がデータを収集する理由と方法](../Admin/data-collect.md) について詳細を説明する新しいページを参照ください。
-- Components compiled for Silicon: On macOS Silicon platforms (Apple ARM CPUs), components must be recompiled with 4D 19 R6 or higher to be used with this release.
+- Silicon用にコンパイルされたコンポーネント: macOS Siliconプラットフォーム (Apple ARM CPU) では、このリリースで使用するためには、コンポーネントを 4D 19 R6 以降で再コンパイルする必要があります。
 
 ## 4D 19 R5
 
@@ -282,11 +282,11 @@ ALERT($param1+" "+$param2)
 
 - 新しい [4D NetKit](https://github.com/4d/4D-NetKit) コンポーネントを使って、Microsoft Graph などのサードパーティーAPI に接続することができます。
 
-- 4D 19 R3 uses a stronger hashing algorithm for 4D user passwords: Bcrypt. ツールボックス、`CHANGE PASSWORD` コマンド、または `Set user properties` コマンドを使用してパスワードを変更した際に、この新しいアルゴリズムが自動的に使用されます。 Once a password is modified, opening the database with a version prior to 4D 19 R3 will cause an authentication denial for this account. If you use 4D passwords, it is highly recommended to backup the .4db file (binary databases) or directory.json file (projects) before upgrading to 4D 19 R3 or later.
+- 4D 19 R3 では、4Dユーザーパスワードに対して、bcrypt というより強力なハッシュ化アルゴリズムを使用しています。 ツールボックス、`CHANGE PASSWORD` コマンド、または `Set user properties` コマンドを使用してパスワードを変更した際に、この新しいアルゴリズムが自動的に使用されます。 パスワードが一度変更されると、4D 19 R3 より前のバージョンで同じデータベースを開いた際には、そのアカウントの認証が拒否されます (ログインできません)。 そのため、4Dパスワードを使用している場合には、4D 19 R3 以降のバージョンにアップグレードする前に .4db ファイル (バイナリデータベース) または directory.json ファイル (プロジェクトデータベース) をバックアップしておくことが強く推奨されます。
 
 - 正確性のため、`4D digest` 定数は、`4D REST digest` へと名称が改められました。
 
-- End-of-line and BOM management for XML commands: When opened in 4D 19 R3, projects or databases created with previous releases behave differently regarding default end-of-line characters and BOM management in XML documents: line feed (LF) characters are used instead of CR (on macOS), and byte order marks (BOM) are not included. これにより、VCS ツールとの互換性が改善されます。 必要であれば、`XML SET OPTIONS` コマンドを使用することで、v19 R2 以前の振る舞いに戻すことができます。 v19 R2 以前のバージョンから変換されたプロジェクトまたはデータベースにおいては、これらのオプションは 2つの互換性設定によって管理されます。
+- XML コマンドにおける改行文字と BOM 管理: 以前のバージョンで作成されたプロジェクトまたはデータベースが 4D 19 R3 で開かれた場合、XMLドキュメントにおける改行文字と BOM 管理に関わる振る舞いが異なります: macOS において CR の代わりにラインフィード(LF) が使用されるほか、バイトオーダーマーク (BOM) が含まれなくなります。 これにより、VCS ツールとの互換性が改善されます。 必要であれば、`XML SET OPTIONS` コマンドを使用することで、v19 R2 以前の振る舞いに戻すことができます。 v19 R2 以前のバージョンから変換されたプロジェクトまたはデータベースにおいては、これらのオプションは 2つの互換性設定によって管理されます。
 
 - ビルドされたプロジェクトで、ランタイムエクスプローラーへのショートカットが削除: シングルユーザー版の組み込みプロジェクトアプリケーションにおいて、**Cmd/Ctrl+Shift+F9** ショートカットは、ランタイムエクスプローラーを表示しないようになりました。 このショートカットは、ユーザーアプリケーション用のショートカットとして使用できるようになりました。 ランタイムエクスプローラーウィンドウは、新しい `OPEN RUNTIME EXPLORER` コマンドを使用することで呼び出し可能です。
 
@@ -311,7 +311,7 @@ ALERT($param1+" "+$param2)
 
 :::warning セキュリティに関する注記
 
-If your 4D applications use TLS connections, it is recommended that you upgrade to 4D 19.7 LTS build 288986 or higher. 詳細は [セキュリティ情報](https://blog.4d.com/ja/security-bulletin-two-cves-and-how-to-stay-secure/) を参照ください。
+4Dアプリケーションが TLS接続を使用する場合は、4D 19.7 LTS build 288986以上へのアップグレードが推奨されます。 詳細は [セキュリティ情報](https://blog.4d.com/ja/security-bulletin-two-cves-and-how-to-stay-secure/) を参照ください。
 
 :::
 
@@ -344,7 +344,7 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 | CEF       | 118                                    | 20 R3                | Chromium 5993                                                         |
 | Hunspell  | 1.7.2  | 20                   | 4D フォームと 4D Write Pro でスペルチェックに使用されます。                                |
 | PDFWriter | 4.3                    | 20                   | 12.2.1 で FreeType依存                   |
-| SpreadJS  | 16.2.6 | 20 R4                | 4D iew Pro engine                                                     |
+| SpreadJS  | 16.2.6 | 20 R4                | 4D View Pro エンジン                                                      |
 | OpenSSL   | 3.2.0  | 20 R4                | デフォルトの TLS/SSL セキュリティレベルがアップグレードされました。 リリース v20R4 の[動作の変更](#動作の変更)参照。 |
 | libZip    | 1.9.2  | 20                   | Zip クラス、4D Write Pro、svg および serverNet コンポーネントによって使用。                 |
 | LZMA      | 5.4.1  | 20                   |                                                                       |
