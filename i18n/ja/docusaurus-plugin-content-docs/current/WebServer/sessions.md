@@ -3,24 +3,24 @@ id: sessions
 title: Webセッション
 ---
 
-The 4D web server provides built-in features for managing **web sessions**. Creating and maintaining web sessions allows you to control and improve the user experience on your web application. When web sessions are enabled, web clients can reuse the same server context from one request to another.
+4D Webサーバーは、**Webセッション** を管理するビルトインの機能を提供します。 Webセッションを作成・維持することで、Webアプリケーション上のユーザーエクスペリエンスを管理・向上することができます。 Webセッションが有効かされていると、Webクライアントはリクエスト間で同じコンテキスト (セレクションや変数の値) を再利用できます。
 
-Web sessions allow to:
+Webセッションでは、以下のことが可能です:
 
-- handle multiple requests simultaneously from the same web client through an unlimited number of preemptive processes (web sessions are **scalable**),
-- manage session through a `Session` object and the [Session API](API/SessionClass.md),
-- store and share data between processes of a web client using the [.storage](../API/SessionClass.md#storage) of the session,
-- associate privileges to the user running the session.
+- 同一のWebクライアントからの複数のリクエストを、無制限のプリエンプティブプロセスで同時に処理 (Webセッションは **スケーラブル**です)。
+- `Session` オブジェクトと [Session API](API/SessionClass.md) を介したセッションの管理。
+- セッションの [.storage](../API/SessionClass.md#storage) を使用して、Webクライアントのプロセス間でデータを保存および共有。
+- セッションを実行しているユーザーに権限を関連付ける。
 
-## Usages
+## 用途
 
-Web sessions are used for:
+Webセッションは次のものに使用されます:
 
-- [Web applications](gettingStarted.md) sending http requests,
-- calls to the [REST API](../REST/authUsers.md), which are used by [remote datastores](../ORDA/remoteDatastores.md) and [Qodly forms](qodly-studio.md).
+- HTTPリクエストを送信する [Webアプリケーション](gettingStarted.md)
+- [リモートデータストア](../ORDA/remoteDatastores.md) や [Qodlyフォーム](qodly-studio.md) が使用する [REST API](../REST/authUsers.md) への呼び出し
 
 
-## Enabling web sessions
+## Webセッションの有効化
 
 セッション管理機能は、4D Webサーバー上で有効または無効にすることができます。 セッション管理を有効化する方法は複数あります:
 
@@ -58,11 +58,11 @@ Web sessions are used for:
 
 :::note
 
-Creating a web session for a REST request may require that a licence is available, see [this page](../REST/authUsers.md).
+RESTリクエストのための Webセッションを作成するには、利用可能なライセンスが必要な場合があります。詳細は [こちらのページ](../REST/authUsers.md) を参照ください。
 
 :::
 
-The `Session` object of the current session can then be accessed through the [`Session`](API/SessionClass.md#session) command in the code of any web processes.
+カレントセッションの `Session` オブジェクトは、あらゆる Webプロセスのコードにおいて [`Session`](API/SessionClass.md#session) コマンドを介してアクセスできます。
 
 ![alt-text](../assets/en/WebServer/schemaSession.png)
 
@@ -72,7 +72,7 @@ Webプロセスは通常終了せず、効率化のためにプールされリ�
 
 :::
 
-## Storing and sharing session information
+## セッション情報の保存と共有
 
 各 `Session` オブジェクトには、共有オブジェクトである [`.storage`](API/SessionClass.md#storage) プロパティが用意されています。 このプロパティにより、セッションで処理されるすべてのプロセス間で情報を共有することができます。
 
@@ -85,9 +85,9 @@ Webプロセスは通常終了せず、効率化のためにプールされリ�
 
 非アクティブな cookie の有効期限は、デフォルトでは 60分です。つまり、Webサーバーは、非アクティブなセッションを 60分後に自動的に閉じます。
 
-This timeout can be set using the [`.idleTimeout`](API/SessionClass.md#idletimeout) property of the `Session` object (the timeout cannot be less than 60 minutes) or the *connectionInfo* parameter of the [`Open datastore`](../API/DatastoreClass.md#open-datastore) command.
+このタイムアウトは、`Session` オブジェクトの [`.idleTimeout`](API/SessionClass.md#idletimeout) プロパティで設定できます (タイムアウトは 60分未満にはできません)。また、[`Open datastore`](../API/DatastoreClass.md#open-datastore)コマンドの *connectionInfo* パラメーターを使っても設定できます。
 
-When a web session is closed, if the [`Session`](API/SessionClass.md#session) command is called afterwards:
+Webセッションが閉じられた後に [`Session`](API/SessionClass.md#session) コマンドが呼び出されると:
 
 - `Session` オブジェクトには権限が含まれていません (ゲストセッション)。
 - [`.storage`](API/SessionClass.md#storage) プロパティは空です。
@@ -95,7 +95,7 @@ When a web session is closed, if the [`Session`](API/SessionClass.md#session) co
 
 :::info
 
-You can close a session from a Qodly form using the [**logout**](qodly-studio.md#logout) feature.
+[**ログアウト**](qodly-studio.md#ログアウト) 機能を使用して、Qodly フォームからのセッションを閉じることができます。
 
 :::
 
@@ -104,7 +104,7 @@ You can close a session from a Qodly form using the [**logout**](qodly-studio.md
 
 Webユーザーセッションには、権限を関連付けることができます。 セッションの権限に応じて、特定のアクセスや機能を Webサーバー上で提供することができます。
 
-You assign privileges using the [`.setPrivileges()`](API/SessionClass.md#setprivileges) function. コード内では、[`.hasPrivilege()`](API/SessionClass.md#hasprivilege) 関数を使ってセッションの権限をチェックし、アクセスを許可または拒否することができます。 By default, new sessions do not have any privilege: they are **Guest** sessions ([`.isGuest()`](API/SessionClass.md#isguest) function returns true).
+権限を割り当てるには、[`.setPrivileges()`](API/SessionClass.md#setprivileges) 関数を使用します。 コード内では、[`.hasPrivilege()`](API/SessionClass.md#hasprivilege) 関数を使ってセッションの権限をチェックし、アクセスを許可または拒否することができます。 デフォルトでは、新しいセッションは権限を持たず、**ゲスト** セッションとなります ([`.isGuest()`](API/SessionClass.md#isguest) 関数は true を返します)。
 
 例:
 
@@ -193,10 +193,10 @@ If ($sales#Null)
         End use
         WEB SEND HTTP REDIRECT("/authenticationOK.shtml")
     Else
-        WEB SEND TEXT("This password is wrong")
+        WEB SEND TEXT("パスワードに誤りがあります")
     End if
 Else
-    WEB SEND TEXT("This userId is unknown")
+    WEB SEND TEXT("この userId は登録されていません")
 End if
 ```
 
