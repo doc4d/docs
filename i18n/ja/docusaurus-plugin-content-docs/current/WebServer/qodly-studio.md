@@ -5,7 +5,7 @@ title: Qodly Studio for 4D
 
 :::caution デベロッパー・プレビュー
 
-Qodly Studio for 4D is currently in the **Developer Preview** phase. 本番環境で使用すべきではありません。
+Qodly Studio for 4D は現在、**デベロッパー・プレビュー** の段階です。 本番環境で使用すべきではありません。
 
 :::
 
@@ -24,7 +24,7 @@ Qodly Studio では、全く新しい WebUI を使い、データソースの概
 
 :::info
 
-The development with Qodly Studio for 4D requires at least a [4D Silver Partner license](https://us.4d.com/4d-partner-program). ライセンスが有効化されていない場合、Qodly Studio に関するオプションやメニュー項目は表示されません。
+Qodly Studio for 4D を使って開発するには、シルバー以上の [4Dパートナーライセンス](https://jp.4d.com/4d-partner-program) が必要です。 ライセンスが有効化されていない場合、Qodly Studio に関するオプションやメニュー項目は表示されません。
 
 :::
 
