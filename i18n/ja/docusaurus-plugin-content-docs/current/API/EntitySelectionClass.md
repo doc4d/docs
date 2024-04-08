@@ -73,9 +73,9 @@ title: EntitySelection
 
 任意の *settings* には、以下のプロパティを持つオブジェクトを渡せます:
 
-| プロパティ   | タイプ  | 説明                                                                                                           |
-| ------- | ---- | ------------------------------------------------------------------------------------------------------------ |
-| context | Text | Label for the [optimization context](../ORDA/client-server-optimization.md) applied to the entity selection. |
+| プロパティ   | タイプ  | 説明                                                                            |
+| ------- | ---- | ----------------------------------------------------------------------------- |
+| context | Text | エンティティセレクションに適用されている [最適化コンテキスト](../ORDA/client-server-optimization.md) のラベル。 |
 
 
 #### 例題
@@ -1659,12 +1659,11 @@ pathObjects コレクションには必要な数だけオブジェクトを追�
 
 
 ```4d
-// order by formula
+// フォーミュラでの並べ替え
  $sortedEntitySelection:=$entitySelection.orderBy("firstName asc, salary desc")
  $sortedEntitySelection:=$entitySelection.orderBy("firstName")
 
-
-  // order by collection with or without sort orders
+  // コレクションでの並べ替えと、昇順・降順の指定
  $orderColl:=New collection
  $orderColl.push(New object("propertyPath";"firstName";"descending";False))
  $orderColl.push(New object("propertyPath";"salary";"descending";True))
@@ -1672,7 +1671,6 @@ pathObjects コレクションには必要な数だけオブジェクトを追�
 
  $orderColl:=New collection
  $orderColl.push(New object("propertyPath";"manager.lastName"))
-
  $orderColl.push(New object("propertyPath";"salary"))
  $sortedEntitySelection:=$entitySelection.orderBy($orderColl)
 ```
