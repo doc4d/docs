@@ -130,11 +130,11 @@ title: DataStore
 *connectionInfo* で指定する 4Dデータベースはリモートデーターストアとして利用可能でなければなりません。つまり、以下の条件を満たしている必要があります:
 
 * データベースの Webサーバーは、http または https が有効化された状態で開始されていなければなりません。
-* the datastore must be exposed ([**Expose as REST server**](REST/configuration.md#starting-the-rest-server) option checked) as well as [dataclasses and attributes](../REST/configuration.md#exposing-tables-and-fields).
+* データストアは、[**RESTサーバーとして公開**](REST/configuration.md#restサーバーを開始する) オプションがチェックされている必要があります。また、[データクラスと属性](../REST/configuration.md#テーブルやフィールドの公開) も公開されている必要があります。
 
 :::note
 
-`Open datastore` requests rely on the 4D REST API and can require a 4D Client license to open the connection. Refer to the [user login mode section](../REST/authUsers.md#user-login-modes) to know how to configure the authentication depending on the selected current user login mode.
+`Open datastore` のリクエストは 4D REST API に依存し、接続を開くために 4D クライアントライセンスが必要な場合があります。 選択したカレントユーザーログインモードに応じて認証を構成する方法については、[ユーザーログインモードのセクション](../REST/authUsers.md#ユーザーログインモード) を参照ください。
 
 :::
 
