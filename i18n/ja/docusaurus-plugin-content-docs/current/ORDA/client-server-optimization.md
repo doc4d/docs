@@ -1,21 +1,21 @@
 ---
 id: client-server-optimization
-title: Client/Server Optimization
+title: クライアント/サーバーの最適化
 ---
 
-4D provides optimizations for ORDA requests that use entity selections or load entities in client/server architectures. この最適化機構は、ネットワーク間でやり取りされるデータの量を大幅に縮小させることで 4Dの実行速度を向上させます。 これには以下のような機能が含まれます:
+4Dは、クライアント/サーバーアーキテクチャーにおいてエンティティセレクションを使用、あるいはエンティティを読み込む ORDAリクエストについて最適化する機構を提供しています。 この最適化機構は、ネットワーク間でやり取りされるデータの量を大幅に縮小させることで 4Dの実行速度を向上させます。 これには以下のような機能が含まれます:
 
-- the **optimization context**
-- the **ORDA cache**
+- **最適化コンテキスト**
+- **ORDAキャッシュ**
 
-## Supported architectures
+## 対応しているアーキテクチャー
 
-ORDA client/server architectures that support the optimization are:
+最適化をサポートしている ORDAクライアント/サーバーアーキテクチャーは次のとおりです:
 
-- Server datastores accessed by 4D remote desktop applications through [**`ds`**](../API/DataStoreClass.md#ds),
-- [Remote datastores](remoteDatastores.md), accessed via [**`Open datastore`**](../API/DataStoreClass.md#open-datastore) (client REST requests).
+- 4Dリモートデスクトップアプリケーションによって [**`ds`**](../API/DataStoreClass.md#ds) を介してアクセスされるサーバーデータストア
+- [**`Open datastore`**](../API/DataStoreClass.md#open-datastore) を介してアクセスされる [リモートデータストア](remoteDatastores.md) (クライアントRESTリクエスト)
 
-## Optimization context
+## 最適化コンテキスト
 
 最適化コンテキストは、以下の実装に基づいています:
 
@@ -27,7 +27,7 @@ ORDA client/server architectures that support the optimization are:
   - [`dataClass.query()`](../API/DataClassClass.md#query)
   - [`entitySelection.query()`](../API/EntitySelectionClass.md#query)
 
-- サーバー上の同じエンティティセレクションに対してその後に送られたリクエストは、最適化コンテキストを再利用して、サーバーから必要な属性のみを取得していくことで、処理を速くします。 For example, in an [entity selection-based list box](#entity-selection-based-list-box), the learning phase takes place during the display of the first row. 次の行からは、表示が最適化されます。 以下の関数は、ソースのエンティティセレクションの最適化コンテキストを、戻り値のエンティティセレクションに自動的に付与します:
+- サーバー上の同じエンティティセレクションに対してその後に送られたリクエストは、最適化コンテキストを再利用して、サーバーから必要な属性のみを取得していくことで、処理を速くします。 たとえば、[エンティティセレクション型のリストボックス](#エンティティセレクション型リストボックス) では、先頭行の表示中に学習がおこなわれます。 次の行からは、表示が最適化されます。 以下の関数は、ソースのエンティティセレクションの最適化コンテキストを、戻り値のエンティティセレクションに自動的に付与します:
   - [`entitySelection.and()`](../API/EntitySelectionClass.md#and)
   - [`entitySelection.minus()`](../API/EntitySelectionClass.md#minus)
   - [`entitySelection.or()`](../API/EntitySelectionClass.md#or)
@@ -77,22 +77,22 @@ You can increase the benefits of the optimization by using the **context** prope
  var $data : Collection
  $querysettings:=New object("context";"shortList")
  $querysettings2:=New object("context";"longList")
- 
+
  $sel1:=ds.Employee.query("lastname = S@";$querysettings)
- $data:=extractData($sel1) // In extractData method an optimization is triggered   
- // and associated to context "shortList"
- 
+ $data:=extractData($sel1) // extractData メソッド内で最適化がトリガーされ、
+ // コンテキスト "shortList" に紐づけられます
+
  $sel2:=ds.Employee.query("lastname = Sm@";$querysettings)
- $data:=extractData($sel2) // In extractData method the optimization associated   
- // to context "shortList" is applied
- 
+ $data:=extractData($sel2) // extractData メソッド内で最適化がトリガーされ、
+ // コンテキスト "shortList" に紐づけられます
+
  $sel3:=ds.Employee.query("lastname = Smith";$querysettings2)
- $data:=extractDetailedData($sel3) // In extractDetailedData method an optimization  
- // is triggered and associated to context "longList"
- 
+ $data:=extractDetailedData($sel3) // extractDetailedData メソッド内で最適化がトリガーされ、
+ // コンテキスト "longList" に紐づけられます
+
  $sel4:=ds.Employee.query("lastname = Brown";$querysettings2)
- $data:=extractDetailedData($sel4) // In extractDetailedData method the optimization  
- // associated to context "longList" is applied
+ $data:=extractDetailedData($sel4) // extractDetailedData メソッド内で最適化がトリガーされ、
+ // コンテキスト "longList" に紐づけられます
 ```
 
 ### エンティティセレクション型リストボックス
@@ -111,9 +111,9 @@ A specific "page mode" context is also provided when loading the current entity 
 たとえば、次のコードは選択したエンティティをロードし、所属しているエンティティセレクションを走査します。 エンティティは独自のコンテキストにロードされ、リストボックスのコンテキストは影響されません:
 
 ```4d
- $myEntity:=Form.currentElement //current item expression
-  //... do something
- $myEntity:=$myEntity.next() //loads the next entity using the same context
+ $myEntity:=Form.currentElement // カレント項目の式
+  //... なんらかの処理
+ $myEntity:=$myEntity.next() // 次のエンティティも同じコンテキストを使用してロードされます
 ```
 
 ### コンテキストの事前設定
