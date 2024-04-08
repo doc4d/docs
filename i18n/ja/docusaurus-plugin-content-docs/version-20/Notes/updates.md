@@ -36,7 +36,7 @@ title: リリースノート
 
 #### ハイライト
 
-- *SpreadJS* updated to version 16.2.6 in 4D 20.2 HF1.
+- *SpreadJS* は 4D 20.2 HF1 でバージョン 16.2.6 にアップデートされました。
 - 4D 20.2 は macOS Sonoma (macOS 14) 対応です。
 - (4D 20.1) [`Compile project`](https://doc.4d.com/4dv20/help/command/ja/page1760.html) コマンドの *options* パラメーターに `plugins` プロパティが新しく追加されました。
 - 4D Server は、複数のジャーナルを自動的に統合します: [自動復元](../Backup/settings.md#自動復元)。
@@ -87,7 +87,7 @@ title: リリースノート
 - コレクションまたはエンティティセレクションをデータソースとするリストボックスの列で、[自動行高](../FormObjects/properties_CoordinatesAndSizing.md#自動行高) プロパティがサポートされるようになりました。
 - ORDA: [`setPrivileges()`](../API/SessionClass.md#setprivileges) を使ってセッションに割り当てる [権限](../ORDA/privileges.md) を定義するための *roles.json* ファイルをサポート。
 - Windows で [SDIモードでのアプリケーションのテスト](../Menus/sdi.md#sdiモード利用条件) をサポート。
-- 4D iew Pro:
+- 4D View Pro:
     - 表組みにおけるテーマのサポート: 新しい [VP SET TABLE THEME](../ViewPro/method-list.md#vp-set-table-theme) および [VP Get table theme](../ViewPro/method-list.md#vp-get-table-theme) コマンドの追加、[VP CREATE TABLE](../ViewPro/method-list.md#vp-create-table) コマンドにテーマオプションを追加
 
     - 新しい [VP Get table dirty rows](../ViewPro/method-list.md#vp-get-table-dirty-rows) コマンドの追加
@@ -116,7 +116,7 @@ title: リリースノート
 - [EntitySelection クラス](../API/EntitySelectionClass.md): [`.add()`](../API/EntitySelectionClass.md#add) 関数が *entitySelection* 引数を、[`.minus()`](../API/EntitySelectionClass.md#minus) 関数が *keepOrder* 引数をサポートするようになりました。
 - [`4D.HTTPRequest.new()`](../API/HTTPRequestClass.md#4dhttprequestnew) において、*automaticRedirections* および *decodeData* オプションをサポート。
 - 新しい [4DHTTPClientLog.txt](../Debugging/debugLogFiles.md#4dhttpclientlog) ログファイル。
-- 4D iew Pro: new table commands [VP Find table](../ViewPro/method-list.md#vp-find-table), [VP Get table column attributes](../ViewPro/method-list.md#vp-get-table-column-attributes), [VP Get table column index](../ViewPro/method-list.md#vp-get-table-column-index), [VP Get tables](../ViewPro/method-list.md#vp-get-tables), [VP INSERT TABLE COLUMNS](../ViewPro/method-list.md#vp-insert-table-columns), [VP INSERT TABLE ROWS](../ViewPro/method-list.md#vp-insert-table-rows), [VP REMOVE TABLE COLUMNS](../ViewPro/method-list.md#vp-remove-table-columns), [VP REMOVE TABLE ROWS](../ViewPro/method-list.md#vp-remove-table-rows), [VP RESIZE TABLE](../ViewPro/method-list.md#vp-resize-table), [VP SET TABLE COLUMN ATTRIBUTES](../ViewPro/method-list.md#vp-set-table-column-attributes).
+- 4D View Pro に新しい表組みコマンドが追加されました: [VP Find table](../ViewPro/method-list.md#vp-find-table), [VP Get table column attributes](../ViewPro/method-list.md#vp-get-table-column-attributes), [VP Get table column index](../ViewPro/method-list.md#vp-get-table-column-index), [VP Get tables](../ViewPro/method-list.md#vp-get-tables), [VP INSERT TABLE COLUMNS](../ViewPro/method-list.md#vp-insert-table-columns), [VP INSERT TABLE ROWS](../ViewPro/method-list.md#vp-insert-table-rows), [VP REMOVE TABLE COLUMNS](../ViewPro/method-list.md#vp-remove-table-columns), [VP REMOVE TABLE ROWS](../ViewPro/method-list.md#vp-remove-table-rows), [VP RESIZE TABLE](../ViewPro/method-list.md#vp-resize-table), [VP SET TABLE COLUMN ATTRIBUTES](../ViewPro/method-list.md#vp-set-table-column-attributes)。
 - コンポーネント名前空間が [ エクスプローラーに表示](../Extensions/develop-components#コンポーネント名前空間の宣言) されるようになりました。
 - テキストエリアおよび入力フォームオブジェクトにおいて、[角の半径プロパティ](../FormObjects/properties_CoordinatesAndSizing#角の半径) をサポート。
 - 4Dランゲージコマンド: doc.4d.com の [新着](https://doc.4d.com/4Dv19R7/4D/19-R7/What-s-new.901-5944528.ja.html) ページ。
@@ -139,7 +139,7 @@ title: リリースノート
 - 新しい [HTTPRequest](../API/HTTPRequestClass.md) クラス。
 - コードを呼び出すタイプの Collectionクラス関数が、*formula* 引数として Formulaオブジェクトをサポートするようになりました: [`.every()`](../API/CollectionClass.md#every), [`.filter()`](../API/CollectionClass.md#filter), [`.find()`](../API/CollectionClass.md#find), [`.findIndex()`](../API/CollectionClass.md#findindex), [`.map()`](../API/CollectionClass.md#map), [`.orderByMethod()`](../API/CollectionClass.md#orderbymethod), [`.reduce()`](../API/CollectionClass.md#reduce), [`.some()`](../API/CollectionClass.md#some), [`.sort()`](../API/CollectionClass.md#sort)
 - リストボックスのセルは、[横方向](../FormObjects/properties_CoordinatesAndSizing.md#横方向パディング) および [縦方向](../FormObjects/properties_CoordinatesAndSizing.md#縦方向パディング) のパディングをサポートするようになりました。
-- 4D iew Pro: new [VP CREATE TABLE](../ViewPro/method-list.md#vp-create-table) and [VP REMOVE TABLE](../ViewPro/method-list.md#vp-remove-table) commands to handle tables in sheets.
+- 4D View Pro: 新しい [VP CREATE TABLE](../ViewPro/method-list.md#vp-create-table) と [VP REMOVE TABLE](../ViewPro/method-list.md#vp-remove-table) コマンドを使用して、シート内のテーブルを操作します。
 - [Webデータエクスプローラー](../Admin/dataExplorer.md#基本) でリレート属性、計算属性、およびエイリアス属性を表示することができます。
 - 4D製品を改善し続けるために、実行中の 4D Server アプリケーションの使用状況データを自動的に収集します。 この処理はパフォーマンスに影響を与えません。 [4D がデータを収集する理由と方法](../Admin/data-collect.md) について詳細を説明する新しいページを参照ください。
 - Silicon用にコンパイルされたコンポーネント: macOS Siliconプラットフォーム (Apple ARM CPU) では、このリリースで使用するためには、コンポーネントを 4D 19 R6 以降で再コンパイルする必要があります。
@@ -159,10 +159,10 @@ title: リリースノート
 - *4DDiagnosticLog.txt* ファイルは、デフォルトでは高レベルの情報のみを記録します ([INFOレベル](../Debugging/debugLogFiles.md#4ddiagnosticlogtxt))。 `SET DATABASE PARAMETER` コマンドまたはログ設定ファイルの `Diagnostic log level` セレクターを使用して、記録する情報レベル (たとえばDEBUGレベル) を選択できるようになりました。
 - 非共有オブジェクトや非共有コレクションに対して `Use()` を呼び出しても何も起こりません (エラーが発生しなくなりました)。 したがって、Use() に渡されたオブジェクトやコレクションが実際に共有されているかどうかをチェックする意味はなくなりました。
 - 分かりやすさのため、2つの SQLコマンドにプレフィックスが付けられました: `GET DATA SOURCE LIST` は `SQL GET DATA SOURCE LIST`、`Get current data source` は `SQL Get current data source` に名称変更されました。
-- **4D iew Pro**:
+- **4D View Pro**:
     - 新しい [VP SET DATA CONTEXT](../ViewPro/method-list.md#vp-set-data-context)、[VP Get data context](../ViewPro/method-list.md#vp-get-data-context)、[VP SET BINDING PATH](../ViewPro/method-list.md#vp-set-binding-path)、および [VP Get binding path](../ViewPro/method-list.md#vp-get-binding-path) コマンドを使って、データコンテキストを作成し、その内容をシートのセルにバインドすることができます。
     - [VP EXPORT DOCUMENT](../ViewPro/method-list.md#vp-get-binding-path) と [VP Export to object](../ViewPro/method-list.md#vp-get-binding-path) は、データコンテキストの内容をセルの値としてエクスポートするための新しい `includeBindingSource` オプションを受け付けます。
-    - (Windows only) 4D iew Pro areas now use a new print settings window.
+    - (Windowsのみ) 4D View Pro エリアの印刷設定ウィンドウが新しくなりました。
 - **Webエリア**:
     + 新しい Windowsシステムのレンダリングエンジン: [Windowsシステムのレンダリングエンジン](../FormObjects/webArea_overview.md#webレンダリングエンジン) を使用している Webエリアは、**Microsoft Edge WebView2** をベースとするようになりました。 これにより、以下のような機能に影響があります:
         * `WA Create URL history menu` および `WA GET URL HISTORY` のコマンドは、カレントURL のみを返すようになりました。
@@ -189,7 +189,7 @@ WA OPEN URL(*;"WebArea";WA Get last filtered URL(*;"WebArea"))
 - コードナビゲーションを改善するため、[コードエディター](../code-editor/overview.md) にドロップダウンツールが追加され、コードにマーカーを追加できるようになりました。
 - 新しい環境設定: 一般ページの [**Project ソースファイルにトークンを含める**](../Preferences/general.md#project-ソースファイルにトークンを含める) および、メソッドページの [**クリップボードを表示**](../Preferences/methods.md#クリップボードを表示)。
 - エンティティを [lock/unlock](../REST/$lock.md) するための新しい REST リクエスト。
-- [4D iew Pro](../ViewPro/getting-started.md) chapter added with new commands: [VP Copy to object](../ViewPro/method-list.md#vp-copy-to-object), [VP MOVE CELLS](../ViewPro/method-list.md#vp-move-cells), [VP PASTE FROM OBJECT](../ViewPro/method-list.md#vp-paste-from-object).
+- [4D View Pro](../ViewPro/getting-started.md) の章が次の新コマンドとともに追加されました: [VP Copy to object](../ViewPro/method-list.md#vp-copy-to-object), [VP MOVE CELLS](../ViewPro/method-list.md#vp-move-cells), [VP PASTE FROM OBJECT](../ViewPro/method-list.md#vp-paste-from-object).
 - 新しい [SystemWorker クラス](../API/SystemWorkerClass.md)。
 - ORDA でエイリアス属性をサポートしたことに起因する競合を解決するため、`Alias selection` 定数の名称を `Allow alias files` に変更しました。
 - ORDA の仕様により適合するため、*ヌル値に空値をマップ* フィールドプロパティは、4D 19 R4以降で作成されたデータベースにおいてはデフォルトでチェックされないようになります。 以前のバージョンの 4D から変換されたデータベースにおいては、データベース設定の "フィールド作成時にヌル値を空値にマップをデフォルトでチェックを外す" オプションを選択することで、この新しいデフォルトの振る舞いを有効化することができます。 ORDA では NULL が完全にサポートされるようになったため、今後は使用することが推奨されます。
@@ -233,7 +233,7 @@ ALERT($param1+" "+$param2)
 - ビルドされたプロジェクトで、ランタイムエクスプローラーへのショートカットが削除: シングルユーザー版の組み込みプロジェクトアプリケーションにおいて、**Cmd/Ctrl+Shift+F9** ショートカットは、ランタイムエクスプローラーを表示しないようになりました。 このショートカットは、ユーザーアプリケーション用のショートカットとして使用できるようになりました。 ランタイムエクスプローラーウィンドウは、新しい `OPEN RUNTIME EXPLORER` コマンドを使用することで呼び出し可能です。
 - 4D Server のデバッグ機能の拡張: 4D Server はインタープリターモードにおいて、スケーラブルWeb セッションを含め、全種類のプロセスをデバッグできるようになりました。 これには、デバッガーをサーバーまたはリモートクライアントで有効化するだけです。   
   *警告: インタープリターモードにおいて、サーバーでデバッガーが有効化された場合 (デフォルト) には、サーバーマシン上でのデバッグを可能にするため、すべてのサーバープロセスが自動でコオペラティブ実行されます。 これは、4D Server v19 R3 以降に変換されたアプリケーションにおいては、パフォーマンスに重大な影響を生ずる可能性があります。 サーバーをプリエンプティブ実行に戻すには、サーバーのデバッガーを無効化します (そして必要な場合にはリモートクライアント側でデバッガーを有効化します)。*
-- Windows で、4D 19 R3 以降に作成された 4Dプロジェクトおよびデータベースは、フォームにおいて [DirectWrite API](https://learn.microsoft.com/ja-jp/windows/win32/DirectWrite/direct-write-portal) を使用します。 この API はテキストレンダリングを、特に高DPI 環境において改善させます。 スタティックテキスト、入力テキスト、チェックボックス、ボタン、ラジオボタンのテキストレンダリングに対して DirectWrite が使用されます。 リストボックスは、既に DirectWrite を使用しています。 A compatibility option allows you to enable DirectWrite in projects and databases created with previous 4D ersions.
+- Windows で、4D 19 R3 以降に作成された 4Dプロジェクトおよびデータベースは、フォームにおいて [DirectWrite API](https://learn.microsoft.com/ja-jp/windows/win32/DirectWrite/direct-write-portal) を使用します。 この API はテキストレンダリングを、特に高DPI 環境において改善させます。 スタティックテキスト、入力テキスト、チェックボックス、ボタン、ラジオボタンのテキストレンダリングに対して DirectWrite が使用されます。 リストボックスは、既に DirectWrite を使用しています。 以前の 4D のバージョンで作成されたプロジェクトやデータベースにおいても、互換性オプションを使用することで DirectWrite を有効化することができます。
 - Silicon (Apple ARM CPU) をターゲットに 4D 19.0 でコンパイルされたコンポーネントを使用しており、そのコンポーネント内で `Count parameters` コマンドを呼んでいる場合、4D 19 R3 以降のリリースとの互換性のために、4D 19 R3 でコンポーネントを再コンパイルすることが推奨されます。 コンポーネントが Silicon 向けにコンパイルされていない場合、再コンパイルの必要はありません。
 
 
@@ -287,7 +287,7 @@ ALERT($param1+" "+$param2)
 </details>
 
 
-## Library table (4D 20 LTS)
+## ライブラリの一覧 (4D 20 LTS)
 
 
 
