@@ -130,11 +130,11 @@ El comando `Open datastore` <!-- REF #_command_.Open datastore.Summary -->conect
 La base de datos *connectionInfo* 4D debe estar disponible como almacén de datos remoto, es decir:
 
 * su servidor web debe ser lanzado con http y/o https activado,
-* the datastore must be exposed ([**Expose as REST server**](REST/configuration.md#starting-the-rest-server) option checked) as well as [dataclasses and attributes](../REST/configuration.md#exposing-tables-and-fields).
+* el datastore debe ser expuesto (opción [**Exponer como servidor REST**](REST/configuration.md#starting-the-rest-server) marcada) así como también los [dataclasses y atributos](../REST/configuration.md#exposing-tables-and-fields).
 
 :::note
 
-`Open datastore` requests rely on the 4D REST API and can require a 4D Client license to open the connection. Refer to the [user login mode section](../REST/authUsers.md#user-login-modes) to know how to configure the authentication depending on the selected current user login mode.
+Las peticiones `Open datastore` dependen de la API REST 4D y pueden requerir una licencia 4D Client para abrir la conexión. Consulte la sección [User login mode](../REST/authUsers.md#user-login-modes) para saber cómo configurar la autenticación dependiendo del modo de inicio de sesión actual seleccionado.
 
 :::
 
@@ -446,19 +446,19 @@ Otras funcionalidades y servicios de 4D, como [backup](../Backup/backup.md), [vs
 Desea crear una copia de la carpeta de datos junto con su archivo de historial actual:
 
 ```4d
-$destination:=Folder(fk documents folder).folder("Archive")
+$destination:=Folder(fk documents folder).folder("Archive") 
 $destination.create()
 
-ds.flushAndLock() //Block write operations from other processes
+ds.flushAndLock() //Bloquear operaciones de escritura de otros procesos
 
-$dataFolder:=Folder(fk data folder)
-$dataFolder.copyTo($destination) //Copy the data folder
+$dataFolder:=Folder(fk data folder) 
+$dataFolder.copyTo($destination) //Copiar la carpeta de datos
 
-$oldJournalPath:=New log file //Close the journal and create a new one
-$oldJournal:=File($oldJournalPath; fk platform path)
-$oldJournal.moveTo($destination) //Save the old journal with data
+$oldJournalPath:=New log file //Cerrar el historial y crear uno nuevo
+$oldJournal:=File($oldJournalPath; fk platform path) 
+$oldJournal.moveTo($destination) //Guardar el antiguo historial con datos
 
-ds.unlock() //Our copy is over, we can now unlock the datastore
+ds.unlock() //Nuestra copia ha terminado, ahora podemos desbloquear el datastore
 ```
 
 #### Ver también
@@ -492,7 +492,7 @@ ds.unlock() //Our copy is over, we can now unlock the datastore
 
 La función `.getAllRemoteContexts()` <!-- REF #DataStoreClass.getAllRemoteContexts().Summary -->devuelve una colección de objetos que contienen información sobre todos los contextos de optimización de activos en el almacén de datos<!-- END REF -->.
 
-> For more information on how contexts can be created, see [client/server optimization](../ORDA/client-server-optimization.md#optimization-context).
+> Para más información sobre cómo se pueden crear contextos, ver [Optimización cliente/servidor](../ORDA/client-server-optimization.md#optimization-context).
 
 Cada objeto de la colección devuelta contiene las propiedades listadas en la sección.[`.getRemoteContextInfo()`](#properties-of-the-returned-object).
 
@@ -690,7 +690,7 @@ En un almacén de datos remoto:
 
 La función `.getRemoteContextInfo()` <!-- REF #DataStoreClass.getRemoteContextInfo().Summary --> devuelve un objeto que contiene información sobre el contexto de optimización *contextName* en el datastore.<!-- END REF -->.
 
-For more information on how optimization contexts can be created, see [client/server optimization](../ORDA/client-server-optimization.md#optimization-context).
+Para más información sobre cómo se pueden crear contextos de optimización, ver [Optimización cliente/servidor](../ORDA/client-server-optimization.md#optimization-context).
 
 #### Objeto devuelto
 
@@ -1069,7 +1069,7 @@ Cuando se pasa un contexto a las funciones de clase ORDA, la optimización de la
 * la primera entidad no está totalmente cargada como se hace en el modo automático
 * las páginas de 80 entidades (o de `pageLength` entidades) se piden inmediatamente al servidor con sólo los atributos del contexto
 
-> For more information on how optimization contexts are built, refer to the [client/server optimization paragraph](../ORDA/client-server-optimization.md#optimization-context)
+> Para más información sobre cómo se crean los contextos de optimización, consulte el [párrafo de optimización cliente/servidor](../ORDA/client-server-optimization.md#optimization-context)
 
 En *contextName*, pase el nombre del contexto de optimización para vincularlo a los atributos de la dataclass.
 
