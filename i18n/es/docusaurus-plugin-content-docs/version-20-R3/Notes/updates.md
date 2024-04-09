@@ -19,7 +19,7 @@ Read [**What’s new in 4D 20 R3**](https://blog.4d.com/en-whats-new-in-4d-v20-R
 - Soporte para [inicializar el valor de la variable y el tipo de datos en la línea de declaración](../Concepts/variables/#initializing-variables-in-the-declaration-line).
 - Los parámetros del archivo de historial ahora [se guardan con el archivo de datos actual](../Backup/settings.md#log-file-management)
 - Nueva sintaxis para [declarar parámetros variables](../Concepts/parameters.md#declaring-variadic-parameters)
-- 4D iew Pro: Support for the [import](../ViewPro/method-list.md#vp-import-from-blob) and [export](../ViewPro/method-list.md#vp-export-to-blob) of 4D iew Pro documents in Blob format.
+- 4D View Pro: soporte de la [importación](../ViewPro/method-list.md#vp-import-from-blob) y de la [exportación](../ViewPro/method-list.md#vp-export-to-blob) de documentos 4D View Pro al formato Blob.
 - Comandos del lenguaje 4D: [página Novedades](https://doc.4d.com/4Dv20R3/4D/20-R3/What-s-new.901-6531224.en.html) en doc.4d.com.
 - 4D Write Pro: [página Novedades](https://doc.4d.com/4Dv20R3/4D/20-R3/What-s-new.901-6475174.en.html) en doc.4d.com.
 - [**Fixed bug list**](https://bugs.4d.fr/fixedbugslist?version=20_R3): list of all bugs that have been fixed in 4D 20 R3.
@@ -45,7 +45,7 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 
 - Nueva [clase WebSocket](../API/WebSocketClass.md) para crear y gestionar conexiones WebSocket cliente desde 4D.
 - Nueva [configuración de interfaz](../settings/client-server.md#network-layer) de la capa de red QUIC.
-- 4D iew Pro: Support of the **.sjs** file format for the [import](../ViewPro/method-list.md#vp-import-document) and [export](../ViewPro/method-list.md#vp-export-document) of documents.
+- 4D View Pro: soporte del formato de archivo **.sjs** para [la importación](../ViewPro/method-list.md#vp-import-document) y la [exportación](../ViewPro/method-list.md#vp-export-document) de documentos.
 - Comandos del lenguaje 4D: [página Novedades](https://doc.4d.com/4Dv20R2/4D/20-R2/What-s-new.901-6398284.en.html) en doc.4d.com.
 - 4D Write Pro: [página Novedades](https://doc.4d.com/4Dv20R2/4D/20-R2/What-s-new.901-6390313.en.html) en doc.4d.com.
 - Interfaz 4D Write Pro: nuevo [Asistente de tablas](../WritePro/writeprointerface.md).
@@ -137,7 +137,7 @@ Read [**What’s new in 4D 19 R8**](https://blog.4d.com/en-whats-new-in-4d-v19-r
 - Los listboxes con fuentes de datos colección o selección de entidades ahora soportan la propiedad de columna [Alto de línea automático](../FormObjects/properties_CoordinatesAndSizing.md#automatic-row-height).
 - ORDA: soporte del archivo *roles.json* para definir [privilegios](../ORDA/privileges.md) asignados a la sesión con [`setPrivileges()`](../API/SessionClass.md#setprivileges).
 - Soporte del [modo SDI en el modo test application](../Menus/sdi.md#sdi-mode-availability) en Windows.
-- 4D iew Pro:
+- 4D View Pro:
     - soporte de temas en tablas: nuevos comandos [VP SET TABLE THEME](../ViewPro/method-list.md#vp-set-table-theme) y [VP Get table theme](../ViewPro/method-list.md#vp-get-table-theme), soporte de opciones de tema en [VP CREATE TABLE](../ViewPro/method-list.md#vp-create-table)
     - nuevo comando [VP Get table dirty rows](../ViewPro/method-list.md#vp-get-table-dirty-rows)
 - Comandos del lenguaje 4D: [página Novedades](https://doc.4d.com/4Dv19R8/4D/19-R8/What-s-new.901-6101683.en.html) en doc.4d.com.
@@ -165,7 +165,7 @@ Read [**What’s new in 4D 19 R7**](https://blog.4d.com/en-whats-new-in-4d-v19-r
 - [Clase Entity selection](../API/EntitySelectionClass.md): [`.add()`](../API/EntitySelectionClass.md#add) soporta un parámetro *entitySelection*, [`.minus()`](../API/EntitySelectionClass.md#minus) soporta un parámetro *keepOrder*.
 - Soporte de las opciones *automaticRedirections* y *decodeData* en [`4D.HTTPRequest.new()`](../API/HTTPRequestClass.md#4dhttprequestnew).
 - Nuevo archivo de registro [4DHTTPClientLog.txt](../Debugging/debugLogFiles.md#4dhttpclientlog).
-- 4D iew Pro: new table commands [VP Find table](../ViewPro/method-list.md#vp-find-table), [VP Get table column attributes](../ViewPro/method-list.md#vp-get-table-column-attributes), [VP Get table column index](../ViewPro/method-list.md#vp-get-table-column-index), [VP Get tables](../ViewPro/method-list.md#vp-get-tables), [VP INSERT TABLE COLUMNS](../ViewPro/method-list.md#vp-insert-table-columns), [VP INSERT TABLE ROWS](../ViewPro/method-list.md#vp-insert-table-rows), [VP REMOVE TABLE COLUMNS](../ViewPro/method-list.md#vp-remove-table-columns), [VP REMOVE TABLE ROWS](../ViewPro/method-list.md#vp-remove-table-rows), [VP RESIZE TABLE](../ViewPro/method-list.md#vp-resize-table), [VP SET TABLE COLUMN ATTRIBUTES](../ViewPro/method-list.md#vp-set-table-column-attributes).
+- 4D View Pro: nuevos comandos de tabla [VP Find table](../ViewPro/method-list.md#vp-find-table), [VP Get table column attributes](../ViewPro/method-list.md#vp-get-table-column-attributes), [VP Get table column index](../ViewPro/method-list.md#vp-get-table-column-index), [VP Get tables](../ViewPro/method-list.md#vp-get-tables), [VP INSERT TABLE COLUMNS](../ViewPro/method-list.md#vp-insert-table-columns), [VP INSERT TABLE ROWS](../ViewPro/method-list.md#vp-insert-table-rows), [VP REMOVE TABLE COLUMNS](../ViewPro/method-list.md#vp-remove-table-columns), [VP REMOVE TABLE ROWS](../ViewPro/method-list.md#vp-remove-table-rows), [VP RESIZE TABLE](../ViewPro/method-list.md#vp-resize-table), [VP SET TABLE COLUMN ATTRIBUTES](../ViewPro/method-list.md#vp-set-table-column-attributes).
 - Los espacios de nombres de los componentes se [muestran ahora en el Explorador](../Extensions/develop-components.md#declaring-the-component-namespace).
 - Los objetos de tipo área de texto y formulario de entrada ahora soportan la propiedad [corner radius](../FormObjects/properties_CoordinatesAndSizing.md#corner-radius).
 - Comandos del lenguaje 4D: [página Novedades](https://doc.4d.com/4Dv19R7/4D/19-R7/What-s-new.901-5944528.en.html) en doc.4d.com.
@@ -188,7 +188,7 @@ Read [**What’s new in 4D 19 R7**](https://blog.4d.com/en-whats-new-in-4d-v19-r
 - Nueva clase [HTTPRequest](../API/HTTPRequestClass.md).
 - Las funciones de colección que pueden llamar a código ahora soportan objetos función como parámetro *formula*: [`.every()`](../API/CollectionClass.md#every), [`.filter()`](../API/CollectionClass.md#filter), [`.find()`](../API/CollectionClass.md#find), [`.findIndex()`](../API/CollectionClass.md#findindex), [`.map()`](../API/CollectionClass.md#map), [`.orderByMethod()`](../API/CollectionClass.md#orderbymethod), [`.reduce()`](../API/CollectionClass.md#reduce), [`.some()`](../API/CollectionClass.md#some), [`.sort()`](../API/CollectionClass.md#sort)
 - Las celdas listbox soportan el espacio [horizontal](../FormObjects/properties_CoordinatesAndSizing.md#horizontal-padding) y [vertical](../FormObjects/properties_CoordinatesAndSizing.md#vertical-padding).
-- 4D iew Pro: new [VP CREATE TABLE](../ViewPro/method-list.md#vp-create-table) and [VP REMOVE TABLE](../ViewPro/method-list.md#vp-remove-table) commands to handle tables in sheets.
+- 4D View Pro: nuevos comandos [VP CREATE TABLE](../ViewPro/method-list.md#vp-create-table) y [VP REMOVE TABLE](../ViewPro/method-list.md#vp-remove-table) para manejar tablas en las hojas.
 - Posibilidad de ver los atributos relacionados, calculados y alias en el [explorador de datos web](../Admin/dataExplorer.md#basics).
 - Para que nuestros productos sean siempre mejores, ahora recogemos automáticamente los datos relativos a las estadísticas de uso de las aplicaciones 4D Server en funcionamiento. Esto no tendrá ningún impacto en el rendimiento. Consulte la nueva página en la que se explica [por qué y cómo 4D recopila datos](../Admin/data-collect.md).
 - Components compiled for Silicon: On macOS Silicon platforms (Apple ARM CPUs), components must be recompiled with 4D 19 R6 or higher to be used with this release.
@@ -208,10 +208,10 @@ Read [**What’s new in 4D 19 R7**](https://blog.4d.com/en-whats-new-in-4d-v19-r
 - El archivo *4DDiagnosticLog.txt* sólo registra información de alto nivel por defecto ([nivel INFO](../Debugging/debugLogFiles.md#4ddiagnosticlogtxt). Ahora puede seleccionar el nivel de información que desea registrar (por ejemplo, información de nivel DEBUG) utilizando el selector `Diagnostic log level` del comando `SET DATABASE PARAMETER` o el archivo de configuración del registro.
 - Llamar a `Use()` sobre un objeto no compartido o una colección no compartida no hace nada (ya no genera un error). Por lo tanto, ahora es inútil comprobar si el objeto o colección pasado a Use() es realmente compartido.
 - Para mayor claridad, se han antepuesto dos comandos SQL: `GET DATA SOURCE LIST` se ha renombrado a `SQL GET DATA SOURCE LIST`, `Get current data source` se ha renombrado a `SQL Get current data source`.
-- **4D iew Pro**:
+- **4D View Pro**:
     - Los nuevos comandos [VP SET DATA CONTEXT](../ViewPro/method-list.md#vp-set-data-context), [VP Get data context](../ViewPro/method-list.md#vp-get-data-context), [VP SET BINDING PATH](../ViewPro/method-list.md#vp-set-binding-path), [VP Get binding path](../ViewPro/method-list.md#vp-get-binding-path) permiten crear contextos de datos y vincular su contenido a las celdas de la hoja.
     - [VP EXPORT DOCUMENT](../ViewPro/method-list.md#vp-get-binding-path) y [VP Export to object](../ViewPro/method-list.md#vp-get-binding-path) aceptan ahora la nueva opción `includeBindingSource` que exporta el contenido de un contexto de datos como valores de celda.
-    - (Windows only) 4D iew Pro areas now use a new print settings window.
+    - (Sólo Windows) Las áreas de 4D View Pro utilizan ahora una nueva ventana de configuración de impresión.
 - **Áreas web**:
     + Nuevo motor de renderizado del sistema Windows: las áreas web que utilizan el motor de renderizado del sistema Windows [](../FormObjects/webArea_overview.md#web-rendering-engine) se basan ahora en **Microsoft Edge WebView2**. Esto afecta a las siguientes funcionalidades:
         * Los comandos `WA Create URL history menu` y `WA GET URL HISTORY` sólo devuelven la URL actual.
@@ -239,7 +239,7 @@ WA OPEN URL(*;"WebArea";WA Get last filtered URL(*;"WebArea"))
 - El [editor de código](../code-editor/overview.md) ahora incluye una herramienta desplegable y soporta marcadores para una mejor navegación por el código.
 - Nuevas Preferencias: [**Incluir tokens en los archivos fuente del proyecto**](../Preferences/general.md#include-tokens-in-project-source-files) y [**Mostrar portapapeles**](../Preferences/methods.md#show-clipboards) en la página Métodos.
 - Nueva petición REST para las entidades [lock/unlock](../REST/$lock.md).
-- [4D iew Pro](../ViewPro/getting-started.md) chapter added with new commands: [VP Copy to object](../ViewPro/method-list.md#vp-copy-to-object), [VP MOVE CELLS](../ViewPro/method-list.md#vp-move-cells), [VP PASTE FROM OBJECT](../ViewPro/method-list.md#vp-paste-from-object).
+- [4D View Pro](../ViewPro/getting-started.md) capítulo añadido con nuevos comandos: [VP Copy to object](../ViewPro/method-list.md#vp-copy-to-object), [VP MOVE CELLS](../ViewPro/method-list.md#vp-move-cells), [VP PASTE FROM OBJECT](../ViewPro/method-list.md#vp-paste-from-object).
 - Nueva [clase SystemWorker](../API/SystemWorkerClass.md).
 - La constante `Alias selection` ha pasado a llamarse `Allow alias files` para resolver un conflicto derivado del soporte de atributos de alias en ORDA.
 - For better compliance with ORDA specifications, the *Map NULL values to blank values* field property is now unchecked by default in databases created with 4D 19 R4 and higher. También puede activar este comportamiento por defecto en sus bases de datos convertidas de versiones anteriores seleccionando la opción de compatibilidad Asignar valores NULL a valores vacíos desmarcada por defecto en la creación de campos. Ahora se recomienda trabajar con valores Null, ya que ORDA los soporta completamente.
@@ -347,7 +347,7 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 | CEF       | 118            | 20 R3             | Chromium 5993                                                                                                 |
 | Hunspell  | 1.7.2          | 20                | Utilizado para la corrección ortográfica en formularios 4D y 4D Write Pro                                     |
 | PDFWriter | 4.3            | 20                | Dependencia FreeType en 12.2.1                                                                                |
-| SpreadJS  | 16.0.4         | 20                | 4D iew Pro engine                                                                                             |
+| SpreadJS  | 16.0.4         | 20                | Motor 4D View Pro                                                                                             |
 | OpenSSL   | 3.1.1          | 20                |                                                                                                               |
 | libZip    | 1.9.2          | 20                | Utilizado por los componentes zip class, 4D Write Pro, svg y serverNet                                        |
 | LZMA      | 5.4.1          | 20                |                                                                                                               |
