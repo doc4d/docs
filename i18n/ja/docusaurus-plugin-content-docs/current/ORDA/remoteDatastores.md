@@ -4,18 +4,18 @@ title: リモートデータストア
 ---
 
 
-A **remote datastore** is a reference, on a local 4D application (4D or 4D Server), to a [datastore](dsMapping.md#datastore) stored in another 4D application.
+**リモートデータストア** とは、ローカルの 4Dアプリケーション (4D または4D Server) 上で使用される、別の 4Dアプリケーションの [データストア](dsMapping.md#データストア) への参照です。
 
-The local 4D application connects to and references the remote datastore through a call to the [`Open datastore`](../API/DataStoreClass.md#open-datastore) command.
+ローカルの 4Dアプリケーションは、[`Open datastore`](../API/DataStoreClass.md#open-datastore) コマンドを呼び出すことで、リモートデータストアに接続し参照します。
 
-On the remote machine, 4D opens a [session](../WebServer/sessions.md) to handle requests from the application that call `Open datastore`. Requests internally use the [REST API](../REST/gettingStarted.md), which means that they might require [available licenses](../REST/authUsers.md).
+リモートマシン上で、4D は [セッション](../WebServer/sessions.md) を開いて、`Open datastore` を呼び出したアプリケーションからのリクエストを処理します。 リクエストは内部で [REST API](../REST/gettingStarted.md) を使用し、これには [利用可能なライセンス](../REST/authUsers.md) が必要な場合があります。
 
 
-## Using web sessions
+## Webセッションの使用
 
-When you work with a remote datastore referenced through calls to the [`Open datastore`](../API/DataStoreClass.md#open-datastore) command, the connection with the requesting processes is handled via [web sessions](../WebServer/sessions.md) on the remote machine.
+[`Open datastore`](../API/DataStoreClass.md#open-datastore) コマンドによって参照されるリモートデータストアの場合、リクエスト元プロセスとの接続はリモートマシン上では [Webセッション](../WebServer/sessions.md) により管理されます。
 
-The web session created on the remote datastore is identified using a internal session ID which is associated to the `localID` on the 4D application side. データ、エンティティセレクション、エンティティへのアクセスはこのセッションによって自動的に管理されます。
+リモートデータストア上で作成される Webセッションは内部的にセッションID によって識別され、4Dアプリケーション上では `localID` と紐づいています。 データ、エンティティセレクション、エンティティへのアクセスはこのセッションによって自動的に管理されます。
 
 `localID` はリモートデータストアに接続しているマシンにおけるローカルな識別IDです:
 
@@ -42,9 +42,9 @@ The web session created on the remote datastore is identified using a internal s
 
 ## セッションの終了
 
-As described in the [session lifetime](../WebServer/seesions.md#session-lifetime) paragraph, a web session is automatically closed by 4D when there has been no activity during its timeout period. デフォルトのタイムアウト時間は 60分です。 *Open datastore* コマンドの `connectionInfo` パラメーターを指定して、タイムアウト時間を変更することができます。
+[セッションの有効期限](../WebServer/sessions.md#セッションの有効期限) の段落で説明されているように、アクティビティなしにタイムアウト時間が経過すると、4D は自動的にセッションを終了します。 デフォルトのタイムアウト時間は 60分です。 *Open datastore* コマンドの `connectionInfo` パラメーターを指定して、タイムアウト時間を変更することができます。
 
-セッション終了後にリクエストがリモートデータストアに送信された場合、セッションは可能な限り (ライセンスがあり、サーバーが停止していない、など) 再開されます。 However, keep in mind that the context of the session regarding locks and transactions is lost (see below).
+セッション終了後にリクエストがリモートデータストアに送信された場合、セッションは可能な限り (ライセンスがあり、サーバーが停止していない、など) 再開されます。 ただしセッションが再開しても、ロックやトランザクションに関わるコンテキストは失われていることに留意が必要です (後述参照)。
 
 
 ## ロッキングとトランザクション
