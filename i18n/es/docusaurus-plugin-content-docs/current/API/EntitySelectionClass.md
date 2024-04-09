@@ -1712,12 +1712,11 @@ Si pasa una ruta de atributo inválida en *pathString* o *pathObject*, la funci�
 
 
 ```4d
-// order by formula
+// ordenar por fórmula
  $sortedEntitySelection:=$entitySelection.orderBy("firstName asc, salary desc")
  $sortedEntitySelection:=$entitySelection.orderBy("firstName")
 
-
-  // order by collection with or without sort orders
+   // ordenar por colección con o sin órdenes de clasificación
  $orderColl:=New collection
  $orderColl.push(New object("propertyPath";"firstName";"descending";False))
  $orderColl.push(New object("propertyPath";"salary";"descending";True))
