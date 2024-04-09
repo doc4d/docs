@@ -49,7 +49,7 @@ $city:=ds.City.getCity("Aguada")
 
 
 
-ORDAユーザークラスに定義された関数には、引数を渡すことができます。 On the server side, they will be received in the [declared parameters](../Concepts/parameters.md#declaring-parameters) of the class functions.
+ORDAユーザークラスに定義された関数には、引数を渡すことができます。 サーバーサイドでこれらの引数は、クラス関数の [宣言されたパラメーター](../Concepts/parameters.md#パラメーターの宣言) に受け渡されます。
 
 次のルールが適用されます:
 
@@ -123,7 +123,7 @@ ORDAユーザークラスに定義された関数には、引数を渡すこと�
 US_Cities `DataStore`クラスは API を提供しています:
 
 ```  
-// DataStore class
+// DataStore クラス
 
 Class extends DataStoreImplementation
 
@@ -145,10 +145,10 @@ exposed Function getName() : Text
 
 ### DataClassクラス関数を使用する
 
-`City` DataClassクラスは、引数として受け取った名前をもとに City エンティティを返す API を提供しています:
+`City` の DataClassクラスは、引数として受け取った名前をもとに City エンティティを返す API を提供しています:
 
 ```
-// City class
+// Cityクラス
 
 Class extends DataClass
 
@@ -191,10 +191,10 @@ exposed Function getCity($city : Text ) : cs.CityEntity
 
 ### Entityクラス関数を使用する
 
-`CityEntity` Entityクラスは API を提供しています:
+`CityEntity` の Entityクラスは API を提供しています:
 
 ```
-// CityEntity class
+// CityEntityクラス
 
 Class extends Entity
 
@@ -217,10 +217,10 @@ exposed Function getPopulation()
 
 ### EntitySelectionクラス関数を使用する
 
-`CitySelection` EntitySelectionクラスは API を提供しています:
+`CitySelection` の EntitySelectionクラスは API を提供しています:
 
 ```
-// CitySelection class
+// CitySelection クラス
 
 Class extends EntitySelection
 
@@ -245,7 +245,7 @@ exposed Function getPopulation()
 `StudentsSelection` クラスは `getAgeAverage` 関数を持ちます:
 
 ```  
-// StudentsSelection Class
+// StudentsSelection クラス
 
 Class extends EntitySelection
 
@@ -277,7 +277,7 @@ exposed Function getAgeAverage : Integer
 `StudentsSelection` クラスは `getLastSummary` 関数を持ちます:
 
 ```  
-// StudentsSelection Class
+// StudentsSelection クラス
 
 
 Class extends EntitySelection
@@ -309,7 +309,7 @@ exposed Function getLastSummary : Text
 `Students` DataClassクラスは、データを含むエンティティをクライアントから受け取る `pushData()` 関数を持ちます。 `checkData()` メソッドはいくつかの検証を実行します。 問題がなければ、エンティティは保存されて返されます。
 
 ```
-// Students Class
+// Students クラス
 
 Class extends DataClass
 
