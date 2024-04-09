@@ -449,19 +449,19 @@ Outras características e serviços 4D incluindo [backup](../Backup/backup.md), 
 Se quiser criar uma cópia da pasta de dados juntamente com o seu arquivo de diário actual:
 
 ```4d
-$destination:=Folder(fk documents folder).folder("Archive")
+$destination:=Folder(fk documents folder).folder("Archive") 
 $destination.create()
 
-ds.flushAndLock() //Block write operations from other processes
+ds.flushAndLock() //Bloqueia operações write de outros processos
 
-$dataFolder:=Folder(fk data folder)
-$dataFolder.copyTo($destination) //Copy the data folder
+$dataFolder:=Folder(fk data folder) 
+$dataFolder.copyTo($destination) //Copia a pasta de dados
 
-$oldJournalPath:=New log file //Close the journal and create a new one
-$oldJournal:=File($oldJournalPath; fk platform path)
-$oldJournal.moveTo($destination) //Save the old journal with data
+$oldJournalPath:=New log file //Fecha o diário e cria um novo
+$oldJournal:=File($oldJournalPath; fk platform path) 
+$oldJournal.moveTo($destination) //Salva o diário antigo com dados
 
-ds.unlock() //Our copy is over, we can now unlock the datastore
+ds.unlock() //Nossa cópia terminou, podemos desbloquear a datastore
 ```
 
 #### Veja também
@@ -586,7 +586,7 @@ var $currentStamp : Real
 var $hasModifications : Boolean
 
 $currentStamp:=ds.getGlobalStamp()
-methodWhichCouldModifyEmployees //call some code
+methodWhichCouldModifyEmployees //chamar algum código 
 $hasModifications:=($currentStamp # ds.getGlobalStamp())
 ```
 
