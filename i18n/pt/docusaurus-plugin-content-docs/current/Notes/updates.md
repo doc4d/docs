@@ -6,17 +6,17 @@ title: Notas de Lançamento
 
 ## 4D 20 R5
 
-Read [**What’s new in 4D 20 R5**](https://blog.4d.com/en-whats-new-in-4d-v20-R5/), the blog post that lists all new features and enhancements in 4D 20 R5.
+Leia [**O que há de novo no 4D 20 R5**](https://blog.4d.com/en-whats-new-in-4d-v20-R5/), a postagem do blog que lista todos os novos recursos e aprimoramentos no 4D 20 R5.
 
 #### Destaques
 
-- Support of [`Try...Catch...End try`](../Concepts/error-handling.md#trycatchend-try) error handling structures.
-- QUIC network layer now supports [broadcasting](../Desktop/clientServer.md#opening-a-remote-project).
-- Support of [restricted entity selections](../ORDA/entities.md#restricting-entity-selections).
-- Support of [shared classes](../Concepts/classes.md#shared-classes) and [singleton classes](../Concepts/classes.md#singleton-classes). New Class properties: [`isShared`](../API/ClassClass.md#isshared), [`isSingleton`](../API/ClassClass.md#isingleton), [`me`](../API/ClassClass.md#me).
-- Support for [initializing a class property in its declaration line](../Concepts/classes.md/#initializing-the-property-in-the-declaration-line).
-- New [force login mode for REST requests](../REST/authUsers.md#force-login-mode) with a [specific support in Qodly Studio for 4D](../WebServer/qodly-studio.md#force-login).
-- New [$format](../REST/$format.md) REST parameter.
+- Suporte de estruturas de manipulação de erros [`Try... Catch...End try`](../Concepts/error-handling.md#trycatchend-try)
+- A camada de rede QUIC agora suporta [transmissão](../Desktop/clientServer.md#opening-a-remote-project).
+- Suporte de [seleções de entidades restritas](../ORDA/entities.md#restricting-entity-selections).
+- Suporte de [classes compartilhadas](../Concepts/classes.md#shared-classes) e [classes singleton](../Concepts/classes.md#singleton-classes). Novas propriedades da Classe: [`isShared`](../API/ClassClass.md#isshared), [`isSingleton`](../API/ClassClass.md#isingleton), [`me`](../API/ClassClass.md#me).
+- Suporte à [inicializando uma propriedade de classe em sua linha de declaração](../Concepts/classes.md/#initializing-the-property-in-the-declaration-line).
+- Novo modo [forçar  login para solicitações REST](../REST/authUsers.md#force-login-mode) com um suporte específico [no Qodly Studio para 4D](../WebServer/qodly-studio.md#force-login).
+- Novo parâmetro REST [$format](../REST/$format.md).
 - [`Session`](../API/SessionClass.md#session) object is now available in remote user sessions and stored procedures session.
 
 
