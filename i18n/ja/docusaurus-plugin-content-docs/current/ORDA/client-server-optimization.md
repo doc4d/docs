@@ -35,15 +35,15 @@ title: クライアント/サーバーの最適化
   - [`entitySelection.slice()`](../API/EntitySelectionClass.md#slice)
   - [`entitySelection.drop()`](../API/EntitySelectionClass.md#drop)
 
-- An existing optimization context can be passed as a property to another entity selection of the same dataclass, thus bypassing the learning phase and accelerating the application (see [Using the context property](#reusing-the-context-property) below).
+- 既存の最適化コンテキストは、同じデータクラスの他のエンティティセレクションであればプロパティとして渡すことができるので、学習フェーズを省略して、アプリケーションをより速く実行することができます (以下の [contextプロパティの使用](#contextプロパティの使用) を参照してください)。
 
-- You can build optimization contexts manually using the [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function (see [Preconfiguring contexts](#preconfiguring-contexts)).
+- [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) 関数を使用して、最適化コンテキストを手動で構築することができます ([コンテキストの事前設定](#コンテキストの事前設定) 参照)。
 
 ![](../assets/en/ORDA/cs-optimization-process.png)
 
-:::note Compatibility Note
+:::note 互換性に関する注意
 
-Contexts handled in connections established through [`Open datastore`](../API/DataStoreClass.md#open-datastore) can only be used between similar main versions of 4D. For example, a 4D 20.x remote application can only use contexts of a 4D Server 20.x datastore.
+[`Open datastore`](../API/DataStoreClass.md#open-datastore) で確立された接続で扱われるコンテキストは、メジャーバージョンが共通する 4D でのみ使用できます。 たとえば、4D 20.x リモートアプリケーションは、4D Server 20.x のデータストアのコンテキストのみを使用できます。
 
 :::
 
@@ -58,19 +58,19 @@ Contexts handled in connections established through [`Open datastore`](../API/Da
  End for each
 ```
 
-Thanks to the optimization, this request will only get data from used attributes (firstname, lastname, employer, employer.name) in _$sel_ from the second iteration of the loop.
+最適化機構のおかげでこのリクエストは、ループの 2回目の繰り返しより、_$sel_ の中で実際に使用されている属性 (firstname, lastname, employer, employer.name) のデータのみを取得するようになります。
 
-### Reusing the `context` property
+### contextプロパティの使用
 
-You can increase the benefits of the optimization by using the **context** property. このプロパティは、あるエンティティセレクション用に "学習した" 最適化コンテキストを参照します。 これを新しいエンティティセレクションを返す ORDA関数に引数として渡すことで、その返されたエンティティセレクションでは学習フェーズを最初から省略して使用される属性をサーバーにリクエストできるようになります。
+**context** プロパティを使用することで、最適化の利点をさらに増幅させることができます。 このプロパティは、あるエンティティセレクション用に "学習した" 最適化コンテキストを参照します。 これを新しいエンティティセレクションを返す ORDA関数に引数として渡すことで、その返されたエンティティセレクションでは学習フェーズを最初から省略して使用される属性をサーバーにリクエストできるようになります。
 
-> You can also create contexts using the [`.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function.
+> [`.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) 関数を使って、コンテキストを作成することもできます。
 
-エンティティセレクションを扱うすべての ORDA関数は、<strong x-id="1">context</strong> プロパティをサポートします (たとえば <a href="../API/DataClassClass.md#query"><code>dataClass.query( )</code></a> あるいは <a href="../API/DataClassClass.md#all"><code>dataClass.all( )</code></a> など)。 All ORDA functions that handle entity selections support the **context** property (for example [`dataClass.query()`](../API/DataClassClass.md#query) or [`dataClass.all()`](../API/DataClassClass.md#all)). ただし、 コードの他の部分で新しい属性が使用された際にはコンテキストは自動的に更新されるという点に注意してください。 同じコンテキストを異なるコードで再利用しすぎると、コンテキストを読み込み過ぎて、結果として効率が落ちる可能性があります。
+エンティティセレクションを扱うすべての ORDA関数は、<strong x-id="1">context</strong> プロパティをサポートします (たとえば <a href="../API/DataClassClass.md#query"><code>dataClass.query( )</code></a> あるいは <a href="../API/DataClassClass.md#all"><code>dataClass.all( )</code></a> など)。 同じ最適化 context プロパティは、同じデータクラスのエンティティセレクションに対してであればどのエンティティセレクションにも渡すことができます。 ただし、 コードの他の部分で新しい属性が使用された際にはコンテキストは自動的に更新されるという点に注意してください。 同じコンテキストを異なるコードで再利用しすぎると、コンテキストを読み込み過ぎて、結果として効率が落ちる可能性があります。
 
-> A similar mechanism is implemented for entities that are loaded, so that only used attributes are requested (see the [`dataClass.get()`](../API/DataClassClass.md#get) function).
+> 同様の機構は読み込まれたエンティティにも実装されており、それによって使用した属性のみがリクエストされるようになります ([`dataClass.get( )`](../API/DataClassClass.md#get) 関数参照)。
 
-**Example with `dataClass.query()`:**
+**`dataClass.query( )` を使用した例:**
 
 ```4d
  var $sel1; $sel2; $sel3; $sel4; $querysettings; $querysettings2 : Object
@@ -97,9 +97,9 @@ You can increase the benefits of the optimization by using the **context** prope
 
 ### エンティティセレクション型リストボックス
 
-Entity selection optimization is automatically applied to entity selection-based list boxes in 4D client/server desktop applications, when displaying and scrolling a list box content: only the attributes displayed in the list box are requested from the server.
+4D クライアント/サーバーデスクトップアプリケーションでのエンティティセレクション型リストボックスにおいては、そのコンテンツを表示またはスクロールする際に、最適化が自動的に適用されます。 つまり、リストボックスに表示されている属性のみがサーバーにリクエストされます。
 
-A specific "page mode" context is also provided when loading the current entity through the **Current item** property expression of the list box (see [Collection or entity selection type list boxes](FormObjects/listbox_overview.md#list-box-types)). これによって、"ページ" が追加属性をリクエストしても、リストボックスのコンテキストのオーバーロードが避けられます。 Note that only the use of **Current item** expression will create/use the page context (access through `entitySelection\[index]` will alter the entity selection context).
+また、リストボックスの **カレントの項目** プロパティ式 ([コレクション/エンティティセレクション型リストボックス](FormObjects/listbox_overview.md#リストボックスの型) 参照) を介してカレントエンティティをロードする場合には、専用の "ページモード" コンテキストが提供されます。 これによって、"ページ" が追加属性をリクエストしても、リストボックスのコンテキストのオーバーロードが避けられます。 なお、ページコンテキストの生成/使用は **カレントの項目** 式を使用した場合に限ります (たとえば、`entitySelection[index]` を介して同じエンティティにアクセスした場合は、エンティティセレクションコンテキストが変化します)。
 
 その後、エンティティを走査する関数がサーバーに送信するリクエストにも、同じ最適化が適用されます。 以下の関数は、ソースエンティティの最適化コンテキストを、戻り値のエンティティに自動的に付与します:
 
@@ -124,8 +124,8 @@ A specific "page mode" context is also provided when loading the current entity 
 
 1. アルゴリズムを設計します。
 2. アプリケーションを実行し、自動学習メカニズムに最適化コンテキストを作成させます。
-3. Call the [`dataStore.getRemoteContextInfo()`](../API/DataStoreClass.md#getremotecontextinfo) or [`dataStore.getAllRemoteContexts()`](../API/DataStoreClass.md#getallremotecontexts) function to collect  contexts. You can use the [`entitySelection.getRemoteContextAttributes()`](../API/EntitySelectionClass.md#getremotecontextattributes) and [`entity.getRemoteContextAttributes()`](../API/EntityClass.md#getremotecontextattributes) functions to analyse how your algorithms use attributes.
-4. In the final step, call the [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function to build contexts at application startup and [use them](#reusing-the-context-property) in your algorithms.
+3. [`dataStore.getRemoteContextInfo()`](../API/DataStoreClass.md#getremotecontextinfo) または [`dataStore.getAllRemoteContexts()`](../API/DataStoreClass.md#getallremotecontexts) 関数を呼び出して、コンテキストを収集します。 [`entitySelection.getRemoteContextAttributes()`](../API/EntitySelectionClass.md#getremotecontextattributes) と [`entity.getRemoteContextAttributes()`](../API/EntityClass.md#getremotecontextattributes) 関数を使用して、アルゴリズムがどのように属性を使用するかを分析することができます。
+4. 最後に、アプリケーション起動時に [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) 関数を呼び出してコンテキストを構築し、[これらをアルゴリズムで使用します](#contextプロパティの再利用)。
 
 ## ORDAキャッシュ
 
