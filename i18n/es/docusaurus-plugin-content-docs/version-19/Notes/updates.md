@@ -52,7 +52,7 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 | Librería | Versión actual | Actualizado en 4D | Comentario                                                                                                    |
 | -------- | -------------- | ----------------- | ------------------------------------------------------------------------------------------------------------- |
 | OpenSSL  | 1.1.1s         | 19.6              |                                                                                                               |
-| SpreadJS | 14.1.6         | 19.5              | 4D iew Pro engine                                                                                             |
+| SpreadJS | 14.1.6         | 19.5              | Motor 4D View Pro                                                                                             |
 | CEF      | 4324           | 19                | Chromium v88. Permite la compilación nativa en las plataformas Apple Silicon.                                 |
 | webKit   | WKWebView      | 19                |                                                                                                               |
 | ICU      | 68.1           | 18 R6             | Esta importante actualización obliga a reconstruir automáticamente los índices alfanuméricos, texto y objeto. |
