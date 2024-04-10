@@ -42,7 +42,7 @@ title: リモートデータストア
 
 ## セッションの終了
 
-[セッションの有効期限](../WebServer/sessions.md#セッションの有効期限) の段落で説明されているように、アクティビティなしにタイムアウト時間が経過すると、4D は自動的にセッションを終了します。 デフォルトのタイムアウト時間は 60分です。 *Open datastore* コマンドの `connectionInfo` パラメーターを指定して、タイムアウト時間を変更することができます。
+As described in the [session lifetime](../WebServer/sessions.md#session-lifetime) paragraph, a web session is automatically closed by 4D when there has been no activity during its timeout period. デフォルトのタイムアウト時間は 60分です。 *Open datastore* コマンドの `connectionInfo` パラメーターを指定して、タイムアウト時間を変更することができます。
 
 セッション終了後にリクエストがリモートデータストアに送信された場合、セッションは可能な限り (ライセンスがあり、サーバーが停止していない、など) 再開されます。 ただしセッションが再開しても、ロックやトランザクションに関わるコンテキストは失われていることに留意が必要です (後述参照)。
 
