@@ -89,7 +89,7 @@ Las áreas 4D View Pro se benefician de un menú contextual automático que ofre
       ![](../assets/en/ViewPro/vpContext2.PNG)
 
 
-## Using 4D View Pro commands
+## Utilizando los comandos de 4D View Pro
 
 4D View Pro commands can be used in the 4D Code Editor, just like 4D language commands.
 
