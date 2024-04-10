@@ -134,7 +134,7 @@ title: メソッドとクラス
 
 #### 4D タグと URL(4DACTION...)
 
-このオプションは、4D Webサーバーのセキュリティを強化するために使用されます。このオプションが選択されていない場合、[4DACTION URL](../WebServer/httpRequests.md#4daction) を使用した HTTPリクエスト、および [4DSCRIPT、4DTEXT、4DHTML タグ](../Tags/tags.md) から当該メソッドを直接呼び出すことができません。
+This option is used to reinforce 4D Web server security: when it is not checked, the project method cannot be executed via an HTTP request containing the special [4DACTION URL](../WebServer/httpRequests.md#4daction) used for calling 4D methods, nor the special [4DSCRIPT, 4DTEXT and 4DHTML tags](../Tags/transformation-tags.md).
 
 エクスプローラーでは、この属性が設定されたプロジェクトメソッドには専用のアイコンが表示されます ![](https://doc.4d.com/4Dv19R5/picture/440496/pict440496.fr.png)。
 
