@@ -265,7 +265,7 @@ $area:=$rect.getArea() //5000
 ```4d
 // Class: MyClass
 // Class constructor of MyClass
-// code
+// código
 ```
 
 A class constructor function, which can accept [parameters](#parameters), can be used to define a user class.
