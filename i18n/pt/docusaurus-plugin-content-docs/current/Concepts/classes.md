@@ -313,7 +313,7 @@ Parâmetros
 ```4d
 // Class: MyClass
 {shared} {singleton} Class Constructor({$parameterName : type; ...})
-// code
+// código
 ```
 
 A class constructor function, which can accept [parameters](#parameters), can be used to define a user class.
@@ -449,7 +449,7 @@ Num método:
 var $o : cs.MyClass
 $o:=cs.MyClass.new() //$o:{"color" : "Blue"}
 $o.name:="John" //$o:{"color" : "Blue"; "name" : "John"}
-$o.age:="Smith"  //error with check syntax
+$o.age:="Smith"  //error com a sintaxe checada
 ```
 
 
@@ -464,7 +464,7 @@ $o.age:="Smith"  //error with check syntax
 
 ```4d
 {shared} Function set <name>($parameterName : type)
-// code
+// código
 ```
 
 `As funções obter` e `conjunto de funções` são acessores que definem **propriedades computadas** na classe. Uma propriedade calculada é uma propriedade nomeada com um tipo de dados que oculta um cálculo. Quando um valor de propriedade computado é acessado, 4D substitui o código do acessor correspondente:
@@ -482,7 +482,7 @@ No arquivo de definição da classe, as declarações de propriedades computadas
 
 Quando ambas as funções são definidas, a propriedade calculada é **read-write**. Se apenas for definida uma `Function get`, a propriedade calculada é **só de leitura**. Neste caso, é devolvido um erro se o código tentar modificar a propriedade. Se apenas um `Function set` estiver definido, 4D devolve *undefined* quando a propriedade é lida.
 
-If the functions are declared in a [shared class](#shared-class-constructor), you can use the `shared` keyword with them so that they could be called without [`Use...End use` structure](shared.md#useend-use). For more information, refer to the [Shared functions](#shared-functions) paragraph below.
+Se as funções forem declaradas em uma [classe compartilhada](#shared-class-constructor), você pode usar a palavra-chave `shared` com elas para que possam ser chamadas sem a estrutura [`Use...End use`.](shared.md#useend-use). For more information, refer to the [Shared functions](#shared-functions) paragraph below.
 
 O tipo da propriedade calculada é definido pela declaração de tipo `$return` do *getter *. Pode ser de qualquer [tipo de propriedade válida](dt_object.md).
 
@@ -586,9 +586,8 @@ Class constructor ($side : Integer)
 | Parâmetro  | Tipo   |    | Descrição                                   |
 | ---------- | ------ | -- | ------------------------------------------- |
 | param      | any    | -> | Parâmetro(s) a passar para o construtor pai |
-| Resultados | Object | <- | Pai do objecto|<!-- END REF -->
-
-|
+| Resultados | Object | <- | Pai do objecto                              |
+<!-- END REF -->
 
 A palavra-chave `Super` <!-- REF #_command_.Super.Summary -->allows calls to the `superclass`, i.e. the parent class<!-- END REF -->.
 
@@ -691,13 +690,12 @@ Parâmetros
 <!-- REF #_command_.This.Syntax -->**This** : Object<!-- END REF -->
 
 <!-- REF #_command_.This.Params -->
-| Parâmetro  | Tipo   |    | Descrição                                 |
-| ---------- | ------ | -- | ----------------------------------------- |
-| Resultados | Object | <- | Objecto actual|<!-- END REF -->
+| Parâmetro  | Tipo   |    | Descrição      |
+| ---------- | ------ | -- | -------------- |
+| Resultados | Object | <- | Objecto actual |
+<!-- END REF -->
 
-|
-
-The `This` keyword <!-- REF #_command_.This.Summary -->returns a reference to the currently processed object<!-- END REF -->.
+A palavra-chave `This` <!-- REF #_command_.This.Summary -->devolve uma referência ao objeto atualmente processado<!-- END REF -->.
 
 Na maioria dos casos, o valor de `This` é determinado pela forma como uma função é chamada. Não pode ser definido por atribuição durante a execução e pode ser diferente de cada vez que a função é chamada.
 
@@ -766,7 +764,7 @@ Vários comandos da linguagem 4D permitem-lhe lidar com funcionalidades de class
 
 ## Classes compartilhadas
 
-You can create **shared classes**. A shared class is a user class that instantiates a [shared object](shared.md) when the [`new()`](../API/ClassClass.md#new) function is called on the class. A shared class can only create shared objects.
+Você pode criar **classes compartilhadas**. A shared class is a user class that instantiates a [shared object](shared.md) when the [`new()`](../API/ClassClass.md#new) function is called on the class. A shared class can only create shared objects.
 
 Shared classes also support **shared functions** that can be called without [`Use...End use`](shared.md#useend-use) structures.
 
@@ -785,7 +783,7 @@ The [`.isShared`](../API/ClassClass.md#isshared) property of Class objects allow
 To create a shared class, add the `shared` keyword before the [Class Constructor](#class-constructor). Por exemplo:
 
 ```4d
-    //shared class: Person
+    //classe compartilhada: Person
 shared Class Constructor($firstname : Text; $lastname : Text)
  This.firstName:=$firstname
  This.lastName:=$lastname
@@ -801,7 +799,7 @@ cs.Person.isShared //true
 
 
 
-### Shared functions
+### Funções compartilhadas
 
 If a function defined inside a shared class modifies objects of the class, it should call [`Use...End use`](shared.md#useend-use) structure to protect access to the shared objects. However, to simplify the code, you can define the function as **shared** so that it automatically triggers internal `Use...End use` when executed.
 
@@ -823,7 +821,7 @@ If the `shared` function keyword is used in a non-shared user class, it is ignor
 :::
 
 
-## Singleton classes
+## Classes Singleton
 
 A **singleton class** is a user class that only produces a single instance. For more information on singletons, please see the [Wikipedia page about singletons](https://en.wikipedia.org/wiki/Singleton_pattern).
 
@@ -846,7 +844,7 @@ Singleton classes are not supported by [ORDA-based classes](../ORDA/ordaClasses.
 
 
 
-### Creating a process singleton
+### Criação de um singleton process
 
 To create a process singleton class, add the `singleton` keyword before [`Class Constructor`](#class-constructor). Por exemplo:
 
@@ -856,7 +854,7 @@ singleton Class Constructor()
  This.tag:=Random
 ```
 
-To use the process singleton:
+Para usar o singleton process:
 
 ```4d
     //in a process
@@ -907,13 +905,13 @@ shared Function buildVehicle ($type : Text) -> $vehicle : cs.Vehicle
   This.vehicleBuilt+=1
 ```
 
-You can the call the **cs.VehicleFactory** singleton to get a new vehicle from everywhere in your application with a single line:
+You can then call the **cs.VehicleFactory** singleton to get a new vehicle from everywhere in your application with a single line:
 
 ```4d
 $vehicle:=cs.VehicleFactory.me.buildVehicle("truck")
 ```
 
-Since the *buildVehicle()* function modifies the **cs.VehicleFactory** (by incrementing `This.vehicleBuilt`) you need to add the `shared` keyword to it.
+Since the *buildVehicle()* function modifies the **cs.VehicleFactory** singleton (by incrementing `This.vehicleBuilt`) you need to add the `shared` keyword to it.
 
 #### Veja também
 
