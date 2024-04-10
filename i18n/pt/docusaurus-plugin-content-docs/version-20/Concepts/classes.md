@@ -281,7 +281,7 @@ Parâmetros
 ```4d
 // Class: MyClass
 // Class constructor of MyClass
-// code
+// código
 ```
 
 A class constructor function, which can accept [parameters](#parameters), can be used to define a user class.
@@ -608,7 +608,7 @@ Parâmetros
 
 |
 
-The `This` keyword <!-- REF #_command_.This.Summary -->returns a reference to the currently processed object<!-- END REF -->.
+A palavra-chave `This` <!-- REF #_command_.This.Summary -->devolve uma referência ao objeto atualmente processado<!-- END REF -->.
 
 Na maioria dos casos, o valor de `This` é determinado pela forma como uma função é chamada. Não pode ser definido por atribuição durante a execução e pode ser diferente de cada vez que a função é chamada.
 
