@@ -79,7 +79,7 @@ exposed Function authentify({params : type}) {-> result : type}
 
 "強制ログイン" モードが有効な場合、この関数は、RESTゲストセッションから唯一の利用可能なエントリーポイントです。セッションが適切な権限を取得するまで、他の関数の呼び出しやデータアクセスは拒否されます。
 
-The function can receive any authentication or contextual information as [parameter(s)](ClassFunctions.md#parameters) and can return any value. この関数は RESTリクエストからのみ呼び出すことができるため、引数は POSTリクエストの本文で渡されなければなりません。
+この関数は、任意の認証またはコンテキスト情報を [引数](ClassFunctions.md#引数) として受け取り、任意の値を返すことができます。 この関数は RESTリクエストからのみ呼び出すことができるため、引数は POSTリクエストの本文で渡されなければなりません。
 
 この関数は 2部構成で書かれる必要があります:
 
@@ -102,15 +102,14 @@ var $user : cs.UsersEntity
 $users:=ds.Users.query("name = :1"; $credentials.name)
 $user:=$users.first()
 
-If ($user#Null) //the user is known
+If ($user#Null) // 登録されているユーザーの場合
     If (Verify password hash($credentials.password; $user.password))
         Session.setPrivileges("vip")
     Else 
-
-        return "Wrong password"
+        return "パスワードに誤りがあります"
     End if 
 Else 
-        return "Wrong user"
+        return "登録されていないユーザーです"
 End if 
 ```
 
