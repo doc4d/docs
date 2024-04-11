@@ -925,13 +925,13 @@ shared Function buildVehicle ($type : Text) -> $vehicle : cs.Vehicle
   This.vehicleBuilt+=1
 ```
 
-You can then call the **cs.VehicleFactory** singleton to get a new vehicle from everywhere in your application with a single line:
+すると、**cs.VehicleFactory** シングルトンを呼び出すことで、アプリケーションのどこからでも 1行で新しい車両を取得することができます:
 
 ```4d
 $vehicle:=cs.VehicleFactory.me.buildVehicle("トラック")
 ```
 
-Since the *buildVehicle()* function modifies the **cs.VehicleFactory** singleton (by incrementing `This.vehicleBuilt`) you need to add the `shared` keyword to it.
+*buildVehicle()* 関数は (`This.vehicleBuilt` をインクリメントして) **cs.VehicleFactory** シングルトンを変更するので、`shared` キーワードを使う必要があります。
 
 #### 参照
 
