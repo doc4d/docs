@@ -31,7 +31,7 @@ title: テンプレートページ
 - 4DLOOP, 4DENDLOOP: HTMLコードにループを挿入します。
 - 4DEACH, 4DENDEACH: コレクション内、エンティティセレクション内、またはオブジェクトのプロパティをループします。
 
-These tags are described in the [Transformation Tags](../Tags/transformation-tags.md) page.
+これらのタグについては、[変換タグ](../Tags/transformation-tags.md) のページで説明しています。
 
 タグは混在させることが可能です。 たとえば、次のような HTMLコードが認められています:
 
@@ -91,4 +91,4 @@ These tags are described in the [Transformation Tags](../Tags/transformation-tag
 
 この場合、`4DEVAL` や `4DSCRIPT` などの変換タグは **使用しない** のが賢明です。なぜならこれらのタグはこういったデータが格納された変数を直接評価するからです。
 
-In addition, according to the [principle of recursion](../Tags/transformation-tags.md#recursive-processing), malicious code may itself include transformation tags. この場合、`4DTEXT` タグを使用しなくてはなりません。 例として、"Name" という名前の Webフォームフィールドがあり、ユーザーがそこに名前を入力する場合を考えます。 この名前は `<!--#4DHTML vName-->` タグを使用してページ内に表示されます。 もし "\<!--#4DEVAL QUIT 4D-->" というテキストが名前の代わりに入力されたとしたら、このタグを解釈するとアプリケーションは終了してしまいます。 このリスクを避けるには、`4DTEXT` タグを使用することで対応できます。 このタグは特殊 HTML文字をエスケープするため、挿入された悪意ある再起的コードが解釈されることはありません。 前の例でいうと、"Name" フィールドには "`<!--#4DEVAL QUIT 4D-->`" が含まれることになり、これは変換されません。
+これに加え、[繰り返しの原則](../Tags/transformation-tags.md#再起的処理) に従い、悪意あるコード自身が変換タグを含んでいる可能性もあります。 この場合、`4DTEXT` タグを使用しなくてはなりません。 例として、"Name" という名前の Webフォームフィールドがあり、ユーザーがそこに名前を入力する場合を考えます。 この名前は `<!--#4DHTML vName-->` タグを使用してページ内に表示されます。 もし "\<!--#4DEVAL QUIT 4D-->" というテキストが名前の代わりに入力されたとしたら、このタグを解釈するとアプリケーションは終了してしまいます。 このリスクを避けるには、`4DTEXT` タグを使用することで対応できます。 このタグは特殊 HTML文字をエスケープするため、挿入された悪意ある再起的コードが解釈されることはありません。 前の例でいうと、"Name" フィールドには "`<!--#4DEVAL QUIT 4D-->`" が含まれることになり、これは変換されません。
