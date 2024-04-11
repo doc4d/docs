@@ -136,7 +136,7 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 
 :::caution 4D 20.1 index rebuild and client/server versions
 
-4D 20.1 also includes an ICU library update, which has the following consequences:
+4D 20.1 también incluye una actualización de la biblioteca ICU, que tiene las siguientes consecuencias:
 
 - Forzará una reconstrucción automática de los índices de tipo alfa, texto y objeto.
 - Because of sorting consistency, it requires that 4D remote clients and 4D Server use the same version: only remote 4D 20.1 can connect to 4D Server v20.1 and vice versa.
@@ -174,7 +174,7 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 
 #### Cambios de comportamiento
 
-- As of v20.2, 4D 20 LTS is no longer compatible with Windows Server 2012 R2.
+- A partir de v20.2, 4D 20 LTS ya no es compatible con Windows Server 2012 R2.
 - **Atención**: el valor inicial [`offset`](../API/FileHandleClass.md#offset) de los objetos [4D.FileHandle](../API/FileHandleClass.md) se ha definido incorrectamente en 1 en lugar de 0. Se ha realizado una corrección en 4D a partir de las versiones **20.1 HF1** y **20 R2** y el valor es ahora 0.
 - Para el cumplimiento con la RFC HTTP, la propiedad [`HTTPRequestClass.response.headers`](../API/HTTPRequestClass.md#response) devuelve ahora todos los nombres de encabezados **en minúsculas**. Si desea que su código siga funcionando como antes, utilice la nueva propiedad [`HTTPRequestClass.response.rawHeaders`](../API/HTTPRequestClass.md#response).
 - Los certificados TLS son ahora validados automáticamente por 4D al enviar peticiones HTTP con [`4D.HTTPRequest.new()`](../API/HTTPRequestClass.md#new) y rechazados con un error si no son válidos. Una nueva propiedad *option* le permite controlar esta validación.
@@ -233,7 +233,7 @@ Read [**What’s new in 4D 19 R7**](https://blog.4d.com/en-whats-new-in-4d-v19-r
 #### Cambios de comportamiento
 
 - Para mantener la coherencia con las interfaces estándar (por ejemplo, los exploradores de archivos del sistema operativo), se han modificado las reglas del list box para la selección/arrastrar y soltar de líneas. Se puede arrastrar una selección continua o discontinua de líneas simplemente haciendo clic en una línea seleccionada y moviéndola; la tecla **Alt** ya no es necesaria (pero se puede seguir utilizando como en el caso anterior). Cuando se presiona la tecla **Mayús** o **Ctrl/Comando**, se tiene en cuenta el clic del ratón cuando éste está presionado. Para más información sobre arrastrar y soltar en list box, puede consultar [esta entrada del blog](https:/blog.4d.com/list-boxes-say-goodbye-to-alt-key/) y descargar [este proyecto HDI 4D](https://github.com/4d-depot/HDI_LB_DragAndDrop).
-- The 4D internal build numbering has been modified as of 4D 19 R7:
+- La numeración interna de 4D ha sido modificada a partir de 4D 19 R7:
     - las versiones hasta la 4D 19 R6 (incluida) llevan el número 282xxx,
     - releases from 4D 19 R7 will be numbered 100xxx.   
       Note that a specific 4D version is still uniquely identified by a branch name and a build number. El número de build aumenta cronológicamente.
