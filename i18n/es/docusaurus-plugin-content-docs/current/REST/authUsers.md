@@ -40,7 +40,7 @@ In the default mode, any REST request is processed in a web user session that au
 
 ### Force login mode
 
-In "force login" mode, license usage is disconnected from web user sessions. A license is required only when the [`Session.setPrivileges()`](../API/SessionClass.md#setprivileges) is executed, allowing you to control the number of used licenses.
+En el modo "inicio de sesión forzada", el uso de la licencia está desconectado de las sesiones de usuario web. A license is required only when the [`Session.setPrivileges()`](../API/SessionClass.md#setprivileges) is executed, allowing you to control the number of used licenses.
 
 [Descriptive REST requests](#descriptive-rest-requests) are always processed by the server, even if no web user session using a license is opened. En este caso, son procesados a través de sesiones "invitado".
 
@@ -72,7 +72,7 @@ Descriptive REST requests can be processed in web user sessions that do not requ
 
 ```4d
 exposed Function authentify({params : type}) {-> result : type}
-    // code
+    // código
 ```
 
 The `authentify()` function must be implemented in the [DataStore class](../ORDA/ordaClasses.md#datastore-class) of the project and must be called through a REST request.
@@ -91,7 +91,7 @@ If the function does not call [`Session.setPrivileges()`](../API/SessionClass.md
 
 #### Ejemplo
 
-You only want to know users to open a web session on the server. You created the following `authentify()` function in the datastore class:
+You only want to know users to open a web session on the server. Ha creado la siguiente función `authentify()` en la clase datastore:
 
 ```4d
 exposed Function authentify($credentials : Object) : Text
