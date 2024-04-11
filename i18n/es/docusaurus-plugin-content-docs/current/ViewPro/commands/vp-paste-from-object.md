@@ -31,7 +31,7 @@ In _rangeObj_, pass the cell range object where the values, formatting, and/or f
 
 In _dataObject_, pass the object that contains the cell data, formatting, and formulas to be pasted.
 
-In the optional _options_ parameter, you can specify what to paste in the cell range. Valores posibles:
+En el parámetro opcional _options_, puede especificar qué pegar en el rango de celdas. Valores posibles:
 
 |Constant|Description|
 \|---|---|---|
