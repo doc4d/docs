@@ -31,15 +31,15 @@ The `VP Get table dirty rows` command <!-- REF #_method_.VP Get table dirty rows
 
 En _vpAreaName_, pase el nombre del área 4D View Pro.
 
-In _tableName_, pass the name of the table for which you want to get the dirty rows. Only modified columns bound to a [data context](vp-set-data-context.md) will be taken into account.
+En _tableName_, pase el nombre de la tabla de la que desea obtener las líneas sucias. Only modified columns bound to a [data context](vp-set-data-context.md) will be taken into account.
 
-By default, calling the command will clear the _dirty_ status from the current table. To keep this status untouched, pass `False` in the _reset_ parameter.
+Por defecto, al llamar al comando se borrará el estado _sucio_ de la tabla actual. To keep this status untouched, pass `False` in the _reset_ parameter.
 
 En _sheet_, pase el índice de la hoja objetivo. Si no se especifica ningún índice o si pasa -1, el comando se aplica a la hoja actual.
 
 > La indexación comienza en 0.
 
-Each _dirty row_ object in the returned collection contains the following properties:
+Cada objeto _dirty row_ de la colección devuelta contiene las siguientes propiedades:
 
 | Propiedad    | Tipo    | Descripción                              |
 | ------------ | ------- | ---------------------------------------- |
