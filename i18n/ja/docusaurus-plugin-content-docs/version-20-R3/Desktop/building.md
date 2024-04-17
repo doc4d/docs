@@ -106,7 +106,7 @@ title: アプリケーションビルド
 
 *MyComponent.4dbase* フォルダーには次のファイルが含まれます:
 
-* *MyComponent.4DZ* ファイル
+* *MyComponent.4DZ* file
 
 * *Resources* フォルダー: 関連リソースは自動的にこのフォルダーにコピーされます。 コンポーネントは、他のコンポーネントやプラグインを使用できないため、その他の "Components" や "Plugins" フォルダーはコピーされません。
 
