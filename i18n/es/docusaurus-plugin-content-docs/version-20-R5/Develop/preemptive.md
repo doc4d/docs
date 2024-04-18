@@ -1,5 +1,5 @@
 ---
-id: preemptive
+id: apropiativo
 title: Procesos apropiativos
 ---
 
