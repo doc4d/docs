@@ -5,49 +5,43 @@ title: ブレークポイントとキャッチコマンド
 
 ## 概要
 
-
 ブレークポイントとキャッチコマンドは、非常に効率的なデバッグ手法です。 どちらも、コードの実行を任意のステップで一時停止させる (まだ表示されていない場合はデバッガーウィンドウを表示させる) という同じ効果があります。
 
 ブレークポイントは、実行を一時停止させたいコードの任意の行に設定します。 ブレークポイントには条件を関連付けることができます。
 
 キャッチコマンドは、特定のコマンドが呼び出された時点で、呼び出し元プロセスの実行をトレース開始することができます。
 
-
-
 ## ブレークポイント
-
 
 ブレークポイントを設定するには、デバッガーまたはコードエディターのソースコードエリアの左マージン内をクリックします。
 
-次の図では、ブレークポイント (赤い点) がデバッガー内で、`If ($in.dataClass#Null)` の行に設定されています:
+In the following example, a break point (the red bullet) has been set, in the debugger, on the line `If ($in.dataClass#Null)`:
 
-![ブレークポイント](../assets/en/Debugging/break.png)
+![break-point](../assets/en/Debugging/break.png)
 
-上の状態で [**トレース終了**](./debugger.md/#トレース終了) ボタンをクリックすると、ブレークポイントが設定された行まで実行が再開されます。 その後、ブレークポイントで示された行は実行されずに、トレースモードへ 戻ります。 プログラムカウンターより下方の (後に実行される) 行にブレークポイントを設定し、**トレース終了** ボタンをクリックすると、ブレークポイントまでのメソッドをスキップすることができます。
+In the above example, clicking the [**No Trace**](./debugger.md/#no-trace) button resumes normal execution up to the line marked with the break point. その後、ブレークポイントで示された行は実行されずに、トレースモードへ 戻ります。 Setting a break point beyond the program counter and clicking the **No Trace** button allows you to skip portions of the method being traced.
 
 赤色の点をクリックすると、ブレークポイントは削除されます。
-
 
 ### ブレークポイントプロパティ
 
 ブレークポイントプロパティウィンドウを使って、ブレークポイントのふるまいを変更することができます:
 
-![ブレークポイントプロパティ](../assets/en/Debugging/breakpoint-properties.png)
+![breakpoint-properties](../assets/en/Debugging/breakpoint-properties.png)
 
-このウィンドウはコードエディターおよびデバッガーの [ソースコードエリア](debugger.md#ソースコードエリア) からアクセスします。 次のことが可能です:
+This window is available from the Code Editor or the [Source Code Pane](debugger.md#source-code-pane). 次のことが可能です:
 
-- 任意の行を右クリックして、コンテキストメニューから **ブレークポイントを編集...** を選択する。
-- 左マージン内で `Alt+クリック` (Windows) または `Option+クリック` (macOS) を実行する。
+- right-click a line and select **Edit Breakpoint** in the contextual menu, or
+- `Alt+click` (Windows) or `Option+click` (macOS) in the left margin.
 
 ブレークポイントが既に存在する場合、そのブレークポイントについてのウィンドウが表示されます。 それ以外の場合は、ブレークポイントが新規作成され、そのブレークポイントに関するウィンドウを表示します。
 
 プロパティは、次の通りです:
 
-* **場所**: メソッド名とブレークポイントが設定されている行番号を示します。
-* **次の式が真のときブレーク**: `True` または `False` を返す 4Dフォーミュラを入力することによって、**条件付きブレークポイント** を作成することができます。 たとえば、`Records in selection(\[aTable])=0` と入力すると、テーブル \[aTable] のレコードが選択されていない場合に限ってブレークが発生します。 ブレークポイントの条件は、[ブレークリスト](#ブレークリスト)の **条件** カラムでも確認できます。
-* **ブレークの前にスキップする回数**: ループ構造 (While、Repeat、For) 内、またはループから呼び出されているサブルーチンや関数内のコード行にブレークポイントを設定することができます。
-* **ブレークポイントが無効です**: ブレークポイントが現在は必要でないものの、後で必要になるかもしれない場合には、一時的に無効にしておくことができます。 無効なブレークポイントは、点 (･) ではなくダッシュ記号 (-) で表示されます。
-
+- **Location**: indicates the name of the method and the line number attached to the breakpoint.
+- **Break when following expression is true**: You can create **conditional breakpoints** by entering a 4D formula that returns `True` or `False`. For example, insert `Records in selection(\[aTable])=0` to make sure the break occurs only if there no record selected for the table \[aTable]. Breakpoint conditions are available in the **Condition** column of the [Break list](#break-list).
+- **Number of times to skip before breaking**: You can attach a breakpoint to a line located in a loop structure (While, Repeat, or For) or located in subroutine or function called from within a loop.
+- **Breakpoint is disabled**: If you currently do not need a break point, but might need it later, you can temporarily disable it. 無効なブレークポイントは、点 (･) ではなくダッシュ記号 (-) で表示されます。
 
 ### リモートデバッグでのブレークポイント
 
@@ -57,60 +51,60 @@ title: ブレークポイントとキャッチコマンド
 
 ### ブレークリスト
 
-ブレークリストは、デバッガーウィンドウ又はコードエディターで作成したブレークポイントを管理することが出来るランタイムエクスプローラのページです。 ランタイムエクスプローラーの詳細については、[デザインリファレンスマニュアル](https://doc.4d.com/4Dv19/4D/19/Runtime-Explorer.200-5416614.ja.html) を参照ください。
+ブレークリストは、デバッガーウィンドウ又はコードエディターで作成したブレークポイントを管理することが出来るランタイムエクスプローラのページです。 For more information on the Runtime Explorer, see its dedicated page in [the Design reference manual](https://doc.4d.com/4Dv19/4D/19/Runtime-Explorer.200-5416614.en.html).
 
 ブレークリストのページを開くには:
 
-1. **実行** メニューから **ランタイムエクスプローラー...** を選択します。
+1. From the **Run menu**, click **Runtime Explorer...**
 
-2. **ブレーク** タブをクリックして、ブレークリストを表示させます:
+2. Click the **Break** tab to display the Break list:
 
-![ランタイムエクスプローラーのブレークリスト](../assets/en/Debugging/break-list.png)
+![break-list-runtime-explorer](../assets/en/Debugging/break-list.png)
 
 このウィンドウを使用して、以下のことが可能です:
 
-* ブレークポイントの **条件** を設定する。
-* マージンの赤い点をクリックして、ブレークポイントをそれぞれ有効・無効化する。 無効化されたブレークポイントは透明な (薄い赤の) 点で表されます。
-* `Delete` または `Backspace` キーを押すか、リスト下の**削除** ボタンをクリックして、ブレークポイントを削除する。
-* ブレークポイントをダブルクリックして、対象メソッドをエディターで開く。
+- Set conditions for breakpoints in the **Conditions** column
+- マージンの赤い点をクリックして、ブレークポイントをそれぞれ有効・無効化する。 無効化されたブレークポイントは透明な (薄い赤の) 点で表されます。
+- Delete breakpoints by pressing the `Delete` or `Backspace` key, or click on the **Delete** button below the list.
+- ブレークポイントをダブルクリックして、対象メソッドをエディターで開く。
 
 このウィンドウから新しいブレークポイントを追加することはできません。 ブレークポイントは、デバッガーウィンドウかコードエディターでのみ設定できます。
 
-
 ## コマンドのキャッチ
 
-**キャッチ** コマンドリストは、4Dコマンドの呼び出しを捕捉し、デバッガーウィンドウを表示するよう指示することができるランタイムエクスプローラのページです。 特定メソッドの特定行に効果が限定されるブレークポイントとは異なり、キャッチコマンドは、すべてのプロセスおよびメソッドが対象となります。
+The **Catch** tab of the Runtime Explorer lets you add additional breaks to your code by catching calls to 4D commands. 特定メソッドの特定行に効果が限定されるブレークポイントとは異なり、キャッチコマンドは、すべてのプロセスおよびメソッドが対象となります。
 
-キャッチコマンド (コマンド捕捉) は、各所にブレークポイントを設定することなく、大きな範囲でトレースをおこなえる便利な方法です。 たとえば、いくつかのプロセスを実行した後に、削除すべきでないレコードが削除されてしまう場合には、`DELETE RECORD` や `DELETE SELECTION` といったコマンドの処理をキャッチすることにより、調査の範囲を狭めることができます。 キャッチ対象のコマンドが呼び出されるたびにデバッガーが起動されるので、問題のレコードが削除されてしまう経緯を調べ、コードの誤った箇所を突き止めることができます。
+キャッチコマンド (コマンド捕捉) は、各所にブレークポイントを設定することなく、大きな範囲でトレースをおこなえる便利な方法です。 For example, if a record that should not be deleted is deleted after you've executed one or several processes, you can try to reduce the field of your investigation by catching commands such as `DELETE RECORD` and `DELETE SELECTION`. キャッチ対象のコマンドが呼び出されるたびにデバッガーが起動されるので、問題のレコードが削除されてしまう経緯を調べ、コードの誤った箇所を突き止めることができます。
 
 ブレークポイントとキャッチコマンドは組み合わせて使うことができます。
 
 キャッチコマンドページを開くには:
 
-1. **実行** メニューから **ランタイムエクスプローラ...** を選択します。
+1. Choose **Run** > **Runtime explorer...** to open the Runtime Explorer.
 
-2. **キャッチ** タブをクリックすると、キャッチコマンドリストが表示されます:
+2. Click **Catch** to display the Caught Commands List:
 
-![ランタイムエクスプローラーウィンドウ](../assets/en/Debugging/catch-command.png)
+![runtime-explorer-window](../assets/en/Debugging/catch-command.png)
 
 このページは、実行中にキャッチされるコマンドをリスト表示します。 リストは 2つの列で構成されています:
 
-* 左の列には、キャッチするコマンドの有効/無効状況と、コマンド名が表示されます。
-* 右の列には、コマンドに関連する条件 (あれば) が表示されます。
+- 左の列には、キャッチするコマンドの有効/無効状況と、コマンド名が表示されます。
+- 右の列には、コマンドに関連する条件 (あれば) が表示されます。
 
 キャッチするコマンドを新しく追加するには:
 
-1. リスト下部にある **新規キャッチを追加** ボタン (＋) をクリックします。 `ALERT` コマンドをデフォルトとして新しいエントリーが追加されます。
-2. 次に **ALERT** ラベルをクリックし、キャッチしたいコマンドの名前を入力します。入力したら、**Enter**キーを押して選択を確定させます。
+1. Click on the **Add New Catch** button (in the shape of a +) located below the list. A new entry is added to the list with the `ALERT` command as default
+2. Click the **ALERT** label, type the name of the command you want to catch, then press **Enter**.
 
-キャッチコマンドを無効、あるいは有効にするには、コマンドラベルの前にある点 (•) をクリックします。 透明な (薄い赤の) 点は、キャッチが無効化されていることを表します。
+キャッチコマンドを無効、あるいは有効にするには、コマンドラベルの前にある点 (•) をクリックします。
+透明な (薄い赤の) 点は、キャッチが無効化されていることを表します。
 
 > コマンドキャッチの無効化は、削除するのとほぼ同等の効果があります。 実行中、デバッガーはほぼ全くと言っていいほどエントリーに時間を使いません。 エントリーを無効化することの利点は、それが再び必要になったとき一から作り直さなくて良いという点です。
 
 キャッチコマンドを削除するには:
 
 1. リスト中のコマンド選択します。
-2. **Backspace** または **Delete** キーを押すか、リスト下部にある **削除** ボタンをクリックします。キャッチコマンドをすべて削除するには、**すべてを削除** ボタンをクリックします。
+2. Press **Backspace** or **Delete** on your keyboard or click on the **Delete** button beneath the list (**Delete All** removes all commands in the list).
 
 ### キャッチコマンドに条件を設定する
 
@@ -119,7 +113,6 @@ title: ブレークポイントとキャッチコマンド
 
 > 条件を削除するにはフォーミュラを削除します。
 
-条件の設定により、コマンド呼び出し時に特定の条件が満たされている場合にのみ、実行を中止する事ができます。 たとえば、`DELETE SELECTION` コマンドのキャッチに `Records in selection(\[Emp]>10)` という条件を設定した場合、\[Emp]テーブルのカレントセレクションが 9レコード以下の場合には `DELETE SELECTION` コマンドの呼び出しで実行が中断されません。
+条件の設定により、コマンド呼び出し時に特定の条件が満たされている場合にのみ、実行を中止する事ができます。 For example, if you associate the condition `Records in selection(\[Emp]>10)` with the break point on the `DELETE SELECTION` command, the code will not be stopped during execution of the `DELETE SELECTION` command if the current selection of the \[Emp] table only contains 9 records (or less).
 
 例外のたびに条件を評価することになるため、キャッチコマンドに条件を追加すると実行速度は遅くなります。 その一方で、条件を追加するとデバッグプロセスは早くなります。条件に合致しないオカレンスを、4D が自動的にスキップしていくからです。
-
