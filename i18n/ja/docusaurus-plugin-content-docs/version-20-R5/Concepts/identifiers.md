@@ -9,27 +9,27 @@ title: 識別子の命名規則
 
 ## 配列
 
-[変数](#変数) と同じルールが適用されます。
+Array names follow the same rules as [variables](#variables).
 
 ## クラス
 
 クラス名は31文字以内で指定します。
 
-クラス名は、ドット記法のための標準的な [プロパティ名の命名規則](Concepts/dt_object.md#オブジェクトプロパティ識別子) に準拠している必要があります。
+A class name must be compliant with standard [property naming rules](#object-properties) for dot notation.
 
-> 競合防止のため、[データベーステーブル](#テーブルとフィールド) と同じ名前のクラスを作成するのは推奨されないこと
+> Giving the same name to a class and a [database table](#tables) is not recommended, in order to prevent any conflict.
 
 ## 関数
 
-関数名は、ドット記法のための標準的な [プロパティ名の命名規則](#オブジェクトプロパティ) に準拠している必要があります。
+Function names must be compliant with standard [property naming rules](#object-properties) for dot notation.
 
-> **Tip:** アンダースコア ("_") 文字で関数名を開始すると、その関数は 4Dコードエディターの自動補完機能から除外されます。
+> **Tip:** Starting the function name with an underscore character ("_") will exclude the function from the autocompletion features in the 4D code editor.
 
 ## オブジェクトプロパティ
 
-プロパティ名 (オブジェクト *属性* とも呼びます) は255文字以内の文字列で指定します。
+The name of an object property (also called object _attribute_) can contain up to 255 characters.
 
-オブジェクトプロパティは、スカラー値・ORDA要素・クラス関数・他のオブジェクト等を参照できます。 参照先に関わらず、**[ドット記法](dt_object.md#オブジェクトプロパティ) を使用するには** オブジェクトプロパティ名は次の命名規則に従う必要があります:
+オブジェクトプロパティは、スカラー値・ORDA要素・クラス関数・他のオブジェクト等を参照できます。 Whatever their nature, object property names must follow the following rules **if you want to use the [dot notation](dt_object.md#object-properties)**:
 
 - 1文字目は、文字、アンダースコア(_)、あるいはドル記号 ($) でなければなりません。
 - その後の文字には、文字・数字・アンダースコア(_)・ドル記号 ($) が使用できます。
@@ -44,22 +44,21 @@ $value:=$clientObj.data.address.city
 
 :::tip
 
-アンダースコア ("_") 文字でオブジェクトプロパティ名を開始すると、そのプロパティは 4Dコードエディターの自動補完機能から除外されます。 たとえば、`$o._myPrivateProperty` を宣言した場合、コードエディターにおいて `"$o. "`とタイプしても、このプロパティは候補として提示されません。
+アンダースコア ("_") 文字でオブジェクトプロパティ名を開始すると、そのプロパティは 4Dコードエディターの自動補完機能から除外されます。 For example, if you declare `$o._myPrivateProperty`, it will not be proposed in the code editor when you type in `"$o. "`.
 
 :::
 
-詳細は [ECMA Script standard](https://www.ecma-international.org/ecma-262/5.1/#sec-7.6) を参照ください。
+See also [ECMA Script standard](https://www.ecma-international.org/ecma-262/5.1/#sec-7.6).
 
 :::note
 
-大カッコ [ ] に文字列を含める記法を利用すれば、プロパティ名にはあらゆる文字を使用することができます (例: `myObject["1. First property"]`)。
+If you use **string notation** within square brackets, property names can contain any characters (ex: `myObject["1. First property"]`).
 
 :::
 
-
 ## 引数
 
-引数名は必ず `$` 文字で始まります。また、[変数名](#変数) と同じルールが適用されます。
+Parameter names must start with a `$` character and follow the same rules as [variable names](#variables).
 
 例:
 
@@ -75,7 +74,7 @@ Function getArea($width : Integer; $height : Integer)-> $area : Integer
 
 - 1文字目は、文字、数字、あるいはアンダースコア(_) でなければなりません。
 - その後の文字には、文字・数字・アンダースコア(_)・スペースが使用できます。
-- 予約語を使用しないでください。予約語にはコマンド名 (`Date`, `Time` 等)、キーワード (`If`, `For` 等)、そして定数 (`Euro`, `Black`, `Friday` 等) が含まれます。
+- Do not use reserved names, i.e. 4D command names (`Date`, `Time`, etc), keywords (`If`, `For`, etc.), or constant names (`Euro`, `Black`, `Friday`, etc.).
 - 大文字・小文字は区別されます。
 
 例:
@@ -86,18 +85,18 @@ DELETE DUPLICATED VALUES
 APPLY TO SELECTION([Employees];INCREASE SALARIES)
 ```
 
-**Tip:** 4Dのビルトインコマンドと同じ命名規約を利用することは良いプログラミングテクニックです。 メソッド名には大文字を使用しますが、メソッドが値を返す場合には最初の文字だけを大文字にします。 このように命名することにより、数ヶ月後に保守のためプロジェクトを再度開いたときに、エクスプローラーウィンドウでその名前を見ただけで、メソッドが結果を返すかどうかがわかります。
+**Tip:** It is a good programming technique to adopt the same naming convention as the one used by 4D for built-in methods. メソッド名には大文字を使用しますが、メソッドが値を返す場合には最初の文字だけを大文字にします。 このように命名することにより、数ヶ月後に保守のためプロジェクトを再度開いたときに、エクスプローラーウィンドウでその名前を見ただけで、メソッドが結果を返すかどうかがわかります。
 
- > メソッドを呼び出すには、メソッド名を書きます。 しかし `ON EVENT CALL` など一部の 4Dのビルトインコマンドやプラグインコマンドに、引数としてメソッド名を渡す場合には、文字列 (ダブルクォートで括る) として渡します。
+> メソッドを呼び出すには、メソッド名を書きます。 However, some 4D built-in commands, such as `ON EVENT CALL`, as well as all plug-in commands, expect the name of a method as a string when a method parameter is passed.
 
 例:
 
 ```4d
- // このコマンドはメソッド (関数) またはフォーミュラを受け取ります
+ //This command expects a method (function) or formula
 QUERY BY FORMULA([aTable];Special query)
- // このコマンドはメソッド (プロシージャ) またはステートメントを受け取ります
+ //This command expects a method (procedure) or statement
 APPLY TO SELECTION([Employees];INCREASE SALARIES)
- // このコマンドはメソッド名を文字列で受け取ります
+ //But this command expects a method name
 ON EVENT CALL("HANDLE EVENTS")
 ```
 
@@ -109,7 +108,7 @@ ON EVENT CALL("HANDLE EVENTS")
 
 - 1文字目は、文字、アンダースコア(_)、あるいはドル記号 ($) でなければなりません。
 - その後の文字には、半角アルファベット文字・数字・スペース・アンダースコアを使用ができます。
-- 予約語を使用しないでください。予約語にはコマンド名 (`Date`, `Time` 等)、キーワード (`If`, `For` 等)、そして定数 (`Euro`, `Black`, `Friday` 等) が含まれます。
+- Do not use reserved names, i.e. 4D command names (`Date`, `Time`, etc), keywords (`If`, `For`, etc.), or constant names (`Euro`, `Black`, `Friday`, etc.).
 - SQLで処理する場合には追加のルールがあります: 文字 _0123456789abcdefghijklmnopqrstuvwxyz のみを使用できます。また、名前に SQLキーワード (コマンド、属性 等) が含まれていてはなりません。
 
 例:
@@ -123,34 +122,34 @@ QUERY([Clients];[Clients]Name="Smith")
 
 ```
 
-> 競合防止のため、[クラス](#クラス) と同じ名前のテーブルを作成するのは推奨されません。
+> Giving the same name to a table and a [class](#classes) is not recommended, in order to prevent any conflict.
 
 ## 変数
 
-変数名は、スコープ記号 (`$` および `<>`) を除いて最大31文字以内で指定することができます。
+The name of a variable can be up to 31 characters, not including the scope symbols (`$` or `<>`).
 
-- 変数名の 1文字目は、文字あるいはアンダースコア(_) でなければなりません。また、[引数](parameters.md) や [ローカル変数](variables.md#ローカル変数) の場合はドル記号 ($) 、[インタープロセス変数](variables.md#インタープロセス変数) の場合はインタープロセス記号 (`<>`) を 1文字目に使用します。
-- 変数の1文字目に数字を使うことは許可されていますが、推奨されません。また、[`var` 宣言のシンタックス](variables.md#var-キーワードによる宣言) ではサポートされていません。
+- A variable name must begin with a letter, an underscore, or a dollar ("$") for [parameters](parameters.md) and [local variables](variables.md#local-variables), or `<>` for [interprocess variables](variables.md#interprocess-variables).
+- A digit as first character is allowed but not recommended, and is not supported by the [`var` declaration syntax](variables.md#using-the-var-keyword).
 - その後の文字には、文字・数字・アンダースコア(_) が使用できます。
-- 変数名にスペースを使うことは許可されていますが、推奨されません。また、[`var` 宣言のシンタックス](variables.md#var-キーワードによる宣言) ではサポートされていません。
-- 予約語を使用しないでください。予約語にはコマンド名 (`Date`, `Time` 等)、キーワード (`If`, `For` 等)、そして定数 (`Euro`, `Black`, `Friday` 等) が含まれます。
+- Space character is allowed but not recommended, and is not supported by the [`var` declaration syntax](variables.md#using-the-var-keyword).
+- Do not use reserved names, i.e. 4D command names (`Date`, `Time`, etc), keywords (`If`, `For`, etc.), or constant names (`Euro`, `Black`, `Friday`, etc.).
 - 変数名においては、大文字・小文字は区別されません。
 
 例:
 
 ```4d
-For($vlRecord;1;100) // ローカル変数
-$vsMyString:="Hello there" // ローカル変数
-var $vName; $vJob : Text // ローカル変数 
-If(bValidate=1) // プロセス変数
-<>vlProcessID:=Current process() // インタープロセス変数
+For($vlRecord;1;100) //local variable
+$vsMyString:="Hello there" //local variable
+var $vName; $vJob : Text //local variales 
+If(bValidate=1) //process variable
+<>vlProcessID:=Current process() //interprocess variable
 ```
 
 ## その他の識別子
 
-4Dランゲージにおいては、識別子が文字列として扱われる要素も多数存在します: **フォーム**, **フォームオブジェクト**, **命名セレクション**, **プロセス**, **セット**, **メニューバー**, 等。
+In the 4D language, several elements have their names handled as strings: **forms**, **form objects**, **named selections**, **processes**, **sets**, **menu bars**, etc.
 
-このような文字列名は、(該当する場合はスコープ記号を除いて) 255文字以内で指定します。
+Such string names can contain up to 255 characters, not including the `$` or `<>` characters (if any).
 
 - 文字列名にはあらゆる文字を使用できます。
 - 文字列名においては、大文字・小文字は区別されません。
@@ -160,14 +159,14 @@ If(bValidate=1) // プロセス変数
 ```4d
 DIALOG([Storage];"Note box"+String($vlStage))
 OBJECT SET FONT(*;"Binfo";"Times")
-USE NAMED SELECTION([Customers];"Closed")// プロセス命名セレクション
-USE NAMED SELECTION([Customers];"<>ByZipcode") // インタープロセス命名セレクション
- // グローバルプロセス "Add Customers" の開始:
+USE NAMED SELECTION([Customers];"Closed")//Process Named Selection
+USE NAMED SELECTION([Customers];"<>ByZipcode") //Interprocess Named Selection
+ //Starting the global process "Add Customers"
 $vlProcessID:=New process("P_ADD_CUSTOMERS";48*1024;"Add Customers")
- // ローカルプロセス "$Follow Mouse Moves" の開始:
+ //Starting the local process "$Follow Mouse Moves"
 $vlProcessID:=New process("P_MOUSE_SNIFFER";16*1024;"$Follow Mouse Moves")
-CREATE SET([Customers];"Customer Orders")// プロセスセット
-USE SET("<>Deleted Records") // インタープロセスセット
-If(Records in set("$Selection"+String($i))>0) // クライアントセット
+CREATE SET([Customers];"Customer Orders")//Process set
+USE SET("<>Deleted Records") //Interprocess set
+If(Records in set("$Selection"+String($i))>0) //Client set
 
 ```
