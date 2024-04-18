@@ -3,36 +3,35 @@ id: onHeaderClick
 title: On Header Click
 ---
 
-| コード | 呼び出し元                                                                                                                                                      | 定義                        |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
-| 42  | [4D View Pro エリア](FormObjects/viewProArea_overview.md) - [リストボックス](FormObjects/listbox_overview.md) - [リストボックス列](FormObjects/listbox_overview.md#リストボックス列) | リストボックスの列ヘッダーでクリックがおこなわれた |
-
+| コード | 呼び出し元                                                                                                                                                                       | 定義                        |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
+| 42  | [4D View Pro Area](FormObjects/viewProArea_overview.md) - [List Box](FormObjects/listbox_overview.md) - [List Box Column](FormObjects/listbox_overview.md#list-box-columns) | リストボックスの列ヘッダーでクリックがおこなわれた |
 
 ## 説明
 
 ### リストボックス
 
-このイベントは、リストボックスの列ヘッダーでクリックがおこなわれると生成されます。 この場合 `Self` コマンドを使用すればクリックされた列ヘッダーを知ることができます。
+このイベントは、リストボックスの列ヘッダーでクリックがおこなわれると生成されます。 In this case, the `Self` command lets you find out the header of the column that was clicked.
 
-リストボックスで [ソート可](FormObjects/properties_Action.md#ソート可) プロパティが選択されている場合、`$0` に 0 または -1 を渡して標準の並べ替えをおこなうかどうか指定できます:
+If the [Sortable](FormObjects/properties_Action.md#sortable) property was selected for the list box, you can decide whether or not to authorize a standard sort of the column by passing the value 0 or -1 in the `$0` variable:
 
-- `$0 = 0` の場合、標準の並べ替えがおこなわれます。
-- `$0 = -1` の場合、標準の並べ替えはおこなわれず、ヘッダーには並べ替え矢印は表示されません。 開発者は 4Dランゲージを使用して、カスタマイズされた条件に基づく並べ替えを実行できます。
+- If `$0` equals 0, a standard sort is performed.
+- If `$0` equals -1, a standard sort is not performed and the header does not display the sort arrow. 開発者は 4Dランゲージを使用して、カスタマイズされた条件に基づく並べ替えを実行できます。
 
-リストボックスで [ソート可](FormObjects/properties_Action.md#ソート可) プロパティが選択されていない場合、`$0` は使用されません。
+If the [Sortable](FormObjects/properties_Action.md#sortable) property is not selected for the list box, the `$0` variable is not used.
 
 ### 4D View Pro
 
-このイベントは、4D View Pro ドキュメント内のカラムヘッダーまたは行ヘッダーでクリックが発生したときに生成されます。 このコンテキストにおいて、`FORM Event` コマンドによって返される [イベントオブジェクト](overview.md#イベントオブジェクト) には以下のプロパティが含まれています:
+このイベントは、4D View Pro ドキュメント内のカラムヘッダーまたは行ヘッダーでクリックが発生したときに生成されます。 In this context, the [event object](overview.md#event-object) returned by the `FORM Event` command contains:
 
-| プロパティ       | タイプ     | 説明                                                                                                     |
-| ----------- | ------- | ------------------------------------------------------------------------------------------------------ |
-| code        | longint | 42                                                                                                     |
-| description | text    | "On Header Click"                                                                                      |
-| objectName  | text    | 4D View Pro エリア名                                                                                       |
-| sheetName   | text    | イベントが発生したシート名                                                                                          |
-| range       | object  | セルのレンジ                                                                                                 |
-| sheetArea   | longint | イベントが発生したシートの場所:<br/><li>0: カラム文字ヘッダー / 行番号のヘッダーの間の交差領域 (シートの左上)</li><li>1：カラムヘッダー (カラム文字を示す領域)</li><li>2：行ヘッダー (行番号を示す領域)</li> |
+| プロパティ       | タイプ     | 説明                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ----------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| code        | longint | 42                                                                                                                                                                                                                                                                                                                                                                                                             |
+| description | text    | "On Header Click"                                                                                                                                                                                                                                                                                                                                                                                              |
+| objectName  | text    | 4D View Pro エリア名                                                                                                                                                                                                                                                                                                                                                                                               |
+| sheetName   | text    | イベントが発生したシート名                                                                                                                                                                                                                                                                                                                                                                                                  |
+| range       | object  | セルのレンジ                                                                                                                                                                                                                                                                                                                                                                                                         |
+| sheetArea   | longint | The sheet location where the event took place:<br/><li>0: The crossing area between column number/letter headers (top left of the sheet)</li><li>1: The column headers (area indicating the column numbers/letters)</li><li>2: The row headers (area indicating the row numbers)</li> |
 
 #### 例題
 
