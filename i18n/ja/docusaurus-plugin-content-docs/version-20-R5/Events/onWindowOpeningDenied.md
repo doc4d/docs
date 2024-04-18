@@ -3,34 +3,35 @@ id: onWindowOpeningDenied
 title: On Window Opening Denied
 ---
 
-| コード | 呼び出し元                                        | 定義                  |
-| --- | -------------------------------------------- | ------------------- |
-| 53  | [Webエリア](../FormObjects/webArea_overview.md) | ポップアップウィンドウがブロックされた |
+| コード | 呼び出し元                                          | 定義                  |
+| --- | ---------------------------------------------- | ------------------- |
+| 53  | [Web Area](../FormObjects/webArea_overview.md) | ポップアップウィンドウがブロックされた |
 
 <details><summary>履歴</summary>
 
 | リリース  | 内容         |
 | ----- | ---------- |
 | 19 R5 | ドロップ時にトリガー |
+
 </details>
 
 ## 説明
 
 このイベントは、Webエリアによりポップアップウィンドウがブロックされると生成されます。 4D Webエリアはポップアップウィンドウを許可しません。
 
-`WA Get last filtered URL` コマンドコマンドを使用してブロックされた URL を知ることができます。
+You can find out the blocked URL using the `WA Get last filtered URL` command.
 
-このイベントは、Webエリア (埋め込みおよび Windowsシステム [エンジン](../FormObjects/properties_WebArea.md#埋め込みwebレンダリングエンジンを使用)) で [ドラッグ＆ドロップ](../FormObjects/webArea_Overview.md#ユーザーインターフェース) オプションが有効になっている場合に、ドロップ操作がおこなわれたときにも発生します。 次を呼び出すことで、ドロップを受け入れることができます:
+This event is also triggered when a drop operation has been done in the Web area (with embedded and Wwindows system [engines](../FormObjects/properties_WebArea.md#use-embedded-web-rendering-engine)) if the [Drag and drop](../FormObjects/webArea_overview.md#user-interface) option is also enabled for the area. 次を呼び出すことで、ドロップを受け入れることができます:
 
 ```4d
-// Webエリアオブジェクトメソッド
+//web area object method
 If (FORM Event.code=On Window Opening Denied)
-    WA OPEN URL(*; "WebArea"; WA Get last filtered URL(*; "WebArea"))  
-    // または UrlVariable:=WA Get last filtered URL(*; "WebArea")  
-    // (UrlVariable は Webエリアに関連づけられた URL変数)
+	WA OPEN URL(*; "WebArea"; WA Get last filtered URL(*; "WebArea"))  
+	// or UrlVariable:=WA Get last filtered URL(*; "WebArea")  
+	// where UrlVariable is the URL variable associated to the web area
 End if 
 ```
 
-
 ### 参照
+
 [`On Open External Link`](onOpenExternalLink.md)
