@@ -5,7 +5,7 @@ title: ヘッダー
 
 ## ヘッダーを表示
 
-このプロパティは、[リストボックス列ヘッダー](listbox_overview.md#リストボックスヘッダー) の表示/非表示を指定します。 列ごとに 1つのヘッダーを表示できます。それぞれのヘッダーは個別に設定できます。
+This property is used to display or hide [list box column headers](listbox_overview.md#list-box-headers). 列ごとに 1つのヘッダーを表示できます。それぞれのヘッダーは個別に設定できます。
 
 #### JSON 文法
 
@@ -15,28 +15,29 @@ title: ヘッダー
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md)
+[List Box](listbox_overview.md)
 
 ---
 
 ## 高さ
 
-このプロパティは、リストボックスヘッダーの高さを **行** または **ピクセル** 単位で指定します。 同じリストボックス内で異なる単位を使用することもできます:
+This property is used to set the row height for a list box header in **pixels** or **text lines** (when displayed). 同じリストボックス内で異なる単位を使用することもできます:
 
-* *ピクセル* - 指定された値は当該行に対し直接適用され、列が使用しているフォントサイズ等は考慮されません。 フォントが行の高さに対して大きい場合、テキストは切り取られます。 ピクチャーはフォーマットに基づき、切り取られるかリサイズされます。
+- _Pixel_ - the height value is applied directly to the row concerned, regardless of the font size contained in the columns. フォントが行の高さに対して大きい場合、テキストは切り取られます。 ピクチャーはフォーマットに基づき、切り取られるかリサイズされます。
 
-* *行* - 高さは行のフォントサイズに合わせて計算されます。
-  * 複数の異なるサイズが設定されている場合、4D はもっとも大きなものを使用します。 たとえば、行に "Verdana 18", "Geneva 12" そして "Arial 9" が設定されている場合、4D は行の高さの決定に "Verdana 18" を使用します。 複数行の場合はこの高さの倍数が使用されます。
-  * この計算にはピクチャーのサイズや、フォントに適用されるスタイルは考慮されません。
-  * macOS 環境下では、選択されたフォントで使用できない文字をユーザーが入力した場合、行の高さが正しくなくなる可能性があります。 この場合には代理フォントが使用され、その結果サイズにばらつきが出る可能性があります。
-> ヘッダーの高さは [LISTBOX SET HEADERS HEIGHT](https://doc.4d.com/4Dv18/4D/18/LISTBOX-SET-HEADERS-HEIGHT.301-4505200.ja.html) コマンドを使用して設定することもできます。
+- _Line_ - the height is calculated while taking into account the font size of the row concerned.
+  - 複数の異なるサイズが設定されている場合、4D はもっとも大きなものを使用します。 たとえば、行に "Verdana 18", "Geneva 12" そして "Arial 9" が設定されている場合、4D は行の高さの決定に "Verdana 18" を使用します。 複数行の場合はこの高さの倍数が使用されます。
+  - この計算にはピクチャーのサイズや、フォントに適用されるスタイルは考慮されません。
+  - macOS 環境下では、選択されたフォントで使用できない文字をユーザーが入力した場合、行の高さが正しくなくなる可能性があります。 この場合には代理フォントが使用され、その結果サイズにばらつきが出る可能性があります。
+
+> This property can also be set dynamically using the [LISTBOX SET HEADERS HEIGHT](https://doc.4d.com/4Dv17R6/4D/17-R6/LISTBOX-SET-HEADERS-HEIGHT.301-4311129.en.html) command.
 
 単位の変換: 単位を変更した場合、4D は自動で値を再計算し、結果をプロパティリストに表示します。 たとえば、使用されるフォントが "Lucida grande 24" で高さが "1 行" に設定されていれば "30 ピクセル" に、高さが "60 ピクセル" なら "2 行" になります。
 
 単位の変更を繰り返すと、4D が自動で計算を行うため、最初の値とは結果が異なってしまうこともあります。 たとえば以下のようになります:
 
-- (フォント Arial 18)*: 52 ピクセル -> 2行 -> 40 ピクセル
-- (フォント Arial 12)*: 3 ピクセル -> 0.4行が 1行に切り上げられる -> 19 ピクセル
+- (font Arial 18)\*: 52 pixels -> 2 lines -> 40 pixels
+- (font Arial 12)\*: 3 pixels -> 0.4 line rounded up to 1 line -> 19 pixels
 
 #### JSON 例
 
@@ -51,14 +52,14 @@ title: ヘッダー
 
 #### JSON 文法
 
-| 名称           | データタイプ | とりうる値                 |
-| ------------ | ------ | --------------------- |
-| headerHeight | string | 正の10進数 + px &#124; em |
+| 名称           | データタイプ | とりうる値             |
+| ------------ | ------ | ----------------- |
+| headerHeight | string | 正の10進数 + px \| em |
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md)
+[List Box](listbox_overview.md)
 
 #### 参照
 
-[フッター](properties_Footers.md) - [リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー)
+[Footers](properties_Footers.md) - [List box headers](listbox_overview.md#list-box-headers)
