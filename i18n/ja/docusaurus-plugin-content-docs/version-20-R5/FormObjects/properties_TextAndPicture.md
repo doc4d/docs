@@ -3,12 +3,11 @@ id: propertiesTextAndPicture
 title: テキスト、ピクチャー
 ---
 
-
 ## 背景パス名
 
-オブジェクトの背景として使用するピクチャーのパスを指定します。 [複数の状態](#状態の数) を持つ [アイコン](#ピクチャーパス名) を持つオブジェクトの場合、背景ピクチャーにも同じ状態の数が適用されます。
+オブジェクトの背景として使用するピクチャーのパスを指定します。 If the object uses an [icon](#picture-pathname) with [different states](#number-of-states), the background picture will automatically support the same number of states.
 
-パス名は、[スタティックピクチャーのパス名プロパティ](properties_Picture.md#パス名) と同じように指定します。
+The pathname to enter is similar as for the [Pathname property for static pictures](properties_Picture.md#pathname).
 
 #### JSON 文法
 
@@ -18,7 +17,7 @@ title: テキスト、ピクチャー
 
 #### 対象オブジェクト
 
-[カスタムボタン](button_overview.md#カスタム) - [カスタムチェックボックス](checkbox_overview.md#カスタム) - [カスタムラジオボタン](radio_overview.md#カスタム)
+[Custom Button](button_overview.md#custom) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom)
 
 ---
 
@@ -28,13 +27,13 @@ title: テキスト、ピクチャー
 
 #### JSON 文法
 
-|  名称   | データタイプ | とりうる値                                                                                                                                                              |
-|:-----:|:------:| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|   名称  | データタイプ | とりうる値                                                                                                                                                              |
+| :---: | :----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | style |  text  | "regular", "flat", "toolbar", "bevel", "roundedBevel", "gradientBevel", "texturedBevel", "office", "help", "circular", "disclosure", "roundedDisclosure", "custom" |
 
 #### 対象オブジェクト
 
-[ボタン](button_overview.md) - [ラジオボタン](radio_overview.md) - [チェックボックス](checkbox_overview.md)
+[Button](button_overview.md) - [Radio Button](radio_overview.md) - [Check Box](checkbox_overview.md) - [Radio Button](radio_overview.md)
 
 ---
 
@@ -48,17 +47,18 @@ title: テキスト、ピクチャー
 | ------------ | ------------------------------------------------------------ |
 | マージンなし       | ![](../assets/en/FormObjects/property_horizontalMargin1.png) |
 | 13 ピクセルのマージン | ![](../assets/en/FormObjects/property_horizontalMargin2.png) |
-> このプロパティは [縦方向マージン](#縦方向マージン) プロパティとの組み合わせで機能します。
+
+> This property works in conjunction with the [Vertical Margin](#vertical-margin) property.
 
 #### JSON 文法
 
-| 名称            | データタイプ | とりうる値                   |
-| ------------- | ------ | ----------------------- |
+| 名称            | データタイプ | とりうる値                                   |
+| ------------- | ------ | --------------------------------------- |
 | customBorderX | number | "カスタム" スタイルで利用可。 最小値: 0 |
 
 #### 対象オブジェクト
 
-[カスタムボタン](button_overview.md#カスタム) - [カスタムチェックボックス](checkbox_overview.md#カスタム) - [カスタムラジオボタン](radio_overview.md#カスタム)
+[Custom Button](button_overview.md#custom) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom)
 
 ---
 
@@ -74,7 +74,7 @@ title: テキスト、ピクチャー
 
 #### 対象オブジェクト
 
-[[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー)](listbox_overview.md#リストボックスヘッダー)
+[List Box Header](listbox_overview.md#list-box-headers)
 
 ---
 
@@ -86,19 +86,19 @@ title: テキスト、ピクチャー
 
 #### JSON 文法
 
-| 名称           | データタイプ | とりうる値  |
-| ------------ | ------ | ------ |
+| 名称           | データタイプ | とりうる値                  |
+| ------------ | ------ | ---------------------- |
 | customOffset | number | 最小値: 0 |
 
 #### 対象オブジェクト
 
-[カスタムボタン](button_overview.md#カスタム) - [カスタムチェックボックス](checkbox_overview.md#カスタム) - [カスタムラジオボタン](radio_overview.md#カスタム)
+[Custom Button](button_overview.md#custom) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom)
 
 ---
 
 ## 状態の数
 
-このプロパティは [ボタン](button_overview.md)、[チェックボックス](checkbox_overview.md)、[ラジオボタン](radio_overview.md) のアイコンとして使用されるピクチャーに含まれる状態の数を指定します。
+This property sets the exact number of states present in the picture used as the icon for a [button with icon](button_overview.md), a [check box](checkbox_overview.md) or a custom [radio button](radio_overview.md).
 
 ピクチャーには 2～6 の状態を含めることができます。
 
@@ -119,17 +119,15 @@ title: テキスト、ピクチャー
 
 ![](../assets/en/FormObjects/six-states.png)
 
-
-
 #### JSON 文法
 
-| 名称         | データタイプ | とりうる値                     |
-| ---------- | ------ | ------------------------- |
+| 名称         | データタイプ | とりうる値                                     |
+| ---------- | ------ | ----------------------------------------- |
 | iconFrames | number | ソースピクチャーに含まれる状態の数。 最小値: 1 |
 
 #### 対象オブジェクト
 
-[ボタン](button_overview.md) ([ヘルプ](button_overview.md#ヘルプ)ボタンを除く) - [チェックボックス](checkbox_overview.md) - [ラジオボタン](radio_overview.md)
+[Button](button_overview.md) (all styles except [Help](button_overview.md#help)) - [Check Box](checkbox_overview.md) - [Radio Button](radio_overview.md)
 
 ---
 
@@ -137,9 +135,9 @@ title: テキスト、ピクチャー
 
 オブジェクトのアイコンに使用するピクチャーのパスを指定します。
 
-パス名は、[スタティックピクチャーのパス名プロパティ](properties_Picture.md#パス名) と同じように指定します。
+The pathname to enter is similar as for the [Pathname property for static pictures](properties_Picture.md#pathname).
 
-> アクティブオブジェクトのアイコンとして使う場合、[状態の数](#状態の数) 変数に対応するよう、デザインされている必要があります。
+> When used as icon for active objects, the picture must be designed to support a variable [number of states](#number-of-states).
 
 #### JSON 文法
 
@@ -149,7 +147,7 @@ title: テキスト、ピクチャー
 
 #### 対象オブジェクト
 
-[ボタン](button_overview.md) ([ヘルプ](button_overview.md#ヘルプ)ボタンを除く) - [チェックボックス](checkbox_overview.md) - [リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) - [ラジオボタン](radio_overview.md)
+[Button](button_overview.md) (all styles except [Help](button_overview.md#help)) - [Check Box](checkbox_overview.md) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md)
 
 ---
 
@@ -159,13 +157,13 @@ title: テキスト、ピクチャー
 
 このプロパティの各種オプションの結果を次に示します:
 
-| オプション  | 説明                                                        | 例題                                                                |
-| ------ | --------------------------------------------------------- | ----------------------------------------------------------------- |
-| **左**  | テキストはアイコンの左に置かれます。 ボタンの内容は右揃えされます。                        | ![](../assets/en/FormObjects/property_titlePosition_left.en.png)  |
-| **上**  | テキストはアイコンの上に置かれます。 ボタンの内容は中央揃えされます。                       | ![](../assets/en/FormObjects/property_titlePosition_top.png)      |
-| **右**  | テキストはアイコンの右に置かれます。 ボタンの内容は左揃えされます。                        | ![](../assets/en/FormObjects/property_titlePosition_right.png)    |
-| **下**  | テキストはアイコンの下に置かれます。 ボタンの内容は中央揃えされます。                       | ![](../assets/en/FormObjects/property_titlePosition_bottom.png)   |
-| **中央** | アイコンのテキストはボタン内で縦と横に中央揃えされます。 テキストをアイコンの中に組み込むような場合に利用します。 | ![](../assets/en/FormObjects/property_titlePosition_centered.png) |
+| オプション        | 説明                                                        | 例題                                                                |
+| ------------ | --------------------------------------------------------- | ----------------------------------------------------------------- |
+| **Left**     | テキストはアイコンの左に置かれます。 ボタンの内容は右揃えされます。                        | ![](../assets/en/FormObjects/property_titlePosition_left.en.png)  |
+| **Top**      | テキストはアイコンの上に置かれます。 ボタンの内容は中央揃えされます。                       | ![](../assets/en/FormObjects/property_titlePosition_top.png)      |
+| **Right**    | テキストはアイコンの右に置かれます。 ボタンの内容は左揃えされます。                        | ![](../assets/en/FormObjects/property_titlePosition_right.png)    |
+| **Bottom**   | テキストはアイコンの下に置かれます。 ボタンの内容は中央揃えされます。                       | ![](../assets/en/FormObjects/property_titlePosition_bottom.png)   |
+| **Centered** | アイコンのテキストはボタン内で縦と横に中央揃えされます。 テキストをアイコンの中に組み込むような場合に利用します。 | ![](../assets/en/FormObjects/property_titlePosition_centered.png) |
 
 #### JSON 文法
 
@@ -175,30 +173,29 @@ title: テキスト、ピクチャー
 
 #### 対象オブジェクト
 
-[ボタン](button_overview.md) ([ヘルプ](button_overview.md#ヘルプ)ボタンを除く) - [チェックボックス](checkbox_overview.md) - [ラジオボタン](radio_overview.md)
+[Button](button_overview.md) (all styles except [Help](button_overview.md#help)) - [Check Box](checkbox_overview.md) - [Radio Button](radio_overview.md)
 
 ---
 
 ## タイトルと画像を隣接させる
 
-このプロパティは、[タイトル/ピクチャー位置](properties_TextAndPicture.md#タイトルピクチャー位置) と [横揃え](properties_Text.md#横揃え) プロパティを考慮しながら、ボタンのタイトルと画像を隣接して表示するか、あるいは分離するかを定義します。
+This property allows you to define whether the title and the picture of the button should be visually adjoined or separated, according to the [Title/Picture position](#titlepicture-position) and [Horizontal Alignment](#horizontal-alignment) properties.
 
 ボタン内に、タイトルのみ (関連ピクチャーなし)、またはピクチャーのみ (タイトルなし) が含まれている場合、このプロパティは効果ありません。
 
-ボタンがタイトルと画像を持つ場合、デフォルトでは、それらは隣接して表示されます。 次の図は、様々な配置における `imageHugsTitle` プロパティ (有効な場合は true) の効果を示したものです:
+ボタンがタイトルと画像を持つ場合、デフォルトでは、それらは隣接して表示されます。 The following graphic shows the effect of the `imageHugsTitle` property (true when property is enabled) with different button alignments:
 
 ![](../assets/en/FormObjects/hugs.png)
 
-
 #### JSON 文法
 
-| 名称             | データタイプ  | とりうる値               |
-| -------------- | ------- | ------------------- |
+| 名称             | データタイプ  | とりうる値                                  |
+| -------------- | ------- | -------------------------------------- |
 | imageHugsTitle | boolean | true (デフォルト), false |
 
 #### 対象オブジェクト
 
-[ボタン](button_overview.md) (ヘルプ以外のスタイル) - [チェックボックス](checkbox_overview.md) (通常、フラット、開示ボタン、折りたたみ/展開以外のスタイル) - [ラジオボタン](radio_overview.md) (通常、フラット、開示ボタン、折りたたみ/展開以外のスタイル)
+[Button](button_overview.md) (all styles except Help) - [Check Box](checkbox_overview.md) (all styles except Regular, Flat, Disclosure and Collapse/Expand) - [Radio Button](radio_overview.md) (all styles except Regular, Flat, Disclosure and Collapse/Expand).
 
 ---
 
@@ -208,17 +205,17 @@ title: テキスト、ピクチャー
 
 背景ピクチャーに境界が含まれるような場合に、このパラメーターを利用します。
 
-> このプロパティは [横方向マージン](#横方向マージン) プロパティとの組み合わせで機能します。
+> This property works in conjunction with the [Horizontal Margin](#horizontal-margin) property.
 
 #### JSON 文法
 
-| 名称            | データタイプ | とりうる値                   |
-| ------------- | ------ | ----------------------- |
+| 名称            | データタイプ | とりうる値                                   |
+| ------------- | ------ | --------------------------------------- |
 | customBorderY | number | "カスタム" スタイルで利用可。 最小値: 0 |
 
 #### 対象オブジェクト
 
-[カスタムボタン](button_overview.md#カスタム) - [カスタムチェックボックス](checkbox_overview.md#カスタム) - [カスタムラジオボタン](radio_overview.md#カスタム)
+[Custom Button](button_overview.md#custom) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom)
 
 ---
 
@@ -235,8 +232,9 @@ title: テキスト、ピクチャー
 ポップアップメニューシンボルをボタンに付加する際に、リンクと分離という2つのオプションから選択することができます:
 
 |                           リンク                           |                             分離                             |
-|:-------------------------------------------------------:|:----------------------------------------------------------:|
+| :-----------------------------------------------------: | :--------------------------------------------------------: |
 | ![](../assets/en/FormObjects/property_popup_linked.png) | ![](../assets/en/FormObjects/property_popup_separated.png) |
+
 > 実際に "分離" モードを利用できるかどうかは、ボタンスタイルとプラットフォームによって決まります。
 
 それぞれのオプションにより、ボタンとポップアップメニューとの関係が指定されます:
@@ -246,20 +244,20 @@ title: テキスト、ピクチャー
 
 :::info
 
-この場合のイベントの扱いについての詳細は、[`On Alternative Click` イベントの説明](../Events/onAlternativeClick.md) を参照ください。
+Refer to the [`On Alternative Click` event description](../Events/onAlternativeClick.md) for more information on the handling of events in this case.
 
 :::
 
 ### ポップアップメニューの管理
 
-"ポップアップメニューあり" プロパティは、ボタンのグラフィック面だけを管理するという点に注意が必要です。 ポップアップメニューとその値の表示は、すべて開発者が処理しなくてはなりません。具体的にはフォームイベントや [`Dynamic pop up menu`](https://doc.4d.com/4dv19R7/help/command/ja/page1006.html)、[`Pop up menu`](https://doc.4d.com/4dv19R7/help/command/ja/page542.html) コマンドを使用してこれを処理します。
+"ポップアップメニューあり" プロパティは、ボタンのグラフィック面だけを管理するという点に注意が必要です。 The display of the pop-up menu and its values must be handled entirely by the developer, more particularly using `form events` and the [`Dynamic pop up menu`](https://doc.4d.com/4dv19R7/help/command/en/page1006.html) and [`Pop up menu`](https://doc.4d.com/4dv19R7/help/command/en/page542.html) commands.
 
 #### JSON 文法
 
-| 名称             | データタイプ | とりうる値                                                                       |
-|:-------------- | ------ | --------------------------------------------------------------------------- |
+| 名称             | データタイプ | とりうる値                                                |
+| :------------- | ------ | ---------------------------------------------------- |
 | popupPlacement | string | <li>"none"</li><li>"linked"</li><li>"separated"</li> |
 
 #### 対象オブジェクト
 
-[ツールバーボタン](button_overview.md#ツールバー) - [ベベルボタン](button_overview.md#ベベル) - [角の丸いべべルボタン](button_overview.md#角の丸いベベル) - [OS X グラデーションボタン](button_overview.md#os-x-グラデーション) - [OS X テクスチャーボタン](button_overview.md#os-x-テクスチャー) - [Office XP ボタン](button_overview.md#office-xp) - [サークルボタン](button_overview.md#サークル) - [カスタムボタン](button_overview.md#カスタム)
+[Toolbar Button](button_overview.md#toolbar) - [Bevel Button](button_overview.md#bevel) - [Rounded Bevel Button](button_overview.md#Rounded-bevel) - [OS X Gradient Button](button_overview.md#os-x-gradient) - [OS X Textured Button](button_overview.md#os-x-textured) - [Office XP Button](button_overview.md#office-XP) - [Circle Button](button_overview.md#circle) - [Custom](button_overview.md#custom)
