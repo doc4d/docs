@@ -3,10 +3,9 @@ id: propertiesBackgroundAndBorder
 title: Fundo e margem
 ---
 
-
 ## Cor de fundo alternado
 
-Allows setting a different background color for odd-numbered rows/columns in a list box. By default, *Automatic* is selected: the column uses the alternate background color set at the list box level.
+Allows setting a different background color for odd-numbered rows/columns in a list box. By default, _Automatic_ is selected: the column uses the alternate background color set at the list box level.
 
 #### Gramática JSON
 
@@ -16,7 +15,7 @@ Allows setting a different background color for odd-numbered rows/columns in a l
 
 #### Objectos suportados
 
-[List Box](listbox_overview.md#overview) - [Coluna List Box](listbox_overview.md#list-box-columns)
+[List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns)
 
 ---
 
@@ -24,7 +23,7 @@ Allows setting a different background color for odd-numbered rows/columns in a l
 
 Define a cor de fundo de um objeto.
 
-In the case of a list box, by default *Automatic* is selected: the column uses the background color set at the list box level.
+In the case of a list box, by default _Automatic_ is selected: the column uses the background color set at the list box level.
 
 #### Gramática JSON
 
@@ -38,7 +37,7 @@ In the case of a list box, by default *Automatic* is selected: the column uses t
 
 #### Veja também
 
-[Transparente](#transparent)
+[Transparent](#transparent)
 
 ---
 
@@ -46,9 +45,10 @@ In the case of a list box, by default *Automatic* is selected: the column uses t
 
 `List box de tipo coleção e seleção de entidades`
 
-An expression or a variable (array variables cannot be used) to apply a custom background color to each row of the list box. The expression or variable will be evaluated for each row displayed and must return a RGB color value. Para obter mais informações, consulte a descrição do comando [`OBJECT SET RGB COLORS`](https://doc.4d.com/4dv20/help/command/en/page628.html) no manual *Linguajem 4D*.
+An expression or a variable (array variables cannot be used) to apply a custom background color to each row of the list box. The expression or variable will be evaluated for each row displayed and must return a RGB color value. For more information, refer to the description of the [`OBJECT SET RGB COLORS`](https://doc.4d.com/4dv20/help/command/en/page628.html) command in the _4D Language Reference manual_.
 
 You can also set this property using the [`LISTBOX SET PROPERTY`](https://doc.4d.com/4dv20/help/command/en/page1440.html) command with `lk background color expression` constant.
+
 > With collection or entity selection type list boxes, this property can also be set using a [Meta Info Expression](properties_Text.md#meta-info-expression).
 
 #### Gramática JSON
@@ -59,7 +59,7 @@ You can also set this property using the [`LISTBOX SET PROPERTY`](https://doc.4d
 
 #### Objectos suportados
 
-[List Box](listbox_overview.md#overview) - [Coluna List Box](listbox_overview.md#list-box-columns)
+[List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns)
 
 ---
 
@@ -85,13 +85,13 @@ Descreve o tipo de linha pontilhada como uma sequência de pontos pretos e branc
 
 #### Gramática JSON
 
-| Nome            | Tipo de dados               | Valores possíveis                                                                |
-| --------------- | --------------------------- | -------------------------------------------------------------------------------- |
+| Nome            | Tipo de dados               | Valores possíveis                                                                                                                                                                    |
+| --------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | strokeDashArray | arrays numéricos ou strings | Ex. Ex. Ex. "6 1" or \[6,1\] for a sequence of 6 black point and 1 white point |
 
 #### Objectos suportados
 
-[Retângulo](shapes_overview.md#rectangle) - [Oval](shapes_overview.md#oval) - [Linha](shapes_overview.md#line)
+[Rectangle](shapes_overview.md#rectangle) - [Oval](shapes_overview.md#oval) - [Line](shapes_overview.md#line)
 
 ---
 
@@ -119,13 +119,14 @@ Pode remover estas linhas vazias selecionando esta opção. A parte inferior do 
 
 ## Cor da linha
 
-Designa a cor das linhas do objeto. A cor pode ser especificada por:
+Designa a cor das linhas do objeto.
+A cor pode ser especificada por:
 
-* um nome de cor - como "red"
-* um valor HEX - como "#ff0000"
-* um valor RGB - como "rgb(255,0,0)"
+- um nome de cor - como "red"
+- um valor HEX - como "#ff0000"
+- um valor RGB - como "rgb(255,0,0)"
 
-Você também pode definir essa propriedade usando o comando [`OBJECT SET RGB COLORS`](https://doc.4d.com/4dv20/help/command/en/page628.html).
+You can also set this property using the [`OBJECT SET RGB COLORS`](https://doc.4d.com/4dv20/help/command/en/page628.html) command.
 
 #### Gramática JSON
 
@@ -147,9 +148,9 @@ Designa a espessura de uma linha.
 
 #### Gramática JSON
 
-| Nome        | Tipo de dados | Valores possíveis                                                                     |
-| ----------- | ------------- | ------------------------------------------------------------------------------------- |
-| strokeWidth | number        | 0 para a largura mais pequena num formulário impresso, ou qualquer valor inteiro < 20 |
+| Nome        | Tipo de dados | Valores possíveis                                                 |
+| ----------- | ------------- | ----------------------------------------------------------------- |
+| strokeWidth | number        | 0 for smallest width on a printed form, or any integer value < 20 |
 
 #### Objectos suportados
 
@@ -159,17 +160,17 @@ Designa a espessura de uma linha.
 
 ## Array controle linha
 
-`List box de tipo array`
+`Array type list boxes`
 
 The name of an array to apply a custom background color to each row of the list box or column.
 
-Deve ser introduzido o nome de um array Longint. Cada elemento deste array corresponde a uma linha do list box (se aplicada o list box) ou a uma célula da coluna (se aplicada a uma coluna), pelo que o array deve ter o mesmo tamanho que o array associado à coluna. Você pode usar as constantes do tema [SET RGB COLORS](https://doc.4d.com/4Dv20/4D/20.1/SET-RGB-COLORS.302-6481080.en.html). If you want the cell to inherit the background color defined at the higher level, pass the value -255 to the corresponding array element.
+Deve ser introduzido o nome de um array Longint. Cada elemento deste array corresponde a uma linha do list box (se aplicada o list box) ou a uma célula da coluna (se aplicada a uma coluna), pelo que o array deve ter o mesmo tamanho que o array associado à coluna. You can use the constants of the [SET RGB COLORS](https://doc.4d.com/4Dv20/4D/20.1/SET-RGB-COLORS.302-6481080.en.html) theme. If you want the cell to inherit the background color defined at the higher level, pass the value -255 to the corresponding array element.
 
 For example, given a list box where the rows have an alternating gray/light gray color, defined in the properties of the list box. A background color array has also been set for the list box in order to switch the color of rows where at least one value is negative to light orange:
 
 ```4d
- <>_BgndColors{$i}:=0x00FFD0B0 // laranja
- <>_BgndColors{$i}:=-255 // valor por defeito
+ <>_BgndColors{$i}:=0x00FFD0B0 // orange
+ <>_BgndColors{$i}:=-255 // default value
 ```
 
 ![](../assets/en/FormObjects/listbox_styles1.png)
@@ -177,7 +178,7 @@ For example, given a list box where the rows have an alternating gray/light gray
 De seguida, deve colorir as células com valores negativos a laranja-escuro. To do this, you set a background color array for each column, for example `<>_BgndColor_1`, `<>_BgndColor_2` and `<>_BgndColor_3`. The values of these arrays have priority over the ones set in the list box properties as well as those of the general background color array:
 
 ```4d
- <>_BgndColorsCol_3{2}:=0x00FF8000 // laranja escura
+ <>_BgndColorsCol_3{2}:=0x00FF8000 // dark orange
  <>_BgndColorsCol_2{5}:=0x00FF8000
  <>_BgndColorsCol_1{9}:=0x00FF8000
  <>_BgndColorsCol_1{16}:=0x00FF8000
@@ -189,8 +190,8 @@ You can get the same result using the [`LISTBOX SET ROW FONT STYLE`](https://doc
 
 #### Gramática JSON
 
-| Nome          | Tipo de dados | Valores possíveis           |
-| ------------- | ------------- | --------------------------- |
+| Nome          | Tipo de dados | Valores possíveis                           |
+| ------------- | ------------- | ------------------------------------------- |
 | rowFillSource | string        | O nome de um array longint. |
 
 #### Objectos suportados
@@ -215,4 +216,4 @@ Define o fundo do list box como "Transparent". When set, any [alternate backgrou
 
 #### Veja também
 
-[Cor de fundo / Cor de preenchimento](#background-color-fill-color)
+[Background Color / Fill Color](#background-color-fill-color)
