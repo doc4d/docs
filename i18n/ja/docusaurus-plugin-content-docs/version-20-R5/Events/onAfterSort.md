@@ -3,11 +3,10 @@ id: onAfterSort
 title: On After Sort
 ---
 
-| コード | 呼び出し元                                                                                             | 定義                      |
-| --- | ------------------------------------------------------------------------------------------------- | ----------------------- |
-| 30  | [リストボックス](FormObjects/listbox_overview.md) - [リストボックス列](FormObjects/listbox_overview.md#リストボックス列) | リストボックス列内で標準のソートがおこなわれた |
-
+| コード | 呼び出し元                                                                                                             | 定義                      |
+| --- | ----------------------------------------------------------------------------------------------------------------- | ----------------------- |
+| 30  | [List Box](FormObjects/listbox_overview.md) - [List Box Column](FormObjects/listbox_overview.md#list-box-columns) | リストボックス列内で標準のソートがおこなわれた |
 
 ## 説明
 
-このイベントは標準の並べ替えがおこなわれた直後に生成されます (ただし [`On Header Click`](onHeaderClick.md) イベントで $0 に -1 が返された場合には生成されません)。 このメカニズムは、ユーザーによっておこなわれた直近の並べ替えの方向を保存するのに使用できます。 このイベント内で `Self` コマンドは、並べ替えられたカラムヘッダー変数へのポインターを返します。
+This event is generated just after a standard sort is performed (_i.e._ it is NOT generated if $0 returns -1 in the [`On Header Click`](onHeaderClick.md) event). このメカニズムは、ユーザーによっておこなわれた直近の並べ替えの方向を保存するのに使用できます。 In this event, the `Self` command returns a pointer to the variable of the sorted column header.
