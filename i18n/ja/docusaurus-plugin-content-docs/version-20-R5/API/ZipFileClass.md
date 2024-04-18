@@ -3,10 +3,10 @@ id: ZipFileClass
 title: ZIPFile
 ---
 
-[File](FileClass.md) クラスの次のプロパティや関数は `ZIPFile` オブジェクトにおいて利用可能です:
+The following properties and functions from the [File](FileClass.md) class are available to `ZIPFile` objects:
 
-| ZIPFile で利用可能な [File](FileClass.md) API                                                       | 説明                   |
-| --------------------------------------------------------------------------------------------- | -------------------- |
+| Available [File](FileClass.md) APIs for ZIPFile                                     | 説明                   |
+| ----------------------------------------------------------------------------------- | -------------------- |
 | [<!-- INCLUDE #document.copyTo().Syntax -->](FileClass.md#copyto)                   |                      |
 | [<!-- INCLUDE #document.creationDate.Syntax -->](FileClass.md#creationdate)         |                      |
 | [<!-- INCLUDE #document.creationTime.Syntax -->](FileClass.md#creationtime)         |                      |
