@@ -882,7 +882,7 @@ End use
 | startFrom  | Integer     | -> | テストを開始するインデックス                   |
 | formula    | 4D.Function | -> | フォーミュラオブジェクト                     |
 | methodName | Text        | -> | メソッド名                            |
-| param      | Mixed       | -> | *formula* または *methodName* に渡す引数 |
+| param      | any         | -> | *formula* または *methodName* に渡す引数 |
 | 戻り値        | Boolean     | <- | すべての要素がテストをパスすれば true            |
 <!-- END REF -->
 
@@ -1679,11 +1679,11 @@ $c2:=$c.flatMap($f; $c.sum())
 
 
 <!-- REF #collection.indices().Params -->
-| 引数          | タイプ        |    | 説明                               |
-| ----------- | ---------- |:--:| -------------------------------- |
-| queryString | Text       | -> | 検索条件                             |
-| value       | any        | -> | プレースホルダー使用時: 比較する値               |
-| 戻り値         | Collection | <- | queryString に合致するコレクション要素のインデックス |
+| 引数          | タイプ  |    | 説明   |
+| ----------- | ---- |:--:| ---- |
+| queryString | Text | -> | 検索条件 |
+
+|value|any|->|Value(s) to compare when using placeholder(s)| |Result|Collection |<-|Element index(es) matching queryString in the collection|
 <!-- END REF -->
 
 
@@ -2315,6 +2315,7 @@ $name.multiSort(Formula($1.value.firstname<$1.value2.firstname); [$address])
 ```4d
 {
     "propertyPath": string,
+
     "descending": boolean
 
 }
@@ -2590,7 +2591,7 @@ $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 <!-- REF #collection.push().Params -->
 | 引数      | タイプ        |    | 説明               |
 | ------- | ---------- |:--:| ---------------- |
-| element | Mixed      | -> | コレクションに追加する要素    |
+| element | any        | -> | コレクションに追加する要素    |
 | 戻り値     | Collection | <- | 要素の追加された元のコレクション |
 <!-- END REF -->
 
@@ -2652,7 +2653,7 @@ $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 | 引数            | タイプ        |    | 説明                                 |
 | ------------- | ---------- |:--:| ---------------------------------- |
 | queryString   | Text       | -> | 検索条件                               |
-| value         | Mixed      | -> | プレースホルダー使用時: 比較する値                 |
+| value         | any        | -> | プレースホルダー使用時: 比較する値                 |
 | querySettings | Object     | -> | クエリオプション: parameters, attributes 他 |
 | 戻り値           | Collection | <- | queryString に合致するコレクション要素          |
 <!-- END REF -->
@@ -2732,6 +2733,7 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 
 
 #### 例題 3
+
 
 追加のクエリ例については、[`dataClass.query()`](dataclassClass.md#query) を参照してください。
 
@@ -3213,7 +3215,7 @@ $r:=$c.reduceRight(Formula($1.accumulator*=$1.value); 1)  // 戻り値は 86400 
 | startFrom  | Integer     | -> | テストを開始するインデックス            |
 | formula    | 4D.Function | -> | フォーミュラオブジェクト              |
 | methodName | Text        | -> | メソッド名                     |
-| param      | Mixed       | -> | 渡す引数                      |
+| param      | any         | -> | 渡す引数                      |
 | 戻り値        | Boolean     | <- | 少なくとも一つの要素がテストをパスすれば true |
 <!-- END REF -->
 
