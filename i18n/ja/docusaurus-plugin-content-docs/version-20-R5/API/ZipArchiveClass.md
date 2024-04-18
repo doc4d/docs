@@ -3,11 +3,10 @@ id: ZipArchiveClass
 title: ZIPArchive
 ---
 
+A 4D ZIP archive is a `File` or `Folder` object containing one or more files or folders, which are compressed to be smaller than their original size. これらのアーカイブは ".zip" 拡張子を持つように作成され、ディスクスペースの確保や、サイズ制限があるメディア (例: メールまたはネットワークなど) 経由のファイル転送を容易にする用途に使用できます。
 
-4D ZIP アーカイブは、一つ以上のファイルまたはフォルダーを格納している `File` または `Folder` オブジェクトで、元のサイズより小さくなるように圧縮されているものをいいます。 これらのアーカイブは ".zip" 拡張子を持つように作成され、ディスクスペースの確保や、サイズ制限があるメディア (例: メールまたはネットワークなど) 経由のファイル転送を容易にする用途に使用できます。
-
-- 4D ZIPアーカイブは [ZIP Create archive](#zip-create-archive) コマンドで作成します。
-- 4D [`ZIPFile`](ZipFileClass.md) および [`ZIPFolder`](ZipFolderClass.md) インスタンスは、[ZIP Read archive](#zip-read-archive) コマンドによって返されるオブジェクトの [`root`](#root) プロパティ (`ZIPFolder`) を通して利用可能です。
+- You create a 4D ZIP archive with the [ZIP Create archive](#zip-create-archive) command.
+- 4D [`ZIPFile`](ZipFileClass.md) and [`ZIPFolder`](ZipFolderClass.md) instances are available through the [`root`](#root) property (`ZIPFolder`) of the object returned by [ZIP Read archive](#zip-read-archive) command.
 
 ### 例題
 
@@ -31,73 +30,74 @@ End if
 
 ### 概要
 
-|                                                                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [<!-- INCLUDE #ZipArchiveClass.root.Syntax -->](#root)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #ZipArchiveClass.root.Summary -->|
+|                                                                                                                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [<!-- INCLUDE #ZipArchiveClass.root.Syntax -->](#root)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #ZipArchiveClass.root.Summary --> |
 
 ## ZIP Create archive
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                                              |
-| ----- | --------------------------------------------------------------- |
-| 19 R3 | `ZIP Compression LZMA`, `ZIP Compression XZ`, `.level` プロパティを追加 |
-| 18    | 追加                                                              |
+| リリース  | 内容                                                                    |
+| ----- | --------------------------------------------------------------------- |
+| 19 R3 | Added `ZIP Compression LZMA`, `ZIP Compression xy`, `.level` property |
+| 18    | 追加                                                                    |
 
 </details>
 
 <!-- REF #_command_.ZIP Create archive.Syntax -->**ZIP Create archive** ( *fileToZip* : 4D.File ; *destinationFile* : 4D.File ) : Object<br/>**ZIP Create archive** ( *folderToZip* : 4D.Folder ; *destinationFile* : 4D.File { ; *options* : Integer }) : Object<br/>**ZIP Create archive** ( *zipStructure* : Object ; *destinationFile* : 4D.File ) : Object<!-- END REF -->
 
-
 <!-- REF #_command_.ZIP Create archive.Params -->
-| 引数              | タイプ       |    | 説明                                                                             |
-| --------------- | --------- |:--:| ------------------------------------------------------------------------------ |
-| fileToZip       | 4D.File   | -> | 圧縮する File または Folder オブジェクト                                                    |
-| folderToZip     | 4D.Folder | -> | 圧縮する File または Folder オブジェクト                                                    |
-| zipStructure    | Object    | -> | 圧縮する File または Folder オブジェクト                                                    |
-| destinationFile | 4D.File   | -> | アーカイブの保存先ファイル                                                                  |
-| options         | Integer   | -> | *folderToZip* オプション: `ZIP Without enclosing folder` (外側のフォルダーを除外して ZIP圧縮をおこなう) |
-| 戻り値             | Object    | <- | ステータスオブジェクト                                                                    |
+
+| 引数              | タイプ                       |     | 説明                                                                   |
+| --------------- | ------------------------- | :-: | -------------------------------------------------------------------- |
+| fileToZip       | 4D.File   |  -> | 圧縮する File または Folder オブジェクト                                          |
+| folderToZip     | 4D.Folder |  -> | 圧縮する File または Folder オブジェクト                                          |
+| zipStructure    | Object                    |  -> | 圧縮する File または Folder オブジェクト                                          |
+| destinationFile | 4D.File   |  -> | アーカイブの保存先ファイル                                                        |
+| options         | Integer                   |  -> | _folderToZip_ option: `ZIP Without enclosing folder` |
+| 戻り値             | Object                    |  <- | ステータスオブジェクト                                                          |
+
 <!-- END REF -->
 
 #### 説明
 
-`ZIP Create archive` コマンドは、 <!-- REF #_command_.ZIP Create archive.Summary -->圧縮された ZIPArchive オブジェクトを作成し、その処理のステータスを返します<!-- END REF -->。
+The `ZIP Create archive` command <!-- REF #_command_.ZIP Create archive.Summary -->creates a compressed ZIP archive object and returns the status of the operation<!-- END REF -->.
 
 第1引数として、4D.File、4D.Folder、あるいは zipStructure オブジェクトを渡すことができます。
 
-- *fileToZip*: 圧縮する `4D.File` オブジェクトを引数として渡します。
+- _fileToZip_: You simply pass a `4D.File` to compress.
 
-- *folderToZip*: 圧縮する `4D.Folder` を渡します。 この場合、任意の *options* 引数を渡して、フォルダーのコンテンツのみを圧縮 (つまり、外側のフォルダを除外) することができます。 `ZIP Create archive` はデフォルトで、フォルダーとその中身を圧縮するので、展開処理をしたときにはフォルダーを再作成します。 フォルダーの中身のみを解凍処理で復元するには、*options* 引数に `ZIP Without enclosing folder` 定数を渡します。
+- _folderToZip_: You pass a `4D.Folder` to compress. In this case, the _options_ parameter allows you to compress only the contents of the folder (i.e., exclude the enclosing folder). By default, `ZIP Create archive` will compress the folder and its contents, so that the decompressing operation will recreate a folder. If you want the decompressing operation to restore only the contents of the folder, pass the `ZIP Without enclosing folder` constant in the _options_ parameter.
 
-- *zipStructure*: ZIPArchive オブジェクトを表すオブジェクトを引数として渡します。 以下のプロパティを利用して、このオブジェクトを定義することが可能です:
+- _zipStructure_: You pass an object describing the ZIP archive object. 以下のプロパティを利用して、このオブジェクトを定義することが可能です:
 
-| プロパティ       | タイプ         | 説明                                                                                                                                                                         |
-| ----------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| compression | Integer     | <li>`ZIP Compression standard`: Deflate圧縮 (デフォルト)</li><li>`ZIP Compression LZMA`: LZMA圧縮</li><li>`ZIP Compression XZ`: XZ圧縮</li><li>`ZIP Compression none`: 圧縮なし</li>                                                                       |
-| level       | Integer     | 圧縮レベル。 とりうる値: 1 - 10。 低い値ではファイルが大きくなり、高い値ではファイルが小さくなります。 ただし、圧縮レベルはパフォーマンスに影響します。 デフォルト値 (省略時): <li>`ZIP Compression standard`: 6</li><li>`ZIP Compression LZMA`: 4</li><li>`ZIP Compression XZ`: 4</li> |
-| encryption  | Integer     | パスワードが設定されていた場合に使用する暗号化方法:<li>`ZIP Encryption AES128`: 128-bit キーを使った AES による暗号化</li><li>`ZIP Encryption AES192`: 192-bit キーを使った AES による暗号化</li><li>`ZIP Encryption AES256`: 256-bit キーを使った AES による暗号化 (パスワードが設定されている場合のデフォルト)</li><li>`ZIP Encryption none`: 暗号化なし (パスワードが設定されてない場合のデフォルト)</li>                                           |
-| password    | Text        | 暗号化が必要な場合に使用するパスワード                                                                                                                                                        |
-| files       | Collection  | <li>`4D.File` または `4D.Folder` オブジェクトのコレクション</li><li>以下のプロパティを持ったオブジェクトのコレクション:</li><table><tr><td>プロパティ</td><td>タイプ</td><td>説明</td></tr><tr><td>source</td><td>4D.File または 4D.Folder</td><td>File または Folder</td></tr><tr><td>destination</td><td>Text</td><td>(任意) - アーカイブのコンテンツ構成を変更するための相対ファイルパス</td></tr><tr><td>option</td><td>number</td><td>(任意) - `ZIP Ignore invisible files` で非表示ファイルを無視、0 を渡すと全ファイルを圧縮</td></tr></table>                                                                                             |
-| callback    | 4D.Function | $1 に圧縮の進捗 (0 - 100) を受け取るコールバックフォーミュラ                                                                                                                                      |
+| プロパティ       | タイプ                         | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| ----------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| compression | Integer                     | <li>`ZIP Compression standard`: Deflate compression (default)</li><li>`ZIP Compression LZMA`: LZMA compression</li><li>`ZIP Compression XZ`: XZ compression</li><li>`ZIP Compression none`: No compression</li>                                                                                                                                                                                                                                                                                                                                                  |
+| level       | Integer                     | 圧縮レベル。 とりうる値: 1 - 10。 低い値ではファイルが大きくなり、高い値ではファイルが小さくなります。 ただし、圧縮レベルはパフォーマンスに影響します。 Default values if omitted: <li>`ZIP Compression standard`: 6</li><li>`ZIP Compression LZMA`: 4</li><li>`ZIP Compression XZ`: 4</li>                                                                                                                                                                                                                                                            |
+| encryption  | Integer                     | The encryption to use if a password is set:<li>`ZIP Encryption AES128`: AES encryption using 128-bit key.</li><li>`ZIP Encryption AES192`: AES encryption using 192-bit key.</li><li>`ZIP Encryption AES256`: AES encryption using 256-bit key (default if password is set).</li><li>`ZIP Encryption none`: Data is not encrypted (default if no password is set)</li>                     |
+| password    | Text                        | 暗号化が必要な場合に使用するパスワード                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| files       | Collection                  | <li>a collection of `4D.File` or `4D.Folder` objects or</li><li>a collection of objects with the following properties:</li><table><tr><td>Property</td><td>Type</td><td>Description</td></tr><tr><td>source</td><td>4D.File or 4D.Folder</td><td>File or Folder</td></tr><tr><td>destination</td><td>Text</td><td>(optional) - Specify a relative filepath to change the organization of the contents of the archive</td></tr><tr><td>option</td><td>number</td><td>(optional) - `ZIP Ignore invisible files` or 0 to compress all of the file</td></tr></table> |
+| callback    | 4D.Function | $1 に圧縮の進捗 (0 - 100) を受け取るコールバックフォーミュラ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
-*destinationFile* には、作成する ZIPアーカイブ (名前や位置など) を記述する `4D.File` オブジェクトを渡します。 作成した ZIPアーカイブがあらゆるソフトウェアで自動的に処理されるようにするため、".zip" 拡張子の使用が推奨されます。
+In the _destinationFile_ parameter, pass a `4D.File` object describing the ZIP archive to create (name, location, etc.). 作成した ZIPアーカイブがあらゆるソフトウェアで自動的に処理されるようにするため、".zip" 拡張子の使用が推奨されます。
 
-アーカイブが作成されると、[ZIP Read archive](#zip-read-archive) を使用してアクセスすることができます。
+Once an archive is created, you can use the [ZIP Read archive](#zip-read-archive) command to access it.
 
-**ステータスオブジェクト**
+**Status object**
 
 戻り値のステータスオブジェクトには、以下のプロパティが格納されています:
 
-| プロパティ      | タイプ     | 説明                                                                                            |
-| ---------- | ------- | --------------------------------------------------------------------------------------------- |
-| statusText | Text    | エラーメッセージ (あれば):<li>ZIPアーカイブを開けません</li><li>ZIPアーカイブを作成できません</li><li>暗号化にはパスワードが必要です</li> |
-| status     | Integer | ステータスコード                                                                                      |
-| success    | Boolean | アーカイブが正常に作成された場合には true、それ以外は false                                                           |
+| プロパティ      | タイプ     | 説明                                                                                                                                                                       |
+| ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| statusText | Text    | Error message (if any):<li>Cannot open ZIP archive</li><li>Cannot create ZIP archive</li><li>Password is required for encryption</li> |
+| status     | Integer | ステータスコード                                                                                                                                                                 |
+| success    | Boolean | アーカイブが正常に作成された場合には true、それ以外は false                                                                                                                                      |
 
 #### 例題 1
 
-`4D.File` を圧縮します:
+To compress a `4D.File`:
 
 ```4d
  var $file; $destination : 4D.File
@@ -111,7 +111,7 @@ End if
 
 #### 例題 2
 
-フォルダー自体は圧縮せずに `4D.Folder` の中身だけを圧縮します:
+To compress a `4D.Folder` without the folder itself:
 
 ```4d
  var $folder : 4D.Folder
@@ -140,7 +140,7 @@ ZIPアーカイブの圧縮にパスワードと進捗バーを使います:
  $zip.password:="password"
  $zip.callback:=Formula(myFormulaCompressingMethod($1))
 
- progID:=Progress New // 4D Progress コンポーネントを使います
+ progID:=Progress New //we use the 4D Progress component
 
  $status:=ZIP Create archive($zip;$destination)
 
@@ -156,7 +156,7 @@ ZIPアーカイブの圧縮にパスワードと進捗バーを使います:
 
 #### 例題 4
 
-*zipStructure* オブジェクトに、圧縮したいフォルダーとファイルを格納したコレクションを渡します:
+You want to pass a collection of folders and files to compress to the _zipStructure_ object:
 
 ```4d
  var $destination : 4D.File
@@ -201,28 +201,29 @@ $err:=ZIP Create archive($zip; $destination)
 
 <!-- REF #_command_.ZIP Read archive.Syntax -->**ZIP Read archive** ( *zipFile* : 4D.File { ; *password* : Text }) : 4D.ZipArchive<!-- END REF -->
 
-
 <!-- REF #_command_.ZIP Read archive.Params -->
-| 引数       | タイプ           |    | 説明                      |
-| -------- | ------------- |:--:| ----------------------- |
-| zipFile  | 4D.File       | -> | ZIPアーカイブファイル            |
-| password | Text          | -> | ZIPアーカイブのパスワード (必要であれば) |
-| 戻り値      | 4D.ZipArchive | <- | アーカイブオブジェクト             |
+
+| 引数       | タイプ                           |     | 説明                                         |
+| -------- | ----------------------------- | :-: | ------------------------------------------ |
+| zipFile  | 4D.File       |  -> | ZIPアーカイブファイル                               |
+| password | Text                          |  -> | ZIPアーカイブのパスワード (必要であれば) |
+| 戻り値      | 4D.ZipArchive |  <- | アーカイブオブジェクト                                |
+
 <!-- END REF -->
 
 #### 説明
 
-`ZIP Read archive` コマンドは、 <!-- REF #_command_.ZIP Read archive.Summary -->*zipFile* のコンテンツを取得し、`4D.ZipArchive` オブジェクト形式で返します<!-- END REF -->。
+The `ZIP Read archive` command <!-- REF #_command_.ZIP Read archive.Summary -->retrieves the contents of _zipFile_ and returns it as a `4D.ZipArchive` object<!-- END REF -->.
 
-> このコマンドは ZIPアーカイブを展開することはしません。その中身に関する情報を提供するのみです。 アーカイブのコンテンツを取り出すには、[file.copyTo()](Document.md#copyto) あるいは [folder.copyTo()](Directory.md#copyto) などの関数を使用します。
+> このコマンドは ZIPアーカイブを展開することはしません。その中身に関する情報を提供するのみです。 To extract the contents of an archive, you need to use methods such as [file.copyTo()](Document.md#copyto) or [folder.copyTo()](Directory.md#copyto).
 
-*zipFile* 引数として、圧縮された ZIPアーカイブを参照している `4D.File` オブジェクトを渡します。 ターゲットのアーカイブファイルは `ZIP Read archive` が実行を終えるまで (全コンテンツ/参照が取得/解放されるまで) は開いた状態となり、その後自動的に閉じられます。
+Pass a `4D.File` object referencing the compressed ZIP archive in the _zipFile_ parameter. The target archive file will be opened until the `ZIP Read archive` has finished executing and all contents/references have been extracted/released, then it will be closed automatically.
 
-*zipFile* 引数で指定した ZIPファイルがパスワードで保護されていた場合、任意の *password* 引数を渡してパスワードを提供する必要があります。 パスワードが必要にも関わらず、コンテンツ読み出し時にパスワードが提示されなかった場合、エラーが生成されます。
+If the _zipFile_ is password protected, you need to use the optional _password_ parameter to provide a password. パスワードが必要にも関わらず、コンテンツ読み出し時にパスワードが提示されなかった場合、エラーが生成されます。
 
-**アーカイブオブジェクト**
+**Archive object**
 
-戻り値の `4D.ZipArchive` オブジェクトは単一の [`root`](#root) プロパティを格納しており、その値は `4D.ZipFolder` オブジェクトです。 このフォルダーは ZIPアーカイブの全コンテンツを表します。
+The returned `4D.ZipArchive` object contains a single [`root`](#root) property whose value is a `4D.ZipFolder` object. このフォルダーは ZIPアーカイブの全コンテンツを表します。
 
 #### 例題
 
@@ -257,10 +258,10 @@ ZIPFile オブジェクトを取得し、その中身を確認します:
 root フォルダーから取り出します:
 
 ```4d
-  // 特定のファイルを取得します
+  //extract a file
  $folderResult:=$files[$i].copyTo(Folder(fk desktop folder).folder("MyDocs"))
 
-  // すべてのファイルを取得します
+  //extract all files
  $folderResult:=$archive.root.copyTo(Folder(fk desktop folder).folder("MyDocs"))
 ```
 
@@ -270,8 +271,8 @@ root フォルダーから取り出します:
 
 #### 説明
 
-`.root` プロパティは、 <!-- REF #ZipArchiveClass.root.Summary -->ZIPアーカイブのコンテンツにアクセスするためのバーチャルフォルダーを格納します<!-- END REF -->。
+The `.root` property contains <!-- REF #ZipArchiveClass.root.Summary -->a virtual folder providing access to the contents of the ZIP archive<!-- END REF -->.
 
-`root` フォルダーとそのコンテンツは、[ZipFile](ZipFileClass.md) および [ZipFolder](ZipFolderClass.md) の関数とプロパティを使用することで操作可能です。
+The `root` folder and its contents can be manipulated with the [ZipFile](ZipFileClass.md) and [ZipFolder](ZipFolderClass.md) functions and properties.
 
-このプロパティは **読み取り専用** です。
+This property is **read-only**.
