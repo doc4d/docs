@@ -3,12 +3,11 @@ id: markers
 title: マーカー
 ---
 
-
-これらのプロパティを使用して、**テーブルフォーム** の縦ルーラー上でのマーカーの位置を精密に指定することができます。 マーカーは主に出力フォームで使用されます。 マーカーはリストされる情報を制御し、ヘッダーやブレーク、詳細、フッターを設定します。 各エリア内に配置されたオブジェクトは、対応する場所に表示や印刷されます。
+These properties let you specify the precise location of markers on the vertical ruler of a **table form**. マーカーは主に出力フォームで使用されます。 マーカーはリストされる情報を制御し、ヘッダーやブレーク、詳細、フッターを設定します。 各エリア内に配置されたオブジェクトは、対応する場所に表示や印刷されます。
 
 フォームが出力フォームとして使用されるときは、画面用であれ印刷用であれ、マーカー設定が考慮されて各エリアが指定された場所に表示/印刷されます。 また、サブフォームエリア内のリストフォームとしてフォームが使用される場合も出力マーカーは有効です。 ただし、フォームが入力フォームとして使用される場合、マーカー設定は無視されます。
 
-これらのエリアに配置されたオブジェクトに割り当てられたメソッドは、適切なイベントが有効にされていれば、エリアが表示/印刷されるときに実行されます。 たとえば、ヘッダーエリアに配置されたオブジェクトのメソッドは `On Header` イベントで実行されます。
+これらのエリアに配置されたオブジェクトに割り当てられたメソッドは、適切なイベントが有効にされていれば、エリアが表示/印刷されるときに実行されます。 For example, a object method placed in the Header area is executed when the `On Header` event takes place.
 
 ---
 
@@ -16,15 +15,15 @@ title: マーカー
 
 フォームブレークエリアはレコードリストの下に一回だけ表示あるいは印刷されます。
 
-ブレークエリアは詳細マーカー (D) とブレークマーカー (B0) の間です。 レポートに [複数のブレークエリア](#追加マーカーの作成)を追加することもできます。
+ブレークエリアは詳細マーカー (D) とブレークマーカー (B0) の間です。 There can be [several Break areas](#additional-areas) in your report.
 
 ブレークエリアの大きさは変更することができます。 レコードデータではない情報 (説明や日付、時刻など) のほか、線やその他のグラフィック要素を表示するためにブレークエリアを使用できます。 印刷レポートでは、小計などのサマリ計算をおこなって印刷するために使用できます。
 
 #### JSON 文法
 
-| 名称          | データタイプ                            | とりうる値                                                             |
-| ----------- | --------------------------------- | ----------------------------------------------------------------- |
-| markerBreak | integer &#x7c; integer collection | ブレークマーカーの位置 (ピクセル単位)、またはブレークマーカー位置のコレクションを指定します。<br/>最小値: 0 |
+| 名称          | データタイプ                        | とりうる値                                                                                          |
+| ----------- | ----------------------------- | ---------------------------------------------------------------------------------------------- |
+| markerBreak | integer \| integer collection | ブレークマーカーの位置 (ピクセル単位)、またはブレークマーカー位置のコレクションを指定します。<br/>最小値: 0 |
 
 ---
 
@@ -36,8 +35,8 @@ title: マーカー
 
 #### JSON 文法
 
-| 名称         | データタイプ  | とりうる値             |
-| ---------- | ------- | ----------------- |
+| 名称         | データタイプ  | とりうる値                             |
+| ---------- | ------- | --------------------------------- |
 | markerBody | integer | 詳細マーカーの位置。 最小値: 0 |
 
 ---
@@ -52,8 +51,8 @@ title: マーカー
 
 #### JSON 文法
 
-| 名称           | データタイプ  | とりうる値  |
-| ------------ | ------- | ------ |
+| 名称           | データタイプ  | とりうる値                  |
+| ------------ | ------- | ---------------------- |
 | markerFooter | integer | 最小値: 0 |
 
 ---
@@ -64,7 +63,7 @@ title: マーカー
 
 ヘッダーエリアの大きさは変更することができます。 ヘッダーエリアには列のタイトル、フォームの説明、その他の情報、会社ロゴなどの画像を配置します。
 
-サブフォームとして表示される出力フォーム、あるいは `DISPLAY SELECTION` や `MODIFY SELECTION` コマンドを使用して表示される出力フォームのヘッダーエリアにアクティブオブジェクトを配置して使用することもできます。 以下のようなアクティブオブジェクトを配置できます:
+You can also place and use active objects in the Header area of output forms displayed as subforms, in the records display window or using the `DISPLAY SELECTION` and `MODIFY SELECTION` commands. 以下のようなアクティブオブジェクトを配置できます:
 
 - ボタン、ピクチャーボタン
 - コンボボックス、ドロップダウンリスト、ピクチャーポップアップメニュー
@@ -72,23 +71,23 @@ title: マーカー
 - ラジオボタン、チェックボックス、3Dチェックボックス
 - 進捗インジケーター、ルーラー、ステッパー、スピナー
 
-`addSubrecord` (サブレコード追加) や `cancel`、`automaticSplitter` (自動スプリッター) などの標準アクションをボタンに割り当てることができます。 ヘッダーエリアに配置したアクティブオブジェクトでは以下のイベントを使用できます: `On Load`, `On Clicked`, `On Header`, `On Printing Footer`, `On Double Clicked`, `On Drop`, `On Drag Over`, `On Unload`。 フォームメソッドが `On Header` イベントで呼び出されるのは、エリアのオブジェクトメソッドが呼び出された後になります。
+Standard actions such as `Add Subrecord`, `Cancel` (lists displayed using `DISPLAY SELECTION` and `MODIFY SELECTION`) or `Automatic splitter` can be assigned to the inserted buttons. The following events apply to the active objects you insert in the Header area: `On Load`, `On Clicked`, `On Header`, `On Printing Footer`, `On Double Clicked`, `On Drop`, `On Drag Over`, `On Unload`. Keep in mind that the form method is called with the `On Header` event after calling the object methods of the area.
 
-フォームには、[追加のヘッダーエリア](#追加マーカーの作成) を作成し、追加ブレークと関連づけることができます。 レベル1ヘッダーは、最初のソートフィールドによりグループ化されたレコードが印刷される直前に印刷されます。
+The form can contains [additional header areas](#additional-areas) to be associated with additional breaks. レベル1ヘッダーは、最初のソートフィールドによりグループ化されたレコードが印刷される直前に印刷されます。
 
 #### JSON 文法
 
-| 名称           | データタイプ                            | とりうる値                                                              |
-| ------------ | --------------------------------- | ------------------------------------------------------------------ |
-| markerHeader | integer &#x7c; integer collection | ヘッダーマーカーの位置 (ピクセル単位)、またはヘッダーマーカー位置のコレクションを指定します。 <br/>最小値: 0 |
+| 名称           | データタイプ                        | とりうる値                                                                                           |
+| ------------ | ----------------------------- | ----------------------------------------------------------------------------------------------- |
+| markerHeader | integer \| integer collection | ヘッダーマーカーの位置 (ピクセル単位)、またはヘッダーマーカー位置のコレクションを指定します。 <br/>最小値: 0 |
 
 ## 追加マーカーの作成
 
 レポート用に追加のブレークエリアやヘッダーエリアを作成できます。 これらの追加されたエリアを使用して、小計などの計算結果をレポートに印刷したり、その他の情報を効果的に表示することができます。
 
-追加エリアは、[フォームブレーク](#フォームブレーク) と [フォームヘッダー](#フォームヘッダー) のプロパティにマーカー位置のコレクションを指定すると定義されます。
+Additional areas are defined when you use a collection of positions in the [Form Break](#form-break) and [Form Header](#form-header) properties.
 
-> 4Dフォームエディターでは、**Alt**キーを押しながら適切なコントロールマーカーをクリックして、追加のコントロールラインを作成します。
+> In the 4D Form editor, you create additional control lines by holding down the **Alt** key while clicking the appropriate control marker.
 
 フォームは常に、ヘッダー、詳細、ブレーク (レベル0)、およびフッターエリアを持った状態で作成されます。
 
@@ -110,4 +109,4 @@ title: マーカー
 | H2  | ヘッダーレベル2 | 二番目のソートフィールド印刷後 |
 | H3  | ヘッダーレベル3 | 三番目のソートフィールド印刷後 |
 
-ブレーク処理を開始するために `Subtotal` コマンドを使用する場合、ソート順に従って作成されるすべてのブレークレベル数から 1 マイナスした数のブレークエリアを作成すべきです。 ブレークエリアに何も印刷する必要がない場合、マーカーを移動してその高さを 0 にします。 ブレークエリアの数よりも多いフィールド数でソートすると、印刷時に最後のブレークエリアが繰り返されます。
+If you use the `Subtotal` function to initiate Break processing, you should create a Break area for every level of Break that will be generated by the sort order, minus one. ブレークエリアに何も印刷する必要がない場合、マーカーを移動してその高さを 0 にします。 ブレークエリアの数よりも多いフィールド数でソートすると、印刷時に最後のブレークエリアが繰り返されます。
