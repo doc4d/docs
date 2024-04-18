@@ -6,42 +6,36 @@ title: Session
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-
-Session オブジェクトは [`Session`](#session) コマンドによって返されます。 このオブジェクトは、カレントユーザーセッションを管理するためのインターフェースをデベロッパーに対して提供し、コンテキストデータの保存、プロセス間の情報共有、セッションに関連したプリエンプティブプロセスの開始などのアクションの実行や、[アクセス権](../ORDA/privileges.md) の管理を可能にします。
+Session objects are returned by the [`Session`](#session) command. These objects provide the developer with an interface allowing to manage the current user session and execute actions such as store contextual data, share information between session processes, launch session-related preemptive processes, or (web only) manage [privileges](../ORDA/privileges.md).
 
 ### セッションの種類
 
 このクラスは 3種類のセッションをサポートしています:
 
-- [**Webユーザーセッション**](WebServer/sessions.md): [プロジェクトにおいてスケーラブルセッションが有効化されている](WebServer/sessions.md#セッションの有効化) 場合、Webユーザーセッションが利用可能です。 これらは Web および REST 接続に使用され、権限を割り当てることができます。
-- [**リモートクライアントユーザー セッション**](../Desktop/clientServer.md#リモートユーザーセッション): クライアント/サーバーアプリケーションでは、リモートユーザーは、サーバー上で管理される独自のセッションを持ちます。
-- [**ストアドプロシージャーセッション**](https://doc.4d.com/4Dv20R5/4D/20-R5/4D-Server-and-the-4D-Language.300-6932726.ja.html): サーバ上で実行されるすべてのストアドプロシージャーは、同じ仮想ユーザーセッションを共有します。
+- [**Web user sessions**](WebServer/sessions.md): Web user sessions are available when [scalable sessions are enabled in your project](WebServer/sessions.md#enabling-sessions). これらは Web および REST 接続に使用され、権限を割り当てることができます。
+- [**Remote client user sessions**](../Desktop/clientServer.md#remote-user-sessions): In client/server applications, remote users have their own sessions managed on the server.
+- [**Stored procedures session**](https://doc.4d.com/4Dv20R5/4D/20-R5/4D-Server-and-the-4D-Language.300-6932726.en.html): All stored procedures executed on the server share the same virtual user session.
 
 :::note
 
-`Session` オブジェクトにおいて利用可能なプロパティと関数は、セッションの種類に依存します。
+The availability of properties and functions in the `Session` object depend on the session type.
 
 :::
 
-
 ### 概要
 
-
-|                                                                                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [<!-- INCLUDE #SessionClass.clearPrivileges().Syntax -->](#clearprivileges)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.clearPrivileges().Summary -->|
-| [<!-- INCLUDE #SessionClass.expirationDate.Syntax -->](#expirationdate)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.expirationDate.Summary -->|
-| [<!-- INCLUDE #SessionClass.hasPrivilege().Syntax -->](#hasprivilege)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.hasPrivilege().Summary -->|
-| [<!-- INCLUDE #SessionClass.id.Syntax -->](#id)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.id.Summary -->|
-| [<!-- INCLUDE #SessionClass.idleTimeout.Syntax -->](#idletimeout)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.idleTimeout.Summary -->|
-| [<!-- INCLUDE #SessionClass.info.Syntax -->](#info)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.info.Summary -->|
-| [<!-- INCLUDE #SessionClass.isGuest().Syntax -->](#isguest)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.isGuest().Summary -->|
-| [<!-- INCLUDE #SessionClass.setPrivileges().Syntax -->](#setprivileges)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.setPrivileges().Summary -->|
-| [<!-- INCLUDE #SessionClass.storage.Syntax -->](#storage)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.storage.Summary -->|
-| [<!-- INCLUDE #SessionClass.userName.Syntax -->](#username)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.userName.Summary -->|
-
-
-
+|                                                                                                                                                                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [<!-- INCLUDE #SessionClass.clearPrivileges().Syntax -->](#clearprivileges)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #SessionClass.clearPrivileges().Summary --> |
+| [<!-- INCLUDE #SessionClass.expirationDate.Syntax -->](#expirationdate)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #SessionClass.expirationDate.Summary -->        |
+| [<!-- INCLUDE #SessionClass.hasPrivilege().Syntax -->](#hasprivilege)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #SessionClass.hasPrivilege().Summary -->          |
+| [<!-- INCLUDE #SessionClass.id.Syntax -->](#id)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #SessionClass.id.Summary -->                                            |
+| [<!-- INCLUDE #SessionClass.idleTimeout.Syntax -->](#idletimeout)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #SessionClass.idleTimeout.Summary -->                 |
+| [<!-- INCLUDE #SessionClass.info.Syntax -->](#info)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #SessionClass.info.Summary -->                                      |
+| [<!-- INCLUDE #SessionClass.isGuest().Syntax -->](#isguest)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #SessionClass.isGuest().Summary -->                         |
+| [<!-- INCLUDE #SessionClass.setPrivileges().Syntax -->](#setprivileges)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #SessionClass.setPrivileges().Summary -->       |
+| [<!-- INCLUDE #SessionClass.storage.Syntax -->](#storage)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #SessionClass.storage.Summary -->                             |
+| [<!-- INCLUDE #SessionClass.userName.Syntax -->](#username)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #SessionClass.userName.Summary -->                          |
 
 ## Session
 
@@ -56,84 +50,83 @@ Session オブジェクトは [`Session`](#session) コマンドによって返�
 
 <!-- REF #_command_.Session.Syntax -->**Session** : 4D.Session<!-- END REF -->
 
-
 <!-- REF #_command_.Session.Params -->
-| 引数  | タイプ        |    | 説明             |
-| --- | ---------- |:--:| -------------- |
-| 戻り値 | 4D.Session | <- | Session オブジェクト |
-<!-- END REF -->
 
+| 引数  | タイプ                        |     | 説明             |
+| --- | -------------------------- | :-: | -------------- |
+| 戻り値 | 4D.Session |  <- | Session オブジェクト |
+
+<!-- END REF -->
 
 #### 説明
 
-`Session` コマンドは、 <!-- REF #_command_.Session.Summary -->カレントユーザーセッションに対応する `Session` オブジェクトを返します<!-- END REF -->。
+The `Session` command <!-- REF #_command_.Session.Summary -->returns the `Session` object corresponding to the current user session<!-- END REF -->.
 
 コマンドを呼び出したプロセスによって、カレントユーザーセッションは次のいずれかです:
 
-- Webセッション ([スケーラブルセッションが有効化されている](WebServer/sessions.md#セッションの有効化) 場合)
+- a web session (when [scalable sessions are enabled](WebServer/sessions.md#enabling-sessions)),
 - リモートクライアントセッション
 - ストアドプロシージャーセッション
 
-詳細については、[セッションの種類](#セッションの種類) の段落を参照ください。
+For more information, see the [Session types](#session-types) paragraph.
 
-サポートされていないコンテキスト (シングルユーザーアプリケーション、スケーラブルセッションが無効...) から呼び出されると、コマンドは *Null* を返します。
+If the command is called from a non supported context (single-user application, scalable sessions disabled...), it returns _Null_.
 
 #### Webセッション
 
-Webセッションの `Session` オブジェクトは、どの Webプロセスからも利用できます:
+The `Session` object of web sessions is available from any web process:
 
-- `On Web Authentication`、`On Web Connection`、および `On REST Authentication` データベースメソッド
+- `On Web Authentication`, `On Web Connection`, and `On REST Authentication` database methods,
 - セミダイナミックページにおいて、4Dタグ (4DTEXT, 4DHTML, 4DEVAL, 4DSCRIPT/, 4DCODE) を介して処理されるコード
 - "公開オプション: 4DタグとURL(4DACTION...)" を有効化されたうえで、4DACTION/ URL から呼び出されたプロジェクトメソッド
-- モバイルリクエスト用の [`On Mobile App Authentication`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-authentication) と [`On Mobile App Action`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-action) データベースメソッド
-- [RESTリクエストで呼び出された](../REST/ClassFunctions.md) ORDA関数。
+- [`On Mobile App Authentication`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-authentication) and [`On Mobile App Action`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-action) database methods for mobile requests,
+- ORDA functions [called with REST requests](../REST/ClassFunctions.md).
 
-Webユーザーセッションの詳細については、[Webサーバーセッション](WebServer/sessions.md) の章を参照ください。
+For more information on web user sessions, please refer to the [Web Server Sessions](WebServer/sessions.md) section.
 
 #### リモートクライアントセッション
 
-リモートクライアントの `Session` オブジェクトは、次のいずれかから利用できます:
+The `Session` object of remote client sessions is available from:
 
-- [サーバー上で実行](../Project/code-overview.md#サーバー上で実行) 属性を持つプロジェクトメソッド (クライアントプロセスの "双子" プロセスで実行されます)
+- Project methods that have the [Execute on Server](../Project/code-overview.md#execute-on-server) attribute (they are executed in the "twinned" process of the client process),
 - トリガー
-- `On Server Open Connection` および `On Server Shutdown Connection` データベースメソッド
+- `On Server Open Connection` and `On Server Shutdown Connection` database methods.
 
-リモートユーザーセッションの詳細については、[**リモートクライアントユーザーセッション**](../Desktop/clientServer.md#リモートユーザーセッション) の段落を参照ください。
+For more information on remote user sessions, please refer to the [**Remote client user sessions**](../Desktop/clientServer.md#remote-user-sessions) paragraph.
 
 #### ストアドプロシージャーセッション
 
-すべてのストアドプロシージャープロセスは、同じ仮想ユーザーセッションを共有します。 ストアドプロシージャーの `Session` オブジェクトは、次のいずれかから利用できます:
+すべてのストアドプロシージャープロセスは、同じ仮想ユーザーセッションを共有します。 The `Session` object of stored procedures is available from:
 
-- [`Execute on server`](https://doc.4d.com/4dv20/help/command/ja/page373.html) コマンドで呼び出されるメソッド
-- `On Server Startup`、`On Server Shutdown`、`On Backup Startup`、`On Backup Shutdown`、および `On System event` データベースメソッド
+- methods called with the [`Execute on server`](https://doc.4d.com/4dv20/help/command/en/page373.html) command,
+- `On Server Startup`, `On Server Shutdown`, `On Backup Startup`, `On Backup Shutdown`, and `On System event` database methods
 
-ストアドプロシージャーの仮想ユーザーセッションに関する情報については、[4D Serverと4Dランゲージ](https://doc.4d.com/4Dv20R5/4D/20-R5/4D-Server-and-the-4D-Language.300-6932726.ja.html) のページを参照ください。
+For information on stored procedures virtual user session, please refer to the [4D Server and the 4D Language](https://doc.4d.com/4Dv20R5/4D/20-R5/4D-Server-and-the-4D-Language.300-6932726.en.html) page.
 
 #### 例題
 
-"公開オプション: 4DタグとURL(4DACTION...)" を有効にした `action_Session` メソッドを定義しました。 ブラウザーに次の URL を入力してメソッドを呼び出します:
+You have defined the `action_Session` method with attribute "Available through 4D tags and URLs". ブラウザーに次の URL を入力してメソッドを呼び出します:
 
 ```
 IP:port/4DACTION/action_Session
 ```
 
 ```4d
-  //action_Session メソッド
+  //action_Session method
  Case of
     :(Session#Null)
-       If(Session.hasPrivilege("WebAdmin")) // hasPrivilege 関数を呼び出します
-          WEB SEND TEXT("4DACTION --> セッションは WebAdmin です")
+       If(Session.hasPrivilege("WebAdmin")) //calling the hasPrivilege function
+          WEB SEND TEXT("4DACTION --> Session is WebAdmin")
        Else
-          WEB SEND TEXT("4DACTION --> セッションは WebAdmin ではありません")
+          WEB SEND TEXT("4DACTION --> Session is not WebAdmin")
        End if
     Else
-       WEB SEND TEXT("4DACTION --> セッションは null です")
+       WEB SEND TEXT("4DACTION --> Session is null")
  End case
 ```
 
-
-
 <!-- REF SessionClass.clearPrivileges().Desc -->
+
 ## .clearPrivileges()
 
 <details><summary>履歴</summary>
@@ -146,24 +139,23 @@ IP:port/4DACTION/action_Session
 
 <!-- REF #SessionClass.clearPrivileges().Syntax -->**.clearPrivileges()** : Boolean<!-- END REF -->
 
-
 <!-- REF #SessionClass.clearPrivileges().Params -->
-| 引数  | タイプ     |    | 説明                  |
-| --- | ------- |:--:| ------------------- |
-| 戻り値 | Boolean | <- | 実行が正常に終わった場合には true |
-<!-- END REF -->
 
+| 引数  | タイプ     |     | 説明                  |
+| --- | ------- | :-: | ------------------- |
+| 戻り値 | Boolean |  <- | 実行が正常に終わった場合には true |
+
+<!-- END REF -->
 
 #### 説明
 
 :::note
 
-権限は Webユーザーセッションでのみサポートされるため、他のセッションタイプではこの関数は何もせず、常に **false** を返します。
+Since privileges are only supported in web user sessions, this function does nothing and always returns **False** in other session types.
 
 :::
 
-`.clearPrivileges()` 関数は、 <!-- REF #SessionClass.clearPrivileges().Summary -->対象セッションに紐づいているアクセス権をすべて削除し、実行が成功した場合に **true** を返します<!-- END REF -->。 結果的に、当該セッションは自動的にゲストセッションになります。
-
+The `.clearPrivileges()` function <!-- REF #SessionClass.clearPrivileges().Summary -->removes all the privileges associated to the session and returns **True** if the execution was successful<!-- END REF -->. 結果的に、当該セッションは自動的にゲストセッションになります。
 
 #### 例題
 
@@ -178,9 +170,8 @@ $isGuest:=Session.isGuest() // $isGuest は true
 
 <!-- END REF -->
 
-
-
 <!-- REF SessionClass.expirationDate.Desc -->
+
 ## .expirationDate
 
 <details><summary>履歴</summary>
@@ -201,9 +192,9 @@ $isGuest:=Session.isGuest() // $isGuest は true
 
 :::
 
-`.expirationDate` プロパティは、 <!-- REF #SessionClass.expirationDate.Summary -->セッションcookie の有効期限を返します<!-- END REF -->。 値は ISO 8601標準に従って文字列で表現されます: `YYYY-MM-DDTHH:MM:SS.mmmZ`。
+The `.expirationDate` property contains <!-- REF #SessionClass.expirationDate.Summary -->the expiration date and time of the session cookie<!-- END REF -->. The value is expressed as text in the ISO 8601 format: `YYYY-MM-DDTHH:MM:SS.mmmZ`.
 
-このプロパティは **読み取り専用** です。 [`.idleTimeout`](#idletimeout) プロパティ値が変更された場合、有効期限は自動的に再計算されます。
+This property is **read-only**. It is automatically recomputed if the [`.idleTimeout`](#idletimeout) property value is modified.
 
 #### 例題
 
@@ -214,10 +205,8 @@ $expiration:=Session.expirationDate // 例: "2021-11-05T17:10:42Z"
 
 <!-- END REF -->
 
-
-
-
 <!-- REF SessionClass.hasPrivilege().Desc -->
+
 ## .hasPrivilege()
 
 <details><summary>履歴</summary>
@@ -230,26 +219,24 @@ $expiration:=Session.expirationDate // 例: "2021-11-05T17:10:42Z"
 
 <!-- REF #SessionClass.hasPrivilege().Syntax -->**.hasPrivilege**( *privilege* : Text ) : Boolean<!-- END REF -->
 
-
 <!-- REF #SessionClass.hasPrivilege().Params -->
-| 引数        | タイプ     |    | 説明                                                |
-| --------- | ------- |:--:| ------------------------------------------------- |
-| privilege | Text    | <- | 確認するアクセス権の名称                                      |
-| 戻り値       | Boolean | <- | セッションが *privilege* のアクセス権を持っていれば true、それ以外は false |
-<!-- END REF -->
 
+| 引数        | タイプ     |     | 説明                                               |
+| --------- | ------- | :-: | ------------------------------------------------ |
+| privilege | Text    |  <- | 確認するアクセス権の名称                                     |
+| 戻り値       | Boolean |  <- | True if session has _privilege_, False otherwise |
+
+<!-- END REF -->
 
 #### 説明
 
 :::note
 
-権限は Webユーザーセッションでのみサポートされるため、他のセッションタイプではこの関数は何もせず、常に **false** を返します。
+Since privileges are only supported in web user sessions, this function does nothing and always returns **False** in other session types.
 
 :::
 
-
-`.hasPrivilege()` 関数は、 <!-- REF #SessionClass.hasPrivilege().Summary -->対象セッションに privilege のアクセス権が紐づいていれば true、でなければ false を返します<!-- END REF -->。
-
+The `.hasPrivilege()` function <!-- REF #SessionClass.hasPrivilege().Summary -->returns True if the privilege is associated to the session, and False otherwise<!-- END REF -->.
 
 #### 例題
 
@@ -257,17 +244,17 @@ $expiration:=Session.expirationDate // 例: "2021-11-05T17:10:42Z"
 
 ```4d
 If (Session.hasPrivilege("WebAdmin"))
-    // アクセス権が付与されているので、何もしません
+	//Access is granted, do nothing
 Else
-    // 認証ページを表示します
+	//Display an authentication page
 
 End if
 ```
 
 <!-- END REF -->
 
-
 <!-- REF SessionClass.id.Desc -->
+
 ## .id
 
 <details><summary>履歴</summary>
@@ -282,14 +269,12 @@ End if
 
 #### 説明
 
-`.id` プロパティは、 <!-- REF #SessionClass.id.Summary -->サーバー上のセッションの一意な識別子 (UUID) を格納します<!-- END REF -->。 この一意の文字列は、サーバーによって各セッションに対して自動的に割り当てられ、そのプロセスを識別することを可能にします。 
-
+The `.id` property contains <!-- REF #SessionClass.id.Summary -->the unique identifier (UUID) of the session on the server<!-- END REF -->. この一意の文字列は、サーバーによって各セッションに対して自動的に割り当てられ、そのプロセスを識別することを可能にします。
 
 <!-- END REF -->
 
-
-
 <!-- REF SessionClass.idleTimeout.Desc -->
+
 ## .idleTimeout
 
 <details><summary>履歴</summary>
@@ -310,34 +295,33 @@ End if
 
 :::
 
-`.idleTimeout` プロパティは、 <!-- REF #SessionClass.idleTimeout.Summary -->対象セッションが 4D によって終了されるまでの、非アクティブタイムアウト時間 (分単位) を格納します<!-- END REF -->。
+The `.idleTimeout` property contains <!-- REF #SessionClass.idleTimeout.Summary -->the inactivity session timeout (in minutes), after which the session is automatically closed by 4D<!-- END REF -->.
 
 プロパティ未設定時のデフォルト値は 60 (1時間) です。
 
-このプロパティが設定されると、それに応じて [`.expirationDate`](#expirationdate) プロパティも更新されます。
+When this property is set, the [`.expirationDate`](#expirationdate) property is updated accordingly.
 
 > 60 (分) 未満の値を指定することはできません (60 未満の値を設定した場合、タイムアウトは 60 (分) に設定されます)。
 
-
-このプロパティは **読み書き可能** です。
+This property is **read write**.
 
 #### 例題
 
 ```4d
 If (Session.isGuest())
-        // ゲストセッションは、60分の非アクティブ時間経過後に終了します
-    Session.idleTimeout:=60
+		// A Guest session will close after 60 minutes of inactivity
+	Session.idleTimeout:=60
 Else
-        // その他のセッションは、120分の非アクティブ時間経過後に終了します
-    Session.idleTimeout:=120
+		// Other sessions will close after 120 minutes of inactivity
+	Session.idleTimeout:=120
 End if
 
 ```
 
 <!-- END REF -->
 
-
 <!-- REF SessionClass.info.Desc -->
+
 ## .info
 
 <details><summary>履歴</summary>
@@ -358,36 +342,35 @@ End if
 
 :::
 
-`.info` プロパティは、 <!-- REF #SessionClass.info.Summary -->サーバー上のリモートクライアントまたはストアドプロシージャーセッションの情報を格納します<!-- END REF -->。
+The `.info` property <!-- REF #SessionClass.info.Summary -->describes the remote client or stored procedure session on the server<!-- END REF -->.
 
-`.info` オブジェクトは、リモートクライアントおよびストアドプロシージャーセッションに対して [`Get process activity`](https://doc.4d.com/4dv20/help/command/ja/page1495.html) コマンドによって返されるオブジェクトと同じです。
+The `.info` object is the same object as the one returned by the [`Get process activity`](https://doc.4d.com/4dv20/help/command/en/page1495.html) command for remote client and stored procedure sessions.
 
-`.info` オブジェクトには、次のプロパティが格納されています:
+The `.info` object contains the following properties:
 
-| プロパティ            | タイプ           | 説明                                                  |
-| ---------------- | ------------- | --------------------------------------------------- |
-| type             | Text          | セッションタイプ: "remote" または "storedProcedure"            |
-| userName         | Text          | 4Dユーザー名 ([`.userName`](#username) と同じ値)             |
-| machineName      | Text          | リモートセッション: リモートマシンの名前。 ストアドプロシージャーセッション: サーバーマシンの名前 |
-| systemUserName   | Text          | リモートセッション: リモートマシン上で開かれたシステムセッションの名前。               |
-| IPAddress        | Text          | リモートマシンの IPアドレス。                                    |
-| hostType         | Text          | ホストタイプ: "windows" または "mac"                         |
-| creationDateTime | 日付 (ISO 8601) | セッション作成の日時                                          |
-| state            | Text          | セッションの状態: "active", "postponed", "sleeping"         |
-| ID               | Text          | セッションUUID ([`.id`](#id) と同じ値)                       |
-| persistentID     | Text          | セッションの永続的な ID                                       |
+| プロパティ            | タイプ                              | 説明                                                                                  |
+| ---------------- | -------------------------------- | ----------------------------------------------------------------------------------- |
+| type             | Text                             | セッションタイプ: "remote" または "storedProcedure"                            |
+| userName         | Text                             | 4D user name (same value as [`.userName`](#username))            |
+| machineName      | Text                             | リモートセッション: リモートマシンの名前。 ストアドプロシージャーセッション: サーバーマシンの名前 |
+| systemUserName   | Text                             | リモートセッション: リモートマシン上で開かれたシステムセッションの名前。                               |
+| IPAddress        | Text                             | リモートマシンの IPアドレス。                                                                    |
+| hostType         | Text                             | ホストタイプ: "windows" または "mac"                                         |
+| creationDateTime | 日付 (ISO 8601) | セッション作成の日時                                                                          |
+| state            | Text                             | セッションの状態: "active", "postponed", "sleeping"                         |
+| ID               | Text                             | Session UUID (same value as [`.id`](#id))                        |
+| persistentID     | Text                             | セッションの永続的な ID                                                                       |
 
 :::note
 
-`.info` は計算プロパティなため、そのプロパティに対して何らかの処理をおこないたい場合は、呼び出し後にローカル変数に保存することが推奨されます。
+Since `.info` is a computed property, it is recommended to call it once and then to store it in a local variable if you want to do some processing on its properties.
 
 :::
 
-
 <!-- END REF -->
 
-
 <!-- REF SessionClass.isGuest().Desc -->
+
 ## .isGuest()
 
 <details><summary>履歴</summary>
@@ -400,39 +383,38 @@ End if
 
 <!-- REF #SessionClass.isGuest().Syntax -->**.isGuest()** : Boolean<!-- END REF -->
 
-
 <!-- REF #SessionClass.isGuest().Params -->
-| 引数  | タイプ     |    | 説明                            |
-| --- | ------- |:--:| ----------------------------- |
-| 戻り値 | Boolean | <- | ゲストセッションの場合は true、それ以外は false |
+
+| 引数  | タイプ     |     | 説明                            |
+| --- | ------- | :-: | ----------------------------- |
+| 戻り値 | Boolean |  <- | ゲストセッションの場合は true、それ以外は false |
+
 <!-- END REF -->
 
 #### 説明
 
 :::note
 
-この関数は、リモートクライアントとストアドプロシージャーのセッションでは常に **true** を返します。
+This function always returns **True** with remote client and stored procedure sessions.
 
 :::
 
-`.isGuest()` 関数は、 <!-- REF #SessionClass.isGuest().Summary -->アクセス権のないゲストセッションの場合は true を返します<!-- END REF -->。
-
+The `.isGuest()` function <!-- REF #SessionClass.isGuest().Summary -->returns True if the session is a Guest session (i.e. it has no privileges)<!-- END REF -->.
 
 #### 例題
 
-`On Web Connection` データベースメソッドにて:
+In the `On Web Connection` database method:
 
 ```4d
 If (Session.isGuest())
-    // ゲストユーザー用の処理
+	//Do something for Guest user
 End if
 ```
 
-
 <!-- END REF -->
 
-
 <!-- REF SessionClass.setPrivileges().Desc -->
+
 ## .setPrivileges()
 
 <details><summary>履歴</summary>
@@ -446,49 +428,50 @@ End if
 
 <!-- REF #SessionClass.setPrivileges().Syntax -->**.setPrivileges**( *privilege* : Text ) : Boolean<br/>**.setPrivileges**( *privileges* : Collection )<br/>**.setPrivileges**( *settings* : Object ) : Boolean<!-- END REF -->
 
-
 <!-- REF #SessionClass.setPrivileges().Params -->
-| 引数         | タイプ        |    | 説明                                          |
-| ---------- | ---------- |:--:| ------------------------------------------- |
-| privilege  | Text       | -> | アクセス権の名称                                    |
-| privileges | Collection | -> | アクセス権の名称のコレクション                             |
-| settings   | Object     | -> | "privileges" プロパティ (文字列またはコレクション) を持つオブジェクト |
-| 戻り値        | Boolean    | <- | 実行が正常に終わった場合には true                         |
+
+| 引数         | タイプ        |     | 説明                                                             |
+| ---------- | ---------- | :-: | -------------------------------------------------------------- |
+| privilege  | Text       |  -> | アクセス権の名称                                                       |
+| privileges | Collection |  -> | アクセス権の名称のコレクション                                                |
+| settings   | Object     |  -> | "privileges" プロパティ (文字列またはコレクション) を持つオブジェクト |
+| 戻り値        | Boolean    |  <- | 実行が正常に終わった場合には true                                            |
+
 <!-- END REF -->
 
 #### 説明
 
 :::note
 
-権限は Webユーザーセッションでのみサポートされるため、他のセッションタイプではこの関数は何もせず、常に **false** を返します。
+Since privileges are only supported in web user sessions, this function does nothing and always returns **False** in other session types.
 
 :::
 
-`.setPrivileges()` 関数は、 <!-- REF #SessionClass.setPrivileges().Summary -->引数として渡したアクセス権やロールをセッションと紐づけ、実行が成功した場合に **true** を返します<!-- END REF -->。
+The `.setPrivileges()` function <!-- REF #SessionClass.setPrivileges().Summary -->associates the privilege(s) and/or role(s) defined in the parameter to the session and returns **True** if the execution was successful<!-- END REF -->.
 
-- *privilege* には、アクセス権の名称を文字列として渡します (複数の場合はカンマ区切り)。
+- In the _privilege_ parameter, pass a string containing a privilege name (or several comma-separated privilege names).
 
-- *privileges* には、アクセス権の名称を文字列のコレクションとして渡します。
+- In the _privileges_ parameter, pass a collection of strings containing privilege names.
 
-- *settings* には、以下のプロパティを持つオブジェクトを渡します:
+- In the _settings_ parameter, pass an object containing the following properties:
 
-| プロパティ      | タイプ                 | 説明                                                   |
-| ---------- | ------------------- | ---------------------------------------------------- |
-| privileges | Text または Collection | <li>アクセス権名の文字列</li><li>アクセス権名のコレクション</li>  |
-| roles      | Text または Collection | <li>ロールの文字列</li><li>ロールの文字列のコレクション</li> |
-| userName   | Text                | (任意) セッションと紐づけるユーザー名                                 |
+| プロパティ      | タイプ                 | 説明                                                                                                       |
+| ---------- | ------------------- | -------------------------------------------------------------------------------------------------------- |
+| privileges | Text または Collection | <li>String containing a privilege name, or</li><li>Collection of strings containing privilege names</li> |
+| roles      | Text または Collection | <li>String containing a role, or</li><li>Collection of strings containing roles</li>                     |
+| userName   | Text                | (任意) セッションと紐づけるユーザー名                                                                  |
 
 :::note
 
-権限とロールは、プロジェクトの [`roles.json`](../ORDA/privileges.md#rolesjson-ファイル) ファイルで定義されます。 詳細については、[**権限**](../ORDA/privileges.md) を参照してください。
+Privileges and roles are defined in [`roles.json`](../ORDA/privileges.md#rolesjson-file) file of the project. For more information, please refer to the [**Privileges**](../ORDA/privileges.md) section.
 
 :::
 
-`privileges` または `roles` プロパティに、[`roles.json`](../ORDA/privileges.md#rolesjson-ファイル) ファイルで宣言されていない名前が含まれている場合、その名前は無視されます。
+If the `privileges` or `roles` property contains a name that is not declared in the [`roles.json`](../ORDA/privileges.md#rolesjson-file) file, it is ignored.
 
-セッションにアクセス権またはロールが紐づいていない場合、そのセッションはデフォルトで [ゲストセッション](#isguest) です。
+By default when no privilege or role is associated to the session, the session is a [Guest session](#isguest).
 
-[`userName`](#username) プロパティは Session オブジェクトレベルで利用可能です (読み取り専用)。
+The [`userName`](#username) property is available at session object level (read-only).
 
 #### 例題
 
@@ -497,9 +480,9 @@ End if
 ```4d
 var $userOK : Boolean
 
-... // ユーザー認証
+... //Authenticate the user
 
-If ($userOK) // ユーザー認証に成功した場合
+If ($userOK) //The user has been approved
   var $info : Object
   $info:=New object()
   $info.privileges:=New collection("WebAdmin")
@@ -508,10 +491,10 @@ End if
 
 ```
 
-
 <!-- END REF -->
 
 <!-- REF SessionClass.storage.Desc -->
+
 ## .storage
 
 <details><summary>履歴</summary>
@@ -527,26 +510,25 @@ End if
 
 #### 説明
 
-`.storage` プロパティは、 <!-- REF #SessionClass.storage.Summary -->セッションのすべてのプロセスで利用可能な情報を保存しておける共有オブジェクトを格納します<!-- END REF -->。
+The `.storage` property contains <!-- REF #SessionClass.storage.Summary -->a shared object that can be used to store information available to all processes of the session<!-- END REF -->.
 
-`Session` オブジェクトの作成時には、`.storage` プロパティは空です。 共有オブジェクトのため、このプロパティはサーバー上の `Storage` オブジェクトにおいて利用可能です。
+When a `Session` object is created, the `.storage` property is empty. Since it is a shared object, this property will be available in the `Storage` object of the server.
 
-> サーバーの `Storage` オブジェクトと同様に、`.storage` プロパティは常に "single" で存在します。 共有オブジェクトや共有コレクションを `.storage` に追加しても、共有グループは作成されません。
+> Like the `Storage` object of the server, the `.storage` property is always "single": adding a shared object or a shared collection to `.storage` does not create a shared group.
 
-このプロパティは **読み取り専用** ですが、戻り値のオブジェクトは読み書き可能です。
+This property is **read only** itself but it returns a read-write object.
 
 <Tabs>
 
 <TabItem value="Web session example">
 
-クライアントの IP を `.storage` プロパティに保存します。 `On Web Authentication` データベースメソッドに以下のように記述できます:
-
+クライアントの IP を `.storage` プロパティに保存します。 You can write in the `On Web Authentication` database method:
 
 ```4d
 If (Session.storage.clientIP=Null) // 最初のアクセス
     Use (Session.storage)
         Session.storage.clientIP:=New shared object("value"; $clientIP)
-    End use
+    End use 
 End if
 ```
 
@@ -554,12 +536,11 @@ End if
 
 <TabItem value="Remote session example">
 
-同じセッションのプロセス間でデータを共有したい場合:
-
+You want to share data between processes in the same session:
 
 ```4d
 Use (Session.storage)
- Session. torage.settings:=New shared object("property"; $value; "property2"; $value2)
+ Session.storage.settings:=New shared object("property"; $value; "property2"; $value2)
 End use
 ```
 
@@ -569,11 +550,8 @@ End use
 
 <!-- END REF -->
 
-
-
-
-
 <!-- REF SessionClass.userName.Desc -->
+
 ## .userName
 
 <details><summary>履歴</summary>
@@ -589,13 +567,11 @@ End use
 
 #### 説明
 
-`.userName` プロパティは、 <!-- REF #SessionClass.userName.Summary -->セッションと紐づいたユーザー名を格納します<!-- END REF -->。 このプロパティは、コード内でユーザーを確認するのに使用できます。
+The `.userName` property contains <!-- REF #SessionClass.userName.Summary -->the user name associated to the session<!-- END REF -->. このプロパティは、コード内でユーザーを確認するのに使用できます。
 
-- Webセッションでは、このプロパティはデフォルトで空の文字列です。 これは、[`setPrivileges()`](#setprivileges) 関数の `privileges` プロパティを使って設定することができます。
-- リモートおよびストアドプロシージャーセッションでは、このプロパティは [`Current user`](https://doc.4d.com/4dv20/help/command/ja/page182.html) コマンドと同じユーザー名を返します。
+- Webセッションでは、このプロパティはデフォルトで空の文字列です。 It can be set using the `privileges` property of the [`setPrivileges()`](#setprivileges) function.
+- With remote and stored procedure sessions, this property returns the same user name as the [`Current user`](https://doc.4d.com/4dv20/help/command/en/page182.html) command.
 
-このプロパティは **読み取り専用** です。
-
-
+This property is **read only**.
 
 <!-- END REF -->
