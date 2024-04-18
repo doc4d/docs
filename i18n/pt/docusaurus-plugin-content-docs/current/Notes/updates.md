@@ -10,6 +10,7 @@ Leia [**O que há de novo no 4D 20 R5**](https://blog.4d.com/en-whats-new-in-4d-
 
 #### Destaques
 
+- New [Package manager](../Project/components.md) to handle components through a `dependencies.json` file.
 - Suporte de estruturas de manipulação de erros [`Try... Catch...End try`](../Concepts/error-handling.md#trycatchend-try)
 - QUIC network layer now supports [broadcasting](../Desktop/clientServer.md#opening-a-remote-project), [SSO](https://doc.4d.com/4Dv20R5/4D/20-R5/Single-Sign-On-SSO-on-Windows.300-6932709.en.html), and [IPv6](https://doc.4d.com/4Dv20R5/4D/20-R5/IP-Settings.300-6932707.en.html).
 - Suporte de [seleções de entidades restritas](../ORDA/entities.md#restricting-entity-selections).
@@ -24,11 +25,13 @@ Leia [**O que há de novo no 4D 20 R5**](https://blog.4d.com/en-whats-new-in-4d-
 #### Mudanças de comportamento
 
 - Os plug-ins *4D Internet Commands* e *4D for OCI* não estão mais incluídos nos instaladores do 4D. Para obter esses plug-ins, você precisa se conectar ao [**portal de download de produtos 4D**](https://product-download.4d.com/).
+- Changes made in the Structure editor regarding graphical appearance of tables and fields (color, position, order...) are now saved in a separate file named `catalog_editor.json` stored in the project's [`Sources`](../Project/architecture.md#sources) folder.
 
 
 ## 4D 20 R4
 
 Leia [**O que há de novo no 4D v20 R4**](https://blog.4d.com/en-whats-new-in-4d-v20-R4/), a postagem do blog que lista todos os novos recursos e aprimoramentos no 4D v20 R4.
+
 
 
 #### Destaques
