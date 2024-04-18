@@ -7,7 +7,7 @@ title: 日付
 
 C_DATE によって宣言された日付は 32767年までの範囲に対応していますが、システムを経由する処理によっては上限にさらなる制限が課せられます。
 
-**注:** 4D ランゲージリファレンスでは、コマンド説明における日付引数はとくに明記されていない限り、「日付」と表記されています。
+**Note:** In the 4D Language Reference manual, Date parameters in command descriptions are denoted as Date, except when marked otherwise.
 
 ## 日付リテラル
 
@@ -19,31 +19,35 @@ C_DATE によって宣言された日付は 32767年までの範囲に対応し�
 !2015-12-31!
 ```
 
-空の日付は、 _!00-00-00!_ のように指定します。
+A null date is specified by _!00-00-00!_.
 
-**Tip:** コードエディターでは空の日付を入力するためのショートカットが提供されています。 空の日付を入力するには、エクスクラメーションマーク (!) の入力後に Enterキーを押します。
+**Tip:** The Code Editor includes a shortcut for entering a null date. To type a null date, enter the exclamation (!) character and press Enter.
 
 **注:**
 
-- 互換性の理由から、4D は二桁の年次の入力を受け付けます。 数字が 30以上の場合は 20世紀 (1900年代)、30未満の場合は 21世紀 (2000年代) であると認識します (ただしデフォルト設定が `SET DEFAULT CENTURY` コマンドを使用して変更されていない場合に限ります)。
-- "地域特有のシステム設定を使う" オプション ([メソッドページ](https://doc.4d.com/4Dv18/4D/18/Methods-Page.300-4575690.ja.html) 参照) にチェックがされている場合、システムで定義されている日付フォーマットを使用する必要があります。 一般的に、US環境においては、日付は月/日/年の形式で入力され、値はスラッシュ "/" で区切られます。
+- 互換性の理由から、4D は二桁の年次の入力を受け付けます。 A two-digit year is assumed to be in the 20th or 21st century based on whether it is greater or less than 30, unless this default setting has been changed using the `SET DEFAULT CENTURY` command.
+- "地域特有のシステム設定を使う" オプション (<a href="https://doc.4d.com/4Dv18/4D/18/Methods-Page.300-4575690.ja.html">メソッドページ</a> 参照) にチェックがされている場合、システムで定義されている日付フォーマットを使用する必要があります。 一般的に、US環境においては、日付は月/日/年の形式で入力され、値はスラッシュ "/" で区切られます。
 
 ## 日付演算子
 
-| 演算    | シンタックス        | 戻り値     | 式                            | 値            |
-| ----- | ------------- | ------- | ---------------------------- | ------------ |
-| 日付の差  | Date – Date   | Number  | !2017-01-20! - !2017-01-01!  | 19           |
-| 日付の加算 | Date + Number | Date    | !2017-01-20! + 9             | !2017-01-29! |
-| 日付の減算 | Date – Number | Date    | !2017-01-20! - 9             | !2017-01-11! |
-| 等しい   | Date = Date   | Boolean | !2017-01-20! = !2017-01-01!  | true         |
-|       |               |         | !2017-01-20! = !2017-01-01!  | false        |
-| 異なる   | Date # Date   | Boolean | !2017-01-20! # !2017-01-01!  | true         |
-|       |               |         | !2017-01-20! # !2017-01-20!  | false        |
-| 大きい   | Date > Date   | Boolean | !2017-01-20! > !2017-01-01!  | true         |
-|       |               |         | !2017-01-20! > !2017-01-20!  | false        |
-| 小さい   | Date < Date   | Boolean | !2017-01-20! < !2017-01-20!  | true         |
-|       |               |         | !2017-01-20! < !2017-01-20!  | false        |
-| 以上    | Date >= Date  | Boolean | !2017-01-20! >=!2017-01-01!  | true         |
-|       |               |         | !2017-01-01!>=!2017-01-20!   | false        |
-| 以下    | Date <= Date  | Boolean | !2017-01-20! <= !2017-01-20! | true         |
-|       |               |         | !2017-01-20! <= !2017-01-01! | false        |
+| 演算    | シンタックス        | 戻り値     | 式                           | 値            |
+| ----- | ------------- | ------- | --------------------------- | ------------ |
+| 日付の差  | Date – Date   | Number  | !2017-01-20! - !2017-01-01! | 19           |
+| 日付の加算 | Date + Number | 日付      | !2017-01-20! + 9            | !2017-01-29! |
+| 日付の減算 | Date – Number | 日付      | !2017-01-20! - 9            | !2017-01-11! |
+| 等しい   | Date = Date   | Boolean | !2017-01-20! = !2017-01-01! | true         |
+
+```
+	||	||!2017-01-20! = !2017-01-01!	|False|
+```
+
+|Inequality	|Date # Date	|Boolean	|!2017-01-20! # !2017-01-01!	|True|
+||||!2017-01-20! # !2017-01-20!	|False|
+|Greater than	|Date > Date	|Boolean	|!2017-01-20! > !2017-01-01!	|True|
+||||!2017-01-20! > !2017-01-20!	|False|
+|Less than	|Date < Date	|Boolean	|!2017-01-01! < !2017-01-20!	|True|
+||||!2017-01-20! < !2017-01-20!	|False|
+|Greater than or equal to	|Date >= Date	|Boolean	|!2017-01-20! >=!2017-01-01!	|True|
+||||!2017-01-01!>=!2017-01-20!	|False|
+|Less than or equal to	|Date <= Date	|Boolean	|!2017-01-01! <= !2017-01-20!|	True|
+||||	!2017-01-20! <= !2017-01-01!|	False|
