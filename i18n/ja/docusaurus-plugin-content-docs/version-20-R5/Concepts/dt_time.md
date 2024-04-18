@@ -9,7 +9,7 @@ title: 時間
 
 時間の値は数値として扱うことができます。 時間から返される数値は、その時間が表す総秒数です。
 
-**注:** *4Dランゲージリファレンス* マニュアルでは、コマンド説明における時間引数は特に明記されていない限り、「時間」と表記されています。
+**Note:** In the _4D Language Reference_ manual, Time parameters in command descriptions are denoted as Time, except when marked otherwise.
 
 ## 時間リテラル
 
@@ -20,52 +20,56 @@ title: 時間
 時間定数の例を次に示します:
 
 ```4d
-?00:00:00? // 午前0時
-?09:30:00? // 午前9時30分
-?13:01:59? // 午後1時1分59秒
+?00:00:00? ` midnight
+?09:30:00? ` 9:30 am
+?13:01:59? ` 1 pm, 1 minute, and 59 seconds
 ```
 
 空の時間は、?00.00.00? のように指定します。
 
-**Tip:** コードエディターでは空の時間を入力するためのショートカットが提供されています。 空の時間を入力するには、疑問符 (?) の入力後に Enter キーを押します。
+**Tip:** The Code Editor includes a shortcut for entering a null time. To type a null time, enter the question mark (?) character and press Enter.
 
 ## 時間演算子
 
-| 演算        | シンタックス         | 戻り値     | 式                       | 値          |
-| --------- | -------------- | ------- | ----------------------- | ---------- |
-| 加算 (足し算)  | Time + Time    | Time    | ?02:03:04? + ?01:02:03? | ?03:05:07? |
-| 減算 (引き算)  | Time – Time    | Time    | ?02:03:04? – ?01:02:03? | ?01:01:01? |
-| 加算 (足し算)  | Time + Number  | Number  | ?02:03:04? + 65         | 7449       |
-| 減算 (引き算)  | Time – Number  | Number  | ?02:03:04? – 65         | 7319       |
-| 乗算 (かけ算)  | Time * Number  | Number  | ?02:03:04? * 2          | 14768      |
-| 除算 (割り算)  | Time / Number  | Number  | ?02:03:04? / 2          | 3692       |
-| 倍長整数を返す除算 | Time \ Number | Number  | ?02:03:04? \ 2         | 3692       |
-| モジューロ     | Time % Time    | Time    | ?20:10:00? % ?04:20:00? | ?02:50:00? |
-| モジューロ     | Time % Number  | Number  | ?02:03:04? % 2          | 0          |
-| 等しい       | Time = Time    | Boolean | ?01:02:03? = ?01:02:03? | true       |
-|           |                |         | ?01:02:03? = ?01:02:04? | false      |
-| 異なる       | Time # Time    | Boolean | ?01:02:03? # ?01:02:04? | true       |
-|           |                |         | ?01:02:03? # ?01:02:03? | false      |
-| 大きい       | Time > Time    | Boolean | ?01:02:03? > ?01:02:03? | true       |
-|           |                |         | ?01:02:03? > ?01:02:03? | false      |
-| 小さい       | Time < Time    | Boolean | ?01:02:03? < ?01:02:04? | true       |
-|           |                |         | ?01:02:03? < ?01:02:03? | false      |
-| 以上        | Time >= Time   | Boolean | ?01:02:03? >=?01:02:03? | true       |
-|           |                |         | ?01:02:03? >=?01:02:04? | false      |
-| 以下        | Time <= Time   | Boolean | ?01:02:03? <=?01:02:03? | true       |
-|           |                |         | ?01:02:03? <=?01:02:03? | false      |
+| 演算                          | シンタックス         | 戻り値     | 式                                                                                       | 値                                          |
+| --------------------------- | -------------- | ------- | --------------------------------------------------------------------------------------- | ------------------------------------------ |
+| 加算 (足し算) | Time + Time    | 時間      | ?02:03:04? + ?01:02:03? | ?03:05:07? |
+| 減算 (引き算) | Time – Time    | 時間      | ?02:03:04? – ?01:02:03? | ?01:01:01? |
+| 加算 (足し算) | Time + Number  | Number  | ?02:03:04? + 65                                         | 7449                                       |
+| 減算 (引き算) | Time – Number  | Number  | ?02:03:04? – 65                                         | 7319                                       |
+| 乗算 (かけ算) | Time \* Number | Number  | ?02:03:04? \* 2                                         | 14768                                      |
+| 除算 (割り算) | Time / Number  | Number  | ?02:03:04? / 2                                          | 3692                                       |
+| 倍長整数を返す除算                   | Time \ Number  | Number  | ?02:03:04? \ 2                                          | 3692                                       |
+| モジューロ                       | Time % Time    | 時間      | ?20:10:00? % ?04:20:00? | ?02:50:00? |
+| モジューロ                       | Time % Number  | Number  | ?02:03:04? % 2                                          | 0                                          |
+| 等しい                         | Time = Time    | Boolean | ?01:02:03? = ?01:02:03? | true                                       |
+
+```
+		||||?01:02:03? = ?01:02:04?	|False|
+```
+
+|Inequality	|Time # Time	|Boolean	|?01:02:03? # ?01:02:04?	|True|
+||||?01:02:03? # ?01:02:03?	|False|
+|Greater than	|Time > Time	|Boolean	|?01:02:04? > ?01:02:03?	|True|
+||||		?01:02:03? > ?01:02:03?	|False|
+|Less than	|Time < Time	|Boolean	|?01:02:03? < ?01:02:04?	|True|
+||||	?01:02:03? < ?01:02:03?	|False|
+|Greater than or equal to	|Time >= Time	|Boolean	|?01:02:03? >=?01:02:03?	|True|
+||||?01:02:03? >=?01:02:04?	|False|
+|Less than or equal to	|Time <= Time	|Boolean	|?01:02:03? <=?01:02:03?|	True|
+||||?01:02:04? <=?01:02:03?	|False|
 
 ### 例題 1
 
-時間式を数値と組み合わせた式から時間式を取得するには、`Time` コマンドと `Time string` コマンドを使用します。
+To obtain a time expression from an expression that combines a time expression with a number, use the commands `Time` and `Time string`.
 
-`Time` または `Current time` コマンドを使用する際に、時間型と数値型の式を組み合わせることができます:
+You can combine expressions of the time and number types using the `Time` or `Current time` functions:
 
 ```4d
-    // 以下の行は $vlSeconds に、深夜0時から現在の
-    // 1時間後までに経過した秒数を代入します。
+	//The following line assigns to $vlSeconds the number of seconds   
+	//that will be elapsed between midnight and one hour from now
 $vlSeconds:=Current time+3600
-    // 以下の行は $vHSoon に 1時間後の時刻を代入します。
+	//The following line assigns to $vHSoon the time it will be in one hour
 $vhSoon:=Time(Current time+3600)
 ```
 
@@ -81,7 +85,8 @@ $vhSoon:=Time(Current time+3600)
 モジューロ演算子を使用できます。とくに24時間フォーマットを考慮した時間の追加に便利です:
 
 ```4d
-$t1:=?23:00:00? $t1:=?23:00:00? // 単純な追加を行うと $t2 は ?25:30:00? になります。
-$t2:=($t1 +?02:30:00?)%?24:00:00? // $t2 は ?01:30:00? で、 つまり翌日の 01:30 です
+$t1:=?23:00:00? // It is 23:00 hours
+  // We want to add 2 and a half hours
+$t2:=$t1 +?02:30:00? // With a simple addition, $t2 is ?25:30:00?
+$t2:=($t1 +?02:30:00?)%?24:00:00? // $t2 is ?01:30:00? and it is 1:30 hour the next morning
 ```
-
