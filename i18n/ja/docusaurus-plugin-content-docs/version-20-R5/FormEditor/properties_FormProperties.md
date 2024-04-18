@@ -6,12 +6,14 @@ title: フォームプロパティ
 ---
 
 ## カラースキーム
+
 > 配色プロパティは、macOS でのみ適用されます。
 
-このプロパティは、フォームのカラースキームを定義します。 このプロパティが設定されていない場合のデフォルトでは、カラースキームの値は **継承済み** です (フォームは [アプリケーションレベル](https://doc.4d.com/4dv19/help/command/ja/page1762.html) で定義されたカラースキームを使用します)。 これは、フォームに対して以下の 2つのオプションのいずれかに変更することができます:
+このプロパティは、フォームのカラースキームを定義します。 By default when the property is not set, the value for a color scheme is **inherited** (the form uses the scheme defined at the [application level](https://doc.4d.com/4dv19/help/command/en/page1762.html)). これは、フォームに対して以下の 2つのオプションのいずれかに変更することができます:
 
-*   dark - 暗い背景に明るいテキスト
-*   light - 明るい背景に暗いテキスト
+- dark - 暗い背景に明るいテキスト
+- light - 明るい背景に暗いテキスト
+
 > 定義されたカラースキームを CSS で上書きすることはできません。
 
 #### JSON 文法
@@ -26,17 +28,15 @@ title: フォームプロパティ
 
 このプロパティは、フォーム用に特定の CSSファイルを読み込むことを可能にします。
 
-フォームレベルで定義された CSSファイルは、デフォルトのスタイルシートをオーバーライドします。 詳細については [スタイルシート](createStylesheet.md) を参照ください。
-
+フォームレベルで定義された CSSファイルは、デフォルトのスタイルシートをオーバーライドします。 For more information, please refer to [Style sheets](createStylesheet.md) page.
 
 #### JSON 文法
 
-| 名称  | データタイプ                | とりうる値                                                                                 |
-| --- | --------------------- | ------------------------------------------------------------------------------------- |
-| css | string または collection | CSSファイルパス:<li>文字列 (両方のプラットフォーム用に 1ファイル)</li><li>文字列のコレクション (両プラットフォーム用のファイルのリスト)</li><li>{"path":string;"media":"mac" &#124; "win"} オブジェクトのコレクション </li> |
+| 名称  | データタイプ                | とりうる値                                                                                                                                                                                                                                                                                                                           |
+| --- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| css | string または collection | CSS file path(s) provided as:<li>a string (a file for both platforms)</li><li>a collection of strings (a list of files for both platform)</li><li>a collection of {"path":string;"media":"mac" \| "win"} objects </li> |
 
 ---
-
 
 ## Pages
 
@@ -45,51 +45,47 @@ title: フォームプロパティ
 - ページ0 (背景ページ)
 - ページ1 (メインページ)
 
-詳細については [フォームのページ](forms.md#フォームのページ) を参照ください。
-
+For more information, please refer to [Form pages](forms.md#form-pages).
 
 #### JSON 文法
 
-| 名称    | データタイプ     | とりうる値                                   |
-| ----- | ---------- | --------------------------------------- |
+| 名称    | データタイプ     | とりうる値                                                      |
+| ----- | ---------- | ---------------------------------------------------------- |
 | pages | collection | ページのコレクション (各ページはオブジェクトで、ページ0 は最初の要素です) |
 
 ---
 
-
 ## フォーム名
 
-このプロパティはフォームそのものの名称で、4Dランゲージで名前によってフォームを参照するのに使用されます。 フォーム名は、4Dの [識別子の命名規則](Concepts/identifiers.md) に準じたものでなければなりません。
-
+このプロパティはフォームそのものの名称で、4Dランゲージで名前によってフォームを参照するのに使用されます。 The form name must comply with the [rules specified for identifiers](Concepts/identifiers.md) in 4D.
 
 #### JSON 文法
 
-フォーム名は、form.4Dform ファイルを格納するフォルダーの名前で定義されます。 詳しくは [プロジェクトのアーキテクチャー](Project/architecture.md#sources-フォルダー) を参照ください。
+フォーム名は、form.4Dform ファイルを格納するフォルダーの名前で定義されます。 See [project architecture](Project/architecture.md#sources-folder) for more information.
 
 ---
 
 ## フォームタイプ
 
-フォームのタイプ、*つまり* その出力先によって、当該フォームで利用できる機能が定義されます。 たとえば、[マーカー](properties_Markers.md) はリスト (出力) テーブルフォームでのみ設定できます。
+The form type, _i.e._ its destination, defines the features that will be available to the form. For example, [markers](properties_Markers.md) can only be set for list (output) table forms.
 
 データベースの各テーブルは通常、少なくとも 2つのテーブルフォームを持ちます。 1つは画面上にレコードを一覧表示するためのもので、もう 1つはレコードを 1件ずつ表示するためのものです (データ入力や修正に使用):
 
-- 出力フォーム - *出力フォーム* (または *リストフォーム*) は、レコードのリストを、1レコードにつき 1行で表示します。 クエリの結果は出力フォームに表示され、ユーザーが行をダブルクリックすると、そのレコード用に入力フォームが表示されます。 ![](../assets/en/FormObjects/formOutput.png)
+- Output form - the _output form_ or _list form_ displays a list of records, with a single line per record. クエリの結果は出力フォームに表示され、ユーザーが行をダブルクリックすると、そのレコード用に入力フォームが表示されます。
+  ![](../assets/en/FormObjects/formOutput.png)
 
-- 入力フォーム - データ入力に使用されます。 1つの画面に 1件のレコードが表示され、一般的には、レコードの編集を保存・キャンセルするためのボタンや、レコード間を移動するためのボタン (先頭レコード、最終レコード、前レコード、次レコード等) を備えています。 ![](../assets/en/FormObjects/formInput.png)
-
+- 入力フォーム - データ入力に使用されます。 It displays a single record per screen and typically has buttons for saving and canceling modifications to the record and for navigating from record to record (_i.e._, First Record, Last Record, Previous Record, Next Record).
+  ![](../assets/en/FormObjects/formInput.png)
 
 サポートされるタイプは、フォームのカテゴリーによって異なります:
 
-
-| フォームタイプ    | JSON 文法          | 説明                           | サポートされているフォーム       |
-| ---------- | ---------------- | ---------------------------- | ------------------- |
-| 詳細フォーム     | detailScreen     | データ入力・修正用の表示フォーム             | プロジェクトフォームとテーブルフォーム |
+| フォームタイプ    | JSON 文法          | 説明                                              | サポートされているフォーム       |
+| ---------- | ---------------- | ----------------------------------------------- | ------------------- |
+| 詳細フォーム     | detailScreen     | データ入力・修正用の表示フォーム                                | プロジェクトフォームとテーブルフォーム |
 | 印刷用詳細フォーム  | detailPrinter    | 1ページにつき 1レコードの印刷レポート (請求書など) | プロジェクトフォームとテーブルフォーム |
-| リストフォーム    | listScreen       | レコードを画面上に一覧表示するフォーム          | テーブルフォーム            |
-| 印刷用リストフォーム | listPrinter      | レコード一覧の印刷レポート                | テーブルフォーム            |
-| なし         | *no destination* | 特定の機能を持たないフォーム               | プロジェクトフォームとテーブルフォーム |
-
+| リストフォーム    | listScreen       | レコードを画面上に一覧表示するフォーム                             | テーブルフォーム            |
+| 印刷用リストフォーム | listPrinter      | レコード一覧の印刷レポート                                   | テーブルフォーム            |
+| なし         | _no destination_ | 特定の機能を持たないフォーム                                  | プロジェクトフォームとテーブルフォーム |
 
 #### JSON 文法
 
@@ -101,30 +97,25 @@ title: フォームプロパティ
 
 ## 継承されたフォーム名
 
-このプロパティは、現在のフォームに [継承するフォーム](forms.md#継承フォーム) を指定します。
+This property designates the [form to inherit](forms.md#inherited-forms) in the current form.
 
-テーブルフォームを継承する場合は、[継承されたフォームテーブル](#継承されたフォームテーブル) プロパティにテーブルを設定します。
+To inherit from a table form, set the table in the [Inherited Form Table](#inherited-form-table) property.
 
-継承を解除するには、プロパティリストで `<なし>` を選択します (JSON では " ")。
-
+To remove inheritance, select `\<None>` in the Property List (or " " in JSON).
 
 #### JSON 文法
 
-| 名称            | データタイプ | とりうる値                                                                    |
-| ------------- | ------ | ------------------------------------------------------------------------ |
+| 名称            | データタイプ | とりうる値                                                                                    |
+| ------------- | ------ | ---------------------------------------------------------------------------------------- |
 | inheritedForm | string | テーブルまたはプロジェクトフォームの名前, フォームを定義する .json ファイルへの POSIXパス, またはフォームを定義するオブジェクト |
 
 ---
 
-
 ## 継承されたフォームテーブル
 
-このプロパティは、現在のフォームに [継承するテーブルフォーム](forms.md#継承フォーム) が属するデータベーステーブルを指定します。
+This property specifies the database table from which to [inherit a form](forms.md#inherited-forms) in the current form.
 
-プロジェクトフォームを継承する場合は、プロパティリストで `<なし>` を選択します (JSON では " ")。
-
-
-
+Set to `\<None>` in the Property List (or " " in JSON) to inherited from a project form.
 
 #### JSON 文法
 
@@ -132,16 +123,13 @@ title: フォームプロパティ
 | ------------------ | ----------------- | -------------- |
 | inheritedFormTable | string または number | テーブル名またはテーブル番号 |
 
-
 ---
 
 ## サブフォームとして公開
 
-コンポーネントフォームをホストアプリケーションの [サブフォーム](FormObjects/subform_overview.md) として選択するには、明示的に共有されている必要があります。 このプロパティが選択されていると、フォームがホストアプリケーションで公開されます。
+For a component form to be selected as a [subform](FormObjects/subform_overview.md) in a host application, it must have been explicitly shared. このプロパティが選択されていると、フォームがホストアプリケーションで公開されます。
 
 公開されたサブフォームとして指定できるのは、プロジェクトフォームのみです。
-
-
 
 #### JSON 文法
 
@@ -149,18 +137,18 @@ title: フォームプロパティ
 | ------ | ------- | ----------- |
 | shared | boolean | true, false |
 
-
 ---
 
 ## 配置を記憶
 
-このオプションがチェックされていると、`Open form window` コマンドに `*` 演算子を渡して開かれたウィンドウが閉じられるとき、そのフォームの特定のプロパティ値については、それらがセッション中に変更された場合、4D によって自動的に保存されます:
+When the option is used, if the window is opened using the `Open form window` command with the `*` parameter, several form parameters are automatically saved by 4D when the window is closed, regardless of how they were modified during the session:
 
-*   カレントページ
-*   それぞれのフォームオブジェクトの配置・大きさ・表示状態 (リストボックス列のサイズと表示状態も含む)。
-> このオプションは、`OBJECT DUPLICATE` コマンドを使用して作成されたオブジェクトに対しては無効です。 このコマンドを使用したときに使用環境を復元させるには、デベロッパーがオブジェクトの作成・定義・配置の手順を再現しなければなりません。
+- カレントページ
+- それぞれのフォームオブジェクトの配置・大きさ・表示状態 (リストボックス列のサイズと表示状態も含む)。
 
-このオプションが選択されているとき、一部のオブジェクトに置いては [値を記憶](FormObjects/properties_Object.md#値を記憶) のオプションが選択可能になります。
+> This option does not take into account objects generated using the `OBJECT DUPLICATE` command. このコマンドを使用したときに使用環境を復元させるには、デベロッパーがオブジェクトの作成・定義・配置の手順を再現しなければなりません。
+
+When this option is selected, the [Save Value](FormObjects/properties_Object.md#save-value) option is available for certain objects.
 
 #### JSON 文法
 
@@ -169,20 +157,20 @@ title: フォームプロパティ
 | memorizeGeometry | boolean | true, false |
 
 #### 参照
-[**値を記憶**](FormObjects/properties_Object.md#値を記憶)
 
+[**Save Value**](FormObjects/properties_Object.md#save-value)
 
 ---
 
 ## ウィンドウタイトル
 
-ウィンドウタイトルは、アプリケーションモードで `Open window` や `Open form window` コマンドを用いてフォームを開く際に使用されます。 ウィンドウタイトルはウィンドウのタイトルバーに表示されます。
+The window title is used when the form is opened using the `Open form window` and `Open window` 4D commands in Application environment. ウィンドウタイトルはウィンドウのタイトルバーに表示されます。
 
-動的参照を使用して、フォームのウィンドウタイトルを定義することもできます:
+You can use dynamic references to set the window titles for forms, _i.e._:
 
-*   Resourcesフォルダーに保存された、標準の XLIFF参照
-*   テーブル/フィールドラベル: 適用できるシンタックスは `<?[TableNum]FieldNum>` または `<?[TableName]FieldName>` です。
-*   変数またはフィールド: 適用できるシンタックスは `<VariableName>` または `<[TableName]FieldName>`。 フィールドや変数の現在の値がウィンドウタイトルとして表示されます。
+- Resourcesフォルダーに保存された、標準の XLIFF参照
+- A table or field label: The syntax to apply is `<?[TableNum]FieldNum>` or `<?[TableName]FieldName>`.
+- A variable or a field: The syntax to apply is `\<VariableName>` or `<[TableName]FieldName>`. フィールドや変数の現在の値がウィンドウタイトルとして表示されます。
 
 > ウィンドウタイトルの最大文字数は 31 です。
 
@@ -191,5 +179,3 @@ title: フォームプロパティ
 | 名称          | データタイプ | とりうる値               |
 | ----------- | ------ | ------------------- |
 | windowTitle | string | テキストまたは参照としてのウィンドウ名 |
-
-
