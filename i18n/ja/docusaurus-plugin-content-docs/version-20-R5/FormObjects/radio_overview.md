@@ -5,56 +5,50 @@ title: ラジオボタン
 
 ラジオボタンは、ボタングループの中から1つを選択することができるオブジェクトです。
 
-ラジオボタンは通常、小さな目玉状の円とテキストを表示します。 しかし、ラジオボタンに [それ以外の外観](#ボタンスタイル) を設定することもできます。
+ラジオボタンは通常、小さな目玉状の円とテキストを表示します。 However, radio buttons can have [various appearances](#button-styles).
 
 ![](../assets/en/FormObjects/radio1.png)
 
 ラジオボタンを選択するには二つの方法があります:
+
 - ラジオボタンをクリックする
-- ラジオボタンにフォーカスがあるときに **スペース** キーを押す
-
-
+- when it has the focus and the user presses the **Space bar** key.
 
 ## ラジオボタンの設定
 
-ラジオボタンは組織的な集合の中で使用されます。その集合のなかから一度にひとつのボタンしか選択できません。 一連のラジオボタンが連携した状態で動作するためには、それらには同じ [ラジオグループ](properties_Object.md#ラジオグループ) プロパティが設定されていなくてはなりません。
+ラジオボタンは組織的な集合の中で使用されます。その集合のなかから一度にひとつのボタンしか選択できません。 In order to operate in a coordinated manner, a set of radio buttons must share the same [Radio Group](properties_Object.md#radio-group) property.
 
 ラジオボタンの結果はメソッドを用いて管理します。 あらゆるボタンと同様に、フォームが初めて開かれる時ラジオボタンは 0 に初期化されています。 ラジオボタンが選択されると、ラジオボタンに割り当てられたメソッドが実行されます。 次の例では、ビデオ収集データベースでラジオボタンを使用し、レコーディングの速さ (SP、LP、EP) を入力します:
 
 ![](../assets/en/FormObjects/radio2.png)
 
 グループのなかから 1つのラジオボタンを選択すると、そのボタンには 1 が代入され、グループ内の他のすべてのボタンには 0 が代入されます。 一度に1つのラジオボタンしか選択できません。
-> ラジオボタンには [ブール型の式](properties_Object.md#変数あるいは式) を設定することができます。 この場合、グループ内で選択されたラジオボタンの変数には true が代入され、残りのラジオボタンの変数には false が代入されます。
+
+> You can associate [Boolean type expressions](properties_Object.md#variable-or-expression) with radio buttons. この場合、グループ内で選択されたラジオボタンの変数には true が代入され、残りのラジオボタンの変数には false が代入されます。
 
 ラジオボタンオブジェクトに格納された値は (ブールフィールドの場合を除き) 自動保存されません。変数に格納されたラジオボタンの値はメソッドで管理しなければなりません。
 
-
-
-
 ## ボタンスタイル
 
-ラジオ [ボタンスタイル](properties_TextAndPicture.md#ボタンスタイル)は、ラジオボタンの外観を制御すると同時に、提供されるプロパティをも決定します。 ラジオボタンには、あらかじめ定義されたスタイルを割り当てることができます。 しかし、ラジオボタンが適切に動作するには、同じグループに所属するラジオボタンはすべて同じボタンスタイルに設定されている必要があります。
+Radio [button styles](properties_TextAndPicture.md#button-style) control radio button's general appearance as well as its available properties. ラジオボタンには、あらかじめ定義されたスタイルを割り当てることができます。 しかし、ラジオボタンが適切に動作するには、同じグループに所属するラジオボタンはすべて同じボタンスタイルに設定されている必要があります。
 
 次の既定スタイルが提供されています:
 
-
 ### 通常
 
-通常スタイルのラジオボタンは、標準的なシステムボタンで (小さな目玉状の円とテキストを表示したもの)、ユーザークリックに応じてコードを実行します。
+The Regular radio button style is a standard system button (_i.e._, a small bullseye with text) which executes code when a user clicks on it.
 
 ![](../assets/en/FormObjects/radio_regular.png)
 
 通常スタイルのラジオボタンにマウスオーバーすると、"目玉" の色が変化します。
 
-
 ### フラット
 
-フラットスタイルのラジオボタンは、標準的なシステムボタンで (小さな目玉状の円とテキストを表示したもの)、ユーザークリックに応じてコードを実行します。
+The Flat radio button style is a standard system button (_i.e._, a small bullseye with text) which executes code when a user clicks on it.
 
 ![](../assets/en/FormObjects/radio_flat.png)
 
 フラットスタイルでは、装飾が最小限に抑えられています。 フラットボタンのグラフィック的な装飾は最小限であるため、印刷されるフォームでの使用に適しています。
-
 
 ### ツールバー
 
@@ -62,71 +56,62 @@ title: ラジオボタン
 
 ツールバーボタンは、透明の背景に中央配置のラベルがデフォルトで付いています。 ボタンにマウスオーバーしたときの表示は OS によって異なります:
 
- - *Windows* - ボタンがハイライト表示されます。
+- _Windows_ - the button is highlighted.
 
 ![](../assets/en/FormObjects/radio_toolbar.png)
 
- - *macOS* - ボタンはハイライト表示されません。
-
-
+- _macOS_ - the highlight of the button never appears.
 
 ### ベベル
 
-ベベルスタイルは [ツールバー](#ツールバー) スタイルと似た動作をしますが、薄いグレーの背景にグレーの枠が描画されます。 ボタンにマウスオーバーしたときの表示は OS によって異なります:
+The Bevel radio button style is similar to the [Toolbar](#toolbar) style's behavior, except that it has a light gray background and a gray outline. ボタンにマウスオーバーしたときの表示は OS によって異なります:
 
- - *Windows* - ボタンがハイライト表示されます。
+- _Windows_ - the button is highlighted.
 
-  ![](../assets/en/FormObjects/radio_bevel.png)
+![](../assets/en/FormObjects/radio_bevel.png)
 
- - *macOS* - ボタンはハイライト表示されません。
-
+- _macOS_ - the highlight of the button never appears.
 
 ### 角の丸いベベル
 
-角の丸いベベルスタイルは [ベベル](#ベベル) スタイルとほぼ同一ですが、OSによっては角が丸く表示されます。
+The Rounded Bevel button style is nearly identical to the [Bevel](#bevel) style except, depending on the OS, the corners of the button may be rounded.
 
- - Windows 上では、このスタイルは [ベベル](#ベベル) スタイルと同じです。
+- _Windows_ - the button is identical to the [Bevel](#bevel) style.
 
- - *macOS* - 角が丸くなっています。 ![](../assets/en/FormObjects/roundedBevel.png)
-
+- _macOS_ - the corners of the button are rounded.
+  ![](../assets/en/FormObjects/roundedBevel.png)
 
 ### OS Xグラデーション
 
-OS Xグラデーションスタイルは [ベベル](#ベベル) スタイルとほぼ同一ですが、OSによっては異なる点があります。
+The OS X Gradient button style is nearly identical to the [Bevel](#bevel) style except, depending on the OS, it may have a two-toned appearance.
 
- - Windows 上では、このスタイルは [ベベル](#ベベル) スタイルと同じです。
+- _Windows_ - the button is identical to the [Bevel](#bevel) style.
 
- - *macOS* - 2トーンのシステムボタンです。
-
-
+- _macOS_ - the button is displayed as a two-tone system button.
 
 ### OS Xテクスチャー
 
-OS Xテクスチャースタイルは [ツールバー](#ツールバー) スタイルとほぼ同一ですが、OSによってはマウスオーバー時の変化がないほか、外観の異なる点があります。
+The OS X Textured radio button style is nearly identical to the [Toolbar](#toolbar) style except, depending on the OS, it may have a different appearance and does not display hover.
 
 デフォルトで、OS Xテクスチャーボタンの外観は次の通りです:
 
- - *Windows* - ツールバースタイルのようなボタンに中央配置のラベルが付き、背景は常に表示されます。
+- _Windows_ - a toolbar-like button with a label in the center and the background is always displayed.
 
- - *macOS* - 灰色のグラデーションを表示する標準のシステムボタンです。 高さは定義済みで、変更できません。
+- _macOS_ - a standard system button displaying a color change from light to dark gray. 高さは定義済みで、変更できません。
 
-  ![](../assets/en/FormObjects/OSXTextured.png)
-
-
+![](../assets/en/FormObjects/OSXTextured.png)
 
 ### Office XP
 
-Office XPスタイルは通常ボタン (標準のシステムボタン) ような外観に、[ツールバーボタン](#ツールバーボタン) スタイルの動作を組み合わせたものです。
+The Office XP button style combines the appearance of the [Regular](#regular) style (standard system button) with the [Toolbar](#toolbar) style's behavior.
 
 Office XPボタンの反転表示と背景のカラーはシステムカラーに基づいています。 ボタンにマウスオーバーしたときの表示は OS によって異なります:
 
- - *Windows* - マウスオーバー時にのみ背景が表示されます。
+- _Windows_ - its background only appears when the mouse rolls over it.
 
-  ![](../assets/en/FormObjects/radio_xp.png)
+![](../assets/en/FormObjects/radio_xp.png)
 
- - *macOS* - 背景は常に表示されます。
-
-
+- _macOS_ - its background is always displayed.
 
 ### 折りたたみ/展開
 
@@ -136,10 +121,9 @@ Office XPボタンの反転表示と背景のカラーはシステムカラー�
 
 :::info
 
-折りたたみ/展開 スタイルは、[ボタンスタイル JSON 文法](properties_TextAndPicture.md#ボタンスタイル)では "disclosure" という名称です。
+The Collapse/Expand style is named "disclosure" in the [button style JSON Grammar](properties_TextAndPicture.md#button-style).
 
 :::
-
 
 ### 開示ボタン
 
@@ -149,24 +133,23 @@ Office XPボタンの反転表示と背景のカラーはシステムカラー�
 
 :::info
 
-開示ボタンスタイルは、[ボタンスタイル JSON 文法](properties_TextAndPicture.md#ボタンスタイル)では "roundedDisclosure" という名称です。
+The Disclosure style is named "roundedDisclosure" in the [button style JSON Grammar](properties_TextAndPicture.md#button-style).
 
 :::
 
-
 ### カスタム
 
-カスタムスタイルのラジオボタンは、背景ピクチャーを使用できるほか、さまざまな追加パラメーターを管理することができます ([アイコンオフセット](properties_TextAndPicture.md#アイコンオフセット) や [マージン](properties_TextAndPicture.md#横方向マージン))。
-
+The Custom radio button style accepts a personalized background picture and allows managing additional parameters such as [icon offset](properties_TextAndPicture.md#icon-offset) and [margins](properties_TextAndPicture.md#horizontalMargin).
 
 ## プロパティ一覧
 
 すべてのラジオボタンは次の基本プロパティを共有します:
 
-[タイプ](properties_Object.md#タイプ) - [オブジェクト名](properties_Object.md#オブジェクト名) - [変数あるいは式](properties_Object.md#変数あるいは式) - [式の型](properties_Object.md#式の型) - [タイトル](properties_Object.md#タイトル) - [ラジオグループ](properties_Object.md#ラジオグループ) - [値を記憶](properties_Object.md#値を記憶) - [CSSクラス](properties_Object.md#cssクラス) - [ボタンスタイル](properties_TextAndPicture.md#ボタンスタイル) - [ピクチャーパス名](properties_TextAndPicture.md#ピクチャーパス名) (2) - [状態の数](properties_TextAndPicture.md#状態の数) (2) - [タイトル/ピクチャー位置](properties_TextAndPicture.md#タイトルピクチャー位置) (2) - [タイトルと画像を隣接させる](properties_TextAndPicture.md#タイトルと画像を隣接させる) (2) - [左](properties_CoordinatesAndSizing.md#左) - [上](properties_CoordinatesAndSizing.md#上) - [右](properties_CoordinatesAndSizing.md#右) - [下](properties_CoordinatesAndSizing.md#下) - [幅](properties_CoordinatesAndSizing.md#幅) - [高さ](properties_CoordinatesAndSizing.md#高さ) - [横方向サイズ変更](properties_ResizingOptions.md#横方向サイズ変更) - [縦方向サイズ変更](properties_ResizingOptions.md#縦方向サイズ変更) - [フォーカス可](properties_Entry.md#フォーカス可) - [ショートカット](properties_Entry.md#ショートカット) - [表示状態](properties_Display.md#表示状態) - [フォント](properties_Text.md#フォント) - [太字](properties_Text.md#太字) - [イタリック](properties_Text.md#イタリック) - [下線](properties_Text.md#下線) - [フォントカラー](properties_Text.md#フォントカラー) - [横揃え](properties_Text.md#横揃え) (1) - [ヘルプTips](properties_Help.md#ヘルプtips) - [メソッド](properties_Action.md#メソッド)
+[Bold](properties_Text.md#bold) - [Bottom](properties_CoordinatesAndSizing.md#bottom) - [Button Style](properties_TextAndPicture.md#button-style) - [Class](properties_Object.md#css-class) - [Expression Type](properties_Object.md#expression-type) - [Focusable](properties_Entry.md#focusable) - [Font](properties_Text.md#font) - [Font Color](properties_Text.md#font-color) - [Height](properties_CoordinatesAndSizing.md#height) - [Help Tip](properties_Help.md#help-tip) - [Horizontal Alignment](properties_Text.md#horizontal-alignment)(1) - [Horizontal Sizing](properties_ResizingOptions.md#horizontal-sizing) - [Image hugs title](properties_TextAndPicture.md#image-hugs-title)(2) - [Italic](properties_Text.md#italic) - [Left](properties_CoordinatesAndSizing.md#left) - [Number of States](properties_TextAndPicture.md#number-of-states)(2) - [Method](properties_Action.md#method) - [Object Name](properties_Object.md#object-name) - [Radio Group](properties_Object.md#radio-group) - [Picture pathname](properties_TextAndPicture.md#picture-pathname)(2) - [Right](properties_CoordinatesAndSizing.md#right) - [Save value](properties_Object.md#save-value) - [Shortcut](properties_Entry.md#shortcut) - [Title](properties_Object.md#title) - [Title/Picture Position](properties_TextAndPicture.md#title-picture-position)(2) - [Top](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - [Underline](properties_Text.md#underline) - [Variable or Expression](properties_Object.md#variable-or-expression) - [Vertical Sizing](properties_ResizingOptions.md#vertical-sizing) - [Visibility](properties_Display.md#visibility) - [Width](properties_CoordinatesAndSizing.md#width)
 
-> (1) [通常](#通常) および [フラット](#フラット) スタイルではサポートされていません。<br/> (2) [通常](#通常)、[フラット](#フラット)、[開示ボタン](#開示ボタン) および [折りたたみ/展開](#折りたたみ展開) スタイルではサポートされていません。
+> (1) Not supported by the [Regular](#regular) and [Flat](#flat) styles.<br/>
+> (2) Not supported by the [Regular](#regular), [Flat](#flat), [Disclosure](#disclosure) and [Collapse/Expand](#collapseexpand) styles.
 
-[ボタンスタイル](#ボタンスタイル) に応じて、次の追加プロパティが使用できます:
+Additional specific properties are available depending on the [button style](#button-styles):
 
-- カスタム: [背景パス名](properties_TextAndPicture.md#背景パス名) - [アイコンオフセット](properties_TextAndPicture.md#アイコンオフセット) - [横方向マージン](properties_TextAndPicture.md#横方向マージン) - [縦方向マージン](properties_TextAndPicture.md#縦方向マージン)
+- Custom: [Background pathname](properties_TextAndPicture.md#backgroundPathname) - [Horizontal Margin](properties_TextAndPicture.md#horizontalMargin) - [Icon Offset](properties_TextAndPicture.md#icon-offset) - [Vertical Margin](properties_TextAndPicture.md#verticalMargin)
