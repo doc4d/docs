@@ -7,7 +7,7 @@ title: Générateur d'application
 
 Le générateur d'applications vous permet de :
 
-* Générer une structure compilée, sans code interprété,
+* Build a compiled structure or component, without interpreted code,
 * Générer une application autonome exécutable, c'est-à-dire fusionnée avec 4D Volume Desktop, le moteur de base de données 4D,
 * Générer différentes applications à partir de la même structure compilée via un projet XML,
 * Générer des applications client-serveur homogènes,
@@ -20,7 +20,7 @@ Le générateur d'applications vous permet de :
 
 Générer un package de projet peut être réalisée à l'aide de :
 
-* soit la commande [`BUILD APPLICATION`](https://doc.4d.com/4dv19/help/command/en/page871.html),
+* either the [`BUILD APPLICATION`](https://doc.4d.com/4dv20/help/command/en/page871.html) command,
 * Utiliser la [Page Application](#application) ou la [Page Client/Serveur](#client-server) de boîte de dialogue du Générateur d'applications.
 
 :::tip
@@ -98,7 +98,7 @@ Lorsque vous cochez cette option, tous les dossiers liés au projet sont recopi�
 
 Génère un composant compilé à partir de la structure.
 
-Un composant est un fichier de structure 4D standard dans lequel des fonctionnalités spécifiques ont été développées. Une fois le composant configuré et installé dans un autre projet 4D (le projet d'application hôte), ses fonctionnalités sont accessibles depuis le projet hôte.
+A [component](../Extensions/develop-components.md) is a standard 4D project in which specific functionalities have been developed. Once the component has been configured and [installed in another 4D project](../Project/components.md) (the host application project), its functionalities are accessible from the host project.
 
 Si vous avez nommé votre application *MyComponent*, 4D créera un dossier *Component* contenant le dossier *MyComponent.4dbase* :
 
@@ -106,9 +106,10 @@ Si vous avez nommé votre application *MyComponent*, 4D créera un dossier *Comp
 
 Le dossier *MyComponent.4dbase* contient :
 
-* fichier *MyComponent.4DZ*
-
+* *MyComponent.4DZ* file
 * Un dossier *Resources* - toutes les ressources associées sont automatiquement copiées dans ce dossier. Les autres composants et/ou dossiers de plugins ne sont pas copiés (un composant ne peut pas utiliser de plug-ins ou d'autres composants).
+
+The *MyComponent.4dbase* folder is the [package folder of the compiled component](../Project/components.md).
 
 ## Page Application
 
@@ -129,9 +130,9 @@ Sous Windows, cette fonctionnalité crée un fichier exécutable (.exe). Sous ma
 
 Le principe consiste à fusionner le fichier 4D Volume Desktop avec votre fichier de structure compilé. Les fonctionnalités offertes par le fichier 4D Volume Desktop sont liées à l’offre commerciale à laquelle vous avez souscrite. Pour plus d’informations sur ce point, reportez-vous à la documentation commerciale et au site Internet de [4D Sas (http://www.4d.com/)](http://www.4d.com/).
 
-Vous pouvez définir un fichier de données par défaut ou permettre à l'utilisateur de créer et d'utiliser son propre fichier de données (cf. section [Gestion du fichier de données dans les applications finales](https://doc.4d.com/4Dv17R6/4D/17-R6/Data-file-management-in-final-applications.300-4354729.en.html)).
+You can define a default data file or allow users to [create and use their own data file](#management-of-data-files).
 
-Il est possible d'automatiser la mise à jour des applications monopostes fusionnées moyennant l'utilisation d'une séquence de commandes du langage (cf. section [Mise à jour auto des applications serveur ou monopostes](https://doc.4d.com/4Dv17R6/4D/17-R6/Automatic-updating-of-server-or-single-user-applications.300-4354721.en.html)).
+It is possible to [automate the update of merged single-user applications](#automatic-updating-of-server-or-single-user-applications) by means of a sequence of language commands.
 
 #### Emplacement du 4D Volume Desktop
 
@@ -448,7 +449,7 @@ La personnalisation du nom du dossier de cache côté serveur est utile lorsque 
 
 ## Page Plugins et composants
 
-On this tab, you set each [**plug-in**](Concepts/plug-ins.md), [**component**](Concepts/components.md), and [**module**](#deselecting-modules) that you will use in your stand-alone or client/server application.
+On this tab, you set each [**plug-in**](Concepts/plug-ins.md), [**component**](../Project/components.md), and [**module**](#deselecting-modules) that you will use in your stand-alone or client/server application.
 
 La page liste les éléments chargés par l'application 4D courante :
 
