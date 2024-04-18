@@ -3,10 +3,9 @@ id: methods
 title: メソッド
 ---
 
-
 メソッドとは、1つ以上の動作を実行するコードのことです。 メソッドは、1つ以上のステートメントで構成されます。
 
-ステートメントは 1つの命令を実行し、単純な場合もあれば複雑な場合もあります。 ステートメントとは通常、メソッドの 1行のことを指します (必要に応じて [`\` 文字を使って行を分割](quick-tour.md#行を分割する) することができます。
+ステートメントは 1つの命令を実行し、単純な場合もあれば複雑な場合もあります。 Each statement usually consists of one line in the method (if necessary, it can however be [split using the `\` character](quick-tour.md#code-on-several-lines)).
 
 メソッドは最大 2GBのテキストまたは、32000行まで記述できます。
 
@@ -14,15 +13,14 @@ title: メソッド
 
 4D ランゲージにおいて、数種類のメソッドが存在します。 その呼び出し方によって、メソッドは区別されます:
 
-| タイプ                      | 自動呼び出しのコンテキスト                                                      | 引数の受け取り | 説明                                                                                                              |
-| ------------------------ | ------------------------------------------------------------------ | ------- | --------------------------------------------------------------------------------------------------------------- |
-| **プロジェクトメソッド**           | 呼び出しに応じて ([プロジェクトメソッドの呼び出し](#calling-project-methods) 参照)          | ◯       | 任意のアクションを実行するためのコードです。 作成されたプロジェクトメソッドは、そのプロジェクトのランゲージの一部となります。                                                 |
-| **オブジェクト (ウィジェット) メソッド** | メソッドが設定されたフォームオブジェクトに関連したイベント発生時に                                  | ×       | フォームオブジェクト (ウィジェットとも呼びます) のプロパティです。                                                                             |
-| **フォームメソッド**             | メソッドが設定されたフォームに関連したイベント発生時に                                        | ×       | フォームのプロパティです。 フォームメソッドを使用してデータとオブジェクトを管理することができます。ただし、これら目的には、オブジェクトメソッドを使用する方が通常は簡単であり、より効果的です。                |
-| **トリガー** (別名 *テーブルメソッド*) | テーブルのレコード操作 (追加・削除・修正) の度に                                         | ×       | テーブルのプロパティです。 トリガーは、データベースのレコードに対して「不正な」操作がおこなわれることを防ぎます。                                                       |
-| **データベースメソッド**           | 作業セッションのイベント発生時に                                                   | ○ (既定)  | 4D には 16のデータベースメソッドがあります。                                                                                       |
-| **クラス**                  | [**クラス関数**](classes.md#function) は、オブジェクトインスタンスのコンテキストにおいて呼び出されます。 | ◯       | クラス関数にはビルトインのものと (*例:* `collection.orderBy()` や `entity.save()`)、開発者によって作成されるものがあります。 [**クラス**](classes.md) 参照。 |
-
+| タイプ                                                 | 自動呼び出しのコンテキスト                                                                                                                  | 引数の受け取り                   | 説明                                                                                                                                                                                                                   |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **プロジェクトメソッド**                                      | On demand, when the project method name is called (see [Calling project methods](#calling-project-methods)) | ◯                         | 任意のアクションを実行するためのコードです。 作成されたプロジェクトメソッドは、そのプロジェクトのランゲージの一部となります。                                                                                                                                                      |
+| **オブジェクト (ウィジェット) メソッド**         | メソッドが設定されたフォームオブジェクトに関連したイベント発生時に                                                                                              | ×                         | フォームオブジェクト (ウィジェットとも呼びます) のプロパティです。                                                                                                                                                               |
+| **Form method**                                     | メソッドが設定されたフォームに関連したイベント発生時に                                                                                                    | ×                         | フォームのプロパティです。 フォームメソッドを使用してデータとオブジェクトを管理することができます。ただし、これら目的には、オブジェクトメソッドを使用する方が通常は簡単であり、より効果的です。                                                                                                                     |
+| **Trigger** (aka _Table method_) | テーブルのレコード操作 (追加・削除・修正) の度に                                                                                  | ×                         | テーブルのプロパティです。 トリガーは、データベースのレコードに対して「不正な」操作がおこなわれることを防ぎます。                                                                                                                                                            |
+| **データベースメソッド**                                      | 作業セッションのイベント発生時に                                                                                                               | ○ (既定) | 4D には 16のデータベースメソッドがあります。                                                                                                                                                                                            |
+| **Class**                                           | [**Class functions**](classes.md#function) are called in the context of an object instance                                     | ◯                         | Class functions can be built-in (_e.g._ `collection.orderBy()` or `entity.save()`), or created by the 4D developer. See [**Classes**](classes.md) |
 
 ## プロジェクトメソッドの呼び出し
 
@@ -40,7 +38,7 @@ title: メソッド
 
 サブルーチンは、処理の下請け的なプロジェクトメソッドです。 他のメソッドから呼ばれて、要求された処理を実行します。 関数は、呼び出し元のメソッドに値を返すサブルーチンのことです。
 
-プロジェクトメソッドを作成すると、それは同データベースのランゲージの一部となります。 プロジェクトメソッドは、4Dのビルトインコマンドと同様に、ほかのメソッド (プロジェクトメソッドやオブジェクトメソッド) から呼び出すことができます。 このように使用されるプロジェクトメソッドをサブルーチンと呼びます。
+プロジェクトメソッドを作成すると、それは同データベースのランゲージの一部となります。 You can then call the project method from another method (project method, object method...) in the same way that you call 4D’s built-in commands. このように使用されるプロジェクトメソッドをサブルーチンと呼びます。
 
 サブルーチンは、以下のような目的で使います:
 
@@ -62,14 +60,14 @@ title: メソッド
 
 サブルーチンを使用しなければ、顧客レコード修正のたびにコードを作成しなければなりません。 プロジェクトの 10箇所で同じ処理が必要であれば、同じコーディングを 10回も書かねばなりません。 サブルーチンを使用すれば 1回コーディングするだけですみます。 これがコーディングの重複を減らすというサブルーチンの第一の利点です。
 
-先ほど説明したコードが `MODIFY_CUSTOMER` と呼ばれるメソッドであるとすれば、他のメソッド内でそのメソッド名を使うことで実行できます。 たとえば、顧客のレコードを修正し、それからレコードをプリントするために、以下のようなメソッドを書くことができます:
+If the previously described code was a method called `MODIFY_CUSTOMER`, you would execute it simply by using the name of the method in another method. たとえば、顧客のレコードを修正し、それからレコードをプリントするために、以下のようなメソッドを書くことができます:
 
 ```4d
  MODIFY_CUSTOMER
  PRINT SELECTION([Customers])
 ```
 
-この機能はメソッドを劇的にに簡素化します。 さきほどの例で言えば、`MODIFY_CUSTOMER` メソッドがどのように動作するかは知る必要がなく、何をおこなうかだけ知っていればよいのです。 これはメソッドをサブルーチン化することの2番目の理由、役割の明確化です。 このように、作成されたメソッドは 4Dランゲージを拡張します。
+この機能はメソッドを劇的にに簡素化します。 In the example, you do not need to know how the `MODIFY_CUSTOMER` method works, just what it does. これはメソッドをサブルーチン化することの2番目の理由、役割の明確化です。 このように、作成されたメソッドは 4Dランゲージを拡張します。
 
 このプロジェクトの例で顧客の検索方法を変える場合、10箇所ではなく、たった1つのメソッドを変更するだけですみます。 これがサブルーチンを使うもう一つの理由、改変の容易化です。
 
@@ -85,18 +83,18 @@ title: メソッド
 
 ### オブジェクトフォーミュラ
 
-プロジェクトメソッドは、**フォーミュラ** オブジェクトにカプセル化して、オブジェクトから呼び出すことができます。
+You can encapsulate your project methods in **formula** objects and call them from your objects.
 
-`Formula` または `Formula from string` コマンドを使用すると、オブジェクトプロパティに格納可能な、ネイティブなフォーミュラオブジェクトを作成することができます: つまり、カスタムなオブジェクトメソッドを実装することが可能です。
+The `Formula` or `Formula from string` commands allow you to create native formula objects that you can encapsulate in object properties. つまり、カスタムなオブジェクトメソッドを実装することが可能です。
 
-オブジェクトプロパティに保存されているメソッドを実行するには、プロパティ名のあとに **()** をつけます。 例:
+To execute a method stored in an object property, use the **()** operator after the property name. 例:
 
 ```4d
 // myAlert プロジェクトメソッド
 ALERT("Hello world!")
 ```
 
-この `myAlert` プロジェクトメソッドを任意のオブジェクトに格納し、呼び出すことができます:
+Then `myAlert` can be encapsulated in any object and called:
 
 ```4d
 var $o : Object
@@ -110,7 +108,7 @@ $o.custom_Alert() // "Hello world!" と表示します
 $o["custom_Alert"]() // "Hello world!" と表示します
 ```
 
-4D プロジェクトメソッドのように、$1, $2, .... を使用して呼び出すことで、フォーミュラに [引数を渡す](Concepts/parameters.md) こともできます:
+You can also [pass parameters](Concepts/parameters.md) to your formula when you call it by using $1, $2… just like with 4D project methods:
 
 ```4d
 //fullName メソッド
@@ -118,7 +116,7 @@ C_TEXT($0;$1;$2)
 $0:=$1+" "+$2
 ```
 
-`fullName` メソッドをオブジェクトに格納し、呼び出します:
+You can encapsulate `fullName` in an object:
 
 ```4d
 var $o : Object
@@ -128,7 +126,7 @@ $result:=$o.full_name("John";"Smith")
 // $result:=fullName("param1";"param2") と同義です
 ```
 
-`This` 関数と組み合わせることで、オブジェクトメソッドを利用した汎用的なコードを書くことができます。 例:
+Combined with the `This`function, such object methods allow writing powerful generic code. 例:
 
 ```4d
 //fullName2 メソッド
@@ -147,7 +145,7 @@ $result:=$o.fullName()
 // $result = "Jim Wesson"
 ```
 
-たとえ引数を受け取らなかったとしても、オブジェクトメソッドを実行するためにはカッコ `()` をつけて呼び出す必要があるという点に注意してください。 オブジェクトプロパティのみを呼び出した場合、フォーミュラへの新しい参照が返されます (そしてフォーミュラは実行はされません):
+Note that, even if it does not have parameters, an object method to be executed must be called with `()` parenthesis. オブジェクトプロパティのみを呼び出した場合、フォーミュラへの新しい参照が返されます (そしてフォーミュラは実行はされません):
 
 ```4d
 $o:=$f.message // $o にはフォーミュラオブジェクトが返されます
@@ -157,19 +155,19 @@ $o:=$f.message // $o にはフォーミュラオブジェクトが返されま�
 
 メニューメソッドは、カスタムメニューから呼び出されるプロジェクトメソッドです。 メニューエディターまたは "メニュー" テーマのコマンドを使用して、メニューにメソッドを割り当てます。 メニューが選択されると、それに対応するメニューメソッドが実行されます。 特定の処理を実行するメニューメソッドを割り当てたカスタムメニューを作成することで、デスクトップアプリケーションのユーザーインターフェースをカスタマイズすることができます。
 
-メニューメソッドにより、単一または複数の処理を実行することができます。 たとえば、データ入力のメニューに、以下の2つの処理を実行するメソッドを割り当てられます。まず適切な入力フォームを表示し、次にユーザーがキャンセルするまでの間 `ADD RECORD` コマンドによるデータ入力を繰り返します。
+メニューメソッドにより、単一または複数の処理を実行することができます。 For example, a menu command for entering records might call a method that performs two tasks: displaying the appropriate input form, and calling the `ADD RECORD` command until the user cancels the data entry activity.
 
 連続した処理の自動化は、プログラミング言語の強力な機能の 1つです。 カスタムメニューを使用することで処理を自動化することができ、アプリケーションのユーザーにより多くのガイダンスを提供することができます。
 
 ### プロセスメソッド
 
-**プロセスメソッド** とは、プロセスの開始時に呼び出されるプロジェクトメソッドのことです。 ワーカープロセスの場合を除いて、プロセスはプロセスメソッドが実行されている間だけ存続します。 メニューに属するメニューメソッドのプロパティとして *新規プロセス開始* をチェックしている場合、そのメニューメソッドは新規プロセスのプロセスメソッドでもあります。
+A **process method** is a project method that is called when a process is started. ワーカープロセスの場合を除いて、プロセスはプロセスメソッドが実行されている間だけ存続します。 Note that a menu method attached to a menu command with _Start a New Process_ property is also the process method for the newly started process.
 
 ### イベント・エラー処理メソッド
 
-**イベント処理メソッド** は、イベントを処理するプロセスメソッドとして、分離されたプロセス内で実行されます。 通常、開発者はイベント管理の大部分を 4Dに任せます。 たとえば、データ入力中にキーストロークやクリックを検出した 4Dは、正しいオブジェクトとフォームメソッドを呼び出します。このため開発者は、これらのメソッド内でイベントに対し適切に応答できるのです。 詳細については `ON EVENT CALL` コマンドの説明を参照してください。
+An **event catching method** runs in a separate process as the process method for catching events. 通常、開発者はイベント管理の大部分を 4Dに任せます。 たとえば、データ入力中にキーストロークやクリックを検出した 4Dは、正しいオブジェクトとフォームメソッドを呼び出します。このため開発者は、これらのメソッド内でイベントに対し適切に応答できるのです。 For more information, see the description of the command `ON EVENT CALL`.
 
-**エラー処理メソッド** は、割り込みを実行するプロジェクトメソッドです。 エラーや例外が発生するたびに呼び出されます。 詳細については、[エラー処理](error-handling.md) を参照ください。
+An **error catching method** is an interrupt-based project method. エラーや例外が発生するたびに呼び出されます。 For more information, see the [Error handling](error-handling.md) section.
 
 ### 手動での実行
 
@@ -184,7 +182,7 @@ $o:=$f.message // $o にはフォーミュラオブジェクトが返されま�
 
 #### コードエディターからメソッド実行
 
-[**コードエディター**](../code-editor/write-class-method.md) ウィンドウには、そのエディターで開かれているメソッドを実行するためのボタンがあります。 このボタンに関連付けられているメニューから実行オプションを選択できます。
+Each [**Code Editor**](../code-editor/write-class-method.md) window has a button that can be used to run the current method. このボタンに関連付けられているメニューから実行オプションを選択できます。
 
 このボタンは、プロジェクトメソッドと以下のデータベースメソッドでのみ利用できます:
 
@@ -193,24 +191,24 @@ $o:=$f.message // $o にはフォーミュラオブジェクトが返されま�
 - On Server Startup
 - On Server Shutdown
 
-詳細は [ツールバー](../code-editor/write-class-method.md#ツールバー) を参照ください。
+For more information, see [Toolbar](../code-editor/write-class-method.md#toolbar).
 
 #### メソッド実行ダイアログボックスから実行
 
-**実行** メニューから **メソッド...** コマンドを選択すると、**メソッド実行** ダイアログボックスが表示されます。
+When you select the **Method...** command of the **Run** menu,  displays the **Execute Method** dialog.
 
 このダイアログボックスには、データベースのプロジェクトメソッド (コンポーネントの共有メソッドを含む) が表示されます。 一方、非表示属性が設定されたプロジェクトメソッドは表示されません。
 
-プロジェクトメソッドを実行するには、リストからメソッドを選択し、**実行** をクリックします。 デバッグモードでメソッドを実行するには **デバッグ** をクリックします。 デバッガーに関する詳細は、[デバッガー](../Debugging/basics.md) の章を参照ください。
+To execute a project method, simply select its name in the list and click on **Execute**. To run a method step by step in Debug mode, click on **Debug**. For more information about the 4D debugger, refer to the [Debugging](../Debugging/basics.md) section.
 
-**新規プロセス** チェックボックスを選択すると、選択したメソッドは新規に作成されたプロセス内で実行されます。 大量の印刷など時間のかかる処理をメソッドがおこなう場合でもこのオプションを使用すれば、レコードの追加、グラフの作成などの処理をアプリケーションプロセスで継続できます。 プロセスに関する詳細は 4D *ランゲージリファレンス* マニュアルの [プロセス](https://doc.4d.com/4Dv19R5/4D/19-R5/Processes.300-5830912.ja.html) を参照ください。
+If you check the **New Process** check box, the method you selected executes in another process. 大量の印刷など時間のかかる処理をメソッドがおこなう場合でもこのオプションを使用すれば、レコードの追加、グラフの作成などの処理をアプリケーションプロセスで継続できます。 For more information about processes, refer to [Processes](https://doc.4d.com/4Dv19R5/4D/19-R5/Processes.300-5830912.en.html) the 4D _Language Reference_ manual.
 
-**4D Serverに関する注記**:
+**4D Server Notes**:
 
-- クライアントではなくサーバー上でメソッドを実行したい場合、実行モードメニューで **4D Server** を選択します。 この場合 *ストアドプロシージャー* と呼ばれるプロセスが新規にサーバー上で作成され、メソッドが実行されます。 このオプションを使用して、ネットワークトラフィックを減らしたり、4D Serverの動作を最適化したりできます (特にディスクに格納されたデータにアクセスする場合など)。 すべてのタイプのメソッドをサーバー上や他のクライアント上で実行できますが、ユーザーインターフェースを変更するものは例外です。 この場合、ストアドプロシージャーは効果がありません。
-- 他のクライアントマシン上でメソッドを実行するよう選択することもできます。 他のクライアントマシンは、事前に登録されていなければメニューに表示されません (詳細は [REGISTER CLIENT](https://doc.4d.com/4dv19/help/command/ja/page648.html) の説明を参照ください)。
+- If you want the method to be executed on the server machine rather than on the client machine, select the **On 4D Server** option in the To be executed menu. In this case, a new process, call a _stored procedure_, is created on the server machine in order to execute the method. このオプションを使用して、ネットワークトラフィックを減らしたり、4D Serverの動作を最適化したりできます (特にディスクに格納されたデータにアクセスする場合など)。 すべてのタイプのメソッドをサーバー上や他のクライアント上で実行できますが、ユーザーインターフェースを変更するものは例外です。 この場合、ストアドプロシージャーは効果がありません。
+- 他のクライアントマシン上でメソッドを実行するよう選択することもできます。 Other client workstations will not appear in the menu, unless they have been previously "registered" (for more information, refer to the description of the [REGISTER CLIENT](https://doc.4d.com/4dv19/help/command/en/page648.html).
 
-デフォルトでは、**ローカル** オプションが選択されています。 4D シングルユーザーの場合、このオプションしか選択できません。
+By default, the **locally** option is selected. 4D シングルユーザーの場合、このオプションしか選択できません。
 
 ## プロジェクトメソッドの再帰呼び出し
 
@@ -221,7 +219,7 @@ $o:=$f.message // $o にはフォーミュラオブジェクトが返されま�
 
 これは再帰呼び出しと呼ばれています。 4D ランゲージは再帰呼び出しを完全にサポートしています。
 
-次に例を示します。 以下のフィールドから成る `[Friends and Relatives]` テーブルがあります:
+次に例を示します。 Let’s say you have a `[Friends and Relatives]` table composed of this extremely simplified set of fields:
 
 - `[Friends and Relatives]Name`
 - `[Friends and Relatives]ChildrensName`
@@ -262,13 +260,13 @@ $o:=$f.message // $o にはフォーミュラオブジェクトが返されま�
  End if
 ```
 
-再帰関数 `Genealogy of` は以下の通りです:
+with the recursive function `Genealogy of` listed here:
 
 ```4d
-  ` Genealogy of プロジェクトメソッド
+  ` Genealogy of project method
   ` Genealogy of ( String ) -> Text
   ` Genealogy of ( Name ) -> Part of sentence
-
+ 
  $0:=$1
  QUERY([Friends and Relatives];[Friends and Relatives]ChildrensName=$1)
  If(Records in selection([Friends and Relatives])>0)
@@ -276,15 +274,15 @@ $o:=$f.message // $o にはフォーミュラオブジェクトが返されま�
  End if
 ```
 
-`Genealogy of` メソッドが自分自身を呼び出していることに注目してください。
+Note the `Genealogy of` method which calls itself.
 
-最初に挙げた方法は **反復性のアルゴリズム** です。 2番目に挙げた方法は **再帰呼び出しのアルゴリズム** です。
+The first way is an **iterative algorithm**. The second way is a **recursive algorithm**.
 
 前述の例題のようなコードを実装する場合、反復性や再帰呼び出しを使用してメソッドを書くことができるということに留意してください。 再帰呼び出しは一般的に、より明瞭で読みやすく、維持しやすいコードを提供します。ただし、この使用は必須ではありません。
 
 4D内での再帰呼び出しの代表的な使用方法は以下のとおりです:
 
 - 例題と同じく、互いに関連するテーブル内でのレコードの取り扱い。
-- `FOLDER LIST` と `DOCUMENT LIST` コマンドを使用して、ディスク上にあるドキュメントとフォルダーをブラウズする。 フォルダーにはフォルダーとドキュメントが含まれており、サブフォルダーはまたフォルダーとドキュメントを含むことができます。
+- Browsing documents and folders on your disk, using the commands `FOLDER LIST` and `DOCUMENT LIST`. フォルダーにはフォルダーとドキュメントが含まれており、サブフォルダーはまたフォルダーとドキュメントを含むことができます。
 
-**重要:** 再帰呼び出しは、必ずある時点で終了する必要があります。 たとえば、`Genealogy of` メソッドが自身の呼び出しを止めるのは、クエリがレコードを返さないときです。 この条件のテストをしないと、メソッドは際限なく自身を呼び出します。 (メソッド内で使用される引数やローカル変数の蓄積を含む) 再帰呼び出しによって容量が一杯になると、最終的に 4Dは “スタックがいっぱいです” エラーを返します 。
+**Important:** Recursive calls should always end at some point. In the example, the method `Genealogy of` stops calling itself when the query returns no records. この条件のテストをしないと、メソッドは際限なく自身を呼び出します。 (メソッド内で使用される引数やローカル変数の蓄積を含む) 再帰呼び出しによって容量が一杯になると、最終的に 4Dは “スタックがいっぱいです” エラーを返します 。
