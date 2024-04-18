@@ -7,9 +7,8 @@ title: On Bound Variable Change
 | --- | ----- | ---------------------- |
 | 54  | フォーム  | サブフォームにバインドされた変数が更新された |
 
-
 ## 説明
 
-このイベントは、親フォーム中のサブフォームにバインドされた変数の値が更新され (同じ値が代入された場合でも) 、かつサブフォームがカレントフォームページまたはページ0 に属している場合に、[サブフォーム](FormObjects/subform_overview.md) のフォームメソッドのコンテキストで生成されます。
+This event is generated in the context of the form method of a [subform](FormObjects/subform_overview.md) as soon as a value is assigned to the variable bound with the subform in the parent form (even if the same value is reassigned) and if the subform belongs to the current form page or to page 0.
 
-詳細について、[バインドされた変数の管理](FormObjects/subform_overview.md#バインドされた変数の管理) を参照してください。
+Form more information, refer to the [Managing the bound variable](FormObjects/subform_overview.md#managing-the-bound-variable) section.
