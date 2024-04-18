@@ -98,7 +98,7 @@ La commande `New collection` <!-- REF #_command_.New collection.Summary --> cré
 Si vous ne passez aucun paramètre, `New collection` crée une collection vide et retourne sa référence.
 
 Vous devez affecter la référence retournée à une variable 4D de type Collection.
-> Gardez à l'esprit que les instructions `var : Collection` ou `C_COLLECTION` déclarent une variable de type `Collection` mais ne créent aucune collection.
+> N'oubliez pas que les instructions `var : Collection` ou `C_COLLECTION` déclarent une variable du type `Collection` mais ne créent pas de collection.
 
 En option, vous pouvez préremplir la nouvelle collection en utilisant une ou plusieurs valeur(s) (*value*(s)) en tant que paramètre(s).
 
@@ -882,7 +882,7 @@ Par défaut, une évaluation non diacritique est effectuée. Si vous souhaitez q
 | startFrom  | Integer     | -> | Elément à partir duquel débuter l'évaluation        |
 | formula    | 4D.Function | -> | Objet formule                                       |
 | methodName | Text        | -> | Nom de méthode                                      |
-| param      | Mixed       | -> | Paramètre(s) à passer à *formula* ou à *methodName* |
+| param      | any         | -> | Paramètre(s) à passer à *formula* ou à *methodName* |
 | Résultat   | Boolean     | <- | Vrai si tous les éléments sont évalués à vrai       |
 <!-- END REF -->
 
@@ -1679,11 +1679,11 @@ Optionnellement, vous pouvez passer le numéro de l'élément auquel démarrer l
 
 
 <!-- REF #collection.indices().Params -->
-| Paramètres  | Type       |    | Description                                                                     |
-| ----------- | ---------- |:--:| ------------------------------------------------------------------------------- |
-| queryString | Text       | -> | Critère(s) de recherche                                                         |
-| value       | any        | -> | Valeur(s) à comparer lors de l'utilisation de paramètre(s) dans la chaîne       |
-| Résultat    | Collection | <- | Numéro(s) d'élément(s) de la collection répondant au(x) critère(s) de recherche |
+| Paramètres  | Type |    | Description             |
+| ----------- | ---- |:--:| ----------------------- |
+| queryString | Text | -> | Critère(s) de recherche |
+
+|value|any|->|Value(s) to compare when using placeholder(s)| |Result|Collection |<-|Element index(es) matching queryString in the collection|
 <!-- END REF -->
 
 
@@ -2314,6 +2314,7 @@ Vous pouvez également passer des critères afin de configurer le tri des élém
 ```4d
 {
     "propertyPath": string,
+
     "descending": boolean
 
 }
@@ -2590,7 +2591,7 @@ Lorsqu'elle est appliquée à une collection vide, .`pop()` retourne ***undefine
 <!-- REF #collection.push().Params -->
 | Paramètres | Type       |    | Description                                         |
 | ---------- | ---------- |:--:| --------------------------------------------------- |
-| element    | Mixed      | -> | Élément(s) à ajouter à la collection                |
+| element    | any        | -> | Élément(s) à ajouter à la collection                |
 | Résultat   | Collection | <- | Collection originale contenant des éléments ajoutés |
 <!-- END REF -->
 
@@ -2652,7 +2653,7 @@ Vous souhaitez trier la collection obtenue :
 | Paramètres    | Type       |    | Description                                                               |
 | ------------- | ---------- |:--:| ------------------------------------------------------------------------- |
 | queryString   | Text       | -> | Critère(s) de recherche                                                   |
-| value         | Mixed      | -> | Valeur(s) à comparer lors de l'utilisation de paramètre(s) dans la chaîne |
+| value         | any        | -> | Valeur(s) à comparer lors de l'utilisation de paramètre(s) dans la chaîne |
 | querySettings | Object     | -> | Options de requête : paramètres, attributs                                |
 | Résultat      | Collection | <- | Élément(s) correspondant à queryString dans la collection                 |
 <!-- END REF -->
@@ -2732,6 +2733,7 @@ Cet exemple retourne des personnes embauchées il y a plus de 90 jours :
 
 
 #### Exemple 3
+
 
 Vous trouverez plus d'exemples de requêtes dans la page `dataClass.query()`.
 
@@ -3213,7 +3215,7 @@ La collection retournée contient l'élément spécifié par *startFrom* et tous
 | startFrom  | Integer     | -> | Elément à partir duquel débuter l'évaluation |
 | formula    | 4D.Function | -> | Objet formule                                |
 | methodName | Text        | -> | Nom de méthode                               |
-| param      | Mixed       | -> | Paramètre(s) à passer                        |
+| param      | any         | -> | Paramètre(s) à passer                        |
 | Résultat   | Boolean     | <- | Vrai si au moins un élément a réussi le test |
 <!-- END REF -->
 
