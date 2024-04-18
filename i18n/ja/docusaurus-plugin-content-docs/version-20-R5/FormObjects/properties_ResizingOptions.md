@@ -5,19 +5,19 @@ title: リサイズオプション
 
 ## カラム自動リサイズ
 
-このプロパティがチェックされているとき (JSON の値は `rightToLeft`)、リストボックス列は定義された [最大幅](properties_CoordinatesAndSizing.md#maximum-width) と [最小幅](properties_CoordinatesAndSizing.md#minimum-width) の範囲の中でリストボックスと共に自動的にリサイズされます。
+When this property is enabled (`rightToLeft` value in JSON), list box columns are automatically resized along with the list box, within the limits of the [minimum](properties_CoordinatesAndSizing.md#minimum-width) and [maximum](properties_CoordinatesAndSizing.md#maximum-width) widths defined.
 
-このプロパティがチェックされていないときには (JSON の値は `legacy`)、リストボックス内で最も右のカラムのみが (定義された最大幅を超えたとしても) リサイズされます。
+When this property is disabled (`legacy` value in JSON), only the rightmost column of the list box is resized, even if its width exceeds the maximum value defined.
 
 ### カラムの自動リサイズの仕組み
 
-* リストボックスの幅を拡大すると、その列も一つずつ、右から左へと順に、[最大幅](properties_CoordinatesAndSizing.md#最大幅) に達するまで拡大されていきます。 [サイズ変更可](#サイズ変更可) プロパティがチェックされている列だけがリサイズされます
+- As the list box width increases, its columns are enlarged, one by one, starting from right to left, until each reaches its [maximum width](properties_CoordinatesAndSizing.md#maximum-width). Only columns with the [Resizable](#resizable) property selected are resized.
 
-* リストボックスの幅を縮小するときも同じ手順が適用されますが、順番が逆になります (左から右へと列がリサイズされていきます)。 列の幅がそれぞれ [最小幅](properties_CoordinatesAndSizing.md#最小幅) に達すると、水平スクロールバーがアクティブになります。
+- The same procedure applies when the list box width decreases, but in reverse order (_i.e._, columns are resized starting from left to right). When each column has reached its [minimum width](properties_CoordinatesAndSizing.md#minimum-width), the horizontal scroll bar becomes active again.
 
-* カラムは水平スクロールバーが "アクティブ" でない場合にのみリサイズされます。つまり、現サイズでリストボックスのすべての列が完全に表示されている場合のみです。 **注**: 水平スクロールバーの表示/非表示は、アクティブ/非アクティブとは関係ありません。スクロールバーは、非表示かつアクティブであることが可能です。
+- Columns are resized only when the horizontal scroll bar is not "active"; _i.e._, all columns are fully visible in the list box at its current size. **Note**: If the horizontal scroll bar is hidden, this does not alter its state: a scroll bar may still be active, even though it is not visible.
 
-* すべての列が最大幅に到達すると、これらはそれ以上拡大されず、余分な空白を埋める形で空の列が右に追加されます。 この余白カラムがあるときにリストボックスの幅を縮小させた場合、余白カラムから先に縮小されていきます。
+- すべての列が最大幅に到達すると、これらはそれ以上拡大されず、余分な空白を埋める形で空の列が右に追加されます。 この余白カラムがあるときにリストボックスの幅を縮小させた場合、余白カラムから先に縮小されていきます。
 
 ![](../assets/en/FormObjects/property_columnAutoResizing.png)
 
@@ -25,9 +25,9 @@ title: リサイズオプション
 
 余白カラムの見た目は既存の列と同じになります。既存のリストボックスカラムにヘッダー/フッターがある場合には余白カラムにもこれらの要素があり、同じ背景色が適用されます。
 
-余白カラムのヘッダー/フッターはクリック可能ですが、他のカラムには何の影響も及ぼしません (つまり並び替えなどはおこなわれません)。しかしながら、`On Clicked`、`On Header Click` そして `On Footer Click` イベントはそれぞれ生成されます。
+The fake header and/or footer can be clicked but this does not have any effect on the other columns (e.g.: no sort is performed); nevertheless, the `On Clicked`, `On Header Click` and `On Footer Click` events are generated accordingly.
 
-余白カラム内のセルがクリックされた場合、[LISTBOX GET CELL POSITION](https://doc.4d.com/4Dv18/4D/18/LISTBOX-GET-CELL-POSITION.301-4505216.ja.html) コマンドは列番号として "X+1" を返します (X は既存の列数です)。
+If a cell in the fake column is clicked, the [LISTBOX GET CELL POSITION](https://doc.4d.com/4Dv17R6/4D/17-R6/LISTBOX-GET-CELL-POSITION.301-4311145.en.html) command returns "X+1" for its column number (where X is the number of existing columns).
 
 #### JSON 文法
 
@@ -37,13 +37,13 @@ title: リサイズオプション
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md)
+[List Box](listbox_overview.md)
 
 ---
 
 ## 横方向サイズ変更
 
-このプロパティは、ユーザーがフォームの幅をサイズ変更したときの、当該オブジェクトの挙動を指定します。 このプロパティは `OBJECT SET RESIZING OPTIONS` ランゲージコマンドによっても設定することができます。
+このプロパティは、ユーザーがフォームの幅をサイズ変更したときの、当該オブジェクトの挙動を指定します。 It can also be set dynamically by the `OBJECT SET RESIZING OPTIONS` language command.
 
 次の値が提供されています:
 
@@ -52,7 +52,8 @@ title: リサイズオプション
 | 拡大    | "grow"  | ユーザーがウィンドウの幅を変更すると、オブジェクトの幅にも同じ割合を適用します。       |
 | 移動    | "move"  | ユーザーがウィンドウの幅を変更すると、幅の増加分と同じだけオブジェクトを左か右に移動します。 |
 | なし    | "fixed" | フォームサイズが変更されても、オブジェクトは固定されたままです。               |
-> このプロパティは [縦方向サイズ変更](#縦方向サイズ変更) プロパティと連携して機能します。
+
+> This property works in conjunction with the [Vertical Sizing](#vertical-sizing) property.
 
 #### JSON 文法
 
@@ -62,13 +63,13 @@ title: リサイズオプション
 
 #### 対象オブジェクト
 
-[4D View Pro エリア](viewProArea_overview.md) - [4D Write Pro エリア](writeProArea_overview.md) - [ボタン](button_overview.md) - [ボタングリッド](buttonGrid_overview.md) - [チェックボックス](checkbox_overview.md) - [コンボボックス](comboBox_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md) - [グループボックス](groupBox.md) - [階層リスト](list_overview.md) - [入力](input_overview.md) - [リストボックス](listbox_overview.md) - [線](shapes_overview.md#線) - [リストボックス列](listbox_overview.md#リストボックス列) - [楕円](shapes_overview.md#楕円) - [ピクチャーボタン](pictureButton_overview.md) - [ピクチャーポップアップメニュー](picturePopupMenu_overview.md) - [プラグインエリア](pluginArea_overview.md) - [進捗インジケーター](progressIndicator.md) - [ラジオボタン](radio_overview.md) - [ルーラー](ruler.md) - [四角](shapes_overview.md#四角) - [スピナー](spinner.md) - [スプリッター](splitters.md) - [スタティックピクチャー](staticPicture.md) - [ステッパー](stepper.md) - [サブフォーム](subform_overview.md) - [タブコントロール](tabControl.md) - [Web エリア](webArea_overview.md)
+[4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [Line](shapes_overview.md#line) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Web Area](webArea_overview.md#overview)
 
 ---
 
 ## 縦方向サイズ変更
 
-このプロパティは、ユーザーがフォームの高さをサイズ変更したときの、当該オブジェクトの挙動を指定します。 このプロパティは `OBJECT SET RESIZING OPTIONS` ランゲージコマンドによっても設定することができます。
+このプロパティは、ユーザーがフォームの高さをサイズ変更したときの、当該オブジェクトの挙動を指定します。 It can also be set dynamically by the `OBJECT SET RESIZING OPTIONS` language command.
 
 次の値が提供されています:
 
@@ -77,7 +78,8 @@ title: リサイズオプション
 | 拡大    | "grow"  | ユーザーがウィンドウの高さを変更すると、オブジェクトの高さにも同じ割合を適用します。       |
 | 移動    | "move"  | ユーザーがウィンドウの高さを変更すると、高さの変更分と同じだけオブジェクトを上か下に移動します。 |
 | なし    | "fixed" | フォームサイズが変更されても、オブジェクトは固定されたままです。                 |
-> このプロパティは [横方向サイズ変更](#横方向サイズ変更) プロパティと連携して機能します。
+
+> This property works in conjunction with the [Horizontal Sizing](#horizontal-sizing) property.
 
 #### JSON 文法
 
@@ -87,7 +89,7 @@ title: リサイズオプション
 
 #### 対象オブジェクト
 
-[4D View Pro エリア](viewProArea_overview.md) - [4D Write Pro エリア](writeProArea_overview.md) - [ボタン](button_overview.md) - [ボタングリッド](buttonGrid_overview.md) - [チェックボックス](checkbox_overview.md) - [コンボボックス](comboBox_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md) - [グループボックス](groupBox.md) - [階層リスト](list_overview.md) - [入力](input_overview.md) - [リストボックス](listbox_overview.md) - [線](shapes_overview.md#線) - [リストボックス列](listbox_overview.md#リストボックス列) - [楕円](shapes_overview.md#楕円) - [ピクチャーボタン](pictureButton_overview.md) - [ピクチャーポップアップメニュー](picturePopupMenu_overview.md) - [プラグインエリア](pluginArea_overview.md) - [進捗インジケーター](progressIndicator.md) - [ラジオボタン](radio_overview.md) - [ルーラー](ruler.md) - [四角](shapes_overview.md#四角) - [スピナー](spinner.md) - [スプリッター](splitters.md) - [スタティックピクチャー](staticPicture.md) - [ステッパー](stepper.md) - [サブフォーム](subform_overview.md) - [タブコントロール](tabControl.md) - [Web エリア](webArea_overview.md)
+[4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [Line](shapes_overview.md#line) - [List Box Column](listbox_overview.md#list-box-columns) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md#overview) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Web Area](webArea_overview.md#overview)
 
 ---
 
@@ -95,7 +97,8 @@ title: リサイズオプション
 
 プロパティを適用するとスプリッターオブジェクトは "プッシャー" になり、そのオブジェクトの右側 (垂直スプリッター) または下側 (水平スプリッター) にある他のオブジェクトは、スプリッターと一緒に押し出されて移動します。
 
-"プッシャー" スプリッターを移動した場合の結果を次に示します: ![](../assets/en/FormObjects/splitter_pusher1.png)
+Here is the result of a “pusher” splitter being moved:
+![](../assets/en/FormObjects/splitter_pusher1.png)
 
 ![](../assets/en/FormObjects/splitter_pusher3.png)
 
@@ -105,13 +108,13 @@ title: リサイズオプション
 
 #### JSON 文法
 
-| 名称           | データタイプ |             とりうる値             |
-|:------------ |:------:|:-----------------------------:|
+| 名称           | データタイプ |                                とりうる値                                |
+| :----------- | :----: | :-----------------------------------------------------------------: |
 | splitterMode | string | "move" (プッシャー), "resize" (標準) |
 
 #### 対象オブジェクト
 
-[スプリッター](splitters.md)
+[Splitter](splitters.md)
 
 ---
 
@@ -121,10 +124,10 @@ title: リサイズオプション
 
 #### JSON 文法
 
-| 名称        | データタイプ  |      とりうる値      |
-|:--------- |:-------:|:---------------:|
+| 名称        |  データタイプ |      とりうる値      |
+| :-------- | :-----: | :-------------: |
 | resizable | boolean | "true", "false" |
 
 #### 対象オブジェクト
 
-[リストボックス列](listbox_overview.md#リストボックス列)
+[List Box Column](listbox_overview.md#list-box-columns)
