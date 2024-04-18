@@ -3,25 +3,21 @@ id: ClassClass
 title: Class
 ---
 
-
-プロジェクトにおいてユーザークラスが [定義](Concepts/classes.md#クラス定義) されていれば、それは 4Dランゲージ環境に読み込まれます。 クラスとは、それ自身が "Class" クラスのオブジェクトであり、プロパティと関数を持ちます。
-
-
+When a user class is [defined](Concepts/classes.md#class-definition) in the project, it is loaded in the 4D language environment. クラスとは、それ自身が "Class" クラスのオブジェクトであり、プロパティと関数を持ちます。
 
 ### 概要
 
-
-|                                                                                                                                                             |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [<!-- INCLUDE #ClassClass.isShared.Syntax -->](#isshared)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #ClassClass.isShared.Summary -->          |
-| [<!-- INCLUDE #ClassClass.isSingleton.Syntax -->](#issingleton)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #ClassClass.isSingleton.Summary --> |
-| [<!-- INCLUDE #ClassClass.me.Syntax -->](#me)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #ClassClass.me.Summary -->                            |
-| [<!-- INCLUDE #ClassClass.name.Syntax -->](#name)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #ClassClass.name.Summary -->                      |
-| [<!-- INCLUDE #ClassClass.new().Syntax -->](#new)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #ClassClass.new().Summary -->                     |
-| [<!-- INCLUDE #ClassClass.superclass.Syntax -->](#superclass)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #ClassClass.superclass.Summary -->    |
-
+|                                                                                                                                                                                                                                         |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [<!-- INCLUDE #ClassClass.isShared.Syntax -->](#isshared)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #ClassClass.isShared.Summary -->          |
+| [<!-- INCLUDE #ClassClass.isSingleton.Syntax -->](#issingleton)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #ClassClass.isSingleton.Summary --> |
+| [<!-- INCLUDE #ClassClass.me.Syntax -->](#me)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #ClassClass.me.Summary -->                            |
+| [<!-- INCLUDE #ClassClass.name.Syntax -->](#name)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #ClassClass.name.Summary -->                      |
+| [<!-- INCLUDE #ClassClass.new().Syntax -->](#new)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #ClassClass.new().Summary -->                     |
+| [<!-- INCLUDE #ClassClass.superclass.Syntax -->](#superclass)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #ClassClass.superclass.Summary -->    |
 
 <!-- REF ClassClass.isShared.Desc -->
+
 ## .isShared
 
 <details><summary>履歴</summary>
@@ -32,18 +28,18 @@ title: Class
 
 </details>
 
-
 <!-- REF #ClassClass.isShared.Syntax -->**.isShared** : Boolean<!-- END REF -->
 
 #### 説明
 
-`.isShared` プロパティは、 <!-- REF #ClassClass.isShared.Summary -->ユーザークラスが [共有クラス](../Concepts/classes.md#共有クラス) として定義されている場合は `true` を返します<!-- END REF -->。そうでない場合は `false` を返します。
+The `.isShared` property <!-- REF #ClassClass.isShared.Summary -->returns `true` if the user class has been defined as [shared class](../Concepts/classes.md#shared-classes)<!-- END REF -->, and `false` otherwise.
 
-このプロパティは **読み取り専用** です。
+This property is **read-only**.
 
 <!-- END REF -->
 
 <!-- REF ClassClass.isSingleton.Desc -->
+
 ## .isSingleton
 
 <details><summary>履歴</summary>
@@ -54,18 +50,18 @@ title: Class
 
 </details>
 
-
 <!-- REF #ClassClass.isSingleton.Syntax -->**.isSingleton** : Boolean<!-- END REF -->
 
 #### 説明
 
-`.isSingleton` プロパティは、 <!-- REF #ClassClass.isSingleton.Summary -->ユーザークラスが [ シングルトンクラス ](../Concepts/classes.md#シングルトンクラス) として定義されている場合は `true` を返します<!-- END REF -->。そうでない場合は `false` を返します。
+The `.isSingleton` property <!-- REF #ClassClass.isSingleton.Summary -->returns `true` if the user class has been defined as a [singleton class](../Concepts/classes.md#singleton-classes)<!-- END REF -->, and `false` otherwise.
 
-このプロパティは **読み取り専用** です。
+This property is **read-only**.
 
 <!-- END REF -->
 
 <!-- REF ClassClass.me.Desc -->
+
 ## .me
 
 <details><summary>履歴</summary>
@@ -76,20 +72,20 @@ title: Class
 
 </details>
 
-
 <!-- REF #ClassClass.me.Syntax -->**.me** : 4D.Class<!-- END REF -->
 
 #### 説明
 
-`.me` プロパティは、 <!-- REF #ClassClass.me.Summary -->`cs.className` シングルトンクラスのシングルトンインスタンスを返します<!-- END REF -->。 シングルトンクラスが前もってインスタンス化されていない場合、このプロパティは引数なしでクラスコンストラクターを呼び出し、インスタンスを作成します。 そうでない場合は、既存のシングルトンインスタンスを返します。
+The `.me` property <!-- REF #ClassClass.me.Summary -->returns the singleton instance of the `cs.className` singleton class<!-- END REF -->. シングルトンクラスが前もってインスタンス化されていない場合、このプロパティは引数なしでクラスコンストラクターを呼び出し、インスタンスを作成します。 そうでない場合は、既存のシングルトンインスタンスを返します。
 
-`cs.className` が [シングルトンクラス](../Concepts/classes.md#シングルトンクラス) でない場合、`.me` はデフォルトで **undefined** です。
+If `cs.className` is not a [singleton class](../Concepts/classes.md#singleton-classes), `.me` is **undefined** by default.
 
-このプロパティは **読み取り専用** です。
+This property is **read-only**.
 
 <!-- END REF -->
 
 <!-- REF ClassClass.name.Desc -->
+
 ## .name
 
 <details><summary>履歴</summary>
@@ -100,18 +96,18 @@ title: Class
 
 </details>
 
-
 <!-- REF #ClassClass.name.Syntax -->**.name** : Text<!-- END REF -->
 
 #### 説明
 
-`.name` プロパティは、 <!-- REF #ClassClass.name.Summary -->`4D.Class` オブジェクトの名称を格納します<!-- END REF -->。 クラス名の大文字・小文字は区別されます。
+The `.name` property <!-- REF #ClassClass.name.Summary -->contains the name of the `4D.Class` object<!-- END REF -->. クラス名の大文字・小文字は区別されます。
 
-このプロパティは **読み取り専用** です。
+This property is **read-only**.
 
 <!-- END REF -->
 
 <!-- REF ClassClass.new().Desc -->
+
 ## .new()
 
 <details><summary>履歴</summary>
@@ -122,31 +118,27 @@ title: Class
 
 </details>
 
-
 <!-- REF #ClassClass.new().Syntax -->**.new**( { *...param* : any } ) : 4D.Class<!-- END REF -->
 
-
-
-
 <!-- REF #ClassClass.new().Params -->
-| 引数    | タイプ      |    | 説明              |
-| ----- | -------- |:--:| --------------- |
-| param | any      | -> | コンストラクター関数に渡す引数 |
-| 戻り値   | 4D.Class | <- | クラスの新規オブジェクト    |
+
+| 引数    | タイプ                      |     | 説明              |
+| ----- | ------------------------ | :-: | --------------- |
+| param | any                      |  -> | コンストラクター関数に渡す引数 |
+| 戻り値   | 4D.Class |  <- | クラスの新規オブジェクト    |
 
 <!-- END REF -->
 
-
 #### 説明
 
-`.new()` 関数は、 <!-- REF #ClassClass.new().Summary -->対象クラスの新規インスタンスである `cs.className` オブジェクトを作成して返します<!-- END REF --><!-- END REF -->。 この関数は、[`cs` クラスストア](Concepts/classes.md#cs) に属する全クラスで自動的に利用可能です。
+The `.new()` function <!-- REF #ClassClass.new().Summary -->creates and returns a `cs.className` object which is a new instance of the class on which it is called<!-- END REF -->. This function is automatically available on all classes from the [`cs` class store](Concepts/classes.md#cs).
 
-任意の *param* パラメーターに渡した引数は、当該クラス定義内の [Class Constructor](Concepts/classes.md#class-constructor) 関数 (あれば) が受け取ります。 コンストラクター関数においては、[`This`](Concepts/classes.md#this) は新規に作成されるオブジェクトを指します。
+You can pass one or more optional _param_ parameters, which will be passed to the [class constructor](Concepts/classes.md#class-constructor) function (if any) in the _className_ class definition. Within the constructor function, the [`This`](Concepts/classes.md#this) is bound to the new object being constructed.
 
 :::note 注記
 
-- すでにインスタンス化されている [シングルトンクラスに対して](../Concepts/classes.md#シングルトンクラス) `.new()` を呼び出すと、新しいインスタンスではなくシングルトンインスタンスが返されます。
-- 存在しないクラスを対象に `.new()` を呼び出した場合、エラーが返されます。
+- If `.new()` is called on a [singleton class](../Concepts/classes.md#singleton-classes) that has already been instantiated, the singleton instance is returned, not a new instance.
+- If `.new()` is called on a non-existing class, an error is returned.
 
 :::
 
@@ -163,11 +155,11 @@ $person:=cs.Person.new() // 新規インスタンスの作成
 パラメーターを使って、Personクラスの新規インスタンスを作成するには、次のように書きます:
 
 ```4d
-// クラス: Person.4dm
+//Class: Person.4dm
 Class constructor($firstname : Text; $lastname : Text; $age : Integer)
-    This.firstName:=$firstname
-    This.lastName:=$lastname
-    This.age:=$age
+	This.firstName:=$firstname
+	This.lastName:=$lastname
+	This.age:=$age
 ```
 
 ```4d
@@ -179,10 +171,10 @@ $person:=cs.Person.new("John";"Doe";40)
 // $person.age = 40
 ```
 
-
 <!-- END REF -->
 
 <!-- REF ClassClass.superclass.Desc -->
+
 ## .superclass
 
 <details><summary>履歴</summary>
@@ -193,31 +185,29 @@ $person:=cs.Person.new("John";"Doe";40)
 
 </details>
 
-
 <!-- REF #ClassClass.superclass.Syntax -->**.superclass** : 4D.Class<!-- END REF -->
 
 #### 説明
 
-`.superclass` プロパティは、 <!-- REF #ClassClass.superclass.Summary -->対象クラスの親クラスを返します<!-- END REF -->。 スーパークラスは、`4D.Class` オブジェクト、あるいは `cs.className` オブジェクトのいずれかです。 親クラスが存在しない場合は、このプロパティは **null** を返します。
+The `.superclass` property <!-- REF #ClassClass.superclass.Summary -->returns the parent class of the class<!-- END REF -->. A superclass can be a `4D.Class` object, or a `cs.className` object. If the class does not have a parent class, the property returns **null**.
 
-ユーザークラスのスーパークラスは、[`Class extends <superclass>`](Concepts/classes.md#class-extends-classname) キーワードを使ってクラス内で定義されます。
+A superclass of a user class is declared in a class by using the [`Class extends <superclass>`](Concepts/classes.md#class-extends-classname) keyword.
 
-このプロパティは **読み取り専用** です。
+This property is **read-only**.
 
 #### 例題
 
 ```4d
-$sup:=4D.File.superclass // Document
-$sup:=4D.Document.superclass // Object
-$sup:=4D.Object.superclass // null
+$sup:=4D.File.superclass //Document
+$sup:=4D.Document.superclass //Object
+$sup:=4D.Object.superclass //null
 
-// `Class extends File` を使って
-// MyFile クラスを作成した場合  
-$sup:=cs.MyFile.superclass // File
+// If you created a MyFile class  
+// with `Class extends File`
+$sup:=cs.MyFile.superclass //File
 
 ```
 
+**See also:** [Super](Concepts/classes.md#super)
 
-
-**参照:** [Super](Concepts/classes.md#super)
 <!-- END REF -->
