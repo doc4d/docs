@@ -3,114 +3,111 @@ id: MailAttachmentClass
 title: MailAttachment
 ---
 
-Attachment オブジェクトによって、[`Email`](EmailObjectClass.md) オブジェクト内のファイルを参照することができます。 MailAttachment オブジェクトは [`MAIL New attachment`](#mail-new-attachment) コマンドによって作成されます。
-
+Attachment objects allow referencing files within a [`Email`](EmailObjectClass.md) object. Attachment objects are created using the [`MAIL New attachment`](#mail-new-attachment) command.
 
 ### Attachment オブジェクト
 
 Attachment オブジェクトは、次の読み取り専用プロパティや、関数を提供します:
 
-
-|                                                                                                                                                                                  |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [<!-- INCLUDE #MailAttachmentClass.cid.Syntax -->](#cid)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #MailAttachmentClass.cid.Summary -->|
-| [<!-- INCLUDE #MailAttachmentClass.disposition.Syntax -->](#disposition)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #MailAttachmentClass.disposition.Summary -->|
-| [<!-- INCLUDE #MailAttachmentClass.getContent().Syntax -->](#getcontent)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #MailAttachmentClass.getContent().Summary -->|
-| [<!-- INCLUDE #MailAttachmentClass.name.Syntax -->](#name)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #MailAttachmentClass.name.Summary -->|
-| [<!-- INCLUDE #MailAttachmentClass.path.Syntax -->](#path)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #MailAttachmentClass.path.Summary -->|
-| [<!-- INCLUDE #MailAttachmentClass.platformPath.Syntax -->](#platformpath)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #MailAttachmentClass.platformPath.Summary -->|
-| [<!-- INCLUDE #MailAttachmentClass.size.Syntax -->](#size)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #MailAttachmentClass.size.Summary -->|
-| [<!-- INCLUDE #MailAttachmentClass.type.Syntax -->](#type)&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #MailAttachmentClass.type.Summary -->|
-
+|                                                                                                                                                                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [<!-- INCLUDE #MailAttachmentClass.cid.Syntax -->](#cid)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #MailAttachmentClass.cid.Summary -->                            |
+| [<!-- INCLUDE #MailAttachmentClass.disposition.Syntax -->](#disposition)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #MailAttachmentClass.disposition.Summary -->    |
+| [<!-- INCLUDE #MailAttachmentClass.getContent().Syntax -->](#getcontent)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #MailAttachmentClass.getContent().Summary -->   |
+| [<!-- INCLUDE #MailAttachmentClass.name.Syntax -->](#name)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #MailAttachmentClass.name.Summary -->                         |
+| [<!-- INCLUDE #MailAttachmentClass.path.Syntax -->](#path)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #MailAttachmentClass.path.Summary -->                         |
+| [<!-- INCLUDE #MailAttachmentClass.platformPath.Syntax -->](#platformpath)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #MailAttachmentClass.platformPath.Summary --> |
+| [<!-- INCLUDE #MailAttachmentClass.size.Syntax -->](#size)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #MailAttachmentClass.size.Summary -->                         |
+| [<!-- INCLUDE #MailAttachmentClass.type.Syntax -->](#type)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #MailAttachmentClass.type.Summary -->                         |
 
 ## MAIL New attachment
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                 |
-| ----- | ---------------------------------- |
+| リリース  | 内容                                                                                 |
+| ----- | ---------------------------------------------------------------------------------- |
 | 19 R2 | 4D.File, 4D.ZipFile, 4D.Blob の受け入れ |
+
 </details>
 
 <!-- REF #_command_.MAIL New attachment.Syntax -->**MAIL New attachment**( *file* : 4D.File { ; *name* : Text {; *cid* : Text{ ; *type* : Text { ; *disposition* :Text } } } } ) : 4D.MailAttachment<br/>**MAIL New attachment**( *zipFile* : 4D.ZipFile { ; *name* : Text {; *cid* : Text{ ; *type* : Text { ; *disposition* :Text } } } } ) : 4D.MailAttachment<br/>**MAIL New attachment**( *blob* : 4D.Blob { ; *name* : Text {; *cid* : Text{ ; *type* : Text { ; *disposition* :Text } } } } ) : 4D.MailAttachment<br/>**MAIL New attachment**( *path* : Text { ; *name* : Text {; *cid* : Text{ ; *type* : Text { ; *disposition* :Text } } } } ) : 4D.MailAttachment<!-- END REF -->
 
-
 <!-- REF #_command_.MAIL New attachment.Params -->
 
-| 引数          | タイプ               |    | 説明                                                     |
-| ----------- | ----------------- |:--:| ------------------------------------------------------ |
-| file        | 4D.File           | -> | 添付ファイル                                                 |
-| zipFile     | 4D.ZipFile        | -> | 添付 Zipファイル                                             |
-| blob        | 4D.Blob           | -> | 添付を格納した BLOB                                           |
-| path        | Text              | -> | 添付ファイルのパス                                              |
-| name        | Text              | -> | メールクライアントが添付を指定するのに使用する名前 + 拡張子                        |
-| cid         | Text              | -> | 添付の ID (HTMLメッセージのみ)、あるいは cid が不要な場合は "" (空の文字列)       |
-| type        | Text              | -> | content-type ヘッダーの値                                    |
-| disposition | Text              | -> | content-disposition ヘッダーの値: "inline" あるいは "attachment" |
-| 戻り値         | 4D.MailAttachment | <- | Attachment オブジェクト                                      |
-<!-- END REF -->
+| 引数          | タイプ                               |     | 説明                                                                                     |
+| ----------- | --------------------------------- | :-: | -------------------------------------------------------------------------------------- |
+| file        | 4D.File           |  -> | 添付ファイル                                                                                 |
+| zipFile     | 4D.ZipFile        |  -> | 添付 Zipファイル                                                                             |
+| blob        | 4D.Blob           |  -> | 添付を格納した BLOB                                                                           |
+| path        | Text                              |  -> | 添付ファイルのパス                                                                              |
+| name        | Text                              |  -> | メールクライアントが添付を指定するのに使用する名前 + 拡張子                                                        |
+| cid         | Text                              |  -> | 添付の ID (HTMLメッセージのみ)、あるいは cid が不要な場合は "" (空の文字列) |
+| type        | Text                              |  -> | content-type ヘッダーの値                                                                    |
+| disposition | Text                              |  -> | content-disposition ヘッダーの値: "inline" あるいは "attachment"                 |
+| 戻り値         | 4D.MailAttachment |  <- | Attachment オブジェクト                                                                      |
 
+<!-- END REF -->
 
 #### 説明
 
-`MAIL New attachment` コマンドは、 <!-- REF #_command_.MAIL New attachment.Summary -->[Email オブジェクト](EmailObjectClass.md#email-オブジェクト) に追加できる添付オブジェクトを作成します<!-- END REF -->。
+The `MAIL New attachment` command <!-- REF #_command_.MAIL New attachment.Summary -->allows you to create an attachment object that you can add to an [Email object](EmailObjectClass.md#email-object)<!-- END REF -->.
 
 添付を定義するには、次のパラメーターが使えます:
 
-- *file*: 添付ファイルを格納する `4D.File` オブジェクトを渡します。
-- *zipfile*: 添付ファイルを格納する `4D.ZipFile` オブジェクトを渡します。
-- *blob*: 添付そのものを `4D.Blob` に格納して渡します。
-- *path*: システムシンタックスで表現された添付ファイルのパスを **テキスト** 値で渡します。 完全なパス名、または単純なファイル名を渡すことができます (ファイル名のみの場合、4D はプロジェクトファイルと同じディレクトリ内を検索します)。
+- a _file_, pass a `4D.File` object containing the attachment file.
+- a _zipfile_, pass a `4D.ZipFile` object containing the attachment file.
+- a _blob_, pass a `4D.Blob` object containing the attachment itself.
+- a _path_, pass a **text** value containing the path of the attachment file, expressed with the system syntax. 完全なパス名、または単純なファイル名を渡すことができます (ファイル名のみの場合、4D はプロジェクトファイルと同じディレクトリ内を検索します)。
 
-任意の *name* 引数として、添付を指定するためにメールクライアントが使用する名前と拡張子を渡すことができます。 *name* が省略された場合:
+The optional _name_ parameter lets you pass the name and extension to be used by the mail client to designate the attachment. If _name_ is omitted and:
 
-*   ファイルパスを渡していれば、そのファイル名と拡張子が使用されます。
-*   BLOB を渡していれば、拡張子がないランダムな名前が自動的に生成されます。
+- ファイルパスを渡していれば、そのファイル名と拡張子が使用されます。
+- BLOB を渡していれば、拡張子がないランダムな名前が自動的に生成されます。
 
-任意の *cid* 引数を使用すると、添付ファイルの内部ID を渡すことができます。 この ID は `Content-Id` ヘッダーの値で、HTMLメッセージにおいてのみ使用されます。 cid を使い、`\<img src="cid:ID">` のような HTMLタグによってメッセージ本文で定義された参照と添付ファイルが紐づけられます。 これはつまり、添付ファイルの中身 (例: ピクチャー) がメールクライアント上ではメッセージ本文内に表示されるべきであることを意味しています。 最終的な表示は、メールクライアントによって若干異なる可能性があります。 *cid* を使用したくない場合、空の文字列を引数として渡します。
+The optional _cid_ parameter lets you pass an internal ID for the attachment. This ID is the value of the `Content-Id` header, it will be used in HTML messages only. The cid associates the attachment with a reference defined in the message body using an HTML tag such as `\<img src="cid:ID">`. これはつまり、添付ファイルの中身 (例: ピクチャー) がメールクライアント上ではメッセージ本文内に表示されるべきであることを意味しています。 最終的な表示は、メールクライアントによって若干異なる可能性があります。 You can pass an empty string in _cid_ if you do not want to use this parameter.
 
-任意の *type* 引数を渡すと、添付ファイルの `content-type` を明示的に設定することができます。 たとえば、MIMEタイプを定義する文字列 ("video/mpeg"など) を渡すことができます。 この content-type の値は拡張子とは関係なく添付ファイルに対して設定されます。 MIMEタイプについての詳細は、[Wikipedia 上のMIME に関するページ](https://ja.wikipedia.org/wiki/Multipurpose_Internet_Mail_Extensions) を参照ください。
+You can use the optional _type_ parameter to explicitly set the `content-type` of the attachment file. たとえば、MIMEタイプを定義する文字列 ("video/mpeg"など) を渡すことができます。 この content-type の値は拡張子とは関係なく添付ファイルに対して設定されます。 For more information about MIME types, please refer to the [MIME type page on Wikipedia](https://en.wikipedia.org/wiki/MIME).
 
-この引数が省略された場合、あるいはこの引数に空の文字列が渡された場合はデフォルトで、添付ファイルの `content-type` は拡張子に基づいて設定されます。 主な MIMEタイプについては、以下のルールが適用されます:
+By default, if the _type_ parameter is omitted or contains an empty string, the `content-type` of the attachment file is based on its extension. 主な MIMEタイプについては、以下のルールが適用されます:
 
-| 拡張子       | Content-Type                  |
-| --------- | ----------------------------- |
-| jpg, jpeg | image/jpeg                    |
-| png       | image/png                     |
-| gif       | image/gif                     |
-| pdf       | application/pdf               |
-| doc       | application/msword            |
+| 拡張子       | Content-Type                                  |
+| --------- | --------------------------------------------- |
+| jpg, jpeg | image/jpeg                                    |
+| png       | image/png                                     |
+| gif       | image/gif                                     |
+| pdf       | application/pdf                               |
+| doc       | application/msword                            |
 | xls       | application/vnd.ms-excel      |
 | ppt       | application/vnd.ms-powerpoint |
-| zip       | application/zip               |
-| gz        | application/gzip              |
-| json      | application/json              |
-| js        | application/javascript        |
-| ps        | application/postscript        |
-| xml       | application/xml               |
-| htm, html | text/html                     |
-| mp3       | audio/mpeg                    |
-| *その他*     | application/octet-stream      |
+| zip       | application/zip                               |
+| gz        | application/gzip                              |
+| json      | application/json                              |
+| js        | application/javascript                        |
+| ps        | application/postscript                        |
+| xml       | application/xml                               |
+| htm, html | text/html                                     |
+| mp3       | audio/mpeg                                    |
+| _other_   | application/octet-stream                      |
 
-任意の *disposition* 引数を渡して、添付ファイルの `content-disposition` ヘッダーを指定できます。 "Mail" 定数テーマ内の、以下の定数のいずれか 1つを渡すことができます:
+The optional _disposition_ parameter lets you pass the `content-disposition` header of the attachment. "Mail" 定数テーマ内の、以下の定数のいずれか 1つを渡すことができます:
 
 | 定数                          | 値            | 説明                                                                                                                              |
 | --------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------- |
 | mail disposition attachment | "attachment" | Content-disposition ヘッダーの値を "attachment" に設定します。これは添付ファイルはメッセージ内でリンクとして提供される必要があることを意味します。                                      |
 | mail disposition inline     | "inline"     | Content-disposition ヘッダーの値を "inline" に設定します。これは添付ファイルはメッセージ本文内の、"cid" の位置にレンダリングされる必要があることを意味します。 レンダリングの結果はメールクライアントによって異なります。 |
 
-*disposition* 引数が省略された場合はデフォルトで:
+By default, if the _disposition_ parameter is omitted:
 
-*   *cid* 引数が使われていた場合、`Content-disposition` ヘッダーは "inline" に設定されます。
-*   *cid* 引数が渡されていない、あるいは空の文字列が渡されていた場合、`Content-disposition` ヘッダーは "attachment" に設定されます。
+- if the _cid_ parameter is used, the `Content-disposition` header is set to "inline",
+- if the _cid_ parameter is not passed or empty, the `Content-disposition` header is set to "attachment".
 
 #### 例題 1
 
 ユーザーが選択したファイルを添付し、HTML 本文に画像を埋め込んだメールを送信します:
 
 ```4d
-$doc:=Select document("";"*";"添付するファイルを選択したください";0)
-If (OK=1) // もしドキュメントが選択されていれば
+$doc:=Select document("";"*";"Please select a file to attach";0)
+If (OK=1) //If a document was selected
 
 C_OBJECT($email;$server;$transporter)
 
@@ -123,11 +120,11 @@ $transporter:=SMTP New transporter($server)
 $email:=New object
 $email.from:="test_user@mail.com"
 $email.to:="test_user@mail.com"
-$email.subject:="添付の付いたテストメッセージです"
+$email.subject:="This is a test message with attachments"
 
-// ファイルをダウンロードするリンクを追加します
+//add a link to download file
 $email.attachments:=New collection(MAIL New attachment(Document))
-// インラインピクチャーを挿入します (cid を使用)
+//insert an inline picture (use a cid)
 $email.attachments[1]:=MAIL New attachment("c:\\Pictures\\4D.jpg";"";"4D")
 
 $email.htmlBody:="<html>"+\
@@ -137,7 +134,7 @@ $email.htmlBody:="<html>"+\
 "</head>"+\
 "</html>"
 
-$transporter.send($email) // メールを送信します
+$transporter.send($email) //send mail
 
 End if
 ```
@@ -161,107 +158,95 @@ $transporter:=SMTP New transporter($server)
 $email:=New object
 $email.from:="user@mail.com"
 $email.to:="customer@mail.com"
-$email.subject:="新規年次レポート"
-$email.textBody:="添付のとおり、新しい年次レポートをご連絡します。
-"
+$email.subject:="New annual report"
+$email.textBody:="Please find enclosed our latest annual report."
 $email.attachments:=New collection(MAIL New attachment($blob;"Annual report.docx"))
 
 $transporter.send($email)
 ```
 
-
 ## 4D.MailAttachment.new()
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                 |
-| ----- | ---------------------------------- |
+| リリース  | 内容                                                                                 |
+| ----- | ---------------------------------------------------------------------------------- |
 | 19 R2 | 4D.File, 4D.ZipFile, 4D.Blob の受け入れ |
+
 </details>
 
 <!-- REF #4D.MailAttachment.new().Syntax -->**4D.MailAttachment.new**( *file* : 4D.File { ; *name* : Text {; *cid* : Text{ ; *type* : Text { ; *disposition* :Text } } } } ) : 4D.MailAttachment<br/>**4D.MailAttachment.new**( *zipFile* : 4D.ZipFile { ; *name* : Text {; *cid* : Text{ ; *type* : Text { ; *disposition* :Text } } } } ) : 4D.MailAttachment<br/>**4D.MailAttachment.new**( *blob* : 4D.Blob { ; *name* : Text {; *cid* : Text{ ; *type* : Text { ; *disposition* :Text } } } } ) : 4D.MailAttachment<br/>**4D.MailAttachment.new**( *path* : Text { ; *name* : Text {; *cid* : Text{ ; *type* : Text { ; *disposition* :Text } } } } ) : 4D.MailAttachment<!-- END REF -->
 
-
 <!-- REF #4D.MailAttachment.new().Params -->
 
-| 引数          | タイプ               |    | 説明                                                     |
-| ----------- | ----------------- |:--:| ------------------------------------------------------ |
-| file        | 4D.File           | -> | 添付ファイル                                                 |
-| zipFile     | 4D.ZipFile        | -> | 添付 Zipファイル                                             |
-| blob        | 4D.Blob           | -> | 添付を格納した BLOB                                           |
-| path        | Text              | -> | 添付ファイルのパス                                              |
-| name        | Text              | -> | メールクライアントが添付を指定するのに使用する名前 + 拡張子                        |
-| cid         | Text              | -> | 添付の ID (HTMLメッセージのみ)、あるいは cid が不要な場合は "" (空の文字列)       |
-| type        | Text              | -> | content-type ヘッダーの値                                    |
-| disposition | Text              | -> | content-disposition ヘッダーの値: "inline" あるいは "attachment" |
-| 戻り値         | 4D.MailAttachment | <- | Attachment オブジェクト                                      |
-<!-- END REF -->
+| 引数          | タイプ                               |     | 説明                                                                                     |
+| ----------- | --------------------------------- | :-: | -------------------------------------------------------------------------------------- |
+| file        | 4D.File           |  -> | 添付ファイル                                                                                 |
+| zipFile     | 4D.ZipFile        |  -> | 添付 Zipファイル                                                                             |
+| blob        | 4D.Blob           |  -> | 添付を格納した BLOB                                                                           |
+| path        | Text                              |  -> | 添付ファイルのパス                                                                              |
+| name        | Text                              |  -> | メールクライアントが添付を指定するのに使用する名前 + 拡張子                                                        |
+| cid         | Text                              |  -> | 添付の ID (HTMLメッセージのみ)、あるいは cid が不要な場合は "" (空の文字列) |
+| type        | Text                              |  -> | content-type ヘッダーの値                                                                    |
+| disposition | Text                              |  -> | content-disposition ヘッダーの値: "inline" あるいは "attachment"                 |
+| 戻り値         | 4D.MailAttachment |  <- | Attachment オブジェクト                                                                      |
 
+<!-- END REF -->
 
 #### 説明
 
-`4D.MailAttachment.new()` 関数は、 <!-- REF #4D.MailAttachment.new().Summary -->`4D.MailAttachment` 型の新しいオブジェクトを作成して返します<!-- END REF -->。 この関数の機能は、[`MAIL New attachment`](#mail-new-attachment) コマンドと同一です。
-
+The `4D.MailAttachment.new()` function <!-- REF #4D.MailAttachment.new().Summary -->creates and returns a new object of the `4D.MailAttachment` type<!-- END REF -->. It is identical to the [`MAIL New attachment`](#mail-new-attachment) command (shortcut).
 
 ## .cid
 
 <!-- REF #MailAttachmentClass.cid.Syntax -->**.cid** : Text<!-- END REF -->
 
-
 #### 説明
 
-`.cid` プロパティは、 <!-- REF #MailAttachmentClass.cid.Summary --> 添付ファイルの ID を格納します<!-- END REF -->。 このプロパティは HTMLメッセージでのみ使用されます。 このプロパティがない場合、ファイルは単なる添付 (リンク) として管理されます。
-
+The `.cid` property contains <!-- REF #MailAttachmentClass.cid.Summary --> the ID of the attachment<!-- END REF -->. このプロパティは HTMLメッセージでのみ使用されます。 このプロパティがない場合、ファイルは単なる添付 (リンク) として管理されます。
 
 ## .disposition
 
 <!-- REF #MailAttachmentClass.disposition.Syntax -->**.disposition** : Text<!-- END REF -->
 
-
 #### 説明
 
-`.disposition` プロパティは、 <!-- REF #MailAttachmentClass.disposition.Summary -->`Content-Disposition` ヘッダーの値を格納します<!-- END REF -->。 二つの値が利用可能です:
+The `.disposition` property contains <!-- REF #MailAttachmentClass.disposition.Summary -->the value of the `Content-Disposition` header<!-- END REF -->. 二つの値が利用可能です:
 
-*   "inline": 添付ファイルはメッセージコンテンツ内に、"cid"の場所にレンダリングされます。 レンダリングの結果はメールクライアントによって異なります。
-*   "attachment": 添付ファイルはメッセージ内でリンクとして提供されます。
-
+- "inline": 添付ファイルはメッセージコンテンツ内に、"cid"の場所にレンダリングされます。 レンダリングの結果はメールクライアントによって異なります。
+- "attachment": 添付ファイルはメッセージ内でリンクとして提供されます。
 
 ## .getContent()
 
 <!-- REF #MailAttachmentClass.getContent().Syntax -->**.getContent()** : 4D.Blob<!-- END REF -->
 
-
 <!-- REF #MailAttachmentClass.getContent().Params -->
-| 引数  | タイプ     |    | 説明    |
-| --- | ------- |:--:| ----- |
-| 戻り値 | 4D.Blob | <- | 添付の中身 |
-<!-- END REF -->
 
+| 引数  | タイプ                     |     | 説明    |
+| --- | ----------------------- | :-: | ----- |
+| 戻り値 | 4D.Blob |  <- | 添付の中身 |
+
+<!-- END REF -->
 
 #### 説明
 
-`.getContent()` 関数は、 <!-- REF #MailAttachmentClass.getContent().Summary -->添付オブジェクトの中身を `4D.Blob` オブジェクトとして返します<!-- END REF -->。 [`MAIL Convert from MIME`](EmailObjectClass.md#mail-convert-from-mime) コマンドによって取得した添付オブジェクトに対して、この関数を使用することができます。
-
-
+The `.getContent()` function <!-- REF #MailAttachmentClass.getContent().Summary -->returns the contents of the attachment object in a `4D.Blob` object<!-- END REF -->. You can use this method with attachment objects received by the [`MAIL Convert from MIME`](EmailObjectClass.md#mail-convert-from-mime) command.
 
 ## .name
 
 <!-- REF #MailAttachmentClass.name.Syntax -->**.name** : Text<!-- END REF -->
 
-
 #### 説明
 
-`.name` プロパティは、 <!-- REF #MailAttachmentClass.name.Summary -->添付ファイルの名前と拡張子を格納します<!-- END REF -->。  [`MAIL New attachment`](#mail-new-attachment) コマンドで別の名称を指定しなかった場合のデフォルトは、ファイルの名称です。
+The `.name` property contains <!-- REF #MailAttachmentClass.name.Summary -->the name and extension of the attachment<!-- END REF -->.  By default, it is the name of the file, unless another name was specified in the [`MAIL New attachment`](#mail-new-attachment) command.
 
 ## .path
 
 <!-- REF #MailAttachmentClass.path.Syntax -->**.path** : Text<!-- END REF -->
 
-
 #### 説明
 
-`.path` プロパティは、 <!-- REF #MailAttachmentClass.path.Summary -->添付ファイルの POSIX パス (存在すれば) を格納します<!-- END REF -->。
-
+The `.path` property contains <!-- REF #MailAttachmentClass.path.Summary -->the POSIX path of the attachment file, if it exists<!-- END REF -->.
 
 ## .platformPath
 
@@ -270,31 +255,27 @@ $transporter.send($email)
 | リリース | 内容 |
 | ---- | -- |
 | 19   | 追加 |
+
 </details>
 
 <!-- REF #MailAttachmentClass.platformPath.Syntax -->**.platformPath** : Text<!-- END REF -->
 
-
 #### 説明
 
-`.platformPath` プロパティは、 <!-- REF #MailAttachmentClass.platformPath.Summary -->カレントプラットフォームのシンタックスで表現された添付ファイルのパスを返します<!-- END REF -->。
-
+The `.platformPath` property returns <!-- REF #MailAttachmentClass.platformPath.Summary -->the path of the attachment file expressed with the current platform syntax<!-- END REF -->.
 
 ## .size
 
 <!-- REF #MailAttachmentClass.size.Syntax -->**.size** : Integer<!-- END REF -->
 
-
 #### 説明
 
-`.size` プロパティは、 <!-- REF #MailAttachmentClass.size.Summary -->添付ファイルの `size` ヘッダーを格納します<!-- END REF -->。 `.size`プロパティは、MIMEメッセージが添付ファイル部でサイズヘッダーを定義している場合に返されます。
-
+The `.size` property contains <!-- REF #MailAttachmentClass.size.Summary -->the value of the `size` header of the attachment file<!-- END REF -->. The `.size` property is returned when the MIME message defines a size header in the attachment part.
 
 ## .type
 
 <!-- REF #MailAttachmentClass.type.Syntax -->**.type** : Text<!-- END REF -->
 
-
 #### 説明
 
-`.type` プロパティは、 <!-- REF #MailAttachmentClass.type.Summary -->添付ファイルの `content-type` を格納します<!-- END REF -->。 [`MAIL New attachment`](#mail-new-attachment) コマンドにて、このタイプが明示的に渡されていない場合、`content-type` はファイルの拡張子に基づきます。
+The `.type` property contains <!-- REF #MailAttachmentClass.type.Summary -->the `content-type` of the attachment file<!-- END REF -->. If this type is not explicitly passed to the [`MAIL New attachment`](#mail-new-attachment) command, the `content-type` is based on its file extension.
