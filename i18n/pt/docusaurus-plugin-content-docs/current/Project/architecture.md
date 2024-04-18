@@ -63,9 +63,11 @@ Este ficheiro texto também pode conter chaves de configuração, em particular 
 | tips.json               | Dicas definidas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | JSON    |
 | lists.json              | Listas definidas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | JSON    |
 | filters.json            | Filtros definidos                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | JSON    |
+| dependencies.json       | Names of [components to load](components.md) in the project                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | JSON    |
 | styleSheets.css         | Folhas de estilo CSS                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | CSS     |
 | styleSheets_mac.css     | Folhas de estilo css para Mac (de um banco de dados binário convertido)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | CSS     |
 | styleSheets_windows.css | Folhas de estilo css em Windows (de um banco de dados binário convertido)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | CSS     |
+
 
 
 #### `DatabaseMethods`
@@ -221,9 +223,13 @@ Esta pasta contém arquivos que memorizam as configurações do usuário, por ex
 
 ## `Componentes`
 
-Esta pasta contém os componentes que devem estar disponíveis unicamente no banco de dados projeto. Deve ser armazenado ao mesmo nível que a pasta Project.
+Legacy folder containing components (must be stored at the same level as the Project folder).
 
-> Uma aplicação projeto pode ser utilizada como um componente: - para desenvolvimento: colocar um alias do ficheiro .4dproject na pasta Components do projeto host. - para implantação: [construir o componente](Desktop/building.md#build-component) e colocar o arquivo .4dz resultante numa pasta .4dbase na pasta Components da aplicação anfitriã.
+:::info
+
+It is now recommended to [use the **dependencies.json** and (optionnally) **environment4d.json** files](components.md) to declare your components instead of the Components folder.
+
+:::
 
 
 ## `Plugins`
