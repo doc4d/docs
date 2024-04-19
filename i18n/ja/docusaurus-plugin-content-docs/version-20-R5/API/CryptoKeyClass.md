@@ -66,12 +66,12 @@ ASSERT($status.success)
 
 #### _settings_
 
-| プロパティ           | タイプ     | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| --------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [type](#type)   | text    | Defines the type of the key to create: <li>"RSA": generates a RSA key pair, using [.size](#size) as size.</li><li>"ECDSA": generates an Elliptic Curve Digital Signature Algorithm key pair, using [.curve](#curve) as curve. Note that ECDSA keys cannot be used for encryption but only for signature.</li><li>"PEM": loads a key pair definition in PEM format, using [.pem](#pem).</li> |
-| [curve](#curve) | text    | ECDSA 曲線名                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| [pem](#pem)     | text    | ロードする PEM 形式の暗号化キー                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| [size](#size)   | integer | RSA キーのサイズ (ビット単位)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| プロパティ           | タイプ     | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| --------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [type](#type)   | text    | 作成するキーのタイプを定義します:<li>"RSA": [.size](#size) に指定されたサイズを使って、RSA キーペアを生成します。</li><li>"ECDSA": [.curve](#curve) に指定された曲線を用いて、楕円曲線デジタル署名アルゴリズム (Elliptic Curve Digital Signature Algorithm) を使ったキーペアを生成します。 ECDSA キーは署名だけに使用されるもので、暗号化には使用できないことに留意してください。</li><li>"PEM": [.pem](#pem) を使って、PEM 形式のキーペアをロードします。</li> |
+| [curve](#curve) | text    | ECDSA 曲線名                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| [pem](#pem)     | text    | ロードする PEM 形式の暗号化キー                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| [size](#size)   | integer | RSA キーのサイズ (ビット単位)                                                                                                                                                                                                                                                                                                                                                                                                             |
 
 #### _CryptoKey_
 
@@ -355,7 +355,7 @@ RSA キーのみ: <!-- REF #CryptoKey.size.Summary -->キーのサイズ (ビッ
 
 <!-- REF #CryptoKey.type.Syntax -->**.type** : Text<!-- END REF -->
 
-Contains the <!-- REF #CryptoKey.type.Summary -->name of the key type - "RSA", "ECDSA", "PEM" <!-- END REF -->.
+<!-- REF #CryptoKey.type.Summary -->キーのタイプ: "RSA", "ECDSA", "PEM"<!-- END REF -->。
 
 - "RSA": `settings.size` に指定されたサイズを [.size](#size) として使った、RSA キーペア
 - "ECDSA": `settings.curve` に指定された曲線を [.curve](#curve) として用いた、楕円曲線デジタル署名アルゴリズム (Elliptic Curve Digital Signature Algorithm) キーペア ECDSA キーは署名だけに使用されるもので、暗号化には使用できないことに留意してください。
@@ -388,7 +388,7 @@ Contains the <!-- REF #CryptoKey.type.Summary -->name of the key type - "RSA", "
 
 <!-- END REF -->
 
-The `.verify()` function <!-- REF #CryptoKey.verify().Summary -->verifies the base64 signature against the utf8 representation of _message_<!-- END REF --> using the `CryptoKey` object keys and provided _options_.
+`.verify()` 関数は、`CryptoKey` オブジェクトキーおよび指定された _options_ を使って、<!-- REF #CryptoKey.verify().Summary -->utf8 形式の _message_ 文字列の署名を検証します<!-- END REF -->。
 
 `CryptoKey` は有効な **公開** 鍵を格納していなくてはなりません。
 
