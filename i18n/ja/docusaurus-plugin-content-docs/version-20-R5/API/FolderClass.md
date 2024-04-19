@@ -78,7 +78,7 @@ Form.curfolder:=Folder("C:\\Users\\JohnSmith\\";fk platform path)
 
 #### 説明
 
-The `Folder` command <!-- REF #_command_.Folder.Summary -->creates and returns a new object of the `4D.Folder` type<!-- END REF -->. このコマンドは 2種類のシンタックスを受け入れます。
+`Folder` コマンドは、<!-- REF #_command_.Folder.Summary -->`4D.Folder` 型の新しいオブジェクトを作成して返します<!-- END REF -->。 このコマンドは 2種類のシンタックスを受け入れます。
 
 **Folder ( path { ; pathType } { ; \* } )**
 
@@ -104,7 +104,7 @@ _folderConstant_ には、以下の定数のどれか一つを指定して 4Dビ
 | fk database folder         | 4   | 関連づけられたファイルシステム: "/PACKAGE"                                              |
 | fk desktop folder          | 115 |                                                                                          |
 | fk documents folder        | 117 | ユーザーのドキュメントフォルダー                                                                         |
-| fk home folder             | 118 | Current home folder of the user (usually `/Users/<username>/`)        |
+| fk home folder             | 118 | ユーザーのカレントホームフォルダー (通常は `/Users/<username>/`)                          |
 | fk licenses folder         | 1   | マシンの 4Dライセンスファイルを格納しているフォルダー                                                             |
 | fk logs folder             | 7   | 関連づけられたファイルシステム: "/LOGS"                                                 |
 | fk mobileApps folder       | 10  |                                                                                          |
@@ -114,7 +114,7 @@ _folderConstant_ には、以下の定数のどれか一つを指定して 4Dビ
 | fk user preferences folder | 0   | ユーザー環境設定ファイルを保存している、ユーザーホームフォルダー内の 4Dフォルダー                                               |
 | fk web root folder         | 8   | データベースのカレントの Webルートフォルダー: ただし "/PACKAGE/path" のパッケージ内にある場合。そうでない場合はフルパス。 |
 
-コマンドがコンポーネントから呼び出されている場合、`*` 引数を渡してホストデータベースのパスを取得するようにします。 Otherwise, if you omit the\* parameter, a null object is always returned.
+コマンドがコンポーネントから呼び出されている場合、`*` 引数を渡してホストデータベースのパスを取得するようにします。 \* 引数を省略すると、常に null オブジェクトが返されます。
 
 > Windows の場合、統合されたクライアントでは、`ShareLocalResourcesOnWindowsClient` [BuildApp キー](../Desktop/building.md#buildapp4dsettings) を使用すると、ビルトインフォルダーの場所が変更されます。
 
@@ -134,7 +134,7 @@ _folderConstant_ には、以下の定数のどれか一つを指定して 4Dビ
 
 #### 説明
 
-The `4D.Folder.new()` function <!-- REF #4D.Folder.new().Summary -->creates and returns a new object of the `4D.Folder` type<!-- END REF -->. この関数の機能は、[`Folder`](#folder) コマンドと同一です。
+`4D.Folder.new()` 関数は、<!-- REF #4D.Folder.new().Summary -->`4D.Folder` 型の新しいオブジェクトを作成して返します<!-- END REF -->。 この関数の機能は、[`Folder`](#folder) コマンドと同一です。
 
 > `4D.Folder.new()` よりも、短い [`Folder`](#folder) コマンドの使用が推奨されます。
 
@@ -164,7 +164,8 @@ The `4D.Folder.new()` function <!-- REF #4D.Folder.new().Summary -->creates and 
 
 #### 説明
 
-The `.create()` function <!-- REF #FolderClass.create().Summary -->creates a folder on disk according to the properties of the `Folder` object<!-- END REF -->.
+`.create()` 関数は、<!-- REF #FolderClass.create().Summary -->
+`Folder` オブジェクトのプロパティに基づいてディスク上にフォルダーを作成します<!-- END REF -->。
 
 必要であれば、 関数は [platformPath](#platformpath) あるいは [path](#path) プロパティの詳細に基づいてフォルダー階層を作成します。 フォルダーがディスク上にすでに存在する場合、関数は何もせず、false を返します (エラーは返されません)。
 
@@ -189,9 +190,9 @@ $created:=Folder("/PACKAGE/SpecialPrefs").create()
 ```4d
 $newFolder:=Folder("/PACKAGE/Archives2019/January")
 If($newFolder.create())
- ALERT("The "+$newFolder.name+" folder was created.")
+ ALERT($newFolder.name+" フォルダーが作成されました。")
 Else
- ALERT("Impossible to create a "+$newFolder.name+" folder.")
+ ALERT($newFolder.name+" フォルダーは作成できませんでした。")
 End if
 ```
 
@@ -224,7 +225,7 @@ End if
 
 #### 説明
 
-The `.createAlias()` function <!-- REF #FolderClass.createAlias().Summary -->creates an alias (macOS) or a shortcut (Windows)<!-- END REF --> to the folder with the specified _aliasName_ name in the folder designated by the _destinationFolder_ object.
+`.createAlias()` 関数は、_destinationFolder_ オブジェクトで指定されたフォルダー内に、_aliasName_ が指定する名称で、対象フォルダーへの<!-- REF #FolderClass.createAlias().Summary -->エイリアス (macOS) またはショートカット (Windows) を作成します<!-- END REF -->。
 
 _aliasName_ には、作成するエイリアスまたはショートカットの名前を渡します。
 
@@ -237,7 +238,7 @@ macOS 上では、この関数はデフォルトで標準エイリアスを作�
 
 Windows 上では、常にショートカット (.lnk ファイル) が作成されます (_aliasType_ 引数は無視されます)。
 
-**Returned object**
+**返されるオブジェクト**
 
 `isAlias` プロパティが **true** に設定された `4D.File` オブジェクトを返します。
 
@@ -280,7 +281,7 @@ $aliasFile:=$myFolder.createAlias(Folder("/PACKAGE");"Jan2019")
 
 #### 説明
 
-The `.delete()` function <!-- REF #FolderClass.delete().Summary -->deletes the folder<!-- END REF -->.
+`.delete()` 関数は、<!-- REF #FolderClass.delete().Summary -->フォルダーを削除します<!-- END REF -->。
 
 セキュリティ上の理由から、option 引数を渡さなかった場合はデフォルトで、`.delete()` は空のフォルダーしか削除しません。 空でないフォルダーを削除するには、以下の定数のいずれか一つを option 引数として渡す必要があります:
 
@@ -360,13 +361,13 @@ The `.delete()` function <!-- REF #FolderClass.delete().Summary -->deletes the f
 
 #### 説明
 
-The `.moveTo( )` function <!-- REF #FolderClass.moveTo().Summary -->moves or renames the `Folder` object (source folder) into the specified _destinationFolder_<!-- END REF -->.
+`.moveTo()` 関数は、<!-- REF #FolderClass.moveTo().Summary -->`Folder` オブジェクト (ソースフォルダー) を _destinationFolder_ が指定する移行先へと移動すると同時に、_newName_ を指定した場合は名称も変更します<!-- END REF -->。
 
 _destinationFolder_ 引数が指定するフォルダーはディスク上に存在している必要があり、そうでない場合にはエラーが生成されます。
 
 デフォルトで、移動したフォルダーは元の名前を維持します。 移動の際にフォルダー名を変更したい場合、新しい完全な名前を _newName_ に渡します。 新しい名前は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。そうでない場合、エラーが返されます。
 
-**Returned object**
+**返されるオブジェクト**
 
 移動後の `Folder` オブジェクト。
 
@@ -418,11 +419,11 @@ _destinationFolder_ 引数が指定するフォルダーはディスク上に存
 
 #### 説明
 
-The `.rename()` function <!-- REF #FolderClass.rename().Summary -->renames the folder with the name you passed in _newName_ and returns the renamed `Folder` object<!-- END REF -->.
+`.rename()` 関数は、<!-- REF #FolderClass.rename().Summary -->_newName_ に指定した名称にフォルダー名を変更し、名称変更後の `Folder` オブジェクトを返します<!-- END REF -->。
 
 _newName_ 引数は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。 そうでない場合、エラーが返されます。 同じ名前のファイルがすでに存在する場合には、エラーが返されます。
 
-**Returned object**
+**返されるオブジェクト**
 
 名称変更された `Folder` オブジェクト。
 
