@@ -3,9 +3,9 @@ id: HTTPRequestClass
 title: HTTPRequest
 ---
 
-The `HTTPRequest` class allows you to handle [`HTTPRequest objects`](#httprequest-object) that can be used to configure and send requests to an HTTP server, as well as to process the HTTP server responses.
+`HTTPRequest` クラスを使って、[`HTTPRequest オブジェクト`](#httprequest-オブジェクト) を扱うことができます。このオブジェクトは、HTTPサーバーへのリクエストの設定と送信、および HTTPサーバーのレスポンスを処理するのに使用します。
 
-The `HTTPRequest` class is available from the `4D` class store. You create and send HTTP requests using the [4D.HTTPRequest.new()](#4dhttprequestnew) function, that returns a [`HTTPRequest object`](#httprequest-object).
+`HTTPRequest` クラスは、`4D` クラスストアにて提供されています。 HTTPリクエストを作成・送信するには、[`HTTPRequest オブジェクト`](#httprequest-オブジェクト) を返す [4D.HTTPRequest.new()](#4dhttprequestnew) 関数を使用します。
 
 <details><summary>履歴</summary>
 
@@ -17,7 +17,7 @@ The `HTTPRequest` class is available from the `4D` class store. You create and s
 
 ### 例題
 
-Create a `MyHttpRequestOptions` class for the request options:
+リクエスト設定用の `MyHttpRequestOptions` クラスを作成します:
 
 ```4d
 Class constructor($method : Text; $headers : Object; $body : Text)
@@ -76,10 +76,10 @@ HTTPRequest オブジェクトは次のプロパティや関数を提供しま�
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                                             |
-| ----- | -------------------------------------------------------------- |
-| 20    | TLS検証がデフォルトに                                                   |
-| 19 R7 | Support of _automaticRedirections_ and _decodeData_ properties |
+| リリース  | 内容                                                   |
+| ----- | ---------------------------------------------------- |
+| 20    | TLS検証がデフォルトに                                         |
+| 19 R7 | _automaticRedirections_ および _decodeData_ プロパティをサポート。 |
 
 </details>
 
@@ -99,16 +99,16 @@ HTTPRequest オブジェクトは次のプロパティや関数を提供しま�
 
 The `4D.HTTPRequest.new()` function <!-- REF #4D.HTTPRequest.new().Summary -->creates and sends a HTTP request to the HTTP server defined in _url_ with the defined _options_, and returns a `4D.HTTPRequest` object<!-- END REF -->.
 
-The returned `HTTPRequest` object is used to process responses from the HTTP server and call methods.
+返される `HTTPRequest` オブジェクトは、HTTPサーバーのレスポンスの処理と、メソッドを呼び出すのに使用されます。
 
-In _url_, pass the URL where you want to send the request. シンタックスは以下の通りです:
+_url_ には、リクエスト送信先の URL を渡します。 シンタックスは以下の通りです:
 
 ```
 {http://}[{user}:[{password}]@]host[:{port}][/{path}][?{queryString}]
 {https://}[{user}:[{password}]@]host[:{port}][/{path}][?{queryString}]
 ```
 
-If you omit the scheme part (`http://` or `https://`), a https request is sent.
+スキーム部分 (`http://` または `https://`) を省略した場合には、https リクエストが送信されます。
 
 たとえば、次の文字列を受け渡すことができます:
 
@@ -123,21 +123,21 @@ If you omit the scheme part (`http://` or `https://`), a https request is sent.
     http://[2001:0db8:0000:0000:0000:ff00:0042:8329]:8080/index.html (**)
 ```
 
-#### `options` parameter
+#### `options` 引数
 
-In the _options_ parameter, pass an object that can contain the following properties:
+_options_ に渡すオブジェクトは、次のプロパティを持つことができます:
 
 | プロパティ                  | タイプ                                             | 説明                                                                                                                                                                                                          | デフォルト       |
 | ---------------------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
 | automaticRedirections  | Boolean                                         | true の場合、リダイレクトは自動的に実行されます (最大 5回までのリダイレクトが処理され、もしあれば 6回目のリダイレクトレスポンスが返されます)                                                                                                             | true        |
-| body                   | Variant                                         | Body of the request (required in case of `post` or `put` requests). テキスト、BLOB、またはオブジェクトを指定できます。 ヘッダー内で設定されていない限り、content-type は当プロパティの型によって決定されます。                       | undefined   |
+| body                   | Variant                                         | リクエストの本文 (`post` または `put` リクエストの場合に必須)。 テキスト、BLOB、またはオブジェクトを指定できます。 ヘッダー内で設定されていない限り、content-type は当プロパティの型によって決定されます。                                                                  | undefined   |
 | certificatesFolder     | [Folder](FolderClass.md)                        | 使用するクライアント証明書フォルダーを指定します。                                                                                                                                                                                   | undefined   |
 | dataType               | Text                                            | レスポンス本文のデータ型。 値: "text", "blob", "object", または "auto"。 "auto" の場合、本文の型は MIMEタイプから推定されます (JSON ならオブジェクト、テキスト・javascript・xml・httpメッセージ・URLエンコードされたフォームなどはテキスト、それ以外は BLOB)。 | "auto"      |
-| decodeData             | Boolean                                         | If true, the data received in the `onData` callback is uncompressed                                                                                                                                         | false       |
-| encoding               | Text                                            | Used only in case of requests with a `body` (`post` or `put` methods). 本文がテキストの場合のエンコーディング。ヘッダーにて content-type が指定されている場合は無視されます。                                        | "UTF-8"     |
-| headers                | Object                                          | リクエストのヘッダー。 Syntax: `headers.key=value` (_value_ can be a Collection if the same key must appear multiple times)                                                         | 空のオブジェクト    |
+| decodeData             | Boolean                                         | true の場合、`onData` コールバックが受け取るデータは非圧縮です                                                                                                                                                                      | false       |
+| encoding               | Text                                            | `body` のあるリクエストの場合にのみ使用 (`post` または `put` メソッド)。 本文がテキストの場合のエンコーディング。ヘッダーにて content-type が指定されている場合は無視されます。                                                                              | "UTF-8"     |
+| headers                | Object                                          | リクエストのヘッダー。 シンタックス: `headers.key=value` (同じ key に対して _value_ を複数指定する場合、_value_ にコレクションを使用できます)                                                                           | 空のオブジェクト    |
 | method                 | Text                                            | "POST"、"GET"、またはその他のメソッド                                                                                                                                                                                    | "GET"       |
-| minTLSVersion          | Text                                            | Sets the minimum version of TLS: "`TLSv1_0`", "`TLSv1_1`", "`TLSv1_2`", "`TLSv1_3`"                                                                                                         | "`TLSv1_2`" |
+| minTLSVersion          | Text                                            | TLS の最小バージョンを指定します: "`TLSv1_0`", "`TLSv1_1`", "`TLSv1_2`", "`TLSv1_3`"                                                                                                                      | "`TLSv1_2`" |
 | onData                 | [Function](FunctionClass.md)                    | 本文のデータ受信時のコールバック。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                                   | undefined   |
 | onError                | [Function](FunctionClass.md)                    | エラー発生時のコールバック。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                                      | undefined   |
 | onHeaders              | [Function](FunctionClass.md)                    | ヘッダー受信時のコールバック。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                                     | undefined   |
@@ -146,7 +146,7 @@ In the _options_ parameter, pass an object that can contain the following proper
 | protocol               | Text                                            | "auto" または "HTTP1"。 "auto" は現在の実装における HTTP1 を意味します。                                                                                                                                                         | "auto"      |
 | proxyAuthentication    | [authentication object](#authentication-object) | プロキシ認証のためのオブジェクト                                                                                                                                                                                            | undefined   |
 | serverAuthentication   | [authentication object](#authentication-object) | サーバー認証のためのオブジェクト                                                                                                                                                                                            | undefined   |
-| returnResponseBody     | Boolean                                         | If false, the response body is not returned in the [`response` object](#response). Returns an error if false and `onData` is undefined                                                      | true        |
+| returnResponseBody     | Boolean                                         | false の場合、レスポンス本文は [`response` オブジェクト](#response) に返されません。 false かつ `onData` が未定義の場合にエラーを返します。                                                                                                              | true        |
 | timeout                | Real                                            | タイムアウト (秒単位) 未定義 = タイムアウトなし                                                                                                                                                              | 未定義         |
 | validateTLSCertificate | Boolean                                         | false の場合、4D は TLS証明書の検証をおこなわず、無効 (期限切れ、自己署名など) であってもエラーを返しません。 重要: 現在の実装では、認証局そのものは検証されません。                                                                             | true        |
 
@@ -161,28 +161,28 @@ In the _options_ parameter, pass an object that can contain the following proper
 
 以下は、コールバック呼び出しの流れです:
 
-1. `onHeaders` is always called once
+1. `onHeaders` は常に 1回呼び出されます。
 
-2. `onData` is called zero or several times (not called if the request does not have a body)
+2. `onData` は 0回または複数回呼び出されます (リクエストに本文がない場合は呼び出されません)。
 
-3. If no error occured, `onResponse` is always called once
+3. エラーが発生しなかった場合、`onResponse` は常に 1回呼び出されます。
 
-4. If an error occurs, `onError` is executed once (and terminates the request)
+4. エラーが発生した場合、 `onError` が 1回実行されます (そしてリクエストを終了します)。
 
-5. `onTerminate` is always executed once
+5. `onTerminate` は常に 1回実行されます。
 
 #### event オブジェクト
 
-An `event` object is returned when a [callback function](#callback-functions) is called. このオブジェクトには次のプロパティが含まれます:
+`event` オブジェクトは、[コールバック関数](#コールバック関数) が呼ばれたときに返されます。 このオブジェクトには次のプロパティが含まれます:
 
 | プロパティ                 | タイプ  | 説明                                                                                     |
 | --------------------- | ---- | -------------------------------------------------------------------------------------- |
-| .data | blob | 取得データ。 It is always _undefined_ except in the `onData` callback                        |
+| .data | blob | 取得データ。 _onData_ コールバック以外の場合は常に `undefined` です。                                         |
 | .type | text | イベントの種類。 取り得る値: "response", "error", "headers", "data", または "terminate |
 
 #### authentication オブジェクト
 
-An authentication object handles the `options.serverAuthentication` or `options.proxyAuthentication` property. このオブジェクトには以下のプロパティを含めることができます:
+authentication オブジェクトは `options.serverAuthentication` または `options.proxyAuthentication` プロパティに使用します。 このオブジェクトには以下のプロパティを含めることができます:
 
 | プロパティ    | タイプ  | 説明                                              | デフォルト     |
 | -------- | ---- | ----------------------------------------------- | --------- |
@@ -221,7 +221,7 @@ The `HTTP Parse message` command <!-- REF #HTTP Parse message.Summary -->parses 
 
 :::info
 
-HTTP 自体はステートレスな通信プロトコルです。 このフレームワークの中で、クライアントは、メソッド・ターゲット・ヘッダー・コンテンツなどの詳細を指定した "request" メッセージをサーバーに送ることによって通信を開始します。 サーバーは、同じ詳細を含む "response" メッセージで応答します。 `HTTP Parse message` parses either the "request" or the "response" message into a well-organized object.
+HTTP 自体はステートレスな通信プロトコルです。 このフレームワークの中で、クライアントは、メソッド・ターゲット・ヘッダー・コンテンツなどの詳細を指定した "request" メッセージをサーバーに送ることによって通信を開始します。 サーバーは、同じ詳細を含む "response" メッセージで応答します。 `HTTP Parse message` コマンドは、"request" または "response" メッセージを解析し、オブジェクトの形式に整えます。
 
 :::
 
@@ -307,7 +307,7 @@ The `.encoding` property contains <!-- REF #HTTPRequestClass.encoding.Summary --
 
 The `.errors` property contains <!-- REF #HTTPRequestClass.errors.Summary -->the collection of all the errors if at least one error has been triggered<!-- END REF -->.
 
-Here is the contents of the `.errors` property:
+`.errors` プロパティの内容は次の通りです:
 
 | プロパティ  |                                                                                           | タイプ        | 説明                  |
 | ------ | ----------------------------------------------------------------------------------------- | ---------- | ------------------- |
@@ -360,9 +360,9 @@ The `.protocol` property contains <!-- REF #HTTPRequestClass.protocol.Summary --
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                                                             |
-| ----- | ------------------------------------------------------------------------------ |
-| 19 R8 | `.headers` returns lowercase names. New `.rawHeaders` property |
+| リリース  | 内容                                              |
+| ----- | ----------------------------------------------- |
+| 19 R8 | `.headers` は小文字の名前を返します。 `.rawHeaders` プロパティの追加 |
 
 </details>
 
@@ -372,11 +372,11 @@ The `.protocol` property contains <!-- REF #HTTPRequestClass.protocol.Summary --
 
 The `.response` property contains <!-- REF #HTTPRequestClass.response.Summary -->the response to the request if it has received at least the status code, undefined otherwise<!-- END REF -->.
 
-A `response` object is a non-sharable object. このオブジェクトは次のプロパティを提供します:
+`response` オブジェクトは共有できないオブジェクトです。 このオブジェクトは次のプロパティを提供します:
 
 | プロパティ                       | タイプ     | 説明                                                                                                                                                                                                                        |
 | --------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| .body       | Variant | レスポンスのボディ。 The type of the message is defined according to the [`dataType`](#datatype) property. ボディがまだ受信されていない場合は未定義です。                                                                                  |
+| .body       | Variant | レスポンスのボディ。 メッセージのデータ型は [`dataType`](#datatype) プロパティによって定義されています。 ボディがまだ受信されていない場合は未定義です。                                                                                                                                 |
 | .headers    | Object  | レスポンスのヘッダー。 ヘッダー名は小文字で返されます。 `<headername>.key` = value (value can be a collection if the same key appears multiple times). ヘッダーがまだ受信されていない場合は未定義です。                                   |
 | .status     | Number  | レスポンスのステータスコード                                                                                                                                                                                                            |
 | .statusText | Text    | ステータスコードを説明するメッセージ                                                                                                                                                                                                        |
@@ -414,7 +414,7 @@ The `.returnResponseBody` property contains <!-- REF #HTTPRequestClass.returnRes
 
 > この関数はスレッドセーフです。
 
-The `.terminate()` function <!-- REF #HTTPRequestClass.terminate().Summary -->aborts the HTTP request<!-- END REF -->. It triggers the `onTerminate` event.
+The `.terminate()` function <!-- REF #HTTPRequestClass.terminate().Summary -->aborts the HTTP request<!-- END REF -->. また、`onTerminate` イベントをトリガーします。
 
 <!-- END REF -->
 
@@ -475,7 +475,7 @@ The `.url` property contains <!-- REF #HTTPRequestClass.url.Summary -->the URL o
 
 The `wait()` function <!-- REF #HTTPRequestClass.wait().Summary -->waits for the response from the server<!-- END REF -->.
 
-If a _time_ parameter is passed, the function will wait at most the defined number of seconds.
+_time_ 引数が渡されると、関数は最長で、定義された秒数だけ待機します。
 
 サーバーのレスポンスがすでに到着している場合、関数は即座に返されます。
 
