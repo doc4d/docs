@@ -3,10 +3,10 @@ id: DataStoreClass
 title: DataStore
 ---
 
-A [Datastore](ORDA/dsMapping.md#datastore) is the interface object provided by ORDA to reference and access a database. `Datastore` objects are returned by the following commands:
+[データストア](ORDA/dsMapping.md#datastore) とは、ORDA によって提供されるインターフェースオブジェクトです。データストアはデータベースへの参照とアクセスを提供します。 `Datastore` オブジェクトは以下のコマンドによって返されます:
 
-- [ds](#ds): a shortcut to the main datastore
-- [Open datastore](#open-datastore): to open any remote datastore
+- [ds](#ds): メインデータストアへのショートカット
+- [Open datastore](#open-datastore): リモートデータストアを開きます
 
 ### 概要
 
@@ -60,15 +60,15 @@ A [Datastore](ORDA/dsMapping.md#datastore) is the interface object provided by O
 
 The `ds` command <!-- REF #_command_.ds.Summary -->returns a reference to the datastore matching the current 4D database or the database designated by _localID_<!-- END REF -->.
 
-If you omit the _localID_ parameter (or pass an empty string ""), the command returns a reference to the datastore matching the local 4D database (or the 4D Server database in case of opening a remote database on 4D Server). The datastore is opened automatically and available directly through `ds`.
+_localID_ を省略した (または空の文字列 "" を渡した) 場合には、ローカル4Dデータベース (4D Server でリモートデータベースを開いている場合にはそのデータベース) に合致するデータストアの参照を返します。 データストアは自動的に開かれ、`ds` を介して直接利用することができます。
 
-You can also get a reference on an open remote datastore by passing its local id in the _localID_ parameter. The datastore must have been previously opened with the [`Open datastore`](#open-datastore) command by the current database (host or component). このコマンドを使用したときにローカルIDが定義されます。
+開かれているリモートデータストアのローカルIDを _localID_ パラメーターに渡すと、その参照を取得できます。 このデータストアは、あらかじめカレントデータベース (ホストまたはコンポーネント) によって [`Open datastore`](#open-datastore) コマンドで開かれている必要があります。 このコマンドを使用したときにローカルIDが定義されます。
 
 > ローカルIDのスコープは、当該データストアを開いたデータベースです。
 
-If no _localID_ datastore is found, the command returns **Null**.
+_localID_ に合致するデータストアが見つからない場合、コマンドは **Null** を返します。
 
-Objects available in the `cs.Datastore` are mapped from the target database with respect to the [ORDA general rules](ORDA/dsMapping.md#general-rules).
+`cs.Datastore` が提供するオブジェクトは、[ORDAマッピングルール](ORDA/dsMapping.md#変換のルール) に基づいて、ターゲットデータベースからマッピングされます。
 
 #### 例題 1
 
@@ -130,7 +130,7 @@ Objects available in the `cs.Datastore` are mapped from the target database with
 
 The `Open datastore` command <!-- REF #_command_.Open datastore.Summary -->connects the application to the 4D database identified by the _connectionInfo_ parameter<!-- END REF --> and returns a matching `cs.DataStore` object associated with the _localID_ local alias.
 
-The _connectionInfo_ 4D database must be available as a remote datastore, i.e.:
+_connectionInfo_ で指定する 4Dデータベースはリモートデーターストアとして利用可能でなければなりません。つまり、以下の条件を満たしている必要があります:
 
 - データベースの Webサーバーは、http または https が有効化された状態で開始されていなければなりません。
 - the datastore must be exposed ([**Expose as REST server**](REST/configuration.md#starting-the-rest-server) option checked) as well as [dataclasses and attributes](../REST/configuration.md#exposing-tables-and-fields).
@@ -141,11 +141,11 @@ The _connectionInfo_ 4D database must be available as a remote datastore, i.e.:
 
 :::
 
-If no matching database is found, `Open datastore` returns **Null**.
+合致するデータベースが見つからない場合、`Open datastore` は **Null** を返します。
 
-_localID_ is a local alias for the session opened on remote datastore. If _localID_ already exists on the application, it is used. Otherwise, a new _localID_ session is created when the datastore object is used.
+_localID_ 引数は、リモートデータストア上で開かれるセッションのローカルエイリアスです。 _localID_ 引数の ID がすでにアプリケーションに存在している場合、その ID が使用されています。 そうでない場合、データストアオブジェクトが使用されたときに _localID_ のセッションが新規に作成されます。
 
-Objects available in the `cs.Datastore` are mapped from the target database with respect to the [ORDA general rules](ORDA/dsMapping.md#general-rules).
+`cs.Datastore` が提供するオブジェクトは、[ORDAマッピングルール](ORDA/dsMapping.md#変換のルール) に基づいて、ターゲットデータベースからマッピングされます。
 
 一旦セッションが開かれると、以下の 2行の宣言は同等のものとなり、同じデータストアオブジェクトへの参照を返します:
 
@@ -155,16 +155,16 @@ Objects available in the `cs.Datastore` are mapped from the target database with
   //$myds と $myds2 は同一のものです
 ```
 
-Pass in _connectionInfo_ an object describing the remote datastore you want to connect to. It can contain the following properties (all properties are optional except _hostname_):
+_connectionInfo_ には、接続したいリモートデータストアの詳細を格納したオブジェクトを渡します。 オブジェクトは以下のプロパティを格納することができます (_hostname_ を除き、すべてのプロパティは任意です):
 
-| プロパティ       | タイプ     | 説明                                                                                                                                                                                                                                                                                                                             |
-| ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| hostname    | Text    | リモートデータストアの名前または IPアドレス + ":" + ポート番号 (ポート番号は必須)                                                                                                                                                                                                                                            |
-| user        | Text    | ユーザー名                                                                                                                                                                                                                                                                                                                          |
-| password    | Text    | ユーザーパスワード                                                                                                                                                                                                                                                                                                                      |
-| idleTimeout | Longint | アクティビティがなかった場合に、セッションがタイムアウトするまでの時間 (分単位)。この時間を過ぎると、4D によって自動的にセッションが閉じられます。 省略時のデフォルトは 60 (1時間) です。 The value cannot be < 60 (if a lower value is passed, the timeout is set to 60). For more information, see **Closing sessions**. |
-| tls         | Boolean | 安全な接続を使用します(\*)。 省略時のデフォルトは false です。 可能なかぎり安全な接続を使用することが推奨されます。                                                                                                                                                                                                                                            |
-| type        | Text    | "4D Server" でなければなりません                                                                                                                                                                                                                                                                                                         |
+| プロパティ       | タイプ     | 説明                                                                                                                                                                                                                                                                                                                                   |
+| ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| hostname    | Text    | リモートデータストアの名前または IPアドレス + ":" + ポート番号 (ポート番号は必須)                                                                                                                                                                                                                                                  |
+| user        | Text    | ユーザー名                                                                                                                                                                                                                                                                                                                                |
+| password    | Text    | ユーザーパスワード                                                                                                                                                                                                                                                                                                                            |
+| idleTimeout | Longint | アクティビティがなかった場合に、セッションがタイムアウトするまでの時間 (分単位)。この時間を過ぎると、4D によって自動的にセッションが閉じられます。 省略時のデフォルトは 60 (1時間) です。 The value cannot be < 60 (if a lower value is passed, the timeout is set to 60). 詳細については、[**セッションの終了**](../ORDA/remoteDatastores.md#セッションの終了) を参照ください。 |
+| tls         | Boolean | 安全な接続を使用します(\*)。 省略時のデフォルトは false です。 可能なかぎり安全な接続を使用することが推奨されます。                                                                                                                                                                                                                                                  |
+| type        | Text    | "4D Server" でなければなりません                                                                                                                                                                                                                                                                                                               |
 
 (\*) tls が true だった場合、以下の条件が満たされていれば、HTTPSプロトコルが使用されます:
 
@@ -214,7 +214,7 @@ user / password / timeout / tls を指定してリモートデータストアに
 
 #### エラー管理
 
-In case of error, the command returns **Null**. リモートデータベースにアクセスできなかった場合 (アドレス違い、Webサーバーが開始されていない、http/https が有効化されていない、等)、エラー1610 "ホスト XXX へのリモートリクエストに失敗しました" が生成されます。 You can intercept this error with a method installed by `ON ERR CALL`.
+エラーが起きた場合、コマンドは **Null** を返します。 リモートデータベースにアクセスできなかった場合 (アドレス違い、Webサーバーが開始されていない、http/https が有効化されていない、等)、エラー1610 "ホスト XXX へのリモートリクエストに失敗しました" が生成されます。 このエラーは `ON ERR CALL` で実装されたメソッドで割り込み可能です。
 
 <!-- REF DataStoreClass.dataclassName.Desc -->
 
@@ -232,7 +232,7 @@ In case of error, the command returns **Null**. リモートデータベース�
 
 #### 説明
 
-Each dataclass in a datastore is available as a property of the [DataStore object](ORDA/dsMapping.md#datastore)data. 戻り値のオブジェクトには <!-- REF DataStoreClass.dataclassName.Summary -->データクラスの詳細が格納されています<!-- END REF -->。
+データストアの各データクラスは [DataStore オブジェクト](ORDA/dsMapping.md#データストア) のプロパティとして利用可能です。 戻り値のオブジェクトには <!-- REF DataStoreClass.dataclassName.Summary -->データクラスの詳細が格納されています<!-- END REF -->。
 
 #### 例題
 
@@ -274,13 +274,13 @@ Each dataclass in a datastore is available as a property of the [DataStore objec
 
 The `.cancelTransaction()` function <!-- REF #DataStoreClass.cancelTransaction().Summary -->cancels the transaction<!-- END REF --> opened by the [`.startTransaction()`](#starttransaction) function at the corresponding level in the current process for the specified datastore.
 
-The `.cancelTransaction()` function cancels any changes made to the data during the transaction.
+`.cancelTransaction()` 関数は、トランザクション中におこなわれたデータ変更をすべてキャンセルします。
 
-複数のトランザクションをネストすること (サブトランザクション) が可能です。 If the main transaction is cancelled, all of its sub-transactions are also cancelled, even if they were validated individually using the [`.validateTransaction()`](#validatetransactions) function.
+複数のトランザクションをネストすること (サブトランザクション) が可能です。 メイントランザクションがキャンセルされると、サブトランザクションも (たとえ個々に[`.validateTransaction()`](#validatetransactions) 関数で承認されていても) すべてキャンセルされます。
 
 #### 例題
 
-See example for the [`.startTransaction()`](#starttransaction) function.
+[`.startTransaction()`](#starttransaction) 関数の例題を参照ください。
 
 <!-- END REF -->
 
@@ -312,7 +312,7 @@ The `.clearAllRemoteContexts()` function <!-- REF #DataStoreClass.clearAllRemote
 
 この機能は主にデバッグで使用されます。 注意しなければならないのは、デバッガーを開くと、デバッガーはサーバーにリクエストを送り、データクラス属性をすべてクエリして表示することです。 このため、不要なデータでコンテキストが過負荷になることがあります。
 
-In such cases, you can use `.clearAllRemoteContexts()` to clear your contexts and keep them clean.
+そのような場合は、`.clearAllRemoteContexts()` を使用してコンテキストをクリアし、クリーンな状態を保つことができます。
 
 #### 参照
 
@@ -344,7 +344,7 @@ In such cases, you can use `.clearAllRemoteContexts()` to clear your contexts an
 
 The `.encryptionStatus()` function <!-- REF #DataStoreClass.encryptionStatus().Summary -->returns an object providing the encryption status for the current data file<!-- END REF --> (i.e., the data file of the `ds` datastore). 各テーブルの状態も提供されます。
 
-> Use the `Data file encryption status` command to determine the encryption status of any other data file.
+> その他のデータファイルの暗号化状態を調べるには、`Data file encryption status` コマンドを使います。
 
 **戻り値**
 
@@ -363,9 +363,9 @@ The `.encryptionStatus()` function <!-- REF #DataStoreClass.encryptionStatus().S
 
 (\*) 暗号化キーは、以下の手段のいずれかで提供されます:
 
-- with the `.provideDataKey()` command,
+- `.provideDataKey()` コマンド
 - データストアを開く前に接続されていたデバイスのルート
-- with the `Discover data key` command.
+- `Discover data key` コマンド
 
 #### 例題
 
@@ -422,27 +422,28 @@ The `.flushAndLock()` function <!-- REF #DataStoreClass.flushAndLock().Summary -
 
 この関数は次の場合にのみ使えます:
 
-- on the local datastore ([`ds`](#ds)).
+- ローカルデータストア ([`ds`](#ds)) を対象に。
 - クライアント/サーバー環境では、サーバーマシン上にて。
 
 :::
 
-Once this function is executed, write operations such as `.save()` or other `.flushAndLock()` calls are frozen in all other processes until the datastore is unlocked.
+この関数が実行されると、他のすべてのプロセスで `.save()` などの書き込み操作や、追加の `.flushAndLock()` の呼び出しが凍結され、データストアのロックが解除されるまで続きます。
 
-When multiple calls to `.flushAndLock()` have been done in the same process, the same number of [`.unlock()`](#unlock) calls must be executed to actually unlock the datastore.
+同一プロセス内で `.flushAndLock()` を複数回呼び出した場合、データストアのロックを解除するには、同じ回数だけ [`.unlock()`](#unlock) を呼び出す必要があります。
 
 データストアのロックが解除されるのは、以下の場合です:
 
-- the [`.unlock()`](#unlock) function is called in the same process, or
-- the process that called the `.flushAndLock()` function is killed.
+- 同プロセス内で [`.unlock()`](#unlock) 関数が呼び出された場合、または
+- `.flushAndLock()` 関数を呼び出したプロセスが終了した場合。
 
-If the datastore is already locked from another process, the `.flushAndLock()` call is frozen and will be executed when the datastore will be unlocked.
+データストアがすでに他のプロセスからロックされている場合、`.flushAndLock()` の呼び出しは凍結され、データストアのロックが解除されたときに実行されます。
 
-An error is triggered if the `.flushAndLock()` function cannot be executed (e.g. it is run on a remote 4D), .
+`.flushAndLock()` 関数が実行できない場合 (リモートの 4D で実行された場合など) には、エラーが発生します。
 
 :::caution
 
-Other 4D features and services including [backup](../Backup/backup.md), [vss](https://doc.4d.com/4Dv20/4D/20/Using-Volume-Shadow-Copy-Service-on-Windows.300-6330532.en.html), and [MSC](../MSC/overview.md) can also lock the datastore. Before calling `.flushAndLock()`, make sure no other locking action is being used, in order to avoid any unexpected interaction.
+[バックアップ](../Backup/backup.md) や [VSS](https://doc.4d.com/4Dv20/4D/20/Using-Volume-Shadow-Copy-Service-on-Windows.300-6330532.ja.html)
+、[MSC](../MSC/overview.md) を含む他の 4D機能およびサービスもデータストアをロックすることがあります。 予期せぬ相互作用を避けるため、`.flushAndLock()` を呼び出す前に、データストアをロックするような他の操作がおこなわれていないことを確認してください。
 
 :::
 
@@ -492,7 +493,7 @@ ds.unlock() // コピー操作をおこなったので、データストアの�
 
 <!-- END REF -->
 
-> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. ほとんどの場合、使用する必要はないでしょう。
+> **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。 ほとんどの場合、使用する必要はないでしょう。
 
 #### 説明
 
@@ -500,11 +501,11 @@ The `.getAllRemoteContexts()` function <!-- REF #DataStoreClass.getAllRemoteCont
 
 > For more information on how contexts can be created, see [client/server optimization](../ORDA/client-server-optimization.md#optimization-context).
 
-Each object in the returned collection has the properties listed in the [`.getRemoteContextInfo()`](#properties-of-the-returned-object) section.
+返されたコレクション内の各オブジェクトは、[`.getRemoteContextInfo()`](#返されるオブジェクト) セクションに記載されているプロパティを持ちます。
 
 #### 例題
 
-The following code sets up two contexts and retrieves them using `.getAllRemoteContexts()`:
+次のコードは 2つのコンテキストを設定し、`.getAllRemoteContexts()` を使用してそれらを取得します:
 
 ```4d
 var $ds : 4D.DataStoreImplementation
@@ -577,12 +578,12 @@ The `.getGlobalStamp()` function <!-- REF #DataStoreClass.getGlobalStamp().Summa
 
 この関数は次の場合にのみ使えます:
 
-- on the local datastore ([`ds`](#ds)).
+- ローカルデータストア ([`ds`](#ds)) を対象に。
 - クライアント/サーバー環境では、サーバーマシン上にて。
 
 :::
 
-For more information on global stamp and data change tracking, please refer to the [**Using the Global Stamp**](../ORDA/global-stamp.md) page.
+グローバルスタンプとデータ変更追跡の詳細については、[**グローバルスタンプの使い方**](../ORDA/global-stamp.md) を参照ください。
 
 #### 例題
 
@@ -631,11 +632,11 @@ The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->returns 
 | ---------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | type       | string  | <li>"4D": main datastore, available through ds </li><li>"4D Server": remote datastore, open with Open datastore</li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | networked  | boolean | <li>True: the datastore is reached through a network connection.</li><li>False: the datastore is not reached through a network connection (local database)</li>                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| localID    | text    | マシン上のデータストアID。 Corresponds to the localId string given with the `Open datastore` command. メインデータストアの場合は空の文字列 ("") です。                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| localID    | text    | マシン上のデータストアID。 これは、`Open datastore` コマンドで返される localId 文字列です。 メインデータストアの場合は空の文字列 ("") です。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | connection | object  | リモートデータストア接続の情報を格納したオブジェクト (メインデータストアの場合は返されません)。 Available properties:<table><tr><th>Property</th><th>Type</th><th>Description</th></tr><tr><td>hostname</td><td>text</td><td>IP address or name of the remote datastore + ":" + port number</td></tr><tr><td>tls</td><td>boolean</td><td>True if secured connection is used with the remote datastore</td></tr><tr><td>idleTimeout</td><td>number</td><td>Session inactivity timeout (in minutes)</td></tr><tr><td>user</td><td>text</td><td>User authenticated on the remote datastore</td></tr></table> |
 
-- If the `.getInfo()` function is executed on a 4D Server or 4D single-user, `networked` is False.
-- If the `.getInfo()` function is executed on a remote 4D, `networked` is True
+- `.getInfo()` 関数が、4D Server またはシングルユーザー版 4D 上で実行された場合、`networked` は false となります。
+- `.getInfo()` 関数が、リモート版 4D 上で実行された場合、`networked` は true となります。
 
 #### 例題 1
 
@@ -692,7 +693,7 @@ The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->returns 
 
 <!-- END REF -->
 
-> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. ほとんどの場合、使用する必要はないでしょう。
+> **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。 ほとんどの場合、使用する必要はないでしょう。
 
 #### 説明
 
@@ -704,18 +705,18 @@ For more information on how optimization contexts can be created, see [client/se
 
 戻り値のオブジェクトには、以下のプロパティが格納されています:
 
-| プロパティ                               | タイプ  | 説明                                                                                                                                                                                                                                                                                            |
-| ----------------------------------- | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name                                | Text | コンテキストの名称                                                                                                                                                                                                                                                                                     |
-| main                                | Text | コンテキストに関連する属性 (複数の場合はカンマ区切り)                                                                                                                                                                                                                                               |
-| dataclass                           | Text | データクラスの名称                                                                                                                                                                                                                                                                                     |
-| currentItem (任意) | Text | The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box. Returned as `Null` or empty text element if the context name is not used for a list box, or if there is no context for the currentItem |
+| プロパティ                               | タイプ  | 説明                                                                                                                                                                                    |
+| ----------------------------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name                                | Text | コンテキストの名称                                                                                                                                                                             |
+| main                                | Text | コンテキストに関連する属性 (複数の場合はカンマ区切り)                                                                                                                                       |
+| dataclass                           | Text | データクラスの名称                                                                                                                                                                             |
+| currentItem (任意) | Text | コンテキストがリストボックスとリンクしている場合の [ページモード](../ORDA/remoteDatastores.md#エンティティセレクション型リストボックス) の属性。 コンテキスト名がリストボックスに使用されていない場合、または currentItem に対応するコンテキストが存在しない場合は、`Null` または空のテキスト要素として返されます。 |
 
-Since contexts behave as filters for attributes, if _main_ is returned empty, it means that no filter is applied, and that the server returns all the dataclass attributes.
+コンテキストは属性に対するフィルターとして動作するため、_main_ が空で返された場合、それはフィルターが適用されておらず、サーバーがすべてのデータクラス属性を返すことを意味します。
 
 #### 例題
 
-See the example from the [.setRemoteContextInfo()](#example-1-3) section.
+[.setRemoteContextInfo()](#example-1-3) の例題を参照ください。
 
 #### 参照
 
@@ -745,7 +746,7 @@ See the example from the [.setRemoteContextInfo()](#example-1-3) section.
 
 #### 説明
 
-The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. The ORDA request logging must have previously been enabled using the [`.startRequestLog()`](#startrequestlog) function.
+The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. ORDAリクエストのログが、[`.startRequestLog()`](#startrequestlog) 関数によって事前に有効化されている必要があります。
 
 このメソッドはリモートの 4D で呼び出す必要があり、そうでない場合には空のコレクションを返します。 これはクライアント/サーバー環境でのデバッグを想定して設計されています。
 
@@ -753,11 +754,11 @@ The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary
 
 スタックされたリクエストオブジェクトのコレクションが返されます。 直近のリクエストにはインデックス 0 が振られています。
 
-For a description of the ORDA request log format, please refer to the [**ORDA client requests**](https://doc.4d.com/4Dv18/4D/18/Description-of-log-files.300-4575486.en.html#4385373) section.
+ORDAリクエストログのフォーマットの詳細は、[**ORDAクライアントリクエスト**](https://doc.4d.com/4Dv18R6/4D/18-R6/Description-of-log-files.300-5217819.ja.html#4385373) の章を参照ください。
 
 #### 例題
 
-See Example 2 of [`.startRequestLog()`](#startrequestlog).
+[`.startRequestLog()`](#startrequestlog) の例題2を参照ください。
 
 <!-- END REF -->
 
@@ -787,7 +788,7 @@ See Example 2 of [`.startRequestLog()`](#startrequestlog).
 
 The `.isAdminProtected()` function <!-- REF #DataStoreClass.isAdminProtected().Summary -->returns `True` if [Data Explorer](Admin/dataExplorer.md) access has been disabled for the working session<!-- END REF -->.
 
-By default, the Data Explorer access is granted for `webAdmin` sessions, but it can be disabled to prevent any data access from administrators (see the [`.setAdminProtection()`](#setadminprotection) function).
+`webAdmin`セッションにおいて、データエクスプローラーへのアクセスはデフォルトで有効となっていますが、管理者によるデータアクセスを禁止するため無効にすることもできます ([`.setAdminProtection()`](#setadminprotection) 関数参照)。
 
 #### 参照
 
@@ -821,11 +822,11 @@ By default, the Data Explorer access is granted for `webAdmin` sessions, but it 
 
 The `.locked()` function <!-- REF #DataStoreClass.locked().Summary -->returns True if the local datastore is currently locked<!-- END REF -->.
 
-You can lock the datastore using the [.flushAndLock()](#flushandlock) function before executing a snapshot of the data file, for example.
+データファイルのスナップショットを実行する前などに、[.flushAndLock()](#flushandlock) 関数を使用してデータストアをロックすることができます。
 
 :::caution
 
-The function will also return `True` if the datastore was locked by another administration feature such as backup or vss (see [.flushAndLock()](#flushandlock)).
+この関数は、データストアがバックアップや VSS などの他の管理機能によってロックされた場合にも、 `true` を返します ([.flushAndLock()](#flushandlock) 参照)。
 
 :::
 
@@ -857,14 +858,14 @@ The function will also return `True` if the datastore was locked by another admi
 
 #### 説明
 
-The `.makeSelectionsAlterable()` function <!-- REF #DataStoreClass.makeSelectionsAlterable().Summary -->sets all entity selections as alterable by default in the current application datastores<!-- END REF --> (including [remote datastores](ORDA/remoteDatastores.md)). It is intended to be used once, for example in the `On Startup` database method.
+The `.makeSelectionsAlterable()` function <!-- REF #DataStoreClass.makeSelectionsAlterable().Summary -->sets all entity selections as alterable by default in the current application datastores<!-- END REF --> (including [remote datastores](ORDA/remoteDatastores.md)). これはたとえば `On Startup` データベースメソッドなどで、一度だけ使用することが想定されています。
 
-When this function is not called, new entity selections can be shareable, depending on the nature of their "parent", or [how they are created](ORDA/entities.md#shareable-or-non-shareable-entity-selections).
+このメソッドが呼ばれてない場合、新規エンティティセレクションはそれぞれの "親" の性質や作成方法に応じて、共有可能に設定される場合もあります ([共有可能/追加可能なエンティティセレクション](ORDA/entities.md#共有可能追加可能なエンティティセレクション) 参照)。
 
-> This function does not modify entity selections created by [`.copy()`](#copy) or `OB Copy` when the explicit `ck shared` option is used.
+> この関数は、`OB Copy` または [`.copy()`](#copy) に `ck shared` オプションを明示的に使用して作成されたエンティティセレクションには適用されません。
 
-> **Compatibility**: This function must only be used in projects converted from 4D versions prior to 4D v18 R5 and containing [.add()](EntitySelectionClass.md#add) calls. In this context, using `.makeSelectionsAlterable()` can save time by restoring instantaneously the previous 4D behavior in existing projects.
-> On the other hand, using this method in new projects created in 4D v18 R5 and higher **is not recommended**, since it prevents entity selections to be shared, which provides greater performance and scalabitlity.
+> **互換性に関する注記**: このメソッドは 4D v18 R5 より前のバージョンから変換されたプロジェクトで、[.add()](EntitySelectionClass.md#add) の呼び出しを使用しているものにおいてのみ使用してください。 このコンテキストにおいては、`.makeSelectionsAlterable()` を使用することで、既存プロジェクト内で以前の 4D のふるまいを再現し、時間を節約できます。
+> 逆に、4D v18 R5 以降のバージョンで作成された新規プロジェクトにおいては、この関数の使用は **推奨されていません**。エンティティセレクションを共有可能にできないため、パフォーマンスとスケーラビリティの観点で妨げになるからです。
 
 <!-- END REF -->
 
@@ -896,14 +897,14 @@ When this function is not called, new entity selections can be shareable, depend
 
 The `.provideDataKey()` function <!-- REF #DataStoreClass.provideDataKey().Summary -->allows providing a data encryption key for the current data file of the datastore and detects if the key matches the encrypted data<!-- END REF -->. この関数は、暗号化されたデータベースを開くときや、データファイルの再暗号化など暗号化キーが必要となる暗号化オペレーションを実行する際に使用します。
 
-> - The `.provideDataKey()` function must be called in an encrypted database. If it is called in a non-encrypted database, the error 2003 (the encryption key does not match the data.) is returned. Use the `Data file encryption status` command to determine if the database is encrypted.
-> - The `.provideDataKey()` function cannot be called from a remote 4D or an encrypted remote datastore.
+> - `.provideDataKey()` 関数は暗号化されたデータベース内で呼び出される必要があります。 If it is called in a non-encrypted database, the error 2003 (the encryption key does not match the data.) is returned. データベースが暗号化されているかどうかを調べるには `Data file encryption status` コマンドを使用します。
+> - リモートの 4D または暗号化されたリモートデータストアから、`.provideDataKey()` 関数を呼び出すことはできません。
 
-If you use the _curPassPhrase_ parameter, pass the string used to generate the data encryption key. このパラメーターを使用した場合、暗号化キーが生成されます。
+_curPassPhrase_ パラメーターを使用する場合は、データ暗号化キーの生成に使用した文字列を渡します。 このパラメーターを使用した場合、暗号化キーが生成されます。
 
-If you use the _curDataKey_ parameter, pass an object (with _encodedKey_ property) that contains the data encryption key. This key may have been generated with the `New data key` command.
+_curDataKey_ パラメーターを使用する場合は、データ暗号化キー (_encodedKey_ プロパティ) を格納するオブジェクトを渡します。 このキーは、`New data key` コマンドで生成された可能性があります。
 
-If a valid data encryption key is provided, it is added to the _keyChain_ in memory and the encryption mode is enabled:
+有効な暗号化キーが提供された場合、そのキーはメモリ内の _keyChain_ に追加され、暗号化モードが有効になります:
 
 - 暗号化可能テーブルに対するデータ編集はすべて、ディスク上 (.4DD、.journal、 .4Dindx ファイル) で暗号化されます。
 - 暗号化可能テーブルから読み出したすべてのデータは、メモリ内で復号化されます。
@@ -912,18 +913,18 @@ If a valid data encryption key is provided, it is added to the _keyChain_ in mem
 
 コマンドの実行結果は、戻り値のオブジェクトに格納されます:
 
-| プロパティ      |                                                                                              | タイプ        | 説明                                                       |
-| ---------- | -------------------------------------------------------------------------------------------- | ---------- | -------------------------------------------------------- |
-| success    |                                                                                              | Boolean    | 提供された暗号化キーが暗号化データと合致すれば true、それ以外は false                 |
-|            |                                                                                              |            | Properties below are returned only if success is _FALSE_ |
-| status     |                                                                                              | Number     | エラーコード (提供された暗号化キーが間違っていた場合には 4)      |
-| statusText |                                                                                              | Text       | エラーメッセージ                                                 |
-| errors     |                                                                                              | Collection | エラーのスタック。 最初のエラーに最も高いインデックスが割り当てられます。                    |
-|            | \[ ].componentSignature | Text       | 内部コンポーネント名                                               |
-|            | \[ ].errCode            | Number     | エラー番号                                                    |
-|            | \[ ].message            | Text       | エラーメッセージ                                                 |
+| プロパティ      |                                                                                              | タイプ        | 説明                                                  |
+| ---------- | -------------------------------------------------------------------------------------------- | ---------- | --------------------------------------------------- |
+| success    |                                                                                              | Boolean    | 提供された暗号化キーが暗号化データと合致すれば true、それ以外は false            |
+|            |                                                                                              |            | 以下のプロパティは、success が _FALSE_ であった場合にのみ返されます。         |
+| status     |                                                                                              | Number     | エラーコード (提供された暗号化キーが間違っていた場合には 4) |
+| statusText |                                                                                              | Text       | エラーメッセージ                                            |
+| errors     |                                                                                              | Collection | エラーのスタック。 最初のエラーに最も高いインデックスが割り当てられます。               |
+|            | \[ ].componentSignature | Text       | 内部コンポーネント名                                          |
+|            | \[ ].errCode            | Number     | エラー番号                                               |
+|            | \[ ].message            | Text       | エラーメッセージ                                            |
 
-If no _curPassphrase_ or _curDataKey_ is given, `.provideDataKey()` returns **null** (no error is generated).
+_curPassphrase_ および _curDataKey_ のどちらの引数も渡されなかった場合、`.provideDataKey()` は **null** を返します (この場合エラーは生成されません)。
 
 #### 例題
 
@@ -972,13 +973,13 @@ If no _curPassphrase_ or _curDataKey_ is given, `.provideDataKey()` returns **nu
 
 The `.setAdminProtection()` function <!-- REF #DataStoreClass.setAdminProtection().Summary -->allows disabling any data access on the [web admin port](Admin/webAdmin.md#http-port), including for the [Data Explorer](Admin/dataExplorer.md) in `WebAdmin` sessions<!-- END REF -->.
 
-By default when the function is not called, access to data is always granted on the web administration port for a session with `WebAdmin` privilege using the Data Explorer. In some configurations, for example when the application server is hosted on a third-party machine, you might not want the administrator to be able to view your data, although they can edit the server configuration, including the [access key](Admin/webAdmin.md#access-key) settings.
+この関数が呼び出されなかった場合のデフォルトでは、データエクスプローラーを使用した `WebAdmin` 権限を持つセッションについて、Web管理ポート上のデータアクセスは常に許可されます。 In some configurations, for example when the application server is hosted on a third-party machine, you might not want the administrator to be able to view your data, although they can edit the server configuration, including the [access key](Admin/webAdmin.md#access-key) settings.
 
-In this case, you can call this function to disable the data access from Data Explorer on the web admin port of the machine, even if the user session has the `WebAdmin` privilege. この関数を実行するとデータファイルは即座に保護され、そのステータスがディスク上に保存されます: アプリケーションを再起動しても、データファイルは保護されたままです。
+このような場合にこの関数を呼び出すことで、ユーザーセッションが `WebAdmin` 権限を持っていても、マシンの Web管理ポート上でのデータエクスプローラーによるデータアクセスを無効にすることができます。 この関数を実行するとデータファイルは即座に保護され、そのステータスがディスク上に保存されます: アプリケーションを再起動しても、データファイルは保護されたままです。
 
 #### 例題
 
-You create a _protectDataFile_ project method to call before deployments for example:
+運用前に呼び出す _protectDataFile_ プロジェクトメソッドを作成します:
 
 ```4d
  ds.setAdminProtection(True) // データエクスプローラーによるデータアクセスを無効化します
@@ -1026,12 +1027,12 @@ The `.setGlobalStamp()` function <!-- REF #DataStoreClass.setGlobalStamp().Summa
 
 この関数は次の場合にのみ使えます:
 
-- on the local datastore ([`ds`](#ds)).
+- ローカルデータストア ([`ds`](#ds)) を対象に。
 - クライアント/サーバー環境では、サーバーマシン上にて。
 
 :::
 
-For more information on global stamp and data change tracking, please refer to the [**Using the Global Stamp**](../ORDA/global-stamp.md) page.
+グローバルスタンプとデータ変更追跡の詳細については、[**グローバルスタンプの使い方**](../ORDA/global-stamp.md) を参照ください。
 
 #### 例題
 
@@ -1075,7 +1076,7 @@ ds.setGlobalStamp($newValue)
 
 <!-- END REF -->
 
-> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. ほとんどの場合、使用する必要はないでしょう。
+> **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。 ほとんどの場合、使用する必要はないでしょう。
 
 #### 説明
 
@@ -1084,26 +1085,26 @@ The `.setRemoteContextInfo()` function <!-- REF #DataStoreClass.setRemoteContext
 ORDAクラスの関数にコンテキストを渡すと、RESTリクエストの最適化が即座に発動します:
 
 - 自動モードのときとは異なり、先頭エンティティは完全にロードされません。
-- pages of 80 entities (or `pageLength` entities) are immediately asked to the server with only the attributes in the context
+- 80件のエンティティ (または `pageLength` に対応するエンティティ数) のページが直ちにサーバーに要求される際、コンテキストの属性のみが要求されます。
 
 > For more information on how optimization contexts are built, refer to the [client/server optimization paragraph](../ORDA/client-server-optimization.md#optimization-context)
 
-In _contextName_, pass the name of the optimization context to link to the dataclass attributes.
+_contextName_ には、データクラス属性にリンクする最適化コンテキストの名前を渡します。
 
-To designate the dataclass that will receive the context, you can pass a _dataClassName_ or a _dataClassObject_.
+コンテキストを受け取るデータクラスを指定するために、_dataClassName_ または _dataClassObject_ を渡すことができます。
 
-To designate the attributes to link to the context, pass either a list of attributes separated by a comma in _attributes_ (Text), or a collection of attribute names in _attributesColl_ (collection of text).
+コンテキストにリンクする属性を指定するには、_attributes_ (テキスト) にカンマ区切りの属性リストを渡すか、属性名のコレクションを _attributesColl_ (テキストのコレクション) に渡します。
 
-If _attributes_ is an empty Text, or _attributesColl_ is an empty collection, all the scalar attributes of the dataclass are put in the optimization context. データクラスに存在しない属性を渡した場合、それは無視され、エラーが返されます。
+_attributes_ が空のテキスト、または _attributesColl_ が空のコレクションの場合、データクラスのすべてのスカラー属性が最適化コンテキストに置かれます。 データクラスに存在しない属性を渡した場合、それは無視され、エラーが返されます。
 
-You can pass a _contextType_ to  specify if the context is a standard context or the context of the current entity selection item displayed in a list box:
+_contextType_ を渡して、コンテキストが標準コンテキストか、リストボックスに表示されているカレントエンティティセレクション項目のコンテキストかを指定することができます。
 
-- If set to "main" (default), the _contextName_ designates a standard context.
-- "currentItem" の場合には、渡された属性はカレント項目のコンテキストに置かれます。  See  [Entity selection-based list box](../ORDA/remoteDatastores.md#entity-selection-based-list-box).
+- "main" (デフォルト) を渡すと、_contextName_ は標準コンテキストを指定します。
+- "currentItem" の場合には、渡された属性はカレント項目のコンテキストに置かれます。  [エンティティセレクション型リストボックス](../ORDA/remoteDatastores.md#エンティティセレクション型リストボックス) を参照ください。
 
-In _pageLength_, specify the number of dataclass entities to request from the server.
+_pageLength_ には、サーバーに要求するデータクラスエンティティの数を指定します。
 
-You can pass a _pageLength_ for a relation attribute which is an entity selection (one to many). The syntax is `relationAttributeName:pageLength` (e.g employees:20).
+エンティティセレクションであるリレーション属性 (1対N) について、_pageLength_ を渡すことができます。 シンタックスは、`relationAttributeName:pageLength` です (例: employees:20)。
 
 #### 例題 1
 
@@ -1138,9 +1139,9 @@ $info:=$ds.getRemoteContextInfo("contextA")
 
 #### 例題 2
 
-The following piece of code requests pages of 30 entities of the `Address` dataclass from the server. The returned entities only contain the `zipCode` attribute.
+以下のコードでは、`Address` データクラスのエンティティ 30件のページをサーバーに要求しています。 返されるエンティティは、`zipCode` 属性のみを含みます。
 
-For each `Address` entity, 20 Persons entities are returned, and they only contain the `lastname` and `firstname` attributes:
+各 `Address` エンティティに対して、20件の Persons エンティティが返され、それらには `lastname` と `firstname` 属性のみが含まれます:
 
 ```4d
 var $ds : 4D.DataStoreImplementation
@@ -1184,10 +1185,10 @@ Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                           |
-| ----- | -------------------------------------------- |
-| 20    | Server side support, new `options` parameter |
-| 17 R6 | 追加                                           |
+| リリース  | 内容                          |
+| ----- | --------------------------- |
+| 20    | サーバー側のサポート、新しい `options` 引数 |
+| 17 R6 | 追加                          |
 
 </details>
 
@@ -1209,7 +1210,7 @@ The `.startRequestLog()` function <!-- REF #DataStoreClass.startRequestLog().Sum
 
 :::info
 
-For a description of the ORDA request log format, please refer to the [**ORDA requests**](../Debugging/debugLogFiles.md#orda-requests) section.
+ORDAリクエストログのフォーマットの詳細は、[**ORDAリクエスト**](../Debugging/debugLogFiles.md#ordaリクエスト) の章を参照ください。
 
 :::
 
@@ -1217,21 +1218,21 @@ For a description of the ORDA request log format, please refer to the [**ORDA re
 
 クライアント側の ORDAリクエストログを作成するには、リモートマシン上でこの関数を呼び出します。 ログは、渡した引数によってファイルまたはメモリに送ることができます:
 
-- If you passed a _file_ object created with the `File` command, the log data is written in this file as a collection of objects (JSON format). 各オブジェクトは一つのリクエストを表します。<br/>ファイルがまだ存在しない場合には、作成されます。 もしファイルが既に存在する場合、新しいログデータはそこに追加されていきます。
-  If `.startRequestLog()` is called with a file while a logging was previously started in memory, the memory log is stopped and emptied.
+- `File` コマンドで作成された _file_ オブジェクトを渡した場合、ログデータはオブジェクト (JSON フォーマット) のコレクションとしてこのファイルに書き込まれます。 各オブジェクトは一つのリクエストを表します。<br/>ファイルがまだ存在しない場合には、作成されます。 もしファイルが既に存在する場合、新しいログデータはそこに追加されていきます。
+  メモリへのログ記録が既に始まっている状態で、 `.startRequestLog()`が file 引数付きで呼び出された場合、メモリに記録されていたログは停止され消去されます。
 
 > JSON 評価を実行するには、ファイルの終わりに手動で \] 文字を追加する必要があります。
 
-- If you passed a _reqNum_ integer, the log in memory is emptied (if any) and a new log is initialized. It will keep _reqNum_ requests in memory until the number is reached, in which case the oldest entries are emptied (FIFO stack).<br/>If `.startRequestLog()` is called with a _reqNum_ while a logging was previously started in a file, the file logging is stopped.
+- _reqNum_ (倍長整数) 引数を渡した場合、メモリ内のログは (あれば) 消去され、新しいログが初期化されます。 It will keep _reqNum_ requests in memory until the number is reached, in which case the oldest entries are emptied (FIFO stack).<br/>If `.startRequestLog()` is called with a _reqNum_ while a logging was previously started in a file, the file logging is stopped.
 
-- 引数を何も渡さなかった場合、ログはメモリに記録されていきます。 If `.startRequestLog()` was previously called with a _reqNum_ (before a `.stopRequestLog()`), the log data is stacked in memory until the next time the log is emptied or `.stopRequestLog()` is called.
+- 引数を何も渡さなかった場合、ログはメモリに記録されていきます。 前もって `.startRequestLog()` が_reqNum_ 引数付きで 呼び出されていた場合 (ただし `.stopRequestLog()` の前)、ログが次回消去されるかまたは`.stopRequestLog()` が呼び出されるまで、ログデータはメモリ内にスタックされます。
 
 #### サーバー側
 
-サーバー側の ORDAリクエストログを作成するには、サーバーマシン上でこの関数を呼び出します。 The log data is written in a file in `.jsonl` format. 各オブジェクトは 1つのリクエストを表します。 ファイルが存在しない場合は、作成されます。 もしファイルが既に存在する場合、新しいログデータはそこに追加されていきます。
+サーバー側の ORDAリクエストログを作成するには、サーバーマシン上でこの関数を呼び出します。 ログは、`.jsonl` 形式のファイルに書き込まれます。 各オブジェクトは 1つのリクエストを表します。 ファイルが存在しない場合は、作成されます。 もしファイルが既に存在する場合、新しいログデータはそこに追加されていきます。
 
-- If you passed the _file_ parameter, the log data is written in this file, at the requested location. - If you omit the _file_ parameter or if it is null, the log data is written in a file named _ordaRequests.jsonl_ and stored in the "/LOGS" folder.
-- The _options_ parameter can be used to specify if the server response has to be logged, and if it should include the body. 引数を省略した場合のデフォルトでは、全レスポンスがログに記録されます。 この引数には、以下の定数を使用することができます:
+- _file_ 引数を渡した場合、ログデータはこのファイルの指定位置に書き込まれます。 - _file_ 引数を省略した場合、または引数が NULL の場合、ログデータは _ordaRequests.jsonl_ という名前のファイルに書き込まれ、"/LOGS" フォルダーに保存されます。
+- _options_ 引数を使って、サーバーのレスポンスをログに記録するかどうか、および本文をログに含めるかどうかを指定することができます。 引数を省略した場合のデフォルトでは、全レスポンスがログに記録されます。 この引数には、以下の定数を使用することができます:
 
 |Constant|Description|
 \|----|----|---|
@@ -1317,9 +1318,9 @@ SET DATABASE PARAMETER(4D Server Log Recording;0)
 
 The `.startTransaction()` function <!-- REF #DataStoreClass.startTransaction().Summary -->starts a transaction in the current process on the database matching the datastore to which it applies<!-- END REF -->. トランザクションプロセス中にデータストアのエンティティに加えられた変更は、トランザクションが確定されるかキャンセルされるまで一時的に保管されたままになります。
 
-> If this method is called on the main datastore (i.e. the datastore returned by the `ds` command), the transaction is applied to all operations performed on the main datastore and on the underlying database, thus including ORDA and classic languages.
+> このメソッドがメインのデータストア (`ds` コマンドで返されるデータストア) で呼ばれた場合、トランザクションはメインのデータストアとそのデータベースで実行されるすべてのオペレーションに適用されます。これには、そこで実行される ORDA とクラシック言語も含まれます。
 
-複数のトランザクションをネストすること (サブトランザクション) が可能です。 個々のトランザクションまたはサブトランザクションは、それぞれキャンセルするか確定される必要があります。 Note that if the main transaction is cancelled, all of its sub-transactions are also cancelled even if they were validated individually using the `.validateTransaction()` function.
+複数のトランザクションをネストすること (サブトランザクション) が可能です。 個々のトランザクションまたはサブトランザクションは、それぞれキャンセルするか確定される必要があります。 メイントランザクションがキャンセルされると、サブトランザクションも (たとえ個々に`.validateTransaction()` 関数で承認されていても) すべてキャンセルされます。
 
 #### 例題
 
@@ -1389,7 +1390,7 @@ ORDAリクエストログがマシン上で開始されていない場合、こ�
 
 #### 例題
 
-See examples for [`.startRequestLog()`](#startrequestlog).
+[`.startRequestLog()`](#startrequestlog) の例題を参照ください。
 
 <!-- END REF -->
 
@@ -1417,13 +1418,13 @@ See examples for [`.startRequestLog()`](#startrequestlog).
 
 #### 説明
 
-The `.unlock()` function <!-- REF #DataStoreClass.unlock().Summary -->removes the current lock on write operations in the datastore, if it has been set in the same process<!-- END REF -->. Write operations can be locked in the local datastore using the [`.flushAndLock()`](#flushandlock) function.
+The `.unlock()` function <!-- REF #DataStoreClass.unlock().Summary -->removes the current lock on write operations in the datastore, if it has been set in the same process<!-- END REF -->. ローカルデータストアの書き込み操作は、[`.flushAndLock()`](#flushandlock) 関数を使用してロックすることができます。
 
-現在のロックがデータストアの唯一のロックであった場合、書き込み操作は直ちに可能になります。 If the `.flushAndLock()` function was called several times in the process, the same number of `.unlock()` must be called to actually unlock the datastore.
+現在のロックがデータストアの唯一のロックであった場合、書き込み操作は直ちに可能になります。 `.flushAndLock()` 関数がプロセス内で複数回呼ばれている場合、データストアのロックを解除するには、同じ回数だけ `.unlock()` を呼び出す必要があります。
 
-The `.unlock()` function must be called from the process that called the corresponding `.flushAndLock()`, otherwise the function does nothing and the lock is not removed.
+`.unlock()` 関数は、対応する `.flushAndLock()` を呼び出したプロセス内で呼び出す必要があります。そうでない場合には、この関数は何もおこなわず、ロックも解除されません。
 
-If the `.unlock()` function is called in an unlocked datastore, it does nothing.
+ロックが解除されているデータストアで `.unlock()` 関数を呼び出した場合、何もおこりません。
 
 #### 参照
 
@@ -1461,6 +1462,6 @@ The `.validateTransaction()` function <!-- REF #DataStoreClass.validateTransacti
 
 #### 例題
 
-See example for [`.startTransaction()`](#starttransaction).
+[`.startTransaction()`](#starttransaction) の例題を参照ください。
 
 <!-- END REF -->
