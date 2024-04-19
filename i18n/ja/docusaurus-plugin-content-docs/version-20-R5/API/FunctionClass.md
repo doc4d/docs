@@ -24,13 +24,13 @@ Formulaオブジェクトは、オブジェクトプロパティに格納する�
 このようなプロパティは "オブジェクト関数"、つまり親オブジェクトに紐づいた関数です。 オブジェクトプロパティに保存されている関数を実行するには、プロパティ名のあとに **()** をつけます:
 
 ```4d
- $f.message() //displays "Hello world"
+ $f.message() // "Hello world" を表示します
 ```
 
 大カッコを使用したシンタックスもサポートされます:
 
 ```4d
- $f["message"]() //displays "Hello world"
+ $f["message"]() // "Hello world" と表示します
 ```
 
 たとえ引数を受け取らなかったとしても (後述参照)、オブジェクト関数を実行するためにはカッコ ( ) をつけて呼び出す必要があるという点に注意してください。 オブジェクトプロパティのみを呼び出した場合、フォーミュラへの新しい参照が返されます (そしてフォーミュラは実行はされません):
@@ -42,7 +42,7 @@ Formulaオブジェクトは、オブジェクトプロパティに格納する�
 [`apply()`](#apply) および [`call()`](#call) 関数を使って関数を実行することもできます:
 
 ```4d
- $f.message.apply() //displays "Hello world"
+ $f.message.apply() // "Hello world!" を表示します
 ```
 
 #### 引数の受け渡し
@@ -53,7 +53,7 @@ Formulaオブジェクトは、オブジェクトプロパティに格納する�
  var $f : Object
  $f:=New object
  $f.message:=Formula(ALERT("Hello "+$1))
- $f.message("John") //displays "Hello John"
+ $f.message("John") // "Hello John" を表示します
 ```
 
 あるいは、[.call()](#call) 関数を使用して:
@@ -61,8 +61,8 @@ Formulaオブジェクトは、オブジェクトプロパティに格納する�
 ```4d
  var $f : Object
  $f:=Formula($1+" "+$2)
- $text:=$f.call(Null;"Hello";"World") //returns "Hello World"
- $text:=$f.call(Null;"Welcome to";String(Year of(Current date))) //returns "Welcome to 2019" (for example)
+ $text:=$f.call(Null;"Hello";"World") // "Hello World" を返します
+ $text:=$f.call(Null;"Welcome to";String(Year of(Current date))) // "Welcome to 2019" (例) を返します
 ```
 
 #### 単一メソッド用の引数
@@ -73,11 +73,11 @@ Formulaオブジェクトは、オブジェクトプロパティに格納する�
  var $f : 4D.Function
 
  $f:=Formula(myMethod)
-  //Writing Formula(myMethod($1;$2)) is not necessary
- $text:=$f.call(Null;"Hello";"World") //returns "Hello World"
- $text:=$f.call() //returns "How are you?"
+  // ここで Formula(myMethod($1;$2) と書く必要はありません
+ $text:=$f.call(Null;"Hello";"World") // "Hello World" を返します
+ $text:=$f.call() // "How are you?" を返します
 
-  //myMethod
+  // myMethod
  #DECLARE ($param1 : Text; $param2 : Text)->$return : Text
  If(Count parameters=2)
     $return:=$param1+" "+$param2
@@ -100,10 +100,10 @@ Formulaオブジェクトは、オブジェクトプロパティに格納する�
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                                  |
-| ----- | --------------------------------------------------- |
-| 17 R6 | Renamed (New formula -> Formula) |
-| 17 R3 | 追加                                                  |
+| リリース  | 内容                                               |
+| ----- | ------------------------------------------------ |
+| 17 R6 | 名称変更 (New formula -> Formula) |
+| 17 R3 | 追加                                               |
 
 </details>
 
@@ -120,7 +120,7 @@ Formulaオブジェクトは、オブジェクトプロパティに格納する�
 
 #### 説明
 
-The `Formula` command <!-- REF #_command_.Formula.Summary -->creates a `4D Function` object based upon the _formulaExp_ expression<!-- END REF -->. _formulaExp_ には単一の値のようにシンプルなものから、引数を持つプロジェクトメソッドのように複雑なものまで指定することができます。
+`Formula` コマンドは、<!-- REF #_command_.Formula.Summary -->_formulaExp_ の式に基づいた `4D Function` オブジェクトを作成します<!-- END REF -->。 _formulaExp_ には単一の値のようにシンプルなものから、引数を持つプロジェクトメソッドのように複雑なものまで指定することができます。
 
 フォーミュラがオブジェクトとして存在することで、コマンドやメソッドに対して引数 (計算された属性) として渡したり、"コンポーネントとホストデータベース間で共有" として宣言せずとも様々なコンポーネントから実行したりできるようになります。 呼び出されたフォーミュラオブジェクトは、それを作成したデータベースあるいはコンポーネントのコンテキストにおいて評価されます。
 
@@ -173,7 +173,7 @@ _formulaExp_ がローカル変数を使用する場合、返されるフォー�
  $o:=New object("f";Formula($value))
  $value:=20
 
- $result:=$o.f() // returns 10
+ $result:=$o.f() // 10 を返します
 ```
 
 #### 例題 3
@@ -191,7 +191,7 @@ _formulaExp_ がローカル変数を使用する場合、返されるフォー�
 
 ```4d
  $o:=New object("f";Formula(myMethod))
- $result:=$o.f("param1";"param2") // equivalent to $result:=myMethod("param1";"param2")
+ $result:=$o.f("param1";"param2") // $result:=myMethod("param1";"param2") と同等です
 ```
 
 #### 例題 5
@@ -202,7 +202,7 @@ _formulaExp_ がローカル変数を使用する場合、返されるフォー�
  $o:=New object("fullName";Formula(This.firstName+" "+This.lastName))
  $o.firstName:="John"
  $o.lastName:="Smith"
- $result:=$o.fullName() //returns "John Smith"
+ $result:=$o.fullName() // "John Smith" を返します
 ```
 
 #### 例題 6
@@ -217,11 +217,11 @@ _formulaExp_ がローカル変数を使用する場合、返されるフォー�
 
  $calc:=Formula(This.total:=This.price*This.quantity)
 
-  //sets the formula to object properties
+  // フォーミュラをオブジェクトプロパティに設定します
  $feta.calc:=$calc
  $robot.calc:=$calc
 
-  //call the formula
+  // フォーミュラを呼び出します
  $feta.calc() // $feta={name:Feta,price:12.5,quantity:5,total:62.5,calc:"[object Formula]"}
  $robot.calc() // $robot={name:Robot,price:543,quantity:2,total:1086,calc:"[object Formula]"}
 ```
@@ -230,11 +230,11 @@ _formulaExp_ がローカル変数を使用する場合、返されるフォー�
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                                     |
-| ----- | ------------------------------------------------------ |
-| 20 R3 | _context_ パラメーターをサポート                                  |
-| 17 R6 | Renamed New formula from string -> Formula from string |
-| 17 R3 | 追加                                                     |
+| リリース  | 内容                                                                       |
+| ----- | ------------------------------------------------------------------------ |
+| 20 R3 | _context_ パラメーターをサポート                                                    |
+| 17 R6 | 名称変更 (New formula from string -> Formula from string) |
+| 17 R3 | 追加                                                                       |
 
 </details>
 
@@ -252,9 +252,9 @@ _formulaExp_ がローカル変数を使用する場合、返されるフォー�
 
 #### 説明
 
-The `Formula from string` command <!-- REF #_command_.Formula from string.Summary -->creates a `4D.Function` object based upon the _formulaString_ and, optionnally, a _context_<!-- END REF -->.  _formulaString_ には単一の値のようにシンプルなものから、引数を持つプロジェクトメソッドのように複雑なものまで指定することができます。
+`Formula from string` コマンドは、<!-- REF #_command_.Formula from string.Summary -->_formulaString_ と任意の _context_ 引数に基づいた `4D.Function` オブジェクトを作成します<!-- END REF -->。  _formulaString_ には単一の値のようにシンプルなものから、引数を持つプロジェクトメソッドのように複雑なものまで指定することができます。
 
-このコマンドは [`Formula`](#formula) に似ていますが、テキストに基づいたフォーミュラを扱う点と、実行コンテキストを定義できる点が異なります。 It is usually recommended to use the `Formula` command, except if the original formula was expressed as text (e.g., stored externally in a JSON file), or if you want to create a formula in a host database while calling `Formula from string` from a component. なお、このコマンドでは、トークンを使ったシンタックスの使用が強く推奨されます。
+このコマンドは [`Formula`](#formula) に似ていますが、テキストに基づいたフォーミュラを扱う点と、実行コンテキストを定義できる点が異なります。 元となるフォーミュラがテキストとして表現されている場合 (例: 外部の JSON ファイルに保存されていた場合など)、または、コンポーネントから `Formula from string` を呼び出してホストデータベースにフォーミュラを作成したい場合を除いて、通常は `Formula` コマンドの使用が推奨されます。 なお、このコマンドでは、トークンを使ったシンタックスの使用が強く推奨されます。
 
 > ローカル変数の中身はコンパイル済みモードでは名前によるアクセスが不可能なため、_formulaString_ 引数内で使用することはできません。 `Formula from string` コマンドを使用してローカル変数にアクセスを試みた場合、エラー(-10737) が生成されます。
 
@@ -311,7 +311,7 @@ The `Formula from string` command <!-- REF #_command_.Formula from string.Summar
 
 #### 説明
 
-The `.apply()` function <!-- REF #FunctionClass.apply().Summary -->executes the `formula` object to which it is applied and returns the resulting value<!-- END REF -->. `Formula` あるいは `Formula from string` コマンドで作成されたフォーミュラが使用可能です。
+`.apply()` 関数は、<!-- REF #FunctionClass.apply().Summary -->対象の `Formula` オブジェクトを実行し、その結果の値を返します<!-- END REF -->。 `Formula` あるいは `Formula from string` コマンドで作成されたフォーミュラが使用可能です。
 
 _thisObj_ には、フォーミュラ内で `This` として使用されるオブジェクトへの参照を渡すことができます。
 
@@ -326,7 +326,7 @@ _thisObj_ には、フォーミュラ内で `This` として使用されるオ�
  $f:=Formula($1+$2+$3)
 
  $c:=New collection(10;20;30)
- $result:=$f.apply(Null;$c) // returns 60
+ $result:=$f.apply(Null;$c) // 60 を返します
 ```
 
 #### 例題 2
@@ -371,7 +371,7 @@ _thisObj_ には、フォーミュラ内で `This` として使用されるオ�
 
 #### 説明
 
-The `.call()` function <!-- REF #FunctionClass.call().Summary -->executes the `formula` object to which it is applied and returns the resulting value<!-- END REF -->. `Formula` あるいは `Formula from string` コマンドで作成されたフォーミュラが使用可能です。
+`.call()` 関数は、<!-- REF #FunctionClass.call().Summary -->対象の `Formula` オブジェクトを実行し、その結果の値を返します<!-- END REF -->。 `Formula` あるいは `Formula from string` コマンドで作成されたフォーミュラが使用可能です。
 
 _thisObj_ には、フォーミュラ内で `This` として使用されるオブジェクトへの参照を渡すことができます。
 
@@ -384,7 +384,7 @@ _thisObj_ には、フォーミュラ内で `This` として使用されるオ�
 ```4d
  var $f : 4D.Function
  $f:=Formula(Uppercase($1))
- $result:=$f.call(Null;"hello") // returns "HELLO"
+ $result:=$f.call(Null;"hello") // "HELLO" を返します
 ```
 
 #### 例題 2
@@ -392,7 +392,7 @@ _thisObj_ には、フォーミュラ内で `This` として使用されるオ�
 ```4d
  $o:=New object("value";50)
  $f:=Formula(This.value*2)
- $result:=$f.call($o) // returns 100
+ $result:=$f.call($o) // 100 を返します
 ```
 
 <!-- END REF -->
@@ -413,7 +413,7 @@ _thisObj_ には、フォーミュラ内で `This` として使用されるオ�
 
 #### 説明
 
-The `.source` property <!-- REF #FunctionClass.source.Summary -->contains the source expression of the `formula` as text<!-- END REF -->.
+`.source` プロパティは、<!-- REF #FunctionClass.source.Summary -->対象フォーミュラのテキスト型のソース式<!-- END REF -->を格納します。
 
 このプロパティは **読み取り専用** です。
 
