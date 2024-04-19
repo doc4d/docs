@@ -23,7 +23,7 @@ title: Document クラス
 
 The `.creationDate` property returns <!-- REF #document.creationDate.Summary -->the creation date of the file<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -45,7 +45,7 @@ This property is **read-only**.
 
 The `.creationTime` property  returns <!-- REF #document.creationTime.Summary -->the creation  time of the file<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -67,7 +67,7 @@ This property is **read-only**.
 
 The `.exists` property returns <!-- REF #document.exists.Summary -->true if the file exists on disk<!-- END REF -->, and false otherwise.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -89,7 +89,7 @@ This property is **read-only**.
 
 The `.extension` property returns <!-- REF #document.extension.Summary -->the extension of the file name (if any)<!-- END REF -->. 拡張子は必ず"." で始まります。 ファイル名が拡張子を持たない場合には、このプロパティは空の文字列を返します。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -111,7 +111,7 @@ This property is **read-only**.
 
 The `.fullName` property returns <!-- REF #document.fullName.Summary -->the full name of the file, including its extension (if any)<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -133,7 +133,7 @@ This property is **read-only**.
 
 The `.hidden` property returns <!-- REF #document.hidden.Summary -->true if the file is set as "hidden" at the system level<!-- END REF -->, and false otherwise.
 
-This property is **read/write**.
+**読み書き可能** プロパティです。
 
 <!-- END REF -->
 
@@ -155,7 +155,7 @@ This property is **read/write**.
 
 The `.isAlias` property returns <!-- REF #document.isAlias.Summary -->true if the file is an alias, a shortcut, or a symbolic link<!-- END REF -->, and false otherwise.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -177,7 +177,7 @@ This property is **read-only**.
 
 The `.isFile` property returns <!-- REF #document.isFile.Summary -->always true for a file<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -199,7 +199,7 @@ This property is **read-only**.
 
 The `.isFolder` property returns <!-- REF #document.isFolder.Summary -->always false for a file<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -221,9 +221,9 @@ This property is **read-only**.
 
 The `.isWritable` property returns <!-- REF #document.isWritable.Summary -->true if the file exists on disk and is writable<!-- END REF -->.
 
-> The property checks the ability of the 4D application to write on the disk (access rights), it does not solely rely on the _writable_ attribute of the file.
+> このプロパティは 4Dアプリケーションがディスクに書き込めるかどうか (アクセス権限) をチェックし、ファイルの _writable_ (書き込み可能) 属性のみ依存するわけではありません。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 **Example**
 
@@ -254,7 +254,7 @@ This property is **read-only**.
 
 The `.modificationDate` property returns <!-- REF #document.modificationDate.Summary -->the date of the file's last modification<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -276,7 +276,7 @@ This property is **read-only**.
 
 The `.modificationTime` property returns <!-- REF #document.modificationTime.Summary -->the time of the file's last modification<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -298,7 +298,7 @@ This property is **read-only**.
 
 The `.name` property returns <!-- REF #document.name.Summary -->the name of the file without extension (if any)<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -325,7 +325,7 @@ The `.original` property returns <!-- REF #document.original.Summary -->the targ
 
 エイリアスでないファイルについては、プロパティは同じファイルオブジェクトをファイルとして返します。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -347,7 +347,7 @@ This property is **read-only**.
 
 The `.parent` property returns <!-- REF #document.parent.Summary -->the parent folder object of the file<!-- END REF -->. パスがシステムパスを表す場合 (例: "/DATA/")、システムパスが返されます。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -369,7 +369,7 @@ This property is **read-only**.
 
 The `.path` property returns <!-- REF #document.path.Summary -->the POSIX path of the file<!-- END REF -->. パスがファイルシステムを表す場合 (例: "/DATA/")、ファイルシステムが返されます。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -391,7 +391,7 @@ This property is **read-only**.
 
 The `.platformPath` property returns <!-- REF #document.platformPath.Summary -->the path of the file expressed with the current platform syntax<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -413,7 +413,7 @@ This property is **read-only**.
 
 The `.size` property returns <!-- REF #document.size.Summary -->the size of the file expressed in bytes<!-- END REF -->. ファイルがディスク上に存在しない場合、サイズは 0 になります。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -433,12 +433,12 @@ This property is **read-only**.
 
 <!-- REF #document.copyTo().Params -->
 
-| 引数                | タイプ                       |     | 説明                                          |
-| ----------------- | ------------------------- | :-: | ------------------------------------------- |
-| destinationFolder | 4D.Folder |  -> | 宛先フォルダー                                     |
-| newName           | Text                      |  -> | コピー先フォルダーの名前                                |
-| overwrite         | Integer                   |  -> | `fk overwrite` to replace existing elements |
-| 戻り値               | 4D.File   |  <- | コピーされたファイル                                  |
+| 引数                | タイプ                       |     | 説明                                |
+| ----------------- | ------------------------- | :-: | --------------------------------- |
+| destinationFolder | 4D.Folder |  -> | 宛先フォルダー                           |
+| newName           | Text                      |  -> | コピー先フォルダーの名前                      |
+| overwrite         | Integer                   |  -> | 既存要素を上書きするには `fk overwrite` を渡します |
+| 戻り値               | 4D.File   |  <- | コピーされたファイル                        |
 
 <!-- END REF -->
 
@@ -446,11 +446,11 @@ This property is **read-only**.
 
 The `.copyTo()` function <!-- REF #document.copyTo().Summary -->copies the `File` object into the specified _destinationFolder_ <!-- END REF -->.
 
-The _destinationFolder_ must exist on disk, otherwise an error is generated.
+_destinationFolder_ 引数が指定するフォルダーはディスク上に存在している必要があり、そうでない場合にはエラーが生成されます。
 
-デフォルトで、ファイルは元の名前を維持したままコピーされます。 If you want to rename the copy, pass the new name in the _newName_ parameter. 新しい名前は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。そうでない場合、エラーが返されます。
+デフォルトで、ファイルは元の名前を維持したままコピーされます。 コピーの際にフォルダー名を変更したい場合、新しい名前を _newName_ に渡します。 新しい名前は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。そうでない場合、エラーが返されます。
 
-If a file with the same name already exists in the _destinationFolder_, by default 4D generates an error. You can pass the `fk overwrite` constant in the _overwrite_ parameter to ignore and overwrite the existing file
+_destinationFolder_ 引数が指定するフォルダー内に同じ名前のファイルが既に存在する場合、4D はデフォルトでエラーを生成します。 _overwrite_ に `fk overwrite` 定数を渡すことで、既存のフォルダーを無視して上書きすることができます:
 
 | 定数             | 値 | 説明                 |
 | -------------- | - | ------------------ |
@@ -458,11 +458,11 @@ If a file with the same name already exists in the _destinationFolder_, by defau
 
 **戻り値**
 
-The copied `File` object.
+コピーされた `File` オブジェクト。
 
 #### 例題
 
-You want to copy a picture _file_ from the user's document folder to the application folder:
+ユーザーのドキュメントフォルダーにあるピクチャーファイルを、アプリケーションフォルダー内にコピーします。
 
 ```4d
 var $source; $copy : Object
@@ -497,15 +497,15 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 
 #### 説明
 
-The `.getContent()` function  <!-- REF #document.getContent().Summary -->returns a `4D.Blob` object containing the entire content of a file<!-- END REF -->. For information on BLOBs, please refer to the [BLOB](Concepts/dt_blob.md) section.
+The `.getContent()` function  <!-- REF #document.getContent().Summary -->returns a `4D.Blob` object containing the entire content of a file<!-- END REF -->. BLOB についての詳細は、[BLOB](Concepts/dt_blob.md) の章を参照してください。
 
 **戻り値**
 
-A `4D.Blob` object.
+`4D.Blob` オブジェクト。
 
 #### 例題
 
-To save a document's contents in a `BLOB` field:
+ドキュメントの中身を `BLOB` フィールドに保存します:
 
 ```4d
  var $vPath : Text
@@ -544,13 +544,13 @@ To save a document's contents in a `BLOB` field:
 
 The `.getIcon()` function returns <!-- REF #document.getIcon().Summary -->the icon of the file<!-- END REF -->.
 
-The optional _size_ parameter specifies the dimensions in pixels of the returned icon. この値は、実際にはアイコンを格納している正方形の一辺の長さを表しています。 アイコンは通常、32x32ピクセル ("大きいアイコン") または 16x16ピクセル ("小さいアイコン") で定義されています。 この引数に 0 を渡すか省略した場合、"大きいアイコン" が返されます。
+任意の _size_ 引数を渡すと、返されるアイコンのサイズをピクセル単位で指定することができます。 この値は、実際にはアイコンを格納している正方形の一辺の長さを表しています。 アイコンは通常、32x32ピクセル ("大きいアイコン") または 16x16ピクセル ("小さいアイコン") で定義されています。 この引数に 0 を渡すか省略した場合、"大きいアイコン" が返されます。
 
 ファイルがディスク上に存在しない場合、デフォルトの空のアイコンが返されます。
 
 **戻り値**
 
-File icon [picture](../Concepts/picture.html).
+ファイルアイコンの [ピクチャー](../Concepts/picture.html)。
 
 <!-- END REF -->
 
@@ -585,15 +585,15 @@ The `.getText()` function <!-- REF #document.getText().Summary -->returns the co
 
 任意で、コンテンツの読み取りに使用する文字セットを渡します。 これには、次の二つの方法があります:
 
-- in _charSetName_, a string containing the standard set name (for example "ISO-8859-1" or "UTF-8"),
-- or in _charSetNum_, the MIBEnum ID (number) of the standard set name.
+- _charSetName_ に標準の文字セット名を含んだ文字列 ("ISO-8859-1" や "UTF-8" など) を渡します。
+- _charSetNum_ に標準の文字セット名の MIBEnum ID (倍長整数) を渡します。
 
-> For the list of character sets supported by 4D, refer to the description of the `CONVERT FROM TEXT` command.
+> 4D によってサポートされている文字セットの一覧については、`CONVERT FROM TEXT` コマンドを参照ください。
 
-If the document contains a Byte Order Mark (BOM), 4D uses the character set that it has set instead of the one specified in _charSetName_ or _charSetNum_ (this parameter is then ignored).
-If the document does not contain a BOM and if _charSetName_ or _charSetNum_ is omitted, by default 4D uses the "UTF-8" character set.
+ドキュメントにバイトオーダーマーク (BOM) が含まれている場合、4D は _charSetName_ または _charSetNum_ 引数で設定されている文字セットではなく、BOM で指定されたものを使用します (結果として引数は無視されます)。
+ドキュメントに BOM が含まれておらず、また _charSetName_ および _charSetNum_ 引数が渡されなかった場合、4D はデフォルトで "UTF-8" を文字セットとして使用します。
 
-In _breakMode_, you can pass a number indicating the processing to apply to end-of-line characters in the document. "System Documents" テーマの、以下の定数を使用することができます:
+_breakMode_ には、ドキュメントの改行文字に対しておこなう処理を指定する倍長整数を渡します。 "System Documents" テーマの、以下の定数を使用することができます:
 
 | 定数                            | 値 | 説明                                                                                                                                                                 |
 | ----------------------------- | - | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -603,7 +603,7 @@ In _breakMode_, you can pass a number indicating the processing to apply to end-
 | `Document with CR`            | 3 | 改行は macOSフォーマット (CR、キャリッジリターン) へと変換されます。                                                                                                        |
 | `Document with LF`            | 4 | 改行は Unixフォーマット (LF、ラインフィード) へと変換されます。                                                                                                           |
 
-By default, when you omit the _breakMode_ parameter, line breaks are processed in native mode (1).
+_breakMode_ 引数を渡さなかった場合はデフォルトで、改行はネイティブモード (1) で処理されます。
 
 **戻り値**
 
@@ -630,7 +630,7 @@ id name price vat
 
 "id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
 
-with `\t` (tab) as separator and `\r\n` (CRLF) as line delimiter.
+このとき、区切り文字は `\t` (タブ) で、改行コードは `\r\n` (CRLF) です。
 
 以下は、同じファイルで改行コードが異なる例です:
 
@@ -638,10 +638,10 @@ with `\t` (tab) as separator and `\r\n` (CRLF) as line delimiter.
  $txt:=$myFile.getText("UTF-8"; Document with LF)
 ```
 
-In this case, the contents of `$txt` are as follows:
+この場合、`$txt` の値は次の通りです:
 
 "id\tname\tprice\tvat\n3\tthé\t1.06€\t19.6\n2\tcafé\t1.05€\t19.6"
 
-This time `\n` (LF) is used as line delimiter.
+このとき、改行コードは `\n` (LF) です。
 
 <!-- END REF -->
