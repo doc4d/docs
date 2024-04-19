@@ -3,7 +3,7 @@ id: WebSocketClass
 title: WebSocket
 ---
 
-The `WebSocket` class allows you to open a WebSocket client connection with a server, send and receive data, and close the connection.
+`WebSocket` クラスを使用すると、サーバーとの WebSocket クライアント接続を開いて、データを送受信し、接続を閉じることができます。
 
 WebSocketクライアント接続は、たとえばリアルタイムで財務データを受信したり、チャットでメッセージを送受信したりするのに便利です。
 
@@ -19,7 +19,7 @@ WebSocketクライアント接続は、たとえばリアルタイムで財務�
 
 この例題では、基本的な WebSocketクライアントを作成します。
 
-1. Create the `WSConnectionHandler` user class containing callback function(s) used to handle WebSocket event callbacks:
+1. WebSocket イベントコールバックを処理するためのコールバック関数を含む `WSConnectionHandler` ユーザークラスを作成します:
 
 ```4d
 // WSConnectionHandler class
@@ -64,9 +64,9 @@ WebSocketオブジェクトは、以下のプロパティと機能を提供し�
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                                   |
-| ----- | ---------------------------------------------------- |
-| 20 R3 | Support of `headers` property in _connectionHandler_ |
+| リリース  | 内容                                         |
+| ----- | ------------------------------------------ |
+| 20 R3 | _connectionHandler_ で `headers` プロパティをサポート |
 
 </details>
 
@@ -82,18 +82,18 @@ WebSocketオブジェクトは、以下のプロパティと機能を提供し�
 
 <!-- END REF -->
 
-The `4D.WebSocket.new()` function <!-- REF #4D.WebSocket.new().Summary -->creates and returns a new [`4D.WebSocket` object](#websocket-object) connected to the WebSocket server at the address you passed in _url_<!-- END REF -->. The `4D.WebSocket` object provides an API for creating and managing a WebSocket connection to a server, as well as sending and receiving data to and from the server.
+The `4D.WebSocket.new()` function <!-- REF #4D.WebSocket.new().Summary -->creates and returns a new [`4D.WebSocket` object](#websocket-object) connected to the WebSocket server at the address you passed in _url_<!-- END REF -->. `4D.WebSocket` オブジェクトは、サーバーとの WebSocket接続の作成と管理、およびデータの送受信のための API を提供します。
 
-In _url_, pass the URL to which the WebSocket server will respond. 以下の URLパターンが使用できます:
+_url_には、WebSocketサーバーが応答する URL を渡します。 以下の URLパターンが使用できます:
 
-- `ws://host[:port]path[?query]` for standard connections
-- `wss://host[:port]path[?query]` for TLS secured connections
+- 標準接続用: `ws://host[:port]path[?query]`
+- TLSセキュア接続用: `wss://host[:port]path[?query]`
 
-If the connection is not possible, a `null` object is returned and an error is generated (that you can intercept using a method installed with `ON ERR CALL`).
+接続できない場合、`null` オブジェクトが返され、エラーが生成されます (このエラーは `ON ERR CALL` で実装したメソッドによってインターセプトできます)。
 
-### _connectionHandler_ parameter
+### _connectionHandler_ パラメーター
 
-In _connectionHandler_, you can pass an object containing callback functions to be called according to connection events, as well as data type and headers to handle.
+_connectionHandler_ には、接続イベントに応じて呼び出されるコールバック関数のほか、処理するデータ型やヘッダーを含むオブジェクトを渡すことができます。
 
 - コールバックは、接続を開始したフォームまたはワーカーのコンテキストで自動的に呼び出されます。
 - フォームまたはワーカーが閉じられていない限り、WebSocket は有効です。
@@ -109,14 +109,14 @@ In _connectionHandler_, you can pass an object containing callback functions to 
 
 以下は、コールバック呼び出しの流れです:
 
-1. `onOpen` is executed once
-2. Zero or several `onMessage` are executed
-3. Zero or one `onError` is executed (stops the processing)
-4. `onTerminate` is always executed
+1. `onOpen` は 1回実行されます。
+2. `onMessage` が 0回以上実行されます。
+3. `onError` が 0回または 1回実行されます (処理を停止します)。
+4. `onTerminate` は常に実行されます。
 
 #### 例題
 
-You want to set headers in the `WSConnectionHandler` user class:
+`WSConnectionHandler` ユーザークラスでヘッダーを設定します:
 
 ```4d
 // WSConnectionHandler class
@@ -191,13 +191,13 @@ The `.id` property contains <!-- REF #WebSocketClass.id.Summary -->the unique id
 
 The `.send()` function <!-- REF #WebSocketClass.send().Summary -->sends _message_ to the WebSocket server in the defined data type (Text, Blob, or Object)<!-- END REF -->.
 
-The following contents are sent depending on the _message_ type:
+_メッセージ_ の型によって、以下の内容が送信されます:
 
-| タイプ    | 内容                                                                                                                                     |
-| ------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Text   | UTF-8 のテキスト                                                                                                                            |
-| Blob   | バイナリデータ                                                                                                                                |
-| Object | Text in JSON UTF-8 (same result as with [`JSON Stringify`](https://doc.4d.com/4dv20/help/command/en/page1217.html)) |
+| タイプ    | 内容                                                                                                                      |
+| ------ | ----------------------------------------------------------------------------------------------------------------------- |
+| Text   | UTF-8 のテキスト                                                                                                             |
+| Blob   | バイナリデータ                                                                                                                 |
+| Object | JSON UTF-8 のテキスト ([`JSON Stringify`](https://doc.4d.com/4dv20/help/command/ja/page1217.html) と同じ結果)。 |
 
 <!-- END REF -->
 
@@ -234,12 +234,12 @@ The `.status` property contains <!-- REF #WebSocketClass.status.Summary -->the c
 
 The `.terminate()` function <!-- REF #WebSocketClass.terminate().Summary -->closes the WebSocket connection, along with optional _code_ and _reason_ parameters<!-- END REF -->.
 
-In _code_, you can pass a status code explaining why the connection is being closed (see also [WebSocket Connection Close Code in the RFC6455](https://www.rfc-editor.org/rfc/rfc6455.html#section-7.1.5)):
+_code_ には、接続を閉じる理由を説明するステータスコードを渡すことができます ([RFC6455 の WebSocket Connection Close Code](https://www.rfc-editor.org/rfc/rfc6455.html#section-7.1.5) も参照ください):
 
 - 指定しなかった場合、接続のクローズコードは自動的に設定されます: 通常終了の場合は 1000、そうでない場合は、接続が切断された実際の理由を示す 1001〜1015 の標準値。
-- 指定された場合、この code パラメーターの値は自動設定の値をオーバーライドします。 値は整数でなくてはなりません。 1000、または 3000-4999 の範囲のカスタムコードが利用できます。 If you specify a _code_ value, you should also specify a _reason_ value.
+- 指定された場合、この code パラメーターの値は自動設定の値をオーバーライドします。 値は整数でなくてはなりません。 1000、または 3000-4999 の範囲のカスタムコードが利用できます。 _code_ を指定する場合は、_reason_ の値も指定する必要があります。
 
-In _reason_, you can pass a string describing why the connection is being closed.
+_reason_ には、接続を閉じる理由を説明するテキストを渡すことができます。
 
 <!-- END REF -->
 
@@ -251,7 +251,7 @@ In _reason_, you can pass a string describing why the connection is being closed
 
 #### 説明
 
-The `.url` property contains <!-- REF #WebSocketClass.url.Summary -->the URL to which the WebSocket has connected<!-- END REF -->. It is the URL you passed to the [`new()`](#4dwebsocketnew) function.
+The `.url` property contains <!-- REF #WebSocketClass.url.Summary -->the URL to which the WebSocket has connected<!-- END REF -->. これは、[`new()`](#4dwebsocketnew) 関数に渡した URL と同じです。
 
 このプロパティは 読み取り専用 です。
 
