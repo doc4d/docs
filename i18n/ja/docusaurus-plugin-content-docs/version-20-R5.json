@@ -268,19 +268,19 @@
     "description": "The generated-index page title for category REST API in sidebar docs"
   },
   "sidebar.docs.category.REST API.link.generated-index.description": {
-    "message": "Exposing your datastore to REST and using the REST API.",
+    "message": "データストアを REST に公開し、REST API を使用する。",
     "description": "The generated-index page description for category REST API in sidebar docs"
   },
   "sidebar.docs.category.Exposing your datastore in REST": {
-    "message": "Exposing your datastore in REST",
+    "message": "データストアを REST に公開する",
     "description": "The label for category Exposing your datastore in REST in sidebar docs"
   },
   "sidebar.docs.category.Exposing your datastore in REST.link.generated-index.title": {
-    "message": "Exposing your datastore in REST",
+    "message": "データストアを REST に公開する",
     "description": "The generated-index page title for category Exposing your datastore in REST in sidebar docs"
   },
   "sidebar.docs.category.Exposing your datastore in REST.link.generated-index.description": {
-    "message": "Configure your datastore for REST access",
+    "message": "RESTアクセスのためにデータストアを設定する",
     "description": "The generated-index page description for category Exposing your datastore in REST in sidebar docs"
   },
   "sidebar.docs.category.API (general)": {
@@ -332,7 +332,7 @@
     "description": "The generated-index page description for category Access Rights in sidebar docs"
   },
   "sidebar.docs.category.Forms": {
-    "message": "Forms",
+    "message": "フォーム",
     "description": "The label for category Forms in sidebar docs"
   },
   "sidebar.docs.category.Form Editor": {
