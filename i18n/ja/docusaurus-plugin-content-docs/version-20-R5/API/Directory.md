@@ -21,7 +21,7 @@ title: Directory クラス
 
 The `.creationDate` property returns <!-- REF #directory.creationDate.Summary -->the creation date of the folder<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -45,7 +45,7 @@ This property is **read-only**.
 
 The `.creationTime` property returns <!-- REF #directory.creationTime.Summary -->the creation time of the folder<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -69,7 +69,7 @@ This property is **read-only**.
 
 The `.exists` property returns <!-- REF #directory.exists.Summary -->true if the folder exists on disk<!-- END REF -->, and false otherwise.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -93,7 +93,7 @@ This property is **read-only**.
 
 The `.extension` property <!-- REF #directory.extension.Summary -->returns the extension of the folder name (if any)<!-- END REF -->. 拡張子は必ず"." で始まります。 フォルダー名が拡張子を持たない場合には、このプロパティは空の文字列を返します。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -117,7 +117,7 @@ This property is **read-only**.
 
 The `.fullName` property <!-- REF #directory.fullName.Summary -->returns the full name of the folder, including its extension (if any)<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -141,7 +141,7 @@ This property is **read-only**.
 
 The `.hidden` property returns <!-- REF #directory.hidden.Summary --> true if the folder is set as "hidden" at the system level<!-- END REF -->, and false otherwise.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -165,7 +165,7 @@ This property is **read-only**.
 
 The `.isAlias` property returns <!-- REF #directory.isAlias.Summary -->always **false** for a `Folder` object<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -189,7 +189,7 @@ This property is **read-only**.
 
 The `.isFile` property returns <!-- REF #directory.isFile.Summary -->always **false** for a folder<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -213,7 +213,7 @@ This property is **read-only**.
 
 The `.isFolder` property returns <!-- REF #directory.isFolder.Summary -->always **true** for a folder<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -237,9 +237,9 @@ This property is **read-only**.
 
 The `.isPackage` property returns <!-- REF #directory.isPackage.Summary -->true if the folder is a package on macOS  (and exists on disk)<!-- END REF -->. それ以外の場合は false を返します。
 
-On Windows, `.isPackage` always returns **false**.
+Windows 上においては、`.isPackage` は常に **false** を返します。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -263,7 +263,7 @@ This property is **read-only**.
 
 The `.modificationDate` property returns <!-- REF #directory.modificationDate.Summary --> the date of the folder's last modification<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -287,7 +287,7 @@ This property is **read-only**.
 
 The `.modificationTime` property returns <!-- REF #directory.modificationTime.Summary -->the time of the folder's last modification<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -311,7 +311,7 @@ This property is **read-only**.
 
 The `.name` property returns <!-- REF #directory.name.Summary --> the name of the folder, without extension (if any)<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -335,7 +335,7 @@ This property is **read-only**.
 
 The `.original` property returns <!-- REF #directory.original.Summary -->the same Folder object as the folder<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 > このプロパティは、フォルダーやファイルを処理する汎用的なコードを書くために使用できます。
 
@@ -363,7 +363,7 @@ The `.parent` property returns <!-- REF #directory.parent.Summary -->the parent 
 
 親フォルダーが存在しない場合 (root) は、このプロパティは null値を返します。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -387,7 +387,7 @@ This property is **read-only**.
 
 The `.path` property returns <!-- REF #directory.path.Summary -->the POSIX path of the folder<!-- END REF -->. パスがファイルシステムを表す場合 (例: "/DATA/")、ファイルシステムが返されます。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -411,7 +411,7 @@ This property is **read-only**.
 
 The `.platformPath` property returns <!-- REF #directory.platformPath.Summary -->the path of the folder expressed with the current platform syntax<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -433,12 +433,12 @@ This property is **read-only**.
 
 <!-- REF #directory.copyTo().Params -->
 
-| 引数                | タイプ                       |     | 説明                                          |
-| ----------------- | ------------------------- | :-: | ------------------------------------------- |
-| destinationFolder | 4D.Folder |  -> | 宛先フォルダー                                     |
-| newName           | Text                      |  -> | コピー先フォルダーの名前                                |
-| overwrite         | Integer                   |  -> | `fk overwrite` to replace existing elements |
-| 戻り値               | 4D.Folder |  <- | コピーされたフォルダー                                 |
+| 引数                | タイプ                       |     | 説明                                |
+| ----------------- | ------------------------- | :-: | --------------------------------- |
+| destinationFolder | 4D.Folder |  -> | 宛先フォルダー                           |
+| newName           | Text                      |  -> | コピー先フォルダーの名前                      |
+| overwrite         | Integer                   |  -> | 既存要素を上書きするには `fk overwrite` を渡します |
+| 戻り値               | 4D.Folder |  <- | コピーされたフォルダー                       |
 
 <!-- END REF -->
 
@@ -446,11 +446,11 @@ This property is **read-only**.
 
 The `.copyTo()` function <!-- REF #directory.copyTo().Summary -->copies the `Folder` object into the specified _destinationFolder_<!-- END REF -->.
 
-The _destinationFolder_ must exist on disk, otherwise an error is generated.
+_destinationFolder_ 引数が指定するフォルダーはディスク上に存在している必要があり、そうでない場合にはエラーが生成されます。
 
-デフォルトで、フォルダーは元の名前を維持したままコピーされます。 If you want to rename the copy, pass the new name in the _newName_ parameter. 新しい名前は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。そうでない場合、エラーが返されます。
+デフォルトで、フォルダーは元の名前を維持したままコピーされます。 コピーの際にフォルダー名を変更したい場合、新しい名前を _newName_ に渡します。 新しい名前は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。そうでない場合、エラーが返されます。
 
-If a folder with the same name already exists in the _destinationFolder_, by default 4D generates an error. You can pass the `fk overwrite` constant in the _overwrite_ parameter to ignore and overwrite the existing file
+_destinationFolder_ 引数が指定するフォルダー内に同じ名前のフォルダーが既に存在する場合、4D はデフォルトでエラーを生成します。 _overwrite_ に `fk overwrite` 定数を渡すことで、既存のフォルダーを無視して上書きすることができます:
 
 | 定数             | 値 | 説明                 |
 | -------------- | - | ------------------ |
@@ -458,11 +458,11 @@ If a folder with the same name already exists in the _destinationFolder_, by def
 
 **戻り値**
 
-The copied `Folder` object.
+コピーされた `Folder` オブジェクト。
 
 #### 例題
 
-You want to copy a Pictures _folder_ from the user's Document folder to the Database folder:
+ユーザーのドキュメントフォルダーにあるピクチャーフォルダーを、データベースフォルダー内にコピーします。
 
 ```4d
 var $userImages; $copiedImages : 4D.Folder
@@ -501,11 +501,11 @@ $copiedImages:=$userImages.copyTo(Folder(fk database folder);fk overwrite)
 
 The `.file()` function creates <!-- REF #directory.file().Summary -->a `File` object inside the `Folder` object and returns its reference<!-- END REF -->.
 
-In _path_, pass a relative POSIX path to designate the file to return. このパスは、親フォルダーを起点として評価されます。
+_path_ には、返すべきファイルの相対的パスを POSIX 形式で渡します。 このパスは、親フォルダーを起点として評価されます。
 
 **戻り値**
 
-A `File` object or null if _path_ is invalid.
+`File` オブジェクト (無効な POSIX _path_ の場合には null)。
 
 #### 例題
 
@@ -547,7 +547,7 @@ The `.files()` function returns <!-- REF #directory.files().Summary -->a collect
 
 > エイリアスまたはシンボリックリンクは解決されません。
 
-By default, if you omit the _options_ parameter, only the files at the first level of the folder are returned in the collection, as well as invisible files or folders. You can modify this by passing, in the _options_ parameter, one or more of the following constants:
+_options_引数を渡さなかった場合はデフォルトで、フォルダーの第一階層にあるファイルのみがコレクションに返されます。これには非表示のファイルや、フォルダーも含まれます。 _options_ 引数に以下の定数を一つ以上渡すことで、このふるまいを変更することができます:
 
 | 定数                    | 値 | 説明                                    |
 | --------------------- | - | ------------------------------------- |
@@ -556,7 +556,7 @@ By default, if you omit the _options_ parameter, only the files at the first lev
 
 **戻り値**
 
-Collection of `File` objects.
+`File` オブジェクトのコレクション。
 
 #### 例題 1
 
@@ -611,11 +611,11 @@ Collection of `File` objects.
 
 The `.folder()` function <!-- REF #directory.folder().Summary -->creates a `Folder` object inside the parent `Folder` object and returns its reference<!-- END REF -->.
 
-In _path_, pass a relative POSIX path to designate the folder to return. このパスは、親フォルダーを起点として評価されます。
+_path_ には、返すべきフォルダーの相対的パスを POSIX 形式で渡します。 このパスは、親フォルダーを起点として評価されます。
 
 **戻り値**
 
-A `Folder` object or null if _path_ is invalid.
+`Folder` オブジェクト (無効な POSIX _path_ の場合には null)。
 
 #### 例題
 
@@ -655,7 +655,7 @@ A `Folder` object or null if _path_ is invalid.
 
 The `.folders()` function <!-- REF #directory.folders().Summary -->returns a collection of `Folder` objects contained in the parent folder<!-- END REF -->.
 
-By default, if you omit the _options_ parameter, only the folders at the first level of the folder are returned in the collection. You can modify this by passing, in the _options_ parameter, one or more of the following constants:
+_options_引数を渡さなかった場合はデフォルトで、フォルダーの第一階層にあるフォルダーのみがコレクションに返されます。 _options_ 引数に以下の定数を一つ以上渡すことで、このふるまいを変更することができます:
 
 | 定数                    | 値 | 説明                                     |
 | --------------------- | - | -------------------------------------- |
@@ -664,7 +664,7 @@ By default, if you omit the _options_ parameter, only the folders at the first l
 
 **戻り値**
 
-Collection of `Folder` objects.
+`Folder` オブジェクトのコレクション。
 
 #### 例題
 
@@ -706,12 +706,12 @@ Collection of `Folder` objects.
 
 The `.getIcon()` function <!-- REF #directory.getIcon().Summary -->returns the icon of the folder<!-- END REF -->.
 
-The optional _size_ parameter specifies the dimensions in pixels of the returned icon. この値は、実際にはアイコンを格納している正方形の一辺の長さを表しています。 アイコンは通常、32x32ピクセル ("大きいアイコン") または 16x16ピクセル ("小さいアイコン") で定義されています。 この引数に 0 を渡すか省略した場合、"大きいアイコン" が返されます。
+任意の _size_ 引数を渡すと、返されるアイコンのサイズをピクセル単位で指定することができます。 この値は、実際にはアイコンを格納している正方形の一辺の長さを表しています。 アイコンは通常、32x32ピクセル ("大きいアイコン") または 16x16ピクセル ("小さいアイコン") で定義されています。 この引数に 0 を渡すか省略した場合、"大きいアイコン" が返されます。
 
 フォルダーがディスク上に存在しない場合、デフォルトの空のアイコンが返されます。
 
 **戻り値**
 
-Folder icon [picture](Concepts/dt_picture.md).
+フォルダーアイコンの [ピクチャー](Concepts/dt_picture.md)。
 
 <!-- END REF -->
