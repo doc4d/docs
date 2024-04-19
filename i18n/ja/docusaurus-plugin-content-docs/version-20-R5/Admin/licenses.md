@@ -3,7 +3,7 @@ id: licenses
 title: 4D ライセンスの管理
 ---
 
-ディスクへのインストール終了後、4D 製品を利用するためにはアクティベーションをおこないます。 Usually, the activation is automatic if you [sign in using your 4D account](GettingStarted/Installation.md) in the Welcome Wizard.
+ディスクへのインストール終了後、4D 製品を利用するためにはアクティベーションをおこないます。 [4D アカウントでサインイン](GettingStarted/Installation.md) した場合、アクティベーションは自動的におこなわれます。
 
 しかし、場合によってはライセンスを手動でアクティベーションする必要があります。たとえば:
 
@@ -17,11 +17,11 @@ title: 4D ライセンスの管理
 
 ## 初回のアクティベーション
 
-With 4D, select the **License Manager...** command from the **Help** menu of the application. 4D Server でおこなう場合は、4D Server アプリケーションを起動します。 The dialog box for choosing the [activation mode](#activation-mode) appears.
+4D でおこなう場合は、**ヘルプ** メニューから **ライセンスマネージャー...** を選択します。 4D Server でおこなう場合は、4D Server アプリケーションを起動します。 [アクティベーションモード](#アクティベーションモード) を選択するダイアログボックスが表示されます。
 
 ![](../assets/en/getStart/server1.png)
 
-4D は 3つのアクティベーションモードを用意しています。 We recommend **Instant Activation**.
+4D は 3つのアクティベーションモードを用意しています。 推奨されるのは **オンラインアクティベーション** です。
 
 ### オンラインアクティベーション
 
@@ -37,30 +37,30 @@ With 4D, select the **License Manager...** command from the **Help** menu of the
 
 ### オフラインアクティベーション
 
-If you are unable to use [instant activation](#instant-activation) because your computer does not have internet access, please proceed to deferred activation using the following steps.
+コンピューターからインターネットへのアクセスがないために [オンラインアクティベーション](#オンラインアクティベーション) が出来ない場合、以下の手順を踏んでオフラインアクティベーションへと進んで下さい。
 
-1. In the License Manager window, select the **Deferred Activation** tab.
-2. Enter the License Number and your e-mail address, then click **Generate file** to create the ID file (_reg.txt_).
+1. **ヘルプ** メニューから "ライセンスマネージャー" を開き、**オフラインアクティベーション** タブを選択します。
+2. ライセンス番号とメールアドレスを入力し、**ファイルを生成** をクリックして IDファイル (_reg.txt_) を作成します。
 
 ![](../assets/en/getStart/activ3.png)
 
-3. Save the _reg.txt_ file to a USB drive and take it to a computer that has internet access.
-4. On the machine with internet access, login to [https://activation.4d.com](https://activation.4d.com).
-5. On the Web page, click on the **Choose File...** button and select the _reg.txt_ file from steps 3 and 4; then click on the **Activate** button.
+3. 生成された _reg.txt_ ファイルを USBドライブへと保存し、インターネット環境があるコンピューターへと移動させます。
+4. インターネット環境のあるマシンから、[https://store.4d.com/jp/activation.shtml](https://store.4d.com/jp/activation.shtml) にログインします。
+5. Web ページ上にて、**ファイルを選択...** ボタンをクリックし、手順3と4で生成した _reg.txt_ ファイルを選択し、**Activate** ボタンをクリックします。
 6. シリアルファイルをダウンロードします。
 
 ![](../assets/en/getStart/activ4.png)
 
-7. Save the _license4d_ file(s) on a shared media and transfer them back to the 4D machine from step 1.
-8. Now back on the machine with 4D, still on the **Deferred Activation** page, click **Next**; then click the **Load...** button and select a _license4d_ file from the shared media from step 7.
+7. _license4d_ ファイルを、何らかの共有メディアに保存し、手順1で使用している4Dマシンへと移動させます。
+8. **"オフラインアクティベーション"** 画面のままになっている、4D をインストールしたマシン上にて、画面上の **次へ** をクリックし、次に **読み込み...** ボタンをクリックして、手順7の共有メディアにある _license4d_ ファイルを選択します。
 
 ![](../assets/en/getStart/activ5.png)
 
-With the license file loaded, click on **Next**.
+ライセンスファイルが読み込まれた状態で、**次へ** をクリックします。
 
 ![](../assets/en/getStart/activ6.png)
 
-9. Click on the **Add N°** button to add another license. これらの手順を、手順6のライセンスがすべて追加されるまで繰り返します。
+9. 他のライセンスを追加するためには **番号追加** ボタンをクリックします。 これらの手順を、手順6のライセンスがすべて追加されるまで繰り返します。
 
 これで、お使いの4Dアプリケーションのアクティベーションが完了しました。
 
@@ -72,35 +72,36 @@ With the license file loaded, click on **Next**.
 
 アプリケーションの拡張ライセンスは、いつでも追加することができます。
 
-Choose the **License Manager...** command from the **Help** menu of the 4D or 4D Server application, then click on the **Refresh** button:
+4D または 4D Server アプリケーションの **ヘルプ** メニューから **ライセンスマネージャー...** を選択し、**更新** ボタンをクリックしてください:
 
 ![](../assets/en/getStart/licens1.png)
 
-This button connects you to our customer database and automatically activates any new or updated licenses related to the current license (the current license is displayed in **bold** in the "Active Licenses" list). その際、4D アカウントとパスワードの入力が必要です。
+このボタンを押すと 4D カスタマーデータベースに接続し、利用中のライセンスに紐付いている新しい、あるいは更新されたライセンスの自動アクティベーションがおこなわれます (利用中のライセンスは "有効なライセンス" 一覧内で **太字** で表示されているものです)。 その際、4D アカウントとパスワードの入力が必要です。
 
-- If you purchased additional expansions for a 4D Server, you do not need to enter any license number -- just click **Refresh**.
+- 4D Server に追加のエクスパンションを購入した場合、ライセンス番号は一切入力する必要がありません。**更新** ボタンをクリックすれば、すべて完了します。
 - 4D Server の初回アクティベーション時のみ、サーバーのライセンス番号を入力すれば、購入した他のエクスパンションもすべて自動的に有効化されます。
 
-You can use the **Refresh** button in the following contexts:
+**更新** ボタンは、以下のような場合に使用します:
 
 - 追加のエクスパンションを購入したとき、またはそれをアクティベートしたいとき。
 - パートナーなどの失効した有限ライセンスを更新するとき。
 
 ## 4D オンラインストア
 
-4D ストアでは、4D製品の注文、アップグレード、延長、管理等をおこなうことができます。 You can reach the store at the following address: [https://store.4d.com/us/](https://store.4d.com/us/) (you will need to select your country).
+4D ストアでは、4D製品の注文、アップグレード、延長、管理等をおこなうことができます。 ストアは以下のアドレスからアクセス可能です: [https://store.4d.com/jp/](https://store.4d.com/jp/)
 
-Click **Login** to sign in using your existing account or **New Account** to create a new one, then follow the on-screen instructions.
+既存アカウントで **ログイン** するか、または **新規アカウント** を作成し、画面上の指示に従ってください。<br /><br />
+**注:** パスワードを忘れてしまった場合、"パスワードをお忘れの方" をクリックして下さい (ログイン画面右側のヘルプメニューにあります)。数分後に指定されたアドレスへ、パスワードリセット用の自動メールが送信されます。
 
 ### ライセンス管理
 
-After you log in, you can click on **License list** at the top right of the page:
+ログイン後、ページ右側のマイ・ライセンスメニューから **ライセンスの一覧** をクリックします:
 
 ![](../assets/en/getStart/licens2.png)
 
 ここでは、ライセンスをプロジェクト単位でグループ化して管理することができます。
 
-Select the appropriate license from the list then click **Link to a project... >**:
+一覧から任意のライセンスを選択し、**プロジェクトにリンク... >**:
 
 ![](../assets/en/getStart/licens3.png)
 
@@ -132,10 +133,10 @@ Select the appropriate license from the list then click **Link to a project... >
 
 日本にお住まいの方:
 
-- Web: [https://us.4d.com/4d-technical-support](https://us.4d.com/4d-technical-support)
+- Web: [https://jp.4d.com/technical-support](https://jp.4d.com/technical-support)
 - Tel: 03-4400-1789
 
 
 
-- Web: [https://uk.4d.com/4d-technical-support](https://uk.4d.com/4d-technical-support)
+-
 -
