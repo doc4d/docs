@@ -3,7 +3,7 @@ id: CollectionClass
 title: Collection
 ---
 
-The Collection class manages [Collection](Concepts/dt_collection.md) type variables.
+Collectionクラスは [コレクション](Concepts/dt_collection.md) 型の変数を扱います。
 
 コレクションは次のように初期化します:
 
@@ -86,15 +86,15 @@ The Collection class manages [Collection](Concepts/dt_collection.md) type variab
 
 #### 説明
 
-The `New collection` command <!-- REF #_command_.New collection.Summary --> creates a new empty or prefilled collection<!-- END REF --> and returns its reference.
+`New collection` コマンドは、<!-- REF #_command_.New collection.Summary -->空の、あるいは値の入った新規コレクションを作成し、その参照を返します<!-- END REF -->。
 
-If you do not pass any parameters, `New collection` creates an empty collection and returns its reference.
+引数を渡さなかった場合、`New collection` は空のコレクションを作成し、その参照を返します。
 
 返された参照は、コレクション型の 4D変数に代入する必要があります。
 
-> Keep in mind that `var : Collection` or `C_COLLECTION` statements declare a variable of the `Collection` type but does not create any collection.
+> `var : Collection` や `C_COLLECTION` ステートメントはコレクション型の変数を宣言しますが、コレクション自体は作成しないという点に注意してください。
 
-Optionally, you can prefill the new collection by passing one or several _value_(s) as parameter(s).
+任意で、一つ以上の _value_ 引数を渡すことで、あらかじめ値の入った新しいコレクションを作成することができます。
 
 または、あとから代入によって要素を一つずつ追加・編集していくことができます。 例:
 
@@ -102,14 +102,14 @@ Optionally, you can prefill the new collection by passing one or several _value_
  myCol[10]:="My new element"
 ```
 
-If the new element index is beyond the last existing element of the collection, the collection is automatically resized and all new intermediary elements are assigned a **null** value.
+コレクションの最終要素を超える要素番号 (インデックス) を指定した場合、コレクションは自動的にリサイズされ、合い間の要素にはすべて **null** 値が割り当てられらます。
 
 サポートされている型 (数値、テキスト、日付、ピクチャー、ポインター、オブジェクト、コレクション等) であれば、個数に制限なく値を渡すことができます。 配列とは異なり、コレクションでは異なる型のデータを混ぜることができます。
 
 ただし以下の変換問題については注意する必要があります:
 
-- If you pass a pointer, it is kept "as is"; it is evaluated using the `JSON Stringify` command
-- 日付は、"dates inside objects" データベース設定に応じて、"yyyy-mm-dd" という日付、または "YYYY-MM-DDTHH:mm:ss.SSSZ" というフォーマットの文字列で保存されます。 コレクションに保存する前に 4D日付をテキストに変換した場合、プログラムはデフォルトでローカルのタイムゾーンを使用します。 You can modify this behavior using the `Dates inside objects` selector of the `SET DATABASE PARAMETER` command.
+- 渡されたポインターは、そのまま保存されます。ポインターは `JSON Stringify` コマンドを使用することで評価されます。
+- 日付は、"dates inside objects" データベース設定に応じて、"yyyy-mm-dd" という日付、または "YYYY-MM-DDTHH:mm:ss.SSSZ" というフォーマットの文字列で保存されます。 コレクションに保存する前に 4D日付をテキストに変換した場合、プログラムはデフォルトでローカルのタイムゾーンを使用します。 このふるまいは `SET DATABASE PARAMETER` コマンドで `Dates inside objects` セレクターを使用することで変更可能です。
 - 時間を渡した場合、それはミリ秒の数 (実数) として保存されます。
 
 #### 例題 1
@@ -129,7 +129,7 @@ If the new element index is beyond the last existing element of the collection, 
 ```4d
  var $filledColl : Collection
  $filledColl:=New collection(33;"mike";"november";->myPtr;Current date)
-  //$filledColl=[33,"mike","november","->myPtr","2017-03-28T22:00:00.000Z"]
+  // $filledColl=[33,"mike","november","->myPtr","2017-03-28T22:00:00.000Z"]
 ```
 
 #### 例題 3
@@ -168,25 +168,25 @@ If the new element index is beyond the last existing element of the collection, 
 
 #### 説明
 
-The `New shared collection` command <!-- REF #_command_.New shared collection.Summary --> creates a new empty or prefilled shared collection<!-- END REF --> and returns its reference.
+`New shared collection` コマンドは、<!-- REF #_command_.New shared collection.Summary -->空の、あるいは値が入った新規コレクションを作成し、その参照を返します<!-- END REF -->。
 
-Adding an element to this collection using the assignment operator must be surrounded by the [`Use...End use`](Concepts/shared.md#useend-use) structure, otherwise an error is generated (this is not necessary when adding elements using functions such as [`push()`](#push) or [`map()`](#map) because they automatically trigger an internal _Use...End use_). Reading an element without a _Use...End use_ structure is, however, possible.
+このコレクションに要素を追加する場合には [Use...End use](Concepts/shared.md#useend-use) 構造でくくる必要があり、そうしない場合にはエラーが返されます。ただし、[`push()`](#push) や [`map()`](#map) などの関数を使用して要素を追加する場合は、自動で内部的に _Use...End use_ が使用されるため、必要ありません。 ただし、属性の読み取りは [`Use...End use`](Concepts/shared#useend-use) 構造の外側でも可能です。
 
 :::info
 
-For more information on shared collections, please refer to the [Shared objects and collections](Concepts/shared.md) page.
+共有コレクションについての詳細は、[共有オブジェクトと共有コレクション](Concepts/shared.md) のページを参照してください。
 
 :::
 
-If you do not pass any parameters, `New shared collection` creates an empty shared collection and returns its reference.
+引数を渡さない場合、`New shared collection` は空のコレクションを作成し、その参照を返します。
 
 返された参照は、コレクション型の 4D変数に代入する必要があります。
 
-> Keep in mind that `var : Collection` or `C_COLLECTION` statements declare a variable of the `Collection` type but do not create any collection.
+> `var : Collection` や `C_COLLECTION` ステートメントはコレクション型の変数を宣言しますが、コレクション自体は作成しないという点に注意してください。
 
-Optionally, you can prefill the new shared collection by passing one or several _value_(s) as parameter(s). または、あとからオブジェクト記法による代入で要素を一つずつ追加・編集していくことができます (例題参照)。
+任意で、一つ以上の _value_ 引数を渡すことで、あらかじめ値の入った新しい共有コレクションを作成することができます。 または、あとからオブジェクト記法による代入で要素を一つずつ追加・編集していくことができます (例題参照)。
 
-If the new element index is beyond the last existing element of the shared collection, the collection is automatically resized and all new intermediary elements are assigned a **null** value.
+共有コレクションの最終要素を超える要素番号 (インデックス) を指定した場合、共有コレクションは自動的にリサイズされ、合い間の要素にはすべて **null** 値が割り当てられらます。
 
 以下のサポートされる型であれば、いくつでも値を渡すことができます:
 
@@ -205,7 +205,7 @@ If the new element index is beyond the last existing element of the shared colle
 
 :::
 
-(\*)When a shared object or collection is added to a shared collection, they share the same _locking identifier_. For more information on this point, refer to [4D Doc Center](https://doc.4d.com).
+(\*) 共有オブジェクトおよびコレクションが共有コレクションに追加された場合、それらは同じ _ロック識別子_ を共有します。 この点についてのより詳細は、[4D Doc Center](https://doc.4d.com) を参照ください。
 
 #### 例題
 
@@ -241,13 +241,13 @@ If the new element index is beyond the last existing element of the shared colle
 
 #### 説明
 
-The `.at()` function <!-- REF #collection.at().Summary -->returns the item at position _index_, allowing for positive and negative integers<!-- END REF -->.
+`.at()` 関数は、<!-- REF #collection.at().Summary -->_index_ の位置にある要素を返します (_index_ は正負の整数)<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更しません。
 
 負の整数が渡された場合、コレクションの最後の要素から逆向きに数えます。
 
-The function returns Undefined if _index_ is beyond collection limits.
+_index_ がコレクションの範囲を超える場合、この関数は Undefined を返します。
 
 #### 例題
 
@@ -288,17 +288,17 @@ $element:=$col.at(10) // undefined
 
 #### 説明
 
-The `.average()` function <!-- REF #collection.average().Summary -->returns the arithmetic mean (average) of defined values in the collection instance<!-- END REF -->.
+`.average()` 関数は、<!-- REF #collection.average().Summary -->コレクションインスタンス内で定義されている値の算術平均を返します<!-- END REF -->。
 
 計算の対象となるのは数値のみです (他の型の要素は無視されます)。
 
-If the collection contains objects, pass the _propertyPath_ parameter to indicate the object property to take into account.
+コレクションがオブジェクトを格納している場合には、計算するオブジェクトプロパティのパスを _propertyPath_ に渡します。
 
-`.average()` returns `undefined` if:
+`.average()` は以下の場合には `undefined` を返します:
 
 - コレクションが空の場合
 - コレクションに数値が含まれていない場合
-- _propertyPath_ is not found in the collection.
+- _propertyPath_ 引数で指定したパスがコレクション内で見つからない場合
 
 #### 例題 1
 
@@ -345,7 +345,7 @@ If the collection contains objects, pass the _propertyPath_ parameter to indicat
 
 #### 説明
 
-The `.clear()` function <!-- REF #collection.clear().Summary -->removes all elements from the collection instance and returns an empty collection<!-- END REF -->.
+`.clear()` 関数は、<!-- REF #collection.clear().Summary -->コレクションインスタンス内の全要素を削除し、空のコレクションを返します<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更します。
 
@@ -386,17 +386,17 @@ $vSize:=$col.length //$vSize=0
 
 #### 説明
 
-The `.combine()` function <!-- REF #collection.combine().Summary -->inserts _col2_ elements at the end or at the specified _index_ position in the collection instance and returns the edited collection<!-- END REF -->. Unlike the `.insert()` function, `.combine()` adds each value of _col2_ in the original collection, and not as a single collection element.
+`.combine()` 関数は、<!-- REF #collection.combine().Summary -->コレクションインスタンスの最後、あるいは _index_ で指定した位置に _col2_ の要素を挿入し、変更された元のコレクションを返します<!-- END REF -->。 `.insert()` 関数とは異なり、`.combine()` は _col2_ の各要素を元のコレクション追加します (_col2_ 自体が単一のコレクション要素としては挿入されるわけではありません)。
 
 > このコマンドは、元のコレクションを変更します。
 
-By default, _col2_ elements are added at the end of the orginal collection. You can pass in _index_ the position where you want the _col2_ elements to be inserted in the collection.
+デフォルトでは、_col2_ の要素は元のコレクションの最後に追加されます。 _index_ に引数を渡すことで、_col2_ の要素を挿入する位置を指定することができます。
 
-> **Warning**: Keep in mind that collection elements are numbered from 0.
+> **警告**: コレクション要素は 0 起点である点に注意してください。
 
-- If _index_ > the length of the collection, the actual starting _index_ will be set to the length of the collection.
-- If _index_ < 0, it is recalculated as _index:=index+length_ (it is considered as the offset from the end of the collection).
-- If the calculated value is negative, _index_ is set to 0.
+- 指定した _index_ がコレクションの length より大きい場合、実際の開始インデックスはコレクションの length に設定されます。
+- _index_ < 0 の場合、_index:=index+length_ として再計算されます (コレクションの終端からのオフセットであるとみなされます)。
+- 計算結果も負の値である場合、_index_ は 0 に設定されます。
 
 #### 例題
 
@@ -425,20 +425,20 @@ $c.combine($fruits;3) //[1,2,3,"Orange","Banana","Apple","Grape",4,5,6]
 
 <!-- REF #collection.concat().Params -->
 
-| 引数    | タイプ                                                            |     | 説明                                                                                              |
-| ----- | -------------------------------------------------------------- | :-: | ----------------------------------------------------------------------------------------------- |
-| value | Number, Text, Object, Collection, Date, Time, Boolean, Picture |  -> | 連結する値。 If _value_ is a collection, all collection elements are added to the original collection |
-| 戻り値   | Collection                                                     |  <- | 元のコレクションに値が追加された新規コレクション                                                                        |
+| 引数    | タイプ                                                            |     | 説明                                                    |
+| ----- | -------------------------------------------------------------- | :-: | ----------------------------------------------------- |
+| value | Number, Text, Object, Collection, Date, Time, Boolean, Picture |  -> | 連結する値。 _value_ がコレクションの場合、コレクションの全要素が元のコレクションに追加されます。 |
+| 戻り値   | Collection                                                     |  <- | 元のコレクションに値が追加された新規コレクション                              |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.concat()` function <!-- REF #collection.concat().Summary -->returns a new collection containing the elements of the original collection with all elements of the _value_ parameter added to the end<!-- END REF -->.
+`.concat()` 関数は、<!-- REF #collection.concat().Summary -->_value_ に指定した要素を元のコレクションの最後に追加した、新しいコレクションを返します<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更しません。
 
-If _value_ is a collection, all its elements are added as new elements at the end of the original collection. If _value_ is not a collection, it is added itself as a new element.
+_value_ がコレクションの場合、その全要素が新しい要素として元のコレクションの最後に追加されます。 _value_ がコレクションでない場合、それ自体が新しい要素として追加されます。
 
 #### 例題
 
@@ -459,10 +459,10 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 
 <details><summary>履歴</summary>
 
-| リリース   | 内容                                                                 |
-| ------ | ------------------------------------------------------------------ |
-| 18 R3  | New _ck shared_ option. New _groupWith_ parameters |
-| v16 R6 | 追加                                                                 |
+| リリース   | 内容                                           |
+| ------ | -------------------------------------------- |
+| 18 R3  | _ck shared_ オプションの追加。 _groupWith_ パラメーターを追加。 |
+| v16 R6 | 追加                                           |
 
 </details>
 
@@ -470,39 +470,39 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 
 <!-- REF #collection.copy().Params -->
 
-| 引数           | タイプ        |     | 説明                                                                                                                                  |
-| ------------ | ---------- | :-: | ----------------------------------------------------------------------------------------------------------------------------------- |
-| option       | Integer    |  -> | `ck resolve pointers`: resolve pointers before copying,<br/>`ck shared`: return a shared collection |
-| groupWithCol | Collection |  -> | 結果のコレクションとグループする共有コレクション                                                                                                            |
-| groupWithObj | Object     |  -> | 結果のコレクションとグループする共有オブジェクト                                                                                                            |
-| 戻り値          | Collection |  <- | 元のコレクションのディープ・コピー                                                                                                                   |
+| 引数           | タイプ        |     | 説明                                                                                                  |
+| ------------ | ---------- | :-: | --------------------------------------------------------------------------------------------------- |
+| option       | Integer    |  -> | `ck resolve pointers`: コピー前にポインターを解決する<br/>`ck shared`: 共有コレクションを返す |
+| groupWithCol | Collection |  -> | 結果のコレクションとグループする共有コレクション                                                                            |
+| groupWithObj | Object     |  -> | 結果のコレクションとグループする共有オブジェクト                                                                            |
+| 戻り値          | Collection |  <- | 元のコレクションのディープ・コピー                                                                                   |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.copy()` function <!-- REF #collection.copy().Summary --> returns a deep copy of the collection instance<!-- END REF -->._**Deep copy**_ means that objects or collections within the original collection are duplicated and do not share any reference with the returned collection.
+`.copy()` 関数は、<!-- REF #collection.copy().Summary --> コレクションインスタンスのディープ・コピーを返します<!-- END REF -->。_**ディープ・コピー**_ とは、元のコレクション内のオブジェクトやコレクションは複製されることを意味し、返されたコレクションと元のコレクションは参照を共有しないということを意味します。
 
 > このコマンドは、元のコレクションを変更しません。
 
-If passed, the _option_ parameter can contain one of the following constants (or both):
+任意の _option_ パラメーターには、以下のどちらか (あるいは両方) の定数を渡すことができます:
 
-| option                | 説明                                                                                                                                                                                                                                                                                                                                                                                                              |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ck resolve pointers` | オリジナルのコレクションがポインター型の値を格納している場合、デフォルトではコピー先のオブジェクトもポインターを格納します。 However, you can resolve pointers when copying by passing the `ck resolve pointers` constant. この場合、コレクション内の各ポインターはコピー時に解決され、解決済みの値が使用されます。                                                                                                                                                                                       |
-| `ck shared`           | By default, `copy()` returns a regular (not shared) collection, even if the command is applied to a shared collection. Pass the `ck shared` constant to create a shared collection. In this case, you can use the _groupWith_ parameter to associate the shared collection with another collection or object (see below). |
+| option                | 説明                                                                                                                                                                                                                  |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ck resolve pointers` | オリジナルのコレクションがポインター型の値を格納している場合、デフォルトではコピー先のオブジェクトもポインターを格納します。 しかしながら、`ck resolve pointers` 定数を渡すことで、コピー時にポインターを解決することができます。 この場合、コレクション内の各ポインターはコピー時に解決され、解決済みの値が使用されます。                                           |
+| `ck shared`           | 共有コレクションに対して適用された場合でも、`copy()` はデフォルトで通常の (非共有の) コレクションを返します。 共有コレクションを作成するには、`ck shared` 定数を渡します。 この場合には、_groupWith_ パラメーターに引数を渡して他の共有オブジェクトまたは共有コレクションに関連づけることもできます (以下参照)。 |
 
-The _groupWithCol_ or _groupWithObj_ parameters allow you to designate a collection or an object with which the resulting collection should be associated.
+_groupWithCol_ または _groupWithObj_ 引数を渡すと、結果のコレクションを関連づけるコレクションまたはオブジェクトを指定できます。
 
 :::note
 
-データストア、データクラス、およびエンティティオブジェクトはコピーできません。 If `.copy()` is called with them, `Null` values are returned.
+データストア、データクラス、およびエンティティオブジェクトはコピーできません。 これらを対象に `.copy()` を呼び出すと、`Null` 値が返されます。
 
 :::
 
 #### 例題 1
 
-We want to copy the _$lastnames_ regular (non shared) collection into the _$sharedObject_ shared object. To do this, we must create a shared copy of the collection (_$sharedLastnames_).
+通常の (非共有の) コレクション _$lastnames \* を、共有オブジェクト _$sharedObject_ 内にコピーします。 このためには、まず共有コレクション (_$sharedLastnames\*) を作成する必要があります。
 
 ```4d
 var $sharedObject : Object
@@ -524,7 +524,7 @@ End use
 
 #### 例題 2
 
-We want to combine _$sharedColl1_ and _$sharedColl2_. これらは異なる共有グループに所属しているため、直接結合した場合にはエラーが生成されます。 Therefore, we must make a shared copy of _$sharedColl1_ and designate _$sharedColl2_ as a shared group for the copy.
+どちらも共有コレクションである _$sharedColl1_ と\*$sharedColl2\* を結合します。 これらは異なる共有グループに所属しているため、直接結合した場合にはエラーが生成されます。 そこで、 _$sharedColl1_ のコピーを作成し、_$sharedColl2_ をそのコピーの共有グループ先に指定します。
 
 ```4d
 var $sharedColl1;$sharedColl2;$copyColl : Collection
@@ -541,7 +541,7 @@ $sharedColl2:=New shared collection(New shared object("lastname";"Brown"))
 
 #### 例題 3
 
-We have a regular collection (_$lastnames_) and we want to put it in the **Storage** of the application. To do this, we must create a shared copy beforehand (_$sharedLastnames_).
+通常のコレクション (_$lastnames_) があり、それをアプリケーションの **Storage** に入れます。 これには、先に共有コレクション (_$sharedLastnames_) を作成しておく必要があります。
 
 ```4d
 var $lastnames;$sharedLastnames : Collection
@@ -559,7 +559,7 @@ End use
 
 #### 例題 4
 
-This example illustrates the use of the `ck resolve pointers` option:
+`ck resolve pointers` オプションを使用した場合のふるまいです:
 
 ```4d
  var $col : Collection
@@ -572,11 +572,11 @@ This example illustrates the use of the `ck resolve pointers` option:
 
  $col2:=$col.copy()
  $col2[1].beta:="World!"
- ALERT($col[0].alpha+" "+$col2[1].beta) //displays "Hello World!"
+ ALERT($col[0].alpha+" "+$col2[1].beta) // "Hello world!" を表示します
 
  $what:="You!"
  $col3:=$col2.copy(ck resolve pointers)
- ALERT($col3[0].alpha+" "+$col3[1].what) //displays "Hello You!"
+ ALERT($col3[0].alpha+" "+$col3[1].what) // "Hello world!" を表示します
 ```
 
 <!-- END REF -->
@@ -606,9 +606,9 @@ This example illustrates the use of the `ck resolve pointers` option:
 
 #### 説明
 
-The `.count()` function <!-- REF #collection.count().Summary -->returns the number of non-null elements in the collection<!-- END REF -->.
+`.count()` 関数は、<!-- REF #collection.count().Summary -->コレクション内の、null ではない要素の個数を返します<!-- END REF -->。
 
-If the collection contains objects, you can pass the _propertyPath_ parameter. In this case, only elements that contain the _propertyPath_ are taken into account.
+コレクションがオブジェクトを含んでいる場合、_propertyPath_ 引数を渡すことができます。 この場合、_propertyPath_ で指定したパスを含む要素のみがカウントされます。
 
 #### 例題
 
@@ -653,16 +653,17 @@ If the collection contains objects, you can pass the _propertyPath_ parameter. I
 
 #### 説明
 
-The `.countValues()` function <!-- REF #collection.countValues().Summary -->returns the number of times value is found in the collection<!-- END REF -->.
+`.countValues()` 関数は、<!-- REF #collection.countValues().Summary -->
+_value_ 引数に指定した値がコレクション内において見つかった回数を返します<!-- END REF -->。
 
-You can pass in _value_:
+_value_ には、以下のいずれかを渡すことができます:
 
 - スカラー値 (テキスト、数値、ブール、日付)
 - オブジェクトあるいはコレクションの参照
 
-For an element to be found, the type of _value_ must be equivalent to the type of the element; the method uses the equality operator.
+要素が検出されるためには、_value_ 引数の型が要素の型と合致している必要があります。このファンクションは等号演算子を使用します。
 
-The optional _propertyPath_ parameter allows you to count values inside a collection of objects: pass in _propertyPath_ the path of the property whose values you want to count.
+任意の _propertyPath_ 引数を渡すと、オブジェクトのコレクションにおける値の個数を数えることができます。 _propertyPath_ には値を検索するプロパティパスを渡します。
 
 > このコマンドは、元のコレクションを変更しません。
 
@@ -709,10 +710,10 @@ The optional _propertyPath_ parameter allows you to count values inside a collec
 
 <details><summary>履歴</summary>
 
-| リリース   | 内容                           |
-| ------ | ---------------------------- |
-| 20     | Support of `ck count values` |
-| v16 R6 | 追加                           |
+| リリース   | 内容                      |
+| ------ | ----------------------- |
+| 20     | `ck count values` をサポート |
+| v16 R6 | 追加                      |
 
 </details>
 
@@ -730,20 +731,21 @@ The optional _propertyPath_ parameter allows you to count values inside a collec
 
 #### 説明
 
-The `.distinct()` function <!-- REF #collection.distinct().Summary -->returns a collection containing only distinct (different) values from the original collection<!-- END REF -->.
+`.distinct()` 関数は、<!-- REF #collection.distinct().Summary -->
+元のコレクションから重複しない (異なる) 値のみを格納した新しいコレクションを返します<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更しません。
 
-返されたコレクションは自動的に並べ替えられています。 **Null** values are not returned.
+返されたコレクションは自動的に並べ替えられています。 **Null** 値は返されません。
 
-If the collection contains objects, you can pass the _propertyPath_ parameter to indicate the object property whose distinct values you want to get.
+コレクションがオブジェクトを格納している場合には、重複しない値を取得するオブジェクトプロパティのパスを _propertyPath_ に渡します。
 
-In the _options_ parameter, you can pass one or a combination of the following constants:
+_options_ 引数として、以下の定数を 1つ、または組み合わせで渡すことができます:
 
-| 定数                | 値  | 説明                                                                                                                                                                                                                         |
-| ----------------- | -- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ck diacritical`  | 8  | 文字の大小とアクセントを区別して評価をおこないます。 省略された場合のデフォルトでは、アクセント等の発音区別符号を無視した評価が実行されます。                                                                                                                                                    |
-| `ck count values` | 32 | 特定の値を持つ要素の数 (重複がなければ 1、重複があればその数) を返します。 When this option is passed, `.distinct()` returns a collection of objects containing a pair of `{"value":*value*;"count":*count*}` attributes. |
+| 定数                | 値  | 説明                                                                                                                                                       |
+| ----------------- | -- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ck diacritical`  | 8  | 文字の大小とアクセントを区別して評価をおこないます。 省略された場合のデフォルトでは、アクセント等の発音区別符号を無視した評価が実行されます。                                                                                  |
+| `ck count values` | 32 | 特定の値を持つ要素の数 (重複がなければ 1、重複があればその数) を返します。 このオプションを渡すと、`.distinct()` は、`{"value":*value*;"count":*count*}` のプロパティを含むオブジェクトのコレクションを返します。 |
 
 #### 例題
 
@@ -779,21 +781,22 @@ In the _options_ parameter, you can pass one or a combination of the following c
 
 <!-- REF #collection.equal().Params -->
 
-| 引数          | タイプ        |     | 説明                                                                                                  |
-| ----------- | ---------- | :-: | --------------------------------------------------------------------------------------------------- |
-| collection2 | Collection |  -> | 比較するコレクション                                                                                          |
-| option      | Integer    |  -> | `ck diacritical`: diacritical evaluation ("A" # "a" for example) |
-| 戻り値         | Boolean    |  <- | コレクションが同一の場合には true、それ以外は false                                                                     |
+| 引数          | タイプ        |     | 説明                                                                                          |
+| ----------- | ---------- | :-: | ------------------------------------------------------------------------------------------- |
+| collection2 | Collection |  -> | 比較するコレクション                                                                                  |
+| option      | Integer    |  -> | `ck diacritical`: アクセント等の発音区別符号を無視しない評価 (たとえば "A" # "a") |
+| 戻り値         | Boolean    |  <- | コレクションが同一の場合には true、それ以外は false                                                             |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.equal()` function <!-- REF #collection.equal().Summary -->compares the collection with collection2 <!-- END REF -->and returns **true** if they are identical (deep comparison).
+`.equal()` 関数は、<!-- REF #collection.equal().Summary -->
+コレクションを <em x-id="3">collection2</em> とディープ比較し、同一の場合には **true** を返します<!-- END REF -->。
 
-デフォルトでは、アクセント等の発音区別符号を無視した評価が実行されます。 If you want the evaluation to be case sensitive or to differentiate accented characters, pass the `ck diacritical` constant in the option parameter.
+デフォルトでは、アクセント等の発音区別符号を無視した評価が実行されます。 評価の際に文字の大小を区別したり、アクセント記号を区別したい場合には、option に `ck diacritical` 定数を渡します。
 
-> Elements with **Null** values are not equal to Undefined elements.
+> **Null**値の要素は undefined要素と同じとはみなされません。
 
 #### 例題
 
@@ -837,45 +840,45 @@ The `.equal()` function <!-- REF #collection.equal().Summary -->compares the col
 
 <!-- REF #collection.every().Params -->
 
-| 引数         | タイプ                         |     | 説明                                                                   |
-| ---------- | --------------------------- | :-: | -------------------------------------------------------------------- |
-| startFrom  | Integer                     |  -> | テストを開始するインデックス                                                       |
-| formula    | 4D.Function |  -> | フォーミュラオブジェクト                                                         |
-| methodName | Text                        |  -> | メソッド名                                                                |
-| param      | Mixed                       |  -> | Parameter(s) to pass to _formula_ or _methodName_ |
-| 戻り値        | Boolean                     |  <- | すべての要素がテストをパスすれば true                                                |
+| 引数         | タイプ                         |     | 説明                               |
+| ---------- | --------------------------- | :-: | -------------------------------- |
+| startFrom  | Integer                     |  -> | テストを開始するインデックス                   |
+| formula    | 4D.Function |  -> | フォーミュラオブジェクト                     |
+| methodName | Text                        |  -> | メソッド名                            |
+| param      | 複合                          |  -> | _formula_ または _methodName_ に渡す引数 |
+| 戻り値        | Boolean                     |  <- | すべての要素がテストをパスすれば true            |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.every()` function <!-- REF #collection.every().Summary -->returns **true** if all elements in the collection successfully passed a test implemented in the provided _formula_ object or _methodName_ name<!-- END REF -->.
+`.every()` 関数は、 <!-- REF #collection.every().Summary -->コレクション内の全要素が、_formula_ オブジェクトまたは _methodName_ に指定したメソッドで実装されたテストにパスした場合には **true** を返します<!-- END REF -->。
 
 次のいずれかを使用して、コレクション要素を評価するために実行されるコールバックを指定します:
 
-- _formula_ (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or _methodName_, the name of a project method (text).
+- _formula_ (推奨シンタックス)、関数やプロジェクトメソッドを含むあらゆる実行可能な式を格納できる [Formula オブジェクト](FunctionClass.md)。
+- または _methodName_、プロジェクトメソッドの名前 (テキスト)。
 
-The callback is called with the parameter(s) passed in _param_ (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for every element fulfilling the test. It receives an `Object` in first parameter ($1).
+コールバックには、_param_ (任意) に指定した引数が渡されます。 引数の有無にかかわらず、コールバックは任意のテストを実行でき、テストを満たす要素に対しては **true** を返さなくてはなりません。 コールバックは最初のパラメーター ($1) に `Object` を受け取ります。
 
 コールバックは以下の引数を受け取ります:
 
-- in _$1.value_: element value to be evaluated
-- in _$2_: param
-- in _$N..._: paramN...
+- _$1.value_: 評価する要素の値
+- _$2_: param
+- _$N..._: paramN...
 
 また、コールバックは以下のパラメーターを設定できます:
 
-- (mandatory if you used a method) _$1.result_ (Boolean): **true** if the element value evaluation is successful, **false** otherwise.
-- _$1.stop_ (Boolean, optional): **true** to stop the method callback. 返された値は最後に計算されたものです。
+- (メソッドを使用する場合は必須) _$1.result_ (ブール): 要素の値の評価が成功した場合には **true** 、それ以外は **false**
+- _$1.stop_ (ブール、任意): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
 
-In all cases, at the point when the `.every()` function encounters the first collection element evaluated to **false**, it stops calling the callback and returns **false**.
+`.every()` 関数は、**false** として評価されたコレクション要素を発見すると、コールバックの呼び出しをやめて **false** を返します。
 
-By default, `.every()` tests the whole collection. Optionally, you can pass in _startFrom_ the index of the element from which to start the test.
+デフォルトでは、`.every()` はコレクション全体をテストします。 任意で、_startFrom_ にテストを開始する要素のインデックスを渡すこともできます。
 
-- If _startFrom_ >= the collection's length, **false** is returned, which means the collection is not tested.
-- If _startFrom_ < 0, it is considered as the offset from the end of the collection ( _startFrom:=startFrom+length_).
-- If _startFrom_ = 0, the whole collection is searched (default).
+- _startFrom_ がコレクションの length 以上だった場合、**false** が返されます。これはコレクションがテストされていないことを意味します。
+- _startFrom_ < 0 の場合には、コレクションの終わりからのオフセットであるとみなされます(_startFrom:=startFrom+length_)。
+- _startFrom_ = 0 の場合、コレクション全体がテストされます (デフォルト)。
 
 #### 例題 1
 
@@ -887,9 +890,9 @@ var $f : 4D.Function
 $f:=Formula($1.value>0)
 $c:=New collection
 $c.push(5;3;1;4;6;2)
-$b:=$c.every($f) //returns true
+$b:=$c.every($f) // true を返します
 $c.push(-1)
-$b:=$c.every($f) //returns false
+$b:=$c.every($f) // false を返します
 ```
 
 #### 例題 2
@@ -928,28 +931,28 @@ $b:=$c.every($f;Is real) //$b=false
 
 <!-- REF #collection.extract().Params -->
 
-| 引数           | タイプ        |     | 説明                                                                                                                                                                                                    |
-| ------------ | ---------- | :-: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| propertyPath | Text       |  -> | 新しいコレクションに抽出する値のオブジェクトプロパティパス                                                                                                                                                                         |
-| targetpath   | Text       |  -> | 抽出先のプロパティパスあるいはプロパティ名                                                                                                                                                                                 |
-| option       | Integer    |  -> | `ck keep null`: include null properties in the returned collection (ignored by default). Parameter ignored if _targetPath_ passed. |
-| 戻り値          | Collection |  <- | 抽出した値を格納した新しいコレクション                                                                                                                                                                                   |
+| 引数           | タイプ        |     | 説明                                                                                                                                 |
+| ------------ | ---------- | :-: | ---------------------------------------------------------------------------------------------------------------------------------- |
+| propertyPath | Text       |  -> | 新しいコレクションに抽出する値のオブジェクトプロパティパス                                                                                                      |
+| targetpath   | Text       |  -> | 抽出先のプロパティパスあるいはプロパティ名                                                                                                              |
+| option       | Integer    |  -> | `ck keep null`: 返されるコレクションに null プロパティを含めます (デフォルトでは無視されます)。 _targetPath_ を渡した場合には、この引数は無視されます。 |
+| 戻り値          | Collection |  <- | 抽出した値を格納した新しいコレクション                                                                                                                |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.extract()` function <!-- REF #collection.extract().Summary -->creates and returns a new collection containing _propertyPath_ values extracted from the original collection of objects<!-- END REF -->.
+`.extract()` 関数は、<!-- REF #collection.extract().Summary -->元のオブジェクトのコレクションから、_propertyPath_ 引数が指定するプロパティ値を抽出し、新しいコレクションに格納して返します<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更しません。
 
-The contents of the returned collection depends on the _targetPath_ parameter:
+戻り値のコレクションの中身は、_targetPath_ 引数によります:
 
-- If the _targetPath_ parameter is omitted, `.extract()` populates the new collection with the _propertyPath_ values of the original collection.
+- _targetPath_ が省略された場合、`.extract()` は元のコレクションの _propertyPath_ と同じパスを使って、新しいコレクションに値を格納します。
 
-  By default, elements for which _propertyPath_ is null or undefined are ignored in the resulting collection. You can pass the `ck keep null` constant in the _option_ parameter to include these values as null elements in the returned collection.
+  デフォルトでは、_propertyPath_ のパスの要素が null あるいは undefined であった場合には、その要素は無視され、返されるコレクションに格納されません。 _option_ パラメーターに `ck keep null` 定数を渡すと、これらの要素は返されるコレクションに null 要素として格納されます。
 
-- If one or more _targetPath_ parameter(s) are passed (corresponding to one or more _propertyPath_ parameter(s)), `.extract()` populates the new collection with the _propertyPath_ properties and each element of the new collection is an object with _targetPath_ properties filled with the matching _propertyPath_ properties. Null values are kept (_option_ parameter is ignored with this syntax).
+- 一つ以上の _propertyPath_ 引数に相当する、一つ以上の _targetPath_ 引数が渡された場合、`.extract()` は元のコレクションの _propertyPath_ から値を抽出し、合致する _targetPath_ に値を保存したオブジェクトを新しいコレクションの各要素として格納します。 Null値はそのまま保持されます (このシンタックスでは _option_ に引数を渡しても無視されます)。
 
 #### 例題 1
 
@@ -1009,19 +1012,19 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 
 #### 説明
 
-The `.fill()` function <!-- REF #collection.fill().Summary -->fills the collection with the specified _value_, optionally from _startFrom_ index to _end_ index, and returns the resulting collection<!-- END REF -->.
+`.fill()` 関数は、<!-- REF #collection.fill().Summary -->コレクションを _value_ 引数の値で満たし、同コレクションを返します。オプションとして、_startFrom_ および _end_ インデックスを渡して代入開始位置および終了位置を指定することもできます<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更します。
 
-- If the _startFrom_ parameter is omitted, _value_ is set to all collection elements (_startFrom_=0).
-- If the _startFrom_ parameter is passed and _end_ omitted, _value_ is set to collection elements starting at _startFrom_ to the last element of the collection (_end_=length).
-- If both the _startFrom_ parameter and _end_ are passed, _value_ is set to collection elements starting at _startFrom_ to the element _end_.
+- _startFrom_ 引数が渡されなかった場合、_value_ 引数の値はコレクションの全要素に代入されます (つまり、_startFrom_=0)。
+- _startFrom_ 引数が渡され、かつ _end_ 引数が省略された場合には、_value_ 引数の値はコレクションの最後の要素まで設定されます (つまり、_end_=length)。
+- _startFrom_ と _end_ 引数が両方渡された場合には、_startFrom_ から _end_ までの要素に _value_ が代入されます。
 
 引数に矛盾がある場合、次のように解釈されます:
 
-- If _startFrom_ < 0, it is recalculated as _startFrom:=startFrom+length_ (it is considered as the offset from the end of the collection). If the calculated value is negative, _startFrom_ is set to 0.
-- If _end_ < 0 , it is recalculated as _end:=end+length_.
-- If _end_ < _startFrom_ (passed or calculated values), the method does nothing.
+- _startFrom_ < 0 の場合、_startFrom:=startFrom+length_ として再計算されます (コレクションの終端からのオフセットであるとみなされます)。 再計算された値も負の値だった場合、_startFrom_ は 0 に設定されます。
+- _end_ < 0 の場合、それは _end:=end+length_ として再計算されます。
+- 渡された値、あるいは再計算された値が _end_ < _startFrom_ の場合、関数はなにもしません。
 
 #### 例題
 
@@ -1053,42 +1056,42 @@ The `.fill()` function <!-- REF #collection.fill().Summary -->fills the collecti
 
 <!-- REF #collection.filter().Params -->
 
-| 引数         | タイプ                         |     | 説明                                                                   |
-| ---------- | --------------------------- | :-: | -------------------------------------------------------------------- |
-| formula    | 4D.Function |  -> | フォーミュラオブジェクト                                                         |
-| methodName | Text                        |  -> | メソッド名                                                                |
-| param      | any                         |  -> | Parameter(s) to pass to _formula_ or _methodName_ |
-| 戻り値        | Collection                  |  <- | フィルターされた要素を格納した新しいコレクション(シャロウ・コピー)                |
+| 引数         | タイプ                         |     | 説明                                                    |
+| ---------- | --------------------------- | :-: | ----------------------------------------------------- |
+| formula    | 4D.Function |  -> | フォーミュラオブジェクト                                          |
+| methodName | Text                        |  -> | メソッド名                                                 |
+| param      | any                         |  -> | _formula_ または _methodName_ に渡す引数                      |
+| 戻り値        | Collection                  |  <- | フィルターされた要素を格納した新しいコレクション(シャロウ・コピー) |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.filter()` function <!-- REF #collection.filter().Summary -->returns a new collection containing all elements of the original collection for which the _formula_ or _methodName_ result is **true**<!-- END REF -->. This function returns a _**shallow copy**_, which means that objects or collections in both collections share the same reference. また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
+`.filter()` 関数は、<!-- REF #collection.filter().Summary -->元のコレクション要素のうち、_formula_ または _methodName_　の結果が **true** になる要素をすべて格納した新しいコレクションを返します<!-- END REF -->。 この関数は _**シャロウ・コピー**_ を返します。つまり、元のコレクションにオブジェクト要素やコレクション要素が含まれていた場合、それらの参照は戻り値のコレクションで共有されます。 また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
 
 > このコマンドは、元のコレクションを変更しません。
 
 次のいずれかを使用して、コレクション要素をフィルターするために実行されるコールバックを指定します:
 
-- _formula_ (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or _methodName_, the name of a project method (text).
+- _formula_ (推奨シンタックス)、関数やプロジェクトメソッドを含むあらゆる実行可能な式を格納できる [Formula オブジェクト](FunctionClass.md)。
+- または _methodName_、プロジェクトメソッドの名前 (テキスト)。
 
-The callback is called with the parameter(s) passed in _param_ (optional) and an object in first parameter (_$1_). The callback can perform any test, with or without the parameter(s) and must return **true** for each element fulfilling the condition and thus, to push to the new collection.
+コールバックには、オブジェクトが 1番目の引数 (_$1_) として渡され、任意の _param_ 引数がその後に続きます。 引数の有無にかかわらず、コールバックは任意のテストを実行でき、条件を満たす要素に対しては **true** を返すことで、新規コレクションにプッシュします。
 
 コールバックは以下の引数を受け取ります:
 
-- in _$1.value_: element value to be evaluated
-- in _$2_: param
-- in _$N..._: paramN...
+- _$1.value_: 評価する要素の値
+- _$2_: param
+- _$N..._: paramN...
 
 また、コールバックは以下のパラメーターを設定できます:
 
-- _$1.result_ (Boolean): **true** if the element value matches the filter condition and must be kept, **false** otherwise.
-- _$1.stop_ (Boolean, optional): **true** to stop the method callback. 返された値は最後に計算されたものです。
+- _$1.result_ (ブール): 要素の値がフィルター条件に合致する場合には **true** 、それ以外は **false**。
+- _$1.stop_ (ブール、任意): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
 
 :::note
 
-When using _methodName_ as callback, and if the method does not return any value, `.filter()` will look at the property _$1.result_ that you must set to **true** for each element fulfilling the condition.
+_methodName_ に指定したメソッドをコールバックとして使用し、このメソッドが値を返さない場合、`.filter()` は _$1.result_ を調べます。この場合には、条件を満たす各要素に対して、_$1.result_ を **true** に設定する必要があります。
 
 :::
 
@@ -1139,46 +1142,46 @@ $colNew:=$col.filter(Formula((Value type($1.value)=Is text) && (Length($1.value)
 
 <!-- REF #collection.find().Params -->
 
-| 引数         | タイプ                         |     | 説明                                                                   |
-| ---------- | --------------------------- | :-: | -------------------------------------------------------------------- |
-| startFrom  | Integer                     |  -> | 検索を開始するインデックス                                                        |
-| formula    | 4D.Function |  -> | フォーミュラオブジェクト                                                         |
-| methodName | Text                        |  -> | メソッド名                                                                |
-| param      | any                         |  -> | Parameter(s) to pass to _formula_ or _methodName_ |
-| 戻り値        | any                         |  <- | 最初に見つかった値。見つからなかった場合には Undefined                                     |
+| 引数         | タイプ                         |     | 説明                               |
+| ---------- | --------------------------- | :-: | -------------------------------- |
+| startFrom  | Integer                     |  -> | 検索を開始するインデックス                    |
+| formula    | 4D.Function |  -> | フォーミュラオブジェクト                     |
+| methodName | Text                        |  -> | メソッド名                            |
+| param      | any                         |  -> | _formula_ または _methodName_ に渡す引数 |
+| 戻り値        | any                         |  <- | 最初に見つかった値。見つからなかった場合には Undefined |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.find()` function <!-- REF #collection.find().Summary -->returns the first value in the collection for which _formula_ or _methodName_ result, applied on each element, returns **true**<!-- END REF -->.
+`.find()` 関数は、<!-- REF #collection.find().Summary -->_formula_ 引数のフォーミュラまたは _methodName_ 引数のメソッドを各コレクション要素に適用して、**true** を返す最初の要素を返します<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更しません。
 
 次のいずれかを使用して、コレクション要素を評価するために実行されるコールバックを指定します:
 
-- _formula_ (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or _methodName_, the name of a project method (text).
+- _formula_ (推奨シンタックス)、関数やプロジェクトメソッドを含むあらゆる実行可能な式を格納できる [Formula オブジェクト](FunctionClass.md)。
+- または _methodName_、プロジェクトメソッドの名前 (テキスト)。
 
-The callback is called with the parameter(s) passed in _param_ (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. It receives an `Object` in first parameter ($1).
+コールバックには、_param_ (任意) に指定した引数が渡されます。 引数の有無にかかわらず、コールバックは任意のテストを実行でき、条件を満たす最初の要素に対して **true** を返さなくてはなりません。 コールバックは最初のパラメーター ($1) に `Object` を受け取ります。
 
 コールバックは以下の引数を受け取ります:
 
-- in _$1.value_: element value to be evaluated
-- in _$2_: param
-- in _$N..._: paramN...
+- _$1.value_: 評価する要素の値
+- _$2_: param
+- _$N..._: paramN...
 
 また、コールバックは以下のパラメーターを設定できます:
 
-- (mandatory if you used a method) _$1.result_ (Boolean): **true** if the element value matches the search condition, **false** otherwise.
-- _$1.stop_ (Boolean, optional): **true** to stop the method callback. 返された値は最後に計算されたものです。
+- (メソッドを使用する場合は必須) _$1.result_ (ブール): 要素の値が検索条件に合致する場合には **true** 、それ以外は **false**。
+- _$1.stop_ (ブール、任意): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
 
-By default, `.find()` searches in the whole collection. Optionally, you can pass in _startFrom_ the index of element from which to start the search.
+デフォルトでは、`.find()` はコレクション全体をテストします。 任意で、_startFrom_ に検索を開始する要素のインデックスを渡すこともできます。
 
-- If _startFrom_ >= the collection's length, -1 is returned, which means the collection is not searched.
-- If _startFrom_ < 0, it is considered as the offset from the end of the collection (_startFrom:=startFrom+length_).
-  **Note**: Even if _startFrom_ is negative, the collection is still searched from left to right.
-- If _startFrom_ = 0, the whole collection is searched (default).
+- _startFrom_ がコレクションの length 以上だった場合、-1 が返されます。これはコレクションが検索されていないことを意味します。
+- _startFrom_ < 0 の場合には、コレクションの終わりからのオフセットであるとみなされます (_startFrom:=startFrom+length_)。
+  **注:** _startFrom_ が負の値であっても、コレクションは左から右へと検索されます。
+- _startFrom_ = 0 の場合、コレクション全体がテストされます (デフォルト)。
 
 #### 例題 1
 
@@ -1227,46 +1230,46 @@ $c2:=$c.find(Formula($1.value.name=$2); "Clanton")  //$c2={name:Clanton,zc:35046
 
 <!-- REF #collection.findIndex().Params -->
 
-| 引数         | タイプ                         |     | 説明                                                                   |
-| ---------- | --------------------------- | :-: | -------------------------------------------------------------------- |
-| startFrom  | Integer                     |  -> | 検索を開始するインデックス                                                        |
-| formula    | 4D.Function |  -> | フォーミュラオブジェクト                                                         |
-| methodName | Text                        |  -> | メソッド名                                                                |
-| param      | any                         |  -> | Parameter(s) to pass to _formula_ or _methodName_ |
-| 戻り値        | Integer                     |  <- | 最初に見つかった値のインデックス。見つからなかった場合には -1                                     |
+| 引数         | タイプ                         |     | 説明                               |
+| ---------- | --------------------------- | :-: | -------------------------------- |
+| startFrom  | Integer                     |  -> | 検索を開始するインデックス                    |
+| formula    | 4D.Function |  -> | フォーミュラオブジェクト                     |
+| methodName | Text                        |  -> | メソッド名                            |
+| param      | any                         |  -> | _formula_ または _methodName_ に渡す引数 |
+| 戻り値        | Integer                     |  <- | 最初に見つかった値のインデックス。見つからなかった場合には -1 |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.findIndex()` function <!-- REF #collection.findIndex().Summary -->returns the index, in the collection, of the first value for which _formula_ or _methodName_, applied on each element, returns **true**<!-- END REF -->.
+`.findIndex()` 関数は、<!-- REF #collection.findIndex().Summary -->_formula_ 引数のフォーミュラまたは _methodName_ 引数のメソッドを各コレクション要素に適用して、**true** を返す最初の要素のインデックスを返します<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更しません。
 
 次のいずれかを使用して、コレクション要素を評価するために実行されるコールバックを指定します:
 
-- _formula_ (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- _methodName_, the name of a project method (text).
+- _formula_ (推奨シンタックス)、関数やプロジェクトメソッドを含むあらゆる実行可能な式を格納できる [Formula オブジェクト](FunctionClass.md)。
+- _methodName_、プロジェクトメソッドの名前 (テキスト)。
 
-The callback is called with the parameter(s) passed in _param_ (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for the first element fulfilling the condition. It receives an `Object` in first parameter ($1).
+コールバックには、_param_ (任意) に指定した引数が渡されます。 引数の有無にかかわらず、コールバックは任意のテストを実行でき、条件を満たす最初の要素に対して **true** を返さなくてはなりません。 コールバックは最初のパラメーター ($1) に `Object` を受け取ります。
 
 コールバックは以下の引数を受け取ります:
 
-- in _$1.value_: element value to be evaluated
-- in _$2_: param
-- in _$N..._: paramN...
+- _$1.value_: 評価する要素の値
+- _$2_: param
+- _$N..._: paramN...
 
 また、コールバックは以下のパラメーターを設定できます:
 
-- (mandatory if you used a method) _$1.result_ (Boolean): **true** if the element value matches the search condition, **false** otherwise.
-- _$1.stop_ (Boolean, optional): **true** to stop the method callback. 返された値は最後に計算されたものです。
+- (メソッドを使用する場合は必須) _$1.result_ (ブール): 要素の値が検索条件に合致する場合には **true** 、それ以外は **false**。
+- _$1.stop_ (ブール、任意): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
 
-By default, `.findIndex()` searches in the whole collection. Optionally, you can pass in _startFrom_ the index of element from which to start the search.
+デフォルトでは、`.findIndex()` はコレクション全体をテストします。 任意で、_startFrom_ に検索を開始する要素のインデックスを渡すこともできます。
 
-- If _startFrom_ >= the collection's length, -1 is returned, which means the collection is not searched.
-- If _startFrom_ < 0, it is considered as the offset from the end of the collection (_startFrom:=startFrom+length_).
-  **Note**: Even if _startFrom_ is negative, the collection is still searched from left to right.
-- If _startFrom_ = 0, the whole collection is searched (default).
+- _startFrom_ がコレクションの length 以上だった場合、-1 が返されます。これはコレクションが検索されていないことを意味します。
+- _startFrom_ < 0 の場合には、コレクションの終わりからのオフセットであるとみなされます (_startFrom:=startFrom+length_)。
+  **注:** _startFrom_ が負の値であっても、コレクションは左から右へと検索されます。
+- _startFrom_ = 0 の場合、コレクション全体がテストされます (デフォルト)。
 
 #### 例題
 
@@ -1311,7 +1314,7 @@ $val3:=$c.findIndex($val2+1;Formula($1.value.name=$2);"Clanton") //$val3=4
 
 #### 説明
 
-The `.first()` function <!-- REF #collection.first().Summary -->returns the first element of the collection<!-- END REF -->.
+`.first()` 関数は、<!-- REF #collection.first().Summary -->コレクションの先頭要素を返します<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更しません。
 
@@ -1357,9 +1360,9 @@ $first:=$emptyCol.first() // このコードは undefined を返します
 
 #### 説明
 
-The `.flat()` function <!-- REF #collection.flat().Summary -->creates a new collection with all sub-collection elements concatenated into it recursively up to the specified _depth_<!-- END REF -->.
+`.flat()` 関数は、<!-- REF #collection.flat().Summary -->_depth_ に指定した階層の深さまで、すべてのサブコレクション要素を再帰的に連結した新しいコレクションを作成します<!-- END REF -->。
 
-By default, if the _depth_ parameter is omitted, only the first level of the nested collection structure will be flattened.
+_depth_ が省略された場合のデフォルトでは、コレクション階層の一つ目のレベルのネストのみが解除されます。
 
 > このコマンドは、元のコレクションを変更しません。
 
@@ -1401,40 +1404,40 @@ $col.flat(MAXLONG)
 
 <!-- REF #collection.flatMap().Params -->
 
-| 引数         | タイプ                         |     | 説明                                                                   |
-| ---------- | --------------------------- | :-: | -------------------------------------------------------------------- |
-| formula    | 4D.Function |  -> | フォーミュラオブジェクト                                                         |
-| methodName | Text                        |  -> | メソッド名                                                                |
-| param      | any                         |  -> | Parameter(s) to pass to _formula_ or _methodName_ |
-| 戻り値        | Collection                  |  <- | 変換された値を格納し、1レベルのネストが解除された新しいコレクション                                   |
+| 引数         | タイプ                         |     | 説明                                 |
+| ---------- | --------------------------- | :-: | ---------------------------------- |
+| formula    | 4D.Function |  -> | フォーミュラオブジェクト                       |
+| methodName | Text                        |  -> | メソッド名                              |
+| param      | any                         |  -> | _formula_ または _methodName_ に渡す引数   |
+| 戻り値        | Collection                  |  <- | 変換された値を格納し、1レベルのネストが解除された新しいコレクション |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.flatMap()` function <!-- REF #collection.flatMap().Summary -->creates a new collection based upon the result of the call of the _formula_ 4D function or _methodName_ method on each element of the original collection and flattened by a depth of 1<!-- END REF -->. Optionally, you can pass parameters to _formula_ or _methodName_ using the _param_ parameter(s).
+`.flatMap()` 関数は、<!-- REF #collection.flatMap().Summary -->元のコレクションの各要素に対して _formula_ または _methodName_ を呼び出した結果に基づき、1レベルのネストが解除された新しいコレクションを作成します<!-- END REF -->。 オプションで、_param_ パラメーターに、_formula_ または _methodName_ に渡す引数を指定することができます。
 
-This function is identical to a [`map()`](#map) call followed by a [`flat()`](#flat) call of depth 1.
+この機能は、[`map()`](#map) の呼び出し後に、depth = 1 で [`flat()`](#flat) を呼び出すのと同じです。
 
 > このコマンドは、元のコレクションを変更しません。
 
 次のいずれかを使用して、コレクション要素を評価するために実行されるコールバックを指定します:
 
-- _formula_ (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or _methodName_, the name of a project method (text).
+- _formula_ (推奨シンタックス)、関数やプロジェクトメソッドを含むあらゆる実行可能な式を格納できる [Formula オブジェクト](FunctionClass.md)。
+- または _methodName_、プロジェクトメソッドの名前 (テキスト)。
 
-The callback is called with the parameter(s) passed in _param_ (optional). 引数の有無にかかわらず、コールバックは任意の処理を実行でき、結果のコレクションに追加する変換後の新しい値を返さなくてはなりません。 It receives an `Object` in first parameter ($1).
+コールバックには、_param_ (任意) に指定した引数が渡されます。 引数の有無にかかわらず、コールバックは任意の処理を実行でき、結果のコレクションに追加する変換後の新しい値を返さなくてはなりません。 コールバックは最初のパラメーター ($1) に `Object` を受け取ります。
 
 コールバックは以下の引数を受け取ります:
 
-- in _$1.value_: element value to be evaluated
-- in _$2_: param
-- in _$N..._: paramN...
+- _$1.value_: 評価する要素の値
+- _$2_: param
+- _$N..._: paramN...
 
 また、コールバックは以下のパラメーターを設定できます:
 
-- (mandatory if you used a method) _$1.result_ (any type): new transformed value to add to the resulting collection
-- _$1.stop_ (Boolean, optional): **true** to stop the method callback. 返された値は最後に計算されたものです。
+- (メソッドを使用した場合は必須) _$1.result_ (任意の型): 結果のコレクションに追加する、変換された値
+- _$1.stop_ (ブール、任意): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
 
 #### 例題 1
 
@@ -1493,33 +1496,33 @@ $c2:=$c.flatMap($f; $c.sum())
 
 <!-- REF #collection.includes().Params -->
 
-| 引数        | タイプ     |     | 説明                                            |
-| --------- | ------- | :-: | --------------------------------------------- |
-| toSearch  | 式       |  -> | コレクション内を検索する式                                 |
-| startFrom | Integer |  -> | 検索を開始するインデックス                                 |
-| 戻り値       | Boolean |  <- | True if _toSearch_ is found in the collection |
+| 引数        | タイプ     |     | 説明                             |
+| --------- | ------- | :-: | ------------------------------ |
+| toSearch  | 式       |  -> | コレクション内を検索する式                  |
+| startFrom | Integer |  -> | 検索を開始するインデックス                  |
+| 戻り値       | Boolean |  <- | _toSearch_ がコレクションにある場合は true。 |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.includes()` function <!-- REF #collection.includes().Summary -->returns True if the _toSearch_ expression is found among collection elements, otherwise False<!-- END REF -->.
+`.includes()` 関数は、<!-- REF #collection.includes().Summary -->_toSearch_ に指定した式がコレクション内で見つかれば **true** を、そうでなければ **false** を返します<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更しません。
 
-In _toSearch_, pass the expression to find in the collection. 以下のものを渡すことができます:
+_toSearch_ パラメーターには、コレクション内で検索する式を渡します。 以下のものを渡すことができます:
 
 - スカラー値 (テキスト、数値、ブール、日付)
 - null 値
 - オブジェクトあるいはコレクションの参照
 
-_toSearch_ must match exactly the element to find (the same rules as for the equality operator of the data type are applied).
+_toSearch_ 引数は検出すべき要素と完全に一致している必要があります (等号演算子と同じルールが適用されます)。
 
-Optionally, you can pass the index of collection from which to start the search in _startFrom_.
+オプションとして、_startFrom_ 引数を渡すことで、検索を開始するコレクション要素のインデックスを指定することができます。
 
-- If _startFrom_ >= collection's length, False is returned, which means the collection is not searched.
-- If _startFrom_ < 0, it is considered as the offset from the end of the collection (_startFrom:=startFrom+length_). Note that even if _startFrom_ is negative, the collection is still searched from left to right.
-- If _startFrom_ = 0, the whole collection is searched (default).
+- _startFrom_ がコレクションの length 以上だった場合、false が返されます。これはコレクションが検索されていないことを意味します。
+- _startFrom_ < 0 の場合には、コレクションの終わりからのオフセットであるとみなされます (_startFrom:=startFrom+length_)。 なお、_startFrom_ が負の値であっても、コレクションは左から右へと検索されます。
+- _startFrom_ = 0 の場合、コレクション全体がテストされます (デフォルト)。
 
 #### 例題
 
@@ -1565,24 +1568,24 @@ Optionally, you can pass the index of collection from which to start the search 
 
 #### 説明
 
-The `.indexOf()` function <!-- REF #collection.indexOf().Summary -->searches the _toSearch_ expression among collection elements and returns the index of the first found occurrence, or -1 if it was not found<!-- END REF -->.
+`.indexOf()` 関数は、<!-- REF #collection.indexOf().Summary --> _toSearch_ 引数の式をコレクション要素の中から検索し、最初に見つかった要素のインデックス (見つからなかった場合には -1) を返します<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更しません。
 
-In _toSearch_, pass the expression to find in the collection. 以下のものを渡すことができます:
+_toSearch_ パラメーターには、コレクション内で検索する式を渡します。 以下のものを渡すことができます:
 
 - スカラー値 (テキスト、数値、ブール、日付)
 - null 値
 - オブジェクトあるいはコレクションの参照
 
-_toSearch_ must match exactly the element to find (the same rules as for the equality operator of the data type are applied).
+_toSearch_ 引数は検出すべき要素と完全に一致している必要があります (等号演算子と同じルールが適用されます)。
 
-Optionally, you can pass the index of collection from which to start the search in _startFrom_.
+オプションとして、_startFrom_ 引数を渡すことで、検索を開始するコレクション要素のインデックスを指定することができます。
 
-- If _startFrom_ >= the collection's length, -1 is returned, which means the collection is not searched.
-- If _startFrom_ < 0, it is considered as the offset from the end of the collection (_startFrom:=startFrom+length_).
-  **Note**: Even if _startFrom_ is negative, the collection is still searched from left to right.
-- If _startFrom_ = 0, the whole collection is searched (default).
+- _startFrom_ がコレクションの length 以上だった場合、-1 が返されます。これはコレクションが検索されていないことを意味します。
+- _startFrom_ < 0 の場合には、コレクションの終わりからのオフセットであるとみなされます (_startFrom:=startFrom+length_)。
+  **注:** _startFrom_ が負の値であっても、コレクションは左から右へと検索されます。
+- _startFrom_ = 0 の場合、コレクション全体がテストされます (デフォルト)。
 
 #### 例題
 
@@ -1624,17 +1627,17 @@ Optionally, you can pass the index of collection from which to start the search 
 
 #### 説明
 
-The `.indices()` function works exactly the same as the [`.query()`](#query) function but <!-- REF #collection.indices().Summary -->returns indexes, in the original collection, of object collection elements that match the _queryString_ search conditions<!-- END REF -->, and not elements themselves. インデックスは、昇順に返されます。
+`.indices()` 関数は [`.query()`](#query) 関数と同様に機能しますが、<!-- REF #collection.indices().Summary -->_queryString_ 引数の検索条件に合致する、元のコレクション要素のインデックスを返します<!-- END REF -->(コレクション要素自体は返しません)。 インデックスは、昇順に返されます。
 
 > このコマンドは、元のコレクションを変更しません。
 
-The _queryString_ parameter uses the following syntax:
+_queryString_ 引数には、以下のシンタックスを使用します:
 
 ```4d
 propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 値}
 ```
 
-For a detailed description of the _queryString_ and _value_ parameters, please refer to the `dataClass.query()` function.
+_queryString_ および _value_ パラメーターの詳細については、[`dataClass.query()`](dataclassClass.md#query) 関数を参照ください。
 
 #### 例題
 
@@ -1679,16 +1682,16 @@ For a detailed description of the _queryString_ and _value_ parameters, please r
 
 #### 説明
 
-The `.insert()` function <!-- REF #collection.insert().Summary --> inserts _element_ at the specified _index_ position in the collection instance and returns the edited collection<!-- END REF -->.
+`.insert()` 関数は、<!-- REF #collection.insert().Summary -->_index_ で指定したコレクションインスタンスの位置に _element_ 要素を挿入し、変更された元のコレクションを返します<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更します。
 
-In _index_, pass the position where you want the element to be inserted in the collection.
+_index_ パラメーターには、コレクション内で要素を挿入する位置を渡します。
 
-> **Warning**: Keep in mind that collection elements are numbered from 0.
+> **警告**: コレクション要素は 0 起点である点に注意してください。
 
-- If _index_ > the length of the collection, actual starting index will be set to the length of the collection.
-- If _index_ <0, it is recalculated as _index:=index+length_ (it is considered as the offset from the end of the collection).
+- 指定した _index_ がコレクションの length より大きい場合、実際の開始インデックスはコレクションの length に設定されます。
+- _index_ <0 の場合、_index:=index+length_ として再計算されます (コレクションの終端からのオフセットであるとみなされます)。
 - 計算結果も負の値である場合、index は 0 に設定されます。
 
 コレクションが受け入れるものであれば、どんな型の要素も (たとえば他のコレクションでも) 挿入可能です。
@@ -1721,21 +1724,21 @@ In _index_, pass the position where you want the element to be inserted in the c
 
 <!-- REF #collection.join().Params -->
 
-| 引数        | タイプ     |     | 説明                                                                                     |
-| --------- | ------- | :-: | -------------------------------------------------------------------------------------- |
-| delimiter | Text    |  -> | 要素間に用いる区切り文字                                                                           |
-| option    | Integer |  -> | `ck ignore null or empty`: ignore null and empty strings in the result |
-| 戻り値       | Text    |  <- | 区切り文字を使ってコレクションの全要素をつなげた文字列                                                            |
+| 引数        | タイプ     |     | 説明                                                               |
+| --------- | ------- | :-: | ---------------------------------------------------------------- |
+| delimiter | Text    |  -> | 要素間に用いる区切り文字                                                     |
+| option    | Integer |  -> | `ck ignore null or empty`: 戻り値に null と空の文字列を含めない |
+| 戻り値       | Text    |  <- | 区切り文字を使ってコレクションの全要素をつなげた文字列                                      |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.join()` function <!-- REF #collection.join().Summary -->converts all elements of the collection to strings and concatenates them using the specified _delimiter_ string as separator<!-- END REF -->.The function returns the resulting string.
+`.join()` 関数は、<!-- REF #collection.join().Summary -->_delimiter_ に渡した文字列を区切り文字として、コレクションの全要素を一つの文字列につなげます<!-- END REF -->。戻り値はつなげられた文字列です。
 
 > このコマンドは、元のコレクションを変更しません。
 
-デフォルトで、コレクションの null あるいは空の要素も戻り値の文字列に含めます。 Pass the `ck ignore null or empty` constant in the _option_ parameter if you want to remove them from the resulting string.
+デフォルトで、コレクションの null あるいは空の要素も戻り値の文字列に含めます。 これらを戻り値の文字列に含めたくない場合は、_option_ パラメーターに `ck ignore null or empty` 定数を渡します。
 
 #### 例題
 
@@ -1773,7 +1776,7 @@ The `.join()` function <!-- REF #collection.join().Summary -->converts all eleme
 
 #### 説明
 
-The `.last()` function <!-- REF #collection.last().Summary -->returns the last element of the collection<!-- END REF -->.
+`.last()` 関数は、<!-- REF #collection.last().Summary -->コレクションの最後の要素を返します<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更しません。
 
@@ -1787,9 +1790,9 @@ var $last : Variant
 $col:=New collection(10; 20; 30; "hello"; 50)
 $last:=$col.last() // 50
 
-$emptyCol:=New collection() //empty
-// $last:=$emptyCol[$emptyCol.length-1] //returns an error
-$last:=$emptyCol.last() // returns Undefined
+$emptyCol:=New collection() // 空のコレクション
+// $last:=$emptyCol[$emptyCol.length-1] // このコードはエラーを返します
+$last:=$emptyCol.last() // このコードは undefined を返します
 
 ```
 
@@ -1821,24 +1824,24 @@ $last:=$emptyCol.last() // returns Undefined
 
 #### 説明
 
-The `.lastIndexOf()` function <!-- REF #collection.lastIndexOf().Summary -->searches the _toSearch_ expression among collection elements and returns the index of the last occurrence<!-- END REF -->, or -1 if it was not found.
+`.lastIndexOf()` 関数は、<!-- REF #collection.lastIndexOf().Summary --> toSearch 引数の式をコレクション要素の中から検索し、最後に見つかった要素のインデックス (見つからなかった場合には -1) を返します<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更しません。
 
-In _toSearch_, pass the expression to find in the collection. 以下のものを渡すことができます:
+_toSearch_ パラメーターには、コレクション内で検索する式を渡します。 以下のものを渡すことができます:
 
 - スカラー値 (テキスト、数値、ブール、日付)
 - null 値
 - オブジェクトあるいはコレクションの参照
 
-_toSearch_ must match exactly the element to find (the same rules as for the equality operator are applied).
+_toSearch_ 引数は検出すべき要素と完全に一致している必要があります (等号演算子と同じルールが適用されます)。
 
-Optionally, you can pass the index of collection from which to start a reverse search in _startFrom_.
+オプションとして、_startFrom_ 引数を渡すことで、逆順検索を開始するコレクション要素のインデックスを指定することができます。
 
-- If _startFrom_ >= the collection's length minus one (coll.length-1), the whole collection is searched (default).
-- If _startFrom_ < 0, it is recalculated as _startFrom:=startFrom+length_ (it is considered as the offset from the end of the collection). 計算結果も負の値である場合、-1 が返されます。これはコレクションが検索されていないことを意味します。
-  **Note:** Even if _startFrom_ is negative, the collection is still searched from right to left.
-- If _startFrom_ = 0, -1 is returned, which means the collection is not searched.
+- _startFrom_ が、コレクションの length から 1を引いた数字 (coll.length-1) 以上の場合、コレクション全体が検索されます (デフォルト)。
+- _startFrom_ < 0 の場合、_startFrom:=startFrom+length_ として再計算されます (コレクションの終端からのオフセットであるとみなされます)。 計算結果も負の値である場合、-1 が返されます。これはコレクションが検索されていないことを意味します。
+  **注:** _startFrom_ が負の値であっても、コレクションは右から左へと検索されます。
+- _startFrom_ = 0 の場合、-1 が返されます。これはコレクションが検索されていないことを意味します。
 
 #### 例題
 
@@ -1871,9 +1874,9 @@ Optionally, you can pass the index of collection from which to start a reverse s
 
 #### 説明
 
-The `.length` property <!-- REF #collection.length.Summary -->returns the number of elements in the collection<!-- END REF -->.
+`.length` プロパティは、<!-- REF #collection.length.Summary -->コレクション内の要素数を返します<!-- END REF -->。
 
-The `.length` property is initialized when the collection is created. 要素を追加・削除すると、必要に応じて length は更新されます。 This property is **read-only** (you cannot use it to set the size of the collection).
+`.length` プロパティは、コレクション作成時に初期化されます。 要素を追加・削除すると、必要に応じて length は更新されます。 このプロパティは **読み取り専用** です (これを使用してコレクションのサイズを設定することはできません)。
 
 #### 例題
 
@@ -1903,38 +1906,38 @@ The `.length` property is initialized when the collection is created. 要素を�
 
 <!-- REF #collection.map().Params -->
 
-| 引数         | タイプ                         |     | 説明                                                                   |
-| ---------- | --------------------------- | :-: | -------------------------------------------------------------------- |
-| formula    | 4D.Function |  -> | フォーミュラオブジェクト                                                         |
-| methodName | Text                        |  -> | メソッド名                                                                |
-| param      | any                         |  -> | Parameter(s) to pass to _formula_ or _methodName_ |
-| 戻り値        | Collection                  |  <- | 変換された値を格納する新しいコレクション                                                 |
+| 引数         | タイプ                         |     | 説明                               |
+| ---------- | --------------------------- | :-: | -------------------------------- |
+| formula    | 4D.Function |  -> | フォーミュラオブジェクト                     |
+| methodName | Text                        |  -> | メソッド名                            |
+| param      | any                         |  -> | _formula_ または _methodName_ に渡す引数 |
+| 戻り値        | Collection                  |  <- | 変換された値を格納する新しいコレクション             |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.map()` function <!-- REF #collection.map().Summary -->creates a new collection based upon the result of the call of the _formula_ 4D function or _methodName_ method on each element of the original collection<!-- END REF -->. Optionally, you can pass parameters to _formula_ or _methodName_ using the _param_ parameter(s). `.map()` always returns a collection with the same size as the original collection, except if _$1.stop_ was used (see below).
+`.map()` 関数は、 <!-- REF #collection.map().Summary -->元のコレクションの各要素に対して _formula_ または _methodName_ を呼び出した結果に基づいた、新しいコレクションを作成します<!-- END REF -->。 オプションで、_param_ パラメーターに、_formula_ または _methodName_ に渡す引数を指定することができます。 `.map()` は常に、元のコレクションと同じサイズのコレクションを返します (_$1.stop_ が使用された場合を除く (後述参照))。
 
 > このコマンドは、元のコレクションを変更しません。
 
 次のいずれかを使用して、コレクション要素を評価するために実行されるコールバックを指定します:
 
-- _formula_ (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or _methodName_, the name of a project method (text).
+- _formula_ (推奨シンタックス)、関数やプロジェクトメソッドを含むあらゆる実行可能な式を格納できる [Formula オブジェクト](FunctionClass.md)。
+- または _methodName_、プロジェクトメソッドの名前 (テキスト)。
 
-The callback is called with the parameter(s) passed in _param_ (optional). 引数の有無にかかわらず、コールバックは任意の処理を実行でき、結果のコレクションに追加する変換後の新しい値を返さなくてはなりません。 It receives an `Object` in first parameter ($1).
+コールバックには、_param_ (任意) に指定した引数が渡されます。 引数の有無にかかわらず、コールバックは任意の処理を実行でき、結果のコレクションに追加する変換後の新しい値を返さなくてはなりません。 コールバックは最初のパラメーター ($1) に `Object` を受け取ります。
 
 コールバックは以下の引数を受け取ります:
 
-- in _$1.value_: element value to be evaluated
-- in _$2_: param
-- in _$N..._: paramN...
+- _$1.value_: 評価する要素の値
+- _$2_: param
+- _$N..._: paramN...
 
 また、コールバックは以下のパラメーターを設定できます:
 
-- (mandatory if you used a method) _$1.result_ (any type): new transformed value to add to the resulting collection
-- _$1.stop_ (Boolean, optional): **true** to stop the method callback. 返された値は最後に計算されたものです。
+- (メソッドを使用した場合は必須) _$1.result_ (任意の型): 結果のコレクションに追加する、変換された値
+- _$1.stop_ (ブール、任意): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
 
 #### 例題
 
@@ -1972,15 +1975,15 @@ $c2:=$c.map(Formula(Round(($1.value/$2)*100; 2)); $c.sum())
 
 #### 説明
 
-The `.max()` function <!-- REF #collection.max().Summary -->returns the element with the highest value in the collection<!-- END REF --> (the last element of the collection as it would be sorted in ascending order using the [`.sort()`](#sort) function).
+`.max()` 関数は、<!-- REF #collection.max().Summary -->コレクション内の最大値を持つ要素を返します<!-- END REF --> ([`.sort()`](#sort) 関数を使用して昇順に並べ替えたときのコレクションの最後の要素が最大値の要素です)。
 
 > このコマンドは、元のコレクションを変更しません。
 
-If the collection contains different types of values, the `.max()` function will return the maximum value within the last element type in the type list order (see [`.sort()`](#sort) description).
+コレクションが異なる型の値を格納している場合、`.max()` 関数は型のリスト順の、最後の型の最大値を返します ([`.sort()`](#sort) 参照)。
 
-If the collection contains objects, pass the _propertyPath_ parameter to indicate the object property whose maximum value you want to get.
+コレクションがオブジェクトを格納している場合には、最大値を取得するオブジェクトプロパティのパスを _propertyPath_ に渡します。
 
-If the collection is empty, `.max()` returns _Undefined_.
+コレクションが空の場合、 `.max()` は _Undefined_ を返します。
 
 #### 例題
 
@@ -2022,15 +2025,15 @@ If the collection is empty, `.max()` returns _Undefined_.
 
 #### 説明
 
-The `.min()` function <!-- REF #collection.min().Summary -->returns the element with the smallest value in the collection<!-- END REF --> (the first element of the collection as it would be sorted in ascending order using the [`.sort()`](#sort) function).
+`.min()` 関数は、<!-- REF #collection.min().Summary -->コレクション内の最小値を持つ要素を返します<!-- END REF --> ([`.sort()`](#sort) 関数を使用して昇順に並べ替えたときのコレクションの先頭の要素が最小値の要素です)。
 
 > このコマンドは、元のコレクションを変更しません。
 
-If the collection contains different types of values, the `.min()` function will return the minimum value within the first element type in the type list order (see [`.sort()`](#sort) description).
+コレクションが異なる型の値を格納している場合、`.min()` 関数は型のリスト順の、最初の型の最小値を返します ([`.sort()`](#sort) 参照)。
 
-If the collection contains objects, pass the _propertyPath_ parameter to indicate the object property whose minimum value you want to get.
+コレクションがオブジェクトを格納している場合には、最小値を取得するオブジェクトプロパティのパスを _propertyPath_ に渡します。
 
-If the collection is empty, `.min()` returns _Undefined_.
+コレクションが空の場合、 `.min()` は _Undefined_ を返します。
 
 #### 例題
 
@@ -2063,21 +2066,21 @@ If the collection is empty, `.min()` returns _Undefined_.
 
 <!-- REF #collection.multiSort().Params -->
 
-| 引数         | タイプ                         |     | 説明                                                                                                                                                            |
-| ---------- | --------------------------- | :-: | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| formula    | 4D.Function |  -> | フォーミュラオブジェクト                                                                                                                                                  |
-| colsToSort | Collection                  |  -> | Collection of collections and/or objects with {`collection`:_colToSort_;`order`:`ck ascending` or `ck descending`} properties |
-| 戻り値        | Collection                  |  <- | 並べ替えられた元のコレクション                                                                                                                                               |
+| 引数         | タイプ                         |     | 説明                                                                                                                                          |
+| ---------- | --------------------------- | :-: | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| formula    | 4D.Function |  -> | フォーミュラオブジェクト                                                                                                                                |
+| colsToSort | Collection                  |  -> | コレクションのコレクション、または {`collection`:_colToSort_;`order`:`ck ascending` / `ck descending`} プロパティを持つオブジェクトのコレクション |
+| 戻り値        | Collection                  |  <- | 並べ替えられた元のコレクション                                                                                                                             |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.multiSort()` function <!-- REF #collection.multiSort().Summary -->enables you to carry out a multi-level synchronized sort on a set of collections<!-- END REF -->.
+`.multiSort()` 関数は、<!-- REF #collection.multiSort().Summary -->複数のコレクションに対して複数レベルの同期ソートを実行します<!-- END REF -->。
 
-> This function modifies the original collection as well as all collections used in _colsToSort_ parameter.
+> この関数は、元のコレクションを変更します。また、_colsToSort_ パラメーターに使用されたコレクションも変更されます。
 
-If `.multiSort()` is called with no parameters, the function has the same effect as the [`.sort()`](#sort) function: the collection is sorted (only scalar values) in ascending order by default, according to their type. コレクションが異なる型の要素を格納している場合、それらはまず型ごとにグループ分けされ、そのあとで並べ替えられます。 型は以下の順番で返されます:
+`.multiSort()` が引数なしで呼び出された場合、この関数は [`.sort()`](#sort) 関数と同じ効果を持ちます: コレクション要素は、スカラー値のみがデータ型に応じてデフォルトで昇順に並べ替えられます。 コレクションが異なる型の要素を格納している場合、それらはまず型ごとにグループ分けされ、そのあとで並べ替えられます。 型は以下の順番で返されます:
 
 1. null
 2. ブール
@@ -2089,32 +2092,32 @@ If `.multiSort()` is called with no parameters, the function has the same effect
 
 **単一レベルの同期ソート**
 
-To sort several collections synchronously, just pass in _colsToSort_ a collection of collections to sort. 渡せるコレクションの数に制限はありません。 The original collection will be sorted in ascending order and all _colsToSort_ collections will be sorted in a synchronized manner.
+複数のコレクションを同期的にソートするには、_colsToSort_ にソートするコレクションのコレクションを渡します。 渡せるコレクションの数に制限はありません。 呼び出し元のコレクションは昇順にソートされ、すべての _colsToSort_ コレクションが同期ソートされます。
 
 :::note
 
-All _colsToSort_ collections must have the same number of elements, otherwise an error is returned.
+_colsToSort_ に渡すコレクションの要素数はすべて同じでなければなりません。そうでない場合はエラーが返されます。
 
 :::
 
-If you want to sort the collections in some other order than ascending, you must supply a _formula_ ([Formula object](FunctionClass.md#formula) that defines the sort order. The return value should be a boolean that indicates the relative order of the two elements: **True** if _$1.value_ is less than _$1.value2_, **False** if _$1.value_ is greater than _$1.value2_. 必要に応じて、 追加の引数をフォーミュラに渡せます。
+昇順以外の方法でコレクションをソートしたい場合には、ソート順を定義する _formula_ ([Formula オブジェクト](FunctionClass.md#formula)) を指定する必要があります。 戻り値は、二つの要素の相対的な順番を示すブール値です。_$1.value_ が _$1.value2_ より小さい場合に **true** を、_$1.value_ が _$1.value2_ より大きい場合に **false** を返します。 必要に応じて、 追加の引数をフォーミュラに渡せます。
 
 フォーミュラは以下の引数を受け取ります:
 
 - $1 (オブジェクト):
-  - _$1.value_ (any type): first element value to be compared
-  - _$1.value2_ (any type): second element value to be compared
+  - _$1.value_ (任意の型): 比較する一つ目の要素の値
+  - _$1.value2_ (任意の型): 比較する二つ目の要素の値
 - $2...$N (任意の型): 追加の引数
 
 **複数レベルの同期ソート**
 
-Defining a multi-level synchronized sort requires that you pass an object containing {`collection`:_colToSort_;`order`:`ck ascending` or `ck descending`} properties instead of the _colToSort_ itself for every collection to use as sub-level.
+複数レベルの同期ソートを定義するには、サブレベルとして使用するコレクションについては、{`collection`:_colToSort_;`order`:`ck ascending` または `ck descending`} プロパティを含むオブジェクトを _colToSort_ に格納して渡す必要があります。
 
-The sort levels are determined by the order in which the collections are passed in the _colsToSort_ parameter: the position of a `collection`/`order` object in the syntax determines its sort level.
+ソートレベルは、_colsToSort_ に渡されるコレクションの順序によって決定されます。 `collection`/`order` オブジェクトの構文内の位置が、そのソートレベルを決定します。
 
 :::note
 
-The `.multiSort()` function uses a [stable](https://en.wikipedia.org/wiki/Sorting_algorithm#Stability) sort algorithm.
+`.multiSort()` 関数は、[安定性](https://ja.wikipedia.org/wiki/ソート#安定ソート) のあるソートアルゴリズムを使用します。
 
 :::
 
@@ -2146,14 +2149,15 @@ var $city : Collection
 var $country : Collection
 var $continent : Collection
 
-$city:=["Paris"; "Lyon"; "Rabat"; "Eching"; "San Diego"]
-$country:=["France"; "France"; "Morocco"; "Germany"; "US"]
-$continent:=["Europe"; "Europe"; "Africa"; "Europe"; "America"]
+$city:=["Eching"; "Rabat"; "Paris"; "Lyon"; "San Diego"]
+$country:=["Germany"; "Morocco"; "France"; "France"; "US"]
+$continent:=["Europe"; "Africa"; "Europe"; "Europe"; "America"]
 
 $continent.multiSort([$country; {collection: $city; order: ck ascending}])
-//$continent=["Africa","America","Europe","Europe","Europe"]
-//$country=["Morocco","US","France","France","Germany"]
-//$city=["Rabat","San Diego","Lyon","Paris","Eching"]
+
+//$continent=["Africa", "America","Europe","Europe","Europe"]
+//$country=["Morocco", "US","Germany","France","France"]
+//$city=["Rabat","San Diego","Eching","Lyon","Paris"]
 
 ```
 
@@ -2199,30 +2203,30 @@ $name.multiSort(Formula($1.value.firstname<$1.value2.firstname); [$address])
 
 <!-- REF #collection.orderBy().Params -->
 
-| 引数          | タイプ        |     | 説明                                                                   |
-| ----------- | ---------- | :-: | -------------------------------------------------------------------- |
-| pathStrings | Text       |  -> | コレクションの並べ替え基準とするプロパティパス                                              |
-| pathObjects | Collection |  -> | 条件オブジェクトのコレクション                                                      |
-| ascOrDesc   | Integer    |  -> | `ck ascending` or `ck descending` (scalar values) |
-| 戻り値         | Collection |  <- | 並べ替えられたコレクションのコピー (シャロウ・コピー)                      |
+| 引数          | タイプ        |     | 説明                                                            |
+| ----------- | ---------- | :-: | ------------------------------------------------------------- |
+| pathStrings | Text       |  -> | コレクションの並べ替え基準とするプロパティパス                                       |
+| pathObjects | Collection |  -> | 条件オブジェクトのコレクション                                               |
+| ascOrDesc   | Integer    |  -> | `ck ascending` または `ck descending` (スカラー値) |
+| 戻り値         | Collection |  <- | 並べ替えられたコレクションのコピー (シャロウ・コピー)               |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.orderBy()` function <!-- REF #collection.orderBy().Summary -->returns a new collection containing all elements of the collection in the specified order<!-- END REF -->.
+`.orderBy()` 関数は、<!-- REF #collection.orderBy().Summary -->コレクションの要素を指定順に並べ替えた新しいコレクションを返します<!-- END REF -->。
 
-This function returns a _shallow copy_, which means that objects or collections in both collections share the same reference. また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
+この関数は _シャロウ・コピー_ を返します。つまり、元のコレクションにオブジェクト要素やコレクション要素が含まれていた場合、それらの参照は戻り値のコレクションで共有されます。 また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
 
 > このコマンドは、元のコレクションを変更しません。
 
-引数を渡さなかった場合、メソッドはコレクション内のスカラー値を昇順に並べ替えます (オブジェクトやコレクションなどの他の型は内部的な順序で返されます)。 You can modify this automatic order by passing the `ck ascending` or `ck descending` constants in the _ascOrDesc_ parameter (see below).
+引数を渡さなかった場合、メソッドはコレクション内のスカラー値を昇順に並べ替えます (オブジェクトやコレクションなどの他の型は内部的な順序で返されます)。 この自動並べ替え順は、_ascOrDesc_ パラメーターに `ck ascending` あるいは `ck descending` 定数を渡すことで変更できます (以下参照)。
 
 また、引数を渡すことで、コレクション要素をどのように並べ替えるかを指定することもできます。 次の 3つのシンタックスがサポートされています:
 
-- _pathStrings_ : Text (formula). **Syntax**: `propertyPath1 {desc or asc}, propertyPath2 {desc or asc},...` (default order: asc). _pathStrings_ contains a formula made of 1 to x property paths and (optionally) sort orders, separated by commas. プロパティを渡す順番が、コレクション要素の並べ替えの優先順位を決定します。 デフォルトでは、プロパティは昇順に並べ替えられます。 並び順を設定するには、プロパティパスの後に半角スペースで区切ったあとに、昇順を指定するには "asc"、降順を指定するには "desc" を渡します。
+- _pathStrings_ : Text (フォーミュラ)。 **シンタックス**: `propertyPath1 {desc または asc}, propertyPath2 {desc または asc},...` (デフォルトの並び順: asc)。 _pathStrings_ はカンマで区切られた、1〜n のプロパティパスと並び順 (任意) で構成されたフォーミュラを格納します。 プロパティを渡す順番が、コレクション要素の並べ替えの優先順位を決定します。 デフォルトでは、プロパティは昇順に並べ替えられます。 並び順を設定するには、プロパティパスの後に半角スペースで区切ったあとに、昇順を指定するには "asc"、降順を指定するには "desc" を渡します。
 
-- _pathObjects_ : Collection. You can add as many objects in the _pathObjects_ collection as necessary. デフォルトでは、プロパティは昇順に並べ替えられます ("descending" は false)。 コレクションの各要素は、以下の構造を持つオブジェクトを格納します:
+- _pathObjects_ : Collection。 _pathObjects_ コレクションには必要な数だけオブジェクトを追加することができます。 デフォルトでは、プロパティは昇順に並べ替えられます ("descending" は false)。 コレクションの各要素は、以下の構造を持つオブジェクトを格納します:
 
 ```4d
 {
@@ -2232,7 +2236,7 @@ This function returns a _shallow copy_, which means that objects or collections 
 }
 ```
 
-- _ascOrDesc_ : Integer. You pass one of the following constants from the **Objects and collections** theme:
+- _ascOrDesc_ : Integer。 **Objects and collections** テーマから、以下の定数のいずれか一つを渡します:
 
   | 定数            | タイプ     | 値 | 説明                                      |
   | ------------- | ------- | - | --------------------------------------- |
@@ -2262,7 +2266,7 @@ This function returns a _shallow copy_, which means that objects or collections 
     $c.push(Random)
  End for
  $c2:=$c.orderBy(ck ascending)
- $c3:=$c.orderBy(ck descending)
+ $c3:=$c.orderBy(ck descending)
 ```
 
 #### 例題 2
@@ -2349,30 +2353,30 @@ This function returns a _shallow copy_, which means that objects or collections 
 
 #### 説明
 
-The `.orderByMethod()` function <!-- REF #collection.orderByMethod().Summary -->returns a new collection containing all elements of the collection in the order defined through the _formula_ 4D function or _methodName_ method<!-- END REF -->.
+`.orderByMethod()` 関数は、 <!-- REF #collection.orderByMethod().Summary -->_formula_ または _methodName_ によって定義された順番でコレクション要素を並べ替えた新しいコレクションを返します<!-- END REF -->。
 
-This function returns a _shallow copy_, which means that objects or collections in both collections share the same reference. また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
+この関数は _シャロウ・コピー_ を返します。つまり、元のコレクションにオブジェクト要素やコレクション要素が含まれていた場合、それらの参照は戻り値のコレクションで共有されます。 また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
 
 > このコマンドは、元のコレクションを変更しません。
 
 次のいずれかを使用して、コレクション要素を評価するために実行されるコールバックを指定します:
 
-- _formula_ (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
+- _formula_ (推奨シンタックス)、関数やプロジェクトメソッドを含むあらゆる実行可能な式を格納できる [Formula オブジェクト](FunctionClass.md)。
 
-- or _methodName_, the name of a project method (text).
+- または _methodName_、プロジェクトメソッドの名前 (テキスト)。
 
-In the callback, pass some code that compares two values and returns **true** if the first value is lower than the second value. You can provide _extraParam_ parameters to the callback if necessary.
+コールバックには、二つの値を比較して、最初の値が二つ目の値より低い場合に **true** を返すコードの名称を渡します。 必要に応じて、 _extraParam_ に指定した引数をコールバックに渡せます。
 
 コールバックは以下の引数を受け取ります:
 
 - $1 (オブジェクト):
-  - _$1.value_ (any type): first element value to be compared
-  - _$1.value2_ (any type): second element value to be compared
+  - _$1.value_ (任意の型): 比較する一つ目の要素の値
+  - _$1.value2_ (任意の型): 比較する二つ目の要素の値
   - $2...$N (任意の型): 追加の引数
 
 メソッドを使用する場合、以下の引数を設定する必要があります:
 
-- _$1.result_ (boolean): **true** if _$1.value < $1.value2_, **false** otherwise
+- _$1.result_ (ブール): _$1.value < $1.value2_ の場合は **true**、それ以外は **false**。
 
 #### 例題 1
 
@@ -2382,7 +2386,7 @@ In the callback, pass some code that compares two values and returns **true** if
  var $c; $c2; $c3 : Collection
  $c:=New collection
  $c.push("33";"4";"1111";"222")
- $c2:=$c.orderBy() //$c2=["1111","222","33","4"], alphabetical order
+ $c2:=$c.orderBy() //$c2=["1111","222","33","4"], アルファベット順
  $c3:=$c.orderByMethod(Formula(Num($1.value)<Num($1.value2))) // $c3=["4","33","222","1111"]
 ```
 
@@ -2414,12 +2418,11 @@ $strings2:=$strings1.orderByMethod(Function(sortCollection);sk strict)
 // 結果 : ["alpha","Alpha","bravo","Bravo","charlie","Charlie"]
 ```
 
-The _**sortCollection**_ method:
+_**sortCollection**_ メソッドのコードは以下のとおりです:
 
 ```4d
 var $1 : Object
-var $2: Integer // sort option
-
+var $2: Integer // 並べ替えオプション
 $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 ```
 
@@ -2449,24 +2452,24 @@ $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 
 #### 説明
 
-The `.pop()` function <!-- REF #collection.pop().Summary -->removes the last element from the collection and returns it as the function result<!-- END REF -->.
+`.pop()` 関数は、<!-- REF #collection.pop().Summary -->コレクションから最後の要素を取り除き、それを戻り値として返します<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更します。
 
-When applied to an empty collection, `.pop()` returns _**undefined**_.
+空のコレクションに適用した場合、 `.pop()` は _**Undefined**_ を返します。
 
 #### 例題
 
-`.pop()`, used in conjunction with [`.push()`](#push), can be used to implement a first-in, last-out stack feature:
+`.pop()` を [`.push()`](#push) と組み合わせて使用すると、スタック (後入れ先出し構造) を実装することができます:
 
 ```4d
  var $stack : Collection
  $stack:=New collection //$stack=[]
  $stack.push(1;2) //$stack=[1,2]
- $stack.pop() //$stack=[1]  Returns 2
+ $stack.pop() //$stack=[1] 、戻り値は 2 です
  $stack.push(New collection(4;5)) //$stack=[[1,[4,5]]
- $stack.pop() //$stack=[1]  Returns [4,5]
- $stack.pop() //$stack=[]  Returns 1
+ $stack.pop() //$stack=[1] 、戻り値は [4,5] です
+ $stack.pop() //$stack=[] 、戻り値は 1 です
 ```
 
 <!-- END REF -->
@@ -2489,14 +2492,14 @@ When applied to an empty collection, `.pop()` returns _**undefined**_.
 
 | 引数      | タイプ        |     | 説明               |
 | ------- | ---------- | :-: | ---------------- |
-| element | Mixed      |  -> | コレクションに追加する要素    |
+| element | 複合         |  -> | コレクションに追加する要素    |
 | 戻り値     | Collection |  <- | 要素の追加された元のコレクション |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.push()` function <!-- REF #collection.push().Summary -->appends one or more _element_(s) to the end of the collection instance and returns the edited collection<!-- END REF -->.
+`.push()` 関数は、<!-- REF #collection.push().Summary -->一つ以上の _element_ 引数をコレクションインスタンスの最後に追加し、変更された元のコレクションを返します<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更します。
 
@@ -2544,7 +2547,7 @@ The `.push()` function <!-- REF #collection.push().Summary -->appends one or mor
 | 引数            | タイプ        |     | 説明                                                 |
 | ------------- | ---------- | :-: | -------------------------------------------------- |
 | queryString   | Text       |  -> | 検索条件                                               |
-| value         | Mixed      |  -> | プレースホルダー使用時: 比較する値                 |
+| value         | 複合         |  -> | プレースホルダー使用時: 比較する値                 |
 | querySettings | Object     |  -> | クエリオプション: parameters, attributes 他 |
 | 戻り値           | Collection |  <- | queryString に合致するコレクション要素                          |
 
@@ -2552,19 +2555,19 @@ The `.push()` function <!-- REF #collection.push().Summary -->appends one or mor
 
 #### 説明
 
-The `.query()` function <!-- REF #collection.query().Summary -->returns all elements of a collection of objects that match the search conditions <!-- END REF -->defined by _queryString_ and (optionally) _value_ or _querySettings_. また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
+`.query()` 関数は、_queryString_ および、任意の _value_ や _querySettings_ パラメーターによって定義された<!-- REF #collection.query().Summary -->検索条件に合致するオブジェクトコレクションの要素をすべて返します<!-- END REF -->。 また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
 
 > このコマンドは、元のコレクションを変更しません。
 
-The _queryString_ parameter uses the following syntax:
+_queryString_ 引数には、以下のシンタックスを使用します:
 
 ```4d
 propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 値}
 ```
 
-For detailed information on how to build a query using _queryString_, _value_ and _querySettings_ parameters, please refer to the [`dataClass.query()`](DataClassClass.md#query) function description.
+_queryString_ および _value_ や _querySettings_ パラメーターを使ってクエリをビルドする方法の詳細については、[`DataClass.query()`](DataClassClass.md#query) 関数を参照ください。
 
-> Formulas are not supported by the `collection.query()` function, neither in the _queryString_ parameter nor as _formula_ object parameter.
+> _queryString_ 引数および _formula_ オブジェクト引数の使用に関わらず、フォーミュラは `collection.query()` 関数でサポートされていません。
 
 #### 例題 1
 
@@ -2611,7 +2614,7 @@ For detailed information on how to build a query using _queryString_, _value_ an
 以下のクエリは、年齢が不明な (プロパティが null あるいは undefined に設定されている) 人物を返します:
 
 ```4d
- $col:=$c.query("age=null") //placeholders not allowed with "null"
+ $col:=$c.query("age=null") // "null" ではプレースホルダーは使えません
   //$col=[{name:Wesson...},{name:Sterling...},{name:Mark...}]
 ```
 
@@ -2619,12 +2622,12 @@ For detailed information on how to build a query using _queryString_, _value_ an
 
 ```4d
  $col:=$c.query("dateHired < :1";(Current date-90))
-  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] if today is 01/10/2018
+  // 今日が 01/10/2018 であれば $col=[{name:Smith...},{name:Sterling...},{name:Mark...}]
 ```
 
 #### 例題 3
 
-More examples of queries can be found in the `dataClass.query()` page.
+追加のクエリ例については、[`dataClass.query()`](dataclassClass.md#query) を参照してください。
 
 <!-- END REF -->
 
@@ -2645,41 +2648,41 @@ More examples of queries can be found in the `dataClass.query()` page.
 
 <!-- REF #collection.reduce().Params -->
 
-| 引数         | タイプ                                             |     | 説明                                                                                |
-| ---------- | ----------------------------------------------- | :-: | --------------------------------------------------------------------------------- |
-| formula    | 4D.Function                     |  -> | フォーミュラオブジェクト                                                                      |
-| methodName | Text                                            |  -> | メソッド名                                                                             |
-| initValue  | Text, Number, Object, Collection, Date, Boolean |  -> | Value to use as the first argument to the first call of _formula_ or _methodName_ |
-| param      | 式                                               |  -> | 渡す引数                                                                              |
-| 戻り値        | Text, Number, Object, Collection, Date, Boolean |  <- | アキュムレーター値の結果                                                                      |
+| 引数         | タイプ                                             |     | 説明                                                |
+| ---------- | ----------------------------------------------- | :-: | ------------------------------------------------- |
+| formula    | 4D.Function                     |  -> | フォーミュラオブジェクト                                      |
+| methodName | Text                                            |  -> | メソッド名                                             |
+| initValue  | Text, Number, Object, Collection, Date, Boolean |  -> | _formula_ または _methodName_ の最初の呼び出しに最初の引数として使用する値 |
+| param      | 式                                               |  -> | 渡す引数                                              |
+| 戻り値        | Text, Number, Object, Collection, Date, Boolean |  <- | アキュムレーター値の結果                                      |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.reduce()` function <!-- REF #collection.reduce().Summary -->applies the _formula_ or _methodName_ callback against an accumulator and each element in the collection (from left to right) to reduce it to a single value<!-- END REF -->.
+`.reduce()` 関数は、<!-- REF #collection.reduce().Summary -->_formula_ または _methodName_ コールバックをアキュムレーターおよびコレクションの各要素に (左から右へ) 適用して、単一の値にまとめます<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更しません。
 
 次のいずれかを使用して、コレクション要素を評価するために実行されるコールバックを指定します:
 
-- _formula_ (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or _methodName_, the name of a project method (text).
+- _formula_ (推奨シンタックス)、関数やプロジェクトメソッドを含むあらゆる実行可能な式を格納できる [Formula オブジェクト](FunctionClass.md)。
+- または _methodName_、プロジェクトメソッドの名前 (テキスト)。
 
-The callback takes each collection element and performs any desired operation to accumulate the result into _$1.accumulator_, which is returned in _$1.value_.
+コールバックはコレクションの各要素を受け取り、任意の処理を実行して、結果を _$1.accumulator_ に蓄積します。この値は最終的に _$1.value_ に返されます。
 
-You can pass the value to initialize the accumulator in _initValue_. If omitted, _$1.accumulator_ starts with _Undefined_.
+_initValue_ に引数を渡すことで、アキュムレーターを初期化することができます。 省略された場合は、_$1.accumulator_ は _Undefined_ から開始されます。
 
 コールバックは以下の引数を受け取ります:
 
-- in _$1.value_: element value to be processed
+- _$1.value_: 処理する要素の値
 - in _$2: param_
 - in _$N..._: _paramN..._
 
 コールバックは以下のパラメーターを設定します:
 
-- _$1.accumulator_: value to be modified by the function and which is initialized by _initValue_.
-- _$1.stop_ (boolean, optional): **true** to stop the method callback. 返された値は最後に計算されたものです。
+- _$1.accumulator_: メソッドで変更する値。_initValue_ によって初期化します。
+- _$1.stop_ (ブール、任意): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
 
 #### 例題 1
 
@@ -2703,7 +2706,7 @@ $r:=$c.reduce(Formula($1.accumulator*=$1.value); 1)  // 戻り値は 86400 で�
  $r:=$c.reduce(Formula(Flatten)) //$r=[0,1,2,3,4,5,6,7]
 ```
 
-With the following _**Flatten**_ method:
+_**Flatten**_ メソッドのコードは以下のとおりです:
 
 ```4d
  If($1.accumulator=Null)
@@ -2730,48 +2733,48 @@ With the following _**Flatten**_ method:
 
 <!-- REF #collection.reduceRight().Params -->
 
-| 引数         | タイプ                                             |     | 説明                                                                                |
-| ---------- | ----------------------------------------------- | :-: | --------------------------------------------------------------------------------- |
-| formula    | 4D.Function                     |  -> | フォーミュラオブジェクト                                                                      |
-| methodName | Text                                            |  -> | メソッド名                                                                             |
-| initValue  | Text, Number, Object, Collection, Date, Boolean |  -> | Value to use as the first argument to the first call of _formula_ or _methodName_ |
-| param      | 式                                               |  -> | 渡す引数                                                                              |
-| 戻り値        | Text, Number, Object, Collection, Date, Boolean |  <- | アキュムレーター値の結果                                                                      |
+| 引数         | タイプ                                             |     | 説明                                                |
+| ---------- | ----------------------------------------------- | :-: | ------------------------------------------------- |
+| formula    | 4D.Function                     |  -> | フォーミュラオブジェクト                                      |
+| methodName | Text                                            |  -> | メソッド名                                             |
+| initValue  | Text, Number, Object, Collection, Date, Boolean |  -> | _formula_ または _methodName_ の最初の呼び出しに最初の引数として使用する値 |
+| param      | 式                                               |  -> | 渡す引数                                              |
+| 戻り値        | Text, Number, Object, Collection, Date, Boolean |  <- | アキュムレーター値の結果                                      |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.reduceRight()` function <!-- REF #collection.reduceRight().Summary -->applies the _formula_ or _methodName_ callback against an accumulator and each element in the collection (from right to left) to reduce it to a single value<!-- END REF -->.
+`.reduceRight()` 関数は、<!-- REF #collection.reduceRight().Summary -->_formula_ または _methodName_ コールバックをアキュムレーターおよびコレクションの各要素に (右から左へ) 適用して、単一の値にまとめます<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更しません。
 
 次のいずれかを使用して、コレクション要素を評価するために実行されるコールバックを指定します:
 
-- _formula_ (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or _methodName_, the name of a project method (text).
+- _formula_ (推奨シンタックス)、関数やプロジェクトメソッドを含むあらゆる実行可能な式を格納できる [Formula オブジェクト](FunctionClass.md)。
+- または _methodName_、プロジェクトメソッドの名前 (テキスト)。
 
-The callback takes each collection element and performs any desired operation to accumulate the result into _$1.accumulator_, which is returned in _$1.value_.
+コールバックはコレクションの各要素を受け取り、任意の処理を実行して、結果を _$1.accumulator_ に蓄積します。この値は最終的に _$1.value_ に返されます。
 
-You can pass the value to initialize the accumulator in _initValue_. If omitted, _$1.accumulator_ starts with _Undefined_.
+_initValue_ に引数を渡すことで、アキュムレーターを初期化することができます。 省略された場合は、_$1.accumulator_ は _Undefined_ から開始されます。
 
 コールバックは以下の引数を受け取ります:
 
-- in _$1.value_: element value to be processed
+- _$1.value_: 処理する要素の値
 - in _$2: param_
 - in _$N..._: _paramN..._
 
 コールバックは以下のパラメーターを設定します:
 
-- _$1.accumulator_: value to be modified by the function and which is initialized by _initValue_.
-- _$1.stop_ (boolean, optional): **true** to stop the method callback. 返された値は最後に計算されたものです。
+- _$1.accumulator_: メソッドで変更する値。_initValue_ によって初期化します。
+- _$1.stop_ (ブール、任意): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
 
 #### 例題 1
 
 ```4d
 var $c : Collection
 $c:=New collection(5;3;5;1;3;4;4;6;2;2)
-$r:=$c.reduceRight(Formula($1.accumulator*=$1.value); 1)  //returns 86400
+$r:=$c.reduceRight(Formula($1.accumulator*=$1.value); 1)  // 戻り値は 86400 です
 
 ```
 
@@ -2789,10 +2792,10 @@ $r:=$c.reduceRight(Formula($1.accumulator*=$1.value); 1)  //returns 86400
  $r:=$c.reduceRight(Formula(Flatten)) //$r=[6,7,4,5,2,3,0,1]
 ```
 
-With the following _**Flatten**_ method:
+_**Flatten**_ メソッドのコードは以下のとおりです:
 
 ```4d
-	//Flatten project method
+	//Flatten プロジェクトメソッド
  If($1.accumulator=Null)
     $1.accumulator:=New collection
  End if
@@ -2827,19 +2830,19 @@ With the following _**Flatten**_ method:
 
 #### 説明
 
-The `.remove()` function <!-- REF #collection.remove().Summary -->removes one or more element(s) from the specified _index_ position in the collection and returns the edited collection<!-- END REF -->.
+`.remove()` 関数は、<!-- REF #collection.remove().Summary -->_index_ で指定した位置から一つまた複数のコレクション要素を削除し、変更されたコレクションを返します<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更します。
 
-In _index_, pass the position where you want the element to be removed from the collection.
+_index_ パラメーターには、削除するコレクション要素の位置を渡します。
 
-> **Warning**: Keep in mind that collection elements are numbered from 0. If _index_ is greater than the length of the collection, actual starting index will be set to the length of the collection.
+> **警告**: コレクション要素は 0 起点である点に注意してください。 指定した _index_ がコレクションの length より大きい場合、実際の開始インデックスはコレクションの length に設定されます。
 
-- If _index_ < 0, it is recalculated as _index:=index+length_ (it is considered as the offset from the end of the collection).
-- If the calculated value < 0, _index_ is set to 0.
-- If the calculated value > the length of the collection, _index_ is set to the length.
+- _index_ < 0 の場合、_index:=index+length_ として再計算されます (コレクションの終端からのオフセットであるとみなされます)。
+- 計算結果も負の値である場合、_index_ は 0 に設定されます。
+- 計算結果がコレクションの length より大きい場合には、_index_ は length に設定されます。
 
-In _howMany_, pass the number of elements to remove from _index_. If _howMany_ is not specified, then one element is removed.
+_howMany_ には、_index_ の位置から削除する要素の数を渡します。 _howMany_ が省略された場合、1つの要素のみが削除されます。
 
 空のコレクションから要素を削除しようとした場合、関数は何もしません (エラーは生成されません)。
 
@@ -2882,14 +2885,14 @@ In _howMany_, pass the number of elements to remove from _index_. If _howMany_ i
 
 #### 説明
 
-The `.resize()` function <!-- REF #collection.resize().Summary -->sets the collection length to the specified new size and returns the resized collection<!-- END REF -->.
+`.resize()` 関数は、<!-- REF #collection.resize().Summary -->コレクションの length を引数で指定されたサイズに設定し、変更された元のコレクションを返します<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更します。
 
-- If _size_ < collection length, exceeding elements are removed from the collection.
-- If _size_ > collection length, the collection length is increased to size.
+- _size_ < length の場合、余分な要素はコレクションから削除されます。
+- _size_ > length の場合、不足分の要素がコレクションに追加されます。
 
-By default, new elements are filled will **null** values. You can specify the value to fill in added elements using the _defaultValue_ parameter.
+デフォルトで、新規要素には **null** 値が格納されます。 _defaultValue_ に引数を渡すことで、新規要素の値を指定することができます。
 
 #### 例題
 
@@ -2935,7 +2938,7 @@ By default, new elements are filled will **null** values. You can specify the va
 
 #### 説明
 
-The `.reverse()` function <!-- REF #collection.reverse().Summary -->returns a deep copy of the collection with all its elements in reverse order<!-- END REF -->. また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
+`.reverse()` 関数は、<!-- REF #collection.reverse().Summary -->全要素が逆順になった、コレクションのディープ・コピーを返します<!-- END REF -->。 また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
 
 > このコマンドは、元のコレクションを変更しません。
 
@@ -2973,7 +2976,7 @@ The `.reverse()` function <!-- REF #collection.reverse().Summary -->returns a de
 
 #### 説明
 
-The `.shift()` function <!-- REF #collection.shift().Summary -->removes the first element of the collection and returns it as the function result<!-- END REF -->.
+`.shift()` 関数は、<!-- REF #collection.shift().Summary -->コレクションの先頭要素を取り除き、それを戻り値として返します<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更します。
 
@@ -3018,16 +3021,17 @@ The `.shift()` function <!-- REF #collection.shift().Summary -->removes the firs
 
 #### 説明
 
-The `.slice()` function <!-- REF #collection.slice().Summary -->returns a portion of a collection into a new collection<!-- END REF -->, selected from _startFrom_ index to _end_ index (end not included). This function returns a _shallow copy_ of the collection. また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
+`.slice()` 関数は、_startFrom_ の位置 (含まれる) から _end_ の位置 (含まれない) までの<!-- REF #collection.slice().Summary -->
+コレクションの一部を、新しいコレクションの中に返します<!-- END REF -->。 この関数は _シャロウ・コピー_ を返します。 また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
 
 > このコマンドは、元のコレクションを変更しません。
 
-The returned collection contains the element specified by _startFrom_ and all subsequent elements up to, but not including, the element specified by _end_. If only the _startFrom_ parameter is specified, the returned collection contains all elements from _startFrom_ to the last element of the original collection.
+戻り値のコレクションには、_startFrom_ 引数で指定した要素 (含まれる) から、_end_ 引数で指定した要素まで (含まれない) の全要素が格納されます。 _startFrom_ 引数のみを渡した場合には、_startFrom_ 引数で指定した要素から最後の要素までが戻り値のコレクションに格納されます。
 
-- If _startFrom_ < 0, it is recalculated as _startFrom:=startFrom+length_ (it is considered as the offset from the end of the collection).
-- If the calculated value < 0, _startFrom_ is set to 0.
-- If _end_ < 0 , it is recalculated as _end:=end+length_.
-- If _end < startFrom_ (passed or calculated values), the method does nothing.
+- _startFrom_ < 0 の場合、_startFrom:=startFrom+length_ として再計算されます (コレクションの終端からのオフセットであるとみなされます)。
+- 再計算された値も負の値だった場合、_startFrom_ は 0 に設定されます。
+- _end_ < 0 の場合、それは _end:=end+length_ として再計算されます。
+- 渡された値、あるいは再計算された値が _end_ < _startFrom_ の場合、関数はなにもしません。
 
 #### 例題
 
@@ -3064,44 +3068,45 @@ The returned collection contains the element specified by _startFrom_ and all su
 | startFrom  | Integer                     |  -> | テストを開始するインデックス            |
 | formula    | 4D.Function |  -> | フォーミュラオブジェクト              |
 | methodName | Text                        |  -> | メソッド名                     |
-| param      | Mixed                       |  -> | 渡す引数                      |
+| param      | 複合                          |  -> | 渡す引数                      |
 | 戻り値        | Boolean                     |  <- | 少なくとも一つの要素がテストをパスすれば true |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.some()` function <!-- REF #collection.some().Summary -->returns true if at least one element in the collection successfully passed a test implemented in the provided _formula_ or _methodName_ code<!-- END REF -->.
+.some() 関数は、<!-- REF #collection.some().Summary -->
+少なくとも一つのコレクション要素が、_formula_ または _methodName_ のコードで実装されたテストにパスした場合に **true** を返します<!-- END REF -->。
 
 次のいずれかを使用して、コレクション要素を評価するために実行されるコード (コールバック) を指定します:
 
-- _formula_ (recommended syntax), a [Formula object](FunctionClass.md) that can encapsulate any executable expressions, including functions and project methods;
-- or _methodName_, the name of a project method (text).
+- _formula_ (推奨シンタックス)、関数やプロジェクトメソッドを含むあらゆる実行可能な式を格納できる [Formula オブジェクト](FunctionClass.md)。
+- または _methodName_、プロジェクトメソッドの名前 (テキスト)。
 
-The callback is called with the parameter(s) passed in _param_ (optional). The callback can perform any test, with or without the parameter(s) and must return **true** for every element fulfilling the test. It receives an `Object` in first parameter ($1).
+コールバックには、_param_ (任意) に指定した引数が渡されます。 引数の有無にかかわらず、コールバックは任意のテストを実行でき、テストを満たす要素に対しては **true** を返さなくてはなりません。 コールバックは最初のパラメーター ($1) に `Object` を受け取ります。
 
 コールバックは以下の引数を受け取ります:
 
-- in _$1.value_: element value to be processed
+- _$1.value_: 処理する要素の値
 - in _$2: param_
 - in _$N..._: _paramN..._
 
 また、コールバックは以下のパラメーターを設定できます:
 
-- (mandatory if you used a method) _$1.result_ (boolean): **true** if the element value evaluation is successful, **false** otherwise.
-- _$1.stop_ (boolean, optional): **true** to stop the method callback. 返された値は最後に計算されたものです。
+- (メソッドを使用する場合は必須) _$1.result_ (ブール): 要素の値の評価が成功した場合には **true** 、それ以外は **false**
+- _$1.stop_ (ブール、任意): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
 
-In any case, at the point where `.some()` function encounters the first collection element returning true, it stops calling the callback and returns **true**.
+`.some()` 関数は、true を返す最初のコレクション要素を発見すると、コールバックの呼び出しをやめて **true** を返します。
 
-By default, `.some()` tests the whole collection. Optionally, you can pass the index of an element from which to start the test in _startFrom_.
+デフォルトでは、`.some()` はコレクション全体をテストします。 オプションとして、_startFrom_ 引数を渡すことで、テストを開始するコレクション要素のインデックスを指定することができます。
 
-- If _startFrom_ >= the collection's length, **False** is returned, which means the collection is not tested.
-- If _startFrom_ < 0, it is considered as the offset from the end of the collection.
-- If _startFrom_ = 0, the whole collection is searched (default).
+- _startFrom_ がコレクションの length 以上だった場合、**false** が返されます。これはコレクションがテストされていないことを意味します。
+- _startFrom_ < 0 の場合には、コレクションの終わりからのオフセットであるとみなされます。
+- _startFrom_ = 0 の場合、コレクション全体がテストされます (デフォルト)。
 
 #### 例題
 
-You want to know if at least one collection value is >0.
+コレクション要素のうち、0以上の値が少なくとも 1つあるかどうかを確認します。
 
 ```4d
  var $c : Collection
@@ -3148,11 +3153,11 @@ You want to know if at least one collection value is >0.
 
 #### 説明
 
-The `.sort()` function <!-- REF #collection.sort().Summary -->sorts the elements of the original collection and also returns the sorted collection<!-- END REF --> .
+`.sort()` 関数は、 <!-- REF #collection.sort().Summary -->コレクションの要素を並べ替え、並べ替えられた元のコレクションを返します<!-- END REF --> 。
 
 > このコマンドは、元のコレクションを変更します。
 
-If `.sort()` is called with no parameters, only scalar values (number, text, date, booleans) are sorted. デフォルトでは、要素はそれぞれの型に応じて昇順で並べ替えられます。 コレクションが異なる型の要素を格納している場合、それらはまず型ごとにグループ分けされ、そのあとで並べ替えられます。 型は以下の順番で返されます:
+引数もなしに呼び出された場合、`.sort()` はスカラー値 (数値、テキスト、日付、ブール) のみを並べ替えます。 デフォルトでは、要素はそれぞれの型に応じて昇順で並べ替えられます。 コレクションが異なる型の要素を格納している場合、それらはまず型ごとにグループ分けされ、そのあとで並べ替えられます。 型は以下の順番で返されます:
 
 1. null
 2. ブール
@@ -3162,18 +3167,18 @@ If `.sort()` is called with no parameters, only scalar values (number, text, dat
 6. コレクション
 7. 日付
 
-If you want to sort the collection elements in some other order or sort any type of element, you must supply in _formula_ ([Formula object](FunctionClass.md)) or _methodName_ (Text) a callback that defines the sort order. The return value should be a boolean that indicates the relative order of the two elements: **True** if _$1.value_ is less than _$1.value2_, **False** if _$1.value_ is greater than _$1.value2_. 必要に応じて、 追加の引数をコールバックに渡せます。
+カスタマイズされた順番や、型に関係なくコレクション要素を並べ替えたい場合には、並べ替え順を定義するコールバックを _formula_ ([Formula オブジェクト](FunctionClass.md)) または _methodName_ (テキスト) に渡します。 戻り値は、二つの要素の相対的な順番を示すブール値です。_$1.value_ が _$1.value2_ より小さい場合に **true** を、_$1.value_ が _$1.value2_ より大きい場合に **false** を返します。 必要に応じて、 追加の引数をコールバックに渡せます。
 
 コールバックは以下の引数を受け取ります:
 
 - $1 (オブジェクト):
-  - _$1.value_ (any type): first element value to be compared
-  - _$1.value2_ (any type): second element value to be compared
+  - _$1.value_ (任意の型): 比較する一つ目の要素の値
+  - _$1.value2_ (任意の型): 比較する二つ目の要素の値
 - $2...$N (任意の型): 追加の引数
 
 メソッドを使用する場合、以下の引数を設定する必要があります:
 
-- _$1.result_ (boolean): **true** if _$1.value < $1.value2_, **false** otherwise.
+- _$1.result_ (ブール): _$1.value < $1.value2_ の場合は **true**、それ以外は **false**。
 
 #### 例題 1
 
@@ -3197,8 +3202,8 @@ If you want to sort the collection elements in some other order or sort any type
 ```4d
 var $col; $col2; $col3 : Collection
 $col:=New collection(33;4;66;1111;222)
-$col2:=$col.sort() //numerical sort: [4,33,66,222,1111]
-$col3:=$col.sort(Formula(String($1.value)<String($1.value2))) //alphabetical sort: [1111,222,33,4,66]
+$col2:=$col.sort() // 数値順: [4,33,66,222,1111]
+$col3:=$col.sort(Formula(String($1.value)<String($1.value2))) // アルファベット順: [1111,222,33,4,66]
 ```
 
 <!-- END REF -->
@@ -3228,17 +3233,17 @@ $col3:=$col.sort(Formula(String($1.value)<String($1.value2))) //alphabetical sor
 
 #### 説明
 
-The `.sum()` function <!-- REF #collection.sum().Summary -->returns the sum for all values in the collection instance<!-- END REF -->.
+`.sum()` 関数は、<!-- REF #collection.sum().Summary -->コレクションインスタンスの全要素の値を合計して返します<!-- END REF -->。
 
 計算の対象となるのは数値のみです (他の型の要素は無視されます)。
 
-If the collection contains objects, pass the _propertyPath_ parameter to indicate the object property to take into account.
+コレクションがオブジェクトを格納している場合には、計算するオブジェクトプロパティのパスを _propertyPath_ に渡します。
 
-`.sum()` returns 0 if:
+`.sum()` は以下の場合には 0 を返します:
 
 - コレクションが空の場合
 - コレクションに数値が含まれていない場合
-- _propertyPath_ is not found in the collection.
+- _propertyPath_ 引数で指定したパスがコレクション内で見つからない場合
 
 #### 例題 1
 
@@ -3289,7 +3294,7 @@ If the collection contains objects, pass the _propertyPath_ parameter to indicat
 
 #### 説明
 
-The `.unshift()` function <!-- REF #collection.unshift().Summary -->inserts the given _value_(s) at the beginning of the collection <!-- END REF -->and returns the modified collection.
+`.unshift()` 関数は、<!-- REF #collection.unshift().Summary -->一つ以上の _value_ 引数をコレクションインスタンスの先頭に挿入し、変更された元のコレクションを返します<!-- END REF -->。
 
 > このコマンドは、元のコレクションを変更します。
 
