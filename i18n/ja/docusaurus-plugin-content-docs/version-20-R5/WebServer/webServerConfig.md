@@ -64,7 +64,7 @@ With 4D in remote mode, these files must be located in the local resources folde
 | ---------------- | -------------------------------------------------- | ---- |
 | webServer オブジェクト | [`cipherSuite`](API/WebServerClass.md#ciphersuite) | Text |
 
-セキュアプロトコルに使用される暗号リストです。Webサーバーが実装する暗号アルゴリズムの優先順位を設定します。 コロン区切りの文字列として設定できます (例: "ECDHE-RSA-AES128-...")。 See the [ciphers page](https://www.openssl.org/docs/manmaster/man1/ciphers.html) on the OpenSSL site.
+セキュアプロトコルに使用される暗号リストです。Webサーバーが実装する暗号アルゴリズムの優先順位を設定します。 コロン区切りの文字列として設定できます (例: "ECDHE-RSA-AES128-...")。 詳細は Open SSL サイトの [ciphers ページ](https://www.openssl.org/docs/manmaster/man1/ciphers.html) を参照ください。
 
 > The default cipher list used by 4D can be modified for the session using the `SET DATABASE PARAMETER` command, in which case the modification applies to the entire 4D application, including the web server, SQL server, client/server connections, as well as the HTTP client and all the 4D commands that make use of the secure protocol.
 
