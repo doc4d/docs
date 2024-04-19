@@ -52,13 +52,13 @@ Email オブジェクトは次のプロパティを提供します:
 
 メールアドレスを格納するプロパティ ([`from`](#from), [`cc`](#cc), [`bcc`](#bcc), [`to`](#to), [`sender`](#sender), [`replyTo`](#replyto)) はすべて、テキスト・オブジェクト・コレクション型の値を受け付けます。
 
-#### Text
+#### テキスト
 
 - 単一のメールアドレス: "somebody@domain.com"
-- single display name+email: "Somebody somebody@domain.com"
-- several emails: "Somebody somebody@domain.com,me@home.org"
+- 単一の表示名+メールアドレス: "Somebody somebody@domain.com"
+- 複数のメールアドレス: "Somebody somebody@domain.com,me@home.org"
 
-#### Object
+#### オブジェクト
 
 2つのプロパティを持つオブジェクト:
 
@@ -67,7 +67,7 @@ Email オブジェクトは次のプロパティを提供します:
 | name  | Text | 表示名 (null も可能) |
 | email | Text | メールアドレス                           |
 
-#### Collection
+#### コレクション
 
 アドレスオブジェクトのコレクション
 
@@ -109,7 +109,7 @@ Email オブジェクトは次のプロパティを提供します:
 
 #### 説明
 
-The `.attachments` property contains a <!-- REF #EmailObjectClass.attachments.Summary -->collection of `4D.MailAttachment` object(s)<!-- END REF -->.
+`.attachments` プロパティは、<!-- REF #EmailObjectClass.attachments.Summary -->`4D.MailAttachment` オブジェクトのコレクション<!-- END REF -->を格納します。
 
 MailAttachment オブジェクトは [`MAIL New attachment`](MailAttachmentClass.md#mail-new-attachment) コマンドによって定義されます。 MailAttachment オブジェクトは特有の [プロパティや関数](MailAttachmentClass.md) を持ちます。
 
@@ -119,7 +119,7 @@ MailAttachment オブジェクトは [`MAIL New attachment`](MailAttachmentClass
 
 #### 説明
 
-The `.bcc` property contains the <!-- REF #EmailObjectClass.bcc.Summary -->Blind Carbon Copy (BCC) hidden email recipient [addresse(s)](#email-addresses) of the email<!-- END REF -->.
+`.bcc` プロパティは、<!-- REF #EmailObjectClass.bcc.Summary -->非表示 (BCC: Blind Carbon Copy) のメール受信者 [アドレス](#メールアドレス) <!-- END REF -->を格納します。
 
 ## .bodyStructure
 
@@ -127,7 +127,7 @@ The `.bcc` property contains the <!-- REF #EmailObjectClass.bcc.Summary -->Blind
 
 #### 説明
 
-The `.bodyStructure` property contains the <!-- REF #EmailObjectClass.bodyStructure.Summary -->_EmailBodyPart_ object, i.e. the full MIME structure of the message body (optional)<!-- END REF -->. [メール本文の扱い](#メール本文の扱い) を参照ください。
+`.bodyStructure` プロパティは、<!-- REF #EmailObjectClass.bodyStructure.Summary -->(任意) メッセージ本文の完全なMIME ストラクチャーである _EmailBodyPart_ オブジェクト<!-- END REF -->を格納します。 [メール本文の扱い](#メール本文の扱い) を参照ください。
 
 `.bodyStructure` オブジェクトには、次のプロパティが格納されています:
 
@@ -149,7 +149,8 @@ The `.bodyStructure` property contains the <!-- REF #EmailObjectClass.bodyStruct
 
 #### 説明
 
-The `.bodyValues` property contains the <!-- REF #EmailObjectClass.bodyValues.Summary -->_EmailBodyValue_ object, containing an object for each \\<partID\> of `bodyStructure` (optional)<!-- END REF -->. [メール本文の扱い](#メール本文の扱い) を参照ください。
+`.bodyValues` プロパティは、<!-- REF #EmailObjectClass.bodyValues.Summary -->
+`bodyStructure` の \<partID\> 毎にオブジェクトを格納している _EmailBodyValue_ オブジェクト<!-- END REF -->を格納します (任意)。 [メール本文の扱い](#メール本文の扱い) を参照ください。
 
 `.bodyValues` オブジェクトには、次のプロパティが格納されています:
 
@@ -164,7 +165,7 @@ The `.bodyValues` property contains the <!-- REF #EmailObjectClass.bodyValues.Su
 
 #### 説明
 
-The `.cc` property contains the <!-- REF #EmailObjectClass.cc.Summary -->Carbon Copy (CC) additional email recipient [addresse(s)](#email-addresses) of the email<!-- END REF -->.
+`.cc` プロパティは、<!-- REF #EmailObjectClass.cc.Summary -->追加 (CC: Carbon Copy) のメール受信者 [アドレス](#メールアドレス) <!-- END REF -->を格納します。
 
 ## .comments
 
@@ -172,7 +173,7 @@ The `.cc` property contains the <!-- REF #EmailObjectClass.cc.Summary -->Carbon 
 
 #### 説明
 
-The `.comments` property contains an <!-- REF #EmailObjectClass.comments.Summary -->additional comments header<!-- END REF -->.
+`.comments` プロパティは、<!-- REF #EmailObjectClass.comments.Summary -->追加のコメントのヘッダー<!-- END REF -->を格納します。
 
 コメントはメッセージのヘッダーセクション内にのみ表示されます (つまり本文部分には触れないということです)。
 
@@ -184,7 +185,7 @@ The `.comments` property contains an <!-- REF #EmailObjectClass.comments.Summary
 
 #### 説明
 
-The `.from` property contains the <!-- REF #EmailObjectClass.from.Summary -->Originating [address(es)](#email-addresses) of the email<!-- END REF -->.
+`.from` プロパティは、<!-- REF #EmailObjectClass.from.Summary -->メールの送信元 [アドレス](#メールアドレス)<!-- END REF --> を格納します。
 
 送信されるメールには、それぞれ [sender](#sender) および **from** アドレスの両方がついています:
 
@@ -199,7 +200,7 @@ The `.from` property contains the <!-- REF #EmailObjectClass.from.Summary -->Ori
 
 #### 説明
 
-The `.headers` property contains a <!-- REF #EmailObjectClass.headers.Summary -->collection of `EmailHeader` objects, in the order they appear in the message<!-- END REF -->. これによってユーザーは拡張された (登録された) ヘッダーや、ユーザー定義された (登録されていない、"X" で始まる) ヘッダーを追加することができます。
+`.headers` プロパティは、<!-- REF #EmailObjectClass.headers.Summary -->メッセージ内で現れる順番どおりの `EmailHeader` オブジェクトのコレクション<!-- END REF -->を格納します。 これによってユーザーは拡張された (登録された) ヘッダーや、ユーザー定義された (登録されていない、"X" で始まる) ヘッダーを追加することができます。
 
 > メールレベルですでにプロパティとして設定されている "from" または "cc" などのヘッダーを `EmailHeader` オブジェクトプロパティが定義している場合、`EmailHeader` プロパティは無視されます。
 
@@ -216,7 +217,7 @@ The `.headers` property contains a <!-- REF #EmailObjectClass.headers.Summary --
 
 #### 説明
 
-The `.htmlBody` property contains the <!-- REF #EmailObjectClass.htmlBody.Summary -->HTML representation of the email message (default charset is UTF-8) (optional, SMTP only)<!-- END REF -->. [メール本文の扱い](#メール本文の扱い) を参照ください。
+`.htmlBody` プロパティは、<!-- REF #EmailObjectClass.htmlBody.Summary -->(任意、SMTPのみ) HTML形式のメールメッセージ (デフォルトの文字セットは UTF-8)<!-- END REF --> を格納します。 [メール本文の扱い](#メール本文の扱い) を参照ください。
 
 ## .id
 
@@ -226,7 +227,7 @@ The `.htmlBody` property contains the <!-- REF #EmailObjectClass.htmlBody.Summar
 
 [IMAP transporter](IMAPTransporterClass.md) のみ。
 
-The `.id` property contains the <!-- REF #EmailObjectClass.id.Summary -->unique ID from the IMAP server<!-- END REF -->.
+`.id` プロパティは、<!-- REF #EmailObjectClass.id.Summary -->IMAP サーバーからの固有ID<!-- END REF --> を格納します。
 
 ## .inReplyTo
 
@@ -234,7 +235,7 @@ The `.id` property contains the <!-- REF #EmailObjectClass.id.Summary -->unique 
 
 #### 説明
 
-The `.inReplyTo` property contains the <!-- REF #EmailObjectClass.inReplyTo.Summary -->message identifier(s) of the original message(s) to which the current message is a reply<!-- END REF -->.
+`.inReplyTo` プロパティは、<!-- REF #EmailObjectClass.inReplyTo.Summary -->カレントメッセージが返信している、元のメッセージのメッセージID<!-- END REF --> を格納します。
 
 特定のフォーマット条件についての詳細は、[RFC#5322](https://tools.ietf.org/html/rfc5322) を参照ください。
 
@@ -244,7 +245,7 @@ The `.inReplyTo` property contains the <!-- REF #EmailObjectClass.inReplyTo.Summ
 
 #### 説明
 
-The `.keywords` property contains a <!-- REF #EmailObjectClass.keywords.Summary -->set of keywords as an object, where each property name is a keyword and each value is true<!-- END REF -->.
+`.keywords` プロパティは、<!-- REF #EmailObjectClass.keywords.Summary -->各プロパティ名がキーワードであり、各値が true であるキーワードセットのオブジェクト<!-- END REF -->を格納します。
 
 このプロパティは "keywords" ヘッダーです ([RFC#4021](https://tools.ietf.org/html/rfc4021) 参照)。
 
@@ -273,7 +274,7 @@ The `.keywords` property contains a <!-- REF #EmailObjectClass.keywords.Summary 
 
 #### 説明
 
-The `.messageId` property contains a <!-- REF #EmailObjectClass.messageId.Summary -->message identifier header ("message-id")<!-- END REF -->.
+`.messageId` プロパティは、<!-- REF #EmailObjectClass.messageId.Summary -->メッセージ識別ヘッダー ("message-id")<!-- END REF --> を格納します。
 
 通常は、"lettersOrNumbers@domainname" の形式、たとえば "abcdef.123456@4d.com" などです。 この固有ID は特にフォーラムや公開メーリングリストで使用されています。 一般的に、メールサーバーは送信するメッセージにこのヘッダーを自動的に追加します。
 
@@ -285,7 +286,7 @@ The `.messageId` property contains a <!-- REF #EmailObjectClass.messageId.Summar
 
 [IMAP transporter](IMAPTransporterClass.md) のみ。
 
-The `.receivedAt` property contains the <!-- REF #EmailObjectClass.receivedAt.Summary -->timestamp of the email's arrival on the IMAP server in ISO 8601 UTC format (ex: 2020-09-13T16:11:53Z)<!-- END REF -->.
+`.receivedAt` プロパティは、<!-- REF #EmailObjectClass.receivedAt.Summary -->IMAPサーバーにメールが到着した時間の、ISO 8601 UTC フォーマットでのタイムスタンプ (例: 2020-09-13T16:11:53Z)<!-- END REF --> を格納します。
 
 ## .references
 
@@ -293,7 +294,7 @@ The `.receivedAt` property contains the <!-- REF #EmailObjectClass.receivedAt.Su
 
 #### 説明
 
-The `.references` property contains the <!-- REF #EmailObjectClass.references.Summary -->Collection of all message-ids of messages in the preceding reply chain<!-- END REF -->.
+`.references` プロパティは、<!-- REF #EmailObjectClass.references.Summary -->返信チェーン内メッセージの、全メッセージID のコレクション<!-- END REF -->を格納します。
 
 特定のフォーマット条件についての詳細は、[RFC#5322](https://tools.ietf.org/html/rfc5322) を参照ください。
 
@@ -303,7 +304,7 @@ The `.references` property contains the <!-- REF #EmailObjectClass.references.Su
 
 #### 説明
 
-The `.replyTo` property contains the <!-- REF #EmailObjectClass.replyTo.Summary -->[addresse(s)](#email-addresses) for responses<!-- END REF -->.
+`.replyTo` プロパティは、<!-- REF #EmailObjectClass.replyTo.Summary -->返信用 [アドレス](#メールアドレス)<!-- END REF --> を格納します。
 
 ## .sendAt
 
@@ -311,7 +312,7 @@ The `.replyTo` property contains the <!-- REF #EmailObjectClass.replyTo.Summary 
 
 #### 説明
 
-The `.sendAt` property contains the <!-- REF #EmailObjectClass.sendAt.Summary -->Email timestamp in ISO 8601 UTC format<!-- END REF -->.
+`.sendAt` プロパティは、<!-- REF #EmailObjectClass.sendAt.Summary -->メールのタイムスタンプ (ISO 8601 UTCフォーマット)<!-- END REF --> を格納します。
 
 ## .sender
 
@@ -319,7 +320,7 @@ The `.sendAt` property contains the <!-- REF #EmailObjectClass.sendAt.Summary --
 
 #### 説明
 
-The `.sender` property contains the <!-- REF #EmailObjectClass.sender.Summary -->email source [addresse(s)](#email-addresses) of the email<!-- END REF -->.
+`.sender` プロパティは、<!-- REF #EmailObjectClass.sender.Summary -->メールのソース [アドレス](#メールアドレス)<!-- END REF --> を格納します。
 
 送信されるメールには、それぞれ **sender** および **[from](#from)** アドレスの両方がついています:
 
@@ -336,7 +337,7 @@ The `.sender` property contains the <!-- REF #EmailObjectClass.sender.Summary --
 
 [IMAP transporter](IMAPTransporterClass.md) のみ。
 
-The `.size` property contains the <!-- REF #EmailObjectClass.size.Summary -->size (expressed in bytes) of the Email object returned by the IMAP server<!-- END REF -->.
+`.size` プロパティは、<!-- REF #EmailObjectClass.size.Summary -->IMAPサーバーから返された Email オブジェクトのサイズ (バイト単位)<!-- END REF --> を格納します。
 
 ## .subject
 
@@ -344,7 +345,7 @@ The `.size` property contains the <!-- REF #EmailObjectClass.size.Summary -->siz
 
 #### 説明
 
-The `.subject` property contains the <!-- REF #EmailObjectClass.subject.Summary -->description of topic<!-- END REF -->.
+`.subject` プロパティは、<!-- REF #EmailObjectClass.subject.Summary -->メールの件名<!-- END REF -->を格納します。
 
 ## .textBody
 
@@ -352,7 +353,7 @@ The `.subject` property contains the <!-- REF #EmailObjectClass.subject.Summary 
 
 #### 説明
 
-The `.textBody` property contains the <!-- REF #EmailObjectClass.textBody.Summary -->Plain text representation of the email message (default charset is UTF-8) (optional, SMTP only)<!-- END REF -->. [メール本文の扱い](#メール本文の扱い) を参照ください。
+`.textBody` プロパティは、<!-- REF #EmailObjectClass.textBody.Summary -->(任意、SMTPのみ) 標準テキスト形式のメールメッセージ (デフォルトの文字セットは UTF-8)<!-- END REF --> を格納します。 [メール本文の扱い](#メール本文の扱い) を参照ください。
 
 ## .to
 
@@ -360,7 +361,7 @@ The `.textBody` property contains the <!-- REF #EmailObjectClass.textBody.Summar
 
 #### 説明
 
-The `.to` property contains the <!-- REF #EmailObjectClass.to.Summary -->primary recipient [addresse(s)](#email-addresses) of the email<!-- END REF -->.
+`.to` プロパティは、<!-- REF #EmailObjectClass.to.Summary -->メールのメインの受信者 [アドレス](#メールアドレス)<!-- END REF --> を格納します。
 
 ## MAIL Convert from MIME
 
@@ -385,7 +386,7 @@ The `.to` property contains the <!-- REF #EmailObjectClass.to.Summary -->primary
 
 #### 説明
 
-The `MAIL Convert from MIME` command <!-- REF #_command_.MAIL Convert from MIME.Summary -->converts a MIME document into a valid email object<!-- END REF -->.
+`MAIL Convert from MIME` コマンドは、<!-- REF #_command_.MAIL Convert from MIME.Summary -->MIMEドキュメントを有効な Emailオブジェクトへと変換します<!-- END REF -->。
 
 > 戻り値の Email オブジェクトのフォーマットは [JMAP specification](https://jmap.io/spec-mail.html) に準拠します。
 
@@ -473,7 +474,7 @@ $status:=$transporter.send($email)
 
 #### 説明
 
-The `MAIL Convert to MIME` command <!-- REF #_command_.MAIL Convert to MIME.Summary -->converts an email object into MIME text<!-- END REF -->. このコマンドは、Email オブジェクトを送信する前に整形する目的で[SMTP_transporter.send()](SMTPTransporterClass.md#send) コマンドによって内部的に呼び出されます。 また、オブジェクトの MIME フォーマットを解析するためにも使用されます。
+`MAIL Convert to MIME` コマンドは、<!-- REF #_command_.MAIL Convert to MIME.Summary -->Emailオブジェクトを MIMEテキストへと変換します<!-- END REF -->。 このコマンドは、Email オブジェクトを送信する前に整形する目的で[SMTP_transporter.send()](SMTPTransporterClass.md#send) コマンドによって内部的に呼び出されます。 また、オブジェクトの MIME フォーマットを解析するためにも使用されます。
 
 _mail_ には、変換するメールのコンテンツとストラクチャーの詳細を渡します。 この情報には、メールアドレス (送信者と受信者)、メッセージそのもの、メッセージの表示タイプなどが含まれます。
 
@@ -481,10 +482,10 @@ _mail_ には、変換するメールのコンテンツとストラクチャー�
 
 _options_ 引数を渡すと、メールに対して特定の文字セットとエンコーディング設定を指定することができます。 次のプロパティを利用することができます:
 
-| プロパティ         | タイプ  | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| ------------- | ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| headerCharset | Text | メールの以下の部分で使用される文字セットとエンコーディング: 件名、添付ファイル名、メール名の属性。 Possible values:<table><tr><th>Constant</th><th>Value</th><th>Comment</th></tr><tr><td>mail mode ISO2022JP</td><td>US-ASCII_ISO-2022-JP_UTF8_QP</td><td><ul><li><i>headerCharset</i>: US-ASCII if possible, Japanese (ISO-2022-JP) & Quoted-printable if possible, otherwise UTF-8 & Quoted-printable</li><li><i>bodyCharset</i>: US-ASCII if possible, Japanese (ISO-2022-JP) & 7-bit if possible, otherwise UTF-8 & Quoted-printable</li></ul></td></tr><tr><td>mail mode ISO88591</td><td>ISO-8859-1</td><td><ul><li><i>headerCharset</i>: ISO-8859-1 & Quoted-printable</li><li><i>bodyCharset</i>: ISO-8859-1 & 8-bit</li></ul></td></tr><tr><td>mail mode UTF8</td><td>US-ASCII_UTF8_QP</td><td><i>headerCharset</i> & <i>bodyCharset</i>: US-ASCII if possible, otherwise UTF-8 & Quoted-printable (**default value**)</td></tr><tr><td>mail mode UTF8 in base64</td><td>US-ASCII_UTF8_B64</td><td><i>headerCharset</i> & <i>bodyCharset</i>: US-ASCII if possible, otherwise UTF-8 & base64</td></tr></table> |
-| bodyCharset   | Text | メールの HTML およびテキスト本文コンテンツで使用される文字セットとエンコーディング。 取りうる値: headerCharset と同じ(上記参照)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| プロパティ         | タイプ  | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| headerCharset | Text | メールの以下の部分で使用される文字セットとエンコーディング: 件名、添付ファイル名、メール名の属性。 とりうる値:<table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td>mail mode ISO2022JP</td><td>US-ASCII_ISO-2022-JP_UTF8_QP</td><td><ul><li><i>headerCharset</i>: 可能なら US-ASCII 、次に可能なら Japanese (ISO-2022-JP) & Quoted-printable 、それも不可なら UTF-8 & Quoted-printable</li><li><i>bodyCharset</i>: 可能なら US-ASCII、次に可能なら Japanese (ISO-2022-JP) & 7-bit、それも不可なら UTF-8 & Quoted-printable</li></ul></td></tr><tr><td>mail mode ISO88591</td><td>ISO-8859-1</td><td><ul><li><i>headerCharset</i>: ISO-8859-1 & Quoted-printable</li><li><i>bodyCharset</i>: ISO-8859-1 & 8-bit</li></ul></td></tr><tr><td>mail mode UTF8</td><td>US-ASCII_UTF8_QP</td><td><i>headerCharset</i> & <i>bodyCharset</i>: 可能なら US-ASCII、それが不可なら UTF-8 & Quoted-printable (**デフォルト値**)</td></tr><tr><td>mail mode UTF8 in base64</td><td>US-ASCII_UTF8_B64</td><td><i>headerCharset</i> & <i>bodyCharset</i>: 可能な場合は US-ASCII、それ以外は UTF-8 & base64</td></tr></table> |
+| bodyCharset   | Text | メールの HTML およびテキスト本文コンテンツで使用される文字セットとエンコーディング。 取りうる値: headerCharset と同じ(上記参照)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 _options_ 引数が省略された場合、ヘッダーおよび本文においては mail mode UTF8 設定が使用されます。
 
