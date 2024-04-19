@@ -284,7 +284,7 @@ _headerOnly_ オプションは、サーバー側でサポートされていな�
 - _msgNumber_ で指定したメッセージが存在しない場合
 - 指定したメッセージが [`.delete()`](#delete) によって削除フラグが立てられていた場合
 
-**Returned object**
+**返されるオブジェクト**
 
 `.getMail()` は [`Email` オブジェクト](EmailObjectClass.md#email-object) を返します。
 
