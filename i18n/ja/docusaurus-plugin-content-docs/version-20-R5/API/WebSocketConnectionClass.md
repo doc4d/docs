@@ -3,11 +3,11 @@ id: WebSocketConnectionClass
 title: WebSocketConnection
 ---
 
-The `WebSocketConnection` class API allows you to handle WebSocket connections, once established using the [`WebSocketServer` class](WebSocketServerClass.md).
+`WebSocketConnection` クラス API は、[`WebSocketServer` クラス](WebSocketServerClass.md) を使って確立された WebSocket 接続を管理するのに使用します。
 
 :::info
 
-For an overview and some examples of the WebSocket server implementation in 4D, please refer to the [`WebSocketServer` class](WebSocketServerClass.md).
+4D における WebSocketサーバーの実装の概要といくつかの例題については、[`WebSocketServer` クラス](WebSocketServerClass.md) を参照ください。
 
 :::
 
@@ -78,13 +78,13 @@ The `.id` property contains <!-- REF #WebSocketConnectionClass.id.Summary -->the
 
 The `.send()` function <!-- REF #WebSocketConnectionClass.send().Summary -->sends a _message_ to the client<!-- END REF -->.
 
-The following contents are sent depending on the _message_ type:
+_メッセージ_ の型によって、以下の内容が送信されます:
 
-| タイプ    | 内容                                                                                                                                      |
-| ------ | --------------------------------------------------------------------------------------------------------------------------------------- |
-| Text   | UTF-8 のテキスト                                                                                                                             |
-| Blob   | バイナリデータ                                                                                                                                 |
-| Object | Text in JSON UTF-8 (same result as with [`JSON Stringify`](https://doc.4d.com/4dv19R/help/command/en/page1217.html)) |
+| タイプ    | 内容                                                                                                                       |
+| ------ | ------------------------------------------------------------------------------------------------------------------------ |
+| Text   | UTF-8 のテキスト                                                                                                              |
+| Blob   | バイナリデータ                                                                                                                  |
+| Object | JSON UTF-8 のテキスト ([`JSON Stringify`](https://doc.4d.com/4dv19R/help/command/ja/page1217.html) と同じ結果)。 |
 
 <!-- END REF -->
 
@@ -121,7 +121,7 @@ The `.status` property contains <!-- REF #WebSocketConnectionClass.status.Summar
 
 The `.terminate()` function <!-- REF #WebSocketConnectionClass.terminate().Summary -->forces the connection to close<!-- END REF -->.
 
-A _code_ and _message_ can be sent to the client during the closure to indicate the reason of the termination.
+終了時に、_code_ と _message_ をクライアントに送信し、終了の理由を示すことができます。
 
 <!-- END REF -->
 
