@@ -3,7 +3,7 @@ id: FileClass
 title: File
 ---
 
-`File` objects are created with the [`File`](#file) command. これらのオブジェクトには、(実在しているか否かに関わらず) ディスクファイルへの参照が格納されます。 For example, when you execute the `File` command to create a new file, a valid `File` object is created but nothing is actually stored on disk until you call the [`file.create( )`](#create) function.
+`File` オブジェクトは [`File`](#file) コマンドによって作成されます。 これらのオブジェクトには、(実在しているか否かに関わらず) ディスクファイルへの参照が格納されます。 たとえば、新規ファイルを作成するために `File` コマンドを実行した場合、有効な `File` オブジェクトが作成されますが、[`file.create()`](#create) 関数を呼び出すまで、ディスク上にはなにも保存されていません。
 
 ### 例題
 
@@ -16,7 +16,7 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 ### パス名
 
-`File` objects support several pathnames, including `filesystems` or `posix` syntax. Supported pathnames are detailed in the [**Pathnames**](../Concepts/paths.md) page.
+`File` オブジェクトは、`filesystems` や `posix` シンタックスを含む、いくつかのパス名をサポートしています。 使用できるパス名についての詳細は [**パス名**](../Concepts/paths.md) ページを参照ください。
 
 ### File オブジェクト
 
@@ -59,10 +59,10 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                  |
-| ----- | ----------------------------------- |
-| 19 R4 | New `HTTP Client log file` constant |
-| 17 R5 | 追加                                  |
+| リリース  | 内容                            |
+| ----- | ----------------------------- |
+| 19 R4 | 新しい `HTTP Client log file` 定数 |
+| 17 R5 | 追加                            |
 
 </details>
 
@@ -70,13 +70,13 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 <!-- REF #_command_.File.Params -->
 
-| 引数           | タイプ                     |     | 説明                                                                 |
-| ------------ | ----------------------- | :-: | ------------------------------------------------------------------ |
-| path         | Text                    |  -> | ファイルパス                                                             |
-| fileConstant | Integer                 |  -> | 4Dファイル定数                                                           |
-| pathType     | Integer                 |  -> | `fk posix path` (default) or `fk platform path` |
-| -            |                         |  -> | ホストデータベースのファイルを返すには \* を渡します                                       |
-| 戻り値          | 4D.File |  <- | 新規ファイルオブジェクト                                                       |
+| 引数           | タイプ                     |     | 説明                                                                |
+| ------------ | ----------------------- | :-: | ----------------------------------------------------------------- |
+| path         | Text                    |  -> | ファイルパス                                                            |
+| fileConstant | Integer                 |  -> | 4Dファイル定数                                                          |
+| pathType     | Integer                 |  -> | `fk posix path` (デフォルト) または `fk platform path` |
+| -            |                         |  -> | ホストデータベースのファイルを返すには \* を渡します                                      |
+| 戻り値          | 4D.File |  <- | 新規ファイルオブジェクト                                                      |
 
 <!-- END REF -->
 
@@ -86,11 +86,11 @@ The `File` command <!-- REF #_command_.File.Summary -->creates and returns a new
 
 **File ( path { ; pathType } { ; \* })**
 
-In the _path_ parameter, pass a file path string. カスタムの文字列やファイルシステム (例: "/DATA/myfile.txt") を渡すことができます。
+_path_ には、ファイルパス文字列を渡します。 カスタムの文字列やファイルシステム (例: "/DATA/myfile.txt") を渡すことができます。
 
-> Only absolute pathnames are supported with the `File` command.
+> `File` コマンドでは絶対パス名のみがサポートされます。
 
-デフォルトで、4D は POSIXシンタックスで表現されたパスを期待します。 If you work with platform pathnames (Windows or macOS), you must declare it using the _pathType_ parameter. 以下の定数を使用することができます:
+デフォルトで、4D は POSIXシンタックスで表現されたパスを期待します。 プラットフォームパス名 (Windows または macOS) を使用する場合、_pathType_ 引数を使用してそのことを宣言する必要があります。 以下の定数を使用することができます:
 
 | 定数               | 値 | 説明                                                                |
 | ---------------- | - | ----------------------------------------------------------------- |
@@ -99,37 +99,37 @@ In the _path_ parameter, pass a file path string. カスタムの文字列やフ
 
 **File ( fileConstant { ; \* } )**
 
-In the _fileConstant_ parameter, pass a 4D built-in or system file, using one of the following constants:
+_fileConstant_ には、以下の定数のどれか一つを指定して 4Dビルトインの、またはシステムファイルを渡します:
 
-| 定数                                | 値  | 説明                                                                                                                                                                                                                                                                                                                                                                                                           |
-| --------------------------------- | -- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Backup history file               | 19 | バックアップ履歴ファイル。 バックアップ保存先フォルダに保存されています。                                                                                                                                                                                                                                                                                                                                                                        |
-| Backup log file                   | 13 | カレントのバックアップのログファイル。 アプリケーションの Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                                                                                                           |
-| Backup settings file              | 1  | プロジェクトの Settings フォルダーにある、デフォルトの backup.4DSettings ファイル (xml 形式)                                                                                                                                                                                                                                                                                                          |
-| Backup settings file for data     | 17 | データフォルダーの Settings フォルダーにある、データファイル用の backup.4DSettings ファイル (xml 形式)                                                                                                                                                                                                                                                                                                     |
-| Build application log file        | 14 | アプリケーションビルダーのカレントログファイル (xml 形式)。 Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                                                                                    |
-| Build application settings file   | 20 | アプリケーションビルダーのデフォルト設定ファイル ("buildApp.4DSettings")。 プロジェクトの Settings フォルダーに保存されています。                                                                                                                                                                                                                                                                                        |
-| Compacting log file               | 6  | Compact data file コマンドによって、あるいはメンテナンス&セキュリティセンター (MSC) によって作成された、直近の圧縮のログファイル。 Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                   |
-| Current backup settings file      | 18 | アプリケーションが現在使用している backup.4DSettings ファイル。 使用されるのはデフォルトのバックアップ設定ファイル、または、データファイル用のユーザーバックアップ設定ファイルです。                                                                                                                                                                                                                                                                                         |
-| Debug log file                    | 12 | Log file created by the `SET DATABASE PARAMETER(Debug log recording)` command. Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                                          |
-| Diagnostic log file               | 11 | Log file created by the `SET DATABASE PARAMETER(Diagnostic log recording)` command. Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                                     |
-| Directory file                    | 16 | プロジェクトアプリケーションにおいて、ユーザーとグループ (あれば) の定義が格納された directory.json ファイル。 このファイルは、データベースの user settings フォルダー (デフォルト、プロジェクトに対してグローバル)、または data settings フォルダー (データファイル専用) に保管されます。                                                                                                                                                          |
-| HTTP Client log file              | 24 | Log file created by the `HTTP SET OPTION(HTTP client log)` command. Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                                                     |
-| HTTP debug log file               | 9  | Log file created by the `WEB SET OPTION(Web debug log)` command. Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                                                        |
-| HTTP log file                     | 8  | Log file created by the `WEB SET OPTION(Web log recording)` command. Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                                                    |
-| IMAP Log file                     | 23 | Log file created by the `SET DATABASE PARAMETER(IMAP Log)` command. Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                                                     |
-| Last backup file                  | 2  | Last backup file, named `\<applicationName>[bkpNum].4BK`, stored at a custom location.                                                                                                                                                                                                                                                                                                      |
-| Last journal integration log file | 22 | 最後のログ統合ログファイル (あれば) の完全なパス名 (復元されたアプリケーションの Logs フォルダー内に保存されます)。 このファイルは、自動修復モードにおいてログファイル統合が発生した時点で作成されます。                                                                                                                                                                                                                                                            |
-| Repair log file                   | 7  | メンテナンス&セキュリティセンター (MSC) 内からデータベースに対しておこなわれたデータベース修復のログファイル。 Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                                      |
-| Request log file                  | 10 | Standard client/server request log file (excluding Web requests) created by the `SET DATABASE PARAMETER(4D Server log recording)` or `SET DATABASE PARAMETER(Client log recording)` commands. サーバー上で実行された場合には、サーバーログが返されます (ログファイルはサーバー上の Logsフォルダーに保存されています)。 クライアントで実行された場合には、クライアントのログが返されます (ログファイルはクライアントのLogsフォルダーに保存されています)。 |
-| SMTP log file                     | 15 | Log file created by the `SET DATABASE PARAMETER(SMTP Log)` command. Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                                                     |
-| User settings file                | 3  | 設定が有効化されている場合、ストラクチャーファイルと同じ階層にある Preferences フォルダーに格納された、全データファイルの settings.4DSettings ファイル。                                                                                                                                                                                                                                                                                                |
-| User settings file for data       | 4  | データファイルと同じ階層にある Preferences フォルダーに格納された、カレントデータファイルの settings.4DSettings ファイル。                                                                                                                                                                                                                                                                                                               |
-| Verification log file             | 5  | Log files created by the `VERIFY CURRENT DATA FILE` and `VERIFY DATA FILE` commands or the Maintenance and Security Center (MSC). Logs フォルダーに保存されています。                                                                                                                                                                                                                    |
+| 定数                                | 値  | 説明                                                                                                                                                                                                                                                                                                                                                    |
+| --------------------------------- | -- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Backup history file               | 19 | バックアップ履歴ファイル。 バックアップ保存先フォルダに保存されています。                                                                                                                                                                                                                                                                                                                 |
+| Backup log file                   | 13 | カレントのバックアップのログファイル。 アプリケーションの Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                                                    |
+| Backup settings file              | 1  | プロジェクトの Settings フォルダーにある、デフォルトの backup.4DSettings ファイル (xml 形式)                                                                                                                                                                                                                                                   |
+| Backup settings file for data     | 17 | データフォルダーの Settings フォルダーにある、データファイル用の backup.4DSettings ファイル (xml 形式)                                                                                                                                                                                                                                              |
+| Build application log file        | 14 | アプリケーションビルダーのカレントログファイル (xml 形式)。 Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                             |
+| Build application settings file   | 20 | アプリケーションビルダーのデフォルト設定ファイル ("buildApp.4DSettings")。 プロジェクトの Settings フォルダーに保存されています。                                                                                                                                                                                                                                 |
+| Compacting log file               | 6  | Compact data file コマンドによって、あるいはメンテナンス&セキュリティセンター (MSC) によって作成された、直近の圧縮のログファイル。 Logs フォルダーに保存されています。                                                                                                                                                                                                            |
+| Current backup settings file      | 18 | アプリケーションが現在使用している backup.4DSettings ファイル。 使用されるのはデフォルトのバックアップ設定ファイル、または、データファイル用のユーザーバックアップ設定ファイルです。                                                                                                                                                                                                                                  |
+| Debug log file                    | 12 | `SET DATABASE PARAMETER(Debug log recording)` コマンドによって作成されたログファイル。 Logs フォルダーに保存されています。                                                                                                                                                                                                                                                               |
+| Diagnostic log file               | 11 | `SET DATABASE PARAMETER(Diagnostic log recording)` コマンドによって作成されたログファイル。 Logs フォルダーに保存されています。                                                                                                                                                                                                                                                          |
+| Directory file                    | 16 | プロジェクトアプリケーションにおいて、ユーザーとグループ (あれば) の定義が格納された directory.json ファイル。 このファイルは、データベースの user settings フォルダー (デフォルト、プロジェクトに対してグローバル)、または data settings フォルダー (データファイル専用) に保管されます。                                                                                                   |
+| HTTP Client log file              | 24 | `HTTP SET OPTION(HTTP client log)` コマンドによって作成されたログファイル。 Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                          |
+| HTTP debug log file               | 9  | `WEB SET OPTION(Web debug log)` コマンドによって作成されたログファイル。 Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                             |
+| HTTP log file                     | 8  | `WEB SET OPTION(Web log recording)` コマンドによって作成されたログファイル。 Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                         |
+| IMAP Log file                     | 23 | `SET DATABASE PARAMETER(IMAP Log)` コマンドによって作成されたログファイル。 Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                          |
+| Last backup file                  | 2  | Last backup file, named `\<applicationName>[bkpNum].4BK`, stored at a custom location.                                                                                                                                                                                                                                               |
+| Last journal integration log file | 22 | 最後のログ統合ログファイル (あれば) の完全なパス名 (復元されたアプリケーションの Logs フォルダー内に保存されます)。 このファイルは、自動修復モードにおいてログファイル統合が発生した時点で作成されます。                                                                                                                                                                                                     |
+| Repair log file                   | 7  | メンテナンス&セキュリティセンター (MSC) 内からデータベースに対しておこなわれたデータベース修復のログファイル。 Logs フォルダーに保存されています。                                                                                                                                                                                                                               |
+| Request log file                  | 10 | `SET DATABASE PARAMETER(4D Server log recording)` あるいは `SET DATABASE PARAMETER(Client log recording)` コマンドによって作成された標準のクライアント/サーバーログファイル (Webリクエストは除外)。 サーバー上で実行された場合には、サーバーログが返されます (ログファイルはサーバー上の Logsフォルダーに保存されています)。 クライアントで実行された場合には、クライアントのログが返されます (ログファイルはクライアントのLogsフォルダーに保存されています)。 |
+| SMTP log file                     | 15 | `SET DATABASE PARAMETER(SMTP Log)` コマンドによって作成されたログファイル。 Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                          |
+| User settings file                | 3  | 設定が有効化されている場合、ストラクチャーファイルと同じ階層にある Preferences フォルダーに格納された、全データファイルの settings.4DSettings ファイル。                                                                                                                                                                                                                                         |
+| User settings file for data       | 4  | データファイルと同じ階層にある Preferences フォルダーに格納された、カレントデータファイルの settings.4DSettings ファイル。                                                                                                                                                                                                                                                        |
+| Verification log file             | 5  | `VERIFY CURRENT DATA FILE` および `VERIFY DATA FILE` コマンドによって、あるいはメンテナンス&セキュリティセンター (MSC) によって作成されたログファイル。 Logs フォルダーに保存されています。                                                                                                                                                                                   |
 
-If the target _fileConstant_ does not exist, a null object is returned. エラーは生成されません。
+_fileConstant_ 引数で指定したファイルが存在しない場合、null オブジェクトが返されます。 エラーは生成されません。
 
-If the command is called from a component, pass the optional `*` parameter to get the path of the host database. Otherwise, if you omit the `*` parameter, a null object is always returned.
+コマンドがコンポーネントから呼び出されている場合、`*` 引数を渡してホストデータベースのパスを取得するようにします。 `*` 引数を省略すると、常に null オブジェクトが返されます。
 
 ## 4D.File.new()
 
@@ -147,9 +147,9 @@ If the command is called from a component, pass the optional `*` parameter to ge
 
 #### 説明
 
-The `4D.File.new()` function <!-- REF #4D.File.new().Summary -->creates and returns a new object of the `4D.File` type<!-- END REF -->. It is identical to the [`File`](#file) command (shortcut).
+The `4D.File.new()` function <!-- REF #4D.File.new().Summary -->creates and returns a new object of the `4D.File` type<!-- END REF -->. この関数の機能は、[`File`](#file) コマンドと同一です。
 
-> It is recommended to use the [`File`](#file) shortcut command instead of `4D.File.new()`.
+> `4D.File.new()` よりも、短い [`File`](#file) コマンドの使用が推奨されます。
 
 <!-- INCLUDE document.copyTo().Desc -->
 
@@ -183,12 +183,12 @@ The `4D.File.new()` function <!-- REF #4D.File.new().Summary -->creates and retu
 
 The `.create()` function <!-- REF #FileClass.create().Summary -->creates a file on disk according to the properties of the `File` object<!-- END REF -->.
 
-If necessary, the function creates the folder hierachy as described in the [platformPath](#platformpath) or [path](#path) properties. ファイルがディスク上にすでに存在する場合、関数は何もせず、false を返します (エラーは返されません)。
+必要であれば、 関数は [platformPath](#platformpath) あるいは [path](#path) プロパティの詳細に基づいてフォルダー階層を作成します。 ファイルがディスク上にすでに存在する場合、関数は何もせず、false を返します (エラーは返されません)。
 
 **戻り値**
 
-- **True** if the file is created successfully;
-- **False** if a file with the same name already exists or if an error occured.
+- ファイルが正常に作成された場合には **true**
+- すでに同じ名前のファイルが存在する、あるいはエラーが発生した場合には **false**
 
 #### 例題
 
@@ -230,20 +230,20 @@ If necessary, the function creates the folder hierachy as described in the [plat
 
 The `.createAlias()` function <!-- REF #FileClass.createAlias().Summary -->creates an alias (macOS) or a shortcut (Windows)<!-- END REF --> to the file with the specified _aliasName_ name in the folder designated by the _destinationFolder_ object.
 
-Pass the name of the alias or shortcut to create in the _aliasName_ parameter.
+_aliasName_ には、作成するエイリアスまたはショートカットの名前を渡します。
 
-macOS 上では、この関数はデフォルトで標準エイリアスを作成します。 You can also create a symbolic link by using the _aliasType_ parameter. 以下の定数を使用することができます:
+macOS 上では、この関数はデフォルトで標準エイリアスを作成します。 _aliasType_ 引数を渡すことで、シンボリックリンクを作成することもできます。 以下の定数を使用することができます:
 
 | 定数                 | 値 | 説明                                     |
 | ------------------ | - | -------------------------------------- |
 | `fk alias link`    | 0 | エイリアスリンク (デフォルト)    |
 | `fk symbolic link` | 1 | シンボリックリンク (macOSのみ) |
 
-On Windows, a shortcut (.lnk file) is always created (the _aliasType_ parameter is ignored).
+Windows 上では、常にショートカット (.lnk ファイル) が作成されます (_aliasType_ 引数は無視されます)。
 
 **Returned object**
 
-A `4D.File` object with the `isAlias` property set to **true**.
+`isAlias` プロパティが **true** に設定された `4D.File` オブジェクトを返します。
 
 #### 例題
 
@@ -295,7 +295,7 @@ The `.delete()` function <!-- REF #FileClass.delete().Summary -->deletes the fil
 
 :::caution
 
-`.delete()` can delete any file on a disk. これには、他のアプリケーションで作成されたドキュメントや、アプリケーションそのものも対象になります。 `.delete()` should be used with extreme caution. ファイルの削除は恒久的な操作であり取り消しできません。
+`.delete()` はディスク上の任意のファイルを削除できます。 これには、他のアプリケーションで作成されたドキュメントや、アプリケーションそのものも対象になります。 そのため、`.delete()` は特に十分な注意を払って使用してください。 ファイルの削除は恒久的な操作であり取り消しできません。
 
 :::
 
@@ -368,7 +368,7 @@ The `.getAppInfo()` function <!-- REF #FileClass.getAppInfo().Summary -->returns
 
 **Returned object with a .plist file**
 
-xml ファイルの中身は解析され、オブジェクトのプロパティとしてキーが返されます。 キーの型 (テキスト、ブール、数値) は維持されます。 `.plist dict` is returned as a JSON object and `.plist array` is returned as a JSON array.
+xml ファイルの中身は解析され、オブジェクトのプロパティとしてキーが返されます。 キーの型 (テキスト、ブール、数値) は維持されます。 `.plist dict` は JSON オブジェクトとして返されます。 また、`.plist array` は JSON 配列として返されます。
 
 #### 例題
 
@@ -442,13 +442,13 @@ ALERT($info.Copyright)
 
 The `.moveTo()` function <!-- REF #FileClass.moveTo().Summary -->moves or renames the `File` object into the specified _destinationFolder_<!-- END REF -->.
 
-The _destinationFolder_ must exist on disk, otherwise an error is generated.
+_destinationFolder_ 引数が指定するフォルダーはディスク上に存在している必要があり、そうでない場合にはエラーが生成されます。
 
-デフォルトでは、移動したファイルは元の名前を維持します。 If you want to rename the moved file, pass the new full name in the _newName_ parameter. 新しい名前は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。そうでない場合、エラーが返されます。
+デフォルトでは、移動したファイルは元の名前を維持します。 移動の際にファイル名を変更したい場合、新しい完全な名前を _newName_ に渡します。 新しい名前は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。そうでない場合、エラーが返されます。
 
 **Returned object**
 
-The moved `File` object.
+移動後の `File` オブジェクト。
 
 #### 例題
 
@@ -488,9 +488,9 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 
 #### 説明
 
-The `.open()` function <!-- REF #FileClass.open().Summary -->creates and returns a new [4D.FileHandle](FileHandleClass) object on the file, in the specified _mode_ or with the specified _options_<!-- END REF -->. You can use functions and properties of the [4D.FileHandle](FileHandleClass) class to write, read, or append contents to the file.
+The `.open()` function <!-- REF #FileClass.open().Summary -->creates and returns a new [4D.FileHandle](FileHandleClass) object on the file, in the specified _mode_ or with the specified _options_<!-- END REF -->. [4D.FileHandle](FileHandleClass) クラスの関数とプロパティを使用して、ファイルにコンテンツを書き込んだり読み取ったり、追加したりすることができます。
 
-If you use the _mode_ (text) parameter, pass the opening mode for the file handle:
+_mode_ (text) 引数として、どのモードで FileHandle を開くかを指定します。
 
 | _mode_   | 説明                                                                                                                                                             |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -498,18 +498,18 @@ If you use the _mode_ (text) parameter, pass the opening mode for the file handl
 | "write"  | ファイルに値を書き込むための FileHandle を作成します (書き込みはファイルの先頭から)。 ディスク上にファイルが存在しない場合は、作成されます。 "write" モードの FileHandle は、同じ File オブジェクトに対して 1つのみ開くことができます。  |
 | "append" | ファイルに値を書き込むための FileHandle を作成します (書き込みはファイルの最後から)。 ディスク上にファイルが存在しない場合は、作成されます。 "append" モードの FileHandle は、同じ File オブジェクトに対して 1つのみ開くことができます。 |
 
-> The _mode_ value is case sensitive.
+> _mode_ の値は、文字の大小を区別します。
 
-If you use the _options_ (object) parameter, you can pass more options for the file handle through the following properties (these properties can be read afterwards from the opened [file handle object](FileHandleClass)):
+_option_ (object) 引数を使って、以下のプロパティを通じて FileHandle にさらなるオプションを渡すことができます (これらのプロパティはその後、開かれた [FileHandle オブジェクト](FileHandleClass) から取得できます)。
 
 | _オプション_           | タイプ             | 説明                                                                                        | デフォルト          |
 | ----------------- | --------------- | ----------------------------------------------------------------------------------------- | -------------- |
-| `.mode`           | Text            | Opening mode (see _mode_ above)                                        | "read"         |
+| `.mode`           | Text            | 開くモード (上記の _mode_ 参照)                                                  | "read"         |
 | `.charset`        | Text            | ファイルの読み取りや書き込みに使用される文字セット。 セットの標準名を使用します (たとえば、"ISO-8859-1" や "UTF-8") | "UTF-8"        |
 | `.breakModeRead`  | Text または Number | ファイルの読み取り時に使用される改行の処理モード (下記参照)                                        | "native" または 1 |
 | `.breakModeWrite` | Text または Number | ファイルの書き込み時に使用される改行の処理モード (下記参照)                                        | "native" または 1 |
 
-この関数は、元の改行文字をすべて置き換えます。 デフォルトではネイティブの区切り文字が使われますが、別の区切り文字を定義することも可能です。 The `.breakModeRead` and `.breakModeWrite` indicate the processing to apply to end-of-line characters in the document. 以下のいずれかの値を使用できます (テキストまたは数値):
+この関数は、元の改行文字をすべて置き換えます。 デフォルトではネイティブの区切り文字が使われますが、別の区切り文字を定義することも可能です。 `.breakModeRead` と `.breakModeWrite` は、改行文字に適用する処理を指定します。 以下のいずれかの値を使用できます (テキストまたは数値):
 
 | 改行モードの値 (テキスト) | 改行モードの値 (数値/定数)                   | 説明                                                                                                                                                                |
 | --------------------------------- | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -518,7 +518,7 @@ If you use the _options_ (object) parameter, you can pass more options for the f
 | "cr"                              | 3 (`Document with CR`)            | 改行はクラシック Mac OS のデフォルトフォーマットである CR (キャリッジリターン) へと変換されます。                                                                                       |
 | "lf"                              | 4 (`Document with LF`)            | 改行は Unix および macOS のデフォルトフォーマットである LF (ラインフィード) へと変換されます。                                                                                      |
 
-> The _break mode as text_ value is case sensitive.
+> _break mode as text_ の値は、文字の大小を区別します。
 
 #### 例題
 
@@ -570,13 +570,13 @@ $fhandle:=$f.open("read")
 
 The `.rename()` function <!-- REF #FileClass.rename().Summary -->renames the file with the name you passed in _newName_ and returns the renamed `File` object<!-- END REF -->.
 
-The _newName_ parameter must comply with naming rules (e.g., it must not contain characters such as ":", "/", etc.), otherwise an error is returned. 同じ名前のファイルがすでに存在する場合には、エラーが返されます。
+_newName_ 引数は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。 そうでない場合、エラーが返されます。 同じ名前のファイルがすでに存在する場合には、エラーが返されます。
 
-Note that the function modifies the full name of the file, i.e. if you do not pass an extension in _newName_, the file will have a name without an extension.
+この関数はファイルの完全な名前を編集することに留意が必要です。 つまり、_newName_ に拡張子を渡さなかった場合、新しいファイル名には拡張子がありません。
 
 **Returned object**
 
-The renamed `File` object.
+名称変更された `File` オブジェクト。
 
 #### 例題
 
@@ -624,7 +624,7 @@ The `.setAppInfo()` function <!-- REF #FileClass.setAppInfo().Summary -->writes 
 
 > .exe および .dll ファイル情報の書き込みは Windows上でのみ可能です。
 
-Each valid property set in the _info_ object parameter is written in the version resource of the .exe or .dll file. 以下のプロパティが使用できます (それ以外のプロパティは無視されます):
+_info_ オブジェクトに設定された各プロパティは .exe または .dll ファイルのバージョンリソースに書き込まれます。 以下のプロパティが使用できます (それ以外のプロパティは無視されます):
 
 | プロパティ            | タイプ  | 説明                                                                   |
 | ---------------- | ---- | -------------------------------------------------------------------- |
@@ -638,15 +638,15 @@ Each valid property set in the _info_ object parameter is written in the version
 | OriginalFilename | Text |                                                                      |
 | WinIcon          | Text | .icoファイルの Posixパス。 このプロパティは、4D が生成した実行ファイルにのみ適用されます。 |
 
-For all properties except `WinIcon`, if you pass a null or empty text as value, an empty string is written in the property. テキストでない型の値を渡した場合には、文字列に変換されます。
+`WinIcon` を除くすべてのプロパティにおいて、値として null または空テキストを渡すと、空の文字列がプロパティに書き込まれます。 テキストでない型の値を渡した場合には、文字列に変換されます。
 
-For the `WinIcon` property, if the icon file does not exist or has an incorrect format, an error is generated.
+`WinIcon` プロパティにおいては、アイコンファイルが存在しないか、フォーマットが正しくない場合、エラーが発生します。
 
 **_info_ parameter object with a .plist file**
 
-Each valid property set in the _info_ object parameter is written in the .plist file as a key. あらゆるキーの名称が受け入れられます。 値の型は可能な限り維持されます。
+_info_ オブジェクトに設定された各プロパティは .plist ファイルにキーとして書き込まれます。 あらゆるキーの名称が受け入れられます。 値の型は可能な限り維持されます。
 
-If a key set in the _info_ parameter is already defined in the .plist file, its value is updated while keeping its original type. .plist ファイルに既存のそのほかのキーはそのまま維持されます。
+_info_ に設定されたキーが .plist ファイル内ですでに定義されている場合は、その値が更新され、元の型が維持されます。 .plist ファイルに既存のそのほかのキーはそのまま維持されます。
 
 > 日付型の値を定義するには、Xcode plist エディターのようにミリ秒を除いた ISO UTC 形式の JSONタイムスタンプ文字列 (例: "2003-02-01T01:02:03Z") を使用します。
 
@@ -706,7 +706,7 @@ $infoPlistFile.setAppInfo($info)
 
 #### 説明
 
-The `.setContent( )` function <!-- REF #FileClass.setContent().Summary -->rewrites the entire content of the file using the data stored in the _content_ BLOB<!-- END REF -->. For information on BLOBs, please refer to the [BLOB](Concepts/dt_blob.md) section.
+The `.setContent( )` function <!-- REF #FileClass.setContent().Summary -->rewrites the entire content of the file using the data stored in the _content_ BLOB<!-- END REF -->. BLOB についての詳細は、[BLOB](Concepts/dt_blob.md) の章を参照してください。
 
 #### 例題
 
@@ -747,20 +747,20 @@ The `.setContent( )` function <!-- REF #FileClass.setContent().Summary -->rewrit
 
 The `.setText()` function <!-- REF #FileClass.setText().Summary -->writes _text_ as the new contents of the file<!-- END REF -->.
 
-If the file referenced in the `File` object does not exist on the disk, it is created by the function. ディスク上にファイルが存在する場合、ファイルが開かれている場合を除き、以前のコンテンツは消去されます。 ファイルが開かれている場合はコンテンツはロックされ、エラーが生成されます。
+`File` オブジェクトで参照されているファイルがディスク上に存在しない場合、このメソッドがそのファイルを作成します。 ディスク上にファイルが存在する場合、ファイルが開かれている場合を除き、以前のコンテンツは消去されます。 ファイルが開かれている場合はコンテンツはロックされ、エラーが生成されます。
 
-In _text_, pass the text to write to the file. テキストリテラル ("my text" など) のほか、4Dテキストフィールドや変数も渡せます。
+_text_ には、ファイルに書き込むテキストを渡します。 テキストリテラル ("my text" など) のほか、4Dテキストフィールドや変数も渡せます。
 
 任意で、コンテンツの書き込みに使用する文字セットを渡します。 これには、次の二つの方法があります:
 
-- in _charSetName_, a string containing the standard set name (for example "ISO-8859-1" or "UTF-8"),
-- or in _charSetNum_, the MIBEnum ID (number) of the standard set name.
+- _charSetName_ に標準の文字セット名を含んだ文字列 ("ISO-8859-1" や "UTF-8" など) を渡します。
+- _charSetNum_ に標準の文字セット名の MIBEnum ID (倍長整数) を渡します。
 
-> For the list of character sets supported by 4D, refer to the description of the `CONVERT FROM TEXT` command.
+> 4D によってサポートされている文字セットの一覧については、`CONVERT FROM TEXT` コマンドを参照ください。
 
 文字セットにバイトオーダーマーク (BOM) が存在し、かつその文字セットに "-no-bom" 接尾辞 (例: "UTF-8-no-bom") が含まれていない場合、4D は BOM をファイルに挿入します。 文字セットを指定しない場合、 4D はデフォルトで "UTF-8" の文字セットを BOMなしで使用します。
 
-In _breakMode_, you can pass a number indicating the processing to apply to end-of-line characters before saving them in the file. The following constants, found in the **System Documents** theme, are available:
+_breakMode_ には、ファイルを保存する前に改行文字に対しておこなう処理を指定する倍長整数を渡します。 **System Documents** テーマ内にある、以下の定数を使用することができます:
 
 | 定数                            | 値 | 説明                                                                                                                                                                |
 | ----------------------------- | - | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -770,9 +770,9 @@ In _breakMode_, you can pass a number indicating the processing to apply to end-
 | `Document with CR`            | 3 | 改行はクラシック Mac OS のデフォルトフォーマットである CR (キャリッジリターン) へと変換されます。                                                                                       |
 | `Document with LF`            | 4 | 改行は Unix および macOS のデフォルトフォーマットである LF (ラインフィード) へと変換されます。                                                                                      |
 
-By default, when you omit the _breakMode_ parameter, line breaks are processed in native mode (1).
+_breakMode_ 引数を渡さなかった場合はデフォルトで、改行はネイティブモード (1) で処理されます。
 
-> **Compatibility Note**: Compatibility options are available for EOL and BOM management. See [Compatibility page](https://doc.4d.com/4dv19R/help/title/en/page3239.html) on doc.4d.com.
+> **互換性に関する注記:** EOL (改行コード) および BOM の管理については、互換性オプションが利用可能です。 doc.4d.com の[互換性ページ](https://doc.4d.com/4dv19R/help/title/ja/page3239.html) を参照ください。
 
 #### 例題
 
