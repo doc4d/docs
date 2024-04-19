@@ -3,11 +3,11 @@ id: IMAPTransporterClass
 title: IMAPTransporter
 ---
 
-The `IMAPTransporter` class allows you to retrieve messages from a IMAP email server.
+`IMAPTransporter` クラスを使って、IMAP メールサーバーからメッセージを取得することができます。
 
 ### IMAP Transporter オブジェクト
 
-IMAP Transporter objects are instantiated with the [IMAP New transporter](#imap-new-transporter) command. これらは、次のプロパティや関数を持ちます:
+IMAP Transporter オブジェクトは [IMP New transporter](#imap-new-transporter) コマンドによってインスタンス化されます。 これらは、次のプロパティや関数を持ちます:
 
 |                                                                                                                                                                                                                                                                                        |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -67,26 +67,26 @@ IMAP Transporter objects are instantiated with the [IMAP New transporter](#imap-
 
 The `IMAP New transporter` command <!-- REF #_command_.IMAP New transporter.Summary -->configures a new IMAP connection<!-- END REF --> according to the _server_ parameter and returns a new _transporter_ object. 返される transporter オブジェクトは通常、メールの受信に使用されます。
 
-In the _server_ parameter, pass an object containing the following properties:
+_server_ 引数として、以下のプロパティを持つオブジェクトを渡します:
 
-| _server_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | デフォルト値 (省略時)  |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
-| [<!-- INCLUDE #transporter.acceptUnsecureConnection.Syntax -->](#acceptunsecureconnection)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.acceptUnsecureConnection.Summary -->                                                                                                                                                                                                                                                                  | false                            |
-| .**accessTokenOAuth2**: Text<br/>.**accessTokenOAuth2**: Object<br/>Text string or token object representing OAuth2 authorization credentials. Used only with OAUTH2 `authenticationMode`. If `accessTokenOAuth2` is used but `authenticationMode` is omitted, the OAuth 2 protocol is used (if allowed by the server). Not returned in _[IMAP transporter](#imap-transporter-object)_ object. | なし                               |
-| [<!-- INCLUDE #transporter.authenticationMode.Syntax -->](#authenticationmode)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.authenticationMode.Summary -->                                                                                                                                                                                                                                                                                    | サーバーがサポートするもっともセキュアな認証モードが使用されます |
-| [<!-- INCLUDE #IMAPTransporterClass.checkConnectionDelay.Syntax -->](#checkconnectiondelay)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #IMAPTransporterClass.checkConnectionDelay.Summary -->                                                                                                                                                                                                                                                            | 300                              |
-| [<!-- INCLUDE #transporter.connectionTimeOut.Syntax -->](#connectiontimeout)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.connectionTimeOut.Summary -->                                                                                                                                                                                                                                                                                       | 30                               |
-| [<!-- INCLUDE #transporter.host.Syntax -->](#host)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.host.Summary -->                                                                                                                                                                                                                                                                                                                              | _mandatory_                      |
-| [<!-- INCLUDE #transporter.logFile.Syntax -->](#logfile)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.logFile.Summary -->                                                                                                                                                                                                                                                                                                                     | なし                               |
-| .**password** : Text<br/>User password for authentication on the server. Not returned in _[IMAP transporter](#imap-transporter-object)_ object.                                                                                                                                                                                                                                                                                                                                   | なし                               |
-| [<!-- INCLUDE #transporter.port.Syntax -->](#port)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.port.Summary -->                                                                                                                                                                                                                                                                                                                              | 993                              |
-| [<!-- INCLUDE #transporter.user.Syntax -->](#user)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.user.Summary -->                                                                                                                                                                                                                                                                                                                              | なし                               |
+| _server_                                                                                                                                                                                                                                                                                                                                                                                                   | デフォルト値 (省略時)  |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| [<!-- INCLUDE #transporter.acceptUnsecureConnection.Syntax -->](#acceptunsecureconnection)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.acceptUnsecureConnection.Summary -->                                                                                                                           | false                            |
+| .**accessTokenOAuth2**: Text<br/>.**accessTokenOAuth2**: Object<br/>OAuth2 認証の資格情報を表すテキスト文字列またはトークンオブジェクト。 `authenticationMode` が OAUTH2 の場合のみ使用されます。 `accessTokenOAuth2` が使用されているが `authenticationMode` が省略されていた場合、OAuth2 プロトコルが使用されます (サーバーで許可されていれば)。 _[IMAP transporter](#imap-transporter-オブジェクト)_ オブジェクトには返されません。 | なし                               |
+| [<!-- INCLUDE #transporter.authenticationMode.Syntax -->](#authenticationmode)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.authenticationMode.Summary -->                                                                                                                                             | サーバーがサポートするもっともセキュアな認証モードが使用されます |
+| [<!-- INCLUDE #IMAPTransporterClass.checkConnectionDelay.Syntax -->](#checkconnectiondelay)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #IMAPTransporterClass.checkConnectionDelay.Summary -->                                                                                                                     | 300                              |
+| [<!-- INCLUDE #transporter.connectionTimeOut.Syntax -->](#connectiontimeout)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.connectionTimeOut.Summary -->                                                                                                                                                | 30                               |
+| [<!-- INCLUDE #transporter.host.Syntax -->](#host)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.host.Summary -->                                                                                                                                                                                       | _mandatory_                      |
+| [<!-- INCLUDE #transporter.logFile.Syntax -->](#logfile)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.logFile.Summary -->                                                                                                                                                                              | なし                               |
+| .**password** : Text<br/>サーバーとの認証のためのユーザーパスワード。 _[IMAP transporter](#imap-transporter-オブジェクト)_ オブジェクトには返されません。                                                                                                                                                                                                                                                             | なし                               |
+| [<!-- INCLUDE #transporter.port.Syntax -->](#port)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.port.Summary -->                                                                                                                                                                                       | 993                              |
+| [<!-- INCLUDE #transporter.user.Syntax -->](#user)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.user.Summary -->                                                                                                                                                                                       | なし                               |
 
-> **Warning**: Make sure the defined timeout is lower than the server timeout, otherwise the client timeout will be useless.
+> **警告**: 定義されたタイムアウトが、サーバータイムアウトより短いようにしてください。そうでない場合、クライアントタイムアウトは無意味になります。
 
 #### 戻り値
 
-The function returns an [**IMAP transporter object**](#imap-transporter-object). All returned properties are **read-only**.
+この関数は、[**IMAP transporter オブジェクト**](#imap-transporter-オブジェクト) を返します。 返されるプロパティはすべて **読み取り専用** です。
 
 > IMAP接続は、transporter オブジェクトが消去された時点で自動的に閉じられます。
 
@@ -124,7 +124,7 @@ End if
 
 #### 説明
 
-The `4D.IMAPTransporter.new()` function <!-- REF #4D.IMAPTransporter.new().Summary -->creates and returns a new object of the `4D.IMAPTransporter` type<!-- END REF -->. It is identical to the [`IMAP New transporter`](#imap-new-transporter) command (shortcut).
+The `4D.IMAPTransporter.new()` function <!-- REF #4D.IMAPTransporter.new().Summary -->creates and returns a new object of the `4D.IMAPTransporter` type<!-- END REF -->. この関数の機能は、[`IMAP New transporter`](#imap-new-transporter) コマンドと同一です。
 
 <!-- INCLUDE transporter.acceptUnsecureConnection.Desc -->
 
@@ -157,17 +157,17 @@ The `4D.IMAPTransporter.new()` function <!-- REF #4D.IMAPTransporter.new().Summa
 
 The `.addFlags()` function <!-- REF #IMAPTransporterClass.addFlags().Summary -->adds flags to the `msgIDs` for the specified `keywords`<!-- END REF -->.
 
-In the `msgIDs` parameter, you can pass either:
+`msgIDs` には、以下のいずれかを渡すことができます:
 
-- a _collection_ containing the unique IDs of specific messages or
-- the unique ID (_text_) of a single message or
-- the following constant (_longint_) for all messages in the selected mailbox:
+- 指定するメッセージの固有ID を格納した _コレクション_
+- 単一のメッセージの固有ID (_テキスト_)
+- 以下の定数 (_longint_) を使用することで、選択されているメールボックスの全メッセージを指定することができます:
 
 | 定数       | 値 | 説明                        |
 | -------- | - | ------------------------- |
 | IMAP all | 1 | 選択されたメールボックスの全メッセージを選択します |
 
-The `keywords` parameter lets you define the flags to add to `msgIDs`. 以下の標準フラグおよびカスタムフラグを使用することができます (カスタムフラグのサポートはサーバーの実装に依存します)。
+`keywords` を使って、`msgIDs` 引数で指定したメッセージに対して追加するフラグを定義します。 以下の標準フラグおよびカスタムフラグを使用することができます (カスタムフラグのサポートはサーバーの実装に依存します)。
 
 | プロパティ           | タイプ     | 説明                                |
 | --------------- | ------- | --------------------------------- |
@@ -250,11 +250,11 @@ $status:=$transporter.addFlags(IMAP all;$flags)
 
 The `.append()` function <!-- REF #IMAPTransporterClass.append().Summary -->appends a `mailObj` to the `destinationBox`<!-- END REF -->.
 
-In the `mailObj` parameter, pass an Email object. For a comprehensive description of mail properties, see [Email object](EmailObjectClass.md#email-object). The `.append()` function supports keyword tags in the Email object's `keywords` attribute.
+`mailObj` には、Email オブジェクトを渡します。 メールプロパティに関する包括的な詳細については、[Email オブジェクト](EmailObjectClass.md#email-オブジェクト) を参照ください。 `.append()` 関数は Email オブジェクトの `keywords` 属性内のキーワードタグをサポートします。
 
-The optional `destinationBox` parameter lets you pass the name of a mailbox where the `mailObj` will be appended. 省略した場合は、カレントメールボックスが使用されます。
+任意の `destinationBox` には、`mailObj` が追加されるメールボックスの名前を指定することができます。 省略した場合は、カレントメールボックスが使用されます。
 
-In the optional `options` parameter, you can pass an object to define the charset and encoding for specific parts of the email. 次のプロパティを含みます:
+任意の `options` には、メールの特定部分の文字セットやエンコーディングを定義するオブジェクトを渡すことができます。 次のプロパティを含みます:
 
 | プロパティ         | タイプ  | 説明                                                                                                                |
 | ------------- | ---- | ----------------------------------------------------------------------------------------------------------------- |
@@ -327,9 +327,9 @@ $status:=$imap.append($msg; "Drafts")
 
 #### 説明
 
-The `.checkConnectionDelay` property contains <!-- REF #IMAPTransporterClass.checkConnectionDelay.Summary -->the maximum time (in seconds) allowed prior to checking the connection to the server<!-- END REF -->.  関数呼び出しの間隔がこの時間を超過する場合、サーバー接続が確認されます。 By default, if the property has not been set in the _server_ object, the value is 300.
+The `.checkConnectionDelay` property contains <!-- REF #IMAPTransporterClass.checkConnectionDelay.Summary -->the maximum time (in seconds) allowed prior to checking the connection to the server<!-- END REF -->.  関数呼び出しの間隔がこの時間を超過する場合、サーバー接続が確認されます。 プロパティが _server_ オブジェクトによって設定されていない場合は、デフォルトで 300 という値が使用されます。
 
-> **Warning**: Make sure the defined timeout is lower than the server timeout, otherwise the client timeout will be useless.
+> **警告**: 定義されたタイムアウトが、サーバータイムアウトより短いようにしてください。そうでない場合、クライアントタイムアウトは無意味になります。
 
 <!-- END REF -->
 
@@ -351,12 +351,12 @@ The `.checkConnectionDelay` property contains <!-- REF #IMAPTransporterClass.che
 
 <!-- REF #IMAPTransporterClass.copy().Params -->
 
-| 引数             | タイプ        |     | 説明                                                               |
-| -------------- | ---------- | :-: | ---------------------------------------------------------------- |
-| msgsIDs        | Collection |  -> | メッセージの固有ID のコレクション (テキスト)                     |
-| allMsgs        | Integer    |  -> | `IMAP all`: All messages in the selected mailbox |
-| destinationBox | Text       |  -> | メッセージのコピー先のメールボックス                                               |
-| 戻り値            | Object     |  <- | copy処理のステータス                                                     |
+| 引数             | タイプ        |     | 説明                                              |
+| -------------- | ---------- | :-: | ----------------------------------------------- |
+| msgsIDs        | Collection |  -> | メッセージの固有ID のコレクション (テキスト)    |
+| allMsgs        | Integer    |  -> | `IMAP all`: 選択されたメールボックスの全メッセージ |
+| destinationBox | Text       |  -> | メッセージのコピー先のメールボックス                              |
+| 戻り値            | Object     |  <- | copy処理のステータス                                    |
 
 <!-- END REF -->
 
@@ -366,10 +366,10 @@ The `.copy()` function <!-- REF #IMAPTransporterClass.copy().Summary -->copies t
 
 以下のものを渡すことができます:
 
-- in the _msgsIDs_ parameter, a collection containing the unique IDs of the specific messages to copy, or
-- in the _allMsgs_ parameter, the `IMAP all` constant (integer) to copy all messages in the selected mailbox.
+- _msgsIDs_ には、コピーするメッセージの固有ID を格納したコレクション
+- _allMsgs_ には、選択されているメールボックスの全メッセージをコピーするための定数 (倍長整数型):
 
-The _destinationBox_ parameter allows you to pass a text value with the name of the mailbox where the copies of messages will be placed.
+_destinationBox_ には、メッセージのコピー先メールボックスの名称をテキスト値で渡すことができます。
 
 **Returned object**
 
@@ -470,7 +470,7 @@ The `.createBox()` function <!-- REF #IMAPTransporterClass.createBox().Summary -
 - "IMAP" & "Doc" mailboxes if only “Projects” already exists.
 - "Projects" & “IMAP” & "Doc" mailboxes, if they do not already exist.
 
-In the `name` parameter, pass the name of the new mailbox.
+`name` には、新しいメールボックスの名前を渡します。
 
 **Returned object**
 
@@ -531,11 +531,11 @@ End if
 
 <!-- REF #IMAPTransporterClass.delete().Params -->
 
-| 引数      | タイプ        |     | 説明                                                               |
-| ------- | ---------- | :-: | ---------------------------------------------------------------- |
-| msgsIDs | Collection |  -> | メッセージの固有ID のコレクション (テキスト)                     |
-| allMsgs | Integer    |  -> | `IMAP all`: All messages in the selected mailbox |
-| 戻り値     | Object     |  <- | delete処理のステータス                                                   |
+| 引数      | タイプ        |     | 説明                                              |
+| ------- | ---------- | :-: | ----------------------------------------------- |
+| msgsIDs | Collection |  -> | メッセージの固有ID のコレクション (テキスト)    |
+| allMsgs | Integer    |  -> | `IMAP all`: 選択されたメールボックスの全メッセージ |
+| 戻り値     | Object     |  <- | delete処理のステータス                                  |
 
 <!-- END REF -->
 
@@ -545,10 +545,10 @@ The `.delete()` function <!-- REF #IMAPTransporterClass.delete().Summary -->sets
 
 以下のものを渡すことができます:
 
-- in the `msgsIDs` parameter, a collection containing the unique IDs of the specific messages to delete, or
-- in the `allMsgs` parameter, the `IMAP all` constant (integer) to delete all messages in the selected mailbox.
+- `msgsIDs` には、削除するメッセージの固有ID を格納したコレクション
+- `allMsgs` には、選択されているメールボックスの全メッセージを削除するための定数 (倍長整数型):
 
-この関数を実行しても、メールが実際に削除される訳ではありません。 Messages with the "delete" flag can still be found by the [.searchMails()](#searchmails) function. Flagged messages are deleted from the IMAP server with the [`.expunge()`](#expunge) function or by selecting another mailbox or when the [transporter object](#imap-transporter-object) (created with [IMAP New transporter](#imap-new-transporter)) is destroyed.
+この関数を実行しても、メールが実際に削除される訳ではありません。 "削除済み" フラグがつけられたメッセージも引き続き [.searchMails()](#searchmails) 関数によって検索可能です。 Flagged messages are deleted from the IMAP server with the [`.expunge()`](#expunge) function or by selecting another mailbox or when the [transporter object](#imap-transporter-object) (created with [IMAP New transporter](#imap-new-transporter)) is destroyed.
 
 **Returned object**
 
@@ -642,7 +642,7 @@ The `.delete()` function <!-- REF #IMAPTransporterClass.delete().Summary -->sets
 
 The `.deleteBox()` function <!-- REF #IMAPTransporterClass.deleteBox().Summary -->permanently removes the mailbox with the given `name` from the IMAP server<!-- END REF -->. 存在しないメールボックス、または INBOX を削除しようとして場合には、エラーが生成されます。
 
-In the `name` parameter, pass the name of the mailbox to delete.
+`name` には、削除するメールボックスの名前を渡します。
 
 > - 子メールボックスを持つ親メールボックスが "\Noselect" 属性を持っている場合、そのメールボックスは削除できません。
 > - 削除されるメールボックス内のメッセージもすべて削除されます。
@@ -766,11 +766,11 @@ $status:=$transporter.expunge()
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                 |
-| ----- | ------------------ |
-| 20    | _id_ is returned   |
-| 18 R5 | _name_ is optional |
-| 18 R4 | 追加                 |
+| リリース  | 内容           |
+| ----- | ------------ |
+| 20    | _id_ が返されます  |
+| 18 R5 | _name_ は任意です |
+| 18 R4 | 追加           |
 
 </details>
 
@@ -787,15 +787,15 @@ $status:=$transporter.expunge()
 
 #### 説明
 
-The `.getBoxInfo()` function <!-- REF #IMAPTransporterClass.getBoxInfo().Summary -->returns a `boxInfo` object corresponding to the current maibox, or the mailbox _name_<!-- END REF -->. This function returns the same information as [`.selectBox()`](#selectbox) without changing the current mailbox.
+The `.getBoxInfo()` function <!-- REF #IMAPTransporterClass.getBoxInfo().Summary -->returns a `boxInfo` object corresponding to the current maibox, or the mailbox _name_<!-- END REF -->. この関数は、[`.selectBox()`](#selectbox) と同じ情報を返しますが、カレントメールボックスは変えません。
 
-In the optional _name_ parameter, pass the name of the mailbox to access. この名称は明確な左から右への階層を表し、特定の区切り文字でレベルを区分けします。 The delimiter can be found with the [`.getDelimiter()`](#getdelimiter) function.
+任意の _name_ パラメーターには、アクセスするメールボックスの名称を渡します。 この名称は明確な左から右への階層を表し、特定の区切り文字でレベルを区分けします。 この区切り文字は [`.getDelimiter()`](#getdelimiter) 関数で調べることができます。
 
-If the mailbox _name_ is not selectable or does not exist, the function generates an error and returns **null**.
+_name_ のメールボックスが選択不可の場合、または見つからない場合には、関数はエラーを生成し、**null** を返します。
 
 **Returned object**
 
-The `boxInfo` object returned contains the following properties:
+返される `boxInfo` オブジェクトには、以下のプロパティが格納されています:
 
 | プロパティ      | タイプ    | 説明                                                            |
 | ---------- | ------ | ------------------------------------------------------------- |
@@ -822,10 +822,10 @@ The `boxInfo` object returned contains the following properties:
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                           |
-| ----- | ---------------------------- |
-| 18 R4 | 追加                           |
-| 19    | Add `isSubscribed` parameter |
+| リリース  | 内容                 |
+| ----- | ------------------ |
+| 18 R4 | 追加                 |
+| 19    | `isSubscribed` を追加 |
 
 </details>
 
@@ -844,7 +844,7 @@ The `boxInfo` object returned contains the following properties:
 
 The `.getBoxList()` function <!-- REF #IMAPTransporterClass.getBoxList().Summary -->returns a collection of mailboxes describing all of the available mailboxes<!-- END REF -->. この関数を使用すると、IMAPメールサーバー上にあるメッセージの一覧をローカルで管理することができるようになります。
 
-In the optional `parameters` parameter, pass an object containing values to filter the returned mailboxes. 以下のものを渡すことができます:
+任意の `parameters` パラメーターには、返されるメールボックスをフィルターするための値を格納したオブジェクトを渡すことができます。 以下のものを渡すことができます:
 
 | プロパティ        | タイプ     | 説明                                                                                                         |
 | ------------ | ------- | ---------------------------------------------------------------------------------------------------------- |
@@ -863,8 +863,8 @@ In the optional `parameters` parameter, pass an object containing values to filt
 
 アカウントにメールボックスが一つもない場合、空のコレクションが返されます。
 
-> - If there is no open connection, `.getBoxList()` will open a connection.
-> - If the connection has not been used since the designated connection delay (see `IMAP New transporter`), the `.checkConnection( )` function is automatically called.
+> - 開いている接続がない場合、`.getBoxList()` は接続を開きます。
+> - 接続が指定された時間 (`IMAP New transporter` 参照) 以上に使用されなかった場合には、`.checkConnection( )` 関数が自動的に呼び出されます。
 
 #### 例題
 
@@ -919,8 +919,8 @@ The `.getDelimiter()` function <!-- REF #IMAPTransporterClass.getDelimiter().Sum
 
 メールボックス名の区切り文字
 
-> - If there is no open connection, `.getDelimiter()` will open a connection.
-> - If the connection has not been used since the [designated connection delay](#checkconnectiondelay), the [`.checkConnection()`](#checkconnection) function is automatically called.
+> - 開いている接続がない場合、`.getDelimiter()` は接続を開きます。
+> - 接続が指定された時間 ([IMAP New transporter](#checkconnectiondelay) 参照) 以上に使用されなかった場合には、[`.checkConnection()`](#checkconnection) 関数が自動的に呼び出されます。
 
 #### 例題
 
@@ -971,23 +971,23 @@ The `.getMail()` function <!-- REF #IMAPTransporterClass.getMail().Summary -->re
 
 最初の引数として、次のいずれかを渡すことができます:
 
-- _msgNumber_, an _integer_ value indicating the sequence number of the message to retrieve or
-- _msgID_, a _text_ value indicating the unique ID of the message to retrieve.
+- _msgNumber_ に、取得するメッセージのシーケンス番号 (_倍長整数_) を渡します。
+- _msgID_に、取得するメッセージの固有ID (_テキスト_) を渡します。
 
-The optional _options_ parameter allows you pass an object defining additional instructions for handling the message. 次のプロパティを利用することができます:
+任意の _options_ 引数として、メッセージの扱い方を定義する追加のオブジェクトを渡すことができます。 次のプロパティを利用することができます:
 
 | プロパティ      | タイプ     | 説明                                                                                         |
 | ---------- | ------- | ------------------------------------------------------------------------------------------ |
 | updateSeen | boolean | true 時には、メールボックス内でメッセージを "既読" にします。 false 時にはメッセージの状態は変化しません。 デフォルト値: true |
 | withBody   | boolean | true を渡すとメッセージ本文を返します。 false 時には、メッセージヘッダーのみが返されます。 デフォルト値: true           |
 
-> - The function generates an error and returns **Null** if _msgID_ designates a non-existing message,
-> - If no mailbox is selected with the [`.selectBox()`](#selectbox) function, an error is generated,
-> - If there is no open connection, `.getMail()` will open a connection the last mailbox specified with [`.selectBox()`](#selectbox)\`.
+> - _msgID_ 引数が存在しないメッセージを指定した場合、関数はエラーを生成し **Null** を返します。
+> - [`.selectBox()`](#selectbox) によって選択されたメールボックスがない場合、エラーが生成されます。
+> - 開いている接続がない場合、`.getMail()` は [`.selectBox()`](#selectbox) で最後に指定されたメールボックスへの接続を開きます。
 
 #### 戻り値
 
-`.getMail()` returns an [`Email` object](EmailObjectClass.md#email-object) with the following specific IMAP properties: _id_, _receivedAt_, and _size_.
+`.getMail()` は、以下の IMAP特有のプロパティを持つ [`Email` オブジェクト](EmailObjectClass.md#email-オブジェクト)を返します: _id_、_receivedAt_、および _size_。
 
 #### 例題
 
@@ -1052,9 +1052,9 @@ _**.getMails( ids { ; options } ) -> result**_
 
 第一シンタックスを使用すると、メッセージID に基づいてメッセージを取得することができます。
 
-In the _ids_ parameter, pass a collection of IDs for the messages to return. You can get the IDs with [`.getMail()`](#getmail).
+_ids_ 引数として、取得するメッセージID のコレクションを渡します。 これらの ID は [`.getMail()`](#getmail) で取得することができます。
 
-The optional _options_ parameter allows you to define the parts of the messages to be returned. See the **Options** table below for a description of the available properties.
+任意の _options_ 引数を渡すと、返されるメッセージのパートを定義することができます。 利用可能なプロパティについては、以下の **オプション** の表を参照ください。
 
 **Second syntax:**
 
@@ -1062,11 +1062,11 @@ _**.getMails( startMsg ; endMsg { ; options } ) -> result**_
 
 第二シンタックスを使用すると、連続したレンジに基づいてメッセージを取得することができます。 渡される値はメールボックス内でのメッセージの位置を表します。
 
-In the _startMsg_ parameter, pass an _integer_ value corresponding to the number of the first message in a sequential range. If you pass a negative number (_startMsg_ <= 0), the first message of the mailbox will be used as the beginning of the sequence.
+_startMsg_ には、連続したレンジの最初のメッセージの番号に対応する _倍長整数_ の値を渡します。 If you pass a negative number (_startMsg_ <= 0), the first message of the mailbox will be used as the beginning of the sequence.
 
-In the _endMsg_ parameter, pass an _integer_ value corresponding to the number of the last message to be included in a sequential range. If you pass a negative number (_endMsg_ <= 0), the last message of the mailbox will be used as the end of the sequence.
+_endMsg_ には、連続レンジに含める最後のメッセージの番号に対応する _倍長整数_ の値を渡します。 If you pass a negative number (_endMsg_ <= 0), the last message of the mailbox will be used as the end of the sequence.
 
-The optional _options_ parameter allows you to define the parts of the messages to be returned.
+任意の _options_ 引数を渡すと、返されるメッセージのパートを定義することができます。
 
 **Options**
 
@@ -1075,16 +1075,16 @@ The optional _options_ parameter allows you to define the parts of the messages 
 | updateSeen | Boolean | true 時には、指定されたメッセージを "既読" にします。 false 時にはメッセージの状態は変化しません。 デフォルト値: true |
 | withBody   | Boolean | true を渡すと指定されたメッセージの本文を返します。 false 時には、メッセージヘッダーのみが返されます。 デフォルト値: true |
 
-> - If no mailbox is selected with the [`.selectBox()`](#selectbox) command, an error is generated.
-> - If there is no open connection, `.getMails()` will open a connection the last mailbox specified with [`.selectBox()`](#selectbox).
+> - [`.selectBox()`](#selectbox) によって選択されたメールボックスがない場合、エラーが生成されます。
+> - 開いている接続がない場合、`.getMails()` は [`.selectBox()`](#selectbox) で最後に指定されたメールボックスへの接続を開きます。
 
 #### 戻り値
 
-`.getMails()` returns an object containing the following collections:
+`.getMails()` は、以下のコレクションを格納したオブジェクトを返します。
 
 | プロパティ    | タイプ        | 説明                                                                                                                                                                                                                                                                                               |
 | -------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| list     | Collection | Collection of [`Email` objects](EmailObjectClass.md#email-object). Email オブジェクトが見つからない場合、空のコレクションが返されます。                                                                                                                                                                         |
+| list     | Collection | [`Email`](EmailObjectClass.md#email-オブジェクト) オブジェクトのコレクション。 Email オブジェクトが見つからない場合、空のコレクションが返されます。                                                                                                                                                                                                 |
 | notFound | Collection | Collection of:<br/><ul><li>first syntax - previously passed message IDs that do not exist</li><li>second syntax - sequence numbers of messages between startMsg and endMsg that do not exist</li></ul>An empty collection is returned if all messages are found. |
 
 #### 例題
@@ -1150,21 +1150,21 @@ The `.getMIMEAsBlob()` function <!-- REF #IMAPTransporterClass.getMIMEAsBlob().S
 
 最初の引数として、次のいずれかを渡すことができます:
 
-- _msgNumber_, an _integer_ value indicating the sequence number of the message to retrieve or
-- _msgID_, a _text_ value indicating the unique ID of the message to retrieve.
+- _msgNumber_ に、取得するメッセージのシーケンス番号 (_倍長整数_) を渡します。
+- _msgID_に、取得するメッセージの固有ID (_テキスト_) を渡します。
 
-The optional _updateSeen_ parameter allows you to specify if the message is marked as "seen" in the mailbox. 以下のものを渡すことができます:
+任意の _updateSeen_ 引数を渡すと、メールボックス内でメッセージが "既読" とマークされるかどうかを指定します。 以下のものを渡すことができます:
 
-- **True** - to mark the message as "seen" (indicating the message has been read)
-- **False** - to leave the message's "seen" status untouched
+- **True** - メッセージは "既読" とマークされます (このメッセージが読まれたことを表します)
+- **False** - メッセージの "既読" ステータスは変化しません。
 
-> * The function returns an empty BLOB if _msgNumber_ or msgID\* designates a non-existing message,
-> * If no mailbox is selected with the [`.selectBox()`](#selectbox) command, an error is generated,
-> * If there is no open connection, `.getMIMEAsBlob()` will open a connection the last mailbox specified with `.selectBox()`.
+> * _msgNumber_ または _msgID_ 引数が存在しないメッセージを指定した場合、関数は空の BLOB を返します。
+> * [`.selectBox()`](#selectbox) によって選択されたメールボックスがない場合、エラーが生成されます。
+> * 開いている接続がない場合、`.getMIMEAsBlob()` は `.selectBox()` で最後に指定されたメールボックスへの接続を開きます。
 
 #### 戻り値
 
-`.getMIMEAsBlob()` returns a `BLOB` which can be archived in a database or converted to an [`Email` object](EmailObjectClass.md#email-object) with the `MAIL Convert from MIME` command.
+`.getMIMEAsBlob()` は `BLOB` を返します。この BLOB はデータベースにアーカイブしたり、`MAIL Convert from MIME` コマンドを使用して [`Email` オブジェクト](EmailObjectClass.md#email-object) へと変換したりすることができます。
 
 #### 例題
 
@@ -1212,12 +1212,12 @@ The optional _updateSeen_ parameter allows you to specify if the message is mark
 
 <!-- REF #IMAPTransporterClass.move().Params -->
 
-| 引数             | タイプ        |     | 説明                                                               |
-| -------------- | ---------- | :-: | ---------------------------------------------------------------- |
-| msgsIDs        | Collection |  -> | メッセージの固有ID のコレクション (テキスト)                     |
-| allMsgs        | Integer    |  -> | `IMAP all`: All messages in the selected mailbox |
-| destinationBox | Text       |  -> | メッセージの移動先のメールボックス                                                |
-| 戻り値            | Object     |  <- | move処理のステータス                                                     |
+| 引数             | タイプ        |     | 説明                                              |
+| -------------- | ---------- | :-: | ----------------------------------------------- |
+| msgsIDs        | Collection |  -> | メッセージの固有ID のコレクション (テキスト)    |
+| allMsgs        | Integer    |  -> | `IMAP all`: 選択されたメールボックスの全メッセージ |
+| destinationBox | Text       |  -> | メッセージの移動先のメールボックス                               |
+| 戻り値            | Object     |  <- | move処理のステータス                                    |
 
 <!-- END REF -->
 
@@ -1227,12 +1227,12 @@ The `.move()` function <!-- REF #IMAPTransporterClass.move().Summary -->moves th
 
 以下のものを渡すことができます:
 
-- in the _msgsIDs_ parameter, a collection containing the unique IDs of the specific messages to move, or
-- in the _allMsgs_ parameter, the `IMAP all` constant (integer) to move all messages in the selected mailbox.
+- _msgsIDs_ には、移動するメッセージの固有ID を格納したコレクション
+- _allMsgs_ には、選択されているメールボックスの全メッセージを移動するための定数 (倍長整数型):
 
-The _destinationBox_ parameter allows you to pass a text value with the name of the mailbox where the messages will be moved.
+_destinationBox_ には、メッセージの移動先メールボックスの名称をテキスト値で渡すことができます。
 
-> This function is only supported by IMAP servers compliant with RFC [8474](https://tools.ietf.org/html/rfc8474).
+> RFC [8474](https://tools.ietf.org/html/rfc8474) に準拠している IMAPサーバーでのみ、この関数はサポートされます。
 
 **Returned object**
 
@@ -1327,9 +1327,9 @@ The _destinationBox_ parameter allows you to pass a text value with the name of 
 
 The `.numToID()` function <!-- REF #IMAPTransporterClass.numToID().Summary -->converts the sequence numbers to IMAP unique IDs for the messages in the sequential range designated by _startMsg_ and _endMsg_<!-- END REF --> in the currently selected mailbox.
 
-In the _startMsg_ parameter, pass an integer value corresponding to the number of the first message in a sequential range. If you pass a negative number (_startMsg_ <= 0), the first message of the mailbox will be used as the beginning of the sequence.
+_startMsg_ には、連続したレンジの最初のメッセージの番号に対応する _倍長整数_ の値を渡します。 If you pass a negative number (_startMsg_ <= 0), the first message of the mailbox will be used as the beginning of the sequence.
 
-In the _endMsg_ parameter, pass an integer value corresponding to the number of the last message to be included in a sequential range. If you pass a negative number (_endMsg_ <= 0), the last message of the mailbox will be used as the end of the sequence.
+_endMsg_ には、連続レンジに含める最後のメッセージの番号に対応する _倍長整数_ の値を渡します。 If you pass a negative number (_endMsg_ <= 0), the last message of the mailbox will be used as the end of the sequence.
 
 #### 戻り値
 
@@ -1391,17 +1391,17 @@ In the _endMsg_ parameter, pass an integer value corresponding to the number of 
 
 The `.removeFlags()` function <!-- REF #IMAPTransporterClass.removeFlags().Summary -->removes flags from the `msgIDs` for the specified `keywords`<!-- END REF -->.
 
-In the `msgIDs` parameter, you can pass either:
+`msgIDs` には、以下のいずれかを渡すことができます:
 
-- a _collection_ containing the unique IDs of specific messages or
-- the unique ID (_text_) of a single message or
-- the following constant (_longint_) for all messages in the selected mailbox:
+- 指定するメッセージの固有ID を格納した _コレクション_
+- 単一のメッセージの固有ID (_テキスト_)
+- 以下の定数 (_longint_) を使用することで、選択されているメールボックスの全メッセージを指定することができます:
 
 | 定数       | 値 | 説明                        |
 | -------- | - | ------------------------- |
 | IMAP all | 1 | 選択されたメールボックスの全メッセージを選択します |
 
-The `keywords` parameter lets you define the flags to remove from `msgIDs`. 以下の標準フラグおよびカスタムフラグを使用することができます:
+`keywords` を使って、`msgIDs` 引数で指定したメッセージから削除するフラグを定義します。 以下の標準フラグおよびカスタムフラグを使用することができます:
 
 | 引数              | タイプ     | 説明                                |
 | --------------- | ------- | --------------------------------- |
@@ -1412,7 +1412,7 @@ The `keywords` parameter lets you define the flags to remove from `msgIDs`. 以�
 | $deleted        | Boolean | メッセージの "deleted" フラグを削除するには true  |
 | `<custom flag>` | Boolean | メッセージのカスタムフラグを削除するには true         |
 
-Please refer to [.addFlags()](#addflags) for more information on custom flags.
+カスタムフラグの詳細については、[.addFlags()](#addflags) を参照ください。
 
 > - キーワードが考慮されるためには、その値が true でなければなりません。
 
@@ -1482,9 +1482,9 @@ $status:=$transporter.removeFlags(IMAP all;$flags)
 
 The `.renameBox()` function <!-- REF #IMAPTransporterClass.renameBox().Summary -->changes the name of a mailbox on the IMAP server<!-- END REF -->. 存在しないメールボックスの名称を変更しようとしたり、すでに使われているメールボックス名に変更しようとしたりすると、エラーが生成されます。
 
-In the `currentName` parameter, pass the name of the mailbox to be renamed.
+`currentName` には、名称変更するメールボックスの名前を渡します。
 
-Pass the new name for the mailbox in the `newName` parameter.
+メールボックスの新しい名称は `newName` に渡します。
 
 **Returned object**
 
@@ -1558,11 +1558,11 @@ End if
 
 #### 説明
 
-> This function is based upon the specification for the [IMAP protocol](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol).
+> この関数は、[IMAP プロトコル](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol) の仕様に基づいています。
 
-The `.searchMails()` function <!-- REF #IMAPTransporterClass.searchMails().Summary -->searches for messages that match the given _searchCriteria_ in the current mailbox<!-- END REF -->. _searchCriteria_ consists of one or more search keys.
+The `.searchMails()` function <!-- REF #IMAPTransporterClass.searchMails().Summary -->searches for messages that match the given _searchCriteria_ in the current mailbox<!-- END REF -->. _searchCriteria_ 引数には、一つ以上の検索キーを格納します。
 
-_searchCriteria_ is a text parameter listing one or more search keys (see [Authorized search-keys](#authorized-search-keys) below) associated or not with values to look for. 検索キーは単一または複数の項目からなります。 例:
+_searchCriteria_ はテキスト型の引数で、一つ以上の検索キー (詳細は後述の [利用可能な検索キー](#利用可能な検索キー) 参照) を格納し、検索する値を渡します (渡さない場合もあります)。 検索キーは単一または複数の項目からなります。 例:
 
 ```
 SearchKey1 = FLAGGED
@@ -1572,8 +1572,8 @@ SearchKey3 = FLAGGED DRAFT
 
 > 文字の大小は通常区別されません。
 
-- If the _searchCriteria_ is a null string, the search will be equivalent to a “select all”.
-- If the _searchCriteria_ includes multiple search keys, the result is the intersection (AND function) of all the messages that match those keys.
+- _searchCriteria_ 引数が null 文字列の場合、検索は "すべてを選択" と同等です。
+- 引数が複数の検索キーを格納している場合、それらすべてに合致する和集合 (AND) が検索結果になります。
 
 ```
 searchCriteria = FLAGGED FROM "SMITH"
@@ -1581,7 +1581,7 @@ searchCriteria = FLAGGED FROM "SMITH"
 
 ... returns all messages with \Flagged flag set AND sent by Smith.
 
-- You can use the **OR** or **NOT** operators as follows:
+- **OR** および **NOT** 演算子を、以下のように使用することができます:
 
 ```
 searchCriteria = OR SEEN FLAGGED
@@ -1609,7 +1609,7 @@ searchCriteria = HEADER CONTENT-TYPE "E" NOT SUBJECT "o" NOT HEADER CONTENT-TYPE
 
 最後の 2例については、最初の検索キーリストのカッコを取り除いてしまうと検索結果が異なることに注意してください。
 
-- The _searchCriteria_ may include the optional \[CHARSET] specification. これは "CHARSET" という単語の後に実際の文字コード \[CHARSET] (US ASCII, ISO-8859 など) が続きます。 It indicates the charset of the _searchCriteria_ string. Therefore, you must convert the _searchCriteria_ string into the specified charset if you use the \[CHARSET] specification (see the `CONVERT FROM TEXT` or `Convert to text` commands).
+- _searchCriteria_ 引数には任意の \[CHARSET] 指定を含めることができます。 これは "CHARSET" という単語の後に実際の文字コード \[CHARSET] (US ASCII, ISO-8859 など) が続きます。 これは _searchCriteria_ 文字列の文字コードを指定します。 そのため、\[CHARSET] 指定を使用する場合には _searchCriteria_ 文字列を指定された文字コードへと変換する必要があります (詳細については `CONVERT FROM TEXT` または `Convert to text` コマンドを参照ください)。
   デフォルトでは、searchCriteria 引数に拡張された文字列が含まれていた場合には4D はそれを Quotable Printable へとエンコードします。
 
 ```
@@ -1623,23 +1623,23 @@ searchCriteria = CHARSET "ISO-8859" BODY "Help"
 検索キーによっては、次の型の検索値が必要となる場合があります:
 
 - **Search-keys with a date value**: the date is a string that must be formatted as follows: _date-day+"-"+date-month+"-"+date-year_ where date-day indicates the number of the day of the month (max. 2 characters), date-month indicates the name of the month (Jan/Feb/Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Dec) and date-year indicates the year (4 characters).
-  Example: `searchCriteria = SENTBEFORE 1-Feb-2020` (a date does not usually need to be quoted since it does not contain any special characters)
+  例: `searchCriteria = SENTBEFORE 1-Feb-2000` (日付は特殊文字を含まないため、通常は引用符でくくる必要はありません)
 
-- **Search-keys with a string value**: the string may contain any character and must be quoted. 文字列が特殊文字 (スペース文字など) をまったく含まない場合には、引用符で括る必要はありません。 このような文字列を引用符でくくることは、渡した文字列値が正確に解釈されることを保証します。
-  Example: `searchCriteria = FROM "SMITH"`
-  For all search keys that use strings, a message matches the key if the string is a substring of the field. 合致は文字の大小を区別しません。
+- **文字列値の検索キー**: string はあらゆる文字列を含みうるため、引用符でくくらなければなりません。 文字列が特殊文字 (スペース文字など) をまったく含まない場合には、引用符で括る必要はありません。 このような文字列を引用符でくくることは、渡した文字列値が正確に解釈されることを保証します。
+  例: `searchCriteria = FROM "SMITH"`<br />
+  文字列を使用するすべての検索キーに対し、フィールドの文字列に検索キーが含まれる場合には検索に合致したとみなされます。 合致は文字の大小を区別しません。
 
-- **Search-keys with a field-name value**: the field-name is the name of a header field.
-  Example: `searchCriteria = HEADER CONTENT-TYPE "MIXED"`
+- **field-name 値の検索キー**: field-name はヘッダーフィールドの名称です。
+  例: `searchCriteria = HEADER CONTENT-TYPE "MIXED"`
 
-- **Search-keys with a flag value**: the flag may accept one or several keywords (including standard flags), separated by spaces.
-  Example: `searchCriteria = KEYWORD \Flagged \Draft`
+- **フラグ値の検索キー**: flag は一つ以上のキーワードを (標準のフラグを含めて) 受け入れます。複数指定する場合にはスペースで区切ります。
+  例: `searchCriteria = KEYWORD \Flagged \Draft`
 
-- **Search-keys with a message set value**: Identifies a set of messages. メッセージシーケンス番号は、1 から始まりメールボックスのメッセージの総数までの連続した番号です。 個別の番号はカンマで区切ります。コロンは、その前後の番号を含めた連続した番号を指定します。
-  Examples:
-  `2,4:7,9,12:*` is `2,4,5,6,7,9,12,13,14,15` for a mailbox with 15 messages.
-  `searchCriteria = 1:5 ANSWERED` search in message selection from message sequence number 1 to 5 for messages which have the \Answered flag set.
-  `searchCriteria= 2,4 ANSWERED` search in the message selection (message numbers 2 and 4) for messages which have the \Answered flag set.
+- **メッセージセット値の検索キー**: 複数のメッセージを識別します。 メッセージシーケンス番号は、1 から始まりメールボックスのメッセージの総数までの連続した番号です。 個別の番号はカンマで区切ります。コロンは、その前後の番号を含めた連続した番号を指定します。
+  例:<br />
+  `2,4:7,9,12:*` は、15通あるメールボックスの場合に `2,4,5,6,7,9,12,13,14,15` を指定します。
+  `searchCriteria = 1:5 ANSWERED` は、メッセージシーケンス番号 1 から 5番のメッセージのうち、\Answered フラグが設定されているメッセージを検索します。
+  `searchCriteria= 2,4 ANSWERED` は、メッセージセレクション (メッセージ番号 2番と4番) のうち、\Answered フラグが設定されているメッセージを検索します。
 
 #### 利用可能な検索キー
 
@@ -1687,10 +1687,10 @@ searchCriteria = CHARSET "ISO-8859" BODY "Help"
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                           |
-| ----- | -------------------------------------------- |
-| 20    | _id_, _flags_, _permanentFlags_ are returned |
-| 18 R4 | 追加                                           |
+| リリース  | 内容                                      |
+| ----- | --------------------------------------- |
+| 20    | _id_, _flags_, _permanentFlags_ が返されます。 |
+| 18 R4 | 追加                                      |
 
 </details>
 
@@ -1710,24 +1710,24 @@ searchCriteria = CHARSET "ISO-8859" BODY "Help"
 
 The `.selectBox()` function <!-- REF #IMAPTransporterClass.selectBox().Summary -->selects the _name_ mailbox as the current mailbox<!-- END REF -->. この関数を使用するとメールボックスに関する情報を取得することができます。
 
-> To get the information from a mailbox without changing the current mailbox, use [`.getBoxInfo()`](#getboxinfo).
+> カレントメールボックスを変更せずに、メールボックスから情報を取得するには、[`.getBoxInfo()`](#getboxinfo) を使用します。
 
-In the _name_ parameter, pass the name of the mailbox to access. この名称は明確な左から右への階層を表し、特定の区切り文字でレベルを区分けします。 The delimiter can be found with the [`.getDelimiter()`](#getdelimiter) function.
+_name_ には、アクセスするメールボックスの名前を渡します。 この名称は明確な左から右への階層を表し、特定の区切り文字でレベルを区分けします。 この区切り文字は [`.getDelimiter()`](#getdelimiter) 関数で調べることができます。
 
-The optional _state_ parameter defines the type of access to the mailbox. 取りうる値は以下の通りです:
+任意の _state_ 引数を渡すと、メールボックスへのアクセスタイプを定義できます。 取りうる値は以下の通りです:
 
 | 定数                    | 値 | 説明                                                                                            |
 | --------------------- | - | --------------------------------------------------------------------------------------------- |
 | IMAP read only state  | 1 | 選択されたメールボックスは読み取り専用権限でアクセスされます。 新しいメッセージを表す "新着" フラグはそのまま変化しません。                              |
 | IMAP read write state | 0 | 選択されたメールボックスは読み書き可能権限でアクセスされます。 メッセージは "既読" と判断され、"新着" フラグは失われます。 (デフォルト値) |
 
-> - The function generates an error and returns **Null** if _name_ designates a non-existing mailbox.
-> - If there is no open connection, `.selectBox()` will open a connection.
-> - If the connection has not been used since the designated connection delay (see `IMAP New transporter`), the [`.checkConnection()`](#checkconnection) function is automatically called.
+> - _name_ 引数が存在しないメールボックスを指定した場合、関数はエラーを生成し **Null** を返します。
+> - 開いている接続がない場合、`.selectBox()` は接続を開きます。
+> - 接続が指定された時間 (`IMAP New transporter` 参照) 以上に使用されなかった場合には、[`.checkConnection()`](#checkconnection) 関数が自動的に呼び出されます。
 
 **Returned object**
 
-The `boxInfo` object returned contains the following properties:
+返される `boxInfo` オブジェクトには、以下のプロパティが格納されています:
 
 | プロパティ          | タイプ    | 説明                                                                                   |
 | -------------- | ------ | ------------------------------------------------------------------------------------ |
@@ -1740,7 +1740,7 @@ The `boxInfo` object returned contains the following properties:
 
 :::info
 
-If `permanentFlags` string includes the special flag \*, it means that the server supports [custom flags](#addflags).
+`permanentFlags` の文字列に特別なフラグ \* が含まれている場合、それは、サーバーが [カスタムフラグ](#addflags) をサポートしていることを意味します。
 
 :::
 
@@ -1787,7 +1787,7 @@ If `permanentFlags` string includes the special flag \*, it means that the serve
 
 The `.subscribe()` function <!-- REF #IMAPTransporterClass.subscribe().Summary -->allows adding or removing of the specified mailbox to/from the IMAP server’s set of “subscribed” mailboxes<!-- END REF -->. 利用可能なメールボックスが大量にある場合、すべてを取得するのを避けるため、確認したいメールボックスだけを購読することができます。
 
-In the `name` parameter, pass the name of the mailbox to add (subscribe) to your "subscribed" mailboxes.
+`name` には、購読するメールボックスの名前を渡します。
 
 **Returned object**
 
@@ -1860,7 +1860,7 @@ End if
 
 The `.unsubscribe()` function <!-- REF #IMAPTransporterClass.unsubscribe().Summary -->removes a mailbox from a set of subscribed mailboxes<!-- END REF -->. これにより、確認するメールボックスの数を減らせます。
 
-In the `name` parameter, pass the name of the mailbox to remove (unsubscribe) from your active mailboxes.
+`name` には、購読を解除するメールボックスの名前を渡します。
 
 **Returned object**
 
