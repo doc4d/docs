@@ -3,7 +3,7 @@ id: MailAttachmentClass
 title: MailAttachment
 ---
 
-Attachment objects allow referencing files within a [`Email`](EmailObjectClass.md) object. Attachment objects are created using the [`MAIL New attachment`](#mail-new-attachment) command.
+Attachment オブジェクトによって、[`Email`](EmailObjectClass.md) オブジェクト内のファイルを参照することができます。 MailAttachment オブジェクトは [`MAIL New attachment`](#mail-new-attachment) コマンドによって作成されます。
 
 ### Attachment オブジェクト
 
@@ -54,21 +54,21 @@ The `MAIL New attachment` command <!-- REF #_command_.MAIL New attachment.Summar
 
 添付を定義するには、次のパラメーターが使えます:
 
-- a _file_, pass a `4D.File` object containing the attachment file.
-- a _zipfile_, pass a `4D.ZipFile` object containing the attachment file.
-- a _blob_, pass a `4D.Blob` object containing the attachment itself.
-- a _path_, pass a **text** value containing the path of the attachment file, expressed with the system syntax. 完全なパス名、または単純なファイル名を渡すことができます (ファイル名のみの場合、4D はプロジェクトファイルと同じディレクトリ内を検索します)。
+- _file_: 添付ファイルを格納する `4D.File` オブジェクトを渡します。
+- _zipfile_: 添付ファイルを格納する `4D.ZipFile` オブジェクトを渡します。
+- _blob_: 添付そのものを `4D.Blob` に格納して渡します。
+- _path_: システムシンタックスで表現された添付ファイルのパスを **テキスト** 値で渡します。 完全なパス名、または単純なファイル名を渡すことができます (ファイル名のみの場合、4D はプロジェクトファイルと同じディレクトリ内を検索します)。
 
-The optional _name_ parameter lets you pass the name and extension to be used by the mail client to designate the attachment. If _name_ is omitted and:
+任意の _name_ 引数として、添付を指定するためにメールクライアントが使用する名前と拡張子を渡すことができます。 _name_ が省略された場合:
 
 - ファイルパスを渡していれば、そのファイル名と拡張子が使用されます。
 - BLOB を渡していれば、拡張子がないランダムな名前が自動的に生成されます。
 
-The optional _cid_ parameter lets you pass an internal ID for the attachment. This ID is the value of the `Content-Id` header, it will be used in HTML messages only. The cid associates the attachment with a reference defined in the message body using an HTML tag such as `\<img src="cid:ID">`. これはつまり、添付ファイルの中身 (例: ピクチャー) がメールクライアント上ではメッセージ本文内に表示されるべきであることを意味しています。 最終的な表示は、メールクライアントによって若干異なる可能性があります。 You can pass an empty string in _cid_ if you do not want to use this parameter.
+任意の _cid_ 引数を使用すると、添付ファイルの内部ID を渡すことができます。 この ID は `Content-Id` ヘッダーの値で、HTMLメッセージにおいてのみ使用されます。 The cid associates the attachment with a reference defined in the message body using an HTML tag such as `\<img src="cid:ID">`. これはつまり、添付ファイルの中身 (例: ピクチャー) がメールクライアント上ではメッセージ本文内に表示されるべきであることを意味しています。 最終的な表示は、メールクライアントによって若干異なる可能性があります。 _cid_ を使用したくない場合、空の文字列を引数として渡します。
 
-You can use the optional _type_ parameter to explicitly set the `content-type` of the attachment file. たとえば、MIMEタイプを定義する文字列 ("video/mpeg"など) を渡すことができます。 この content-type の値は拡張子とは関係なく添付ファイルに対して設定されます。 For more information about MIME types, please refer to the [MIME type page on Wikipedia](https://en.wikipedia.org/wiki/MIME).
+任意の _type_ 引数を渡すと、添付ファイルの `content-type` を明示的に設定することができます。 たとえば、MIMEタイプを定義する文字列 ("video/mpeg"など) を渡すことができます。 この content-type の値は拡張子とは関係なく添付ファイルに対して設定されます。 MIMEタイプについての詳細は、[Wikipedia 上のMIME に関するページ](https://ja.wikipedia.org/wiki/Multipurpose_Internet_Mail_Extensions) を参照ください。
 
-By default, if the _type_ parameter is omitted or contains an empty string, the `content-type` of the attachment file is based on its extension. 主な MIMEタイプについては、以下のルールが適用されます:
+この引数が省略された場合、あるいはこの引数に空の文字列が渡された場合はデフォルトで、添付ファイルの `content-type` は拡張子に基づいて設定されます。 主な MIMEタイプについては、以下のルールが適用されます:
 
 | 拡張子       | Content-Type                                  |
 | --------- | --------------------------------------------- |
@@ -89,17 +89,17 @@ By default, if the _type_ parameter is omitted or contains an empty string, the 
 | mp3       | audio/mpeg                                    |
 | _other_   | application/octet-stream                      |
 
-The optional _disposition_ parameter lets you pass the `content-disposition` header of the attachment. "Mail" 定数テーマ内の、以下の定数のいずれか 1つを渡すことができます:
+任意の _disposition_ 引数を渡して、添付ファイルの `content-disposition` ヘッダーを指定できます。 "Mail" 定数テーマ内の、以下の定数のいずれか 1つを渡すことができます:
 
 | 定数                          | 値            | 説明                                                                                                                              |
 | --------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------- |
 | mail disposition attachment | "attachment" | Content-disposition ヘッダーの値を "attachment" に設定します。これは添付ファイルはメッセージ内でリンクとして提供される必要があることを意味します。                                      |
 | mail disposition inline     | "inline"     | Content-disposition ヘッダーの値を "inline" に設定します。これは添付ファイルはメッセージ本文内の、"cid" の位置にレンダリングされる必要があることを意味します。 レンダリングの結果はメールクライアントによって異なります。 |
 
-By default, if the _disposition_ parameter is omitted:
+_disposition_ 引数が省略された場合はデフォルトで:
 
-- if the _cid_ parameter is used, the `Content-disposition` header is set to "inline",
-- if the _cid_ parameter is not passed or empty, the `Content-disposition` header is set to "attachment".
+- _cid_ 引数が使われていた場合、`Content-disposition` ヘッダーは "inline" に設定されます。
+- _cid_ 引数が渡されていない、あるいは空の文字列が渡されていた場合、`Content-disposition` ヘッダーは "attachment" に設定されます。
 
 #### 例題 1
 
@@ -195,7 +195,7 @@ $transporter.send($email)
 
 #### 説明
 
-The `4D.MailAttachment.new()` function <!-- REF #4D.MailAttachment.new().Summary -->creates and returns a new object of the `4D.MailAttachment` type<!-- END REF -->. It is identical to the [`MAIL New attachment`](#mail-new-attachment) command (shortcut).
+The `4D.MailAttachment.new()` function <!-- REF #4D.MailAttachment.new().Summary -->creates and returns a new object of the `4D.MailAttachment` type<!-- END REF -->. この関数の機能は、[`MAIL New attachment`](#mail-new-attachment) コマンドと同一です。
 
 ## .cid
 
@@ -230,7 +230,7 @@ The `.disposition` property contains <!-- REF #MailAttachmentClass.disposition.S
 
 #### 説明
 
-The `.getContent()` function <!-- REF #MailAttachmentClass.getContent().Summary -->returns the contents of the attachment object in a `4D.Blob` object<!-- END REF -->. You can use this method with attachment objects received by the [`MAIL Convert from MIME`](EmailObjectClass.md#mail-convert-from-mime) command.
+The `.getContent()` function <!-- REF #MailAttachmentClass.getContent().Summary -->returns the contents of the attachment object in a `4D.Blob` object<!-- END REF -->. [`MAIL Convert from MIME`](EmailObjectClass.md#mail-convert-from-mime) コマンドによって取得した添付オブジェクトに対して、この関数を使用することができます。
 
 ## .name
 
@@ -238,7 +238,7 @@ The `.getContent()` function <!-- REF #MailAttachmentClass.getContent().Summary 
 
 #### 説明
 
-The `.name` property contains <!-- REF #MailAttachmentClass.name.Summary -->the name and extension of the attachment<!-- END REF -->.  By default, it is the name of the file, unless another name was specified in the [`MAIL New attachment`](#mail-new-attachment) command.
+The `.name` property contains <!-- REF #MailAttachmentClass.name.Summary -->the name and extension of the attachment<!-- END REF -->.  [`MAIL New attachment`](#mail-new-attachment) コマンドで別の名称を指定しなかった場合のデフォルトは、ファイルの名称です。
 
 ## .path
 
@@ -270,7 +270,7 @@ The `.platformPath` property returns <!-- REF #MailAttachmentClass.platformPath.
 
 #### 説明
 
-The `.size` property contains <!-- REF #MailAttachmentClass.size.Summary -->the value of the `size` header of the attachment file<!-- END REF -->. The `.size` property is returned when the MIME message defines a size header in the attachment part.
+The `.size` property contains <!-- REF #MailAttachmentClass.size.Summary -->the value of the `size` header of the attachment file<!-- END REF -->. `.size`プロパティは、MIMEメッセージが添付ファイル部でサイズヘッダーを定義している場合に返されます。
 
 ## .type
 
@@ -278,4 +278,4 @@ The `.size` property contains <!-- REF #MailAttachmentClass.size.Summary -->the 
 
 #### 説明
 
-The `.type` property contains <!-- REF #MailAttachmentClass.type.Summary -->the `content-type` of the attachment file<!-- END REF -->. If this type is not explicitly passed to the [`MAIL New attachment`](#mail-new-attachment) command, the `content-type` is based on its file extension.
+The `.type` property contains <!-- REF #MailAttachmentClass.type.Summary -->the `content-type` of the attachment file<!-- END REF -->. [`MAIL New attachment`](#mail-new-attachment) コマンドにて、このタイプが明示的に渡されていない場合、`content-type` はファイルの拡張子に基づきます。
