@@ -82,7 +82,7 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 #### 説明
 
-The `File` command <!-- REF #_command_.File.Summary -->creates and returns a new object of the `4D.File` type<!-- END REF -->. このコマンドは 2種類のシンタックスを受け入れます。
+`File` コマンドは、<!-- REF #_command_.File.Summary -->`4D.File` 型の新しいオブジェクトを作成して返します<!-- END REF -->。 このコマンドは 2種類のシンタックスを受け入れます。
 
 **File ( path { ; pathType } { ; \* })**
 
@@ -118,7 +118,7 @@ _fileConstant_ には、以下の定数のどれか一つを指定して 4Dビ�
 | HTTP debug log file               | 9  | `WEB SET OPTION(Web debug log)` コマンドによって作成されたログファイル。 Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                             |
 | HTTP log file                     | 8  | `WEB SET OPTION(Web log recording)` コマンドによって作成されたログファイル。 Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                         |
 | IMAP Log file                     | 23 | `SET DATABASE PARAMETER(IMAP Log)` コマンドによって作成されたログファイル。 Logs フォルダーに保存されています。                                                                                                                                                                                                                                                                          |
-| Last backup file                  | 2  | Last backup file, named `\<applicationName>[bkpNum].4BK`, stored at a custom location.                                                                                                                                                                                                                                               |
+| Last backup file                  | 2  | 任意の場所に格納されている、最終バックアップファイル (名称は: `\<applicationName>[bkpNum].4BK`)                                                                                                                                                                                                                                                |
 | Last journal integration log file | 22 | 最後のログ統合ログファイル (あれば) の完全なパス名 (復元されたアプリケーションの Logs フォルダー内に保存されます)。 このファイルは、自動修復モードにおいてログファイル統合が発生した時点で作成されます。                                                                                                                                                                                                     |
 | Repair log file                   | 7  | メンテナンス&セキュリティセンター (MSC) 内からデータベースに対しておこなわれたデータベース修復のログファイル。 Logs フォルダーに保存されています。                                                                                                                                                                                                                               |
 | Request log file                  | 10 | `SET DATABASE PARAMETER(4D Server log recording)` あるいは `SET DATABASE PARAMETER(Client log recording)` コマンドによって作成された標準のクライアント/サーバーログファイル (Webリクエストは除外)。 サーバー上で実行された場合には、サーバーログが返されます (ログファイルはサーバー上の Logsフォルダーに保存されています)。 クライアントで実行された場合には、クライアントのログが返されます (ログファイルはクライアントのLogsフォルダーに保存されています)。 |
@@ -147,7 +147,7 @@ _fileConstant_ 引数で指定したファイルが存在しない場合、null 
 
 #### 説明
 
-The `4D.File.new()` function <!-- REF #4D.File.new().Summary -->creates and returns a new object of the `4D.File` type<!-- END REF -->. この関数の機能は、[`File`](#file) コマンドと同一です。
+`4D.File.new()` 関数は、<!-- REF #4D.File.new().Summary -->`4D.File` 型の新しいオブジェクトを作成して返します<!-- END REF -->。 この関数の機能は、[`File`](#file) コマンドと同一です。
 
 > `4D.File.new()` よりも、短い [`File`](#file) コマンドの使用が推奨されます。
 
@@ -167,7 +167,7 @@ The `4D.File.new()` function <!-- REF #4D.File.new().Summary -->creates and retu
 
 <!--REF file.create().Note -->
 
-**Not available for ZIP archives**<!-- END REF -->
+**ZIPアーカイブには利用できません**<!-- END REF -->
 
 <!--REF #FileClass.create().Syntax -->**.create()** : Boolean <!-- END REF -->
 
@@ -181,7 +181,7 @@ The `4D.File.new()` function <!-- REF #4D.File.new().Summary -->creates and retu
 
 #### 説明
 
-The `.create()` function <!-- REF #FileClass.create().Summary -->creates a file on disk according to the properties of the `File` object<!-- END REF -->.
+`.create()` 関数は、<!-- REF #FileClass.create().Summary -->`File` オブジェクトのプロパティに基づいてディスク上にファイルを作成します<!-- END REF -->。
 
 必要であれば、 関数は [platformPath](#platformpath) あるいは [path](#path) プロパティの詳細に基づいてフォルダー階層を作成します。 ファイルがディスク上にすでに存在する場合、関数は何もせず、false を返します (エラーは返されません)。
 
@@ -228,7 +228,7 @@ The `.create()` function <!-- REF #FileClass.create().Summary -->creates a file 
 
 #### 説明
 
-The `.createAlias()` function <!-- REF #FileClass.createAlias().Summary -->creates an alias (macOS) or a shortcut (Windows)<!-- END REF --> to the file with the specified _aliasName_ name in the folder designated by the _destinationFolder_ object.
+`.createAlias()` 関数は、_destinationFolder_ オブジェクトで指定されたフォルダー内に、_aliasName_ が指定する名称で、対象ファイルへの<!-- REF #FileClass.createAlias().Summary -->エイリアス (macOS) またはショートカット (Windows) を作成します<!-- END REF -->。
 
 _aliasName_ には、作成するエイリアスまたはショートカットの名前を渡します。
 
@@ -241,7 +241,7 @@ macOS 上では、この関数はデフォルトで標準エイリアスを作�
 
 Windows 上では、常にショートカット (.lnk ファイル) が作成されます (_aliasType_ 引数は無視されます)。
 
-**Returned object**
+**返されるオブジェクト**
 
 `isAlias` プロパティが **true** に設定された `4D.File` オブジェクトを返します。
 
@@ -284,7 +284,7 @@ Windows 上では、常にショートカット (.lnk ファイル) が作成さ
 
 #### 説明
 
-The `.delete()` function <!-- REF #FileClass.delete().Summary -->deletes the file<!-- END REF -->.
+`.delete()` 関数は、<!-- REF #FileClass.delete().Summary -->ファイルを削除します<!-- END REF -->。
 
 ファイルがディスク上に存在しない場合、関数は何もしません (エラーは生成されません)。
 
@@ -307,7 +307,7 @@ The `.delete()` function <!-- REF #FileClass.delete().Summary -->deletes the fil
  $tempo:=File("/PACKAGE/SpecialPrefs/"+Current user+".prefs")
  If($tempo.exists)
     $tempo.delete()
-    ALERT("User preference file deleted.")
+    ALERT("ユーザーのプリファレンスファイルが削除されました。")
  End if
 ```
 
@@ -343,13 +343,13 @@ The `.delete()` function <!-- REF #FileClass.delete().Summary -->deletes the fil
 
 #### 説明
 
-The `.getAppInfo()` function <!-- REF #FileClass.getAppInfo().Summary -->returns the contents of a **.exe**, **.dll** or **.plist** file information as an object<!-- END REF -->.
+`.getAppInfo()` 関数は、<!-- REF #FileClass.getAppInfo().Summary -->**.exe** や **.dll**、**.plist** ファイルの情報をオブジェクトとして返します<!-- END REF -->。
 
 この関数は、既存の .exe、.dll、あるいは .plist ファイルと使う必要があります。 ファイルがディスク上に存在しない、または、有効な .exe や .dll、.plist ファイルでない場合、この関数は空のオブジェクトを返します (エラーは生成されません)。
 
 > この関数は xml形式の .plist ファイル (テキスト) のみをサポートしています。 バイナリ形式の .plist ファイルを対象に使用した場合、エラーが返されます。
 
-**Returned object with a .exe or .dll file**
+**.exe または .dll ファイルの場合に返されるオブジェクト**
 
 > .exe および .dll ファイルの読み取りは Windows上でのみ可能です。
 
@@ -366,7 +366,7 @@ The `.getAppInfo()` function <!-- REF #FileClass.getAppInfo().Summary -->returns
 | FileVersion      | Text |
 | OriginalFilename | Text |
 
-**Returned object with a .plist file**
+**.plist ファイルの場合に返されるオブジェクト**
 
 xml ファイルの中身は解析され、オブジェクトのプロパティとしてキーが返されます。 キーの型 (テキスト、ブール、数値) は維持されます。 `.plist dict` は JSON オブジェクトとして返されます。 また、`.plist array` は JSON 配列として返されます。
 
@@ -440,13 +440,13 @@ ALERT($info.Copyright)
 
 #### 説明
 
-The `.moveTo()` function <!-- REF #FileClass.moveTo().Summary -->moves or renames the `File` object into the specified _destinationFolder_<!-- END REF -->.
+`.moveTo()` 関数は、<!-- REF #FileClass.moveTo().Summary -->`File` オブジェクトを _destinationFolder_ が指定する移行先へと移動すると同時に、<em x-id="3">newName</em> を指定した場合は名称も変更します<!-- END REF -->。
 
 _destinationFolder_ 引数が指定するフォルダーはディスク上に存在している必要があり、そうでない場合にはエラーが生成されます。
 
 デフォルトでは、移動したファイルは元の名前を維持します。 移動の際にファイル名を変更したい場合、新しい完全な名前を _newName_ に渡します。 新しい名前は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。そうでない場合、エラーが返されます。
 
-**Returned object**
+**返されるオブジェクト**
 
 移動後の `File` オブジェクト。
 
@@ -488,7 +488,7 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 
 #### 説明
 
-The `.open()` function <!-- REF #FileClass.open().Summary -->creates and returns a new [4D.FileHandle](FileHandleClass) object on the file, in the specified _mode_ or with the specified _options_<!-- END REF -->. [4D.FileHandle](FileHandleClass) クラスの関数とプロパティを使用して、ファイルにコンテンツを書き込んだり読み取ったり、追加したりすることができます。
+`.open()` 関数は、<!-- REF #FileClass.open().Summary -->対象のファイルについて、指定のモード (_mode_) またはオプション (_options_) で新規の [`4D.FileHandle`](FileHandleClass) オブジェクトを作成し、返します<!-- END REF -->。 [4D.FileHandle](FileHandleClass) クラスの関数とプロパティを使用して、ファイルにコンテンツを書き込んだり読み取ったり、追加したりすることができます。
 
 _mode_ (text) 引数として、どのモードで FileHandle を開くかを指定します。
 
@@ -568,13 +568,13 @@ $fhandle:=$f.open("read")
 
 #### 説明
 
-The `.rename()` function <!-- REF #FileClass.rename().Summary -->renames the file with the name you passed in _newName_ and returns the renamed `File` object<!-- END REF -->.
+`.rename()` 関数は、<!-- REF #FileClass.rename().Summary -->ファイル名を _newName_ に指定した名称に変更し、名称変更後の `File` オブジェクトを返します<!-- END REF -->。
 
 _newName_ 引数は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。 そうでない場合、エラーが返されます。 同じ名前のファイルがすでに存在する場合には、エラーが返されます。
 
 この関数はファイルの完全な名前を編集することに留意が必要です。 つまり、_newName_ に拡張子を渡さなかった場合、新しいファイル名には拡張子がありません。
 
-**Returned object**
+**返されるオブジェクト**
 
 名称変更された `File` オブジェクト。
 
@@ -614,13 +614,13 @@ _newName_ 引数は命名規則に則っている必要があります (例: ":"
 
 #### 説明
 
-The `.setAppInfo()` function <!-- REF #FileClass.setAppInfo().Summary -->writes the _info_ properties as information contents of a **.exe**, **.dll** or **.plist** file<!-- END REF -->.
+`.setAppInfo()` 関数は、<!-- REF #FileClass.setAppInfo().Summary -->_info_ に渡したプロパティを **.exe** や **.dll**、**.plist** ファイルの情報として書き込みます<!-- END REF -->。
 
 この関数は、既存の .exe、.dll、あるいは .plist ファイルと使う必要があります。 ファイルがディスク上に存在しない、または、有効な .exe や .dll、.plist ファイルでない場合、この関数は何もしません (エラーは生成されません)。
 
 > この関数は xml形式の .plist ファイル (テキスト) のみをサポートしています。 バイナリ形式の .plist ファイルを対象に使用した場合、エラーが返されます。
 
-**_info_ parameter object with a .exe or .dll file**
+**.exe または .dll ファイル用の _info_ オブジェクト**
 
 > .exe および .dll ファイル情報の書き込みは Windows上でのみ可能です。
 
@@ -642,7 +642,7 @@ _info_ オブジェクトに設定された各プロパティは .exe または 
 
 `WinIcon` プロパティにおいては、アイコンファイルが存在しないか、フォーマットが正しくない場合、エラーが発生します。
 
-**_info_ parameter object with a .plist file**
+**.plist ファイル用の _info_ オブジェクト**
 
 _info_ オブジェクトに設定された各プロパティは .plist ファイルにキーとして書き込まれます。 あらゆるキーの名称が受け入れられます。 値の型は可能な限り維持されます。
 
@@ -653,7 +653,7 @@ _info_ に設定されたキーが .plist ファイル内ですでに定義さ�
 #### 例題
 
 ```4d
-  // set copyright, version and icon of a .exe file (Windows)
+  // .exe ファイルの著作権、バージョン、およびアイコン情報を設定します (Windows)
 var $exeFile; $iconFile : 4D.File
 var $info : Object
 $exeFile:=File(Application file; fk platform path)
@@ -706,7 +706,7 @@ $infoPlistFile.setAppInfo($info)
 
 #### 説明
 
-The `.setContent( )` function <!-- REF #FileClass.setContent().Summary -->rewrites the entire content of the file using the data stored in the _content_ BLOB<!-- END REF -->. BLOB についての詳細は、[BLOB](Concepts/dt_blob.md) の章を参照してください。
+`.setContent()` 関数は、<!-- REF #FileClass.setContent().Summary -->_content_ 引数の BLOB に保存されているデータを使用して、ファイルの全コンテンツを上書きします<!-- END REF -->。 BLOB についての詳細は、[BLOB](Concepts/dt_blob.md) の章を参照してください。
 
 #### 例題
 
@@ -745,7 +745,7 @@ The `.setContent( )` function <!-- REF #FileClass.setContent().Summary -->rewrit
 
 #### 説明
 
-The `.setText()` function <!-- REF #FileClass.setText().Summary -->writes _text_ as the new contents of the file<!-- END REF -->.
+`.setText()` 関数は、<!-- REF #FileClass.setText().Summary -->_text_ に渡されたテキストをファイルの新しいコンテンツとして書き込みます<!-- END REF -->。
 
 `File` オブジェクトで参照されているファイルがディスク上に存在しない場合、このメソッドがそのファイルを作成します。 ディスク上にファイルが存在する場合、ファイルが開かれている場合を除き、以前のコンテンツは消去されます。 ファイルが開かれている場合はコンテンツはロックされ、エラーが生成されます。
 
