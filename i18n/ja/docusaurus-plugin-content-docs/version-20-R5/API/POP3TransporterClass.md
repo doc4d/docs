@@ -3,11 +3,11 @@ id: POP3TransporterClass
 title: POP3Transporter
 ---
 
-The `POP3Transporter` class allows you to retrieve messages from a POP3 email server.
+`POP3Transporter` クラスを使って、POP3 メールサーバーからメッセージを取得することができます。
 
 ### POP3 Transporter オブジェクト
 
-POP3 Transporter objects are instantiated with the [POP3 New transporter](#pop3-new-transporter) command. これらは、次のプロパティや関数を持ちます:
+POP3 Transporter オブジェクトは [POP3 New transporter](#pop3-new-transporter) コマンドによってインスタンス化されます。 これらは、次のプロパティや関数を持ちます:
 
 |                                                                                                                                                                                                                                                                                  |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -54,23 +54,23 @@ POP3 Transporter objects are instantiated with the [POP3 New transporter](#pop3-
 
 The `POP3 New transporter` command <!-- REF #_command_.POP3 New transporter.Summary -->configures a new POP3 connection<!-- END REF -->according to the _server_ parameter and returns a new _[POP3 transporter](#pop3-transporter-object)_ object. 返される transporter オブジェクトは通常、メールの受信に使用されます。
 
-In the _server_ parameter, pass an object containing the following properties:
+_server_ 引数として、以下のプロパティを持つオブジェクトを渡します:
 
-| _server_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | デフォルト値 (省略時)  |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
-| [<!-- INCLUDE #transporter.acceptUnsecureConnection.Syntax -->](#acceptunsecureconnection)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.acceptUnsecureConnection.Summary -->                                                                                                                                                                                                                                                                | false                            |
-| .**accessTokenOAuth2**: Text<br/>.**accessTokenOAuth2**: Object<br/>Text string or token object representing OAuth2 authorization credentials. Used only with OAUTH2 `authenticationMode`. If `accessTokenOAuth2` is used but `authenticationMode` is omitted, the OAuth 2 protocol is used (if allowed by the server). Not returned in _[SMTP transporter](#smtptransporterobject)_ object. | なし                               |
-| [<!-- INCLUDE #transporter.authenticationMode.Syntax -->](#authenticationmode)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.authenticationMode.Summary -->                                                                                                                                                                                                                                                                                  | サーバーがサポートするもっともセキュアな認証モードが使用されます |
-| [<!-- INCLUDE #transporter.connectionTimeOut.Syntax -->](#connectiontimeout)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.connectionTimeOut.Summary -->                                                                                                                                                                                                                                                                                     | 30                               |
-| [<!-- INCLUDE #transporter.host.Syntax -->](#host)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.host.Summary -->                                                                                                                                                                                                                                                                                                                            | _mandatory_                      |
-| [<!-- INCLUDE #transporter.logFile.Syntax -->](#logfile)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.logFile.Summary -->                                                                                                                                                                                                                                                                                                                   | なし                               |
-| **.password** : Text<br/>User password for authentication on the server. Not returned in _[SMTP transporter](#smtptransporterobject)_ object.                                                                                                                                                                                                                                                                                                                                   | なし                               |
-| [<!-- INCLUDE #transporter.port.Syntax -->](#port)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.port.Summary -->                                                                                                                                                                                                                                                                                                                            | 995                              |
-| [<!-- INCLUDE #transporter.user.Syntax -->](#user)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.user.Summary -->                                                                                                                                                                                                                                                                                                                            | なし                               |
+| _server_                                                                                                                                                                                                                                                                                                                                                                                                   | デフォルト値 (省略時)  |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| [<!-- INCLUDE #transporter.acceptUnsecureConnection.Syntax -->](#acceptunsecureconnection)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.acceptUnsecureConnection.Summary -->                                                                                                                           | false                            |
+| .**accessTokenOAuth2**: Text<br/>.**accessTokenOAuth2**: Object<br/>OAuth2 認証の資格情報を表すテキスト文字列またはトークンオブジェクト。 `authenticationMode` が OAUTH2 の場合のみ使用されます。 `accessTokenOAuth2` が使用されているが `authenticationMode` が省略されていた場合、OAuth2 プロトコルが使用されます (サーバーで許可されていれば)。 _[POP3 transporter](#pop3-transporter-オブジェクト)_ オブジェクトには返されません。 | なし                               |
+| [<!-- INCLUDE #transporter.authenticationMode.Syntax -->](#authenticationmode)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.authenticationMode.Summary -->                                                                                                                                             | サーバーがサポートするもっともセキュアな認証モードが使用されます |
+| [<!-- INCLUDE #transporter.connectionTimeOut.Syntax -->](#connectiontimeout)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.connectionTimeOut.Summary -->                                                                                                                                                | 30                               |
+| [<!-- INCLUDE #transporter.host.Syntax -->](#host)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.host.Summary -->                                                                                                                                                                                       | _mandatory_                      |
+| [<!-- INCLUDE #transporter.logFile.Syntax -->](#logfile)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.logFile.Summary -->                                                                                                                                                                              | なし                               |
+| **.password** : Text<br/>サーバーとの認証のためのユーザーパスワード。 _[POP3 transporter](#pop3-transporter-オブジェクト)_ オブジェクトには返されません。                                                                                                                                                                                                                                                             | なし                               |
+| [<!-- INCLUDE #transporter.port.Syntax -->](#port)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.port.Summary -->                                                                                                                                                                                       | 995                              |
+| [<!-- INCLUDE #transporter.user.Syntax -->](#user)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #transporter.user.Summary -->                                                                                                                                                                                       | なし                               |
 
 #### 戻り値
 
-The function returns a [**POP3 transporter object**](#pop3-transporter-object). All returned properties are **read-only**.
+この関数は、[**POP3 transporter オブジェクト**](#pop3-transporter-オブジェクト) を返します。 返されるプロパティはすべて **読み取り専用** です。
 
 > POP3接続は、transporter オブジェクトが消去された時点で自動的に閉じられます。
 
@@ -111,7 +111,7 @@ The function returns a [**POP3 transporter object**](#pop3-transporter-object). 
 
 #### 説明
 
-The `4D.POP3Transporter.new()` function <!-- REF #4D.POP3Transporter.new().Summary -->creates and returns a new object of the `4D.POP3Transporter` type<!-- END REF -->. It is identical to the [`POP3 New transporter`](#pop3-new-transporter) command (shortcut).
+The `4D.POP3Transporter.new()` function <!-- REF #4D.POP3Transporter.new().Summary -->creates and returns a new object of the `4D.POP3Transporter` type<!-- END REF -->. この関数の機能は、[`POP3 New transporter`](#pop3-new-transporter) コマンドと同一です。
 
 <!-- INCLUDE transporter.acceptUnsecureConnection.Desc -->
 
@@ -170,9 +170,9 @@ The `4D.POP3Transporter.new()` function <!-- REF #4D.POP3Transporter.new().Summa
 
 The `.delete( )` function <!-- REF #POP3TransporterClass.delete().Summary -->flags the _msgNumber_ email for deletion from the POP3 server<!-- END REF -->.
 
-In the _msgNumber_ parameter, pass the number of the email to delete. This number is returned in the number property by the [`.getMailInfoList()`](#getmailinfolist) method.
+_msgNumber_ には、削除するメールの番号を渡します。 この番号は、[`.getMailInfoList()`](#getmailinfolist) 関数によって number プロパティに返されます。
 
-この関数を実行しても、メールが実際に削除される訳ではありません。 The flagged email will be deleted from the POP3 server only when the `POP3_transporter` object (created with `POP3 New transporter`) is destroyed. The flag could be also be removed using the `.undeleteAll()` method.
+この関数を実行しても、メールが実際に削除される訳ではありません。 フラグが立てられたメールは、(`POP3 New transporter` で作成された) `POP3_transporter` オブジェクトが消去された時に初めて POP3サーバーから削除されます。 立てたフラグは、`.undeleteAll()` 関数を使用して削除することもできます。
 
 > カレントセッションが予期せず終了して接続が閉じられた場合 (例: タイムアウト、ネットワーク問題等) にはエラーメッセージが生成され、削除フラグが立てられたメールは削除されずに POP3サーバー上に残ります。
 
@@ -217,7 +217,7 @@ In the _msgNumber_ parameter, pass the number of the email to delete. This numbe
 
 The `.getBoxInfo()` function <!-- REF #POP3TransporterClass.getBoxInfo().Summary -->returns a `boxInfo` object corresponding to the mailbox designated by the [`POP3 transporter`](#pop3-transporter-object)<!-- END REF -->. この関数を使用するとメールボックスに関する情報を取得することができます。
 
-The `boxInfo` object returned contains the following properties:
+返される `boxInfo` オブジェクトには、以下のプロパティが格納されています:
 
 | プロパティ     | タイプ    | 説明                                   |
 | --------- | ------ | ------------------------------------ |
@@ -246,10 +246,10 @@ The `boxInfo` object returned contains the following properties:
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                |
-| ----- | --------------------------------- |
-| 20    | Support of _headerOnly_ parameter |
-| 18 R2 | 追加                                |
+| リリース  | 内容                       |
+| ----- | ------------------------ |
+| 20    | _headerOnly_ パラメーターをサポート |
+| 18 R2 | 追加                       |
 
 </details>
 
@@ -269,24 +269,24 @@ The `boxInfo` object returned contains the following properties:
 
 The `.getMail()` function <!-- REF #POP3TransporterClass.getMail().Summary -->returns the `Email` object corresponding to the _msgNumber_ in the mailbox designated by the [`POP3 transporter`](#pop3-transporter-object)<!-- END REF -->. この関すを使用すると、メールのコンテンツをローカルで管理できるようになります。
 
-Pass in _msgNumber_ the number of the message to retrieve. This number is returned in the `number` property by the [`.getMailInfoList()`](#getmailinfolist) function.
+_msgNumber_ には、取得するメッセージの番号を渡します。 この番号は、[`.getMailInfoList()`](#getmailinfolist) 関数によって `number` プロパティに返されます。
 
-Optionally, you can pass `true` in the _headerOnly_ parameter to exclude the body parts from the returned `Email` object. Only headers properties ([`headers`](EmailObjectClass.md#headers), [`to`](EmailObjectClass.md#to), [`from`](EmailObjectClass.md#from)...) are then returned. サーバーにメールが大量にある場合に、このオプションでダウンロードを最適化することができます。
+任意で、_headerOnly_ に `true` を渡すと、返される `Email` オブジェクトからボディ部を除外することができます。 Only headers properties ([`headers`](EmailObjectClass.md#headers), [`to`](EmailObjectClass.md#to), [`from`](EmailObjectClass.md#from)...) are then returned. サーバーにメールが大量にある場合に、このオプションでダウンロードを最適化することができます。
 
 :::note
 
-The _headerOnly_ option may not be supported by the server.
+_headerOnly_ オプションは、サーバー側でサポートされていない可能性があります。
 
 :::
 
 この関数は、以下の場合には Null を返します:
 
-- _msgNumber_ designates a non-existing message,
-- the message was marked for deletion using [`.delete()`](#delete).
+- _msgNumber_ で指定したメッセージが存在しない場合
+- 指定したメッセージが [`.delete()`](#delete) によって削除フラグが立てられていた場合
 
 **Returned object**
 
-`.getMail()` returns an [`Email` object](EmailObjectClass.md#email-object).
+`.getMail()` は [`Email` オブジェクト](EmailObjectClass.md#email-object) を返します。
 
 ##### 例題
 
@@ -335,19 +335,19 @@ The _headerOnly_ option may not be supported by the server.
 
 The `.getMailInfo()` function <!-- REF #POP3TransporterClass.getMailInfo().Summary -->returns a `mailInfo` object corresponding  corresponding to the _msgNumber_ in the mailbox designated by the [`POP3 transporter`](#pop3-transporter-object)<!-- END REF -->. この関数を使用するとメールに関する情報を取得することができます。
 
-In _msgNumber_, pass the number of the message to retrieve. This number is returned in the number property by the [`.getMailInfoList()`](#getmailinfolist) method.
+_msgNumber_ には、取得するメッセージの番号を渡します。 この番号は、[`.getMailInfoList()`](#getmailinfolist) 関数によって number プロパティに返されます。
 
-The `mailInfo` object returned contains the following properties:
+返される `mailInfo` オブジェクトには、以下のプロパティが格納されています:
 
 | プロパティ | タイプ    | 説明                                   |
 | ----- | ------ | ------------------------------------ |
 | size  | Number | メッセージのサイズ (バイト単位) |
 | id    | Text   | メッセージの固有ID                           |
 
-The method returns **Null** if:
+この関数は、以下の場合には **Null** を返します:
 
-- _msgNumber_ designates a non-existing message,
-- the message was marked for deletion using `.delete( )`.
+- _msgNumber_ で指定したメッセージが存在しない場合
+- 指定したメッセージが `.delete( )` によって削除フラグが立てられていた場合
 
 ##### 例題
 
@@ -394,7 +394,7 @@ The method returns **Null** if:
 
 The `.getMailInfoList()` function <!-- REF #POP3TransporterClass.getMailInfoList().Summary -->returns a collection of `mailInfo` objects describing all messages in the mailbox designated by the [`POP3 transporter`](#pop3-transporter-object)<!-- END REF -->. この関数を使用すると、POP3メールサーバー上にあるメッセージの一覧をローカルで管理することができるようになります。
 
-Each `mailInfo` object in the returned collection contains the following properties:
+返されるコレクションの各 `mailInfo` オブジェクトには、以下のプロパティが格納されています:
 
 | プロパティ                                                                            | タイプ    | 説明                                                     |
 | -------------------------------------------------------------------------------- | ------ | ------------------------------------------------------ |
@@ -406,9 +406,9 @@ Each `mailInfo` object in the returned collection contains the following propert
 
 #### number と id プロパティについて
 
-_number_ is the number of a message in the mailbox at the time the `POP3_transporter` was created. The _number_ property is not a static value in relation to any specific message and will change from session to session dependent on its relation to other messages in the mailbox at the time the session was opened. The numbers assigned to the messages are only valid during the lifetime of the [`POP3_transporter`](#pop3-transporter-object). At the time the `POP3_transporter` is deleted any message marked for deletion will be removed. ユーザーが再度サーバーにログインした場合、メールボックス内にあるカレントメッセージに対して、1 から x までの番号が再度割り振られます。
+_number_ プロパティは、`POP3_transporter` が作成された時点でのメールボックス内にあるメッセージの数です。 _number_ プロパティは、特定のメッセージと紐づいた静的な値ではなく、セッション開始時点のメールボックス内のメッセージ同士の関係に応じてセッション間で値が異なります。 メッセージに割り当てられた番号は、[`POP3_transporter`](#pop3-transporter-オブジェクト) が維持されている間のみ有効です。 `POP3_transporter` が消去されると、削除フラグが立てられていたメッセージは削除されます。 ユーザーが再度サーバーにログインした場合、メールボックス内にあるカレントメッセージに対して、1 から x までの番号が再度割り振られます。
 
-The _id_ however is a unique number assigned to the message when it was received by the server. その番号はメッセージを受信した日付と時間を使用して計算され、POP3サーバーによって値が割り当てられます。 Unfortunately, POP3 servers do not use the _id_ as the primary reference to their messages. Throughout the POP3 sessions you will need to specify the _number_ as the reference to messages on the server. メッセージ参照をデータベース内に取得しながらメッセージ本文はサーバー上に残しておくようなソリューションを開発する場合、メッセージの指定には細心の注意を払う必要があります。
+これに対し、_id_ プロパティは、メッセージがサーバーで受信された時に割り振られる固有の番号です。 その番号はメッセージを受信した日付と時間を使用して計算され、POP3サーバーによって値が割り当てられます。 残念ながら、POP3サーバーは _id_ プロパティをメッセージに対する主な参照としては使用しません。 POP3 セッションの間、サーバー上のメッセージを参照するには _number_ プロパティを指定する必要があります。 メッセージ参照をデータベース内に取得しながらメッセージ本文はサーバー上に残しておくようなソリューションを開発する場合、メッセージの指定には細心の注意を払う必要があります。
 
 ##### 例題
 
@@ -460,16 +460,16 @@ The _id_ however is a unique number assigned to the message when it was received
 
 The `.getMIMEAsBlob()` function <!-- REF #POP3TransporterClass.getMIMEAsBlob().Summary -->returns a BLOB containing the MIME contents for the message corresponding to the _msgNumber_ in the mailbox designated by the [`POP3_transporter`](#pop3-transporter-object)<!-- END REF -->.
 
-In _msgNumber_, pass the number of the message to retrieve. This number is returned in the number property by the [`.getMailInfoList()`](#getmailinfolist) method.
+_msgNumber_ には、取得するメッセージの番号を渡します。 この番号は、[`.getMailInfoList()`](#getmailinfolist) 関数によって number プロパティに返されます。
 
 この関数は、以下の場合には空の BLOB を返します:
 
-- _msgNumber_ designates a non-existing message,
-- the message was marked for deletion using `.delete()`.
+- _msgNumber_ で指定したメッセージが存在しない場合
+- 指定したメッセージが `.delete()` によって削除フラグが立てられていた場合
 
 **返される BLOB**
 
-`.getMIMEAsBlob()` returns a `BLOB` which can be archived in a database or converted to an [`Email` object](EmailObjectClass.md#email-object) with the `MAIL Convert from MIME` command.
+`.getMIMEAsBlob()` は `BLOB` を返します。この BLOB はデータベースにアーカイブしたり、`MAIL Convert from MIME` コマンドを使用して [`Email` オブジェクト](EmailObjectClass.md#email-object) へと変換したりすることができます。
 
 ##### 例題
 
