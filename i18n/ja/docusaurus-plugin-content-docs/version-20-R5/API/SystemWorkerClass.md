@@ -5,7 +5,7 @@ title: SystemWorker
 
 System workers allow the 4D code to call any external process (a shell command, PHP, etc.) on the same machine. システムワーカーは非同期で呼び出されます。 コールバックを使用することで、4D は双方向の通信を可能にします。
 
-The `SystemWorker` class is available from the `4D` class store.
+`SystemWorker` クラスは、`4D` クラスストアにて提供されています。
 
 ### 例題
 
@@ -77,29 +77,29 @@ The `4D.SystemWorker.new()` function <!-- REF #4D.SystemWorker.new().Summary -->
 
 返されたシステムワーカーオブジェクトは、ワーカーにメッセージを送信したり、ワーカーの結果を取得するために使用できます。
 
-If an error occurs during the creation of the proxy object, the function returns a `null` object and an error is thrown.
+プロキシオブジェクトの生成中に問題があった場合、この関数は `null` オブジェクトを返し、エラーが生成されます。
 
-In the _commandLine_ parameter, pass the full path of the application's file to be executed (posix syntax), as well as any required arguments, if necessary. If you pass only the application name, 4D will use the `PATH` environment variable to locate the executable.
+_commandLine_ には、実行するアプリケーションのファイルのフルパス (POSIX シンタックス)、および必要に応じて追加の引数を渡します。 アプリケーション名だけを渡すと、4Dは 実行ファイルを探すために `PATH` 環境変数を使用します。
 
-**Warning:** This function can only launch executable applications; it cannot execute instructions that are part of the shell (command interpreter). For example, under Windows it is not possible to use this command to execute the `dir` instruction.
+**警告:** この関数は、実行可能なアプリケーションを起動するだけで、シェル (コマンドインタープリター) の一部である命令を実行することはできません。 たとえば Windows で、このコマンドを使用して `dir` 命令を実行することはできません。
 
-#### _options_ Object
+#### _options_ オブジェクト
 
-In the _options_ parameter, pass an object that can contain the following properties:
+_options_ に渡すオブジェクトは、次のプロパティを持つことができます:
 
-| プロパティ            | タイプ     | デフォルト     | 説明                                                                                                                                                                                                                         |
-| ---------------- | ------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| onResponse       | Formula | undefined | システムワーカーメッセージ用のコールバック。 完全なレスポンスを受け取り次第、このコールバックが呼び出されます。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                           |
-| onData           | Formula | undefined | システムワーカーデータ用のコールバック。 システムワーカーがデータを受け取る度に、このコールバックが呼び出されます。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                         |
-| onDataError      | Formula | undefined | Callback for the external process errors (_stderr_ of the external process). コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                    |
-| onError          | Formula | undefined | 実行エラー用のコールバック。異常なランタイム条件 (システムエラー) の場合にシステムワーカーによって返されます。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                       |
-| onTerminate      | Formula | undefined | 外部プロセスが終了されたときのコールバック。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                                             |
-| timeout          | Number  | undefined | プロセスが生きている場合、キルされるまでの秒数。                                                                                                                                                                                                   |
-| dataType         | Text    | "text"    | レスポンス本文のデータ型。 可能な値: "text" (デフォルト), "blob"。                                                                                                                                             |
-| encoding         | Text    | "UTF-8"   | Only if `dataType="text"`. レスポンス本文のエンコーディング。 For the list of available values, see the [`CONVERT FROM TEXT`](https://doc.4d.com/4dv19R/help/command/en/page1011.html) command description                  |
-| variables        | Object  |           | システムワーカー用のカスタム環境変数を設定します。 Syntax: `variables.key=value`, where `key` is the variable name and `value` its value. 値は、可能な限り文字列に変換されます。 値に '=' を含めることはできません。 定義されていない場合、システムワーカーは 4D環境を継承します。 |
-| currentDirectory | Folder  |           | プロセスが実行される作業ディレクトリ                                                                                                                                                                                                         |
-| hideWindow       | Boolean | true      | (Windows) アプリケーションウィンドウを隠す (可能な場合)、または Windowsコンソールを隠す                                                                                                                               |
+| プロパティ            | タイプ     | デフォルト     | 説明                                                                                                                                                                                              |
+| ---------------- | ------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| onResponse       | Formula | undefined | システムワーカーメッセージ用のコールバック。 完全なレスポンスを受け取り次第、このコールバックが呼び出されます。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                |
+| onData           | Formula | undefined | システムワーカーデータ用のコールバック。 システムワーカーがデータを受け取る度に、このコールバックが呼び出されます。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                              |
+| onDataError      | Formula | undefined | 外部プロセスエラー用のコールバック (外部プロセスの _stderr_)。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                |
+| onError          | Formula | undefined | 実行エラー用のコールバック。異常なランタイム条件 (システムエラー) の場合にシステムワーカーによって返されます。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                            |
+| onTerminate      | Formula | undefined | 外部プロセスが終了されたときのコールバック。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                  |
+| timeout          | Number  | undefined | プロセスが生きている場合、キルされるまでの秒数。                                                                                                                                                                        |
+| dataType         | Text    | "text"    | レスポンス本文のデータ型。 可能な値: "text" (デフォルト), "blob"。                                                                                                                  |
+| encoding         | Text    | "UTF-8"   | `dataType="text"` の場合のみ。 レスポンス本文のエンコーディング。 利用可能な値については、[`CONVERT FROM TEXT`](https://doc.4d.com/4dv19R/help/command/ja/page1011.html) コマンドの説明を参照ください。                                           |
+| variables        | Object  |           | システムワーカー用のカスタム環境変数を設定します。 シンタックス: `variables.key=value` (`key` は変数名、`value` はその値)。 値は、可能な限り文字列に変換されます。 値に '=' を含めることはできません。 定義されていない場合、システムワーカーは 4D環境を継承します。 |
+| currentDirectory | Folder  |           | プロセスが実行される作業ディレクトリ                                                                                                                                                                              |
+| hideWindow       | Boolean | true      | (Windows) アプリケーションウィンドウを隠す (可能な場合)、または Windowsコンソールを隠す                                                                                                    |
 
 すべてのコールバック関数は、2つのオブジェクト引数を受け取ります。 その内容は、コールバックに依存します:
 
@@ -111,10 +111,10 @@ In the _options_ parameter, pass an object that can contain the following proper
 
 以下は、コールバック呼び出しの流れです:
 
-1. `onData` and `onDataError` are executed one or several times
-2. if called, `onError` is executed once (stops the system worker processing)
-3. if no error occured, `onResponse` is executed once
-4. `onTerminate` is always executed
+1. `onData` および `onDataError` は 1回または複数回実行されます。
+2. 呼ばれた場合、`onError` は 1回実行されます (システムワーカーの処理を停止します)。
+3. エラーが発生しなかった場合、`onResponse` が 1回実行されます。
+4. `onTerminate` は常に実行されます。
 
 #### 戻り値
 
@@ -182,7 +182,7 @@ End if
 
 #### macOS の例
 
-1. Edit a text file (`cat` is the macOS command used to edit files). この例題では、コマンドのフルアクセスパスを渡しています:
+1. テキストファイルを編集します (`cat` はファイルを編集するための macOS コマンドです)。 この例題では、コマンドのフルアクセスパスを渡しています:
 
 ```4d
 
@@ -192,7 +192,7 @@ $sw.wait() //synchronous execution
 
 ```
 
-2. To launch an independent "graphic" application, it is preferable to use the `open` system command (in this case, the code has the same effect as double-clicking the application):
+2. 独立した "グラフィック" アプリケーションを起動するには、`open` システムコマンドの使用が推奨されます (これは、アプリケーションをダブルクリックするのと同じ効果を持ちます)。
 
 ```4d
 var $sw : 4D.SystemWorker
@@ -280,7 +280,7 @@ Function _createFile($title : Text; $textBody : Text)
 
 The `.closeInput()` function <!-- REF #SystemWorkerClass.closeInput().Summary -->closes the input stream (_stdin_) of the external process<!-- END REF -->.
 
-When the executable waits for all data to be received through `postMessage()`, `.closeInput()` is useful to indicate to the executable that data sending is finished and that it can proceed.
+`.closeInput()` は、`postMessage()` を介した全データの受信を待機している実行ファイルに、データ送信が終了したことを知らせるのに便利です。
 
 #### 例題
 
@@ -320,7 +320,7 @@ $output:=$worker.response
 
 The `.commandLine` property <!-- REF #SystemWorkerClass.commandLine.Summary -->contains the command line passed as parameter to the [`new()`](#4d-systemworker-new) function<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -350,7 +350,7 @@ The `.currentDirectory` property <!-- REF #SystemWorkerClass.currentDirectory.Su
 
 The `.dataType` property <!-- REF #SystemWorkerClass.dataType.Summary -->contains the type of the response body content<!-- END REF -->. とりうる値: "text" または "blob"。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -364,9 +364,9 @@ This property is **read-only**.
 
 #### 説明
 
-The `.encoding` property <!-- REF #SystemWorkerClass.encoding.Summary -->contains the encoding of the response body content<!-- END REF -->. This property is only available if the [`dataType`](#datatype) is "text".
+The `.encoding` property <!-- REF #SystemWorkerClass.encoding.Summary -->contains the encoding of the response body content<!-- END REF -->. このプロパティは [`dataType`](#datatype) が "text" のときにのみ利用できます。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -390,7 +390,7 @@ The `.errors` property <!-- REF #SystemWorkerClass.errors.Summary -->contains a 
 | [].message             | text   | 4Dエラーの詳細            |
 | [ ].componentSignature | text   | エラーを返した内部コンポーネントの署名 |
 
-If no error occured, `.errors` is undefined.
+エラーが発生しなかった場合、`.errors` は undefined です。
 
 <!-- END REF -->
 
@@ -404,9 +404,9 @@ If no error occured, `.errors` is undefined.
 
 #### 説明
 
-The `.exitCode` property <!-- REF #SystemWorkerClass.exitCode.Summary -->contains the exit code returned by the external process<!-- END REF -->. If the process did not terminate normaly, `exitCode` is _undefined_.
+The `.exitCode` property <!-- REF #SystemWorkerClass.exitCode.Summary -->contains the exit code returned by the external process<!-- END REF -->. プロセスが正常に終了しなかった場合、`exitCode` は _undefined_ です。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -424,7 +424,7 @@ The `.hideWindow` property <!-- REF #SystemWorkerClass.hideWindow.Summary -->can
 
 <!-- END REF -->
 
-This property is **read-write**.
+**読み書き可能** プロパティです。
 
 <!-- REF SystemWorkerClass.pid.Desc -->
 
@@ -438,7 +438,7 @@ This property is **read-write**.
 
 The `.pid` property <!-- REF #SystemWorkerClass.pid.Summary -->contains the process unique identifier of the external process at the system level<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -461,11 +461,11 @@ This property is **read-only**.
 
 #### 説明
 
-The `.postMessage()` function <!-- REF #SystemWorkerClass.postMessage().Summary -->allows you to write on the input stream (stdin) of the external process<!-- END REF -->. In the _message_ parameter, pass the text to write in _stdin_.
+The `.postMessage()` function <!-- REF #SystemWorkerClass.postMessage().Summary -->allows you to write on the input stream (stdin) of the external process<!-- END REF -->. _message_ には _stdin_ に書き込むテキストを渡します。
 
-The `.postMessage()` function also accepts a Blob type value in _messageBLOB_ to pass in _stdin_, so that you can post binary data.
+`.postMessage()` 関数は、_stdin_ に渡す BLOB型の _messageBLOB_ 引数も受け取るため、バイナリデータを送信することもできます。
 
-You can use the `.dataType` property of the [options object](#options-object) to make response body return Blob values.
+[options オブジェクト](#options-object) の `.dataType` プロパティを使って、レスポンス本文が BLOB を返すようにできます。
 
 <!-- END REF -->
 
@@ -481,9 +481,9 @@ You can use the `.dataType` property of the [options object](#options-object) to
 
 The `.response` property <!-- REF #SystemWorkerClass.response.Summary -->contains the concatenation of all data returned once the request is terminated<!-- END REF -->, i.e. the full message received from the process output.
 
-The type of the message is defined according to the [`dataType`](#datatype) attribute.
+メッセージのデータ型は [`dataType`](#datatype) 属性によって定義されています。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -537,7 +537,7 @@ The `.terminate()` function <!-- REF #SystemWorkerClass.terminate().Summary -->f
 
 The `.terminated` property <!-- REF #SystemWorkerClass.terminated.Summary -->contains **true** if the external process is terminated<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -553,7 +553,7 @@ This property is **read-only**.
 
 The `.timeout` property <!-- REF #SystemWorkerClass.timeout.Summary -->contains the duration in seconds before the external process will be killed if it is still alive<!-- END REF -->.
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -587,14 +587,14 @@ This property is **read-only**.
 
 The `.wait()` function <!-- REF #SystemWorkerClass.wait().Summary -->waits until the end of the `SystemWorker` execution or the specified _timeout_<!-- END REF -->.
 
-In _timeout_, pass a value in seconds. The `SystemWorker` script will wait for the external process for the amount of time defined in the _timeout_ parameter. If you omit the _timeout_ parameter, the script execution will wait indefinitely.
+_timeout_ には、秒単位の値を渡します。 `SystemWorker` スクリプトは、_timeout_ に指定された時間だけ、外部プロセスを待ちます。 _timeout_ を省略した場合、スクリプトの実行は無期限に待機します。
 
-Actually, `.wait()` waits until the end of processing of the `onTerminate` formula, except if the _timeout_ is reached. If _timeout_ is reached, the `SystemWorker` is not killed.
+実際には、`.wait()` はタイムアウトに達した場合を除き、`onTerminate` フォーミュラのプロセス終了まで待ちます。 タイムアウトに達した場合、`SystemWorker` はキルされません。
 
-During a `.wait()` execution, callback functions are executed, especially callbacks from other events or from other `SystemWorker` instances. You can exit from a `.wait()` by calling [`terminate()`](#terminate) from a callback.
+`.wait()` の実行中、コールバック関数、とくに他のイベントや他の `SystemWorker` インスタンスからのコールバックは実行されます。 コールバックから [`terminate()`](#terminate) を呼び出すことで、`.wait()` を終了することができます。
 
 この関数は、SystemWorker オブジェクトを返します。
 
-> This function is not necessary if you created the `SystemWorker` from a 4D worker process.
+> `SystemWorker` を 4D のワーカープロセスから作成した場合、この関数は必要ありません。
 
 <!-- END REF -->
