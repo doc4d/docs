@@ -21,7 +21,7 @@ title: Document クラス
 
 #### 説明
 
-The `.creationDate` property returns <!-- REF #document.creationDate.Summary -->the creation date of the file<!-- END REF -->.
+`.creationDate` プロパティは、<!-- REF #document.creationDate.Summary -->ファイルの作成日<!-- END REF -->を返します。
 
 このプロパティは **読み取り専用** です。
 
@@ -43,7 +43,7 @@ The `.creationDate` property returns <!-- REF #document.creationDate.Summary -->
 
 #### 説明
 
-The `.creationTime` property  returns <!-- REF #document.creationTime.Summary -->the creation  time of the file<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
+`.creationTime` プロパティは、<!-- REF #document.creationTime.Summary -->ファイルの作成時刻<!-- END REF -->を返します (00:00 からの経過秒数の形式)。
 
 このプロパティは **読み取り専用** です。
 
@@ -65,7 +65,7 @@ The `.creationTime` property  returns <!-- REF #document.creationTime.Summary --
 
 #### 説明
 
-The `.exists` property returns <!-- REF #document.exists.Summary -->true if the file exists on disk<!-- END REF -->, and false otherwise.
+`.exists` プロパティは、<!-- REF #document.exists.Summary -->ディスク上にファイルが存在する場合は true を返します<!-- END REF --> (それ以外の場合は false)。
 
 このプロパティは **読み取り専用** です。
 
@@ -87,7 +87,7 @@ The `.exists` property returns <!-- REF #document.exists.Summary -->true if the 
 
 #### 説明
 
-The `.extension` property returns <!-- REF #document.extension.Summary -->the extension of the file name (if any)<!-- END REF -->. 拡張子は必ず"." で始まります。 ファイル名が拡張子を持たない場合には、このプロパティは空の文字列を返します。
+`.extension` プロパティは、<!-- REF #document.extension.Summary -->ファイル名の拡張子<!-- END REF -->を返します (あれば)。 拡張子は必ず"." で始まります。 ファイル名が拡張子を持たない場合には、このプロパティは空の文字列を返します。
 
 このプロパティは **読み取り専用** です。
 
@@ -109,7 +109,7 @@ The `.extension` property returns <!-- REF #document.extension.Summary -->the ex
 
 #### 説明
 
-The `.fullName` property returns <!-- REF #document.fullName.Summary -->the full name of the file, including its extension (if any)<!-- END REF -->.
+`.fullName` プロパティは、<!-- REF #document.fullName.Summary -->拡張子 (あれば) を含めたファイルの完全な名称<!-- END REF -->を返します。
 
 このプロパティは **読み取り専用** です。
 
@@ -131,7 +131,7 @@ The `.fullName` property returns <!-- REF #document.fullName.Summary -->the full
 
 #### 説明
 
-The `.hidden` property returns <!-- REF #document.hidden.Summary -->true if the file is set as "hidden" at the system level<!-- END REF -->, and false otherwise.
+`.hidden` プロパティは、<!-- REF #document.hidden.Summary -->ファイルがシステムレベルで "非表示" に設定されていれば true<!-- END REF --> を返します (それ以外の場合は false)。
 
 **読み書き可能** プロパティです。
 
@@ -153,7 +153,7 @@ The `.hidden` property returns <!-- REF #document.hidden.Summary -->true if the 
 
 #### 説明
 
-The `.isAlias` property returns <!-- REF #document.isAlias.Summary -->true if the file is an alias, a shortcut, or a symbolic link<!-- END REF -->, and false otherwise.
+`.isAlias` プロパティは、<!-- REF #document.isAlias.Summary -->ファイルがエイリアス、ショートカット、シンボリックリンクのいずれかである場合には true <!-- END REF -->を返し、それ以外の場合には false を返します。
 
 このプロパティは **読み取り専用** です。
 
@@ -175,7 +175,7 @@ The `.isAlias` property returns <!-- REF #document.isAlias.Summary -->true if th
 
 #### 説明
 
-The `.isFile` property returns <!-- REF #document.isFile.Summary -->always true for a file<!-- END REF -->.
+`.isFile` プロパティは、<!-- REF #document.isFile.Summary -->ファイルに対しては常に true<!-- END REF --> を返します。
 
 このプロパティは **読み取り専用** です。
 
@@ -197,7 +197,7 @@ The `.isFile` property returns <!-- REF #document.isFile.Summary -->always true 
 
 #### 説明
 
-The `.isFolder` property returns <!-- REF #document.isFolder.Summary -->always false for a file<!-- END REF -->.
+`.isFolder` プロパティは、<!-- REF #document.isFolder.Summary -->ファイルに対しては常に false<!-- END REF --> を返します。
 
 このプロパティは **読み取り専用** です。
 
@@ -219,7 +219,7 @@ The `.isFolder` property returns <!-- REF #document.isFolder.Summary -->always f
 
 #### 説明
 
-The `.isWritable` property returns <!-- REF #document.isWritable.Summary -->true if the file exists on disk and is writable<!-- END REF -->.
+`.isWritable` プロパティは、<!-- REF #document.isWritable.Summary -->ファイルがディスク上に存在し、書き込み可能な場合に true<!-- END REF --> を返します。
 
 > このプロパティは 4Dアプリケーションがディスクに書き込めるかどうか (アクセス権限) をチェックし、ファイルの _writable_ (書き込み可能) 属性のみ依存するわけではありません。
 
@@ -252,7 +252,7 @@ The `.isWritable` property returns <!-- REF #document.isWritable.Summary -->true
 
 #### 説明
 
-The `.modificationDate` property returns <!-- REF #document.modificationDate.Summary -->the date of the file's last modification<!-- END REF -->.
+`.modificationDate` プロパティは、<!-- REF #document.modificationDate.Summary -->ファイルの最終変更日<!-- END REF -->を返します。
 
 このプロパティは **読み取り専用** です。
 
@@ -274,7 +274,7 @@ The `.modificationDate` property returns <!-- REF #document.modificationDate.Sum
 
 ##### 説明
 
-The `.modificationTime` property returns <!-- REF #document.modificationTime.Summary -->the time of the file's last modification<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
+`.modificationTime` プロパティは、<!-- REF #document.modificationTime.Summary -->ファイルの最終変更時刻<!-- END REF -->を返します (00:00 からの経過秒数の形式)。
 
 このプロパティは **読み取り専用** です。
 
@@ -296,7 +296,7 @@ The `.modificationTime` property returns <!-- REF #document.modificationTime.Sum
 
 #### 説明
 
-The `.name` property returns <!-- REF #document.name.Summary -->the name of the file without extension (if any)<!-- END REF -->.
+`.name` プロパティは、<!-- REF #document.name.Summary -->拡張子 (あれば) を含まないファイル名<!-- END REF -->を返します。
 
 このプロパティは **読み取り専用** です。
 
@@ -318,7 +318,7 @@ The `.name` property returns <!-- REF #document.name.Summary -->the name of the 
 
 #### 説明
 
-The `.original` property returns <!-- REF #document.original.Summary -->the target element for an alias, a shortcut, or a symbolic link file<!-- END REF -->. ターゲット要素は以下のいずれかです:
+`.original` プロパティは、<!-- REF #document.original.Summary -->エイリアス、ショートカット、シンボリックリンクファイルのターゲット要素<!-- END REF -->を返します。 ターゲット要素は以下のいずれかです:
 
 - File オブジェクト
 - Folder オブジェクト
@@ -345,7 +345,7 @@ The `.original` property returns <!-- REF #document.original.Summary -->the targ
 
 #### 説明
 
-The `.parent` property returns <!-- REF #document.parent.Summary -->the parent folder object of the file<!-- END REF -->. パスがシステムパスを表す場合 (例: "/DATA/")、システムパスが返されます。
+`.parent` プロパティは、<!-- REF #document.parent.Summary -->対象ファイルの親フォルダーオブジェクト<!-- END REF -->を返します。 パスがシステムパスを表す場合 (例: "/DATA/")、システムパスが返されます。
 
 このプロパティは **読み取り専用** です。
 
@@ -367,7 +367,7 @@ The `.parent` property returns <!-- REF #document.parent.Summary -->the parent f
 
 #### 説明
 
-The `.path` property returns <!-- REF #document.path.Summary -->the POSIX path of the file<!-- END REF -->. パスがファイルシステムを表す場合 (例: "/DATA/")、ファイルシステムが返されます。
+`.path` プロパティは、<!-- REF #document.path.Summary -->ファイルの POSIXパス<!-- END REF -->を返します。 パスがファイルシステムを表す場合 (例: "/DATA/")、ファイルシステムが返されます。
 
 このプロパティは **読み取り専用** です。
 
@@ -389,7 +389,7 @@ The `.path` property returns <!-- REF #document.path.Summary -->the POSIX path o
 
 #### 説明
 
-The `.platformPath` property returns <!-- REF #document.platformPath.Summary -->the path of the file expressed with the current platform syntax<!-- END REF -->.
+`.platformPath` プロパティは、<!-- REF #document.platformPath.Summary -->カレントプラットフォームのシンタックスで表現されたファイルのパス<!-- END REF -->を返します。
 
 このプロパティは **読み取り専用** です。
 
@@ -411,7 +411,7 @@ The `.platformPath` property returns <!-- REF #document.platformPath.Summary -->
 
 #### 説明
 
-The `.size` property returns <!-- REF #document.size.Summary -->the size of the file expressed in bytes<!-- END REF -->. ファイルがディスク上に存在しない場合、サイズは 0 になります。
+`.size` プロパティは、<!-- REF #document.size.Summary -->ファイルのサイズ (バイト単位)<!-- END REF --> を返します。 ファイルがディスク上に存在しない場合、サイズは 0 になります。
 
 このプロパティは **読み取り専用** です。
 
@@ -444,7 +444,7 @@ The `.size` property returns <!-- REF #document.size.Summary -->the size of the 
 
 #### 説明
 
-The `.copyTo()` function <!-- REF #document.copyTo().Summary -->copies the `File` object into the specified _destinationFolder_ <!-- END REF -->.
+`.copyTo()` 関数は、<!-- REF #document.copyTo().Summary -->`File` オブジェクトを、_destinationFolder_ 引数で指定したフォルダーへとコピーします<!-- END REF -->。
 
 _destinationFolder_ 引数が指定するフォルダーはディスク上に存在している必要があり、そうでない場合にはエラーが生成されます。
 
@@ -497,7 +497,7 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 
 #### 説明
 
-The `.getContent()` function  <!-- REF #document.getContent().Summary -->returns a `4D.Blob` object containing the entire content of a file<!-- END REF -->. BLOB についての詳細は、[BLOB](Concepts/dt_blob.md) の章を参照してください。
+`.getContent()` 関数は、<!-- REF #document.getContent().Summary -->ファイルの全コンテンツを格納した `4D.Blob` オブジェクトを返します<!-- END REF -->。 BLOB についての詳細は、[BLOB](Concepts/dt_blob.md) の章を参照してください。
 
 **戻り値**
 
@@ -542,7 +542,7 @@ The `.getContent()` function  <!-- REF #document.getContent().Summary -->returns
 
 #### 説明
 
-The `.getIcon()` function returns <!-- REF #document.getIcon().Summary -->the icon of the file<!-- END REF -->.
+`.getIcon()` 関数は、<!-- REF #document.getIcon().Summary -->ファイルのアイコンを返します<!-- END REF -->。
 
 任意の _size_ 引数を渡すと、返されるアイコンのサイズをピクセル単位で指定することができます。 この値は、実際にはアイコンを格納している正方形の一辺の長さを表しています。 アイコンは通常、32x32ピクセル ("大きいアイコン") または 16x16ピクセル ("小さいアイコン") で定義されています。 この引数に 0 を渡すか省略した場合、"大きいアイコン" が返されます。
 
@@ -581,7 +581,7 @@ The `.getIcon()` function returns <!-- REF #document.getIcon().Summary -->the ic
 
 #### 説明
 
-The `.getText()` function <!-- REF #document.getText().Summary -->returns the contents of the file as text <!-- END REF -->.
+`.getText()` 関数は、<!-- REF #document.getText().Summary -->ファイルのコンテンツをテキストとして返します<!-- END REF -->。
 
 任意で、コンテンツの読み取りに使用する文字セットを渡します。 これには、次の二つの方法があります:
 
@@ -626,7 +626,7 @@ id name price vat
  $txt:=$myFile.getText()
 ```
 
-... you get the following for `$txt`:
+... この場合、`$txt` の値は次の通りです:
 
 "id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
 
