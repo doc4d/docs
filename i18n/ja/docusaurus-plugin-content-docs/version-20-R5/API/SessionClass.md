@@ -76,10 +76,10 @@ If the command is called from a non supported context (single-user application, 
 
 The `Session` object of web sessions is available from any web process:
 
-- `On Web Authentication`, `On Web Connection`, and `On REST Authentication` database methods,
+- `On Web Authentication`、`On Web Connection`、および `On REST Authentication` データベースメソッド
 - セミダイナミックページにおいて、4Dタグ (4DTEXT, 4DHTML, 4DEVAL, 4DSCRIPT/, 4DCODE) を介して処理されるコード
 - "公開オプション: 4DタグとURL(4DACTION...)" を有効化されたうえで、4DACTION/ URL から呼び出されたプロジェクトメソッド
-- [`On Mobile App Authentication`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-authentication) and [`On Mobile App Action`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-action) database methods for mobile requests,
+- モバイルリクエスト用の [`On Mobile App Authentication`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-authentication) と [`On Mobile App Action`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-action) データベースメソッド
 - ORDA functions [called with REST requests](../REST/ClassFunctions.md).
 
 For more information on web user sessions, please refer to the [Web Server Sessions](WebServer/sessions.md) section.
@@ -105,7 +105,7 @@ For information on stored procedures virtual user session, please refer to the [
 
 #### 例題
 
-You have defined the `action_Session` method with attribute "Available through 4D tags and URLs". ブラウザーに次の URL を入力してメソッドを呼び出します:
+"公開オプション: 4DタグとURL(4DACTION...)" を有効にした `action_Session` メソッドを定義しました。 ブラウザーに次の URL を入力してメソッドを呼び出します:
 
 ```
 IP:port/4DACTION/action_Session
@@ -192,9 +192,9 @@ $isGuest:=Session.isGuest() // $isGuest は true
 
 :::
 
-The `.expirationDate` property contains <!-- REF #SessionClass.expirationDate.Summary -->the expiration date and time of the session cookie<!-- END REF -->. The value is expressed as text in the ISO 8601 format: `YYYY-MM-DDTHH:MM:SS.mmmZ`.
+The `.expirationDate` property contains <!-- REF #SessionClass.expirationDate.Summary -->the expiration date and time of the session cookie<!-- END REF -->. 値は ISO 8601標準に従って文字列で表現されます: `YYYY-MM-DDTHH:MM:SS.mmmZ`。
 
-This property is **read-only**. It is automatically recomputed if the [`.idleTimeout`](#idletimeout) property value is modified.
+このプロパティは **読み取り専用** です。 [`.idleTimeout`](#idletimeout) プロパティ値が変更された場合、有効期限は自動的に再計算されます。
 
 #### 例題
 
@@ -299,11 +299,11 @@ The `.idleTimeout` property contains <!-- REF #SessionClass.idleTimeout.Summary 
 
 プロパティ未設定時のデフォルト値は 60 (1時間) です。
 
-When this property is set, the [`.expirationDate`](#expirationdate) property is updated accordingly.
+このプロパティが設定されると、それに応じて [`.expirationDate`](#expirationdate) プロパティも更新されます。
 
 > 60 (分) 未満の値を指定することはできません (60 未満の値を設定した場合、タイムアウトは 60 (分) に設定されます)。
 
-This property is **read write**.
+このプロパティは **読み書き可能** です。
 
 #### 例題
 
@@ -403,7 +403,7 @@ The `.isGuest()` function <!-- REF #SessionClass.isGuest().Summary -->returns Tr
 
 #### 例題
 
-In the `On Web Connection` database method:
+`On Web Connection` データベースメソッドにて:
 
 ```4d
 If (Session.isGuest())
@@ -449,11 +449,11 @@ Since privileges are only supported in web user sessions, this function does not
 
 The `.setPrivileges()` function <!-- REF #SessionClass.setPrivileges().Summary -->associates the privilege(s) and/or role(s) defined in the parameter to the session and returns **True** if the execution was successful<!-- END REF -->.
 
-- In the _privilege_ parameter, pass a string containing a privilege name (or several comma-separated privilege names).
+- _privilege_ には、アクセス権の名称を文字列として渡します (複数の場合はカンマ区切り)。
 
-- In the _privileges_ parameter, pass a collection of strings containing privilege names.
+- _privileges_ には、アクセス権の名称を文字列のコレクションとして渡します。
 
-- In the _settings_ parameter, pass an object containing the following properties:
+- _settings_ には、以下のプロパティを持つオブジェクトを渡します:
 
 | プロパティ      | タイプ                 | 説明                                                                                                       |
 | ---------- | ------------------- | -------------------------------------------------------------------------------------------------------- |
@@ -463,15 +463,15 @@ The `.setPrivileges()` function <!-- REF #SessionClass.setPrivileges().Summary -
 
 :::note
 
-Privileges and roles are defined in [`roles.json`](../ORDA/privileges.md#rolesjson-file) file of the project. For more information, please refer to the [**Privileges**](../ORDA/privileges.md) section.
+権限とロールは、プロジェクトの [`roles.json`](../ORDA/privileges.md#rolesjson-ファイル) ファイルで定義されます。 詳細については、[**権限**](../ORDA/privileges.md) を参照してください。
 
 :::
 
-If the `privileges` or `roles` property contains a name that is not declared in the [`roles.json`](../ORDA/privileges.md#rolesjson-file) file, it is ignored.
+`privileges` または `roles` プロパティに、[`roles.json`](../ORDA/privileges.md#rolesjson-ファイル) ファイルで宣言されていない名前が含まれている場合、その名前は無視されます。
 
-By default when no privilege or role is associated to the session, the session is a [Guest session](#isguest).
+セッションにアクセス権またはロールが紐づいていない場合、そのセッションはデフォルトで [ゲストセッション](#isguest) です。
 
-The [`userName`](#username) property is available at session object level (read-only).
+[`userName`](#username) プロパティは Session オブジェクトレベルで利用可能です (読み取り専用)。
 
 #### 例題
 
@@ -512,17 +512,17 @@ End if
 
 The `.storage` property contains <!-- REF #SessionClass.storage.Summary -->a shared object that can be used to store information available to all processes of the session<!-- END REF -->.
 
-When a `Session` object is created, the `.storage` property is empty. Since it is a shared object, this property will be available in the `Storage` object of the server.
+`Session` オブジェクトの作成時には、`.storage` プロパティは空です。 共有オブジェクトのため、このプロパティはサーバー上の `Storage` オブジェクトにおいて利用可能です。
 
-> Like the `Storage` object of the server, the `.storage` property is always "single": adding a shared object or a shared collection to `.storage` does not create a shared group.
+> サーバーの `Storage` オブジェクトと同様に、`.storage` プロパティは常に "single" で存在します。 共有オブジェクトや共有コレクションを `.storage` に追加しても、共有グループは作成されません。
 
-This property is **read only** itself but it returns a read-write object.
+このプロパティは **読み取り専用** ですが、戻り値のオブジェクトは読み書き可能です。
 
 <Tabs>
 
 <TabItem value="Web session example">
 
-クライアントの IP を `.storage` プロパティに保存します。 You can write in the `On Web Authentication` database method:
+クライアントの IP を `.storage` プロパティに保存します。 `On Web Authentication` データベースメソッドに以下のように書けます:
 
 ```4d
 If (Session.storage.clientIP=Null) // 最初のアクセス
@@ -569,9 +569,9 @@ End use
 
 The `.userName` property contains <!-- REF #SessionClass.userName.Summary -->the user name associated to the session<!-- END REF -->. このプロパティは、コード内でユーザーを確認するのに使用できます。
 
-- Webセッションでは、このプロパティはデフォルトで空の文字列です。 It can be set using the `privileges` property of the [`setPrivileges()`](#setprivileges) function.
+- Webセッションでは、このプロパティはデフォルトで空の文字列です。 これは、[`setPrivileges()`](#setprivileges) 関数の `privileges` プロパティを使って設定することができます。
 - With remote and stored procedure sessions, this property returns the same user name as the [`Current user`](https://doc.4d.com/4dv20/help/command/en/page182.html) command.
 
-This property is **read only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
