@@ -1,6 +1,7 @@
-- - -
-id: attributes title: $attributes
-- - -
+---
+id: attributes
+title: $attributes
+---
 
 データクラスから取得するリレート属性を選択するのに使います (*例:* `Company(1)?$attributes=employees.lastname`、 `Employee?$attributes=employer.name`)。
 
