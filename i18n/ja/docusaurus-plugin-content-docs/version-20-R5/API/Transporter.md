@@ -23,7 +23,7 @@ title: Transporter クラス
 
 The `.acceptUnsecureConnection` property contains <!-- REF #transporter.acceptUnsecureConnection.Summary -->**True** if 4D is allowed to establish an unencrypted connection<!-- END REF --> when encrypted connection is not possible.
 
-It contains **False** if unencrypted connections are unallowed, in which case an error in returned when encrypted connection is not possible.
+暗号化されていない接続が許可されていない場合には **false** が格納されており、その場合に暗号化された接続が不可能な場合にはエラーが返されます。
 
 使用可能なセキュアなポートは次のとおりです:
 
@@ -92,7 +92,7 @@ The `.authenticationMode` property contains <!-- REF #transporter.authentication
 
 #### 説明
 
-The `.authenticationMode` property contains the authentication mode used to open the session on the mail server.
+`.authenticationMode` プロパティは、メールサーバーのセッションを開くのに使用される認証モードを格納します。
 
 デフォルトでは、サーバーによってサポートされている最も安全なモードが使用されます。
 
@@ -126,7 +126,7 @@ The `.authenticationMode` property contains the authentication mode used to open
 
 #### 説明
 
-The `.authenticationMode` property contains the authentication mode used to open the session on the mail server.
+`.authenticationMode` プロパティは、メールサーバーのセッションを開くのに使用される認証モードを格納します。
 
 デフォルトでは、サーバーによってサポートされている最も安全なモードが使用されます。
 
@@ -168,8 +168,8 @@ The `.bodyCharset` property contains <!-- REF #transporter.bodyCharset.Summary -
 | ------------------------ | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | mail mode ISO2022JP      | US-ASCII_ISO-2022-JP_UTF8_QP | <ul><li>*headerCharset*: US-ASCII if possible, Japanese (ISO-2022-JP) & Quoted-printable if possible, otherwise UTF-8 & Quoted-printable</li><li>*bodyCharset*: US-ASCII if possible, Japanese (ISO-2022-JP) & 7-bit if possible, otherwise UTF-8 & Quoted-printable</li></ul> |
 | mail mode ISO88591       | ISO-8859-1                                                                                  | <ul><li>*headerCharset*: ISO-8859-1 & Quoted-printable</li><li>*bodyCharset*: ISO-8859-1 & 8-bit</li></ul>                                                                                                                                                                     |
-| mail mode UTF8           | US-ASCII_UTF8_QP                                  | _headerCharset_ & _bodyCharset_: US-ASCII if possible, otherwise UTF-8 & Quoted-printable (**default value**)                                                                                       |
-| mail mode UTF8 in base64 | US-ASCII_UTF8_B64                                 | _headerCharset_ & _bodyCharset_: US-ASCII if possible, otherwise UTF-8 & base64                                                                                                                                        |
+| mail mode UTF8           | US-ASCII_UTF8_QP                                  | _headerCharset_ &amp; _bodyCharset_: 可能なら US-ASCII、それが不可なら UTF-8 &amp; Quoted-printable (**デフォルト値**)                                                                                                |
+| mail mode UTF8 in base64 | US-ASCII_UTF8_B64                                 | _headerCharset_ &amp; _bodyCharset_: 可能な場合は US-ASCII、それ以外は UTF-8 &amp; base64                                                                                                                                          |
 
 <!-- END REF -->
 
@@ -191,7 +191,7 @@ The `.bodyCharset` property contains <!-- REF #transporter.bodyCharset.Summary -
 
 #### 説明
 
-The `.connectionTimeOut` property contains <!-- REF #transporter.connectionTimeOut.Summary -->the maximum wait time (in seconds) allowed to establish a connection to the server<!-- END REF -->. By default, if the property has not been set in the server object (used to create the transporter object with `SMTP New transporter`, `POP3 New transporter`, or `IMAP New transporter`), the value is 30.
+The `.connectionTimeOut` property contains <!-- REF #transporter.connectionTimeOut.Summary -->the maximum wait time (in seconds) allowed to establish a connection to the server<!-- END REF -->. `SMTP New transporter` や `POP3 New transporter`、 `IMAP New transporter` のコマンドで `transporter` オブジェクトを作成する際に使用される `server` オブジェクトにおいて、 このプロパティが指定されなかった場合のデフォルトは 30 です。
 
 <!-- END REF -->
 
@@ -226,7 +226,7 @@ The `.headerCharset` property contains <!-- REF #transporter.headerCharset.Summa
 | mail mode ISO2022JP      | US-ASCII_ISO-2022-JP_UTF8_QP | <ul><li>*headerCharset*: US-ASCII if possible, Japanese (ISO-2022-JP) & Quoted-printable if possible, otherwise UTF-8 & Quoted-printable</li><li>*bodyCharset*: US-ASCII if possible, Japanese (ISO-2022-JP) & 7-bit if possible, otherwise UTF-8 & Quoted-printable</li></ul> |
 | mail mode ISO88591       | ISO-8859-1                                                                                  | <ul><li>*headerCharset*: ISO-8859-1 & Quoted-printable</li><li>*bodyCharset*: ISO-8859-1 & 8-bit</li></ul>                                                                                                                                                                     |
 | mail mode UTF8           | US-ASCII_UTF8_QP                                  | _headerCharset_ & _bodyCharset_: US-ASCII if possible, otherwise UTF-8 & Quoted-printable (default value)                                                                                           |
-| mail mode UTF8 in base64 | US-ASCII_UTF8_B64                                 | _headerCharset_ & _bodyCharset_: US-ASCII if possible, otherwise UTF-8 & base64                                                                                                                                        |
+| mail mode UTF8 in base64 | US-ASCII_UTF8_B64                                 | _headerCharset_ &amp; _bodyCharset_: 可能な場合は US-ASCII、それ以外は UTF-8 &amp; base64                                                                                                                                          |
 
 <!-- END REF -->
 
@@ -272,11 +272,11 @@ The `.host` property contains <!-- REF #transporter.host.Summary -->the name or 
 
 The `.logFile` property contains <!-- REF #transporter.logFile.Summary -->the path of the extended log file defined (if any) for the mail connection<!-- END REF -->. パスは、カレント Logs フォルダーを基準とした相対パス、あるいは絶対パスを指定できます。
 
-Unlike regular log files (enabled via the `SET DATABASE PARAMETER` command), extended log files store MIME contents of all sent mails and do not have any size limit. 拡張ログファイルの詳細については、以下の章をそれぞれ参照ください:
+`SET DATABASE PARAMETER` コマンドで有効化される通常のログファイルとは異なり、拡張ログファイルはすべての送信されたメールの MIMEコンテンツを保存し、サイズ制限がありません。 拡張ログファイルの詳細については、以下の章をそれぞれ参照ください:
 
-- **SMTP connections** - [4DSMTPLog.txt](../Debugging/debugLogFiles.md#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt)
-- **POP3 connections** - [4DPOP3Log.txt](../Debugging/debugLogFiles.md#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt)
-- **IMAP connections** - [4DIMAPLog.txt](../Debugging/debugLogFiles.md#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt)
+- **SMTP 接続** - [4DSMTPLog.txt](../Debugging/debugLogFiles.md#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt)
+- **POP3 接続** - [4DPOP3Log.txt](../Debugging/debugLogFiles.md#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt)
+- **IMAP 接続** - [4DIMAPLog.txt](../Debugging/debugLogFiles.md#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt)
 
 <!-- END REF -->
 
@@ -298,7 +298,7 @@ Unlike regular log files (enabled via the `SET DATABASE PARAMETER` command), ext
 
 #### 説明
 
-The `.port` property contains <!-- REF #transporter.port.Summary --> the port number used for mail transactions<!-- END REF -->. By default, if the _port_ property has not been set in the _server_ object (used to create the transporter object with `SMTP New transporter`, `POP3 New transporter`, `IMAP New transporter`), the port used is:
+The `.port` property contains <!-- REF #transporter.port.Summary --> the port number used for mail transactions<!-- END REF -->. `SMTP New transporter` や `POP3 New transporter`、 `IMAP New transporter` のコマンドで `transporter` オブジェクトを作成する際に使用される _server_ オブジェクトにおいて、 このプロパティが指定されなかった場合に使用されるポートは次のとおりです:
 
 - **SMTP** - 587
 - **POP3** - 995
@@ -324,7 +324,7 @@ The `.port` property contains <!-- REF #transporter.port.Summary --> the port nu
 
 #### 説明
 
-The `.sendTimeOut` property contains <!-- REF #transporter.sendTimeOut.Summary --> the maximum wait time (in seconds) of a call to `.send( )` before a timeout occurs<!-- END REF -->. By default, if the `.sendTimeOut` property has not been set in the `server` object, the value 100 is used.
+The `.sendTimeOut` property contains <!-- REF #transporter.sendTimeOut.Summary --> the maximum wait time (in seconds) of a call to `.send( )` before a timeout occurs<!-- END REF -->. `.sendTimeOut` プロパティが `server` オブジェクトによって設定されていない場合は、デフォルトで 100 という値が使用されます。
 
 <!-- END REF -->
 
