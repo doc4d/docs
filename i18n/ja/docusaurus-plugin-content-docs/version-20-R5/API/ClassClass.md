@@ -3,7 +3,7 @@ id: ClassClass
 title: Class
 ---
 
-When a user class is [defined](Concepts/classes.md#class-definition) in the project, it is loaded in the 4D language environment. クラスとは、それ自身が "Class" クラスのオブジェクトであり、プロパティと関数を持ちます。
+プロジェクトにおいてユーザークラスが [定義](Concepts/classes.md#クラス定義) されていれば、それは 4Dランゲージ環境に読み込まれます。 クラスとは、それ自身が "Class" クラスのオブジェクトであり、プロパティと関数を持ちます。
 
 ### 概要
 
@@ -32,9 +32,9 @@ When a user class is [defined](Concepts/classes.md#class-definition) in the proj
 
 #### 説明
 
-The `.isShared` property <!-- REF #ClassClass.isShared.Summary -->returns `true` if the user class has been defined as [shared class](../Concepts/classes.md#shared-classes)<!-- END REF -->, and `false` otherwise.
+`.isShared` プロパティは、<!-- REF #ClassClass.isShared.Summary -->ユーザークラスが [共有クラス](../Concepts/classes.md#共有クラス)として定義されている場合は `true` を返します<!-- END REF -->。それ以外の場合は `false` を返します。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -54,9 +54,9 @@ This property is **read-only**.
 
 #### 説明
 
-The `.isSingleton` property <!-- REF #ClassClass.isSingleton.Summary -->returns `true` if the user class has been defined as a [singleton class](../Concepts/classes.md#singleton-classes)<!-- END REF -->, and `false` otherwise.
+`.isSingleton` プロパティは、<!-- REF #ClassClass.isSingleton.Summary -->ユーザークラスが [シングルトンクラス](../Concepts/classes.md#シングルトンクラス)として定義されている場合は `true` を返します<!-- END REF -->。それ以外の場合は `false` を返します。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -76,11 +76,11 @@ This property is **read-only**.
 
 #### 説明
 
-The `.me` property <!-- REF #ClassClass.me.Summary -->returns the singleton instance of the `cs.className` singleton class<!-- END REF -->. シングルトンクラスが前もってインスタンス化されていない場合、このプロパティは引数なしでクラスコンストラクターを呼び出し、インスタンスを作成します。 そうでない場合は、既存のシングルトンインスタンスを返します。
+`.me` プロパティは、<!-- REF #ClassClass.me.Summary -->`cs.className` シングルトンクラスのシングルトンインスタンスを返します<!-- END REF -->。 シングルトンクラスが前もってインスタンス化されていない場合、このプロパティは引数なしでクラスコンストラクターを呼び出し、インスタンスを作成します。 そうでない場合は、既存のシングルトンインスタンスを返します。
 
-If `cs.className` is not a [singleton class](../Concepts/classes.md#singleton-classes), `.me` is **undefined** by default.
+`cs.className` が [シングルトンクラス](../Concepts/classes.md#シングルトンクラス) でない場合、`.me` はデフォルトで **未定義** です。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -100,9 +100,9 @@ This property is **read-only**.
 
 #### 説明
 
-The `.name` property <!-- REF #ClassClass.name.Summary -->contains the name of the `4D.Class` object<!-- END REF -->. クラス名の大文字・小文字は区別されます。
+`.name` プロパティは、<!-- REF #ClassClass.name.Summary -->`4D.Class` オブジェクトの名称を格納します<!-- END REF -->。 クラス名の大文字・小文字は区別されます。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 <!-- END REF -->
 
@@ -131,14 +131,14 @@ This property is **read-only**.
 
 #### 説明
 
-The `.new()` function <!-- REF #ClassClass.new().Summary -->creates and returns a `cs.className` object which is a new instance of the class on which it is called<!-- END REF -->. This function is automatically available on all classes from the [`cs` class store](Concepts/classes.md#cs).
+`.new()` 関数は、<!-- REF #ClassClass.new().Summary -->対象クラスの新規インスタンスである `cs.className` オブジェクトを作成して返します<!-- END REF -->。 この関数は、[`cs` クラスストア](Concepts/classes.md#cs) に属する全クラスで自動的に利用可能です。
 
-You can pass one or more optional _param_ parameters, which will be passed to the [class constructor](Concepts/classes.md#class-constructor) function (if any) in the _className_ class definition. Within the constructor function, the [`This`](Concepts/classes.md#this) is bound to the new object being constructed.
+任意の _param_ パラメーターに渡した引数は、当該 _className_クラス定義内の [Class Constructor](Concepts/classes.md#class-constructor) 関数 (あれば) が受け取ります。 コンストラクター関数においては、[`This`](Concepts/classes.md#this) は新規に作成されるオブジェクトを指します。
 
 :::note 注記
 
-- If `.new()` is called on a [singleton class](../Concepts/classes.md#singleton-classes) that has already been instantiated, the singleton instance is returned, not a new instance.
-- If `.new()` is called on a non-existing class, an error is returned.
+- すでにインスタンス化されている [シングルトンクラス](../Concepts/classes.md#シングルトンクラス) に対して `.new()` を呼び出すと、新しいインスタンスではなくシングルトンインスタンスが返されます。
+- 存在しないクラスを対象に `.new()` を呼び出した場合、エラーが返されます。
 
 :::
 
@@ -155,7 +155,7 @@ $person:=cs.Person.new() // 新規インスタンスの作成
 パラメーターを使って、Personクラスの新規インスタンスを作成するには、次のように書きます:
 
 ```4d
-//Class: Person.4dm
+// クラス: Person.4dm
 Class constructor($firstname : Text; $lastname : Text; $age : Integer)
 	This.firstName:=$firstname
 	This.lastName:=$lastname
@@ -189,25 +189,25 @@ $person:=cs.Person.new("John";"Doe";40)
 
 #### 説明
 
-The `.superclass` property <!-- REF #ClassClass.superclass.Summary -->returns the parent class of the class<!-- END REF -->. A superclass can be a `4D.Class` object, or a `cs.className` object. If the class does not have a parent class, the property returns **null**.
+`.superclass` プロパティは、<!-- REF #ClassClass.superclass.Summary -->対象クラスの親クラスを返します<!-- END REF -->。 スーパークラスは、`4D.Class` オブジェクト、あるいは `cs.className` オブジェクトのいずれかです。 親クラスが存在しない場合は、このプロパティは **null** を返します。
 
-A superclass of a user class is declared in a class by using the [`Class extends <superclass>`](Concepts/classes.md#class-extends-classname) keyword.
+ユーザークラスのスーパークラスは、[`Class extends <superclass>`](Concepts/classes.md#class-extends-classname) キーワードを使ってクラス内で定義されます。
 
-This property is **read-only**.
+このプロパティは **読み取り専用** です。
 
 #### 例題
 
 ```4d
-$sup:=4D.File.superclass //Document
-$sup:=4D.Document.superclass //Object
-$sup:=4D.Object.superclass //null
+$sup:=4D.File.superclass // Document
+$sup:=4D.Document.superclass // Object
+$sup:=4D.Object.superclass // null
 
-// If you created a MyFile class  
-// with `Class extends File`
-$sup:=cs.MyFile.superclass //File
+// `Class extends File` を使って
+// MyFile クラスを作成した場合  
+$sup:=cs.MyFile.superclass // File
 
 ```
 
-**See also:** [Super](Concepts/classes.md#super)
+**参照:** [Super](Concepts/classes.md#super)
 
 <!-- END REF -->
