@@ -38,7 +38,7 @@ title: データ収集
 | license                 | Object                            | 製品ライセンスの名称と説明                                                                                               |
 | isRosetta               | Boolean                           | macOS の Rosetta で 4D がエミュレートされている場合は True、そうでない場合は False (エミュレートされていない、または Windows の場合)。 |
 | uniqueID                | Text                              | 4D Server の固有ID                                                                                             |
-| id                      | Text (ハッシュ文字列) | Unique id associated to the database (_Polynomial Rolling hash of the database name_)    |
+| id                      | Text (ハッシュ文字列) | データベースに関連付けられた一意の id (_データベース名の多項式ローリングハッシュ_)                                            |
 | dataFileSize            | Number                            | データファイルのサイズ (バイト単位)                                                                      |
 | indexesSize             | Number                            | インデックスのサイズ (バイト単位)                                                                       |
 | cacheSize               | Number                            | キャッシュのサイズ (バイト単位)                                                                        |
@@ -95,10 +95,10 @@ title: データ収集
 
 ### PHP execute の呼び出し毎に収集される情報
 
-| データ         | タイプ     | 注記                                                                                  |
-| ----------- | ------- | ----------------------------------------------------------------------------------- |
-| phpCall     | Number  | Number of calls to `PHP execute`                                                    |
-| externalPHP | Boolean | True if the client performs a call to `PHP execute` and uses its own version of php |
+| データ         | タイプ     | 注記                                                        |
+| ----------- | ------- | --------------------------------------------------------- |
+| phpCall     | Number  | `PHP execute` の呼び出し回数                                     |
+| externalPHP | Boolean | クライアントが `PHP execute` を呼び出して、独自のバージョンの php を使用した場合は True。 |
 
 ### クライアント接続時に収集される情報
 
@@ -109,10 +109,10 @@ title: データ収集
 
 ## 保存先と送信先
 
-収集されたデータは、4D Server の終了時にデータベース毎にテキストファイル (JSON形式) に書き込まれます。 The file is stored inside the [active 4D folder](https://doc.4d.com/4dv20/help/command/en/page485.html), i.e.:
+収集されたデータは、4D Server の終了時にデータベース毎にテキストファイル (JSON形式) に書き込まれます。 このファイルは、[Active 4D Folder](https://doc.4d.com/4dv20/help/command/ja/page485.html) に格納されます。 つまり:
 
-- on Windows: `Users\[userName]\AppData\Roaming\4D Server`
-- on macOS: `/Users/[userName]/Library/ApplicationSupport/4D Server`
+- Windows: `Users\[userName]\AppData\Roaming\4D Server`
+- macOS: `/Users/[userName]/Library/ApplicationSupport/4D Server`
 
 週に一度、ファイルはネットワーク経由で自動的に 4D に送信されます。 その後、ファイルは Active 4D Folder から削除されます。
 
@@ -120,10 +120,10 @@ title: データ収集
 
 > 何らかの理由でファイルを送信できなかった場合でも、ファイルは削除され、4D Server にエラーメッセージは表示されません。
 
-The file is sent to the following server address: `https://dcollector.4d.com` (ip: 195.68.52.83).
+このファイルは、次のサーバーアドレスに送信されます: `https://dcollector.4d.com` (ip: 195.68.52.83)。
 
 ## ビルドされたクライアント/サーバーアプリケーションで自動データ収集を無効にする
 
-You can disable the automatic data collection in [client/server built applications](../Desktop/building.md#clientserver-page).
+[ビルドされたクライアント/サーバーのアプリケーション](../Desktop/building.md#クライアントサーバーページ) で、自動データ収集を無効にすることができます。
 
-To disable the collection, pass the value **False** to the [`ServerDataCollection`](https://doc.4d.com/4Dv20/4D/20/ServerDataCollection.300-6335775.en.html) key in the `buildApp.4DSettings` file, used to build the client/server application.
+データ収集を無効にするには、クライアント/サーバーアプリケーションのビルドに使用する `buildApp.4DSettings` ファイル内の [`ServerDataCollection`](https://doc.4d.com/4Dv20/4D/20/ServerDataCollection.300-6335775.ja.html) キーに値 **False** を渡します。
