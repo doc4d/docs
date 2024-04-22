@@ -97,7 +97,7 @@ HTTPRequest オブジェクトは次のプロパティや関数を提供しま�
 
 #### 説明
 
-The `4D.HTTPRequest.new()` function <!-- REF #4D.HTTPRequest.new().Summary -->creates and sends a HTTP request to the HTTP server defined in _url_ with the defined _options_, and returns a `4D.HTTPRequest` object<!-- END REF -->.
+`4D.HTTPRequest.new()` 関数は、<!-- REF #4D.HTTPRequest.new().Summary -->_options_ 引数で指定した設定に基づいて HTTPリクエストを作成し、_url_ 引数で定義される HTTPサーバーに送信して、`4D.HTTPRequest` オブジェクトを返します<!-- END REF -->。
 
 返される `HTTPRequest` オブジェクトは、HTTPサーバーのレスポンスの処理と、メソッドを呼び出すのに使用されます。
 
@@ -144,8 +144,8 @@ _options_ に渡すオブジェクトは、次のプロパティを持つこと�
 | onResponse             | [Function](FunctionClass.md)                    | レスポンス受信時のコールバック。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                                    | undefined   |
 | onTerminate            | [Function](FunctionClass.md)                    | リクエスト終了時のコールバック。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                                                    | undefined   |
 | protocol               | Text                                            | "auto" または "HTTP1"。 "auto" は現在の実装における HTTP1 を意味します。                                                                                                                                                         | "auto"      |
-| proxyAuthentication    | [authentication object](#authentication-object) | プロキシ認証のためのオブジェクト                                                                                                                                                                                            | undefined   |
-| serverAuthentication   | [authentication object](#authentication-object) | サーバー認証のためのオブジェクト                                                                                                                                                                                            | undefined   |
+| proxyAuthentication    | [authentication オブジェクト](#authentication-オブジェクト) | プロキシ認証のためのオブジェクト                                                                                                                                                                                            | undefined   |
+| serverAuthentication   | [authentication オブジェクト](#authentication-オブジェクト) | サーバー認証のためのオブジェクト                                                                                                                                                                                            | undefined   |
 | returnResponseBody     | Boolean                                         | false の場合、レスポンス本文は [`response` オブジェクト](#response) に返されません。 false かつ `onData` が未定義の場合にエラーを返します。                                                                                                              | true        |
 | timeout                | Real                                            | タイムアウト (秒単位) 未定義 = タイムアウトなし                                                                                                                                                              | 未定義         |
 | validateTLSCertificate | Boolean                                         | false の場合、4D は TLS証明書の検証をおこなわず、無効 (期限切れ、自己署名など) であってもエラーを返しません。 重要: 現在の実装では、認証局そのものは検証されません。                                                                             | true        |
@@ -156,8 +156,8 @@ _options_ に渡すオブジェクトは、次のプロパティを持つこと�
 
 | 引数      | タイプ                                         |
 | ------- | ------------------------------------------- |
-| $param1 | [`HTTPRequest` object](#httprequest-object) |
-| $param2 | [`Event` object](#event-object)             |
+| $param1 | [`HTTPRequest` オブジェクト](#httprequest-オブジェクト) |
+| $param2 | [`Event` オブジェクト](#event-オブジェクト)             |
 
 以下は、コールバック呼び出しの流れです:
 
@@ -217,7 +217,7 @@ authentication オブジェクトは `options.serverAuthentication` または `o
 
 #### 説明
 
-The `HTTP Parse message` command <!-- REF #HTTP Parse message.Summary -->parses a multipart/form-data text or blob (HTTP "response" message) and extracts the content to an object. Each property of the returned object corresponds to a part of the multipart data<!-- END REF -->.
+`HTTP Parse message` コマンドは、<!-- REF #HTTP Parse message.Summary -->multipart/form-_data_ のテキストまたは Blob (HTTP "response" メッセージ) をパースし、コンテンツをオブジェクトに抽出します。 戻り値のオブジェクトの各プロパティは、マルチパートの各データに対応します<!-- END REF -->。
 
 :::info
 
@@ -281,7 +281,7 @@ var $parsedMessage : Object:=HTTP Parse message($message)
 
 #### 説明
 
-The `.dataType` property contains <!-- REF #HTTPRequestClass.dataType.Summary -->the `dataType` passed in the [`options`](#options-parameter) object when calling [new()](#4dhttprequestnew), "auto" if it was omitted<!-- END REF -->.
+`.dataType` プロパティは、<!-- REF #HTTPRequestClass.dataType.Summary -->[new()](#4dhttprequestnew) を呼び出す際に [`options`](#options-引数) オブジェクトに渡された `dataType` を格納します (省略時は "auto")。
 
 <!-- END REF -->
 
