@@ -3,19 +3,17 @@ id: onOpenDetail
 title: On Open Detail
 ---
 
-| コード | 呼び出し元                                             | 定義                                        |
-| --- | ------------------------------------------------- | ----------------------------------------- |
-| 25  | フォーム - [リストボックス](FormObjects/listbox_overview.md) | 出力フォームまたはリストボックスに関連付けられた詳細フォームが開かれようとしている |
-
+| コード | 呼び出し元                                              | 定義                                        |
+| --- | -------------------------------------------------- | ----------------------------------------- |
+| 25  | Form - [List Box](FormObjects/listbox_overview.md) | 出力フォームまたはリストボックスに関連付けられた詳細フォームが開かれようとしている |
 
 ## 説明
 
-`On Open Detail` イベントは次のコンテキストで利用できます:
+The `On Open Detail` event can be used in the following contexts:
 
-- **出力フォーム**: 出力フォームに関連づけられた詳細フォームにレコードが表示されようとしているときに生成されます。 このイベントは、プロジェクトフォームでは選択できず、**テーブルフォーム** でのみ利用できます。
-- [**セレクション型**](FormObjects/listbox_overview.md#セレクションリストボックス) リストボックスに関連付けられた (まだ開かれていない) 詳細フォームにレコードが表示されようとしているときに生成されます。
-
+- **Output forms**: A record is about to be displayed in the detail form associated with the output form. This event cannot be selected for project forms, it is only available with **table forms**.
+- List box of the [**selection type**](FormObjects/listbox_overview.md#selection-list-boxes): This event is generated when a record is about to be displayed in the detail form associated with a list box of the selection type (and before this form is opened).
 
 ### Displayed line number
 
-`Displayed line number` 4Dコマンドは、`On Open Detail` フォームイベントと連動します。 このコマンドは、レコードのリストまたはリストボックスの行が画面に表示されるときに処理されている行の番号を返します。
+The `Displayed line number` 4D command works with the `On Open Detail` form event. このコマンドは、レコードのリストまたはリストボックスの行が画面に表示されるときに処理されている行の番号を返します。
