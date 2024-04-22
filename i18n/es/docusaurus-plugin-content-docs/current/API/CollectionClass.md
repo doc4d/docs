@@ -887,7 +887,7 @@ Por defecto, se realiza una evaluación no diacrítica. Si desea que la evaluaci
 | startFrom  | Integer     | -> | Índice para iniciar la prueba en                           |
 | formula    | 4D.Function | -> | Objeto fórmula                                             |
 | methodName | Text        | -> | Nombre de un método                                        |
-| param      | Mixed       | -> | Parámetro(s) a pasar a la *fórmula* o *methodName*         |
+| param      | any         | -> | Parámetro(s) a pasar a la *fórmula* o *methodName*         |
 | Result     | Boolean     | <- | True si todos los elementos han pasado la prueba con éxito |
 <!-- END REF -->
 
@@ -1684,11 +1684,11 @@ Opcionalmente, puede pasar el índice de la colección desde el que iniciar la b
 
 
 <!-- REF #collection.indices().Params -->
-| Parámetros  | Tipo       |    | Descripción                                                          |
-| ----------- | ---------- |:--:| -------------------------------------------------------------------- |
-| queryString | Text       | -> | Criterio de búsqueda                                                 |
-| value       | any        | -> | Valor(es) a comparar cuando se utiliza(n) marcador(es) de posición   |
-| Result      | Collection | <- | Índice(s) de elementos que coinciden con queryString en la colección |
+| Parámetros  | Tipo |    | Descripción          |
+| ----------- | ---- |:--:| -------------------- |
+| queryString | Text | -> | Criterio de búsqueda |
+
+|value|any|->|Value(s) to compare when using placeholder(s)| |Result|Collection |<-|Element index(es) matching queryString in the collection|
 <!-- END REF -->
 
 
@@ -2319,6 +2319,7 @@ También puede pasar un parámetro de criterios para definir cómo deben ordenar
 ```4d
 {
     "propertyPath": string,
+
     "descending": boolean
 
 }
@@ -2595,7 +2596,7 @@ Cuando se aplica a una colección vacía, `.pop()` devuelve ***undefined***.
 <!-- REF #collection.push().Params -->
 | Parámetros | Tipo       |    | Descripción                                            |
 | ---------- | ---------- |:--:| ------------------------------------------------------ |
-| element    | Mixed      | -> | Elemento(s) a añadir a la colección                    |
+| element    | any        | -> | Elemento(s) a añadir a la colección                    |
 | Result     | Collection | <- | Colección original que contiene los elementos añadidos |
 <!-- END REF -->
 
@@ -2657,7 +2658,7 @@ Desea ordenar la colección resultante:
 | Parámetros    | Tipo       |    | Descripción                                                        |
 | ------------- | ---------- |:--:| ------------------------------------------------------------------ |
 | queryString   | Text       | -> | Criterio de búsqueda                                               |
-| value         | Mixed      | -> | Valor(es) a comparar cuando se utiliza(n) marcador(es) de posición |
+| value         | any        | -> | Valor(es) a comparar cuando se utiliza(n) marcador(es) de posición |
 | querySettings | Object     | -> | Opciones de búsqueda: parámetros, atributos                        |
 | Result        | Collection | <- | Elemento(s) que coincide(n) con queryString en la colección        |
 <!-- END REF -->
@@ -2741,6 +2742,7 @@ Este ejemplo devuelve las personas contratadas hace más de 90 días:
 
 
 #### Ejemplo 3
+
 
 Se pueden encontrar más ejemplos de búsquedas en la página `dataClass.query()`.
 
@@ -3222,7 +3224,7 @@ La colección devuelta contiene el elemento especificado por *startFrom* y todos
 | startFrom  | Integer     | -> | Índice para iniciar la prueba en                             |
 | formula    | 4D.Function | -> | Objeto fórmula                                               |
 | methodName | Text        | -> | Nombre de un método                                          |
-| param      | Mixed       | -> | Parámetro(s) a pasar                                         |
+| param      | any         | -> | Parámetro(s) a pasar                                         |
 | Result     | Boolean     | <- | True si al menos un elemento ha superado la prueba con éxito |
 <!-- END REF -->
 
