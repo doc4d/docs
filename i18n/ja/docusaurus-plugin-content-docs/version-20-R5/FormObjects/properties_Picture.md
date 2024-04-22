@@ -1,27 +1,27 @@
 ---
 id: propertiesPicture
-title: ピクチャー
+title: Picture
 ---
 
 ## パス名
 
-[ピクチャーボタン](pictureButton_overview.md)、[ピクチャーポップアップメニュー](picturePopupMenu_overview.md)、または [スタティックピクチャー](staticPicture.md) に表示させるピクチャーのパス名です。 POSIX シンタックスを使用します。
+Pathname of a static source picture for a [picture button](pictureButton_overview.md), [picture pop-up Menu](picturePopupMenu_overview.md), or [static picture](staticPicture.md). POSIX シンタックスを使用します。
 
 ピクチャーパスに指定できる場所は次の 3箇所です:
 
-- プロジェクトの **Resources** フォルダー。 プロジェクト内の複数のフォームで画像を共有する場合に適切です。 この場合、パス名は "/RESOURCES/<picture path\>" です。
-- フォームフォルダー内の画像用フォルダー (たとえば、**Images** と名付けたフォルダー)。 特定のフォームでしか画像が使われない場合や、そのフォームの全体を複製してプロジェクト内、または別のプロジェクトに移動させたい場合に適切です。 この場合、パス名は "<picture path\>" となり、フォームフォルダーを基準とした相対パスです。
-- 4D のピクチャー変数。 フォーム実行時に、ピクチャーがメモリに読み込まれている必要があります。 この場合、パス名は "var:\&lt;variableName\&gt;"。
+- in the **Resources** folder of the project. プロジェクト内の複数のフォームで画像を共有する場合に適切です。 In this case, the Pathname is "/RESOURCES/\<picture path\>".
+- in an image folder (e.g. named **Images**) within the form folder. 特定のフォームでしか画像が使われない場合や、そのフォームの全体を複製してプロジェクト内、または別のプロジェクトに移動させたい場合に適切です。 In this case, the Pathname is "\<picture path\>" and is resolved from the root of the form folder.
+- 4D のピクチャー変数。 フォーム実行時に、ピクチャーがメモリに読み込まれている必要があります。 この場合、パス名は "var:\\<variableName\>"。
 
 #### JSON 文法
 
-|   名称    | データタイプ | とりうる値                                                                                |
-|:-------:|:------:| ------------------------------------------------------------------------------------ |
-| picture |  text  | POSIXシンタックスの相対パスまたはファイルシステムパス、ピクチャー変数の場合は "var:\&lt;variableName\&gt;" |
+|    名称   | データタイプ | とりうる値                                                                               |
+| :-----: | :----: | ----------------------------------------------------------------------------------- |
+| picture |  text  | POSIXシンタックスの相対パスまたはファイルシステムパス、ピクチャー変数の場合は "var:\\<variableName\>" |
 
 #### 対象オブジェクト
 
-[ピクチャーボタン](pictureButton_overview.md) - [ピクチャーポップアップメニュー](picturePopupMenu_overview.md) - [スタティックピクチャー](staticPicture.md)
+[Picture button](pictureButton_overview.md) - [Picture Pop-up Menu](picturePopupMenu_overview.md) - [Static Picture](staticPicture.md)
 
 ---
 
@@ -31,7 +31,7 @@ title: ピクチャー
 
 `JSON 文法では: "scaled"`
 
-**スケーリング** を選択すると、ピクチャーはフィールドエリアの大きさに合うようにリサイズされます。
+The **Scaled to fit** format causes 4D to resize the picture to fit the dimensions of the area.
 
 ![](../assets/en/FormObjects/property_pictureFormat_ScaledToFit.png)
 
@@ -39,7 +39,7 @@ title: ピクチャー
 
 `JSON 文法では: "tiled"`
 
-**繰り返し** フォーマットを持つピクチャーが含まれるエリアが拡大されると、ピクチャーは変形されず、エリア全体を埋めるのに必要なだけピクチャーが繰り返されます。
+When the area that contains a picture with the **Replicated** format is enlarged, the picture is not deformed but is replicated as many times as necessary in order to fill the area entirely.
 
 ![](../assets/en/FormObjects/property_pictureFormat_Replicated.png)
 
@@ -49,10 +49,11 @@ title: ピクチャー
 
 `JSON 文法では: "truncatedCenter" / "truncatedTopLeft"`
 
-**中央合わせ** フォーマットを選択すると、4D はエリアの中央にピクチャーを配置し、収まらない部分はエリアからはみ出します。 上下、および左右のはみ出し量は同じになります。
+The **Center** format causes 4D to center the picture in the area and crop any portion that does not fit within the area. 上下、および左右のはみ出し量は同じになります。
 
-**トランケート (中央合わせしない)** フォーマットを選択すると、4D はピクチャーの左上角をフィールドの左上角に合わせて配置し、フィールドエリアに収まらない部分はエリアからはみ出します。 ピクチャーは右と下にはみ出します。
-> ピクチャーフォーマットが **トランケート (中央合わせしない)** の場合、入力エリアにスクロールバーを追加できます。
+The **Truncated (non-centered)** format causes 4D to place the upper-left corner of the picture in the upper-left corner of the area and crop any portion that does not fit within the area. ピクチャーは右と下にはみ出します。
+
+> When the picture format is **Truncated (non-centered)**, it is possible to add scroll bars to the input area.
 
 ![](../assets/en/FormObjects/property_pictureFormat_Truncated.png)
 
@@ -64,4 +65,4 @@ title: ピクチャー
 
 #### 対象オブジェクト
 
-[スタティックピクチャー](staticPicture.md)
+[Static Picture](staticPicture.md)
