@@ -15,7 +15,7 @@ As imagens são apresentadas num ciclo contínuo. When the user reaches the last
 
 #### Objectos suportados
 
-[Botão imagem](pictureButton_overview.md)
+[Picture Button](pictureButton_overview.md)
 
 ---
 
@@ -31,7 +31,7 @@ Displays the first picture all the time except when the user clicks the button. 
 
 #### Objectos suportados
 
-[Botão imagem](pictureButton_overview.md)
+[Picture Button](pictureButton_overview.md)
 
 ---
 
@@ -47,7 +47,7 @@ Allows the user to hold down the mouse button to display the pictures continuous
 
 #### Objectos suportados
 
-[Botão imagem](pictureButton_overview.md)
+[Picture Button](pictureButton_overview.md)
 
 ---
 
@@ -57,13 +57,13 @@ Enables cycling through the contents of the picture button at the specified spee
 
 #### Gramática JSON
 
-| Nome       | Tipo de dados | Valores possíveis |
-| ---------- | ------------- | ----------------- |
-| frameDelay | integer       | mínimo: 0         |
+| Nome       | Tipo de dados | Valores possíveis         |
+| ---------- | ------------- | ------------------------- |
+| frameDelay | integer       | mínimo: 0 |
 
 #### Objectos suportados
 
-[Botão imagem](pictureButton_overview.md)
+[Picture Button](pictureButton_overview.md)
 
 ---
 
@@ -79,7 +79,7 @@ Modifies the contents of the picture button when the mouse cursor passes over it
 
 #### Objectos suportados
 
-[Botão imagem](pictureButton_overview.md)
+[Picture Button](pictureButton_overview.md)
 
 ---
 
@@ -90,9 +90,9 @@ Enables setting the last thumbnail as the one to display when the button is disa
 #### Gramática JSON
 
 | Nome                   | Tipo de dados | Valores possíveis |
-|:---------------------- | ------------- | ----------------- |
+| :--------------------- | ------------- | ----------------- |
 | useLastFrameAsDisabled | boolean       | true, false       |
 
 #### Objectos suportados
 
-[Botão imagem](pictureButton_overview.md)
+[Picture Button](pictureButton_overview.md)
