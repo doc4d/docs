@@ -7,7 +7,7 @@ title: Build application overview
 
 O construtor de aplicações permite-lhe:
 
-* Gerar um banco de dados compilado, sem código interpretado
+* Build a compiled structure or component, without interpreted code,
 * Construir uma aplicação autônoma, de duplo clique, *i.e.*, fundida com 4D Volume Desktop, o motor de banco de dados 4D,
 * Gerar aplicações diferentes a partir do mesmo banco de dados compilado mediante um projeto XML,
 * Criar aplicações cliente-servidor homogêneas,
@@ -20,7 +20,7 @@ O construtor de aplicações permite-lhe:
 
 A cria de um pacote de projetos pode ser efetuada utilizando:
 
-* o comando [BUILD APPLICATION](https://doc.4d.com/4Dv17R6/4D/17-R6/BUILD-APPLICATION.301-4311300.en.html),
+* either the [`BUILD APPLICATION`](https://doc.4d.com/4dv20/help/command/en/page871.html) command,
 * or the [Build Application window](#application-builder).
 
 :::tip
@@ -98,7 +98,7 @@ Quando se marca esta opção, todas as pastas relacionadas com o banco de dados 
 
 Constrói um componente compilado a partir da estrutura.
 
-Um componente é um projeto padrão 4D onde foram desenvolvidas funcionalidades específicas. A component is a standard 4D project in which specific functionalities have been developed.
+A [component](../Extensions/develop-components.md) is a standard 4D project in which specific functionalities have been developed. Once the component has been configured and [installed in another 4D project](../Project/components.md) (the host application project), its functionalities are accessible from the host project.
 
 Se tiver nomeado sua aplicação, *MeuComponente*, 4D criará uma pasta Components que contém a pasta *MeuComponente.4dbase*:
 
@@ -106,9 +106,10 @@ Se tiver nomeado sua aplicação, *MeuComponente*, 4D criará uma pasta Componen
 
 A pasta *MyComponent.4dbase* contém:
 
-* ficheiro *MyComponent.4DZ*
-
+* *MyComponent.4DZ* file
 * Uma pasta *Resources* - quaisquer Recursos associados são automaticamente copiados para esta pasta. Quaisquer outros componentes e/ou pastas de plug-ins não são copiados (um componente não pode utilizar plug-ins ou outros componentes).
+
+The *MyComponent.4dbase* folder is the [package folder of the compiled component](../Project/components.md).
 
 ## Página Aplicação
 
@@ -129,9 +130,9 @@ No Windows, esta funcionalidade cria um ficheiro executável (.exe). Em macOS, t
 
 O princípio consiste em fundir um ficheiro de estrutura compilado com 4D Volume Desktop. A funcionalidade fornecida pelo ficheiro 4D Volume Desktop está ligada à oferta do produto a que se subscreveu. The functionality provided by the 4D Volume Desktop file is linked with the product offer to which you have subscribed.
 
-Você pode definir um arquivo de dados padrão ou permitir que os usuários criem e usem seu próprio arquivo de dados (consulte o gerenciamento [de arquivos de dados na seção de aplicativos finais](https://doc.4d.com/4Dv17R6/4D/17-R6/Data-file-management-in-final-applications.300-4354729.en.html)).
+You can define a default data file or allow users to [create and use their own data file](#management-of-data-files).
 
-É possível automatizar a atualização de aplicativos de usuário único mesclados através de uma sequência de comandos de idioma (veja [Atualização automática de aplicativos de servidor ou de usuário único](https://doc.4d.com/4Dv17R6/4D/17-R6/Automatic-updating-of-server-or-single-user-applications.300-4354721.en.html).
+It is possible to [automate the update of merged single-user applications](#automatic-updating-of-server-or-single-user-applications) by means of a sequence of language commands.
 
 #### Localização do 4D Volume Desktop
 
@@ -448,7 +449,7 @@ Personalizar o nome da pasta de cache no lado do servidor é útil quando você 
 
 ## Página Plugins e componentes
 
-Nesta aba, você define cada [**plug-in**](Concepts/plug-ins.md), [**componente**](Concepts/components.md), e [**módulo**](#deselecting-modules) que você usará no seu aplicativo autônomo ou cliente/servidor.
+On this tab, you set each [**plug-in**](Concepts/plug-ins.md), [**component**](../Project/components.md), and [**module**](#deselecting-modules) that you will use in your stand-alone or client/server application.
 
 A página lista os elementos carregados pela aplicação 4D atual:
 
