@@ -874,7 +874,7 @@ Como padrão, uma avaliação não-diacrítica é realizada. Se quiser que a ava
 | startFrom  | Integer      | -> | Índice para início do teste em                                        |
 | formula    | 4D. Function | -> | Objecto fórmula                                                       |
 | methodName | Text         | -> | Nome da função a qual se chama para processar os elementos da coleção |
-| param      | Mixed        | -> | *methodName* recebe os parâmetros abaixo:                             |
+| param      | any          | -> | *methodName* recebe os parâmetros abaixo:                             |
 | Resultados | Parâmetros   | <- | True se todos os elementos passarem o teste com sucesso               |
 <!-- END REF -->
 
@@ -1652,11 +1652,11 @@ Opcionalmente pode passar o índice da coleção para a qual iniciar a pesquisa 
 
 
 <!-- REF #collection.indices().Params -->
-| Parâmetro   | Tipo       |    | Descrição                                                         |
-| ----------- | ---------- |:--:| ----------------------------------------------------------------- |
-| queryString | Text       | -> | Critérios de pesquisa                                             |
-| value       | any        | -> | Valores a comparar quando usar placeholders (valores temporários) |
-| Resultados  | Collection | <- | Índices elemento correspondendo a queryString na coleção          |
+| Parâmetro   | Tipo |    | Descrição             |
+| ----------- | ---- |:--:| --------------------- |
+| queryString | Text | -> | Critérios de pesquisa |
+
+|value|any|->|Value(s) to compare when using placeholder(s)| |Result|Collection |<-|Element index(es) matching queryString in the collection|
 <!-- END REF -->
 
 
@@ -2280,7 +2280,9 @@ Também pode passar um parâmetro de critérios para definir como devem ordenar-
 ```4d
 {
     "propertyPath": string,
+
     "descending": boolean
+
 }
 ```
 
@@ -2546,7 +2548,7 @@ Quando for aplicado a uma coleção vazia, `.pop()` devolve ***undefined***.
 <!-- REF #collection.push().Params -->
 | Parâmetro  | Tipo       |    | Descrição                                        |
 | ---------- | ---------- |:--:| ------------------------------------------------ |
-| element    | Mixed      | -> | Elementos a adicionar à coleção                  |
+| element    | any        | -> | Elementos a adicionar à coleção                  |
 | Resultados | Collection | <- | Collection original contendo elementos inseridos |
 <!-- END REF -->
 
@@ -2608,7 +2610,7 @@ Você deseja ordenar a coleção resultante:
 | Parâmetro     | Tipo       |    | Descrição                                                         |
 | ------------- | ---------- |:--:| ----------------------------------------------------------------- |
 | queryString   | Text       | -> | Critérios de pesquisa                                             |
-| value         | Mixed      | -> | Valores a comparar quando usar placeholders (valores temporários) |
+| value         | any        | -> | Valores a comparar quando usar placeholders (valores temporários) |
 | querySettings | Object     | -> | Opções de pesquisa: parâmetros, atributos                         |
 | Resultados    | Collection | <- | Elementos que correspondem com queryString na coleção             |
 <!-- END REF -->
@@ -2688,6 +2690,7 @@ Este exemplo devolve as pessoas contratadas há mais de 90 dias:
 
 
 #### Exemplo 3
+
 
 Mais exemplos de pesquisas podem ser encontrados na página `dataClass.query()`.
 
@@ -3170,7 +3173,7 @@ A colecção devolvida contém o elemento especificado por *startFrom* e todos o
 | startFrom  | Integer      | -> | Índice para início do teste em                                        |
 | formula    | 4D. Function | -> | Objecto fórmula                                                       |
 | methodName | Text         | -> | Nome da função a qual se chama para processar os elementos da coleção |
-| param      | Mixed        | -> | Parâmetro(s) a transmitir                                             |
+| param      | any          | -> | Parâmetro(s) a transmitir                                             |
 | Resultados | Parâmetros   | <- | True se todos os elementos passarem o teste com sucesso               |
 <!-- END REF -->
 
