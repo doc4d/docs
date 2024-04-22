@@ -3,23 +3,22 @@ id: forms
 title: Forms
 ---
 
-
 フォームはデスクトップアプリケーションにおいて、データの入力・修正・印刷をおこなうためのインターフェースとなります。 フォームを使用することで、ユーザーはデータベースのデータをやり取りし、レポートを印刷します。 フォームを使用して、カスタムダイアログボックスやパレット、そのほかのカスタムウィンドウを作成します。
 
 ![](../assets/en/FormObjects/form1.png)
 
 また、以下の機能により、フォームは他のフォームを含むことができます:
 
-- [サブフォームオブジェクト](FormObjects/subform_overview.md)
-- [継承フォーム](properties_FormProperties.md#継承フォーム)
+- [subform objects](FormObjects/subform_overview.md)
+- [inherited forms](properties_FormProperties.md#inherited-forms)
 
 ## フォームを作成する
 
 4Dフォームの追加や変更は、以下の要素を使っておこないます:
 
-- **4D Developer インターフェース:** **ファイル** メニューまたは **エクスプローラ** ウィンドウから新規フォームを作成できます。
-- **フォームエディター**: フォームの編集は **[フォームエディター](FormEditor/formEditor.md)** を使っておこないます。
-- **JSON コード:** JSON を使ってフォームを作成・設計し、フォーム ファイルを [適切な場所](Project/architecture.md#sources-フォルダー) に保存します。 例:
+- **4D Developer interface:** Create new forms from the **File** menu or the **Explorer** window.
+- **Form Editor**: Modify your forms using the **[Form Editor](FormEditor/formEditor.md)**.
+- **JSON code:** Create and design your forms using JSON and save the form files at the [appropriate location](Project/architecture.md#sources-folder). 例:
 
 ```
 {
@@ -71,9 +70,9 @@ title: Forms
 
 2つのカテゴリーのフォームが存在します:
 
-- **プロジェクトフォーム** - テーブルに属さない独立したフォームです。 このタイプのフォームは、おもにインターフェースダイアログボックスやコンポーネントを作成するのに使用されます。 プロジェクトフォームを使用してより簡単に OS標準に準拠するインターフェースを作成できます。
+- **Project forms** - Independent forms that are not attached to any table. このタイプのフォームは、おもにインターフェースダイアログボックスやコンポーネントを作成するのに使用されます。 プロジェクトフォームを使用してより簡単に OS標準に準拠するインターフェースを作成できます。
 
-- **テーブルフォーム** - 特定のテーブルに属していて、それによりデータベースに基づくアプリケーションの開発に便利な自動機能の恩恵を得ることができます。 通常、テーブルには入力フォームと出力フォームが別々に存在します。
+- **Table forms** - Attached to specific tables and thus benefit from automatic functions useful for developing applications based on databases. 通常、テーブルには入力フォームと出力フォームが別々に存在します。
 
 フォームを作成する際にフォームカテゴリーを選択しますが、後から変更することも可能です。
 
@@ -88,7 +87,7 @@ title: Forms
 
 - もっとも重要な情報を最初のページに配置し、他の情報を後ろのページに配置する。
 - トピックごとに、専用ページにまとめる。
-- [入力順](../FormEditor/formEditor.html#データの入力順)を設定して、データ入力中のスクロール動作を少なくしたり、または不要にする。
+- Reduce or eliminate scrolling during data entry by setting the [entry order](../FormEditor/formEditor.html#data-entry-order).
 - フォーム要素の周りの空間を広げ、洗練された画面をデザインする。
 
 複数ページは入力フォームとして使用する場合にのみ役立ちます。 印刷出力には向きません。 マルチページフォームを印刷すると、最初のページしか印刷されません。
@@ -99,7 +98,7 @@ title: Forms
 
 ## 継承フォーム
 
-4D では "継承フォーム" を使用することができます。これはつまり、*フォームA* の全オブジェクトが *フォームB* で使用可能であるということです。 この場合、*フォームB* は *フォームA* からオブジェクトを "継承" します。
+4D forms can use and be used as "inherited forms," meaning that all of the objects from _Form A_ can be used in _Form B_. In this case, _Form B_ "inherits" the objects from _Form A_.
 
 継承フォームへの参照は常にアクティブです。そのため、継承フォームの要素が変更されると (たとえば、ボタンスタイル)、この要素を使用する全フォームが自動的に変更されます。
 
@@ -112,19 +111,20 @@ title: Forms
 3. 開かれたフォームの 0ページ
 4. 開かれたフォームのカレントページ
 
-この順序により、フォームにおけるオブジェクトの [入力順](../FormEditor/formEditor.html#データの入力順) が決まります。
+This order determines the default [entry order](../FormEditor/formEditor.html#data-entry-order) of objects in the form.
 
 > 継承フォームの 0ページと 1ページだけが他のフォームに表示可能です。
 
 継承フォームとして使用される場合、継承フォームのプロパティとフォームメソッドは使用されません。 他方、継承フォームに含まれるオブジェクトのメソッドは呼び出されます。
 
-継承フォームを設定するには、他のフォームを継承するフォームにおいて、[継承されたフォーム名](properties_FormProperties.md#継承されたフォーム名) および [継承されたフォームテーブル](properties_FormProperties.md#継承されたフォームテーブル) (テーブルフォームの場合) プロパティを設定しなければなりません。
+To define an inherited form, the [Inherited Form Name](properties_FormProperties.md#inherited-form-name) and [Inherited Form Table](properties_FormProperties.md#inherited-form-table) (for table form) properties must be defined in the form that will inherit something from another form.
 
-プロジェクトフォームを継承するには [継承されたフォームテーブル](properties_FormProperties.md#継承されたフォームテーブル) プロパティで `\<なし>` を選択します (JSON の場合は " ")。
+A form can inherit from a project form, by setting the [Inherited Form Table](properties_FormProperties.md#inherited-form-table) property to `\<None>` in the Property List (or " " in JSON).
 
-フォームの継承をやめるには、プロパティリストの [継承されたフォーム名](properties_FormProperties.md#継承されたフォーム名) プロパティで `\<なし>` オプション (JSONの場合は " ") を選択します。
+To stop inheriting a form, select `\<None>` in the Property List (or " " in JSON) for the [Inherited Form Name](properties_FormProperties.md#inherited-form-name) property.
+
 > 任意のフォームで継承フォームを設定し、そのフォームを第3のフォームの継承フォームとして使用することができます。 再帰的な方法で各オブジェクトが連結されます。 4Dは、再帰的ループを見つけ出し (たとえば、[テーブル1]フォーム1 が [テーブル1]フォーム1 を継承フォームとして定義している、つまり自分自身を継承している場合)、フォームの連鎖を中断します。
 
 ## プロパティ一覧
 
-[フォームタイプ](properties_FormProperties.md#フォームタイプ) - [フォーム名](properties_FormProperties.md#フォーム名) - [継承されたフォームテーブル](properties_FormProperties.md#継承されたフォームテーブル) - [継承されたフォーム名](properties_FormProperties.md#継承されたフォーム名) - [ウィンドウタイトル](properties_FormProperties.md#ウィンドウタイトル) - [配置を記憶](properties_FormProperties.md#配置を記憶) - [サブフォームとして公開](properties_FormProperties.md#サブフォームとして公開) - [固定幅](properties_WindowSize.md#固定幅) - [最小幅](properties_WindowSize.md#最大幅-最小幅) - [最大幅](properties_WindowSize.md#最大幅-最小幅) - [固定高さ](properties_WindowSize.md#固定高さ) - [最小高さ](properties_WindowSize.md#最大高さ-最小高さ) - [最大高さ](properties_WindowSize.md#最大高さ-最小高さ) - [印刷設定](properties_Print.md#設定) - [連結メニューバー](properties_Menu.md#連結メニューバー) - [フォームヘッダー](properties_Markers.md#フォームヘッダー) - [フォーム詳細](properties_Markers.md#フォーム詳細) - [フォームブレーク](properties_Markers.md#フォームブレーク) - [フォームフッター](properties_Markers.md#フォームフッター) - [メソッド](properties_Action.md#メソッド) - [Pages](properties_FormProperties.md#pages)
+[Associated Menu Bar](properties_Menu.md#associated-menu-bar) - [Fixed Height](properties_WindowSize.md#fixed-height) - [Fixed Width](properties_WindowSize.md#fixed-width) - [Form Break](properties_Markers.md#form-break) - [Form Detail](properties_Markers.md#form-detail) - [Form Footer](properties_Markers.md#form-footer) - [Form Header](properties_Markers.md#form-header) - [Form Name](properties_FormProperties.md#form-name) - [Form Type](properties_FormProperties.md#form-type) - [Inherited Form Name](properties_FormProperties.md#inherited-form-name) - [Inherited Form Table](properties_FormProperties.md#inherited-form-table) - [Maximum Height](properties_WindowSize.md#maximum-height-minimum-height) - [Maximum Width](properties_WindowSize.md#maximum-width-minimum-width) - [Method](properties_Action.md#method) - [Minimum Height](properties_WindowSize.md#maximum-height-minimum-height) - [Minimum Width](properties_WindowSize.md#maximum-width-minimum-width) - [Pages](properties_FormProperties.md#pages) - [Print Settings](properties_Print.md#settings) - [Published as Subform](properties_FormProperties.md#published-as-subform) - [Save Geometry](properties_FormProperties.md#save-geometry) - [Window Title](properties_FormProperties.md#window-title)
