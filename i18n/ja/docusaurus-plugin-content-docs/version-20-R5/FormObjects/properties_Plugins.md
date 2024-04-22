@@ -5,7 +5,7 @@ title: プラグイン
 
 ## 詳細設定
 
-プラグインの作成者が詳細オプションを提供していると、プロパティリストにて **詳細設定** ボタンが使用可能になることがあります。 この場合ボタンをクリックすると、プラグインの制作元によるカスタムダイアログにてそれらのオプションを設定することができます。
+If advanced options are provided by the author of the plug-in, an **Advanced Properties** button may be enabled in the Property list. この場合ボタンをクリックすると、プラグインの制作元によるカスタムダイアログにてそれらのオプションを設定することができます。
 
 この詳細設定オプションはプラグインの制作元が制御するため、詳細設定オプションに関する情報はそのプラグインの製作者から提供されます。
 
@@ -17,4 +17,4 @@ title: プラグイン
 
 #### 対象オブジェクト
 
-[プラグインエリア](pluginArea_overview.md)
+[Plug-in Area](pluginArea_overview.md)
