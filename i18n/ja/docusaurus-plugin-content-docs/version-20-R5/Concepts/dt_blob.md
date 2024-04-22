@@ -7,34 +7,35 @@ BLOB (Binary Large OBject) フィールド・変数・式とは、連続した�
 
 BLOB は全体がメモリにロードされます。 BLOB変数はメモリ内にだけ保持され、存在します。 BLOBフィールドは、レコードの他フィールドと同様に、ディスクからメモリにロードされます。
 
-大量のデータを保持できる他のフィールドタイプ (ピクチャーなど) と同様に、レコードを更新しても BLOBフィールドはメモリに複製されません。 したがって、`Old` および `Modified` コマンドを BLOBフィールドに適用しても、返される結果は意味を持ちません。
+大量のデータを保持できる他のフィールドタイプ (ピクチャーなど) と同様に、レコードを更新しても BLOBフィールドはメモリに複製されません。 Consequently, the result returned by the `Old` and `Modified` commands is not significant when applied to a Blob field.
 
 ## BLOB の種類
 
 4Dランゲージでは、BLOB を扱う方法が 2つあります:
 
-- **スカラー値として**: BLOB は BLOB変数またはフィールドに格納され、変更することができます。
-- **オブジェクト (`4D.Blob`)** として: `4D.Blob` は BLOBオブジェクトです。 オリジナルの BLOB を変更することなく、BLOBそのもの、またはその一部を `4D.Blob` に格納できます。 この方法を [ボクシング](https://ja.wikipedia.org/wiki/%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9%E5%8C%96) と呼びます。 `4D.Blob` をインスタンス化する方法については、[Blobクラス](../API/BlobClass.md) を参照ください。
+- **as a scalar value**: a blob can be stored in a Blob variable or field and altered.
+- **as an object (`4D.Blob`)**: a `4D.Blob` is a blob object. You can encapsulate a blob or part of it in a `4D.Blob` without altering the original blob. This method is called [boxing](https://en.wikipedia.org/wiki/Object_type_\(object-oriented_programming\)#Boxing). For more info on how to instantiate a `4D.Blob`, see [Blob Class](../API/BlobClass.md).
 
 各 BLOBタイプには、それぞれ利点があります。 次の表を参考にして、どちらがニーズに合うかを確認してください:
 
 |                     | Blob | 4D.Blob |
-| ------------------- |:----:|:-------:|
-| 変更可能                |  ◯   |    ×    |
-| オブジェクトやコレクション内で共有可能 |  ×   |    ◯    |
-| 参照渡し\*            |  ×   |    ◯    |
-| バイトにアクセスする際のパフォーマンス |  +   |    -    |
-| 最大サイズ               | 2GB  |   メモリ   |
+| ------------------- | :--: | :---------------------: |
+| 変更可能                |   ◯  |            ×            |
+| オブジェクトやコレクション内で共有可能 |   ×  |            ◯            |
+| 参照渡し\*              |   ×  |            ◯            |
+| バイトにアクセスする際のパフォーマンス |   -  |            *            |
+| 最大サイズ               |  2GB |           メモリ           |
 
-参照で渡される BLOBオブジェクトとは異なり、スカラーBLOB はメソッドに渡されるとメモリ内で複製されることに注意してください。 メソッドを使用する場合は、参照によって渡される BLOBオブジェクト (`4D.Blob`) を使用する方が効率的です。
+参照で渡される BLOBオブジェクトとは異なり、スカラーBLOB はメソッドに渡されるとメモリ内で複製されることに注意してください。 When working with methods, using blob objects (`4D.Blob`) is more efficient, as they are passed by reference.
 
 > デフォルトで、4D はスカラーBLOB の最大サイズを 2GB に設定していますが、OSや空き容量によっては、この制限サイズが小さくなる場合があります。
 
 BLOB に演算子を適用することはできません。
 
-## 変数がスカラーBLOB と `4D.Blob` のどちらを格納しているかの確認
+## Checking if a variable holds a scalar blob or a `4D.Blob`
 
-値が BLOB型またはオブジェクト型であるかどうかを確認するには、[Value type](https://doc.4d.com/4dv20/help/command/ja/page1509.html) コマンドを使用します。 特定のオブジェクトが BLOBオブジェクト (`4D.Blob`) であることを確認するには、[OB instance of](https://doc.4d.com/4dv20/help/command/ja/page1731.html) を使用します。
+Use the [Value type](https://doc.4d.com/4dv20/help/command/en/page1509.html) command to determine if a value is of type Blob or Object.
+To check that an object is a blob object (`4D.Blob`), use [OB instance of](https://doc.4d.com/4dv20/help/command/en/page1731.html):
 
 ```4d
 var $myBlob: Blob
@@ -51,7 +52,7 @@ $is4DBlob:= OB Instance of($myblobObject; 4D.Blob)  // true
 
 ### BLOB および BLOBオブジェクトの 4Dコマンドへの受け渡し
 
-BLOB を引数として受け取る 4Dコマンドには、スカラーBLOB または `4D.Blob` を渡すことができます:
+You can pass a scalar blob or a `4D.Blob` to any 4D command that takes a blob as a parameter:
 
 ```4d
 var $myBlob: 4D.Blob
@@ -59,29 +60,29 @@ CONVERT FROM TEXT("Hello, World!"; "UTF-8"; $myBlob)
 $myText:= BLOB to text( $myBlob ; UTF8 text without length )
 ```
 
-4Dコマンドの中には、元の BLOB を変更するものがあり、これらは `4D.Blob` タイプをサポートしていません:
+Some 4D commands alter the original blob, and thus do not support the `4D.Blob` type:
 
-- [DELETE FROM BLOB](https://doc.4d.com/4dv19/help/command/ja/page560.html)
-- [INSERT IN BLOB](https://doc.4d.com/4dv19/help/command/ja/page559.html)
-- [INTEGER TO BLOB](https://doc.4d.com/4dv19/help/command/ja/page548.html)
-- [LONGINT TO BLOB](https://doc.4d.com/4dv19/help/command/ja/page550.html)
-- [REAL TO BLOB](https://doc.4d.com/4dv19/help/command/ja/page552.html)
-- [SET BLOB SIZE](https://doc.4d.com/4dv19/help/command/ja/page606.html)
-- [TEXT TO BLOB](https://doc.4d.com/4dv19/help/command/ja/page554.html)
-- [VARIABLE TO BLOB](https://doc.4d.com/4dv19/help/command/ja/page532.html)
-- [LIST TO BLOB](https://doc.4d.com/4dv19/help/command/ja/page556.html)
-- [SOAP DECLARATION](https://doc.4d.com/4dv19/help/command/ja/page782.html)
-- [WEB SERVICE SET PARAMETER](https://doc.4d.com/4dv19/help/command/ja/page777.html)
+- [DELETE FROM BLOB](https://doc.4d.com/4dv19/help/command/en/page560.html)
+- [INSERT IN BLOB](https://doc.4d.com/4dv19/help/command/en/page559.html)
+- [INTEGER TO BLOB](https://doc.4d.com/4dv19/help/command/en/page548.html)
+- [LONGINT TO BLOB](https://doc.4d.com/4dv19/help/command/en/page550.html)
+- [REAL TO BLOB](https://doc.4d.com/4dv19/help/command/en/page552.html)
+- [SET BLOB SIZE](https://doc.4d.com/4dv19/help/command/en/page606.html)
+- [TEXT TO BLOB](https://doc.4d.com/4dv19/help/command/en/page554.html)
+- [VARIABLE TO BLOB](https://doc.4d.com/4dv19/help/command/en/page532.html)
+- [LIST TO BLOB](https://doc.4d.com/4dv19/help/command/en/page556.html)
+- [SOAP DECLARATION](https://doc.4d.com/4dv19/help/command/en/page782.html)
+- [WEB SERVICE SET PARAMETER](https://doc.4d.com/4dv19/help/command/en/page777.html)
 
 ### BLOB および BLOBオブジェクトのメソッドへの受け渡し
 
-BLOB や BLOBオブジェクト (`4D.Blob`) は、メソッドに渡すことができます。 参照で渡される BLOBオブジェクトとは異なり、スカラーBLOB はメソッドに渡されるとメモリ内で複製されることに注意してください。
+You can pass blobs and blob objects (`4D.Blob`) to methods. 参照で渡される BLOBオブジェクトとは異なり、スカラーBLOB はメソッドに渡されるとメモリ内で複製されることに注意してください。
 
 ### ポインターを使ったスカラーBLOB の参照渡し
 
 スカラーBLOB をメモリ上に複製することなくメソッドに渡すには、ポインターを使用します。 その場合は BLOB変数へのポインターを定義し、そのポインターを引数として渡します。
 
-**例: **
+**Examples:**
 
 ```4d
 // BLOB型の変数を定義します
@@ -102,17 +103,17 @@ var $myBlobVar: Blob
 ```
 
 ```4d
-// BLOB のポインターをメソッドに渡します
+// Pass a pointer to the blob as a parameter to your own method,
 COMPUTE BLOB(->$myBlobVar)
 ```
 
-**プラグイン開発にあたっての注意:** BLOB 引数は “&O” (数字の0ではなく、アルファベットの"O") として宣言します。
+**Note for Plug-in developers:** A BLOB parameter is declared as “&O” (the letter “O”, not the digit “0”).
 
 ## BLOB変数の代入
 
 BLOB変数は相互に代入することができます:
 
-**例: **
+**Example:**
 
 ```4d
 // BLOB型の変数を二つ宣言します
@@ -143,7 +144,8 @@ $myBlob:= $myObject.blob
 $type:=
 ```
 
-> `4D.Blob` をスカラーBLOB に変換する際に、`4D.Blob` のサイズがスカラーBLOB の最大サイズを超える場合、結果のスカラーBLOB は空になります。 たとえば、スカラーBLOB の最大サイズが 2GB の場合、2.5GB の `4D.Blob` をスカラーBLOB に変換すると、空の BLOB が得られます。
+> When converting a `4D.Blob` to a scalar blob, if the size of the `4D.Blob` exceeds the maximum size for scalar blobs, the resulting scalar blob is empty.
+> For example, when the maximum size for scalar blobs is 2GB, if you convert a `4D.Blob` of 2.5GB to a scalar blob, you obtain an empty blob.
 
 ## スカラーBLOB の変更
 
@@ -158,7 +160,7 @@ SET BLOB SIZE ($myBlob ; 16*1024)
 
 #### スカラーBLOB のバイトへのアクセス
 
-中カッコ `{}` を使用し、BLOB の各バイトを個別にアクセスすることができます。 BLOB 内では、各バイトに 0 から N-1 の番号が割り当てられています。 N は BLOB のサイズです:
+You can access individual bytes of a scalar blob using curly brackets `{}`. BLOB 内では、各バイトに 0 から N-1 の番号が割り当てられています。 N は BLOB のサイズです:
 
 ```4d
   // BLOB型変数を定義します
@@ -173,9 +175,9 @@ SET BLOB SIZE ($myBlob ; 16*1024)
 
 BLOB の各バイトはすべて個別にアドレス指定できるため、BLOB変数またはフィールドには何でも格納できます。
 
-#### `4D.Blob` のバイトへのアクセス
+#### Accessing a `4D.Blob`'s bytes
 
-大カッコ `[]` を使用し、`4D.Blob` の各バイトを個別にアクセスすることができます。
+Use square brackets `[]` to directly access a specific byte in a `4D.Blob`
 
 ```4d
 var $myBlob: 4D.Blob
@@ -184,4 +186,4 @@ $myText:= BLOB to text ( $myBlob ; UTF8 text without length )
 $byte:=$myBlob[5]
 ```
 
-`4D.Blob` は変更できないため、このシンタックスで `4D.Blob` のバイトを読むことはできますが、変更することはできません。
+Since a `4D.Blob` cannot be altered, you can read the bytes of a `4D.Blob` using this syntax, but not modify them.
