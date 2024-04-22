@@ -7,12 +7,8 @@ title: On Load Record
 | --- | ----- | --------------------------------- |
 | 40  | フォーム  | リスト更新中にレコードがロードされ、フィールドが編集モードに入った |
 
-
 ## 説明
 
-`On Load Record` イベントは、**出力フォーム** のコンテキストでのみ使用できます。 このイベントはリスト更新中に、レコードがハイライトされ、フィールドが編集モードになったときに生成されます。
+The `On Load Record` event can only be used in the context of an **output form**. このイベントはリスト更新中に、レコードがハイライトされ、フィールドが編集モードになったときに生成されます。
 
-> このイベントは、プロジェクトフォームでは選択できず、**テーブルフォーム** でのみ利用できます。
-
-
-
+> This event cannot be selected for project forms, it is only available with **table forms**.
