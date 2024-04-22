@@ -63,9 +63,11 @@ title: プロジェクトのアーキテクチャー
 | tips.json               | 定義されたヘルプTips                                                                                                                                                                                                                                                                                                                                                    | JSON |
 | lists.json              | 定義されたリスト                                                                                                                                                                                                                                                                                                                                                        | JSON |
 | filters.json            | 定義されたフィルター                                                                                                                                                                                                                                                                                                                                                      | JSON |
+| dependencies.json       | Names of [components to load](components.md) in the project                                                                                                                                                                                                                                                                                                     | JSON |
 | styleSheets.css         | CSS スタイルシート                                                                                                                                                                                                                                                                                                                                                     | CSS  |
 | styleSheets_mac.css     | Mac用 CSS スタイルシート (変換されたバイナリデータベースより)                                                                                                                                                                                                                                                                                                                            | CSS  |
 | styleSheets_windows.css | Windows用 CSS スタイルシート (変換されたバイナリデータベースより)                                                                                                                                                                                                                                                                                                                        | CSS  |
+
 
 
 #### `DatabaseMethods`
@@ -221,9 +223,13 @@ Settings フォルダーには、アプリケーションの管理に使用さ�
 
 ## `Components`
 
-アプリケーションプロジェクトが利用するコンポーネントを格納するフォルダーです。 このフォルダーは、Project フォルダーと同じ階層に置きます。
+Legacy folder containing components (must be stored at the same level as the Project folder).
 
-> アプリケーションプロジェクトはコンポーネントとしても利用することができます:<br/> - 開発においては、ホストプロジェクトの Components フォルダーに .4dproject ファイルのエイリアスを置きます。 - 運用時においては、[コンポーネントをビルド](Desktop/building.md#コンポーネントをビルド) し、生成された .4dz ファイルを .4dbase フォルダーに格納し、それをホストアプリケーションの Components フォルダーに置きます。
+:::info
+
+It is now recommended to [use the **dependencies.json** and (optionnally) **environment4d.json** files](components.md) to declare your components instead of the Components folder.
+
+:::
 
 
 ## `Plugins`
