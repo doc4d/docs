@@ -10,7 +10,7 @@ title: リリースノート
 
 #### ハイライト
 
-- New [Package manager](../Project/components.md) to handle components through a `dependencies.json` file.
+- 新しい [パッケージ マネージャー](../Project/components.md) は、 `dependencies.json` ファイルを介してコンポーネントを管理します。
 - [`Try...Catch...End try`](../Concepts/error-handling.md#trycatchend-try) エラー処理構文のサポート。
 - QUICネットワークレイヤーは [ブロードキャスト](../Desktop/clientServer.md#リモートプロジェクトを開く)、[SSO](https://doc.4d.com/4Dv20R5/4D/20-R5/Single-Sign-On-SSO-on-Windows.300-6932709.ja.html)、および [IPv6](https://doc.4d.com/4Dv20R5/4D/20-R5/IP-Settings.300-6932707.ja.html) に対応しました。
 - [制限付エンティティセレクション](../ORDA/entities.md#制限付エンティティセレクション) をサポート。
@@ -25,7 +25,7 @@ title: リリースノート
 #### 動作の変更
 
 - *4D Internet Commands* および *4D for OCI* プラグインは、4Dインストーラーに含まれなくなりました。 これらのプラグインを入手するには、[**4D製品ダウンロードポータル**](https://product-download.4d.com/) に接続する必要があります。
-- Changes made in the Structure editor regarding graphical appearance of tables and fields (color, position, order...) are now saved in a separate file named `catalog_editor.json` stored in the project's [`Sources`](../Project/architecture.md#sources) folder.
+- ストラクチャーエディターでテーブルやフィールドのグラフィカルな表示 (色、位置、順序など) に加えた変更は、`catalog_editor.json` という個別ファイルに保存されるようになりました。このファイルはプロジェクトの [`Sources`フォルダー](../Project/architecture.md#sources) に保存されます。
 
 
 ## 4D 20 R4
