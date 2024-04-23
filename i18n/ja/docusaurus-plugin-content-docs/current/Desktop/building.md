@@ -7,7 +7,7 @@ title: アプリケーションビルド
 
 アプリケーションビルダーでは以下のことを行えます:
 
-* Build a compiled structure or component, without interpreted code,
+* インタープリターコードを含まない、コンパイル済みストラクチャーまたはコンポーネントのビルド
 * ダブルクリックで起動可能なスタンドアロンアプリケーションのビルド (4D のデータベースエンジンである 4D Volume Desktop を組み込んだ 4D アプリケーション)
 * XML形式のプロジェクトファイル定義を用いて、同じコンパイル済みストラクチャーから異なるアプリケーションのビルド
 * クライアント/サーバーアプリケーションのビルド
@@ -20,7 +20,7 @@ title: アプリケーションビルド
 
 プロジェクトパッケージをビルドするには次の方法があります:
 
-* either the [`BUILD APPLICATION`](https://doc.4d.com/4dv20/help/command/en/page871.html) command,
+* [`BUILD APPLICATION`](https://doc.4d.com/4dv20/help/command/ja/page871.html) コマンドを使う
 * [アプリケーションビルド](#application-builder) ダイアログを使う
 
 :::tip
@@ -98,7 +98,7 @@ title: アプリケーションビルド
 
 ストラクチャーからコンパイル済みコンポーネントをビルドします。
 
-A [component](../Extensions/develop-components.md) is a standard 4D project in which specific functionalities have been developed. Once the component has been configured and [installed in another 4D project](../Project/components.md) (the host application project), its functionalities are accessible from the host project.
+[コンポーネント](../Extensions/develop-components.md) は特定の機能を実装した標準の 4D プロジェクトです。 ビルドされたコンポーネントを [他の 4Dプロジェクト (ホストアプリケーションプロジェクト) にインストール](../Project/components.md) すると、ホストプロジェクトはその機能を利用できるようになります。
 
 アプリケーション名を *MyComponent* に指定した場合、4D は *Components* フォルダーを作成し、その中に *MyComponent.4dbase* フォルダーを生成します:
 
@@ -106,10 +106,10 @@ A [component](../Extensions/develop-components.md) is a standard 4D project in w
 
 *MyComponent.4dbase* フォルダーには次のファイルが含まれます:
 
-* *MyComponent.4DZ* file
+* *MyComponent.4DZ* ファイル
 * *Resources* フォルダー: 関連リソースは自動的にこのフォルダーにコピーされます。 コンポーネントは、他のコンポーネントやプラグインを使用できないため、その他の "Components" や "Plugins" フォルダーはコピーされません。
 
-The *MyComponent.4dbase* folder is the [package folder of the compiled component](../Project/components.md).
+*MyComponent.4dbase*フォルダーは、[コンパイルされたコンポーネントのパッケージフォルダー](../Project/components.md) です。
 
 ## アプリケーションページ
 
@@ -130,9 +130,9 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 
 この処理はコンパイル済みストラクチャーファイルと4D Volume Desktopを統合します。 4D Volume Desktop が提供する機能はライセンスページで指定するライセンス情報に基づきます。 この点についての詳細な情報は、4D の [オンラインストア](https://store.4d.com/jp/) と、セールスドキュメンテーションを参照してください。
 
-You can define a default data file or allow users to [create and use their own data file](#management-of-data-files).
+デフォルトのデータファイルを定義することも、ユーザーに [独自のデータファイルを作成して使用](#データファイルの管理) してもらうこともできます。
 
-It is possible to [automate the update of merged single-user applications](#automatic-updating-of-server-or-single-user-applications) by means of a sequence of language commands.
+いくつかのランゲージコマンドを特定の順番で使用することによって、[シングルユーザー向け組み込みアプリケーションのアップデートを自動化](#サーバーまたはシングルユーザーアプリケーションの自動更新) することが可能です。
 
 #### 4D Volume Desktopの場所
 
@@ -449,7 +449,7 @@ Windows用サーバーアプリケーションのビルドに使用される App
 
 ## プラグイン＆コンポーネントページ
 
-On this tab, you set each [**plug-in**](Concepts/plug-ins.md), [**component**](../Project/components.md), and [**module**](#deselecting-modules) that you will use in your stand-alone or client/server application.
+このページでは、シングルユーザーまたはクライアント/サーバーアプリケーションに含める [**プラグイン**](Concepts/plug-ins.md) や [**コンポーネント**](../Project/components.md)、[**モジュール**](#モジュールの選択解除) を設定できます。
 
 このページには、現在の 4Dアプリケーションにロードされている要素がリストされます:
 
