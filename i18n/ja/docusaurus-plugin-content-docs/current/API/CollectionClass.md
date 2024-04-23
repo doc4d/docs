@@ -1683,7 +1683,7 @@ $c2:=$c.flatMap($f; $c.sum())
 | ----------- | ---- |:--:| ---- |
 | queryString | Text | -> | 検索条件 |
 
-|value|any|->|Value(s) to compare when using placeholder(s)| |Result|Collection |<-|Element index(es) matching queryString in the collection|
+|value|any|->|プレースホルダー使用時: 比較する値| 戻り値|Collection |<-|Element index(es) matching queryString in the collection|
 <!-- END REF -->
 
 
