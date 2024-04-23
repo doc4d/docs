@@ -4,12 +4,21 @@ title: Notas del lanzamiento
 ---
 
 
+## 4D 20 R6
+
+Read [**What’s new in 4D 20 R6**](https://blog.4d.com/en-whats-new-in-4d-v20-R6/), the blog post that lists all new features and enhancements in 4D 20 R6.
+
+#### Destacados
+
+
+
 ## 4D 20 R5
 
 Read [**What’s new in 4D 20 R5**](https://blog.4d.com/en-whats-new-in-4d-v20-R5/), the blog post that lists all new features and enhancements in 4D 20 R5.
 
 #### Destacados
 
+- New [Package manager](../Project/components.md) to handle components through a `dependencies.json` file.
 - Soporte de estructuras de gestión de errores [`Try...Catch...End try`](../Concepts/error-handling.md#trycatchend-try).
 - QUIC network layer now supports [broadcasting](../Desktop/clientServer.md#opening-a-remote-project), [SSO](https://doc.4d.com/4Dv20R5/4D/20-R5/Single-Sign-On-SSO-on-Windows.300-6932709.en.html), and [IPv6](https://doc.4d.com/4Dv20R5/4D/20-R5/IP-Settings.300-6932707.en.html).
 - Soporte de [selecciones de entidades restringidas](../ORDA/entities.md#restricting-entity-selections).
@@ -24,11 +33,13 @@ Read [**What’s new in 4D 20 R5**](https://blog.4d.com/en-whats-new-in-4d-v20-R
 #### Cambios de comportamiento
 
 - The plug-ins *4D Internet Commands* and *4D for OCI* are no longer included in 4D installers. Para obtener estos plug-ins, debe conectarse al [**portal de descarga de productos 4D**](https://product-download.4d.com/).
+- Changes made in the Structure editor regarding graphical appearance of tables and fields (color, position, order...) are now saved in a separate file named `catalog_editor.json` stored in the project's [`Sources`](../Project/architecture.md#sources) folder.
 
 
 ## 4D 20 R4
 
 Read [**What’s new in 4D 20 R4**](https://blog.4d.com/en-whats-new-in-4d-v20-R4/), the blog post that lists all new features and enhancements in 4D 20 R4.
+
 
 
 #### Destacados
@@ -404,7 +415,7 @@ Si sus aplicaciones 4D utilizan conexiones TLS, se recomienda actualizar a 4D 19
 
 | Librería  | Versión actual | Actualizado en 4D | Comentario                                                                                                                              |
 | --------- | -------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| ICU       | 73.2           | 20.1              | Esta importante actualización obliga a reconstruir automáticamente los índices alfanuméricos, texto y objeto.                           |
+| ICU       | 73.2           | 20                | Esta importante actualización obliga a reconstruir automáticamente los índices alfanuméricos, texto y objeto.                           |
 | CEF       | 121            | 20 R5             | Chromium 6167                                                                                                                           |
 | Hunspell  | 1.7.2          | 20                | Utilizado para la corrección ortográfica en formularios 4D y 4D Write Pro                                                               |
 | PDFWriter | 4.3            | 20                | Dependencia FreeType en 12.2.1                                                                                                          |
@@ -415,5 +426,5 @@ Si sus aplicaciones 4D utilizan conexiones TLS, se recomienda actualizar a 4D 19
 | Zlib      | 1.2.13         | 20                |                                                                                                                                         |
 | webKit    | WKWebView      | 19                |                                                                                                                                         |
 | PHP       | 8.2.4          | 20                |                                                                                                                                         |
-| libldap   | 2.6.4          | 20 R3             |                                                                                                                                         |
+| libldap   | **2.6.7**      | **20 R6**         |                                                                                                                                         |
 | libsasl   | 2.1.28         | 20                |                                                                                                                                         |
