@@ -4,12 +4,21 @@ title: Notas de Lançamento
 ---
 
 
+## 4D 20 R6
+
+Read [**What’s new in 4D 20 R6**](https://blog.4d.com/en-whats-new-in-4d-v20-R6/), the blog post that lists all new features and enhancements in 4D 20 R6.
+
+#### Destaques
+
+
+
 ## 4D 20 R5
 
 Leia [**O que há de novo no 4D 20 R5**](https://blog.4d.com/en-whats-new-in-4d-v20-R5/), a postagem do blog que lista todos os novos recursos e aprimoramentos no 4D 20 R5.
 
 #### Destaques
 
+- New [Package manager](../Project/components.md) to handle components through a `dependencies.json` file.
 - Suporte de estruturas de manipulação de erros [`Try... Catch...End try`](../Concepts/error-handling.md#trycatchend-try)
 - QUIC network layer now supports [broadcasting](../Desktop/clientServer.md#opening-a-remote-project), [SSO](https://doc.4d.com/4Dv20R5/4D/20-R5/Single-Sign-On-SSO-on-Windows.300-6932709.en.html), and [IPv6](https://doc.4d.com/4Dv20R5/4D/20-R5/IP-Settings.300-6932707.en.html).
 - Suporte de [seleções de entidades restritas](../ORDA/entities.md#restricting-entity-selections).
@@ -24,11 +33,13 @@ Leia [**O que há de novo no 4D 20 R5**](https://blog.4d.com/en-whats-new-in-4d-
 #### Mudanças de comportamento
 
 - Os plug-ins *4D Internet Commands* e *4D for OCI* não estão mais incluídos nos instaladores do 4D. Para obter esses plug-ins, você precisa se conectar ao [**portal de download de produtos 4D**](https://product-download.4d.com/).
+- Changes made in the Structure editor regarding graphical appearance of tables and fields (color, position, order...) are now saved in a separate file named `catalog_editor.json` stored in the project's [`Sources`](../Project/architecture.md#sources) folder.
 
 
 ## 4D 20 R4
 
 Leia [**O que há de novo no 4D v20 R4**](https://blog.4d.com/en-whats-new-in-4d-v20-R4/), a postagem do blog que lista todos os novos recursos e aprimoramentos no 4D v20 R4.
+
 
 
 #### Destaques
@@ -403,7 +414,7 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 
 | Biblioteca | Versão atual | Atualizado em 4D | Comentário                                                                                                                     |
 | ---------- | ------------ | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| ICU        | 73.2         | 20.1             | Essa grande atualização força uma reconstrução automática dos índices alfanuméricos, de texto e de objetos.                    |
+| ICU        | 73.2         | 20               | Essa grande atualização força uma reconstrução automática dos índices alfanuméricos, de texto e de objetos.                    |
 | CEF        | 121          | 20 R5            | Chromium 6167                                                                                                                  |
 | Hunspell   | 7.3.27       | 20               | Usado para verificação ortográfica em formulários 4D e 4D Write Pro                                                            |
 | PDFWriter  | 4.3          | 20               | Dependência FreeType na 12.2.1                                                                                                 |
@@ -414,5 +425,5 @@ If your 4D applications use TLS connections, it is recommended that you upgrade 
 | Zlib       | 14.1.6       | 20               |                                                                                                                                |
 | webKit     | WKWebView    | 19               |                                                                                                                                |
 | PHP        | 8.2.4        | 20               |                                                                                                                                |
-| libldap    | 2.6.4        | 20 R3            |                                                                                                                                |
+| libldap    | **2.6.7**    | **20 R6**        |                                                                                                                                |
 | libsasl    | 2.1.28       | 20               |                                                                                                                                |
