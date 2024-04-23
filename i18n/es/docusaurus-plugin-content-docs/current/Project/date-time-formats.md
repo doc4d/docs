@@ -82,7 +82,7 @@ La siguiente tabla muestra todos los patrones soportados para formatos de fecha 
 |         |                                               | HH           | 00                   |
 | K       | hora en am/pm (0~11)                          | K            | 0                    |
 |         |                                               | KK           | 00                   |
-| k       | hour in day (1~24)                            | k            | 24                   |
+| k       | hora en día (1~24)                            | k            | 24                   |
 |         |                                               | kk           | 24                   |
 | m       | minuto en hora                                | m            | 4                    |
 |         |                                               | mm           | 04                   |
@@ -130,22 +130,22 @@ Same remark as for `L` and `M`: `c` is for a day used alone "every tuesday") and
 
 ### Ceros a la izquierda
 
-In general, when the number of letters in the formatting string is higher than the expected number, leading zeros are added. Ej: "yyyyy" daría "001996".
+En general, cuando el número de letras de la cadena de formato es superior al esperado, se añaden ceros a la izquierda. Ej: "yyyyy" daría "001996".
 
 ### Partes localizadas
 
-Some parts of the outputs, such as "midnight" or "Tuesday" are localized, according to regional settings.
+Algunas partes de las salidas, como "medianoche" o "martes" están localizadas, según la configuración regional.
 
 For example, for the time `13:25:34`, "B" will display *in the afternoon* on an US system, and *après-midi* on a French system.
 
 
 ### Letras adicionales
 
-Formatting strings can contain characters not to be interpreted as formatting characters: if they are between "a" and "z" or "A" and "Z", they must be enclosed in single quotes.
+Las cadenas de formato pueden contener caracteres que no deben interpretarse como caracteres de formato: si están entre "a" y "z" o "A" y "Z", deben ir entre comillas simples.
 
 Por ejemplo:
 
-"15:30:00" with pattern "HH 'hours and' mm 'minutes'" produces "15 hours and 30 minutes".
+"15:30:00" con el modelo "HH 'hours and' mm 'minutes'" produce "15 hours and 30 minutes".
 
 ### Espacios iniciales y finales
 
