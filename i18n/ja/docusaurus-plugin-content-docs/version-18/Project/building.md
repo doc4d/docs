@@ -88,7 +88,7 @@ title: プロジェクトパッケージのビルド
 
 *MyComponent.4dbase* フォルダーには次のファイルが含まれます:
 
-* *MyComponent.4DZ* file
+* *MyComponent.4DZ* ファイル
 * *Resources* フォルダー: 関連リソースは自動的にこのフォルダーにコピーされます。 コンポーネントは、他のコンポーネントやプラグインを使用できないため、その他の "Components" や "Plugins" フォルダーはコピーされません。
 
 ## アプリケーションページ
