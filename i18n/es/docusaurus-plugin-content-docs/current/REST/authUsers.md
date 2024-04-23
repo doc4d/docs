@@ -11,7 +11,7 @@ Cuando se abre una sesión de usuario web, puede manejarla a través del objeto 
 > - En 4D monopuesto, puede abrir hasta tres sesiones REST para realizar pruebas.
 
 
-## User login modes
+## Modos de inicio de sesión de usuario
 
 El modo de inicio de sesión del usuario le permite controlar cómo las peticiones REST adquieren licencias 4D Client. Puedes elegir entre dos modos de inicio de sesión de usuario: "predeterminado" o "inicio de sesión forzado".
 
