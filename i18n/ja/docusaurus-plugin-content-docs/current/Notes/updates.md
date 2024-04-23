@@ -4,12 +4,21 @@ title: リリースノート
 ---
 
 
+## 4D 20 R6
+
+Read [**What’s new in 4D 20 R6**](https://blog.4d.com/en-whats-new-in-4d-v20-R6/), the blog post that lists all new features and enhancements in 4D 20 R6.
+
+#### ハイライト
+
+
+
 ## 4D 20 R5
 
 [**4D 20 R5 の新機能**](https://blog.4d.com/ja-whats-new-in-4d-v20-R5/): 4D 20 R5 の新機能と拡張機能をすべてリストアップしたブログ記事です。
 
 #### ハイライト
 
+- 新しい [パッケージ マネージャー](../Project/components.md) は、 `dependencies.json` ファイルを介してコンポーネントを管理します。
 - [`Try...Catch...End try`](../Concepts/error-handling.md#trycatchend-try) エラー処理構文のサポート。
 - QUICネットワークレイヤーは [ブロードキャスト](../Desktop/clientServer.md#リモートプロジェクトを開く)、[SSO](https://doc.4d.com/4Dv20R5/4D/20-R5/Single-Sign-On-SSO-on-Windows.300-6932709.ja.html)、および [IPv6](https://doc.4d.com/4Dv20R5/4D/20-R5/IP-Settings.300-6932707.ja.html) に対応しました。
 - [制限付エンティティセレクション](../ORDA/entities.md#制限付エンティティセレクション) をサポート。
@@ -24,11 +33,13 @@ title: リリースノート
 #### 動作の変更
 
 - *4D Internet Commands* および *4D for OCI* プラグインは、4Dインストーラーに含まれなくなりました。 これらのプラグインを入手するには、[**4D製品ダウンロードポータル**](https://product-download.4d.com/) に接続する必要があります。
+- ストラクチャーエディターでテーブルやフィールドのグラフィカルな表示 (色、位置、順序など) に加えた変更は、`catalog_editor.json` という個別ファイルに保存されるようになりました。このファイルはプロジェクトの [`Sources`フォルダー](../Project/architecture.md#sources) に保存されます。
 
 
 ## 4D 20 R4
 
 [**4D 20 R4 の新機能**](https://blog.4d.com/ja-whats-new-in-4d-v20-R4/): 4D 20 R4 の新機能と拡張機能をすべてリストアップしたブログ記事です。
+
 
 
 #### ハイライト
@@ -404,7 +415,7 @@ ALERT($param1+" "+$param2)
 
 | ライブラリ     | 現在のバージョン  | 更新された 4D バージョン | 説明                                                                      |
 | --------- | --------- | -------------- | ----------------------------------------------------------------------- |
-| ICU       | 73.2      | 20.1           | このアップグレードにより、英数字とテキスト、オブジェクトのインデックスが自動的に再構築されます。                        |
+| ICU       | 73.2      | 20             | このアップグレードにより、英数字とテキスト、オブジェクトのインデックスが自動的に再構築されます。                        |
 | CEF       | 121       | 20 R5          | Chromium 6167                                                           |
 | Hunspell  | 1.7.2     | 20             | 4D フォームと 4D Write Pro でスペルチェックに使用されます。                                  |
 | PDFWriter | 4.3       | 20             | 12.2.1 で FreeType依存                                                     |
@@ -415,5 +426,5 @@ ALERT($param1+" "+$param2)
 | Zlib      | 1.2.13    | 20             |                                                                         |
 | webKit    | WKWebView | 19             |                                                                         |
 | PHP       | 8.2.4     | 20             |                                                                         |
-| libldap   | 2.6.4     | 20 R3          |                                                                         |
+| libldap   | **2.6.7** | **20 R6**      |                                                                         |
 | libsasl   | 2.1.28    | 20             |                                                                         |
