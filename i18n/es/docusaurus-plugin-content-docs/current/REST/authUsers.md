@@ -38,7 +38,7 @@ In Qodly Studio for 4D, the mode can be set using the [**Force login** option](.
 In the default mode, any REST request is processed in a web user session that automatically consumes a license (the web user session is created if it does not already exist). Puede utilizar este modo simple si no necesita controlar cuántas licencias se conservan en el servidor. When the default mode is enabled, you can authenticate users through the `On REST Authentication` database method (see below).
 
 
-### Force login mode
+### Forzar el modo de inicio de sesión
 
 En el modo "inicio de sesión forzada", el uso de la licencia está desconectado de las sesiones de usuario web. A license is required only when the [`Session.setPrivileges()`](../API/SessionClass.md#setprivileges) is executed, allowing you to control the number of used licenses.
 
