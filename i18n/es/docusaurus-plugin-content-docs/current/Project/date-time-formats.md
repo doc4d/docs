@@ -56,7 +56,7 @@ La siguiente tabla muestra todos los patrones soportados para formatos de fecha 
 |         |                                               | EEEE         | Tuesday              |
 |         |                                               | EEEEE        | T                    |
 |         |                                               | EEEEEE       | Tu                   |
-| e       | local day of week                             | e            | 2                    |
+| e       | día de la semana local                        | e            | 2                    |
 |         |                                               | ee           | 02                   |
 |         |                                               | eee          | Tue                  |
 |         |                                               | eeee         | Tuesday              |
@@ -78,11 +78,11 @@ La siguiente tabla muestra todos los patrones soportados para formatos de fecha 
 |         |                                               | BBBBB        | at night [narrow]    |
 | h       | hora en am/pm (1~12)                          | h            | 7                    |
 |         |                                               | hh           | 07                   |
-| H       | hour in day (0~23)                            | H            | 0                    |
+| H       | hora en día (0~23)                            | H            | 0                    |
 |         |                                               | HH           | 00                   |
 | K       | hora en am/pm (0~11)                          | K            | 0                    |
 |         |                                               | KK           | 00                   |
-| k       | hour in day (1~24)                            | k            | 24                   |
+| k       | hora en día (1~24)                            | k            | 24                   |
 |         |                                               | kk           | 24                   |
 | m       | minuto en hora                                | m            | 4                    |
 |         |                                               | mm           | 04                   |
@@ -126,26 +126,26 @@ Same remark as for `L` and `M`: `c` is for a day used alone "every tuesday") and
 
 ### `E` vs `e`
 
-`e` is based on system settings: if the week is defined in the system as starting on a Wednesday, then Wednesday will have the numerical value "1" (or zero) whereas "E" always returns the same value (from 1 to 7 or from 0 to 6).
+`e` se basa en la configuración del sistema: si la semana está definida en el sistema como que comienza un miércoles, entonces el miércoles tendrá el valor numérico "1" (o cero) mientras que "E" siempre devuelve el mismo valor (de 1 a 7 o de 0 a 6).
 
 ### Ceros a la izquierda
 
-In general, when the number of letters in the formatting string is higher than the expected number, leading zeros are added. Ej: "yyyyy" daría "001996".
+En general, cuando el número de letras de la cadena de formato es superior al esperado, se añaden ceros a la izquierda. Ej: "yyyyy" daría "001996".
 
 ### Partes localizadas
 
-Some parts of the outputs, such as "midnight" or "Tuesday" are localized, according to regional settings.
+Algunas partes de las salidas, como "medianoche" o "martes" están localizadas, según la configuración regional.
 
-For example, for the time `13:25:34`, "B" will display *in the afternoon* on an US system, and *après-midi* on a French system.
+Por ejemplo, para la hora `13:25:34`, "B" aparecerá *in the afternoon* en un sistema estadounidense, y *après-midi* en un sistema francés.
 
 
 ### Letras adicionales
 
-Formatting strings can contain characters not to be interpreted as formatting characters: if they are between "a" and "z" or "A" and "Z", they must be enclosed in single quotes.
+Las cadenas de formato pueden contener caracteres que no deben interpretarse como caracteres de formato: si están entre "a" y "z" o "A" y "Z", deben ir entre comillas simples.
 
 Por ejemplo:
 
-"15:30:00" with pattern "HH 'hours and' mm 'minutes'" produces "15 hours and 30 minutes".
+"15:30:00" con el modelo "HH 'hours and' mm 'minutes'" produce "15 hours and 30 minutes".
 
 ### Espacios iniciales y finales
 
