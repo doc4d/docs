@@ -1,6 +1,6 @@
 ---
 id: datastores
-title: Remote datastores
+title: Bases de datos remotas
 ---
 
 
