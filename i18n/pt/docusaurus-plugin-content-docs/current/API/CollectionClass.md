@@ -397,7 +397,7 @@ $vSize:=$col.length //$vSize=0
 | ---------- | ---------- |:--:| ----------------------------------------------------------------------------------- |
 | col2       | Collection | -> | Collection a combinar                                                               |
 | index      | Integer    | -> | Posição para a qual inserir elementos para combinar em coleção (padrão = length +1) |
-| Resultados | Collection | <- | Original collection containing combined element(s)                                  |
+| Resultados | Collection | <- | Collection original contendo elementos combinados                                   |
 <!-- END REF -->
 
 
