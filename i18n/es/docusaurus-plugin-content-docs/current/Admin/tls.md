@@ -9,7 +9,7 @@ Todos los servidores 4D pueden comunicarse en modo seguro a través del protocol
 - el servidor de aplicaciones (aplicaciones de escritorio cliente-servidor)
 - el servidor SQL
 
-In addition, the 4D HTTP client (`HTTP get` command for example) also supports the TLS protocol.
+Además, el cliente HTTP de 4D (comando `HTTP get` por ejemplo) también soporta el protocolo TLS.
 
 ## Generalidades
 
@@ -23,13 +23,13 @@ Configuración de red utilizando TLS:
 
 El protocolo TLS está diseñado para autenticar al emisor y al receptor y para garantizar la confidencialidad e integridad de la información intercambiada:
 
-- **Authentication**: The sender and receiver identities are confirmed.
-- **Confidentiality**: The sent data is encrypted so that no third person can understand the message.
-- **Integrity**: The received data has not been changed, by accident or malevolently.
+- **Autenticación**: se confirma la identidad del emisor y del receptor.
+- **Confidencialidad**: los datos enviados se cifran para que ninguna tercera persona pueda entender el mensaje.
+- **Integridad**: los datos recibidos no han sido modificados, por accidente o de forma malintencionada.
 
 TLS utiliza una técnica de cifrado de llave pública basada en un par de llaves asimétricas para el cifrado y el descifrado: una llave pública y una llave privada. La llave privada se utiliza para encriptar los datos. El remitente (el sitio web) no se la da a nadie.
 
-The public key is used to decrypt the information and is sent to the receivers (web browsers) through a **certificate**. El certificado se entrega a través de una autoridad de certificación. El sitio web paga al proveedor de certificados para que le entregue un certificado que garantiza la autenticación del servidor y contiene la llave pública que permite intercambiar datos de forma segura.
+La llave pública se utiliza para descifrar la información y se envía a los receptores (navegadores web) a través de un **certificado**. El certificado se entrega a través de una autoridad de certificación. El sitio web paga al proveedor de certificados para que le entregue un certificado que garantiza la autenticación del servidor y contiene la llave pública que permite intercambiar datos de forma segura.
 
 :::note
 
@@ -39,11 +39,11 @@ Los navegadores web solo autorizan los certificados emitidos por una autoridad d
 
 ## Versión mínima
 
-Por defecto, la versión mínima del protocolo de seguridad aceptado por los servidores 4D es TLS 1.3. You can modify this value by using the `Min TLS version` selector with the `SET DATABASE PARAMETER` command.
+Por defecto, la versión mínima del protocolo de seguridad aceptado por los servidores 4D es TLS 1.3. Puede modificar este valor utilizando el selector `Min TLS version` con el comando `SET DATABASE PARAMETER`.
 
 :::note
 
-You can control separately the [minimum TLS version](WebServer/webServerConfig.md#minimum-tls-version) for **webServer objects**.
+Puedes controlar de forma separada la [versión mínima de TLS](WebServer/webServerConfig.md#minimum-tls-version) para **objetos webServer**.
 
 :::
 
@@ -59,7 +59,7 @@ Para poder utilizar el protocolo TLS con el servidor HTTP de 4D, debe:
 
 #### Formato
 
-TLS certificates managed by 4D must be in the **PEM format**. Si su proveedor de certificados le envía un certificado que está en un formato binario como . rt, .pfx o .p12, tienes que convertirlo a formato PEM para poder utilizarlo. Hay sitios web donde se puede hacer esta conversión en línea.
+Los certificados TLS gestionados por 4D deben estar en formato **PEM**. Si su proveedor de certificados le envía un certificado que está en un formato binario como . rt, .pfx o .p12, tienes que convertirlo a formato PEM para poder utilizarlo. Hay sitios web donde se puede hacer esta conversión en línea.
 
 #### Encripción
 
@@ -70,13 +70,13 @@ TLS certificates managed by 4D must be in the **PEM format**. Si su proveedor de
 
 :::info Compatibilidad
 
-The ECDSA encryption format is not supported by the 4D [legacy network layer](../settings/client-server.md#network-layer).
+El formato de cifrado ECDSA no es compatible por 4D [capa de red legacy](../settings/client-server.md#network-layer).
 
 :::
 
 :::note
 
-4D proposes two commands to help you requesting a RSA certificate, [see the tutorial below](#how-to-get-a-rsa-certificate-tutorial).
+4D le propone dos comandos para ayudarle a solicitar un certificado RSA, [vea el tutorial más abajo](#how-to-get-a-rsa-certificate-tutorial).
 
 :::
 
