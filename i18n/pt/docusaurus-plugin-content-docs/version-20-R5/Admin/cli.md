@@ -177,13 +177,13 @@ tool4d é uma ferramenta perfeita para o fazer:
 
 ### Utilizar tool4d
 
-You can get tool4d from the 4D [Product download page](https://product-download.4d.com/).
+Você pode obter o tool4d na [página de download do produto](https://product-download.4d.com/) do 4D.
 
-You use tool4d by executing a [command line](#launch-a-4d-application) with a standard 4D project. You can use all arguments described in the above table, except --`webadmin` since this component is [disabled in tool4d](#disabled-4d-features). Com tool4d, é lançada a seguinte sequência específica:
+Você usa o tool4d executando uma [linha de comando](#launch-a-4d-application) com um projeto 4D padrão. Você pode usar todos os argumentos descritos na tabela acima, exceto --`webadmin` já que este componente está [desativado no tool4d](#disabled-4d-features). Com tool4d, é lançada a seguinte sequência específica:
 
-1. tool4d executes the `On Startup` database method (and all "automatic" methods such as [user method](../Users/handling_users_groups.md#user-properties)), except if the `--skip-onstartup` argument is passed.
-2. tool4d executes the method designated by the `--startup-method` argument, if any.
-3. tool4d executes the `On Exit` database method, except if the `--skip-onstartup` argument is passed.
+1. tool4d executa o método da base de dados `On Startup` (e todos os métodos "automáticos" como [método do usuário](../Users/handling_users_groups.md#user-properties)), exceto se o argumento `--skip-onstartup` for passado.
+2. tool4d executa o método designado pelo argumento `--startup-method`, se houver.
+3. tool4d executa o método `On Exit` do banco de dados, exceto se o argumento `--skip-onstartup` for passado.
 4. tool4d desiste.
 
 On Windows, tool4d is a console application so that the `stdout` stream is displayed in the terminal (cmd, powershell...).
