@@ -43,7 +43,7 @@ Por defecto, la versión mínima del protocolo de seguridad aceptado por los ser
 
 :::note
 
-You can control separately the [minimum TLS version](WebServer/webServerConfig.md#minimum-tls-version) for **webServer objects**.
+Puedes controlar de forma separada la [versión mínima de TLS](WebServer/webServerConfig.md#minimum-tls-version) para **objetos webServer**.
 
 :::
 
@@ -59,7 +59,7 @@ Para poder utilizar el protocolo TLS con el servidor HTTP de 4D, debe:
 
 #### Formato
 
-TLS certificates managed by 4D must be in the **PEM format**. Si su proveedor de certificados le envía un certificado que está en un formato binario como . rt, .pfx o .p12, tienes que convertirlo a formato PEM para poder utilizarlo. Hay sitios web donde se puede hacer esta conversión en línea.
+Los certificados TLS gestionados por 4D deben estar en formato **PEM**. Si su proveedor de certificados le envía un certificado que está en un formato binario como . rt, .pfx o .p12, tienes que convertirlo a formato PEM para poder utilizarlo. Hay sitios web donde se puede hacer esta conversión en línea.
 
 #### Encripción
 
@@ -70,17 +70,17 @@ TLS certificates managed by 4D must be in the **PEM format**. Si su proveedor de
 
 :::info Compatibilidad
 
-The ECDSA encryption format is not supported by the 4D [legacy network layer](../settings/client-server.md#network-layer).
+El formato de cifrado ECDSA no es compatible por 4D [capa de red legacy](../settings/client-server.md#network-layer).
 
 :::
 
 :::note
 
-4D proposes two commands to help you requesting a RSA certificate, [see the tutorial below](#how-to-get-a-rsa-certificate-tutorial).
+4D le propone dos comandos para ayudarle a solicitar un certificado RSA, [vea el tutorial más abajo](#how-to-get-a-rsa-certificate-tutorial).
 
 :::
 
-### Instalación de archivos de certificado
+### Instalación de archivos de certificados
 
 Los archivos de certificados incluyen:
 
