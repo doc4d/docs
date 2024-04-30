@@ -140,7 +140,7 @@ USE ENTITY SELECTION($entitySel) //La sélection courante de la table Employee e
 
 </details>
 
-<!-- REF EntitySelectionClass.index.Syntax -->***[index]*** : 4D.Entity<!-- END REF -->
+<!-- REF EntitySelectionClass.index.Syntax -->***&#91;index&#93;*** : 4D.Entity<!-- END REF -->
 
 #### Description
 
