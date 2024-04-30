@@ -31,11 +31,11 @@ You can also delete the entities in an entity set, by calling [`$entityset/{enti
 
 `POST  /rest/Employee(22)/?$method=delete`
 
-<a href="$filter.md"><code>$filter</code></a> を使ったクエリも可能です:
+You can also do a query as well using $filter:
 
 `POST  /rest/Employee?$filter="ID=11"&$method=delete`
 
-<a href="$entityset.md#entitysetentitysetid"><code>$entityset/{entitySetID}</code></a> で呼び出したエンティティセットを削除する場合は次のように書きます:
+You can also delete an entity set using $entityset/{entitySetID}:
 
 `POST  /rest/Employee/$entityset/73F46BE3A0734EAA9A33CA8B14433570?$method=delete`
 
