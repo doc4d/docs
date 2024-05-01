@@ -17,7 +17,7 @@ When this property is enabled, the [OPEN FONT PICKER](https://doc.4d.com/4Dv18/4
 
 #### 対象オブジェクト
 
-[Input](input_overview.md)
+[入力](input_overview.md)
 
 ---
 
@@ -484,4 +484,4 @@ What a <SPAN STYLE="font-size:13.5pt">beautiful</SPAN> day!
 
 #### 対象オブジェクト
 
-[Input](input_overview.md)
+[入力](input_overview.md)
