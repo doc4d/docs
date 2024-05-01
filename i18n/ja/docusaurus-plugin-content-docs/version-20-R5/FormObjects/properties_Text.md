@@ -206,7 +206,7 @@ Foreground color;Dark shadow color)
 
 #### 対象オブジェクト
 
-[List Box](listbox_overview.md#overview)
+[リストボックス](listbox_overview.md#概要)
 
 ---
 
@@ -368,7 +368,7 @@ _Color_ メソッドには、以下のコードを書きます:
 
 #### 対象オブジェクト
 
-[List Box](listbox_overview.md)
+[リストボックス](listbox_overview.md)
 
 ---
 
@@ -417,7 +417,7 @@ _Color_ メソッドには、以下のコードを書きます:
 
 ## 行フォントカラー配列
 
-`Array type list boxes`
+`配列型リストボックス`
 
 リストボックスの各行/セルにカスタマイズしたフォントカラーを適用するために使用します。
 
@@ -437,7 +437,7 @@ _Color_ メソッドには、以下のコードを書きます:
 
 ## 行スタイル配列
 
-`Array type list boxes`
+`配列型リストボックス`
 
 リストボックスの各行/セルにカスタマイズされた文字スタイルを適用するために使用します。
 
