@@ -183,13 +183,13 @@ For a picture type [input](input_overview.md), in addition to standard editing c
 - In multiline inputs, 4D carries out automatic line returns:\
   ![](../assets/en/FormObjects/multilineAuto.png)
 
-#### ×
+#### なし
 
 - 一行の入力オブジェクトでは、行の最後にある単語はエリアからはみ出し、改行はおこなわれません。
 - 改行はおこなわれません。テキストは常に一行で表示されます。 If the Alpha or Text field or variable contains carriage returns, the text located after the first carriage return is removed as soon as the area is modified:\
   ![](../assets/en/FormObjects/multilineNo.png)
 
-#### ◯
+#### あり
 
 この値を選択すると、追加の [ワードラップ](properties_Display.md#ワードラップ) オプションが表示されます。
 
@@ -307,4 +307,4 @@ You can configure this option by clicking the [...] button in the Shortcuts prop
 
 #### 対象オブジェクト
 
-[List Box](listbox_overview.md)
+[リストボックス](listbox_overview.md)
