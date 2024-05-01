@@ -202,7 +202,7 @@ You can leave it up to 4D to create variables associated with your form objects 
 
 #### 対象オブジェクト
 
-[List Box](listbox_overview.md)
+[リストボックス](listbox_overview.md)
 
 ---
 
@@ -225,7 +225,7 @@ You can leave it up to 4D to create variables associated with your form objects 
 
 #### 対象オブジェクト
 
-[List Box](listbox_overview.md)
+[リストボックス](listbox_overview.md)
 
 ---
 
