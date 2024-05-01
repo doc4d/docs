@@ -21,7 +21,7 @@ sidebar_label: 検査ページ
 
 ## ログファイルを開く
 
-要求された検査に関係なく、4D はアプリケーションの `Logs` フォルダーにログファイルを生成します。 このファイルには実行された検査の内容が記録され、エラーがあればそれも示されます。問題がない場合は [OK] が表示されます。 It is created in XML format and is named: _ApplicationName__Verify_Log__yyyy-mm-dd hh-mm-ss_.xml where:
+要求された検査に関係なく、4D はアプリケーションの `Logs` フォルダーにログファイルを生成します。 このファイルには実行された検査の内容が記録され、エラーがあればそれも示されます。問題がない場合は [OK] が表示されます。 このファイルは XML形式で、ファイル名は _ApplicationName_**Verify_Log**_yyyy-mm-dd hh-mm-ss_.xml となり、それぞれ以下の要素が入ります:
 
 - _ApplicationName_ は拡張子を除いたプロジェクトファイルの名前です (例: "Invoices" 等)
 - _yyyy-mm-dd hh-mm-ss_ はファイルのタイムスタンプです。これはローカルのシステム時間でメンテナンスオペレーションが開始された時刻に基づいています (例: "2019-02-11 15-20-45")。
