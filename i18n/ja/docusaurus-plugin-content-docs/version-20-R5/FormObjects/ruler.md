@@ -18,4 +18,4 @@ title: ルーラー
 ## 参照
 
 - [進捗インジケーター](progressIndicator.md)
-- [steppers](stepper.md)
+- [ステッパー](stepper.md)
