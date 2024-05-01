@@ -12,14 +12,14 @@ sidebar_label: 情報ページ
 
 ウィンドウの中央部は、プロジェクトならびにデータファイルとログファイル (あれば) の名前および場所を表示します。 ウィンドウの下部は、4Dライセンスフォルダーの名前、ライセンスのタイプ、および、カレント 4Dユーザーの名前を表示します。
 
-- **Display and selection of pathnames**: On the **Program** tab, pathnames are displayed in pop-up menus containing the folder sequence as found on the disk:\
+- **パス名の表示と選択**: **プログラム** タブでは、ディスク上の一連の親フォルダーを表示するポップアップメニューの形でパス名が示されます:\
   ![](../assets/en/MSC/MSC_popup.png)
-  If you select a menu item (disk or folder), it is displayed in a new system window.
+  メニュー項目 (ディスクまたはフォルダー) を選択すると、そのパスが新しいシステムウィンドウで開かれます。
   **パスをコピー** コマンドは、システムのディレクトリ区切り文字を使用して、完全なパス名をクリップボードにテキストとしてコピーします。
 
 - **ライセンスフォルダー**:
   **ライセンスフォルダー** ボタンをクリックすると、新しいシステムウィンドウを開き、アクティブなライセンスフォルダーの中身を表示します。 インストールされた 4D環境用のライセンスファイルはすべてこのフォルダーに格納されていなければなりません。 ファイルを Webブラウザーで開くと、ライセンスの情報が表示されます。
-  ライセンスフォルダーの場所はバージョンや OS により異なります。 For more information about the location of this folder, refer to the `Get 4D folder` command.
+  ライセンスフォルダーの場所はバージョンや OS により異なります。 このフォルダーの場所については `Get 4D folder` コマンドの説明を参照してください。
   _**注**: 上部メニューの "ヘルプ ＞ ライセンスマネージャー..." からアクセスできるダイアログボックスにも同じボタンがあります。_
 
 ## テーブル
@@ -54,7 +54,6 @@ sidebar_label: 情報ページ
 
 > このページに表示される情報には、データファイル外に格納されたデータは反映されません (<a href="https://doc.4d.com/4Dv18/4D/18/External-data-storage.300-4575564.ja.html">データをデータファイル外に保存</a> 参照)。
 
-断片化があまりにも進んだファイルはディスク、そしてデータベースのパフォーマンスを低下させます。 If the occupation rate is too low, 4D will indicate this by a warning icon (which is displayed on the Information button and on the tab of the corresponding file type) and specify that compacting is necessary:![](../assets/en/MSC/MSC_infowarn.png)
+断片化があまりにも進んだファイルはディスク、そしてデータベースのパフォーマンスを低下させます。 使用率が低すぎる場合、4Dは警告アイコンを表示して (このアイコンは情報ページボタンと対応するファイルタイプのタブに表示されます)、圧縮が必要であることを警告します: ![](../assets/en/MSC/MSC_infowarn.png)
 
-A warning icon is also displayed on the button of the [Compact](compact.md) page:
-![](../assets/en/MSC/MSC_compactwarn.png)
+警告アイコンは [圧縮](compact.md) ページボタンにも表示されます: ![](../assets/en/MSC/MSC_compactwarn.png)
