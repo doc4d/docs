@@ -44,8 +44,8 @@ sidebar_label: ログ解析ページ
 
 - **4Dユーザー**: 操作を実行したユーザーの 4Dユーザー名。 ユーザーに対してエイリアスが設定されていた場合、4Dユーザー名の代わりのそのエイリアスが表示されます。
 
-- **値**: レコードの追加や更新の場合、フィールドの値。 値はセミコロン “;” で区切られます。 Only values represented in alphanumeric form are displayed.\
-  _**Note:** If the database is encrypted and no valid data key corresponding to the open log file has been provided, encrypted values are not displayed in this column._
+- **値**: レコードの追加や更新の場合、フィールドの値。 値はセミコロン “;” で区切られます。 文字形式に表現できる値のみを表示します。\
+  _**注**: データベースが暗号化されており、開かれたログファイルに対応する有効なデータキーが提供されていない場合、暗号化された値はこのカラムには表示されません。_
 
 - **レコード**: レコード番号
 
