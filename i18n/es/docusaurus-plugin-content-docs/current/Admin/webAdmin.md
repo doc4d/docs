@@ -11,7 +11,8 @@ Esta funcionalidad se puede utilizar en aplicaciones 4D que se ejecutan con o si
 
 ## Iniciar el servidor web WebAdmin
 
-By default, the `WebAdmin` web server is not launched. Es necesario configurar el lanzamiento al inicio, o (en las versiones con interfaz) lanzarlo manualmente mediante una opción de menú.
+Por defecto, el
+servidor web `WebAdmin` no se lanza. Es necesario configurar el lanzamiento al inicio, o (en las versiones con interfaz) lanzarlo manualmente mediante una opción de menú.
 
 ### Lanzamiento al inicio
 
@@ -108,7 +109,8 @@ Defining an access key is mandatory to unlock access to the `WebAdmin` web serve
 
 Una llave de acceso es similar a una contraseña pero no está asociada a un inicio de sesión.
 
-- To define a new access key: click the **Define** button, enter the access key string in the dialog box and click **OK**. The button label becomes **Modify**.
+- To define a new access key: click the **Define** button, enter the access key string in the dialog box and click **OK**. La etiqueta del
+  botón se convierte en **Modificar**.
 - To modify the access key: click the **Modify** button, enter the new access key string in the dialog box and click **OK**.
 - To delete the access key: click the **Modify** button, let the access key area empty and click **OK**.
 
@@ -128,7 +130,8 @@ All [WebAdmin settings](#webadmin-settings) are stored in the `WebAdmin.4DSettin
 
 When running a 4D or 4D Server application headless, you can set and use the default `WebAdmin.4DSettings` file, or designate a custom `.4DSettings` file.
 
-To set the file contents, you can use the [WebAdmin settings dialog](#settings-dialog-box) of the 4D application with interface and run it headless afterwards. The default `WebAdmin.4DSettings` file is then used.
+To set the file contents, you can use the [WebAdmin settings dialog](#settings-dialog-box) of the 4D application with interface and run it headless afterwards. Se utiliza entonces
+el archivo por defecto `WebAdmin.4DSettings`.
 
 Or, you can set a custom `.4DSettings` file (xml format) and use it instead of the default file. Several dedicated arguments are available in the [Command line interface](cli.md) to support this feature.
 
