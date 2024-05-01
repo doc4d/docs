@@ -27,17 +27,17 @@ MSC でデータファイルを初めて暗号化する場合、以下のよう�
 
 1. ストラクチャーエディターにおいて、データを暗号化したいテーブルに対して **暗号化可能** 属性にチェックを入れます。 詳細は "テーブルプロパティ" の章を参照してください。
 2. MSC の暗号化ページを開きます。
-   If you open the page without setting any tables as **Encryptable**, the following message is displayed in the page:
+   どのテーブルにも **暗号化可能** 属性を付けないでページを開こうとした場合、ページに以下のメッセージが表示されます:
    ![](../assets/en/MSC/MSC_encrypt1.png)
-   Otherwise, the following message is displayed:
+   そうでない場合には、以下のメッセージが表示されます:
    ![](../assets/en/MSC/MSC_encrypt2.png)<p>
-   This means that the **Encryptable** status for at least one table has been modified and the data file still has not been encrypted.
-   \*\*Note: \*\*The same message is displayed when the **Encryptable** status has been modified in an already encrypted data file or after the data file has been decrypted (see below).</p>
-3. Click on the Encrypt picture button.\
+   このメッセージは、少なくとも 1つのテーブルに対して **暗号化可能** 属性のステータスが変更されていて、データファイルがまだ暗号化されていないことを意味します。
+   **注:** すでに暗号化されているデータファイル、または復号化されたデータファイルに対して、**暗号化可能** 属性のステータスが変更された場合にも同じメッセージが表示されます (以下参照)。</p>
+3. 暗号化ピクチャーボタンをクリックします。\
    ![](../assets/en/MSC/MSC_encrypt3.png)\
-   You will be prompted to enter a passphrase for your data file:
+   データファイル用パスフレーズの入力を促されます:
    ![](../assets/en/MSC/MSC_encrypt4.png)
-   The passphrase is used to generate the data encryption key. パスフレーズはパスワードの強化版のようなもので、大量の文字を含めることができます。 たとえば、"We all came out to Montreux" あるいは "My 1st Great Passphrase!!" のようなパスフレーズを入力することが可能です。
+   パスフレーズはデータ暗号化キーを生成するのに使用されます。 パスフレーズはパスワードの強化版のようなもので、大量の文字を含めることができます。 たとえば、"We all came out to Montreux" あるいは "My 1st Great Passphrase!!" のようなパスフレーズを入力することが可能です。
    パスフレーズの安全性は、セキュリティレベルインジケーターによって確認できます:
    ![](../assets/en/MSC/MSC_encrypt5.png)
    (濃い緑色は、もっとも安全なレベルであることを示します)。
@@ -61,7 +61,7 @@ MSC でデータファイルを初めて暗号化する場合、以下のよう�
 セキュリティ上の理由から、すべての暗号化メンテナンスオペレーションはカレントのデータ暗号化キーの入力を要求します。
 
 - データ暗号化キーが既に 4Dキーチェーン (1) に読み込まれている場合、そのキーは 4D によって自動的に再利用されます。
-- データ暗号化キーが見つからない場合、それを入力する必要があります。 The following dialog is displayed:
+- データ暗号化キーが見つからない場合、それを入力する必要があります。 以下のようなダイアログが表示されます:
   ![](../assets/en/MSC/MSC_encrypt7.png)
 
 この段階では 2つの選択肢があります:
@@ -82,7 +82,7 @@ MSC でデータファイルを初めて暗号化する場合、以下のよう�
 1. **カレントの暗号化キーでデータを再暗号化** をクリックします。
 2. カレントのデータ暗号化キーを入力します。
 
-The data file is properly re-encrypted with the current key and a confirmation message is displayed:
+データファイルがカレントのデータ暗号化キーで正常に再暗号化され、確認メッセージが表示されます:
 ![](../assets/en/MSC/MSC_encrypt8.png)
 
 ### パスフレーズを変更してデータを再暗号化する
@@ -103,7 +103,7 @@ The data file is properly re-encrypted with the current key and a confirmation m
 1. **全データを復号化** をクリックします。
 2. カレントのデータ暗号化キーを入力します (<a href="#カレントの暗号化キーを入力する">カレントの暗号化キーを入力する</a> 参照)。
 
-The data file is fully decrypted and a confirmation message is displayed:
+データが完全に復号化され、確認メッセージが表示されます:
 ![](../assets/en/MSC/MSC_encrypt10.png)
 
 > データファイルが復号化されると、テーブルの暗号化ステータスは暗号化可能属性と合致しなくなります。 ステータスを合致させるためには、データベースのストラクチャーレベルにおいてすべての **暗号化可能** 属性を選択解除しなければなりません。
