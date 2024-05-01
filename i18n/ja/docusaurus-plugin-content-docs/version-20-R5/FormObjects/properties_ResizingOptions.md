@@ -37,7 +37,7 @@ When this property is enabled (`rightToLeft` value in JSON), list box columns ar
 
 #### 対象オブジェクト
 
-[List Box](listbox_overview.md)
+[リストボックス](listbox_overview.md)
 
 ---
 
@@ -130,4 +130,4 @@ Here is the result of a “pusher” splitter being moved:
 
 #### 対象オブジェクト
 
-[List Box Column](listbox_overview.md#list-box-columns)
+[リストボックス列](listbox_overview.md#リストボックス列)
