@@ -10,7 +10,7 @@ sidebar_label: ロールバックページ
 
 ![](../assets/en/MSC/MSC_rollback1.png)
 
-> If the database is encrypted and no valid data key corresponding to the open log file has been provided, encrypted values are not displayed in the **Values** column and a dialog requesting the passphrase or the data key is displayed if you click the **Rollback** button.
+> データベースが暗号化されており、開かれたログファイルに対応する有効なデータキーが提供されていない場合、暗号化された値は **値** カラムには表示されません。そのような状況で **ロールバック** ボタンをクリックすると、パスフレーズまたはデータキーを要求するダイアログボックスが表示されます。
 
 操作リストの内容と動作は [ログ解析](analysis.md) ページのものと同じです。
 
