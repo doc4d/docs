@@ -1,7 +1,6 @@
----
-id: FileHandleClass
-title: FileHandle
----
+- - -
+id: FileHandleClass title: FileHandle
+- - -
 
 La classe `FileHandle` contient des fonctions qui vous permettent de lire séquentiellement ou d'ajouter du contenu à un objet [`File`](FileClass) ouvert. Un handle de fichier peut accéder à n'importe quelle partie d'un document.
 
