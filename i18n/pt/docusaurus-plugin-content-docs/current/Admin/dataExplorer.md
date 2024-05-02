@@ -31,7 +31,7 @@ Para ligar à página Web do Explorador de dados:
 - mesmo se usar uma aplicação 4D headless, pode abrir seu navegador web e digitar o endereço abaixo:
 
 `IPaddress:HTTPPort/dataexplorer`
-or
+ou
 `IPaddress:HTTPSPort/dataexplorer`
 
 In this context, you will be prompted to enter the [access key](webAdmin.md#access-key) to open a `WebAdmin` session on the server:
