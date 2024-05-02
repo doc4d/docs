@@ -23,13 +23,13 @@ title: プラグインの開発
 
 プラグインには通常複数のルーチンが含まれています。 プラグインは外部エリアを操作でき、外部プロセスを実行できます。
 
-- A **plug-in routine** is a routine written in native language (usually C or C++) that causes an action.
-- An **external area** is a part of a form that can display almost everything and interact with the user when necessary.
-- An **external process** is a process that runs alone, usually in a loop, doing almost everything it wants. プロセスのコードはすべてプラグインに属しており、4D はプロセスに対してイベントを送受信するだけです。
+- **プラグインルーチン** とは、ネイティブ言語 (通常は C あるいは C++) で書かれたルーチンで、なんらかの処理を実行します。
+- **外部エリア** とはフォームの一部で、あらゆるものを表示することができ、必要に応じてユーザー操作を受け付けることができます。
+- **外部プロセス** とは、通常はループ形式で単独実行されるプロセスのことです。 プロセスのコードはすべてプラグインに属しており、4D はプロセスに対してイベントを送受信するだけです。
 
 ### 重要な注記
 
-プラグインは、小さな処理をおこなう一つのルーチンを実行するだけの、とても簡単なものでありえます。また、百以上のルーチンとエリアを扱うような、非常に複雑なものでもありえます。 プラグインの機能に制限はありませんが、プラグインの開発にあたっては、プラグインがあくまで従たるコードであることに留意が必要です。 プラグインは 4D 内で実行されます。 プラグインは独立したアプリケーションではなく、4D の一部です。 プラグインは、他のプラグインや 4D 自身と CPU 時間とメモリを共有します。したがって、プラグインのコードは、必要なリソースだけを使用する控えめなコードであるべきです。 For example, in long loops, a plug-in should call `PA_Yield()` to give time to the 4D scheduler unless its task is critical for both it and the application.
+プラグインは、小さな処理をおこなう一つのルーチンを実行するだけの、とても簡単なものでありえます。また、百以上のルーチンとエリアを扱うような、非常に複雑なものでもありえます。 プラグインの機能に制限はありませんが、プラグインの開発にあたっては、プラグインがあくまで従たるコードであることに留意が必要です。 プラグインは 4D 内で実行されます。 プラグインは独立したアプリケーションではなく、4D の一部です。 プラグインは、他のプラグインや 4D 自身と CPU 時間とメモリを共有します。したがって、プラグインのコードは、必要なリソースだけを使用する控えめなコードであるべきです。 たとえば、非常に長いループ処理においては (その重要性が絶対的な優先権を要求しないかぎり)、プラグインは `PA_Yield()` を呼び出して、4D のスケジューラーにも処理時間を割り当てるべきです。
 
 ## プラグインの作り方
 
@@ -40,4 +40,4 @@ title: プラグインの開発
 
 ## プラグインの共有
 
-We encourage you to support the 4D developer community by sharing your plug-ins, preferably on the [GitHub platform](https://github.com/topics/4d-plugin). We recommend that you use the **`4d-plugin`** topic to be correctly referenced.
+開発したプラグインを [GitHub](https://github.com/topics/4d-plugin) で公開し、4D開発者のコミュニティをサポートすることをお勧めします。 正しく参照されるためには、**`4d-plugin`** トピックをご利用ください。
