@@ -31,7 +31,7 @@ Uma coleção se inicializa com:
 | [<!-- INCLUDE #collection.copy().Syntax -->](#copy)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #collection.copy().Summary -->                            |
 | [<!-- INCLUDE #collection.count().Syntax -->](#count)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #collection.count().Summary -->                         |
 | [<!-- INCLUDE #collection.countValues().Syntax -->](#countvalues)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #collection.countValues().Summary -->       |
-| [<!-- INCLUDE #collection.distinct().Syntax -->](#distinct)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #collection.distinct().Summary -->                |
+| [<!-- INCLUDE #collection.countValues().Syntax -->](#countvalues)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #collection.countValues().Summary -->       |
 | [<!-- INCLUDE #collection.equal().Syntax -->](#equal)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #collection.equal().Summary -->                         |
 | [<!-- INCLUDE #collection.every().Syntax -->](#every)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #collection.every().Summary -->                         |
 | [<!-- INCLUDE #collection.extract().Syntax -->](#extract)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<!-- INCLUDE #collection.extract().Summary -->                   |
@@ -565,11 +565,11 @@ This example illustrates the use of the `ck resolve pointers` option:
 
  $col2:=$col.copy()
  $col2[1].beta:="World!"
- ALERT($col[0].alpha+" "+$col2[1].beta) //displays "Hello World!"
+ ALERT($col[0].alpha+" "+$col2[1].beta) //exibe "Hello World!"
 
  $what:="You!"
  $col3:=$col2.copy(ck resolve pointers)
- ALERT($col3[0].alpha+" "+$col3[1].what) //displays "Hello You!"
+ ALERT($col3[0].alpha+" "+$col3[1].what) //exibe "Hello You!"
 ```
 
 <!-- END REF -->
@@ -880,9 +880,9 @@ var $f : 4D.Function
 $f:=Formula($1.value>0)
 $c:=New collection
 $c.push(5;3;1;4;6;2)
-$b:=$c.every($f) //returns true
+$b:=$c.every($f) //retorna true
 $c.push(-1)
-$b:=$c.every($f) //returns false
+$b:=$c.every($f) //retorna false
 ```
 
 #### Exemplo 2
@@ -1770,8 +1770,8 @@ $col:=New collection(10; 20; 30; "hello"; 50)
 $last:=$col.last() // 50
 
 $emptyCol:=New collection() //empty
-// $last:=$emptyCol[$emptyCol.length-1] //returns an error
-$last:=$emptyCol.last() // returns Undefined
+// $last:=$emptyCol[$emptyCol.length-1] //devolve um erro
+$last:=$emptyCol.last() // devolve Undefined
 
 ```
 
@@ -2178,7 +2178,7 @@ $name.multiSort(Formula($1.value.firstname<$1.value2.firstname); [$address])
 | ----------- | ---------- | :-: | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | pathStrings | Text       |  -> | Caminho(s) de propriedade(s) no(s) qual(is) encomendar a coleção |
 | pathObjects | Collection |  -> | Coleção de objetos criterio                                                                                                                  |
-| ascOrDesc   | Integer    |  -> | `ck ascending` or `ck descending` (scalar values)                                                                         |
+| ascOrDesc   | Integer    |  -> | `ck ascending` ou `ck descending` (valores escalares)                                                                     |
 | Resultados  | Collection |  <- | Cópia ordenada da coleção (cópia superficial)                                                                             |
 
 <!-- END REF -->
@@ -2387,8 +2387,8 @@ var $fruits; $c2 : Collection
 The _**sortCollection**_ method:
 
 ```4d
-var $1 : Object
-var $2: Integer // sort option
+var$1Object
+var$2Integer // sort option
 
 $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 ```
@@ -2433,10 +2433,10 @@ When applied to an empty collection, `.pop()` returns _**undefined**_.
  var $stack : Collection
  $stack:=New collection //$stack=[]
  $stack.push(1;2) //$stack=[1,2]
- $stack.pop() //$stack=[1]  Returns 2
+ $stack.pop() //$stack=[1]  Retorna 2
  $stack.push(New collection(4;5)) //$stack=[[1,[4,5]]
- $stack.pop() //$stack=[1]  Returns [4,5]
- $stack.pop() //$stack=[]  Returns 1
+ $stack.pop() //$stack=[1]  Retorna [4,5]
+ $stack.pop() //$stack=[]  Retorna 1
 ```
 
 <!-- END REF -->
@@ -2581,7 +2581,7 @@ Este exemplo devolve as pessoas cujo nome não começa por uma string de uma var
 Este exemplo devolve as pessoas cuja idade não se conhece (propriedade definida como null ou indefinida):
 
 ```4d
- $col:=$c.query("age=null") //placeholders not allowed with "null"
+ $col:=$c.query("age=null") //não são permitidos placeholders ou marcadores de posição com "null"
   //$col=[{name:Wesson...},{name:Sterling...},{name:Mark...}]
 ```
 
@@ -2589,7 +2589,7 @@ Este exemplo devolve as pessoas contratadas há mais de 90 dias:
 
 ```4d
  $col:=$c.query("dateHired < :1";(Current date-90))
-  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] if today is 01/10/2018
+  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] se hoje for 01/10/2018
 ```
 
 #### Exemplo 3
@@ -2741,7 +2741,7 @@ A chamada de retorno recebe os seguintes parâmetros:
 ```4d
 var $c : Collection
 $c:=New collection(5;3;5;1;3;4;4;6;2;2)
-$r:=$c.reduceRight(Formula($1.accumulator*=$1.value); 1)  //returns 86400
+$r:=$c.reduceRight(Formula($1.accumulator*=$1.value); 1)  //retorna 86400
 
 ```
 
@@ -2762,7 +2762,7 @@ Este exemplo permite reduzir vários elementos da coleção a um só:
 With the following _**Flatten**_ method:
 
 ```4d
-	//Flatten project method
+	//Método projeto Flatten 
  If($1.accumulator=Null)
     $1.accumulator:=New collection
  End if
@@ -3167,8 +3167,8 @@ Se utilizou um método, deve definir o parâmetro seguinte:
 ```4d
 var $col; $col2; $col3 : Collection
 $col:=New collection(33;4;66;1111;222)
-$col2:=$col.sort() //numerical sort: [4,33,66,222,1111]
-$col3:=$col.sort(Formula(String($1.value)<String($1.value2))) //alphabetical sort: [1111,222,33,4,66]
+$col2:=$col.sort() //ordenação numérica: [4,33,66,222,1111]
+$col3:=$col.sort(Formula(String($1.value)<String($1.value2))) //ordenação alfabética: [1111,222,33,4,66]
 ```
 
 <!-- END REF -->
