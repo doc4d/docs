@@ -30,7 +30,7 @@ Consulte também [esta postagem no blog] (https://blog.4d.com/new-built-in-webso
 Para criar e manipular seu servidor WebSocket em 4D, é preciso usar duas classes embutidas em 4D:
 
 - essa classe (`4D.WebSocketServer`) para gerenciar o próprio servidor,
-- the [`4D.WebSocketConnection`](WebSocketConnectionClass.md) class to manage connections and messages.
+- a classe [`4D.WebSocketConnection`](WebSocketConnectionClass.md) para gerir as ligações e as mensagens.
 
 Além disso, terá de criar duas classes de utilizador que conterão funções de retorno de chamada:
 
