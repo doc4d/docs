@@ -3,7 +3,7 @@ id: cli
 title: Interface de linha de comando
 ---
 
-You can use the macOS Terminal or the Windows console to drive your 4D applications (4D, 4D Server, merged application, and [tool4d](#tool4d)) using command lines. Mais especificamente, essa funcionalidade permite que:
+Você pode usar o Terminal do macOS ou o console do Windows para controlar seus aplicativos 4D (4D, 4D Server, aplicativo mesclado e [tool4d](#tool4d)) usando linhas de comando. Mais especificamente, essa funcionalidade permite que:
 
 - lance um banco de dados remotamente, que pode ser útil especialmente para administrar servidores Web.
 - roda automaticamente testes para suas aplicações.
@@ -12,10 +12,10 @@ You can use the macOS Terminal or the Windows console to drive your 4D applicati
 
 Pode executar linhas de comando para aplicações 4D usando o terminal macOS ou o console Windows.
 
-- Under macOS, you should use the `open` command.
+- Em macOS, precisa usar o comando `open`.
 - Em Windows pode passar os argumentos diretamente.
 
-> Em macOS pode passar os argumentos diretamente indo à pasta onde está a aplicação dentro do pacote (rota Contents/MacOS) que permite dirigir o stream stderr. For example, if the 4D package is located in the `MyFolder` folder, you must write the command line as follows: `/MyFolder/4D.app/Contents/MacOS/4D`. However, we recommend that you use the `open` command whenever you do not need to access the stderr stream.
+> Em macOS pode passar os argumentos diretamente indo à pasta onde está a aplicação dentro do pacote (rota Contents/MacOS) que permite dirigir o stream stderr. Por exemplo, se o pacote 4D está localizado na pasta `MyFolder`, você deve escrever a linha de comando da seguinte forma: `/MyFolder/4D.app/Contents/MacOS/4D`. Entretanto, recomendamos que você use o comando `open` sempre que não precisar acessar o fluxo stderr.
 
 ## Lançar uma aplicação 4D
 
@@ -50,7 +50,7 @@ Sintaxe:
 | `--skip-onstartup`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                                                                    | Launches the project without executing any "automatic" methods, including the `On Startup` and `On Exit` database methods                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | `--startup-method`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Nome do método projecto (string)                | Project method to execute immediately after the `On Startup` database method (if not skipped with `--skip-onstartup`).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
-(\*) Some dialogs are displayed before the database is opened, so that it's impossible to write into the [Diagnostic log file](Debugging/debugLogFiles.md#4ddiagnosticlogtxt) (licence alert, conversion dialog, database selection, data file selection). Nesses casos, uma mensagem de erro é criada tanto no stream stderr e no arquivo de eventos do sistema, e então a aplicação fecha.
+(\*) Alguns diálogos são exibidos antes do banco de dados ser aberto, para que seja impossível escrever no arquivo Diagnóstico de log (alerta de licença, diálogo de conversão, seleção de banco de dados, seleção de arquivo de dados). Nesses casos, uma mensagem de erro é criada tanto no stream stderr e no arquivo de eventos do sistema, e então a aplicação fecha.
 
 ### Exemplos
 
@@ -166,7 +166,7 @@ Aberto sem interface (modo headless):
 
 ## tool4d
 
-**tool4d** is a free, lightweight, stand-alone application allowing you to open a 4D project in headless mode and execute some 4D code using the CLI.
+**tool4d** é uma aplicação gratuita, leve e autónoma que permite abrir um projeto 4D em modo headless e executar algum código 4D utilizando o CLI.
 
 tool4d está disponível em Windows e macOS e está sempre associado a uma versão 4D (mesma versão e número de compilação). Só é fornecido na localização em inglês.
 
@@ -177,13 +177,13 @@ tool4d é uma ferramenta perfeita para o fazer:
 
 ### Utilizar tool4d
 
-You can get tool4d from the 4D [Product download page](https://product-download.4d.com/).
+Você pode obter o tool4d na [página de download do produto](https://product-download.4d.com/) do 4D.
 
-You use tool4d by executing a [command line](#launch-a-4d-application) with a standard 4D project. You can use all arguments described in the above table, except --`webadmin` since this component is [disabled in tool4d](#disabled-4d-features). Com tool4d, é lançada a seguinte sequência específica:
+Você usa o tool4d executando uma [linha de comando](#launch-a-4d-application) com um projeto 4D padrão. Você pode usar todos os argumentos descritos na tabela acima, exceto --`webadmin` já que este componente está [desativado no tool4d](#disabled-4d-features). Com tool4d, é lançada a seguinte sequência específica:
 
-1. tool4d executes the `On Startup` database method (and all "automatic" methods such as [user method](../Users/handling_users_groups.md#user-properties)), except if the `--skip-onstartup` argument is passed.
-2. tool4d executes the method designated by the `--startup-method` argument, if any.
-3. tool4d executes the `On Exit` database method, except if the `--skip-onstartup` argument is passed.
+1. tool4d executa o método da base de dados `On Startup` (e todos os métodos "automáticos" como [método do usuário](../Users/handling_users_groups.md#user-properties)), exceto se o argumento `--skip-onstartup` for passado.
+2. tool4d executa o método designado pelo argumento `--startup-method`, se houver.
+3. tool4d executa o método `On Exit` do banco de dados, exceto se o argumento `--skip-onstartup` for passado.
 4. tool4d desiste.
 
 On Windows, tool4d is a console application so that the `stdout` stream is displayed in the terminal (cmd, powershell...).
