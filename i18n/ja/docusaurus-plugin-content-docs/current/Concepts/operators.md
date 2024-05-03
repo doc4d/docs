@@ -41,6 +41,8 @@ $col:=New collection // $col を空のコレクションで初期化します
 - [**ピクチャー演算子**](dt_picture.md#ピクチャー演算子)
 - [**ポインター演算子**](dt_pointer.md#ポインター演算子)
 - [**文字列演算子**](dt_string.md#文字列演算子)
+- [**Object reference operators**](dt_object.md#object-operators)
+- [**Collection reference operators**](dt_collection.md#collection-operators)
 - [**Null 演算子**](dt_null_undefined.md#null-演算子)
 - [**未定義演算子**](dt_null_undefined.md#未定義演算子)
 
