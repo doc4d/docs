@@ -1046,7 +1046,7 @@ Quiere obtener el mensaje con ID = 1:
 
 The `.getMails()` function <!-- REF #IMAPTransporterClass.getMails().Summary -->returns an object containing a collection of `Email` objects<!-- END REF -->.
 
-**First Syntax:**
+**Primera sintaxis:**
 
 _**.getMails( ids { ; options } ) -> result**_
 
