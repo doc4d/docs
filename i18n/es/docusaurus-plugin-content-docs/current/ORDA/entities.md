@@ -36,11 +36,12 @@ Si ejecuta el siguiente código:
 
 ```4d
  var $e1; $e2 : cs.EmployeeEntity
- $e1:=ds.Employee.get(1) //accede al empleado con ID 1
+ $e1:=ds.Employee.get(1) //access the employee with ID 1
  $e2:=$e1
  $e1.name:="Hammer"
-  //ambas variables $e1 y $e2 comparten la referencia a la misma entidad
-  //$e2.name contiene "Hammer"
+  //both variables $e1 and $e2 share the reference to the same entity
+  //$e2.name contains "Hammer"
+ If($e1=$e2) //True
 ```
 
 Esto es ilustrado por el siguiente gráfico:
@@ -54,9 +55,10 @@ Ahora, si se ejecuta:
  $e1:=ds.Employee.get(1)
  $e2:=ds.Employee.get(1)
  $e1.name:="Hammer"
-  //variable $e1 contiene una referencia a una entidad
-  //variable $e2 contiene otra referencia a otra entidad
-  //$e2.name contiene "smith"
+  //variable $e1 contains a reference to an entity
+  //variable $e2 contains another reference to another entity
+  //$e2.name contains "smith"
+ If($e1=$e2) //False
 ```
 
 Esto es ilustrado por el siguiente gráfico:
