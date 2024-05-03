@@ -227,6 +227,25 @@ $col:=$o.col[5] // 6
  x:=vPtr->a //x=10
 ```
 
+## Object operators
+
+You can use comparison operators with **object references**, which means that you can evaluate if two or more references point to the same instance of an object.
+
+```4d
+var $o1:={a: 42} //reference to an instance
+var $o2:={a: 42} //reference to a different instance
+var $o3:=$o1 //reference to the same instance
+```
+
+Based upon the code above, the comparison table is:
+
+| 演算  | シンタックス                | 戻り値     | 式         | 値     |
+| --- | --------------------- | ------- | --------- | ----- |
+| 等しい | objectRef = objectRef | Boolean | $o1 = $o3 | true  |
+|     |                       |         | $o1 = $o2 | false |
+| 異なる | objectRef # objectRef | Boolean | $o1 # $o3 | false |
+|     |                       |         | $o1 # $o2 | true  |
+
 ## Resources
 
 オブジェクトは、ドキュメント、エンティティロック、そしてメモリなどの _リソース_ を使用します。 オブジェクトが必要とする限り、これらのリソースは保持されます。 変数や他のオブジェクトから参照されなくなったことを検知すると、4D はその参照されなくなったオブジェクトが使用していたリソースをすべて自動的に解放するため、通常はこの処理を意識することはありません。
