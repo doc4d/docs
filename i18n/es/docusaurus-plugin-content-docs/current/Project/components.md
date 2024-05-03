@@ -16,7 +16,7 @@ Components can be interpreted or [compiled](../Desktop/building.md). The package
 
 A 4D project running in interpreted mode can use either interpreted or compiled components. A 4D project running in compiled mode cannot use interpreted components. En este caso, sólo se pueden utilizar componentes compilados.
 
-## Loading components
+## Cargando componentes
 
 ### Básicos
 
@@ -105,12 +105,12 @@ The Dependencies panel lists all project dependencies, whatever their origin, i.
 
 The following origins are supported:
 
-| Origin tag        | Descripción                                                                       |
-| ----------------- | --------------------------------------------------------------------------------- |
-| 4D Component      | Built-in 4D component, stored in the `Components` folder of the 4D application    |
-| Source            | Component declared in the [`dependencies.json`](#dependenciesjson) file           |
-| Environment       | Component declared in the [`environnement4d.json`](#environment4djson) file       |
-| Project Component | Component located in the [`Components`](architecture.md#components) legacy folder |
+| Etiqueta de origen | Descripción                                                                       |
+| ------------------ | --------------------------------------------------------------------------------- |
+| 4D Component       | Built-in 4D component, stored in the `Components` folder of the 4D application    |
+| Source             | Component declared in the [`dependencies.json`](#dependenciesjson) file           |
+| Environment        | Component declared in the [`environnement4d.json`](#environment4djson) file       |
+| Project Component  | Component located in the [`Components`](architecture.md#components) legacy folder |
 
 **Right-click** in a dependency line and select **Show on disk** to reveal the location of a dependency:
 
