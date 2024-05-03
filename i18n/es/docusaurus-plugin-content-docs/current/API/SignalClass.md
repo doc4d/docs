@@ -5,7 +5,7 @@ title: Signal
 
 Las señales son herramientas que ofrece el lenguaje 4D para gestionar las interacciones y evitar conflictos entre procesos en una aplicación multiproceso. Las señales le permiten asegurarse de que uno o más procesos esperarán a que se complete una tarea específica antes de continuar la ejecución. Todo proceso puede esperar y/o liberar una señal.
 
-> Los semáforos también pueden utilizarse para gestionar las interacciones. Semaphores allow you to make sure that two or more processes do not modify the same resource (file, record...) at the same time. Sólo el proceso que define el semáforo puede eliminarlo.
+> Los semáforos también pueden utilizarse para gestionar las interacciones. Semaphores allow you to make sure that two or more processes do not modify the same resource (file, record...) al mismo tiempo. Sólo el proceso que define el semáforo puede eliminarlo.
 
 ### Objeto signal
 
@@ -200,7 +200,7 @@ This property is **read-write**.
 
 The `.signaled` property <!-- REF #SignalClass.signaled.Summary -->contains the current state of the `Signal` object<!-- END REF -->. When the signal is created, `.signaled` is **False**. It becomes **True** when the `.trigger( )` is called on the object.
 
-This property is **read-only**.
+Esta propiedad es de **solo lectura**.
 
 <!-- END REF -->
 
