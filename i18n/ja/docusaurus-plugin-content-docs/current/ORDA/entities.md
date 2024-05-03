@@ -41,6 +41,7 @@ $myEntity.save() // エンティティを保存します
  $e1.name:="Hammer"
   //both variables $e1 and $e2 share the reference to the same entity
   //$e2.name contains "Hammer"
+ If($e1=$e2) //True
 ```
 
 これは以下のように図解することができます:
@@ -57,6 +58,7 @@ $myEntity.save() // エンティティを保存します
   //variable $e1 contains a reference to an entity
   //variable $e2 contains another reference to another entity
   //$e2.name contains "smith"
+ If($e1=$e2) //False
 ```
 
 これは以下のように図解することができます:
