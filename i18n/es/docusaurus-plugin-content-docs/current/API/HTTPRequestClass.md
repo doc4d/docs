@@ -123,7 +123,7 @@ Por ejemplo, puede pasar las siguientes cadenas:
     http://[2001:0db8:0000:0000:0000:ff00:0042:8329]:8080/index.html (**)
 ```
 
-#### `options` parameter
+#### Parámetro _options_
 
 In the _options_ parameter, pass an object that can contain the following properties:
 
