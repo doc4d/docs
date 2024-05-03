@@ -139,7 +139,7 @@ USE ENTITY SELECTION($entitySel) //A seleção atual da tabela Employee é atual
 
 </details>
 
-<!-- REF EntitySelectionClass.index.Syntax -->***[index]*** : 4D.Entity<!-- END REF -->
+<!-- REF EntitySelectionClass.index.Syntax -->***&#91;index&#93;*** : 4D.Entity<!-- END REF -->
 
 #### Descrição
 
