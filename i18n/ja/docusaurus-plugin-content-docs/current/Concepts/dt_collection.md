@@ -142,6 +142,25 @@ $col.push(10;100) // 10 と 100 をコレクションに追加
  $vmin:=$col.min(["My.special.property"]) // エラー
 ```
 
+## Collection operators
+
+You can use comparison operators with **collection references**, which means that you can evaluate if two or more references point to the same instance of a collection.
+
+```4d
+var $c1:=["a";42] //reference to an instance
+var $c2:=["a";42] //reference to a different instance
+var $c3:=$c1 //reference to the same instance
+```
+
+Based upon the code above, the comparison table is:
+
+| 演算  | シンタックス                        | 戻り値     | 式         | 値     |
+| --- | ----------------------------- | ------- | --------- | ----- |
+| 等しい | collectionRef = collectionRef | Boolean | $c1 = $c3 | true  |
+|     |                               |         | $c1 = $c2 | false |
+| 異なる | collectionRef # collectionRef | Boolean | $c1 # $c3 | false |
+|     |                               |         | $c1 # $c2 | true  |
+
 ## 未定義
 
 未定義のコレクションの **length** プロパティは 0 を返します:
