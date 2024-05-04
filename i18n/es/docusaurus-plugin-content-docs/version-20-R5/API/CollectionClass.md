@@ -92,9 +92,9 @@ Si no se pasa ningún parámetro, `New collection` crea una colección vacía y 
 
 Debe asignar la referencia devuelta a una variable 4D del tipo Collection.
 
-> Keep in mind that `var : Collection` or `C_COLLECTION` statements declare a variable of the `Collection` type but do not create any collection.
+> Tenga en cuenta que las instrucciones `var : Collection` o `C_COLLECTION` declaran una variable de tipo `Collection` pero no crean ninguna colección.
 
-Optionally, you can prefill the new collection by passing one or several _value_(s) as parameter(s).
+Opcionalmente, puede prellenar la nueva colección pasando uno o varios _valores_ como parámetro(s).
 
 De lo contrario, puede añadir o modificar elementos posteriormente por asignación. Por ejemplo:
 
@@ -102,14 +102,14 @@ De lo contrario, puede añadir o modificar elementos posteriormente por asignaci
  myCol[10]:="My new element"
 ```
 
-If the new element index is beyond the last existing element of the collection, the collection is automatically resized and all new intermediary elements are assigned a **null** value.
+Si el nuevo índice del elemento está más allá del último elemento existente de la colección, la colección se redimensiona automáticamente y a todos los nuevos elementos intermedios se les asigna un valor **null**.
 
 Puede pasar cualquier número de valores de todos los tipos soportados (number, text, date, picture, pointer, object, collection...). A diferencia de los arrays, las colecciones pueden mezclar datos de diferentes tipos.
 
 Debe prestar atención a los siguientes aspectos de la conversión:
 
-- If you pass a pointer, it is kept "as is"; it is evaluated using the `JSON Stringify` command
-- Las fechas se almacenan como fechas "aaaa-mm-dd" o de cadenas con el formato "AAAA-MM-DDTHH:mm:ss.SSSZ", según la configuración actual "fechas dentro de los objetos" de la base de datos. Al convertir las fechas 4D en texto antes de almacenarlas en la colección, por defecto el programa tiene en cuenta la zona horaria local. You can modify this behavior using the `Dates inside objects` selector of the `SET DATABASE PARAMETER` command.
+- Si pasasun puntero, se mantiene "tal cual"; se evalúa utilizando el comando `JSON Stringify`
+- Las fechas se almacenan como fechas "aaaa-mm-dd" o de cadenas con el formato "AAAA-MM-DDTHH:mm:ss.SSSZ", según la configuración actual "fechas dentro de los objetos" de la base de datos. Al convertir las fechas 4D en texto antes de almacenarlas en la colección, por defecto el programa tiene en cuenta la zona horaria local. Puede modificar este comportamiento utilizando el selector `Dates inside objects` del comando `SET DATABASE PARAMETER`.
 - Si pasa un tiempo, se almacena como un número de milisegundos (Real).
 
 #### Ejemplo 1
@@ -162,23 +162,23 @@ Se crea una nueva colección y se añade un nuevo elemento:
 | Parámetros | Tipo                                                                |     | Descripción                                              |
 | ---------- | ------------------------------------------------------------------- | :-: | -------------------------------------------------------- |
 | value      | Number, Text, Date, Time, Boolean, Shared object, Shared collection |  -> | Valor(es) de la collection compartida |
-| Result     | Collection                                                          |  <- | The new shared collection                                |
+| Result     | Collection                                                          |  <- | La nueva colección compartida                            |
 
 <!-- END REF -->
 
 #### Descripción
 
-The `New shared collection` command <!-- REF #_command_.New shared collection.Summary --> creates a new empty or prefilled shared collection<!-- END REF --> and returns its reference.
+El comando `New shared collection` <!-- REF #_command_.New shared collection.Summary --> crea una nueva colección compartida vacía o precargada<!-- END REF --> y devuelve su referencia.
 
-Adding an element to this collection using the assignment operator must be surrounded by the [`Use...End use`](Concepts/shared.md#useend-use) structure, otherwise an error is generated (this is not necessary when adding elements using functions such as [`push()`](#push) or [`map()`](#map) because they automatically trigger an internal _Use...End use_). Reading an element without a _Use...End use_ structure is, however, possible.
+La adición de un elemento a esta colección utilizando el operador de asignación debe estar rodeada por la estructura [`Use...End use`](Concepts/shared.md#useend-use), de lo contrario se genera un error (esto no es necesario cuando se añaden elementos utilizando funciones como [`push()`](#push) o [`map()`](#map) porque activan automáticamente una estructura interna _Use...End use_). Sin embargo, es posible leer un elemento sin una estructura _Use...End use_.
 
 :::info
 
-For more information on shared collections, please refer to the [Shared objects and collections](Concepts/shared.md) page.
+Para más información sobre las colecciones compartidas, por favor consulte la página [Objetos y colecciones compartidas](Concepts/shared.md).
 
 :::
 
-If you do not pass any parameters, `New shared collection` creates an empty shared collection and returns its reference.
+Si no se pasa ningún parámetro, `New shared collection` crea una colección compartida vacía y devuelve su referencia.
 
 Debe asignar la referencia devuelta a una variable 4D del tipo Collection.
 
