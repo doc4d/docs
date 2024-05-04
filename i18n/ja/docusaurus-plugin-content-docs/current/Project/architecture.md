@@ -213,11 +213,11 @@ This folder contains [**user settings**](../Desktop/user-settings.md#user-settin
 
 ## `Components`
 
-コンポーネントを格納する従来のフォルダー (Projectフォルダーと同じ階層に保存する必要があります)。
+Folder containing components that are embedded in the project (must be stored at the same level as the Project folder). These components have priority over any other locations.
 
 :::info
 
-It is now recommended to [use the **dependencies.json** and (optionnally) **environment4d.json** files](components.md) to declare your components instead of the Components folder.
+You can also use the [**dependencies.json** and (optionnally) **environment4d.json** files](components.md) to declare components.
 
 :::
 
