@@ -81,15 +81,15 @@ A página contém várias áreas:
     ![alt-text](../assets/en/Admin/dataExplorer4b.png)
   - O nome da classe de dados seleccionada é adicionado como um separador por cima da grelha de dados. Utilizando estas abas, é possível alternar entre os valores já selecionados. Pode remover um dataclass referenciado clicando no ícone "remover" à direita do nome do dataclass.
   - É possível reduzir o número de colunas desmarcando os atributos do lado esquerdo. Também pode mudar as colunas da grade de dados utilizando arrastar e soltar. Pode clicar no cabeçalho de uma coluna  para [ordenar entidades](#ordering-entities) de acordo com seus valores (quando for possível).
-  - Se uma operação exigir muito tempo, é mostrada uma barra de progresso. You can stop the running operation at any moment by clicking on the red button:<br/>
+  - Se uma operação exigir muito tempo, é mostrada uma barra de progresso. Você pode parar a operação a qualquer momento clicando no botão vermelho:<br/>
     ![alt-text](../assets/en/Admin/dataExplorer5.png)
 
 - No lado direito está a área **Detalhes**: exibe os valores de atributo da entidade selecionada, bem como **dados relacionados**, se houver. Pode navegar entre as entidades da dataclass cliando nos links **First** / **Previous** / **Next** / **Last** na parte inferior da área.
   - Todos os tipos de atributos são exibidos, incluindo imagens, objetos (expressos em json) assim como atributos [calculados](../ORDA/ordaClasses.md#computed-attributes-1) e atributos [alias](../ORDA/ordaClasses.md#alias-attributes-1).
-  - Related data (many-to-one and one-to-many relations) can be displayed through expandable/collapsable areas:<br/>
+  - Dados relacionados (many-to-one e one-to-many relações) podem ser exibidos através de áreas expansíveis/collapsable:<br/>
     ![alt-text](../assets/en/Admin/dataExplorerRelated.png)
-  - **Ctrl+Click** (Windows) or **Command+Click** (macOS) on a related attribute name in the right side area displays the values of the attribute in an independant, floating area:<br/>
-    ![alt-text](../assets/en/Admin/dataExplorerFloat.png)
+  - **Ctrl+Click** (Windows) ou **Command+Click** (macOS) em um nome de atributo relacionado na área do lado direito exibe os valores do atributo em um independente. área flutuante:<br/>
+    ![alt-text](. /assets/pt-BR/Admin/dataExplorerFloat.png)
 
 ### Ordenar entidades
 
@@ -166,10 +166,9 @@ Pode introduzir consultas avançadas que não estão disponíveis como consultas
 firstname=="Jim"
 ```
 
-You can use any ORDA query expression as [documented with the `query()` function](API/DataClassClass.md#query), with the following limitations or differences:
+Você pode usar qualquer expressão de consulta ORDA como [documentado com a função `query()`](API/DataClassClass.md#query), com as seguintes limitações ou diferenças:
 
-- Por seguridad, no se
-  pueden ejecutar fórmulas utilizando `eval()`.
+- Por segurança, você não pode executar fórmulas usando `eval()`.
 - Os marcadores de lugar não podem ser utilizados; é necessário escrever uma consulta _queryString_ com valores.
 - Os valores das strings contendo caracteres espaciais devem ser incorporados entre aspas duplas ("").
 
@@ -179,7 +178,7 @@ Por exemplo, com o Dataclass Employee, pode escrever:
 firstname = "Marie Sophie" E manager.lastname = "@th"
 ```
 
-You can click on the `v` icon to display both [`queryPlan`](API/DataClassClass.md#queryplan) and [`queryPath`](API/DataClassClass.md#querypath). Na área, pode pairar sobre os blocos de subconsulta para ter informações detalhadas por subconsulta:
+Você pode clicar no ícone `v` para exibir ambos [`queryPlan`](API/DataClassClassClass.md#queryplan) e [`queryPath`](API/DataClassClassClass.md#querypath). Na área, pode pairar sobre os blocos de subconsulta para ter informações detalhadas por subconsulta:
 
 ![alt-text](../assets/en/Admin/dataExplorer12.png)
 
@@ -225,7 +224,7 @@ Novos valores ou valores modificados são armazenados no cache local, você prec
 
 ### Criação de entidades
 
-You can create a new, empty entity in the selected table by clicking on the creation button ![new-entity](../assets/en/Admin/data-explorer-new.png). Você pode então [inserir valores](#entering-values) para esta entidade.
+Você pode criar uma entidade nova e vazia na tabela selecionada clicando no botão de criação![new-entity](../assets/en/Admin/data-explorer-new.png). Você pode então [inserir valores](#entering-values) para esta entidade.
 
 A nova entidade é mantida no cache local, você precisa [salvá-la explicitamente](#saving-modifications) para armazená-la nos dados.
 
@@ -237,13 +236,13 @@ Valores de atributo que precisam ser calculados pelo 4D (IDs, atributos calculad
 
 ### Carregamento de valores
 
-The **reload** button ![reload](../assets/en/Admin/data-explorer-reload.png) reloads the entity attribute values from the data file. Este botão é útil, por exemplo, quando você deseja se certificar de que os valores exibidos são os valores salvos mais recentes.
+O botão **recarregar**![reload](../assets/en/Admin/data-explorer-reload.png) recarrega os valores de atributo de entidade do arquivo de dados. Este botão é útil, por exemplo, quando você deseja se certificar de que os valores exibidos são os valores salvos mais recentes.
 
 ### Salvar modificações
 
 Exceto pela exclusão  (veja abaixo), as modificações da entidade são feitas localmente e precisam ser salvas para que sejam armazenadas no arquivo de dados.
 
-To save modifications or to save an entity you created in the Data Explorer, click on the **Save** button ![save](../assets/en/Admin/data-explorer-save.png).
+Para salvar modificações ou para salvar uma entidade que você criou no Explorador de Dados, clique no botão **Salvar**![save](../assets/en/Admin/data-explorer-save.png).
 
 :::info
 
@@ -251,11 +250,11 @@ Modificações em uma entidade existente são automaticamente salvas quando voc�
 
 :::
 
-Em caso de conflito (por exemplo, outro usuário modificou o mesmo valor de atributo na mesma entidade), uma mensagem de erro é exibida na parte inferior do Explorador de Dados. You can click on the [**Reload** button](#reloading-values) to get the new value from the data and then, apply and save your modifications.
+Em caso de conflito (por exemplo, outro usuário modificou o mesmo valor de atributo na mesma entidade), uma mensagem de erro é exibida na parte inferior do Explorador de Dados. Você pode clicar no botão [**Recarregar**](#reloading-values) para obter o novo valor a partir dos dados e então, aplicar e salvar suas modificações.
 
 ### Excluindo entidades
 
-You can delete entities by clicking on the **delete** button ![delete](../assets/en/Admin/data-explorer-delete.png).
+Você pode excluir entidades clicando no botão **excluir**![delete](../assets/en/Admin/data-explorer-delete.png).
 
 Para excluir um conjunto de entidades, selecione duas ou mais entidades na área da lista usando **Shift+clique** (seleção contínua) ou **Ctrl/Command+clique** (seleção descontínua) e clique no botão **excluir**.
 
