@@ -90,11 +90,11 @@ Os arquivos de certificado incluem:
 Os arquivos **key.pem** e **cert.pem** devem estar localizados:
 
 - com 4D Server ou 4D no modo local, ao lado da [pasta do projeto](Project/architecture.md#project-folder)
-- with 4D in remote mode, in the client database folder on the remote machine (for more information about the location of this folder, see the [`Get 4D folder`](https://doc.4d.com/4dv20/help/command/en/page485.html) command). Deve copiar esses arquivos manualmente na máquina remota.
+- com 4D em modo remoto, na pasta do banco de dados cliente na máquina remota (para obter mais informações sobre a localização dessa pasta, consulte o comando [`Get 4D folder`](https://doc.4d.com/4dv20/help/command/en/page485.html)). Deve copiar esses arquivos manualmente na máquina remota.
 
 ### Ativar TLS
 
-Para que as conexões TLS sejam aceitas pelo servidor HTTP, você deve ativar HTTPS. Refer to the [**Enable HTTPS**](WebServer/webServerConfig.md#enable-https) paragraph to know the different ways to enable TLS for the HTTP server.
+Para que as conexões TLS sejam aceitas pelo servidor HTTP, você deve ativar HTTPS. Consulte o parágrafo [**Habilitar HTTPS**](WebServer/webServerConfig.md#enable-https) para saber as diferentes maneiras de habilitar o TLS para o servidor HTTP.
 
 :::note
 
@@ -106,7 +106,7 @@ O servidor 4D web é compatível com a opção HSTS para prevenir um navegador d
 
 [PFS](https://en.wikipedia.org/wiki/Forward_secrecy) adiciona mais um nível de segurança para suas comunicações. Ao invés de usar chaves de troca pré-estabelecidas, PFS cria chaves de sessão cooperativamente entre as partes que se comunicam usando os algoritmos Difie-Hellman (DH). A maneira conjunta com a qual essas chaves são construídas cria um "segredo compartilhado" que impede partes externas de as comprometerem.
 
-Quando TLS estiver ativado no servidor, PFS é ativado automaticamente. Se o arquivo _dhparams.pem_ (documento que contém a chave privada DH do servidor) ainda não existir, 4D vai gerar o arquivo automaticamente com um tamanho de chave de  2048. A geração inicial deste arquivo pode levar vários minutos. The file is placed with the [_key.pem_ and _cert.pem_ files](#installing-certificate-files).
+Quando TLS estiver ativado no servidor, PFS é ativado automaticamente. Se o arquivo _dhparams.pem_ (documento que contém a chave privada DH do servidor) ainda não existir, 4D vai gerar o arquivo automaticamente com um tamanho de chave de  2048. A geração inicial deste arquivo pode levar vários minutos. O arquivo é colocado com os arquivos [_key.pem_ e _cert.pem_](#instalando-arquivos-de-certificado).
 
 Se utilizar uma [lista de cifrado personalizada](WebServer/webServerConfig.md##cipher-list) e quiser habilitar o PFS, deve comprovar que contenha entradas com algoritmos DH ou ECDH (Elliptic-curve Diffie-Hellman).
 
