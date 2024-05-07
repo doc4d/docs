@@ -46,11 +46,11 @@ O item de menu vira **Stop Server** quando o servidor for lançado; selecione **
 
 ## Propriedades WebAdmin
 
-Configuring the `WebAdmin` component is mandatory in particular to define the [**access key**](#access-key). Como padrão, quando a chave de acesso não for estabelecida, o acesso via uma url não é permitido.
+Configurar o componente `WebAdmin` é obrigatório em particular para definir a [**chave de acesso**](#access-key). Como padrão, quando a chave de acesso não for estabelecida, o acesso via uma url não é permitido.
 
 Pode configurar o componente `WebAdmin` usando [Web Administration a caixa de diálogo de configurações](#settings-dialog-box) (ver abaixo).
 
-> If you use a headless 4D application, you can use [_Command Line Interface_ arguments](#webadmin-headless-configuration) to define basic settings. Se quiser personalizar o arquivo de configurações para definir os parâmetros avançados.
+> Se você usar uma aplicação 4D headless, você pode usar os [argumentos da _Interface de Linha de Comando_](#webadmin-headless-configuration) para definir as configurações básicas. Se quiser personalizar o arquivo de configurações para definir os parâmetros avançados.
 
 ### Caixa de diálogos de configurações
 
@@ -131,8 +131,7 @@ Todos [os parâmetros de WebAdmin](#webadmin-settings) são armazenados no arqui
 
 Quando rodar uma aplicação sem interface 4D ou 4D Servidor, pode estabelecer e usar o arquivo padrão `WebAdmin.4DSettings` , ou determinar um arquivo personalizado `.4DSettings`.
 
-Para estabelecer o conteúdo do arquivo, pode utilizar a [janela de parâmetros WebAdmin](#settings-dialog-box) da aplicação 4D com uma interface e ejecutá-la depois sem interface. Se utiliza entonces
-el archivo por defecto `WebAdmin.4DSettings`.
+Para estabelecer o conteúdo do arquivo, pode utilizar a [janela de parâmetros WebAdmin](#settings-dialog-box) da aplicação 4D com uma interface e ejecutá-la depois sem interface. Se utiliza então o arquivo padrão `WebAdmin.4DSettings`.
 
 Ou, pode estabelecer um arquivo personalizado `.4DSettings` (formato xml) e usar ao invés do arquivo padrão. Na [Interfaz de linha de comandos](cli.md) há vários argumentos dedicados para compatibilidade com esta funcionalidade.
 
