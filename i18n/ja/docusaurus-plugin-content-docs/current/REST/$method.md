@@ -21,7 +21,7 @@ title: $method
 
 ### 説明
 
-With `$method=delete`, you can delete an entity or an entire entity collection. You can define the collection of entities by using, for example, [`$filter`]($filter.md) or specifying one directly using [`{dataClass}({key})`](%7BdataClass%7D.html#dataclasskey) _(e.g._, /Employee(22)).
+`$method=delete` を使ってエンティティ、またはエンティティセレクションを削除します。 You can define the collection of entities by using, for example, [`$filter`]($filter.md) or specifying one directly using [`{dataClass}({key})`](%7BdataClass%7D.html#dataclasskey) _(e.g._, /Employee(22)).
 
 You can also delete the entities in an entity set, by calling [`$entityset/{entitySetID}`]($entityset.md#entitysetentitysetid).
 
@@ -53,25 +53,25 @@ RESTリクエストで定義されたエンティティのコレクションに�
 
 ### 説明
 
-RESTでエンティティのコレクションを作成した場合、これをエンティティセットとして 4D Server のキャッシュに保存することができます。 The entity set will have a reference number that you can pass to `$entityset/{entitySetID}` to access it. デフォルトで、エンティティセットは 2時間有効です。$timeout に値 (秒単位) を渡すことで、有効時間を変更できます。
+RESTでエンティティのコレクションを作成した場合、これをエンティティセットとして 4D Server のキャッシュに保存することができます。 エンティティセットには参照番号が付与されます。これを `$entityset/{entitySetID}` に渡すと、当該エンティティセットにアクセスできます。 デフォルトで、エンティティセットは 2時間有効です。$timeout に値 (秒単位) を渡すことで、有効時間を変更できます。
 
-If you have used `$savedfilter` and/or `$savedorderby` (in conjunction with `$filter` and/or `$orderby`) when you created your entity set, you can recreate it with the same reference ID even if it has been removed from 4D Server's cache.
+エンティティセットを作成する際に、`$filter` や `$orderby` と同時に`$savedfilter` や `$savedorderby` も使用していた場合には、4D Server のキャッシュからエンティティセットが削除されていても、同じ参照IDで再作成できます。
 
 ### 例題
 
-To create an entity set, which will be saved in 4D Server's cache for two hours, add `$method=entityset` at the end of your REST request:
+4D Server のキャッシュに2時間保存されるエンティティセットを作成するには、RESTリクエストの最後に `$method=entityset` を追加します:
 
 `GET  /rest/People/?$filter="ID>320"&$method=entityset`
 
-You can create an entity set that will be stored in 4D Server's cache for only ten minutes by passing a new timeout to `$timeout`:
+保存時間が 10分のエンティティセットを作成するには、次のように `$timeout` に値を渡します:
 
 `GET  /rest/People/?$filter="ID>320"&$method=entityset&$timeout=600`
 
-You can also save the filter and order by, by passing true to `$savedfilter` and `$savedorderby`.
+フィルターや並べ替えの情報を保存するには、`$savedfilter` や `$savedorderby` に true を渡します。
 
-> `$skip` and `$top/$limit` are not taken into consideration when saving an entity set.
+> エンティティセットを作成する際には、`$skip` および `$top/$limit` は無視されます。
 
-After you create an entity set, the first element, `__ENTITYSET`, is added to the object returned and indicates the URI to use to access the entity set:
+エンティティセットを作成すると、返されるオブジェクトの先頭に `__ENTITYSET` という要素が追加され、エンティティセットにアクセスするための URI を提供します:
 
 ```json
 __ENTITYSET: "http://127.0.0.1:8081/rest/Employee/$entityset/9718A30BF61343C796345F3BE5B01CE7"
@@ -118,11 +118,11 @@ RESTリクエストで定義されたリレートエンティティのコレク�
 
 ### 説明
 
-`$method=subentityset` allows you to sort the data returned by the relation attribute defined in the REST request.
+`$method=subentityset` を使うことで、RESTリクエストが定義されたリレーション属性によって返されるデータを並べ替えることができます。
 
-To sort the data, you use the `$subOrderby` property. 並べ替えの基準とする各属性について、並べ替え順を指定します。ASC ( asc) が昇順、DESC (desc) が降順です。 デフォルトでは、データは昇順に並べ替えられます。
+データを並べ替えるには `$subOrderby` を使います。 並べ替えの基準とする各属性について、並べ替え順を指定します。ASC ( asc) が昇順、DESC (desc) が降順です。 デフォルトでは、データは昇順に並べ替えられます。
 
-If you want to specify multiple attributes, you can delimit them with a comma, µ, `$subOrderby="lastName desc, firstName asc"`.
+複数の属性を指定するには、カンマ区切りにします (`例`: $subOrderby="lastName desc, firstName asc")。
 
 ### 例題
 
@@ -180,24 +180,23 @@ If you want to specify multiple attributes, you can delimit them with a comma, �
 
 ### 説明
 
-`$method=update` allows you to update and/or create one or more entities in a single **POST**. If you update and/or create one entity, it is done in an object with each property an attribute with its value, _e.g._, `{ lastName: "Smith" }`. 複数のエンティティを更新・作成するには、各エンティティに対応するオブジェクトをコレクションにまとめます。
+`$method=update` を使うと、一つの **POST** で一つ以上のエンティティを更新または作成することができます。 エンティティの更新・作成をおこなうには、オブジェクトのプロパティ/値としてエンティティの属性/値を指定します (_例_: `{ lastName: "Smith" }`)。 複数のエンティティを更新・作成するには、各エンティティに対応するオブジェクトをコレクションにまとめます。
 
-In any cases, you must set the **POST** data in the **body** of the request.
+いずれの場合も、リクエストのボディ (**body**) に **POST** データを格納します。
 
-To update an entity, you must pass the `__KEY` and `__STAMP` parameters in the object along with any modified attributes. If both of these parameters are missing, an entity will be added with the values in the object you send in the body of your **POST**.
+エンティティを更新するには、更新する属性だけでなく、`__KEY` および `__STAMP` パラメーターをオブジェクト内に指定しなくてはなりません。 これらのパラメーターがない場合、**POST** のボディに格納したオブジェクトの値をもとに新規エンティティが追加されます。
 
 エンティティをサーバーに保存すると同時にトリガーが実行されます。 レスポンスにはすべてのデータが、サーバー上に存在するとおりに格納されます。
 
-You can also put these requests to create or update entities in a transaction by calling `$atomic/$atOnce`. データの検証でエラーが発生した場合に、一部のエンティティだけが処理されてしまうのを防げます。 You can also use `$method=validate` to validate the entities before creating or updating them.
+`$atomic/$atOnce` を使うと、エンティティを作成・更新するリクエストをトランザクション内で実行できます。 データの検証でエラーが発生した場合に、一部のエンティティだけが処理されてしまうのを防げます。 また、`$method=validate` を使うと、作成・更新の前にエンティティを検証することができます。
 
 エンティティを追加または更新する際に問題が発生すると、その情報を格納したエラーが返されます。
 
 :::note
 
-- **Dates** must be expressed in JS format: YYYY-MM-DDTHH:MM:SSZ (e.g., "2010-10-05T23:00:00Z"). 日付属性のためだけに日付プロパティを指定した場合、タイムゾーンおよび時刻 (時間・分・秒) の情報は削除されます。 この場合、レスポンスの形式 dd!mm!yyyy (例: 05!10!2013) を使って日付を送信することも可能です。
-- **Booleans** are either true or false.
-- Uploaded files using `$upload` can be applied to an attribute of type Image or BLOB by passing the object returned in the following format `{ "ID": "D507BC03E613487E9B4C2F6A0512FE50"}`
-  :::
+- **日付** は JavaScript 形式で表す必要があります: YYYY-MM-DDTHH:MM:SSZ (例: "2010-10-05T23:00:00Z")。 日付属性のためだけに日付プロパティを指定した場合、タイムゾーンおよび時刻 (時間・分・秒) の情報は削除されます。 この場合、レスポンスの形式 dd!mm!yyyy (例: 05!10!2013) を使って日付を送信することも可能です。
+- **ブール** は true または false です。
+- `$upload` を使ってアップロードしたファイルは、`{ "ID": "D507BC03E613487E9B4C2F6A0512FE50"}` のような形式で返されるオブジェクトを渡すことで、ピクチャー型やBLOB型の属性に適用できます。
 
 ### 例題
 
