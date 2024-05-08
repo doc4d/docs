@@ -30,7 +30,7 @@ title: メニューとメニューバーの作成
 
 ### メニューエディターを使用する
 
-1. Select the item you want to create and click the add ![](../assets/en/Menus/PlussNew.png) button below the menu bar area.
+1. 作成する対象 (メニューバーまたはメニュー) を選択し、エリアの下にある追加ボタン ![](../assets/en/Menus/PlussNew.png) をクリックします。
    または<br />
    リストのコンテキストメニューあるいはリストの下にあるオプションメニューから **新規メニューバー作成** または **新規メニュー作成** を選択します。
    メニューバーを作成した場合は、新しいメニューバーがリスト中に追加され、デフォルトメニュー (ファイルと編集) があらかじめ添付されています。
@@ -58,8 +58,7 @@ title: メニューとメニューバーの作成
 1. ソースメニューリスト中で、項目を追加するメニューを選択します。
    メニューが既に項目を持っていれば、それが中央のリストに表示されます。 新しい項目を挿入するには、その上にくる項目を選択します。 ドラッグ＆ドロップ操作で、後から順番を変更することも可能です。
 2. メニューエディターのオプションメニュー、またはエディターのコンテキストメニュー (中央のリスト内で右クリック) から **メニューバー/メニュー "メニュー名" に項目を追加** を選択します。
-   OR
-   Click on the add ![](../assets/en/Menus/PlussNew.png) button located below the central list.
+   または <br /> 中央のリストの下にある追加ボタン ![](../assets/en/Menus/PlussNew.png) をクリックします。
    項目が追加され、デフォルト名 "項目 X" が割り当てられます (X は項目の番号)。
 3. 項目名の上でダブルクリックすると、名前を編集できるモードになり、名前を変更することができます。
    または <br />
@@ -77,7 +76,7 @@ title: メニューとメニューバーの作成
 
 メニューバー、メニュー、メニューコマンドを削除するには:
 
-- Select the item to be deleted and click on the delete ![](../assets/en/Menus/MinussNew.png) button located beneath the list.
+- 削除する項目を選択し、リストの下にある削除ボタン ![](../assets/en/Menus/MinussNew.png) をクリックします。
 - コンテキストメニューまたはエディターのオプションメニューから **〜 を削除** コマンドを選択します。
 
 > メニューバー#1 を削除することはできません。
@@ -100,12 +99,11 @@ title: メニューとメニューバーの作成
 
 各メニューは、メニューバーあるいは別のメニューに添付できます。
 
-- To attach a menu to a menu bar: right-click on the menu bar and select **Attach a menu to the menu bar "bar name" >**, then choose the menu to be attached to the menu bar:
-  ![](../assets/en/Menus/attach.png)
-  You can also select a menu bar then click on the options button found below the list.
-- To attach a menu to another menu: select the menu in the left-hand area, then right-click on the menu item and select **Attach a sub-menu to the item "item name">**, then choose the menu you want to use as sub-menu:\
+- メニューバーにメニューを添付するには: メニューバーを右クリックし、**メニューバー "メニューバー名" にメニューを添付 >** を選択、そしてサブメニューから添付するメニューを選択します: ![](../assets/en/Menus/attach.png)
+  また、メニューバーを選択してから、リストの下にあるオプションメニューをクリックする方法もあります。
+- メニューに他のメニューを添付するには: 左のリスト中でメニューを選択し、次に中央リストのメニュー項目上で右クリックし、**項目 "項目名" にサブメニューを添付 >** を選択、そしてサブメニューとして使用するメニューを選択します:\
   ![](../assets/en/Menus/attach2.png)
-  You can also select a menu item then click on the options button found below the list.
+  また、メニュー項目を選択してから、リストの下にあるオプションメニューをクリックする方法もあります。
   添付されたメニューはサブメニューとなります。 項目のタイトルは保持されますが (元のサブメニュー名は無視されます)、このタイトルを変更することができます。
 
 #### メニューの分離
