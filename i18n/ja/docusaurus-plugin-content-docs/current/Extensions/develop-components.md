@@ -11,13 +11,13 @@ title: コンポーネントの開発
 
 - **マトリクスプロジェクト**: コンポーネント開発に使用する4D プロジェクト。 マトリクスプロジェクトは特別な属性を持たない標準のプロジェクトです。 マトリクスプロジェクトはひとつのコンポーネントを構成します。
 - **ホストプロジェクト**: コンポーネントがインストールされ、それを使用するアプリケーションプロジェクト。
-- **Component**: Matrix project that can be compiled or [built](Desktop/building.md#build-component), copied into the [`Components`](Project/architecture.md) folder of the host application and whose contents are used in the host application.
+- **コンポーネント**: ホストアプリケーションによって使用される目的で、同アプリケーションの [`Components`](Project/architecture.md) フォルダーにコピーされたマトリクスプロジェクト (コンパイル済み または [ビルド済み](Desktop/building.md#コンポーネントをビルド))。
 
 ## 基本
 
 4D コンポーネントの作成とインストールは直接 4D を使用しておこないます:
 
-- To install a component, you simply need to copy the component files into the [`Components` folder of the project](Project/architecture.md). エイリアスまたはショートカットも使用できます。
+- コンポーネントをインストールするには、[プロジェクトの `Components` フォルダー](Project/architecture.md) にコンポーネントファイルをコピーします。 エイリアスまたはショートカットも使用できます。
 - 言い換えれば、マトリクスプロジェクト自体も1 つ以上のコンポーネントを使用できます。 しかしコンポーネントが "サブコンポーネント" を使用することはできません。
 - コンポーネントは次の 4D の要素を呼び出すことができます: クラス、関数、プロジェクトメソッド、プロジェクトフォーム、メニューバー、選択リストなど。 反面、コンポーネントが呼び出せないものは、データベースメソッドとトリガーです。
 - コンポーネント内でデータストアや標準のテーブル、データファイルを使用することはできません。 しかし、外部データベースのメカニズムを使用すればテーブルやフィールドを作成し、そこにデータを格納したり読み出したりすることができます。 外部データベースは、メインの 4D データベースとは独立して存在し、SQLコマンドでアクセスします。
@@ -27,13 +27,13 @@ title: コンポーネントの開発
 
 [使用できないコマンド](#使用できないコマンド) を除き、コンポーネントではすべての 4D ランゲージコマンドが使用できます。
 
-When commands are called from a component, they are executed in the context of the component, except for the [`EXECUTE METHOD`](https://doc.4d.com/4dv20/help/command/en/page1007.html) or [`EXECUTE FORMULA`](https://doc.4d.com/4dv20/help/command/en/page63.html) command that use the context of the method specified by the command. また、ユーザー＆グループテーマの読み出しコマンドはコンポーネントで使用することができますが、読み出されるのはホストプロジェクトのユーザー＆グループ情報であることに注意してください (コンポーネントに固有のユーザー＆グループはありません)。
+コマンドがコンポーネントから呼ばれると、コマンドはコンポーネントのコンテキストで実行されます。ただし [`EXECUTE METHOD`](https://doc.4d.com/4dv20/help/command/ja/page1007.html) および [`EXECUTE FORMULA`](https://doc.4d.com/4dv20/help/command/ja/page63.html) コマンドは除きます。これらのコマンドは、パラメーターにて指定されたメソッドのコンテキストを使用します。 また、ユーザー＆グループテーマの読み出しコマンドはコンポーネントで使用することができますが、読み出されるのはホストプロジェクトのユーザー＆グループ情報であることに注意してください (コンポーネントに固有のユーザー＆グループはありません)。
 
-The [`SET DATABASE PARAMETER`](https://doc.4d.com/4dv20/help/command/en/page642.html) and [`Get database parameter`](https://doc.4d.com/4dv20/help/command/en/page643.html) commands are an exception: their scope is global to the application. これらのコマンドがコンポーネントから呼び出されると、結果はホストプロジェクトに適用されます。
+[`SET DATABASE PARAMETER`](https://doc.4d.com/4dv20/help/command/ja/page642.html) と [`Get database parameter`](https://doc.4d.com/4dv20/help/command/ja/page643.html) コマンドは例外となります: これらのコマンドのスコープはグローバルです。 これらのコマンドがコンポーネントから呼び出されると、結果はホストプロジェクトに適用されます。
 
 さらに、`Structure file` と `Get 4D folder` コマンドは、コンポーネントで使用するための設定ができるようになっています。
 
-The [`COMPONENT LIST`](https://doc.4d.com/4dv20/help/command/en/page1001.html) command can be used to obtain the list of components that are loaded by the host project.
+[`COMPONENT LIST`](https://doc.4d.com/4dv20/help/command/ja/page1001.html) コマンドを使用して、ホストプロジェクトにロードされたコンポーネントのリストを取得できます。
 
 ### 使用できないコマンド
 
@@ -60,7 +60,7 @@ The [`COMPONENT LIST`](https://doc.4d.com/4dv20/help/command/en/page1001.html) c
 **注:**
 
 - `Current form table` コマンドは、プロジェクトフォームのコンテキストで呼び出されると `Nil` を返します。 ゆえにこのコマンドをコンポーネントで使用することはできません。
-- SQL data definition language commands (`CREATE TABLE`, `DROP TABLE`, etc.) cannot be used on the component project. ただし、外部データベースの場合は使用することができます (`CREATE DATABASE` SQL コマンド参照)。
+- SQLデータ定義言語のコマンド (`CREATE TABLE`、`DROP TABLE`等)  をコンポーネントのフレームワークで使用することはできません。 ただし、外部データベースの場合は使用することができます (`CREATE DATABASE` SQL コマンド参照)。
 
 ## プロジェクトメソッドの共有
 
@@ -76,7 +76,7 @@ The [`COMPONENT LIST`](https://doc.4d.com/4dv20/help/command/en/page1001.html) c
 
 ![](../assets/en/Concepts/pict516563.en.png)
 
-Once the project methods of the host projects are available to the components, you can execute a host method from inside a component using the [`EXECUTE FORMULA`](https://doc.4d.com/4dv20/help/command/en/page63.html) or [`EXECUTE METHOD`](https://doc.4d.com/4dv20/help/command/en/page1007.html) command. 例:
+ホストプロジェクトのプロジェクトメソッドがコンポーネントから利用可能になっていれば、[`EXECUTE FORMULA`](https://doc.4d.com/4dv20/help/command/ja/page63.html) または [`EXECUTE METHOD`](https://doc.4d.com/4dv20/help/command/ja/page1007.html) コマンドを使用して、コンポーネント側からホストのメソッドを実行することができます。 例:
 
 ```4d
 // ホストメソッド
@@ -98,13 +98,13 @@ EXECUTE METHOD($param)
 
 ### コンポーネント名前空間の宣言
 
-To allow classes and functions of your component to be exposed in the host projects, enter a value in the [**Component namespace in the class store** option in the General page](../settings/general.md#component-namespace-in-the-class-store) of the matrix project Settings. デフォルトでは、このエリアは空です。つまり、コンポーネントのクラスはコンポーネント外で利用できません。
+コンポーネントのクラスや関数をホストプロジェクトに公開するには、マトリクスプロジェクトの設定の [一般ページにある **クラスストア内でのコンポーネント名前空間** オプション](../settings/general.md#クラスストア内でのコンポーネント名前空間) に値を入力します。 デフォルトでは、このエリアは空です。つまり、コンポーネントのクラスはコンポーネント外で利用できません。
 
 ![](../assets/en/settings/namespace.png)
 
 > _名前空間_ は、同じ名前のクラスや関数を持つ異なるコンポーネントがホストプロジェクトで使用されている場合に、競合が発生しないようにします。 コンポーネント名前空間は、[プロパティの命名規則](../Concepts/identifiers.md#オブジェクトプロパティ) に準拠する必要があります。
 
-When you enter a value, you declare that component classes and functions will be available in the [user class store (**cs**)](../Concepts/classes.md#cs) of the host project's code, through the `cs.<value>` namespace. たとえば、`getArea()` 関数を持つ `Rectangle` クラスが存在する場合に、コンポーネント名前空間として "eGeometry" を入力すると、このプロジェクトがコンポーネントとしてインストールされると、ホストプロジェクトの開発者は次のように記述することができます:
+値を入力すると、ホストプロジェクトのコードにおいてユーザークラスストア (cs) 内の cs.<値> 名前空間を介して、コンポーネントのクラスと関数が利用可能になることを宣言することになります。 たとえば、`getArea()` 関数を持つ `Rectangle` クラスが存在する場合に、コンポーネント名前空間として "eGeometry" を入力すると、このプロジェクトがコンポーネントとしてインストールされると、ホストプロジェクトの開発者は次のように記述することができます:
 
 ```4d
 // ホストプロジェクトにて
@@ -139,9 +139,9 @@ $rect:=cs.eGeometry._Rectangle.new(10;20)
 
 ## コンパイル済みコンポーネントのコード補完
 
-To make your component easier to use for developers, you can check the [**Generate syntax file for code completion when compiled** option in the General page](../settings/general.md#component-namespace-in-the-class-store) of the matrix project Settings.
+開発者に向けてコンポーネントを使いやすくするため、マトリクスプロジェクトの設定で、 [一般ページの **コンパイル時にコード補完用のシンタックスファイルを生成する** オプション](../settings/general.md#component-namespace-in-the-class-store) をチェックすることができます。
 
-A syntax file (JSON format) is then automatically created during the compilation phase, filled with the syntax of your component's classes, functions, and [exposed methods](#sharing-of-project-methods), and placed in the `\Resources\en.lproj` folder of the component project. 4D は、このシンタックスファイルをもとに、コード補完や関数シンタックスなどのコードエディター用のヘルプを生成します。
+すると、コンパイル時にシンタックスファイル (JSON形式) が自動生成され、そこにコンポーネントのクラス、関数、および [公開メソッド](#プロジェクトメソッドの共有) のシンタックスを格納し、コンポーネントプロジェクトの `\Resources\ja.lproj` フォルダーに配置されます。 4D は、このシンタックスファイルをもとに、コード補完や関数シンタックスなどのコードエディター用のヘルプを生成します。
 
 ![](../assets/en/settings/syntax-code-completion-2.png)
 ![](../assets/en/settings/syntax-code-completion-1.png)
@@ -196,7 +196,7 @@ component_method($input_t)
 
 - コンポーネントI が定義する変数 `myIvar` があるとき、コンポーネントC はポインター `->myIvar` を使用しても変数の値にアクセスすることはできません。 このシンタックスは実行エラーを起こします。
 
-- The comparison of pointers using the `RESOLVE POINTER` command is not recommended with components since the principle of partitioning variables allows the coexistence of variables having the same name but with radically different contents in a component and the host project (or another component). 両コンテキストで、変数のタイプが違うことさえありえます。 ポインター `myptr1` と `myptr2` がそれぞれ変数を指すとき、以下の比較は正しくない結果となるかもしれません:
+- `RESOLVE POINTER` を使用したポインターの比較はお勧めできません。変数の分離の原則により、ホストプロジェクトとコンポーネント (あるいは他のコンポーネント) で同じ名前の変数が存在することができますが、根本的にそれらは異なる内容を持ちます。 両コンテキストで、変数のタイプが違うことさえありえます。 ポインター `myptr1` と `myptr2` がそれぞれ変数を指すとき、以下の比較は正しくない結果となるかもしれません:
 
 ```4d
      RESOLVE POINTER(myptr1;vVarName1;vtablenum1;vfieldnum1)
@@ -256,7 +256,7 @@ SAVE RECORD($tablepointer->)
 外部データベースの作成:
 
 ```4d
-<>MyDatabase:=Get 4D folder+"\MyDB" // (Windows) stores the data in an authorized directory
+<>MyDatabase:=Get 4D folder+"\MyDB" // (Windows) データを許可されているディレクトリに保存します
  Begin SQL
         CREATE DATABASE IF NOT EXISTS DATAFILE :[<>MyDatabase];
         USE DATABASE DATAFILE :[<>MyDatabase];
@@ -274,12 +274,13 @@ SAVE RECORD($tablepointer->)
         USE DATABASE SQL_INTERNAL;
 
  End SQL
+
 ```
 
 外部データベースへのデータ書き込み:
 
 ```4d
- $Ptr_1:=$2 // retrieves data from the host project through pointers
+ $Ptr_1:=$2 // ポインターを介してホストプロジェクトからデータを取得します
  $Ptr_2:=$3
  $Ptr_3:=$4
  $Ptr_4:=$5
@@ -297,12 +298,13 @@ SAVE RECORD($tablepointer->)
 
 
  End SQL
+
 ```
 
 外部データベースからデータを読み込み:
 
 ```4d
- $Ptr_1:=$2 // accesses data of the host project through pointers
+ $Ptr_1:=$2 // ホストプロジェクトへのデータアクセスはポインターを通じておこないます
  $Ptr_2:=$3
  $Ptr_3:=$4
  $Ptr_4:=$5
@@ -319,6 +321,7 @@ SAVE RECORD($tablepointer->)
     USE DATABASE SQL_INTERNAL;
 
  End SQL
+
 ```
 
 ## フォームの使用
@@ -346,7 +349,7 @@ SAVE RECORD($tablepointer->)
 
 初期化やデータベースを閉じるコードの実行は、 `On Host Database Event` データベースメソッド を使用しておこなわれます。
 
-> セキュリティ上の理由から、`On Host Database Event` データベースメソッドを使用可能にするためには、その実行をホストデータベースで明示的に許可する必要があります。 To do this, you must check the [**Execute "On Host Database Event" method of the components** option](../settings/security.md#options) in the Security page of the Settings.
+> セキュリティ上の理由から、`On Host Database Event` データベースメソッドを使用可能にするためには、その実行をホストデータベースで明示的に許可する必要があります。 このためには、ストラクチャー設定画面のセキュリティページ内の、[**コンポーネントの "On Host Database Event" メソッドを実行**](../settings/security.md#オプション) オプションにチェックを入れます:
 
 ## コンポーネントの保護: コンパイル
 
