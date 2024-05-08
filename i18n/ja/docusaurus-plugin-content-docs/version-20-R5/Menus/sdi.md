@@ -17,7 +17,7 @@ SDIモードは以下の実行環境に限り利用可能です:
 
 - Windows
 - 組み込みの [スタンドアロン](../Desktop/building#スタンドアロンアプリケーションをビルド) または [クライアント](../Desktop/building#クライアントアプリケーションをビルド) 4Dアプリケーション
-- [**Test application** feature](bars.md#previewing-menu-bars) available from the **Run** menu.
+- **実行** メニューにて提供されている [\*\* アプリケーションをテスト\*\* 機能](bars.md#メニューバーのプレビュー) から利用可能です。
 
 ## SDIモードの有効化
 
@@ -55,7 +55,7 @@ SDIモードでは、同プロセス中に開かれたすべてのドキュメ�
 
 ### デバッガー
 
-When displayed in SDI mode, the [debugger window](../Debugging/debugger.md) does not contain [editing buttons](../Debugging/debugger.md#tool-bar-buttons), because switching to development environment requires to abort execution and restart the application in MDI mode.
+SDIモードで表示されている場合、[デバッガーウィンドウ](../Debugging/debugger.md) には [編集ボタン](../Debugging/debugger.md#ツールバーボタン) がありません。これは、開発環境に切り替えるにあたって実行を中断し、MDIモードでアプリケーションを再起動する必要があるためです。
 
 ### 自動終了
 
@@ -92,6 +92,6 @@ _quit_ (終了) 標準アクションが割り当てられているメニュー�
 
 :::info
 
-You can use the [**Get application info**](https://doc.4d.com/4dv19R/help/command/en/page1599.html) command to know the current running mode on Windows.
+[**Get application info**](https://doc.4d.com/4dv19R/help/command/ja/page1599.html) コマンドを使用すると、Windows で現在実行中のモードを確認することができます。
 
 :::
