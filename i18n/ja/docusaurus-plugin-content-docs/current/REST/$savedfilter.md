@@ -3,13 +3,13 @@ id: savedfilter
 title: $savedfilter
 ---
 
-Saves the filter defined by $filter when creating an entity set (_e.g._, `$savedfilter="{filter}"`)
+エンティティセット作成時に、$filter に定義したフィルターを保存します (_例_: `$savedfilter="{filter}"`)
 
 ## 説明
 
 エンティティセットを作成する際に使用したフィルターを念のために保存しておくことができます。 If the entity set that you created is removed from 4D Server's cache (due to the timeout, the server's need for space, or your removing it by calling [`$method=release`]($method.md#methodrelease)).
 
-You use `$savedfilter` to save the filter you defined when creating your entity set and then pass `$savedfilter` along with your call to retrieve the entity set each time.
+`$savedfilter` を使用してエンティティセット作成時に使ったフィルターを保存したあとは、エンティティセットを取得する度に `$savedfilter` も受け渡します。
 
 4D Server のキャッシュからエンティティセットが消えていた場合、10分のデフォルトタイムアウトで再作成されます。 エンティティセットが消えていた場合、再作成されるエンティティセットの内容は更新されたものです (新しくエンティティが追加されていたり、存在していたエンティティが削除されていたりする場合がありえます)。
 
