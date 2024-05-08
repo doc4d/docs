@@ -13,13 +13,13 @@ title: Webサーバーオブジェクト
 
 1つの 4Dアプリケーションプロジェクトに接続できるコンポーネントの数、つまり Webサーバーの数には、メモリ以外の制限はありません。
 
-Each 4D web server, including the main application's web server, is exposed as a specific **object** of the `4D.WebServer` class. Once instantiated, a web server object can be handled from the current application or from any component using a [large number of properties and functions](API/WebServerClass.md).
+メインアプリケーションの Webサーバーを含む、各 4D Webサーバーは、`4D.WebServer` クラスの **オブジェクト** として公開されます。 インスタンス化された Webサーバーオブジェクトは、[多数のプロパティや関数](API/WebServerClass.md) を使用して、カレントのアプリケーションまたは任意のコンポーネントから操作することができます。
 
-> The legacy [WEB commands](https://doc.4d.com/4Dv18/4D/18/Web-Server.201-4504301.en.html) of the 4D language are supported but cannot select the web server to which they apply (see below).
+> 4Dランゲージの従来の [WEBコマンド](https://doc.4d.com/4Dv18/4D/18/Web-Server.201-4504301.ja.html) はサポートされていますが、その対象となる Webサーバーを選択することはできません (後述参照)。
 
 各 Webサーバー (ホストアプリケーションまたはコンポーネント) は、個別のコンテキストで使用できます。これには、以下が含まれます:
 
-- `On Web Authentication` and `On Web Connection` database method calls
+- `On Web Authentication` および `On Web Connection` データベースメソッドの呼び出し
 - 4Dタグの処理とメソッドの呼び出し
 - Webセッションや TLSプロトコルの管理
 
@@ -63,7 +63,7 @@ webServer:=WEB Server(Web server receiving request)
 
 ## Webサーバー関数
 
-A [web server class object](API/WebServerClass.md#web-server-object) contains the following functions:
+[Webサーバークラスのオブジェクト](API/webServerClass.md#webサーバーオブジェクト) には、以下の機能があります。
 
 | 関数                                       | 引数                                   | 戻り値                                | 説明            |
 | ---------------------------------------- | ------------------------------------ | ---------------------------------- | ------------- |
@@ -86,12 +86,12 @@ $status:=webServer.stop()
 
 ## Webサーバープロパティ
 
-A web server object contains [various properties](API/WebServerClass.md#web-server-object) which configure the web server.
+Webサーバーオブジェクトには、Webサーバーを構成する [さまざまなプロパティ](API/WebServerClass.md#webサーバーオブジェクト) が含まれています。
 
 これらのプロパティは以下のように定義します:
 
 1. using the `settings` parameter of the [`.start()`](API/WebServerClass.md#start) function (except for read-only properties, see below),
-2. if not used, using the `WEB SET OPTION` command (host applications only),
+2. 上を使用しない場合は、`WEB SET OPTION` コマンドを使用して定義します (ホストアプリケーションのみ)。
 3. 上を使用しない場合は、ホストアプリケーションまたはコンポーネントの設定で定義します。
 
 - Webサーバーを起動していない場合、プロパティには Webサーバーの次回起動時に使用される値が含まれています。
@@ -101,7 +101,7 @@ A web server object contains [various properties](API/WebServerClass.md#web-serv
 
 ## 4D Webコマンドのスコープ
 
-The 4D Language contains [several commands](https://doc.4d.com/4Dv18/4D/18/Web-Server.201-4504301.en.html) that can be used to control the web server. ただし、これらのコマンドは 1つの (デフォルト) Webサーバーで動作するように設計されています。 これらのコマンドを Webサーバーオブジェクトのコンテキストで使用する場合は、そのスコープが適切であることを確認してください。
+4Dランゲージには、Webサーバーの制御に使用できる [いくつかのコマンド](https://doc.4d.com/4Dv18/4D/18/Web-Server.201-4504301.ja.html) があります。 ただし、これらのコマンドは 1つの (デフォルト) Webサーバーで動作するように設計されています。 これらのコマンドを Webサーバーオブジェクトのコンテキストで使用する場合は、そのスコープが適切であることを確認してください。
 
 | コマンド                            | スコープ                |
 | ------------------------------- | ------------------- |
