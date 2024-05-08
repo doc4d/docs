@@ -33,10 +33,10 @@ title: プラグインの開発
 
 ## プラグインの作り方
 
-4D provides on GitHub an open-source [**plug-in SDK**](https://github.com/4d/4D-Plugin-SDK), containing the 4D Plugin API and the 4D Plugin Wizard:
+4D は GitHub 上に、4D Plugin API と the 4D Plugin Wizard を含んだオープンソースの [**プラグイン SDK**](https://github.com/4d/4D-Plugin-SDK) (英語) を提供しています:
 
-- the [**4D Plugin API**](https://github.com/4d/4D-Plugin-SDK/blob/master/4D%20Plugin%20API), written in C, adds more than 400 functions that help you to easily create your own plug-ins to add new functionnalities to your 4D application. 4D Plug-in API の機能は、4D とプラグイン間の通信を管理します。
-- The [**4D Plugin Wizard**](https://github.com/4d/4D-Plugin-SDK/blob/master/4D%20Plugin%20Wizard) is an essential tool that simplifies the task of developing 4D plug-ins. プラグインのロードや、プラグインとの通信に 4D が必要とするコードがツールによって提供されることで、デベロッパーはプラグインの根幹をなすコードに集中することができます。
+- [**4D Plugin API**](https://github.com/4d/4D-Plugin-SDK/blob/master/4D%20Plugin%20API) は C で書かれており、プラグインの開発を助けるための機能を400以上追加します。 4D Plug-in API の機能は、4D とプラグイン間の通信を管理します。
+- [**4D Plugin Wizard**](https://github.com/4d/4D-Plugin-SDK/blob/master/4D%20Plugin%20Wizard) は、4D プラグインの開発を簡略化するために不可欠なツールです。 プラグインのロードや、プラグインとの通信に 4D が必要とするコードがツールによって提供されることで、デベロッパーはプラグインの根幹をなすコードに集中することができます。
 
 ## プラグインの共有
 
