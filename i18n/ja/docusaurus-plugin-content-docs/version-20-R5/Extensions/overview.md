@@ -3,7 +3,7 @@ id: overview
 title: 拡張機能
 ---
 
-4D [プロジェクトアーキテクチャー](../Project/architecture.md) はモジュール式です。 You can provide additional functionalities to your 4D projects by installing [**components**](Concepts/components.md) and [**plug-ins**](../Concepts/plug-ins.md). コンポーネントは 4Dコードで構成されていますが、プラグインはどんな言語でも作成できます。
+4D [プロジェクトアーキテクチャー](../Project/architecture.md) はモジュール式です。 [**コンポーネント**](../Concepts/components.md) や [**プラグイン**](../Concepts/plug-ins.md) をインストールすることで、4Dプロジェクトに追加機能を持たせることができます。 コンポーネントは 4Dコードで構成されていますが、プラグインはどんな言語でも作成できます。
 
 ## 4Dコンポーネントの一覧
 
@@ -25,10 +25,10 @@ title: 拡張機能
 
 4Dコミュニティの多くの開発者が 4Dコンポーネントを公開しています。それらをインストールしてプロジェクトで使用することができます。
 
-Browse Github to have a list of public 4D components gathered with the [`4d-component`](https://github.com/topics/4d-component) topic.
+[`4d-component`](https://github.com/topics/4d-component) のトピックで公開されている 4Dコンポーネントの一覧を Github で閲覧することができます。
 
 ## プラグイン
 
 プラグインは、4D がネイティブにおこなっていないこと (例: 特定のプラットフォーム技術など) や、4D だけでは困難なことを実現します。 [このページ](develop-plug-ins.md) で説明しているように、独自のプラグインを開発することができます。
 
-多くの機能は、既存の 4Dプラグインでカバーされています。 Browse Github to have a list of public 4D plugins gathered with the [`4d-plugin`](https://github.com/topics/4d-plugin) topic.
+多くの機能は、既存の 4Dプラグインでカバーされています。 [`4d-plugin`](https://github.com/topics/4d-plugin) のトピックで公開されている 4Dプラグインの一覧を Github で閲覧することができます。
