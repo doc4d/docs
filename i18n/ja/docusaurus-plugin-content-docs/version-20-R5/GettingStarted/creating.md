@@ -14,8 +14,8 @@ title: プロジェクトの作成・開始
 1. 4D または 4D Server を起動します。
 
 2. 次のいずれかの方法をおこないます:
-   - Select **New > Project...** from the **File** menu: ![](../assets/en/getStart/projectCreate1.png)
-   - (4D only) Select **Project...** from the **New** toolbar button:<p>![](../assets/en/getStart/projectCreate2.png)</p>A standard **Save** dialog appears so you can choose the name and location of the 4D project's main folder.
+   - **ファイル** メニューより \*\*新規 > プロジェクト...\*\*を選択します: ![](../assets/en/getStart/projectCreate1.png)
+   - (4D のみ) **新規** ツールバーボタンより \*\*プロジェクト...\*\*を選択します:<p>![](../assets/en/getStart/projectCreate2.png)</p>標準の **保存** ダイアログが表示され、4D プロジェクトの名前と保存場所を指定します。
 
 3. プロジェクトフォルダー名を入力したら、**保存**をクリックします。 この名称はつぎの場所に使用されます:
 
@@ -72,7 +72,7 @@ OS によって許可されている名称であれば使用可能です。 し�
 
 ### 4DLinkファイルを使ってプロジェクトを開く
 
-You can use a [`.4DLink` file](#about-4DLink-files) to launch the 4D application and open the target 4D project. これをおこなうには 2つの方法があります:
+4Dアプリケーションを起動し、ターゲットの 4Dプロジェクトを開くのに [`.4DLink` ファイル](#4dlinkファイルについて) が利用できます。 これをおこなうには 2つの方法があります:
 
 - `.4DLink` をダブルクリック、あるいは 4Dアプリケーションにドラッグ＆ドロップする
 - **ファイル** ＞ **最近使用したプロジェクトを開く** のサブメニューを開き、プロジェクトを選択する
