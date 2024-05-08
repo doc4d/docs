@@ -3,7 +3,7 @@ id: manData
 title: データ操作
 ---
 
-All [exposed dataclasses, attributes](configuration.md#exposing-tables-and-fields) and [functions](ClassFunctions.md) can be accessed through REST. データクラス、属性、および関数名については、文字の大小が区別されます。クエリのデータについては、文字の大小は区別されません。
+REST によって、すべての [公開されているデータクラス、属性](configuration.md#テーブルやフィールドの公開)、そして [関数](ClassFunctions.md) にアクセスすることができます。 データクラス、属性、および関数名については、文字の大小が区別されます。クエリのデータについては、文字の大小は区別されません。
 
 ## データのクエリ
 
@@ -17,7 +17,7 @@ REST API を使って、4D内と同等のデータ操作をおこなうことが
 
 To add and modify entities, you can call [`$method=update`]($method.md#methodupdate). If you want to delete one or more entities, you can use [`$method=delete`]($method.md#methoddelete).
 
-Besides retrieving a single entity in a dataclass using [{dataClass}({key})](dataClass.md#dataclasskey), you can also write a [class function](ClassFunctions.md#function-calls) that returns an entity selection (or a collection).
+[{dataClass}({key})](dataClass.md#dataclasskey) でデータクラスのいちエンティティを取得する以外にも、エンティティセレクションやコレクションを返す [クラス関数](ClassFunctions.md#関数の呼び出し) を用意することもできます。
 
 Before returning a selection, you can also sort it by using [`$orderby`]($orderby.md) one one or more attributes (even relation attributes).
 
@@ -27,11 +27,11 @@ Add the [`$skip`]($skip.md) (to define with which entity to start) and [`$top/$l
 
 ## エンティティセットの作成と管理
 
-An entity set (aka _entity selection_) is a collection of entities obtained through a REST request that is stored in 4D Server's cache. エンティティセットを利用することで、同じ結果を得るためにアプリケーションを繰り返しクエリすることが避けられます。 エンティティセットへのアクセスはクエリするよりも速いため、アプリケーション速度の向上にもつながります。
+エンティティセットとは、_エンティティセレクション_ と同等の意味で、RESTリクエストによって取得され、4D Server のキャッシュに保存されるエンティティのコレクションのことです。 エンティティセットを利用することで、同じ結果を得るためにアプリケーションを繰り返しクエリすることが避けられます。 エンティティセットへのアクセスはクエリするよりも速いため、アプリケーション速度の向上にもつながります。
 
 To create an entity set, call [`$method=entityset`]($method.md#methodentityset) in your REST request. As a measure of security, you can also use [`$savedfilter`]($savedfilter.md) and/or [`$savedorderby`]($savedorderby.md) when you call [`$filter`]($filter.md) and/or [`$orderby`]($orderby.md) so that if ever the entity set timed out or was removed from the server, it can be quickly retrieved with the same ID as before.
 
-To access the entity set, you must use `$entityset/{entitySetID}`, for example:
+エンティティセットにアクセスするには、`$entityset/{entitySetID}` を使います。例:
 
 `/rest/People/$entityset/0AF4679A5C394746BFEB68D2162A19FF`
 
@@ -61,17 +61,17 @@ By using [`$compute`]($compute.md), you can compute the **average**, **count**, 
 
 ## データモデルクラス関数の呼び出し
 
-You can call ORDA Data Model [user class functions](ClassFunctions.md) through POST requests, so that you can benefit from the exposed API of the targeted application. For example, if you have defined a `getCity()` function in the City dataclass class, you could call it using the following request:
+POSTリクエストを使って、ORDAデータモデルの [ユーザークラス関数](ClassFunctions.md) を呼び出すことで、ターゲットアプリケーションの公開API を活用できます。 たとえば、City DataClassクラスに `getCity()` 関数を定義した場合、次のリクエストで呼び出すことができます:
 
 `/rest/City/getCity`
 
-with data in the body of the request: `["Paris"]`
+データはリクエストボディに含めます: `["Paris"]`
 
 > RESTサービスとして公開された 4Dプロジェクトメソッドへの呼び出しは引き続きサポートされていますが、廃止予定となっています。
 
 ## 取得する属性の選択
 
-You can always define which attributes to return in the REST response after an initial request by passing their path in the request (_e.g._, `Company(1)/name,revenues/`)
+RESTレスポンスにどの属性を含めて返してもらうかを指定するには、初期リクエストに属性のパスを追加します (_例_: `Company(1)/name,revenues/`)。
 
 このフィルターは次の方法で適用できます:
 
@@ -83,7 +83,7 @@ You can always define which attributes to return in the REST response after an i
 |               | {dataClass}:{attribute}(value)/{att1,att2...}/ | /People:firstName(Larry)/firstName,lastName/ |
 | エンティティセレクション  | {dataClass}/{att1,att2...}/$entityset/{entitySetID}                               | /People/firstName/$entityset/528BF90F10894915A4290158B4281E61                   |
 
-The attributes must be delimited by a comma, _i.e._, `/Employee/firstName,lastName,salary`. ストレージ属性およびリレーション属性を渡すことができます。
+属性名はコンマ区切りで渡します (_例_: `/Employee/firstName,lastName,salary`)。 ストレージ属性およびリレーション属性を渡すことができます。
 
 ### 例題
 
@@ -97,7 +97,7 @@ The attributes must be delimited by a comma, _i.e._, `/Employee/firstName,lastNa
 
 #### データクラスの例
 
-The following requests returns only the first name and last name from the People dataclass (either the entire dataclass or a selection of entities based on the search defined in `$filter`).
+次のリクエストは、People データクラス (データクラス全体または `$filter` の定義に応じたエンティティセレクション) から名字 (firstName) と名前 (lastName) 属性のみを取得します。
 
 `GET  /rest/People/firstName,lastName/`
 
@@ -204,7 +204,7 @@ The following requests returns only the first name and last name from the People
 
 #### エンティティセットの例
 
-Once you have [created an entity set](#creating-and-managing-entity-set), you can filter the information in it by defining which attributes to return:
+[エンティティセットの作成](#エンティティセットの作成と管理) 後に、どの属性を返すかを指定して、エンティティセットの情報をフィルターできます:
 
 `GET  /rest/People/firstName,employer.name/$entityset/BDCD8AABE13144118A4CF8641D5883F5?$expand=employer`
 
