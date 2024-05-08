@@ -3,7 +3,7 @@ id: imageformat
 title: $imageformat
 ---
 
-Defines which image format to use for retrieving images (_e.g._, `$imageformat=png`)
+画像取得の際に使用する画像形式を指定します (_例_: `$imageformat=png`)
 
 ## 説明
 
@@ -19,7 +19,7 @@ Defines which image format to use for retrieving images (_e.g._, `$imageformat=p
 
 Once you have defined the format, you must pass the image attribute to [`$expand`]($expand.md) to load the photo completely.
 
-If there is no image to be loaded or the format doesn't allow the image to be loaded, the response will be an empty object `{}`.
+読み込むべき画像がない場合、または指定した形式では画像が読み込めない場合、レスポンスは空のオブジェクト `{}` になります。
 
 ## 例題
 
