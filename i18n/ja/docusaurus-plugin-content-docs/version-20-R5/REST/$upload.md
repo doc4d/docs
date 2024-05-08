@@ -7,15 +7,15 @@ title: $upload
 
 ## 説明
 
-サーバーにアップロードしたいファイルがある場合にこのリクエストを POST します。 If you have an image, you pass `$rawPict=true`. For all other files, you pass `$binary=true`.
+サーバーにアップロードしたいファイルがある場合にこのリクエストを POST します。 画像の場合には `$rawPict=true` を渡します。 その他のファイルの場合は `$binary=true` を渡します。
 
-You can modify the timeout, which by default is 120 seconds, by passing a value to the `$timeout` parameter.
+デフォルトのタイムアウトは 120秒ですが、`$timeout` パラメーターに任意の数値を渡してタイムアウトを変更できます。
 
 ## アップロードシナリオ
 
 エンティティのピクチャー属性を更新するために、画像をアップロードしたい場合を考えます。
 
-画像 (または任意のバイナリファイル) をアップロードするには、まずクライアントアプリケーションにてファイルを選択する必要があります。 The file itlself must be passed in the **body** of the request.
+画像 (または任意のバイナリファイル) をアップロードするには、まずクライアントアプリケーションにてファイルを選択する必要があります。 ファイル自体はリクエストの **ボディ** に渡す必要があります。
 
 次に、下のようなリクエストを使用して、選択した画像を 4D Server にアップロードします:
 
@@ -31,7 +31,7 @@ Afterwards, you use this ID to add it to an attribute using [`$method=update`]($
 
 `POST  /rest/Employee/?$method=update`
 
-**POST data**:
+**POST データ**:
 
 ```
 {
@@ -65,7 +65,7 @@ Afterwards, you use this ID to add it to an attribute using [`$method=update`]($
 
 ## 4D HTTPクライアントを使った例
 
-The following example shows how to upload a _.pdf_ file to the server using the 4D HTTP client.
+次の例では、4D HTTPクライアントを使用して、_.pdf_ ファイルをサーバーにアップロードする方法を示します。
 
 ```4d
 var $params : Text
