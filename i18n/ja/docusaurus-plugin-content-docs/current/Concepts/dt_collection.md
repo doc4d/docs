@@ -142,7 +142,7 @@ $col.push(10;100) // 10 と 100 をコレクションに追加
  $vmin:=$col.min(["My.special.property"]) // エラー
 ```
 
-## Collection operators
+## コレクション演算子
 
 You can use comparison operators with **collection references**, which means that you can evaluate if two or more references point to the same instance of a collection.
 
