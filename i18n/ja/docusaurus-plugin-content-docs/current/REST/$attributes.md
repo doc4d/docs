@@ -29,7 +29,7 @@ title: $attributes
 
 `GET  /rest/Company(1)/?$attributes=employees.lastname`
 
-**Response**:
+**レスポンス**:
 
 ```
 {
@@ -74,7 +74,7 @@ employees の属性をすべて取得するには:
 
 `GET  /rest/Employee(1)?$attributes=employer.name`
 
-**Response**:
+**レスポンス**:
 
 ```
 {
