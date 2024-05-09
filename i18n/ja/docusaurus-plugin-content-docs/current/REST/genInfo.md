@@ -10,7 +10,7 @@ RESTサーバーの次の情報を取得することができます:
 
 ## カタログ
 
-Use the [`$catalog`]($catalog.md), [`$catalog/{dataClass}`]($catalog.md#catalogdataclass), or [`$catalog/$all`]($catalog.md#catalogall) parameters to get the list of [exposed dataclasses and their attributes](configuration.md#exposing-tables-and-fields).
+[公開されているデータクラスとデータクラス属性](configuration.md#テーブルやフィールドの公開) のリストを取得するには [`$catalog`]($catalog.md)、[`$catalog/{dataClass}`]($catalog.md#catalogdataclass)、または [`$catalog/$all`]($catalog.md#catalogall) パラメーターを使います。
 
 公開されている全データクラスとデータクラス属性のコレクションを取得するには:
 
@@ -18,11 +18,11 @@ Use the [`$catalog`]($catalog.md), [`$catalog/{dataClass}`]($catalog.md#catalogd
 
 ## キャッシュ情報
 
-Use the [`$info`]($info.md) parameter to get information about the entity selections currently stored in 4D Server's cache as well as running user sessions.
+4D Server のキャッシュに保存されているエンティティセレクション、および実行中のユーザーセッションの情報を取得するには [`$info`]($info.md) パラメーターを使います。
 
 ## queryPath と queryPlan
 
-クエリによって生成されたエンティティセレクションは、`queryPlan` と `queryPath` という 2つのプロパティを持ちえます。 To calculate and return these properties, you just need to add [`$queryPlan`]($queryplan.md) and/or [`$queryPath`]($querypath.md) in the REST request.
+クエリによって生成されたエンティティセレクションは、`queryPlan` と `queryPath` という 2つのプロパティを持ちえます。 これらのプロパティを算出・取得するには、RESTリクエストに [`$queryPlan`]($queryplan.md) および [`$queryPath`]($querypath.md) を追加します。
 
 例:
 
