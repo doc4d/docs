@@ -22,7 +22,7 @@ title: $catalog
 
 `$catalog` を呼び出すと、プロジェクトのデータストア内のデータクラスのリストを、データクラス毎に 2つの URI とともに返します。
 
-プロジェクトのデータストア内の、公開されているデータクラスのみがリストされます。 For more information, please refer to [**Exposing tables and fields**](configuration.md#exposing-tables-and-fields) section.
+プロジェクトのデータストア内の、公開されているデータクラスのみがリストされます。 詳細については、[**テーブルやフィールドの公開**](configuration.md#テーブルやフィールドの公開) を参照してください。
 
 データクラス毎に返されるプロパティの説明です:
 
@@ -63,7 +63,7 @@ title: $catalog
 
 `$catalog/$all` を呼び出すと、プロジェクトのデータストア内の各データクラスについて属性の情報を取得します。
 
-For more information about what is returned for each dataclass and its attributes, use [`$catalog/{dataClass}`](#catalogdataClass).
+各データクラスと属性について取得される情報についての詳細は [`$catalog/{dataClass}`](#catalogdataClass) を参照ください。
 
 ### 例題
 
@@ -180,7 +180,7 @@ For more information about what is returned for each dataclass and its attribute
 
 ### 説明
 
-`$catalog/{dataClass}` を呼び出すと、指定したデータクラスとその属性について詳細な情報が返されます。 If you want to retrieve this information for all the dataclasses in your project's datastore, use [`$catalog/$all`](#catalogall).
+`$catalog/{dataClass}` を呼び出すと、指定したデータクラスとその属性について詳細な情報が返されます。 プロジェクトのデータストア内のすべてのデータクラスに関して同様の情報を得るには [`$catalog/$all`](#catalogall) を使います。
 
 返される情報は次の通りです:
 
