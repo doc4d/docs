@@ -23,11 +23,11 @@ title: $upload
 
 その結果、サーバーからはファイルを識別する ID が返されます。
 
-**Response**:
+**レスポンス**:
 
 `{ "ID": "D507BC03E613487E9B4C2F6A0512FE50" }`
 
-Afterwards, you use this ID to add it to an attribute using [`$method=update`]($method.md#methodupdate) to add the image to an entity. リクエストは次のようになります:
+この画像をエンティティに追加するには、返された ID を使い [`$method=update`]($method.md#methodupdate) で画像属性に保存します。 リクエストは次のようになります:
 
 `POST  /rest/Employee/?$method=update`
 
@@ -41,7 +41,7 @@ Afterwards, you use this ID to add it to an attribute using [`$method=update`]($
 }
 ```
 
-**Response**:
+**レスポンス**:
 
 更新後のエンティティが返されます:
 
@@ -77,30 +77,30 @@ var $blob : Blob
 ARRAY TEXT($headerNames; 1)
 ARRAY TEXT($headerValues; 1)
 
-$url:="localhost:80/rest/$upload?$binary=true" //prepare the REST request
+$url:="localhost:80/rest/$upload?$binary=true" // RESTリクエストの準備
 
 $headerNames{1}:="Content-Type"
 $headerValues{1}:="application/octet-stream"
 
-DOCUMENT TO BLOB("c:\\invoices\\inv003.pdf"; $blob) //Load the binary 
+DOCUMENT TO BLOB("c:\\invoices\\inv003.pdf"; $blob) // バイナリの読み込み
 
- //Execute the first POST request to upload the file
+ // ファイルをアップロードするための 1つ目の POSTリクエスト
 $result:=HTTP Request(HTTP POST method; $url; $blob; $response; $headerNames; $headerValues)
 
 If ($result=200) 
-	var $data : Object
+    var $data : Object
     $data:=New object
     $data.__KEY:="3"
     $data.__STAMP:="3"
     $data.pdf:=New object("ID"; String($response.ID)) 
 
-    $url:="localhost:80/rest/Invoices?$method=update" //second request to update the entity
+    $url:="localhost:80/rest/Invoices?$method=update" // エンティティを更新するための 2つ目のリクエスト
 
     $headerNames{1}:="Content-Type"
     $headerValues{1}:="application/json"
 
     $result:=HTTP Request(HTTP POST method; $url; $data; $response; $headerNames; $headerValues)
 Else
-	ALERT(String($result)+" Error")
+    ALERT(String($result)+" Error")
 End if
 ```
