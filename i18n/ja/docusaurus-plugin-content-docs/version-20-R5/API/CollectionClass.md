@@ -1617,11 +1617,11 @@ _toSearch_ 引数は検出すべき要素と完全に一致している必要が
 
 <!-- REF #collection.indices().Params -->
 
-| 引数          | タイプ        |     | 説明                                                                          |
-| ----------- | ---------- | :-: | --------------------------------------------------------------------------- |
-| queryString | Text       |  -> | 検索条件                                                                        |
-| value       | any        |  -> | プレースホルダー使用時: 比較する値                                          |
-| 戻り値         | Collection |  <- | Element index(es) matching queryString in the collection |
+| 引数          | タイプ        |     | 説明                                 |
+| ----------- | ---------- | :-: | ---------------------------------- |
+| queryString | Text       |  -> | 検索条件                               |
+| value       | any        |  -> | プレースホルダー使用時: 比較する値 |
+| 戻り値         | Collection |  <- | queryString に合致するコレクション要素のインデックス   |
 
 <!-- END REF -->
 
