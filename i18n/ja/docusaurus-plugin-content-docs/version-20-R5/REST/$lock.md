@@ -19,7 +19,7 @@ title: $lock
 /?$lock=false
 ```
 
-The [`lockKindText` property](../API/EntityClass.md#lock) is "Locked by session".
+[`lockKindText` プロパティ](../API/EntityClass.md#lock) は "Locked by session" です。
 
 ### 説明
 
@@ -84,7 +84,7 @@ REST API によってロックされたエンティティは、次の場合に�
 GET /rest/Customers(1)/?$lock=true
 ```
 
-**Response:**
+**レスポンス:**
 
 ```
 {
@@ -97,7 +97,7 @@ GET /rest/Customers(1)/?$lock=true
 
 二つ目のブラウザー (別のセッション) から、同じリクエストを送信します:
 
-**Response:**
+**レスポンス:**
 
 ```
 {
