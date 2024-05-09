@@ -213,11 +213,11 @@ Logs フォルダーには、プロジェクトが使用するすべてのログ
 
 ## `Components`
 
-Folder containing components that are embedded in the project (must be stored at the same level as the Project folder). These components have priority over any other locations.
+プロジェクトに埋め込まれたコンポーネントを格納するフォルダー (Projectフォルダーと同じ階層に保存する必要があります)。 これらのコンポーネントは、他のどの場所よりも優先されます。
 
 :::info
 
-You can also use the [**dependencies.json** and (optionnally) **environment4d.json** files](components.md) to declare components.
+[**dependencies.json**ファイルと **environment4d.json**ファイル (任意)](components.md) を使用して、コンポーネントを宣言することもできます。
 
 :::
 
