@@ -21,9 +21,9 @@ title: $method
 
 ### 説明
 
-`$method=delete` を使ってエンティティ、またはエンティティセレクションを削除します。 You can define the collection of entities by using, for example, [`$filter`]($filter.md) or specifying one directly using [`{dataClass}({key})`](%7BdataClass%7D.html#dataclasskey) _(e.g._, /Employee(22)).
+`$method=delete` を使ってエンティティ、またはエンティティセレクションを削除します。 たとえば、[`$filter`]($filter.md) を使って定義したエンティティセレクションや、[`{dataClass}({key})`](%7BdataClass%7D.html#dataclasskey) _(例_: /Employee(22)) のように直接特定したエンティティが対象です。
 
-You can also delete the entities in an entity set, by calling [`$entityset/{entitySetID}`]($entityset.md#entitysetentitysetid).
+[`$entityset/{entitySetID}`]($entityset.md#entitysetentitysetid) のようにエンティティセットを呼び出して、そこに含まれるエンティティを削除することもできます。
 
 ### 例題
 
@@ -83,7 +83,7 @@ __ENTITYSET: "http://127.0.0.1:8081/rest/Employee/$entityset/9718A30BF61343C7963
 
 ### 説明
 
-You can release an entity set, which you created using [`$method=entityset`](#methodentityset), from 4D Server's cache.
+[`$method=entityset`](#methodentityset) によって作成したエンティティセットを、4D Server のキャッシュから削除することができます。
 
 ### 例題
 
@@ -128,7 +128,7 @@ RESTリクエストで定義されたリレートエンティティのコレク�
 
 あるエンティティのリレートエンティティだけを取得したいとき、たとえば Company データクラスの staff リレーション名が Employee データクラスにリンクしている場合には、次の RESTリクエストが書けます:
 
-` GET  /rest/Company(1)/staff?$expand=staff&$method=subentityset&$subOrderby=lastName ASC`
+`GET  /rest/Company(1)/staff?$expand=staff&$method=subentityset&$subOrderby=lastName ASC`
 
 #### レスポンス:
 
@@ -204,7 +204,7 @@ RESTリクエストで定義されたリレートエンティティのコレク�
 
 `POST  /rest/Person/?$method=update`
 
-**POST data:**
+**POST データ:**
 
 ```json
 {
@@ -221,7 +221,7 @@ RESTリクエストで定義されたリレートエンティティのコレク�
 
 `POST  /rest/Person/?$method=update`
 
-**POST data:**
+**POST データ:**
 
 ```json
 { 
@@ -234,7 +234,7 @@ RESTリクエストで定義されたリレートエンティティのコレク�
 
 `POST  /rest/Person/?$method=update`
 
-**POST data:**
+**POST データ:**
 
 ```json
 [{ 
@@ -249,7 +249,7 @@ RESTリクエストで定義されたリレートエンティティのコレク�
 }]
 ```
 
-**Response:**
+**レスポンス:**
 
 エンティティを追加・更新した場合、そのエンティティは変更後の内容で返されます。 たとえば、新規の Employee エンティティを作成した場合、次のようなレスポンスが返されます:
 
