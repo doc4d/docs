@@ -3,7 +3,7 @@ id: configuration
 title: サーバー設定
 ---
 
-Using standard HTTP requests, the 4D REST Server allows external applications to access the data of your application directly, _i.e._ to retrieve information about the dataclasses in your project, manipulate data, log into your web application, and much more.
+4D の RESTサーバーは、標準の HTTPリクエストを用いて外部アプリケーションがアプリケーションのデータにアクセスすることを可能にします。つまり、プロジェクトのデータクラス情報を取得したり、データを操作したり、Webアプリケーションにログインしたり、といったことが可能です。
 
 REST機能を使い始めるまえに、まずは 4D REST サーバーの設定をおこない、これを起動させる必要があります。
 
@@ -25,11 +25,11 @@ REST機能を使い始めるまえに、まずは 4D REST サーバーの設定�
 
 REST接続は次の方法で制限することができます:
 
-- (recommended) enable the **force login** mode and create an [`authentify()`](authUsers.md#authentify) datastore class function to authenticate users and assign privileges to their web session (see [User login modes](authUsers.md#user-login-modes)).
+- (推奨) **強制ログイン** モードを有効にし、[`authentify()`](authUsers.md#authentify) データストアクラス関数を作成して、ユーザーを認証し、Webセッションに権限を割り当てます ([ユーザーログインモード](authUsers.md#ユーザーログインモード) を参照ください)。
 - ストラクチャー設定の "**Web** ＞ **Web機能**" ページにて、RESTサービスに割り当てる **読み込み/書き出し** ユーザーグループを設定します。
 - `On REST Authentication` データベースメソッドに、RESTの初期リクエストを処理するコードを書きます。
 
-:::info Important
+:::info 重要
 
 - 競合を避けるため、異なる RESTアクセス制御機能を同時に有効にしないことをお勧めします。
 - `On REST Authentication` データベースメソッドを定義した場合、ストラクチャー設定の "**Web** ＞ **Web機能**" ページにて指定した "読み込み/書き出し" の設定は無視されます。
@@ -74,9 +74,9 @@ REST 経由でアクセス可能なデータストアオブジェクトを制限
 
 1. ストラクチャーエディターにて対象となるテーブルを選択し、右クリックでコンテキストメニューを開いてテーブルプロパティを選択します。
 
-2. Uncheck the **Expose as REST resource** option:
+2. **RESTリソースとして公開** オプションの選択を解除します:
    ![alt-text](../assets/en/REST/table.png)
-   Do this for each table whose exposure needs to be modified.
+   公開設定を変更する各テーブルに対して、この手順を繰り返します。
 
 ### フィールドの公開
 
