@@ -74,7 +74,7 @@ RESTサーバーの応答です:
 /rest/Employees
 ```
 
-**Response:**
+**レスポンス:**
 
 ```
 {
@@ -121,7 +121,7 @@ RESTサーバーの応答です:
 /rest/Employees(2)/Lastname
 ```
 
-**Response:**
+**レスポンス:**
 
 ```
 {
