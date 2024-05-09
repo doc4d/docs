@@ -7,10 +7,10 @@ title: WebForm
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                                                           |
-| ----- | ---------------------------------------------------------------------------- |
-| 20 R6 | Added enableState() and disableState() |
-| 20 R2 | 追加                                                                           |
+| リリース  | 内容                                                                       |
+| ----- | ------------------------------------------------------------------------ |
+| 20 R6 | enableState() と disableState() を追加 |
+| 20 R2 | 追加                                                                       |
 
 </details>
 
@@ -45,24 +45,25 @@ Webフォームのコンポーネント (構成要素) とは、これらの Web
 
 <!-- REF #WebFormClass.disableState().Params -->
 
-| 引数    | タイプ    |     | 説明                                         |
-| ----- | ------ | :-: | ------------------------------------------ |
-| state | string |  -> | Name of state to disable from the web form |
+| 引数    | タイプ    |     | 説明                       |
+| ----- | ------ | :-: | ------------------------ |
+| state | string |  -> | Webフォーム上で無効化する state の名称 |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.disableState()` function <!-- REF #WebFormClass.disableState().Summary -->disables the rendering of the _state_ in the current web form<!-- END REF -->.
+`.disableState()` 関数は、<!-- REF #WebFormClass.disableState().Summary -->カレントWeb
+フォーム上の _state_ のレンダリングを無効化します<!-- END REF -->。
 
-This function does nothing if:
+この関数は、以下の場合には何もしません:
 
-- the _state_ is currently not enabled in the web form,
-- the _state_ does not exist for the web form.
+- Webフォーム上で _state_ が現在有効ではない。
+- Webフォーム上で _state_ が存在しない。
 
-If you [enable](#enablestate) or disable several states in the same user function, all modifications are sent at the same time to the client once the function ends.
+同じユーザー関数内で複数の state を [有効化](#enablestate) または無効化した場合、すべての変更は関数の終了時に一括してクライアントに送信されます。
 
-For more information on web form states, please refer to [developer.qodly.com](https://developer.qodly.com/docs/studio/design-webforms/states).
+Webフォームの state に関する詳細については、[developer.qodly.com](https://developer.qodly.com/docs/studio/design-webforms/states) を参照ください。
 
 ### .enableState()
 
@@ -72,28 +73,29 @@ For more information on web form states, please refer to [developer.qodly.com](h
 
 <!-- REF #WebFormClass.enableState().Params -->
 
-| 引数    | タイプ    |     | 説明                                      |
-| ----- | ------ | :-: | --------------------------------------- |
-| state | string |  -> | Name of state to enable on the web form |
+| 引数    | タイプ    |     | 説明                       |
+| ----- | ------ | :-: | ------------------------ |
+| state | string |  -> | Webフォーム上で有効化する state の名称 |
 
 <!-- END REF -->
 
 #### 説明
 
-The `.enableState()` function <!-- REF #WebFormClass.enableState().Summary -->enables the rendering of the _state_ in the current web form<!-- END REF -->.
+`.enableState()` 関数は、<!-- REF #WebFormClass.enableState().Summary -->カレントWeb
+フォーム上の _state_ のレンダリングを有効化します<!-- END REF -->。
 
-This function does nothing if:
+この関数は、以下の場合には何もしません:
 
-- the _state_ has already been enabled on the web form,
-- the _state_ does not exist for the web form.
+- Webフォーム上で _state_ がすでに有効である。
+- Webフォーム上で _state_ が存在しない。
 
-If you enable or [disable](#disablestate) several states within the same user function, all modifications are sent at the same time to the client once the function ends.
+同じユーザー関数内で複数の state を有効化または [無効化](#disablestate)した場合、すべての変更は関数の終了時に一括してクライアントに送信されます。
 
-For more information on web form states, please refer to [developer.qodly.com](https://developer.qodly.com/docs/studio/design-webforms/states).
+Webフォームの state に関する詳細については、[developer.qodly.com](https://developer.qodly.com/docs/studio/design-webforms/states) を参照ください。
 
 #### 例題
 
-You enable a specific state named "wrongCredentials" in case of error in your login page:
+ログインページでエラーが発生した場合に、"wrongCredentials" という専用の state を有効にします。
 
 ```4d
 Function authenticationError()
