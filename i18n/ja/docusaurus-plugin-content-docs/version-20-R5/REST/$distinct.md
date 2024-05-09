@@ -17,7 +17,7 @@ title: $distinct
 
 `GET  /rest/Company/name?$filter="name=a*"&$distinct=true`
 
-**Response**:
+**レスポンス**:
 
 ```
 [
