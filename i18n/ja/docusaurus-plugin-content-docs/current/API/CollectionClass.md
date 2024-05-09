@@ -252,7 +252,7 @@ _index_ がコレクションの範囲を超える場合、この関数は Undef
 #### 例題
 
 ```4d
-var $col : Collection
+var $col : Collection 
 $col:=New collection(10; 20; 30; 40; 50)
 $element:=$col.at(0) // 10
 $element:=$col.at(1) // 20
@@ -791,7 +791,7 @@ _options_ 引数として、以下の定数を 1つ、または組み合わせ�
 
 #### 説明
 
-The `.equal()` function <!-- REF #collection.equal().Summary -->recursively compares the contents of the collection and _collection2_ (deep comparison)<!-- END REF -->and returns **true** if they are identical.
+`.equal()` 関数は、<!-- REF #collection.equal().Summary -->コレクションの内容と _collection2_ を再帰的に比較し (ディープ比較)、同一であれば **true** を返します<!-- END REF -->。
 
 デフォルトでは、アクセント等の発音区別符号を無視した評価が実行されます。 評価の際に文字の大小を区別したり、アクセント記号を区別したい場合には、option に `ck diacritical` 定数を渡します。
 
@@ -799,7 +799,7 @@ The `.equal()` function <!-- REF #collection.equal().Summary -->recursively comp
 
 :::note
 
-A recursive comparison of collections can be time-consuming if the collection is large and deep. If you only want to compare two collection references, you may consider using the [`=` comparison operator for collection references](../Concepts/dt_collection.md#collection-operators).
+コレクションが大きく深い場合には、コレクションの再帰的な比較は時間がかかる場合があります。 2つのコレクション参照を比較するだけの場合は、[コレクション参照の `=`比較演算子](../Concepts/dt_collection.md#コレクション演算子) の使用を検討してください。
 
 :::
 
@@ -1622,11 +1622,11 @@ _toSearch_ 引数は検出すべき要素と完全に一致している必要が
 
 <!-- REF #collection.indices().Params -->
 
-| 引数          | タイプ        |     | 説明                                                                          |
-| ----------- | ---------- | :-: | --------------------------------------------------------------------------- |
-| queryString | Text       |  -> | 検索条件                                                                        |
-| value       | any        |  -> | プレースホルダー使用時: 比較する値                                          |
-| 戻り値         | Collection |  <- | Element index(es) matching queryString in the collection |
+| 引数          | タイプ        |     | 説明                                 |
+| ----------- | ---------- | :-: | ---------------------------------- |
+| queryString | Text       |  -> | 検索条件                               |
+| value       | any        |  -> | プレースホルダー使用時: 比較する値 |
+| 戻り値         | Collection |  <- | queryString に合致するコレクション要素のインデックス   |
 
 <!-- END REF -->
 
@@ -2565,7 +2565,7 @@ $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 
 `.query()` 関数は、_queryString_ および、任意の _value_ や _querySettings_ パラメーターによって定義された<!-- REF #collection.query().Summary -->検索条件に合致するオブジェクトコレクションの要素をすべて返します<!-- END REF -->。 また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
 
-An empty collection is returned if the collection in which the query is executed does not contain the searched _value_.
+クエリの実行対象であるコレクションが検索値 _value_ を含まない場合、空のコレクションが返されます。
 
 > このコマンドは、元のコレクションを変更しません。
 
@@ -2579,9 +2579,9 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 
 詳細は以下の通りです:
 
-- **propertyPath**: path of property on which you want to execute the query. この引数は、単純な名前 ("country" など) のほか、あらゆる有効な属性パス ("country.name" など) の形をとることができます。 属性パスが `Collection` 型である場合、すべてのオカレンスを管理するには `[]` 記法を使用してください (例: `children[].age` など)。
+- **propertyPath**: クエリの実行対象となるプロパティのパス。 この引数は、単純な名前 ("country" など) のほか、あらゆる有効な属性パス ("country.name" など) の形をとることができます。 属性パスが `Collection` 型である場合、すべてのオカレンスを管理するには `[]` 記法を使用してください (例: `children[].age` など)。
 
-- **comparator**: symbol that compares _propertyPath_ and _value_. 以下の記号がサポートされます:
+- **比較演算子**: _propertyPath_ 引数と _value_ 引数の比較に使用する記号 以下の記号がサポートされます:
 
 | 比較            | 記号          | 説明                                                                                                                         |
 | ------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------- |
@@ -2596,7 +2596,7 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 | 以上            | > =         |                                                                                                                            |
 | 含まれる          | IN          | コレクション、あるいは複数の値のうち、どれか一つの値と等しいデータを取得します。ワイルドカード (@) をサポートします。                              |
 
-- **value**: the value to compare to the current value of the property of each element in the collection. It can be any constant value expression matching the element's data type property or a [**placeholder**](#using-placeholders).
+- **値** (value): コレクションの各要素のプロパティのカレント値に対して比較する値。 要素のデータ型に合致する任意の定数値の式または[**プレースホルダー**](#プレースホルダーを仕様する)であることができます。
   定数値を使用する場合、以下の原則に従う必要があります:
   - **テキスト** テキスト型の定数値の場合は単一引用符つき、あるいはなしでも渡すことができます(後述の **引用符を使用する** 参照)。 文字列中の文字列を検索する ("含まれる" クエリ) には、ワイルドカード記号 (@) を使用して検索文字列を指定します (例: "@Smith@")。 また以下のキーワードはテキスト定数においては使用できません: true, false。
   - **ブール** 型の定数値: **true** または **false** (文字の大小を区別します)
@@ -2632,11 +2632,11 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 
 #### プレースホルダーを使用する
 
-4D allows you to use placeholders for _propertyPath_ and _value_ arguments within the _queryString_ parameter. プレースホルダーとは、クエリ文字列に挿入するパラメーターで、クエリ文字列が評価される際に他の値で置き換えられるものです。 プレースホルダーの値はクエリ開始時に一度だけ評価されます。 各要素に対して毎回評価されるわけではありません。
+4D では、_queryString_ 引数内の _propertyPath_ および _値 (value)_ にプレースホルダーを使用することができます。 プレースホルダーとは、クエリ文字列に挿入するパラメーターで、クエリ文字列が評価される際に他の値で置き換えられるものです。 プレースホルダーの値はクエリ開始時に一度だけ評価されます。 各要素に対して毎回評価されるわけではありません。
 
-Two types of placeholders can be used: **indexed placeholders** and **named placeholders**.
+プレースホルダーには二つの種類があります。**インデックスプレースホルダー** および **命名プレースホルダー** です。
 
-- **Indexed placeholders**: parameters are inserted as `:paramIndex` (for example ":1", ":2"...) という形式でパラメーターが挿入され、それに対応する値は後に続く _value_ 引数が提供します。 You can use up to 128 _value_ parameters.
+- **インデックスプレースホルダー**: _queryString_ に `:paramIndex` (例 :1, :2...)  という形式でパラメーターが挿入され、それに対応する値は後に続く _value_ 引数が提供します。 最大で 128個の _value_ 引数を渡すことができます。
 
 例:
 
@@ -2644,7 +2644,7 @@ Two types of placeholders can be used: **indexed placeholders** and **named plac
 $c:=$myCol.query(":1=:2";"city";"Chicago")
 ```
 
-- **Named placeholders**: parameters are inserted as `:paramName` (for example ":myparam") and their values are provided in the "attributes" and/or "parameters" objects in the _querySettings_ parameter.
+- **命名プレースホルダー**: パラメーターは `:paramName` (例: myparam など) という形で挿入され、その値は _querySettings_ 引数の "attributes" または "parameters" オブジェクトで提供されます。
 
 例:
 
@@ -2654,7 +2654,7 @@ $o.parameters:={name:"Chicago")
 $c:=$myCol.query(":att=:name";$o)
 ```
 
-_queryString_ には、すべての種類の引数を混ぜて渡すことができます。 A _queryString_ can contain, for _propertyPath_ and _value_ parameters:
+_queryString_ には、すべての種類の引数を混ぜて渡すことができます。 _queryString_ 引数は、_propertyPath_ と _値_ に以下のものを含めることができます:
 
 - 定数値 (プレースホルダーを使用しない)
 - インデックスプレースホルダーや命名プレースホルダー
@@ -2678,7 +2678,7 @@ _queryString_ には、すべての種類の引数を混ぜて渡すことがで
 
 この場合、ユーザーが _myname_ エリアに _smith OR status='private'_ と入力した場合でも、それはクエリ文字列とはみなされず、値として渡されるだけです。 "smith OR status='private' " という名前の人物を検索したところで、結果は失敗に終わるだけです。
 
-2. It prevents having to worry about formatting or character issues, especially when handling _propertyPath_ or _value_ parameters that might contain non-alphanumeric characters such as ".", "['...
+2. フォーマットや文字の問題を心配する必要がありません。これは、_propertyPath_ や _値_ がたとえば "."、"[' ...などの英数字でない文字を格納している可能性がある場合にとくに有用です。
 
 3. クエリに変数や式を使用することができます。 例:
 
@@ -2687,25 +2687,25 @@ $result:=$col.query("address.city = :1 & name =:2";$city;$myVar+"@")
 $result2:=$col.query("company.name = :1";"John's Pizzas")
 ```
 
-> Using a [**collection reference** or **object reference**](#object-or-collection-reference-as-value) in the _value_ parameter is not supported with this syntax. You must use the [_querySettings_ parameter](#querysettings-parameter).
+> _値 (value)_ 引数内での [**コレクション参照** または **オブジェクト参照**](#オブジェクト参照やコレクション参照で検索する) の使用は、このシンタックスではサポートされていません。 [_querySettings_ 引数](#querysettings-引数)を使用する必要があります。
 
 #### null値を検索する
 
 null値を検索する場合、プレースホルダーシンタックスは使用できません。 なぜならクエリエンジンは null を予期せぬ比較値としてみなすからです。 たとえば、以下のクエリを実行した場合:
 
 ```4d
-$vSingles:=$colPersons.query("spouse = :1";Null) // will NOT work
+$vSingles:=$colPersons.query("spouse = :1";Null) // 機能しません
 ```
 
 この場合 4D は null値を、引数の評価 (別のクエリから渡された属性など) に起因するエラーと解釈するため、期待した結果は得られません。 このようなクエリをおこなうには、直接的なシンタックスを使用する必要があります:
 
 ```4d
-$vSingles:=$colPersons.query("spouse = null") //correct syntax
+$vSingles:=$colPersons.query("spouse = null") // 正しいシンタックス
 ```
 
-#### Object or collection reference as value
+#### オブジェクト参照やコレクション参照で検索する
 
-You can query a collection using an object reference or a collection reference as the _value_ parameter to compare. The query will match objects in the collection that refer (point to) the same **instance of** object or collection.
+_値 (value)_ 引数にオブジェクト参照またはコレクション参照を渡して、コレクションをクエリすることができます。 The query will match objects in the collection that refer (point to) the same **instance of** object or collection.
 
 The following comparators are supported:
 
