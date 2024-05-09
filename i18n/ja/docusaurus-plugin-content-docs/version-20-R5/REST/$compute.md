@@ -34,7 +34,7 @@ title: $compute
 
 `GET  /rest/Employee/salary/?$compute=$all`
 
-**Response**:
+**レスポンス**:
 
 ```
 {
@@ -52,7 +52,7 @@ title: $compute
 
 `GET  /rest/Employee/firstName/?$compute=$all`
 
-**Response**:
+**レスポンス**:
 
 ```
 {
@@ -68,7 +68,7 @@ title: $compute
 
 `GET  /rest/Employee/salary/?$compute=sum`
 
-**Response**:
+**レスポンス**:
 
 `235000`
 
