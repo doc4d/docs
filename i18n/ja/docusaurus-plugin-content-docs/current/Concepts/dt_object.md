@@ -227,17 +227,17 @@ $col:=$o.col[5] // 6
  x:=vPtr->a //x=10
 ```
 
-## Object operators
+## オブジェクト演算子
 
-You can use comparison operators with **object references**, which means that you can evaluate if two or more references point to the same instance of an object.
+**オブジェクト参照** に対して比較演算子を使用することができます。つまり、2つ以上の参照が同じオブジェクトのインスタンスを指しているかどうかを評価することができます。
 
 ```4d
-var $o1:={a: 42} //reference to an instance
-var $o2:={a: 42} //reference to a different instance
-var $o3:=$o1 //reference to the same instance
+var $o1:={a: 42} // とあるインスタンスへの参照
+var $o2:={a: 42} // 異なるインスタンスへの参照
+var $o3:=$o1 // 同じインスタンスへの参照
 ```
 
-Based upon the code above, the comparison table is:
+上のコードに基づいて、比較表は次のようになります:
 
 | 演算  | シンタックス                | 戻り値     | 式         | 値     |
 | --- | --------------------- | ------- | --------- | ----- |
