@@ -22,7 +22,7 @@ RESTリクエストには、URI とリソースが必ず含まれていなけれ
 
 パラメーターを利用することで、4Dプロジェクトのデータクラスのデータを操作できます。 `GET` HTTPメソッドを使ってデータを取得する以外にも、`POST` HTTPメソッドを使ってデータクラスのエンティティを追加・更新・削除することが可能です。
 
-If you want the data to be returned in an array instead of JSON, use the [`$asArray`]($asArray.md) parameter.
+JSON の代わりに配列形式でデータを取得するには [`$asArray`]($asArray.md) パラメーターを使います。
 
 ## RESTステータスとレスポンス
 
