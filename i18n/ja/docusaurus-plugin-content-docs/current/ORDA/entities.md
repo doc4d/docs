@@ -36,12 +36,12 @@ $myEntity.save() // エンティティを保存します
 
 ```4d
  var $e1; $e2 : cs.EmployeeEntity
- $e1:=ds.Employee.get(1) //access the employee with ID 1
+ $e1:=ds.Employee.get(1) // ID 1をもつ社員にアクセスします
  $e2:=$e1
  $e1.name:="Hammer"
-  //both variables $e1 and $e2 share the reference to the same entity
-  //$e2.name contains "Hammer"
- If($e1=$e2) //True
+  // $e1 も $e2 も、どちらも同じエンティティへの参照を共有します
+  // $e2.name の中身も "Hammer" です
+ If($e1=$e2) // True
 ```
 
 これは以下のように図解することができます:
@@ -55,9 +55,9 @@ $myEntity.save() // エンティティを保存します
  $e1:=ds.Employee.get(1)
  $e2:=ds.Employee.get(1)
  $e1.name:="Hammer"
-  //variable $e1 contains a reference to an entity
-  //variable $e2 contains another reference to another entity
-  //$e2.name contains "smith"
+  //変数 $e1 はエンティティへの参照を格納しています
+  //変数 $e2 は別のエンティティへの参照を格納しています
+  //$e2.name の中身は "smith" です
  If($e1=$e2) //False
 ```
 
