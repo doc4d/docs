@@ -34,16 +34,17 @@ $nbSrv:=WEB Server list.length
 //$nbSrv の値は 1
 ```
 
-To instantiate a web server object, call the [`WEB Server`](API/WebServerClass.md#web-server) command:
+Webサーバーオブジェクトをインスタンス化するには、[`WEB Server`](API/WebServerClass.md#web-server) コマンドを呼び出します。
 
 ```4d
-	//create an object variable of the 4D.WebServer class
+	// 4D.WebServer クラスのオブジェクト変数を作成します。
 var webServer : 4D.WebServer 
-	//call the web server from the current context
+	// カレントコンテキストから Webサーバーを呼び出します
 webServer:=WEB Server  
 
-	//equivalent to
+	// 以下と同じです
 webServer:=WEB Server(Web server database)
+
 ```
 
 アプリケーションがコンポーネントを使用している場合に:
@@ -55,10 +56,11 @@ webServer:=WEB Server(Web server database)
 
 ```4d
 var webServer : 4D.WebServer 
-	//call the host web server from a component  
+    // コンポーネントからホストの Webサーバーを呼び出す  
 webServer:=WEB Server(Web server host database)  
-	//call the target web server
+    // ターゲットの Webサーバーを呼び出す
 webServer:=WEB Server(Web server receiving request)  
+
 ```
 
 ## Webサーバー関数
@@ -70,18 +72,19 @@ webServer:=WEB Server(Web server receiving request)
 | [`start()`](API/WebServerClass.md#start) | settings (オブジェクト) | status (オブジェクト) | Webサーバーを開始します |
 | [`stop()`](API/WebServerClass.md#start)  | -                                    | *                                  | Webサーバーを停止します |
 
-To start and stop a web server, just call the [`start()`](API/WebServerClass.md#start) and [`stop()`](API/WebServerClass.md#stop) functions of the web server object:
+Webサーバーを起動・停止するには、Webサーバーオブジェクトの [`start()`](API/WebServerClass.md#start) および [`stop()`](API/WebServerClass.md#stop) 関数を呼び出すだけです。
 
 ```4d
 var $status : Object
-  	//to start a web server with default settings
+    // デフォルトの設定で Webサーバーを起動する場合
 $status:=webServer.start()
-	//to start the web server with custom settings  
-	//$settings object contains web server properties
+    // カスタム設定で Webサーバーを開始する場合  
+    // $settings オブジェクトは、Wevサーバープロパティを格納します
 webServer.start($settings)
 
-	//to stop the web server
+    // Webサーバーを停止します
 $status:=webServer.stop()
+
 ```
 
 ## Webサーバープロパティ
@@ -90,14 +93,14 @@ Webサーバーオブジェクトには、Webサーバーを構成する [さま
 
 これらのプロパティは以下のように定義します:
 
-1. using the `settings` parameter of the [`.start()`](API/WebServerClass.md#start) function (except for read-only properties, see below),
+1. [`.start()`](API/WebServerClass.md#start) 関数の `settings` パラメーターを使用して定義します (読み取り専用のプロパティを除く、後述参照)。
 2. 上を使用しない場合は、`WEB SET OPTION` コマンドを使用して定義します (ホストアプリケーションのみ)。
 3. 上を使用しない場合は、ホストアプリケーションまたはコンポーネントの設定で定義します。
 
 - Webサーバーを起動していない場合、プロパティには Webサーバーの次回起動時に使用される値が含まれています。
-- If the web server is started, the properties contain the actual values used by the web server (default settings could have been overriden by the `settings` parameter of the [`.start()`](API/WebServerClass.md#start) function.
+- Webサーバーが起動されている場合、プロパティには Webサーバーで使用される実際の値が含まれます (デフォルトの定は [`.start()`](API/WebServerClass.md#start) 関数の `settings` パラメーターによって上書きされている可能性があります)。
 
-> _isRunning_, _name_, _openSSLVersion_, and _perfectForwardSecrecy_ are read-only properties that cannot be predefined in the `settings` object parameter for the [`start()`](API/WebServerClass.md#start) function.
+> _isRunning_、_name_、_openSSLVersion_、_perfectForwardSecrecy_ は読み取り専用のプロパティで、[`start()`](API/WebServerClass.md#start)関数の `settings` オブジェクトパラメーターで事前に定義することはできません。
 
 ## 4D Webコマンドのスコープ
 
