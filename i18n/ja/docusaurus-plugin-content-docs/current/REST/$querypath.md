@@ -30,7 +30,7 @@ title: $querypath
 
 ` GET  /rest/$querypath`
 
-**Response**:
+**レスポンス**:
 
 ```
 __queryPath: {
