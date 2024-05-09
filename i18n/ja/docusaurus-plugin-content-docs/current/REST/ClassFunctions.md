@@ -25,20 +25,20 @@ $city:=ds.City.getCity("Aguada")
 
 サーバーのデータストアーの対応するオブジェクトを対象に、関数は呼び出されます。
 
-| クラス関数                                                              | シンタックス                                                                      |
-| ------------------------------------------------------------------ | --------------------------------------------------------------------------- |
-| [datastore class](ORDA/ordaClasses.md#datastore-class)             | `/rest/$catalog/DataStoreClassFunction`                                     |
-| [dataclass class](ORDA/ordaClasses.md#dataclass-class)             | `/rest/{dataClass}/DataClassClassFunction`                                  |
-| [entitySelection class](ORDA/ordaClasses.md#entityselection-class) | `/rest/{dataClass}/EntitySelectionClassFunction`                            |
-|                                                                    | `/rest/{dataClass}/EntitySelectionClassFunction/$entityset/entitySetNumber` |
-|                                                                    | `/rest/{dataClass}/EntitySelectionClassFunction/$filter`                    |
-|                                                                    | `/rest/{dataClass}/EntitySelectionClassFunction/$orderby`                   |
-| [entity class](ORDA/ordaClasses.md#entity-class)                   | `/rest/{dataClass}(key)/EntityClassFunction/`                               |
+| クラス関数                                                          | シンタックス                                                                      |
+| -------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| [DataStore クラス](ORDA/ordaClasses.md#datastore-クラス)             | `/rest/$catalog/DataStoreClassFunction`                                     |
+| [DataClass クラス](ORDA/ordaClasses.md#dataclass-クラス)             | `/rest/{dataClass}/DataClassClassFunction`                                  |
+| [EntitySelection クラス](ORDA/ordaClasses.md#entityselection-クラス) | `/rest/{dataClass}/EntitySelectionClassFunction`                            |
+|                                                                | `/rest/{dataClass}/EntitySelectionClassFunction/$entityset/entitySetNumber` |
+|                                                                | `/rest/{dataClass}/EntitySelectionClassFunction/$filter`                    |
+|                                                                | `/rest/{dataClass}/EntitySelectionClassFunction/$orderby`                   |
+| [Entity クラス](ORDA/ordaClasses.md#entity-クラス)                   | `/rest/{dataClass}(key)/EntityClassFunction/`                               |
 
 > `/rest/{dataClass}/Function` は DataClassクラスまたは EntitySelectionクラスの関数を呼び出すのに使えます (`/rest/{dataClass}` はデータクラスの全エンティティをエンティティセレクションに返します)。\
 > EntitySelection クラスの関数が先に探されます。 見つからない場合に、DataClassクラスを探します。 つまり、同じ名称の関数が DataClassクラスと EntitySelectionクラスの両方に定義されている場合、DataClassクラスの関数が実行されることはありません。
 
-> All 4D code called from REST requests **must be thread-safe** if the project runs in compiled mode, because the REST Server always uses preemptive processes in this case (the [_Use preemptive process_ setting value](../WebServer/preemptiveWeb.md#enabling-the-preemptive-mode-for-the-web-server) is ignored by the REST Server).
+> プロジェクトがコンパイル済みモードで実行される場合、RESTサーバーは常にプリエンプティブプロセスを使用するため、RESTリクエストから呼び出されるすべての 4Dコードは **スレッドセーフでなければなりません** ([_プリエンプティブプロセスを使用_ の設定値](../WebServer/preemptiveWeb.md#webサーバーにおいてプリエンプティブモードを有効化する) は、RESTサーバーによって無視されます)。
 
 ## 引数
 
@@ -51,7 +51,7 @@ ORDAユーザークラスに定義された関数には、引数を渡すこと�
 - JSON コレクションがサポートしているスカラーなデータ型はすべて引数として渡せます。
 - エンティティやエンティティセレクションも引数として受け渡せます。 この際、対応する ORDAオブジェクトにデータを割り当てるために RESTサーバーが使用する専用の属性 (__DATACLASS, __ENTITY, __ENTITIES, __DATASET) を JSONオブジェクトに含めなくてはなりません。
 
-See [this example](#using-an-entity-to-be-created-on-the-server) and [this example](#receiving-an-entity-selection-as-parameter).
+[エンティティを引数として受け取る例題](#エンティティを引数として受け取る) と [エンティティセレクションを引数として受け取る例題](#エンティティセレクションを引数として受け取る) を参照ください。
 
 ### スカラー値の引数
 
@@ -137,12 +137,13 @@ exposed Function getName() : Text
 `City` の DataClassクラスは、引数として受け取った名前をもとに City エンティティを返す API を提供しています:
 
 ```
-// City class
+// Cityクラス
 
 Class extends DataClass
 
 exposed Function getCity($city : Text ) : cs.CityEntity
-	return This.query("name = :1";$city).first()
+    return This.query("name = :1";$city).first()
+
 ```
 
 次のリクエストを実行します:
@@ -234,19 +235,20 @@ exposed Function getPopulation()
 `StudentsSelection` クラスは `getAgeAverage` 関数を持ちます:
 
 ```
-// StudentsSelection Class
+// StudentsSelection クラス
 
 Class extends EntitySelection
 
 exposed Function getAgeAverage : Integer
-	var $sum : Integer
-	var $s : Object
+    var $sum : Integer
+    var $s : Object
 
-	$sum:=0
-	For each ($s;This)
-	    $sum:=$sum+$s.age()
-	End for each
-	return $sum/This.length
+    $sum:=0
+    For each ($s;This)
+        $sum:=$sum+$s.age()
+    End for each
+    return $sum/This.length
+
 ```
 
 あらかじめ作成した既存のエンティティセットを使い、次のリクエストを実行します:
@@ -266,16 +268,17 @@ exposed Function getAgeAverage : Integer
 `StudentsSelection` クラスは `getLastSummary` 関数を持ちます:
 
 ```
-// StudentsSelection Class
+// StudentsSelection クラス
 
 
 Class extends EntitySelection
 
 exposed Function getLastSummary : Text
-	var $last : Object
+    var $last : Object
 
-	$last:=This.last()
-	return =$last.firstname+" - "+$last.lastname+" is ... "+String($last.age())
+    $last:=This.last()
+    return =$last.firstname+" - "+$last.lastname+" is ... "+String($last.age())
+
 ```
 
 次のリクエストを実行します:
@@ -295,23 +298,24 @@ exposed Function getLastSummary : Text
 `Students` DataClassクラスは、データを含むエンティティをクライアントから受け取る `pushData()` 関数を持ちます。 `checkData()` メソッドはいくつかの検証を実行します。 問題がなければ、エンティティは保存されて返されます。
 
 ```
-// Students Class
+// Students クラス
 
 Class extends DataClass
 
 exposed Function pushData($entity : Object) : Object
-	var $status : Object
+    var $status : Object
 
-	$status:=checkData($entity) // $status is an object with a success boolean property
+    $status:=checkData($entity) // $status is an object with a success boolean property
 
-	If ($status.success)
-	    $status:=$entity.save()
- 	   If ($status.success)
- 	       return $entity
-  	  End if
-	End if
+    If ($status.success)
+        $status:=$entity.save()
+       If ($status.success)
+           return $entity
+      End if
+    End if
 
-	return $status
+    return $status
+
 
 ```
 
@@ -434,21 +438,22 @@ __KEY 属性を使って、上の例題と同じことをおこなうと、エ�
 既存の Schools エンティティを既存の Studentsエンティティに紐付けます。 `StudentsEntity` クラスは次の API を提供しています:
 
 ```
-// StudentsEntity class
+// cs.StudentsEntity クラス
 
 Class extends Entity
 
 exposed Function putToSchool()
-	var $1, $school , $0, $status : Object
+    var $1, $school , $0, $status : Object
 
-		//$1 is a Schools entity
-	$school:=$1
-		//Associate the related entity school to the current Students entity
-	This.school:=$school
+        // $1 は Schools エンティティ
+    $school:=$1
+        // Schools リレートエンティティをカレントの Students エンティティに紐付けます
+    This.school:=$school // このとき、school は N対1リレーション名です
 
-	$status:=This.save()
+    $status:=This.save()
 
-	$0:=$status
+    $0:=$status
+
 ```
 
 You run this request, called on a Students entity : **POST** `http://127.0.0.1:8044/rest/Students(1)/putToSchool` Body of the request:
@@ -525,6 +530,7 @@ exposed Function setFinalExam()
 "Passed"
 ]
 
+
 ```
 
 #### 戻り値
@@ -550,7 +556,7 @@ var $ageAverage : Integer
 
 $remoteDS:=Open datastore(New object("hostname";"127.0.0.1:8044");"students")
 
-// $newStudent is a student entity to procees
+// $newStudent は処理する Studentsエンティティです
 $newStudent:=...
 $students:=$remoteDS.Students.query("school.name = :1";"Math school")
 // We add an entity to the $students entity selection on the client
@@ -559,4 +565,5 @@ $students.add($newStudent)
 // We call a function on the StudentsSelection class returning the age average of the students in the entity selection
 // The function is executed on the server on the updated $students entity selection which included the student added from the client
 $ageAverage:=$students.getAgeAverage()
+
 ```
