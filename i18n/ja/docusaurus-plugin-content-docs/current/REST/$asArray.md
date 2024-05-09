@@ -15,7 +15,7 @@ title: $asArray
 
 `GET  /rest/Company/?$filter="name begin a"&$top=3&$asArray=true`
 
-**Response**:
+**レスポンス**:
 
 ```
 [
