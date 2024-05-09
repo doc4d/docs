@@ -231,7 +231,7 @@ ELF (Extended Log Format) または WLF (WebStar Log Format) を選択すると�
 
 ## ログ (バックアップ)
 
-リクエストログの自動バックアップ設定を指定します。 First you must choose the frequency (days, weeks, etc.) or the file size limit criterion by clicking on the corresponding radio button. 必要に応じて、バックアップする正確な時間を指定します。
+リクエストログの自動バックアップ設定を指定します。 最初に、頻度 (日、週などの単位)  またはファイルサイズの上限に対応するラジオボタンをクリックして選択します。 必要に応じて、バックアップする正確な時間を指定します。
 
 - **バックアップしない**: 周期的なバックアップ機能が無効になっています。
 - **X 時間ごと**: 1時間単位でバックアップをプログラムする際、このオプションを使用します。 1 から 24 の値を入力します。
