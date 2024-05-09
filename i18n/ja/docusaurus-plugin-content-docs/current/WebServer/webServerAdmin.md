@@ -14,14 +14,14 @@ title: 管理
 4D Webサーバーは複数の方法で起動できます:
 
 - ボタン/メニューコマンドの使用。
-  - 4D: **Run\>Start Web Server** menu<br/>![](../assets/en/WebServer/start1.png)
-  - 4D Server: **Start HTTP server** button of the HTTP Server page<br/>![](../assets/en/WebServer/start2.png)
+  - 4D: **実行 ＞ Webサーバー開始** メニュー<br/>![](../assets/en/WebServer/start1.png)
+  - 4D Server: HTTPサーバーページの **HTTPサーバー開始** ボタン<br/>![](../assets/en/WebServer/start2.png)
 
-- 4Dアプリケーション開始時に Webサーバーを自動起動。 To do this, display the **Web\/Configuration** page of the Settings and select the **Launch Web Server at Startup** check box:<br/>![](../assets/en/WebServer/config.png)
+- 4Dアプリケーション開始時に Webサーバーを自動起動。 これには、ストラクチャー設定の **Web/設定**ページを表示し、**開始時にWebサーバーを起動** オプションを有効にします:<br/>![](../assets/en/WebServer/config.png)
 
-- Programmatically, by calling the [`webServer.start()`](API/WebServerClass.md#start) function or `WEB START SERVER` command.
+- [`webServer.start()`](API/WebServerClass.md#start) 関数または `WEB START SERVER` コマンドを呼び出してプログラムで開始。
 
-The web server of any component can be launched by calling the [`webServer.start()`](API/WebServerClass.md#start) function on the component's web server object.
+コンポーネントの Webサーバーは、コンポーネントの WebServer オブジェクトに対して [`webServer.start()`](API/WebServerClass.md#start) 関数を呼び出すことで開始できます。
 
 > Webサーバーを開始したり停止したりするために、4Dアプリケーションを再起動する必要はありません。
 
@@ -31,7 +31,7 @@ The web server of any component can be launched by calling the [`webServer.start
 
 - 4D の **実行 ＞ Webサーバー停止** メニューを使用するか、 4D Server にて HTTPサーバーページの **HTTPサーバー停止** ボタンを使用する (いずれも、サーバー開始前は **…開始** と表示されています)。
 
-- Programmatically, by calling the [`webServer.stop()`](API/WebServerClass.md#stop) function or `WEB STOP SERVER` command.
+- [`webServer.stop()`](API/WebServerClass.md#stop) 関数または `WEB STOP SERVER` コマンドを呼び出してプログラムで停止。
 
 コンポーネントの Webサーバーは、コンポーネントの WebServer オブジェクトに対して `webServer.stop()` 関数を呼び出すことで停止できます。
 
@@ -130,7 +130,7 @@ _/4DWEBTEST_ URLは、Webサーバーの状態を確認するために設計さ�
 
 ### HTTPDebugLog.txt
 
-The [http debug file](webServerConfig.md#debug-log) can be enabled using the [`web server` object](webServerObject.md) or the `WEB SET OPTION` command.
+[`WebServer` オブジェクト](webServerObject.md) または `WEB SET OPTION` コマンドを使って、[http デバッグファイル](webServerConfig.md#デバッグログ) を有効化することができます。
 
 このログファイルは、各 HTTPリクエストとそれぞれのレスポンスを rawモードで記録します。 ヘッダーを含むリクエスト全体が記録され、オプションでボディ部分も記録することができます。
 
@@ -147,7 +147,7 @@ The [http debug file](webServerConfig.md#debug-log) can be enabled using the [`w
 
 ### logweb.txt
 
-The [web log recording file](webServerConfig.md#log-recording) can be enabled using the [`web server` object](webServerObject.md), the `WEB SET OPTION` command, or the **Web/Log (type)** page of the settings. ログのフォーマットを選択する必要があります。
+[`WebServer` オブジェクト](webServerObject.md)、`WEB SET OPTION` コマンド、またはストラクチャー設定の **Web/ログ (タイプ)** ページを使って、[Webログファイル](webServerConfig.md#ログの記録) を有効化することができます。 ログのフォーマットを選択する必要があります。
 
 #### CLF/DLF
 
@@ -221,7 +221,7 @@ logweb.txt の自動バックアップパラメーターは、ストラクチャ
 
 ![](../assets/en/WebServer/backup.png)
 
-First you must choose the frequency (days, weeks, etc.) or the file size limit criterion by clicking on the corresponding radio button. 必要に応じて、バックアップする正確な時間を指定します。
+最初に、頻度 (日、週などの単位)  またはファイルサイズの上限に対応するラジオボタンをクリックして選択します。 必要に応じて、バックアップする正確な時間を指定します。
 
 - **バックアップしない**: 周期的なバックアップ機能が無効になっています。
 
