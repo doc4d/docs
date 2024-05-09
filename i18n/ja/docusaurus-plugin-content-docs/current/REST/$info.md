@@ -35,8 +35,8 @@ title: $info
 
 > 最適化のため、4D は独自のエンティティセットを生成します。つまり、`$method=entityset` で作成した以外のエンティティセットも返されます。
 
-> **IMPORTANT**
-> If your project is in **Controlled Admin Access Mode**, you must first log into the project as a user in the Admin group.
+> **重要**
+> プロジェクトにおいて、4D の **パスワードアクセスシステム** を起動している場合には、Adminグループのユーザーとしてログインしている必要があります。
 
 ### sessionInfo
 
