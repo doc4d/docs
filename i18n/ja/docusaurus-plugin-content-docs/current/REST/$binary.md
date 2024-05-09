@@ -7,7 +7,7 @@ title: $binary
 
 ## 説明
 
-`$binary` を使うと、ドキュメントを BLOB として保存できます。  You must also use the [`$expand`]($expand.md) command in conjunction with it.
+`$binary` を使うと、ドキュメントを BLOB として保存できます。  [`$expand`]($expand.md) コマンドとの組み合わせで使う必要があります。
 
 以下のリクエストを実行した場合:
 
