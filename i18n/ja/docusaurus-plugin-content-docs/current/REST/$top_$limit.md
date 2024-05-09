@@ -9,7 +9,7 @@ title: $top/$limit
 
 `$top/$limit` は返されるエンティティの数を制限します。 この数字はデフォルトで 100件です。 `$top` および `$limit` のどちらでも利用できます。
 
-When used in conjunction with [`$skip`]($skip.md), you can navigate through the entity selection returned by the REST request.
+[`$skip`]($skip.md) と組み合わせて使用すると、RESTリクエストによって返されるエンティティセレクション内を移動することができます。
 
 ## 例題
 
