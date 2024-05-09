@@ -583,7 +583,7 @@ _**SearchDuplicate**_ プロジェクトメソッドは、任意のデータク�
 ```4d
  var $pet : cs.CatsEntity
 
- $pet:=ds.Cats.all().first() //get an entity
+ $pet:=ds.Cats.all().first() // エンティティを取得します
  SearchDuplicate($pet;"Dogs")
 ```
 
@@ -906,7 +906,7 @@ attributePath|formula 比較演算子 値
 
 - **formula**: テキストまたはオブジェクト形式で渡された有効なフォーミュラ。 フォーミュラは処理されるエンティティごとに評価され、ブール値を返さなくてはなりません。 処理中のエンティティはフォーミュラ内において `This` で参照されます。
 
-  - **Text**: the formula string must be preceeded by the `eval()` statement, so that the query parser evaluates the expression correctly. 例: _"eval(length(This.lastname) >=30)"_
+  - **テキスト**: フォーミュラ文字列の前に `eval()` ステートメントが必要です。これにより、クエリが式を正しく解釈します。 例: _"eval(length(This.lastname) >=30)"_
   - **オブジェクト**: [フォーミュラオブジェクト](FunctionClass.md) は **プレースホルダー** (後述参照) を使って受け渡します。 このフォーミュラは、[`Formula`](FunctionClass.md#formula) または [`Formula from string`](FunctionClass.md#formula-from-string) コマンドによって作成されたものでなくてはなりません。
 
 > * 4Dフォーミュラは、`&` および `|` 記号のみを論理演算子としてサポートすることに留意が必要です。
@@ -933,7 +933,7 @@ attributePath|formula 比較演算子 値
 | 含まれる          | IN          | コレクション、あるいは複数の値のうち、どれか一つの値と等しいデータを取得します。ワイルドカード (@) をサポートします。                              |
 | キーワードを含む      | %           | キーワードは、文字列あるいはピクチャー型の属性内で使用されるものが対象です。                                                                                     |
 
-- **value**: the value to compare to the current value of the property of each entity in the entity selection. **プレースホルダー** (後述の **プレースホルダーの使用** 参照) か、あるいはデータ型プロパティと同じ型の式を使用することができます。
+- **値** (value): エンティティコレクションの各エンティティの属性のカレント値に対して比較する値。 **プレースホルダー** (後述の **プレースホルダーの使用** 参照) か、あるいはデータ型プロパティと同じ型の式を使用することができます。
   定数値を使用する場合、以下の原則に従う必要があります:
   - **テキスト** テキスト型の定数値の場合は単一引用符つき、あるいはなしでも渡すことができます(後述の **引用符を使用する** 参照)。 文字列中の文字列を検索する ("含まれる" クエリ) には、ワイルドカード記号 (@) を使用して検索文字列を指定します (例: "@Smith@")。 また以下のキーワードはテキスト定数においては使用できません: true, false。
   - **ブール** 型の定数値: **true** または **false** (文字の大小を区別します)
