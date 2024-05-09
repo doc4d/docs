@@ -17,7 +17,7 @@ title: $imageformat
 | ".jpeg" または "image/jpeg" | JPEG 形式  |
 | ".tiff" または "image/tiff" | TIFF 形式  |
 
-Once you have defined the format, you must pass the image attribute to [`$expand`]($expand.md) to load the photo completely.
+画像を完全に読み込むには、形式を指定するだけでなく、画像属性を [`$expand`]($expand.md) に渡す必要があります。
 
 読み込むべき画像がない場合、または指定した形式では画像が読み込めない場合、レスポンスは空のオブジェクト `{}` になります。
 
