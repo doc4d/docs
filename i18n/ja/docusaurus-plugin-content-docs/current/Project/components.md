@@ -72,7 +72,7 @@ If you want to customize the location of the components that are [declared in th
 }
 ```
 
-The **environment4d.json** file can be stored in your project package folder or in one of its parent folders, at any level (up to the root). The benefit of this architecture is that you can store this environment file in a parent folder of your projects and decide not to commit it, allowing you to have your local component organization.
+**environment4d.json** ファイルは、プロジェクトパッケージフォルダーまたはその親フォルダーのいずれかに保存することができます (ルートまでの任意のレベル)。 このアーキテクチャーの利点は、この環境ファイルをプロジェクトの親フォルダーに保存することで、コミットしないように選択できることです。これにより、ローカルでのコンポーネントの管理が可能になります。
 
 :::note
 
@@ -95,16 +95,16 @@ Since components can be installed in different ways, a priority order is applied
 
 When a component cannot be loaded because of another instance of the same component located at a higher priority level, it is given the _Overloaded_ [status](#dependency-status). The loaded component has the _Overloading_ [status](#dependency-status).
 
-## Monitoring Project Dependencies
+## プロジェクトの依存関係の監視
 
-In an opened project, you can get information about dependencies and their current loading status in the **Dependencies** panel.
+開かれているプロジェクトでは、**依存関係** パネルで依存関係と現在の読み込み状態に関する情報を取得することができます。
 
-To display the Dependencies panel:
+依存関係パネルを表示するには:
 
-- with 4D, select the **Design/Project Dependencies** menu item (Development environment),<br/>
+- 4D では、**デザイン/プロジェクト依存関係** メニューアイテムを選択します (開発環境)。<br/>
   ![dependency-menu](../assets/en/Project/dependency-menu.png)
 
-- with 4D Server, select the **Window/Project Dependencies** menu item.<br/>
+- 4D Server では、**ウインドウ/プロジェクト依存関係** メニューアイテムを選択します。<br/>
   ![dependency-menu-server](../assets/en/Project/dependency-menu-server.png)
 
 The Dependency panel is then displayed. Dependencies are sorted by name in alphabetical order:
