@@ -11,12 +11,12 @@ title: コンポーネント
 
 コンポーネントは、インタープリターまたは [コンパイル済み](../Desktop/building.md) のものが使えます。 コンポーネントのパッケージフォルダーには以下のいずれかが含まれます:
 
-- either a Project folder (interpreted component)
-- or a .4DZ file (compiled component)
+- プロジェクトフォルダー (インタープリターのコンポーネント)
+- または .4DZ ファイル (コンパイル済みコンポーネント)
 
-A 4D project running in interpreted mode can use either interpreted or compiled components. A 4D project running in compiled mode cannot use interpreted components. この場合、コンパイル済みコンポーネントのみが利用可能です。
+インタープリターモードで動作する 4Dプロジェクトは、インタープリターまたはコンパイル済みどちらのコンポーネントも使用できます。 コンパイルモードで実行される 4Dプロジェクトでは、インタープリターのコンポーネントを使用できません。 この場合、コンパイル済みコンポーネントのみが利用可能です。
 
-## Loading components
+## コンポーネントの読み込み
 
 ### 基本
 
@@ -29,7 +29,7 @@ If the same component is installed at different locations, a [priority order] is
 
 ### dependencies.json
 
-1. Reference the component name in the **dependencies.json** file of your 4D project. This manifest file must be saved in the **Sources** folder of the 4D project folder, e.g.:
+1. 4Dプロジェクトの **dependencies.json** ファイルで、コンポーネント名を参照します。 このマニフェストファイルは、4Dプロジェクトフォルダの **Sources** フォルダーに保存する必要があります。例:
    ```
    /MyProjectRoot/Project/Sources/dependencies.json
    ```
@@ -58,7 +58,7 @@ The **/Sources/dependencies.json** file contents must have the following structu
 
 If you want to customize the location of the components that are [declared in the **dependencies.json** file](#dependenciesjson), you can use a **environment4d.json** file. This file allows you to declare the paths for the dependencies that are not stored at the same level as the project folder.
 
-You can use absolute or relative paths, expressed in POSIX syntax as described in [this paragraph](../Concepts/paths#posix-syntax). Relative paths are relative to the environment4d.json file.
+パスには、[POSIXシンタックス](../Concepts/paths#posix-シンタックス) で表現された、絶対パスまたは相対パスを使用できます。 相対パスは、environment4d.json ファイルを基準として相対パスです。
 
 例:
 
