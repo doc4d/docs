@@ -107,7 +107,7 @@ When a component cannot be loaded because of another instance of the same compon
 - 4D Server では、**ウインドウ/プロジェクト依存関係** メニューアイテムを選択します。<br/>
   ![dependency-menu-server](../assets/en/Project/dependency-menu-server.png)
 
-The Dependency panel is then displayed. Dependencies are sorted by name in alphabetical order:
+依存関係パネルが表示されます。 依存関係は ABC順にソートされます。
 
 ![dependency](../assets/en/Project/dependency.png)
 
