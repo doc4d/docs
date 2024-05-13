@@ -293,7 +293,7 @@ exposed Function getLastSummary : Text
 }
 ```
 
-### エンティティを作成する
+### サーバー上に作成されるエンティティを使用する
 
 `Students` DataClassクラスは、データを含むエンティティをクライアントから受け取る `pushData()` 関数を持ちます。 `checkData()` メソッドはいくつかの検証を実行します。 問題がなければ、エンティティは保存されて返されます。
 
@@ -481,7 +481,7 @@ You run this request, called on a Students entity : **POST** `http://127.0.0.1:8
 `Students` DataClassクラスは、受け取ったエンティティセレクション ($1) を更新する `setFinalExam()` 関数を持ちます。 実際には、エンティティセレクション内の各エンティティの _finalExam_ 属性値を、2つ目に渡した引数 ($2) に更新します。 最後に、更新されたエンティティのプライマリーキーを返します。
 
 ```
-// Students class
+// Students クラス
 
 Class extends DataClass
 
@@ -492,14 +492,14 @@ exposed Function setFinalExam()
 
     var $keys, $0 : Collection
 
-      //Entity selection
+      // エンティティセレクション
     $es:=$1
 
     $examResult:=$2
 
     $keys:=New collection()
 
-      //Loop on the entity selection
+      // エンティティセレクションを捜査します
     For each ($student;$es)
         $student.finalExam:=$examResult
         $status:=$student.save()
