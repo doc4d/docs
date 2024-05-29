@@ -40,7 +40,7 @@ Si le fichier d’historique courant ou un fichier de sauvegarde d’historique 
 
 4.(Optional) Click **OK** to integrate the log file into the restored application.
 Si la restitution et l’intégration se sont déroulées correctement, 4D affiche une boîte de dialogue indiquant que l’opération a réussi.
-5. Click **OK**.
+5. Cliquez sur **OK**.
 
 Le dossier d’arrivée est affiché. Lors de la restitution, 4D place tous les fichiers sauvegardés dans ce dossier, quelle que soit la position des fichiers originaux sur le disque au moment de la sauvegarde. De cette façon, vous retrouverez plus facilement vos fichiers.
 
