@@ -9,7 +9,7 @@ Les heures sont stockées dans un format de 24 heures.
 
 Une valeur de type Heure peut être utilisée en tant que numérique. Le nombre correspondant est le nombre de secondes que cette valeur représente à partir de minuit (00:00:00).
 
-**Note:** In the _4D Language Reference_ manual, Time parameters in command descriptions are denoted as Time, except when marked otherwise.
+**Note :** Dans le manuel de _référence du langage 4D_, les paramètres de type Heure dans les descriptions des commandes sont appelés Heure, sauf spécification explicite.
 
 ## Constantes littérales de type heure
 
@@ -27,7 +27,7 @@ Voici quelques exemples de constantes littérales de type heure :
 
 Une heure nulle s’écrit ?00:00:00?
 
-**Tip:** The Code Editor includes a shortcut for entering a null time. To type a null time, enter the question mark (?) character and press Enter.
+**Astuce :** L'éditeur de code propose un raccourci pour saisir une date nulle. To type a null time, enter the question mark (?) et appuyez sur Entrée.
 
 ## Opérateurs sur les heures
 
@@ -61,9 +61,9 @@ Une heure nulle s’écrit ?00:00:00?
 
 ### Exemple 1
 
-To obtain a time expression from an expression that combines a time expression with a number, use the commands `Time` and `Time string`.
+Vous pouvez combiner des expressions de type heure et de type numérique à l'aide des fonctions `Time` et `Time string`.
 
-You can combine expressions of the time and number types using the `Time` or `Current time` functions:
+Vous pouvez combiner des expressions Time et Number à l'aide des fonctions `Time` ou `Current time`:
 
 ```4d
 	//The following line assigns to $vlSeconds the number of seconds   
