@@ -88,13 +88,9 @@ Avec :
 | Opération | Syntaxe             | Retourne | Expression    | Valeur |
 | --------- | ------------------- | -------- | ------------- | ------ |
 | Egalité   | Pointeur = Pointeur | Boolean  | vPtrA = vPtrB | True   |
-
-```
-	|	|||vPtrA = vPtrC	|False|
-```
-
-|Inequality	|Pointer # Pointer	|Boolean	|vPtrA # vPtrC	|True|
-||||			vPtrA # vPtrB	|False|
+|           |                     |          | vPtrA = vPtrC | False  |
+| Inégalité | Pointeur # Pointeur | Boolean  | vPtrA # vPtrC | True   |
+|           |                     |          | vPtrA # vPtrB | False  |
 
 ## Principales utilisations
 
