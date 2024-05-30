@@ -85,16 +85,12 @@ Con:
  vPtrC:=-anotherObject
 ```
 
-| Operación | Sintaxis          | Devuelve | Expression    | Valor |
-| --------- | ----------------- | -------- | ------------- | ----- |
-| Igual     | Puntero = Puntero | Boolean  | vPtrA = vPtrB | True  |
-
-```
-	|	|||vPtrA = vPtrC	|False|
-```
-
-|Desigualdad	|Pointer # Pointer	|Boolean	|vPtrA # vPtrC	|True|
-||||			vPtrA # vPtrB	|False|
+| Operación   | Sintaxis          | Devuelve | Expression    | Valor |
+| ----------- | ----------------- | -------- | ------------- | ----- |
+| Igual       | Puntero = Puntero | Boolean  | vPtrA = vPtrB | True  |
+|             |                   |          | vPtrA = vPtrC | False |
+| Desigualdad | Puntero # Puntero | Boolean  | vPtrA # vPtrC | True  |
+|             |                   |          | vPtrA # vPtrB | False |
 
 ## Principales usos
 
