@@ -20,7 +20,7 @@ En el lenguaje 4D, hay varias categorías de métodos. La categoría depende de 
 | **Método formulario**                             | Automático, cuando un evento involucra al formulario al que se asocia el método                                                             | No                                  | Propiedad de un formulario. Puede utilizar un método formulario para gestionar datos y objetos, pero generalmente es más sencillo y eficiente utilizar un método objeto para estos fines. |
 | **Trigger** (o _método tabla_) | Automático, cada vez que se manipulan los registros de una tabla (Añadir, Eliminar y Modificar)                          | No                                  | Propiedad de una tabla. Los triggers son métodos que pueden evitar operaciones "ilegales" con los registros de su base.                                                                   |
 | **Método base**                                   | Automático, cuando se produce un evento de la sesión de trabajo                                                                             | Sí (predefinido) | Hay 16 métodos base en 4D.                                                                                                                                                                                |
-| **Class**                                         | [**Class functions**](classes.md#function) are called in the context of an object instance                                                  | sí                                  | Las funciones de clases pueden estar integradas (_por ejemplo_ `collection.orderBy()` o `entity.save()`), o creadas por el desarrollador 4D. See [**Classes**](classes.md)             |
+| **Class**                                         | [**Class functions**](classes.md#function) are called in the context of an object instance                                                  | sí                                  | Las funciones de clases pueden estar integradas (_por ejemplo_ `collection.orderBy()` o `entity.save()`), o creadas por el desarrollador 4D. Ver [**Clases**](classes.md)              |
 
 ## Métodos proyecto
 
@@ -108,7 +108,7 @@ También se admite la sintaxis con paréntesis:
 $o["custom_Alert"]() //muestra "Hello world!"
 ```
 
-You can also [pass parameters](Concepts/parameters.md) to your formula when you call it by using $1, $2… just like with 4D project methods:
+You can also [pass parameters](Concepts/parameters.md) to your formula when you call it by using $1, $2… así como con los métodos proyecto 4D:
 
 ```4d
 //método fullName 
