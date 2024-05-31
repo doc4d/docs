@@ -84,13 +84,13 @@ Interrompe a execução do método e regressa ao estado anterior ao início da e
 
 #### Abortar e editar
 
-Pausa na execução do método. El método que se está ejecutando cuando se presiona el botón **Abortar y Editar** se abre en el Editor de Código.
+El método que se está ejecutando cuando se presiona el botón **Abortar y Editar** se abre en el Editor de Código.
 
 > **Consejo**: utilice este botón cuando sepa qué cambios son necesarios en su código, y el momento en que deben ser efectuados para proseguir con las pruebas de sus métodos. Quando terminar as alterações, volte a executar o método.
 
 #### Editar
 
-Pausa na execução do método. O método executado no momento em que se clica no botão Editar abre-se no Editor de código.
+O método executado no momento em que se clica no botão Editar abre-se no Editor de código.
 
 Se utilizar este botão para modificar um método, as modificações só entram em vigor na próxima vez que este for executado.
 
@@ -146,7 +146,7 @@ $c:=a+b
 
    La variable `$a` aún no está inicializada, pero se muestra porque se utiliza en la línea que se va a ejecutar.
 
-2. Haga clic en el botón **Step Over**. El contador del programa se pone ahora en la línea `b:=a+1`. Nesta altura, o tema mostra:
+2. Haga clic en el botón **Step Over**. El contador del programa se pone ahora en la línea `b:=a+1`. At this point, the **Line Objects** theme displays:
 
    | $a | 1          |
    | -- | ---------- |
@@ -154,7 +154,7 @@ $c:=a+b
 
    El valor de la variable `$a` es ahora 1. La variable `$b` aún no está inicializada, pero se muestra porque se utiliza en la línea que se va a ejecutar.
 
-3. Haga clic en el botón **Step Over** nuevamente. O contador do programa está agora definido na linha com c:=a+b. Neste ponto, é exibido o tema Objetos de linha:
+3. Haga clic en el botón **Step Over** nuevamente. The program counter is now set on the line with $c:=a+b. the **Line Objects** theme displays:
 
    | $c | Indefinido |
    | -- | ---------- |
