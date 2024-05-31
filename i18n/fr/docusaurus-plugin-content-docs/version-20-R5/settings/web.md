@@ -238,7 +238,7 @@ Le tableau suivant répertorie les champs disponibles pour chaque format (par or
 
 > Les dates et heures sont données au format GMT
 
-## Journal (périodicité)
+## Journal (sauvegarde)
 
 Paramètres d’archivage automatique du journal des requêtes. First you must choose the frequency (days, weeks, etc.) or the file size limit criterion by clicking on the corresponding radio button. Vous devez ensuite spécifier le moment précis du backup si nécessaire.
 
