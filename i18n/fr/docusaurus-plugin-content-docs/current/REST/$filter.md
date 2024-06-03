@@ -3,7 +3,7 @@ id: filter
 title: $filter
 ---
 
-Allows to query the data in a dataclass or method _(e.g._, `$filter="firstName!='' AND salary>30000"`)
+Permet de rechercher les données d'une dataclass ou d'une méthode (par exemple, `$filter="firstName!='' AND salary>30000"`)
 
 ## Description
 
@@ -15,7 +15,7 @@ Un filtre est composé des éléments suivants :
 
 **{attribut} {comparateur} {valeur}**
 
-For example: `$filter="firstName=john"` where `firstName` is the **attribute**, `=` is the **comparator** and `john` is the **value**.
+Par exemple : `$filter="firstName=john"` où `firstName` est l'**attribut**, `=` est le **comparateur** et `john` est la **valeur**.
 
 ### Utiliser un filtre complexe
 
@@ -23,7 +23,7 @@ A more complex filter is composed of the following elements, which joins two que
 
 **{attribut} {comparateur} {value} {AND/OR/EXCEPT} {attribut} {comparateur} {value}**
 
-For example: `$filter="firstName=john AND salary>20000"` where `firstName` and `salary` are attributes in the Employee dataclass.
+Par exemple : `$filter="firstName=john AND salary>20000"` où `firstName` et `salary` sont les attributs de la dataclasse "Employee".
 
 ### Utiliser la propriété params
 
@@ -31,7 +31,7 @@ Vous pouvez également utiliser la propriété params de 4D.
 
 **{attribute} {comparator} {placeholder} {AND/OR/EXCEPT} {attribute} {comparator} {placeholder}&$params='["{value1}","{value2}"]"'**
 
-For example: `$filter="firstName=:1 AND salary>:2"&$params='["john",20000]'` where firstName and salary are attributes in the Employee dataclass.
+Par exemple : `$filter="firstName=:1 AND salary>:2"&$params='["john",20000]'"` où firstName et salary sont les attributs de la dataclass "Employee".
 
 For more information regarding how to query data in 4D, refer to the [dataClass.query()](../API/DataClassClass.md#query) documentation.
 
@@ -48,7 +48,7 @@ For more information regarding how to query data in 4D, refer to the [dataClass.
 
 ## Attribut
 
-If the attribute is in the same dataclass, you can just pass it directly (_e.g._, `firstName`). However, if you want to query another dataclass, you must include the relation attribute name plus the attribute name, i.e. the path (_e.g._, employer.name). The attribute name is case-sensitive (`firstName` is not equal to `FirstName`).
+Si l'attribut se trouve dans la même dataclass, vous pouvez simplement le passer directement (par exemple, `firstName`). Cependant, si vous souhaitez lancer une requête dans une autre dataclass, vous devez inclure le nom de l'attribut relationnel et le nom d'attribut, c'est-à-dire le chemin d'accès (par exemple, employeur.nom). Le nom d'attribut est sensible à la casse (`firstName` n'est pas égal à `FirstName`).
 
 Vous pouvez également rechercher des attributs de type Objet en utilisant la notation par points. Par exemple, si vous avez un attribut dont le nom est "objAttribute" avec la structure suivante :
 
