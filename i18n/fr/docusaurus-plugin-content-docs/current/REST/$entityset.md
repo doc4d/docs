@@ -3,7 +3,7 @@ id: entityset
 title: $entityset
 ---
 
-After [creating an entity set]($method.md#methodentityset) by using `$method=entityset`, you can then use it subsequently.
+Après avoir [créé un ensemble d'entités]($method.md#methodentityset) à l'aide de `$method=entityset`, vous pouvez ensuite l'utiliser ultérieurement.
 
 ## Syntaxe
 
@@ -14,13 +14,13 @@ After [creating an entity set]($method.md#methodentityset) by using `$method=ent
 
 ## $entityset/{entitySetID}
 
-Retrieves an existing entity set (_e.g._, `People/$entityset/0AF4679A5C394746BFEB68D2162A19FF`)
+Récupère un ensemble d'entités existant (_e.g._, `People/$entityset/0AF4679A5C394746BFEB68D2162A19FF`)
 
 ### Description
 
 Cette syntaxe vos permet d'exécuter toute opération sur un ensemble d'entités défini.
 
-Because entity sets have a time limit on them (either by default or after calling `$timeout` with your own limit), you can call `$savedfilter` and `$savedorderby` to save the filter and order by statements when you create an entity set.
+Étant donné que les ensembles d'entités sont limités par le temps (par défaut ou bien après avoir appelé `$timeout` pour définir la limite souhaitée), vous pouvez appeler `$savedfilter` et `$savedorderby` pour sauvegarder le filtre et trier par instructio
 
 When you retrieve an existing entity set stored in 4D Server's cache, you can also apply any of the following to the entity set: [`$clean`]($clean.md), [`$expand`]($expand.md), [`$filter`]($filter.md), [`$orderby`]($orderby.md), [`$skip`]($skip.md), or [`$top/$limit`]($top_$limit.md).
 
@@ -43,7 +43,7 @@ Créez un autre ensemble d'entités basé sur des ensembles d'entités préalabl
 
 After creating an entity set (entity set #1) by using `$method=entityset`, you can then create another entity set by using the `$entityset/{entitySetID}?$logicOperator... &$otherCollection` syntax, the `$logicOperator` property (whose values are shown below), and another entity set (entity set #2) defined by the `$otherCollection` property. Les deux ensembles d'entités doivent être dans la même dataclass.
 
-You can then create another entity set containing the results from this call by using the `$method=entityset` at the end of the REST request.
+Vous pouvez ensuite créer un autre ensemble d'entités contenant les résultats de cet appel en utilisant le `$method=entityset` à la fin de la requête REST.
 
 Voici les opérateurs logiques :
 
