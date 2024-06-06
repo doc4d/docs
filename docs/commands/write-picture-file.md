@@ -25,6 +25,9 @@ The **WRITE PICTURE FILE** command saves the picture passed in the picture param
 WRITE PICTURE FILE</span>("c:\folder\photo.jpg";myphoto)
 ```
 
+<div class="code4d"><code>&nbsp;<span class="code4d_command">WRITE PICTURE FILE</span>("c:\folder\photo.jpg";myphoto)</code></div>
+
+
 ... the command will use the JPEG codec to store the picture. <br/>If the extension used does not correspond to any available codec, the file is not saved and the OK system variable is set to 0. If you do not pass a codec or a file extension, the picture file is saved in PICT format. **Note:** If the write format of the picture (indicated via the extension of fileName or the codec parameter) is the same the as its original type and if no transformation operation has been applied to it, the picture is written "as is", without any modification.  If the command is executed successfully, the system variable Document contains the full pathname to the file created and the system variable OK is set to 1. Otherwise, OK is set to 0.
 
 
