@@ -1708,13 +1708,13 @@ If you pass an invalid attribute path in *pathString* or *pathObject*, the funct
 
 <!-- REF #EntitySelectionClass.orderByFormula().Params -->
 
-| Parámetros    | Tipo                               |     | Descripción                                                    |
-| ------------- | ---------------------------------- | :-: | -------------------------------------------------------------- |
-| formulaString | Text                               |  -> | Cadena formula                                                 |
-| formulaObj    | Object                             |  -> | Objeto fórmula                                                 |
-| sortOrder     | Integer                            |  -> | `dk ascending` (default) or `dk descending` |
-| settings      | Object                             |  -> | Parámetros de la fórmula                                       |
-| Result        | 4D.EntitySelection |  <- | Nueva entity selection ordenada                                |
+| Parámetros    | Tipo                               |     | Descripción                                                       |
+| ------------- | ---------------------------------- | :-: | ----------------------------------------------------------------- |
+| formulaString | Text                               |  -> | Cadena formula                                                    |
+| formulaObj    | Object                             |  -> | Objeto fórmula                                                    |
+| sortOrder     | Integer                            |  -> | `dk ascending` (por defecto) o `dk descending` |
+| settings      | Object                             |  -> | Parámetros de la fórmula                                          |
+| Result        | 4D.EntitySelection |  <- | Nueva entity selection ordenada                                   |
 
 <!-- END REF -->
 
