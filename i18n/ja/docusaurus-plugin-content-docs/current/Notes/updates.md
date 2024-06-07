@@ -17,7 +17,7 @@ title: リリースノート
 
 #### 動作の変更
 
-- Scroll chaining in forms: Parent subforms now scroll automatically when embedded [scrollable objects](../FormObjects/properties_Appearance.md#vertical-scroll-bar) have reached their boundaries and the user keeps scrolling using the mouse or trackpad (overscrolling).
+- Support of scroll chaining in forms: parent subforms now scroll automatically when embedded scrollable objects ([vertically](../FormObjects/properties_Appearance.md#vertical-scroll-bar) or [horizontally](../FormObjects/properties_Appearance.md#horizontal-scroll-bar)) have reached their boundaries and the user keeps scrolling using the mouse or trackpad (overscrolling).
 
 ## 4D 20 R5
 
