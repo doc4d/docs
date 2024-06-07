@@ -935,12 +935,12 @@ $b:=$c.every($f;Is real) //$b=false
 
 <!-- REF #collection.extract().Params -->
 
-| Parámetros   | Tipo       |     | Descripción                                                                                                                                                                                           |
-| ------------ | ---------- | :-: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| propertyPath | Text       |  -> | Ruta de la propiedad del objeto cuyos valores deben ser extraídos a la nueva colección                                                                                                                |
-| targetpath   | Text       |  -> | Ruta de la propiedad de destino o nombre de la propiedad                                                                                                                                              |
-| option       | Integer    |  -> | `ck keep null`: include null properties in the returned collection (ignored by default). Parameter ignored if *targetPath* passed. |
-| Result       | Collection |  <- | Nueva colección que contiene los valores extraídos                                                                                                                                                    |
+| Parámetros   | Tipo       |     | Descripción                                                                                                                                                                                             |
+| ------------ | ---------- | :-: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| propertyPath | Text       |  -> | Ruta de la propiedad del objeto cuyos valores deben ser extraídos a la nueva colección                                                                                                                  |
+| targetpath   | Text       |  -> | Ruta de la propiedad de destino o nombre de la propiedad                                                                                                                                                |
+| option       | Integer    |  -> | `ck keep null`: include null properties in the returned collection (ignored by default). Parámetro ignorado si se pasa *targetPath*. |
+| Result       | Collection |  <- | Nueva colección que contiene los valores extraídos                                                                                                                                                      |
 
 <!-- END REF -->
 
@@ -1500,11 +1500,11 @@ $c2:=$c.flatMap($f; $c.sum())
 
 <!-- REF #collection.includes().Params -->
 
-| Parámetros | Tipo      |     | Descripción                                   |
-| ---------- | --------- | :-: | --------------------------------------------- |
-| toSearch   | expresión |  -> | Expresión a buscar en la colección            |
-| startFrom  | Integer   |  -> | Índice para iniciar la búsqueda en            |
-| Result     | Boolean   |  <- | True if *toSearch* is found in the collection |
+| Parámetros | Tipo      |     | Descripción                                     |
+| ---------- | --------- | :-: | ----------------------------------------------- |
+| toSearch   | expresión |  -> | Expresión a buscar en la colección              |
+| startFrom  | Integer   |  -> | Índice para iniciar la búsqueda en              |
+| Result     | Boolean   |  <- | True si *toSearch* se encuentra en la colección |
 
 <!-- END REF -->
 
@@ -2635,7 +2635,7 @@ Puede utilizar paréntesis en la búsqueda para dar prioridad al cálculo. Por e
 
 Two types of placeholders can be used: **indexed placeholders** and **named placeholders**.
 
-- **Indexed placeholders**: parameters are inserted as `:paramIndex` (for example ":1", ":2"...) in *queryString* and their corresponding values are provided by the sequence of *value* parameter(s). You can use up to 128 *value* parameters.
+- **Indexed placeholders**: parameters are inserted as `:paramIndex` (for example ":1", ":2"...) in *queryString* and their corresponding values are provided by the sequence of *value* parameter(s). Puede usar hasta 128 parámetros *value*.
 
 Ejemplo:
 
