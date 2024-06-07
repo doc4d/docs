@@ -225,7 +225,7 @@ En el código de la aplicación, las funciones de clases se llaman como los mét
   - [`apply()`](API/FunctionClass.md#apply)
   - [`call()`](API/FunctionClass.md#call)
 
-:::warning Thread-safety warning
+:::warning Aviso de segurança thread-safety
 
 Se uma função de classe não for thread-safe e for chamada por um método com o atributo "Pode ser executado num processo preemptivo":
 
@@ -269,13 +269,13 @@ Function add($x : Variant; $y : Integer)-&gt;$result : Integer
 property name : Text
 property height; width : Integer
 
-// Class: Rectangle
+// Classe: Rectangle
 Class constructor($width : Integer; $height : Integer)
  This.name:="Rectangle"
  This.height:=$height
  This.width:=$width
 
-// Function definition
+// Definição da função
 Function getArea()->$result : Integer
  $result:=(This.height)*(This.width)
 ```
@@ -415,7 +415,7 @@ Você pode omitir o tipo na linha da declaração, caso em que o tipo será infe
 property name : Text := "Smith"
 property age : Integer := 42
 
-property birthDate := !1988-09-29! //date is inferred
+property birthDate := !1988-09-29! //data é inferida
 property fuzzy //variant
 ```
 
@@ -805,12 +805,12 @@ If a function defined inside a shared class modifies objects of the class, it sh
 Para crear una función compartida, añada la palabra clave `shared` antes de la palabra clave [Function](#function) en una clase compartida. Por exemplo:
 
 ```4d
-	//shared class Foo
+//classe compartilhada Foo
 shared Class Constructor()
   This.variable:=1
 
 shared Function Bar($value : Integer)
-  This.variable:=$value //no need to call use/end use
+  This.variable:=$value //não é necessário chamar use/end use
 ```
 
 :::note
@@ -852,9 +852,9 @@ singleton Class Constructor()
 Para usar o singleton process:
 
 ```4d
-	//in a process
-var $mySingleton := cs.ProcessTag.me //First instantiation
-	//$mySingleton.tag = 5425 for example  
+	//em um processo
+var $mySingleton := cs.ProcessTag.me //Primeira instância
+	//$mySingleton.tag = 5425 por exemplo  
 ...  
 var $myOtherSingleton := cs.ProcessTag.me
 	//$myOtherSingleton.tag = 5425
@@ -862,9 +862,9 @@ var $myOtherSingleton := cs.ProcessTag.me
 ```
 
 ```4d
-	//in another process
-var $mySingleton := cs.ProcessTag.me //First instantiation
-	//$mySingleton.tag = 14856 for example  
+	//em outro processo
+var $mySingleton := cs.ProcessTag.me //Primeira instância
+	//$mySingleton.tag = 14856 por exemplo  
 ...  
 var $myOtherSingleton := cs.ProcessTag.me  
 	//$myOtherSingleton.tag = 14856
@@ -880,7 +880,7 @@ Para crear un singleton interprocess, añada las palabras claves `shared singlet
 property vehicleBuilt : Integer
 
 shared singleton Class constructor()
-  This.vehicleBuilt := 0 //Number of vehicles built by the factory
+  This.vehicleBuilt := 0 //Número de veículos feitos pela fábrica
 
 shared Function buildVehicle ($type : Text) -> $vehicle : cs.Vehicle
 
