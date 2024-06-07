@@ -1452,7 +1452,7 @@ The formula is given as a `Formula` object through a placeholder:
  $es:=ds.Students.query(":1 and nationality='French'";$formula)
 ```
 
-Only a `Formula` object is given as criteria:
+Sólo se da como criterio un objeto `Formula`:
 
 ```4d
  var $es : cs.StudentsSelection
