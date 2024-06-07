@@ -48,13 +48,13 @@ var myPerson : cs.Person
 // Person ユーザークラスの変数
 ```
 
-推奨はされませんが、変数を使用することで宣言することもでき、必ずしも正式に宣言する必要はありません。 たとえば、今日の日付に 30日足した値を格納した変数が欲しい場合、次のように書くことができます:
+Even if it is usually not recommended, you can create variables simply by using them; you do not necessarily need to formally define them. たとえば、今日の日付に 30日足した値を格納した変数が欲しい場合、次のように書くことができます:
 
 ```4d
 MyOtherDate:=Current date+30
 ```
 
-上のコードは "MyOtherDate に、現在の日付に 30日を加算した値を代入します" という意味です。 この 1行で変数が宣言され、変数に (仮の) データ型とデータが割り当てられます。 このように代入によって宣言された変数はデータ型が規定されていないと解釈され、コードの違う行では別のデータ型の値を代入することもでき、その際にはデータ型を動的に変化させます。 `var` によって宣言された変数はデータ型を変化させることはできません。 [コンパイルモード](interpreted.md) においては、その宣言方法にかかわらず、変数のデータ型は変更できません。
+上のコードは "MyOtherDate に、現在の日付に 30日を加算した値を代入します" という意味です。 この1行で変数が作成され、変数に (仮の) データ型とデータが割り当てられます。 A variable created by assignment is interpreted as typeless, that is, it can be assigned with other types in other lines and change of type dynamically. This flexibility does not apply to variables declared with the `var` keyword (their type cannot change) and in [compiled mode](interpreted.md) where the type can never be changed, regardless of how the variable was created.
 
 ## コマンド
 
