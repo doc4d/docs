@@ -5,7 +5,7 @@ title: DataStore
 
 A [Datastore](ORDA/dsMapping.md#datastore) is the interface object provided by ORDA to reference and access a database. `Datastore` objects are returned by the following commands:
 
-- [ds](#ds): a shortcut to the main datastore
+- [ds](#ds): un acceso directo al datastore principal
 - [Open datastore](#open-datastore): to open any remote datastore
 
 ### Resumen
