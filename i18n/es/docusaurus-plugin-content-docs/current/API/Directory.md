@@ -433,12 +433,12 @@ Esta propiedad es de **solo lectura**.
 
 <!-- REF #directory.copyTo().Params -->
 
-| Parámetros        | Tipo                      |     | Descripción                                 |
-| ----------------- | ------------------------- | :-: | ------------------------------------------- |
-| destinationFolder | 4D.Folder |  -> | Carpeta de destino                          |
-| newName           | Text                      |  -> | Nombre para la copia                        |
-| overwrite         | Integer                   |  -> | `fk overwrite` to replace existing elements |
-| Result            | 4D.Folder |  <- | Carpeta o archivo copiado                   |
+| Parámetros        | Tipo                      |     | Descripción                                            |
+| ----------------- | ------------------------- | :-: | ------------------------------------------------------ |
+| destinationFolder | 4D.Folder |  -> | Carpeta de destino                                     |
+| newName           | Text                      |  -> | Nombre para la copia                                   |
+| overwrite         | Integer                   |  -> | `fk overwrite` para sustituir los elementos existentes |
+| Result            | 4D.Folder |  <- | Carpeta o archivo copiado                              |
 
 <!-- END REF -->
 
@@ -505,7 +505,7 @@ In *path*, pass a relative POSIX path to designate the file to return. La ruta s
 
 **Valor devuelto**
 
-A `File` object or null if *path* is invalid.
+Un objeto `File` o null si *path* no es válido.
 
 #### Ejemplo
 
