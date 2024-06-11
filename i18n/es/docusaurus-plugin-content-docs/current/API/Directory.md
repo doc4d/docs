@@ -19,7 +19,7 @@ title: Clase Directory
 
 #### Descripción
 
-The `.creationDate` property returns <!-- REF #directory.creationDate.Summary -->the creation date of the folder<!-- END REF -->.
+La propiedad `.creationDate` devuelve <!-- REF #directory.creationDate.Summary -->la fecha de creación de la carpeta<!-- END REF -->.
 
 Esta propiedad es de **solo lectura**.
 
@@ -43,7 +43,7 @@ Esta propiedad es de **solo lectura**.
 
 #### Descripción
 
-The `.creationTime` property returns <!-- REF #directory.creationTime.Summary -->the creation time of the folder<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
+La propiedad `.creationTime` devuelve <!-- REF #directory.creationTime.Summary -->la hora de creación de la carpeta<!-- END REF --> (expresada como un número de segundos que comienza en 00:00).
 
 Esta propiedad es de **solo lectura**.
 
@@ -67,7 +67,7 @@ Esta propiedad es de **solo lectura**.
 
 #### Descripción
 
-The `.exists` property returns <!-- REF #directory.exists.Summary -->true if the folder exists on disk<!-- END REF -->, and false otherwise.
+La propiedad `.exists` devuelve <!-- REF #directory.exists.Summary -->true si la carpeta existe en disco<!-- END REF -->, y falso de lo contrario.
 
 Esta propiedad es de **solo lectura**.
 
@@ -91,7 +91,7 @@ Esta propiedad es de **solo lectura**.
 
 #### Descripción
 
-The `.extension` property <!-- REF #directory.extension.Summary -->returns the extension of the folder name (if any)<!-- END REF -->. Una extensión siempre comienza por ".". La propiedad devuelve una cadena vacía si el nombre de la carpeta no tiene extensión.
+La propiedad `.extension` <!-- REF #directory.extension.Summary -->devuelve la extensión del nombre de la carpeta (si la hay)<!-- END REF -->. Una extensión siempre comienza por ".". La propiedad devuelve una cadena vacía si el nombre de la carpeta no tiene extensión.
 
 Esta propiedad es de **solo lectura**.
 
@@ -115,7 +115,7 @@ Esta propiedad es de **solo lectura**.
 
 #### Descripción
 
-The `.fullName` property <!-- REF #directory.fullName.Summary -->returns the full name of the folder, including its extension (if any)<!-- END REF -->.
+La propiedad `.fullName` <!-- REF #directory.fullName.Summary -->devuelve el nombre completo de la carpeta, incluyendo su extensión (si la hay)<!-- END REF -->.
 
 Esta propiedad es de **solo lectura**.
 
@@ -139,7 +139,7 @@ Esta propiedad es de **solo lectura**.
 
 #### Descripción
 
-The `.hidden` property returns <!-- REF #directory.hidden.Summary --> true if the folder is set as "hidden" at the system level<!-- END REF -->, and false otherwise.
+La propiedad `.hidden` devuelve <!-- REF #directory.hidden.Summary --> true si la carpeta está configurada como "oculta" a nivel de sistema<!-- END REF -->, y false en caso contrario.
 
 Esta propiedad es de **solo lectura**.
 
@@ -163,7 +163,7 @@ Esta propiedad es de **solo lectura**.
 
 #### Descripción
 
-The `.isAlias` property returns <!-- REF #directory.isAlias.Summary -->always **false** for a `Folder` object<!-- END REF -->.
+La propiedad `.isAlias` devuelve <!-- REF #directory.isAlias.Summary -->siempre **false** para un objeto `Folder`<!-- END REF -->.
 
 Esta propiedad es de **solo lectura**.
 
@@ -187,7 +187,7 @@ Esta propiedad es de **solo lectura**.
 
 #### Descripción
 
-The `.isFile` property returns <!-- REF #directory.isFile.Summary -->always **false** for a folder<!-- END REF -->.
+La propiedad `.isFile` devuelve <!-- REF #directory.isFile.Summary -->siempre **false** para una carpeta<!-- END REF -->.
 
 Esta propiedad es de **solo lectura**.
 
@@ -211,7 +211,7 @@ Esta propiedad es de **solo lectura**.
 
 #### Descripción
 
-The `.isFolder` property returns <!-- REF #directory.isFolder.Summary -->always **true** for a folder<!-- END REF -->.
+La propiedad `.isFolder` devuelve <!-- REF #directory.isFolder.Summary -->siempre **true** para una carpeta<!-- END REF -->.
 
 Esta propiedad es de **solo lectura**.
 
@@ -235,9 +235,9 @@ Esta propiedad es de **solo lectura**.
 
 #### Descripción
 
-The `.isPackage` property returns <!-- REF #directory.isPackage.Summary -->true if the folder is a package on macOS  (and exists on disk)<!-- END REF -->. En caso contrario, devuelve false.
+La propiedad `.isPackage` devuelve <!-- REF #directory.isPackage.Summary -->true si la carpeta es un paquete en macOS (y existe en el disco)<!-- END REF -->. En caso contrario, devuelve false.
 
-On Windows, `.isPackage` always returns **false**.
+En Windows, `.isPackage` siempre devuelve **false**.
 
 Esta propiedad es de **solo lectura**.
 
@@ -261,7 +261,7 @@ Esta propiedad es de **solo lectura**.
 
 #### Descripción
 
-The `.modificationDate` property returns <!-- REF #directory.modificationDate.Summary --> the date of the folder's last modification<!-- END REF -->.
+La propiedad `.modificationDate` devuelve <!-- REF #directory.modificationDate.Summary --> la fecha de la última modificación de la carpeta<!-- END REF -->.
 
 Esta propiedad es de **solo lectura**.
 
@@ -285,7 +285,7 @@ Esta propiedad es de **solo lectura**.
 
 #### Descripción
 
-The `.modificationTime` property returns <!-- REF #directory.modificationTime.Summary -->the time of the folder's last modification<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
+La propiedad `.modificationDate` devuelve <!-- REF #directory.modificationTime.Summary -->la hora de la última modificación de la carpeta<!-- END REF --> (expresada como un número de segundos que comienza en 00:00).
 
 Esta propiedad es de **solo lectura**.
 
@@ -309,7 +309,7 @@ Esta propiedad es de **solo lectura**.
 
 #### Descripción
 
-The `.name` property returns <!-- REF #directory.name.Summary --> the name of the folder, without extension (if any)<!-- END REF -->.
+La propiedad `.name` devuelve <!-- REF #directory.name.Summary --> el nombre de la carpeta, sin extensión (si la hay)<!-- END REF -->.
 
 Esta propiedad es de **solo lectura**.
 
@@ -600,10 +600,10 @@ Quiere obtener todos los archivos que no son invisibles en la carpeta Documents:
 
 <!-- REF #directory.folder().Params -->
 
-| Parámetros | Tipo                      |    | Descripción                                                       |
-| ---------- | ------------------------- | -- | ----------------------------------------------------------------- |
-| path       | Text                      | -> | Ruta POSIX relativa                                               |
-| Result     | 4D.Folder | <- | Created folder object (null if invalid *path*) |
+| Parámetros | Tipo                      |    | Descripción                                                           |
+| ---------- | ------------------------- | -- | --------------------------------------------------------------------- |
+| path       | Text                      | -> | Ruta POSIX relativa                                                   |
+| Result     | 4D.Folder | <- | Objeto carpeta creado (null si *path* es inválido) |
 
 <!-- END REF -->
 
@@ -712,6 +712,6 @@ Si la carpeta no existe en el disco, se devuelve un icono vacío por defecto.
 
 **Valor devuelto**
 
-Folder icon [picture](Concepts/dt_picture.md).
+[Imagen](Concepts/dt_picture.md) del icono de la carpeta.
 
 <!-- END REF -->
