@@ -299,7 +299,7 @@ If the collection contains objects, pass the *propertyPath* parameter to indicat
 
 - la colección está vacía,
 - la colección no contiene elementos numéricos,
-- *propertyPath* is not found in the collection.
+- *propertyPath* no se encuentra en la colección.
 
 #### Ejemplo 1
 
@@ -3444,7 +3444,7 @@ If the collection contains objects, pass the *propertyPath* parameter to indicat
 
 - la colección está vacía,
 - la colección no contiene elementos numéricos,
-- *propertyPath* is not found in the collection.
+- *propertyPath* no se encuentra en la colección.
 
 #### Ejemplo 1
 
