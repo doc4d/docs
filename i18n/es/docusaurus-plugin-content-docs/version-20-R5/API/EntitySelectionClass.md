@@ -2162,12 +2162,12 @@ O bien, puede designar los atributos de la entidad a extraer utilizando un pará
 If a filter is specified for an attribute of the `relatedEntity` kind:
 
 - propertyPath = "relatedEntity" -> it is extracted with simple form
-- propertyPath = "relatedEntity.\*" -> all the properties are extracted
+- propertyPath = "relatedEntity.\*" -> se extraen todas las propiedades
 - propertyPath = "relatedEntity.propertyName1, relatedEntity.propertyName2, ..." -> sólo se extraen esas propiedades
 
 If a filter is specified for an attribute of the `relatedEntities` kind:
 
-- propertyPath = "relatedEntities.\*" -> all the properties are extracted
+- propertyPath = "relatedEntities.\*" -> se extraen todas las propiedades
 - propertyPath = "relatedEntities.propertyName1, relatedEntities.propertyName2, ..." -> sólo se extraen esas propiedades
 
 In the *options* parameter, you can pass the `dk with primary key` and/or `dk with stamp` selector(s) to add the entity's primary keys and/or stamps in extracted objects.
