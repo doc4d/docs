@@ -590,10 +590,10 @@ Opcionalmente, puede designar el conjunto de caracteres que se utilizará para l
 
 > Para conocer la lista de los conjuntos de caracteres que soporta 4D, consulte la descripción del comando `CONVERT FROM TEXT`.
 
-If the document contains a Byte Order Mark (BOM), 4D uses the character set that it has set instead of the one specified in *charSetName* or *charSetNum* (this parameter is then ignored).
-If the document does not contain a BOM and if *charSetName* or *charSetNum* is omitted, by default 4D uses the "UTF-8" character set.
+Si el documento contiene una marca de orden de bytes (BOM), 4D utiliza el conjunto de caracteres que ha definido en lugar del especificado en *charSetName* o *charSetNum* (este parámetro entonces se ignora).
+Si el documento no contiene una BOM y si *charSetName* o *charSetNum* se omite, por defecto 4D utiliza el conjunto de caracteres "UTF-8".
 
-In *breakMode*, you can pass a number indicating the processing to apply to end-of-line characters in the document. Las siguientes constantes del tema "Documentos del sistema" están disponibles:
+En *breakMode*, se puede pasar un número que indica el procesamiento a aplicar a los caracteres de fin de línea en el documento. Las siguientes constantes del tema "Documentos del sistema" están disponibles:
 
 | Constante                     | Valor | Comentario                                                                                                                                                                                                                                           |
 | ----------------------------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -603,7 +603,7 @@ In *breakMode*, you can pass a number indicating the processing to apply to end-
 | `Document with CR`            | 3     | Los saltos de línea se convierten al formato OS X: CR (retorno de carro)                                                                                                                                          |
 | `Document with LF`            | 4     | Los saltos de línea se convierten al formato Unix: LF (salto de línea)                                                                                                                                            |
 
-By default, when you omit the *breakMode* parameter, line breaks are processed in native mode (1).
+Por defecto, cuando se omite el parámetro *breakMode*, los saltos de línea se procesan en modo nativo (1).
 
 **Valor devuelto**
 
@@ -630,7 +630,7 @@ Cuando se ejecuta este código:
 
 "id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
 
-with `\t` (tab) as separator and `\r\n` (CRLF) as line delimiter.
+con `\t` (tab) como separador y `\r\n` (CRLF) como delimitador de línea.
 
 Aquí hay otro ejemplo con el mismo archivo, pero con un delimitador de línea diferente:
 
@@ -638,7 +638,7 @@ Aquí hay otro ejemplo con el mismo archivo, pero con un delimitador de línea d
  $txt:=$myFile.getText("UTF-8"; Document with LF)
 ```
 
-In this case, the contents of `$txt` are as follows:
+En este caso, el contenido de `$txt` es el siguiente:
 
 "id\tname\tprice\tvat\n3\tthé\t1.06€\t19.6\n2\tcafé\t1.05€\t19.6"
 
