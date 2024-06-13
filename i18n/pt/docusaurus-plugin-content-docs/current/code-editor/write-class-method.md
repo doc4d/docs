@@ -11,7 +11,7 @@ O editor de código funciona de forma semelhante a um editor de texto. Escrever 
 
 You can scroll through the contents of methods, classes and functions, which can include up to 32,000 lines of code or 2 GB of text.
 
-O Editor de código 4D fornece verificação básica de erros de sintaxe. É efetuada uma verificação de erros adicional quando o código é executado. Para más información sobre cómo gestionar los errores, consulte [Depuración](../Debugging/basics.md).
+O Editor de código 4D fornece verificação básica de erros de sintaxe. É efetuada uma verificação de erros adicional quando o código é executado. Para obter mais informações sobre como lidar com erros, consulte [Debugging](../Depuração/basics.md).
 
 ## Interface
 
@@ -151,7 +151,7 @@ Algumas tags são adicionadas automaticamente, e você pode complementar a lista
 
 #### Navegação de código
 
-Click an item in the dropdown list to go to its first line in the code. También puede navegar con las teclas de flecha y presionar **Intro**.
+Click an item in the dropdown list to go to its first line in the code. Você também pode navegar com as teclas de seta e pressionar **Enter**.
 
 #### Marcação automática
 
@@ -184,9 +184,9 @@ Declara-os acrescentando comentários como:
 // FIXME: Correção dos seguintes itens
 ```
 
-Las declaraciones no distinguen entre mayúsculas y minúsculas; escribir `fixme:` tiene el mismo efecto.
+As declarações não diferenciam maiúsculas de minúsculas; escrever `fixme:` tem o mesmo efeito.
 
-Añadir un guión después de la etiqueta `MARK:` dibuja una línea de separación en el editor de código y en el menú desplegable. Por isso, estou a escrever isto:
+A adição de um hífen após a tag `MARK:` desenha uma linha de separação no editor de código e no menu suspenso. Por isso, estou a escrever isto:
 
 ![mark-hyphen-image](../assets/en/code-editor/mark-hyphen-editor.png)
 
@@ -194,7 +194,7 @@ Os resultados são os seguintes:
 
 ![mark-hyphen-image](../assets/en/code-editor/dropdown-organize.png)
 
-Todos los marcadores situados dentro de las funciones tienen sangría en la lista desplegable, excepto las etiquetas `MARK:` situadas al final de las funciones y no seguidas de instrucciones. Estes aparecerão no primeiro nível.
+Todos os marcadores localizados dentro de funções são recuados na lista suspensa, exceto as tags `MARK:` localizadas no final das funções e não seguidas de instruções. Estes aparecerão no primeiro nível.
 
 #### Ordem de visualização
 
@@ -202,8 +202,8 @@ As etiquetas são exibidas em sua ordem de aparecimento dentro do método/classe
 
 To display the tags of a method or class in alphabetical order, do one of the following:
 
-- **haga clic derecho** en la herramienta desplegable
-- mantenga **Cmd** en macOS o **Alt** en Windows, y haga clic en la herramienta de lista desplegable
+- \*\*Clique direito na ferramenta suspensa
+- mantenha pressionado **Cmd** no macOS ou **Alt** no Windows e clique na ferramenta suspensa
 
 > As etiquetas em funções movem-se com os seus itens pais.
 
@@ -213,54 +213,54 @@ Multiple features of 4D's Code Editor are available through default keyboard sho
 
 :::info macOS
 
-En macOS, utilice la tecla **Command** en lugar de la tecla **Ctrl** mencionada (Windows).
+No macOS, use a tecla **Command** em vez da tecla **Ctrl** mencionada (Windows).
 
 :::
 
-| **Atalho**                                                                                                                                                                                                    | **Ação**                                                                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Selecção e navegação**                                                                                                                                                                                      |                                                                                                                                                                                   |
-| Duplo clique                                                                                                                                                                                                  | Selecionar o nome de um elemento da linguagem                                                                                                                                     |
-| [Alt]+Clique duas vezes                                                                                                                                   | Selecionar um nome de elemento de língua contendo espaços (constante, método, etc.)                                                            |
-| [Shift]+[seta para a direita]                                                                         | Create and enlarge the selection, character by character, to the right, or Reduce the selection, character by character, from the left                                            |
-| [Shift]+[seta para a esquerda]                                                                        | Reduce the selection, character by character, from the right or Create and enlarge the selection, character by character, to the left                                             |
-| [Shift]+[seta para baixo]                                                                             | Create and enlarge a selection, line by line, from the top to the bottom                                                                                                          |
-| [Shift]+[seta para cima]                                                                              | Create and enlarge a selection, line by line, from the bottom to the top                                                                                                          |
-| [Ctrl]+[Shift]+[seta para a direita]              | Criar e ampliar a seleção, palavra a palavra, a partir da direita                                                                                                                 |
-| [Ctrl]+[Shift]+[seta para a esquerda]             | Reduce the selection, word for word, from the right, or create and enlarge the selection, word by word, from the left                                                             |
-| [Ctrl]+[seta para a direita]                                                                          | Mover o ponto de inserção, palavra a palavra, da esquerda para a direita                                                                                                          |
-| [Ctrl]+[left arrow]                                                                                   | Mover o ponto de inserção, palavra a palavra, da direita para a esquerda                                                                                                          |
-| [Alt]+[seta para baixo]                                                                               | Mover a(s) linha(s) onde se encontra o cursor para a parte inferior                                                                         |
-| [Alt]+[seta para cima]                                                                                | Mover a(s) linha(s) onde se encontra o cursor para o topo                                                                                   |
-| [Home]                                                                                                                                                    | Posicione o ponto de inserção no início da linha                                                                                                                                  |
-| [End]                                                                                                                                                     | Colocar o ponto de inserção no fim da linha                                                                                                                                       |
-| [Ctrl]+[Home]                                                                                         | Colocar o ponto de inserção no início do método                                                                                                                                   |
-| [Ctrl]+[End]                                                                                          | Colocar o ponto de inserção no final do método                                                                                                                                    |
-| [Shift]+[Home]                                                                                        | Select all the characters in the line that are to the left of the cursor                                                                                                          |
-| [Shift]+[End]                                                                                         | Select all the characters in the line that are to the right of the cursor                                                                                                         |
-| [PgUp]                                                                                                                                                    | Scroll the contents of the method, page by page, from the bottom to the top (doesn't modify the insertion point)                                               |
-| [PgDn]                                                                                                                                                    | Scroll the contents of the method, page by page, from the top to the bottom (doesn't modify the insertion point)                                               |
-| [**Introspecção**](#goto-definition)                                                                                                                                                                          |                                                                                                                                                                                   |
-| [Ctrl]+K ou [Alt]+clique duas vezes                                                                   | Same as [**Goto definition**](#goto-definition) command                                                                                                                           |
-| \[Ctrl\] (Windows) or \[Alt\] (macOS)+hovering over a token | Sublinhar o token (elemento linguístico identificado). Click on the underlined token = same as [**Goto definition**](#goto-definition) command |
-| [**Encontrar e substituir**](#find-and-replace)                                                                                                                                                               |                                                                                                                                                                                   |
-| [Ctrl]+F                                                                                                                                                  | Find                                                                                                                                                                              |
-| [Ctrl]+G                                                                                                                                                  | Encontrar o próximo                                                                                                                                                               |
-| [Ctrl]+[Shift]+G                                                                                      | Procurar Anterior                                                                                                                                                                 |
-| [Ctrl]+E                                                                                                                                                  | Encontrar o mesmo próximo                                                                                                                                                         |
-| [Ctrl]+[Shift]+E                                                                                      | Encontrar o mesmo anterior                                                                                                                                                        |
-| [Ctrl]+[Alt]+F                                                                                        | Substituir                                                                                                                                                                        |
-| [Ctrl]+[Alt]+G                                                                                        | Substituir próximo                                                                                                                                                                |
-| [Ctrl]+[Alt]+[Shift]+G                            | Reemplazar anterior                                                                                                                                                               |
-| [**Clipboards**](#clipboards)                                                                                                                                                                                 |                                                                                                                                                                                   |
-| [Shift]+clique ou [Alt]+clique no ícone da área de transferência                                      | Copiar texto selecionado para uma área de transferência                                                                                                                           |
-| [Ctrl]+[Shift]+tecla numérica                                                                         | Copiar texto selecionado numa área de transferência numérica                                                                                                                      |
-| [Ctrl]+clique no ícone da área de transferência                                                                                                           | Colar o conteúdo de uma área de transferência na localização do cursor                                                                                                            |
-| [Ctrl]+chave numérica                                                                                                                                     | Colar o conteúdo da área de transferência numérica na localização do cursor                                                                                                       |
+| **Atalho**                                                                                                                                                                                                    | **Ação**                                                                                                                                                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Selecção e navegação**                                                                                                                                                                                      |                                                                                                                                                                                                                                                         |
+| Duplo clique                                                                                                                                                                                                  | Selecionar o nome de um elemento da linguagem                                                                                                                                                                                                           |
+| [Alt]+Clique duas vezes                                                                                                                                   | Selecionar um nome de elemento de língua contendo espaços (constante, método, etc.)                                                                                                                                  |
+| [Shift]+[seta para a direita]                                                                         | Create and enlarge the selection, character by character, to the right, or Reduce the selection, character by character, from the left                                                                                                                  |
+| [Shift]+[seta para a esquerda]                                                                        | Reduce the selection, character by character, from the right or Create and enlarge the selection, character by character, to the left                                                                                                                   |
+| [Shift]+[seta para baixo]                                                                             | Create and enlarge a selection, line by line, from the top to the bottom                                                                                                                                                                                |
+| [Shift]+[seta para cima]                                                                              | Create and enlarge a selection, line by line, from the bottom to the top                                                                                                                                                                                |
+| [Ctrl]+[Shift]+[seta para a direita]              | Criar e ampliar a seleção, palavra a palavra, a partir da direita                                                                                                                                                                                       |
+| [Ctrl]+[Shift]+[seta para a esquerda]             | Reduce the selection, word for word, from the right, or create and enlarge the selection, word by word, from the left                                                                                                                                   |
+| [Ctrl]+[seta para a direita]                                                                          | Mover o ponto de inserção, palavra a palavra, da esquerda para a direita                                                                                                                                                                                |
+| [Ctrl]+[left arrow]                                                                                   | Mover o ponto de inserção, palavra a palavra, da direita para a esquerda                                                                                                                                                                                |
+| [Alt]+[seta para baixo]                                                                               | Mover a(s) linha(s) onde se encontra o cursor para a parte inferior                                                                                                                                               |
+| [Alt]+[seta para cima]                                                                                | Mover a(s) linha(s) onde se encontra o cursor para o topo                                                                                                                                                         |
+| [Home]                                                                                                                                                    | Posicione o ponto de inserção no início da linha                                                                                                                                                                                                        |
+| [End]                                                                                                                                                     | Colocar o ponto de inserção no fim da linha                                                                                                                                                                                                             |
+| [Ctrl]+[Home]                                                                                         | Colocar o ponto de inserção no início do método                                                                                                                                                                                                         |
+| [Ctrl]+[End]                                                                                          | Colocar o ponto de inserção no final do método                                                                                                                                                                                                          |
+| [Shift]+[Home]                                                                                        | Select all the characters in the line that are to the left of the cursor                                                                                                                                                                                |
+| [Shift]+[End]                                                                                         | Select all the characters in the line that are to the right of the cursor                                                                                                                                                                               |
+| [PgUp]                                                                                                                                                    | Scroll the contents of the method, page by page, from the bottom to the top (doesn't modify the insertion point)                                                                                                                     |
+| [PgDn]                                                                                                                                                    | Scroll the contents of the method, page by page, from the top to the bottom (doesn't modify the insertion point)                                                                                                                     |
+| [**Introspecção**](#goto-definition)                                                                                                                                                                          |                                                                                                                                                                                                                                                         |
+| [Ctrl]+K ou [Alt]+clique duas vezes                                                                   | Mesmo que o comando [**Ir para definição**](#goto-definition)                                                                                                                                                                                           |
+| \[Ctrl\] (Windows) or \[Alt\] (macOS)+hovering over a token | Sublinhar o token (elemento linguístico identificado). Clique no token sublinhado = igual ao comando [**Goto definition**] (#goto-definition) |
+| [**Encontrar e substituir**](#find-and-replace)                                                                                                                                                               |                                                                                                                                                                                                                                                         |
+| [Ctrl]+F                                                                                                                                                  | Find                                                                                                                                                                                                                                                    |
+| [Ctrl]+G                                                                                                                                                  | Encontrar o próximo                                                                                                                                                                                                                                     |
+| [Ctrl]+[Shift]+G                                                                                      | Procurar Anterior                                                                                                                                                                                                                                       |
+| [Ctrl]+E                                                                                                                                                  | Encontrar o mesmo próximo                                                                                                                                                                                                                               |
+| [Ctrl]+[Shift]+E                                                                                      | Encontrar o mesmo anterior                                                                                                                                                                                                                              |
+| [Ctrl]+[Alt]+F                                                                                        | Substituir                                                                                                                                                                                                                                              |
+| [Ctrl]+[Alt]+G                                                                                        | Substituir próximo                                                                                                                                                                                                                                      |
+| [Ctrl]+[Alt]+[Shift]+G                            | Reemplazar anterior                                                                                                                                                                                                                                     |
+| [**Clipboards**](#clipboards)                                                                                                                                                                                 |                                                                                                                                                                                                                                                         |
+| [Shift]+clique ou [Alt]+clique no ícone da área de transferência                                      | Copiar texto selecionado para uma área de transferência                                                                                                                                                                                                 |
+| [Ctrl]+[Shift]+tecla numérica                                                                         | Copiar texto selecionado numa área de transferência numérica                                                                                                                                                                                            |
+| [Ctrl]+clique no ícone da área de transferência                                                                                                           | Colar o conteúdo de uma área de transferência na localização do cursor                                                                                                                                                                                  |
+| [Ctrl]+chave numérica                                                                                                                                     | Colar o conteúdo da área de transferência numérica na localização do cursor                                                                                                                                                                             |
 
 :::tip
 
-La mayoría de estos atajos pueden personalizarse en la caja de diálogo [Preferencias 4D](../Preferences/shortcuts.md).
+A maioria desses atalhos pode ser personalizada na caixa de diálogo [4D Preferences] (../Preferences/shortcuts.md).
 
 :::
 
@@ -268,24 +268,24 @@ La mayoría de estos atajos pueden personalizarse en la caja de diálogo [Prefer
 
 4D uses standard text editing techniques for typing and editing in the Code Editor.
 
-The Code Editor uses display conventions (style, color) for the syntax elements. Puede [personalizar estas convenciones](#customizing-the-editing-area). As you type, when you validate your entry, 4D evaluates the text of the line and applies the appropriate display format. 4D also indents each line to its proper level in relation to the preceding line when you use programming structures (If, End if...).
+The Code Editor uses display conventions (style, color) for the syntax elements. Você pode [personalizar estas convenções](#customizing-the-editing-area). As you type, when you validate your entry, 4D evaluates the text of the line and applies the appropriate display format. 4D also indents each line to its proper level in relation to the preceding line when you use programming structures (If, End if...).
 
 Pode utilizar as teclas de setas para se deslocar rapidamente de uma linha para outra. Using the arrow keys to move across several lines is quicker than clicking because the editor delays evaluating the line for errors.
 
 Under Windows, the code editor includes an Input Code Editor (IME) to facilitate code editing on Japanese or Chinese systems.
 
-El Editor de código incluye numerosos [atajos de navegación](#shortcuts).
+O Editor de Código inclui numerosos [atalhos de navegação](#shortcuts).
 
 #### Uso de la barra invertida
 
-El carácter barra invertida (`\`) tiene un soporte específico en el lenguaje 4D:
+O caractere de barra invertida (`\`) tem um suporte específico na linguagem 4D:
 
-- insertado al final de las líneas, permite escribir una única instrucción en [varias líneas](../Concepts/quick-tour.md#code-on-several-lines).
-- permite definir [secuencias de escape](../Concepts/quick-tour.md#escape-sequences).
+- inserido no final das linhas, permite escrever uma única instrução em [várias linhas](../Concepts/quick-tour.md#code-on-several-lines).
+- permite definir [sequências de escape](../Concepts/quick-tour.md#escape-sequences).
 
 :::caution
 
-El caracter de barra invertida (`\`) se utiliza como separador en [los nombres de ruta en Windows](../Concepts/paths.md#windows). In general, 4D will correctly interpret Windows pathnames entered in the Code Editor by replacing the single backslash with a double backslash. Por ejemplo, `C:\MyDocuments` se convertirá en `C:\\MyDocuments`. However, if you write `"C:\MyDocuments\New"`, 4D will display `"C:\\MyDocuments\New"`. In this case, the second backslash is interpreted incorrectly as `\N` (an existing [escape sequence](../Concepts/quick-tour.md#escape-sequences)). You must therefore enter a double backslash when you want to have a backslash in front of a character used in one of the escape sequences recognized by 4D.
+O caractere de barra invertida (`\`) é usado como separador em [nomes de caminho no Windows](../Concepts/paths.md#windows). In general, 4D will correctly interpret Windows pathnames entered in the Code Editor by replacing the single backslash with a double backslash. Por exemplo, `C:\MyDocuments` se tornará `C:\\MyDocuments`. However, if you write `"C:\MyDocuments\New"`, 4D will display `"C:\\MyDocuments\New"`. In this case, the second backslash is interpreted incorrectly as `\N` (an existing [escape sequence](../Concepts/quick-tour.md#escape-sequences)). You must therefore enter a double backslash when you want to have a backslash in front of a character used in one of the escape sequences recognized by 4D.
 
 :::
 
