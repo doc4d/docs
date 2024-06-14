@@ -3,10 +3,10 @@ id: DataStoreClass
 title: DataStore
 ---
 
-A [Datastore](ORDA/dsMapping.md#datastore) is the interface object provided by ORDA to reference and access a database. `Datastore` objects are returned by the following commands:
+Un [Datastore](ORDA/dsMapping.md#datastore) es el objeto de interfaz suministrado por ORDA para referenciar y acceder a una base de datos. Los objetos `Datastore` son devueltos por los siguientes comandos:
 
 - [ds](#ds): un acceso directo al datastore principal
-- [Open datastore](#open-datastore): to open any remote datastore
+- [Open datastore](#open-datastore): para abrir cualquier datastore remoto
 
 ### Resumen
 
@@ -58,15 +58,15 @@ A [Datastore](ORDA/dsMapping.md#datastore) is the interface object provided by O
 
 #### Descripción
 
-The `ds` command <!-- REF #_command_.ds.Summary -->returns a reference to the datastore matching the current 4D database or the database designated by *localID*<!-- END REF -->.
+El comando `ds` <!-- REF #_command_.ds.Summary -->devuelve una referencia al almacén de datos que coincide con la base de datos 4D actual o con la base de datos designada por *localID*<!-- END REF -->.
 
-If you omit the *localID* parameter (or pass an empty string ""), the command returns a reference to the datastore matching the local 4D database (or the 4D Server database in case of opening a remote database on 4D Server). The datastore is opened automatically and available directly through `ds`.
+Si se omite el parámetro *localID* (o se pasa una cadena vacía ""), el comando devuelve una referencia al almacén de datos que coincide con la base de datos local de 4D (o la base de datos de 4D Server en caso de abrir una base de datos remota en 4D Server). El almacén de datos se abre automáticamente y está disponible directamente a través de `ds`.
 
-You can also get a reference on an open remote datastore by passing its local id in the *localID* parameter. The datastore must have been previously opened with the [`Open datastore`](#open-datastore) command by the current database (host or component). La identificación local se define cuando se utiliza este comando.
+También puede obtener una referencia en un datastore remoto abierto pasando su id local en el parámetro *localID*. El almacén de datos debe haber sido previamente abierto con el comando [`Open datastore`](#open-datastore) por la base de datos actual (host o componente). La identificación local se define cuando se utiliza este comando.
 
 > El alcance del id local es la base de datos en la que se ha abierto el almacén de datos.
 
-If no *localID* datastore is found, the command returns **Null**.
+Si no se encuentra ningún datastore *localID*, el comando devuelve **Null**.
 
 Objects available in the `cs.Datastore` are mapped from the target database with respect to the [ORDA general rules](ORDA/dsMapping.md#general-rules).
 
@@ -129,24 +129,24 @@ Utilizando el almacén de datos principal de la base 4D:
 
 #### Descripción
 
-The `Open datastore` command <!-- REF #_command_.Open datastore.Summary -->connects the application to the 4D database identified by the *connectionInfo* parameter<!-- END REF --> and returns a matching `cs.DataStore` object associated with the *localID* local alias.
+El comando `Open datastore` <!-- REF #_command_.Open datastore.Summary -->conecta la aplicación a la base de datos 4D identificada por el parámetro *connectionInfo*<!-- END REF --> y devuelve un objeto `cs.DataStore` asociado al alias local *localID*.
 
-The *connectionInfo* 4D database must be available as a remote datastore, i.e.:
+La base de datos *connectionInfo* 4D debe estar disponible como almacén de datos remoto, es decir:
 
 - su servidor web debe ser lanzado con http y/o https activado,
-- the datastore must be exposed ([**Expose as REST server**](REST/configuration.md#starting-the-rest-server) option checked) as well as [dataclasses and attributes](../REST/configuration.md#exposing-tables-and-fields).
+- el datastore debe ser expuesto (opción [**Exponer como servidor REST**](REST/configuration.md#starting-the-rest-server) marcada) así como también los [dataclasses y atributos](../REST/configuration.md#exponer-las-tablas-y-los-campos).
 
 :::note
 
-`Open datastore` requests rely on the 4D REST API and can require a 4D Client license to open the connection. Refer to the [user login mode section](../REST/authUsers.md#user-login-modes) to know how to configure the authentication depending on the selected current user login mode.
+Las peticiones `Open datastore` dependen de la API REST 4D y pueden requerir una licencia 4D Client para abrir la conexión. Consulte la sección [User login mode](../REST/authUsers.md#user-login-modes) para saber cómo configurar la autenticación dependiendo del modo de inicio de sesión actual seleccionado.
 
 :::
 
-If no matching database is found, `Open datastore` returns **Null**.
+Si no se encuentra ninguna base de datos coincidente, `Open datastore` devuelve **Null**.
 
-*localID* is a local alias for the session opened on remote datastore. If *localID* already exists on the application, it is used. Otherwise, a new *localID* session is created when the datastore object is used.
+*localID* es un alias local para la sesión abierta en el almacén de datos remoto. Si *localID* ya existe en la aplicación, se utiliza. En caso contrario, se crea una nueva sesión *localID* cuando se utiliza el objeto datastore.
 
-Objects available in the `cs.Datastore` are mapped from the target database with respect to the [ORDA general rules](ORDA/dsMapping.md#general-rules).
+Los objetos disponibles en el `cs.Datastore` son creados apartir de la base de datos objetivo en función de las [reglas generales ORDA](ORDA/dsMapping.md#reglas-generales).
 
 Una vez abierta la sesión, las siguientes sentencias son equivalentes y devuelven una referencia sobre el mismo objeto datastore:
 
@@ -156,17 +156,17 @@ Una vez abierta la sesión, las siguientes sentencias son equivalentes y devuelv
   //$myds y $myds2 son equivalentes
 ```
 
-Pass in *connectionInfo* an object describing the remote datastore you want to connect to. All properties are optional except *hostname* :
+Pase en *connectionInfo* un objeto que describa el almacén de datos remoto al que desea conectarse. Todas las propiedades son opcionales excepto *hostname* :
 
-| Propiedad         | Tipo    | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| ----------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hostname          | Text    | Nombre o dirección IP de la base de datos remota + ":" + número de puerto (el número de puerto es obligatorio)                                                                                                                                                                                                                                                                                |
-| user              | Text    | Nombre de usuario                                                                                                                                                                                                                                                                                                                                                                                                                |
-| contraseña        | Text    | Contraseña del usuario. By default, the password is sent in clear form, therefore it is **strongly recommended** to use encrypted communications by passing `true` in the `tls` property.                                                                                                                                                                                                        |
-| idleTimeout       | Longint | Tiempo de espera de la sesión de inactividad (en minutos), después del cual la sesión es cerrada automáticamente por 4D. Si se omite, el valor por defecto es 60 (1h). The value cannot be < 60 (if a lower value is passed, the timeout is set to 60). For more information, see **Closing sessions**. |
-| tls               | Boolean | Utilice una conexión segura(\*). Si se omite, es false por defecto. Se recomienda utilizar una conexión segura siempre que sea posible.                                                                                                                                                                                                                       |
-| passwordAlgorithm | Text    | Pass "4d-rest-digest" if the server validates the password using the [`Validate password`](https://doc.4d.com/4dv20/help/command/en/page638.html) command with the *digest* parameter set to `true`.                                                                                                                                                                                                             |
-| type              | Text    | Debe ser "4D Server"                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Propiedad         | Tipo    | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| ----------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hostname          | Text    | Nombre o dirección IP de la base de datos remota + ":" + número de puerto (el número de puerto es obligatorio)                                                                                                                                                                                                                                                                                                         |
+| user              | Text    | Nombre de usuario                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| contraseña        | Text    | Contraseña del usuario. Por defecto, la contraseña se envía en claro, por lo que es **fuertemente recomendable** utilizar comunicaciones cifradas pasando `true` en la propiedad `tls`.                                                                                                                                                                                                                                   |
+| idleTimeout       | Longint | Tiempo de espera de la sesión de inactividad (en minutos), después del cual la sesión es cerrada automáticamente por 4D. Si se omite, el valor por defecto es 60 (1h). El valor no puede ser < 60 (si se pasa un valor inferior, el tiempo de espera se establece en 60). Para más información, consulte **Cierre de sesiones**. |
+| tls               | Boolean | Utilice una conexión segura(\*). Si se omite, es false por defecto. Se recomienda utilizar una conexión segura siempre que sea posible.                                                                                                                                                                                                                                                |
+| passwordAlgorithm | Text    | Pasa "4d-rest-digest" si el servidor valida la contraseña utilizando el comando [`Validate password`](https://doc.4d.com/4dv20/help/command/en/page638.html) con el parámetro *digest* definido en `true`.                                                                                                                                                                                                                                |
+| type              | Text    | Debe ser "4D Server"                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 (\*) Si tls es true, se utiliza el protocolo HTTPS si:
 
@@ -216,7 +216,7 @@ Trabajar con varios almacenes de datos remotos:
 
 #### Gestión de errores
 
-In case of error, the command returns **Null**. Si no se puede acceder al almacén de datos remoto (dirección incorrecta, servidor web no iniciado, http y https no habilitados...), se produce el error 1610 "Ha fallado una petición remota al host XXX". You can intercept this error with a method installed by `ON ERR CALL`.
+En caso de error, el comando devuelve **Null**. Si no se puede acceder al almacén de datos remoto (dirección incorrecta, servidor web no iniciado, http y https no habilitados...), se produce el error 1610 "Ha fallado una petición remota al host XXX". Puede interceptar este error con un método instalado por `ON ERR CALL`.
 
 <!-- REF DataStoreClass.dataclassName.Desc -->
 
@@ -234,7 +234,7 @@ In case of error, the command returns **Null**. Si no se puede acceder al almac�
 
 #### Descripción
 
-Each dataclass in a datastore is available as a property of the [DataStore object](ORDA/dsMapping.md#datastore)data. El objeto devuelto <!-- REF DataStoreClass.dataclassName.Summary -->contiene una descripción de la clase de datos<!-- END REF -->.
+Cada dataclass en un datastore está disponible como propiedad del objeto [DataStore](ORDA/dsMapping.md#datastore). El objeto devuelto <!-- REF DataStoreClass.dataclassName.Summary -->contiene una descripción de la clase de datos<!-- END REF -->.
 
 #### Ejemplo
 
@@ -274,15 +274,15 @@ Each dataclass in a datastore is available as a property of the [DataStore objec
 
 #### Descripción
 
-The `.cancelTransaction()` function <!-- REF #DataStoreClass.cancelTransaction().Summary -->cancels the transaction<!-- END REF --> opened by the [`.startTransaction()`](#starttransaction) function at the corresponding level in the current process for the specified datastore.
+La función `.cancelTransaction()` <!-- REF #DataStoreClass.cancelTransaction().Summary -->cancela la transacción<!-- END REF --> abierta por la función [`.startTransaction()`](#starttransaction) en el nivel correspondiente en el proceso actual para el datastore especificado.
 
-The `.cancelTransaction()` function cancels any changes made to the data during the transaction.
+La función `.cancelTransaction()` cancela cualquier cambio realizado en los datos durante la transacción.
 
-Puede anidar varias transacciones (subtransacciones). If the main transaction is cancelled, all of its sub-transactions are also cancelled, even if they were validated individually using the [`.validateTransaction()`](#validatetransactions) function.
+Puede anidar varias transacciones (subtransacciones). Si se cancela la transacción principal, también se cancelan todas sus subtransacciones, aunque se hayan validado individualmente mediante la función [`.validateTransaction()`](#validatetransactions).
 
 #### Ejemplo
 
-See example for the [`.startTransaction()`](#starttransaction) function.
+Ver el ejemplo de la función [`.startTransaction() `](#starttransaction).
 
 <!-- END REF -->
 
@@ -310,11 +310,11 @@ See example for the [`.startTransaction()`](#starttransaction) function.
 
 #### Descripción
 
-The `.clearAllRemoteContexts()` function <!-- REF #DataStoreClass.clearAllRemoteContexts().Summary -->clears all the attributes for all the active contexts in the datastore<!-- END REF -->.
+La función `.clearAllRemoteContexts()` <!-- REF #DataStoreClass.clearAllRemoteContexts().Summary -->borra todos los atributos de todos los contextos activos en el datastore<!-- END REF -->.
 
 Esta función se utiliza principalmente en el contexto de la depuración. Una cosa a tener en cuenta es que cuando se abre el depurador, éste envía peticiones al servidor y consulta todos los atributos de la clase de datos para mostrarlos. Esto puede sobrecargar sus contextos con datos innecesarios.
 
-In such cases, you can use `.clearAllRemoteContexts()` to clear your contexts and keep them clean.
+En estos casos, puedes utilizar `.clearAllRemoteContexts()` para borrar sus contextos y mantenerlos limpios.
 
 #### Ver también
 
@@ -344,9 +344,9 @@ In such cases, you can use `.clearAllRemoteContexts()` to clear your contexts an
 
 #### Descripción
 
-The `.encryptionStatus()` function <!-- REF #DataStoreClass.encryptionStatus().Summary -->returns an object providing the encryption status for the current data file<!-- END REF --> (i.e., the data file of the `ds` datastore). También se proporciona el estado de cada tabla.
+La función `.encryptionStatus()` <!-- REF #DataStoreClass.encryptionStatus().Summary -->devuelve un objeto que suministra el estado de cifrado del archivo de datos actual<!-- END REF --> (es decir, el archivo de datos del datastore `ds`). También se proporciona el estado de cada tabla.
 
-> Use the `Data file encryption status` command to determine the encryption status of any other data file.
+> Utilice el comando `Data file encryption status` para determinar el estado de encriptación de cualquier otro archivo de datos.
 
 **Valor devuelto**
 
@@ -378,7 +378,7 @@ Quiere saber el número de tablas encriptadas en el archivo de datos actual:
 
  $status:=ds.encryptionStatus()
 
- If($status.isEncrypted) //the database is encrypted
+ If($status.isEncrypted) //la base de datos está encriptada
     C_LONGINT($vcount)
     C_TEXT($tabName)
     For each($tabName;$status.tables)
@@ -386,9 +386,9 @@ Quiere saber el número de tablas encriptadas en el archivo de datos actual:
           $vcount:=$vcount+1
        End if
     End for each
-    ALERT(String($vcount)+" encrypted table(s) in this datastore.")
+    ALERT(String($vcount)+" tabla(s) cifrada(s) en este almacén de datos.")
  Else
-    ALERT("This database is not encrypted.")
+    ALERT("Esta base de datos no está cifrada.")
  End if
 ```
 
@@ -418,7 +418,7 @@ Quiere saber el número de tablas encriptadas en el archivo de datos actual:
 
 #### Descripción
 
-The `.flushAndLock()` function <!-- REF #DataStoreClass.flushAndLock().Summary -->flushes the cache of the local datastore and prevents other processes from performing write operations on the database<!-- END REF -->. El datastore se pone en un estado consistente y congelado. Es necesario llamar a esta función antes de ejecutar una instantánea de la aplicación, por ejemplo.
+La función `.flushAndLock()` <!-- REF #DataStoreClass.flushAndLock().Summary -->vacía la caché del datastore local e impide que otros procesos realicen operaciones de escritura en la base de datos<!-- END REF -->. El datastore se pone en un estado consistente y congelado. Es necesario llamar a esta función antes de ejecutar una instantánea de la aplicación, por ejemplo.
 
 :::info
 
@@ -429,7 +429,7 @@ Esta función sólo puede llamarse:
 
 :::
 
-Once this function is executed, write operations such as `.save()` or other `.flushAndLock()` calls are frozen in all other processes until the datastore is unlocked.
+Una vez ejecutada esta función, las operaciones de escritura como `.save()` u otras llamadas a `.flushAndLock()` se congelan en todos los demás procesos hasta que se desbloquee el datastore.
 
 When multiple calls to `.flushAndLock()` have been done in the same process, the same number of [`.unlock()`](#unlock) calls must be executed to actually unlock the datastore.
 
