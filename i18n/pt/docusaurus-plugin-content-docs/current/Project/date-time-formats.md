@@ -49,7 +49,7 @@ The following table lists all supported patterns for date and time formats.
 | d       | dia no mês                                                               | d             | 2                                                                     |
 |         |                                                                          | dd            | 2                                                                     |
 | D       | dia do ano                                                               | D             | 189                                                                   |
-| E       | day of week                                                              | E, EE ou EEE  | Tue                                                                   |
+| E       | dia da semana                                                            | E, EE ou EEE  | Tue                                                                   |
 |         |                                                                          | EEEE          | Tuesday                                                               |
 |         |                                                                          | EEEEE         | T                                                                     |
 |         |                                                                          | EEEEEE        | Tu                                                                    |
