@@ -241,7 +241,7 @@ Por padrão em macOS, a função cria um pseudónimo padrão. You can also creat
 
 On Windows, a shortcut (.lnk file) is always created (the *aliasType* parameter is ignored).
 
-**Returned object**
+**Objeto devolvido**
 
 A `4D.File` object with the `isAlias` property set to **true**.
 
@@ -446,7 +446,7 @@ The *destinationFolder* must exist on disk, otherwise an error is generated.
 
 Por padrão, o arquivo mantém o seu nome quando é movido. If you want to rename the moved file, pass the new full name in the *newName* parameter. O novo nome deve cumprir com as regras de nomenclatura (por exemplo, não deve conter caracteres como ":", "/", etc.), do contrário se devolve um erro.
 
-**Returned object**
+**Objeto devolvido**
 
 The moved `File` object.
 
