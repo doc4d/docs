@@ -385,11 +385,11 @@ Se o servidor e/ou cliente parte do seu aplicativo clicável duplo for usado com
 
 Os elementos devem ser instalados:
 
-- **on Windows**
+- **em Windows**
   - **Aplicación del servidor** - en la subcarpeta `Client Server executable/<ApplicationName>Server/Server Database`.
   - **Aplicación cliente** - en la subcarpeta `Client Server executable/<ApplicationName>Client`.
 
-- **on macOS**
+- **no macOS**
   - **Aplicación del servidor** - junto al paquete de software `<ApplicationName>Server`.
   - **Aplicación cliente** - junto al paquete de software `<ApplicationName>Cliente`.
 
