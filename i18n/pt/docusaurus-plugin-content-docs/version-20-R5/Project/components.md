@@ -80,7 +80,7 @@ If a component path declared in the **environment4d.json** file is not found whe
 
 :::
 
-### Priority
+### Prioridade
 
 Since components can be installed in different ways, a priority order is applied when the same component is referenced at several locations:
 
@@ -122,7 +122,7 @@ The following origins are supported:
 
 | Origin tag        | Descrição                                                                      |
 | ----------------- | ------------------------------------------------------------------------------ |
-| 4D Component      | Built-in 4D component, stored in the `Components` folder of the 4D application |
+| Componente 4D     | Built-in 4D component, stored in the `Components` folder of the 4D application |
 | Source            | Component declared in the [`dependencies.json`](#dependenciesjson) file        |
 | Environment       | Component declared in the [`environnement4d.json`](#environment4djson) file    |
 | Project Component | Component located in the [`Components`](architecture.md#components) folder     |
