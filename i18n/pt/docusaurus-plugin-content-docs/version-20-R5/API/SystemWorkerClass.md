@@ -81,7 +81,7 @@ In the *commandLine* parameter, pass the full path of the application's file to 
 
 **Warning:** This function can only launch executable applications; it cannot execute instructions that are part of the shell (command interpreter). For example, under Windows it is not possible to use this command to execute the `dir` instruction.
 
-#### *options* Object
+#### Objeto *options*
 
 In the *options* parameter, pass an object that can contain the following properties:
 
