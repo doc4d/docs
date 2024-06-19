@@ -284,7 +284,7 @@ O método retorna Null se:
 - *msgNumber* designates a non-existing message,
 - the message was marked for deletion using [`.delete()`](#delete).
 
-**Returned object**
+**Objeto devolvido**
 
 `.getMail()` returns an [`Email` object](EmailObjectClass.md#email-object).
 
