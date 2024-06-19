@@ -862,7 +862,7 @@ The callback is called with the parameter(s) passed in *param* (optional). The c
 A chamada de retorno recebe os seguintes parâmetros:
 
 - in *$1.value*: element value to be evaluated
-- in *$2*: param
+- em *$2*: param
 - in *$N...*: paramN...
 
 Pode definir o(s) seguinte(s) parâmetro(s):
@@ -1076,7 +1076,7 @@ The callback is called with the parameter(s) passed in *param* (optional) and an
 A chamada de retorno recebe os seguintes parâmetros:
 
 - in *$1.value*: element value to be evaluated
-- in *$2*: param
+- em *$2*: param
 - in *$N...*: paramN...
 
 Pode definir o(s) seguinte(s) parâmetro(s):
@@ -1163,7 +1163,7 @@ The callback is called with the parameter(s) passed in *param* (optional). The c
 A chamada de retorno recebe os seguintes parâmetros:
 
 - in *$1.value*: element value to be evaluated
-- in *$2*: param
+- em *$2*: param
 - in *$N...*: paramN...
 
 Pode definir o(s) seguinte(s) parâmetro(s):
@@ -1251,7 +1251,7 @@ The callback is called with the parameter(s) passed in *param* (optional). The c
 A chamada de retorno recebe os seguintes parâmetros:
 
 - in *$1.value*: element value to be evaluated
-- in *$2*: param
+- em *$2*: param
 - in *$N...*: paramN...
 
 Pode definir o(s) seguinte(s) parâmetro(s):
@@ -1421,7 +1421,7 @@ The callback is called with the parameter(s) passed in *param* (optional). A cha
 A chamada de retorno recebe os seguintes parâmetros:
 
 - in *$1.value*: element value to be evaluated
-- in *$2*: param
+- em *$2*: param
 - in *$N...*: paramN...
 
 Pode definir o(s) seguinte(s) parâmetro(s):
@@ -1912,7 +1912,7 @@ The callback is called with the parameter(s) passed in *param* (optional). A cha
 A chamada de retorno recebe os seguintes parâmetros:
 
 - in *$1.value*: element value to be evaluated
-- in *$2*: param
+- em *$2*: param
 - in *$N...*: paramN...
 
 Pode definir o(s) seguinte(s) parâmetro(s):
@@ -2846,7 +2846,7 @@ You can pass the value to initialize the accumulator in *initValue*. If omitted,
 A chamada de retorno recebe os seguintes parâmetros:
 
 - in *$1.value*: element value to be processed
-- in *$2: param*
+- em *$2: param*
 - in *$N...*: *paramN...*
 
 A chamada de retorno recebe os seguintes parâmetros:
@@ -2931,7 +2931,7 @@ You can pass the value to initialize the accumulator in *initValue*. If omitted,
 A chamada de retorno recebe os seguintes parâmetros:
 
 - in *$1.value*: element value to be processed
-- in *$2: param*
+- em *$2: param*
 - in *$N...*: *paramN...*
 
 A chamada de retorno recebe os seguintes parâmetros:
@@ -3257,7 +3257,7 @@ The callback is called with the parameter(s) passed in *param* (optional). The c
 A chamada de retorno recebe os seguintes parâmetros:
 
 - in *$1.value*: element value to be processed
-- in *$2: param*
+- em *$2: param*
 - in *$N...*: *paramN...*
 
 Pode definir o(s) seguinte(s) parâmetro(s):
