@@ -79,7 +79,7 @@ exposed Function authentify({params : type}) {-> result : type}
 
 :::note
 
-The `authentify()` function can always be executed by a REST guest session, whatever the [`roles.json` file](../ORDA/privileges.md#rolesjson-file) configuration.
+[`roles.json`ファイル](../ORDA/privileges.md#rolesjson-ファイル) の権限設定にかかわらず、RESTゲストセッションは常に `authentify()` 関数を実行できます。
 
 :::
 
