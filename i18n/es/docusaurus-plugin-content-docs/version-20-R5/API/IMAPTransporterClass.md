@@ -1646,11 +1646,11 @@ Las claves de búsqueda pueden solicitar el valor a buscar:
 **ALL**: todos los mensajes en el buzón.\
 **ANSWERED**: Messages with the \Answered flag set.\
 **UNANSWERED**: Messages that do not have the \Answered flag set.\
-**DELETED**: Messages with the \Deleted flag set.\
+**DELETED**: mensajes con el indicador \Deleted activado.\
 **UNDELETED**: Messages that do not have the \Deleted flag set.\
 **DRAFT**: mensajes con el indicador \Draft activado.\
 **UNDRAFT**: Messages that do not have the \Draft flag set.\
-**FLAGGED**: Messages with the \Flagged flag set.\
+**FLAGGED**: mensajes con el indicador \Flagged activado.\
 **UNFLAGGED**: Messages that do not have the \Flagged flag set.\
 **RECENT**: Messages that have the \Recent flag set.\
 **OLD**: Messages that do not have the \Recent flag set.\
