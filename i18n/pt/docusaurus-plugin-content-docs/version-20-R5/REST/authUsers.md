@@ -55,7 +55,7 @@ This mode allows you to implement the following login sequence:
 
 ### Descriptive REST requests
 
-Descriptive REST requests can be processed in web user sessions that do not require licenses ("guest" sessions). These requests are:
+Descriptive REST requests can be processed in web user sessions that do not require licenses ("guest" sessions). Essas solicitações são:
 
 - [`/rest/$catalog`]($catalog.md) requests (e.g. `/rest/$catalog/$all`) - access to available dataclasses
 - `/rest/$catalog/authentify` - la función del almacén de datos utilizada para iniciar sesión del usuario
