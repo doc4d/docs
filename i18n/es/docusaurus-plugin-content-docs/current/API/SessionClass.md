@@ -100,23 +100,23 @@ Para más información sobre las sesiones usuario remoto, por favor consulte el 
 Todos los procesos de procedimientos almacenados comparten la misma sesión virtual de usuario. El objeto `Session` de los procedimientos almacenados está disponible desde:
 
 - métodos llamados con el comando [`Execute on server`](https://doc.4d.com/4dv20/help/command/en/page373.html),
-- `On Server Startup`, `On Server Shutdown`, `On Backup Startup`, `On Backup Shutdown`, and `On System event` database methods
+- Los métodos base `On Server Startup`, `On Server Shutdown`, `On Backup Startup`, `On Backup Shutdown` y `On System event`
 
-For information on stored procedures virtual user session, please refer to the [4D Server and the 4D Language](https://doc.4d.com/4Dv20R5/4D/20-R5/4D-Server-and-the-4D-Language.300-6932726.en.html) page.
+Para obtener información sobre la sesión de usuario virtual de los procedimientos almacenados, consulte la página [4D Server y lenguaje 4D](https://doc.4d.com/4Dv20R5/4D/20-R5/4D-Server-and-the-4D-Language.300-6932726.en.html).
 
 #### Ejemplo
 
-You have defined the `action_Session` method with attribute "Available through 4D tags and URLs". Se llama al método introduciendo la siguiente URL en el navegador:
+Ha definido el método `action_Session` con el atributo "Disponible a través de etiquetas 4D y URLs". Se llama al método introduciendo la siguiente URL en el navegador:
 
 ```
 IP:port/4DACTION/action_Session
 ```
 
 ```4d
-  //action_Session method
+  //método action_Session
  Case of
     :(Session#Null)
-       If(Session.hasPrivilege("WebAdmin")) //calling the hasPrivilege function
+       If(Session.hasPrivilege("WebAdmin")) //llamando a la función hasPrivilege
           WEB SEND TEXT("4DACTION --> Session is WebAdmin")
        Else
           WEB SEND TEXT("4DACTION --> Session is not WebAdmin")
@@ -152,21 +152,21 @@ IP:port/4DACTION/action_Session
 
 :::note
 
-This function does nothing and always returns **False** with remote client and stored procedure sessions.
+Esta función no hace nada y siempre devuelve **False** con las sesiones de clientes remotos y de los procedimientos almacenados.
 
 :::
 
-The `.clearPrivileges()` function <!-- REF #SessionClass.clearPrivileges().Summary -->removes all the privileges associated to the session and returns **True** if the execution was successful<!-- END REF -->. Como resultado, la sesión se convierte automáticamente en una sesión de invitado.
+La función `.clearPrivileges()` <!-- REF #SessionClass.clearPrivileges().Summary -->elimina todos los privilegios asociados a la sesión y devuelve **True** si la ejecución se ha realizado correctamente<!-- END REF -->. Como resultado, la sesión se convierte automáticamente en una sesión de invitado.
 
 #### Ejemplo
 
 ```4d
-//Invalidate a web user session
+//Invalidar una sesión usuario web
 var $isGuest : Boolean
 var $isOK : Boolean
 
 $isOK:=Session.clearPrivileges()
-$isGuest:=Session.isGuest() //$isGuest is True
+$isGuest:=Session.isGuest() //$isGuest es True
 ```
 
 <!-- END REF -->
@@ -193,9 +193,9 @@ Esta propiedad sólo está disponible con sesiones de usuario web.
 
 :::
 
-The `.expirationDate` property contains <!-- REF #SessionClass.expirationDate.Summary -->the expiration date and time of the session cookie<!-- END REF -->. The value is expressed as text in the ISO 8601 format: `YYYY-MM-DDTHH:MM:SS.mmmZ`.
+La propiedad `.expirationDate` contiene <!-- REF #SessionClass.expirationDate.Summary -->la fecha y hora de expiración de la cookie de sesión<!-- END REF -->. El valor se expresa como texto en el formato ISO 8601: `YYYY-MM-DDTHH:MM:SS.mmmZ`.
 
-Esta propiedad es de **solo lectura**. It is automatically recomputed if the [`.idleTimeout`](#idletimeout) property value is modified.
+Esta propiedad es de **solo lectura**. Se recalcula automáticamente si se modifica el valor de la propiedad [`.idleTimeout`](#idletimeout).
 
 #### Ejemplo
 
@@ -222,27 +222,27 @@ $expiration:=Session.expirationDate //eg "2021-11-05T17:10:42Z"
 
 <!-- REF #SessionClass.getPrivileges().Params -->
 
-| Parámetros | Tipo       |     | Descripción                                                |
-| ---------- | ---------- | :-: | ---------------------------------------------------------- |
-| Result     | Collection |  <- | Collection of privilege names (strings) |
+| Parámetros | Tipo       |     | Descripción                                                      |
+| ---------- | ---------- | :-: | ---------------------------------------------------------------- |
+| Result     | Collection |  <- | Colección de nombres de privilegios (cadenas) |
 
 <!-- END REF -->
 
 #### Descripción
 
-The `.getPrivileges()` function <!-- REF #SessionClass.getPrivileges().Summary -->returns a collection of all the privilege names associated to the session<!-- END REF -->.
+La función `.getPrivileges()` <!-- REF #SessionClass.getPrivileges().Summary -->devuelve una colección de todos los nombres de privilegios asociados a la sesión<!-- END REF -->.
 
-With remote client and stored procedure sessions, this function returns a collection only containing "WebAdmin".
+Con sesiones de cliente remoto y procedimiento almacenado, esta función devuelve una colección que sólo contiene "WebAdmin".
 
 :::info
 
-Privileges are assigned to a Session using the [`setPrivileges()`](#setprivileges) function.
+Los privilegios se asignan a una Sesión utilizando la función [`setPrivileges()`](#setprivileges).
 
 :::
 
 #### Ejemplo
 
-The following [`roles.json`](../ORDA/privileges.md#rolesjson-file) has been defined:
+Se ha definido el siguiente archivo [`roles.json`](../ORDA/privileges.md#rolesjson-file):
 
 ```json
 {
@@ -276,10 +276,10 @@ The following [`roles.json`](../ORDA/privileges.md#rolesjson-file) has been defi
 }
 ```
 
-The session role is assigned in an `authentify()` datastore function:
+El rol de sesión se asigna en una función datastore `authentify()`:
 
 ```4d
-  //Datastore Class
+  //Clase Datastore
 
 exposed Function authentify($role : Text) : Text
 	Session.clearPrivileges()
@@ -535,7 +535,7 @@ End if
 
 :::note
 
-This function does nothing and always returns **False** with remote client and stored procedure sessions.
+Esta función no hace nada y siempre devuelve **False** con las sesiones de clientes remotos y de los procedimientos almacenados.
 
 :::
 
