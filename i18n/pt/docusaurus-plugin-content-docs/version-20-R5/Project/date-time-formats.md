@@ -1,6 +1,6 @@
 ---
 id: date-time-formats
-title: Date and Time Formats
+title: Formatos data e hora
 ---
 
 Throughout your 4D projects, you might need to format date and/or time values according to the specificities of the application, the platform, or the interface.
