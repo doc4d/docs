@@ -368,7 +368,7 @@ Por padrão, a pasta mantém o seu nome quando movida. If you want to rename the
 
 **Objeto devolvido**
 
-The moved `Folder` object.
+O objeto `Folder` movido.
 
 #### Exemplo
 
