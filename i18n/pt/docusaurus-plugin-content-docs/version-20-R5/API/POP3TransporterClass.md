@@ -343,7 +343,7 @@ The `mailInfo` object returned contains the following properties:
 | size        | Number | Tamanho da mensagem em bytes |
 | id          | Text   | ID única da mensagem         |
 
-The method returns **Null** if:
+O método retorna **Null** se:
 
 - *msgNumber* designates a non-existing message,
 - the message was marked for deletion using `.delete( )`.
