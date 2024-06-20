@@ -258,7 +258,7 @@ The mapping between the objects of the collection and the entities is done on th
 
 **Create or update mode**
 
-For each object of *objectCol*:
+Para cada objeto de *objectCol*:
 
 - Se o objeto conter uma propriedade booleana "\__NEW" estabelecida em false (ou não conter uma propriedade booleana "\__NEW"), a entidade se atualiza ou se cria com os valores correspondentes das propriedades do objeto. Nenhuma comprovação é realizada com respeito à chave primária:
   - Se a chave primária for dada e existir, a entidade é atualizada. Nesse caso, a chave primária pode ser dada como etá ou com uma propriedade "\_\_KEY"  (preenchida com o valor da chave primária).
