@@ -461,7 +461,7 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 
 | Release | Mudanças                                                           |
 | ------- | ------------------------------------------------------------------ |
-| 18 R3   | New *ck shared* option. New *groupWith* parameters |
+| 18 R3   | Nova opção *ck shared*. New *groupWith* parameters |
 | v16 R6  | Adicionado                                                         |
 
 </details>
@@ -706,7 +706,7 @@ The optional *propertyPath* parameter allows you to count values inside a collec
 
 | Release | Mudanças                     |
 | ------- | ---------------------------- |
-| 20      | Support of `ck count values` |
+| 20      | Suporte do `ck count values` |
 | v16 R6  | Adicionado                   |
 
 </details>
@@ -863,7 +863,7 @@ A chamada de retorno recebe os seguintes parâmetros:
 
 - in *$1.value*: element value to be evaluated
 - em *$2*: param
-- in *$N...*: paramN...
+- em *$N...*: paramN...
 
 Pode definir o(s) seguinte(s) parâmetro(s):
 
@@ -1077,7 +1077,7 @@ A chamada de retorno recebe os seguintes parâmetros:
 
 - in *$1.value*: element value to be evaluated
 - em *$2*: param
-- in *$N...*: paramN...
+- em *$N...*: paramN...
 
 Pode definir o(s) seguinte(s) parâmetro(s):
 
@@ -1164,7 +1164,7 @@ A chamada de retorno recebe os seguintes parâmetros:
 
 - in *$1.value*: element value to be evaluated
 - em *$2*: param
-- in *$N...*: paramN...
+- em *$N...*: paramN...
 
 Pode definir o(s) seguinte(s) parâmetro(s):
 
@@ -1252,7 +1252,7 @@ A chamada de retorno recebe os seguintes parâmetros:
 
 - in *$1.value*: element value to be evaluated
 - em *$2*: param
-- in *$N...*: paramN...
+- em *$N...*: paramN...
 
 Pode definir o(s) seguinte(s) parâmetro(s):
 
@@ -1422,7 +1422,7 @@ A chamada de retorno recebe os seguintes parâmetros:
 
 - in *$1.value*: element value to be evaluated
 - em *$2*: param
-- in *$N...*: paramN...
+- em *$N...*: paramN...
 
 Pode definir o(s) seguinte(s) parâmetro(s):
 
@@ -1913,7 +1913,7 @@ A chamada de retorno recebe os seguintes parâmetros:
 
 - in *$1.value*: element value to be evaluated
 - em *$2*: param
-- in *$N...*: paramN...
+- em *$N...*: paramN...
 
 Pode definir o(s) seguinte(s) parâmetro(s):
 
@@ -2203,7 +2203,7 @@ If you pass no parameter, the function orders scalar values in the collection in
 
 Também pode passar um parâmetro de critérios para definir como devem ordenar-se os elementos da coleção. Três sintaxes são compatíveis com esse parâmetro:
 
-- *pathStrings* : Text (formula). **Syntax**: `propertyPath1 {desc or asc}, propertyPath2 {desc or asc},...` (default order: asc). *pathStrings* contains a formula made of 1 to x property paths and (optionally) sort orders, separated by commas. A ordem na qual as propriedades são passadas determina a prioridade de ordenação dos elementos da coleção Como padrão as propriedades são ordenadas de forma ascendente. Como padrão as propriedades são ordenadas de forma ascendente. Pode definir a ordem de clasificação de uma propriedade na string de critérios, separado da rota da propriedade por um só espaço: passe "asc" para ordenar em ordem ascendente ou "desc" em ordem descendente.
+- *pathStrings* : Texto (fórmula). **Syntax**: `propertyPath1 {desc or asc}, propertyPath2 {desc or asc},...` (default order: asc). *pathStrings* contains a formula made of 1 to x property paths and (optionally) sort orders, separated by commas. A ordem na qual as propriedades são passadas determina a prioridade de ordenação dos elementos da coleção Como padrão as propriedades são ordenadas de forma ascendente. Como padrão as propriedades são ordenadas de forma ascendente. Pode definir a ordem de clasificação de uma propriedade na string de critérios, separado da rota da propriedade por um só espaço: passe "asc" para ordenar em ordem ascendente ou "desc" em ordem descendente.
 
 - *pathObjects* : Collection. You can add as many objects in the *pathObjects* collection as necessary. Como padrão, as propriedades se classificam em ordem ascendente ("descending" é false). Cada elemento da coleção contém um objeto estruturado da seguinte maneira:
 
