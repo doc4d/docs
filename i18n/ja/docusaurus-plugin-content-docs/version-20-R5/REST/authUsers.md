@@ -47,7 +47,7 @@ Qodly Studio for 4D では、権限パネルの [**強制ログイン**オプシ
 このモードでは、以下のログインシーケンスを実装できます:
 
 1. 最初の RESTコール (たとえば Webフォームコール) では、"ゲスト" Webユーザーセッションが作成されます。 記述的リクエスト以外のリクエストを実行する権限も、ライセンスの消費もありません。
-2. You call your exposed [datastore class function](../ORDA/ordaClasses.md#datastore-class) named [`authentify()`](#function-authentify) (created beforehand), in which you check the user credentials and call [`Session.setPrivileges()`](../API/SessionClass.md#setprivileges) with appropriate privileges.
+2. 事前に用意した [データストアクラス関数](../ORDA/ordaClasses.md#datastore-クラス) [`authentify()`](#function-authentify) を呼び出し、ユーザーの資格情報をチェックして、適切な権限で`Session.setPrivileges()` を呼び出します。
 3. `/rest/$catalog/authentify` リクエストは、ユーザーの資格情報と共にサーバーに送信されます。 このステップでは、データにアクセスしない基本的なログインフォームのみが必要です。`/rest/$getWebForm`リクエストを介して呼び出される Qodlyフォームを利用できます。
 4. ユーザーが正常に認証された場合、4Dライセンスがサーバー上で消費され、すべての RESTリクエストが受け入れられます。
 
@@ -79,7 +79,7 @@ exposed Function authentify({params : type}) {-> result : type}
 
 :::note
 
-The `authentify()` function can always be executed by a REST guest session, whatever the [`roles.json` file](../ORDA/privileges.md#rolesjson-file) configuration.
+[`roles.json`ファイル](../ORDA/privileges.md#rolesjson-ファイル) の権限設定にかかわらず、RESTゲストセッションは常に `authentify()` 関数を実行できます。
 
 :::
 
