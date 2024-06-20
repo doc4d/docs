@@ -57,7 +57,7 @@ Webユーザーまたは RESTユーザーがログインすると、そのセッ
 - エイリアス属性の元である属性に対するアクセス権をセッションが持っていない場合でも、エイリアス属性へのアクセス権があれば、これを読み取ることができます。
 - 計算属性を構成する属性に対するアクセス権をセッションが持っていない場合でも、計算属性へのアクセス権があれば、これを読み取ることができます。
 - デフォルト値: 現在の実装では、_Null_ のみデフォルト値として利用可能です。
-- In REST [force login mode](../REST/authUsers.md/#force-login-mode), the [`authentify()` function](../REST/authUsers.md#function-authentify) is always executable by guest users, whatever the permissions configuration.
+- REST の [強制ログインモード](../REST/authUsers.md/#強制ログインモード) では、[`authentify()`関数](../REST/authUsers.md#function-authentify) は、権限の設定に関係なく常にゲストユーザーによって実行可能です。
 
 許諾の設定は一貫している必要があります。とくに:
 
