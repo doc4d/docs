@@ -6,19 +6,19 @@ title: Session
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Session objects are returned by the [`Session`](#session) command. These objects provide the developer with an interface allowing to manage the current user session and execute actions such as store contextual data, share information between session processes, launch session-related preemptive processes, or (web only) manage [privileges](../ORDA/privileges.md).
+Los objetos de sesión son devueltos por el comando [`Session`](#session). Estos objetos ofrecen al desarrollador una interfaz que permite gestionar la sesión de usuario actual y ejecutar acciones como almacenar datos contextuales, compartir información entre procesos de sesión, lanzar procesos preferentes relacionados con la sesión o (sólo web) gestionar [privilegios](../ORDA/privileges.md).
 
 ### Tipos de sesiones
 
 Esta clase admite tres tipos de sesiones:
 
-- [**Web user sessions**](WebServer/sessions.md): Web user sessions are available when [scalable sessions are enabled in your project](WebServer/sessions.md#enabling-sessions). Se utilizan para conexiones Web y REST, y se les pueden asignar privilegios.
-- [**Remote client user sessions**](../Desktop/clientServer.md#remote-user-sessions): In client/server applications, remote users have their own sessions managed on the server.
-- [**Stored procedures session**](https://doc.4d.com/4Dv20R5/4D/20-R5/4D-Server-and-the-4D-Language.300-6932726.en.html): All stored procedures executed on the server share the same virtual user session.
+- [**Sesiones usuario web**](WebServer/sessions.md): las sesiones usuario web están disponibles cuando [las sesiones escalables están activas en su proyecto](WebServer/sessions.md#enabling-sessions). Se utilizan para conexiones Web y REST, y se les pueden asignar privilegios.
+- [Sesiones usuario cliente remoto\*\*](../Desktop/clientServer.md#remote-user-sessions): en las aplicaciones cliente/servidor, los usuarios remotos tienen sus propias sesiones gestionadas en el servidor.
+- [**Sesión de procedimientos almacenados**](https://doc.4d.com/4Dv20R5/4D/20-R5/4D-Server-and-the-4D-Language.300-6932726.en.html): todos los procedimientos almacenados ejecutados en el servidor comparten la misma sesión usuario virtual.
 
 :::note
 
-The availability of properties and functions in the `Session` object depend on the session type.
+La disponibilidad de las propiedades y funciones del objeto `Session` depende del tipo de sesión.
 
 :::
 
@@ -60,45 +60,45 @@ The availability of properties and functions in the `Session` object depend on t
 
 #### Descripción
 
-The `Session` command <!-- REF #_command_.Session.Summary -->returns the `Session` object corresponding to the current user session<!-- END REF -->.
+El comando `Session` <!-- REF #_command_.Session.Summary -->devuelve el objeto `Session` correspondiente a la sesión usuario actual<!-- END REF -->.
 
 Dependiendo del proceso desde el que se llame al comando, la sesión de usuario actual puede ser:
 
-- a web session (when [scalable sessions are enabled](WebServer/sessions.md#enabling-sessions)),
+- una sesión web (cuando las [sesiones escalables están activadas](WebServer/sessions.md#enabling-sessions)),
 - una sesión de cliente remoto,
 - la sesión de procedimientos almacenados.
 
-For more information, see the [Session types](#session-types) paragraph.
+Para más información, consulte el párrafo [Tipos de sesión](#tipos-de-sesión).
 
-If the command is called from a non supported context (single-user application, scalable sessions disabled...), it returns *Null*.
+Si el comando se llama desde un contexto no soportado (aplicación monousuario, sesiones escalables desactivadas...), devuelve *Null*.
 
 #### Sesiones web
 
-The `Session` object of web sessions is available from any web process:
+El objeto `Session` de las sesiones web está disponible desde cualquier proceso web:
 
-- `On Web Authentication`, `On Web Connection`, and `On REST Authentication` database methods,
+- Métodos base `On Web Authentication`, `On Web Connection` y `On REST Authentication`,
 - código procesado a través de las etiquetas 4D en las páginas semidinámicas (4DTEXT, 4DHTML, 4DEVAL, 4DSCRIPT/, 4DCODE)
 - los métodos proyecto con el atributo "Available through 4D tags and URLs (4DACTION...)" y llamados a través de 4DACTION/ urls,
-- [`On Mobile App Authentication`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-authentication) and [`On Mobile App Action`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-action) database methods for mobile requests,
-- ORDA functions [called with REST requests](../REST/ClassFunctions.md).
+- métodos base [`On Mobile App Authentication`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-authentication) y [`On Mobile App Action`](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-action) para peticiones móviles,
+- Funciones ORDA [llamadas con peticiones REST](../REST/ClassFunctions.md).
 
-For more information on web user sessions, please refer to the [Web Server Sessions](WebServer/sessions.md) section.
+Para más información sobre las sesiones usuario web, consulte la sección [Sesiones web](WebServer/sessions.md).
 
 #### Sesiones de cliente remoto
 
-The `Session` object of remote client sessions is available from:
+El objeto `Session` de las sesiones cliente remotas está disponible desde:
 
 - Métodos proyecto que tienen el atributo [Ejecutar en el Servidor](../Project/code-overview.md#execute-on-server) (se ejecutan en el proceso "twinned" del proceso cliente),
 - Triggers,
 - Los métodos base `On Server Open Connection` y `On Server Shutdown Connection` de la base de datos.
 
-For more information on remote user sessions, please refer to the [**Remote client user sessions**](../Desktop/clientServer.md#remote-user-sessions) paragraph.
+Para más información sobre las sesiones usuario remoto, por favor consulte el párrafo [**Sesiones usuario cliente remoto**](../Desktop/clientServer.md#remote-user-sessions).
 
 #### Sesión de procedimientos almacenados
 
-Todos los procesos de procedimientos almacenados comparten la misma sesión virtual de usuario. The `Session` object of stored procedures is available from:
+Todos los procesos de procedimientos almacenados comparten la misma sesión virtual de usuario. El objeto `Session` de los procedimientos almacenados está disponible desde:
 
-- methods called with the [`Execute on server`](https://doc.4d.com/4dv20/help/command/en/page373.html) command,
+- métodos llamados con el comando [`Execute on server`](https://doc.4d.com/4dv20/help/command/en/page373.html),
 - `On Server Startup`, `On Server Shutdown`, `On Backup Startup`, `On Backup Shutdown`, and `On System event` database methods
 
 For information on stored procedures virtual user session, please refer to the [4D Server and the 4D Language](https://doc.4d.com/4Dv20R5/4D/20-R5/4D-Server-and-the-4D-Language.300-6932726.en.html) page.
@@ -221,10 +221,10 @@ $expiration:=Session.expirationDate //eg "2021-11-05T17:10:42Z"
 
 <!-- REF #SessionClass.hasPrivilege().Params -->
 
-| Parámetros | Tipo    |     | Descripción                                      |
-| ---------- | ------- | :-: | ------------------------------------------------ |
-| privilege  | Text    |  <- | Nombre del privilegio a verificar                |
-| Result     | Boolean |  <- | True if session has *privilege*, False otherwise |
+| Parámetros | Tipo    |     | Descripción                                                  |
+| ---------- | ------- | :-: | ------------------------------------------------------------ |
+| privilege  | Text    |  <- | Nombre del privilegio a verificar                            |
+| Result     | Boolean |  <- | True si la sesión tiene *privilege*, False en caso contrario |
 
 <!-- END REF -->
 
