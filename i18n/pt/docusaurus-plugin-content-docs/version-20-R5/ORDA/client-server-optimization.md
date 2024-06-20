@@ -60,7 +60,7 @@ Dado o seguinte código:
 
 Thanks to the optimization, this request will only get data from used attributes (firstname, lastname, employer, employer.name) in _$sel_ from the second iteration of the loop.
 
-### Reusing the `context` property
+### Reutilizando a propriedade `context`
 
 You can increase the benefits of the optimization by using the **context** property. Essa propriedade faz referência a um contexto de otimização "aprendido" para uma seleção de entidade. Ele pode ser passado como parâmetro para funções ORDA que retornam novas seleções de entidades, de modo que as seleções de entidades solicitem diretamente os atributos usados ao servidor e ignorem a fase de aprendizado.
 
