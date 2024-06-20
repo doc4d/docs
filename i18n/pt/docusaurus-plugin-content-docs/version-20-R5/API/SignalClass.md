@@ -56,7 +56,7 @@ Since a signal object is a [shared object](Concepts/shared.md), you can use it t
  $calc:=$signal.result+...
 ```
 
-***OpenForm*** method :
+Método ***OpenForm*** :
 
 ```4d
  #DECLARE ($signal : 4D.Signal)  
