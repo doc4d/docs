@@ -448,7 +448,7 @@ Por padrão, o arquivo mantém o seu nome quando é movido. If you want to renam
 
 **Objeto devolvido**
 
-The moved `File` object.
+O objeto `File` movido.
 
 #### Exemplo
 
@@ -504,7 +504,7 @@ If you use the *options* (object) parameter, you can pass more options for the f
 
 | *opções*          | Tipo           | Descrição                                                                                                                                                                     | Por padrão    |
 | ----------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `.mode`           | Text           | Opening mode (see *mode* above)                                                                                                                            | "read"        |
+| `.mode`           | Text           | Modo de abertura (consulte *modo* acima)                                                                                                                   | "read"        |
 | `.charset`        | Text           | Conjunto de carateres utilizado para ler ou escrever no ficheiro. Utilizar o nome padrão do conjunto (por exemplo "ISO-8859-1" ou "UTF-8") | "UTF-8"       |
 | `.breakModeRead`  | Text ou Number | Modo de tratamento das quebras de linha utilizadas na leitura do arquivo (veja abaixo)                                                                     | "native" ou 1 |
 | `.breakModeWrite` | Text ou Number | Modo de processamento das quebras de linha utilizadas ao escrever no ficheiro (ver abaixo)                                                                 | "native" ou 1 |
@@ -576,7 +576,7 @@ Note that the function modifies the full name of the file, i.e. if you do not pa
 
 **Objeto devolvido**
 
-The renamed `File` object.
+O objeto `File` renomeado.
 
 #### Exemplo
 
