@@ -573,7 +573,7 @@ The `.getDataStore()` function <!-- REF #DataClassClass.getDataStore().Summary -
 
 El almacén de datos puede ser:
 
-- the main datastore, as returned by the `ds` command.
+- el datastore principal, devuelto por el comando `ds`.
 - a remote datastore, opened using the `Open datastore` command.
 
 #### Ejemplo
@@ -1470,7 +1470,7 @@ Se pueden aplicar varias fórmulas:
  $0:=ds.Students.query(":1 and :2 and nationality='French'";$formula1;$formula2)
 ```
 
-A text formula in *queryString* receives a parameter:
+Una fórmula texto en *queryString* recibe un parámetro:
 
 ```4d
  var $es : cs.StudentsSelection
