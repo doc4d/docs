@@ -1656,7 +1656,7 @@ Las claves de búsqueda pueden solicitar el valor a buscar:
 **OLD**: Messages that do not have the \Recent flag set.\
 **SEEN**: Mensajes que tienen el indicador \Seen activo.\
 **UNSEEN**: Messages that do not have the \Seen flag set.\
-**NEW**: Messages that have the \Recent flag set but not the \Seen flag. This is functionally equivalent to “(RECENT UNSEEN)”.\
+**NEW**: Messages that have the \Recent flag set but not the \Seen flag. Esto es funcionalmente equivalente a “(RECENT UNSEEN)”.\
 **KEYWORD *flag***: Messages with the specified keyword set.\
 **UNKEYWORD *flag***: Messages that do not have the specified keyword set.\
 **BEFORE *date***: Messages whose internal date is earlier than the specified date.\
