@@ -3228,7 +3228,7 @@ The `.slice()` function <!-- REF #collection.slice().Summary -->returns a portio
 The returned collection contains the element specified by *startFrom* and all subsequent elements up to, but not including, the element specified by *end*. If only the *startFrom* parameter is specified, the returned collection contains all elements from *startFrom* to the last element of the original collection.
 
 - Si *startFrom* < 0, se recalcula como *startFrom:=startFrom+length* (se considera el desplazamiento desde el final de la colección).
-- If the calculated value < 0, *startFrom* is set to 0.
+- Si el valor calculado < 0, *startFrom* toma el valor 0.
 - Si *end* < 0 , se recalcula como *end:=end+length*.
 - If *end < startFrom* (passed or calculated values), the method does nothing.
 
