@@ -441,9 +441,9 @@ Pressione a tecla **Enter** para selecionar a ocorrência mais próxima ao curso
 
 ### Substituir
 
-Haga clic en el botón de alternancia **v** situado a la izquierda del área _Buscar_ para mostrar/ocultar el área _Reemplazar_. También puede seleccionar **Buscar > Reemplazar...** en el menú **Editar** o escribir **Ctrl+Alt+F** (Windows)/**Cmd+Alt+F** (macOS).
+Clique no botão de alternância **v** no lado esquerdo da área _Search_ para exibir/ocultar a área _Replace_. Você também pode selecionar **Find > Replace...** no menu **Edit** ou digitar **Ctrl+Alt+F** (Windows)/**Cmd+Alt+F** (macOS) .
 
-El área de entrada _Reemplazar_ se utiliza para definir la cadena de caracteres que sustituirá a la definida anteriormente.
+A área de entrada _Replace_ é usada para definir a cadeia de caracteres que substituirá a definida acima.
 
 Haga clic en el botón **Reemplazar** para iniciar la búsqueda con todas las opciones definidas y reemplazar la primera ocurrencia encontrada. 4D begins searching from the current text insertion point and continues to the end of the method. It is then possible to continue finding/replacing using the **Replace Next** and **Replace Previous** commands of the [**Edit** menu](#shortcuts).
 
