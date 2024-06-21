@@ -223,7 +223,7 @@ The `.htmlBody` property contains the <!-- REF #EmailObjectClass.htmlBody.Summar
 
 #### Descripción
 
-[IMAP transporter](IMAPTransporterClass.md) only.
+[IMAP transporter](IMAPTransporterClass.md) únicamente.
 
 The `.id` property contains the <!-- REF #EmailObjectClass.id.Summary -->unique ID from the IMAP server<!-- END REF -->.
 
@@ -282,7 +282,7 @@ Este encabezado suele ser "lettersOrNumbers@domainname", por ejemplo, "abcdef.12
 
 #### Descripción
 
-[IMAP transporter](IMAPTransporterClass.md) only.
+[IMAP transporter](IMAPTransporterClass.md) únicamente.
 
 The `.receivedAt` property contains the <!-- REF #EmailObjectClass.receivedAt.Summary -->timestamp of the email's arrival on the IMAP server in ISO 8601 UTC format (ex: 2020-09-13T16:11:53Z)<!-- END REF -->.
 
@@ -333,7 +333,7 @@ Para mejorar la entregabilidad, se recomienda utilizar las mismas direcciones pa
 
 #### Descripción
 
-[IMAP transporter](IMAPTransporterClass.md) only.
+[IMAP transporter](IMAPTransporterClass.md) únicamente.
 
 The `.size` property contains the <!-- REF #EmailObjectClass.size.Summary -->size (expressed in bytes) of the Email object returned by the IMAP server<!-- END REF -->.
 
