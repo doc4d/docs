@@ -3307,7 +3307,7 @@ Por defecto, `.some()` comprueba toda la colección. Optionally, you can pass th
 
 #### Ejemplo
 
-You want to know if at least one collection value is >0.
+Quiere saber si al menos un valor de la colección es >0.
 
 ```4d
  var $c : Collection
