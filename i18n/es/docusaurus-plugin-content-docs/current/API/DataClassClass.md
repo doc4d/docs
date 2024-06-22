@@ -1119,7 +1119,7 @@ ds.People.query("places.locations[].kind= :1 and places.locations[].city= :2";"h
 
 If you want to only get entities where matching arguments are in the same collection element, you need to **link arguments**. Para enlazar los argumentos de búsqueda:
 
-- Añada una letra entre los \[] en la primera ruta a enlazar y repita la misma letra en todos los argumentos enlazados. For example: `locations[a].city and locations[a].kind`. Puede utilizar cualquier letra del alfabeto latino (no diferencia entre mayúsculas y minúsculas).
+- Añada una letra entre los \[] en la primera ruta a enlazar y repita la misma letra en todos los argumentos enlazados. Por ejemplo: `locations[a].city y locations[a].kind`. Puede utilizar cualquier letra del alfabeto latino (no diferencia entre mayúsculas y minúsculas).
 - Para añadir diferentes criterios vinculados en la misma consulta, utilice otra letra. Puede crear hasta 26 combinaciones de criterios en una sola consulta.
 
 Con las entidades anteriores, si escribe:
