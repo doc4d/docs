@@ -20,7 +20,7 @@ A 4D project running in interpreted mode can use either interpreted or compiled 
 
 ### Básicos
 
-To load a component in your 4D project, you can either:
+Para cargar un componente en su proyecto 4D, usted puede:
 
 - reference the component in the **dependencies.json** file (and, optionnally, the **environment4d.json** file)
 - or, copy the component files in the [**Components** folder of your project](architecture.md#components).
