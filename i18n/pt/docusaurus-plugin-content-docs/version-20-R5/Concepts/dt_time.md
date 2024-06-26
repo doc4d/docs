@@ -20,14 +20,14 @@ A time literal constant is ordered hour:minute:second, with a colon (:) setting 
 Aqui são exemplos de constantes de tipo hora:
 
 ```4d
-?00:00:00? //midnight
+?00:00:00? //meia-noite
 ?09:30:00? //9:30 am
-?13:01:59? //1 pm, 1 minute, and 59 seconds
+?13:01:59? //1 pm, 1 minuto e 59 segundos
 ```
 
 Uma hora nula se escreve ?00:00:00?
 
-**Consejo:** el Editor de código incluye un acceso directo para introducir una hora null. To type a null time, enter the question mark (?) character and press Enter.
+**Consejo:** el Editor de código incluye un acceso directo para introducir una hora null. To type a null time, enter the question mark (?) e pressione Enter.
 
 ## Operadores de horas
 
