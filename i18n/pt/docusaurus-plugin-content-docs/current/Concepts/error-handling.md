@@ -269,7 +269,7 @@ Function createInvoice($customer : cs.customerEntity; $items : Collection; $invo
 			$newInvoiceLine.item:=$item.item
 			$newInvoiceLine.amount:=$item.amount
 			$newInvoiceLine.invoice:=$newInvoice
-			//call other specific functions to validate invoiceline
+			//chamar outras funções específicas para validar a linha de fatura
 			$newInvoiceLine.save()
 		End for each 
 		$newInvoice.save()
