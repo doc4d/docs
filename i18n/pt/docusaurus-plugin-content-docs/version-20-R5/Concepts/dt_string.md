@@ -13,12 +13,12 @@ String é um termo genérico que significa:
 Uma constante string é colocada entre aspas duplas e rectas ("..."). Eis alguns exemplos:
 
 ```4d
-"Add Records"
-"No records found."
-"Invoice"
+"Adicionar Registros"
+"Nenhum registro encontrado."
+"Fatura"
 ```
 
-Uma cadeia vazia é especificada por duas aspas sem nada entre elas ("").
+Uma string vazia é especificada por duas aspas sem nada entre elas ("").
 
 ### Sequências de escape
 
@@ -32,7 +32,7 @@ As seguintes sequências de escape podem ser utilizadas em strings de caracteres
 | \\\\|\ (Barra invertida) |                                         |
 | \\"                                          | " (aspas)            |
 
-**Nota:** el carácter \ (barra invertida) se utiliza como separador en las rutas de acceso en Windows. Portanto, deve usar uma barra invertida dupla \\\ em caminhos quando quiser ter uma barra invertida à frente de um carácter usado numa das sequências de escape reconhecidas pelo 4D (por exemplo, "C:\\\MyDocuments\\\New.txt").
+**Observação:** O caractere \ (barra invertida) é usado como separador em nomes de caminho no Windows. Portanto, deve usar uma barra invertida dupla \\\ em caminhos quando quiser ter uma barra invertida à frente de um carácter usado numa das sequências de escape reconhecidas pelo 4D (por exemplo, "C:\\\MyDocuments\\\New.txt").
 
 ## Operadores de string
 
@@ -60,39 +60,39 @@ As seguintes sequências de escape podem ser utilizadas em strings de caracteres
 
 ## Comparações de cadeias
 
-- Las cadenas se comparan caracter por caracter (excepto en el caso de la búsqueda por [palabras clave](dt_string.md#keywords), ver más abajo).
-- Cuando se comparan cadenas, se ignoran las mayúsculas y minúsculas de los caracteres; así, "a"="A" devuelve `TRUE`. Para testar se o caso de dois caracteres é diferente, compare os seus códigos de caracteres. Por ejemplo, la siguiente expresión devuelve `FALSE`:
+- Strings são comparadas em uma base de caracteres por caractere (exceto no caso de pesquisa por [keywords](dt_string.md#keywords), veja abaixo).
+- Quando as strings são comparadas, é ignorado se são maiúsculas ou não; portanto, "a"="A" retorna `TRUE`. Para diferenciar dois caracteres considerando maiúsculas, compare os seus códigos de caracteres. Por exemplo, a seguinte expressão devolve `FALSE`:
 
 ```4d
 Character code("A")=Character code("a") // porque 65 não é igual a 97
 ```
 
-- Quando as cadeias de caracteres são comparadas, os caracteres diacríticos são tidos em conta. Por ejemplo, las siguientes expresiones devuelven `TRUE`:
+- Quando as cadeias de caracteres são comparadas, os caracteres diacríticos não são levados em consideração. Por exemplo, as expressões a seguir retornam `TRUE`:
 
 ```4d
      "n"="ñ"
      "n"="Ñ"
      "A"="å"
-      // and so on
+      // etc.
 ```
 
-**Nota:** la comparación de cadenas tiene en cuenta las especificidades del lenguaje **definido para el archivo de datos 4D** (que no siempre es el mismo que el lenguaje definido para el sistema).
+\*\*Nota: A comparação das cadeias de caracteres tem em conta as especificidades da língua definida para o arquivo de dados 4D (que nem sempre é a mesma que a língua definida para o sistema).
 
 ### Caractere coringa(@)
 
-El lenguaje 4D soporta **@** como carácter comodín. Este carácter pode ser utilizado em qualquer comparação de cadeia para corresponder a qualquer número de caracteres. Por ejemplo, la siguiente expresión es `TRUE`:
+A linguagem 4D suporta **@** como um caractere curinga. Este carácter pode ser utilizado em qualquer comparação de cadeia para corresponder a qualquer número de caracteres. Por exemplo, a expressão a seguir é `TRUE`:
 
 ```4d
 "abcdefghij"="abc@"
 ```
 
-O carácter wildcard deve ser utilizado dentro do segundo operando (a cadeia do lado direito) para corresponder a qualquer número de caracteres. La siguiente expresión es `FALSE`, porque la @ se considera sólo como un carácter en el primer operando:
+O caractere curinga deve ser usado dentro do segundo operador (o texto do lado direito) a fim de corresponder a qualquer número de caracteres. A expressão a seguir é `FALSE`, porque o @ é considerado apenas um caractere no primeiro operador:
 
 ```4d
     "abc@"="abcdefghij"
 ```
 
-O wildcard significa "um ou mais caracteres ou nada". Las expresiones siguientes son `TRUE`:
+O curinga significa "um ou mais caracteres ou nada". As seguintes expressões são `TRUE`:
 
 ```4d
      "abcdefghij"="abcdefghij@"
@@ -102,7 +102,7 @@ O wildcard significa "um ou mais caracteres ou nada". Las expresiones siguientes
      "abcdefghij"="@abcde@fghij@"
 ```
 
-Por otro lado, sea cual sea el caso, una comparación de cadenas con dos comodines consecutivos siempre devolverá `FALSE`. La siguiente expresión es `FALSE`:
+Por outro lado, qualquer que seja o caso, uma comparação de strings com dois curingas consecutivos sempre retornará `FALSE`. A seguinte expressão é `FALSE`:
 
 ```4d
 "abcdefghij"="abc@@fg"
@@ -111,11 +111,11 @@ Por otro lado, sea cual sea el caso, una comparación de cadenas con dos comodin
 Quando o operador de comparação é ou contém um símbolo < or >, só é suportada a comparação com um único carácter universal localizado no final do operando:
 
 ```4d
-     "abcd"<="abc@" // Valid comparison
-     "abcd"<="abc@ef" //Not a valid comparison
+     "abcd"<="abc@" // Comparação válida
+     "abcd"<="abc@ef" //Não é uma comparação válida
 ```
 
-Si desea ejecutar comparaciones o consultas utilizando @ como carácter (y no como comodín), debe utilizar la instrucción `Character code(At sign)`. Imagine, por exemplo, que quer saber se uma cadeia de caracteres termina com o carácter @. La siguiente expresión (si $vsValue no está vacío) es siempre `TRUE`:
+Se quiser executar comparações ou consultas usando @ como um caractere (e não como curinga), você precisará usar a instrução `Character code(At sign)`. Imagine, por exemplo, que deseja saber se uma cadeia de caracteres termina com o carácter @. A seguinte expressão (se $vsValue não estiver vazia) é sempre `TRUE`:
 
 ```4d
 ($vsValue[[Length($vsValue)]]="@")
