@@ -935,22 +935,22 @@ Las fórmulas en las consultas pueden recibir parámetros a través de $1. Este 
 
 - **value**: el valor a comparar con el valor actual de la propiedad de cada entidad en la selección de entidades. Puede ser un **marcador de posición** (ver **Uso de marcadores de posición** más adelante) o cualquier expresión que coincida con la propiedad de tipo de datos.
   Al utilizar un valor constante, deben respetarse las siguientes reglas:
-  - **text** type constant can be passed with or without simple quotes (see **Using quotes** below). Para consultar una cadena dentro de otra cadena (una consulta de tipo "contiene"), utilice el símbolo de comodín (@) en el valor para aislar la cadena a buscar como se muestra en este ejemplo: "@Smith@". Las siguientes palabras claves están prohibidas para las constantes de texto: true, false.
-  - **boolean** type constants: **true** or **false** (case sensitive).
-  - **numeric** type constants: decimals are separated by a '.' (period).
+  - La constante de tipo **texto** puede pasarse con o sin comillas simples (ver **Uso de comillas** más abajo). Para consultar una cadena dentro de otra cadena (una consulta de tipo "contiene"), utilice el símbolo de comodín (@) en el valor para aislar la cadena a buscar como se muestra en este ejemplo: "@Smith@". Las siguientes palabras claves están prohibidas para las constantes de texto: true, false.
+  - Valores constantes de tipo **booleano**: **true** o **false** (Sensible a las mayúsculas y minúsculas).
+  - Valores constantes de **tipo numérico**: los decimales se separan con un '.' (punto).
   - Constantes de tipo **date**: formato "YYYY-MM-DD"
-  - **null** constant: using the "null" keyword will find **null** and **undefined** properties.
-  - in case of a query with an IN comparator, *value* must be a collection, or values matching the type of the attribute path between \[ ] separated by commas (for strings, `"` characters must be escaped with `\`).
-- **logicalOperator**: used to join multiple conditions in the query (optional). Puede utilizar uno de los siguientes operadores lógicos (se puede utilizar el nombre o el símbolo):
+  - Constantes **null**: utilizando la palabra clave "null" se encontrarán las propiedades **null** y **undefined**.
+  - en el caso de una búsqueda con un comparador IN, *value* debe ser una colección, o los valores que coincidan con el tipo de la ruta del atributo entre \[ ] separados por comas (para las cadenas, los caracteres `"` deben escaparse con `\`).
+- **logicalOperator**: utilizado para unir condiciones múltiples en la búsqueda (opcional). Puede utilizar uno de los siguientes operadores lógicos (se puede utilizar el nombre o el símbolo):
 
 | Conjunción | Símbolo(s)                                          |
 | ---------- | ---------------------------------------------------------------------- |
 | AND        | &, &&, and |
 | O          | \|,\|\|, or                                                            |
 
-- **order by attributePath**: you can include an order by *attributePath* statement in the query so that the resulting data will be sorted according to that statement. You can use multiple order by statements, separated by commas (e.g., order by *attributePath1* desc, *attributePath2* asc). Por defecto, el orden es ascendente. Pase 'desc' para definir un orden descendente y 'asc' para definir un orden ascendente.
+- **order by attributePath**: puede incluir una declaración order by *attributePath* en la consulta para que los datos resultantes se ordenen según esa declaración. Puede utilizar varias sentencias order by, separadas por comas (por ejemplo, order by *attributePath1* desc, *attributePath2* asc). Por defecto, el orden es ascendente. Pase 'desc' para definir un orden descendente y 'asc' para definir un orden ascendente.
 
-> If you use this statement, the returned entity selection is ordered (for more information, please refer to [Ordered vs Unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection)).
+> Si utiliza esta instrucción, la selección de entidades devuelta estará ordenada (para más información, consulte [Selecciones de entidades ordenadas o desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection)).
 
 #### Utilizar comillas
 
@@ -972,30 +972,30 @@ Puede utilizar paréntesis en la búsqueda para dar prioridad al cálculo. Por e
 
 #### Uso de marcadores de posición
 
-4D allows you to use placeholders for *attributePath*, *formula* and *value* arguments within the *queryString* parameter. Un marcador es un parámetro que se inserta en las cadenas de búsqueda y que se sustituye por otro valor cuando se evalúa la cadena de búsqueda. El valor de los marcadores se evalúa una vez al principio de la búsqueda; no se evalúa para cada elemento.
+4D le permite utilizar marcadores de posición para los argumentos *attributePath*, *formula* y *value* en el parámetro *queryString*. Un marcador es un parámetro que se inserta en las cadenas de búsqueda y que se sustituye por otro valor cuando se evalúa la cadena de búsqueda. El valor de los marcadores se evalúa una vez al principio de la búsqueda; no se evalúa para cada elemento.
 
-Two types of placeholders can be used: **indexed placeholders** and **named placeholders**:
+Se pueden utilizar dos tipos de marcadores de posición: **marcadores de posición indexados** y **marcadores de posición con nombre**:
 
-|            | Marcadores de posición indexados                                                                                                                                                                                                                                                                                                                     | Nombre del marcador de posición                                                                                                                                                                              |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Definición | Parameters are inserted as `:paramIndex` (for example :1, :2...) in *queryString* and their corresponding values are provided by the sequence of *value* parameter(s). Puede usar hasta 128 parámetros *value* | Parameters are inserted as `:paramName` (for example :myparam) and their values are provided in the attributes and/or parameters objects in the *querySettings* parameter |
-| Ejemplo    | `$r:=class.query(":1=:2";"city";"Chicago")`                                                                                                                                                                                                                                                                                                          | `$o.attributes:=New object("att";"city")`<br/> `$o.parameters:=New object("name";"Chicago")`<br/> `$r:=class.query(":att=:name";$o)`                                                                         |
+|            | Marcadores de posición indexados                                                                                                                                                                                                                                                                                                            | Nombre del marcador de posición                                                                                                                                                                                                  |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Definición | Los parámetros se insertan como `:paramIndex` (por ejemplo :1, :2...) en *queryString* y sus valores correspondientes son proporcionados por la secuencia de parámetros *value*. Puede usar hasta 128 parámetros *value* | Los parámetros se insertan como: `:paramName` (por ejemplo :myparam) y sus valores se proporcionan en los atributos y/o objetos de parámetros en el parámetro *querySettings* |
+| Ejemplo    | `$r:=class.query(":1=:2";"city";"Chicago")`                                                                                                                                                                                                                                                                                                 | `$o.attributes:=New object("att";"city")`<br/> `$o.parameters:=New object("name";"Chicago")`<br/> `$r:=class.query(":att=:name";$o)`                                                                                             |
 
-Puede mezclar todos los tipos de argumentos en *queryString*. A *queryString* can contain, for *attributePath*, *formula* and *value* parameters:
+Puede mezclar todos los tipos de argumentos en *queryString*. Una *queryString* puede contener, para los parámetros *attributePath*, *formula* y *value*:
 
 - valores directos (sin marcadores),
 - marcadores indexados y/o con nombre.
 
-Using placeholders in queries **is recommended** for the following reasons:
+El uso de marcadores de posición en las búsquedas **se recomienda** por las siguientes razones:
 
 1. Evita la inserción de código malicioso: si utiliza directamente variables completadas por el usuario dentro de la cadena de búsqueda, un usuario podría modificar las condiciones de búsqueda introduciendo argumentos de búsqueda adicionales. Por ejemplo, imagine una cadena de búsqueda como:
 
 ```4d
- $vquery:="status = 'public' & name = "+myname //user enters their name
+ $vquery:="status = 'public' & name = "+myname //el usuario introduce su nombre
  $result:=$col.query($vquery)
 ```
 
-Esta búsqueda parece segura ya que se filtran los datos no públicos. However, if the user enters in the *myname* area something like *"smith OR status='private'*, the query string would be modified at the interpretation step and could return private data.
+Esta búsqueda parece segura ya que se filtran los datos no públicos. Sin embargo, si el usuario introduce en el área *myname* algo como *"smith OR status='private'*, la cadena de consulta se modificaría en el paso de interpretación y podría devolver datos privados.
 
 Cuando se utilizan marcadores de posición, no es posible anular las condiciones de seguridad:
 
@@ -1003,9 +1003,9 @@ Cuando se utilizan marcadores de posición, no es posible anular las condiciones
  $result:=$col.query("status='public' & name=:1";myname)
 ```
 
-In this case if the user enters *smith OR status='private'* in the *myname* area, it will not be interpreted in the query string, but only passed as a value. La búsqueda de una persona llamada "smith OR status='private'" simplemente fallará.
+En este caso, si el usuario introduce *smith OR status='private'* en el área *myname*, no se interpretará en la cadena de búsqueda, sino que sólo se pasará como valor. La búsqueda de una persona llamada "smith OR status='private'" simplemente fallará.
 
-2. It prevents having to worry about formatting or character issues, especially when handling *attributePath* or *value* parameters that might contain non-alphanumeric characters such as ".", "['...
+2. Evita tener que preocuparse por cuestiones de formato o caracteres, especialmente cuando se manejan los parámetros *attributePath* o *value* que pueden contener caracteres no alfanuméricos como ".", "['...
 
 3. Permite el uso de variables o expresiones en los argumentos de búsqueda. Ejemplos:
 
@@ -1025,7 +1025,7 @@ $vSingles:=ds.Person.query("spouse = :1";Null) // NO funcionará
 No obtendrá el resultado esperado porque el valor null será evaluado por 4D como un error resultante de la evaluación del parámetro (por ejemplo, un atributo procedente de otra búsqueda). Para este tipo de búsquedas, debe utilizar la sintaxis de búsqueda directa:
 
 ```4d
- $vSingles:=ds.Person.query("spouse = null") //correct syntax
+ $vSingles:=ds.Person.query("spouse = null") // Sintaxis correcta
 ```
 
 #### No igual a en colecciones
