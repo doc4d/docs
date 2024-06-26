@@ -173,7 +173,8 @@ title: リリースノート
 - [`4D.HTTPRequest.new()`](../API/HTTPRequestClass.md#new) の新しいオプション `validateTLSCertificate` で、証明書の自動検証を管理できるようになりました。
 - 4Dランゲージコマンド: doc.4d.com の [新着](https://doc.4d.com/4Dv20/4D/20/What-s-new.901-6237190.ja.html) ページ。
 - 4D Write Pro: doc.4d.com の [新着](https://doc.4d.com/4Dv20/4D/20/What-s-new.901-6229455.ja.html) ページ。
-- Fixed bug lists: [4D 20](https://bugs.4d.fr/fixedbugslist?version=20) - [4D 20.1](https://bugs.4d.fr/fixedbugslist?version=20.1) - [4D 20.2](https://bugs.4d.fr/fixedbugslist?version=20.2) - [4D 20.3](https://bugs.4d.fr/fixedbugslist?version=20.3) - [4D 20.4](https://bugs.4d.fr/fixedbugslist?version=20.4).
+- 修正されたバグリスト: [4D 20](https://bugs.4d.fr/fixedbugslist?version=20) - [4D 20.1](https://bugs.4d.fr/fixedbugslist?version=20.1) - [4D 20.2](https://bugs.4d.fr/fixedbugslist?version=20.2) - [4D 20.3](https://bugs.4d.fr/fixedbugslist?version=20.3) - [4D 20.4](https://bugs.4d.fr/fixedbugslist?version=20.4).<br />
+  (日本語版はこちら: [4D 20](https://4d-jp.github.io//2023/191/release-note-version-20/) - [4D 20.1](https://4d-jp.github.io/2023/191/release-note-version-20/) - [4D 20.2](https://4d-jp.github.io/2023/292/release-note-version-20/) - [4D 20.3](https://4d-jp.github.io/2024/35/release-note-version-20/) - [4D 20.4](https://4d-jp.github.io/2024/158/release-note-version-20/))
 
 #### 動作の変更
 
@@ -383,7 +384,7 @@ ALERT($param1+" "+$param2)
 
 | ライブラリ     | 現在のバージョン                                  | 更新された 4D バージョン | 説明                                                                    |
 | --------- | ----------------------------------------- | -------------- | --------------------------------------------------------------------- |
-| BoringSSL | 0aa300b9ba9d66b914793ad18c5b469163e58905  | **20 R6**      | Used for QUIC                                                         |
+| BoringSSL | 0aa300b9ba9d66b914793ad18c5b469163e58905  | **20 R6**      | QUIC に使用                                                              |
 | CEF       | 121                                       | 20 R5          | Chromium 6167                                                         |
 | Hunspell  | 1.7.2     | 20             | 4D フォームと 4D Write Pro でスペルチェックに使用されます。                                |
 | ICU       | 73.2                      | 20             | このアップグレードにより、英数字とテキスト、オブジェクトのインデックスが自動的に再構築されます。                      |
