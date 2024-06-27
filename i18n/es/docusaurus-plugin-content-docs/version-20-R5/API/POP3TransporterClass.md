@@ -246,10 +246,10 @@ El objeto `boxInfo` devuelto contiene las siguientes propiedades:
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones                    |
-| ----------- | --------------------------------- |
-| 20          | Support of *headerOnly* parameter |
-| 18 R2       | Añadidos                          |
+| Lanzamiento | Modificaciones                     |
+| ----------- | ---------------------------------- |
+| 20          | Soporte del parámetro \*headerOnly |
+| 18 R2       | Añadidos                           |
 
 </details>
 
