@@ -69,7 +69,7 @@ Character code("A")=Character code("a")
 // Character code("a") は 97
 ```
 
-- When strings are compared, diacritical characters are compared using the system character comparison table of your computer. たとえば、日本語においては以下の式は `true` を返します:
+- 文字列の比較にあたっては、アクセント等の発音記号付きの文字は、お使いのコンピューターのシステム文字比較表を使って比較されます。 たとえば、日本語においては以下の式は `true` を返します:
 
 ```4d
      "あ"="ア"
