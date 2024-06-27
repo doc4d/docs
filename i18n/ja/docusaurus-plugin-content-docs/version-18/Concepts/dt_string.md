@@ -69,7 +69,7 @@ Character code("A")=Character code("a")
 // Character code("a") は 97
 ```
 
-- 文字列が比較される場合、アクセント等の発音区別符号は無視されます。 たとえば、日本語においては以下の式は `true` を返します:
+- When strings are compared, diacritical characters are compared using the system character comparison table of your computer. たとえば、日本語においては以下の式は `true` を返します:
 
 ```4d
      "あ"="ア"
