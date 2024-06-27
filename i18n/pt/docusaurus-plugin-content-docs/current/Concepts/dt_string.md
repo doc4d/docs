@@ -67,7 +67,7 @@ As seguintes sequências de escape podem ser utilizadas em strings de caracteres
 Character code("A")=Character code("a") // porque 65 não é igual a 97
 ```
 
-- Quando as cadeias de caracteres são comparadas, os caracteres diacríticos são tidos em conta. Por exemplo, as expressões a seguir retornam `TRUE`:
+- When strings are compared, diacritical characters are compared using the system character comparison table of your computer. Por exemplo, as expressões a seguir retornam `TRUE`:
 
 ```4d
      "n"="ñ"
@@ -127,11 +127,11 @@ A seguinte expressão será avaliada correctamente:
 (Character code($vsValue[[Length($vsValue)]])#64)  
 ```
 
-**Nota:** una opción 4D del modo Diseño permite definir cómo se interpreta el carácter @ cuando se incluye en una cadena de caracteres.
+**Nota:** Uma opção 4D no ambiente de Design permite que você defina como o caractere @ é interpretado quando ele está incluído em uma cadeia de caracteres.
 
 ### Palavras-chave
 
-Ao contrário de outras comparações de cadeias, a pesquisa por palavras-chave procura "palavras" em "textos": as palavras são consideradas individualmente e como um todo. El operador **%** siempre devuelve `False` si la consulta se refiere a varias palabras o sólo a una parte de ellas (por ejemplo, una sílaba). As "palavras" são cadeias de caracteres rodeadas por "separadores", que são espaços e caracteres de pontuação e traços. Um apóstrofo, como em "Today's", é normalmente considerado como parte da palavra, mas será ignorado em certos casos (ver as regras abaixo). Os números podem ser pesquisados porque são avaliados como um todo (incluindo símbolos decimais). Outros símbolos (moeda, temperatura, etc.) serão ignorados.
+Ao contrário de outras comparações de cadeias, a pesquisa por palavras-chave procura "palavras" em "textos": as palavras são consideradas individualmente e como um todo. O operador **%** sempre retorna `False` se a consulta diz respeito a várias palavras ou apenas parte de uma palavra (por exemplo, uma sílaba). As "palavras" são cadeias de caracteres rodeadas por "separadores", que são espaços e caracteres de pontuação e traços. Um apóstrofo, como em "Today's", é normalmente considerado como parte da palavra, mas será ignorado em certos casos (ver as regras abaixo). Os números podem ser pesquisados porque são avaliados como um todo (incluindo símbolos decimais). Outros símbolos (moeda, temperatura, etc.) serão ignorados.
 
 ```4d
      "Alpha Bravo Charlie"%"Bravo"// Retorna True
@@ -143,7 +143,7 @@ Ao contrário de outras comparações de cadeias, a pesquisa por palavras-chave 
 
 > **Notas:**
 >
-> - 4D utiliza la librería ICU para comparar cadenas (utilizando los operadores `<>=#`) y detectar palabras claves. For more information about the rules implemented, please refer to the following address: http://www.unicode.org/reports/tr29/#Word_Boundaries.
+> - 4D usa a biblioteca ICU para comparar strings (usando operadores `<>=#`) e detectar palavras-chave. Para mais informações sobre as regras implementadas, consulte o seguinte endereço: http://www.unicode.org/reports/tr29/#Word_Boundaries.
 > - Na versão japonesa, em vez de ICU, 4D usa Mecab por defeito para detectar palavras-chave.
 
 ## Símbolos de referência de caracteres
@@ -163,19 +163,19 @@ End if
 Caso contrário, se os símbolos de referência de caracteres aparecerem numa expressão, devolvem o carácter (a que se referem) como uma cadeia de 1 carácter. Por exemplo:
 
 ```4d
-//The following example tests if the last character of vtText is an At sign "@"
- If(vtText#"")
-    If(Character code(Substring(vtText;Length(vtText);1))=At sign)
+//O exemplo a seguir testa se o último caractere de vtText é um símbolo de arroba "@"
+ Se(vtText#"")
+    Se(Código de caractere(Subcadeia(vtText;Comprimento(vtText);1))=Símbolo de arroba)
   //...
-    End if
- End if
+    Fim se
+ Fim se
  
-  //Using the character reference syntax, you would write in a simpler manner:
- If(vtText#"")
-    If(Character code(vtText[[Length(vtText)]])=At sign)
+  //Usando a sintaxe de referência de caractere, você poderia escrever de forma mais simples:
+ Se(vtText#"")
+    Se(Código de caractere(vtText[[Comprimento(vtText)]])=Símbolo de arroba)
   // ...
-    End if
- End if
+    Fim se
+ Fim se
 ```
 
 ### Nota avançada sobre a referência de carácter inválido
@@ -187,7 +187,7 @@ Quando utiliza os símbolos de referência de caracteres, deve endereçar os car
 - Se não o fizer, no modo compilado, causa um erro com a opção Range Checking On. Por exemplo, executando o seguinte código:
 
 ```
-//Very bad and nasty thing to do, boo!
+//Coisa muito ruim e desagradável de se fazer, boo!
  vsAnyText:=""
  vsAnyText[[1]]:="A"
 ```
