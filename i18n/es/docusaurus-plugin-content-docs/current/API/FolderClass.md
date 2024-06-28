@@ -82,7 +82,7 @@ The `Folder` command <!-- REF #_command_.Folder.Summary -->creates and returns a
 
 **Folder ( path { ; pathType } { ; \* } )**
 
-In the *path* parameter, pass a folder path string. Puede utilizar una cadena personalizada o un filesystem (por ejemplo, "/DATA").
+En el parámetro *path*, pase una ruta de carpeta. Puede utilizar una cadena personalizada o un filesystem (por ejemplo, "/DATA").
 
 > Only absolute pathnames are supported with the `Folder` command.
 
@@ -170,7 +170,7 @@ Si es necesario, la función crea la jerarquía de carpetas como se describe en 
 
 **Valor devuelto**
 
-- **True** if the folder is created successfully;
+- **True** si la carpeta se crea con éxito;
 - **False** if a folder with the same name already exists or if an error occured.
 
 #### Ejemplo 1
