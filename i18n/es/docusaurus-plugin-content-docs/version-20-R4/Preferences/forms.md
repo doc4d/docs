@@ -1,7 +1,6 @@
----
-id: forms
-title: Página Formularios
----
+- - -
+id: forms title: Página Formularios
+- - -
 
 
 Esta página le permite establecer el funcionamiento y la visualización por defecto del editor de formularios 4D.
