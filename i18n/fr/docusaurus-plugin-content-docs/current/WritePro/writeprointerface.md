@@ -63,7 +63,7 @@ These three types of files contribute to the configuration of the Table Wizard, 
 
 #### Template files
 
-The template file allows you to define the following:
+Le fichier de modèle vous permet de définir les éléments suivants :
 
 - the formula that returns an entity selection used as the table's data source,
 - the break formulas (if any break row can be inserted)
