@@ -222,25 +222,21 @@ https://www.myWebSite.com/$lib/renderer/?w=welcome
 
 ## 強制ログイン
 
-Qodly Studio for 4D で ["強制ログイン" モード](../REST/authUsers.md#強制ログインモード) を使用して、4Dクライアントライセンスを必要とする Webセッションが開かれる数を制御できます。 いつでもユーザーを [ログアウト](#ログアウト)して、消費ライセンス数を減らすこともできます。
+With Qodly Studio for 4D, the ["force login" mode](../REST/authUsers.md#force-login-mode) allows you to control the number of opened web sessions that require 4D Client licenses. いつでもユーザーを [ログアウト](#ログアウト)して、消費ライセンス数を減らすこともできます。
 
-### 強制ログインモードの設定
+### 設定
 
-4Dアプリケーションの ["強制ログイン" モード](../REST/authUsers.md#強制ログインモード) を [Roles and Privileges ページ](https://developer.qodly.com/docs/studio/roles/rolesPrivilegesOverview/) で設定することができます。設定は **Force login** オプションを使用しておこないます:
+Make sure the ["force login" mode](../REST/authUsers.md#force-login-mode) is enabled for your 4D application in the [Roles and Privileges page](https://developer.qodly.com/docs/studio/roles/rolesPrivilegesOverview/), using the **Force login** option:
 
 ![alt-text](../assets/en/WebServer/forcelogin.png)
 
-:::note
-
 このオプションは、[**roles.json** ファイル](../ORDA/privileges.md#rolesjson-ファイル) で直接設定することもできます。
 
-:::
+You just need then to implemented the [`authentify()`](../REST/authUsers.md#function-authentify) function in the datastore class and call it from the Qodly form. A licence will  consumed only when the user is actually logged.
 
-"強制ログイン" モードが **無効** になっている場合 (デフォルトモード)、認証用の Qodlyフォームのレンダリングを含むすべての RESTリクエストは、サーバー上で Webセッションを作成し、認証の結果に関係なく 4D クライアントライセンスを消費します。 "強制ログイン" モードが **有効** になっている場合、ライセンスを消費せずに認証用の簡単な Qodlyフォームを表示することができます。 この Qodlyフォームから、データストアクラスに実装した [`authentify()`](../REST/authUsers.md#function-authentify) 関数を呼び出すだけです。 この場合、ユーザーが実際にログインした場合にのみライセンスが消費されます。
+:::note 互換性
 
-:::info
-
-詳細については、[このブログ記事](https://blog.4d.com/ja/improved-4d-client-licenses-usage-with-qodly-studio-for-4d) を参照ください。
+When the legacy login mode ([deprecated as of 4D 20 R6](https://blog.4d.com/force-login-now-is-the-default-mode-for-all-rest-authentications)) is enabled, any REST request, including the rendering of an authentication Qodly form, creates a web session on the server and gets a 4D Client license, whatever the actual result of the authentication. 詳細については、[このブログ記事](https://blog.4d.com/ja/improved-4d-client-licenses-usage-with-qodly-studio-for-4d) を参照ください。
 
 :::
 
