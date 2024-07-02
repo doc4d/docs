@@ -17,9 +17,9 @@ HTTPエラーステータスコードの完全な詳細については、[HTTP�
 
 - カスタム HTMLページをアプリケーションの WebFolder フォルダーの第1レベルに置きます。
 
-- name the custom pages "\{statusCode\}.html" (for example, "404.html").
+- カスタムページを "\{statusCode\}.html" (例: "404.html") という名前にします。
 
-一つのステータスコードにつき、一つのエラーページを定義することができるほか、"{number}xx.html" と名前をつけることで複数のエラーに汎用的なエラーページを定義することもできます。 たとえば、クライアントエラー全般に対するページとして、"4xx.html" というファイルを作成できます。 The 4D Web Server will first look for a \{statusCode\}.html page then, if it does not exist, a generic page.
+一つのステータスコードにつき、一つのエラーページを定義することができるほか、"{number}xx.html" と名前をつけることで複数のエラーに汎用的なエラーページを定義することもできます。 たとえば、クライアントエラー全般に対するページとして、"4xx.html" というファイルを作成できます。 4D Web Server は最初に \{statusCode\}.html のページを探し、それが存在しない場合には汎用的なページを探します。
 
 たとえば、HTTPレスポンスがステータスコード 404 を返す場合:
 
