@@ -839,7 +839,7 @@ shared Function Bar($value : Integer)
 
 シングルトンを引数付きでインスタンス化する必要がある場合には、[`new()`](../API/ClassClass.md#new) 関数を呼び出すこともできます。 この場合、アプリケーションの起動時に実行されるコードでシングルトンをインスタンス化することが推奨されます。
 
-シングルトンインスタンスのスコープは、カレントプロセス、あるいはすべてのプロセスです。 A singleton has a unique value for the process in which it is instantiated, while a _shared_ singleton has a unique value for all processes of the application. アプリケーションやプロセス内のどこからでも利用可能な値を定義するのにシングルトンは便利です。
+シングルトンインスタンスのスコープは、カレントプロセス、あるいはすべてのプロセスです。 シングルトンは、それがインスタンス化されたプロセス内で一意の値を持ち、_共有_ シングルトンは、そのアプリケーションのすべてのプロセスで一意の値を持ちます。 アプリケーションやプロセス内のどこからでも利用可能な値を定義するのにシングルトンは便利です。
 
 インスタンス化されると、シングルトンクラス (およびそのシングルトン) は、アプリケーション内に参照が存在する限り存在し続けます。
 
@@ -851,9 +851,9 @@ shared Function Bar($value : Integer)
 
 :::
 
-### Creating a singleton
+### シングルトンの作成
 
-To create a singleton class, add the `singleton` keyword before [`Class Constructor`](#class-constructor). 例:
+シングルトンクラスを作成するには、[`Class Constructor`](#class-constructor) の前に `singleton` キーワードを追加します。 例:
 
 ```4d
 // クラス: ProcessTag
@@ -861,7 +861,7 @@ singleton Class Constructor()
  This.tag:=Random
 ```
 
-To use the singleton:
+シングルトンを使うには:
 
 ```4d
 // プロセス内で
@@ -882,9 +882,9 @@ var $myOtherSingleton := cs.ProcessTag.me
     // $myOtherSingleton.tag = 14856
 ```
 
-### Creating a shared singleton
+### 共有シングルトンの作成
 
-To create a singleton shared by all processes of the application, add the `shared singleton` keywords before the [Class Constructor](#class-constructor). 例:
+アプリケーションの全プロセスで共有されるシングルトンを作成するには、[Class Constructor](#class-constructor) の前に `shared singleton` キーワードを追加します。 例:
 
 ```4d
 // クラス: VehicleFactory
