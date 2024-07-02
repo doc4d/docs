@@ -82,7 +82,7 @@ El comando `Folder` <!-- REF #_command_.Folder.Summary -->crea y devuelve un nue
 
 **Folder ( path { ; pathType } { ; \* } )**
 
-En el parámetro *path*, pase una ruta de carpeta. Puede utilizar una cadena personalizada o un filesystem (por ejemplo, "/DATA").
+En el parámetro *path*, pase una ruta de carpeta. You can use a custom string or a [filesystem](../Concepts/paths.md#filesystem-pathnames) (e.g., "/DATA").
 
 > Sólo se soportan los nombres de ruta absolutos con el comando `Folder`.
 
@@ -130,7 +130,7 @@ Si el comando se llama desde un componente, pase el parámetro opcional \* para 
 
 <!-- REF #4D.Folder.new().Syntax -->
 
-**4D.Folder.new** ( *path* : Text { ; *pathType* : Integer } ) : 4D.Folder<br/>**4D.Folder.new** ( *folderConstant* : Integer ) : 4D.Folder<!-- END REF -->
+**4D.Folder.new** ( *path* : Text { ; *pathType* : Integer }{ ; \* } ) : 4D.Folder<br/>**4D.Folder.new** ( *folderConstant* : Integer { ; \* } ) : 4D.Folder<!-- END REF -->
 
 #### Descripción
 
