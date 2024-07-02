@@ -24,8 +24,8 @@ A 4D project running in interpreted mode can use either interpreted or compiled 
 
 This page describes how to work with components in the **4D** and **4D Server** environments. In other environments, components are managed differently:
 
-- in [4D remote](../Desktop/clientServer.md), components are loaded by the server and sent to the remote application.
-- in [merged applications], components are [included at the build step](../Desktop/building.md#plugins--components-page).
+- in [4D in remote mode](../Desktop/clientServer.md), components are loaded by the server and sent to the remote application.
+- in merged applications, components are [included at the build step](../Desktop/building.md#plugins--components-page).
 
 :::
 
