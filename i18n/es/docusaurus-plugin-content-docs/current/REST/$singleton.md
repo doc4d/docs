@@ -13,7 +13,7 @@ Singleton functions are called in POST requests with the `$singleton` command an
 
 with data in the body of the POST request: ["truck"]
 
-In 4D language, this call is equivalent to:
+En el lenguaje 4D, esta llamada equivale a:
 
 ```4d
 $singleton:=cs.VehicleFactory.me.buildVehicle("truck")
@@ -69,7 +69,7 @@ A continuación, puede ejecutar esta petición:
 
 **POST** `/rest/$singleton/mySingleton/sayHello`
 
-Body of the request: ["John"]
+Cuerpo de la petición: ["John"]
 
 #### Respuesta
 
