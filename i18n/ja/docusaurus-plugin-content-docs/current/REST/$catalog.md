@@ -63,7 +63,7 @@ Returns [shared singletons](#singletons) (if any) and information about all of y
 
 `$catalog/$all` を呼び出すと、プロジェクトのデータストア内の各データクラスについて属性の情報を取得します。
 
-For more information about what is returned for each dataclass and its attributes, use [`$catalog/\{dataClass\}`](#catalogdataClass).
+各データクラスと属性について取得される情報についての詳細は [`$catalog/\{dataClass\}`](#catalogdataClass) を参照ください。
 
 ### 例題
 
@@ -180,7 +180,7 @@ For more information about what is returned for each dataclass and its attribute
 
 ### 説明
 
-Calling `$catalog/\{dataClass\}` for a specific dataclass will return the following information about the dataclass and the attributes it contains. プロジェクトのデータストア内のすべてのデータクラスに関して同様の情報を得るには [`$catalog/$all`](#catalogall) を使います。
+`$catalog/\{dataClass\}` を呼び出すと、指定したデータクラスとその属性について詳細な情報が返されます。 プロジェクトのデータストア内のすべてのデータクラスに関して同様の情報を得るには [`$catalog/$all`](#catalogall) を使います。
 
 返される情報は次の通りです:
 
@@ -189,7 +189,7 @@ Calling `$catalog/\{dataClass\}` for a specific dataclass will return the follow
 - メソッド (あれば)
 - プライマリーキー
 
-### DataClass
+### データクラス
 
 公開されているデータクラスについて、次のプロパティが返されます:
 
@@ -326,11 +326,11 @@ key オブジェクトには、データクラスの **プライマリーキー*
 }
 ```
 
-## singletons
+## シングルトン
 
-If you have defined [interprocess (shared) singletons](../Concepts/classes.md#singleton-classes) containing at least one [exposed function](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions), a `singletons` section is added to the returned json for both the `/$catalog` and `/$catalog/$all` syntaxes. It contains the collection of singleton classes as objects with their **name** and **methods** (i.e., exposed functions).
+1つ以上の [公開関数](../ORDA/ordaClasses.md#公開vs非公開関数) を含む [インタープロセス (共有) シングルトン](../Concepts/classes.md#シングルトンクラス) を定義している場合、`/$catalog` と `/$catalog/$all` の両方の構文で、返される json に `singletons` セクションが追加されます。 コレクションの形でまとめられたシングルトンクラスは、それぞれ **name** (クラス名) と **method** (公開関数名) を持つオブジェクト要素として格納されます。
 
-Singleton functions can be called by REST requests using the [`$singleton` command]($singleton.md).
+シングルトン関数は、[`$singleton` コマンド]($singleton.md) を使用した RESTリクエストで呼び出すことができます。
 
 ### 例題
 
