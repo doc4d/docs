@@ -26,9 +26,9 @@ title: $method
 
 ### 説明
 
-`$method=delete` を使ってエンティティ、またはエンティティセレクションを削除します。 You can define the collection of entities by using, for example, [`$filter`]($filter.md) or specifying one directly using [`\{dataClass\}({key})`](%7BdataClass%7D.html#dataclasskey) *(e.g.*, /Employee(22)).
+`$method=delete` を使ってエンティティ、またはエンティティセレクションを削除します。 たとえば、[`$filter`]($filter.md) を使って定義したエンティティセレクションや、[`\{dataClass\}(\{key\})`](%7BdataClass%7D.html#dataclasskey) *(例*: /Employee(22)) のように直接特定したエンティティが対象です。
 
-You can also delete the entities in an entity set, by calling [`$entityset/\{entitySetID\}`]($entityset.md#entitysetentitysetid).
+[`$entityset/\{entitySetID\}`]($entityset.md#entitysetentitysetid) のようにエンティティセットを呼び出して、そこに含まれるエンティティを削除することもできます。
 
 ### 例題
 
@@ -60,7 +60,7 @@ RESTリクエストで定義されたエンティティのコレクションに�
 
 ### 説明
 
-RESTでエンティティのコレクションを作成した場合、これをエンティティセットとして 4D Server のキャッシュに保存することができます。 The entity set will have a reference number that you can pass to `$entityset/\{entitySetID\}` to access it. デフォルトで、エンティティセットは 2時間有効です。$timeout に値 (秒単位) を渡すことで、有効時間を変更できます。
+RESTでエンティティのコレクションを作成した場合、これをエンティティセットとして 4D Server のキャッシュに保存することができます。 エンティティセットには参照番号が付与されます。 これを `$entityset/\{entitySetID\}` に渡すと、当該エンティティセットにアクセスできます。 デフォルトで、エンティティセットは 2時間有効です。$timeout に値 (秒単位) を渡すことで、有効時間を変更できます。
 
 エンティティセットを作成する際に、`$filter` や `$orderby` と同時に`$savedfilter` や `$savedorderby` も使用していた場合には、4D Server のキャッシュからエンティティセットが削除されていても、同じ参照IDで再作成できます。
 
