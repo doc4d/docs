@@ -160,7 +160,7 @@ Designa el grosor de una línea.
 
 ## Array colores de fondo
 
-`Array type list boxes`
+`List boxes de tipo array`
 
 El nombre de un array para aplicar un color de fondo personalizado a cada línea o columna del list box.
 
