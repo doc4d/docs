@@ -24,8 +24,8 @@ A 4D project running in interpreted mode can use either interpreted or compiled 
 
 This page describes how to work with components in the **4D** and **4D Server** environments. In other environments, components are managed differently:
 
-- in [4D remote](../Desktop/clientServer.md), components are loaded by the server and sent to the remote application.
-- in [merged applications], components are [included at the build step](../Desktop/building.md#plugins--components-page).
+- in [4D in remote mode](../Desktop/clientServer.md), components are loaded by the server and sent to the remote application.
+- in merged applications, components are [included at the build step](../Desktop/building.md#plugins--components-page).
 
 :::
 
@@ -54,14 +54,14 @@ The **dependencies.json** file references all components required in your 4D pro
 	/MyProjectRoot/Project/Sources/dependencies.json
 ```
 
-It can contain:
+Puede contener:
 
 - names of components [stored locally](#declaring-local-components) (default path or path defined in an **environment4d.json** file),
 - names of components [stored on GitHub repositories](#declaring-components-stored-on-github) (their path can be defined in this file or in an **environment4d.json** file).
 
 #### environment4d.json
 
-The **environment4d.json** file is optional. It allows you to define **custom paths** for some or all components declared in the **dependencies.json** file. This file can be stored in your project package folder or in one of its parent folders, at any level (up to the root).
+El archivo **environment4d.json** es opcional. It allows you to define **custom paths** for some or all components declared in the **dependencies.json** file. This file can be stored in your project package folder or in one of its parent folders, at any level (up to the root).
 
 The main benefits of this architecture are the following:
 
@@ -140,7 +140,7 @@ If a component path declared in the **environment4d.json** file is not found whe
 
 :::
 
-### Declaring components stored on GitHub
+### Declarar componentes almacenados en GitHub
 
 4D components available as GitHub releases can be referenced and automatically loaded in your 4D projects.
 
@@ -193,7 +193,7 @@ You declare a component stored on GitHub in the [**dependencies.json** file](#de
 
 When you create a release in GitHub, you specify a **tag** and a **version**.
 
-- **Tags** are texts that uniquely reference a release. In the [**dependencies.json** file](#dependencyjson) and [**environment4d.json**](#environment4djson) files, you can indicate the release tag you want to use in your project. For example :
+- **Tags** are texts that uniquely reference a release. In the [**dependencies.json** file](#dependencyjson) and [**environment4d.json**](#environment4djson) files, you can indicate the release tag you want to use in your project. Por ejemplo:
 
 ```json
 {
@@ -221,10 +221,10 @@ When you create a release in GitHub, you specify a **tag** and a **version**.
 
 The version is used to define which versions can be used. A [standard semantic version](https://regex101.com/r/Ly7O1x/3/) is used. A range is defined by two semantic versions, a min and a max, with operators '\< | > | >= | <= | ='. The `*` can be used as a placeholder for all versions. ~ and ^ prefixes define versions starting at a number, and up to respectively the next major and minor version.
 
-Here are a few examples:
+Estos son algunos ejemplos:
 
 - "latest": the version having the “latest” badge in GitHub releases.
-- "\*": the latest version released.
+- "\*": la última versión lanzada.
 - "1.\*": all version of major version 1.
 - "1.2.\*": all patches of minor version 1.2.
 - "^1.2.3" or ">=1.2.3": the latest version 1, starting with the 1.2.3 version.
