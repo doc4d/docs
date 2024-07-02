@@ -415,7 +415,7 @@ Además de [áreas de texto estáticas](text.md), los objetos de texto de las [�
 
 ## Array colores de fuente
 
-`Array type list boxes`
+`List boxes de tipo array`
 
 Permite definir un color de fuente personalizado para cada línea del list box o celda de la columna.
 
@@ -435,7 +435,7 @@ Se debe utilizar el nombre de un array Entero largo. Cada elemento de este array
 
 ## Array de estilos
 
-`Array type list boxes`
+`List boxes de tipo array`
 
 Permite definir un estilo de fuente personalizado para cada línea del list box o cada celda de la columna.
 
