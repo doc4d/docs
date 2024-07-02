@@ -278,9 +278,9 @@ RESTサーバーを開始/停止します。 [RESTサーバー設定](../REST/co
 
 ### アクセス
 
-:::information Deprecated
+:::information 非推奨
 
-**This section is deprecated** as of 4D 20 R6. If the current project configuration is obsolete and needs to be upgraded, this section, including the **Activate REST authentication through ds.authentify() function** button (see below), is displayed. If your project is already compatible with the [Force login](../REST/configuration.md#configuring-rest-access) mode, the section is missing and you can ignore this paragraph.
+4D 20 R6 以降、**このセクションは非推奨** となっています。 If the current project configuration is obsolete and needs to be upgraded, this section, including the **Activate REST authentication through ds.authentify() function** button (see below), is displayed. If your project is already compatible with the [Force login](../REST/configuration.md#configuring-rest-access) mode, the section is missing and you can ignore this paragraph.
 
 :::
 
