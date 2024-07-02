@@ -14,21 +14,23 @@ $ok:=Folder(fk documents folder).file("Archives/John4D.prefs").create()
 
 ## filsystemパス名
 
-4D は、macOS および Windows上で様々な場所にある特定の 4Dフォルダーを指定するいくつかの "filesystem" パス名を受け取ります。 filesystemパス名の使用は、主に二つの理由から有用です:
+4D は、macOS および Windows上で様々な場所にある特定の 4Dフォルダーを指定するいくつかの "filesystem" パス名を受け取ります。 A filesystem path is evaluated with regards to the context and is returned as an absolute path.
+
+filesystemパス名の使用は、主に二つの理由から有用です:
 
 - 独立性: OS の違いやパスの心配なく、ソリューションを一つの場所から他の場所へと移せるようになります。
 - 安全性: コードにより、ディスク上のファイルシステムのルートより上の階層にある要素へアクセスすることはできません (サンドボックス化)。
 
 以下の filesystemパス名がサポートされています:
 
-| filesystem   | 指定先                                   |
-| ------------ | ------------------------------------- |
-| "/DATA"      | カレントデータフォルダー                          |
-| "/LOGS"      | Logs フォルダー                            |
-| "/PACKAGE"   | プロジェクトのルートフォルダー (拡張子 4dbase の有無に関わらず) |
-| "/PROJECT"   | Project フォルダー                         |
-| "/RESOURCES" | カレントプロジェクトの Resources フォルダー           |
-| "/SOURCES"   | カレントプロジェクトの Sources フォルダー             |
+| filesystem   | 指定先                                   | 例題                                                   |
+| ------------ | ------------------------------------- | ---------------------------------------------------- |
+| "/DATA"      | カレントデータフォルダー                          | "C:\\MyApps\\Students\\Data\\"               |
+| "/LOGS"      | Logs フォルダー                            | "C:\\MyApps\\Students\\Data\\Logs\\"       |
+| "/PACKAGE"   | プロジェクトのルートフォルダー (拡張子 4dbase の有無に関わらず) | "C:\\MyApps\\Students\\"                       |
+| "/PROJECT"   | Project フォルダー                         | "C:\\MyApps\\Students\\Project\\"            |
+| "/RESOURCES" | カレントプロジェクトの Resources フォルダー           | "C:\\MyApps\\Resources\\"                      |
+| "/SOURCES"   | カレントプロジェクトの Sources フォルダー             | "C:\\MyApps\\Students\\Project\\Sources\\" |
 
 ## POSIX シンタックス
 
@@ -43,6 +45,8 @@ POSIX シンタックスはすべてのプラットフォームでサポート�
 POSIX シンタックスでは一般的に、[`File`](../API/FileClass.md#file) および [`Folder`](../API/FolderClass.md#folder) コマンドに `filesystem` パス名を使用します。例:
 
 ```4d
+var $pathFile : 4D.File
+var $pathFolder : 4D.Folder
 $pathFile:=File("/DATA/Archives/file 2.txt")
 $pathFolder:=Folder("/RESOURCES/Pictures")
 ```
@@ -112,9 +116,11 @@ $okFile:=File("/DATA/Prefs/tempo.txt").create() // データフォルダー内�
 [`folder.file()`](../API/FolderClass.md#file) および [`folder.folder()`](../API/FolderClass.md#folder-1) などの Folder オブジェクトの関数は、相対 POSIX パス名を想定しています。 例:
 
 ```4d
-  // ユーザードキュメントフォルダー内にある "Picture" フォルダーを参照するには
+var $userImages : 4D.Folder
+var $ok : Boolean
+  //to reference a "Picture" folder within the user documents folder
 $userImages:=Folder(fk documents folder).folder("Pictures")
-  // デスクトップにフォルダーを作成するには
+  //to create a folder on the desktop
 $ok:=Folder(fk desktop folder).folder("myFolder").create()
 ```
 
@@ -126,15 +132,13 @@ $ok:=Folder(fk desktop folder).folder("myFolder").create()
 File および Folder のコマンドや関数により、以下の例題のように様々な方法でファイルやフォルダーを管理することが可能になります:
 
 ```4d
-$f:=Folder(fk desktop folder).folder("archive/jan2019")
+var $fold : 4D.Folder
+var $file : 4D.File
 
-$f2:=Folder("/DATA/archive/jan2019").file("total.txt")
-
-$f3:=Folder("/DATA/archive/jan2019")
-
-$f4:=File("/DATA/info.txt")
-
-$f5:=File("c:\\archives\\local\\jan2019.txt";fk platform path)
-
-$f6:=File(fk backup log file)
+$fold:=Folder(fk desktop folder).folder("archive/jan2019")
+$fold:=Folder("/DATA/archive/jan2019")
+$file:=Folder("/DATA/archive/jan2019").file("total.txt")
+$file:=File("/DATA/info.txt")
+$file:=File("c:\\archives\\local\\jan2019.txt";fk platform path)
+$file:=File(fk backup log file)
 ```
