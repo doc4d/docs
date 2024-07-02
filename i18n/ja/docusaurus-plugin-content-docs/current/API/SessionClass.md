@@ -128,7 +128,7 @@ IP:port/4DACTION/action_Session
 
 ### 参照
 
-[`Session storage by ID`](https://doc.4d.com/4dv20R6/help/command/en/page1839.html)
+[`Session storage by ID`](https://doc.4d.com/4dv20R6/help/command/ja/page1839.html)
 
 <!-- REF SessionClass.clearPrivileges().Desc -->
 
@@ -383,7 +383,7 @@ You can use this property to get the [`.storage`](#storage) object of a session 
 | リリース | 内容 |
 | ---- | -- |
 
-|18 R6|Added|
+|18 R6|追加|
 
 </details>
 
@@ -626,7 +626,7 @@ End if
 
 :::tip
 
-You can get the `.storage` property of a session using the [`Session storage by ID`](https://doc.4d.com/4dv20R6/help/command/en/page1839.html) command.
+セッションの `.storage` プロパティは [`Session storage by ID`](https://doc.4d.com/4dv20R6/help/command/ja/page1839.html) コマンドで取得できます。
 
 :::
 
