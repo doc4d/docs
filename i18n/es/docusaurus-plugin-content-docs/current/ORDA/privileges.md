@@ -106,11 +106,11 @@ exposed Function authenticate($identifier : Text; $password : Text)->$result : T
 
 El archivo `roles.json` describe todos los parámetros de seguridad del proyecto.
 
-### Default file
+### Archivo por defecto
 
 When you create a project, a default `roles.json` file is created at the following location: `<project folder>/Project/Sources/`. Ver la sección [Arquitectura](../Project/architecture.md#sources).
 
-The default file has the following contents:
+El archivo por defecto tiene el siguiente contenido:
 
 ```json
 
