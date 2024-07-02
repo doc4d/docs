@@ -327,7 +327,7 @@ $c:=$a+$b
 - **すべて削除**: 現在カスタムウォッチエリアに表示されている式をすべて削除します。
 - **標準式**: ウォッチエリアの式リストをコピーします。
 
-> This option is not available in remote debugging mode (see [Debugging from Remote Machines](debugging-remote.md).
+> このオプションはリモートデバッグモードでは利用できません ([リモートマシンからのデバッグ](debugging-remote.md) 参照)。
 
 - **すべて閉じる/すべて拡げる**: 階層リストの全レベルを縮小/展開します。
 - **型を表示**: リストの各項目のデータ型を (適切な場合に) 表示します。
