@@ -7,7 +7,7 @@ title: コンポーネント
 
 独自の 4Dコンポーネントを [開発](../Extensions/develop-components.md) し、[ビルド](../Desktop/building.md) することもできますし、4Dコミュニティによって共有されているパブリックコンポーネントを [GitHubで見つけて](https://github.com/search?q=4d-component\&type=Repositories) ダウンロードすることもできます。
 
-When developing in 4D, the component files can be transparently stored in your computer or on a Github repository.
+4D で開発する際、コンポーネントファイルはコンピューター上または Githubリポジトリ上に、透過的に保存することができます。
 
 ## インタープリターとコンパイル済みコンポーネント
 
