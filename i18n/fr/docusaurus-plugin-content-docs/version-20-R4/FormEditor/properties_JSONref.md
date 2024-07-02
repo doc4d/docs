@@ -1,5 +1,5 @@
 ---
-id: jsonReference<br/>
+id: jsonReference
 title: Form JSON property list
 ---
 
