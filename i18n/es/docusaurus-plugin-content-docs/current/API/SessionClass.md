@@ -384,7 +384,7 @@ You can use this property to get the [`.storage`](#storage) object of a session 
 | Lanzamiento | Modificaciones |
 | ----------- | -------------- |
 
-|18 R6|Added|
+|18 R6|Añadido|
 
 </details>
 
