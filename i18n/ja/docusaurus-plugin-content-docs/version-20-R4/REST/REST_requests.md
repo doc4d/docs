@@ -6,11 +6,11 @@ title: RESTリクエストについて
 
 RESTリクエストでは次の構文がサポートされています:
 
-| URI                              | リソース (入力)                                                                                          | /? or &\{filter\} (Output)                                                                          |
+| URI                              | リソース (入力)                                                                                          | /? または &\{filter\} (出力)                                                                             |
 | -------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | http://{servername}:{port}/rest/ | [\{dataClass\}](dataClass.md)                                                                    | [$filter]($filter.md), [$attributes]($attributes.md), [$skip]($skip.md), [$method=...]($method.md)... |
 |                                  | [\{dataClass\}](dataClass.md)/[$entityset/\{entitySetID\}]($entityset.md#entitysetentitysetid) | [$method=...]($method.md)                                                                             |
-|                                  | [\{dataClass\}({key})](dataClass.md#dataclasskey)                                                | [$attributes]($attributes.md)                                                                         |
+|                                  | [\{dataClass\}(\{key\})](dataClass.md#dataclasskey)                                            | [$attributes]($attributes.md)                                                                         |
 |                                  | [\{dataClass\}:\{attribute\}(value)](dataClass.md#dataclassattributevalue)                     |                                                                                                       |
 
 RESTリクエストには、URI とリソースが必ず含まれていなければなりませんが、返されるデータをフィルダーする出力パラメーターの使用は任意です。
