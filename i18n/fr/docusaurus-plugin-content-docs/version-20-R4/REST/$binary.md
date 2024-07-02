@@ -1,5 +1,5 @@
 ---
-id: binary<br/>
+id: binary
 title: $binary
 ---
 
