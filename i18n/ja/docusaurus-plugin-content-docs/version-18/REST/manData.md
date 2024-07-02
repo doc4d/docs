@@ -17,7 +17,7 @@ REST API を使って、4D内と同等のデータ操作をおこなうことが
 
 エンティティを追加・編集するには [`$method=update`]($method.md#methodupdate) を呼び出します。 1つ以上のエンティティを削除するには [`$method=delete`]($method.md#methoddelete) を使用します。
 
-Besides retrieving a single entity in a dataclass using [\{dataClass\}({key})](%7BdataClass%7D_%7Bkey%7D.html), you can also write a method in your DataClass class and call it to return an entity selection (or a collection) by using [\{dataClass\}/\{method\}](%7BdataClass%7D.html#dataclassmethod).
+[\{dataClass\}(\{key\})](%7BdataClass%7D.md#dataclasskey) でデータクラスのいちエンティティを取得する以外にも、DataClassクラスにメソッドを書いて [\{dataClass\}/\{method\}](%7BdataClass%7D.md#dataclassmethod) のように使い、エンティティセレクションやコレクションを返すようにすることができます。
 
 戻り値としてコレクションを返す前に、[`$orderby`]($orderby.md) を使って一つ以上の属性 (リレーション属性も可) を基準に並べ替えることもできます。
 
@@ -31,7 +31,7 @@ Besides retrieving a single entity in a dataclass using [\{dataClass\}({key})](%
 
 エンティティセットを作成するには、RESTリクエスト内で [`$method=entityset`]($method.md#methodentityset) を呼び出します。 エンティティセットがタイムアウトした場合やサーバーから削除されてしまった場合への安全対策として、[`$filter`]($filter.md) や [`$orderby`]($orderby.md) を呼び出す際に [`$savedfilter`]($savedfilter.md) および [`$savedorderby`]($savedorderby.md) を使用することで、以前と同じ ID で再取得することができます。
 
-To access the entity set, you must use `$entityset/\{entitySetID\}`, for example:
+エンティティセットにアクセスするには、`$entityset/\{entitySetID\}` を使います。 例:
 
 `/rest/People/$entityset/0AF4679A5C394746BFEB68D2162A19FF`
 
@@ -43,7 +43,7 @@ To access the entity set, you must use `$entityset/\{entitySetID\}`, for example
 
 4D Server のキャッシュからエンティティセットが消えていた場合、10分のデフォルトタイムアウトで再作成されます。 エンティティセットが消えていた場合、再作成されるエンティティセットの内容は更新されたものです (新しくエンティティが追加されていたり、存在していたエンティティが削除されていたりする場合がありえます)。
 
-Using [`$entityset/\{entitySetID\}?$logicOperator... &$otherCollection`]($entityset.md#entitysetentitysetidoperatorothercollection), you can combine two entity sets that you previously created. 両セットの内容を統合する (集合の和) ほか、共通のエンティティのみを返したり (集合の積) 、共通でないエンティティのみを返したり (集合の対称差) することができます。
+[`$entityset/\{entitySetID\}?$logicOperator... &$otherCollection`]($entityset.md#entitysetentitysetidoperatorothercollection) を使って、事前に作成した 2つのセンティティセットを統合できます。 両セットの内容を統合する (集合の和) ほか、共通のエンティティのみを返したり (集合の積) 、共通でないエンティティのみを返したり (集合の対称差) することができます。
 
 この場合m新規のエンティティセレクションが返されます。RESTリクエストの最後に [`$method=entityset`]($method.md#methodentityset) を追加することで新規のエンティティセットを作成することもできます。
 
@@ -92,7 +92,7 @@ $content:="[\"Toni\",\"Dickey\"]"
 $statusCode:=HTTP Request(HTTP POST method;"127.0.0.1:8044/rest/Employee/findPerson";$content;$response)
 ```
 
-Method calls are detailed in the [\{dataClass\}](%7BdataClass%7D.html#dataclassmethod-and-dataclasskeymethod) section.
+メソッドの呼び出しについての詳細は [\{dataClass\}](%7BdataClass%7D.html#dataclassmethod-と-dataclasskeymethod) を参照ください。
 
 ## 取得する属性の選択
 
@@ -249,6 +249,6 @@ RESTレスポンスにどの属性を含めて返してもらうかを指定す�
 
 ## 1件のエンティティの取得
 
-You can use the [`\{dataClass\}:\{attribute\}(value)`](%7BdataClass%7D.html#dataclassattributevalue) syntax when you want to retrieve only one entity. これは、データクラスの主キーに基づかないリレーション検索をしたい場合に便利です。 たとえば:
+エンティティを 1件のみ取得したい場合には [`\{dataClass\}:\{attribute\}(value)`](%7BdataClass%7D.html#dataclassattributevalue) シンタックスを利用できます。 これは、データクラスの主キーに基づかないリレーション検索をしたい場合に便利です。 たとえば:
 
  `GET  /rest/Company:companyCode("Acme001")`
