@@ -222,21 +222,21 @@ https://www.myWebSite.com/$lib/renderer/?w=welcome
 
 ## 強制ログイン
 
-With Qodly Studio for 4D, the ["force login" mode](../REST/authUsers.md#force-login-mode) allows you to control the number of opened web sessions that require 4D Client licenses. いつでもユーザーを [ログアウト](#ログアウト)して、消費ライセンス数を減らすこともできます。
+Qodly Studio for 4D で ["強制ログイン" モード](../REST/authUsers.md#強制ログインモード) を使用することで、4Dクライアントライセンスを必要とする Webセッションが開かれる数を制御できます。 いつでもユーザーを [ログアウト](#ログアウト)して、消費ライセンス数を減らすこともできます。
 
 ### 設定
 
-Make sure the ["force login" mode](../REST/authUsers.md#force-login-mode) is enabled for your 4D application in the [Roles and Privileges page](https://developer.qodly.com/docs/studio/roles/rolesPrivilegesOverview/), using the **Force login** option:
+[Roles and Privileges ページ](https://developer.qodly.com/docs/studio/roles/rolesPrivilegesOverview/) の **Force login** オプションを使って、4Dアプリケーションの ["強制ログイン" モード](../REST/authUsers.md#強制ログインモード) が有効化されていることを確認してください。
 
 ![alt-text](../assets/en/WebServer/forcelogin.png)
 
 このオプションは、[**roles.json** ファイル](../ORDA/privileges.md#rolesjson-ファイル) で直接設定することもできます。
 
-You just need then to implemented the [`authentify()`](../REST/authUsers.md#function-authentify) function in the datastore class and call it from the Qodly form. A licence will  consumed only when the user is actually logged.
+あとは、データストアクラスに実装した [`authentify()`](../REST/authUsers.md#function-authentify) 関数をこの Qodlyフォームから呼び出すだけです。 この場合、ユーザーが実際にログインした場合にのみライセンスが消費されます。
 
 :::note 互換性
 
-When the legacy login mode ([deprecated as of 4D 20 R6](https://blog.4d.com/force-login-now-is-the-default-mode-for-all-rest-authentications)) is enabled, any REST request, including the rendering of an authentication Qodly form, creates a web session on the server and gets a 4D Client license, whatever the actual result of the authentication. 詳細については、[このブログ記事](https://blog.4d.com/ja/improved-4d-client-licenses-usage-with-qodly-studio-for-4d) を参照ください。
+従来のログインモード ([4D 20 R6 で非推奨](https://blog.4d.com/ja/force-login-now-is-the-default-mode-for-all-rest-authentications)) が有効になっている場合、認証用の Qodlyフォームのレンダリングを含むすべての RESTリクエストは、サーバー上で Webセッションを作成し、認証の結果に関係なく 4D クライアントライセンスを消費します。 詳細については、[このブログ記事](https://blog.4d.com/ja/improved-4d-client-licenses-usage-with-qodly-studio-for-4d) を参照ください。
 
 :::
 
