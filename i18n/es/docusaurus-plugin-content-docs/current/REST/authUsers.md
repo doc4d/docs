@@ -22,7 +22,7 @@ The legacy login mode based upon the `On REST Authentication` database method is
 
 :::
 
-The user login sequence is the following:
+La secuencia de inicio de sesión del usuario es la siguiente:
 
 1. At the first REST call (for a webform call for example), a "guest" web user session is created. It has no privileges, no rights to execute requests other than [descriptive REST requests](#descriptive-rest-requests), no license consumption.\
    Descriptive REST requests are always processed by the server, even if no web user session using a license is opened. En este caso, son procesados a través de sesiones "invitado".
