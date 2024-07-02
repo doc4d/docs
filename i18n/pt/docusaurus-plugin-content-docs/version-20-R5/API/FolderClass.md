@@ -82,7 +82,7 @@ The `Folder` command <!-- REF #_command_.Folder.Summary -->creates and returns a
 
 **Folder ( path { ; pathType } { ; \* } )**
 
-In the *path* parameter, pass a folder path string. Pode utilizar uma string personalizada ou um sistema de arquivos (por exemplo, "/DATA").
+In the *path* parameter, pass a folder path string. You can use a custom string or a [filesystem](../Concepts/paths.md#filesystem-pathnames) (e.g., "/DATA").
 
 > Only absolute pathnames are supported with the `Folder` command.
 
@@ -130,7 +130,7 @@ If the command is called from a component, pass the optional *parameter to get t
 
 <!-- REF #4D.Folder.new().Syntax -->
 
-**4D.Folder.new** ( *path* : Text { ; *pathType* : Integer } ) : 4D.Folder<br/>**4D.Folder.new** ( *folderConstant* : Integer ) : 4D.Folder<!-- END REF -->
+**4D.Folder.new** ( *path* : Text { ; *pathType* : Integer }{ ; \* } ) : 4D.Folder<br/>**4D.Folder.new** ( *folderConstant* : Integer { ; \* } ) : 4D.Folder<!-- END REF -->
 
 #### Descrição
 
