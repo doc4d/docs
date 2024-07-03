@@ -156,7 +156,7 @@ To be able to directly reference and use a 4D component stored on GitHub, you ne
 
 - Compress the component files in ZIP format.
 - Name this archive with the same name as the GitHub repository.
-- Integrate the archive into a [GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) of the repository.
+- Integre el archivo en una [versión GitHub](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) del repositorio.
 
 These steps can easily be automated, with 4D code or using GitHub Actions, for example.
 
@@ -229,7 +229,7 @@ Estos son algunos ejemplos:
 - "1.2.\*": all patches of minor version 1.2.
 - "^1.2.3" or ">=1.2.3": the latest version 1, starting with the 1.2.3 version.
 - "~1.2.3" or ">1.2.3": the latest major version 1, starting with the version just after the 1.2.3.
-- "<=1.2.3": the latest version until the 1.2.3 one.
+- "<=1.2.3": la última versión hasta la 1.2.3.
 - "1.0.0 – 1.2.3" or ">=1.0.0 <=1.2.3": version between 1.0.0 and 1.2.3.
 - "`<1.2.3 || >=2`": version that is not between 1.2.3 and 2.0.0.
 
@@ -284,10 +284,10 @@ In an opened project, you can get information about dependencies and their curre
 
 Para mostrar el panel Dependencias:
 
-- with 4D, select the **Design/Project Dependencies** menu item (Development environment),<br/>
+- con 4D, seleccione el ítem de menú **Diseño/Dependencias del Proyecto** (entorno de desarrollo),<br/>
   ![dependency-menu](../assets/en/Project/dependency-menu.png)
 
-- with 4D Server, select the **Window/Project Dependencies** menu item.<br/>
+- con 4D Server, seleccione el ítem de menú **Ventana/Dependencias del Proyecto**.<br/>
   ![dependency-menu-server](../assets/en/Project/dependency-menu-server.png)
 
 A continuación se muestra el panel Dependencias. Dependencies are sorted by name in alphabetical order:
