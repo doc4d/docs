@@ -627,7 +627,7 @@ Esta propiedad es **sólo lectura** en sí misma pero devuelve un objeto de lect
 
 :::tip
 
-You can get the `.storage` property of a session using the [`Session storage by ID`](https://doc.4d.com/4dv20R6/help/command/en/page1839.html) command.
+Puede obtener la propiedad `.storage` de una sesión utilizando el comando [`Session storage by ID`](https://doc.4d.com/4dv20R6/help/command/en/page1839.html).
 
 :::
 
