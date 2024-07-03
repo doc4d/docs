@@ -259,7 +259,7 @@ Esta propiedad mantiene la selección visible dentro del objeto después de habe
 
 Esta propiedad permite definir teclas de significado especial (atajos de teclado) para los [botones](button_overview.md), los [botones radio](radio_overview.md) y las [casillas de selección](checkbox_overview.md). Permiten al usuario utilizar el control utilizando el teclado en lugar de tener que utilizar el ratón.
 
-You can configure this option by clicking the [...] button in the Shortcuts property in the Property List.
+Puede configurar esta opción haciendo clic en [...] button in the Shortcuts property in the Property List.
 
 ![](../assets/en/FormObjects/property_shortcut.png)
 
