@@ -12,7 +12,7 @@ $ok:=Folder(fk documents folder).file("Archives/John4D.prefs").create()
 さらに、ファイルおよびフォルダーオブジェクトは、アプリケーションの主なフォルダーへのコンテキストパスを提供する `filesystem` をサポートしています。
 
 
-4D は、macOS および Windows上で様々な場所にある特定の 4Dフォルダーを指定するいくつかの "filesystem" パス名を受け取ります。 A filesystem path is evaluated with regards to the context and is returned as an absolute path.
+4D は、macOS および Windows上で様々な場所にある特定の 4Dフォルダーを指定するいくつかの "filesystem" パス名を受け取ります。 filesystemパスはコンテキストに基づいて評価され、絶対パスとして返されます。
 
 filesystemパス名の使用は、主に二つの理由から有用です:
 
