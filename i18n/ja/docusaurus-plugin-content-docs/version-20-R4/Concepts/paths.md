@@ -14,7 +14,7 @@ $ok:=Folder(fk documents folder).file("Archives/John4D.prefs").create()
 
 ## filsystemパス名
 
-4D は、macOS および Windows上で様々な場所にある特定の 4Dフォルダーを指定するいくつかの "filesystem" パス名を受け取ります。 A filesystem path is evaluated with regards to the context and is returned as an absolute path.
+4D は、macOS および Windows上で様々な場所にある特定の 4Dフォルダーを指定するいくつかの "filesystem" パス名を受け取ります。 filesystemパスはコンテキストに基づいて評価され、絶対パスとして返されます。
 
 filesystemパス名の使用は、主に二つの理由から有用です:
 
@@ -118,9 +118,9 @@ $okFile:=File("/DATA/Prefs/tempo.txt").create() // データフォルダー内�
 ```4d
 var $userImages : 4D.Folder
 var $ok : Boolean
-  //to reference a "Picture" folder within the user documents folder
+  // ユーザードキュメントフォルダー内にある "Picture" フォルダーを参照するには
 $userImages:=Folder(fk documents folder).folder("Pictures")
-  //to create a folder on the desktop
+  // デスクトップにフォルダーを作成するには
 $ok:=Folder(fk desktop folder).folder("myFolder").create()
 ```
 
