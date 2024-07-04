@@ -369,7 +369,7 @@ La propiedad `.id` contiene <!-- REF #SessionClass.id.Summary -->el identificado
 
 :::tip
 
-You can use this property to get the [`.storage`](#storage) object of a session thanks to the [`Session storage by ID`](https://doc.4d.com/4dv20R6/help/command/en/page1839.html) command.
+Puede utilizar esta propiedad para obtener el objeto [`.storage`](#storage) de una sesión gracias al comando [`Session storage by ID`](https://doc.4d.com/4dv20R6/help/command/en/page1839.html).
 
 :::
 
