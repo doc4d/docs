@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[10230],{622138:e=>{e.exports=JSON.parse('{"title":"C","slug":"/commands/C","permalink":"/docs/fr/next/commands/C","navigation":{"previous":{"title":"VP All","permalink":"/docs/fr/next/ViewPro/commands/vp-all"},"next":{"title":"VP Cell","permalink":"/docs/fr/next/ViewPro/commands/vp-cell"}}}')}}]);
