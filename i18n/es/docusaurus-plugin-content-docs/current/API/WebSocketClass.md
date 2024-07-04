@@ -64,9 +64,9 @@ Los objetos WebSocket ofrecen las siguientes propiedades y funciones:
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones                                       |
-| ----------- | ---------------------------------------------------- |
-| 20 R3       | Support of `headers` property in *connectionHandler* |
+| Lanzamiento | Modificaciones                                           |
+| ----------- | -------------------------------------------------------- |
+| 20 R3       | Soporte de la propiedad `headers` en *connectionHandler* |
 
 </details>
 
