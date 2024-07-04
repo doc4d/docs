@@ -55,7 +55,7 @@ End if
 | folderToZip     | 4D.Folder |  -> | Objeto archivo o carpeta a comprimir                                 |
 | zipStructure    | Object                    |  -> | Objeto archivo o carpeta a comprimir                                 |
 | destinationFile | 4D.File   |  -> | Archivo de destino del archivo                                       |
-| options         | Integer                   |  -> | *folderToZip* option: `ZIP Without enclosing folder` |
+| options         | Integer                   |  -> | Opción *folderToZip*: `ZIP Without enclosing folder` |
 | Result          | Object                    |  <- | Objeto estado                                                        |
 
 <!-- END REF -->
@@ -111,7 +111,7 @@ Para comprimir un archivo `4D.File`:
 
 #### Ejemplo 2
 
-To compress a `4D.Folder` without the folder itself:
+Para comprimir una carpeta `4D.Folder` sin la carpeta en sí:
 
 ```4d
  var $folder : 4D.Folder
