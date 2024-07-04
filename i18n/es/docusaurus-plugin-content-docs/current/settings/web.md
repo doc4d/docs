@@ -304,7 +304,7 @@ This button is only available in projects opened with the 4D application (single
 
 :::
 
-The button triggers the following upgrade sequence:
+El botón activa la siguiente secuencia de actualización:
 
 - The group of REST API users set in the **Read/Write** menu is removed.
 - The `On REST Authentication` database method is deleted (moved into the system bin).
