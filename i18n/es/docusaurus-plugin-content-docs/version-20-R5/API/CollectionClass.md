@@ -2870,7 +2870,7 @@ Se designa la retrollamada a ejecutar para evaluar los elementos de la colecció
 
 The callback takes each collection element and performs any desired operation to accumulate the result into *$1.accumulator*, which is returned in *$1.value*.
 
-You can pass the value to initialize the accumulator in *initValue*. Si se omite, *$1.accumulator* empieza por *Undefined*.
+Puede pasar el valor para inicializar el acumulador en *initValue*. Si se omite, *$1.accumulator* empieza por *Undefined*.
 
 La retrollamada recibe los siguientes parámetros:
 
@@ -2881,7 +2881,7 @@ La retrollamada recibe los siguientes parámetros:
 La retrollamada define los siguientes parámetros:
 
 - *$1.accumulator*: value to be modified by the function and which is initialized by *initValue*.
-- *$1.stop* (boolean, optional): **true** to stop the method callback. El valor devuelto es el último calculado.
+- *$1.stop* (boolean, opcional): **true** para detener la retrollamada del método. El valor devuelto es el último calculado.
 
 #### Ejemplo 1
 
@@ -2955,7 +2955,7 @@ Se designa la retrollamada a ejecutar para evaluar los elementos de la colecció
 
 The callback takes each collection element and performs any desired operation to accumulate the result into *$1.accumulator*, which is returned in *$1.value*.
 
-You can pass the value to initialize the accumulator in *initValue*. Si se omite, *$1.accumulator* empieza por *Undefined*.
+Puede pasar el valor para inicializar el acumulador en *initValue*. Si se omite, *$1.accumulator* empieza por *Undefined*.
 
 La retrollamada recibe los siguientes parámetros:
 
@@ -2966,7 +2966,7 @@ La retrollamada recibe los siguientes parámetros:
 La retrollamada define los siguientes parámetros:
 
 - *$1.accumulator*: value to be modified by the function and which is initialized by *initValue*.
-- *$1.stop* (boolean, optional): **true** to stop the method callback. El valor devuelto es el último calculado.
+- *$1.stop* (boolean, opcional): **true** para detener la retrollamada del método. El valor devuelto es el último calculado.
 
 #### Ejemplo 1
 
@@ -3292,7 +3292,7 @@ La retrollamada recibe los siguientes parámetros:
 Puede definir los siguientes parámetros:
 
 - (mandatory if you used a method) *$1.result* (boolean): **true** if the element value evaluation is successful, **false** otherwise.
-- *$1.stop* (boolean, optional): **true** to stop the method callback. El valor devuelto es el último calculado.
+- *$1.stop* (boolean, opcional): **true** para detener la retrollamada del método. El valor devuelto es el último calculado.
 
 In any case, at the point where `.some()` function encounters the first collection element returning true, it stops calling the callback and returns **true**.
 
