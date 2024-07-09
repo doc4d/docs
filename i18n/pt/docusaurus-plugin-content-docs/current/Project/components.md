@@ -54,7 +54,7 @@ The **dependencies.json** file references all components required in your 4D pro
 	/MyProjectRoot/Project/Sources/dependencies.json
 ```
 
-It can contain:
+Pode conter:
 
 - names of components [stored locally](#declaring-local-components) (default path or path defined in an **environment4d.json** file),
 - names of components [stored on GitHub repositories](#declaring-components-stored-on-github) (their path can be defined in this file or in an **environment4d.json** file).
@@ -193,7 +193,7 @@ You declare a component stored on GitHub in the [**dependencies.json** file](#de
 
 When you create a release in GitHub, you specify a **tag** and a **version**.
 
-- **Tags** are texts that uniquely reference a release. In the [**dependencies.json** file](#dependencyjson) and [**environment4d.json**](#environment4djson) files, you can indicate the release tag you want to use in your project. For example :
+- **Tags** are texts that uniquely reference a release. In the [**dependencies.json** file](#dependencyjson) and [**environment4d.json**](#environment4djson) files, you can indicate the release tag you want to use in your project. Por exemplo :
 
 ```json
 {
