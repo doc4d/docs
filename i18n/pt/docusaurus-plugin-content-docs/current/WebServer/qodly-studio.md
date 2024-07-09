@@ -138,7 +138,7 @@ There is no direct compatibility between apps implemented with 4D and apps imple
 |                                                                                         | Qodly Studio para desenvolvedores 4D que usam o IDE 4D                                                         | Qodly Studio para desenvolvedores Qodly                                             |
 | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | Visualizar e editar tabelas (classes de dados), atributos e relações | Editor de estrutura 4D(1)                                                                   | Qodly Studio Model Editor                                                           |
-| Qodly pages                                                                             | Qodly Studio Page Editor                                                                                       | Qodly Studio Page Editor                                                            |
+| Páginas Qodly                                                                           | Qodly Studio Page Editor                                                                                       | Qodly Studio Page Editor                                                            |
 | Formulários para desktop                                                                | 4D IDE                                                                                                         | _não suportado_                                                                     |
 | Linguagem de programação                                                                | Linguagem 4D com ORDA                                                                                          | [QodlyScript](https://developer.qodly.com/docs/category/qodlyscript) featuring ORDA |
 | IDE de codificação                                                                      | 4D IDE code editor/VS Code with [4D extension](https://github.com/4d/4D-Analyzer-VSCode)(2) | Editor de código Qodly Studio                                                       |
@@ -271,7 +271,7 @@ End if
 
 This call is accepted and as long as the authentication is not successful, `Session.setPrivileges()` is not called, thus no license is consumed. Una vez que se llama a `Session.setPrivileges()`, se utiliza una licencia de cliente de 4D y luego se acepta cualquier solicitud REST.
 
-### Logout
+### Encerrar sessão
 
 When the ["force login" mode is enabled](#setting-the-force-login-mode), Qodly Studio for 4D allows you to implement a logout feature in your application.
 
