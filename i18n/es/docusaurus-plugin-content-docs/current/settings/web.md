@@ -306,7 +306,7 @@ This button is only available in projects opened with the 4D application (single
 
 El botón activa la siguiente secuencia de actualización:
 
-- The group of REST API users set in the **Read/Write** menu is removed.
+- Se elimina el grupo de usuarios de la API REST definido en el menú **Leer/Escribir**.
 - The `On REST Authentication` database method is deleted (moved into the system bin).
 - A default ["roles.json" file](../ORDA/privileges.md#rolesjson-file) is created in the [Sources folder](../Project/architecture.md#sources) of the project if it does not already exist, with its `forceLogin` attribute to `True`.
 
