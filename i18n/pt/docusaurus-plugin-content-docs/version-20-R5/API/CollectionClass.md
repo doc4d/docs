@@ -459,10 +459,10 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 
 <details><summary>História</summary>
 
-| Release | Mudanças                                                           |
-| ------- | ------------------------------------------------------------------ |
-| 18 R3   | Nova opção *ck shared*. New *groupWith* parameters |
-| v16 R6  | Adicionado                                                         |
+| Release | Mudanças                                                             |
+| ------- | -------------------------------------------------------------------- |
+| 18 R3   | Nova opção *ck shared*. Novos parâmetros *groupWith* |
+| v16 R6  | Adicionado                                                           |
 
 </details>
 
@@ -650,7 +650,7 @@ If the collection contains objects, you can pass the *propertyPath* parameter. I
 
 The `.countValues()` function <!-- REF #collection.countValues().Summary -->returns the number of times value is found in the collection<!-- END REF -->.
 
-You can pass in *value*:
+Você pode passar em *value*:
 
 - um valor escalar (texto, número, booleano, data),
 - um objeto ou uma referência de coleção.
