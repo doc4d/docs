@@ -53,7 +53,7 @@ The following table lists all supported patterns for date and time formats.
 |         |                                                                          | EEEE          | Tuesday                                                               |
 |         |                                                                          | EEEEE         | T                                                                     |
 |         |                                                                          | EEEEEE        | Tu                                                                    |
-| e       | local day of week                                                        | e             | 2                                                                     |
+| e       | dia da semana local                                                      | e             | 2                                                                     |
 |         |                                                                          | ee            | 02                                                                    |
 |         |                                                                          | eee           | Tue                                                                   |
 |         |                                                                          | eeee          | Tuesday                                                               |
@@ -124,7 +124,7 @@ Same remark as for `L` and `M`: `c` is for a day used alone "every tuesday") and
 
 ### Zeros à esquerda
 
-In general, when the number of letters in the formatting string is higher than the expected number, leading zeros are added. Ex: "yyyyyy" would give "001996".
+In general, when the number of letters in the formatting string is higher than the expected number, leading zeros are added. Ex: "yyyyyy" daria "001996".
 
 ### Peças localizadas
 
