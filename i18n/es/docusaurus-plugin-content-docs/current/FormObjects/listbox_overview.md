@@ -147,7 +147,7 @@ Las propiedades soportadas dependen del tipo de list box.
 | [Height (headers)](properties_Headers.md#height)                          | X              | X                  | X                                     |
 | [Height (footers)](properties_Footers.md#height)                          | X              | X                  | X                                     |
 | [Hide extra blank rows](properties_BackgroundAndBorder.md#hide-extra-blank-rows)             | X              | X                  | X                                     |
-| [Hide focus rectangle](properties_Appearance.md#hide-focus-rectangle)                        | X              | X                  | X                                     |
+| [Ocultar rectángulo de enfoque](properties_Appearance.md#hide-focus-rectangle)               | X              | X                  | X                                     |
 | [Hide selection highlight](properties_Appearance.md#hide-selection-highlight)                | X              | X                  | X                                     |
 | [Hierarchical List Box](properties_Object.md#hierarchical-list-box)                          | X              |                    |                                       |
 | [Highlight Set](properties_ListBox.md#highlight-set)                                         |                | X                  |                                       |
