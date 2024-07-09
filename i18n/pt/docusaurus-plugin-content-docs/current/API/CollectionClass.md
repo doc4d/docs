@@ -459,10 +459,10 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 
 <details><summary>História</summary>
 
-| Release | Mudanças                                                           |
-| ------- | ------------------------------------------------------------------ |
-| 18 R3   | Nova opção *ck shared*. New *groupWith* parameters |
-| v16 R6  | Adicionado                                                         |
+| Release | Mudanças                                                             |
+| ------- | -------------------------------------------------------------------- |
+| 18 R3   | Nova opção *ck shared*. Novos parâmetros *groupWith* |
+| v16 R6  | Adicionado                                                           |
 
 </details>
 
