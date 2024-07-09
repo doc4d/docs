@@ -414,7 +414,7 @@ Además de [áreas de texto estáticas](text.md), los objetos de texto de las [�
 
 ## Array cores de Fonte
 
-`Array type list boxes`
+`List boxes de tipo array`
 
 Permite estabelecer uma cor de fonte personalizada para cada linha do list box ou cada célula da coluna.
 
@@ -434,7 +434,7 @@ O nome do array LongInt deve ser usado. Cada elemento deste array corresponde a 
 
 ## Array estilo linha
 
-`Array type list boxes`
+`List boxes de tipo array`
 
 Permite estabelecer um estilo de fonte personalizado para cada linha do list box ou cada célula da coluna.
 
