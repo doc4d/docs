@@ -510,7 +510,7 @@ End if
 
 このプロパティは **読み取り専用** ですが、戻り値のオブジェクトは読み書き可能です。
 
-#### Web session example
+#### Webセッションの例題
 
 クライアントの IP を `.storage` プロパティに保存します。 `On Web Authentication` データベースメソッドに以下のように書けます:
 
@@ -522,7 +522,7 @@ If (Session.storage.clientIP=Null) // 最初のアクセス
 End if
 ```
 
-#### Remote session example
+#### リモートセッションの例題
 
 同じセッションのプロセス間でデータを共有したい場合:
 
