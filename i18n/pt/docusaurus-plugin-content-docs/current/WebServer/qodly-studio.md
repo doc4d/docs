@@ -138,7 +138,7 @@ There is no direct compatibility between apps implemented with 4D and apps imple
 |                                                                                         | Qodly Studio para desenvolvedores 4D que usam o IDE 4D                                                         | Qodly Studio para desenvolvedores Qodly                                             |
 | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | Visualizar e editar tabelas (classes de dados), atributos e relações | Editor de estrutura 4D(1)                                                                   | Qodly Studio Model Editor                                                           |
-| Páginas Qodly                                                                           | Qodly Studio Page Editor                                                                                       | Qodly Studio Page Editor                                                            |
+| Páginas Qodly                                                                           | Editor de páginas Qodly Studio                                                                                 | Editor de páginas Qodly Studio                                                      |
 | Formulários para desktop                                                                | 4D IDE                                                                                                         | _não suportado_                                                                     |
 | Linguagem de programação                                                                | Linguagem 4D com ORDA                                                                                          | [QodlyScript](https://developer.qodly.com/docs/category/qodlyscript) featuring ORDA |
 | IDE de codificação                                                                      | 4D IDE code editor/VS Code with [4D extension](https://github.com/4d/4D-Analyzer-VSCode)(2) | Editor de código Qodly Studio                                                       |
@@ -202,7 +202,7 @@ Keep in mind that Qodly Studio runs through the 4D WebAdmin web server. When you
 
 However, page rendering happens outside Qodly Studio, and is served by the standard 4D web server. In this situation, your web application cannot access assets that are not exposed as REST resources. See [Exposed vs non-exposed functions](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) and [Exposing tables](../REST/configuration.md#exposing-tables) for more information on how to expose assets.
 
-### Accessing Qodly pages
+### Acessar páginas Qodly
 
 For deployment, the WebAdmin server is not necessary. End-user access to your web application made with Qodly Studio is based on the 4D REST protocol, and as such, it works as through a conventional 4D remote application.
 
