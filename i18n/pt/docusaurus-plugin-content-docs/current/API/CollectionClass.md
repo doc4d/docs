@@ -470,12 +470,12 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 
 <!-- REF #collection.copy().Params -->
 
-| Parâmetro    | Tipo       |     | Descrição                                                                                                                           |
-| ------------ | ---------- | :-: | ----------------------------------------------------------------------------------------------------------------------------------- |
-| option       | Integer    |  -> | `ck resolve pointers`: resolve pointers before copying,<br/>`ck shared`: return a shared collection |
-| groupWithCol | Collection |  -> | Coleção partilhada a ser agrupada com a coleção resultante                                                                          |
-| groupWithObj | Object     |  -> | Objeto partilhado a ser agrupado com a coleção resultante                                                                           |
-| Resultados   | Collection |  <- | Cópia profunda da collection original                                                                                               |
+| Parâmetro    | Tipo       |     | Descrição                                                                                                                                 |
+| ------------ | ---------- | :-: | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| option       | Integer    |  -> | `ck resolve pointers`: resolve ponteiros antes de copiar,<br/>`ck shared`: retorna uma coleção partilhada |
+| groupWithCol | Collection |  -> | Coleção partilhada a ser agrupada com a coleção resultante                                                                                |
+| groupWithObj | Object     |  -> | Objeto partilhado a ser agrupado com a coleção resultante                                                                                 |
+| Resultados   | Collection |  <- | Cópia profunda da collection original                                                                                                     |
 
 <!-- END REF -->
 
@@ -650,7 +650,7 @@ If the collection contains objects, you can pass the *propertyPath* parameter. I
 
 The `.countValues()` function <!-- REF #collection.countValues().Summary -->returns the number of times value is found in the collection<!-- END REF -->.
 
-You can pass in *value*:
+Você pode passar em *value*:
 
 - um valor escalar (texto, número, booleano, data),
 - um objeto ou uma referência de coleção.
@@ -931,12 +931,12 @@ $b:=$c.every("TypeLookUp";Is real) //$b=false
 
 <!-- REF #collection.extract().Params -->
 
-| Parâmetro    | Tipo       |     | Descrição                                                                                                                                                                                             |
-| ------------ | ---------- | :-: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| propertyPath | Text       |  -> | Rota de propriedade de objeto cujos valores serão extraídos para nova coleção                                                                                                                         |
-| targetpath   | Text       |  -> | Rota de propriedade alvo ou nome propriedade                                                                                                                                                          |
-| option       | Integer    |  -> | `ck keep null`: include null properties in the returned collection (ignored by default). Parameter ignored if *targetPath* passed. |
-| Resultados   | Collection |  <- | Nova collection contendo valores extraídos                                                                                                                                                            |
+| Parâmetro    | Tipo       |     | Descrição                                                                                                                                                                                              |
+| ------------ | ---------- | :-: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| propertyPath | Text       |  -> | Rota de propriedade de objeto cujos valores serão extraídos para nova coleção                                                                                                                          |
+| targetpath   | Text       |  -> | Rota de propriedade alvo ou nome propriedade                                                                                                                                                           |
+| option       | Integer    |  -> | `ck keep null`: include null properties na coleção retornada (ignorado por padrão). Parâmetro ignorado se *targetPath* for passado. |
+| Resultados   | Collection |  <- | Nova collection contendo valores extraídos                                                                                                                                                             |
 
 <!-- END REF -->
 
@@ -3009,7 +3009,7 @@ The `.remove()` function <!-- REF #collection.remove().Summary -->removes one or
 
 > Essa função modifica a coleção original.
 
-In *index*, pass the position where you want the element to be removed from the collection.
+Em *index*, passe a posição onde deseja que o elemento seja retirado da colecção.
 
 > **Warning**: Keep in mind that collection elements are numbered from 0. If *index* is greater than the length of the collection, actual starting index will be set to the length of the collection.
 
