@@ -403,7 +403,7 @@ When this property is set, the [`.expirationDate`](#expirationdate) property is 
 
 > O valor não pode ser inferior a 60: se definir um valor inferior, o tempo de espera se eleva até 60.
 
-This property is **read write**.
+Essa propriedade é **leitura escrita**.
 
 #### Exemplo
 
@@ -628,7 +628,7 @@ You can get the `.storage` property of a session using the [`Session storage by 
 
 :::
 
-#### Web session example
+#### Exemplo de sessão na web
 
 Você deseja armazenar o IP do cliente na propriedade `.storage`. You can write in the `On Web Authentication` database method:
 
