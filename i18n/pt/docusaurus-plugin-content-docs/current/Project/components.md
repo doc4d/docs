@@ -72,13 +72,13 @@ The main benefits of this architecture are the following:
 
 Since components can be installed in different ways, a priority order is applied when the same component is referenced at several locations:
 
-**Higest priority**
+**Prioridade mais alta**
 
 1. Components stored in the [**Components** folder of the project](architecture.md#components).
 2. Components declared in the **dependencies.json** file.
 3. Internal User 4D components (e.g. 4D NetKit, 4D SVG...)
 
-**Lowest priority**
+**Prioridade mais baixa**
 
 ![priority](../assets/en/Project/load-sequence.png)
 
@@ -86,7 +86,7 @@ When a component cannot be loaded because of another instance of the same compon
 
 (the **environment4d.json** declared path overrides the **dependencies.json** path to configure a local environment).
 
-### Declaring local components
+### Declarando componentes locais
 
 You declare a local component in the [**dependencies.json** file](#dependencyjson) in the following way:
 
@@ -221,7 +221,7 @@ When you create a release in GitHub, you specify a **tag** and a **version**.
 
 The version is used to define which versions can be used. A [standard semantic version](https://regex101.com/r/Ly7O1x/3/) is used. A range is defined by two semantic versions, a min and a max, with operators '\< | > | >= | <= | ='. The `*` can be used as a placeholder for all versions. ~ and ^ prefixes define versions starting at a number, and up to respectively the next major and minor version.
 
-Here are a few examples:
+Eis alguns exemplos:
 
 - "latest": the version having the “latest” badge in GitHub releases.
 - "\*": the latest version released.
@@ -263,7 +263,7 @@ Then insert the "github" key in your [**environment4d.json**](#environment4djson
 }
 ```
 
-#### Local cache for dependencies
+#### Cache local para dependências
 
 Referenced GitHub components are downloaded in a local cache folder then loaded in your environment. The local cache folder is stored at the following location:
 
