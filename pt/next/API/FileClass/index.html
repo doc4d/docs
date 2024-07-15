@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">File | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://4d.github.io/docs/pt/next/API/FileClass"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="File | 4D Docs"><meta data-rh="true" name="description" content="File objects are created with the File command. Contêm referências a ficheiros de disco que podem ou não existir efectivamente no disco. For example, when you execute the File command to create a new file, a valid File object is created but nothing is actually stored on disk until you call the file.create( ) function."><meta data-rh="true" property="og:description" content="File objects are created with the File command. Contêm referências a ficheiros de disco que podem ou não existir efectivamente no disco. For example, when you execute the File command to create a new file, a valid File object is created but nothing is actually stored on disk until you call the file.create( ) function."><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://4d.github.io/docs/pt/next/API/FileClass"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/next/API/FileClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/fr/next/API/FileClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/es/next/API/FileClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/ja/next/API/FileClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/pt/next/API/FileClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/next/API/FileClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.dc9a4272.css">
-<script src="/docs/pt/assets/js/runtime~main.d938303f.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.ee2fc584.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.05a1ee33.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -463,7 +463,7 @@
 
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
-<p><strong>Not available for ZIP archives</strong></p>
+<p><strong>Não disponível para arquivos ZIP</strong></p>
 <p><strong>.create()</strong> : Boolean</p>
 
 
@@ -488,7 +488,7 @@
 <p>If necessary, the function creates the folder hierachy as described in the <a href="/docs/pt/next/API/FileClass#platformpath">platformPath</a> or <a href="/docs/pt/next/API/FileClass#path">path</a> properties. Se o arquivo já existir no disco, a função não faz nada (não é atirado nenhum erro) e retorna falso.</p>
 <p><strong>Valor retornado</strong></p>
 <ul>
-<li><strong>True</strong> if the file is created successfully;</li>
+<li><strong>True</strong> se o arquivo for criado com sucesso;</li>
 <li><strong>False</strong> if a file with the same name already exists or if an error occured.</li>
 </ul>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemplo-2">Exemplo<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FileClass#exemplo-2">​</a></h4>
@@ -1670,7 +1670,7 @@ If the document does not contain a BOM and if <em>charSetName</em> or <em>charSe
 <table><thead><tr><th>Propriedade</th><th>Tipo</th><th>Comentário</th></tr></thead><tbody><tr><td>InternalName</td><td>Text</td><td></td></tr><tr><td>ProductName</td><td>Text</td><td></td></tr><tr><td>CompanyName</td><td>Text</td><td></td></tr><tr><td>LegalCopyright</td><td>Text</td><td></td></tr><tr><td>ProductVersion</td><td>Text</td><td></td></tr><tr><td>FileDescription</td><td>Text</td><td></td></tr><tr><td>FileVersion</td><td>Text</td><td></td></tr><tr><td>OriginalFilename</td><td>Text</td><td></td></tr><tr><td>WinIcon</td><td>Text</td><td>Caminho Posix do ficheiro .ico. Esta propriedade aplica-se apenas a ficheiros executáveis gerados por 4D.</td></tr></tbody></table>
 <p>For all properties except <code>WinIcon</code>, if you pass a null or empty text as value, an empty string is written in the property. Se passar um tipo de valor diferente de texto, este é transformado em string.</p>
 <p>For the <code>WinIcon</code> property, if the icon file does not exist or has an incorrect format, an error is generated.</p>
-<p><strong><em>info</em> parameter object with a .plist file</strong></p>
+<p>*<strong>Parâmetro <em>info</em> com um arquivo .plist</strong></p>
 <p>Each valid property set in the <em>info</em> object parameter is written in the .plist file as a key. Qualquer nome chave é aceito. Os tipos de valores são preservados sempre que possível.</p>
 <p>If a key set in the <em>info</em> parameter is already defined in the .plist file, its value is updated while keeping its original type. Outras chaves existentes no arquivo .plist são deixadas intocadas.</p>
 <blockquote>

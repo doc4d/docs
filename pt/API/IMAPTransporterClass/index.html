@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">IMAPTransporter | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://4d.github.io/docs/pt/API/IMAPTransporterClass"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="20-R6"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" name="docsearch:version" content="20-R6"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" property="og:title" content="IMAPTransporter | 4D Docs"><meta data-rh="true" name="description" content="The IMAPTransporter class allows you to retrieve messages from a IMAP email server."><meta data-rh="true" property="og:description" content="The IMAPTransporter class allows you to retrieve messages from a IMAP email server."><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://4d.github.io/docs/pt/API/IMAPTransporterClass"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/API/IMAPTransporterClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/fr/API/IMAPTransporterClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/es/API/IMAPTransporterClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/ja/API/IMAPTransporterClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/pt/API/IMAPTransporterClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/API/IMAPTransporterClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.dc9a4272.css">
-<script src="/docs/pt/assets/js/runtime~main.d938303f.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.ee2fc584.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.05a1ee33.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -2485,7 +2485,7 @@
 <div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">searchCriteria = FLAGGED FROM &quot;SMITH&quot;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código para a área de transferência" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <p>... returns all messages with \Flagged flag set AND sent by Smith.</p>
 <ul>
-<li>You can use the <strong>OR</strong> or <strong>NOT</strong> operators as follows:</li>
+<li>Você pode usar os operadores <strong>OR</strong> ou <strong>NOT</strong> da seguinte forma:</li>
 </ul>
 <div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">searchCriteria = OR SEEN FLAGGED</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código para a área de transferência" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <p>... devolve todas as mensagens com o conjunto de bandeiras visíveis OU o conjunto de bandeiras sinalizadoras</p>
@@ -2532,18 +2532,18 @@ Examples:
 </ul>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="chaves-de-pesquisa-autorizadas">Chaves de pesquisa autorizadas<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/API/IMAPTransporterClass#chaves-de-pesquisa-autorizadas">​</a></h4>
 <p><strong>ALL</strong>: Todas as mensagens na caixa de correio.<br>
-<strong>ANSWERED</strong>: Messages with the \Answered flag set.<br>
+<strong>ANSWERED</strong>: mensagens com o indicador \Answered ativo.<br>
 <strong>UNANSWERED</strong>: Messages that do not have the \Answered flag set.<br>
 <strong>DELETED</strong>: Messages with the \Deleted flag set.<br>
 <strong>UNDELETED</strong>: Messages that do not have the \Deleted flag set.<br>
-<strong>DRAFT</strong>: Messages with the \Draft flag set.<br>
+<strong>DRAFT</strong>: mensagens com o indicador \Draft ativo.<br>
 <strong>UNDRAFT</strong>: Messages that do not have the \Draft flag set.<br>
 <strong>FLAGGED</strong>: Messages with the \Flagged flag set.<br>
 <strong>UNFLAGGED</strong>: Messages that do not have the \Flagged flag set.<br>
 <strong>RECENT</strong>: Messages that have the \Recent flag set.<br>
-<strong>OLD</strong>: Messages that do not have the \Recent flag set.<br>
+<strong>OLD</strong>: mensagens que não possuem o indicador \Recent definido.<br>
 <strong>SEEN</strong>: Messages that have the \Seen flag set.<br>
-<strong>UNSEEN</strong>: Messages that do not have the \Seen flag set.<br>
+<strong>UNSEEN</strong>: Mensagens que não possuem o indicador \Seen definido.<br>
 <strong>NEW</strong>: Messages that have the \Recent flag set but not the \Seen flag. This is functionally equivalent to “(RECENT UNSEEN)”.<br>
 <strong>KEYWORD <em>flag</em></strong>: Messages with the specified keyword set.<br>
 <strong>UNKEYWORD <em>flag</em></strong>: Messages that do not have the specified keyword set.<br>
