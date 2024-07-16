@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">POP3Transporter | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://4d.github.io/docs/pt/API/POP3TransporterClass"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="20-R6"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" name="docsearch:version" content="20-R6"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" property="og:title" content="POP3Transporter | 4D Docs"><meta data-rh="true" name="description" content="The POP3Transporter class allows you to retrieve messages from a POP3 email server."><meta data-rh="true" property="og:description" content="The POP3Transporter class allows you to retrieve messages from a POP3 email server."><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://4d.github.io/docs/pt/API/POP3TransporterClass"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/API/POP3TransporterClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/fr/API/POP3TransporterClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/es/API/POP3TransporterClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/ja/API/POP3TransporterClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/pt/API/POP3TransporterClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/API/POP3TransporterClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.dc9a4272.css">
-<script src="/docs/pt/assets/js/runtime~main.ee2fc584.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.ebec3049.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.05a1ee33.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -536,7 +536,7 @@
 
 
 
-<table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>20</td><td>Support of <em>headerOnly</em> parameter</td></tr><tr><td>18 R2</td><td>Adicionado</td></tr></tbody></table>
+<table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>20</td><td>Suporte ao parâmetro <em>headerOnly</em></td></tr><tr><td>18 R2</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.getMail</strong>( <em>msgNumber</em> : Integer { ; <em>headerOnly</em> : Boolean } ) : Object</p>
 
@@ -722,7 +722,7 @@
 
 
 
-<table><thead><tr><th>Propriedade</th><th>Tipo</th><th>Descrição</th></tr></thead><tbody><tr><td>[ ].size</td><td>Number</td><td>Tamanho da mensagem em bytes</td></tr><tr><td>[ ].number</td><td>Number</td><td>Número da mensagem</td></tr><tr><td>[ ].id</td><td>Text</td><td>ID único da mensagem ( útil se armazenar a mensagem localmente)</td></tr></tbody></table>
+<table><thead><tr><th>Propriedade</th><th>Tipo</th><th>Descrição</th></tr></thead><tbody><tr><td>[ ].size</td><td>Number</td><td>Tamanho da mensagem em bytes</td></tr><tr><td>[ ].number</td><td>Number</td><td>Número da mensagem</td></tr><tr><td>[ ].id</td><td>Text</td><td>ID único da mensagem (útil se armazenar a mensagem localmente)</td></tr></tbody></table>
 <p>Se a mailbox não conter uma mensagem, uma coleção vazia é retornada.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="número-e-propriedades-id">número e propriedades ID<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/API/POP3TransporterClass#número-e-propriedades-id">​</a></h4>
 <p><em>number</em> is the number of a message in the mailbox at the time the <code>POP3_transporter</code> was created. The <em>number</em> property is not a static value in relation to any specific message and will change from session to session dependent on its relation to other messages in the mailbox at the time the session was opened. The numbers assigned to the messages are only valid during the lifetime of the <a href="/docs/pt/API/POP3TransporterClass#pop3-transporter-object"><code>POP3_transporter</code></a>. At the time the <code>POP3_transporter</code> is deleted any message marked for deletion will be removed. Quando o usuário se registrar de volta no servidor, as mensagens atuais no mailbox serão numeradas de 1 a x.</p>
