@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">CryptoKey | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://4d.github.io/docs/pt/next/API/CryptoKeyClass"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="CryptoKey | 4D Docs"><meta data-rh="true" name="description" content="The CryptoKey class in the 4D language encapsulates an asymmetric encryption key pair."><meta data-rh="true" property="og:description" content="The CryptoKey class in the 4D language encapsulates an asymmetric encryption key pair."><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://4d.github.io/docs/pt/next/API/CryptoKeyClass"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/next/API/CryptoKeyClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/fr/next/API/CryptoKeyClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/es/next/API/CryptoKeyClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/ja/next/API/CryptoKeyClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/pt/next/API/CryptoKeyClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/next/API/CryptoKeyClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.dc9a4272.css">
-<script src="/docs/pt/assets/js/runtime~main.201d9adc.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.ea3850c4.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.05a1ee33.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -481,7 +481,7 @@
 
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th></th><th>Descrição</th></tr></thead><tbody><tr><td>message</td><td>Text</td><td>-&gt;</td><td>String mensagem a assinar</td></tr><tr><td>options</td><td>Object</td><td>-&gt;</td><td>Opções de assinatura</td></tr><tr><td>Resultados</td><td>Text</td><td>&lt;-</td><td>Signature in Base64 or Base64URL representation, depending on &quot;encoding&quot; option</td></tr></tbody></table>
 <p>The <code>.sign()</code> function signs the utf8 representation of a <em>message</em> string using the <code>CryptoKey</code> object keys and provided <em>options</em>. It returns its signature in base64 or base64URL format, depending on the value of the <code>options.encoding</code> attribute you passed.</p>
-<p>The <code>CryptoKey</code> must contain a valid <strong>private</strong> key.</p>
+<p>A <code>CryptoKey</code> deve conter uma chave <strong>privada</strong> válida.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="opções-2"><em>opções</em><a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/CryptoKeyClass#opções-2">​</a></h4>
 
 
@@ -614,7 +614,7 @@
 
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th></th><th>Descrição</th></tr></thead><tbody><tr><td>message</td><td>Text</td><td>-&gt;</td><td>String de mensagem utilizada para gerar a assinatura</td></tr><tr><td>signature</td><td>Text</td><td>-&gt;</td><td>Signature to verify, in Base64 or Base64URL representation, depending on <code>options.encoding</code> value</td></tr><tr><td>options</td><td>Object</td><td>-&gt;</td><td>Opções de assinatura</td></tr><tr><td>Resultados</td><td>Object</td><td>&lt;-</td><td>Estado da verificação</td></tr></tbody></table>
 <p>The <code>.verify()</code> function verifies the base64 signature against the utf8 representation of <em>message</em> using the <code>CryptoKey</code> object keys and provided <em>options</em>.</p>
-<p>The <code>CryptoKey</code> must contain a valid <strong>public</strong> key.</p>
+<p>A <code>CryptoKey</code> deve conter uma chave <strong>pública</strong> válida.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="opções-3"><em>opções</em><a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/CryptoKeyClass#opções-3">​</a></h4>
 
 

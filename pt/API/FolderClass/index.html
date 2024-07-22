@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Folder | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://4d.github.io/docs/pt/API/FolderClass"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="20-R6"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" name="docsearch:version" content="20-R6"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" property="og:title" content="Folder | 4D Docs"><meta data-rh="true" name="description" content="Folder objects are created with the Folder command. Contêm referências a pastas que podem ou não existir efectivamente no disco. For example, when you execute the Folder command to create a new folder, a valid Folder object is created but nothing is actually stored on disk until you call the folder.create() function."><meta data-rh="true" property="og:description" content="Folder objects are created with the Folder command. Contêm referências a pastas que podem ou não existir efectivamente no disco. For example, when you execute the Folder command to create a new folder, a valid Folder object is created but nothing is actually stored on disk until you call the folder.create() function."><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://4d.github.io/docs/pt/API/FolderClass"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/API/FolderClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/fr/API/FolderClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/es/API/FolderClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/ja/API/FolderClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/pt/API/FolderClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/API/FolderClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.dc9a4272.css">
-<script src="/docs/pt/assets/js/runtime~main.201d9adc.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.ea3850c4.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.05a1ee33.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -364,7 +364,7 @@
 
 
 
-<table><thead><tr><th>Parâmetro</th><th>Tipo</th><th style="text-align:center"></th><th>Descrição</th></tr></thead><tbody><tr><td>destinationFolder</td><td>4D. Folder</td><td style="text-align:center">-&gt;</td><td>Pasta de destino</td></tr><tr><td>newName</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Nome para a copia</td></tr><tr><td>overwrite</td><td>Integer</td><td style="text-align:center">-&gt;</td><td><code>fk overwrite</code> to replace existing elements</td></tr><tr><td>Resultados</td><td>4D. Folder</td><td style="text-align:center">&lt;-</td><td>Pasta ou arquivo copiado</td></tr></tbody></table>
+<table><thead><tr><th>Parâmetro</th><th>Tipo</th><th style="text-align:center"></th><th>Descrição</th></tr></thead><tbody><tr><td>destinationFolder</td><td>4D. Folder</td><td style="text-align:center">-&gt;</td><td>Pasta de destino</td></tr><tr><td>newName</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Nome para a copia</td></tr><tr><td>overwrite</td><td>Integer</td><td style="text-align:center">-&gt;</td><td><code>fk overwrite</code> para substituir os elementos existentes</td></tr><tr><td>Resultados</td><td>4D. Folder</td><td style="text-align:center">&lt;-</td><td>Pasta ou arquivo copiado</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-2">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/API/FolderClass#descrição-2">​</a></h4>
 <p>The <code>.copyTo()</code> function copies the <code>Folder</code> object into the specified <em>destinationFolder</em>.</p>
 <p>The <em>destinationFolder</em> must exist on disk, otherwise an error is generated.</p>
@@ -432,8 +432,8 @@
 <p>If necessary, the function creates the folder hierachy as described in the <a href="/docs/pt/API/FolderClass#platformpath">platformPath</a> or <a href="/docs/pt/API/FolderClass#path">path</a> properties. Se a pasta já existir no disco, a função não faz nada (não é atirado nenhum erro) e retorna falso.</p>
 <p><strong>Valor retornado</strong></p>
 <ul>
-<li><strong>True</strong> if the folder is created successfully;</li>
-<li><strong>False</strong> if a folder with the same name already exists or if an error occured.</li>
+<li><strong>True</strong> se a pasta for criada com sucesso;</li>
+<li><strong>False</strong> se já existir uma pasta com o mesmo nome ou se tiver ocorrido um erro.</li>
 </ul>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemplo-1-1">Exemplo 1<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/API/FolderClass#exemplo-1-1">​</a></h4>
 <p>Criar uma pasta vazia na pasta da base de dados:</p>
@@ -633,7 +633,7 @@
 <li>A pasta só é apagada se estiver vazia; caso contrário, o comando não faz nada e é gerado um erro -47.</li>
 <li>Se a pasta não existir, o erro -120 é gerado.</li>
 </ul>
-<p>When <code>Delete with contents</code> is passed:</p>
+<p>Quando <code>Delete with contents</code> é passado:</p>
 <ul>
 <li>A pasta, juntamente com todo o seu conteúdo, é apagada.
 <strong>Warning</strong>: Even when this folder and/or its contents are locked or set to read-only, if the current user has suitable access rights, the folder (and contents) is still deleted.</li>

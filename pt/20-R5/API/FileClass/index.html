@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">File | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://4d.github.io/docs/pt/20-R5/API/FileClass"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="20-R5"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" name="docsearch:version" content="20-R5"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" property="og:title" content="File | 4D Docs"><meta data-rh="true" name="description" content="File objects are created with the File command. Contêm referências a ficheiros de disco que podem ou não existir efectivamente no disco. For example, when you execute the File command to create a new file, a valid File object is created but nothing is actually stored on disk until you call the file.create( ) function."><meta data-rh="true" property="og:description" content="File objects are created with the File command. Contêm referências a ficheiros de disco que podem ou não existir efectivamente no disco. For example, when you execute the File command to create a new file, a valid File object is created but nothing is actually stored on disk until you call the file.create( ) function."><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://4d.github.io/docs/pt/20-R5/API/FileClass"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/20-R5/API/FileClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/fr/20-R5/API/FileClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/es/20-R5/API/FileClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/ja/20-R5/API/FileClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/pt/20-R5/API/FileClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/20-R5/API/FileClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.dc9a4272.css">
-<script src="/docs/pt/assets/js/runtime~main.201d9adc.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.ea3850c4.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.05a1ee33.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -419,7 +419,7 @@
 
 
 
-<table><thead><tr><th>Parâmetro</th><th>Tipo</th><th style="text-align:center"></th><th>Descrição</th></tr></thead><tbody><tr><td>destinationFolder</td><td>4D. Folder</td><td style="text-align:center">-&gt;</td><td>Pasta de destino</td></tr><tr><td>newName</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Nome para a copia</td></tr><tr><td>overwrite</td><td>Integer</td><td style="text-align:center">-&gt;</td><td><code>fk overwrite</code> to replace existing elements</td></tr><tr><td>Resultados</td><td>4D. File</td><td style="text-align:center">&lt;-</td><td>Arquivo copiado</td></tr></tbody></table>
+<table><thead><tr><th>Parâmetro</th><th>Tipo</th><th style="text-align:center"></th><th>Descrição</th></tr></thead><tbody><tr><td>destinationFolder</td><td>4D. Folder</td><td style="text-align:center">-&gt;</td><td>Pasta de destino</td></tr><tr><td>newName</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Nome para a copia</td></tr><tr><td>overwrite</td><td>Integer</td><td style="text-align:center">-&gt;</td><td><code>fk overwrite</code> para substituir os elementos existentes</td></tr><tr><td>Resultados</td><td>4D. File</td><td style="text-align:center">&lt;-</td><td>Arquivo copiado</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-2">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/API/FileClass#descrição-2">​</a></h4>
 <p>The <code>.copyTo()</code> function copies the <code>File</code> object into the specified <em>destinationFolder</em> .</p>
 <p>The <em>destinationFolder</em> must exist on disk, otherwise an error is generated.</p>
@@ -1169,7 +1169,7 @@ If the document does not contain a BOM and if <em>charSetName</em> or <em>charSe
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.modificationDate</strong> : Date</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-20">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/API/FileClass#descrição-20">  ​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-20">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/API/FileClass#descri ção-20">​</a></h4>
 <p>The <code>.modificationDate</code> property returns the date of the file&#x27;s last modification.</p>
 <p>Essa propriedade é <strong>somente leitura</strong>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="modificationtime">.modificationTime<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/API/FileClass#modificationtime">​</a></h2>
@@ -1607,7 +1607,7 @@ If the document does not contain a BOM and if <em>charSetName</em> or <em>charSe
 <blockquote>
 <p>A função apenas é compatível com arquivos .plist em formato xml (baseado em texto). Um erro é retornado se usado com um arquivo .plist em formato binário.</p>
 </blockquote>
-<p><strong><em>info</em> parameter object with a .exe or .dll file</strong></p>
+<p>*<strong>Parâmetro <em>info</em> com um arquivo .exe ou .dll</strong></p>
 <blockquote>
 <p>A escrita de um arquivo .exe ou .dll só é possível no Windows.</p>
 </blockquote>
@@ -1792,7 +1792,7 @@ If the document does not contain a BOM and if <em>charSetName</em> or <em>charSe
 <p>For the list of character sets supported by 4D, refer to the description of the <code>CONVERT FROM TEXT</code> command.</p>
 </blockquote>
 <p>Se uma marca de ordem de byte (BOM) existe para o conjunto de caracteres, 4D a insere no ficheiro a menos que o conjunto de caracteres usado contenha o sufixo &quot;-no-bom&quot; (por exemplo, &quot;UTF-8-no-bom&quot;). Se não especificar um conjunto de caracteres, por defeito 4D usa o conjunto de caracteres &quot;UTF-8&quot; sem BOM.</p>
-<p>In <em>breakMode</em>, you can pass a number indicating the processing to apply to end-of-line characters before saving them in the file. The following constants, found in the <strong>System Documents</strong> theme, are available:</p>
+<p>In <em>breakMode</em>, you can pass a number indicating the processing to apply to end-of-line characters before saving them in the file. Estão disponíveis as seguintes constantes, encontradas no tema <strong>System Documents</strong>:</p>
 
 
 

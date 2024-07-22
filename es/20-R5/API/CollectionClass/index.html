@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Collection | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://4d.github.io/docs/es/20-R5/API/CollectionClass"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="20-R5"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" name="docsearch:version" content="20-R5"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" property="og:title" content="Collection | 4D Docs"><meta data-rh="true" name="description" content="La clase Collection gestiona variables de tipo Collection."><meta data-rh="true" property="og:description" content="La clase Collection gestiona variables de tipo Collection."><link data-rh="true" rel="icon" href="/docs/es/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://4d.github.io/docs/es/20-R5/API/CollectionClass"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/20-R5/API/CollectionClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/fr/20-R5/API/CollectionClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/es/20-R5/API/CollectionClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/ja/20-R5/API/CollectionClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/pt/20-R5/API/CollectionClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/20-R5/API/CollectionClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/es/opensearch.xml"><link rel="stylesheet" href="/docs/es/assets/css/styles.dc9a4272.css">
-<script src="/docs/es/assets/js/runtime~main.dc253d2f.js" defer="defer"></script>
+<script src="/docs/es/assets/js/runtime~main.c2ec6b5a.js" defer="defer"></script>
 <script src="/docs/es/assets/js/main.e0ceec6c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -3041,7 +3041,7 @@ Al utilizar un valor constante, deben respetarse las siguientes reglas:</p>
 </ul>
 <p>La retrollamada define los siguientes parámetros:</p>
 <ul>
-<li><em>$1.accumulator</em>: value to be modified by the function and which is initialized by <em>initValue</em>.</li>
+<li><em>$1.accumulator</em>: valor que va a ser modificado por la función y que es inicializado por <em>initValue</em>.</li>
 <li><em>$1.stop</em> (boolean, opcional): <strong>true</strong> para detener la retrollamada del método. El valor devuelto es el último calculado.</li>
 </ul>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ejemplo-1-14">Ejemplo 1<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20-R5/API/CollectionClass#ejemplo-1-14">​</a></h4>
@@ -3131,7 +3131,7 @@ Al utilizar un valor constante, deben respetarse las siguientes reglas:</p>
 </ul>
 <p>La retrollamada define los siguientes parámetros:</p>
 <ul>
-<li><em>$1.accumulator</em>: value to be modified by the function and which is initialized by <em>initValue</em>.</li>
+<li><em>$1.accumulator</em>: valor que va a ser modificado por la función y que es inicializado por <em>initValue</em>.</li>
 <li><em>$1.stop</em> (boolean, opcional): <strong>true</strong> para detener la retrollamada del método. El valor devuelto es el último calculado.</li>
 </ul>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ejemplo-1-15">Ejemplo 1<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20-R5/API/CollectionClass#ejemplo-1-15">​</a></h4>
@@ -3201,7 +3201,7 @@ Al utilizar un valor constante, deben respetarse las siguientes reglas:</p>
 <ul>
 <li>Si <em>index</em> &lt; 0, se recalcula como <em>index:=index+length</em> (se considera el desplazamiento desde el final de la colección).</li>
 <li>Si el valor calculado &lt; 0, <em>index</em> toma el valor 0.</li>
-<li>If the calculated value &gt; the length of the collection, <em>index</em> is set to the length.</li>
+<li>Si el valor calculado &gt; la longitud de la colección, <em>index</em> toma el valor de la longitud.</li>
 </ul>
 <p>En <em>howMany</em>, pase el número de elementos a eliminar de <em>index</em>. Si no se especifica <em>howMany</em>, se elimina un elemento.</p>
 <p>Si se intenta eliminar un elemento de una colección vacía, el método no hace nada (no se genera ningún error).</p>
@@ -3261,10 +3261,10 @@ Al utilizar un valor constante, deben respetarse las siguientes reglas:</p>
 <p>Esta función modifica la colección original.</p>
 </blockquote>
 <ul>
-<li>If <em>size</em> &lt; collection length, exceeding elements are removed from the collection.</li>
+<li>Si <em>size</em> la longitud de la colección, los elementos que exceden se eliminan de la colección.</li>
 <li>Si <em>size</em> &gt; longitud de la colección, <em>size</em> es la nueva longitud de la colección.</li>
 </ul>
-<p>Por defecto, los nuevos elementos se llenan con valores <strong>null</strong>. You can specify the value to fill in added elements using the <em>defaultValue</em> parameter.</p>
+<p>Por defecto, los nuevos elementos se llenan con valores <strong>null</strong>. Puede especificar el valor a llenar en los elementos añadidos utilizando el parámetro <em>defaultValue</em>.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ejemplo-28">Ejemplo<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20-R5/API/CollectionClass#ejemplo-28">​</a></h4>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> var $c : Collection</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $c:=New collection</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $c.resize(10) // $c=[null,null,null,null,null,null,null,null,null,null]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $c:=New collection</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $c.resize(10;0) // $c=[0,0,0,0,0,0,0,0,0,0]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $c:=New collection(1;2;3;4;5)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $c.resize(10;New object(&quot;name&quot;;&quot;X&quot;)) //$c=[1,2,3,4,5,{name:X},{name:X},{name:X},{name:X},{name:X}]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $c:=New collection(1;2;3;4;5)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $c.resize(2) //$c=[1,2]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código al portapaples" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="reverse">.reverse()<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20-R5/API/CollectionClass#reverse">​</a></h2>
@@ -3473,13 +3473,13 @@ Al utilizar un valor constante, deben respetarse las siguientes reglas:</p>
 <li><em>$1.stop</em> (boolean, opcional): <strong>true</strong> para detener la retrollamada del método. El valor devuelto es el último calculado.</li>
 </ul>
 <p>In any case, at the point where <code>.some()</code> function encounters the first collection element returning true, it stops calling the callback and returns <strong>true</strong>.</p>
-<p>Por defecto, <code>.some()</code> comprueba toda la colección. Optionally, you can pass the index of an element from which to start the test in <em>startFrom</em>.</p>
+<p>Por defecto, <code>.some()</code> comprueba toda la colección. Opcionalmente, puede pasar el índice de un elemento desde el cual iniciar la prueba en <em>startFrom</em>.</p>
 <ul>
 <li>
 <p>If <em>startFrom</em> &gt;= the collection&#x27;s length, <strong>False</strong> is returned, which means the collection is not tested.</p>
 </li>
 <li>
-<p>If <em>startFrom</em> &lt; 0, it is considered as the offset from the end of the collection.</p>
+<p>Si <em>startFrom</em> &lt; 0, se considera como el desplazamiento desde el final de la colección.</p>
 </li>
 <li>
 <p>Si <em>startFrom</em> = 0, se busca en toda la colección (por defecto).</p>
@@ -3551,7 +3551,7 @@ Al utilizar un valor constante, deben respetarse las siguientes reglas:</p>
 <blockquote>
 <p>Esta función modifica la colección original.</p>
 </blockquote>
-<p>If <code>.sort()</code> is called with no parameters, only scalar values (number, text, date, booleans) are sorted. Los elementos se ordenan por defecto de forma ascendente, según su tipo. Si la colección contiene elementos de diferentes tipos, se agrupan primero por tipo y se ordenan después. Si <em x-id="3">attributePath</em> lleva a una propiedad de objeto que contiene valores de diferentes tipos, primero se agrupan por tipo y se ordenan después.</p>
+<p>Si se llama a <code>.sort()</code> sin parámetros, sólo se ordenan los valores escalares (número, texto, fecha, booleanos). Los elementos se ordenan por defecto de forma ascendente, según su tipo. Si la colección contiene elementos de diferentes tipos, se agrupan primero por tipo y se ordenan después. Si <em x-id="3">attributePath</em> lleva a una propiedad de objeto que contiene valores de diferentes tipos, primero se agrupan por tipo y se ordenan después.</p>
 <ol>
 <li>null</li>
 <li>booleans</li>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">IMAPTransporter | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://4d.github.io/docs/pt/20-R5/API/IMAPTransporterClass"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="20-R5"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" name="docsearch:version" content="20-R5"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" property="og:title" content="IMAPTransporter | 4D Docs"><meta data-rh="true" name="description" content="The IMAPTransporter class allows you to retrieve messages from a IMAP email server."><meta data-rh="true" property="og:description" content="The IMAPTransporter class allows you to retrieve messages from a IMAP email server."><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://4d.github.io/docs/pt/20-R5/API/IMAPTransporterClass"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/20-R5/API/IMAPTransporterClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/fr/20-R5/API/IMAPTransporterClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/es/20-R5/API/IMAPTransporterClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/ja/20-R5/API/IMAPTransporterClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/pt/20-R5/API/IMAPTransporterClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/20-R5/API/IMAPTransporterClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.dc9a4272.css">
-<script src="/docs/pt/assets/js/runtime~main.201d9adc.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.ea3850c4.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.05a1ee33.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -209,7 +209,7 @@
 <p><strong>Warning</strong>: Make sure the defined timeout is lower than the server timeout, otherwise the client timeout will be useless.</p>
 </blockquote>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="resultados">Resultados<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/API/IMAPTransporterClass#resultados">​</a></h4>
-<p>The function returns an <a href="/docs/pt/20-R5/API/IMAPTransporterClass#imap-transporter-object"><strong>IMAP transporter object</strong></a>. Todas as propriedades retornadas são <strong>apenas leitura</strong>.</p>
+<p>A função retorna um <a href="/docs/pt/20-R5/API/IMAPTransporterClass#imap-transporter-object"><strong>objeto transportador IMAP</strong></a>. Todas as propriedades retornadas são <strong>apenas leitura</strong>.</p>
 <blockquote>
 <p>A ligação IMAP é automaticamente fechada quando o objecto transportador é destruído.</p>
 </blockquote>
@@ -1883,8 +1883,8 @@
 </ul>
 <p>The optional <em>updateSeen</em> parameter allows you to specify if the message is marked as &quot;seen&quot; in the mailbox. Pode passar:</p>
 <ul>
-<li><strong>True</strong> - to mark the message as &quot;seen&quot; (indicating the message has been read)</li>
-<li><strong>False</strong> - to leave the message&#x27;s &quot;seen&quot; status untouched</li>
+<li><strong>True</strong> - para marcar a mensagem como &quot;vista&quot; (indicando que a mensagem foi lida)</li>
+<li><strong>False</strong> - para deixar o status &quot;visto&quot; da mensagem inalterado</li>
 </ul>
 <blockquote>
 <ul>
@@ -2534,19 +2534,19 @@ Examples:
 <p><strong>ALL</strong>: Todas as mensagens na caixa de correio.<br>
 <strong>ANSWERED</strong>: mensagens com o indicador \Answered ativo.<br>
 <strong>UNANSWERED</strong>: Messages that do not have the \Answered flag set.<br>
-<strong>DELETED</strong>: Messages with the \Deleted flag set.<br>
+<strong>DELETED</strong>: mensagens com o sinalizador \Deleted ativado.<br>
 <strong>UNDELETED</strong>: Messages that do not have the \Deleted flag set.<br>
 <strong>DRAFT</strong>: mensagens com o indicador \Draft ativo.<br>
-<strong>UNDRAFT</strong>: Messages that do not have the \Draft flag set.<br>
-<strong>FLAGGED</strong>: Messages with the \Flagged flag set.<br>
+<strong>UNDRAFT</strong>: mensagens que não têm o sinalizador \Draft ativado.<br>
+<strong>FLAGGED</strong>: mensagens com o indicador \Flagged ativo.<br>
 <strong>UNFLAGGED</strong>: Messages that do not have the \Flagged flag set.<br>
-<strong>RECENT</strong>: Messages that have the \Recent flag set.<br>
+<strong>RECENT</strong>: mensagens que possuem o indicador \Recent ativado.<br>
 <strong>OLD</strong>: mensagens que não possuem o indicador \Recent definido.<br>
-<strong>SEEN</strong>: Messages that have the \Seen flag set.<br>
+<strong>SEEN</strong>: mensagens que têm o sinalizador \Seen ativo.<br>
 <strong>UNSEEN</strong>: Mensagens que não possuem o indicador \Seen definido.<br>
 <strong>NEW</strong>: Messages that have the \Recent flag set but not the \Seen flag. This is functionally equivalent to “(RECENT UNSEEN)”.<br>
 <strong>KEYWORD <em>flag</em></strong>: Messages with the specified keyword set.<br>
-<strong>UNKEYWORD <em>flag</em></strong>: Messages that do not have the specified keyword set.<br>
+<strong>UNKEYWORD <em>flag</em></strong>: mensagens que não têm a palavra-chave especificada.<br>
 <strong>BEFORE <em>date</em></strong>: Messages whose internal date is earlier than the specified date.<br>
 <strong>ON <em>date</em></strong>: Messages whose internal date is within the specified date.<br>
 <strong>SINCE <em>date</em></strong>: Messages whose internal date is within or later than the specified date.<br>
@@ -2554,16 +2554,16 @@ Examples:
 <strong>SENTON <em>date</em></strong>: Messages whose Date header is within the specified date.<br>
 <strong>SENTSINCE <em>date</em></strong>: Messages whose Date header is within or later than the specified date.<br>
 <strong>TO <em>string</em></strong>: Messages that contain the specified string in the TO header.<br>
-<strong>FROM <em>string</em></strong>: Messages that contain the specified string in the FROM header.<br>
+<strong>FROM <em>string</em></strong>: mensagens que contêm a string especificada no cabeçalho FROM.<br>
 <strong>CC <em>string</em></strong>: Messages that contain the specified string in the CC header.<br>
-<strong>BCC <em>string</em></strong>: Messages that contain the specified string in the BCC header.<br>
+<strong>BCC <em>string</em></strong>: mensagens que contêm a string especificada no cabeçalho BCC.<br>
 <strong>SUBJECT <em>string</em></strong>: Messages that contain the specified string in the Subject header.<br>
 <strong>BODY <em>string</em></strong>: Messages that contain the specified string in the message body.<br>
 <strong>TEXT <em>string</em></strong>: Messages that contain the specified string in the header or in the message body.<br>
 <strong>HEADER <em>field-name</em> <em>string</em></strong>: Messages that have a header with the specified field-name and that contain the specified string in the field-body.<br>
 <strong>UID <em>message-UID</em></strong>: Messages with unique identifiers corresponding to the specified unique identifier set.<br>
-<strong>LARGER <em>n</em></strong>: Messages with a size larger than the specified number of bytes.<br>
-<strong>SMALLER <em>n</em></strong>: Messages with a size smaller than the specified number of bytes.<br>
+<strong>LARGER <em>n</em></strong>: mensagens com tamanho maior do que o número de bytes especificado.<br>
+<strong>SMALLER <em>n</em></strong>: mensagens com tamanho menor do que o número de bytes especificado.<br>
 <strong>NOT <em>search-key</em></strong>: Messages that do not match the specified search key.<br>
 <strong>OR <em>search-key1</em> <em>search-key2</em></strong>: Messages that match either search key.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="selectbox">.selectBox()<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/API/IMAPTransporterClass#selectbox">​</a></h2>
