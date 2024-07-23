@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">SMTPTransporter | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://4d.github.io/docs/es/20-R5/API/SMTPTransporterClass"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="20-R5"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" name="docsearch:version" content="20-R5"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" property="og:title" content="SMTPTransporter | 4D Docs"><meta data-rh="true" name="description" content="La clase SMTPTransporter permite configurar conexiones SMTP y enviar correos electrónicos a través de objetos SMTP transporter."><meta data-rh="true" property="og:description" content="La clase SMTPTransporter permite configurar conexiones SMTP y enviar correos electrónicos a través de objetos SMTP transporter."><link data-rh="true" rel="icon" href="/docs/es/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://4d.github.io/docs/es/20-R5/API/SMTPTransporterClass"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/20-R5/API/SMTPTransporterClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/fr/20-R5/API/SMTPTransporterClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/es/20-R5/API/SMTPTransporterClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/ja/20-R5/API/SMTPTransporterClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/pt/20-R5/API/SMTPTransporterClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/20-R5/API/SMTPTransporterClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/es/opensearch.xml"><link rel="stylesheet" href="/docs/es/assets/css/styles.dc9a4272.css">
-<script src="/docs/es/assets/js/runtime~main.c2ec6b5a.js" defer="defer"></script>
+<script src="/docs/es/assets/js/runtime~main.b62e5e7e.js" defer="defer"></script>
 <script src="/docs/es/assets/js/main.e0ceec6c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -278,7 +278,7 @@
 </div></div></details>
 <p><strong>.authenticationMode</strong> : Text</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-3">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20-R5/API/SMTPTransporterClass#descripción-3">​</a></h4>
-<p>The <code>.authenticationMode</code> property contains the authentication mode used to open the session on the mail server.</p>
+<p>La propiedad <code>.authenticationMode</code> contiene el modo de autenticación utilizado para abrir la sesión en el servidor de correo.</p>
 <p>Por defecto, se utiliza el modo más seguro soportado por el servidor.</p>
 <p>Los valores posibles son:</p>
 
@@ -631,7 +631,7 @@
 <table><thead><tr><th>Lanzamiento</th><th>Modificaciones</th></tr></thead><tbody><tr><td>17 R4</td><td>Añadidos</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.port</strong> : Integer</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-11">Descripci ón<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20-R5/API/SMTPTransporterClass#descripción-11">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-11">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20-R5/API/SMTPTransporterClass#descripción-11">​</a></h4>
 <p>The <code>.port</code> property contains  the port number used for mail transactions. By default, if the <em>port</em> property has not been set in the <em>server</em> object (used to create the transporter object with <code>SMTP New transporter</code>, <code>POP3 New transporter</code>, <code>IMAP New transporter</code>), the port used is:</p>
 <ul>
 <li><strong>SMTP</strong> - 587</li>
@@ -689,7 +689,7 @@
 <blockquote>
 <p>El objeto <code>transporter</code> debe haber sido creado con el comando <code>SMTP New transporter</code>.</p>
 </blockquote>
-<p>El método crea la conexión SMTP si no está ya activa. If the <code>.keepAlive</code> property of the <code>transporter</code> object is <strong>false</strong>, the SMTP connection is automatically closed after the execution of <code>.send()</code>, otherwise it stays alive until the <code>transporter</code> object is destroyed. For more information, please refer to the <a href="/docs/es/20-R5/API/SMTPTransporterClass#smtp-new-transporter"><code>SMTP New transporter</code></a> command description.</p>
+<p>El método crea la conexión SMTP si no está ya activa. If the <code>.keepAlive</code> property of the <code>transporter</code> object is <strong>false</strong>, the SMTP connection is automatically closed after the execution of <code>.send()</code>, otherwise it stays alive until the <code>transporter</code> object is destroyed. Para más información, consulte la descripción del comando <a href="/docs/es/20-R5/API/SMTPTransporterClass#smtp-new-transporter"><code>SMTP New transporter</code></a>.</p>
 <p>En <em>mail</em>, pase un <a href="/docs/es/20-R5/API/EmailObjectClass#email-object">objeto <code>Email</code></a> válido para enviar. Las propiedades origen (de dónde viene el correo electrónico) y destino (uno o varios destinatarios) deben incluirse, el resto de propiedades son opcionales.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="objeto-devuelto-1">Objeto devuelto<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20-R5/API/SMTPTransporterClass#objeto-devuelto-1">​</a></h4>
 <p>La función devuelve un objeto que describe el estado SMTP de la operación. Este objeto puede contener las siguientes propiedades:</p>
