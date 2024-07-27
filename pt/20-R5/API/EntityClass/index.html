@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Entity | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://4d.github.io/docs/pt/20-R5/API/EntityClass"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="20-R5"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" name="docsearch:version" content="20-R5"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" property="og:title" content="Entity | 4D Docs"><meta data-rh="true" name="description" content="An entity is an instance of a Dataclass, like a record of the table matching the dataclass in its associated datastore. Contém os mesmos atributos que o dataclass assim como os valores de dados e propriedades e funções específicas."><meta data-rh="true" property="og:description" content="An entity is an instance of a Dataclass, like a record of the table matching the dataclass in its associated datastore. Contém os mesmos atributos que o dataclass assim como os valores de dados e propriedades e funções específicas."><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://4d.github.io/docs/pt/20-R5/API/EntityClass"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/20-R5/API/EntityClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/fr/20-R5/API/EntityClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/es/20-R5/API/EntityClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/ja/20-R5/API/EntityClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/pt/20-R5/API/EntityClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/20-R5/API/EntityClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.dc9a4272.css">
-<script src="/docs/pt/assets/js/runtime~main.c7910fe9.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.b4d38623.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.20a634cd.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -562,7 +562,7 @@
 </ul>
 <p><em>filler</em> pode tratar de uma entidade relacionada sob as seguintes condições:</p>
 <ul>
-<li><em>filler</em> contains the foreign key itself, or</li>
+<li><em>filler</em> contém a chave estrangeira em si, ou</li>
 <li><em>filler</em> contains a property object with the same name as the related entity, containing a single property named &quot;__KEY&quot;.</li>
 <li>se a entidade relacionada não existir, ela é ignorada.</li>
 </ul>
@@ -976,7 +976,7 @@
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-14">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/API/EntityClass#descrição-14">​</a></h4>
 <p>The <code>.lock()</code> function puts a pessimistic lock on the record referenced by the entity. The <a href="/docs/pt/20-R5/ORDA/entities#entity-locking">lock is set</a> for a record and all the references of the entity in the current process.</p>
 <p>Other processes will see this record as locked (the <code>result.success</code> property will contain False if they try to lock the same entity using this function). Só as funções executadas na sessão de &quot;bloqueio&quot; são permitidas para editar e guardar os atributos da entidade. A entidade pode ser carregada como apenas leitura por outras sessões, mas não serão capazes de introduzir e guardar valores.</p>
-<p>A record locked by <code>.lock()</code> is unlocked:</p>
+<p>Um registro bloqueado por <code>.lock()</code> é desbloqueado:</p>
 <ul>
 <li>when the <a href="/docs/pt/20-R5/API/EntityClass#unlock"><code>unlock()</code></a> function is called on a matching entity in the same process</li>
 <li>automaticamente, quando já não é referenciado por nenhuma entidade em memória. Por exemplo, se a fechadura for colocada apenas numa referência local de uma entidade, a entidade é desbloqueada quando a função termina. Enquanto houver referências à entidade em memória, o registo permanece bloqueado.</li>
