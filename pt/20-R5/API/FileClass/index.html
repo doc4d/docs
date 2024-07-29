@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">File | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://4d.github.io/docs/pt/20-R5/API/FileClass"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="20-R5"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" name="docsearch:version" content="20-R5"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" property="og:title" content="File | 4D Docs"><meta data-rh="true" name="description" content="File objects are created with the File command. Contêm referências a ficheiros de disco que podem ou não existir efectivamente no disco. For example, when you execute the File command to create a new file, a valid File object is created but nothing is actually stored on disk until you call the file.create( ) function."><meta data-rh="true" property="og:description" content="File objects are created with the File command. Contêm referências a ficheiros de disco que podem ou não existir efectivamente no disco. For example, when you execute the File command to create a new file, a valid File object is created but nothing is actually stored on disk until you call the file.create( ) function."><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://4d.github.io/docs/pt/20-R5/API/FileClass"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/20-R5/API/FileClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/fr/20-R5/API/FileClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/es/20-R5/API/FileClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/ja/20-R5/API/FileClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/pt/20-R5/API/FileClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/20-R5/API/FileClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.dc9a4272.css">
-<script src="/docs/pt/assets/js/runtime~main.b4d38623.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.f62ebd83.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.20a634cd.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -187,7 +187,7 @@
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/API/FileClass#descrição">​</a></h4>
 <p>The <code>File</code> command creates and returns a new object of the <code>4D.File</code> type. O comando aceita duas sintaxes:</p>
 <p><strong>File ( path { ; pathType } { ; * })</strong></p>
-<p>In the <em>path</em> parameter, pass a file path string. You can use a custom string or a <a href="/docs/pt/20-R5/Concepts/paths#filesystem-pathnames">filesystem</a> (e.g., &quot;/DATA/myfile.txt&quot;).</p>
+<p>No parâmetro <em>path</em>, passe um caminho do arquivo. You can use a custom string or a <a href="/docs/pt/20-R5/Concepts/paths#filesystem-pathnames">filesystem</a> (e.g., &quot;/DATA/myfile.txt&quot;).</p>
 <blockquote>
 <p>Only absolute pathnames are supported with the <code>File</code> command.</p>
 </blockquote>
@@ -1416,7 +1416,7 @@ If the document does not contain a BOM and if <em>charSetName</em> or <em>charSe
 
 <table><thead><tr><th>Modo de interrupção no texto</th><th>Break mode em numérico (constante)</th><th>Descrição</th></tr></thead><tbody><tr><td>&quot;native&quot;</td><td>1 (<code>Document with native format</code>)</td><td>(Padrão) As quebras de linha são convertidas para o formato nativo do sistema operativo: LF (avanço de linha) no macOS, CRLF (retorno de carro + avanço de linha) no Windows</td></tr><tr><td>&quot;crlf&quot;</td><td>2 (<code>Document with CRLF</code>)</td><td>As quebras de linha são convertidas em CRLF (retorno de carro + avanço de linha), o formato predefinido do Windows</td></tr><tr><td>&quot;cr&quot;</td><td>3 (<code>Document with CR</code>)</td><td>As quebras de linha são convertidas em CR (carriage return), o formato padrão do Mac OS</td></tr><tr><td>&quot;lf&quot;</td><td>4 (<code>Document with LF</code>)</td><td>As quebras de linha são convertidas para LF (line feed), o formato padrão Unix e macOS</td></tr></tbody></table>
 <blockquote>
-<p>The <em>break mode as text</em> value is case sensitive.</p>
+<p>O valor <em>break mode as text</em> diferencia maiúsculas de minúsculas.</p>
 </blockquote>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemplo-9">Exemplo<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/API/FileClass#exemplo-9">​</a></h4>
 <p>Pretende criar um file handle para a leitura do ficheiro &quot;ReadMe.txt&quot;:</p>
@@ -1782,7 +1782,7 @@ If the document does not contain a BOM and if <em>charSetName</em> or <em>charSe
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-32">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/API/FileClass#descrição-32">​</a></h4>
 <p>The <code>.setText()</code> function writes <em>text</em> as the new contents of the file.</p>
 <p>If the file referenced in the <code>File</code> object does not exist on the disk, it is created by the function. Quando o ficheiro já existir no disco, o seu conteúdo anterior é apagado, exceto se já estiver aberto, caso em que o seu conteúdo é bloqueado e é gerado um erro.</p>
-<p>In <em>text</em>, pass the text to write to the file. Pode ser um texto literal (&quot;my text&quot;), ou um campo/variável texto 4D.</p>
+<p>Em <em>text,</em> passe o texto a escrever no arquivo. Pode ser um texto literal (&quot;my text&quot;), ou um campo/variável texto 4D.</p>
 <p>Opcionalmente, pode designar o conjunto de caracteres a utilizar para escrever o conteúdo. Você pode passar também:</p>
 <ul>
 <li>in <em>charSetName</em>, a string containing the standard set name (for example &quot;ISO-8859-1&quot; or &quot;UTF-8&quot;),</li>
