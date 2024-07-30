@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Clase Transporter | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://4d.github.io/docs/es/next/API/Transporter"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Clase Transporter | 4D Docs"><meta data-rh="true" name="description" content="Descripción"><meta data-rh="true" property="og:description" content="Descripción"><link data-rh="true" rel="icon" href="/docs/es/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://4d.github.io/docs/es/next/API/Transporter"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/next/API/Transporter" hreflang="en"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/fr/next/API/Transporter" hreflang="fr"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/es/next/API/Transporter" hreflang="es"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/ja/next/API/Transporter" hreflang="ja"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/pt/next/API/Transporter" hreflang="pt"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/next/API/Transporter" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/es/opensearch.xml"><link rel="stylesheet" href="/docs/es/assets/css/styles.dc9a4272.css">
-<script src="/docs/es/assets/js/runtime~main.1568dd1a.js" defer="defer"></script>
+<script src="/docs/es/assets/js/runtime~main.96dba86d.js" defer="defer"></script>
 <script src="/docs/es/assets/js/main.e0ceec6c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -28,8 +28,8 @@
 </div></div></details>
 <p><strong>.acceptUnsecureConnection</strong> : Boolean</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-1">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/API/Transporter#descripción-1">​</a></h4>
-<p>The <code>.acceptUnsecureConnection</code> property contains <strong>True</strong> if 4D is allowed to establish an unencrypted connection when encrypted connection is not possible.</p>
-<p>It contains <strong>False</strong> if unencrypted connections are unallowed, in which case an error in returned when encrypted connection is not possible.</p>
+<p>La propiedad <code>.acceptUnsecureConnection</code> contiene <strong>True</strong> si se autoriza a 4D establecer una conexión no cifrada cuando la conexión cifrada no es posible.</p>
+<p>Contiene <strong>False</strong> si no se permiten las conexiones no cifradas, en cuyo caso se devuelve un error cuando no es posible la conexión cifrada.</p>
 <p>Los puertos seguros disponibles son:</p>
 <ul>
 <li>
@@ -74,7 +74,7 @@
 </div></div></details>
 <p><strong>.authenticationMode</strong> : Text</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-2">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/API/Transporter#descripción-2">​</a></h4>
-<p>The <code>.authenticationMode</code> property contains the authentication mode used to open the session on the mail server.</p>
+<p>La propiedad <code>.authenticationMode</code> contiene el modo de autenticación utilizado para abrir la sesión en el servidor de correo.</p>
 <p>Por defecto, se utiliza el modo más seguro soportado por el servidor.</p>
 <p>Los valores posibles son:</p>
 
@@ -245,7 +245,7 @@
 </div></div></details>
 <p><strong>.bodyCharset</strong> : Text</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-5">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/API/Transporter#descripción-5">​</a></h4>
-<p>The <code>.bodyCharset</code> property contains   the charset and encoding used for the body part of the email.</p>
+<p>La propiedad <code>.bodyCharset</code> contiene  el conjunto de caracteres y la codificación utilizados para la parte del cuerpo del correo electrónico.</p>
 <p><strong>Valores posibles:</strong></p>
 
 
@@ -277,7 +277,7 @@
 
 
 
-<table><thead><tr><th>Constante</th><th>Valor</th><th>Comentario</th></tr></thead><tbody><tr><td>mail mode ISO2022JP</td><td>US-ASCII_ISO-2022-JP_UTF8_QP</td><td><ul><li><em>headerCharset</em>: US-ASCII if possible, Japanese (ISO-2022-JP) &amp; Quoted-printable if possible, otherwise UTF-8 &amp; Quoted-printable</li><li><em>bodyCharset</em>: US-ASCII if possible, Japanese (ISO-2022-JP) &amp; 7-bit if possible, otherwise UTF-8 &amp; Quoted-printable</li></ul></td></tr><tr><td>mail mode ISO88591</td><td>ISO-8859-1</td><td><ul><li><em>headerCharset</em>: ISO-8859-1 &amp; Quoted-printable</li><li><em>bodyCharset</em>: ISO-8859-1 &amp; 8-bit</li></ul></td></tr><tr><td>mail mode UTF8</td><td>US-ASCII_UTF8_QP</td><td><em>headerCharset</em> &amp; <em>bodyCharset</em>: US-ASCII si es posible, en caso contrario UTF-8 &amp; Quoted-printable (<strong>valor por defecto</strong>)</td></tr><tr><td>mail mode UTF8 in base64</td><td>US-ASCII_UTF8_B64</td><td><em>headerCharset</em> &amp; <em>bodyCharset</em>: US-ASCII si es posible, de lo contrario UTF-8 &amp; base64</td></tr></tbody></table>
+<table><thead><tr><th>Constante</th><th>Valor</th><th>Comentario</th></tr></thead><tbody><tr><td>mail mode ISO2022JP</td><td>US-ASCII_ISO-2022-JP_UTF8_QP</td><td><ul><li><em>headerCharset</em>: US-ASCII si es posible, Japanese (ISO-2022-JP) &amp;Quoted-printable si es posible, de lo contrario UTF-8 &amp; Quoted-printable</li><li><em>bodyCharset</em>: US-ASCII si es posible, Japanese (ISO-2022-JP) &amp; 7-bit si es posible, de lo contrario UTF-8 &amp; Quoted-printable</li></ul></td></tr><tr><td>mail mode ISO88591</td><td>ISO-8859-1</td><td><ul><li><em>headerCharset</em>: ISO-8859-1 &amp; Quoted-printable</li><li><em>bodyCharset</em>: ISO-8859-1 &amp; 8-bit</li></ul></td></tr><tr><td>mail mode UTF8</td><td>US-ASCII_UTF8_QP</td><td><em>headerCharset</em> &amp; <em>bodyCharset</em>: US-ASCII si es posible, en caso contrario UTF-8 &amp; Quoted-printable (<strong>valor por defecto</strong>)</td></tr><tr><td>mail mode UTF8 in base64</td><td>US-ASCII_UTF8_B64</td><td><em>headerCharset</em> &amp; <em>bodyCharset</em>: US-ASCII si es posible, de lo contrario UTF-8 &amp; base64</td></tr></tbody></table>
 <hr>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="connectiontimeout">.connectionTimeOut<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/API/Transporter#connectiontimeout">​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Historia</summary><div><div class="collapsibleContent_i85q">
@@ -298,7 +298,7 @@
 </div></div></details>
 <p><strong>.connectionTimeOut</strong> : Integer</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-6">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/API/Transporter#descripción-6">​</a></h4>
-<p>The <code>.connectionTimeOut</code> property contains the maximum wait time (in seconds) allowed to establish a connection to the server. By default, if the property has not been set in the server object (used to create the transporter object with <code>SMTP New transporter</code>, <code>POP3 New transporter</code>, or <code>IMAP New transporter</code>), the value is 30.</p>
+<p>La propiedad <code>.connectionTimeOut</code> contiene el tiempo máximo de espera (en segundos) permitido para establecer una conexión con el servidor. Por defecto, si la propiedad no se ha definido en el objeto servidor (utilizado para crear el objeto transportador con <code>SMTP New transporter</code>, <code>POP3 New transporter</code>, o <code>IMAP New transporter</code>), el valor es 30.</p>
 <hr>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="headercharset">.headerCharset<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/API/Transporter#headercharset">​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Historia</summary><div><div class="collapsibleContent_i85q">
@@ -356,7 +356,7 @@
 
 
 
-<table><thead><tr><th>Constante</th><th>Valor</th><th>Comentario</th></tr></thead><tbody><tr><td>mail mode ISO2022JP</td><td>US-ASCII_ISO-2022-JP_UTF8_QP</td><td><ul><li><em>headerCharset</em>: US-ASCII if possible, Japanese (ISO-2022-JP) &amp; Quoted-printable if possible, otherwise UTF-8 &amp; Quoted-printable</li><li><em>bodyCharset</em>: US-ASCII if possible, Japanese (ISO-2022-JP) &amp; 7-bit if possible, otherwise UTF-8 &amp; Quoted-printable</li></ul></td></tr><tr><td>mail mode ISO88591</td><td>ISO-8859-1</td><td><ul><li><em>headerCharset</em>: ISO-8859-1 &amp; Quoted-printable</li><li><em>bodyCharset</em>: ISO-8859-1 &amp; 8-bit</li></ul></td></tr><tr><td>mail mode UTF8</td><td>US-ASCII_UTF8_QP</td><td><em>headerCharset</em> &amp; <em>bodyCharset</em>: US-ASCII si es posible, en caso contrario UTF-8 &amp; Quoted-printable (valor por defecto)</td></tr><tr><td>mail mode UTF8 in base64</td><td>US-ASCII_UTF8_B64</td><td><em>headerCharset</em> &amp; <em>bodyCharset</em>: US-ASCII si es posible, de lo contrario UTF-8 &amp; base64</td></tr></tbody></table>
+<table><thead><tr><th>Constante</th><th>Valor</th><th>Comentario</th></tr></thead><tbody><tr><td>mail mode ISO2022JP</td><td>US-ASCII_ISO-2022-JP_UTF8_QP</td><td><ul><li><em>headerCharset</em>: US-ASCII si es posible, Japanese (ISO-2022-JP) &amp;Quoted-printable si es posible, de lo contrario UTF-8 &amp; Quoted-printable</li><li><em>bodyCharset</em>: US-ASCII si es posible, Japanese (ISO-2022-JP) &amp; 7-bit si es posible, de lo contrario UTF-8 &amp; Quoted-printable</li></ul></td></tr><tr><td>mail mode ISO88591</td><td>ISO-8859-1</td><td><ul><li><em>headerCharset</em>: ISO-8859-1 &amp; Quoted-printable</li><li><em>bodyCharset</em>: ISO-8859-1 &amp; 8-bit</li></ul></td></tr><tr><td>mail mode UTF8</td><td>US-ASCII_UTF8_QP</td><td><em>headerCharset</em> &amp; <em>bodyCharset</em>: US-ASCII si es posible, en caso contrario UTF-8 &amp; Quoted-printable (valor por defecto)</td></tr><tr><td>mail mode UTF8 in base64</td><td>US-ASCII_UTF8_B64</td><td><em>headerCharset</em> &amp; <em>bodyCharset</em>: US-ASCII si es posible, de lo contrario UTF-8 &amp; base64</td></tr></tbody></table>
 <hr>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="host">.host<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/API/Transporter#host">​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Historia</summary><div><div class="collapsibleContent_i85q">
@@ -398,8 +398,8 @@
 </div></div></details>
 <p><strong>.logFile</strong> : Text</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-9">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/API/Transporter#descripción-9">​</a></h4>
-<p>The <code>.logFile</code> property contains the path of the extended log file defined (if any) for the mail connection. Puede ser relativo (a la carpeta actual Logs) o absoluto.</p>
-<p>Unlike regular log files (enabled via the <code>SET DATABASE PARAMETER</code> command), extended log files store MIME contents of all sent mails and do not have any size limit. Para más información sobre los archivos de registro extendidos, consulte:</p>
+<p>La propiedad <code>.logFile</code> contiene la ruta del archivo de registro extendido definido (si existe) para la conexión de correo. Puede ser relativo (a la carpeta actual Logs) o absoluto.</p>
+<p>A diferencia de los archivos log habituales (activados mediante el comando <code>SET DATABASE PARAMETER</code>), los archivos log extendidos almacenan el contenido MIME de todos los correos enviados y no tienen límite de tamaño. Para más información sobre los archivos de registro extendidos, consulte:</p>
 <ul>
 <li><strong>SMTP connections</strong> - <a href="/docs/es/next/Debugging/debugLogFiles#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt">4DSMTPLog.txt</a></li>
 <li><strong>POP3 connections</strong> - <a href="/docs/es/next/Debugging/debugLogFiles#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt">4DPOP3Log.txt</a></li>
@@ -425,7 +425,7 @@
 </div></div></details>
 <p><strong>.port</strong> : Integer</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-10">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/API/Transporter#descripción-10">​</a></h4>
-<p>The <code>.port</code> property contains  the port number used for mail transactions. By default, if the <em>port</em> property has not been set in the <em>server</em> object (used to create the transporter object with <code>SMTP New transporter</code>, <code>POP3 New transporter</code>, <code>IMAP New transporter</code>), the port used is:</p>
+<p>La propiedad <code>.port</code> contiene  el número de puerto utilizado para las transacciones de correo. Por defecto, si la propiedad <em>port</em> no se ha definido en el objeto <em>server</em> (utilizado para crear el objeto transportador con <code>SMTP New transporter</code>, <code>POP3 New transporter</code>, <code>IMAP New transporter</code>), el puerto utilizado es:</p>
 <ul>
 <li><strong>SMTP</strong> - 587</li>
 <li><strong>POP3</strong> - 995</li>
@@ -451,7 +451,7 @@
 </div></div></details>
 <p><strong>.sendTimeOut</strong> : Integer</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-11">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/API/Transporter#descripción-11">​</a></h4>
-<p>The <code>.sendTimeOut</code> property contains  the maximum wait time (in seconds) of a call to <code>.send( )</code> before a timeout occurs. By default, if the <code>.sendTimeOut</code> property has not been set in the <code>server</code> object, the value 100 is used.</p>
+<p>La propiedad <code>.sendTimeOut</code> contiene  el tiempo máximo de espera (en segundos) de una llamada a <code>.send( )</code> antes de que se produzca un timeout. Por defecto, si no se ha definido la propiedad <code>.sendTimeOut</code> en el objeto <code>server</code>, se utiliza el valor 100.</p>
 <hr>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="user">.user<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/API/Transporter#user">​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Historia</summary><div><div class="collapsibleContent_i85q">
@@ -472,7 +472,7 @@
 </div></div></details>
 <p><strong>.user</strong> : Text</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-12">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/API/Transporter#descripción-12">​</a></h4>
-<p>The <code>.user</code> property contains  the user name used for authentication on the mail server.</p>
+<p>La propiedad <code>.user</code> contiene  el nombre de usuario utilizado para la autenticación en el servidor de correo.</p>
 <hr>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="checkconnection">.checkConnection()<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/API/Transporter#checkconnection">​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Historia</summary><div><div class="collapsibleContent_i85q">
@@ -511,7 +511,7 @@
 
 <table><thead><tr><th>Parámetros</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr></thead><tbody><tr><td>Result</td><td>Object</td><td style="text-align:center">&lt;-</td><td>Estado de la conexión del objeto transportador</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-13">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/API/Transporter#descripción-13">​</a></h4>
-<p>The <code>.checkConnection()</code> function  checks the connection using information stored in the transporter object, recreates the connection if necessary, and returns the status. Esta función permite verificar que los valores proporcionados por el usuario son válidos y coherentes.</p>
+<p>La función <code>.checkConnection()</code>  comprueba la conexión utilizando la información almacenada en el objeto transporter, recrea la conexión si es necesario y devuelve el estado. Esta función permite verificar que los valores proporcionados por el usuario son válidos y coherentes.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="objeto-devuelto">Objeto devuelto<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/API/Transporter#objeto-devuelto">​</a></h4>
 <p>La función envía una solicitud al servidor de correo y devuelve un objeto que describe el estado del correo. Este objeto puede contener las siguientes propiedades:</p>
 
