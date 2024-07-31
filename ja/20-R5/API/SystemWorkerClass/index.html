@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">SystemWorker | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://4d.github.io/docs/ja/20-R5/API/SystemWorkerClass"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="20-R5"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" name="docsearch:version" content="20-R5"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" property="og:title" content="SystemWorker | 4D Docs"><meta data-rh="true" name="description" content="システムワーカーを使うことで、4Dコードは同じマシン上で任意の外部プロセス (シェルコマンド、PHPなど )  を呼び出すことができます。 システムワーカーは非同期で呼び出されます。 コールバックを使用することで、4D は双方向の通信を可能にします。"><meta data-rh="true" property="og:description" content="システムワーカーを使うことで、4Dコードは同じマシン上で任意の外部プロセス (シェルコマンド、PHPなど )  を呼び出すことができます。 システムワーカーは非同期で呼び出されます。 コールバックを使用することで、4D は双方向の通信を可能にします。"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://4d.github.io/docs/ja/20-R5/API/SystemWorkerClass"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/20-R5/API/SystemWorkerClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/fr/20-R5/API/SystemWorkerClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/es/20-R5/API/SystemWorkerClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/ja/20-R5/API/SystemWorkerClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/pt/20-R5/API/SystemWorkerClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://4d.github.io/docs/20-R5/API/SystemWorkerClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.dc9a4272.css">
-<script src="/docs/ja/assets/js/runtime~main.8f0cf052.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.a189e87c.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1318ff3c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -260,8 +260,9 @@
 <li>エラーが発生しなかった場合、<code>onResponse</code> が 1回実行されます。</li>
 <li><code>onTerminate</code> は常に実行されます。</li>
 </ol>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p><a href="/docs/ja/20-R5/API/SystemWorkerClass#wait"><code>wait()</code></a> を使用しない場合 (非同期呼び出し) にコールバック関数が呼び出されるためには、そのプロセスは <a href="https://doc.4d.com/4dv20/help/command/ja/page1389.html" target="_blank" rel="noopener noreferrer"><code>CALL WORKER</code></a> で作成された <a href="/docs/ja/20-R5/Develop/processes#%E3%83%AF%E3%83%BC%E3%82%AB%E3%83%BC%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9">ワーカー</a> である必要があります (<a href="https://doc.4d.com/4dv20/help/command/ja/page317.html" target="_blank" rel="noopener noreferrer"><code>New process</code></a> は使えません)。</p></div></div>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="戻り値">戻り値<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/20-R5/API/SystemWorkerClass#戻り値">​</a></h4>
-<p>この関数はシステムワーカーオブジェクトを返します。このオブジェクトに対して、SystemWorker クラスの関数やプロパティを呼び出すことができます。</p>
+<p>この 関数はシステムワーカーオブジェクトを返します。このオブジェクトに対して、SystemWorker クラスの関数やプロパティを呼び出すことができます。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="windows-の例">Windows の例<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/20-R5/API/SystemWorkerClass#windows-の例">​</a></h4>
 <ol>
 <li>特定のドキュメントをメモ帳で開きます:</li>
@@ -289,7 +290,7 @@
 </ol>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">var $sw : 4D.SystemWorker</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$sw:=4D.SystemWorker.new(&quot;/bin/cat /folder/myfile.txt&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$sw.wait() //同期的実行</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="クリップボードにコードをコピー" title="コピー" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <ol start="2">
-<li>独立した &quot;グラフィック&quot; アプリケーションを起動するには、<code>open</code> システムコマンドの使用が推奨されます (これは、アプリケーションをダブルクリックするのと同じ効果を持ちます)。</li>
+<li>独立した &quot;グラフィック&quot; アプリケーションを起動するには、<code>open</code> システムコマンドの使用が推奨され  ます (これは、アプリケーションをダブルクリックするのと同じ効果を持ちます)。</li>
 </ol>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">var $sw : 4D.SystemWorker</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$sw:=4D.SystemWorker.new (&quot;open /Applications/Calculator.app&quot;)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="クリップボードにコードをコピー" title="コピー" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <ol start="3">
@@ -348,12 +349,12 @@
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="currentdirectory">.currentDirectory<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/20-R5/API/SystemWorkerClass#currentdirectory">​</a></h2>
 <p><strong>.currentDirectory</strong> : 4D.Folder</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説  明-3">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/20-R5/API/SystemWorkerClass#説明-3">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-3">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/20-R5/API/SystemWorkerClass#説明-3">​</a></h4>
 <p><code>.currentDirectory</code> プロパティは、外部プロセスが実行される作業ディレクトリを格納します。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="datatype">.dataType<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/20-R5/API/SystemWorkerClass#datatype">​</a></h2>
 <p><strong>.dataType</strong> : Text</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-4">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/20-R5/API/SystemWorkerClass#説明-4">​</a></h4>
-<p><code>.dataType</code> プロパティは、レスポンス本文のデータ型を格納します。 とりうる値: &quot;text&quot; または &quot;blob&quot;。</p>
+<p><code>.dataType</code> プ ロパティは、レスポンス本文のデータ型を格納します。 とりうる値: &quot;text&quot; または &quot;blob&quot;。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="encoding">.encoding<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/20-R5/API/SystemWorkerClass#encoding">​</a></h2>
 <p><strong>.encoding</strong> : Text</p>
@@ -441,7 +442,7 @@
 <p><strong>.response</strong> : Text<br><strong>.response</strong> : Blob</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-11">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/20-R5/API/SystemWorkerClass#説明-11">​</a></h4>
 <p><code>.response</code> プロパティは、リクエストが終了した時点で、返された全データの結合を格納します (つまり、プロセスの出力から取得された全メッセージ)。</p>
-<p>メッセージのデー タ型は <a href="/docs/ja/20-R5/API/SystemWorkerClass#datatype"><code>dataType</code></a> 属性によって定義されています。</p>
+<p>メッセージのデータ型は <a href="/docs/ja/20-R5/API/SystemWorkerClass#datatype"><code>dataType</code></a> 属性によって定義されています。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="responseerror">.responseError<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/20-R5/API/SystemWorkerClass#responseerror">​</a></h2>
 <p><strong>.responseError</strong> : Text</p>
