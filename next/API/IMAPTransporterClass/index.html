@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">IMAPTransporter | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/next/API/IMAPTransporterClass"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="IMAPTransporter | 4D Docs"><meta data-rh="true" name="description" content="The IMAPTransporter class allows you to retrieve messages from a IMAP email server."><meta data-rh="true" property="og:description" content="The IMAPTransporter class allows you to retrieve messages from a IMAP email server."><link data-rh="true" rel="icon" href="/docs/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/next/API/IMAPTransporterClass"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/API/IMAPTransporterClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/API/IMAPTransporterClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/API/IMAPTransporterClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/API/IMAPTransporterClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/API/IMAPTransporterClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/API/IMAPTransporterClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.dc9a4272.css">
-<script src="/docs/assets/js/runtime~main.52bf6c85.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.632edc95.js" defer="defer"></script>
 <script src="/docs/assets/js/main.e7f3c3e7.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -1435,7 +1435,12 @@
 
 
 
-<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>text</td><td>Name of the mailbox</td></tr><tr><td>mailCount</td><td>number</td><td>Number of messages in the mailbox</td></tr><tr><td>mailRecent</td><td>number</td><td>Number of messages with the &quot;recent&quot; flag (indicating new messages)</td></tr><tr><td>id</td><td>text</td><td>Unique id of the mailbox</td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>name</td><td>Text</td><td>Name of the mailbox</td></tr><tr><td>mailCount</td><td>Number</td><td>Number of messages in the mailbox</td></tr><tr><td>mailRecent</td><td>Number</td><td>Number of messages with the &quot;recent&quot; flag (indicating new messages)</td></tr><tr><td>id</td><td>text</td><td>Unique id of the mailbox</td></tr><tr><td>mailUnseen</td><td>Number</td><td>Number of messages marked &quot;unseen&quot;</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="example-6">Example<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/API/IMAPTransporterClass#example-6">​</a></h4>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> var $transporter : 4D.IMAPTransporter</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $transporter:=IMAP New transporter($server)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $info:=$transporter.getBoxInfo(&quot;INBOX&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> ALERT(&quot;INBOX contains &quot;+String($info.mailRecent)+&quot; recent emails.&quot;)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="getboxlist">.getBoxList()<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/API/IMAPTransporterClass#getboxlist">​</a></h2>
@@ -1502,7 +1507,22 @@
 
 
 
-<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>isSubscribed</td><td>Boolean</td><td><li><strong>True</strong> to return only subscribed mailboxes</li><li> <strong>False</strong> to return all available mailboxes</li></td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>isSubscribed</td><td>Boolean</td><td><li><strong>True</strong> to return only subscribed mailboxes</li><li> <strong>False</strong> to return all available mailboxes</li></td></tr><tr><td>names</td><td>Collection</td><td>Collection of objects containing a &quot;name&quot; attribute or collection of texts containing the box names</td></tr><tr><td>withBoxProperties</td><td>Boolean</td><td>If true (default): adds the <code>selectable</code>, <code>inferior</code>, and <code>interesting</code> attributes to the result object. If false, these attributes are omitted.</td></tr><tr><td>withBoxInfo</td><td>Boolean</td><td>Default value is false. If true, adds the <code>mailCount</code>, <code>mailRecent</code>, and <code>id</code> attributes to the result object.</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="result-1">Result<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/API/IMAPTransporterClass#result-1">​</a></h4>
 <p>Each object of the returned collection contains the following properties:</p>
 
@@ -1535,7 +1555,27 @@
 
 
 
-<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>[].name</td><td>text</td><td>Name of the mailbox</td></tr><tr><td>[].selectable</td><td>boolean</td><td>Indicates whether or not the access rights allow the mailbox to be selected: <ul><li>true - the mailbox can be selected</li><li>false - the mailbox can not be selected</li></ul></td></tr><tr><td>[].inferior</td><td>boolean</td><td>Indicates whether or not the access rights allow creating a lower hierachy in the mailbox: <ul><li>true - a lower level can be created</li><li>false - a lower level can not be created</li></ul></td></tr><tr><td>[].interesting</td><td>boolean</td><td>Indicates if the mailbox has been marked &quot;interesting&quot; by the server: <ul><li>true - The mailbox has been marked &quot;interesting&quot; by the server. For example, it may contain new messages.</li><li>false - The mailbox has not been marked &quot;interesting&quot; by the server.</li></ul></td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>[].name</td><td>Text</td><td>Name of the mailbox. Returned if withBoxProperties=true or withBoxInfo=true</td></tr><tr><td>[].selectable</td><td>Boolean</td><td>Indicates whether or not the access rights allow the mailbox to be selected: <ul><li>true - the mailbox can be selected</li><li>false - the mailbox can not be selected</li></ul>	Returned if withBoxProperties=true</td></tr><tr><td>[].inferior</td><td>Boolean</td><td>Indicates whether or not the access rights allow creating a lower hierachy in the mailbox: <ul><li>true - a lower level can be created</li><li>false - a lower level can not be created</li></ul>	Returned if withBoxProperties=true</td></tr><tr><td>[].interesting</td><td>Boolean</td><td>Indicates if the mailbox has been marked &quot;interesting&quot; by the server: <ul><li>true - The mailbox has been marked &quot;interesting&quot; by the server. For example, it may contain new messages.</li><li>false - The mailbox has not been marked &quot;interesting&quot; by the server.</li></ul>	Returned if withBoxProperties=true</td></tr><tr><td>[].mailCount</td><td>Number</td><td>Number of messages in inbox. Returned if withBoxInfo=true</td></tr><tr><td>[].mailRecent</td><td>Number</td><td>Number of messages marked &quot;recent&quot; (indicating new messages). Returned if withBoxInfo=true</td></tr><tr><td>[].mailUnseen</td><td>Number</td><td>Number of messages marked &quot;unseen&quot;. Returned if withBoxInfo=true</td></tr><tr><td>[].id</td><td>Text</td><td>Unique mailbox identifier. Returned if withBoxInfo=true</td></tr></tbody></table>
 <p>If the account does not contain any mailboxes, an empty collection is returned.</p>
 <blockquote>
 <ul>
