@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">クライアント-サーバーページ | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/settings/client-server"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="20-R6"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" name="docsearch:version" content="20-R6"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" property="og:title" content="クライアント-サーバーページ | 4D Docs"><meta data-rh="true" name="description" content="クライアント/サーバーページには、クライアント/サーバーモードでデータベースを使用する際に使用されるパラメーターが集められています。 これらの設定は、リモートモードでデータベースが使用されるときにのみ使用されます。"><meta data-rh="true" property="og:description" content="クライアント/サーバーページには、クライアント/サーバーモードでデータベースを使用する際に使用されるパラメーターが集められています。 これらの設定は、リモートモードでデータベースが使用されるときにのみ使用されます。"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/settings/client-server"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/settings/client-server" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/settings/client-server" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/settings/client-server" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/settings/client-server" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/settings/client-server" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/settings/client-server" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.dc9a4272.css">
-<script src="/docs/ja/assets/js/runtime~main.b1a5df54.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.703964c1.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.f7aa3df4.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -31,16 +31,17 @@
 <p>4Dクライアントと同じポート番号で公開されているデータベースだけが、接続ダイアログの利用可能ページに表示されます。</p>
 </blockquote>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4d-server-とポート番号">4D Server とポート番号<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/settings/client-server#4d-server-とポート番号">​</a></h4>
-<p>4D Server は 3つの TCPポートを使用して、内部サーバーとクライアントの通信をおこないます:</p>
+<p>4D Server uses several TCP ports for communications between internal servers and clients:</p>
 <ul>
 <li><strong>SQLサーバー</strong>: デフォルトで 19812 (設定の &quot;SQL&quot; ページで変更可)。</li>
 <li><strong>アプリケーションサーバー</strong>: デフォルトで 19813 (設定の &quot;クライアント-サーバー&quot; ページで変更可)。</li>
-<li><strong>DB4Dサーバー</strong> (データベースサーバー): デフォルトで 19814。 このポート番号は直接変更できませんが、常にアプリケーションサーバーのポート番号+1 です。\ 4Dクライアントが 4D Server に接続するとき、アプリケーションサーバーのポート番号 (19813 または接続ダイアログボックスの IPアドレス欄でコロンの後ろに指定された番号) を使用して接続します。 その後の、それぞれ対応するポートを介した他のサーバーへの接続は自動です。再度ポート番号を指定する必要はありません。\ ルーターやファイアウォール越しに接続する場合には、この 3つのポートを明示的に開く必要があります。</li>
+<li><strong>DB4D Server</strong> (database server): 19814 by default. このポート番号は直接変更できませんが、常にアプリケーションサーバーのポート番号+1 です。\ 4Dクライアントが 4D Server に接続するとき、アプリケーションサーバーのポート番号 (19813 または接続ダイアログボックスの IPアドレス欄でコロンの後ろに指定された番号) を使用して接続します。 その後の、それぞれ対応するポートを介した他のサーバーへの接続は自動です。再度ポート番号を指定する必要はありません。\ ルーターやファイアウォール越しに接続する場合には、この 3つのポートを明示的に開く必要があります。</li>
+<li><a href="/docs/ja/Debugging/debugging-remote"><strong>Remote Debugger</strong></a>: 19815 by default. This port number cannot be modified directly but it always consists of the application server port number + 2.</li>
 </ul>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ドメインサーバーによるユーザーの認証">ドメインサーバーによるユーザーの認証<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/settings/client-server#ドメインサーバーによるユーザーの認証">​</a></h4>
 <p>このオプションは Windows上の 4D Server データベースにおいて SSO (<em>Single Sign On</em>) 機能の実装を可能にします。 このオプションを有効にすると、4D はバックグラウンドで Windows ドメインサーバーの Active Directory に接続し、提供されている認証トークンを取得します。 このオプションの詳細については <a href="https://doc.4d.com/4Dv20R5/4D/20-R5/Single-Sign-On-SSO-on-Windows.300-6932709.ja.html" target="_blank" rel="noopener noreferrer">Windowsでのシングルサインオン(SSO)</a> を参照ください。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="サービスプリンシパル名-spn">サービスプリンシパル名 (SPN)<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/settings/client-server#サービスプリンシパル名-spn">​</a></h4>
-<p>Single Sign On (SSO) が有効になっている場合 (上述参照)、認証プロトコルにケルベロスを使用するには、このフィールドを設定する必要があります。 このオプションの詳細については <a href="https://doc.4d.com/4Dv20R5/4D/20-R5/Single-Sign-On-SSO-on-Windows.300-6932709.ja.html" target="_blank" rel="noopener noreferrer">Windowsでのシングルサインオン(SSO)</a> を参照ください。</p>
+<p>Single Sign On (SSO) が有効になっている場合 (上述参照)、認証プロトコルにケルベロスを使用す  るには、このフィールドを設定する必要があります。 このオプションの詳細については <a href="https://doc.4d.com/4Dv20R5/4D/20-R5/Single-Sign-On-SSO-on-Windows.300-6932709.ja.html" target="_blank" rel="noopener noreferrer">Windowsでのシングルサインオン(SSO)</a> を参照ください。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ネットワークレイヤー">ネットワークレイヤー<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/settings/client-server#ネットワークレイヤー">​</a></h4>
 <p>ここでは、ドロップダウンメニューにて 3つのネットワークオプションから選択できます: <strong>Legacy</strong>、<strong>ServerNet</strong> 、<strong>QUIC</strong> (プロジェクトモードのみ)。ネットワークレイヤーは、4D Server とリモートの 4Dマシン (クライアント) 間の通信を管理するのに使用されます。</p>
 <ul>
@@ -54,7 +55,7 @@
 <p><strong>QUIC</strong> (プロジェクトモードでのみ利用可能): サーバー上で QUICネットワークレイヤーを有効にします。</p>
 <p><strong>注</strong>:</p>
 <ul>
-<li>このオプションを設定すると、<a href="https://doc.4d.com/4Dv20/help/command/ja/page642.html" target="_blank" rel="noopener noreferrer">SET DATABASE PARAMETER</a> コマンドにより &quot;旧式ネットワークレイヤーを使用する&quot; オプションが設定されて いても無視されます。</li>
+<li>このオプションを設定すると、<a href="https://doc.4d.com/4Dv20/help/command/ja/page642.html" target="_blank" rel="noopener noreferrer">SET DATABASE PARAMETER</a> コマンドにより &quot;旧式ネットワークレイヤーを使用する&quot; オプションが設定されていても無視されます。</li>
 <li>4Dアプリケーションが QUICネットワークレイヤーで動作しているかどうかは、<a href="https://doc.4d.com/4Dv20/help/command/ja/page1599.html" target="_blank" rel="noopener noreferrer">Get application info</a> コマンドで確認できます。</li>
 <li>QUIC は UDPプロトコルを使用するため、ネットワークのセキュリティ設定で UDP が許可されている必要があります。</li>
 <li>アプリケーションサーバーと DB4Dサーバーの両方で、QUIC は自動的にポート19813 に接続します。</li>
@@ -78,12 +79,12 @@
 <p>このオプションが選択されていると、データベースに接続するすべての 4Dリモートマシン上でメソッドをリモート実行できます。 このメカニズムについては <a href="https://doc.4d.com/4Dv19/4D/19/Stored-procedures-on-client-machines.300-5422461.ja.html" target="_blank" rel="noopener noreferrer">クライアントマシン上でのストアドプロシージャ</a> で説明しています。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="クライアント-サーバー通信の暗号化">クライアント-サーバー通信の暗号化<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/settings/client-server#クライアント-サーバー通信の暗号化">​</a></h4>
 <p>このオプションを使用して、サーバーマシンと 4Dリモートマシン間通信の保護モードを有効にできます。 このオプションについては <a href="https://doc.4d.com/4Dv19/4D/19/Encrypting-ClientServer-Connections.300-5422465.ja.html" target="_blank" rel="noopener noreferrer">クライアント/サーバー接続の暗号化</a> で説明しています。</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="セッション中に-resources-フォルダーを更新">セッション中に &quot;Resources&quot; フォルダーを更新<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/settings/client-server#セッション中に-resources-フォルダーを更新">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="セッション中に-resources-フォルダーを更新">セッション中に &quot;Resources&quot; フ  ォルダーを更新<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/settings/client-server#セッション中に-resources-フォルダーを更新">​</a></h4>
 <p>この設定は、データベースの <strong>Resources</strong> フォルダーがセッション中に更新された場合について、接続中のクライアントマシンにおける同フォルダーのローカルインスタンスの更新モードを包括的に指定します (<strong>Resources</strong> フォルダーは、セッションが開かれるたびにリモートマシン上で自動的に同期されます)。 3つの選択肢があります:</p>
 <ul>
 <li><strong>しない</strong>: ローカルの <strong>Resources</strong> フォルダーはセッション中に更新されません。 サーバーから送信される通知は無視されます。 <strong>ローカルリソースを更新</strong> アクションメニューコマンド <a href="https://doc.4d.com/4Dv19/4D/19/Using-the-Resources-explorer.300-5416788.ja.html" target="_blank" rel="noopener noreferrer">(リソースエクスプローラーを使用する</a> 参照) を使用すれば、ローカルの <strong>Resources</strong>フォルダーを手動で更新することができます。</li>
 <li><strong>常に</strong>: セッション中にサーバーから通知が送信されると、ローカルの <strong>Resources</strong> フォルダーは自動で同期されます。</li>
-<li><strong>その都度指定</strong>: サーバーから通知を受け取ると、クライアントマシン上でダイアログボックスが表示されます。 ユーザーはローカルの <strong>Resources</strong> フォルダーの同期を受け入れ、あるいは拒否できます。\ <strong>Resources</strong> フォルダーは、データベースインタフェースで使用されるカスタムファイルを格納しています (翻訳ファイルやピクチャーなど)。 このフォルダーの内容が更新されたときには、自動又は手動メカニズムを使用して各クライアントに通知できます。 詳  細については、<a href="https://doc.4d.com/4Dv19/4D/19/Managing-the-Resources-folder.300-5422466.ja.html" target="_blank" rel="noopener noreferrer">リソースフォルダの管理</a> を参照ください。</li>
+<li><strong>その都度指定</strong>: サーバーから通知を受け取ると、クライアントマシン上でダイアログボックスが表示されます。 ユーザーはローカルの <strong>Resources</strong> フォルダーの同期を受け入れ、あるいは拒否できます。\ <strong>Resources</strong> フォルダーは、データベースインタフェースで使用されるカスタムファイルを格納しています (翻訳ファイルやピクチャーなど)。 このフォルダーの内容が更新されたときには、自動又は手動メカニズムを使用して各クライアントに通知できます。 詳細については、<a href="https://doc.4d.com/4Dv19/4D/19/Managing-the-Resources-folder.300-5422466.ja.html" target="_blank" rel="noopener noreferrer">リソースフォルダの管理</a> を参照ください。</li>
 </ul>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ip設定ページ">IP設定ページ<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/settings/client-server#ip設定ページ">​</a></h2>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="許可-拒否設定表">許可-拒否設定表<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/settings/client-server#許可-拒否設定表">​</a></h3>
@@ -94,7 +95,7 @@
 <p>設定表の動作は以下のとおりです:</p>
 <ul>
 <li>&quot;許可-拒否&quot; 列では、ポップアップメニューを使用して適用するルールを選択します (許可または拒否)。 ルールを追加するには、追加ボタンをクリックします。 すると、新しい行が表に追加されます。 <strong>削除</strong> ボタンで選択した行を削除できます。</li>
-<li>&quot;IPアドレス&quot; 列で、ルールに関連する IPアドレスを指定します。 アドレスを指定するには、選択した行のセルをクリックし、以下の形式でアドレスを入力します: 123.45.67.89 (IPv4) または 2001:0DB8:0000:85A3:0000:0000:AC1F:8001 (IPv6)。 * (アスタリスク) 文字をアドレスの末尾に使用して、範囲を指定することもできます。 たとえば、192.168.* は 192.168 で始まるすべてのアドレスを示します。</li>
+<li>&quot;IPアドレス&quot; 列で、ルールに関連する IPアドレスを指定します。 アドレスを指定するには、選択した行のセルをクリックし、以下の形式でアドレスを入力します: 123.45.67.89 (IPv4) また は 2001:0DB8:0000:85A3:0000:0000:AC1F:8001 (IPv6)。 * (アスタリスク) 文字をアドレスの末尾に使用して、範囲を指定することもできます。 たとえば、192.168.* は 192.168 で始まるすべてのアドレスを示します。</li>
 <li>ルールの適用は、表中の表示順に基づきます。 2つのルールが矛盾する設定の場合、より上に設定されているルールが優先されます。 行の順番を変更するには、列のヘッダーをクリックしてソートをおこなったり、 ドラッグ＆ドロップで移動したりすることができます。</li>
 <li>セキュリティのため、ルールにより明示的に許可されたアドレスのみが接続を許可されます。 言い換えれば、表に拒否ルールしか定義されていない場合、許可ルールに適合するアドレスがないため、すべてのアドレスからの接続が拒否されます。 特定のアドレスからの接続のみを拒否したい場合 (そして他を許可したい場合)、許可 * ルールを表の最後に追加します。 例:
 <ul>

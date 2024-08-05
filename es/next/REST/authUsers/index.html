@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Usuarios y sesiones | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/es/next/REST/authUsers"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Usuarios y sesiones | 4D Docs"><meta data-rh="true" name="description" content="Sesiones"><meta data-rh="true" property="og:description" content="Sesiones"><link data-rh="true" rel="icon" href="/docs/es/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/es/next/REST/authUsers"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/REST/authUsers" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/REST/authUsers" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/REST/authUsers" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/REST/authUsers" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/REST/authUsers" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/REST/authUsers" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/es/opensearch.xml"><link rel="stylesheet" href="/docs/es/assets/css/styles.dc9a4272.css">
-<script src="/docs/es/assets/js/runtime~main.b77da21c.js" defer="defer"></script>
+<script src="/docs/es/assets/js/runtime~main.07aaef17.js" defer="defer"></script>
 <script src="/docs/es/assets/js/main.ae872c72.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -23,14 +23,14 @@
 <p>La secuencia de inicio de sesión del usuario es la siguiente:</p>
 <ol>
 <li>
-<p>En la primera llamada REST (para una llamada webform, por ejemplo), se crea una sesión de usuario web &quot;invitado&quot;. No tiene privilegios, no tiene derechos para ejecutar solicitudes que no sean <a href="/docs/es/next/REST/authUsers#descriptive-rest-requests">peticiones REST descriptivas</a>, no tiene consumo de licencia.<br>
+<p>At the first REST call (for a Qodly page call for example), a &quot;guest&quot; web user session is created. No tiene privilegios, no tiene derechos para ejecutar solicitudes que no sean <a href="/docs/es/next/REST/authUsers#descriptive-rest-requests">peticiones REST descriptivas</a>, no tiene consumo de licencia.<br>
 Las solicitudes REST descriptivas siempre son procesadas por el servidor, aunque no se abra ninguna sesión de usuario web que utilice una licencia. En este caso, son procesados a través de sesiones &quot;invitado&quot;.</p>
 </li>
 <li>
 <p>You call your <a href="/docs/es/next/REST/authUsers#authentify"><code>authentify()</code> function</a> (created beforehand), in which you check the user credentials and call <a href="/docs/es/next/API/SessionClass#setprivileges"><code>Session.setPrivileges()</code></a> with appropriate privileges. <code>authentify()</code> must be an exposed <a href="/docs/es/next/ORDA/ordaClasses#datastore-class">datastore class function</a>.</p>
 </li>
 <li>
-<p>La petición <code>/rest/$catalog/authentify</code> se envía al servidor junto con las credenciales del usuario. Este paso sólo requiere un formulario de inicio de sesión básico que no tenga acceso a datos; puede ser un [formulario Qodly](. /WebServer/qodly-studio.md) (llamado a través de la solicitud <code>/rest/$getWebForm</code>).</p>
+<p>La petición <code>/rest/$catalog/authentify</code> se envía al servidor junto con las credenciales del usuario. This step only requires a basic login form that do not access data; it can be a <a href="/docs/es/next/WebServer/qodly-studio">Qodly page</a> (called via the <code>/rest/$getWebForm</code> request).</p>
 </li>
 <li>
 <p>Si el usuario se autentica correctamente, se consume una licencia 4D en el servidor y se aceptan todas las peticiones REST.</p>
@@ -44,7 +44,7 @@ Las solicitudes REST descriptivas siempre son procesadas por el servidor, aunque
 <ul>
 <li><a href="/docs/es/next/REST/catalog"><code>/rest/$catalog</code></a> requests (e.g. <code>/rest/$catalog/$all</code>) - access to available dataclasses</li>
 <li><code>/rest/$catalog/authentify</code> - la función del almacén de datos utilizada para iniciar sesión del usuario</li>
-<li><code>/rest/$getWebForm</code> - la renderización de un formulario Qodly</li>
+<li><code>/rest/$getWebForm</code> - the rendering of a Qodly page</li>
 </ul>
 <p><img decoding="async" loading="lazy" alt="alt-text" src="/docs/es/assets/images/force-login-1-f9e377d9d1294c166d2e316a30d4eef4.jpeg" width="1171" height="302" class="img_ev3q"></p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="function-authentify"><code>Function authentify</code><a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/REST/authUsers#function-authentify">​</a></h2>

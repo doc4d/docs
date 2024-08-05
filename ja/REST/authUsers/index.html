@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">ユーザーとセッション | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/REST/authUsers"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="20-R6"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" name="docsearch:version" content="20-R6"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" property="og:title" content="ユーザーとセッション | 4D Docs"><meta data-rh="true" name="description" content="セッション"><meta data-rh="true" property="og:description" content="セッション"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/REST/authUsers"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/REST/authUsers" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/REST/authUsers" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/REST/authUsers" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/REST/authUsers" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/REST/authUsers" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/REST/authUsers" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.dc9a4272.css">
-<script src="/docs/ja/assets/js/runtime~main.b1a5df54.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.703964c1.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.f7aa3df4.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -23,14 +23,14 @@
 <p>ユーザーログインシーケンスは次のとおりです:</p>
 <ol>
 <li>
-<p>最初の RESTコール (たとえば Webフォームコール) では、&quot;ゲスト&quot; Webユーザーセッションが作成されます。 <a href="/docs/ja/REST/authUsers#%E8%A8%98%E8%BF%B0%E7%9A%84rest%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88">記述的RESTリクエスト</a> 以外のリクエストを実行する権限も、ライセンスの消費もありません。<br>
+<p>At the first REST call (for a Qodly page call for example), a &quot;guest&quot; web user session is created. <a href="/docs/ja/REST/authUsers#%E8%A8%98%E8%BF%B0%E7%9A%84rest%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88">記述的RESTリクエスト</a> 以外のリクエストを実行する権限も、ライセンスの消費もありません。<br>
 記述的RESTリクエスト は、ライセンスを消費する Webユーザーセッションが開かれていなくても、常にサーバーで処理されます。 この場合、それらは &quot;ゲスト&quot; セッションを介して処理されます。</p>
 </li>
 <li>
 <p>事前に用意した <a href="/docs/ja/REST/authUsers#authentify"><code>authentify()</code> 関数</a> を呼び出し、ユーザーの資格情報をチェックして、適切な権限で<a href="/docs/ja/API/SessionClass#setprivileges"><code>Session.setPrivileges()</code></a> を呼び出します。 <code>authentify()</code> は公開された <a href="/docs/ja/ORDA/ordaClasses#datastore-%E3%82%AF%E3%83%A9%E3%82%B9">データストアクラス関数</a> でなければなりません。</p>
 </li>
 <li>
-<p><code>/rest/$catalog/authentify</code> リクエストは、ユーザーの資格情報と共にサーバーに送信されます。 このステップでは、データにアクセスしない基本的なログインフォ  ームのみが必要です。<code>/rest/$getWebForm</code>リクエストを介して呼び出される <a href="/docs/ja/WebServer/qodly-studio">Qodlyフォーム</a> を利用できます。</p>
+<p><code>/rest/$catalog/authentify</code> リクエストは、ユーザーの資格情報と共にサーバーに送信されます。 This step only requires a basic login form that do not access data; it can be a <a href="/docs/ja/WebServer/qodly-studio">Qodly page</a> (called via the <code>/rest/$getWebForm</code> request).</p>
 </li>
 <li>
 <p>ユーザーが正常に認証された場合、4Dライセンスがサーバー上で消費され、すべての RESTリクエストが受け入れられます。</p>
@@ -44,7 +44,7 @@
 <ul>
 <li><a href="/docs/ja/REST/catalog"><code>/rest/$catalog</code></a> リクエスト (例: <code>/rest/$catalog/$all</code>) - 利用可能なデータクラスへのアクセス</li>
 <li><code>/rest/$catalog/authentify</code> - ユーザーログインに使用されるデータストア関数</li>
-<li><code>/rest/$getWebForm</code> - Qodlyフォームのレンダリング</li>
+<li><code>/rest/$getWebForm</code> - the rendering of a Qodly page</li>
 </ul>
 <p><img decoding="async" loading="lazy" alt="alt-text" src="/docs/ja/assets/images/force-login-1-f9e377d9d1294c166d2e316a30d4eef4.jpeg" width="1171" height="302" class="img_ev3q"></p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="function-authentify"><code>Function authentify</code><a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/REST/authUsers#function-authentify">​</a></h2>
