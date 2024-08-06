@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Classes | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/20-R5/Concepts/classes"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="20-R5"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" name="docsearch:version" content="20-R5"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" property="og:title" content="Classes | 4D Docs"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/docs/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/20-R5/Concepts/classes"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20-R5/Concepts/classes" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/20-R5/Concepts/classes" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/20-R5/Concepts/classes" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/20-R5/Concepts/classes" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/20-R5/Concepts/classes" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20-R5/Concepts/classes" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.dc9a4272.css">
-<script src="/docs/assets/js/runtime~main.d1573c52.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.113de43a.js" defer="defer"></script>
 <script src="/docs/assets/js/main.e7f3c3e7.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -448,7 +448,7 @@
 <p>If you need to instantiate a singleton with parameters, you can also call the <a href="/docs/20-R5/API/ClassClass#new"><code>new()</code></a> function. In this case, it is recommended to instantiate the singleton in some code executed at application startup.</p>
 <p>The <a href="/docs/20-R5/API/ClassClass#issingleton"><code>.isSingleton</code></a> property of Class objects allows to know if the class is a singleton.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="scope">Scope<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/20-R5/Concepts/classes#scope">​</a></h3>
-<p>The scope of a singleton instance can be the process where it is instanciated or all processes on the machine, depending on its <em>shared</em> property.</p>
+<p>The scope of a singleton instance can be the process where it is instantiated or all processes on the machine, depending on its <em>shared</em> property.</p>
 
 
 
@@ -474,13 +474,8 @@
 
 
 
-
-
-
-
-
-<table><thead><tr><th>Singleton created on</th><th>Scope if not shared</th><th>Scope if shared</th></tr></thead><tbody><tr><td>4D single-user</td><td>Process</td><td>4D application</td></tr><tr><td>4D Server</td><td>Process</td><td>4D Server application machine</td></tr><tr><td>4D remote mode</td><td>Process (note: singletons are not synchronized on the twin process)</td><td></td></tr><tr><td>4D remote application machine</td><td></td><td></td></tr></tbody></table>
-<p>Once instantiated, a singleton class (and its singleton) exists as long as a reference to it exists somewhere in the application on the machine.</p>
+<table><thead><tr><th>Singleton created on</th><th>Scope if not shared</th><th>Scope if shared</th></tr></thead><tbody><tr><td>4D single-user</td><td>Process</td><td>Application</td></tr><tr><td>4D Server</td><td>Process</td><td>4D Server machine</td></tr><tr><td>4D remote mode</td><td>Process (<em>note</em>: singletons are not synchronized on the twin process)</td><td>4D remote machine</td></tr></tbody></table>
+<p>Once instantiated, a singleton class (and its singleton) exists as long as a reference to it exists somewhere in the application running on the machine.</p>
 <div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Singleton classes are not supported by <a href="/docs/20-R5/ORDA/ordaClasses">ORDA-based classes</a>.</p></div></div>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="creating-a-singleton">Creating a singleton<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/20-R5/Concepts/classes#creating-a-singleton">​</a></h3>
 <p>To create a singleton class, add the <code>singleton</code> keyword before <a href="/docs/20-R5/Concepts/classes#class-constructor"><code>Class Constructor</code></a>. For example:</p>
