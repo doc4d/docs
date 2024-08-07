@@ -206,6 +206,7 @@ module.exports =
 								image: '/img/docusaurus.png',
 							},
 						},
+						"Commands/command-index",
 					],
 				},
 				{

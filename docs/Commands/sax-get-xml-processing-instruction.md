@@ -1,0 +1,47 @@
+id: sax-get-xml-processing-instruction
+title: SAX GET XML PROCESSING INSTRUCTION
+
+
+<!-- REF #_command_.SAX GET XML PROCESSING INSTRUCTION.Syntax-->SAX GET XML PROCESSING INSTRUCTION ( document ; name ; value )<!-- END REF-->
+
+
+<!-- REF #_command_.SAX GET XML PROCESSING INSTRUCTION.Params -->
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|document|Time|->|Reference of open document|
+|name|String|<-|Instruction name|
+|value|String|<-|Instruction value|
+<!-- END REF -->
+
+
+#### Description
+
+
+
+The `SAX GET XML PROCESSING INSTRUCTION` command returns the name and value of the XML instruction processed in the XML document referenced in the *document* parameter. This command must be called with the `XML Processing Instruction` event. For more information about SAX events, refer to the description of the [`SAX Get XML node`](sax-get-xml-node.md) command. 
+
+
+#### Example
+
+
+Let's look at the following piece of XML code:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Edited with XML Spy v3.0.7 NT (http://www.xmlspy.com) by Myself (4D SA)-->
+<?PI TextProcess?>
+<!DOCTYPE RootElement SYSTEM "ParseTest.dtd">
+```
+
+The following instruction will return “PI” in *vName* and “TextProcess” in *vValue*: 
+
+```4d
+SAX GET XML PROCESSING INSTRUCTION($DocRef;vName;vValue)
+```
+
+#### See also
+
+[`SAX ADD XML PROCESSING INSTRUCTION`](sax-add-xml-processing-instruction.md)
+
+
+
