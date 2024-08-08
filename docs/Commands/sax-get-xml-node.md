@@ -1,8 +1,10 @@
+---
+displayed_sidebar: docs
 id: sax-get-xml-node
 title: SAX Get XML node
+---
 
-
-<!-- REF #_command_.SAX Get XML node.Syntax-->SAX Get XML node ( document ) -> Function result<!-- END REF-->
+<!-- REF #_command_.SAX Get XML node.Syntax-->**SAX Get XML node** ( document ) -> Function result<!-- END REF-->
 
 
 <!-- REF #_command_.SAX Get XML node.Params -->
@@ -17,9 +19,9 @@ title: SAX Get XML node
 
 
 
-The **SAX Get XML node** command returns a long integer that indicates the type of SAX event returned while the XML document referenced in *document* is parsed. 
+The **SAX Get XML node** command returns a long integer that indicates the type of SAX event returned while the XML document referenced in *document* is parsed.
 
-Events that can be returned are available as “XML” theme constants: 
+Events that can be returned are available as “XML” theme constants:
 
 | Constant                   | Type    | Value |
 |----------------------------|---------|-------|
@@ -38,7 +40,7 @@ Events that can be returned are available as “XML” theme constants:
 #### Example
 
 
-The following example processes an event: 
+The following example processes an event:
 
 
 ```4d
@@ -64,5 +66,3 @@ End if
 
 
 If the command has been executed correctly, the system variable OK is set to 1. Otherwise, it is set to 0 and an error is generated.  
-
-

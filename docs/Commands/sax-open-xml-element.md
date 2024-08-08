@@ -1,8 +1,10 @@
+---
+displayed_sidebar: docs
 id: sax-open-xml-element
 title: SAX OPEN XML ELEMENT
+---
 
-
-<!-- REF #_command_.SAX OPEN XML ELEMENT.Syntax-->SAX OPEN XML ELEMENT ( document ; tag {; attribName ; attribValue} {; attribName2 ; attribValue2 ; ... ; attribNameN ; attribValueN} )<!-- END REF-->
+<!-- REF #_command_.SAX OPEN XML ELEMENT.Syntax-->**SAX OPEN XML ELEMENT** ( document ; tag {; attribName ; attribValue} {; attribName2 ; attribValue2 ; ... ; attribNameN ; attribValueN} )<!-- END REF-->
 
 
 <!-- REF #_command_.SAX OPEN XML ELEMENT.Params -->
@@ -20,14 +22,14 @@ title: SAX OPEN XML ELEMENT
 
 
 The **SAX OPEN XML ELEMENT** command adds a new element in the XML document referenced by *document* as well as, optionally, attributes and their values.  
-The added element is “open” in the document (the end tag is not added). To close an element created using this command, you must either: 
+The added element is “open” in the document (the end tag is not added). To close an element created using this command, you must either:
 
 * Use the [`SAX CLOSE XML ELEMENT`](sax-close-xml-element.md) command, or
 * Close the XML document. In this case, 4D will automatically add the necessary XML end tags.
 
 
 In *tag*, pass the name of the element to be created. This name may only contain letters, numbers and the characters “.”, “-“,”_” and “:”. If an invalid character is passed in tag, an error will be generated.  
-Optionally, the command can pass one or more attribute/value pairs (in the form of variables, fields or literal values) using the *attribName* and *attribValue* parameters. You can pass as many attribute/value pairs as you want. 
+Optionally, the command can pass one or more attribute/value pairs (in the form of variables, fields or literal values) using the *attribName* and *attribValue* parameters. You can pass as many attribute/value pairs as you want.
 
 
 #### Example
@@ -41,7 +43,7 @@ vElement:="Book"
 SAX OPEN XML ELEMENT($DocRef;vElement)
 ```
 
-... writes the following line in the document: 
+... writes the following line in the document:
 
 ```xml
 <Book

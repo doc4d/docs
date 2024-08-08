@@ -1,8 +1,10 @@
+---
+displayed_sidebar: docs
 id: sax-add-processing-instruction
 title: SAX ADD PROCESSING INSTRUCTION
+---
 
-
-<!-- REF #_command_.SAX ADD PROCESSING INSTRUCTION.Syntax-->SAX ADD PROCESSING INSTRUCTION ( document ; statement )<!-- END REF-->
+<!-- REF #_command_.SAX ADD PROCESSING INSTRUCTION.Syntax-->**SAX ADD PROCESSING INSTRUCTION** ( document ; statement )<!-- END REF-->
 
 
 <!-- REF #_command_.SAX ADD PROCESSING INSTRUCTION.Params -->
@@ -25,13 +27,13 @@ The command formats the data of the statement in conformity with XML. However, t
 #### Example
 
 
-The following code: 
+The following code:
 ```4d
 vtInstruct:="xml-stylesheet type="+Char(Quote)+"text/xsl"+Char (Quote)+  
 \"href="+Char(Quote)+"style.xsl"+Char (Quote)
 SAX ADD PROCESSING INSTRUCTION ($DocRef;vtInstruct)
 ```
-... will write the following line in the document: 
+... will write the following line in the document:
 
 ```xml
 &lt;?xml-stylesheet type="text/xsl" href="style.xsl"?&gt;
@@ -47,4 +49,3 @@ If the command has been executed correctly, the system variable OK is set to 1. 
 #### See also
 
 [`SAX GET XML PROCESSING INSTRUCTION`](sax-get-xml-processing-instruction.md)
-

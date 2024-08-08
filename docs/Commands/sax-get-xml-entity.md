@@ -1,8 +1,10 @@
+---
+displayed_sidebar: docs
 id: sax-get-xml-entity
 title: SAX GET XML ENTITY
+---
 
-
-<!-- REF #_command_.SAX GET XML ENTITY.Syntax-->SAX GET XML ENTITY ( document ; name ; value )<!-- END REF-->
+<!-- REF #_command_.SAX GET XML ENTITY.Syntax-->**SAX GET XML ENTITY** ( document ; name ; value )<!-- END REF-->
 
 
 <!-- REF #_command_.SAX GET XML ENTITY.Params -->
@@ -18,7 +20,7 @@ title: SAX GET XML ENTITY
 
 
 
-The **SAX GET XML ENTITY** command allows you to get the name and value of an XML entity that exists in the XML document referenced in the *document* parameter. This command must be called with the `XML Entity` SAX event. For more information about SAX events, refer to the description of the [`SAX Get XML node`](sax-get-xml-node.md) command. 
+The **SAX GET XML ENTITY** command allows you to get the name and value of an XML entity that exists in the XML document referenced in the *document* parameter. This command must be called with the `XML Entity` SAX event. For more information about SAX events, refer to the description of the [`SAX Get XML node`](sax-get-xml-node.md) command.
 
 
 #### Examples
@@ -37,8 +39,8 @@ Let's look at the following piece of XML code:
    <element>Entity updated by &name;</element>
 </body>
 ```
-The following instruction will return “name” in `vName` and “Replacement” in `vValue`. 
- 
+The following instruction will return “name” in `vName` and “Replacement” in `vValue`.
+
 ```4d
 SAX GET XML ENTITY(DocRef;vName;vValue)
 ```

@@ -1,8 +1,10 @@
+---
+displayed_sidebar: docs
 id: sax-add-xml-cdata
 title: SAX ADD XML CDATA
+---
 
-
-<!-- REF #_command_.SAX ADD XML CDATA.Syntax-->SAX ADD XML CDATA ( document ; data )<!-- END REF-->
+<!-- REF #_command_.SAX ADD XML CDATA.Syntax-->**SAX ADD XML CDATA** ( document ; data )<!-- END REF-->
 
 
 <!-- REF #_command_.SAX ADD XML CDATA.Params -->
@@ -18,9 +20,9 @@ title: SAX ADD XML CDATA
 
 
 In the XML document referenced by document, the `SAX ADD XML CDATA` command adds data of the text or BLOB type. This data will be automatically framed between the `<![CDATA[` and `]]>` tags.
-The text included in a CData section is ignored by the XML interpreter. 
+The text included in a CData section is ignored by the XML interpreter.
 If you want to encode the contents of data, you must use the [`BASE64 ENCODE`](base64-encode.md) command. In this case, of course, you must pass a BLOB in data.  
-In order for this command to operate correctly, an element must be open. Otherwise, an error will be generated. 
+In order for this command to operate correctly, an element must be open. Otherwise, an error will be generated.
 
 
 #### Example
@@ -71,7 +73,7 @@ return 0
 #### System Variables or Sets
 
 
-If the command has been executed correctly, the system variable OK is set to 1. Otherwise, it is set to 0. 
+If the command has been executed correctly, the system variable OK is set to 1. Otherwise, it is set to 0.
 
 
 #### See also

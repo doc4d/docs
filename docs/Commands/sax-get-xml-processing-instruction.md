@@ -1,8 +1,10 @@
+---
+displayed_sidebar: docs
 id: sax-get-xml-processing-instruction
 title: SAX GET XML PROCESSING INSTRUCTION
+---
 
-
-<!-- REF #_command_.SAX GET XML PROCESSING INSTRUCTION.Syntax-->SAX GET XML PROCESSING INSTRUCTION ( document ; name ; value )<!-- END REF-->
+<!-- REF #_command_.SAX GET XML PROCESSING INSTRUCTION.Syntax-->**SAX GET XML PROCESSING INSTRUCTION** ( document ; name ; value )<!-- END REF-->
 
 
 <!-- REF #_command_.SAX GET XML PROCESSING INSTRUCTION.Params -->
@@ -18,7 +20,7 @@ title: SAX GET XML PROCESSING INSTRUCTION
 
 
 
-The `SAX GET XML PROCESSING INSTRUCTION` command returns the name and value of the XML instruction processed in the XML document referenced in the *document* parameter. This command must be called with the `XML Processing Instruction` event. For more information about SAX events, refer to the description of the [`SAX Get XML node`](sax-get-xml-node.md) command. 
+The `SAX GET XML PROCESSING INSTRUCTION` command returns the name and value of the XML instruction processed in the XML document referenced in the *document* parameter. This command must be called with the `XML Processing Instruction` event. For more information about SAX events, refer to the description of the [`SAX Get XML node`](sax-get-xml-node.md) command.
 
 
 #### Example
@@ -33,7 +35,7 @@ Let's look at the following piece of XML code:
 <!DOCTYPE RootElement SYSTEM "ParseTest.dtd">
 ```
 
-The following instruction will return “PI” in *vName* and “TextProcess” in *vValue*: 
+The following instruction will return “PI” in *vName* and “TextProcess” in *vValue*:
 
 ```4d
 SAX GET XML PROCESSING INSTRUCTION($DocRef;vName;vValue)
@@ -42,6 +44,3 @@ SAX GET XML PROCESSING INSTRUCTION($DocRef;vName;vValue)
 #### See also
 
 [`SAX ADD XML PROCESSING INSTRUCTION`](sax-add-xml-processing-instruction.md)
-
-
-

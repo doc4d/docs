@@ -1,8 +1,10 @@
+---
+displayed_sidebar: docs
 id: sax-add-xml-comment
 title: SAX ADD XML COMMENT
+---
 
-
-<!-- REF #_command_.SAX ADD XML COMMENT.Syntax-->SAX ADD XML COMMENT ( document ; comment )<!-- END REF-->
+<!-- REF #_command_.SAX ADD XML COMMENT.Syntax-->**SAX ADD XML COMMENT** ( document ; comment )<!-- END REF-->
 
 
 <!-- REF #_command_.SAX ADD XML COMMENT.Params -->
@@ -18,7 +20,7 @@ title: SAX ADD XML COMMENT
 
 
 The `SAX ADD XML COMMENT` command adds a comment in the XML document referenced by *document*.  
-An XML comment is a text whose contents will not be parsed by the XML interpreter. XML comments must be enclosed between the &lt;!-- and --&gt; characters. 
+An XML comment is a text whose contents will not be parsed by the XML interpreter. XML comments must be enclosed between the &lt;!-- and --&gt; characters.
 
 
 #### Example
@@ -29,7 +31,7 @@ The following statement:
 vComment:= "Created by 4D"
 SAX ADD XML COMMENT ($DocRef;vComment)
 ```
-... will write the following line in the document: 
+... will write the following line in the document:
 ```4d
 <!--Created by 4D-->
 ```
@@ -47,10 +49,8 @@ If the command has been executed correctly, the system variable OK is set to 1. 
 
 
 
-In the event of an error, the command returns an error which can be intercepted using an error-handling method. 
+In the event of an error, the command returns an error which can be intercepted using an error-handling method.
 
 #### See also
 
 [`SAX ADD XML DOCTYPE`](sax-add-xml-doctype.md)
-
-

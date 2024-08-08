@@ -1,8 +1,10 @@
+---
+displayed_sidebar: docs
 id: sax-close-xml-element
 title: SAX CLOSE XML ELEMENT
+---
 
-
-<!-- REF #_command_.SAX CLOSE XML ELEMENT.Syntax-->SAX CLOSE XML ELEMENT ( document )<!-- END REF-->
+<!-- REF #_command_.SAX CLOSE XML ELEMENT.Syntax-->**SAX CLOSE XML ELEMENT** ( document )<!-- END REF-->
 
 
 <!-- REF #_command_.SAX CLOSE XML ELEMENT.Params -->
@@ -28,7 +30,7 @@ If the last element opened is `<Book>`, the following statement:
 ```4d
 SAX CLOSE XML ELEMENT($DocRef)
 ```
-... will write the following line in the document: 
+... will write the following line in the document:
 
 ```xml
 </Book>
@@ -38,4 +40,3 @@ SAX CLOSE XML ELEMENT($DocRef)
 #### See also
 
 [`SAX OPEN XML ELEMENT`](sax-open-xml-element.md)<br/>[`SAX OPEN XML ELEMENT ARRAYS`](sax-open-xml-element-arrays.md)
-

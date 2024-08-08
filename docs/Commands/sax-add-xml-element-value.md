@@ -1,8 +1,10 @@
+---
+displayed_sidebar: docs
 id: sax-add-xml-element-value
 title: SAX ADD XML ELEMENT VALUE
+---
 
-
-<!-- REF #_command_.SAX ADD XML ELEMENT VALUE.Syntax-->SAX ADD XML ELEMENT VALUE ( document ; data {; *} )<!-- END REF-->
+<!-- REF #_command_.SAX ADD XML ELEMENT VALUE.Syntax-->**SAX ADD XML ELEMENT VALUE** ( document ; data {; *} )<!-- END REF-->
 
 
 <!-- REF #_command_.SAX ADD XML ELEMENT VALUE.Params -->
@@ -19,14 +21,14 @@ title: SAX ADD XML ELEMENT VALUE
 
 
 In the XML document referenced by *document*, the `SAX ADD XML ELEMENT VALUE` command adds data directly without converting them. This command is equivalent, for instance, to inserting an attachment in the body of an e-mail.  
-In *data*, you can either pass a character string directly, or a 4D variable. The variable contents will be converted into text before being included in the XML document. If data is evaluated to `Undefined`, 4D uses an empty string. If you want to encode the contents of data, you must use the [`BASE64 ENCODE`](base64-encode.md) command. In this case, of course, you must passs a BLOB in data. 
+In *data*, you can either pass a character string directly, or a 4D variable. The variable contents will be converted into text before being included in the XML document. If data is evaluated to `Undefined`, 4D uses an empty string. If you want to encode the contents of data, you must use the [`BASE64 ENCODE`](base64-encode.md) command. In this case, of course, you must passs a BLOB in data.
 By default, the command encodes special characters (&lt; &gt; &rdquo; &rsquo;...) contained in the data parameter unless you have disabled this mechanism for the current process using the [`XML SET OPTIONS`](xml-set-options.md) command by passing the `XML raw data` value to the `XML string encoding` option. For example:
 
 ```4d
 XML SET OPTIONS($docRef;XML string encoding;XML raw data)
 ```
 
-In this context, to force the encoding of special parameters when calling `SAX ADD XML ELEMENT VALUE`, you must pass the optional `*` parameter. 
+In this context, to force the encoding of special parameters when calling `SAX ADD XML ELEMENT VALUE`, you must pass the optional `*` parameter.
 In order for this command to operate correctly, an element must be open. Otherwise, an error will be generated.
 
 

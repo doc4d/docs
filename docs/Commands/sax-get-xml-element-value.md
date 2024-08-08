@@ -1,8 +1,10 @@
+---
+displayed_sidebar: docs
 id: sax-get-xml-element-value
 title: SAX GET XML ELEMENT VALUE
+---
 
-
-<!-- REF #_command_.SAX GET XML ELEMENT VALUE.Syntax-->SAX GET XML ELEMENT VALUE ( document ; value )<!-- END REF-->
+<!-- REF #_command_.SAX GET XML ELEMENT VALUE.Syntax-->**SAX GET XML ELEMENT VALUE** ( document ; value )<!-- END REF-->
 
 
 <!-- REF #_command_.SAX GET XML ELEMENT VALUE.Params -->
@@ -44,7 +46,7 @@ SAX GET XML ELEMENT VALUE(DocRef;vValue)
 
 
 
-If the command was executed correctly, the system variable OK is set to 1. Otherwise, it is set to 0 and an error is generated. 
+If the command was executed correctly, the system variable OK is set to 1. Otherwise, it is set to 0 and an error is generated.
 
 
 #### See also
