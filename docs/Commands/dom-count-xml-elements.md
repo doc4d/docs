@@ -1,0 +1,35 @@
+---
+id: dom-count-xml-elements
+title: DOM Count XML elements
+displayed_sidebar: docs
+---
+
+
+<!-- REF #_command_.DOM Count XML elements.Syntax-->DOM Count XML elements ( elementRef ; elementName ) -> Function result<!-- END REF-->
+
+
+<!-- REF #_command_.DOM Count XML elements.Params -->
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|elementRef|String|->|XML element reference|
+|elementName|String|->|Name of XML elements to count|
+|Function result|Longint|<-|Number of elements|
+<!-- END REF -->
+
+
+#### Description
+
+
+
+
+The `DOM Count XML elements` command returns the number of “child” elements dependent on the *elementRef* parent element and named *elementName*.
+
+**Note:** By default, **DOM Count XML elements** is case sensitive regarding the *elementName* parameter (xml compliance). You can control the case sensitivity of the  command using the `XML DOM case sensitivity` selector of the [`XML SET OPTIONS`](xml-set-options.md) command.
+
+
+#### System Variables or Sets
+
+
+
+
+If the command has been correctly executed, the system variable OK is set to 1. If an error occurs, it is set to 0.

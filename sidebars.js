@@ -207,6 +207,7 @@ module.exports =
 							},
 						},
 						"Commands/command-index",
+						"Commands/command-index-2",
 					],
 				},
 				{
