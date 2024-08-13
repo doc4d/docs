@@ -104,3 +104,13 @@ title: Alphabetical list of commands
 [SAX OPEN XML ELEMENT](sax-open-xml-element.md)<br/>
 [SAX OPEN XML ELEMENT ARRAYS](sax-open-xml-element-arrays.md)<br/>
 [SAX SET XML DECLARATION](sax-set-xml-declaration.md)
+
+
+<a id="X"><b>X</b></a>
+
+[XML DECODE](xml-decode.md)<br/>
+[XML GET ERROR](xml-get-error.md)<br/>
+[XML GET OPTIONS](xml-get-options.md)<br/>
+[XML SET OPTIONS](xml-set-options.md)<br/>
+ 
+ 

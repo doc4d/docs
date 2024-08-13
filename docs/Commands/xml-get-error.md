@@ -1,0 +1,38 @@
+---
+id: xml-get-error
+title: XML GET ERROR
+displayed_sidebar: docs
+---
+
+
+<!-- REF #_command_.XML GET ERROR.Syntax-->XML GET ERROR ( elementRef ; errorText {; row {; column}} ) <!-- END REF-->
+
+
+<!-- REF #_command_.XML GET ERROR.Params -->
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|elementRef|String|->|XML element reference|
+|errorText|Variable|<-|Text of the error|
+|row|Variable|<-|Row number|
+|column|Variable|<-|Column number|
+<!-- END REF -->
+
+
+#### Description
+
+
+
+
+The `XML GET ERROR` command returns, in the *errorText* parameter, a description of the error encountered when processing the XML element designated by the *elementRef* parameter. The information returned is supplied by the Xerces.DLL library. 
+
+The optional *row* and *column* parameters indicate the location of the error: they retrieve, respectively, the row number and, in this row, the position of the first character of the expression at the origin of the error. 
+
+
+#### System Variables or Sets
+
+
+
+
+If the command has been correctly executed, the system variable OK is set to 1. If an error occurs, it is set to 0. 
+
+
