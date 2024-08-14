@@ -12,7 +12,9 @@ title: Alphabetical list of commands
 
 <a id="C"><b>C</b></a>
 
-
+[CLOSE WINDOW](close-window.md)<br/>
+[CONVERT COORDINATES](convert-coordinates.md)<br/>
+[Current form window](current-form-window.md)<br/>
 
 <a id="D"><b>D</b></a>
 
@@ -51,39 +53,54 @@ title: Alphabetical list of commands
 [DOM SET XML DECLARATION](dom-set-xml-declaration.md) (859) <br/>
 [DOM SET XML ELEMENT NAME](dom-set-xml-element-name.md) (867) <br/>
 [DOM SET XML ELEMENT VALUE](dom-set-xml-element-value.md) (868) <br/>
+[DRAG WINDOW](drag-window.md)<br/>
 
 <a id="E"><b>E</b></a>
 
-
+[ERASE WINDOW](erase-window.md)<br/>
 
 <a id="F"><b>F</b></a>
 
-
-
+[Find window](find-window.md)<br/>
+[Frontmost window](frontmost-window.md)<br/>
 
 <a id="G"><b>G</b></a>
 
+[GET WINDOW RECT](get-window-rect.md)<br/>
+[Get window title](get-window-title.md)<br/>
 
+<a id="H"><b>H</b></a>
+
+[HIDE TOOL BAR](hide-tool-bar.md)<br/>
+[HIDE WINDOW](hide-window.md)<br/>
 
 <a id="I"><b>I</b></a>
 
-
+[Is window maximized](is-window-maximized.md)<br/>
+[Is window reduced](is-window-reduced.md)<br/>
 
 <a id="M"><b>M</b></a>
 
+[MAXIMIZE WINDOW](maximize-window.md)<br/>
+[MINIMIZE WINDOW](minimize-window.md)<br/>
 
 <a id="N"><b>N</b></a>
 
+[Next window](next-window.md)<br/>
 
 <a id="O"><b>O</b></a>
 
+[Open form window](open-form-window.md)<br/>
+[Open window](open-window.md)<br/>
 
 <a id="P"><b>P</b></a>
 
 
 <a id="R"><b>R</b></a>
 
-
+[REDRAW WINDOW](redraw-window.md)<br/>
+[REDUCE RESTORE WINDOW](reduce-restore-window.md)<br/>
+[RESIZE FORM WINDOW](resize-form-window.md)<br/>
 
 <a id="S"><b>S</b></a>
 
@@ -104,7 +121,22 @@ title: Alphabetical list of commands
 [SAX OPEN XML ELEMENT](sax-open-xml-element.md)<br/>
 [SAX OPEN XML ELEMENT ARRAYS](sax-open-xml-element-arrays.md)<br/>
 [SAX SET XML DECLARATION](sax-set-xml-declaration.md)
+[SET WINDOW DOCUMENT ICON](set-window-document-icon.md)<br/>
+[SET WINDOW RECT](set-window-rect.md)<br/>
+[SET WINDOW TITLE](set-window-title.md)<br/>
+[SHOW TOOL BAR](show-tool-bar.md)<br/>
+[SHOW WINDOW](show-window.md)<br/>
 
+
+<a id="T"><b>T</b></a>
+
+[Tool bar height](tool-bar-height.md)<br/>
+
+<a id="W"><b>W</b></a>
+
+[Window kind](window-kind.md)<br/>
+[WINDOW LIST](window-list.md)<br/>
+[Window process](window-process.md)<br/>
 
 <a id="X"><b>X</b></a>
 
