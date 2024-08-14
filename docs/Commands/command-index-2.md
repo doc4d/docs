@@ -126,7 +126,11 @@ title: Alphabetical list of commands
 [SET WINDOW TITLE](set-window-title.md)<br/>
 [SHOW TOOL BAR](show-tool-bar.md)<br/>
 [SHOW WINDOW](show-window.md)<br/>
-
+[SOAP DECLARATION](soap-declaration.md)<br/>
+[SOAP Get info](soap-get-info.md)<br/>
+[SOAP REJECT NEW REQUESTS](soap-reject-new-requests.md)<br/>
+[SOAP Request](soap-request.md)<br/>
+[SOAP SEND FAULT](soap-send-fault.md)
 
 <a id="T"><b>T</b></a>
 
@@ -134,6 +138,12 @@ title: Alphabetical list of commands
 
 <a id="W"><b>W</b></a>
 
+[WEB SERVICE AUTHENTICATE](web-service-authenticate.md)<br/>
+[WEB SERVICE CALL](web-service-call.md)<br/>
+[WEB SERVICE Get info](web-service-get-info.md)<br/>
+[WEB SERVICE GET RESULT](web-service-get-result.md)<br/>
+[WEB SERVICE SET OPTION](web-service-set-option.md)<br/>
+[WEB SERVICE SET PARAMETER](web-service-set-parameter.md)<br/>
 [Window kind](window-kind.md)<br/>
 [WINDOW LIST](window-list.md)<br/>
 [Window process](window-process.md)<br/>
