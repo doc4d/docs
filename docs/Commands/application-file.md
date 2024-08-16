@@ -1,0 +1,50 @@
+---
+id: application-file
+title: Application file
+displayed_sidebar: docs
+---
+
+
+<!-- REF #_command_.Application file.Syntax-->**Application file**  -> Function result<!-- END REF-->
+
+
+<!-- REF #_command_.Application file.Params -->
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|Function result|String|<-|Long name of the 4D executable file or application|
+<!-- END REF -->
+
+
+#### Description
+
+
+
+
+The **Application file** command returns the long name of the 4D executable file or application you are running. 
+
+*On Windows*<br/>If, for example, you are running 4D located at \PROGRAMS\4D on the volume E, the command returns E:\PROGRAMS\4D\4D.EXE.
+
+*On Macintosh*<br/>If, for example, you are running 4D in the Programs folder on the disk Macintosh HD, the command returns Macintosh HD:Programs:4D.app.
+
+
+
+
+#### Example
+
+
+At startup on Windows, you need to check if a DLL Library is correctly located at the same level as the 4D executable file. In the **On Startup database method** of your application you can write:
+
+
+```4d
+
+If(Is Windows &amp; (Application type # 4D Server))
+C_OBJECT($appPath)
+$appPath:=Path to object(Application file)
+If(Test path name(($appPath.parentFolder)+"XRAYCAPT.DLL")#Is a document)
+ALERT ("XRAYCAPT.DLL is missing. The X-ray capture capability will not be available.")
+End if
+End if
+```
+
+
+
