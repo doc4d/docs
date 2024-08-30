@@ -20,10 +20,10 @@ title: 設定
 
 ## キャッシュ
 
-| 設定できる場所     | 名称                                                                      | コメント |
-| ----------- | ----------------------------------------------------------------------- | ---- |
-| 設定ダイアログボックス | [オプション (I) ページ / 4D Webキャッシュを使用する](../settings/web.md#4d-webキャッシュを使用する) |      |
-| 設定ダイアログボックス | [オプション (I) ページ / ページキャッシュサイズ](../settings/web.md#ページキャッシュサイズ)           |      |
+| 設定できる場所     | 名称                                                                           | コメント |
+| ----------- | ---------------------------------------------------------------------------- | ---- |
+| 設定ダイアログボックス | [Options (I) page/Use the 4D Web cache](../settings/web.md#4d-webキャッシュを使用する) |      |
+| 設定ダイアログボックス | [Options (I) page/Page Cache Size](../settings/web.md#ページキャッシュサイズ)           |      |
 
 Webページキャッシュの有効化と設定をおこないます。
 
@@ -303,7 +303,7 @@ TLS を介した HTTPS接続を受け付ける IPポート番号。 デフォル
 | `WEB SET OPTION` | `Web inactive process timeout`                                           |       |
 | 設定ダイアログボックス      | [オプション (I) ページ / 非動作プロセスのタイムアウト](../settings/web.md#非動作プロセスのタイムアウト)      | スライダー |
 
-セッションと紐づいた非アクティブWebプロセスのタイムアウト時間 (分単位) を設定します。 すると、`On Web Close Process` データベースメソッドが呼び出され、セッションのコンテキストは削除されます。
+Life duration (in minutes) of inactive processes associated with legacy sessions. At the end of the timeout, the process is killed on the server, the `On Web Legacy Close Session` database method is called, then the session context is destroyed.
 
 デフォルト値: 480分 (デフォルト値に戻すには 0 を指定します)
 
@@ -425,7 +425,7 @@ Webサーバーに処理を許可する HTTPリクエスト (POST) の最大サ�
 | webServer オブジェクト | [`maxSessions`](API/WebServerClass.md#maxsessions) |      |
 | `WEB SET OPTION` | `Web max sessions`                                 |      |
 
-同時セッション上限数。 上限に達すると、Webサーバーが新規セッションを作成するときに、一番古いセッションが閉じられます (`On Web Close Process` データベースメソッドが呼び出されます)。 同時セッション数は、[Webプロセスの最大値](#最大同時webプロセス)を超えることはできません (デフォルトは 100)。
+Maximum number of simultaneous legacy sessions. When you reach the limit set, the oldest legacy session is closed (and `On Web Legacy Close Session` database method is called) if the Web server needs to create a new one. The number of simultaneous legacy sessions cannot exceed the [maximum number of Web processes](#maximum-concurrent-web-processes) (100 by default).
 
 デフォルト値: 100 (デフォルト値に戻すには 0 を指定します).
 
@@ -479,9 +479,9 @@ Webサーバーの PFS利用可否状況 ([TLS](Admin/tls.md#perfect-forward-sec
 
 ## 一時的なコンテキストを再利用する (リモートモード)
 
-| 設定できる場所     | 名称                                                                 | コメント |
-| ----------- | ------------------------------------------------------------------ | ---- |
-| 設定ダイアログボックス | [オプション (I) ページ / 最大同時Webプロセス](../settings/web.md#一時的なコンテキストを再利用する) |      |
+| 設定できる場所     | 名称                                                                               | コメント |
+| ----------- | -------------------------------------------------------------------------------- | ---- |
+| 設定ダイアログボックス | [Options (I) page/Reuse Temporary Contexts](../settings/web.md#一時的なコンテキストを再利用する) |      |
 
 > このオプションは、**セッションなし** オプションがチェックされている場合にのみ利用できます。
 
@@ -565,7 +565,7 @@ Webサーバーの PFS利用可否状況 ([TLS](Admin/tls.md#perfect-forward-sec
 | `WEB SET OPTION` | `Web スケーラブルセッション`                                                                         |      |
 | 設定ダイアログボックス      | [オプション (I) ページ / スケーラブルセッション (マルチプロセスセッション)](../settings/web.md#スケーラブルセッション-マルチプロセスセッション) |      |
 
-4D Webサーバーでのスケーラブルセッション管理を有効/無効にします。 Webサーバーセッションの詳細については、[ユーザーセッション](sessions.md) のページを参照ください。
+4D Webサーバーでのスケーラブルセッション管理を有効/無効にします。 Web server sessions are detailed in the [Web sessions](sessions.md) page.
 
 
 
@@ -622,9 +622,9 @@ Webサーバーの PFS利用可否状況 ([TLS](Admin/tls.md#perfect-forward-sec
 
 ## プリエンプティブプロセスを使用
 
-| 設定できる場所     | 名称                                                                | コメント |
-| ----------- | ----------------------------------------------------------------- | ---- |
-| 設定ダイアログボックス | [オプション (I) ページ / 最大同時Webプロセス](../settings/web.md#プリエンプティブプロセスを使用) |      |
+| 設定できる場所     | 名称                                                                              | コメント |
+| ----------- | ------------------------------------------------------------------------------- | ---- |
+| 設定ダイアログボックス | [Options (I) page/Use Preemptive Processes](../settings/web.md#プリエンプティブプロセスを使用) |      |
 
 このオプションは、**セッションなし** オプションが選択されている場合に、アプリケーションの Webサーバーコードのプリエンプティブモードを有効にします (**スケーラブルセッション** では、プリエンプティブモードは常に有効です)。 このコンテキストにおいて当該オプションがチェックされているとき、4Dコンパイラは [Web関連のコード](preemptiveWeb.md#4d-webコードのスレッドセーフティ) それぞれのスレッドセーフプロパティを自動的に評価し、違反があった場合にはエラーを返します。
 
