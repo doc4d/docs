@@ -19,10 +19,10 @@ Hay diferentes maneras de configurar los parámetros del servidor web 4D, en fun
 
 ## Caché
 
-| Puede ajustarse con           | Nombre                                                                                  | Comentarios |
-| ----------------------------- | --------------------------------------------------------------------------------------- | ----------- |
-| Caja de diálogo de parámetros | [Configuration page/Use the 4D Web cache](../settings/web.md#use-the-4d-web-cache)      |             |
-| Caja de diálogo de parámetros | [Página de configuración/Tamaño de caché de página](../settings/web.md#page-cache-size) |             |
+| Puede ajustarse con           | Nombre                                                                                              | Comentarios |
+| ----------------------------- | --------------------------------------------------------------------------------------------------- | ----------- |
+| Caja de diálogo de parámetros | [Options (I) page/Use the 4D Web cache](../settings/web.md#use-the-4d-web-cache) |             |
+| Caja de diálogo de parámetros | [Options (I) page/Page Cache Size](../settings/web.md#page-cache-size)           |             |
 
 Activa y configura la caché de las páginas web.
 
@@ -287,7 +287,7 @@ Número de puerto IP de escucha para las conexiones HTTPS vía TLS. Por defecto,
 | `WEB SET OPTION`              | `Web inactive process timeout`                                                                              |             |
 | Caja de diálogo de parámetros | [Options (I) page/Inactive Process Timeout](../settings/web.md#inactive-process-timeout) | Cursor      |
 
-Duración de vida (en minutos) de los procesos inactivos asociados a las sesiones. Al final del tiempo de espera, el proceso se mata en el servidor, se llama al método base `On Web Close Process` y se destruye el contexto de sesión.
+Life duration (in minutes) of inactive processes associated with legacy sessions. At the end of the timeout, the process is killed on the server, the `On Web Legacy Close Session` database method is called, then the session context is destroyed.
 
 Por defecto: 480 minutos (pase 0 para restaurar el valor por defecto)
 
@@ -401,9 +401,9 @@ Valores posibles: 500 000 a 2 147 483 648.
 | Puede ajustarse con | Nombre                                             | Comentarios |
 | ------------------- | -------------------------------------------------- | ----------- |
 | objeto webServer    | [`maxSessions`](API/WebServerClass.md#maxsessions) |             |
-| `WEB SET OPTION`    | `Web max sessions	`                                |             |
+| `WEB SET OPTION`    | `Web max sessions`                                 |             |
 
-Número máximo de sesiones simultáneas. Cuando se alcanza el límite definido, se cierra la sesión más antigua (y se llama al método base `On Web Close Process`) si el servidor web necesita crear una nueva. El número de sesiones simultáneas no puede superar el [número máximo de procesos web](#maximum-concurrent-web-processes) (100 por defecto).
+Maximum number of simultaneous legacy sessions. When you reach the limit set, the oldest legacy session is closed (and `On Web Legacy Close Session` database method is called) if the Web server needs to create a new one. The number of simultaneous legacy sessions cannot exceed the [maximum number of Web processes](#maximum-concurrent-web-processes) (100 by default).
 
 Valor por defecto: 100 (pase 0 para restaurar el valor por defecto).
 
@@ -452,9 +452,9 @@ Verdadero si PFS está disponible en el servidor web (ver la sección [TLS](Admi
 
 ## Reutilizar los contextos temporales (en modo remoto)
 
-| Puede ajustarse con           | Nombre                                                                                                              | Comentarios |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------- | ----------- |
-| Caja de diálogo de parámetros | [Options (I) page/Maximum Concurrent Web Processes](../settings/web.md#reuse-temporary-contexts) |             |
+| Puede ajustarse con           | Nombre                                                                                                      | Comentarios |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------- |
+| Caja de diálogo de parámetros | [Options (I) page/Reuse Temporary Contexts](../settings/web.md#reuse-temporary-contexts) |             |
 
 > Esta opción sólo está disponible cuando la opción **Sin sesiones** está marcada.
 
@@ -537,7 +537,7 @@ Por ejemplo, si quiere que la carpeta raíz HTML sea la subcarpeta "Web" de la c
 | `WEB SET OPTION`              | `Sesión escalable web`                                                                                                                                           |             |
 | Caja de diálogo de parámetros | [Options (I) page/Scalable sessions (multi-process sessions)](../settings/web.md#scalable-sessions-multi-process-sessions) |             |
 
-Estado de activación de la gestión de sesiones escalable para el servidor web 4D. Las sesiones del servidor web se detallan en la página [Sesiones de usuario](sessions.md).
+Estado de activación de la gestión de sesiones escalable para el servidor web 4D. Web server sessions are detailed in the [Web sessions](sessions.md) page.
 
 ## Dominio de la cookie de sesión
 
@@ -588,9 +588,9 @@ El valor del atributo `Secure` de la cookie de sesión se define automáticament
 
 ## Utilizar procesos apropiativos
 
-| Puede ajustarse con           | Nombre                                                                                                              | Comentarios |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------- | ----------- |
-| Caja de diálogo de parámetros | [Options (I) page/Maximum Concurrent Web Processes](../settings/web.md#use-preemptive-processes) |             |
+| Puede ajustarse con           | Nombre                                                                                                      | Comentarios |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------- |
+| Caja de diálogo de parámetros | [Options (I) page/Use Preemptive Processes](../settings/web.md#use-preemptive-processes) |             |
 
 Esta opción activa el modo apropiativo para el código del servidor web de su aplicación cuando se selecciona la opción **Sin sesiones** (el modo apropiativo siempre está activado con **sesiones escalables**). Cuando esta opción está marcada en este contexto, el compilador 4D evaluará automáticamente la propiedad hilo seguro de cada pieza de [código relacionado con la web](preemptiveWeb.md#thread-safety-of-4d-web-code) y devolverá errores en caso de incompatibi
 
