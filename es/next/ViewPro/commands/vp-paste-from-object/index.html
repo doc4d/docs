@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">VP PASTE FROM OBJECT | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/es/next/ViewPro/commands/vp-paste-from-object"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="VP PASTE FROM OBJECT | 4D Docs"><meta data-rh="true" name="description" content="Historia"><meta data-rh="true" property="og:description" content="Historia"><link data-rh="true" rel="icon" href="/docs/es/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/es/next/ViewPro/commands/vp-paste-from-object"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/ViewPro/commands/vp-paste-from-object" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/ViewPro/commands/vp-paste-from-object" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/ViewPro/commands/vp-paste-from-object" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/ViewPro/commands/vp-paste-from-object" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/ViewPro/commands/vp-paste-from-object" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/ViewPro/commands/vp-paste-from-object" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/es/opensearch.xml"><link rel="stylesheet" href="/docs/es/assets/css/styles.dc9a4272.css">
-<script src="/docs/es/assets/js/runtime~main.e6840507.js" defer="defer"></script>
+<script src="/docs/es/assets/js/runtime~main.5d98b6ab.js" defer="defer"></script>
 <script src="/docs/es/assets/js/main.3b0e3cfb.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -64,14 +64,14 @@
 <p>En <em>rangeObj</em> pase el objeto rango de celdas donde se pegarán los valores, el formato y/o las celdas de la fórmula. Si <em>rangeObj</em> se refiere a más de una celda, sólo se utiliza la primera.</p>
 <p>En <em>dataObject</em>, pase el objeto que contiene los datos de la celda, el formato y las fórmulas a pegar.</p>
 <p>En el parámetro opcional <em>options</em>, puede especificar qué pegar en el rango de celdas. Valores posibles:</p>
-<p>|Constant|Description|
+<p>|Constante|Descripción|
 |---|---|---|
-|<code>vk clipboard options all</code>|Pastes all data objects, including values, formatting, and formulas.|
-|<code>vk clipboard options formatting</code>|Pastes only the formatting.|
-|<code>vk clipboard options formulas</code>|Pastes only the formulas.|
-|<code>vk clipboard options formulas and formatting</code>|Pastes formulas and formatting.|
-|<code>vk clipboard options values</code>|Pastes only values.|
-|<code>vk clipboard options value and formatting</code>|Pastes values and formatting.|</p>
+|<code>vk clipboard options all</code>|Pega todos los objetos de datos, incluyendo valores, formato y fórmulas.|
+|<code>vk clipboard options formatting</code>|Pega solo el formato.|
+|<code>vk clipboard options formulas</code>|Pega solo las fórmulas.|
+|<code>vk clipboard options formulas and formatting</code>|Pega fórmulas y formato.|
+|<code>vk clipboard options values</code>|Pega solo valores.|
+|<code>vk clipboard options value and formatting</code>|Pega valores y formato.|</p>
 <p>Se tienen en cuenta las opciones de pegado definidas en las <a href="/docs/es/next/ViewPro/commands/vp-set-workbook-options">opciones del libro de trabajo</a>.</p>
 <p>Si <em>options</em> se refiere a una opción de pegado que no está presente en el objeto copiado (por ejemplo, fórmulas), el comando no hace nada.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ejemplo">Ejemplo<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/ViewPro/commands/vp-paste-from-object#ejemplo">​</a></h4>
