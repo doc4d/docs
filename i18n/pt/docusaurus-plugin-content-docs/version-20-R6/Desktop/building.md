@@ -386,18 +386,18 @@ Se o servidor e/ou cliente parte do seu aplicativo clicável duplo for usado com
 Os elementos devem ser instalados:
 
 - **em Windows**
-  - **Aplicación del servidor** - en la subcarpeta `Client Server executable/<ApplicationName>Server/Server Database`.
-  - **Aplicación cliente** - en la subcarpeta `Client Server executable/<ApplicationName>Client`.
+  - **Aplicativo do servidor** - na subpasta `Cliente Servidor executável/<ApplicationName>Server/Banco de Dados do Servidor`.
+  - **Aplicativo do cliente** - na subpasta `Client Server executable/<ApplicationName>Client`.
 
 - **no macOS**
-  - **Aplicación del servidor** - junto al paquete de software `<ApplicationName>Server`.
-  - **Aplicación cliente** - junto al paquete de software `<ApplicationName>Cliente`.
+  - **Aplicativo do servidor** - ao lado do pacote de software `<ApplicationName>Server`.
+  - **Aplicação de cliente** - ao lado do pacote de software \`<ApplicationName>cliente.
 
 ### Incorporar uma aplicação cliente usuário único
 
-4D lhe permite incorporar uma estrutura compilada na aplicação cliente. Esta funcionalidad puede utilizarse, por ejemplo, para ofrecer a los usuarios una aplicación "portal", que da acceso a diferentes aplicaciones del servidor gracias al comando `OPEN DATABASE` que ejecuta un archivo `.4dlink`.
+4D lhe permite incorporar uma estrutura compilada na aplicação cliente. Esse recurso pode ser usado, por exemplo, para fornecer aos usuários um aplicativo "portal", que dá acesso a diferentes aplicativos de servidor graças ao comando `OPEN DATABASE` executando um arquivo `.4dlink`.
 
-Para activar esta funcionalidad, añada las llaves `DatabaseToEmbedInClientWinFolder` y/o `DatabaseToEmbedInClientMacFolder` en el archivo de configuración *buildApp*. Cuando una de estas llaves está presente, el proceso de generación de la aplicación cliente genera una aplicación monopuesto: la estructura compilada, en lugar del archivo *EnginedServer.4Dlink*, se coloca en la carpeta "Database".
+Para ativar este recurso, adicione as chaves DatabaseToEmbedInClientWinFolder e/ou DatabaseToEmbedInClientMacFolder no arquivo de configurações do buildApp. Quando uma das chaves estiver presente, a aplicação cliente gera uma aplicação monousuário: a estrutura compilada, ao inves do arquivo EnginedServer.4Dlink é colocada na pasta "Database".
 
 - Se existir uma pasta de dados padrão no aplicativo de usuário único, uma licença será incorporada.
 - Se não existir uma pasta de dados padrão no aplicativo de usuário único, ela será executada sem arquivo de dados e sem licença.
@@ -405,7 +405,7 @@ Para activar esta funcionalidad, añada las llaves `DatabaseToEmbedInClientWinFo
 O cenário básico é o seguinte:
 
 1. Na caixa de diálogo da Aplicação de Construção, selecione a opção "Construir estrutura compilada" para produzir um . DZ ou .4DC para o aplicativo a ser usado em modo de usuário único.
-2. En el archivo *buildApp.4DSettings* de la aplicación cliente-servidor, utilice la(s) siguiente(s) llave(s) xml para indicar la ruta de la carpeta que contiene la aplicación compilada monopuesto:
+2. No aplicativo da construção. DSettings arquivo da aplicação cliente-servidor, use o seguinte xml chave(s) para indicar o caminho para a pasta que contém a compilação de aplicação de único usuário:
 
 - `DatabaseToEmbedInClientWinFolder`
 - `DatabaseToEmbedInClientMacFolder`
@@ -413,28 +413,28 @@ O cenário básico é o seguinte:
 3. Construir a aplicação cliente-servidor. Isto terá os seguintes efeitos:
 
 - toda a pasta do aplicativo do único usuário é copiada dentro da pasta "Database" do cliente mesclado
-- el archivo *EnginedServer.4Dlink* de la carpeta "Database" no se genera
+- o ficheiro *EnginedServer.4Dlink* da pasta "Database" não é gerado
 - o .4DC, .4DZ, .4DIndy arquivos da cópia do aplicativo de usuário único são renomeados usando o nome do cliente mesclado
-- la llave `PublishName` no se copia en el *info.plist* del cliente fusionado
+- a chave `PublishName` não é copiada no *info.plist* do cliente mesclado
 - Se o aplicativo de usuário único não tiver uma pasta "Dados padrão", o cliente mesclado será executado sem dados.
 
-Automatic update 4D Server features ([Current version](#current-version) number, `SET UPDATE FOLDER` command...) work with single-user application as with standard remote application. Al conectarse, la aplicación monopuesto compara su llave `CurrentVers` con el rango de versión 4D Server. Se fora do intervalo, o aplicativo cliente atualizado será baixado do servidor e o atualizador iniciará o processo de atualização local.
+Funções automáticas do servidor 4D ([Versão atual](#current-version) número, `SET UPDATE FOLDER`...) funciona com aplicação de usuário único como com aplicação remota padrão. Na conexão, o aplicativo de usuário único compara sua chave `CurrentVers` com o intervalo de versão do 4D Server. Se fora do intervalo, o aplicativo cliente atualizado será baixado do servidor e o atualizador iniciará o processo de atualização local.
 
 ### Personalização dos nomes da pasta de cache cliente e/ou servidor
 
 Pastas de cache de cliente e servidor são usadas para armazenar elementos compartilhados como recursos ou componentes. Eles são necessários para gerenciar as trocas entre o servidor e os clientes remotos. Aplicações cliente/servidor usam caminhos padrão para as pastas de cache do sistema de cliente e servidor.
 
-Em alguns casos específicos, talvez seja necessário personalizar os nomes dessas pastas para implementar arquiteturas específicas (veja abaixo). 4D le ofrece las llaves `ClientServerSystemFolderName` y `ServerStructureFolderName` a definir en el archivo de parámetros *buildApp*.
+Em alguns casos específicos, talvez seja necessário personalizar os nomes dessas pastas para implementar arquiteturas específicas (veja abaixo). 4D fornece chaves `ClientServerSystemFolderName` e `ServerStructureFolderName` a serem definidas no arquivo de configurações do *buildApp*.
 
 #### Pasta de cache cliente
 
 Personalizar o nome da pasta de cache do lado do cliente pode ser útil quando sua aplicação do cliente é usada para se conectar a vários servidores mesclados que são similares, mas usam conjuntos de dados diferentes. Neste caso, para salvar vários downloads desnecessários de recursos locais idênticos, você pode usar a mesma pasta de cache local personalizada.
 
-- Configuración por defecto (*para cada conexión a un servidor, una carpeta caché específica se descarga/actualiza*):
+- Configuração padrão (*para cada conexão para um servidor, uma pasta cache é baixada ou atualizada*):
 
 ![](../assets/en/Admin/cachea.png)
 
-- Utilizando la llave `ClientServerSystemFolderName` (*se utiliza una única carpeta de caché para todos los servidores*):
+- Usando a chave `ClientServerSystemFolderName` (*uma única pasta de cache é usada para todos os servidores*):
 
 ![](../assets/en/Admin/cacheb.png)
 
@@ -442,33 +442,33 @@ Personalizar o nome da pasta de cache do lado do cliente pode ser útil quando s
 
 Personalizar o nome da pasta de cache no lado do servidor é útil quando você executa vários aplicativos de servidor idênticos criados com diferentes versões 4D no mesmo computador. Se você quiser que cada servidor use seu próprio conjunto de recursos, você precisará personalizar a pasta de cache do servidor.
 
-- Configuración por defecto (*las mismas aplicaciones servidor comparten la misma carpeta de caché*):
+- Configuração padrão (*aplicativos do mesmo servidor compartilham a mesma pasta de cache*):
 
 ![](../assets/en/Admin/cacheServera.png)
 
-- Utilizando la llave `ServerStructureFolderName` (*se utiliza una carpeta de caché dedicada para cada aplicación servidor*):
+- Usando a tecla `ServerStructureFolderName` (*uma pasta de cache dedicada é usada para cada aplicativo de servidor*):
 
 ![](../assets/en/Admin/cacheServerb.png)
 
-## Página Plugins y componentes
+## Página Plugins e componentes
 
-On this tab, you set each [**plug-in**](Concepts/plug-ins.md), [**component**](../Project/components.md), and [**module**](#deselecting-modules) that you will use in your stand-alone or client/server application.
+Nesta aba, você definiu cada um dos [**plug-in**](Concepts/plug-ins.md), [**component**](../Project/components.md), e [**module**](#deselecting-modules) que você usará em seu aplicativo autônomo ou cliente/servidor.
 
 A página lista os elementos carregados pela aplicação 4D atual:
 
 ![](../assets/en/Desktop/buildappcomps.png)
 
-- La columna **Activa** indica los elementos que se integrarán en la aplicación generada. Todos os itens são marcados por padrão. Para excluir um plug-in, um componente ou um módulo, desmarque a caixa de seleção ao lado dele.
+- **Coluna Active** - Indica que os itens serão integrados no pacote de aplicação compilado. Todos os itens são marcados por padrão. Para excluir um plug-in, um componente ou um módulo, desmarque a caixa de seleção ao lado dele.
 
-- columna **Plugins y componentes** - Muestra el nombre del plug-in/componente/módulo.
+- Coluna **Plugins e componentes** - Exibe o nome do plug-in/component/module.
 
-- Columna **ID** - Muestra el número de identificación del elemento (si lo hay).
+- **ID** coluna - Exibe o número de identificação do elemento (se houver).
 
-- Columna **Tipo** - Indica el tipo de elemento: Plug-in, Componente o Módulo.
+- **Coluna Tipo** - Indica o tipo do item: Plug-in, Componente, ou Módulo.
 
 ### Adicionar plug-ins ou componentes
 
-Si desea integrar otros plug-ins o componentes en la aplicación ejecutable, sólo tiene que colocarlos en una carpeta **PlugIns** o **Components** junto a la aplicación 4D Volume Desktop o junto a la aplicación 4D Server. El mecanismo para copiar el contenido de la carpeta de la aplicación fuente (ver [Personalizar la carpeta 4D Volume Desktop](#customizing-4d-volume-desktop-folder)) puede utilizarse para integrar todo tipo de archivo en la aplicación ejecutable.
+Se você quiser integrar outros plugins ou componentes na aplicação executável, você só precisa colocá-los em uma pasta **Plugins** ou **Components** ao lado da aplicação 4D Volume Desktop ou ao lado do aplicativo 4D do servidor. O mecanismo para copiar o conteúdo da pasta do aplicativo de origem (ver [Personalizando a pasta 4D Volume Deskto](#customizing-4d-volume-desktop-folder)) pode ser usado para integrar qualquer tipo de arquivo no aplicativo executável.
 
 Se houver um conflito entre duas versões diferentes do mesmo plug-in (uma carregada por 4D e a outra localizada na pasta do aplicativo de origem), prioridade vai para o plug-in instalado na pasta Volume Desktop/4D do Servidor. No entanto, se houver duas instâncias do mesmo componente, o aplicativo não abrirá.
 
@@ -478,11 +478,11 @@ Se houver um conflito entre duas versões diferentes do mesmo plug-in (uma carre
 
 Um módulo é uma biblioteca de código integrada usada por 4D para controlar funções específicas. Se você sabe que sua aplicação construída não utiliza nenhum dos recursos cobertos por um módulo, você pode desselecioná-lo na lista para reduzir o tamanho dos arquivos da sua aplicação.
 
-> **Atención:** deseleccionar un módulo podría impedir que su aplicación generada funcione como se espera. Se você não tem 100% de certeza de que um módulo nunca é chamado por sua aplicação, é recomendado mantê-lo selecionado.
+> **Aviso:** Desmarcar um módulo pode impedir que sua aplicação construída funcione como esperado. Se você não tem 100% de certeza de que um módulo nunca é chamado por sua aplicação, é recomendado mantê-lo selecionado.
 
 Os seguintes módulos opcionais podem ser desmarcados:
 
-- **CEF**: Librería integrada Chromium. Es necesario ejecutar [áreas Web](../FormObjects/webArea_overview.md) que utilizan el motor de renderizado integrado y [áreas 4D View Pro](../FormObjects/viewProArea_overview.md). Chamar essas áreas quando o CEF for deseleito, mostrará áreas em branco e/ou gerará erros.
+- **CEF**: biblioteca integrada Chromium. É necessário executar [áreas Web](../FormObjects/webArea_overview.md) que usem o mecanismo de renderização incorporado e [áreas 4D View Pro](../FormObjects/viewProArea_overview.md). Chamar essas áreas quando o CEF for deseleito, mostrará áreas em branco e/ou gerará erros.
 - **MeCab**: librería utilizada para la indexación de textos en lengua japonesa (ver este [párrafo de propiedades](../settings/database.md#support-of-mecab-japanese-version)). Desmarcar este módulo irá forçar os índices de texto a serem reconstruídos na língua japonesa.
 
 > If you deselect MeCab for an application in Japanese language used on heterogeneous platforms, make sure to deselect it on both client/server build and [client application build](#build-client-application) (for the concurrent platform), otherwise major malfunctions will occur in the application.
