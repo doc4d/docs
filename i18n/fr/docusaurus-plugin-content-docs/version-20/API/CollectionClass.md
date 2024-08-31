@@ -210,8 +210,8 @@ Vous pouvez passer tout nombre de valeurs de n'importe quel type pris en charge 
 *   date
 *   heure (stockée en nombre de milliseconds - réel)
 *   Null
-*   shared object
-*   shared collection
+*   objet partagé
+*   collection partagée
 
 :::note
 
