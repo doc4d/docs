@@ -3268,7 +3268,7 @@ Pode definir o(s) seguinte(s) parâmetro(s):
 
 In any case, at the point where `.some()` function encounters the first collection element returning true, it stops calling the callback and returns **true**.
 
-By default, `.some()` tests the whole collection. Optionally, you can pass the index of an element from which to start the test in *startFrom*.
+Por padrão, `.some()` testa toda a coleção. Optionally, you can pass the index of an element from which to start the test in *startFrom*.
 
 - If *startFrom* >= the collection's length, **False** is returned, which means the collection is not tested.
 
