@@ -42,7 +42,7 @@ Para conectar a um servidor da lista, clique duas vezes no seu nome ou selecione
 
 Se o projeto publicado não for exibido na lista **Disponível**, selecione **Personalizado**. A página personalizada permite que você se conecte a um servidor publicado na rede usando seu endereço de rede e atribuindo-lhe um nome personalizado.
 
-![](../assets/pt-BR/Desktop/serverConnect2.png)
+![](../assets/en/Desktop/serverConnect2.png)
 
 - **Nome do projeto**: Define o nome local do projeto no servidor 4D. Este nome será usado na página **Recente** quando referente ao projeto.
 - **Endereço de rede**: O endereço IP da máquina onde o 4D Server foi lançado.
