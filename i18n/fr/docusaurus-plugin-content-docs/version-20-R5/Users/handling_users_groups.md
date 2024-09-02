@@ -72,7 +72,7 @@ Pour ajouter un utilisateur depuis la boite à outils :
 
 La liste des utilisateurs affiche tous les utilisateurs, y compris [le Super_Utilisateur et l'l’Administrateur](#designer-and-administrator).
 
-2. Click on the ![](../assets/en/Users/PlussNew.png) button located below the list of users.
+2. Cliquez sur le bouton ![](../assets/en/Users/PlussNew.png) situé au-dessous de la liste des utilisateurs.
    OU
    Cliquez avec le bouton droit de la souris dans la Liste des utilisateurs et choisissez la commande **Ajouter** ou **Dupliquer** dans le menu contextuel.
 
@@ -121,7 +121,7 @@ Pour créer un groupe :
 1. Sélectionnez **Boîte à outils > Groupes** dans le menu **Développement** ou cliquez sur le bouton **Boîte outils** de la barre d’outils de 4D puis cliquez sur le bouton **Groupes**.
    4D affiche la fenêtre d’édition des groupes. La liste des groupes affiche tous les groupes du projet d'application.
 
-2. Click on the ![](../assets/en/Users/PlussNew.png) button located below the list of groups.\
+2. Cliquez sur le bouton ![](../assets/en/Users/PlussNew.png) situé au-dessous de la liste des groupes.\
    OR\
    Right-click in the list of groups and choose the **Add** or **Duplicate** command in the context menu.
 
