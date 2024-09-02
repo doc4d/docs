@@ -1021,7 +1021,7 @@ Exemplo com erro:
 
 #### Exemplo 2
 
-Example with `dk reload if stamp changed` option:
+Exemplo com a opção `dk reload if stamp changed`:
 
 ```4d
  var $employee : cs. EmployeeEntity
@@ -1203,10 +1203,10 @@ The object returned by `.reload( )` contains the following properties:
 
 <!-- REF #EntityClass.save().Params -->
 
-| Parâmetro  | Tipo    |     | Descrição                                                         |
-| ---------- | ------- | :-: | ----------------------------------------------------------------- |
-| mode       | Integer |  -> | `dk auto merge`: Enables the automatic merge mode |
-| Resultados | Object  |  <- | Resultado da operação de salvamento                               |
+| Parâmetro  | Tipo    |     | Descrição                                                             |
+| ---------- | ------- | :-: | --------------------------------------------------------------------- |
+| mode       | Integer |  -> | `dk auto merge`: ativa o modo de mesclagem automática |
+| Resultados | Object  |  <- | Resultado da operação de salvamento                                   |
 
 <!-- END REF -->
 
