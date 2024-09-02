@@ -66,7 +66,7 @@ Define el conjunto de caracteres que utilizará el servidor web de 4D. El valor 
 
 Lista de cifrado utilizada para el protocolo seguro; establece la prioridad de los algoritmos de cifrado implementados por el servidor web. Puede ser una secuencia de cadenas separadas por dos puntos (por ejemplo "ECDHE-RSA-AES128-..."). Ver la [página de cifrados](https://www.openssl.org/docs/manmaster/man1/ciphers.html) en el sitio OpenSSL.
 
-> The default cipher list used by 4D can be modified for the session using the `SET DATABASE PARAMETER` command, in which case the modification applies to the entire 4D application, including the web server, SQL server, client/server connections, as well as the HTTP client and all the 4D commands that make use of the secure protocol.
+> La lista de cifrado por defecto utilizada por 4D puede ser modificada para la sesión utilizando el comando `SET DATABASE PARAMETER`, en cuyo caso la modificación se aplica a toda la aplicación 4D, incluyendo el servidor web, el servidor SQL, las conexiones cliente/servidor, así como el cliente HTTP y todos los comandos de 4D que hacen uso del protocolo seguro.
 
 ## Parámetros CORS
 
@@ -503,11 +503,11 @@ En este caso, los robots no pueden acceder a todo el sitio.
 
 ## Carpeta raíz
 
-| Puede ajustarse con           | Nombre                                                                       | Comentarios                                                                                                                           |
-| ----------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| objeto webServer              | [`rootFolder`](API/WebServerClass.md#rootfolder)                             | Text property but can be a [`4D.Folder`](API/FolderClass.md) object when used with the _settings_ parameter of the `start()` function |
-| `WEB SET ROOT FOLDER`         |                                                                              |                                                                                                                                       |
-| Caja de diálogo de parámetros | [Configuration page/Default HTML Root](../settings/web.md#default-html-root) |                                                                                                                                       |
+| Puede ajustarse con           | Nombre                                                                       | Comentarios                                                                                                                                  |
+| ----------------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| objeto webServer              | [`rootFolder`](API/WebServerClass.md#rootfolder)                             | Propiedad texto pero puede ser un objeto [`4D.Folder`](API/FolderClass.md) cuando se usa con el parámetro _settings_ de la función `start()` |
+| `WEB SET ROOT FOLDER`         |                                                                              |                                                                                                                                              |
+| Caja de diálogo de parámetros | [Configuration page/Default HTML Root](../settings/web.md#default-html-root) |                                                                                                                                              |
 
 Ruta de la carpeta raíz del servidor web, es decir, la carpeta en la que 4D buscará las páginas HTML estáticas y semidinámicas, imágenes, etc., para enviarlas a los navegadores. La ruta de acceso está en formato POSIX (ruta completa). Será necesario reiniciar el servidor web para que se tenga en cuenta la nueva carpeta raíz.
 
