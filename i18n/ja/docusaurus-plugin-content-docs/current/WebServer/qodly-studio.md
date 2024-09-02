@@ -297,6 +297,12 @@ Qodly Studio の URLスキーム設定 (HTTP および HTTPS) によって、Qod
 
 Qodly Studio からレンダラーを実行する際、これら 2つの Webサーバーに同じ URLスキーム (HTTP または HTTPS) 経由でアクセスしていない場合には、ライセンスのカウントが正しくおこなわれない可能性があります。
 
+:::info
+
+Using different schemes might also lead to [session](sessions.md) issues, such as losing [privileges](../ORDA/privileges.md) after a page refresh.
+
+:::
+
 #### 例題
 
 1. Qodly Studio を HTTPS URLスキームで実行します (例: `https://127.0.0.1:7443/studio/`)
