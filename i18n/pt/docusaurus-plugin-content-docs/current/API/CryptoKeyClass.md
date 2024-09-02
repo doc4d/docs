@@ -42,14 +42,14 @@ For a comprehensive overview of this class, please refer to the [**CryptoKey: en
 
 <!-- REF #4D.CryptoKey.new().Params -->
 
-| Parâmetro | Tipo                          |    | Descrição                                          |
-| --------- | ----------------------------- | -- | -------------------------------------------------- |
-| settings  | Object                        | -> | Parâmetros para gerar ou carregar um par de chaves |
-| result    | 4D. CryptoKey | <- | Objeto que contém um par de chaves de encriptação  |
+| Parâmetro | Tipo                         |    | Descrição                                         |
+| --------- | ---------------------------- | -- | ------------------------------------------------- |
+| settings  | Object                       | -> | Settings to generate or load a key pair           |
+| result    | 4D.CryptoKey | <- | Objeto que contém um par de chaves de encriptação |
 
 <!-- END REF -->
 
-The `4D.CryptoKey.new()` function <!-- REF #4D.CryptoKey.new().Summary -->creates a new `4D.CryptoKey` object encapsulating an encryption key pair<!-- END REF -->, based upon the *settings* object parameter. Permite gerar uma nova chave RSA o ECDSA, ou carregar um par de chaves existente desde uma definição PEM.
+The `4D.CryptoKey.new()` function <!-- REF #4D.CryptoKey.new().Summary -->creates a new `4D.CryptoKey` object encapsulating an encryption key pair<!-- END REF -->, based upon the *settings* object parameter. It allows to generate a new RSA or ECDSA key, or to load an existing key pair from a PEM definition.
 
 #### *parâmetros*
 
@@ -62,7 +62,7 @@ The `4D.CryptoKey.new()` function <!-- REF #4D.CryptoKey.new().Summary -->create
 
 #### *CryptoKey*
 
-The returned `CryptoKey` object encapsulates an encryption key pair. É um objeto compartido e, portanto, pode ser utilizado por vários processos 4D simultaneamente.
+The returned `CryptoKey` object encapsulates an encryption key pair. It is a shared object and can therefore be used by multiple 4D processes simultaneously.
 
 #### Exemplo 1
 
