@@ -140,7 +140,7 @@ In the *options* parameter, pass an object that can contain the following proper
 | protocol               | Text                                             | "auto" ou "HTTP1". "auto" significa HTTP1 na implementação actual                                                                                                                                                                                                                                                                                   | "auto"        |
 | proxyAuthentication    | [objeto de autenticação](#authentication-object) | Autenticação por procuração de tratamento de objectos                                                                                                                                                                                                                                                                                                               | indefinido    |
 | serverAuthentication   | [objeto de autenticação](#authentication-object) | Autenticação do servidor de tratamento de objectos                                                                                                                                                                                                                                                                                                                  | indefinido    |
-| returnResponseBody     | Parâmetros                                       | If false, the response body is not returned in the [`response` object](#response). Returns an error if false and `onData` is undefined                                                                                                                                                                                                              | True          |
+| returnResponseBody     | Parâmetros                                       | If false, the response body is not returned in the [`response` object](#response). Devolve um erro se falso e `onData` é indefinido                                                                                                                                                                                                                 | True          |
 | timeout                | Real                                             | Tempo de espera em segundos. Indefinido = sem timeout                                                                                                                                                                                                                                                                                               | Indefinido    |
 | validateTLSCertificate | Parâmetros                                       | Se false, 4D não valida o certificado TLS e não retorna um erro se ele for inválido (i.e. expirado, auto-assinado...). Importante: Na implementação actual, a Autoridade de Certificação em si não é verificada. | True          |
 
@@ -159,7 +159,7 @@ Aqui está a sequência de chamadas de retorno:
 
 2. `onData` is called zero or several times (not called if the request does not have a body)
 
-3. If no error occured, `onResponse` is always called once
+3. Se não ocorreu nenhum erro, `onResponse` é sempre chamado uma vez
 
 4. If an error occurs, `onError` is executed once (and terminates the request)
 
@@ -177,7 +177,7 @@ An `event` object is returned when a [callback function](#callback-functions) is
 
 | Propriedade           | Tipo | Descrição                                                                                                                  |
 | --------------------- | ---- | -------------------------------------------------------------------------------------------------------------------------- |
-| .data | blob | Dados recebidos. It is always *undefined* except in the `onData` callback                                  |
+| .data | blob | Dados recebidos. É sempre *undefined* excepto no callback `onData`                                         |
 | .type | text | Tipo de evento. Possíveis valores: "resposta", "erro", "cabeçalhos", "dados", ou "terminar |
 
 #### authentication-object
