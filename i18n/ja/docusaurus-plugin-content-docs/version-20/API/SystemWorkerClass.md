@@ -61,16 +61,16 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 
 
 <!-- REF #4D.SystemWorker.new().Params -->
-| 引数          | タイプ             |    | 説明                                     |
+| 引数          | 型               |    | 説明                                     |
 | ----------- | --------------- |:--:| -------------------------------------- |
-| commandLine | Text            | -> | 実行するコマンドライン                            |
-| options     | Object          | -> | ワーカーパラメーター                             |
+| commandLine | テキスト            | -> | 実行するコマンドライン                            |
+| options     | オブジェクト          | -> | ワーカーパラメーター                             |
 | result      | 4D.SystemWorker | <- | 非同期の新規システムワーカー (プロセスが開始されなかった場合は null) |  
 <!-- END REF -->
 
 #### 説明
 
-`4D.SystemWorker.new()` 関数は、 <!-- REF #4D.SystemWorker.new().Summary -->外部プロセスを開始するために *commandLine* に渡したコマンドラインを実行する `4D.SystemWorker` オブジェクトを作成して返します<!-- END REF -->。
+`4D.SystemWorker.new()` 関数は、 <!-- REF #4D.SystemWorker.new().Summary -->外部プロセスを開始するために *commandLine* に渡したコマンドラインを実行する `4D.SystemWorker` オブジェクトを作成して返します<!-- END REF -->.
 
 返されたシステムワーカーオブジェクトは、ワーカーにメッセージを送信したり、ワーカーの結果を取得するために使用できます。
 
@@ -84,7 +84,7 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 
 *options* に渡すオブジェクトは、次のプロパティを持つことができます:
 
-| プロパティ            | タイプ     | デフォルト     | 説明                                                                                                                                                           |
+| プロパティ            | 型       | デフォルト     | 説明                                                                                                                                                           |
 | ---------------- | ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | onResponse       | Formula | undefined | システムワーカーメッセージ用のコールバック。 完全なレスポンスを受け取り次第、このコールバックが呼び出されます。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                |
 | onData           | Formula | undefined | システムワーカーデータ用のコールバック。 システムワーカーがデータを受け取る度に、このコールバックが呼び出されます。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                              |
@@ -92,18 +92,18 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 | onError          | Formula | undefined | 実行エラー用のコールバック。異常なランタイム条件 (システムエラー) の場合にシステムワーカーによって返されます。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                               |
 | onTerminate      | Formula | undefined | 外部プロセスが終了されたときのコールバック。 コールバックは 2つのオブジェクトを引数として受け取ります (後述参照)                                                                                                  |
 | timeout          | Number  | undefined | プロセスが生きている場合、キルされるまでの秒数。                                                                                                                                     |
-| dataType         | Text    | "text"    | レスポンス本文のデータ型。 可能な値: "text" (デフォルト), "blob"。                                                                                                                  |
-| encoding         | Text    | "UTF-8"   | `dataType="text"` の場合のみ。 レスポンス本文のエンコーディング。 利用可能な値については、[`CONVERT FROM TEXT`](https://doc.4d.com/4dv19R/help/command/ja/page1011.html) コマンドの説明を参照ください。        |
-| variables        | Object  |           | システムワーカー用のカスタム環境変数を設定します。 シンタックス: `variables.key=value` (`key` は変数名、`value` はその値)。 値は、可能な限り文字列に変換されます。 値に '=' を含めることはできません。 定義されていない場合、システムワーカーは 4D環境を継承します。 |
+| dataType         | テキスト    | "text"    | レスポンス本文のデータ型。 可能な値: "text" (デフォルト), "blob"。                                                                                                                  |
+| encoding         | テキスト    | "UTF-8"   | `dataType="text"` の場合のみ。 レスポンス本文のエンコーディング。 利用可能な値については、[`CONVERT FROM TEXT`](https://doc.4d.com/4dv19R/help/command/ja/page1011.html) コマンドの説明を参照ください。        |
+| variables        | オブジェクト  |           | システムワーカー用のカスタム環境変数を設定します。 シンタックス: `variables.key=value` (`key` は変数名、`value` はその値)。 値は、可能な限り文字列に変換されます。 値に '=' を含めることはできません。 定義されていない場合、システムワーカーは 4D環境を継承します。 |
 | currentDirectory | Folder  |           | プロセスが実行される作業ディレクトリ                                                                                                                                           |
-| hideWindow       | Boolean | true      | (Windows) アプリケーションウィンドウを隠す (可能な場合)、または Windowsコンソールを隠す                                                                                                       |
+| hideWindow       | ブール     | true      | (Windows) アプリケーションウィンドウを隠す (可能な場合)、または Windowsコンソールを隠す                                                                                                       |
 
 すべてのコールバック関数は、2つのオブジェクト引数を受け取ります。 その内容は、コールバックに依存します:
 
-| 引数           | タイプ           | *onResponse* | *onData*     | *onDataError* | *onError*    | *onTerminate* |
+| 引数           | 型             | *onResponse* | *onData*     | *onDataError* | *onError*    | *onTerminate* |
 | ------------ | ------------- | ------------ | ------------ | ------------- | ------------ | ------------- |
-| $param1      | Object        | SystemWorker | SystemWorker | SystemWorker  | SystemWorker | SystemWorker  |
-| $param2.type | Text          | "response"   | "data"       | "error"       | "error"      | "termination" |
+| $param1      | オブジェクト        | SystemWorker | SystemWorker | SystemWorker  | SystemWorker | SystemWorker  |
+| $param2.type | テキスト          | "response"   | "data"       | "error"       | "error"      | "termination" |
 | $param2.data | Text または Blob |              | 取得データ        | エラーデータ        |              |               |
 
 以下は、コールバック呼び出しの流れです:
@@ -265,15 +265,15 @@ Function _createFile($title : Text; $textBody : Text)
 
 
 <!-- REF #SystemWorkerClass.closeInput().Params -->
-| 引数 | タイプ |  | 説明                                           |
-| -- | --- |::| -------------------------------------------- |
-|    |     |  | このコマンドは引数を必要としません|<!-- END REF -->
+| 引数 | 型 |  | 説明                                           |
+| -- | - |::| -------------------------------------------- |
+|    |   |  | このコマンドは引数を必要としません|<!-- END REF -->
 
 |
 
 #### 説明
 
-`.closeInput()` 関数は、 <!-- REF #SystemWorkerClass.closeInput().Summary -->外部プロセスの入力ストリーム (*stdin*) を閉じます<!-- END REF -->。
+`.closeInput()` 関数は、 <!-- REF #SystemWorkerClass.closeInput().Summary -->外部プロセスの入力ストリーム (*stdin*) を閉じます<!-- END REF -->.
 
 `.closeInput()` は、`postMessage()` を介した全データの受信を待機している実行ファイルに、データ送信が終了したことを知らせるのに便利です。
 
@@ -311,7 +311,7 @@ $output:=$worker.response
 
 #### 説明
 
-`.commandLine` プロパティは、 <!-- REF #SystemWorkerClass.commandLine.Summary -->[`new()`](#4d-systemworker-new) 関数に引数として渡したコマンドラインを格納します<!-- END REF -->。
+`.commandLine` プロパティは、 <!-- REF #SystemWorkerClass.commandLine.Summary -->[`new()`](#4d-systemworker-new) 関数に引数として渡したコマンドラインを格納します<!-- END REF -->.
 
 このプロパティは **読み取り専用** です。
 
@@ -325,7 +325,7 @@ $output:=$worker.response
 
 #### 説明
 
-`.currentDirectory` プロパティは、 <!-- REF #SystemWorkerClass.currentDirectory.Summary -->外部プロセスが実行される作業ディレクトリを格納します<!-- END REF -->。
+`.currentDirectory` プロパティは、 <!-- REF #SystemWorkerClass.currentDirectory.Summary -->外部プロセスが実行される作業ディレクトリを格納します<!-- END REF -->.
 
 <!-- END REF -->
 
@@ -337,7 +337,7 @@ $output:=$worker.response
 
 #### 説明
 
-`.dataType` プロパティは、 <!-- REF #SystemWorkerClass.dataType.Summary -->レスポンス本文のデータ型を格納します<!-- END REF -->。 とりうる値: "text" または "blob"。
+`.dataType` プロパティは、 <!-- REF #SystemWorkerClass.dataType.Summary -->レスポンス本文のデータ型を格納します<!-- END REF -->. とりうる値: "text" または "blob"。
 
 このプロパティは **読み取り専用** です。
 
@@ -351,7 +351,7 @@ $output:=$worker.response
 
 #### 説明
 
-`.encoding` プロパティは、 <!-- REF #SystemWorkerClass.encoding.Summary -->レスポンス本文のエンコーディングを格納します<!-- END REF -->。 このプロパティは [`dataType`](#datatype) が "text" のときにのみ利用できます。
+`.encoding` プロパティは、 <!-- REF #SystemWorkerClass.encoding.Summary -->レスポンス本文のエンコーディングを格納します<!-- END REF -->. このプロパティは [`dataType`](#datatype) が "text" のときにのみ利用できます。
 
 このプロパティは **読み取り専用** です。
 
@@ -365,15 +365,15 @@ $output:=$worker.response
 
 #### 説明
 
-`.errors` プロパティは、 <!-- REF #SystemWorkerClass.errors.Summary -->実行エラーの場合、4Dエラーのコレクションを格納します (あれば)<!-- END REF -->。
+`.errors` プロパティは、 <!-- REF #SystemWorkerClass.errors.Summary -->実行エラーの場合、4Dエラーのコレクションを格納します (あれば)<!-- END REF -->.
 
 コレクションの各要素は、以下のプロパティを持つオブジェクトです:
 
-| プロパティ                  | タイプ    | 説明                  |
+| プロパティ                  | 型      | 説明                  |
 | ---------------------- | ------ | ------------------- |
 | [].errorCode           | number | 4Dエラーコード            |
-| [].message             | text   | 4Dエラーの詳細            |
-| [ ].componentSignature | text   | エラーを返した内部コンポーネントの署名 |
+| [].message             | テキスト   | 4Dエラーの詳細            |
+| [ ].componentSignature | テキスト   | エラーを返した内部コンポーネントの署名 |
 
 エラーが発生しなかった場合、`.errors` は undefined です。
 
@@ -387,7 +387,7 @@ $output:=$worker.response
 
 #### 説明
 
-`.exitCode` プロパティは、 <!-- REF #SystemWorkerClass.exitCode.Summary -->外部プロセスから返される終了コードを格納します<!-- END REF -->。 プロセスが正常に終了しなかった場合、`exitCode` は *undefined* です。
+`.exitCode` プロパティは、 <!-- REF #SystemWorkerClass.exitCode.Summary -->外部プロセスから返される終了コードを格納します<!-- END REF -->. プロセスが正常に終了しなかった場合、`exitCode` は *undefined* です。
 
 このプロパティは **読み取り専用** です。
 
@@ -401,7 +401,7 @@ $output:=$worker.response
 
 #### 説明
 
-`.hideWindow` プロパティは、 <!-- REF #SystemWorkerClass.hideWindow.Summary -->実行ファイルや DOSコンソールのウィンドウを隠すのに使用できます (**Windows のみ**)<!-- END REF -->。
+`.hideWindow` プロパティは、 <!-- REF #SystemWorkerClass.hideWindow.Summary -->実行ファイルや DOSコンソールのウィンドウを隠すのに使用できます (**Windows のみ**)<!-- END REF -->.
 
 <!-- END REF -->
 
@@ -415,7 +415,7 @@ $output:=$worker.response
 
 #### 説明
 
-`.pid` プロパティは、 <!-- REF #SystemWorkerClass.pid.Summary -->外部プロセスの、システムレベルでの一意的な識別子を格納します<!-- END REF -->。
+`.pid` プロパティは、 <!-- REF #SystemWorkerClass.pid.Summary -->外部プロセスの、システムレベルでの一意的な識別子を格納します<!-- END REF -->.
 
 このプロパティは **読み取り専用** です。
 
@@ -429,16 +429,16 @@ $output:=$worker.response
 
 
 <!-- REF #SystemWorkerClass.postMessage().Params -->
-| 引数          | タイプ  |    | 説明                                          |
+| 引数          | 型    |    | 説明                                          |
 | ----------- | ---- |:--:| ------------------------------------------- |
-| message     | Text | -> | 外部プロセスの入力ストリーム (stdin) に書き込むテキスト            |
-| messageBLOB | Blob | -> | 入力ストリームに書き込むバイト数|<!-- END REF -->
+| message     | テキスト | -> | 外部プロセスの入力ストリーム (stdin) に書き込むテキスト            |
+| messageBLOB | BLOB | -> | 入力ストリームに書き込むバイト数|<!-- END REF -->
 
 |
 
 #### 説明
 
-`.postMessage()` 関数は、 <!-- REF #SystemWorkerClass.postMessage().Summary -->外部プロセスの入力ストリーム (stdin) への書き込みをおこないます<!-- END REF -->。 *message* には *stdin* に書き込むテキストを渡します。
+`.postMessage()` 関数は、 <!-- REF #SystemWorkerClass.postMessage().Summary -->外部プロセスの入力ストリーム (stdin) への書き込みをおこないます<!-- END REF -->. *message* には *stdin* に書き込むテキストを渡します。
 
 `.postMessage()` 関数は、*stdin* に渡す BLOB型の *messageBLOB* 引数も受け取るため、バイナリデータを送信することもできます。
 
@@ -470,7 +470,7 @@ $output:=$worker.response
 
 #### 説明
 
-`.responseError` プロパティは、 <!-- REF #SystemWorkerClass.responseError.Summary -->リクエストが終了した時点で、返された全エラーの結合を格納します<!-- END REF -->。
+`.responseError` プロパティは、 <!-- REF #SystemWorkerClass.responseError.Summary -->リクエストが終了した時点で、返された全エラーの結合を格納します<!-- END REF -->.
 
 <!-- END REF -->
 
@@ -482,15 +482,15 @@ $output:=$worker.response
 
 
 <!-- REF #SystemWorkerClass.terminate().Params -->
-| 引数 | タイプ |  | 説明                                           |
-| -- | --- |::| -------------------------------------------- |
-|    |     |  | このコマンドは引数を必要としません|<!-- END REF -->
+| 引数 | 型 |  | 説明                                           |
+| -- | - |::| -------------------------------------------- |
+|    |   |  | このコマンドは引数を必要としません|<!-- END REF -->
 
 |
 
 #### 説明
 
-`.terminate()` 関数は、 <!-- REF #SystemWorkerClass.terminate().Summary -->`SystemWorker` の実行を強制終了します<!-- END REF -->。
+`.terminate()` 関数は、 <!-- REF #SystemWorkerClass.terminate().Summary -->`SystemWorker` の実行を強制終了します<!-- END REF -->.
 
 この関数は、システムワーカーを終了して実行中のスクリプトに制御を戻す命令を送ります。
 
@@ -504,7 +504,7 @@ $output:=$worker.response
 
 #### 説明
 
-`.terminated` プロパティは、 <!-- REF #SystemWorkerClass.terminated.Summary -->外部プロセスが終了された場合に **true** を格納します<!-- END REF -->。
+`.terminated` プロパティは、 <!-- REF #SystemWorkerClass.terminated.Summary -->外部プロセスが終了された場合に **true** を格納します<!-- END REF -->.
 
 このプロパティは **読み取り専用** です。
 
@@ -518,7 +518,7 @@ $output:=$worker.response
 
 #### 説明
 
-`.timeout` プロパティは、 <!-- REF #SystemWorkerClass.timeout.Summary -->外部プロセスが生きている場合、キルされるまでの秒数を格納します<!-- END REF -->。
+`.timeout` プロパティは、 <!-- REF #SystemWorkerClass.timeout.Summary -->外部プロセスが生きている場合、キルされるまでの秒数を格納します<!-- END REF -->.
 
 このプロパティは **読み取り専用** です。
 
@@ -542,16 +542,16 @@ $output:=$worker.response
 
 
 <!-- REF #SystemWorkerClass.wait().Params -->
-| 引数      | タイプ             |    | 説明                                             |
+| 引数      | 型               |    | 説明                                             |
 | ------- | --------------- |:--:| ---------------------------------------------- |
-| timeout | Real            | -> | 待機時間 (秒単位)                                     |
+| timeout | 実数              | -> | 待機時間 (秒単位)                                     |
 | 戻り値     | 4D.SystemWorker | <- | SystemWorker オブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`.wait()` 関数は、 <!-- REF #SystemWorkerClass.wait().Summary -->`SystemWorker` の実行終了まで、または *timeout* で指定した時間が経過するまで待機します<!-- END REF -->。
+`.wait()` 関数は、 <!-- REF #SystemWorkerClass.wait().Summary -->`SystemWorker` の実行終了まで、または *timeout* で指定した時間が経過するまで待機します<!-- END REF -->.
 
 *timeout* には、秒単位の値を渡します。 `SystemWorker` スクリプトは、*timeout* に指定された時間だけ、外部プロセスを待ちます。 *timeout* を省略した場合、スクリプトの実行は無期限に待機します。
 
