@@ -1970,7 +1970,7 @@ If the collection contains different types of values, the `.max()` function will
 
 If the collection contains objects, pass the *propertyPath* parameter to indicate the object property whose maximum value you want to get.
 
-If the collection is empty, `.max()` returns *Undefined*.
+Se a coleção estiver vazia, `.max()` retorna *Undefined*.
 
 #### Exemplo
 
@@ -2020,7 +2020,7 @@ If the collection contains different types of values, the `.min()` function will
 
 If the collection contains objects, pass the *propertyPath* parameter to indicate the object property whose minimum value you want to get.
 
-If the collection is empty, `.min()` returns *Undefined*.
+Se a coleção estiver vazia, `.min()` devolve *Undefined*.
 
 #### Exemplo
 
