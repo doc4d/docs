@@ -5,53 +5,53 @@ title: Affichage
 
 ---
 
-## Alpha Format
+## Format Alpha
 
-Alpha formats control the way the alphanumeric fields and variables appear when displayed or printed. Voici une liste des formats proposés pour les champs alphanumériques :
+Les formats Alpha contrôlent l'apparence des champs et des variables alphanumériques (strings) lorsqu'ils sont affichés ou imprimés. Voici une liste des formats proposés pour les champs alphanumériques :
 
 ![](../assets/en/FormObjects/property_alphaFormat.png)
 
-You can choose a format from this list or use any custom format. The default list contains formats for some of the most common alpha fields that require formats: US telephone numbers (local and long distance), Social Security numbers, and zip codes. You can also enter a custom format name set in the Filters and formats editor of the tool box. In this case, the format cannot be modified in the object properties. Any custom formats or filters that you have created are automatically available, preceded by a vertical bar (|).
+Vous pouvez choisir un format dans cette liste ou utiliser n'importe quel format personnalisé. La liste par défaut contient des formats pour certains des champs alpha les plus courants qui nécessitent des formats: numéros de téléphone américains (local et longue distance), numéros de sécurité sociale et codes postaux. Vous pouvez également saisir un nom de format personnalisé défini dans l'éditeur Filtres et formats de la boîte à outils. Dans ce cas, le format ne peut pas être modifié dans les propriétés de l'objet. Tous les formats ou filtres personnalisés que vous avez créés sont automatiquement disponibles, précédés d'une barre verticale (|).
 
-The number sign (#) is the placeholder for an alphanumeric display format. You can include the appropriate dashes, hyphens, spaces, and any other punctuation marks that you want to display. You use the actual punctuation marks you want and the number sign for each character you want to display.
+Le signe dièse (#) est le placeholder pour un format d'affichage alphanumérique. Vous pouvez inclure des tirets, les traits d'union, les espaces et tout autre signe de ponctuation que vous souhaitez afficher. Vous utilisez les signes de ponctuation réels que vous souhaitez et le symbole dièse pour chaque caractère que vous souhaitez afficher.
 
-For example, consider a part number with a format such as "RB-1762-1".
+Par exemple, considérez un numéro de pièce avec un format tel que "RB-1762-1".
 
-The alpha format would be:
+Le format alpha serait :
 
  ##-####-#
 
-When the user enters "RB17621," the field displays:
+Lorsque l'utilisateur entre "RB17621," le champ affiche :
 
  RB-1762-1
 
-The field actually contains "RB17621".
+Le champ contient en fait "RB17621".
 
-If the user enters more characters than the format allows, 4D displays the last characters. For example, if the format is:
+Si l'utilisateur saisit plus de caractères que ce que le format le permet, 4D affiche les derniers caractères. Par exemple, si le format est :
 
  (#######)
 
-and the user enters "proportion", the field displays:
+et si l'utilisateur saisit "proportion", le champ s'affiche:
 
  (portion)
 
-The field actually contains "proportion". 4D accepts and stores the entire entry no matter what the display format. No information is lost.
+Le champ contient en fait "proportion". 4D accepte et stocke la saisie complète, quel que soit le format d’affichage. Aucune information n'est perdue.
 
 #### Grammaire JSON
 
-| Nom        | Type de données | Valeurs possibles                                                                    |
-| ---------- | --------------- | ------------------------------------------------------------------------------------ |
-| textFormat | string          | "### ####", "(###) ### ####", "### ### ####", "### ## ####", "00000", custom formats |
+| Nom        | Type de données | Valeurs possibles                                                                           |
+| ---------- | --------------- | ------------------------------------------------------------------------------------------- |
+| textFormat | string          | "### ####", "(###) ### ####", "### ### ####", "### ## ####", "00000", formats personnalisés |
 
 #### Objets pris en charge
 
-[Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers)
+[Liste déroulante](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Colonne listbox](listbox_overview.md#list-box-columns) - [Pied de page listbox](listbox_overview.md#list-box-footers)
 
 ---
 
-## Date Format
+## Format Date
 
-Date formats control the way dates appear when displayed or printed. For data entry, you enter dates in the MM/DD/YYYY format, regardless of the display format you have chosen.
+Les formats de date contrôlent la façon dont les dates apparaissent lorsqu'elles sont affichées ou imprimées. Pour la saisie des données (FR), vous entrez les dates dans le format JJ/MM/AAAA, quel que soit le format d'affichage que vous avez choisi.
 > Unlike [Alpha](#alpha-format) and [Number](#number-format) formats, display formats for dates must only be selected among the 4D built-in formats.
 
 The table below shows choices available:
@@ -110,7 +110,7 @@ In each of the number display formats, the number sign (#), zero (0), caret (^),
 For example, if you want to display three-digit numbers, you could use the format ###. If the user enters more digits than the format allows, 4D displays <<< in the field to indicate that more digits were entered than the number of digits specified in the display format.
 
 If the user enters a negative number, the leftmost character is displayed as a minus sign (unless a negative display format has been specified). If ##0 is the format, minus 26 is displayed as –26 and minus 260 is displayed as <<< because the minus sign occupies a placeholder and there are only three placeholders.
-> No matter what the display format, 4D accepts and stores the number entered in the field. No information is lost.
+> No matter what the display format, 4D accepts and stores the number entered in the field. Aucune information n'est perdue.
 
 Each placeholder character has a different effect on the display of leading or trailing zeros. A leading zero is a zero that starts a number before the decimal point; a trailing zero is a zero that ends a number after the decimal point.
 
