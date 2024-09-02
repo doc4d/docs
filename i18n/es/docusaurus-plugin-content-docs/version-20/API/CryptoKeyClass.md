@@ -44,14 +44,14 @@ For a comprehensive overview of this class, please refer to the [**CryptoKey: en
 
 
 <!-- REF #4D.CryptoKey.new().Params -->
-| Parámetros | Tipo         |    | Descripción                                      |
-| ---------- | ------------ | -- | ------------------------------------------------ |
-| settings   | Object       | -> | Settings to generate or load a key pair          |
-| result     | 4D.CryptoKey | <- | Objeto que encapsula un par de llaves de cifrado |
+| Parámetros | Tipo         |    | Descripción                                       |
+| ---------- | ------------ | -- | ------------------------------------------------- |
+| settings   | Object       | -> | Parámetros para generar o cargar un par de llaves |
+| resultado  | 4D.CryptoKey | <- | Objeto que encapsula un par de llaves de cifrado  |
 
 <!-- END REF -->
 
-The `4D.CryptoKey.new()` function <!-- REF #4D.CryptoKey.new().Summary -->creates a new `4D.CryptoKey` object encapsulating an encryption key pair<!-- END REF -->, based upon the *settings* object parameter. It allows to generate a new RSA or ECDSA key, or to load an existing key pair from a PEM definition.
+La función `4D.CryptoKey.new()` <!-- REF #4D.CryptoKey.new().Summary -->creates a new `4D.CryptoKey` object encapsulating an encryption key pair<!-- END REF -->, based upon the *settings* object parameter. It allows to generate a new RSA or ECDSA key, or to load an existing key pair from a PEM definition.
 
 #### *settings*
 
@@ -188,7 +188,7 @@ La función devuelve un objeto "status" con la propiedad `success` definida como
 | Propiedad | Tipo       | Descripción                                                              |
 | --------- | ---------- | ------------------------------------------------------------------------ |
 | success   | boolean    | True si el mensaje ha sido descifrado con éxito                          |
-| result    | text       | Mensaje descifrado y decodificado utilizando `options.encodingDecrypted` |
+| resultado | text       | Mensaje descifrado y decodificado utilizando `options.encodingDecrypted` |
 | errors    | collection | Si `success` es `false`, puede contener una colección de errores         |
 
 En caso de que el *message* no haya podido ser descifrado por no haber sido encriptado con la misma llave o algoritmo, el objeto `status` que se devuelve contiene una colección de errores en `status.errors`.
