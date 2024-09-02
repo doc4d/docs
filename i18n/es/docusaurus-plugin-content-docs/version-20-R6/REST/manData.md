@@ -29,7 +29,7 @@ Añada las peticiones REST [`$skip`]($skip.md) (para definir con qué entidad em
 
 Un conjunto de entidades (también conocido como *selección de entidades*) es una colección de entidades obtenidas a través de una petición REST que se almacena en la caché de 4D Server. El uso de un conjunto de entidades evita que se consulte continuamente la aplicación para obtener los mismos resultados. El acceso a un conjunto de entidades es mucho más rápido y puede mejorar la velocidad de su aplicación.
 
-Para crear un conjunto de entidades, llame a [`$method=entityset`]($method.md#methodentityset) en su solicitud REST. As a measure of security, you can also use [`$savedfilter`]($savedfilter.md) and/or [`$savedorderby`]($savedorderby.md) when you call [`$filter`]($filter.md) and/or [`$orderby`]($orderby.md) so that if ever the entity set timed out or was removed from the server, it can be quickly retrieved with the same ID as before.
+Para crear un conjunto de entidades, llame a [`$method=entityset`]($method.md#methodentityset) en su solicitud REST. Como medida de seguridad, también se puede utilizar [`$savedfilter`]($savedfilter.md) y/o [`$savedorderby`]($savedorderby.md) cuando se llame a [`$filter`]($filter.md) y/o [`$orderby`]($orderby.md) para que si alguna vez el conjunto de entidades se agota o se elimina del servidor, se pueda recuperar rápidamente con el mismo ID que antes.
 
 Para acceder al conjunto de entidades, debe utilizar `$entityset/\{entitySetID\}`, por ejemplo:
 
