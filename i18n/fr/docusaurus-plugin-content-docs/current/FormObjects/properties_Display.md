@@ -119,7 +119,7 @@ Les formats numériques contrôlent la façon dont les nombres apparaissent lors
 
 4D fournit différents formats numériques par défaut.
 
-### Placeholders
+### Caractères de substitution (placeholders)
 
 Dans chacun des formats d'affichage numériques, le signe dièse (#), zéro (0), le caret (^) et l'astérisque (\*) sont utilisés comme placeholders. Vous créez vos propres formats numériques en utilisant un placeholder pour chaque chiffre que vous souhaitez afficher.
 
@@ -134,103 +134,103 @@ Dans chacun des formats d'affichage numériques, le signe dièse (#), zéro (0),
 
 Par exemple, si vous souhaitez afficher des numéros à trois chiffres, vous pouvez utiliser le format ###. Si l'utilisateur saisit plus de chiffres que le format le permet, 4D affiche <<< dans le champ pour indiquer que plus de chiffres ont été saisis que le nombre de chiffres spécifié dans le format d'affichage.
 
-Si l'utilisateur saisit un nombre négatif, le caractère le plus à gauche est affiché sous forme de signe moins (sauf si un format d'affichage négatif a été spécifié). If ##0 is the format, minus 26 is displayed as –26 and minus 260 is displayed as <<< because the minus sign occupies a placeholder and there are only three placeholders.
+Si l'utilisateur saisit un nombre négatif, le caractère le plus à gauche est affiché sous forme de signe moins (sauf si un format d'affichage négatif a été spécifié). Si ##0 est le format, -26 est affiché comme –26 et -260 est affiché comme <<< car le signe moins occupe un espace réservé et il n'y a que trois espaces réservés.
 
-> No matter what the display format, 4D accepts and stores the number entered in the field. Aucune information n'est perdue.
+> Quel que soit le format d’affichage, 4D accepte et stocke le nombre saisi dans le champ. Aucune information n'est perdue.
 
-Each placeholder character has a different effect on the display of leading or trailing zeros. A leading zero is a zero that starts a number before the decimal point; a trailing zero is a zero that ends a number after the decimal point.
+Chaque caractère de substitution a un effet différent sur l'affichage des zéros en tête ou en fin. Un zéro initial est un zéro qui commence un nombre avant la virgule ; un zéro final est un zéro qui termine un nombre après la virgule.
 
-Suppose you use the format ##0 to display three digits. If the user enters nothing in the field, the field displays 0. If the user enters 26, the field displays 26.
+Supposons que vous utilisiez le format ##0 pour afficher trois chiffres. Si l'utilisateur ne saisit rien dans le champ, le champ affiche 0. Si l'utilisateur saisit 26, le champ affiche 26.
 
-### Separator characters
+### Caractères séparateurs
 
-The numeric display formats (except for scientific notations) are automatically based on regional system parameters. 4D replaces the “.” and “,” characters by, respectively, the decimal separator and the thousand separator defined in the operating system. The period and comma are thus considered as placeholder characters, following the example of 0 or #.
+Les formats d'affichage numérique (à l'exception des notations scientifiques) sont automatiquement basés sur les paramètres régionaux du système. 4D remplace les caractères «.» et «,» par, respectivement, le séparateur décimal et le séparateur de milliers définis dans le système d'exploitation. Le point et la virgule sont donc considérés comme des caractères de substitution, à l'instar de 0 ou #.
 
-> On Windows, when using the decimal separator key of the numeric keypad, 4D makes a distinction depending on the type of field where the cursor is located:
+> Sur Windows, lors de l'utilisation de la touche de séparateur décimal du pavé numérique, 4D fait une distinction en fonction du type de champ où se trouve le curseur :
 >
-> - in a Real type field, using this key will insert the decimal separator defined in the system,
-> - in any other type of field, this key inserts the character associated with the key, usually a period (.) or comma (,).
+> - dans un champ de type Réel, l'utilisation de cette touche insérera le séparateur décimal défini dans le système,
+> - dans n'importe quel autre type de champ, cette touche insère le caractère associé à la touche, généralement un point (.) ou une virgule (,).
 
-### Decimal points and other display characters
+### Points décimaux et autres caractères d'affichage
 
-You can use a decimal point in a number display format. If you want the decimal to display regardless of whether the user types it in, it must be placed between zeros.
+Vous pouvez utiliser un point décimal dans un format d'affichage numérique. Si vous voulez que le point décimal s'affiche, que l'utilisateur le saisisse ou non, il doit être placé entre des zéros.
 
-You can use any other characters in the format. When used alone, or placed before or after placeholders, the characters always appear. For example, if you use the following format:
+Vous pouvez utiliser d'autres caractères dans le format. Lorsqu'ils sont utilisés seuls, ou placés avant ou après les placeholders, les caractères apparaissent toujours. Par exemple, si vous utilisez le format suivant :
 
 $##0
 
-a dollar sign always appears because it is placed before the placeholders.
+un symbole dollar apparaît toujours car il est placé avant les placeholders.
 
-If characters are placed between placeholders, they appear only if digits are displayed on both sides. For example, if you define the format:
+Si des caractères sont placés entre des placeholders, ils n'apparaissent que si des chiffres sont affichés des deux côtés. Par exemple, si vous définissez le format :
 
 \###.##0
 
-the point appears only if the user enters at least four digits.
+le point apparaît uniquement si l'utilisateur saisit au moins quatre chiffres.
 
-Spaces are treated as characters in number display formats.
+Les espaces sont traités comme des caractères dans les formats d'affichage numériques.
 
-### Formats for positive, negative, and zero
+### Formats pour les nombres positifs, négatifs et nuls
 
-A number display format can have up to three parts allowing you to specify display formats for positive, negative, and zero values. You specify the three parts by separating them with semicolons as shown below:
+Un format d'affichage numérique peut avoir jusqu'à trois parties vous permettant de spécifier des formats d'affichage pour les valeurs positives, négatives et nulles. Vous spécifiez les trois parties en les séparant par des points-virgules comme ci-dessous:
 
-Positive;Negative;Zero
+Positif;Négatif;Zéro
 
-You do not have to specify all three parts of the format. If you use just one part, 4D uses it for all numbers, placing a minus sign in front of negative numbers.
+Vous n'avez pas à spécifier forcément toutes les parties du format. Si vous utilisez seulement une partie, 4D l'utilise pour tous les nombres, en plaçant un signe moins devant les nombres négatifs.
 
-If you use two parts, 4D uses the first part for positive numbers and zero and the second part for negative numbers. If you use three parts, the first is for positive numbers, the second for negative numbers, and the third for zero.
+Si vous utilisez deux parties, 4D utilise la première partie pour les nombres positifs et zéro et la deuxième partie pour les nombres négatifs. Si vous utilisez trois parties, la première est pour les nombres positifs, la deuxième pour les nombres négatifs et la troisième pour zéro.
 
-> The third part (zero) is not interpreted and does not accept replacement characters. If you enter `###;###;#`, the zero value will be displayed “#”. In other words, what you actually enter is what will be displayed for the zero value.
+> La troisième partie (zéro) n'est pas interprétée et n'accepte pas les caractères de substitution. Si vous entrez `###;###;#`, la valeur zéro sera affichée “#”. En d'autres termes, ce que vous entrez réellement est ce qui sera affiché pour la valeur zéro.
 
-Here is an example of a number display format that shows dollar signs and commas, places negative values in parentheses, and does not display zeros:
+Voici un exemple d'un format d'affichage numérique qui affiche des signes dollar et des virgules, place les valeurs négatives entre parenthèses, et n'affiche pas les zéros :
 
 $###,##0.00;($###,##0.00);
 
-Notice that the presence of the second semicolon instructs 4D to use nothing to display zero. The following format is similar except that the absence of the second semicolon instructs 4D to use the positive number format for zero:
+Notez que la présence du deuxième point-virgule indique à 4D de ne rien utiliser pour afficher zéro. Le format suivant est similaire, sauf que l'absence du deuxième point-virgule indique à 4D d'utiliser le format de nombre positif pour zéro :
 
 $###,##0.00;($###,##0.00)
 
-In this case, the display for zero would be $0.00.
+Dans ce cas, l'affichage pour zéro serait $0.00.
 
-### Scientific notation
+### Notation scientifique
 
-If you want to display numbers in scientific notation, use the **ampersand** (&) followed by a number to specify the number of digits you want to display. For example, the format:
+Si vous souhaitez afficher des nombres en notation scientifique, utilisez l'**esperluette** (&) suivie d'un nombre pour spécifier le nombre de chiffres que vous souhaitez afficher. Par exemple, le format :
 
 &3
 
-would display 759.62 as:
+afficherait 759.62 comme :
 
 7.60e+2
 
-The scientific notation format is the only format that will automatically round the displayed number. Note in the example above that the number is rounded up to 7.60e+2 instead of truncating to 7.59e+2.
+Le format de notation scientifique est le seul format qui arrondira automatiquement le nombre affiché. Notez dans l'exemple ci-dessus que le nombre est arrondi à 7.60e+2 au lieu d'être tronqué à 7.59e+2.
 
-### Hexadecimal formats
+### Formats hexadécimaux
 
-You can display a number in hexadecimal using the following display formats:
+Vous pouvez afficher un nombre en hexadécimal en utilisant les formats d'affichage suivants :
 
-- `&x`: This format displays hexadecimal numbers using the “0xFFFF” format.
-- `&$`: This format displays hexadecimal numbers using the “$FFFF” format.
+- `&x`: Ce format affiche les nombres hexadécimaux en utilisant le format “0xFFFF”.
+- `&$`: Ce format affiche les nombres hexadécimaux en utilisant le format “$FFFF”.
 
-### XML notation
+### Notation XML
 
-The `&xml` format will make a number compliant with XML standard rules. In particular, the decimal separator character will be a period "." in all cases, regardless of the system settings.
+Le format `&xml` rendra un nombre conforme aux règles standard XML. En particulier, le caractère séparateur décimal sera un point "." dans tous les cas, indépendamment des paramètres du système.
 
-### Displaying a number as a time
+### Affichage d'un nombre en tant qu'heure
 
-You can display a number as a time (with a time format) by using `&/` followed by a digit. Time is determined by calculating the number of seconds since midnight that the value represents. The digit in the format corresponds to the order in which the time format appears in the Format drop-down menu.
+Vous pouvez afficher un nombre sous forme d'heure (avec un format heure) en utilisant `&/` suivi d'un chiffre. Le temps est déterminé en calculant le nombre de secondes que cette valeur représente à partir de minuit. Le chiffre dans le format représente la position dans le menu déroulant Format du format heure à utiliser.
 
-For example, the format:
+Par exemple, le format :
 
 &/5
 
-corresponds to the 5th time format in the pop-up menu, specifically the AM/PM time. A number field with this format would display 25000 as:
+correspond au 5e format d'heure dans le menu contextuel, plus précisément l'heure h: mn: s. Un champ numérique avec ce format afficherait 25000 comme suit :
 
-6:56 AM
+6:56 du matin
 
 ### Exemples
 
-The following table shows how different formats affect the display of numbers. The three columns — Positive, Negative, and Zero — each show how 1,234.50, –1,234.50, and 0 would be displayed.
+Le tableau suivant montre comment les différents formats affectent l'affichage des nombres. Les trois colonnes — Positif, Négatif et Zéro — montrent comment 1 234,50, 1 234,50 et 0 seraient affichées.
 
-| Format Entered                                                                        | Positive                   | Negative                                       | Zero                           |
+| Format saisi                                                                          | Positif                    | Négatif                                        | Zéro                           |
 | ------------------------------------------------------------------------------------- | -------------------------- | ---------------------------------------------- | ------------------------------ |
 | ###                                                                                   | <<<                        | <<<                                            |                                |
 | ####                                                                                  | 1234                       | <<<<                                           |                                |
@@ -262,63 +262,63 @@ The following table shows how different formats affect the display of numbers. T
 
 #### Grammaire JSON
 
-| Nom          | Type de données | Valeurs possibles                                                                 |
-| ------------ | --------------- | --------------------------------------------------------------------------------- |
-| numberFormat | string          | Numbers (including a decimal point or minus sign if necessary) |
+| Nom          | Type de données | Valeurs possibles                                                                |
+| ------------ | --------------- | -------------------------------------------------------------------------------- |
+| numberFormat | string          | Nombres (y compris un signe décimal ou négatif si nécessaire) |
 
 #### Objets pris en charge
 
-[Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [Progress Indicators](progressIndicator.md)
+[Combo Box](comboBox_overview.md) - [Liste déroulante](dropdownList_Overview.md) - [Input](input_overview.md) - [Colonne de List box](listbox_overview.md#list-box-columns) - [Pied List Box](listbox_overview.md#list-box-footers) - [Progress Indicators](progressIndicator.md)
 
 ---
 
-## Picture Format
+## Format image
 
-Picture formats control how pictures appear when displayed or printed. For data entry, the user always enters pictures by pasting them from the Clipboard or by drag and drop, regardless of the display format.
+Les formats d'images contrôlent la façon dont les images apparaissent lorsqu'elles sont affichées ou imprimées. Pour la saisie des données, l'utilisateur saisit toujours les images en les collant depuis le Presse-papiers ou en les faisant glisser-déposer, quel que soit le format d'affichage.
 
-The truncation and scaling options do not affect the picture itself. The contents of a Picture field are always saved. Only the display on the particular form is affected by the picture display format.
+Les options de troncature et de mise à l'échelle n'affectent pas l'image elle-même. Le contenu d'un champ Image est toujours enregistré. Seul l'affichage dans le formulaire est affecté par le format d'affichage de l'image.
 
-### Scaled to fit
+### Image non tronquée
 
-`JSON grammar: "scaled"`
+`Grammaire JSON : "scaled"`
 
-The **Scaled to fit** format causes 4D to resize the picture to fit the dimensions of the area.
+Le format **Non tronquée** permet à 4D de redimensionner l'image pour qu'elle corresponde aux dimensions de la zone.
 
 ![](../assets/en/FormObjects/property_pictureFormat_ScaledToFit.png)
 
-### Truncated (centered and non-centered)
+### Image tronquée (centrée et non centrée)
 
 `Grammaire JSON : "truncatedCenter" / "truncatedTopLeft"`
 
-The **Truncated (centered)** format causes 4D to center the picture in the area and crop any portion that does not fit within the area. 4D crops equally from each edge and from the top and bottom.
+Avec le format **Image tronquée (centrée)**, 4D centre l'image dans la zone et rogne toute partie qui ne rentre pas dans la zone. 4D rogne de manière égale à partir de chaque bord et du haut et du bas.
 
-The **Truncated (non-centered)** format causes 4D to place the upper-left corner of the picture in the upper-left corner of the area and crop any portion that does not fit within the area. 4D crops from the right and bottom.
+Avec le format **Image tronquée (non centrée)**, 4D place le coin supérieur gauche de l'image dans le coin supérieur gauche de la zone et rogne toute partie qui ne rentre pas dans la zone. 4D rogne à partie de la droite et du bas.
 
-> When the picture format is **Truncated (non-centered)**, it is possible to add scroll bars to the input area.
+> Lorsque le format de l'image est **tronquée (non centrée)**, il est possible d'ajouter des barres de défilement à la zone de saisie.
 
 ![](../assets/en/FormObjects/property_pictureFormat_Truncated.png)
 
-### Scaled to fit (proportional) and Scaled to fit centered (proportional)
+### Image proportionnelle et Image proportionnelle centrée
 
-`JSON grammar: "proportionalTopLeft" / "proportionalCenter"`
+`Grammaire JSON: "proportionnalTopLeft" / "proportionnalCenter"`
 
-When you use **Scaled to fit (proportional)**, the picture is reduced proportionally on all sides to fit the area created for the picture. The **Scaled to fit centered (proportional)** option does the same, but centers the picture in the picture area.
+Lorsque vous utilisez **Image proportionnelle**, l'image est réduite proportionnellement de tous les côtés pour s'adapter à la zone créée pour l'image. L'option **Image proportionnelle centrée** fait la même chose, mais centre l'image dans la zone de l'image.
 
-If the picture is smaller than the area set in the form, it will not be modified. If the picture is bigger than the area set in the form, it is proportionally reduced. Since it is proportionally reduced, the picture will not appear distorted.
+Si l'image est plus petite que la zone définie dans le formulaire, elle ne sera pas modifiée. Si l'image est plus grande que la zone définie dans le formulaire, elle est réduite proportionnellement. Étant donné qu'elle est réduite de manière proportionnelle, l'image n'apparaîtra pas déformée.
 
-If you have applied the **Scaled to fit centered (proportional)** format, the picture is also centered in the area:
+Si vous avez appliqué le format **Image proportionnelle centrée**, l'image est également centrée dans la zone :
 
 ![](../assets/en/FormObjects/property_pictureFormat_ScaledProportional.png)
 
-### Replicated
+### Mosaïque
 
-`JSON grammar: "tiled"`
+Grammaire JSON : "tiled"
 
-When the area that contains a picture with the **Replicated** format is enlarged, the picture is not deformed but is replicated as many times as necessary in order to fill the area entirely.
+Lorsque la zone qui contient une image avec le format **Mosaïque** est agrandie, l'image n'est pas déformée mais est répliquée autant de fois que nécessaire pour remplir entièrement la zone.
 
 ![](../assets/en/FormObjects/property_pictureFormat_Replicated.png)
 
-If the field is reduced to a size smaller than that of the original picture, the picture is truncated (non-centered).
+Si le champ est réduit à une taille plus petite que celle de l'image d'origine, l'image est tronquée (non centrée).
 
 #### Grammaire JSON
 
@@ -328,55 +328,55 @@ If the field is reduced to a size smaller than that of the original picture, the
 
 #### Objets pris en charge
 
-[Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers)
+[Input](input_overview.md) - [Colonne de List box](listbox_overview.md#list-box-columns) - [Pied List Box](listbox_overview.md#list-box-footers)
 
 ---
 
-## Time Format
+## Format heure
 
-Time formats control the way times appear when displayed or printed. For data entry, you enter times in the 24-hour HH:MM:SS format or the 12-hour HH:MM:SS AM/PM format, regardless of the display format you have chosen.
+Les formats heure contrôlent la façon dont les heures apparaissent lorsqu'elles sont affichées ou imprimées. Pour la saisie des données, vous entrez les heures dans le format 24 heures HH:MM:SS ou dans le format 12 heures HH:MM:SS AM/PM, quel que soit le format d'affichage que vous avez choisi.
 
-Display formats for times can be defined:
+Les formats d'affichage des heures peuvent être définis :
 
 - en utilisant un format 4D intégré,
 - en utilisant un modèle personnalisé.
 
 ### Formats intégrés
 
-The table below shows the Time field display formats and gives examples:
+Le tableau ci-dessous montre les formats d'affichage du champ Heure et donne des exemples :
 
-| Nom du format                            | Chaine JSON                                        | Commentaires                                                                                                                                                                     | Exemple pour 04:30:25     |
-| ---------------------------------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
-| HH:MM:SS | hh_mm_ss |                                                                                                                                                                                  | 04:30:25                  |
-| HH:MM                    | hh_mm                         |                                                                                                                                                                                  | 04:30                                     |
-| Hour Min Sec                             | HH_MM_SS |                                                                                                                                                                                  | 4 heures 30 minutes 25 secondes                           |
-| Hour Min                                 | HH_MM                         |                                                                                                                                                                                  | 4 heures 30 minutes                                       |
-| HH:MM AM/PM              | hh_mm_am |                                                                                                                                                                                  | 4:30 a.m. |
-| MM SS                                    | mm_ss                         | Heure exprimée sous forme de durée à partir de 00:00:00                                                                                          | 270:25                                    |
-| Min Sec                                  | MM_SS                         | Heure exprimée sous forme de durée à partir de 00:00:00                                                                                          | 270 Minutes 25 Secondes                                   |
-| ISO Date Time                            | iso8601                                            | Corresponds to the XML standard for representing time-related data. It is mainly intended to be used when importing/exporting data in XML format                 | 0000-00-00T04:30:25       |
-| System time short                        | - (default)                     | Standard time format defined in the system                                                                                                                                       | 04:30:25                  |
-| System time long abbreviated             | systemMedium                                       | macOS only: Abbreviated time format defined in the system. <br/>Windows: this format is the same as the System time short format | 4•30•25 AM                                                |
-| System time long                         | systemLong                                         | macOS only: Long time format defined in the system. <br/>Windows: this format is the same as the System time short format        | 4:30:25 AM HNEC           |
+| Nom du format                            | Chaine JSON                                        | Commentaires                                                                                                                                                                                                  | Exemple pour 04:30:25     |
+| ---------------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| HH:MM:SS | hh_mm_ss |                                                                                                                                                                                                               | 04:30:25                  |
+| hh:mn                    | hh_mm                         |                                                                                                                                                                                                               | 04:30                                     |
+| Heures Minutes Secondes                  | HH_MM_SS |                                                                                                                                                                                                               | 4 heures 30 minutes 25 secondes                           |
+| Heures Minutes                           | HH_MM                         |                                                                                                                                                                                                               | 4 heures 30 minutes                                       |
+| h:mn Matin/Après-midi    | hh_mm_am |                                                                                                                                                                                                               | 4:30 a.m. |
+| ms s                                     | mm_ss                         | Heure exprimée sous forme de durée à partir de 00:00:00                                                                                                                       | 270:25                                    |
+| Minutes Secondes                         | MM_SS                         | Heure exprimée sous forme de durée à partir de 00:00:00                                                                                                                       | 270 Minutes 25 Secondes                                   |
+| ISO Date Heure                           | iso8601                                            | Correspond à la norme XML pour représenter des données liées au temps. Il est principalement destiné à être utilisé lors de l'import/export de données au format XML et dans les services Web | 0000-00-00T04:30:25       |
+| Système heure court                      | - (default)                     | Format heure standard défini dans le système                                                                                                                                                                  | 04:30:25                  |
+| Système heure long abrégé                | systemMedium                                       | macOS seulement : Format d'heure abrégé défini dans le système. <br/>Windows : ce format est le même que le format système heure court                        | 4•30•25 AM                                                |
+| Système heure long                       | systemLong                                         | macOS seulement : Format d'heure long défini dans le système. <br/>Windows : ce format est le même que le format système heure court                          | 4:30:25 AM HNEC           |
 
 ### Formats personnalisés
 
-Customized time formats can be built using several patterns described in the [**Date and Time Formats**](../Project/date-time-formats.md) page. Par exemple :
+Des formats d'heure personnalisés peuvent être construits en utilisant plusieurs motifs décrits dans la page [**Formats de date et d'heure**](../Project/date-time-formats.md) . Par exemple :
 
-| Motif                                  | Exemple (système US) |
-| -------------------------------------- | --------------------------------------- |
-| "HH 'hours' mm 'minutes' ss 'seconds'" | 13 heures 25 minutes 12 secondes        |
-| "hh:mm aa"             | 01:25 PM                |
+| Motif                                   | Exemple (système US) |
+| --------------------------------------- | --------------------------------------- |
+| "HH 'heures' mm 'minutes' ss 'secondes' | 13 heures 25 minutes 12 secondes        |
+| "hh:mm aa"              | 01:25 PM                |
 
 #### Grammaire JSON
 
-| Nom        | Type de données | Valeurs possibles                                                                                                                                                                                                                                                                                |
-| ---------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| timeFormat | string          | <li>Built-in formats: "systemShort", "systemMedium", "systemLong", "iso8601", "hh_mm_ss", "hh_mm", "hh_mm_am", "mm_ss", "HH_MM_SS", "HH_MM", "MM_SS" + " blankIfNull"</li><li>Custom formats: any format built using [a supported pattern](../Project/date-time-formats.md) + "blankIfNull"</li> |
+| Nom        | Type de données | Valeurs possibles                                                                                                                                                                                                                                                                                                          |
+| ---------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| timeFormat | string          | <li>Formats intégrés : "systemShort", "systemMedium", "systemLong", "iso8601", "hh_mm_ss", "hh_mm", "hh_mm_am", "mm_ss", "HH_MM_SS", "HH_MM", "MM_SS" + " blankIfNull"</li><li>Formats personnalisés : tout format construit en utilisant [un modèle pris en charge](../Project/date-time-formats.md) + "blankIfNull"</li> |
 
 :::note blankIfNull
 
-By default, a null time is displayed with zeros, e.g. "00:00:00". With the "blankIfNull" option, a null time is displayed as an empty area. La chaîne "blankIfNull" (sensible à la casse) doit être combinée avec la valeur de format sélectionnée. Ex: "MM_SS blankIfNull" or "hh:mm aa blankIfNull"
+Par défaut, une heure nulle est affichée avec des zéros, par exemple "00:00:00". Avec l'option "blankIfNull", une heure nulle est affichée comme une zone vide. La chaîne "blankIfNull" (sensible à la casse) doit être combinée avec la valeur de format sélectionnée. Ex : "MM_SS blankIfNull" ou "hh:mm aa blankIfNull"
 
 :::
 
@@ -386,23 +386,23 @@ By default, a null time is displayed with zeros, e.g. "00:00:00". With the "blan
 
 ---
 
-## Text when False/Text when True
+## Texte si Faux / Texte si Vrai
 
-When a [boolean expression](properties_Object.md#expression-type) is displayed as:
+Lorsqu'une [expression booléenne](properties_Object.md#expression-type) est affichée comme :
 
-- a text in an [input object](input_overview.md)
-- a ["popup"](properties_Display.md#display-type) in a [list box column](listbox_overview.md#list-box-columns),
+- un texte dans un [input](input_overview.md)
+- une ["popup"](properties_Display.md#display-type) dans une [colonne de list box](listbox_overview.md#list-box-columns),
 
-... you can select the text to display for each value:
+... vous pouvez sélectionner le texte à afficher pour chaque valeur :
 
-- **Text when True** - the text to be displayed when the value is "true"
-- **Text when False** - the text to be displayed when the value is "false"
+- **Texte si vrai** - le texte à afficher lorsque la valeur est "true"
+- **Texte si faux** - le texte à afficher lorsque la valeur est "false"
 
 #### Grammaire JSON
 
-| Nom           | Type de données | Valeurs possibles                                                                                        |
-| ------------- | --------------- | -------------------------------------------------------------------------------------------------------- |
-| booleanFormat | string          | "\<_textWhenTrue_\>;\<_textWhenFalse_\>", e.g. "Assigned;Unassigned" |
+| Nom           | Type de données | Valeurs possibles                                                               |
+| ------------- | --------------- | ------------------------------------------------------------------------------- |
+| booleanFormat | string          | "\<_textWhenTrue_\>;\<_textWhenFalse_\>", par exemple "Assigné;Non assigné" |
 
 #### Objets pris en charge
 
@@ -618,4 +618,4 @@ Note that regardless of the Wordwrap option’s value, the row height is not cha
 
 #### Objets pris en charge
 
-[Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers)
+[Input](input_overview.md) - [Colonne de List box](listbox_overview.md#list-box-columns) - [Pied List Box](listbox_overview.md#list-box-footers)
