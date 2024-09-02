@@ -186,7 +186,7 @@ The function returns a status object with `success` property set to `true` if th
 | ----------- | ---------- | ------------------------------------------------------------------- |
 | success     | boolean    | True se a mensagem tiver sido decifrada com êxito                   |
 | result      | text       | Message decrypted and decoded using the `options.encodingDecrypted` |
-| errors      | collection | If `success` is `false`, may contain a collection of errors         |
+| errors      | collection | Se `success` for `false`, pode conter uma coleção de erros          |
 
 In case the *message* couldn't be decrypted because it was not encrypted with the same key or algorithm, the `status` object being returned contains an error collection in `status.errors`.
 
@@ -431,7 +431,7 @@ A `CryptoKey` deve conter uma chave **pública** válida.
 | Propriedade | Tipo    | Descrição                                                                                                                                                                                                                                                                                             |
 | ----------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | hash        | text    | Algoritmo Digest a utilizar. Por exemplo: "SHA256", "SHA384", ou "SHA512". Quando utilizar para produzir um JWT, o tamanho de hash deve coincidir com o tamanho do algoritmo PS@, ES@, RS@ ou PS@ |
-| pss         | boolean | Utiliza Probabilistic Signature Scheme (PSS). Ignorado se a chave não for uma chave RSA. Pass `true` when verifying a JWT for PS@ algorithm                                                                                           |
+| pss         | boolean | Utiliza Probabilistic Signature Scheme (PSS). Ignorado se a chave não for uma chave RSA. Passa `true` ao verficar um JWT para o algoritmo PS@                                                                                         |
 | encoding    | text    | Codificação utilizada para converter a mensagem binária criptografada na string  resultante. Pode ser "Base64", ou "Base64URL". Por padrão é "Base64".                                                                                                |
 
 #### *Resultado*
@@ -440,9 +440,9 @@ The function returns a status object with `success` property set to `true` if `m
 
 In case the signature couldn't be verified because it was not signed with the same *message*, key or algorithm, the `status` object being returned contains an error collection in `status.errors`.
 
-| Propriedade | Tipo       | Descrição                                                   |
-| ----------- | ---------- | ----------------------------------------------------------- |
-| success     | boolean    | True se a assinatura corresponder com a mensagem            |
-| errors      | collection | If `success` is `false`, may contain a collection of errors |
+| Propriedade | Tipo       | Descrição                                                  |
+| ----------- | ---------- | ---------------------------------------------------------- |
+| success     | boolean    | True se a assinatura corresponder com a mensagem           |
+| errors      | collection | Se `success` for `false`, pode conter uma coleção de erros |
 
 <!-- END REF -->
