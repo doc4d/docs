@@ -271,53 +271,53 @@ Le tableau suivant montre comment les différents formats affectent l'affichage 
 
 ---
 
-## Picture Format
+## Format image
 
-Picture formats control how pictures appear when displayed or printed. For data entry, the user always enters pictures by pasting them from the Clipboard or by drag and drop, regardless of the display format.
+Les formats d'images contrôlent la façon dont les images apparaissent lorsqu'elles sont affichées ou imprimées. Pour la saisie des données, l'utilisateur saisit toujours les images en les collant depuis le Presse-papiers ou en les faisant glisser-déposer, quel que soit le format d'affichage.
 
-The truncation and scaling options do not affect the picture itself. The contents of a Picture field are always saved. Only the display on the particular form is affected by the picture display format.
+Les options de troncature et de mise à l'échelle n'affectent pas l'image elle-même. Le contenu d'un champ Image est toujours enregistré. Seul l'affichage dans le formulaire est affecté par le format d'affichage de l'image.
 
-### Scaled to fit
+### Image non tronquée
 
-`JSON grammar: "scaled"`
+`Grammaire JSON : "scaled"`
 
-The **Scaled to fit** format causes 4D to resize the picture to fit the dimensions of the area.
+Le format **Non tronquée** permet à 4D de redimensionner l'image pour qu'elle corresponde aux dimensions de la zone.
 
 ![](../assets/en/FormObjects/property_pictureFormat_ScaledToFit.png)
 
-### Truncated (centered and non-centered)
+### Image tronquée (centrée et non centrée)
 
 `Grammaire JSON : "truncatedCenter" / "truncatedTopLeft"`
 
-The **Truncated (centered)** format causes 4D to center the picture in the area and crop any portion that does not fit within the area. 4D crops equally from each edge and from the top and bottom.
+Avec le format **Image tronquée (centrée)**, 4D centre l'image dans la zone et rogne toute partie qui ne rentre pas dans la zone. 4D rogne de manière égale à partir de chaque bord et du haut et du bas.
 
-The **Truncated (non-centered)** format causes 4D to place the upper-left corner of the picture in the upper-left corner of the area and crop any portion that does not fit within the area. 4D crops from the right and bottom.
+Avec le format **Image tronquée (non centrée)**, 4D place le coin supérieur gauche de l'image dans le coin supérieur gauche de la zone et rogne toute partie qui ne rentre pas dans la zone. 4D rogne à partie de la droite et du bas.
 
-> When the picture format is **Truncated (non-centered)**, it is possible to add scroll bars to the input area.
+> Lorsque le format de l'image est **tronquée (non centrée)**, il est possible d'ajouter des barres de défilement à la zone de saisie.
 
 ![](../assets/en/FormObjects/property_pictureFormat_Truncated.png)
 
-### Scaled to fit (proportional) and Scaled to fit centered (proportional)
+### Image proportionnelle et Image proportionnelle centrée
 
-`JSON grammar: "proportionalTopLeft" / "proportionalCenter"`
+`Grammaire JSON: "proportionnalTopLeft" / "proportionnalCenter"`
 
-When you use **Scaled to fit (proportional)**, the picture is reduced proportionally on all sides to fit the area created for the picture. The **Scaled to fit centered (proportional)** option does the same, but centers the picture in the picture area.
+Lorsque vous utilisez **Image proportionnelle**, l'image est réduite proportionnellement de tous les côtés pour s'adapter à la zone créée pour l'image. L'option **Image proportionnelle centrée** fait la même chose, mais centre l'image dans la zone de l'image.
 
-If the picture is smaller than the area set in the form, it will not be modified. If the picture is bigger than the area set in the form, it is proportionally reduced. Since it is proportionally reduced, the picture will not appear distorted.
+Si l'image est plus petite que la zone définie dans le formulaire, elle ne sera pas modifiée. Si l'image est plus grande que la zone définie dans le formulaire, elle est réduite proportionnellement. Étant donné qu'elle est réduite de manière proportionnelle, l'image n'apparaîtra pas déformée.
 
-If you have applied the **Scaled to fit centered (proportional)** format, the picture is also centered in the area:
+Si vous avez appliqué le format **Image proportionnelle centrée**, l'image est également centrée dans la zone :
 
 ![](../assets/en/FormObjects/property_pictureFormat_ScaledProportional.png)
 
-### Replicated
+### Mosaïque
 
-`JSON grammar: "tiled"`
+Grammaire JSON : "tiled"
 
-When the area that contains a picture with the **Replicated** format is enlarged, the picture is not deformed but is replicated as many times as necessary in order to fill the area entirely.
+Lorsque la zone qui contient une image avec le format **Mosaïque** est agrandie, l'image n'est pas déformée mais est répliquée autant de fois que nécessaire pour remplir entièrement la zone.
 
 ![](../assets/en/FormObjects/property_pictureFormat_Replicated.png)
 
-If the field is reduced to a size smaller than that of the original picture, the picture is truncated (non-centered).
+Si le champ est réduit à une taille plus petite que celle de l'image d'origine, l'image est tronquée (non centrée).
 
 #### Grammaire JSON
 
@@ -327,55 +327,55 @@ If the field is reduced to a size smaller than that of the original picture, the
 
 #### Objets pris en charge
 
-[Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers)
+[Input](input_overview.md) - [Colonne de List box](listbox_overview.md#list-box-columns) - [Pied List Box](listbox_overview.md#list-box-footers)
 
 ---
 
-## Time Format
+## Format heure
 
-Time formats control the way times appear when displayed or printed. For data entry, you enter times in the 24-hour HH:MM:SS format or the 12-hour HH:MM:SS AM/PM format, regardless of the display format you have chosen.
+Les formats heure contrôlent la façon dont les heures apparaissent lorsqu'elles sont affichées ou imprimées. Pour la saisie des données, vous entrez les heures dans le format 24 heures HH:MM:SS ou dans le format 12 heures HH:MM:SS AM/PM, quel que soit le format d'affichage que vous avez choisi.
 
-Display formats for times can be defined:
+Les formats d'affichage des heures peuvent être définis :
 
 - en utilisant un format 4D intégré,
 - en utilisant un modèle personnalisé.
 
 ### Formats intégrés
 
-The table below shows the Time field display formats and gives examples:
+Le tableau ci-dessous montre les formats d'affichage du champ Heure et donne des exemples :
 
-| Nom du format                            | Chaine JSON                                        | Commentaires                                                                                                                                                                     | Exemple pour 04:30:25     |
-| ---------------------------------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
-| HH:MM:SS | hh_mm_ss |                                                                                                                                                                                  | 04:30:25                  |
-| HH:MM                    | hh_mm                         |                                                                                                                                                                                  | 04:30                                     |
-| Hour Min Sec                             | HH_MM_SS |                                                                                                                                                                                  | 4 heures 30 minutes 25 secondes                           |
-| Hour Min                                 | HH_MM                         |                                                                                                                                                                                  | 4 heures 30 minutes                                       |
-| HH:MM AM/PM              | hh_mm_am |                                                                                                                                                                                  | 4:30 a.m. |
-| MM SS                                    | mm_ss                         | Heure exprimée sous forme de durée à partir de 00:00:00                                                                                          | 270:25                                    |
-| Min Sec                                  | MM_SS                         | Heure exprimée sous forme de durée à partir de 00:00:00                                                                                          | 270 Minutes 25 Secondes                                   |
-| ISO Date Time                            | iso8601                                            | Corresponds to the XML standard for representing time-related data. It is mainly intended to be used when importing/exporting data in XML format                 | 0000-00-00T04:30:25       |
-| System time short                        | - (default)                     | Standard time format defined in the system                                                                                                                                       | 04:30:25                  |
-| System time long abbreviated             | systemMedium                                       | macOS only: Abbreviated time format defined in the system. <br/>Windows: this format is the same as the System time short format | 4•30•25 AM                                                |
-| System time long                         | systemLong                                         | macOS only: Long time format defined in the system. <br/>Windows: this format is the same as the System time short format        | 4:30:25 AM HNEC           |
+| Nom du format                            | Chaine JSON                                        | Commentaires                                                                                                                                                                                                  | Exemple pour 04:30:25     |
+| ---------------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| HH:MM:SS | hh_mm_ss |                                                                                                                                                                                                               | 04:30:25                  |
+| hh:mn                    | hh_mm                         |                                                                                                                                                                                                               | 04:30                                     |
+| Heures Minutes Secondes                  | HH_MM_SS |                                                                                                                                                                                                               | 4 heures 30 minutes 25 secondes                           |
+| Heures Minutes                           | HH_MM                         |                                                                                                                                                                                                               | 4 heures 30 minutes                                       |
+| h:mn Matin/Après-midi    | hh_mm_am |                                                                                                                                                                                                               | 4:30 a.m. |
+| ms s                                     | mm_ss                         | Heure exprimée sous forme de durée à partir de 00:00:00                                                                                                                       | 270:25                                    |
+| Minutes Secondes                         | MM_SS                         | Heure exprimée sous forme de durée à partir de 00:00:00                                                                                                                       | 270 Minutes 25 Secondes                                   |
+| ISO Date Heure                           | iso8601                                            | Correspond à la norme XML pour représenter des données liées au temps. Il est principalement destiné à être utilisé lors de l'import/export de données au format XML et dans les services Web | 0000-00-00T04:30:25       |
+| Système heure court                      | - (default)                     | Format heure standard défini dans le système                                                                                                                                                                  | 04:30:25                  |
+| Système heure long abrégé                | systemMedium                                       | macOS seulement : Format d'heure abrégé défini dans le système. <br/>Windows : ce format est le même que le format système heure court                        | 4•30•25 AM                                                |
+| Système heure long                       | systemLong                                         | macOS seulement : Format d'heure long défini dans le système. <br/>Windows : ce format est le même que le format système heure court                          | 4:30:25 AM HNEC           |
 
 ### Formats personnalisés
 
-Customized time formats can be built using several patterns described in the [**Date and Time Formats**](../Project/date-time-formats.md) page. Par exemple :
+Des formats d'heure personnalisés peuvent être construits en utilisant plusieurs motifs décrits dans la page [**Formats de date et d'heure**](../Project/date-time-formats.md) . Par exemple :
 
-| Motif                                  | Exemple (système US) |
-| -------------------------------------- | --------------------------------------- |
-| "HH 'hours' mm 'minutes' ss 'seconds'" | 13 heures 25 minutes 12 secondes        |
-| "hh:mm aa"             | 01:25 PM                |
+| Motif                                   | Exemple (système US) |
+| --------------------------------------- | --------------------------------------- |
+| "HH 'heures' mm 'minutes' ss 'secondes' | 13 heures 25 minutes 12 secondes        |
+| "hh:mm aa"              | 01:25 PM                |
 
 #### Grammaire JSON
 
-| Nom        | Type de données | Valeurs possibles                                                                                                                                                                                                                                                                                |
-| ---------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| timeFormat | string          | <li>Built-in formats: "systemShort", "systemMedium", "systemLong", "iso8601", "hh_mm_ss", "hh_mm", "hh_mm_am", "mm_ss", "HH_MM_SS", "HH_MM", "MM_SS" + " blankIfNull"</li><li>Custom formats: any format built using [a supported pattern](../Project/date-time-formats.md) + "blankIfNull"</li> |
+| Nom        | Type de données | Valeurs possibles                                                                                                                                                                                                                                                                                                          |
+| ---------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| timeFormat | string          | <li>Formats intégrés : "systemShort", "systemMedium", "systemLong", "iso8601", "hh_mm_ss", "hh_mm", "hh_mm_am", "mm_ss", "HH_MM_SS", "HH_MM", "MM_SS" + " blankIfNull"</li><li>Formats personnalisés : tout format construit en utilisant [un modèle pris en charge](../Project/date-time-formats.md) + "blankIfNull"</li> |
 
 :::note blankIfNull
 
-By default, a null time is displayed with zeros, e.g. "00:00:00". With the "blankIfNull" option, a null time is displayed as an empty area. La chaîne "blankIfNull" (sensible à la casse) doit être combinée avec la valeur de format sélectionnée. Ex: "MM_SS blankIfNull" or "hh:mm aa blankIfNull"
+Par défaut, une heure nulle est affichée avec des zéros, par exemple "00:00:00". Avec l'option "blankIfNull", une heure nulle est affichée comme une zone vide. La chaîne "blankIfNull" (sensible à la casse) doit être combinée avec la valeur de format sélectionnée. Ex : "MM_SS blankIfNull" ou "hh:mm aa blankIfNull"
 
 #### Objets pris en charge
 
@@ -383,23 +383,23 @@ By default, a null time is displayed with zeros, e.g. "00:00:00". With the "blan
 
 ---
 
-## Text when False/Text when True
+## Texte si Faux / Texte si Vrai
 
-When a [boolean expression](properties_Object.md#expression-type) is displayed as:
+Lorsqu'une [expression booléenne](properties_Object.md#expression-type) est affichée comme :
 
-- a text in an [input object](input_overview.md)
-- a ["popup"](properties_Display.md#display-type) in a [list box column](listbox_overview.md#list-box-columns),
+- un texte dans un [input](input_overview.md)
+- une ["popup"](properties_Display.md#display-type) dans une [colonne de list box](listbox_overview.md#list-box-columns),
 
-... you can select the text to display for each value:
+... vous pouvez sélectionner le texte à afficher pour chaque valeur :
 
-- **Text when True** - the text to be displayed when the value is "true"
-- **Text when False** - the text to be displayed when the value is "false"
+- **Texte si vrai** - le texte à afficher lorsque la valeur est "true"
+- **Texte si faux** - le texte à afficher lorsque la valeur est "false"
 
 #### Grammaire JSON
 
-| Nom           | Type de données | Valeurs possibles                                                                                        |
-| ------------- | --------------- | -------------------------------------------------------------------------------------------------------- |
-| booleanFormat | string          | "\<*textWhenTrue*\>;\<*textWhenFalse*\>", e.g. "Assigned;Unassigned" |
+| Nom           | Type de données | Valeurs possibles                                                               |
+| ------------- | --------------- | ------------------------------------------------------------------------------- |
+| booleanFormat | string          | "\<*textWhenTrue*\>;\<*textWhenFalse*\>", par exemple "Assigné;Non assigné" |
 
 #### Objets pris en charge
 
@@ -615,4 +615,4 @@ Note that regardless of the Wordwrap option’s value, the row height is not cha
 
 #### Objets pris en charge
 
-[Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers)
+[Input](input_overview.md) - [Colonne de List box](listbox_overview.md#list-box-columns) - [Pied List Box](listbox_overview.md#list-box-footers)
