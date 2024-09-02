@@ -389,7 +389,7 @@ The object returned by `.drop( )` contains the following properties:
 
 #### Exemplo 1
 
-Example without `dk force drop if stamp changed` option:
+Exemplo sem a opção `dk force drop if stamp changed`:
 
 ```4d
  var $employees : cs.EmployeeSelection
@@ -1021,7 +1021,7 @@ Exemplo com erro:
 
 #### Exemplo 2
 
-Example with `dk reload if stamp changed` option:
+Exemplo com a opção `dk reload if stamp changed`:
 
 ```4d
  var $employee : cs. EmployeeEntity
@@ -1203,10 +1203,10 @@ The object returned by `.reload( )` contains the following properties:
 
 <!-- REF #EntityClass.save().Params -->
 
-| Parâmetro  | Tipo    |     | Descrição                                                         |
-| ---------- | ------- | :-: | ----------------------------------------------------------------- |
-| mode       | Integer |  -> | `dk auto merge`: Enables the automatic merge mode |
-| Resultados | Object  |  <- | Resultado da operação de salvamento                               |
+| Parâmetro  | Tipo    |     | Descrição                                                             |
+| ---------- | ------- | :-: | --------------------------------------------------------------------- |
+| mode       | Integer |  -> | `dk auto merge`: ativa o modo de mesclagem automática |
+| Resultados | Object  |  <- | Resultado da operação de salvamento                                   |
 
 <!-- END REF -->
 
@@ -1282,7 +1282,7 @@ Criar uma nova entidade:
 
 #### Exemplo 2
 
-Updating an entity without `dk auto merge` option:
+Atualizar uma entidade sem a opção dk auto merge:
 
 ```4d
  var $status : Object
@@ -1453,7 +1453,7 @@ Retorna:
 
 #### Exemplo 3
 
-Expanding all the properties of `relatedEntities`:
+Expande todas as propriedades de `relatedEntities`:
 
 ```4d
 employeeObject:=employeeSelected.toObject("directReports.*")
@@ -1569,7 +1569,7 @@ Retorna:
 
 #### Exemplo 6
 
-Extracting all the properties of a `relatedEntity`:
+Expande todas as propriedades de `relatedEntity`:
 
 ```4d
  employeeObject:=employeeSelected.toObject("employer.*")
