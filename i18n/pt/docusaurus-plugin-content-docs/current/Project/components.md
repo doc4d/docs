@@ -267,7 +267,7 @@ Then insert the "github" key in your [**environment4d.json**](#environment4djson
 
 Referenced GitHub components are downloaded in a local cache folder then loaded in your environment. The local cache folder is stored at the following location:
 
-- on macOs: `$HOME/Library/Caches/<app name>/Dependencies`
+- en macOs: `$HOME/Library/Caches/<app name>/Dependencies`
 - no Windows: `C:\Users\<username>\AppData\Local\<app name>\Dependencies`
 
 ...where `<app name>` can be "4D", "4D Server", or "tool4D".
