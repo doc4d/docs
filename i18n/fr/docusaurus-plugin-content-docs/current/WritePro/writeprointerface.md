@@ -57,9 +57,9 @@ Once the table has been integrated into the document, the user can customize its
 
 La configuration des modèles inclut:
 
-- Defining tables and fields as well as preparing formulas adapted to the application from the [template file](#template-files).
-- Translating table, field, and formula names from the [translation file](#translation-files).
-- Designing graphic styles and customized  themes from the [theme file](#theme-files).
+- Définir des tables et des champs ainsi que préparer des formules adaptées à l'application à partir du [fichier de modèle](#template-files).
+- Traduction des noms de table, de champ et de formule à partir du [fichier de traduction](#translation-files).
+- Conception de styles graphiques et de thèmes personnalisés à partir du [fichier de thème](#theme-files).
 
 These three types of files contribute to the configuration of the Table Wizard, and while each serves a distinct purpose, none of them are considered essential components.
 
@@ -72,7 +72,7 @@ Le fichier de modèle vous permet de définir les éléments suivants :
 - the dataclass attributes that can be used as table columns,
 - the formulas available as contextual menus inside break rows, carry-over row, placeholder row or extra rows.
 
-The template file must be stored in a "[`Resources`](../Project/architecture.md#resources)/4DWP_Wizard/Templates" folder within your project.
+Le fichier modèle doit être stocké dans un dossier "[`Resources`](../Project/architecture.md#resources)/4DWP_Wizard/Templates" dans votre projet.
 
 The template file in JSON format contains the following attributes:
 
@@ -97,9 +97,9 @@ The template file in JSON format contains the following attributes:
 | extraFormulas.source | Text       | x           | Formula                                                                                                                                                                                                  |
 | placeholderFormulas                  | Collection |             | Collection of formula objects that are inserted in the placeholder row                                                                                                                                   |
 
-:::note French language
+:::note Langue française
 
-If your application is likely to be run on a 4D with language set to French, make sure that you use [tokens](https://doc.4d.com/4Dv20/4D/20/Using-tokens-in-formulas.300-6237731.en.html) in your formulas so that they are correctly interpreted no matter the user's language configuration.
+Si votre application est susceptible d'être exécutée sur un 4D avec une langue définie en français, assurez-vous d'utiliser [tokens](https://doc.4d.com/4Dv20/4D/20/Using-tokens-in-formulas.300-6237731.en.html) dans vos formules afin qu'elles soient correctement interprétées quelle que soit la configuration de la langue de l'utilisateur.
 
 :::
 
@@ -153,7 +153,7 @@ Here's a brief example of what your JSON file might look like:
 
 #### Translation files
 
-Translation files translate the names of templates, themes, tables, fields, and formulas. These files are added to the "[`Resources`](../Project/architecture.md#resources)/4DWP_Wizard/Translations" folder in your project.
+Translation files translate the names of templates, themes, tables, fields, and formulas. Ces fichiers sont ajoutés au dossier "[`Resources`](../Project/architecture.md#resources)/4DWP_Wizard/Translations" de votre projet.
 
 Each translation file must be named with the corresponding language code (for example "en" for English or "fr" for French).
 
@@ -177,7 +177,7 @@ Defining these attributes within the translation object ensures proper organizat
 
 If the template name or the formula (break, carry-over row, or extra) exists in the translated file, its translation is applied in the Table Wizard. In addition, only the table defined within the translation file is displayed and translated.
 
-The translation file serves an additional role when a user selects a table in the interface. It can filter the tables and fields proposed to the user. For example, to hide table IDs, this behavior is similar to the `SET TABLE TITLES` and `SET FIELD TITLES` commands.
+The translation file serves an additional role when a user selects a table in the interface. It can filter the tables and fields proposed to the user. Par exemple, pour masquer les IDs de table, ce comportement est similaire aux commandes `SET TABLE TITLES` et `SET FIELD TITLES`.
 
 ##### Exemple
 
@@ -213,31 +213,31 @@ The translation file serves an additional role when a user selects a table in th
 
 #### Theme files
 
-A list of themes is provided by default in the 4D Write Pro Interface component, such as "Arial", "CourierNew" and "YuGothic", available in multiple variations like "Blue" and "Green". However, you can create your own theme by placing it in the "[`Resources`](../Project/architecture.md#resources)/4DWP_Wizard/Themes" folder within your project.
+A list of themes is provided by default in the 4D Write Pro Interface component, such as "Arial", "CourierNew" and "YuGothic", available in multiple variations like "Blue" and "Green". Cependant, vous pouvez créer votre propre thème en le plaçant dans le dossier "[`Resources`](../Project/architecture.md#resources)/4DWP_Wizard/Themes" de votre projet.
 
 The theme file in JSON format contains the following attributes:
 
-| Attribut       | Type   | Obligatoire | Description                                                                                                                                                                                                              |
-| :------------- | :----- | :---------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| default        | Object |             | Object containing the default style applicable to all rows.                                                                                                                                              |
-| table          | Object |             | Object containing the style definition applicable to the table.                                                                                                                                          |
-| rows           | Object |             | Object containing the style definition applicable to all rows.                                                                                                                                           |
-| cells          | Object |             | Object containing the style definition applicable to all cells.                                                                                                                                          |
-| header1        | Object |             | Object containing the style definition applicable to the first header row.                                                                                                                               |
-| header2        | Object |             | Object containing the style definition applicable to the second header row.                                                                                                                              |
-| header3        | Object |             | Object containing the style definition applicable to the third header row.                                                                                                                               |
-| header4        | Object |             | Object containing the style definition applicable to the fourth header row.                                                                                                                              |
-| header5        | Object |             | Object containing the style definition applicable to the fifth header row.                                                                                                                               |
-| headers        | Object |             | Object containing the style definition applicable to the header rows, if a specific header (like header1, header2...) is not defined. |
-| data           | Object |             | Object containing the style definition applicable to the repeated data row.                                                                                                                              |
-| break1         | Object |             | Object containing the style definition applicable to the first break row.                                                                                                                                |
-| break2         | Object |             | Object containing the style definition applicable to the second break row.                                                                                                                               |
-| break3         | Object |             | Object containing the style definition applicable to the third break row.                                                                                                                                |
-| break4         | Object |             | Object containing the style definition applicable to the fourth break row.                                                                                                                               |
-| break5         | Object |             | Object containing the style definition applicable to the fifth break row.                                                                                                                                |
-| ruptures/sauts | Object |             | Object containing the style definition applicable to the break rows, if a specific break (like break1, break2...) is not defined.     |
-| bcor           | Object |             | Object containing the style definition applicable to the bottom carry-over row.                                                                                                                          |
-| placeholder    | Object |             | Object containing the default style applicable to the placeholder row.                                                                                                                                   |
+| Attribut       | Type   | Obligatoire | Description                                                                                                                                                                                                                       |
+| :------------- | :----- | :---------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| default        | Object |             | Object containing the default style applicable to all rows.                                                                                                                                                       |
+| table          | Object |             | Object containing the style definition applicable to the table.                                                                                                                                                   |
+| rows           | Object |             | Object containing the style definition applicable to all rows.                                                                                                                                                    |
+| cells          | Object |             | Object containing the style definition applicable to all cells.                                                                                                                                                   |
+| header1        | Object |             | Object containing the style definition applicable to the first header row.                                                                                                                                        |
+| header2        | Object |             | Object containing the style definition applicable to the second header row.                                                                                                                                       |
+| header3        | Object |             | Object containing the style definition applicable to the third header row.                                                                                                                                        |
+| header4        | Object |             | Object containing the style definition applicable to the fourth header row.                                                                                                                                       |
+| header5        | Object |             | Object containing the style definition applicable to the fifth header row.                                                                                                                                        |
+| headers        | Object |             | Objet contenant la définition de style applicable aux lignes d'en-tête, si un en-tête spécifique (comme header1, header2...) n'est pas défini. |
+| data           | Object |             | Object containing the style definition applicable to the repeated data row.                                                                                                                                       |
+| break1         | Object |             | Object containing the style definition applicable to the first break row.                                                                                                                                         |
+| break2         | Object |             | Object containing the style definition applicable to the second break row.                                                                                                                                        |
+| break3         | Object |             | Object containing the style definition applicable to the third break row.                                                                                                                                         |
+| break4         | Object |             | Object containing the style definition applicable to the fourth break row.                                                                                                                                        |
+| break5         | Object |             | Object containing the style definition applicable to the fifth break row.                                                                                                                                         |
+| ruptures/sauts | Object |             | Object containing the style definition applicable to the break rows, if a specific break (like break1, break2...) n'est pas défini.            |
+| bcor           | Object |             | Object containing the style definition applicable to the bottom carry-over row.                                                                                                                                   |
+| placeholder    | Object |             | Object containing the default style applicable to the placeholder row.                                                                                                                                            |
 
 For every attribute used in your JSON file (header, data, carry-over, summary, and extra rows), you can define the following WP attributes, mentionned with their [corresponding WP constant](https://doc.4d.com/4Dv20/4D/20/4D-Write-Pro-Attributes.300-6229528.en.html):
 
@@ -294,4 +294,4 @@ For every attribute used in your JSON file (header, data, carry-over, summary, a
 
 #### Voir également
 
-[4D Write Pro - Table Wizard (tutorial video)](https://www.youtube.com/watch?v=2ChlTju-mtM)
+[4D Write Pro - Table Wizard (vidéo tutorial)](https://www.youtube.com/watch?v=2ChlTju-mtM)
