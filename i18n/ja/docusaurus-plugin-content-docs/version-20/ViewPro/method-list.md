@@ -17,18 +17,18 @@ title: メソッド一覧
 
 <!-- REF #_method_.VP ADD FORMULA NAME.Params -->
 
-| 引数         | タイプ    |    | 説明                                        |
+| 引数         | 型      |    | 説明                                        |
 | ---------- | ------ | -- | ----------------------------------------- |
-| vpAreaName | Text   | -> | 4D View Pro フォームオブジェクト名                   |
-| vpFormula  | Text   | -> | 4D View Pro フォーミュラ                        |
-| name       | Text   | -> | フォーミュラの名称                                 |
-| options    | Object | -> | 命名フォーミュラのオプション|<!-- END REF -->
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                   |
+| vpFormula  | テキスト   | -> | 4D View Pro フォーミュラ                        |
+| name       | テキスト   | -> | フォーミュラの名称                                 |
+| options    | オブジェクト | -> | 命名フォーミュラのオプション|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP ADD FORMULA NAME` コマンドは、 <!-- REF #_method_.VP ADD FORMULA NAME.Summary -->開いているドキュメント内において命名されたフォーミュラを作成、または編集します<!-- END REF -->。
+`VP ADD FORMULA NAME` コマンドは、 <!-- REF #_method_.VP ADD FORMULA NAME.Summary -->開いているドキュメント内において命名されたフォーミュラを作成、または編集します<!-- END REF -->.
 > このコマンドで作成された命名フォーミュラはドキュメントとともに保存されます。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
@@ -39,10 +39,10 @@ title: メソッド一覧
 
 *options* 引数には、命名フォーミュラの追加プロパティを格納したオブジェクト型を渡すことができます。 以下のプロパティがサポートされています:
 
-| プロパティ   | タイプ    | 説明                                                                                                                                                                                                                                                            |
+| プロパティ   | 型      | 説明                                                                                                                                                                                                                                                            |
 | ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | scope   | Number | フォーミュラのスコープ。 シートのインデックス (0起点) を渡すか、あるいは以下の定数を使用することができます: <li>`vk current sheet`</li><li>`vk workbook`</li>スコープは、フォーミュラ名が特定のワークシートに限定されたローカル (*scope* = シートのインデックス または `vk current sheet`) なものか、あるいはワークブック全体で使用できるグローバル (*scope* = `vk workbook`) なものかを決定します。 |
-| comment | Text   | 命名フォーミュラに割り当てられたコメント                                                                                                                                                                                                                                          |
+| comment | テキスト   | 命名フォーミュラに割り当てられたコメント                                                                                                                                                                                                                                          |
 
 #### 例題
 
@@ -62,27 +62,27 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 
 <!-- REF #_method_.VP ADD RANGE NAME.Params -->
 
-| 引数       | タイプ    |    | 説明                                        |
+| 引数       | 型      |    | 説明                                        |
 | -------- | ------ | -- | ----------------------------------------- |
-| rangeObj | Object | -> | レンジオブジェクト                                 |
-| name     | Text   | -> | フォーミュラの名称                                 |
-| options  | Object | -> | 命名フォーミュラのオプション|<!-- END REF -->
+| rangeObj | オブジェクト | -> | レンジオブジェクト                                 |
+| name     | テキスト   | -> | フォーミュラの名称                                 |
+| options  | オブジェクト | -> | 命名フォーミュラのオプション|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP ADD RANGE NAME` コマンドは、 <!-- REF #_method_.VP ADD RANGE NAME.Summary -->開いているドキュメント内に命名レンジを作成、または編集します<!-- END REF -->。
+`VP ADD RANGE NAME` コマンドは、 <!-- REF #_method_.VP ADD RANGE NAME.Summary -->開いているドキュメント内に命名レンジを作成、または編集します<!-- END REF -->.
 > このコマンドで作成された命名レンジはドキュメントとともに保存されます。
 
 *name* 引数には、新しいフォーミュラの名前を渡します。 同じスコープ内で名前が既に使用されている場合、新しい命名フォーミュラは既存のものを上書きします。 ただし異なるスコープであれば同じ名前を使用することが可能です (以下参照)。
 
 *options* 引数には、命名レンジの追加プロパティを格納したオブジェクト型を渡すことができます。 以下のプロパティがサポートされています:
 
-| プロパティ   | タイプ    | 説明                                                                                                                                                                                                                                                      |
+| プロパティ   | 型      | 説明                                                                                                                                                                                                                                                      |
 | ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | scope   | Number | レンジのスコープ。 シートのインデックス (0起点) を渡すか、あるいは以下の定数を使用することができます: <li>`vk current sheet`</li><li>`vk workbook`</li>スコープは、レンジ名が特定のワークシートに限定されたローカル (*scope* = シートのインデックス または `vk current sheet`) なものか、あるいはワークブック全体で使用できるグローバル (*scope* = `vk workbook`) なものかを決定します。 |
-| comment | Text   | 命名レンジに割り当てられたコメント                                                                                                                                                                                                                                       |
+| comment | テキスト   | 命名レンジに割り当てられたコメント                                                                                                                                                                                                                                       |
 > * 命名レンジの実態は、座標を格納した命名フォーミュラです。 `VP ADD RANGE NAME` を使うと簡単に命名レンジの作成ができますが、[`VP ADD FORMULA NAME`](#vp-add-formula-name) コマンドで命名レンジを作成することもできます。
 > * 命名レンジを定義するフォーミュラは、[`VP Get formula by name`](#vp-get-formula-by-name) コマンドで取得することができます。
 
@@ -107,15 +107,15 @@ VP ADD RANGE NAME($range;"Total1")
 
 <!-- REF #_method_.VP ADD SELECTION.Params -->
 
-| 引数       | タイプ  |    | 説明                                    |
+| 引数       | 型    |    | 説明                                    |
 | -------- | ---- | -- | ------------------------------------- |
-| rangeObj | Text | -> | レンジオブジェクト |<!-- END REF -->
+| rangeObj | テキスト | -> | レンジオブジェクト |<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP ADD SELECTION` コマンドは、 <!-- REF #_method_.VP ADD SELECTION.Summary -->指定されたセルを、現在選択されているセル範囲に追加します<!-- END REF -->。
+`VP ADD SELECTION` コマンドは、 <!-- REF #_method_.VP ADD SELECTION.Summary -->指定されたセルを、現在選択されているセル範囲に追加します<!-- END REF -->.
 
 *rangeObj* には、カレントセレクションに追加するセルのレンジオブジェクトを渡します。
 > アクティブセルは変更されません。
@@ -148,11 +148,11 @@ VP ADD SELECTION($currentSelection)
 
 <!-- REF #_method_.VP ADD SHEET.Params -->
 
-| 引数         | タイプ     |    | 説明                              |
-| ---------- | ------- | -- | ------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名         |
-| sheet      | Integer | -> | 新しいシートのインデックス                   |
-| name       | Text    | -> | シート名|<!-- END REF -->
+| 引数         | 型    |    | 説明                              |
+| ---------- | ---- | -- | ------------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名         |
+| sheet      | 整数   | -> | 新しいシートのインデックス                   |
+| name       | テキスト | -> | シート名|<!-- END REF -->
 
 |
 
@@ -192,9 +192,9 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 <!-- REF #_method_.VP ADD SPAN.Params -->
 
-| 引数       | タイプ    |    | 説明                                   |
+| 引数       | 型      |    | 説明                                   |
 | -------- | ------ | -- | ------------------------------------ |
-| rangeObj | Object | -> | レンジオブジェクト|<!-- END REF -->
+| rangeObj | オブジェクト | -> | レンジオブジェクト|<!-- END REF -->
 
 |
 
@@ -239,18 +239,18 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 <!-- REF #_method_.VP ADD STYLESHEET.Params -->
 
-| 引数         | タイプ     |    | 説明                                                     |
-| ---------- | ------- | -- | ------------------------------------------------------ |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                                |
-| styleName  | Text    | -> | スタイルの名前                                                |
-| styleObj   | Object  | -> | 属性設定を定義するオブジェクト                                        |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
+| 引数         | 型      |    | 説明                                                     |
+| ---------- | ------ | -- | ------------------------------------------------------ |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                                |
+| styleName  | テキスト   | -> | スタイルの名前                                                |
+| styleObj   | オブジェクト | -> | 属性設定を定義するオブジェクト                                        |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP ADD STYLESHEET` コマンドは、 <!-- REF #_method_.VP ADD STYLESHEET.Summary -->開いているドキュメント内にて、*styleName* 引数で指定したスタイルシートを、*styleObj* 引数のプロパティの組み合わせに基づいて作成または変更します<!-- END REF -->。 同じ名前とインデックスを持つスタイルシートがドキュメント内にすでに存在する場合、このコマンドはそれを新しい値で上書きします。
+`VP ADD STYLESHEET` コマンドは、 <!-- REF #_method_.VP ADD STYLESHEET.Summary -->開いているドキュメント内にて、*styleName* 引数で指定したスタイルシートを、*styleObj* 引数のプロパティの組み合わせに基づいて作成または変更します<!-- END REF -->. 同じ名前とインデックスを持つスタイルシートがドキュメント内にすでに存在する場合、このコマンドはそれを新しい値で上書きします。
 
 > このコマンドで作成されたスタイルシートはドキュメントとともに保存されます。
 
@@ -314,17 +314,17 @@ VP SET CELL STYLE(VP Cells("ViewProArea";1;1;2;2);New object("name";"GreenDashDo
 
 <!-- REF #_method_.VP All.Params -->
 
-| 引数         | タイプ     |    | 説明                                          |
-| ---------- | ------- | -- | ------------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                     |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)                 |
-| 戻り値        | Object  | <- | すべてのセルのレンジオブジェクト|<!-- END REF -->
+| 引数         | 型      |    | 説明                                          |
+| ---------- | ------ | -- | ------------------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                     |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)                 |
+| 戻り値        | オブジェクト | <- | すべてのセルのレンジオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP ALL` コマンドは、 <!-- REF #_method_.VP All.Summary -->すべてのセルを参照する新しいレンジオブジェクトを返します<!-- END REF -->。
+`VP ALL` コマンドは、 <!-- REF #_method_.VP All.Summary -->すべてのセルを参照する新しいレンジオブジェクトを返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -351,18 +351,18 @@ $all:=VP All("ViewProArea") // カレントシートの全セル
 
 <!-- REF #_method_.VP Cell.Params -->
 
-| 引数         | タイプ     |    | 説明                          |
-| ---------- | ------- | -- | --------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名     |
-| column     | Longint | -> | カラムのインデックス                  |
-| row        | Longint | -> | 行のインデックス                    |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート) |
-| 戻り値        | Object  | <- | 単一セルのレンジオブジェクト              |
+| 引数         | 型      |    | 説明                          |
+| ---------- | ------ | -- | --------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名     |
+| column     | 倍長整数   | -> | カラムのインデックス                  |
+| row        | 倍長整数   | -> | 行のインデックス                    |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート) |
+| 戻り値        | オブジェクト | <- | 単一セルのレンジオブジェクト              |
 <!-- END REF -->
 
 #### 説明
 
-`VP Cell` コマンドは、 <!-- REF #_method_.VP Cell.Summary -->特定のセルを参照する新しいレンジオブジェクトを返します<!-- END REF -->。
+`VP Cell` コマンドは、 <!-- REF #_method_.VP Cell.Summary -->特定のセルを参照する新しいレンジオブジェクトを返します<!-- END REF -->.
 
 > このコマンドは単一セルのレンジを想定しています。 複数セルに対するレンジオブジェクトを作成するには、[VP Cells](#vp-cells) コマンドを使用します。
 
@@ -406,21 +406,21 @@ $cell:=VP Cell("ViewProArea";2;4) // C5
 
 <!-- REF #_method_.VP Cells.Params -->
 
-| 引数          | タイプ     |    | 説明                                        |
-| ----------- | ------- | -- | ----------------------------------------- |
-| vpAreaName  | Text    | -> | 4D View Pro フォームオブジェクト名                   |
-| column      | Integer | -> | カラムのインデックス                                |
-| row         | Integer | -> | 行のインデックス                                  |
-| columnCount | Integer | -> | カラム数                                      |
-| rowCount    | Integer | -> | 行数                                        |
-| sheet       | Integer | -> | シートのインデックス (省略した場合はカレントシート)               |
-| 戻り値         | Object  | <- | 複数セルのレンジオブジェクト|<!-- END REF -->
+| 引数          | 型      |    | 説明                                        |
+| ----------- | ------ | -- | ----------------------------------------- |
+| vpAreaName  | テキスト   | -> | 4D View Pro フォームオブジェクト名                   |
+| column      | 整数     | -> | カラムのインデックス                                |
+| row         | 整数     | -> | 行のインデックス                                  |
+| columnCount | 整数     | -> | カラム数                                      |
+| rowCount    | 整数     | -> | 行数                                        |
+| sheet       | 整数     | -> | シートのインデックス (省略した場合はカレントシート)               |
+| 戻り値         | オブジェクト | <- | 複数セルのレンジオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Cells` コマンドは、 <!-- REF #_method_.VP Cells.Summary -->指定された複数のセルを参照する新しいレンジオブジェクトを返します<!-- END REF -->。
+`VP Cells` コマンドは、 <!-- REF #_method_.VP Cells.Summary -->指定された複数のセルを参照する新しいレンジオブジェクトを返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -457,19 +457,19 @@ $cells:=VP Cells("ViewProArea";2;4;2;3) // C5 から D7
 
 <!-- REF #_method_.VP Column.Params -->
 
-| 引数          | タイプ     |    | 説明                                        |
-| ----------- | ------- | -- | ----------------------------------------- |
-| vpAreaName  | Text    | -> | 4D View Pro フォームオブジェクト名                   |
-| column      | Integer | -> | カラムのインデックス                                |
-| columnCount | Integer | -> | カラム数                                      |
-| sheet       | Integer | -> | シートのインデックス (省略した場合はカレントシート)               |
-| 戻り値         | Object  | <- | 複数セルのレンジオブジェクト|<!-- END REF -->
+| 引数          | 型      |    | 説明                                        |
+| ----------- | ------ | -- | ----------------------------------------- |
+| vpAreaName  | テキスト   | -> | 4D View Pro フォームオブジェクト名                   |
+| column      | 整数     | -> | カラムのインデックス                                |
+| columnCount | 整数     | -> | カラム数                                      |
+| sheet       | 整数     | -> | シートのインデックス (省略した場合はカレントシート)               |
+| 戻り値         | オブジェクト | <- | 複数セルのレンジオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Column` コマンドは、 <!-- REF #_method_.VP Column.Summary -->特定のカラム、あるいは複数のカラムを参照する新しいレンジオブジェクトを返します<!-- END REF -->。
+`VP Column` コマンドは、 <!-- REF #_method_.VP Column.Summary -->特定のカラム、あるいは複数のカラムを参照する新しいレンジオブジェクトを返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -502,15 +502,15 @@ $cells:=VP Cells("ViewProArea";2;4;2;3) // C5 から D7
 
 <!-- REF #_method_.VP COLUMN AUTOFIT.Params -->
 
-| 引数       | タイプ    |    | 説明                                   |
+| 引数       | 型      |    | 説明                                   |
 | -------- | ------ | -- | ------------------------------------ |
-| rangeObj | Object | -> | レンジオブジェクト|<!-- END REF -->
+| rangeObj | オブジェクト | -> | レンジオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP COLUMN AUTOFIT` コマンドは、 <!-- REF #_method_.VP COLUMN AUTOFIT.Summary -->*rangeObj* 引数のレンジ内にあるカラムを、そのコンテンツに応じて自動的にリサイズします<!-- END REF -->。
+`VP COLUMN AUTOFIT` コマンドは、 <!-- REF #_method_.VP COLUMN AUTOFIT.Summary -->*rangeObj* 引数のレンジ内にあるカラムを、そのコンテンツに応じて自動的にリサイズします<!-- END REF -->.
 
 *rangeObj* 引数として、サイズを自動調整したいカラムを格納しているレンジオブジェクトを渡します。
 
@@ -541,17 +541,17 @@ $cells:=VP Cells("ViewProArea";2;4;2;3) // C5 から D7
 
 <!-- REF #_method_.VP Combine ranges.Params -->
 
-| 引数            | タイプ    |    | 説明                                             |
+| 引数            | 型      |    | 説明                                             |
 | ------------- | ------ | -- | ---------------------------------------------- |
-| rangeObj      | Object | -> | レンジオブジェクト                                      |
-| otherRangeObj | Object | -> | レンジオブジェクト                                      |
-| 戻り値           | Object | <- | 統合されたレンジを格納したオブジェクト|<!-- END REF -->
+| rangeObj      | オブジェクト | -> | レンジオブジェクト                                      |
+| otherRangeObj | オブジェクト | -> | レンジオブジェクト                                      |
+| 戻り値           | オブジェクト | <- | 統合されたレンジを格納したオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Combine Ranges` コマンドは、 <!-- REF #_method_.VP Combine ranges.Summary -->2つ以上のレンジオブジェクトを統合した新しいレンジオブジェクトを返します<!-- END REF -->。 レンジはすべて同じ 4D View Pro エリア内のものでなくてはなりません。
+`VP Combine Ranges` コマンドは、 <!-- REF #_method_.VP Combine ranges.Summary -->2つ以上のレンジオブジェクトを統合した新しいレンジオブジェクトを返します<!-- END REF -->. レンジはすべて同じ 4D View Pro エリア内のものでなくてはなりません。
 
 *rangeObj* には、1つ目のレンジオブジェクトを渡します。
 
@@ -581,16 +581,16 @@ $cells:=VP Cells("ViewProArea";2;4;2;3) // C5 から D7
 
 <!-- REF #_method_.VP Convert from 4D View.Params -->
 
-| 引数             | タイプ    |    | 説明                                           |
+| 引数             | 型      |    | 説明                                           |
 | -------------- | ------ | -- | -------------------------------------------- |
-| 4DViewDocument | Blob   | -> | 4D View ドキュメント                               |
-| 戻り値            | Object | <- | 4D View Pro オブジェクト<!-- END REF -->
+| 4DViewDocument | BLOB   | -> | 4D View ドキュメント                               |
+| 戻り値            | オブジェクト | <- | 4D View Pro オブジェクト<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Convert from 4D View` コマンドを使用すると、 <!-- REF #_method_.VP Convert from 4D View.Summary -->旧式の 4D View ドキュメントを 4D View Pro オブジェクトへと変換することができます<!-- END REF -->。
+`VP Convert from 4D View` コマンドを使用すると、 <!-- REF #_method_.VP Convert from 4D View.Summary -->旧式の 4D View ドキュメントを 4D View Pro オブジェクトへと変換することができます<!-- END REF -->.
 > 旧式の 4D View プラグインが現環境にインストールされていなくても、このコマンドは使用可能です。
 
 *4DViewDocument* には変換する 4D View ドキュメントを格納する BLOB変数やフィールドを渡します。 コマンドは、4D View ドキュメントに保存されていた情報をすべて 4D View Pro 属性へと変換した 4D View Pro オブジェクトを返します。
@@ -611,17 +611,17 @@ $vpObj:=VP Convert from 4D View($pvblob)
 
 <!-- REF #_method_.VP Convert to picture.Params -->
 
-| 引数       | タイプ     |    | 説明                                       |
-| -------- | ------- | -- | ---------------------------------------- |
-| vpObject | Object  | -> | 変換するエリアを格納した 4D View Pro オブジェクト          |
-| rangeObj | Object  | -> | レンジオブジェクト                                |
-| 戻り値      | Picture | <- | エリアの SVGピクチャー|<!-- END REF -->
+| 引数       | 型      |    | 説明                                       |
+| -------- | ------ | -- | ---------------------------------------- |
+| vpObject | オブジェクト | -> | 変換するエリアを格納した 4D View Pro オブジェクト          |
+| rangeObj | オブジェクト | -> | レンジオブジェクト                                |
+| 戻り値      | ピクチャー  | <- | エリアの SVGピクチャー|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Convert to picture` コマンドは、 <!-- REF #_method_.VP Convert to picture.Summary -->*vpObject* 引数で指定した 4D View Pro オブジェクト (あるいは *vpObject* 内にある、*rangeObj* 引数で指定したレンジ) を、SVGピクチャーに変換します<!-- END REF -->。
+`VP Convert to picture` コマンドは、 <!-- REF #_method_.VP Convert to picture.Summary -->*vpObject* 引数で指定した 4D View Pro オブジェクト (あるいは *vpObject* 内にある、*rangeObj* 引数で指定したレンジ) を、SVGピクチャーに変換します<!-- END REF -->.
 
 このコマンドは以下のような場合に有用です:
 
@@ -678,11 +678,11 @@ $vPict:=VP Convert to picture($vpAreaObj) // エリア全体を書き出しま�
 
 <!-- REF #_method_.VP Copy to object.Params -->
 
-| 引数       | タイプ    |    | 説明                                                        |
+| 引数       | 型      |    | 説明                                                        |
 | -------- | ------ | -- | --------------------------------------------------------- |
-| rangeObj | Object | -> | レンジオブジェクト                                                 |
-| options  | Object | -> | 追加のオプション                                                  |
-| 戻り値      | Object | <- | 返されるオブジェクト。 コピーされたデータが格納されています|<!-- END REF -->
+| rangeObj | オブジェクト | -> | レンジオブジェクト                                                 |
+| options  | オブジェクト | -> | 追加のオプション                                                  |
+| 戻り値      | オブジェクト | <- | 返されるオブジェクト。 コピーされたデータが格納されています|<!-- END REF -->
 
 
 |
@@ -690,16 +690,16 @@ $vPict:=VP Convert to picture($vpAreaObj) // エリア全体を書き出しま�
 
 #### 説明
 
-`VP Copy to object` コマンドは、 <!-- REF #_method_.VP Copy to object.Summary -->*rangeObj* のコンテンツ、スタイル、フォーミュラをオブジェクトにコピーします<!-- END REF -->。
+`VP Copy to object` コマンドは、 <!-- REF #_method_.VP Copy to object.Summary -->*rangeObj* のコンテンツ、スタイル、フォーミュラをオブジェクトにコピーします<!-- END REF -->.
 
 *rangeObj* には、コピーしたい値、フォーマット、フォーミュラを格納しているセルレンジを渡します。 *rangeObj* が結合レンジの場合は、最初のものだけが使用されます。
 
 任意の *options* 引数として、以下のプロパティを渡すことができます。
 
-| プロパティ       | タイプ     | 説明                                                           |
-| ----------- | ------- | ------------------------------------------------------------ |
-| copy        | Boolean | コマンド実行後もコピーされた値、書式、数式が保持するには *true* (デフォルト)。 削除するには *false*。 |
-| copyOptions | Longint | コピーまたは移動する内容を指定します。 とりうる値: <p><table><tr><th>値</th><th>説明</th></tr><tr><td>`vk clipboard options all` (デフォルト)</td><td>値、フォーマット、フォーミュラを含むすべてのデータオブジェクトをコピーします。</td></tr><tr><td>`vk clipboard options formatting`</td><td>フォーマットだけをコピーします。</td></tr><tr><td>`vk clipboard options formulas`</td><td>フォーミュラだけをコピーします。</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>フォーミュラとフォーマットをコピーします。</td></tr><tr><td>`vk clipboard options values`</td><td>値だけをコピーします。</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>値とフォーマットをコピーします。</td></tr></table></p>          |
+| プロパティ       | 型    | 説明                                                           |
+| ----------- | ---- | ------------------------------------------------------------ |
+| copy        | ブール  | コマンド実行後もコピーされた値、書式、数式が保持するには *true* (デフォルト)。 削除するには *false*。 |
+| copyOptions | 倍長整数 | コピーまたは移動する内容を指定します。 とりうる値: <p><table><tr><th>値</th><th>説明</th></tr><tr><td>`vk clipboard options all` (デフォルト)</td><td>値、フォーマット、フォーミュラを含むすべてのデータオブジェクトをコピーします。</td></tr><tr><td>`vk clipboard options formatting`</td><td>フォーマットだけをコピーします。</td></tr><tr><td>`vk clipboard options formulas`</td><td>フォーミュラだけをコピーします。</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>フォーミュラとフォーマットをコピーします。</td></tr><tr><td>`vk clipboard options values`</td><td>値だけをコピーします。</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>値とフォーマットをコピーします。</td></tr></table></p>          |
 
 [ワークブックオプション](#vp-set-workbook-options) で定義されている貼り付けオプションが考慮されます。
 
@@ -747,18 +747,18 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 
 <!-- REF #_method_.VP CREATE TABLE.Params -->
 
-| 引数        | タイプ                                                |    | 説明                                  |
+| 引数        | 型                                                  |    | 説明                                  |
 | --------- | -------------------------------------------------- | -- | ----------------------------------- |
-| rangeObj  | Object                                             | -> | レンジオブジェクト                           |
-| tableName | Text                                               | -> | 表組みの名称                              |
-| source    | Text                                               | -> | 表に表示するデータコンテキストプロパティ名               |
+| rangeObj  | オブジェクト                                             | -> | レンジオブジェクト                           |
+| tableName | テキスト                                               | -> | 表組みの名称                              |
+| source    | テキスト                                               | -> | 表に表示するデータコンテキストプロパティ名               |
 | options   | [cs.ViewPro.TableOptions](classes.md#tableoptions) | -> | 追加のオプション|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP CREATE TABLE` コマンドは、 <!-- REF #_method_.VP CREATE TABLE.Summary -->指定のレンジ内に表組みを作成します<!-- END REF -->。 表組みを作成することで、関連するデータの管理や分析をより簡単におこなえます。 表組みは通常、関連するデータを行と列に含み、 [データコンテキスト](#vp-set-data-context) を利用します。
+`VP CREATE TABLE` コマンドは、 <!-- REF #_method_.VP CREATE TABLE.Summary -->指定のレンジ内に表組みを作成します<!-- END REF -->. 表組みを作成することで、関連するデータの管理や分析をより簡単におこなえます。 表組みは通常、関連するデータを行と列に含み、 [データコンテキスト](#vp-set-data-context) を利用します。
 
 ![](../assets/en/ViewPro/vp-create-table.png)
 
@@ -847,15 +847,15 @@ VP CREATE TABLE(VP Cells("ViewProArea"; 1; 1; $options.tableColumns.length; 1); 
 
 <!-- REF #_method_.VP DELETE COLUMNS.Params -->
 
-| 引数       | タイプ    |    | 説明                                   |
+| 引数       | 型      |    | 説明                                   |
 | -------- | ------ | -- | ------------------------------------ |
-| rangeObj | Object | -> | レンジオブジェクト|<!-- END REF -->
+| rangeObj | オブジェクト | -> | レンジオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP DELETE COLUMNS` コマンドは、 <!-- REF #_method_.VP DELETE COLUMNS.Summary -->*rangeObj* 引数で指定したカラムを削除します<!-- END REF -->。
+`VP DELETE COLUMNS` コマンドは、 <!-- REF #_method_.VP DELETE COLUMNS.Summary -->*rangeObj* 引数で指定したカラムを削除します<!-- END REF -->.
 
 *rangeObj* 引数には、削除するカラムを指定するレンジオブジェクトを渡します。 渡すレンジについては、以下の点に注意してください:
 
@@ -886,15 +886,15 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 
 <!-- REF #_method_.VP DELETE ROWS.Params -->
 
-| 引数       | タイプ    |    | 説明                                   |
+| 引数       | 型      |    | 説明                                   |
 | -------- | ------ | -- | ------------------------------------ |
-| rangeObj | Object | -> | レンジオブジェクト|<!-- END REF -->
+| rangeObj | オブジェクト | -> | レンジオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP DELETE ROWS` コマンドは、 <!-- REF #_method_.VP DELETE ROWS.Summary -->*rangeObj* 引数で指定した行を削除します<!-- END REF -->。
+`VP DELETE ROWS` コマンドは、 <!-- REF #_method_.VP DELETE ROWS.Summary -->*rangeObj* 引数で指定した行を削除します<!-- END REF -->.
 
 *rangeObj* 引数には、削除する行を指定するレンジオブジェクトを渡します。 渡すレンジについては、以下の点に注意してください:
 
@@ -928,17 +928,17 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 
 <!-- REF #_method_.VP EXPORT DOCUMENT.Params -->
 
-| 引数         | タイプ    |    | 説明                                    |
+| 引数         | 型      |    | 説明                                    |
 | ---------- | ------ | -- | ------------------------------------- |
-| vpAreaName | Text   | -> | 4D View Pro フォームオブジェクト名               |
-| filePath   | Text   | -> | ドキュメントのパス名                            |
-| paramObj   | Object | -> | 書き出しのオプション|<!-- END REF -->
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名               |
+| filePath   | テキスト   | -> | ドキュメントのパス名                            |
+| paramObj   | オブジェクト | -> | 書き出しのオプション|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP EXPORT DOCUMENT` コマンドは、 <!-- REF #_method_.VP EXPORT DOCUMENT.Summary -->*vpAreaName* で指定した 4D View Pro エリアに関連付けられている 4D View Pro オブジェクトを、*filePath* と *paramObj* で指定したとおりにディスク上のドキュメントに書き出します<!-- END REF -->。
+`VP EXPORT DOCUMENT` コマンドは、 <!-- REF #_method_.VP EXPORT DOCUMENT.Summary -->*vpAreaName* で指定した 4D View Pro エリアに関連付けられている 4D View Pro オブジェクトを、*filePath* と *paramObj* で指定したとおりにディスク上のドキュメントに書き出します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -955,17 +955,17 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 
 任意の *paramObj* 引数を渡すと、書き出される 4D View Pro オブジェクトの複数のプロパティに加えて、書き出しが完了した際に呼び出されるコールバックメソッド名を定義することができます。
 
-| プロパティ                      | タイプ     | 説明                                                                                                                                                                                                                                                                                                                                                              |
+| プロパティ                      | 型       | 説明                                                                                                                                                                                                                                                                                                                                                              |
 | -------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| format                     | text    | (任意) 渡した場合、書き出されるファイルの形式を指定します: ".4VP" (デフォルト)、 ".csv"、".xlsx"、または ".pdf"。 次の定数が利用できます:<li>`vk 4D View Pro format`</li><li>`vk csv format`</li><li>`vk MS Excel format`</li><li>`vk pdf format`</li>4D は必要に応じて適切な拡張子をファイル名に追加します。 指定した形式が *filePath* 引数として渡された拡張子と合致しない場合、指定形式の拡張子は *filePath* 引数の後ろに追加されます。 形式が指定されず、*filePath* 引数にも拡張子がなかった場合には、デフォルトのファイル形式が使用されます。 |
-| password                   | text    | Microsoft Excel のみ (任意) - MS Excel ドキュメントの保護に使用されるパスワード。                                                                                                                                                                                                                                                                                                        |
+| format                     | テキスト    | (任意) 渡した場合、書き出されるファイルの形式を指定します: ".4VP" (デフォルト)、 ".csv"、".xlsx"、または ".pdf"。 次の定数が利用できます:<li>`vk 4D View Pro format`</li><li>`vk csv format`</li><li>`vk MS Excel format`</li><li>`vk pdf format`</li>4D は必要に応じて適切な拡張子をファイル名に追加します。 指定した形式が *filePath* 引数として渡された拡張子と合致しない場合、指定形式の拡張子は *filePath* 引数の後ろに追加されます。 形式が指定されず、*filePath* 引数にも拡張子がなかった場合には、デフォルトのファイル形式が使用されます。 |
+| password                   | テキスト    | Microsoft Excel のみ (任意) - MS Excel ドキュメントの保護に使用されるパスワード。                                                                                                                                                                                                                                                                                                        |
 | formula                    | object  | 書き出しが完了した際に呼び出されるコールバックメソッド名。 書き出しが非同期でおこなわれる (PDF および Excel 形式での書き出しが該当します) 場合かつ、書き出し後にコードを実行したい場合には、コールバックメソッドが必要です。 コールバックメソッドは [`Formula`](https://doc.4d.com/4dv19/help/command/ja/page1597.html) コマンドと使用する必要があります (詳細は以下を参照ください)。                                                                                                                         |
 | valuesOnly                 | boolean | フォーミュラ (あれば) の値のみを書き出すかどうかを指定します。                                                                                                                                                                                                                                                                                                                               |
 | includeFormatInfo          | boolean | フォーマット (書式) 情報を含めるには true、それ以外の場合には false (デフォルトは true)。 フォーマット情報は特定の場合 (例: SVGへの書き出しなど) において有用です。 一方で、このプロパティを **false** に設定することで書き出し時間を短縮することもできます。                                                                                                                                                                                                           |
-| includeBindingSource       | Boolean | 4DVP および Microsoft Excel のみ。 true (デフォルト) の場合、カレントデータコンテキストの値を、書き出したドキュメントのセルの値としてエクスポートします (データコンテキスト自体はエクスポートされません)。 それ以外は false。 セルバインドは常にエクスポートされます。 データコンテキストおよびセルバインドの管理については、[VP SET DATA CONTEXT](#vp-set-data-context) および [VP SET BINDING PATH](#vp-set-binding-path) を参照ください。                                                                        |
+| includeBindingSource       | ブール     | 4DVP および Microsoft Excel のみ。 true (デフォルト) の場合、カレントデータコンテキストの値を、書き出したドキュメントのセルの値としてエクスポートします (データコンテキスト自体はエクスポートされません)。 それ以外は false。 セルバインドは常にエクスポートされます。 データコンテキストおよびセルバインドの管理については、[VP SET DATA CONTEXT](#vp-set-data-context) および [VP SET BINDING PATH](#vp-set-binding-path) を参照ください。                                                                        |
 | sheetIndex                 | number  | PDF のみ (任意) - 書き出すシートのインデックス (0 起点)。 -2 = 表示されている全シート (デフォルト)、-1 = カレントシートのみ                                                                                                                                                                                                                                                                                    |
-| pdfOptions                 | object  | PDFのみ (任意) - pdf 書き出しのオプション <p><table><tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr><tr><td>creator</td><td>text</td><td>変換されたドキュメントの変換元を作成したアプリケーション名。</td></tr><tr><td>title</td><td>text</td><td>ドキュメント名。</td></tr><tr><td>author</td><td>text</td><td>ドキュメントの作成者の名前。</td></tr><tr><td>keywords</td><td>text</td><td>ドキュメントに割り当てられたキーワード。</td></tr><tr><td>subject</td><td>text</td><td>ドキュメントの題名。</td></tr></table></p>                                                                                                                                                                                                                                                                                                           |
-| csvOptions                 | object  | CSVのみ (任意) - csv 書き出しのオプション <p><table><tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr><tr><td>range</td><td>object</td><td>複数セルのレンジオブジェクト</td></tr><tr><td>rowDelimiter</td><td>text</td><td>行の区切り文字。 デフォルト: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>text</td><td>カラムの区切り文字。 デフォルト: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                           |
+| pdfOptions                 | object  | PDFのみ (任意) - pdf 書き出しのオプション <p><table><tr><th>プロパティ</th><th>型</th><th>説明</th></tr><tr><td>creator</td><td>テキスト</td><td>変換されたドキュメントの変換元を作成したアプリケーション名。</td></tr><tr><td>title</td><td>テキスト</td><td>ドキュメント名。</td></tr><tr><td>author</td><td>テキスト</td><td>ドキュメントの作成者の名前。</td></tr><tr><td>keywords</td><td>テキスト</td><td>ドキュメントに割り当てられたキーワード。</td></tr><tr><td>subject</td><td>テキスト</td><td>ドキュメントの題名。</td></tr></table></p>                                                                                                                                                                                                                                                                                                           |
+| csvOptions                 | object  | CSVのみ (任意) - csv 書き出しのオプション <p><table><tr><th>プロパティ</th><th>型</th><th>説明</th></tr><tr><td>range</td><td>object</td><td>複数セルのレンジオブジェクト</td></tr><tr><td>rowDelimiter</td><td>テキスト</td><td>行の区切り文字。 デフォルト: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>テキスト</td><td>カラムの区切り文字。 デフォルト: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                           |
 | `\<customProperty>` | any     | コールバックメソッドの $3 引数を通して利用可能な任意のプロパティ。                                                                                                                                                                                                                                                                                                                             |
 
 **Excel 形式についての注意**:
@@ -989,15 +989,15 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 
 `VP EXPORT DOCUMENT` コマンドに任意の *paramObj* 引数を渡す場合、[`Formula`](https://doc.4d.com/4dv19/help/command/ja/page1597.html) コマンドを使って、書き出し完了時に実行される 4Dメソッドを呼び出すことができます。 コールバックメソッドは、以下の値をローカル変数として受け取ります:
 
-| 変数 |               | タイプ     | 説明                                    |
+| 変数 |               | 型       | 説明                                    |
 | -- | ------------- | ------- | ------------------------------------- |
-| $1 |               | text    | 4D View Pro エリアのオブジェクト名               |
-| $2 |               | text    | 書き出された 4D View Pro オブジェクトのファイルパス      |
+| $1 |               | テキスト    | 4D View Pro エリアのオブジェクト名               |
+| $2 |               | テキスト    | 書き出された 4D View Pro オブジェクトのファイルパス      |
 | $3 |               | object  | コマンドの *paramObj* 引数への参照               |
 | $4 |               | object  | メソッドから返されるステータスメッセージを格納したオブジェクト       |
 |    | .success      | boolean | 書き出しに成功した場合は true 、それ以外の場合は false     |
 |    | .errorCode    | integer | エラーコード。 4D あるいは JavaScript から返されます。   |
-|    | .errorMessage | text    | エラーメッセージ。 4D あるいは JavaScript から返されます。 |
+|    | .errorMessage | テキスト    | エラーメッセージ。 4D あるいは JavaScript から返されます。 |
 
 #### 例題 1
 
@@ -1085,26 +1085,26 @@ VP EXPORT DOCUMENT("ViewProArea";"c:\\tmp\\data.txt";New object("format";vk csv 
 
 <!-- REF #_method_.VP Export to object.Params -->
 
-| 引数         | タイプ    |    | 説明                                            |
+| 引数         | 型      |    | 説明                                            |
 | ---------- | ------ | -- | --------------------------------------------- |
-| vpAreaName | Text   | -> | 4D View Pro フォームオブジェクト名                       |
-| options    | Object | -> | 書き出しのオプション                                    |
-| 戻り値        | Object | <- | 4D View Pro オブジェクト|<!-- END REF -->
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                       |
+| options    | オブジェクト | -> | 書き出しのオプション                                    |
+| 戻り値        | オブジェクト | <- | 4D View Pro オブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Export to object` コマンドは、 <!-- REF #_method_.VP Export to object.Summary --> *vpAreaName* で指定した 4D View Pro エリアに関連付けられている 4D View Pro オブジェクトを返します<!-- END REF -->。 このコマンドによって、たとえば 4D View Pro エリアを 4Dデータベースのオブジェクトフィールドに保存することができます。
+`VP Export to object` コマンドは、 <!-- REF #_method_.VP Export to object.Summary --> *vpAreaName* で指定した 4D View Pro エリアに関連付けられている 4D View Pro オブジェクトを返します<!-- END REF -->. このコマンドによって、たとえば 4D View Pro エリアを 4Dデータベースのオブジェクトフィールドに保存することができます。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 *options* 引数として、必要に応じて以下の書き出しオプションを渡すことができます:
 
-| プロパティ                | タイプ     | 説明                                                                                                                                          |
-| -------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| includeFormatInfo    | Boolean | フォーマット (書式) 情報を含めるには true (デフォルト)、それ以外の場合には false。 フォーマット情報は特定の場合 (例: SVGへの書き出しなど) において有用です。 一方で、このプロパティを false に設定することで書き出し時間を短縮することもできます。 |
-| includeBindingSource | Boolean | true (デフォルト) の場合、カレントデータコンテキストの値を、書き出したオブジェクトのセルの値としてエクスポートします (データコンテキスト自体はエクスポートされません)。 それ以外は false。 セルバインドは常にエクスポートされます。                 |
+| プロパティ                | 型   | 説明                                                                                                                                          |
+| -------------------- | --- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| includeFormatInfo    | ブール | フォーマット (書式) 情報を含めるには true (デフォルト)、それ以外の場合には false。 フォーマット情報は特定の場合 (例: SVGへの書き出しなど) において有用です。 一方で、このプロパティを false に設定することで書き出し時間を短縮することもできます。 |
+| includeBindingSource | ブール | true (デフォルト) の場合、カレントデータコンテキストの値を、書き出したオブジェクトのセルの値としてエクスポートします (データコンテキスト自体はエクスポートされません)。 それ以外は false。 セルバインドは常にエクスポートされます。                 |
 
 4D View Pro オブジェクトについての詳細は [4D View Pro オブジェクト](configuring.md#4d-view-pro-オブジェクト) を参照ください。
 
@@ -1142,19 +1142,19 @@ $vpObj:=VP Export to object("vpArea";New object("includeFormatInfo";False))
 
 <!-- REF #_method_.VP Find.Params -->
 
-| 引数              | タイプ    |    | 説明                                   |
+| 引数              | 型      |    | 説明                                   |
 | --------------- | ------ | -- | ------------------------------------ |
-| rangeObj        | Object | -> | レンジオブジェクト                            |
-| searchValue     | Text   | -> | 検索値                                  |
-| searchCondition | Object | -> | 検索条件を格納したオブジェクト                      |
-| replaceValue    | Text   | -> | 置き換え値                                |
-| 戻り値             | Object | <- | レンジオブジェクト|<!-- END REF -->
+| rangeObj        | オブジェクト | -> | レンジオブジェクト                            |
+| searchValue     | テキスト   | -> | 検索値                                  |
+| searchCondition | オブジェクト | -> | 検索条件を格納したオブジェクト                      |
+| replaceValue    | テキスト   | -> | 置き換え値                                |
+| 戻り値             | オブジェクト | <- | レンジオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Find` コマンドは、 <!-- REF #_method_.VP Find.Summary -->*rangeObj* に指定したレンジ内で *searchValue* に指定した値を検索します<!-- END REF -->。 任意の引数を渡すことで、検索条件を詳細に指定したり、検索結果を置換したりすることができます。
+`VP Find` コマンドは、 <!-- REF #_method_.VP Find.Summary -->*rangeObj* に指定したレンジ内で *searchValue* に指定した値を検索します<!-- END REF -->. 任意の引数を渡すことで、検索条件を詳細に指定したり、検索結果を置換したりすることができます。
 
 *rangeObj* 引数として、検索対象のレンジを格納したオブジェクトを渡します。
 
@@ -1162,14 +1162,14 @@ $vpObj:=VP Export to object("vpArea";New object("includeFormatInfo";False))
 
 任意の *searchCondition* 引数を渡すことで、検索がどのように実行されるかを指定することができます。 以下のプロパティがサポートされています:
 
-| プロパティ       | タイプ     | 説明                                                                                                          |
-| ----------- | ------- | ----------------------------------------------------------------------------------------------------------- |
-| afterColumn | Integer | 検索を開始するカラムの直前のカラムの番号。 *rangeObj* 引数が統合されたレンジの場合、渡されるカラムの番号は最初のレンジのものでなければなりません。 デフォルト値: -1 (*rangeObj* の最初) |
-| afterRow    | Integer | 検索を開始する行の直前の行番号。 *rangeObj* 引数が統合されたレンジの場合、渡される行番号は最初のレンジのものでなければなりません。 デフォルト値: -1 (*rangeObj* の最初)         |
-| all         | Boolean | <li>true - *rangeObj* 内で *searchValue* の値に合致するセルはすべて返されます。</li><li>false - (デフォルト値) *rangeObj* 内で *searchValue* の値に合致する最初のセルのみが返されます。</li>                                                        |
-| flags       | Integer | <table><tr><td>`vk find flag exact match`</td><td>セルの中身全体が検索値と完全に一致する必要があります</td></tr><tr><td>`vk find flag ignore case`</td><td>文字の大小は区別されません。 例: "a" と "A" は同じとみなされます。</td></tr><tr><td>`vk find flag none`</td><td>検索フラグは指定されていません (デフォルト)。</td></tr><tr><td>`vk find flag use wild cards`</td><td>検索文字列においてワイルドカード文字 (\*,?) を使用できます。 ワイルドカードは、すべての文字列の比較に使用することができ、ワイルドカードによって置き換わる文字の数は指定されません:<li>\* は 0 から複数文字に使用可能です (例: "bl*" を検索した場合、"bl"、"black"、"blob" などが合致します)。</li><li>? は単一文字に使用可能です (例: "h?t" を検索した場合、"hot"、"hit" などが合致します)。</li></td></tr></table>フラグは組み合わせることができます。 例: <code>$search.flags:=vk find flag use wild cards+vk find flag ignore case</code>                                   |
-| order       | Integer | <table><tr><td>`vk find order by columns`</td><td>検索がカラムごとに実行されます。 カラムの各行が検索されたあとに次のカラムへと移動します。</td></tr><tr><td>`vk find order by rows`</td><td>検索が行ごとに実行されます。 行の各カラムが検索されたあとに次の行へと移動します (デフォルト)。</td></tr></table>                                                                                  |
-| target      | Integer | <table><tr><td>`vk find target formula`</td><td>セルフォーミュラ内で検索がおこなわれます。</td></tr><tr><td>`vk find target tag`</td><td>セルタグ内で検索がおこなわれます。</td></tr><tr><td>`vk find target text`</td><td>セルテキスト内で検索がおこなわれます (デフォルト)。</td></tr></table><p>フラグは組み合わせることができます。 例:<code>$search.target:=vk find target formula+vk find target text</code></p>                                                        |
+| プロパティ       | 型   | 説明                                                                                                          |
+| ----------- | --- | ----------------------------------------------------------------------------------------------------------- |
+| afterColumn | 整数  | 検索を開始するカラムの直前のカラムの番号。 *rangeObj* 引数が統合されたレンジの場合、渡されるカラムの番号は最初のレンジのものでなければなりません。 デフォルト値: -1 (*rangeObj* の最初) |
+| afterRow    | 整数  | 検索を開始する行の直前の行番号。 *rangeObj* 引数が統合されたレンジの場合、渡される行番号は最初のレンジのものでなければなりません。 デフォルト値: -1 (*rangeObj* の最初)         |
+| all         | ブール | <li>true - *rangeObj* 内で *searchValue* の値に合致するセルはすべて返されます。</li><li>false - (デフォルト値) *rangeObj* 内で *searchValue* の値に合致する最初のセルのみが返されます。</li>                                                        |
+| flags       | 整数  | <table><tr><td>`vk find flag exact match`</td><td>セルの中身全体が検索値と完全に一致する必要があります</td></tr><tr><td>`vk find flag ignore case`</td><td>文字の大小は区別されません。 例: "a" と "A" は同じとみなされます。</td></tr><tr><td>`vk find flag none`</td><td>検索フラグは指定されていません (デフォルト)。</td></tr><tr><td>`vk find flag use wild cards`</td><td>検索文字列においてワイルドカード文字 (\*,?) を使用できます。 ワイルドカードは、すべての文字列の比較に使用することができ、ワイルドカードによって置き換わる文字の数は指定されません:<li>\* は 0 から複数文字に使用可能です (例: "bl*" を検索した場合、"bl"、"black"、"blob" などが合致します)。</li><li>? は単一文字に使用可能です (例: "h?t" を検索した場合、"hot"、"hit" などが合致します)。</li></td></tr></table>フラグは組み合わせることができます。 例: <code>$search.flags:=vk find flag use wild cards+vk find flag ignore case</code>                                   |
+| order       | 整数  | <table><tr><td>`vk find order by columns`</td><td>検索がカラムごとに実行されます。 カラムの各行が検索されたあとに次のカラムへと移動します。</td></tr><tr><td>`vk find order by rows`</td><td>検索が行ごとに実行されます。 行の各カラムが検索されたあとに次の行へと移動します (デフォルト)。</td></tr></table>                                                                                  |
+| target      | 整数  | <table><tr><td>`vk find target formula`</td><td>セルフォーミュラ内で検索がおこなわれます。</td></tr><tr><td>`vk find target tag`</td><td>セルタグ内で検索がおこなわれます。</td></tr><tr><td>`vk find target text`</td><td>セルテキスト内で検索がおこなわれます (デフォルト)。</td></tr></table><p>フラグは組み合わせることができます。 例:<code>$search.target:=vk find target formula+vk find target text</code></p>                                                        |
 
 任意の *replaceValue* 引数として、*rangeObj* 内で見つかった *searchValue* の値のテキストを置換するテキストを渡すことができます。
 
@@ -1229,16 +1229,16 @@ End if
 
 <!-- REF #_method_.VP Find table.Params -->
 
-| 引数       | タイプ    |    | 説明                                |
+| 引数       | 型      |    | 説明                                |
 | -------- | ------ | -- | --------------------------------- |
-| rangeObj | Object | -> | セルのレンジ                            |
-| 戻り値      | Text   | <- | 表組みの名称|<!-- END REF -->
+| rangeObj | オブジェクト | -> | セルのレンジ                            |
+| 戻り値      | テキスト   | <- | 表組みの名称|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Find table` コマンドは、 <!-- REF #_method_.VP Find table.Summary -->*rangeObj* で指定したセルが所属する表組みの名称を返します<!-- END REF -->。
+`VP Find table` コマンドは、 <!-- REF #_method_.VP Find table.Summary -->*rangeObj* で指定したセルが所属する表組みの名称を返します<!-- END REF -->.
 
 *rangeObj* には、セルのレンジオブジェクトを渡します。 指定したセルが表組みの一部でない場合、コマンドは空の文字列を返します。
 
@@ -1270,15 +1270,15 @@ End if
 
 <!-- REF #_method_.VP FLUSH COMMANDS.Params -->
 
-| 引数         | タイプ  |    | 説明                                                 |
+| 引数         | 型    |    | 説明                                                 |
 | ---------- | ---- | -- | -------------------------------------------------- |
-| vpAreaName | Text | -> | 4D View Pro フォームオブジェクト名|<!-- END REF -->
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP FLUSH COMMANDS` コマンドは、 <!-- REF #_method_.VP FLUSH COMMANDS.Summary -->保存されているコマンドをただちに実行し、コマンドバッファをクリアします<!-- END REF -->。
+`VP FLUSH COMMANDS` コマンドは、 <!-- REF #_method_.VP FLUSH COMMANDS.Summary -->保存されているコマンドをただちに実行し、コマンドバッファをクリアします<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -1306,16 +1306,16 @@ End if
 
 <!-- REF #_method_.VP Font to object.Params -->
 
-| 引数   | タイプ    |    | 説明              |
+| 引数   | 型      |    | 説明              |
 | ---- | ------ | -- | --------------- |
-| font | Text   | -> | フォントのショートハンド文字列 |
-| 戻り値  | Object | <- | フォントオブジェクト      |
+| font | テキスト   | -> | フォントのショートハンド文字列 |
+| 戻り値  | オブジェクト | <- | フォントオブジェクト      |
 <!-- END REF -->
 
 
 #### 説明
 
-`VP Font to object` ユーティリティコマンドは、 <!-- REF #_method_.VP Font to object.Summary -->フォントのショートハンド文字列からオブジェクトを返します<!-- END REF -->。 このオブジェクトはその後、オブジェクト記法を通してフォントプロパティ設定を取得・設定するのに使用することができます。
+`VP Font to object` ユーティリティコマンドは、 <!-- REF #_method_.VP Font to object.Summary -->フォントのショートハンド文字列からオブジェクトを返します<!-- END REF -->. このオブジェクトはその後、オブジェクト記法を通してフォントプロパティ設定を取得・設定するのに使用することができます。
 
 *font* には、フォントのショートハンド文字列を渡してフォントのプロパティを指定します (例: "12 pt Arial")。 フォントのショートハンド文字列についての詳細は、[こちら](https://www.w3schools.com/cssref/pr_font_font.asp) を参照ください。
 
@@ -1356,17 +1356,17 @@ size:16pt
 
 <!-- REF #_method_.VP Get active cell.Params -->
 
-| 引数         | タイプ     |    | 説明                                        |
-| ---------- | ------- | -- | ----------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                   |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)               |
-| 戻り値        | Object  | <- | 単一セルのレンジオブジェクト|<!-- END REF -->
+| 引数         | 型      |    | 説明                                        |
+| ---------- | ------ | -- | ----------------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                   |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)               |
+| 戻り値        | オブジェクト | <- | 単一セルのレンジオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get active cell` コマンドは、 <!-- REF #_method_.VP Get active cell.Summary -->フォーカスを持ち、データ入力されようとしてるセル (アクティブセル) を参照する新しいレンジオブジェクトを返します<!-- END REF -->。
+`VP Get active cell` コマンドは、 <!-- REF #_method_.VP Get active cell.Summary -->フォーカスを持ち、データ入力されようとしてるセル (アクティブセル) を参照する新しいレンジオブジェクトを返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -1406,16 +1406,16 @@ $activeCell:=VP Get active cell("myVPArea")
 
 <!-- REF #_method_.VP Get binding path.Params -->
 
-| 引数       | タイプ    |    | 説明                                          |
+| 引数       | 型      |    | 説明                                          |
 | -------- | ------ | -- | ------------------------------------------- |
-| rangeObj | Object | -> | レンジオブジェクト                                   |
-| 戻り値      | Text   | <- | セルにバインドされた属性の名称 |<!-- END REF -->
+| rangeObj | オブジェクト | -> | レンジオブジェクト                                   |
+| 戻り値      | テキスト   | <- | セルにバインドされた属性の名称 |<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get binding path` コマンドは、 <!-- REF #_method_.VP Get binding path.Summary -->*rangeObj* で指定したセルにバインドされた属性の名称を返します<!-- END REF -->。
+`VP Get binding path` コマンドは、 <!-- REF #_method_.VP Get binding path.Summary -->*rangeObj* で指定したセルにバインドされた属性の名称を返します<!-- END REF -->.
 
 *rangeObj* 引数には、セルレンジまたは複合セルレンジのオブジェクトを渡します。 注:
 
@@ -1452,16 +1452,16 @@ $myAttribute:=VP Get binding path(VP Cell("ViewProArea"; 1; 0)) // "lastName"
 
 <!-- REF #_method_.VP Get cell style.Params -->
 
-| 引数       | タイプ    |    | 説明                                    |
+| 引数       | 型      |    | 説明                                    |
 | -------- | ------ | -- | ------------------------------------- |
-| rangeObj | Object | -> | レンジオブジェクト                             |
-| 戻り値      | Object | <- | スタイルオブジェクト|<!-- END REF -->
+| rangeObj | オブジェクト | -> | レンジオブジェクト                             |
+| 戻り値      | オブジェクト | <- | スタイルオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get cell style` コマンドは、 <!-- REF #_method_.VP Get cell style.Summary -->*rangeObj* 引数で指定したレンジの最初のセルの [スタイルオブジェクト](configuring.md#スタイルオブジェクト) を返します<!-- END REF -->。
+`VP Get cell style` コマンドは、 <!-- REF #_method_.VP Get cell style.Summary -->*rangeObj* 引数で指定したレンジの最初のセルの [スタイルオブジェクト](configuring.md#スタイルオブジェクト) を返します<!-- END REF -->.
 
 *rangeObj* 引数で、スタイルを取得するレンジを指定します。
 
@@ -1510,16 +1510,16 @@ $cellStyle:=VP Get cell style(VP Get selection("myDoc"))
 
 <!-- REF #_method_.VP Get column attributes.Params -->
 
-| 引数       | タイプ        |    | 説明                                         |
-| -------- | ---------- | -- | ------------------------------------------ |
-| rangeObj | Object     | -> | レンジオブジェクト                                  |
-| 戻り値      | Collection | <- | カラムプロパティのコレクション|<!-- END REF -->
+| 引数       | 型      |    | 説明                                         |
+| -------- | ------ | -- | ------------------------------------------ |
+| rangeObj | オブジェクト | -> | レンジオブジェクト                                  |
+| 戻り値      | コレクション | <- | カラムプロパティのコレクション|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get column attributes` コマンドは、 <!-- REF #_method_.VP Get column attributes.Summary -->*rangeObj* 引数で指定したレンジ内にあるカラムのプロパティのコレクションを返します<!-- END REF -->。
+`VP Get column attributes` コマンドは、 <!-- REF #_method_.VP Get column attributes.Summary -->*rangeObj* 引数で指定したレンジ内にあるカラムのプロパティのコレクションを返します<!-- END REF -->.
 
 *rangeObj* 引数には、属性を取得したいカラムのレンジを格納しているオブジェクトを渡します。
 
@@ -1552,17 +1552,17 @@ $attr:=VP Get column attributes($range)
 
 <!-- REF #_method_.VP Get column count.Params -->
 
-| 引数         | タイプ     |    | 説明                                 |
-| ---------- | ------- | -- | ---------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro エリアフォームオブジェクト名         |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)        |
-| 戻り値        | Integer | <- | カラムの総数 |<!-- END REF -->
+| 引数         | 型    |    | 説明                                 |
+| ---------- | ---- | -- | ---------------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro エリアフォームオブジェクト名         |
+| sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート)        |
+| 戻り値        | 整数   | <- | カラムの総数 |<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get column count` コマンドは、 <!-- REF #_method_.VP Get column count.Summary -->*sheet* 引数で指定したシートにおけるカラムの総数を返します<!-- END REF -->。
+`VP Get column count` コマンドは、 <!-- REF #_method_.VP Get column count.Summary -->*sheet* 引数で指定したシートにおけるカラムの総数を返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -1588,10 +1588,10 @@ $colCount:=VP Get column count("ViewProarea")
 
 <!-- REF #_method_.VP Get current sheet.Params -->
 
-| 引数         | タイプ     |    | 説明                                        |
-| ---------- | ------- | -- | ----------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                   |
-| 戻り値        | Integer | <- | カレントシートのインデックス|<!-- END REF -->
+| 引数         | 型    |    | 説明                                        |
+| ---------- | ---- | -- | ----------------------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                   |
+| 戻り値        | 整数   | <- | カレントシートのインデックス|<!-- END REF -->
 
 |
 
@@ -1634,17 +1634,17 @@ $index:=VP Get current sheet("ViewProArea")
 
 <!-- REF #_method_.VP Get data context.Params -->
 
-| 引数         | タイプ                      |    | 説明                                   |
+| 引数         | 型                        |    | 説明                                   |
 | ---------- | ------------------------ | -- | ------------------------------------ |
-| vpAreaName | Object                   | -> | 4D View Pro フォームオブジェクト名              |
-| sheet      | Integer                  | -> | データコンテキストを取得するシートのインデックス             |
+| vpAreaName | オブジェクト                   | -> | 4D View Pro フォームオブジェクト名              |
+| sheet      | 整数                       | -> | データコンテキストを取得するシートのインデックス             |
 | 戻り値        | Object &#124; Collection | <- | データコンテキスト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get data context` コマンドは、 <!-- REF #_method_.VP Get data context.Summary -->ワークシートのカレントのデータコンテキストを返します<!-- END REF -->。 返されるコンテキストには、データコンテキストの内容に対しておこなわれた変更を含みます。
+`VP Get data context` コマンドは、 <!-- REF #_method_.VP Get data context.Summary -->ワークシートのカレントのデータコンテキストを返します<!-- END REF -->. 返されるコンテキストには、データコンテキストの内容に対しておこなわれた変更を含みます。
 
 *sheet* には、データコンテキストを取得するシートのインデックスを渡します。 インデックスを省略した場合、コマンドはカレントワークシートのデータコンテキストを返します。 ワークシートのコンテキストが存在しない場合、コマンドは `Null` を返します。
 
@@ -1673,17 +1673,17 @@ $dataContext:=VP Get data context("ViewProArea") // {firstName:Freehafer,lastNam
 
 <!-- REF #_method_.VP Get default style.Params -->
 
-| 引数         | タイプ     |    | 説明                                      |
-| ---------- | ------- | -- | --------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro エリアフォームオブジェクト名              |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)             |
-| 戻り値        | Object  | <- | デフォルトスタイル設定 |<!-- END REF -->
+| 引数         | 型      |    | 説明                                      |
+| ---------- | ------ | -- | --------------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro エリアフォームオブジェクト名              |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)             |
+| 戻り値        | オブジェクト | <- | デフォルトスタイル設定 |<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get default style` コマンドは、 <!-- REF #_method_.VP Get default style.Summary -->シートのデフォルトスタイルオブジェクトを返します<!-- END REF -->。 返されるオブジェクトには、ドキュメントの基本的なレンダリングプロパティに加え、[VP SET DEFAULT STYLE](#vp-set-default-style) コマンドによって事前に設定されたデフォルトのスタイル設定 (あれば) が格納されます。 スタイルプロパティの詳細な情報については、[スタイルオブジェクトとスタイルシート](configuring.md#スタイルオブジェクトとスタイルシート) を参照ください。
+`VP Get default style` コマンドは、 <!-- REF #_method_.VP Get default style.Summary -->シートのデフォルトスタイルオブジェクトを返します<!-- END REF -->. 返されるオブジェクトには、ドキュメントの基本的なレンダリングプロパティに加え、[VP SET DEFAULT STYLE](#vp-set-default-style) コマンドによって事前に設定されたデフォルトのスタイル設定 (あれば) が格納されます。 スタイルプロパティの詳細な情報については、[スタイルオブジェクトとスタイルシート](configuring.md#スタイルオブジェクトとスタイルシート) を参照ください。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -1723,16 +1723,16 @@ $defaultStyle:=VP Get default style("myDoc")
 
 <!-- REF #_method_.VP Get formula.Params -->
 
-| 引数       | タイプ    |    | 説明                                |
+| 引数       | 型      |    | 説明                                |
 | -------- | ------ | -- | --------------------------------- |
-| rangeObj | Object | -> | レンジオブジェクト                         |
-| 戻り値      | Text   | <- | フォーミュラ|<!-- END REF -->
+| rangeObj | オブジェクト | -> | レンジオブジェクト                         |
+| 戻り値      | テキスト   | <- | フォーミュラ|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get formula` コマンドは、 <!-- REF #_method_.VP Get formula.Summary -->指定したセルレンジのフォーミュラを取得します<!-- END REF -->。
+`VP Get formula` コマンドは、 <!-- REF #_method_.VP Get formula.Summary -->指定したセルレンジのフォーミュラを取得します<!-- END REF -->.
 
 *rangeObj* 引数で、フォーミュラを取得したいレンジを指定します。 *rangeObj* 引数のレンジが複数セルあるいは複数レンジを指定している場合、最初のセルのフォーミュラが返されます。 *rangeObj* 引数がフォーミュラのないセルを指定している場合、コマンドは空の文字列を返します。
 
@@ -1756,18 +1756,18 @@ $result:=VP Get formula(VP Cell("ViewProArea";5;2)) // $result="SUM($A$1:$C$10)"
 
 <!-- REF #_method_.VP Get formula by name.Params -->
 
-| 引数         | タイプ    |    | 説明                                              |
+| 引数         | 型      |    | 説明                                              |
 | ---------- | ------ | -- | ----------------------------------------------- |
-| vpAreaName | Text   | -> | 4D View Pro フォームオブジェクト名                         |
-| name       | Text   | -> | 命名レンジの名前                                        |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                         |
+| name       | テキスト   | -> | 命名レンジの名前                                        |
 | scope      | Number | -> | ターゲットのスコープ (デフォルト=カレントシート)                      |
-| 戻り値        | Object | <- | 命名フォーミュラ、または命名レンジの定義|<!-- END REF -->
+| 戻り値        | オブジェクト | <- | 命名フォーミュラ、または命名レンジの定義|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get formula by name` コマンドは、 <!-- REF #_method_.VP Get formula by name.Summary --> *name* 引数で指定された名前の命名フォーミュラ、あるいは命名レンジに対応したフォーミュラとコメントを返します (定義されたスコープにそれらが存在しない場合には **null** が返されます)<!-- END REF -->。
+`VP Get formula by name` コマンドは、 <!-- REF #_method_.VP Get formula by name.Summary --> *name* 引数で指定された名前の命名フォーミュラ、あるいは命名レンジに対応したフォーミュラとコメントを返します (定義されたスコープにそれらが存在しない場合には **null** が返されます)<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -1782,10 +1782,10 @@ $result:=VP Get formula(VP Cell("ViewProArea";5;2)) // $result="SUM($A$1:$C$10)"
 
 戻り値のオブジェクトには、以下のプロパティが格納されています:
 
-| プロパティ   | タイプ  | 説明                                                                    |
+| プロパティ   | 型    | 説明                                                                    |
 | ------- | ---- | --------------------------------------------------------------------- |
-| formula | Text | 命名フォーミュラまたは命名レンジに対応したフォーミュラのテキスト。 命名レンジの場合、フォーミュラは連続した絶対セル参照として返されます。 |
-| comment | Text | 命名フォーミュラまたは命名レンジに対応したコメント                                             |
+| formula | テキスト | 命名フォーミュラまたは命名レンジに対応したフォーミュラのテキスト。 命名レンジの場合、フォーミュラは連続した絶対セル参照として返されます。 |
+| comment | テキスト | 命名フォーミュラまたは命名レンジに対応したコメント                                             |
 
 #### 例題
 
@@ -1811,16 +1811,16 @@ $formula:=VP Get formula by name("ViewProArea";"Total")
 
 <!-- REF #_method_.VP Get formulas.Params -->
 
-| 引数       | タイプ        |    | 説明                                        |
-| -------- | ---------- | -- | ----------------------------------------- |
-| rangeObj | Object     | -> | レンジオブジェクト                                 |
-| 戻り値      | Collection | <- | フォーミュラ値のコレクション|<!-- END REF -->
+| 引数       | 型      |    | 説明                                        |
+| -------- | ------ | -- | ----------------------------------------- |
+| rangeObj | オブジェクト | -> | レンジオブジェクト                                 |
+| 戻り値      | コレクション | <- | フォーミュラ値のコレクション|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get formulas` コマンドは、 <!-- REF #_method_.VP Get formulas.Summary -->*rangeObj* 引数で指定したレンジからフォーミュラを取得します<!-- END REF -->。
+`VP Get formulas` コマンドは、 <!-- REF #_method_.VP Get formulas.Summary -->*rangeObj* 引数で指定したレンジからフォーミュラを取得します<!-- END REF -->.
 
 *rangeObj* 引数で、フォーミュラを取得したいレンジを指定します。 *rangeObj* 引数のレンジが複数レンジを指定している場合、最初のレンジのフォーミュラが返されます。 *rangeObj* 引数のレンジにフォーミュラが一つも含まれていない場合には、コマンドは空の文字列を返します。
 
@@ -1855,17 +1855,17 @@ $formulas:=VP Get formulas(VP Cells("ViewProArea";5;1;2;3))
 
 <!-- REF #_method_.VP Get frozen panes.Params -->
 
-| 引数         | タイプ     |    | 説明                                                       |
-| ---------- | ------- | -- | -------------------------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                                  |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)                              |
-| 戻り値        | Object  | <- | 固定化されたカラムと行についての情報を格納したオブジェクト|<!-- END REF -->
+| 引数         | 型      |    | 説明                                                       |
+| ---------- | ------ | -- | -------------------------------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                                  |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)                              |
+| 戻り値        | オブジェクト | <- | 固定化されたカラムと行についての情報を格納したオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get frozen panes` コマンドは、 <!-- REF #_method_.VP Get frozen panes.Summary -->*vpAreaName* 引数で指定した View Pro エリア内の、固定化されたカラムと行についての情報を格納したオブジェクトを返します<!-- END REF -->。
+`VP Get frozen panes` コマンドは、 <!-- REF #_method_.VP Get frozen panes.Summary -->*vpAreaName* 引数で指定した View Pro エリア内の、固定化されたカラムと行についての情報を格納したオブジェクトを返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -1875,12 +1875,12 @@ $formulas:=VP Get formulas(VP Cells("ViewProArea";5;1;2;3))
 
 このコマンドは固定化されたカラムと行についてのオブジェクトを返します。 このオブジェクトには、次のプロパティが格納されることがあります:
 
-| プロパティ               | タイプ     | 説明                 |
-| ------------------- | ------- | ------------------ |
-| columnCount         | Integer | シートの左側にある固定化されたカラム |
-| trailingColumnCount | Integer | シートの右側にある固定化されたカラム |
-| rowCount            | Integer | シートの上側にある固定化された行   |
-| trailingRowCount    | Integer | シートの下側にある固定化された行   |
+| プロパティ               | 型  | 説明                 |
+| ------------------- | -- | ------------------ |
+| columnCount         | 整数 | シートの左側にある固定化されたカラム |
+| trailingColumnCount | 整数 | シートの右側にある固定化されたカラム |
+| rowCount            | 整数 | シートの上側にある固定化された行   |
+| trailingRowCount    | 整数 | シートの下側にある固定化された行   |
 
 #### 例題
 
@@ -1907,17 +1907,17 @@ $panesObj:=VP Get frozen panes("ViewProArea")
 
 <!-- REF #_method_.VP Get names.Params -->
 
-| 引数         | タイプ        |    | 説明                                           |
-| ---------- | ---------- | -- | -------------------------------------------- |
-| vpAreaName | Text       | -> | 4D View Pro フォームオブジェクト名                      |
-| scope      | Number     | -> | ターゲットのスコープ (デフォルト = カレントシート)                 |
-| 戻り値        | Collection | <- | 定義されたスコープ内に存在する名前|<!-- END REF -->
+| 引数         | 型      |    | 説明                                           |
+| ---------- | ------ | -- | -------------------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                      |
+| scope      | Number | -> | ターゲットのスコープ (デフォルト = カレントシート)                 |
+| 戻り値        | コレクション | <- | 定義されたスコープ内に存在する名前|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get names` コマンドは、 <!-- REF #_method_.VP Get names.Summary -->カレントシートまたは *scope* 引数で指定されたスコープ内において定義されているすべての "名前" のコレクションを返します<!-- END REF -->。
+`VP Get names` コマンドは、 <!-- REF #_method_.VP Get names.Summary -->カレントシートまたは *scope* 引数で指定されたスコープ内において定義されているすべての "名前" のコレクションを返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -1930,11 +1930,11 @@ $panesObj:=VP Get frozen panes("ViewProArea")
 
 返されるコレクションには、1つの名前につき 1つのオブジェクトが格納されています。 以下のオブジェクトプロパティが返されます:
 
-| プロパティ               | タイプ  | 説明             |
+| プロパティ               | 型    | 説明             |
 | ------------------- | ---- | -------------- |
-| result\[ ].name    | Text | セルまたはレンジ名      |
-| result\[ ].formula | Text | formula        |
-| result\[ ].comment | Text | 名前に割り当てられたコメント |
+| result\[ ].name    | テキスト | セルまたはレンジ名      |
+| result\[ ].formula | テキスト | formula        |
+| result\[ ].comment | テキスト | 名前に割り当てられたコメント |
 
 返されるプロパティは、命名された要素のタイプ (命名セル、命名レンジ、または命名フォーミュラ) に応じて異なります。
 
@@ -1958,17 +1958,17 @@ $list:=VP Get names("ViewProArea";2) // 3番目のシートにある名前
 
 <!-- REF #_method_.VP Get print info.Params -->
 
-| 引数         | タイプ     |    | 説明                                     |
-| ---------- | ------- | -- | -------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)            |
-| 戻り値        | Object  | <- | 印刷情報のオブジェクト|<!-- END REF -->
+| 引数         | 型      |    | 説明                                     |
+| ---------- | ------ | -- | -------------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)            |
+| 戻り値        | オブジェクト | <- | 印刷情報のオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get print info` コマンドは、 <!-- REF #_method_.VP Get print info.Summary -->*vpAreaName* 引数で指定したエリアの印刷属性を格納したオブジェクトを返します<!-- END REF -->。
+`VP Get print info` コマンドは、 <!-- REF #_method_.VP Get print info.Summary -->*vpAreaName* 引数で指定したエリアの印刷属性を格納したオブジェクトを返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -2040,16 +2040,16 @@ zoomFactor:1
 
 <!-- REF #_method_.VP Get row attributes.Params -->
 
-| 引数       | タイプ        |    | 説明                                       |
-| -------- | ---------- | -- | ---------------------------------------- |
-| rangeObj | Object     | -> | レンジオブジェクト                                |
-| 戻り値      | Collection | <- | 行プロパティのコレクション|<!-- END REF -->
+| 引数       | 型      |    | 説明                                       |
+| -------- | ------ | -- | ---------------------------------------- |
+| rangeObj | オブジェクト | -> | レンジオブジェクト                                |
+| 戻り値      | コレクション | <- | 行プロパティのコレクション|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get row attributes` コマンドは、 <!-- REF #_method_.VP Get row attributes.Summary -->*rangeObj* 引数で指定したレンジ内にある行のプロパティのコレクションを返します<!-- END REF -->。
+`VP Get row attributes` コマンドは、 <!-- REF #_method_.VP Get row attributes.Summary -->*rangeObj* 引数で指定したレンジ内にある行のプロパティのコレクションを返します<!-- END REF -->.
 
 *rangeObj* 引数には、属性を取得したい行のレンジを格納しているオブジェクトを渡します。
 
@@ -2080,17 +2080,17 @@ $attr:=VP Get row attributes($range)
 
 <!-- REF #_method_.VP Get row count.Params -->
 
-| 引数         | タイプ     |    | 説明                              |
-| ---------- | ------- | -- | ------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro エリアフォームオブジェクト名      |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)     |
-| 戻り値        | Integer | <- | 行の総数|<!-- END REF -->
+| 引数         | 型    |    | 説明                              |
+| ---------- | ---- | -- | ------------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro エリアフォームオブジェクト名      |
+| sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート)     |
+| 戻り値        | 整数   | <- | 行の総数|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get row count` コマンドは、 <!-- REF #_method_.VP Get row count.Summary -->*sheet* 引数で指定したシートにおける行の総数を返します<!-- END REF -->。
+`VP Get row count` コマンドは、 <!-- REF #_method_.VP Get row count.Summary -->*sheet* 引数で指定したシートにおける行の総数を返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -2116,17 +2116,17 @@ $rowCount:=VP Get row count("ViewProarea")
 
 <!-- REF #_method_.VP Get selection.Params -->
 
-| 引数         | タイプ     |    | 説明                                        |
-| ---------- | ------- | -- | ----------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro エリアフォームオブジェクト名                |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)               |
-| 戻り値        | Object  | <- | 複数セルのレンジオブジェクト|<!-- END REF -->
+| 引数         | 型      |    | 説明                                        |
+| ---------- | ------ | -- | ----------------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro エリアフォームオブジェクト名                |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)               |
+| 戻り値        | オブジェクト | <- | 複数セルのレンジオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get selection` コマンドは、 <!-- REF #_method_.VP Get selection.Summary -->現在選択されているセルを参照する新しいレンジオブジェクトを返します<!-- END REF -->。
+`VP Get selection` コマンドは、 <!-- REF #_method_.VP Get selection.Summary -->現在選択されているセルを参照する新しいレンジオブジェクトを返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -2160,10 +2160,10 @@ $currentSelection:=VP Get selection("myVPArea")
 
 <!-- REF #_method_.VP Get sheet count.Params -->
 
-| 引数         | タイプ     |    | 説明                               |
-| ---------- | ------- | -- | -------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名          |
-| 戻り値        | Integer | <- | シートの数|<!-- END REF -->
+| 引数         | 型    |    | 説明                               |
+| ---------- | ---- | -- | -------------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名          |
+| 戻り値        | 整数   | <- | シートの数|<!-- END REF -->
 
 |
 
@@ -2202,11 +2202,11 @@ $currentSelection:=VP Get selection("myVPArea")
 
 <!-- REF #_method_.VP Get sheet index.Params -->
 
-| 引数         | タイプ     |    | 説明                                    |
-| ---------- | ------- | -- | ------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名               |
-| name       | Text    | -> | シート名                                  |
-| 戻り値        | Integer | <- | シートのインデックス|<!-- END REF -->
+| 引数         | 型    |    | 説明                                    |
+| ---------- | ---- | -- | ------------------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名               |
+| name       | テキスト | -> | シート名                                  |
+| 戻り値        | 整数   | <- | シートのインデックス|<!-- END REF -->
 
 |
 
@@ -2242,11 +2242,11 @@ $index:=VP Get sheet index("ViewProArea";"Total first quarter") // 2 を返し�
 
 <!-- REF #_method_.VP Get sheet name.Params -->
 
-| 引数         | タイプ     |    | 説明                              |
-| ---------- | ------- | -- | ------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名         |
-| sheet      | Integer | -> | シートのインデックス                      |
-| 戻り値        | Text    | <- | シート名|<!-- END REF -->
+| 引数         | 型    |    | 説明                              |
+| ---------- | ---- | -- | ------------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名         |
+| sheet      | 整数   | -> | シートのインデックス                      |
+| 戻り値        | テキスト | <- | シート名|<!-- END REF -->
 
 |
 
@@ -2282,17 +2282,17 @@ $sheetName:=VP Get sheet name("ViewProArea";2)
 
 <!-- REF #_method_.VP Get sheet options.Params -->
 
-| 引数         | タイプ     |    | 説明                                        |
-| ---------- | ------- | -- | ----------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro エリアフォームオブジェクト名                |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)               |
-| 戻り値        | Object  | <- | シートオプションのブジェクト|<!-- END REF -->
+| 引数         | 型      |    | 説明                                        |
+| ---------- | ------ | -- | ----------------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro エリアフォームオブジェクト名                |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)               |
+| 戻り値        | オブジェクト | <- | シートオプションのブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get sheet options` コマンドは、 <!-- REF #_method_.VP Get sheet options.Summary -->*vpAreaName* で指定したエリア内の、カレントのシートオプションを格納したオブジェクトを返します<!-- END REF -->。
+`VP Get sheet options` コマンドは、 <!-- REF #_method_.VP Get sheet options.Summary -->*vpAreaName* で指定したエリア内の、カレントのシートオプションを格納したオブジェクトを返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -2324,11 +2324,11 @@ End if
 
 <!-- REF #_method_.VP Get show print lines.Params -->
 
-| 引数         | タイプ     |    | 説明                                                       |
-| ---------- | ------- | -- | -------------------------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                                  |
-| sheet      | Integer | <- | シートのインデックス                                               |
-| 戻り値        | Boolean | <- | 印刷線が表示状態であれば true、それ以外は false|<!-- END REF -->
+| 引数         | 型    |    | 説明                                                       |
+| ---------- | ---- | -- | -------------------------------------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                                  |
+| sheet      | 整数   | <- | シートのインデックス                                               |
+| 戻り値        | ブール  | <- | 印刷線が表示状態であれば true、それ以外は false|<!-- END REF -->
 
 |
 
@@ -2362,16 +2362,16 @@ End if
 
 <!-- REF #_method_.VP Get spans.Params -->
 
-| 引数       | タイプ    |    | 説明                                              |
+| 引数       | 型      |    | 説明                                              |
 | -------- | ------ | -- | ----------------------------------------------- |
-| rangeObj | Object | -> | レンジオブジェクト                                       |
-| 戻り値      | Object | <- | 指定レンジ内にあるセル結合のオブジェクト|<!-- END REF -->
+| rangeObj | オブジェクト | -> | レンジオブジェクト                                       |
+| 戻り値      | オブジェクト | <- | 指定レンジ内にあるセル結合のオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get spans` コマンドは、 <!-- REF #_method_.VP Get spans.Summary -->*rangeObj* で指定したレンジ内にあるセル結合を取得します<!-- END REF -->。
+`VP Get spans` コマンドは、 <!-- REF #_method_.VP Get spans.Summary -->*rangeObj* で指定したレンジ内にあるセル結合を取得します<!-- END REF -->.
 
 *rangeObj* 引数で、セル結合を取得したいレンジを指定します。 *rangeObj* にセル結合が含まれない場合には、空のレンジが返されます。
 
@@ -2402,18 +2402,18 @@ VP SET CELL STYLE($range;$style)
 
 <!-- REF #_method_.VP Get stylesheet.Params -->
 
-| 引数         | タイプ     |    | 説明                                       |
-| ---------- | ------- | -- | ---------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                  |
-| styleName  | Text    | -> | スタイルの名前                                  |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)              |
-| 戻り値        | Object  | <- | スタイルシートオブジェクト|<!-- END REF -->
+| 引数         | 型      |    | 説明                                       |
+| ---------- | ------ | -- | ---------------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                  |
+| styleName  | テキスト   | -> | スタイルの名前                                  |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)              |
+| 戻り値        | オブジェクト | <- | スタイルシートオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get stylesheet` コマンドは、 <!-- REF #_method_.VP Get stylesheet.Summary -->*styleName* で指定した、定義済のプロパティ値を格納したスタイルシートオブジェクトを返します<!-- END REF -->。
+`VP Get stylesheet` コマンドは、 <!-- REF #_method_.VP Get stylesheet.Summary -->*styleName* で指定した、定義済のプロパティ値を格納したスタイルシートオブジェクトを返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -2455,17 +2455,17 @@ borderTop:{color:green,style:10}
 
 <!-- REF #_method_.VP Get stylesheets.Params -->
 
-| 引数         | タイプ        |    | 説明                                              |
-| ---------- | ---------- | -- | ----------------------------------------------- |
-| vpAreaName | Text       | -> | 4D View Pro フォームオブジェクト名                         |
-| sheet      | Integer    | -> | ターゲットのスコープ (デフォルト = カレントシート)                    |
-| 戻り値        | Collection | <- | スタイルシートオブジェクトのコレクション|<!-- END REF -->
+| 引数         | 型      |    | 説明                                              |
+| ---------- | ------ | -- | ----------------------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                         |
+| sheet      | 整数     | -> | ターゲットのスコープ (デフォルト = カレントシート)                    |
+| 戻り値        | コレクション | <- | スタイルシートオブジェクトのコレクション|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get stylesheets` コマンドは、 <!-- REF #_method_.VP Get stylesheets.Summary -->*sheet* で指定されたスコープにおいて定義されているスタイルシートのコレクションを返します<!-- END REF -->。
+`VP Get stylesheets` コマンドは、 <!-- REF #_method_.VP Get stylesheets.Summary -->*sheet* で指定されたスコープにおいて定義されているスタイルシートのコレクションを返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -2521,13 +2521,13 @@ $styles:=VP Get stylesheets("ViewProArea")
 
 <!-- REF #_method_.VP Get table column attributes.Params -->
 
-| 引数         | タイプ     |    | 説明                                      |
-| ---------- | ------- | -- | --------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                 |
-| tableName  | Text    | -> | Table name                              |
-| column     | Integer | -> | 表の列のインデックス                              |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)             |
-| 戻り値        | Object  | <- | *column* の属性|<!-- END REF -->
+| 引数         | 型      |    | 説明                                      |
+| ---------- | ------ | -- | --------------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                 |
+| tableName  | テキスト   | -> | Table name                              |
+| column     | 整数     | -> | 表の列のインデックス                              |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)             |
+| 戻り値        | オブジェクト | <- | *column* の属性|<!-- END REF -->
 
 
 |
@@ -2535,7 +2535,7 @@ $styles:=VP Get stylesheets("ViewProArea")
 
 #### 説明
 
-`VP Get table column attributes` コマンドは、 <!-- REF #_method_.VP Get table column attributes.Summary -->*tableName* で指定した表組みの *column* でインデックスを指定した列のカレント属性を返します<!-- END REF -->。
+`VP Get table column attributes` コマンドは、 <!-- REF #_method_.VP Get table column attributes.Summary -->*tableName* で指定した表組みの *column* でインデックスを指定した列のカレント属性を返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
@@ -2544,12 +2544,12 @@ $styles:=VP Get stylesheets("ViewProArea")
 
 このコマンドは、*column* のカレント属性を格納するオブジェクトを返します:
 
-| プロパティ               | タイプ     | 説明                                                 |
+| プロパティ               | 型       | 説明                                                 |
 | ------------------- | ------- | -------------------------------------------------- |
-| dataField           | text    | データコンテキストにおける、表の列のプロパティ名。 表組みが自動で表示されている場合は返されません。 |
-| name                | text    | 表の列の名前。                                            |
-| footerText          | text    | 列のフッター値                                            |
-| footerFormula       | text    | 列のフッターのフォーミュラ。                                     |
+| dataField           | テキスト    | データコンテキストにおける、表の列のプロパティ名。 表組みが自動で表示されている場合は返されません。 |
+| name                | テキスト    | 表の列の名前。                                            |
+| footerText          | テキスト    | 列のフッター値                                            |
+| footerFormula       | テキスト    | 列のフッターのフォーミュラ。                                     |
 | filterButtonVisible | boolean | 列のフィルターボタンが表示されている場合には true、そうでない場合は false。        |
 
 *tableName* に指定した名称の表組みが見つからない場合、または *column* に指定したインデックスが列数を超える場合には、コマンドは **null** を返します。
@@ -2583,13 +2583,13 @@ End if
 
 <!-- REF #_method_.VP Get table column index.Params -->
 
-| 引数         | タイプ     |    | 説明                                              |
-| ---------- | ------- | -- | ----------------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                         |
-| tableName  | Text    | -> | Table name                                      |
-| columnName | Text    | -> | 列の名称                                            |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)                     |
-| 戻り値        | Integer | <- | *columnName* のインデックス|<!-- END REF -->
+| 引数         | 型    |    | 説明                                              |
+| ---------- | ---- | -- | ----------------------------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                         |
+| tableName  | テキスト | -> | Table name                                      |
+| columnName | テキスト | -> | 列の名称                                            |
+| sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート)                     |
+| 戻り値        | 整数   | <- | *columnName* のインデックス|<!-- END REF -->
 
 
 |
@@ -2597,7 +2597,7 @@ End if
 
 #### 説明
 
-`VP Get table column index` コマンドは、 <!-- REF #_method_.VP Get table column index.Summary -->*tableName* で指定した表組みの *columnName* で指定した列のインデックスを返します<!-- END REF -->。
+`VP Get table column index` コマンドは、 <!-- REF #_method_.VP Get table column index.Summary -->*tableName* で指定した表組みの *columnName* で指定した列のインデックスを返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
@@ -2639,13 +2639,13 @@ VP REMOVE TABLE COLUMNS($area; $tableName; $id)
 
 <!-- REF #_method_.VP Get table dirty rows.Params -->
 
-| 引数         | タイプ        |    | 説明                                                                    |
-| ---------- | ---------- | -- | --------------------------------------------------------------------- |
-| vpAreaName | Text       | -> | 4D View Pro フォームオブジェクト名                                               |
-| tableName  | Text       | -> | Table name                                                            |
-| reset      | Boolean    | -> | 現在の表から "ダーティ" ステータスをクリアするには true、そのままにするには false を指定します。 デフォルト = true |
-| sheet      | Integer    | -> | シートのインデックス (省略した場合はカレントシート)                                           |
-| 戻り値        | Collection | <- | 前回のリセット以降に変更された全項目を格納するオブジェクトのコレクション|<!-- END REF -->
+| 引数         | 型      |    | 説明                                                                    |
+| ---------- | ------ | -- | --------------------------------------------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                                               |
+| tableName  | テキスト   | -> | Table name                                                            |
+| reset      | ブール    | -> | 現在の表から "ダーティ" ステータスをクリアするには true、そのままにするには false を指定します。 デフォルト = true |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)                                           |
+| 戻り値        | コレクション | <- | 前回のリセット以降に変更された全項目を格納するオブジェクトのコレクション|<!-- END REF -->
 
 
 |
@@ -2653,7 +2653,7 @@ VP REMOVE TABLE COLUMNS($area; $tableName; $id)
 
 #### 説明
 
-`VP Get table dirty rows` コマンドは、 <!-- REF #_method_.VP Get table dirty rows.Summary -->*tableName* が指定する表組みの前回のリセット以降に変更された項目を含む *dirty row* ("ダーティ" な行) のオブジェクトのコレクションを返します<!-- END REF -->。
+`VP Get table dirty rows` コマンドは、 <!-- REF #_method_.VP Get table dirty rows.Summary -->*tableName* が指定する表組みの前回のリセット以降に変更された項目を含む *dirty row* ("ダーティ" な行) のオブジェクトのコレクションを返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
@@ -2667,7 +2667,7 @@ VP REMOVE TABLE COLUMNS($area; $tableName; $id)
 
 返されるコレクション内の各 *dirty row* ("ダーティ" な行) オブジェクトは、以下のプロパティを含みます:
 
-| プロパティ        | タイプ     | 説明              |
+| プロパティ        | 型       | 説明              |
 | ------------ | ------- | --------------- |
 | item         | object  | 変更された行の変更オブジェクト |
 | originalItem | object  | 変更前のオブジェクト      |
@@ -2706,19 +2706,19 @@ VP SET NUM VALUE(VP Cell("ViewProArea"; 0; 0); $dirty.length)
 
 <!-- REF #_method_.VP Get table range.Params -->
 
-| 引数         | タイプ     |    | 説明                                                      |
-| ---------- | ------- | -- | ------------------------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                                 |
-| tableName  | Text    | -> | Table name                                              |
-| onlyData   | Integer | -> | `vk table full range` (デフォルト) または `vk table data range` |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)                             |
-| 戻り値        | Object  | <- | 表組みが含まれるレンジ|<!-- END REF -->
+| 引数         | 型      |    | 説明                                                      |
+| ---------- | ------ | -- | ------------------------------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                                 |
+| tableName  | テキスト   | -> | Table name                                              |
+| onlyData   | 整数     | -> | `vk table full range` (デフォルト) または `vk table data range` |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)                             |
+| 戻り値        | オブジェクト | <- | 表組みが含まれるレンジ|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get table range` コマンドは、 <!-- REF #_method_.VP Get table range.Summary -->*tableName* で指定した表組みが含まれるレンジを返します<!-- END REF -->。
+`VP Get table range` コマンドは、 <!-- REF #_method_.VP Get table range.Summary -->*tableName* で指定した表組みが含まれるレンジを返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
@@ -2754,10 +2754,10 @@ VP SET NUM VALUE(VP Cell("ViewProArea"; 0; 0); $dirty.length)
 
 <!-- REF #_method_.VP Get table theme.Params -->
 
-| 引数         | タイプ                                            |    | 説明                                        |
+| 引数         | 型                                              |    | 説明                                        |
 | ---------- | ---------------------------------------------- | -- | ----------------------------------------- |
-| vpAreaName | Text                                           | -> | 4D View Pro フォームオブジェクト名                   |
-| tableName  | Text                                           | -> | Table name                                |
+| vpAreaName | テキスト                                           | -> | 4D View Pro フォームオブジェクト名                   |
+| tableName  | テキスト                                           | -> | Table name                                |
 | 戻り値        | [cs.ViewPro.TableTheme](classes.md#tabletheme) | <- | 現在の表テーマのプロパティ値|<!-- END REF -->
 
 
@@ -2766,7 +2766,7 @@ VP SET NUM VALUE(VP Cell("ViewProArea"; 0; 0); $dirty.length)
 
 #### 説明
 
-`VP Get table theme` コマンドは、 <!-- REF #_method_.VP Get table theme.Summary -->*tableName* で指定した表組みの現在のテーマのプロパティ値を返します<!-- END REF -->。 表組みのテーマは、[`VP CREATE TABLE`](#vp-create-table) または [`VP SET TABLE THEME`](#vp-set-table-theme) コマンド、もしくはインターフェースから設定することができます。
+`VP Get table theme` コマンドは、 <!-- REF #_method_.VP Get table theme.Summary -->*tableName* で指定した表組みの現在のテーマのプロパティ値を返します<!-- END REF -->. 表組みのテーマは、[`VP CREATE TABLE`](#vp-create-table) または [`VP SET TABLE THEME`](#vp-set-table-theme) コマンド、もしくはインターフェースから設定することができます。
 
 *vpAreaName* には 4D View Pro エリアの名前を渡します。*tableName* には表組みの名前を渡します。
 
@@ -2808,17 +2808,17 @@ $result:=Asserted(Value type($vTheme.theme)=Is object) // true
 
 <!-- REF #_method_.VP Get tables.Params -->
 
-| 引数         | タイプ        |    | 説明                                                   |
-| ---------- | ---------- | -- | ---------------------------------------------------- |
-| vpAreaName | Text       | -> | 4D View Pro フォームオブジェクト名                              |
-| sheet      | Integer    | -> | シートのインデックス (省略した場合はカレントシート)                          |
-| 戻り値        | Collection | <- | 表組みの名称をすべて格納するテキストのコレクション|<!-- END REF -->
+| 引数         | 型      |    | 説明                                                   |
+| ---------- | ------ | -- | ---------------------------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                              |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)                          |
+| 戻り値        | コレクション | <- | 表組みの名称をすべて格納するテキストのコレクション|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get tables` コマンドは、 <!-- REF #_method_.VP Get tables.Summary -->*sheet* で指定されたスコープにおいて定義されている表組み名のコレクションを返します<!-- END REF -->。
+`VP Get tables` コマンドは、 <!-- REF #_method_.VP Get tables.Summary -->*sheet* で指定されたスコープにおいて定義されている表組み名のコレクションを返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
@@ -2853,16 +2853,16 @@ $tables:=VP Get tables("ViewProArea")
 
 <!-- REF #_method_.VP Get value.Params -->
 
-| 引数       | タイプ    |    | 説明                                         |
+| 引数       | 型      |    | 説明                                         |
 | -------- | ------ | -- | ------------------------------------------ |
-| rangeObj | Object | -> | レンジオブジェクト                                  |
-| 戻り値      | Object | <- | セルの値を格納したオブジェクト|<!-- END REF -->
+| rangeObj | オブジェクト | -> | レンジオブジェクト                                  |
+| 戻り値      | オブジェクト | <- | セルの値を格納したオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get value` コマンドは、 <!-- REF #_method_.VP Get value.Summary -->指定されたセルレンジからセルの値を取得します<!-- END REF -->。
+`VP Get value` コマンドは、 <!-- REF #_method_.VP Get value.Summary -->指定されたセルレンジからセルの値を取得します<!-- END REF -->.
 
 *rangeObj* 引数で、値を取得したいレンジを指定します。
 
@@ -2870,10 +2870,10 @@ $tables:=VP Get tables("ViewProArea")
 
 返されるオブジェクトには `value` プロパティと、JS日付値の場合に返される `time` プロパティが格納されます:
 
-| プロパティ | タイプ                                | 説明                           |
+| プロパティ | 型                                  | 説明                           |
 | ----- | ---------------------------------- | ---------------------------- |
 | value | Integer, Real, Boolean, Text, Date | *rangeObj* レンジの値 (ただし時間型を除く) |
-| time  | Real                               | 値が js 日付型の場合、時間値 (秒単位)       |
+| time  | 実数                                 | 値が js 日付型の場合、時間値 (秒単位)       |
 
 返されるオブジェクトに日付または時間が含まれている場合、これは "日付時間"として扱われ、以下のように補完されます:
 
@@ -2908,16 +2908,16 @@ End if
 
 <!-- REF #_method_.VP Get values.Params -->
 
-| 引数       | タイプ        |    | 説明                                  |
-| -------- | ---------- | -- | ----------------------------------- |
-| rangeObj | Object     | -> | レンジオブジェクト                           |
-| 戻り値      | Collection | <- | 値のコレクション|<!-- END REF -->
+| 引数       | 型      |    | 説明                                  |
+| -------- | ------ | -- | ----------------------------------- |
+| rangeObj | オブジェクト | -> | レンジオブジェクト                           |
+| 戻り値      | コレクション | <- | 値のコレクション|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Get values` コマンドは、 <!-- REF #_method_.VP Get values.Summary --> *rangeObj* で指定したレンジの値をすべて取得します<!-- END REF -->。
+`VP Get values` コマンドは、 <!-- REF #_method_.VP Get values.Summary --> *rangeObj* で指定したレンジの値をすべて取得します<!-- END REF -->.
 
 *rangeObj* 引数で、値を取得したいレンジを指定します。 *rangeObj* のレンジが複数レンジを指定している場合、最初のレンジのみが使用されます。
 
@@ -2926,10 +2926,10 @@ End if
 * 第1レベルのコレクションの各要素は行を表し、値のサブコレクションを格納しています。
 * 各サブコレクションはその行のセル値を格納しています。 値は整数、実数、ブール、テキスト、Null のいずれかです。 値が日付または時間の場合には、以下のプロパティを持つオブジェクトとして返されます:
 
- | プロパティ | タイプ  | 説明                     |
+ | プロパティ | 型    | 説明                     |
  | ----- | ---- | ---------------------- |
  | value | Date | セルの値 (時間部分を除く)         |
- | time  | Real | 値が js 日付型の場合、時間値 (秒単位) |
+ | time  | 実数   | 値が js 日付型の場合、時間値 (秒単位) |
 
 日付または時間は 日付時間 (datetime) として扱われ、以下のように補完されます:
 
@@ -2961,10 +2961,10 @@ $result:=VP Get values(VP Cells("ViewProArea";2;3;5;3))
 
 <!-- REF #_method_.VP Get workbook options.Params -->
 
-| 引数         | タイプ    |    | 説明                                                |
+| 引数         | 型      |    | 説明                                                |
 | ---------- | ------ | -- | ------------------------------------------------- |
-| vpAreaName | Text   | -> | 4D View Pro フォームオブジェクト名                           |
-| 戻り値        | Object | <- | ワークブックオプションを格納したオブジェクト|<!-- END REF -->
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                           |
+| 戻り値        | オブジェクト | <- | ワークブックオプションを格納したオブジェクト|<!-- END REF -->
 
 |
 
@@ -3000,17 +3000,17 @@ $workbookOptions:=VP Get workbook options("ViewProArea")
 
 <!-- REF #_method_.VP IMPORT DOCUMENT.Params -->
 
-| 引数         | タイプ    |    | 説明                                    |
+| 引数         | 型      |    | 説明                                    |
 | ---------- | ------ | -- | ------------------------------------- |
-| vpAreaName | Text   | -> | 4D View Pro フォームオブジェクト名               |
-| filePath   | Text   | -> | ドキュメントのパス名                            |
-| paramObj   | Object | -> | 読み込みのオプション|<!-- END REF -->
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名               |
+| filePath   | テキスト   | -> | ドキュメントのパス名                            |
+| paramObj   | オブジェクト | -> | 読み込みのオプション|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP IMPORT DOCUMENT` コマンドは、 <!-- REF #_method_.VP IMPORT DOCUMENT.Summary -->*vpAreaName* で指定した 4D View Pro エリアに、*filePath* 引数のドキュメントを読み込んで表示させます<!-- END REF -->。 エリア内に挿入されていたデータがあれば、それらは読み込んだドキュメントによって置換されます。
+`VP IMPORT DOCUMENT` コマンドは、 <!-- REF #_method_.VP IMPORT DOCUMENT.Summary -->*vpAreaName* で指定した 4D View Pro エリアに、*filePath* 引数のドキュメントを読み込んで表示させます<!-- END REF -->. エリア内に挿入されていたデータがあれば、それらは読み込んだドキュメントによって置換されます。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -3029,14 +3029,14 @@ $workbookOptions:=VP Get workbook options("ViewProArea")
 
 任意の *paramObj* 引数を渡すことで、読み込まれるドキュメントのプロパティを定義することができます:
 
-| 引数         |                 | タイプ    | 説明                                                                                                                                                                             |
+| 引数         |                 | 型      | 説明                                                                                                                                                                             |
 | ---------- | --------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | formula    |                 | object | 書き出し終了時に実行させるコールバックメソッド名。 メソッドは [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) コマンドと組み合わせて使用する必要があります。 [コールバックメソッドの渡し方](#コールバックメソッド-フォーミュラ-の渡し方) を参照ください。 |
-| password   |                 | text   | Microsoft Excel のみ (任意) - MS Excel ドキュメントの保護に使用されているパスワード。                                                                                                                     |
+| password   |                 | テキスト   | Microsoft Excel のみ (任意) - MS Excel ドキュメントの保護に使用されているパスワード。                                                                                                                     |
 | csvOptions |                 | object | CSV読み込みのオプション                                                                                                                                                                  |
 |            | range           | object | 書き出されるデータの、最初のセルを格納しているセルレンジ。 指定されたレンジがセルレンジではない場合、レンジの最初のセルが使用されます。                                                                                                           |
-|            | rowDelimiter    | text   | 行の区切り文字。 渡されなかった場合、区切り文字は 4D によって自動的に定義されます。                                                                                                                                   |
-|            | columnDelimiter | text   | カラムの区切り文字。 デフォルト: ","                                                                                                                                                          |
+|            | rowDelimiter    | テキスト   | 行の区切り文字。 渡されなかった場合、区切り文字は 4D によって自動的に定義されます。                                                                                                                                   |
+|            | columnDelimiter | テキスト   | カラムの区切り文字。 デフォルト: ","                                                                                                                                                          |
 
 > CSV形式およびユーザー定義区切りの値 (DSV) に関する詳細については、こちらの [Wikipedia の記事](https://en.wikipedia.org/wiki/Delimiter-separated_values) (英文) を参照ください。
 
@@ -3101,16 +3101,16 @@ VP IMPORT DOCUMENT("ViewProArea";"c:\\import\\my-file.txt";New object("csvOption
 
 <!-- REF #_method_.VP IMPORT FROM OBJECT.Params -->
 
-| 引数         | タイプ    |    | 説明                                            |
+| 引数         | 型      |    | 説明                                            |
 | ---------- | ------ | -- | --------------------------------------------- |
-| vpAreaName | Text   | -> | 4D View Pro フォームオブジェクト名                       |
-| viewPro    | Object | -> | 4D View Pro オブジェクト|<!-- END REF -->
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                       |
+| viewPro    | オブジェクト | -> | 4D View Pro オブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP IMPORT FROM OBJECT` コマンドは、 <!-- REF #_method_.VP IMPORT FROM OBJECT.Summary -->*vpAreaName* で指定した 4D View Pro エリアに *viewPro* の 4D View Pro オブジェクトを読み込んで表示させます<!-- END REF -->。 エリア内に挿入されていたデータがあれば、それらは読み込んだオブジェクトのデータで置換されます。
+`VP IMPORT FROM OBJECT` コマンドは、 <!-- REF #_method_.VP IMPORT FROM OBJECT.Summary -->*vpAreaName* で指定した 4D View Pro エリアに *viewPro* の 4D View Pro オブジェクトを読み込んで表示させます<!-- END REF -->. エリア内に挿入されていたデータがあれば、それらは読み込んだオブジェクトのデータで置換されます。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -3138,15 +3138,15 @@ VP IMPORT FROM OBJECT("ViewProArea1";[VPWorkBooks]SPBook)
 
 <!-- REF #_method_.VP INSERT COLUMNS.Params -->
 
-| 引数       | タイプ    |    | 説明                                   |
+| 引数       | 型      |    | 説明                                   |
 | -------- | ------ | -- | ------------------------------------ |
-| rangeObj | Object | -> | レンジオブジェクト|<!-- END REF -->
+| rangeObj | オブジェクト | -> | レンジオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP INSERT COLUMNS` コマンドは、 <!-- REF #_method_.VP INSERT COLUMNS.Summary -->*rangeObj* 引数で指定したレンジにカラムを挿入します<!-- END REF -->。
+`VP INSERT COLUMNS` コマンドは、 <!-- REF #_method_.VP INSERT COLUMNS.Summary -->*rangeObj* 引数で指定したレンジにカラムを挿入します<!-- END REF -->.
 
 *rangeObj* には、開始カラム (新しいカラムが挿入される場所を指定するカラム) と挿入するカラムの数を格納したオブジェクトを渡します。 挿入するカラムの数が省略された場合 (定義されていない場合)、カラムは 1列だけ挿入されます。
 
@@ -3175,15 +3175,15 @@ VP INSERT COLUMNS(VP Column("ViewProArea";1;3))
 
 <!-- REF #_method_.VP INSERT ROWS.Params -->
 
-| 引数       | タイプ    |    | 説明                                   |
+| 引数       | 型      |    | 説明                                   |
 | -------- | ------ | -- | ------------------------------------ |
-| rangeObj | Object | -> | レンジオブジェクト|<!-- END REF -->
+| rangeObj | オブジェクト | -> | レンジオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP INSERT ROWS` コマンドは、 <!-- REF #_method_.VP INSERT ROWS.Summary -->*rangeObj* 引数で指定したレンジに行を挿入します<!-- END REF -->。
+`VP INSERT ROWS` コマンドは、 <!-- REF #_method_.VP INSERT ROWS.Summary -->*rangeObj* 引数で指定したレンジに行を挿入します<!-- END REF -->.
 
 *rangeObj* には、開始行 (新しい行が挿入される場所を指定する行) と挿入する行数を格納したオブジェクトを渡します。 挿入する行数が省略された場合 (定義されていない場合) には、1行だけ挿入されます。
 
@@ -3219,20 +3219,20 @@ VP INSERT ROWS(VP Row("ViewProArea";0;3))
 
 <!-- REF #_method_.VP INSERT TABLE COLUMNS.Params -->
 
-| 引数          | タイプ     |    | 説明                                                     |
-| ----------- | ------- | -- | ------------------------------------------------------ |
-| vpAreaName  | Text    | -> | 4D View Pro フォームオブジェクト名                                |
-| tableName   | Text    | -> | Table name                                             |
-| column      | Integer | -> | 列の挿入場所を指定する表組み内のインデックス                                 |
-| count       | Text    | -> | 挿入する列の数 (>0)                                           |
-| insertAfter | Integer | -> | `vk table insert before` または `vk table insert after`   |
-| sheet       | Integer | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
+| 引数          | 型    |    | 説明                                                     |
+| ----------- | ---- | -- | ------------------------------------------------------ |
+| vpAreaName  | テキスト | -> | 4D View Pro フォームオブジェクト名                                |
+| tableName   | テキスト | -> | Table name                                             |
+| column      | 整数   | -> | 列の挿入場所を指定する表組み内のインデックス                                 |
+| count       | テキスト | -> | 挿入する列の数 (>0)                                           |
+| insertAfter | 整数   | -> | `vk table insert before` または `vk table insert after`   |
+| sheet       | 整数   | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP INSERT TABLE COLUMNS` コマンドは、 <!-- REF #_method_.VP INSERT TABLE COLUMNS.Summary -->*tableName* で指定した表組みの *column* で指定した列インデックスに、1つまたは *count* で指定した数の空の列を挿入します<!-- END REF -->。
+`VP INSERT TABLE COLUMNS` コマンドは、 <!-- REF #_method_.VP INSERT TABLE COLUMNS.Summary -->*tableName* で指定した表組みの *column* で指定した列インデックスに、1つまたは *count* で指定した数の空の列を挿入します<!-- END REF -->.
 
 このコマンドで列を挿入した場合、通常は [VP SET TABLE COLUMN ATTRIBUTES](#vp-set-table-column-attributes) コマンドを使用してその内容を編集します。
 
@@ -3273,20 +3273,20 @@ VP INSERT ROWS(VP Row("ViewProArea";0;3))
 
 <!-- REF #_method_.VP INSERT TABLE ROWS.Params -->
 
-| 引数          | タイプ     |    | 説明                                                     |
-| ----------- | ------- | -- | ------------------------------------------------------ |
-| vpAreaName  | Text    | -> | 4D View Pro フォームオブジェクト名                                |
-| tableName   | Text    | -> | Table name                                             |
-| row         | Integer | -> | 行の挿入場所を指定する表組み内のインデックス                                 |
-| count       | Text    | -> | 挿入する行の数 (>0)                                           |
-| insertAfter | Integer | -> | `vk table insert before` または `vk table insert after`   |
-| sheet       | Integer | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
+| 引数          | 型    |    | 説明                                                     |
+| ----------- | ---- | -- | ------------------------------------------------------ |
+| vpAreaName  | テキスト | -> | 4D View Pro フォームオブジェクト名                                |
+| tableName   | テキスト | -> | Table name                                             |
+| row         | 整数   | -> | 行の挿入場所を指定する表組み内のインデックス                                 |
+| count       | テキスト | -> | 挿入する行の数 (>0)                                           |
+| insertAfter | 整数   | -> | `vk table insert before` または `vk table insert after`   |
+| sheet       | 整数   | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP INSERT TABLE ROWS` コマンドは、 <!-- REF #_method_.VP INSERT TABLE ROWS.Summary -->*tableName* で指定した表組みの *row* で指定した行インデックスに、1つまたは *count* で指定した数の空の行を挿入します<!-- END REF -->。
+`VP INSERT TABLE ROWS` コマンドは、 <!-- REF #_method_.VP INSERT TABLE ROWS.Summary -->*tableName* で指定した表組みの *row* で指定した行インデックスに、1つまたは *count* で指定した数の空の行を挿入します<!-- END REF -->.
 
 *insertAfter* パラメーターに以下の定数のいずれかを渡すことで、*row* に指定した行インデックスの前または後に行を挿入するかを指定できます。
 
@@ -3358,17 +3358,17 @@ VP INSERT TABLE COLUMNS("ViewProArea"; "PeopleTable"; 1; 2)
 
 <!-- REF #_method_.VP MOVE CELLS.Params -->
 
-| 引数          | タイプ    |    | 説明                                  |
+| 引数          | 型      |    | 説明                                  |
 | ----------- | ------ | -- | ----------------------------------- |
-| originRange | Object | -> | 移動 (コピー) 元のセルレンジ                    |
-| targetRange | Object | -> | 値・書式・フォーミュラの移動 (コピー) 先レンジ           |
-| options     | Object | -> | 追加のオプション|<!-- END REF -->
+| originRange | オブジェクト | -> | 移動 (コピー) 元のセルレンジ                    |
+| targetRange | オブジェクト | -> | 値・書式・フォーミュラの移動 (コピー) 先レンジ           |
+| options     | オブジェクト | -> | 追加のオプション|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP MOVE CELLS` コマンドは、 <!-- REF #_method_.VP MOVE CELLS.Summary -->*originRange* の値・書式・フォーミュラを *targetRange* に移動またはコピーします<!-- END REF -->。
+`VP MOVE CELLS` コマンドは、 <!-- REF #_method_.VP MOVE CELLS.Summary -->*originRange* の値・書式・フォーミュラを *targetRange* に移動またはコピーします<!-- END REF -->.
 
 *originRange* と *targetRange* は異なる 4D View Pro エリアを参照することができます。
 
@@ -3378,10 +3378,10 @@ VP INSERT TABLE COLUMNS("ViewProArea"; "PeopleTable"; 1; 2)
 
 *options* は、複数のプロパティを持ちます:
 
-| プロパティ        | タイプ     | 説明                                                                              |
-| ------------ | ------- | ------------------------------------------------------------------------------- |
-| copy         | Boolean | *originRange* のセルの値・書式・フォーミュラをコマンド実行後に削除するかどうかを指定します:<ul><li>削除するには false (デフォルト)。</li><li>保持するには true。</li></ul> |
-| pasteOptions | Longint | ペーストする内容を指定します。 とりうる値: <p><table><tr><th>値</th><th>説明</th></tr><tr><td>`vk clipboard options all` (デフォルト)</td><td>値・フォーマット・フォーミュラを含むすべてのデータオブジェクトをペーストします。</td></tr><tr><td>`vk clipboard options formatting`</td><td>フォーマットだけをペーストします。</td></tr><tr><td>`vk clipboard options formulas`</td><td>フォーミュラだけをペーストします。</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>フォーミュラとフォーマットをペーストします。</td></tr><tr><td>`vk clipboard options values`</td><td>値だけをペーストします。</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>値とフォーマットをペーストします。</td></tr></table></p>                                |
+| プロパティ        | 型    | 説明                                                                              |
+| ------------ | ---- | ------------------------------------------------------------------------------- |
+| copy         | ブール  | *originRange* のセルの値・書式・フォーミュラをコマンド実行後に削除するかどうかを指定します:<ul><li>削除するには false (デフォルト)。</li><li>保持するには true。</li></ul> |
+| pasteOptions | 倍長整数 | ペーストする内容を指定します。 とりうる値: <p><table><tr><th>値</th><th>説明</th></tr><tr><td>`vk clipboard options all` (デフォルト)</td><td>値・フォーマット・フォーミュラを含むすべてのデータオブジェクトをペーストします。</td></tr><tr><td>`vk clipboard options formatting`</td><td>フォーマットだけをペーストします。</td></tr><tr><td>`vk clipboard options formulas`</td><td>フォーミュラだけをペーストします。</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>フォーミュラとフォーマットをペーストします。</td></tr><tr><td>`vk clipboard options values`</td><td>値だけをペーストします。</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>値とフォーマットをペーストします。</td></tr></table></p>                                |
 
 
 [ワークブックオプション](#vp-set-workbook-options) で定義されている貼り付けオプションが考慮されます。
@@ -3417,18 +3417,18 @@ VP MOVE CELLS($originRange; $targetRange; $options)
 
 <!-- REF #_method_.VP Name.Params -->
 
-| 引数         | タイプ     |    | 説明                                              |
-| ---------- | ------- | -- | ----------------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                         |
-| rangeName  | Text    | -> | 既存のレンジ名                                         |
-| sheet      | Integer | -> | レンジの場所 (省略時はカレントシート)                            |
-| 戻り値        | Object  | <- | rangeName のレンジオブジェクト|<!-- END REF -->
+| 引数         | 型      |    | 説明                                              |
+| ---------- | ------ | -- | ----------------------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                         |
+| rangeName  | テキスト   | -> | 既存のレンジ名                                         |
+| sheet      | 整数     | -> | レンジの場所 (省略時はカレントシート)                            |
+| 戻り値        | オブジェクト | <- | rangeName のレンジオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Name` コマンドは、 <!-- REF #_method_.VP Name.Summary -->命名レンジを参照する新しいレンジオブジェクトを返します<!-- END REF -->。
+`VP Name` コマンドは、 <!-- REF #_method_.VP Name.Summary -->命名レンジを参照する新しいレンジオブジェクトを返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -3461,15 +3461,15 @@ VP SET NUM VALUE($name;285;"$#,###.00")
 
 <!-- REF #_method_.VP NEW DOCUMENT.Params -->
 
-| 引数         | タイプ  |    | 説明                                                 |
+| 引数         | 型    |    | 説明                                                 |
 | ---------- | ---- | -- | -------------------------------------------------- |
-| vpAreaName | Text | -> | 4D View Pro フォームオブジェクト名|<!-- END REF -->
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP NEW DOCUMENT` コマンドは、 <!-- REF #_method_.VP NEW DOCUMENT.Summary -->*vpAreaName* で指定した 4D View Pro エリアに、新規のデフォルトドキュメントを読み込んで表示させます<!-- END REF -->。 エリア内に挿入されていたデータがあれば、それらは新規の空ドキュメントによって置換されます。
+`VP NEW DOCUMENT` コマンドは、 <!-- REF #_method_.VP NEW DOCUMENT.Summary -->*vpAreaName* で指定した 4D View Pro エリアに、新規のデフォルトドキュメントを読み込んで表示させます<!-- END REF -->. エリア内に挿入されていたデータがあれば、それらは新規の空ドキュメントによって置換されます。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -3496,26 +3496,26 @@ VP NEW DOCUMENT("myVPArea")
 
 <!-- REF #_method_.VP Object to font.Params -->
 
-| 引数      | タイプ    |    | 説明                                         |
+| 引数      | 型      |    | 説明                                         |
 | ------- | ------ | -- | ------------------------------------------ |
-| fontObj | Object | -> | フォントオブジェクト                                 |
-| 戻り値     | Text   | <- | フォントのショートハンド文字列|<!-- END REF -->
+| fontObj | オブジェクト | -> | フォントオブジェクト                                 |
+| 戻り値     | テキスト   | <- | フォントのショートハンド文字列|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Object to font` コマンドは、 <!-- REF #_method_.VP Object to font.Summary -->*fontObj* 引数で指定したフォントオブジェクトからフォントのショートハンド文字列を返します<!-- END REF -->。
+`VP Object to font` コマンドは、 <!-- REF #_method_.VP Object to font.Summary -->*fontObj* 引数で指定したフォントオブジェクトからフォントのショートハンド文字列を返します<!-- END REF -->.
 
 *fontObj* には、フォントプロパティを格納するオブジェクトを渡します。 以下のプロパティがサポートされています:
 
-| プロパティ   | タイプ  | 説明                                                                                             | とりうる値                                                                                                                                                                                                                                                                                                                    | 必須 |
+| プロパティ   | 型    | 説明                                                                                             | とりうる値                                                                                                                                                                                                                                                                                                                    | 必須 |
 | ------- | ---- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -- |
-| family  | text | フォントを指定します。                                                                                    | 標準の、あるいは一般的なフォントファミリー。 例:  "Arial", "Helvetica", "serif", "arial,sans-serif"                                                                                                                                                                                                                                             | ◯  |
-| size    | text | フォントのサイズを定義します。"font-size/line-height" の形で line-height をfont-size に追加することもできます: 例: "15pt/20pt" | 以下のいずれかの単位を伴う数値: <li>"em", "ex", "%", "px", "cm", "mm", "in", "pt", "pc", "ch", "rem", "vh", "vw", "vmin", "vmax"</li>あるいは、以下の定数のいずれか 1つ:<li>`vk font size large`</li><li>`vk font size larger`</li><li>`vk font size x large`</li><li>`vk font size xx large`</li><li>`vk font size small`</li><li>`vk font size smaller`</li><li>`vk font size x small`</li><li>`vk font size xx small`</li>                                            | ◯  |
-| style   | text | フォントのスタイル。                                                                                     | <li>`vk font style italic`</li><li>`vk font style oblique`</li>                                                                                                                                                                                                                                                                     | ×  |
-| variant | text | スモールキャピタルのフォントを定義します。                                                                          | <li>`vk font variant small caps`</li>                                                                                                                                                                                                                                                                                               | ×  |
-| weight  | text | フォントの太さを定義します。                                                                                 | <li>`vk font weight 100`</li><li>`vk font weight 200`</li><li>`vk font weight 300`</li><li>`vk font weight 400`</li><li>`vk font weight 500`</li><li>`vk font weight 600`</li><li>`vk font weight 700`</li><li>`vk font weight 800`</li><li>`vk font weight 900`</li><li>`vk font weight bold`</li><li>`vk font weight bolder`</li><li>`vk font weight lighter`</li> | ×  |
+| family  | テキスト | フォントを指定します。                                                                                    | 標準の、あるいは一般的なフォントファミリー。 例:  "Arial", "Helvetica", "serif", "arial,sans-serif"                                                                                                                                                                                                                                             | ◯  |
+| size    | テキスト | フォントのサイズを定義します。"font-size/line-height" の形で line-height をfont-size に追加することもできます: 例: "15pt/20pt" | 以下のいずれかの単位を伴う数値: <li>"em", "ex", "%", "px", "cm", "mm", "in", "pt", "pc", "ch", "rem", "vh", "vw", "vmin", "vmax"</li>あるいは、以下の定数のいずれか 1つ:<li>`vk font size large`</li><li>`vk font size larger`</li><li>`vk font size x large`</li><li>`vk font size xx large`</li><li>`vk font size small`</li><li>`vk font size smaller`</li><li>`vk font size x small`</li><li>`vk font size xx small`</li>                                            | ◯  |
+| style   | テキスト | フォントのスタイル。                                                                                     | <li>`vk font style italic`</li><li>`vk font style oblique`</li>                                                                                                                                                                                                                                                                     | ×  |
+| variant | テキスト | スモールキャピタルのフォントを定義します。                                                                          | <li>`vk font variant small caps`</li>                                                                                                                                                                                                                                                                                               | ×  |
+| weight  | テキスト | フォントの太さを定義します。                                                                                 | <li>`vk font weight 100`</li><li>`vk font weight 200`</li><li>`vk font weight 300`</li><li>`vk font weight 400`</li><li>`vk font weight 500`</li><li>`vk font weight 600`</li><li>`vk font weight 700`</li><li>`vk font weight 800`</li><li>`vk font weight 900`</li><li>`vk font weight bold`</li><li>`vk font weight bolder`</li><li>`vk font weight lighter`</li> | ×  |
 
 このオブジェクトは [VP Font to object](#vp-font-to-object) コマンドで作成することができます。
 
@@ -3556,17 +3556,17 @@ $cellStyle.font:=VP Object to font($font)
 
 <!-- REF #_method_.PASTE FROM OBJECT.Params -->
 
-| 引数         | タイプ     |    | 説明                                        |
-| ---------- | ------- | -- | ----------------------------------------- |
-| rangeObj   | Object  | -> | セルレンジオブジェクト                               |
-| dataObject | Object  | -> | ペーストするデータを格納したオブジェクト                      |
-| options    | Longint | -> | ペーストする内容を指定します|<!-- END REF -->
+| 引数         | 型      |    | 説明                                        |
+| ---------- | ------ | -- | ----------------------------------------- |
+| rangeObj   | オブジェクト | -> | セルレンジオブジェクト                               |
+| dataObject | オブジェクト | -> | ペーストするデータを格納したオブジェクト                      |
+| options    | 倍長整数   | -> | ペーストする内容を指定します|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP PASTE FROM OBJECT` コマンドは、 <!-- REF #_method_.PASTE FROM OBJECT.Summary -->*dataObject* のコンテンツ・スタイル・フォーミュラを *rangeObj* セルレンジオブジェクトにペーストします<!-- END REF -->。
+`VP PASTE FROM OBJECT` コマンドは、 <!-- REF #_method_.PASTE FROM OBJECT.Summary -->*dataObject* のコンテンツ・スタイル・フォーミュラを *rangeObj* セルレンジオブジェクトにペーストします<!-- END REF -->.
 
 *rangeObj* には、値・フォーマット・フォーミュラをペーストする先のセルレンジオブジェクトを渡します。 *rangeObj* が複数のセルを参照している場合は、最初のセルだけが使用されます。
 
@@ -3602,16 +3602,16 @@ dataObject に存在しない要素を *options* で指定した場合 (例: フ
 
 <!-- REF #_method_.VP PRINT.Params -->
 
-| 引数         | タイプ     |    | 説明                                                     |
-| ---------- | ------- | -- | ------------------------------------------------------ |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                                |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
+| 引数         | 型    |    | 説明                                                     |
+| ---------- | ---- | -- | ------------------------------------------------------ |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                                |
+| sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP PRINT` コマンドは、 <!-- REF #_method_.VP PRINT.Summary -->*vpAreaName* 引数で指定したエリアを印刷する印刷ダイアログウィンドウを開きます<!-- END REF -->。
+`VP PRINT` コマンドは、 <!-- REF #_method_.VP PRINT.Summary -->*vpAreaName* 引数で指定したエリアを印刷する印刷ダイアログウィンドウを開きます<!-- END REF -->.
 
 *vpAreaName* には、印刷する 4D View Pro エリアの名前を渡します。 コマンドによって、システムの印刷ダイアログウィンドウが開かれ、プリンターを指定したりページプロパティを定義したりすることができます。
 > 印刷ダイアログウィンドウで定義されるプロパティはプリンター用紙のためのもので、4D View Pro エリアの印刷プロパティではありません。 4D View Pro エリアの印刷プロパティは [VP SET PRINT INFO](#vp-set-print-info) コマンドで定義されます。 プリンターと 4D View Pro エリアの両プロパティが合致することが強く推奨されます。 そうでない場合、ドキュメントが期待通りに印刷されない可能性があります。
@@ -3651,15 +3651,15 @@ dataObject に存在しない要素を *options* で指定した場合 (例: フ
 
 <!-- REF #_method_.VP RECOMPUTE FORMULAS.Params -->
 
-| 引数         | タイプ  |    | 説明                                                 |
+| 引数         | 型    |    | 説明                                                 |
 | ---------- | ---- | -- | -------------------------------------------------- |
-| vpAreaName | Text | -> | 4D View Pro フォームオブジェクト名|<!-- END REF -->
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP RECOMPUTE FORMULAS` コマンドは、 <!-- REF #_method_.VP RECOMPUTE FORMULAS.Summary -->*vpAreaName* 引数で指定したエリアの全フォーミュラを即座に評価します<!-- END REF -->。 デフォルトでは、4D はフォーミュラを挿入時、読み込み時、そして書き出し時のタイミングで自動計算します。 `VP RECOMPUTE FORMULAS` コマンドを使用すると、任意のタイミングで強制的に計算を実行することができます(例: フォーミュラに変更が加えられた場合、またはフォーミュラがデータベースへの呼び出しを格納している場合など)。 コマンドは [VP FLUSH COMMANDS](#vp-flush-commands) コマンドを実行することで、実行保留されていたコマンドをすべて実行し、コマンドバッファをクリアします。
+`VP RECOMPUTE FORMULAS` コマンドは、 <!-- REF #_method_.VP RECOMPUTE FORMULAS.Summary -->*vpAreaName* 引数で指定したエリアの全フォーミュラを即座に評価します<!-- END REF -->. デフォルトでは、4D はフォーミュラを挿入時、読み込み時、そして書き出し時のタイミングで自動計算します。 `VP RECOMPUTE FORMULAS` コマンドを使用すると、任意のタイミングで強制的に計算を実行することができます(例: フォーミュラに変更が加えられた場合、またはフォーミュラがデータベースへの呼び出しを格納している場合など)。 コマンドは [VP FLUSH COMMANDS](#vp-flush-commands) コマンドを実行することで、実行保留されていたコマンドをすべて実行し、コマンドバッファをクリアします。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 > `VP RECOMPUTE FORMULAS` コマンドを使用する前に [VP SUSPEND COMPUTING](#vp-suspend-computing)コマンドが実行されていないようにしてください。
@@ -3684,17 +3684,17 @@ VP RECOMPUTE FORMULAS("ViewProArea")
 
 <!-- REF #_method_.VP REMOVE NAME.Params -->
 
-| 引数         | タイプ     |    | 説明                                                    |
-| ---------- | ------- | -- | ----------------------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                               |
-| name       | Text    | -> | 削除する命名レンジまたは命名フォーミュラの名前                               |
-| scope      | Integer | -> | ターゲットのスコープ (デフォルト=カレントシート)|<!-- END REF -->
+| 引数         | 型    |    | 説明                                                    |
+| ---------- | ---- | -- | ----------------------------------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                               |
+| name       | テキスト | -> | 削除する命名レンジまたは命名フォーミュラの名前                               |
+| scope      | 整数   | -> | ターゲットのスコープ (デフォルト=カレントシート)|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP REMOVE NAME` コマンドは、 <!-- REF #_method_.VP REMOVE NAME.Summary -->*name* の命名レンジまたは命名フォーミュラを、定義された *scope* のスコープから削除します<!-- END REF -->。
+`VP REMOVE NAME` コマンドは、 <!-- REF #_method_.VP REMOVE NAME.Summary -->*name* の命名レンジまたは命名フォーミュラを、定義された *scope* のスコープから削除します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -3728,10 +3728,10 @@ $formula:=VP Get formula by name("ViewProArea";"Total1")
 
 <!-- REF #_method_.VP REMOVE SHEET.Params -->
 
-| 引数         | タイプ     |    | 説明                                        |
-| ---------- | ------- | -- | ----------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                   |
-| index      | Integer | -> | 削除するシートのインデックス|<!-- END REF -->
+| 引数         | 型    |    | 説明                                        |
+| ---------- | ---- | -- | ----------------------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                   |
+| index      | 整数   | -> | 削除するシートのインデックス|<!-- END REF -->
 
 |
 
@@ -3741,7 +3741,7 @@ $formula:=VP Get formula by name("ViewProArea";"Total1")
 
 #### 説明
 
-`VP REMOVE SHEET` コマンドは、 <!-- REF #_method_.VP REMOVE SHEET.Summary -->*vpAreaName* 引数で指定したエリアにロードされているドキュメントから、*index* 引数で指定したインデックスのシートを削除します<!-- END REF -->。
+`VP REMOVE SHEET` コマンドは、 <!-- REF #_method_.VP REMOVE SHEET.Summary -->*vpAreaName* 引数で指定したエリアにロードされているドキュメントから、*index* 引数で指定したインデックスのシートを削除します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
@@ -3769,13 +3769,13 @@ VP REMOVE SHEET("ViewProArea";2)
 
 <!-- REF #_method_.VP REMOVE SPAN.Params -->
 
-| 引数       | タイプ    |    | 説明                                   |
+| 引数       | 型      |    | 説明                                   |
 | -------- | ------ | -- | ------------------------------------ |
-| rangeObj | Object | -> | レンジオブジェクト|<!-- END REF -->
+| rangeObj | オブジェクト | -> | レンジオブジェクト|<!-- END REF -->
 |
 #### 説明
 
-`VP REMOVE SPAN` コマンドは、 <!-- REF #_method_.VP REMOVE SPAN.Summary -->*rangeObj* で指定したレンジ内のセル結合を解除します<!-- END REF -->。
+`VP REMOVE SPAN` コマンドは、 <!-- REF #_method_.VP REMOVE SPAN.Summary -->*rangeObj* で指定したレンジ内のセル結合を解除します<!-- END REF -->.
 
 *rangeObj* には、セル結合しているレンジのオブジェクトを渡します。 レンジ内の結合セルは個別セルに分割されます。
 
@@ -3809,17 +3809,17 @@ VP REMOVE SHEET("ViewProArea";2)
 
 <!-- REF #_method_.VP REMOVE STYLESHEET.Params -->
 
-| 引数         | タイプ     |    | 説明                                                     |
-| ---------- | ------- | -- | ------------------------------------------------------ |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                                |
-| styleName  | Text    | -> | 削除するスタイルの名前                                            |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
+| 引数         | 型    |    | 説明                                                     |
+| ---------- | ---- | -- | ------------------------------------------------------ |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                                |
+| styleName  | テキスト | -> | 削除するスタイルの名前                                            |
+| sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP REMOVE STYLESHEET` コマンドは、 <!-- REF #_method_.VP REMOVE STYLESHEET.Summary -->*vpAreaName* 引数で指定したエリアから、*styleName* で指定したスタイルシートを削除します<!-- END REF -->。
+`VP REMOVE STYLESHEET` コマンドは、 <!-- REF #_method_.VP REMOVE STYLESHEET.Summary -->*vpAreaName* 引数で指定したエリアから、*styleName* で指定したスタイルシートを削除します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -3856,12 +3856,12 @@ VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 
 <!-- REF #_method_.VP REMOVE TABLE.Params -->
 
-| 引数         | タイプ     |    | 説明                                                     |
-| ---------- | ------- | -- | ------------------------------------------------------ |
-| vpAreaName | Text    | -> | 4D View Pro エリア名                                       |
-| tableName  | Text    | -> | 削除する表組みの名称                                             |
-| options    | Integer | -> | 追加のオプション                                               |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
+| 引数         | 型    |    | 説明                                                     |
+| ---------- | ---- | -- | ------------------------------------------------------ |
+| vpAreaName | テキスト | -> | 4D View Pro エリア名                                       |
+| tableName  | テキスト | -> | 削除する表組みの名称                                             |
+| options    | 整数   | -> | 追加のオプション                                               |
+| sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
 
 |
 
@@ -3910,19 +3910,19 @@ VP REMOVE TABLE("ViewProArea"; "people"; vk table remove style; 2)
 
 <!-- REF #_method_.VP REMOVE TABLE COLUMNS.Params -->
 
-| 引数         | タイプ     |    | 説明                                                     |
-| ---------- | ------- | -- | ------------------------------------------------------ |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                                |
-| tableName  | Text    | -> | Table name                                             |
-| column     | Integer | -> | 列の削除の開始場所を指定する表組み内のインデックス                              |
-| count      | Text    | -> | 削除する列の数 (>0)                                           |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
+| 引数         | 型    |    | 説明                                                     |
+| ---------- | ---- | -- | ------------------------------------------------------ |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                                |
+| tableName  | テキスト | -> | Table name                                             |
+| column     | 整数   | -> | 列の削除の開始場所を指定する表組み内のインデックス                              |
+| count      | テキスト | -> | 削除する列の数 (>0)                                           |
+| sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP REMOVE TABLE COLUMNS` コマンドは、 <!-- REF #_method_.VP REMOVE TABLE COLUMNS.Summary -->*tableName* で指定した表組みの *column* で指定した列インデックスから、1つまたは *count* で指定した数の列を削除します<!-- END REF -->。 このコマンドは、値とスタイルを削除します。
+`VP REMOVE TABLE COLUMNS` コマンドは、 <!-- REF #_method_.VP REMOVE TABLE COLUMNS.Summary -->*tableName* で指定した表組みの *column* で指定した列インデックスから、1つまたは *count* で指定した数の列を削除します<!-- END REF -->. このコマンドは、値とスタイルを削除します。
 
 このコマンドは、シートではなく、*tableName* の表組みから列を削除します。 したがって、シートの総列数は、このコマンドの影響を受けません。 表組みより右側にデータがある場合は、削除された列の数に応じて自動的に左に移動します。
 
@@ -3958,19 +3958,19 @@ VP REMOVE TABLE COLUMNS("ViewProArea"; "dataTable"; 3; 2)
 
 <!-- REF #_method_.VP REMOVE TABLE ROWS.Params -->
 
-| 引数         | タイプ     |    | 説明                                                     |
-| ---------- | ------- | -- | ------------------------------------------------------ |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                                |
-| tableName  | Text    | -> | Table name                                             |
-| row        | Integer | -> | 行の削除の開始場所を指定する表組み内のインデックス                              |
-| count      | Text    | -> | 削除する行の数 (>0)                                           |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
+| 引数         | 型    |    | 説明                                                     |
+| ---------- | ---- | -- | ------------------------------------------------------ |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                                |
+| tableName  | テキスト | -> | Table name                                             |
+| row        | 整数   | -> | 行の削除の開始場所を指定する表組み内のインデックス                              |
+| count      | テキスト | -> | 削除する行の数 (>0)                                           |
+| sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP REMOVE TABLE ROWS` コマンドは、 <!-- REF #_method_.VP REMOVE TABLE ROWS.Summary -->*tableName* で指定した表組みの *row* で指定した行インデックスから、1つまたは *count* で指定した数の行を削除します<!-- END REF -->。 このコマンドは、値とスタイルを削除します。
+`VP REMOVE TABLE ROWS` コマンドは、 <!-- REF #_method_.VP REMOVE TABLE ROWS.Summary -->*tableName* で指定した表組みの *row* で指定した行インデックスから、1つまたは *count* で指定した数の行を削除します<!-- END REF -->. このコマンドは、値とスタイルを削除します。
 
 このコマンドは、シートではなく、*tableName* の表組みから行を削除します。 したがって、シートの総行数は、このコマンドの影響を受けません。 表組みより下側にデータがある場合は、削除された行の数に応じて自動的に上に移動します。
 
@@ -4001,16 +4001,16 @@ VP REMOVE TABLE ROWS("ViewProArea"; "dataTable"; 3; 2)
 
 <!-- REF #_method_.VP RESET SELECTION.Params -->
 
-| 引数         | タイプ     |    | 説明                                                     |
-| ---------- | ------- | -- | ------------------------------------------------------ |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                                |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
+| 引数         | 型    |    | 説明                                                     |
+| ---------- | ---- | -- | ------------------------------------------------------ |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                                |
+| sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP RESET SELECTION` コマンドは、 <!-- REF #_method_.VP RESET SELECTION.Summary -->すべてのセル選択を解除し、その結果カレントセレクション (またはアクティブセル) がなくなります<!-- END REF -->。
+`VP RESET SELECTION` コマンドは、 <!-- REF #_method_.VP RESET SELECTION.Summary -->すべてのセル選択を解除し、その結果カレントセレクション (またはアクティブセル) がなくなります<!-- END REF -->.
 
 > 4D View Pro コマンドに対して定義されているデフォルトのアクティブセル (A1 セル) は残ります。
 
@@ -4047,16 +4047,16 @@ VP RESET SELECTION("myVPArea")
 
 <!-- REF #_method_.VP RESIZE TABLE.Params -->
 
-| 引数        | タイプ    |    | 説明                              |
+| 引数        | 型      |    | 説明                              |
 | --------- | ------ | -- | ------------------------------- |
-| rangeObj  | Object | -> | 表組みの新しいレンジ                      |
-| tableName | Text   | -> | 表組み名|<!-- END REF -->
+| rangeObj  | オブジェクト | -> | 表組みの新しいレンジ                      |
+| tableName | テキスト   | -> | 表組み名|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP RESIZE TABLE` コマンドは、 <!-- REF #_method_.VP RESIZE TABLE.Summary -->*rangeObj* で指定したレンジの大きさに *tableName* で指定した表組みをリサイズします<!-- END REF -->。
+`VP RESIZE TABLE` コマンドは、 <!-- REF #_method_.VP RESIZE TABLE.Summary -->*rangeObj* で指定したレンジの大きさに *tableName* で指定した表組みをリサイズします<!-- END REF -->.
 
 次のルールが適用されます:
 
@@ -4112,15 +4112,15 @@ VP RESIZE TABLE(VP Cells("ViewProArea"; 0; 1; 4; 6); "PeopleTable")
 
 <!-- REF #_method_.VP RESUME COMPUTING.Params -->
 
-| 引数         | タイプ  |    | 説明                                                 |
+| 引数         | 型    |    | 説明                                                 |
 | ---------- | ---- | -- | -------------------------------------------------- |
-| vpAreaName | Text | -> | 4D View Pro フォームオブジェクト名|<!-- END REF -->
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP RESUME COMPUTING` コマンドは、 <!-- REF #_method_.VP RESUME COMPUTING.Summary --> *vpAreaName* 引数で指定したエリア内の計算を再開します<!-- END REF -->。
+`VP RESUME COMPUTING` コマンドは、 <!-- REF #_method_.VP RESUME COMPUTING.Summary --> *vpAreaName* 引数で指定したエリア内の計算を再開します<!-- END REF -->.
 
 このコマンドは 4D View Pro 内の計算機能を再開します。 計算停止中におこなった編集に影響されたフォーミュラは更新され、`VP RESUME COMPUTING` 実行後に追加されるフォーミュラは計算されます。
 
@@ -4143,17 +4143,17 @@ VP RESIZE TABLE(VP Cells("ViewProArea"; 0; 1; 4; 6); "PeopleTable")
 
 <!-- REF #_method_.VP Row.Params -->
 
-| 引数         | タイプ     |    | 説明                      |
-| ---------- | ------- | -- | ----------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名 |
-| row        | Integer | -> | 行のインデックス                |
-| rowCount   | Integer | -> | 行数                      |
+| 引数         | 型    |    | 説明                      |
+| ---------- | ---- | -- | ----------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名 |
+| row        | 整数   | -> | 行のインデックス                |
+| rowCount   | 整数   | -> | 行数                      |
 
 |sheet  |Integer|->|Sheet index (current sheet if omitted)| |Result |Object|<-|Range object of row(s)|<!-- END REF -->
 
 #### 説明
 
-`VP Row` コマンドは、 <!-- REF #_method_.VP Row.Summary -->特定の行、あるいは複数の行を参照する新しいレンジオブジェクトを返します<!-- END REF -->。
+`VP Row` コマンドは、 <!-- REF #_method_.VP Row.Summary -->特定の行、あるいは複数の行を参照する新しいレンジオブジェクトを返します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -4188,15 +4188,15 @@ $row:=VP Row("ViewProArea";9) // 10行目
 
 <!-- REF #_method_.VP ROW AUTOFIT.Params -->
 
-| 引数       | タイプ    |    | 説明                                   |
+| 引数       | 型      |    | 説明                                   |
 | -------- | ------ | -- | ------------------------------------ |
-| rangeObj | Object | -> | レンジオブジェクト|<!-- END REF -->
+| rangeObj | オブジェクト | -> | レンジオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP ROW AUTOFIT` コマンドは、 <!-- REF #_method_.VP ROW AUTOFIT.Summary -->*rangeObj* 引数のレンジ内にある行を、そのコンテンツに応じて自動的にリサイズします<!-- END REF -->。
+`VP ROW AUTOFIT` コマンドは、 <!-- REF #_method_.VP ROW AUTOFIT.Summary -->*rangeObj* 引数のレンジ内にある行を、そのコンテンツに応じて自動的にリサイズします<!-- END REF -->.
 
 *rangeObj* 引数として、サイズを自動調整したい行を格納しているレンジオブジェクトを渡します。
 
@@ -4225,22 +4225,22 @@ $row:=VP Row("ViewProArea";9) // 10行目
 
 <!-- REF #_method_.VP Run offscreen area.Params -->
 
-| 引数         | タイプ    |    | 説明                                                                               |
+| 引数         | 型      |    | 説明                                                                               |
 | ---------- | ------ | -- | -------------------------------------------------------------------------------- |
-| parameters | Object | -> | オフスクリーンエリアの属性を格納するオブジェクト                                                         |
+| parameters | オブジェクト | -> | オフスクリーンエリアの属性を格納するオブジェクト                                                         |
 | 戻り値        | 複合     | <- | `.onEvent` オブジェクトの `.result` プロパティ、または値を返さない場合には Null|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP Run offscreen area` コマンドは、 <!-- REF #_method_.VP Run offscreen area.Summary -->メモリ内にオフスクリーンエリアを作成し、これを利用して 4D View Pro エリアのコマンドやファンクションを処理することができます<!-- END REF -->。
+`VP Run offscreen area` コマンドは、 <!-- REF #_method_.VP Run offscreen area.Summary -->メモリ内にオフスクリーンエリアを作成し、これを利用して 4D View Pro エリアのコマンドやファンクションを処理することができます<!-- END REF -->.
 
 *parameters* オブジェクトには、以下の任意のプロパティのいずれかを渡します。 これらのプロパティは `onEvent` コールバックメソッド内において `This` コマンドを介して利用可能であり、そのインスタンスを参照することができます:
 
-| プロパティ                    | タイプ             | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| プロパティ                    | 型               | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | ------------------------ | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| area                     | text            | オフスクリーンエリアの名前。 省略時あるいは null の場合、一般的な名前 (例: "OffscreenArea1") が割り当てられます。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| area                     | テキスト            | オフスクリーンエリアの名前。 省略時あるいは null の場合、一般的な名前 (例: "OffscreenArea1") が割り当てられます。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | onEvent                  | object (フォーミュラ) | オフスクリーンエリアの準備ができたときに実行されるコールバックメソッド。 以下のいずれかを渡すことができます:<li>クラスの `onEvent` 関数</li><li>`Formula` オブジェクト</li>デフォルトでは、コールバックメソッドは、[`On VP Ready`](../Events/onVpReady.md), [`On Load`](../Events/onLoad.md), [`On Unload`](../Events/onUnload.md), [`On End URL Loading`](../Events/onEndUrlLoading.md), [`On URL Loading Error`](../Events/onUrlLoadingError.md), [`On VP Range Changed`](../Events/onVpRangeChanged.md), または [`On Timer`](../Events/onTimer.md) イベントで呼び出されます。 コールバックメソッドを使用して [4D View Pro フォームオブジェクト変数](configuring.md#4d-view-pro-フォームオブジェクト変数) にアクセスすることができます。 |
 | autoQuit                 | boolean         | True (デフォルト値) の場合、[`On End URL Loading`](../Events/onEndUrlLoading.md) または [`On URL Loading Error`](../Events/onUrlLoadingError.md) イベントが起きた際にはコマンドがフォーミュラの実行を中止します。 False の場合、*onEvent* コールバックメソッド内で `CANCEL` あるいは `ACCEPT` コマンドを使用する必要があります。                                                                                                                                                                                                                                                                                                                                   |
 | timeout                  | number          | イベントが何も生成されない場合にエリアが自動的に閉まるまでの最大時間 (秒単位)。 0 に設定した場合、エリアは自動的には閉まりません。 デフォルト値: 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -4250,7 +4250,7 @@ $row:=VP Row("ViewProArea";9) // 10行目
 
 以下のプロパティは、必要に応じてコマンドによって自動的に追加されます:
 
-| プロパティ          | タイプ     | 説明                           |
+| プロパティ          | 型       | 説明                           |
 | -------------- | ------- | ---------------------------- |
 | timeoutReached | boolean | タイムアウトを超えた場合に true の値で追加されます |
 
@@ -4358,15 +4358,15 @@ $result:=VP Run offscreen area($o)
 
 <!-- REF #_method_.VP SET ACTIVE CELL.Params -->
 
-| 引数       | タイプ    |    | 説明                                   |
+| 引数       | 型      |    | 説明                                   |
 | -------- | ------ | -- | ------------------------------------ |
-| rangeObj | Object | -> | レンジオブジェクト|<!-- END REF -->
+| rangeObj | オブジェクト | -> | レンジオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET ACTIVE CELL` コマンドは、 <!-- REF #_method_.VP SET ACTIVE CELL.Summary -->指定したセルをアクティブセルにします<!-- END REF -->。
+`VP SET ACTIVE CELL` コマンドは、 <!-- REF #_method_.VP SET ACTIVE CELL.Summary -->指定したセルをアクティブセルにします<!-- END REF -->.
 
 *rangeObj* 引数には、単独のセルを格納するレンジオブジェクトを渡します ([VP Cell](#vp-cell) 参照)。 *rangeObj* 引数のレンジが単独セルのレンジでない場合、あるいは複数レンジを指定している場合、最初のレンジの先頭セルが使用されます。
 
@@ -4393,9 +4393,9 @@ VP SET ACTIVE CELL($activeCell)
 <!-- REF #_method_.VP SET ALLOWED METHODS.Params -->
 
 
-| 引数        | タイプ    |    | 説明                                                      |
+| 引数        | 型      |    | 説明                                                      |
 | --------- | ------ | -- | ------------------------------------------------------- |
-| methodObj | Object | -> | 4D View Pro エリアでの実行を許可するメソッド|<!-- END REF -->
+| methodObj | オブジェクト | -> | 4D View Pro エリアでの実行を許可するメソッド|<!-- END REF -->
 
 |
 > **互換性**
@@ -4405,20 +4405,20 @@ VP SET ACTIVE CELL($activeCell)
 
 #### 説明
 
-`VP SET ALLOWED METHODS` コマンドは、 <!-- REF #_method_.VP SET ALLOWED METHODS.Summary -->4D View Pro フォーミュラから呼び出し可能なプロジェクトメソッドを指定します<!-- END REF -->。 このコマンドは、呼び出し後のセッション中に初期化される 4D View Pro エリアすべてに対して適用されます。 同じセッション中において異なる設定で初期化をするために、複数回呼び出すこともできます。
+`VP SET ALLOWED METHODS` コマンドは、 <!-- REF #_method_.VP SET ALLOWED METHODS.Summary -->4D View Pro フォーミュラから呼び出し可能なプロジェクトメソッドを指定します<!-- END REF -->. このコマンドは、呼び出し後のセッション中に初期化される 4D View Pro エリアすべてに対して適用されます。 同じセッション中において異なる設定で初期化をするために、複数回呼び出すこともできます。
 
 セキュリティ上の理由により、 `VP SET ALLOWED METHODS` コマンドを実行していない場合のデフォルトでは、4D View Pro エリアにおいてはメソッドの呼び出しは許可されません (ただし、4D の汎用的な `SET ALLOWED METHODS` コマンドが呼び出されていた場合を除きます (前述の互換性に関する注記参照)。 許可されていないのメソッドをフォーミュラ内で使用した場合には、4D View Pro エリアに #NAME? エラーが表示されます。
 
 *methodObj* には、4D View Pro エリア内で定義したいファンクションの名前をプロパティとして格納しているオブジェクトを渡します:
 
-| プロパティ                  |            |            | タイプ                 | 説明                                                                                                                                                                                                                                                                                                                                                                                       |
+| プロパティ                  |            |            | 型                   | 説明                                                                                                                                                                                                                                                                                                                                                                                       |
 | ---------------------- | ---------- | ---------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<functionName>` |            |            | Object              | カスタムファンクションの名前。 `<customFunction>` プロパティ名は、4D View Pro フォーミュラで表示するカスタムファンクションの名前を定義します (スペースは使用できません)                                                                                                                                                                                                                                                                              |
-|                        | method     |            | Text                | (必須) 許可する既存の 4D プロジェクトメソッドの名前                                                                                                                                                                                                                                                                                                                                                            |
+| `<functionName>` |            |            | オブジェクト              | カスタムファンクションの名前。 `<customFunction>` プロパティ名は、4D View Pro フォーミュラで表示するカスタムファンクションの名前を定義します (スペースは使用できません)                                                                                                                                                                                                                                                                              |
+|                        | method     |            | テキスト                | (必須) 許可する既存の 4D プロジェクトメソッドの名前                                                                                                                                                                                                                                                                                                                                                            |
 |                        | parameters |            | Object の Collection | 引数のコレクション (メソッド内で定義されている順)                                                                                                                                                                                                                                                                                                                                                               |
-|                        |            | \[ ].name | Text                | `<functionName>` 用に表示する引数の名前。**注**: 引数の名前にスペースを含めることはできません。                                                                                                                                                                                                                                                                                                                        |
+|                        |            | \[ ].name | テキスト                | `<functionName>` 用に表示する引数の名前。**注**: 引数の名前にスペースを含めることはできません。                                                                                                                                                                                                                                                                                                                        |
 |                        |            | \[ ].type | Number              | 引数の型。 サポートされている型:<li>`Is Boolean`</li><li>`Is date`</li><li>`Is Integer`</li><li>`Is object`</li><li>`Is real`</li><li>`Is text`</li><li>`Is time`</li>省略時のデフォルトでは、値は型と一緒に渡されますが、日付と時間の値に関してはオブジェクトとして送られます ([引数](formulas.md#引数) の章を参照ください)。 type が `Is object` の場合、そのオブジェクトは [`VP Get value`](#vp-get-value) によって返されるオブジェクトと同じ構造を持ちます。 |
-|                        | summary    |            | Text                | 4D View Pro に表示するファンクションの説明                                                                                                                                                                                                                                                                                                                                                              |
+|                        | summary    |            | テキスト                | 4D View Pro に表示するファンクションの説明                                                                                                                                                                                                                                                                                                                                                              |
 |                        | minParams  |            | Number              | 引数の最小の数                                                                                                                                                                                                                                                                                                                                                                                  |
 |                        | maxParams  |            | Number              | 引数の最大の数。 ここに parameters の length より大きな値を渡すことによって、デフォルトの型を持つ "任意の" 引数を宣言することができるようになります。                                                                                                                                                                                                                                                                                                  |
 
@@ -4472,16 +4472,16 @@ VP SET ALLOWED METHODS($allowed)
 
 <!-- REF #_method_.VP SET BINDING PATH.Params -->
 
-| 引数                   | タイプ    |    | 説明                                                  |
+| 引数                   | 型      |    | 説明                                                  |
 | -------------------- | ------ | -- | --------------------------------------------------- |
-| rangeObj             | Object | -> | レンジオブジェクト                                           |
-| dataContextAttribute | Text   | -> | *rangeObj* にバインドする属性の名称 |<!-- END REF -->
+| rangeObj             | オブジェクト | -> | レンジオブジェクト                                           |
+| dataContextAttribute | テキスト   | -> | *rangeObj* にバインドする属性の名称 |<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET BINDING PATH` コマンドは、 <!-- REF #_method_.VP SET BINDING PATH.Summary -->*rangeObj* で指定したレンジに、シートのデータコンテキストの属性をバインドします<!-- END REF -->。 機能するには、[SET DATA CONTEXT](#vp-set-data-context) を使ってデータコンテキストを設定する必要があります。 読み込まれたデータコンテキストが属性を含む場合、*dataContextAttribute* の値が *rangeObj* のセルに自動的に表示されます。
+`VP SET BINDING PATH` コマンドは、 <!-- REF #_method_.VP SET BINDING PATH.Summary -->*rangeObj* で指定したレンジに、シートのデータコンテキストの属性をバインドします<!-- END REF -->. 機能するには、[SET DATA CONTEXT](#vp-set-data-context) を使ってデータコンテキストを設定する必要があります。 読み込まれたデータコンテキストが属性を含む場合、*dataContextAttribute* の値が *rangeObj* のセルに自動的に表示されます。
 
 *rangeObj* 引数には、セルレンジまたは複合セルレンジのオブジェクトを渡します。
 
@@ -4522,16 +4522,16 @@ VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
 
 <!-- REF #_method_.VP SET BOOLEAN VALUE.Params -->
 
-| 引数        | タイプ     |    | 説明                                  |
-| --------- | ------- | -- | ----------------------------------- |
-| rangeObj  | Object  | -> | レンジオブジェクト                           |
-| boolValue | Boolean | -> | 設定するブール値|<!-- END REF -->
+| 引数        | 型      |    | 説明                                  |
+| --------- | ------ | -- | ----------------------------------- |
+| rangeObj  | オブジェクト | -> | レンジオブジェクト                           |
+| boolValue | ブール    | -> | 設定するブール値|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET BOOLEAN VALUE` コマンドは、 <!-- REF #_method_.VP SET BOOLEAN VALUE.Summary -->指定のセルレンジにブール値を割り当てます<!-- END REF -->。
+`VP SET BOOLEAN VALUE` コマンドは、 <!-- REF #_method_.VP SET BOOLEAN VALUE.Summary -->指定のセルレンジにブール値を割り当てます<!-- END REF -->.
 
 *rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
@@ -4557,30 +4557,30 @@ VP SET BOOLEAN VALUE(VP Cell("ViewProArea";3;2);False)
 
 <!-- REF #_method_.VP SET BORDER.Params -->
 
-| 引数             | タイプ    |    | 説明                                           |
+| 引数             | 型      |    | 説明                                           |
 | -------------- | ------ | -- | -------------------------------------------- |
-| rangeObj       | Object | -> | レンジオブジェクト                                    |
-| borderStyleObj | Object | -> | 境界線スタイルを格納したオブジェクト                           |
-| borderPosObj   | Object | -> | 境界線の位置を格納したオブジェクト|<!-- END REF -->
+| rangeObj       | オブジェクト | -> | レンジオブジェクト                                    |
+| borderStyleObj | オブジェクト | -> | 境界線スタイルを格納したオブジェクト                           |
+| borderPosObj   | オブジェクト | -> | 境界線の位置を格納したオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET BORDER` コマンドは、 <!-- REF #_method_.VP SET BORDER.Summary -->*rangeObj* のレンジに *borderStyleObj* および *borderPosObj* で定義される境界線スタイルを適用します<!-- END REF -->。
+`VP SET BORDER` コマンドは、 <!-- REF #_method_.VP SET BORDER.Summary -->*rangeObj* のレンジに *borderStyleObj* および *borderPosObj* で定義される境界線スタイルを適用します<!-- END REF -->.
 
 *rangeObj* 引数には、境界線スタイルを適用したいセルのレンジを渡します。 *rangeObj* 引数に複数のセルが含まれる場合、`VP SET BORDER` で適用される境界線は、*rangeObj* のレンジ全体を一つのセルとして適用されます (これに対し、[`VP SET CELL STYLE`](#vp-set-cell-style) コマンドでは*rangeObj* 引数のレンジに含まれる個々のセルに対し境界線が適用されます)。 スタイルシートがすでに適用されている場合、`VP SET BORDER` コマンドは *rangeObj* のレンジに対してすでに適用されていた境界線設定を上書きします。
 
 *borderStyleObj* 引数を使用すると、境界線のスタイルを定義することができます。 *borderStyleObj* 引数は、以下のプロパティをサポートしています:
 
-| プロパティ | タイプ     | 説明                             | とりうる値                                                                                                                                                                                                                                                                                                                                                                        |
-| ----- | ------- | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| color | text    | 境界線のカラーを定義します。 デフォルト = black   | CSSカラー "#rrggbb" シンタックス (推奨シンタックス)、CSSカラー "rgb(r,g,b)" シンタックス (代替シンタックス)、CSSカラーネーム (代替シンタックス)                                                                                                                                                                                                                                                                                |
-| style | Integer | 境界線のスタイルを定義します。 デフォルト = empty。 | <li>`vk line style dash dot`</li><li>`vk line style dash dot dot`</li><li>`vk line style dashed`</li> <li>`vk line style dotted`</li><li>`vk line style double`</li><li>`vk line style empty`</li><li>`vk line style hair`</li> <li>`vk line style medium`</li><li>`vk line style medium dash dot`</li><li>`vk line style medium dash dot dot`</li><li>`vk line style medium dashed`</li><li>`vk line style slanted dash dot`</li><li>`vk line style thick`</li><li>`vk line style thin`</li> |
+| プロパティ | 型    | 説明                             | とりうる値                                                                                                                                                                                                                                                                                                                                                                        |
+| ----- | ---- | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| color | テキスト | 境界線のカラーを定義します。 デフォルト = black   | CSSカラー "#rrggbb" シンタックス (推奨シンタックス)、CSSカラー "rgb(r,g,b)" シンタックス (代替シンタックス)、CSSカラーネーム (代替シンタックス)                                                                                                                                                                                                                                                                                |
+| style | 整数   | 境界線のスタイルを定義します。 デフォルト = empty。 | <li>`vk line style dash dot`</li><li>`vk line style dash dot dot`</li><li>`vk line style dashed`</li> <li>`vk line style dotted`</li><li>`vk line style double`</li><li>`vk line style empty`</li><li>`vk line style hair`</li> <li>`vk line style medium`</li><li>`vk line style medium dash dot`</li><li>`vk line style medium dash dot dot`</li><li>`vk line style medium dashed`</li><li>`vk line style slanted dash dot`</li><li>`vk line style thick`</li><li>`vk line style thin`</li> |
 
 *borderStyleObj* の境界線スタイルの位置 (どこに境界線を引くか) は *borderPosObj* 引数で定義します:
 
-| プロパティ           | タイプ     | 説明                        |
+| プロパティ           | 型       | 説明                        |
 | --------------- | ------- | ------------------------- |
 | all             | boolean | 境界線スタイルはすべての境界に適用されます。    |
 | left            | boolean | 境界線スタイルは左の境界に適用されます。      |
@@ -4636,16 +4636,16 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 
 <!-- REF #_method_.VP SET CELL STYLE.Params -->
 
-| 引数       | タイプ    |    | 説明                                    |
+| 引数       | 型      |    | 説明                                    |
 | -------- | ------ | -- | ------------------------------------- |
-| rangeObj | Object | -> | レンジオブジェクト                             |
-| styleObj | Object | -> | スタイルオブジェクト|<!-- END REF -->
+| rangeObj | オブジェクト | -> | レンジオブジェクト                             |
+| styleObj | オブジェクト | -> | スタイルオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET CELL STYLE` コマンドは、 <!-- REF #_method_.VP SET CELL STYLE.Summary -->*styleObj* に定義されているスタイルを、*rangeObj* で定義されたセルに適用します<!-- END REF -->。
+`VP SET CELL STYLE` コマンドは、 <!-- REF #_method_.VP SET CELL STYLE.Summary -->*styleObj* に定義されているスタイルを、*rangeObj* で定義されたセルに適用します<!-- END REF -->.
 
 *rangeObj* 引数には、スタイルを適用したいセルのレンジを渡します。 *rangeObj* に複数のセルが含まれる場合、スタイルはそれぞれのセルに割り当てられます。
 > `VP SET CELL STYLE` で適用された境界線は、*rangeObj* の各セルに対して適用されます。これに対して [VP SET BORDER](#vp-set-border) コマンドは境界線を *rangeObj* のレンジ全体に対して適用されます。
@@ -4687,28 +4687,28 @@ VP SET CELL STYLE(VP Cell("ViewProArea";1;1);$style)
 
 <!-- REF #_method_.VP SET COLUMN ATTRIBUTES.Params -->
 
-| 引数          | タイプ    |    | 説明                                             |
+| 引数          | 型      |    | 説明                                             |
 | ----------- | ------ | -- | ---------------------------------------------- |
-| rangeObj    | Object | -> | レンジオブジェクト                                      |
-| propertyObj | Object | -> | カラムプロパティを格納したオブジェクト|<!-- END REF -->
+| rangeObj    | オブジェクト | -> | レンジオブジェクト                                      |
+| propertyObj | オブジェクト | -> | カラムプロパティを格納したオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET COLUMN ATTRIBUTES` コマンドは、 <!-- REF #_method_.VP SET COLUMN ATTRIBUTES.Summary --> *rangeObj* 引数で指定したカラムに対して *propertyObj* 引数で定義されている属性を適用します<!-- END REF -->。
+`VP SET COLUMN ATTRIBUTES` コマンドは、 <!-- REF #_method_.VP SET COLUMN ATTRIBUTES.Summary --> *rangeObj* 引数で指定したカラムに対して *propertyObj* 引数で定義されている属性を適用します<!-- END REF -->.
 
 *rangeObj* 引数には、レンジオブジェクトを渡します。 レンジにカラムと行の両方が格納されている場合、属性はカラムに対してのみ適用されます。
 
 *propertyObj* 引数は、*rangeObj* 引数のレンジ内のカラムに対して適用する属性を指定します。 指定できる属性は以下の通りです:
 
-| プロパティ     | タイプ     | 説明                                          |
+| プロパティ     | 型       | 説明                                          |
 | --------- | ------- | ------------------------------------------- |
 | width     | number  | カラムの幅 (ピクセル単位)                              |
 | pageBreak | boolean | レンジ内の先頭カラムの前に改ページを挿入する場合には true、それ以外は false |
 | visible   | boolean | カラムが表示状態であれば true、それ以外は false               |
 | resizable | boolean | カラムがリサイズ可能であれば true、それ以外は false             |
-| header    | text    | カラムヘッダーのテキスト                                |
+| header    | テキスト    | カラムヘッダーのテキスト                                |
 
 #### 例題
 
@@ -4737,17 +4737,17 @@ VP SET COLUMN ATTRIBUTES($column;$properties)
 
 <!-- REF #_method_.VP SET COLUMN COUNT.Params -->
 
-| 引数          | タイプ     |    | 説明                                                     |
-| ----------- | ------- | -- | ------------------------------------------------------ |
-| vpAreaName  | Text    | -> | 4D View Pro フォームオブジェクト名                                |
-| columnCount | Integer | -> | カラム数                                                   |
-| sheet       | Integer | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
+| 引数          | 型    |    | 説明                                                     |
+| ----------- | ---- | -- | ------------------------------------------------------ |
+| vpAreaName  | テキスト | -> | 4D View Pro フォームオブジェクト名                                |
+| columnCount | 整数   | -> | カラム数                                                   |
+| sheet       | 整数   | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET COLUMN COUNT` コマンドは、 <!-- REF #_method_.VP SET COLUMN COUNT.Summary -->*vpAreaName* 引数内にあるカラムの総数を定義します<!-- END REF -->。
+`VP SET COLUMN COUNT` コマンドは、 <!-- REF #_method_.VP SET COLUMN COUNT.Summary -->*vpAreaName* 引数内にあるカラムの総数を定義します<!-- END REF -->.
 
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
@@ -4779,16 +4779,16 @@ VP SET COLUMN COUNT("ViewProArea";5)
 
 <!-- REF #_method_.VP SET CURRENT SHEET.Params -->
 
-| 引数         | タイプ     |    | 説明                                           |
-| ---------- | ------- | -- | -------------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                      |
-| sheet      | Integer | <- | 新しいカレントシートのインデックス|<!-- END REF -->
+| 引数         | 型    |    | 説明                                           |
+| ---------- | ---- | -- | -------------------------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                      |
+| sheet      | 整数   | <- | 新しいカレントシートのインデックス|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET CURRENT SHEET` コマンドは、 <!-- REF #_method_.VP SET CURRENT SHEET.Summary -->*vpAreaName* 引数で指定した View Pro エリアのカレントシートを設定します<!-- END REF --> 。 カレントシートとは、ドキュメント内で選択されているシートのことです。
+`VP SET CURRENT SHEET` コマンドは、 <!-- REF #_method_.VP SET CURRENT SHEET.Summary -->*vpAreaName* 引数で指定した View Pro エリアのカレントシートを設定します<!-- END REF --> . カレントシートとは、ドキュメント内で選択されているシートのことです。
 
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
@@ -4822,16 +4822,16 @@ VP SET CURRENT SHEET("ViewProArea";2)
 
 <!-- REF #_method_.VP SET CUSTOM FUNCTIONS.Params -->
 
-| 引数         | タイプ    |    | 説明                                      |
+| 引数         | 型      |    | 説明                                      |
 | ---------- | ------ | -- | --------------------------------------- |
-| vpAreaName | Text   | -> | 4D View Pro フォームオブジェクト名                 |
-| formulaObj | Object | -> | フォーミュラオブジェクト|<!-- END REF -->
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                 |
+| formulaObj | オブジェクト | -> | フォーミュラオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET CUSTOM FUNCTIONS` コマンドは、 <!-- REF #_method_.VP SET CUSTOM FUNCTIONS.Summary -->4D View Pro フォーミュラから直接呼び出し可能な 4Dフォーミュラを指定します<!-- END REF -->。 カスタムのファンクションはドキュメント内に保存されていないので、`VP SET CUSTOM FUNCTIONS` は `On Load` フォームイベント内で呼び出される必要があります。
+`VP SET CUSTOM FUNCTIONS` コマンドは、 <!-- REF #_method_.VP SET CUSTOM FUNCTIONS.Summary -->4D View Pro フォーミュラから直接呼び出し可能な 4Dフォーミュラを指定します<!-- END REF -->. カスタムのファンクションはドキュメント内に保存されていないので、`VP SET CUSTOM FUNCTIONS` は `On Load` フォームイベント内で呼び出される必要があります。
 
 `VP SET CUSTOM FUNCTIONS` で指定されたフォーミュラは、最初の文字が入力されるとポップアップメニューに表示されます。 詳細については [式と関数](formulas.md) を参照ください。
 
@@ -4841,14 +4841,14 @@ VP SET CURRENT SHEET("ViewProArea";2)
 
 *formulaObj* 引数として、4D View Pro フォーミュラから呼び出し可能な 4Dフォーミュラと、その追加のプロパティを格納したオブジェクトを渡します。 *formulaObj* 引数の各 `customFunction` プロパティが 4D View Pro エリア内でのファンクション名になります。
 
-| プロパティ                    |            |            | タイプ                 | 説明                                                                                                                                                                                                                                                                                                                                                                                                            |
+| プロパティ                    |            |            | 型                   | 説明                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ------------------------ | ---------- | ---------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<customFunction>` |            |            | Object              | カスタムファンクションの名前。 `<customFunction>` は、4D View Pro フォーミュラで表示するカスタムファンクションの名前を定義します (スペースは使用できません)                                                                                                                                                                                                                                                                                                         |
-|                          | formula    |            | Object              | 4Dフォーミュラオブジェクト (必須)。 `Formula` コマンド参照。                                                                                                                                                                                                                                                                                                                                                                        |
+| `<customFunction>` |            |            | オブジェクト              | カスタムファンクションの名前。 `<customFunction>` は、4D View Pro フォーミュラで表示するカスタムファンクションの名前を定義します (スペースは使用できません)                                                                                                                                                                                                                                                                                                         |
+|                          | formula    |            | オブジェクト              | 4Dフォーミュラオブジェクト (必須)。 `Formula` コマンド参照。                                                                                                                                                                                                                                                                                                                                                                        |
 |                          | parameters |            | Object の Collection | 引数のコレクション (フォーミュラ内で定義されている順)                                                                                                                                                                                                                                                                                                                                                                                  |
-|                          |            | \[ ].name | Text                | 4D View Pro に表示する引数の名前。                                                                                                                                                                                                                                                                                                                                                                                       |
+|                          |            | \[ ].name | テキスト                | 4D View Pro に表示する引数の名前。                                                                                                                                                                                                                                                                                                                                                                                       |
 |                          |            | \[ ].type | Number              | 引数の型。 サポートされている型:<li>`Is Boolean`</li><li>`Is date`</li><li>`Is Integer`</li><li>`Is object`</li><li>`Is real`</li><li>`Is text`</li><li>`Is time`</li>*type* 省略時、またはデフォルト値 (-1) が渡された場合、値は型と一緒に渡されますが、日付と時間の値に関してはオブジェクトとして送られます ([引数](formulas.md#引数) の章を参照ください)。*type* が `Is object` の場合、そのオブジェクトは [VP Get value](#vp-get-value) によって返されるオブジェクトと同じ構造を持ちます。 |
-|                          | summary    |            | Text                | 4D View Pro に表示するフォーミュラの説明                                                                                                                                                                                                                                                                                                                                                                                    |
+|                          | summary    |            | テキスト                | 4D View Pro に表示するフォーミュラの説明                                                                                                                                                                                                                                                                                                                                                                                    |
 |                          | minParams  |            | Number              | 引数の最小の数                                                                                                                                                                                                                                                                                                                                                                                                       |
 |                          | maxParams  |            | Number              | 引数の最大の数。 ここに *parameters* の length より大きな値を渡すことによって、デフォルトの型を持つ "任意の" 引数を宣言できるようになります。                                                                                                                                                                                                                                                                                                                          |
 > **警告**
@@ -4912,19 +4912,19 @@ End case
 
 <!-- REF #_method_.VP SET DATA CONTEXT.Params -->
 
-| 引数         | タイプ        |    | 説明                                    |
-| ---------- | ---------- | -- | ------------------------------------- |
-| vpAreaName | Object     | -> | 4D View Pro フォームオブジェクト名               |
-| dataObj    | Object     | -> | データコンテキストに読み込むデータオブジェクト               |
-| dataColl   | Collection | -> | データコンテキストに読み込むデータのコレクション              |
-| options    | Object     | -> | 追加のオプション                              |
-| sheet      | Integer    | -> | シートのインデックス|<!-- END REF -->
+| 引数         | 型      |    | 説明                                    |
+| ---------- | ------ | -- | ------------------------------------- |
+| vpAreaName | オブジェクト | -> | 4D View Pro フォームオブジェクト名               |
+| dataObj    | オブジェクト | -> | データコンテキストに読み込むデータオブジェクト               |
+| dataColl   | コレクション | -> | データコンテキストに読み込むデータのコレクション              |
+| options    | オブジェクト | -> | 追加のオプション                              |
+| sheet      | 整数     | -> | シートのインデックス|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET DATA CONTEXT` コマンドは、 <!-- REF #_method_.VP SET DATA CONTEXT.Summary -->シートのデータコンテキストを設定します<!-- END REF -->。 データコンテキストは、ワークシートにバインドされたオブジェクトまたはコレクションで、自動生成オプションまたは [VP SET BINDING PATH](#vp-set-binding-path) メソッドを使用することで、シートのセルにその内容を自動的に表示させることができます。 他方、[VP Get data context](#vp-get-data-context) コマンドは、ユーザーによる編集が含まれたコンテキストを返すことができます。
+`VP SET DATA CONTEXT` コマンドは、 <!-- REF #_method_.VP SET DATA CONTEXT.Summary -->シートのデータコンテキストを設定します<!-- END REF -->. データコンテキストは、ワークシートにバインドされたオブジェクトまたはコレクションで、自動生成オプションまたは [VP SET BINDING PATH](#vp-set-binding-path) メソッドを使用することで、シートのセルにその内容を自動的に表示させることができます。 他方、[VP Get data context](#vp-get-data-context) コマンドは、ユーザーによる編集が含まれたコンテキストを返すことができます。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -4932,17 +4932,17 @@ End case
 
 *dataObj* または *dataColl* に時間値を渡すには、次のプロパティを持つオブジェクトにカプセル化します ([例題 4](#例題-4---日付と時間のシンタックス) 参照):
 
-| プロパティ | タイプ                                      | 説明                   |
+| プロパティ | 型                                        | 説明                   |
 | ----- | ---------------------------------------- | -------------------- |
 | value | Integer, Real, Boolean, Text, Date, Null | コンテキストに設定する値         |
-| time  | Real                                     | コンテキストに設定する時間値 (秒単位) |
+| time  | 実数                                       | コンテキストに設定する時間値 (秒単位) |
 
 *options* には、追加のオプションを格納したオブジェクトを渡せます。 利用可能なプロパティは次のとおりです:
 
-| プロパティ               | タイプ    | 説明                                                                                                                     |
+| プロパティ               | 型      | 説明                                                                                                                     |
 | ------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
-| reset               | Object | 新しいコンテキストを読み込む前にシートの内容をリセットする場合は true、それ以外は false (デフォルト)                                                              |
-| autoGenerateColumns | Object | コレクション型のデータの場合にのみ使用します。 データコンテキストがバインドされると同時に、カラムを自動生成する場合は true (デフォルト)。 この場合、次のルールが適用されます: <ul><li>*dataColl* がオブジェクトのコレクションの場合、属性名はカラムのタイトルとして使用されます (例題 2 参照)。</li><li>*dataColl* がスカラー値のサブコレクションを含む場合、各サブコレクションは一つの行の値を定義します (例題 3 参照)。 最初のサブコレクションにより、生成されるカラム数が決定します。</li></ul> |
+| reset               | オブジェクト | 新しいコンテキストを読み込む前にシートの内容をリセットする場合は true、それ以外は false (デフォルト)                                                              |
+| autoGenerateColumns | オブジェクト | コレクション型のデータの場合にのみ使用します。 データコンテキストがバインドされると同時に、カラムを自動生成する場合は true (デフォルト)。 この場合、次のルールが適用されます: <ul><li>*dataColl* がオブジェクトのコレクションの場合、属性名はカラムのタイトルとして使用されます (例題 2 参照)。</li><li>*dataColl* がスカラー値のサブコレクションを含む場合、各サブコレクションは一つの行の値を定義します (例題 3 参照)。 最初のサブコレクションにより、生成されるカラム数が決定します。</li></ul> |
 
 *sheet* には、データコンテキストを受け取るシートのインデックスを渡します。 インデックスを渡さなかった場合、コンテキストはカレントシートに対して適用されます。
 
@@ -5047,18 +5047,18 @@ VP SET DATA CONTEXT("ViewProArea"; $data; $options)
 
 <!-- REF #_method_.VP SET DATE TIME VALUE.Params -->
 
-| 引数            | タイプ    |    | 説明                                  |
+| 引数            | 型      |    | 説明                                  |
 | ------------- | ------ | -- | ----------------------------------- |
-| rangeObj      | Object | -> | レンジオブジェクト                           |
+| rangeObj      | オブジェクト | -> | レンジオブジェクト                           |
 | dateValue     | Date   | -> | 設定する日付値                             |
 | timeValue     | 時間     | -> | 設定する時間値                             |
-| formatPattern | Text   | -> | 値のフォーマット|<!-- END REF -->
+| formatPattern | テキスト   | -> | 値のフォーマット|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET DATE TIME VALUE` コマンドは、 <!-- REF #_method_.VP SET DATE TIME VALUE.Summary -->指定されたセルレンジに日付・時間値を割り当てます<!-- END REF -->。
+`VP SET DATE TIME VALUE` コマンドは、 <!-- REF #_method_.VP SET DATE TIME VALUE.Summary -->指定されたセルレンジに日付・時間値を割り当てます<!-- END REF -->.
 
 *rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
@@ -5090,17 +5090,17 @@ VP SET DATE TIME VALUE(VP Cell("ViewProArea";3;9);!2024-12-18!;?14:30:10?;vk pat
 
 <!-- REF #_method_.VP SET DATE VALUE.Params -->
 
-| 引数            | タイプ    |    | 説明                                  |
+| 引数            | 型      |    | 説明                                  |
 | ------------- | ------ | -- | ----------------------------------- |
-| rangeObj      | Object | -> | レンジオブジェクト                           |
+| rangeObj      | オブジェクト | -> | レンジオブジェクト                           |
 | dateValue     | 日付     | -> | 設定する日付値                             |
-| formatPattern | Text   | -> | 値のフォーマット|<!-- END REF -->
+| formatPattern | テキスト   | -> | 値のフォーマット|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET DATE VALUE` コマンドは、 <!-- REF #_method_.VP SET DATE VALUE.Summary -->指定されたセルレンジに日付値を割り当てます<!-- END REF -->。
+`VP SET DATE VALUE` コマンドは、 <!-- REF #_method_.VP SET DATE VALUE.Summary -->指定されたセルレンジに日付値を割り当てます<!-- END REF -->.
 
 *rangeObj* には、値を割り当てたいセルのレンジを渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
@@ -5139,17 +5139,17 @@ VP SET DATE VALUE(VP Cell("ViewProArea";4;6);!2005-01-15!;vk pattern month day)
 
 <!-- REF #_method_.VP SET DEFAULT STYLE.Params -->
 
-| 引数         | タイプ     |    | 説明                                                   |
-| ---------- | ------- | -- | ---------------------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                              |
-| styleObj   | Object  | -> | スタイルオブジェクト                                           |
-| sheet      | Integer | -> | シートインデックス (デフォルト=カレントシート)|<!-- END REF -->
+| 引数         | 型      |    | 説明                                                   |
+| ---------- | ------ | -- | ---------------------------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                              |
+| styleObj   | オブジェクト | -> | スタイルオブジェクト                                           |
+| sheet      | 整数     | -> | シートインデックス (デフォルト=カレントシート)|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET DEFAULT STYLE` コマンドは、 <!-- REF #_method_.VP SET DEFAULT STYLE.Summary -->*sheet* で指定したシートに対して、*styleObj* 引数のスタイルをデフォルトスタイルとして定義します<!-- END REF -->。
+`VP SET DEFAULT STYLE` コマンドは、 <!-- REF #_method_.VP SET DEFAULT STYLE.Summary -->*sheet* で指定したシートに対して、*styleObj* 引数のスタイルをデフォルトスタイルとして定義します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -5183,17 +5183,17 @@ VP SET DEFAULT STYLE("myDoc";$style)
 
 <!-- REF #_method_.VP SET FIELD.Params -->
 
-| 引数            | タイプ    |    | 説明                                      |
+| 引数            | 型      |    | 説明                                      |
 | ------------- | ------ | -- | --------------------------------------- |
-| rangeObj      | Object | -> | レンジオブジェクト                               |
+| rangeObj      | オブジェクト | -> | レンジオブジェクト                               |
 | フィールド         | ポインター  | -> | 仮想ストラクチャーのフィールドへの参照                     |
-| formatPattern | Text   | -> | フィールドのフォーマット|<!-- END REF -->
+| formatPattern | テキスト   | -> | フィールドのフォーマット|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET FIELD` コマンドは、 <!-- REF #_method_.VP SET FIELD.Summary -->指定されたセルレンジに、4Dデータベースの仮想フィールドを割り当てます<!-- END REF -->。
+`VP SET FIELD` コマンドは、 <!-- REF #_method_.VP SET FIELD.Summary -->指定されたセルレンジに、4Dデータベースの仮想フィールドを割り当てます<!-- END REF -->.
 
 *rangeObj* には、値を割り当てたいセルのレンジを渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定されたフィールドはそれぞれのセルに対して繰り返し割り当てられます。
 
@@ -5220,16 +5220,16 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 
 <!-- REF #_method_.VP SET FORMULA.Params -->
 
-| 引数 | タイプ |  | 説明 |
-| -- | --- |  | -- |
-|    |     |  |    |
+| 引数 | 型 |  | 説明 |
+| -- | - |  | -- |
+|    |   |  |    |
 
 |rangeObj |Object|->|レンジオブジェクト| |formula |Text|->|フォーミュラまたは 4Dメソッド| |formatPattern |Text|->|フィールドのフォーマット|<!-- END REF -->
 
 #### 説明
 
 
-`VP SET FORMULA` コマンドは、 <!-- REF #_method_.VP SET FORMULA.Summary -->指定されたセルレンジにフォーミュラまたは 4Dメソッドを割り当てます<!-- END REF -->。
+`VP SET FORMULA` コマンドは、 <!-- REF #_method_.VP SET FORMULA.Summary -->指定されたセルレンジにフォーミュラまたは 4Dメソッドを割り当てます<!-- END REF -->.
 
 *rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定されたフォーミュラはそれぞれのセルに対して繰り返し割り当てられます。
 
@@ -5272,16 +5272,16 @@ VP SET FORMULA($range;"SUM(A1,B7,C11)") // 引数の区切り文字に ","
 
 <!-- REF #_method_.VP SET FORMULAS.Params -->
 
-| 引数          | タイプ        |    | 説明                                       |
-| ----------- | ---------- | -- | ---------------------------------------- |
-| rangeObj    | Object     | -> | セルレンジオブジェクト                              |
-| formulasCol | Collection | -> | フォーミュラのコレクション|<!-- END REF -->
+| 引数          | 型      |    | 説明                                       |
+| ----------- | ------ | -- | ---------------------------------------- |
+| rangeObj    | オブジェクト | -> | セルレンジオブジェクト                              |
+| formulasCol | コレクション | -> | フォーミュラのコレクション|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET FORMULAS` コマンドは、 <!-- REF #_method_.VP SET FORMULAS.Summary -->指定のセルレンジから開始してフォーミュラのコレクションを割り当てていきます<!-- END REF -->。
+`VP SET FORMULAS` コマンドは、 <!-- REF #_method_.VP SET FORMULAS.Summary -->指定のセルレンジから開始してフォーミュラのコレクションを割り当てていきます<!-- END REF -->.
 
 *rangeObj* には、フォーミュラを割り当てたいセルのレンジ ([VP Cell](#vp-cell) で作成されたレンジ) を渡します。 *rangeObj* のレンジが複数レンジを指定している場合、最初のレンジのみが使用されます。
 
@@ -5335,17 +5335,17 @@ VP SET FORMULAS(VP Cell("ViewProArea";0;0);$formulas) // セルに割り当て�
 
 <!-- REF #_method_.VP SET FROZEN PANES.Params -->
 
-| 引数         | タイプ     |    | 説明                            |
-| ---------- | ------- | -- | ----------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名       |
-| paneObj    | Object  | -> | 固定化されたカラムと行についての情報を格納したオブジェクト |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)   |
+| 引数         | 型      |    | 説明                            |
+| ---------- | ------ | -- | ----------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名       |
+| paneObj    | オブジェクト | -> | 固定化されたカラムと行についての情報を格納したオブジェクト |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)   |
 <!-- END REF -->
 
 
 #### 説明
 
-`VP SET FROZEN PANES` コマンドは、 <!-- REF #_method_.VP SET FROZEN PANES.Summary -->*vpAreaName* 引数で指定した View Pro エリア内の、*paneObj* 引数のカラムと行の固定化ステータスを設定します<!-- END REF -->。 固定化されたカラムと行は固定された位置に表示され続け、ドキュメントの他の部分がスクロールされても移動しません。 そのカラムと行が固定化されていることを示すために、太い実線が表示されます。 実線の位置は、固定化されたカラムまたは行がシートのどこにあるかによって変わります:
+`VP SET FROZEN PANES` コマンドは、 <!-- REF #_method_.VP SET FROZEN PANES.Summary -->*vpAreaName* 引数で指定した View Pro エリア内の、*paneObj* 引数のカラムと行の固定化ステータスを設定します<!-- END REF -->. 固定化されたカラムと行は固定された位置に表示され続け、ドキュメントの他の部分がスクロールされても移動しません。 そのカラムと行が固定化されていることを示すために、太い実線が表示されます。 実線の位置は、固定化されたカラムまたは行がシートのどこにあるかによって変わります:
 
 * **左または右にあるカラム**: シートの左側にあるカラムについては、実線は最後に固定化されたカラム (最も右のカラム) の右側に表示されます。 シートの右側に表示されているカラムについては、実線は最初に固定化されたカラム (最も左のカラム) の左側に表示されます。
 * **上または下にある行**: シートの上部にある行については、実線は最後に固定化された行 (最も下の行) の下側に表示されます。 シートの下部に表示されている行については、実線は最初に固定化された行 (最も上の行) の上側に表示されます。
@@ -5354,12 +5354,12 @@ VP SET FORMULAS(VP Cell("ViewProArea";0;0);$formulas) // セルに割り当て�
 
 *paneObj* には、固定化するカラムと行を定義するオブジェクトを渡します。 以下のカラムまたは行のプロパティの値にゼロを設定すると、そのプロパティをリセット (固定解除) します。 プロパティが 0以下の値に設定された場合、コマンドは何もしません。 以下のものを渡すことができます:
 
-| プロパティ               | タイプ     | 説明                 |
-| ------------------- | ------- | ------------------ |
-| columnCount         | Integer | シートの左側にある固定化されたカラム |
-| trailingColumnCount | Integer | シートの右側にある固定化されたカラム |
-| rowCount            | Integer | シートの上側にある固定化された行   |
-| trailingRowCount    | Integer | シートの下側にある固定化された行   |
+| プロパティ               | 型  | 説明                 |
+| ------------------- | -- | ------------------ |
+| columnCount         | 整数 | シートの左側にある固定化されたカラム |
+| trailingColumnCount | 整数 | シートの右側にある固定化されたカラム |
+| rowCount            | 整数 | シートの上側にある固定化された行   |
+| trailingRowCount    | 整数 | シートの下側にある固定化された行   |
 
 任意の *sheet* 引数として、シートのインデックス (0 起点) を渡すことで、定義されるレンジが属するスプレッドシートを指定することができます。 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートを明示的に選択することができます:
 
@@ -5393,17 +5393,17 @@ VP SET FROZEN PANES("ViewProArea";$panes)
 
 <!-- REF #_method_.VP SET NUM VALUE.Params -->
 
-| 引数            | タイプ    |    | 説明                                  |
+| 引数            | 型      |    | 説明                                  |
 | ------------- | ------ | -- | ----------------------------------- |
-| rangeObj      | Object | -> | レンジオブジェクト                           |
+| rangeObj      | オブジェクト | -> | レンジオブジェクト                           |
 | numberValue   | Number | -> | 設定する数値                              |
-| formatPattern | Text   | -> | 値のフォーマット|<!-- END REF -->
+| formatPattern | テキスト   | -> | 値のフォーマット|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET NUM VALUE` コマンドは、 <!-- REF #_method_.VP SET NUM VALUE.Summary -->指定のセルレンジに数値を割り当てます<!-- END REF -->。
+`VP SET NUM VALUE` コマンドは、 <!-- REF #_method_.VP SET NUM VALUE.Summary -->指定のセルレンジに数値を割り当てます<!-- END REF -->.
 
 *rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
@@ -5432,17 +5432,17 @@ VP SET NUM VALUE(VP Cell("ViewProArea";3;2);12.356;"_($* #,##0.00_)")
 
 <!-- REF #_method_.VP SET PRINT INFO.Params -->
 
-| 引数         | タイプ     |    | 説明                                                     |
-| ---------- | ------- | -- | ------------------------------------------------------ |
-| vpAreaName | Text    | -> | 4D View Pro エリア名                                       |
-| printInfo  | Object  | -> | 印刷属性を格納するオブジェクト                                        |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
+| 引数         | 型      |    | 説明                                                     |
+| ---------- | ------ | -- | ------------------------------------------------------ |
+| vpAreaName | テキスト   | -> | 4D View Pro エリア名                                       |
+| printInfo  | オブジェクト | -> | 印刷属性を格納するオブジェクト                                        |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET PRINT INFO` コマンドは、 <!-- REF #_method_.VP SET PRINT INFO.Summary -->*vpAreaName* 引数で指定したエリアを印刷する際に使用する属性を定義します<!-- END REF -->。
+`VP SET PRINT INFO` コマンドは、 <!-- REF #_method_.VP SET PRINT INFO.Summary -->*vpAreaName* 引数で指定したエリアを印刷する際に使用する属性を定義します<!-- END REF -->.
 
 *vpAreaName* には、印刷する 4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -5507,28 +5507,28 @@ VP EXPORT DOCUMENT("ViewProArea";"Sales2018.pdf";New object("formula";Formula(AL
 
 <!-- REF #_method_.VP SET ROW ATTRIBUTES.Params -->
 
-| 引数          | タイプ    |    | 説明                                            |
+| 引数          | 型      |    | 説明                                            |
 | ----------- | ------ | -- | --------------------------------------------- |
-| rangeObj    | Object | -> | 行レンジ                                          |
-| propertyObj | Object | -> | 行のプロパティを格納したオブジェクト|<!-- END REF -->
+| rangeObj    | オブジェクト | -> | 行レンジ                                          |
+| propertyObj | オブジェクト | -> | 行のプロパティを格納したオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET ROW ATTRIBUTES` コマンドは、 <!-- REF #_method_.VP SET ROW ATTRIBUTES.Summary -->*rangeObj* 引数で指定した行に対して *propertyObj* 引数で定義されている属性を適用します<!-- END REF -->。
+`VP SET ROW ATTRIBUTES` コマンドは、 <!-- REF #_method_.VP SET ROW ATTRIBUTES.Summary -->*rangeObj* 引数で指定した行に対して *propertyObj* 引数で定義されている属性を適用します<!-- END REF -->.
 
 *rangeObj* 引数には、レンジオブジェクトを渡します。 レンジにカラムと行の両方が格納されている場合、属性は行に対してのみ適用されます。
 
 *propertyObj* 引数は、*rangeObj* 引数のレンジ内の行に対して適用する属性を指定します。 指定できる属性は以下の通りです:
 
-| プロパティ     | タイプ     | 説明                                        |
+| プロパティ     | 型       | 説明                                        |
 | --------- | ------- | ----------------------------------------- |
 | height    | number  | 行の高さ (ピクセル単位)                             |
 | pageBreak | boolean | レンジ内の先頭行の前に改ページを挿入する場合には true、それ以外は false |
 | visible   | boolean | 行が表示状態であれば true、それ以外は false               |
 | resizable | boolean | 行がリサイズ可能であれば true、それ以外は false             |
-| header    | text    | 行ヘッダーのテキスト                                |
+| header    | テキスト    | 行ヘッダーのテキスト                                |
 
 #### 例題
 
@@ -5557,17 +5557,17 @@ VP SET ROW ATTRIBUTES($row;$properties)
 
 <!-- REF #_method_.VP SET ROW COUNT.Params -->
 
-| 引数         | タイプ     |    | 説明                                                     |
-| ---------- | ------- | -- | ------------------------------------------------------ |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                                |
-| rowCount   | Integer | -> | 行数                                                     |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
+| 引数         | 型    |    | 説明                                                     |
+| ---------- | ---- | -- | ------------------------------------------------------ |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                                |
+| rowCount   | 整数   | -> | 行数                                                     |
+| sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET ROW COUNT` コマンドは、 <!-- REF #_method_.VP SET ROW COUNT.Summary -->*vpAreaName* 引数内にある行の総数を定義します<!-- END REF -->。
+`VP SET ROW COUNT` コマンドは、 <!-- REF #_method_.VP SET ROW COUNT.Summary -->*vpAreaName* 引数内にある行の総数を定義します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -5598,15 +5598,15 @@ VP SET ROW COUNT("ViewProArea";5)
 
 <!-- REF #_method_.VP SET SELECTION.Params -->
 
-| 引数       | タイプ    |    | 説明                                        |
+| 引数       | 型      |    | 説明                                        |
 | -------- | ------ | -- | ----------------------------------------- |
-| rangeObj | Object | -> | 複数セルのレンジオブジェクト|<!-- END REF -->
+| rangeObj | オブジェクト | -> | 複数セルのレンジオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET SELECTION` コマンドは、 <!-- REF #_method_.VP SET SELECTION.Summary -->指定のセルレンジを選択し、その先頭セルをアクティブセルに設定します<!-- END REF -->。
+`VP SET SELECTION` コマンドは、 <!-- REF #_method_.VP SET SELECTION.Summary -->指定のセルレンジを選択し、その先頭セルをアクティブセルに設定します<!-- END REF -->.
 
 *rangeObj* には、カレントセレクションとして定義するセルのレンジオブジェクトを渡します。
 
@@ -5631,16 +5631,16 @@ VP SET SELECTION($currentSelection)
 
 <!-- REF #_method_.VP SET SHEET COUNT.Params -->
 
-| 引数         | タイプ     |    | 説明                               |
-| ---------- | ------- | -- | -------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名          |
-| number     | Integer | -> | シートの数|<!-- END REF -->
+| 引数         | 型    |    | 説明                               |
+| ---------- | ---- | -- | -------------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名          |
+| number     | 整数   | -> | シートの数|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET SHEET COUNT` コマンドは、 <!-- REF #_method_.VP SET SHEET COUNT.Summary -->*vpAreaName* 引数で指定した View Pro エリア内のシートの数を設定します<!-- END REF -->。
+`VP SET SHEET COUNT` コマンドは、 <!-- REF #_method_.VP SET SHEET COUNT.Summary -->*vpAreaName* 引数で指定した View Pro エリア内のシートの数を設定します<!-- END REF -->.
 
 `number` 引数には、コマンド実行後にドキュメントが格納するシート数を指定する数値を渡します。
 > **警告**: このコマンドは、現在のシート数より少ない数字を渡した場合にはシートを削除します。 たとえば、ドキュメント内にシートが 5つあり、このコマンドでシートを 3つに設定した場合には、シート4 と 5 は削除されます。
@@ -5670,17 +5670,17 @@ VP SET SHEET COUNT("ViewProArea";3)
 
 <!-- REF #_method_.VP SET SHEET NAME.Params -->
 
-| 引数         | タイプ     |    | 説明                                          |
-| ---------- | ------- | -- | ------------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                     |
-| name       | Text    | -> | シートの新しい名称                                   |
-| sheet      | Integer | -> | 名称変更するシートのインデックス|<!-- END REF -->
+| 引数         | 型    |    | 説明                                          |
+| ---------- | ---- | -- | ------------------------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                     |
+| name       | テキスト | -> | シートの新しい名称                                   |
+| sheet      | 整数   | -> | 名称変更するシートのインデックス|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET SHEET NAME` コマンドは、 <!-- REF #_method_.VP SET SHEET NAME.Summary -->*vpAreaName* 引数で指定した View Pro エリア内にロードされているドキュメント内のシート名を変更します<!-- END REF -->。
+`VP SET SHEET NAME` コマンドは、 <!-- REF #_method_.VP SET SHEET NAME.Summary -->*vpAreaName* 引数で指定した View Pro エリア内にロードされているドキュメント内のシート名を変更します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
@@ -5718,17 +5718,17 @@ VP SET SHEET NAME("ViewProArea";"Total first quarter";2)
 
 <!-- REF #_method_.VP SET SHEET OPTIONS.Params -->
 
-| 引数           | タイプ    |    | 説明                                                     |
+| 引数           | 型      |    | 説明                                                     |
 | ------------ | ------ | -- | ------------------------------------------------------ |
-| vpAreaName   | Object | -> | 4D View Pro エリア名                                       |
-| sheetOptions | Object | -> | 設定するシートオプション                                           |
-| sheet        | Object | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
+| vpAreaName   | オブジェクト | -> | 4D View Pro エリア名                                       |
+| sheetOptions | オブジェクト | -> | 設定するシートオプション                                           |
+| sheet        | オブジェクト | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET SHEET OPTIONS` コマンドは、 <!-- REF #_method_.VP SET SHEET OPTIONS.Summary -->*vpAreaName* 引数で名前を指定した View Pro エリアの様々なシートオプションを設定します<!-- END REF -->。
+`VP SET SHEET OPTIONS` コマンドは、 <!-- REF #_method_.VP SET SHEET OPTIONS.Summary -->*vpAreaName* 引数で名前を指定した View Pro エリアの様々なシートオプションを設定します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -5839,17 +5839,17 @@ VP SET SHEET OPTIONS("ViewProArea";$options)
 
 <!-- REF #_method_.VP SET SHOW PRINT LINES.Params -->
 
-| 引数         | タイプ     |    | 説明                                                     |
-| ---------- | ------- | -- | ------------------------------------------------------ |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                                |
-| visible    | Boolean | -> | 印刷線を表示する場合は true (デフォルト)、非表示の場合は false                 |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
+| 引数         | 型    |    | 説明                                                     |
+| ---------- | ---- | -- | ------------------------------------------------------ |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                                |
+| visible    | ブール  | -> | 印刷線を表示する場合は true (デフォルト)、非表示の場合は false                 |
+| sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET SHOW PRINT LINES` コマンドは、 <!-- REF #_method_.VP SET SHOW PRINT LINES.Summary --> スプレッドシート内で印刷プレビュー線を表示するかどうかを設定します<!-- END REF -->。
+`VP SET SHOW PRINT LINES` コマンドは、 <!-- REF #_method_.VP SET SHOW PRINT LINES.Summary --> スプレッドシート内で印刷プレビュー線を表示するかどうかを設定します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
@@ -5896,31 +5896,31 @@ VP SET SHOW PRINT LINES("ViewProArea";True;1)
 
 <!-- REF #_method_.VP SET TABLE COLUMN ATTRIBUTES.Params -->
 
-| 引数         | タイプ     |    | 説明                                                     |
-| ---------- | ------- | -- | ------------------------------------------------------ |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名                                |
-| tableName  | Text    | -> | Table name                                             |
-| column     | Integer | -> | 表の列のインデックス                                             |
-| attributes | Object  | -> | *column* の列に適用する属性                                     |
-| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
+| 引数         | 型      |    | 説明                                                     |
+| ---------- | ------ | -- | ------------------------------------------------------ |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                                |
+| tableName  | テキスト   | -> | Table name                                             |
+| column     | 整数     | -> | 表の列のインデックス                                             |
+| attributes | オブジェクト | -> | *column* の列に適用する属性                                     |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET TABLE COLUMN ATTRIBUTES` コマンドは、 <!-- REF #_method_.VP SET TABLE COLUMN ATTRIBUTES.Summary -->*tableName* で指定した表組みの *column* でインデックスを指定した列に *attributes* の属性を適用します<!-- END REF -->。
+`VP SET TABLE COLUMN ATTRIBUTES` コマンドは、 <!-- REF #_method_.VP SET TABLE COLUMN ATTRIBUTES.Summary -->*tableName* で指定した表組みの *column* でインデックスを指定した列に *attributes* の属性を適用します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
 *attributes* 引数には、設定するプロパティを含むオブジェクトを渡します:
 
-| プロパティ               | タイプ     | 説明                                                                                                                                           |
+| プロパティ               | 型       | 説明                                                                                                                                           |
 | ------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| dataField           | text    | データコンテキストにおける、表の列のプロパティ名。                                                                                                                    |
-| name                | text    | 表の列の名前。 表組み内でユニークでなくてはなりません。 すでに他の列で使われている場合、名前は適用されず、自動的にデフォルトの名前が使われます。                                                                    |
-| formula             | text    | 列の各セルにフォーミュラを設定します。 SpreadJS のドキュメント [Structured Reference Formulas](https://www.grapecity.com/spreadjs/docs/features/tablegen/structref) 参照 |
-| footerText          | text    | 列のフッター値                                                                                                                                      |
-| footerFormula       | text    | 列のフッターのフォーミュラ。                                                                                                                               |
+| dataField           | テキスト    | データコンテキストにおける、表の列のプロパティ名。                                                                                                                    |
+| name                | テキスト    | 表の列の名前。 表組み内でユニークでなくてはなりません。 すでに他の列で使われている場合、名前は適用されず、自動的にデフォルトの名前が使われます。                                                                    |
+| formula             | テキスト    | 列の各セルにフォーミュラを設定します。 SpreadJS のドキュメント [Structured Reference Formulas](https://www.grapecity.com/spreadjs/docs/features/tablegen/structref) 参照 |
+| footerText          | テキスト    | 列のフッター値                                                                                                                                      |
+| footerFormula       | テキスト    | 列のフッターのフォーミュラ。                                                                                                                               |
 | filterButtonVisible | boolean | 表組みの列のフィルターボタンを表示するかどうかを設定します (表組み作成時のデフォルトは `true`)。                                                                                        |
 
 *sheet* には、ターゲットシートのインデックスを渡します。 index が省略された場合、または -1 が渡された場合、コマンドはカレントシートに対して適用されます。
@@ -6000,10 +6000,10 @@ VP SET TABLE COLUMN ATTRIBUTES("ViewProArea"; "PeopleTable"; 0; \
 
 <!-- REF #_method_.VP SET TABLE THEME.Params -->
 
-| 引数         | タイプ                                            |    | 説明                                        |
+| 引数         | 型                                              |    | 説明                                        |
 | ---------- | ---------------------------------------------- | -- | ----------------------------------------- |
-| vpAreaName | Text                                           | -> | 4D View Pro フォームオブジェクト名                   |
-| tableName  | Text                                           | -> | Table name                                |
+| vpAreaName | テキスト                                           | -> | 4D View Pro フォームオブジェクト名                   |
+| tableName  | テキスト                                           | -> | Table name                                |
 | options    | [cs.ViewPro.TableTheme](classes.md#tabletheme) | -> | 設定する表テーマのプロパティ|<!-- END REF -->
 
 
@@ -6012,7 +6012,7 @@ VP SET TABLE COLUMN ATTRIBUTES("ViewProArea"; "PeopleTable"; 0; \
 
 #### 説明
 
-`VP SET TABLE THEME` コマンドは、 <!-- REF #_method_.VP SET TABLE THEME.Summary -->*tableName* の表の現在のテーマを変更します<!-- END REF -->。
+`VP SET TABLE THEME` コマンドは、 <!-- REF #_method_.VP SET TABLE THEME.Summary -->*tableName* の表の現在のテーマを変更します<!-- END REF -->.
 
 *vpAreaName* には 4D View Pro エリアの名前を渡します。*tableName* には変更する表の名前を渡します。
 
@@ -6083,17 +6083,17 @@ VP SET TABLE THEME("ViewProArea"; "myTable"; $param)
 
 <!-- REF #_method_.VP SET TEXT VALUE.Params -->
 
-| 引数            | タイプ    |    | 説明                                  |
+| 引数            | 型      |    | 説明                                  |
 | ------------- | ------ | -- | ----------------------------------- |
-| rangeObj      | Object | -> | レンジオブジェクト                           |
-| textValue     | Text   | -> | 設定するテキスト値                           |
-| formatPattern | Text   | -> | 値のフォーマット|<!-- END REF -->
+| rangeObj      | オブジェクト | -> | レンジオブジェクト                           |
+| textValue     | テキスト   | -> | 設定するテキスト値                           |
+| formatPattern | テキスト   | -> | 値のフォーマット|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET TEXT VALUE` コマンドは、 <!-- REF #_method_.VP SET TEXT VALUE.Summary -->指定されたセルレンジにテキスト値を割り当てます<!-- END REF -->。
+`VP SET TEXT VALUE` コマンドは、 <!-- REF #_method_.VP SET TEXT VALUE.Summary -->指定されたセルレンジにテキスト値を割り当てます<!-- END REF -->.
 
 *rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
@@ -6118,17 +6118,17 @@ VP SET TEXT VALUE(VP Cell("ViewProArea";3;2);"Test 4D View Pro")
 
 <!-- REF #_method_.VP SET TIME VALUE.Params -->
 
-| 引数            | タイプ    |    | 説明                                  |
+| 引数            | 型      |    | 説明                                  |
 | ------------- | ------ | -- | ----------------------------------- |
-| rangeObj      | Object | -> | レンジオブジェクト                           |
-| timeValue     | Text   | -> | 設定する時間値                             |
-| formatPattern | Text   | -> | 値のフォーマット|<!-- END REF -->
+| rangeObj      | オブジェクト | -> | レンジオブジェクト                           |
+| timeValue     | テキスト   | -> | 設定する時間値                             |
+| formatPattern | テキスト   | -> | 値のフォーマット|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET TIME VALUE` コマンドは、 <!-- REF #_method_.VP SET TIME VALUE.Summary -->指定されたセルレンジに時間値を割り当てます<!-- END REF -->。
+`VP SET TIME VALUE` コマンドは、 <!-- REF #_method_.VP SET TIME VALUE.Summary -->指定されたセルレンジに時間値を割り当てます<!-- END REF -->.
 
 *rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
@@ -6157,16 +6157,16 @@ VP SET TIME VALUE(VP Cell("ViewProArea";5;2);?12:15:06?;vk pattern long time)
 
 <!-- REF #_method_.VP SET VALUE.Params -->
 
-| 引数       | タイプ    |    | 説明                                          |
+| 引数       | 型      |    | 説明                                          |
 | -------- | ------ | -- | ------------------------------------------- |
-| rangeObj | Object | -> | レンジオブジェクト                                   |
-| valueObj | Object | -> | セルの値とフォーマットオプション|<!-- END REF -->
+| rangeObj | オブジェクト | -> | レンジオブジェクト                                   |
+| valueObj | オブジェクト | -> | セルの値とフォーマットオプション|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET VALUE` コマンドは、 <!-- REF #_method_.VP SET VALUE.Summary -->指定されたセルレンジに値を割り当てます<!-- END REF -->。
+`VP SET VALUE` コマンドは、 <!-- REF #_method_.VP SET VALUE.Summary -->指定されたセルレンジに値を割り当てます<!-- END REF -->.
 
 このコマンドを使用すると、汎用的なコードで *rangeObj* のレンジに様々な型の値とそのフォーマットを設定できます。それに対して [`VP SET TEXT VALUE`](#vp-set-text-value) や [`VP SET NUM VALUE`](#vp-set-num-value) などの他のコマンドは、設定する値の型が限定されています。
 
@@ -6174,11 +6174,11 @@ VP SET TIME VALUE(VP Cell("ViewProArea";5;2);?12:15:06?;vk pattern long time)
 
 *valueObj* 引数は、*rangeObj* のレンジに対して割り当てたい値と[フォーマット](configuring.md#セルフォーマット) のプロパティを格納しているオブジェクトです。 このオブジェクトには以下のプロパティを含めることができます:
 
-| プロパティ  | タイプ                                      | 説明                                                                                        |
+| プロパティ  | 型                                        | 説明                                                                                        |
 | ------ | ---------------------------------------- | ----------------------------------------------------------------------------------------- |
 | value  | Integer, Real, Boolean, Text, Date, Null | *rangeObj* のレンジに対して割り当てる値 (時間型を除く)。 セルの中身を消去するためには Null を渡します。                            |
-| time   | Real                                     | *rangeObj* のレンジに対して割り当てる時間 (秒単位)                                                          |
-| format | Text                                     | 値や日時に対するパターン パターンおよびフォーマット文字に関しての情報については、[セルフォーマット](configuring.md#セルフォーマット) の章を参照してください。 |
+| time   | 実数                                       | *rangeObj* のレンジに対して割り当てる時間 (秒単位)                                                          |
+| format | テキスト                                     | 値や日時に対するパターン パターンおよびフォーマット文字に関しての情報については、[セルフォーマット](configuring.md#セルフォーマット) の章を参照してください。 |
 
 #### 例題
 
@@ -6221,16 +6221,16 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";Null))
 
 <!-- REF #_method_.VP SET VALUES.Params -->
 
-| 引数        | タイプ        |    | 説明                                  |
-| --------- | ---------- | -- | ----------------------------------- |
-| rangeObj  | Object     | -> | レンジオブジェクト                           |
-| valuesCol | Collection | -> | 値のコレクション|<!-- END REF -->
+| 引数        | 型      |    | 説明                                  |
+| --------- | ------ | -- | ----------------------------------- |
+| rangeObj  | オブジェクト | -> | レンジオブジェクト                           |
+| valuesCol | コレクション | -> | 値のコレクション|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SET VALUES` コマンドは、 <!-- REF #_method_.VP SET VALUES.Summary -->指定のセルレンジから開始して値のコレクションを割り当てていきます<!-- END REF -->。
+`VP SET VALUES` コマンドは、 <!-- REF #_method_.VP SET VALUES.Summary -->指定のセルレンジから開始して値のコレクションを割り当てていきます<!-- END REF -->.
 
 *rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数で定義されたセルは、開始ポイントを決定します。
 > * *rangeObj* がセルレンジではない場合、レンジの最初のセルが使用されます。
@@ -6242,10 +6242,10 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";Null))
 * 第1レベルのコレクションは、値のサブコレクションを格納しています。 それぞれのサブコレクションは行を定義します。 行をスキップするには空のコレクションを渡します。
 * それぞれのサブコレクションは行におけるセルの値を定義します。 値は整数、実数、ブール、テキスト、日付、Null、オブジェクトのいずれかです。 値がオブジェクトの場合、以下のプロパティを持つことができます:
 
- | プロパティ | タイプ                                      | 説明             |
+ | プロパティ | 型                                        | 説明             |
  | ----- | ---------------------------------------- | -------------- |
  | value | Integer, Real, Boolean, Text, Date, Null | セルの値 (時間部分を除く) |
- | time  | Real                                     | 時間値 (秒単位)      |
+ | time  | 実数                                       | 時間値 (秒単位)      |
 
 #### 例題
 
@@ -6272,17 +6272,17 @@ VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 **VP SET WORKBOOK OPTIONS** ( *vpAreaName* : Text ; *optionObj* : Object)<!-- END REF -->
 
 <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Params -->
-| 引数         | タイプ    |    | 説明                                                    |
+| 引数         | 型      |    | 説明                                                    |
 | ---------- | ------ | -- | ----------------------------------------------------- |
-| vpAreaName | Text   | -> | 4D View Pro フォームオブジェクト名                               |
-| optionObj  | Object | -> | 設定するワークブックオプションを格納したオブジェクト|<!-- END REF -->
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                               |
+| optionObj  | オブジェクト | -> | 設定するワークブックオプションを格納したオブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
 `VP SET WORKBOOK OPTIONS` コマンドは、 <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Summary -->
-*vpAreaName* 引数で指定した View Pro エリアのワークブックオプションを設定します<!-- END REF -->。
+*vpAreaName* 引数で指定した View Pro エリアのワークブックオプションを設定します<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
@@ -6294,7 +6294,7 @@ VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 
 次の表は、利用可能なワークブックオプションの一覧です:
 
-| プロパティ                                 | タイプ                     | 説明                                                                                                                                                                                         |
+| プロパティ                                 | 型                       | 説明                                                                                                                                                                                         |
 | ------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | allowUserDragMerge                    | boolean                 | ドラッグ＆マージオプションを許可します (複数セルを選択し、選択をドラッグしてセルを結合します)                                                                                                                                           |
 | allowAutoCreateHyperlink              | boolean                 | スプレッドシート内でハイパーリンクの自動作成を有効にします。                                                                                                                                                             |
@@ -6379,17 +6379,17 @@ VP SET WORKBOOK OPTIONS("ViewProArea";$workbookOptions)
 
 <!-- REF #_method_.VP SHOW CELL.Params -->
 
-| 引数       | タイプ     |    | 説明                                            |
-| -------- | ------- | -- | --------------------------------------------- |
-| rangeObj | Object  | -> | レンジオブジェクト                                     |
-| vPos     | Integer | -> | セルあるいは行の縦方向の表示位置                              |
-| hPos     | Integer | -> | セルあるいはカラムの横方向の表示位置|<!-- END REF -->
+| 引数       | 型      |    | 説明                                            |
+| -------- | ------ | -- | --------------------------------------------- |
+| rangeObj | オブジェクト | -> | レンジオブジェクト                                     |
+| vPos     | 整数     | -> | セルあるいは行の縦方向の表示位置                              |
+| hPos     | 整数     | -> | セルあるいはカラムの横方向の表示位置|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SHOW CELL` コマンドは、 <!-- REF #_method_.VP SHOW CELL.Summary -->*rangeObj* で指定したレンジの表示位置を変更します<!-- END REF -->。
+`VP SHOW CELL` コマンドは、 <!-- REF #_method_.VP SHOW CELL.Summary -->*rangeObj* で指定したレンジの表示位置を変更します<!-- END REF -->.
 
 *rangeObj* 引数には、表示位置を指定するセルのレンジオブジェクトを渡します。 *rangeObj* で指定したレンジの表示位置は、*vPos* および *hPos* 引数に従って縦・横に移動します。 *rangeObj* の縦方向の表示位置は *vPos* 引数で、横方向の表示位置は　*hPos* 引数で指定します。
 
@@ -6397,12 +6397,12 @@ VP SET WORKBOOK OPTIONS("ViewProArea";$workbookOptions)
 
 | セレクター                 | 説明                                                                                                         | *vPos* で利用可 | *hPos* で利用可 |
 | --------------------- | ---------------------------------------------------------------------------------------------------------- | ----------- | ----------- |
-| `vk position bottom`  | セルあるいは行の下辺に対する垂直揃え。                                                                                        | X           |             |
-| `vk position center`  | 中央揃え。 セル・行・カラムの境界に対して位置を揃えます:<li>縦方向の表示位置 - セルあるいは行</li><li>横方向の表示位置 - セルあるいはカラム</li>                        | X           | X           |
-| `vk position left`    | セルあるいはカラムの左辺に対する水平揃え。                                                                                      |             | X           |
-| `vk position nearest` | 一番近い基準に対する位置揃え (上、下、左、右、中央)。 セル・行・カラムの境界に対して位置を揃えます:<li>縦方向の表示位置 (上、中央、下) - セルあるいは行 </li><li>横方向の表示位置 (左、中央、右) - セルあるいはカラム</li> | X           | X           |
-| `vk position right`   | セルあるいはカラムの右辺に対する水平揃え。                                                                                      |             | X           |
-| `vk position top`     | セルあるいは行の上辺に対する垂直揃え。                                                                                        | X           |             |
+| `vk position bottom`  | セルあるいは行の下辺に対する垂直揃え。                                                                                        | ○           |             |
+| `vk position center`  | 中央揃え。 セル・行・カラムの境界に対して位置を揃えます:<li>縦方向の表示位置 - セルあるいは行</li><li>横方向の表示位置 - セルあるいはカラム</li>                        | ○           | ○           |
+| `vk position left`    | セルあるいはカラムの左辺に対する水平揃え。                                                                                      |             | ○           |
+| `vk position nearest` | 一番近い基準に対する位置揃え (上、下、左、右、中央)。 セル・行・カラムの境界に対して位置を揃えます:<li>縦方向の表示位置 (上、中央、下) - セルあるいは行 </li><li>横方向の表示位置 (左、中央、右) - セルあるいはカラム</li> | ○           | ○           |
+| `vk position right`   | セルあるいはカラムの右辺に対する水平揃え。                                                                                      |             | ○           |
+| `vk position top`     | セルあるいは行の上辺に対する垂直揃え。                                                                                        | ○           |             |
 > このコマンドは、表示位置の変更が可能な場合にのみ動作します。 たとえば、*rangeObj* が現在のシートの A1 セル (先頭カラムと先頭行) の場合、すでに縦および横方向の限界に接している (つまり、上にも左にもこれ以上スクロールできない) ため、表示位置を変更しても何も変わりません。 *rangeObj* が C3 セルの場合に、表示位置を中央または右下に変えても同じことが言えます。 表示は変更されません。
 
 #### 例題
@@ -6442,15 +6442,15 @@ VP SHOW CELL($displayCell;vk position top;vk position right)
 
 <!-- REF #_method_.VP SUSPEND COMPUTING.Params -->
 
-| 引数         | タイプ  |    | 説明                                                 |
+| 引数         | 型    |    | 説明                                                 |
 | ---------- | ---- | -- | -------------------------------------------------- |
-| vpAreaName | Text | -> | 4D View Pro フォームオブジェクト名|<!-- END REF -->
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名|<!-- END REF -->
 
 |
 
 #### 説明
 
-`VP SUSPEND COMPUTING` コマンドは、 <!-- REF #_method_.VP SUSPEND COMPUTING.Summary -->*vpAreaName* 引数で指定したエリア内の計算をすべて停止します<!-- END REF -->。 このコマンドは、4D View Pro エリア内の計算を停止したい場合、たとえばフォーミュラを手動で編集している際に、最終的な編集が完了するまでエラーが発生しないようにするのに便利です。
+`VP SUSPEND COMPUTING` コマンドは、 <!-- REF #_method_.VP SUSPEND COMPUTING.Summary -->*vpAreaName* 引数で指定したエリア内の計算をすべて停止します<!-- END REF -->. このコマンドは、4D View Pro エリア内の計算を停止したい場合、たとえばフォーミュラを手動で編集している際に、最終的な編集が完了するまでエラーが発生しないようにするのに便利です。
 
 このコマンドは 4D View Pro 内の計算機能を停止します。 すでに計算済みのフォーミュラはそのままですが、`VP SUSPEND COMPUTING` の実行後に追加されたフォーミュラは計算されません。
 
