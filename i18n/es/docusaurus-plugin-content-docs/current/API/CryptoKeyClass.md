@@ -42,14 +42,14 @@ Para obtener una visión general de esta clase, consulte la entrada del blog [**
 
 <!-- REF #4D.CryptoKey.new().Params -->
 
-| Parámetros | Tipo                         |    | Descripción                                       |
-| ---------- | ---------------------------- | -- | ------------------------------------------------- |
-| settings   | Object                       | -> | Parámetros para generar o cargar un par de llaves |
-| result     | 4D.CryptoKey | <- | Objeto que encapsula un par de llaves de cifrado  |
+| Parámetros | Tipo                         |    | Descripción                                      |
+| ---------- | ---------------------------- | -- | ------------------------------------------------ |
+| settings   | Object                       | -> | Settings to generate or load a key pair          |
+| result     | 4D.CryptoKey | <- | Objeto que encapsula un par de llaves de cifrado |
 
 <!-- END REF -->
 
-La función `4D.CryptoKey.new()` <!-- REF #4D.CryptoKey.new().Summary -->crea un nuevo objeto `4D.CryptoKey` que encapsula un par de llaves de cifrado<!-- END REF -->, en función del parámetro *settings*. Permite generar una nueva llave RSA o ECDSA, o cargar un par de llaves existente desde una definición PEM.
+La función `4D.CryptoKey.new()` <!-- REF #4D.CryptoKey.new().Summary -->crea un nuevo objeto `4D.CryptoKey` que encapsula un par de llaves de cifrado<!-- END REF -->, en función del parámetro *settings*. It allows to generate a new RSA or ECDSA key, or to load an existing key pair from a PEM definition.
 
 #### *settings*
 
@@ -62,7 +62,7 @@ La función `4D.CryptoKey.new()` <!-- REF #4D.CryptoKey.new().Summary -->crea un
 
 #### *CryptoKey*
 
-El objeto `CryptoKey` devuelto encapsula un par de llaves de cifrado. Es un objeto compartido y, por tanto, puede ser utilizado por varios procesos 4D simultáneamente.
+El objeto `CryptoKey` devuelto encapsula un par de llaves de cifrado. It is a shared object and can therefore be used by multiple 4D processes simultaneously.
 
 #### Ejemplo 1
 
