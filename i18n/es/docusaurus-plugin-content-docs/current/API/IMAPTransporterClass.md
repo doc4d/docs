@@ -847,12 +847,12 @@ La función `.getBoxList()` <!-- REF #IMAPTransporterClass.getBoxList().Summary 
 
 En el parámetro opcional `parameters`, pase un objeto que contenga valores para filtrar los buzones devueltos. Puede pasar:
 
-| Propiedad         | Tipo       | Descripción                                                                                                                                                                                                         |
-| ----------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| isSubscribed      | Boolean    | <li>**True** para devolver sólo los buzones a los que se haya suscrito</li><li> **False** para devolver todos los buzones disponibles</li>                                                                          |
-| names             | Collection | Colección de objetos que contienen un atributo "name" o colección de textos que contienen los nombres de las cajas                                                                                                  |
-| withBoxProperties | Boolean    | If true (default): adds the `selectable`, `inferior`, and `interesting` attributes to the result object. Si es false, se omiten estos atributos. |
-| withBoxInfo       | Boolean    | El valor por defecto es false. Si true, agrega los atributos `mailCount`, `mailRecent` e `id` al objeto resultado.                                                                  |
+| Propiedad         | Tipo       | Descripción                                                                                                                                                                                                             |
+| ----------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| isSubscribed      | Boolean    | <li>**True** para devolver sólo los buzones a los que se haya suscrito</li><li> **False** para devolver todos los buzones disponibles</li>                                                                              |
+| names             | Collection | Colección de objetos que contienen un atributo "name" o colección de textos que contienen los nombres de las cajas                                                                                                      |
+| withBoxProperties | Boolean    | Si true (por defecto): agrega los atributos `selectable`, `inferior` e `interesting` al objeto de resultado. Si es false, se omiten estos atributos. |
+| withBoxInfo       | Boolean    | El valor por defecto es false. Si true, agrega los atributos `mailCount`, `mailRecent` e `id` al objeto resultado.                                                                      |
 
 #### Resultado
 
