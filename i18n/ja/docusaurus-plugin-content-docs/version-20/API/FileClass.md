@@ -72,11 +72,11 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 
 <!-- REF #_command_.File.Params -->
-| 引数           | タイプ     |    | 説明                                             |
+| 引数           | 型       |    | 説明                                             |
 | ------------ | ------- |:--:| ---------------------------------------------- |
-| path         | Text    | -> | ファイルパス                                         |
-| fileConstant | Integer | -> | 4Dファイル定数                                       |
-| pathType     | Integer | -> | `fk posix path` (デフォルト) または `fk platform path` |
+| path         | テキスト    | -> | ファイルパス                                         |
+| fileConstant | 整数      | -> | 4Dファイル定数                                       |
+| pathType     | 整数      | -> | `fk posix path` (デフォルト) または `fk platform path` |
 | *            |         | -> | ホストデータベースのファイルを返すには * を渡します                    |
 | 戻り値          | 4D.File | <- | 新規ファイルオブジェクト|<!-- END REF -->
 
@@ -84,7 +84,7 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 #### 説明
 
-`File` コマンドは、 <!-- REF #_command_.File.Summary -->`4D.File` 型の新しいオブジェクトを作成して返します<!-- END REF -->。 このコマンドは 2種類のシンタックスを受け入れます。
+`File` コマンドは、 <!-- REF #_command_.File.Summary -->`4D.File` 型の新しいオブジェクトを作成して返します<!-- END REF -->. このコマンドは 2種類のシンタックスを受け入れます。
 
 **File ( path { ; pathType } { ; \* })**
 
@@ -147,7 +147,7 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 #### 説明
 
-`4D.File.new()` 関数は、 <!-- REF #4D.File.new().Summary -->`4D.File` 型の新しいオブジェクトを作成して返します<!-- END REF -->。 この関数の機能は、[`File`](#file) コマンドと同一です。
+`4D.File.new()` 関数は、 <!-- REF #4D.File.new().Summary -->`4D.File` 型の新しいオブジェクトを作成して返します<!-- END REF -->. この関数の機能は、[`File`](#file) コマンドと同一です。
 
 > `4D.File.new()` よりも、短い [`File`](#file) コマンドの使用が推奨されます。
 
@@ -171,15 +171,15 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 
 <!--REF #FileClass.create().Params -->
-| 引数  | タイプ     |    | 説明                                                              |
-| --- | ------- | -- | --------------------------------------------------------------- |
-| 戻り値 | Boolean | <- | ファイルが正常に作成された場合に true、それ以外の場合は false|<!-- END REF -->
+| 引数  | 型   |    | 説明                                                              |
+| --- | --- | -- | --------------------------------------------------------------- |
+| 戻り値 | ブール | <- | ファイルが正常に作成された場合に true、それ以外の場合は false|<!-- END REF -->
 
 |
 
 #### 説明
 
-`.create()` 関数は、 <!-- REF #FileClass.create().Summary -->`File` オブジェクトのプロパティに基づいてディスク上にファイルを作成します<!-- END REF -->。
+`.create()` 関数は、 <!-- REF #FileClass.create().Summary -->`File` オブジェクトのプロパティに基づいてディスク上にファイルを作成します<!-- END REF -->.
 
 必要であれば、 関数は [platformPath](#platformpath) あるいは [path](#path) プロパティの詳細に基づいてフォルダー階層を作成します。 ファイルがディスク上にすでに存在する場合、関数は何もせず、false を返します (エラーは返されません)。
 
@@ -212,11 +212,11 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 
 <!--REF #FileClass.createAlias().Params -->
-| 引数                | タイプ       |    | 説明                                                |
+| 引数                | 型         |    | 説明                                                |
 | ----------------- | --------- | -- | ------------------------------------------------- |
 | destinationFolder | 4D.Folder | -> | エイリアスまたはショートカットの作成先フォルダー                          |
-| aliasName         | Text      | -> | エイリアスまたはショートカットの名称                                |
-| aliasType         | Integer   | -> | エイリアスリンクのタイプ                                      |
+| aliasName         | テキスト      | -> | エイリアスまたはショートカットの名称                                |
+| aliasType         | 整数        | -> | エイリアスリンクのタイプ                                      |
 | 戻り値               | 4D.File   | <- | エイリアスまたはショートカットのファイル参照|<!-- END REF -->
 
 |
@@ -269,9 +269,9 @@ Windows 上では、常にショートカット (.lnk ファイル) が作成さ
 
 <!-- REF #FileClass.delete().Params -->
 
-| 引数 | タイプ |  | 説明                                           |
-| -- | --- |  | -------------------------------------------- |
-|    |     |  | このコマンドは引数を必要としません|<!-- END REF -->
+| 引数 | 型 |  | 説明                                           |
+| -- | - |  | -------------------------------------------- |
+|    |   |  | このコマンドは引数を必要としません|<!-- END REF -->
 
 
 
@@ -281,7 +281,7 @@ Windows 上では、常にショートカット (.lnk ファイル) が作成さ
 
 #### 説明
 
-`.delete()` 関数は、 <!-- REF #FileClass.delete().Summary -->ファイルを削除します<!-- END REF -->。
+`.delete()` 関数は、 <!-- REF #FileClass.delete().Summary -->ファイルを削除します<!-- END REF -->.
 
 ファイルがディスク上に存在しない場合、関数は何もしません (エラーは生成されません)。
 
@@ -329,9 +329,9 @@ Windows 上では、常にショートカット (.lnk ファイル) が作成さ
 
 
 <!--REF #FileClass.getAppInfo().Params -->
-| 引数  | タイプ    |    | 説明                                                              |
+| 引数  | 型      |    | 説明                                                              |
 | --- | ------ | -- | --------------------------------------------------------------- |
-| 戻り値 | Object | <- | .exe/.dll のバージョンリソースや .plist ファイルの中身|<!-- END REF -->
+| 戻り値 | オブジェクト | <- | .exe/.dll のバージョンリソースや .plist ファイルの中身|<!-- END REF -->
 
 
 |
@@ -339,7 +339,7 @@ Windows 上では、常にショートカット (.lnk ファイル) が作成さ
 
 #### 説明
 
-`.getAppInfo()` 関数は、 <!-- REF #FileClass.getAppInfo().Summary -->**.exe** や **.dll**、**.plist** ファイルの情報をオブジェクトとして返します<!-- END REF -->。
+`.getAppInfo()` 関数は、 <!-- REF #FileClass.getAppInfo().Summary -->**.exe** や **.dll**、**.plist** ファイルの情報をオブジェクトとして返します<!-- END REF -->.
 
 この関数は、既存の .exe、.dll、あるいは .plist ファイルと使う必要があります。 ファイルがディスク上に存在しない、または、有効な .exe や .dll、.plist ファイルでない場合、この関数は空のオブジェクトを返します (エラーは生成されません)。
 
@@ -351,16 +351,16 @@ Windows 上では、常にショートカット (.lnk ファイル) が作成さ
 
 プロパティ値はすべてテキストです。
 
-| プロパティ            | タイプ  |
+| プロパティ            | 型    |
 | ---------------- | ---- |
-| InternalName     | Text |
-| ProductName      | Text |
-| CompanyName      | Text |
-| LegalCopyright   | Text |
-| ProductVersion   | Text |
-| FileDescription  | Text |
-| FileVersion      | Text |
-| OriginalFilename | Text |
+| InternalName     | テキスト |
+| ProductName      | テキスト |
+| CompanyName      | テキスト |
+| LegalCopyright   | テキスト |
+| ProductVersion   | テキスト |
+| FileDescription  | テキスト |
+| FileVersion      | テキスト |
+| OriginalFilename | テキスト |
 
 **.plist ファイルの場合に返されるオブジェクト**
 
@@ -424,10 +424,10 @@ ALERT($info.Copyright)
 
 
 <!--REF #FileClass.moveTo().Params -->
-| 引数                | タイプ       |    | 説明                                  |
+| 引数                | 型         |    | 説明                                  |
 | ----------------- | --------- | -- | ----------------------------------- |
 | destinationFolder | 4D.Folder | -> | 宛先フォルダー                             |
-| newName           | Text      | -> | 移動先でのファイルの完全な名称                     |
+| newName           | テキスト      | -> | 移動先でのファイルの完全な名称                     |
 | 戻り値               | 4D.File   | <- | 移動したファイル|<!-- END REF -->
 
 
@@ -436,7 +436,7 @@ ALERT($info.Copyright)
 
 #### 説明
 
-`.moveTo()` 関数は、 <!-- REF #FileClass.moveTo().Summary -->`File` オブジェクトを *destinationFolder* が指定する移行先へと移動すると同時に、*newName* を指定した場合は名称も変更します<!-- END REF -->。
+`.moveTo()` 関数は、 <!-- REF #FileClass.moveTo().Summary -->`File` オブジェクトを *destinationFolder* が指定する移行先へと移動すると同時に、*newName* を指定した場合は名称も変更します<!-- END REF -->.
 
 *destinationFolder* 引数が指定するフォルダーはディスク上に存在している必要があり、そうでない場合にはエラーが生成されます。
 
@@ -471,17 +471,17 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 
 
 <!--REF #FileClass.open().Params -->
-| 引数      | タイプ                              |    | 説明                                               |
+| 引数      | 型                                |    | 説明                                               |
 | ------- | -------------------------------- | -- | ------------------------------------------------ |
-| mode    | Text                             | -> | 開くモード: "read", "write", "append"                 |
-| options | Object                           | -> | 開くオプション                                          |
+| mode    | テキスト                             | -> | 開くモード: "read", "write", "append"                 |
+| options | オブジェクト                           | -> | 開くオプション                                          |
 | 戻り値     | [4D.FileHandle](FileHandleClass) | <- | 新規の FileHandle オブジェクト|<!-- END REF -->
 
 |
 
 #### 説明
 
-`.open()` 関数は、 <!-- REF #FileClass.open().Summary -->対象のファイルについて、指定のモード (*mode*) またはオプション (*options*) で新規の [4D.FileHandle](FileHandleClass) オブジェクトを作成し、返します<!-- END REF -->。 [4D.FileHandle](FileHandleClass) クラスの関数とプロパティを使用して、ファイルにコンテンツを書き込んだり読み取ったり、追加したりすることができます。
+`.open()` 関数は、 <!-- REF #FileClass.open().Summary -->対象のファイルについて、指定のモード (*mode*) またはオプション (*options*) で新規の [4D.FileHandle](FileHandleClass) オブジェクトを作成し、返します<!-- END REF -->. [4D.FileHandle](FileHandleClass) クラスの関数とプロパティを使用して、ファイルにコンテンツを書き込んだり読み取ったり、追加したりすることができます。
 
 *mode* (text) 引数として、どのモードで FileHandle を開くかを指定します。
 
@@ -498,10 +498,10 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 
 *option* (object) 引数を使って、以下のプロパティを通じて FileHandle にさらなるオプションを渡すことができます (これらのプロパティはその後、開かれた [FileHandle オブジェクト](FileHandleClass) から取得できます)。
 
-| *options*         | タイプ             | 説明                                                                     | デフォルト          |
+| *options*         | 型               | 説明                                                                     | デフォルト          |
 | ----------------- | --------------- | ---------------------------------------------------------------------- | -------------- |
-| `.mode`           | Text            | 開くモード (上記の *mode* 参照)                                                  | "read"         |
-| `.charset`        | Text            | ファイルの読み取りや書き込みに使用される文字セット。 セットの標準名を使用します (たとえば、"ISO-8859-1" や "UTF-8") | "UTF-8"        |
+| `.mode`           | テキスト            | 開くモード (上記の *mode* 参照)                                                  | "read"         |
+| `.charset`        | テキスト            | ファイルの読み取りや書き込みに使用される文字セット。 セットの標準名を使用します (たとえば、"ISO-8859-1" や "UTF-8") | "UTF-8"        |
 | `.breakModeRead`  | Text または Number | ファイルの読み取り時に使用される改行の処理モード (下記参照)                                        | "native" または 1 |
 | `.breakModeWrite` | Text または Number | ファイルの書き込み時に使用される改行の処理モード (下記参照)                                        | "native" または 1 |
 
@@ -552,16 +552,16 @@ $fhandle:=$f.open("read")
 
 
 <!--REF #FileClass.rename().Params -->
-| 引数      | タイプ     |    | 説明                                     |
+| 引数      | 型       |    | 説明                                     |
 | ------- | ------- | -- | -------------------------------------- |
-| newName | Text    | -> | ファイルの新しい完全な名称                          |
+| newName | テキスト    | -> | ファイルの新しい完全な名称                          |
 | 戻り値     | 4D.File | <- | 名称変更されたファイル|<!-- END REF -->
 
 |
 
 #### 説明
 
-`.rename()` 関数は、 <!-- REF #FileClass.rename().Summary -->ファイル名を *newName* に指定した名称に変更し、名称変更後の `File` オブジェクトを返します<!-- END REF -->。
+`.rename()` 関数は、 <!-- REF #FileClass.rename().Summary -->ファイル名を *newName* に指定した名称に変更し、名称変更後の `File` オブジェクトを返します<!-- END REF -->.
 
 *newName* 引数は命名規則に則っている必要があります (例: ":", "/", 等の文字を含んでいない、など)。 そうでない場合、エラーが返されます。 同じ名前のファイルがすでに存在する場合には、エラーが返されます。
 
@@ -596,15 +596,15 @@ $fhandle:=$f.open("read")
 
 
 <!--REF #FileClass.setAppInfo().Params -->
-| 引数   | タイプ    |    | 説明                                                                     |
+| 引数   | 型      |    | 説明                                                                     |
 | ---- | ------ | -- | ---------------------------------------------------------------------- |
-| info | Object | -> | .exe/.dll のバージョンリソースや .plist ファイルに書き込むプロパティ|<!-- END REF -->
+| info | オブジェクト | -> | .exe/.dll のバージョンリソースや .plist ファイルに書き込むプロパティ|<!-- END REF -->
 
 |
 
 #### 説明
 
-`.setAppInfo()` 関数は、 <!-- REF #FileClass.setAppInfo().Summary -->*info* に渡したプロパティを **.exe** や **.dll**、**.plist** ファイルの情報として書き込みます<!-- END REF -->。
+`.setAppInfo()` 関数は、 <!-- REF #FileClass.setAppInfo().Summary -->*info* に渡したプロパティを **.exe** や **.dll**、**.plist** ファイルの情報として書き込みます<!-- END REF -->.
 
 この関数は、既存の .exe、.dll、あるいは .plist ファイルと使う必要があります。 ファイルがディスク上に存在しない、または、有効な .exe や .dll、.plist ファイルでない場合、この関数は何もしません (エラーは生成されません)。
 
@@ -616,17 +616,17 @@ $fhandle:=$f.open("read")
 
 *info* オブジェクトに設定された各プロパティは .exe または .dll ファイルのバージョンリソースに書き込まれます。 以下のプロパティが使用できます (それ以外のプロパティは無視されます):
 
-| プロパティ            | タイプ  | 説明                                                   |
+| プロパティ            | 型    | 説明                                                   |
 | ---------------- | ---- | ---------------------------------------------------- |
-| InternalName     | Text |                                                      |
-| ProductName      | Text |                                                      |
-| CompanyName      | Text |                                                      |
-| LegalCopyright   | Text |                                                      |
-| ProductVersion   | Text |                                                      |
-| FileDescription  | Text |                                                      |
-| FileVersion      | Text |                                                      |
-| OriginalFilename | Text |                                                      |
-| WinIcon          | Text | .icoファイルの Posixパス。 このプロパティは、4D が生成した実行ファイルにのみ適用されます。 |
+| InternalName     | テキスト |                                                      |
+| ProductName      | テキスト |                                                      |
+| CompanyName      | テキスト |                                                      |
+| LegalCopyright   | テキスト |                                                      |
+| ProductVersion   | テキスト |                                                      |
+| FileDescription  | テキスト |                                                      |
+| FileVersion      | テキスト |                                                      |
+| OriginalFilename | テキスト |                                                      |
+| WinIcon          | テキスト | .icoファイルの Posixパス。 このプロパティは、4D が生成した実行ファイルにのみ適用されます。 |
 
 `WinIcon` を除くすべてのプロパティにおいて、値として null または空テキストを渡すと、空の文字列がプロパティに書き込まれます。 テキストでない型の値を渡した場合には、文字列に変換されます。
 
@@ -686,7 +686,7 @@ $infoPlistFile.setAppInfo($info)
 
 
 <!--REF #FileClass.setContent().Params -->
-| 引数      | タイプ  |    | 説明                                       |
+| 引数      | 型    |    | 説明                                       |
 | ------- | ---- | -- | ---------------------------------------- |
 | content | BLOB | -> | ファイルの新しいコンテンツ|<!-- END REF -->
 
@@ -694,7 +694,7 @@ $infoPlistFile.setAppInfo($info)
 
 #### 説明
 
-`.setContent( )` 関数は、 <!-- REF #FileClass.setContent().Summary -->*content* 引数の BLOB に保存されているデータを使用して、ファイルの全コンテンツを上書きします<!-- END REF -->。 BLOB についての詳細は、[BLOB](Concepts/dt_blob.md) の章を参照してください。
+`.setContent( )` 関数は、 <!-- REF #FileClass.setContent().Summary -->*content* 引数の BLOB に保存されているデータを使用して、ファイルの全コンテンツを上書きします<!-- END REF -->. BLOB についての詳細は、[BLOB](Concepts/dt_blob.md) の章を参照してください。
 
 #### 例題
 
@@ -721,12 +721,12 @@ $infoPlistFile.setAppInfo($info)
 
 
 <!--REF #FileClass.setText().Params -->
-| 引数          | タイプ     |    | 説明                                  |
-| ----------- | ------- | -- | ----------------------------------- |
-| text        | Text    | -> | ファイルに保存するテキスト                       |
-| charSetName | Text    | -> | 文字セットの名前                            |
-| charSetNum  | Integer | -> | 文字セットの番号                            |
-| breakMode   | Integer | -> | 改行の処理モード|<!-- END REF -->
+| 引数          | 型    |    | 説明                                  |
+| ----------- | ---- | -- | ----------------------------------- |
+| テキスト        | テキスト | -> | ファイルに保存するテキスト                       |
+| charSetName | テキスト | -> | 文字セットの名前                            |
+| charSetNum  | 整数   | -> | 文字セットの番号                            |
+| breakMode   | 整数   | -> | 改行の処理モード|<!-- END REF -->
 
 
 |
@@ -734,7 +734,7 @@ $infoPlistFile.setAppInfo($info)
 
 #### 説明
 
-`.setText()` 関数は、 <!-- REF #FileClass.setText().Summary -->*text* に渡されたテキストをファイルの新しいコンテンツとして書き込みます<!-- END REF -->。
+`.setText()` 関数は、 <!-- REF #FileClass.setText().Summary -->*text* に渡されたテキストをファイルの新しいコンテンツとして書き込みます<!-- END REF -->.
 
 `File` オブジェクトで参照されているファイルがディスク上に存在しない場合、このメソッドがそのファイルを作成します。 ディスク上にファイルが存在する場合、ファイルが開かれている場合を除き、以前のコンテンツは消去されます。 ファイルが開かれている場合はコンテンツはロックされ、エラーが生成されます。
 
