@@ -389,7 +389,7 @@ The object returned by `.drop( )` contains the following properties:
 
 #### Exemplo 1
 
-Example without `dk force drop if stamp changed` option:
+Exemplo sem a opção `dk force drop if stamp changed`:
 
 ```4d
  var $employees : cs.EmployeeSelection
@@ -1282,7 +1282,7 @@ Criar uma nova entidade:
 
 #### Exemplo 2
 
-Updating an entity without `dk auto merge` option:
+Atualizar uma entidade sem a opção dk auto merge:
 
 ```4d
  var $status : Object
@@ -1453,7 +1453,7 @@ Retorna:
 
 #### Exemplo 3
 
-Expanding all the properties of `relatedEntities`:
+Expande todas as propriedades de `relatedEntities`:
 
 ```4d
 employeeObject:=employeeSelected.toObject("directReports.*")
@@ -1569,7 +1569,7 @@ Retorna:
 
 #### Exemplo 6
 
-Extracting all the properties of a `relatedEntity`:
+Expande todas as propriedades de `relatedEntity`:
 
 ```4d
  employeeObject:=employeeSelected.toObject("employer.*")
