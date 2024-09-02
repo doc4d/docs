@@ -5,102 +5,102 @@ title: Affichage
 
 ---
 
-## Alpha Format
+## Format Alpha
 
-Alpha formats control the way the alphanumeric fields and variables appear when displayed or printed. Voici une liste des formats proposés pour les champs alphanumériques :
+Les formats Alpha contrôlent l'apparence des champs et des variables alphanumériques (strings) lorsqu'ils sont affichés ou imprimés. Voici une liste des formats proposés pour les champs alphanumériques :
 
 ![](../assets/en/FormObjects/property_alphaFormat.png)
 
-You can choose a format from this list or use any custom format. The default list contains formats for some of the most common alpha fields that require formats: US telephone numbers (local and long distance), Social Security numbers, and zip codes. You can also enter a custom format name set in the Filters and formats editor of the tool box. In this case, the format cannot be modified in the object properties.
-Any custom formats or filters that you have created are automatically available, preceded by a vertical bar (|).
+Vous pouvez choisir un format dans cette liste ou utiliser n'importe quel format personnalisé. La liste par défaut contient des formats pour certains des champs alpha les plus courants qui nécessitent des formats: numéros de téléphone américains (local et longue distance), numéros de sécurité sociale et codes postaux. Vous pouvez également saisir un nom de format personnalisé défini dans l'éditeur Filtres et formats de la boîte à outils. Dans ce cas, le format ne peut pas être modifié dans les propriétés de l'objet.
+Tous les formats ou filtres personnalisés que vous avez créés sont automatiquement disponibles, précédés d'une barre verticale (|).
 
-The number sign (#) is the placeholder for an alphanumeric display format. You can include the appropriate dashes, hyphens, spaces, and any other punctuation marks that you want to display. You use the actual punctuation marks you want and the number sign for each character you want to display.
+Le signe dièse (#) est le placeholder pour un format d'affichage alphanumérique. Vous pouvez inclure des tirets, les traits d'union, les espaces et tout autre signe de ponctuation que vous souhaitez afficher. Vous utilisez les signes de ponctuation réels que vous souhaitez et le symbole dièse pour chaque caractère que vous souhaitez afficher.
 
-For example, consider a part number with a format such as "RB-1762-1".
+Par exemple, considérez un numéro de pièce avec un format tel que "RB-1762-1".
 
-The alpha format would be:
+Le format alpha serait :
 
 \##-####-#
 
-When the user enters "RB17621," the field displays:
+Lorsque l'utilisateur entre "RB17621," le champ affiche :
 
 RB-1762-1
 
-The field actually contains "RB17621".
+Le champ contient en fait "RB17621".
 
-If the user enters more characters than the format allows, 4D displays the last characters. For example, if the format is:
+Si l'utilisateur saisit plus de caractères que ce que le format le permet, 4D affiche les derniers caractères. Par exemple, si le format est :
 
 (#######)
 
-and the user enters "proportion", the field displays:
+et si l'utilisateur saisit "proportion", le champ s'affiche:
 
 (portion)
 
-The field actually contains "proportion". 4D accepts and stores the entire entry no matter what the display format. No information is lost.
+Le champ contient en fait "proportion". 4D accepte et stocke la saisie complète, quel que soit le format d’affichage. Aucune information n'est perdue.
 
 #### Grammaire JSON
 
-| Nom        | Type de données | Valeurs possibles                                                                                       |
-| ---------- | --------------- | ------------------------------------------------------------------------------------------------------- |
-| textFormat | string          | "### ####", "(###) ### ####", "### ### ####", "### ## ####", "00000", custom formats |
+| Nom        | Type de données | Valeurs possibles                                                                                              |
+| ---------- | --------------- | -------------------------------------------------------------------------------------------------------------- |
+| textFormat | string          | "### ####", "(###) ### ####", "### ### ####", "### ## ####", "00000", formats personnalisés |
 
 #### Objets pris en charge
 
-[Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers)
+[Liste déroulante](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Colonne de List box](listbox_overview.md#list-box-columns) - [Footer List Box](listbox_overview.md#list-box-footers)
 
 ---
 
-## Date Format
+## Format Date
 
-Date formats control the way dates appear when displayed or printed. For data entry, you enter dates in the MM/DD/YYYY format, regardless of the display format you have chosen.
+Les formats de date contrôlent la façon dont les dates apparaissent lorsqu'elles sont affichées ou imprimées. Pour la saisie des données (FR), vous entrez les dates dans le format JJ/MM/AAAA, quel que soit le format d'affichage que vous avez choisi.
 
-Display formats for dates can be defined:
+Les formats d'affichage pour les dates peuvent être définis :
 
-- using a 4D built-in format,
-- using a custom pattern.
+- en utilisant un format 4D intégré,
+- en utilisant un modèle personnalisé.
 
-### Built-in formats
+### Formats intégrés
 
-The table below shows choices available:
+Le tableau ci-dessous montre les choix disponibles :
 
-| Nom du format                                      | Chaine JSON                              | Exemple (système US)                       |
-| -------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------- |
-| System date short                                  | systemShort (default) | 03/25/20                                                      |
-| System date abbreviated _(1)_   | systemMedium                             | Wed, Mar 25, 2020                                             |
-| System date long                                   | systemLong                               | Wednesday, March 25, 2020                                     |
-| RFC 822                                            | rfc822                                   | Tue, 25 Mar 2020 22:00:00 GMT |
-| Short Century                                      | shortCentury                             | 03/25/20 but 04/25/2032 _(2)_              |
-| Internal date long                                 | long                                     | March 25, 2020                                                |
-| Internal date abbreviated _(1)_ | abbreviated                              | Mar 25, 2020                                                  |
-| Internal date short                                | short                                    | 03/25/2020                                                    |
-| ISO Date Time _(3)_             | iso8601                                  | 2020-03-25T00:00:00           |
+| Nom du format                                | Chaine JSON                                 | Exemple (système US)                       |
+| -------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------- |
+| Système date court                           | systemShort (par défaut) | 03/25/20                                                      |
+| Système date abrégé _(1)_ | systemMedium                                | Wed, Mar 25, 2020                                             |
+| Système date long                            | systemLong                                  | Wednesday, March 25, 2020                                     |
+| RFC 822                                      | rfc822                                      | Tue, 25 Mar 2020 22:00:00 GMT |
+| Siècle court                                 | shortCentury                                | 03/25/20 but 04/25/2032 _(2)_              |
+| Interne date long                            | long                                        | March 25, 2020                                                |
+| Interne date abrégé _(1)_ | abbreviated                                 | Mar 25, 2020                                                  |
+| Interne date court                           | short                                       | 03/25/2020                                                    |
+| ISO Date Heure _(3)_      | iso8601                                     | 2020-03-25T00:00:00           |
 
 _(1)_ Pour éviter toute ambiguïté et conformément à la pratique actuelle, les formats de date abrégés affichent "jun" pour juin et "jul" pour juillet. Cette particularité ne s'applique qu'aux versions françaises de 4D.
 
-_(2)_ L'année est affichée avec deux chiffres lorsqu'elle appartient à l'intervalle (1930;2029), sinon elle est affichée avec quatre chiffres. This is by default but it can be modified using the [SET DEFAULT CENTURY](https://doc.4d.com/4dv20/help/command/en/page392.html) command.
+_(2)_ L'année est affichée avec deux chiffres lorsqu'elle appartient à l'intervalle (1930;2029), sinon elle est affichée avec quatre chiffres. Ceci est par défaut mais cela peut être modifié en utilisant la commande [SET DEFAULT CENTURY](https://doc.4d.com/4dv20/help/command/fr/page392.html).
 
 _(3)_ Le format `ISO Date Time` correspond à la norme XML de représentation de la date et de l'heure (ISO8601). Il est principalement destiné à être utilisé lors de l'import/export de données au format XML et dans les services Web.
 
-> Quel que soit le format d'affichage, si l'année est saisie avec deux chiffres, 4D considère que le siècle est le 21ème si l'année appartient à l'intervalle (00;29) et le 20e si elle appartient à l'intervalle (30;99). This is the default setting but it can be modified using the [SET DEFAULT CENTURY](https://doc.4d.com/4dv20/help/command/en/page392.html) command.
+> Quel que soit le format d'affichage, si l'année est saisie avec deux chiffres, 4D considère que le siècle est le 21ème si l'année appartient à l'intervalle (00;29) et le 20e si elle appartient à l'intervalle (30;99). Ceci est le paramètre par défaut mais il peut être modifié en utilisant la commande [SET DEFAULT CENTURY](https://doc.4d.com/4dv20/help/command/fr/page392.html).
 
-### Custom formats
+### Formats personnalisés
 
-Customized date formats can be built using several patterns described in the [**Date and Time Formats**](../Project/date-time-formats.md) page. Par exemple :
+Des formats de date personnalisés peuvent être construits en utilisant plusieurs motifs décrits dans la page [**Formats de date et d'heure**](../Project/date-time-formats.md) . Par exemple :
 
-| Pattern                  | Exemple (système US) |
+| Motif                    | Exemple (système US) |
 | ------------------------ | --------------------------------------- |
 | "eeee, dd"               | Wednesday, 29                           |
 | "'Day' #D 'of the year'" | Day #333 of the year                    |
 
 #### Grammaire JSON
 
-| Nom        | Type de données | Valeurs possibles                                                                                                                                                                                                                                                                   |
-| ---------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dateFormat | string          | <li>Built-in formats: "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long" + " blankIfNull"</li><li>Custom formats: any format built using a [supported pattern](../Project/date-time-formats.md) + " blankIfNull"</li> |
+| Nom        | Type de données | Valeurs possibles                                                                                                                                                                                                                                                                                          |
+| ---------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| dateFormat | string          | <li>Formats intégrés : "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long" + " blankIfNull"</li><li>Formats personnalisés : tout format construit à l'aide d'un [motif pris en charge](../Project/date-time-formats.md) + " blankIfNull"</li> |
 
 :::note blankIfNull
 
-- By default, a null date is displayed with zeros, e.g. 00/00/00. With the "blankIfNull" option, a null date is displayed as an empty area. The "blankIfNull" string (case sensitive) must be combined with the selected format value. Ex: "systemShort blankIfNull" or "ee dd LL blankIfNull".
+- Par défaut, une date nulle est affichée avec des zéros, par exemple 00/00/00. Avec l'option "blankIfNull", une date nulle est affichée comme une zone vide. La chaîne "blankIfNull" (sensible à la casse) doit être combinée avec la valeur de format sélectionnée. Ex : "systemShort blankIfNull" ou "ee dd LL blankIfNull".
 - [List box columns](listbox_overview.md#list-box-columns) and [list box footers](listbox_overview.md#list-box-footers) of type date always use the "blank if null" behavior (it cannot be disengaged).
 
 :::
@@ -111,32 +111,32 @@ Customized date formats can be built using several patterns described in the [**
 
 ---
 
-## Number Format
+## Format numérique
 
-> Number fields include the Integer, Long integer, Integer 64 bits, Real and Float types.
+> Les champs numériques comprennent les types Entier, Entier long, Entier 64 bits, Réel et Float.
 
-Number formats control the way numbers appear when displayed or printed. For data entry, you enter only the numbers (including a decimal point or minus sign if necessary), regardless of the display format you have chosen.
+Les formats numériques contrôlent la façon dont les nombres apparaissent lorsqu'ils sont affichés ou imprimés. Pour la saisie des données, vous saisissez uniquement les chiffres (y compris un point décimal ou un signe négatif si nécessaire), quel que soit le format d'affichage que vous avez choisi.
 
-4D provides various default number formats.
+4D fournit différents formats numériques par défaut.
 
 ### Placeholders
 
-In each of the number display formats, the number sign (#), zero (0), caret (^), and asterisk (\*) are used as placeholders. You create your own number formats by using one placeholder for each digit you expect to display.
+Dans chacun des formats d'affichage numériques, le signe dièse (#), zéro (0), le caret (^) et l'astérisque (\*) sont utilisés comme placeholders. Vous créez vos propres formats numériques en utilisant un placeholder pour chaque chiffre que vous souhaitez afficher.
 
-| Le placeholder | Effect for leading or trailing zero     |
-| -------------- | --------------------------------------- |
-| #              | Displays nothing                        |
-| 0              | Displays 0                              |
-| ^              | Displays a space (1) |
-| -              | Displays an asterisk                    |
+| Placeholder | Effet pour les zéros de début ou de fin  |
+| ----------- | ---------------------------------------- |
+| #           | N'affiche rien                           |
+| 0           | Affiche 0                                |
+| ^           | Affiche un espace (1) |
+| -           | Affiche un astérisque                    |
 
-(1) The caret (^) generates a space character that occupies the same width as a digit in most fonts.
+(1) Le caractère caret (^) génère un espace qui occupe la même largeur qu'un chiffre dans la plupart des polices de caractères.
 
-For example, if you want to display three-digit numbers, you could use the format ###. If the user enters more digits than the format allows, 4D displays <<< in the field to indicate that more digits were entered than the number of digits specified in the display format.
+Par exemple, si vous souhaitez afficher des numéros à trois chiffres, vous pouvez utiliser le format ###. Si l'utilisateur saisit plus de chiffres que le format le permet, 4D affiche <<< dans le champ pour indiquer que plus de chiffres ont été saisis que le nombre de chiffres spécifié dans le format d'affichage.
 
-If the user enters a negative number, the leftmost character is displayed as a minus sign (unless a negative display format has been specified). If ##0 is the format, minus 26 is displayed as –26 and minus 260 is displayed as <<< because the minus sign occupies a placeholder and there are only three placeholders.
+Si l'utilisateur saisit un nombre négatif, le caractère le plus à gauche est affiché sous forme de signe moins (sauf si un format d'affichage négatif a été spécifié). If ##0 is the format, minus 26 is displayed as –26 and minus 260 is displayed as <<< because the minus sign occupies a placeholder and there are only three placeholders.
 
-> No matter what the display format, 4D accepts and stores the number entered in the field. No information is lost.
+> No matter what the display format, 4D accepts and stores the number entered in the field. Aucune information n'est perdue.
 
 Each placeholder character has a different effect on the display of leading or trailing zeros. A leading zero is a zero that starts a number before the decimal point; a trailing zero is a zero that ends a number after the decimal point.
 
@@ -338,10 +338,10 @@ Time formats control the way times appear when displayed or printed. For data en
 
 Display formats for times can be defined:
 
-- using a 4D built-in format,
-- using a custom pattern.
+- en utilisant un format 4D intégré,
+- en utilisant un modèle personnalisé.
 
-### Built-in formats
+### Formats intégrés
 
 The table below shows the Time field display formats and gives examples:
 
@@ -359,11 +359,11 @@ The table below shows the Time field display formats and gives examples:
 | System time long abbreviated             | systemMedium                                       | macOS only: Abbreviated time format defined in the system. <br/>Windows: this format is the same as the System time short format | 4•30•25 AM                                                |
 | System time long                         | systemLong                                         | macOS only: Long time format defined in the system. <br/>Windows: this format is the same as the System time short format        | 4:30:25 AM HNEC           |
 
-### Custom formats
+### Formats personnalisés
 
 Customized time formats can be built using several patterns described in the [**Date and Time Formats**](../Project/date-time-formats.md) page. Par exemple :
 
-| Pattern                                | Exemple (système US) |
+| Motif                                  | Exemple (système US) |
 | -------------------------------------- | --------------------------------------- |
 | "HH 'hours' mm 'minutes' ss 'seconds'" | 13 heures 25 minutes 12 secondes        |
 | "hh:mm aa"             | 01:25 PM                |
@@ -376,7 +376,7 @@ Customized time formats can be built using several patterns described in the [**
 
 :::note blankIfNull
 
-By default, a null time is displayed with zeros, e.g. "00:00:00". With the "blankIfNull" option, a null time is displayed as an empty area. The "blankIfNull" string (case sensitive) must be combined with the selected format value. Ex: "MM_SS blankIfNull" or "hh:mm aa blankIfNull"
+By default, a null time is displayed with zeros, e.g. "00:00:00". With the "blankIfNull" option, a null time is displayed as an empty area. La chaîne "blankIfNull" (sensible à la casse) doit être combinée avec la valeur de format sélectionnée. Ex: "MM_SS blankIfNull" or "hh:mm aa blankIfNull"
 
 :::
 
