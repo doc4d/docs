@@ -42,14 +42,14 @@ title: CryptoKey
 
 <!-- REF #4D.CryptoKey.new().Params -->
 
-| 引数       | 型                            |    | 説明                                      |
-| -------- | ---------------------------- | -- | --------------------------------------- |
-| settings | オブジェクト                       | -> | Settings to generate or load a key pair |
-| result   | 4D.CryptoKey | <- | 暗号化キーペアをカプセル化したオブジェクト                   |
+| 引数       | 型                            |    | 説明                    |
+| -------- | ---------------------------- | -- | --------------------- |
+| settings | オブジェクト                       | -> | キーペアを生成・ロードするための設定    |
+| 戻り値      | 4D.CryptoKey | <- | 暗号化キーペアをカプセル化したオブジェクト |
 
 <!-- END REF -->
 
-`4D.CryptoKey.new()` 関数は、*settings* オブジェクト引数に基づいて<!-- REF #4D.CryptoKey.new().Summary -->暗号化キーペアをカプセル化する `4D.CryptoKey` オブジェクトを新規作成します<!-- END REF -->。 It allows to generate a new RSA or ECDSA key, or to load an existing key pair from a PEM definition.
+`4D.CryptoKey.new()` 関数は、*settings* オブジェクト引数に基づいて<!-- REF #4D.CryptoKey.new().Summary -->暗号化キーペアをカプセル化する `4D.CryptoKey` オブジェクトを新規作成します<!-- END REF -->。 新規の RSA または ECDSA キーを生成するほか、PEM 形式の既存のキーペアをロードすることができます。
 
 #### *settings*
 
@@ -62,7 +62,7 @@ title: CryptoKey
 
 #### *CryptoKey*
 
-戻り値の `CryptoKey` オブジェクトは、暗号化キーペアをカプセル化します。 It is a shared object and can therefore be used by multiple 4D processes simultaneously.
+戻り値の `CryptoKey` オブジェクトは、暗号化キーペアをカプセル化します。 これは共有オブジェクトのため、複数の 4D プロセスによって同時使用できます。
 
 #### 例題 1
 
@@ -185,7 +185,7 @@ ECDSA キーのみ: <!-- REF #CryptoKey.curve.Summary -->キーの楕円曲線�
 | プロパティ   | 型          | 説明                                                              |
 | ------- | ---------- | --------------------------------------------------------------- |
 | success | boolean    | メッセージの復号に成功した場合は true                                           |
-| result  | テキスト       | options.encodingDecrypted を使って復号およびデコードされたメッセージ |
+| 戻り値     | テキスト       | options.encodingDecrypted を使って復号およびデコードされたメッセージ |
 | errors  | collection | `success` が `false` の場合、エラーのコレクションが含まれている場合があります。               |
 
 キーまたはアルゴリズムが合致しないなどの理由で *message* の復号に成功しなかった場合、返される `status` オブジェクトの `status.errors` プロパティにはエラーのコレクションが格納されます。
