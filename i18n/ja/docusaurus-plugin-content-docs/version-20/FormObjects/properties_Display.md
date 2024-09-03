@@ -481,7 +481,7 @@ title: 表示
 
 #### 対象オブジェクト
 
-[リストボックス列](listbox_overview.md#リストボックス列) - [リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー)
+[List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers)
 
 ---
 
