@@ -20,12 +20,12 @@ title: On Column Resize
 
 このイベントはカラムの幅がユーザーによって変更されたときに生成されます。 このコンテキストにおいて、`FORM Event` コマンドによって返される [イベントオブジェクト](overview.md#イベントオブジェクト) には以下のプロパティが含まれています:
 
-| プロパティ       | タイプ     | 説明                                                  |
+| プロパティ       | 型       | 説明                                                  |
 | ----------- | ------- | --------------------------------------------------- |
-| code        | longint | On Column Resize                                    |
-| description | text    | "On Column Resize"                                  |
-| objectName  | text    | 4D View Pro エリア名                                    |
-| sheetName   | text    | イベントが発生したシート名                                       |
+| code        | 倍長整数    | On Column Resize                                    |
+| description | テキスト    | "On Column Resize"                                  |
+| objectName  | テキスト    | 4D View Pro エリア名                                    |
+| sheetName   | テキスト    | イベントが発生したシート名                                       |
 | range       | object  | 幅が変更されたカラムのセルレンジ                                    |
 | header      | boolean | 行ヘッダーカラム (最初のカラム) がリサイズされた場合には true、それ以外の場合には false |
 
