@@ -15,7 +15,7 @@ Pour créer un nouveau projet :
 
 2. Effectuez l'une des opérations suivantes :
    - Sélectionnez **Nouveau > Projet...** dans le menu **Fichier** : ![](../assets/en/getStart/projectCreate1.png)
-   - (uniquement pour 4D) Sélectionnez **Projet...** dans le bouton de la barre d'outils **Nouveau** :<p>![](../assets/fr/getStart/projectCreate2.png)</p>Une boîte de dialogue **Enregistrer** standard apparaît afin que vous puissiez choisir le nom et l'emplacement du dossier principal du projet 4D.
+   - (uniquement pour 4D) Sélectionnez **Projet...** dans le bouton de la barre d'outils **Nouveau** :<p>![](../assets/en/getStart/projectCreate2.png)</p>Une boîte de dialogue **Enregistrer** standard apparaît afin que vous puissiez choisir le nom et l'emplacement du dossier principal du projet 4D.
 
 3. Saisissez le nom du dossier de projet et cliquez sur **Sauvegarder**. Ce nom sera utilisé :
 
