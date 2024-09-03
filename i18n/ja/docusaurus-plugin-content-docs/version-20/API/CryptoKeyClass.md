@@ -10,7 +10,7 @@ title: CryptoKey
 
 :::info こちらもご覧ください
 
-For a comprehensive overview of this class, please refer to the [**CryptoKey: encrypt, decrypt, sign, and verify!**](https://blog.4d.com/cryptokey-encrypt-decrypt-sign-and-verify/) blog post.
+このクラスの包括的な概要については、[**CryptoKey: 暗号化、復号化、署名、検証！**](https://blog.4d.com/ja/cryptokey-encrypt-decrypt-sign-and-verify/) ブログ記事を参照ください。
 
 :::
 
@@ -42,13 +42,13 @@ For a comprehensive overview of this class, please refer to the [**CryptoKey: en
 
 
 <!-- REF #4D.CryptoKey.new().Params -->
-| 引数       | 型            |    | 説明                                      |
-| -------- | ------------ | -- | --------------------------------------- |
-| settings | オブジェクト       | -> | Settings to generate or load a key pair |
-| result   | 4D.CryptoKey | <- | 暗号化キーペアをカプセル化したオブジェクト                   |
+| 引数       | 型            |    | 説明                    |
+| -------- | ------------ | -- | --------------------- |
+| settings | オブジェクト       | -> | キーペアを生成・ロードするための設定    |
+| 戻り値      | 4D.CryptoKey | <- | 暗号化キーペアをカプセル化したオブジェクト |
 <!-- END REF -->
 
-The `4D.CryptoKey.new()` function <!-- REF #4D.CryptoKey.new().Summary -->creates a new `4D.CryptoKey` object encapsulating an encryption key pair<!-- END REF -->, based upon the *settings* object parameter. It allows to generate a new RSA or ECDSA key, or to load an existing key pair from a PEM definition.
+`4D.CryptoKey.new()` 関数は、 <!-- REF #4D.CryptoKey.new().Summary -->暗号化キーペアをカプセル化する `4D.CryptoKey` オブジェクトを新規作成します<!-- END REF -->。この暗号化キーペアは *settings* オブジェクト引数に基づきます。 新規の RSA または ECDSA キーを生成するほか、PEM 形式の既存のキーペアをロードすることができます。
 
 #### *settings*
 
@@ -62,7 +62,7 @@ The `4D.CryptoKey.new()` function <!-- REF #4D.CryptoKey.new().Summary -->create
 
 #### *CryptoKey*
 
-The returned `CryptoKey` object encapsulates an encryption key pair. It is a shared object and can therefore be used by multiple 4D processes simultaneously.
+戻り値の `CryptoKey` オブジェクトは、暗号化キーペアをカプセル化します。 これは共有オブジェクトのため、複数の 4D プロセスによって同時使用できます。
 
 #### 例題 1
 
@@ -91,18 +91,18 @@ Folder(fk desktop folder).file("signature").setText($key.sign($message;$type))
 - Alice側:
 
 ```4d
-// Get message, public key & signature
+// メッセージと公開鍵、署名を取得します
 $message:=Folder(fk desktop folder).file("message.txt").getText()
 $publicKey:=Folder(fk desktop folder).file("public.pem").getText()
 $signature:=Folder(fk desktop folder).file("signature").getText()
 
-// Create a key
+// キーを作成します 
 $type:=New object("type";"PEM";"pem";$publicKey)
 $key:=4D.CryptoKey.new($type)
 
-// Verify signature
+// 署名を検証します
 If ($key.verify($message;$signature;$type).success)
-// The signature is valid
+// 署名は有効です
 
 End if
 ```
@@ -184,7 +184,7 @@ ECDSA キーのみ: <!-- REF #CryptoKey.curve.Summary -->キーの楕円曲線�
 | プロパティ   | 型          | 説明                                                |
 | ------- | ---------- | ------------------------------------------------- |
 | success | boolean    | メッセージの復号に成功した場合は true                             |
-| result  | テキスト       | options.encodingDecrypted を使って復号およびデコードされたメッセージ   |
+| 戻り値     | テキスト       | options.encodingDecrypted を使って復号およびデコードされたメッセージ   |
 | errors  | collection | `success` が `false` の場合、エラーのコレクションが含まれている場合があります。 |
 
 キーまたはアルゴリズムが合致しないなどの理由で *message* の復号に成功しなかった場合、返される `status` オブジェクトの `status.errors` プロパティにはエラーのコレクションが格納されます。
@@ -204,11 +204,11 @@ ECDSA キーのみ: <!-- REF #CryptoKey.curve.Summary -->キーの楕円曲線�
 
 
 <!-- REF #CryptoKey.encrypt().Params -->
-| 引数      | 型      |    | 説明                                                                  |
-| ------- | ------ | -- | ------------------------------------------------------------------- |
-| message | テキスト   | -> | `options.encodingDecrypted` を使ってエンコードし暗号化するメッセージ文字列                 |
-| options | オブジェクト | -> | エンコーディングオプション                                                       |
-| 戻り値     | テキスト   | <- | Message encrypted and encoded using the `options.encodingEncrypted` |
+| 引数      | 型      |    | 説明                                                  |
+| ------- | ------ | -- | --------------------------------------------------- |
+| message | テキスト   | -> | `options.encodingDecrypted` を使ってエンコードし暗号化するメッセージ文字列 |
+| options | オブジェクト | -> | エンコーディングオプション                                       |
+| 戻り値     | テキスト   | <- | `options.encodingEncrypted` を使って暗号化およびエンコードされたメッセージ |
 <!-- END REF -->
 
 `.encrypt()` 関数は、 <!-- REF #CryptoKey.encrypt().Summary -->**公開** 鍵を使って *message* を暗号化します<!-- END REF -->. 使用されるアルゴリズムはキーの種類に依存します。
