@@ -70,18 +70,18 @@ var $myVar // バリアント型変数
 
 | varType                                 | 内容                                     |
 | --------------------------------------- | -------------------------------------- |
-| `Text`                                  | テキスト値                                  |
+| `テキスト`                                  | テキスト値                                  |
 | `日付`                                    | 日付値                                    |
 | `時間`                                    | 時間値                                    |
-| `Boolean`                               | ブール値                                   |
-| `Integer`                               | 倍長整数値                                  |
-| `Real`                                  | 実数値                                    |
+| `ブール`                                   | ブール値                                   |
+| `整数`                                    | 倍長整数値                                  |
+| `実数`                                    | 実数値                                    |
 | `ポインター`                                 | ポインター値                                 |
-| `Picture`                               | ピクチャー値                                 |
-| `Blob`                                  | スカラーBLOB値                              |
-| `Collection`                            | コレクション値                                |
-| `Variant`                               | バリアント値                                 |
-| `Object`                                | デフォルトクラス (4D.Object) のオブジェクト           |
+| `ピクチャー`                                 | ピクチャー値                                 |
+| `BLOB`                                  | スカラーBLOB値                              |
+| `コレクション`                                | コレクション値                                |
+| `バリアント`                                 | バリアント値                                 |
+| `オブジェクト`                                | デフォルトクラス (4D.Object) のオブジェクト           |
 | `4D.<className>`                  | 4Dクラス名のオブジェクト                          |
 | `cs.<className>`                  | ユーザークラス名のオブジェクト                        |
 | `cs.<namespace><className>` | `<namespace>` コンポーネントクラス名のオブジェクト |
@@ -238,17 +238,17 @@ atNames{1}:="Richard"
 システム変数は [4Dコマンド](commands.md) によって使用されます。 コマンドがシステム変数に影響を与えるかどうかを確認するには、コマンドの説明の "システム変数およびセット" の項目を参照ください。
 
 
-| システム変数名                                                | タイプ           | 説明                                                                                                                                                                                                          |
+| システム変数名                                                | 型             | 説明                                                                                                                                                                                                          |
 | ------------------------------------------------------ | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `OK`                                                   | Longint       | 通常、コマンドがダイアログボックスを表示して、ユーザーが **OK** ボタンをクリックすると 1 に、**キャンセル** ボタンをクリックした場合は 0 に設定されます。 一部のコマンドは、処理が成功すると `OK` システム変数の値を変更します。                                                                               |
-| `Document`                                             | Text          | [Open document](https://doc.4d.com/4dv20/help/command/ja/page264.html) や [SELECT LOG FILE](https://doc.4d.com/4dv20/help/command/ja/page345.html) などのコマンドを使用して最後に開いたファイルまたは作成したファイルのパス名 (フルパス + 名前) が含まれます。 |
-| `FldDelimit`, `RecDelimit`                             | Text          | テキストを読み込んだり書き出したりする際に、フィールドの区切りとして (デフォルトは **タブ** (9))、あるいはレコードの区切り文字として (デフォルトは **キャリッジリターン** (13)) 使用する文字コードが格納されています。 区切り文字を変更する場合は、システム変数の値を変更します。                                                      |
+| `OK`                                                   | 倍長整数          | 通常、コマンドがダイアログボックスを表示して、ユーザーが **OK** ボタンをクリックすると 1 に、**キャンセル** ボタンをクリックした場合は 0 に設定されます。 一部のコマンドは、処理が成功すると `OK` システム変数の値を変更します。                                                                               |
+| `Document`                                             | テキスト          | [Open document](https://doc.4d.com/4dv20/help/command/ja/page264.html) や [SELECT LOG FILE](https://doc.4d.com/4dv20/help/command/ja/page345.html) などのコマンドを使用して最後に開いたファイルまたは作成したファイルのパス名 (フルパス + 名前) が含まれます。 |
+| `FldDelimit`, `RecDelimit`                             | テキスト          | テキストを読み込んだり書き出したりする際に、フィールドの区切りとして (デフォルトは **タブ** (9))、あるいはレコードの区切り文字として (デフォルトは **キャリッジリターン** (13)) 使用する文字コードが格納されています。 区切り文字を変更する場合は、システム変数の値を変更します。                                                      |
 | `Error`, `Error method`, `Error line`, `Error formula` | Text, Longint | [`ON ERR CALL`](https://doc.4d.com/4dv20/help/command/ja/page155.html) コマンドでインストールされたエラー処理メソッド内で使用されます。 [メソッド内でのエラー処理](../Concepts/error-handling.md#メソッド内でのエラー処理) 参照。                                      |
-| `MouseDown`                                            | Longint       | [`ON EVENT CALL`](https://doc.4d.com/4dv20/help/command/ja/page190.html) コマンドでインストールされたメソッド内で使用されます。 マウスボタンが押されたときに 1 が、それ以外の場合は 0 に設定されます。                                                                 |
-| `MouseX`, `MouseY`                                     | Longint       | [`ON EVENT CALL`](https://doc.4d.com/4dv20/help/command/ja/page190.html) コマンドでインストールされたメソッド内で使用されます。 <li><code>MouseDown=1</code> イベントの時、<code>MouseX</code> と <code>MouseY</code> にはクリックされた場所の水平 / 垂直座標がそれぞれ代入されます。 両方の値ともピクセル単位で表わされ、ウィンドウのローカルな座標システムを使用します。 </li><li>ピクチャーフィールドや変数の場合は、<a href="../Events/onClicked.md"><code>On Clicked</code></a> や <a href="../Events/onDoubleClicked.md"><code>On Double Clicked</code></a>、および <a href="../Events/onMouseUp.md"><code>On Mouse Up</code></a> フォームイベント内で、クリックのローカル座標が <code>MouseX</code> と <code>MouseY</code> に返されます。 また、<a href="../Events/onMouseEnter.md"><code>On Mouse Enter</code></a> および <a href="../Events/onMouseMove.md"><code>On Mouse Move</code></a> フォームイベントでもマウスカーソルのローカル座標が返されます。 詳細については、<a href="../FormEditor/pictures.md#ピクチャー上のマウス座標">ピクチャー上のマウス座標</a> を参照ください。</li>                                                      |
-| `KeyCode`                                              | Longint       | [`ON EVENT CALL`](https://doc.4d.com/4dv20/help/command/ja/page190.html) コマンドでインストールされたメソッド内で使用されます。 押されたキーの文字コードが代入されます。 押されたキーがファンクションキーの場合、`KeyCode` には特殊コードがセットされます。                                    |
-| `Modifiers`                                            | Longint       | [`ON EVENT CALL`](https://doc.4d.com/4dv20/help/command/ja/page190.html) コマンドでインストールされたメソッド内で使用されます。 キーボードのモディファイアキーの値を格納します (Ctrl/Command、Alt/Option、Shift、Caps Lock)。                                     |
-| `MouseProc`                                            | Longint       | [`ON EVENT CALL`](https://doc.4d.com/4dv20/help/command/ja/page190.html) コマンドでインストールされたメソッド内で使用されます。 最後のイベントが発生したプロセス番号を格納します。                                                                              |
+| `MouseDown`                                            | 倍長整数          | [`ON EVENT CALL`](https://doc.4d.com/4dv20/help/command/ja/page190.html) コマンドでインストールされたメソッド内で使用されます。 マウスボタンが押されたときに 1 が、それ以外の場合は 0 に設定されます。                                                                 |
+| `MouseX`, `MouseY`                                     | 倍長整数          | [`ON EVENT CALL`](https://doc.4d.com/4dv20/help/command/ja/page190.html) コマンドでインストールされたメソッド内で使用されます。 <li><code>MouseDown=1</code> イベントの時、<code>MouseX</code> と <code>MouseY</code> にはクリックされた場所の水平 / 垂直座標がそれぞれ代入されます。 両方の値ともピクセル単位で表わされ、ウィンドウのローカルな座標システムを使用します。 </li><li>ピクチャーフィールドや変数の場合は、<a href="../Events/onClicked.md"><code>On Clicked</code></a> や <a href="../Events/onDoubleClicked.md"><code>On Double Clicked</code></a>、および <a href="../Events/onMouseUp.md"><code>On Mouse Up</code></a> フォームイベント内で、クリックのローカル座標が <code>MouseX</code> と <code>MouseY</code> に返されます。 また、<a href="../Events/onMouseEnter.md"><code>On Mouse Enter</code></a> および <a href="../Events/onMouseMove.md"><code>On Mouse Move</code></a> フォームイベントでもマウスカーソルのローカル座標が返されます。 詳細については、<a href="../FormEditor/pictures.md#ピクチャー上のマウス座標">ピクチャー上のマウス座標</a> を参照ください。</li>                                                      |
+| `KeyCode`                                              | 倍長整数          | [`ON EVENT CALL`](https://doc.4d.com/4dv20/help/command/ja/page190.html) コマンドでインストールされたメソッド内で使用されます。 押されたキーの文字コードが代入されます。 押されたキーがファンクションキーの場合、`KeyCode` には特殊コードがセットされます。                                    |
+| `Modifiers`                                            | 倍長整数          | [`ON EVENT CALL`](https://doc.4d.com/4dv20/help/command/ja/page190.html) コマンドでインストールされたメソッド内で使用されます。 キーボードのモディファイアキーの値を格納します (Ctrl/Command、Alt/Option、Shift、Caps Lock)。                                     |
+| `MouseProc`                                            | 倍長整数          | [`ON EVENT CALL`](https://doc.4d.com/4dv20/help/command/ja/page190.html) コマンドでインストールされたメソッド内で使用されます。 最後のイベントが発生したプロセス番号を格納します。                                                                              |
 
 
 :::note
