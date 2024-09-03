@@ -34,7 +34,7 @@ Si sus aplicaciones 4D utilizan conexiones TLS, se recomienda actualizar a 4D 20
 :::
 
 
-#### Destacados
+#### Lo más destacado
 
 - *SpreadJS* actualizado a la versión 16.2.6 en 4D 20.2 HF1.
 - 4D 20.2 está certificado en macOS Sonoma (macOS 14).
@@ -81,7 +81,7 @@ Si sus aplicaciones 4D utilizan conexiones TLS, se recomienda actualizar a 4D 20
 Lea las [**novedades de 4D 19 R8**](https://blog.4d.com/en-whats-new-in-4d-v19-r8/), la entrada del blog que lista todas las nuevas funcionalidades y mejoras en 4D 19 R8.
 
 
-#### Destacados
+#### Lo más destacado
 
 - Se pueden instalar métodos de gestión de errores para [contextos de ejecución globales y de componentes](../Concepts/error-handling.md#scope-and-components).
 - Los listboxes con fuentes de datos colección o selección de entidades ahora soportan la propiedad de columna [Alto de línea automático](../FormObjects/properties_CoordinatesAndSizing.md#automatic-row-height).
@@ -109,7 +109,7 @@ Lea las [**novedades de 4D 19 R8**](https://blog.4d.com/en-whats-new-in-4d-v19-r
 Lea las [**novedades de 4D 19 R7**](https://blog.4d.com/en-whats-new-in-4d-v19-r7/), la entrada del blog que enumera todas las nuevas funcionalidades y mejoras en 4D 19 R7.
 
 
-#### Destacados
+#### Lo más destacado
 
 - Los datos relacionados y los atributos calculados/alias pueden mostrarse en el [explorador de datos](../Admin/dataExplorer#basics).
 - Nueva clase [FileHandle](../API/FileHandleClass.md) y nueva función [`.open()`](../API/FileClass.md#open) en la clase `File`.
