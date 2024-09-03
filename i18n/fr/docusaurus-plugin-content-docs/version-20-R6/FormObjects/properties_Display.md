@@ -403,7 +403,7 @@ Lorsqu'une [expression booléenne](properties_Object.md#expression-type) est aff
 
 #### Objets pris en charge
 
-[List Box Column](listbox_overview.md#list-box-columns) - [Input](input_overview.md)
+[Colonne de list box](listbox_overview.md#list-box-columns) - [Input](input_overview.md)
 
 ---
 
