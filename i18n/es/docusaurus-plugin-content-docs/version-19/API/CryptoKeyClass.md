@@ -51,7 +51,7 @@ For a comprehensive overview of this class, please refer to the [**CryptoKey: en
 
 <!-- END REF -->
 
-La función `4D.CryptoKey.new()` <!-- REF #4D.CryptoKey.new().Summary -->creates a new `4D.CryptoKey` object encapsulating an encryption key pair<!-- END REF -->, basado en el parámetro objeto *settings*. It allows to generate a new RSA or ECDSA key, or to load an existing key pair from a PEM definition.
+La función `4D.CryptoKey.new()` <!-- REF #4D.CryptoKey.new().Summary -->crea un nuevo objeto `4D.CryptoKey` que encapsula un par de llaves de cifrado<!-- END REF -->, basado en el parámetro objeto *settings*. Permite generar una nueva llave RSA o ECDSA, o cargar un par de llaves existente desde una definición PEM.
 
 #### *settings*
 
@@ -65,7 +65,7 @@ La función `4D.CryptoKey.new()` <!-- REF #4D.CryptoKey.new().Summary -->creates
 
 #### *CryptoKey*
 
-The returned `CryptoKey` object encapsulates an encryption key pair. It is a shared object and can therefore be used by multiple 4D processes simultaneously.
+El objeto `CryptoKey` devuelto encapsula un par de llaves de cifrado. Es un objeto compartido y, por tanto, puede ser utilizado por varios procesos 4D simultáneamente.
 
 #### Ejemplo 1
 
@@ -214,7 +214,7 @@ En caso de que el *message* no haya podido ser descifrado por no haber sido encr
 | ---------- | ------ | -- | ----------------------------------------------------------------------------------- |
 | message    | Text   | -> | Cadena de mensajes a codificar utilizando `options.encodingDecrypted` y encriptado. |
 | options    | Object | -> | Opciones de codificación                                                            |
-| Result     | Text   | <- | Message encrypted and encoded using the `options.encodingEncrypted`                 |
+| Result     | Text   | <- | Mensaje encriptado y codificado utilizando la opción `options.encodingEncrypted`    |
 
 <!-- END REF -->
 
