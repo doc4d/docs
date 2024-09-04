@@ -43,7 +43,7 @@ Puede vincular [una variable o una expresión](properties_Object.md#variable-or-
 
 Por defecto, 4D crea una variable o expresión de [tipo objeto](properties_Object.md#expression-type) para un contenedor de subformulario, lo cual le permite compartir valores en el contexto del subformulario utilizando el comando `Form` ([ver abajo](#usando-el-objeto-enlazado-del-subformulario)). Sin embargo, puede utilizar una variable o expresión de cualquier tipo escalar (tiempo, entero, etc.) especialmente si sólo necesita compartir un único valor:
 
-- Define a bound variable or expression of a scalar type and call the `OBJECT Get subform container value` and `OBJECT SET SUBFORM CONTAINER VALUE` commands to exchange values when [On Bound Variable Change](../Events/onBoundVariableChange.md) or [On Data Change](../Events/onDataChange.md) form events occur. Esta solución se recomienda para sincronizar un solo valor.
+- Defina una variable ligada o una expresión de tipo escalar y llame a los comandos `OBJECT Get subform container value` y `OBJECT SET SUBFORM CONTAINER VALUE` para intercambiar valores cuando se produzcan los eventos de formulario [On Bound Variable Change](../Events/onBoundVariableChange.md) o [On Data Change](../Events/onDataChange.md). Esta solución se recomienda para sincronizar un solo valor.
 - Defina una variable o expresión vinculada del tipo **objecto** y utilice el comando `Form` para acceder a sus propiedades desde el subformulario. Esta solución se recomienda para sincronizar varios valores.
 
 ### Sincronizando formulario padre y subformulario (valor único)
