@@ -23,12 +23,12 @@ El diseño de los rectángulos se controla a través de muchas propiedades (colo
 
 ```4d
 	"myRectangle": {
-		"type": "rectangle",	//define the type of object
-		"left": 60,				//left position on the form  
-		"top": 160,				//top position on the form 
-		"width": 100,			//width of the object
-		"height": 20,			//height of the object
-		"borderRadius": 20		//define the roundness of the corners
+		"type": "rectangle",	//define el tipo de objeto
+		"left": 60,				//posición izquierda en el formulario  
+		"top": 160,				//posición superior en el formulario 
+		"width": 100,			//ancho del objeto
+		"height": 20,			//altura del objeto
+		"borderRadius": 20		//define la redondez de las esquinas
                 }
 ```
 
