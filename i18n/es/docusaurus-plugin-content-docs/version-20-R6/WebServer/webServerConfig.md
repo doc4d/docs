@@ -287,7 +287,7 @@ Número de puerto IP de escucha para las conexiones HTTPS vía TLS. Por defecto,
 | `WEB SET OPTION`              | `Web inactive process timeout`                                                                              |             |
 | Caja de diálogo de parámetros | [Options (I) page/Inactive Process Timeout](../settings/web.md#inactive-process-timeout) | Cursor      |
 
-Life duration (in minutes) of inactive processes associated with legacy sessions. At the end of the timeout, the process is killed on the server, the `On Web Legacy Close Session` database method is called, then the session context is destroyed.
+Duración de vida (en minutos) de los procesos inactivos asociados con sesiones heredadas. Al final del tiempo de espera, el proceso se mata en el servidor, se llama al método base `On Web Legacy Close Session`, luego se destruye el contexto de sesión.
 
 Por defecto: 480 minutos (pase 0 para restaurar el valor por defecto)
 
@@ -339,11 +339,11 @@ Para evitar esta confusión, se recomienda utilizar la notación [ ] siempre que
 
 ## Keep Session
 
-| Puede ajustarse con           | Nombre                                                                                                                                                         | Comentarios                       |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
-| objeto webServer              | [`keepSession`](API/WebServerClass.md#keepsession)                                                                                                             |                                   |
-| `WEB SET OPTION`              | `Web keep session`                                                                                                                                             |                                   |
-| Caja de diálogo de parámetros | [Options (I) page/Legacy sessions (single process sessions)](../settings/web.md#legacy-sessions-single-process-sessions) | sólo en los proyectos convertidos |
+| Puede ajustarse con           | Nombre                                                                                                                                                                   | Comentarios                       |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------- |
+| objeto webServer              | [`keepSession`](API/WebServerClass.md#keepsession)                                                                                                                       |                                   |
+| `WEB SET OPTION`              | `Web keep session`                                                                                                                                                       |                                   |
+| Caja de diálogo de parámetros | [Página Opciones (I)/Sesiones heredadas (sesiones de un solo proceso)](../settings/web.md#legacy-sessions-single-process-sessions) | sólo en los proyectos convertidos |
 
 Estado de activación de la gestión de sesiones heredada para el servidor web 4D (obsoleto).
 
@@ -403,7 +403,7 @@ Valores posibles: 500 000 a 2 147 483 648.
 | objeto webServer    | [`maxSessions`](API/WebServerClass.md#maxsessions) |             |
 | `WEB SET OPTION`    | `Web max sessions`                                 |             |
 
-Número máximo de sesiones heredadas simultáneas. When you reach the limit set, the oldest legacy session is closed (and `On Web Legacy Close Session` database method is called) if the Web server needs to create a new one. The number of simultaneous legacy sessions cannot exceed the [maximum number of Web processes](#maximum-concurrent-web-processes) (100 by default).
+Número máximo de sesiones heredadas simultáneas. Cuando alcanza el límite establecido, la sesión antigua se cierra (y se llama al método base `On Web Legacy Close Session`) si el servidor web necesita crear una nueva. El número de sesiones heredadas simultáneas no puede superar el [número máximo de procesos web](#maximum-concurrent-web-processes) (100 por defecto).
 
 Valor por defecto: 100 (pase 0 para restaurar el valor por defecto).
 
@@ -531,11 +531,11 @@ Por ejemplo, si quiere que la carpeta raíz HTML sea la subcarpeta "Web" de la c
 
 ## Sesiones escalables
 
-| Puede ajustarse con           | Nombre                                                                                                                                                           | Comentarios |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| objeto webServer              | [`scalableSession`](API/WebServerClass.md#scalablesession)                                                                                                       |             |
-| `WEB SET OPTION`              | `Sesión escalable web`                                                                                                                                           |             |
-| Caja de diálogo de parámetros | [Options (I) page/Scalable sessions (multi-process sessions)](../settings/web.md#scalable-sessions-multi-process-sessions) |             |
+| Puede ajustarse con           | Nombre                                                                                                                                                                | Comentarios |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| objeto webServer              | [`scalableSession`](API/WebServerClass.md#scalablesession)                                                                                                            |             |
+| `WEB SET OPTION`              | `Sesión escalable web`                                                                                                                                                |             |
+| Caja de diálogo de parámetros | [Página Opciones (I)/Sesiones extensible (sesiones multi-proceso)](../settings/web.md#scalable-sessions-multi-process-sessions) |             |
 
 Estado de activación de la gestión de sesiones escalable para el servidor web 4D. Las sesiones del servidor web se detallan en la página [Sesiones Web](sessions.md).
 
