@@ -299,7 +299,7 @@ Si ejecuta el renderizador desde Qodly Studio y no se accede a estos dos servido
 
 :::info
 
-Using different schemes might also lead to [session](sessions.md) issues, such as losing [privileges](../ORDA/privileges.md) after a page refresh.
+El uso de diferentes esquemas también puede llevar a problemas de [sesión](sessions.md), como perder [privilegios](../ORDA/privileges.md) después de actualizar la página.
 
 :::
 
