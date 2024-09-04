@@ -111,7 +111,7 @@ Aqui está a sequência de chamadas de retorno:
 
 1. `onData` and `onDataError` are executed one or several times
 2. if called, `onError` is executed once (stops the system worker processing)
-3. if no error occured, `onResponse` is executed once
+3. se não ocorreu nenhum erro, `onResponse` é executado uma vez
 4. `onTerminate` é sempre executado uma vez
 
 :::info
@@ -563,7 +563,7 @@ The `.wait()` function <!-- REF #SystemWorkerClass.wait().Summary -->waits until
 
 Em *timeout*, passe um valor em segundos. The `SystemWorker` script will wait for the external process for the amount of time defined in the *timeout* parameter. If you omit the *timeout* parameter, the script execution will wait indefinitely.
 
-Actually, `.wait()` waits until the end of processing of the `onTerminate` formula, except if the *timeout* is reached. If *timeout* is reached, the `SystemWorker` is not killed.
+Actually, `.wait()` waits until the end of processing of the `onTerminate` formula, except if the *timeout* is reached. Se *timeout* for alcançado, o `SystemWorker` não é morto.
 
 During a `.wait()` execution, callback functions are executed, especially callbacks from other events or from other `SystemWorker` instances. You can exit from a `.wait()` by calling [`terminate()`](#terminate) from a callback.
 
