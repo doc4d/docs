@@ -11,7 +11,7 @@ Fundamentalmente, debe considerar un combo box como un área editable que utiliz
 
 ## Gestión de combo boxes
 
-Use the [`On Data Change`](Events/onDataChange.md) event to manage entries into the enterable area, as you would for any input form object.
+Utilice el evento [`On Data Change`](Events/onDataChange.md) para gestionar las entradas en el área editable, como lo haría con cualquier objeto de formulario de entrada.
 
 Un combo box se inicializa exactamente igual que una [lista desplegable](dropdownList_Overview.md#overview): utilizando un objeto, un array o una lista de selección.
 
