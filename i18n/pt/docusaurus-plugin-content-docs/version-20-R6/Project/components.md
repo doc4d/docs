@@ -219,7 +219,7 @@ When you create a release in GitHub, you specify a **tag** and a **version**.
 }
 ```
 
-The version is used to define which versions can be used. A [standard semantic version](https://regex101.com/r/Ly7O1x/3/) is used. A range is defined by two semantic versions, a min and a max, with operators '\< | > | >= | <= | ='. The `*` can be used as a placeholder for all versions. ~ and ^ prefixes define versions starting at a number, and up to respectively the next major and minor version.
+The version is used to define which versions can be used. A [standard semantic version](https://regex101.com/r/Ly7O1x/3/) is used. A range is defined by two semantic versions, a min and a max, with operators '\< | > | >= | <= | ='. O `*` pode ser usado como um espaço reservado para todas as versões. ~ and ^ prefixes define versions starting at a number, and up to respectively the next major and minor version.
 
 Eis alguns exemplos:
 
@@ -267,10 +267,10 @@ Then insert the "github" key in your [**environment4d.json**](#environment4djson
 
 Referenced GitHub components are downloaded in a local cache folder then loaded in your environment. The local cache folder is stored at the following location:
 
-- on macOs: `$HOME/Library/Caches/<app name>/Dependencies`
+- en macOs: `$HOME/Library/Caches/<app name>/Dependencies`
 - no Windows: `C:\Users\<username>\AppData\Local\<app name>\Dependencies`
 
-...where `<app name>` can be "4D", "4D Server", or "tool4D".
+...onde `<app name>` pode ser "4D", "4D Server" ou "tool4D".
 
 #### dependency-lock.json
 
