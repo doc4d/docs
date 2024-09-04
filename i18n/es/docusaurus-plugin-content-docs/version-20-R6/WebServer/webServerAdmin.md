@@ -14,7 +14,7 @@ Un proyecto 4D puede iniciar y monitorizar un servidor web para la aplicación p
 El servidor web principal de 4D puede iniciarse de diferentes maneras:
 
 - Utilizando un botón o comando de menú.
-  - 4D: **Run\>Start Web Server** menu<br/>![](../assets/en/WebServer/start1.png)
+  - 4D: **Ejecutar\>Iniciar el servidor Web** menú<br/>![](../assets/en/WebServer/start1.png)
   - 4D Server: botón **Iniciar servidor HTTP** de la página Servidor HTTP<br/>![](../assets/en/WebServer/start2.png)
 
 - Se inicia automáticamente cada vez que se abre la aplicación 4D. Para ello, despliegue la página **Web\/Configuración** de la Configuración y active la casilla **Lanzar servidor web al iniciar**:<br/>![](../assets/en/WebServer/config.png)
