@@ -46,7 +46,7 @@ L'Administrateur ne peut pas :
 Par défaut, le Super_Utilisateur et l'Administrateur se trouvent dans toutes les applications. Dans la [boîte de dialogue de gestion des utilisateurs](#users-and-groups-editor), les icônes du Super_Utilisateur et de l’Administrateur ont des icônes respectivement rouge et verte :
 
 - Icône Super_Utilisateur : ![](../assets/en/Users/iconDesigner.png)
-- Icône Administrateur : ![](../assets/fr/Users/iconAdmin.png)
+- Icône Administrateur : ![](../assets/en/Users/iconAdmin.png)
 
 Vous pouvez renommer les utilisateurs Super_Utilisateur et Administrateur. Dans le langage, Super_Utilisateur porte toujours l'identifiant 1 et l'Administrateur l'identifiant 2.
 
