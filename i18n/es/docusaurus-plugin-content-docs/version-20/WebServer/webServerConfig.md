@@ -303,7 +303,7 @@ Número de puerto IP de escucha para las conexiones HTTPS vía TLS. Por defecto,
 | `WEB SET OPTION`              | `Web inactive process timeout`                                                                            |             |
 | Caja de diálogo de parámetros | [Página Opciones (I)/Tiempo de espera de procesos inactivos](../settings/web.md#inactive-process-timeout) | Cursor      |
 
-Life duration (in minutes) of inactive processes associated with legacy sessions. At the end of the timeout, the process is killed on the server, the `On Web Legacy Close Session` database method is called, then the session context is destroyed.
+Duración de vida (en minutos) de los procesos inactivos asociados con sesiones heredadas. Al final del tiempo de espera, el proceso se mata en el servidor, se llama al método base `On Web Legacy Close Session` y se destruye el contexto de la sesión.
 
 Por defecto: 480 minutos (pase 0 para restaurar el valor por defecto)
 
@@ -425,7 +425,7 @@ Valores posibles: 500 000 a 2 147 483 648.
 | objeto webServer    | [`maxSessions`](API/WebServerClass.md#maxsessions) |             |
 | `WEB SET OPTION`    | `Web max sessions`                                 |             |
 
-Número máximo de sesiones heredadas simultáneas. When you reach the limit set, the oldest legacy session is closed (and `On Web Legacy Close Session` database method is called) if the Web server needs to create a new one. The number of simultaneous legacy sessions cannot exceed the [maximum number of Web processes](#maximum-concurrent-web-processes) (100 by default).
+Número máximo de sesiones heredadas simultáneas. Cuando alcanza el límite establecido, se cierra la sesión heredada más antigua (y se llama al método base `On Web Legacy Close Session`) si el servidor web necesita crear una nueva. El número de sesiones heredadas simultáneas no puede superar el [número máximo de procesos web](#maximum-concurrent-web-processes) (100 por defecto).
 
 Valor por defecto: 100 (pase 0 para restaurar el valor por defecto).
 
@@ -565,7 +565,7 @@ Por ejemplo, si quiere que la carpeta raíz HTML sea la subcarpeta "Web" de la c
 | `WEB SET OPTION`              | `Sesión escalable web`                                                                                                         |             |
 | Caja de diálogo de parámetros | [Página Opciones (I)/Sesiones escalables (sesiones multiproceso)](../settings/web.md#scalable-sessions-multi-process-sessions) |             |
 
-Estado de activación de la gestión de sesiones escalable para el servidor web 4D. Web server sessions are detailed in the [Web sessions](sessions.md) page.
+Estado de activación de la gestión de sesiones escalable para el servidor web 4D. Las sesiones del servidor web se detallan en la página [Sesiones Web](sessions.md).
 
 
 
