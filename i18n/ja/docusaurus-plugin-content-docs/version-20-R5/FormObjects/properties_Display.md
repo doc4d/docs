@@ -538,7 +538,7 @@ Customized time formats can be built using several patterns described in the [**
 
 #### 対象オブジェクト
 
-[List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers)
+[リストボックス列](listbox_overview.md#リストボックス列) - [リストボックスフッター](listbox_overview.md#リストボックスフッター)
 
 ---
 
