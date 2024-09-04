@@ -9,10 +9,10 @@ title: VP SET COLUMN ATTRIBUTES
 
 <!-- REF #_method_.VP SET COLUMN ATTRIBUTES.Params -->
 
-| 引数          | タイプ    |    | 説明                  |                  |
+| 引数          | 型      |    | 説明                  |                  |
 | ----------- | ------ | -- | ------------------- | ---------------- |
-| rangeObj    | Object | -> | レンジオブジェクト           |                  |
-| propertyObj | Object | -> | カラムプロパティを格納したオブジェクト | <!-- END REF --> |
+| rangeObj    | オブジェクト | -> | レンジオブジェクト           |                  |
+| propertyObj | オブジェクト | -> | カラムプロパティを格納したオブジェクト | <!-- END REF --> |
 
 #### 説明
 
@@ -22,13 +22,13 @@ _rangeObj_ 引数には、レンジオブジェクトを渡します。 レン�
 
 _propertyObj_ 引数は、_rangeObj_ 引数のレンジ内のカラムに対して適用する属性を指定します。 指定できる属性は以下の通りです:
 
-| プロパティ     | タイプ     | 説明                                          |
+| プロパティ     | 型       | 説明                                          |
 | --------- | ------- | ------------------------------------------- |
 | width     | number  | カラムの幅 (ピクセル単位)           |
 | pageBreak | boolean | レンジ内の先頭カラムの前に改ページを挿入する場合には true、それ以外は false |
 | visible   | boolean | カラムが表示状態であれば true、それ以外は false               |
 | resizable | boolean | カラムがリサイズ可能であれば true、それ以外は false             |
-| header    | text    | カラムヘッダーのテキスト                                |
+| header    | テキスト    | カラムヘッダーのテキスト                                |
 
 #### 例題
 
