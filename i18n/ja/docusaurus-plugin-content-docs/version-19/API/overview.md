@@ -19,7 +19,7 @@ title: クラス関数とコマンド
 
 ### 参照
 
-[Classes in the 4D Language](../Concepts/classes.md).
+[4Dランゲージのクラス](../Concepts/classes.md)。
 
 
 ## クラシックコマンド
