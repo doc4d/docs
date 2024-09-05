@@ -1970,7 +1970,7 @@ If the collection contains different types of values, the `.max()` function will
 
 If the collection contains objects, pass the *propertyPath* parameter to indicate the object property whose maximum value you want to get.
 
-If the collection is empty, `.max()` returns *Undefined*.
+Se a coleção estiver vazia, `.max()` retorna *Undefined*.
 
 #### Exemplo
 
@@ -2020,7 +2020,7 @@ If the collection contains different types of values, the `.min()` function will
 
 If the collection contains objects, pass the *propertyPath* parameter to indicate the object property whose minimum value you want to get.
 
-If the collection is empty, `.min()` returns *Undefined*.
+Se a coleção estiver vazia, `.min()` devolve *Undefined*.
 
 #### Exemplo
 
@@ -2997,11 +2997,11 @@ Com o seguinte método ***Flatten***:
 
 <!-- REF #collection.remove().Params -->
 
-| Parâmetro  | Tipo       |     | Descrição                                               |
-| ---------- | ---------- | :-: | ------------------------------------------------------- |
-| index      | Integer    |  -> | Elemento no qual que se inicia a eliminação             |
-| howMany    | Integer    |  -> | Número de elementos a eliminar, ou 1 elemento se omitir |
-| Resultados | Collection |  <- | Colección original sem elementos eliminados             |
+| Parâmetro  | Tipo       |     | Descrição                                                         |
+| ---------- | ---------- | :-: | ----------------------------------------------------------------- |
+| index      | Integer    |  -> | Elemento no qual que se inicia a eliminação                       |
+| howMany    | Integer    |  -> | Número de elementos a eliminar, ou 1 elemento se omitir           |
+| Resultados | Collection |  <- | Modified collection without removed element(s) |
 
 <!-- END REF -->
 
@@ -3274,7 +3274,7 @@ Pode definir o(s) seguinte(s) parâmetro(s):
 
 In any case, at the point where `.some()` function encounters the first collection element returning true, it stops calling the callback and returns **true**.
 
-By default, `.some()` tests the whole collection. Optionally, you can pass the index of an element from which to start the test in *startFrom*.
+Por padrão, `.some()` testa toda a coleção. Optionally, you can pass the index of an element from which to start the test in *startFrom*.
 
 - If *startFrom* >= the collection's length, **False** is returned, which means the collection is not tested.
 
