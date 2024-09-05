@@ -910,7 +910,7 @@ Example without the `dk stop dropping on first error` option:
  End if
 ```
 
-Example with the `dk stop dropping on first error` option:
+Exemplo com a opção `dk stop dropping on first error`:
 
 ```4d
  var $employees; $notDropped : cs.EmployeeSelection
@@ -1346,7 +1346,7 @@ Se a entity selection estiver vazia, a função devolve Null.
 
 The `.length` property <!-- REF #EntitySelectionClass.length.Summary -->returns the number of entities in the entity selection<!-- END REF -->. Se a entity selection estiver vazia, devolve 0.
 
-Entity selections always have a `.length` property.
+As seleções de entidade sempre têm uma propriedade `.length`.
 
 > To know the total number of entities in a dataclass, it is recommended to use the [`getCount()`](DataClassClass.md#getcount) function which is more optimized than the `ds.myClass.all().length` expression.
 
@@ -2153,7 +2153,7 @@ $slice:=ds.Employee.all().slice(-1;-2) //tries to return entities from index 9 t
 
 The `.sum()` function <!-- REF #EntitySelectionClass.sum().Summary -->returns the sum for all *attributePath* values in the entity selection<!-- END REF -->.
 
-`.sum()` returns 0 if the entity selection is empty.
+`.sum()` devolve 0 se a entity selection estiver vazia.
 
 A soma só pode ser feita em valores do tipo de número. If the *attributePath* is an object property, only numerical values are taken into account for the calculation (other value types are ignored). In this case, if *attributePath* leads to a property that does not exist in the object or does not contain any numeric values, `.sum()` returns 0.
 
@@ -2397,7 +2397,7 @@ Retorna:
 
 #### Exemplo
 
-Example with `relatedEntity` type with simple form:
+Exemplo com o tipo 'relatedEntity' com uma forma simples:
 
 ```4d
 var $employeesCollection : Collection
