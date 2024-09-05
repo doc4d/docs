@@ -85,9 +85,9 @@ For more information on web user sessions, please refer to the [Web Server Sessi
 
 The `Session` object of remote client sessions is available from:
 
-- Project methods that have the [Execute on Server](../Project/code-overview.md#execute-on-server) attribute (they are executed in the "twinned" process of the client process),
+- Métodos de projeto que têm o atributo [Execute on Server](../Project/code-overview.md#execute-on-server) (são executados no processo "geminado" do processo do cliente),
 - Triggers,
-- `On Server Open Connection` and `On Server Shutdown Connection` database methods.
+- 'Conexão aberta com o servidor' e 'Conexão com o servidor' métodos de banco de dados.
 
 For more information on remote user sessions, please refer to the [**Remote client user sessions**](../Desktop/clientServer.md#remote-user-sessions) paragraph.
 
