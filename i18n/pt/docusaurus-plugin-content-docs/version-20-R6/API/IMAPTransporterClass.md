@@ -250,7 +250,7 @@ $status:=$transporter.addFlags(IMAP all;$flags)
 
 The `.append()` function <!-- REF #IMAPTransporterClass.append().Summary -->appends a `mailObj` to the `destinationBox`<!-- END REF -->.
 
-In the `mailObj` parameter, pass an Email object. For a comprehensive description of mail properties, see [Email object](EmailObjectClass.md#email-object). The `.append()` function supports keyword tags in the Email object's `keywords` attribute.
+No parâmetro `mailObj`, passe um objeto de e-mail. For a comprehensive description of mail properties, see [Email object](EmailObjectClass.md#email-object). The `.append()` function supports keyword tags in the Email object's `keywords` attribute.
 
 The optional `destinationBox` parameter lets you pass the name of a mailbox where the `mailObj` will be appended. Se omitido, é utilizada a caixa de correio actual.
 
@@ -470,7 +470,7 @@ Por outras palavras, uma tentativa de criar "Projectos/IMAP/Doc" num servidor em
 - "IMAP" & "Doc" mailboxes if only “Projects” already exists.
 - "Projects" & “IMAP” & "Doc" mailboxes, if they do not already exist.
 
-In the `name` parameter, pass the name of the new mailbox.
+No parâmetro `name`, passe o nome da nova caixa de correio.
 
 **Objeto devolvido**
 
@@ -1052,7 +1052,7 @@ The `.getMails()` function <!-- REF #IMAPTransporterClass.getMails().Summary -->
 
 A primeira sintaxe permite recuperar mensagens com base nas suas identificações.
 
-In the *ids* parameter, pass a collection of IDs for the messages to return. You can get the IDs with [`.getMail()`](#getmail).
+In the *ids* parameter, pass a collection of IDs for the messages to return. Você pode obter as identificações com [`.getMail()`](#getmail).
 
 The optional *options* parameter allows you to define the parts of the messages to be returned. See the **Options** table below for a description of the available properties.
 
@@ -1628,10 +1628,10 @@ As chaves de pesquisa podem solicitar o valor a pesquisar:
   For all search keys that use strings, a message matches the key if the string is a substring of the field. A correspondência não é sensível a maiúsculas e minúsculas.
 
 - **Search-keys with a field-name value**: the field-name is the name of a header field.
-  Example: `searchCriteria = HEADER CONTENT-TYPE "MIXED"`
+  Exemplo: `searchCriteria = HEADER CONTENT-TYPE "MIXED"`
 
 - **Search-keys with a flag value**: the flag may accept one or several keywords (including standard flags), separated by spaces.
-  Example: `searchCriteria = KEYWORD \Flagged \Draft`
+  Exemplo: `searchCriteria = KEYWORD \Flagged \Draft`
 
 - **Pesquisa-chaves com um valor de conjunto de mensagens**: identifica um conjunto de mensagens. Para números de sequência de mensagens, estes são números consecutivos de 1 até ao número total de mensagens na caixa de correio. Uma vírgula delimita números individuais; uma vírgula delimita entre dois números, inclusive.
   Examples:
