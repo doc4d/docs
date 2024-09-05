@@ -34,9 +34,9 @@ En el parámetro opcional _sheet_, puede designar una hoja específica donde se 
 Quiere asignar un valor al rango llamado "Total".
 
 ```4d
-// llama la celda B5 Total
+// name the B5 cell as Total
 VP ADD RANGE NAME(VP Cell("ViewProArea";1;4);"Total")
-$name:=VP Name("ViewProArea";" Total")
+$name:=VP Name("ViewProArea";"Total")
 VP SET NUM VALUE($name;285;"$#,###.00")
 ```
 
