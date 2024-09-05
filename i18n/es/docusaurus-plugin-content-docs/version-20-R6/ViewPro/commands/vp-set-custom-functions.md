@@ -53,31 +53,31 @@ Case of
        var $o : Object
        $o:=New object
  
-// Define "addnum" function from a method named "addnum"
+// Define la función "addnum" de un método llamado "addnum"
        $o.addnum:=New object
        $o.addnum.formula:=Formula(addnum)
        $o.addnum.parameters:=New collection
        $o.addnum.parameters.push(New object("name";"num1";"type";Is Integer))
        $o.addnum.parameters.push(New object("name";"num2";"type";Is Integer))
  
-// Define "ClientLastName" function from a database field
+// Definir la función "ClientLastName" desde un campo base de datos
        $o.ClientLastName:=New object
        $o.ClientLastName.formula:=Formula([Customers]lastname)
        $o.ClientLastName.summary:="Lastname of the current client"
  
-// Define "label" function from a 4D expression with one parameter
+// Define la función "label" de una expresión 4D con un parámetro
        $o.label:=New object
        $o.label.formula:=Formula(ds.Customers.get($1).label)
        $o.label.parameters:=New collection
        $o.label.parameters.push(New object("name";"ID";"type";Is Integer))
  
-// Define "AverageValues" function from a method named "AverageValues"
+// Define la función "AverageValues" de un método llamado "AverageValues"
        $o.AverageValues:=New object
        $o.AverageValues.formula:=Formula(AverageValues)
        $o.AverageValues.parameters:=New collection
        $o.AverageValues.parameters.push(New object("name";"Mycollection";"type";Is collection))
         
-// Define "Title" function from a variable named "Title"
+// Define la función "Title" de una variable llamada "Title"
        $o.Title:=New object
        $o.Title.formula:=Formula(Title)
  
