@@ -29,7 +29,7 @@ title: VP SET TABLE COLUMN ATTRIBUTES
 
 The `VP SET TABLE COLUMN ATTRIBUTES` command <!-- REF #_method_.VP SET TABLE COLUMN ATTRIBUTES.Summary -->applies the defined *attributes* to the *column* in the *tableName*<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area.
+Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
 
 In the *attributes* parameter, pass an object that contains the properties to set:
 
