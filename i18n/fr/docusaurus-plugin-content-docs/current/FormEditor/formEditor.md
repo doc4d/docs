@@ -10,13 +10,13 @@ title: Éditeur de formulaires
 
 L’éditeur de formulaires affiche chaque formulaire JSON ouvert dans sa propre fenêtre, dotée d’une barre d’outils et d’une barre d’objets. Vous pouvez ouvrir plusieurs formulaires en même temps.
 
-### Display options
+### Options d'affichage
 
-You can show or hide several interface elements on the current page of the form:
+Vous pouvez afficher ou masquer plusieurs éléments de l'interface dans la page courante du formulaire :
 
-- **Inherited Form**: Inherited form objects (if there is an [inherited form](forms.md#inherited-forms)).
-- **Page 0**: Objects from [page 0](forms.md#form-pages). Cette option vous permet de mieux visualiser et distinguer les objets de la page courante et ceux de la page 0.
-- **Paper**: Borders of the printing page, which are shown as gray lines. This element can only be displayed by default in ["for printing" type](properties_FormProperties.md#form-type) forms.
+- **Formulaire hérité** : Objets du formulaire hérité (s'il y a un [formulaire hérité](forms.md#inherited-forms)).
+- **Page 0** : Objets de la [page 0](forms.md#form-pages). Cette option vous permet de mieux visualiser et distinguer les objets de la page courante et ceux de la page 0.
+- **Papier** : Contours de la page d'impression, qui sont affichés sous forme de filets grisés. This element can only be displayed by default in ["for printing" type](properties_FormProperties.md#form-type) forms.
 - **Rulers**: Rulers of the Form editor’s window.
 - **Markers**: Output control lines and associated markers that show the limits of the form’s different areas. This element can only be displayed by default in [list forms](properties_FormProperties.md#form-type).
 - **Marker Labels**: Marker labels, available only when the output control lines are displayed. This element can only be displayed by default in [list forms](properties_FormProperties.md#form-type).
