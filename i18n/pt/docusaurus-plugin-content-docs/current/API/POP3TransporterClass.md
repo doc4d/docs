@@ -346,7 +346,7 @@ The `mailInfo` object returned contains the following properties:
 O método retorna **Null** se:
 
 - *msgNumber* determina uma mensagem não existente,
-- the message was marked for deletion using `.delete( )`.
+- a mensagem foi marcada para apagar usando `.delete( )`.
 
 ##### Exemplo
 
@@ -464,7 +464,7 @@ In *msgNumber*, pass the number of the message to retrieve. This number is retur
 O método retorna uma BLOB vazia se:
 
 - *msgNumber* determina uma mensagem não existente,
-- the message was marked for deletion using `.delete()`.
+- a mensagem foi marcada para apagar usando `.delete()`.
 
 **BLOB devolvido**
 
