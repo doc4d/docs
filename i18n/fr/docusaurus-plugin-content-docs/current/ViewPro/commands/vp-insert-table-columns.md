@@ -22,13 +22,13 @@ title: VP INSERT TABLE COLUMNS
 | vpAreaName  | Text    | -> | Nom d'objet formulaire zone 4D View Pro                                     |                  |
 | tableName   | Text    | -> | Nom de table                                                                |                  |
 | column      | Integer | -> | Index dans la table de la colonne de départ à insérer                       |                  |
-| count       | Text    | -> | Number of columns to add (must be >0)                    |                  |
-| insertAfter | Integer | -> | `vk table insert before` or `vk table insert after` *column*                |                  |
+| count       | Text    | -> | Nombre de colonnes à ajouter (doit être >0)              |                  |
+| insertAfter | Integer | -> | `vk table insert before` ou `vk table insert after` *column*                |                  |
 | sheet       | Integer | -> | Numéro d'indice de la feuille (feuille courante si omis) | <!-- END REF --> |
 
 #### Description
 
-The `VP INSERT TABLE COLUMNS` command <!-- REF #_method_.VP INSERT TABLE COLUMNS.Summary -->inserts one or *count* empty column(s) in the specified *tableName* at the specified *column* index<!-- END REF -->.
+La commande `VP INSERT TABLE COLUMNS` <!-- REF #_method_.VP INSERT TABLE COLUMNS.Summary --> insère une ou *count* colonne(s) vide(s) dans le *tableName* spécifié à l'index *column* spécifié<!-- END REF -->.
 
 When a column has been inserted with this command, you typically modify its contents using the [VP SET TABLE COLUMN ATTRIBUTES](vp-set-table-column-attributes.md) command.
 
