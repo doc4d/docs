@@ -19,7 +19,7 @@ title: VP SET SHEET NAME
 
 The `VP SET SHEET NAME` command <!-- REF #_method_.VP SET SHEET NAME.Summary -->renames a sheet in the document loaded in _vpAreaName_<!-- END REF -->.
 
-In _vpAreaName_, pass the name of the 4D View Pro area.
+Dans _vpAreaName_, passez le nom de la zone 4D View Pro.
 
 In _name_, pass a new name for the sheet.
 
@@ -29,7 +29,7 @@ In _sheet_, pass the index of the sheet to rename.
 
 If no _sheet_ is passed, the command renames the current sheet.
 
-The new name cannot contain the following characters: `*, :, [, ], ?,\,/`
+Le nouveau nom ne peut pas contenir les caractères suivants : `*, :, [, ], ?,\,/`
 
 La commande ne fait rien si :
 
