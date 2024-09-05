@@ -82,7 +82,7 @@ Esta operación es útil cuando se ha modificado el atributo **Encriptable** de 
 1. Haga clic en **Recibir los datos con la llave de cifrado actual**.
 2. Introduzca la llave de encriptación de datos actual.
 
-The data file is properly re-encrypted with the current key and a confirmation message is displayed:
+El archivo de datos se vuelve a cifrar correctamente con la llave actual y se muestra un mensaje de confirmación:
 ![](../assets/en/MSC/MSC_encrypt8.png)
 
 ### Cambiar la frase secreta y volver a encriptar los datos
