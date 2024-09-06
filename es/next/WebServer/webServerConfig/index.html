@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Configuración | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/es/next/WebServer/webServerConfig"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Configuración | 4D Docs"><meta data-rh="true" name="description" content="Los parámetros del servidor web 4D incluye parámetros de seguridad, puertos de escucha, rutas por defecto y varias opciones que cubren todas las funcionalidades del servidor. 4D ofrece valores por defecto para todos los parámetros."><meta data-rh="true" property="og:description" content="Los parámetros del servidor web 4D incluye parámetros de seguridad, puertos de escucha, rutas por defecto y varias opciones que cubren todas las funcionalidades del servidor. 4D ofrece valores por defecto para todos los parámetros."><link data-rh="true" rel="icon" href="/docs/es/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/es/next/WebServer/webServerConfig"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/WebServer/webServerConfig" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/WebServer/webServerConfig" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/WebServer/webServerConfig" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/WebServer/webServerConfig" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/WebServer/webServerConfig" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/WebServer/webServerConfig" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/es/opensearch.xml"><link rel="stylesheet" href="/docs/es/assets/css/styles.dc9a4272.css">
-<script src="/docs/es/assets/js/runtime~main.5d98b6ab.js" defer="defer"></script>
+<script src="/docs/es/assets/js/runtime~main.e01a3a87.js" defer="defer"></script>
 <script src="/docs/es/assets/js/main.3b0e3cfb.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -61,7 +61,7 @@
 
 
 
-<table><thead><tr><th>Puede ajustarse con</th><th>Nombre</th><th>Comentarios</th></tr></thead><tbody><tr><td>Caja de diálogo de parámetros</td><td><a href="/docs/es/next/settings/web#use-the-4d-web-cache">Configuration page/Use the 4D Web cache</a></td><td></td></tr><tr><td>Caja de diálogo de parámetros</td><td><a href="/docs/es/next/settings/web#page-cache-size">Página de configuración/Tamaño de caché de página</a></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Puede ajustarse con</th><th>Nombre</th><th>Comentarios</th></tr></thead><tbody><tr><td>Caja de diálogo de parámetros</td><td><a href="/docs/es/next/settings/web#use-the-4d-web-cache">Options (I) page/Use the 4D Web cache</a></td><td></td></tr><tr><td>Caja de diálogo de parámetros</td><td><a href="/docs/es/next/settings/web#page-cache-size">Options (I) page/Page Cache Size</a></td><td></td></tr></tbody></table>
 <p>Activa y configura la caché de las páginas web.</p>
 <p>El servidor web 4D dispone de una caché que permite cargar las páginas estáticas, las imágenes GIF, las imágenes JPEG (&lt;512 kb) y las hojas de estilo (archivos.css) en memoria, a medida que se solicitan. El uso de la caché permite aumentar considerablemente el rendimiento del servidor web cuando se envían páginas estáticas. El caché se comparte entre todos los procesos web. Cuando la caché está activada, el servidor web de 4D busca primero en la caché toda página estática solicitada por el navegador. Si encuentra la página, la envía inmediatamente. Si no, 4D carga la página desde el disco y la coloca en la caché.</p>
 <p>Puede modificar el tamaño de la caché en el área <strong>Tamaño de la caché de las páginas</strong>. El valor a definir depende del número y del tamaño de las páginas estáticas de su sitio web, así como de los recursos de que dispongan las máquinas locales.</p>
@@ -141,7 +141,7 @@
 <table><thead><tr><th>Puede ajustarse con</th><th>Nombre</th><th>Comentarios</th></tr></thead><tbody><tr><td>objeto webServer</td><td><a href="/docs/es/next/API/WebServerClass#ciphersuite"><code>cipherSuite</code></a></td><td>Text</td></tr></tbody></table>
 <p>Lista de cifrado utilizada para el protocolo seguro; establece la prioridad de los algoritmos de cifrado implementados por el servidor web. Puede ser una secuencia de cadenas separadas por dos puntos (por ejemplo &quot;ECDHE-RSA-AES128-...&quot;). Ver la <a href="https://www.openssl.org/docs/manmaster/man1/ciphers.html" target="_blank" rel="noopener noreferrer">página de cifrados</a> en el sitio OpenSSL.</p>
 <blockquote>
-<p>The default cipher list used by 4D can be modified for the session using the <code>SET DATABASE PARAMETER</code> command, in which case the modification applies to the entire 4D application, including the web server, SQL server, client/server connections, as well as the HTTP client and all the 4D commands that make use of the secure protocol.</p>
+<p>La lista de cifrado por defecto utilizada por 4D puede ser modificada para la sesión utilizando el comando <code>SET DATABASE PARAMETER</code>, en cuyo caso la modificación se aplica a toda la aplicación 4D, incluyendo el servidor web, el servidor SQL, las conexiones cliente/servidor, así como el cliente HTTP y todos los comandos de 4D que hacen uso del protocolo seguro.</p>
 </blockquote>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="parámetros-cors">Parámetros CORS<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/WebServer/webServerConfig#parámetros-cors">​</a></h2>
 
@@ -605,7 +605,7 @@ El valor por defecto es 63072000 (2 años)</p>
 
 
 <table><thead><tr><th>Puede ajustarse con</th><th>Nombre</th><th>Comentarios</th></tr></thead><tbody><tr><td>objeto webServer</td><td><a href="/docs/es/next/API/WebServerClass#inactiveprocesstimeout"><code>inactiveProcessTimeout</code></a></td><td></td></tr><tr><td><code>WEB SET OPTION</code></td><td><code>Web inactive process timeout</code></td><td></td></tr><tr><td>Caja de diálogo de parámetros</td><td><a href="/docs/es/next/settings/web#inactive-process-timeout">Options (I) page/Inactive Process Timeout</a></td><td>Cursor</td></tr></tbody></table>
-<p>Duración de vida (en minutos) de los procesos inactivos asociados a las sesiones. Al final del tiempo de espera, el proceso se mata en el servidor, se llama al método base <code>On Web Close Process</code> y se destruye el contexto de sesión.</p>
+<p>Duración de vida (en minutos) de los procesos inactivos asociados con sesiones heredadas. Al final del tiempo de espera, el proceso se mata en el servidor, se llama al método base <code>On Web Legacy Close Session</code>, luego se destruye el contexto de sesión.</p>
 <p>Por defecto: 480 minutos (pase 0 para restaurar el valor por defecto)</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="tiempo-de-espera-de-las-sesiones-inactivas">Tiempo de espera de las sesiones inactivas<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/WebServer/webServerConfig#tiempo-de-espera-de-las-sesiones-inactivas">​</a></h2>
 
@@ -703,7 +703,7 @@ El valor por defecto es 63072000 (2 años)</p>
 
 
 
-<table><thead><tr><th>Puede ajustarse con</th><th>Nombre</th><th>Comentarios</th></tr></thead><tbody><tr><td>objeto webServer</td><td><a href="/docs/es/next/API/WebServerClass#keepsession"><code>keepSession</code></a></td><td></td></tr><tr><td><code>WEB SET OPTION</code></td><td><code>Web keep session</code></td><td></td></tr><tr><td>Caja de diálogo de parámetros</td><td><a href="/docs/es/next/settings/web#legacy-sessions-single-process-sessions">Options (I) page/Legacy sessions (single process sessions)</a></td><td>sólo en los proyectos convertidos</td></tr></tbody></table>
+<table><thead><tr><th>Puede ajustarse con</th><th>Nombre</th><th>Comentarios</th></tr></thead><tbody><tr><td>objeto webServer</td><td><a href="/docs/es/next/API/WebServerClass#keepsession"><code>keepSession</code></a></td><td></td></tr><tr><td><code>WEB SET OPTION</code></td><td><code>Web keep session</code></td><td></td></tr><tr><td>Caja de diálogo de parámetros</td><td><a href="/docs/es/next/settings/web#legacy-sessions-single-process-sessions">Página Opciones (I)/Sesiones heredadas (sesiones de un solo proceso)</a></td><td>sólo en los proyectos convertidos</td></tr></tbody></table>
 <p>Estado de activación de la gestión de sesiones heredada para el servidor web 4D (obsoleto).</p>
 <blockquote>
 <p>Cuando esta opción está marcada, la opción &quot;Reutilización de los contextos temporales&quot; se marca automáticamente (y se bloquea).</p>
@@ -851,8 +851,8 @@ El valor por defecto es 63072000 (2 años)</p>
 
 
 
-<table><thead><tr><th>Puede ajustarse con</th><th>Nombre</th><th>Comentarios</th></tr></thead><tbody><tr><td>objeto webServer</td><td><a href="/docs/es/next/API/WebServerClass#maxsessions"><code>maxSessions</code></a></td><td></td></tr><tr><td><code>WEB SET OPTION</code></td><td><code>Web max sessions	</code></td><td></td></tr></tbody></table>
-<p>Número máximo de sesiones simultáneas. Cuando se alcanza el límite definido, se cierra la sesión más antigua (y se llama al método base <code>On Web Close Process</code>) si el servidor web necesita crear una nueva. El número de sesiones simultáneas no puede superar el <a href="/docs/es/next/WebServer/webServerConfig#maximum-concurrent-web-processes">número máximo de procesos web</a> (100 por defecto).</p>
+<table><thead><tr><th>Puede ajustarse con</th><th>Nombre</th><th>Comentarios</th></tr></thead><tbody><tr><td>objeto webServer</td><td><a href="/docs/es/next/API/WebServerClass#maxsessions"><code>maxSessions</code></a></td><td></td></tr><tr><td><code>WEB SET OPTION</code></td><td><code>Web max sessions</code></td><td></td></tr></tbody></table>
+<p>Número máximo de sesiones heredadas simultáneas. Cuando alcanza el límite establecido, la sesión antigua se cierra (y se llama al método base <code>On Web Legacy Close Session</code>) si el servidor web necesita crear una nueva. El número de sesiones heredadas simultáneas no puede superar el <a href="/docs/es/next/WebServer/webServerConfig#maximum-concurrent-web-processes">número máximo de procesos web</a> (100 por defecto).</p>
 <p>Valor por defecto: 100 (pase 0 para restaurar el valor por defecto).</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="versión-tls-mínima">Versión TLS mínima<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/WebServer/webServerConfig#versión-tls-mínima">​</a></h2>
 
@@ -953,7 +953,7 @@ El valor por defecto es 63072000 (2 años)</p>
 
 
 
-<table><thead><tr><th>Puede ajustarse con</th><th>Nombre</th><th>Comentarios</th></tr></thead><tbody><tr><td>Caja de diálogo de parámetros</td><td><a href="/docs/es/next/settings/web#reuse-temporary-contexts">Options (I) page/Maximum Concurrent Web Processes</a></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Puede ajustarse con</th><th>Nombre</th><th>Comentarios</th></tr></thead><tbody><tr><td>Caja de diálogo de parámetros</td><td><a href="/docs/es/next/settings/web#reuse-temporary-contexts">Options (I) page/Reuse Temporary Contexts</a></td><td></td></tr></tbody></table>
 <blockquote>
 <p>Esta opción sólo está disponible cuando la opción <strong>Sin sesiones</strong> está marcada.</p>
 </blockquote>
@@ -1005,7 +1005,7 @@ a las que no pueden acceder.</p>
 
 
 
-<table><thead><tr><th>Puede ajustarse con</th><th>Nombre</th><th>Comentarios</th></tr></thead><tbody><tr><td>objeto webServer</td><td><a href="/docs/es/next/API/WebServerClass#rootfolder"><code>rootFolder</code></a></td><td>Text property but can be a <a href="/docs/es/next/API/FolderClass"><code>4D.Folder</code></a> object when used with the <em>settings</em> parameter of the <code>start()</code> function</td></tr><tr><td><code>WEB SET ROOT FOLDER</code></td><td></td><td></td></tr><tr><td>Caja de diálogo de parámetros</td><td><a href="/docs/es/next/settings/web#default-html-root">Configuration page/Default HTML Root</a></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Puede ajustarse con</th><th>Nombre</th><th>Comentarios</th></tr></thead><tbody><tr><td>objeto webServer</td><td><a href="/docs/es/next/API/WebServerClass#rootfolder"><code>rootFolder</code></a></td><td>Propiedad texto pero puede ser un objeto <a href="/docs/es/next/API/FolderClass"><code>4D.Folder</code></a> cuando se usa con el parámetro <em>settings</em> de la función <code>start()</code></td></tr><tr><td><code>WEB SET ROOT FOLDER</code></td><td></td><td></td></tr><tr><td>Caja de diálogo de parámetros</td><td><a href="/docs/es/next/settings/web#default-html-root">Configuration page/Default HTML Root</a></td><td></td></tr></tbody></table>
 <p>Ruta de la carpeta raíz del servidor web, es decir, la carpeta en la que 4D buscará las páginas HTML estáticas y semidinámicas, imágenes, etc., para enviarlas a los navegadores. La ruta de acceso está en formato POSIX (ruta completa). Será necesario reiniciar el servidor web para que se tenga en cuenta la nueva carpeta raíz.</p>
 <p>Además, la carpeta raíz HTML define, en el disco duro del servidor web, el nivel jerárquico por encima del cual los archivos no serán accesibles. Si una URL solicitada o un comando 4D intenta acceder a un archivo situado por encima de la carpeta raíz de HTML, se devuelve un error indicando que el archivo no se ha encontrado.</p>
 <p>Por defecto, 4D define una carpeta raíz HTML llamada <strong>WebFolder</strong>. Si no existe, la carpeta raíz HTML se crea físicamente en el disco en el momento en que se lanza el servidor web por primera vez. Se crea la carpeta raíz:</p>
@@ -1050,8 +1050,8 @@ a las que no pueden acceder.</p>
 
 
 
-<table><thead><tr><th>Puede ajustarse con</th><th>Nombre</th><th>Comentarios</th></tr></thead><tbody><tr><td>objeto webServer</td><td><a href="/docs/es/next/API/WebServerClass#scalablesession"><code>scalableSession</code></a></td><td></td></tr><tr><td><code>WEB SET OPTION</code></td><td><code>Sesión escalable web</code></td><td></td></tr><tr><td>Caja de diálogo de parámetros</td><td><a href="/docs/es/next/settings/web#scalable-sessions-multi-process-sessions">Options (I) page/Scalable sessions (multi-process sessions)</a></td><td></td></tr></tbody></table>
-<p>Estado de activación de la gestión de sesiones escalable para el servidor web 4D. Las sesiones del servidor web se detallan en la página <a href="/docs/es/next/WebServer/sessions">Sesiones de usuario</a>.</p>
+<table><thead><tr><th>Puede ajustarse con</th><th>Nombre</th><th>Comentarios</th></tr></thead><tbody><tr><td>objeto webServer</td><td><a href="/docs/es/next/API/WebServerClass#scalablesession"><code>scalableSession</code></a></td><td></td></tr><tr><td><code>WEB SET OPTION</code></td><td><code>Sesión escalable web</code></td><td></td></tr><tr><td>Caja de diálogo de parámetros</td><td><a href="/docs/es/next/settings/web#scalable-sessions-multi-process-sessions">Página Opciones (I)/Sesiones extensible (sesiones multi-proceso)</a></td><td></td></tr></tbody></table>
+<p>Estado de activación de la gestión de sesiones escalable para el servidor web 4D. Las sesiones del servidor web se detallan en la página <a href="/docs/es/next/WebServer/sessions">Sesiones Web</a>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="dominio-de-la-cookie-de-sesión">Dominio de la cookie de sesión<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/WebServer/webServerConfig#dominio-de-la-cookie-de-sesión">​</a></h2>
 
 
@@ -1168,7 +1168,7 @@ a las que no pueden acceder.</p>
 
 
 
-<table><thead><tr><th>Puede ajustarse con</th><th>Nombre</th><th>Comentarios</th></tr></thead><tbody><tr><td>Caja de diálogo de parámetros</td><td><a href="/docs/es/next/settings/web#use-preemptive-processes">Options (I) page/Maximum Concurrent Web Processes</a></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Puede ajustarse con</th><th>Nombre</th><th>Comentarios</th></tr></thead><tbody><tr><td>Caja de diálogo de parámetros</td><td><a href="/docs/es/next/settings/web#use-preemptive-processes">Options (I) page/Use Preemptive Processes</a></td><td></td></tr></tbody></table>
 <p>Esta opción activa el modo apropiativo para el código del servidor web de su aplicación cuando se selecciona la opción <strong>Sin sesiones</strong> (el modo apropiativo siempre está activado con <strong>sesiones escalables</strong>). Cuando esta opción está marcada en este contexto, el compilador 4D evaluará automáticamente la propiedad hilo seguro de cada pieza de <a href="/docs/es/next/WebServer/preemptiveWeb#thread-safety-of-4d-web-code">código relacionado con la web</a> y devolverá errores en caso de incompatibi</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="parámetros-obsoletos">Parámetros obsoletos<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/next/WebServer/webServerConfig#parámetros-obsoletos">​</a></h2>
 <p>Los parámetros siguientes siguen siendo compatibles, pero se basan en funcionalidades o tecnologías obsoletas. Generalmente se recomienda mantener los valores por defecto.</p>

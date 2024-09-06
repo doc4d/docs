@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Criação de um pacote projeto | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/pt/19/Desktop/building"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="19"><meta data-rh="true" name="docusaurus_tag" content="docs-default-19"><meta data-rh="true" name="docsearch:version" content="19"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-19"><meta data-rh="true" property="og:title" content="Criação de um pacote projeto | 4D Docs"><meta data-rh="true" name="description" content="4D inclui um gerador de aplicativos para criar um pacote de projeto (versão final). Esse gerador simplifica o processo de finalização e desenvolvimento de aplicativos compilados 4D. Trata automaticamente as funcionalidades específicas de diferentes sistemas operacionais e facilita a implementação de aplicações cliente-servidor."><meta data-rh="true" property="og:description" content="4D inclui um gerador de aplicativos para criar um pacote de projeto (versão final). Esse gerador simplifica o processo de finalização e desenvolvimento de aplicativos compilados 4D. Trata automaticamente as funcionalidades específicas de diferentes sistemas operacionais e facilita a implementação de aplicações cliente-servidor."><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/pt/19/Desktop/building"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/19/Desktop/building" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/19/Desktop/building" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/19/Desktop/building" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/19/Desktop/building" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/19/Desktop/building" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/19/Desktop/building" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.dc9a4272.css">
-<script src="/docs/pt/assets/js/runtime~main.e5147242.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.95a4a5fa.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.adcf571c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -37,7 +37,7 @@
 <p>Os parâmetros padrão são utilizados na primeira vez que a caixa de diálogo Criar aplicação é utilizada. O conteúdo do ficheiro é atualizado, se necessário, quando se clica em <strong>Criar</strong> ou <strong>Salvar os parâmetros</strong>. Pode definir vários outros ficheiros de parâmetros XML para o mesmo projeto e utilizá-los utilizando o comando <a href="https://doc.4d.com/4dv19/help/command/en/page871.html" target="_blank" rel="noopener noreferrer">BUILD APPLICATION</a>.</p>
 <p>As chaves XML oferecem opções adicionais além daquelas exibidas na caixa de diálogo Criar aplicativo. XML keys provide additional options besides those displayed in the Build Application dialog box.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="arquivo-histórico">Arquivo histórico<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/19/Desktop/building#arquivo-histórico">​</a></h3>
-<p>Quando uma aplicação é construída, 4D gera um arquivo de histórico na pasta <strong>Logs</strong>. O ficheiro de historial armazena as seguintes informações para cada compilação:</p>
+<p>Quando uma aplicação é construída, 4D gera um arquivo de histórico na pasta <strong>Logs</strong>. O arquivo de registro armazena as seguintes informações para cada compilação:</p>
 <ul>
 <li>O início e o fim da construção de objetivos,</li>
 <li>O nome e o caminho de acesso completo dos ficheiros gerados,</li>
@@ -61,7 +61,7 @@
 <p>This feature creates a <code>.4dz</code>file within a <code>Compiled Database/&lt;project name&gt;</code> folder. Por exemplo, se nomeou a sua aplicação como &quot;MyProject&quot;, 4D irá criar:</p>
 <p><em>&lt;destination&gt;/Compiled Database/MyProject/MyProject.4dz</em></p>
 <blockquote>
-<p>Um ficheiro .4dz é essencialmente uma versão zipada (embalada) da pasta do projecto. A .4dz file is essentially a zipped (packed) version of the project folder. O tamanho compacto e otimizado dos arquivos .4dz torna os pacotes de projeto fáceis de implantar.</p>
+<p>Um arquivo .4dz é essencialmente uma versão compactada da pasta do projeto. A .4dz file is essentially a zipped (packed) version of the project folder. O tamanho compacto e otimizado dos arquivos .4dz torna os pacotes de projeto fáceis de implantar.</p>
 </blockquote>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="incluir-pastas-relacionadas">Incluir pastas relacionadas<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/19/Desktop/building#incluir-pastas-relacionadas">​</a></h4>
 <p>Quando se marca esta opção, todas as pastas relacionadas com o banco de dados na pasta Build como pastas <em>Components</em> e <em>Resources</em>. Para saber mais sobre essas pastas, consulte <a href="https://livedoc.4d.com/4D-Design-Reference-18/Managing-4D-databases/Description-of-4D-files.300-4575698.en.html#100374" target="_blank" rel="noopener noreferrer">Arquitetura do banco de dados</a>.</p>
@@ -86,7 +86,7 @@
 <li>uma <a href="/docs/pt/19/Desktop/building#licenses">licença apropriada</a></li>
 </ul>
 <p>No Windows, esta funcionalidade cria um ficheiro executável (.exe). Em macOS, trata da criação de pacotes de software.</p>
-<p>O princípio consiste em fundir um ficheiro de estrutura compilado com 4D Volume Desktop. A funcionalidade fornecida pelo ficheiro 4D Volume Desktop está ligada à oferta do produto a que se subscreveu. The functionality provided by the 4D Volume Desktop file is linked with the product offer to which you have subscribed.</p>
+<p>O princípio consiste em fundir um ficheiro de estrutura compilado com 4D Volume Desktop. A funcionalidade fornecida pelo ficheiro 4D Volume Desktop está ligada à oferta do produto a que se subscreveu. Para mais informações sobre este ponto, consulte a documentação de vendas e a <a href="http://www.4d.com/" target="_blank" rel="noopener noreferrer">4D Store</a>.</p>
 <p>Você pode definir um arquivo de dados padrão ou permitir que os usuários criem e usem seu próprio arquivo de dados (consulte o gerenciamento <a href="https://doc.4d.com/4Dv17R6/4D/17-R6/Data-file-management-in-final-applications.300-4354729.en.html" target="_blank" rel="noopener noreferrer">de arquivos de dados na seção de aplicativos finais</a>).</p>
 <p>É possível automatizar a atualização de aplicativos de usuário único mesclados através de uma sequência de comandos de idioma (veja <a href="https://doc.4d.com/4Dv17R6/4D/17-R6/Automatic-updating-of-server-or-single-user-applications.300-4354721.en.html" target="_blank" rel="noopener noreferrer">Atualização automática de aplicativos de servidor ou de usuário único</a>.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="localização-do-4d-volume-desktop">Localização do 4D Volume Desktop<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/19/Desktop/building#localização-do-4d-volume-desktop">​</a></h4>
@@ -104,10 +104,10 @@
 <p>Esta opção permite escolher o modo de ligação entre o aplicativo mesclado e o arquivo de dados local. Estão disponíveis dois modos de ligação de dados:</p>
 <ul>
 <li>
-<p><strong>Por nome da aplicação</strong> (por defeito) - A aplica ção 4D abre automaticamente o ficheiro de dados mais recentemente aberto correspondente ao ficheiro de estrutura. Isto permite-lhe mover o pacote de aplicações livremente no disco. Esta opção deve ser geralmente utilizada para aplicações fundidas, a menos que seja especificamente necessário duplicar a aplicação.</p>
+<p><strong>Por nome da aplicação</strong> (por defeito) - A aplicação 4D abre automaticamente o ficheiro de dados mais recentemente aberto correspondente ao ficheiro de estrutura. Isto permite-lhe mover o pacote de aplicações livremente no disco. Esta opção deve ser geralmente utilizada para aplicações fundidas, a menos que seja especificamente necessário duplicar a aplicação.</p>
 </li>
 <li>
-<p><strong>Por caminho do aplicativo</strong> - O aplicativo 4D mesclado analisará o arquivo <em>lastDataPath.xml</em> do aplicativo e tentará abrir o arquivo de dados com um atributo &quot;executablePath&quot; que corresponda ao caminho completo do aplicativo. Se tal entrada for encontrada, o arquivo de dados correspondente (definido através do seu atributo &quot;dataFilePath&quot;) será aberto. If such an entry is found, its corresponding data file (defined through its &quot;dataFilePath&quot; attribute) is opened.</p>
+<p><strong>Por caminho do aplicativo</strong> - O aplicativo 4D mesclado analisará o arquivo <em>lastDataPath.xml</em> do aplicativo e tentará abrir o arquivo de dados com um atributo &quot;executablePath&quot; que corresponda ao caminho completo do aplicativo. Se tal entrada for encontrada, o arquivo de dados correspondente (definido através do seu atributo &quot;dataFilePath&quot;) será aberto. Caso contrário, o último arquivo de dados aberto será aberto (modo padrão).</p>
 </li>
 </ul>
 <p>Para obter mais informações sobre o modo de ligação de dados, consulte <a href="/docs/pt/19/Desktop/building#last-data-file-opened">Último arquivo de dados aberto</a>.</p>
@@ -119,7 +119,7 @@
 <ul>
 <li>MyProject.exe - Seu executável e um MyProject.rsr (os recursos da aplicação)</li>
 <li>Pasta 4D Extensions, pasta Resources, várias bibliotecas (DLL), pasta Native Components, pasta SASL Plugins - Arquivos necessários para a operação do aplicativo</li>
-<li>Uma pasta Database - Inclui uma pasta Resources e um ficheiro MyProject.4DZ. Database folder  - Includes a Resources folder and  MyProject.4DZ file. <strong>Observação</strong>: Essa pasta também contém a pasta <em>Default Data</em> , se ela tiver sido definida (consulte <a href="/docs/pt/19/Desktop/building#data-file-management-in-final-applicatons">Gerenciamento de arquivos de dados em aplicativos finais</a>.</li>
+<li>Uma pasta Database - Inclui uma pasta Resources e um arquivo MyProject.4DZ. Database folder  - Includes a Resources folder and  MyProject.4DZ file. <strong>Observação</strong>: Essa pasta também contém a pasta <em>Default Data</em> , se ela tiver sido definida (consulte <a href="/docs/pt/19/Desktop/building#data-file-management-in-final-applicatons">Gerenciamento de arquivos de dados em aplicativos finais</a>.</li>
 <li>(Opcional) Pasta Components e/ou pasta Plugins - Contém todos os componentes e/ou arquivos de plug-in incluídos no banco de dados. Para obter mais informações sobre isso, consulte os plugins <a href="/docs/pt/19/Desktop/building#plugins-and-components">e componentes</a>.</li>
 <li>Pasta de licenças - Um arquivo XML com números de licença integrados ao aplicativo. Para obter mais informações sobre isso, consulte a seção <a href="/docs/pt/19/Desktop/building#licenses-and-certificate">Licenses &amp; Certificate</a> .</li>
 <li>Itens adicionais adicionados à pasta da Área de Trabalho de Volume 4D, se houver (veja <a href="/docs/pt/19/Desktop/building#customizing-4d-volume-desktop-folder">Personalizando a pasta de Volume 4D para Desktop</a>).</li>
@@ -144,7 +144,7 @@
 <blockquote>
 <p>No macOS, o 4D Volume Desktop é fornecido na forma de um pacote de software. Para modificá-lo, primeiro é preciso exibir seu conteúdo (<strong>Control+clique</strong> no ícone).</p>
 </blockquote>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="localização-de-ficheiros-web">Localização de ficheiros Web<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/19/Desktop/building#localização-de-ficheiros-web">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="localização-dos-arquivos-da-web">Localização dos arquivos da Web<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/19/Desktop/building#localização-dos-arquivos-da-web">​</a></h4>
 <p>Se o seu aplicativo autônomo for usado como um servidor Web, os arquivos e pastas exigidos pelo servidor devem ser instalados em locais específicos. Estes itens são os seguintes:</p>
 <ul>
 <li><em>cert.pem</em> e <em>key.pem</em> arquivos (opcional): Esses arquivos são usados para conexões TLS e por comandos de criptografia de dados,</li>
@@ -189,7 +189,7 @@
 <p><strong>Por nome da aplicação</strong> (por defeito) - A aplicação 4D abre automaticamente o ficheiro de dados mais recentemente aberto correspondente ao ficheiro de estrutura. Isto permite-lhe mover o pacote de aplicações livremente no disco. Esta opção deve ser geralmente utilizada para aplicações fundidas, a menos que seja especificamente necessário duplicar a aplicação.</p>
 </li>
 <li>
-<p><strong>Por caminho do aplicativo</strong> - O aplicativo 4D mesclado analisará o arquivo <em>lastDataPath.xml</em> do aplicativo e tentará abrir o arquivo de dados com um atributo &quot;executablePath&quot; que corresponda ao caminho completo do aplicativo. Se tal entrada for encontrada, o arquivo de dados correspondente (definido através do seu atributo &quot;dataFilePath&quot;) será aberto. If such an entry is found, its corresponding data file (defined through its &quot;dataFilePath&quot; attribute) is opened.</p>
+<p><strong>Por caminho do aplicativo</strong> - O aplicativo 4D mesclado analisará o arquivo <em>lastDataPath.xml</em> do aplicativo e tentará abrir o arquivo de dados com um atributo &quot;executablePath&quot; que corresponda ao caminho completo do aplicativo. Se tal entrada for encontrada, o arquivo de dados correspondente (definido através do seu atributo &quot;dataFilePath&quot;) será aberto. Caso contrário, o último arquivo de dados aberto será aberto (modo padrão).</p>
 </li>
 </ul>
 <p>Para obter mais informações sobre o modo de ligação de dados, consulte <a href="/docs/pt/19/Desktop/building#last-data-file-opened">Último arquivo de dados aberto</a>.</p>
@@ -279,7 +279,7 @@
 <p>Os pacotes macOS construídos contêm os mesmos itens que as subpastas do Windows. Você pode exibir seu conteúdo (<strong>Control+click</strong> no ícone para poder modificá-los.</p>
 </blockquote>
 <p>Se você marcou a opção &quot;Permitir atualização automática do aplicativo cliente&quot;, uma subpasta adicional chamada <em>Upgrade4DClient</em> é adicionada na pasta/pacote do servidor <code>&lt;ApplicationName&gt;</code>. Esta subpasta contém o aplicativo cliente no macOS e/ou no formato Windows como um arquivo compactado. Este ficheiro é utilizado durante a atualização automática das aplicações clientes.</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="localização-de-ficheiros-web-1">Localização de ficheiros Web<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/19/Desktop/building#localização-de-ficheiros-web-1">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="localização-dos-arquivos-da-web-1">Localização dos arquivos da Web<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/19/Desktop/building#localização-dos-arquivos-da-web-1">​</a></h4>
 <p>Se o servidor e/ou cliente parte do seu aplicativo clicável duplo for usado como um servidor web, os arquivos e pastas exigidos pelo servidor devem ser instalados em locais específicos. Estes itens são os seguintes:</p>
 <ul>
 <li><em>arquivos cert.pem</em> e <em>key.pem</em> (opcional): Esses arquivos são usados para conexões SSL e por comandos de criptografia de dados,</li>

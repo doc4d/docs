@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">IMAPTransporter | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/pt/API/IMAPTransporterClass"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="20-R6"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" name="docsearch:version" content="20-R6"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" property="og:title" content="IMAPTransporter | 4D Docs"><meta data-rh="true" name="description" content="The IMAPTransporter class allows you to retrieve messages from a IMAP email server."><meta data-rh="true" property="og:description" content="The IMAPTransporter class allows you to retrieve messages from a IMAP email server."><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/pt/API/IMAPTransporterClass"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/API/IMAPTransporterClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/API/IMAPTransporterClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/API/IMAPTransporterClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/API/IMAPTransporterClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/API/IMAPTransporterClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/API/IMAPTransporterClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.dc9a4272.css">
-<script src="/docs/pt/assets/js/runtime~main.e5147242.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.95a4a5fa.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.adcf571c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -521,7 +521,7 @@
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th style="text-align:center"></th><th>Descrição</th></tr></thead><tbody><tr><td>mailObj</td><td>Object</td><td style="text-align:center">-&gt;</td><td>Objeto Email</td></tr><tr><td>destinationBox</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Caixa de email que vai receber o objeto Email</td></tr><tr><td>options</td><td>Object</td><td style="text-align:center">-&gt;</td><td>Objeto que contém informações do charset</td></tr><tr><td>Resultados</td><td>Object</td><td style="text-align:center">&lt;-</td><td>Estado da operação anexada</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-4">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/API/IMAPTransporterClass#descrição-4">​</a></h4>
 <p>The <code>.append()</code> function appends a <code>mailObj</code> to the <code>destinationBox</code>.</p>
-<p>In the <code>mailObj</code> parameter, pass an Email object. For a comprehensive description of mail properties, see <a href="/docs/pt/API/EmailObjectClass#email-object">Email object</a>. The <code>.append()</code> function supports keyword tags in the Email object&#x27;s <code>keywords</code> attribute.</p>
+<p>No parâmetro <code>mailObj</code>, passe um objeto de e-mail. For a comprehensive description of mail properties, see <a href="/docs/pt/API/EmailObjectClass#email-object">Email object</a>. The <code>.append()</code> function supports keyword tags in the Email object&#x27;s <code>keywords</code> attribute.</p>
 <p>The optional <code>destinationBox</code> parameter lets you pass the name of a mailbox where the <code>mailObj</code> will be appended. Se omitido, é utilizada a caixa de correio actual.</p>
 <p>In the optional <code>options</code> parameter, you can pass an object to define the charset and encoding for specific parts of the email. Propriedades disponiveis:</p>
 
@@ -988,7 +988,7 @@
 <li>&quot;IMAP&quot; &amp; &quot;Doc&quot; mailboxes if only “Projects” already exists.</li>
 <li>&quot;Projects&quot; &amp; “IMAP” &amp; &quot;Doc&quot; mailboxes, if they do not already exist.</li>
 </ul>
-<p>In the <code>name</code> parameter, pass the name of the new mailbox.</p>
+<p>No parâmetro <code>name</code>, passe o nome da nova caixa de correio.</p>
 <p><strong>Objeto devolvido</strong></p>
 <p>A função devolve um objecto que descreve o estado IMAP:</p>
 
@@ -1401,7 +1401,7 @@
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th style="text-align:center"></th><th>Descrição</th></tr></thead><tbody><tr><td>name</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Nome da nova caixa de correio</td></tr><tr><td>Resultados</td><td>Object</td><td style="text-align:center">&lt;-</td><td>objecto boxInfo</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-14">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/API/IMAPTransporterClass#descrição-14">​</a></h4>
 <p>The <code>.getBoxInfo()</code> function returns a <code>boxInfo</code> object corresponding to the current maibox, or the mailbox <em>name</em>. This function returns the same information as <a href="/docs/pt/API/IMAPTransporterClass#selectbox"><code>.selectBox()</code></a> without changing the current mailbox.</p>
-<p>In the optional <em>name</em> parameter, pass the name of the mailbox to access. O nome representa uma hierarquia inequívoca da esquerda para a direita com níveis separados por um carácter delimitador específico. The delimiter can be found with the <a href="/docs/pt/API/IMAPTransporterClass#getdelimiter"><code>.getDelimiter()</code></a> function.</p>
+<p>In the optional <em>name</em> parameter, pass the name of the mailbox to access. O nome representa uma hierarquia inequívoca da esquerda para a direita com níveis separados por um carácter delimitador específico. O delimitador pode ser encontrado com a função <a href="/docs/pt/API/IMAPTransporterClass#getdelimiter"><code>.getDelimiter()</code></a>.</p>
 <p>If the mailbox <em>name</em> is not selectable or does not exist, the function generates an error and returns <strong>null</strong>.</p>
 <p><strong>Objeto devolvido</strong></p>
 <p>The <code>boxInfo</code> object returned contains the following properties:</p>
@@ -1758,7 +1758,7 @@
 <p><strong>Primeira sintaxe:</strong></p>
 <p><em><strong>.getMails( ids { ; options } ) -&gt; result</strong></em></p>
 <p>A primeira sintaxe permite recuperar mensagens com base nas suas identificações.</p>
-<p>In the <em>ids</em> parameter, pass a collection of IDs for the messages to return. You can get the IDs with <a href="/docs/pt/API/IMAPTransporterClass#getmail"><code>.getMail()</code></a>.</p>
+<p>In the <em>ids</em> parameter, pass a collection of IDs for the messages to return. Você pode obter as identificações com <a href="/docs/pt/API/IMAPTransporterClass#getmail"><code>.getMail()</code></a>.</p>
 <p>The optional <em>options</em> parameter allows you to define the parts of the messages to be returned. See the <strong>Options</strong> table below for a description of the available properties.</p>
 <p><strong>Segunda sintaxe:</strong></p>
 <p><em><strong>.getMails( startMsg ; endMsg { ; options } ) -&gt; result</strong></em></p>
@@ -1795,7 +1795,7 @@
 </ul>
 </blockquote>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="resultados-4">Resultados<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/API/IMAPTransporterClass#resultados-4">​</a></h4>
-<p><code>.getMails()</code> returns an object containing the following collections:</p>
+<p><code>.getMails()</code> retorna um objeto que contém as seguintes coleções:</p>
 
 
 
@@ -1816,7 +1816,7 @@
 
 
 
-<table><thead><tr><th>Propriedade</th><th>Tipo</th><th>Descrição</th></tr></thead><tbody><tr><td>lista</td><td>Collection</td><td>Collection of <a href="/docs/pt/API/EmailObjectClass#email-object"><code>Email</code> objects</a>. Se não forem encontrados objetos e-mail, uma coleção vazia é devolvida.</td></tr><tr><td>notFound</td><td>Collection</td><td>Collection of:<br><ul><li>first syntax - previously passed message IDs that do not exist</li><li>second syntax - sequence numbers of messages between startMsg and endMsg that do not exist</li></ul>An empty collection is returned if all messages are found.</td></tr></tbody></table>
+<table><thead><tr><th>Propriedade</th><th>Tipo</th><th>Descrição</th></tr></thead><tbody><tr><td>lista</td><td>Collection</td><td>Coleção de objetos [<code>Email</code>] (EmailObjectClass.md#email-object). Se não forem encontrados objetos e-mail, uma coleção vazia é devolvida.</td></tr><tr><td>notFound</td><td>Collection</td><td>Collection of:<br><ul><li>first syntax - previously passed message IDs that do not exist</li><li>second syntax - sequence numbers of messages between startMsg and endMsg that do not exist</li></ul>An empty collection is returned if all messages are found.</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemplo-10">Exemplo<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/API/IMAPTransporterClass#exemplo-10">​</a></h4>
 <p>Se quiser recuperar os 20 e-mails mais recentes sem alterar o seu estatuto de &quot;visto&quot;:</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> var $server,$boxInfo,$result : Object</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> var $transporter : 4D.IMAPTransporter</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $server:=New object</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $server.host:=&quot;imap.gmail.com&quot; //Mandatory</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $server.port:=993</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $server.user:=&quot;4d@gmail.com&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $server.password:=&quot;XXXXXXXX&quot;</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  //create transporter</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $transporter:=IMAP New transporter($server)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  //select mailbox</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $boxInfo:=$transporter.selectBox(&quot;INBOX&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  If($boxInfo.mailCount&gt;0)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  // retrieve the headers of the last 20 messages without marking them as read</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    $result:=$transporter.getMails($boxInfo.mailCount-20;$boxInfo.mailCount;\</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">     New object(&quot;withBody&quot;;False;&quot;updateSeen&quot;;False))</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    For each($mail;$result.list)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    // ...</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    End for each</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> End if</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código para a área de transferência" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
@@ -2196,7 +2196,7 @@
 
 
 <table><thead><tr><th>Parâmetros</th><th>Valor</th><th>Comentário</th></tr></thead><tbody><tr><td>IMAP all</td><td>1</td><td>Seleccione todas as mensagens na caixa de correio seleccionada</td></tr></tbody></table>
-<p>The <code>keywords</code> parameter lets you define the flags to remove from <code>msgIDs</code>. Pode passar qualquer uma das seguintes palavras-chave:</p>
+<p>O parâmetro <code>keywords</code> permite que você defina os sinalizadores a serem removidos dos <code>msgIDs</code>. Pode passar qualquer uma das seguintes palavras-chave:</p>
 
 
 
@@ -2346,8 +2346,8 @@
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th style="text-align:center"></th><th>Descrição</th></tr></thead><tbody><tr><td>currentName</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Nome da caixa de correio actual</td></tr><tr><td>newName</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Nome da nova caixa de correio</td></tr><tr><td>Resultados</td><td>Object</td><td style="text-align:center">&lt;-</td><td>Estado da operação de renomeamento</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-25">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/API/IMAPTransporterClass#descrição-25">​</a></h4>
 <p>The <code>.renameBox()</code> function changes the name of a mailbox on the IMAP server. Tentar mudar o nome de uma caixa de correio de um nome de caixa de correio que não existe ou para um nome de caixa de correio que já existe irá gerar um erro.</p>
-<p>In the <code>currentName</code> parameter, pass the name of the mailbox to be renamed.</p>
-<p>Pass the new name for the mailbox in the <code>newName</code> parameter.</p>
+<p>No parâmetro <code>currentName</code>, passe o nome da caixa de correio a ser renomeada.</p>
+<p>Passe o novo nome da caixa de correio no parâmetro <code>newName</code>.</p>
 <p><strong>Objeto devolvido</strong></p>
 <p>A função devolve um objecto que descreve o estado IMAP:</p>
 
@@ -2516,11 +2516,11 @@ For all search keys that use strings, a message matches the key if the string is
 </li>
 <li>
 <p><strong>Search-keys with a field-name value</strong>: the field-name is the name of a header field.
-Example: <code>searchCriteria = HEADER CONTENT-TYPE &quot;MIXED&quot;</code></p>
+Exemplo: <code>searchCriteria = HEADER CONTENT-TYPE &quot;MIXED&quot;</code></p>
 </li>
 <li>
 <p><strong>Search-keys with a flag value</strong>: the flag may accept one or several keywords (including standard flags), separated by spaces.
-Example: <code>searchCriteria = KEYWORD \Flagged \Draft</code></p>
+Exemplo: <code>searchCriteria = KEYWORD \Flagged \Draft</code></p>
 </li>
 <li>
 <p><strong>Pesquisa-chaves com um valor de conjunto de mensagens</strong>: identifica um conjunto de mensagens. Para números de sequência de mensagens, estes são números consecutivos de 1 até ao número total de mensagens na caixa de correio. Uma vírgula delimita números individuais; uma vírgula delimita entre dois números, inclusive.
@@ -2623,7 +2623,7 @@ Examples:
 <blockquote>
 <p>To get the information from a mailbox without changing the current mailbox, use <a href="/docs/pt/API/IMAPTransporterClass#getboxinfo"><code>.getBoxInfo()</code></a>.</p>
 </blockquote>
-<p>No parâmetro <em>name</em>, passar o nome da caixa de correio para aceder. O nome representa uma hierarquia inequívoca da esquerda para a direita com níveis separados por um carácter delimitador específico. The delimiter can be found with the <a href="/docs/pt/API/IMAPTransporterClass#getdelimiter"><code>.getDelimiter()</code></a> function.</p>
+<p>No parâmetro <em>name</em>, passar o nome da caixa de correio para aceder. O nome representa uma hierarquia inequívoca da esquerda para a direita com níveis separados por um carácter delimitador específico. O delimitador pode ser encontrado com a função <a href="/docs/pt/API/IMAPTransporterClass#getdelimiter"><code>.getDelimiter()</code></a>.</p>
 <p>The optional <em>state</em> parameter defines the type of access to the mailbox. Os valores possíveis são:</p>
 
 

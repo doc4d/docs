@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">EntitySelection | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/es/20-R5/API/EntitySelectionClass"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="20-R5"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" name="docsearch:version" content="20-R5"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" property="og:title" content="EntitySelection | 4D Docs"><meta data-rh="true" name="description" content="Una entity selection es un objeto que contiene una o más referencias a entidades pertenecientes a la misma Dataclass. Una entity selection puede contener 0, 1 o X entidades de la dataclass -- donde X puede representar el número total de entidades contenidas en la dataclass."><meta data-rh="true" property="og:description" content="Una entity selection es un objeto que contiene una o más referencias a entidades pertenecientes a la misma Dataclass. Una entity selection puede contener 0, 1 o X entidades de la dataclass -- donde X puede representar el número total de entidades contenidas en la dataclass."><link data-rh="true" rel="icon" href="/docs/es/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/es/20-R5/API/EntitySelectionClass"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20-R5/API/EntitySelectionClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/20-R5/API/EntitySelectionClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/20-R5/API/EntitySelectionClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/20-R5/API/EntitySelectionClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/20-R5/API/EntitySelectionClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20-R5/API/EntitySelectionClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/es/opensearch.xml"><link rel="stylesheet" href="/docs/es/assets/css/styles.dc9a4272.css">
-<script src="/docs/es/assets/js/runtime~main.5d98b6ab.js" defer="defer"></script>
+<script src="/docs/es/assets/js/runtime~main.e01a3a87.js" defer="defer"></script>
 <script src="/docs/es/assets/js/main.3b0e3cfb.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -1103,7 +1103,7 @@
 
 
 
-<table><thead><tr><th>Parámetros</th><th>Tipo</th><th></th><th>Descripción</th></tr></thead><tbody><tr><td>result</td><td>Text</td><td>&lt;-</td><td>Atributos de contexto vinculados a la entity selection, separados por una coma</td></tr></tbody></table>
+<table><thead><tr><th>Parámetros</th><th>Tipo</th><th></th><th>Descripción</th></tr></thead><tbody><tr><td>resultado</td><td>Text</td><td>&lt;-</td><td>Atributos de contexto vinculados a la entity selection, separados por una coma</td></tr></tbody></table>
 <blockquote>
 <p><strong>Modo avanzado</strong>: esta función está pensada para los desarrolladores que necesitan personalizar las funcionalidades por defecto de ORDA para configuraciones específicas. En la mayoría de los casos, no será necesario utilizarla.</p>
 </blockquote>
@@ -2024,7 +2024,7 @@
 <li>Si <em>end</em> &lt; 0, se recalcula como <em>end:=end+length</em>.</li>
 <li>Si <em>end &lt; startFrom</em> (valores pasados o calculados), el método no hace nada.</li>
 </ul>
-<p><code>.sum()</code> devuelve 0 si la entity selection est á vacía.</p>
+<p><code>.sum()</code> devuelve 0 si la entity selection está vacía.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ejemplo-1-9">Ejemplo 1<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20-R5/API/EntitySelectionClass#ejemplo-1-9">​</a></h4>
 <p>Si la entity selection contiene entidades que se han eliminado mientras tanto, también se devuelven.</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">var $sel; $sliced : cs.EmployeeSelection</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$sel:=ds.Employee.query(&quot;salary &gt; :1&quot;;50000)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$sliced:=$sel.slice(0;9) //</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código al portapaples" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
@@ -2100,7 +2100,7 @@
 
 
 
-<table><thead><tr><th>Lanzamiento</th><th>Modificaciones</th></tr></thead><tbody><tr><td>17</td><td>A ñadidos</td></tr></tbody></table>
+<table><thead><tr><th>Lanzamiento</th><th>Modificaciones</th></tr></thead><tbody><tr><td>17</td><td>Añadidos</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.toCollection</strong>( { <em>options</em> : Integer { ; <em>begin</em> : Integer { ; <em>howMany</em> : Integer } } ) : <em>Collection</em><br><strong>.toCollection</strong>( <em>filterString</em> : Text {; <em>options</em> : Integer { ; <em>begin</em> : Integer { ; <em>howMany</em> : Integer }}} ) : <em>Collection</em><br><strong>.toCollection</strong>( <em>filterCol</em> : Collection {; <em>options</em> : Integer { ; <em>begin</em> : Integer { ; <em>howMany</em> : Integer }}} ) : <em>Collection</em></p>
 
