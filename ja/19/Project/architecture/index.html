@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">プロジェクトのアーキテクチャー | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/19/Project/architecture"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="19"><meta data-rh="true" name="docusaurus_tag" content="docs-default-19"><meta data-rh="true" name="docsearch:version" content="19"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-19"><meta data-rh="true" property="og:title" content="プロジェクトのアーキテクチャー | 4D Docs"><meta data-rh="true" name="description" content="4D プロジェクトは、プロジェクトルートフォルダー (パッケージフォルダー) に格納された、複数のファイルやフォルダーから構成されています。 例:"><meta data-rh="true" property="og:description" content="4D プロジェクトは、プロジェクトルートフォルダー (パッケージフォルダー) に格納された、複数のファイルやフォルダーから構成されています。 例:"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/19/Project/architecture"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/19/Project/architecture" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/19/Project/architecture" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/19/Project/architecture" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/19/Project/architecture" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/19/Project/architecture" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/19/Project/architecture" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.dc9a4272.css">
-<script src="/docs/ja/assets/js/runtime~main.53aa3491.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.02317e98.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.37649b24.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -47,7 +47,7 @@
 <li>Classes</li>
 <li>DatabaseMethods</li>
 <li>Methods</li>
-<li>フォーム</li>
+<li>Forms</li>
 <li>TableForms</li>
 <li>Triggers</li>
 </ul>
@@ -125,7 +125,7 @@
 
 
 
-<table><thead><tr><th>内容</th><th>説明</th><th>形式</th></tr></thead><tbody><tr><td>catalog.4DCatalog</td><td>テーブルおよびフィールド定義</td><td>XML</td></tr><tr><td>folders.json</td><td>　エクスプローラーフォルダー定義</td><td>JSON</td></tr><tr><td>menus.json</td><td>  メニュー定義</td><td>JSON</td></tr><tr><td>settings.4DSettings</td><td><em>ストラクチャー</em>データベース設定。 <em><a href="/docs/ja/19/Project/architecture#settings-%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%83%BC-1">ユーザー設定</a></em> または <em><a href="/docs/ja/19/Project/architecture#settings-%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%83%BC">データファイル用のユーザー設定</a></em> が定義されている場合は、そちらの設定が優先されます。<strong>警告</strong>: コンパイル済みアプリケーションの場合、ストラクチャー設定は読み取り専用の .4dz ファイルに格納されます。 運用時にカスタム設定を定義するには、<em>ユーザー設定</em> または <em>データファイル用のユーザー設定</em> を使う必要があります。</td><td>XML</td></tr><tr><td>tips.json</td><td>定義されたヘルプTips</td><td>JSON</td></tr><tr><td>lists.json</td><td>定義されたリスト</td><td>JSON</td></tr><tr><td>filters.json</td><td>定義されたフィルター</td><td>JSON</td></tr><tr><td>styleSheets.css</td><td>CSS スタイルシート</td><td>CSS</td></tr><tr><td>styleSheets_mac.css</td><td>Mac用 CSS スタイルシート (変換されたバイナリデータベースより)</td><td>CSS</td></tr><tr><td>styleSheets_windows.css</td><td>Windows用 CSS スタイルシート (変換されたバイナリデータベースより)</td><td>CSS</td></tr></tbody></table>
+<table><thead><tr><th>内容</th><th>説明</th><th>形式</th></tr></thead><tbody><tr><td>catalog.4DCatalog</td><td>テーブルおよびフィールド定義</td><td>XML</td></tr><tr><td>folders.json</td><td>　エクスプローラーフォルダー定義</td><td>JSON</td></tr><tr><td>menus.json</td><td>メニュー定義</td><td>JSON</td></tr><tr><td>settings.4DSettings</td><td><em>ストラクチャー</em>データベース設定。 <em><a href="/docs/ja/19/Project/architecture#settings-%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%83%BC-1">ユーザー設定</a></em> または <em><a href="/docs/ja/19/Project/architecture#settings-%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%83%BC">データファイル用のユーザー設定</a></em> が定義されている場合は、そちらの設定が優先されます。<strong>警告</strong>: コンパイル済みアプリケーションの場合、ストラクチャー設定は読み取り専用の .4dz ファイルに格納されます。 運用時にカスタム設定を定義するには、<em>ユーザー設定</em> または <em>データファイル用のユーザー設定</em> を使う必要があります。</td><td>XML</td></tr><tr><td>tips.json</td><td>定義されたヘルプTips</td><td>JSON</td></tr><tr><td>lists.json</td><td>定義されたリスト</td><td>JSON</td></tr><tr><td>filters.json</td><td>定義されたフィルター</td><td>JSON</td></tr><tr><td>styleSheets.css</td><td>CSS スタイルシート</td><td>CSS</td></tr><tr><td>styleSheets_mac.css</td><td>Mac用 CSS スタイルシート (変換されたバイナリデータベースより)</td><td>CSS</td></tr><tr><td>styleSheets_windows.css</td><td>Windows用 CSS スタイルシート (変換されたバイナリデータベースより)</td><td>CSS</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="databasemethods-フォルダー">DatabaseMethods フォルダー<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/19/Project/architecture#databasemethods-フォルダー">​</a></h4>
 
 
@@ -142,7 +142,7 @@
 
 
 
-<table><thead><tr><th>内容</th><th>説明</th><th>形式</th></tr></thead><tbody><tr><td><em>databaseMethodName</em>.4dm</td><td>プロジェクト内で定義されているデータベースメソッド (1つのデータベースメソッドにつき1ファイル)。</td><td>text</td></tr></tbody></table>
+<table><thead><tr><th>内容</th><th>説明</th><th>形式</th></tr></thead><tbody><tr><td><em>databaseMethodName</em>.4dm</td><td>プロジェクト内で定義されているデータベースメソッド (1つの  データベースメソッドにつき1ファイル)。</td><td>text</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="methods-フォルダー">Methods フォルダー<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/19/Project/architecture#methods-フォルダー">​</a></h4>
 
 
@@ -208,7 +208,7 @@
 
 
 
-<table><thead><tr><th>内容</th><th>説明</th><th>形式</th></tr></thead><tbody><tr><td><em>formName</em>/form.4DForm</td><td>プロジェクトフォームの定義</td><td>json</td></tr><tr><td><em>formName</em>/method.4dm</td><td>プロジェクトフォームメソッド</td><td>text</td></tr><tr><td><em>formName</em>/Images/<em>pictureName</em></td><td>プロジェクトフォームのスタティックピクチャー</td><td>picture</td></tr><tr><td><em>formName</em>/ObjectMethods/<em>objectName</em>.4dm</td><td>オブジェクトメソッド  (1つのオブジェクトメソッドにつき1ファイル)</td><td>text</td></tr></tbody></table>
+<table><thead><tr><th>内容</th><th>説明</th><th>形式</th></tr></thead><tbody><tr><td><em>formName</em>/form.4DForm</td><td>プロジェクトフォームの定義</td><td>json</td></tr><tr><td><em>formName</em>/method.4dm</td><td>プロジェクトフォームメソッド</td><td>text</td></tr><tr><td><em>formName</em>/Images/<em>pictureName</em></td><td>プロジェクトフォー ムのスタティックピクチャー</td><td>picture</td></tr><tr><td><em>formName</em>/ObjectMethods/<em>objectName</em>.4dm</td><td>オブジェクトメソッド  (1つのオブジェクトメソッドにつき1ファイル)</td><td>text</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="tableforms-フォルダー">TableForms フォルダー<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/19/Project/architecture#tableforms-フォルダー">​</a></h4>
 
 
@@ -260,7 +260,7 @@
 
 
 
-<table><thead><tr><th>内容</th><th>説明</th><th>形式</th></tr></thead><tbody><tr><td><em>n</em>/Input/<em>formName</em>/form.4DForm</td><td>入力テーブルフォームの定義 (n: テーブル番号)</td><td>json</td></tr><tr><td><em>n</em>/Input/<em>formName</em>/Images/<em>pictureName</em></td><td>入力テーブルフォームのスタティックピクチャー</td><td>picture</td></tr><tr><td><em>n</em>/Input/<em>formName</em>/method.4dm</td><td>入力テーブルフォームのフォームメソッド</td><td>text</td></tr><tr><td><em>n</em>/Input/<em>formName</em>/ObjectMethods/<em>objectName</em>.4dm</td><td>入力テーブルフォームのオブジェクトメソッド  (1つのオブジェクトメソッドにつき1ファイル)</td><td>text</td></tr><tr><td><em>n</em>/Output/<em>formName</em>/form.4DForm</td><td>出力テーブルフォーム (n: テーブル番号)</td><td>json</td></tr><tr><td><em>n</em>/Output/<em>formName</em>/Images/<em>pictureName</em></td><td>出力テーブルフォームのスタティックピクチャー</td><td>picture</td></tr><tr><td><em>n</em>/Output/<em>formName</em>/method.4dm</td><td>出力テーブルフォームのフォームメソッド</td><td>text</td></tr><tr><td><em>n</em>/Output/<em>formName</em>/ObjectMethods/<em>objectName</em>.4dm</td><td>出力テーブルフォームのオブジェクトメソッド  (1つのオブジェクトメソ ッドにつき1ファイル)</td><td>text</td></tr></tbody></table>
+<table><thead><tr><th>内容</th><th>説明</th><th>形式</th></tr></thead><tbody><tr><td><em>n</em>/Input/<em>formName</em>/form.4DForm</td><td>入力テーブルフォームの定義 (n: テーブル番号)</td><td>json</td></tr><tr><td><em>n</em>/Input/<em>formName</em>/Images/<em>pictureName</em></td><td>入力テーブルフォームのスタティックピクチャー</td><td>picture</td></tr><tr><td><em>n</em>/Input/<em>formName</em>/method.4dm</td><td>入力テーブルフォームのフォームメソッド</td><td>text</td></tr><tr><td><em>n</em>/Input/<em>formName</em>/ObjectMethods/<em>objectName</em>.4dm</td><td>入力テーブルフォームのオブジェクトメソッド  (1つのオブジェクトメソッドにつき1ファイル)</td><td>text</td></tr><tr><td><em>n</em>/Output/<em>formName</em>/form.4DForm</td><td>出力テーブルフォーム (n: テーブル番号)</td><td>json</td></tr><tr><td><em>n</em>/Output/<em>formName</em>/Images/<em>pictureName</em></td><td>出力テーブルフォームのスタティックピクチャー</td><td>picture</td></tr><tr><td><em>n</em>/Output/<em>formName</em>/method.4dm</td><td>出力テーブルフォームのフォームメソッド</td><td>text</td></tr><tr><td><em>n</em>/Output/<em>formName</em>/ObjectMethods/<em>objectName</em>.4dm</td><td>出力テーブルフォームのオブジェクトメソッド  (1つのオブジェクトメソッド につき1ファイル)</td><td>text</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="triggers-フォルダー">Triggers フォルダー<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/19/Project/architecture#triggers-フォルダー">​</a></h4>
 
 
@@ -288,7 +288,7 @@
 </ul>
 <p>削除された要素はファイル名に括弧が付いた形でフォルダー内に置かれます (例: &quot;(myMethod).4dm&quot;)。 フォルダーの構成は <a href="/docs/ja/19/Project/architecture#sources">Sources</a> フォルダーと同じです。</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="deriveddata-フォルダー">DerivedData フォルダー<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/19/Project/architecture#deriveddata-フォルダー">​</a></h3>
-<p>DerivedData フォルダー  には、処理を最適化するため 4D が内部的に使用するキャッシュデーターが格納されます。 これらは必要に応じて自動的に生成・再生成されます。 このフォルダーは無視してかまいません。</p>
+<p>DerivedData フォルダーには  、処理を最適化するため 4D が内部的に使用するキャッシュデーターが格納されます。 これらは必要に応じて自動的に生成・再生成されます。 このフォルダーは無視してかまいません。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="libraries-フォルダー">Libraries フォルダー<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/19/Project/architecture#libraries-フォルダー">​</a></h2>
 <blockquote>
 <p>このフォルダーは macOS でのみ使用されます。</p>
@@ -345,7 +345,7 @@
 
 
 
-<table><thead><tr><th>内容</th><th>説明</th><th>形式</th></tr></thead><tbody><tr><td>data.4dd(*)</td><td>レコードとして入力されたデータと、レコードに属するデータが格納されたデータファイルです。 4D プロジェクトを開くと、アプリケーションはカレントデータファイルをデフォルトで開きます。 このファイルの場所や名称を変更した場合は、<em>データファイルを開く</em> ダイアログボックスが表示され、使用するデータファイルを選択するか、新しいデータファイルを作成できます。</td><td>binary</td></tr><tr><td>data.journal</td><td>データベースがログファイルを使用する場合のみ作成されます。 ログファイルは2つのバックアップ間のデータ保護を確実なものにするた めに使用されます。 データに対して実行されたすべての処理が、このファイルに順番に記録されます。 つまりデータに対して操作がおこなわれるたびに、データ上の処理 (操作の実行) とログファイル上の処理 (操作の記録) という 2つの処理が同時に発生します。 ログファイルはユーザーの処理を妨げたり遅くしたりすることなく、独立して構築されます。 データベースは 1つのログファイルしか同時に使用できません。 ログファイルにはレコードの追加・更新・削除やトランザクションなどの処理が記録されます。 ログファイルはデータベースが作成される際にデフォルトで生成されます。</td><td>binary</td></tr><tr><td>data.match</td><td>(内部用) テーブル番号に対応する UUID</td><td>XML</td></tr></tbody></table>
+<table><thead><tr><th>内容</th><th>説明</th><th>形式</th></tr></thead><tbody><tr><td>data.4dd(*)</td><td>レコードとして入力されたデータと、レコードに属するデータが格納されたデータファイルです。 4D プロジェクトを開くと、アプリケーションはカレントデータファイルをデフォルトで開きます。 このファイルの場所や名称を変更した場合は、<em>データファイルを開く</em> ダイアログボックスが表示され、使用するデータファイルを選択するか、新しいデータファイルを作成できます。</td><td>binary</td></tr><tr><td>data.journal</td><td>データベースがログファイルを使用する場合のみ作成されます。 ログファイルは2つのバックアップ間のデータ保護を確実なものにするために 使用されます。 データに対して実行されたすべての処理が、このファイルに順番に記録されます。 つまりデータに対して操作がおこなわれるたびに、データ上の処理 (操作の実行) とログファイル上の処理 (操作の記録) という 2つの処理が同時に発生します。 ログファイルはユーザーの処理を妨げたり遅くしたりすることなく、独立して構築されます。 データベースは 1つのログファイルしか同時に使用できません。 ログファイルにはレコードの追加・更新・削除やトランザクションなどの処理が記録されます。 ログファイルはデータベースが作成される際にデフォルトで生成されます。</td><td>binary</td></tr><tr><td>data.match</td><td>(内部用) テーブル番号に対応する UUID</td><td>XML</td></tr></tbody></table>
 <p>(*) .4db バイナリデータベースからプロジェクトに変換した場合、データファイルは変換による影響を受けません。 このデータファイルの名称を変更して移動させることができます。</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="settings-フォルダー">Settings フォルダー<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/19/Project/architecture#settings-フォルダー">​</a></h3>
 <p>Settings フォルダーには、アプリケーションの管理に使用される <strong>データファイル用のユーザー設定</strong> ファイルが格納されます。</p>

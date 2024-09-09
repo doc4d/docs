@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">VP Cell | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/fr/next/ViewPro/commands/vp-cell"><meta data-rh="true" property="og:locale" content="fr"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="fr"><meta data-rh="true" name="docsearch:language" content="fr"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="VP Cell | 4D Docs"><meta data-rh="true" name="description" content="VP Cell ( vpAreaName ; column Integer ; Text { ; sheet Object"><meta data-rh="true" property="og:description" content="VP Cell ( vpAreaName ; column Integer ; Text { ; sheet Object"><link data-rh="true" rel="icon" href="/docs/fr/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/fr/next/ViewPro/commands/vp-cell"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/ViewPro/commands/vp-cell" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/ViewPro/commands/vp-cell" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/ViewPro/commands/vp-cell" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/ViewPro/commands/vp-cell" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/ViewPro/commands/vp-cell" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/ViewPro/commands/vp-cell" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/fr/opensearch.xml"><link rel="stylesheet" href="/docs/fr/assets/css/styles.dc9a4272.css">
-<script src="/docs/fr/assets/js/runtime~main.d61943ca.js" defer="defer"></script>
+<script src="/docs/fr/assets/js/runtime~main.e6f12f37.js" defer="defer"></script>
 <script src="/docs/fr/assets/js/main.2fc2f331.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -52,14 +52,14 @@
 
 <table><thead><tr><th>Paramètres</th><th>Type</th><th></th><th>Description</th></tr></thead><tbody><tr><td>vpAreaName</td><td>Text</td><td>-&gt;</td><td>Nom d&#x27;objet formulaire zone 4D View Pro</td></tr><tr><td>column</td><td>Longint</td><td>-&gt;</td><td>Indice de la colonne</td></tr><tr><td>row</td><td>Longint</td><td>-&gt;</td><td>Indice de la ligne</td></tr><tr><td>sheet</td><td>Integer</td><td>-&gt;</td><td>Numéro d&#x27;indice de la feuille (feuille courante si omis)</td></tr><tr><td>Résultat</td><td>Object</td><td>&lt;-</td><td>Objet plage d&#x27;une seule cellule</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="description">Description<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/next/ViewPro/commands/vp-cell#description">​</a></h4>
-<p>The <code>VP Cell</code> command returns a new range object referencing a specific cell.</p>
+<p>La commande <code>VP Cell</code> retourne une nouvelle plage référençant une cellule spécifique.</p>
 <blockquote>
-<p>Cette commande s&#x27;applique aux plages d&#x27;une seule cellule. To create a range object for multiple cells, use the <a href="/docs/fr/next/ViewPro/commands/vp-cells">VP Cells</a> command.</p>
+<p>Cette commande s&#x27;applique aux plages d&#x27;une seule cellule. Pour créer un objet plage pour plusieurs cellules, utilisez la commande <a href="/docs/fr/next/ViewPro/commands/vp-cells">VP Cells</a>.</p>
 </blockquote>
 <p>Dans <em>vpAreaName</em>, passez le nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.</p>
-<p>The <em>column</em> parameter defines the column of the cell range&#x27;s position. Passez l&#x27;indice de la colonne dans ce paramètre.</p>
-<p>The <em>row</em> parameter defines the row of the cell range&#x27;s position. Passez l&#x27;indice de la ligne dans ce paramètre.</p>
-<p>In the optional <em>sheet</em> parameter, you can indicate the index of the sheet where the range will be defined. If omitted or if you pass <code>vk current sheet</code>, the current spreadsheet is used by default.</p>
+<p>Le paramètre <em>column</em> définit la colonne de la position de la plage de cellules. Passez l&#x27;indice de la colonne dans ce paramètre.</p>
+<p>Le paramètre <em>row</em> définit la ligne de la position de la plage de cellules. Passez l&#x27;indice de la ligne dans ce paramètre.</p>
+<p>Dans le paramètre optionnel <em>sheet</em>, vous pouvez indiquer l&#x27;index de la feuille où la plage sera définie. Si le paramètre est omis ou si vous passez <code>vk current sheet</code>, la feuille courante est utilisée par défaut.</p>
 <blockquote>
 <p>l&#x27;indexation démarre à 0.</p>
 </blockquote>
