@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Collection | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/fr/next/API/CollectionClass"><meta data-rh="true" property="og:locale" content="fr"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="fr"><meta data-rh="true" name="docsearch:language" content="fr"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Collection | 4D Docs"><meta data-rh="true" name="description" content="La classe Collection gère les variables de type Collection."><meta data-rh="true" property="og:description" content="La classe Collection gère les variables de type Collection."><link data-rh="true" rel="icon" href="/docs/fr/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/fr/next/API/CollectionClass"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/API/CollectionClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/API/CollectionClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/API/CollectionClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/API/CollectionClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/API/CollectionClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/API/CollectionClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/fr/opensearch.xml"><link rel="stylesheet" href="/docs/fr/assets/css/styles.dc9a4272.css">
-<script src="/docs/fr/assets/js/runtime~main.64eceec0.js" defer="defer"></script>
+<script src="/docs/fr/assets/js/runtime~main.ad7acaf6.js" defer="defer"></script>
 <script src="/docs/fr/assets/js/main.0acc2946.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -1133,14 +1133,14 @@
 
 
 
-<table><thead><tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr></thead><tbody><tr><td>value</td><td>Number, Text, Object, Collection, Date, Boolean</td><td style="text-align:center">-&gt;</td><td>Valeur de remplissage</td></tr><tr><td>startFrom</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Numéro de l&#x27;élément de départ (inclus)</td></tr><tr><td>end</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Position de fin (non incluse)</td></tr><tr><td>Résultat</td><td>collection</td><td style="text-align:center">&lt;-</td><td>Collection d&#x27;origine avec valeurs de remplissage</td></tr></tbody></table>
+<table><thead><tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr></thead><tbody><tr><td>value</td><td>Number, Text, Object, Collection, Date, Boolean</td><td style="text-align:center">-&gt;</td><td>Valeur de remplissage</td></tr><tr><td>startFrom</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Indice l&#x27;élément de départ (inclus)</td></tr><tr><td>end</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Indice de fin (non inclus)</td></tr><tr><td>Résultat</td><td>collection</td><td style="text-align:center">&lt;-</td><td>Collection d&#x27;origine avec valeurs de remplissage</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="description-14">Description<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/next/API/CollectionClass#description-14">​</a></h4>
 <p>La fonction <code>.fill()</code> remplit la collection avec la <em>valeur</em> spécifiée, éventuellement de l&#x27;index <em>startFrom</em> à l&#x27;index <em>end</em>, et renvoie la collection résultante.</p>
 <blockquote>
 <p>Cette fonction modifie la collection d&#x27;origine.</p>
 </blockquote>
 <ul>
-<li>Si le paramètre <em>startFrom</em> est omis, <em>value</em> est appliquée  à tous les éléments de la collection (<em>startFrom</em>=0).</li>
+<li>Si le paramètre <em>startFrom</em> est omis, <em>value</em> est appliquée à tous les éléments de la collection (<em>startFrom</em>=0).</li>
 <li>Si le paramètre <em>startFrom</em> est passé et <em>end</em> omis, <em>value</em> est appliquée aux éléments de la collection à partir de <em>startFrom</em> jusqu&#x27;au dernier élément de la collection (<em>end</em>=length).</li>
 <li>Si à la fois le paramètre <em>startFrom</em> et <em>end</em> sont passés, <em>value</em> est appliquée aux éléments de la collection à partir de <em>startFrom</em> jusqu&#x27;à l&#x27;élément <em>end</em>.</li>
 </ul>
@@ -2722,7 +2722,7 @@
 
 
 <table><thead><tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr></thead><tbody><tr><td>queryString</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Critère(s) de recherche</td></tr><tr><td>value</td><td>any</td><td style="text-align:center">-&gt;</td><td>Valeur(s) à comparer lors de l&#x27;utilisation de paramètre(s) dans la chaîne</td></tr><tr><td>querySettings</td><td>Object</td><td style="text-align:center">-&gt;</td><td>Options de requête : paramètres, attributs</td></tr><tr><td>Résultat</td><td>Collection</td><td style="text-align:center">&lt;-</td><td>Élément(s) correspondant à queryString dans la collection</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="description-37">Description<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/next/API/CollectionClass#description-37">  ​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="description-37">Description<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/next/API/CollectionClass#description-37">​</a></h4>
 <p>La fonction <code>.query()</code> renvoie tous les éléments d&#x27;une collection d&#x27;objets qui correspondent aux conditions de recherche définies par <em>queryString</em> et (éventuellement) <em>value</em> ou <em>querySettings</em>. Si la collection d&#x27;origine est une collection partagée, la collection retournée est également une collection partagée.</p>
 <p>Une collection vide est renvoyée si la collection dans laquelle la requête est exécutée ne contient pas la <em>value</em> recherchée.</p>
 <blockquote>
@@ -3400,7 +3400,7 @@ Lorsque vous utilisez une valeur constante, les règles suivantes doivent être 
 
 
 
-<table><thead><tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr></thead><tbody><tr><td>startFrom</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Numéro de l&#x27;élément de départ (inclus)</td></tr><tr><td>end</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Position de fin (non incluse)</td></tr><tr><td>Résultat</td><td>Collection</td><td style="text-align:center">&lt;-</td><td>Nouvelle collection contenant des éléments scindées (copie superficielle)</td></tr></tbody></table>
+<table><thead><tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr></thead><tbody><tr><td>startFrom</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Indice l&#x27;élément de départ (inclus)</td></tr><tr><td>end</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Indice de fin (non inclus)</td></tr><tr><td>Résultat</td><td>Collection</td><td style="text-align:center">&lt;-</td><td>Nouvelle collection contenant des éléments scindées (copie superficielle)</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="description-44">Description<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/next/API/CollectionClass#description-44">​</a></h4>
 <p>La fonction <code>.slice()</code> retourne une partie d&#x27;une collection dans une nouvelle collection, sélectionnée de l&#x27;indice <em>startFrom</em> à l&#x27;indice <em>end</em> (<em>end</em> non inclus). Cette fonction retourne une <em>copie superficielle</em> de la collection. Si la collection d&#x27;origine est une collection partagée, la collection retournée est également une collection partagée.</p>
 <blockquote>
@@ -3475,7 +3475,7 @@ Lorsque vous utilisez une valeur constante, les règles suivantes doivent être 
 <p>Par défaut, <code>.some()</code> évalue l&#x27;ensemble de la collection. Optionnellement, vous pouvez passer le numéro de l&#x27;élément auquel démarrer la recherche dans <em>startFrom</em>.</p>
 <ul>
 <li>
-<p>Si <em>startFrom</em> &gt;= la longueur de la collection, <strong>False</strong> est retourné, ce qui signifie que la collection n&#x27;est pas testée.</p>
+<p>Si <em>startFrom</em> &gt;= la longueur de la collection, <strong>False</strong> est retourné, ce qui signifie que la collection n&#x27;est pas test ée.</p>
 </li>
 <li>
 <p>Si <em>startFrom</em> &lt; 0, il est considéré comme le décalage depuis la fin de la collection.</p>

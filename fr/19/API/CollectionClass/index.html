@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Collection | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/fr/19/API/CollectionClass"><meta data-rh="true" property="og:locale" content="fr"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="fr"><meta data-rh="true" name="docsearch:language" content="fr"><meta data-rh="true" name="docusaurus_version" content="19"><meta data-rh="true" name="docusaurus_tag" content="docs-default-19"><meta data-rh="true" name="docsearch:version" content="19"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-19"><meta data-rh="true" property="og:title" content="Collection | 4D Docs"><meta data-rh="true" name="description" content="La classe Collection gère les variables de type Collection."><meta data-rh="true" property="og:description" content="La classe Collection gère les variables de type Collection."><link data-rh="true" rel="icon" href="/docs/fr/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/fr/19/API/CollectionClass"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/19/API/CollectionClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/19/API/CollectionClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/19/API/CollectionClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/19/API/CollectionClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/19/API/CollectionClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/19/API/CollectionClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/fr/opensearch.xml"><link rel="stylesheet" href="/docs/fr/assets/css/styles.dc9a4272.css">
-<script src="/docs/fr/assets/js/runtime~main.64eceec0.js" defer="defer"></script>
+<script src="/docs/fr/assets/js/runtime~main.ad7acaf6.js" defer="defer"></script>
 <script src="/docs/fr/assets/js/main.0acc2946.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -179,7 +179,7 @@
 
 
 
-<table><thead><tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr></thead><tbody><tr><td>value</td><td>Number, Text, Date, Time, Boolean, Object, Collection, Picture, Pointer</td><td style="text-align:center">-&gt;</td><td>Valeur(s) de collection</td></tr><tr><td>Résultat</td><td>Collection</td><td style="text-align:center">&lt;-</td><td>The new collection</td></tr></tbody></table>
+<table><thead><tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr></thead><tbody><tr><td>value</td><td>Number, Text, Date, Time, Boolean, Object, Collection, Picture, Pointer</td><td style="text-align:center">-&gt;</td><td>Valeur(s) de collection</td></tr><tr><td>Résultat</td><td>Collection</td><td style="text-align:center">&lt;-</td><td>La nouvelle collection</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="description">Description<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/19/API/CollectionClass#description">​</a></h4>
 <p>La commande <code>New collection</code>  crée une nouvelle collection vide ou préremplie et retourne sa référence.</p>
 <p>Si vous ne passez aucun paramètre, <code>New collection</code> crée une collection vide et retourne sa référence.</p>
@@ -248,7 +248,7 @@
 
 
 
-<table><thead><tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr></thead><tbody><tr><td>value</td><td>Number, Text, Date, Time, Boolean, Shared object, Shared collection</td><td style="text-align:center">-&gt;</td><td>Valeur(s) de la collection partagée</td></tr><tr><td>Résultat</td><td>Collection</td><td style="text-align:center">&lt;-</td><td>The new shared collection</td></tr></tbody></table>
+<table><thead><tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr></thead><tbody><tr><td>value</td><td>Number, Text, Date, Time, Boolean, Shared object, Shared collection</td><td style="text-align:center">-&gt;</td><td>Valeur(s) de la collection partagée</td></tr><tr><td>Résultat</td><td>Collection</td><td style="text-align:center">&lt;-</td><td>La nouvelle collection partagée</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="description-1">Description<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/19/API/CollectionClass#description-1">​</a></h4>
 <p>La commande <code>New shared collection</code>  crée une nouvelle collection partagée vide ou pré-remplie et retourne sa référence.</p>
 <p>L&#x27;ajout d&#x27;un élément à cette collection à l&#x27;aide de l&#x27;opérateur d&#x27;assignation doit être entouré de la structure <a href="/docs/fr/19/Concepts/shared#useend-use"><code>Use...End use</code></a> , sinon une erreur est générée (cela n&#x27;est pas nécessaire lors de l&#x27;ajout d&#x27;éléments à l&#x27;aide de fonctions telles que <a href="/docs/fr/19/API/CollectionClass#push"><code>push()</code></a> ou <a href="/docs/fr/19/API/CollectionClass#map"><code>map()</code></a> , car elles déclenchent automatiquement une structure interne <em>Use...End use</em>). La lecture d&#x27;un élément sans structure <em>Use...End use</em> est toutefois possible.</p>
@@ -809,8 +809,8 @@
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="description-10">Description<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/19/API/CollectionClass#description-10">​</a></h4>
 <p>La fonction <code>.equal()</code> compare la collection avec collection2 et retourne <strong>true</strong> si elles sont identiques (deep comparison).</p>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>Notes</div><div class="admonitionContent_BuS1"><ul>
-<li>The <code>.equal()</code> function only checks equality for string, boolean, number, and null type elements in the collections. Elle ne vérifie pas l&#x27;égalité pour les objets natifs.</li>
-<li>Elements with <strong>null</strong> values are not equal to Undefined elements.</li>
+<li>La fonction <code>.equal()</code> ne vérifie l&#x27;égalité que pour les éléments de type chaîne, booléen, nombre et null dans les collections. Elle ne vérifie pas l&#x27;égalité pour les objets natifs.</li>
+<li>Les éléments avec des valeurs <strong>null</strong> ne sont pas égaux aux éléments Undefined.</li>
 </ul></div></div>
 <p>Par défaut, une évaluation non diacritique est effectuée. Si vous souhaitez que l&#x27;évaluation soit sensible à la casse ou pour différencier des caractères accentués et non-accentués, passez la constante <code>ck diacritical</code> dans le paramètre option.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemple-10">Exemple<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/19/API/CollectionClass#exemple-10">​</a></h4>
@@ -1023,7 +1023,7 @@
 
 
 
-<table><thead><tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr></thead><tbody><tr><td>value</td><td>Number, Text, Object, Collection, Date, Boolean</td><td style="text-align:center">-&gt;</td><td>Valeur de remplissage</td></tr><tr><td>startFrom</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Numéro de l&#x27;élément de départ (inclus)</td></tr><tr><td>end</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Position de fin (non incluse)</td></tr><tr><td>Résultat</td><td>collection</td><td style="text-align:center">&lt;-</td><td>Collection d&#x27;origine avec valeurs de remplissage</td></tr></tbody></table>
+<table><thead><tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr></thead><tbody><tr><td>value</td><td>Number, Text, Object, Collection, Date, Boolean</td><td style="text-align:center">-&gt;</td><td>Valeur de remplissage</td></tr><tr><td>startFrom</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Indice l&#x27;élément de départ (inclus)</td></tr><tr><td>end</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Indice de fin (non inclus)</td></tr><tr><td>Résultat</td><td>collection</td><td style="text-align:center">&lt;-</td><td>Collection d&#x27;origine avec valeurs de remplissage</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="description-13">Description<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/19/API/CollectionClass#description-13">​</a></h4>
 <p>La fonction <code>.fill()</code> remplit les éléments de la collection avec <em>value</em>, optionnellement depuis l&#x27;élément <em>startFrom</em> et jusqu&#x27;à l&#x27;élément <em>end</em> (non inclus), et retourne la collection résultante.</p>
 <blockquote>
@@ -1680,7 +1680,7 @@
 <p>Dans <em>methodName</em>, passez le nom de la méthode à utiliser pour évaluer les éléments de la collection, ainsi que son ou ses paramètre(s) dans <em>param</em> (optionnel). In <em>methodName</em>, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in <em>param</em> (optional).</p>
 <p><em>methodName</em> reçoit les paramètres suivants :</p>
 <ul>
-<li>dans <em>$1.value</em> (tout type) : valeur de l&#x27;élément à évaluer</li>
+<li>dans <em>$1.value</em> (tout type) : valeur de l&#x27; élément à évaluer</li>
 <li>dans <em>$2</em> (tout type) : <em>param</em></li>
 <li>dans <em>$N...</em> (tout type) : <em>paramN...</em></li>
 </ul>
@@ -2528,9 +2528,9 @@
 
 
 
-<table><thead><tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr></thead><tbody><tr><td>startFrom</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Numéro de l&#x27;élément de départ (inclus)</td></tr><tr><td>end</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Position de fin (non incluse)</td></tr><tr><td>Résultat</td><td>Collection</td><td style="text-align:center">&lt;-</td><td>Nouvelle collection contenant des éléments scindés (copie superficielle)</td></tr></tbody></table>
+<table><thead><tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr></thead><tbody><tr><td>startFrom</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Indice l&#x27;élément de départ (inclus)</td></tr><tr><td>end</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Indice de fin (non inclus)</td></tr><tr><td>Résultat</td><td>Collection</td><td style="text-align:center">&lt;-</td><td>Nouvelle collection contenant des éléments scindés (copie superficielle)</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="description-36">Description<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/19/API/CollectionClass#description-36">​</a></h4>
-<p>La fonction <code>slice()</code> retourne une partie de la collection dans une nouvelle collection, sélectionné à partir de l&#x27;index <em>startFrom</em> jusqu&#x27;à l&#x27;index <em>end</em> (end n&#x27;est pas inclus). Cette fonction retourne une <em>copie superficielle</em> de la collection. Si la collection d&#x27;origine est une collection partagée, la collection retournée est également une collection partagée.</p>
+<p>La fonction <code>slice()</code> retourne une partie de la collection dans une nouvelle collection, sélectionné à partir de l&#x27;indice <em>startFrom</em> jusqu&#x27;à l&#x27;indice <em>end</em> (end n&#x27;est pas inclus). Cette fonction retourne une <em>copie superficielle</em> de la collection. Si la collection d&#x27;origine est une collection partagée, la collection retournée est également une collection partagée.</p>
 <blockquote>
 <p>Cette fonction ne modifie pas la collection d&#x27;origine.</p>
 </blockquote>
@@ -2612,7 +2612,7 @@
 <li><em>$1.stop</em> (booléen, optionnel) : <strong>true</strong> pour stopper le rétroappel. La valeur retournée est la dernière calculée.</li>
 </ul>
 <p>La fonction <code>.lastIndexOf()</code> recherche l&#x27;expression <em>toSearch</em> parmi les éléments de la collection et retourne le numéro d&#x27;élément de la dernière occurrence trouvée, ou -1 si aucune occurrence n&#x27;a été trouvée.</p>
-<p>Par défaut, <code>.some()</code> évalue l&#x27;ensemble de la collection. Optionnellement, vous pouvez passer le numéro de l&#x27;élément auquel démarrer la recherche dans <em>startFrom</em>.</p>
+<p>Par défaut, <code>.some()</code> évalue l&#x27;ensemble de la collection. Optionnellement, vous pouvez passer l&#x27;indice de l&#x27;élément auquel démarrer la recherche dans <em>startFrom</em>.</p>
 <ul>
 <li>Si <em>startFrom</em> &gt;= la longueur de la collection, <strong>False</strong> est retourné, ce qui signifie que la collection n&#x27;est pas testée.</li>
 <li>Si <em>startFrom</em> &lt; 0, il est considéré comme le décalage depuis la fin de la collection.</li>
@@ -2685,7 +2685,7 @@
 <li>collections</li>
 <li>dates</li>
 </ol>
-<p>Si vous souhaitez trier les éléments de la collection dans un autre ordre ou trier n&#x27;importe quel type d&#x27;élément, vous devez fournir, dans <em>methodName</em>, une méthode de comparaison qui compare deux valeurs et retourne <strong>true</strong> dans <em>$1.result</em> si la première valeur est inférieure à la deuxième valeur. Si nécessaire, vous pouvez passer des paramètres supplémentaires à la méthode via <em>extraParam</em>.</p>
+<p>Si vous souhaitez trier les él éments de la collection dans un autre ordre ou trier n&#x27;importe quel type d&#x27;élément, vous devez fournir, dans <em>methodName</em>, une méthode de comparaison qui compare deux valeurs et retourne <strong>true</strong> dans <em>$1.result</em> si la première valeur est inférieure à la deuxième valeur. Si nécessaire, vous pouvez passer des paramètres supplémentaires à la méthode via <em>extraParam</em>.</p>
 <ul>
 <li><em>methodName</em> reçoit les paramètres suivants :
 <ul>
