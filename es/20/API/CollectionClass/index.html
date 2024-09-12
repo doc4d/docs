@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Collection | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/es/20/API/CollectionClass"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="20"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20"><meta data-rh="true" name="docsearch:version" content="20"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20"><meta data-rh="true" property="og:title" content="Collection | 4D Docs"><meta data-rh="true" name="description" content="La clase Collection gestiona variables de tipo Collection."><meta data-rh="true" property="og:description" content="La clase Collection gestiona variables de tipo Collection."><link data-rh="true" rel="icon" href="/docs/es/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/es/20/API/CollectionClass"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20/API/CollectionClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/20/API/CollectionClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/20/API/CollectionClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/20/API/CollectionClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/20/API/CollectionClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20/API/CollectionClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/es/opensearch.xml"><link rel="stylesheet" href="/docs/es/assets/css/styles.dc9a4272.css">
-<script src="/docs/es/assets/js/runtime~main.cf02b9ff.js" defer="defer"></script>
+<script src="/docs/es/assets/js/runtime~main.78d3272a.js" defer="defer"></script>
 <script src="/docs/es/assets/js/main.6d84c9a9.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -971,8 +971,20 @@
 
 
 
-<table><thead><tr><th>Parámetros</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr></thead><tbody><tr><td>startFrom</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Índice para iniciar la prueba en</td></tr><tr><td>formula</td><td>4D.Function</td><td style="text-align:center">-&gt;</td><td>Objeto fórmula</td></tr><tr><td>methodName</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Nombre de un método</td></tr></tbody></table>
-<p>|param|Mixed|-&gt;|Parameter(s) to pass to <em>formula</em> or <em>methodName</em>| |Result|Boolean|&lt;-|True if all elements successfully passed the test|</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parámetros</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr></thead><tbody><tr><td>startFrom</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Índice para iniciar la prueba en</td></tr><tr><td>formula</td><td>4D.Function</td><td style="text-align:center">-&gt;</td><td>Objeto fórmula</td></tr><tr><td>methodName</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Nombre de un método</td></tr><tr><td>param</td><td>Mixed</td><td style="text-align:center">-&gt;</td><td>Parámetro(s) a pasar a la <em>fórmula</em> o <em>methodName</em></td></tr><tr><td>Result</td><td>Boolean</td><td style="text-align:center">&lt;-</td><td>True si todos los elementos han pasado la prueba con éxito</td></tr></tbody></table>
+<p>|</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-12">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20/API/CollectionClass#descripción-12">​</a></h4>
 <p>La función <code>.every()</code> devuelve <strong>true</strong> si todos los elementos de la colección han pasado con éxito una prueba implementada en el objeto <em>formula</em> o en el método <em>methodName</em>.</p>
 <p>Se designa la retrollamada a ejecutar para evaluar los elementos de la colección utilizando:</p>
@@ -1685,7 +1697,7 @@
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ejemplo-15">Ejemplo<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20/API/CollectionClass#ejemplo-15">​</a></h4>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> var $col : Collection</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> var $in : Boolean</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> var $obj : Object</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $obj:=New object(&quot;value&quot;; 10)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $col:=New collection(1;2;&quot;Henry&quot;;5;3;&quot;Albert&quot;;6;4;&quot;Alan&quot;;5;$obj)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $in:=$col.includes(3) //True</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $in:=$col.includes(5;6) //True</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $in:=$col.includes(&quot;al@&quot;) //True</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $in:=$col.includes(&quot;Hello&quot;) //False</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $in:=$col.includes($obj)  //True</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $in:=$col.includes(New object(&quot;value&quot;; 10)) //False</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código al portapaples" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="indexof">.indexOf()<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20/API/CollectionClass#indexof">​</a></h2>
-<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Hist órico</summary><div><div class="collapsibleContent_i85q">
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Histórico</summary><div><div class="collapsibleContent_i85q">
 
 
 

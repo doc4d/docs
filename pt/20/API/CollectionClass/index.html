@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Collection | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/pt/20/API/CollectionClass"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="20"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20"><meta data-rh="true" name="docsearch:version" content="20"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20"><meta data-rh="true" property="og:title" content="Collection | 4D Docs"><meta data-rh="true" name="description" content="A classe Collection gerencia variáveis de tipo Collection."><meta data-rh="true" property="og:description" content="A classe Collection gerencia variáveis de tipo Collection."><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/pt/20/API/CollectionClass"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20/API/CollectionClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/20/API/CollectionClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/20/API/CollectionClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/20/API/CollectionClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/20/API/CollectionClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20/API/CollectionClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.dc9a4272.css">
-<script src="/docs/pt/assets/js/runtime~main.545aa523.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.4d42bbdf.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.74183912.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -971,8 +971,20 @@
 
 
 
-<table><thead><tr><th>Parâmetro</th><th>Tipo</th><th style="text-align:center"></th><th>Descrição</th></tr></thead><tbody><tr><td>startFrom</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Índice para início do teste em</td></tr><tr><td>formula</td><td>4D. Function</td><td style="text-align:center">-&gt;</td><td>Objecto fórmula</td></tr><tr><td>methodName</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Nome da função a qual se chama para processar os elementos da coleção</td></tr></tbody></table>
-<p>|param|Mixed|-&gt;|Parameter(s) to pass to <em>formula</em> or <em>methodName</em>| |Result|Boolean|&lt;-|True if all elements successfully passed the test|</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parâmetro</th><th>Tipo</th><th style="text-align:center"></th><th>Descrição</th></tr></thead><tbody><tr><td>startFrom</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Índice para início do teste em</td></tr><tr><td>formula</td><td>4D. Function</td><td style="text-align:center">-&gt;</td><td>Objecto fórmula</td></tr><tr><td>methodName</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Nome da função a qual se chama para processar os elementos da coleção</td></tr><tr><td>param</td><td>Mixed</td><td style="text-align:center">-&gt;</td><td><em>methodName</em> recebe os parâmetros abaixo:</td></tr><tr><td>Resultados</td><td>Parâmetros</td><td style="text-align:center">&lt;-</td><td>True se todos os elementos passarem o teste com sucesso</td></tr></tbody></table>
+<p>|</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-12">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20/API/CollectionClass#descrição-12">​</a></h4>
 <p>A função <code>.every()</code> returns <strong>true</strong> if all elements in the collection successfully passed a test implemented in the provided <em>formula</em> object or <em>methodName</em> method.</p>
 <p>Designa-se a chamada de retorno a ser executada para avaliar os elementos da colecção utilizando qualquer um dos dois:</p>
@@ -2070,7 +2082,7 @@
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-28">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20/API/CollectionClass#descrição-28">​</a></h4>
 <p>A propriedade <code>.length</code> devolve o número de elementos da colecção.</p>
 <p>A propriedade <code>.length</code> é iniciada quando a coleção for criada. Adicionar ou remover elementos atualiza o tamanho, se necessário. Essa propriedade é <strong>read-only</strong> /apenas leitura (não pode usá-la para estabelecer o tamanho da coleção).</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemplo-23">Exemplo<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20/API/CollectionClass#exemplo-23">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemplo-23">Exemplo<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20/API/CollectionClass#exemplo-23"> ​</a></h4>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> $col:=$c.query(&quot;dateHired &lt; :1&quot;;(Current date-90))</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] if today is 01/10/2018 se hoje for 01/10/2018</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código para a área de transferência" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="map">.map()<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20/API/CollectionClass#map">​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Histórico</summary><div><div class="collapsibleContent_i85q">
@@ -2734,7 +2746,7 @@
 
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th style="text-align:center"></th><th>Descrição</th></tr></thead><tbody><tr><td>formula</td><td>4D. Function</td><td style="text-align:center">-&gt;</td><td>Objecto fórmula</td></tr><tr><td>methodName</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Nome da função a qual se chama para processar os elementos da coleção</td></tr><tr><td>initValue</td><td>Text, Number, Object, Collection, Date, Boolean</td><td style="text-align:center">-&gt;</td><td>Valor a utilizar como primeiro argumento da primeira chamada de <em>methodName</em></td></tr><tr><td>param</td><td>expressão</td><td style="text-align:center">-&gt;</td><td>Parâmetro(s) a transmitir</td></tr><tr><td>Resultados</td><td>Text, Number, Object, Collection, Date, Boolean</td><td style="text-align:center">&lt;-</td><td>Resultado do valor do acumulador</td></tr></tbody></table>
 <p>|</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-37">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20/API/CollectionClass#descrição-37">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-37">Descri ção<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20/API/CollectionClass#descrição-37">​</a></h4>
 <p>A função <code>.reduce()</code> The <code>.reduce()</code> function.</p>
 <blockquote>
 <p>Essa função não modifica a coleção original.</p>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Collection | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/fr/20/API/CollectionClass"><meta data-rh="true" property="og:locale" content="fr"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="fr"><meta data-rh="true" name="docsearch:language" content="fr"><meta data-rh="true" name="docusaurus_version" content="20"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20"><meta data-rh="true" name="docsearch:version" content="20"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20"><meta data-rh="true" property="og:title" content="Collection | 4D Docs"><meta data-rh="true" name="description" content="La classe Collection gère les variables de type Collection."><meta data-rh="true" property="og:description" content="La classe Collection gère les variables de type Collection."><link data-rh="true" rel="icon" href="/docs/fr/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/fr/20/API/CollectionClass"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20/API/CollectionClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/20/API/CollectionClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/20/API/CollectionClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/20/API/CollectionClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/20/API/CollectionClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20/API/CollectionClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/fr/opensearch.xml"><link rel="stylesheet" href="/docs/fr/assets/css/styles.dc9a4272.css">
-<script src="/docs/fr/assets/js/runtime~main.4918e8c2.js" defer="defer"></script>
+<script src="/docs/fr/assets/js/runtime~main.286c4699.js" defer="defer"></script>
 <script src="/docs/fr/assets/js/main.0acc2946.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -971,8 +971,20 @@
 
 
 
-<table><thead><tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr></thead><tbody><tr><td>startFrom</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Elément à partir duquel débuter l&#x27;évaluation</td></tr><tr><td>formula</td><td>4D.Function</td><td style="text-align:center">-&gt;</td><td>Objet formule</td></tr><tr><td>methodName</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Nom de méthode</td></tr></tbody></table>
-<p>|param|Mixed|-&gt;|Paramètre(s) à passer à <em>formula</em> ou à <em>methodName</em>| |Result|Boolean|&lt;-|True if all elements successfully passed the test|</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr></thead><tbody><tr><td>startFrom</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Elément à partir duquel débuter l&#x27;évaluation</td></tr><tr><td>formula</td><td>4D.Function</td><td style="text-align:center">-&gt;</td><td>Objet formule</td></tr><tr><td>methodName</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Nom de méthode</td></tr><tr><td>param</td><td>Mixed</td><td style="text-align:center">-&gt;</td><td>Paramètre(s) à passer à <em>formula</em> ou à <em>methodName</em></td></tr><tr><td>Résultat</td><td>Boolean</td><td style="text-align:center">&lt;-</td><td>Vrai si tous les éléments sont évalués à vrai</td></tr></tbody></table>
+<p>|</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="description-12">Description<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/20/API/CollectionClass#description-12">​</a></h4>
 <p>La fonction <code>.every()</code> retourne <strong>true</strong> si tous les éléments de la collection ont réussi avec succès un test implémenté dans l&#x27;objet <em>formule</em> fourni ou la méthode <em>methodName</em>.</p>
 <p>Vous désignez le code de rétroappel (callback) à exécuter pour évaluer les éléments de la collection en utilisant soit :</p>
