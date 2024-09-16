@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">リモートデータストア | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/ORDA/datastores"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="20-R6"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" name="docsearch:version" content="20-R6"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" property="og:title" content="リモートデータストア | 4D Docs"><meta data-rh="true" name="description" content="リモートデータストア とは、ローカルの 4Dアプリケーション (4D または4D Server) 上で使用される、別の 4Dアプリケーションの データストア への参照です。"><meta data-rh="true" property="og:description" content="リモートデータストア とは、ローカルの 4Dアプリケーション (4D または4D Server) 上で使用される、別の 4Dアプリケーションの データストア への参照です。"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/ORDA/datastores"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ORDA/datastores" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/ORDA/datastores" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/ORDA/datastores" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/ORDA/datastores" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/ORDA/datastores" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ORDA/datastores" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.caca9bb0.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.a5a8998b.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.dab0445b.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -25,13 +25,13 @@
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="セッションの監視">セッションの監視<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/ORDA/datastores#セッションの監視">​</a></h3>
 <p>データストアアクセスを管理しているセッションは 4D Server の管理ウィンドウに表示されます:</p>
 <ul>
-<li>プロセス名: &quot;REST Handler: \&lt;process name&gt;&quot;</li>
+<li>プロセス名: &quot;REST Handler: &lt;process name&gt;&quot;</li>
 <li>タイプ: HTTP Server Worker</li>
 <li>セッション: <code>Open datastore</code> コマンドに渡されたユーザー名</li>
 </ul>
 <p>次の例では、1つのセッション上で 2つのプロセスが実行中です:</p>
 <p><img decoding="async" loading="lazy" src="/docs/ja/assets/images/sessionAdmin-fb7129cb6aaab939e9e8b20cb43bce8f.png" width="1402" height="708" class="img_ev3q"></p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="セッションの終了">セッションの終了<a class="hash-link" aria-label="見 出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/ORDA/datastores#セッションの終了">​</a></h2>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="セッションの終了">セッションの終了<a class="hash-link" aria-label="見  出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/ORDA/datastores#セッションの終了">​</a></h2>
 <p><a href="/docs/ja/WebServer/sessions#%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E6%9C%89%E5%8A%B9%E6%9C%9F%E9%99%90">セッションの有効期限</a> の段落で説明されているように、アクティビティなしにタイムアウト時間が経過すると、4D は自動的にセッションを終了します。 デフォルトのタイムアウト時間は 60分です。 <em>Open datastore</em> コマンドの <code>connectionInfo</code> パラメーターを指定して、タイムアウト時間を変更することができます。</p>
 <p>セッション終了後にリクエストがリモートデータストアに送信された場合、セッションは可能な限り (ライセンスがあり、サーバーが停止していない、など) 再開されます。 ただしセッションが再開しても、ロックやトランザクションに関わるコンテキストは失われていることに留意が必要です (後述参照)。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ロッキングとトランザクション">ロッキングとトランザクション<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/ORDA/datastores#ロッキングとトランザクション">​</a></h2>
