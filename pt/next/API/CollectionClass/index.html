@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Collection | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/pt/next/API/CollectionClass"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Collection | 4D Docs"><meta data-rh="true" name="description" content="A classe Collection gerencia variáveis do tipo [Collection] (Concepts/dt_collection.md)."><meta data-rh="true" property="og:description" content="A classe Collection gerencia variáveis do tipo [Collection] (Concepts/dt_collection.md)."><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/pt/next/API/CollectionClass"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/API/CollectionClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/API/CollectionClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/API/CollectionClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/API/CollectionClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/API/CollectionClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/API/CollectionClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.9d2cac31.css">
-<script src="/docs/pt/assets/js/runtime~main.1ab74b31.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.cf77ac9d.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.69accbec.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -559,7 +559,7 @@
 <blockquote>
 <p>Essa função não modifica a coleção original.</p>
 </blockquote>
-<p>If <em>value</em> is a collection, all its elements are added as new elements at the end of the original collection. If <em>value</em> is not a collection, it is added itself as a new element.</p>
+<p>If <em>value</em> is a collection, all its elements are added as new elements at the end of the original collection. Se <em>value</em> não for a coleção, será adicionado ao novo elemento.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemplo-8">Exemplo<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/CollectionClass#exemplo-8">​</a></h4>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">var $c : Collection</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$c:=New collection(1;2;3;4;5)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$fruits:=New collection(&quot;Orange&quot;;&quot;Banana&quot;;&quot;Apple&quot;;&quot;Grape&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$fruits.push(New object(&quot;Intruder&quot;;&quot;Tomato&quot;))</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$c2:=$c.concat($fruits) //[1,2,3,4,5,&quot;Orange&quot;,&quot;Banana&quot;,&quot;Apple&quot;,&quot;Grape&quot;,{&quot;Intruder&quot;:&quot;Tomato&quot;}]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código para a área de transferência" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="copy">.copy()<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/CollectionClass#copy">​</a></h2>
@@ -1523,7 +1523,7 @@
 
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th style="text-align:center"></th><th>Descrição</th></tr></thead><tbody><tr><td>depth</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>A profundidade a que uma estrutura de colecção aninhada deve ser aplanada. O padrão=1</td></tr><tr><td>Resultados</td><td>Collection</td><td style="text-align:center">&lt;-</td><td>Colecção achatada</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-19">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/CollectionClass#descrição-19">​</a></h4>
-<p>A função <code>.flat()</code> cria uma nova coleção com todos os elementos da subcoleção concatenados recursivamente até a <em>depth</em>.</p>
+<p>A função <code>.flat()</code> cria uma nova coleção com todos os elementos da subcoleção concatenados recursivamente at é a <em>depth</em>.</p>
 <p>Por defeito, se o parâmetro <em>depth</em> for omitido, apenas o primeiro nível da estrutura de colecção aninhada será aplanado.</p>
 <blockquote>
 <p>Essa função não modifica a coleção original.</p>
@@ -2541,7 +2541,7 @@
 <p>ou <em>methodName</em>, o nome de um método projeto (texto).</p>
 </li>
 </ul>
-<p>In the callback, pass some code that compares two values and returns <strong>true</strong> if the first value is lower than the second value. You can provide <em>extraParam</em> parameters to the callback if necessary.</p>
+<p>In the callback, pass some code that compares two values and returns <strong>true</strong> if the first value is lower than the second value. Você pode fornecer parâmetros <em>extraParam</em> para a callback, se necessário.</p>
 <p>A chamada de retorno recebe os seguintes parâmetros:</p>
 <ul>
 <li>$1 (objeto), onde:
@@ -3035,7 +3035,7 @@ Quando usar um valor constante, as regras abaixo devem ser respeitadas:</p>
 <li>ou <em>methodName</em>, o nome de um método projeto (texto).</li>
 </ul>
 <p>The callback takes each collection element and performs any desired operation to accumulate the result into <em>$1.accumulator</em>, which is returned in <em>$1.value</em>.</p>
-<p>You can pass the value to initialize the accumulator in <em>initValue</em>. If omitted, <em>$1.accumulator</em> starts with <em>Undefined</em>.</p>
+<p>Pode passar o valor para inicializar o acumulador em <em>initValue</em>. If omitted, <em>$1.accumulator</em> starts with <em>Undefined</em>.</p>
 <p>A chamada de retorno recebe os seguintes parâmetros:</p>
 <ul>
 <li>em <em>$1.value</em>: valor do elemento a ser processado</li>
@@ -3045,7 +3045,7 @@ Quando usar um valor constante, as regras abaixo devem ser respeitadas:</p>
 <p>A chamada de retorno recebe os seguintes parâmetros:</p>
 <ul>
 <li><em>$1.accumulator</em>: value to be modified by the function and which is initialized by <em>initValue</em>.</li>
-<li><em>$1.stop</em> (boolean, optional): <strong>true</strong> to stop the method callback. O valor retornado é o último calculado.</li>
+<li><em>$1.stop</em> (boolean, opcional): <strong>true</strong> para parar o callback do método. O valor retornado é o último calculado.</li>
 </ul>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemplo-1-14">Exemplo 1<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/CollectionClass#exemplo-1-14">​</a></h4>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">C_COLLECTION($c)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $c:=New collection(5;3;5;1;3;4;4;6;2;2)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $r:=$c.reduce(&quot;Multiply&quot;;1) //returns 86400</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código para a área de transferência" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
@@ -3125,7 +3125,7 @@ Quando usar um valor constante, as regras abaixo devem ser respeitadas:</p>
 <li>ou <em>methodName</em>, o nome de um método projeto (texto).</li>
 </ul>
 <p>The callback takes each collection element and performs any desired operation to accumulate the result into <em>$1.accumulator</em>, which is returned in <em>$1.value</em>.</p>
-<p>You can pass the value to initialize the accumulator in <em>initValue</em>. If omitted, <em>$1.accumulator</em> starts with <em>Undefined</em>.</p>
+<p>Pode passar o valor para inicializar o acumulador em <em>initValue</em>. If omitted, <em>$1.accumulator</em> starts with <em>Undefined</em>.</p>
 <p>A chamada de retorno recebe os seguintes parâmetros:</p>
 <ul>
 <li>em <em>$1.value</em>: valor do elemento a ser processado</li>
@@ -3135,7 +3135,7 @@ Quando usar um valor constante, as regras abaixo devem ser respeitadas:</p>
 <p>A chamada de retorno recebe os seguintes parâmetros:</p>
 <ul>
 <li><em>$1.accumulator</em>: value to be modified by the function and which is initialized by <em>initValue</em>.</li>
-<li><em>$1.stop</em> (boolean, optional): <strong>true</strong> to stop the method callback. O valor retornado é o último calculado.</li>
+<li><em>$1.stop</em> (boolean, opcional): <strong>true</strong> para parar o callback do método. O valor retornado é o último calculado.</li>
 </ul>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemplo-1-15">Exemplo 1<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/CollectionClass#exemplo-1-15">​</a></h4>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">var $c : Collection</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$c:=New collection(5;3;5;1;3;4;4;6;2;2)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$r:=$c.reduceRight(Formula($1.accumulator*=$1.value); 1)  //retorna 86400</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código para a área de transferência" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
@@ -3265,7 +3265,7 @@ Quando usar um valor constante, as regras abaixo devem ser respeitadas:</p>
 </blockquote>
 <ul>
 <li>If <em>size</em> &lt; collection length, exceeding elements are removed from the collection.</li>
-<li>If <em>size</em> &gt; collection length, the collection length is increased to size.</li>
+<li>Se <em>size</em> &gt; comprimento da coleção, o comprimento da coleção é aumentado à medida.</li>
 </ul>
 <p>Por padrão, novos elementos são preenchidos com valores <strong>null</strong>. You can specify the value to fill in added elements using the <em>defaultValue</em> parameter.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemplo-29">Exemplo<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/CollectionClass#exemplo-29">​</a></h4>
@@ -3473,7 +3473,7 @@ Quando usar um valor constante, as regras abaixo devem ser respeitadas:</p>
 <p>Pode definir o(s) seguinte(s) parâmetro(s):</p>
 <ul>
 <li>(mandatory if you used a method) <em>$1.result</em> (boolean): <strong>true</strong> if the element value evaluation is successful, <strong>false</strong> otherwise.</li>
-<li><em>$1.stop</em> (boolean, optional): <strong>true</strong> to stop the method callback. O valor retornado é o último calculado.</li>
+<li><em>$1.stop</em> (boolean, opcional): <strong>true</strong> para parar o callback do método. O valor retornado é o último calculado.</li>
 </ul>
 <p>In any case, at the point where <code>.some()</code> function encounters the first collection element returning true, it stops calling the callback and returns <strong>true</strong>.</p>
 <p>Por padrão, <code>.some()</code> testa toda a coleção. Optionally, you can pass the index of an element from which to start the test in <em>startFrom</em>.</p>

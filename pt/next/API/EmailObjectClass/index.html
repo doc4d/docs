@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Email | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/pt/next/API/EmailObjectClass"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Email | 4D Docs"><meta data-rh="true" name="description" content="Creating, sending or receiving emails in 4D is done by handling an Email object."><meta data-rh="true" property="og:description" content="Creating, sending or receiving emails in 4D is done by handling an Email object."><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/pt/next/API/EmailObjectClass"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/API/EmailObjectClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/API/EmailObjectClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/API/EmailObjectClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/API/EmailObjectClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/API/EmailObjectClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/API/EmailObjectClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.9d2cac31.css">
-<script src="/docs/pt/assets/js/runtime~main.1ab74b31.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.cf77ac9d.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.69accbec.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -12,7 +12,7 @@
 <p><code>Email</code> objects are created when receiving mails through a <em>transporter</em> class function:</p>
 <ul>
 <li>IMAP - <a href="/docs/pt/next/API/IMAPTransporterClass#getmail"><code>.getMail()</code></a> and <a href="/docs/pt/next/API/IMAPTransporterClass#getmails"><code>.getMails()</code></a> functions to get emails from an IMAP server</li>
-<li>POP3 - <a href="/docs/pt/next/API/POP3TransporterClass#getmail"><code>.getMail()</code></a> function to get an email from a POP3 server.</li>
+<li>POP3 - Função <a href="/docs/pt/next/API/POP3TransporterClass#getmail"><code>.getMail()</code></a> para obter um e-mail de um servidor POP3.</li>
 </ul>
 <blockquote>
 <p>You can also create a new, blank <code>Email</code> object and then fill it with <a href="/docs/pt/next/API/EmailObjectClass#email-object">Email object properties</a>.</p>
@@ -105,7 +105,7 @@
 <ul>
 <li>e-mail único: &quot;<a href="mailto:somebody@domain.com" target="_blank" rel="noopener noreferrer">somebody@domain.com</a>&quot;</li>
 <li>single display name+email: &quot;Somebody <a href="mailto:somebody@domain.com" target="_blank" rel="noopener noreferrer">somebody@domain.com</a>&quot;</li>
-<li>several emails: &quot;Somebody <a href="mailto:somebody@domain.com" target="_blank" rel="noopener noreferrer">somebody@domain.com</a>,<a href="mailto:me@home.org" target="_blank" rel="noopener noreferrer">me@home.org</a>&quot;</li>
+<li>vários e-mails: &quot;Somebody <a href="mailto:somebody@domain.com" target="_blank" rel="noopener noreferrer">somebody@domain.com</a>,<a href="mailto:me@home.org" target="_blank" rel="noopener noreferrer">me@home.org</a>&quot;</li>
 </ul>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="object">Object<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/EmailObjectClass#object">​</a></h4>
 <p>Um objeto com duas propriedades:</p>
@@ -245,7 +245,7 @@
 <p>For specific formatting requirements, please consult the <a href="https://tools.ietf.org/html/rfc5322" target="_blank" rel="noopener noreferrer">RFC#5322</a>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="from">.from<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/EmailObjectClass#from">​</a></h2>
 <p><strong>.from</strong> : Text<br><strong>.from</strong> : Object<br><strong>.from</strong> : Collection</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-6">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/EmailObjectClass#descrição-6">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-6">Descriç ão<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/EmailObjectClass#descrição-6">​</a></h4>
 <p>The <code>.from</code> property contains the Originating <a href="/docs/pt/next/API/EmailObjectClass#email-addresses">address(es)</a> of the email.</p>
 <p>Each email you send out has both the <a href="/docs/pt/next/API/EmailObjectClass#sender">sender</a> and <strong>from</strong> addresses:</p>
 <ul>

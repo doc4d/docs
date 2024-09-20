@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Fórmulas e funções | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/pt/next/ViewPro/formulas"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Fórmulas e funções | 4D Docs"><meta data-rh="true" name="description" content="Usando fórmulas"><meta data-rh="true" property="og:description" content="Usando fórmulas"><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/pt/next/ViewPro/formulas"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/ViewPro/formulas" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/ViewPro/formulas" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/ViewPro/formulas" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/ViewPro/formulas" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/ViewPro/formulas" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/ViewPro/formulas" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.9d2cac31.css">
-<script src="/docs/pt/assets/js/runtime~main.1ab74b31.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.cf77ac9d.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.69accbec.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -260,7 +260,7 @@
 <p>You can declare the name, type, and number of parameters through the <em>parameters</em> collection of the function you declared using the <a href="/docs/pt/next/ViewPro/commands/vp-set-custom-functions">VP SET CUSTOM FUNCTIONS</a> command. Optionally, you can control the number of parameters passed by the user through <em>minParams</em> and <em>maxParams</em> properties.</p>
 <p>For more information on supported incoming parameter types, please refer to the <a href="/docs/pt/next/ViewPro/commands/vp-set-custom-functions">VP SET CUSTOM FUNCTIONS</a> command description.</p>
 <p>If you do not declare parameters, values can be sequentially passed to methods (they will be received in $1, $2...) e seu tipo será automaticamente convertido.</p>
-<p>Date and Object parameters are handled in the following way:</p>
+<p>Os parâmetros Date e Object são tratados da seguinte maneira:</p>
 <ul>
 <li>Dates in <em>jstype</em> will be passed as <a href="/docs/pt/next/Concepts/object">object</a> in 4D code with two properties:</li>
 </ul>
@@ -308,7 +308,7 @@
 <p>4D project methods can also return values in the 4D View Pro cell formula via $0. São suportados os seguintes tipos de dados para os parâmetros devolvidos:</p>
 <ul>
 <li>
-<p><a href="/docs/pt/next/Concepts/string">text</a> (converted to string in 4D View Pro)</p>
+<p><a href="/docs/pt/next/ViewPro/Aceitar/dt_string.md">text</a> (convertido em string em 4D View Pro)</p>
 </li>
 <li>
 <p><a href="/docs/pt/next/Concepts/number">real</a>/<a href="/docs/pt/next/Concepts/number">longint</a> (converted to number in 4D View Pro)</p>
@@ -320,7 +320,7 @@
 <p><a href="/docs/pt/next/Concepts/time">time</a> (converted to JS Date type in 4D View Pro - date in base date, i.e. 12/30/1899)</p>
 </li>
 <li>
-<p><a href="/docs/pt/next/Concepts/boolean">boolean</a> (converted to bool in 4D View Pro)</p>
+<p><a href="/docs/pt/next/Concepts/boolean">boolean</a> (convertido em bool no 4D View Pro)</p>
 </li>
 <li>
 <p><a href="/docs/pt/next/Concepts/picture">picture</a> (jpg,png,gif,bmp,svg other types converted into png) creates a URI (data:image/png;base64,xxxx) and then used as the background in 4D View Pro in the cell where the formula is executed</p>
@@ -353,7 +353,7 @@
 <p>If the 4D method returns nothing, an empty string is automatically returned.</p>
 <p>É devolvido um erro na célula 4D View Pro se:</p>
 <ul>
-<li>o método 4D retorna outro tipo além do listado acima</li>
+<li>o m étodo 4D retorna outro tipo além do listado acima</li>
 <li>an error occurred during 4D method execution (when user clicks on &quot;abort&quot; button).</li>
 </ul>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemplo">Exemplo<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/ViewPro/formulas#exemplo">​</a></h4>
