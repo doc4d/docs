@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Página da Web | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/pt/20-R5/settings/web"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="20-R5"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" name="docsearch:version" content="20-R5"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" property="og:title" content="Página da Web | 4D Docs"><meta data-rh="true" name="description" content="A través de las pestañas de la página Web, puede configurar varios aspectos del servidor web integrado de 4D (seguridad, inicio, conexiones, servicios web, etc.). Para más información sobre el funcionamiento del servidor web de 4D, consulte Servidor web. Para más información sobre los servicios web de 4D, consulte el capítulo Publicación y uso de los servicios web."><meta data-rh="true" property="og:description" content="A través de las pestañas de la página Web, puede configurar varios aspectos del servidor web integrado de 4D (seguridad, inicio, conexiones, servicios web, etc.). Para más información sobre el funcionamiento del servidor web de 4D, consulte Servidor web. Para más información sobre los servicios web de 4D, consulte el capítulo Publicación y uso de los servicios web."><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/pt/20-R5/settings/web"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20-R5/settings/web" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/20-R5/settings/web" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/20-R5/settings/web" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/20-R5/settings/web" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/20-R5/settings/web" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20-R5/settings/web" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.9d2cac31.css">
-<script src="/docs/pt/assets/js/runtime~main.22a3c8b6.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.48cc0d89.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.69accbec.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -50,7 +50,7 @@ At any moment, you can clear the cache of the pages and images that it contains 
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="sessões-escaláveis-sessões-multi-processo">Sessões escaláveis (sessões multi-processo)<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/settings/web#sessões-escaláveis-sessões-multi-processo">​</a></h4>
 <p>Cuando selecciona esta opción (recomendado), una sesión usuario se gestiona a través de un objeto <strong>Session</strong>. Ver la <a href="/docs/pt/20-R5/WebServer/sessions#enabling-sessions">página Sesiones usuario</a>.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="sem-sessões">Sem sessões<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/settings/web#sem-sessões">​</a></h4>
-<p>Cuando se selecciona esta opción, el servidor web no ofrece ningún soporte específico para las <a href="/docs/pt/20-R5/WebServer/sessions">sesiones usuario</a>. Successive requests from web clients are always independent and no context is maintained on the server.</p>
+<p>Cuando se selecciona esta opción, el servidor web no ofrece ningún soporte específico para las <a href="/docs/pt/20-R5/WebServer/sessions">sesiones usuario</a>. As solicitações sucessivas dos clientes Web são sempre independentes e nenhum contexto é mantido no servidor.</p>
 <p>Neste modo, pode configurar parâmetros do servidor Web adicionais:</p>
 <ul>
 <li><a href="/docs/pt/20-R5/settings/web#maximum-concurrent-web-processes">Maximum Concurrent Web Processes</a></li>
@@ -66,18 +66,18 @@ At any moment, you can clear the cache of the pages and images that it contains 
 <p>Limite estritamente superior de processos Web em simultâneo. Ver <a href="/docs/pt/20-R5/WebServer/webServerConfig#maximum-concurrent-web-processes">Procesos Web simultáneos máximos</a>.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="reutilização-de-contextos-temporários">Reutilização de contextos temporários<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/settings/web#reutilização-de-contextos-temporários">​</a></h4>
 <p>No disponible con las <a href="/docs/pt/20-R5/WebServer/sessions">sesiones extensibles</a>.</p>
-<p>Allows you to optimize the operation of the 4D Web server in remote mode. Ver <a href="/docs/pt/20-R5/WebServer/webServerConfig#reuse-temporary-contexts-in-remote-mode">Reutilización de los contextos temporales en modo remoto)</a>.</p>
+<p>Permite otimizar a operação do servidor Web 4D no modo remoto. Ver <a href="/docs/pt/20-R5/WebServer/webServerConfig#reuse-temporary-contexts-in-remote-mode">Reutilización de los contextos temporales en modo remoto)</a>.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="utilizar-processos-preemptivos">Utilizar processos preemptivos<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/settings/web#utilizar-processos-preemptivos">​</a></h4>
 <p>No disponible con las <a href="/docs/pt/20-R5/WebServer/sessions">sesiones extensibles</a>.</p>
 <p>Permite processos web preemptivos nas suas aplicações compiladas. Cuando se selecciona <strong>Utilizar los procesos apropiativos</strong>, la elegibilidad de su código relacionado con la web (incluyendo las etiquetas 4D y los métodos base Web) para la ejecución apropiativa será evaluada durante la compilación. Para más información, consulte <a href="/docs/pt/20-R5/WebServer/preemptiveWeb">Utilizar los procesos web apropiativos</a>.</p>
 <blockquote>
-<p>This option does not apply to scalable sessions, REST processes (compiled mode), and web service processes (server or client).  Ver <a href="/docs/pt/20-R5/WebServer/preemptiveWeb#enabling-the-preemptive-mode-for-the-web-server">Activar el modo apropiativo para el servidor web</a>.</p>
+<p>Essa opção não se aplica a sessões dimensionáveis, processos REST (modo compilado) e processos de serviço Web (servidor ou cliente).  Ver <a href="/docs/pt/20-R5/WebServer/preemptiveWeb#enabling-the-preemptive-mode-for-the-web-server">Activar el modo apropiativo para el servidor web</a>.</p>
 </blockquote>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="tempo-limite-do-processo-inativo">Tempo limite do processo inativo<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/settings/web#tempo-limite-do-processo-inativo">​</a></h4>
 <p>No disponible con las <a href="/docs/pt/20-R5/WebServer/sessions">sesiones extensibles</a>.</p>
-<p>Allows you to set the maximum timeout before closing for inactive Web processes on the server. Ver <a href="/docs/pt/20-R5/WebServer/webServerConfig#inactive-process-timeout">Duración de los procesos inactivos</a>.</p>
+<p>Permite que você defina o tempo limite máximo antes de fechar os processos inativos da Web no servidor. Ver <a href="/docs/pt/20-R5/WebServer/webServerConfig#inactive-process-timeout">Duración de los procesos inactivos</a>.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="palavras-passe-web">Palavras-passe Web<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/settings/web#palavras-passe-web">​</a></h3>
-<p>Set the authentication system that you want to apply to your Web server. São propostas três opções:</p>
+<p>Defina o sistema de autenticação que você deseja aplicar ao seu servidor Web. São propostas três opções:</p>
 <p>Custom (default) Passwords with BASIC protocol Passwords with DIGEST protocol</p>
 <p>Se recomienda utilizar la autenticación <strong>personalizada</strong>. Veja o capítulo <a href="/docs/pt/20-R5/WebServer/authentication"><strong>Autenticação</strong></a> na documentação <em>Desenvolvimento Web</em>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="opções-ii">Opções (II)<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/settings/web#opções-ii">​</a></h2>
@@ -112,7 +112,7 @@ Each field is separated by a space and each line ends by the CR/LF sequence (cha
 <li>host: endereço IP do cliente (ex. 192.100.100.10)</li>
 <li>rfc931: informação não é gerada por 4D, é sempre - (um sinal de menos)</li>
 <li>usuário: nome de usuário como ele está autenticado, ou então é - (um sinal menos). Se o nome de usuário contiver espaços, eles serão substituídos por _ (um sublinhado).</li>
-<li>DD: day, MMM: a 3-letter abbreviation for the month name (Jan, Feb,...), YYYY: year, HH: hour, MM: minutes, SS: seconds</li>
+<li>DD: dia, MMM: uma abreviação de 3 letras para o nome do mês (Jan, Feb,...), YYYY: ano, HH: hora, MM: minutos, SS: segundos</li>
 </ul>
 </li>
 </ul>
@@ -125,7 +125,7 @@ Each field is separated by a space and each line ends by the CR/LF sequence (cha
 <li>length: tamanho dos dados devolvidos (exceto o cabeçalho HTTP) ou 0.</li>
 </ul>
 <blockquote>
-<p><strong>Nota:</strong> por razones de rendimiento, las operaciones se guardan en una memoria búfer por paquetes de 1Kb antes de ser escritas en el disco. The operations are also written to disk if no request has been sent every 5 seconds.
+<p><strong>Nota:</strong> por razones de rendimiento, las operaciones se guardan en una memoria búfer por paquetes de 1Kb antes de ser escritas en el disco. As operações também são gravadas no disco se nenhuma solicitação tiver sido enviada a cada 5 segundos.
 The possible values of state are as follows:
 200: OK
 204: No contents
@@ -139,10 +139,10 @@ The CLF format cannot be customized.</p>
 </blockquote>
 <ul>
 <li>
-<p><strong>DLF (Combined Log Format)</strong>: cuando se selecciona esta opción, el historial de peticiones se genera en formato DLF. DLF format is similar to CLF format and uses exactly the same structure. Simplesmente adiciona dois campos HTTP adicionais no final de cada solicitação: Referer e User-agent.</p>
+<p><strong>DLF (Combined Log Format)</strong>: cuando se selecciona esta opción, el historial de peticiones se genera en formato DLF. O formato DLF é semelhante ao formato CLF e usa a mesma estrutura. Simplesmente adiciona dois campos HTTP adicionais no final de cada solicitação: Referer e User-agent.</p>
 <ul>
-<li>Referer: Contains the URL of the page pointing to the requested document.</li>
-<li>User-agent: Contains the name and version of the browser or software of the client at the origin of the request.</li>
+<li>Referer: contém o URL da página que aponta para o documento solicitado.</li>
+<li>User-agent: contém o nome e a versão do navegador ou software cliente que origina a solicitação.</li>
 </ul>
 </li>
 </ul>
@@ -333,33 +333,33 @@ The CLF format cannot be customized.</p>
 </li>
 </ul>
 <blockquote>
-<p>In the case of scheduled backups, if the Web server was not launched when the backup was scheduled to occur, on the next startup 4D considers the backup as failed and applies the appropriate settings, set via the Database Settings.</p>
+<p>No caso de backups programados, se o servidor Web não foi iniciado quando o backup estava programado para ocorrer, na próxima inicialização o 4D considera o backup como falho e aplica as configurações apropriadas, definidas nas Propriedades.</p>
 </blockquote>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="serviços-web">Serviços Web<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/settings/web#serviços-web">​</a></h2>
-<p>You use the options on this tab to activate and configure Web services for the 4D project, both for their publishing (server side) and their subscription (client side).</p>
+<p>As opções dessa guia são usadas para ativar e configurar os serviços da Web para o projeto 4D, tanto para a publicação (lado do servidor) quanto para a assinatura (lado do cliente).</p>
 <p>Para más información sobre el soporte de los servicios web en 4D, consulte el capítulo <a href="https://doc.4d.com/What-s-new/4D-Design-Reference-19-R4/Publication-and-use-of-Web-Services.200-5736722.en.html" target="_blank" rel="noopener noreferrer">Publicación y uso de los servicios web</a>.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="servidor">Servidor<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/settings/web#servidor">​</a></h3>
-<p>This area contains various options related to the use of 4D as a Web Services &quot;server&quot; i.e., publishing project methods in the form of Web Services.</p>
+<p>Essa área contém várias opções relacionadas ao uso de 4D como um &quot;servidor&quot; de serviços da Web, ou seja, a publicação de métodos projeto na forma de serviços Web.</p>
 <ul>
 <li><strong>Autorizar peticiones de servicios web</strong>: esta opción le permite inicializar la publicación de servicios web. Si esta opción no ha sido seleccionada, 4D rechaza las peticiones SOAP y no genera una WSDL - incluso si los métodos tienen el atributo <em>Publicado en WSDL</em>. Quando essa opção está marcada, 4D cria o arquivo WSDL.</li>
-<li><strong>Nombre del Servicio Web</strong>: esta área le permite cambiar el &quot;nombre genérico&quot; del Servicio Web. This name is used to differentiate the services both at the SOAP server level (when the server publishes several different Web Services), as well as in the Web Services directories. Por padrão, 4D usa o nome A_WebService.</li>
-<li><strong>Espacio de nombres de Servicios Web</strong>: esta área se utiliza para cambiar el espacio de nombres (namespace) de los Servicios Web publicados por 4D. Cada serviço Web publicado na Internet deve ser único. The uniqueness of the names of Web Services is ensured by using XML namespaces. A namespace is an arbitrary character string used to identify a set of XML tags in a unique way. Normalmente, o namespace começa com a URL da empresa (<a href="http://mycompany.com/mynamespace" target="_blank" rel="noopener noreferrer">http://mycompany.com/mynamespace</a>). In this case, it is not indispensable to have anything in particular at the URL indicated; what matters is that the character string used is unique. Por padrão, o 4D usa o seguinte namespace: <a href="http://www.4d.com/namespace/default" target="_blank" rel="noopener noreferrer">http://www.4d.com/namespace/default</a>.</li>
+<li><strong>Nombre del Servicio Web</strong>: esta área le permite cambiar el &quot;nombre genérico&quot; del Servicio Web. Esse nome é usado para diferenciar os serviços no nível do servidor SOAP (quando o servidor publica vários serviços Web diferentes), bem como nos diretórios de serviços Web. Por padrão, 4D usa o nome A_WebService.</li>
+<li><strong>Espacio de nombres de Servicios Web</strong>: esta área se utiliza para cambiar el espacio de nombres (namespace) de los Servicios Web publicados por 4D. Cada serviço Web publicado na Internet deve ser único. A singularidade dos nomes dos Serviços Web é assegurada pelo uso de namespaces XML. Um namespace é uma cadeia de caracteres arbitrária usada para identificar um conjunto de tags XML de forma exclusiva. Normalmente, o namespace começa com a URL da empresa (<a href="http://mycompany.com/mynamespace" target="_blank" rel="noopener noreferrer">http://mycompany.com/mynamespace</a>). Nesse caso, não é indispensável ter algo em particular no URL indicado; o que importa é que a cadeia de caracteres usada seja exclusiva. Por padrão, o 4D usa o seguinte namespace: <a href="http://www.4d.com/namespace/default" target="_blank" rel="noopener noreferrer">http://www.4d.com/namespace/default</a>.</li>
 </ul>
 <blockquote>
-<p>In conformity with the XML standard for tag names, the character strings used must not contain spaces nor start with a number. Moreover, to avoid any risk of incompatibility, we recommend that you do not use any extended characters (such as accented characters).</p>
+<p>Em conformidade com o padrão XML para nomes de etiquetas, as cadeias de caracteres usadas não devem conter espaços nem começar com um número. Além disso, para evitar qualquer risco de incompatibilidade, recomendamos que você não use nenhum caractere estendido (como caracteres acentuados).</p>
 </blockquote>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="cliente">Cliente<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/settings/web#cliente">​</a></h3>
-<p>This area contains various options related to the use of 4D as a Web Services &quot;client&quot; i.e., subscribing to services published on the network.</p>
+<p>Essa área contém várias opções relacionadas ao uso de 4D como um &quot;cliente&quot; de serviços Web, ou seja, a assinatura de serviços publicados na rede.</p>
 <ul>
-<li><strong>Prefijo de los métodos creados por el asistente</strong>: esta área le permite cambiar el prefijo que se añade automáticamente por 4D al nombre de los métodos proxy generados por el asistente de servicios web. Proxy project methods form a link between the 4D application and the Web Services server. Por padrão, 4D usa o prefixo &quot;proxy_&quot;.</li>
+<li><strong>Prefijo de los métodos creados por el asistente</strong>: esta área le permite cambiar el prefijo que se añade automáticamente por 4D al nombre de los métodos proxy generados por el asistente de servicios web. Os métodos do projeto de proxy formam um link entre a aplicação 4D e o servidor de Serviços Web. Por padrão, 4D usa o prefixo &quot;proxy_&quot;.</li>
 </ul>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="funcionalidades-web">Funcionalidades Web<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/settings/web#funcionalidades-web">​</a></h2>
-<p>This page contains the options used to enable and control advanced Web features such as the REST server.</p>
+<p>Essa página contém as opções usadas para ativar e controlar recursos atacantes da Web, como o servidor REST.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="publicação">Publicação<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/settings/web#publicação">​</a></h3>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="expor-como-servidor-rest">Expor como servidor REST<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/settings/web#expor-como-servidor-rest">​</a></h4>
 <p>Inicia e pára o servidor REST. Ver <a href="/docs/pt/20-R5/REST/configuration">Configuración del servidor REST</a>.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="acesso">Acesso<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/settings/web#acesso">​</a></h3>
-<p>This option specifies a group of 4D users that is authorized to establish the link to the 4D database using REST requests. Ver <a href="/docs/pt/20-R5/REST/configuration#configuring-rest-access">Configuración del acceso REST</a>.</p>
+<p>Essa opção específica um grupo de usuários 4D que está autorizado a estabelecer o link para o banco de dados 4D usando solicitações REST. Ver <a href="/docs/pt/20-R5/REST/configuration#configuring-rest-access">Configuración del acceso REST</a>.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="qodly-studio">Qodly Studio<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/settings/web#qodly-studio">​</a></h3>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ativar-o-acesso-a-qodly-studio">Ativar o acesso a Qodly Studio<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/settings/web#ativar-o-acesso-a-qodly-studio">​</a></h4>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>nota</div><div class="admonitionContent_BuS1"><p>Essa opção só aparece se a licença do Qodly Studio estiver ativada.</p></div></div>
