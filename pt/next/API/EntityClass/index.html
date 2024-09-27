@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Entity | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/pt/next/API/EntityClass"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Entity | 4D Docs"><meta data-rh="true" name="description" content="An entity is an instance of a Dataclass, like a record of the table matching the dataclass in its associated datastore. Contém os mesmos atributos que o dataclass assim como os valores de dados e propriedades e funções específicas."><meta data-rh="true" property="og:description" content="An entity is an instance of a Dataclass, like a record of the table matching the dataclass in its associated datastore. Contém os mesmos atributos que o dataclass assim como os valores de dados e propriedades e funções específicas."><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/pt/next/API/EntityClass"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/API/EntityClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/API/EntityClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/API/EntityClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/API/EntityClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/API/EntityClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/API/EntityClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.9d2cac31.css">
-<script src="/docs/pt/assets/js/runtime~main.48cc0d89.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.e685afbb.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.69accbec.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -113,8 +113,8 @@
 </blockquote>
 <p>The attribute value type depends on the attribute <a href="/docs/pt/next/API/DataClassClass#attributename">kind</a> (relation or storage):</p>
 <ul>
-<li>If <em>attributeName</em> kind is <strong>storage</strong>:
-<code>.attributeName</code> returns a value of the same type as <em>attributeName</em>.</li>
+<li>Se o tipo de <em>attributeName</em> for <strong>storage</strong>:
+<code>.attributeName</code> retorna um valor do mesmo tipo que <em>attributeName</em>.</li>
 <li>Se o tipo <em>attributeName</em> está <strong>relatedEntity</strong>:
 <code>.attributeName</code> retorna a entidade relacionada. Valores da entidade relacionada estão diretamente disponíveis através de propriedades em cascata, por exemplo &quot;myEntity.employer.employees[0].lastname&quot;.</li>
 <li>Se o tipo <em>attributeName</em> for <strong>relatedEntities</strong>:
@@ -1343,7 +1343,7 @@
 
 
 
-<table><thead><tr><th>Propriedade</th><th>Tipo</th><th>Descrição</th></tr></thead><tbody><tr><td>success</td><td>boolean</td><td>True if the reload action is successful, False otherwise.<em><strong>Available only in case of error</strong></em>:</td></tr><tr><td>status(*)</td><td>number</td><td>Código de erro, ver abaixo</td></tr><tr><td>statusText(*)</td><td>text</td><td>Descrição do erro, ver abaixo</td></tr></tbody></table>
+<table><thead><tr><th>Propriedade</th><th>Tipo</th><th>Descrição</th></tr></thead><tbody><tr><td>success</td><td>boolean</td><td>True se a ação de recarga for bem-sucedida, Falso caso contrário.<em><strong>Disponível apenas em caso de erro</strong></em>:</td></tr><tr><td>status(*)</td><td>number</td><td>Código de erro, ver abaixo</td></tr><tr><td>statusText(*)</td><td>text</td><td>Descrição do erro, ver abaixo</td></tr></tbody></table>
 <p>(*) The following values can be returned in the <em>status</em> and <em>statusText</em> properties of <em>Result</em> object in case of error:</p>
 
 
