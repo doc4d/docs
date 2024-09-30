@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Ação | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/pt/20-R5/FormEditor/action"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="20-R5"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" name="docsearch:version" content="20-R5"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" property="og:title" content="Ação | 4D Docs"><meta data-rh="true" name="description" content="Métodos"><meta data-rh="true" property="og:description" content="Métodos"><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/pt/20-R5/FormEditor/action"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20-R5/FormEditor/action" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/20-R5/FormEditor/action" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/20-R5/FormEditor/action" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/20-R5/FormEditor/action" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/20-R5/FormEditor/action" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20-R5/FormEditor/action" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.9d2cac31.css">
-<script src="/docs/pt/assets/js/runtime~main.e685afbb.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.c9d32477.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.69accbec.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -16,17 +16,19 @@
 <li>
 <p>um caminho de arquivo de método de projeto padrão, ou seja, que usa o seguinte padrão:<br>
 <code>método. dm</code><br>
-Este tipo de referência indica que o arquivo de método está localizado no local padrão (&quot;sources/{TableForms/<em>numTable</em>} 「 {Forms}/<em>formName</em>/&quot;). In this case, 4D automatically handles the object method when operations are executed on the form object (renaming, duplication, copy/paste...)</p>
+Este tipo de referência indica que o arquivo de método está localizado no local padrão (&quot;sources/{TableForms/<em>numTable</em>} 「 {Forms}/<em>formName</em>/&quot;). Nesse caso, 4D trata automaticamente o método do formulário quando as operações são executadas no formulário (renomeação, duplicação, copiar/colar...)</p>
 </li>
 <li>
-<p>a project method name: name of an existing project method without file extension, i.e.: <code>myMethod</code> In this case, 4D does not provide automatic support for form operations.</p>
+<p>um nome de método de projeto: nome de um método de projeto existente sem extensão de arquivo, ou seja:
+<code>myMethod</code>
+Nesse caso, o 4D não oferece suporte automático para operações de formulário.</p>
 </li>
 <li>
-<p>a custom method file path including the .4dm extension, e.g.:<br>
-<code>MyMethods/myFormMethod.4dm</code>
-You can also use a filesystem:<br>
+<p>um caminho de arquivo de método personalizado, incluindo a extensão .4dm, por exemplo:<br>
+<code>MyMethods/myFormMethod. dm</code>
+Você também pode usar um sistema de arquivos:<br>
 <code>/RESOURCES/Forms/FormMethod.4dm</code>
-In this case, 4D does not provide automatic support for object operations.</p>
+Neste caso, 4D não fornece suporte automático para operações de objeto.</p>
 </li>
 </ul>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="gramática-json">Gramática JSON<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/FormEditor/action#gramática-json">​</a></h4>
