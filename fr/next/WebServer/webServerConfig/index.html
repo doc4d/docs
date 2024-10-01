@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Configuration | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/fr/next/WebServer/webServerConfig"><meta data-rh="true" property="og:locale" content="fr"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="fr"><meta data-rh="true" name="docsearch:language" content="fr"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Configuration | 4D Docs"><meta data-rh="true" name="description" content="Les paramètres du serveur web 4D comprennent les paramètres de sécurité, les ports d&#x27;écoute, les chemins par défaut et diverses options couvrant toutes les fonctionnalités du serveur. 4D fournit des valeurs par défaut pour tous les paramètres."><meta data-rh="true" property="og:description" content="Les paramètres du serveur web 4D comprennent les paramètres de sécurité, les ports d&#x27;écoute, les chemins par défaut et diverses options couvrant toutes les fonctionnalités du serveur. 4D fournit des valeurs par défaut pour tous les paramètres."><link data-rh="true" rel="icon" href="/docs/fr/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/fr/next/WebServer/webServerConfig"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/WebServer/webServerConfig" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/WebServer/webServerConfig" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/WebServer/webServerConfig" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/WebServer/webServerConfig" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/WebServer/webServerConfig" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/WebServer/webServerConfig" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/fr/opensearch.xml"><link rel="stylesheet" href="/docs/fr/assets/css/styles.9d2cac31.css">
-<script src="/docs/fr/assets/js/runtime~main.c0433bcc.js" defer="defer"></script>
+<script src="/docs/fr/assets/js/runtime~main.7ed9749f.js" defer="defer"></script>
 <script src="/docs/fr/assets/js/main.cf30aca2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -61,7 +61,7 @@
 
 
 
-<table><thead><tr><th>Peut être configuré via</th><th>Nom</th><th>Commentaires</th></tr></thead><tbody><tr><td>Boîte de dialogue des Propriétés</td><td><a href="/docs/fr/next/settings/web#use-the-4d-web-cache">Options (I) page/Use the 4D Web cache</a></td><td></td></tr><tr><td>Boîte de dialogue des Propriétés</td><td><a href="/docs/fr/next/settings/web#page-cache-size">Options (I) page/Page Cache Size</a></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Peut être configuré via</th><th>Nom</th><th>Commentaires</th></tr></thead><tbody><tr><td>Boîte de dialogue des Propriétés</td><td><a href="/docs/fr/next/settings/web#use-the-4d-web-cache">Page Options (I)/Utiliser le cache 4D Web</a></td><td></td></tr><tr><td>Boîte de dialogue des Propriétés</td><td><a href="/docs/fr/next/settings/web#page-cache-size">Page Options (I)/Taille du cache des pages</a></td><td></td></tr></tbody></table>
 <p>Active et configure le cache des pages web.</p>
 <p>Le serveur web 4D dispose d&#x27;un cache qui permet de charger les pages statiques, les images GIF, les images JPEG (&lt;512 kb) et les feuilles de style (fichiers .css) en mémoire, au fur et à mesure qu&#x27;elles sont appelées. L&#x27;utilisation du cache permet d&#x27;augmenter considérablement les performances du serveur web lors de l&#x27;envoi de pages statiques. Le cache est partagé entre tous les processus web. Lorsque le cache est activé, le serveur Web 4D recherche d&#x27;abord dans le cache toute page statique demandée par le navigateur. S&#x27;il trouve la page, il l&#x27;envoie immédiatement. Sinon, 4D charge la page à partir du disque et la place dans le cache.</p>
 <p>Vous pouvez modifier la taille du cache dans la zone <strong>Taille du cache des pages</strong>. La valeur à définir dépend du nombre et de la taille des pages statiques de votre site Web, ainsi que des ressources dont dispose la machine hôte.</p>
@@ -605,7 +605,7 @@ Valeur par défaut : 63072000 (2 ans)</p>
 
 
 <table><thead><tr><th>Peut être configuré via</th><th>Nom</th><th>Commentaires</th></tr></thead><tbody><tr><td>objet webServer</td><td><a href="/docs/fr/next/API/WebServerClass#inactiveprocesstimeout"><code>inactiveProcessTimeout</code></a></td><td></td></tr><tr><td><code>WEB SET OPTION</code></td><td><code>Web inactive process timeout</code></td><td></td></tr><tr><td>Boîte de dialogue des Propriétés</td><td><a href="/docs/fr/next/settings/web#inactive-process-timeout">Page Options (I)/Conservation des process inactifs</a></td><td>Curseur</td></tr></tbody></table>
-<p>Life duration (in minutes) of inactive processes associated with legacy sessions. At the end of the timeout, the process is killed on the server, the <code>On Web Legacy Close Session</code> database method is called, then the session context is destroyed.</p>
+<p>Durée de vie (en minutes) des process inactifs associés aux anciennes sessions. À la fin du délai, le process est tué sur le serveur, la méthode base <code>On Web Legacy Close Session</code> est appelée, puis le contexte de la session est détruit.</p>
 <p>Valeur par défaut : 480 minutes (passez 0 pour restaurer la valeur par défaut)</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="durée-de-vie-des-sessions-inactives">Durée de vie des sessions inactives<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/next/WebServer/webServerConfig#durée-de-vie-des-sessions-inactives">​</a></h2>
 
@@ -855,7 +855,7 @@ Comme la notation IPv6 utilise les deux-points (:), l&#x27;ajout de numéros de 
 
 
 <table><thead><tr><th>Peut être configuré via</th><th>Nom</th><th>Commentaires</th></tr></thead><tbody><tr><td>objet webServer</td><td><a href="/docs/fr/next/API/WebServerClass#maxsessions"><code>maxSessions</code></a></td><td></td></tr><tr><td><code>WEB SET OPTION</code></td><td><code>Web max sessions</code></td><td></td></tr></tbody></table>
-<p>Maximum number of simultaneous legacy sessions. When you reach the limit set, the oldest legacy session is closed (and <code>On Web Legacy Close Session</code> database method is called) if the Web server needs to create a new one. The number of simultaneous legacy sessions cannot exceed the <a href="/docs/fr/next/WebServer/webServerConfig#maximum-concurrent-web-processes">maximum number of Web processes</a> (100 by default).</p>
+<p>Nombre maximal d&#x27;anciennes sessions simultanées. Lorsque vous atteignez la limite définie, la session la plus ancienne est fermée (et la méthode base <code>On Web Legacy Close Session</code> est appelée) si le serveur Web doit en créer une nouvelle. Le nombre d&#x27;anciennes sessions simultanées ne peut pas dépasser le <a href="/docs/fr/next/WebServer/webServerConfig#maximum-concurrent-web-processes">nombre maximal de process Web</a> (100 par défaut).</p>
 <p>Valeur par défaut : 100 (passez 0 pour restaurer la valeur par défaut).</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="version-tls-minimale">Version TLS minimale<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/next/WebServer/webServerConfig#version-tls-minimale">​</a></h2>
 
@@ -956,7 +956,7 @@ Comme la notation IPv6 utilise les deux-points (:), l&#x27;ajout de numéros de 
 
 
 
-<table><thead><tr><th>Peut être configuré via</th><th>Nom</th><th>Commentaires</th></tr></thead><tbody><tr><td>Boîte de dialogue des Propriétés</td><td><a href="/docs/fr/next/settings/web#reuse-temporary-contexts">Options (I) page/Reuse Temporary Contexts</a></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Peut être configuré via</th><th>Nom</th><th>Commentaires</th></tr></thead><tbody><tr><td>Boîte de dialogue des Propriétés</td><td>Page <a href="/docs/fr/next/settings/web#reuse-temporary-contexts">Options (I)/Réutilisation des contextes temporaires</a></td><td></td></tr></tbody></table>
 <blockquote>
 <p>Cette option n&#x27;est disponible que lorsque l&#x27;option <strong>Pas de sessions</strong> est cochée.</p>
 </blockquote>
@@ -1053,7 +1053,7 @@ Comme la notation IPv6 utilise les deux-points (:), l&#x27;ajout de numéros de 
 
 
 <table><thead><tr><th>Peut être configuré via</th><th>Nom</th><th>Commentaires</th></tr></thead><tbody><tr><td>objet webServer</td><td><a href="/docs/fr/next/API/WebServerClass#scalablesession"><code>scalableSession</code></a></td><td></td></tr><tr><td><code>WEB SET OPTION</code></td><td><code>Web scalable session</code></td><td></td></tr><tr><td>Boîte de dialogue des Propriétés</td><td><a href="/docs/fr/next/settings/web#scalable-sessions-multi-process-sessions">Page Options (I)/Sessions extensibles (sessions multi-process)</a></td><td></td></tr></tbody></table>
-<p>Activation des sessions extensibles le serveur web 4D. Web server sessions are detailed in the <a href="/docs/fr/next/WebServer/sessions">Web sessions</a> page.</p>
+<p>Activation des sessions extensibles le serveur web 4D. Les sessions du serveur web sont détaillées dans la page <a href="/docs/fr/next/WebServer/sessions">Sessions web</a>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="domaine-du-cookie-de-session">Domaine du cookie de session<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/next/WebServer/webServerConfig#domaine-du-cookie-de-session">​</a></h2>
 
 
@@ -1170,7 +1170,7 @@ Comme la notation IPv6 utilise les deux-points (:), l&#x27;ajout de numéros de 
 
 
 
-<table><thead><tr><th>Peut être configuré via</th><th>Nom</th><th>Commentaires</th></tr></thead><tbody><tr><td>Boîte de dialogue des Propriétés</td><td><a href="/docs/fr/next/settings/web#use-preemptive-processes">Options (I) page/Use Preemptive Processes</a></td><td></td></tr></tbody></table>
+<table><thead><tr><th>Peut être configuré via</th><th>Nom</th><th>Commentaires</th></tr></thead><tbody><tr><td>Boîte de dialogue des Propriétés</td><td>Page <a href="/docs/fr/next/settings/web#use-preemptive-processes">Options (I)/Utiliser des process préemptifs</a></td><td></td></tr></tbody></table>
 <p>Cette option active le mode préemptif pour le code du serveur web de votre application lorsque l&#x27;option <strong>Pas de sessions</strong> est sélectionnée (le mode préemptif est toujours activé avec les <strong>sessions extensibles</strong>). Lorsque cette option est cochée dans ce contexte, le compilateur 4D évalue automatiquement la propriété thread-safety de chaque élément du code <a href="/docs/fr/next/WebServer/preemptiveWeb#thread-safety-of-4d-web-code">lié au web</a> et renvoie des erreurs en cas d&#x27;incompatibilité.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="propriétés-obsolètes">Propriétés obsolètes<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/next/WebServer/webServerConfig#propriétés-obsolètes">​</a></h2>
 <p>Les paramètres suivants sont toujours pris en charge mais reposent sur des fonctionnalités ou des technologies obsolètes. Il est généralement recommandé de conserver les valeurs par défaut.</p>
