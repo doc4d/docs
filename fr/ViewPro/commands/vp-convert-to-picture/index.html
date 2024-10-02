@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">VP Convert to picture | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/fr/ViewPro/commands/vp-convert-to-picture"><meta data-rh="true" property="og:locale" content="fr"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="fr"><meta data-rh="true" name="docsearch:language" content="fr"><meta data-rh="true" name="docusaurus_version" content="20-R6"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" name="docsearch:version" content="20-R6"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" property="og:title" content="VP Convert to picture | 4D Docs"><meta data-rh="true" name="description" content="VP Convert to picture ( vpObject Object} ) : Picture"><meta data-rh="true" property="og:description" content="VP Convert to picture ( vpObject Object} ) : Picture"><link data-rh="true" rel="icon" href="/docs/fr/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/fr/ViewPro/commands/vp-convert-to-picture"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ViewPro/commands/vp-convert-to-picture" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/ViewPro/commands/vp-convert-to-picture" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/ViewPro/commands/vp-convert-to-picture" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/ViewPro/commands/vp-convert-to-picture" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/ViewPro/commands/vp-convert-to-picture" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ViewPro/commands/vp-convert-to-picture" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/fr/opensearch.xml"><link rel="stylesheet" href="/docs/fr/assets/css/styles.9d2cac31.css">
-<script src="/docs/fr/assets/js/runtime~main.7ed9749f.js" defer="defer"></script>
+<script src="/docs/fr/assets/js/runtime~main.c6bbe9ec.js" defer="defer"></script>
 <script src="/docs/fr/assets/js/main.cf30aca2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -44,17 +44,17 @@
 
 <table><thead><tr><th>Paramètres</th><th>Type</th><th></th><th>Description</th><th></th></tr></thead><tbody><tr><td>vpObject</td><td>Object</td><td>-&gt;</td><td>Objet 4D View Pro contenant la zone à convertir</td><td></td></tr><tr><td>rangeObj</td><td>Object</td><td>-&gt;</td><td>Objet plage</td><td></td></tr><tr><td>Résultat</td><td>Picture</td><td>&lt;-</td><td>Image SVG de la zone</td><td></td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="description">Description<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/ViewPro/commands/vp-convert-to-picture#description">​</a></h4>
-<p>The <code>VP Convert to picture</code> command converts the <em>vpObject</em> 4D View Pro object (or the <em>rangeObj</em> range within <em>vpObject</em>) to a SVG picture.</p>
+<p>La commande <code>VP Convert to picture</code> convertit l&#x27;objet 4D View Pro <em>vpObject</em> (ou la plage <em>rangeObj</em> dans <em>vpObject</em>) en une image SVG.</p>
 <p>Cette commande est utile, par exemple :</p>
 <ul>
 <li>pour intégrer un document 4D View Pro dans un autre document, tel qu&#x27;un document 4D Write Pro</li>
 <li>pour imprimer un document 4D View Pro sans le charger dans une zone 4D View Pro.</li>
 </ul>
-<p>In <em>vpObject</em>, pass the 4D View Pro object that you want to convert. This object must have been previously parsed using <a href="/docs/fr/ViewPro/commands/vp-export-to-object">VP Export to object</a> or saved using <a href="/docs/fr/ViewPro/commands/vp-export-document">VP EXPORT DOCUMENT</a>.</p>
+<p>Dans <em>vpObject</em>, passez l&#x27;objet 4D View Pro que vous souhaitez convertir. Cet objet doit avoir été préalablement analysé à l&#x27;aide de <a href="/docs/fr/ViewPro/commands/vp-export-to-object">VP Export to object</a> ou enregistré avec <a href="/docs/fr/ViewPro/commands/vp-export-document">VP EXPORT DOCUMENT</a>.</p>
 <blockquote>
-<p>SVG conversion process requires that expressions and formats (cf. <a href="/docs/fr/ViewPro/configuring#cell-format">Cell Format</a>) included in the 4D View Pro area be evaluated at least once, so that they can be correctly exported. Si vous convertissez un document qui n&#x27;a pas été évalué au préalable, les expressions ou les formats peuvent être rendus de manière inattendue.</p>
+<p>Le processus de conversion SVG exige que les expressions et les formats (cf. <a href="/docs/fr/ViewPro/configuring#cell-format">Format des cellules</a>) inclus dans la zone 4D View Pro soient évalués au moins une fois, afin qu&#x27;ils puissent être correctement exportés. Si vous convertissez un document qui n&#x27;a pas été évalué au préalable, les expressions ou les formats peuvent être rendus de manière inattendue.</p>
 </blockquote>
-<p>In <em>rangeObj</em>, pass a range of cells to convert. Par défaut, si ce paramètre est omis, tout le contenu du document est converti.</p>
+<p>Dans <em>rangeObj</em>, passez une plage de cellules à convertir. Par défaut, si ce paramètre est omis, tout le contenu du document est converti.</p>
 <p>Les contenus de document sont convertis en tenant compte de leurs attributs d&#x27;affichage, y compris les formats (voir la note ci-dessus), la visibilité des en-têtes, des colonnes et des lignes. La conversion des éléments suivants est prise en charge :</p>
 <ul>
 <li>Texte : style / police / taille / alignement / rotation / format</li>
@@ -67,7 +67,7 @@
 <li>Visibilité : colonnes / lignes cachées.</li>
 </ul>
 <blockquote>
-<p>Gridline visibility depends on document attribute defined with <a href="/docs/fr/ViewPro/commands/vp-set-print-info">VP SET PRINT INFO</a>.</p>
+<p>La visibilité du quadrillage dépend de l&#x27;attribut du document défini avec <a href="/docs/fr/ViewPro/commands/vp-set-print-info">VP SET PRINT INFO</a>.</p>
 </blockquote>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="résultat">Résultat<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/ViewPro/commands/vp-convert-to-picture#résultat">​</a></h4>
 <p>La commande retourne une image au format SVG.</p>
