@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">VP CREATE TABLE | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/fr/ViewPro/commands/vp-create-table"><meta data-rh="true" property="og:locale" content="fr"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="fr"><meta data-rh="true" name="docsearch:language" content="fr"><meta data-rh="true" name="docusaurus_version" content="20-R6"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" name="docsearch:version" content="20-R6"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" property="og:title" content="VP CREATE TABLE | 4D Docs"><meta data-rh="true" name="description" content="Historique"><meta data-rh="true" property="og:description" content="Historique"><link data-rh="true" rel="icon" href="/docs/fr/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/fr/ViewPro/commands/vp-create-table"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ViewPro/commands/vp-create-table" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/ViewPro/commands/vp-create-table" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/ViewPro/commands/vp-create-table" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/ViewPro/commands/vp-create-table" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/ViewPro/commands/vp-create-table" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ViewPro/commands/vp-create-table" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/fr/opensearch.xml"><link rel="stylesheet" href="/docs/fr/assets/css/styles.9d2cac31.css">
-<script src="/docs/fr/assets/js/runtime~main.0f6e0dac.js" defer="defer"></script>
+<script src="/docs/fr/assets/js/runtime~main.c6bbe9ec.js" defer="defer"></script>
 <script src="/docs/fr/assets/js/main.cf30aca2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -75,44 +75,44 @@
 
 <table><thead><tr><th>Paramètres</th><th>Type</th><th></th><th>Description</th><th></th></tr></thead><tbody><tr><td>rangeObj</td><td>Object</td><td>-&gt;</td><td>Objet plage</td><td></td></tr><tr><td>tableName</td><td>Text</td><td>-&gt;</td><td>Nom de la table</td><td></td></tr><tr><td>source</td><td>Text</td><td>-&gt;</td><td>Nom de la propriété du Data context à afficher dans la table</td><td></td></tr><tr><td>options</td><td><a href="/docs/fr/ViewPro/classes#tableoptions">cs.ViewPro.TableOptions</a></td><td>-&gt;</td><td>Options supplémentaires</td><td></td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="description">Description<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/ViewPro/commands/vp-create-table#description">​</a></h4>
-<p>La commande <code>VP CREATE TABLE</code> crée une table dans la plage spécifiée. Vous pouvez créer une table dans une plage de cellules pour faciliter la gestion et l&#x27;analyse d&#x27;un groupe de données connexes. Une table contient généralement des données connexes en lignes et en colonnes, et tire parti d&#x27;un <a href="/docs/fr/ViewPro/commands/vp-set-data-context">contexte de données</a>.</p>
+<p>The <code>VP CREATE TABLE</code> command creates a table in the specified range. Vous pouvez créer une table dans une plage de cellules pour faciliter la gestion et l&#x27;analyse d&#x27;un groupe de données connexes. A table typically contains related data in rows and columns, and takes advantage of a <a href="/docs/fr/ViewPro/commands/vp-set-data-context">data context</a>.</p>
 <p><img decoding="async" loading="lazy" src="/docs/fr/assets/images/vp-create-table-58d4f5dc15eb48b9682accf08d7b8926.png" width="1078" height="324" class="img_ev3q"></p>
-<p>Dans <em>rangeObj</em>, passez la plage de cellules où la table sera créée.</p>
-<p>Dans <em>tableName</em>, passez un nom pour la table. Le nom doit :</p>
+<p>In <em>rangeObj</em>, pass the cell range where the table will be created.</p>
+<p>In <em>tableName</em>, pass a name for the table. Le nom doit :</p>
 <ul>
 <li>être unique dans la feuille</li>
 <li>inclure au moins 5 caractères</li>
 <li>ne pas inclure d&#x27;espaces ou commencer par un nombre</li>
 </ul>
-<p>Dans <em>source</em>, vous pouvez passer un nom de propriété d&#x27;un [data context] (vp-set-data-context.md) pour afficher ses données dans le tableau. This binds the table to the data context. When the data context is updated, the data displayed in the table is updated accordingly. La propriété <em>source</em> doit contenir une collection d&#x27;objets et chaque élément représente une ligne.</p>
+<p>In <em>source</em>, you can pass a property name of a <a href="/docs/fr/ViewPro/commands/vp-set-data-context">data context</a> to display its data in the table. This binds the table to the data context. When the data context is updated, the data displayed in the table is updated accordingly. The <em>source</em> property must contain a collection of objects and each element represents a row.</p>
 <ul>
-<li>Si vous ne spécifiez pas de <em>source</em>, la commande crée une table vide avec la taille définie dans <em>rangeObj</em>.</li>
-<li>Si la <em>source</em> spécifiée ne peut pas être entièrement affichée dans le document, aucune table n&#x27;est créée.</li>
+<li>If you don&#x27;t specify a <em>source</em>, the command creates an empty table with the size defined in <em>rangeObj</em>.</li>
+<li>If the specified <em>source</em> cannot be fully displayed in the document, no table is created.</li>
 </ul>
-<p>Dans le paramètre <em>options</em>, passez un objet de la <a href="/docs/fr/ViewPro/classes#tableoptions">classe<code>cs.ViewPro.TableOptions</code></a> qui contient les propriétés de la table à définir.</p>
-<p>Dans l&#x27;objet <em>options</em>, la collection <em>tableColumns</em> détermine la structure des colonnes de la table. La longueur de la collection <em>tableColumns</em> doit être égale au nombre de colonnes de la plage :</p>
+<p>In the <em>options</em> parameter, pass an object of the <a href="/docs/fr/ViewPro/classes#tableoptions"><code>cs.ViewPro.TableOptions</code> class</a> that contains the table properties to set.</p>
+<p>Within the <em>options</em> object, the <em>tableColumns</em> collection determines the structure of the table&#x27;s columns. The length of the <em>tableColumns</em> collection must be equal to the range column count:</p>
 <ul>
-<li>Lorsque le nombre de colonnes dans <em>rangeObj</em> dépasse le nombre de colonnes dans <em>tableColumns</em>, la table est remplie avec des colonnes vides supplémentaires.</li>
-<li>Lorsque le nombre de colonnes dans <em>rangeObj</em> est inférieur au nombre de <em>tableColumns</em>, le tableau affiche un nombre de colonnes correspondant au nombre de colonnes de la plage.</li>
+<li>When the column count in <em>rangeObj</em> exceeds the number of columns in <em>tableColumns</em>, the table is filled with additional empty columns.</li>
+<li>When the column count in <em>rangeObj</em> is inferior to the number of <em>tableColumns</em>, the table displays a number of columns that match the range&#x27;s column count.</li>
 </ul>
-<p>Si vous passez une option <em>source</em> mais pas une option <em>tableColumn</em>, la commande génère automatiquement des colonnes. Dans ce cas, <em>rangeObj</em> doit être une plage de cellules. Otherwise, the first cell of the range is used. When generating columns automatically, the following rules apply:</p>
+<p>If you pass a <em>source</em> but no <em>tableColumn</em> option, the command generates columns automatically. In this case, <em>rangeObj</em> must be a cell range. Otherwise, the first cell of the range is used. When generating columns automatically, the following rules apply:</p>
 <ul>
 <li>If the data passed to the command is a collection of objects, the property names are used as column titles. Par exemple :</li>
 </ul>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">([{ LastName: \&quot;Freehafer\&quot;, FirstName: \&quot;Nancy\&quot;},{ LastName: \&quot;John\&quot;, FirstName: \&quot;Doe\&quot;})</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copier le code" title="Copier" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>Ici, les titres des colonnes seraient <code>LastName</code> et <code>FirstName</code>.</p>
+<p>Here the titles of the columns would be <code>LastName</code> and <code>FirstName</code>.</p>
 <ul>
 <li>
 <p>If the data passed to the command is a collection of scalar values, it must contain a collection of subcollections:</p>
 <ul>
 <li>La collection de premier niveau contient des sous-collections de valeurs. Chaque sous-collection définit une ligne. Passez une collection vide pour sauter une ligne. The number of values in the first subcollection determines how many columns are created.</li>
 <li>The subcollections&#x27; indices are used as column titles.</li>
-<li>Chaque sous-collection définit les valeurs des cellules de la ligne. Les valeurs peuvent être <code>Integer</code>, <code>Real</code>, <code>Boolean</code>, <code>Text</code>, <code>Date</code>, <code>Null</code>, <code>Time</code> ou <code>Picture</code>. Une valeur <code>Time</code> doit être un objet contenant un attribut time, comme décrit dans <a href="/docs/fr/ViewPro/commands/vp-set-value">VP SET VALUE</a>.</li>
+<li>Chaque sous-collection définit les valeurs des cellules de la ligne. Values can be <code>Integer</code>, <code>Real</code>, <code>Boolean</code>, <code>Text</code>, <code>Date</code>, <code>Null</code>, <code>Time</code> or <code>Picture</code>. A <code>Time</code> value must be an a object containing a time attribute, as described in <a href="/docs/fr/ViewPro/commands/vp-set-value">VP SET VALUE</a>.</li>
 </ul>
 </li>
 </ul>
 <blockquote>
-<p>This only works when generating columns automatically. Vous ne pouvez pas utiliser une collection de données scalaires avec l&#x27;option <em>tableColumns</em>.</p>
+<p>This only works when generating columns automatically. You cannot use a collection of scalar data with the <em>tableColumns</em> option.</p>
 </blockquote>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemple">Exemple<a class="hash-link" aria-label="Lien direct vers le titre" title="Lien direct vers le titre" href="/docs/fr/ViewPro/commands/vp-create-table#exemple">​</a></h4>
 <p>Pour créer une table en utilisant un contexte de données :</p>
