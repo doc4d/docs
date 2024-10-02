@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Release Notes | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/next/Notes/updates"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Release Notes | 4D Docs"><meta data-rh="true" name="description" content="4D 20 R7"><meta data-rh="true" property="og:description" content="4D 20 R7"><link data-rh="true" rel="icon" href="/docs/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/next/Notes/updates"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/Notes/updates" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/Notes/updates" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/Notes/updates" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/Notes/updates" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/Notes/updates" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/Notes/updates" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.9d2cac31.css">
-<script src="/docs/assets/js/runtime~main.36614dab.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.69288eb6.js" defer="defer"></script>
 <script src="/docs/assets/js/main.f7bbe634.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -15,8 +15,13 @@
 <li>List box columns and headers of type time now support the <a href="/docs/next/FormObjects/propertiesDisplay#time-format">&quot;blankIfNull&quot; option</a>.</li>
 <li>New properties in <a href="/docs/next/API/IMAPTransporterClass#getboxinfo">.getBoxInfo()</a> and <a href="/docs/next/API/IMAPTransporterClass#getboxlist">.getBoxList()</a>.</li>
 <li>You can now <a href="/docs/next/Project/components#adding-and-removing-dependencies">add and remove components using the Component manager interface</a>.</li>
+<li>New <a href="/docs/next/Project/compiler#enabling-direct-typing"><strong>direct typing mode</strong></a> in which you declare all variables and parameters in your code using <code>var</code> and <code>#DECLARE</code>/<code>Function</code> keywords (only mode supported in new projects). <a href="/docs/next/Project/compiler#check-syntax">Syntax checking feature</a> has been enhanced accordingly.</li>
 <li>Support of <a href="/docs/next/Concepts/classes#singleton-classes">Session singletons</a> and new <a href="/docs/next/API/ClassClass#issessionsingleton"><code>.isSessionSingleton</code></a> Class property.</li>
 <li>Qodly Studio: You can now <a href="/docs/next/WebServer/qodly-studio#using-qodly-debugger-on-4d-server">attach the Qodly debugger to 4D Server</a>.</li>
+</ul>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="behavior-changes">Behavior changes<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#behavior-changes">​</a></h4>
+<ul>
+<li>Compiler directive commands (<code>C_XXX</code>) are now deprecated and have been renamed <code>_O_C_XXX</code> (for example, <code>C_TEXT</code> has been renamed <code>_O_C_TEXT</code>).</li>
 </ul>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4d-20-r6">4D 20 R6<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#4d-20-r6">​</a></h2>
 <p>Read <a href="https://blog.4d.com/en-whats-new-in-4d-20-R6/" target="_blank" rel="noopener noreferrer"><strong>What’s new in 4D 20 R6</strong></a>, the blog post that lists all new features and enhancements in 4D 20 R6.</p>
@@ -39,7 +44,7 @@
 <li>4D Write Pro: <a href="https://doc.4d.com/4Dv20R6/4D/20-R6/What-s-new.901-6993921.en.html" target="_blank" rel="noopener noreferrer">What&#x27;s new page</a> on doc.4d.com.</li>
 <li><a href="https://bugs.4d.fr/fixedbugslist?version=20_R6" target="_blank" rel="noopener noreferrer"><strong>Fixed bug list</strong></a>: list of all bugs that have been fixed in 4D 20 R5.</li>
 </ul>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="behavior-changes">Behavior changes<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#behavior-changes">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="behavior-changes-1">Behavior changes<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#behavior-changes-1">​</a></h4>
 <ul>
 <li>Support of scroll chaining in forms: parent subforms now scroll automatically when embedded scrollable objects (<a href="/docs/next/FormObjects/propertiesAppearance#vertical-scroll-bar">vertically</a> or <a href="/docs/next/FormObjects/propertiesAppearance#horizontal-scroll-bar">horizontally</a>) have reached their boundaries and the user keeps scrolling using the mouse or trackpad (overscrolling).</li>
 <li>The <a href="/docs/next/REST/catalog"><code>$catalog</code> REST API</a> now returns singletons (if any).</li>
@@ -61,7 +66,7 @@
 <li>4D Write Pro: <a href="https://doc.4d.com/4Dv20R5/4D/20-R5/What-s-new.901-6851780.en.html" target="_blank" rel="noopener noreferrer">What&#x27;s new page</a> on doc.4d.com.</li>
 <li><a href="https://bugs.4d.fr/fixedbugslist?version=20_R5" target="_blank" rel="noopener noreferrer"><strong>Fixed bug list</strong></a>: list of all bugs that have been fixed in 4D 20 R5.</li>
 </ul>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="behavior-changes-1">Behavior changes<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#behavior-changes-1">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="behavior-changes-2">Behavior changes<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#behavior-changes-2">​</a></h4>
 <ul>
 <li>The plug-ins <em>4D Internet Commands</em> and <em>4D for OCI</em> are no longer included in 4D installers. To get these plug-ins, you need to connect to the <a href="https://product-download.4d.com/" target="_blank" rel="noopener noreferrer"><strong>4D Product Download portal</strong></a>.</li>
 <li>Changes made in the Structure editor regarding graphical appearance of tables and fields (color, position, order...) are now saved in a separate file named <code>catalog_editor.json</code> stored in the project&#x27;s <a href="/docs/next/Project/architecture#sources"><code>Sources</code></a> folder.</li>
@@ -84,7 +89,7 @@
 <li>4D Write Pro: <a href="https://doc.4d.com/4Dv20R4/4D/20-R4/What-s-new.901-6683440.en.html" target="_blank" rel="noopener noreferrer">What&#x27;s new page</a> on doc.4d.com.</li>
 <li><a href="https://bugs.4d.fr/fixedbugslist?version=20_R4" target="_blank" rel="noopener noreferrer"><strong>Fixed bug list</strong></a>: list of all bugs that have been fixed in 4D 20 R4.</li>
 </ul>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="behavior-changes-2">Behavior changes<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#behavior-changes-2">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="behavior-changes-3">Behavior changes<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#behavior-changes-3">​</a></h4>
 <ul>
 <li>Using a legacy syntax for declaring parameters (e.g. <code>C_TEXT($1)</code> or <code>var $1 : Text</code>) is now deprecated and generates warnings at code typing, syntax checking, and compilation steps.</li>
 <li>Selections are now kept consistent after some records have been deleted and others records created (see <a href="https://blog.4d.com/4d-keeps-your-selections-of-records-consistent-regarding-deletion-of-records/" target="_blank" rel="noopener noreferrer">this blog post</a>.</li>
@@ -108,12 +113,12 @@
 <li>4D Write Pro: <a href="https://doc.4d.com/4Dv20R3/4D/20-R3/What-s-new.901-6475174.en.html" target="_blank" rel="noopener noreferrer">What&#x27;s new page</a> on doc.4d.com.</li>
 <li><a href="https://bugs.4d.fr/fixedbugslist?version=20_R3" target="_blank" rel="noopener noreferrer"><strong>Fixed bug list</strong></a>: list of all bugs that have been fixed in 4D 20 R3.</li>
 </ul>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="behavior-changes-3">Behavior changes<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#behavior-changes-3">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="behavior-changes-4">Behavior changes<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#behavior-changes-4">​</a></h4>
 <ul>
 <li>Some errors were catchable by your <a href="/docs/next/Concepts/error-handling">error handling method</a> in interpreted mode only. A fix has been done, so that the following errors will now be caught also in compiled mode: <em>Indice out of range</em>, <em>Type incompatible</em>, and <em>Dereferencing a Null pointer</em>. However, for such errors on Intel processors, the procedure is still interrupted as before, whereas on Apple Silicon processors the procedure is only interrupted if you call the <a href="https://doc.4d.com/4dv20/help/command/en/page156.html" target="_blank" rel="noopener noreferrer"><code>ABORT</code></a> command.</li>
 <li>4D no longer includes an internal PHP interpreter. You need to <a href="https://blog.4d.com/deprecation-of-php-commands-and-removal-of-4d-built-in-php-interpreter" target="_blank" rel="noopener noreferrer">set up and run your own PHP interpreter</a> to use PHP commands.</li>
 </ul>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4d-20-r2">4D 20 R2<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#4d-20-r2"> ​</a></h2>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4d-20-r2">4D 20 R2<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#4d-20-r2">​</a></h2>
 <p>Read <a href="https://blog.4d.com/en-whats-new-in-4d-v20-R2/" target="_blank" rel="noopener noreferrer"><strong>What’s new in 4D 20 R2</strong></a>, the blog post that lists all new features and enhancements in 4D 20 R2.</p>
 <div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Security Note</div><div class="admonitionContent_BuS1"><p>If your 4D applications use TLS connections, it is recommended that you upgrade to 4D 20 R2 HF1 build 100440 or higher. For more information, refer to this <a href="https://blog.4d.com/security-bulletin-two-cves-and-how-to-stay-secure/" target="_blank" rel="noopener noreferrer">Security bulletin</a>.</p></div></div>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="highlights-5">Highlights<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#highlights-5">​</a></h4>
@@ -126,7 +131,7 @@
 <li>4D Write Pro Interface: New <a href="/docs/next/WritePro/writeprointerface">Table Wizard</a>.</li>
 <li><a href="https://bugs.4d.fr/fixedbugslist?version=20_R2" target="_blank" rel="noopener noreferrer"><strong>Fixed bug list</strong></a>: list of all bugs that have been fixed in 4D 20 R2.</li>
 </ul>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="behavior-changes-4">Behavior changes<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#behavior-changes-4">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="behavior-changes-5">Behavior changes<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#behavior-changes-5">​</a></h4>
 <ul>
 <li><strong>Warning</strong>: The starting <a href="/docs/next/API/FileHandleClass#offset"><code>offset</code></a> value of <a href="/docs/next/API/FileHandleClass">4D.FileHandle</a> objects was incorrectly set to 1 instead of 0. A fix has been made in 4D as of versions <strong>20.1 HF1</strong> and <strong>20 R2</strong> and the value is now 0.</li>
 </ul>
@@ -168,7 +173,7 @@
 <li>4D Write Pro: <a href="https://doc.4d.com/4Dv20/4D/20/What-s-new.901-6229455.en.html" target="_blank" rel="noopener noreferrer">What&#x27;s new page</a> on doc.4d.com.</li>
 <li>Fixed bug lists: <a href="https://bugs.4d.fr/fixedbugslist?version=20" target="_blank" rel="noopener noreferrer">4D 20</a> - <a href="https://bugs.4d.fr/fixedbugslist?version=20.1" target="_blank" rel="noopener noreferrer">4D 20.1</a> - <a href="https://bugs.4d.fr/fixedbugslist?version=20.2" target="_blank" rel="noopener noreferrer">4D 20.2</a> - <a href="https://bugs.4d.fr/fixedbugslist?version=20.3" target="_blank" rel="noopener noreferrer">4D 20.3</a> - <a href="https://bugs.4d.fr/fixedbugslist?version=20.4" target="_blank" rel="noopener noreferrer">4D 20.4</a>.</li>
 </ul>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="behavior-changes-5">Behavior changes<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#behavior-changes-5">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="behavior-changes-6">Behavior changes<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#behavior-changes-6">​</a></h4>
 <ul>
 <li>As of v20.2, 4D 20 LTS is no longer compatible with Windows Server 2012 R2.</li>
 <li><strong>Warning</strong>: The starting <a href="/docs/next/API/FileHandleClass#offset"><code>offset</code></a> value of <a href="/docs/next/API/FileHandleClass">4D.FileHandle</a> objects was incorrectly set to 1 instead of 0. A fix has been made in 4D as of versions <strong>20.1 HF1</strong> and <strong>20 R2</strong> and the value is now 0.</li>
@@ -196,7 +201,7 @@
 <li>4D Write Pro: <a href="https://doc.4d.com/4Dv19R8/4D/19-R8/What-s-new.901-6130471.en.html" target="_blank" rel="noopener noreferrer">What&#x27;s new page</a> on doc.4d.com.</li>
 <li><a href="https://bugs.4d.fr/fixedbugslist?version=19_R8" target="_blank" rel="noopener noreferrer"><strong>Fixed bug list</strong></a>: list of all bugs that have been fixed in 4D 19 R8.</li>
 </ul>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="behavior-changes-6">Behavior changes<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#behavior-changes-6">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="behavior-changes-7">Behavior changes<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#behavior-changes-7">​</a></h4>
 <ul>
 <li>For HTTP RFC compliance, <a href="/docs/next/API/HTTPRequestClass#response"><code>HTTPRequestClass.response.headers</code></a> property now returns all header names <strong>in lowercase</strong>. If you want your code to continue working as before, use the new <a href="/docs/next/API/HTTPRequestClass#response"><code>HTTPRequestClass.response.rawHeaders</code></a> property.</li>
 <li>When a <a href="/docs/next/FormObjects/properties_TextAndPicture.md/#with-pop-up-menu">bevel button with linked pop-up menu</a> is assigned a standard action, the standard action is no longer generated if a pop-up menu option is selected.</li>
@@ -218,7 +223,7 @@
 <li>4D Write Pro: <a href="https://doc.4d.com/4Dv19R7/4D/19-R7/What-s-new.901-6011873.en.html" target="_blank" rel="noopener noreferrer">What&#x27;s new page</a> on doc.4d.com.</li>
 <li><a href="https://bugs.4d.fr/fixedbugslist?version=19_R7" target="_blank" rel="noopener noreferrer"><strong>Fixed bug list</strong></a>: list of all bugs that have been fixed in 4D 19 R7.</li>
 </ul>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="behavior-changes-7">Behavior changes<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#behavior-changes-7">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="behavior-changes-8">Behavior changes<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/Notes/updates#behavior-changes-8">​</a></h4>
 <ul>
 <li>For consistency with standard interfaces (e.g. OS file explorers), list box rules for row selection/drag and drop have been modified. A continuous or discontinuous selection of rows can be dragged by simply clicking on and moving a selected row; the <strong>Alt</strong> key is not longer necessary (but can still be used like in previous previous). When the <strong>Shift</strong> or <strong>Ctrl/Command</strong> key is pressed, a mouse click is taken into account when the click is down. For more information on drag and drop in list boxes, you can refer to <a href="https:/blog.4d.com/list-boxes-say-goodbye-to-alt-key/" target="_blank" rel="noopener noreferrer">this blog post</a> and download <a href="https://github.com/4d-depot/HDI_LB_DragAndDrop" target="_blank" rel="noopener noreferrer">this HDI 4D project</a>.</li>
 <li>The 4D internal build numbering has been modified as of 4D 19 R7:
