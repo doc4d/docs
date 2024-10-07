@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Folder | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/API/FolderClass"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Folder | 4D Docs"><meta data-rh="true" name="description" content="Folder オブジェクトは Folder コマンドによって作成されます。 これらのオブジェクトには、(実在しているか否かに関わらず) フォルダーへの参照が格納されます。 たとえば、新規フォルダーを作成するために Folder コマンドを実行した場合、有効な Folder オブジェクトが作成されますが、folder.create() 関数を呼び出すまで、ディスク上にはなにも保存されていません。"><meta data-rh="true" property="og:description" content="Folder オブジェクトは Folder コマンドによって作成されます。 これらのオブジェクトには、(実在しているか否かに関わらず) フォルダーへの参照が格納されます。 たとえば、新規フォルダーを作成するために Folder コマンドを実行した場合、有効な Folder オブジェクトが作成されますが、folder.create() 関数を呼び出すまで、ディスク上にはなにも保存されていません。"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/API/FolderClass"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/API/FolderClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/API/FolderClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/API/FolderClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/API/FolderClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/API/FolderClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/API/FolderClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.53c7a2e3.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -108,186 +108,6 @@
 
 
 <table><thead><tr><th></th></tr></thead><tbody><tr><td><a href="/docs/ja/next/API/FolderClass#copyto"><strong>.copyTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } { ; <em>overwrite</em> : Integer } ) : 4D.Folder</a><br><code>Folder</code> オブジェクトを、<em>destinationFolder</em> 引数で指定したフォルダーへとコピーします</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#create"><strong>.create()</strong> : Boolean</a><br><code>Folder</code> オブジェクトのプロパティに基づいてディスク上にフォルダーを作成します</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#createalias"><strong>.createAlias</strong>( <em>destinationFolder</em> : 4D.Folder ; <em>aliasName</em> : Text { ; <em>aliasType</em> : Integer } ) : 4D.File</a><br>エイリアス (macOS) またはショートカット (Windows) を作成します</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#creationdate"><strong>.creationDate</strong> : Date</a><br>フォルダーの作成日</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#creationtime"><strong>.creationTime</strong> : Time</a><br>フォルダーの作成時刻</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#delete"><strong>.delete</strong>( { <em>option</em> : Integer } )</a><br>フォルダーを削除します</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#exists"><strong>.exists</strong> : Boolean</a><br>ディスク上にフォルダーが存在する場合は true</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#extension"><strong>.extension</strong> : Text</a><br>フォルダー名の拡張子</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#file"><strong>.file</strong>( <em>path</em> : Text ) : 4D.File</a><br><code>Folder</code> オブジェクト内に <code>File</code> オブジェクトを作成し、その参照を返します</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#files"><strong>.files</strong>( { <em>options</em> : Integer } ) : Collection</a><br>フォルダーに格納されている <code>File</code> オブジェクトのコレクションを返します</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#folder"><strong>.folder</strong>( <em>path</em> : Text ) : 4D.Folder</a><br>親の <code>Folder</code> オブジェクト内に新しい <code>Folder</code> オブジェクトを作成し、その参照を返します</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#folders"><strong>.folders</strong>( { <em>options</em> : Integer } ) : Collection</a><br>親フォルダーに格納されている <code>Folder</code> オブジェクトのコレクションを返します</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#fullname"><strong>.fullName</strong> : Text</a><br>拡張子 (あれば) を含めたフォルダーの完全な名称</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#geticon"><strong>.getIcon</strong>( { <em>size</em> : Integer } ) : Picture</a><br>フォルダーのアイコンを返します</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#hidden"><strong>.hidden</strong> : Boolean</a><br>フォルダーがシステムレベルで &quot;非表示&quot; に設定されていれば true</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#isalias"><strong>.isAlias</strong> : Boolean</a><br><code>Folder</code> オブジェクトに対しては常に <strong>false</strong></td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#isfile"><strong>.isFile</strong> : Boolean</a><br>フォルダーに対しては常に <strong>false</strong></td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#isfolder"><strong>.isFolder</strong> : Boolean</a><br>フォルダーに対しては常に <strong>true</strong></td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#ispackage"><strong>.isPackage</strong> : Boolean</a><br>フォルダーが macOS上のパッケージである (かつディスク上に存在している) 場合に true</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#modificationdate"><strong>.modificationDate</strong> : Date</a><br>フォルダーの最終変更日</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#modificationtime"><strong>.modificationTime</strong> : Time</a><br>フォルダーの最終変更時刻</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#name"><strong>.name</strong> : Text</a><br>拡張子 (あれば) を含まないフォルダー名</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#original"><strong>.original</strong> : 4D.Folder</a><br>対象フォルダーと同じフォルダーオブジェクト</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#parent"><strong>.parent</strong> : 4D.Folder</a><br>対象フォルダーの親フォルダーオブジェクト</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#path"><strong>.path</strong> : Text</a><br>フォルダーの POSIXパス</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#platformpath"><strong>.platformPath</strong> : Text</a><br>カレントプラットフォームのシンタックスで表現されたフォルダーのパス</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#moveto"><strong>.moveTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } ) : 4D.Folder</a><br><code>Folder</code> オブジェクト (ソースフォルダー) を <em>destinationFolder</em> が指定する移行先へと移動すると同時に、<em>newName</em> を指定した場合は名称も変更します</td></tr><tr><td><a href="/docs/ja/next/API/FolderClass#rename"><strong>.rename</strong>( <em>newName</em> : Text ) : 4D.Folder</a><br><em>newName</em> に指定した名称にフォルダー名を変更し、名称変更後の <code>Folder</code> オブジェクトを返します</td></tr></tbody></table>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="folder">Folder<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#folder">​</a></h2>
-<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>履歴</summary><div><div class="collapsibleContent_i85q">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>19 R8</td><td><code>fk home folder</code> をサポート</td></tr><tr><td>17 R5</td><td>追加</td></tr></tbody></table>
-</div></div></details>
-<p><strong>Folder</strong> ( <em>path</em> : Text { ; <em>pathType</em> : Integer }{ ; * } ) : 4D.Folder<br><strong>Folder</strong> ( <em>folderConstant</em> : Integer { ; * } ) : 4D.Folder</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>引数</th><th>型</th><th style="text-align:center"></th><th>説明</th></tr></thead><tbody><tr><td>path</td><td>Text</td><td style="text-align:center">-&gt;</td><td>フォルダーパス</td></tr><tr><td>folderConstant</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>4Dフォルダー定数</td></tr><tr><td>pathType</td><td>Integer</td><td style="text-align:center">-&gt;</td><td><code>fk posix path</code> (デフォルト) または <code>fk platform path</code></td></tr><tr><td>-</td><td></td><td style="text-align:center">-&gt;</td><td>ホストデータベースのフォルダーを返すには * を渡します</td></tr><tr><td>戻り値</td><td>4D.Folder</td><td style="text-align:center">&lt;-</td><td>新規フォルダーオブジェクト</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明">​</a></h4>
-<p><code>Folder</code> コマンドは、<code>4D.Folder</code> 型の新しいオブジェクトを作成して返します。 このコマンドは 2種類のシンタックスを受け入れます。</p>
-<p><strong>Folder ( path { ; pathType } { ; * } )</strong></p>
-<p><em>path</em> には、フォルダーパス文字列を渡します。 カスタムの文字列または <a href="/docs/ja/next/Concepts/paths#%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%83%91%E3%82%B9%E5%90%8D">ファイルシステム</a> (例: &quot;/DATA&quot;) を渡すことができます。</p>
-<blockquote>
-<p><code>Folder</code> コマンドでは絶対パス名のみがサポートされます。</p>
-</blockquote>
-<p>デフォルトで、4D は POSIXシンタックスで表現されたパスを期待します。 プラットフォームパス名 (Windows または macOS) を使用する場合、<em>pathType</em> 引数を使用してそのことを宣言する必要があります。 以下の定数を使用することができます:</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>定数</th><th>値</th><th>説明</th></tr></thead><tbody><tr><td>fk platform path</td><td>1</td><td>プラットフォーム特有のシンタックスで表現されたパス (プラットフォームパス名の場合には必須)</td></tr><tr><td>fk posix path</td><td>0</td><td>POSIXシンタックスで表現されたパス (デフォルト)</td></tr></tbody></table>
-<p><strong>Folder ( folderConstant { ; * } )</strong></p>
-<p><em>folderConstant</em> には、以下の定数のどれか一つを指定して 4Dビルトインの、またはシステムフォルダーを渡します:</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>定数</th><th>値</th><th>説明</th></tr></thead><tbody><tr><td>fk applications folder</td><td>116</td><td></td></tr><tr><td>fk data folder</td><td>9</td><td>関連づけられたファイルシステム: &quot;/DATA&quot;</td></tr><tr><td>fk database folder</td><td>4</td><td>関連づけられたファイルシステム: &quot;/PACKAGE&quot;</td></tr><tr><td>fk desktop folder</td><td>115</td><td></td></tr><tr><td>fk documents folder</td><td>117</td><td>ユーザーのドキュメントフォルダー</td></tr><tr><td>fk home folder</td><td>118</td><td>ユーザーのカレントホームフォルダー (通常は <code>/Users/&lt;username&gt;/</code>)</td></tr><tr><td>fk licenses folder</td><td>1</td><td>マシンの 4Dライセンスファイルを格納しているフォルダー</td></tr><tr><td>fk logs folder</td><td>7</td><td>関連づけられたファイルシステム: &quot;/LOGS&quot;</td></tr><tr><td>fk mobileApps folder</td><td>10</td><td></td></tr><tr><td>fk remote database folder</td><td>3</td><td>それぞれの 4Dリモートマシン上に作成された 4Dデータベースフォルダー</td></tr><tr><td>fk resources folder</td><td>6</td><td>関連づけられたファイルシステム: &quot;/RESOURCES&quot;</td></tr><tr><td>fk system folder</td><td>100</td><td></td></tr><tr><td>fk user preferences folder</td><td>0</td><td>ユ  ーザー環境設定ファイルを保存している、ユーザーホームフォルダー内の 4Dフォルダー</td></tr><tr><td>fk web root folder</td><td>8</td><td>データベースのカレントの Webルートフォルダー: ただし &quot;/PACKAGE/path&quot; のパッケージ内にある場合。そうでない場合はフルパス。</td></tr></tbody></table>
-<p>コマンドがコンポーネントから呼び出されている場合、<code>*</code> 引数を渡してホストデータベースのパスを取得するようにします。 * 引数を省略すると、常に null オブジェクトが返されます。</p>
-<blockquote>
-<p>Windows の場合、統合されたクライアントでは、<code>ShareLocalResourcesOnWindowsClient</code> <a href="/docs/ja/next/Desktop/building#buildapp4dsettings">BuildApp キー</a> を使用すると、ビルトインフォルダーの場所が変更されます。</p>
-</blockquote>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4dfoldernew">4D.Folder.new()<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#4dfoldernew">​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>履歴</summary><div><div class="collapsibleContent_i85q">
 
@@ -306,7 +126,7 @@
 <table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>18 R6</td><td>追加</td></tr></tbody></table>
 </div></div></details>
 <p><strong>4D.Folder.new</strong> ( <em>path</em> : Text { ; <em>pathType</em> : Integer }{ ; * } ) : 4D.Folder<br><strong>4D.Folder.new</strong> ( <em>folderConstant</em> : Integer { ; * } ) : 4D.Folder</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-1">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-1">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明">​</a></h4>
 <p><code>4D.Folder.new()</code> 関数は、<code>4D.Folder</code> 型の新しいオブジェクトを作成して返します。 この関数の機能は、<a href="/docs/ja/next/API/FolderClass#folder"><code>Folder</code></a> コマンドと同一です。</p>
 <blockquote>
 <p><code>4D.Folder.new()</code> よりも、短い <a href="/docs/ja/next/API/FolderClass#folder"><code>Folder</code></a> コマンドの使用が推奨されます。</p>
@@ -365,7 +185,7 @@
 
 
 <table><thead><tr><th>引数</th><th>型</th><th style="text-align:center"></th><th>説明</th></tr></thead><tbody><tr><td>destinationFolder</td><td>4D.Folder</td><td style="text-align:center">-&gt;</td><td>宛先フォルダー</td></tr><tr><td>newName</td><td>Text</td><td style="text-align:center">-&gt;</td><td>コピー先フォルダーの名前</td></tr><tr><td>overwrite</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>既存要素を上書きするには <code>fk overwrite</code> を渡します</td></tr><tr><td>戻り値</td><td>4D.Folder</td><td style="text-align:center">&lt;-</td><td>コピーされたフォルダー</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-2">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-2">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-1">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-1">​</a></h4>
 <p><code>.copyTo()</code> 関数は、<code>Folder</code> オブジェクトを、<em>destinationFolder</em> 引数で指定したフォルダーへとコピーします。</p>
 <p><em>destinationFolder</em> 引数が指定するフォルダーはディスク上に存在している必要があり、そうでない場合にはエラーが生成されます。</p>
 <p>デフォルトで、フォルダーは元の名前を維持したままコピーされます。 コピーの際にフォルダー名を変更したい場合、新しい名前を <em>newName</em> に渡します。 新しい名前は命名規則に則っている必要があります (例: &quot;:&quot;, &quot;/&quot;, 等の文字を含んでいない、など)。そうでない場合、エラーが返されます。</p>
@@ -426,8 +246,8 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>戻り値</td><td>Boolean</td><td>&lt;-</td><td>フォルダーが正常に作成された場合には true、それ以外の 場合は false</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-3">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-3">​</a></h4>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>戻り値</td><td>Boolean</td><td>&lt;-</td><td>フォルダーが正常に作成された場合には true、それ以外の場合は false</td></tr></tbody></table>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-2">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-2">​</a></h4>
 <p><code>.create()</code> 関数は、
 <code>Folder</code> オブジェクトのプロパティに基づいてディスク上にフォルダーを作成します。</p>
 <p>必要であれば、 関数は <a href="/docs/ja/next/API/FolderClass#platformpath">platformPath</a> あるいは <a href="/docs/ja/next/API/FolderClass#path">path</a> プロパティの詳細に基づいてフォルダー階層を作成します。 フォルダーがディスク上にすでに存在する場合、関数は何もせず、false を返します (エラーは返されません)。</p>
@@ -441,7 +261,7 @@
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">var $created : Boolean</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$created:=Folder(&quot;/PACKAGE/SpecialPrefs&quot;).create()</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="クリップボードにコードをコピー" title="コピー" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-2">例題 2<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#例題-2">​</a></h4>
 <p>データベースフォルダー内に &quot;/Archives2019/January/&quot; フォルダーを作成します:</p>
-<div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$newFolder:=Folder(&quot;/PACKAGE/Archives2019/January&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">If($newFolder.create())</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> ALERT($newFolder.name+&quot; フォルダーが作成されました。&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Else</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> ALERT($newFolder.name+&quot; フォルダーは作成できませんでした。&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">End if</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="クリップボードにコードをコピー" title="コピー" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">$newFolder:=Folder(&quot;/PACKAGE/Archives2019/January&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">If($newFolder.create())</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> ALERT($newFolder.name+&quot; フォルダーが作成されました。&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Else</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> ALERT($newFolder.name+&quot; フォルダーは作成  できませんでした。&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">End if</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="クリップボードにコードをコピー" title="コピー" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="createalias">.createAlias()<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#createalias">​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>履歴</summary><div><div class="collapsibleContent_i85q">
 
@@ -495,8 +315,8 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>destinationFolder</td><td>4D.Folder</td><td>-&gt;</td><td>エイリアスまたはショートカットの作成先フォルダー</td></tr><tr><td>aliasName</td><td>Text</td><td>-&gt;</td><td>エイリアスまたはショートカットの名称</td></tr><tr><td>aliasType</td><td>Integer</td><td>-&gt;</td><td>エイリアスリンクのタイプ</td></tr><tr><td>戻り値</td><td>4D.File</td><td>&lt;-</td><td>エイリアスまたはショートカットのフォルダー参照</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-4">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-4">​</a></h4>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>destinationFolder</td><td>4D.Folder</td><td>-&gt;</td><td>エイリアスまたはショートカットの作成先フォルダー</td></tr><tr><td>aliasName</td><td>Text</td><td>-&gt;</td><td>エイリアスまたはショートカットの名称</td></tr><tr><td>aliasType</td><td>Integer</td><td>-&gt;</td><td>エイリアスリンクのタイプ</td></tr><tr><td>戻り値</td><td>4D.File</td><td>&lt;-</td><td>エ  イリアスまたはショートカットのフォルダー参照</td></tr></tbody></table>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-3">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-3">​</a></h4>
 <p><code>.createAlias()</code> 関数は、<em>destinationFolder</em> オブジェクトで指定されたフォルダー内に、<em>aliasName</em> が指定する名称で、対象フォルダーへのエイリアス (macOS) またはショートカット (Windows) を作成します。</p>
 <p><em>aliasName</em> には、作成するエイリアスまたはショートカットの名前を渡します。</p>
 <p>macOS 上では、この関数はデフォルトで標準エイリアスを作成します。 <em>aliasType</em> 引数を渡すことで、シンボリックリンクを作成することもできます。 以下の定数を使用することができます:</p>
@@ -545,7 +365,7 @@
 <table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>17 R5</td><td>追加</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.creationDate</strong> : Date</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-5">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-5">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-4">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-4">​</a></h4>
 <p><code>.creationDate</code> プロパティは、フォルダーの作成日を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="creationtime">.creationTime<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#creationtime">​</a></h2>
@@ -566,7 +386,7 @@
 <table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>17 R5</td><td>追加</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.creationTime</strong> : Time</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-6">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-6">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-5">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-5">​</a></h4>
 <p><code>.creationTime</code> プロパティは、フォルダーの作成時刻を返します (00:00 からの経過秒数の形式)。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="delete">.delete()<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#delete">​</a></h2>
@@ -604,8 +424,8 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>option</td><td>Integer</td><td>-&gt;</td><td>フォルダー 削除のオプション</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-7">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-7">​</a></h4>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>option</td><td>Integer</td><td>-&gt;</td><td>フォルダー削除のオプション</td></tr></tbody></table>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-6">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-6">​</a></h4>
 <p><code>.delete()</code> 関数は、フォルダーを削除します。</p>
 <p>セキュリティ上の理由から、option 引数を渡さなかった場合はデフォルトで、<code>.delete()</code> は空のフォルダーしか削除しません。 空でないフォルダーを削除するには、以下の定数のいずれか一つを option 引数として渡す必要があります:</p>
 
@@ -638,7 +458,7 @@
 <ul>
 <li>フォルダーと、その中身がすべて削除されます。
 <strong>警告</strong>: フォルダーまたはその中身がロックされている、あるいは読み取り専用に設定されていたとしても、カレントユーザーが適切なアクセス権を持っていた場合には、フォルダーはその中身ごと削除されます。</li>
-<li>このフォルダー、またはその中のフォルダーのどいずれかが削除できなかった場合、削除できない要素が検知された時点で削除は中 止され、エラー(*) が返されます。 このとき、フォルダーは途中までしか削除されていない可能性があります。 削除が中止された場合、<code>GET LAST ERROR STACK</code> コマンドを使用して原因となったファイルの名前とパスを取得することができます。</li>
+<li>このフォルダー、またはその中のフォルダーのどいずれかが削除できなかった場合、削除できない要素が検知された時点で削除は中止され、エラー(*) が返されます。 このとき、フォルダーは途中までしか削除されていない可能性があります。 削除が中止された場合、<code>GET LAST ERROR STACK</code> コマンドを使用して原因となったファイルの名前とパスを取得することができます。</li>
 <li>フォルダーが存在しない場合、コマンドは何もせず、エラーは返されません。 <br><br> (*) Windowsの場合: -54 (ロックされたファイルを書き込みのために開こうとした)<br>
 macOSの場合: -45 (ファイルはロックされていたか不正なパス名)</li>
 </ul>
@@ -660,10 +480,10 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 <table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>17 R5</td><td>追加</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.exists</strong> : Boolean</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-8">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-8">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-7">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-7">​</a></h4>
 <p><code>.exists</code> プロパティは、ディスク上にフォルダーが存在する場合は true を返します (それ以外の場合は false)。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="extension">.extension<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#extension">​</a></h2>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="extension">.extension<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#extension">  ​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>履歴</summary><div><div class="collapsibleContent_i85q">
 
 
@@ -681,7 +501,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 <table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>17 R5</td><td>追加</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.extension</strong> : Text</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-9">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-9">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-8">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-8">​</a></h4>
 <p><code>.extension</code> プロパティは、フォルダー名の拡張子を返します (あれば)。 拡張子は必ず&quot;.&quot; で始まります。 フォルダー名が拡張子を持たない場合には、このプロパティは空の文字列を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="file">.file()<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#file">​</a></h2>
@@ -726,7 +546,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>path</td><td>Text</td><td>-&gt;</td><td>ファイルのPOSIX相対パス名</td></tr><tr><td>戻り値</td><td>4D.File</td><td>&lt;-</td><td><code>File</code> オブジェクト (無効な POSIXパスの場合には null)</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-10">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-10">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-9">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-9">​</a></h4>
 <p><code>.file()</code> 関数は、<code>Folder</code> オブジェクト内に <code>File</code> オブジェクトを作成し、その参照を返します。</p>
 <p><em>path</em> には、返すべきファイルの相対的パスを POSIX 形式で渡します。 このパスは、親フォルダーを起点として評価されます。</p>
 <p><strong>戻り値</strong></p>
@@ -775,7 +595,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>options</td><td>Integer</td><td>-&gt;</td><td>ファイルリストのオプション</td></tr><tr><td>戻り値</td><td>Collection</td><td>&lt;-</td><td>子ファイルオブジェクトのコレクション</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-11">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-11">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-10">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-10">​</a></h4>
 <p><code>.files()</code> 関数は、フォルダーに格納されている <code>File</code> オブジェクトのコレクションを返します。</p>
 <blockquote>
 <p>エイリアスまたはシンボリックリンクは解決されません。</p>
@@ -801,7 +621,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 
 
 
-<table><thead><tr><th>定数</th><th>値</th><th>説明</th></tr></thead><tbody><tr><td><code>fk recursive</code></td><td>1</td><td>コレクションには、指定フォルダーとそのサブフォル ダーのファイルが含まれます</td></tr><tr><td><code>fk ignore invisible</code></td><td>8</td><td>非表示設定のファイルは表示されません</td></tr></tbody></table>
+<table><thead><tr><th>定数</th><th>値</th><th>説明</th></tr></thead><tbody><tr><td><code>fk recursive</code></td><td>1</td><td>コレクションには、指定フォルダーとそのサブフォルダーのファイルが含まれます</td></tr><tr><td><code>fk ignore invisible</code></td><td>8</td><td>非表示設定のファイルは表示されません</td></tr></tbody></table>
 <p><strong>戻り値</strong></p>
 <p><code>File</code> オブジェクトのコレクション。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-1-2">例題 1<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#例題-1-2">​</a></h4>
@@ -810,7 +630,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-2-1">例題 2<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#例題-2-1">​</a></h4>
 <p>ドキュメントフォルダー内にある、非表示でないファイルをすべて取得します:</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> var $recursive : Collection</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $recursive:=Folder(fk documents folder).files(fk recursive+fk ignore invisible)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="クリップボードにコードをコピー" title="コピー" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="folder-1">.folder()<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#folder-1">​</a></h2>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="folder">.folder()<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#folder">​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>履歴</summary><div><div class="collapsibleContent_i85q">
 
 
@@ -852,7 +672,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>path</td><td>Text</td><td>-&gt;</td><td>ファイルのPOSIX相対パス名</td></tr><tr><td>戻り値</td><td>4D.Folder</td><td>&lt;-</td><td>作成された <code>Folder</code> オブジェクト (無効な POSIX <em>path</em> の場合には null)</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-12">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-12">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-11">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-11">​</a></h4>
 <p><code>.folder()</code> 関数は、親の <code>Folder</code> オブジェクト内に新しい <code>Folder</code> オブジェクトを作成し、その参照を返します。</p>
 <p><em>path</em> には、返すべきフォルダーの相対的パスを POSIX 形式で渡します。 このパスは、親フォルダーを起点として評価されます。</p>
 <p><strong>戻り値</strong></p>
@@ -900,8 +720,8 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>options</td><td>Integer</td><td>-&gt;</td><td>フォルダーリストのオプション</td></tr><tr><td>戻り値</td><td>Collection</td><td>&lt;-</td><td>子フォルダ ーオブジェクトのコレクション</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-13">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-13">​</a></h4>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>options</td><td>Integer</td><td>-&gt;</td><td>フォルダーリストのオプション</td></tr><tr><td>戻り値</td><td>Collection</td><td>&lt;-</td><td>子フォルダーオブジェクトのコレクション</td></tr></tbody></table>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-12">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-12">​</a></h4>
 <p><code>.folders()</code> 関数は、親フォルダーに格納されている <code>Folder</code> オブジェクトのコレクションを返します。</p>
 <p><em>options</em>引数を渡さなかった場合はデフォルトで、フォルダーの第一階層にあるフォルダーのみがコレクションに返されます。 <em>options</em> 引数に以下の定数を一つ以上渡すことで、このふるまいを変更することができます:</p>
 
@@ -948,10 +768,10 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 <table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>17 R5</td><td>追加</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.fullName</strong> : Text</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-14">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-14">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-13">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-13">​</a></h4>
 <p><code>.fullName</code> プロパティは、拡張子 (あれば) を含めたフォルダーの完全な名称を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="geticon">.getIcon()<a class="hash-link" aria-label="見出しへの  直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#geticon">​</a></h2>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="geticon">.getIcon()<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#geticon">​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>履歴</summary><div><div class="collapsibleContent_i85q">
 
 
@@ -993,7 +813,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>size</td><td>Integer</td><td>-&gt;</td><td>取得するピクチャーの一辺の長さ (ピクセル単位)</td></tr><tr><td>戻り値</td><td>Picture</td><td>&lt;-</td><td>アイコン</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-15">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-15">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-14">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-14">​</a></h4>
 <p><code>.getIcon()</code> 関数は、フォルダーのアイコンを返します。</p>
 <p>任意の <em>size</em> 引数を渡すと、返されるアイコンのサイズをピクセル単位で指定することができます。 この値は、実際にはアイコンを格納している正方形の一辺の長さを表しています。 アイコンは通常、32x32ピクセル (&quot;大きいアイコン&quot;) または 16x16ピクセル (&quot;小さいアイコン&quot;) で定義されています。 この引数に 0 を渡すか省略した場合、&quot;大きいアイコン&quot; が返されます。</p>
 <p>フォルダーがディスク上に存在しない場合、デフォルトの空のアイコンが返されます。</p>
@@ -1017,7 +837,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 <table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>17 R5</td><td>追加</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.hidden</strong> : Boolean</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-16">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-16">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-15">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-15">​</a></h4>
 <p><code>.hidden</code> プロパティは、フォルダーがシステムレベルで &quot;非表示&quot; に設定されていれば true を返します (それ以外の場合は false)。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="isalias">.isAlias<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#isalias">​</a></h2>
@@ -1038,7 +858,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 <table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>17 R5</td><td>追加</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.isAlias</strong> : Boolean</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-17">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-17">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-16">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-16">​</a></h4>
 <p><code>.isAlias</code> プロパティは、<code>Folder</code> オブジェクトに対しては常に <strong>false</strong> を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="isfile">.isFile<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#isfile">​</a></h2>
@@ -1059,7 +879,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 <table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>17 R5</td><td>追加</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.isFile</strong> : Boolean</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-18">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-18">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-17">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-17">​</a></h4>
 <p><code>.isFile</code> プロパティは、フォルダーに対しては常に <strong>false</strong> を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="isfolder">.isFolder<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#isfolder">​</a></h2>
@@ -1080,9 +900,9 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 <table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>17 R5</td><td>追加</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.isFolder</strong> : Boolean</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-19">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-19">​</a></h4>
-<p><code>.isFolder</code> プロパティは、フォルダーに対しては常に <strong>true</strong> を返します。</p>
-<p> このプロパティは <strong>読み取り専用</strong> です。</p>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-18">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-18">​</a></h4>
+<p><code>.isFolder</code> プロパティは、フォ ルダーに対しては常に <strong>true</strong> を返します。</p>
+<p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ispackage">.isPackage<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#ispackage">​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>履歴</summary><div><div class="collapsibleContent_i85q">
 
@@ -1101,7 +921,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 <table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>17 R5</td><td>追加</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.isPackage</strong> : Boolean</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-20">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-20">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-19">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-19">​</a></h4>
 <p><code>.isPackage</code> プロパティは、フォルダーが macOS上のパッケージである (かつディスク上に存在している) 場合に true を返します。 それ以外の場合は false を返します。</p>
 <p>Windows 上においては、<code>.isPackage</code> は常に <strong>false</strong> を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
@@ -1123,7 +943,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 <table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>17 R5</td><td>追加</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.modificationDate</strong> : Date</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-21">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-21">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-20">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-20">​</a></h4>
 <p><code>.modificationDate</code> プロパティは、フォルダーの最終変更日を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="modificationtime">.modificationTime<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#modificationtime">​</a></h2>
@@ -1144,7 +964,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 <table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>17 R5</td><td>追加</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.modificationTime</strong> : Time</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-22">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-22">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-21">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-21">​</a></h4>
 <p><code>.modificationTime</code> プロパティは、フォルダーの最終変更時刻を返します (00:00 からの経過秒数の形式)。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="moveto">.moveTo()<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#moveto">​</a></h2>
@@ -1195,7 +1015,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>destinationFolder</td><td>4D.Folder</td><td>-&gt;</td><td>宛先フォルダー</td></tr><tr><td>newName</td><td>Text</td><td>-&gt;</td><td>移動先でのフォルダーの完全な名称</td></tr><tr><td>戻り値</td><td>4D.Folder</td><td>&lt;-</td><td>移動したフォルダー</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-23">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-23">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-22">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-22">​</a></h4>
 <p><code>.moveTo()</code> 関数は、<code>Folder</code> オブジェクト (ソースフォルダー) を <em>destinationFolder</em> が指定する移行先へと移動すると同時に、<em>newName</em> を指定した場合は名称も変更します。</p>
 <p><em>destinationFolder</em> 引数が指定するフォルダーはディスク上に存在している必要があり、そうでない場合にはエラーが生成されます。</p>
 <p>デフォルトで、移動したフォルダーは元の名前を維持します。 移動の際にフォルダー名を変更したい場合、新しい完全な名前を <em>newName</em> に渡します。 新しい名前は命名規則に則っている必要があります (例: &quot;:&quot;, &quot;/&quot;, 等の文字を含んでいない、など)。そうでない場合、エラーが返されます。</p>
@@ -1222,7 +1042,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 <table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>17 R5</td><td>追加</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.name</strong> : Text</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-24">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-24">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-23">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-23">​</a></h4>
 <p><code>.name</code> プロパティは、拡張子 (あれば) を含まないフォルダー名を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="original">.original<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#original">​</a></h2>
@@ -1243,7 +1063,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 <table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>17 R5</td><td>追加</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.original</strong> : 4D.Folder</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-25">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-25">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-24">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-24">​</a></h4>
 <p><code>.original</code> プロパティは、対象フォルダーと同じフォルダーオブジェクトを返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <blockquote>
@@ -1267,7 +1087,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 <table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>17 R5</td><td>追加</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.parent</strong> : 4D.Folder</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-26">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-26">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-25">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-25">​</a></h4>
 <p><code>.parent</code> プロパティは、対象フォルダーの親フォルダーオブジェクトを返します。 パスがシステムパスを表す場合 (例: &quot;/DATA/&quot;)、システムパスが返されます。</p>
 <p>親フォルダーが存在しない場合 (root) は、このプロパティは null値を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
@@ -1289,7 +1109,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 <table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>17 R5</td><td>追加</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.path</strong> : Text</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-27">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-27">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-26">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-26">​</a></h4>
 <p><code>.path</code> プロパティは、フォルダーの POSIXパスを返します。 パスがファイルシステムを表す場合 (例: &quot;/DATA/&quot;)、ファイルシステムが返されます。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="platformpath">.platformPath<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#platformpath">​</a></h2>
@@ -1310,7 +1130,7 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 <table><thead><tr><th>リリース</th><th>内容</th></tr></thead><tbody><tr><td>17 R5</td><td>追加</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.platformPath</strong> : Text</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-28">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-28">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-27">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-27">​</a></h4>
 <p><code>.platformPath</code> プロパティは、カレントプラットフォームのシンタックスで表現されたフォルダーのパスを返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="rename">.rename()<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#rename">​</a></h2>
@@ -1354,13 +1174,13 @@ macOSの場合: -45 (ファイルはロックされていたか不正なパス�
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>newName</td><td>Text</td><td>-&gt;</td><td>フォルダーの新しい完全な名称</td></tr><tr><td>戻り値</td><td>4D.Folder</td><td>&lt;-</td><td>名称変更されたフォルダー</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-29">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-29">​</a></h4>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>newName</td><td>Text</td><td>-&gt;</td><td>フォルダーの新しい完全な名称</td></tr><tr><td>戻り値</td><td>4D.Folder</td><td>&lt;-</td><td>名称変 更されたフォルダー</td></tr></tbody></table>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-28">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#説明-28">​</a></h4>
 <p><code>.rename()</code> 関数は、<em>newName</em> に指定した名称にフォルダー名を変更し、名称変更後の <code>Folder</code> オブジェクトを返します。</p>
 <p><em>newName</em> 引数は命名規則に則っている必要があります (例: &quot;:&quot;, &quot;/&quot;, 等の文字を含んでいない、など)。 そうでない場合、エラーが返されます。 同じ名前のファイルがすでに存在する場合には、エラーが返されます。</p>
 <p><strong>返されるオブジェクト</strong></p>
 <p>名称変更された <code>Folder</code> オブジェクト。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-8">例題<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/API/FolderClass#例題-8">​</a></h4>
-<div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> var $toRename : 4D.Folder</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $toRename:=Folder(&quot;/RESOURCES/Pictures&quot;).rename(&quot;Images&quot;)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="クリップボードにコードをコピー" title="コピー" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/4d/docs/issues/new?title=Comment%20on%20API%2FFolderClass.md%20(current)&amp;body=Please%20enter%20your%20comment%3A" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>このページへコメントする</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="ドキュメントのナビゲーション"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/ja/next/API/FileHandleClass"><div class="pagination-nav__sublabel">前へ</div><div class="pagination-nav__label">FileHandle</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/ja/next/API/FunctionClass"><div class="pagination-nav__sublabel">次へ</div><div class="pagination-nav__label">Function</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#例題">例題</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#パス名">パス名</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#folder-オブジェクト">Folder オブジェクト</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#folder">Folder</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#4dfoldernew">4D.Folder.new()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#copyto">.copyTo()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#create">.create()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#createalias">.createAlias()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#creationdate">.creationDate</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#creationtime">.creationTime</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#delete">.delete()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#exists">.exists</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#extension">.extension</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#file">.file()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#files">.files()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#folder-1">.folder()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#folders">.folders()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#fullname">.fullName</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#geticon">.getIcon()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#hidden">.hidden</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#isalias">.isAlias</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#isfile">.isFile</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#isfolder">.isFolder</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#ispackage">.isPackage</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#modificationdate">.modificationDate</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#modificationtime">.modificationTime</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#moveto">.moveTo()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#name">.name</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#original">.original</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#parent">.parent</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#path">.path</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#platformpath">.platformPath</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#rename">.rename()</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">コミュニティ</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://developer.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">デベロッパー・センター</a></li><li class="footer__item"><a href="https://blog.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">4D Blog</a></li><li class="footer__item"><a href="https://discuss.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">4D Forum</a></li><li class="footer__item"><a href="https://facebook.com/4Dsoftware" target="_blank" rel="noopener noreferrer" class="footer__link-item">Facebook</a></li><li class="footer__item"><a href="https://twitter.com/4Dsoftware" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter</a></li><li class="footer__item"><a href="https://youtube.com/user/4Dsoftware" target="_blank" rel="noopener noreferrer" class="footer__link-item">Youtube</a></li><li class="footer__item"><a href="https://github.com/4D" target="_blank" rel="noopener noreferrer" class="footer__link-item">Github</a></li></ul></div><div class="col footer__col"><div class="footer__title">サポート</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://doc.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">4D Doc Center (旧ドキュメント)</a></li><li class="footer__item"><a href="https://kb.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">ナレッジベース</a></li><li class="footer__item"><a href="https://us.4d.com/product-download/Feature-Release" target="_blank" rel="noopener noreferrer" class="footer__link-item">ダウンロード<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/resources" target="_blank" rel="noopener noreferrer" class="footer__link-item">Resources<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/4d-technical-support" target="_blank" rel="noopener noreferrer" class="footer__link-item">サポートを受ける<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">会社概要</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://us.4d.com/about-us" target="_blank" rel="noopener noreferrer" class="footer__link-item">4D社について<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/contact-us" target="_blank" rel="noopener noreferrer" class="footer__link-item">コンタクト<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/4d-around-the-world" target="_blank" rel="noopener noreferrer" class="footer__link-item">世界中の4D<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/Careers" target="_blank" rel="noopener noreferrer" class="footer__link-item">Careers<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2024 4D SAS - All rights reserved</div></div></div></footer></div>
+<div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> var $toRename : 4D.Folder</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $toRename:=Folder(&quot;/RESOURCES/Pictures&quot;).rename(&quot;Images&quot;)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="クリップボードにコードをコピー" title="コピー" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/4d/docs/issues/new?title=Comment%20on%20API%2FFolderClass.md%20(current)&amp;body=Please%20enter%20your%20comment%3A" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>このページへコメントする</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="ドキュメントのナビゲーション"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/ja/next/API/FileHandleClass"><div class="pagination-nav__sublabel">前へ</div><div class="pagination-nav__label">FileHandle</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/ja/next/API/FunctionClass"><div class="pagination-nav__sublabel">次へ</div><div class="pagination-nav__label">Function</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#例題">例題</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#パス名">パス名</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#folder-オブジェクト">Folder オブジェクト</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#4dfoldernew">4D.Folder.new()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#copyto">.copyTo()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#create">.create()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#createalias">.createAlias()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#creationdate">.creationDate</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#creationtime">.creationTime</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#delete">.delete()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#exists">.exists</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#extension">.extension</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#file">.file()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#files">.files()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#folder">.folder()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#folders">.folders()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#fullname">.fullName</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#geticon">.getIcon()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#hidden">.hidden</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#isalias">.isAlias</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#isfile">.isFile</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#isfolder">.isFolder</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#ispackage">.isPackage</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#modificationdate">.modificationDate</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#modificationtime">.modificationTime</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#moveto">.moveTo()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#name">.name</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#original">.original</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#parent">.parent</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#path">.path</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#platformpath">.platformPath</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/ja/next/API/FolderClass#rename">.rename()</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">コミュニティ</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://developer.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">デベロッパー・センター</a></li><li class="footer__item"><a href="https://blog.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">4D Blog</a></li><li class="footer__item"><a href="https://discuss.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">4D Forum</a></li><li class="footer__item"><a href="https://facebook.com/4Dsoftware" target="_blank" rel="noopener noreferrer" class="footer__link-item">Facebook</a></li><li class="footer__item"><a href="https://twitter.com/4Dsoftware" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter</a></li><li class="footer__item"><a href="https://youtube.com/user/4Dsoftware" target="_blank" rel="noopener noreferrer" class="footer__link-item">Youtube</a></li><li class="footer__item"><a href="https://github.com/4D" target="_blank" rel="noopener noreferrer" class="footer__link-item">Github</a></li></ul></div><div class="col footer__col"><div class="footer__title">サポート</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://doc.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">4D Doc Center (旧ドキュメント)</a></li><li class="footer__item"><a href="https://kb.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">ナレッジベース</a></li><li class="footer__item"><a href="https://us.4d.com/product-download/Feature-Release" target="_blank" rel="noopener noreferrer" class="footer__link-item">ダウンロード<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/resources" target="_blank" rel="noopener noreferrer" class="footer__link-item">Resources<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/4d-technical-support" target="_blank" rel="noopener noreferrer" class="footer__link-item">サポートを受ける<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">会社概要</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://us.4d.com/about-us" target="_blank" rel="noopener noreferrer" class="footer__link-item">4D社について<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/contact-us" target="_blank" rel="noopener noreferrer" class="footer__link-item">コンタクト<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/4d-around-the-world" target="_blank" rel="noopener noreferrer" class="footer__link-item">世界中の4D<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/Careers" target="_blank" rel="noopener noreferrer" class="footer__link-item">Careers<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2024 4D SAS - All rights reserved</div></div></div></footer></div>
 </body>
 </html>

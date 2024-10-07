@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">リモートマシンからのデバッグ | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/Debugging/debugging-remote"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="20-R6"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" name="docsearch:version" content="20-R6"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" property="og:title" content="リモートマシンからのデバッグ | 4D Docs"><meta data-rh="true" name="description" content="概要"><meta data-rh="true" property="og:description" content="概要"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/Debugging/debugging-remote"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/Debugging/debugging-remote" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/Debugging/debugging-remote" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/Debugging/debugging-remote" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/Debugging/debugging-remote" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/Debugging/debugging-remote" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/Debugging/debugging-remote" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.53c7a2e3.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -14,7 +14,7 @@
 <p><img decoding="async" loading="lazy" alt="debugger-window-remote" src="/docs/ja/assets/images/debuggerWindowRemote-7031fc37327ed258c4104052ae225c7a.png" width="754" height="511" class="img_ev3q"></p>
 <p>この機能は、4D Server がヘッドレスモード (<a href="/docs/ja/Admin/cli">コマンドラインインターフェース</a> 参照) で実行中、あるいはサーバーマシンへの アクセスが難しい場合などに特に有用です。</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="有効化済デバッガー">有効化済デバッガー<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/Debugging/debugging-remote#有効化済デバッガー">​</a></h2>
-<p>4D Serverアプリケーションのデバッグは、一度に一つのデバッガーのみがおこなえます。 これを <strong>有効化済デバッガー</strong> と呼びます。 有効化済デバッガーには、以下の 2種類あります:</p>
+<p>4D Serverアプリケーションのデバッグは、一度に一つのデバッガーのみがおこなえます。 これを <strong>有効化済デバッガー</strong> と呼びます。 有効化済デバッガーには、以下のものを利用できます:</p>
 <ul>
 <li>ローカルの 4D Serverデバッガー (デフォルト) - サーバーがヘッドレス実行されていない場合</li>
 <li>リモート4Dクライアントのデバッガー - リモートセッションがデザインモードにアクセス可能な場合</li>
@@ -32,7 +32,7 @@
 <li><code>On Server Startup</code> データベースメソッドで実行されたコードはリモートでデバッグすることができません。 これはサーバー側でしかデバッグすることができません。</li>
 <li>デバッガーが有効化されていない場合、実行中のコードがデバッグコマンドによって中断されることはありません。</li>
 </ul>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="デバッガーの有効化">デバッガーの有効  化<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/Debugging/debugging-remote#デバッガーの有効化">​</a></h2>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="デバッガーの有効化">デバッガーの 有効化<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/Debugging/debugging-remote#デバッガーの有効化">​</a></h2>
 <p>インタープリターモードのアプリケーションを起動したとき、デフォルトでは:</p>
 <ul>
 <li>4D Server がヘッドレス実行中でない場合、デバッガーはサーバー側で有効化されています。</li>
@@ -48,7 +48,7 @@
 <li>サーバーに接続されたリモート4Dクライアントから、<strong>実行</strong> ＞ <strong>リモートデバッガを有効化する</strong> を選択します。</li>
 </ol>
 <p>有効化に成功した場合 (<a href="/docs/ja/Debugging/debugging-remote#%E6%9C%89%E5%8A%B9%E5%8C%96%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%81%AE%E6%8B%92%E5%90%A6">有効化リクエストの拒否</a> 参照)、メニューコマンドは <strong>リモートデバッガを無効化する</strong> へと変わります。</p>
-<p>これで、サーバーのデバッガーはリモート4Dクライアントで有効化され、以下のタイミングま で有効化されたままです:</p>
+<p>これで、サーバーのデバッガーはリモート4Dクライアントで有効化され、以下のタイミン グまで有効化されたままです:</p>
 <ul>
 <li>ユーザーセッションが終了するまで</li>
 <li>ユーザーが <code>リモートデバッガを無効化する</code> を選択するまで</li>
@@ -67,7 +67,7 @@
 <li>サーバー側の場合 (ヘッドレスモードでなければ)、このオプションは <strong>デバッガを開始時に有効化する</strong> という名前です。 サーバーが開始されると、自動的にデバッガーが有効化されます (デフォルト):</li>
 </ul>
 <blockquote>
-<p><strong>警告</strong>: のちにヘッドレス モードで起動されるサーバーにおいてこのオプションが選択されたままの場合、このサーバーのデバッガーは利用できません。</p>
+<p><strong>警告</strong>: のちにヘッド レスモードで起動されるサーバーにおいてこのオプションが選択されたままの場合、このサーバーのデバッガーは利用できません。</p>
 </blockquote>
 <ul>
 <li>リモート4Dクライアントでは、このオプションは <strong>リモートデバッガを開始時に有効化する</strong> という名前です。 このオプションが選択されている場合、リモート4Dクライアントは、その後同じ 4D Serverデータベースに接続するたびに、自動的にリモートデバッガーを有効化しようとします。 成功した場合 (<a href="/docs/ja/Debugging/debugging-remote#%E6%9C%89%E5%8A%B9%E5%8C%96%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%81%AE%E6%8B%92%E5%90%A6">有効化リクエストの拒否</a> 参照)、リモートデバッガーは自動的にリモート4Dクライアントで有効化され、メニューコマンドは <strong>リモートデバッガを無効化する</strong> へと変わります。</li>

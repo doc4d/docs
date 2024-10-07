@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Folder | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/pt/next/API/FolderClass"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Folder | 4D Docs"><meta data-rh="true" name="description" content="Os objetos Folder são criados com o comando Folder. Contêm referências a pastas que podem ou não existir efectivamente no disco. Por exemplo, quando executa o comando ’Folderpara criar uma pasta, é criado um objeto válidoFolder mas nada é realmente armazenado no disco até chamar a função folder.create()\`."><meta data-rh="true" property="og:description" content="Os objetos Folder são criados com o comando Folder. Contêm referências a pastas que podem ou não existir efectivamente no disco. Por exemplo, quando executa o comando ’Folderpara criar uma pasta, é criado um objeto válidoFolder mas nada é realmente armazenado no disco até chamar a função folder.create()\`."><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/pt/next/API/FolderClass"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/API/FolderClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/API/FolderClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/API/FolderClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/API/FolderClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/API/FolderClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/API/FolderClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.9d2cac31.css">
-<script src="/docs/pt/assets/js/runtime~main.88efcdcc.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.adfb0032.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.9a77f864.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -108,186 +108,6 @@
 
 
 <table><thead><tr><th></th></tr></thead><tbody><tr><td><a href="/docs/pt/next/API/FolderClass#copyto"><strong>.copyTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } { ; <em>overwrite</em> : Integer } ) : 4D.Folder</a><br>copies the <code>Folder</code> object into the specified <em>destinationFolder</em></td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#create"><strong>.create()</strong> : Boolean</a><br>cria uma pasta no disco de acordo com as propriedades do objeto <code>Folder</code></td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#createalias"><strong>.createAlias</strong>( <em>destinationFolder</em> : 4D.Folder ; <em>aliasName</em> : Text { ; <em>aliasType</em> : Integer } ) : 4D.File</a><br>cria um alias (macOS) ou um atalho (Windows)</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#creationdate"><strong>.creationDate</strong> : Date</a><br>a data de criação da pasta</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#creationtime"><strong>.creationTime</strong> : Time</a><br>o horário de criação da pasta</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#delete"><strong>.delete</strong>( { <em>option</em> : Integer } )</a><br>exclui a pasta</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#exists"><strong>.exists</strong> : Boolean</a><br>true se a pasta existe no disco</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#extension"><strong>.extension</strong> : Text</a><br>retorna a extensão do nome da pasta (se houver)</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#file"><strong>.file</strong>( <em>path</em> : Text ) : 4D.File</a><br>a <code>File</code> object inside the <code>Folder</code> object and returns its reference</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#files"><strong>.files</strong>( { <em>options</em> : Integer } ) : Collection</a><br>a collection of <code>File</code> objects contained in the folder</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#folder"><strong>.folder</strong>( <em>path</em> : Text ) : 4D.Folder</a><br>creates a <code>Folder</code> object inside the parent <code>Folder</code> object and returns its reference</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#folders"><strong>.folders</strong>( { <em>options</em> : Integer } ) : Collection</a><br>returns a collection of <code>Folder</code> objects contained in the parent folder</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#fullname"><strong>.fullName</strong> : Text</a><br>retorna o nome completo da pasta, incluindo sua extensão (se houver)</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#geticon"><strong>.getIcon</strong>( { <em>size</em> : Integer } ) : Picture</a><br>returns the icon of the folder</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#hidden"><strong>.hidden</strong> : Boolean</a><br> true if the folder is set as &quot;hidden&quot; at the system level</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#eof"><strong>.eof</strong> : Boolean</a><br>True is the <code>offset</code> has reached the end of the file, and False otherwise</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#isfile"><strong>.isFile</strong> : Boolean</a><br>sempre <strong>false</strong> para uma pasta</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#isfolder"><strong>.isFolder</strong> : Boolean</a><br>sempre <strong>true</strong> para uma pasta</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#ispackage"><strong>.isPackage</strong> : Boolean</a><br>true if the folder is a package on macOS  (and exists on disk)</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#modificationdate"><strong>.modificationDate</strong> : Date</a><br> the date of the folder&#x27;s last modification</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#modificationtime"><strong>.modificationTime</strong> : Time</a><br>the time of the folder&#x27;s last modification</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#name"><strong>.name</strong> : Text</a><br> the name of the folder, without extension (if any)</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#original"><strong>.original</strong> : 4D.Folder</a><br>the same Folder object as the folder</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#parent"><strong>.parent</strong> : 4D.Folder</a><br>the parent folder object of the folder</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#path"><strong>.path</strong> : Text</a><br>the POSIX path of the folder</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#platformpath"><strong>.platformPath</strong> : Text</a><br>the path of the folder expressed with the current platform syntax</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#moveto"><strong>.moveTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } ) : 4D.Folder</a><br>move ou renomeia o objeto <code>Folder</code> (pasta de origem) para a <em>destinationFolder</em> especificada</td></tr><tr><td><a href="/docs/pt/next/API/FolderClass#rename"><strong>.rename</strong>( <em>newName</em> : Text ) : 4D.Folder</a><br>renomeia a pasta com o nome que você passou em <em>newName</em> e retorna o objeto <code>Folder</code> renomeado</td></tr></tbody></table>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="folder">Folder<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#folder">​</a></h2>
-<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>História</summary><div><div class="collapsibleContent_i85q">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>19 R8</td><td>Suporte de <code>fk home folder</code></td></tr><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
-</div></div></details>
-<p><strong>Folder</strong> ( <em>path</em> : Text { ; <em>pathType</em> : Integer }{ ; * } ) : 4D.Folder<br><strong>Folder</strong> ( <em>folderConstant</em> : Integer { ; * } ) : 4D.Folder</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>Parâmetro</th><th>Tipo</th><th style="text-align:center"></th><th>Descrição</th></tr></thead><tbody><tr><td>path</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Folder path</td></tr><tr><td>folderConstant</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Constante Pasta 4D</td></tr><tr><td>pathType</td><td>Integer</td><td style="text-align:center">-&gt;</td><td><code>fk posix path</code> (padrão) ou <code>fk platform path</code></td></tr><tr><td>-</td><td></td><td style="text-align:center">-&gt;</td><td>* para devolver a pasta da base de dados do anfitrião</td></tr><tr><td>Resultados</td><td>4D. Folder</td><td style="text-align:center">&lt;-</td><td>Novo Objeto Folder</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição">​</a></h4>
-<p>O comando <code>Folder</code> cria e retorna um novo objeto do tipo <code>4D.Folder</code>. O comando aceita duas sintaxes:</p>
-<p><strong>Folder ( path { ; pathType } { ; * } )</strong></p>
-<p>No parâmetro <em>path</em>, passe uma string de rotas de pasta. Você pode usar uma cadeia de caracteres personalizada ou um <a href="/docs/pt/next/Concepts/paths#filesystem-pathnames">sistema de arquivos</a> (por exemplo, &quot;/DATA&quot;).</p>
-<blockquote>
-<p>Apenas são compatíveis com os nomes de caminho absolutos com o comando <code>Folder</code>.</p>
-</blockquote>
-<p>Como padrão, 4D espera um caminho expresso com a sintaxe POSIX. Se trabalhar com pathnames de plataforma (Windows ou macOS), deve declará-lo usando o parâmetro <em>pathType</em>. Estão disponíveis as seguintes constantes:</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>Parâmetros</th><th>Valor</th><th>Comentário</th></tr></thead><tbody><tr><td>fk platform path</td><td>1</td><td>Caminho expresso com uma sintaxe específica da plataforma (obrigatória em caso de caminho de plataforma)</td></tr><tr><td>fk posix path</td><td>0</td><td>Caminho expresso com a sintaxe POSIX (por padrão)</td></tr></tbody></table>
-<p><strong>Folder ( folderConstant { ; * } )</strong></p>
-<p>No parâmetro <em>folderConstant</em>, passe uma pasta 4D incorporada ou de sistema, utilizando uma das seguintes constantes:</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>Parâmetros</th><th>Valor</th><th>Comentário</th></tr></thead><tbody><tr><td>fk applications folder</td><td>116</td><td></td></tr><tr><td>fk data folder</td><td>9</td><td>Sistema de ficheiros associado: &quot;/DATA&quot;</td></tr><tr><td>fk database folder</td><td>4</td><td>Sistema de arquivos associado: &quot;/PACKAGE&quot;</td></tr><tr><td>fk desktop folder</td><td>115</td><td></td></tr><tr><td>fk documents folder</td><td>117</td><td>Pasta de documentos do utilizador</td></tr><tr><td>fk home folder</td><td>118</td><td>Pasta atual do usuário (normalmente <code>/Users/&lt;username&gt;/</code>)</td></tr><tr><td>fk licenses folder</td><td>1</td><td>Pasta contendo os arquivos de licença 4D da máquina</td></tr><tr><td>fk logs folder</td><td>7</td><td>Sistema de arquivos associado: &quot;/LOGS&quot;</td></tr><tr><td>fk mobileApps folder</td><td>10</td><td></td></tr><tr><td>fk remote database folder</td><td>3</td><td>Pasta de base de dados 4D criada em cada máquina 4D remota</td></tr><tr><td>fk resources folder</td><td>6</td><td>Sistema de arquivos associado: &quot;/DATA&quot;</td></tr><tr><td>fk system folder</td><td>100</td><td></td></tr><tr><td>fk user preferences folder</td><td>0</td><td>4D folder that stores user preference files within the <code>&lt;userName&gt;</code> directory.</td></tr><tr><td>fk web root folder</td><td>8</td><td>Pasta raiz atual da Web da base de dados: se estiver dentro do pacote &quot;/PACKAGE/percurso&quot;, caso contrário, caminho completo</td></tr></tbody></table>
-<p>Se o comando for chamado a partir de um componente, passe o parâmetro opcional * para obter o caminho da base de dados anfitriã. Caso contrário, se omitir o parâmetro *, um objeto nulo é sempre devolvido.</p>
-<blockquote>
-<p>No Windows, em clientes mesclados, o local das pastas incorporadas é modificado se a chave <code>ShareLocalResourcesOnWindowsClient</code> <a href="/docs/pt/next/Desktop/building#buildapp4dsettings">BuildApp key</a> for usada.</p>
-</blockquote>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4d-foldernew">4D. Folder.new()<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#4d-foldernew">​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>História</summary><div><div class="collapsibleContent_i85q">
 
@@ -306,7 +126,7 @@
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>18 R6</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>4D.Folder.new</strong> ( <em>path</em> : Text { ; <em>pathType</em> : Integer }{ ; * } ) : 4D.Folder<br><strong>4D.Folder.new</strong> ( <em>folderConstant</em> : Integer { ; * } ) : 4D.Folder</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-1">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-1">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição">​</a></h4>
 <p>A função <code>4D.Folder.new()</code> cria e retorna um novo objeto do tipo <code>4D.Folder</code>. É idêntico ao comando <a href="/docs/pt/next/API/FolderClass#folder"><code>Folder</code></a> (atalho).</p>
 <blockquote>
 <p>Recomenda-se usar o comando de atalho <a href="/docs/pt/next/API/FolderClass#folder"><code>Folder</code></a> em vez de <code>4D.Folder.new()</code>.</p>
@@ -365,7 +185,7 @@
 
 
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th style="text-align:center"></th><th>Descrição</th></tr></thead><tbody><tr><td>destinationFolder</td><td>4D. Folder</td><td style="text-align:center">-&gt;</td><td>Pasta de destino</td></tr><tr><td>newName</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Nome para a copia</td></tr><tr><td>overwrite</td><td>Integer</td><td style="text-align:center">-&gt;</td><td><code>fk overwrite</code> para substituir os elementos existentes</td></tr><tr><td>Resultados</td><td>4D. Folder</td><td style="text-align:center">&lt;-</td><td>Pasta ou arquivo copiado</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-2">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-2">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-1">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-1">​</a></h4>
 <p>The <code>.copyTo()</code> function copies the <code>Folder</code> object into the specified <em>destinationFolder</em>.</p>
 <p>The <em>destinationFolder</em> must exist on disk, otherwise an error is generated.</p>
 <p>Como padrão, a pasta é copiada com o nome da pasta original. If you want to rename the copy, pass the new name in the <em>newName</em> parameter. O novo nome deve cumprir com as regras de nomenclatura (por exemplo, não deve conter caracteres como &quot;:&quot;, &quot;/&quot;, etc.), do contrário se devolve um erro.</p>
@@ -427,7 +247,7 @@
 
 
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th></th><th>Descrição</th></tr></thead><tbody><tr><td>Resultados</td><td>Parâmetros</td><td>&lt;-</td><td>True se a pasta foi criada com sucesso, false caso contrário</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-3">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-3">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-2">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-2">​</a></h4>
 <p>A função <code>.create()</code> cria uma pasta no disco de acordo com as propriedades do objeto <code>Folder</code>.</p>
 <p>Se necessário, a função cria a hierarquia de pastas conforme descrito nas propriedades <a href="/docs/pt/next/API/FolderClass#platformpath">platformPath</a> ou <a href="/docs/pt/next/API/FolderClass#path">path</a>. Se a pasta já existir no disco, a função não faz nada (não é atirado nenhum erro) e retorna falso.</p>
 <p><strong>Valor retornado</strong></p>
@@ -495,7 +315,7 @@
 
 
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th></th><th>Descrição</th></tr></thead><tbody><tr><td>destinationFolder</td><td>4D. Folder</td><td>-&gt;</td><td>Pasta de destino para o pseudónimo ou atalho</td></tr><tr><td>aliasName</td><td>Text</td><td>-&gt;</td><td>Nome do pseudónimo ou atalho</td></tr><tr><td>aliasType</td><td>Integer</td><td>-&gt;</td><td>Tipo de ligação do pseudónimo</td></tr><tr><td>Resultados</td><td>4D. File</td><td>&lt;-</td><td>Alias ou referência de atalho</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-4">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-4">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-3">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-3">​</a></h4>
 <p>A função <code>.createAlias()</code> cria um alias (macOS) ou um atalho (Windows) para a pasta com o nome <em>aliasName</em> especificado na pasta designada pelo objeto <em>destinationFolder</em>.</p>
 <p>Passar o nome do pseudónimo ou atalho para criar no parâmetro <em>aliasName</em>.</p>
 <p>Por padrão em macOS, a função cria um pseudónimo padrão. Também pode criar uma ligação simbólica utilizando o parâmetro <em>aliasType</em>. Estão disponíveis as seguintes constantes:</p>
@@ -544,7 +364,7 @@
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.creationDate</strong> : Date</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-5">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-5">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-4">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-4">​</a></h4>
 <p>A propriedade <code>.creationDate</code> retorna a data de criação da pasta.</p>
 <p>Essa propriedade é <strong>somente leitura</strong>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="creationtime">.creationTime<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#creationtime">​</a></h2>
@@ -565,7 +385,7 @@
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.creationTime</strong> : Time</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-6">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-6">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-5">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-5">​</a></h4>
 <p>A propriedade <code>.creationTime</code> retorna o horário de criação da pasta (expresso como um número de segundos a partir de 00:00).</p>
 <p>Essa propriedade é <strong>somente leitura</strong>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="delete">.delete()<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#delete">​</a></h2>
@@ -604,7 +424,7 @@
 
 
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th></th><th>Descrição</th></tr></thead><tbody><tr><td>option</td><td>Integer</td><td>-&gt;</td><td>Opção de eliminação de pasta</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-7">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-7">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-6">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-6">​</a></h4>
 <p>A função <code>.delete()</code> exclui a pasta.</p>
 <p>Por padrão, por razões de segurança, se omitir o parâmetro de opção, <code>.delete( )</code> só permite a eliminação de pastas vazias. Se quiser que o comando possa apagar pastas que não estejam vazias, deve utilizar o parâmetro de opção com uma das seguintes constantes:</p>
 
@@ -659,7 +479,7 @@
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.exists</strong> : Boolean</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-8">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-8">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-7">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-7">​</a></h4>
 <p>A propriedade <code>.exists</code> retorna true se a pasta existe no disco e false caso contrário.</p>
 <p>Essa propriedade é <strong>somente leitura</strong>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="extension">.extension<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#extension">​</a></h2>
@@ -680,7 +500,7 @@
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.extension</strong> : Text</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-9">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-9">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-8">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-8">​</a></h4>
 <p>A propriedade <code>.extension</code> retorna a extensão do nome da pasta (se houver). Uma extensão sempre começa com &quot;.&quot;. Uma extensão sempre começa com &quot;.&quot; A propriedade devolve uma string vazia se o nome da pasta não tiver extensão.</p>
 <p>Essa propriedade é <strong>somente leitura</strong>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="file">.file()<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#file">​</a></h2>
@@ -725,12 +545,12 @@
 
 
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th></th><th>Descrição</th></tr></thead><tbody><tr><td>path</td><td>Text</td><td>-&gt;</td><td>Rota POSIX relativa</td></tr><tr><td>Resultados</td><td>4D. File</td><td>&lt;-</td><td>Objeto &#x27;File&#x27; (null se caminho inválido)</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-10">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-10">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-9">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-9">​</a></h4>
 <p>The <code>.file()</code> function creates a <code>File</code> object inside the <code>Folder</code> object and returns its reference.</p>
 <p>In <em>path</em>, pass a relative POSIX path to designate the file to return. A rota se avaliará a partir da pasta pai como raíz.</p>
 <p><strong>Valor retornado</strong></p>
 <p>Um objeto <code>File</code> ou null se <em>path</em> for inválido.</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemplo-4">Exemplo<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#exemplo-4">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemplo-4">Exemplo<a class="hash-link" aria-label="Link direto para o cabe çalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#exemplo-4">​</a></h4>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">var $myPDF : 4D. File</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">$myPDF:=Folder(fk documents folder).file(&quot;Pictures/info.pdf&quot;)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código para a área de transferência" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="files">.files()<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#files">​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>História</summary><div><div class="collapsibleContent_i85q">
@@ -774,7 +594,7 @@
 
 
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th></th><th>Descrição</th></tr></thead><tbody><tr><td>options</td><td>Integer</td><td>-&gt;</td><td>Opções da lista de arquivos</td></tr><tr><td>Resultados</td><td>Collection</td><td>&lt;-</td><td>Coleção de objetos de arquivo filho</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-11">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-11">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-10">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-10">​</a></h4>
 <p>The <code>.files()</code> function returns a collection of <code>File</code> objects contained in the folder.</p>
 <blockquote>
 <p>Os apelidos ou links simbolicos não são resolvidos.</p>
@@ -809,7 +629,7 @@
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemplo-2-1">Exemplo 2<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#exemplo-2-1">​</a></h4>
 <p>Se quiser obter todos os arquivos que não são invisíveis na pasta Documents:</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> var $recursive : Collection</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $recursive:=Folder(fk documents folder).files(fk recursive+fk ignore invisible)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código para a área de transferência" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="folder-1">.folder()<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#folder-1">​</a></h2>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="folder">.folder()<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#folder">​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>História</summary><div><div class="collapsibleContent_i85q">
 
 
@@ -851,7 +671,7 @@
 
 
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th></th><th>Descrição</th></tr></thead><tbody><tr><td>path</td><td>Text</td><td>-&gt;</td><td>Rota POSIX relativa</td></tr><tr><td>Resultados</td><td>4D. Folder</td><td>&lt;-</td><td>Objeto pasta criado (null se <em>path</em> for inválida*)</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-12">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-12">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-11">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-11">​</a></h4>
 <p>The <code>.folder()</code> function creates a <code>Folder</code> object inside the parent <code>Folder</code> object and returns its reference.</p>
 <p>Em <em>path</em>, passe uma rota relativa POSIX para designar a pasta a devolver. A rota se avaliará a partir da pasta pai como raíz.</p>
 <p><strong>Valor retornado</strong></p>
@@ -900,7 +720,7 @@
 
 
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th></th><th>Descrição</th></tr></thead><tbody><tr><td>options</td><td>Integer</td><td>-&gt;</td><td>Opções da lista de pasta</td></tr><tr><td>Resultados</td><td>Collection</td><td>&lt;-</td><td>Coleção de objetos de pasta filho</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-13">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-13">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-12">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-12">​</a></h4>
 <p>The <code>.folders()</code> function returns a collection of <code>Folder</code> objects contained in the parent folder.</p>
 <p>By default, if you omit the <em>options</em> parameter, only the folders at the first level of the folder are returned in the collection. You can modify this by passing, in the <em>options</em> parameter, one or more of the following constants:</p>
 
@@ -947,7 +767,7 @@
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.fullName</strong> : Text</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-14">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-14">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-13">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-13">​</a></h4>
 <p>A propriedade <code>.fullName</code> retorna o nome completo da pasta, incluindo sua extensão (se houver).</p>
 <p>Essa propriedade é <strong>somente leitura</strong>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="geticon">.getIcon()<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#geticon">​</a></h2>
@@ -992,7 +812,7 @@
 
 
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th></th><th>Descrição</th></tr></thead><tbody><tr><td>size</td><td>Integer</td><td>-&gt;</td><td>Longitude de lado da imagem devolvida (píxeles)</td></tr><tr><td>Resultados</td><td>Imagem</td><td>&lt;-</td><td>Ícone</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-15">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-15">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-14">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-14">​</a></h4>
 <p>The <code>.getIcon()</code> function returns the icon of the folder.</p>
 <p>The optional <em>size</em> parameter specifies the dimensions in pixels of the returned icon. Este valor representa em realidade a longitude do lado do quadrado que contém o icone. Icones são geralmente definidos como 32x32 píxels (&#x27;icones grandes&#x27;) ou 16x16 (&#x27;icones pequenos&#x27;). Se passar 0 ou omitir este parâmetro, se devolve a versão &#x27;icone grande&#x27;</p>
 <p>Se a pasta não existir no disco, se devolve um icone vazio como padrão.</p>
@@ -1016,7 +836,7 @@
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.hidden</strong> : Boolean</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-16">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-16">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-15">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-15">​</a></h4>
 <p>The <code>.hidden</code> property returns  true if the folder is set as &quot;hidden&quot; at the system level, and false otherwise.</p>
 <p>Essa propriedade é <strong>somente leitura</strong>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="isalias">.isAlias<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#isalias">​</a></h2>
@@ -1037,7 +857,7 @@
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.isAlias</strong> : Boolean</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-17">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-17">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-16">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-16">​</a></h4>
 <p>A propriedade <code>.isAlias</code> retorna sempre <strong>false</strong> para um objeto <code>Folder</code>.</p>
 <p>Essa propriedade é <strong>somente leitura</strong>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="isfile">.isFile<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#isfile">​</a></h2>
@@ -1058,7 +878,7 @@
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.isFile</strong> : Boolean</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-18">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-18">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-17">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-17">​</a></h4>
 <p>A propriedade <code>.isFile</code> retorna sempre <strong>false</strong> para uma pasta.</p>
 <p>Essa propriedade é <strong>somente leitura</strong>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="isfolder">.isFolder<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#isfolder">​</a></h2>
@@ -1079,7 +899,7 @@
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.isFolder</strong> : Boolean</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-19">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-19">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-18">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-18">​</a></h4>
 <p>A propriedade <code>.isFolder</code> retorna sempre <strong>true</strong> para uma pasta.</p>
 <p>Essa propriedade é <strong>somente leitura</strong>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ispackage">.isPackage<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#ispackage">​</a></h2>
@@ -1100,7 +920,7 @@
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.isPackage</strong> : Boolean</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-20">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-20">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-19">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-19">​</a></h4>
 <p>The <code>.isPackage</code> property returns true if the folder is a package on macOS  (and exists on disk). .</p>
 <p>Em Windows, <code>.isPackage</code> sempre devolve <strong>false</strong>.</p>
 <p>Essa propriedade é <strong>somente leitura</strong>.</p>
@@ -1122,7 +942,7 @@
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.modificationDate</strong> : Date</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-21">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-21">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-20">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-20">​</a></h4>
 <p>The <code>.modificationDate</code> property returns  the date of the folder&#x27;s last modification.</p>
 <p>Essa propriedade é <strong>somente leitura</strong>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="modificationtime">.modificationTime<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#modificationtime">​</a></h2>
@@ -1143,7 +963,7 @@
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.modificationTime</strong> : Time</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-22">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-22">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-21">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-21">​</a></h4>
 <p>The <code>.modificationTime</code> property returns the time of the folder&#x27;s last modification (expressed as a number of seconds beginning at 00:00).</p>
 <p>Essa propriedade é <strong>somente leitura</strong>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="moveto">.moveTo()<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#moveto">​</a></h2>
@@ -1194,7 +1014,7 @@
 
 
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th></th><th>Descrição</th></tr></thead><tbody><tr><td>destinationFolder</td><td>4D. Folder</td><td>-&gt;</td><td>Pasta de destino</td></tr><tr><td>newName</td><td>Text</td><td>-&gt;</td><td>Nome completo para a pasta movida</td></tr><tr><td>Resultados</td><td>4D. Folder</td><td>&lt;-</td><td>Pasta movida</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-23">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-23">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-22">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-22">​</a></h4>
 <p>A função <code>.moveTo( )</code> move ou renomeia o objeto <code>Folder</code> (pasta de origem) para a <em>destinationFolder</em> especificada.</p>
 <p>A <em>destinationFolder</em> deve existir em disco, senão um erro é gerado.</p>
 <p>Por padrão, a pasta mantém o seu nome quando movida. Se quiser renomear a pasta movida, passe o novo nome completo no parâmetro <em>newName</em>. O novo nome deve cumprir com as regras de nomenclatura (por exemplo, não deve conter caracteres como &quot;:&quot;, &quot;/&quot;, etc.), do contrário se devolve um erro.</p>
@@ -1221,7 +1041,7 @@
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.name</strong> : Text</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-24">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-24">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-23">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-23">​</a></h4>
 <p>The <code>.name</code> property returns  the name of the folder, without extension (if any).</p>
 <p>Essa propriedade é <strong>somente leitura</strong>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="original">.original<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#original">​</a></h2>
@@ -1242,7 +1062,7 @@
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.original</strong> : 4D.Folder</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-25">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-25">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-24">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-24">​</a></h4>
 <p>The <code>.original</code> property returns the same Folder object as the folder.</p>
 <p>Essa propriedade é <strong>somente leitura</strong>.</p>
 <blockquote>
@@ -1266,7 +1086,7 @@
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.parent</strong> : 4D.Folder</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-26">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-26">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-25">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-25">​</a></h4>
 <p>The <code>.parent</code> property returns the parent folder object of the folder. .</p>
 <p>Se a pasta não tiver um pai (raiz), é devolvido o valor nulo.</p>
 <p>Essa propriedade é <strong>somente leitura</strong>.</p>
@@ -1288,7 +1108,7 @@
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.path</strong> : Text</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-27">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-27">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-26">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-26">​</a></h4>
 <p>The <code>.path</code> property returns the POSIX path of the folder. .</p>
 <p>Essa propriedade é <strong>somente leitura</strong>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="platformpath">.platformPath<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#platformpath">​</a></h2>
@@ -1309,7 +1129,7 @@
 <table><thead><tr><th>Release</th><th>Mudanças</th></tr></thead><tbody><tr><td>17 R5</td><td>Adicionado</td></tr></tbody></table>
 </div></div></details>
 <p><strong>.platformPath</strong> : Text</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-28">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-28">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-27">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-27">​</a></h4>
 <p>The <code>.platformPath</code> property returns the path of the folder expressed with the current platform syntax.</p>
 <p>Essa propriedade é <strong>somente leitura</strong>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="rename">.rename()<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#rename">​</a></h2>
@@ -1354,12 +1174,12 @@
 
 
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th></th><th>Descrição</th></tr></thead><tbody><tr><td>newName</td><td>Text</td><td>-&gt;</td><td>Novo nome completo para a pasta</td></tr><tr><td>Resultados</td><td>4D. Folder</td><td>&lt;-</td><td>Renomeado arquivo</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-29">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-29">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-28">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#descrição-28">​</a></h4>
 <p>A função <code>.rename()</code> renomeia a pasta com o nome que você passou em <em>newName</em> e retorna o objeto <code>Folder</code> renomeado.</p>
 <p>O parâmetro <em>newName</em> deve cumprir as regras de nomeação (por exemplo, não deve conter caracteres como &quot;:&quot;, &quot;/&quot;, etc.), caso contrário é devolvido um erro. Se já existir um ficheiro com o mesmo nome, é devolvido um erro.</p>
 <p><strong>Objeto devolvido</strong></p>
 <p>O objeto <code>Folder</code> renomeado.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemplo-8">Exemplo<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/API/FolderClass#exemplo-8">​</a></h4>
-<div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> var $toRename : 4D. Folder</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $toRename:=Folder(&quot;/RESOURCES/Pictures&quot;).rename(&quot;Images&quot;)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código para a área de transferência" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/4d/docs/issues/new?title=Comment%20on%20API%2FFolderClass.md%20(current)&amp;body=Please%20enter%20your%20comment%3A" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Comentar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Navegação nas páginas dos documentos"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/pt/next/API/FileHandleClass"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">FileHandle</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/pt/next/API/FunctionClass"><div class="pagination-nav__sublabel">Próximo</div><div class="pagination-nav__label">Function</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#exemplo">Exemplo</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#pathnames">Pathnames</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#objecto-folder">Objecto Folder</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#folder">Folder</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#4d-foldernew">4D. Folder.new()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#copyto">.copyTo()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#create">.create()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#createalias">.createAlias()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#creationdate">.creationDate</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#creationtime">.creationTime</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#delete">.delete()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#exists">.exists</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#extension">.extension</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#file">.file()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#files">.files()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#folder-1">.folder()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#folders">.folders()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#fullname">.fullName</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#geticon">.getIcon()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#hidden">.hidden</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#isalias">.isAlias</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#isfile">.isFile</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#isfolder">.isFolder</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#ispackage">.isPackage</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#modificationdate">.modificationDate</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#modificationtime">.modificationTime</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#moveto">.moveTo()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#name">.name</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#original">.original</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#parent">.parent</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#path">.path</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#platformpath">.platformPath</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#rename">.rename()</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Comunidade</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://developer.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">Centro de desenvolvimento 4D</a></li><li class="footer__item"><a href="https://blog.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">4D Blog</a></li><li class="footer__item"><a href="https://discuss.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">4D Forum</a></li><li class="footer__item"><a href="https://facebook.com/4Dsoftware" target="_blank" rel="noopener noreferrer" class="footer__link-item">Facebook</a></li><li class="footer__item"><a href="https://twitter.com/4Dsoftware" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter</a></li><li class="footer__item"><a href="https://youtube.com/user/4Dsoftware" target="_blank" rel="noopener noreferrer" class="footer__link-item">Youtube</a></li><li class="footer__item"><a href="https://github.com/4D" target="_blank" rel="noopener noreferrer" class="footer__link-item">Github</a></li></ul></div><div class="col footer__col"><div class="footer__title">Suporte</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://doc.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">4D Doc Center (Onde tudo começou)</a></li><li class="footer__item"><a href="https://kb.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">Base de conhecimento</a></li><li class="footer__item"><a href="https://us.4d.com/product-download/Feature-Release" target="_blank" rel="noopener noreferrer" class="footer__link-item">Baixares<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/resources" target="_blank" rel="noopener noreferrer" class="footer__link-item">Resources<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/4d-technical-support" target="_blank" rel="noopener noreferrer" class="footer__link-item">Obter suporte<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">Empresa</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://us.4d.com/about-us" target="_blank" rel="noopener noreferrer" class="footer__link-item">Sobre 4D<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/contact-us" target="_blank" rel="noopener noreferrer" class="footer__link-item">Contactar-nos<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/4d-around-the-world" target="_blank" rel="noopener noreferrer" class="footer__link-item">4D no mundo<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/Careers" target="_blank" rel="noopener noreferrer" class="footer__link-item">Careers<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2024 4D SAS - Todos os direitos reservados</div></div></div></footer></div>
+<div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> var $toRename : 4D. Folder</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> $toRename:=Folder(&quot;/RESOURCES/Pictures&quot;).rename(&quot;Images&quot;)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copiar código para a área de transferência" title="Copiar" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/4d/docs/issues/new?title=Comment%20on%20API%2FFolderClass.md%20(current)&amp;body=Please%20enter%20your%20comment%3A" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Comentar esta página</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Navegação nas páginas dos documentos"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/pt/next/API/FileHandleClass"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">FileHandle</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/pt/next/API/FunctionClass"><div class="pagination-nav__sublabel">Próximo</div><div class="pagination-nav__label">Function</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#exemplo">Exemplo</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#pathnames">Pathnames</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#objecto-folder">Objecto Folder</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#4d-foldernew">4D. Folder.new()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#copyto">.copyTo()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#create">.create()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#createalias">.createAlias()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#creationdate">.creationDate</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#creationtime">.creationTime</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#delete">.delete()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#exists">.exists</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#extension">.extension</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#file">.file()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#files">.files()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#folder">.folder()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#folders">.folders()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#fullname">.fullName</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#geticon">.getIcon()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#hidden">.hidden</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#isalias">.isAlias</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#isfile">.isFile</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#isfolder">.isFolder</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#ispackage">.isPackage</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#modificationdate">.modificationDate</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#modificationtime">.modificationTime</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#moveto">.moveTo()</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#name">.name</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#original">.original</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#parent">.parent</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#path">.path</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#platformpath">.platformPath</a></li><li><a class="table-of-contents__link toc-highlight" href="/docs/pt/next/API/FolderClass#rename">.rename()</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Comunidade</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://developer.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">Centro de desenvolvimento 4D</a></li><li class="footer__item"><a href="https://blog.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">4D Blog</a></li><li class="footer__item"><a href="https://discuss.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">4D Forum</a></li><li class="footer__item"><a href="https://facebook.com/4Dsoftware" target="_blank" rel="noopener noreferrer" class="footer__link-item">Facebook</a></li><li class="footer__item"><a href="https://twitter.com/4Dsoftware" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter</a></li><li class="footer__item"><a href="https://youtube.com/user/4Dsoftware" target="_blank" rel="noopener noreferrer" class="footer__link-item">Youtube</a></li><li class="footer__item"><a href="https://github.com/4D" target="_blank" rel="noopener noreferrer" class="footer__link-item">Github</a></li></ul></div><div class="col footer__col"><div class="footer__title">Suporte</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://doc.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">4D Doc Center (Onde tudo começou)</a></li><li class="footer__item"><a href="https://kb.4d.com" target="_blank" rel="noopener noreferrer" class="footer__link-item">Base de conhecimento</a></li><li class="footer__item"><a href="https://us.4d.com/product-download/Feature-Release" target="_blank" rel="noopener noreferrer" class="footer__link-item">Baixares<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/resources" target="_blank" rel="noopener noreferrer" class="footer__link-item">Resources<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/4d-technical-support" target="_blank" rel="noopener noreferrer" class="footer__link-item">Obter suporte<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">Empresa</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://us.4d.com/about-us" target="_blank" rel="noopener noreferrer" class="footer__link-item">Sobre 4D<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/contact-us" target="_blank" rel="noopener noreferrer" class="footer__link-item">Contactar-nos<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/4d-around-the-world" target="_blank" rel="noopener noreferrer" class="footer__link-item">4D no mundo<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://us.4d.com/Careers" target="_blank" rel="noopener noreferrer" class="footer__link-item">Careers<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2024 4D SAS - Todos os direitos reservados</div></div></div></footer></div>
 </body>
 </html>
