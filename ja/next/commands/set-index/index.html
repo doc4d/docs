@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">SET INDEX | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/set-index"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="SET INDEX | 4D Docs"><meta data-rh="true" name="description" content="SET INDEX ( aField ; index {; *} )"><meta data-rh="true" property="og:description" content="SET INDEX ( aField ; index {; *} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/set-index"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/set-index" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/set-index" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/set-index" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/set-index" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/set-index" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/set-index" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -38,7 +38,7 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>aField</td><td>フィールド</td><td>🡒</td><td>インデックスを作成または削除するフィールド</td></tr><tr><td>index</td><td>ブール, 整数</td><td>🡒</td><td>True=作成、False=削除、または インデックスを作成: -1=キーワード、 0=デフォルト、1=標準B-Tree、3=クラスタB-Tree</td></tr><tr><td>*</td><td>🡒</td><td>*を渡すと非同期にインデックスを作成</td><td></td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>aField</td><td>Field</td><td>🡒</td><td>インデックスを作成または削除するフィールド</td></tr><tr><td>index</td><td>Boolean, Integer</td><td>🡒</td><td>True=作成、False=削除、または インデックスを作成: -1=キーワード、 0=デフォルト、1=標準B-Tree、3=クラスタB-Tree</td></tr><tr><td>*</td><td>🡒</td><td>*を渡すと非同期にインデックスを作成</td><td></td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="互換性に関する注意">互換性に関する注意<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/set-index#互換性に関する注意">​</a></h4>
 <p><strong>SET INDEX</strong> は旧式のコマンドではありますが、これは完全にサポートされており、既存のコードを書き換えることなくアプリケーション内で維持してよいコマンドです。しかしながら、インデックスを管理するためには<a href="/docs/ja/next/commands/create-index">CREATE INDEX</a> および <a href="/docs/ja/next/commands/delete-index">DELETE INDEX</a> コマンドを使用した方が、より多くの機能が提供されるため、推奨されています。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/set-index#説明">​</a></h4>
@@ -51,7 +51,7 @@
 フィールドをインデックスするには、<em>index</em>にTrueを渡します。コマンドはデフォルトタイプのインデックスを作成します。インデックスが既に存在する場合、呼び出しは機能しません。<br>
 <em>index</em>にFalesを渡すと、コマンドはフィールドに関連づけられたすべての標準インデックス (非複合、非キーワード) を削除します。インデックスが存在しない場合、呼び出しは機能しません。</p>
 <p><strong>index = 整数</strong><br>
-コマンドは<em>aField</em>に対して指定されたインデックスを作成します。<em>Index Type</em> テーマにある以下の定数のい ずれか1つを渡します。</p>
+コマンドは<em>aField</em>に対して指定されたインデックスを作成します。<em>Index Type</em> テーマにある以下の定数のいずれか1  つを渡します。</p>
 
 
 
@@ -90,7 +90,7 @@
 <table><thead><tr><th>定数</th><th>型</th><th>値</th><th>コメント</th></tr></thead><tbody><tr><td>Cluster BTree Index</td><td>倍長整数</td><td>3</td><td>クラスタを使用するB-Treeタイプのインデックス。このインデックスタイプは、インデックスが少数のキーを持つ場合、つまり同じ値がデータ内で頻繁に生じる場合に最も適しています。</td></tr><tr><td>Default Index Type</td><td>倍長整数</td><td>0</td><td>4Dはフィールドに応じて最適なインデックスのタイプを設定します (キーワードインデックスを除く) 。</td></tr><tr><td>Keywords Index</td><td>倍長整数</td><td>-1</td><td>キーワードタイプのインデックス。キーワードを複合タイプにすることはできません。<em>fieldsArray</em>配列にはひとつだけフィールドを渡します。</td></tr><tr><td>Standard BTree Index</td><td>倍長整数</td><td>1</td><td>標準 B-Treeタイプのインデックス。この多目的用のインデックスタイプは4Dの以前のバージョンで使用されています。</td></tr></tbody></table>
 <p><strong>注:</strong> テキスト型のフィールドに設定されたBツリーインデックスは最大で最初の1024文字をインデックス化します。この場合、1024文字以上を含む文字列の検索結果は正しくなりません。</p>
 <p><strong>SET INDEX</strong> コマンドはロックされたレコードのインデックス付けは行いません。レコードがロック解除されるまで待機します。</p>
-<p>オプション引数***を用いて、非同期に（同時に）インデックスが付けられるようになりました。非同期なインデックス付けにより、インデックス付けが終了したかどうかに関係なく、呼び出し側のメソッドの実行をそのまま続行できます。ただし、インデックスが必要なコマンドを実行すると失敗します。</p>
+<p>オプション引数***を用いて、非同期に（同時に）インデックスが付けられるようになりました。非同期なインデックス付けにより、インデックス付けが終了したかどうかに関係なく、呼び出し側のメソッドの実行をそのまま続行できます。ただし、インデックスが必要な コマンドを実行すると失敗します。</p>
 <p><strong>注</strong>:</p>
 <ul>
 <li>このコマンドで作成されたインデックスには名前がありません。名前に基づくシンタックスを用いている<a href="/docs/ja/next/commands/delete-index">DELETE INDEX</a> コマンドでそれらのインデックスを削除することはできません。</li>

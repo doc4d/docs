@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">ON ERR CALL | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/on-err-call"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="ON ERR CALL | 4D Docs"><meta data-rh="true" name="description" content="ON ERR CALL ( errorMethod {; scope} )"><meta data-rh="true" property="og:description" content="ON ERR CALL ( errorMethod {; scope} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/on-err-call"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/on-err-call" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/on-err-call" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/on-err-call" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/on-err-call" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/on-err-call" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/on-err-call" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -32,10 +32,10 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>errorMethod</td><td>文字</td><td>🡒</td><td>実行されるエラーメソッド, または 空の文字列でエラーのトラップ停止</td></tr><tr><td>scope</td><td>整数</td><td>🡒</td><td>エラーメソッドのスコープ</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>errorMethod</td><td>Text</td><td>🡒</td><td>実行されるエラーメソッド, または 空の文字列でエラーのトラップ停止</td></tr><tr><td>scope</td><td>Integer</td><td>🡒</td><td>エラーメソッドのスコープ</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/on-err-call#説明">​</a></h4>
 <p><strong>ON ERR CALL</strong> コマンドは、カレントプロジェクト内の指定された実行コンテキストにおけるエラー検知用のメソッドとして errorMethod で渡した名前のプロジェクトメソッドをインストールします。このプロジェクトメソッドは<strong>エラー処理メソッド</strong>または<strong>エラーキャッチメソッド</strong>と呼ばれます。</p>
-<p>エラー処理メソッドはプロジェクトごとにインストールされます。コンポーネントとホストのプロジェクトはそれぞれ独自のエラー処理メソッドを定義することができ、エラーが発生したプロジェクトのメソッドのみが呼び出されます。</p>
+<p>エラ ー処理メソッドはプロジェクトごとにインストールされます。コンポーネントとホストのプロジェクトはそれぞれ独自のエラー処理メソッドを定義することができ、エラーが発生したプロジェクトのメソッドのみが呼び出されます。</p>
 <p>エラー処理プロジェクトメソッドのインストール後は、定義された実行コンテキスト内において4D ランゲージコマンドの実行中にエラーが発生するたびに4D がこのメソッドを呼び出します。</p>
 <p>コマンドの<em>scope</em> 引数は、エラーがerrorMethod 引数で指定したメソッドの呼び出しをトリガーする実行コンテキストを指定します。デフォルトでは、引数が省略されていた場合にはコマンドのスコープはローカルの実行コンテキスト、つまりカレントプロセスです。<em>scope</em> 引数には、以下の定数のいづれか1つを渡すことができます:</p>
 

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">LISTBOX SELECT ROW | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/listbox-select-row"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="LISTBOX SELECT ROW | 4D Docs"><meta data-rh="true" name="description" content="LISTBOX SELECT ROW ( { ;} object ; rowPosition {; action*} )"><meta data-rh="true" property="og:description" content="LISTBOX SELECT ROW ( { ;} object ; rowPosition {; action*} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/listbox-select-row"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/listbox-select-row" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/listbox-select-row" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/listbox-select-row" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/listbox-select-row" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/listbox-select-row" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/listbox-select-row" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -44,10 +44,10 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>*</td><td>演算子</td><td>🡒</td><td>指定時, objectはオブジェクト名 (文字列) 省略時, objectは変数</td></tr><tr><td>object</td><td>フォームオブジェクト</td><td>🡒</td><td>オブジェクト名 (* 指定時) または 変数 (* 省略時)</td></tr><tr><td>rowPosition</td><td>倍長整数</td><td>🡒</td><td>選択する行番号</td></tr><tr><td>action</td><td>倍長整数</td><td>🡒</td><td>選択アクション</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>*</td><td>演算子</td><td>🡒</td><td>指定時, objectはオブジェクト名 (文字列) 省略時, objectは変数</td></tr><tr><td>object</td><td>any</td><td>🡒</td><td>オブジェクト名 (* 指定時) または 変数 (* 省略時)</td></tr><tr><td>rowPosition</td><td>Integer</td><td>🡒</td><td>選択する行番号</td></tr><tr><td>action</td><td>Integer</td><td>🡒</td><td>選択アクション</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/listbox-select-row#説明">​</a></h4>
 <p><strong>LISTBOX SELECT ROW</strong> コマンドは、 <em>object</em> 引数および <em>*</em> で指定されたリストボックス内において、<em>position</em> に渡した番号の行を選択します。</p>
-<p>オプションの引数 <em>*</em> を渡すことにより、<em>object</em> 引数がオブジェクト名（文字列）で  あることを示します。この引数を渡さない場合、<em>object</em> 引数が変数であることを示します。この場合、文字列ではなく変数参照を指定します。オブジェクト名についての詳細は<em>オブジェクトプロパティ</em>を参照してください。</p>
+<p>オプションの引数 <em>*</em> を渡すことにより、<em>object</em> 引数がオブジェクト名（文字列）であることを示します。この引数を渡さない場合、<em>object</em> 引数が変数であることを示します。この場合、文字列ではなく変数参照を指定します。オブジェクト名についての詳細は<em>オブジェクトプロパティ</em>を参照してください。</p>
 <p>オプション引数<em>action</em> を指定すると、行の選択がリストボックス内に既に存在している場合に実行する選択アクションを指定できます。この引数には値または次の定数のいずれかを渡すことができます（<em>List Box</em> テーマ）:</p>
 
 
@@ -82,7 +82,7 @@
 <p><em>position</em> 引数が既存の行番号と一致しない時、コマンドは以下のように動作します:</p>
 <ul>
 <li><em>position</em> が０より小さい場合、<em>action</em> の値に関係なく、何もしません。</li>
-<li><em>position</em> が０かつ、<em>action</em> の値がlk replace selection または省略された場合、リストボックスのすべての行が選  択されます。<em>action</em> の値がlk remove from selection の場合、リストボックスのすべての行の選択が解除されます。</li>
+<li><em>position</em> が０かつ、<em>action</em> の値がlk replace selection または省略された場合、リストボックスのすべての行が選択されます。<em>action</em> の値 がlk remove from selection の場合、リストボックスのすべての行の選択が解除されます。</li>
 <li><em>position</em> がリストボックスに含まれるすべての行数より大きい場合 (配列タイプのリストボックスの場合のみ)、リストボックスと関連づけられているブール配列が自動的にリサイズされ、選択アクションが行われます。このメカニズムは、<strong>LISTBOX SELECT ROW</strong> を、リストボックスで即座の同期を起こさない&quot;標準&quot;の配列管理コマンド (<a href="/docs/ja/next/commands/append-to-array">APPEND TO ARRAY</a> など) とともに使用できることを意味します。</li>
 </ul>
 <p>メソッドの実行後、配列は同期されます。リストボックスのソース配列が実際にリサイズされたならば、選択アクションは実行されます。そうでなければリストボックスと関連づけられたブールの配列はその初期のサイズに戻り、コマンドは何もしません。</p>
@@ -91,7 +91,7 @@
 <li>選択した列をリストボックスに表示するために、自動でスクロールしたい場合、<a href="/docs/ja/next/commands/object-set-scroll-position">OBJECT SET SCROLL POSITION</a> コマンドを使います。</li>
 <li>列を編集モードに切り換えるには、<a href="/docs/ja/next/commands/edit-item">EDIT ITEM</a>コマンドを使います。</li>
 <li><em>position</em> に渡された数値が、リストボックス中で非表示の行に該当する場合、行は選択されますが表示されません。</li>
-<li>リストボックスに対して<strong>セレクションハイライトを非表示にする</strong>オプションをチェックしていた場合、利用可能なインターフェースオプションを使用してリストボックスセレクションを可視化していおく必要があります。これ  のやり方についての詳細な情報については、<em>選択行の見た目をカスタマイズ</em> を参照してください。</li>
+<li>リストボックスに対して<strong>セレクションハイライトを非表示にする</strong>オプションをチェックしていた場合、利用可能なインターフェースオプションを使用してリストボックスセレクションを可視化していおく必要があります。これのやり方についての詳細な情報については、<em>選択行の見た目をカスタマイズ</em> を参照してください。</li>
 </ul>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="参照">参照<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/listbox-select-row#参照">​</a></h4>
 <p><a href="/docs/ja/next/commands/edit-item">EDIT ITEM</a><br>

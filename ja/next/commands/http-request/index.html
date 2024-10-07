@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">HTTP Request | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/http-request"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="HTTP Request | 4D Docs"><meta data-rh="true" name="description" content="HTTP Request ( httpMethod ; url ; contents ; response {; headerNames ; headerValues}{; *} ) -&gt; 戻り値"><meta data-rh="true" property="og:description" content="HTTP Request ( httpMethod ; url ; contents ; response {; headerNames ; headerValues}{; *} ) -&gt; 戻り値"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/http-request"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/http-request" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/http-request" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/http-request" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/http-request" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/http-request" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/http-request" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -80,7 +80,7 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>httpMethod</td><td>テキスト</td><td>🡒</td><td>リクエストで使用するHTTPメソッド</td></tr><tr><td>url</td><td>テキスト</td><td>🡒</td><td>リクエストの送信先URL</td></tr><tr><td>contents</td><td>テキスト, BLOB, ピクチャー, オブジェクト</td><td>🡒</td><td>リクエストボディの内容</td></tr><tr><td>response</td><td>テキスト, BLOB, ピクチャー, オブジェクト</td><td>🡘</td><td>レスポンスの内容</td></tr><tr><td>headerNames</td><td>テキスト配列</td><td>🡒</td><td>リクエストのヘッダー名</td></tr><tr><td>🡘</td><td>返されたヘッダー名</td><td></td><td></td></tr><tr><td>headerValues</td><td>テキスト配列</td><td>🡒</td><td>リクエストのヘッダー値</td></tr><tr><td>🡘</td><td>返されたヘッダー値</td><td></td><td></td></tr><tr><td>*</td><td>演算子</td><td>🡒</td><td>指定時: 接続を保持する (keep-alive)省略時: 自動で接続を閉じる</td></tr><tr><td>戻り値</td><td>倍長整数</td><td>🡐</td><td>HTTPステータスコード</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>httpMethod</td><td>Text</td><td>🡒</td><td>リクエストで使用するHTTPメソッド</td></tr><tr><td>url</td><td>Text</td><td>🡒</td><td>リクエストの送信先URL</td></tr><tr><td>contents</td><td>Text, Blob, Picture, Object</td><td>🡒</td><td>リクエストボディの内容</td></tr><tr><td>response</td><td>Text, Blob, Picture, Object</td><td>🡘</td><td>レスポンスの内容</td></tr><tr><td>headerNames</td><td>Text array</td><td>🡒</td><td>リクエストのヘッダー名</td></tr><tr><td>🡘</td><td>返されたヘッダー名</td><td></td><td></td></tr><tr><td>headerValues</td><td>Text array</td><td>🡒</td><td>リクエストのヘッダー値</td></tr><tr><td>🡘</td><td>返されたヘッダー値</td><td></td><td></td></tr><tr><td>*</td><td>演算子</td><td>🡒</td><td>指定時: 接続を保持する (keep-alive)省略時: 自動で接続を閉じる</td></tr><tr><td>戻り値</td><td>Integer</td><td>🡐</td><td>HTTPステータスコード</td></tr></tbody></table>
 <h4></h4>
 <p><strong>HTTP Request</strong>コマンドは指定したURLに任意のメソッドでHTTPリクエストを送信し、HTTPサーバーのレスポンスを処理することを可能にします。</p>
 <p><em>httpMethod</em> 引数にはHTTPリクエストのメソッドを渡します。<em>HTTP Client</em>テーマの以下の定数を使用できます:</p>
@@ -145,7 +145,7 @@
 <p>(*) HTTPSリクエストを行う場合でも、証明書の発行局は検証されません。<br>
 (**) IPv6 アドレスをURLに使用する場合についての詳細は <a href="https://www.ietf.org/rfc/rfc2732.txt" target="_blank" rel="noopener noreferrer">RFC 2732</a> を参照ください。</p>
 <p><em>contents</em> 引数にはリクエストのボディを渡します。この引数に渡されるデータはリクエストのHTTPメソッドにより異なります。<br>
-テキストやBLOB、ピクチャー、オブジェクトデータを送信できます。<em>content-type</em> が指定されない場合、以下のタ  イプが使用されます:</p>
+テキストやBLOB、ピクチャー、オブジェクトデータを送信できます。<em>content-type</em> が指定されない場合、以下のタイプが使用されます:</p>
 <ul>
 <li>テキスト: text/plain - UTF8</li>
 <li>BLOB: application/byte-stream</li>
@@ -161,7 +161,7 @@
 <li>オブジェクト: 期待される結果がオブジェクトの場合。</li>
 </ul>
 <p><strong>注:</strong> <em>response</em> 引数にテキスト変数が渡された場合、4Dはサーバーから返されたデータを解読しようとします。4Dはまず<em>content-type</em> ヘッダーから文字セットを取得しようとし、次にBOMの中身を使用し、最後は<em>http-equiv charset</em> (html コンテンツ内) あるいは <em>encoding</em> (xml用) 属性を探します。それでも文字セットが見つからない場合、4DはレスポンスをANSIで解読しようとします。変換が失敗した場合、返されるテキストは空になります。サーバーが文字セット情報あるいはBOMを返すかどうかが分からない一方エンコーディング情報を知っている場合には、BLOBに<em>response</em>変数を渡して<a href="/docs/ja/next/commands/convert-to-text">Convert to text</a>を呼び出す方が正確です。</p>
-<p>オブジェクト型の変数を <em>response</em> 引数に渡したとき、リクエストが テキストコンテンツ型と結果を返してきた場合、4D はコンテンツをJSONとして解析しようとし、解析された結果をオブジェク トとして返します。そうでない場合<em>4D.Blob</em> オブジェクトが返されます。</p>
+<p>オブジェクト型の変数を <em>response</em> 引数に渡したとき、リクエストが テキストコンテンツ型と結果を返してきた場合、4D はコンテンツをJSONとして解析しようとし、解析された結果をオブジェクトとして返します。そうでない場合<em>4D.Blob</em> オブジェクトが返され ます。</p>
 <p>サーバーから返された結果が<em>response</em>の変数型に対応しない場合、変数は空のままです。</p>
 <p><em>headerNames</em> と <em>headerValues</em>にはリクエストヘッダーの名前と値をそれぞれ格納した配列を渡します。<br>
 このコマンド実行後、これらの配列にはHTTPサーバーから返されたレスポンスのヘッダー情報で置き換えられます。これにより特にCookieを管理できます。</p>

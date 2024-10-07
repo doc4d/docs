@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">BLOB TO PICTURE | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/blob-to-picture"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="BLOB TO PICTURE | 4D Docs"><meta data-rh="true" name="description" content="BLOB TO PICTURE ( pictureBlob ; picture {; codec} )"><meta data-rh="true" property="og:description" content="BLOB TO PICTURE ( pictureBlob ; picture {; codec} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/blob-to-picture"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/blob-to-picture" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/blob-to-picture" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/blob-to-picture" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/blob-to-picture" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/blob-to-picture" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/blob-to-picture" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -38,17 +38,17 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>pictureBlob</td><td>BLOB</td><td>🡒</td><td>ピクチャを格納したBLOB</td></tr><tr><td>picture</td><td>ピクチャー</td><td>🡘</td><td>BLOBから取り出したピクチャ</td></tr><tr><td>codec</td><td>文字</td><td>🡒</td><td>ピクチャcodec ID</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>pictureBlob</td><td>Blob</td><td>🡒</td><td>ピクチャを格納したBLOB</td></tr><tr><td>picture</td><td>Picture</td><td>🡘</td><td>BLOBから取り出したピクチャ</td></tr><tr><td>codec</td><td>Text</td><td>🡒</td><td>ピクチャcodec ID</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/blob-to-picture#説明">​</a></h4>
 <p>BLOB TO PICTURE コマンドは、元のフォーマットに関わらず、BLOBに格納されたピクチャを4Dのピクチャ変数やフィールドに挿入します。</p>
-<p>このコマンドは <a href="/docs/ja/next/commands/read-picture-file">READ PICTURE FILE</a>コマンドと同様ですが、ファイルではなくBLOBに対して適用されます。このコマンドを使用すると、ネイティブのフォーマットでBLOBに保存されているピクチャを表示することができます。ピクチャのBLOBへのロードは、例えば <a href="/docs/ja/next/commands/document-to-blob">DOCUMENT TO BLOB</a> あるいは <a href="/docs/ja/next/commands/picture-to-blob">PICTURE TO BLOB</a> コマンドを使用して行うことができます。</p>
+<p>このコマンドは <a href="/docs/ja/next/commands/read-picture-file">READ PICTURE FILE</a>コ マンドと同様ですが、ファイルではなくBLOBに対して適用されます。このコマンドを使用すると、ネイティブのフォーマットでBLOBに保存されているピクチャを表示することができます。ピクチャのBLOBへのロードは、例えば <a href="/docs/ja/next/commands/document-to-blob">DOCUMENT TO BLOB</a> あるいは <a href="/docs/ja/next/commands/picture-to-blob">PICTURE TO BLOB</a> コマンドを使用して行うことができます。</p>
 <p><em>pictureBlob</em>引数には、ピクチャを納めたBLOBタイプの変数やフィールドを渡します。このピクチャのフォーマットは4Dがネイティブにサポートされるものであればいずれの形式でも構いません。 <a href="/docs/ja/next/commands/picture-codec-list">PICTURE CODEC LIST</a> コマンドを使用すると、使用可能なフォーマットのリストを取得できます。任意の<em>codec</em> 引数を渡すと、4Dはこの引数で指定された値を使用してBLOBをデコードします (この3番目の引数を使用した特別な機能については後述の説明を参照)。</p>
 <p><em>picture</em> 引数にはピクチャを表示する4Dピクチャフィールドまたは変数を渡します。</p>
 <p><strong>注:</strong> 内部的なピクチャフォーマットは4Dの変数やフィールドに格納されます。</p>
 <p>コマンドが実行され、BLOBが正しくデコードされると、<em>picture</em> 引数には表示するピクチャが返されます。</p>
 <p>オプションの<em>codec</em> 引数を使用して、BLOBのデコード方法を指定できます。</p>
 <p><em>codec</em>に4Dが認識する (<a title="PICTURE CODEC LIST" href="/docs/ja/next/commands/picture-codec-list">PICTURE CODEC LIST</a> コマンドから返される) codecを渡すと、それはBLOBとピクチャフィールドや変数に返されるピクチャに適用されます。</p>
-<p><em>codec</em>に4Dが認  識できないcodecを渡すと、新しいcodecが動的に引数に渡したIDで記録されます。そして4DはBLOBをカプセル化したピクチャを返し、OK変数に1を設定します。この場合BLOBを取り出すには、同じカスタムIDを使用して<a title="PICTURE TO BLOB" href="/docs/ja/next/commands/picture-to-blob">PICTURE TO BLOB</a> コマンドを使用します。この特別なメカニズムは以下のような2つの特定のニーズで使用できます*:*</p>
+<p><em>codec</em>に4Dが認識でき  ないcodecを渡すと、新しいcodecが動的に引数に渡したIDで記録されます。そして4DはBLOBをカプセル化したピクチャを返し、OK変数に1を設定します。この場合BLOBを取り出すには、同じカスタムIDを使用して<a title="PICTURE TO BLOB" href="/docs/ja/next/commands/picture-to-blob">PICTURE TO BLOB</a> コマンドを使用します。この特別なメカニズムは以下のような2つの特定のニーズで使用できます*:*</p>
 <ul>
 <li>ピクチャでないBLOBをカプセル化してピクチャに格納する</li>
 <li>codecを使用せずにピクチャをロードする</li>
@@ -56,7 +56,7 @@
 <p>こ れらのメカニズムの実装は特に、ピクチャ配列を使用したBLOB配列の作成を可能にします。配列は全体がメモリにロードされるため、このメカニズムは注意 して使用されなければなりません。大きなサイズのBLOBで作業を行うと、アプリケーションの動作に影響を与えることがあります。</p>
 <p><strong>Note:</strong> <a href="/docs/ja/next/commands/variable-to-blob">VARIABLE TO BLOB</a> コマンドで作成されたBLOBは自動で管理されます。BLOBは署名されるため、カプセル化するためにcodecを渡す必要はありません。この場合、反対の操作にはcodec IDとして&quot;.4DVarBlob&quot;を <a href="/docs/ja/next/commands/picture-to-blob">PICTURE TO BLOB</a> コマンドに渡します。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="システム変数およびセット">システム変数およびセット<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/blob-to-picture#システム変数およびセット">​</a></h4>
-<p>コマンドが正しく実行されるとシステム変数OKは1に設定されます。変換に失敗 (QuickTimeがインストールされていない、Blobに読み取り可能なピクチャ が格納されていない、codec引数を認識できたがBlobが有効でないなど) した場合、OKは0に設定され、4Dのピクチャ変数やフィールドは空になります。</p>
+<p>コマンドが正しく実行されるとシステム変数OKは1に設定されます。変換に失敗 (QuickTimeがインストールされていない、Blobに読み取り可能なピクチャが格納 されていない、codec引数を認識できたがBlobが有効でないなど) した場合、OKは0に設定され、4Dのピクチャ変数やフィールドは空になります。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="参照">参照<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/blob-to-picture#参照">​</a></h4>
 <p><a href="/docs/ja/next/commands/picture-codec-list">PICTURE CODEC LIST</a><br>
 <a href="/docs/ja/next/commands/picture-to-blob">PICTURE TO BLOB</a><br>

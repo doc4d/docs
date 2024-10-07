@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">LOAD RECORD | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/load-record"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="LOAD RECORD | 4D Docs"><meta data-rh="true" name="description" content="LOAD RECORD {( aTable )}"><meta data-rh="true" property="og:description" content="LOAD RECORD {( aTable )}"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/load-record"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/load-record" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/load-record" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/load-record" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/load-record" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/load-record" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/load-record" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -26,7 +26,7 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>aTable</td><td>テーブル</td><td>🡒</td><td>レコードをロードするテーブル, または 省略時、デフォルトテーブル</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>aTable</td><td>Table</td><td>🡒</td><td>レコードをロードするテーブル, または 省略時、デフォルトテーブル</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/load-record#説明">​</a></h4>
 <p>LOAD RECORDは、<em>aTable</em>のカレントレコードをロードします。カレントレコードが存在しない場合、LOAD RECORDは何も行いません。<br>
 レコードがロードされたら、<a title="Locked" href="/docs/ja/next/commands/locked">Locked</a>コマンドを使用してレコードが更新可能か調べることができます:</p>
@@ -35,7 +35,7 @@
 <li><em>aTable</em>が読み書き状態でも、レコ－ドが既にロックされている場合は、レコードは読み込みのみ状態になり、そのレコードを修正することはできません。</li>
 <li><em>aTable</em>が読み書き状態でかつレコ－ドがロックされていない場合、カレントプロセス内でレコードを修正することができます。その際<a title="Locked" href="/docs/ja/next/commands/locked">Locked</a>コマンドはその他のすべてのユーザとプロセスに対して<a title="True" href="/docs/ja/next/commands/true">True</a>を返します。</li>
 </ul>
-<p><strong>Note:</strong> <a title="READ ONLY" href="/docs/ja/next/commands/read-only">READ ONLY</a>コマンドの後にLOAD RECORDを実行すると、<a title="UNLOAD RECORD" href="/docs/ja/next/commands/unload-record">UNLOAD RECORD</a>コマンドを使用しなくても、レコードは自動的にアンロードされた後ロードされます。</p>
+<p><strong>Note:</strong> <a title="READ ONLY" href="/docs/ja/next/commands/read-only">READ ONLY</a>コマンドの後にLOAD RECORDを実行すると、<a title="UNLOAD RECORD" href="/docs/ja/next/commands/unload-record">UNLOAD RECORD</a>コマンドを使用しなくても 、レコードは自動的にアンロードされた後ロードされます。</p>
 <p>通常<a title="QUERY" href="/docs/ja/next/commands/query">QUERY</a>、<a title="NEXT RECORD" href="/docs/ja/next/commands/next-record">NEXT RECORD</a>、<a title="PREVIOUS RECORD" href="/docs/ja/next/commands/previous-record">PREVIOUS RECORD</a>等のコマンドは自動的にカレントレコードをロードするため、LOAD RECORDコマンドを使用する必要はありません。</p>
 <p>マルチュユーザ環境やマルチプロセス環境において既存レコードを修正するには、レコードが属するテーブルに読み書き状態でアクセスしなければなりません。レコードがロックされており、ロードされていない場合、時間をおいて、再度LOAD RECORDを実行する必要があります。このためには、ループ内でLOAD RECORDを使用し、レコードが読み書き状態になるまで待機できます。</p>
 <p><strong>Tip:</strong> LOAD RECORDコマンドを使用し、入力フォームにおいてカレントレコードを再ロードすることができます。変更中のデータはすべて以前の値で置き換えられます。この場合、LOAD RECORDコマンドは、いわば一般的な入力データの取消しとして振る舞います。</p>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">WEB LEGACY GET SESSION EXPIRATION | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/web-legacy-get-session-expiration"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="WEB LEGACY GET SESSION EXPIRATION | 4D Docs"><meta data-rh="true" name="description" content="WEB LEGACY GET SESSION EXPIRATION ( sessionID ; expDate ; expTime )"><meta data-rh="true" property="og:description" content="WEB LEGACY GET SESSION EXPIRATION ( sessionID ; expDate ; expTime )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/web-legacy-get-session-expiration"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/web-legacy-get-session-expiration" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/web-legacy-get-session-expiration" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/web-legacy-get-session-expiration" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/web-legacy-get-session-expiration" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/web-legacy-get-session-expiration" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/web-legacy-get-session-expiration" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -38,14 +38,14 @@
 
 
 
-<table><thead><tr><th>  引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>sessionID</td><td>テキスト</td><td>🡒</td><td>セッションUUID</td></tr><tr><td>expDate</td><td>日付</td><td>🡘</td><td>cookie有効期限日</td></tr><tr><td>expTime</td><td>時間</td><td>🡘</td><td>cookie有効期限時刻</td></tr></tbody></table>
+<table><thead><tr><th>  引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>sessionID</td><td>Text</td><td>🡒</td><td>セッションUUID</td></tr><tr><td>expDate</td><td>Date</td><td>🡘</td><td>cookie有効期限日</td></tr><tr><td>expTime</td><td>Time</td><td>🡘</td><td>cookie有効期限時刻</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="互換性に関する注意">互換性に関する注意<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/web-legacy-get-session-expiration#互換性に関する注意">​</a></h4>
 <p>このコマンドは、4D v18 R6 以前のバージョンから変換されたデータベースでのみ利用可能な<strong>旧式Web セッション</strong>でのみ使用することが可能です。これは<strong>スケーラブルWeb セッション</strong>モード(4D v18 R6以降のバージョンでの推奨)が有効化されている場合には無視されます。詳細な情報については、<em>Webセッション管理(旧式)</em> の章を参照してください。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/web-legacy-get-session-expiration#説明">​</a></h4>
 <p><strong>WEB LEGACY GET SESSION EXPIRATION</strong>コマンドは<em>sessionID</em>に渡されたUUIDのセッションのcookieの有効期限に関する情報を返します。</p>
 <p><em>expDate</em> 引数はcookieの有効期限日を、<em>expTime</em> 引数はcookieの有効期限時刻を受け取ります。</p>
 <p><strong>注:</strong> Webレスポンスがクライアントに送信されるたびに、cookieの有効期限はリクエストが行われた時刻+Web Inactive session timeout (デフォルトで8時間) に設定されます。例えばデフォルト値の状態で:<br>
-最初  のリクエスト: 月曜日の1:00<br>
+最初のリクエ  スト: 月曜日の1:00<br>
 -&gt; 有効期限は月曜日の09:00<br>
 二番目のリクエスト: 月曜日の1:10<br>
 -&gt; 有効期限は月曜日の09:10<br>

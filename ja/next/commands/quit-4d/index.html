@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">QUIT 4D | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/quit-4d"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="QUIT 4D | 4D Docs"><meta data-rh="true" name="description" content="QUIT 4D {( time )}"><meta data-rh="true" property="og:description" content="QUIT 4D {( time )}"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/quit-4d"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/quit-4d" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/quit-4d" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/quit-4d" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/quit-4d" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/quit-4d" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/quit-4d" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -26,14 +26,14 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>time</td><td>倍長整数</td><td>🡒</td><td>サーバ終了までの時間 (秒)</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>time</td><td>Integer</td><td>🡒</td><td>サーバ終了までの時間 (秒)</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/quit-4d#説明">​</a></h4>
 <p><strong>QUIT 4D</strong>コマンドは、カレントの4Dアプリケーションを終了してデスクトップに戻ります。</p>
 <p>4D(ローカルまたはリモートモード)、または4D Serverどちらでコマンドが実行されたにより、このコマンドは異なる処理を行います。</p>
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ローカルモードおよびリモートモードの4d">ローカルモードおよびリモートモードの4D<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/quit-4d#ローカルモードおよびリモートモードの4d">​</a></h5>
 <p><strong>QUIT 4D</strong>を呼び出した後、カレントのプロセスは実行を停止し、4Dは以下のように振舞います:</p>
 <ul>
-<li><a href="/docs/ja/next/commands/on-exit-database-method">On Exitデータベースメソッド</a>がある場合、4Dはローカルプロセスを新しく作成し、その内でこのデータベースメソッドの実行を開始します。例えばこのデータベースメソッドを使用  して、開発者は他のプロセスに、プロセス間通信を駆使し、 データ入力や<a href="/docs/ja/next/commands/on-startup-database-method">On Startupデータベースメソッド</a>で開始された処理 (他のデータサーバーへの接続等) を停止するよう、通知できます。4Dは、いずれ終了してしまうことを覚えておいてください。<a href="/docs/ja/next/commands/on-exit-database-method">On Exitデータベースメソッド</a>は、必要なすべてのクリーンアップ操作や終了を実行しますが、終了を拒否することはできないため、ある時点でデータベースは終了します。</li>
+<li><a href="/docs/ja/next/commands/on-exit-database-method">On Exitデータベースメソッド</a>がある場合、4Dはローカルプロセスを新しく作成し、その内でこのデータベースメソッドの実行を開始します。例えばこのデータベースメソッドを使用して 、開発者は他のプロセスに、プロセス間通信を駆使し、 データ入力や<a href="/docs/ja/next/commands/on-startup-database-method">On Startupデータベースメソッド</a>で開始された処理 (他のデータサーバーへの接続等) を停止するよう、通知できます。4Dは、いずれ終了してしまうことを覚えておいてください。<a href="/docs/ja/next/commands/on-exit-database-method">On Exitデータベースメソッド</a>は、必要なすべてのクリーンアップ操作や終了を実行しますが、終了を拒否することはできないため、ある時点でデータベースは終了します。</li>
 <li><a href="/docs/ja/next/commands/on-exit-database-method">On Exitデータベースメソッド</a>がない場合、4Dは実行プロセスそれぞれを区別せずに1つずつアボートします。</li>
 </ul>
 <p>ユーザがデータ入力を実行している場合には、レコードはキャンセルされ、保存されません。<br>
@@ -42,7 +42,7 @@
 <li>この処理を、<strong>QUIT 4D</strong>を呼び出す前に、カレントのプロセスで行う。</li>
 <li>この処理を、<a href="/docs/ja/next/commands/on-exit-database-method">On Exitデータベースメソッド</a>内で行う。</li>
 </ul>
-<p>3番目の方法もあります。<strong>QUIT 4D</strong>コマンドを呼び出す前に、ウィンドウで行われた処理が登録を必要とするかどうかをチェックします。このケースの場合は、ユーザにこのウインドウの内容をを保存するか、または取り消すかを尋ね、それから再度、 「終了」を選択するか尋ねます。しかし、ユーザインタフェースの観点から見ると、最初の2つの方法を使用するのをお勧めします。</p>
+<p>3番目の方法もあります。<strong>QUIT 4D</strong>コマンドを呼び出す前に、ウィンドウで行われた処理が登録を必要とするかどうかをチェックします。このケースの場合は、ユーザにこのウインドウの内容をを保存するか、または取り消すかを尋ね、それから再度、「終 了」を選択するか尋ねます。しかし、ユーザインタフェースの観点から見ると、最初の2つの方法を使用するのをお勧めします。</p>
 <p><strong>注:</strong> ローカル、またはリモートモードの4Dでは、<em>time</em>引数を使用できません。</p>
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4d-server-ストアドプロシージャ">4D Server (ストアドプロシージャ)<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/quit-4d#4d-server-ストアドプロシージャ">​</a></h5>
 <p><strong>QUIT 4D</strong>コマンドを、サーバマシン上のストアドプロシージャで実行できます。その場合、オプションの引数<em>time</em>を受け付けます。<br>
@@ -50,7 +50,7 @@
 <em>time</em>引数を渡さない場合、終了する前に4D Serverはすべてのクライアントマシンが接続を切るまで待機します。</p>
 <p>4Dとは異なり、4D Serverによる<strong>QUIT 4D</strong>の処理は非同期的に行われます。つまり、このコマンドの実行後、コマンドの呼び出しを行ったメソッドが中断されることはありません。</p>
 <p><em>On Server Shutdownデータベースメソッド</em>が存在する場合、渡された引数に基づき、time引数で設定された遅延後またはすべてのクライアントの接続が解除された後、このメソッドが実行されます。</p>
-<p>ストアドプロ シージャ内で使用された場合の<strong>QUIT 4D</strong>コマンドの動作は、4D Serverの「ファイル」メニューから「終了」コマンドを選択した場合と同じです。すなわち、各クライアントマシンにダイアログボックスが表示され、サーバが終了することを通知します。</p>
+<p>ストアドプロシー ジャ内で使用された場合の<strong>QUIT 4D</strong>コマンドの動作は、4D Serverの「ファイル」メニューから「終了」コマンドを選択した場合と同じです。すなわち、各クライアントマシンにダイアログボックスが表示され、サーバが終了することを通知します。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題">例題<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/quit-4d#例題">​</a></h4>
 <p>以下のプロジェクトメソッドは、ファイルメニューの終了コマンドに割り当てられます。</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">  // M_FILE_QUIT プロジェクトメソッド</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> CONFIRM(&quot;本当に終了しますか?&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> If(OK=1)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    QUIT 4D</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> End if</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="クリップボードにコードをコピー" title="コピー" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>

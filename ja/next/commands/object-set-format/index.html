@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">OBJECT SET FORMAT | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/object-set-format"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="OBJECT SET FORMAT | 4D Docs"><meta data-rh="true" name="description" content="OBJECT SET FORMAT ( { ;} object ; displayFormat* )"><meta data-rh="true" property="og:description" content="OBJECT SET FORMAT ( { ;} object ; displayFormat* )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/object-set-format"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/object-set-format" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/object-set-format" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/object-set-format" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/object-set-format" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/object-set-format" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/object-set-format" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -38,7 +38,7 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>*</td><td>演算子</td><td>🡒</td><td>指定時, Objectはオブジェクト名 (文字列) 省略時, Objectはフィールドまたは変数</td></tr><tr><td>object</td><td>フォームオブジェクト</td><td>🡒</td><td>オブジェクト名 (* 指定時), または フィールドまたは変数 (* 省略時)</td></tr><tr><td>displayFormat</td><td>文字</td><td>🡒</td><td>オブジェクトに設定する表示フォーマット</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>*</td><td>演算子</td><td>🡒</td><td>指定時, Objectはオブジェクト名 (文字列) 省略時, Objectはフィールドまたは変数</td></tr><tr><td>object</td><td>any</td><td>🡒</td><td>オブジェクト名 (* 指定時), または フィールドまたは変数 (* 省略時)</td></tr><tr><td>displayFormat</td><td>Text</td><td>🡒</td><td>オブジェクトに設定する表示フォーマット</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-format#説明">​</a></h4>
 <p><strong>OBJECT SET FORMAT</strong> は、<em>object</em>で指定したオブジェクトの表示フォーマットを<em>displayFormat</em>で渡したフォーマットに設定します。新しいフォーマットは現在の表示にのみ有効です。フォームには保存されません。</p>
 <p>オプションの <em>*</em> 引数を指定した場合、<em>object</em>はオブジェクト名です (文字列) 。オプションの * 引数を省略すると、<em>object</em>はフィールドまたは変数です。この場合、文字列ではなくフィールドまたは変数参照 (フィールドまたは変数のみ) を指定します。オブジェクト名に関する詳細は<em>オブジェクトプロパティ</em> を参照してください。</p>
@@ -180,7 +180,7 @@
 
 
 <table><thead><tr><th>定数</th><th>型</th><th>値</th></tr></thead><tbody><tr><td>On background</td><td>倍長整数</td><td>3</td></tr><tr><td>Replicated</td><td>倍長整数</td><td>7</td></tr><tr><td>Scaled to fit</td><td>倍長整数</td><td>2</td></tr><tr><td>Scaled to fit prop centered</td><td>倍長整数</td><td>6</td></tr><tr><td>Scaled to fit proportional</td><td>倍長整数</td><td>5</td></tr><tr><td>Truncated centered</td><td>倍長整数</td><td>1</td></tr><tr><td>Truncated non centered</td><td>倍長整数</td><td>4</td></tr></tbody></table>
-<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="文字と数値">文字と数値<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-format#文字と数値">​</a></h5>
+<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="文字と数  値">文字と数値<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-format#文字と数値">​</a></h5>
 <p>文字や数値のフィールドや変数をフォーマットするには、<em>displayFormat</em> 引数に直接フォーマットラベルを渡します。</p>
 <p>表示フォーマットに関する詳細は4D Design Referenceマニュアルの<em>数値フォーマット</em>や<em>文字フォーマット</em>を参照してください。</p>
 <p><strong>Note:</strong> ツールボックスであらかじめ定義した表示フォーマットを<em>displayFormat</em>に使用するには、表示フォーマット名の前に縦棒(|)を挿入します。</p>
@@ -206,7 +206,7 @@
 <li><em>flags</em> = 2 (最初のフレームにループバック)<br>
 前のオプションと同様ですが、ピクチャが連続したループで表示される点が異なります。最後のピクチャに達っし、さらにクリックすると、最初のピクチャが表示されます。</li>
 <li><em>flags</em> = 16 (ロールオーバー時にスイッチ)<br>
-ピ クチャボタンのコンテンツは、マウスカーソルがボタンの上に来たときに変更されます。マウスがボタンエリアから離れると、最初のピクチャに戻ります。この モードはマルチメディアアプリケーションやHTMLドキュメントでしばしば使用されます。ロールオーバー時に表示されるピクチャはサムネールテー ブルの最 後のピクチャです。ただし最後のフレームを無効として使用オプション (128) を使用した場合は、最後の前のフレームがロールオーバー時に使用されます。</li>
+ピ クチャボタンのコンテンツは、マウスカーソルがボタンの上に来たときに変更されます。マウスがボタンエリアから離れると、最初のピクチャに戻ります。この モードはマルチメディアアプリケーションやHTMLドキュメントでしばしば使用されます。ロールオーバー時に表示されるピクチャはサムネールテーブルの最 後のピクチャです。ただし最後のフレームを無効として使用オプション (128) を使用した場合は、最後の前のフレームがロールオーバー時に使用されます。</li>
 <li><em>flags</em> = 32 (リリース後に元に戻す)<br>
 このモードは2つのピクチャで動作します。これはユーザがクリックしたときを除き、常に最初のピクチャを表示します。この場合2番目のピクチャがマウスク リックの間表示され、マウスがリリースされると一番目のピクチャに戻ります。このモードを使用すれば、アイドルとクリック状態を表示するアクションボタン を作成できます。このモードを3D効果を作成したり、アクションを表現するピクチャを表示するために使用できます。</li>
 <li><em>flags</em> = 64 (透過)<br>
@@ -215,7 +215,7 @@
 このモードは、最後のサムネールフレームをボタンが無効時に表示させるために使用します。このモードが選択されているとき、4Dは最後のサムネールを、ボタ ンが無効にされているときに表示します。このモードが、モード0, 1 および 2とともに使用されていると、最後のサムネールは一連の表示には組み込まれません。子のサムネールはボタンが無効のときにのみ表示されます。</li>
 </ul>
 </li>
-<li><em>ticks</em> = “n チック毎に表示”モードを有効にし、それぞれのピクチャを表示する間隔を設定します。このオプション引数が渡されると、指定された速度でピクチャボタンの コンテンツが繰り返し表示されます。例えば&quot;2;3;?16807;0;10&quot;と指定すると、ピクチャボタンは10tickごとに異なるピクチャを表示し ます。このモードが有効の時は透過モード (64) のみが使用できます。</li>
+<li><em>ticks</em> = “n チック毎に表示”モードを有効にし、それぞれのピクチャを表示する間隔を設定します。このオプション引数が渡されると、指定された速度でピクチャボタンの コンテンツが繰り返し表示されます。例えば&quot;2;3;?16807;0;10&quot;と指定すると、ピクチャボタンは10tickごとに異なるピクチャを表示し ます。このモードが有効の 時は透過モード (64) のみが使用できます。</li>
 </ul>
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ピクチャポップアップメニュー">ピクチャポップアップメニュー<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-format#ピクチャポップアップメニュー">​</a></h5>
 <p>ピクチャポップアップメニューをフォーマットするには、<em>displayFormat</em> 引数に以下のシンタックスを使用した文字列を渡します:<br>
@@ -239,7 +239,7 @@
 </li>
 </ul>
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="サーモメーターおよびルーラー">サーモメーターおよびルーラー<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-format#サーモメーターおよびルーラー">​</a></h5>
-<p>サーモメ  ータやルーラーをフォーマットするには、<em>displayFormat</em> 引数に以下のシンタックスを使用した文字列を渡します:<br>
+<p>サーモメータやルーラーをフ  ォーマットするには、<em>displayFormat</em> 引数に以下のシンタックスを使用した文字列を渡します:<br>
 <em>min;max;unit;step;flags{;format{;display}}</em></p>
 <ul>
 <li><em>min</em> = インジケータの最初の目盛り値</li>
@@ -258,7 +258,7 @@
 </li>
 <li><em>format</em> = インジケータの目盛りの表示フォーマット<br>
 インジケータオブジェクトのサイズが小さいため単位やメモリが正しく表示できない場合、それらは隠されます。</li>
-<li><em>display</em> = 特別な表示オプション。サーモメ ーターの場合、この引数は<em>flags</em>サブ引数が128のときにのみ考慮されます。
+<li><em>display</em> = 特別な表示オプション。サーモメーターの場合、この 引数は<em>flags</em>サブ引数が128のときにのみ考慮されます。
 <ul>
 <li><em>display</em> = 0 (または省略時): 標準のルーラを表示 / &quot;バーバーショップ&quot;タイプの連続したアニメーションを表示。</li>
 <li><em>display</em> = 1 : ルーラーの&quot;ステッパー&quot;モードを有効にする / サーモメーターの&quot;非同期進捗&quot;モードを有効にする。これらのオプションに関する詳細は<em>Design Reference</em>マニュアルを参照してください。</li>
@@ -276,7 +276,7 @@
 <li><em>flags</em> = ダイアルの処理モード (オプション)。この引数は32鑿を受け入れます: ユーザがインジケータを調整している間、On Data Changeを実行する。この値が使用されない場合、On Data Changeはユーザがインジケータの調整を終了したときにのみ発生します。</li>
 </ul>
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ボタングリッド">ボタングリッド<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-format#ボタングリッド">​</a></h5>
-<p>ボタングリッドをフォーマット  するには、<em>displayFormat</em> 引数に以下のシンタックスを使用した文字列を渡します:<br>
+<p>ボタングリッドをフォーマットするには、<em>displayFormat</em> 引数に以下のシンタックスを使用した文字列を渡します:<br>
 <em>cols;lines</em></p>
 <ul>
 <li><em>cols</em> = グリッドの列数</li>
@@ -359,7 +359,7 @@
 </ul>
 </li>
 </ul>
-<p>いくつかのオプションは、すべての3Dボタンで有効というわけではありません。また特定のオプションを設定したくない場合もあるでしょう。あるオプションを渡さないようにするには、対応する値を省略します。例えば<em>titleVisible</em>と<em>vertMargin</em>オプションを省略するには、以下のよ うに書きます:</p>
+<p>いくつかのオプションは、すべての3Dボタンで有効というわけではありません。また特定のオプションを設定したくない場合もあるでしょう。あるオプションを渡さないようにするには、対応する値を省略します。例えば<em>titleVisible</em>と<em>vertMargin</em>オプションを省略するには、以下のように書きます:</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> OBJECT SET FORMAT(myVar;&quot;NiceButton;?256;:562;1;;1;4;5;;5;0;;2&quot;)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="クリップボードにコードをコピー" title="コピー" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="リストボックスヘッダー">リストボックスヘッダー<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-format#リストボックスヘッダー">​</a></h5>
 <p>リストボックス内でのアイコンをフォーマットする場合、以下のシンタックスに従う文字列を<em>displayFormat</em>引数に渡します:<br>
@@ -390,7 +390,7 @@
 <p>以下のコードは <em>[Company]ZIP Code</em> フィールドのフォーマットを、フィールドデータ長に基づいて変更します:</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> If(Length([Company]ZIP Code)=9)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    OBJECT SET FORMAT([Company]ZIP Code;&quot;#####-####&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> Else</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    OBJECT SET FORMAT([Company]ZIP Code;&quot;#####&quot;)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> End if</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="クリップボードにコードをコピー" title="コピー" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-4">例題 4<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-format#例題-4">​</a></h4>
-<p>以下のコードは <em>[Stats]Results</em> フィールド値を、値の正負およびゼロであるかに応じてフォーマットします:</p>
+<p>以下のコードは <em>[Stats]Results</em>   フィールド値を、値の正負およびゼロであるかに応じてフォーマットします:</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> OBJECT SET FORMAT([Stats]Results;&quot;### ##0.00;(### ##0.00);&quot;)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="クリップボードにコードをコピー" title="コピー" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-5">例題 5<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-format#例題-5">​</a></h4>
 <p>以下のコードはブールフィールドのフォーマットを変更して、Married または Unmarriedが表示されるようにします:</p>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">This | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/this"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="This | 4D Docs"><meta data-rh="true" name="description" content="This -&gt; 戻り値"><meta data-rh="true" property="og:description" content="This -&gt; 戻り値"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/this"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/this" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/this" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/this" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/this" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/this" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/this" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -26,7 +26,7 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>戻り値</td><td>オブジェクト</td><td>🡐</td><td>カレントの要素</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>戻り値</td><td>Object</td><td>🡐</td><td>カレントの要素</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/this#説明">​</a></h4>
 <p><strong>This</strong> コマンドは、現在処理中のオブジェクトへの参照を返します。</p>
 <p>このコマンドは、以下のようなコンテキストで使用されることを想定しています:</p>
@@ -34,7 +34,7 @@
 <li>On Display Detail あるいは On Data Change イベント中における、コレクションあるいはエンティティセレクションに割り当てられたリストボックス。<br>
 このコンテキストにおいては、コマンドはリストボックスによってアクセスされるコレクション要素、あるいはエンティティへの参照を返し、それがリストボックスのカレントの行に表示されます。<br>
 <strong>注:</strong> リストボックスでスカラー値のコレクションを使用した場合、4D は単一の<strong>value</strong> プロパティを持つオブジェクトを各要素に対して作成します。そのため、要素の値は<strong>This.value</strong> という代入不可の式によって返されます。</li>
-<li><a href="/docs/ja/next/commands/formula">Formula</a> ある  いは <a href="/docs/ja/next/commands/formula-from-string">Formula from string</a> コマンドによって作成されたフォーミュラオブジェクトの実行。<br>
+<li><a href="/docs/ja/next/commands/formula">Formula</a> あるいは <a href="/docs/ja/next/commands/formula-from-string">Formula from string</a> コマンドによって作成されたフォーミュラオブジェクトの実行。<br>
 このコンテキストにおいては、コマンドは、フォーミュラによって現在処理されているオブジェクトへの参照を返します。</li>
 </ul>
 <p>それ以外のコンテキストにおいては、このコマンドは<strong>Null</strong> を返します。</p>

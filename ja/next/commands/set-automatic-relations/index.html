@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">SET AUTOMATIC RELATIONS | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/set-automatic-relations"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="SET AUTOMATIC RELATIONS | 4D Docs"><meta data-rh="true" name="description" content="SET AUTOMATIC RELATIONS ( one {; many} )"><meta data-rh="true" property="og:description" content="SET AUTOMATIC RELATIONS ( one {; many} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/set-automatic-relations"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/set-automatic-relations" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/set-automatic-relations" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/set-automatic-relations" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/set-automatic-relations" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/set-automatic-relations" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/set-automatic-relations" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -32,7 +32,7 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>one</td><td>ブール</td><td>🡒</td><td>すべてのn対1リレーションの状態</td></tr><tr><td>many</td><td>ブール</td><td>🡒</td><td>すべての1対nリレーションの状態</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>one</td><td>Boolean</td><td>🡒</td><td>すべてのn対1リレーションの状態</td></tr><tr><td>many</td><td>Boolean</td><td>🡒</td><td>すべての1対nリレーションの状態</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/set-automatic-relations#説明">​</a></h4>
 <p><strong>SET AUTOMATIC RELATIONS</strong> は、カレントプロセスで、データベース全体のマニュアルリレートを一時的に自動リレートに変更します。リレートは、次に<strong>SET AUTOMATIC RELATIONS</strong> コマンドを使用するまで自動リレートのままになります。</p>
 <ul>
@@ -45,7 +45,7 @@
 <p><strong>注意:</strong></p>
 <ul>
 <li><strong>SET AUTOMATIC RELATIONS</strong>コマンドに <a title="True" href="/docs/ja/next/commands/true">True</a> を渡すと、全ての手動リレートがセッション中に自動モードが&quot;ロック&quot;されます。この場合、 <a href="/docs/ja/next/commands/set-field-relation">SET FIELD RELATION</a> コマンドは<strong>SET AUTOMATIC RELATIONS</strong> の前にあっても後ろにあっても、同じセッション中は呼び出しが無視されます。自動モードを解除して<a href="/docs/ja/next/commands/set-field-relation">SET FIELD RELATION</a> の呼び出しを有効化する際には、<strong>SET AUTOMATIC RELATIONS</strong> に <a title="False" href="/docs/ja/next/commands/false">False</a>を渡します。</li>
-<li>自動リレーション 機能はリレートされたテーブルが<a href="/docs/ja/next/commands/display-selection">DISPLAY SELECTION</a> 、<a href="/docs/ja/next/commands/modify-selection">MODIFY SELECTION</a> 、あるいはサブフォームを使用して表示されたリストフォーム内で表示されている場合には、無効化されているということに注意してください。詳細については<em>自動およびマニュアルリレーション</em> を参照してください。</li>
+<li>自動リレーション機  能はリレートされたテーブルが<a href="/docs/ja/next/commands/display-selection">DISPLAY SELECTION</a> 、<a href="/docs/ja/next/commands/modify-selection">MODIFY SELECTION</a> 、あるいはサブフォームを使用して表示されたリストフォーム内で表示されている場合には、無効化されているということに注意してください。詳細については<em>自動およびマニュアルリレーション</em> を参照してください。</li>
 </ul>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題">例題<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/set-automatic-relations#例題">​</a></h4>
 <p>以下の例は、すべてのn対1のマニュアルリレートを自動リレートに設定し、前もって自動リレートにした1対nリレートを手動リレートに戻します:</p>

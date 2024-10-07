@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">DELAY PROCESS | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/delay-process"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="DELAY PROCESS | 4D Docs"><meta data-rh="true" name="description" content="DELAY PROCESS ( process ; duration )"><meta data-rh="true" property="og:description" content="DELAY PROCESS ( process ; duration )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/delay-process"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/delay-process" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/delay-process" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/delay-process" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/delay-process" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/delay-process" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/delay-process" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -32,11 +32,11 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>process</td><td>倍長整数</td><td>🡒</td><td>プロセス番号</td></tr><tr><td>duration</td><td>実数</td><td>🡒</td><td>遅延時間 (tick)</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>process</td><td>Integer</td><td>🡒</td><td>プロセス番号</td></tr><tr><td>duration</td><td>Real</td><td>🡒</td><td>遅延時間 (tick)</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/delay-process#説明">​</a></h4>
 <p>DELAY PROCESSは、<em>process</em> 引数で指定したプロセスの実行を指定したtick数 (1tick＝1/60秒) だけ遅らせます。この間、そのプロセスは処理時間を使用しません。プロセスの実行を遅延しても、そのプロセスはメモリ内に残ります。</p>
 <p>プロセスの遅れを1tick以下の時間で指定することもできます。例えば、<em>duration</em> に0.5を渡した場合、プロセスは1/2tick だけ、つまり1/120秒だけ遅延します。</p>
-<p>プロセスが既に遅延状態の場合、このコマンドはそれを再度遅延します。この場合、<em>duration</em>は残時間に加算されるのではなく、それに置き換わり  ます。したがって、これ以上遅延させたくなければゼロ (0) を渡します。</p>
+<p>プロセスが既に遅延状態の場合、このコマンドはそれを再度遅延します。この場合、<em>duration</em>は残時間に加算されるのではなく、それに置き換わります。したがって、これ以上遅延させたくなければゼロ (0) を渡します。</p>
 <p>プロセスが存在しなければ、このコマンドは何も行いません。</p>
 <p><strong>Note:</strong> クライアントマシンから、サーバマシンで動作するストアドプロシージャ (<em>process</em>&lt;0) に対して、このコマンドを適用することはできません。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-1">例題 1<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/delay-process#例題-1">​</a></h4>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Select RGB Color | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/select-rgb-color"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Select RGB Color | 4D Docs"><meta data-rh="true" name="description" content="Select RGB Color {( defaultColor {; message} )} -&gt; 戻り値"><meta data-rh="true" property="og:description" content="Select RGB Color {( defaultColor {; message} )} -&gt; 戻り値"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/select-rgb-color"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/select-rgb-color" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/select-rgb-color" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/select-rgb-color" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/select-rgb-color" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/select-rgb-color" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/select-rgb-color" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -38,9 +38,9 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>defaultColor</td><td>倍長整数</td><td>🡒</td><td>事前に選択されたRGBカラー</td></tr><tr><td>message</td><td>文字</td><td>🡒</td><td>選択ウィンドウのタイトル</td></tr><tr><td>戻り値</td><td>倍長整数</td><td>🡐</td><td>RGBカラー</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>defaultColor</td><td>Integer</td><td>🡒</td><td>事前に選択されたRGBカラー</td></tr><tr><td>message</td><td>Text</td><td>🡒</td><td>選択ウィンドウのタイトル</td></tr><tr><td>戻り値</td><td>Integer</td><td>🡐</td><td>RGBカラー</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/select-rgb-color#説明">​</a></h4>
-<p><strong>Select RGB Color</strong>コマンドはシステムカラー選択ウィンドウを表示し、ユーザによって選択された色のRGB値を返します。</p>
+<p><strong>Select RGB Color</strong>コマ  ンドはシステムカラー選択ウィンドウを表示し、ユーザによって選択された色のRGB値を返します。</p>
 <p>システムカラー選択ウィンドウは以下のように表示されます。</p>
 
 
@@ -61,7 +61,7 @@
 <p>オプションの引数<em>message</em>を使用して、システムウィンドウのタイトルをカスタマイズできます。この引数が省略されると、タイトル&quot;カラー&quot; がデフォルトで表示されます。</p>
 <p>このダイアログボックスを受け入れた後の動作はプラットフォームにより異なります:</p>
 <ul>
-<li>Windowsではユーザーが<strong>OK</strong>をクリックすると、コマンドから選択された色がRGBフォーマットで返され、OKシステム変数が1に設定されます。ユーザーがダイアログボックスをキャンセルするとコマンドは-1を返し、システム変数OKに0が設定されます。</li>
+<li>Windowsではユーザーが<strong>OK</strong>をクリックすると、コマンドから選択された色がRGBフォーマットで返され、OKシステム変数が1に設定されます。ユーザーがダイアログボックスをキャンセルするとコマンドは-1を返し、シ ステム変数OKに0が設定されます。</li>
 <li>Mac OSではクローズボックスをクリックするか<strong>Esc</strong>キーを押してダイアログボックスを閉じます。ダイアログ内でのユーザーの操作に関わらず、いずれの場合もシステム変数OKは1に設定されます。コマンドは選択された色をRGBフォーマットで返します。ユーザーがカラーを選択しなかった場合、返される値は<em>defaultColor</em>が渡されていればその値、渡されていなければ0です。</li>
 </ul>
 <p><strong>注:</strong> サーバーマシンまたはWebプロセス内では、このコマンドを使用しないでください。</p>

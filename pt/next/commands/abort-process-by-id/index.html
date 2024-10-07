@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">ABORT PROCESS BY ID | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/pt/next/commands/abort-process-by-id"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="ABORT PROCESS BY ID | 4D Docs"><meta data-rh="true" name="description" content="ABORT PROCESS BY ID ( IDunico )"><meta data-rh="true" property="og:description" content="ABORT PROCESS BY ID ( IDunico )"><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/pt/next/commands/abort-process-by-id"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/abort-process-by-id" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/abort-process-by-id" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/abort-process-by-id" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/abort-process-by-id" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/abort-process-by-id" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/abort-process-by-id" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.9d2cac31.css">
-<script src="/docs/pt/assets/js/runtime~main.b7ced24e.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.88efcdcc.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.9a77f864.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -26,7 +26,7 @@
 
 
 
-<table><thead><tr><th>Parâmetro</th><th>Tipo</th><th></th><th>Descrição</th></tr></thead><tbody><tr><td>IDunico</td><td>Inteiro longo</td><td>🡒</td><td>ID de processo única</td></tr></tbody></table>
+<table><thead><tr><th>Parâmetro</th><th>Tipo</th><th></th><th>Descrição</th></tr></thead><tbody><tr><td>IDunico</td><td>Integer</td><td>🡒</td><td>ID de processo única</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/commands/abort-process-by-id#descrição">​</a></h4>
 <p>O comando <strong>ABORT PROCESS BY ID</strong> detém um processo específico no servidor 4D.</p>
 <p>No parâmetro <em>IDunico</em>, passe o ID único do processo que se executa no servidor que quiser deter. Pode recuperar o ID do processo com os comandos <a href="/docs/pt/next/commands/get-process-activity">Get process activity</a> ou os comandos <a href="/docs/pt/next/commands/process-properties">PROCESS PROPERTIES</a>.</p>
@@ -34,7 +34,7 @@
 <ul>
 <li>Este comando apenas podem ser executados em 4D Server. Se o método que chamar ao comando for executado localmente em um cliente remoto ou em um único usu[ario 4D, <strong>ABORT PROCESS BY ID</strong> não faz nada.</li>
 <li>Este comando apenas pode ser usado com a capa de rede <em>ServerNet</em>. Ver <em>Nova capa de rede ServerNet (compatibilidade)</em>.</li>
-<li>Este comando apenas deve serusado para buscar erros ou propósitos de administração, n ão como um procedimento ordinário.</li>
+<li>Este comando apenas deve serusado para buscar erros ou propósitos de administração, não como um procedimento ordinário.</li>
 </ul>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemplo">Exemplo<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/next/commands/abort-process-by-id#exemplo">​</a></h4>
 <p>Se quiser deter o processo selecionado da coleção de processos que são mostrados em um list box:</p>

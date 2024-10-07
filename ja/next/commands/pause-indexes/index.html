@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">PAUSE INDEXES | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/pause-indexes"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="PAUSE INDEXES | 4D Docs"><meta data-rh="true" name="description" content="PAUSE INDEXES ( aTable )"><meta data-rh="true" property="og:description" content="PAUSE INDEXES ( aTable )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/pause-indexes"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/pause-indexes" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/pause-indexes" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/pause-indexes" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/pause-indexes" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/pause-indexes" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/pause-indexes" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -26,16 +26,16 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>aTable</td><td>テーブル</td><td>🡒</td><td>インデックスを停止するテーブル</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>aTable</td><td>Table</td><td>🡒</td><td>インデックスを停止するテーブル</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/pause-indexes#説明">​</a></h4>
 <p><strong>PAUSE INDEXES</strong>コマンドは、<em>aTable</em> のインデックスを、プライマリーキーのインデックスを除き一時的に無効にします。.</p>
-<p>イ ンデックスはデータ (.4DIndx file) やデータベースのストラクチャ (_USER_INDEXES、<em>システムテーブル</em>を参照)から削除されるわけではありませんが、無効とされるためそれ以上更新されることはありません。インデックスが 無効化されると、<em>aTable</em> で実行される全てのオペレーション(クエリ、ソート、レコード追加、変更と削除)はインデックスを使用しなくなります。</p>
+<p>イ ンデックスはデータ (.4DIndx file) やデータベースのストラクチャ (_USER_INDEXES、<em>システムテーブル</em>を参照)から削除されるわけ ではありませんが、無効とされるためそれ以上更新されることはありません。インデックスが 無効化されると、<em>aTable</em> で実行される全てのオペレーション(クエリ、ソート、レコード追加、変更と削除)はインデックスを使用しなくなります。</p>
 <p>このコマンドは主に複数のインデックスを持つテーブルのデータを、大量にインポートないし修正する際に有用です。4Dはレコードが検証されるたびにインデックスを更新しなければならないので、このオペレーションは相当な時間を要する可能性があります。インデックスを事前に無効化しておくことでオペレーションの飛躍的にスピードアップさせることが出来ます。</p>
 <p>オペレーションが終了した後にインデックスを再開させるためには、 <em>aTable</em> に <a href="/docs/ja/next/commands/resume-indexes">RESUME INDEXES</a> コマンドをしようします。</p>
 <p><strong>注:</strong> <a href="/docs/ja/next/commands/create-index">CREATE INDEX</a> コマンドと <a href="/docs/ja/next/commands/delete-index">DELETE INDEX</a> コマンドを使用することによって似たような結果を得ることが出来ますが、そこには大きな違いがあります:</p>
 <ul>
 <li><em>aTable</em> のそれぞれのインデックスに対して<a href="/docs/ja/next/commands/delete-index">DELETE INDEX</a> / <a href="/docs/ja/next/commands/create-index">CREATE INDEX</a> コマンドを呼び出す必要があります。</li>
-<li><a href="/docs/ja/next/commands/delete-index">DELETE INDEX</a> / <a href="/docs/ja/next/commands/create-index">CREATE INDEX</a> コマンドを呼び出すと、インデックスの内部番号が変わりますが、<strong>PAUSE INDEXES</strong> / <a href="/docs/ja/next/commands/resume-indexes">RESUME INDEXES</a> ではその限りではありません。インデックス番号が変わ ると、データセットを変更するときにデータの自動再インデックスが生成されます。</li>
+<li><a href="/docs/ja/next/commands/delete-index">DELETE INDEX</a> / <a href="/docs/ja/next/commands/create-index">CREATE INDEX</a> コマンドを呼び出すと、インデックスの内部番号が変わりますが、<strong>PAUSE INDEXES</strong> / <a href="/docs/ja/next/commands/resume-indexes">RESUME INDEXES</a> ではその限りではありません。インデックス番号が変わると 、データセットを変更するときにデータの自動再インデックスが生成されます。</li>
 </ul>
 <p><strong>PAUSE INDEXES</strong> コマンドをテーブルに使用し、 <a href="/docs/ja/next/commands/resume-indexes">RESUME INDEXES</a> コマンドをそのテーブルに使用することなくデータベースを閉じた場合、このテーブルのインデックスはデータベースが再開したときに全て自動的にリビルドされます。</p>
 <p><strong>注:</strong> このコマンドは4Dリモートからは実行することができません。</p>

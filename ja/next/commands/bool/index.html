@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Bool | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/bool"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Bool | 4D Docs"><meta data-rh="true" name="description" content="Bool ( expression ) -&gt; 戻り値"><meta data-rh="true" property="og:description" content="Bool ( expression ) -&gt; 戻り値"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/bool"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/bool" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/bool" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/bool" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/bool" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/bool" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/bool" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -32,7 +32,7 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>expression</td><td>式</td><td>🡒</td><td>ブール形式で返したい式</td></tr><tr><td>戻り値</td><td>ブール</td><td>🡐</td><td>式のブール型</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>expression</td><td>Expression</td><td>🡒</td><td>ブール形式で返したい式</td></tr><tr><td>戻り値</td><td>Boolean</td><td>🡐</td><td>式のブール型</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/bool#説明">​</a></h4>
 <p><strong>Bool</strong> コマンドは、<em>expression</em> 引数に渡した式のブール形式を返します。</p>
 <p>このコマンドは、<em>expression</em> 引数に渡した式の戻り値の型に応じて以下のような値を返します:</p>
@@ -65,7 +65,7 @@
 
 
 
-<table><thead><tr><th><strong>式の戻り値の型</strong></th><th><strong>Bool コマンドの結果</strong></th></tr></thead><tbody><tr><td>未定義</td><td>False</td></tr><tr><td>Null</td><td>False</td></tr><tr><td>ブール</td><td>falseの場合はFalse、それ以外の場合はTrue</td></tr><tr><td>数値</td><td>0の場合はFalse、それ以外の場合はTrue</td></tr><tr><td>他の型</td><td>False</td></tr></tbody></table>
+<table><thead><tr><th><strong>式の 戻り値の型</strong></th><th><strong>Bool コマンドの結果</strong></th></tr></thead><tbody><tr><td>未定義</td><td>False</td></tr><tr><td>Null</td><td>False</td></tr><tr><td>ブール</td><td>falseの場合はFalse、それ以外の場合はTrue</td></tr><tr><td>数値</td><td>0の場合はFalse、それ以外の場合はTrue</td></tr><tr><td>他の型</td><td>False</td></tr></tbody></table>
 <p>このコマンドは、コードがブール値の結果を期待している場合に、式の評価のが異なる型になりうる場合などに有効です(例・式が評価の結果<strong>null</strong>あるいは<strong>未定義</strong>を返す場合など)。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題">例題<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/bool#例題">​</a></h4>
 <p>オブジェクトフィールド属性の中身に応じて値を選択し、その属性がない場合も想定するとします:</p>

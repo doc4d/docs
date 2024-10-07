@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">OBJECT SET SCROLL POSITION | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/object-set-scroll-position"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="OBJECT SET SCROLL POSITION | 4D Docs"><meta data-rh="true" name="description" content="OBJECT SET SCROLL POSITION (  ; object {; vPosition {; hPosition}}{; } )"><meta data-rh="true" property="og:description" content="OBJECT SET SCROLL POSITION (  ; object {; vPosition {; hPosition}}{; } )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/object-set-scroll-position"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/object-set-scroll-position" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/object-set-scroll-position" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/object-set-scroll-position" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/object-set-scroll-position" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/object-set-scroll-position" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/object-set-scroll-position" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -50,7 +50,7 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>*</td><td>演算子</td><td>🡒</td><td>指定された場合、オブジェクトがオブジェクト名 (文字列) 省略された場合、オブジェクトがテーブルまたは変数</td></tr><tr><td>object</td><td>フォームオブジェクト</td><td>🡒</td><td>オブジェクト名 ( * が指定された場合) または テーブルまたは変数 ( * が省略された場合)</td></tr><tr><td>vPosition</td><td>倍長整数</td><td>🡒</td><td>表示する行番号、またはピクチャーの場合縦スクロール量 (ピクセル)</td></tr><tr><td>hPosition</td><td>倍長整数</td><td>🡒</td><td>リストボックスの場合表示する列番号、またはピクチャーの場合縦スクロール量 (ピクセル)</td></tr><tr><td>*</td><td>演算子</td><td>🡒</td><td>スクロール後の最初の位置に行を表示 (hPositionが渡された場合、列も対象)</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>*</td><td>演算子</td><td>🡒</td><td>指定された場合、オブジェクトがオブジェクト名 (文字列) 省略された場合、オブジェクトがテーブルまたは変数</td></tr><tr><td>object</td><td>any</td><td>🡒</td><td>オブジェクト名 ( * が指定された場合) または テーブルまたは変数 ( * が省略された場合)</td></tr><tr><td>vPosition</td><td>Integer</td><td>🡒</td><td>表示する行番号、またはピクチャーの場合縦スクロール量 (ピクセル)</td></tr><tr><td>hPosition</td><td>Integer</td><td>🡒</td><td>リストボックスの場合表示する列番号、またはピクチャーの場合縦スクロール量 (ピクセル)</td></tr><tr><td>*</td><td>演算子</td><td>🡒</td><td>スクロール後の最初の位置に行を表示 (hPositionが渡された場合、列も対象)</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-scroll-position#説明">​</a></h4>
 <p><strong>OBJECT SET SCROLL POSITION</strong>コマンドを使用して、 (<a href="/docs/ja/next/commands/modify-selection">MODIFY SELECTION</a>または<a href="/docs/ja/next/commands/display-selection">DISPLAY SELECTION</a>コマンドを用いて表示される) リストフォーム、サブフォーム、階層リストなどの行、あるいはリストボックスの列や行、そしてさらにピクチャのピクセルをスクロールすることができます。</p>
 <p><strong>注</strong>: プログラムによるスクロールは、フォーム上でスクロールバーが隠されていても可能です。</p>
@@ -61,7 +61,7 @@
 <ul>
 <li>リストフォームとサブフォームにおいて、この番号はカレントセレクション中の行番号 (位置) です。</li>
 <li>階層リストの場合、コマンドは項目の展開/折りたたみ状態を考慮します。</li>
-<li>リストボックスの場合、この番号は (非表示行を含む) すべてのオブジェクト行中の行番号です。<em>vPosition</em> に渡された番号がリストボックスの非表示行に対応する場合、コマンドは続く最初の表示行を表示します。<br>
+<li>リストボックスの場合、この番号は (非表示行を含む) すべてのオブジェクト行中の行番号です。<em>vPosition</em> に渡された番号がリストボックスの非表示行に対応する場合、コマンドは続く最初の表示行を 表示します。<br>
 <strong>注:</strong> このコマンドは、たとえリストボックスが階層モードで表示されていたとしても、非階層の標準表示に基づいて実行される点に留意してください。リストボックスが階層モードあるいは標準モードどちらで表示されているかによって結果は異なります (例題参照)。</li>
 <li>フォームに表示されているピクチャーの場合、<em>vPosition</em> はオブジェクト内に表示するピクチャの垂直座標点を示します。縦スクロールを行わない場合、<em>vPosition</em>に0を渡します。<br>
 値はローカルコンテキスト中でピクチャの基点に対し相対的なピクセルで表現しなければなりません。垂直座標点がオブジェクト内に既に表示されている場合、このコマンドは何もしません(ただい二番目の引数に <em>*</em> を渡した場合を除く、後述参照)。ピクチャは&quot;トランケート (中央合わせなし)&quot; フォーマットで表示されなければなりません。</li>
@@ -69,7 +69,7 @@
 <p><em>hPosition</em> 引数はリストボックスとピクチャーのコンテキストで使用できます。</p>
 <ul>
 <li>リストボックスの場合、<em>hPosition</em>に列番号を渡すことができます。コマンドを実行するとリストボックスを横スクロールし、指定した列が表示されます。列がすでに表示されている場合、コマンドはなにも行いません。縦スクロールと同様、2番目のオプション引数 <em>*</em> を渡すと、コマンドによって表示された列は先頭位置に配置されます (リストボックスが実際にスクロールされた場合。後述)。</li>
-<li>フォームに表示されたピクチャーの場合、<em>hPosition</em> はオブジェクトに表示される水平座標点を表します。値はローカルコン テキスト中でピクチャの基点に対し相対的なピクセルで表現しなければなりません。垂直座標点がオブジェクト内に既に表示されている場合、このコマンドは何もしません(二番目の引数に <em>*</em> を渡した場合を除く、後述参照)。</li>
+<li>フォームに表示されたピクチャーの場合、<em>hPosition</em> はオブジェクトに表示される水平座標点を表します。値はローカルコンテキスト中でピクチャの基 点に対し相対的なピクセルで表現しなければなりません。垂直座標点がオブジェクト内に既に表示されている場合、このコマンドは何もしません(二番目の引数に <em>*</em> を渡した場合を除く、後述参照)。</li>
 </ul>
 <p>二番目のオプション引数 <em>*</em> を渡すと:</p>
 <ul>

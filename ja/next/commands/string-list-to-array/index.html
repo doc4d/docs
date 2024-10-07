@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">STRING LIST TO ARRAY | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/string-list-to-array"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="STRING LIST TO ARRAY | 4D Docs"><meta data-rh="true" name="description" content="STRING LIST TO ARRAY ( resID ; strings {; resFile} )"><meta data-rh="true" property="og:description" content="STRING LIST TO ARRAY ( resID ; strings {; resFile} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/string-list-to-array"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/string-list-to-array" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/string-list-to-array" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/string-list-to-array" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/string-list-to-array" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/string-list-to-array" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/string-list-to-array" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -38,11 +38,11 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>resID</td><td>倍長整数</td><td>🡒</td><td>リソースID番号、または &#x27;group&#x27;要素の&#x27;id&#x27;属性 (XLIFF)</td></tr><tr><td>strings</td><td>文字配列</td><td>🡘</td><td>STR#リソースから取り出した文字列、または &#x27;group&#x27;要素から取り出した文字列 (XLIFF)</td></tr><tr><td>resFile</td><td>DocRef</td><td>🡒</td><td>リソースファイル参照番号、または 省略時、開かれているすべてのXLIFFファイル リソースファイル</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>resID</td><td>Integer</td><td>🡒</td><td>リソースID番号、または &#x27;group&#x27;要素の&#x27;id&#x27;属性 (XLIFF)</td></tr><tr><td>strings</td><td>Text array</td><td>🡘</td><td>STR#リソースから取り出した文字列、または &#x27;group&#x27;要素から取り出した文字列 (XLIFF)</td></tr><tr><td>resFile</td><td>Time</td><td>🡒</td><td>リソースファイル参照番号、または 省略時、開かれているすべてのXLIFFファイル リソースファイル</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/string-list-to-array#説明">​</a></h4>
 <p><strong>STRING LIST TO ARRAY</strong>コマンドは以下の要素から構築される<em>strings</em>配列を生成します:</p>
 <ul>
-<li>ストリングリスト (“STR#”) リソースに格  納された、IDが<em>resID</em>の文字列、または</li>
+<li>ストリングリスト (“STR#”) リソースに格納され  た、IDが<em>resID</em>の文字列、または</li>
 <li>開かれたXLIFFファイル中、&#x27;group&#x27;要素の&#x27;id&#x27;属性が<em>resID</em>である文字列 (後述の&quot;XLIFFアーキテクチャとの互換性&quot;を参照)。</li>
 </ul>
 <p>リソースが見つからない場合<em>strings</em>配列はそのまま変更されず、システム変数OKに0が設定されます。</p>
@@ -51,7 +51,7 @@
 <p><strong>注:</strong> ストリングリストリソースの各ストリングは、最大255文字を格納できます。</p>
 <p><strong>Tip:</strong> ストリングリストの総サイズを32Kに、また1リソースあたり数百文字列に制限しなければなりません。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="xliffアーキテクチャとの互換性">XLIFFアーキテクチャとの互換性<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/string-list-to-array#xliffアーキテクチャとの互換性">​</a></h4>
-<p>4D v11より、<strong>STRING LIST TO ARRAY</strong>コマンドはXLIFFアーキテクチャと互換があります。コマンドはまず<em>resID</em>と<em>strID</em>に対応するリソースをすべての開かれたXLIFFファイル内で探します (<em>resFile</em> 引数が省略されていれば)。この場合、<em>resID</em>は<strong>group</strong>要素の<strong>id</strong>属  性を表し、<em>strID</em>は<strong>trans-unit</strong>要素の<strong>id</strong>属性を表します。値が見つからない場合、コマンドは引き続き開かれたリソースファイルを検索します。4DにおけるXLIFFアーキテクチャに関する詳細は4D Design Referenceマニュアルを参照してください。</p>
+<p>4D v11より、<strong>STRING LIST TO ARRAY</strong>コマンドはXLIFFアーキテクチャと互換があります。コマンドはまず<em>resID</em>と<em>strID</em>に対応するリソースをすべての開かれたXLIFFファイル内で探します (<em>resFile</em> 引数が省略されていれば)。この場合、<em>resID</em>は<strong>group</strong>要素の<strong>id</strong>属性を表  し、<em>strID</em>は<strong>trans-unit</strong>要素の<strong>id</strong>属性を表します。値が見つからない場合、コマンドは引き続き開かれたリソースファイルを検索します。4DにおけるXLIFFアーキテクチャに関する詳細は4D Design Referenceマニュアルを参照してください。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="システム変数およびセット">システム変数およびセット<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/string-list-to-array#システム変数およびセット">​</a></h4>
 <p>リソースが見つかるとOK変数に1が、そうでなければ0が設定されます。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="参照">参照<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/string-list-to-array#参照">​</a></h4>

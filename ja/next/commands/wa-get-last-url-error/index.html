@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">WA GET LAST URL ERROR | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/wa-get-last-url-error"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="WA GET LAST URL ERROR | 4D Docs"><meta data-rh="true" name="description" content="WA GET LAST URL ERROR ( { ;} object ; url ; description ; errorCode* )"><meta data-rh="true" property="og:description" content="WA GET LAST URL ERROR ( { ;} object ; url ; description ; errorCode* )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/wa-get-last-url-error"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/wa-get-last-url-error" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/wa-get-last-url-error" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/wa-get-last-url-error" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/wa-get-last-url-error" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/wa-get-last-url-error" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/wa-get-last-url-error" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -50,7 +50,7 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>*</td><td>演算子</td><td>🡒</td><td>指定時, objectはオブジェクト名 (文字列) 省略時, objectは変数</td></tr><tr><td>object</td><td>フォームオブジェクト</td><td>🡒</td><td>オブジェクト名 (* 指定時) または 変数 (* 省略時)</td></tr><tr><td>url</td><td>文字</td><td>🡘</td><td>エラー元のURL</td></tr><tr><td>description</td><td>文字</td><td>🡘</td><td>エラーの説明 (Mac OS)</td></tr><tr><td>errorCode</td><td>倍長整数</td><td>🡘</td><td>エラーコード</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>*</td><td>演算子</td><td>🡒</td><td>指定時, objectはオブジェクト名 (文字列) 省略時, objectは変数</td></tr><tr><td>object</td><td>any</td><td>🡒</td><td>オブジェクト名 (* 指定時) または 変数 (* 省略時)</td></tr><tr><td>url</td><td>Text</td><td>🡘</td><td>エラー元のURL</td></tr><tr><td>description</td><td>Text</td><td>🡘</td><td>エラーの説明 (Mac OS)</td></tr><tr><td>errorCode</td><td>Integer</td><td>🡘</td><td>エラーコード</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/wa-get-last-url-error#説明">​</a></h4>
 <p>WA GET LAST URL ERROR コマンドを使用して、<em>*</em> と <em>object</em> 引数で指定したWebエリアで発生した最後のエラーに関する情報のいくつかの項目を取得できます。</p>
 <p>この情報は３つの変数に返されます:</p>
@@ -59,7 +59,7 @@
 <li><em>description</em> (Mac OS のみ): エラーについての説明 (利用可能な場合)。エラーにテキストが関連付けられていない場合、空の文字列が返されます。Windowsでは常に空の文字列が返されます。</li>
 <li><em>errorCode</em>: エラーコード。<br>
 - コードが400以上の場合、それはHTTPプロトコル関連のエラーです。このタイプのエラーに関する詳細情報は、以下のアドレスを参照してください:<em><a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blank" rel="noopener noreferrer">http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</a></em><br>
-- 上記以外の場合、WebKit (Mac OS) または ActiveX (Windows) から返されたエラーです。</li>
+- 上記以外の場合、WebKit (Mac OS) または ActiveX (Windows) から返されたエラーで す。</li>
 </ul>
 <p>発生したエラーの原因を知るためには、On URL Loading Errorフォームイベントのフレームワークでこのコマンドを呼び出すことをお勧めします。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="参照">参照<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/wa-get-last-url-error#参照">​</a></h4>

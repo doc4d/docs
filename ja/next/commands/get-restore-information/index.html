@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">GET RESTORE INFORMATION | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/get-restore-information"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="GET RESTORE INFORMATION | 4D Docs"><meta data-rh="true" name="description" content="GET RESTORE INFORMATION ( selector ; info1 ; info2 )"><meta data-rh="true" property="og:description" content="GET RESTORE INFORMATION ( selector ; info1 ; info2 )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/get-restore-information"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/get-restore-information" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/get-restore-information" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/get-restore-information" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/get-restore-information" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/get-restore-information" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/get-restore-information" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -38,7 +38,7 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>selector</td><td>倍長整数</td><td>🡒</td><td>取得する情報のタイプ</td></tr><tr><td>info1</td><td>倍長整数, 日付</td><td>🡘</td><td>セレクタの値1</td></tr><tr><td>info2</td><td>文字, 時間</td><td>🡘</td><td>セレクタの値2</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>selector</td><td>Integer</td><td>🡒</td><td>取得する情報のタイプ</td></tr><tr><td>info1</td><td>Integer, Date</td><td>🡘</td><td>セレクタの値1</td></tr><tr><td>info2</td><td>Text, Time</td><td>🡘</td><td>セレクタの値2</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/get-restore-information#説明">​</a></h4>
 <p>GET RESTORE INFORMATIONコマンドを使用し、前回のデータベース自動復元に関連する情報を取得できます。</p>
 <p><em>selector</em>には取得する情報タイプを渡します。この引数の値として、“”テーマ内の定数を使用できます:</p>
@@ -66,7 +66,7 @@
 <p><em>info1</em>と<em>info2</em>の型および内容は、<em>selector</em>の値によって決まります。</p>
 <ul>
 <li><em>selector</em> = 0 (Last Restore Date)：前回の自動復元の、<em>info1</em>に日付、<em>info2</em>に時間が返されます。</li>
-<li><em>selector</em> = 2 (Last Restore Status)：前回の自動復元の、<em>info1</em>にステ  ータス番号、<em>info2</em>にそのテキストが返されます。</li>
+<li><em>selector</em> = 2 (Last Restore Status)：前回の自動復元の、<em>info1</em>にステータス番号、<em>info2</em>にそのテキストが返されます。</li>
 </ul>
 <p><strong>Note:</strong> このコマンドは手動でのデータベース復元は対象外となります。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="参照">参照<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/get-restore-information#参照">​</a></h4>

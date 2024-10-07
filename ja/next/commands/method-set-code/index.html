@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">METHOD SET CODE | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/method-set-code"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="METHOD SET CODE | 4D Docs"><meta data-rh="true" name="description" content="METHOD SET CODE ( path ; code {; *} )"><meta data-rh="true" property="og:description" content="METHOD SET CODE ( path ; code {; *} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/method-set-code"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/method-set-code" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/method-set-code" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/method-set-code" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/method-set-code" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/method-set-code" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/method-set-code" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -38,12 +38,12 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>path</td><td>テキスト, テキスト配列</td><td>🡒</td><td>メソッドパスを格納したテキストまたはテキスト配列</td></tr><tr><td>code</td><td>テキスト, テキスト配列</td><td>🡒</td><td>指定したメソッドのコード</td></tr><tr><td>*</td><td>演算子</td><td>🡒</td><td>指定時 = コンポーネントで実行されたとき、コマンドをホストデータベースに適用する (コンポーネントのコンテキスト以外ではこの引数は無視されます)</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>path</td><td>Text, Text配列</td><td>🡒</td><td>メソッドパスを格納したテキストまたはテキスト配列</td></tr><tr><td>code</td><td>Text, Text配列</td><td>🡒</td><td>指定したメソッドのコード</td></tr><tr><td>*</td><td>演算子</td><td>🡒</td><td>指定時 = コンポーネントで実行されたとき、コマンドをホストデータベースに適用する (コンポーネントのコンテキスト以外ではこの引数は無視されます)</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/method-set-code#説明">​</a></h4>
 <p><strong>METHOD SET CODE</strong>コマンドは<em>path</em>引数で指定したメソッドのコードを<em>code</em>引数に渡した内容で置き換えます。</p>
 <p>データベースメソッド、クラス定義、トリガー、プロジェクトメソッド、フォームメソッド、オブジェクトメソッドなど、すべてのタイプのメソッドのコードにこのコマンドはアクセスできます。</p>
 <p>メソッドが存在しなければ、<em>code</em>引数に渡した内容で新規作成されます。</p>
-<p><strong>注:</strong> プロジェクトデータベースにおいて  は、データベースメソッド、トリガー、およびプロジェクトメソッドのみ新規作成することができます。</p>
+<p><strong>注:</strong> プロジェクトデータベースにおいては、データベースメソッ ド、トリガー、およびプロジェクトメソッドのみ新規作成することができます。</p>
 <p><strong>プロジェクトにおける注意:</strong></p>
 <ul>
 <li>プロジェクトデータベースにおいては、データベースメソッド、トリガー、およびプロジェクトメソッドのみ新規作成することができます。</li>
@@ -54,14 +54,14 @@
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> ARRAY TEXT(arrPaths;0) // テキスト配列</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> ARRAY TEXT(arrCodes;0)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> METHOD SET CODE(arrPaths;arrCodes) // 複数のメソッドのコード</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="クリップボードにコードをコピー" title="コピー" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <p>この2つのシンタックスを混合して使用することはできません。</p>
 <p>無効なパス名を渡した場合、コマンドはなにも行いません。</p>
-<p><strong>METHOD SET CODE</strong> が呼ばれた場合、デフォルトでメソッド属性はリセットされます。ただし <em>code</em> 引数の先頭行に有効なメタデータ(JSON表記)が含まれる場合、それらはメソッド属性を指定するために使用され、先頭行はコードには含まれません。メタデー  タの例は以下の通りです:</p>
+<p><strong>METHOD SET CODE</strong> が呼ばれた場合、デフォルトでメソッド属性はリセットされます。ただし <em>code</em> 引数の先頭行に有効なメタデータ(JSON表記)が含まれる場合、それらはメソッド属性を指定するために使用され、先頭行はコードには含まれません。メタデータの例は以下の通りです:</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">  // %attributes = {&quot;invisible&quot;:true,&quot;lang&quot;:&quot;fr&quot;,&quot;folder&quot;:&quot;Security&quot;}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="クリップボードにコードをコピー" title="コピー" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <p><strong>注:</strong> これらのメタデータは<a href="/docs/ja/next/commands/method-get-code">METHOD GET CODE</a>コマンドで自動的に生成されます。サポートされる属性についての詳細な情報に関しては、<a href="/docs/ja/next/commands/method-set-attributes">METHOD SET ATTRIBUTES</a> コマンドを参照して下さい。</p>
 <p>メタデータの「folder」プロパティに関しては、以下の点に留意して下さい。</p>
 <ul>
 <li>このプロパティが明示されていて有効なフォルダーに対応する場合、メソッドはその親フォルダーに置かれます。</li>
 <li>このプロパティが明示されていないかフォルダーが存在しない場合、コマンドは親フォルダーの階層に変更を加えません。</li>
-<li>このプロパ  ティが空の文字列を含む場合、メソッドはルート階層に置かれます。</li>
+<li>このプロパティが空の文字列を含む場 合、メソッドはルート階層に置かれます。</li>
 </ul>
 <p>このコマンドをコンポーネントから実行することもできますが、この場合 (コンポーネントコードには書き込みアクセスができないため) <em>*</em> 引数を渡さなければなりません。この状況で <em>*</em> 引数を省略するとエラー-9763が生成されます。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題">例題<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/method-set-code#例題">​</a></h4>

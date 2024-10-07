@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">OPEN URL | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/open-url"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="OPEN URL | 4D Docs"><meta data-rh="true" name="description" content="OPEN URL ( path {; appName}{; *} )"><meta data-rh="true" property="og:description" content="OPEN URL ( path {; appName}{; *} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/open-url"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/open-url" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/open-url" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/open-url" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/open-url" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/open-url" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/open-url" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -38,12 +38,12 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>path</td><td>文字</td><td>🡒</td><td>開くドキュメントまたはURL</td></tr><tr><td>appName</td><td>文字</td><td>🡒</td><td>使用するアプリケーション名</td></tr><tr><td>*</td><td>演算子</td><td>🡒</td><td>指定した場合 = URLをエンコードしない, 省略した場合 = URLをエンコードする</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>path</td><td>Text</td><td>🡒</td><td>開くドキュメントまたはURL</td></tr><tr><td>appName</td><td>Text</td><td>🡒</td><td>使用するアプリケーション名</td></tr><tr><td>*</td><td>演算子</td><td>🡒</td><td>指定した場合 = URLをエンコードしない, 省略した場合 = URLをエンコードする</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/open-url#説明">​</a></h4>
 <p><strong>OPEN URL</strong> コマンドは、<em>appName</em> で指定したアプリケーションを使用して、<em>path</em> 引数に渡したファイルやURLを開きます。</p>
 <p><em>path</em> 引数には標準のURLまたはファイルのパス名のどちらかを渡す事ができます。コマンドは、OS X環境下ではコロン (&#x27;:&#x27;)、Windows環境下ではスラッシュ(&#x27;\&#x27;)、またはfile://で始まるPosix URLを受け取る事ができます。</p>
 <p><em>appName</em> 引数が省略されていた場合、4Dはまず引数をファイルパス名として解釈しようとします。この場合4Dはシステムに、もっとも適切なアプリケーションを使用してファイルを開くよう、リクエストします (例えば、.htmlファイルにはブラウザを、.docファイルにはMS Wordを使用します)。この場合 * 引数は無視されます。</p>
-<p><em>path</em> 引数に標準のURL (mailto:, news:, http:などのプロトコル) が渡された  場合、4D はデフォルトのWebブラウザを開始し、URLにアクセスします。コンピュータに接続されたボリュームにブラウザがない場合、このコマンドは何も行いません。</p>
+<p><em>path</em> 引数に標準のURL (mailto:, news:, http:などのプロトコル) が渡された場合、4D はデフォルトのWebブラウザを開始し、URLにアクセスします。コンピュータに接続されたボリュームにブラウザがない場合、このコマンドは何も行いません。</p>
 <p><em>appName</em> parameter引数が渡された場合、コマンドはまずシステムに問い合わせをします。その名前のアプリケーションがインストールされていた場合、それが起動し、コマンドはそのアプリケーションに指定されたURLまたはドキュメントを開くようにリクエストします。<br>
 Windows環境下では、アプリケーション名を認識するメカニズムは、スタートメニューの「ファイル名を指定して実行」で使用されているものと同じです。例えば、以下の様なものを渡す事ができます:</p>
 <ul>
@@ -59,7 +59,7 @@ Windows環境下では、アプリケーション名を認識するメカニズ�
 <li>&quot;TextEdit&quot;</li>
 </ul>
 <p><em>appName</em> 引数で指定されたアプリケーションが見つからない場合でも、エラーは返されません。コマンドはその引数が指定されなかったものとして実行されます。</p>
-<p>4Dは自動でURLの特別文字をエン コードします。引数に***を渡すと、4DはURL特別文字のエンコードを行いません。このオプションを使用して、以下のようなURLの送信が可能です: &quot;<em><a href="http://www.server.net/page.htm?q=something" target="_blank" rel="noopener noreferrer">http://www.server.net/page.htm?q=something</a></em>&quot;</p>
+<p>4Dは自動でURLの特別文字をエンコー ドします。引数に***を渡すと、4DはURL特別文字のエンコードを行いません。このオプションを使用して、以下のようなURLの送信が可能です: &quot;<em><a href="http://www.server.net/page.htm?q=something" target="_blank" rel="noopener noreferrer">http://www.server.net/page.htm?q=something</a></em>&quot;</p>
 <p><strong>注:</strong> このコマンドはWebプロセスから呼ばれた時は動作しません。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-1">例題 1<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/open-url#例題-1">​</a></h4>
 <p>以下では、このコマンドがURL引数として受け入れる異なるタイプの文字列を例示します:</p>

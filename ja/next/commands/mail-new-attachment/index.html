@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">MAIL New attachment | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/mail-new-attachment"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="MAIL New attachment | 4D Docs"><meta data-rh="true" name="description" content="MAIL New attachment ( value {; name {; cid {; type {; disposition}}}} ) -&gt; 戻り値"><meta data-rh="true" property="og:description" content="MAIL New attachment ( value {; name {; cid {; type {; disposition}}}} ) -&gt; 戻り値"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/mail-new-attachment"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/mail-new-attachment" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/mail-new-attachment" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/mail-new-attachment" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/mail-new-attachment" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/mail-new-attachment" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/mail-new-attachment" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -56,7 +56,7 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>value</td><td>テキスト, BLOB, オブジェクト</td><td>🡒</td><td>オブジェクト(4D.File、4D.ZipFile、4D.Blob)、または添付ファイルのパス(テキスト)、または添付ファイルを格納しているBlob(BLOB)</td></tr><tr><td>name</td><td>テキスト</td><td>🡒</td><td>添付ファイルを指定するのにメールクライアントが使用する名前+拡張子</td></tr><tr><td>cid</td><td>テキスト</td><td>🡒</td><td>添付ファイルのID(HTMLメッセージのみ)、またはcidが必要でない場合には&quot; &quot;</td></tr><tr><td>type</td><td>テキスト</td><td>🡒</td><td>content-type ヘッダーの値</td></tr><tr><td>disposition</td><td>テキスト</td><td>🡒</td><td>content-disposition ヘッダーの値: &quot;inline&quot; または &quot;attachment&quot;.</td></tr><tr><td>戻り値</td><td>オブジェクト</td><td>🡐</td><td>添付オブジェクト</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>value</td><td>Text, Blob, Object</td><td>🡒</td><td>オブジェクト(4D.File、4D.ZipFile、4D.Blob)、または添付ファイルのパス(テキスト)、または添付ファイルを格納しているBlob(BLOB)</td></tr><tr><td>name</td><td>Text</td><td>🡒</td><td>添付ファイルを指定するのにメールクライアントが使用する名前+拡張子</td></tr><tr><td>cid</td><td>Text</td><td>🡒</td><td>添付ファイルのID(HTMLメッセージのみ)、またはcidが必要でない場合には&quot; &quot;</td></tr><tr><td>type</td><td>Text</td><td>🡒</td><td>content-type ヘッダーの値</td></tr><tr><td>disposition</td><td>Text</td><td>🡒</td><td>content-disposition ヘッダーの値: &quot;inline&quot; または &quot;attachment&quot;.</td></tr><tr><td>戻り値</td><td>Object</td><td>🡐</td><td>添付オブジェクト</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/mail-new-attachment#説明">​</a></h4>
 <p><strong>MAIL New attachment</strong> コマンドは、<em>mail</em> オブジェクトに追加することができる添付オブジェクトを作成します。(*transporter.send( )*参照)</p>
 <p><em>value</em> 引数には、添付の中身を渡します。以下のものを渡すことができます:</p>
@@ -72,7 +72,7 @@
 </ul>
 <p>任意の<em>cid</em> 引数を使用すると、添付ファイルの内部ID を渡すことができます。このID はコンテンツID ヘッダーの値で、HTML メッセージでのみ使用されます。引数は、添付ファイルを、メッセージ本文で定義された参照を割り当て、<strong><img decoding="async" loading="lazy" src="cid:ID" class="img_ev3q"></strong> のようにHTML タグを使用して参照します。これはつまり添付ファイルの中身(例: ピクチャー)はメールクライアント場ではメッセージ本文内に表示されるべきであることを意味しています。最終的な表示はメールクライアントによって若干異なる可能性があります。<em>cid</em> 引数を使用したくない場合、この引数には空の文字列を渡してください。</p>
 <p>任意の<em>type</em> 引数を使用すると、添付ファイルのコンテンツタイプを明示的に設定することができます。例えば、MIME タイプを定義する文字列(&quot;video/mpeg&quot;など)を渡すことができます。このコンテンツタイプは拡張子とは関係なく添付ファイルに対して設定されます。MIME タイプについての詳細な情報については、<a href="https://ja.wikipedia.org/wiki/Multipurpose%5FInternet%5FMail%5FExtensions" target="_blank" rel="noopener noreferrer">Wikipedia 上のMIME に関するページ</a>を参照して下さい。<br>
-  この引数が省略された場合あるいはこの引数に空の文字列が渡された場合、デフォルトで、添付ファイルのコンテンツタイプは拡張子に基づいて設定されます。主なMIME タイプについては、以下のルールが適用されます:</p>
+この引数が省略された場合あるいはこの引数に空の文字列が渡された場合、デフォルトで、添付ファイルのコンテンツタイプは拡張子に基づいて設定されます。主なMIME タイプについては、以下のルールが適用されます:</p>
 
 
 
@@ -168,7 +168,7 @@
 
 
 
-<table><thead><tr><th>定数</th><th>値</th><th>コメント</th></tr></thead><tbody><tr><td>mail disposition attachment</td><td>attachment</td><td>Content-disposition ヘッダーの値を&quot;attachment&quot; に設定します。これは添付ファイルはメッセージ内でリンクとして提供される必要があることを意味します。</td></tr><tr><td>mail disposition inline</td><td>inline</td><td>Content-disposition ヘッダーの値を&quot;inline&quot; に設 定します。これは添付ファイルはメッセージ本文内の、&quot;cid&quot; の位置にレンダリングされる必要があることを意味します。レンダリングそのものはメールクライアントによります。</td></tr></tbody></table>
+<table><thead><tr><th>定数</th><th>値</th><th>コメント</th></tr></thead><tbody><tr><td>mail disposition attachment</td><td>attachment</td><td>Content-disposition ヘッダーの値を&quot;attachment&quot; に設定します。これは添付ファイルはメッセージ内でリンクとして提供される必要があることを意味します。</td></tr><tr><td>mail disposition inline</td><td>inline</td><td>Content-disposition ヘッダーの値を&quot;inline&quot; に設定します。これは添付ファイルはメッセージ本文 内の、&quot;cid&quot; の位置にレンダリングされる必要があることを意味します。レンダリングそのものはメールクライアントによります。</td></tr></tbody></table>
 <p>デフォルトでは、<em>disposition</em> 引数が省略された場合、Content-Disposition ヘッダーは以下のように設定されます:</p>
 <ul>
 <li><em>cid</em> 引数が使われていた場合、Content-Disposition ヘッダーは&quot;inline&quot; に設定されます。</li>

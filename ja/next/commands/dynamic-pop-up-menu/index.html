@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Dynamic pop up menu | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/dynamic-pop-up-menu"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Dynamic pop up menu | 4D Docs"><meta data-rh="true" name="description" content="Dynamic pop up menu ( menu {; default {; xCoord ; yCoord}} )  -&gt; 戻り値"><meta data-rh="true" property="og:description" content="Dynamic pop up menu ( menu {; default {; xCoord ; yCoord}} )  -&gt; 戻り値"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/dynamic-pop-up-menu"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/dynamic-pop-up-menu" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/dynamic-pop-up-menu" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/dynamic-pop-up-menu" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/dynamic-pop-up-menu" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/dynamic-pop-up-menu" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/dynamic-pop-up-menu" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -50,21 +50,21 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>menu</td><td>MenuRef</td><td>🡒</td><td>メニュー参照</td></tr><tr><td>default</td><td>文字</td><td>🡒</td><td>デフォルトで選択される項目のパラメーター</td></tr><tr><td>xCoord</td><td>倍長整数</td><td>🡒</td><td>左上隅のx座標</td></tr><tr><td>yCoord</td><td>倍長整数</td><td>🡒</td><td>左上隅のy座標</td></tr><tr><td>戻り値</td><td>文字</td><td>🡐</td><td>選択されたメニュー項目のパラメーター</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/dynamic-pop-up-menu#説明">​</a></h4>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>menu</td><td>Text</td><td>🡒</td><td>メニュー参照</td></tr><tr><td>default</td><td>Text</td><td>🡒</td><td>デフォルトで選択される項目のパラメーター</td></tr><tr><td>xCoord</td><td>Integer</td><td>🡒</td><td>左上隅のx座標</td></tr><tr><td>yCoord</td><td>Integer</td><td>🡒</td><td>左上隅のy座標</td></tr><tr><td>戻り値</td><td>Text</td><td>🡐</td><td>選択されたメニュー項目のパラメーター</td></tr></tbody></table>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの  直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/dynamic-pop-up-menu#説明">​</a></h4>
 <p><strong>Dynamic pop up menu</strong>はマウスの現在位置またはオプションの<em>xCoord</em> と <em>yCoord</em>引数で指定した位置に階層ポップアップメニューを表示します。</p>
 <p>使用される階層メニューは<a href="/docs/ja/next/commands/create-menu">Create menu</a>コマンドで作成されていなければなりません。<a href="/docs/ja/next/commands/create-menu">Create menu</a>から返される参照を<em>menu</em> 引数に渡します。</p>
 <p><strong>注:</strong> 既存の<a href="/docs/ja/next/commands/pop-up-menu">Pop up menu</a>コマンド (“ユーザインタフェース” テーマ) はテキストからポップアップメニューを作成するために使用できます。</p>
 <p>インターフェースルールの標準に準拠して、通常はこのコマンドを右クリック、または一定時間以上ボタンが押され続けた時に呼び出します (例えばコンテキストメニューとして)。</p>
 <p>オプションの<em>default</em> 引数を使用して、メニューが表示されるときにデフォルトで選択するポップアップメニューの項目を指定できます。この引数にはメニューに割り当てたカスタム文字列を渡します。この文字列は事前に<a href="/docs/ja/next/commands/set-menu-item-parameter">SET MENU ITEM PARAMETER</a> コマンドを使用して設定されていなければなりません。この引数を渡さないと、デフォルトで先頭の項目が選択されます。</p>
 <p><strong>注:</strong> デフォルトではトップレベルのメニュー項目のみが選択できます。</p>
-<p>オプションの <em>xCoord</em> と <em>yCoord</em> 引数を使用して、ポップアップメニューが表示される場所を指定できます。<em>xCoord</em> と <em>yCoord</em> 引数  にはそれぞれ、メニューの左上隅の水平および垂直座標を渡します。この座標はカレントフォームのローカル座標システムをピクセル単位で渡します。両引数はペアで指定しなければなりません。片方のみを渡した場合、無視されます。</p>
+<p>オプションの <em>xCoord</em> と <em>yCoord</em> 引数を使用して、ポップアップメニューが表示される場所を指定できます。<em>xCoord</em> と <em>yCoord</em> 引数にはそれぞ  れ、メニューの左上隅の水平および垂直座標を渡します。この座標はカレントフォームのローカル座標システムをピクセル単位で渡します。両引数はペアで指定しなければなりません。片方のみを渡した場合、無視されます。</p>
 <p>3Dボタンに関連付けられたポップアップメニューを表示したい場合、オプションの <em>xCoord</em> と <em>yCoord</em> 引数は渡しません。この場合は、カレントプラットフォームのインタフェース標準に基づき、4Dが自動でメニューの場所を計算します (3Dボタンの &quot;ポップアップメニューあり&quot; プロパティが &quot;リンク&quot; あるいは &quot;分離&quot; のいずれかに設定されている必要があります)。</p>
 <p>メニュー項目が選択されると、コマンドはその (<a href="/docs/ja/next/commands/set-menu-item-parameter">SET MENU ITEM PARAMETER</a>コマンドを使用して定義された) カスタム文字列を返します。そうでなければコマンドは空の文字列を返します。</p>
 <p><strong>4D v16 R3以降:</strong> 標準アクションがメニュー項目に関連付けられている場合、これは複数のレベルにおいて<strong>Dynamic pop up menu</strong> コマンドに影響します:</p>
 <ul>
 <li>関連付けられた標準アクションがポップアップメニューのコンテキストで有効化されていない(つまり呼び出すことができない)場合、項目は自動的に非表示にされます。アクションが有効化されているかいないかは、<a href="/docs/ja/next/commands/get-action-info">Get action info</a> コマンドを使用して調べることができます。</li>
-<li>切り替えに関連付けられたアクションの項目は、選択範囲の状況に応じて自動的にチェックされたり、チェックが外されたり、あるいは&quot;ミックス&quot;の 状況になります。</li>
+<li>切り替えに関連付けられたアクションの項目は、選択範囲の状況に応じて自動的にチェックされたり、チェックが外されたり、あるいは&quot;ミックス&quot;の状況になり ます。</li>
 <li>ak standard action title 定数を使用してアクションのタイトルが設定されていた場合には、そのローカライズされた名前がメニューに表示されます。</li>
 <li>アイテムが選択された時、関連付けられた標準アクションが呼び出されます(実行は非同期で行われます)。</li>
 </ul>

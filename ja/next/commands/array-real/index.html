@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">ARRAY REAL | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/array-real"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="ARRAY REAL | 4D Docs"><meta data-rh="true" name="description" content="ARRAY REAL ( arrayName ; size {; size2} )"><meta data-rh="true" property="og:description" content="ARRAY REAL ( arrayName ; size {; size2} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/array-real"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/array-real" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/array-real" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/array-real" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/array-real" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/array-real" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/array-real" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -38,12 +38,12 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>arrayName</td><td>配列</td><td>🡒</td><td>配列名</td></tr><tr><td>size</td><td>倍長整数</td><td>🡒</td><td>配列の要素数、またはsize2を指定した場合は配列の行数</td></tr><tr><td>size2</td><td>倍長整数</td><td>🡒</td><td>2次元配列の列数</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>arrayName</td><td>Array</td><td>🡒</td><td>配列名</td></tr><tr><td>size</td><td>Integer</td><td>🡒</td><td>配列の要素数、またはsize2を指定した場合は配列の行数</td></tr><tr><td>size2</td><td>Integer</td><td>🡒</td><td>2次元配列の列数</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/array-real#説明">​</a></h4>
 <p>ARRAY REALコマンドは、メモリ上に実数要素の配列を作成またはリサイズします。</p>
 <p><em>arrayName</em>引数は作成する配列の名前です。</p>
 <p><em>size</em>引数は配列の要素数です。</p>
-<p><em>size2</em>引数はオプションです。<em>size2</em>が渡されている場合、コマンドは2次元配列を作成します。この場合、<em>size</em>に配列の行数を、<em>size2</em>にはそれぞれの配列の列数を指定します。2次元配列の各行は要素および配列として扱えます。これは配列の一番目の次元を扱う時、2次元配列中の配列全体を挿入あるいは削除するために 、他の配列コマンドを使用できることを意味します。</p>
+<p><em>size2</em>引数はオプションです。<em>size2</em>が渡されている場合、コマンドは2次元配列を作成します。この場合、<em>size</em>に配列の行数を、<em>size2</em>にはそれぞれの配列の列数を指定します。2次元配列の各行は要素および配列として扱えます。これは配列の一番目の次元を扱う時、2次元配列中の配列全体を挿入あるいは削除するために、他の配列コマンドを使用できることを意味します。</p>
 <p>ARRAY REALを既存の配列に適用する場合、</p>
 <ul>
 <li>配列サイズを増やす場合、既存の値は保持され、新しい要素は0で初期化されます。</li>

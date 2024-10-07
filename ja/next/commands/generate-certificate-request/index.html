@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">GENERATE CERTIFICATE REQUEST | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/generate-certificate-request"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="GENERATE CERTIFICATE REQUEST | 4D Docs"><meta data-rh="true" name="description" content="GENERATE CERTIFICATE REQUEST ( privKey ; certifRequest ; codeArray ; nameArray )"><meta data-rh="true" property="og:description" content="GENERATE CERTIFICATE REQUEST ( privKey ; certifRequest ; codeArray ; nameArray )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/generate-certificate-request"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/generate-certificate-request" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/generate-certificate-request" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/generate-certificate-request" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/generate-certificate-request" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/generate-certificate-request" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/generate-certificate-request" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -44,16 +44,16 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>privKey</td><td>BLOB</td><td>🡒</td><td>秘密鍵BLOB</td></tr><tr><td>certifRequest</td><td>BLOB</td><td>🡘</td><td>CSRを受け取るBLOB</td></tr><tr><td>codeArray</td><td>倍長整数配列</td><td>🡒</td><td>情報コードリスト</td></tr><tr><td>nameArray</td><td>文字配列</td><td>🡒</td><td>名前リスト</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>privKey</td><td>Blob</td><td>🡒</td><td>秘密鍵BLOB</td></tr><tr><td>certifRequest</td><td>Blob</td><td>🡘</td><td>CSRを受け取るBLOB</td></tr><tr><td>codeArray</td><td>Integer array</td><td>🡒</td><td>情報コードリスト</td></tr><tr><td>nameArray</td><td>Text array</td><td>🡒</td><td>名前リスト</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/generate-certificate-request#説明">​</a></h4>
-<p><strong>GENERATE CERTIFICATE REQUEST</strong> コマンドは、Verisign(R)等の認証局で使用されているPKCSフォーマットで証明書リクエストを生成します。証明書はSSL暗号化プロトコルの重要な役割を持ちます。これはSSLモードで接続している各ブラウザに送信され、Webサイトの“IDカード” (このコマンドに指定した情報をもとに作成) とともに、ブラウザが受信情報の解読に使用できる公開鍵も納められています。さらにこの証明書には、整合性を保証する認証局により加えられた各種情報も納められます。</p>
+<p><strong>GENERATE CERTIFICATE REQUEST</strong> コマンドは、Verisign(R)等の認証局で使用されているPKCSフォーマットで証明書リクエストを生成します。証明書はSSL暗号化プロトコルの重要な役割を持ちます。こ れはSSLモードで接続している各ブラウザに送信され、Webサイトの“IDカード” (このコマンドに指定した情報をもとに作成) とともに、ブラウザが受信情報の解読に使用できる公開鍵も納められています。さらにこの証明書には、整合性を保証する認証局により加えられた各種情報も納められます。</p>
 <p><strong>Note:</strong> 4D Webサーバで使用するSSLプロトコルに関する詳細は<a href="/docs/ja/next/commands/web-service-set-parameter">WEB SERVICE SET PARAMETER</a> の節を参照してください。</p>
 <p>証明書リクエストには、<a href="/docs/ja/next/commands/generate-encryption-keypair">GENERATE ENCRYPTION KEYPAIR</a> コマンドで生成した一対の鍵が使用され、各種情報が納められます。認証局では、このリクエストと他の引数を組み合わせて証明書を作成します。</p>
 <p><em>privKey</em> には<a href="/docs/ja/next/commands/generate-encryption-keypair">GENERATE ENCRYPTION KEYPAIR</a> コマンドで生成した秘密鍵を納めたBLOBを渡します。</p>
 <p><em>certifRequest</em>には空のBLOBを渡します。コマンドが実行されると、この引数には証明書リクエストがbase64で暗号化されたPKCSフォーマットで納められます。このリクエストを認証局へ提出する目的で、例えば<a href="/docs/ja/next/commands/blob-to-document">BLOB TO DOCUMENT</a> コマンドを使用して、.pemの接尾辞がついたテキストファイルへ保存することができます。</p>
 <p><strong>警告:</strong> 秘密鍵はリクエストの作成に使用しますが、認証局へ送信してはいけません。</p>
 <p><em>codeArray</em> (倍長整数) および<em>nameArray</em> (文字列) にはそれぞれ、認証局から要求されるコード番号と情報内容を納めます。<br>
-必要とされるコードおよび名称は、認証局や証明書の用途によっ て変わる場合があります。しかし、証明書の通常の用途であれば (SSL経由でのWebサーバ接続)、この配列には以下の項目を納める必要があります:</p>
+必要とされるコードおよび名称は、認証局や証明書の用途によって変 わる場合があります。しかし、証明書の通常の用途であれば (SSL経由でのWebサーバ接続)、この配列には以下の項目を納める必要があります:</p>
 
 
 

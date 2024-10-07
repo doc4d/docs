@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">VERIFY DATA FILE | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/verify-data-file"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="VERIFY DATA FILE | 4D Docs"><meta data-rh="true" name="description" content="VERIFY DATA FILE ( structurePath ; dataPath ; objects ; options ; method {; tablesArray {; fieldsArray}} )"><meta data-rh="true" property="og:description" content="VERIFY DATA FILE ( structurePath ; dataPath ; objects ; options ; method {; tablesArray {; fieldsArray}} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/verify-data-file"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/verify-data-file" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/verify-data-file" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/verify-data-file" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/verify-data-file" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/verify-data-file" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/verify-data-file" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -62,14 +62,14 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>structurePath</td><td>テキスト</td><td>🡒</td><td>検証する4Dストラクチャファイルのパス名</td></tr><tr><td>dataPath</td><td>テキスト</td><td>🡒</td><td>検証する4Dデータファイルのパス名</td></tr><tr><td>objects</td><td>倍長整数</td><td>🡒</td><td>検証するオブジェクト</td></tr><tr><td>options</td><td>倍長整数</td><td>🡒</td><td>検証オプション</td></tr><tr><td>method</td><td>テキスト</td><td>🡒</td><td>4Dコールバックメソッド名</td></tr><tr><td>tablesArray</td><td>倍長整数配列</td><td>🡒</td><td>検証するテーブル番号</td></tr><tr><td>fieldsArray</td><td>2D整数配列, 2D倍長整数配列, 2D実数配列</td><td>🡒</td><td>検証するインデックス番号</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>structurePath</td><td>Text</td><td>🡒</td><td>検証する4Dストラクチャファイルのパス名</td></tr><tr><td>dataPath</td><td>Text</td><td>🡒</td><td>検証する4Dデータファイルのパス名</td></tr><tr><td>objects</td><td>Integer</td><td>🡒</td><td>検証するオブジェクト</td></tr><tr><td>options</td><td>Integer</td><td>🡒</td><td>検証オプション</td></tr><tr><td>method</td><td>Text</td><td>🡒</td><td>4Dコールバックメソッド名</td></tr><tr><td>tablesArray</td><td>Integer array</td><td>🡒</td><td>検証するテーブル番号</td></tr><tr><td>fieldsArray</td><td>2D Integer array, 2D Integer array, 2D Real array</td><td>🡒</td><td>検証するインデックス番号</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/verify-data-file#説明">​</a></h4>
 <p><strong>VERIFY DATA FILE</strong>コマンドは、<em>structurePath</em>と<em>dataPath</em>で指定したデータファイル中にあるオブジェクトの構造的な検証を行います。</p>
 <p><strong>注:</strong> データ検証に関する詳細は、Design Referenceマニュアルを参照してください。</p>
 <p><em>structurePath</em>は、 検証するデータファイルに対応するストラクチャーファイル (コンパイル済みまたはインタプリター) を指定します。開かれたストラクチャーや他のストラクチャーを指定できます。OSに対応した完全パス名を指定しなければなりません。空の文字列を渡すと標準のファイルを開くダイアログボックスが表示され、使用するストラクチャーファイルをユーザーが指定できます。</p>
 <p><em>dataPath</em> は4Dデータファイル (.4DD) を指定します。データファイルは<em>structurePath</em>引数で指定されたストラクチャーファイルに対応していなければなりません。カレントストラクチャーファイルを指定することができますが、カレントのデータファイルは指定できない (開かれていてはいけない) ことに注意してください。現在開かれているデータファイルを検証するためには <a href="/docs/ja/next/commands/verify-current-data-file">VERIFY CURRENT DATA FILE</a> コマンドを使用します。<strong>VERIFY DATA FILE</strong>でカレントのデータファイルを検証しようとすると、エラーが生成されます。</p>
 <p>指定されたデータファイルは読み込みのみで開かれます。他のアプリケーションが書き込み可能でこのファイルにアクセスしないようにしなければなりません。そうでなければ検証結果は正しくないものになります。<br>
-<em>dataPath</em> 引数に空の文字列、ファイル名、またはOSのシンタックスに対応した完全パス名を渡すことができます。空の文字列を渡すと標準のファイルを開くダイアログ ボックスが表示され、検証するファイルをユーザーが選択できます。カレントのデータファイル  を選択できないことに注意してください。データファイル名のみを渡した場合、4Dは指定されたストラクチャファイルと同階層にあるデータファイルを探します。</p>
+<em>dataPath</em> 引数に空の文字列、ファイル名、またはOSのシンタックスに対応した完全パス名を渡すことができます。空の文字列を渡すと標準のファイルを開くダイアログ ボックスが表示され、検証するファイルをユーザーが選択できます。カレントのデータファイルを選択できないことに注意して  ください。データファイル名のみを渡した場合、4Dは指定されたストラクチャファイルと同階層にあるデータファイルを探します。</p>
 <p><em>objects</em> 引数は検証するオブジェクトを指定するために使用します。2つのタイプのオブジェクト、レコードとインデックスを検証できます。<em>Data File Maintenance</em>テーマの以下の定数を使用できます:</p>
 
 
@@ -159,7 +159,7 @@
 
 
 
-<table><thead><tr><th>$1</th><th>倍長整数</th><th>メッセージタイプ (表参照)</th></tr></thead><tbody><tr><td>$2</td><td>倍長整数</td><td>オブジェクトタイプ</td></tr><tr><td>$3</td><td>テキスト</td><td>メッセージ</td></tr><tr><td>$4</td><td>倍長整数</td><td>テーブル番号</td></tr><tr><td>$5</td><td>倍長整数</td><td>予約</td></tr></tbody></table>
+<table><thead><tr><th>$1</th><th>倍長整数</th><th>メッセージタイプ (表参照)</th></tr></thead><tbody><tr><td>$2</td><td>倍長整数</td><td>オブジェクトタイプ</td></tr><tr><td>$3</td><td>テキスト</td><td>メッセージ</td></tr><tr><td>$4</td><td>倍長整数</td><td>テーブル番号</td></tr><tr><td>$5</td><td>倍長 整数</td><td>予約</td></tr></tbody></table>
 <p>以下の表は、イベントタイプごとの引数の内容を示しています:</p>
 
 
@@ -248,7 +248,7 @@
 
 <table><thead><tr><th><strong>イベント</strong></th><th><strong>$1 (Longint)</strong></th><th><strong>$2 (Longint)</strong></th><th><strong>$3 (Text)</strong></th><th><strong>$4 (Longint)</strong></th><th><strong>$5 (Longint)</strong></th></tr></thead><tbody><tr><td>メッセージ</td><td>1</td><td>0</td><td>進行状況</td><td>処理率</td><td>予約</td></tr><tr><td>メッセージ</td><td>(0-100%)</td><td></td><td></td><td></td><td></td></tr><tr><td>検証終了 (*)</td><td>2</td><td>オブジェクトタイプ (**)</td><td>OKメッセージ</td><td>テーブルまたはインデックス</td><td>予約</td></tr><tr><td>テスト</td><td>番号</td><td></td><td></td><td></td><td></td></tr><tr><td>エラー</td><td>3</td><td>オブジェクトタイプ (**)</td><td>エラーテキスト-</td><td>テーブルまたはインデックス</td><td>予約</td></tr><tr><td>メッセージ</td><td>番号</td><td></td><td></td><td></td><td></td></tr><tr><td>実行終了</td><td>4</td><td>0</td><td>終了</td><td>0</td><td>予約</td></tr><tr><td>警告</td><td>5</td><td>オブジェクトタイプ (**)</td><td>エラーテキスト</td><td>テーブルまたはインデックス</td><td>予約</td></tr><tr><td>メッセージ</td><td>番号</td><td></td><td></td><td></td><td></td></tr></tbody></table>
 <p>(*) モードがVerify Allであるとき、検証終了 ($1=2) が返されることはありません。このメッセージはVerify Records または Verify Indexes モードでのみ使用されます。<br>
-(**) <em>Object type</em>: オブジェクトタイプ: オブジェクトが検証されると、OKメッセージ ($1=2)、エラー ($1=3)、警告 ($1=5) が送信されます。$2に返されるオブジェクトタイプは以下の  うちのいずれかになります:</p>
+(**) <em>Object type</em>: オブジェクトタイプ: オブジェクトが検証されると、OKメッセージ ($1=2)、エラー ($1=3)、警告 ($1=5) が送信されます。$2に返されるオブジェクトタイプは以下のうちのいずれかになります:</p>
 <ul>
 <li>0 = 不明</li>
 <li>4 = レコード</li>
@@ -268,13 +268,13 @@
 <li><em>tablesArray</em> 配列にはテーブル番号が含まれ、レコードを検証するテーブルを指定するために使用します。この引数は検証するテーブルを制限するために使用します。この引数を渡さないか配列が空の場合で、<em>objects</em>引数にVerify Recordsが指定されている場合、すべてのテーブルが検証されます。</li>
 <li><em>fieldsArray</em> 配列には検証対象とするインデックス付きフィールドの番号を渡します。</li>
 </ul>
-<p>この引数が渡されないか配列が空の場合で、<em>objects</em>引数にVerify Indexesが指定されている場合、すべてのインデックスが検証されます。コマンドはインデッ クスの無いフィールドを無視します。フィールドに複数のインデックスが含まれる場合、すべてが検証されます。フィールドが複合インデックスの一部である場合、インデックス全体が検証されます。<br>
+<p>この引数が渡されないか配列が空の場合で、<em>objects</em>引数にVerify Indexesが指定されている場合、すべてのインデックスが検証されます。コマンドはインデックスの無いフィールドを無視し  ます。フィールドに複数のインデックスが含まれる場合、すべてが検証されます。フィールドが複合インデックスの一部である場合、インデックス全体が検証されます。<br>
 <em>fieldsArray</em>には二次元配列を渡します。配列の内容は以下の通りです:<br>
 - 要素 {0} にはテーブル番号が含まれます。<br>
 - 他の要素 {1...x} にはフィールド番号が含まれます。</p>
 <p>デフォルトで<strong>VERIFY DATA FILE</strong>コマンドは、(<em>options</em>引数にDo not create log fileオプションが指定されていなければ) XMLフォーマットのログファイルを作成します。このファイルはデータベースの<strong>Logs</strong>フォルダに作成され、名前もカレントデータベースのストラクチャーファイルに基づいたものがつけられます。例えば、“myDB.4db”という名前のストラクチャーファイルに対しては、ログファイルは“myDB_Verify_Log.xml”という名前が付けられます。Timestamp log file nameオプションを渡していた場合、ログファイル名には&quot;YYYY-MM-DD HH-MM-SS&quot;という形式で作成時の日時の情報が含まれます。ファイル名は例として次のような形になります:“myDB_Verify_Log_2015-09-27 15-20-35.xml” これはつまりそれぞれの新しいログファイルは以前のものを置き換える事はない一方、不要なファイルを削除するためにはいくつかのファイルを手動で削除しなければならない可能性があることを意味します。<br>
 選択されたオプションに関わらず、ログファイルが生成されるとそのファイルへのパスはコマンド実行後に<em>Document</em>システム変数へと返されます。</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-1">例題 1<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/verify-data-file#例題-1">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-1">例題 1<a class="hash-link" aria-label="見出しへの直接リンク" title=" 見出しへの直接リンク" href="/docs/ja/next/commands/verify-data-file#例題-1">​</a></h4>
 <p>データとインデックスの検証:</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> VERIFY DATA FILE($StructName;$DataName;Verify indexes+Verify records;Do not create log file;&quot;&quot;)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="クリップボードにコードをコピー" title="コピー" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-2">例題 2<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/verify-data-file#例題-2">​</a></h4>

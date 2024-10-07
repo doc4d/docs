@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">CHANGE CURRENT USER | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/change-current-user"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="CHANGE CURRENT USER | 4D Docs"><meta data-rh="true" name="description" content="CHANGE CURRENT USER {( user ; password )}"><meta data-rh="true" property="og:description" content="CHANGE CURRENT USER {( user ; password )}"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/change-current-user"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/change-current-user" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/change-current-user" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/change-current-user" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/change-current-user" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/change-current-user" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/change-current-user" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -32,19 +32,19 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>user</td><td>文字, 倍長整数</td><td>🡒</td><td>名前またはユニークなユーザーID</td></tr><tr><td>password</td><td>文字</td><td>🡒</td><td>(暗号化されていない)パスワード</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>user</td><td>Text, Integer</td><td>🡒</td><td>名前またはユニークなユーザーID</td></tr><tr><td>password</td><td>Text</td><td>🡒</td><td>(暗号化されていない)パスワード</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/change-current-user#説明">​</a></h4>
 <p><strong>CHANGE CURRENT USER</strong> コマンドを使用すると、データベースを終了させずに、カレントユーザーを変更できます。ユーザーはデータベース接続ダイアログボックス (引数なしでコマンドが呼び出された場合) を使用して、またはコマンドから直接、ログインユーザーを変更することが可能です。ユーザーがログインを変更すると、選択されたユーザーが保有する権限を優先す るため、以前のアクセス権はすべて放棄されます。</p>
 <p><strong>注:</strong></p>
 <ul>
-<li>シングルユーザーモードで開 かれたプロジェクトデータベースにおいては、このコマンドはなにもしません。</li>
+<li>シングルユーザーモードで開かれた プロジェクトデータベースにおいては、このコマンドはなにもしません。</li>
 <li><a href="/docs/ja/next/commands/set-user-alias">SET USER ALIAS</a> コマンドによってカレントユーザーのエイリアスが定義されていた場合、<strong>CHANGE CURRENT USER</strong> コマンドはそれをリセットします。</li>
 </ul>
 <p>引数なしで CHANGE CURRENT USER コマンドが実行されると、データベース接続ダイアログボックスが表示されます。データベースに入るには、ユーザーは必ず有効な名前とパスワードを入力または選択しなければなりません。接続ダイアログボックスの内容は、データベース環境設定の <strong>セキュリティ</strong>ページに依存します。</p>
 <p>また、使用するアカウントをプログラミングで指定するには、2つのオプション引数 <em>user</em> と <em>password</em> を渡します。<br>
 引数 <em>user</em> には、使用するアカウントの名前またはユニークなユーザーID (<em>userRef</em>) を渡します。 <a href="/docs/ja/next/commands/get-user-list">GET USER LIST</a> コマンドを用いて、ユーザー名とIDを取得できます。</p>
 <p>ユーザーアカウントが存在しない場合や削除された場合、エラーコード -9979が返されます。 <a href="/docs/ja/next/commands/on-err-call">ON ERR CALL</a> コマンドを用いてインストールされたエラー処理メソッドでこのエラーを検知することができます。その他では <a href="/docs/ja/next/commands/is-user-deleted">Is user deleted</a> コマンドを呼び出してユーザーアカウントをテストし、その後このコマンドを呼び出す方法があります。</p>
-<p>暗号化されていないユーザーアカウントのパスワードを引数 <em>password</em> に渡します。パスワードがユーザーと一致しない場合、コマンドはエラー  メッセージ -9978を返し、何も行いません。</p>
+<p>暗号化されていないユーザーアカウントのパスワードを引数 <em>password</em> に渡します。パスワードがユーザーと一致しない場合、コマンドはエラーメッセ  ージ -9978を返し、何も行いません。</p>
 <p>フラッディング (ブルートフォース攻撃) 、つまり、複数のユーザー名とパスワードの組み合わせによる試みを防ぐために、コマンドは遅れて実行されます。その結果、このコマンドを4回呼び出した後は、10秒経った後にコマンドは実行されます。この遅れは、ワークステーション全体を通して発生します。</p>
 <p><strong>注意:</strong> カレントユーザーのグループが&quot;シリアル化された&quot;機能(例: プラグイン)へのアクセスを提供していた場合、それに対応したライセンスが使用され、セッションの終了までその4D ユーザーのアカウントに付与されたままになります。これはコマンドが呼び出され、新しいユーザーのグループがその機能へのアクセスを提供していなかった場合でも同じです。</p>
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="カスタムアクセス管理ダイアログボックスの提供">カスタムアクセス管理ダイアログボックスの提供<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/change-current-user#カスタムアクセス管理ダイアログボックスの提供">​</a></h5>
@@ -52,7 +52,7 @@
 <p>次のように機能します。</p>
 <ol>
 <li>&quot;デフォルトユーザー&quot; モードでは、ダイアログボックスは表示されず、直接データベースへ入ります。</li>
-<li>は、ユーザー名とパスワード  を入力するためのカスタムダイアログボックスを表示します。実行可能な処理はすべてダイアログに表示されています。
+<li>は、ユーザー名とパスワードを入力  するためのカスタムダイアログボックスを表示します。実行可能な処理はすべてダイアログに表示されています。
 <ul>
 <li>4Dの標準アクセスダイアログボックスと同様に、<a href="/docs/ja/next/commands/get-user-list">GET USER LIST</a> コマンドを使用してデータベースのユーザーリストを表示できます。</li>
 <li>入力された文字の有効性をチェックするための様々な規制 (最低文字数、ユニークなど) を、パスワード入力フィールドにつけられます。</li>

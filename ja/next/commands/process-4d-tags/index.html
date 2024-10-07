@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">PROCESS 4D TAGS | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/process-4d-tags"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="PROCESS 4D TAGS | 4D Docs"><meta data-rh="true" name="description" content="PROCESS 4D TAGS ( inputData ; outputData {; param}{; param2 ; ... ; paramN} )"><meta data-rh="true" property="og:description" content="PROCESS 4D TAGS ( inputData ; outputData {; param}{; param2 ; ... ; paramN} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/process-4d-tags"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/process-4d-tags" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/process-4d-tags" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/process-4d-tags" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/process-4d-tags" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/process-4d-tags" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/process-4d-tags" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -38,11 +38,11 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>inputData</td><td>テキスト</td><td>🡒</td><td>処理する4Dタグを格納しているデータ</td></tr><tr><td>outputData</td><td>テキスト</td><td>🡘</td><td>処理されたデータ</td></tr><tr><td>param</td><td>式</td><td>🡒</td><td>実行されるテンプレートへと渡される引数</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>inputData</td><td>Text</td><td>🡒</td><td>処理する4Dタグを格納しているデータ</td></tr><tr><td>outputData</td><td>Text</td><td>🡘</td><td>処理されたデータ</td></tr><tr><td>param</td><td>Expression</td><td>🡒</td><td>実行されるテンプレートへと渡される引数</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/process-4d-tags#説明">​</a></h4>
 <p><strong>PROCESS 4D TAGS</strong>コマンドを使用すると、<em>inputTemplate</em> 引数に格納されている4D変換タグの処理が開始されます。<em>param</em> 引数を使用して値を挿入し(任意)、その結果が<em>outputResult</em> に返されます。 これらのタグの完全な詳細については、<em>4D 変換タグ</em> の章を参照して下さい。</p>
 <p>このコマンドにより、タグや、4D式や変数への参照を含んだ&quot;テンプレート&quot;型のテキストを実行でき、それにより実行コンテキストや引数に渡された値に応じた異なる結果を生成することができます。<br>
-例 えば、このコマンドにより、4D変換タグを含んだセミダイナミックページに基づいたHTMLページを生成する事ができます(このとき4D Webサーバーを起動する必要はありません)。このコマンドを使用して、データベース内のデ  ータへの参照の処理を(4D Internetコマンド経由で)含んだHTMLフォーマットのEメールを送信する事ができます。テキストに基づいたデータタイプであれば、XML、 SVG、マルチスタイルテキストなど、どんなデータタイプでも処理することができます。</p>
+例 えば、このコマンドにより、4D変換タグを含んだセミダイナミックページに基づいたHTMLページを生成する事ができます(このとき4D Webサーバーを起動する必要はありません)。このコマンドを使用して、データベース内のデータへ  の参照の処理を(4D Internetコマンド経由で)含んだHTMLフォーマットのEメールを送信する事ができます。テキストに基づいたデータタイプであれば、XML、 SVG、マルチスタイルテキストなど、どんなデータタイプでも処理することができます。</p>
 <p>処理されるタグを格納しているデータを引数 <em>inputTemplate</em> に渡します。この引数にはテキスト型の変数やフィールドを渡せます。</p>
 <p>4Dの全ての変換タグがサポートされます (<em>4DTEXT</em>、<em>4DHTML</em>、<em>4DSCRIPT</em>、<em>4DLOOP</em>、<em>4DEVAL</em>など) 。</p>
 <p><strong>注:</strong> Webサーバー (Webプロセス) のフレームワーク以外で <em>4DINCLUDE</em> タグを使用する場合:</p>
@@ -51,7 +51,7 @@
 <li>4Dのリモートモードの場合、4Dのアプリケーションを格納しているフォルダーがデフォルトフォルダーです。</li>
 </ul>
 <p><strong>PROCESS 4D TAGS</strong> コマンドは、実行されたコードに不定数の<em>param</em> 引数を挿入する事をサポートします。プロジェクトメソッド同様、これらの引数は様々なタイプのスカラー値(テキスト、日付、時 間、倍長整数、実数、等)に加え、オブジェクトやコレクションも格納することができます。また、配列ポインターによって配列を使用することもできます。4Dタグによって処理されるコードの中では、これらの引数は4D メソッド同様、標準の引数($1、$2等)を通じてアクセス可能です(例題を参照して下さい)。<br>
-<strong>PROCESS 4D TAGS</strong> コマンドの実行コンテキストにおいて、専用のローカル変数のセットが定義されます。こ  れらの変数は処理中、読み出し・書き込みともに可能です。</p>
+<strong>PROCESS 4D TAGS</strong> コマンドの実行コンテキストにおいて、専用のローカル変数のセットが定義されます。これらの  変数は処理中、読み出し・書き込みともに可能です。</p>
 <p>コマンドの実行後引数 <em>outputResult</em> には、<em>inputTemplate</em> 引数の結果とともに、そこに含まれる4Dタグが処理された結果が返されます。もし<em>inputTemplate</em> 引数が4Dタグを含まない、または空の文字列を生成する場合、引数 <em>outputResult</em> の内容は引数<em>inputTemplate</em> の内容と一致します。</p>
 <p>引数 <em>outputResult</em> はテキスト型のフィールドまたは変数です。</p>
 <p><strong>注:</strong> このコマンドは<a href="/docs/ja/next/commands/on-web-authentication-database-method">On Web Authenticationデータベースメソッド</a>を呼び出しません。</p>

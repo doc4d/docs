@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">ARRAY TIME | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/array-time"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="ARRAY TIME | 4D Docs"><meta data-rh="true" name="description" content="ARRAY TIME ( arrayName ; size {; size2} )"><meta data-rh="true" property="og:description" content="ARRAY TIME ( arrayName ; size {; size2} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/array-time"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/array-time" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/array-time" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/array-time" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/array-time" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/array-time" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/array-time" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -38,13 +38,13 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>arrayName</td><td>配列</td><td>🡒</td><td>配列名</td></tr><tr><td>size</td><td>倍長整数</td><td>🡒</td><td>配列の要素の数、もしくはsize2が指定されていた場合は配列の数</td></tr><tr><td>size2</td><td>倍長整数</td><td>🡒</td><td>2次元配列の要素の数</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>arrayName</td><td>Array</td><td>🡒</td><td>配列名</td></tr><tr><td>size</td><td>Integer</td><td>🡒</td><td>配列の要素の数、もしくはsize2が指定されていた場合は配列の数</td></tr><tr><td>size2</td><td>Integer</td><td>🡒</td><td>2次元配列の要素の数</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/array-time#説明">​</a></h4>
 <p><strong>ARRAY TIME</strong>コマンドは、メモリ上に時間型の要素の配列を作成・リサイズします。</p>
 <p><strong>リマインダ:</strong> 4Dでは時間は数の値として処理されるということに注意して下さい。以前のバージョンの4Dでは、時間の配列を管理するためには倍長整数配列と表示フォーマットを組み合わせる必要がありました。</p>
 <p><em>arrayName</em> 引数には配列の名前を渡します。</p>
 <p><em>size</em> 引数には、配列の要素の数を渡します。</p>
-<p><em>size2</em> 引数は任意の引数です。指定時にはコマンドは2次元配列を  作成します。この場合、 <em>size</em> 引数はそれぞれの配列の行の数を指定し、 <em>size2</em> 引数はそれぞれの配列の列の数を指定します。2次元配列内のそれぞれの行は、要素としても配列としても扱うことが出来ます。これはつまり、配列の1次元目を扱うときは、このテーマ内の他のコマンドを使用することによって2次元配列の中に配列全体を挿入したり削除したりすることが出来るということです。</p>
+<p><em>size2</em> 引数は任意の引数です。指定時にはコマンドは2次元配列を作成しま す。この場合、 <em>size</em> 引数はそれぞれの配列の行の数を指定し、 <em>size2</em> 引数はそれぞれの配列の列の数を指定します。2次元配列内のそれぞれの行は、要素としても配列としても扱うことが出来ます。これはつまり、配列の1次元目を扱うときは、このテーマ内の他のコマンドを使用することによって2次元配列の中に配列全体を挿入したり削除したりすることが出来るということです。</p>
 <p><strong>ARRAY TIME</strong> コマンドを既存の配列に対して使用するときには以下の点に注意して下さい:</p>
 <ul>
 <li>サイズを拡大する場合、既存の要素は何も変更されず、新しく追加された要素はnull時間の値(00:00:00)で初期化されます。</li>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">SORT ARRAY | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/sort-array"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="SORT ARRAY | 4D Docs"><meta data-rh="true" name="description" content="SORT ARRAY ( array {; array2 ; ... ; arrayN}{; &gt; または &lt;} )"><meta data-rh="true" property="og:description" content="SORT ARRAY ( array {; array2 ; ... ; arrayN}{; &gt; または &lt;} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/sort-array"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/sort-array" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/sort-array" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/sort-array" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/sort-array" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/sort-array" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/sort-array" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -32,7 +32,7 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>array</td><td>配列</td><td>🡒</td><td>ソートする配列</td></tr><tr><td>&gt; または &lt;</td><td>演算子</td><td>🡒</td><td>&quot;&gt;&quot; : 昇順ソート, または &quot;&lt;&quot; : 降順ソート, または 省略した場合降順ソート</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>array</td><td>Array</td><td>🡒</td><td>ソートする配列</td></tr><tr><td>&gt; または &lt;</td><td>演算子</td><td>🡒</td><td>&quot;&gt;&quot; : 昇順ソート, または &quot;&lt;&quot; : 降順ソート, または 省略した場合降順ソート</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/sort-array#説明">​</a></h4>
 <p><strong>SORT ARRAY</strong>コマンドは、1つまたは複数の配列を昇順や降順にソートします。</p>
 <p><strong>注意:</strong></p>
@@ -40,7 +40,7 @@
 <li>Pointer 配列や Picture 配列のソートは行えません。二次元配列の要素(例えば <em>a2DArray{$vlThisElem}</em>)をソートすることはできますが、二次元配列そのもの(<em>a2DArray</em>)をソートすることはできません。</li>
 <li>Object 型の配列をソートすることはできます。Null 要素はグループ化され、配列の要素は内部的な順番によってソートされます。</li>
 </ul>
-<p>最後の引数は、ソートの昇順または降順を指定しま  す。引数に大なり記号（&gt;）を指定すると昇順にソートします。引数に小なり記号(&lt;)を指定すると降順にソートします。省略した場合は昇順にソートします。</p>
+<p>最後の引数は、ソートの昇順または降順を指定します。引数に大なり記号（&gt;）を指定すると昇順にソートします。引数に小なり記号(&lt;)を指定すると降順にソートします。省略した場合は昇順にソートします。</p>
 <p>複数の配列を指定した場合、すべての配列が最初の配列の順番でソートされます。各配列ごとに個々にソートするわけではありません。その代り、同期した配列をソートしたい場合には <a href="/docs/ja/next/commands/multi-sort-array">MULTI SORT ARRAY</a> コマンドを使用することができます。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-1">例題 1<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/sort-array#例題-1">​</a></h4>
 <p>以下の例は2つの配列を作成し、companyでソートします:</p>

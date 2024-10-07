@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Get 4D folder | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/get-4d-folder"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Get 4D folder | 4D Docs"><meta data-rh="true" name="description" content="Get 4D folder {( folder {; options} {; *})} -&gt; 戻り値"><meta data-rh="true" property="og:description" content="Get 4D folder {( folder {; options} {; *})} -&gt; 戻り値"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/get-4d-folder"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/get-4d-folder" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/get-4d-folder" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/get-4d-folder" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/get-4d-folder" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/get-4d-folder" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/get-4d-folder" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -44,10 +44,10 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>folder</td><td>倍長整数</td><td>🡒</td><td>フォルダータイプ (省略時 = Active 4D folder)</td></tr><tr><td>options</td><td>オブジェクト</td><td>🡒</td><td>4D Client database folder path configuration</td></tr><tr><td>*</td><td>演算子</td><td>🡒</td><td>ホストデータベースのフォルダーを返す</td></tr><tr><td>戻り値</td><td>文字</td><td>🡐</td><td>指定したフォルダーのパス名</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>folder</td><td>Integer</td><td>🡒</td><td>フォルダータイプ (省略時 = Active 4D folder)</td></tr><tr><td>options</td><td>Object</td><td>🡒</td><td>4D Client database folder path configuration</td></tr><tr><td>*</td><td>演算子</td><td>🡒</td><td>ホストデータベースのフォルダーを返す</td></tr><tr><td>戻り値</td><td>Text</td><td>🡐</td><td>指定したフォルダーのパス名</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/get-4d-folder#説明">​</a></h4>
 <p><strong>Get 4D folder</strong>コマンドは、カレントアプリケーションのアクティブな4Dフォルダー、または<em>folder</em> 引数と<em>options</em> 引数で指定された4D環境フォルダーへのパス名を返します。このコマンドを使用して、4Dアプリケーションで使用されるフォルダーの実際のパス名を取得できます。このコマンドを使用すれば、記述したコードがローカライズされたどのシステムのプラットフォームでも動作することが保障されます。</p>
-<p><em>folder</em> には<em>4D Environment</em>テーマの次のいずれかの定数を渡します(それぞれのフォルダの詳  細な情報はこのページの下部にあります):</p>
+<p><em>folder</em> には<em>4D Environment</em>テーマの次のいずれかの定数を渡します(それぞれのフォルダの詳細な情報はこのページの下部にあります):</p>
 
 
 
@@ -117,7 +117,7 @@
 <li>4D環境アプリケーションが使用する環境設定ファイル</li>
 <li>Shortcuts.xml ファイル (カスタマイズされたキーボードショートカット)</li>
 <li>Macros v2 フォルダー (メソッドエディターで使用するマクロコマンド)</li>
-<li>Favorites v1xフォルダー、例えば Favorites v13フォルダーなど(開いたローカルおよびリモートデータベースのパス名)</li>
+<li>Favorites v1xフォルダー  、例えば Favorites v13フォルダーなど(開いたローカルおよびリモートデータベースのパス名)</li>
 <li>Logs フォルダー、データが読み込みのみモードの場合のメンテナンスログ置き場</li>
 </ul>
 <p>アクティブな4Dフォルダーは、デフォルトでは以下の場所に作成されます:</p>
@@ -131,7 +131,7 @@
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="data-folder">Data Folder<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/get-4d-folder#data-folder">​</a></h5>
 <p>カレントのデータファイルを含んでいるフォルダへのパスです。パス名はカレントのプラットフォームでの標準のシンタックスを使用して表現されます。</p>
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4d-client-database-folderクライアントマシン">4D Client Database Folder(クライアントマシン)<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/get-4d-folder#4d-client-database-folderクライアントマシン">​</a></h5>
-<p>データベースに関連したファイルやフォルダ(リソース、プラグイン、Resources フォルダ等)を保存するために4D リモートのマシンに自動的に作成された4D フォルダのパスです。コマンドは以下のどちらかを返します:</p>
+<p>データベースに関連 したファイルやフォルダ(リソース、プラグイン、Resources フォルダ等)を保存するために4D リモートのマシンに自動的に作成された4D フォルダのパスです。コマンドは以下のどちらかを返します:</p>
 <ul>
 <li>リモートマシン上で呼び出され、<em>options</em> 引数が省略された場合には、カレントアプリケーションにおけるパスを返します。</li>
 <li><em>options</em> 引数が使用された場合には任意のアプリケーションのパスを返します(この場合、<strong>Get 4D folder</strong> はどのマシンからも呼び出されてもかまいません)。</li>
@@ -145,7 +145,7 @@
 <p>同じマシン上でクライアントアプリケーションのインスタンスが同時に複数起動していた場合には、異なるフォルダが使用されます。</p>
 <p><strong>注意:</strong> Windows上の組み込みクライアントアプリでは、<em>ShareLocalResourcesOnWindowsClient</em> BuildApp キーが使用されていた場合にはこのフォルダの位置は変更されています。</p>
 <p><strong>4D Client Database Folder と<em>options</em> 引数を使用する</strong></p>
-<p>任意の4D データベースローカルフォルダパスを計算したい場合には、<em>options</em> 引数を使用することができます。この場合には、この返されるパスはオブジェクトで提供した情報に基づいてビルドされ、またコマンドは4D、4D Server、あるい はリモートアプリケーションのいずれからも使用することができます。この機能によって、リソースフォルダのパスを事前に計算することができ、それによって例えばコンテンツを事前にロードしておくことなどができます。</p>
+<p>任意の4D データベースローカルフォルダパスを計算したい場合には、<em>options</em> 引数を使用することができます。この場合には、この返されるパスはオブジェクトで提供した情報に基づいてビルドされ、またコマンドは4D、4D Server、あるいはリモートア プリケーションのいずれからも使用することができます。この機能によって、リソースフォルダのパスを事前に計算することができ、それによって例えばコンテンツを事前にロードしておくことなどができます。</p>
 <p><em>options</em> オブジェクトには、以下のプロパティを渡すことができます:</p>
 
 
@@ -200,7 +200,7 @@
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="database-folder-unix-syntax">Database Folder Unix Syntax<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/get-4d-folder#database-folder-unix-syntax">​</a></h5>
 <p>データベースストラクチャファイルを含むフォルダーです。 この定数は前述のフォルダーと同じものですが、パス名は/Users/...のようなUNIXシンタックス (POSIX) で表現されます。このシンタックスは主に、Mac OSで <a href="/docs/ja/next/commands/launch-external-process">LAUNCH EXTERNAL PROCESS</a> コマンドを使用する場合に使用されます。</p>
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="current-resources-folder">Current Resources folder<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/get-4d-folder#current-resources-folder">​</a></h5>
-<p>データベースのリソースフォル ダー。このフォルダーにはデータベースのインタフェースで使用される、ピクチャーやテキストなどの追加の項目が置かれます。コンポーネントはそれぞれ独自のResourcesフォルダーを持つことができます。</p>
+<p>データベースのリソースフォルダー。このフ ォルダーにはデータベースのインタフェースで使用される、ピクチャーやテキストなどの追加の項目が置かれます。コンポーネントはそれぞれ独自のResourcesフォルダーを持つことができます。</p>
 <p>クライアント/サーバーモードでは、サーバーマシンとクライアントマシン間でピクチャーやファイル、サブフォルダーなどのカスタムデータを交換するために使用できます。このフォルダーのコンテンツはクライアントマシンが接続するたびに自動で更新されます。Resourcesフォルダーに関連付けられたすべての参照メカニズムは、クライアント/サーバーモードでもサポートされます (.lproj フォルダー、XLIFF、ピクチャーなど)。さらに4Dではリソースエクスプローラーなどさまざまなツールを通じ、このフォルダの管理と更新を動的に行えるようになっています。</p>
 <p><strong>注意:</strong></p>
 <ul>
@@ -211,7 +211,7 @@
 <p>データベースのLogsフォルダーで、データファイルと同じ階層にあります。カレントデータベースの次のログがこのフォルダーに格納されます:</p>
 <ul>
 <li>データベース変換</li>
-<li>Webサーバリクエ スト</li>
+<li>Webサーバリクエスト</li>
 <li>バックアップ/復元処理のジャーナル</li>
 <li>コマンドデバッグ</li>
 <li>4D Serverリクエスト (クライアントマシンとサーバー上で生成)</li>
@@ -223,7 +223,7 @@
 </ul>
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="html-root-folder">HTML Root Folder<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/get-4d-folder#html-root-folder">​</a></h5>
 <p>データベースのカレントの HTML ルートフォルダ。返されるパス名は、プラットフォームの標準シンタックスで表現されます。HTMLルートフォルダーは、リクエストされたページやファイルを4D Webサーバが探すフォルダーです。デフォルトで、このフォルダーの名前は<strong>WebFolder</strong>で、ストラクチャーファイルと同階層 (またはリモートモードの4Dの場合、そのローカルコピー) に置かれます。この場所はデータベース設定のWeb/設定ページ、または<a href="/docs/ja/next/commands/web-set-root-folder">WEB SET ROOT FOLDER</a> コマンドで動的に変更できます。</p>
-<p><strong>注:</strong> Windows上では、組み込 みクライアントプロジェクトにおいてはこのフォルダの位置は、<em>ShareLocalResourcesOnWindowsClient</em> BuildApp キーを使用していた場合、変更されます。</p>
+<p><strong>注:</strong> Windows上では、組み込みクライアン  トプロジェクトにおいてはこのフォルダの位置は、<em>ShareLocalResourcesOnWindowsClient</em> BuildApp キーを使用していた場合、変更されます。</p>
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="mobileapps-folder">MobileApps Folder<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/get-4d-folder#mobileapps-folder">​</a></h5>
 <p>モバイルアプリユーザーセッション(4D for iOS アプリまたは4D for Android のためのセッション)を参照するために4D アプリケーションによって使用される、全ての既存のセッションファイル(.json ファイル)を格納しているフォルダ。セッションファイルはアプリケーションサブフォルダごとにグループ分けされており、自動的に作成されます。詳細な情報については、 <a href="https://developer.4d.com/go-mobile/" target="_blank" rel="noopener noreferrer">go mobile ドキュメンテーション</a> のドキュメントを参照してください。</p>
 <p>フォルダはカレントの4D データファイルと同じ階層に位置しています。</p>
@@ -232,7 +232,7 @@
 <p>コマンドがコンポーネントから呼ばれた場合:</p>
 <ul>
 <li><em>*</em> 引数が渡されていた場合、コマンドはホストデータベースのフォルダへのパス名を返します。</li>
-<li><em>*</em> 引数が渡されてい なかった場合、コマンドはコンポーネントのフォルダへのパス名を返します。<br>
+<li><em>*</em> 引数が渡されていなかった場合 、コマンドはコンポーネントのフォルダへのパス名を返します。<br>
 返されるデータベースフォルダ(Database folder および Database folder UNIX syntax) は、コンポーネントのアーキテクチャーの種類によって変わります:
 <ul>
 <li>.4dbase フォルダ/パッケージの場合には、コマンドは.4dbase フォルダ/パッケージへのパス名を返します。</li>

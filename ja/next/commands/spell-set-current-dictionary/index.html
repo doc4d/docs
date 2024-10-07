@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">SPELL SET CURRENT DICTIONARY | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/spell-set-current-dictionary"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="SPELL SET CURRENT DICTIONARY | 4D Docs"><meta data-rh="true" name="description" content="SPELL SET CURRENT DICTIONARY ( dictionary )"><meta data-rh="true" property="og:description" content="SPELL SET CURRENT DICTIONARY ( dictionary )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/spell-set-current-dictionary"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/spell-set-current-dictionary" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/spell-set-current-dictionary" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/spell-set-current-dictionary" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/spell-set-current-dictionary" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/spell-set-current-dictionary" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/spell-set-current-dictionary" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -26,7 +26,7 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>dictionary</td><td>倍長整数, テキスト</td><td>🡒</td><td>スペルチェック用に使用する辞書のID  、名前または言語コード省略した場合デフォルトの辞書を使用</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>dictionary</td><td>Integer, Text</td><td>🡒</td><td>スペルチェック用に使用する辞書のID、名前または言語コード省略した場合デフォルトの辞書を使用</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/spell-set-current-dictionary#説明">​</a></h4>
 <p><strong>SPELL SET CURRENT DICTIONARY</strong>コマンドは、現在の辞書を引数<em>dictionary</em>に よって指定された辞書で置き換えます。カレント辞書は、4Dに内蔵されているスペルチェック機能に使用されています(詳細については、 4D Design Referenceマニュアルや4D Write Proドキュメントを参照してください) 。設定された現在の辞書は即座にセッションを通して、データベースのすべてのプロセス、および4D Writeや4D Viewプラグインエリアに反映されます。</p>
 <p>4Dは以下の辞書を使用します。</p>
@@ -38,7 +38,7 @@
 <p><em>dictionary</em> 引数を使用することによって、辞書を変更することが出来ます。以下のいづれかを渡す事ができます。</p>
 <ul>
 <li>ハンスペルの辞書ID番号(<a href="/docs/ja/next/commands/spell-get-dictionary-list">SPELL GET DICTIONARY LIST</a> コマンドによって返されます)。</li>
-<li>ハンスペルの辞書名(ハンスペル辞書のファイル名に対応、拡張子はあっても  なくても可)。</li>
+<li>ハンスペルの辞書名(ハンスペル辞書のファイル名に対応、拡張子はあってもなくても可) 。</li>
 <li>a BCP 47、 ISO 639-1 または ISO 639-2 言語コード。例えば、BCP 47 言語コードでは、 &quot;en-US&quot; はアメリカ英語を意味し、 &quot;en-GB&quot; はイギリス英語を意味します。これらのコードは4D内部で対応するカレントの辞書へとリダイレクトされます(ハンスペルまたはMacシステム辞書)。</li>
 </ul>
 <p><strong>Compatibility note:</strong> 旧バージョンの4Dでは、&quot;コーディアル&quot; 辞書はサポートされていました。互換性のために、&quot;コーディアル&quot;辞書の番号を <em>dictionary</em> 引数に渡す事は可能です(値もしくは &quot;<em>Dictionaries</em>&quot; テーマ内の定数)。しかしながらこの場合、辞書は4D内部でそれに相当するハンスペル辞書(またはMacの場合はシステムの辞書)へとリダイレクトされます。</p>

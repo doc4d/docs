@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">SET TABLE TITLES | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/set-table-titles"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="SET TABLE TITLES | 4D Docs"><meta data-rh="true" name="description" content="SET TABLE TITLES {( tableTitles ; tableNumbers {; *})}"><meta data-rh="true" property="og:description" content="SET TABLE TITLES {( tableTitles ; tableNumbers {; *})}"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/set-table-titles"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/set-table-titles" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/set-table-titles" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/set-table-titles" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/set-table-titles" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/set-table-titles" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/set-table-titles" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -38,20 +38,20 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>tableTitles</td><td>文字配列</td><td>🡒</td><td>ダイアログボックスに表示されるテーブル名</td></tr><tr><td>tableNumbers</td><td>倍長整数配列</td><td>🡒</td><td>実際のテーブル番号</td></tr><tr><td>*</td><td>演算子</td><td>🡒</td><td>フォーミュラエディタでカスタム名を使用</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="  説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/set-table-titles#説明">​</a></h4>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>tableTitles</td><td>Text array</td><td>🡒</td><td>ダイアログボックスに表示されるテーブル名</td></tr><tr><td>tableNumbers</td><td>Integer array</td><td>🡒</td><td>実際のテーブル番号</td></tr><tr><td>*</td><td>演算子</td><td>🡒</td><td>フォーミュラエディタでカスタム名を使用</td></tr></tbody></table>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明"> 説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/set-table-titles#説明">​</a></h4>
 <p><strong>SET TABLE TITLES</strong>コマンドを使用すれば、アプリケーションモードにおいて、標準の4Dダイアログボックスに現れるデータベーステーブルを一部隠したり、表示名称を変更したり、並び順を変えたりできます(スタートアップモードが<strong>アプリケーション</strong>である、あるいは<strong>実行</strong>メニューの<strong>アプリケーションをテスト</strong>を選択した場合)。例えばこのコマンドを使用すれば、アプリケーションモードでのクエリエディターのテーブル表示を変更できます。</p>
 <p>さらにこのコマンドを使用すると、フォーム上のテーブル名のラベルを直ちに変更することが可能です。これには、ダイナミックな名前を使用します。ダイナミックなテーブル名とフィールド名の挿入についての詳細は、<em>4Dデザインリファレンスマニュアル</em>の<em>スタティックテキスト中で参照を使用する</em>を参照してください。</p>
 <p>引数 <em>tableTitles</em> と <em>tableNumbers</em> 配列は同期させる必要があります。配列 <em>tableTitles</em> には、表示させたいテーブルの名前を渡します。</p>
 <p>ある特定のテーブルを表示したくない場合には、そのテーブル名または新しく付けたタイトルを、配列含めないようにします。テーブルはこの配列に指定した順序で表示されます。</p>
 <p>配列 <em>tableNumbers</em> の各要素には、配列 <em>tableTitles</em> にある同じ要素の数値に渡したテーブル名または新しいタイトルに対応する実際のテーブル番号を渡します。</p>
-<p>例えば、テーブルA、B、Cで構成さ れるデータベースがあり、テーブルはこの順序で作成されたとします。表示の際には、これらのテーブルをX、Y、Zという名前にし、さらにテーブルBは表示したくないとします。最終的に、ZとXを、この順序で表示することにします。この場合、配列 <em>tableTitles</em> の2つの要素としてZとXを渡し、配列 <em>tableNumbers</em> の2つの要素として3と1を渡します。</p>
+<p>例えば、テーブルA、B、Cで構成されるデータベースがあり、テーブルはこの順序で作成されたとします。表示の際には、これらのテーブルをX、Y、Zという名前にし、さらにテーブルBは表示したくないとします。最終的に、ZとXを、この順序で表示することにします。この場合、配列 <em>tableTitles</em> の2つの要素としてZとXを渡し、配列 <em>tableNumbers</em> の2つの要素として3と1を渡します。</p>
 <p>オプションの <em>*</em> 引数は、のコマンドを使用して定義されたカスタムの名前(&quot;バーチャル&quot;なストラクチャー)を4Dフォーミュラで使用するかを指定します。デフォルトではこの引数が省略された場合、4D で実行されたフォーミュラはこのカスタムの名前を使用することができないため、実際のテーブルの名前を使用する必要があります。この引数は、ユーザーに提供される情報を管理し、フォーミュラや式が使用されている場面でのインターフェースに必ず統一性をもたせたい場合に渡します。例えば:</p>
 <ul>
 <li>アプリケーションが(例えばクイックレポートエディターなどを経由して)フォーミュラエディターへのアクセスを提供してる場合</li>
 <li>アプリケーションが4D Write Pro ドキュメントなど、式参照を表示する場合</li>
 </ul>
-<p><strong>注:</strong> <em>*</em> 引数が渡された場合、4D によって実行されるフォーミュラの内部においてはこのコマンドによって定義される名前が使用されます。**この場合には次の点に注意が必要です。**カスタムの名前には4D ランゲージインタープリタで&quot;禁止されている&quot;文字( -?*%! 等)を含めることはできません。例えば、&quot;Rate_in_%&quot; という名前はフォーミュラでは使用することはできません(詳細な情報について は、<em>識別子</em> の章を参照してください)。</p>
+<p><strong>注:</strong> <em>*</em> 引数が渡された場合、4D によって実行されるフォーミュラの内部においてはこのコマンドによって定義される名前が使用されます。**この場合には次の点に注意が必要です。**カスタムの名前には4D ランゲージインタープリタで&quot;禁止されている&quot;文字( -?*%! 等)を含めることはできません。例えば、&quot;Rate_in_%&quot; という名前はフォーミュラでは使用することはできません(詳細な情報については、<em>識別子</em> の章を参照してください)。</p>
 <p><strong>SET TABLE TITLES</strong> は、データベースの実際のストラクチャーは**変更しません。**このコマンドは、ランゲージコマンド経由で呼び出された標準の4D エディターとフォームがダイナミックな名前を使用している場合に、コマンドを呼び出した後の使用に影響することを念頭に設計されています。<strong>SET TABLE TITLES</strong>コマンドの有効範囲は、そのワークセッションです。クライアント/サーバにおける利点の1つは、複数の4Dクライアントステーションがそれぞれ異なる見方でデータベースを同時に &quot;見る&quot; ことができる点です。<strong>SET TABLE TITLES</strong> コマンドは、何度でも呼び出せます。</p>
 <p><strong>SET TABLE TITLES</strong>コマンドは、以下のような場合に使用します。</p>
 <ul>
@@ -64,7 +64,7 @@
 <li><strong>SET TABLE TITLES</strong>コマンドはフィールドの非表示属性を上書きしません。データベースの設計レベルでテーブルが非表示として設定されている場合、<strong>SET TABLE TITLES</strong>コマンドへの呼び出しにそのテーブルを指定しても、アプリケーションモードにおいてテーブルは表示されません。</li>
 <li>プラグインは常にコマンドによって指定された仮想ストラクチャへアクセスします。</li>
 </ul>
-<p><strong>SET TABLE TITLES</strong> を引数なしで実行した場合、セッション中のデータベース全体のバーチャルなストラクチャー(カスタムのテーブル  名およびフィールド名)は全てリセットされます。</p>
+<p><strong>SET TABLE TITLES</strong> を引数なしで実行した場合、セッション中のデータベース全体のバーチャルなストラクチャー(カスタムのテーブル名およびフィールド名)は全てリセットされます。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-1">例題 1<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/set-table-titles#例題-1">​</a></h4>
 <p>各国で販売する予定の4Dアプリケーションを構築しているとします。この場合、ローカライズの問題を慎重に考慮する必要があります。アプリケーションモードで表示される標準の4Dダイアログボックスとダイナミックな名前を用いたフォームに注意すれば、[Translations] テーブルといくつかのプロジェクトメソッドを使用して、必要なだけ各国向けにローカライズされたフィールドを作成し、使用することによって、ローカライズのニーズに対応できます。</p>
 <p>データベースに以下のテーブルを追加します。</p>

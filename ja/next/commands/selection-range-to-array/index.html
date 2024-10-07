@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">SELECTION RANGE TO ARRAY | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/selection-range-to-array"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="SELECTION RANGE TO ARRAY | 4D Docs"><meta data-rh="true" name="description" content="SELECTION RANGE TO ARRAY ( start ; end {; field | table ; array} {; field | table2 ; array2 ; ... ; field | tableN ; arrayN} )"><meta data-rh="true" property="og:description" content="SELECTION RANGE TO ARRAY ( start ; end {; field | table ; array} {; field | table2 ; array2 ; ... ; field | tableN ; arrayN} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/selection-range-to-array"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/selection-range-to-array" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/selection-range-to-array" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/selection-range-to-array" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/selection-range-to-array" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/selection-range-to-array" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/selection-range-to-array" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -44,7 +44,7 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>start</td><td>倍長整数</td><td>🡒</td><td>データ取得を開始するレコード位置番号</td></tr><tr><td>end</td><td>倍長整数</td><td>🡒</td><td>データ取得を終了するレコード位置番号</td></tr><tr><td>field | table</td><td>フィールド, テーブル</td><td>🡒</td><td>データを取得するフィールドまたは レコード番号を取得するテーブル</td></tr><tr><td>array</td><td>配列</td><td>🡘</td><td>フィールド値またはレコード番号を受け取る配列</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>start</td><td>Integer</td><td>🡒</td><td>データ取得を開始するレコード位置番号</td></tr><tr><td>end</td><td>Integer</td><td>🡒</td><td>データ取得を終了するレコード位置番号</td></tr><tr><td>field | table</td><td>フィールド, テーブル</td><td>🡒</td><td>データを取得するフィールドまたは レコード番号を取得するテーブル</td></tr><tr><td>array</td><td>Array</td><td>🡘</td><td>フィールド値またはレコード番号を受け取る配列</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/selection-range-to-array#説明">​</a></h4>
 <p><strong>SELECTION RANGE TO ARRAY</strong>コマンドは1つまたは複数の配列を作成し、その配列にカレントセレクションのフィールド値またはレコード番号を代入します。</p>
 <p>カレントセレクション全体を対象とする<a href="/docs/ja/next/commands/selection-to-array">SELECTION TO ARRAY</a>と異なり、<strong>SELECTION RANGE TO ARRAY</strong>コマンドは、セレクション中、引数<em>start</em>と<em>end</em>によって指定されたレコード位置番号の範囲が適用範囲となります。</p>
@@ -61,7 +61,7 @@
 <ul>
 <li>1つまたは複数のフィールドから値をロードします。</li>
 <li>シンタックス...;[テーブル];配列;...を使用して、レコード番号をロードします。</li>
-<li>テー ブル間にn対1の自動リレートが設定されている場合や、<a href="/docs/ja/next/commands/set-automatic-relations">SET AUTOMATIC RELATIONS</a>を事前に呼び出してn対1のマニュアルリレートを自動に変更した場合は、リレートフィールドの値をロードします。いずれの場合も、複 数レベルのn対1リレートを経てテーブルから値がロードされます。
+<li>テー ブル間にn対1の自動リレートが設定されている場合や、<a href="/docs/ja/next/commands/set-automatic-relations">SET AUTOMATIC RELATIONS</a>を事前に呼び出してn対1のマニュアルリレートを  自動に変更した場合は、リレートフィールドの値をロードします。いずれの場合も、複 数レベルのn対1リレートを経てテーブルから値がロードされます。
 各配列は、そのフィールドタイプに応じてタイプ定義されます。</li>
 </ul>
 <p><strong>SELECTION RANGE TO ARRAY</strong> を時間型のフィールドに対して適用した場合、配列が他の型として定義されたことがない場合のみ時間型配列が作成されるという点に注意して下さい。例えば、以下のコンテキストでは、 <em>myArray</em> 配列はその後も倍長整数型配列のままです:</p>

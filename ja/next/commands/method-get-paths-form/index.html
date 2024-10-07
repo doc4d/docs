@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">METHOD GET PATHS FORM | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/method-get-paths-form"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="METHOD GET PATHS FORM | 4D Docs"><meta data-rh="true" name="description" content="METHOD GET PATHS FORM ( {aTable ;} arrPaths {; filter}{; stamp}{; *} )"><meta data-rh="true" property="og:description" content="METHOD GET PATHS FORM ( {aTable ;} arrPaths {; filter}{; stamp}{; *} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/method-get-paths-form"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/method-get-paths-form" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/method-get-paths-form" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/method-get-paths-form" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/method-get-paths-form" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/method-get-paths-form" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/method-get-paths-form" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.87f27685.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.e7fcfc5a.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.1b49c5fe.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -56,17 +56,17 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>aTable</td><td>テーブル</td><td>🡒</td><td>テーブル参照</td></tr><tr><td>arrPaths</td><td>テキスト配列</td><td>🡘</td><td>メソッドパスと名前の配列</td></tr><tr><td>filter</td><td>テキスト</td><td>🡒</td><td>名前フィルター</td></tr><tr><td>stamp</td><td>Real variable</td><td>🡒</td><td>スタンプの最小値</td></tr><tr><td>🡘</td><td>新しい現在値</td><td></td><td></td></tr><tr><td>*</td><td>演算子</td><td>🡒</td><td>指定時 = コンポーネントで実行されたとき、コマンドはホストデータベースに適用される (コンポーネントのコンテキスト以外ではこの引数は無視されます)</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>aTable</td><td>Table</td><td>🡒</td><td>テーブル参照</td></tr><tr><td>arrPaths</td><td>Text array</td><td>🡘</td><td>メソッドパスと名前の配列</td></tr><tr><td>filter</td><td>Text</td><td>🡒</td><td>名前フィルター</td></tr><tr><td>stamp</td><td>Real</td><td>🡒</td><td>スタンプの最小値</td></tr><tr><td>🡘</td><td>新しい現在値</td><td></td><td></td></tr><tr><td>*</td><td>演算子</td><td>🡒</td><td>指定時 = コンポーネントで実行されたとき、コマンドはホストデータベースに適用される (コンポーネントのコンテキスト以外ではこの引数は無視されます)</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/method-get-paths-form#説明">​</a></h4>
 <p><strong>METHOD GET PATHS FORM</strong>コマンドはすべてのフォームオブジェクトとフォームメソッドの内部的なパス名と名前を<em>arrPaths</em>配列に返します。フォームメソッドには{formMethod}とラベルが付けられます。</p>
-<p>コードを含むオブジェクトのみがリストされます。例えば標準アクションのみが割り当てられたボタンは返されません。</p>
+<p>コードを含むオブジェクトのみがリストされます。例えば標準アクションのみが割り当てられ  たボタンは返されません。</p>
 <p><em>aTable</em>引数を渡すと、コマンドはこのテーブルのテーブルフォームのオブジェクトを返します。この引数を省略するとコマンドはデータベースプロジェクトフォームのオブジェクトを返します。</p>
 <p><em>filter</em>引数に比較文字列を渡すことでリストを制限できます。この場合フィルターにマッチするフォームだけが返されます。&quot;@&quot;をワイルドカード文字として使用できます。空の文字列を渡すと<em>filter</em>引数は無視されます。</p>
 <p><em>stamp</em>引数を使用すれば特定の時点以降に更新されたメソッドのパスだけを取得できます。バージョンコントロールシステムの一部として、最新のバックアップ以降に更新されたメソッドだけをアップデートするようにできます。<br>
 動作の概要: 4Dはメソッド更新カウンターを保持します。メソッドが作成され再び保存されるたびに、このカウンターは増分され、その現在値がメソッドの内部的なスタンプに格納されます。<br>
 <em>stamp</em>引数を渡すと、コマンドはこの引数に渡された値と同じかそれより大きなスタンプ値を持つメソッドのみを返します。さらにコマンドは<em>stamp</em>引数に更新カウンターの新しい値を返します。この値を保持すれば、次回このコマンドを呼び出す際にこの値を渡すことができ、前回のコマンド実行以降に作成あるいは更新されたメソッドのみを取得できます。</p>
 <p>メソッドがコンポーネントから実行された場合、デフォルトでコンポーネントメソッドのパスが返されます。<em>*</em> 引数を渡すと配列にはホストデータベースのメソッドパスが返されます。</p>
-<p><strong>注:</strong> コマンドは継承フォームやサブフォームのオブジェクトを返しません。</p>
+<p><strong>注:</strong> コマンドは継承フォ  ームやサブフォームのオブジェクトを返しません。</p>
 <p>コマンドが複製されたメソッド名を検知した場合、-9802エラー(&quot;オブジェクトパスが固有ではありません&quot;)が生成されます。この場合、MSCを使用してデータベースストラクチャーを検証することが望ましいと言えます。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-1">例題 1<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/method-get-paths-form#例題-1">​</a></h4>
 <p>[Employees]テーブルの&quot;input&quot;フォームのすべてのオブジェクトをリストします。テーブルフォームメソッド (そしてプロジェクトフォームメソッド) はフォームに属するオブジェクトとして処理される点に留意してください:</p>
