@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">WP Table range | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/WritePro/commands/wp-table-range"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="WP Table range | 4D Docs"><meta data-rh="true" name="description" content="WP Table range ( targetObj ) -&gt; 戻り値"><meta data-rh="true" property="og:description" content="WP Table range ( targetObj ) -&gt; 戻り値"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/WritePro/commands/wp-table-range"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/WritePro/commands/wp-table-range" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/WritePro/commands/wp-table-range" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/WritePro/commands/wp-table-range" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/WritePro/commands/wp-table-range" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/WritePro/commands/wp-table-range" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/WritePro/commands/wp-table-range" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.0401f2c5.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.f752d644.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.5aec664d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -32,12 +32,12 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>targetObj</td><td>オブジェクト</td><td>🡒</td><td>4D Write Pro ドキュメント、レンジまたは要素</td></tr><tr><td>戻り値</td><td>オブジェクト</td><td>🡐</td><td>表のみを格納したレンジオブジェクト</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>targetObj</td><td>Object</td><td>→</td><td>4D Write Pro ドキュメント、レンジまたは要素</td></tr><tr><td>戻り値</td><td>Object</td><td>←</td><td>表のみを格納したレンジオブジェクト</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="互換性に関する注意">互換性に関する注意<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/WritePro/commands/wp-table-range#互換性に関する注意">​</a></h4>
 <p><strong>WP Table range</strong> was named <strong>WP Create table range</strong> in previous versions of 4D Write Pro. It has been renamed for clarity.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/WritePro/commands/wp-table-range#説明">​</a></h4>
 <p><strong>WP Table range</strong> コマンドは、<em>targetObj</em> 引数内のオブジェクトと交差する表のみを指定するレンジオブジェクトを返します。渡した<em>targetObj</em> 引数に表が含まれていなかったとしても、wk type tableのレンジが返されます。返されたレンジオブジェクトは<a href="/docs/ja/next/WritePro/commands/wp-get-attributes">WP GET ATTRIBUTES</a> および <a href="/docs/ja/next/WritePro/commands/wp-set-attributes">WP SET ATTRIBUTES</a> で使用することで、表及び表の中身に適用される属性を管理することができます。</p>
-<p><em>targetObj</em> 引数には、以下のものを渡すことができます:</p>
+<p><em>targetObj</em> 引数には、以下のものを渡すことが  できます:</p>
 <ul>
 <li>レンジ</li>
 <li>要素 (本文 / ヘッダー / フッター / 段落 / セクション / サブセクション)</li>

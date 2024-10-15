@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">WP Get position | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/WritePro/commands/wp-get-position"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="WP Get position | 4D Docs"><meta data-rh="true" name="description" content="WP Get position ( targetObj {; layout} ) -&gt; 戻り値"><meta data-rh="true" property="og:description" content="WP Get position ( targetObj {; layout} ) -&gt; 戻り値"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/WritePro/commands/wp-get-position"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/WritePro/commands/wp-get-position" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/WritePro/commands/wp-get-position" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/WritePro/commands/wp-get-position" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/WritePro/commands/wp-get-position" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/WritePro/commands/wp-get-position" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/WritePro/commands/wp-get-position" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.0401f2c5.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.f752d644.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.5aec664d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -38,7 +38,7 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>targetObj</td><td>オブジェクト</td><td>🡒</td><td>4D Write Pro ドキュメント、レンジ または 要素</td></tr><tr><td>layout</td><td>倍長整数</td><td>🡒</td><td>評価の際に使用される4D Write Pro ドキュメントのレイアウト: 0(デフォルト)=4D Write Pro レイアウト、 1=HTML WYSIWYG</td></tr><tr><td>戻り値</td><td>オブジェクト</td><td>🡐</td><td>位置情報</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>targetObj</td><td>Object</td><td>→</td><td>4D Write Pro ドキュメント、レンジ または 要素</td></tr><tr><td>layout</td><td>Integer</td><td>→</td><td>評価の際に使用される4D Write Pro ドキュメントのレイアウト: 0(デフォルト)=4D Write Pro レイアウト、 1=HTML WYSIWYG</td></tr><tr><td>戻り値</td><td>Object</td><td>←</td><td>位置情報</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/WritePro/commands/wp-get-position#説明">​</a></h4>
 <p><strong>WP Get position</strong> コマンドは、<em>targetObj</em> 引数で指定したターゲットのカレントの位置を説明するオブジェクトを返します。</p>
 <p><em>targetObj</em> 引数には、以下のものを渡すことができます:</p>
@@ -115,7 +115,7 @@
 
 <table><thead><tr><th><strong>プロパティ名</strong></th><th><strong>型</strong></th><th><strong>詳細</strong></th></tr></thead><tbody><tr><td>section</td><td>数値</td><td><em>targetObj</em> 引数と交錯する最初のセクションの番号</td></tr><tr><td>page</td><td>数値</td><td><em>targetObj</em> 引数と交錯する最初のページの番号</td></tr><tr><td>column</td><td>数値</td><td><em>targetObj</em> 引数と交錯する最初のカラムのインデックス(1-based)</td></tr><tr><td>line</td><td>数値</td><td><em>targetObj</em> 引数と交錯する最初の行のインデックス(カラム(あるいはカラムがない場合にはページ)に対して相対的 - 1-based)</td></tr><tr><td>position</td><td>数値</td><td><em>targetObj</em> 引数の最初の文字の、行の中での位置(1-based)</td></tr><tr><td>bounds</td><td>オブジェクト</td><td><em>targetObj</em> 引数の境界線の四角形の座標。<em>page</em> の左上端を起点として、カレントのドキュメント単位で相対的に表現されます。パディングとボーダーのサイズは(あれば)考慮に入れられます。マージンとルーラーは考慮に入れられません。</td></tr><tr><td>top</td><td>数値</td><td>四角形の上端の座標</td></tr><tr><td>left</td><td>数値</td><td>四角形の左端の座標</td></tr><tr><td>bottom</td><td>数値</td><td>四角形の下端の座標</td></tr><tr><td>right</td><td>数値</td><td>四角形の右端の座標</td></tr><tr><td>rangeHeight</td><td>数値</td><td><em>targetObj</em> 引数の境界線の四角形の高さ。この値は、<em>targetObj</em> が複数のカラムにまたがっている場合には、<em>bounds.bottom-bounds.top</em> の値と異なる可能性があります(例題4参照)</td></tr></tbody></table>
 <p><em>targetObj</em> 引数が空レンジの場合、<strong>WP Get position</strong> はレンジの開始位置情報を返します。デフォルト型(テキスト)の空のレンジであった場合、レンジの高さ(<em>rangeHeight</em> あるいは <em>bounds.bottom</em>-<em>bounds.top</em>) はカーソルの高さで、レンジの幅(<em>bounds.right</em>-<em>bounds.left</em>) は1ピクセルとなる点に注意して下さい。<br>
-<em>targetObj</em> 引数がヘッダーあるいはフッター内のテキストである場合、<strong>WP Get position</strong> はヘッダー/フッターが最初のセクション/ページ内にて表示されている位置情報を返します。<br>
+<em>targetObj</em> 引数が ヘッダーあるいはフッター内のテキストである場合、<strong>WP Get position</strong> はヘッダー/フッターが最初のセクション/ページ内にて表示されている位置情報を返します。<br>
 <em>targetObj</em> 引数が(複数のページに複製可能な)アンカーされた画像である場合、<strong>WP Get position</strong> は画像が最初のセクション/ページ内にてアンカーされている位置情報を返します。<br>
 <em>targetObj</em> 引数がサブセクションである場合、<strong>WP Get position</strong> は親セクションの最初のページの位置情報を返します。</p>
 <p>任意の<em>layout</em> 引数を使用すると、<em>targetObj</em> の評価にHTML wysiwyg ビューを設定することができます。&quot;4D Write Pro&quot;テーマ内にある、以下の定数のいづれか1つを渡すことができます:</p>
@@ -151,7 +151,7 @@
 <li>ヘッダー: 表示</li>
 <li>フッター: 表示</li>
 <li>式: 計算されて表示</li>
-<li>ページモード: ページあるいは下  書き(HTML wysiwyg ビューはコマンドによって定義された通りです)<br>
+<li>ページモード: ページあるいは下書き(HTML wysiwyg ビューは コマンドによって定義された通りです)<br>
 <em>targetObj</em> が4D Write Pro フォームエリアに表示されている場合、必ずエリアのビュー設定とコマンドのビュー設定が同じ情報を返すように設定が一致しているようにしてください。また、これらの情報がエリア内で異なっていた場合、4D Write Pro はコマンドを呼び出すたびにレイアウトを計算するためにドキュメントを&quot;クローン&quot;しなければならず、そのため時間がかかる可能性があることに注意してください。パフォーマンス上の理由から、こういった場合にはドキュメントをオフラインでビルドし、ビルドが完成したあとにドキュメントをフォームオブジェクトにコピーすることが推奨されます。</li>
 </ul>
 </li>

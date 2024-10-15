@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">WP Add picture | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/WritePro/commands/wp-add-picture"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="WP Add picture | 4D Docs"><meta data-rh="true" name="description" content="WP Add picture ( wpDoc {; picture} ) -&gt; 戻り値"><meta data-rh="true" property="og:description" content="WP Add picture ( wpDoc {; picture} ) -&gt; 戻り値"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/WritePro/commands/wp-add-picture"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/WritePro/commands/wp-add-picture" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/WritePro/commands/wp-add-picture" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/WritePro/commands/wp-add-picture" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/WritePro/commands/wp-add-picture" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/WritePro/commands/wp-add-picture" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/WritePro/commands/wp-add-picture" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.0401f2c5.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.f752d644.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.5aec664d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -38,7 +38,7 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>wpDoc</td><td>オブジェクト</td><td>🡒</td><td>4D Write Pro ドキュメント</td></tr><tr><td>picture</td><td>ピクチャー, テキスト</td><td>🡒</td><td>ピクチャー(フィールドまたは変数)あるいはピクチャーへのパス(テキスト)</td></tr><tr><td>戻り値</td><td>オブジェクト</td><td>🡐</td><td>ピクチャーを参照するオブジェクト</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>wpDoc</td><td>Object</td><td>→</td><td>4D Write Pro ドキュメント</td></tr><tr><td>picture</td><td>Picture, Text</td><td>→</td><td>ピクチャー(フィールドまたは変数)あるいはピクチャーへのパス(テキスト)</td></tr><tr><td>戻り値</td><td>Object</td><td>←</td><td>ピクチャーを参照するオブジェクト</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/WritePro/commands/wp-add-picture#説明">​</a></h4>
 <p><strong>WP Add picture</strong> コマンドは<em>wpDoc</em> 引数で指定したドキュメント内に、<em>picture</em> 引数で指定したピクチャーを固定位置でアンカーし、その参照を返します。返された参照はコマンドに渡すことで<em>picture</em> 引数のピクチャーを<em>wpDoc</em> 引数のドキュメント内のどんな位置(ページ、セクション、ヘッダー、フッター)にも、定義されたレイヤー、サイズで移動させることができます。</p>
 <p><em>wpDoc</em> 引数には、4D Write Pro ドキュメントオブジェクト名を渡します。</p>
@@ -46,7 +46,7 @@
 <ul>
 <li>4D ピクチャー。</li>
 <li>システムシンタックスを使用して表現された、ディスク上に保存されたピクチャーファイルへのパスを含む文字列。<br>
-完全なパス名か、あるいは データベースストラクチャーファイルからみた相対的なパス名を使用することができます。ファイル名のみを渡すこともできますが、その場合ファイルはデータベースのストラクチャーファイルの隣に置かれていなければなりません。ファイル名を渡す場合、ファイルの拡張子の指定も必要です。</li>
+完全なパス名か、あるいはデータベースストラクチャーフ  ァイルからみた相対的なパス名を使用することができます。ファイル名のみを渡すこともできますが、その場合ファイルはデータベースのストラクチャーファイルの隣に置かれていなければなりません。ファイル名を渡す場合、ファイルの拡張子の指定も必要です。</li>
 </ul>
 <blockquote>
 <p><strong>注意</strong>: 4D でサポートされているフォーマットであればどのようなものでも使用可能です(<em>ピクチャ</em> の章を参照してください)。<a href="/docs/ja/next/commands/picture-codec-list">PICTURE CODEC LIST</a> コマンドを使用すると、利用可能なピクチャーフォーマットの一覧を取得することができます。ピクチャーが複数のフォーマット(コーデック)を格納している場合、4D Write Pro は表示用に1つのみ、(フォーマットが異なる場合)印刷用に1つのみドキュメント内に保持します。その際のフォーマットは&quot;最適な&quot;フォーマットが自動的に選択されます。</p>
@@ -60,7 +60,7 @@
 <li>ペーパーボックスの左上端に表示され、</li>
 <li>全てのページに表示されます。</li>
 </ul>
-<p><em>picture</em> 引数で指定したピクチャ  ーの位置、レイヤー(インライン、テキストの前面/背景)、表示状態などのプロパティは<a href="/docs/ja/next/WritePro/commands/wp-set-attributes">WP SET ATTRIBUTES</a> コマンドを使用する、あるいは標準アクションを使用する(<em>4D Write Pro標準アクションの使用</em>参照)ことで変更可能です。</p>
+<p><em>picture</em> 引数で指定したピクチャーの位置、レイヤー(インライン 、テキストの前面/背景)、表示状態などのプロパティは<a href="/docs/ja/next/WritePro/commands/wp-set-attributes">WP SET ATTRIBUTES</a> コマンドを使用する、あるいは標準アクションを使用する(<em>4D Write Pro標準アクションの使用</em>参照)ことで変更可能です。</p>
 <p><strong>注:</strong> <a href="/docs/ja/next/WritePro/commands/wp-selection-range">WP Selection range</a> コマンドは、アンカーされたピクチャーが選択されていた場合には<em>ピクチャー参照</em>オブジェクトを返し、インライン画像をが選択されていた場合には<em>レンジ</em>オブジェクトを返します。wk type 属性を使用すると、選択されたオブジェクトがピクチャーオブジェクトがどうかをチェックすることができます。値 = 2の場合、オブジェクトはピクチャーオブジェクトであり、それ以外の場合にはレンジオブジェクト(値 = 0)となります。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-1">例題 1<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/WritePro/commands/wp-add-picture#例題-1">​</a></h4>
 <p>ファイルパスを使用してデフォルトの設定でピクチャーを追加する場合を考えます。</p>

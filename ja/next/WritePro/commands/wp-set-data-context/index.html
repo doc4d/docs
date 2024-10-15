@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">WP SET DATA CONTEXT | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/WritePro/commands/wp-set-data-context"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="WP SET DATA CONTEXT | 4D Docs"><meta data-rh="true" name="description" content="WP SET DATA CONTEXT ( wpDoc ; contextData )"><meta data-rh="true" property="og:description" content="WP SET DATA CONTEXT ( wpDoc ; contextData )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/WritePro/commands/wp-set-data-context"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/WritePro/commands/wp-set-data-context" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/WritePro/commands/wp-set-data-context" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/WritePro/commands/wp-set-data-context" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/WritePro/commands/wp-set-data-context" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/WritePro/commands/wp-set-data-context" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/WritePro/commands/wp-set-data-context" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.0401f2c5.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.f752d644.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.5aec664d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -32,7 +32,7 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>wpDoc</td><td>オブジェクト</td><td>🡒</td><td>4D Write Pro ドキュメント</td></tr><tr><td>contextData</td><td>オブジェクト</td><td>🡒</td><td>コンテキストに入れるデータ</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>wpDoc</td><td>Object</td><td>→</td><td>4D Write Pro ドキュメント</td></tr><tr><td>contextData</td><td>Object</td><td>→</td><td>コンテキストに入れるデータ</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/WritePro/commands/wp-set-data-context#説明">​</a></h4>
 <p><strong>WP SET DATA CONTEXT</strong> コマンドは、<em>contextData</em> 引数で指定したオブジェクトを、<em>wpDoc</em> 引数で指定した4D Write Pro ドキュメントのデータコンテキストとして設定します。新しいコンテキスト設定した場合には、ドキュメントの既存のコンテキストは全て上書きされます。</p>
 <p><em>wpDoc</em> 引数には、データコンテキストを受け取る4D Write Pro ドキュメントを渡します。</p>
@@ -40,7 +40,7 @@
 <p>4D Write Pro データコンテキストは揮発性のものです。つまり以下のようなことを意味します:</p>
 <ul>
 <li>ランタイムにおいて、4D Write Pro ドキュメント内からアクセス可能です。</li>
-<li>他の4D Write Pro プロパティとは異なり、4D Write Pro ドキュメン内には保存されません。</li>
+<li>他の4D Write Pro プロパティとは 異なり、4D Write Pro ドキュメン内には保存されません。</li>
 </ul>
 <p>これにより、同じドキュメントを、異なるプロセスで、各プロセスごとに異なるコンテキストで使用することが可能です。</p>
 <p>データコンテキストが設定されると、そのデータは4D Write Pro エリア内において<strong>This.data</strong> というフォーミュラを用いて利用可能になります。</p>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">WP TABLE MERGE CELLS | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/WritePro/commands/wp-table-merge-cells"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="WP TABLE MERGE CELLS | 4D Docs"><meta data-rh="true" name="description" content="WP TABLE MERGE CELLS ( targetObj ) | ( tableRef ; startColumn ; startRow {; columnCount{; rowCount}} )"><meta data-rh="true" property="og:description" content="WP TABLE MERGE CELLS ( targetObj ) | ( tableRef ; startColumn ; startRow {; columnCount{; rowCount}} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/WritePro/commands/wp-table-merge-cells"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/WritePro/commands/wp-table-merge-cells" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/WritePro/commands/wp-table-merge-cells" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/WritePro/commands/wp-table-merge-cells" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/WritePro/commands/wp-table-merge-cells" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/WritePro/commands/wp-table-merge-cells" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/WritePro/commands/wp-table-merge-cells" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.0401f2c5.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.f752d644.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.5aec664d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -56,7 +56,7 @@
 
 
 
-<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>targetObj</td><td>オブジェクト</td><td>🡒</td><td>レンジまたは要素または4D Write Proドキュメント</td></tr><tr><td>tableRef</td><td>オブジェクト</td><td>🡒</td><td>表の参照</td></tr><tr><td>startColumn</td><td>倍長整数</td><td>🡒</td><td>最初のセル列の位置</td></tr><tr><td>startRow</td><td>倍長整数</td><td>🡒</td><td>最初のセル行の位置</td></tr><tr><td>columnCount</td><td>倍長整数</td><td>🡒</td><td>結合する列の数</td></tr><tr><td>rowCount</td><td>倍長整数</td><td>🡒</td><td>結合する行の数</td></tr></tbody></table>
+<table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>targetObj</td><td>Object</td><td>→</td><td>レンジまたは要素または4D Write Proドキュメント</td></tr><tr><td>tableRef</td><td>Object</td><td>→</td><td>表の参照</td></tr><tr><td>startColumn</td><td>Integer</td><td>→</td><td>最初のセル列の位置</td></tr><tr><td>startRow</td><td>Integer</td><td>→</td><td>最初のセル行の位置</td></tr><tr><td>columnCount</td><td>Integer</td><td>→</td><td>結合する列の数</td></tr><tr><td>rowCount</td><td>Integer</td><td>→</td><td>結合する行の数</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/WritePro/commands/wp-table-merge-cells#説明">​</a></h4>
 <p><strong>WP TABLE MERGE CELLS</strong> コマンドは、<em>targetObj</em> または(<em>startColumn</em>、<em>startRow</em>、<em>columnCount</em>、および <em>rowCount</em> によって定義される)<em>tableRef</em> 内のセルのセレクションを結合します。</p>
 <p>以下のいづれかを渡して下さい:</p>
@@ -69,7 +69,7 @@
 </ul>
 </li>
 </ul>
-<p><em>targetObj</em> 引数で指定したターゲットが、セルのセレ  クションを含む表またはテキストのレンジと交差しない場合、コマンドは何もしません。</p>
+<p><em>targetObj</em> 引数で指定したターゲットが、セルのセレクションを含む表またはテキストのレ ンジと交差しない場合、コマンドは何もしません。</p>
 <p><em>targetObj</em> 引数で指定したターゲットが、単一のセルのみと交差する場合、<strong>WP TABLE MERGE CELLS</strong> コマンドは何もしません。</p>
 <p><strong>または</strong></p>
 <ul>
