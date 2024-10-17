@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Process activity | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/next/commands/process-activity"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Process activity | 4D Docs"><meta data-rh="true" name="description" content="Process activity () ObjectProcess activity ( sessionID ) Object"><meta data-rh="true" property="og:description" content="Process activity () ObjectProcess activity ( sessionID ) Object"><link data-rh="true" rel="icon" href="/docs/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/next/commands/process-activity"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/process-activity" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/process-activity" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/process-activity" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/process-activity" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/process-activity" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/process-activity" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.9d2cac31.css">
-<script src="/docs/assets/js/runtime~main.59e97740.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.4fc90ffc.js" defer="defer"></script>
 <script src="/docs/assets/js/main.6985e812.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -65,13 +65,34 @@
 <p>On 4D Server, you can filter information to be returned using the optional <em>sessionID</em> and <em>options</em> parameters:</p>
 <ul>
 <li>If you pass a user session ID in the <em>sessionID</em> parameter, the command only returns information related to this session. By default if the <em>options</em> parameter is omitted, the returned object contains a collection with all processes related to the session and a collection with a single object describing the session. If you pass an invalid session ID, a <strong>null</strong> object is returned.</li>
-<li>You can select the collection(s) to return by passing one of the following constants in the <em>options</em> parameter:
-| Constant                     	| Type                 	| Value                                                             	| Comment                                                       	|
-|------------------------------	|----------------------	|-------------------------------------------------------------------	|---------------------------------------------------------------	|
-| Processes and sessions       	| Longint              	| 0                                                                 	| Returns both &quot;processes&quot; and &quot;sessions&quot; lists (default value) 	|
-| Processes only               	| Longint              	| 1                                                                 	| Returns only the &quot;processes&quot; list                             	|
-| Sessions only                	| Longint              	| 2                                                                 	| Returns only the &quot;sessions&quot; list                              	|</li>
+<li>You can select the collection(s) to return by passing one of the following constants in the <em>options</em> parameter:</li>
 </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Constant</th><th>Value</th><th>Comment</th></tr></thead><tbody><tr><td>Processes and sessions</td><td>0</td><td>Returns both &quot;processes&quot; and &quot;sessions&quot; lists (default value)</td></tr><tr><td>Processes only</td><td>1</td><td>Returns only the &quot;processes&quot; list</td></tr><tr><td>Sessions only</td><td>2</td><td>Returns only the &quot;sessions&quot; list</td></tr></tbody></table>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>When executed on 4D in remote or local mode, <code>Process activity</code> always returns the list of running processes (<em>sessionID</em> and <em>options</em> parameters are ignored).</p></div></div>
 <p><strong>Sessions</strong></p>
 <p>The &quot;sessions&quot; property contains a collection of objects describing all running sessions on the server. For a description of session object properties, please refer to the <a href="/docs/next/commands/session-info"><code>Session info</code></a> command.</p>
