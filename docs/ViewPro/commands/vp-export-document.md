@@ -44,20 +44,47 @@ If the extension is not included, but the format is specified in *paramObj*, the
 
 The optional *paramObj* parameter allows you to define multiple properties for the exported 4D View Pro object, as well as launch a callback method when the export has completed.
 
-|Property| Type| Description|
-|---|---|---
-|format| text| (optional) When present, designates the exported file format: ".4vp" (default), ".csv", ".xlsx", ".pdf", or ".sjs". You can use the following constants:<li>`vk 4D View Pro format`</li><li>`vk csv format`</li><li>`vk MS Excel format`</li><li>`vk pdf format`</li><li>`vk sjs format`</li>4D adds the appropriate extension to the file name if needed. If the format specified doesn't correspond with the extension in *filePath*, it will be added to the end of *filePath*. If a format is not specified and no extension is provided in *filePath*, the default file format is used.|
-|password| text| Microsoft Excel only (optional) - Password used to protect the MS Excel document|
-|formula| 4D.Function |Callback method to be launched when the export has completed. Using a callback method is necessary when the export is asynchronous (which is the case for PDF and Excel formats) if you need some code to be executed after the export. The callback method must be passed with the [`Formula`](../../API/FunctionClass.md#formula) command. See [Passing a callback method (formula)](#passing-a-callback-method-formula).|
-|valuesOnly| boolean| Specifies that only the values from formulas (if any) will be exported.|
-|includeFormatInfo| boolean| True to include formatting information, false otherwise (default is true). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.|
-|includeBindingSource| boolean | 4DVP and Microsoft Excel only. True (default) to export the current data context values as cell values in the exported document (data contexts themselves are not exported). False otherwise. Cell binding is always exported. For data context and cell binding management, see [VP SET DATA CONTEXT](vp-set-data-context.md) and [VP SET BINDING PATH](vp-set-binding-path.md).|
-|sheetIndex| number| PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only|
-|pdfOptions| object| PDF only (optional) - Options for pdf export <p><table><tr><th>Property</th><th>Type</th><th>Description</th></tr><tr><td>creator</td><td>text</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>text</td><td>title of the document.</td></tr><tr><td>author</td><td>text</td><td>name of the person who created that document.</td></tr><tr><td>keywords</td><td>text</td><td>keywords associated with the document.</td></tr><tr><td>subject</td><td>text</td><td>subject of the document.</td></tr></table></p>|
-|csvOptions|object| CSV only (optional) - Options for csv export <p><table><tr><th>Property</th><th>Type</th><th>Description</th></tr><tr><td>range</td><td>object</td><td>Range object of cells</td></tr><tr><td>rowDelimiter</td><td>text</td><td>Row delimiter. Default: <code>"\r\n"</code></td></tr><tr><td>columnDelimiter</td><td>text</td><td>Column delimiter. Default: <code>","</code></td></tr></table></p>|
-|sjsOptions| object| SJS only (optional) - Options for sjs export <p><table><tr><th>Property</th><th>Type</th><th>Description</th></tr><tr><td>includeAutoMergedCells</td><td>boolean</td><td>whether to include the automatically merged cells, default is false.</td></tr><tr><td>includeBindingSource</td><td>boolean</td><td>whether to include the binding source, default is true.</td></tr><tr><td>includeCalcModelCache</td><td>boolean</td><td>whether to include the extra data of calculation. Can be faster when open the file with those data, default is false.</td></tr><tr><td>includeEmptyRegionCells</td><td>boolean</td><td>whether to include any empty cells (cells with no data or only style) outside the used data range, default is true.</td></tr><tr><td>includeFormulas</td><td>boolean</td><td>whether to include the formulas, default is true.</td></tr><tr><td>includeStyles</td><td>boolean</td><td>whether to include the style, default is true.</td></tr><tr><td>includeUnusedNames</td><td>boolean</td><td>whether to include the unused custom names, default is true.</td></tr><tr><td>saveAsView</td><td>boolean</td><td>whether to apply the format string to exporting values, default is false.</td></tr></table></p>|
-|excelOptions| object| Excel only (optional) - Options for Excel export <p><table><tr><th>Property</th><th>Type</th><th>Description</th></tr><tr><td>includeBindingSource</td><td>boolean</td><td>Whether to include the binding source when exporting, default false.</td></tr><tr><td>includeStyles</td><td>boolean</td><td>Whether to include the style when exporting, default true.</td></tr><tr><td>includeFormulas</td><td>boolean</td><td>Whether to include the formula when exporting, default true.</td></tr><tr><td>saveAsView</td><td>boolean</td><td>Whether to apply the format string to exporting value when exporting, default false.</td></tr><tr><td>rowHeadersAsFrozenColumns</td><td>boolean</td><td>Whether to treat the row headers as frozen columns when exporting, default false.</td></tr><tr><td>columnHeadersAsFrozenRows</td><td>boolean</td><td>Whether to treat the column headers as frozen rows when exporting, default false.</td></tr><tr><td>includeAutoMergedCells</td><td>boolean</td><td>Whether to include the automatically merged cells when exporting, default false.</td></tr><tr><td>includeCalcModelCache</td><td>boolean</td><td>Whether to include the extra data of calculation. Can be faster when open the file with those data, default false.</td></tr><tr><td>includeUnusedNames</td><td>boolean</td><td>Whether to include the unused custom name when exporting, default true.</td></tr><tr><td>includeEmptyRegionCells</td><td>boolean</td><td>Whether to include any empty cells(cells with no data or only style) outside the used data range, default true.</td></tr><tr><td>password</td><td>text</td><td>Password to set to open the workbook.</td></tr></table></p>|
-|`\<customProperty>`| any| Any custom property that will be available through the $3 parameter in the callback method.|
+|Property|| Type| Description|
+|---|---|---|---|
+|format|| text| (optional) When present, designates the exported file format: ".4vp" (default), ".csv", ".xlsx", ".pdf", or ".sjs". You can use the following constants:<li>`vk 4D View Pro format`</li><li>`vk csv format`</li><li>`vk MS Excel format`</li><li>`vk pdf format`</li><li>`vk sjs format`</li>4D adds the appropriate extension to the file name if needed. If the format specified doesn't correspond with the extension in *filePath*, it will be added to the end of *filePath*. If a format is not specified and no extension is provided in *filePath*, the default file format is used.|
+|password|| text| Microsoft Excel only (optional) - Password used to protect the MS Excel document|
+|formula|| 4D.Function |Callback method to be launched when the export has completed. Using a callback method is necessary when the export is asynchronous (which is the case for PDF and Excel formats) if you need some code to be executed after the export. The callback method must be passed with the [`Formula`](../../API/FunctionClass.md#formula) command. See [Passing a callback method (formula)](#passing-a-callback-method-formula).|
+|valuesOnly|| boolean| Specifies that only the values from formulas (if any) will be exported.|
+|includeFormatInfo|| boolean| True to include formatting information, false otherwise (default is true). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.|
+|includeBindingSource|| boolean | 4DVP and Microsoft Excel only. True (default) to export the current data context values as cell values in the exported document (data contexts themselves are not exported). False otherwise. Cell binding is always exported. For data context and cell binding management, see [VP SET DATA CONTEXT](vp-set-data-context.md) and [VP SET BINDING PATH](vp-set-binding-path.md).|
+|sheetIndex|| number| PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only|
+|pdfOptions|| object| PDF only (optional) - Options for pdf|
+||creator|text|name of the application that created the original document from which it was converted.|
+||title|text|title of the document.|
+||author|text|name of the person who created that document.|
+||keywords|text|keywords associated with the document.|
+||subject|text|subject of the document.|
+|csvOptions||object| CSV only (optional) - Options for csv export |
+||range|object|Range object of cells|
+||rowDelimiter|text|Row delimiter. Default: <code>"\r\n"</code>|
+||columnDelimiter|text|Column delimiter. Default: <code>","</code>|
+|sjsOptions|| object| SJS only (optional) - Options for sjs export |
+||includeAutoMergedCells|boolean|whether to include the automatically merged cells, default is false.|
+||includeBindingSource|boolean|whether to include the binding source, default is true.|
+||includeCalcModelCache|boolean|whether to include the extra data of calculation. Can be faster when open the file with those data, default is false.|
+||includeEmptyRegionCells|boolean|whether to include any empty cells (cells with no data or only style) outside the used data range, default is true.|
+||includeFormulas|boolean|whether to include the formulas, default is true.|
+||includeStyles|boolean|whether to include the style, default is true.|
+||includeUnusedNames|boolean|whether to include the unused custom names, default is true.|
+||saveAsView|boolean|whether to apply the format string to exporting values, default is false.|
+|excelOptions|| object| Excel only (optional) - Options for Excel export 
+||includeBindingSource|boolean|Whether to include the binding source when exporting, default false.|
+||includeStyles|boolean|Whether to include the style when exporting, default true.|
+||includeFormulas|boolean|Whether to include the formula when exporting, default true.|
+||saveAsView|boolean|Whether to apply the format string to exporting value when exporting, default false.|
+||rowHeadersAsFrozenColumns|boolean|Whether to treat the row headers as frozen columns when exporting, default false.|
+||columnHeadersAsFrozenRows|boolean|Whether to treat the column headers as frozen rows when exporting, default false.|
+||includeAutoMergedCells|boolean|Whether to include the automatically merged cells when exporting, default false.|
+||includeCalcModelCache|boolean|Whether to include the extra data of calculation. Can be faster when open the file with those data, default false.|
+||includeUnusedNames|boolean|Whether to include the unused custom name when exporting, default true.|
+||includeEmptyRegionCells|boolean|Whether to include any empty cells(cells with no data or only style) outside the used data range, default true.|
+||password|text|Password to set to open the workbook.|
+|`\<customProperty>`|| any| Any custom property that will be available through the $3 parameter in the callback method.|
 
 **Notes about Excel format**:
 
