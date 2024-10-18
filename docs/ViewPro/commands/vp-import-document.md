@@ -57,6 +57,17 @@ The optional *paramObj* parameter allows you to define properties for the import
 ||includeStyles|boolean| Whether to include the styles when loading, default is true. |
 ||includeUnusedStyles|boolean|Whether to include the unused name styles when converting excel xml to the json, default is true. |
 ||openMode|integer|<li>0 (normal): normal open mode, without lazy and incremental. When opening file, UI and UI event could be refreshed and responsive at specific time points.</li><li>1 (lazy): lazy open mode. When opening file, only the active sheet will be loaded directly. Other sheets will be loaded only when they are be used.</li><li>2 (incremental): incremental open mode. When opening file, UI and UI event could be refreshed and responsive directly.</li>|
+|excelOptions||object|Excel only (optional) - Options for Excel export|
+||includeStyles|boolean|Whether to include the style when importing, default true.|
+||includeFormulas|boolean|Whether to include the formula when importing, default true.|
+||frozenColumnsAsRowHeaders|boolean|Whether to treat the frozen columns as row headers when importing, default false.|
+||frozenRowsAsColumnHeaders|boolean|Whether to treat the frozen rows as column headers when importing, default false.|
+||fullRecalc|boolean|Whether to calculate after loading the json data, false by default.|
+||dynamicReferences|boolean|Whether to calculate functions with dynamic reference, default true.|
+||calcOnDemand|boolean|Whether to calculate formulas only when they are demanded, default false.|
+||includeUnusedStyles|boolean|Whether to include the unused name style when converting excel xml to the json, default true.|
+||password|text|The password to open the workbook.|
+||openMode|text|The open mode of normal, lazy and incremental. By default is normal.|
 
 :::note Notes
 
