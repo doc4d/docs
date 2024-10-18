@@ -156,8 +156,8 @@ You want to export a 4D View Pro document in ".xlsx" format and call a method th
  $params:=New object
  $params.formula:=Formula(AfterExport)
  $params.format:=vk MS Excel format //".xlsx"
- $params.valuesOnly:=True
-
+ $excelOptions:={includeStyles:false;includeFormulas:true}
+ $params.excelOptions:=$excelOptions
  VP EXPORT DOCUMENT("ViewProArea";"c:\\tmp\\convertedfile";$params)
 ```
 
@@ -198,4 +198,5 @@ Here's the result:
 [VP Convert to picture](vp-convert-to-picture.md)<br/>
 [VP Export to object](vp-export-to-object.md)<br/>
 [VP IMPORT DOCUMENT](vp-import-document.md)<br/>
-[VP Print](vp-print.md)
+[VP Print](vp-print.md)<br/>
+[4D View Pro: Excel import/export update (blog post)](https://blog.4d.com/4d-view-pro-excel-import-export-update)
