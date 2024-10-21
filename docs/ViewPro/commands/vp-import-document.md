@@ -99,6 +99,8 @@ var $o : Object
 $o:=New object
 $o.password:="excel123"
 $o.formula:=Formula(myImport)
+$excelOptions:={includeStyles:false;includeFormulas:true}
+$o.excelOptions:=$excelOptions
  
 VP IMPORT DOCUMENT("ViewProArea";"c:\\tmp\\excelfilefile.xlsx";$o)
 ```
@@ -134,5 +136,6 @@ Here's the result:
 
 
 [VP EXPORT DOCUMENT](vp-export-document.md)<br/>
-[VP NEW DOCUMENT](vp-new-document.md)
+[VP NEW DOCUMENT](vp-new-document.md)<br/>
+[4D View Pro: Excel import/export update (blog post)](https://blog.4d.com/4d-view-pro-excel-import-export-update)
 
