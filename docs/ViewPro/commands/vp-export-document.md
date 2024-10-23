@@ -86,10 +86,12 @@ The optional *paramObj* parameter allows you to define multiple properties for t
 ||password|text|Password to set to open the workbook.|
 |`\<customProperty>`|| any| Any custom property that will be available through the $3 parameter in the callback method.|
 
+
 **Notes about Excel format**:
 
 * When exporting a 4D View Pro document into a Microsoft Excel-formatted file, some settings may be lost. For example, 4D methods and formulas are not supported by Excel. You can verify other settings with [this list from SpreadJS](https://developer.mescius.com/spreadjs/docs/excelimpexp/excelexport).
 * Exporting in this format is run asynchronously, use the `formula` property of the *paramObj* for code to be executed after the export.
+* Using *excelOptions* object is recommended when exporting in ".xlsx" format. Make sure to not mix this object with legacy first level properties (*password*, *includeBindingSource*...) to avoid potiental issues.
 
 **Notes about PDF format**:
 
@@ -140,8 +142,7 @@ VP EXPORT DOCUMENT("VPArea";$docPath)
 You want to export the current sheet in PDF:
 
 ```4d
-var $params: Object
-$params:=New object
+var $params:={}
 $params.format:=vk pdf format
 $params.sheetIndex:=-1
 $params.pdfOptions:=New object("title";"Annual Report";"author";Current user)
@@ -153,12 +154,11 @@ VP EXPORT DOCUMENT("VPArea";"report.pdf";$params)
 You want to export a 4D View Pro document in ".xlsx" format and call a method that will launch Microsoft Excel with the document open once the export has completed:
 
 ```4d
- $params:=New object
+ var $params:={}
  $params.formula:=Formula(AfterExport)
- $params.format:=vk MS Excel format //".xlsx"
  $excelOptions:={includeStyles:false;includeFormulas:true}
  $params.excelOptions:=$excelOptions
- VP EXPORT DOCUMENT("ViewProArea";"c:\\tmp\\convertedfile";$params)
+ VP EXPORT DOCUMENT("ViewProArea";"c:\\tmp\\convertedfile.xlsx";$params)
 ```
 
 ***AfterExport*** method:
@@ -180,8 +180,7 @@ You want to export the current sheet to a `.txt` file with pipe-separated values
 ![example-export-csv](../../assets/en/ViewPro/vp-export-document-csv.png)
 
 ```4d
-var $params : Object
-$params:=New object
+var $params:={}
 $params.range:=VP Cells("ViewProArea";0;0;2;5)
 $params.rowDelimiter:="\n"
 $params.columnDelimiter:="|"
