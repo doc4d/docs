@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">OutGoingMessage | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/next/API/OutGoingMessageClass"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="OutGoingMessage | 4D Docs"><meta data-rh="true" name="description" content="The 4D.OutGoingMessage class allows you to build messages to be returned by your application functions in response to REST requests. If the response is of type 4D.OutGoingMessage, the REST server does not return an object but the object instance of the OutgoingMessage class."><meta data-rh="true" property="og:description" content="The 4D.OutGoingMessage class allows you to build messages to be returned by your application functions in response to REST requests. If the response is of type 4D.OutGoingMessage, the REST server does not return an object but the object instance of the OutgoingMessage class."><link data-rh="true" rel="icon" href="/docs/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/next/API/OutGoingMessageClass"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/API/OutGoingMessageClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/API/OutGoingMessageClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/API/OutGoingMessageClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/API/OutGoingMessageClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/API/OutGoingMessageClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/API/OutGoingMessageClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.9d2cac31.css">
-<script src="/docs/assets/js/runtime~main.84fb8354.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.45a7a655.js" defer="defer"></script>
 <script src="/docs/assets/js/main.24867bec.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -79,7 +79,24 @@
 <p>The <code>.headers</code> property is read-only. To set a header, use the <a href="/docs/next/API/OutGoingMessageClass#setheader"><code>setHeader()</code></a> function.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="setbody">.setBody()<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/API/OutGoingMessageClass#setbody">​</a></h2>
 <p><strong>.setBody</strong>( <em>body</em> : any )</p>
-<p>|body|any |-&gt;|Body of the outgoing message|</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr></thead><tbody><tr><td>body</td><td>any</td><td>-&gt;</td><td>Body of the outgoing message</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="description-2">Description<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/API/OutGoingMessageClass#description-2">​</a></h4>
 <p>The <code>.setBody()</code> function sets the outgoing message <em>body</em>.</p>
 <p>The following data types are supported in the <em>body</em>:</p>
@@ -99,15 +116,54 @@
 <p>If <em>body</em> is not of a supported value type, an error is returned.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="setheader">.setHeader()<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/API/OutGoingMessageClass#setheader">​</a></h2>
 <p><strong>.setHeader</strong>( <em>key</em> : Text ; <em>value</em> : Text )</p>
-<p>|key|Text|-&gt;|Header property to set|
-|value|Text|-&gt;|Value of the header property|</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr></thead><tbody><tr><td>key</td><td>Text</td><td>-&gt;</td><td>Header property to set</td></tr><tr><td>value</td><td>Text</td><td>-&gt;</td><td>Value of the header property</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="description-3">Description<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/API/OutGoingMessageClass#description-3">​</a></h4>
 <p>The <code>.setHeader()</code> function sets the outgoing message header <em>key</em> with the provided <em>value</em>. If both parameters are not Text values, an error is raised.</p>
 <p>When returning a 4D.OutGoingMessage object instance, 4D automatically sets some headers (e.g. <code>Set-Cookie</code> with <code>WASID4D=...</code> and <code>4DSID__ProjectName_=....</code>).</p>
 <div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>If you set a <em>value</em> for the &quot;Content-Type&quot; header <em>key</em>, make sure you call this function after the call to <a href="/docs/next/API/OutGoingMessageClass#setbody"><code>setBody()</code></a>, because <code>setBody()</code> automatically fills this header. For a list of &quot;Content-Type&quot; header values, please refer to the <a href="/docs/next/commands/web-send-blob"><code>WEB SEND BLOB</code></a> documentation.</p></div></div>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="setstatus">.setStatus()<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/API/OutGoingMessageClass#setstatus">​</a></h2>
 <p><strong>.setStatus</strong>( <em>status</em> : Integer )</p>
-<p>|status|Integer|-&gt;|Status to set|</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr></thead><tbody><tr><td>status</td><td>Integer</td><td>-&gt;</td><td>Status to set</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="description-4">Description<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/next/API/OutGoingMessageClass#description-4">​</a></h4>
 <p>The <code>.setStatus()</code> function sets the <code>status</code> property with the given <em>status</em>.</p>
 <p>If <em>status</em> is not an integer value, an error is raised.</p>
