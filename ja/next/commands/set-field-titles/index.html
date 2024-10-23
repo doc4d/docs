@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">SET FIELD TITLES | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/set-field-titles"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="SET FIELD TITLES | 4D Docs"><meta data-rh="true" name="description" content="SET FIELD TITLES ( aTable ; fieldTitles ; fieldNumbers {; *} )"><meta data-rh="true" property="og:description" content="SET FIELD TITLES ( aTable ; fieldTitles ; fieldNumbers {; *} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/set-field-titles"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/set-field-titles" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/set-field-titles" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/set-field-titles" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/set-field-titles" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/set-field-titles" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/set-field-titles" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.be5129cc.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.453d3031.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.d03b40c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -45,17 +45,18 @@
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>aTable</td><td>Table</td><td>→</td><td>フィールドタイトルを設定するテーブル</td></tr><tr><td>fieldTitles</td><td>Text array</td><td>→</td><td>ダイアログボックスに表示するフィールドの名前</td></tr><tr><td>fieldNumbers</td><td>Integer array</td><td>→</td><td>実際のフィールド番号</td></tr><tr><td>*</td><td>Operator</td><td>→</td><td>カスタマイズした名前をフォーミュラエディタで使用する</td></tr></tbody></table>
+<p><em>このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。</em></p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/set-field-titles#説明">​</a></h4>
 <p><strong>SET FIELD TITLES</strong> コマンドを使用すれば、アプリケーションモードにおいて、クエリエディターのような標準の4 Dダイアログボックスを表示する際に、<em>aTable</em> に渡されるそのテーブルのフィールドのマスクや名前の変更、並べ替えが行えます (スタートアップモードが<strong>アプリケーション</strong>である場合、または<strong>実行</strong>メニューから<strong>アプリケーションをテスト</strong>を選択した場合) 。</p>
-<p>このコマンドを使用すると、フォーム上のフィールド名のラベルを直ちに変更することが可能です。これには、ダイナミックな名前を使用します。ダイナミックなテーブル名とフィールド名の挿入についての詳細は、<em>4D Design Reference</em> マニュアルの<em>スタティック  テキスト中で参照を使用する</em>を参照してください。</p>
+<p>このコマンドを使用すると、フォーム上のフィールド名のラベルを直ちに変更することが可能です。これには、ダイナミックな名前を使用します。ダイナミックなテーブル名とフィールド名の挿入についての詳細は、<em>4D Design Reference</em> マニュアルの<em>スタティックテキスト中で参照を使用する</em>を参照してください。</p>
 <p>引数 <em>fieldTitles</em> と <em>fieldNumbers</em> 配列は同期させる必要があります。<br>
 配列 <em>fieldTitles</em> には、表示させたいフィールドの名前を渡します。<br>
 ある特定のフィールドを表示したくない場合には、そのフィールド名または新しく付けたタイトルを配列に含めないようにします。フィールドは、この配列に指定した順序で表示されます。<br>
 配列 <em>fieldNumbers</em> の各要素には配列 <em>fieldTitles</em> の同じ要素の数値に渡したフィールド名または新しいタイトルに対応する実際のフィールド番号を渡します。</p>
 <p>例えば、フィールドF、G、Hで構成されるテーブルがあり、フィールドはこの順序で作成されたとします。表示の際には、これらのフィールドをM、N、Oという名前にし、さらにフィールドNは表示したくないとします。最終的に、OとMを、この順序で表示することにします。この場合、配列 <em>fieldTitles</em> の2つの要素としてOとMを渡し、配列 <em>fieldNumbers</em> の2つの要素として3と1を渡します。</p>
-<p>オプションの <em>*</em> 引数は、このコマンドを使用して定義されたカスタムの名前(&quot;バーチャル&quot;なストラクチャー)を4Dフォーミュラで使用するかを指定します。省略した場合、デフォルトとして4D はカスタマイズした名前は使用できず、実際のフィールド名を使用する必要があります。ユーザーに提供される情報を管理し、以下の場合のようにフォーミュラや式が使用されている場所においてインターフェースの統一性を図りたい場合にはこの引数を渡す必要があります:</p>
+<p>オプションの <em>*</em> 引数は、このコマンドを使用して定義されたカスタムの名前(&quot;バーチャル&quot;なストラクチャー)を4Dフォーミュラで使用するかを指定します。省略した場合、デフォルトとして4D はカスタマイズした名前は使用できず、実際のフィールド名を使用する必要があります。ユーザーに提供される情報を管理し、以下の場合のようにフォーミュラや式が使用されている場所においてインターフェースの統一性を図りたい場 合にはこの引数を渡す必要があります:</p>
 <ul>
-<li>アプリケーションがフォーミュラエディターへのアク セスを提供している場合(例えばクイックレポートエディターなど)。</li>
+<li>アプリケーションがフォーミュラエディターへのアクセスを提供している場合(例えばクイックレポートエディターなど)。</li>
 <li>アプリケーションが4D Write Pro ドキュメントなど、式参照を表示する場合。</li>
 </ul>
 <p><strong>注:</strong> <em>*</em> 引数を渡した場合、このコマンドで指定したカスタマイズした名前を4Dフォーミュラで使用されます。<strong>ただし</strong>、4D ランゲージインタプリタが禁止している文字（例えば、-?*!）をカスタム名に含めることはできません。例えば、&quot;Rate_in_%&quot; という名前はフォーミュラ内で使用することはできません(詳細な情報については、<em>識別子</em> のセクションを参照してください)。</p>
@@ -64,7 +65,7 @@
 <ul>
 <li>テーブルを動的にローカライズする。</li>
 <li>フィールド表示を、実際のテーブル定義に関係なく、独自のものとする。</li>
-<li>フィールド表示を、ユーザー固有のものや権限によるものとする。</li>
+<li>フィ ールド表示を、ユーザー固有のものや権限によるものとする。</li>
 </ul>
 <p><strong>警告</strong>:</p>
 <ul>

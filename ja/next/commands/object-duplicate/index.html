@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">OBJECT DUPLICATE | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/object-duplicate"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="OBJECT DUPLICATE | 4D Docs"><meta data-rh="true" name="description" content="OBJECT DUPLICATE ( { ;} object {; newName {; newVar {; boundTo {; moveH {; moveV {; resizeH {; resizeV}}}}}}} {; } )"><meta data-rh="true" property="og:description" content="OBJECT DUPLICATE ( { ;} object {; newName {; newVar {; boundTo {; moveH {; moveV {; resizeH {; resizeV}}}}}}} {; } )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/object-duplicate"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/object-duplicate" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/object-duplicate" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/object-duplicate" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/object-duplicate" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/object-duplicate" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/object-duplicate" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.be5129cc.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.453d3031.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.d03b40c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -81,6 +81,7 @@
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>*</td><td>演算子</td><td>→</td><td>指定時: objectはオブジェクト名 (文字列)、省略時: objectは変数またはフィールド</td></tr><tr><td>object</td><td>any</td><td>→</td><td>オブジェクト名 (*指定時)、または変数やフィールド (*省略時)</td></tr><tr><td>newName</td><td>Text</td><td>→</td><td>新しいオブジェクトの名前</td></tr><tr><td>newVar</td><td>Pointer</td><td>→</td><td>新しいオブジェクトの変数へのポインター</td></tr><tr><td>boundTo</td><td>Text</td><td>→</td><td>直前の入力順の入力可能オブジェクトまたはラジオボタングループ</td></tr><tr><td>moveH</td><td>Integer</td><td>→</td><td>新しいオブジェクトの横シフト (&gt;0 = 右方向, &lt;0 = 左方向)</td></tr><tr><td>moveV</td><td>Integer</td><td>→</td><td>新しいオブジェクトの縦シフト (&gt;0 = 下方向, &lt;0 = 上方向)</td></tr><tr><td>resizeH</td><td>Integer</td><td>→</td><td>オブジェクトの横リサイズ</td></tr><tr><td>resizeV</td><td>Integer</td><td>→</td><td>新しいオブジェクトの縦リサイズ</td></tr><tr><td>*</td><td>演算子</td><td>→</td><td>指定時= 絶対座標, 省略時= 相対座標</td></tr></tbody></table>
+<p><em>このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。</em></p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-duplicate#説明">​</a></h4>
 <p><strong>OBJECT DUPLICATE</strong>コマンドを使用して、<em>object</em>引数で指定したオブジェクトのコピーを作成できます。コピーはアプリケーションモードで実行されているフォームのコンテキストで生成されます。デザインモードのソースフォームは変更されません。</p>
 <p>デフォルトで、割り当てられているオブジェクトメソッドを含む、ソースオブジェクトに対しプロパティリストで設定されているすべてのオプションがコピーに適用されます ( サイズ、リサイズオプション、カラー等)。<br>
@@ -88,7 +89,7 @@
 <ul>
 <li>デフォルトボタン: フォーム中にデフォルトボタンは1 つだけ存在できます。&quot; デフォルトボタン&quot; プロパティを持つボタンを複製すると、このプロパティはコピーに割り当てられ、ソースオブジェクトからは取り除かれます。</li>
 <li>キーボードショートカット: ソースオブジェクトに割り当てられているキーボードショートカットは複製されません。このプロパティはコピー先では未設定となります。</li>
-<li>オブジェクト名: フォーム中でオブジェクト名はユニークでなければなりません。<em>newName</em>引数を渡さない場合、ソースオブジェクト名が自動でインクリメントされ新しいオブジェク  トで使用されます ( 後述参照)。</li>
+<li>オブジェクト名: フォーム中でオブジェクト名はユニークでなければなりません。<em>newName</em>引数を渡さない場合、ソースオブジェクト名が自動でインクリメントされ新しいオブジェクトで使用されます ( 後述参照)。</li>
 </ul>
 <p>オプションの <em>*</em> 引数を渡すと、<em>object</em> 引数はオブジェクト名 (文字) です。この引数を渡さないと、<em>object</em> はフィールドまたは変数です。この場合、文字ではなくフィールドまたは変数への参照 (フィールドまたは変数オブジェクトのみ) を渡します。<br>
 フィールドや変数参照を渡した場合で、フォーム中に同じ参照を使用するオブジェクトが複数ある場合、最初に見つかったオカレンスが使用されます。このような曖昧さを避けるために、ユニークであるオブジェクト名の使用をお勧めします。</p>
@@ -126,7 +127,7 @@
 <p><em>boundTo</em> 引数は2 つのケースで使用します:</p>
 <ul>
 <li>入力順の変更: この場合<em>boundTo</em> には複製したオブジェクトの直前の入力順の入力可オブジェクト名を渡します。新しいオブジェクトをページ中最初の入力順にしたい場合は、Object First in entry order 定数を渡します(<a href="/docs/ja/next/commands/object-get-pointer">OBJECT Get pointer</a> コマンド参照)。</li>
-<li>ラジオボタングループへの関連付け: ラジオボタンをグループ化するために使用します。複製したオブジェクトがラジオボタンのとき、<em>boundTo</em>に新しいオブジェクトを関連付けたいグループのラジオボタンの名前を渡します。</li>
+<li>ラジオボタングループへの関連付け: ラジオボタンをグループ化する ために使用します。複製したオブジェクトがラジオボタンのとき、<em>boundTo</em>に新しいオブジェクトを関連付けたいグループのラジオボタンの名前を渡します。</li>
 </ul>
 <p>この引数を省略するか空の文字列を渡すと、新しいオブジェクトはフォームページ中の最後の入力可能オブジェクトとなります。</p>
 <p>新しいオブジェクトは<em>moveH</em>、<em>moveV</em>、<em>resizeH</em> そして<em>resizeV</em> 引数を使用して移動およびリサイズできます。<a href="/docs/ja/next/commands/object-move">OBJECT MOVE</a> コマンドのように、移動やリサイズの方向は<em>moveH</em> や<em>moveV</em> 引数に渡された値の符号で指定されます:</p>
@@ -137,7 +138,7 @@
 <p>デフォルトで<em>moveH</em>、<em>moveV</em>、<em>resizeH</em> そして<em>resizeV</em> の値は、以前の場所からの相対位置で、オブジェクトの座標を変更します。この引数で絶対座標を指定したい場合、最後のオプションの <em>*</em> 引数を渡します。 これらの引数を省略すると、新しいオブジェクトはソースオブジェクトの上に重ねて配置されます。</p>
 <p>このコマンドはフォームを表示するコンテキストで使用されなければなりません。コマンドは通常On Load フォームイベントやユーザアクション (On Clicked イベント) で実行されます。</p>
 <p><strong>Note:</strong> On Load フォームイベントがソースオブジェクトに割り当てられているとき、コマンド実行時に複製されたオブジェクトでも生成されます。これにより例えば値の初期化などが行えます。</p>
-<p>技術的および論理的な理由により、<strong>OBJECT DUPLICATE</strong>は特定のイベント内では呼び出すことができません。特に:</p>
+<p>技術的および論理 的な理由により、<strong>OBJECT DUPLICATE</strong>は特定のイベント内では呼び出すことができません。特に:</p>
 <ul>
 <li>オブジェクトメソッド内で生成されるOn Load イベント</li>
 <li>On Unload イベント</li>

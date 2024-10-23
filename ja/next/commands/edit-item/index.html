@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">EDIT ITEM | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/edit-item"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="EDIT ITEM | 4D Docs"><meta data-rh="true" name="description" content="EDIT ITEM ( { ;} object {; item*} )"><meta data-rh="true" property="og:description" content="EDIT ITEM ( { ;} object {; item*} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/edit-item"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/edit-item" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/edit-item" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/edit-item" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/edit-item" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/edit-item" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/edit-item" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.be5129cc.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.453d3031.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.d03b40c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -39,10 +39,11 @@
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>*</td><td>演算子</td><td>→</td><td>指定した場合オブジェクト名（文字列） 省略するとテーブルまたは変数</td></tr><tr><td>object</td><td>any</td><td>→</td><td>オブジェクト名 (*が指定されている場合) または テーブルまたは変数 (*が省略された場合)</td></tr><tr><td>item</td><td>Integer</td><td>→</td><td>項目番号</td></tr></tbody></table>
+<p><em>このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。</em></p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/edit-item#説明">​</a></h4>
 <p><strong>EDIT ITEM</strong> コマンドは<em>object</em> 引数で指定された項目、または指定された配列やリスト中<em>item</em> で指定された項目を編集状態にします。</p>
 <p>これは選択された項目を編集したり、内容を入れ替える新しい文字を入力できるようになるということを意味します。</p>
-<p>オプションの*** 引数を渡すと、<em>object</em> 引数がオブジェクト名であることを指定したことになりま  す。この場合<em>object</em>には文字列を渡します。この引数を渡さない場合、<em>object</em> 引数にはテーブルまたは変数を渡します。この場合文字列ではなくテーブルまたは変数参照を渡します。</p>
+<p>オプションの*** 引数を渡すと、<em>object</em> 引数がオブジェクト名であることを指定したことになります。この場合<em>object</em>には文字列を渡します。この引数を渡さない場合、<em>object</em> 引数にはテーブルまたは変数を渡します。この場合文字列ではなくテーブルまたは変数参照を渡します。</p>
 <p>このコマンドは以下の入力可能オブジェクトに適用されます:</p>
 <ul>
 <li>階層リスト</li>
@@ -52,10 +53,10 @@
 </ul>
 <p>コマンドがリストでない入力可オブジェクトに使用された場合、<a href="/docs/ja/next/commands/goto-object">GOTO OBJECT</a> コマンドと同様に動作します。<br>
 このコマンドはリストや配列が空、あるいは非表示の際には何も行いません。またリストや配列が入力不可の場合、このコマンドは単に指定された項目を選択し、入力状態にはしません。リストボックスについては、列が入力を許可しない場合 (チェックボックスやドロップダウンリストの入力のみ許可される場合)、指定された要素がフォーカスを得ます。</p>
-<p>オプションの<em>item</em> 引数には編集モードにする、階層リストの場合項目位置を、複数選択モードでのリストボックスカラムやリストフォームやサブフォームでは行番号を指定します。この引数を渡さない場合、このコマンドは<em>object</em>のカレント項目に適用されます。カレントの項目がない場合、<em>object</em> の最初の項目が編集モードになります。</p>
+<p>オプションの<em>item</em> 引数には編集モードにする、階層リストの場合項目位置を、複数選択モードでのリストボックスカラムやリストフォームやサブフォームでは行番号を指定します。この引数を渡さない場合、このコマンドは<em>object</em>のカレント項目に適用されます。カレントの項目がない場合、<em>object</em> の最初の項目が編集モードになりま す。</p>
 <p><strong>Note:</strong></p>
 <ul>
-<li>サブフォームとリストフォームでは、コマンドは指定された行の  、最初の入力順のフィールドを編集モードにします。</li>
+<li>サブフォームとリストフォームでは、コマンドは指定された行の、最初の入力順のフィールドを編集モードにします。</li>
 <li>階層表示モードのリストボックスでは、ターゲットの項目が折りたたまれた階層レベルに属する場合、このレベル (およびすべての親レベル) は自動で展開され、項目が表示されます。</li>
 </ul>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-1">例題 1<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/edit-item#例題-1">​</a></h4>

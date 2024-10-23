@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">PRINT LABEL | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/print-label"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="PRINT LABEL | 4D Docs"><meta data-rh="true" name="description" content="PRINT LABEL ( {aTable }{;}{ document {; * | &gt;}} )"><meta data-rh="true" property="og:description" content="PRINT LABEL ( {aTable }{;}{ document {; * | &gt;}} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/print-label"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/print-label" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/print-label" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/print-label" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/print-label" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/print-label" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/print-label" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.be5129cc.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.453d3031.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.d03b40c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -39,6 +39,7 @@
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>aTable</td><td>Table</td><td>→</td><td>印刷するテーブル, または 省略した場合、デフォルトテーブル</td></tr><tr><td>document</td><td>Text</td><td>→</td><td>ディスクに保存したラベルドキュメント名</td></tr><tr><td>* | &gt;</td><td>→</td><td>*: 印刷ダイアログを省略, または &gt;:  印刷設定の再初期化をしない</td><td></td></tr></tbody></table>
+<p><em>このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。</em></p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/print-label#説明">​</a></h4>
 <p><strong>PRINT LABEL</strong> は、<em>aTable</em>のセレクションのデータを使用してラベルを印刷します。</p>
 <p><em>document</em> パラメーターを指定しない場合、<strong>PRINT LABEL</strong> はカレント出力フォームを使用して、<em>aTable</em>のカレントセレクションをラベル印刷します。サブフォームの印刷にこのコマンドを使用することはできません。ラベルのフォーム作成に関する詳細は <em>4D Design Reference</em> マニュアルを参照してください。</p>
@@ -50,7 +51,7 @@
 <li><em>*</em> 引数は、現在の印刷設定 に従い、印刷処理を行います。</li>
 <li><em>&gt;</em> 引数は上記に加え、現在の印刷設定を再初期化することなく印刷を行います。この設定は、以前に設定した内容を継続し、(例えばループ中で) 連続した<strong>PRINT LABEL</strong> コマンドを使用する時に役立ちます。この引数の使用例は <a href="/docs/ja/next/commands/print-record">PRINT RECORD</a> コマンドの例を参照してください。</li>
 </ul>
-<p>これらの  引数はラベルウィザード使用時には効果を持たないことに注意してください。</p>
+<p>これらの引数はラベルウィザード使用時には効果を持たないことに注意してください。</p>
 <p>ラベルウィザードを使用しない場合、ラベルがすべてプリントされるとシステム変数OKに1が代入されます。それ以外の場合には0が代入されます (印刷ダイアログボックスでキャンセルがクリックされた場合等)。</p>
 <p><em>document</em> 引数を指定すると、ラベルは<em>document</em>に定義されたラベル設定情報に従って印刷されます。<em>document</em> に空の文字列 (&quot;&quot;) を指定すると、<strong>PRINT LABEL</strong> はファイルを開くダイアログボックスが表示し、ユーザーはラベル設定として使用するファイルを指定することができます。<em>document</em>に存在しないドキュメント名を指定すると (例えば<em>char(1)<em>を</em>document</em>に渡す) 、ラベルウィザードが表示され、ユーザーはラベル設定を定義することができます。</p>
 <p><strong>Note:</strong> デザインモードで、<em>table</em>が非表示に設定されている場合、ラベルウィザードは表示されません。</p>
@@ -58,7 +59,7 @@
 <ul>
 <li>サーバーマシン上ではダイアログボックスを一切表示しないでください (特定の必要性がある場合を除く)。そのためにはこのコマンドを <em>*</em> または <em>&gt;</em> 引数付きで呼び出さなければなりません。</li>
 <li>ラベルエディターが表示されるシンタックスは4D Serverでは動作しません。この場合システム変数OKは0に設定されます。</li>
-<li>プリンター関連の問題が発生しても (用紙切れ、プリンター接続切断等) 、エラーメッセージは生成されま せん。</li>
+<li>プ  リンター関連の問題が発生しても (用紙切れ、プリンター接続切断等) 、エラーメッセージは生成されません。</li>
 </ul>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-1">例題 1<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/print-label#例題-1">​</a></h4>
 <p>以下の例は、テーブルの出力フォームを使用してラベルを印刷します。この例では2つのメソッドを使用します。最初のプロジェクトメソッドは正しい出力フォームを設定し、ラベルを印刷します:</p>

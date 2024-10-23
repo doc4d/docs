@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">QR GET TOTALS DATA | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/qr-get-totals-data"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="QR GET TOTALS DATA | 4D Docs"><meta data-rh="true" name="description" content="QR GET TOTALS DATA ( area ; colNum ; breakNum ; operator ; text )"><meta data-rh="true" property="og:description" content="QR GET TOTALS DATA ( area ; colNum ; breakNum ; operator ; text )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/qr-get-totals-data"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/qr-get-totals-data" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/qr-get-totals-data" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/qr-get-totals-data" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/qr-get-totals-data" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/qr-get-totals-data" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/qr-get-totals-data" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.be5129cc.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.453d3031.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.d03b40c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -51,13 +51,14 @@
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>area</td><td>Integer</td><td>→</td><td>エリア参照</td></tr><tr><td>colNum</td><td>Integer</td><td>→</td><td>カラム番号</td></tr><tr><td>breakNum</td><td>Integer</td><td>→</td><td>ブレーク番号</td></tr><tr><td>operator</td><td>Integer</td><td>←</td><td>セルの演算名</td></tr><tr><td>text</td><td>Text</td><td>←</td><td>セルの内容</td></tr></tbody></table>
+<p><em>このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。</em></p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/qr-get-totals-data#説明">​</a></h4>
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="リストモード">リストモード<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/qr-get-totals-data#リストモード">​</a></h5>
 <p>QR GET TOTALS DATA コマンドを使用し、指定するブレークに関する詳細を取得できます。</p>
 <p><em>area</em>にはクイックレポートエリアの参照を渡します。</p>
 <p><em>colNum</em>にはデータを取得するカラムの番号を渡します。</p>
 <p><em>breakNum</em>には、データを取得するブレーク番号 (小計または総計) を渡します。<br>
-- 小計：1から小計/ソート項目数までの数字<br>
+- 小計：1から小計/ソート項目数まで  の数字<br>
 - 総計：-3または定数<em>qr grand total</em> (テーマ)</p>
 <p><em>operator</em>には、セル内に存在するすべての演算子の和が返されます。テーマの定数を使用して値を処理できます:</p>
 
@@ -110,8 +111,8 @@
 <p><em>colNum</em>には、データを取得するセルのカラム番号を渡します。</p>
 <p><em>breakNum</em>には、データを取得するセルの行番号を渡します。</p>
 <p><em>operator</em>には、セル内に存在するすべての演算子の和が返されます。テーマの定数を使用し、返された値を処理することができます (上記参照)。</p>
-<p><em>text</em>にはセル内のテキストが返されます。</p>
-<p>次の図は、クロステーブルモードでの<em>colNum</em>と<em>breakNum</em>の組み合わせ方に  ついて示しています:</p>
+<p><em>text</em>にはセル内のテキス  トが返されます。</p>
+<p>次の図は、クロステーブルモードでの<em>colNum</em>と<em>breakNum</em>の組み合わせ方について示しています:</p>
 <p><img decoding="async" loading="lazy" src="/docs/ja/assets/images/pict30726.ja-b526388b470cd1458e999a64fbb97a0c.png" width="713" height="329" class="img_ev3q"></p>
 <p>無効な<em>area</em>番号を渡した場合、エラー番号-9850が生成されます。<br>
 無効な<em>colNum</em>引数を渡した場合、エラー番号-9852が生成されます。<br>

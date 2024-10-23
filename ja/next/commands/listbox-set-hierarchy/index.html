@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">LISTBOX SET HIERARCHY | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/listbox-set-hierarchy"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="LISTBOX SET HIERARCHY | 4D Docs"><meta data-rh="true" name="description" content="LISTBOX SET HIERARCHY ( { ;} object ; hierarchical {; hierarchy*} )"><meta data-rh="true" property="og:description" content="LISTBOX SET HIERARCHY ( { ;} object ; hierarchical {; hierarchy*} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/listbox-set-hierarchy"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/listbox-set-hierarchy" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/listbox-set-hierarchy" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/listbox-set-hierarchy" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/listbox-set-hierarchy" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/listbox-set-hierarchy" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/listbox-set-hierarchy" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.be5129cc.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.453d3031.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.d03b40c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -45,6 +45,7 @@
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>*</td><td>演算子</td><td>→</td><td>指定時、objectはオブジェクト名 (文字列)<br>省略時、objectは変数</td></tr><tr><td>object</td><td>any</td><td>→</td><td>オブジェクト名 (* 指定時) または <br>変数 (* 省略時)</td></tr><tr><td>hierarchical</td><td>Boolean</td><td>→</td><td>True = 階層リストボックス<br>False = 非階層リストボックス</td></tr><tr><td>hierarchy</td><td>Pointer array</td><td>→</td><td>ポインタの配列</td></tr></tbody></table>
+<p><em>このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。</em></p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/listbox-set-hierarchy#説明">​</a></h4>
 <p>LISTBOX SET HIERARCHY コマンドを使用して<em>object</em>と***で指定されたリストボックスを階層モードにするか非階層モードにするか設定できます。.</p>
 <p>**Note:**このコマンドは配列を表示するリストボックスに対してのみ機能します。セレクション表示モードのリストボックスに対してこのコマンドが適用された場合、なにも行いません。</p>
@@ -57,7 +58,7 @@
 <p>階層モードのリストボックスを渡すと、特定のプロパティは自動で制限されます。詳しくは<em>階層リストボックスの管理</em>を参照してください。</p>
 <p><em>hierarchy</em>引数には、階層を構成するために使用されるリストボックスの配列を指定します (例題参照)。 リストボックスを階層モードで表示し、この引数を省略すると:</p>
 <ul>
-<li>すでにリストボックスが階層モードの場合、コマンド  はなにも行いません。</li>
+<li>すでにリストボックスが階層モードの場合、コマンドはなにも行いません。</li>
 <li>リストボックスが現在非階層モードで、過去にも階層であると設定されたことがなければ、デフォルトで最初の配列が階層として使用されます。</li>
 <li>リストボックスが現在非階層モードで、以前に階層モードとして設定されたことがあれば、最後の時点の階層が再構築されます。</li>
 </ul>

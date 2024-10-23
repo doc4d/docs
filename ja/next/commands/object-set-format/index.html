@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">OBJECT SET FORMAT | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/object-set-format"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="OBJECT SET FORMAT | 4D Docs"><meta data-rh="true" name="description" content="OBJECT SET FORMAT ( { ;} object ; displayFormat* )"><meta data-rh="true" property="og:description" content="OBJECT SET FORMAT ( { ;} object ; displayFormat* )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/object-set-format"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/object-set-format" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/object-set-format" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/object-set-format" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/object-set-format" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/object-set-format" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/object-set-format" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.be5129cc.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.453d3031.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.d03b40c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -39,9 +39,10 @@
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>*</td><td>演算子</td><td>→</td><td>指定時, Objectはオブジェクト名 (文字列) 省略時, Objectはフィールドまたは変数</td></tr><tr><td>object</td><td>any</td><td>→</td><td>オブジェクト名 (* 指定時), または フィールドまたは変数 (* 省略時)</td></tr><tr><td>displayFormat</td><td>Text</td><td>→</td><td>オブジェクトに設定する表示フォーマット</td></tr></tbody></table>
+<p><em>このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。</em></p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-format#説明">​</a></h4>
 <p><strong>OBJECT SET FORMAT</strong> は、<em>object</em>で指定したオブジェクトの表示フォーマットを<em>displayFormat</em>で渡したフォーマットに設定します。新しいフォーマットは現在の表示にのみ有効です。フォームには保存されません。</p>
-<p>オプションの <em>*</em> 引数を指定した場合、<em>object</em>はオブジェクト名です (文字列) 。オプションの * 引数を省略すると、<em>object</em>はフィールドまたは変数です。この場合、文字列ではなくフィールドまたは変数参照 (フィールドまたは変数のみ) を指定します。オブジェクト名に関する詳細は<em>オブジェクトプロパティ</em> を参照してください。</p>
+<p>オプションの <em>*</em> 引 数を指定した場合、<em>object</em>はオブジェクト名です (文字列) 。オプションの * 引数を省略すると、<em>object</em>はフィールドまたは変数です。この場合、文字列ではなくフィールドまたは変数参照 (フィールドまたは変数のみ) を指定します。オブジェクト名に関する詳細は<em>オブジェクトプロパティ</em> を参照してください。</p>
 <p><strong>OBJECT SET FORMAT</strong> は入力および出力フォーム (表示または印刷) 両方で使用でき、(入力可/不可) フィールドや変数に適用できます。</p>
 <p>必然的に、オブジェクト内のデータ、またはオブジェクト自体のデータタイプに適応する表示フォーマットを使用しなければなりません。</p>
 <p>詳細については、<a href="https://download.4d.com/Demos/4D%5Fv15%5FR5/HDI%5FListBox%5FOBJECT%5FSET%5FFORMAT.zip" target="_blank" rel="noopener noreferrer">例題データベース</a> をダウンロードして参照してください。</p>
@@ -51,8 +52,8 @@
 <li>(全バージョン) 一つの値を<em>displayFormat</em> 引数に渡す。この場合、フィールドはチェックボックスとして表示され、指定した値がラベルになります。</li>
 <li>(バイナリーデータベースのみ) セミコロン (<em>;</em>) で区切った二つの値を<em>displayFormat</em> 引数に渡す。この場合フィールドは2つのラジオボタンとして表示されます。</li>
 </ul>
-<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="日付">日付<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-format#日付">​</a></h5>
-<p>日付フィールドや変数をフォーマ ットするには、Char(n)を<em>displayFormat</em>に渡します。このとき<em>n</em>は4Dにより提供される以下の定義済み定数のうちいずれかです:</p>
+<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="日付">日付<a class="hash-link" aria-label="見出しへの直接リンク" title="見出  しへの直接リンク" href="/docs/ja/next/commands/object-set-format#日付">​</a></h5>
+<p>日付フィールドや変数をフォーマットするには、Char(n)を<em>displayFormat</em>に渡します。このとき<em>n</em>は4Dにより提供される以下の定義済み定数のうちいずれかです:</p>
 
 
 
@@ -133,7 +134,7 @@
 <table><thead><tr><th>定数</th><th>型</th><th>値</th><th>コメント</th></tr></thead><tbody><tr><td>Blank if null date</td><td>倍長整数</td><td>100</td><td>0の代わりに&quot;&quot;</td></tr><tr><td>Date RFC 1123</td><td>倍長整数</td><td>10</td><td>Fri, 10 Sep 2010 13:07:20 GMT</td></tr><tr><td>Internal date abbreviated</td><td>倍長整数</td><td>6</td><td>Dec 29, 2006</td></tr><tr><td>Internal date long</td><td>倍長整数</td><td>5</td><td>December 29, 2006</td></tr><tr><td>Internal date short</td><td>倍長整数</td><td>7</td><td>2006/12/29</td></tr><tr><td>Internal date short special</td><td>倍長整数</td><td>4</td><td>06/12/29 (しかし 1986/12/29 または 2096/12/29)</td></tr><tr><td>ISO Date</td><td>倍長整数</td><td>8</td><td>2006-12-29T00:00:00</td></tr><tr><td>ISO Date GMT</td><td>倍長整数</td><td>9</td><td>2010-09-13T16:11:53Z</td></tr><tr><td>System date abbreviated</td><td>倍長整数</td><td>2</td><td></td></tr><tr><td>System date long</td><td>倍長整数</td><td>3</td><td></td></tr><tr><td>System date short</td><td>倍長整数</td><td>1</td><td></td></tr></tbody></table>
 <p><strong>Note:</strong> Blank if null は他の定数に加算されなければなりません。この定数は日付がヌル値の時、00/00/00ではなく空のエリアとして表示するよう4Dに指示します。</p>
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ピクチャ">ピクチャ<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-format#ピクチャ">​</a></h5>
-<p>ピクチャフィールドや変数をフォーマットするには、Char(n)を<em>displayFormat</em>に渡します。このとき<em>n</em>は4Dに  より提供される以下の定義済み定数のうちいずれかです:</p>
+<p>ピクチャフィールドや変数をフォーマットするには、Char(n)を<em>displayFormat</em>に渡します。このとき<em>n</em>は4Dにより提供される以下の定義済み定数のうちいずれかです:</p>
 
 
 
@@ -212,7 +213,7 @@
 <li><em>flags</em> = 64 (透過)<br>
 バックグランドピクチャを透過させるために使用します。</li>
 <li><em>flags</em> = 128 (最後のフレームを無効として使用)<br>
-このモードは、最後のサムネールフレームをボタンが無効時に表示させるために使用します。このモードが選択されているとき、4Dは最後のサムネールを、ボタ ンが無効に されているときに表示します。このモードが、モード0, 1 および 2とともに使用されていると、最後のサムネールは一連の表示には組み込まれません。子のサムネールはボタンが無効のときにのみ表示されます。</li>
+このモードは、最後のサムネールフレームをボタンが無効時に表示  させるために使用します。このモードが選択されているとき、4Dは最後のサムネールを、ボタ ンが無効にされているときに表示します。このモードが、モード0, 1 および 2とともに使用されていると、最後のサムネールは一連の表示には組み込まれません。子のサムネールはボタンが無効のときにのみ表示されます。</li>
 </ul>
 </li>
 <li><em>ticks</em> = “n チック毎に表示”モードを有効にし、それぞれのピクチャを表示する間隔を設定します。このオプション引数が渡されると、指定された速度でピクチャボタンの コンテンツが繰り返し表示されます。例えば&quot;2;3;?16807;0;10&quot;と指定すると、ピクチャボタンは10tickごとに異なるピクチャを表示し ます。このモードが有効の時は透過モード (64) のみが使用できます。</li>
@@ -230,7 +231,7 @@
 </ul>
 </li>
 <li><em>hMargin</em> = メニューの水平境界とピクチャの間のマージン (ピクセル)</li>
-<li><em>vMargin</em> = メニュ  ーの垂直境界とピクチャの間のマージン (ピクセル)</li>
+<li><em>vMargin</em> = メニューの垂直境界とピクチャの間のマージン (ピクセル)</li>
 <li><em>flags</em> = ピクチャポップアップメニューの透過モード (0 または 64):
 <ul>
 <li><em>mode</em> = 0: ピクチャポップアップメニューは透過でない</li>
@@ -288,7 +289,7 @@
 <em>title;picture;background;titlePos;titleVisible;iconVisible;style;horMargin;vertMargin;</em> <em>iconOffset;popupMenu</em> <em>;</em> <em>hyperlink;numStates;imageHugsTitle</em></p>
 <ul>
 <li><em>title</em> = ボタンタイトル。この値はテキストまたはリソース番号 (例: “:16800,1”) で指定できます。</li>
-<li><em>picture</em> = ボタンにリンクするピクチャ。ピクチャライブラリ、ピクチャ変数、またはResourcesフォ  ルダのピクチャを使用できます:
+<li><em>picture</em> = ボタンにリンクするピクチャ。ピクチャライブラリ、ピクチャ変数、またはResourcesフォルダのピクチャを使用できます:
 <ul>
 <li>ピクチャライブラリのピクチャを使用する場合、クエスチョンマークの後にその番号を指定します (例: &quot;?250&quot;)。</li>
 <li>ピクチャ変数ののピクチャを使用する場合、変数名を指定します。</li>
@@ -351,8 +352,8 @@
 <li><em>hyperlink</em> = 1: タイトルはマウスオーバー時に下線がつく</li>
 </ul>
 </li>
-<li><em>numStates</em> = 3Dボタンのアイコンとして使用しているピクチャー内に存在する状態の数。この数字はまた、標準のボタンの状態を表示するために4Dによって使用されます。</li>
-<li><em>imageHugsTitle</em> = アイ コンとタイトルが分離するか隣接するかを設定します。2つの値を取り得ます:
+<li><em>numStates</em> = 3Dボタンのアイコンとして使用しているピクチャー内に存在する状態の数。この数字は また、標準のボタンの状態を表示するために4Dによって使用されます。</li>
+<li><em>imageHugsTitle</em> = アイコンとタイトルが分離するか隣接するかを設定します。2つの値を取り得ます:
 <ul>
 <li><em>imageHugsTitle</em> = 0 : アイコンとタイトルは互いに離れて表示されます。</li>
 <li><em>imageHugsTitle</em> = 1 : アイコンとタイトルは隣あって表示されます。</li>
@@ -361,7 +362,7 @@
 </ul>
 <p>いくつかのオプションは、すべての3Dボタンで有効というわけではありません。また特定のオプションを設定したくない場合もあるでしょう。あるオプションを渡さないようにするには、対応する値を省略します。例えば<em>titleVisible</em>と<em>vertMargin</em>オプションを省略するには、以下のように書きます:</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> OBJECT SET FORMAT(myVar;&quot;NiceButton;?256;:562;1;;1;4;5;;5;0;;2&quot;)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="クリップボードにコードをコピー" title="コピー" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="リストボックスヘッダー">リストボックスヘッダー<a class="hash-link" aria-label="見出しへ  の直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-format#リストボックスヘッダー">​</a></h5>
+<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="リストボックスヘッダー">リストボックスヘッダー<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-format#リストボックスヘッダー">​</a></h5>
 <p>リストボックス内でのアイコンをフォーマットする場合、以下のシンタックスに従う文字列を<em>displayFormat</em>引数に渡します:<br>
 <em>picture;iconPos</em></p>
 <ul>
@@ -392,7 +393,7 @@
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-4">例題 4<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-format#例題-4">​</a></h4>
 <p>以下のコードは <em>[Stats]Results</em> フィールド値を、値の正負およびゼロであるかに応じてフォーマットします:</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> OBJECT SET FORMAT([Stats]Results;&quot;### ##0.00;(### ##0.00);&quot;)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="クリップボードにコードをコピー" title="コピー" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例  題-5">例題 5<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-format#例題-5">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-5">例題 5<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-format#例題-5">​</a></h4>
 <p>以下のコードはブールフィールドのフォーマットを変更して、Married または Unmarriedが表示されるようにします:</p>
 <div class="language-4d codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-4d codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain"> OBJECT SET FORMAT([Employee]Marital Status;&quot;Married;Unmarried&quot;)</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="クリップボードにコードをコピー" title="コピー" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-6">例題 6<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-set-format#例題-6">​</a></h4>

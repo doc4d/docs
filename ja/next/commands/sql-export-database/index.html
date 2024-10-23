@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">SQL EXPORT DATABASE | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/sql-export-database"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="SQL EXPORT DATABASE | 4D Docs"><meta data-rh="true" name="description" content="SQL EXPORT DATABASE ( folderPath {; numFiles {; fileLimitSize {; fieldLimitSize}}} )"><meta data-rh="true" property="og:description" content="SQL EXPORT DATABASE ( folderPath {; numFiles {; fileLimitSize {; fieldLimitSize}}} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/sql-export-database"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/sql-export-database" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/sql-export-database" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/sql-export-database" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/sql-export-database" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/sql-export-database" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/sql-export-database" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.be5129cc.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.453d3031.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.d03b40c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -45,12 +45,13 @@
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>folderPath</td><td>Text</td><td>→</td><td>書き出しフォルダーのパス名、または&quot;&quot; でフォルダー選択ダイアログボックスを表示</td></tr><tr><td>numFiles</td><td>Integer</td><td>→</td><td>フォルダーごとの最大ファイル数</td></tr><tr><td>fileLimitSize</td><td>Integer</td><td>→</td><td>書き出しファイルのサイズ制限値 (KB)</td></tr><tr><td>fieldLimitSize</td><td>Integer</td><td>→</td><td>この引数のサイズ以下のテキスト、Blob、ピクチャーフィールドの内容はメインのファイルに統合する (バイト単位)</td></tr></tbody></table>
+<p><em>このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。</em></p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/sql-export-database#説明">​</a></h4>
 <p><strong>SQL EXPORT DATABASE</strong>コマンドはデータベースのすべてのテーブルのすべてのレコードをSQLフォーマットで書き出します。SQLではこのグローバルな書き出し処理は&quot;ダンプ&quot;と呼ばれます。</p>
 <p><strong>注</strong>: このコマンドは直接あるいはODBC経由で開かれた外部接続では使用できません。</p>
 <p>テーブルごとに、コマンドは他のデータベースにデータを読み込む際に必要となるSQL文を含むテキストファイルを生成します。このファイルを直接<a title="SQL EXECUTE SCRIPT" href="/docs/ja/next/commands/sql-execute-script">SQL EXECUTE SCRIPT</a>コマンドで使用して、他の4Dデータベースにデータを読み込むことができます。</p>
 <p>書き出しファイルは<em>folderPath</em>で指定された保存先フォルダ内に作成される&quot;SQLExport&quot;フォルダに配置されます。&quot;SQLExport&quot; フォルダが指定された場所に既に存在する場合、コマンドは警告なしにそれを置き換えます。<br>
-引数に空の文字列を渡すと、4Dは標準のフォルダを選択ダイアログボックスを表示します。デフォルトでダイアログボックスはセッションを開いたユーザのカレントフォルダーを表示します (Windows では&quot;マイ ドキュメント&quot;、Mac OS   では&quot;書類&quot;)。</p>
+引数に空の文字列を渡すと、4Dは標準のフォルダを選択ダイアログボックスを表示します。デフォルトでダイアログボックスはセッションを開いたユーザのカレントフォルダーを表示します (Windows では&quot;マイ ドキュメント&quot;、Mac OS では&quot;書類&quot;)。</p>
 <p>書き出されるテーブルごとに、コマンドは以下のアクションを行います:</p>
 <ul>
 <li>保存先フォルダにテーブル名によるサブフォルダを作成する</li>
@@ -60,8 +61,8 @@
 <strong>注:</strong> リモートモードの4Dから<strong>SQL EXPORT DATABASE</strong>を実行した場合、この動作は異なります。このコンテキストでは、外部に保存されるデータは自動で&quot;Export.sql&quot;ファイルに含まれます。</li>
 </ul>
 <p><em>numFiles</em> 引数を渡すと、サブフォルダが<em>numFiles</em>数以上のBLOB やピクチャを含まないよう、必要な応じて&quot;BlobsX&quot; サブフォルダを作成します。<em>numFiles</em> 引数が省略されると、デフォルトでコマンドはファイル数を200に制限します。0を渡すと、それぞれのサブフォルダは少なくとも1つのファイルを含みます。</p>
-<p><em>fileLimitSize</em> 引数を渡すと、ディスク上に作成されるそれぞれの&quot;Export.sql&quot;のサイズを (キロバイト単位で) 制限できます。作成された書き出しファイルのサイズが<em>fileLimitSize</em>で設定した制限に達すると、4Dはレコードの書き込みを停止し、ファイルを閉じ、&quot;ExportX.sql&quot; (Xは一連番号を表す) という新しいファイルを同階層に作成します。このメカニズムにおいては、&quot;ExportX.sql&quot;ファイルの実際のサイズは<em>fileLimitSize</em>を超える点に留意してください。なぜならサイズの制限を超えるときに書き出されているレコードが完全に書き出された後にファイルが閉じられるからです (つまり1レコードが2つのファイルに分割して書き出されることはないということです)。設定可能な最小サイズは100 KBで最大サイズ (デフォルト値) は100,000KB (100MB) です。</p>
-<p>オプションの<em>fieldLimitSize</em>引数では、外部BLOB、ピクチャー、 およびテキストフィールドデータがこの引数で設定されるサイズを下回る場合に、分離したファイルではなくメインの&quot;Export.sql&quot;に含めるそのサイズを設定します。この引数の目的はディスク上に作成されるサブフォルダーやファイルの数を制限することで書き出し処理を最適化することにあります。<br>
+<p><em>fileLimitSize</em> 引数を渡すと、ディスク上に作成されるそれぞれの&quot;Export.sql&quot;のサイズを (キロバイト単位で) 制限できます。作成された書き出しファイルのサイズが<em>fileLimitSize</em>で設定した制限に達すると、4Dはレコードの書き込みを停止し、ファイルを閉じ、&quot;ExportX.sql&quot; (Xは一連番号を表す) という新しいファイルを同階層に作成します。このメカニズムにおいては、&quot;ExportX.sql&quot;ファイルの実際のサイズは<em>fileLimitSize</em>を超える点に留意してください。なぜならサイズの制限を超えるときに書き出されているレコードが完全に書き出された後にファイルが閉じられるからです (つまり1レコードが2つのファイルに分割して書き出されることはないということです)。設定可能な最小サイズは100 KBで最大サイズ (デフ  ォルト値) は100,000KB (100MB) です。</p>
+<p>オプションの<em>fieldLimitSize</em>引数では、外部BLOB、ピクチャー、およびテキストフィールドデータがこの引数で設定されるサイズを下回る場合に、分離したファイルではなくメインの&quot;Export.sql&quot;に含めるそのサイズを設定します。この引数の目的はディスク上に作成されるサブフォルダーやファイルの数を制限することで書き出し処理を最適化することにあります。<br>
 この引数はバイト単位で設定します。例えば1000を渡すと、1000バイト以下の外部BLOB、ピクチャー、およびテキストフィールドはメインの書き出しファイルに組み込まれます。<br>
 書き出しファイルに組み込まれるバイナリーデータ (BLOBとピクチャー) はX&#x27;0f20&#x27;形式の16進フォーマットで書き込まれることに留意してください (標準のSQL16進記法、<em>literal</em>参照)。このフォーマットは4D SQLエンジンにより自動でサポートされます。<br>
 <em>fieldLimitSize</em>引数が省略されるとデフォルトで外部BLOB、ピクチャー、およびテキストフィールドの内容はサイズにかかわらず常に分離したファイルに書き出されます。</p>

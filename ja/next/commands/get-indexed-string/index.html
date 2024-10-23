@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Get indexed string | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/get-indexed-string"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Get indexed string | 4D Docs"><meta data-rh="true" name="description" content="Get indexed string ( resID ; strID {; resFile} ) -&gt; 戻り値"><meta data-rh="true" property="og:description" content="Get indexed string ( resID ; strID {; resFile} ) -&gt; 戻り値"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/get-indexed-string"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/get-indexed-string" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/get-indexed-string" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/get-indexed-string" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/get-indexed-string" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/get-indexed-string" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/get-indexed-string" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.be5129cc.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.453d3031.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.d03b40c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -45,6 +45,7 @@
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>resID</td><td>Integer</td><td>→</td><td>リソースID番号、または &#x27;group&#x27;要素の&#x27;id&#x27;属性 (XLIFF)</td></tr><tr><td>strID</td><td>Integer</td><td>→</td><td>ストリング番号、ま たは &#x27;trans-unit&#x27;要素の&#x27;id&#x27;属性 (XLIFF)</td></tr><tr><td>resFile</td><td>Time</td><td>→</td><td>リソースファイル参照番号、または 省略時: すべてのXLIFFファイル、または 開かれているリソースファイル</td></tr><tr><td>戻り値</td><td>Text</td><td>←</td><td>インデックス付きストリングの値</td></tr></tbody></table>
+<p><em>このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。</em></p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/get-indexed-string#説明">​</a></h4>
 <p>Get indexed string コマンドは以下の値を返します:</p>
 <ul>
@@ -53,8 +54,8 @@
 </ul>
 <p><em>strID</em>にストリングの番号を渡します。ストリングリストリソースのストリングは1からNの順に番号が振られます。ストリングリストリソースのすべてのストリング (およびそのストリング番号) を取得するには<a title="STRING LIST TO ARRAY" href="/docs/ja/next/commands/string-list-to-array">STRING LIST TO ARRAY</a>を使用します。</p>
 <p>リソースまたはそのリソース内のストリングが見つからなかった場合、空の文字列が返され、システム変数OKに0が設定されます。</p>
-<p><em>resFile</em>に有効なリソースファイル参照番号を渡すと、そのリソースはそのリソースファイル内でのみ検索されます。<em>resFile</em>を省略した場合は、リソースチェーン内で最初に見つかったリソースのオカレンスが返されます。</p>
-<p><strong>Note:</strong> ストリングリストリソースの各  ストリングは、最大255文字を格納できます。</p>
+<p><em>resFile</em>に有効なリソースファイル参照番号を渡すと、そのリソースはそのリソースファイル内でのみ検索されます。<em>resFile</em>を省略した場合は、リソースチェーン内で最初に 見つかったリソースのオカレンスが返されます。</p>
+<p><strong>Note:</strong> ストリングリストリソースの各ストリングは、最大255文字を格納できます。</p>
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="xliffアーキテクチャとの互換性">XLIFFアーキテクチャとの互換性<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/get-indexed-string#xliffアーキテクチャとの互換性">​</a></h5>
 <p>4D v11より、Get indexed string コマンドはXLIFFアーキテクチャと互換があります。コマンドはまず<em>resID</em>と<em>strID</em>に対応するリソースをすべての開かれたXLIFFファイル内で探します (<em>resFile</em> 引数が省略されていれば)。この場合、<em>resID</em>は<strong>group</strong>要素の<strong>id</strong>属性を表し、<em>strID</em>は<strong>trans-unit</strong>要素の<strong>id</strong>属性を表します。値が見つからない場合、コマンドは引き続き開かれたリソースファイルを検索します。4DにおけるXLIFFアーキテクチャに関する詳細は4D Design Referenceマニュアルを参照してください。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="システム変数およびセット">システム変数およびセット<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/get-indexed-string#システム変数およびセット">​</a></h4>

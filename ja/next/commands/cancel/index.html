@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">CANCEL | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/cancel"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="CANCEL | 4D Docs"><meta data-rh="true" name="description" content="CANCEL"><meta data-rh="true" property="og:description" content="CANCEL"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/cancel"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/cancel" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/cancel" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/cancel" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/cancel" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/cancel" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/cancel" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.be5129cc.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.453d3031.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.d03b40c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -17,13 +17,14 @@
 
 
 <table><thead><tr><th>このコマンドは引数を必要としません</th><th></th></tr></thead></table>
+<p><em>このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。</em></p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/cancel#説明">​</a></h4>
 <p><strong>CANCEL</strong> コマンドは以下の目的で、フォームあるいはオブジェクトメソッド (またはそこから呼ばれるサブルーチンで) 使用されます:</p>
 <ul>
 <li><a href="/docs/ja/next/commands/add-record">ADD RECORD</a> 、<a href="/docs/ja/next/commands/modify-record">MODIFY RECORD</a> を使用して開始されたレコードのデータ新規あるいは更新入力をキャンセルする。</li>
 <li><a href="/docs/ja/next/commands/dialog">DIALOG</a> コマンドで表示されたフォームをキャンセルする。</li>
 <li><a href="/docs/ja/next/commands/display-selection">DISPLAY SELECTION</a> や <a href="/docs/ja/next/commands/modify-selection">MODIFY SELECTION</a> でレコードセレクションを表示したフォームを閉じる。</li>
-<li><a href="/docs/ja/next/commands/print-form">Print form</a> コマンドで印刷されようとしているフォームの印刷をキャンセルする (後述)。</li>
+<li><a href="/docs/ja/next/commands/print-form">Print form</a> コマンドで印刷されようとしているフォームの印刷を キャンセルする (後述)。</li>
 </ul>
 <p>データ入力のコンテキストで、<strong>CANCEL</strong> はキャンセルキー (<strong>Esc</strong>) を押したのと同じ動作をします。</p>
 <p><strong>CANCEL</strong> は一般的にメニューコマンド選択結果として実行されます。また<strong>CANCEL</strong> は&quot;アクションなし&quot;ボタンのオブジェクトメソッドで使用されます。</p>
@@ -31,7 +32,7 @@
 <p><strong>CANCEL</strong> を実行待ちのキューに追加することはできません。イベントへのレスポンスとしてメソッド中で2つの<strong>CANCEL</strong> コマンドを実行しても、1回実行したのと同じ効果しかありません。</p>
 <p>最後に、このコマンドは<a href="/docs/ja/next/commands/print-form">Print form</a> コマンド使用時にOn Printing Detail フォームイベントで使用できます。このコンテキストでは、<strong>CANCEL</strong> コマンドは印刷しようとしていたフォームの印刷を一時的に停止し、次のページから再開します。このメカニズムは印刷スペースがなくなったときや、ページブレークが必要な時に使用できます。</p>
 <p><strong>Note:</strong> この処理はすべての印刷待ちフォームをキャンセルする<a href="/docs/ja/next/commands/page-break">PAGE BREAK</a>(*) コマンドとは動作が異なります。</p>
-<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ヘッドレスモード">ヘッドレスモード<a class="hash-link" aria-label="見出しへの直接リンク" title=" 見出しへの直接リンク" href="/docs/ja/next/commands/cancel#ヘッドレスモード">​</a></h5>
+<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ヘッドレスモード">ヘッドレスモード<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/cancel#ヘッドレスモード">​</a></h5>
 <p><strong>CANCEL</strong> コマンドは、<em>VP Run offscreen area</em> あるいは <a href="/docs/ja/next/commands/wa-run-offscreen-area">WA Run offscreen area</a> で作成されたオフスクリーンエリアのコンテキストならば、ヘッドレスモードでも使用ができます。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題">例題<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/cancel#例題">​</a></h4>
 <p><a title="SET PRINT MARKER" href="/docs/ja/next/commands/set-print-marker">SET PRINT MARKER</a>の例題を参照</p>

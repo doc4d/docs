@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">LISTBOX SELECT ROWS | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/listbox-select-rows"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="LISTBOX SELECT ROWS | 4D Docs"><meta data-rh="true" name="description" content="LISTBOX SELECT ROWS ( { ;} object ; selection {; action*} )"><meta data-rh="true" property="og:description" content="LISTBOX SELECT ROWS ( { ;} object ; selection {; action*} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/listbox-select-rows"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/listbox-select-rows" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/listbox-select-rows" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/listbox-select-rows" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/listbox-select-rows" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/listbox-select-rows" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/listbox-select-rows" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.be5129cc.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.453d3031.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.d03b40c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -45,14 +45,15 @@
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>*</td><td>演算子</td><td>→</td><td>指定時、 Object はオブジェクト名(文字列) 省略時、 Object は変数</td></tr><tr><td>object</td><td>any</td><td>→</td><td>オブジェクト名(* 指定時)、 または変数(* 省略時)</td></tr><tr><td>selection</td><td>Object, Collection</td><td>→</td><td>選択する行を指定するオブジェクトまたはコレクション</td></tr><tr><td>action</td><td>Integer</td><td>→</td><td>lk replace selection (省略時のデフォルト)、lk add to selection、lk remove from selection</td></tr></tbody></table>
+<p><em>このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。</em></p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/listbox-select-rows#説明">​</a></h4>
 <p><strong>LISTBOX SELECT ROWS</strong> コマンドはエンティティセレクション型リストボックス/コレクション型リストボックスにおいて、<em>selection</em> 引数で指定したエンティティまたはオブジェクトに対応する行を選択します。</p>
 <p>任意の <em>*</em> 演算子を渡した場合、 <em>object</em> 引数でオブジェクト名を文字列で指定します。省略時には <em>object</em> 引数で変数を指定します。この場合、文字列ではなく変数参照を渡します。オブジェクト名の詳細については、<em>オブジェクトプロパティ</em> の章を参照してください。</p>
 <p><em>selection</em> 引数には、リストボックスのタイプに応じて、Object またはCollection を渡してください:</p>
 <p><strong>エンティティセレクション型リストボックスの場合</strong></p>
 <p><strong>エンティティセレクション型リストボックス</strong>に対しては、リストボックスのものと同じデータクラスからのエンティティを格納したオブジェクトを渡します。<em>selection</em> 引数がリストボックスのものとは異なるデータクラスからのエンティティセレクションオブジェクトだった場合、エラーが返されます。</p>
-<p><strong>コレクション型リストボックスの場合</strong></p>
-<p>コレクション型リストボックスに対しては、リストボッ  クスに属しているオブジェクトのサブコレクションを渡します。リストボックスにスカラー値が格納されている場合、値のサブコレクションを渡します。</p>
+<p><strong>コ  レクション型リストボックスの場合</strong></p>
+<p>コレクション型リストボックスに対しては、リストボックスに属しているオブジェクトのサブコレクションを渡します。リストボックスにスカラー値が格納されている場合、値のサブコレクションを渡します。</p>
 <p><strong>注:</strong></p>
 <ul>
 <li><em>selection</em> 引数の中身が有効なエンティティセレクションオブジェクト/コレクションではなかった場合、エラーが返されます。</li>
@@ -89,7 +90,7 @@
 
 
 
-<table><thead><tr><th>定数</th><th>型</th><th>値</th><th>コメント</th></tr></thead><tbody><tr><td>lk add to selection</td><td>倍長整数</td><td>1</td><td>選択された行は既存の選択行に追加されます。指定した行が既存の選択に属している場合、コマンドは何も行いません。</td></tr><tr><td>lk remove from selection</td><td>倍長整数</td><td>2</td><td>指定された行は既存の選択行から取り除かれます。指定した行が既存の選択に属さない場合、コマンドは何も行いません。</td></tr><tr><td>lk replace selection</td><td>倍長整数</td><td>0</td><td>選択された行が新しい選択行となり、既存のも のと置き換えられます。このコマンドは、ユーザが行をクリックした場合と同じ結果になります。これは (<em>action</em> 引数が省略された時の) デフォルトの動作です。</td></tr></tbody></table>
+<table><thead><tr><th>定数</th><th>型</th><th>値</th><th>コメント</th></tr></thead><tbody><tr><td>lk add to selection</td><td>倍長整数</td><td>1</td><td>選択された行は既存の選択行に追加されます。指定した行が既存の選択に属している場合、コマンドは何も行いません。</td></tr><tr><td>lk remove from selection</td><td>倍長整数</td><td>2</td><td>指定された行は既存の選択行から取り除かれます。指定した行が既存の選択に属さない場合、コマンドは何も行いません。</td></tr><tr><td>lk replace selection</td><td>倍長整数</td><td>0</td><td>選択された行が新しい選択行となり、既存のものと置き換えられます。このコマンドは、ユーザが行をクリックした場合と同じ結果になります。これは (<em>action</em> 引数が省略された時の) デフォルトの動作です。</td></tr></tbody></table>
 <p><em>action</em> 引数が省略されていた場合、デフォルトで、コマンドは<em>selection</em> 引数で定義されている行で選択行を置き換えます。</p>
 <p><strong>注:</strong> コマンドはそれぞれのオブジェクトまたはエンティティがリストボックス内において一度しか表示されていないという前提で実行されます。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-1">例題 1<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/listbox-select-rows#例題-1">​</a></h4>

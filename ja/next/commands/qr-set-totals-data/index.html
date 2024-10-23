@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">QR SET TOTALS DATA | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/qr-set-totals-data"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="QR SET TOTALS DATA | 4D Docs"><meta data-rh="true" name="description" content="QR SET TOTALS DATA ( area ; colNum ; breakNum ; operator | value )"><meta data-rh="true" property="og:description" content="QR SET TOTALS DATA ( area ; colNum ; breakNum ; operator | value )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/qr-set-totals-data"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/qr-set-totals-data" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/qr-set-totals-data" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/qr-set-totals-data" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/qr-set-totals-data" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/qr-set-totals-data" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/qr-set-totals-data" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.be5129cc.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.453d3031.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.d03b40c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -45,13 +45,14 @@
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>area</td><td>Integer</td><td>→</td><td>エリア参照</td></tr><tr><td>colNum</td><td>Integer</td><td>→</td><td>カラム番号</td></tr><tr><td>breakNum</td><td>Integer</td><td>→</td><td>ブレーク番号</td></tr><tr><td>operator | value</td><td>倍長整数, 文字</td><td>→</td><td>セルの演算子の値またはセルの内容</td></tr></tbody></table>
+<p><em>このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。</em></p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/qr-set-totals-data#説明">​</a></h4>
 <p><strong>Note:</strong> このコマンドで小計を作成することはできません。</p>
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="リストモード">リストモード<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/qr-set-totals-data#リストモード">​</a></h5>
 <p>QR SET TOTALS DATA コマンドを使用し、ブレーク (総計または小計) に関する詳細を設定できます。</p>
 <p><em>area</em>にはクイックレポートエリアの参照を渡します。</p>
 <p><em>colNum</em>にはデータをセットすセルのカラム番号を渡します。</p>
-<p><em>breakNum</em>には、データをセットするブレークの番号 (小計または総計) を渡します。小計の場合、<em>breaknum</em>にはソート番号を指定します。総計の場合、<em>breaknum</em>   には-3または定数<em>qr grand total</em>を指定します。</p>
+<p><em>breakNum</em>には、データをセットするブレークの番号 (小計または 総計) を渡します。小計の場合、<em>breaknum</em>にはソート番号を指定します。総計の場合、<em>breaknum</em> には-3または定数<em>qr grand total</em>を指定します。</p>
 <p><em>operator</em>には、セル内に存在するすべての演算子の和を指定します。テーマの定数を使用して、<operator>を指定することができます:</operator></p>
 
 
@@ -106,7 +107,7 @@
 - ##N …最小値に置き換えられます。<br>
 - ##D …標準偏差に置き換えられます。<br>
 - ##xx …xxにはカラム番号を指定し、その番号のカラムのフォーマットを用いて、カラムの値で置き換えられます。このカラムが存在しない場合、置き換えは実行されません。</p>
-<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="クロステーブルモード">クロステーブルモード<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/qr-set-totals-data#クロステーブルモード">​</a></h5>
+<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="クロステーブルモード">クロステーブ ルモード<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/qr-set-totals-data#クロステーブルモード">​</a></h5>
 <p>QR SET TOTALS DATA コマンドを使用し、特定のセルの詳細を設定することができます。</p>
 <p><em>area</em>にはクイックレポートエリアの参照を渡します。</p>
 <p><em>colNum</em>には、データを設定するセルのカラム番号を渡します。</p>
@@ -126,7 +127,7 @@
 <em>colNum</em>=2, <em>breakNum</em>=2<br>
 <em>colNum</em>=3, <em>breakNum</em>=2<br>
 <em>colNum</em>=2, <em>breakNum</em>=3<br>
-これら最後の2つの値は、セル (Column 3; Row 3) に対しても影響を与え る点に注意してください。セル (Column 2; Row 3) に集計計算を定義する場合、セル (Column 2; Row 3) の内容は常にセル(Column 3; Row 3) をも定義します。</li>
+これら最後の2つの値は、セル (Column 3; Row 3) に対しても影響を与える点に注意してください。セル (Column 2; Row 3) に集計計算を定義する場合、セル (Column 2; Row 3) の内容は常にセル(Column 3; Row 3) をも定義します。</li>
 </ul>
 <p>無効な<em>area</em>番号を渡した場合、エラー番号-9850が生成されます。<br>
 無効な<em>colNum</em>引数を渡した場合、エラー番号-9852が生成されます。<br>

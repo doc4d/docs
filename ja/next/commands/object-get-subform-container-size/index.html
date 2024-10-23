@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">OBJECT GET SUBFORM CONTAINER SIZE | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/object-get-subform-container-size"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="OBJECT GET SUBFORM CONTAINER SIZE | 4D Docs"><meta data-rh="true" name="description" content="OBJECT GET SUBFORM CONTAINER SIZE ( width ; height )"><meta data-rh="true" property="og:description" content="OBJECT GET SUBFORM CONTAINER SIZE ( width ; height )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/object-get-subform-container-size"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/object-get-subform-container-size" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/object-get-subform-container-size" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/object-get-subform-container-size" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/object-get-subform-container-size" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/object-get-subform-container-size" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/object-get-subform-container-size" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.be5129cc.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.453d3031.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.d03b40c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -33,10 +33,11 @@
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>width</td><td>Integer</td><td>←</td><td>サブフォームオブジェクトの幅</td></tr><tr><td>height</td><td>Integer</td><td>←</td><td>サブフォームオブジェクトの高さ</td></tr></tbody></table>
+<p><em>このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。</em></p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/object-get-subform-container-size#説明">​</a></h4>
 <p><strong>OBJECT GET SUBFORM CONTAINER SIZE</strong>コマンドは親フォーム中に表示されているカレントサブフォームオブジェクトの幅と高さをピクセル単位で返します。</p>
-<p>このコマンドはサブフォームとして使用され、サブフォームオブジェクトの中に表示されているフォームのメソッドから呼び出されなければなりません。コマンドはサブフォームを含んでいるオブジェクトの幅と高さを返します。</p>
-<p>このコマンドは例えば、サブフォームオブジェクトの特性に基づきサブフォームオブジェクトの  サイズをリサイズしなければならないようなケースで有用です。On Load フォームイベントでサブフォームはこのコマンドを呼び出し、自身のコンテンツを表示するためのスペースを計算できます。</p>
+<p>このコマンドはサブフォームとして使用され、サブフォームオブジェクトの中に表示されているフォームのメソッドから呼び出されなければなりません。コマンドはサブフォームを含んでいるオブジェクトの幅と高さを返します  。</p>
+<p>このコマンドは例えば、サブフォームオブジェクトの特性に基づきサブフォームオブジェクトのサイズをリサイズしなければならないようなケースで有用です。On Load フォームイベントでサブフォームはこのコマンドを呼び出し、自身のコンテンツを表示するためのスペースを計算できます。</p>
 <p>親フォーム中に表示されているサブフォームオブジェクトをリサイズすると、サブフォームメソッドにおいて On Resize イベントが生成されます。(例: サブフォームが横および縦方向のサイズ変更時に拡大するようプロパティが設定されていて、親フォームがリサイズされた場合など)</p>
 <ul>
 <li>コマンドがサブフォームとして使用されていないフォームから呼び出された場合、コマンドはフォームウィンドウの現在のサイズを返します。</li>

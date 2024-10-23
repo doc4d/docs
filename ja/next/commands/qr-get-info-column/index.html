@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">QR GET INFO COLUMN | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/qr-get-info-column"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="QR GET INFO COLUMN | 4D Docs"><meta data-rh="true" name="description" content="QR GET INFO COLUMN ( area ; colNum ; title ; object ; hide ; size ; repeatedValue ; displayFormat {; resultVar} )"><meta data-rh="true" property="og:description" content="QR GET INFO COLUMN ( area ; colNum ; title ; object ; hide ; size ; repeatedValue ; displayFormat {; resultVar} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/qr-get-info-column"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/qr-get-info-column" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/qr-get-info-column" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/qr-get-info-column" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/qr-get-info-column" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/qr-get-info-column" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/qr-get-info-column" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.be5129cc.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.453d3031.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.d03b40c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -75,9 +75,10 @@
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>area</td><td>Integer</td><td>→</td><td>エリア参照</td></tr><tr><td>colNum</td><td>Integer</td><td>→</td><td>カラム番号</td></tr><tr><td>title</td><td>Text</td><td>←</td><td>カラムタイトル</td></tr><tr><td>object</td><td>Text</td><td>←</td><td>カラムに割り当てられたオブジェクト</td></tr><tr><td>hide</td><td>Integer</td><td>←</td><td>0 = 表示, 1 = 非表示</td></tr><tr><td>size</td><td>Integer</td><td>←</td><td>カラムサイズ</td></tr><tr><td>repeatedValue</td><td>Integer</td><td>←</td><td>0 = 繰り返ししない, 1 = 繰り返す</td></tr><tr><td>displayFormat</td><td>Text</td><td>←</td><td>データの表示フォーマット</td></tr><tr><td>resultVar</td><td>Text</td><td>←</td><td>フォーミュラ変数名</td></tr></tbody></table>
+<p><em>このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。</em></p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/qr-get-info-column#説明">​</a></h4>
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="リストモード">リストモード<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/qr-get-info-column#リストモード">​</a></h5>
-<p>QR GET INFO COLUMN コマンドを使用して、既存のカラムに関する  パラメタを取得することができます。</p>
+<p>QR GET INFO COLUMN コマンドを使用して、既存のカラムに関するパラメタを取得することができます。</p>
 <p><em>area</em>には、クイックレポートエリアの参照を指定します。</p>
 <p><em>colNum</em>には、パラメタを取得するカラムの番号を指定します。</p>
 <p><em>title</em>には、カラムのヘッダに表示されるタイトルが返されます。</p>
@@ -94,8 +95,8 @@
 <li><em>repeatedValue</em>が0の場合、同一値は印刷されません。</li>
 <li><em>repeatedValue</em>が1の場合、同一値を印刷します。</li>
 </ul>
-<p><em>format</em>には表示フォーマットが返されます。この表示フォーマットは、表示されるデータに対応した4Dフォーマットです。</p>
-<p>任意の<em>resultVar</em> 引数を渡した場合、その引数はクイックレポートエディターによって  計算カラムに自動的に割り当てられた変数名が返されます(あれば)。最初の計算カラムには&quot;C1&quot;、2番目には&quot;C2&quot;、といった形です。4Dはレポートを生成する際、このカラムのフォーミュラの最後の計算の実行によって得られた結果をこの変数に保存します。</p>
+<p><em>format</em>には表示フォーマットが返されます。この表示フォーマットは、表示されるデータに対応した4Dフォーマット  です。</p>
+<p>任意の<em>resultVar</em> 引数を渡した場合、その引数はクイックレポートエディターによって計算カラムに自動的に割り当てられた変数名が返されます(あれば)。最初の計算カラムには&quot;C1&quot;、2番目には&quot;C2&quot;、といった形です。4Dはレポートを生成する際、このカラムのフォーミュラの最後の計算の実行によって得られた結果をこの変数に保存します。</p>
 <h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="クロステーブルモード">クロステーブルモード<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/qr-get-info-column#クロステーブルモード">​</a></h5>
 <p>QR GET INFO COLUMN コマンドを使用して、同様のパラメータを取得できますが、取得しようとするパラメタにより、適用するエリアの参照が異なります。第一に、このコマンドをクロステーブルモードで使用した場合、引数<em>title</em>, <em>hide</em>, そして <em>repeatedValue</em>は意味を持ちません。取得したい値がカラムサイズ、データソース、表示フォーマットのいずれであるかによって、<em>colNum</em>に使用する値が変わります。</p>
 <ul>
@@ -111,7 +112,7 @@
 この場合、カラムの番号は次の図のように付けられます:</li>
 </ul>
 <p><img decoding="async" loading="lazy" src="/docs/ja/assets/images/pict30563.ja-ce3094275d945c2f9707f2c11447ba7a.png" width="552" height="330" class="img_ev3q"></p>
-<p>無効な<em>area</em>番号を渡した場合、エラー番号-9850が生成されます。<br>
+<p>無効な<em>area</em>番号を渡した場合、エラー番号-9850が生成されま  す。<br>
 無効な<em>colNum</em>引数を渡した場合、エラー番号-9852が生成されます。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題">例題<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/qr-get-info-column#例題">​</a></h4>
 <p>以下のレポートをデザインした場合を考えます:</p>

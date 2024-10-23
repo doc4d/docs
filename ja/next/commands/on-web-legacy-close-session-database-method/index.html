@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">On Web Legacy Close Session database method | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/on-web-legacy-close-session-database-method"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="On Web Legacy Close Session database method | 4D Docs"><meta data-rh="true" name="description" content="On Web Legacy Close Session database method"><meta data-rh="true" property="og:description" content="On Web Legacy Close Session database method"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/on-web-legacy-close-session-database-method"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/on-web-legacy-close-session-database-method" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/on-web-legacy-close-session-database-method" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/on-web-legacy-close-session-database-method" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/on-web-legacy-close-session-database-method" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/on-web-legacy-close-session-database-method" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/on-web-legacy-close-session-database-method" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.be5129cc.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.453d3031.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.d03b40c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -17,8 +17,9 @@
 
 
 <table><thead><tr><th>このコマンドは引数を必要としません</th><th></th></tr></thead></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="互換性に関する注意">互換性に関する注意<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/on-web-legacy-close-session-database-method#互換性に関する注意">​</a></h4>
-<p>このデータベースメソッドは<strong>旧式Web セッション</strong>でのみ使用可能であり 、このセッションモードは4D v18 R6 以前のバージョンから変換されたデータベースでのみ利用可能です。<strong>スケーラブルWeb セッション</strong>モード(4D v18 R6 以降での推奨設定)が有効化されていた場合にはこのメソッドは呼び出されません。詳細な情報については、<em>Webセッション管理(旧式)</em> の章を参照してください。</p>
+<p><em>このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。</em></p>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="互換性に関する注意">互換性に関する注意<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/on-web-legacy-close-session-database-method#互換性に関  する注意">​</a></h4>
+<p>このデータベースメソッドは<strong>旧式Web セッション</strong>でのみ使用可能であり、このセッションモードは4D v18 R6 以前のバージョンから変換されたデータベースでのみ利用可能です。<strong>スケーラブルWeb セッション</strong>モード(4D v18 R6 以降での推奨設定)が有効化されていた場合にはこのメソッドは呼び出されません。詳細な情報については、<em>Webセッション管理(旧式)</em> の章を参照してください。</p>
 <h4></h4>
 <p><strong>On Web Legacy Close Session database method</strong> はWebセッションが閉じられる直前に、4D Webサーバーから呼び出されます。4Dは以下のような場合にWebセッション (セッションを管理するWebプロセス) を閉じます:</p>
 <ul>
@@ -27,7 +28,7 @@
 <li><a href="/docs/ja/next/commands/web-legacy-close-session">WEB LEGACY CLOSE SESSION</a>コマンドが呼び出された場合</li>
 </ul>
 <p>こ のデータベースメソッドが呼び出された時点で、セッションのコンテキスト (プロセス変数の値やカレントセレクション) は有効です。そのセッションに関連するデータ (変数の値やセレクション) を退避し、後で同じcookie値でリクエストを受信したときにそれらを再利用することができます。</p>
-<p><strong>注:</strong> (複数のプロセスを生成可能な)4D Mobileセッションのコンテキストにおいて、<strong>On Web Legacy Close Session database method</strong>は閉じられる各Webプロセス毎に呼び出されるので、4D Mobileセッションプロセス中に生成された全てのタイプのデータ(変数、セレクション、等)を保存する事ができます。</p>
+<p><strong>注:</strong> (複数のプロ  セスを生成可能な)4D Mobileセッションのコンテキストにおいて、<strong>On Web Legacy Close Session database method</strong>は閉じられる各Webプロセス毎に呼び出されるので、4D Mobileセッションプロセス中に生成された全てのタイプのデータ(変数、セレクション、等)を保存する事ができます。</p>
 <p><strong>On Web Legacy Close Session database method</strong>の例題は*Webセッション管理(旧式)*を参照してください。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="参照">参照<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/on-web-legacy-close-session-database-method#参照">​</a></h4>
 <p><a href="/docs/ja/next/commands/web-legacy-close-session">WEB LEGACY CLOSE SESSION</a><br>

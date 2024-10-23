@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">PAGE BREAK | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/page-break"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="PAGE BREAK | 4D Docs"><meta data-rh="true" name="description" content="PAGE BREAK {( * | &gt; )}"><meta data-rh="true" property="og:description" content="PAGE BREAK {( * | &gt; )}"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/page-break"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/page-break" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/page-break" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/page-break" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/page-break" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/page-break" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/page-break" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.be5129cc.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.453d3031.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.d03b40c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -27,8 +27,9 @@
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>* | &gt;</td><td>→</td><td>*: Print formで開始されたプリントジョブをキャンセル, または &gt;: 1つのプリントジョブを強制</td><td></td></tr></tbody></table>
+<p><em>このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。</em></p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/page-break#説明">​</a></h4>
-<p>PAGE BREAKはプリンタに送信されたデータの印刷を実行させ、改ページを行います。PAGE BREAKは (On Printing Detailフォームイベントのコンテキストで) <a title="Print form" href="/docs/ja/next/commands/print-form">Print form</a>と共に使用し、強制的に改ページを行ったり、メモリに作成された最後のページを印刷するために使用します。PAGE BREAKは、<a title="PRINT SELECTION" href="/docs/ja/next/commands/print-selection">PRINT SELECTION</a>コマンドとともに使用してはいけません。この代りに、<a title="Subtotal" href="/docs/ja/next/commands/subtotal">Subtotal</a>や<a title="BREAK LEVEL" href="/docs/ja/next/commands/break-level">BREAK LEVEL</a>にオプション引数を使用してページブレークを行ってください。</p>
+<p>PAGE BREAKはプリンタに送信されたデータの印刷を実行させ、改ページを行います。PAGE BREAKは (On Printing Detailフォーム  イベントのコンテキストで) <a title="Print form" href="/docs/ja/next/commands/print-form">Print form</a>と共に使用し、強制的に改ページを行ったり、メモリに作成された最後のページを印刷するために使用します。PAGE BREAKは、<a title="PRINT SELECTION" href="/docs/ja/next/commands/print-selection">PRINT SELECTION</a>コマンドとともに使用してはいけません。この代りに、<a title="Subtotal" href="/docs/ja/next/commands/subtotal">Subtotal</a>や<a title="BREAK LEVEL" href="/docs/ja/next/commands/break-level">BREAK LEVEL</a>にオプション引数を使用してページブレークを行ってください。</p>
 <p><em>*</em> と <em>&gt;</em> 引数は両方ともオプションです。</p>
 <p><em>*</em> 引数により、<a title="Print form" href="/docs/ja/next/commands/print-form">Print form</a> コマンドによって開始したプリントジョブをキャンセルすることができます。このコマンドを実行すると、進行中のプリントジョブが直ちに中止されます。</p>
 <p><strong>Note:</strong> Windowsでは、プリンタサーバのスプールプロパティによってはこのメカニズムが動作しないことがあります。プリンタがただちに印刷を行うように設定されている場合、取消しは機能しないでしょう。PAGE BREAK(*) コマンドの操作を有効にするには、プリンタ設定で最後のページがスプールされてから印刷を開始する設定を選んでください。</p>
@@ -36,7 +37,7 @@
 <ul>
 <li>PAGE BREAKコマンドが引数なしで再度実行されるまで、プリントジョブを開いたままにします。</li>
 <li>プリントジョブに優先権を与えます。プリントジョブが終了するまで、他のプリントは行われません。<br>
-2番目のオプションは、スプールされるプリントジョブとともに使用すると、特に有効です。&gt; 引数はプリントジョブが1つのファイ ルにスプールされることを保証します。これはプリント時間を短縮させます。</li>
+2番目のオプションは、スプールされるプリントジョブとともに使用すると、特に有効です。&gt; 引数はプリントジョブが1つのファイルにスプールされることを保証します。これはプリント時間を短縮させます。</li>
 </ul>
 <p><strong>Note:</strong> スクリーンをプリントする際、ユーザがプリントプレビューダイアログボックスのキャンセルボタンをクリックした場合、PAGE BREAKコマンドはシステム変数OKに0を代入します。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-1">例題 1<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/page-break#例題-1">​</a></h4>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">ST INSERT EXPRESSION | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/st-insert-expression"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="ST INSERT EXPRESSION | 4D Docs"><meta data-rh="true" name="description" content="ST INSERT EXPRESSION ( { ;} object ; expression {; startSel {; endSel*}} )"><meta data-rh="true" property="og:description" content="ST INSERT EXPRESSION ( { ;} object ; expression {; startSel {; endSel*}} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/st-insert-expression"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/st-insert-expression" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/st-insert-expression" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/st-insert-expression" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/st-insert-expression" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/st-insert-expression" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/st-insert-expression" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.be5129cc.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.453d3031.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.d03b40c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -51,11 +51,12 @@
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>*</td><td>演算子</td><td>→</td><td>指定時: object はオブジェクト名(文字列) 省略時: object は変数またはフィールド</td></tr><tr><td>object</td><td>Object</td><td>→</td><td>オブジェクト名( * 指定時)、または変数やフィールド( * 省略時)</td></tr><tr><td>expression</td><td>Text</td><td>→</td><td>挿入したい4D式と(任意の)フォーマット</td></tr><tr><td>startSel</td><td>Integer</td><td>→</td><td>選択範囲の開始地点</td></tr><tr><td>endSel</td><td>Integer</td><td>→</td><td>選択範囲の終了地点</td></tr></tbody></table>
+<p><em>このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。</em></p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/st-insert-expression#説明">​</a></h4>
 <p><strong>ST INSERT EXPRESSION</strong>コマンドは、<em>object</em> 引数で指定したスタイル付テキストフィールドまたはテキスト変数内に、4D 式への参照を挿入します。</p>
 <p>任意の <em>*</em> 演算子を渡した場合、 <em>object</em> 引数でオブジェクト名を文字列で指定します。省略時には <em>object</em> 引数でフィールドまたは変数を指定します。</p>
 <p><em>expression</em> 引数には、<em>object</em> 引数のオブジェクト内にて評価したい4D式を渡します。4D式は、引用符(&quot;&quot;)で囲まれている必要があります。</p>
-<p>有効な4D式とは、値を返す文字列です。<em>expression</em> 引数には、フィールド、変数、4Dコマンド、値を返す宣言、プロジェクトメソッド、4D Write Pro 特有の式(<em>フォーミュラの管理</em>参照)等を指定することができます。</p>
+<p>有効な4D式とは、  値を返す文字列です。<em>expression</em> 引数には、フィールド、変数、4Dコマンド、値を返す宣言、プロジェクトメソッド、4D Write Pro 特有の式(<em>フォーミュラの管理</em>参照)等を指定することができます。</p>
 <p><strong>注:</strong></p>
 <ul>
 <li>ピクチャー式(ピクチャー型変数等)を挿入することは、4D Write Pro エリアではサポートされています(<em>画像式の挿入</em> 参照)が、マルチスタイルテキストエリアではサポートされていません。</li>
@@ -77,7 +78,7 @@
 <ul>
 <li><em>startSel</em> のみを指定した場合、式の結果が指定された位置に挿入されます。</li>
 <li><em>startSel</em> と <em>endSel</em> の両方を省略した場合、式の結果がカーソルの位置に挿入されます。</li>
-<li><em>startSel</em> と <em>endSel</em> の両方を渡した場合、 <strong>ST INSERT EXPRESSION</strong> コマンドは指定された範囲内のテキストを <em>expression</em> からの結果で置換します。<em>endSel</em> の値が<em>object</em> 内の総文字数より大きい場合は、 <em>startSel</em> の位置からテキストの終わりまでの全てのテキストが <em>expression</em> からの結果で置換されます。</li>
+<li><em>startSel</em> と <em>endSel</em> の両方を渡した場合、 <strong>ST INSERT EXPRESSION</strong> コマンドは指定された範囲内のテキストを <em>expression</em> からの結果で置換します。<em>endSel</em> の値が<em>object</em> 内の総文字数より大きい場合は、 <em>startSel</em> の位置からテキストの終わりまでの全  てのテキストが <em>expression</em> からの結果で置換されます。</li>
 </ul>
 <p>4D では、選択範囲を自動的に指定するために <em>startSel</em> 引数と <em>endSel</em> 引数に渡す定数をご用意しています。これらの定数は &quot;<em>Multistyle Text</em>&quot; テーマ内にあります:</p>
 

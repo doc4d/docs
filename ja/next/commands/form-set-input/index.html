@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">FORM SET INPUT | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/next/commands/form-set-input"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="FORM SET INPUT | 4D Docs"><meta data-rh="true" name="description" content="FORM SET INPUT ( {aTable ;} form {; userForm {; *}} )"><meta data-rh="true" property="og:description" content="FORM SET INPUT ( {aTable ;} form {; userForm {; *}} )"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/next/commands/form-set-input"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/form-set-input" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/next/commands/form-set-input" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/next/commands/form-set-input" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/next/commands/form-set-input" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/next/commands/form-set-input" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/next/commands/form-set-input" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.be5129cc.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.453d3031.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.d03b40c2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -45,6 +45,7 @@
 
 
 <table><thead><tr><th>引数</th><th>型</th><th></th><th>説明</th></tr></thead><tbody><tr><td>aTable</td><td>Table</td><td>→</td><td>入力フォームを設定するテーブル, または 省略した場合、デフォルトテーブル</td></tr><tr><td>form</td><td>Text, Object</td><td>→</td><td>(プロジェクトまたはテーブル)フォーム名(文字列)、<br>あるいはフォームを定義した.jsonファイルへのPOSIXパス(文字列)、<br>あるいは開くフォームを定義したオブジェクト</td></tr><tr><td>userForm</td><td>Text</td><td>→</td><td>使用するユーザフォーム名</td></tr><tr><td>*</td><td>Operator</td><td>→</td><td>自動ウィンドウサイズ</td></tr></tbody></table>
+<p><em>このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。</em></p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/next/commands/form-set-input#説明">​</a></h4>
 <p><strong>FORM SET INPUT</strong> コマンドは、<em>aTable</em>のカレント入力フォームを<em>form</em>または<em>userForm</em>に設定します。フォームは<em>aTable</em>に属していなければなりません。</p>
 <p>このコマンドのスコープは、カレントプロセスです。各テーブルは、プロセスごとに個々の入力フォームを持っています。</p>
@@ -54,7 +55,7 @@
 <li>使用するフォームの詳細を格納している有効な.josn ファイルへのパス(POSIX シンタックス、<em>フォームファイルパス</em> 参照)</li>
 <li>フォームの詳細を格納しているオブジェクト</li>
 </ul>
-<p><strong>注:</strong> 構造的な理由から、このコマンドはプロジェクトフォームと互換がありません。プロジェクトフォームを<em>form</em>に渡しても、コマンドは何も行いません。</p>
+<p><strong>注:</strong> 構造的な理由から  、このコマンドはプロジェクトフォームと互換がありません。プロジェクトフォームを<em>form</em>に渡しても、コマンドは何も行いません。</p>
 <p><strong>FORM SET INPUT</strong> はフォームを表示しません。データ入力や読み込み、他のコマンドで使用するフォームを指定するだけです。フォームの作成に関する詳細は<em>4D Design Reference</em>マニュアルを参照してください。</p>
 <p>デフォルト入力フォームはテーブルごとにエクスプローラウィンドウで指定します。このデフォルト入力フォームは、<strong>FORM SET INPUT</strong> コマンドで入力フォームを指定しない場合や、指定したフォームが存在しない場合に使用されます。</p>
 <p>入力フォームはak edit subrecord あるいはak add subrecord といった標準アクションにおいても自動的に使用されます。</p>
