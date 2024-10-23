@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Open document.Summary-->El comando Open document abre el documento cuyo nombre o ruta de acceso se pasa en *documento*.<!-- END REF--> 

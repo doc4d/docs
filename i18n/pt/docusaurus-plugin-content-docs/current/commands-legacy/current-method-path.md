@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Current method path.Summary-->O comando **Current method path** devolve o caminho de acesso interna do método base, trigger, método de projeto, método formulário ou método objeto em execução.<!-- END REF-->

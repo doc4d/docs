@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.FLUSH CACHE.Summary-->O comando FLUSH CACHE salva imediatamente os buffers de dados em disco.<!-- END REF--> Todas as alterações que foram feitas no banco de dados são armazenados no disco.

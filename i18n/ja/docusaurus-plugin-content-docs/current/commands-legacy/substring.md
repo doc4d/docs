@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Substring.Summary-->**Substring** コマンドは、*firstChar*と*numChars*で指定した部分文字列を*source*から取り出して返します。<!-- END REF--> 

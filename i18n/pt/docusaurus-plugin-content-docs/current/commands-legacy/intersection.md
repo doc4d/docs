@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.INTERSECTION.Summary-->INTERSECTION compara *conjunto1 e conjunto2* e seleciona unicamente os registros que estão em ambos conjuntos.<!-- END REF--> A seguinte tabela lista todos os resultados possíveis de uma operação de intersecção de conjuntos.

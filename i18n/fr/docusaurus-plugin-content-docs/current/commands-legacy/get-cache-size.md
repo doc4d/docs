@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Get cache size.Summary-->La commande **Get cache size** retourne, en octets, la taille courante du cache de la base de données.<!-- END REF-->

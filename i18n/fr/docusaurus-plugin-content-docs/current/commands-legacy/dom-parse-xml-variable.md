@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.DOM Parse XML variable.Summary-->La commande **DOM Parse XML variable** analyse une variable de type BLOB ou Texte contenant une structure XML et retourne une référence pour cette variable.<!-- END REF--> La commande peut valider ou non la structure via une DTD ou un schéma XML (document XSD, XML Schema Definition). le document. 

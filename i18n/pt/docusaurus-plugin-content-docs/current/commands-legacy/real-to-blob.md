@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.REAL TO BLOB.Summary-->O comando REAL TO BLOB grava o valor *real* no BLOB *blob*.<!-- END REF-->

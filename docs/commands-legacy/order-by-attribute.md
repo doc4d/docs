@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.ORDER BY ATTRIBUTE.Summary-->The **ORDER BY ATTRIBUTE** command sorts (reorders) the records of the current selection of *aTable* for the current process based on the contents of the *objectField*'s *attributePath*.<!-- END REF--> After the sort has been completed, the new first record of the selection becomes the current record.

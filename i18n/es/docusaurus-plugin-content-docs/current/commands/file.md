@@ -27,6 +27,9 @@ displayed_sidebar: docs
 
 <!-- END REF -->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción
 
 El comando `File` <!-- REF #_command_.File.Summary -->crea y devuelve un nuevo objeto de tipo `4D.File`<!-- END REF -->. El comando acepta dos sintaxis:

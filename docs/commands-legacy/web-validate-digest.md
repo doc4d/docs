@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WEB Validate digest.Summary-->The **WEB Validate digest** command checks the validity of the identifying information (name and password) provided by a user connecting to the Web server.<!-- END REF--> This command must be used in the *On Web Authentication Database Method* in the context of Web authentication in Digest mode (see the *Connection Security* section). 

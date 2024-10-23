@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.QUERY.Summary-->**QUERY** looks for records matching the criteria specified in *queryArgument* and returns a selection of records for *aTable*.<!-- END REF--> **QUERY** changes the current selection of *aTable* for the current process and makes the first record of the new selection the current record.

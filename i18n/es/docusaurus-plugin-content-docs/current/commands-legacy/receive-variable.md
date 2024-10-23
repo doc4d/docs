@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.RECEIVE VARIABLE.Summary-->RECEIVE VARIABLE recibe a *variable*, la cual fue enviada previamente por [SEND VARIABLE](send-variable.md "SEND VARIABLE") desde el documento o puerto serial previamente abierto por [SET CHANNEL](set-channel.md "SET CHANNEL").<!-- END REF--> 

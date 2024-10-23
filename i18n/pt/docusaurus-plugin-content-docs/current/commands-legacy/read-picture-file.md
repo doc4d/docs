@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.READ PICTURE FILE.Summary-->O comando READ PICTURE FILE  permite abrir a imagem guardada no arquivo do disco *nomeArquivo* e carregá-la no campo ou variável 4D *imagem*.<!-- END REF-->

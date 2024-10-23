@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.QUERY SELECTION WITH ARRAY.Summary-->El comando QUERY SELECTION WITH ARRAY busca en la tabla del campo pasado como primer parámetro los registros para los cuales el valor de campoObjetivo es igual a al menos uno de los valores de los elementos en el *array*.<!-- END REF--> Los registros encontrados constituyen la nueva selección actual. 

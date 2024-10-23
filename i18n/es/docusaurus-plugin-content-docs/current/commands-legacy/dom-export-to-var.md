@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.DOM EXPORT TO VAR.Summary-->El comando DOM EXPORT TO VAR  permite guardar un árbol XML en una variable texto o BLOB.<!-- END REF-->

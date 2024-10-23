@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.DELETE FOLDER.Summary-->El comando **DELETE FOLDER**borra la carpeta cuyo nombre o ruta completa se pasa en *carpeta*.<!-- END REF--> 

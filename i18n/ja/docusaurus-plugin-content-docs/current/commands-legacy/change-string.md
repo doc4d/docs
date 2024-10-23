@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Change string.Summary-->Change stringは、*source*の中の文字グループを修正したものを返します。<!-- END REF-->*where*で指定された位置から、*newChars*で*source*を上書きします。  

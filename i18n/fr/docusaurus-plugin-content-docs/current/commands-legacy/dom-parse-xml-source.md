@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.DOM Parse XML source.Summary-->La commande **DOM Parse XML source** analyse un document contenant une structure XML et retourne une référence pour ce document.<!-- END REF--> La commande peut valider ou non le document via une DTD ou un schéma XML (document XSD, XML Schema Definition).   

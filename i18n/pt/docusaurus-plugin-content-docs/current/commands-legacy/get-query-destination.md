@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.GET QUERY DESTINATION.Summary-->O comando **GET QUERY DESTINATION** devolve o destino atual dos resultados das pesquisas para o processo em curso.<!-- END REF--> Por defeito, os resultados das pesquisas modificam a seleção atual, mas pode modificar este funcionamento com a ajuda do comando [SET QUERY DESTINATION](set-query-destination.md).

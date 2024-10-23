@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Is field value Null.Summary-->Is field value Null コマンドは*aField*引数 によって指定されたフィールドがNULL値を含む場合[True](true.md "True")を返します。<!-- END REF-->その他の場合[False](false.md "False")を返します。 

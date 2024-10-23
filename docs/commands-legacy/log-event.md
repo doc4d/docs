@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.LOG EVENT.Summary-->The **LOG EVENT** command sets up a customized system for recording internal events that occur during the use of your application.<!-- END REF-->

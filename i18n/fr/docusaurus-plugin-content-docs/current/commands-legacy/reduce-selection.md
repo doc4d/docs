@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.REDUCE SELECTION.Summary-->La commande **REDUCE SELECTION** crée une nouvelle sélection d'enregistrements pour *laTable*.<!-- END REF--> La commande réduit la sélection de *laTable* aux *nombre* premiers enregistrements. **REDUCE SELECTION** s'applique à la sélection courante de *laTable* pour le process courant. Le premier enregistrement de la nouvelle sélection courante devient l'enregistrement courant.

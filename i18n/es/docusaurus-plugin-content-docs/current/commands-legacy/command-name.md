@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Command name.Summary-->El comando **Command name** devuelve el nombre y (opcionalmente) las propiedades del comando cuyo número se pasa en *comando*.<!-- END REF-->

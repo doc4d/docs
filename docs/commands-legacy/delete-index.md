@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.DELETE INDEX.Summary-->The DELETE INDEX command deletes one or more existing indexes from the database.<!-- END REF-->  

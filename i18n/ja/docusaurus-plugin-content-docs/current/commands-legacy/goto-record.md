@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.GOTO RECORD.Summary-->GOTO RECORDは、*aTable*中の指定したレコードをカレントレコードとして選択します。<!-- END REF-->*record*引数は、[Record number](record-number.md "Record number")コマンドで求めることのできるレコード番号です。このコマンドを実行するとセレクションは選択されたレコード1件だけになります。

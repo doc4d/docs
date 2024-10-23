@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.GRAPH.Summary-->**GRAPH**コマンドは、ピクチャー変数に、配列のデータを使用してグラフを作成します。<!-- END REF-->

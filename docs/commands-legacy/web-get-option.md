@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WEB GET OPTION.Summary-->The **WEB GET OPTION** command gets the current value of an option for the 4D Web server operation.<!-- END REF-->

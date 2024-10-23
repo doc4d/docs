@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.LONGINT ARRAY FROM SELECTION.Summary-->O comando LONGINT ARRAY FROM SELECTION preenche o array *arrReg* com os números (absolutos) dos registros que estão em *seleçao*.<!-- END REF-->

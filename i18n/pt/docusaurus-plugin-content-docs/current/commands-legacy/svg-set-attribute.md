@@ -18,6 +18,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.SVG SET ATTRIBUTE.Summary-->**O comando SVG SET ATTRIBUTE** é usado para modificar o valor de um atributo existente na árvore de renderização SVG de uma imagem exibida ou na árvore interna DOM de uma imagem.<!-- END REF--> 

@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.String.Summary-->**String**コマンドは、*expression*に渡した数値、日付、時間、文字列、またはブールを文字列に変換します。<!-- END REF-->

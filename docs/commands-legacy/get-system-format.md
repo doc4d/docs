@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.GET SYSTEM FORMAT.Summary-->The **GET SYSTEM FORMAT** command returns the current value of several regional parameters defined in the operating system.<!-- END REF--> This command can be used to build “automatic” custom formats based on the system preferences.

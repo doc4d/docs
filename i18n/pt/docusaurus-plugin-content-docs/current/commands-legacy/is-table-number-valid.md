@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Is table number valid.Summary-->O comando Is table number valid retorna True se a tabela cujo número for passado no parâmetro *numTabela* existe no banco, do contrário False.<!-- END REF--> Lembre que o comando retorna False se a tabela estiver na Lixeira do Explorador.  

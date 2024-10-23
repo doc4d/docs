@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.In transaction.Summary-->El comando In transaction devuelve [True](true.md "True") si el proceso actual está en transacción, de lo contrario devuelve [False](false.md "False").<!-- END REF-->

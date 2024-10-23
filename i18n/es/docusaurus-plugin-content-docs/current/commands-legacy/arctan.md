@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Arctan.Summary-->Arctan devuelve el ángulo, expresado en radianes, de la tangente *número*.<!-- END REF-->

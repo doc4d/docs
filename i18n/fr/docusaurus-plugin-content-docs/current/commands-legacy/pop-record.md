@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.POP RECORD.Summary-->**POP RECORD** charge le premier enregistrement de la pile d'enregistrements de *laTable*, et en fait l'enregistrement courant.<!-- END REF-->

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Current system user.Summary-->O comando **Current system user** devolve o nome do dono de seu equipo, tal como está definido nos parâmetros de rede do sistema operativo.<!-- END REF-->

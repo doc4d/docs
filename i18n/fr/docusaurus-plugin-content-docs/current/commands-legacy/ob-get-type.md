@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.OB Get type.Summary-->La commande **OB Get type** retourne le type de la valeur associée à la *propriété* de l'*objet*.<!-- END REF-->

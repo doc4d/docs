@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.TRUNCATE TABLE.Summary-->O comando TRUNCATE TABLE \[#descv\]apaga rapidamente todos os registros de *tabela*.<!-- END REF--> Depois de chamar o comando, não há uma seleção atual nem um registro atual.  

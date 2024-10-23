@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WP Get sections.Summary-->El comando **WP Get sections** devuelve una colección de todas las secciones definidas en el parámetro *targetObj*.<!-- END REF-->

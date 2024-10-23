@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP New subsection.Summary-->The **WP New subsection** command creates and returns a new subsection of the *subSectionType* type in the *wpSection* 4D Write Pro section.<!-- END REF-->

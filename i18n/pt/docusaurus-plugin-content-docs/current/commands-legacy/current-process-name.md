@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Current process name.Summary-->O comando **Current process name** devolve o nome do processo no qual este comando se chama.<!-- END REF-->

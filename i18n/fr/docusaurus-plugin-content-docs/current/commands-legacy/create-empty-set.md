@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.CREATE EMPTY SET.Summary-->**CREATE EMPTY SET** crée un ensemble vide, *ensemble*, pour *laTable*.<!-- END REF--> Vous pouvez ajouter des enregistrements dans cet ensemble à l'aide de la commande [ADD TO SET](add-to-set.md). Si un ensemble du même nom existe déjà, il est effacé et remplacé par le nouvel ensemble.

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.LOAD VARIABLES.Summary-->The **LOAD VARIABLES**  command loads one or more variables from the document specified by *document*.<!-- END REF--> The document must have been created using the [SAVE VARIABLES](save-variables.md) command.

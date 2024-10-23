@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.GOTO SELECTED RECORD.Summary-->**GOTO SELECTED RECORD** vuelve el registro especificado en la selección actual de *tabla* el registro actual.<!-- END REF--> La selección actual no cambia. El parámetro *registro* no es el mismo del número devuelto por [Record number](record-number.md); Este parámetro representa la posición del registro en la selección actual. La posición del registro depende de la manera en que la selección ha sido creada y ordenada. 

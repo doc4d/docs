@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.ONE RECORD SELECT.Summary-->La commande **ONE RECORD SELECT** réduit la sélection courante de *laTable* à l'enregistrement courant.<!-- END REF--> S'il n'y a pas d'enregistrement courant ou si l'enregistrement courant n'est pas chargé en mémoire (cas particulier), **ONE RECORD SELECT** ne fait rien.

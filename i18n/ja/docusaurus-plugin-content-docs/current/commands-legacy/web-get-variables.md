@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WEB GET VARIABLES.Summary-->**WEB GET VARIABLES**コマンドは、サブミットされたWebフォームにある変数の名前と値をテキスト配列 *nameArray*と*valueArray* に代入します。<!-- END REF-->

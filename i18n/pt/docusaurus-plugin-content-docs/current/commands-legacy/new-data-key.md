@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.New data key.Summary-->O comando **New data key** gera uma chave de cifrado de dados binários a partir do texto passado no parâmetro *frasePasse*.<!-- END REF-->

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DELETE RECORD.Summary-->DELETE RECORDは、*aTable*のカレントレコードを削除します。<!-- END REF-->プロセスに*aTable*のカレントレコードが存在しない場合、DELETE RECORDコマンドは何も行いません。フォーム中では、このコマンドの代わりにレコード削除アクションを持つボタンを作成することができます。

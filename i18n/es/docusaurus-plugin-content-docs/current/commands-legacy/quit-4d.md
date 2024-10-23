@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.QUIT 4D.Summary-->El comando QUIT 4D sale de la aplicación 4D y regresa al escritorio.<!-- END REF-->

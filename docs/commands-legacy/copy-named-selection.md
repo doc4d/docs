@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.COPY NAMED SELECTION.Summary-->**COPY NAMED SELECTION** copies the current selection of *aTable* to the named selection *name*.<!-- END REF--> The default table for the process is used if the optional *table* parameter is not specified. The parameter *name* contains a copy of the selection. The current selection and the current record of *aTable* for the process are not changed.

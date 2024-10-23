@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Nota de compatibilidad 
 
 <!--REF #_command_.SET INDEX.Summary-->**SET INDEX**, aunque es un comando heredado, todavía es totalmente compatible y puede permanecer en su aplicación, no es necesario volver a escribir el código existente.<!-- END REF--> Sin embargo, sería mejor utilizar [CREATE INDEX](create-index.md) y [DELETE INDEX](delete-index.md) para administrar los índices porque brindan más funcionalidades.

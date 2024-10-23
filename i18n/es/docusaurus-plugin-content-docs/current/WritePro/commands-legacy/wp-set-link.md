@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WP SET LINK.Summary-->**WP SET LINK** aplica una referencia de hipervínculo al *objRango*.<!-- END REF--> Se soportan enlaces a URL, métodos 4D y marcadores. El enlace activa una acción cuando el usuario hace clic en él (o utiliza **Ctrl+clic** en Windows o **Cmd+clic** en macOS si el texto no es de solo lectura para abrir URL).  

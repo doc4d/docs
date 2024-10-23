@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.FLUSH CACHE.Summary-->FLUSH CACHE コマンドを実行すると、即座にデータバッファの内容をディスクに保存します。<!-- END REF-->データベースへのすべての変更をディスクに保存します。

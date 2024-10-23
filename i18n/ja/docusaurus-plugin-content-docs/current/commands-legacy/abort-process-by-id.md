@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.ABORT PROCESS BY ID.Summary-->**ABORT PROCESS BY ID** コマンドは4D Server 上の特定のプロセスを中止します。<!-- END REF-->

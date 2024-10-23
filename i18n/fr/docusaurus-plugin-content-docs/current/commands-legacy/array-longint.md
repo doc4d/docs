@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.ARRAY LONGINT.Summary-->La commande **ARRAY LONGINT** crée et/ou redimensionne un tableau d'éléments de type [Entier long](# "Entre -2 Milliard et +2 Milliard") (4 octets) en mémoire.<!-- END REF-->

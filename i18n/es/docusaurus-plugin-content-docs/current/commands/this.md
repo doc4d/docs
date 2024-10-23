@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción
 
 The `This` command <!--REF #_command_.This.Summary-->returns a reference to the currently processed object.<!-- END REF-->

@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.MESSAGES ON.Summary-->Ver la descripción del comando [MESSAGES OFF](messages-off.md "MESSAGES OFF").<!-- END REF-->

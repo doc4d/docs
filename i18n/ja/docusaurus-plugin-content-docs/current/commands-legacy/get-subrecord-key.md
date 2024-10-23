@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Get subrecord key.Summary-->**Get subrecord key**コマンドは、変換されたサブテーブルを使用する4Dコードから、標準のテーブルに対して作業を行うコードへの移行を容易にします。<!-- END REF-->

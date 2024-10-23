@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WP Get breaks.Summary-->El comando **WP Get breaks** devuelve la colección de todas las roturas insertadas en *targetObj*.<!-- END REF-->

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DROP REMOTE USER.Summary-->**DROP REMOTE USER** コマンドは4D Server にリモートで接続している特定のユーザーの接続を解除します。<!-- END REF-->

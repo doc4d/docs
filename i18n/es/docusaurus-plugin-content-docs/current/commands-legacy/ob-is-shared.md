@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.OB Is shared.Summary-->El comando **OB Is shared** devuelve **True** si el objeto o colección *aVerificar* es compartido, y **False** en caso contrario (ver *Objetos y colecciones compartidos*).<!-- END REF-->

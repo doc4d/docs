@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.REAL TO BLOB.Summary-->La commande **REAL TO BLOB** écrit la valeur de type Réel *réel* dans le BLOB *blob*.<!-- END REF-->

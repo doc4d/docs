@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WP Get subsection.Summary-->**WP Get subsection** コマンドは、*targetObj* 引数で指定したレンジまたは要素と交差する最初のサブセクション、あるいは*wpSection* 引数のセクション内の*subSectionType* 型のサブセクションを返します。<!-- END REF-->

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.OPEN DATA FILE.Summary-->El comando OPEN DATA FILEpermite cambiar el archivo de datos abierto por la aplicación 4D.<!-- END REF-->

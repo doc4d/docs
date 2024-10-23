@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.DOM Find XML element by ID.Summary-->O comando DOM Find XML element by ID busca, no interior de um documento XML, o elemento cujo atributo id seja igual ao valor passado no parâmetro *id*.<!-- END REF-->  

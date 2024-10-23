@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Count tasks.Summary-->**Count tasks** devuelve el número de procesos vivos más alto en un equipo 4D remoto, 4D 4D Server (procedimientos almacenados) o en una versión monousuario de 4D.<!-- END REF--> Los procesos se numeran en el orden en que se crean. Cuando aún no se ha interrumpido ningún proceso durante la sesión, este comando devuelve el número total de procesos abiertos.

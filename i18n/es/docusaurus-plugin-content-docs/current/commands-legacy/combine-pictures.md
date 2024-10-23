@@ -18,6 +18,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.COMBINE PICTURES.Summary-->El comando COMBINE PICTURES permite combinar las imágenes *imag1* e *imag2* en modo *operador* para producir una tercera, *imagenResult*.<!-- END REF--> La imagen resultante es de tipo compuesto y conserva todas las características de las imágenes fuente. 

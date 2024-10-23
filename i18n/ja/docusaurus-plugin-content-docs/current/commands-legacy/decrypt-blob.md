@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DECRYPT BLOB.Summary-->DECRYPT BLOB コマンドは、BLOB *toDecrypt*の内容を送信者の公開鍵*sendPubKey*を使用して解読します。<!-- END REF-->オプションとして、受信者の秘密鍵*recipPrivKey*も使用します。

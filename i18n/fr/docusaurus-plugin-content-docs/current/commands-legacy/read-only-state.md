@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Read only state.Summary-->La fonction **Read only state** est utilisé pour tester si *laTable* est en mode lecture seulement dans le process où la fonction est appelée.<!-- END REF--> **Read only state** retourne Vrai si *laTable* est en lecture seulement, et Faux si *laTable* est en lecture-écriture.

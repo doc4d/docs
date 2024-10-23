@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.SOAP Get info.Summary-->La commande **SOAP Get info** permet de récupérer sous forme de chaîne de caractères différents types d’informations concernant une requête SOAP.<!-- END REF--> 

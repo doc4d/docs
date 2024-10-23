@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Count tasks.Summary-->**Count tasks** retourne le numéro de process vivant le plus élevé sur un poste 4D distant, 4D Server (procédures stockées) ou dans une version monoposte de 4D.<!-- END REF--> Les process sont numérotés dans l'ordre de leur création. Lorsqu'aucun process n'a encore été détruit au cours de la session, la commande retourne le nombre de process ouverts. 

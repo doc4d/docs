@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Test semaphore.Summary-->El comando Test semaphore le permite probar la existencia de un semáforo.<!-- END REF-->

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.ARRAY OBJECT.Summary-->The **ARRAY OBJECT** command creates and/or resizes an array of language Object type elements in memory.<!-- END REF-->

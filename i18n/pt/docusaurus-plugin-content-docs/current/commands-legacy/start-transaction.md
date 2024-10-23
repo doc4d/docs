@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 START TRANSACTION inicia uma transação no processo atual. Todas as mudanças nos dados (registros) do banco dentro da transação são armazenados temporariamente até que a transação seja validada ou cancelada.  

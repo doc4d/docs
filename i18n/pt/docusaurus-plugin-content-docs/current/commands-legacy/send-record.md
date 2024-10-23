@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.SEND RECORD.Summary-->SEND RECORD envia o registro atual de *tabela* à porta serial ou documento aberto pelo comando [SET CHANNEL](set-channel.md "SET CHANNEL").<!-- END REF--> O registro é enviado com um formato especial interno que pode ser lido somente por [RECEIVE RECORD](receive-record.md "RECEIVE RECORD"). Se não existe registro atual, SEND RECORD não tem efeito.

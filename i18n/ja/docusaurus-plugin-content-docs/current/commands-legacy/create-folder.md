@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.CREATE FOLDER.Summary-->**CREATE FOLDER**コマンドを使用して、*folderPath*に渡すパス名に応じてフォルダーを作成します。<!-- END REF-->

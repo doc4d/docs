@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WEB SEND FILE.Summary-->O comando **WEB SEND FILE** envia ao navegador web a página HTML ou o arquivo web armazenado no documento cuja rota se passa em *arquivohtml*.<!-- END REF-->  

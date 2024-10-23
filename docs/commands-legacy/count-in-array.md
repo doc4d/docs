@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Count in array.Summary-->The Count in array command returns the number of times *value* is found in *array*.<!-- END REF-->

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.QUIT 4D.Summary-->**QUIT 4D**コマンドは、カレントの4Dアプリケーションを終了してデスクトップに戻ります。<!-- END REF-->

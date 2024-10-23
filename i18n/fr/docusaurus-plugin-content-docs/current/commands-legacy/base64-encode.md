@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.BASE64 ENCODE.Summary-->La commande **BASE64 ENCODE** encode la valeur texte ou BLOB passée dans le paramètre *àEncoder* en Base64 ou Base64URL.<!-- END REF--> 

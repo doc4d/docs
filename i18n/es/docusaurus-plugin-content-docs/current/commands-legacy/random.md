@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Random.Summary-->Random devuelve un valor entero aleatorio entre 0 y 32 767 (inclusive).<!-- END REF-->

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.DOM GET XML ELEMENT NAME.Summary-->La commande DOM LIRE NOM ELEMENT XML retourne dans le paramètre *nomElément* le nom de l’élément XML désigné par *refElément*.<!-- END REF--> Si le type de la variable *nomElément* n'est pas défini, le type texte est utilisé par défaut.

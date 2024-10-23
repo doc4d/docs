@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Get adjusted index cache priority.Summary-->La commande **Get adjusted index cache priority** retourrne la valeur ajustée de priorité de cache appliquée par le gestionnaire de cache à l'index ou aux index du champ *leChamp*.<!-- END REF--> Cette commande est destinée uniquement à la phase de débogage et de mise au point de l'application. 

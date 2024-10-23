@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.VALIDATE TRANSACTION.Summary-->VALIDATE TRANSACTION acepta la transacción abierta por el comando [START TRANSACTION](start-transaction.md "START TRANSACTION") del nivel correspondiente en el proceso actual.<!-- END REF--> VALIDATE TRANSACTION guarda todas las modificaciones efectuadas a los datos de la base que ocurrieron durante la transacción. 

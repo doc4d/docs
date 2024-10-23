@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.DOM Parse XML source.Summary-->El comando DOM Parse XML source analiza un documento que contiene una estructura XML y devuelve una referencia para este documento.<!-- END REF--> El comando puede validar o no el documento vía una DTD o un esquema XML (documento XSD, XML Schema Definition). 

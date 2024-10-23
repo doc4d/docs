@@ -18,6 +18,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WEB SERVICE CALL.Summary-->O comando **WEB SERVICE CALL** se utiliza para chamar um serviço web enviando uma petição HTTP.<!-- END REF--> Esta petição contém a mensagem SOAP criada previamente utilizando o comando [WEB SERVICE SET PARAMETER](web-service-set-parameter.md) .  

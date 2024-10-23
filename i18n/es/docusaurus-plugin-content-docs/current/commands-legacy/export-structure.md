@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.EXPORT STRUCTURE.Summary-->El comando **EXPORT STRUCTURE** exporta la definición de la estructura de la base 4D actual en *estructuraE* *xportada*.<!-- END REF-->

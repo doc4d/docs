@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Decrypt data BLOB.Summary-->La commande **Decrypt data BLOB**décrypte le paramètre blobToDecrypt avec le même algorithme utilisé par 4D pour décrypter les données (AES-256) et retourne le résultat dans decryptedBLOB.<!-- END REF-->.

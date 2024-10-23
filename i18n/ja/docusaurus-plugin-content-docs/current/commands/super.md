@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF -->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 `Super` キーワードによって、<!-- REF #_command_.Super.Summary -->スーパークラス (親クラス) を呼び出すことができます<!-- END REF -->。
 
 `Super` は次の 2つの目的のために使います:

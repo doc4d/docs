@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WP EXPORT DOCUMENT.Summary-->El comando **WP EXPORT DOCUMENT** exporta el objeto 4D Write Pro *docWP* en un documento en el disco definido por el parámetro *rutaArchivo* así como también los parámetros opcionales.<!-- END REF-->

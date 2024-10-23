@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WEB Validate digest.Summary-->**WEB Validate digest**コマンドを使用して、Webサーバに接続しているユーザのID情報 (名前とパスワード) の有効性をチェックします。<!-- END REF-->必ずダイジェストモードのWeb認証のコンテキストで、 *On Web Authenticationデータベースメソッド* でこのコマンドを使用します (*接続セキュリティ* を参照)。

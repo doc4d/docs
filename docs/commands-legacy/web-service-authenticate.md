@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WEB SERVICE AUTHENTICATE.Summary-->The **WEB SERVICE AUTHENTICATE** command enables the use of Web Services requiring authentication of the client application (simple authentication).<!-- END REF--> The BASIC and DIGEST methods are supported, as well as the presence of a proxy.

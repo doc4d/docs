@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.SAX ADD XML DOCTYPE.Summary-->La commande **SAX ADD XML DOCTYPE** ajoute l'instruction DocType définie par le paramètre *docType* dans le document XML référencé par *document*.<!-- END REF--> 

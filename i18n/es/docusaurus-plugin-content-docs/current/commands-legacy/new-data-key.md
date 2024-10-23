@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.New data key.Summary-->El comando **New data key** genera una llave de cifrado de datos binarios a partir del texto pasado en el parámetro *passPhrase*.<!-- END REF-->

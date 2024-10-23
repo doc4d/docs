@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.SET USER ALIAS.Summary-->The **SET USER ALIAS** command defines an alternate, custom name to use in place of the current 4D user account name for the current session.<!-- END REF--> The alternate name is retained in memory and applied only to the current user. 

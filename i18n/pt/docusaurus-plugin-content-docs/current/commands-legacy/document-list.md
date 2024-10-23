@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.DOCUMENT LIST.Summary-->O comando **DOCUMENT LIST** preenche o array *documentos* de tipo texto ou alfa com os nomes dos documentos localizados na rota de acesso que se passa em *rotaAcesso*.<!-- END REF-->

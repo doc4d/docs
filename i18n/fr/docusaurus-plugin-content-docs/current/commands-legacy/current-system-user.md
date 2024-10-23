@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Current system user.Summary-->La fonction **Current system user** retourne le nom du possesseur de la machine, tel qu'il a été défini dans le compte d'utilisateur courant sur la machine.<!-- END REF--> 

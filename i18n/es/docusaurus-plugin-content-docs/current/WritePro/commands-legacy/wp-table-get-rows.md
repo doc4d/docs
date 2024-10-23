@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WP Table get rows.Summary-->El comando **WP Table get rows** \[#descv\]devuelve un nuevo objeto de rango de líneas que contiene una selección de las líneas de *objTarget* o *refTabla*.<!-- END REF-->

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.PICTURE CODEC LIST.Summary-->PICTURE CODEC LIST コマンドは、コマンドが実行されたマシンで利用可能なピクチャCodec IDのリストを*codecArray* 配列に返します。<!-- END REF-->このリストは4Dがネイティブで管理するCodec IDを含みます。

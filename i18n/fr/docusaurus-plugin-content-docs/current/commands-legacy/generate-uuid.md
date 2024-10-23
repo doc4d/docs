@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Generate UUID.Summary-->La commande **Generate UUID** retourne un nouvel identifiant UUID de 32 caractères sous forme non-canonique.<!-- END REF-->

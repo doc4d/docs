@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.GET DOCUMENT ICON.Summary-->O comando GET DOCUMENT ICON retorna no campo ou a variável imagem 4D ícone, o ícone do documento cujo nome ou rota de acesso se passa em *rotaDoc.<!-- END REF--> rotaDoc* pode especificar um arquivo de todo tipo (executável, documento, atalho ou alias, etc.) ou uma pasta.  

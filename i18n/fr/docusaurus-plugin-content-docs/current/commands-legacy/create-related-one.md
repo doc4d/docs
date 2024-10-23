@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.CREATE RELATED ONE.Summary-->**CREATE RELATED ONE** a deux effets.<!-- END REF--> S'il n'existe pas d'enregistrement lié à *leChamp* (c'est-à-dire si la valeur courante de *leChamp* n'est présente dans le champ correspondant d'aucun enregistrement de la table liée), **CREATE RELATED ONE** crée un nouvel enregistrement lié. Si vous souhaitez conserver dans cet enregistrement la valeur de *leChamp* ayant provoqué sa création, assignez-la au champ correspondant. Utilisez ensuite la commande [SAVE RELATED ONE](save-related-one.md) pour sauvegarder le nouvel enregistrement. 

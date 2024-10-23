@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Euro converter.Summary-->コマンドは"ユーロ"に所属するユーロ通貨の元と先の異なった通貨の値を変換します。<!-- END REF-->

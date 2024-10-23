@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.In transaction.Summary-->In transactionコマンドはカレントプロセスがトランザクション内にある場合に[True](true.md "True")を返します。<!-- END REF-->その他の場合は[False](false.md "False")を返します。

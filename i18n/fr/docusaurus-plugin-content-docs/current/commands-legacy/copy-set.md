@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.COPY SET.Summary-->La commande **COPY SET** copie le contenu de l'ensemble *srcEns* dans l'ensemble *dstEns*.<!-- END REF-->

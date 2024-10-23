@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.ARRAY TO COLLECTION.Summary-->El comando **ARRAY TO COLLECTION**  copia uno o más *array*(s) en los elementos o los valores de *nombreProp* de la *coleccion*.<!-- END REF-->  

@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SELECTION TO ARRAY.Summary-->**SELECTION TO ARRAY**コマンドは、1つ以上の配列を作成し、カレントセレクションのフィールドデータやレコード番号を配列にコピーします。<!-- END REF-->

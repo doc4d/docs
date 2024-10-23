@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.SAX OPEN XML ELEMENT.Summary-->O comando SAX OPEN XML ELEMENT permite adicionar um novo elemento no documento XML referenciado por *documento*, assim como, opcionalmente, atributos e seus valores.<!-- END REF-->  

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Exp.Summary-->Exp retorna a exponencial Exp = e^n (onde e = 2.71828...) de *numero*.<!-- END REF--> Exp é a função inversa de Log.

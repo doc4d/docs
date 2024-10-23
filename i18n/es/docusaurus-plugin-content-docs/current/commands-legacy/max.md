@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Max.Summary-->**Max** devuelve el valor máximo en *series*.<!-- END REF--> Si *series* es un campo indexado, el índice se utiliza para buscar el valor máximo.

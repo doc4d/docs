@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Get footer.Summary-->The **WP Get footer** command returns the footer associated to the *targetObj* range or to the specified *sectionIndex* of the *wpDoc* document.<!-- END REF--> If no footer is found with regards to the parameter(s), the command returns **Null**.

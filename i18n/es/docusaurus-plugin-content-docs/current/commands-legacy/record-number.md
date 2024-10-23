@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Record number.Summary-->**Record number** devuelve el número del registro actual de *tabla*.<!-- END REF--> Si no hay registro actual, como cuando el puntero del registro está antes o después de la selección actual, **Record number** devuelve –1\. Si el registro es un nuevo registro que no ha sido guardado, **Record number** devuelve –3.

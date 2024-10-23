@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.End SQL.Summary-->**End SQL** est un mot-clé indiquant dans l'éditeur de méthodes la fin d'une séquence de commandes SQL.<!-- END REF--> 

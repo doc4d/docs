@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.INTEGER TO BLOB.Summary-->INTEGER TO BLOB コマンドは、*blob*に2バイトの*integer*値を書き込みます。<!-- END REF-->

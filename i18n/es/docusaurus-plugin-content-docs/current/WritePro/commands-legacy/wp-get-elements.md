@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WP Get elements.Summary-->El comando **WP Get elements** devuelve una colección de objetos que contienen párrafos, imágenes, tablas y/o líneas.<!-- END REF-->

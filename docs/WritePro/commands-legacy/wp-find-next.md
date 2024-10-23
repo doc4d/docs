@@ -18,6 +18,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Find next.Summary-->The **WP Find next** command searches the *targetObj*, after the *searchAfter* range, for the *searchValue* based on the *searchCondition*.<!-- END REF--> An optional parameter can be used to replace any results found. 

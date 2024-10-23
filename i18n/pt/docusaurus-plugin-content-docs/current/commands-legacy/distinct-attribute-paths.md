@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.DISTINCT ATTRIBUTE PATHS.Summary-->O comando **DISTINCT ATTRIBUTE PATHS** \[#descv\] devolve a lista de rotas diferentes que se encontram no campo objeto indexado passado em *campoObjeto* para a seleção atual da tabela a qual pertence o campo.<!-- END REF--> \[#descv\]

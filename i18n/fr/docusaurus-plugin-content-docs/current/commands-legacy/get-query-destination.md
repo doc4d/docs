@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.GET QUERY DESTINATION.Summary-->La commande **GET QUERY DESTINATION** retourne la destination courante des résultats des recherches pour le process en cours.<!-- END REF--> Par défaut, les résultats des recherches modifient la sélection courante, mais vous pouvez modifier ce fonctionnement l’aide de la commande [SET QUERY DESTINATION](set-query-destination.md).

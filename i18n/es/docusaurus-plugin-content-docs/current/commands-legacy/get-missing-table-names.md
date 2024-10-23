@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.GET MISSING TABLE NAMES.Summary-->El comando GET MISSING TABLE NAMES devuelve los nombres de todas las tablas faltantes de la base en el array *tabFalt*.<!-- END REF-->

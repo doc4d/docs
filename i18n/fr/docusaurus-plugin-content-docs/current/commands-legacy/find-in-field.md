@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Find in field.Summary-->La commande **Find in field** retourne le numéro du premier enregistrement dont le champ *champCible* est égal à la valeur *valeur*.<!-- END REF-->  

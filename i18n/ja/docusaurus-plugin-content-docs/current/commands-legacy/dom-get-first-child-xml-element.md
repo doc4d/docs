@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DOM Get first child XML element.Summary-->DOM Get first child XML element コマンドは*elementRef*に渡した要素の最初の子要素への参照を返します。<!-- END REF-->この参照は他のXML解析コマンドで使用できます。

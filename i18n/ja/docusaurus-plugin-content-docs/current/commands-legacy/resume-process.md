@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.RESUME PROCESS.Summary-->RESUME PROCESSは、実行が停止または遅延されている*process*を再開します。<!-- END REF-->*process*が停止も遅延もされていない場合、RESUME PROCESSは何も行いません。

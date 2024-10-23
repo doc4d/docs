@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Num.Summary-->Num コマンドは、*expression*に渡した文字列、ブール、または数値式の数値型を返します。<!-- END REF-->文字型の式を評価するために、オプションの*separator*引数で小数区切り文字を指定できます。 

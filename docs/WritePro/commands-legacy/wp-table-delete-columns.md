@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP TABLE DELETE COLUMNS.Summary-->The **WP TABLE DELETE COLUMNS** command removes one or several column(s) from a 4D Write table.<!-- END REF-->

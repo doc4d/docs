@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 互換性に関する注意 
 
 <!--REF #_command_.WP Paragraph range.Summary-->**WP Paragraph range** は以前のバージョンの4D Write Pro では**WP Create Paragraph range** という名前でした。<!-- END REF-->分かりやすさのために名前が変更されています。

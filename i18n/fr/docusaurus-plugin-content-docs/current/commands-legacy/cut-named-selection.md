@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.CUT NAMED SELECTION.Summary-->**CUT NAMED SELECTION** crée la sélection temporaire *nom* et y place la sélection courante de *laTable*.<!-- END REF--> A la différence de [COPY NAMED SELECTION](copy-named-selection.md), cette commande ne copie pas la sélection, mais la déplace.

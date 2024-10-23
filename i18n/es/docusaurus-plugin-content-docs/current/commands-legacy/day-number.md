@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Day number.Summary-->El comando Day number devuelve un número que representa el día de la semana que corresponde a la *f* *echa*.<!-- END REF-->  

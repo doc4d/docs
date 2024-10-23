@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WEB GET STATISTICS.Summary-->La commande **WEB GET STATISTICS** vous permet d’obtenir des informations sur les pages les plus consultées, chargées dans le cache du serveur Web.<!-- END REF--> Par conséquent, ces statistiques concernent uniquement les pages statiques, les images GIF, les images JPEG <100 ko et les feuilles de style (.css). 

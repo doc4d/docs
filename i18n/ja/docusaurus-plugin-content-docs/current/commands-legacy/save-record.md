@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SAVE RECORD.Summary-->SAVE RECORD は、カレントプロセスの*aTable*のカレントレコードを保存します。<!-- END REF-->カレントレコードが存在しない場合、SAVE RECORD は何も行いません。

@@ -19,6 +19,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.SET CHANNEL.Summary-->The **SET CHANNEL** command opens a serial port or a document.<!-- END REF--> You can open only one serial port or one document at a time with this command. To close an opened serial port, pass SET CHANNEL (11).

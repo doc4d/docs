@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Is new record.Summary-->O comando Is new record devolve [True](true.md "True") quando o registro atual de *tabela* estiver sendo criado e ainda não foi guardado no processo atual.<!-- END REF-->  

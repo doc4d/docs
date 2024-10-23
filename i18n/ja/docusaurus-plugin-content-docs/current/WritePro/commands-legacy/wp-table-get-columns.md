@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WP Table get columns.Summary-->**WP Table get columns** コマンドは、*targetObj* または(*startCol* および *numCols* 引数で定義された)*tableRef* で指定した表から、カラムのセレクションを格納した新しいレンジオブジェクトを返します。<!-- END REF-->

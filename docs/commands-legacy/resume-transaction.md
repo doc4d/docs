@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.RESUME TRANSACTION.Summary-->The **RESUME TRANSACTION** command resumes the transaction that was paused using [SUSPEND TRANSACTION](suspend-transaction.md) at the corresponding level in the current process.<!-- END REF--> Any operations that are executed after this command are carried out under transaction control (except when several suspended transactions are nested). 

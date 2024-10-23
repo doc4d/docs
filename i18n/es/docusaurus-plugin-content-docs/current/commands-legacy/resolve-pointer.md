@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.RESOLVE POINTER.Summary-->El comando RESOLVE POINTER recupera la información del objeto referenciado por la expresión de puntero *puntero* y la devuelve en los parámetros *nomVar*, *numTabla,* y *numCamp*.<!-- END REF-->

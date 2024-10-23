@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.SET PICTURE FILE NAME.Summary-->O comando **SET PICTURE FILE NAME** define ou modifica o nome do arquivo por defeito da imagem passada como parâmetro.<!-- END REF-->  

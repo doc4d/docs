@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.CUT NAMED SELECTION.Summary-->CUT NAMED SELECTION crea una selección temporal *temp* y coloca allí la selección actual de *tabla*.<!-- END REF--> A diferencia de [COPY NAMED SELECTION](copy-named-selection.md "COPY NAMED SELECTION"), este comando no copia la selección actual de *tabla*, si no que la desplaza.

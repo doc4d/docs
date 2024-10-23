@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Modified record.Summary-->**Modified record** は、*aTable*のレコードが更新されたが保存されていない場合に[True](true.md "True")を返します。<!-- END REF-->それ以外は[False](false.md "False")を 返します。この関数は、保存する必要があるレコードかどうかを判定する場合に使用します。これは、入力フォーム上で次のレコードに移動する前にカレントレコードを保存するかどうかチェックする際に特に有効です。このコマンドは新規レコードについては、常に[True](true.md "True")を返します。

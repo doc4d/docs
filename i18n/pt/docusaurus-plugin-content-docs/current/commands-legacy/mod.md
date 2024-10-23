@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Mod.Summary-->O comando Mod retorna o resto da divisão inteira de *numero1* por *numero2*.<!-- END REF-->

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Get 4D file.Summary-->La commande **Get 4D file** retourne le chemin d'accès au fichier de l'environnement 4D spécifié par le paramètre *fichier*.<!-- END REF--> Le chemin d'accès est retourné en utilisant la syntaxe système.

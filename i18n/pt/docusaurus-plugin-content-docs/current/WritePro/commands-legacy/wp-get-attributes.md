@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WP GET ATTRIBUTES.Summary-->O novo comando **WP GET ATTRIBUTES** devolve o valor de qualquer atributo em uma faixa ou documento 4D Write Pro.<!-- END REF--> Este comando lhe permite acessar a todo tipo de atributos internos 4D Write Pro: caractere, parágrafo, documento, tabela ou imagem.

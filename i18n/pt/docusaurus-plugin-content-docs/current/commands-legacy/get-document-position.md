@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Get document position.Summary-->Este comando apenas funciona em um documento aberto cujo número de referência se passa no parâmetro *docRef*.<!-- END REF--> 

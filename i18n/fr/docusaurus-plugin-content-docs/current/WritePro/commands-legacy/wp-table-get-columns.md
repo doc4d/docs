@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Table get columns.Summary-->La commande **WP Table get columns** retourne un nouvel objet plage cellule contenant la sélection de colonnes de objCible ou de *refTableau* (définies par *debutCol* et *nbCols*).<!-- END REF-->

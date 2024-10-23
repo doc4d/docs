@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.CONVERT FROM TEXT.Summary-->O comando CONVERT FROM TEXT permite converter um texto expresso no conjunto de caracteres atual de 4D em um texto expresso em outro conjunto de caracteres.<!-- END REF--> 

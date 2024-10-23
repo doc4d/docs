@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Is new record.Summary-->Is new record コマンドは、カレントプロセス内で、指定された*aTable*のカレントレコードが未保存の新規レコードの場合に[True](true.md "True")を返します。<!-- END REF-->

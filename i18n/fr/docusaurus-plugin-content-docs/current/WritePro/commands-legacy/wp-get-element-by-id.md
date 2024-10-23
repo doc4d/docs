@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Get element by ID.Summary-->La commande **WP Get element by ID** retourne un objet contenant l'élément de *docWP* passé dans le paramètre *ID*.<!-- END REF--> 

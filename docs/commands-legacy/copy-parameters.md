@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Copy parameters.Summary-->The Copy parameters command returns a new collection containing all parameters actually passed to a method or a function.<!-- END REF--> This command is useful when you need to forward a various number of parameters from a method or function to another method or function. 

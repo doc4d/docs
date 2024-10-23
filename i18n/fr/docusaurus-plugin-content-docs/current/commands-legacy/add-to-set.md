@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.ADD TO SET.Summary-->**ADD TO SET** ajoute l'enregistrement courant de *laTable* à *ensemble*.<!-- END REF--> L'ensemble doit avoir déjà été créé ; si *ensemble* n'existe pas, une erreur est retournée. S'il n'y a pas d'enregistrement courant pour *laTable*, **ADD TO SET** ne fait rien.

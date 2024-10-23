@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.TEXT TO DOCUMENT.Summary-->El comando **TEXT TO DOCUMENT** le permite escribir el *texto* directamente en el archivo de disco.<!-- END REF-->

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Tickcount.Summary-->Tickcount devuelve el número de tics (1 tic = 1 / 60avo de un segundo) pasados desde que se inició el equipo.<!-- END REF-->

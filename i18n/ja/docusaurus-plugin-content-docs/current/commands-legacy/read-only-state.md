@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Read only state.Summary-->このコマンドは、コマンドが呼び出されるプロセス内の*aTable*の状態が読み込み専用かどうかを調べます。<!-- END REF-->*aTable*が読み込み専用であれば、[True](true.md "True")を返します。*aTable*が読み書き可であれば、[False](false.md "False")を返します。

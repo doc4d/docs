@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.QUERY WITH ARRAY.Summary-->La commande **QUERY WITH ARRAY** recherche dans la table du champ passé en premier paramètre tous les enregistrements pour lesquels la valeur de *champCible* est égale à au moins une des valeurs des éléments du tableau *tableau*.<!-- END REF--> Les enregistrements trouvés constituent la nouvelle sélection courante.

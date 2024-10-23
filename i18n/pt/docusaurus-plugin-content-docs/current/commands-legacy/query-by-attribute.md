@@ -19,6 +19,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.QUERY BY ATTRIBUTE.Summary-->**QUERY BY ATTRIBUTE** localiza os registros que correspondam com a string de consulta definida utilizando os parâmetros *campoObjeto*, *caminhoAtributo*, *opPesq* e *valor* e retorna uma seleção de registros para a *tabela*.<!-- END REF-->  

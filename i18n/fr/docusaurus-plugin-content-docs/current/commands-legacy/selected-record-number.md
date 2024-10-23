@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Selected record number.Summary-->**Selected record number** retourne la position de l'enregistrement courant dans la sélection courante de *laTable*.<!-- END REF-->

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Current method name.Summary-->O comando Current method name devolve o nome do método no qual se chama.<!-- END REF--> Este comando é útil para depuração de métodos genéricos.

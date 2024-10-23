@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Description 
 
 <!--REF #_command_.Encrypt data BLOB.Summary-->El comando **Encrypt data BLOB** encripta el parámetro *blobAEncriptar* con el mismo algoritmo que 4D utiliza para encriptar datos (AES-256) y devuelve el resultado en *blobEncriptado*.<!-- END REF-->

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.JSON Validate.Summary-->**JSON Validate** コマンドは、*vJson* 引数に渡されたJSON コンテンツを*vSchema* 引数に渡したJSON スキーマで定義されたルールに対しての適合性をチェックします。<!-- END REF-->JSON が向こうであった場合、コマンドはエラーの詳細な説明を返します。

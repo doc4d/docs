@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Get database localization.Summary-->El comando Get database localization devuelve el lenguaje por defecto o el lenguaje de la base, especificado por *tipoLeng*, expresado en el estándar definido por la RFC 3066.<!-- END REF-->Generalmente, el comando devuelve “en” para inglés, “es” para español, etc. Para mayor información sobre este estándar y los valores devueltos por este comando, por favor consulte el *Apéndice B: Arquitectura XLIFF* en el manual de *Diseño*. 

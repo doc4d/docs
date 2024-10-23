@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.INTEGRATE MIRROR LOG FILE.Summary-->**注意事項:**このコマンドは4D Serverでのみ作動します。<!-- END REF-->[Execute on server](execute-on-server.md)コマンド経由あるいはストアドプロシージャー内でのみ実行可能です。

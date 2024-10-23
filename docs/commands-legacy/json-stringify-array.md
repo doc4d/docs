@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.JSON Stringify array.Summary-->The **JSON Stringify array** command converts the 4D array *array* into a serialized JSON array.<!-- END REF--> This command performs the opposite action of the [JSON PARSE ARRAY](json-parse-array.md) command.

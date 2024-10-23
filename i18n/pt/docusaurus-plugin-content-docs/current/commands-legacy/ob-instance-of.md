@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.OB Instance of.Summary-->O comando **OB Instance of** devolve true se *objeto* pertencer à *classe* ou uma de suas classes filho, e em caso contrário false.<!-- END REF-->

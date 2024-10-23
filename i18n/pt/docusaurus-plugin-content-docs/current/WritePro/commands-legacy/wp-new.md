@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WP New.Summary-->O comando **WP New** cria e devolve um objeto 4D Write Pro.<!-- END REF-->\[#/descv\]. O objeto retornado é um documento completo que pode ser passado ao comando [WP INSERT DOCUMENT](wp-insert-document.md), por exemplo.

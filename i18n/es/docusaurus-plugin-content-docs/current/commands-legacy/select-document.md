@@ -18,6 +18,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Select document.Summary-->El comando Select document muestra una caja de diálogo estándar de apertura de documentos, permitiendo al usuario definir uno o más archivos y devolver el nombre y/o ruta de acceso completa del o de los archivo(s) seleccionado(s).<!-- END REF-->

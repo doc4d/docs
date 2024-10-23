@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WP INSERT PICTURE.Summary-->O comando **WP INSERT PICTURE** insere a *imagem* no *objFaixa* de acordo com o *modo* de inserção especificado.<!-- END REF--> A imagem se insertará como um carácter em *objFaixa*.

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WEB GET STATISTICS.Summary-->**WEB GET STATISTICS**コマンドを使用すると、Webサーバのキャッシュに読み込まれた最も閲覧されたページに関する情報を取得 することができます。<!-- END REF-->そのため、これらの統計は、静止画、GIFピクチャ、JPEGピクチャ (100KB未満) とスタイルシート (.css) のみに適用されます。

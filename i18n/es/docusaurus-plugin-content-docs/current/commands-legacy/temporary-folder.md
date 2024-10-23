@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Temporary folder.Summary-->El comando Temporary folder devuelve la ruta de acceso a la carpeta temporal actual definida por su sistema.<!-- END REF-->

@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.SAX GET XML DOCUMENT VALUES.Summary-->El comando SAX GET XML DOCUMENT VALUES  extrae información básica del encabezado XML del documento XML referenciado por *documento*.<!-- END REF-->

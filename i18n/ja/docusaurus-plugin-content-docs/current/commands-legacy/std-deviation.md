@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Std deviation.Summary-->**Std deviation**は、*series*の標準偏差を返します。<!-- END REF-->*series*がインデックスフィ－ルドの場合に、標準偏差を求めるためにインデックスが使用されます。

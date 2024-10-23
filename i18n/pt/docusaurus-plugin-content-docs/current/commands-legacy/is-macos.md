@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Is macOS.Summary-->O comando **Is macOS** devolve True se o sistema operativo atual for macOS.<!-- END REF-->

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WP GET ATTRIBUTES.Summary-->**WP GET ATTRIBUTES**コマンドは、4D Write Proレンジ、ヘッダー/フッター/本文/表、あるいはドキュメント内のあらゆる属性の値を返します。<!-- END REF-->このコマンドを使用すると4D Write Proのどのような内部属性(文字、段落、ドキュメント、テーブル、画像など)にもアクセスすることができます。

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.ARRAY TEXT.Summary-->ARRAY TEXTコマンドは、メモリ上にテキスト要素の配列を作成またはリサイズします。<!-- END REF-->  

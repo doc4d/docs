@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Type.Summary-->The Type command returns a numeric value that indicates the type of field or variable you have passed in the *fieldVar* parameter.<!-- END REF-->

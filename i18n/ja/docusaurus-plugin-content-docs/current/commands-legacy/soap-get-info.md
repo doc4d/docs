@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SOAP Get info.Summary-->**SOAP Get info**コマンドを使用して、SOAPリクエストに関するさまざま情報を文字列で受け取ることができます。<!-- END REF-->

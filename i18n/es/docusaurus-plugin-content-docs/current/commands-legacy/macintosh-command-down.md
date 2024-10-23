@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Macintosh command down.Summary-->Macintosh command down devuelve TRUE si la tecla Comando Macintosh está presionada.<!-- END REF--> 

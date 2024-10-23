@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP SET TEXT.Summary-->La commande **WP SET TEXT** insère le texte passé dans le paramètre *nouveauTexte* en texte brut dans le paramètre *objCible* à la position spécifiée par le paramètre *positionTexte*.<!-- END REF-->

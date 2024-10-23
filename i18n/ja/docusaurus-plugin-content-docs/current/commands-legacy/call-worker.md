@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.CALL WORKER.Summary-->**CALL WORKER** コマンドは、*process* に受け渡した名称または ID のワーカープロセスを作成、または呼び出して、任意の *param* パラメーターを使って *formula* 引数で指定されたコードの実行をそのコンテキスト内において要求します。<!-- END REF-->

@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.GRAPH.Summary-->O comando **GRAPH** cria um gráfico em uma área de gráfico ou uma variável imagem localizada em um formulário a partir dos valores provenientes dos arrays.<!-- END REF-->

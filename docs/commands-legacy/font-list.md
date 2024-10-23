@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.FONT LIST.Summary-->The **FONT LIST** command populates the *fonts* text array with the names of scalable fonts available on your system.<!-- END REF-->

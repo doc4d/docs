@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Trigger event.Summary-->Quando chamado de dentro de um trigger, o comando **[Trigger event](trigger-event.md)** retorna um valor numérico que indica o tipo do evento do banco, em outras palavras, a razão pela qual é chamado o trigger.<!-- END REF-->  

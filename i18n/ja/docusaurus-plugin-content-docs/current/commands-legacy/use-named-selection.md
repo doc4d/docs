@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.USE NAMED SELECTION.Summary-->USE NAMED SELECTION は、命名セレクション*name*が属するテーブルのカレントセレクションを命名セレクションを使用して置き換えます。<!-- END REF-->

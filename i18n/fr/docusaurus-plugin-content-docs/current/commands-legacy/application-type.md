@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Application type.Summary-->La fonction **Application type** renvoie une valeur numérique qui représente le type de l'environnement 4D que vous utilisez.<!-- END REF--> 4D vous fournit les constantes prédéfinies suivantes :

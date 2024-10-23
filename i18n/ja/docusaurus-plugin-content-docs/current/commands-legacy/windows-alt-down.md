@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Windows Alt down.Summary-->Windows Alt down はWindowsのAlt キーが押されていると[True](true.md "True")を返します。<!-- END REF-->

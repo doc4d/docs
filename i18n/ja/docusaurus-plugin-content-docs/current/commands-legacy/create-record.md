@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.CREATE RECORD.Summary-->**CREATE RECORD**は、*aTable*に対して新しい空のレコードを作成しますが、このレコードは表示されません。<!-- END REF-->データ入力のために新しいレコードを作成して表示するには[ADD RECORD](add-record.md)を使用します。

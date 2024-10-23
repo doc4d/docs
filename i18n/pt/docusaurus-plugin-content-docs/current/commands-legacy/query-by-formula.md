@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.QUERY BY FORMULA.Summary-->QUERY BY FORMULA procura registros em *tabela*.<!-- END REF--> QUERY BY FORMULA modifica a seleção atual de *tabela* para o processo atual e faz do primeiro registro o novo registro atual. 

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.SAX GET XML COMMENT.Summary-->El comando SAX GET XML COMMENT  devuelve un *comentario* si un evento SAX de tipo XML Comment se genera en el documento XML referenciado en el parámetro *documento*.<!-- END REF--> Para mayor información sobre los eventos SAX, consulte la descripción del comando [SAX Get XML node](sax-get-xml-node.md "SAX Get XML node"). 

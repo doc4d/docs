@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.DOM SET XML ELEMENT NAME.Summary-->O comando DOM SET XML ELEMENT NAME permite modificar o nome do elemento designado por *refElemento*.<!-- END REF-->  

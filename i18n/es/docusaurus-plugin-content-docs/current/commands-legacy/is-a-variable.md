@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Is a variable.Summary-->El comando Is a variable devuelve True si el puntero pasado en *unPuntero* referencia a una variable definida.<!-- END REF--> Devuelve False en todos los otros casos (puntero hacia un campo o tabla, puntero Nil, etc.).

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Get pointer.Summary-->O comando **Get pointer** devolve um ponteiro até uma variável processo ou interprocesso cujo nome se passa em *nomVar*.<!-- END REF-->

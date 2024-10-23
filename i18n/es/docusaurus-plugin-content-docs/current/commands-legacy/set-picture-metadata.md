@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.SET PICTURE METADATA.Summary-->El comando SET PICTURE METADATA permite escribir o modificar el contenido de los metadatos (o meta-etiquetas) presentes en *imagen* (campo o una variable imagen 4D), cuando son modificables.<!-- END REF--> 

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.LOG EVENT.Summary-->O comando **LOG EVENT** permite configurar um sistema personalizado de registro de eventos internos que ocorrem durante o uso de sua aplicação.<!-- END REF-->

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.New data key.Summary-->**New data key** コマントは、*passPhrase* 引数に渡されたパスフレーズのテキストからバイナリーデータの暗号化キーを生成します。<!-- END REF-->

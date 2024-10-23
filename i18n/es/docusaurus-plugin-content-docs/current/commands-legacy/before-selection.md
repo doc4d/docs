@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Before selection.Summary-->**Before selection** devuelve TRUE cuando el puntero del registro actual se encuentra antes del primer registro de la selección actual de *tabla*.<!-- END REF-->**Before selection** generalmente es utilizado para verificar si el comando [PREVIOUS RECORD](previous-record.md) ha movido el puntero del registro actual antes del primer registro. Si la selección actual está vacía, **Before selection** devuelve TRUE.

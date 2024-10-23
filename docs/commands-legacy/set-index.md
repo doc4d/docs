@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Compatibility Note 
 
 <!--REF #_command_.SET INDEX.Summary-->**SET INDEX**, although a legacy command, is still fully supported and can remain in your application -- there is no need to rewrite existing code.<!-- END REF--> However, it would be better to use [CREATE INDEX](create-index.md) and [DELETE INDEX](delete-index.md) to manage indexes because they provide more features. 

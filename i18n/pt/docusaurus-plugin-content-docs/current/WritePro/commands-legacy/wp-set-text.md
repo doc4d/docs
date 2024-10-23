@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WP SET TEXT.Summary-->O comando **WP SET TEXT** insere o texto passado no parâmetro *novoTexto* como texto sem formato em in the *targetObj* em uma posição específica designada pelos parâmetros *wpRango* e *posiçãoTexto*.<!-- END REF-->

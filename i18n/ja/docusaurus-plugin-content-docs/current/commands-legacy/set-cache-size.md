@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SET CACHE SIZE.Summary-->**SET CACHE SIZE**コマンドは、データベースキャッシュのサイズを動的に設定し、またオプションとして、メモリを解放する際の最小バイト数を設定します。<!-- END REF-->

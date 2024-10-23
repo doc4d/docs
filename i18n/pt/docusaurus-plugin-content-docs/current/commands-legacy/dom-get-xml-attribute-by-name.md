@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.DOM GET XML ATTRIBUTE BY NAME.Summary-->O comando DOM GET XML ATTRIBUTE BY NAME permite conhecer o valor de um atributo especificado por seu nome.<!-- END REF-->

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Current method path.Summary-->The **Current method path** command returns the internal pathname of the database method, trigger, project method, form method or object method being executed.<!-- END REF-->

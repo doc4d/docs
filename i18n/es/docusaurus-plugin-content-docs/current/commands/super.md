@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF -->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 La palabra clave `Super` <!-- REF #_command_.Super.Summary -->permite llamar a la `superclass`, es decir, la clase padre<!-- END REF -->.
 
 `Super` tiene dos propósitos diferentes:

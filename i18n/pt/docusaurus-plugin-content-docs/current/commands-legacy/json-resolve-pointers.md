@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.JSON Resolve pointers.Summary-->O comando **JSON Resolve pointers** resolve todos os ponteiros JSON encontrados no objeto, com respeito à configuração de opções (se existir).<!-- END REF-->

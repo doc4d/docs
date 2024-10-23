@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.GET MISSING TABLE NAMES.Summary-->The **GET MISSING TABLE NAMES** command returns the names of all the missing tables of the current database in the *missingTables* array.<!-- END REF-->

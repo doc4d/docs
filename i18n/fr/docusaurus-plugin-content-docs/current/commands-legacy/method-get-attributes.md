@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.METHOD GET ATTRIBUTES.Summary-->La commande **METHOD GET ATTRIBUTES** retourne, dans le paramètre *attributs*, la valeur courante de tous les attributs de la ou des méthode(s) spécifiée(s) dans le paramètre *chemin*.<!-- END REF-->

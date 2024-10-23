@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Generate digest.Summary-->The **Generate digest** command returns the digest key of a BLOB or text after application of an encryption algorithm.<!-- END REF-->

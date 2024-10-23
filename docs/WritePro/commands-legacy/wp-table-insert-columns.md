@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Table insert columns.Summary-->The **WP Table insert columns** command inserts one or several column(s) into a 4D Write Pro table.<!-- END REF-->

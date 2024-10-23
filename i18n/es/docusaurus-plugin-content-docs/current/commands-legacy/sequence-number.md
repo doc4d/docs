@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Sequence number.Summary-->Sequence number devuelve el próximo número automático de *tabla*.<!-- END REF--> El número de secuencia es único para cada tabla. Este número es único para cada tabla. Este valor no se repite y se incrementa por cada nuevo registro creado en la tabla (\*).  

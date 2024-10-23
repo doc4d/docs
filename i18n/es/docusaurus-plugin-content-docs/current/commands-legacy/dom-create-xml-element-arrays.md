@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.DOM Create XML element arrays.Summary-->El comando DOM Create XML element arrays se utiliza para añadir un nuevo elemento en el elemento XML de *refElement*, como también opcionalmente, atributos y sus valores en forma de arrays.<!-- END REF-->

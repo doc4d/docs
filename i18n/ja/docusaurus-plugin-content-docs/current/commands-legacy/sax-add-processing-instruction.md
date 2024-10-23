@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SAX ADD PROCESSING INSTRUCTION.Summary-->SAX ADD PROCESSING INSTRUCTIONコマンドは、*document*で参照されるXMLドキュメントにXML処理命令*statement*を追加します。<!-- END REF--> 

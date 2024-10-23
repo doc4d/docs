@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Data file.Summary-->O comando Data file retorna o nome longo do arquivo de dados ou do primeiro segmento do banco no qual você está trabalhando atualmente.<!-- END REF-->

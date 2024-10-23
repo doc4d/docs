@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.PAUSE PROCESS.Summary-->PAUSE PROCESS suspende a execução de *processo* até que seja reativada pelo comando [RESUME PROCESS](resume-process.md "RESUME PROCESS").<!-- END REF--> Durante este período, *processo* não toma tempo em sua máquina. Ainda que um processo esteja suspendido, o processo ainda está em memória. 

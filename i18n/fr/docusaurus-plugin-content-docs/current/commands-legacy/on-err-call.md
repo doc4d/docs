@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.ON ERR CALL.Summary-->**ON ERR CALL** installe la méthode projet dont le nom est passé dans *méthodErreur* comme méthode d'interception des erreurs pour le contexte d'exécution défini dans le projet courant.<!-- END REF--> Cette méthode est aussi appelée méthode de gestion des erreurs. 

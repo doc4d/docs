@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Num.Summary-->La fonction **Num** retourne sous forme de numérique l'expression de type chaîne, Booléen ou numérique que vous avez passée dans le paramètre *expression*.<!-- END REF--> Le paramètre facultatif *séparateur* permet de désigner un séparateur décimal pour l’évaluation des expressions de type chaîne. 

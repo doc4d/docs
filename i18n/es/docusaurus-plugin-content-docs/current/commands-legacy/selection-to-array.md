@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.SELECTION TO ARRAY.Summary-->El comando **SELECTION TO ARRAY** crea uno o más arrays y copia los valores en los campos o los números de registro de la selección actual en los arrays.<!-- END REF-->

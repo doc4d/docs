@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Test path name.Summary-->La función Test path name verifica si un documento o carpeta cuyo nombre o ruta de acceso se pasa en *rutaAcceso* está presente en el disco.<!-- END REF--> Puede pasar una ruta de acceso relativa o absoluta, expresada en la sintaxis del sistema actual. 

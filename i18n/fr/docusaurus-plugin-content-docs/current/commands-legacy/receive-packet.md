@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.RECEIVE PACKET.Summary-->La commande **RECEIVE PACKET** lit des caractères depuis un port série ou un document.<!-- END REF-->

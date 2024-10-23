@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.RESTART 4D.Summary-->O comando **RESTART 4D** reinicia a aplicação fundida 4D atual.<!-- END REF-->  

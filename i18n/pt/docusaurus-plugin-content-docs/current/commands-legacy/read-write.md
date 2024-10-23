@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.READ WRITE.Summary-->READ WRITE muda o estado de *tabela* a modo leitura/escrita para o processo no qual se chama ao comando.<!-- END REF--> Se passa o parâmetro opcional *\**, todas as tabelas passam a modo leitura/escrita.  

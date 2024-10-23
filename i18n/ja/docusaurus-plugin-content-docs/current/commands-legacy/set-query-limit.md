@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SET QUERY LIMIT.Summary-->SET QUERY LIMITは、カレントプロセスの以降の検索を対象に、*limit*に渡した数のレコードが見つかったら検索を中止するよう4Dに指示します。<!-- END REF-->

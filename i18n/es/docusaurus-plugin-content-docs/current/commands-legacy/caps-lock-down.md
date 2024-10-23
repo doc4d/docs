@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Caps lock down.Summary-->Caps lock down devuelve TRUE si la tecla Bloq Mayús está presionada.<!-- END REF-->

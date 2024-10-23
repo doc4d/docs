@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.DELETE DOCUMENT.Summary-->El comando **DELETE DOCUMENT** borra el documento cuyo nombre se pasa en *documento*.<!-- END REF-->  

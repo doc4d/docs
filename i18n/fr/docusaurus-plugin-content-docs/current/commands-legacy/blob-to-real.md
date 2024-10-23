@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.BLOB to real.Summary-->La fonction **BLOB to real** retourne une valeur de type Réel lue dans le BLOB *blob*.<!-- END REF-->

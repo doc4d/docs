@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DESCRIBE QUERY EXECUTION.Summary-->DESCRIBE QUERY EXECUTION コマンドはカレントプロセスにおいて、クエリの分析を有効にしたり無効にしたりします。<!-- END REF-->このコマンドは、4Dランゲージの[QUERY](query.md)コマンドのようなクエリの文脈でのみ機能します。

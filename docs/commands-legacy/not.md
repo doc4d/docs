@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Not.Summary-->The Not function returns the negation of *boolean*, changing True to False or False to True.<!-- END REF-->

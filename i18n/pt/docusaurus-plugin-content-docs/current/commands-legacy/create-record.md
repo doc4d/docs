@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.CREATE RECORD.Summary-->CREATE RECORD cria um novo registro vazio para *tabela*, mas não mostra o novo registro.<!-- END REF--> Utilize o comando [ADD RECORD](add-record.md) para criar um novo registro e mostra-lo em um formulário de entrada.

@@ -17,6 +17,9 @@ displayed_sidebar: docs
 |Result|Object|&#8592;|Status object|
 <!-- END REF -->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 
 <details><summary>History</summary>
 

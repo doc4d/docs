@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.ORDER BY ATTRIBUTE.Summary-->La commande **ORDER BY ATTRIBUTE** trie (réorganise) les enregistrements de la sélection courante de *laTable* pour le process courant, basé sur les contenus des *cheminAttribut* des *champObjet*.<!-- END REF--> Après réorganisation des enregistrements, le nouveau premier enregistrement de la sélection courante devient l'enregistrement courant.

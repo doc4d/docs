@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.BLOB to longint.Summary-->El comando BLOB to longint devuelve un valor de tipo Entero largo (4 bytes) leído del BLOB *blob*.<!-- END REF-->

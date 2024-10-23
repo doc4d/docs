@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Log.Summary-->**Log** retourne le logarithme népérien de *nombre*.<!-- END REF--> **Log** est la fonction inverse de [Exp](exp.md). 

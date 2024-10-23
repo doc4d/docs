@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.START TRANSACTION.Summary-->START TRANSACTION inicia una transacción en el proceso actual.<!-- END REF--> Todos los cambios a los datos (registros) de la base dentro de la transacción se almacenan temporalmente hasta que la transacción sea validada o cancelada.

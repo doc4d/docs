@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.SAX CLOSE XML ELEMENT.Summary-->O comando SAX CLOSE XML ELEMENT escreve no documento XML referenciado por *documento* as instruções necessárias para fechar o último elemento aberto utilizando o comando [SAX OPEN XML ELEMENT](sax-open-xml-element.md).<!-- END REF-->  

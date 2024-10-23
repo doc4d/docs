@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.BLOB to integer.Summary-->O comando BLOB to integer retorna um valor inteiro de 2 bytes inteiro lido do BLOB *blob*.<!-- END REF-->

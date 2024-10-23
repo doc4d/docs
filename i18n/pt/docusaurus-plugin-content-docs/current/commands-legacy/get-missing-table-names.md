@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.GET MISSING TABLE NAMES.Summary-->O comando GET MISSING TABLE NAMES retorna os nomes de todas as tabelas faltantes do banco no array *tabelaNaoEncontrada*.<!-- END REF-->

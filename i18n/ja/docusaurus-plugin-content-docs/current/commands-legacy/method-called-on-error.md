@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Method called on error.Summary-->**Method called on error** コマンドはカレントプロセス、または*scope* 引数で指定したスコープにおいて[ON ERR CALL](on-err-call.md) コマンドでインストールされたメソッドの名前を返します。<!-- END REF-->

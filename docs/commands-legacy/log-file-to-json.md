@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.LOG FILE TO JSON.Summary-->The **LOG FILE TO JSON** command saves the current log file, or any specified log file, in JSON format.<!-- END REF-->

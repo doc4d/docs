@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WP Get formulas.Summary-->O comando **WP Get formulas** devolve uma coleção de todas as fórmulas definidas em *objTarget*.<!-- END REF-->

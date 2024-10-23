@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.GET PICTURE KEYWORDS.Summary-->**GET PICTURE KEYWORDS**コマンドは引数に渡したピクチャーに割り当てられたキーワードのリストを*arrKeywords*配列に返します。<!-- END REF-->

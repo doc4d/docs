@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP INSERT PICTURE.Summary-->La commande **WP INSERT PICTURE** insère *image* dans la plage de sélection *objCible* selon le *mode* d'insertion spécifié.<!-- END REF--> L'image sera insérée en tant que caractère dans la plage de sélection *objCible*.

@@ -27,6 +27,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Position.Summary-->**Position** returns the position of the first occurrence of *find* in *aString*.<!-- END REF--> 

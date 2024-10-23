@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.USE NAMED SELECTION.Summary-->**USE NAMED SELECTION** désigne la sélection temporaire *nom* comme sélection courante pour la table à laquelle elle appartient.<!-- END REF-->

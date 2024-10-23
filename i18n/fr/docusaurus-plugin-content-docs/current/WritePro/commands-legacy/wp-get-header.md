@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Get header.Summary-->La commande **WP Get header** retourne l'en-tête associé à *objCible* ou à la section *indexSection* du document 4D Write Pro *docWP*.<!-- END REF--> Si aucun en-tête n'est trouvé par rapport au(x) paramètre(s), la commande retourne **Null**.

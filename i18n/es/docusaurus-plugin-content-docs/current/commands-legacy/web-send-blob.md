@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WEB SEND BLOB.Summary-->El comando **WEB SEND BLOB** permite enviar el BLOB *blob* al navegador.<!-- END REF--> 

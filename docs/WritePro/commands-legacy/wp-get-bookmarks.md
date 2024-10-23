@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP GET BOOKMARKS.Summary-->The **WP GET BOOKMARKS** command returns an array containing the names of all bookmarks defined in *wpDoc*.<!-- END REF--> 

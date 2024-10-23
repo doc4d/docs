@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Get external data path.Summary-->The **Get external data path** command returns the full pathname of the external storage file for the data of the field passed in the *aField* parameter, for the current record.<!-- END REF--> You must pass fields of the Text, BLOB or Picture type in the parameter. The command returns the pathname of the storage file even if the file does not exist or is not accessible.

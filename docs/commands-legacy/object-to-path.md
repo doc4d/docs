@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Object to path.Summary-->The **Object to path** command returns a pathname (string) based upon path information you passed in the *pathObject* parameter.<!-- END REF--> The following paths are supported:

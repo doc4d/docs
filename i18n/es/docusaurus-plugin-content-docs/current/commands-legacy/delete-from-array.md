@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.DELETE FROM ARRAY.Summary-->El comando DELETE FROM ARRAY borra uno o más elementos del *array*.<!-- END REF--> Los elementos se borran a partir del elemento especificado por *donde*.

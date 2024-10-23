@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.SAX GET XML DOCUMENT VALUES.Summary-->La commande **SAX GET XML DOCUMENT VALUES** extrait des informations élémentaires de l’en-tête XML du document XML référencé par *document*.<!-- END REF--> 

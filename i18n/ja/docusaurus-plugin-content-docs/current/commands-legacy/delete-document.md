@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DELETE DOCUMENT.Summary-->**DELETE DOCUMENT** コマンドを使用して、*document*に渡したドキュメント名を持つドキュメントを削除します。<!-- END REF-->

@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Substring.Summary-->El comando **Substring** devuelve la parte de *fuente* definida por *aPartirDe* y *numCars*.<!-- END REF--> 

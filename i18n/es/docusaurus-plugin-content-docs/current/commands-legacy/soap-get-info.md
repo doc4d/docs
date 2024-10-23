@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.SOAP get info.Summary-->El comando **SOAP get info** permite recuperar bajo la forma de cadena de caracteres diferentes tipos de información relacionada con una petición SOAP.<!-- END REF--> 

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Selected record number.Summary-->Selected record number retorna a posição do registro atual na seleção atual de *tabela*.<!-- END REF-->

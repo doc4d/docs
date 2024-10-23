@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 Change string devolve uma string resultante de modificar os caracteres, na cadeia*fonte*, a partir de posição com os caracteres em novo.  

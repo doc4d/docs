@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.READ WRITE.Summary-->READ WRITEは、このコマンドを呼び出したプロセス内の*aTable*を読み書き可に変更します。<!-- END REF-->*\**を指定すると、すべてのテーブルが読み書き可に変更されます。

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.READ ONLY.Summary-->READ ONLY changes the state of *aTable* to read-only for the process in which it is called.<!-- END REF--> All subsequent records that are loaded are locked, and you cannot make any changes made to them. If the optional \* parameter is specified, all tables are changed to read-only state.

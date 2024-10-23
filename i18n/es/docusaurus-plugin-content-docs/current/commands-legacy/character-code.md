@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Character code.Summary-->El comando **Character code** devuelve el código Unicode UTF-16 (incluído entre 1 y 65535) de *unCaracter*.<!-- END REF-->   

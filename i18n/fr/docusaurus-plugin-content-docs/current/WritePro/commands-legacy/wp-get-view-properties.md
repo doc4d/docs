@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Get view properties.Summary-->La commande **WP Get view properties** retourne les attributs vue courants de la zone 4D Write Pro identifiés par *zoneWP*.<!-- END REF--> 

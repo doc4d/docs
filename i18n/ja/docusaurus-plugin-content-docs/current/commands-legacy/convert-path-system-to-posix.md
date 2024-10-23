@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Convert path system to POSIX.Summary-->Convert path system to POSIX コマンドはシステムシンタックスで表現されたパス名をPOSIX (Unix) シンタックスで表現されたパス名に変換します。<!-- END REF-->

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.OB Get type.Summary-->**OB Get type**コマンドは、*object* で指定したランゲージオブジェクトの *property* に関連付けられた値の型を返します。<!-- END REF-->

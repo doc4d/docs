@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.CLEAR SEMAPHORE.Summary-->CLEAR SEMAPHORE apaga o *semáforo* previamente criada pela função [Semaphore](semaphore.md "Semaphore").<!-- END REF-->

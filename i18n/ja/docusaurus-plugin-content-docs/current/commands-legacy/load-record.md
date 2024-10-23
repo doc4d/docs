@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.LOAD RECORD.Summary-->LOAD RECORDは、*aTable*のカレントレコードをロードします。<!-- END REF-->カレントレコードが存在しない場合、LOAD RECORDは何も行いません。  

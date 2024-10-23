@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Selected record number.Summary-->**Selected record number** returns the position of the current record within the current selection of *aTable*.<!-- END REF--> 

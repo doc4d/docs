@@ -18,6 +18,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Find in sorted array.Summary-->O novo comando **Find in sorted array** devolve **true** se pelo menos um elemento no *array* ordenado com o *valor* e opcionalmente devolve a posição dos elementos correspondentes.<!-- END REF--> Diferente de [Find in array](find-in-array.md), **Find in sorted array** só funciona com um *array* ordenado e oferece informação sobre a posição das ocorrências, o que lhe permite inserir elementos se for necessário.

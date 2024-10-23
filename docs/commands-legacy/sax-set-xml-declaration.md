@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.SAX SET XML DECLARATION.Summary-->The **SAX SET XML DECLARATION** command initializes the XML document referenced in *document* using the specified *encoding*.<!-- END REF--> Optionnally, you can set the *standalone* attribute.

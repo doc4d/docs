@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.XML DECODE.Summary-->La commande **XML DECODE** convertit une valeur stockée en tant que chaîne XML en une valeur 4D typée.<!-- END REF--> La conversion est effectuée automatiquement en fonction des règles suivantes : 

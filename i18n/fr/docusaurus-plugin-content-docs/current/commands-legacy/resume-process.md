@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.RESUME PROCESS.Summary-->**RESUME PROCESS** réactive un process suspendu ou endormi.<!-- END REF--> Si *process* n'est pas endormi ou suspendu, **RESUME PROCESS** ne fait rien.

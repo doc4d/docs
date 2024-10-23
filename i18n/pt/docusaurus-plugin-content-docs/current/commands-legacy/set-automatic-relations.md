@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.SET AUTOMATIC RELATIONS.Summary-->SET AUTOMATIC RELATIONS muda temporariamente todas as relações manuais em relações automáticas para todo o banco no processo atual.<!-- END REF--> As relações permanecem automáticas a menos que se realize uma chamada posterior a SET AUTOMATIC RELATIONS.

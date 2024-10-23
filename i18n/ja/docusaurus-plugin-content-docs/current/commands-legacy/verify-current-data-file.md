@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.VERIFY CURRENT DATA FILE.Summary-->VERIFY CURRENT DATA FILEコマンドは、4Dが現在開いているデータファイル中にあるオブジェクトの、構造的な検証を行います。<!-- END REF-->

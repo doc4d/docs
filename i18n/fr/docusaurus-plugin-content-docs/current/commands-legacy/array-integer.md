@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.ARRAY INTEGER.Summary-->La commande **ARRAY INTEGER** crée et/ou redimensionne un tableau d'éléments de type [Entier](# "Nombre entre -32 768 et +32 767 (2^15 et (2^15)-1) (Entier sur deux octets)") (2 octets) en mémoire.<!-- END REF-->

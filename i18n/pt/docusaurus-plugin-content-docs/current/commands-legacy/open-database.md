@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Nota 
 
 <!--REF #_command_.OPEN DATABASE.Summary-->O comando **OPEN DATABASE** fecha o banco de dados 4D atual e abre, com o processo em andamento, o banco definido por *rotaArquivo*.<!-- END REF--> Este comando é útil para realizar provas automáticas ou para voltar a abrir uma base de forma automática depois de uma compilação, , ou para permitir fusionar uma aplicação remota 4D para selecionar o servidor do banco de dados ao qual vai conectar.

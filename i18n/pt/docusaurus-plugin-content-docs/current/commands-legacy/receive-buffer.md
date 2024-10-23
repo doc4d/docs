@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.RECEIVE BUFFER.Summary-->RECEIVE BUFFER lê a porta serial que foi aberta anteriormente com [SET CHANNEL](set-channel.md).<!-- END REF--> A porta serial tem um buffer que preenche com caracteres até que um comando lê a partir do buffer. RECEIVE BUFFER recebe os caracteres do buffer serial, colocá-os em *receiveVar* e limpa o buffer. Se não houver caracteres no buffer, então *receiveVar* não conterá nada.

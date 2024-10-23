@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Sequence number.Summary-->**Sequence number** は、*aTable*の次のシーケンス番号を返します。<!-- END REF-->シーケンス番号は、各テーブルにおいて固有のものです。この番号は、*aTable*に対して新しいレコードが追加されるたびに加算される、決して重複することのない番号です。

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WEB SEND RAW DATA.Summary-->**WEB SEND RAW DATA**コマンドを使用すると、4D Webサーバはチャンクが可能な"生"HTTPデータを送ります。<!-- END REF-->

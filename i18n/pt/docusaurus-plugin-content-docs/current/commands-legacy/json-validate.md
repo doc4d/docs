@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.JSON Validate.Summary-->O comando **JSON Validate** verifica a conformidade do conteúdo JSON *vJson* com as regras definidas no esquema JSON *vSchema*.<!-- END REF--> Se o JSON não for válido, o comando devolve uma descrição detalhada dos erros.

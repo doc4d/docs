@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明
 
 `New shared collection` コマンドは、<!-- REF #_command_.New shared collection.Summary -->空の、あるいは値が入った新規コレクションを作成し、その参照を返します<!-- END REF -->。 Collections can be handled using properties and functions of the [Collection class API](../API/CollectionClass.md).

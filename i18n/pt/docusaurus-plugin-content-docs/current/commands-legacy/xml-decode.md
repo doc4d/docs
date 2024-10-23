@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.XML DECODE.Summary-->O comando XML DECODE converte um valor salvado como uma string XML em um valor 4D.<!-- END REF--> A conversão se realiza automaticamente dependendo das seguintes regras: 

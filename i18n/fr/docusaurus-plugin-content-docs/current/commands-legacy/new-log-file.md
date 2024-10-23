@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.New log file.Summary-->**Note préliminaire :** Cette commande ne fonctionne qu’avec 4D Server.<!-- END REF--> Elle ne peut être exécutée que via la commande [Execute on server](execute-on-server.md) ou dans une procédure stockée. 

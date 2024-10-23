@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.ENCRYPT BLOB.Summary-->O comando ENCRYPT BLOB criptograma o conteúdo do BLOB *toEncrypt* com a chave privada do remetente *sendPrivKey*, bem como, opcionalmente, a chave pública do destinatário *recipPubKey*.<!-- END REF--> Estas chaves devem ser geradas pelo comando [GENERATE ENCRYPTION KEYPAIR](generate-encryption-keypair.md) (no âmbito do tema "Protocolo Seguro").

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Version type.Summary-->El comando Version type devuelve un valor numérico que representa el tipo de versión de 4D o de 4D Server que está utilizando.<!-- END REF--> 4D ofrece las siguientes constantes predefinidas, que se encuentran en el tema *Entorno 4D*:

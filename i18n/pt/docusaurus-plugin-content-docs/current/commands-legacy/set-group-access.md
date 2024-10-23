@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.SET GROUP ACCESS.Summary-->O comando **SET GROUP ACCESS** modifica o nível de filiação da conte de usuário 4D para a sesão atual.<!-- END REF--> Restabelece toda filiação a um grupo anterior e define as novas filiações aos *grupos* listados.

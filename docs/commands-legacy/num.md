@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Num.Summary-->The Num command returns the numeric form of the String, Boolean or numeric expression you pass in *expression*.<!-- END REF--> The optional *separator* parameter designates a decimal separator for evaluating string type expressions.

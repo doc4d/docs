@@ -18,6 +18,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.New process.Summary-->El comando New process inicia un nuevo proceso (en el mismo equipo) y devuelve el número de este proceso.<!-- END REF-->

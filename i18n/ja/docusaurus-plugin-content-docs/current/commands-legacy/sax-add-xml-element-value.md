@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SAX ADD XML ELEMENT VALUE.Summary-->**SAX ADD XML ELEMENT VALUE** コマンドは、*document* で参照されるXMLドキュメントに*data* を変換せずに直接追加します。<!-- END REF-->このコマンドは例えば電子メールのボディに添付ファイルを挿入するのと同等です。

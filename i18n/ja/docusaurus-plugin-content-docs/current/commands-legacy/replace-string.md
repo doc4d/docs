@@ -18,6 +18,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Replace string.Summary-->Replace stringは、*source*に存在するすべての*oldString*を*newString*で*howMany*回数だけ置き換えます。<!-- END REF-->

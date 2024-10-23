@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.OB Is defined.Summary-->**OB Is defined**コマンドは、*object* または *property* が定義済みである場合にはTrueを返し、それ以外の場合にはFalseを返します。<!-- END REF-->   

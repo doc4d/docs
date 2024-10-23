@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.SET GROUP ACCESS.Summary-->La commande **SET GROUP ACCESS** modifie l'adhésion du compte utilisateur pour la session courante.<!-- END REF--> Elle redéfinit les groupes précédents et définit les nouvelles adhésions dans les *groupes* listés. 

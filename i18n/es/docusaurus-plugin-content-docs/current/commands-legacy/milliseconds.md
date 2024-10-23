@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Milliseconds.Summary-->Milliseconds  devuelve el número de milisegundos ( 1milisegundo = 1 milésima de un segundo) pasados desde que se inició el equipo.<!-- END REF-->

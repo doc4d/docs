@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Trigger event.Summary-->**Trigger event**コマンドがトリガー内で呼び出されると、データベースイベントのタイプ、つまりそのトリガーが起動された理由を示す数値を返します。<!-- END REF-->

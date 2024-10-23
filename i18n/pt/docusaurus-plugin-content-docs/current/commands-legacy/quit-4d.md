@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.QUIT 4D.Summary-->O comando QUIT 4Dfinaliza a aplicação 4D atual e retorna para o Desktop.<!-- END REF-->

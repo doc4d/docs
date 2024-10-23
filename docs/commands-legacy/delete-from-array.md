@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.DELETE FROM ARRAY.Summary-->The DELETE FROM ARRAY command deletes one or more elements from *array*.<!-- END REF--> Elements are deleted starting at the element specified by *where*.

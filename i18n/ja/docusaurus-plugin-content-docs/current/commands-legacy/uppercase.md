@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Uppercase.Summary-->Uppercaseは、*aString*を取りアルファベット文字列をすべて英大文字に変換して返します。<!-- END REF-->

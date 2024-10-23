@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Active transaction.Summary-->O comando **Active transaction** devolve **True** se o processo atual estiver em transação e se esta transação não for suspensa.<!-- END REF--> Devolve **False** se não houver uma transação em curso, ou se for suspensa a transação atual. Uma transação pode ser suspensa utilizando o comando *SUSPEND TRANSACTION*. 

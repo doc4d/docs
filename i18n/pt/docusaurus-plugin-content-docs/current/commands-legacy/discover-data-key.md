@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Discover data key.Summary-->O comando **Discover data key** busca uma chave de cifrado válida correspondente ao arquivo de dados aberto atualmente a nivel da raíz de todos os dispositivos conectados e devolve **True** se for exitoso.<!-- END REF--> 

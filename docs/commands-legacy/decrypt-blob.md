@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.DECRYPT BLOB.Summary-->The DECRYPT BLOB command decrypts the content of the BLOB *toDecrypt* using the sender’s public key *sendPubKey* and, optionally, the recipient’s private key *recipPrivKey*.<!-- END REF-->

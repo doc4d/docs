@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.RECEIVE VARIABLE.Summary-->RECEIVE VARIABLE は、[SET CHANNEL](set-channel.md "SET CHANNEL")で開いたシリアルポートまたはドキュメントから、[SEND VARIABLE](send-variable.md "SEND VARIABLE")コマンドで送信した*variable*を受信します。<!-- END REF-->

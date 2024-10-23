@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.COMPRESS BLOB.Summary-->O comando COMPRESS BLOB comprime o BLOB blob usando o algoritmo de compressão interno de 4D.<!-- END REF--> Este comando só comprime o BLOB cujo tamanho é superior a 255 bytes.

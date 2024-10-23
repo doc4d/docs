@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WP Get view properties.Summary-->**WP Get view properties** コマンドは、*wpArea* 引数で指定した4D Write Pro エリアのカレントのビュープロパティを返します。<!-- END REF-->

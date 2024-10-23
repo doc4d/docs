@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DOM Get next sibling XML element.Summary-->DOM Get next sibling XML element コマンドは参照として渡したXML要素の次の兄弟要素の参照を返します。<!-- END REF--> この参照は他のXML解析コマンドで使用できます。

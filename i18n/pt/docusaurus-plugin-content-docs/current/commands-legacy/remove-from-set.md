@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.REMOVE FROM SET.Summary-->REMOVE FROM SET elimina o registro atual de *tabela* de *conjunto*.<!-- END REF--> O conjunto já deve existir; se não existir, ocorre um erro. Se não existir um registro atual para Tabela, REMOVE FROM SET não tem efeito.

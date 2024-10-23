@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Is data file locked.Summary-->La commande **Is data file locked** retourne Vrai si le fichier de données de la base ouverte ou l’un de ses segments au moins est verrouillé — c’est-à-dire, protégé en écriture.<!-- END REF--> 

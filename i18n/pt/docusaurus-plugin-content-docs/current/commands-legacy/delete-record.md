@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.DELETE RECORD.Summary-->DELETE RECORD apaga o registro atual de *tabela* no processo.<!-- END REF--> Se não houver registro atual para *tabela* no processo, DELETE RECORD não tem efeito. Em um formulário, pode criar um botão Apagar registro em lugar de utilizar este comando.

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.CALL WORKER.Summary-->La commande **CALL WORKER** crée ou appelle le process worker dont vous avez passé le nom ou le numéro dans *process* et demande l’exécution du code désigné par la *formule* dans son contexte avec le ou les paramètre(s) optionnel(s) spécifié(s) dans *param*.<!-- END REF-->

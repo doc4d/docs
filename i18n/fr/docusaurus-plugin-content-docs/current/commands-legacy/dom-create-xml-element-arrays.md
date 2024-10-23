@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.DOM Create XML element arrays.Summary-->La commande **DOM Create XML element arrays** permet d’ajouter un nouvel élément dans l’élément XML *refElément* ainsi que, facultativement, des attributs et leurs valeurs sous forme de tableaux.<!-- END REF-->

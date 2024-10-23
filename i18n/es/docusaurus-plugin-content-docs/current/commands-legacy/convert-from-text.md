@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.CONVERT FROM TEXT.Summary-->El comando CONVERT FROM TEXT permite convertir un texto expresado en el juego de caracteres actual de 4D en un texto expresado en otro juego de caracteres.<!-- END REF--> 

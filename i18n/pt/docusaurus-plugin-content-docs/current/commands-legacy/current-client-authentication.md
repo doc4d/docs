@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Current client authentication.Summary-->O comando **Current client authentication** pede ao servidor Active Directory de Windows autenticar o cliente atual e se tiver êxito, devolve o nome de início de sessão de Windows para este cliente (identificador de sessão).<!-- END REF--> Se a autenticação falhar, se devolve uma string vazia. 

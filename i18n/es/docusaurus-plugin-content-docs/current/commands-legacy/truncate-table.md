@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.TRUNCATE TABLE.Summary-->El comando TRUNCATE TABLE borra rápidamente todos los registros de tabla.<!-- END REF--> Si tabla ya está vacía, TRUNCATE TABLE no hace nada. Después de llamar el comando, no hay una selección actual ni un registro actual. 

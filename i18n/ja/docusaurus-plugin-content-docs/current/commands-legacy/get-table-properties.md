@@ -18,6 +18,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.GET TABLE PROPERTIES.Summary-->GET TABLE PROPERTIESコマンドは、*tablePtr*または*tableNum*で渡したテーブルのプロパティを返します。<!-- END REF-->最初の引数としてテーブル番号またはテーブルへのポインタを渡すことができます。

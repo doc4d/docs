@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.MOBILE APP REFRESH SESSIONS.Summary-->La commande **MOBILE APP REFRESH SESSIONS** vérifie tous les fichiers de session d'application mobile situés dans le dossier MobileApps du serveur et met à jour le contenu de la session existante en mémoire pour tous les fichiers modifiés.<!-- END REF-->

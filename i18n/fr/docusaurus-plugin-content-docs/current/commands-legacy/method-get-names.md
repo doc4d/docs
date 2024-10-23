@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.METHOD GET NAMES.Summary-->La commande **METHOD GET NAMES** remplit le tableau *tabNoms* avec les noms des méthodes projet créées dans l’application.<!-- END REF--> 

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.SAX GET XML PROCESSING INSTRUCTION.Summary-->O comando SAX GET XML PROCESSING INSTRUCTION devolve o *nome* e o *valor* da instrução de processo XML analizada no documento XML referenciada por documento.<!-- END REF--> Este comando deve ser chamado com o evento XML Processing Instruction. Para maior informação sobre eventos SAX, consulte a descrição do comando [SAX Get XML node](sax-get-xml-node.md).  

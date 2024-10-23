@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SET GROUP ACCESS.Summary-->**SET GROUP ACCESS** コマンドはカレントセッションにおいて4D ユーザーアカウントの所属情報を変更します。<!-- END REF-->それまでの所属情報は全てリセットされ、*groups* 引数で指定されたグループへの新しい所属が設定されます。

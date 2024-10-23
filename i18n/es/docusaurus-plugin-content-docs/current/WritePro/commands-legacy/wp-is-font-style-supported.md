@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WP Is font style supported.Summary-->El nuevo comando **WP Is font style supported**  devuelve True si el estilo *estiloFuenteWP* es soportado por alguna parte del texto en *rangoObj*.<!-- END REF-->

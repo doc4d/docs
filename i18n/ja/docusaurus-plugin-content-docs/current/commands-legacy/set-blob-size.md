@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SET BLOB SIZE.Summary-->SET BLOB SIZE コマンドは、*size*引数に渡された値に従って、BLOB *blob*のサイズを変更します。<!-- END REF-->

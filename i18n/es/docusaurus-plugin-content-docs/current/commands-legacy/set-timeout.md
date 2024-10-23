@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.SET TIMEOUT.Summary-->El comando SET TIMEOUT especifica cuánto tiempo tiene para la ejecución un comando de puerto serial.<!-- END REF--> Si el comando no termina dentro del tiempo especificado, *segundos*, el comando del puerto serial se cancela, se genera un error -9990, y la variable sistema OK toma el valor 0\. Puede interceptar este error con la ayuda de un método instalado por el comando [ON ERR CALL](on-err-call.md "ON ERR CALL").

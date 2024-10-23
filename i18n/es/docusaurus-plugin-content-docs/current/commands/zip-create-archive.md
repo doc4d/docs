@@ -19,6 +19,9 @@ displayed_sidebar: docs
 
 <!-- END REF -->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 <details><summary>Historia</summary>
 
 | Lanzamiento | Modificaciones                                                                    |

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Lowercase.Summary-->Lowercaseは、*aString*を取りアルファベット文字列をすべて英小文字に変換して返します。<!-- END REF--> 

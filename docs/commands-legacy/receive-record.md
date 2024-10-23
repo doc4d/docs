@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.RECEIVE RECORD.Summary-->RECEIVE RECORD receives a record into *table* from the serial port or document opened by the [SET CHANNEL](set-channel.md) command.<!-- END REF--> The record must have been sent with [SEND RECORD](send-record.md). When you execute RECEIVE RECORD, a new record is automatically created for *table*. If the record is received correctly, you must then use [SAVE RECORD](save-record.md) to save the new record.

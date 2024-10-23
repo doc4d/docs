@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.APPLY TO SELECTION.Summary-->**APPLY TO SELECTION** は、*aTable*のカレントセレクションに対して*statement*を適用します。<!-- END REF-->*statement*は1行のステートメントまたはメソッドのどちらでも構いません。*statement*が*aTable*のレコードを修正した場合、そのレコードをディスクに保存されます、レコードを修正しない場合には保存しません。カレントセレクションが空の場合、**APPLY TO SELECTION** は何も行いません。リレーションが自動であれば、*statement*はリレート先のテーブルのフィールドを含むことができます。

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WP New footer.Summary-->El comando **WP New footer** crea y devuelve el pie de página asociado a la sección o subsección definida por el parámetro *wpSection*.<!-- END REF-->

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.OB Is shared.Summary-->La commande **OB Is shared** retourne **Vrai** si l'objet ou la collection *toCheck* est partagé , sinon **Faux** (voir *Objets partagés et collections partagées*).<!-- END REF-->

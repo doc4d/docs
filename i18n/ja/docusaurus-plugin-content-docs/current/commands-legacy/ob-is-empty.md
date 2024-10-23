@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.OB Is empty.Summary-->**OB Is empty**コマンドは、*object* が未定義か空である場合にはTrueを返し、*object* が定義済み(初期化済み)で少なくとも一つのプロパティを内包している場合にはFalseを返します。<!-- END REF-->

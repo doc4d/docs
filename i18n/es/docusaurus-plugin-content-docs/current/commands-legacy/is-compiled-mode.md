@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Is compiled mode.Summary-->Is compiled mode prueba si la base se está ejecutando en modo compilado (True) o interpretado (False).<!-- END REF--> 

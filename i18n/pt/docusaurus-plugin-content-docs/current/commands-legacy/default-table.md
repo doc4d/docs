@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.DEFAULT TABLE.Summary-->**Dica**: ainda que utilizar DEFAULT TABLE e omitir o nome da tabela podem fazer o código mais fácil de ler, muitos programadores consideram que a utilização deste comando em realidade traz mais inconvenientes que vantagens.<!-- END REF--> Em particular, note que [DEFAULT TABLE](default-table.md) é prioritário quando utiliza por exemplo o comando [DIALOG](dialog.md) com um formulário projeto e há um formulário da tabela por padrão com o mesmo nome.  

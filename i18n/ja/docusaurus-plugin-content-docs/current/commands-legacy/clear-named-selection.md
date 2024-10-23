@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.CLEAR NAMED SELECTION.Summary-->CLEAR NAMED SELECTION は、命名セレクション*name*をメモリから消去して、*name*が使用していたメモリを解放します。<!-- END REF-->CLEAR NAMED SELECTIONはテーブル、セレクション、およびレコードには影響しません。命名セレクションはメモリを使用するため、不要になったら消去する習慣をつけることをお勧めします。

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Macintosh command down.Summary-->**Macintosh command down** returns TRUE if the Macintosh command key is pressed.<!-- END REF-->

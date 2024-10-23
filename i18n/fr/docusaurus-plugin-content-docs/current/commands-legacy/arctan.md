@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Arctan.Summary-->**Arctan** retourne en radians la valeur de l'angle dont la tangente est spécifiée par *nombre*.<!-- END REF-->

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.BLOB TO DOCUMENT.Summary-->**BLOB TO DOCUMENT** reescreve todo o conteúdo do documento utilizando os dados armazenados no blob.<!-- END REF-->.  

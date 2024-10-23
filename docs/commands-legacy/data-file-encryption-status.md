@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Data file encryption status.Summary-->The **Data file encryption status** command returns an object providing the encryption status for the data file designated by the *structurePath* and *dataPath* parameters.<!-- END REF--> The status for each table is also provided.

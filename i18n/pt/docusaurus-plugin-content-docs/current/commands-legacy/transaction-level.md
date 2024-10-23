@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Transaction level.Summary-->O comando Transaction level retorna o nível de transação atual para o processo.<!-- END REF--> Este comando considera todas as transações do processo atual, sem importar se foram iniciadas através da linguagem 4D ou através de SQL.

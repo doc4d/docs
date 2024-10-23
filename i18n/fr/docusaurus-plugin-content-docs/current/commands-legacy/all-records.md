@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.ALL RECORDS.Summary-->La commande **ALL RECORDS** sélectionne tous les enregistrements de *laTable* pour le process courant.<!-- END REF--> **ALL RECORDS** fait du premier enregistrement de la sélection l'enregistrement courant et le charge en mémoire. **ALL RECORDS** retourne les enregistrements dans l'ordre par défaut, qui est l'ordre dans lequel ils ont été stockés sur le disque.

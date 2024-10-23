@@ -19,6 +19,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.VERIFY DATA FILE.Summary-->**VERIFY DATA FILE**コマンドは、*structurePath*と*dataPath*で指定したデータファイル中にあるオブジェクトの構造的な検証を行います。<!-- END REF-->

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Int.Summary-->Int devuelve la parte entera de *número,* redondeando al entero inferior.<!-- END REF--> 

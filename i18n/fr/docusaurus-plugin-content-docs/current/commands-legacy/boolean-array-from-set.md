@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.BOOLEAN ARRAY FROM SET.Summary-->La commande **BOOLEAN ARRAY FROM SET** remplit un tableau de booléens indiquant si chaque enregistrement de la table à laquelle appartient *ensemble* fait ou non partie de l’ensemble.<!-- END REF-->

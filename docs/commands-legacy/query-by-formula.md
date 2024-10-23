@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.QUERY BY FORMULA.Summary-->**QUERY BY FORMULA** looks for records in *aTable*.<!-- END REF--> It changes the current selection of *aTable* for the current process and makes the first record of the new selection the current record.

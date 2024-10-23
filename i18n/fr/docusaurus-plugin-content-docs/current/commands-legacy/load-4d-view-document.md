@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Load 4D View document.Summary-->La commande **Load 4D View document** convertit un document 4D View en objet 4D.<!-- END REF--> 

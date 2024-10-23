@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.ARRAY BOOLEAN.Summary-->The ARRAY BOOLEAN command creates and/or resizes an array of [Boolean](# "Can be either TRUE or FALSE") elements in memory.<!-- END REF-->

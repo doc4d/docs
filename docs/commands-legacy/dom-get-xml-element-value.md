@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.DOM GET XML ELEMENT VALUE.Summary-->The **DOM GET XML ELEMENT VALUE** command returns, in the *elementValue* parameter, the value of the XML element designated by *elementRef*.<!-- END REF--> 4D will attempt to convert the value obtained into the same type as that of the variable passed as parameter. If the variable type is not defined, the value is returned in text type by default. 

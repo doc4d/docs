@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WP Get position.Summary-->El comando **WP Get position** devuelve un objeto que describe la posición actual de *objRango*.<!-- END REF-->

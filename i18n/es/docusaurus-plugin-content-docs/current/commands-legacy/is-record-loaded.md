@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Is record loaded.Summary-->El comando Is record loaded devuelve True si si el registro actual de *tabla* se carga en el proceso actual.<!-- END REF-->

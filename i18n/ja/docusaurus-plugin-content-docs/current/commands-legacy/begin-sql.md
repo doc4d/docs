@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Begin SQL.Summary-->**Begin SQL**はメソッドエディタで使用するキーワードで、プロセスのカレントデータソース (4Dの統合SQLエンジン、または[SQL LOGIN](sql-login.md)コマンドで特定されたソース) により解釈されるべき一連のコマンドの始まりを宣言します。<!-- END REF--> 

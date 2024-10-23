@@ -109,7 +109,10 @@ As classes disponíveis são acessíveis a partir das suas class stores. Estão 
 
 | Parâmetro  | Tipo   |                                | Descrição                                           |                  |
 | ---------- | ------ | ------------------------------ | --------------------------------------------------- | ---------------- |
-| classStore | Object | &amp;larr; | Class store de usuário para o projeto ou componente | <!-- END REF --> |
+| classStore | Object | &amp;larr; | Class store de usuário para o projeto ou componente | <!-- END REF -->
+
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+ |
 
 O comando `cs` <!-- REF #_command_.cs.Summary -->devolve a loja de classes de utilizadores para o projecto ou componente actual<!-- END REF -->. Ele retorna todas as classes de usuários [definidas](#class-definition) no projeto ou componente aberto. Por padrão, apenas as classes [ORDA do projeto](ORDA/ordaClasses.md) estão disponíveis.
 
@@ -129,7 +132,10 @@ $instance:=cs.myClass.new()
 
 | Parâmetro  | Tipo   |                                | Descrição      |                  |
 | ---------- | ------ | ------------------------------ | -------------- | ---------------- |
-| classStore | Object | &amp;larr; | Class store 4D | <!-- END REF --> |
+| classStore | Object | &amp;larr; | Class store 4D | <!-- END REF -->
+
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+ |
 
 O comando `4D` <!-- REF #_command_.4D.Summary -->retorna a classe store para as classes 4D incorporadas disponíveis<!-- END REF -->. Ele permite acesso a APIs específicas como [CryptoKey](API/CryptoKeyClass.md).
 

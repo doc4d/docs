@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.OB Is empty.Summary-->La commande **OB Is empty** retourne **Vrai** si *objet* est indéfini ou vide, et **Faux** si *objet* est défini (initialisé) et contient au moins une propriété.<!-- END REF-->

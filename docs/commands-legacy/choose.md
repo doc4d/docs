@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Choose.Summary-->The **Choose** command returns one of the values passed in the *value1*, *value2*, etc.<!-- END REF--> parameters depending on the value of the *criterion* parameter.

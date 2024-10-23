@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Table get rows.Summary-->La commande **WP Table get rows** retourne un nouvel objet plage de lignes contenant une sélection de lignes de *objCible* ou de *refTableau*.<!-- END REF-->

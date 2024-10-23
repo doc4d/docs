@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.LOAD RECORD.Summary-->LOAD RECORD carga el registro actual de *tabla*.<!-- END REF--> Si no hay registro actual, LOAD RECORD no tienen ningún efecto.

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WEB GET HTTP HEADER.Summary-->**WEB GET HTTP HEADER**コマンドは、 現在処理されているリクエストのHTTPヘッダーを含む2つの配列、または文字列のいずれかを返します。<!-- END REF--> 

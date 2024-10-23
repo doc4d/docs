@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.OB Is defined.Summary-->O comando**OB Is defined** devolve **True** se *objeto* ou *propriedade* se definem e **False** em caso contrário.<!-- END REF-->  

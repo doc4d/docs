@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Compatibilidad 
 
 <!--REF #_command_.WP Paragraph range.Summary-->**WP Paragraph range** recibió el nombre de **WP Get paragraphs** en versiones anteriores de 4D Write Pro.<!-- END REF--> Ha sido renombrado por claridad.

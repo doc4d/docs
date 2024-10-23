@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Get style sheets.Summary-->The **WP Get style sheets** command returns a collection of all the style sheet objects of the defined *type* in *wpDoc*.<!-- END REF-->

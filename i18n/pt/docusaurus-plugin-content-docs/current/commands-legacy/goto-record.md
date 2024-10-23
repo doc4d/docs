@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 GOTO RECORD seleciona o registro atual de *tabela*. O parâmetro registro é o número devolvido pela função [Record Number](record-number.md "Record Number"). Depois de executar este comando, o registro é o único registro na seleção.  

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.LAST RECORD.Summary-->**LAST RECORD** makes the last record of the current selection of *aTable* the current record and loads the record from disk.<!-- END REF--> If the current selection is empty or if the current record is already the last one in the selection, **LAST RECORD** has no effect.

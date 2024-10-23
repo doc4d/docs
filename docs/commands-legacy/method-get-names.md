@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.METHOD GET NAMES.Summary-->The **METHOD GET NAMES** command fills the *arrNames* array with the names of project methods created in the application.<!-- END REF-->

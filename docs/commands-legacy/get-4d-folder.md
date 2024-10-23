@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Get 4D folder.Summary-->The **Get 4D folder** command returns the pathname to the active 4D folder of the current application, or to the 4D environment folder specified by the *folder* and *options* parameters, if passed.<!-- END REF--> This command allows you to get the actual pathname of the folders used by the 4D application. By using this command, you ensure that your code will work on any platform running any localized system.

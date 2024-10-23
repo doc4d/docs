@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.DOM Get previous sibling XML element.Summary-->El comando DOM Get previous sibling XML element devuelve una referencia al anterior “hermano” del elemento XML pasado en referencia.<!-- END REF--> Esta referencia puede utilizarse con los otros comandos de análisis XML. 

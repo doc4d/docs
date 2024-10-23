@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.BASE64 ENCODE.Summary-->O comando **BASE64 ENCODE** codifica o texto ou BLOB passado no parâmetro em *aDecodificar* em formato base64 ou Base64URL.<!-- END REF-->

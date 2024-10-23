@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.MESSAGES ON.Summary-->[MESSAGES OFF](messages-off.md "MESSAGES OFF") コマンドの説明を参照してください。<!-- END REF-->

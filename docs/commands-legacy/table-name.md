@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Table name.Summary-->The Table name command returns the name of the table whose number or pointer you pass in *tableNum* or *tablePtr*.<!-- END REF-->

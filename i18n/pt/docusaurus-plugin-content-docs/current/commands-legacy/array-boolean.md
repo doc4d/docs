@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.ARRAY BOOLEAN.Summary-->O comando ARRAY BOOLEAN cria e/ou redimensiona um array de elementos  na memória.<!-- END REF-->

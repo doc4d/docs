@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Euro converter.Summary-->The **Euro converter** command converts any value from and to the different currencies belonging to “Euroland” and the Euro currency itself.<!-- END REF-->

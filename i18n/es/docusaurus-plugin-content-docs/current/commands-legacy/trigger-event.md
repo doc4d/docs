@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Trigger event.Summary-->El comando **[Trigger event](trigger-event.md)** se llama en un trigger y devuelve un valor numérico que indica el tipo del evento de la base, en otras palabras, la razón por la cual se invoca el trigger.<!-- END REF--> 

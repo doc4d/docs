@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.DOM Get XML element.Summary-->The DOM Get XML element command returns a reference to the “child” element dependent on the *elementName* and *index* parameters.<!-- END REF-->

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.PROCESS 4D TAGS.Summary-->The **PROCESS 4D TAGS** command causes the processing of 4D transformation tags contained in the *inputTemplate* parameter while (optionally) inserting value(s) using the *param* parameters and returns the result in *outputResult*.<!-- END REF--> For a complete description of these tags, refer to the *4D Transformation Tags* section.

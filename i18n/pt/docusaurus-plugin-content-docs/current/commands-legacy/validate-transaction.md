@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.VALIDATE TRANSACTION.Summary-->VALIDATE TRANSACTION aceita a transação que foi iniciada com [START TRANSACTION](start-transaction.md) do nível correspondente do processo atual.<!-- END REF--> O comando salva as mudanças aos dados do banco que ocorreram durante a transação.

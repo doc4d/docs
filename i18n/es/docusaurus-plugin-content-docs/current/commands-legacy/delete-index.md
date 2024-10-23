@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.DELETE INDEX.Summary-->El comando DELETE INDEX se utiliza para borrar uno o más índices existentes en la base.<!-- END REF-->  

@@ -22,6 +22,9 @@ displayed_sidebar: docs
 |Result|Object|&#8592;|Email object|
 <!-- END REF -->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description
 
 The `MAIL Convert from MIME` command <!-- REF #_command_.MAIL Convert from MIME.Summary -->converts a MIME document into a valid email object<!-- END REF -->.

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.ARRAY TO SELECTION.Summary-->**ARRAY TO SELECTION**コマンドは、1つ以上の配列をレコードのセレクションにコピーします。<!-- END REF-->すべてのフィールドは同一テーブルのものでなければなりません。 

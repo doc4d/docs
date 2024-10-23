@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.COMPRESS BLOB.Summary-->The **COMPRESS BLOB** command compresses the BLOB *blob* using a compression algorithm.<!-- END REF--> This command only compresses BLOB whose size is over 255 bytes.

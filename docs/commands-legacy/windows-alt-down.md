@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Windows Alt down.Summary-->**Windows Alt down** returns TRUE if the Windows Alt key is pressed.<!-- END REF-->

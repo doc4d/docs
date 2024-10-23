@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.JSON Stringify array.Summary-->**JSON Stringify array**コマンドは、4D配列 *array* をシリアライズされたJSON配列へと変換します。<!-- END REF-->このコマンドは [JSON PARSE ARRAY](json-parse-array.md)コマンドと逆の挙動をします。

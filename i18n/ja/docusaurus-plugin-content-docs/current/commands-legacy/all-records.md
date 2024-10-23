@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.ALL RECORDS.Summary-->ALL RECORDSは、*aTable*の全レコードをカレントプロセスのカレントセレクションにします。<!-- END REF-->ALL RECORDSは先頭のレコードをディスクからロードし、カレントレコードに設定します。ALL RECORDSは、レコードの順序をデフォルトのレコード順序に戻します。

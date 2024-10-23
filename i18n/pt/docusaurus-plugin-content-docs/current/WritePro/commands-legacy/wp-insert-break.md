@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WP INSERT BREAK.Summary-->O comando **WP INSERT BREAK** \[#descv\] insere uma nova ruptura de tipo *tipoRuptura* na faixa de seleção *objFaixa* segundo o modo de inserção *modo* e o parâmetro *AtualizFaixa*.<!-- END REF--> \[#descv\]

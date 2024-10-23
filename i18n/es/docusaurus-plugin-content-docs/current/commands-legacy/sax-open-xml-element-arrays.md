@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.SAX OPEN XML ELEMENT ARRAYS.Summary-->El comando SAX OPEN XML ELEMENT ARRAYS permite añadir un nuevo elemento en el documento XML cuya referencia se pasa en *document* como también, opcionalmente, atributos y sus valores en forma de arrays.<!-- END REF--> 

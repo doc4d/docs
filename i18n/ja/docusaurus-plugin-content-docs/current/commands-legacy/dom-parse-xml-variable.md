@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DOM Parse XML variable.Summary-->**DOM Parse XML variable**コマンドはXML構造を格納するBLOBまたはテキスト型変数を解析し、XML構造への参照を返します。<!-- END REF-->コマンドはDTDやXMLスキーマ (XML Schema Definition (XSD) ドキュメント) を使用してドキュメントの検証を行うこともできます。

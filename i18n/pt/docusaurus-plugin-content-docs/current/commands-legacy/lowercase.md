@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Lowercase.Summary-->**Lowercase** devolve uma *cadeia* de caracteres igual ao parâmetro *cadeia* com todos os caracteres alfabéticos convertidos para minúsculas.<!-- END REF-->  

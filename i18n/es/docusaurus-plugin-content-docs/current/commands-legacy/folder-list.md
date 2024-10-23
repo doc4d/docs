@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.FOLDER LIST.Summary-->El comando FOLDER LIST llena el array de tipo Texto o Alfa *directorios* con los nombres de las carpetas ubicadas en la ruta de acceso que se pasa en *rutaAcceso*.<!-- END REF--> 

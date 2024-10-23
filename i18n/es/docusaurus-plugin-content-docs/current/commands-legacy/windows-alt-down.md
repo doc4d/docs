@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Windows Alt down.Summary-->Windows Alt down devuelve TRUE si la tecla Alt Windows está presionada.<!-- END REF--> 

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Get group access.Summary-->O comando **Get group access** devolve às filiações da conta de usuário 4D para a sessão atual.<!-- END REF--> Se o usuário não pertencer a nenhum grupo na sessão, se devolver uma coleção vazia.

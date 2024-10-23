@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.System folder.Summary-->The **System folder** command returns the pathname to a particular folder of the operating system or to the active Windows or macOS System folder itself.<!-- END REF-->

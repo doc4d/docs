@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Windows Alt down.Summary-->**Windows Alt down** retourne Vrai si la touche **Alt** Windows est enfoncée.<!-- END REF-->

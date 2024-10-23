@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Get subsection.Summary-->La commande **WP Get subsection** retourne soit la première sous-section intersectée par la plage ou par l'élément *objCible*, soit la sous-section *typeSousSection* spécifiée de la section *wpSection*.<!-- END REF-->

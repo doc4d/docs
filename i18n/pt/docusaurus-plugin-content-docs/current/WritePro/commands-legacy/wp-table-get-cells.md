@@ -19,6 +19,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WP Table get cells.Summary-->O comando **WP Table get cells** \[#descv\]devolve um novo objeto de faixa de células que contenha a seleção de células *refTabela* definida por *colIni*, *filaIni*, *numCol* e *numFilas*.<!-- END REF-->\[#descv\]

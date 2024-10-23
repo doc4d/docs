@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.BLOB to real.Summary-->El comando BLOB to real devuelve un valor de tipo Real leído del BLOB *blob*.<!-- END REF-->

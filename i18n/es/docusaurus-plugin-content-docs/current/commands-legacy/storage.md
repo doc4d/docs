@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Storage.Summary-->El método **Storage** devuelve el catálogo de objetos compartidos o colecciones compartidas registrados registradas en el objeto *Storage* en la máquina o componente actual.<!-- END REF--> 

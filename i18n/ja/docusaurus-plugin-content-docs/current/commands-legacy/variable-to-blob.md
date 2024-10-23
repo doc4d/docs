@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.VARIABLE TO BLOB.Summary-->**VARIABLE TO BLOB**コマンドは、*variable*を*blob*に格納します。<!-- END REF-->

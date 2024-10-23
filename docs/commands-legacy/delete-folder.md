@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.DELETE FOLDER.Summary-->The **DELETE FOLDER** command deletes the folder whose name or full path has been passed in *folder*.<!-- END REF--> 

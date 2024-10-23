@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Count in array.Summary-->Count in array コマンドは、*array*内で見つかった*value*の数を返します。<!-- END REF-->

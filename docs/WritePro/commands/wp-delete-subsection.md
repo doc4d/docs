@@ -14,6 +14,9 @@ displayed_sidebar: docs
 | subSection | Object | &#8594;  | 4D Write Pro subsection |
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 
 #### Description 
 

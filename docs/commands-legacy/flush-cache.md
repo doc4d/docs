@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.FLUSH CACHE.Summary-->The FLUSH CACHE command immediately saves the data buffers to disk.<!-- END REF--> All changes that have been made to the database are stored on disk.

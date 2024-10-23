@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Time.Summary-->Time コマンドは、*timeValue* 引数で指定した時間に相当する時間表示を返します。<!-- END REF--> 

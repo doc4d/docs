@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WP SET ATTRIBUTES.Summary-->O novo comando **WP SET ATTRIBUTES** lhe permite estabelecer o valor de qualquer atributo em uma faixa, um elemento ou um documento.<!-- END REF--> Este comando lhe permite acessar a qualquer tipo de atributo interno 4D Write Pro: caractere, parágrafo, documento, tabela ou imagem. 

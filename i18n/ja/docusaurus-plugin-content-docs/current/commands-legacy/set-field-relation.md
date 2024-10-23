@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SET FIELD RELATION.Summary-->**SET FIELD RELATION** コマンドを使用すると、デザインモードのリレートプロパティウィンドウで設定した初期状態が何であれ、データベースの各リレートの自動/マニュアルの状態を個別に設定できます。<!-- END REF--> 

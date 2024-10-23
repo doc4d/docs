@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.XML GET ERROR.Summary-->XML GET ERROR コマンドは*errorText* 引数に、*elementRef* 引数で指定されたXML要素の処理中に検知したエラーの説明を返します。<!-- END REF-->返される情報はXerces.DLLライブラリから提供されるものです。 

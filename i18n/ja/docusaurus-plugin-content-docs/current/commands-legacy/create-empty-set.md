@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.CREATE EMPTY SET.Summary-->CREATE EMPTY SETは、*aTable*に対して新しい空のセット*set*を作成します。<!-- END REF-->[ADD TO SET](add-to-set.md "ADD TO SET")コマンドを使って、このセットにレコードを追加できます。既に同じ名前のセットが存在している場合、そのセットを消去して新しい空のセットに置き換えます。

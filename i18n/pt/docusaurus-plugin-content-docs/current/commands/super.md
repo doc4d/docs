@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF -->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 A palavra-chave `Super` <!-- REF #_command_.Super.Summary -->permite chamadas à `superclasse`, ou seja, a classe pai<!-- END REF -->.
 
 `Super` tem dois objectivos diferentes:

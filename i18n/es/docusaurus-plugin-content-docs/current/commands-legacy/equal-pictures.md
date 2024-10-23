@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Equal pictures.Summary-->El comando **Equal pictures** compara con precisión las dimensiones y el contenido de dos imágenes.<!-- END REF-->  

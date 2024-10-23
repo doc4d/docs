@@ -26,6 +26,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción
 
 El comando `Open datastore` <!-- REF #_command_.Open datastore.Summary -->conecta la aplicación a la base de datos remota identificada por el parámetro *connectionInfo*<!-- END REF --> y devuelve un objeto `cs.DataStore` asociado al alias local *localID*.

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WP DELETE PICTURE.Summary-->El comando **WP DELETE PICTURE**  elimina la imagen definida por el parámetro *objImagen*.<!-- END REF-->

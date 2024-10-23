@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Get subsection.Summary-->The **WP Get subsection** command returns first subsection intersected by the *targetObj* range or element, or to the specified *subSectionType* subsection of the *wpSection* section.<!-- END REF-->

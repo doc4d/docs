@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.ABORT.Summary-->O comando ABORT é utilizado em um método de projeto de gestão de erros instalado pelo comando [ON ERR CALL](on-err-call.md "ON ERR CALL").<!-- END REF-->

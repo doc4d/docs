@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Table get rows.Summary-->The **WP Table get rows** command returns a new row range object containing a selection of rows from *targetObj* or *tableRef*.<!-- END REF--> 

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Current machine.Summary-->La commande   **Current machine** retourne le nom de la machine tel qu'il a été défini dans les paramètres réseau du système d'exploitation.<!-- END REF-->

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP SET VIEW PROPERTIES.Summary-->La commande **WP SET VIEW PROPERTIES** vous permet de fixer dynamiquement une ou plusieurs propriétés de vue pour la zone 4D Write Pro *zoneWP*.<!-- END REF--> 

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.FORM Event.Summary-->**FORM Event** devolve um objeto que contém informação sobre o evento de formulário que acaba de ocorrer.<!-- END REF--> Em geral, usará **FORM Event** desde um formulário ou método de objeto.

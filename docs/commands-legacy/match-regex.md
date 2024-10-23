@@ -25,6 +25,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Match regex.Summary-->The **Match regex** command checks the conformity of a character string with respect to a set of synthesized rules by means of a meta-language called “regular expression” or “rational expression.<!-- END REF-->” The regex abbreviation is commonly used to indicate these types of notations.

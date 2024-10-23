@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.POP RECORD.Summary-->POP RECORD carrega o primeiro registro da pilha de registros da tabela e o transforma no registro atual.<!-- END REF-->  

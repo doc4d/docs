@@ -19,6 +19,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.GET RELATION PROPERTIES.Summary-->O comando GET RELATION PROPERTIES retorna as propriedades da relação (se houver) que começa do campo fonte definido por *numTabela* e *numCamp*o ou por *pontCampo*.<!-- END REF-->

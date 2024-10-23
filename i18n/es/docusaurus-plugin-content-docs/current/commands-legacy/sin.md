@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Sin.Summary-->Sin devuelve el seno del *número*, donde *número* se expresa en radianes.<!-- END REF-->

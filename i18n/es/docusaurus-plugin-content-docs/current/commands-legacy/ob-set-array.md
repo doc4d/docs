@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.OB SET ARRAY.Summary-->El comando **OB SET ARRAY** define el *array* a asociarse a la *propiedad* en el objeto definido por el parámetro *objeto*.<!-- END REF-->

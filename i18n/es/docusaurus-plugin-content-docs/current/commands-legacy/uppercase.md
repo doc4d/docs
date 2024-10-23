@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Uppercase.Summary-->Uppercase devuelve una cadena de caracteres igual a *laCadena* con todos los caracteres alfabéticos convertidos en mayúsculas.<!-- END REF-->

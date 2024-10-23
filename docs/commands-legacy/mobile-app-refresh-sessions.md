@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.MOBILE APP REFRESH SESSIONS.Summary-->The **MOBILE APP REFRESH SESSIONS** command checks all mobile application session files located in the MobileApps folder of the server, and updates existing session contents in memory for any edited files.<!-- END REF-->

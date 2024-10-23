@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.COPY ARRAY.Summary-->COPY ARRAY コマンドは*destination* 配列を、*source* 配列と同じ内容、サイズ、およびタイプで作成または上書きします。<!-- END REF-->

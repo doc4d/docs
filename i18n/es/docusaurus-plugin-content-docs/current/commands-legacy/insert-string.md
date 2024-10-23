@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Insert string.Summary-->Insert string inserta la cadena de caracteres alfanuméricos *ainsertar* en la cadena *fuente* a partir de *posicion* y devuelve la cadena de caracteres resultante.<!-- END REF--> La cadena *ainsertar* se coloca antes del carácter designado por *posicion*. 

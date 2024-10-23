@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Choose.Summary-->O comando **Choose** retorna um dos valores passados nos parâmetros *valor1, valor2*, etc.<!-- END REF--> em função do valor do parâmetro *criterio*.

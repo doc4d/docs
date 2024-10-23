@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.JSON Validate.Summary-->The **JSON Validate** command checks the compliance of the *vJson* JSON contents with the rules defined in the *vSchema* JSON schema.<!-- END REF--> If the JSON is invalid, the command returns a detailed description of error(s). 

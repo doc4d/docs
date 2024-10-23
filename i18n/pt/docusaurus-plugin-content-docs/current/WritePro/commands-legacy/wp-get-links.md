@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WP Get links.Summary-->**WP Get links** devolve a coleção de todos os links definidos em *objRange*.<!-- END REF-->

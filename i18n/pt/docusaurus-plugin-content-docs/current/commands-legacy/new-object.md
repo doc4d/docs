@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.New object.Summary-->O comando **New object** cria um novo objeto vazio ou pré-recheado e devolve sua referência.<!-- END REF-->

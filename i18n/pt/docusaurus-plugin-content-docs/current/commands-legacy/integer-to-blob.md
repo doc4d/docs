@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.INTEGER TO BLOB.Summary-->O comando INTEGER TO BLOB grava o valor inteiro de 2 bytes Inteiro no BLOB *blob*.<!-- END REF-->

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Count parameters.Summary-->Count parameters コマンドは、プロジェクトメソッドに渡された引数の数を返します。<!-- END REF-->

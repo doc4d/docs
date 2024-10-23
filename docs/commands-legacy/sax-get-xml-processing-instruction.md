@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.SAX GET XML PROCESSING INSTRUCTION.Summary-->The **SAX GET XML PROCESSING INSTRUCTION** command returns the *name* and *value* of the XML instruction processed in the XML document referenced in the *document* parameter.<!-- END REF--> This command must be called with the XML Processing Instruction event. For more information about SAX events, refer to the description of the [SAX Get XML node](sax-get-xml-node.md) command. 

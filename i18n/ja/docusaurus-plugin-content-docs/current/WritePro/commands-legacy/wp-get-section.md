@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WP Get section.Summary-->**WP Get section** コマンドは、*targetObj* 引数のレンジと交差する最初のセクションまたは要素、あるいは*wpDoc* 引数のドキュメント内で*sectionIndex* 引数で指定されたセクションを返します。<!-- END REF-->

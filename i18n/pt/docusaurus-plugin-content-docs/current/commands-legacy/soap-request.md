@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.SOAP request.Summary-->O comando SOAP request devolve True se o código em execução for parte de uma petição SOAP.<!-- END REF-->  

@@ -30,6 +30,9 @@ displayed_sidebar: docs
 |Result|4D.MailAttachment|&#8592;|Attachment object|
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 
 #### Description
 

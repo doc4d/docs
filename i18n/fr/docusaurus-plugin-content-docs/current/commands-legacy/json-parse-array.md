@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.JSON PARSE ARRAY.Summary-->La commande **JSON PARSE ARRAY** analyse (*parse*) le contenu d’une chaîne formatée en JSON et place les données extraites dans le tableau *tab*.<!-- END REF--> Cette commande désérialise des données JSON ; elle effectue l’action inverse de la commande [JSON Stringify array](json-stringify-array.md).

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SAVE VARIABLES.Summary-->SAVE VARIABLES コマンドを使用して、引数 *document* に渡した名前を持つドキュメントに 1つまたは複数の変数を保存します。<!-- END REF-->

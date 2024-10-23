@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.DOM GET XML ELEMENT VALUE.Summary-->O comando **DOM GET XML ELEMENT VALUE** retorna no parâmetro *valorElement*, o valor do elemento XML designado por *refElement*.<!-- END REF--> 4D tentará convertir o valor obtido no tipo de variável passada como parâmetro.Se o tipo de variável não for definido, o valor é retornado no tipo texto como padrão. 

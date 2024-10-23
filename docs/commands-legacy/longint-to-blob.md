@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.LONGINT TO BLOB.Summary-->The LONGINT TO BLOB command writes the 4-byte Long Integer value *integer* into the BLOB *blob*.<!-- END REF-->

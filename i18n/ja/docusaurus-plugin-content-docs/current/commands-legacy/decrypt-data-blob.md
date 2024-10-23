@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Decrypt data BLOB.Summary-->**Decrypt data BLOB** コマンドは、*blobToDecrypt* 引数のBLOB を、4D がデータの復号化に使用するのと同じアルゴリズム(AES-256) を使用して復号化し、その結果を*decryptedBLOB* 引数に返します

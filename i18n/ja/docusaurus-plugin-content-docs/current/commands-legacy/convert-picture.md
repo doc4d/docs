@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.CONVERT PICTURE.Summary-->CONVERT PICTURE コマンドは*picture*を新しいタイプに変換します。<!-- END REF--> 

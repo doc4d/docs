@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.DOM Get XML document ref.Summary-->La commande **DOM Get XML document ref** permet de récupérer la référence de l’élément "document" de l’arbre DOM dont vous avez passé la référence dans *refElément*.<!-- END REF--> L’élément document est le premier élément d’un arbre DOM ; c’est le parent de l’élément racine. 

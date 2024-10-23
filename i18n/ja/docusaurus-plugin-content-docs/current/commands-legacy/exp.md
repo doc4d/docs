@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Exp.Summary-->Expは自然対数の底（e = 2.<!-- END REF-->71828...）の*number*乗の値を計算します。ExpはLogの逆の関数です。

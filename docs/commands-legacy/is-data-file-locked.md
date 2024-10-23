@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Is data file locked.Summary-->The Is data file locked command returns True if the data file of the open database or at least one of its segments is locked — i.<!-- END REF-->e. write protected. 

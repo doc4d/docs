@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WEB Get body part count.Summary-->La commande **WEB Get body part count** retourne le nombre de parties qui composent le body (corps) reçu.<!-- END REF-->

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.CLEAR SET.Summary-->CLEAR SET Apaga *conjunto* da memória e libera a memória utilizada por *conjunto*.<!-- END REF--> O comando não afeta as tabelas, seleções, ou registros. Para salvar um conjunto antes de apagá-lo, utilize o comando [SAVE SET](save-set.md). Como os conjuntos utilizam memória, é bom apagá-los quando não forem mais necessários.  

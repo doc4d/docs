@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.SAX ADD XML DOCTYPE.Summary-->O comando SAX ADD XML DOCTYPE adiciona a instrução DocType definida pelo parâmetro *docType* no documento XML referenciado por *documento*.<!-- END REF-->  

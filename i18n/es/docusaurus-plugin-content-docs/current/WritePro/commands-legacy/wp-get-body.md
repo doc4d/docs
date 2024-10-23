@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WP Get body.Summary-->El comando **WP Get body** devuelve el elemento cuerpo del documento 4D Write Pro *wpDoc*.<!-- END REF-->

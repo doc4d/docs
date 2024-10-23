@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SCAN INDEX.Summary-->SCAN INDEXは、*aField* フィールドを含むテーブルから*number*個のレコードのセレクションを作成します。<!-- END REF-->*<*を渡した場合、SCAN INDEXはインデックスの最後から*number*個のセレクション作成します。*\>*を渡した場合、SCAN INDEXはインデックスの先頭から*number*個のセレクションを作成します。このコマンドは、インデックスを用いるため非常に効率が良くなります。

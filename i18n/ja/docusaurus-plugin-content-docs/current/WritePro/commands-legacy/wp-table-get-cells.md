@@ -19,6 +19,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WP Table get cells.Summary-->**WP Table get cells** コマンドは、 *targetObj* または(*startCol*、*startRow*、*numCols*、および *numRows* 引数で定義された)*tableRef* で指定した表から、セルのセレクションを格納した新しいレンジオブジェクトを返します。<!-- END REF-->

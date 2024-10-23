@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.USE NAMED SELECTION.Summary-->USE NAMED SELECTION utiliza el nombre de la selección temporal como selección actual para la tabla a la cual pertenece.<!-- END REF-->

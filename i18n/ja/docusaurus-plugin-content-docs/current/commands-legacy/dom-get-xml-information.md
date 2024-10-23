@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DOM Get XML information.Summary-->DOM Get XML information コマンドを使用して、*elementRef*で指定したXML要素に関する様々な情報を取得できます。<!-- END REF-->

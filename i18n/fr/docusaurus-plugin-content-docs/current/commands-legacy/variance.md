@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Variance.Summary-->**Variance** retourne la variance de *séries*.<!-- END REF--> Si *séries* est un champ indexé, l'index est utilisé pour le calcul.

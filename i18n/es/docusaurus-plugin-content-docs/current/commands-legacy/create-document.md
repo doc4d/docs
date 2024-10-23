@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Create document.Summary-->El comando Create document crea un nuevo documento y devuelve su número de referencia.<!-- END REF--> 

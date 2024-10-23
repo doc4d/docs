@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WEB SEND RAW DATA.Summary-->The **WEB SEND RAW DATA** command lets the 4D Web server send “raw” HTTP data, which can be chunked.<!-- END REF--> . 

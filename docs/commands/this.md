@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 The `This` command <!--REF #_command_.This.Summary-->returns a reference to the currently processed object.<!-- END REF-->

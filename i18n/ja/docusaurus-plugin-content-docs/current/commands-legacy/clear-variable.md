@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.CLEAR VARIABLE.Summary-->CLEAR VARIABLE コマンドを使用して、 *variable* をそのデフォルト値へ再設定します (テキスト変数は空の文字列に、数値変数には *0* に、配列はエレメントを空にします) 。<!-- END REF-->しかし、変数はメモリに存在しています。

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.New shared object.Summary-->La commande **New shared object** crée un objet partagé vide ou pré-rempli et retourne sa référence.<!-- END REF--> L'ajout et la modification de propriétés dans un objet partagé doivent être encadrés par une structure *Utiliser...Fin utiliser*, sinon une erreur est générée. La lecture d'une propriété hors *Utiliser...Fin utiliser* est toutefois possible. 

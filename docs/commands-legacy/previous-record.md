@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.PREVIOUS RECORD.Summary-->**PREVIOUS RECORD** moves the current record pointer to the previous record in the current selection of *aTable* for the current process.<!-- END REF--> If the current selection is empty, or if [Before selection](before-selection.md) or [End selection](end-selection.md) is TRUE, **PREVIOUS RECORD** has no effect.

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Discover data key.Summary-->El comando **Discover data key** busca una llave de cifrado válida correspondiente al archivo de datos abierto actualmente a nivel de la raíz de todos los dispositivos conectados y devuelve **True** si es exitoso.<!-- END REF--> 

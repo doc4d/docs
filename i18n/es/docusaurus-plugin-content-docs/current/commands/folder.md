@@ -27,6 +27,9 @@ displayed_sidebar: docs
 
 <!-- END REF -->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción
 
 El comando `Folder` <!-- REF #_command_.Folder.Summary -->crea y devuelve un nuevo objeto del tipo `4D.Folder`<!-- END REF -->. El comando acepta dos sintaxis:

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.SAVE RECORD.Summary-->**SAVE RECORD** saves the current record of *aTable* in the current process.<!-- END REF--> If there is no current record, then **SAVE RECORD** is ignored.

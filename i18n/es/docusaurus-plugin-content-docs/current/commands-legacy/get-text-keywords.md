@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.GET TEXT KEYWORDS.Summary-->El comando **GET TEXT KEYWORDS** divide todo el *texto* en palabras individuales y crea, para cada palabra obtenida, un elemento en el array texto *arrPalabrasClaves* para cada palabra.<!-- END REF-->  

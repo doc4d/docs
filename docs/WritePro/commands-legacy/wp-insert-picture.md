@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP INSERT PICTURE.Summary-->The **WP INSERT PICTURE** command inserts the *picture* in the *targetObj* according to the specified insertion *mode* and *rangeUpdate* parameter.<!-- END REF--> The picture will be inserted as a character in the *targetObj*. 

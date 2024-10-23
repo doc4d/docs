@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Undefined.Summary-->Undefined コマンドは、*expression* の評価の結果が未定義の値である場合には[True](true.md "True")を返し、それ以外の場合には[False](false.md "False")を返します。<!-- END REF-->

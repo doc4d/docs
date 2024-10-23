@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.UNLOAD RECORD.Summary-->UNLOAD RECORD descarga el registro actual de *tabla*.<!-- END REF-->

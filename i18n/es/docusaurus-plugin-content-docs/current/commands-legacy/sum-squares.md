@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Sum squares.Summary-->**Sum squares** devuelve la suma de cuadrados de *series*.<!-- END REF--> Si *series* es un campo indexado, el índice se utiliza para calcular la suma de cuadrados. 

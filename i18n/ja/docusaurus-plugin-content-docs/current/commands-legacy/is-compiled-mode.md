@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Is compiled mode.Summary-->Is compiled modeは、データベースがコンパイルモード（True）、ま たはインタプリタモード（False）のどちらで実行されているかをテストします。<!-- END REF-->  

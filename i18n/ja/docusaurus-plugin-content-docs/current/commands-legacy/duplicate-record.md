@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DUPLICATE RECORD.Summary-->DUPLICATE RECORDは、カレントレコードを複製して同じ*aTable*内に新しいレコードを作成します。<!-- END REF-->新しいレコードはカレントレコードとなります。カレントレコードが存在しない場合、DUPLICATE RECORDは何も行いません。新しいレコードを保存するには[SAVE RECORD](save-record.md "SAVE RECORD")を使用しなければなりません。

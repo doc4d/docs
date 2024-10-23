@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.CLEAR VARIABLE.Summary-->CLEAR VARIABLE reinicia *variable* en el valor por defecto de su tipo (por ejemplo, cadena vacía para los tipos Alfa y Texto, *0* para las variables numéricas, ningún elemento para un array, etc.).<!-- END REF--> La variable continúa existiendo en memoria.

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WEB GET HTTP BODY.Summary-->El comando **WEB GET HTTP BODY** devuelve el cuerpo de la solicitud HTTP que esta siendo procesada.<!-- END REF--> El cuerpo HTTP se devuelve tal cual, sin proceso ni análisis. 

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SAX SET XML DECLARATION.Summary-->**SAX SET XML DECLARATION** コマンドは*document* で参照されるXMLドキュメントを、引数のエンコーディングを使用して初期化します。<!-- END REF-->オプションとして、*standalone* 引数を使用してスタンドアロン属性を設定することができます。

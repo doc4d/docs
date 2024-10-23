@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.APPLY TO SELECTION.Summary-->APPLY TO SELECTION aplica *formula* a cada registro da seleção atual de tabela.<!-- END REF--> A *fórmula* pode ser uma linha de instruções ou um método. Se *formula* modifica um registro de tabela, o registro modificado é salvado. Se fórmula não modifica um registro, o registro não é salvado. Se a seleção atual estiver vazia, APPLY TO SELECTION não tem efeito. Se a relação for automática, a fórmula pode conter um campo de uma tabela relacionada.  

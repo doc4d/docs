@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Convert to text.Summary-->Convert to textコマンドは、*blob*引数に含まれているテキストを変換して、4Dの文字セットで記述されているテキストで返します。<!-- END REF--> 4DはデフォルトでUnicode 文字コードを使用します。  

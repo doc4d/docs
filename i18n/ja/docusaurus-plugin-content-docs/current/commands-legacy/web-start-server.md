@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WEB START SERVER.Summary-->**WEB START SERVER**コマンドは、実行中の4Dアプリケーション上でWebサーバを起動します。<!-- END REF-->結果、データベースはイントラネットやインターネット上で公開されます。

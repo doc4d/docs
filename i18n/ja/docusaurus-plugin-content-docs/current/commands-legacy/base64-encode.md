@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.BASE64 ENCODE.Summary-->**BASE64 ENCODE** コマンドは、*toEncode* 引数に渡されたテキストまたはBlob値を、Base64 またはBase64URL フォーマットにエンコードします。<!-- END REF--> 

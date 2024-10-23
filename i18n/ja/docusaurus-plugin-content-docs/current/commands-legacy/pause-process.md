@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.PAUSE PROCESS.Summary-->PAUSE PROCESSは、[RESUME PROCESS](resume-process.md "RESUME PROCESS")コマンドで再開されるまで*process*の実行を停止します。<!-- END REF-->この間*process*はマシンの処理時間を使用しません。プロセスは停止されてもメモリ内に残ります。

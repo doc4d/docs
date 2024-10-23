@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WP DELETE HEADER.Summary-->O comando **WP DELETE HEADER**  elimina o elemento do cabeçalho associado à seção ou subseção definida pelo parâmetro *wpSection*.<!-- END REF--> 

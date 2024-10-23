@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SET PICTURE FILE NAME.Summary-->**SET PICTURE FILE NAME**コマンドは引数に渡したピクチャーのデフォルト名を設定あるいは変更します。<!-- END REF-->

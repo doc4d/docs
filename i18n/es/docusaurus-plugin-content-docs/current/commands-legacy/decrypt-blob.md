@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.DECRYPT BLOB.Summary-->El comando DECRYPT BLOB descifra el contenido del BLOB aDescrifrar utilizando la llave pública del emisor *enviarLlavePub* y opcionalmente la llave privada del receptor *recepLlavePriv*.<!-- END REF-->

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.ARRAY PICTURE.Summary-->The ARRAY PICTURE command creates and/or resizes an array of [Picture](# "Can be any Windows or Macintosh picture") elements in memory.<!-- END REF--> 

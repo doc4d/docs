@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.SOAP REJECT NEW REQUESTS.Summary-->La commande **SOAP REJECT NEW REQUESTS** permet d'indiquer si le serveur Web Services accepte ou non de nouvelles requêtes SOAP.<!-- END REF--> 

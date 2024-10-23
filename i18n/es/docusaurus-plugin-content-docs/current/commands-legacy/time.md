@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Time.Summary-->El comando Time devuelve una expresión de tipo Hora equivalente a la hora especificada en el parámetro *valHora*.<!-- END REF-->

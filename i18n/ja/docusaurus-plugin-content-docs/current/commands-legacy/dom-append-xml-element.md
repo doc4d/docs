@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DOM Append XML element.Summary-->DOM Append XML element コマンドは*targetElementRef* 引数に渡した参照を持つXML要素の子要素を新しいXML要素に追加します。<!-- END REF--> 

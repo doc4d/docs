@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.CREATE SET FROM ARRAY.Summary-->El comando CREATE SET FROM ARRAY crea *nomCon* a partir de: 

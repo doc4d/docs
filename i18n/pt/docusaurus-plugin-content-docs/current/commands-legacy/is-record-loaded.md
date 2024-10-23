@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Is record loaded.Summary-->O comando **Is record loaded** devolve [True](true.md "True") se o registro atual de *tabela* é carregado no processo atual.<!-- END REF-->  

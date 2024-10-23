@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.CLEAR NAMED SELECTION.Summary-->**CLEAR NAMED SELECTION** clears *name* from memory and frees the memory used by *name*.<!-- END REF--> The command does not affect tables, selections, or records. Since named selections use memory, it is good practice to clear named selections when they are no longer needed.

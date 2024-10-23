@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Timestamp.Summary-->**Timestamp** returns the current UTC time in ISO format with milliseconds, i.<!-- END REF-->e. yyyy-MM-ddTHH:mm:ss.SSSZ. Note that the "Z" character indicates the GMT time zone. 

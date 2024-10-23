@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.COLLECTION TO ARRAY.Summary-->El comando **COLLECTION TO ARRAY** llena una o más *array*(s) con elementos o valores de *nombreProp* de la *coleccion* en *array*(s).<!-- END REF-->

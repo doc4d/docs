@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Variance.Summary-->Variance devolve a variância para *series*.<!-- END REF--> Se *series* for um campo indexado, o índice se utiliza para calcular a variância. Só pode utilizar um campo com esta função quando imprime um relatório.  

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.OB GET ARRAY.Summary-->O comando **OB GET ARRAY** recupera em *array*, o array de valores armazenados na *propriedade* do objeto de linguagem designado pelo parâmetro *objeto*.<!-- END REF-->  

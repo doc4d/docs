@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Description 
 
 <!--REF #_command_.CREATE DATA FILE.Summary-->O comando **CREATE DATA FILE** permite criar um novo arquivo de dados em disco e substituir o arquivo de dados aberto pela aplicação 4D.<!-- END REF-->

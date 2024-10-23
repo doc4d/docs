@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.PREVIOUS RECORD.Summary-->PREVIOUS RECORD mueve el puntero del registro actual al registro anterior en la selección de *tabla* para el proceso actual.<!-- END REF--> Si la selección actual está vacía, o si [Before selection](before-selection.md "Before selection") o [End selection](end-selection.md "End selection") es TRUE, PREVIOUS RECORD no tienen ningún efecto. 

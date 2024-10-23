@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.EXPAND BLOB.Summary-->El comando EXPAND BLOB descomprime el BLOB *blob* que fue previamente comprimido utilizando el comando COMPRESS BLOB.<!-- END REF-->  

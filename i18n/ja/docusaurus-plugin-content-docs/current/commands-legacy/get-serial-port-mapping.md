@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.GET SERIAL PORT MAPPING.Summary-->GET SERIAL PORT MAPPING コマンドはマシンのシリアルポート番号とシリアルポート名を、2つの配列*numArray* と *nameArray*に返します。<!-- END REF--> 

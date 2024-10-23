@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.PROCESS 4D TAGS.Summary-->El comando **PROCESS 4D TAGS** provoca el procesamiento de las etiquetas de transformación 4D contenidas en el parámetro *plantillaEntrada* mientras opcionalmente inserta valores utilizando los valores vía los parámetros *param* y devuelve los datos resultantes en *datosSalida*.<!-- END REF-->Para una descripción completa de estas etiquetas, consulte la sección *Etiquetas de transformación 4D*.  

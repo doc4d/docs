@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.APPLY TO SELECTION.Summary-->La commande **APPLY TO SELECTION** applique *formule* à chaque enregistrement de la sélection courante de *laTable*.<!-- END REF--> La *formule* peut être une ligne d'instructions ou une méthode (dans ce cas, le nom de la méthode doit être saisi sans ""). Si *formule* entraîne la modification d'un enregistrement de *laTable*, l'enregistrement modifié est sauvegardé. Si *formule* ne modifie pas d'enregistrement, aucune sauvegarde n'est réalisée. Si la sélection courante est vide, **APPLY TO SELECTION** ne fait rien. La *formule* peut faire appel à un champ d'une table liée si le lien est automatique.

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.RECEIVE PACKET.Summary-->RECEIVE PACKET コマンドは、シリアルポートまたはドキュメントから文字を読み込みます。<!-- END REF--> 

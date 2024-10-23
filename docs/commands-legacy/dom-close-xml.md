@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.DOM CLOSE XML.Summary-->The DOM CLOSE XML command frees up the memory occupied by the XML object designated by *elementRef*.<!-- END REF--> 

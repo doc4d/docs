@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Records in set.Summary-->Records in set retorna o número de registros em *conjunto*.<!-- END REF--> Se *conjunto* não existir, ou se não houver registros em *conjunto*, o comando retorna 0.

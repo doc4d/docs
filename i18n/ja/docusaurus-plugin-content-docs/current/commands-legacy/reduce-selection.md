@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.REDUCE SELECTION.Summary-->REDUCE SELECTIONは、*aTable*の新しいレコードセレクションを作成します。<!-- END REF-->このコマンドは*aTable*のカレントセレクションの先頭から*number*個のレコードセレクションを返します。REDUCE SELECTIONは、カレントプロセスの*aTable*のカレントセレクションに適用されます。これはカレントプロセスの*aTable*のカレントセレクションを変更し、新しいセレクションの先頭レコードをカレントレコードにします。

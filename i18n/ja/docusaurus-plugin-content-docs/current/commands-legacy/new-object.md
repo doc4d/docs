@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.New object.Summary-->**New object** コマンドは新しい空の、あるいは事前に値が入れられたオブジェクトを作成し、その参照を返します。<!-- END REF-->

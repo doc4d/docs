@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Generate digest.Summary-->O comando **Generate digest** retorna a chave digest (ou chave de resumo) de um BLOB ou texto depois da aplicação de um algoritmo de criptografia.<!-- END REF-->

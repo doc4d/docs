@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.CREATE FOLDER.Summary-->El comando **CREATE FOLDER** crea una carpeta en función de la ruta de acceso que se pasa en *rutaCarpeta*.<!-- END REF-->

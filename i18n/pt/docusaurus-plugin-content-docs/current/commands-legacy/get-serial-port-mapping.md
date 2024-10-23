@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.GET SERIAL PORT MAPPING.Summary-->O comando GET SERIAL PORT MAPPING retorna dois arrays, *numArray* e *nomeArray*, contendo os números de porta serial e os nomes porta serial da máquina atual.<!-- END REF-->

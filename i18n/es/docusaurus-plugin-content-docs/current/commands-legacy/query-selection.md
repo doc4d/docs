@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.QUERY SELECTION.Summary-->**QUERY SELECTION** busca registros en *tabla*.<!-- END REF-->El comando **QUERY SELECTION** cambia la selección actual de *tabla* para el proceso actual y hace que el primer registro de la nueva selección sea el registro actual. 

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WEB SET HOME PAGE.Summary-->The **WEB SET HOME PAGE** command allows you to modify the custom home page for the current Web process.<!-- END REF-->

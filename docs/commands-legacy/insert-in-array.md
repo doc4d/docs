@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.INSERT IN ARRAY.Summary-->The INSERT IN ARRAY command inserts one or more elements into the array *array*.<!-- END REF--> The new elements are inserted before the element specified by *where*, and are initialized to the empty value for the array type. All elements beyond *where* are consequently moved within the array by an offset of one or the value you pass in *howMany*.

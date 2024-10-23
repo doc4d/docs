@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.GENERATE ENCRYPTION KEYPAIR.Summary-->O comando GENERATE ENCRYPTION KEYPAIR gera um novo apr de chaves RSA.<!-- END REF--> sistema de segurança oferecido em 4D está baseado em chaves destinadas a codificar/decodificar informação. As chaves podem ser usadas dentro do protocolo TLS, com o servidor web 4D (cifrado e segurança das comunicações) e em todos os bancos de dados (codificação de dados).

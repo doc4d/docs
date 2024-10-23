@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Add to date.Summary-->The **Add to date** command adds *years*, *months,* and *days* to the date you pass in *aDate*, then returns the result.<!-- END REF-->

@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Euro converter.Summary-->La commande **Euro converter** vous permet d’effectuer tout type de conversion de valeurs entre les différentes monnaies des pays de la “zone euro” et l’Euro lui-même.<!-- END REF-->

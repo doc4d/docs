@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.LAST RECORD.Summary-->**LAST RECORD** désigne le dernier enregistrement de la sélection de *laTable* comme enregistrement courant et le charge en mémoire.<!-- END REF--> Si la sélection est vide ou si l'enregistrement courant est déjà le dernier de la sélection, **LAST RECORD** ne fait rien.

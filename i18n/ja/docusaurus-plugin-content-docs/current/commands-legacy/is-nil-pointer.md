@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Is nil pointer.Summary-->**Is nil pointer**コマンドは、*aPointer*がNilポインタ (->\[\]) の場合に**True**を返します。<!-- END REF-->その他の場合（フィールドやテーブル、変数へのポインタ）、この関数はFalseを返します。

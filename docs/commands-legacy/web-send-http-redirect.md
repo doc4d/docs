@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WEB SEND HTTP REDIRECT.Summary-->The **WEB SEND HTTP REDIRECT** command allows you to transform a URL into another one.<!-- END REF--> 

@@ -18,6 +18,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Find in sorted array.Summary-->La commande **Find in sorted array** retourne **vrai** si au moins un élément du *tableau* trié correspond à *valeur*, et optionnellement retourne la position du ou des élément(s) trouvé(s).<!-- END REF--> A la différence de [Find in array](find-in-array.md), **Find in sorted array** travaille uniquement avec un *tableau* trié et fournit des informations sur la position des occurrences, ce qui permet d'insérer des éléments si nécessaire.

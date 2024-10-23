@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.COPY NAMED SELECTION.Summary-->COPY NAMED SELECTION copia a seleção atual de *tabela* em uma seleção temporária *nome*.<!-- END REF--> A tabela comum do processo é utilizada se o parâmetro opcional *tabela* não são especificadas. O parâmetro *nome* contém uma cópia da seleção. A seleção atual e o registro atual de *tabela* para o processo não mudam.

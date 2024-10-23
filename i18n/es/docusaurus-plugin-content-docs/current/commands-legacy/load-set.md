@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.LOAD SET.Summary-->LOAD SET carga un conjunto desde el archivo *documento,* creado con el comando [SAVE SET](save-set.md "SAVE SET").<!-- END REF-->

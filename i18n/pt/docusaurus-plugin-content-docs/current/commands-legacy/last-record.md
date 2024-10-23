@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.LAST RECORD.Summary-->LAST RECORD designa o último registro da seleção de *tabela* como registro atual e é carregado em memória.<!-- END REF--> Se a seleção atual estiver vazia ou se o registro atual já é o último da seleção, LAST RECORD não tem efeito.

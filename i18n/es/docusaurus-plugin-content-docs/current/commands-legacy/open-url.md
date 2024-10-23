@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.OPEN URL.Summary-->El comando OPEN URL abre el archivo o URL pasado en el parámetro *ruta* con la aplicación indicada en *nomAp* (si hay).<!-- END REF-->   

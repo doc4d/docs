@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.SELECTION TO ARRAY.Summary-->The **SELECTION TO ARRAY** command creates one or more arrays and copies data in the fields or record numbers from the current selection into the arrays.<!-- END REF-->

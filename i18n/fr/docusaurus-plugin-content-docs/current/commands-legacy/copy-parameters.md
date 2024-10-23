@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Copy parameters.Summary-->La commande Copy parameters retourne une nouvelle collection contenant tous les paramètres passés à une méthode ou à une fonction.<!-- END REF--> Cette commande est utile lorsque vous devez transférer un certain nombre de paramètres d'une méthode ou d'une fonction à une autre méthode ou fonction. 

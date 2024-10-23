@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.READ ONLY.Summary-->**READ ONLY** place *laTable* en mode lecture seulement pour le process dans lequel la commande a été appelée.<!-- END REF--> Tous les enregistrements chargés par la suite sont verrouillés, aucune modification ne peut leur être apportée. Si vous passez le paramètre optionnel *\**, toutes les tables sont placées en mode lecture seulement. 

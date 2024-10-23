@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.EXECUTE METHOD.Summary-->La commande **EXECUTE METHOD** provoque l’exécution de la méthode projet *nomMéthode* en lui passant éventuellement les paramètres *param1.<!-- END REF-->..paramN*. Vous pouvez passer tout nom de méthode appelable depuis la base ou le composant exécutant la commande.

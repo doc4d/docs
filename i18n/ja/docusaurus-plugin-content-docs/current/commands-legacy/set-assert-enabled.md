@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SET ASSERT ENABLED.Summary-->**SET ASSERT ENABLED** コマンドを使用してアプリケーションの4Dコードに挿入されたアサーションを無効にしたり、再度有効にしたりできます。<!-- END REF-->アサーションに関する詳細は[ASSERT](assert.md)コマンドの説明を参照してください。

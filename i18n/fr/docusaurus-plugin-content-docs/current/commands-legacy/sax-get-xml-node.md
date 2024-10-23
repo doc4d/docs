@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.SAX Get XML node.Summary-->La commande **SAX Get XML node** retourne un entier long indiquant le type d’événement SAX retourné durant l’analyse du document XML référencé par *document*.<!-- END REF--> 

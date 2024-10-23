@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.POP RECORD.Summary-->POP RECORD carga el primer registro de la pila de registros de la tabla y lo vuelve el registro actual.<!-- END REF--> 

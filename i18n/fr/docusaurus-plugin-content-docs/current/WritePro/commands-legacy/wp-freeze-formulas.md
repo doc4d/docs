@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP FREEZE FORMULAS.Summary-->La commande **WP FREEZE FORMULAS** "fige" le contenu des formules dans objCible.<!-- END REF--> 

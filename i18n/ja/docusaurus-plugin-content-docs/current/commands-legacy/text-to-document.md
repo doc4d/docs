@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.TEXT TO DOCUMENT.Summary-->**TEXT TO DOCUMENT**コマンドは、 *text* を直接ディスク上のファイルへと書き込みます。<!-- END REF-->

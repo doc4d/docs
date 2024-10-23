@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.OB Instance of.Summary-->**OB Instance of** コマンドは*object* 引数のオブジェクトが*class* 引数で指定されたクラスまたはその子クラスに属していればtrue を、それ以外の場合にはfalse を返します。<!-- END REF-->

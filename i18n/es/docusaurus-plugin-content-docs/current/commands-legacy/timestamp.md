@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Timestamp.Summary-->**Timestamp** devuelve la hora UTC actual en formato ISO con milisegundos, es decir, aaaa-MM-ddTHH:mm:ss.<!-- END REF-->SSSZ. Tenga en cuenta que el carácter "Z" indica la zona horaria GMT.

@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.DOM GET XML ATTRIBUTE BY INDEX.Summary-->El comando **DOM GET XML ATTRIBUTE BY INDEX** permite conocer el nombre así como el valor de un atributo especificado por su número de índice.<!-- END REF-->

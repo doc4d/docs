@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Is a variable.Summary-->O comando Is a variable devolve True se o ponteiro passado em *umPonteiro* referenciar uma variável definida.<!-- END REF--> Devolve False em todos os outros casos (ponteiro até um campo ou tabela, ponteiro Nil, etc.). 

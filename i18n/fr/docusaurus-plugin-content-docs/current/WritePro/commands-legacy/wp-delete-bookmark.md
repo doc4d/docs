@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP DELETE BOOKMARK.Summary-->la commande **WP DELETE BOOKMARK** supprime de *docWP* le signet nommé *nomSignet*.<!-- END REF-->

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.ON ERR CALL.Summary-->El comando **ON ERR CALL** instala el método proyecto, cuyo nombre se pasa en *metodoError*, como método de intercepción de errores para el contexto de ejecución definido en el proyecto actual.<!-- END REF--> Este método se denomina **método de gestión de errores** o **método de detección de errores.**

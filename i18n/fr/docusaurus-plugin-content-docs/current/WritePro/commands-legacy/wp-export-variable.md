@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP EXPORT VARIABLE.Summary-->La commande **WP EXPORT VARIABLE** exporte l'objet 4D Write Pro *docWP* dans la variable 4D *destination* avec le *format* spécifié.<!-- END REF-->

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Is field number valid.Summary-->O comando Is field number valid retorna True se o campo cujo número for passado no parâmetro *numCampo* existe na tabela cujo número ou ponteiro for passado no parâmetro *numTabela* ou *ponTabela*.<!-- END REF--> Se o campo não existir, o comando retorna False. Lembre que o comando retorna False se a tabela que contiver o campo for encontrada na Lixeira do Explorador.  

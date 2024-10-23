@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.IDLE.Summary-->**IDLE** est destinée uniquement à une utilisation avec le compilateur.<!-- END REF--> En effet, seul le moteur de 4D peut détecter un événement. Il était donc nécessaire, dans le cadre d'une base compilée, qu'une routine puisse interroger le moteur de 4D afin de savoir si un événement s'est produit. Cette commande doit donc être utilisée lorsque vous employez la commande [ON EVENT CALL](on-event-call.md).   

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Undefined.Summary-->La commande **Undefined** retourne Vrai si le résultat de l'évaluation d'*expression* n'est pas une valeur définie, sinon elle retourne Faux si *expression* a été définie.<!-- END REF-->

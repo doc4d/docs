@@ -26,6 +26,9 @@ displayed_sidebar: docs
 |Result|4D.Folder|&#8592;|New folder object|
 <!-- END REF -->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description
 
 The `Folder` command <!-- REF #_command_.Folder.Summary -->creates and returns a new object of the `4D.Folder` type<!-- END REF -->. The command accepts two syntaxes:

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Get external data path.Summary-->La commande **Get external data path** retourne le chemin d’accès complet du fichier de stockage externe des données du champ passé dans le paramètre *leChamp*, pour l’enregistrement courant.<!-- END REF--> Le champ passé en paramètre doit être de type Texte, Blob ou Image. La commande retourne le chemin d'accès du fichier de stockage même si le fichier n'existe pas ou n'est pas accessible.

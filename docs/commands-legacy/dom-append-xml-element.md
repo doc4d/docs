@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.DOM Append XML element.Summary-->The DOM Append XML element command is used to add a new XML element to the children of the XML element whose reference is passed in the *targetElementRef* parameter.<!-- END REF--> 

@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.NO DEFAULT TABLE.Summary-->**NO DEFAULT TABLE** コマンドを使用して、[DEFAULT TABLE](default-table.md) コマンドの動作を無効にします。<!-- END REF-->このコマンドを実行した後、プロセスに対して定義されているデフォルトテーブルはありません。

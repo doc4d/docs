@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.FOLDER LIST.Summary-->FOLDER LIST コマンド は、*pathname*に渡すパス名にあるフォルダの名前を要素とするテキストまたは文字列配列*directories*を生成します。<!-- END REF-->

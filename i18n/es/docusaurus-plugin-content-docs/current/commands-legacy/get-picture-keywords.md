@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.GET PICTURE KEYWORDS.Summary-->El comando **GET PICTURE KEYWORDS** devuelve en el array *arrayPalabrasClaves*, la lista de palabras claves asociadas a la imagen pasada como parámetro.<!-- END REF-->  

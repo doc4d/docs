@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.TRIGGER PROPERTIES.Summary-->**TRIGGER PROPERTIES**コマンドは、*triggerLevel*に渡すトリガーの実行レベルに関する情報を返します。<!-- END REF-->トリガー実行レベルのカスケードに基づいて異なる動作を実行するには、**TRIGGER PROPERTIES**と[Trigger level](trigger-level.md)を組み合わせて使用します。詳細については*トリガ*にあるトリガーのカスケードを参照してください。

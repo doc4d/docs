@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WEB SERVICE GET RESULT.Summary-->La commande **WEB SERVICE GET RESULT** permet de récupérer une valeur renvoyée par le Web Service à l’issue du traitement effectué.<!-- END REF--> 

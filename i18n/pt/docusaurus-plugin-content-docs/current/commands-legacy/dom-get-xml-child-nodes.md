@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.DOM GET XML CHILD NODES.Summary-->O comando DOM GET XML CHILD NODES retorna os tipos e referências ou valores de todos os nodos filhos do elemento XML designado por *refElement*.<!-- END REF-->  

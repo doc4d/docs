@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.XML SET OPTIONS.Summary-->**XML SET OPTIONS** コマンドを使用して、 第一引数に渡されたXML構造のXMLオプションの値を変更できます。<!-- END REF-->

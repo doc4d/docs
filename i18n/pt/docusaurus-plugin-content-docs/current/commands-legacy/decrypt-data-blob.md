@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Decrypt data BLOB.Summary-->O comando **Decrypt data BLOB** realiza a descriptografia do parâmetro *blobDecriptografia* com o mesmo algoritmo que 4D usa para a criptografia de dados (AES-256) e retorna o resultado em *blobDecriptografado*.<!-- END REF-->

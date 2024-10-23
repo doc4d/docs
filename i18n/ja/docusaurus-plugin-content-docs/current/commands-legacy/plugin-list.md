@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.PLUGIN LIST.Summary-->PLUGIN LIST コマンドは*numbersArray*配列と*namesArray*配列に、4Dアプリケーションにロードされ、利用可能なプラグインの番号と名前を返します。<!-- END REF-->これら2つの配列は、コマンドによりサイズが調整され、同期されます。

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.COPY ARRAY.Summary-->El comando COPY ARRAY crea o remplaza el array *destino* con el mismo contenido, tamaño y tipo del array *fuente*.<!-- END REF-->

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.ARRAY TIME.Summary-->El comando **ARRAY TIME** crea o redimensiona una array de tipo tiempo en memoria.<!-- END REF-->

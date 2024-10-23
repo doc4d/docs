@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.BLOB to longint.Summary-->O comando BLOB to longint retorna um valor de tipo Inteiro longo (4 bytes) lido do BLOB *blob*.<!-- END REF-->

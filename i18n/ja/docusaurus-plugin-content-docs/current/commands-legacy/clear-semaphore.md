@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.CLEAR SEMAPHORE.Summary-->CLEAR SEMAPHOREは、[Semaphore](semaphore.md "Semaphore")コマンドで設定された*semaphore*を消去します。<!-- END REF-->

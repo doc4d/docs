@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.QUERY SELECTION.Summary-->**QUERY SELECTION** looks for records in *aTable*.<!-- END REF--> The **QUERY SELECTION** command changes the current selection of *table* for the current process and makes the first record of the new selection the current record.

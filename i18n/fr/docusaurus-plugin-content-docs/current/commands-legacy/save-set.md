@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.SAVE SET.Summary-->**SAVE SET** sauvegarde *ensemble* dans le fichier disque *document*.<!-- END REF-->

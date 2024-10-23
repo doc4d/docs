@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.RELATE MANY SELECTION.Summary-->RELATE MANY SELECTION コマンドは、1テーブルのレコードセレクションを元にしてnテーブルのレコードセレクションを作成し、nテーブルの一番目のレコードをカレントレコードとしてロードします。<!-- END REF-->

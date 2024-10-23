@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Current default table.Summary-->Current default table devuelve un puntero hacia la tabla pasada a la última llamada de DEFAULT TABLE para el proceso actual.<!-- END REF-->

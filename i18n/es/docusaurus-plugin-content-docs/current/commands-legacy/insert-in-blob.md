@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.INSERT IN BLOB.Summary-->El comando INSERT IN BLOB inserta el número de bytes especificado por *numero* en el BLOB *blob* en la posición especificada por *offset*.<!-- END REF--> El BLOB se vuelve *numero* bytes más grande.

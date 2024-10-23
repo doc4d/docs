@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP SET VIEW PROPERTIES.Summary-->The **WP SET VIEW PROPERTIES** command allows you to dynamically set one or more view properties of the 4D Write Pro *wpArea* area.<!-- END REF--> 

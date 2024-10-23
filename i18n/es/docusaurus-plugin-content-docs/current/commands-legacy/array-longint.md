@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.ARRAY LONGINT.Summary-->El comando ARRAY LONGINT crea y/o redimensiona un array de elementos de tipo [Entero largo](# "Entre -2 millardos y +2 millardos") de 4 bytes en memoria.<!-- END REF-->

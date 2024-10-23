@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Is new record.Summary-->La commande **Is new record** retourne Vrai lorsque l’enregistrement courant de *laTable* est en cours de création et n’a pas encore été sauvegardé dans le process courant.<!-- END REF-->

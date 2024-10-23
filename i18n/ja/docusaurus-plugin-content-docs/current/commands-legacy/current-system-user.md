@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Current system user.Summary-->**Current system user**コマンドは、マシンのカレントユーザアカウントで設定されたマシンのオーナー名を返します。<!-- END REF-->

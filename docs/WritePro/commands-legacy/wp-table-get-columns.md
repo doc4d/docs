@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Table get columns.Summary-->The **WP Table get columns** command returns a new cell range object containing the selection of columns from *targetObj* or *tableRef* (defined by *startCol* and *numCols*).<!-- END REF--> 

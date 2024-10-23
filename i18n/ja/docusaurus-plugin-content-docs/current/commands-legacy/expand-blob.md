@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.EXPAND BLOB.Summary-->EXPAND BLOB コマンドは、[COMPRESS BLOB](compress-blob.md "COMPRESS BLOB")コマンドを使用して既に圧縮されている*blob*を解凍します。<!-- END REF-->  

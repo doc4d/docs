@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Compatibilidad 
 
 <!--REF #_command_.WP Text range.Summary-->**WP Text range** recibió el nombre **WP Get range** en versiones anteriores de 4D Write Pro.<!-- END REF--> Ha sido renombrado para mayor claridad.

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Timestamp.Summary-->La commande **Timestamp** retourne l'heure UTC courante au format ISO avec millisecondes, i.<!-- END REF-->e. aaaa-MM-jjTHH:mm:ss.SSSZ. Notez que le caractère "Z" indique le fuseau horaire GMT.

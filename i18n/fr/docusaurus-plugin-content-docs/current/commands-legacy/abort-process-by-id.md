@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.ABORT PROCESS BY ID.Summary-->La commande **ABORT PROCESS BY ID** stoppe un process spécifique sur 4D Server.<!-- END REF-->

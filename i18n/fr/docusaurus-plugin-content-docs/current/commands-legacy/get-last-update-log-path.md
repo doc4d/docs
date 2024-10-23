@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Get last update log path.Summary-->La commande **Get last update log path** retourne le chemin d’accès complet du fichier journal de mise à jour le plus récent sur le poste où elle est appelée.<!-- END REF-->

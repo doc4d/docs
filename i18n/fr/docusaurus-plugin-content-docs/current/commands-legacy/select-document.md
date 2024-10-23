@@ -18,6 +18,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Select document.Summary-->La commande **Select document** affiche une boîte de dialogue standard d’ouverture de documents, permettant à l’utilisateur de désigner un ou plusieurs fichier(s), et retourne le nom et/ou le chemin d’accès complet du ou des fichier(s) sélectionné(s).<!-- END REF-->

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.BLOB TO PICTURE.Summary-->La commande **BLOB TO PICTURE** place dans un champ ou une variable image 4D une image stockée dans un BLOB, quel que soit son format initial.<!-- END REF--> 

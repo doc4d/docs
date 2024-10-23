@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.SEND RECORD.Summary-->**SEND RECORD** sends the current record of *aTable* to the serial port or document opened by the [SET CHANNEL](set-channel.md) command.<!-- END REF--> The record is sent with a special internal format that can be read only by [RECEIVE RECORD](receive-record.md). If no current record exists, SEND RECORD has no effect.

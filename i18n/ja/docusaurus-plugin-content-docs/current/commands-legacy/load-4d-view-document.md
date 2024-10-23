@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Load 4D View document.Summary-->**Load 4D View document** コマンドを使用すると、4D View ドキュメントを4D オブジェクトへと変換することができます。<!-- END REF--> 

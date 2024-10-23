@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.SCAN INDEX.Summary-->SCAN INDEX retorna uma seleção de *numero* de registros da *tabela*.<!-- END REF--> Se passa <, SCAN INDEX retorna o *numero* de registros a partir do final do índice (valores superiores). Se passa >, SCAN INDEX retorna *numero* de registros a partir do início do índice (valores inferiores). Este comando é muito eficiente porque utiliza o índice para realizar a operação.  

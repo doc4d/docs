@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Generate password hash.Summary-->La commande **Generate password hash** retourne un *hash* de *motDePasse*, généré par un algorithme de hachage cryptographique.<!-- END REF-->

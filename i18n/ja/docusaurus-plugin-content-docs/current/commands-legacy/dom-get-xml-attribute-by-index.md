@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DOM GET XML ATTRIBUTE BY INDEX.Summary-->**DOM GET XML ATTRIBUTE BY INDEX** コマンドは、属性のインデックスを使用して、属性名と値を取得するために使用します。<!-- END REF-->

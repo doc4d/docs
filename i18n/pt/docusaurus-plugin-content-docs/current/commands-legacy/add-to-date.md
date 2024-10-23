@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Add to date.Summary-->O comando Add to date adiciona *anos*, *meses,* e *dias* a data passada em *data*, depois retorna a data resultante.<!-- END REF-->

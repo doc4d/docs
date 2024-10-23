@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.SAX ADD XML CDATA.Summary-->El comando SAX ADD XML CDATA añade en el documento XML referenciado por *documento*, los *datos* de tipo texto o BLOB.<!-- END REF--> Estos datos se enmarcarán automáticamente con las etiquetas *<!\[CDATA\[* y *\]\]>*  

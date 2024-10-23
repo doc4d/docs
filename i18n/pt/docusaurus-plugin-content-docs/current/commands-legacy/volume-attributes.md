@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.VOLUME ATTRIBUTES.Summary-->O comando VOLUME ATTRIBUTES retorna em bytes o tamanho, o espaço utilizado e o espaço livre do volume cujo nome se passa em *volume*.<!-- END REF-->  

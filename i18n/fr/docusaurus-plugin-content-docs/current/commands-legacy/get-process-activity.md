@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Get process activity.Summary-->La commande **Get process activity** retourne une vue instantanée des sessions des utilisateurs connectés et/ou des process exécutés à un instant précis.<!-- END REF--> Cette commande retourne tous les process, y compris les process internes qui n'étaient pas accessibles à la commande [Process info](../commands/process-info.md). 

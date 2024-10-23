@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.SET EXTERNAL DATA PATH.Summary-->* O comando **SET EXTERNAL DATA PATH**, define ou modifica, para o atual registro, a localização do armazenamento externo para o campo *aCampo* passado como parâmetro.<!-- END REF-->

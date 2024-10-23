@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.METHOD GET ATTRIBUTES.Summary-->The **METHOD GET ATTRIBUTES** command returns, in *attributes*, the current value of all attributes for the method(s) specified in the *path* parameter.<!-- END REF-->

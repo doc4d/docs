@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF -->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 Le mot-clé `Super` <!-- REF #_command_.Super.Summary -->permet les appels à la `superclass`, c'est-à-dire à la classe parente<!-- END REF -->.
 
 `Super` peut être utilisé de deux différentes manières :

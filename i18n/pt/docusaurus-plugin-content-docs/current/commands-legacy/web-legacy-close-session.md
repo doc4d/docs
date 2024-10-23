@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Nota de compatibilidade 
 
 <!--REF #_command_.WEB LEGACY CLOSE SESSION.Summary-->Este comando só pode ser utilizado com **sessões web herdadas**, disponíveis em bancos convertidos a partir de versões anteriores a 4D v18 R6\.<!-- END REF--> Se ignora quando se habilita o modo **sessões web escalonáveis** (recomendado em 4D v18 R6 e superiores). Para saber mais, consulte *Web Sessions Management (Legacy)*.

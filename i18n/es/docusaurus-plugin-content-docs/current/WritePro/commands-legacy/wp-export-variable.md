@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WP EXPORT VARIABLE.Summary-->El comando **WP EXPORT VARIABLE** exporta el objeto 4D Write Pro *docWP* en la variable 4D *destino* con el *format* *o* especificado.<!-- END REF-->

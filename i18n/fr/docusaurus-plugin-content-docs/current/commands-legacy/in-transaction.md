@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.In transaction.Summary-->La commande **In transaction** retourne Vrai si le process courant est en transaction, sinon elle retourne Faux.<!-- END REF-->

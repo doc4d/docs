@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Path to object.Summary-->**Path to object** コマンドは*path* 引数に渡したパスの特定のプロパティを含んだオブジェクトを返します。<!-- END REF-->

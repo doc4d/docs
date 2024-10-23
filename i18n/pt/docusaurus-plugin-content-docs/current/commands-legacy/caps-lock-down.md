@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Caps lock down.Summary-->Caps lock down retorna TRUE se a tecla Caps Lock estiver pressionada.<!-- END REF-->

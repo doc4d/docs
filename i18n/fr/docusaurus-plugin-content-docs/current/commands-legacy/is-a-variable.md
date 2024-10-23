@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Is a variable.Summary-->La fonction **Is a variable** retourne Vrai si le pointeur passé dans le paramètre *pointeur* référence une variable définie.<!-- END REF--> Elle retourne Faux dans tous les autres cas (pointeur vers un champ ou table, pointeur Nil, etc.).

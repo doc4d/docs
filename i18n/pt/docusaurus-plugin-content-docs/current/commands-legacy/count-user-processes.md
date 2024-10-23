@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Count user processes.Summary-->Count user processes devolve o número dos processos abertos direto ou indiretamente pelo usuário (processos para os quais o parâmetro *origem* devolvido pelo comando Count user processes é maior ou igual a 0).<!-- END REF-->

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WP Get style sheet.Summary-->**WP Get style sheet** コマンドは、*styleSheetName* 引数で指定された名前のスタイルシートオブジェクトを返します。<!-- END REF-->

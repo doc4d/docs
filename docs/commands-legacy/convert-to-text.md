@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Convert to text.Summary-->The **Convert to text** command converts the text contained in the *blob* parameter and returns it in text expressed in the character set of 4D.<!-- END REF--> 4D uses the UTF-16 character set by default.

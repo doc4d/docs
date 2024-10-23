@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Generate UUID.Summary-->Generate UUID devuelve un nuevo identificador UUID de 32 caracteres en forma no canónica.<!-- END REF-->

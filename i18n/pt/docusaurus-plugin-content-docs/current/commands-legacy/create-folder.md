@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.CREATE FOLDER.Summary-->O comando CREATE FOLDER cria uma pasta de acordo com a rota de acesso que é passada em *rotaPasta*.<!-- END REF-->  

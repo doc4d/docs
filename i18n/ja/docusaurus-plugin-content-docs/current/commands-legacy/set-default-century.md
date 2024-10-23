@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SET DEFAULT CENTURY.Summary-->SET DEFAULT CENTURY コマンドは、2桁の年で日付を入力した際に4Dが使用する、デフォルトの世紀と区切り年を指定するために使用します。<!-- END REF-->

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SAX ADD XML CDATA.Summary-->SAX ADD XML CDATA コマンドは、*document*で参照されるXMLドキュメントにテキストまたはBLOBの*data*を追加します。<!-- END REF-->この*data*は自動で*<!\[CDATA\[* と *\]\]>*の間におかれます。   

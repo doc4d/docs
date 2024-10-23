@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.CREATE ALIAS.Summary-->La commande **CREATE ALIAS** crée un alias (appelé “raccourci” sous Windows) du fichier ou dossier cible désigné par le paramètre *cheminCible*, avec le nom et l’emplacement définis dans le paramètre *cheminAlias*.<!-- END REF--> 

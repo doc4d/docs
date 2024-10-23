@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.SET DOCUMENT SIZE.Summary-->The **SET DOCUMENT SIZE** command sets the size of a document to the number of bytes you pass in *size*.<!-- END REF--> 

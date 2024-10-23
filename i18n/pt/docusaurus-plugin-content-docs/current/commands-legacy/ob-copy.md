@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.OB Copy.Summary-->O comando **OB Copy** devolve um objeto que contém uma cópia completa das propriedades, sub objetos e valores de *objeto*.<!-- END REF-->

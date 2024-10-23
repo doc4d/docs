@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Get 4D file.Summary-->O comando **Get 4D file** devolve a rota de acesso ao arquivo de ambiente 4D especificado pelo parâmetro *arquivo*.<!-- END REF--> A rota será devolvida utilizando a sintaxe de sistema.

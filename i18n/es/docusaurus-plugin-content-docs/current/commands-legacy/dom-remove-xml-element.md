@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.DOM REMOVE XML ELEMENT.Summary-->El comando DOM REMOVE XML ELEMENT  elimina el elemento designado por *elementRef*.<!-- END REF-->

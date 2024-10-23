@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Version type.Summary-->La commande **Version type** retourne une valeur numérique qui représente le type de version de 4D ou de 4D Server que vous utilisez.<!-- END REF--> 4D vous fournit les constantes prédéfinies suivantes, placées dans le thème *Environnement 4D* :

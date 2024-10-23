@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WP TABLE DELETE ROWS.Summary-->**WP TABLE DELETE ROWS** コマンドは、4D Write Proの表から一つまたは複数の行を削除します。<!-- END REF-->

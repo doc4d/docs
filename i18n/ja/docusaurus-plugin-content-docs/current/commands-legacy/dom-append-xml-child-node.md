@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DOM Append XML child node.Summary-->DOM Append XML child node コマンドを使用して、*elementRef*で指定したXMLノードに*childValue*の値を追加できます。<!-- END REF-->

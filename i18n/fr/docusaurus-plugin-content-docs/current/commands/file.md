@@ -27,6 +27,9 @@ displayed_sidebar: docs
 
 <!-- END REF -->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description
 
 La commande `File` <!-- REF #_command_.File.Summary -->crée et retourne un nouvel objet de type `4D.File`<!-- END REF -->. La commande accepte deux syntaxes :

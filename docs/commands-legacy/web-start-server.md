@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WEB START SERVER.Summary-->The **WEB START SERVER** command starts the Web server of the 4D application on which it has been executed (4D or 4D Server).<!-- END REF--> The database is therefore published on your Intranet network or on the Internet.

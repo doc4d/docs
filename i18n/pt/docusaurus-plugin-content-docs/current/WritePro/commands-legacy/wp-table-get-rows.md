@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WP Table get rows.Summary-->O comando **WP Table get rows** devolve um novo objeto de range de filas que contenha a seleção das filas de *objTarget* ou *refTabela* (definidas por *filaIni* e *numFilas*)

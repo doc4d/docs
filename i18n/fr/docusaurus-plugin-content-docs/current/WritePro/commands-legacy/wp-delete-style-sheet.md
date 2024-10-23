@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP DELETE STYLE SHEET.Summary-->La commande **WP DELETE STYLE SHEET** retire la feuille de style de paragraphe ou de caractère désignée du document courant.<!-- END REF--> Lorsqu'une feuille de style est retirée, chaque caractère ou paragraphe auquel elle s'appliquait reprend le style original (*i.e.* par défaut).

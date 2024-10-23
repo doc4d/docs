@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.DOCUMENT LIST.Summary-->El comando **DOCUMENT LIST** llena el array de tipo Texto *documentos* con los nombres del los documentos ubicados en la ubicación pasada en *rutaAcceso*.<!-- END REF--> 

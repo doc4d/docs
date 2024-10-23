@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Is new record.Summary-->The **Is new record** command returns True when *aTable*’s current record is being created and has not yet been saved in the current process.<!-- END REF--> 

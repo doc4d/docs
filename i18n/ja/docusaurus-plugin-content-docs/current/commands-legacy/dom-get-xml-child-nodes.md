@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DOM GET XML CHILD NODES.Summary-->DOM GET XML CHILD NODES コマンドは*elementRef*で指定したXML要素のすべての子ノードのタイプと参照または値を返します。<!-- END REF-->

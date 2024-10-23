@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Sequence number.Summary-->**Sequence number** returns the next sequence number for *aTable*.<!-- END REF--> The sequence number is unique for each table. It is a non-repeating number that is incremented(\*) for each new record created for the table.

@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Substring.Summary-->La fonction **Substring** retourne la partie de *source* délimitée par les paramètres *àPartirDe* et *nbCars*.<!-- END REF--> 

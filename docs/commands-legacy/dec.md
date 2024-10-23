@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Dec.Summary-->Dec returns the decimal (fractional) portion of *number*.<!-- END REF-->The value returned is always positive or zero.

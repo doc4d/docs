@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Current default table.Summary-->Current default table は、カレントプロセスに対して[DEFAULT TABLE](default-table.md "DEFAULT TABLE")コマンドで最後に指定されたテーブルのポインタを返します。<!-- END REF-->

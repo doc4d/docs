@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Day number.Summary-->O comando Day number retorna um número que representa o dia da semana que corresponde a *data*.<!-- END REF-->  

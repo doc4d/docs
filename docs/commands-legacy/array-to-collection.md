@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.ARRAY TO COLLECTION.Summary-->The **ARRAY TO COLLECTION** command copies one or more *array*(s) into the elements or the *propertyName* values of *collection*.<!-- END REF-->

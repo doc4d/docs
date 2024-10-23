@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Append document.Summary-->La commande **Append document** "fait la même chose" que la commande [Open document](open-document.md) : elle vous permet d'ouvrir un document sur disque et de se placer à la fin du document.<!-- END REF--> 

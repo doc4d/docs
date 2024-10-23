@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.SET QUERY LIMIT.Summary-->SET QUERY LIMIT permite pedir a 4D deter todas as pesquisas posteriores no processo atual logo que encontre o número de registros definido em *limite*.<!-- END REF--> 

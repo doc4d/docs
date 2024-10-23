@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.SEND MESSAGE TO REMOTE USER.Summary-->The **SEND MESSAGE TO REMOTE USER** command sends a message to all remote users or to a specific remote user.<!-- END REF--> 

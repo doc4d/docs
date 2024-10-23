@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Selection to JSON.Summary-->El comando **Selection to JSON** devuelve una cadena que contiene un array JSON con tantos elementos como registros hay en la selección actual de *laTabla*.<!-- END REF--> Cada elemento del array es un objeto JSON que contiene las etiquetas y los valores de los campos de la selección.

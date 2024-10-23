@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.LOG FILE TO JSON.Summary-->**LOG FILE TO JSON**コマンドはカレントログファイル、または指定されたログファイルを、JSONフォーマットで保存します。<!-- END REF-->

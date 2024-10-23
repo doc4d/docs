@@ -19,6 +19,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.SET CHANNEL.Summary-->La commande **SET CHANNEL** permet d'ouvrir un port série ou un document.<!-- END REF--> Vous ne pouvez ouvrir qu'un port série ou un document à la fois avec cette commande.

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.ARRAY TEXT.Summary-->El comando ARRAY TEXT crea y/o redimensiona un array de elementos de tipo [Texto](# "A character string that may contain from 0 to 2 GB of text") en memoria.<!-- END REF-->

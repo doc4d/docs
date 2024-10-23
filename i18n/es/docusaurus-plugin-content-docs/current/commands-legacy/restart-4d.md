@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.RESTART 4D.Summary-->El comando **RESTART 4D** provoca el reinicio de la aplicación 4D actual.<!-- END REF-->  

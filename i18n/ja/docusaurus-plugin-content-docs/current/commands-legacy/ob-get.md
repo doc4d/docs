@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.OB Get.Summary-->**OB Get**コマンドは、 *object* 引数で指定したオブジェクトの *property* のカレントの値を返します。<!-- END REF-->任意の *type* 引数で指定した型へと変換することもできます。

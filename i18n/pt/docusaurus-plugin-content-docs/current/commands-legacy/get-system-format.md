@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.GET SYSTEM FORMAT.Summary-->O comando GET SYSTEM FORMAT devolve o valor atual de vários parâmetros regionais definidos no sistema operativo.<!-- END REF--> Este comando pode utilizar-se para criar formatos personalizados “automáticos” baseados nas preferências do sistema. 

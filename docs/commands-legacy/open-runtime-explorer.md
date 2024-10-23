@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.OPEN RUNTIME EXPLORER.Summary-->The OPEN RUNTIME EXPLORER command displays the Runtime Explorer in a floating window.<!-- END REF-->

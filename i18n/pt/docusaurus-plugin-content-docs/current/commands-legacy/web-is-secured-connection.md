@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WEB Is secured connection.Summary-->O comando WEB Is secured connection retorna um booleano indicando se a conexão ao servidor web 4D se realiza em modo seguro através de TLS/SSL (a petição começa com “https:” ao invés de “http:”).<!-- END REF-->  

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.QUERY WITH ARRAY.Summary-->The QUERY WITH ARRAY command searches all the records for which the value of *targetField* is equal, at least, to one of the values of the elements in *array*.<!-- END REF--> The records found will become the new current selection. 

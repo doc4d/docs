@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SAX OPEN XML ELEMENT ARRAYS.Summary-->SAX OPEN XML ELEMENT ARRAYS コマンドコマンドを使用して、*document* で参照されるXMLドキュメント中に新しい要素およびオプションで属性とその値を配列で指定して追加できます。<!-- END REF--> 

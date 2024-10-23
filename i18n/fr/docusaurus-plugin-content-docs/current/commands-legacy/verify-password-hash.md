@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Verify password hash.Summary-->La fonction **Verify password hash** vérifie que l'empreinte cryptographique *hash* correspond bien au *motDePasse*.<!-- END REF-->

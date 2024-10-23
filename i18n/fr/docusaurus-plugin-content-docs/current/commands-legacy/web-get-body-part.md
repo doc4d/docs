@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WEB GET BODY PART.Summary-->La commande **WEB GET BODY PART**, appelée dans le contexte d’un process Web, permet d’analyser la partie "corps" d’une requête multi-part.<!-- END REF--> 

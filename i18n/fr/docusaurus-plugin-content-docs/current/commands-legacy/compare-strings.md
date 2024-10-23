@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Compare strings.Summary-->La commande **Compare strings** retourne une valeur négative, zéro, ou une valeur positive, en fonction du paramètre *aString* selon qu'il soit évalué comme étant inférieur, égal ou supérieur au paramètre *bString*.<!-- END REF--> 

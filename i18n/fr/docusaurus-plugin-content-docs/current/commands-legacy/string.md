@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.String.Summary-->La commande **String** retourne sous forme de chaîne alphanumérique l'expression de type numérique, Date, Heure, chaîne ou Booléen que vous avez passée dans le paramètre *expression*.<!-- END REF-->

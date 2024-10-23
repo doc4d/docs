@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.GET QUERY DESTINATION.Summary-->**GET QUERY DESTINATION**コマンドは実行中のプロセスのクエリ結果の格納先を返します。<!-- END REF-->デフォルトでクエリの結果はカレントセレクションとして反映されます。しかしこの動作は[SET QUERY DESTINATION](set-query-destination.md)コマンドを使用して変更できます。

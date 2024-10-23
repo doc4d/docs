@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP TABLE DELETE ROWS.Summary-->The **WP TABLE DELETE ROWS** command removes one or several row(s) from a 4D Write Pro table.<!-- END REF-->

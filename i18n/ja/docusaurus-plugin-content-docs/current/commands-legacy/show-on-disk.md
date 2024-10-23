@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SHOW ON DISK.Summary-->SHOW ON DISKコマンドは、オペレーティングシステムの標準ウィンドウ上に、引数*pathname* に渡したパス名を持つファイルまたはフォルダを表示します。<!-- END REF-->   

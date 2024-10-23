@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Get picture file name.Summary-->The **Get picture file name** command returns the current default name of the picture passed as parameter.<!-- END REF-->

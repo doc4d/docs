@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.OB SET.Summary-->O comando **OB SET** cria ou modifica um ou mais pares de *propriedade*/*valor* no objeto de linguagem designado pelo parâmetro *objeto*.<!-- END REF-->  

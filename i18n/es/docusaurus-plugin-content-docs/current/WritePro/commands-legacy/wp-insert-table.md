@@ -18,6 +18,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WP Insert table.Summary-->El comando **WP Insert table** inserta una nueva tabla en *objRango* de acuerdo con el *modo* de inserción especificado y devuelve el nuevo objeto tabla correspondiente.<!-- END REF--> Opcionalmente, puede pasar un parámetro *actRango* así como también un número predefinido de columnas y filas en *numCol* y *numFilas*.

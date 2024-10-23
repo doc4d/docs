@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Field name.Summary-->El comando Field name devuelve el nombre del campo cuyo puntero se pasa en *campPtr* o cuyos números de tabla y de campos se pasan en *tablaNum* y *campNum*.<!-- END REF-->

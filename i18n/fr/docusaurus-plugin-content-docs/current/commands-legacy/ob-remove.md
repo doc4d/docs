@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.OB REMOVE.Summary-->La commande **OB REMOVE** permet de supprimer la *propriété* de l’objet de langage désigné par le paramètre *objet*.<!-- END REF--> Cette commande supprime la *propriété* ainsi que sa valeur courante.

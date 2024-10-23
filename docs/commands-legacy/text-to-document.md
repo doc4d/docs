@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.TEXT TO DOCUMENT.Summary-->The **TEXT TO DOCUMENT** command lets you write the *text* directly to a disk file.<!-- END REF-->

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Get document position.Summary-->This command operates only on a document that is currently open whose document reference number you pass in *docRef*.<!-- END REF-->

@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.MESSAGES OFF.Summary-->MESSAGES OFF および [MESSAGES ON](messages-on.md) コマンドは、時間のかかる処理を行っている際に4Dが表示する進捗インジケータの表示/非表示を切り替えます。<!-- END REF-->デフォルトでは、メッセージは表示されます。

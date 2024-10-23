@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Insert string.Summary-->Insert stringは、*source*の*where*で指定された位置の前に、*what*を 挿入した文字列を返します。<!-- END REF-->

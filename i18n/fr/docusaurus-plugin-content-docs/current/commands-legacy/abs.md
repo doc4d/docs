@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Abs.Summary-->**Abs** retourne la valeur absolue (positive et sans signe) de *nombre*.<!-- END REF--> Si *nombre* est négatif, sa valeur positive est retournée. Si *nombre* est positif, il est retourné inchangé. 

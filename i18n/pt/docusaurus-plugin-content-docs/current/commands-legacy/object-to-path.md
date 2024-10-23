@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Object to path.Summary-->O comando **Object to path** devolve um nome de rota (string) em função da informação de rota que passou no parâmetro *objRota*.<!-- END REF--> As rotas abaixo são suportadas:

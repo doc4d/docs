@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.RESUME INDEXES.Summary-->**RESUME INDEXES** コマンドは、 [PAUSE INDEXES](pause-indexes.md) コマンドを使用して停止させた *aTable* のインデックスを全て再起動させます。<!-- END REF--> *aTable* のインデックスが停止されていない場合、コマンドは何もしません。

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.ARRAY POINTER.Summary-->La commande **ARRAY POINTER** crée ou redimensionne un tableau d'éléments de type [Pointeur](# "A reference to another variable (including arrays and array elements), table, or field") en mémoire.<!-- END REF-->

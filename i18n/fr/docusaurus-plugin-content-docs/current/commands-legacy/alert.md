@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.ALERT.Summary-->La commande **ALERT** affiche une boîte de dialogue d'alerte composée d'une icône, d'un message et d'un bouton OK.<!-- END REF-->

@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WP TABLE DELETE COLUMNS.Summary-->**WP TABLE DELETE COLUMNS** コマンドは、4D Write Pro の表から一つまたは複数のカラムを削除します。<!-- END REF-->

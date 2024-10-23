@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.OB Copy.Summary-->La commande **OB Copy** retourne un objet contenant une copie complète des propriétés, sous-objets et valeurs de *objet*.<!-- END REF-->

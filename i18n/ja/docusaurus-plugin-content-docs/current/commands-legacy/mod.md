@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Mod.Summary-->**Mod**コマンドは、*number1*を*number2*で割り算し、その余りの整数を返します。<!-- END REF-->

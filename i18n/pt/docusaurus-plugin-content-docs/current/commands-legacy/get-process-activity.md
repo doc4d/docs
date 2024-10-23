@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Get process activity.Summary-->O comando **Get process activity** devolve uma foto instantânea das sessôes dos usuários conectados ou dos processos relacionados que são executados em um momento dado.<!-- END REF--> Este comando devolve todos os processos, incluindo os processos internos que não eram acessíveis pelo comando [Process info](../commands/process-info.md). 

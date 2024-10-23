@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Font file.Summary-->La commande **Font file** retourne un objet décrivant le fichier de polices de votre système d'exploitation correspondant à *famillePolice* et, éventuellement, à *stylePolice* que vous avez passé dans le paramètre.<!-- END REF-->

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Storage.Summary-->The **Storage** method returns the catalog of shared objects or shared collections that you have registered in the *Storage* object on the current machine or component.<!-- END REF--> 

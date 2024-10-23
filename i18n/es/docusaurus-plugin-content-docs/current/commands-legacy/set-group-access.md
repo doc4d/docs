@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.SET GROUP ACCESS.Summary-->El comando **SET GROUP ACCESS** modifica las membresías de la cuenta de usuario 4D para la sesión actual.<!-- END REF--> Restablece toda membresía a un grupo anterior y define las nuevas membresías a los *grupos* listados.

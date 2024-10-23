@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.DOM Get first child XML element.Summary-->O comando DOM Get first child XML element retorna uma referência XML ao primeiro “filho” do elemento XML passado em *refElemento*.<!-- END REF--> Esta referência pode ser utilizada com outros comandos de análise XML.  

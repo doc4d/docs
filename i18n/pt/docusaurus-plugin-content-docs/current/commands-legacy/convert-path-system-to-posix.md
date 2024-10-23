@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Convert path system to POSIX.Summary-->O comando Convert path system to POSIX converte uma rota expressa com a sintaxe sistema em uma rota expressa com a sintaxe POSIX (Unix).<!-- END REF-->  

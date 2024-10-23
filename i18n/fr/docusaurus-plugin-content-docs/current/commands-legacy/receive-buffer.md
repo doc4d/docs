@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.RECEIVE BUFFER.Summary-->La commande **RECEIVE BUFFER** lit les données du port série préalablement ouvert par la commande [SET CHANNEL](set-channel.md).<!-- END REF--> Le port série comporte un buffer qui se remplit de caractères jusqu'à ce qu'une commande les charge. **RECEIVE BUFFER** récupère les caractères présents dans le buffer, les place dans la variable *varRéception* puis vide le buffer. S'il n'y a pas de caractères dans le buffer, la variable *varRéception* est vide. 

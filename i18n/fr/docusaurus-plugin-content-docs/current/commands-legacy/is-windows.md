@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Is Windows.Summary-->La commande **Is Windows** retourne Vrai si le système d'exploitation courant est Windows.<!-- END REF-->

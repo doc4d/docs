@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP DELETE HEADER.Summary-->The **WP DELETE HEADER** command deletes the header element associated to the section or subsection defined by the *wpSection* parameter.<!-- END REF--> 

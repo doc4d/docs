@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.ARRAY PICTURE.Summary-->La commande **ARRAY PICTURE** crée et/ou redimensionne un tableau d'éléments de type [Image](# "Can be any Windows or Macintosh picture") en mémoire.<!-- END REF-->

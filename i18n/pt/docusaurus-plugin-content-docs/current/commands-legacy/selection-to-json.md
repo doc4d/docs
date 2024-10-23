@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Selection to JSON.Summary-->O comando **Selection to JSON** devolve uma cadeia JSON que contém os valores dos campos da seleção atual de *aTabela*.<!-- END REF--> Cada elemento do array é um objeto JSON contendo as etiquetas e valores dos campos da seleção.

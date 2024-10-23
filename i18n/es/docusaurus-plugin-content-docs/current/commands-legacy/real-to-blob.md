@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.REAL TO BLOB.Summary-->El comando REAL TO BLOB escribe el valor de tipo Real (o numérico) *real* en el BLOB *blob*.<!-- END REF-->

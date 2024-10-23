@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 互換性に関する注意 
 
 <!--REF #_command_.WP Table range.Summary-->**WP Table range** was named **WP Create table range** in previous versions of 4D Write Pro.<!-- END REF--> It has been renamed for clarity. 

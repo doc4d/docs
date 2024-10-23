@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.XML GET OPTIONS.Summary-->O comando XML GET OPTIONS é utilizado para ler o valor atual de um ou mais dos parâmetros XML definidos para a sessão atual e o usuário atual.<!-- END REF-->

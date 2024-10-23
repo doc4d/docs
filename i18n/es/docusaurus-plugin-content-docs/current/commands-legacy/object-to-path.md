@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Object to path.Summary-->El comando **Object to path** devuelve un nombre de ruta (cadena) en función de la información de ruta que pasó en el parámetro *objRuta*.<!-- END REF--> Las siguientes rutas son soportadas:

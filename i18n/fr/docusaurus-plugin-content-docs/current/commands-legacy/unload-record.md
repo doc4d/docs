@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.UNLOAD RECORD.Summary-->**UNLOAD RECORD** place l'enregistrement courant de *laTable* dans l'état non verrouillé.<!-- END REF-->

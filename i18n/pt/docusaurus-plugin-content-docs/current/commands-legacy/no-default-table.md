@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.NO DEFAULT TABLE.Summary-->O comando NO DEFAULT TABLE permite cancelar o efeito do comando [DEFAULT TABLE](default-table.md).<!-- END REF--> Depois da execução deste comando, não há tabela padrão definida para o processo.  

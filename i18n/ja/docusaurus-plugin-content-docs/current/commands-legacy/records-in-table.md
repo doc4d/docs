@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Records in table.Summary-->Records in tableは、*aTable*中の総レコード数を返します。<!-- END REF-->[Records in selection](records-in-selection.md "Records in selection")は、カレントセレクションのレコード数のみを返します。Records in tableがトランザクション内で使用される場合、トランザクション中に作成されたレコードが考慮に入れられます。

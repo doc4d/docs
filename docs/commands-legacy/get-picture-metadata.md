@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.GET PICTURE METADATA.Summary-->The **GET PICTURE METADATA** command can be used to read the contents of the metadata (or meta-tags) found in *picture* (4D picture field or variable).<!-- END REF--> For more information about metadata, please refer to the description of the [SET PICTURE METADATA](set-picture-metadata.md) command.

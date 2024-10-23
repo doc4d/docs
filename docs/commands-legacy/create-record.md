@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.CREATE RECORD.Summary-->**CREATE RECORD** creates a new empty record for *aTable*, but does not display the new record.<!-- END REF--> Use [ADD RECORD](add-record.md) to create a new record and display it for data entry. 

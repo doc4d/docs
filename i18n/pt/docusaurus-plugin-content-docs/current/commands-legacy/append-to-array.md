@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.APPEND TO ARRAY.Summary-->O comando APPEND TO ARRAY adiciona um novo elemento ao fim do array e atribui valor ao elemento.<!-- END REF--> Em modo interpretado, se *array* não existe, o comando o cria com com respeito ao tipo de *valor*. 

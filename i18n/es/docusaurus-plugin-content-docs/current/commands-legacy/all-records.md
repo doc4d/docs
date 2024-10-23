@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.ALL RECORDS.Summary-->ALL RECORDS selecciona todos los registros de *tabla* para el proceso actual.<!-- END REF--> ALL RECORDS hace del primer registro de la selección el registro actual y lo carga en memoria. ALL RECORDS devuelve los registros en el orden por defecto, que es el orden en el cual los registros son almacenados en el disco.

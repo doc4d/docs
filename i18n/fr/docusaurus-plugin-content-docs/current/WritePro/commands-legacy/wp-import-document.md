@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Import document.Summary-->La commande **WP Import document** convertit un document 4D Write Pro / 4D Write existant (extension .4wp, .4w7 ou .4wt) ou un document MS Word (.docx) en un nouvel objet 4D Write Pro.<!-- END REF-->

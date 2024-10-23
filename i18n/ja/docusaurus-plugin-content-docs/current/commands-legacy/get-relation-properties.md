@@ -19,6 +19,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.GET RELATION PROPERTIES.Summary-->GET RELATION PROPERTIESコマンドは、*tableNum*および*fieldNum*、または*fieldPtr*で指定した元のフィールドを起点とするリレート（存在する場合）のプロパティを返します。<!-- END REF-->

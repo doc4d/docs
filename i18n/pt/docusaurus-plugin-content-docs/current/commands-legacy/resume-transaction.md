@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.RESUME TRANSACTION.Summary-->O comando **RESUME TRANSACTION** reativa a transação que foi suspensa utilizando *ServerSpecialBuild*  no nível correspondente no processo atual.<!-- END REF--> Todas as operações que são executadas depois deste comando são realizadas sob o controle de transações (exceto quando várias transações suspensas estão aninhadas).

@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WP Get section.Summary-->El comando **WP Get section** devuelve la primera sección intersectada por el rango *targetObj* o elemento, o al *indiceSeccion* especificado del documento *wpDoc*.<!-- END REF-->

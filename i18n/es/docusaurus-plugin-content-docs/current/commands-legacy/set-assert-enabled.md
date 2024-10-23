@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.SET ASSERT ENABLED.Summary-->El comando **SET ASSERT ENABLED** se utiliza para desactivar o reactivar las aserciones insertadas en el código 4D de la aplicación.<!-- END REF--> Para mayor información sobre aseciones, consulte la descripción del comando [ASSERT](assert.md). 

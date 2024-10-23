@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.FIRST RECORD.Summary-->**FIRST RECORD** makes the first record of the current selection of *aTable* the current record, and loads the record from disk.<!-- END REF--> All query, selection, and sorting commands also set the current record to the first record. If the current selection is empty or if the current record is already the first record of the selection, **FIRST RECORD** has no effect. 

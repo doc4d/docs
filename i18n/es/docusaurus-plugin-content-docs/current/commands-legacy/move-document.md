@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.MOVE DOCUMENT.Summary-->El comando MOVE DOCUMENT mueve o renombra un documento.<!-- END REF--> 

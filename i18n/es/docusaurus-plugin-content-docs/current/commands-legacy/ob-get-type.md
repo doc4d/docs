@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.OB Get type.Summary-->El comando **OB Get type** devuelve el tipo del valor asociado a la *propiedad* del *objeto*.<!-- END REF-->

@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.MOBILE APP REFRESH SESSIONS.Summary-->El comando **MOBILE APP REFRESH SESSIONS** comprueba todos los archivos de sesión de la aplicación móvil ubicados en la carpeta MobileApps del servidor y actualiza el contenido de sesión existente en la memoria para todo archivo editado.<!-- END REF-->

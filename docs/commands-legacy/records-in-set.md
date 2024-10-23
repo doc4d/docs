@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Records in set.Summary-->Records in set returns the number of records in *set*.<!-- END REF--> If *set* does not exist, or if there are no records in *set*, the command returns 0.

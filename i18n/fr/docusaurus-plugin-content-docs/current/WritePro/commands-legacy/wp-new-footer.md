@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP New footer.Summary-->La commande **WP New footer** crée et retourne le pied associé à la section ou à la sous-section définie par le paramètre *wpSection* .<!-- END REF-->

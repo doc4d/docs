@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Get page count.Summary-->La commande **WP Get page count** retourne le nombre total de pages passées dans le paramètre *objCible*.<!-- END REF-->

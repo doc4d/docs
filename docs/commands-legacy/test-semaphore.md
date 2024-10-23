@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Test semaphore.Summary-->The **Test semaphore** command tests for the existence of a semaphore.<!-- END REF-->

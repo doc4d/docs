@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Current machine.Summary-->Current machineコマンドは、オペレーティングシステムのネットワークパラメタに設定されたマシンの名前を返します。<!-- END REF--> 

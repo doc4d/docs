@@ -19,6 +19,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.QUERY SELECTION BY ATTRIBUTE.Summary-->**QUERY SELECTION BY ATTRIBUTE** works and performs the same actions as [QUERY BY ATTRIBUTE](query-by-attribute.md).<!-- END REF--> The difference between these two commands is the scope of the query:

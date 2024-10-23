@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.MOVE DOCUMENT.Summary-->La commande **MOVE DOCUMENT** déplace ou renomme un document.<!-- END REF-->

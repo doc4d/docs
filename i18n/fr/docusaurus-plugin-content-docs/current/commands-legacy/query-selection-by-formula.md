@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.QUERY SELECTION BY FORMULA.Summary-->La commande **QUERY SELECTION BY FORMULA** vous permet de rechercher des enregistrements dans *laTable*.<!-- END REF--> **QUERY SELECTION BY FORMULA** modifie la sélection courante de *laTable* pour le process courant et fait du premier enregistrement le nouvel enregistrement courant. 

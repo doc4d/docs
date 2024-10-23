@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.METHOD GET NAMES.Summary-->El comando **METHOD GET NAMES** llena el array *arrNoms* con los nombres de los métodos proyecto creados en la aplicación.<!-- END REF-->  

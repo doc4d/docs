@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.BLOB PROPERTIES.Summary-->El comando **BLOB PROPERTIES** devuelve información sobre el BLOB *blob*.<!-- END REF-->

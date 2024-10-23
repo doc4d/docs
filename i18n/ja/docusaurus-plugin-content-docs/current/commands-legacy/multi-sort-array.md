@@ -19,6 +19,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.MULTI SORT ARRAY.Summary-->**MULTI SORT ARRAY** コマンドにより、一連の配列に対してマルチレベルソートを実行することができます。<!-- END REF-->

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SAX ADD XML DOCTYPE.Summary-->SAX ADD XML DOCTYPE コマンドは、*document*で参照されるXMLドキュメントに*docType* 引数で指定されたDocType文を追加します。<!-- END REF-->

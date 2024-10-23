@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.DISTINCT VALUES.Summary-->**DISTINCT VALUES** crée et remplit le tableau *tableau* avec toutes les valeurs distinctes provenant du champ *leChamp* pour la sélection courante de la table du champ et, optionnellement, retourne dans *tabNbVal* le nombre d'occurrences de chaque valeur.<!-- END REF-->

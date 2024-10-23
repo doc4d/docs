@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.DELETE FROM BLOB.Summary-->**DELETE FROM BLOB** supprime le nombre d'octets spécifié par *nombre* du BLOB *blob* à partir de la position définie par *offset* (exprimée de manière relative à l'origine du BLOB).<!-- END REF--> La taille du BLOB est réduite de *nombre* d'octets.

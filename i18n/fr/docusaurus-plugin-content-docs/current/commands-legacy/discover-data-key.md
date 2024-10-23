@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Discover data key.Summary-->La commande **Discover data key** recherche, à la racine de tous les appareils connectés, une clé de chiffrement valide correspondant au fichier de données courant et retourne **Vrai** si l'opération est réussie.<!-- END REF--> 

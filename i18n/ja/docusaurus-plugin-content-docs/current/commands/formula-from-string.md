@@ -26,6 +26,9 @@ displayed_sidebar: docs
 
 <!-- END REF -->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明
 
 `Formula from string` コマンドは、<!-- REF #_command_.Formula from string.Summary -->*formulaString* と任意の *context* 引数に基づいた `4D.Function` オブジェクトを作成します<!-- END REF -->。  *formulaString* には単一の値のようにシンプルなものから、引数を持つプロジェクトメソッドのように複雑なものまで指定することができます。

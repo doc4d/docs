@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição
 
 O comando `ds` <!-- REF #_command_.ds.Summary -->retorna uma referência ao datastore que corresponde ao banco de dados 4D atual ou ao banco de dados designado por *localID*<!-- END REF -->.

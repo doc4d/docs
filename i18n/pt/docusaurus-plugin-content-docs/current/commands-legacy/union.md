@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.UNION.Summary-->UNION cria um novo conjunto que contém todos os registros de *conjunto1 e conjunto2*.<!-- END REF--> A seguinte tabela mostra todos os possíveis resultados de uma operação de união de conjuntos.

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Table name.Summary-->O comando Table name retorna o nome da tabela cujo número ou ponteiro é passado em *numTabela* ou *pontTabela*.<!-- END REF-->

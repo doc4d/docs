@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WP EXPORT DOCUMENT.Summary-->**WP EXPORT DOCUMENT** コマンドは*wpDoc* 引数に渡したディスク上の4D Write Proオブジェクトを、*filePath* 引数で指定した場所に、他の任意の引数に基づいて書き出します。<!-- END REF-->

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Is compiled mode.Summary-->Is compiled mode testa se você está executando no modo compilado (True) ou no modo interpretado (False).<!-- END REF-->   

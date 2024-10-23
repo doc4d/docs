@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WP DELETE FOOTER.Summary-->El comando **WP DELETE FOOTER** elimina el elemento del pie de página asociado a la sección o subsección definida por el parámetro *wpSection*.<!-- END REF--> 

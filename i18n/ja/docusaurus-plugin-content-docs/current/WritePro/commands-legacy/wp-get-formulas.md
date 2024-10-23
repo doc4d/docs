@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WP Get formulas.Summary-->**WP Get formulas** コマンドは、*targetObj* 引数内で定義されている全てのフォーミュラをコレクションとして返します。<!-- END REF-->

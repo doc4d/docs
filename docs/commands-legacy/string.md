@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.String.Summary-->The String command returns the string form of the numeric, Date, Time, string or Boolean expression you pass in *expression*.<!-- END REF-->

@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.DOM GET XML ATTRIBUTE BY INDEX.Summary-->The **DOM GET XML ATTRIBUTE BY INDEX** command gets the name of an attribute specified by its index number as well as its value.<!-- END REF--> 

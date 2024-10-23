@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WP INSERT DOCUMENT.Summary-->El comando **WP INSERT DOCUMENT** inserta el documento *docWP* en el rango *objRango* de acuerdo a los parámetros *modo* de inserción y *actRango*.<!-- END REF-->

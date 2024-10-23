@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.REJECT NEW REMOTE CONNECTIONS.Summary-->**REJECT NEW REMOTE CONNECTIONS** コマンドは、アプリケーションサーバーが新規リモートユーザー接続を受け入れるかどうかを指定します。<!-- END REF-->

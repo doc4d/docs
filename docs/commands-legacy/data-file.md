@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Data file.Summary-->The Data file command returns the long name of the data file for the database with which you are currently working.<!-- END REF-->

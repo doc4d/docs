@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WP New style sheet.Summary-->O comando **WP New style sheet** cria um novo objeto de folha de estilo (vazio) para o *wpDoc* designado.<!-- END REF-->

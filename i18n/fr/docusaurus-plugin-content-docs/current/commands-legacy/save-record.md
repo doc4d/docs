@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.SAVE RECORD.Summary-->**SAVE RECORD** sauvegarde l'enregistrement courant de *laTable* pour le process courant.<!-- END REF--> S'il n'y a pas d'enregistrement courant, la commande est ignorée. 

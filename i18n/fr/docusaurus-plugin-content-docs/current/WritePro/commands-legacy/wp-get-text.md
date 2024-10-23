@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Get text.Summary-->La commande **WP Get text** récupère le contenu textuel d'un document 4D Write Pro dans l'*objCible* spécifié.<!-- END REF-->

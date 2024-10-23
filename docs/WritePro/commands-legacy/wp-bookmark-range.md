@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Compatibility 
 
 <!--REF #_command_.WP Bookmark range.Summary-->**WP Bookmark range** was named **WP Get bookmark range** in previous versions of 4D Write Pro.<!-- END REF--> It has been renamed for clarity. 

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Abs.Summary-->Abs は*number*の絶対値（符号なしの正の値）を返します。<!-- END REF-->*number*が負の場合、正の数を返します。*number*が正の数の場合は、値は変わりません。

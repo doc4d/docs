@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.RELATE ONE SELECTION.Summary-->**RELATE ONE SELECTION**コマンドは、*manyTable*のレコードセレクションをもとにして、*oneTable*テーブルの新しいセレクションを作成し、その新しいセレクションの最初のレコードをカレントレコードとしてロードします。<!-- END REF--> 

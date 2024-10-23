@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WEB SERVICE AUTHENTICATE.Summary-->El comando **WEB SERVICE AUTHENTICATE**  permite utilizar los servicios web que necesitan de la autenticación de la aplicación cliente.<!-- END REF--> Los métodos BASIC y DIGEST son soportados.  

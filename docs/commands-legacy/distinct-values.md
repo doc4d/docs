@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.DISTINCT VALUES.Summary-->The **DISTINCT VALUES** command creates and populates the array *array* with non-repeated (unique) values coming from the field *aField* for the current selection of the table to which the field belongs and, optionally, returns the number of occurrences of each value in the *countArray* parameter.<!-- END REF-->

@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WP INSERT PICTURE.Summary-->El comando **WP INSERT PICTURE** inserta una nueva ruptura de tipo *tipoRuptura* en el rango de selección *objRango* según el modo de inserción *modo* y el parámetro *ActRango*.<!-- END REF-->

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Description 
 
 <!--REF #_command_.FONT LIST.Summary-->O comando FONT LIST enche o array *fontes*, de tipo alfa ou texto, com os nomes das fontes disponíveis em seu sistema.<!-- END REF-->

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.EXPAND BLOB.Summary-->**EXPAND BLOB** décompresse le BLOB *blob* préalablement compressé à l'aide de la commande [COMPRESS BLOB](compress-blob.md).<!-- END REF-->

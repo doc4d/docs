@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.RESOLVE POINTER.Summary-->The RESOLVE POINTER command retrieves the information of the object referenced by the pointer expression *aPointer* and returns it into the parameters *varName*, *tableNum,* and *fieldNum*.<!-- END REF-->

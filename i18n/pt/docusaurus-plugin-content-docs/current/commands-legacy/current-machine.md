@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Current machine.Summary-->O comando Current machine devolve o nome de seu equipo, como está definido no painel de controle da rede.<!-- END REF-->

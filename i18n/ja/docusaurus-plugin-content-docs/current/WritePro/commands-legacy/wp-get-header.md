@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WP Get header.Summary-->**WP Get header** コマンドは*wpDoc* 引数で指定したドキュメントの、*targetObj* 引数で指定したレンジ、あるいは*sectionIndex* 引数で指定したインデックスに関連付けられたヘッダーを返します。<!-- END REF-->引数で指定した条件に合致するヘッダーが見つからなかった場合、コマンドは**Null** を返します。

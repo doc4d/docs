@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.ARRAY INTEGER.Summary-->El comando ARRAY INTEGER crea y/o redimensiona un array de elementos de tipo [Entero](# "Number between -32,768..32,767 (2^15..(2^15)-1) (2-byte integer)") de 2 bytes en memoria.<!-- END REF-->

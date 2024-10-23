@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.INTEGRATE MIRROR LOG FILE.Summary-->**Nota preliminar:** este comando só funciona com 4D Server.<!-- END REF--> Só pode ser executado através do comando [Execute on server](execute-on-server.md) ou em um procedimento armazenado.

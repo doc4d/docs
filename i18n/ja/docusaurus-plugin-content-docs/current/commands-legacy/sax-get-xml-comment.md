@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SAX GET XML COMMENT.Summary-->SAX GET XML COMMENT コマンドは、*document* 引数で参照されるXMLドキュメント中でXML Comment SAXイベントが生成された時、XMLコメントを*comment*に返します。<!-- END REF-->SAXイベントに関する詳細は[SAX Get XML node](sax-get-xml-node.md "SAX Get XML node") コマンドの説明を参照してください。

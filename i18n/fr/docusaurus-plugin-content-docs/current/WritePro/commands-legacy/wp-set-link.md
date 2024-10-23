@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP SET LINK.Summary-->La commande **WP SET LINK** applique une référence de lien hypertexte au paramètre *objCible*.<!-- END REF--> Les liens vers les URL, les méthodes 4D et les signets sont pris en charge. Le lien déclenche une action lorsque l'utilisateur clique dessus (ou lorsqu'il utilise le raccource **Ctrl+clic** sur Windows ou **Cmd+clic** sur macOS si le texte n'est pas en lecture seule pour les URL ouvrants).

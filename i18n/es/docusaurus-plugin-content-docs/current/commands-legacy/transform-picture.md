@@ -19,6 +19,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.TRANSFORM PICTURE.Summary-->El comando TRANSFORM PICTURE permite aplicar una transformación de tipo *operador* a la imagen pasada en el parámetro *imagen*.<!-- END REF-->

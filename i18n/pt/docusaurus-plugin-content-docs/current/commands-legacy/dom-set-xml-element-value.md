@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.DOM SET XML ELEMENT VALUE.Summary-->O comando DOM SET XML ELEMENT VALUE lhe permite modificar o valor do elemento definido por *refElement*.<!-- END REF-->  

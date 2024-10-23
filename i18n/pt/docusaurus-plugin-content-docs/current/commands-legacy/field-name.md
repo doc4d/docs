@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Field name.Summary-->O comando Field name retorna o nome do campo cujo ponteiro se passa en *pontCampo* ou cujos números de tabela e de campos se passan en *numTabela e numCampo*.<!-- END REF-->

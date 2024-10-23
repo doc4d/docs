@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Get adjusted blobs cache priority.Summary-->El comando **Get adjusted blobs cache priority** devuelve el valor de prioridad de la caché ajustada actual aplicado en la caché para los datos "blobs" *tabla*.<!-- END REF--> Este comando sólo es necesario para propósitos de depuración. 

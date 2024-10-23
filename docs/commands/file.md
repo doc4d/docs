@@ -26,6 +26,9 @@ displayed_sidebar: docs
 |Result|4D.File|&#8592;|New file object|
 <!-- END REF -->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description
 
 The `File` command <!-- REF #_command_.File.Summary -->creates and returns a new object of the `4D.File` type<!-- END REF -->. The command accepts two syntaxes:

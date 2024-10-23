@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.VOLUME ATTRIBUTES.Summary-->VOLUME ATTRIBUTESコマンドは、引数*volume*に渡した名前を持つボリュームのサイズ、使用サイズおよび空きサイズをバイト単位で表わして返します。<!-- END REF--> 

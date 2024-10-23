@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.SAX GET XML CDATA.Summary-->El comando **SAX GET XML CDATA**permite recuperar el *valor* CDATA de un elemento XML existente en el documento XML referenciado por *documento*.<!-- END REF--> Este comando debe llamarse con el evento SAX XML CDATA. Para mayor información sobre eventos SAX, consulte la descripción del comando [SAX Get XML node](sax-get-xml-node.md). 

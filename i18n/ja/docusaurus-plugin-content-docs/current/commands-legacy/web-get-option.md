@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WEB GET OPTION.Summary-->**WEB GET OPTION** コマンドは4D Webサーバー処理に関するオプションの現在の設定値を取得するために使用します。<!-- END REF-->

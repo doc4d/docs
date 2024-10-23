@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.LONGINT TO BLOB.Summary-->O comando LONGINT TO BLOB grava o valor *inteiro longo* de 4-byte no BLOB *blob*.<!-- END REF-->

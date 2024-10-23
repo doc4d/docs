@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.XML GET OPTIONS.Summary-->La commande **XML GET OPTIONS** permet de lire la valeur d’un ou plusieurs paramètre(s) XML définis pour la session courante et l’utilisateur courant.<!-- END REF--> 

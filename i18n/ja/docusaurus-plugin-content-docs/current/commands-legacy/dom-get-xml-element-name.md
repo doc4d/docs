@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DOM GET XML ELEMENT NAME.Summary-->DOM GET XML ELEMENT NAME コマンドは、*elementRef* で指定したXML要素の名前を*elementName* 引数に返します。<!-- END REF-->*elementName* 引数の型が定義されてない場合、デフォルトでテキスト型が使用されます。

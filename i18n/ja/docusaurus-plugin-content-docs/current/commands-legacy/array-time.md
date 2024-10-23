@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.ARRAY TIME.Summary-->**ARRAY TIME**コマンドは、メモリ上に時間型の要素の配列を作成・リサイズします。<!-- END REF-->

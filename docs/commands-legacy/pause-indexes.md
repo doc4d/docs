@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.PAUSE INDEXES.Summary-->The **PAUSE INDEXES** command temporarily disables all the indexes of *aTable*, except for the index of the primary key.<!-- END REF-->

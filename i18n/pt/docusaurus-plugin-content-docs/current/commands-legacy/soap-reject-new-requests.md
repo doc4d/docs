@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.SOAP REJECT NEW REQUESTS.Summary-->O comando **SOAP REJECT NEW REQUESTS** especifica se o servidor de serviços web aceita ou não novas solicitações SOAP.<!-- END REF--> 

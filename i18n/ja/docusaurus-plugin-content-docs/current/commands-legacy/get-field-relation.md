@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.GET FIELD RELATION.Summary-->GET FIELD RELATIONを使用すると、カレントプロセスの、*manyField*から開始するリレートの自動/マニュアルのステータスを調べることができます。<!-- END REF-->ストラクチャウィンドウで設定した自動リレートをはじめとして、あらゆるリレートを調べることができます。

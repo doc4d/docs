@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Tickcount.Summary-->Tickcount retorna o número de tics (1 tic = 1 / 60 avos de um segundo) passados desde que se iniciou a máquina.<!-- END REF-->

@@ -19,6 +19,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Table get cells.Summary-->The **WP Table get cells** command returns a new cell range object containing the selection of cells in the *targetObj* or *tableRef* (defined by *startCol*, *startRow*, *numCols*, and *numRows*).<!-- END REF-->

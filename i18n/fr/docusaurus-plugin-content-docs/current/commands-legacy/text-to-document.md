@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.TEXT TO DOCUMENT.Summary-->La commande **TEXT TO DOCUMENT** permet d’écrire directement le *texte* dans un fichier sur disque.<!-- END REF-->

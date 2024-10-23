@@ -19,6 +19,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.SET CHANNEL.Summary-->El comando SET CHANNEL abre un puerto serial o un documento.<!-- END REF--> Sólo puede abrir un puerto serial o un documento al tiempo con este comando. Para cerrar un puerto serial abierto, pase SET CHANNEL (11).

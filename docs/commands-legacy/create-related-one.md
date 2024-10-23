@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.CREATE RELATED ONE.Summary-->**CREATE RELATED ONE** performs two actions.<!-- END REF--> If a related record does not exist for *aField* (that is, if a match is not found for the current value of *field*), **CREATE RELATED ONE** creates a new related record. 

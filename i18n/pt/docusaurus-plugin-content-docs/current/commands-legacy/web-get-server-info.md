@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WEB Get server info.Summary-->O comando **WEB Get server info** devolve um objeto que contèm informação do tempo de execução detalhada na sessão atual do servidor web 4D.<!-- END REF--> A informação devolvida inclui o servidor SOAP.

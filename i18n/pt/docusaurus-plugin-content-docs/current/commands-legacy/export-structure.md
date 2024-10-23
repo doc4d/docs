@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.EXPORT STRUCTURE.Summary-->O comando **EXPORT STRUCTURE** exporta, em *estruturaXML*, a definição da estrutura da base 4D atual ao formato XML.<!-- END REF--> Este comando utiliza os mesmos mecanismos que o comando de menu **Exportar > Definição de estrutura ao arquivo XML...** que se encontra na interface do modo Desenho de 4D (ver *Exportar e importar definições de estrutura*).

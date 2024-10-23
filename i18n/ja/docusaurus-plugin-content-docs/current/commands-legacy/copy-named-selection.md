@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.COPY NAMED SELECTION.Summary-->COPY NAMED SELECTION は*aTable*のカレントセレクションを命名セレクション*name*にコピーします。<!-- END REF-->オプション*table*引数が指定されていない場合は、そのプロセスのデフォルトテーブルを使用します。*name*引数にはセレクションのコピーが納められます。そのプロセスにおける*table*のカレントセレクションとカレントレコードは変更されません。

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WEB SET HOME PAGE.Summary-->La commande **WEB SET HOME PAGE** vous permet de modifier la page d’accueil (page Home) personnalisée pour le process Web courant.<!-- END REF--> 

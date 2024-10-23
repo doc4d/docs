@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Table append row.Summary-->La commande **WP Table append row** ajoute une ligne au tableau *refTableau*, le remplit avec les *valeur*(s) et retourne l'objet correspondant à la plage de la ligne.<!-- END REF-->

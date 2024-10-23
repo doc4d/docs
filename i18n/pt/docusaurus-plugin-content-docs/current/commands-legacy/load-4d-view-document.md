@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Load 4D View document.Summary-->O comando **Load 4D View document** permite converter um documento 4D View é um objeto 4D.<!-- END REF--> 

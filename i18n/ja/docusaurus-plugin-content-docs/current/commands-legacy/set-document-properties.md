@@ -19,6 +19,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SET DOCUMENT PROPERTIES.Summary-->SET DOCUMENT PROPERTIESコマンドは、引数*document* に渡した名前またはパス名を持つドキュメントについての情報を変更します。<!-- END REF-->

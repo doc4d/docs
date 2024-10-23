@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.PUSH RECORD.Summary-->**PUSH RECORD** "empile" une copie de l'enregistrement courant de *laTable* dans la pile d'enregistrements de la table.<!-- END REF--> **PUSH RECORD** peut être exécuté avant qu'un enregistrement soit sauvegardé.

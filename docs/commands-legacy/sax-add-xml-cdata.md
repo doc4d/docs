@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.SAX ADD XML CDATA.Summary-->In the XML document referenced by *document*, the SAX ADD XML CDATA command adds *data* of the text or BLOB type.<!-- END REF--> This *data* will be automatically framed between the *<!\[CDATA\[* and *\]\]> tags.*

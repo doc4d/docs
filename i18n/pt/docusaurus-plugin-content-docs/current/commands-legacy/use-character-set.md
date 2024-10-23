@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.USE CHARACTER SET.Summary-->USE CHARACTER SET modifica o conjunto de caracteres usado por 4D durante a transferência de dados entre o banco de dados e um documento ou uma porta serial para o processo atual.<!-- END REF--> As operações de transferência incluem a importação e exportação de texto (ASCII), DIF, e os arquivos SYLK. Um mapa de caracteres também funciona com os dados enviados pelos comandos [SEND PACKET](send-packet.md), [RECEIVE PACKET](receive-packet.md) (para pacotes de tipo texto), e [RECEIVE BUFFER](receive-buffer.md). Não tem efeito em transferências de dados realizadas com [SEND RECORD](send-record.md), [SEND VARIABLE](send-variable.md), [RECEIVE RECORD](receive-record.md), [SEND PACKET](send-packet.md), [RECEIVE PACKET](receive-packet.md) (para pacotes tipo BLOB) e [RECEIVE VARIABLE](receive-variable.md).

@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Find in field.Summary-->El comando Find in field devuelve el número del primer registro cuyo *campoObjetivo* es igual a *valor*.<!-- END REF-->  

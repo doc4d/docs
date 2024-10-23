@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DOM Find XML element by ID.Summary-->DOM Find XML element by ID コマンドはXMLドキュメント中で、id属性値が引数として渡した*id*と同じである要素を検索します。<!-- END REF-->

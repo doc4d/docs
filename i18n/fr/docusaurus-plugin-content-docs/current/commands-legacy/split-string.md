@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Split string.Summary-->La commande **Split string** retourne une collection de chaînes, créée à partir du découpage de *chaîneASéparer* en sous-chaînes aux limites définies par le paramètre *séparateur*.<!-- END REF--> Les sous-chaînes dans la collection retournée n'incluent pas le *séparateur* lui-même.

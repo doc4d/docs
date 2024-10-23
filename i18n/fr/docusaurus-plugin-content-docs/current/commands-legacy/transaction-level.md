@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Transaction level.Summary-->La commande **Transaction level** retourne le niveau de transaction courant pour le process.<!-- END REF--> Cette commande prend en compte toutes les transactions du process courant, qu’elles aient été démarrées via le langage de 4D ou via le SQL.

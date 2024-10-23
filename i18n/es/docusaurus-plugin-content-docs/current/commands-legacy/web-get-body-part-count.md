@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WEB Get body part count.Summary-->El comando **WEB Get body part count** devuelve el número de partes que compone el cuerpo recibido.<!-- END REF-->

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Current method name.Summary-->**Current method name**コマンドは、このコマンドを呼び出したメソッド名を返します。<!-- END REF-->このコマンドは汎用メソッドをデバッグするときに有効です

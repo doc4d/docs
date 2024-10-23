@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Is nil pointer.Summary-->El comando **Is nil pointer** devuelve True si el puntero que pasa en *unPuntero* es Nil (*\->\[\]*).<!-- END REF--> Devuelve False en todos los otros casos (puntero hacia un campo, tabla o variable).

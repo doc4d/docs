@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.OB Is empty.Summary-->O comando **OB Is empty** devolve **True** se *objeto* não está definido ou está vazio, e **False** se *objeto* está definido (inicializado) e contém ao menos uma propriedade.<!-- END REF-->  

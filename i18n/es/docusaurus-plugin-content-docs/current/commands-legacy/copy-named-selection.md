@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.COPY NAMED SELECTION.Summary-->COPY NAMED SELECTION copia la selección actual de *tabla* en una selección temporal *temp*.<!-- END REF--> La tabla por defecto del proceso se utiliza si el parámetro opcional *tabla* no se especifica. El parámetro *temp* contiene una copia de la selección. La selección actual y el registro actual de *tabla* para el proceso no cambian.

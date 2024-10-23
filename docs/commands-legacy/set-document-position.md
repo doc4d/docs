@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.SET DOCUMENT POSITION.Summary-->This command operates only on a document currently open whose document reference number you pass in *docRef*.<!-- END REF-->

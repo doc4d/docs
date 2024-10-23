@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Average.Summary-->**Average** returns the arithmetic mean (average) of *series*.<!-- END REF--> If *series* is an indexed field, the index is used to find the average.

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Is field value Null.Summary-->The Is field value Null command returns **True** if the field designated by the *aField* parameter contains the NULL value, and **False** otherwise.<!-- END REF-->

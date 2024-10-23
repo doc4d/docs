@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.ORDER BY ATTRIBUTE.Summary-->**ORDER BY ATTRIBUTE** コマンドは、カレントプロセスにおいて *aTable* のカレントレコードセレクションを *objectField* の *attributePath* を基準にソートします。<!-- END REF-->ソートが終了すると、セレクションの先頭レコードがカレントレコードとなります。 

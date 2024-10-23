@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Request.Summary-->O comando **Request** mostra uma caixa de diálogo composta de uma mensagem, uma área de entrada de texto, um botão **OK** e um botão **Cancelar**.<!-- END REF-->

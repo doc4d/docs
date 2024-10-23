@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.DELETE SELECTION.Summary-->DELETE SELECTION borra la selección actual de registros de *tabla*.<!-- END REF--> Si la selección actual está vacía, DELETE SELECTION no hace nada. Después de borrar los registros, la selección actual queda vacía. Los registros que se borran durante una transacción están bloqueados para los otros usuarios y procesos hasta que la transacción se valide o cancele.

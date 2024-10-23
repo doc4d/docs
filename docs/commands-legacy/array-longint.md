@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.ARRAY LONGINT.Summary-->The ARRAY LONGINT command creates and/or resizes an array of 4-byte [Longint](# "Number between -2^31..(2^31)-1 (4-byte Integer)") elements in memory.<!-- END REF-->

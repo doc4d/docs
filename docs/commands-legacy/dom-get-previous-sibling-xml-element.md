@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.DOM Get previous sibling XML element.Summary-->The DOM Get previous sibling XML element command returns a reference to the previous “sibling” of the XML element passed as reference.<!-- END REF--> This reference may be used with the other XML parsing commands.

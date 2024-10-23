@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.GET DOCUMENT ICON.Summary-->GET DOCUMENT ICONコマンドは、*filePath*に渡した名前または完全なパス名を持つドキュメントのアイコンを4Dのピクチャ変数またはフィールド*icon*に返します。<!-- END REF-->*filePath* はあらゆるタイプのファイル (実行ファイル、ドキュメント、ショートカットまたは別名など) またはフォルダを指定します。 

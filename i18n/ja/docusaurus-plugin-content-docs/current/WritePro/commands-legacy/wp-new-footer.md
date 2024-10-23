@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WP New footer.Summary-->**WP New footer** コマンドは、*wpSection* 引数で定義されたセクションまたはサブセクションに割り当てられるフッターを作成し、それを返します。<!-- END REF-->

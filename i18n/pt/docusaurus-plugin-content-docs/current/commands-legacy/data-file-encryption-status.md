@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Data file encryption status.Summary-->O comando **Data file encryption status** devolve um objeto que fornece o estado de cifrado para o arquivo de dados designado pelos parâmetros *rotaEstruta* e *rotaDados*.<!-- END REF--> Também se proporciona o estado de cada tabela.

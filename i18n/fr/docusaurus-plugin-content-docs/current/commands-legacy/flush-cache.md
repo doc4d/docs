@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.FLUSH CACHE.Summary-->La commande **FLUSH CACHE** sauvegarde immédiatement le cache de données sur le disque.<!-- END REF--> Toutes les modifications apportées à la base sont alors stockées sur disque.

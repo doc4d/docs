@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Selection to JSON.Summary-->La commande **Selection to JSON** retourne une chaîne qui contient un tableau JSON avec autant d'éléments qu'il y a d'enregistrements dans la sélection courante de *laTable*.<!-- END REF--> Chaque élément du tableau est un objet JSON contenant les libellés et les valeurs des champs de la sélection.

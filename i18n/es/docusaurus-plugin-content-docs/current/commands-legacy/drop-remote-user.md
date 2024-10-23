@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.DROP REMOTE USER.Summary-->El comando **DROP REMOTE USER** desconecta a un usuario específico conectado remotamente al servidor 4D.<!-- END REF--> 

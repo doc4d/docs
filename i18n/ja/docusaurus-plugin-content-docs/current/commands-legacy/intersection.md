@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.INTERSECTION.Summary-->INTERSECTIONコマンドは、*set1*と*set2*を比較し、*set1*と*set2*の両方に存在するレコードだけを選択します。<!-- END REF-->下表に、INTERSECTIONコマンドの処理で考えられるすべての組み合わせを示します。

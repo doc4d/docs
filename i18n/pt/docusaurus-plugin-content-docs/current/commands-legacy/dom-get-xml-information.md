@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.DOM Get XML information.Summary-->O comando DOM Get XML information permite recuperar diversas informações sobre o elemento XML designado por *refElemento*.<!-- END REF-->  

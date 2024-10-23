@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DOM Create XML Ref.Summary-->DOM Create XML Ref コマンドは空のXMLツリーをメモリに作成し、その参照を返します。<!-- END REF-->  

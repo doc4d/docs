@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.FONT STYLE LIST.Summary-->El comando **FONT STYLE LIST** devuelve la lista de estilos y la lista de nombres completos soportados por la familia de fuente designada por el parámetro *familiaFuente*.<!-- END REF--> Este comando le permite diseñar interfaces de manejo de fuentes y estilos, en particular en el contexto de las áreas 4D Write Pro (ver *Referencia 4D Write Pro*).

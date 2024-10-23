@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.ARRAY INTEGER.Summary-->The ARRAY INTEGER command creates and/or resizes an array of 2-byte [Integer](# "Number between -32,768..32,767 (2^15..(2^15)-1) (2-byte integer)") elements in memory.<!-- END REF-->

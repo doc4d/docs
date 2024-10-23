@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WP Table get columns.Summary-->El comando **WP Table get columns**  devuelve un nuevo objeto de rango de celdas que contiene la selección de columnas *objTarget* o *refTabla* (definida por *colIni* y *numCol*).<!-- END REF--> 

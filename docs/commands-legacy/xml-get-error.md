@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.XML GET ERROR.Summary-->The XML GET ERROR command returns, in the *errorText* parameter, a description of the error encountered when processing the XML element designated by the *elementRef* parameter.<!-- END REF--> The information returned is supplied by the Xerces.DLL library. 

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.DELAY PROCESS.Summary-->DELAY PROCESS delays the execution of a *process* for a number of ticks (1 tick = 1/60th of a second).<!-- END REF--> During this period, *process* does not take any processing time. Even though the execution of a process may be delayed, it is still in memory.

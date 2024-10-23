@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Count parameters.Summary-->O comando Count parameters devolve o número de parâmetros passados a um método de projeto.<!-- END REF-->

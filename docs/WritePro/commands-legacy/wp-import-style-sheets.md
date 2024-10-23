@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP IMPORT STYLE SHEETS.Summary-->The **WP IMPORT STYLE SHEETS** command imports all of the style sheets from the *sourceDoc* into the *targetDoc*.<!-- END REF-->

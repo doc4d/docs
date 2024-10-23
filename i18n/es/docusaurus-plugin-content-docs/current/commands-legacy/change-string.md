@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Change string.Summary-->Change string devuelve una cadena resultante de cambiar los caracteres, en la cadena *fuente*, a partir de *posicion* con los caracteres en *nuevo*.<!-- END REF--> 

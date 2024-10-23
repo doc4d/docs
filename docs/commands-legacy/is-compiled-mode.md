@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Is compiled mode.Summary-->Is compiled mode tests whether you are running in compiled mode (True) or interpreted mode (False).<!-- END REF-->  

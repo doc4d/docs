@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.ASSERT.Summary-->O comando **ASSERT** avalia a expressão *boolExpression* passa no parâmetro e, se retornar falso, para a execução do código com uma mensagem de erro .<!-- END REF-->O comando funciona em modo interpretado e compilado.

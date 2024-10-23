@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Windows Ctrl down.Summary-->Windows Ctrl down devuelve TRUE si la tecla Ctrl Windows está presionada.<!-- END REF--> 

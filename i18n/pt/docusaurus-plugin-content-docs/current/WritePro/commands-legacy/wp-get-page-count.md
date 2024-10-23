@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WP Get page count.Summary-->O comando **WP Get page count** devolve o número total de páginas definidas no documento 4D Write Pro *docWP*.<!-- END REF-->

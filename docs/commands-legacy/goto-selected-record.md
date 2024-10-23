@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.GOTO SELECTED RECORD.Summary-->**GOTO SELECTED RECORD** moves to the specified record in the current selection of *aTable* and makes that record the current record.<!-- END REF--> The current selection does not change. The *record* parameter is not the same as the number returned by [Record number](record-number.md); it represents the record’s position in the current selection. The record’s position depends on how the selection is made and whether or not the selection is sorted.

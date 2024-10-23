@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WP GET BOOKMARKS.Summary-->**WP GET BOOKMARKS** コマンドは*wpDoc* 引数で指定した4D Write Proドキュメント内で定義されている全てのブックマーク名を含む配列を返します。<!-- END REF-->

@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP INSERT FORMULA.Summary-->The **WP INSERT FORMULA** command inserts a *formula* in *targetObj* according to the specified insertion *mode*.<!-- END REF-->

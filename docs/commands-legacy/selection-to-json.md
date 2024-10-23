@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Selection to JSON.Summary-->The **Selection to JSON** command returns a string containing a JSON array with as many elements as there are records in the current selection of *aTable*.<!-- END REF--> Each element of the array is a JSON object containing the labels and values of the fields of the selection.

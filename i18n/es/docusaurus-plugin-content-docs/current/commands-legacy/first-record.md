@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.FIRST RECORD.Summary-->FIRST RECORD hace del primer registro de la selección actual de *tabla* el registro actual y carga el registro del disco.<!-- END REF--> Todos los comandos de búsqueda, selección, y ordenación también establecen como primer registro el registro actual. Si la selección actual está vacía o si el registro actual ya es el primer registro de la selección, FIRST RECORD no tiene ningún efecto. 

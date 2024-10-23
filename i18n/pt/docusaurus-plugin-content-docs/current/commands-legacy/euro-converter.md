@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Euro converter.Summary-->O comando Euro converter permite realizar todo tipo de conversão de valores entre as diferentes moedas de países que pertencem à “Zona Euro” e ao Euro mesmo.<!-- END REF-->

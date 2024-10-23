@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.OB Class.Summary-->La commande **OB Class** retourne la classe de l'*objet* passé en paramètre.<!-- END REF--> Dans 4D, tous les objets sont hérités de l'objet classe. Si *objet* est un objet inexistant, **OB Class** retourne null. 

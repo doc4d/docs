@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WP DELETE HEADER.Summary-->**WP DELETE HEADER** コマンドは*wpSection* 引数で定義されたセクションあるいはサブセクションに割り当てられたヘッダー要素を削除します。<!-- END REF-->

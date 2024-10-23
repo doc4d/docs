@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.JSON Parse.Summary-->El comando **JSON Parse** analiza el contenido de una cadena con formato JSON y extrae los valores que puede almacenar en un campo o variable 4D.<!-- END REF--> Este comando deserializa los datos JSON, realiza la acción inversa del comando [JSON Stringify](json-stringify.md).  

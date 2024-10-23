@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.CREATE EMPTY SET.Summary-->**CREATE EMPTY SET** creates a new empty set, *set*, for *aTable*.<!-- END REF--> You can add records to this set with the [ADD TO SET](add-to-set.md) command. If a set with the same name already exists, the existing set is cleared by the new set.

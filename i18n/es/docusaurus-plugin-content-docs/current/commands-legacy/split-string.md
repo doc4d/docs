@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Split string.Summary-->El comando **Split string** devuelve una colección de cadenas, creada al dividir *cadenaAseparar* en subcadenas en los límites especificados por el parámetro *separador*.<!-- END REF--> Las subcadenas en la colección devuelta no incluyen el *separador*.

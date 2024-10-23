@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Object to path.Summary-->**Object to path** コマンドは*pathObject* 引数に渡したパス情報をもとにしたパス名(文字列)を返します。<!-- END REF-->以下のパスがサポートされます:

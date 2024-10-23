@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.GENERATE ENCRYPTION KEYPAIR.Summary-->The **GENERATE ENCRYPTION KEYPAIR** command generates a new pair of RSA keys.<!-- END REF--> These keys allow asymmetric encryption features in 4D, usually required when you need to secure data exchanges over a network (e.g. using the 4D Web server and the TLS protocol). 

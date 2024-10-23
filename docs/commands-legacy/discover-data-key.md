@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Discover data key.Summary-->The **Discover data key** command searches for a valid encryption key corresponding to the currently opened data file at the root level of all connected devices and returns **True** if successful.<!-- END REF--> 

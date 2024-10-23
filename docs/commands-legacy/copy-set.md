@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.COPY SET.Summary-->The COPY SET command copies the contents of the set *srcSet* into the set *dstSet*.<!-- END REF-->

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Get cache size.Summary-->**Get cache size**コマンドは、カレントデータベースのキャッシュサイズをバイト単位で返します。<!-- END REF-->

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Is record loaded.Summary-->**Is record loaded** コマンドは、*aTable*のカレントレコードがカレントプロセス内にロードされていれば[True](true.md "True")を返します。<!-- END REF-->

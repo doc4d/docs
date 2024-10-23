@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Is a variable.Summary-->**Is a variable**コマンドは、*aPointer*が定義済み変数を参照する場合にはTrueを返します。<!-- END REF-->その他の場合（フィールドやテーブルへのポインター、Nilポインター等）、この関数はFalseを返します。

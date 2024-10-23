@@ -18,6 +18,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Insert table.Summary-->The **WP Insert table** command inserts a new table in the *targetObj* according to the specified insertion *mode* and returns the corresponding new table object.<!-- END REF--> Optionally, you can pass a *rangeUpdate* parameter as well as a predefined number of columns and rows in *nbCols* and *nbRows*.

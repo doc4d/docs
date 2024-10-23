@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.PREVIOUS RECORD.Summary-->PREVIOUS RECORDは、カレントプロセスの*aTable*のカレントセレクションにある1つ前のレコードへカレントレコードポインタを移動します。<!-- END REF-->カレントセレクションが空の場合、または[Before selection](before-selection.md "Before selection")や[End selection](end-selection.md "End selection")がTRUEの場合、PREVIOUS RECORDは何も行いません。

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.SAX ADD XML ELEMENT VALUE.Summary-->O comando SAX ADD XML ELEMENT VALUE adiciona diretamente no documento XML referenciado por *document*o os dados sem convertê-los.<!-- END REF--> Este comando é equivalente, por exemplo, a inserir um arquivo anexado em um e-mail.

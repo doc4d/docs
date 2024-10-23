@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.DELETE SELECTION.Summary-->**DELETE SELECTION** deletes the current selection of records from *aTable*.<!-- END REF--> If the current selection is empty, **DELETE SELECTION** has no effect. After the records are deleted, the current selection is empty. Records that are deleted during a transaction are locked to other users and other processes until the transaction is validated or canceled.

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.RECEIVE RECORD.Summary-->RECEIVE RECORD recebe um registro na *tabela* a partir da porta serial ou documento aberto pelo comando [SET CHANNEL](set-channel.md "SET CHANNEL").<!-- END REF--> O registro deve ter sido enviado com [SEND RECORD](send-record.md "SEND RECORD"). Quando você executa RECEIVE RECORD, um novo registro é criado automaticamente para a tabela. Se o registro for recebido corretamente, você deve então usar [SAVE RECORD](save-record.md "SAVE RECORD") para gravar o novo registro.

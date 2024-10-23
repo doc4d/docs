@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.SET EXTERNAL DATA PATH.Summary-->The **SET EXTERNAL DATA PATH** command sets or modifies, for the current record, the external storage location for the *aField* field passed as parameter.<!-- END REF-->

@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.BASE64 DECODE.Summary-->The **BASE64 DECODE** command decodes the text or blob value coded in Base64 or Base64URL format passed in the *toDecode* parameter.<!-- END REF--> For more information on Base64 and Base64URL formats, please refer to the [BASE64 ENCODE](base64-encode.md) command description. 

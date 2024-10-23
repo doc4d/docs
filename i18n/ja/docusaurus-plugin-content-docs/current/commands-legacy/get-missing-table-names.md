@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.GET MISSING TABLE NAMES.Summary-->GET MISSING TABLE NAMES コマンドは カレントデータベース中ですべての失われたテーブルの名前を*missingTables*配列に返します。<!-- END REF-->

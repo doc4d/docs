@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Process number.Summary-->Process numberは、*name*引数に指定した名前を持つプロセス番号を返します。<!-- END REF-->プロセスが見つからない場合には、Process numberは0を返します。

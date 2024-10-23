@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.WEB GET VARIABLES.Summary-->El comando **WEB GET VARIABLES** llena los arrays texto *arrayNoms* y *arrayValores* con los nombres y los valores de las variables contenidas en el formulario web “enviado” al servidor web.<!-- END REF--> 

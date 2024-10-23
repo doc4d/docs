@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Data file encryption status.Summary-->La commande **Data file encryption status** retourne un objet qui fournit le statut de chiffrement du fichier de données indiqué par les paramètres *cheminStructure* et *cheminDonnées*.<!-- END REF--> Le statut de chiffrement de chaque table est également fourni.

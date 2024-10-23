@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.FONT LIST.Summary-->La commande   **FONT LIST** remplit le tableau Texte *polices* avec les noms des polices vectorielles disponibles dans votre système.<!-- END REF-->

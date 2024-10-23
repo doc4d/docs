@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Application version.Summary-->**Application version** コマンドは、現在使用している4D環境のバージョン番号を表すエンコードされた文字列を返します。<!-- END REF--> 

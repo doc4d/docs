@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.GET TEXT KEYWORDS.Summary-->**GET TEXT KEYWORDS**コマンドは*text*を個々の単語に分割し、*arrKeywords*配列の要素にして返します。<!-- END REF-->

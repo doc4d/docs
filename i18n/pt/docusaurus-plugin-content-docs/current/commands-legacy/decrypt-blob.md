@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.DECRYPT BLOB.Summary-->O comando DECRYPT BLOB descriptografa o conteúdo do BLOB usando *aDecifrar* usando a *enviarChavePub* pública do remetente e, opcionalmente, a chave *recepChavePriv* privada do destinatário.<!-- END REF-->

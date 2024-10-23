@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Exp.Summary-->**Exp** retourne l'exponentielle (e=2,71828...) de *nombre*.<!-- END REF--> **Exp** est la fonction inverse de [Log](log.md). 

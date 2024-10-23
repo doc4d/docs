@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.DELETE RECORD.Summary-->**DELETE RECORD** supprime de *laTable* l'enregistrement courant du process en cours.<!-- END REF--> S'il n'y a pas d'enregistrement courant pour *laTable* dans le process, **DELETE RECORD** ne fait rien. Dans un formulaire, vous pouvez créer un bouton 'Supprimer enregistrement' et lui assigner l'action automatique correspondante, plutôt que d'utiliser cette commande.

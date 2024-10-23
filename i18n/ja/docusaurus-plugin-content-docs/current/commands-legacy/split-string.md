@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.Split string.Summary-->**Split string** コマンドは、*stringToSplit* 引数の文字列を、*separator* 引数で指定した区切り文字によって分割した文字列のコレクションを返します。<!-- END REF-->返されたコレクション内の文字列には、*separator* 引数の区切り文字自身は含まれません。

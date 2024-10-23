@@ -26,6 +26,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明
 
 `Open datastore` コマンドは、<!-- REF #_command_.Open datastore.Summary -->

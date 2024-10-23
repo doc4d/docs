@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.End selection.Summary-->**End selection** devuelve TRUE cuando el puntero del registro actual está más allá del último registro de la selección actual de *tabla*.<!-- END REF--> **End selection** se utiliza generalmente para probar si la llamada al comando [NEXT RECORD](next-record.md) ha movido o no el puntero del registro actual detrás del último registro de la selección. Si la selección actual está vacía, **End selection** devuelve TRUE.

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WEB SEND FILE.Summary-->**WEB SEND FILE**コマンドは*htmlFile*に渡すパス名を持つHTMLページやWebファイルをWebブラウザへ送ります。<!-- END REF--> 

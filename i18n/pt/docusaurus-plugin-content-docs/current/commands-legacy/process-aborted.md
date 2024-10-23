@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Process aborted.Summary-->O comando Process aborted retorna **True** se o processo no qual foi chamado, está prestes a ser interrompido inesperadamente, o que significa que a execução do comando, não teve uma execução "normal".<!-- END REF--> 

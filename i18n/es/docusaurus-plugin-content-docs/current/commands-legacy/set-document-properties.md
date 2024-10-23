@@ -19,6 +19,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.SET DOCUMENT PROPERTIES.Summary-->El comando SET DOCUMENT PROPERTIES modifica la información del documento cuyo nombre o ruta de acceso se pasa en *documento*.<!-- END REF--> 

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.ARRAY INTEGER.Summary-->O comando ARRAY INTEGER cria e/ou redimensiona um array de elementos de tipo *Inteiro* de 2 bytes de memória.<!-- END REF-->

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.SET DOCUMENT SIZE.Summary-->El comando SET DOCUMENT SIZE define el tamaño de un documento para el número de bytes que se pasan en *tamaño*.<!-- END REF--> 

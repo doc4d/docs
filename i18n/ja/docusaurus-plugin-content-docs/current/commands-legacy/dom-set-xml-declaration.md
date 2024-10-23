@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DOM SET XML DECLARATION.Summary-->**DOM SET XML DECLARATION** コマンドを使用して、*elementRef*により設定されるXMLツリーの作成に利用されるさまざまなオプションを設定できます。<!-- END REF-->これらのオプションはツリーのエンコーディングやスタンドアロンプロパティに関連します:

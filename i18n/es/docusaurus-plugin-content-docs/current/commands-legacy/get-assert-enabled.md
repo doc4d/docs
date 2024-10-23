@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Get assert enabled.Summary-->El comando Get assert enabled devuelve True o False de acuerdo a si las aserciones están activas o no en el proceso actual.<!-- END REF--> Para mayor información sobre aserciones, consulte la descripción del comando [ASSERT](assert.md "ASSERT"). 

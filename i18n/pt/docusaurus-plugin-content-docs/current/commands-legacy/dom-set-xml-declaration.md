@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.DOM SET XML DECLARATION.Summary-->O comando DOM SET XML DECLARATION permite definir diferentes opções que são úteis na criação da árvore XML designado por *elementRef*.<!-- END REF--> Estas opções fazem referência à codificação e à propriedade autônoma da árvore:  

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Structure file.Summary-->El comando **Structure file** devuelve la ruta de acceso del archivo de estructura de la base en la cual está trabajando actualmente.<!-- END REF-->

@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Get last update log path.Summary-->O comando Get last update log path devolve a via de acesso completa do arquivo de histórico de atualização mais recente na máquina onde se chama.<!-- END REF-->  

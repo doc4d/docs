@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.SET QUERY DESTINATION.Summary-->**SET QUERY DESTINATION** enables you to tell 4D where to put the result of any subsequent query for the current process.<!-- END REF-->

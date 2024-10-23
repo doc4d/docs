@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.GET PICTURE FORMATS.Summary-->**GET PICTURE FORMATS**コマンドは、引数として渡された*picture*引数内に含まれている全てのコーデックIDの配列を返します。<!-- END REF--> 4D ピクチャー (フィールドまたは変数) は、PNG、BMP、GIF など、複数の異なるフォーマットでエンコードされた同一の画像を格納することができます。  

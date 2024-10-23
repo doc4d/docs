@@ -23,6 +23,9 @@ displayed_sidebar: docs
 
 <!-- END REF -->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição
 
 O comando `IMAP New transporter` <!-- REF #_command_.IMAP New transporter.Summary -->configura uma nova conexão IMAP<!-- END REF --> de acordo com o parâmetro *server* e retorna um novo objeto *transporter*. O objeto transporter retornado vai geralmente ser usado para receber emails.

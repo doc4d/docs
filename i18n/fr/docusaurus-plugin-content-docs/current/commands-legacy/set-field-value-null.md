@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.SET FIELD VALUE NULL.Summary-->La commande **SET FIELD VALUE NULL** attribue la valeur NULL au champ désigné par le paramètre *leChamp*.<!-- END REF-->

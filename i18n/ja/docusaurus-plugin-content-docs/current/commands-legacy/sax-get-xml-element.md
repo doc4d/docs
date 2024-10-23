@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SAX GET XML ELEMENT.Summary-->SAX GET XML ELEMENT コマンドは*document* 引数で参照されるXMLドキュメントに現れる、*name*要素についてのさまざまな情報を返します。<!-- END REF-->このコマンドはXML Start ElementまたはXML End Element SAXイベントで呼び出さなければなりません。XML End Elementの特定のケースでは、属性引数は処理されません。SAXイベントに関する詳細は[SAX Get XML node](sax-get-xml-node.md "SAX Get XML node") コマンドの説明を参照してください。

@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.BLOB to longint.Summary-->La fonction **BLOB to longint** retourne une valeur de type Entier long (4 octets) lue dans le BLOB *blob*.<!-- END REF-->

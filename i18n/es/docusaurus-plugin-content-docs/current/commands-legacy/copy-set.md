@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.COPY SET.Summary-->El comando COPY SET copia el contenido del conjunto *srcCon* en el conjunto *dstCon*.<!-- END REF--> 

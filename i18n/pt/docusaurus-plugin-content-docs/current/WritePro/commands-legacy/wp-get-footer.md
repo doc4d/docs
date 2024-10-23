@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WP Get footer.Summary-->O comando **WP Get footer** devolveo rodapé de página associado a faixa *objfaixa* ou ao *indiceSeção* especificado do documento *wpDoc*.<!-- END REF--> \]. Se não for encontrado nenhum rodapé relativo aos parâmetros, o comando devolve Null.

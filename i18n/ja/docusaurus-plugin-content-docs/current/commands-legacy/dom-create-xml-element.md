@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DOM Create XML element.Summary-->**DOM Create XML element** コマンドは、*elementRef* で参照されるXML中の*xPath* 引数で指定された位置に新しい要素を作成し、また必要であれば属性を追加します。<!-- END REF-->

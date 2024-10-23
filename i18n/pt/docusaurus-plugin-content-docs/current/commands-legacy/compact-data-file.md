@@ -18,6 +18,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Compact data file.Summary-->O comando **Compact data file** \[# descv\] compacta o arquivo de dados designado pelo parâmetro *endereçoDados* associado com o arquivo de estrutura *endereçoEstrutura*.<!-- END REF--> \[#/ descv\] Para mais informações sobre compactação, consulte o manual de Design. 

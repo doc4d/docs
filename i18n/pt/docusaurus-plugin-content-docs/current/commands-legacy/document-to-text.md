@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.Document to text.Summary-->O comando **Document to text** le permite recuperar o conteúdo de um arquivo diretamente no disco em uma variável texto 4D ou campo texto.<!-- END REF-->

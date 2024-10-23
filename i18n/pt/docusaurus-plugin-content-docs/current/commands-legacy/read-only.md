@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.READ ONLY.Summary-->READ ONLY muda o estado de tabela a modo apenas leitura para o processo no qual se chama ao comando.<!-- END REF--> Todos os registros carregados posteriormente estão bloqueados, e não se pode realizar nenhuma modificação. Se for passado o parâmetro opcional *\**, todas as tabelas são mudadas a modo apenas leitura.  

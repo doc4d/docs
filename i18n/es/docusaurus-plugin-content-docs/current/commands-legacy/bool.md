@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.Bool.Summary-->El comando **Bool** devuelve la forma booleana de la expresión que se pasó en *expresion*.<!-- END REF-->

@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.WP Is font style supported.Summary-->The **WP Is font style supported** command returns True if the *wpFontStyle* style is supported by any part of the text in *rangeObj*.<!-- END REF--> 

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.SORT ARRAY.Summary-->La commande **SORT ARRAY** trie un ou plusieurs tableau(x) par ordre croissant ou décroissant.<!-- END REF-->

@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.RESTART 4D.Summary-->La commande **RESTART 4D** provoque le redémarrage de l’application 4D courante.<!-- END REF--> 

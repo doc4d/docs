@@ -18,6 +18,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.CREATE THUMBNAIL.Summary-->**CREATE THUMBNAIL**コマンドは、指定した元のピクチャのサムネールを返します。<!-- END REF-->通常、サムネールはマルチメディアソフトウェアやWebサイトにおいてピクチャプレビューのために使用されます。

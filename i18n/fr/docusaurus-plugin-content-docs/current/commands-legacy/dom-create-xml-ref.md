@@ -17,6 +17,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.DOM Create XML Ref.Summary-->La commande **DOM Create XML Ref** crée un arbre XML vide en mémoire et retourne sa référence.<!-- END REF-->

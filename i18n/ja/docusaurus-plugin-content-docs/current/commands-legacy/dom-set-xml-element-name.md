@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.DOM SET XML ELEMENT NAME.Summary-->DOM SET XML ELEMENT NAME コマンドを使用して、*elementRef*で指定した要素の名前を変更します。<!-- END REF-->

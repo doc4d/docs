@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SET AUTOMATIC RELATIONS.Summary-->**SET AUTOMATIC RELATIONS** は、カレントプロセスで、データベース全体のマニュアルリレートを一時的に自動リレートに変更します。<!-- END REF-->リレートは、次に**SET AUTOMATIC RELATIONS** コマンドを使用するまで自動リレートのままになります。

@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.MESSAGES OFF.Summary-->Os comandos MESSAGES OFF e [MESSAGES ON](messages-on.md) acendem e apagam os termômetros de progressão mostrados por 4D enquanto operações de longa duração são executadas.<!-- END REF--> Automaticamente são mostradas as mensagens. 

@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.LOG FILE TO JSON.Summary-->La commande **LOG FILE TO JSON** sauvegarde au format JSON le fichier d'historique courant ou tout fichier d'historique spécifié.<!-- END REF-->

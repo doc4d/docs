@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.DISTINCT VALUES.Summary-->O comando **DISTINCT VALUES** cria e preenche o array *array* com valores não-repetidos (únicos) do campo *campo* para a seleção atual da tabela que pertence ao campo ou subcampo.<!-- END REF-->

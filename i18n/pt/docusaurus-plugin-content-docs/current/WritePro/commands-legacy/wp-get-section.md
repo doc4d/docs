@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.WP Get section.Summary-->O comando **WP Get section** devolve a primeira seção intersectada pela range *alvoObj* ou elemento, ou ao *indiceSeção*  especificado do documento *wpDoc*.<!-- END REF-->

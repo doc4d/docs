@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.TRIGGER PROPERTIES.Summary-->O comando TRIGGER PROPERTIES retorna a informação sobre o nível de execução do trigger que se passa em *nivelTrigger*.<!-- END REF--> Pode utilizar [Trigger level](trigger-level.md) junto com Trigger level para realizar diferentes ações em função da cascada do trigger. Para maior informação, consulte .  

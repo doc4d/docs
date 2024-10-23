@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.WEB Get server info.Summary-->**WEB Get server info** コマンドは、4D Web サーバーのカレントのセッションの詳細なランタイム情報を格納したオブジェクトを返します。<!-- END REF-->返された情報にはSOPA サーバーのものも含まれます。

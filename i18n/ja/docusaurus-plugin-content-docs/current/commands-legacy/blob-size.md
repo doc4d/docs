@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.BLOB size.Summary-->BLOB size は、*blob*のサイズをバイト単位で返します。<!-- END REF-->

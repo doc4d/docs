@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Abs.Summary-->Abs returns the absolute (unsigned, positive) value of *number*.<!-- END REF--> If *number* is negative, it is returned as positive. If *number* is positive, it is returned unchanged.

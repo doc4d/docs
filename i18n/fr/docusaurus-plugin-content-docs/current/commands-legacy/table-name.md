@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Table name.Summary-->**Table name** retourne le nom de la table dont le numéro ou le pointeur a été passé dans *numTable* ou *ptrTable*.<!-- END REF-->

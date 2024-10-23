@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.STOP MONITORING ACTIVITY.Summary-->**STOP MONITORING ACTIVITY** コマンドは、[START MONITORING ACTIVITY](start-monitoring-activity.md) コマンドで開始されたアクティビティの記録を終了します。<!-- END REF-->このコマンドの実行後、メモリ内のアクティビティの記録は全て空にされます。

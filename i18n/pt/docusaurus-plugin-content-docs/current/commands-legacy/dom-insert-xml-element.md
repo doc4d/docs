@@ -16,6 +16,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.DOM Insert XML element.Summary-->O comando DOM Insert XML element se utiliza para inserir um novo elemento XML entre os filhos do elemento XML cuja referência for passada no parâmetro refElementTarget.<!-- END REF-->  

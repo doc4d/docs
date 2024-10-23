@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Is compiled mode.Summary-->La fonction **Is compiled mode** teste si la base tourne en mode compilé (Vrai) ou en mode interprété (Faux).<!-- END REF-->

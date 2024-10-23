@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*This command is not thread-safe, it cannot be used in preemptive code.*
+
+
 #### Description 
 
 <!--REF #_command_.Application file.Summary-->The Application file command returns the long name of the 4D executable file or application you are running.<!-- END REF--> 

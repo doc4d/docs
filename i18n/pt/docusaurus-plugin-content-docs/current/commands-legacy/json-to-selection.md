@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
+
+
 #### Descrição 
 
 <!--REF #_command_.JSON TO SELECTION.Summary-->O comando **JSON TO SELECTION** copia o conteúdo de um objeto JSON na seleção de registros de *aTabela* .<!-- END REF-->  

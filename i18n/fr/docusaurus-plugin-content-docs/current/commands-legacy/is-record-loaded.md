@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.Is record loaded.Summary-->La commande **Is record loaded** retourne Vrai si l’enregistrement courant de *laTable* est chargé dans le process en cours.<!-- END REF-->

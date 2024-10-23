@@ -12,6 +12,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
+
+
 #### Descripción 
 
 <!--REF #_command_.CANCEL TRANSACTION.Summary-->**CANCEL TRANSACTION** anula la transacción abierta por el comando [START TRANSACTION](start-transaction.md)  del nivel correspondiente en el proceso actual.<!-- END REF--> **CANCEL TRANSACTION** anula todas las operaciones que llegaran a ejecutarse en los datos durante la transacción.

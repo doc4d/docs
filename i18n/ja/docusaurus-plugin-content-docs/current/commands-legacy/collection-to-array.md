@@ -15,6 +15,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.COLLECTION TO ARRAY.Summary-->**COLLECTION TO ARRAY** コマンドは、*collection* 引数のコレクションの要素あるいは*propertyName* 引数で指定したプロパティの値を、*array* 引数で指定した一つまたはそれ以上の配列へと渡します。<!-- END REF-->

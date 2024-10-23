@@ -13,6 +13,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
+
+
 #### 説明 
 
 <!--REF #_command_.SEND VARIABLE.Summary-->SEND VARIABLE は、[SET CHANNEL](set-channel.md "SET CHANNEL")で開いたシリアルポートまたはドキュメントに*variable*を送信します。<!-- END REF-->変数は[RECEIVE VARIABLE](receive-variable.md "RECEIVE VARIABLE")でなければ読み込むことのできない特別な内部フォーマットで送信されます。SEND VARIABLEは、（型と値を含む）完全な変数を送信します。

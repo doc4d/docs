@@ -14,6 +14,9 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
+
+
 #### Description 
 
 <!--REF #_command_.GET PICTURE FORMATS.Summary-->La commande **GET PICTURE FORMATS** remplit le tableau *tabCodecs* de tous les identifiants des codecs (formats image) de l'image contenue dans le paramètre *image*.<!-- END REF--> Une image 4D (champ ou variable) peut contenir la même image encodée dans différents formats, comme PNG, BMP, GIF, etc.
