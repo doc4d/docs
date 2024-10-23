@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.End selection.Summary-->**End selection** returns TRUE when the current record pointer is beyond the last record of the current selection of *aTable*.<!-- END REF--> **End selection** is commonly used to check whether or not [NEXT RECORD](next-record.md) has moved the current record pointer past the last record. If the current selection is empty, **End selection** returns TRUE.

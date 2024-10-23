@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DOM Find XML element.Summary-->DOM Find XML element コマンドはXMLストラクチャ中で特定のXML要素を検索するために使用します。<!-- END REF-->検索は*elementRef* 引数で指定された要素から開始されます。

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Sum.Summary-->O comando **Sum** devolve a soma (total de todos os valores) para *series*.<!-- END REF--> Se *series* for um campo indexado, o índice é utilizado para calcular o total dos valores.  

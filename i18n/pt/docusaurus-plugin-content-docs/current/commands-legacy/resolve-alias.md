@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.RESOLVE ALIAS.Summary-->O comando RESOLVE ALIAS retorna a rota completa do arquivo ou pasta objetivo de um alias (chamado atalho em Windows).<!-- END REF-->  

@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.VERIFY CURRENT DATA FILE.Summary-->The VERIFY CURRENT DATA FILE command carries out a structural check of the objects found in the data file currently opened by 4D.<!-- END REF-->

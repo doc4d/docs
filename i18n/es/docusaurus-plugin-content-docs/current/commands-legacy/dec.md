@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Dec.Summary-->Dec devuelve la parte decimal de *número*.<!-- END REF--> El valor devuelto siempre es positivo o cero.

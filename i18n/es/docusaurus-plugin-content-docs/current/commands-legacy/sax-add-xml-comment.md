@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.SAX ADD XML COMMENT.Summary-->El comando SAX ADD XML COMMENT añade un *comentario* en el documento XML referenciado por *document*.<!-- END REF--> 

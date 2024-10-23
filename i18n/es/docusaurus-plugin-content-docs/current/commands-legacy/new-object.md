@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.New object.Summary-->El comando **New object** crea un nuevo objeto vacío o prellenado y devuelve su referencia.<!-- END REF-->

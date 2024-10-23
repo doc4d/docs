@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP IMPORT STYLE SHEETS.Summary-->O comando **WP IMPORT STYLE SHEETS** importa todas as folhas de estilo de *sourceDoc* em *targetDoc*.<!-- END REF-->

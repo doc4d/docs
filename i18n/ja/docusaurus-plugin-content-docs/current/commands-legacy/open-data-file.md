@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.OPEN DATA FILE.Summary-->**OPEN DATA FILE**コマンドは、4Dアプリケーションによって開かれたデータファイルをオンザフライで変更することを可能にします。<!-- END REF-->

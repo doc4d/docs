@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Find in array.Summary-->The Find in array command returns the number of the first element in *array* that matches *value*.<!-- END REF--> 

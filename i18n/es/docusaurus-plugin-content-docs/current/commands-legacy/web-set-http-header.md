@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WEB SET HTTP HEADER.Summary-->El comando **WEB SET HTTP HEADER** permite definir los campos del encabezado HTTP de la respuesta enviada al navegador web por 4D.<!-- END REF--> Sólo tiene efecto en un proceso web.  

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Generate password hash.Summary-->La función **Generate password hash** devuelve un hash de *contrasena* seguro generado por un algoritmo de hash criptográfico.<!-- END REF-->

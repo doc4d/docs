@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.FONT LIST.Summary-->**FONT LIST**コマンドは、テキスト配列の*fonts*引数を作成し、システム上で使用可能なスケーラブルなフォントの名前を格納します。<!-- END REF-->

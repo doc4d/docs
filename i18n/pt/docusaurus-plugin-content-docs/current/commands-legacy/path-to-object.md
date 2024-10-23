@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Path to object.Summary-->O comando **Path to object**  devolve um objeto que contenha as propriedades específicas da *rota* que passou no parâmetro.<!-- END REF--> 

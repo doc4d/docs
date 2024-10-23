@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.BLOB TO PICTURE.Summary-->O comando BLOB TO PICTURE insere uma imagem armazenada em um BLOB em um campo ou variável imagem 4D, sem importar seu formato original.<!-- END REF-->

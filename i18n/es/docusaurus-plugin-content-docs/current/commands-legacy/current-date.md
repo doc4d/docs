@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Current date.Summary-->El comando Current date devuelve la fecha actual tal como está definida en el reloj del sistema.<!-- END REF-->

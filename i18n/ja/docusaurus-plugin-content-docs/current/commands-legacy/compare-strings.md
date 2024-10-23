@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Compare strings.Summary-->**Compare strings** コマンドは、*aString* 引数の文字列が*bString* 引数の文字列比較して低い/等しい/高いと評価されるかによって負の値/ゼロ/正の値を返します。<!-- END REF--> 

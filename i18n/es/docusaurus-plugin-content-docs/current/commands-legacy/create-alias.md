@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.CREATE ALIAS.Summary-->El comando CREATE ALIAS crea un alias (llamado “atajo” en Windows) del archivo o carpeta objetivo pasado en *rutaObjetivo*.<!-- END REF--> El nombre y la ubicación son definidos por el parámetro *rutaAlias*. 

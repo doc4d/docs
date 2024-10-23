@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP Get subsection.Summary-->O comando **WP Get subsection** devolve uma primeira subseção intersectada pela range ou elemento *targetObj*, ou à subseção especificada *subSectionType* da seção *wpSection*.<!-- END REF-->

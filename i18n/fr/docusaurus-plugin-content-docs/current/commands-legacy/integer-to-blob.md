@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.INTEGER TO BLOB.Summary-->**INTEGER TO BLOB** écrit la valeur entière (2 octets) *entier* dans le BLOB *blob*.<!-- END REF-->

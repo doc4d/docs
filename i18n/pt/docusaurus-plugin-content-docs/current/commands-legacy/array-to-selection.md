@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.ARRAY TO SELECTION.Summary-->O comando **ARRAY TO SELECTION** copia um ou mais arrays em uma seleção de registros.<!-- END REF--> Todos os campos listados devem pertencer a mesma tabela.

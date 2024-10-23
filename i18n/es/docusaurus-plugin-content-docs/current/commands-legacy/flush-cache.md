@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.FLUSH CACHE.Summary-->El comando FLUSH CACHE guarda inmediatamente los buffers de datos en el disco.<!-- END REF--> Todos los cambios realizados a la base se guardan en el disco.

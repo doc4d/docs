@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Value type.Summary-->El comando Value type devuelve el tipo del valor resultante de la evaluación de la *expresion* que pasó como parámetro.<!-- END REF--> 

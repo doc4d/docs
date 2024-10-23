@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Semaphore.Summary-->Um semáforo é uma bandeira compartihada entre estações de trabalho (o computador de cada usuário) ou entre processos na mesma estação de trabalho.<!-- END REF--> Um semáforo simplesmente existe ou não existe. Os métodos que cada usuário executa podem provar a existência de um semáforo. Criando e provando semáforos, os métodos podem ser comunicados entre estações de trabalho.  

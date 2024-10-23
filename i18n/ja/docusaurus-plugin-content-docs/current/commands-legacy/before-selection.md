@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Before selection.Summary-->**Before selection** は、カレントレコードポインタが*aTable*のカレントセレクションの前にある場合にTRUEを返します。<!-- END REF-->**Before selection** は、一般に[PREVIOUS RECORD](previous-record.md) により、カレントレコードポインタが先頭レコードの前に移動したかどうかを調べるために使用します。カレントセレクションが空の場合、**Before selection** はTRUEを返します。

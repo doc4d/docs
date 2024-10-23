@@ -19,9 +19,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.VERIFY DATA FILE.Summary-->The VERIFY DATA FILE command carries out a structural check of the objects contained in the 4D data file designated by *structurePath* and *dataPath*.<!-- END REF-->

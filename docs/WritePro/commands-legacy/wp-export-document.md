@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WP EXPORT DOCUMENT.Summary-->The **WP EXPORT DOCUMENT** command exports the *wpDoc* 4D Write Pro object to a document on disk according to the *filePath* parameter as well as any optional parameters.<!-- END REF-->

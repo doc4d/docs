@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Equal pictures.Summary-->La commande **Equal pictures** vous permet de comparer précisément deux images, tant au niveau de leurs dimensions que de leur contenu.<!-- END REF--> 

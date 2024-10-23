@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Delete string.Summary-->**Delete string** supprime *nbCars* dans *source* à partir de *positionDépart* et retourne la chaîne résultante.<!-- END REF-->

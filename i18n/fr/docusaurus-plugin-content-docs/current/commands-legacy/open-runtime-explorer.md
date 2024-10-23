@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.OPEN RUNTIME EXPLORER.Summary-->La commande OPEN RUNTIME EXPLORER affiche l'Explorateur d'exécution dans une fenêtre flottante.<!-- END REF-->

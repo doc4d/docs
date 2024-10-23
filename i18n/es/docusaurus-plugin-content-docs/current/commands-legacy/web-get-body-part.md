@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WEB GET BODY PART.Summary-->El comando **WEB GET BODY PART** llamado en el contexto de un proceso web, permite analizar la parte "body" de una petición multi-part.<!-- END REF-->  

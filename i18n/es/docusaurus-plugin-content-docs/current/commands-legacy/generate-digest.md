@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Generate digest.Summary-->El comando **Generate digest** devuelve el extracto de un BLOB o de un texto después de la aplicación de un algoritmo de encripción.<!-- END REF-->

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 |Result|Object|<-|Object's parent|
 <!-- END REF -->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 The `Super` keyword <!-- REF #_command_.Super.Summary -->allows calls to the `superclass`, i.e. the parent class<!-- END REF -->.
 
 `Super` serves two different purposes:

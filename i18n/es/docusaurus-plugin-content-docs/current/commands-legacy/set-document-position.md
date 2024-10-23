@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.SET DOCUMENT POSITION.Summary-->Este comando funciona únicamente en un documento abierto cuyo número de referencia se pasa en *docRef*.<!-- END REF--> 

@@ -25,9 +25,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Match regex.Summary-->Match regexコマンドを使用して、 "正規表現" と呼ばれるメタ言語で合成された規則のセットと文字列が一致しているかを確認します。<!-- END REF-->

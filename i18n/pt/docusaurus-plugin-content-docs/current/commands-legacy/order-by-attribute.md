@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.ORDER BY ATTRIBUTE.Summary-->O comando **ORDER BY ATTRIBUTE** ordena (reordena) os registros da seleção atual de *tabela* para o processo atual baseado no conteúdo de *rotaAtrib* de *campoObjeto*.<!-- END REF--> Depois de terminada a ordenação, o novo primeiro registro da seleçãol se converte no registro atual. 

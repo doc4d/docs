@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WEB STOP SERVER.Summary-->The **WEB STOP SERVER** command stops the Web server of the 4D application on which it has been executed (4D ou 4D Server).<!-- END REF--> If the Web server has been started, all Web connections are stopped, and all Web processes terminated. 

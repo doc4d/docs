@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP Import document.Summary-->O comando **WP Import document** \[#descv\] converte um documento 4D Write ou 4D Write Pro existente (,4wp, .4w7 ou .4wt) ou documento MS Word (.docx) a um novo objeto 4D Write Pro \[#descv\].<!-- END REF-->

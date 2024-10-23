@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Value type.Summary-->Value type コマンドは*expression* 引数に渡した式の評価の結果の値の型を返します。<!-- END REF-->

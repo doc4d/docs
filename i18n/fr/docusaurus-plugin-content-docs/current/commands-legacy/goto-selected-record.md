@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.GOTO SELECTED RECORD.Summary-->La commande **GOTO SELECTED RECORD** fait de l'enregistrement spécifié parmi la sélection courante de *laTable* l'enregistrement courant.<!-- END REF--> La sélection courante n'est pas modifiée. Le paramètre *enregistrement* n'est pas équivalent au numéro retourné par [Record number](record-number.md). Ce paramètre représente la position de l'enregistrement au sein de la sélection courante. Cette position dépend de la manière dont la sélection a été créée et si elle a été triée.  

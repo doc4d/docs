@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.CREATE SET.Summary-->**CREATE SET** creates a new set, *set*, for *aTable*, and places the current selection in *set*.<!-- END REF--> The current record pointer for the table is saved with *set*. If *set* is used with [USE SET](use-set.md), the current selection and current record are restored. As with all sets, there is no sorted order; when *set* is used, the default order is used. If a set with the same name already exists, the existing set is cleared by the new set.

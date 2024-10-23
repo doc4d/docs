@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Get section.Summary-->La commande **WP Get section** retourne soit la première section intersectée par la plage ou par l'élément *objCible*, soit l'*indexSection* spécifié du document *docWP*.<!-- END REF-->

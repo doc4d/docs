@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.SCAN INDEX.Summary-->La commande **SCAN INDEX** retourne une sélection de *nombre* enregistrements de la table du champ *leChamp*.<!-- END REF--> Cette commande est extrêmement rapide car elle utilise l'index.  

@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Open document.Summary-->**Open document**コマンドは、*document*に渡した名前またはパス名を持つドキュメントを開きます。<!-- END REF-->

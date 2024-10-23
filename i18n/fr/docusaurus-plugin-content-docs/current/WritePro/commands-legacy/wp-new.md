@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP New.Summary-->La commande **WP New** crée et retourne un nouvel objet 4D Write Pro.<!-- END REF--> L'objet retourné est un document complet pouvant être passé, par exemple, à la commande [WP INSERT DOCUMENT](wp-insert-document.md).

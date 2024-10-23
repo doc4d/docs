@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WP GET BOOKMARKS.Summary-->El comando **WP GET BOOKMARKS** devuelve un array que contiene los nombres de todos los marcadores definidos en *docWP*.<!-- END REF--> 

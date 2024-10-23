@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Copy parameters.Summary-->El comando Copy parameters devuelve una nueva colección que contiene todos los parámetros realmente pasados a un método o una función.<!-- END REF--> Este comando es útil cuando se necesita reenviar un número variado de parámetros de un método o función a otro método o función.

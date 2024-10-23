@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Get sections.Summary-->La commande **WP Get sections** retourne une collection de toutes les sections définies dans le paramètre *objCible*.<!-- END REF-->

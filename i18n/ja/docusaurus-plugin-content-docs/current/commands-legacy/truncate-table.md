@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.TRUNCATE TABLE.Summary-->TRUNCATE TABLE コマンドは*aTable*のすべてのレコードを素早く削除します。<!-- END REF-->*aTable*が既に空の場合、TRUNCATE TABLEは何も行いません。コマンドの呼出し後、カレントセレクションやカレントレコードはありません。

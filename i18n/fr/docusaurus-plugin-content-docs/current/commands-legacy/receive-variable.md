@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.RECEIVE VARIABLE.Summary-->La commande **RECEIVE VARIABLE** reçoit *variable*, une variable envoyée par la commande [SEND VARIABLE](send-variable.md), depuis un document ou un port série préalablement ouvert par la commande [SET CHANNEL](set-channel.md).<!-- END REF-->

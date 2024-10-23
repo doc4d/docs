@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 REDUCE SELECTION cria uma nova seleção de registros para *tabela*. O comando retorna o primeiro *numero* de registros da seleção atual de *tabela*. REDUCE SELECTION se aplica à seleção atual de tabela no processo atual. Ele modifica a seleção atual de *tabela* para o processo atual; o primeiro registro da nova seleção se torna o o registro atual.  

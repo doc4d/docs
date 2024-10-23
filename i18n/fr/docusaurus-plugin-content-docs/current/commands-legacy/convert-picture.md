@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.CONVERT PICTURE.Summary-->La commande **CONVERT PICTURE** convertit *image* dans un nouveau type.<!-- END REF-->

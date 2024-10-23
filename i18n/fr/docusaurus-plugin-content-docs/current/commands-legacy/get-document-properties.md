@@ -19,9 +19,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.GET DOCUMENT PROPERTIES.Summary-->La commande **GET DOCUMENT PROPERTIES** retourne des informations sur le document dont le nom ou le chemin d'accès est passé dans le paramètre *document*.<!-- END REF-->

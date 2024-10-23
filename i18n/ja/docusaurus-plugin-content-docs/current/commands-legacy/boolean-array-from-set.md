@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.BOOLEAN ARRAY FROM SET.Summary-->BOOLEAN ARRAY FROM SETコマンドは、テーブル内の各レコードが指定されたセットに含まれるか含まれないかを示すブール配列を作成します。<!-- END REF-->

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.CUT NAMED SELECTION.Summary-->**CUT NAMED SELECTION** creates a named selection *name* and moves the current selection of *aTable* to it.<!-- END REF--> This command differs from [COPY NAMED SELECTION](copy-named-selection.md) in that it does not copy the current selection, but moves the current selection of *table* itself.

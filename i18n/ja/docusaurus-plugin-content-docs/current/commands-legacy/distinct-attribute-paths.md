@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DISTINCT ATTRIBUTE PATHS.Summary-->**DISTINCT ATTRIBUTE PATHS** コマンドは、*objectField* に受け渡したインデックスがついているオブジェクトフィールドが所属するテーブルのカレントセレクションについて、同オブジェクトフィールドから検出される、重複しないパスのリストを返します。<!-- END REF-->

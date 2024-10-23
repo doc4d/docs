@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.SAVE SET.Summary-->SAVE SETコマンドは、*document*で指定した名前のドキュメントファイルとしてSetをディスクに保存します。<!-- END REF-->

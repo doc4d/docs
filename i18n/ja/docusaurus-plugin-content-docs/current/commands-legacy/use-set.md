@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.USE SET.Summary-->USE SETは、*set*内のレコードをそのセットの属するテーブルのカレントセレクションにします。<!-- END REF-->

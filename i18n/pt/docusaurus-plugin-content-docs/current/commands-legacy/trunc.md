@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Trunc.Summary-->Trunc retorna *numero* com sua parte decimal truncada a partir do número de decimais especificada por *decimais*.<!-- END REF--> Trunc sempre arredonda até o valor inferior.

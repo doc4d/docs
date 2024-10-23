@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP Get header.Summary-->O comando **WP Get header** devolve um cabeçalho associado a faixa *objFaixa* ou ao *indiceSecao* do documento *wpDoc*.<!-- END REF--> Se não encontrar nenhum cabeçalho com respeito aos parâmetros, o comando devovle Null.

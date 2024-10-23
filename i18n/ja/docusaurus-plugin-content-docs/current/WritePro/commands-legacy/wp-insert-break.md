@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP INSERT BREAK.Summary-->**WP INSERT BREAK** コマンドは*mode* 引数や*rangeUpdate* 引数で指定された形で、*targetObj* 引数で指定されたレンジ内に*breakType* 引数で指定された型の新しいブレークを挿入します。<!-- END REF-->

@@ -19,9 +19,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.GET DOCUMENT PROPERTIES.Summary-->El comando GET DOCUMENT PROPERTIES devuelve información sobre el documento cuyo nombre o ruta se pasa en *documento*.<!-- END REF--> 

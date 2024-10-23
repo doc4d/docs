@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.OB GET PROPERTY NAMES.Summary-->La commande **OB GET PROPERTY NAMES** retourne dans *tabPropriétés* les noms des propriétés contenues dans l’objet de langage désigné par le paramètre *objet*.<!-- END REF--> 

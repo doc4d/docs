@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Get last update log path.Summary-->The **Get last update log path** command returns the complete pathname of the most recent update log file found on the machine where it is called.<!-- END REF-->

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Value type.Summary-->La commande **Value type** retourne le type de la valeur résultant de l'évaluation de l'*expression* passée en paramètre.<!-- END REF--> 

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.SET AUTOMATIC RELATIONS.Summary-->La commande **SET AUTOMATIC RELATIONS** transforme tous les liens manuels en liens automatiques pour toute la base dans le process courant.<!-- END REF--> Cette modification est temporaire et peut à tout moment être remise en cause par un nouvel appel à **SET AUTOMATIC RELATIONS**.

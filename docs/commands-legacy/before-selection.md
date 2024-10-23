@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Before selection.Summary-->**Before selection** returns TRUE when the current record pointer is before the first record of the current selection of *table*.<!-- END REF-->**Before selection** is commonly used to check whether or not [PREVIOUS RECORD](previous-record.md) has moved the current record pointer before the first record. If the current selection is empty, **Before selection** returns TRUE.

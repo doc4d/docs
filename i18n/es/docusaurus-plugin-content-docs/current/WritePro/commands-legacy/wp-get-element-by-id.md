@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WP Get element by ID.Summary-->El comando **WP Get element by ID** devuelve un objeto que contiene el elemento de *wpDoc* pasado en el parámetro *ID*.<!-- END REF--> 

@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Compact data file.Summary-->**Compact data file**コマンドは、ストラクチャー*structurePath*に関連付けられている、*dataPath* 引数で指定されたデータファイルを圧縮します。<!-- END REF-->圧縮に関する詳細は4D Design Referenceマニュアルを参照してください。

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.OPEN URL.Summary-->**OPEN URL** コマンドは、*appName* で指定したアプリケーションを使用して、*path* 引数に渡したファイルやURLを開きます。<!-- END REF-->  

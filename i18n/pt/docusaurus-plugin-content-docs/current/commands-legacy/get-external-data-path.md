@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Get external data path.Summary-->O comando **Get external data path** devolve a via de acesso completa do arquivo de armazenamento externo de dados do campo passado no parâmetro *oCampo*, para o registro atual.<!-- END REF--> Deve passar no parâmetro oCampo campos de tipo Texto, BLOB ou Imagem. O comando retorna o caminho de acesso do arquivo de armazenamento se o arquivo não existir mais ou não for acessível.   

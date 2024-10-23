@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Count in array.Summary-->La commande **Count in array** retourne le nombre d’occurrences de *valeur* dans *tableau*.<!-- END REF-->

@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.SOAP DECLARATION.Summary-->SOAP DECLARATION コマンドを使用して、Webサービスとして公開された4Dメソッドで使用される引数の型を明示的に宣言できます。<!-- END REF-->

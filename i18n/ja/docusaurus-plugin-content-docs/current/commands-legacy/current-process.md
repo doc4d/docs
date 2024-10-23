@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Current process.Summary-->Current processは、このコマンドを呼び出したプロセスのプロセス番号を返します。<!-- END REF-->

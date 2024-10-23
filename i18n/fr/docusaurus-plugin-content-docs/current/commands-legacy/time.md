@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Time.Summary-->La fonction **Time** retourne, sous la forme d'une expression de type Heure, l'heure définie dans le paramètre *valHeure*.<!-- END REF-->

@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.BEEP.Summary-->O comando BEEP faz com que o PC ou Macintosh gerem um beep.<!-- END REF--> Seu computador (em Windows ou Macintosh) pode emitir um som diferente a um beep, dependendo do som selecionado no painel de controle de som.  

@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.CANCEL TRANSACTION.Summary-->**CANCEL TRANSACTION** cancels the transaction that was started with [START TRANSACTION](start-transaction.md) of the corresponding level in the current process.<!-- END REF--> **CANCEL TRANSACTION** cancels the operations executed on the data and stored during the transaction.

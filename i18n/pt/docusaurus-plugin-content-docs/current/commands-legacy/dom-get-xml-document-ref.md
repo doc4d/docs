@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.DOM Get XML document ref.Summary-->O comando DOM Get XML document ref se utiliza para recuperar a referência do elemento "documento" da árvore DOM cuya referência se passa em *refElement*.<!-- END REF--> O elemento document é o primeiro elemento de uma árvore DOM; é o pai do elemento raiz.   

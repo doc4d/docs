@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP EXPORT VARIABLE.Summary-->**WP EXPORT VARIABLE** コマンドは*wpDoc* 変数内の4D Write Proオブジェクトを*format* 引数で指定したフォーマットで*destination* 引数で指定した4D変数へと書き出します。<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.COLLECTION TO ARRAY.Summary-->La commande **COLLECTION TO ARRAY** remplit un ou plusieurs *tableau*(x) avec les éléments ou les valeurs *nomPropriété* de la *collection* dans le ou les *tableau*(x).<!-- END REF-->

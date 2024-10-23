@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.ONE RECORD SELECT.Summary-->**ONE RECORD SELECT** reduces the current selection of *aTable* to the current record.<!-- END REF--> If no current record exists or if the current record is not loaded into memory (special case), **ONE RECORD SELECT** has no effect.

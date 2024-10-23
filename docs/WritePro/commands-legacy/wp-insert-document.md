@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WP INSERT DOCUMENT.Summary-->The **WP INSERT DOCUMENT** command inserts the *wpDoc* document in the *targetObj* according to the specified insertion *mode* and *rangeUpdate* parameters.<!-- END REF-->

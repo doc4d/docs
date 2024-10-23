@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.CONFIRM.Summary-->CONFIRM コマンドは、注意アイコンとメッセージ、OKボタン、キャンセルボタンで構成される確認ダイアログボックスを表示します。<!-- END REF-->

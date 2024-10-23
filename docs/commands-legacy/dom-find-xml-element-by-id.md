@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.DOM Find XML element by ID.Summary-->The DOM Find XML element by ID command searches within an XML document for the element whose id attribute equals the value passed in the *id* parameter.<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Semaphore.Summary-->A semaphore is a flag shared among workstations or among processes on the same workstation.<!-- END REF--> A semaphore simply exists or does not exist. The methods that each user is running can test for the existence of a semaphore. A semaphore can only be removed by the client workstation or process that created it. By creating and testing semaphores, methods can communicate between workstations. You do not use semaphores to protect record access. This is automatically done by 4D and 4D Server. Use semaphores to prevent several users from performing the same operation at the same time.

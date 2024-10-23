@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.DOM SET XML ELEMENT NAME.Summary-->La commande **DOM SET XML ELEMENT NAME** permet de modifier le nom de l’élément désigné par *refElément*.<!-- END REF--> 

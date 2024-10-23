@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Count tasks.Summary-->**Count tasks** returns the highest alive process number in the 4D single-user, 4D remote, or 4D Server (stored procedures) version.<!-- END REF--> Processes are numbered in the order in which they are created. When still no process has been aborted during the session, then this command returns the total number of open processes. 

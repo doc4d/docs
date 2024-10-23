@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Table name.Summary-->El comando Table name devuelve el nombre de la tabla cuyo número o puntero se pasa en *numTabla* o *ptrTabla*.<!-- END REF-->

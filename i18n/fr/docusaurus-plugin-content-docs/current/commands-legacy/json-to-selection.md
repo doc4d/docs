@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.JSON TO SELECTION.Summary-->La commande **JSON TO SELECTION** copie le contenu du tableau d'objets JSON *jsonTab* vers la sélection d’enregistrements de *laTable*.<!-- END REF--> 

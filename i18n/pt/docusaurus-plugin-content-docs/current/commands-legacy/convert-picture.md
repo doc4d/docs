@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.CONVERT PICTURE.Summary-->O comando CONVERT PICTURE converte *imagem* em um novo tipo.<!-- END REF--> 

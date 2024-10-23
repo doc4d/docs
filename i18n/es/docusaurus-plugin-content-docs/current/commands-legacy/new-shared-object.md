@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.New shared object.Summary-->El comando **New shared object** crea un nuevo objeto compartido vacío o prellenado y devuelve su referencia.<!-- END REF--> Para agregar o editar una propiedad a este objeto debe estar rodeado por la estructura *Use...End use*, de lo contrario, se devuelve un error. Sin embargo, es posible leer una propiedad fuera de una estructura *Use...End use*. 

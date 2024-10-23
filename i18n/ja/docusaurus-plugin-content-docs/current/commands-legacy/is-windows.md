@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Is Windows.Summary-->**Is Windows** コマンドは、カレントのOSがWindows の場合にはTrue を返します。<!-- END REF-->

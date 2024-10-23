@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Object to path.Summary-->La commande **Object to path** retourne un chemin (chaîne) basé sur les informations passées dans le paramètre *objetChemin*.<!-- END REF--> Les chemins suivants sont pris en charge :

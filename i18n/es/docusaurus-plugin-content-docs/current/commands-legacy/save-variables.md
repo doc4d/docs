@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.SAVE VARIABLES.Summary-->El comando SAVE VARIABLES guarda una o varias variables en el documento cuyo nombre se pasa en l parámetro *documento*.<!-- END REF--> 

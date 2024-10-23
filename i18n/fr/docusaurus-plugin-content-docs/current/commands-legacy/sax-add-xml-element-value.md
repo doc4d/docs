@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.SAX ADD XML ELEMENT VALUE.Summary-->La commande **SAX ADD XML ELEMENT VALUE** ajoute directement dans le document XML référencé par *document* des *données* sans les convertir.<!-- END REF--> Cette commande équivaut par exemple à insérer une pièce jointe dans le corps (body) d’un email. 

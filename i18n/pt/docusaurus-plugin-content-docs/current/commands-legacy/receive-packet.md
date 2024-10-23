@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.RECEIVE PACKET.Summary-->RECEIVE PACKET lê caracteres a partir de uma porta serial ou de um documento.<!-- END REF-->

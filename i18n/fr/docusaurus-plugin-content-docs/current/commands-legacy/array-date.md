@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.ARRAY DATE.Summary-->La commande **ARRAY DATE** crée et/ou redimensionne un tableau d'éléments de type [Date](# "Date dans l'intervalle 1/1/100 à 12/31/32767") en mémoire.<!-- END REF-->

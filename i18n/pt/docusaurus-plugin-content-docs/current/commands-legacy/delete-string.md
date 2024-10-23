@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Delete string.Summary-->Delete string apaga *numCaracteres* de *fonte*, a partir de *posiçao*, e devolve a cadeia resultante.<!-- END REF-->

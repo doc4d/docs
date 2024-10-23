@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.DOM Count XML elements.Summary-->El comando DOM Count XML elements devuelve el número de elementos “hijo” dependientes del elemento padre *refElement* y llamado *nomElement*.<!-- END REF-->

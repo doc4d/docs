@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 詳細 
 
 <!--REF #_command_.Encrypt data BLOB.Summary-->**Encrypt data BLOB** コマンドは、*blobToEncrypt* 引数のBLOB を、4D がデータの暗号化に使用するのと同じアルゴリズム(AES-256) を使用して暗号化し、その結果を*encryptedBlob* 引数に返します。<!-- END REF-->

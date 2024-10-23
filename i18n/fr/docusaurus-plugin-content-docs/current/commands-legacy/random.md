@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Random.Summary-->**Random** retourne une valeur entière aléatoire comprise entre 0 et 32 767 (inclus).<!-- END REF-->

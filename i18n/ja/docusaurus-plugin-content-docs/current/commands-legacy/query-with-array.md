@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.QUERY WITH ARRAY.Summary-->コマンドは、*targetField*の値が少なくとも*array*要素のうち1つに等しいレコードを、 *targetField*が属するテーブルの全レコードの中から検索します。<!-- END REF-->検索されたレコードはカレントセレクションとなります。

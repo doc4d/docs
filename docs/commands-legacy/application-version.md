@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Application version.Summary-->The Application version command returns an encoded string value that expresses the version number of the 4D environment you are running.<!-- END REF-->

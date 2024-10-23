@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Get links.Summary-->La commande **WP Get links** retourne la collection de tous les liens définis dans le paramètre *objCible*.<!-- END REF-->

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.DESCRIBE QUERY EXECUTION.Summary-->La commande **DESCRIBE QUERY EXECUTION** permet d’activer ou d’inactiver le mode d’analyse de l’exécution des recherches pour le process courant.<!-- END REF--> La commande fonctionne uniquement dans le contexte des commandes de recherche du langage 4D telles que [QUERY](query.md). 

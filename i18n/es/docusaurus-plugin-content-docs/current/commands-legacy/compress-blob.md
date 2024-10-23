@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.COMPRESS BLOB.Summary-->El comando **COMPRESS BLOB** comprime el BLOB *blob* utilizando el algoritmo de compresión interno de 4D.<!-- END REF-->   

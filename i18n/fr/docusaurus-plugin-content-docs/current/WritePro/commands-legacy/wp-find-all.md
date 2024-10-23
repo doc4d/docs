@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Find all.Summary-->La commande **WP Find all** recherche *valeurRecherche* dans *objCible* en utilisant les options de *conditionRecherche*.<!-- END REF--> Un paramètre optionnel peut être utilisé pour remplacer les résultats trouvés.

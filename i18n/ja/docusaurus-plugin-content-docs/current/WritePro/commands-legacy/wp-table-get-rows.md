@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP Table get rows.Summary-->**WP Table get rows** コマンドは、*targetObj* または(*startRow* および *numRows* 引数で定義された)*tableRef* で指定した表から、行のセレクションを格納した新しいレンジオブジェクトを返します。<!-- END REF-->

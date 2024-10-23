@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.VARIABLE TO BLOB.Summary-->**VARIABLE TO BLOB** stocke la variable *variable* dans le BLOB *blob*.<!-- END REF-->

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Get formulas.Summary-->La commande **WP Get formulas** retoune une collection de toutes les formulas définies dans *objCible*.<!-- END REF-->

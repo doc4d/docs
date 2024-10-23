@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Get subrecord key.Summary-->El comando [Get subrecord key](get-subrecord-key.md) facilita la migración del código 4D utilizando subtablas convertidas al código estándar de manipulación de tablas.<!-- END REF--> 

@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP New style sheet.Summary-->La commande **WP New style sheet** crée un nouvel objet feuille de style (vide) pour le *docWP* désigné.<!-- END REF-->

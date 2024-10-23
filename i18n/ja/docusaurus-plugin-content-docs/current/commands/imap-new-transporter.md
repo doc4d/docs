@@ -23,9 +23,6 @@ displayed_sidebar: docs
 
 <!-- END REF -->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明
 
 `IMAP New transporter` コマンドは、*server* 引数の指定に応じて<!-- REF #_command_.IMAP New transporter.Summary -->新規の IMAP接続を設定します<!-- END REF -->。戻り値は、新しい `IMAP transporter` オブジェクトです。 返される transporter オブジェクトは通常、メールの受信に使用されます。

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Is picture file.Summary-->Is picture file コマンドは*filePath*引数で指定されたファイルをテストし、有効なピクチャファイルであればTrueを返します。<!-- END REF-->ファイルがピクチャファイルでないか、ファイルが見つからない場合はFalseを返します。

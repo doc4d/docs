@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Discover data key.Summary-->**Discover data key** コマンドは、現在開かれているデータファイルに対応する有効な暗号化キーを、接続されている全てのデバイスのルートレベルで検索し、それに成功した場合には**True** を返します。<!-- END REF-->

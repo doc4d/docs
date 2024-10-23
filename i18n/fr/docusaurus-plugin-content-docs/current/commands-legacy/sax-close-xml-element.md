@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.SAX CLOSE XML ELEMENT.Summary-->La commande **SAX CLOSE XML ELEMENT** inscrit dans le document XML référencé par *document* les instructions nécessaires à la fermeture du dernier élément ouvert via la commande [SAX OPEN XML ELEMENT](sax-open-xml-element.md).<!-- END REF--> 

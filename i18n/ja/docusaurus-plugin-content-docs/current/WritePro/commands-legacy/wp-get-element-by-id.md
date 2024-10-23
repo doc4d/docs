@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP Get element by ID.Summary-->**WP Get element by ID** コマンドは、*wpDoc* 引数で指定したドキュメント内の、*ID* 引数で指定された要素を格納しているオブジェクトを返します。<!-- END REF-->

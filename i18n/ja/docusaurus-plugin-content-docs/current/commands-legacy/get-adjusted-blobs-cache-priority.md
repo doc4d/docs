@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Get adjusted blobs cache priority.Summary-->**Get adjusted blobs cache priority** コマンドは*aTable* 引数で指定されたテーブルの"blob"データにキャッシュマネージャーによって適用されたカレントの調整済みキャッシュ優先度値を返します。<!-- END REF-->

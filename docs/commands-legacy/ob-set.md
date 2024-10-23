@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.OB SET.Summary-->The **OB SET** command creates or modifies one or more *property*/*value* pairs in the language object designated by the *object* parameter.<!-- END REF--> 

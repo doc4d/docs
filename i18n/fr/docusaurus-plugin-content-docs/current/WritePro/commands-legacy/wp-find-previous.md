@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Find previous.Summary-->La commande **WP Find previous** recherche le paramètre *objCible,* avant la plage rechercherAvant, pour le paramètre rechercherValeur fondé sur conditionRecherche.<!-- END REF--> Un paramètre optionnel peut être utilisé pour remplacer les résultats trouvés.

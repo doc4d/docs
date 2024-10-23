@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.GOTO RECORD.Summary-->GOTO RECORD selecciona el registro actual de *tabla*.<!-- END REF--> El parámetro *registro* es el número devuelto por la función [Record Number](record-number.md "Record Number"). Después de ejecutar este comando, el registro es el único registro en la selección. 

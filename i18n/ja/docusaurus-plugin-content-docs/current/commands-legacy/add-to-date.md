@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Add to date.Summary-->**Add to date** コマンドは、*date*に*years*、*months*、*days* を加算し、その結果の日付を返します。<!-- END REF--> 

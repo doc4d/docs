@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Data file.Summary-->El comando Data file devuelve el nombre largo del archivo de datos o del primer segmento de la base en la cual está trabajando actualmente.<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.DOM Append XML element.Summary-->O comando DOM Append XML element se utiliza para adicionar um novo elemento XML ao filho do elemento XML cuja referência se passa no parâmetro *refElementFonte* .<!-- END REF-->   

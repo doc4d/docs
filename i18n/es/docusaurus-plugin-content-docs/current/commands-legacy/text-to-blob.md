@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.TEXT TO BLOB.Summary-->El comando TEXT TO BLOB escribe el valor de tipo Texto *texto* en el BLOB *blob*.<!-- END REF-->

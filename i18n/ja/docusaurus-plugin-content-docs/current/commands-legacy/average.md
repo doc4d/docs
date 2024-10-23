@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Average.Summary-->**Average**は、*series*の平均値を返します。<!-- END REF-->*series*がインデックスフィ－ルドの場合には、平均値を求めるためにインデックスが使用されます。

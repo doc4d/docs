@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Current process.Summary-->**Current process** retourne le numéro du process à partir duquel la fonction a été appelée.<!-- END REF-->

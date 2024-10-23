@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Length.Summary-->Lengthは*aString*の長さを知るために使用します。<!-- END REF-->Lengthは*aString*中の文字数を返します。 

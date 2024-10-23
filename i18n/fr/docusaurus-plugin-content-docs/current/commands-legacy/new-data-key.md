@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.New data key.Summary-->La commande **New data key** génère une clé de chiffrement des données binaires à partir du texte passé dans le paramètre *phraseSecrète*.<!-- END REF-->

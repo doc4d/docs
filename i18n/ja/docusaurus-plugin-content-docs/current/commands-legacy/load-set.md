@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.LOAD SET.Summary-->LOAD SETコマンドは、[SAVE SET](save-set.md "SAVE SET")コマンドでディスクに保存した*document*からセットをメモリに復元します。<!-- END REF-->

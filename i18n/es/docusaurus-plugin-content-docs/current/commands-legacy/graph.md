@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.GRAPH.Summary-->El comando **GRAPH** crea un gráfico en una variable imagen, a partir de los valores provenientes de los arrays.<!-- END REF--> El comando GRAPH debe ser ubicado en el método formulario o en un método objeto perteneciente al formulario, o en un método proyecto llamado por uno de estos dos métodos.

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.QUIT 4D.Summary-->La commande **QUIT 4D**  vous permet de quitter l'application 4D courante et de retourner sur le Bureau du système d'exploitation.<!-- END REF--> 

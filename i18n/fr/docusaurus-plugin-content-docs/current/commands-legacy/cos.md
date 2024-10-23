@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Cos.Summary-->**Cos** retourne le cosinus de *nombre*.<!-- END REF--> La valeur *nombre* est exprimée en radians.

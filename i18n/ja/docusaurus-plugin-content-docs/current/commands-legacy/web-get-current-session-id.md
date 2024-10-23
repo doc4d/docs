@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WEB Get Current Session ID.Summary-->**WEB Get Current Session ID**コマンドはカレントのWebリクエストのセッションIDを返します。<!-- END REF-->このIDは4Dが自動で生成します。 

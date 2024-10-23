@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.DELETE FROM BLOB.Summary-->O comando DELETE FROM BLOB apaga o número de bytes especificado por *tamanho* do BLOB *blob* a partir da posição especificada por *offset* (expressada de modo relativo ao começo do BLOB).<!-- END REF--> O tamanho do BLOB é reduzido em *tamanho* de bytes.

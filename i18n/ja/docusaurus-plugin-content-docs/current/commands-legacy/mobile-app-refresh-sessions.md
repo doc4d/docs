@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.MOBILE APP REFRESH SESSIONS.Summary-->**MOBILE APP REFRESH SESSIONS** コマンドは、サーバーのMobileApps フォルダ内にある全てのモバイルアプリセッションファイルをチェックし、編集されたファイルに対してメモリ内にある既存のセッションのコンテンツを更新します。<!-- END REF-->

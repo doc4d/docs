@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP New header.Summary-->O comando **WP New header** cria e devolve um cabeçalho associado à seção ou subseção definida pelo parâmetro *wpSection*.<!-- END REF-->

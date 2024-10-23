@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.DOM CLOSE XML.Summary-->El comando DOM CLOSE XML libera el espacio en memoria ocupado por el objeto XML designado por *refElement*.<!-- END REF--> 

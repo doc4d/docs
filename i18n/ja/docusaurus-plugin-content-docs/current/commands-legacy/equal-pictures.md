@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Equal pictures.Summary-->**Equal pictures**コマンドは2つのピクチャーの寸法と内容を厳密に比較します。<!-- END REF-->

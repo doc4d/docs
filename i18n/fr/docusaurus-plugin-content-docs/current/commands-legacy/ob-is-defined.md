@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.OB Is defined.Summary-->La commande **OB Is defined** retourne **Vrai** si *objet* ou *propriété* est défini, et **Faux** sinon.<!-- END REF--> 

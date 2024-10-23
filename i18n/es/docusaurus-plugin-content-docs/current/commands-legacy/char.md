@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Char.Summary-->El comando **Char** devuelve el carácter cuyo código es *codigoCaracter*.<!-- END REF-->  

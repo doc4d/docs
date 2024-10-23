@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.BLOB size.Summary-->BLOB size devuelve el tamaño del *blob* expresado en bytes.<!-- END REF-->

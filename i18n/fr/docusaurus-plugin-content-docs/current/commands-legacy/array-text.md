@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.ARRAY TEXT.Summary-->La commande **ARRAY TEXT** crée et/ou redimensionne un tableau d'éléments de type [Texte](# "Une chaine de caractères jusqu'à 2 Go") en mémoire.<!-- END REF-->

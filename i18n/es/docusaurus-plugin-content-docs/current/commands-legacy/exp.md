@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Exp.Summary-->Exp devuelve el exponencial (e = 2.71828...) de *número*.<!-- END REF--> Exp es la función inversa de Log.

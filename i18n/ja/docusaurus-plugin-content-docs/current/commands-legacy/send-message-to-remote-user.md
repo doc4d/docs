@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.SEND MESSAGE TO REMOTE USER.Summary-->**SEND MESSAGE TO REMOTE USER** コマンドは、全てのリモートユーザー、あるいは特定のリモートユーザーに対して、メッセージを送信します。<!-- END REF-->

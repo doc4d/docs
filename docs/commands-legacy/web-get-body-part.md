@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WEB GET BODY PART.Summary-->The **WEB GET BODY PART** command, when called in the context of a Web process, parses the "body" part of a multi-part request.<!-- END REF-->

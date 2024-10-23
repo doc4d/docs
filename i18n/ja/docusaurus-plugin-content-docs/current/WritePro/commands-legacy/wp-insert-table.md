@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP Insert table.Summary-->**WP Insert table** コマンドは*targetObj* 引数で指定したレンジに、*mode* 引数で指定した挿入モード新しいテーブルを挿入し、それに対応した新しいテーブルオブジェクトを返します。<!-- END REF-->オプションとして、*rangeUpdate* 引数や、規定のカラム数や行数を指定する*nbCols* や *nbRows* 引数を渡すことができます。

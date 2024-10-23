@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP Table get columns.Summary-->O comando **WP Table get columns** \[#/descv\].<!-- END REF--> devolve um novo objeto de faixa de celulas que contem a seleção de colunas *refTabela* (definida por *colIni* e *numCol)*. \[#/descv\]. 

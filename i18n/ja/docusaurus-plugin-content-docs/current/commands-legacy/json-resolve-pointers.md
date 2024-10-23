@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.JSON Resolve pointers.Summary-->**JSON Resolve pointers** コマンドは、*object* 引数内にある全てのJSON ポインターを、*options* 引数で指定した設定(あれば)に基づいて、解決します。<!-- END REF-->

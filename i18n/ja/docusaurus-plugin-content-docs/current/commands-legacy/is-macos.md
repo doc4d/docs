@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Is macOS.Summary-->**Is macOS** コマンドは、カレントのOSがmacOS の場合にはTrue を返します。<!-- END REF-->

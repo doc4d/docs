@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.DISTINCT VALUES.Summary-->El comando **DISTINCT VALUES** crea y llena el array *array* con todos valores distintos (únicos) del campo *campo* para la selección actual de la tabla del campo y, opcionalmente, devuelve en *contArray* el número de ocurrencias de cada valor.<!-- END REF-->

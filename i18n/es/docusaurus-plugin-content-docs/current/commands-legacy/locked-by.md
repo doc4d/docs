@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.LOCKED BY.Summary-->LOCKED BY devuelve la información sobre el usuario y el proceso que tiene bloqueado un registro.<!-- END REF--> El número del proceso (\*), el nombre de usuario en la aplicación 4D y en el sistema así como el nombre del proceso son devueltos en las variables *proceso*, *usuario4D*, *sesionUsuario*, y *nombreProceso*. Puede utilizar esta información en una caja de diálogo personalizada para advertir al usuario cuando un registro está bloqueado.

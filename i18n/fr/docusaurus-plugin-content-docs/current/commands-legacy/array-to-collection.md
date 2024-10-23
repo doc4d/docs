@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.ARRAY TO COLLECTION.Summary-->La commande **ARRAY TO COLLECTION** copie un ou plusieurs *tableau*(x) dans les éléments ou les valeurs *nomPropriété* de *collection*.<!-- END REF-->

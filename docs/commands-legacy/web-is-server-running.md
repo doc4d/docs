@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WEB Is server running.Summary-->The new **WEB Is server running** command returns **True** if the 4D built-in Web server is running, and **False** if the Web server is off.<!-- END REF-->

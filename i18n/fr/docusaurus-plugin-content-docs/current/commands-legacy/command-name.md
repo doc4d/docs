@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Command name.Summary-->La fonction **Command name** retourne le nom ainsi que (optionnellement) les propriétés de la commande dont le numéro a été passé dans *commande*.<!-- END REF-->

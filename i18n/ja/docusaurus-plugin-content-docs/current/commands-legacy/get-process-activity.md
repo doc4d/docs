@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Get process activity.Summary-->**Get process activity** コマンドは特定の時刻での、接続ユーザーセッションや関連する実行中のスナップショットを返します。<!-- END REF-->このコマンドは、全てのプロセスを返します。これには、[Process info](../commands/process-info.md) コマンドでもアクセスできない内部プロセスも含まれます。

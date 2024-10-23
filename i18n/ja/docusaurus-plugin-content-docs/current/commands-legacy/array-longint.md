@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.ARRAY LONGINT.Summary-->ARRAY LONGINTコマンドは、メモリ上に4バイト倍長整数要素の配列を作成またはリサイズします。<!-- END REF-->  

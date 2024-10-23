@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Tickcount.Summary-->Tickcount はマシンが起動されてから経過したTick (1/60秒) 数を返します。<!-- END REF-->

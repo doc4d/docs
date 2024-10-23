@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.DOM Count XML attributes.Summary-->El comando DOM Count XML attributes devuelve el número de los atributos XML presentes en el elemento XML designado por *refElement*.<!-- END REF--> Para mayor información sobre los atributos XML, consulte la sección *Presentación de los comandos XML DOM*.

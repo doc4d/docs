@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.XML GET OPTIONS.Summary-->**XML GET OPTIONS** コマンドは、カレントセッションおよびカレントユーザで使用されている1つ以上のXMLパラメタの現在値を取得するために使用します。<!-- END REF-->

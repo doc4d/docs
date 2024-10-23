@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.GET PICTURE KEYWORDS.Summary-->La commande **GET PICTURE KEYWORDS** retourne dans le tableau *tabMotsclés* la liste des mots-clés associés à l’image passée en paramètre.<!-- END REF--> 

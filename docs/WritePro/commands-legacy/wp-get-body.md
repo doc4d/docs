@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Get body.Summary-->The **WP Get body** command returns the body element of the *wpDoc* 4D Write Pro document.<!-- END REF-->

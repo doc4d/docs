@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Min.Summary-->**Min** retourne la valeur la plus faible de *séries*.<!-- END REF--> Si *séries* est un champ indexé, l'index est utilisé pour la recherche de cette valeur.

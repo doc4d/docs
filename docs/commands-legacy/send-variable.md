@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.SEND VARIABLE.Summary-->SEND VARIABLE sends *variable* to the document or serial port previously opened by [SET CHANNEL](set-channel.md).<!-- END REF--> The variable is sent with a special internal format that can be read only by [RECEIVE VARIABLE](receive-variable.md). SEND VARIABLE sends the complete variable (including its type and value).

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.CLEAR SET.Summary-->CLEAR SET borra *conjunto* de la memoria y libera la memoria utilizada por *conjunto*.<!-- END REF--> CLEAR SET no afecta las tablas, selecciones, o registros. Para guardar un conjunto antes de borrarlo, utilice el comando [SAVE SET](save-set.md "SAVE SET"). Como los conjuntos utilizan memoria, es bueno borrarlos cuando ya no se necesitan.

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Application version.Summary-->O comando Application version retorna uma cadeia codificada que dá o número da versão do ambiente 4D que está sendo utilizado.<!-- END REF--> 

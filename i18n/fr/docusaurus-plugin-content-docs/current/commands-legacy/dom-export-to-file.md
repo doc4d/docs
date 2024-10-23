@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.DOM EXPORT TO FILE.Summary-->La commande **DOM EXPORT TO FILE** permet de sauvegarder un arbre XML dans un fichier sur disque.<!-- END REF--> 

@@ -19,9 +19,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.MULTI SORT ARRAY.Summary-->La commande **MULTI SORT ARRAY** vous permet d’effectuer un tri multi-critères sur un ensemble de tableaux.<!-- END REF-->

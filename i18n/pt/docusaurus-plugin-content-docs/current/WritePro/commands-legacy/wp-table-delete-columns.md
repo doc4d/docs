@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP TABLE DELETE COLUMNS.Summary-->O comando **WP TABLE DELETE COLUMNS** elimina uma ou várias colunas de uma tabela 4D Write.<!-- END REF-->

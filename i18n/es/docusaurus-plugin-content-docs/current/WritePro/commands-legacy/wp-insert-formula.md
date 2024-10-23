@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WP INSERT FORMULA.Summary-->El comando **WP INSERT FORMULA** inserta una *formula* en *objTarget* de acuerdo con el *modo* de inserción especificado.<!-- END REF-->

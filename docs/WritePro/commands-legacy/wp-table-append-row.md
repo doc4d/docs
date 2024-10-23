@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Table append row.Summary-->The **WP Table append row** command appends one row to the *tableRef* table, fills it with *value*(s) and returns the corresponding row range object.<!-- END REF-->

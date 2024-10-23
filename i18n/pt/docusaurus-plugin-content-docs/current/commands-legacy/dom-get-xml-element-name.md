@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.DOM GET XML ELEMENT NAME.Summary-->O comando DOM GET XML ELEMENT NAME retorna no parâmetro *nomeElemento*, o nome do elemento XML designado por *refElemento*.<!-- END REF--> Se o tipo de variável nomeElemento não for definido, o tipo texto é usado como padrão.   

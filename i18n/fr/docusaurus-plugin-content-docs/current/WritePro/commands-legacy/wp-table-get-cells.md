@@ -19,9 +19,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Table get cells.Summary-->La commande **WP Table get cells** retourne un nouvel objet cellule contenant la sélection de cellules de objCible ou de *refTableau* (définies par *debutCol*, *debutLigne*, *nbCols* et *nbLignes*).<!-- END REF-->

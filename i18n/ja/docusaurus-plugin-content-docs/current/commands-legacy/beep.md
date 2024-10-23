@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.BEEP.Summary-->BEEP コマンドは、PCまたはMacintoshでビーブ音を発生します。<!-- END REF-->発生するビーブ音は、サウンドコントロールパネルで変更することができます。

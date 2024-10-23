@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Get last update log path.Summary-->**Get last update log path**コマンドは、呼び出されたマシン内の最近のアップデートログファイルへの完全なパスを返します。<!-- END REF-->

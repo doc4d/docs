@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Count users.Summary-->El comando **Count users** devuelve el número de usuarios conectados al servidor.<!-- END REF-->  

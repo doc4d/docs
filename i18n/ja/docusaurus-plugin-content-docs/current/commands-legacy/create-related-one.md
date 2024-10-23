@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.CREATE RELATED ONE.Summary-->CREATE RELATED ONEには2つの機能があります。<!-- END REF-->関連するレコードが*aField* に対して存在しない場合 (つまり*aField* の現在の値に一致するものがない場合) 、CREATE RELATED ONEは新しくリレート先レコードを作成します。

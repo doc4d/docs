@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Delete string.Summary-->Delete string deletes *numChars* from *source*, starting at *where*, and returns the resulting string.<!-- END REF-->

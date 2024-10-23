@@ -22,9 +22,6 @@ displayed_sidebar: docs
 |Result|4D.IMAPTransporter|&#8592;|[IMAP transporter object](../API/IMAPTransporterClass.md#imap-transporter-object)|
 <!-- END REF -->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 
 #### Description
 

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.ABORT PROCESS BY ID.Summary-->El comando **ABORT PROCESS BY ID** detiene un proceso específico en el servidor 4D.<!-- END REF-->

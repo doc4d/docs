@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.ADD TO SET.Summary-->ADD TO SETは、*set*に*aTable*のカレントレコードを追加します。<!-- END REF-->ここで使用するセットは既に作成されていなければなりません。存在しない場合エラーになります。*aTable*にカレントレコードが存在しない場合には、ADD TO SETは何も行いません。

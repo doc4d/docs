@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.SAX ADD PROCESSING INSTRUCTION.Summary-->El comando SAX ADD PROCESSING INSTRUCTION añade en el documento XML referenciado por *documento*, una *instruccion* de procesamiento XML.<!-- END REF--> 

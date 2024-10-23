@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Is nil pointer.Summary-->O comando **Is nil pointer** devolve True se o ponteiro que você passa em *umPonteiro* é Nulo (*\->\[\]*).<!-- END REF--> Devolve False em todos os outros casos (ponteiro a um campo, tabela ou variável).

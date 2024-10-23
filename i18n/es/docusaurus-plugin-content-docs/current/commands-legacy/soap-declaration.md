@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.SOAP DECLARATION.Summary-->El comando SOAP DECLARATION permite declarar explícitamente el tipo de los parámetros utilizados en un método 4D publicado como servicio web.<!-- END REF-->

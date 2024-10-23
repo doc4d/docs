@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Get group access.Summary-->La commande **Get group access** retourne l'adhésion du compte utilisateur 4D à la session courante.<!-- END REF--> Si l'utilisateur n'appartient à aucun groupe de la session, une collection vide est retournée.

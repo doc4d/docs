@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.EXECUTE FORMULA.Summary-->**EXECUTE FORMULA** ejecuta *instruccion* como una línea de código.<!-- END REF--> Este comando está diseñado para ser utilizado cuando necesita evaluar expresiones que el usuario puede construir o modificar. 

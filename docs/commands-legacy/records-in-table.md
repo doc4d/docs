@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Records in table.Summary-->**Records in table** returns the total number of records in aTable.<!-- END REF--> [Records in selection](records-in-selection.md) returns the number of records in the current selection only. If **Records in table** is used within a transaction, records created during the transaction will be taken into account.

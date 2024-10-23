@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.TRACE.Summary-->O comando **TRACE** se utiliza para executar passo a passo métodos durante o desenvolvimento de um banco.<!-- END REF-->

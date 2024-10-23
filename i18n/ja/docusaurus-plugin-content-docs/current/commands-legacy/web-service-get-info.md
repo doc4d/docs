@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WEB SERVICE Get info.Summary-->**WEB SERVICE Get info**コマンドは、リモートのWebサービスに送信された最新のSOAPリクエストの 実行中に生成されたエラーについての情報を返します。<!-- END REF-->このコマンドは一般的に[ON ERR CALL](on-err-call.md)コマンドでインストールされたエラー処理メソッド内から呼び出します。

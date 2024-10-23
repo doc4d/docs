@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.TRACE.Summary-->El comando **TRACE** se utiliza para ejecutar paso a paso métodos durante el desarrollo de una base.<!-- END REF-->

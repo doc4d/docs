@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WRITE PICTURE FILE.Summary-->**WRITE PICTURE FILE**コマンドを使用し、 引数*picture*に渡されたピクチャを、指定した*codec*でディスクに保存することができます。<!-- END REF--> 

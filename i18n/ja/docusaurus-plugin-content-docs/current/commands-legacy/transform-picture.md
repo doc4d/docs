@@ -19,9 +19,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.TRANSFORM PICTURE.Summary-->TRANSFORM PICTURE コマンドは、*picture*引数に渡したピクチャに、*operator*タイプの変換を適用するために使用します。<!-- END REF--> 

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Log File.Summary-->El comando Log File devuelve el nombre largo (es decir la ruta de acceso completa del archivo, incluyendo su nombre) del archivo historial actual de la base abierta.<!-- END REF--> 

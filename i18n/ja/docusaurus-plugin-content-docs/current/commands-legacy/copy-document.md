@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.COPY DOCUMENT.Summary-->**COPY DOCUMENT**コマンドを使用して、*sourceName*によって指定されたファイルやフォルダーを*destinationName*によって指定された場所にコピーします。<!-- END REF--> 

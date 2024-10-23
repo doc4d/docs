@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.End selection.Summary-->**End selection** は、カレントレコードポインタが*aTable*のカレントセレクションの後ろにある場合TRUEを返します。<!-- END REF-->一般に**End selection** は、[NEXT RECORD](next-record.md) コマンドで、カレントレコードポインタが最後のレコードの後に移動したかどうかをチェックするために使用します。カレントセレクションが空の場合、**End selection** はTRUEを返します。

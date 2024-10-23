@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.INTEGER TO BLOB.Summary-->The INTEGER TO BLOB command writes the 2-byte Integer value *integer* into the BLOB *blob*.<!-- END REF-->

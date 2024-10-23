@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Is in set.Summary-->Is in set関数は、*set*の属するテーブルのカレントレコードが*set*に含まれているかどうかを調べます。<!-- END REF-->Is in set関数は、カレントレコードが*set*に含まれていれば Trueを返し、含まれていなければ Falseを返します。

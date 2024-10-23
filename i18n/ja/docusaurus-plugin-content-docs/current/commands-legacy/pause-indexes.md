@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.PAUSE INDEXES.Summary-->**PAUSE INDEXES**コマンドは、*aTable* のインデックスを、プライマリーキーのインデックスを除き一時的に無効にします。<!-- END REF-->.

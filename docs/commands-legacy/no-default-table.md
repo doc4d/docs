@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.NO DEFAULT TABLE.Summary-->The **NO DEFAULT TABLE** command is used to cancel the effect of the [DEFAULT TABLE](default-table.md) command.<!-- END REF--> After this command is executed, there is no longer any default table defined for the process.   

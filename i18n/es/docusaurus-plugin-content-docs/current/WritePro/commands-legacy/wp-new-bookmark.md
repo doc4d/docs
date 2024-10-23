@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WP NEW BOOKMARK.Summary-->El comando **WP NEW BOOKMARK** crea un nuevo marcador llamado *nombk* basado en el *objRango* 4D Write Pro del documento padre.<!-- END REF-->

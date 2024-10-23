@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WEB SET OPTION.Summary-->**WEB SET OPTION**コマンドは4D Webサーバーの機能に関する様々なオプションのカレントの値を変更します。<!-- END REF-->

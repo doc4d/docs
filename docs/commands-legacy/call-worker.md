@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.CALL WORKER.Summary-->The **CALL WORKER** command creates or calls the worker process whose name or ID you passed in *process*, and requests the execution of the code designated by *formula* in its context with the optional *param* parameter(s).<!-- END REF-->

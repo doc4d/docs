@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Get database localization.Summary-->O comando Get database localization \[#descv\] retorna o idioma padrão ou a linguagem do banco de dados especificado pelo *tipoLinguagem*, expresso no padrão definido pela RFC 3066\.<!-- END REF--> \[#descv\] Normalmente, o comando retorna "en" para Inglês, "es" para o espanhol, etc Para mais informações sobre esta norma e os valores retornados por este comando, consulte o manual de referência de design.  

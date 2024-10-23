@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Insert table.Summary-->La commande **WP Insert table** insère un nouveau tableau dans la plage *objCible* en fonction du *mode* d'insertion spécifié et retourne le nouvel objet correspondant.<!-- END REF--> Optionnellement, vous pouvez passer le paramètre *miseAJourPlage* ainsi qu'un nombre prédéfini de colonnes et de lignes dans *nbCols* et *nbLignes*.

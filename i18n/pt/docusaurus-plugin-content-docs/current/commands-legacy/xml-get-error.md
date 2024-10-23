@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.XML GET ERROR.Summary-->O comando XML GET ERROR retorna no parâmetro *textoErro* a descrição do erro encontrado durante o processo do elemento XML designado pelo parâmetro *refElement*.<!-- END REF--> A informação retornada é fornecida pela biblioteca Xerces.DLL.  

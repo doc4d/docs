@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.DELETE FROM ARRAY.Summary-->La commande **DELETE FROM ARRAY** supprime un ou plusieurs élément(s) de *tableau*.<!-- END REF--> Les éléments sont supprimés à partir de l'élément spécifié par *positionDépart*.

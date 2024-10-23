@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.SAVE RELATED ONE.Summary-->**SAVE RELATED ONE** sauvegarde l'enregistrement lié à *leChamp*.<!-- END REF--> Vous pouvez exécuter une commande **SAVE RELATED ONE** pour mettre à jour un enregistrement créé par [CREATE RELATED ONE](create-related-one.md), ou bien lorsque vous voulez sauvegarder des modifications apportées à un enregistrement chargé par [RELATE ONE](relate-one.md). 

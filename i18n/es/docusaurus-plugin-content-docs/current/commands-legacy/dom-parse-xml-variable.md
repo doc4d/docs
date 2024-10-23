@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.DOM Parse XML variable.Summary-->El comando DOM Parse XML variable analiza una variable de tipo BLOB o Texto que contiene una estructura XML y devuelve una referencia para esta variable.<!-- END REF--> El comando puede validar o no la estructura vía un DTD o un esquema XML (XML Schema Definition (XSD) document). 

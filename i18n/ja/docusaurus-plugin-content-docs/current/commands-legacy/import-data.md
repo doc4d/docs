@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.IMPORT DATA.Summary-->**IMPORT DATA**コマンドはデータを*fileName*ファイルから読み込みます。<!-- END REF-->4Dは以下のフォーマットのデータ読み込みを行えます: テキスト、固定長テキスト、XML、SYLK、DIF、DBF（dBase）および4Dフォーマット

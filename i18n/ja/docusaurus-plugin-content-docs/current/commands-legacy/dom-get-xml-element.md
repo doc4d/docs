@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DOM Get XML element.Summary-->DOM Get XML element コマンドは、*elementName* と *index* 引数に基づき、子要素の参照を返します。<!-- END REF--> 

@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.BLOB PROPERTIES.Summary-->**BLOB PROPERTIES**コマンドは、BLOB *blob*に関する情報を返します。<!-- END REF-->

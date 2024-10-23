@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DOCUMENT TO BLOB.Summary-->DOCUMENT TO BLOB は、*document*の内容全体を*blob*にロードします。<!-- END REF-->開かれていない既存のドキュメントを渡さなければなりません。そうでなければエラーが生成されます。ドキュメントをユーザが選択できるようにするには、[Open document](open-document.md) およびプロセス変数*document* を使用します(例題を参照)。

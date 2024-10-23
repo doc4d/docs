@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Note 
 
 <!--REF #_command_.OPEN DATABASE.Summary-->La commande **OPEN DATABASE** referme la base de données 4D courante et ouvre à la volée la base désignée par le paramètre *cheminFichier*.<!-- END REF--> Cette commande est utile dans le cadre de tests automatiques, pour rouvrir une base après compilation, ou pour permettre à une application 4D fusionnée de sélectionner le serveur de la base auquel se connecter.

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.CREATE FOLDER.Summary-->La commande **CREATE FOLDER** crée un dossier en fonction du chemin d'accès que vous passez dans le paramètre *cheminAccès*.<!-- END REF-->

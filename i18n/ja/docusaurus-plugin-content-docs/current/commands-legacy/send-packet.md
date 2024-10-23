@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.SEND PACKET.Summary-->SEND PACKET は、シリアルポートやドキュメントにパケットを送ります。<!-- END REF-->*docRef*を指定した場合、パケットは*docRef*で参照されるドキュメントに書き込まれます。*docRef*を指定しない場合、あらかじめ [SET CHANNEL](set-channel.md) コマンドで開かれたシリアルポートまたはドキュメントにパケットを書き込みます。 

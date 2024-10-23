@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DOCUMENT LIST.Summary-->**DOCUMENT LIST**コマンド は、*pathname*に渡すパス名にあるドキュメントの名前を要素とするテキスト配列*documents*を生成します。<!-- END REF-->

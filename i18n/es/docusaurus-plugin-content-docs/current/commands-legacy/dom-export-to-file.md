@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.DOM EXPORT TO FILE.Summary-->El comando DOM EXPORT TO FILE  permite guardar un árbol XML en un archivo en el disco.<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DOM GET XML ELEMENT VALUE.Summary-->**DOM GET XML ELEMENT VALUE** コマンドは *elementRef*に指定したXML要素の値を*elementValue* 引数に返します。<!-- END REF-->4Dは取得した値を渡した変数と同じ型に変換します。変数の型が定義されていない場合、値はデフォルトでテキスト型で返されます。

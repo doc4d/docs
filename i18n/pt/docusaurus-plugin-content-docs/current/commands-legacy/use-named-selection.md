@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.USE NAMED SELECTION.Summary-->USE NAMED SELECTION utiliza o nome da seleção temporária como seleção atual para la tabela a qual pertence.<!-- END REF-->

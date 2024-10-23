@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Trunc.Summary-->Truncは、指定された*places*の小数部を切り捨てた数値を返します。<!-- END REF-->Truncは、常に元の値よりも小さい値を返します。

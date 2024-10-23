@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Get header.Summary-->The **WP Get header** command returns the header associated to the *targetObj* or to the specified *sectionIndex* of the *wpDoc* document.<!-- END REF--> If no header is found with regards to the parameter(s), the command returns **Null**.

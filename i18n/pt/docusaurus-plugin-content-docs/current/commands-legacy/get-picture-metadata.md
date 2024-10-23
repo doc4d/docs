@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.GET PICTURE METADATA.Summary-->O comando **GET PICTURE METADATA** permite ler o conteúdo dos metadados (ou meta-tags) presentes em *imagem* (campo ou variável imagem 4D).<!-- END REF--> Para maior informação sobre metadados, consulte a descrição do comando [SET PICTURE METADATA](set-picture-metadata.md).

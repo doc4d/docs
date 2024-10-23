@@ -19,9 +19,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.TRANSFORM PICTURE.Summary-->La commande **TRANSFORM PICTURE** permet d’appliquer une transformation de type *opérateur* à l’image passée dans le paramètre *image*.<!-- END REF-->

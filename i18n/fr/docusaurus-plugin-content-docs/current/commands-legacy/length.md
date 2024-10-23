@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Length.Summary-->**Length** vous permet d'obtenir la longueur de *laChaîne*.<!-- END REF--> **Length** retourne le nombre de caractères alphanumériques contenus dans *laChaîne*.

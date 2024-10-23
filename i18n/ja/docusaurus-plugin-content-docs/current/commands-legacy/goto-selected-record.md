@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.GOTO SELECTED RECORD.Summary-->**GOTO SELECTED RECORD**は、*aTable*のカレントセレクション内の指定されたレコードに移動し、そのレコードをカレントレコードにします。<!-- END REF-->カレントセレクションは変更されません。*record*にはカレントセレクション内のレコードの位置を指定します。[Record number](record-number.md)で求められるレコード番号ではありません。このレコード位置はセレクションの作成方法およびセレクションがソートされているかどうかによって変わります。

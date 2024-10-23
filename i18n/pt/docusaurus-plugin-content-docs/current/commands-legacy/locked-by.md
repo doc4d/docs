@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.LOCKED BY.Summary-->LOCKED BY devolve a informação sobre o usuário e o processo que tem bloqueado um registro.<!-- END REF--> O número do processo(\*), o nome de usuário, o nome do equipo assim como o nome do processo são devolvidos nas variáveis *processo, usuario4D, usuarioSessao*, e *nomeProcesso*. Pode utilizar esta informação em uma caixa de diálogo personalizada para advertir al usuário quando um registro está bloqueado.  

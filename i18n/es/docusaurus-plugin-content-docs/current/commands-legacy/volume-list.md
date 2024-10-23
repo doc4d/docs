@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.VOLUME LIST.Summary-->El comando VOLUME LIST llena el array *volumenes*, de tipo texto, con los nombres de los volúmenes definidos (Windows) o montados (Mac OS) en su equipo.<!-- END REF--> 

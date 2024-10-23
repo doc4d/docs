@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.OB Instance of.Summary-->The **OB Instance of** command returns true if *object* belongs to *class* or to one of its child classes, and false otherwise.<!-- END REF-->

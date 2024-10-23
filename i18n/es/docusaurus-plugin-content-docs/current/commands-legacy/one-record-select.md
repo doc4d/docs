@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.ONE RECORD SELECT.Summary-->ONE RECORD SELECT reduce la selección actual de *tabla* al registro actual.<!-- END REF--> Si no existe un registro actual o si el registro actual no está cargado en la memoria (caso particular), ONE RECORD SELECT no tiene ningún efecto.

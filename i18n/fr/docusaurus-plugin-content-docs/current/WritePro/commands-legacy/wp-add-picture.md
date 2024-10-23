@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Add picture.Summary-->La commande **WP Add picture** ancre *image* à un emplacement fixe dans *wpDoc* et retourne sa référence.<!-- END REF--> La référence retournée peut alors être passée à la commande [WP SET ATTRIBUTES](wp-set-attributes.md) pour déplacer *image* à n'importe quel endroit dans *wpDoc* (page, section, en-tête, pied, etc.) avec une couche définie, taille, etc. 

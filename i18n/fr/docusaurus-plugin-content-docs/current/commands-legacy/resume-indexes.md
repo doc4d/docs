@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.RESUME INDEXES.Summary-->La commande **RESUME INDEXES** réactive tous les index de *laTable* s’ils ont été préabalement suspendus via la commande [PAUSE INDEXES](pause-indexes.md).<!-- END REF--> Si les index de *laTable* n’étaient pas suspendus, la commande ne fait rien. 

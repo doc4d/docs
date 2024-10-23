@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WP Get links.Summary-->**WP Get links** devuelve la colección de todos los enlaces definidos en *objRango*.<!-- END REF-->

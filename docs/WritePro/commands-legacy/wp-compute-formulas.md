@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WP COMPUTE FORMULAS.Summary-->The **WP COMPUTE FORMULAS** command evaluates the formulas in *targetObj*.<!-- END REF-->

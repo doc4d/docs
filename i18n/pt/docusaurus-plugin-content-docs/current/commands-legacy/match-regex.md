@@ -25,9 +25,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Match regex.Summary-->O comando **Match regex** permite provar a conformidade de uma cadeia de caracteres relativo a um conjunto de regras sintetizadas por meio de um metalinguagem chamado “expressão regular” ou “expressão racional.<!-- END REF-->” A abreviação regex é comumente empregada para indicar estes tipos de notações.

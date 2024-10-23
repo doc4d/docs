@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Record number.Summary-->**Record number** retourne le numéro de l'enregistrement courant de *laTable*.<!-- END REF--> S'il n'y a pas d'enregistrement courant, par exemple si le pointeur d'enregistrement se trouve avant ou après la sélection courante, **Record number** retourne -1\. S'il s'agit d'un nouvel enregistrement qui n'a pas encore été sauvegardé, **Record number** retourne -3.

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.DOM SET XML ATTRIBUTE.Summary-->O comando DOM SET XML ATTRIBUTE permite adicionar uno ou vários atributos ao elemento XML cuja referência se passa no parâmetro *refElemento*.<!-- END REF--> Também permite definir o valor de cada atributo definido.  

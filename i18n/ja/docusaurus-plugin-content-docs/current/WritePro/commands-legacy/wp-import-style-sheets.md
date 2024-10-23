@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP IMPORT STYLE SHEETS.Summary-->**WP IMPORT STYLE SHEETS** コマンドは、*sourceDoc* 引数で指定したドキュメント内の全てのスタイルシートを、*targetDoc* 引数で指定したドキュメント内へと読み込みます。<!-- END REF-->

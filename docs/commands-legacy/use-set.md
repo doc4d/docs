@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.USE SET.Summary-->**USE SET** makes the records in *set* the current selection for the table to which the set belongs.<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WEB GET STATISTICS.Summary-->El comando **WEB GET STATISTICS** permite obtener la información sobre las páginas más consultadas, cargadas en la caché del servidor web.<!-- END REF--> Por lo tanto, estas estadísticas conciernen únicamente las páginas estáticas, las imágenes GIF, las imágenes JPEG <100 KB y las hojas de estilo (.css). 

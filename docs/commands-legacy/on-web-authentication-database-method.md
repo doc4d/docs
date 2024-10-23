@@ -19,9 +19,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.On Web Authentication database method.Summary-->The **On Web Authentication database method** is in charge of managing Web server engine access.<!-- END REF--> It is called by 4D or 4D Server when a Web browser request requires the execution of a 4D method on the server (method called using a *4DACTION* URL, a *4DSCRIPT* tag, etc.). 

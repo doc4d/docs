@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.SAVE RECORD.Summary-->SAVE RECORD guarda el registro actual de *tabla* en el proceso actual.<!-- END REF--> Si no hay registro actual, se ignora el comando SAVE RECORD. 

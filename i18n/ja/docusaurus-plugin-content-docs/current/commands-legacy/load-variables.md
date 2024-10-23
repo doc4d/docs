@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.LOAD VARIABLES.Summary-->LOAD VARIABLES コマンドは、*document*によって指定されたドキュメントから1つまたはいくつかの変数を読み込みます。<!-- END REF-->そのドキュメントは[SAVE VARIABLES](save-variables.md "SAVE VARIABLES") コマンドで作成されたものでなくてはなりません。

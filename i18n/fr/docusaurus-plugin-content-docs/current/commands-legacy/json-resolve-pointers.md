@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.JSON Resolve pointers.Summary-->La commande **JSON Resolve pointers** résout tous les pointeurs JSON présents dans *objet*, en tenant compte des *options* définies (s'il y en a).<!-- END REF-->

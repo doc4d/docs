@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Is Windows.Summary-->El comando **Is Windows** devuelve True si el sistema operativo actual es Windows.<!-- END REF-->

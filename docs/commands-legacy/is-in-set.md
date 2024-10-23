@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Is in set.Summary-->Is in set tests whether or not the current record for the table is in *set*.<!-- END REF--> The Is in set function returns TRUE if the current record of the table is in *set*, and returns FALSE if the current record of the table is not in *set*.

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Get breaks.Summary-->La commande **WP Get breaks** retourne la collection de tous les sauts insérés dans *objCible*.<!-- END REF-->

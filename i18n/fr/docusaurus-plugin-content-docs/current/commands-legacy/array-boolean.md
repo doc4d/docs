@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.ARRAY BOOLEAN.Summary-->La commande **ARRAY BOOLEAN** crée et/ou redimensionne un tableau d'éléments de type [Booléen](# "Peut être VRAI ou FAUX") en mémoire.<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Field name.Summary-->Field name関数は、*tableNum*と*fieldNum*または*fieldPtr*で指定したフィールドの名前を返します。<!-- END REF-->

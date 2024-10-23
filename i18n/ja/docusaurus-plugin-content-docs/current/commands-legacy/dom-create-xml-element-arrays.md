@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DOM Create XML element arrays.Summary-->DOM Create XML element arrays コマンドを使用して*elementRef*要素に新しい要素を追加したり、さらに配列形式で渡された属性とその値も追加できます。<!-- END REF-->

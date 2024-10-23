@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.OB GET ARRAY.Summary-->**OB GET ARRAY**コマンドは、 *object* 引数で指定したランゲージオブジェクトの、*property* 引数で指定したプロパティの中に保存されている値の配列を *array* という配列に返します。<!-- END REF-->

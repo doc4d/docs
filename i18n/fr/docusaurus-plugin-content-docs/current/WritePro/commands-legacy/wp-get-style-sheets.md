@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Get style sheets.Summary-->La commande **WP Get style sheets** retourne une collection de tous les objets feuille de style du *type* défini dans *docWP*.<!-- END REF-->

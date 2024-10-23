@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.PICTURE TO BLOB.Summary-->El comando PICTURE TO BLOB convierte una imagen almacenada en una variable o en un campo 4D en otro formato y ubica la imagen resultante en un BLOB.<!-- END REF-->

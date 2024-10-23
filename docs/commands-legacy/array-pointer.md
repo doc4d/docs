@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.ARRAY POINTER.Summary-->The **ARRAY POINTER** command creates or resizes an array of [Pointer](# "A reference to another variable (including arrays and array elements), table, or field") elements in memory.<!-- END REF-->

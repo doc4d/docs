@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.CREATE FOLDER.Summary-->The **CREATE FOLDER** command creates a folder according to the pathname you pass in *folderPath*.<!-- END REF-->

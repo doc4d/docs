@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Timestamp.Summary-->**Timestamp** はカレントのUTC時刻をISOフォーマット、ミリ秒付きで返します。<!-- END REF-->具体的には yyyy-MM-ddTHH:mm:ss.SSSZ という形式です。最後の"Z"文字はGMTタイムゾーンを意味するという点に注意してください。

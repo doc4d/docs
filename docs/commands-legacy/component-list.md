@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.COMPONENT LIST.Summary-->The COMPONENT LIST command sizes and fills the *componentsArray* array with the names of the components loaded by the 4D application for the current host database.<!-- END REF-->

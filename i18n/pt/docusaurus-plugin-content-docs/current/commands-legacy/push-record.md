@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.PUSH RECORD.Summary-->PUSH RECORD empilha uma cópia do registro atual de *tabela* na pilha de registros da tabela.<!-- END REF--> PUSH RECORD pode ser executada antes de que seja guardado um registro.  

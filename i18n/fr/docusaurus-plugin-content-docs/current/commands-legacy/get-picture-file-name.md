@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Get picture file name.Summary-->La commande **Get picture file name** retourne le nom par défaut courant de l’image passée en paramètre.<!-- END REF--> 

@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Command name.Summary-->**Command name** コマンドは、引数*command*に渡したコマンド番号のコマンド名に加え、コマンドのプロパティ(任意)を返します。<!-- END REF-->

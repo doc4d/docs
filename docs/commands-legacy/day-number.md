@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Day number.Summary-->The **Day number** command returns a number representing the weekday on which *aDate* falls.<!-- END REF-->  

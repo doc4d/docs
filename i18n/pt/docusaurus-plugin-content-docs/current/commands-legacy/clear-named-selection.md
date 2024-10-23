@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.CLEAR NAMED SELECTION.Summary-->CLEAR NAMED SELECTION apaga *nome* da memória e libera a memória utilizada por *nome*.<!-- END REF-->CLEAR NAMED SELECTION não afeta as tabelas, seleções, ou registros. Como as seleções temporais utilizam memória, é recomendável apagar as seleções temporárias quando já não sejam necessárias.

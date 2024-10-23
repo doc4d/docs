@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Before selection.Summary-->Before selection retorna TRUE quando o ponteiro do registro atual se encontra antes do primeiro registro da seleção atual de *tabela*.<!-- END REF--> Before selection geralmente é utilizado para verificar se o comando PREVIOUS RECORD tiver movido o ponteiro do registro atual antes do primeiro registro. Se a seleção atual estiver vazia, Before selection retorna TRUE.  

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.New object.Summary-->The **New object** command creates a new empty or prefilled object and returns its reference.<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.OB Instance of.Summary-->La commande **OB Instance of** retourne vrai si *objet* appartient à *classe* ou à l'une de ses classes enfant.<!-- END REF--> Sinon, elle retourne faux.

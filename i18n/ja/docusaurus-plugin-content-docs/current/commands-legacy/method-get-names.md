@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.METHOD GET NAMES.Summary-->**METHOD GET NAMES**コマンドはアプリケーション中のプロジェクトメソッドの名前を*arrNames*配列に返します。<!-- END REF-->

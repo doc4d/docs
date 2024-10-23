@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Is table number valid.Summary-->The Is table number valid command returns True if the table whose number is passed in the *tableNum* parameter exists in the database and False otherwise.<!-- END REF--> Keep in mind that the command returns False if the table is in the Trash of the Explorer.

@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.VARIABLE TO BLOB.Summary-->The VARIABLE TO BLOB command stores the variable *variable* in the BLOB *blob*.<!-- END REF-->

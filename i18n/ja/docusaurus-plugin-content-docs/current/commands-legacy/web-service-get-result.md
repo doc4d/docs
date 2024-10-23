@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WEB SERVICE GET RESULT.Summary-->**WEB SERVICE GET RESULT**コマンドは、行われた処理の結果としてWebサービスから返された結果を取得するために使用します。<!-- END REF--> 

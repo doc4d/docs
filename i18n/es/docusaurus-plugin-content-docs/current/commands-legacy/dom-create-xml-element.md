@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.DOM Create XML element.Summary-->El comando **DOM Create XML element** permite crear un nuevo elemento en el elemento XML *refElement* en la ubicación definida por el parámetro *xRuta* y añadirle atributos si es necesario.<!-- END REF-->

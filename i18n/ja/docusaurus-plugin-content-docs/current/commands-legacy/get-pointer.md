@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Get pointer.Summary-->**Get pointer** コマンドは、*varName*に渡した名前を持つ変数へのポインタを返します。<!-- END REF--> 

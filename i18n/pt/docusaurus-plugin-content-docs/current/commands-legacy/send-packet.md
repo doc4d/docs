@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.SEND PACKET.Summary-->O comando SEND PACKET envia um pacote para uma porta serial ou a um documento.<!-- END REF--> Se *docRef* é especificado, o pacote é escrito no documento referenciado por *docRef*. Se *docRef* não for especificado, o pacote está escrito na porta serial ou no documento anteriormente aberto pelo comando [SET CHANNEL](set-channel.md). 

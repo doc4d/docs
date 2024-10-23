@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.ARRAY DATE.Summary-->The ARRAY DATE command creates and/or resizes an array of [Date](# "In the range of 1/1/100 to 12/31/32,767") elements in memory.<!-- END REF--> 

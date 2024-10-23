@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.ARRAY TO SELECTION.Summary-->The **ARRAY TO SELECTION** command copies one or more arrays into a selection of records.<!-- END REF--> All fields listed must belong to the same table.

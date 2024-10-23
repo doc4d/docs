@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Structure file.Summary-->La fonction **Structure file** retourne le chemin d'accès du fichier de structure de la base en cours d'utilisation.<!-- END REF--> 

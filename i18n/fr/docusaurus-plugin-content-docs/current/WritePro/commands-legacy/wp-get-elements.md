@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Get elements.Summary-->La commande **WP Get elements** retourne une collection d'objets contenant des paragraphes, images, tableaux et/ou lignes de tableaux.<!-- END REF-->

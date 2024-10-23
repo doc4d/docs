@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WEB Get Current Session ID.Summary-->El comando **WEB Get Current Session ID** devuelve el ID de la sesión abierta para la petición web.<!-- END REF--> Esta identificación es generada automáticamente por 4D como un UUID.  

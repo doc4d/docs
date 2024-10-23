@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Get process activity.Summary-->El comando **Get process activity** devuelve una instantánea de las sesiones de los usuarios conectados y/o de los procesos relacionados que se ejecutan en un momento dado.<!-- END REF--> Este comando devuelve todos los procesos, incluyendo los procesos internos que no eran accesibles por el comando [Process info](../commands/process-info.md). 

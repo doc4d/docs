@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.SOAP REJECT NEW REQUESTS.Summary-->**SOAP REJECT NEW REQUESTS** コマンドはWeb サービスが新規SOAP リクエストを受け入れるかどうかを指定します。<!-- END REF-->

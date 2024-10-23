@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Generate UUID.Summary-->Generate UUID は32文字のUUID識別子を整形されていない形式で返します。<!-- END REF-->

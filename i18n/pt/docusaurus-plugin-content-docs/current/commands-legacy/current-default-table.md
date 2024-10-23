@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Current default table.Summary-->Current default table retorna um ponteiro a tabela que foi passado na última chamada a [DEFAULT TABLE](default-table.md) para o processo atual.<!-- END REF-->

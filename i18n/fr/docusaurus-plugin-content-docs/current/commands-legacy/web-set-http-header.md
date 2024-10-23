@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WEB SET HTTP HEADER.Summary-->La commande **WEB SET HTTP HEADER** permet de fixer les champs de l’en-tête HTTP de la réponse faite au navigateur Web par 4D.<!-- END REF--> Elle n’a d’effet que dans un process Web.  

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.ON ERR CALL.Summary-->O comando **ON ERR CALL** instala o método de projeto, cujo nome se passa em *metodoErro*, como método de tratamento de ocorrências ou método de gestão de erros.<!-- END REF-->

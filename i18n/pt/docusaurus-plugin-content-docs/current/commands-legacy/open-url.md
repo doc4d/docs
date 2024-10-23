@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.OPEN URL.Summary-->O comando **OPEN URL** lança seu navegador web por padrão e o abre com a URL passada no parâmetro *url*.<!-- END REF-->  

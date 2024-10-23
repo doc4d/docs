@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.DOM GET XML ATTRIBUTE BY NAME.Summary-->La commande **DOM GET XML ATTRIBUTE BY NAME** permet de connaître la valeur d’un attribut désigné par son nom.<!-- END REF-->

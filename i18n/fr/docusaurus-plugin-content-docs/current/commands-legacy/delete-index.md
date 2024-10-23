@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.DELETE INDEX.Summary-->La commande **DELETE INDEX** permet de supprimer un ou plusieurs index existant dans la base.<!-- END REF--> Vous pouvez passer en paramètre soit un pointeur vers un champ, soit un nom d’index :

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Mod.Summary-->The **Mod** command returns the remainder of the Integer division of *number1* by *number2*.<!-- END REF-->

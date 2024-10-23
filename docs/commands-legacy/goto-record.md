@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.GOTO RECORD.Summary-->**GOTO RECORD** selects the specified record of *aTable* as the current record.<!-- END REF--> The *record* parameter is the number returned by the [Record number](record-number.md) function. After executing this command, the record is the only record in the selection.

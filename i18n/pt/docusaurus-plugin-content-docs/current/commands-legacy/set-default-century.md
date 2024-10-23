@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.SET DEFAULT CENTURY.Summary-->O comando SET DEFAULT CENTURY permite especificar o século por padrão e o ano pivô utilizado por 4D quando introduz uma data com só dois dígitos para o ano.<!-- END REF-->

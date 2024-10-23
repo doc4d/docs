@@ -27,9 +27,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Position.Summary-->**Position** コマンドは、*aString* の中で*find* が最初に現われる位置を返します。<!-- END REF-->

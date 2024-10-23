@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.DELETE FROM ARRAY.Summary-->O comando DELETE FROM ARRAY apaga um ou mais elementos de um *array*.<!-- END REF--> Elementos se apagam iniciando no elemento especificado por *posição*.

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.ARRAY TO COLLECTION.Summary-->O comando **ARRAY TO COLLECTION**  \[#descv\]copia um ou mais *array*(s) nos elementos ou os valores de *nomeProp* da *coleção*\[#/descv\].<!-- END REF-->  

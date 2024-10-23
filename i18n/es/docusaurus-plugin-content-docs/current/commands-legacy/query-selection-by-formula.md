@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.QUERY SELECTION BY FORMULA.Summary-->El comando QUERY SELECTION BY FORMULA busca registros en tabla.<!-- END REF--> busca registros en tabla aplicando QUERY BY FORMULA a cada registro de la selección QUERY SELECTION BY FORMULA modifica la selección actual de tabla para el proceso actual y hace del primer registro el nuevo registro actual.

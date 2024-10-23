@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.RESOLVE POINTER.Summary-->RESOLVE POINTER コマンドは、*pointer*式によって参照されるオブジェクトの情報を取得し、引数*varName*、*tableNum*、*fieldNum*に返します。<!-- END REF-->

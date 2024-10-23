@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.VERIFY CURRENT DATA FILE.Summary-->O comando VERIFY CURRENT DATA FILE realiza uma verificação estrutural dos objetos encontrados no arquivo de dados atualmente aberto por 4D.<!-- END REF-->

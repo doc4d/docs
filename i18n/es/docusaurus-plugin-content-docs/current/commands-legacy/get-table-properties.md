@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.GET TABLE PROPERTIES.Summary-->El comando GET TABLE PROPERTIES devuelve las propiedades de la tabla pasada por *ptrTabla* o *numTabl* *a*.<!-- END REF--> Puede pasar en el primer parámetro el número de tabla o puntero de la tabla. 

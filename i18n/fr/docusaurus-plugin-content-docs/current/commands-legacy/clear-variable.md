@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.CLEAR VARIABLE.Summary-->**CLEAR VARIABLE** réinitialise *variable* à la valeur par défaut de son type (par exemple chaîne vide pour les types Texte, 0 — zéro — pour les variables numériques, aucun élément pour un tableau etc.).<!-- END REF--> La variable existe toujours en mémoire.

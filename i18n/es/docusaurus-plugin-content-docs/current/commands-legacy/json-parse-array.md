@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.JSON PARSE ARRAY.Summary-->El comando **JSON PARSE ARRAY** analiza el contenido de una cadena con formato JSON y ubica los datos extraídos en el parámetro *array*.<!-- END REF--> Este comando deserializa los datos JSON, realiza la acción inversa del comando [JSON Stringify array](json-stringify-array.md).  

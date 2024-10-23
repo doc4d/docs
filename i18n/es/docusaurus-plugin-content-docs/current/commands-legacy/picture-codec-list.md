@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.PICTURE CODEC LIST.Summary-->El comando PICTURE CODEC LIST llena el array *arrayCodec* con la lista de los identificadores de los codecs de imágenes que están disponibles en el equipo donde se ejecuta.<!-- END REF--> Esta lista incluye los codecs de los formatos de imágenes que son gestionados nativamente por 4D. 

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.READ WRITE.Summary-->READ WRITE changes the state of *aTable* to read/write for the process in which it is called.<!-- END REF--> If the optional \* parameter is specified, all tables are changed to read/write state.

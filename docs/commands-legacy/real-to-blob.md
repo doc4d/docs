@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.REAL TO BLOB.Summary-->The REAL TO BLOB command writes the Real value *real* into the BLOB *blob*.<!-- END REF-->

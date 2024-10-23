@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.LONGINT TO BLOB.Summary-->El comando LONGINT TO BLOB escribe el valor de tipo Entero largo (4 bytes) *enteroLargo* en el BLOB *blob*.<!-- END REF-->

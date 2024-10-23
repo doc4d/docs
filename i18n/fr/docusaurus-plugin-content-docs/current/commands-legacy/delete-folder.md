@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.DELETE FOLDER.Summary-->La commande **DELETE FOLDER** supprime le dossier dont vous avez passé le nom ou le chemin d’accès complet dans *dossier*.<!-- END REF--> 

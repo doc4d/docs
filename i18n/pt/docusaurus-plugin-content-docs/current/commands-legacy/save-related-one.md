@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.SAVE RELATED ONE.Summary-->SAVE RELATED ONE guarda o registro relacionado a *campo*.<!-- END REF--> Execute este comando para atualizar um registro criado com [CREATE RELATED ONE](create-related-one.md), ou para guardar as mudanças realizadas a um registro carregado por [RELATE ONE](relate-one.md).

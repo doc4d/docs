@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Picture size.Summary-->Picture sizeコマンドは指定したピクチャのサイズをバイト単位で返します。<!-- END REF-->

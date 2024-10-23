@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.System folder.Summary-->**System folder**コマンドは、アクティブなWindows またはmacOS システムフォルダにあるシステムフォルダへのパス名、あるいはアクティブなWindows またはmacOS システムフォルダ自体へのパス名を返します。<!-- END REF-->

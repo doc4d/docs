@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.LOG FILE TO JSON.Summary-->El comando **LOG FILE TO JSON** guarda en formato JSON el archivo de historial actual o todo archivo de historial especificado.<!-- END REF-->

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.ASSERT.Summary-->La commande **ASSERT** évalue l'assertion *expressionBool* passée en paramètre et, si elle retourne faux, interrompt l'exécution du code en affichant une erreur.<!-- END REF--> La commande fonctionne en mode interprété et en mode compilé. 

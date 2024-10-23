@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.GRAPH.Summary-->La commande **GRAPH** crée un graphe dans une variable image à partir de valeurs provenant de tableaux.<!-- END REF-->

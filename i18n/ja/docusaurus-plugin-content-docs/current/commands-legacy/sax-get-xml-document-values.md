@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.SAX GET XML DOCUMENT VALUES.Summary-->SAX GET XML DOCUMENT VALUES コマンドは、*document* 引数で参照されるXMLドキュメントのXMLヘッダから基本情報を取得します。<!-- END REF--> 

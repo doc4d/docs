@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WEB SERVICE SET PARAMETER.Summary-->O comando WEB SERVICE SET PARAMETER permite a definição de um parâmetro utilizado por uma petição SOAP cliente.<!-- END REF--> Chame este comando por cada parâmetro na petição (o número de vezes que for chamado o comando depende do número de parâmetros).

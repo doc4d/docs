@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.XML GET OPTIONS.Summary-->The **XML GET OPTIONS** command is used to get the current value of one or more XML parameters for the current session and the current user.<!-- END REF--> 

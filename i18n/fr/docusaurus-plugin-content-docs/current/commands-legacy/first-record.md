@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.FIRST RECORD.Summary-->**FIRST RECORD** charge en mémoire le premier enregistrement de la sélection courante de *laTable* et en fait l'enregistrement courant.<!-- END REF--> Toutes les commandes de recherche, de sélection et de tri font également du premier enregistement l'enregistrement courant. Si la sélection courante est vide ou si l'enregistrement courant est déjà le premier enregistrement de la sélection, **FIRST RECORD** ne fait rien.

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Cos.Summary-->Cos devuelve el coseno del *número*, donde *número* se expresa en radianes.<!-- END REF-->

@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.DOM SET XML DECLARATION.Summary-->La commande **DOM SET XML DECLARATION** permet de définir diverses options qui seront utilisée pour la création de l’arbre XML désigné par *refElément*.<!-- END REF--> Ces options concernent l’encodage et l’attribut autonome (standalone) de l’arbre :

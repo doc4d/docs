@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Delete string.Summary-->Delete stringは、*where*から*numChars*分の文字を*source*から削除した文字列を返します。<!-- END REF-->  

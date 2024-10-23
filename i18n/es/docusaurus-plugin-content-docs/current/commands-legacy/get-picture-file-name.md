@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Get picture file name.Summary-->El comando **Get picture file name** devuelve el nombre por defecto actual de la imagen pasada como parámetro.<!-- END REF-->

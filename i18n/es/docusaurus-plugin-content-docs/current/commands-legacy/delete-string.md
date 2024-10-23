@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Delete string.Summary-->Delete string borra *numCaracteres* de *fuente*, a partir de *posicion*, y devuelve la cadena resultante.<!-- END REF--> 

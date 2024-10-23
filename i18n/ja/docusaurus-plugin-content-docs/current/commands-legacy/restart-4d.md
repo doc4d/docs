@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.RESTART 4D.Summary-->**RESTART 4D**コマンドは、カレントの4Dアプリケーションを再起動します。<!-- END REF-->

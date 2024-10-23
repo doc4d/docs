@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Open document.Summary-->La commande **Open document** ouvre le document dont vous avez passé le nom dans *nomFichier*.<!-- END REF-->

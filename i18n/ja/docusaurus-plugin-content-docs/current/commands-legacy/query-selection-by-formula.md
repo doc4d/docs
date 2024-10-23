@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.QUERY SELECTION BY FORMULA.Summary-->QUERY SELECTION BY FORMULAは、*aTable*からレコードを検索します。<!-- END REF-->QUERY SELECTION BY FORMULAは、カレントプロセスの*aTable*のカレントセレクションを変更し、セレクションの先頭のレコ－ドをカレントレコ－ドにします。

@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP INSERT DOCUMENT.Summary-->**WP INSERT DOCUMENT** コマンドは *mode* や *rangeUpdate* で指定した方法で、*targetObj* で指定したターゲットに *wpDoc* のドキュメントを挿入します。<!-- END REF-->

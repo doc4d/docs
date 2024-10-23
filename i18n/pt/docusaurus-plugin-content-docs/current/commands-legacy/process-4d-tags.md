@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.PROCESS 4D TAGS.Summary-->O comando PROCESS 4D TAGS provoca o processamento das etiquetas de transformação 4D contidas em *dadosEntrada* (campo ou variável de tipo Texto ou BLOB) enquanto opcionalmente insere valores utilizando os valores via os parâmetros *param* e retorna os dados resultantes em *dadosSaida*.<!-- END REF--> Para uma descrição completa das etiquetas, veja *Etiquetas HTML 4D*

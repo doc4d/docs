@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Get body.Summary-->La commande **WP Get body** retourne la partie corps (*body*) du document 4D Write Pro *docWP*.<!-- END REF-->

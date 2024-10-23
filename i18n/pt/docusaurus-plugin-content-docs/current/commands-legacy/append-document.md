@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Append document.Summary-->O comando Append document faz a mesma coisa que [Open document](open-document.md): permite abrir um documento em disco.<!-- END REF-->  

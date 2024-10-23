@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DOM Parse XML source.Summary-->DOM Parse XML sourceコマンドはXML構造を含むドキュメントを解析し、XMLツリーへの参照を返します。<!-- END REF-->このコマンドはDTDやXMLスキーマ (XML Schema Definition (XSD) ドキュメント) を使用して、ドキュメントを検証したり、あるいはしないこともできます。  

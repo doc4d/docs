@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WEB SET ROOT FOLDER.Summary-->**WEB SET ROOT FOLDER**コマンドを使用して、デフォルトのルートフォルダを変更します。<!-- END REF-->そのなかで4DはWebサーバがリクエストしたHTMLを探します。

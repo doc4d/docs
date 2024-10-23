@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Document to text.Summary-->La commande **Document to text** permet de récupérer directement le contenu d’un fichier sur disque dans une variable texte ou un champ texte 4D.<!-- END REF-->

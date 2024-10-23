@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WEB Get body part count.Summary-->The **WEB Get body part count** command returns the number of parts making up the body received.<!-- END REF-->

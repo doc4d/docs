@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.OB Class.Summary-->O comando **OB Class** devolve a classe de *objeto* passado no parâmetro.<!-- END REF--> Em 4D, todos os objetos são herdados do objeto classe. Se *objeto* não for um objeto existente, **OB Class** devolve null.

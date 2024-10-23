@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.SET FIELD VALUE NULL.Summary-->SET FIELD VALUE NULL コマンドは、*aField* 引数によって指定されたフィールドにNULL値を割り当てます。<!-- END REF--> 

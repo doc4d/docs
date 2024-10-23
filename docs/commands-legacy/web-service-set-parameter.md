@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WEB SERVICE SET PARAMETER.Summary-->The **WEB SERVICE SET PARAMETER** command enables the definition of a parameter used for a client SOAP request.<!-- END REF--> Call this command for each parameter in the request (the number of times the command is called depends on the number of parameters).

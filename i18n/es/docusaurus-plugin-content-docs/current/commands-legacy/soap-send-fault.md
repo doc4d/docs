@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.SOAP SEND FAULT.Summary-->El comando **SOAP SEND FAULT** devuelve un error a un cliente SOAP indicando el origen del error: cliente o servidor.<!-- END REF--> Este comando permite indicar un error a un cliente sin tener que devolver un resultado. 

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.REDUCE SELECTION.Summary-->**REDUCE SELECTION** creates a new selection of records for *aTable*.<!-- END REF--> The command reduces the current selection of *aTable* to the first *number* records. **REDUCE SELECTION** is applied to the current selection of *aTable* in the current process. It changes the current selection of *aTable* for the current process; the first record of the new selection is the current record.

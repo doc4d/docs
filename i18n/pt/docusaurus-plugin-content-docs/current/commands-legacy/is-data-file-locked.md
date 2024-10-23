@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Is data file locked.Summary-->O comando Is data file locked retorna True se o arquivo de dados do banco de dados aberto, ou pelo menos um dos seus segmentos está fechado - ou seja, protegido contra gravação.<!-- END REF--> 

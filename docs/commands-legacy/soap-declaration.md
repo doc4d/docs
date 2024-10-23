@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.SOAP DECLARATION.Summary-->The SOAP DECLARATION command explicitly declares the type of parameters used in a 4D method published as a Web Service.<!-- END REF-->

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.DELAY PROCESS.Summary-->DELAY PROCESS permite retrasar un *proceso* por un número de tics (1 tic = 1/60 de segundo).<!-- END REF--> Durante este periodo, el *process* retrasado no utiliza tiempo de procesamiento. Aunque la ejecución de un proceso puede ser retardada, aún está en memoria.

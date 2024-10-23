@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Character code.Summary-->**Character code** コマンドは、*character* のUnicode UTF-16 コード(1から65535の間)を返します。<!-- END REF-->

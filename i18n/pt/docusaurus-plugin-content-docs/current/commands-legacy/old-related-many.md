@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 OLD RELATED MANY funciona da mesma forma que [RELATE MANY](relate-many.md "RELATE MANY"), exceto que OLD RELATED MANY utiliza o valor anterior do campo Um para estabelecer a relação.  

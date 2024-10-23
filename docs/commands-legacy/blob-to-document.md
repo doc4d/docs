@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.BLOB TO DOCUMENT.Summary-->BLOB TO DOCUMENT rewrites the whole contents of *document* using the data stored in *blob*.<!-- END REF--> You can pass the name of a document in *document*. If the *document* does not exist, the command creates it. If you pass the name of an existing document, make sure that it is not already open, otherwise an error is generated. If you want to let the user choose the document, use the commands [Open document](open-document.md) or [Create document](create-document.md) and use the process variable *document* (see example).

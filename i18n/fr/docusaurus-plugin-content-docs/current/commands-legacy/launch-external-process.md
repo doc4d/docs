@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 :::info Compatibilité
 
 <!--REF #_command_.LAUNCH EXTERNAL PROCESS.Summary-->À partir de 4D v19 R4, nous recommandons l'utilisation de la classe [`4D.SystemWorker class`](../API/SystemWorkerClass.md) pour exécuter et contrôler les process externes.<!-- END REF--> Néanmoins, cette commande est toujours prise en charge. 

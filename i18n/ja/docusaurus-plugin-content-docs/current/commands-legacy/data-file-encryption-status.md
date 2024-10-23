@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Data file encryption status.Summary-->**Data file encryption status** コマンドは、*structurePath* および *dataPath* 引数で指定したデータファイルの、暗号化ステータスをあらわすオブジェクトを返します。<!-- END REF-->それぞれのテーブルについてのステータスも同時に提供されます。

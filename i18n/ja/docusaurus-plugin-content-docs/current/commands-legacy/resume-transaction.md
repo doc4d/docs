@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.RESUME TRANSACTION.Summary-->**RESUME TRANSACTION**コマンドは、カレントプロセスの同レベルにおいて [SUSPEND TRANSACTION](suspend-transaction.md) によって停止していたトランザクションを再開させます。<!-- END REF-->このコマンド後に実行されたオペレーションはトランザクションコントロール下で実行されます (ただし複数の停止されていたトランザクションがネストされていた場合を除きます)。

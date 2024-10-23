@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.DECRYPT BLOB.Summary-->La commande **DECRYPT BLOB** permet de décrypter le contenu du BLOB *aDécrypter* à l’aide de la clé publique de l’émetteur *cléPubEmetteur* ainsi que, optionnellement, de la clé privée du récepteur *cléPrivRécepteur*.<!-- END REF-->

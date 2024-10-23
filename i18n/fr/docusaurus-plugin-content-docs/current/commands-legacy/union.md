@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.UNION.Summary-->**UNION** crée un nouvel ensemble contenant tous les enregistrements de *ensemble1* et *ensemble2*.<!-- END REF--> Le tableau suivant liste les résultats possibles d'une opération de réunion d'ensembles.

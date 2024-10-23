@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Find in field.Summary-->The **Find in field** command returns the number of the first record whose *targetField* field is equal to *value*.<!-- END REF-->  

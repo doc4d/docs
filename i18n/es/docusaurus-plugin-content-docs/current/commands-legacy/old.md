@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Old.Summary-->El comando Old devuelve el valor almacenado en *campo* antes de que se le haya asignado un valor por programación o modificado un durante la entrada de datos.<!-- END REF--> 

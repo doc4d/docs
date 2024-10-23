@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WEB SERVICE CALL.Summary-->The **WEB SERVICE CALL** command calls a Web Service by sending an HTTP request.<!-- END REF--> This request contains the SOAP message created previously using the [WEB SERVICE SET PARAMETER](web-service-set-parameter.md) command. 

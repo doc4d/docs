@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.CREATE SET.Summary-->CREATE SET cria um novo conjunto, *conjunto*, para *tabela*, e coloca a seleção atual em *conjunto*.<!-- END REF--> O ponteiro do registro atual da tabela é guardada com conjunto. Se *conjunto* for utilizado com [USE SET](use-set.md), a seleção atual e o registro atual são restauradas. Como para todo conjunto, não há critério de ordenação; quando *conjunto* é utilizado, se utiliza a ordem padrão. Se já existir um conjunto com o mesmo nome, o conjunto existente se Apaga e substituído pelo novo conjunto.

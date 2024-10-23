@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Process number.Summary-->Process number devolve o número do processo cujo nome é passado em *nome*.<!-- END REF--> Se não se encontra nenhum processo, Process number devolve 0.

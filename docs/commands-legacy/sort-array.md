@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.SORT ARRAY.Summary-->The SORT ARRAY command sorts one or more arrays into ascending or descending order.<!-- END REF--> 

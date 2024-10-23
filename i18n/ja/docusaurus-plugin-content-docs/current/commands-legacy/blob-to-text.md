@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.BLOB to text.Summary-->BLOB to text コマンドはBLOB *blob*からテキストを読みだして、返します。<!-- END REF-->

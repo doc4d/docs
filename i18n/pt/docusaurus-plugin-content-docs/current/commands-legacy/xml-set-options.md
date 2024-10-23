@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.XML SET OPTIONS.Summary-->O comando XML SET OPTIONS é utilizado para modificar o valor de um ou mais parâmetros XML para estrutura passada no primeiro parâmetro.<!-- END REF-->

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Get cache size.Summary-->El comando **Get cache size** devuelve, en bytes, el tamaño actual de la caché de la base de datos.<!-- END REF-->

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.SET CACHE SIZE.Summary-->El comando SET CACHE SIZE define dinámicamente el tamaño de la caché de la base de datos y, opcionalmente, permite definir el tamaño minino en bytes a partir del cual comenzar a liberar memoria.<!-- END REF-->

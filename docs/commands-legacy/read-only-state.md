@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Read only state.Summary-->This function tests whether or not the state of *aTable* is read-only for the process in which it is called.<!-- END REF--> Read only state returns TRUE if the state of *aTable* is read-only. Read only state returns FALSE if the state of *aTable* is read/ write.

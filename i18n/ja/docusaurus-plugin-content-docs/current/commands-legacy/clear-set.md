@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.CLEAR SET.Summary-->CLEAR SETはメモリから*set*を消去し、*set*の占有していたメモリを解放します。<!-- END REF-->CLEAR SETはテーブル、セレクション、レコードには影響を与えません。セットは、消去する前に[SAVE SET](save-set.md "SAVE SET")コマンドを使用して保存することができます。セットはメモリを使用するため、必要のないセットは消去してください。

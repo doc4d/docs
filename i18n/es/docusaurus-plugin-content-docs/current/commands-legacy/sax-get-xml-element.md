@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.SAX GET XML ELEMENT.Summary-->El comando SAX GET XML ELEMENT  devuelve diversa información relativa al elemento *nombre* presente en el documento XML referenciado por *documento*.<!-- END REF--> Este comando debe llamarse con los eventos XML Start Element o XML End Element SAX. En el caso específico de XML End Element, los parámetros de atributos no son manipulados. Para mayor información sobre los eventos SAX, consulte la descripción del comando [SAX Get XML node](sax-get-xml-node.md "SAX Get XML node"). 

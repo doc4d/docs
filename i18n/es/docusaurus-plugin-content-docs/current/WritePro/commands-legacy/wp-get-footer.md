@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WP Get footer.Summary-->El comando **WP Get footer** devuelve el pie de página asociado al rango *objRango* o al *indiceSeccion* especificado del documento *wpDoc*.<!-- END REF--> Si no se encuentra ningún pie de página con respecto a los parámetros, el comando devuelve **Null**.

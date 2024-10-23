@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.CREATE INDEX.Summary-->**CREATE INDEX**コマンドを使用して以下のインデックスを作成します。<!-- END REF-->

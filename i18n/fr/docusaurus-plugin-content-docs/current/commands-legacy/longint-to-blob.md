@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.LONGINT TO BLOB.Summary-->La commande **LONGINT TO BLOB** écrit la valeur de type Entier long (4 octets) *entierLong* dans le BLOB *blob*.<!-- END REF-->

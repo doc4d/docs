@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Caps lock down.Summary-->**Caps lock down** retourne Vrai si la touche **Verrouillage Majuscule** est enfoncée.<!-- END REF-->

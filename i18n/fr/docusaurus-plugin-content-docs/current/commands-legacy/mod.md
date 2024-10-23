@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Mod.Summary-->La fonction **Mod** divise *nombre1* par *nombre2* et retourne le reste sous forme d'un nombre entier.<!-- END REF-->

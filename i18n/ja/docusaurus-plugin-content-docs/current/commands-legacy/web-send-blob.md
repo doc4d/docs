@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WEB SEND BLOB.Summary-->**WEB SEND BLOB**コマンドを使用して *blob* をブラウザへ送ります。<!-- END REF--> 

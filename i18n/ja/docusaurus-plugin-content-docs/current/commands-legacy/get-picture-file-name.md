@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Get picture file name.Summary-->**Get picture file name**コマンドは引数に渡されたピクチャーのカレントデフォルト名を返します。<!-- END REF-->

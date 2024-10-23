@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Type.Summary-->Type コマンドは、*fieldVar* 引数に渡したフィールドまたは変数の型を示す数値を返します。<!-- END REF-->

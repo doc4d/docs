@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Windows Ctrl down.Summary-->**Windows Ctrl down** retourne Vrai si la touche **Ctrl** Windows est enfoncée.<!-- END REF-->

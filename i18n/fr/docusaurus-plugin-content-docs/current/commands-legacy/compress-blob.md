@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.COMPRESS BLOB.Summary-->**COMPRESS BLOB** compresse le BLOB *blob* à l'aide d'un algorithme de compression.<!-- END REF-->

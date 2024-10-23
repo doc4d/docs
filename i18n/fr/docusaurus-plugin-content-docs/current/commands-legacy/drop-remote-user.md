@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.DROP REMOTE USER.Summary-->La commande **DROP REMOTE USER** permet de déconnecter un utilisateur distant spécifique connecté à 4D Server.<!-- END REF--> 

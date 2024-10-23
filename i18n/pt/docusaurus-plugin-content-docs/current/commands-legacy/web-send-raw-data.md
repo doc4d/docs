@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WEB SEND RAW DATA.Summary-->O comando \[**#current\_title\]** permite ao servidor web 4D enviar dados HTTP "brutos", os quais podem estar em pedaços.<!-- END REF-->  

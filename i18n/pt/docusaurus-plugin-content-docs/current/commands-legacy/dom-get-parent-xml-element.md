@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.DOM Get parent XML element.Summary-->O comando DOM Get parent XML element retorna uma referência XML ao “pai” do elemento XML passado como referência em *refElemento*.<!-- END REF--> Esta referência pode ser utilizada com os outros comandos de análise XML.  

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.DOM Count XML elements.Summary-->The DOM Count XML elements command returns the number of “child” elements dependent on the *elementRef* parent element and named *elementName*.<!-- END REF-->

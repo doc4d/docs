@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.GET PICTURE METADATA.Summary-->**GET PICTURE METADATA**コマンドを使用して *picture* で指定したピクチャ (4Dのピクチャフィールドや変数) 内のメタデータ (またはメタタグ) の内容を読みだすことができます。<!-- END REF--> メタデータに関する詳細は[SET PICTURE METADATA](set-picture-metadata.md)コマンドの説明を参照してください。

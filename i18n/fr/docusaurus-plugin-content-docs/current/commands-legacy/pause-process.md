@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.PAUSE PROCESS.Summary-->**PAUSE PROCESS** suspend l'exécution de *process* jusqu'à ce qu'il soit remis en action par la comande [RESUME PROCESS](resume-process.md).<!-- END REF--> Pendant ce temps, *process* n'utilise pas de temps machine. Lorsqu'un process est suspendu, il existe toujours en mémoire.

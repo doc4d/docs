@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Type.Summary-->O comando Type devolve um valor numérico que indica o tipo do campo ou da variável que passa em *campVar*.<!-- END REF-->

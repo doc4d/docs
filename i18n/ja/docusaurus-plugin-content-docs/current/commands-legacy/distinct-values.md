@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DISTINCT VALUES.Summary-->**DISTINCT VALUES**コマンドは、*aField*が属するテーブルのカレントセレクションの*aField*フィールドからの重複しない(ユニークな)値で構成される*array*配列を作成します。<!-- END REF-->また任意の引数*countArray*にそれぞれの値のオカレンス数を返す事もできます。

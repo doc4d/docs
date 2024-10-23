@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Read only state.Summary-->Esta función se utiliza para probar si *tabla* está en modo sólo lectura en el proceso en el que se llamó a la función.<!-- END REF--> Read only state devuelve TRUE si el estado de *tabla* es sólo lectura y FALSE si el estado de *tabla* es lectura/ escritura.

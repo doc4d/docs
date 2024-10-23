@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WP SET LINK.Summary-->The **WP SET LINK** applies a hyperlink reference to the *targetObj*.<!-- END REF--> Links to URLs, 4D methods, and bookmarks, are supported. The link triggers an action when the user clicks on it (or uses **Ctrl+click** on Windows or **Cmd+click** on macOS if the text is not read-only for opening URLs). 

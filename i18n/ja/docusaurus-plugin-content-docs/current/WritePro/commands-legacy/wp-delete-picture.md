@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP DELETE PICTURE.Summary-->**WP DELETE PICTURE** コマンドは、*imgObj* 引数によって定義された画像を削除します。<!-- END REF-->

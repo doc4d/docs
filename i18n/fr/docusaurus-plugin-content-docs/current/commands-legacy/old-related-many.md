@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.OLD RELATED MANY.Summary-->**OLD RELATED MANY** fonctionne comme la commande [RELATE MANY](relate-many.md), à la différence près que **OLD RELATED MANY** utilise l'ancienne valeur du champ pour activer le lien.<!-- END REF-->

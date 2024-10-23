@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DIFFERENCE.Summary-->DIFFERENCEコマンドは、*set*と*subtractSet*を比較し、*subtractSet*に格納されている全てのレコードを*set*から取り除きます。<!-- END REF-->つまり、*set*にだけ存在し、*subtractSet*には存在しないレコードのみを*resultSet*に格納します。以下の表に、DIFFERENCEコマンドで考えられるすべての組み合わせを示します。

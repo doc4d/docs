@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Application type.Summary-->Application type コマンドは、現在実行している4D 環境のアプリケーションタイプを示す数値を返します。<!-- END REF-->4D は、以下の定義済み定数を提供しています:

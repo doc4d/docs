@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Locked.Summary-->Locked testa se o registro atual de *tabela* está bloqueado.<!-- END REF--> Utilize esta função para saber se um registro está bloqueado ou não; depois tome a ação mais conveniente, tal como dar ao usuário a opção de esperar que o registro seja liberado ou de anular a operação.  

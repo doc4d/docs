@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.DOM REMOVE XML ATTRIBUTE.Summary-->La commande **DOM REMOVE XML ATTRIBUTE** supprime, s’il existe, l’attribut désigné par *nomAttribut* de l’élément XML dont la référence est passée dans le paramètre *refElément*.<!-- END REF--> 

@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.ABORT.Summary-->La commande **ABORT** est destinée à être utilisée dans une méthode projet de gestion d'erreurs installée par la commande [ON ERR CALL](on-err-call.md).<!-- END REF--> 

@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Request.Summary-->The **Request** command displays a request dialog box composed of a message, a text input area, an **OK** button, and a **Cancel** Button.<!-- END REF-->

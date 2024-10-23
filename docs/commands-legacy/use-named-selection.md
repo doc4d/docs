@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.USE NAMED SELECTION.Summary-->**USE NAMED SELECTION** uses the named selection *name* as the current selection for the table to which it belongs.<!-- END REF-->

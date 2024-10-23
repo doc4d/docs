@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Generate password hash.Summary-->**Generate password hash** ファンクションは*password* 引数のパスワードから暗号化ハッシュアルゴリズムによって生成された、安全なパスワードハッシュを返します。<!-- END REF-->

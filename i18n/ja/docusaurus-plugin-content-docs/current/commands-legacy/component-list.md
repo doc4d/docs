@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.COMPONENT LIST.Summary-->**COMPONENT LIST**コマンドは、4Dがカレントのホストデータベースにロードしたコンポーネントの名前を、*componentsArray* 配列に返します。<!-- END REF-->

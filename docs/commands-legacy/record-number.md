@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Record number.Summary-->**Record number** returns the physical record number for the current record of *aTable*.<!-- END REF--> If there is no current record, such as when the record pointer is before or after the current selection, **Record number** returns –1\. If the record is a new record that has not been saved, **Record number** returns –3.

@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.DOM Create XML element.Summary-->La commande **DOM Create XML element** permet de créer un nouvel élément dans l’élément XML *refElément*, à l’emplacement du noeud désigné par le paramètre *xPath*, et de lui ajouter éventuellement des attributs.<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.DOCUMENT TO BLOB.Summary-->**DOCUMENT TO BLOB** carga el contenido de *documento* en *blob*.<!-- END REF--> Debe pasar el nombre de un documento existente que no esté abierto, de lo contrario se generará un error. Para dejar que el usuario seleccione el documento a cargar en el BLOB, utilice el comando [Open document](open-document.md) y la variable sistema *document* (ver ejemplo).

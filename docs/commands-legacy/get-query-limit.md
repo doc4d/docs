@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Get query limit.Summary-->The **Get query limit** command returns the limit for the number of records that a query may find in the current process.<!-- END REF-->

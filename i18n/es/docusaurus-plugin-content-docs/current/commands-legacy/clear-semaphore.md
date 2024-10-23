@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.CLEAR SEMAPHORE.Summary-->CLEAR SEMAPHORE borra el *semaforo* previamente creado por la función [Semaphore](semaphore.md "Semaphore").<!-- END REF-->

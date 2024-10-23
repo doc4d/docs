@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.ARRAY REAL.Summary-->O comando ARRAY REAL cria e/ou redimensiona um array de elementos do tipo Real na memória.<!-- END REF--> 

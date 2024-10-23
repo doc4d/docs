@@ -19,9 +19,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.VERIFY DATA FILE.Summary-->O comando VERIFY DATA FILE\[#descv\] realiza uma verificação estrutural dos objetos contidos no arquivo de dados 4D criado por *endereçoEstrutura* e *endereçoDados*.<!-- END REF-->\[#descv\]

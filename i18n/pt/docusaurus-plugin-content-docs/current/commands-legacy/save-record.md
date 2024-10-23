@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.SAVE RECORD.Summary-->SAVE RECORD guarda o registro atual de *tabela* no processo atual.<!-- END REF--> Se não houver registro atual, o comando SAVE RECORDD é ignorado.  

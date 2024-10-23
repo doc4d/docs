@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP Get page count.Summary-->**WP Get page count** コマンドは 引数として渡した*targetObj* 引数内で定義されているページの総数を返します。<!-- END REF-->

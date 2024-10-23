@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.QUERY BY FORMULA.Summary-->**QUERY BY FORMULA** effectue une recherche d'enregistrements dans *laTable*.<!-- END REF--> **QUERY BY FORMULA** modifie la sélection courante de *laTable* pour le process courant et fait du premier enregistrement le nouvel enregistrement courant. 

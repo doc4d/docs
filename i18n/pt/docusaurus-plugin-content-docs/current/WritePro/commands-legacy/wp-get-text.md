@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP Get text.Summary-->O comando **WP Get text** recupera o conteúdo de texto de um documento 4D Write Pro dentro do *objRange* especificado.<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP New subsection.Summary-->O comando **WP New subsection** cria e retorna uma nova subseção do tipo *subSeçãoTipo* na seção 4D Write Pro *wpSeção*.<!-- END REF-->

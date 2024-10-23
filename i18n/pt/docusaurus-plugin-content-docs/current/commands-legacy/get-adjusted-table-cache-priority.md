@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Get adjusted table cache priority.Summary-->O comando **Get adjusted table cache priority** devolve o valor de prioridade da cache ajustada aplicado em cache para os datos escalares *tabela*.<!-- END REF-->. Este comando só é necessário para propósitos de depuração.

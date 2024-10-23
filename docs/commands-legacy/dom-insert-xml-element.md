@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.DOM Insert XML element.Summary-->The DOM Insert XML element command can be used to insert a new XML element among the child elements of the XML element whose reference is passed in the *targetElementRef* parameter.<!-- END REF--> 

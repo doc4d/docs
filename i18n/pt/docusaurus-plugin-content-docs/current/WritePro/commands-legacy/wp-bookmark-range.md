@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Compatibilidade 
 
 <!--REF #_command_.WP Bookmark range.Summary-->**WP Bookmark range** era chamada **WP Get bookmark range** em versões anteriores de 4D Write Pro.<!-- END REF--> Foi renomeada por claridade. 

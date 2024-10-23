@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Structure file.Summary-->The **Structure file** command returns the pathname of the structure file for the database with which you are currently working.<!-- END REF-->

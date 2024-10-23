@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.CREATE ALIAS.Summary-->O comando CREATE ALIAS cria um alias (chamado “atalho” em Windows) do arquivo ou pasta objetivo passado em *rotaObjetivo*.<!-- END REF--> O nome e a localização são definidos pelo parâmetro *rotaAlias*.  

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.ARRAY BLOB.Summary-->El comando **ARRAY BLOB** crea y/o cambia el tamaño de un array de elementos de tipo Blob en memoria .<!-- END REF-->  

@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.BLOB to real.Summary-->BLOB to real コマンドは、*blob* BLOBから実数値を読み込み、その値を返します。<!-- END REF-->

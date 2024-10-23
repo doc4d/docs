@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WP SET TEXT.Summary-->The **WP SET TEXT** command inserts the text passed in the *newText* parameter as plain text in the *targetObj* at the position designated by the *textPosition* parameter.<!-- END REF--> 

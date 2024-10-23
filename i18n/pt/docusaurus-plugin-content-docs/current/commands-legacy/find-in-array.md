@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Find in array.Summary-->O comando Find in array devolve o número do primeiro elemento do [Array](# "An array of values") que corresponde a valor.<!-- END REF-->

@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 :::info Compatibilidade
 
 <!--REF #_command_.LAUNCH EXTERNAL PROCESS.Summary-->A partir de 4D v19 R4, recomendamos o uso de [`4D.SystemWorker class`](../API/SystemWorkerClass.md) para rodar e controlar processos externos.<!-- END REF--> Entretanto, esse comando ainda é compatível 

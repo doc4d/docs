@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.RELATE MANY SELECTION.Summary-->O comando RELATE MANY SELECTION cria uma seleção de registros na tabela Muitos, baseada na seleção atual da tabela Um.<!-- END REF-->  

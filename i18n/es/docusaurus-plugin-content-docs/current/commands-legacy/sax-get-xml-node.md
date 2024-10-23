@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.SAX Get XML node.Summary-->El comando SAX Get XML node devuelve un entero largo indicando el tipo de evento SAX devuelto durante el análisis del documento XML referenciado por *documento*.<!-- END REF--> 

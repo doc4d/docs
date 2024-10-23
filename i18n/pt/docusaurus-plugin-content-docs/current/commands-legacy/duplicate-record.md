@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.DUPLICATE RECORD.Summary-->DUPLICATE RECORD cria um novo registro para tabela que é uma duplicação do registro atual.<!-- END REF--> O novo registro é convertido no registro atual. Se não houver registro atual, DUPLICATE RECORD não faz nada. Deve utilizar [SAVE RECORD](save-record.md "SAVE RECORD") para guardar o novo registro.

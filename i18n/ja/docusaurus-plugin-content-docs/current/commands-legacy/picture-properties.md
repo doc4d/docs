@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.PICTURE PROPERTIES.Summary-->PICTURE PROPERTIES コマンドは、*picture*に渡したピクチャに関する情報を返します。<!-- END REF-->

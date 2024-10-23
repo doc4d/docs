@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.EXECUTE METHOD.Summary-->O comando EXECUTE METHOD provoca a execução do método de projeto *nomeMetodo* passando os parâmetros em *param1.<!-- END REF-->..paramN*. Pode passar o nome de um método que pode ser chamado desde o banco ou o componente que executa o comando.

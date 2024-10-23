@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP INSERT DOCUMENT.Summary-->O comando **WP INSERT DOCUMENT** insee o documento *docWP* na faixa *objFaixa* de acordo com o modo de inserção especificado e o parâmetro *atualizFaixa*.<!-- END REF-->

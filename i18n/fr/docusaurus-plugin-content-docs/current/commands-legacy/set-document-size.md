@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.SET DOCUMENT SIZE.Summary-->La commande **SET DOCUMENT SIZE** fixe la taille d'un document au nombre d'octets que vous avez passé dans *taille*.<!-- END REF--> 

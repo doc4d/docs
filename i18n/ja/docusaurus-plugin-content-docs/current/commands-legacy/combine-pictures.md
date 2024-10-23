@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.COMBINE PICTURES.Summary-->COMBINE PICTURES コマンドは*pict1*と*pict2* ピクチャを、*operator*モードで結合させ、3つめの*resultingPict*ピクチャを得るために使用します。<!-- END REF-->結果のピクチャは複合型で、ソースピクチャのすべての特性を保持します。

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.GET SERIAL PORT MAPPING.Summary-->El comando GET SERIAL PORT MAPPING devuelve dos arrays, *arrNumeros* y *arrNombres*, que contienen los números y nombres de puertos seriales del equipo actual.<!-- END REF-->

@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.OB Get.Summary-->O comando **OB Get** devolve o valor atual da *propriedade* do *objeto*, convertido opcionalmente no *tipo* definido.<!-- END REF-->

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.LOAD VARIABLES.Summary-->O comando LOAD VARIABLES carrega uma ou várias variáveis do documento especificado por documento.<!-- END REF--> O documento deve ter sido criado utilizando o comando [SAVE VARIABLES](save-variables.md).  

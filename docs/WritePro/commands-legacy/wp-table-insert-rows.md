@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Table insert rows.Summary-->The **WP Table insert rows** command inserts one or several row(s) into a 4D Write Pro table.<!-- END REF-->

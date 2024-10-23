@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.INSERT IN BLOB.Summary-->INSERT IN BLOB コマンドは、*blob*の*offset*で指定した位置に、*len*で指定した数のバイトを挿入します。<!-- END REF-->BLOBは*len*バイトだけ大きくなります。

@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Compact data file.Summary-->El comando **Compact data file** compacta el archivo de datos designado por el parámetro *rutaDatos* asociado al archivo de estructura *rutaEstructura*.<!-- END REF--> Para mayor información sobre la compactación, consulte el Manual de Diseño.

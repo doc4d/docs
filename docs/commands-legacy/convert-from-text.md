@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.CONVERT FROM TEXT.Summary-->The CONVERT FROM TEXT command can be used to convert a text expressed in the current character set of 4D to a text expressed in another character set.<!-- END REF-->

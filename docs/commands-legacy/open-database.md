@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Note 
 
 <!--REF #_command_.OPEN DATABASE.Summary-->The **OPEN DATABASE** command closes the current 4D database and opens on-the-fly the database defined by *filePath*.<!-- END REF--> This command is useful for automatic testing purposes, to reopen a database automatically after a compilation, or to allow a merged 4D remote application to select the a database server to connect.

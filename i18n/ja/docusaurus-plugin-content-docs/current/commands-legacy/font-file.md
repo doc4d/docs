@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Font file.Summary-->**Font file** コマンドは、*fontFamily* 引数で指定したフォントファミリーに対応するOS 内にあるフォントファイルの詳細を格納したオブジェクトを返します。<!-- END REF-->また、*fontStyle* 引数で取得するフォントスタイルを指定することもできます。

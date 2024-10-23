@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Replace string.Summary-->Replace string substitui um número *quantasVezes* de ocorrências, em *fonte,* de *obsoleto* por *novo* .<!-- END REF-->  

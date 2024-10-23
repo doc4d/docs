@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.SOAP Get info.Summary-->The **SOAP Get info** command retrieves, in the form of a character string, the different types of information concerning a SOAP request.<!-- END REF--> 

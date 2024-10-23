@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WEB SET HTTP HEADER.Summary-->**WEB SET HTTP HEADER**コマンドを使用して、4DからWebブラウザーへ送信されるHTTPヘッダーにフィールドを設定します。<!-- END REF-->このコマンドはWebプロセスでのみ機能します。  

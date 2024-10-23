@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP INSERT PICTURE.Summary-->**WP INSERT PICTURE** コマンドは、指定した挿入モード *mode* に従って、*picture* のピクチャーを *targetObj* で指定したレンジに挿入します。<!-- END REF-->ピクチャーは文字として *targetObj* に挿入されます。

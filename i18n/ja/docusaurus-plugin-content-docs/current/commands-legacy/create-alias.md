@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.CREATE ALIAS.Summary-->CREATE ALIASコマンドを使用して、*targetPath*に渡した目的のファイルまたはフォルダのエイリアス(Windowsでは"ショートカット" と呼ばれる) を作成します。<!-- END REF-->名前と場所は、引数*targetPath*によって決定されます。

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP FREEZE FORMULAS.Summary-->**WP FREEZE FORMULAS** コマンドは、*targetObj* 引数で指定したターゲット内のフォーミュラの中身を"固定化"させます。<!-- END REF-->

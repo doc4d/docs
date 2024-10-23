@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.INSERT IN BLOB.Summary-->O comando INSERT IN BLOB insere o número de bytes especificado por *len* no BLOB *blob* na posição especificada pelo deslocamento.<!-- END REF--> O BLOB, então torna-se *len* bytes maior.

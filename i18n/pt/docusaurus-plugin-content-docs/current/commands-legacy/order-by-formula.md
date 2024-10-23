@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.ORDER BY FORMULA.Summary-->**ORDER BY FORMULA** ordena (reordena) os registros da seleção atual de *tabela* para o processo atual.<!-- END REF--> Una vez efetuada a ordenação, o primeiro registro da nova seleção atual é convertido no novo registro atual. **Nota**: deve especificar a *tabela*. Não pode utilizar uma tabela por padrão.

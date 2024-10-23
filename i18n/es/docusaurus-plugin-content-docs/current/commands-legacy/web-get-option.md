@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WEB GET OPTION.Summary-->El comando **WEB GET OPTION** permite leer el valor actual de una opción de funcionamiento del servidor web de 4D.<!-- END REF-->

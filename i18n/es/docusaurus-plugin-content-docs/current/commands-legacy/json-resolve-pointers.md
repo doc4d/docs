@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.JSON Resolve pointers.Summary-->El comando **JSON Resolve pointers** resuelve todos los punteros JSON encontrados en el objeto, con respecto a la configuración de opciones (si existe).<!-- END REF-->

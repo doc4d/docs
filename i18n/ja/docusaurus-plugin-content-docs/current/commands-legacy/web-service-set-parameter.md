@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WEB SERVICE SET PARAMETER.Summary-->**WEB SERVICE SET PARAMETER**コマンドはクライアントのSOAPリクエストで引数の定義を行います。<!-- END REF-->リクエスト中の引数毎にこのコマンドを呼び出します (このコマンドの呼び出し回数は引数の数に応じます)。

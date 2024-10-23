@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP GET BOOKMARKS.Summary-->La commande **WP GET BOOKMARKS** retourne un tableau contenant le nom de tous les signets définis dans le document *docWP*.<!-- END REF--> 

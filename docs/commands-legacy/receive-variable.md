@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.RECEIVE VARIABLE.Summary-->**RECEIVE VARIABLE** receives *variable*, which was previously sent by [SEND VARIABLE](send-variable.md) from the document or serial port previously opened by [SET CHANNEL](set-channel.md).<!-- END REF--> 

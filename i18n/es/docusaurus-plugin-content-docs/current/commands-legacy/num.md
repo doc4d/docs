@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Num.Summary-->El comando Num devuelve en forma numérica la expresión de tipo cadena, booleano, o numérica que pasó en *expresion*.<!-- END REF--> El parámetro opcional *separador* puede utilizarse para designar un separador decimal para la evaluación de las expresiones de tipo cadena. 

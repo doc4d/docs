@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Get database localization.Summary-->**Get database localization**コマンドは、データベースのデフォルトランゲージ、または*languageType*で指定されたデータベースの言語を、RFC 3066で定義された標準で返します。<!-- END REF-->例えばコマンドは英語の場合“en”を、日本語の場合“ja”を返します。この標準およびコマンドから返される値の情報については、*Design Reference*マニュアルの*付録 B: XLIFFアーキテクチャー*を参照してください。

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Not.Summary-->Not は、*boolean*の否定を返します。<!-- END REF-->TrueをFalseに、FalseをTrueにします。

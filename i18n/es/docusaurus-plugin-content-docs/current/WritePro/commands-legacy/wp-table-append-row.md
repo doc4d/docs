@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WP Table append row.Summary-->El comando **WP Table append row** agrega una fila a la tabla *refTabla*, la llena con *valor*(es) y devuelve el objeto de rango de fila correspondiente.<!-- END REF-->

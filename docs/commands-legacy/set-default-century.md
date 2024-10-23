@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.SET DEFAULT CENTURY.Summary-->The SET DEFAULT CENTURY command specifies the default century and the pivot year used by 4D when you enter a date with only two digits for the year.<!-- END REF-->

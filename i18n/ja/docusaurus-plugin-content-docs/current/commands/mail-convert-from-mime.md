@@ -23,9 +23,6 @@ displayed_sidebar: docs
 
 <!-- END REF -->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明
 
 `MAIL Convert from MIME` コマンドは、<!-- REF #_command_.MAIL Convert from MIME.Summary -->MIMEドキュメントを有効な Emailオブジェクトへと変換します<!-- END REF -->。

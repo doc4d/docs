@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.ARRAY POINTER.Summary-->O comando ARRAY POINTER cria e/ou redimensiona um array de elementos do tipo Puntero na memória.<!-- END REF-->

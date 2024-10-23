@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.KILL WORKER.Summary-->O comando **KILL WORKER** envia uma mensagem ao processo worker cujo nome ou número que passa em *processo*, pedindo ignorar as mensagens pendentes e por fim a sua execução logo que terminem as tarefas atuais.<!-- END REF-->

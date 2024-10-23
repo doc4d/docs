@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WRITE PICTURE FILE.Summary-->O comando WRITE PICTURE FILE permite guardar em um arquivo no disco a imagem passada no parâmetro *imagem,* no formato definido por *codec*.<!-- END REF--> 

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.XML DECODE.Summary-->El comando **XML DECODE** convierte un valor guardado como una cadena XML en un valor 4D.<!-- END REF--> La conversión se efectúa automáticamente en función de las siguientes reglas: 

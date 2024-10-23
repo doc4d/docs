@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.PUSH RECORD.Summary-->PUSH RECORDは、*aTable*のカレントレコード (それに付随するサブレコードも含めて) を、そのテーブルのレコードスタックにプッシュします。<!-- END REF-->PUSH RECORDは、レコードがディスクに保存される前でも実行することができます。

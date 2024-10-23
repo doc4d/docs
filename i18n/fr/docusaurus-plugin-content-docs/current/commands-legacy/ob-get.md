@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.OB Get.Summary-->La commande **OB Get** retourne la valeur courante de la *propriété* de l’*objet*, convertie optionnellement dans le *type* défini.<!-- END REF-->

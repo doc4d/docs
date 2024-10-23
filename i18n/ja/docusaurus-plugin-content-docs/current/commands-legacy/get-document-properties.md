@@ -19,9 +19,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.GET DOCUMENT PROPERTIES.Summary-->GET DOCUMENT PROPERTIESコマンドは、引数*document*に渡した名前またはパス名を持つドキュメントに関する情報を返します。<!-- END REF-->

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Is field value Null.Summary-->El comando Is field value Nulldevuelve **True** si el campo designado por el parámetro *unCampo* contiene el valor NULL y de lo contrario **False**.<!-- END REF-->

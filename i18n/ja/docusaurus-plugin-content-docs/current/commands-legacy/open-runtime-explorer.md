@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.OPEN RUNTIME EXPLORER.Summary-->OPEN RUNTIME EXPLORER コマンドは、ランタイムエクスプローラーをフローティングウィンドウ内に表示します。<!-- END REF-->

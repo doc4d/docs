@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.BASE64 DECODE.Summary-->**BASE64 DECODE** コマンドは、*toDecode* 引数に渡された、Base64 または Base64URL フォーマットにエンコードされたテキストまたはBlob をデコードします。<!-- END REF-->Base64 およびBase64URL フォーマットについての詳細な情報については、[BASE64 ENCODE](base64-encode.md) コマンドの詳細を参照してください。

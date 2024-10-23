@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.SEND VARIABLE.Summary-->SEND VARIABLE envia *variavel* para o documento ou a porta serial aberta anteriormente pelo [SET CHANNEL](set-channel.md "SET CHANNEL").<!-- END REF--> A variável é enviada com um formato especial interno que pode ser lido somente por [RECEIVE VARIABLE](receive-variable.md "RECEIVE VARIABLE"). SEND VARIABLE envia a variável completa (incluindo o tipo e o valor).

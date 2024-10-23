@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.SAX SET XML DECLARATION.Summary-->El comando SAX SET XML DECLARATION inicializa el documento XML referenciado en *documento* utilizando la *codificación* especificada.<!-- END REF--> Opcionalmente, puede definir el atributo autónomo.

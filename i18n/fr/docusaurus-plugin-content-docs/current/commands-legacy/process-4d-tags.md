@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.PROCESS 4D TAGS.Summary-->La commande **PROCESS 4D TAGS** provoque le traitement des balises de transformation 4D contenues dans le paramètre *templateEntrée* en leur injectant optionnellement des valeurs via le(s) paramètre(s) *param* et retourne le résultat dans *résultatSortie*.<!-- END REF--> Pour une description complète de ces balises, veuillez vous reporter à la section *Balises de transformation 4D*.

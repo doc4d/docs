@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WP TABLE DELETE ROWS.Summary-->El comando **WP TABLE DELETE ROWS** elimina una o varias líneas de una tabla 4D Write Pro.<!-- END REF-->

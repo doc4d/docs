@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.BASE64 DECODE.Summary-->La commande **BASE64 DECODE**décode la valeur encodée de type BLOB ou texte au format base64 ou Base64URL passé dans le paramètre àDécoder .<!-- END REF--> Pour plus d'informations sur les formats Base64 et Base64URL, veuillez vous reporter à la description de la commande [BASE64 ENCODE](base64-encode.md).

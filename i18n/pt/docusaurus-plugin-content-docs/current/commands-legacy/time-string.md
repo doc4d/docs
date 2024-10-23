@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Time string.Summary-->O comando Time string retorna a string da expressão tipo hora que passou em *segundos*.<!-- END REF-->

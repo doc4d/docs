@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.UNION.Summary-->**UNION** creates a set that contains all records from *set1* and *set2*.<!-- END REF--> The following table shows all possible results of a set Union operation.

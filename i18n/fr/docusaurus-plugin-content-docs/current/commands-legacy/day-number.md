@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Day number.Summary-->La fonction **Day number** retourne un numéro représentant le jour de la semaine auquel *laDate* correspond.<!-- END REF--> 

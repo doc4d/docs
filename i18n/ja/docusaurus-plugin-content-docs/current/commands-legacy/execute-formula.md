@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.EXECUTE FORMULA.Summary-->**EXECUTE FORMULA** は*statement*をコードとして実行します。<!-- END REF-->このコマンドはユーザーがビルド・変更可能な式を評価する場合に使用することを想定して設計されています。  

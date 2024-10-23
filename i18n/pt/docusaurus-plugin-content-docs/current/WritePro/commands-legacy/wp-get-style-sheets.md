@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP Get style sheets.Summary-->O comando **WP Get style sheets** devolve uma coleção de todos os objetos de folha de estilo de *tipo* definido em *wpDoc*.<!-- END REF-->

@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.DOM Create XML element.Summary-->O comando DOM Create XML element permite criar um novo elemento no elemento XML *refElemento* na localização definida pelo parâmetro xRota e lhe adicionar atributos se é necessário.<!-- END REF-->

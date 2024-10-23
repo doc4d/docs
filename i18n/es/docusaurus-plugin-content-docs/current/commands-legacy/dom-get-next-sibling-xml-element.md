@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.DOM Get next sibling XML element.Summary-->El comando DOM Get next sibling XML element devuelve una referencia al próximo “hermano” del elemento XML pasado como referencia.<!-- END REF--> Esta referencia puede utilizarse con otros comandos de análisis XML. 

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.SORT ARRAY.Summary-->**SORT ARRAY**コマンドは、1つまたは複数の配列を昇順や降順にソートします。<!-- END REF-->

@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.STOP MONITORING ACTIVITY.Summary-->The **STOP MONITORING ACTIVITY** command stops tracking activity started with the [START MONITORING ACTIVITY](start-monitoring-activity.md) command.<!-- END REF--> After the execution of this command, any activity record in memory is emptied.

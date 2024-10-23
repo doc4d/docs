@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Compare strings.Summary-->O comando **Compare strings** retorna um valor negativo, zero ou positivo dependendo de se *stringA* for avaliada como menor, igual ou maior que *stringB*.<!-- END REF--> 

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.OPEN DATA FILE.Summary-->O comando **OPEN DATA FILE** permite alterar os dados do arquivo aberto pela aplicação 4D on-the-fly.<!-- END REF-->

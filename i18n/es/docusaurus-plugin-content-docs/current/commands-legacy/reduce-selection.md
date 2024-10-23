@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.REDUCE SELECTION.Summary-->REDUCE SELECTION crea una nueva selección de registros para *tabla*.<!-- END REF--> El comando devuelve el primer número de registros de la selección actual de *tabla*. REDUCE SELECTION se aplica a la selección actual de *tabla* en el proceso actual. El primer registro de la nueva selección actual es el registro actual. 

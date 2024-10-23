@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.XML GET ERROR.Summary-->La commande **XML GET ERROR** retourne dans le paramètre *texteErreur* la description de l’erreur rencontrée lors du traitement de l’élément XML désigné par le paramètre *refElément*.<!-- END REF--> Les informations retournées sont fournies par la librairie Xerces.dll. 

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.JSON TO SELECTION.Summary-->**JSON TO SELECTION**コマンドは、JSONオブジェクト配列 *jsonArray* の中身を、 *aTable* のレコードのセレクションへとコピーします。<!-- END REF-->. 

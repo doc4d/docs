@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DOM SET XML ATTRIBUTE.Summary-->DOM SET XML ATTRIBUTE コマンドを使用して、*elementRef* に渡したXML要素に1つ以上の属性を追加できます。<!-- END REF-->また定義されたそれぞれの属性に値を設定することもできます。

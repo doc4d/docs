@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WEB SEND TEXT.Summary-->La commande **WEB SEND TEXT** permet d’envoyer directement des données texte formatées en HTML.<!-- END REF-->

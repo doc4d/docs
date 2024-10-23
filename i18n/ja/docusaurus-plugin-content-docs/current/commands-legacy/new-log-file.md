@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.New log file.Summary-->**注:** このコマンドは4D Serverでのみ動作します。<!-- END REF-->このコマンドは[Execute on server](execute-on-server.md)あるいはストアードプロシージャー内でのみ実行できます。

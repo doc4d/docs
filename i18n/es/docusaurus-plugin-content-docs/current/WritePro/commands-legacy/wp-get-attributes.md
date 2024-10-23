@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WP GET ATTRIBUTES.Summary-->El comando **WP GET ATTRIBUTES** devuelve el valor de todo atributo en un rango, encabezado, cuerpo, pie, tabla o documento 4D Write Pro.<!-- END REF--> Este comando le permite acceder a todo tipo de atributos internos 4D Write Pro: carácter, párrafo, documento, tabla o imagen.

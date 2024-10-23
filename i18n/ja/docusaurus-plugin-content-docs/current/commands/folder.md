@@ -27,9 +27,6 @@ displayed_sidebar: docs
 
 <!-- END REF -->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明
 
 `Folder` コマンドは、<!-- REF #_command_.Folder.Summary -->`4D.Folder` 型の新しいオブジェクトを作成して返します<!-- END REF -->。 このコマンドは 2種類のシンタックスを受け入れます。

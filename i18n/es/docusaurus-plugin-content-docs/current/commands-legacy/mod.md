@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Mod.Summary-->El comando Mod devuelve el resto de la división entera de *número1* entre *número2*.<!-- END REF-->

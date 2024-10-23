@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP New.Summary-->**WP New** コマンドは4D Write Pro オブジェクトを作成して返します。<!-- END REF-->返されたオブジェクトは完全なドキュメントであり、例えば[WP INSERT DOCUMENT](wp-insert-document.md) コマンドなどに渡すことができます。

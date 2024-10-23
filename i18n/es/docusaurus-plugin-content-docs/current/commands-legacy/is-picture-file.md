@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Is picture file.Summary-->El comando Is picture file prueba el archivo designado por el parámetro *rutaArchivo* y devuelve True si es un archivo de imagen válido.<!-- END REF--> El comando devuelve False si el archivo no es de tipo imagen o si no se encuentra.   

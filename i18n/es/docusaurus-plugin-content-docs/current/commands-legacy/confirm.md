@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.CONFIRM.Summary-->El comando CONFIRM muestra una caja de diálogo de confirmación compuesta de un icono, un mensaje, un botón OK, y un botón Cancelar.<!-- END REF-->

@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Get 4D folder.Summary-->O comando **Get 4D folder** retorna o caminho para a pasta 4D ativa do aplicativo atual, ou para a pasta do ambiente 4D especificado pelo parâmetro *pasta*, se fornecido.<!-- END REF-->

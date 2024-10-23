@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.OB REMOVE.Summary-->The **OB REMOVE** command removes the *property* of the language object designated by the *object* parameter.<!-- END REF--> This command removes the *property* as well as its current value.

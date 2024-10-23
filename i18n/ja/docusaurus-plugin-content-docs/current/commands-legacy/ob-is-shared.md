@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.OB Is shared.Summary-->**OB Is shared** コマンドは*toCheck* 引数のオブジェクトまたはコレクションが共有の場合には**True** を返します。<!-- END REF-->それ以外の場合には**False** を返します(*共有オブジェクトと共有コレクション*参照)。

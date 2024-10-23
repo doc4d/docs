@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Compatibilidad 
 
 <!--REF #_command_.WP Table range.Summary-->**WP Table range** fue nombrado **WP Create table range** en versiones anteriores de 4D Write Pro.<!-- END REF--> Se ha renombrado por claridad. 

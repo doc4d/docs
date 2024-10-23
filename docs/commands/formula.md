@@ -24,9 +24,6 @@ displayed_sidebar: docs
 |Result|4D.Function|&#8592;|Native function encapsulating the formula|
 <!-- END REF -->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 
 #### Description
 

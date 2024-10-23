@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Get query limit.Summary-->O comando **Get query limit** devolve o limite do número de registros que uma pesquisa pode encontrar no processo atual.<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Get 4D file.Summary-->El comando **Get 4D file** devuelve la ruta de acceso al archivo del entorno 4D especificado por el parámetro *archivo*.<!-- END REF--> La ruta se devuelve utilizando la sintaxis sistema.

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP DELETE STYLE SHEET.Summary-->O comando **WP DELETE STYLE SHEET** elimina o parágrafo designado ou a folha de estilo de caracteres de documento atual.<!-- END REF--> Quando eliminar uma folha de estilo, o caractere ou parágrafo ao que se aplicou volta a seu estilo original (ou seja, o predeterminado).

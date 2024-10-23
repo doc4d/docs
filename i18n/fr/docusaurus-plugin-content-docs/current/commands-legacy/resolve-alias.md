@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.RESOLVE ALIAS.Summary-->La commande **RESOLVE ALIAS** retourne le chemin d’accès complet du fichier ou dossier cible d’un alias (appelé “raccourci” sous Windows).<!-- END REF--> 

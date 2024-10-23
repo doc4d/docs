@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Current default table.Summary-->**Current default table** returns a pointer to the table that has been passed to the last call to [DEFAULT TABLE](default-table.md) for the current process.<!-- END REF-->

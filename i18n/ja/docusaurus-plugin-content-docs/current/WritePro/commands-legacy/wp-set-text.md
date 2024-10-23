@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP SET TEXT.Summary-->**WP SET TEXT** コマンドは、*newText* 引数に渡されたテキストを、*targetObj* 引数で指定したターゲット内の、*textPosition* 引数で指定された位置に標準テキストとして挿入します。<!-- END REF-->

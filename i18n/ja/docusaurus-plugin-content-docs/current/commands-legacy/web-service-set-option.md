@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 予備的なお知らせ 
 
 <!--REF #_command_.WEB SERVICE SET OPTION.Summary-->このコマンドは上級Webサービスユーザのためにデザインされています。<!-- END REF-->使用するかどうかは任意です。

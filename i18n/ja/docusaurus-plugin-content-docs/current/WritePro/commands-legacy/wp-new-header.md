@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP New header.Summary-->**WP New header** コマンドは、*wpSection* 引数で定義されたセクションまたはサブセクションに割り当てられるヘッダーを作成し、それを返します。<!-- END REF-->

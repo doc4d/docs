@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Verify password hash.Summary-->The **Verify password hash** function verifies that the given *hash* matches the given *password*.<!-- END REF-->

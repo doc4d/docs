@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Verify password hash.Summary-->**Verify password hash** ファンクションは、*hash* 引数で渡されたハッシュ値が、*password* 引数のパスワードと合致するかどうかを検証します。<!-- END REF-->

@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP EXPORT DOCUMENT.Summary-->La commande **WP EXPORT DOCUMENT** exporte l'objet 4D Write Pro *docWP* dans un document sur disque défini par le paramètre *cheminFichier* ainsi que des paramètres optionnels.<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP Table append row.Summary-->**WP Table append row**コマンドは *tableRef* で指定したテーブルの最後に新規行を追加し、各セルに*value*で指定した値を設定して、当該行レンジオブジェクトを戻り値として返します。<!-- END REF--> 

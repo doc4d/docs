@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Old.Summary-->La commande **Old** retourne la valeur qui était stockée dans *leChamp* avant qu'il n'ait été modifié par programmation ou pendant la saisie de données.<!-- END REF--> 

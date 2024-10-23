@@ -19,9 +19,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.GET FIELD PROPERTIES.Summary-->GET FIELD PROPERTIESコマンドは、*tableNum*と*fieldNum*または*fieldPtr*で指定したフィールドの情報を返します。<!-- END REF-->

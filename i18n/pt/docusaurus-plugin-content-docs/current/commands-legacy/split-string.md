@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Split string.Summary-->O comando **Split string** devolve uma coleção de strings, criada ao dividir string*Aseparar* em substrings nos limites especificados pelo parâmetro *separador*.<!-- END REF--> As substrings na coleção devolvida não incluem o *separador*.

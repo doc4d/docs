@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Current method name.Summary-->La commande **Current method name** retourne le nom de la méthode dans laquelle elle est appelée.<!-- END REF--> Cette commande est utile dans le cadre du débogage de méthodes génériques.

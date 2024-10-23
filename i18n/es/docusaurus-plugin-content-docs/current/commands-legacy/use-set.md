@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.USE SET.Summary-->USE SET crea, con los registros de *conjunto,* una nueva selección actual para la tabla a la cual pertenece *conjunto*.<!-- END REF--> 

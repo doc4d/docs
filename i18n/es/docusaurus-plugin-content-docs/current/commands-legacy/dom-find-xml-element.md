@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.DOM Find XML element.Summary-->El comando DOM Find XML element permite buscar los elementos XML específicos en una estructura XML.<!-- END REF--> La búsqueda comienza por el elemento designado por el parámetro *refElement*.

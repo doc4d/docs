@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Get position.Summary-->The **WP Get position** command returns an object describing the current position of *targetObj*.<!-- END REF-->

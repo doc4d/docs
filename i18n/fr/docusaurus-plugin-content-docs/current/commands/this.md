@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description
 
 La commande `This` <!--REF #_command_.This.Summary-->renvoie une référence à l'objet en cours de traitement.<!-- END REF-->

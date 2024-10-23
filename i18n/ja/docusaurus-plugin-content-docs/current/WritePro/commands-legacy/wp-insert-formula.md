@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP INSERT FORMULA.Summary-->**WP INSERT FORMULA** コマンドは、*targetObj* 引数で指定したターゲット内に*formula* 引数のフォーミュラを、*mode* 引数で指定したモードで挿入します。<!-- END REF-->

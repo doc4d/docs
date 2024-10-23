@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Register data key.Summary-->**Register data key** コマンドは、引数として渡されたデータ暗号化キーを4D キーチェーンに追加します。<!-- END REF-->

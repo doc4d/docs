@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP Get links.Summary-->**WP Get links** は*targetObj* 引数内のターゲットオブジェクトで定義されている全てのリンクのコレクションを返します。<!-- END REF-->

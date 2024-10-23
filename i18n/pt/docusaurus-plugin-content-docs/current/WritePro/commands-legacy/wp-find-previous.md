@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP Find previous.Summary-->O comando **WP Find previous**  pesquisa *objAlvo*, antes da range *pesquisarAntes*, para o *valorPesquisa* baseado em *condiçõesPesquisa*.<!-- END REF--> Um parâmetro opcional pode ser usado para substituir qualquer resultado encontrado. 

@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Command name.Summary-->O comando **Command name** retorna o nome do comando cujno número foi passado em *comando*.<!-- END REF-->

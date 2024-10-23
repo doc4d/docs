@@ -19,9 +19,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.MULTI SORT ARRAY.Summary-->El comando MULTI SORT ARRAY permite efectuar una ordenación multicriterios en un conjunto de arrays.<!-- END REF-->

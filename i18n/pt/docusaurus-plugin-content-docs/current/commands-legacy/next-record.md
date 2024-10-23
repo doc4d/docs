@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.NEXT RECORD.Summary-->NEXT RECORD move o ponteiro do registro atual ao seguinte registro na seleção atual de tabela para o processo atual.<!-- END REF--> Se a seleção atual estiver vazia, ou se [Before selection](before-selection.md) ou [End selection](end-selection.md) for TRUE, NEXT RECORD não tem nenhum efeito.  

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.PICTURE TO BLOB.Summary-->PICTURE TO BLOB コマンドは、4D変数やフィールドに格納されたピクチャを他のフォーマットに変換し、変換後のピクチャをBLOB内に納めます。<!-- END REF-->

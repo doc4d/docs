@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.VOLUME LIST.Summary-->**VOLUME LIST** remplit le tableau *volumes*, de type texte, avec les noms des volumes définis (Windows) ou montés (Mac OS) sur votre machine.<!-- END REF-->

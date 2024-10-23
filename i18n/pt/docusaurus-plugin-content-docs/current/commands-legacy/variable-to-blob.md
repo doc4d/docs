@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.VARIABLE TO BLOB.Summary-->O comando VARIABLE TO BLOB armazena a *variável* no BLOB *blob*.<!-- END REF-->

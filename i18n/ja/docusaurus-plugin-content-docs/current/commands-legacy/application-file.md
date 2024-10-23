@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Application file.Summary-->Application fileコマンドは、 現在使用している4D実行形式のファイルまたはアプリケーションのパス名を返します。<!-- END REF-->

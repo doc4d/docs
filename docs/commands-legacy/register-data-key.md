@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Register data key.Summary-->The **Register data key** command adds the data encryption key passed in parameter to the 4D keychain.<!-- END REF-->

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.SET USER ALIAS.Summary-->O comando **SET USER ALIAS** define um nome personalizado alternativo para usar ao invés do nome da conta de usuário 4D atual para a sessão atual.<!-- END REF--> O nome alternativo se conserva na memória e se aplica apenas ao usuário atual.

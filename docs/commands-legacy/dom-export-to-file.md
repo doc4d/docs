@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.DOM EXPORT TO FILE.Summary-->The DOM EXPORT TO FILE command stores an XML tree in a file on disk.<!-- END REF--> 

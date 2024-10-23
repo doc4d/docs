@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Begin SQL.Summary-->Begin SQL es una palabra clave que permite indicar en el editor de métodos el inicio de una secuencia de comandos SQL que debe ser interpretada por la fuente de datos actual del proceso (el motor SQL integrado de 4D o toda fuente especificada vía el comando [SQL LOGIN](sql-login.md "SQL LOGIN")).<!-- END REF-->

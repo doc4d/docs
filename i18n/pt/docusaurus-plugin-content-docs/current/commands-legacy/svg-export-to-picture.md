@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.SVG EXPORT TO PICTURE.Summary-->O comando SVG EXPORT TO PICTURE permite guardar na variável ou campo imagem indicado pelo parâmetro *varImag* uma imagem em formato SVG contida em uma árvore XML.<!-- END REF-->  

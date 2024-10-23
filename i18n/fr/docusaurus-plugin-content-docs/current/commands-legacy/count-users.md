@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Count users.Summary-->La commande **Count users** retourne le nombre d'utilisateurs connectés au poste serveur.<!-- END REF-->

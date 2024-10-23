@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.CREATE THUMBNAIL.Summary-->El comando CREATE THUMBNAILdevuelve una miniatura a partir de una imagen fuente.<!-- END REF--> Las miniaturas se utilizan generalmente para la previsualización de imágenes en software multimedia o sitios web.

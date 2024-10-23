@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Version type.Summary-->**Version type** コマンドは、現在実行している4Dや4D Server環境のバージョンタイプを示す数値を返します。<!-- END REF-->4Dでは *4D Environment*テーマ内にある以下の定義済み定数が用意されています。

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.DESCRIBE QUERY EXECUTION.Summary-->The **DESCRIBE QUERY EXECUTION** command enables or disables the query analysis mode for the current process.<!-- END REF--> The command only works in the context of 4D language query commands such as [QUERY](query.md). 

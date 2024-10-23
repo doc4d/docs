@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Count in array.Summary-->O comando Count in array retorna o número de ocorrências do *valor* no *array*.<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.EXECUTE METHOD.Summary-->EXECUTE METHOD コマンドは、*param1.<!-- END REF-->..paramN*を引数に渡して、*methodName*プロジェクトメソッドを実行します。データベースまたはコマンドを実行するコンポーネントから呼び出し可能なメソッド名を渡すことができます。

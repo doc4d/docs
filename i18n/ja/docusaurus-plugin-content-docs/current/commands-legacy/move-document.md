@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.MOVE DOCUMENT.Summary-->MOVE DOCUMENTコマンドを使用して、ドキュメントを移動、ドキュメント名を変更します。<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.ARRAY PICTURE.Summary-->El comando ARRAY PICTURE crea y/o redimensiona un array de elementos de tipo [Imagen](# "Can be any Windows or Macintosh picture") en memoria.<!-- END REF-->

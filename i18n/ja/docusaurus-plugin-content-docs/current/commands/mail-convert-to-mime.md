@@ -25,9 +25,6 @@ displayed_sidebar: docs
 
 <!-- END REF -->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明
 
 `MAIL Convert to MIME` コマンドは、<!-- REF #_command_.MAIL Convert to MIME.Summary -->Emailオブジェクトを MIMEテキストへと変換します<!-- END REF -->。 This command is called internally by [SMTP_transporter.send()](../API/SMTPTransporterClass.md#send) to format the email object before sending it. また、オブジェクトの MIME フォーマットを解析するためにも使用されます。

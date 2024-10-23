@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Sin.Summary-->Sin は*number*の正弦値を返します。<!-- END REF-->*number*はラジアンで指定します。

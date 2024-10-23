@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Convert to text.Summary-->O comando Convert to text converte o texto contido no parâmetro *blob* e o devolve em texto expresso no conjunto de caracteres de 4D.<!-- END REF--> 4D utiliza como padrão o conjunto de caracteres UTF-16.  

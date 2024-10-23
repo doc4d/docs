@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.ARRAY OBJECT.Summary-->La commande **ARRAY OBJECT** crée et/ou redimensionne un tableau d’éléments de type Objet de langage en mémoire.<!-- END REF-->

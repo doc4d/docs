@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP Get view properties.Summary-->O comando **WP Get view properties** devolve as propriedades da vista atual para a área 4D Write Pro designada por *wpArea*.<!-- END REF--> 

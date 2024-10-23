@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WEB START SERVER.Summary-->El comando WEB START SERVER inicia el servidor web de la aplicación 4D en la cual se ejecuta (4D o 4D Server).<!-- END REF--> La base es por lo tanto publicada en su red Intranet o en el Internet. 

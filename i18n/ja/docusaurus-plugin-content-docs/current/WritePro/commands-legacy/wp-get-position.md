@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP Get position.Summary-->**WP Get position** コマンドは、*targetObj* 引数で指定したターゲットのカレントの位置を説明するオブジェクトを返します。<!-- END REF-->

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Bool.Summary-->O comando **Bool** devolve a forma booleana da expressão que foi passado em *expressao*.<!-- END REF-->

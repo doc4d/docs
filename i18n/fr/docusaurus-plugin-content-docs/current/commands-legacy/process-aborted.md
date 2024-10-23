@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Process aborted.Summary-->La commande **Process aborted** retourne **Vrai** si le process dans lequel elle est appelée est sur le point d’être interrompu de manière inopinée — c’est-à-dire sans être parvenu au terme “normal” de son exécution.<!-- END REF-->

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Record number.Summary-->**Record number**は、*aTable*のカレントレコードの物理レコード番号を返します。<!-- END REF-->レコードポインタがカレントセレクションの前後にある場合等、カレントレコードがない場合、**Record number**は-1を返します。カレントレコードが保存されていない新しいレコードの場合、**Record number**は-3を返します。

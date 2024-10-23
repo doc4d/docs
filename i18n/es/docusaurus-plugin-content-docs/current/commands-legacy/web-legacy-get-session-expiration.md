@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Nota de compatibilidad 
 
 <!--REF #_command_.WEB LEGACY GET SESSION EXPIRATION.Summary-->Este comando sólo puede utilizarse con **sesiones web heredadas**, disponibles en bases convertidas a partir de versiones anteriores a la 4D v18 R6\.<!-- END REF--> Devuelve valores nulos de fecha y hora cuando se habilita el modo **sesiones web escalables** (recomendado en 4D v18 R6 y superiores). Para más información, consulte la sección *Gestión de las sesiones web (heredado)*.

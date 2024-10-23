@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Not.Summary-->La fonction **Not** retourne la valeur inverse de *booléen*, changeant un [True](true.md) en [False](false.md) ou un [False](false.md) en [True](true.md).<!-- END REF--> 

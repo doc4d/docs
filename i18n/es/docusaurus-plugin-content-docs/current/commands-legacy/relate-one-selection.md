@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.RELATE ONE SELECTION.Summary-->El comando RELATE ONE SELECTION crea una nueva selección de registros en *tabla1* a partir de la selección de registros de la *tablaN* relacionada y carga el primer registro de la nueva selección como el registro actual.<!-- END REF--> 

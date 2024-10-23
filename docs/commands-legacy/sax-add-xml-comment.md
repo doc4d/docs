@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.SAX ADD XML COMMENT.Summary-->The SAX ADD XML COMMENT command adds a *comment* in the XML document referenced by *document*.<!-- END REF--> 

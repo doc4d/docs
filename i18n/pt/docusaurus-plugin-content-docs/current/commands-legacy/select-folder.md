@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Select folder.Summary-->O comando Select folder mostra uma caixa de diálogo que lhe permite selecionar manualmente uma pasta e depois recuperar a rota de acesso completa a essa pasta.<!-- END REF--> O parâmetro opcional *rotaPadrao* pode ser utilizado para designar a localização de uma pasta que inicialmente será mostrada na caixa de diálogo de seleção da pasta.  

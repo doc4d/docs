@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Current method path.Summary-->El comando **Current method path** devuelve la ruta de acceso interna del método base, trigger, método de proyecto, método formulario o método objeto en ejecución.<!-- END REF-->

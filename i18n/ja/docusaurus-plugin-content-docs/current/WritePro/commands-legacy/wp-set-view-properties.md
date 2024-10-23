@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP SET VIEW PROPERTIES.Summary-->**WP SET VIEW PROPERTIES** コマンドを使用すると、*wpArea* 引数で指定した4D Write Pro エリアの、一つまたは複数のビュープロパティを動的に設定することができます。<!-- END REF-->

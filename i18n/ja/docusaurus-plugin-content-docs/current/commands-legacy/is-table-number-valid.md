@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Is table number valid.Summary-->Is table number validコマンドは、引数*tableNum*に渡したテーブル番号のテーブルがデータベースに存在する場合、Trueを返します。<!-- END REF-->その他の場合は、Falseを返します。また、テーブルがエクスプローラーのごみ箱にある場合、コマンドはFalseを返しますので注意してください。

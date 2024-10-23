@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.GET DOCUMENT ICON.Summary-->La commande **GET DOCUMENT ICON** retourne dans le champ ou la variable image 4D *icône*, l’icône du document dont vous avez passé le nom ou le chemin d’accès complet dans *cheminDoc*.<!-- END REF--> *cheminDoc* peut désigner un fichier de tout type (document, exécutable, raccourci ou alias...) ou un dossier.

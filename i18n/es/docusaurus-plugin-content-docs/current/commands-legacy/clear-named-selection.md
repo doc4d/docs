@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.CLEAR NAMED SELECTION.Summary-->CLEAR NAMED SELECTION borra *temp* de la memoria y libera la memoria utilizada por *temp*.<!-- END REF-->CLEAR NAMED SELECTION no afecta las tablas, selecciones, o registros. Como las selecciones temporales utilizan memoria, es recomendable borrar las selecciones temporales cuando ya no se necesiten.

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.RECEIVE RECORD.Summary-->RECEIVE RECORDは、[SET CHANNEL](set-channel.md "SET CHANNEL")コマンドで開いたシリアルポートまたはドキュメントから*table*にレコードを受信します。<!-- END REF-->受信するレコードは[SEND RECORD](send-record.md "SEND RECORD")で送信したものでなければなりません。RECEIVE RECORDを実行すると、*table*に新しいレコードが自動で作成されます。レコードを正しく受信した時点で、[SAVE RECORD](save-record.md "SAVE RECORD")コマンドを使用して新しいレコードを保存します。

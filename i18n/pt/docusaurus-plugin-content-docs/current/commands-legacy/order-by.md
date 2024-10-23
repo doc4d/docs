@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.ORDER BY.Summary-->**ORDER BY** ordena (reordena) os registros da seleção atual de *tabela* para o processo atual.<!-- END REF--> Quando tiver realizada a ordenação, o primeiro registro da nova seleção atual se converte no registro atual.  

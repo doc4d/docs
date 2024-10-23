@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Active transaction.Summary-->**Active transaction**コマンドは、カレントプロセスがトランザクション中であり、かつそのトランザクションが停止されていない場合に**True**を返します。<!-- END REF-->カレントトランザクションがない場合、あるいはカレントトランザクションが停止されている場合には**False**を返します。トランザクションは [SUSPEND TRANSACTION](suspend-transaction.md) コマンドによって一時停止することができます。

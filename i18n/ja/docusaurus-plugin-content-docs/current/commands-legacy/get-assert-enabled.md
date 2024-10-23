@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Get assert enabled.Summary-->Get assert enabled コマンドは カレントプロセスでアサーションが有効か無効かによって[True](true.md "True")または[False](false.md "False")を返します。<!-- END REF-->アサーションについての詳細は[ASSERT](assert.md "ASSERT")コマンドの説明を参照してください。

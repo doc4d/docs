@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.LONGINT TO BLOB.Summary-->LONGINT TO BLOB コマンドは、*blob*に4バイトの*longint*値を書き込みます。<!-- END REF-->

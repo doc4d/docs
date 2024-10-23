@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.BLOB to text.Summary-->La fonction **BLOB to text** retourne une valeur de type Texte lue dans le BLOB *blob*.<!-- END REF-->

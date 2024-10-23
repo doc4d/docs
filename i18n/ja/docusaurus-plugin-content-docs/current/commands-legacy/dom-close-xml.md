@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DOM CLOSE XML.Summary-->DOM CLOSE XML コマンドは*elementRef*で指定されたXMLオブジェクトにより使用されているメモリを開放します。<!-- END REF--> 

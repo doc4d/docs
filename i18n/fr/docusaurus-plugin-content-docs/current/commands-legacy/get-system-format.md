@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.GET SYSTEM FORMAT.Summary-->La commande **GET SYSTEM FORMAT** retourne la valeur courante de plusieurs paramètres régionaux définis dans le système d’exploitation.<!-- END REF--> Cette commande permet de construire des formats personnalisés “automatiques” basés sur les préférences système. 

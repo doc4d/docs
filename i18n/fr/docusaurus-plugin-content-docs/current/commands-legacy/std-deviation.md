@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Std deviation.Summary-->**Std deviation** retourne l'écart type (c.-à-d. la racine carrée de la variance) de *séries*.<!-- END REF--> 

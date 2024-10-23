@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Append document.Summary-->Append documentコマンドは[Open document](open-document.md "Open document")コマンドと同じ機能を提供します。<!-- END REF-->このコマンドを使用してディスクにあるドキュメントを開くことができます。

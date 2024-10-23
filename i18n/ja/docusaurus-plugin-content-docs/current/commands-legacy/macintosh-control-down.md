@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Macintosh control down.Summary-->Macintosh control down コマンドはMacintoshのControlキーが押されていると[True](true.md "True")を返します。<!-- END REF-->

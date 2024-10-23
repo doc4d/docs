@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.GET FIELD RELATION.Summary-->O comando GET FIELD RELATION permite conhecer o estado automático/manual da relação começando desde o *campoN* para o processo atual.<!-- END REF--> Todas as relações podem ser consultadas, incluindo as relações automáticas na janela de Estrutura.

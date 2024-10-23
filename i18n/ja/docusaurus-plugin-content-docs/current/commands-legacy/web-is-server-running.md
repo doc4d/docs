@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WEB Is server running.Summary-->新しい**WEB Is server running** コマンド("*Webサーバ*"テーマ)は、4DがビルトインされているWebサーバーが動作中である場合にはTrueを、Webサーバーがオフである場合にはFalseを返します。<!-- END REF-->

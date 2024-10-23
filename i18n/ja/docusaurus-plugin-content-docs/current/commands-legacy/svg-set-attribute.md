@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.SVG SET ATTRIBUTE.Summary-->**SVG SET ATTRIBUTE**コマンドは 表示されている画像のSVG描画ツリーまたは画像の内部DOMツリー中で、既存の属性の値を更新するために使用します。<!-- END REF-->

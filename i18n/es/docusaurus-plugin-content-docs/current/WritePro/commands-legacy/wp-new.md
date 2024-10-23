@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WP New.Summary-->El comando **WP New** crea y devuelve un objeto 4D Write Pro.<!-- END REF--> El objeto devuelto es un documento completo que se puede pasar al comando [WP INSERT DOCUMENT](wp-insert-document.md), por ejemplo.

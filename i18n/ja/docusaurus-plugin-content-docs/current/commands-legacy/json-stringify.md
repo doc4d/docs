@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.JSON Stringify.Summary-->**JSON Stringify**コマンドは、 *value* 引数を、JSON文字列へと変換します。<!-- END REF-->このコマンドは[JSON Parse](json-parse.md) コマンドと逆の挙動をします。

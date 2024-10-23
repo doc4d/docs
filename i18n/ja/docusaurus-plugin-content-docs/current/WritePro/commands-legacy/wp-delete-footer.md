@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP DELETE FOOTER.Summary-->**WP DELETE FOOTER** コマンドは、*wpSection* 引数で定義されたセクションあるいはサブセクションに割り当てられたフッター要素を削除します。<!-- END REF-->

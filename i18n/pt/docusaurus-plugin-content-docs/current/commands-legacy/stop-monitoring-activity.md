@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.STOP MONITORING ACTIVITY.Summary-->O comando **STOP MONITORING ACTIVITY** para o rastreamento da atividade iniciado com o comando [START MONITORING ACTIVITY](start-monitoring-activity.md).<!-- END REF--> Depois da execução desse comando, qualquer atividade registrada na memória é esvaziada.

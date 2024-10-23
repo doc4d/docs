@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.SET EXTERNAL DATA PATH.Summary-->**SET EXTERNAL DATA PATH**コマンドは*aField*引数に渡したフィールドの、カレントレコードの、外部ストレージの場所を設定あるいは変更します。<!-- END REF-->

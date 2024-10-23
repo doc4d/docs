@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.CREATE DATA FILE.Summary-->La commande **CREATE DATA FILE** permet de créer un nouveau fichier de données sur disque et de remplacer à la volée le fichier de données ouvert par l’application 4D.<!-- END REF--> 

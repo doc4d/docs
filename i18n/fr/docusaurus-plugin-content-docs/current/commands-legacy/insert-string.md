@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Insert string.Summary-->**Insert string** insère la chaîne de caractères alphanumériques *insertion* dans la chaîne *source* à partir de *position* et retourne la chaîne de caractères résultante.<!-- END REF--> La chaîne *insertion* est placée avant le caractère désigné par *position*.

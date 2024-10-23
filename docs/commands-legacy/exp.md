@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Exp.Summary-->Exp raises the natural log base (e = 2.71828...) by the power of *number*.<!-- END REF--> Exp is the inverse function of [Log](log.md).

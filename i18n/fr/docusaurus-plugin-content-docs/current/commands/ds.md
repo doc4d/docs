@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description
 
 La commande `ds` <!-- REF #_command_.ds.Summary -->retourne une référence vers le datastore correspondant à la base de données 4D courante ou à la base de données désignée par *localID*<!-- END REF -->.

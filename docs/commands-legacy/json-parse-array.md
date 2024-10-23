@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.JSON PARSE ARRAY.Summary-->The **JSON PARSE ARRAY** command parses the contents of a JSON-formatted string and puts the data extracted into the *array* parameter.<!-- END REF--> This command deserializes the JSON data; it performs the opposite action of the [JSON Stringify array](json-stringify-array.md) command.

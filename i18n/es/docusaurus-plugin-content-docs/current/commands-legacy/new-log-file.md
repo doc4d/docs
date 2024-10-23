@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.New log file.Summary-->**Nota preliminar:** este comando sólo funciona con 4D Server.<!-- END REF--> Sólo puede ser ejecutado vía el comando [Execute on server](execute-on-server.md) o en un procedimiento almacenado. 

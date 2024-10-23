@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WEB SERVICE AUTHENTICATE.Summary-->**WEB SERVICE AUTHENTICATE**コマンドは、クライアントアプリケーションの認証を必要とするWeb サービスの使用を可能にします (シンプルな認証) 。<!-- END REF-->BASICとDIGEST メソッド、そしてプロキシの存在がサポートされています。

@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.ABORT.Summary-->ABORT コマンドは、 [ON ERR CALL](on-err-call.md "ON ERR CALL")コマンドでインストールされたエラー処理プロジェクトメソッド内で使用します。<!-- END REF-->

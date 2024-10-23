@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Description 
 
 <!--REF #_command_.String.Summary-->O comando String devolve em forma de cadeia alfanumérica a expressão de tipo numérica, Data, Hora, cadeia ou Booleana que se passa em *expressão*.<!-- END REF-->  

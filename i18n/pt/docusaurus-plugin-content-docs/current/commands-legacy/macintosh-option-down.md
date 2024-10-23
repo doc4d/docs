@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Macintosh option down.Summary-->Macintosh option down retorna TRUE se a tecla Opção Macintosh estiver pressionada.<!-- END REF-->  

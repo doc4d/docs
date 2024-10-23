@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WP Table insert rows.Summary-->El comando **WP Table insert rows** inserta una o varias líneas en una tabla 4D Write Pro.<!-- END REF-->

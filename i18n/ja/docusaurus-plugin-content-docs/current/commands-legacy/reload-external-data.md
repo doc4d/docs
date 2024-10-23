@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.RELOAD EXTERNAL DATA.Summary-->**RELOAD EXTERNAL DATA**コマンドはBLOB、ピクチャー、およびテキスト型フィールドに割り当てられた外部ストレージの内容をメモリにリロードします。<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.SET DOCUMENT POSITION.Summary-->このコマンドは、*DocRef*に渡したドキュメント参照番号を持つ、現在開いているドキュメントだけに機能します。<!-- END REF-->

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.BOOLEAN ARRAY FROM SET.Summary-->The BOOLEAN ARRAY FROM SET command fills an array of Booleans indicating if each record in the table is or is not in *set*.<!-- END REF--> 

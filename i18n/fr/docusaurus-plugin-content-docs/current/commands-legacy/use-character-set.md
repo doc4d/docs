@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.USE CHARACTER SET.Summary-->La commande **USE CHARACTER SET** permet de modifier le jeu de caractères utilisé par 4D pour toutes les opérations de transfert entre la base et un document ou un port série pour le process courant.<!-- END REF--> Cela inclut les données transférées par les commandes d'import/export Texte, SYLK et DIF, ainsi que celles envoyées par les commandes [SEND PACKET](send-packet.md) et [RECEIVE PACKET](receive-packet.md) (paquets de type texte) et [RECEIVE BUFFER](receive-buffer.md). Les filtres n'ont pas d'effet sur les données transférées par les commandes [SEND RECORD](send-record.md), [SEND VARIABLE](send-variable.md), [RECEIVE RECORD](receive-record.md), [SEND PACKET](send-packet.md), et [RECEIVE PACKET](receive-packet.md) (paquets de type BLOB) et [RECEIVE VARIABLE](receive-variable.md).

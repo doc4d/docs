@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.New shared object.Summary-->The **New shared object** command creates a new empty or prefilled shared object and returns its reference.<!-- END REF--> Adding or editing a property to this object must be surrounded by the *Use...End use* structure, otherwise an error is generated. Reading a property without a *Use...End use* structure is, however, possible. 

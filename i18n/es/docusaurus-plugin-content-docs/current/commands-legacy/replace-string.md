@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Replace string.Summary-->Replace string devuelve una cadena de caracteres resultante de reemplazar *obsoleto* por *nuevo* en *fuente*.<!-- END REF-->

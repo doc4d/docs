@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.OB REMOVE.Summary-->El comando **OB REMOVE** elimina la *propiedad* del objeto de lenguaje designado por el parámetro *objeto*.<!-- END REF--> Este comando elimina la propiedad, así como su valor actual.  

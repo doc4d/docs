@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WEB GET HTTP HEADER.Summary-->El comando **WEB GET HTTP HEADER** devuelve, en una cadena o dos arrays, el encabezado HTTP de la petición en proceso.<!-- END REF-->

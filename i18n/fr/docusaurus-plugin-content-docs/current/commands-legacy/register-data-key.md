@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Register data key.Summary-->La commande **Register data key** ajoute au trousseau 4D la clé de chiffrement de données qui a été passée dans le paramètre.<!-- END REF-->

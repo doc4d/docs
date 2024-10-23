@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.RESOLVE POINTER.Summary-->O comando RESOLVE POINTER recupera a informação do objeto referenciado pela expressão de ponteiro *ponteiro* e a devolve nos parâmetros *nomVar*, *numTabela,* e *numCamp*.<!-- END REF-->

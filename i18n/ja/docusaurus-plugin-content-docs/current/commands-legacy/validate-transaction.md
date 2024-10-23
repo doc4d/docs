@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.VALIDATE TRANSACTION.Summary-->VALIDATE TRANSACTIONは、カレントプロセス中、[START TRANSACTION](start-transaction.md "START TRANSACTION")で開始した対応するレベルのトランザクションを受け入れます。<!-- END REF-->VALIDATE TRANSACTIONは、トランザクション中に行われたデータベースへの更新を保存します。

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.SOAP Request.Summary-->**SOAP request**コマンドは実行されているコードがSOAPリクエストの一部であれば[True](true.md "True")を返します。<!-- END REF--> 

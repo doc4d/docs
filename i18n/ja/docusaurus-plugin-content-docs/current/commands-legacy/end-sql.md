@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.End SQL.Summary-->End SQLとはメソッドエディタ中で一連のSQLコマンドの最後を意味するキーワードです。<!-- END REF-->

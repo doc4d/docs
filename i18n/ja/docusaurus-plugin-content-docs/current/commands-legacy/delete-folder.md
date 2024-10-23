@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DELETE FOLDER.Summary-->DELETE FOLDER コマンドは*folder* に渡したフルパスまたは名前を持つフォルダーを削除します。<!-- END REF-->

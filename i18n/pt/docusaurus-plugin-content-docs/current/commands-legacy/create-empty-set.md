@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.CREATE EMPTY SET.Summary-->CREATE EMPTY SET cria um conjunto vazio, *conjunto*, para *tabela*.<!-- END REF--> Pode adicionar registros a este conjunto com o comando [ADD TO SET](add-to-set.md). Se já existir um conjunto com o mesmo nome, o conjunto existente é apagado e substitui com o novo conjunto.  

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.DELETE SELECTION.Summary-->DELETE SELECTION apaga a seleção atual de registros de *tabela*.<!-- END REF--> Se a seleção atual estiver vazia, DELETE SELECTION não faz nada. Depois de apagar os registros, a seleção atual fica vazia. Os registros que são apagados durante uma transação estão bloqueados para os outros usuários e processos até que a transação seja confirmada ou cancelada.  

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Get 4D file.Summary-->**Get 4D file**コマンドは、*file* パラメーターで指定された4D環境ファイルへのパス名を返します。<!-- END REF-->パスはシステムシンタックスで返されます。

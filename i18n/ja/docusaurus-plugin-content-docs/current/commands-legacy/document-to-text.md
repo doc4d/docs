@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Document to text.Summary-->**Document to text**コマンドは、ディスク上のファイルの中身を、4Dのテキスト変数またはテキストフィールドへと直接取り出すことができます。<!-- END REF-->

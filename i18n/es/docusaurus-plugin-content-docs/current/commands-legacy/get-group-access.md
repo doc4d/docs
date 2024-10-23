@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Get group access.Summary-->El comando **Get group access** devuelve las membresías de la cuenta de usuario 4D para la sesión actual.<!-- END REF--> Si el usuario no pertenece a ningún grupo en la sesión, se devuelve una colección vacía.

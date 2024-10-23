@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.CREATE RELATED ONE.Summary-->CREATE RELATED ONE tiene dos acciones.<!-- END REF--> Si no existe un registro relacionado a *campo* (es decir, si el valor actual de *campo*, no se encuentra en el campo correspondiente de ningún registro de la tabla relacionada), CREATE RELATED ONE crea un nuevo registro relacionado.   

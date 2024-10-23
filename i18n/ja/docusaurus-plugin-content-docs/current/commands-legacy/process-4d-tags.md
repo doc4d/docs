@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.PROCESS 4D TAGS.Summary-->**PROCESS 4D TAGS**コマンドを使用すると、*inputTemplate* 引数に格納されている4D変換タグの処理が開始されます。<!-- END REF-->*param* 引数を使用して値を挿入し(任意)、その結果が*outputResult* に返されます。 これらのタグの完全な詳細については、*4D 変換タグ* の章を参照して下さい。

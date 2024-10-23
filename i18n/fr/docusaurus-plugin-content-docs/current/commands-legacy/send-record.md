@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.SEND RECORD.Summary-->**SEND RECORD** envoie l'enregistrement courant de *laTable* vers le port série ou vers un document ouvert par la commande [SET CHANNEL](set-channel.md).<!-- END REF--> L'enregistrement est envoyé dans un format interne particulier ne pouvant être interprété que par la commande [RECEIVE RECORD](receive-record.md). S'il n'y a pas d'enregistrement courant, **SEND RECORD** ne fait rien.

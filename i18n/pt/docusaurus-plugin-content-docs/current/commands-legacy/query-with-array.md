@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.QUERY WITH ARRAY.Summary-->O comando **QUERY WITH ARRAY** busca na tabela do campo passado no primeiro parâmetro todos os registros para os quais o valor de *campoAlvo*, for igual ao menos a um dos valores dos elementos em [Array](# "An array of values").<!-- END REF--> Os registros encontrados constituem a nova seleção atual. 

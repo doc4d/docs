@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Structure file.Summary-->O comando Structure file retorna o nome completo do arquivo de estrutura do banco de dados com o qual você está trabalhando atualmente.<!-- END REF-->

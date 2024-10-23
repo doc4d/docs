@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.VOLUME ATTRIBUTES.Summary-->La commande **VOLUME ATTRIBUTES** retourne la taille, la place utilisée et la place libre sur le volume dont le nom est passé dans *volume*.<!-- END REF--> Ces valeurs sont exprimées en octets.

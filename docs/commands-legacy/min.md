@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Min.Summary-->**Min** returns the minimum value in *series*.<!-- END REF--> If *series* is an indexed field, the index is used to find the minimum value.

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WEB SEND TEXT.Summary-->**WEB SEND TEXT**コマンドを使用して、 HTMLにフォーマットされたテキストデータを直接送ります。<!-- END REF--> 

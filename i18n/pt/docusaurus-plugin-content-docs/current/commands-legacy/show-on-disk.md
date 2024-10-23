@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.SHOW ON DISK.Summary-->O comando SHOW ON DISK mostra em uma janela padrão do sistema operativo o arquivo ou a pasta na qual a rota de acesso for passada no parâmetro *nomeRota*.<!-- END REF-->  

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WEB SEND HTTP REDIRECT.Summary-->O comando **WEB SEND HTTP REDIRECT** permite transformar uma URL em outra.<!-- END REF-->  

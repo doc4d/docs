@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.DOM Count XML attributes.Summary-->La commande **DOM Count XML attributes** retourne le nombre d’attributs XML présents dans l’élément XML désigné par *refElément*.<!-- END REF--> Pour plus d'informations sur les attributs XML, reportez-vous à la section *Présentation des commandes XML DOM*. 

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.DIFFERENCE.Summary-->DIFFERENCE compara *conjunto1* e *conjunto2* e exclui de *conjuntoResultado* todos os registros de *conjunto2*.<!-- END REF--> Em outras palavras, um registro é incluído em *conjuntoResultado* apenas se estiver em c*onjunto1*, mas não em *conjunto2*. A seguinte tabela mostra todos os resultados possíveis de uma operação de diferença de conjuntos.  

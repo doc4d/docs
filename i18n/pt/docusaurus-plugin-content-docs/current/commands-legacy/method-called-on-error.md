@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Method called on error.Summary-->O comando **Method called on error** retorna o nome do método instalado pelo comando [ON ERR CALL](on-err-call.md) para o processo atual ou o e*scope definido*.<!-- END REF-->

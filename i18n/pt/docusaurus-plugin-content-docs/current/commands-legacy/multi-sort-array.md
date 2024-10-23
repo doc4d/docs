@@ -19,9 +19,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.MULTI SORT ARRAY.Summary-->O comando MULTI SORT ARRAY lhe permite realizar um tipo de ordenação multi-nível em um conjunto de arrays.<!-- END REF-->

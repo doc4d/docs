@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.MESSAGES ON.Summary-->Ver a descrição do comando [MESSAGES OFF](messages-off.md "MESSAGES OFF").<!-- END REF-->

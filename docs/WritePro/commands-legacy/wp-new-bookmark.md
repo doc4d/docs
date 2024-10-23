@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WP NEW BOOKMARK.Summary-->The **WP NEW BOOKMARK** command creates a new bookmark named *bkName* based upon the 4D Write Pro *targetObj* in the parent document.<!-- END REF-->

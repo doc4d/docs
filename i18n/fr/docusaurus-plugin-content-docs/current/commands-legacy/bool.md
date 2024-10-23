@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Bool.Summary-->La commande **Bool** retourne l'expression que vous avez passée dans *expression* sous une forme booléenne.<!-- END REF-->

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WEB SEND TEXT.Summary-->O comando WEB SEND TEXT enviar diretamente os dados de texto com formato HTML.<!-- END REF-->  

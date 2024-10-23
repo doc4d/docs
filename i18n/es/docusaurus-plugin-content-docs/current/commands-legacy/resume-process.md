@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.RESUME PROCESS.Summary-->RESUME PROCESS reactiva un *proceso* cuya ejecución ha sido retrasada o suspendida.<!-- END REF--> Si *proceso* no está retrasado o suspendido, RESUME PROCESS no hace nada.

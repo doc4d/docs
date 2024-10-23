@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP COMPUTE FORMULAS.Summary-->**WP COMPUTE FORMULAS** コマンドは、*targetObj* 引数のターゲット内にあるフォーミュラを評価します。<!-- END REF-->

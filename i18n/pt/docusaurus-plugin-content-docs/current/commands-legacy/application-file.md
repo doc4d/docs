@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Application file.Summary-->O comando Application file retorna o nome longo do arquivo executável ou da aplicação 4D que está sendo utilizada.<!-- END REF-->

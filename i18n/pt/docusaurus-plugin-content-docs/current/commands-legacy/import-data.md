@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.IMPORT DATA.Summary-->O comando IMPORT DATA importa os dados localizados no arquivo *nomeArquivo* 4D pode importar os dados nos seguintes formatos: Texto, Texto de longitude fixa, XML, SYLK, DIF, DBF (dBase) e 4D.<!-- END REF--> 

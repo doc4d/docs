@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WEB GET HTTP HEADER.Summary-->O comando **WEB GET HTTP HEADER** retorna uma string ou dois arrays, que contém o cabeçalho HTTP utilizado na petição em processo.<!-- END REF-->

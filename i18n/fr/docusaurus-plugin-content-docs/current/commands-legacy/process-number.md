@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Process number.Summary-->La commande **Process number** retourne le numéro du process dont vous passez le nom dans *nomProcess*.<!-- END REF--> Si aucun process n'est trouvé, **Process number** retourne 0.

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WEB Get server info.Summary-->The **WEB Get server info** command returns an object containing detailed runtine information on the 4D Web server current session.<!-- END REF--> Returned information include the SOAP server.

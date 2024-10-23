@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.METHOD GET ATTRIBUTES.Summary-->O novo comando **METHOD GET ATTRIBUTES** retorna, em *atributos*, o valor atual de todos os atributos para os métodos especificados no parâmetro *caminho*.<!-- END REF-->

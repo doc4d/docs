@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.SCAN INDEX.Summary-->**SCAN INDEX** returns a selection of *number* records from the table containing the *aField* field.<!-- END REF--> If you pass <, **SCAN INDEX** returns the *number* of records from the end of the index (high values). If you pass >, **SCAN INDEX** returns the *number* of records from the beginning of the index (low values). This command is very efficient because it uses the index to perform the operation.

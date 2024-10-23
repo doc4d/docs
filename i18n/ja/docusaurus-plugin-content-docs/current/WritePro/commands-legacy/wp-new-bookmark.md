@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP NEW BOOKMARK.Summary-->**WP NEW BOOKMARK**コマンドは、親ドキュメント内の *targetObj* 引数で指定された4D Write Proオブジェクトに基づいた、*bkName* 引数で指定された名前の新しいブックマークを作成します。<!-- END REF-->

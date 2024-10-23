@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.VOLUME LIST.Summary-->**VOLUME LIST**コマンドは、テキスト配列の*volumes* に、現在コンピュータに定義 (Windowsの場合) またはマウント (Mac OSの場合) されているボリュームの名前を代入します。<!-- END REF-->

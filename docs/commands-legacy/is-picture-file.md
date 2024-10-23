@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Is picture file.Summary-->The Is picture file command tests the file designated by the *filePath* parameter and returns True if it is a valid picture file.<!-- END REF--> The command returns False if the file is not of the picture type or if it is not found. 

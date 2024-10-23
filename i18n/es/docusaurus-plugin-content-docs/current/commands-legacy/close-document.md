@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.CLOSE DOCUMENT.Summary-->CLOSE DOCUMENT cierra el documento especificado por *docRef*.<!-- END REF-->

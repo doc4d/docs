@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Compatibilidade 
 
 <!--REF #_command_.WP Picture range.Summary-->**WP Picture range** era chamado **WP Get pictures** em versões anteriores de 4D Write Pro.<!-- END REF--> Foi renomeado para ter mais claridade.. 

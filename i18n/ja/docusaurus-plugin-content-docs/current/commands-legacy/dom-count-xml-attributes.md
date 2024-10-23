@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DOM Count XML attributes.Summary-->DOM Count XML attributes コマンドは、*elementRef*で指定したXML要素中に現れるXML属性数を返します。<!-- END REF-->XML属性に関する詳細はの節を参照してください。

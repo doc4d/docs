@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.QUERY SELECTION WITH ARRAY.Summary-->QUERY SELECTION WITH ARRAY コマンドは1番目の引数に渡されたフィールドのテーブルを検索し、*targetField* が*array*要素のうち少なくともひとつの値に等しいレコードをカレントセレクションにします。<!-- END REF-->

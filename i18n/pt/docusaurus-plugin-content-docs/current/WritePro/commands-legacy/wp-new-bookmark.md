@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP NEW BOOKMARK.Summary-->O comando **WP NEW BOOKMARK** \[#/descv\]cria uma nova bookmark ou marcador de página chamado *nomeBookm* baseado na *FaixaObj* 4D Write Pro na faixa do documento pai.<!-- END REF--> \[#/descv\]

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.OB REMOVE.Summary-->**OB REMOVE**コマンドは、*object* 引数で指定したランゲージオブジェクトの、 *property* 引数で指定したプロパティを削除します。<!-- END REF-->

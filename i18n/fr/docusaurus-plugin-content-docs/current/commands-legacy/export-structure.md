@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.EXPORT STRUCTURE.Summary-->La commande **EXPORT STRUCTURE** exporte la définition de la structure de la base 4D courante dans exportedStructure.<!-- END REF-->

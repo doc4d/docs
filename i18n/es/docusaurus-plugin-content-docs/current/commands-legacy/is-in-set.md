@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Is in set.Summary-->Is in set prueba si el registro actual de la tabla está en *conjunto*.<!-- END REF--> La función Is in set devuelve TRUE si el registro actual de la tabla está en *conjunto*, y FALSE si el registro actual de la tabla no está en *conjunto*.

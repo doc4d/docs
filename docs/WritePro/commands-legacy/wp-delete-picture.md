@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WP DELETE PICTURE.Summary-->The **WP DELETE PICTURE** command deletes the image defined by the *imgObj* parameter.<!-- END REF-->

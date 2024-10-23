@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP INSERT DOCUMENT.Summary-->La commande **WP INSERT DOCUMENT** insère le document *docWP* dans la plage *objCible* selon le *mode* d'insertion spécifié et le paramètre *miseAJourPlage*.<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.JSON Stringify array.Summary-->O comando **JSON Stringify array** converte o array *array* 4D em um array JSON serializado.<!-- END REF--> Este comando realiza a ação inversa do comando [JSON PARSE ARRAY](json-parse-array.md).  

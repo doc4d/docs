@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP Get text.Summary-->**WP Get text** コマンドは*targetObj* 引数で指定した4D Write Pro ドキュメントのテキストのコンテンツを取得します。<!-- END REF-->

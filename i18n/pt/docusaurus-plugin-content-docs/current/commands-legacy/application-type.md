@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Application type.Summary-->O comando Application type retorna um valor numérico que representa o tipo de ambiente 4D que você está utilizando.<!-- END REF--> 4D oferece as seguintes constantes pré-definidas:

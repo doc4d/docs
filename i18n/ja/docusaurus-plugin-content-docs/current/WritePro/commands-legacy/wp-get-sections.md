@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP Get sections.Summary-->**WP Get sections** コマンドは*targetObj* 引数内に定義されている全てのセクションのコレクションを返します。<!-- END REF-->*targetObj* 引数には、以下のいづれかを渡すことができます:

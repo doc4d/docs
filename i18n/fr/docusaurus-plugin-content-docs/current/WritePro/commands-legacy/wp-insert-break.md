@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP INSERT BREAK.Summary-->La commande **WP INSERT BREAK** insère une nouvelle rupture de type *typeRupture* dans la plage de sélection *objCible* selon le mode d'insertion *mode* et le paramètre *miseAJourPlage*.<!-- END REF-->

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.RESOLVE ALIAS.Summary-->El comando RESOLVE ALIAS devuelve la ruta completa del archivo o carpeta objetivo de un alias (llamado atajo bajo Windows).<!-- END REF--> 

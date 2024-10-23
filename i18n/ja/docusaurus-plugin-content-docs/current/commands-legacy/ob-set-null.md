@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.OB SET NULL.Summary-->**OB SET NULL**コマンドは、*object* 引数で指定したランゲージオブジェクトの中に**null値**を保存します。<!-- END REF-->

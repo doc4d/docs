@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP DELETE BOOKMARK.Summary-->**WP DELETE BOOKMARK** コマンドは*wpDoc* 引数で指定した4D Write Proドキュメント内の、*bkName* 引数で指定した名前のブックマークを削除します。<!-- END REF-->

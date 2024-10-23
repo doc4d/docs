@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Process aborted.Summary-->**Process aborted**コマンドは、このコマンドを呼び出したプロセスが不意に中断されようとしている場合**True**を返します。<!-- END REF-->これはコマンドの実行が正常に完了できないことを意味します。

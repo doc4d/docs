@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP DELETE FOOTER.Summary-->O comando **WP DELETE FOOTER** elimina o elemento do rodapé associado à seção ou subseção definida pelo parâmetro *wpSection*.<!-- END REF--> 

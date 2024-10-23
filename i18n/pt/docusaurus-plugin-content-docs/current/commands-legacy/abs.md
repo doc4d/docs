@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Abs.Summary-->Abs retorna o valor absoluto (positivo e sem sinal) de *numero*.<!-- END REF--> Se *numero* for negativo, é retornado seu valor positivo. Se *numero* for positivo, ele é retornado sem alterações.

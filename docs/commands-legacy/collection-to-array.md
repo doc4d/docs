@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.COLLECTION TO ARRAY.Summary-->The **COLLECTION TO ARRAY** command fills one or more *array*(s) with elements or *propertyName* values from the *collection* into the *array*(s).<!-- END REF-->

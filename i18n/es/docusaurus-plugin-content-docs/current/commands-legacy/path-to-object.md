@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Path to object.Summary-->El comando **Path to object**  devuelve un objeto que contiene las propiedades específicas de la *ruta* que pasó en el parámetro.<!-- END REF--> 

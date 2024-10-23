@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.CANCEL TRANSACTION.Summary-->**CANCEL TRANSACTION**は、対応するレベルの[START TRANSACTION](start-transaction.md)で開始したカレントプロセスのトランザクションをキャンセルします。<!-- END REF-->**CANCEL TRANSACTION**は、トランザクション中にデータ上で実行された処理をキャンセルします。

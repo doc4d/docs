@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Change string.Summary-->Change string changes a group of characters in *source* and returns the resulting string.<!-- END REF--> The command overlays *source*, with the characters in *newChars*, at the character described by *where*.

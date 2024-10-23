@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.RECEIVE RECORD.Summary-->**RECEIVE RECORD** ajoute dans *laTable* un enregistrement reçu par l'intermédiaire du port série ou d'un document ouvert par la commande [SET CHANNEL](set-channel.md).<!-- END REF--> L'enregistrement doit avoir été envoyé par la commande [SEND RECORD](send-record.md). Lorsque vous exécutez **RECEIVE RECORD**, un nouvel enregistrement est automatiquement créé dans *laTable*. Si l'enregistrement a été correctement reçu, vous pouvez le sauvegarder à l'aide de [SAVE RECORD](save-record.md).

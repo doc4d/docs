@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.NO DEFAULT TABLE.Summary-->La commande **NO DEFAULT TABLE** permet d’annuler l’effet de la commande [DEFAULT TABLE](default-table.md).<!-- END REF--> Après l’exécution de cette commande, il n’y a plus de table par défaut définie pour le process.   

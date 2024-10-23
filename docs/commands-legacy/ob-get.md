@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.OB Get.Summary-->The **OB Get** command returns the current value of the *property* of the *object*, optionally converted into the *type* specified.<!-- END REF-->

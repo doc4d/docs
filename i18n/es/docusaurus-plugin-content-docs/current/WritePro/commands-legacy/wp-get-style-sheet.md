@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WP Get style sheet.Summary-->El comando **WP Get style sheet** devuelve el objeto de hoja de estilo designado por *nomHojaEstilo*.<!-- END REF-->

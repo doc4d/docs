@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Find in array.Summary-->**Find in array** retourne le numéro du premier élément de *tableau* qui correspond à *valeur*.<!-- END REF-->

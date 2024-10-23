@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Windows Ctrl down.Summary-->**Windows Ctrl down** returns TRUE if the Windows Ctrl key is pressed.<!-- END REF-->

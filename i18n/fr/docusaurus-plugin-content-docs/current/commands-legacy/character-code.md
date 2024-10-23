@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Character code.Summary-->La commande **Character code** retourne le code Unicode UTF-16 (compris entre 1 et 65535) de *unCaractère*.<!-- END REF-->

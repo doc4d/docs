@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.REJECT NEW REMOTE CONNECTIONS.Summary-->La commande **REJECT NEW REMOTE CONNECTIONS** permet d'indiquer si le serveur d'application accepte ou non de nouvelles connexions depuis des 4D distants.<!-- END REF--> 

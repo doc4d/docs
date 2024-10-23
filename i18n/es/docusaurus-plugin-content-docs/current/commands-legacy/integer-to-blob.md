@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.INTEGER TO BLOB.Summary-->El comando INTEGER TO BLOB escribe el valor entero (2 bytes) *entero* en el BLOB *blob*.<!-- END REF-->

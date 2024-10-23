@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.SUSPEND TRANSACTION.Summary-->La commande **SUSPEND TRANSACTION** suspend les mécanismes de la transaction courante dans le process courant.<!-- END REF--> Vous pouvez alors manipuler des données dans d'autres parties de la base, sans qu'elles soient contrôlées par la transaction, tout en préservant le contexte courant de la transaction. Tout enregistrement qui a été mis à jour ou ajouté durant la transaction est verrouillé jusqu'à ce que la transaction soit réactivée à l'aide de la commande [RESUME TRANSACTION](resume-transaction.md).

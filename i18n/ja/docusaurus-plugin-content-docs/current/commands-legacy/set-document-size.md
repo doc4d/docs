@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.SET DOCUMENT SIZE.Summary-->SET DOCUMENT SIZE コマンドは、ドキュメントのサイズを引数*size*に渡したバイト数に設定します。<!-- END REF--> 

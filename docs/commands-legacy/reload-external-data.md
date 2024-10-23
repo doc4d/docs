@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.RELOAD EXTERNAL DATA.Summary-->The **RELOAD EXTERNAL DATA** command reloads the contents in memory of an external storage file associated with a BLOB, Picture, or Text type field.<!-- END REF-->

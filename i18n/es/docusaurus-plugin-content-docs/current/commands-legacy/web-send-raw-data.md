@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WEB SEND RAW DATA.Summary-->El comando **WEB SEND RAW DATA** permite al servidor web 4D enviar datos HTTP "brutos", los cuales pueden estar en trozos.<!-- END REF--> 

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.SET BLOB SIZE.Summary-->SET BLOB SIZE redimensiona el BLOB *blob* de acuerdo al valor pasado en *tamaño*.<!-- END REF-->

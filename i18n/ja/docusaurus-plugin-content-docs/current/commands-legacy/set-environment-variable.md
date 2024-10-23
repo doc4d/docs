@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.SET ENVIRONMENT VARIABLE.Summary-->**SET ENVIRONMENT VARIABLE**コマンドを用いて、macOS とWindowsで環境変数値を設定できます。<!-- END REF-->このコマンドは[LAUNCH EXTERNAL PROCESS](launch-external-process.md)コマンドと共に使用します。また[PHP Execute](php-execute.md)コマンドとも動作します。

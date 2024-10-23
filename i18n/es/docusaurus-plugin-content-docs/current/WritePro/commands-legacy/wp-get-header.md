@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WP Get header.Summary-->El comando **WP Get header** devuelve el encabezado asociado al rango *objRango* o al *indiceSeccion* del documento *wpDoc*.<!-- END REF--> Si no se encuentra ningún encabezado con respecto a los parámetros, el comando devuelve **Null**.

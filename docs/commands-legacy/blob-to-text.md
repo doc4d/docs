@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.BLOB to text.Summary-->The BLOB to text command returns a Text value read from the BLOB *blob*.<!-- END REF-->

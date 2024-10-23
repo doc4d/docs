@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.SAX GET XML COMMENT.Summary-->La commande **SAX GET XML COMMENT** retourne un *commentaire* si un événement SAX de type XML comment est généré dans le document XML référencé par *document*.<!-- END REF--> Pour plus d'informations sur les événements SAX, reportez-vous à la description de la commande [SAX Get XML node](sax-get-xml-node.md). 

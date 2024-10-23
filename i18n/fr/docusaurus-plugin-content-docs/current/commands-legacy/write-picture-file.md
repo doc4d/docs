@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WRITE PICTURE FILE.Summary-->La commande **WRITE PICTURE FILE** vous permet de sauvegarder dans un fichier sur disque l’image passée dans le paramètre *image*, au format défini par *codec*.<!-- END REF--> 

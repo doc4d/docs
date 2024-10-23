@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Records in set.Summary-->**Records in set** retourne le nombre d'enregistrements présents dans *ensemble*.<!-- END REF--> Si *ensemble* n'existe pas ou s'il n'y a pas d'enregistrements dans *ensemble*, **Records in set** retourne 0.

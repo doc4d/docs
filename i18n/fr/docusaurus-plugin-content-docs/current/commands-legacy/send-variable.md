@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.SEND VARIABLE.Summary-->**SEND VARIABLE** envoie *variable* vers le document ou le port série préalablement ouvert par la commande [SET CHANNEL](set-channel.md).<!-- END REF--> La variable est envoyée dans un format interne spécial qui ne peut être relu que par la commande [RECEIVE VARIABLE](receive-variable.md). **SEND VARIABLE** envoie la totalité de la variable (y compris son type et sa valeur).

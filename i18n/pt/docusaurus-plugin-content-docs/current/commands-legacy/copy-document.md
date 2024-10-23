@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.COPY DOCUMENT.Summary-->O comando **COPY DOCUMENT** copia o documento especificado por *nomFonte* na localização especificada por *nomDest*.<!-- END REF-->

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WEB SET OPTION.Summary-->O comando WEB SET OPTION modifica o valor atual das diferentes opções de funcionamento do servidor web de 4D.<!-- END REF-->

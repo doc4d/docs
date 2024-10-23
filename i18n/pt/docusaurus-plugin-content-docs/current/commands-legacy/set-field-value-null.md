@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.SET FIELD VALUE NULL.Summary-->O comando SET FIELD VALUE NULL atribui o valor NULL ao campo designado pelo parâmetro *campo*.<!-- END REF-->  

@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.DOM SET XML DECLARATION.Summary-->The **DOM SET XML DECLARATION** command allows you to define various options that are useful in creating the XML tree set using *elementRef*.<!-- END REF--> These options concern the encoding and the standalone property of the tree:

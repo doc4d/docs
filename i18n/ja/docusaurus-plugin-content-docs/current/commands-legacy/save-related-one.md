@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.SAVE RELATED ONE.Summary-->SAVE RELATED ONEは、*aField*にリレートするレコードを保存します。<!-- END REF-->[CREATE RELATED ONE](create-related-one.md "CREATE RELATED ONE")で新しく作成したレコードを更新する、または[RELATE ONE](relate-one.md "RELATE ONE")でロードし修正したレコードを保存するために、SAVE RELATED ONEコマンドを実行します。

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.ARRAY TO SELECTION.Summary-->La commande **ARRAY TO SELECTION** copie un ou plusieurs tableau(x) vers une sélection d'enregistrements.<!-- END REF--> Tous les champs listés doivent appartenir à la même table.

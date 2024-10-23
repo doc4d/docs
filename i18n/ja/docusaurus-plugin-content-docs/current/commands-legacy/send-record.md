@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.SEND RECORD.Summary-->SEND RECORD は、*aTable*のカレントレコードを[SET CHANNEL](set-channel.md "SET CHANNEL")コマンドで開いたシリアルポートまたはドキュメントに送信します。<!-- END REF-->レコードは特別な内部フォーマットで送信され、[RECEIVE RECORD](receive-record.md "RECEIVE RECORD")でのみ読み込むことができます。カレントレコードが存在しなければ、SEND RECORDは何も行いません。

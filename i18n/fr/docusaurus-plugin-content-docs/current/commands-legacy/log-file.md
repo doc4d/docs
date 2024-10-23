@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Log File.Summary-->La commande **Log File** retourne le nom long (c’est-à-dire le chemin d’accès complet au fichier, y compris son nom) du fichier d’historique courant de la base ouverte.<!-- END REF--> 

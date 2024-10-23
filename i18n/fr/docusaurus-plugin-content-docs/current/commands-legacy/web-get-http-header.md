@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WEB GET HTTP HEADER.Summary-->La commande **WEB GET HTTP HEADER** retourne, soit sous forme de chaîne, soit sous forme de deux tableaux, l’en-tête HTTP de la requête en cours de traitement.<!-- END REF-->

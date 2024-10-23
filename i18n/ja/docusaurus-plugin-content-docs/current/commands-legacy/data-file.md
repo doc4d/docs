@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Data file.Summary-->Data file コマンドは、現在使用しているデータベースのデータファイルのロング名を返します。<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Convert path system to POSIX.Summary-->La commande **Convert path system to POSIX** convertit un chemin d’accès exprimé avec la syntaxe système en chemin d’accès exprimé avec la syntaxe POSIX (Unix).<!-- END REF--> 

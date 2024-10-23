@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.ARRAY TIME.Summary-->La commande **ARRAY TIME** crée et/ou redimensionne un tableau d’éléments de type Heure en mémoire.<!-- END REF-->

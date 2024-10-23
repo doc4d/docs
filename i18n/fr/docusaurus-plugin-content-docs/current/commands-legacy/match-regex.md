@@ -25,9 +25,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Match regex.Summary-->La commande **Match regex** permet de tester la conformité d’une chaîne de caractères par rapport à un ensemble de règles synthétisé au moyen d’un méta-langage appelé “expression régulière” ou “expression rationnelle”.<!-- END REF--> L’abrévation regex est communément employée pour désigner ces familles de notations. 

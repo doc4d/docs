@@ -14,9 +14,6 @@ displayed_sidebar: docs
 |Result|4D.ZipArchive|&#8592;|Archive object|
 <!-- END REF -->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 <details><summary>History</summary>
 
 |Release|Changes|

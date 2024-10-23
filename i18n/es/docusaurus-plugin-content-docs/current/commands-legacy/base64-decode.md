@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.BASE64 DECODE.Summary-->El comando **BASE64 DECODE** decodifica el texto o valor de blob codificado en formato Base64 o Base64URL pasado en el parámetro *aDecodificar*.<!-- END REF--> Para más información sobre los formatos Base64 y Base64URL, consulte la descripción del comando [BASE64 ENCODE](base64-encode.md). 

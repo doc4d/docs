@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.ARRAY TIME.Summary-->The **ARRAY TIME** command creates and/or resizes an array of Time type elements in memory.<!-- END REF-->

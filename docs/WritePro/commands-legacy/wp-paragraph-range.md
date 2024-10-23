@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Compatibility 
 
 <!--REF #_command_.WP Paragraph range.Summary-->**WP Paragraph range** was named **WP Create Paragraph range** in previous versions of 4D Write Pro.<!-- END REF--> It has been renamed for clarity. 

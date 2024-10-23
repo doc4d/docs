@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Time string.Summary-->Time string コマンドは、*seconds*に渡した時間式の文字列を返します。<!-- END REF-->

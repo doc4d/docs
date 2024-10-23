@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.INSERT IN ARRAY.Summary-->O comando INSERT IN ARRAY insere um ou mais elementos no *array*.<!-- END REF--> Os novos elementos são inseridos antes do elemento especificado por *onde*, e são inicializados no valor vacio do tipo de array. Todos os elementos além de *onde* são movidos consequentemente no array por um valor de um ou pelo valor especificado em *quantos*.

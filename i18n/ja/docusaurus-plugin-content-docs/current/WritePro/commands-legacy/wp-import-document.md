@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP Import document.Summary-->**WP Import document** コマンドは既存の4D Write Proドキュメント/4D Write ドキュメント(.4w7 または .4wt)を新規の4D Write Proオブジェクトへと変換します。<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.DOM Get XML information.Summary-->La commande **DOM Get XML information** permet de récupérer diverses informations sur l’élément XML désigné par *refElément*.<!-- END REF--> 

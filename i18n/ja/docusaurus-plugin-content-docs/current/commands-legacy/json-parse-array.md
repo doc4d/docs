@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.JSON PARSE ARRAY.Summary-->**JSON PARSE ARRAY**コマンドは、JSONフォーマットの文字列の中身を解析し、取り出したデータを *array* 引数の配列の中へと入れます。<!-- END REF-->このコマンドはJSONデータをデシリアライズします。 [JSON Stringify array](json-stringify-array.md)コマンドと逆の挙動をします。

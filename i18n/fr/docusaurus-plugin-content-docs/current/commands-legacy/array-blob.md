@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.ARRAY BLOB.Summary-->La commande **ARRAY BLOB** crée ou redimensionne un tableau d’éléments de type Blob en mémoire.<!-- END REF-->

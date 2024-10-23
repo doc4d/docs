@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.PLUGIN LIST.Summary-->O comandoPLUGIN LISTpreenche os arrays *numerosArray* e *arraynomes* com os números e os nomes dos plug-ins carregados e utilizáveis pela aplicação 4D.<!-- END REF--> Estes dois arrays são dimensionados automaticamente e sincronizados pelo comando. 

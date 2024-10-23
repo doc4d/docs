@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Find in field.Summary-->Find in field コマンドは、*targetField*フィールドの値が*value*に等しい最初のレコードのレコード番号を返します。<!-- END REF-->何もレコードが見つからなければ、は-1を返します。

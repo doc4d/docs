@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WP Get page count.Summary-->El comando **WP Get page count** devuelve el número total de páginas definido en el *objRango* pasado en parámetro.<!-- END REF-->

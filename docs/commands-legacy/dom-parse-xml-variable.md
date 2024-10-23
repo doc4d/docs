@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.DOM Parse XML variable.Summary-->The DOM Parse XML variable command parses a BLOB or Text type variable containing an XML structure and returns a reference for this variable.<!-- END REF--> The command can validate (or not) the structure via a DTD or an XML schema (XML Schema Definition (XSD) document). 

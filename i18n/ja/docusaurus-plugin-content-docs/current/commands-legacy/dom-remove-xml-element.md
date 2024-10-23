@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DOM REMOVE XML ELEMENT.Summary-->DOM REMOVE XML ELEMENT コマンドは*elementRef*で指定した要素を取り除きます。<!-- END REF-->

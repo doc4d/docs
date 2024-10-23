@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Get view properties.Summary-->The **WP Get view properties** command returns the current view properties for the 4D Write Pro area designated by *wpArea*.<!-- END REF--> 

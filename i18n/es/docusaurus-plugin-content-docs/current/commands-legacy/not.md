@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Not.Summary-->La función Not devuelve la negación del *booleano*, cambiando Verdadero por Falso o Falso por Verdadero.<!-- END REF-->

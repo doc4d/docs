@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.DOM Get XML element.Summary-->El comando DOM Get XML element devuelve una referencia XML al elemento “hijo” dependiente de los parámetros *nomElement* e *index*.<!-- END REF--> 

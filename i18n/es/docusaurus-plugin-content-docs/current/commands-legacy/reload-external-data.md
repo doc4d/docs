@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.RELOAD EXTERNAL DATA.Summary-->El comando **RELOAD EXTERNAL DATA** permite recargar en memoria el contenido en memoria de un archivo de almacenamiento externo asociado a un campo de tipo BLOB, Imagen o Texto.<!-- END REF-->  

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.CREATE DATA FILE.Summary-->El comando **CREATE DATA FILE** permite crear un nuevo archivo de datos en disco y reemplazar rápidamente el archivo de datos abierto por la aplicación 4D.<!-- END REF--> 

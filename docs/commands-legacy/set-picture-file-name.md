@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.SET PICTURE FILE NAME.Summary-->The **SET PICTURE FILE NAME** command sets or changes the default file name for the picture passed as parameter.<!-- END REF-->

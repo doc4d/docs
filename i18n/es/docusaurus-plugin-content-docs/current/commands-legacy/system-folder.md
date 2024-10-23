@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.System folder.Summary-->El comando **System folder** devuelve la ruta de acceso a una carpeta particular del sistema operativo o a la carpeta activa del sistema Windows o macOS.<!-- END REF-->

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Register data key.Summary-->El comando **Register data key** agrega la llave de cifrado de datos pasada en el parámetro al llavero 4D.<!-- END REF-->

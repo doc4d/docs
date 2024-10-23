@@ -12,9 +12,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.START TRANSACTION.Summary-->START TRANSACTION starts a transaction in the current process.<!-- END REF--> All changes to the data (records) of the database within the transaction are stored temporarily until the transaction is accepted (validated) or canceled.

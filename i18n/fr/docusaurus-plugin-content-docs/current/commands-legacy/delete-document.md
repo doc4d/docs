@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.DELETE DOCUMENT.Summary-->**DELETE DOCUMENT** supprime le document dont vous avez passé le nom dans *document*.<!-- END REF-->

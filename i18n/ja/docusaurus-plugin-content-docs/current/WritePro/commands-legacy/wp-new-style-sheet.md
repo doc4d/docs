@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP New style sheet.Summary-->**WP New style sheet** コマンドは、*wpDoc* 引数で指定されたドキュメントに対して、新しい(空の)スタイルシートオブジェクトを作成します。<!-- END REF-->

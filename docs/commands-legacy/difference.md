@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.DIFFERENCE.Summary-->**DIFFERENCE** compares *set1* and *set2* and excludes all records that are in *set2* from the *resultSet*.<!-- END REF--> In other words, a record is included in the *resultSet* only if it is in *set1*, but not in *set2*. The following table shows all possible results of a set Difference operation.

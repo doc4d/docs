@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.DOM Append XML child node.Summary-->El comando DOM Append XML child node se utiliza para anexar el valor *valorHijo* al nodo XML designado por *refElement*.<!-- END REF-->   

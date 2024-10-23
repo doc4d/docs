@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.PICTURE TO BLOB.Summary-->La commande **PICTURE TO BLOB** convertit une image stockée dans une variable ou un champ 4D dans un autre format, et place l’image résultante dans un BLOB.<!-- END REF-->

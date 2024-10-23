@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.PAUSE INDEXES.Summary-->O comando **PAUSE INDEXES**  desativa temporariamente todos os índices de *aTabela*, exceto o índice da chave primária .<!-- END REF-->  

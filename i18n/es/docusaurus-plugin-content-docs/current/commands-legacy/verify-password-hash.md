@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Verify password hash.Summary-->La función **Verify password hash** verifica que el hash dado coincida con la *contrasena* dada.<!-- END REF-->

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.RESUME PROCESS.Summary-->**RESUME PROCESS** resumes a *process* whose execution has been paused or delayed.<!-- END REF--> If *process* is not paused or delayed, the command does nothing.

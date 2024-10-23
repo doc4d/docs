@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Records in selection.Summary-->Records in selectionは、*aTable*のカレントセレクションのレコード数を返します。<!-- END REF-->一方、[Records in table](records-in-table.md "Records in table")はテーブルの全レコード数を返します。

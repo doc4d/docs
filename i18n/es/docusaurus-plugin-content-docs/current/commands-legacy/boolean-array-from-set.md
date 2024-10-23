@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.BOOLEAN ARRAY FROM SET.Summary-->El comando BOOLEAN ARRAY FROM SET llena un array de booleanos indicando si cada registro en la tabla está o no en *conjunto*.<!-- END REF--> 

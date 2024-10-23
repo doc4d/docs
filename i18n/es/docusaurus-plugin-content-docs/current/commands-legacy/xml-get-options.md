@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.XML GET OPTIONS.Summary-->El comando **XML GET OPTIONS** se utiliza para obtener el valor actual de uno o más de los parámetros XML definidos para la sesión actual y el usuario actual.<!-- END REF--> 

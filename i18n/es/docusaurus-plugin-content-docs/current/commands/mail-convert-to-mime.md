@@ -25,9 +25,6 @@ displayed_sidebar: docs
 
 <!-- END REF -->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción
 
 El comando `MAIL Convert to MIME` <!-- REF #_command_.MAIL Convert to MIME.Summary -->convierte un objeto email en texto MIME<!-- END REF -->. This command is called internally by [SMTP_transporter.send()](../API/SMTPTransporterClass.md#send) to format the email object before sending it. Se puede utilizar para analizar el formato MIME del objeto.

@@ -19,9 +19,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.GET FIELD PROPERTIES.Summary-->El comando **GET FIELD PROPERTIES** devuelve información sobre el campo designado por *campPtr* o por *tablaNum* y *campNum*.<!-- END REF--> 

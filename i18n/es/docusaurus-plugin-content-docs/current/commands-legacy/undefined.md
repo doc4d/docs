@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Undefined.Summary-->Undefined devuelve True si el resultado de la evaluación de *expresion* no es un valor definido, y de lo contrario False.<!-- END REF-->

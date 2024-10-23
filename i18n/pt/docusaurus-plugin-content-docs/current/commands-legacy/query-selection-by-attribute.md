@@ -19,9 +19,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.QUERY SELECTION BY ATTRIBUTE.Summary-->**QUERY SELECTION BY ATTRIBUTE** realiza as mesmas ações que [QUERY BY ATTRIBUTE](query-by-attribute.md).<!-- END REF--> A diferença entre os dois comandos é o alcance da pesquisa:

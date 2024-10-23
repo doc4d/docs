@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.OLD RELATED MANY.Summary-->OLD RELATED MANYは、1フィールドの更新前の内容を使用してリレート処理を実行する以外は、[RELATE MANY](relate-many.md "RELATE MANY")コマンドと同じ処理を行います。<!-- END REF-->

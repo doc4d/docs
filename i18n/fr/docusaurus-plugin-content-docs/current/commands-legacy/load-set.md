@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.LOAD SET.Summary-->**LOAD SET** charge un ensemble depuis le fichier *nomFichier*, créé à l'aide de la commande [SAVE SET](save-set.md).<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.QUERY.Summary-->O comando QUERY pesquisa os registros que correspondem ao critério especificado em *criterioPesquisa* e devolve una seleção de registros de *tabela*.<!-- END REF--> QUERY modifica a seleção atual de tabela para o processo atual e volve o primeiro registro na nova seleção o registro atual.  

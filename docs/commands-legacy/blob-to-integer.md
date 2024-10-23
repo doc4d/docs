@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.BLOB to integer.Summary-->The BLOB to integer command returns a 2-byte Integer value read from the BLOB *blob*.<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DELETE FROM ARRAY.Summary-->**DELETE FROM ARRAY** コマンドは1つまたは複数の要素を*array*から削除します。<!-- END REF-->*where*引数の示す位置から要素の削除を開始します。

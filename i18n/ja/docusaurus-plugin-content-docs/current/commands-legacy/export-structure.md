@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.EXPORT STRUCTURE.Summary-->**EXPORT STRUCTURE** コマンドは、カレントの4Dデータベースのストラクチャー定義を*exportedStructure* へと書き出します。<!-- END REF-->

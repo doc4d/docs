@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Records in set.Summary-->Records in setコマンドは、*set*に含まれるレコードの数を返します。<!-- END REF-->*set*が存在しない場合、または*set*にレコードがない場合には0を返します。

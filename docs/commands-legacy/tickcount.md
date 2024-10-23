@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Tickcount.Summary-->Tickcount returns the number of ticks (60th of a second) elapsed since the machine was started.<!-- END REF-->

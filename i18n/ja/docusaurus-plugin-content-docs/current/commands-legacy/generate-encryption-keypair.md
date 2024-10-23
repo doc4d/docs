@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.GENERATE ENCRYPTION KEYPAIR.Summary-->GENERATE ENCRYPTION KEYPAIR コマンドは新しく1対のRSA鍵を生成します。<!-- END REF-->4Dの非対称暗号化機能はこの鍵を元にしていて、一般的にこれはネットワーク越しに安全なデータ交換を行う際(例: 4D Web サーバーとTLSプロトコルを使用する)に必要となります。

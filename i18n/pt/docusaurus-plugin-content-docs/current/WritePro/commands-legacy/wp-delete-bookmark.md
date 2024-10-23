@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP DELETE BOOKMARK.Summary-->O comando **WP DELETE BOOKMARK** elimina o marcador chamado *nombk de* *docWP*.<!-- END REF-->

@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.BLOB to text.Summary-->El comando BLOB to text devuelve un valor de tipo Texto leído del BLOB *blob*.<!-- END REF-->

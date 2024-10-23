@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.SAX OPEN XML ELEMENT.Summary-->The **SAX OPEN XML ELEMENT** command adds a new element in the XML document referenced by *document* as well as, optionally, attributes and their values.<!-- END REF--> 

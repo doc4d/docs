@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.ENCRYPT BLOB.Summary-->El comando ENCRYPT BLOB cifra el contenido del BLOB *aCifrar* con la ayuda de la llave privada del emisor *enviarLlavePriv*, así como también opcionalmente la llave pública del receptor *recepLlavePub*.<!-- END REF--> Estas llaves deben ser generadas por el comando [GENERATE ENCRYPTION KEYPAIR](generate-encryption-keypair.md) (en el tema “Protocolo de seguridad”). 

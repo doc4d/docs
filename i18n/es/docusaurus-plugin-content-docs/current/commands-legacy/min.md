@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Min.Summary-->**Min** devuelve el valor mínimo en *series*.<!-- END REF--> Si *series* es un campo indexado, el índice se utiliza para encontrar el valor mínimo. 

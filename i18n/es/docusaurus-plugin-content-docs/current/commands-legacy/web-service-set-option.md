@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Nota preliminar 
 
 <!--REF #_command_.WEB SERVICE SET OPTION.Summary-->Este comando está diseñado para los usuarios de servicios web.<!-- END REF--> Su uso es opcional. 

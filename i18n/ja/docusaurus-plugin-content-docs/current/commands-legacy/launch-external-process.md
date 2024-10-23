@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 互換性に関する注意 
 
 <!--REF #_command_.LAUNCH EXTERNAL PROCESS.Summary-->4D v19 R4 以降、外部プロセスを実行して管理するためには*SystemWorker class* の使用が推奨されます。<!-- END REF-->しかしながら、このコマンドも引き続きサポートされます。

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.XML DECODE.Summary-->XML DECODE コマンドはXML文字列に格納されている値を4D型の値に変換します。<!-- END REF--> 変換は以下のルールに基づいて自動で行われます: 

@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.COMBINE PICTURES.Summary-->La commande **COMBINE PICTURES** permet de combiner les images *image1* et *image2* en mode *opérateur* pour en produire une troisième, *imageRésultat*.<!-- END REF--> L’image résultat est de type composé et conserve toutes les caractéristiques des images sources.

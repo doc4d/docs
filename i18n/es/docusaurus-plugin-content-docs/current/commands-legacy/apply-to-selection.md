@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.APPLY TO SELECTION.Summary-->**APPLY TO SELECTION** aplica *sentencia* a cada registro de la selección actual de *tabla*.<!-- END REF--> La *sentencia* puede ser una línea de instrucciones o un método. Si *sentencia* modifica un registro de *tabla*, el registro modificado se guarda. Si *sentencia* no modifica un registro, el registro no se guarda. Si la selección actual está vacía, **APPLY TO SELECTION** no tiene efecto. Si la relación es automática, la *sentencia* puede contener un campo de una tabla relacionada.

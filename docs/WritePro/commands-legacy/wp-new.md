@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WP New.Summary-->The **WP New** command creates and returns a 4D Write Pro object.<!-- END REF--> The returned object is a complete document that can be passed to the [WP INSERT DOCUMENT](wp-insert-document.md) command, for example.

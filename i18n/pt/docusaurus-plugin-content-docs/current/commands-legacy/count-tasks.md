@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Count tasks.Summary-->Count tasks devolve o número de processos abertos mais alto em uma máquina 4D remota, 4D Server (procedimentos armazenados) ou monousuário de 4D.<!-- END REF--> Os processos são enumerados na ordem em foram criados. Quando ainda não tiver interrompido nenhum processo durante a sessão, este comando retorna o número total de processos abertos.

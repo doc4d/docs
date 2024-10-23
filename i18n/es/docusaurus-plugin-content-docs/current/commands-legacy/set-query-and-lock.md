@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.SET QUERY AND LOCK.Summary-->El comando SET QUERY AND LOCK permite solicitar el bloqueo automático de los registros encontrados por todas las búsquedas que siguen el llamado de este comando en la transacción actual.<!-- END REF--> Esto significa que los registros no pueden ser modificados por un proceso diferente al proceso actual entre una búsqueda y la manipulación de resultados.

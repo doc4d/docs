@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WEB SET HOME PAGE.Summary-->**WEB SET HOME PAGE**コマンドを使用して、現在のWebプロセス用のカスタムホームページを変更します。<!-- END REF-->

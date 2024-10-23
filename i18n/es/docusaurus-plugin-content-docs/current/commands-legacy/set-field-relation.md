@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.SET FIELD RELATION.Summary-->El comando SET FIELD RELATION permite definir separadamente el estado automático/manual de cada relación de la base para el proceso actual, sin tener en cuenta su estado inicial definido en el entorno Diseño en la ventana de propiedades de las relaciones.<!-- END REF--> 

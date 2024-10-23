@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP Get breaks.Summary-->**WP Get breaks** コマンドは*targetObj* 引数のターゲット内に挿入されている全てのブレークを格納したコレクションを返します。<!-- END REF-->

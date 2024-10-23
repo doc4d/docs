@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Log.Summary-->Log は*number*の自然対数を返します。<!-- END REF-->LogはExpの逆の演算を実行する関数です。

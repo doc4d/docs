@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.CUT NAMED SELECTION.Summary-->CUT NAMED SELECTION は、命名セレクション*name*を作成し、*aTable*のカレントセレクションをそこへ移します。<!-- END REF-->このコマンドは、カレントセレクションをコピーするのではなく、移動する点が[COPY NAMED SELECTION](copy-named-selection.md "COPY NAMED SELECTION")コマンドと異なります。

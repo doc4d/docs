@@ -19,9 +19,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.On Web Authentication database method.Summary-->**On Web Authenticationデータベースメソッド**はWebサーバーエンジンへのアクセス管理を担当します。<!-- END REF-->このデータベースメソッドは、Webブラウザーからのリクエストがサーバー上の4Dメソッド (**4DACTION** URLや**4DSCRIPT** などを使用して呼び出されるメソッド) の実行を必要とするとき、4Dから呼ばれます。

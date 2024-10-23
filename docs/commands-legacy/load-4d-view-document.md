@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Load 4D View document.Summary-->The **Load 4D View document** command allows you to convert a 4D View document into a 4D object.<!-- END REF--> 

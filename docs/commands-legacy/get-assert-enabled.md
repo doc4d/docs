@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Get assert enabled.Summary-->The **Get assert enabled** command returns True or False according to whether or not assertions are enabled in the current process.<!-- END REF--> For more information about assertions, please refer to the description of the [ASSERT](assert.md) command. 

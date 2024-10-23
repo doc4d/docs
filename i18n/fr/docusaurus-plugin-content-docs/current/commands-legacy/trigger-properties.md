@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.TRIGGER PROPERTIES.Summary-->La commande **TRIGGER PROPERTIES** fournit des informations sur le niveau d'exécution du trigger que vous avez passé dans *niveauTrigger*.<!-- END REF--> Vous devez utiliser conjointement **TRIGGER PROPERTIES** et [Trigger level](trigger-level.md) pour effectuer différentes actions en fonction de la cascade du trigger. Reportez-vous à la description des triggers en cascade dans la section *Présentation des triggers*.

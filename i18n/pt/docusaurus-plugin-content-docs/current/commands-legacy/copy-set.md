@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.COPY SET.Summary-->O comando COPY SET copia o conteúdo do conjunto *comOrigem* no conjunto *comDestino*.<!-- END REF-->  

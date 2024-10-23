@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.SAVE RELATED ONE.Summary-->**SAVE RELATED ONE** saves the record related to *aField*.<!-- END REF--> Execute this command to update a record created with [CREATE RELATED ONE](create-related-one.md), or to save modifications to a record loaded with [RELATE ONE](relate-one.md).

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Records in selection.Summary-->Records in selection retorna o número de registros na seleção atual de *tabela*.<!-- END REF--> Por outro lado, [Records in table](records-in-table.md) retorna o número total de registros na tabela.  

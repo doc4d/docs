@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.COPY ARRAY.Summary-->The COPY ARRAY command creates or overwrites the destination array *destination* with the exact contents, size, and type of the source array *source*.<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP New subsection.Summary-->**WP New subsection** コマンドは、*wpSection* 引数で指定した4D Write Pro セクション内に*subSectionType* 引数で指定した型の新しいサブセクションを作成し、それを返します。<!-- END REF-->

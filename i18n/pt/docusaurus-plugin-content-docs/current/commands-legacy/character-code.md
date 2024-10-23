@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Character code.Summary-->O comando Character code devolve o código Unicode UTF-16 (incluído entre 1 e 65535) de *umCaractere*.<!-- END REF-->   

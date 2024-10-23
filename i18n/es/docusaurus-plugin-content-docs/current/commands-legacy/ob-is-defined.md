@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.OB Is defined.Summary-->El comando **OB Is defined** devuelve **True** si *objeto* o *propiedad* se definen y **False** en caso contrario.<!-- END REF-->  

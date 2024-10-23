@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.GOTO RECORD.Summary-->**GOTO RECORD** sélectionne l'enregistrement courant de *table*.<!-- END REF--> Le paramètre *enregistrement* est le numéro renvoyé par la fonction [Record number](record-number.md). Après l'exécution de cette commande, l'enregistrement est le seul de la sélection courante.

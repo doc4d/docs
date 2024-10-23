@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.SET TIMEOUT.Summary-->O comando SET TIMEOUT especifica quanto tempo um comando de porta serial tem para terminar.<!-- END REF--> Se o comando da porta serial não for concluído dentro do tempo especificado, em *segundos*, o comando da porta serial é cancelado, um erro -9990 é gerado, e a variável de sistema OK é definida como 0\. Você pode pegar o erro com um método de tratamento de erros instalado usando [ON ERR CALL](on-err-call.md "ON ERR CALL").

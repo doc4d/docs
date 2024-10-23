@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.REJECT NEW REMOTE CONNECTIONS.Summary-->The **REJECT NEW REMOTE CONNECTIONS** command specifies whether or not the application server accepts new remote user connections.<!-- END REF--> 

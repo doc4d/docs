@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Note préliminaire 
 
 <!--REF #_command_.WEB SERVICE SET OPTION.Summary-->Cette commande est destinée aux utilisateurs avancés des Web Services.<!-- END REF--> Son emploi est facultatif. 

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.ARRAY LONGINT.Summary-->O comando ARRAY LONGINT cria e/ou redimensiona um array de elementos de tipo Intero longo de 4 bytes em memória.<!-- END REF-->

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Modified record.Summary-->Modified record devuelve True si el registro actual de *tabla* se modificó pero no guardó; de lo contrario devuelve False.<!-- END REF--> Esta función permite determinar rápidamente si el registro necesita ser guardado. En los formularios de entrada, puede efectuar la prueba antes de pasar al siguiente registro. Esta función siempre devuelve [TRUE](true.md "TRUE") para un nuevo registro.

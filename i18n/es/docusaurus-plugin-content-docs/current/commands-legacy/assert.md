@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.ASSERT.Summary-->El comando **ASSERT**evalúa la aserción *expresionBool* pasada en parámetro y, si se vuelve falsa, interrumpe la ejecución del código y muestra un error.<!-- END REF-->

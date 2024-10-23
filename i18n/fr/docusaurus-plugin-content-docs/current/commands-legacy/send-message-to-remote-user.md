@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.SEND MESSAGE TO REMOTE USER.Summary-->La commande **SEND MESSAGE TO REMOTE USER** permet d'envoyer un message à tous les utilisateurs distants ou à un utilisateur distant spécifique.<!-- END REF--> 

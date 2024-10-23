@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.DIFFERENCE.Summary-->DIFFERENCE fusiona *conjunto1* y *conjunto2* y excluye del conjunto *resultado* todos los registros de *conjunto2*.<!-- END REF--> En otras palabras, un registro se incluye en el *resultado* sólo si está en *conjunto1*, pero no en *conjunto2*. La siguiente tabla muestra todos los resultados posibles de una operación de diferencia de conjuntos. 

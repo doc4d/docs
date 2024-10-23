@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.EXECUTE FORMULA.Summary-->**EXECUTE FORMULA** exécute *instruction* comme une ligne de code.<!-- END REF--> Cette commande est destinée à être utilisée lorsque vous devez évaluer des expressions qui peuvent être construites ou modifiées par l'utilisateur. 

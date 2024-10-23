@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.Is in set.Summary-->**Is in set** teste si l'enregistrement courant de la table est inclus dans *ensemble*.<!-- END REF--> La fonction **Is in set** retourne Vrai si l'enregistrement courant de la table est dans *ensemble*, et retourne Faux si l'enregistrement courant de la table n'est pas dans *ensemble*.

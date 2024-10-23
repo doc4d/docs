@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.REJECT NEW REMOTE CONNECTIONS.Summary-->O comando **REJECT NEW REMOTE CONNECTIONS** especifica se o servidor de aplicações aceita ou não as novas conexões de usuários remotos.<!-- END REF--> 

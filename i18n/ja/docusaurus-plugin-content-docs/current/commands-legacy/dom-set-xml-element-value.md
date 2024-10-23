@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DOM SET XML ELEMENT VALUE.Summary-->**DOM SET XML ELEMENT VALUE** コマンドを使用して、*elementRef* で指定した要素の値を更新できます。<!-- END REF-->

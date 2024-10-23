@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.DESCRIBE QUERY EXECUTION.Summary-->O comando DESCRIBE QUERY EXECUTION permite ativar ou desativar o modo de análise da execução de pesquisas para o processo atual.<!-- END REF--> O comando funciona unicamente no contexto dos comandos de pesquisa da linguagem 4D tal como [QUERY](query.md).   

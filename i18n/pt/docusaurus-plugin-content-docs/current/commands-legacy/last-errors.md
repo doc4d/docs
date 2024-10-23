@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Last errors.Summary-->O comando **Last errors** devolve a pilha atual de erros da aplicação 4D como uma coleção de objetos de erro, ou **null** se não tiver produzido nenhum erro.<!-- END REF--> A pilha de erros inclui os objetos enviados pelo comando [throw](throw.md), se houver.

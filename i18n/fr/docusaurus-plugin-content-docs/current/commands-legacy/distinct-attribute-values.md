@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.DISTINCT ATTRIBUTE VALUES.Summary-->La commande **DISTINCT ATTRIBUTE VALUES** crée et remplit le tableau *tabValeurs* avec les valeurs uniques présentes dans l'attribut *cheminAttribut* du champ objet *champObjet* et ce, pour la sélection courante de la table à laquelle appartient le champ.<!-- END REF--> Notez que le champ *champObjet* doit être type Objet, sinon une erreur est retournée. La commande peut être utilisée avec des champs indexés ou non indexés. 

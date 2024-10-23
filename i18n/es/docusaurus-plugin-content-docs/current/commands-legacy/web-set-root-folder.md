@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WEB SET ROOT FOLDER.Summary-->El comando **WEB SET ROOT FOLDER** se utiliza para modificar la carpeta raíz por defecto en la cual 4D busca los archivos HTML pedidos al servidor web.<!-- END REF--> 

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.PAUSE INDEXES.Summary-->El comando **PAUSE INDEXES** desactiva temporalmente todos los índices de *laTabla*, excepto el índice de la llave primaria .<!-- END REF-->  

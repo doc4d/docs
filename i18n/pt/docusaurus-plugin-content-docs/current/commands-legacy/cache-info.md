@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Cache info.Summary-->O comando **Cache info** devolve um objeto que contenha a informação detalhada sobre o conteúdo atual da caché (memória utilizada, tabelas e índices carregados, etc.)

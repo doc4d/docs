@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.PICTURE CODEC LIST.Summary-->La commande **PICTURE CODEC LIST** remplit le tableau *tabCodecs* avec la liste des identifiants des codecs d’images disponibles sur la machine où elle est exécutée.<!-- END REF--> Cette liste comporte les codecs des formats d’images gérés en natif par 4D.

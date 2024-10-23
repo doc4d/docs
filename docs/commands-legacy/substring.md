@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Substring.Summary-->The **Substring** command returns the portion of *source* defined by *firstChar* and *numChars*.<!-- END REF--> 

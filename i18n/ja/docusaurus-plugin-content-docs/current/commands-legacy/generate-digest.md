@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Generate digest.Summary-->**Generate digest**コマンドはBLOBやテキストのDigestキーを指定したアルゴリズムで生成して返します。<!-- END REF-->

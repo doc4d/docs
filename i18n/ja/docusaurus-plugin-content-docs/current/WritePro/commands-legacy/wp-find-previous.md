@@ -18,9 +18,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP Find previous.Summary-->**WP Find previous** コマンドは、コマンドは*targetObj* 引数のオブジェクト内の*searchBefore* 引数で指定したレンジの前の部分内を、*searchValue* 引数の値を、*searchCondition* 引数の検索条件に基づいて検索を行います。<!-- END REF--> また任意の引数を使用することで見つかった結果を置き換えることができます。

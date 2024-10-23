@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.GET FIELD RELATION.Summary-->The **GET FIELD RELATION** command lets you find out the automatic/manual status of the relation starting from *manyField* for the current process.<!-- END REF--> You can view any relation, including automatic relations set in the Structure window.

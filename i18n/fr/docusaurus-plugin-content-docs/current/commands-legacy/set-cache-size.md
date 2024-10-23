@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.SET CACHE SIZE.Summary-->La commande **SET CACHE SIZE** fixe dynamiquement la taille du cache de la base de données et, optionnellement, permet de fixer la taille minimum en octets à partir de laquelle on commence à libérer la mémoire.<!-- END REF-->.

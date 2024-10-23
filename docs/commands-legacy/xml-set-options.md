@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.XML SET OPTIONS.Summary-->The **XML SET OPTIONS** command is used to modify the value of one or more XML options for the structure passed in the first parameter.<!-- END REF--> 

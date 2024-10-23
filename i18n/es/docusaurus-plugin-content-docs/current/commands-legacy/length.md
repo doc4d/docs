@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Length.Summary-->**Length** permite obtener la longitud de *cadena*.<!-- END REF--> **Length** devuelve el número de caracteres alfanuméricos en *cadena*.

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Dec.Summary-->Decは*number*の小数部を返します。<!-- END REF-->返す値は、常に正の数またはゼロになります。 

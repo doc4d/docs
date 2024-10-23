@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WEB Is server running.Summary-->El comando **WEB Is server running** devuelve **True** si el servidor web integrado 4D está corriendo y **False** si el servidor web está apagado.<!-- END REF-->

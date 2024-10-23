@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Current system user.Summary-->The **Current system user** command returns the owner name of your machine, as set in the current user account on the machine.<!-- END REF-->

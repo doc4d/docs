@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.Int.Summary-->Int retorna a parte inteira de *numero,* arredondando ao inteiro inferior.<!-- END REF--> 

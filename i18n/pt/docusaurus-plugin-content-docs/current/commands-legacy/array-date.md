@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.ARRAY DATE.Summary-->O comando ARRAY DATE cria e/ou redimensiona um array de elementos de tipo Data em memória.<!-- END REF-->

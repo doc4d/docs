@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.SAVE SET.Summary-->SAVE SET guarda *conjunto* en el archivo *documento*.<!-- END REF--> 

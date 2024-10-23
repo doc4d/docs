@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Get process activity.Summary-->The **Get process activity** command returns a snapshot of connected user sessions and/or related running processes at a given time.<!-- END REF--> This command returns all processes, including internal processes that were not reachable by the [Process info](../commands/process-info.md) command. 

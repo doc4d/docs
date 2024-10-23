@@ -17,9 +17,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.WP Table insert rows.Summary-->**WP Table insert rows** コマンドは、4D Write Pro の表に一つまたは複数の行を挿入します。<!-- END REF-->

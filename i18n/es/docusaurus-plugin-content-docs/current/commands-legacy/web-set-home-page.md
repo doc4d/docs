@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.WEB SET HOME PAGE.Summary-->El comando **WEB SET HOME PAGE** permite modificar la página de inicio personalizada para el proceso web actual.<!-- END REF--> 

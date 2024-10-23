@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WEB SET ROOT FOLDER.Summary-->O comando WEB SET ROOT FOLDER é utilizado para modificar a pasta raiz por padrão na qual 4D procura os arquivos HTML pedidos ao servidor web.<!-- END REF-->

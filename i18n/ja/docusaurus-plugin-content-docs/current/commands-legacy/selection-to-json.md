@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Selection to JSON.Summary-->**Selection to JSON**コマンドは、 *aTable* のカレントセレクション内のレコードと同数の要素を持つJSON配列を含んだ文字列を返します。<!-- END REF-->配列のそれぞれの要素はセレクションのフィールドのラベルと値を含んだJSONオブジェクトです。

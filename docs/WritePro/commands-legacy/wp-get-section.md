@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.WP Get section.Summary-->The **WP Get section** command returns the first section intersected by the *targetObj* range or element, or to the specified *sectionIndex* of the *wpDoc* document.<!-- END REF-->

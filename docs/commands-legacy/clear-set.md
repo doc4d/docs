@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.CLEAR SET.Summary-->**CLEAR SET** clears *set* from memory and frees the memory used by *set*.<!-- END REF--> The command does not affect tables, selections, or records. To save a set before clearing it, use the [SAVE SET](save-set.md) command. Since sets use memory, it is good practice to clear them when they are no longer needed.

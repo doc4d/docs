@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Int.Summary-->Int は*number*の整数部を取り出して返します。<!-- END REF-->*number*が負の場合は、ゼロから遠い数値に丸めます。

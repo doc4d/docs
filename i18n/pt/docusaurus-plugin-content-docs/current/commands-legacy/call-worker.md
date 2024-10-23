@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.CALL WORKER.Summary-->O comando **CALL WORKER** cria ou chama o processo worker cujo nome ou ID se passa em *processo* e pede a execução do *metodo* em seu contexto com o parâmetro opcional *param*.<!-- END REF-->

@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.JSON TO SELECTION.Summary-->El comando **JSON TO SELECTION** copia el contenido del array de objetos JSON *jsonArray* en la selección de registros de *laTabla*.<!-- END REF--> 

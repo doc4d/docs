@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.DELAY PROCESS.Summary-->**DELAY PROCESS** permet d'endormir un *process* pour un certain nombre de ticks (1 tick = 1/60ème de seconde).<!-- END REF--> Pendant cette période, le process endormi n'utilise pas de temps machine. Il reste cependant toujours en mémoire.

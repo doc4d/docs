@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.WP New header.Summary-->La commande **WP New header** crée et retourne l'en-tête associé à la section ou à la sous-section définie par le paramètre *wpSection* .<!-- END REF-->

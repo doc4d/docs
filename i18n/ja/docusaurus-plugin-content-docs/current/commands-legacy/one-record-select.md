@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.ONE RECORD SELECT.Summary-->ONE RECORD SELECTは*aTable*のカレントレコードをカレントセレクションにします。<!-- END REF-->カレントレコードが存在しないかカレントレコードがメモリにロードされていない場合 (特殊なケース)、ONE RECORD SELECTは何も行いません。

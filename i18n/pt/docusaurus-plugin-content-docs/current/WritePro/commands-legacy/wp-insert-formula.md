@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP INSERT FORMULA.Summary-->O comando **WP INSERT FORMULA** insere uma *formula* em *alvoObj* de acordo com um *mode* de inserção especificado.<!-- END REF-->

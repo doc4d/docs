@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DOM Get Root XML element.Summary-->DOM Get Root XML element コマンドは*elementRef* 引数に渡したXML要素が属するXMLドキュメントのルート要素参照を返します。<!-- END REF-->この参照は他のXML解析コマンドで使用できます。

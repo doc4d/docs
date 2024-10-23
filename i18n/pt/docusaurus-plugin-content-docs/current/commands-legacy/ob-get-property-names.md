@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.OB GET PROPERTY NAMES.Summary-->O comando **OB GET PROPERTY NAMES** devolve, em *arrProp*, os nomes das propriedades contidas no objeto de linguagem designados pelo parâmetro *objeto* .<!-- END REF-->  

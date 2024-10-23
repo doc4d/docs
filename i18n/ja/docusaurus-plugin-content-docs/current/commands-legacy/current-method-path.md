@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Current method path.Summary-->**Current method path**コマンドは実行中のデータベースメソッド、トリガー、プロジェクトメソッド、フォームメソッド、またはオブジェクトメソッドの内部的なパス名を返します。<!-- END REF-->

@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP SET VIEW PROPERTIES.Summary-->O comando **WP SET VIEW PROPERTIES** le permite configurar dinamicamente uma ou mais propriedades de vista da área 4D Write Pro *wpArea*.<!-- END REF--> 

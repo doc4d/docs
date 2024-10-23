@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Esse comando não é seguro para thread e não pode ser usado em código adequado.*
-
-
 #### Descrição 
 
 <!--REF #_command_.WP SET LINK.Summary-->**WP SET LINK** aplica uma referência de hiperlink ao *objRange*.<!-- END REF--> São compatíveis links a URL, métodos 4D e marcadores. O link ativa uma ação quando o usuário clicar nele (ou utilizar **Ctrl+clique** em Windows ou **Cmd+clique** em macOS se o texto não for apenas leitura para abrir URL).  

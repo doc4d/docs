@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Records in table.Summary-->Records in table devuelve el número total de los registros que contiene *tabla*.<!-- END REF--> [Records in selection](records-in-selection.md "Records in selection") devuelve únicamente el número de registros en la selección actual. Si Records in table se utiliza dentro de una transacción, los registros creados durante la transacción serán tenidos en cuenta.

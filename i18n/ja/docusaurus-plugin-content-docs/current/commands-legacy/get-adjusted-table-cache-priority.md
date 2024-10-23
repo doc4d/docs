@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Get adjusted table cache priority.Summary-->**Get adjusted table cache priority**コマンドは *aTable*引数で指定したテーブルのスカラーデータのキャッシュに、キャッシュマネージャーによって適用された、調整されたキャッシュ優先度値を返します。<!-- END REF-->

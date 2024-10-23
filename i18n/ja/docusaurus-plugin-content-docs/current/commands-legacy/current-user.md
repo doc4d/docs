@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Current user.Summary-->Current user コマンドは、カレントユーザのエイリアス、またはユーザ名を返します。<!-- END REF-->

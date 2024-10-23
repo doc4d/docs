@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.ARRAY TO COLLECTION.Summary-->**ARRAY TO COLLECTION** コマンドは*array* 引数で指定した一つあるいはそれ以上の配列を、*collection* 引数で指定したコレクションの要素、あるいは*propertyName* 引数で指定したプロパティの値にコピーします*。<!-- END REF-->*

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.CLEAR SEMAPHORE.Summary-->**CLEAR SEMAPHORE** erases *semaphore* previously set by the [Semaphore](semaphore.md) function.<!-- END REF-->

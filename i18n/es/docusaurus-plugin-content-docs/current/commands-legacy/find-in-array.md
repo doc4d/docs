@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.Find in array.Summary-->El comando Find in array devuelve el número del primer elemento del *array* que corresponde a *valor*.<!-- END REF-->

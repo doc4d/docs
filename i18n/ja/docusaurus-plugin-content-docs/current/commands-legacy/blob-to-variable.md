@@ -16,9 +16,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.BLOB TO VARIABLE.Summary-->BLOB TO VARIABLE コマンドは、*offset*引数で指定されたバイトオフセット (ゼロから開始) にある*blob*に格納されているデータを使用して*variable*を上書きします。<!-- END REF-->

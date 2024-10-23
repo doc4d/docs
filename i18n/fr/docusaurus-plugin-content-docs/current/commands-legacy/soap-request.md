@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.SOAP Request.Summary-->La commande **SOAP Request** retourne Vrai si le code en cours d’exécution fait partie d’une requête SOAP.<!-- END REF--> 

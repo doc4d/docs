@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.GET MISSING TABLE NAMES.Summary-->La commande **GET MISSING TABLE NAMES** retourne dans le tableau *tabManquantes* les noms de toutes les tables manquantes de la base courante.<!-- END REF-->

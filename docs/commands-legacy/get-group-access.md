@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*This command is not thread-safe, it cannot be used in preemptive code.*
-
-
 #### Description 
 
 <!--REF #_command_.Get group access.Summary-->The **Get group access** command returns the memberships of the 4D user account for the current session.<!-- END REF--> If the user does not belong to any group in the session, an empty collection is returned. 

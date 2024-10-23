@@ -15,9 +15,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.OB SET.Summary-->La commande **OB SET** permet de créer ou de modifier une ou plusieurs paires propriété/valeur dans l’objet de langage désigné par le paramètre *objet*.<!-- END REF--> 

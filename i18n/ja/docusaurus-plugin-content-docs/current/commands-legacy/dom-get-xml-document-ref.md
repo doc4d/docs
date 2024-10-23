@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.DOM Get XML document ref.Summary-->DOM Get XML document ref コマンドを使用して*elementRef*に渡したDOMツリーの"ドキュメント"参照を取得できます。<!-- END REF-->ドキュメント要素はDOMツリーの最初の要素であり、ルート要素の親です。

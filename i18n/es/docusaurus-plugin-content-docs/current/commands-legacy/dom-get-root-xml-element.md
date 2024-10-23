@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.DOM Get Root XML element.Summary-->El comando DOM Get Root XML element devuelve una referencia al elemento raíz del documento al cual pertenece el elemento XML que se pasa en el parámetro *elementRef*.<!-- END REF--> Esta referencia puede utilizarse con los otros comandos de análisis XML.

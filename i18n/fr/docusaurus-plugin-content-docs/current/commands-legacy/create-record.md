@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Cette commande n'est pas thread-safe, elle ne peut pas être utilisée dans du code préemptif.*
-
-
 #### Description 
 
 <!--REF #_command_.CREATE RECORD.Summary-->**CREATE RECORD** crée un nouvel enregistrement vide pour *laTable*, mais ne l'affiche pas à l'écran.<!-- END REF--> Vous devez utiliser la commande [ADD RECORD](add-record.md) pour créer un nouvel enregistrement et l'afficher dans un formulaire entrée. 

@@ -13,9 +13,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*Este comando no es hilo seguro, no puede ser utilizado en código apropiativo.*
-
-
 #### Descripción 
 
 <!--REF #_command_.READ ONLY.Summary-->READ ONLY cambia el estado de t*abla* a modo sólo lectura para el proceso en el cual se llama al comando.<!-- END REF--> Todos los registros cargados posteriormente están bloqueados, y no se puede realizar ninguna modificación. Si se pasa el parámetro opcional \*, todas las tablas se cambian a modo sólo lectura.

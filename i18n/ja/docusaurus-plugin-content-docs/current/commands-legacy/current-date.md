@@ -14,9 +14,6 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
-*このコマンドはスレッドセーフではないため、プリエンプティブなコードには使えません。*
-
-
 #### 説明 
 
 <!--REF #_command_.Current date.Summary-->Current date コマンドは、システムクロックに保持された日付を現在の日付として返します。<!-- END REF-->
