@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Subformulário | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/pt/20-R5/FormObjects/propertiesSubform"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="20-R5"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" name="docsearch:version" content="20-R5"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R5"><meta data-rh="true" property="og:title" content="Subformulário | 4D Docs"><meta data-rh="true" name="description" content="---"><meta data-rh="true" property="og:description" content="---"><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/pt/20-R5/FormObjects/propertiesSubform"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20-R5/FormObjects/propertiesSubform" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/20-R5/FormObjects/propertiesSubform" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/20-R5/FormObjects/propertiesSubform" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/20-R5/FormObjects/propertiesSubform" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/20-R5/FormObjects/propertiesSubform" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20-R5/FormObjects/propertiesSubform" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.9d2cac31.css">
-<script src="/docs/pt/assets/js/runtime~main.74ca196c.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.1513e5c8.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.1a6b4e24.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -95,12 +95,12 @@ You can select a component form name when it is published in the component.</li>
 <p><code>Subformulário lista</code></p>
 <p>Sets the action to be performed when a user double-clicks on a row in a list subform. As opções disponíveis são:</p>
 <ul>
-<li><strong>No hacer nada</strong> (por defecto): hacer doble clic en una línea no desencadena ninguna acción automática.</li>
+<li><strong>Não fazer nada</strong> (padrão): clicar duas vezes em uma linha não aciona nenhuma ação automática.</li>
 <li><strong>Editar registro</strong>: al hacer doble clic en una línea se muestra el registro correspondiente en el <a href="/docs/pt/20-R5/FormObjects/propertiesSubform#detail-form">formulario detallado</a> definido para el subformulario lista. O registo é aberto em modo de leitura-escrita para poder ser modificado.</li>
-<li><strong>Mostrar registro</strong>: idéntica a la acción anterior, salvo que el registro se abre en modo de sólo lectura para que no pueda ser modificado.</li>
+<li><strong>Exibir registro</strong>: idêntico à ação anterior, exceto pelo fato de que o registro é aberto no modo somente leitura, de modo que não pode ser modificado.</li>
 </ul>
-<p>Independientemente de la acción seleccionada/elegida, se genera el evento de formulario <code>On Double clicked</code>.</p>
-<p>Para las dos últimas acciones, también se genera el evento de formulario <code>On Open Detail</code>. <code>On Close Detail</code> se genera cuando un registro mostrado en el formulario detallado asociado al list box está a punto de cerrarse (independientemente de que el registro se haya modificado o no).</p>
+<p>Independentemente da ação selecionada/escolhida, o evento de formulário <code>On Double clicked</code> é gerado.</p>
+<p>Para as duas últimas ações, o evento do formulário <code>On Open Detail</code> também é gerado. <code>On Close Detail</code> é gerado quando um registro exibido no formulário detalhado associado à list box está prestes a ser fechado (independentemente de o registro ter sido modificado ou não).</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="gramática-json-3">Gramática JSON<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/FormObjects/propertiesSubform#gramática-json-3">​</a></h4>
 
 
@@ -196,10 +196,10 @@ You can select a component form name when it is published in the component.</li>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="modo-seleção">Modo seleção<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R5/FormObjects/propertiesSubform#modo-seleção">​</a></h2>
 <p>Designa a opção que permite aos utilizadores selecionar linhas:</p>
 <ul>
-<li><strong>Ninguna</strong>: las líneas no se pueden seleccionar si se elige este modo. Hacer clic en la lista no tendrá ningún efecto a menos que la opción <a href="/docs/pt/20-R5/FormObjects/subformOverview#enterable-in-list">Editable en lista</a> esté activada. Las teclas de navegación sólo hacen que la lista se desplace; no se genera el evento de formulario <code>On Selection Change</code>.</li>
-<li><strong>Simple</strong>: en este modo se puede seleccionar una línea a la vez. Ao clicar em uma linha, ela será selecionada. Um <strong>Ctrl+clique</strong> (Windows) ou <strong>Command+clique</strong> (macOS) em uma linha alterna seu estado (entre selecionado ou não).<br>
-The Up and Down arrow keys select the previous/next row in the list. As outras teclas de navegação percorrem a lista. El evento de formulario <code>On Selection Change</code> se genera cada vez que se cambia la línea actual.</li>
-<li><strong>Múltiple</strong>: en este modo se pueden seleccionar varias líneas simultáneamente.
+<li><strong>Nenhum</strong>: Linhas não podem ser selecionadas se esse modo for escolhido. Hacer clic en la lista no tendrá ningún efecto a menos que la opción <a href="/docs/pt/20-R5/FormObjects/subformOverview#enterable-in-list">Editable en lista</a> esté activada. As teclas de navegação só fazem a lista rolar, o evento de formulário <code>Ao selecionar mudança</code> não é gerado.</li>
+<li><strong>Simples</strong>: Uma linha de cada vez pode ser selecionada neste modo. Ao clicar em uma linha, ela será selecionada. Um <strong>Ctrl+clique</strong> (Windows) ou <strong>Command+clique</strong> (macOS) em uma linha alterna seu estado (entre selecionado ou não).<br>
+As teclas de seta para cima e para baixo selecionam a linha anterior/seguinte na lista. As outras teclas de navegação percorrem a lista. O evento de formulário <code>On Selection Change</code> é gerado sempre que a linha atual é alterada.</li>
+<li><strong>Multiplique</strong>: Várias linhas podem ser selecionadas simultaneamente neste modo.
 <ul>
 <li>Los subregistros seleccionados son devueltos por el comando <code>GET HIGHLIGHTED RECORDS</code>.</li>
 <li>Clicking on the record will select it, but it does not modify the current record.</li>
