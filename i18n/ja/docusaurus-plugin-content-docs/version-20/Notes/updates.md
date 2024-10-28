@@ -6,7 +6,7 @@ title: リリースノート
 
 :::tip
 
-Read [**What’s new in 4D 20**](https://blog.4d.com/en-whats-new-in-4d-v20/), the blog post that lists all new features and enhancements in 4D 20.x LTS.
+[**4D 20 の新機能**](https://blog.4d.com/ja-whats-new-in-4d-v20/): 4D 20.x LTS の新機能と拡張機能をすべてリストアップしたブログ記事です。
 
 :::
 
@@ -14,12 +14,12 @@ Read [**What’s new in 4D 20**](https://blog.4d.com/en-whats-new-in-4d-v20/), t
 
 #### ハイライト
 
-- 4D 20.5 LTS is certified on Windows 11 24H2.
-- 4D 20.5 LTS is certified on macOS Sequoia (macOS 15).
+- 4D 20.5 LTD は Windows 11 24H2 対応です。
+- 4D 20.5 LTS は macOS Sequoia (macOS 15) 対応です。
 
-:::warning Known issue on Windows 11 24H2
+:::warning Windows 11 24H2における既知の問題
 
-On Windows 11 24H2, generating pdf using the Microsoft Print to PDF driver may fail due to an issue which is still under investigation. If you frequently print PDFs with your 4D application, we currently recommend that you do not upgrade to Windows 11 24H2.
+Windows 11 24H2 では、Microsoft Print to PDFドライバーを使用して PDF を生成すると、現在調査中の問題が原因で失敗する可能性があります。 If you frequently print PDFs with your 4D application, we currently recommend that you do not upgrade to Windows 11 24H2.
 
 :::
 
