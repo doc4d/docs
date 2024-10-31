@@ -414,7 +414,7 @@ La <!-- REF #WebServerClass.IPAddressToListen.Summary -->dirección IP en la que
 
 *Propiedad de sólo lectura*
 
-El <!-- REF #WebServerClass.isRunning.Summary -->estado de ejecución del servidor web<!-- END REF -->.
+El servidor web <!-- REF #WebServerClass.isRunning.Summary -->que ejecuta el estado<!-- END REF -->.
 
 <!-- END REF -->
 
