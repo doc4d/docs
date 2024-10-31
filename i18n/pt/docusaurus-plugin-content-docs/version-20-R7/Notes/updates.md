@@ -162,7 +162,7 @@ Se suas aplicações 4D utilizam conexões TLS, é recomendado que você faça a
 
 ## 4D 20.x LTS
 
-Veja [**Notas de lançamento 4D 20.x LTS**](../../version-20/Notes/updates.md).
+See [**Release Notes for 4D 20.x LTS**](../../version-20/Notes/updates.md).
 
 ## Tabela da biblioteca
 
