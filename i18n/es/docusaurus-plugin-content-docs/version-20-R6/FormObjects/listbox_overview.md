@@ -140,7 +140,7 @@ Las propiedades soportadas dependen del tipo de list box.
 | [Soltable](properties_Action.md#droppable)                                                        | X              | X                  | X                                     |
 | [Enfocable](properties_Entry.md#focusable)                                                        | X              | X                  | X                                     |
 | [Fuente](properties_Text.md#fuente)                                                               | X              | X                  | X                                     |
-| [Color de fuente](properties_Text.md#font-color)                                                  | X              | X                  | X                                     |
+| [Color de fuente](properties_Text.md#font_color)                                                  | X              | X                  | X                                     |
 | [Expresión de color de fuente](properties_Text.md#expresión-de-color-de-fuente)                   |                | X                  | X                                     |
 | [Tamaño de fuente](properties_Text.md#font-size)                                                  | X              | X                  | X                                     |
 | [Altura (list box)](properties_CoordinatesAndSizing.md#height)                 | X              | X                  | X                                     |
@@ -149,7 +149,7 @@ Las propiedades soportadas dependen del tipo de list box.
 | [Ocultar líneas en blanco adicionales](properties_BackgroundAndBorder.md#hide-extra-blank-rows)   | X              | X                  | X                                     |
 | [Ocultar rectángulo de enfoque](properties_Appearance.md#hide-focus-rectangle)                    | X              | X                  | X                                     |
 | [Ocultar resaltado de selección](properties_Appearance.md#hide-selection-highlight)               | X              | X                  | X                                     |
-| [List Box jerárquico](properties_Object.md#array-list-box)                                        | X              |                    |                                       |
+| [List Box jerárquico](properties_Object.md#hierarchical-list-box)                                 | X              |                    |                                       |
 | [Conjunto de resaltado](properties_ListBox.md#highlight-set)                                      |                | X                  |                                       |
 | [Alineación horizontal](properties_Text.md#alineación-horizontal)                                 | X              | X                  | X                                     |
 | [Color de línea horizontal](properties_Gridlines.md#horizontal-line-color)                        | X              | X                  | X                                     |
