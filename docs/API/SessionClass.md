@@ -374,13 +374,7 @@ This property is only available with remote client, stored procedure, and standa
 
 The `.info` property <!-- REF #SessionClass.info.Summary -->describes the remote client or stored procedure session on the server, or the standalone session<!-- END REF -->.
 
-:::note
-
-- The `.info` object is the same object as the one returned in the "session" property by the [`Process activity`](../commands/process-activity.md) command for remote client and stored procedure sessions.
-- The `.info` object is the same object as the one returned by the [`Session info`](../commands/session-info.md) command for a standalone session.
-
-
-:::
+The `.info` object is the same object as the one returned by the [`Process activity`](../commands/process-activity.md) command for remote client and stored procedure sessions.
 
 The `.info` object contains the following properties:
 
