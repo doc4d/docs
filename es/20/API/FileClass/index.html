@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">File | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/es/20/API/FileClass"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="20"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20"><meta data-rh="true" name="docsearch:version" content="20"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20"><meta data-rh="true" property="og:title" content="File | 4D Docs"><meta data-rh="true" name="description" content="Los objetos File se crean con el comando File. Contienen referencias a archivos de disco que pueden o no existir realmente en el disco. Por ejemplo, cuando se ejecuta el comando File para crear un nuevo archivo, se crea un objeto File válido, pero en realidad no se almacena nada en el disco hasta que se llama a la función file.create( )."><meta data-rh="true" property="og:description" content="Los objetos File se crean con el comando File. Contienen referencias a archivos de disco que pueden o no existir realmente en el disco. Por ejemplo, cuando se ejecuta el comando File para crear un nuevo archivo, se crea un objeto File válido, pero en realidad no se almacena nada en el disco hasta que se llama a la función file.create( )."><link data-rh="true" rel="icon" href="/docs/es/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/es/20/API/FileClass"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20/API/FileClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/20/API/FileClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/20/API/FileClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/20/API/FileClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/20/API/FileClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20/API/FileClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/es/opensearch.xml"><link rel="stylesheet" href="/docs/es/assets/css/styles.9d2cac31.css">
-<script src="/docs/es/assets/js/runtime~main.37376fb1.js" defer="defer"></script>
+<script src="/docs/es/assets/js/runtime~main.75ab1522.js" defer="defer"></script>
 <script src="/docs/es/assets/js/main.88a7c432.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -421,6 +421,7 @@
 
 
 <table><thead><tr><th>Parámetros</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr></thead><tbody><tr><td>destinationFolder</td><td>4D.Folder</td><td style="text-align:center">-&gt;</td><td>Carpeta de destino</td></tr><tr><td>newName</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Nombre para la copia</td></tr><tr><td>overwrite</td><td>Integer</td><td style="text-align:center">-&gt;</td><td><code>fk overwrite</code> para sustituir los elementos existentes</td></tr><tr><td>Result</td><td>4D.File</td><td style="text-align:center">&lt;-</td><td>Archivo copiado</td></tr></tbody></table>
+<p>|</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-2">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20/API/FileClass#descripción-2">​</a></h4>
 <p>La función <code>.copyTo()</code> The <code>.isFolder</code> property returns .</p>
 <p>La <em>destinationFolder</em> debe existir en el disco, de lo contrario se genera un error.</p>
@@ -551,7 +552,7 @@
 
 <table><thead><tr><th>Parámetros</th><th>Tipo</th><th></th><th>Descripción</th></tr></thead><tbody><tr><td>destinationFolder</td><td>4D.Folder</td><td>-&gt;</td><td>Carpeta de destino para el alias o el acceso directo</td></tr><tr><td>aliasName</td><td>Text</td><td>-&gt;</td><td>Nombre del alias o del atajo</td></tr><tr><td>aliasType</td><td>Integer</td><td>-&gt;</td><td>Tipo de enlace del alias</td></tr><tr><td>Result</td><td>4D.File</td><td>&lt;-</td><td>Referencia del archivo del alias o de atajo</td></tr></tbody></table>
 <p>|</p>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-4">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20/API/FileClass#descripción-4">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-4">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20/API/FileClass#descripción-4">  ​</a></h4>
 <p>La función <code>.createAlias()</code> crea un alias (macOS) o un acceso directo (Windows) al archivo con el nombre <em>aliasName</em> especificado en la carpeta designada por el objeto <em>destinationFolder</em>.</p>
 <p>Pase el nombre del alias o del acceso directo a crear en el parámetro <em>aliasName</em>.</p>
 <p>Por defecto en macOS, la función crea un alias estándar. También puede crear un enlace simbólico utilizando el parámetro <em>aliasType</em>. Las siguientes constantes están disponibles:</p>
@@ -698,7 +699,7 @@
 </div></div></details>
 <p><strong>.extension</strong> : Text</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-9">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20/API/FileClass#descripción-9">​</a></h4>
-<p>La propiedad <code>.extension</code> devuelve la extensión del nombre del archivo (si la hay). Una extensión siempre comienza por &quot;.&quot;. La propiedad <code>.extension</code> devuelve la extensión del nombre del archivo (si lo hay).</p>
+<p>La propiedad <code>.extension</code> devuelve la extensión del nombre del archivo (si la hay). Una extensión siempre comienza por &quot;.&quot;. La propiedad devuelve una cadena vacía si el nombre del archivo no tiene extensión.</p>
 <p>Esta propiedad es <strong>de sólo lectura</strong>.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="fullname">.fullName<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20/API/FileClass#fullname">​</a></h2>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Histórico</summary><div><div class="collapsibleContent_i85q">
@@ -857,6 +858,7 @@
 
 
 <table><thead><tr><th>Parámetros</th><th>Tipo</th><th></th><th>Descripción</th></tr></thead><tbody><tr><td>Result</td><td>4D.Blob</td><td>&lt;-</td><td>Contenido del archivo</td></tr></tbody></table>
+<p>|</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-12">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20/API/FileClass#descripción-12">​</a></h4>
 <p>La función <code>.getContent()</code>  devuelve un objeto <code>4D.Blob</code> que contiene todo el contenido de un archivo. .</p>
 <p><strong>Valor devuelto</strong></p>
@@ -906,6 +908,7 @@
 
 
 <table><thead><tr><th>Parámetros</th><th>Tipo</th><th></th><th>Descripción</th></tr></thead><tbody><tr><td>size</td><td>Integer</td><td>-&gt;</td><td>Longitud del lado de la imagen devuelta (píxeles)</td></tr><tr><td>Result</td><td>Picture</td><td>&lt;-</td><td>Icono</td></tr></tbody></table>
+<p>|</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-13">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20/API/FileClass#descripción-13">​</a></h4>
 <p>La función <code>.getIcon()</code> devuelve el icono del archivo.</p>
 <p>El parámetro opcional <em>size</em> especifica las dimensiones en píxeles del icono devuelto. Este valor representa en realidad la longitud del lado del cuadrado que contiene el icono. Los iconos suelen definirse en 32x32 píxeles (&quot;iconos grandes&quot;) o 16x16 píxeles (&quot;iconos pequeños&quot;). Si pasa 0 u omite este parámetro, se devuelve la versión &quot;icono grande&quot;.</p>
@@ -966,6 +969,7 @@
 
 
 <table><thead><tr><th>Parámetros</th><th>Tipo</th><th></th><th>Descripción</th></tr></thead><tbody><tr><td>charSetName</td><td>Text</td><td>-&gt;</td><td>Nombre del juego de caracteres</td></tr><tr><td>charSetNum</td><td>Integer</td><td>-&gt;</td><td>Número del conjunto de caracteres</td></tr><tr><td>breakMode</td><td>Integer</td><td>-&gt;</td><td>Modo de tratamiento de los saltos de línea</td></tr><tr><td>Result</td><td>Text</td><td>&lt;-</td><td>Texto del documento</td></tr></tbody></table>
+<p>|</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descripción-14">Descripción<a class="hash-link" aria-label="Enlace directo al encabezado" title="Enlace directo al encabezado" href="/docs/es/20/API/FileClass#descripción-14">​</a></h4>
 <p>La función <code>.getText()</code> devuelve el contenido del archivo como texto .</p>
 <p>Opcionalmente, puede designar el conjunto de caracteres que se utilizará para leer el contenido. Puede pasar:</p>
