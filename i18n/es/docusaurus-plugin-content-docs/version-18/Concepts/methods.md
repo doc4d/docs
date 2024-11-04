@@ -31,7 +31,7 @@ Un método proyecto puede tener uno de los siguientes papeles, dependiendo de c�
 ### Subrutinas y funciones
 Una subrutina es un método proyecto que puede considerarse como un ayudante. Realiza aquellas tareas que otros métodos le solicitan. Una función es una subrutina que devuelve un valor al método que la llamó.
 
-Cuando crea un método proyecto, éste pasa a formar parte del lenguaje de la base en la que lo crea. Entonces puede llamar al método proyecto desde otros métodos proyecto, o desde [métodos predefinidos](#specialized-methods) de la misma manera que llama a los comandos integrados de 4D. Un método proyecto utilizado de este manera se llama una subrutina.
+Cuando crea un método proyecto, éste pasa a formar parte del lenguaje de la base en la que lo crea. You can then call the project method from other project methods, or from [predefined methods](#specialized-methods) in the same way that you call 4D’s built-in commands. Un método proyecto utilizado de este manera se llama una subrutina.
 
 Se utilizan subrutinas para:
 
@@ -239,7 +239,7 @@ En 4D, algunos usos típicos de la recursividad son:
 **Importante:** Las llamadas recursivas deben terminar siempre en algún punto. En el ejemplo, el método `Genealogy of` deja de llamarse a sí mismo cuando la consulta no devuelve ningún registro. Sin esta prueba condicional, el método se llamaría a sí mismo indefinidamente; eventualmente, 4D devolvería un error "Pila llena" porque ya no tendría espacio para "apilar" las llamadas (así como los parámetros y las variables locales utilizadas en el método).
 
 
-## Métodos especializados {#specialized-methods}
+## Specialized Methods {#specialized-methods}
 
 Además de los **métodos proyecto**, 4D soporta varios tipos de métodos específicos, que se llaman automáticamente en función de los eventos:
 
