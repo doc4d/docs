@@ -70,14 +70,7 @@ module.exports = {
     ],
   ],
   future: {
-    experimental_faster: {
-      swcJsLoader: true,
-      swcJsMinimizer: true,
-      swcHtmlMinimizer: true,
-      lightningCssMinimizer: true,
-      rspackBundler: true,
-      mdxCrossCompilerCache: true,
-    },
+    experimental_faster: true,
   },
   i18n: {
     defaultLocale: "en",
