@@ -215,4 +215,4 @@ Définit l'arrière-plan de la list box sur "Transparent". When set, any [altern
 
 #### Voir également
 
-[Background Color / Fill Color](#background-color--fill-color)
+[Background Color / Fill Color](#background-color-fill-color)
