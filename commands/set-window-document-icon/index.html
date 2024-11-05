@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">SET WINDOW DOCUMENT ICON | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/commands/set-window-document-icon"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="20-R7"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R7"><meta data-rh="true" name="docsearch:version" content="20-R7"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R7"><meta data-rh="true" property="og:title" content="SET WINDOW DOCUMENT ICON | 4D Docs"><meta data-rh="true" name="description" content="SET WINDOW DOCUMENT ICON ( winRef )SET WINDOW DOCUMENT ICON ( winRef ; image )SET WINDOW DOCUMENT ICON ( winRef ; file )SET WINDOW DOCUMENT ICON (  winRef ; image ; file )"><meta data-rh="true" property="og:description" content="SET WINDOW DOCUMENT ICON ( winRef )SET WINDOW DOCUMENT ICON ( winRef ; image )SET WINDOW DOCUMENT ICON ( winRef ; file )SET WINDOW DOCUMENT ICON (  winRef ; image ; file )"><link data-rh="true" rel="icon" href="/docs/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/commands/set-window-document-icon"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/commands/set-window-document-icon" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/commands/set-window-document-icon" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/commands/set-window-document-icon" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/commands/set-window-document-icon" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/commands/set-window-document-icon" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/commands/set-window-document-icon" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.9d2cac31.css">
-<script src="/docs/assets/js/runtime~main.310ef6c0.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.913e19fb.js" defer="defer"></script>
 <script src="/docs/assets/js/main.2f8b19f4.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -39,8 +39,25 @@
 
 
 <table><thead><tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr></thead><tbody><tr><td>winRef</td><td>Integer</td><td>→</td><td>Window reference number</td></tr><tr><td>image</td><td>Picture</td><td>→</td><td>Custom icon</td></tr><tr><td>file</td><td>4D.File, 4D.Folder</td><td>→</td><td>File path or folder path</td></tr></tbody></table>
+<details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>History</summary><div><div class="collapsibleContent_i85q">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Release</th><th>Changes</th></tr></thead><tbody><tr><td>20 R7</td><td>Added</td></tr></tbody></table>
+</div></div></details>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="description">Description<a class="hash-link" aria-label="Direct link to heading" title="Direct link to heading" href="/docs/commands/set-window-document-icon#description">​</a></h4>
 <p>The <code>SET WINDOW DOCUMENT ICON</code> command allows you to define an icon for windows in multi-window applications using either an <em>image</em> and/or <em>file</em> with the window reference <em>winRef</em>. The icon will be visible within the window itself and on the windows taskbar to help users identify and navigate different windows.</p>
+<p>In the case of an MDI application on Windows, you can pass <code>-1</code> in <em>winRef</em> to set the icon of the main window. In other contexts (macOS or <a href="/docs/Menus/sdi">SDI application</a> on Windows), using -1 does nothing.</p>
 <ul>
 <li>If only <em>file</em> is passed, the window uses the icon corresponding to the file type and the file’s path is displayed in the window’s menu.</li>
 <li>If only <em>image</em> is passed, 4D does not show the path and the passed image is used for the window icon.</li>
