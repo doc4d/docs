@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">表示 | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/FormObjects/propertiesDisplay"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="20-R7"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R7"><meta data-rh="true" name="docsearch:version" content="20-R7"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R7"><meta data-rh="true" property="og:title" content="表示 | 4D Docs"><meta data-rh="true" name="description" content="---"><meta data-rh="true" property="og:description" content="---"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/FormObjects/propertiesDisplay"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/FormObjects/propertiesDisplay" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/FormObjects/propertiesDisplay" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/FormObjects/propertiesDisplay" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/FormObjects/propertiesDisplay" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/FormObjects/propertiesDisplay" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/FormObjects/propertiesDisplay" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.5a6eb54e.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.88bf12a2.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.b0db8fd1.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -667,7 +667,7 @@
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="表示タイプ">表示タイプ<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/FormObjects/propertiesDisplay#表示タイプ">​</a></h2>
 <p>列のデータに表示フォーマットを割り当てるために使用します。 提供されるフォーマットは変数型 (配列型のリストボックス) またはデータ/フィールド型 (セレクションおよびコレクション型のリストボックス) により異なります。</p>
 <p>ブール式および数値 (数値または整数) 式の列はチェックボックスとして表示することができます。 表示タイプにチェックボックスを選択すると、<a href="/docs/ja/FormObjects/propertiesDisplay#%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB">タイトル</a>プロパティが表示され、チェックボックスのタイトルを設定できます。</p>
-<p>ブール式の列はポップアップメニューとしても表示することができます。 この場合には、<a href="/docs/ja/FormObjects/propertiesDisplay#%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88-true%E6%99%82-%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88-false%E6%99%82">テキスト (True時) とテキスト (False時)</a> プロパティが表示され、ポップアップメニューの対応するタイトルを設定できます。</p>
+<p>ブール式の列はポップアップメニューとしても表示することができます。 In this case, the <a href="/docs/ja/FormObjects/propertiesDisplay#text-when-falsetext-when-true">Text when False and Text when True</a> properties must be defined.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="json-文法-6">JSON 文法<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/FormObjects/propertiesDisplay#json-文法-6">​</a></h4>
 
 
@@ -684,7 +684,7 @@
 
 
 
-<table><thead><tr><th>名称</th><th>データタイプ</th><th>とりうる値</th></tr></thead><tbody><tr><td>controlType</td><td>string</td><td><li><strong>数値列</strong>: &quot;automatic&quot; (デフォルト) または &quot;checkbox&quot;</li><li><strong>ブール列</strong>: &quot;checkbox&quot; (デフォルト) または &quot;popup&quot;</li></td></tr></tbody></table>
+<table><thead><tr><th>名称</th><th>データタイプ</th><th>とりうる値</th></tr></thead><tbody><tr><td>controlType</td><td>string</td><td><li><strong>数値列</strong>: &quot;automatic&quot; (デフォルト)   または &quot;checkbox&quot;</li><li><strong>ブール列</strong>: &quot;checkbox&quot; (デフォルト) または &quot;popup&quot;</li></td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="対象オブジェクト-6">対象オブジェクト<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/FormObjects/propertiesDisplay#対象オブジェクト-6">​</a></h4>
 <p><a href="/docs/ja/FormObjects/listboxOverview#%E3%83%AA%E3%82%B9%E3%83%88%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9%E5%88%97">リストボックス列</a></p>
 <hr>
@@ -707,8 +707,8 @@
 
 
 
-<table><thead><tr><th>名称</th><th>データタイプ</th><th> とりうる値</th></tr></thead><tbody><tr><td>display</td><td>boolean</td><td>true, false</td></tr></tbody></table>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="対象オブジェクト-7">対象オブジェクト<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/FormObjects/propertiesDisplay#対象オブジェクト-7">​</a></h4>
+<table><thead><tr><th>名称</th><th>データタイプ</th><th>とりうる値</th></tr></thead><tbody><tr><td>display</td><td>boolean</td><td>true, false</td></tr></tbody></table>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="  対象オブジェクト-7">対象オブジェクト<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/FormObjects/propertiesDisplay#対象オブジェクト-7">​</a></h4>
 <p><a href="/docs/ja/FormObjects/buttonOverview">ボタン</a> - <a href="/docs/ja/FormObjects/dropdownListOverview">ドロップダウンリスト</a></p>
 <hr>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="スリーステート">スリーステート<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/FormObjects/propertiesDisplay#スリーステート">​</a></h2>
@@ -772,7 +772,7 @@
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="対象オブジェクト-9">対象オブジェクト<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/FormObjects/propertiesDisplay#対象オブジェクト-9">​</a></h4>
 <p><a href="/docs/ja/FormObjects/listboxOverview#%E3%83%AA%E3%82%B9%E3%83%88%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9%E5%88%97">リストボックス列</a></p>
 <hr>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="エリプシスを使用して省略">エリプシスを使用して省略<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/FormObjects/propertiesDisplay#エリプシス  を使用して省略">​</a></h2>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="エリプシスを使用して省略">エリプシスを使用して省略<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/FormObjects/propertiesDisplay#エリプシスを使用して省略">​</a></h2>
 <p>リストボックスのカラムが、中身をすべて表示するのには狭すぎる場合の値の表示を管理します。</p>
 <p>このオプションは、どのような型の中身に対しても利用可能です(ただしピクチャーとオブジェクトを除く)。</p>
 <ul>
@@ -824,7 +824,7 @@
 <li><strong>レコード選択時</strong> (JSON名: &quot;selectedRows&quot;)</li>
 <li><strong>レコード非選択時</strong> (JSON名: &quot;unselectedRows&quot;)</li>
 </ul>
-<p>これらのプロパティ値は、リストフォームのボディに配置されたオブジェクトを描画する場合にのみ使用されます。 具体的には、処理中のレコードが選択されているかいないかに応じて、当該オブジェクトを描画するかどうかを 4D に指示します。 これにより、ハイライト以外の視覚的属性でもって、レコードの選択を表現することができます:</p>
+<p>これらのプロパテ ィ値は、リストフォームのボディに配置されたオブジェクトを描画する場合にのみ使用されます。 具体的には、処理中のレコードが選択されているかいないかに応じて、当該オブジェクトを描画するかどうかを 4D に指示します。 これにより、ハイライト以外の視覚的属性でもって、レコードの選択を表現することができます:</p>
 <p><img decoding="async" loading="lazy" src="/docs/ja/assets/images/select-row-93f2d57bba913598655fc95176637c0d.png" width="446" height="319" class="img_ev3q"></p>
 <p>オブジェクトが <a href="https://doc.4d.com/4dv20/help/command/ja/page603.html" target="_blank" rel="noopener noreferrer"><code>OBJECT SET VISIBLE</code></a> コマンドで非表示にされた場合、4D はこのプロパティを無視します。 つまり、レコードの選択状態にかかわらず、当該オブジェクトは非表示のままになります。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="json-文法-11">JSON 文法<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/FormObjects/propertiesDisplay#json-文法-11">​</a></h4>

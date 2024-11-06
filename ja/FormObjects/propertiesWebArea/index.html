@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Webエリア | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/FormObjects/propertiesWebArea"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="20-R7"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R7"><meta data-rh="true" name="docsearch:version" content="20-R7"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R7"><meta data-rh="true" property="og:title" content="Webエリア | 4D Docs"><meta data-rh="true" name="description" content="---"><meta data-rh="true" property="og:description" content="---"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/FormObjects/propertiesWebArea"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/FormObjects/propertiesWebArea" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/FormObjects/propertiesWebArea" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/FormObjects/propertiesWebArea" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/FormObjects/propertiesWebArea" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/FormObjects/propertiesWebArea" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/FormObjects/propertiesWebArea" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.5a6eb54e.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.88bf12a2.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.b0db8fd1.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -12,7 +12,7 @@
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4dメソッドコールを許可">4Dメソッドコールを許可<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/FormObjects/propertiesWebArea#4dメソッドコールを許可">​</a></h2>
 <p>Webエリアで実行される JavaScript コードから 4Dメソッドを呼び出して、戻り値を取得することができます。 4Dメソッドを Webエリアから呼び出せるようにするには、プロパティリストの &quot;4Dメソッドコールを許可&quot; にチェックをする必要があります。</p>
 <blockquote>
-<p>この機能は Webエリアが <a href="/docs/ja/FormObjects/propertiesWebArea#%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BFweb%E3%83%AC%E3%83%B3%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3%E3%82%92%E4%BD%BF%E7%94%A8">埋め込みWebレンダリングエンジンを使用</a> している場合に限り、使用可能です。</p>
+<p>This property is only available if the Web area <a href="/docs/ja/FormObjects/propertiesWebArea#use-embedded-web-rendering-engine">uses the embedded Web rendering engine</a>.</p>
 </blockquote>
 <p>このプロパティがチェックされている場合、特別な JavaScript オブジェクト <code>$4d</code> が Webエリア内にインスタンス化され、これを使用して<a href="/docs/ja/FormObjects/webAreaOverview#4d%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E4%BD%BF%E7%94%A8">4Dプロジェクトメソッドの呼び出しを管理</a> できるようになります。</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="json-文法">JSON 文法<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/FormObjects/propertiesWebArea#json-文法">​</a></h4>
@@ -38,9 +38,9 @@
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="進捗状況変数">進捗状況変数<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/FormObjects/propertiesWebArea#進捗状況変数">​</a></h2>
 <p>倍長整数型変数の名前です。 この変数には 0 から 100 までの値が格納され、この数値は Webエリアに表示されるページのロードされたパーセンテージを表します。 この変数は 4D が自動で更新します。手動で変更することはできません。</p>
 <blockquote>
-<p>4D v19 R5 以降、Windows上では、Web エリアが <a href="/docs/ja/FormObjects/propertiesWebArea#%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BFweb%E3%83%AC%E3%83%B3%E3%83%80%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3%E3%82%92%E4%BD%BF%E7%94%A8"> 埋め込みWebレンダリングエンジン</a> を使用している場合にのみ、この変数が更新されます。</p>
+<p>As of 4D v19 R5, this variable is only updated on Windows if the Web area <a href="/docs/ja/FormObjects/propertiesWebArea#use-embedded-web-rendering-engine">uses the embedded Web rendering engine</a>.</p>
 </blockquote>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="json-文法-1">JSON 文法<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接  リンク" href="/docs/ja/FormObjects/propertiesWebArea#json-文法-1">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="json-文法-1">JSON 文法<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/FormObjects/propertiesWebArea#json-文法-1">​</a></h4>
 
 
 
@@ -68,7 +68,7 @@
 </ul>
 <p>このエリアは Webブラウザーのアドレスバーのように機能します。 Webエリアの上側にテキストエリアを置いて、内容を表示させることができます。</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="url変数と-wa-open-url-コマンド">URL変数と WA OPEN URL コマンド<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/FormObjects/propertiesWebArea#url変数と-wa-open-url-コマンド">​</a></h3>
-<p>URL変数は <a href="https://doc.4d.com/4Dv18/4D/18/WA-OPEN-URL.301-4504841.ja.html" target="_blank" rel="noopener noreferrer">WA OPEN URL</a>  コマンドと同じ効果をもたらします。 しかしながら、以下の違いに注意してください。</p>
+<p>URL変数は <a href="https://doc.4d.com/4Dv18/4D/18/WA-OPEN-URL.301-4504841.ja.html" target="_blank" rel="noopener noreferrer">WA OPEN URL</a> コマンドと同じ効果をもたらします。 しかしながら、以下の違いに注意してください。</p>
 <ul>
 <li>ドキュメントにアクセスする場合、この変数は RFC準拠 (&quot;file://c:/My%20Doc&quot;) な URL のみを受け付け、システムパス名 (&quot;c:\MyDoc&quot;) は受け付けません。 <a href="https://doc.4d.com/4Dv18/4D/18/WA-OPEN-URL.301-4504841.ja.html" target="_blank" rel="noopener noreferrer">WA OPEN URL</a> コマンドは両方の記法を受け付けます。</li>
 <li>URL変数が空の文字列の場合、Webエリアは URL をロードしません。 <a href="https://doc.4d.com/4dv19/help/command/ja/page1020.html" target="_blank" rel="noopener noreferrer">WA OPEN URL</a> コマンドはこの場合にエラーを生成します。</li>
@@ -104,7 +104,7 @@
 <p>Windows で Microsoft Edge WebView2がインストールされていない場合、4D はシステムのレンダリングエンジンとして埋め込みエンジンを使用します。 システムにインストールされているかどうかを確認するには、アプリケーションパネルで &quot;Microsoft Edge WebView2 Runtime&quot; を検索してください。</p>
 </blockquote>
 <ul>
-<li><strong>チェックあり</strong> - <code>JSON値: embedded</code>: この場合、4D は Chromium Embedded Framework (CEF) を使用します。 埋め込みWebレンダリングエンジンを使用すると、Webエ  リアの描画とその動作が (ピクセル単位での若干の相違やネットワーク実装に関連する違いを除き) プラットフォームに関わらず同じになります。 このオプションが選択されると、OS によりおこなわれる自動更新などの利点を得ることができなくなります。使用エンジンの新バージョンは 4D のリリースを通して定期的に提供されます。</li>
+<li><strong>チェックあり</strong> - <code>JSON値: embedded</code>: この場合、4D は Chromium Embedded Framework (CEF) を使用します。 埋め込みWebレンダリングエンジンを使用すると、Webエリアの描画とその動作が (ピクセル単位での若干の相違やネットワーク実装に関連する違いを除き) プラットフォームに関わらず同じになります。 このオプションが選択されると、OS によりおこなわれる自動更新などの利点を得ることができなくなります。使用エンジンの 新バージョンは 4D のリリースを通して定期的に提供されます。</li>
 </ul>
 <p>CEFエンジンには以下のような制約があります:</p>
 <ul>

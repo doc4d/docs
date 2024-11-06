@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">{dataClass} | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/ja/18/REST/{dataClass}"><meta data-rh="true" property="og:locale" content="ja"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="pt"><meta data-rh="true" name="docusaurus_locale" content="ja"><meta data-rh="true" name="docsearch:language" content="ja"><meta data-rh="true" name="docusaurus_version" content="18"><meta data-rh="true" name="docusaurus_tag" content="docs-default-18"><meta data-rh="true" name="docsearch:version" content="18"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-18"><meta data-rh="true" property="og:title" content="{dataClass} | 4D Docs"><meta data-rh="true" name="description" content="エンティティやセンティティセレクション、データクラスのメソッドを利用するにあたって、RESTリクエスト内にデータクラス名を直接使用することができます。"><meta data-rh="true" property="og:description" content="エンティティやセンティティセレクション、データクラスのメソッドを利用するにあたって、RESTリクエスト内にデータクラス名を直接使用することができます。"><link data-rh="true" rel="icon" href="/docs/ja/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/ja/18/REST/{dataClass}"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/18/REST/{dataClass}" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/18/REST/{dataClass}" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/18/REST/{dataClass}" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/18/REST/{dataClass}" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/18/REST/{dataClass}" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/18/REST/{dataClass}" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/ja/opensearch.xml"><link rel="stylesheet" href="/docs/ja/assets/css/styles.9d2cac31.css">
-<script src="/docs/ja/assets/js/runtime~main.5a6eb54e.js" defer="defer"></script>
+<script src="/docs/ja/assets/js/runtime~main.88bf12a2.js" defer="defer"></script>
 <script src="/docs/ja/assets/js/main.b0db8fd1.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -45,7 +45,7 @@
 
 
 
-<table><thead><tr><th>シンタックス</th><th>例題</th><th>説明</th></tr></thead><tbody><tr><td><a href="/docs/ja/18/REST/{dataClass}#dataClass"><strong>{dataClass}</strong></a></td><td><code>/Employee</code></td><td>データクラスの全データ (デフォルトでは先頭の 100エンティティ) を返します</td></tr><tr><td><a href="/docs/ja/18/REST/{dataClass}#dataclasskey"><strong>{dataClass}({key})</strong></a></td><td><code>/Employee(22)</code></td><td>データクラスのプライマリーキーによって特定されるエンティティのデータを返します</td></tr><tr><td><a href="/docs/ja/18/REST/{dataClass}#dataclassattributevalue"><strong>{dataClass}:{attribute}(value)</strong></a></td><td><code>/Employee:firstName(John)</code></td><td>指定した属性値を持つ 1件のエンティティのデータを返します</td></tr><tr><td><a href="/docs/ja/18/REST/{dataClass}#dataclassmethod-and-dataclasskeymethod"><strong>{dataClass}/{method}</strong></a></td><td><code>/Employee/getHighSalaries</code></td><td>プロジェクトメソッドを実行し、オブジェクトまたはコレクションを返します (プロジェクトメソッドは公開されている必要があります)</td></tr><tr><td><a href="/docs/ja/18/REST/{dataClass}#dataclassmethod-and-dataclasskeymethod"><strong>{dataClass}({key})/{method}</strong></a></td><td><code>/Employee(22)/getAge</code></td><td>エンティティメソッドに基づいて値を返します</td></tr></tbody></table>
+<table><thead><tr><th>シンタックス</th><th>例題</th><th>説明</th></tr></thead><tbody><tr><td><a href="/docs/ja/18/REST/{dataClass}#dataclass"><strong>{dataClass}</strong></a></td><td><code>/Employee</code></td><td>データクラスの全データ (デフォルトでは先頭の 100エンティティ) を返します</td></tr><tr><td><a href="/docs/ja/18/REST/{dataClass}#dataclasskey"><strong>{dataClass}({key})</strong></a></td><td><code>/Employee(22)</code></td><td>データクラスのプライマリーキーによって特定されるエンティティのデータを返します</td></tr><tr><td><a href="/docs/ja/18/REST/{dataClass}#dataclassattributevalue"><strong>{dataClass}:{attribute}(value)</strong></a></td><td><code>/Employee:firstName(John)</code></td><td>指定した属性値を持つ 1件のエンティティのデータを返します</td></tr><tr><td><a href="/docs/ja/18/REST/{dataClass}#dataclassmethod-and-dataclasskeymethod"><strong>{dataClass}/{method}</strong></a></td><td><code>/Employee/getHighSalaries</code></td><td>プロジェクトメソッドを実行し、オブジェクトまたはコレクションを返します (プロジェクトメソッドは公開されている必要があります)</td></tr><tr><td><a href="/docs/ja/18/REST/{dataClass}#dataclassmethod-and-dataclasskeymethod"><strong>{dataClass}({key})/{method}</strong></a></td><td><code>/Employee(22)/getAge</code></td><td>エンティティメソッドに基づいて値を返します</td></tr></tbody></table>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="dataclass">{dataClass}<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/18/REST/{dataClass}#dataclass">​</a></h2>
 <p>特定のデータクラス (<em>例:</em> <code>Company</code>) の  全データ (デフォルトでは先頭の 100エンティティ) を返します。</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/18/REST/{dataClass}#説明">​</a></h3>
@@ -125,7 +125,6 @@
 <p>データクラスのプライマリーキーによって特定されるエンティティのデータを返します (<em>例</em>: <code>Company(22) または Company(&quot;IT0911AB2200&quot;)</code> など)。</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="説明-1">説明<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/18/REST/{dataClass}#説明-1">​</a></h3>
 <p>データクラスとキーを渡すことで、  公開されているエンティティの情報を取得することができます。 キー (key) は、データクラスに定義されているプライマリーキーの値です。 プライマリーキーの定義についての詳細は、デザインリファレンスマニュアルの <strong><a href="https://doc.4d.com/4Dv18/4D/18/Table-properties.300-4575566.ja.html#1282230" target="_blank" rel="noopener noreferrer">主キーを設定、削除する</a></strong> を参照ください。</p>
-<p>返されるデータについての詳細は <a href="/docs/ja/18/REST/{dataClass}#dataclass">{dataClass}</a> を参照ください。</p>
 <p>取得する属性を指定するには、次のシンタックスを使っておこないます: <a href="/docs/ja/18/REST/manData#%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B%E5%B1%9E%E6%80%A7%E3%81%AE%E9%81%B8%E6%8A%9E">{attribute1, attribute2, ...}</a>。 例:</p>
 <p><code>GET  /rest/Company(1)/name,address</code></p>
 <p><code>$expand</code> を使ってリレーション属性を展開するには、次のように指示します:</p>
@@ -142,7 +141,7 @@
 <p><code>GET  /rest/Company:companyCode(Acme001)</code></p>
 <p>取得する属性を指定するには、次のシンタックスを使っておこないます: <a href="/docs/ja/18/REST/manData#%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B%E5%B1%9E%E6%80%A7%E3%81%AE%E9%81%B8%E6%8A%9E">{attribute1, attribute2, ...}</a>。 例:</p>
 <p><code>GET  /rest/Company:companyCode(Acme001)/name,address</code></p>
-<p><a href="/docs/ja/18/REST/attributes">$attributes</a> を使ってリレーション属性を使用するには、次のように指示します:</p>
+<p><a href="/docs/ja/18/REST/attributes">$attributes</a> を使ってリレーション属性を使用するには、次のように指示しま す:</p>
 <p><code>GET  /rest/Company:companyCode(Acme001)?$attributes=name,address,staff.name</code></p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="例題-2">例題<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/18/REST/{dataClass}#例題-2">​</a></h3>
 <p>次のリクエストは、名前が &quot;Jones&quot; である社員 (Employee) の公開データをすべて返します。</p>
@@ -156,7 +155,7 @@
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4d-の設定">4D の設定<a class="hash-link" aria-label="見出しへの直接リンク" title="見出しへの直接リンク" href="/docs/ja/18/REST/{dataClass}#4d-の設定">​</a></h3>
 <p>RESTリクエストによってメソッドを呼び出せるようにするには:</p>
 <ul>
-<li>そのメソッドプロパティの &quot;公開オプション&quot; で RESTサーバーが選択されていなければなりません。</li>
+<li>そのメソッドプロパティの &quot;公開オプション&quot; で RESTサーバーが選択されていなければなり  ません。</li>
 <li>そのメソッドのマスターテーブルとスコープが定義されている必要があります:
 <ul>
 <li><strong>テーブル</strong>: メソッドコールを介する 4D テーブル (データクラス)。 このテーブルも <a href="/docs/ja/18/REST/configuration#%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%82%84%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AE%E5%85%AC%E9%96%8B">RESTリソースとして公開</a> されている必要があります。</li>

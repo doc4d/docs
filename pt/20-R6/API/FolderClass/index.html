@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Folder | 4D Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://developer.4d.com/docs/pt/20-R6/API/FolderClass"><meta data-rh="true" property="og:locale" content="pt"><meta data-rh="true" property="og:locale:alternate" content="en"><meta data-rh="true" property="og:locale:alternate" content="fr"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="ja"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="20-R6"><meta data-rh="true" name="docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" name="docsearch:version" content="20-R6"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-20-R6"><meta data-rh="true" property="og:title" content="Folder | 4D Docs"><meta data-rh="true" name="description" content="Os objetos Folder são criados com o comando Folder. Contêm referências a pastas que podem ou não existir efectivamente no disco. Por exemplo, quando executa o comando ’Folderpara criar uma pasta, é criado um objeto válidoFolder mas nada é realmente armazenado no disco até chamar a função folder.create()\`."><meta data-rh="true" property="og:description" content="Os objetos Folder são criados com o comando Folder. Contêm referências a pastas que podem ou não existir efectivamente no disco. Por exemplo, quando executa o comando ’Folderpara criar uma pasta, é criado um objeto válidoFolder mas nada é realmente armazenado no disco até chamar a função folder.create()\`."><link data-rh="true" rel="icon" href="/docs/pt/img/favicon/4d.gif"><link data-rh="true" rel="canonical" href="https://developer.4d.com/docs/pt/20-R6/API/FolderClass"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20-R6/API/FolderClass" hreflang="en"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/fr/20-R6/API/FolderClass" hreflang="fr"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/es/20-R6/API/FolderClass" hreflang="es"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/ja/20-R6/API/FolderClass" hreflang="ja"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/pt/20-R6/API/FolderClass" hreflang="pt"><link data-rh="true" rel="alternate" href="https://developer.4d.com/docs/20-R6/API/FolderClass" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://OJ04C0M3CU-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="4D Docs" href="/docs/pt/opensearch.xml"><link rel="stylesheet" href="/docs/pt/assets/css/styles.9d2cac31.css">
-<script src="/docs/pt/assets/js/runtime~main.dab8c0e5.js" defer="defer"></script>
+<script src="/docs/pt/assets/js/runtime~main.60bb235f.js" defer="defer"></script>
 <script src="/docs/pt/assets/js/main.aa03bc9c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -429,7 +429,7 @@
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th></th><th>Descrição</th></tr></thead><tbody><tr><td>Resultados</td><td>Parâmetros</td><td>&lt;-</td><td>True se a pasta foi criada com sucesso, false caso contrário</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-3">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R6/API/FolderClass#descriç ão-3">​</a></h4>
 <p>A função <code>.create()</code> cria uma pasta no disco de acordo com as propriedades do objeto <code>Folder</code>.</p>
-<p>If necessary, the function creates the folder hierachy as described in the <a href="/docs/pt/20-R6/API/FolderClass#platformpath">platformPath</a> or <a href="/docs/pt/20-R6/API/FolderClass#path">path</a> properties. Se a pasta já existir no disco, a função não faz nada (não é atirado nenhum erro) e retorna falso.</p>
+<p>Se necessário, a função cria a hierarquia de pastas conforme descrito nas propriedades <a href="/docs/pt/20-R6/API/FolderClass#platformpath">platformPath</a> ou <a href="/docs/pt/20-R6/API/FolderClass#path">path</a>. Se a pasta já existir no disco, a função não faz nada (não é atirado nenhum erro) e retorna falso.</p>
 <p><strong>Valor retornado</strong></p>
 <ul>
 <li><strong>True</strong> se a pasta for criada com sucesso;</li>
@@ -497,7 +497,7 @@
 <table><thead><tr><th>Parâmetro</th><th>Tipo</th><th></th><th>Descrição</th></tr></thead><tbody><tr><td>destinationFolder</td><td>4D. Folder</td><td>-&gt;</td><td>Pasta de destino para o pseudónimo ou atalho</td></tr><tr><td>aliasName</td><td>Text</td><td>-&gt;</td><td>Nome do pseudónimo ou atalho</td></tr><tr><td>aliasType</td><td>Integer</td><td>-&gt;</td><td>Tipo de ligação do pseudónimo</td></tr><tr><td>Resultados</td><td>4D. File</td><td>&lt;-</td><td>Alias ou referência de atalho</td></tr></tbody></table>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="descrição-4">Descrição<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R6/API/FolderClass#descrição-4">​</a></h4>
 <p>A função <code>.createAlias()</code> cria um alias (macOS) ou um atalho (Windows) para a pasta com o nome <em>aliasName</em> especificado na pasta designada pelo objeto <em>destinationFolder</em>.</p>
-<p>Pass the name of the alias or shortcut to create in the <em>aliasName</em> parameter.</p>
+<p>Passar o nome do alias ou atalho para criar no parâmetro <em>aliasName</em>.</p>
 <p>Por padrão em macOS, a função cria um pseudónimo padrão. Também pode criar uma ligação simbólica utilizando o parâmetro <em>aliasType</em>. Estão disponíveis as seguintes constantes:</p>
 
 
@@ -520,7 +520,7 @@
 
 
 <table><thead><tr><th>Parâmetros</th><th>Valor</th><th>Comentário</th></tr></thead><tbody><tr><td><code>fk alias link</code></td><td>0</td><td>Alias link (padrão)</td></tr><tr><td><code>fk symbolic link</code></td><td>1</td><td>Link simbólico (só em macOS)</td></tr></tbody></table>
-<p>On Windows, a shortcut (.lnk file) is always created (the <em>aliasType</em> parameter is ignored).</p>
+<p>No Windows, é sempre criado um atalho (arquivo.lnk) (o parâmetro <em>aliasType</em> é ignorado).</p>
 <p><strong>Objeto devolvido</strong></p>
 <p>Um objeto <code>4D.File</code> com a propriedade <code>isAlias</code> definida como <strong>true</strong>.</p>
 <h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exemplo-3">Exemplo<a class="hash-link" aria-label="Link direto para o cabeçalho" title="Link direto para o cabeçalho" href="/docs/pt/20-R6/API/FolderClass#exemplo-3">​</a></h4>
