@@ -74,7 +74,7 @@ title: データタイプの概要
 | 文字列 (1) |        | Num   | Date  | Time  | Bool   |
 | 数値 (2)  | Text |       |       |       | Bool   |
 | 日付      | Text |       |       |       | Bool   |
-| 時間      | String |       |       |       | Bool   |
+| 時間      | Text |       |       |       | Bool   |
 | ブール     |        | Num   |       |       |        |
 
 (1) JSON形式の文字列は `JSON Parse` コマンドを使ってスカラーデータ、オブジェクト、あるいはコレクションに変換することができます。

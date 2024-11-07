@@ -32,7 +32,7 @@ A continuación se describen los datos devueltos:
 
 | Propiedad     | Tipo       | Descripción                                                                                                                                                                                             |
 | ------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| __entityModel | String     | Nombre de la dataclass.                                                                                                                                                                                 |
+| __entityModel | Text     | Nombre de la dataclass.                                                                                                                                                                                 |
 | __COUNT       | Number     | Número de entidades en la clase de datos.                                                                                                                                                               |
 | __SENT        | Number     | Número de entidades enviadas por la petición REST. Este número puede ser el número total de entidades si es menor que el valor definido por `$top/$limit`.                                              |
 | __FIRST       | Number     | Número de entidad en la que comienza la selección. O bien 0 por defecto o el valor definido por `$skip`.                                                                                                |

@@ -42,7 +42,7 @@ De plus, pour assurer la bonne marche de la fonctionnalité, les conditions suiv
 | __PrimaryKey  | Text            | Clé primaire de l'entité supprimée         |
 | __Stamp       | Integer 64 bits | Marqueur global juste avant la suppression |
 | __TableName   | Text            | Nom de la table de l'entité supprimée      |
-| __TableNumber | Longint         | Numéro de la table de l'entité supprimée   |
+| __TableNumber | Integer         | Numéro de la table de l'entité supprimée   |
 
 Vous ne pouvez suivre que les changements de données dans les tables ayant le champ `__GlobalStamp`.
 

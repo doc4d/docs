@@ -45,8 +45,8 @@ title: $info
 
 | プロパティ      | 型      | 説明                                                |
 | ---------- | ------ | ------------------------------------------------- |
-| sessionID  | String | セッションを参照する UUID                                   |
-| userName   | String | セッションを実行中のユーザー名                                   |
+| sessionID  | Text | セッションを参照する UUID                                   |
+| userName   | Text | セッションを実行中のユーザー名                                   |
 | lifeTime   | Number | ユーザーセッションのタイムアウト (デフォルトは 3600) |
 | expiration | 日付     | ユーザーセッションの有効期限                                    |
 

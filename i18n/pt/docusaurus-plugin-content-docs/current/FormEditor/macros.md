@@ -206,7 +206,7 @@ Aqui estão as propriedades retornadas no parâmetro _$editor_:
 | ---------------------------------------------------------------- | ---------- | --------------------------------------------------------------------------------- |
 | $editor.editor.form              | Object     | O formulário completo                                                             |
 | $editor.editor.file              | File       | Objeto File do ficheiro do formulário                                             |
-| $editor.editor.name              | String     | Nome do formulário                                                                |
+| $editor.editor.name              | Text     | Nome do formulário                                                                |
 | $editor.editor.table             | number     | Número da tabela do formulário, 0 para formulário projecto                        |
 | $editor.editor.currentPageNumber | number     | O número da página actual                                                         |
 | $editor.editor.currentPage       | Object     | The current page, containing all the form objects and the entry order of the page |
@@ -223,7 +223,7 @@ Aqui estão as propriedades que você pode passar no objeto `$result` se quiser 
 | formProperties                    | Object     | formProperties se modificada pela macro                                |
 | editor.groups     | Object     | informação do grupo, se os grupos forem modificados pela macro         |
 | editor.views      | Object     | view info, se as vistas forem modificadas pela macro                   |
-| editor.activeView | String     | Nome da vista activa                                                   |
+| editor.activeView | Text     | Nome da vista activa                                                   |
 
 Por exemplo, se objectos da página actual e grupos tiverem sido modificados, pode escrever:
 

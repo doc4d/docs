@@ -38,8 +38,8 @@ Les séquences d’échappement suivantes peuvent être utilisées dans les cha�
 
 | Opération           | Syntaxe          | Retourne | Expression              | Valeur   |
 | ------------------- | ---------------- | -------- | ----------------------- | -------- |
-| Concaténation       | Chaîne + Chaîne  | String   | "abc" + "def"           | "abcdef" |
-| Répétition          | Chaîne * Nombre  | String   | "ab" * 3                | "ababab" |
+| Concaténation       | Chaîne + Chaîne  | Text   | "abc" + "def"           | "abcdef" |
+| Répétition          | Chaîne * Nombre  | Text   | "ab" * 3                | "ababab" |
 | Egalité             | Chaîne = Chaîne  | Boolean  | "abc" = "abc"           | True     |
 |                     |                  |          | "abc" = "abd"           | False    |
 | Inégalité           | Chaîne # Chaîne  | Boolean  | "abc" # "abd"           | True     |

@@ -698,7 +698,7 @@ Puede pasar un parámetro opcional *options* con las siguientes propiedades:
 | Propiedad   | Tipo    | Descripción                                                                                                                                       |
 | ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | copy        | Boolean | *True* (por defecto) para mantener los valores, el formato y las fórmulas copiados después de la ejecución del comando. *False* para eliminarlos. |
-| copyOptions | Longint | Especifica lo que se copia o mueve. Valores posibles: <p><table><tr><th>Valor</th><th>Descripción</th></tr><tr><td>`vk clipboard options all` (por defecto)</td><td>Copia todos los objetos de datos, incluidos los valores, formatos y fórmulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Copia únicamente los formatos.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Copia sólo las fórmulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Copia las fórmulas y el formato.</td></tr><tr><td>`vk clipboard options values`</td><td>Copia sólo los valores.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Copia los valores y el formato.</td></tr></table></p>                                                                    |
+| copyOptions | Integer | Especifica lo que se copia o mueve. Valores posibles: <p><table><tr><th>Valor</th><th>Descripción</th></tr><tr><td>`vk clipboard options all` (por defecto)</td><td>Copia todos los objetos de datos, incluidos los valores, formatos y fórmulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Copia únicamente los formatos.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Copia sólo las fórmulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Copia las fórmulas y el formato.</td></tr><tr><td>`vk clipboard options values`</td><td>Copia sólo los valores.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Copia los valores y el formato.</td></tr></table></p>                                                                    |
 
 Se tienen en cuenta las opciones de pegado definidas en las [opciones del libro de trabajo](#vp-set-workbook-options).
 
@@ -3380,7 +3380,7 @@ El parámetro *options* tiene varias propiedades:
 | Propiedad    | Tipo    | Descripción                                                                                                                                                   |
 | ------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | copy         | Boolean | Determina si los valores, el formato y las fórmulas de las celdas de *originRange* se eliminan después de la ejecución del comando:<ul><li>*False* (por defecto) para eliminarlos</li><li>*True* para conservarlos</li></ul> |
-| pasteOptions | Longint | Especifica lo que se pega. Valores posibles: <p><table><tr><th>Valor</th><th>Descripción</th></tr><tr><td>`vk clipboard options all` (por defecto)</td><td>Pega todos los objetos de datos, incluyendo valores, formato y fórmulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Pega sólo el formato.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Pegar sólo las fórmulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Pega las fórmulas y el formato.</td></tr><tr><td>`vk clipboard options values`</td><td>Pega sólo los valores.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Pega los valores y el formato.</td></tr></table></p>                                                                                        |
+| pasteOptions | Integer | Especifica lo que se pega. Valores posibles: <p><table><tr><th>Valor</th><th>Descripción</th></tr><tr><td>`vk clipboard options all` (por defecto)</td><td>Pega todos los objetos de datos, incluyendo valores, formato y fórmulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Pega sólo el formato.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Pegar sólo las fórmulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Pega las fórmulas y el formato.</td></tr><tr><td>`vk clipboard options values`</td><td>Pega sólo los valores.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Pega los valores y el formato.</td></tr></table></p>                                                                                        |
 
 
 Se tienen en cuenta las opciones de pegado definidas en las [opciones del libro de trabajo](#vp-set-workbook-options).
@@ -3559,7 +3559,7 @@ $cellStyle.font:=VP Object to font($font)
 | ---------- | ------- | -- | ---------------------------------------------------- |
 | rangeObj   | Object  | -> | Objeto de rango de celda                             |
 | dataObject | Object  | -> | Objeto que contiene los datos a pegar                |
-| options    | Longint | -> | Especifica lo que se pega|<!-- END REF -->
+| options    | Integer | -> | Especifica lo que se pega|<!-- END REF -->
 
 |
 

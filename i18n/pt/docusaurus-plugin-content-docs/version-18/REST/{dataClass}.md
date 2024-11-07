@@ -29,7 +29,7 @@ Aqui está uma descrição dos dados retornados:
 
 | Propriedade   | Tipo       | Descrição                                                                                                                                                                                              |
 | ------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| __entityModel | String     | Nome da dataclass.                                                                                                                                                                                     |
+| __entityModel | Text     | Nome da dataclass.                                                                                                                                                                                     |
 | __COUNT       | Number     | Número de entidades na classe de dados.                                                                                                                                                                |
 | __SENT        | Number     | Número de entidades enviadas pela petição REST. Esse número pode ser o número total de entidades se for menor que o valor definido por `$top/$limit`.                                                  |
 | __FIRST       | Number     | Número de entidade em que a seleção vai começar. Ou o valor padrão 0 ou o valor definido por `$skip`.                                                                                                  |

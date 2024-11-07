@@ -696,7 +696,7 @@ Você pode passar um parâmetro opcional *options* com as seguintes propriedades
 | Propriedade | Tipo       | Descrição                                                                                                                        |
 | ----------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | copy        | Parâmetros | *True* (padrão) para manter os valores copiados, a formatação e as fórmulas após a execução do comando. *False* para os remover. |
-| copyOptions | Longint    | Especifica o que é copiado ou movido. Valores possíveis: <p><table><tr><th>Valor</th><th>Descrição</th></tr><tr><td>`vk clipboard options all` (padrão)</td><td>Copia todos os objetos de dados, incluindo valores, formatação e fórmulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Copia apenas a formatação.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Copia apenas as fórmulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Copia as fórmulas e a formatação.</td></tr><tr><td>`vk clipboard options values`</td><td>Copia apenas os valores.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Copia os valores e a formatação.</td></tr></table></p>                                                |
+| copyOptions | Integer    | Especifica o que é copiado ou movido. Valores possíveis: <p><table><tr><th>Valor</th><th>Descrição</th></tr><tr><td>`vk clipboard options all` (padrão)</td><td>Copia todos os objetos de dados, incluindo valores, formatação e fórmulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Copia apenas a formatação.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Copia apenas as fórmulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Copia as fórmulas e a formatação.</td></tr><tr><td>`vk clipboard options values`</td><td>Copia apenas os valores.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Copia os valores e a formatação.</td></tr></table></p>                                                |
 
 As opções de colagem definidas nas opções da pasta de trabalho [](#vp-set-workbook-options) são levadas em consideração.
 
@@ -3358,7 +3358,7 @@ O parâmetro *options* tem várias propriedades:
 | Propriedade  | Tipo       | Descrição                                                                                                                                              |
 | ------------ | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | copy         | Parâmetros | Determina se os valores, formatação e fórmulas das células no intervalo *originRange* são removidos após o comando executar:<ul><li>*False* (padrão) para os remover</li><li>*True* para os manter</li></ul> |
-| pasteOptions | Longint    | Especifica o que é colado. Valores possíveis: <p><table><tr><th>Valor</th><th>Descrição</th></tr><tr><td>`vk clipboard options all` (padrão)</td><td>Cola todos os objectos de dados, incluindo valores, formatação e fórmulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Cola apenas a formatação.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Cola apenas as fórmulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Cola as fórmulas e a formatação.</td></tr><tr><td>`vk clipboard options values`</td><td>Cola apenas os valores.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Cola os valores e a formatação.</td></tr></table></p>                                                                                |
+| pasteOptions | Integer    | Especifica o que é colado. Valores possíveis: <p><table><tr><th>Valor</th><th>Descrição</th></tr><tr><td>`vk clipboard options all` (padrão)</td><td>Cola todos os objectos de dados, incluindo valores, formatação e fórmulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Cola apenas a formatação.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Cola apenas as fórmulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Cola as fórmulas e a formatação.</td></tr><tr><td>`vk clipboard options values`</td><td>Cola apenas os valores.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Cola os valores e a formatação.</td></tr></table></p>                                                                                |
 
 
 As opções de colagem definidas nas opções da pasta de trabalho [](#vp-set-workbook-options) são levadas em consideração.
@@ -3537,7 +3537,7 @@ $cellStyle.font:=VP Object to font($font)
 | ---------- | ------- | -- | ---------------------------------------------------- |
 | rangeObj   | Object  | -> | Objeto intervalo de células                          |
 | dataObject | Object  | -> | Objeto que contém os dados a colar                   |
-| options    | Longint | -> | Especifica o que é colado|<!-- END REF -->
+| options    | Integer | -> | Especifica o que é colado|<!-- END REF -->
 
 |
 

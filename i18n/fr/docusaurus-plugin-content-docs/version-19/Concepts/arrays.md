@@ -165,7 +165,7 @@ Cependant, dans certaines circonstances, vous pouvez avoir besoin de tableaux co
 | Boolean         | (31+nombre d'éléments)/8                                                |
 | Date            | (1+nombre d'éléments) * 6                                               |
 | Integer         | (1+nombre d'éléments) * 2                                               |
-| Longint         | (1+nombre d'éléments) * 4                                               |
+| Integer         | (1+nombre d'éléments) * 4                                               |
 | Object          | (1+nombre d'éléments) * 8 + somme de la taille de chaque objet          |
 | Picture         | (1+nombre d'éléments) * 8 + somme de la taille de chaque image          |
 | Pointer         | (1+nombre d'éléments) * 8 + somme de la taille de chaque pointeur       |

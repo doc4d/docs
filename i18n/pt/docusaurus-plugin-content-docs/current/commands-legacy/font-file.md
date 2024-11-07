@@ -27,7 +27,7 @@ The optional *fontStyle* parameter allows to define a style variation to get. Yo
 | -------- | ------- | ----- |
 | Bold     | Integer | 1     |
 | Italic   | Integer | 2     |
-| Plain    | Longint | 0     |
+| Plain    | Integer | 0     |
 
 #### Exemplo 
 

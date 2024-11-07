@@ -28,8 +28,8 @@ The *subSectionType* parameter specifes the subsection to delete. You can pass o
 | Constante     | Type    | Valeur |
 | ------------- | ------- | ------ |
 | wk first page | Integer | 1      |
-| wk left page  | Longint | 2      |
-| wk right page | Longint | 3      |
+| wk left page  | Integer | 2      |
+| wk right page | Integer | 3      |
 
 :::note
 
