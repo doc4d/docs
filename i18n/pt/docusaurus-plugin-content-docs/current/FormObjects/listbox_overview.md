@@ -140,7 +140,7 @@ Propriedades compatíveis dependem do tipo de list box.
 | [Droppable](properties_Action.md#droppable)                                                                                                                                                               | X              | X                | X                                    |
 | [Focusable](properties_Entry.md#focusable)                                                                                                                                                                | X              | X                | X                                    |
 | [Fonte](properties_Text.md#font)                                                                                                                                                                          | X              | X                | X                                    |
-| [Font Color](properties_Text.md#font-color)                                                                                                                                                               | X              | X                | X                                    |
+| [Cor da fonte](properties_Text.md#font-color)                                                                                                                                                             | X              | X                | X                                    |
 | [Expressão de Cor da Fonte](properties_Text.md#font-color-expression)                                                                                                                                     |                | X                | X                                    |
 | [Tamanho fonte](properties_Text.md#font-size)                                                                                                                                                             | X              | X                | X                                    |
 | [Altura (list box)](properties_CoordinatesAndSizing.md#height)                                                                                                                         | X              | X                | X                                    |
@@ -255,7 +255,7 @@ Form events on list box or list box column objects may return the following addi
 
 > If an event occurs on a "fake" column or row that doesn't exist, an empty string is typically returned.
 
-## List box columns {#list-box-columns}
+## Colunas List box {#list-box-columns}
 
 Uma list box é feita de um ou mais objetos coluna que têm propriedades específicas. Pode selecionar uma coluna list box no editor de Formulário clicando nela ou quando o objeto list box for selecionado:
 
