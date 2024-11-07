@@ -50,8 +50,8 @@ Además de los parámetros de posicionamiento y de apariencia estándar, puede d
 Hay otros modos disponibles:
 
 - [Loop back to first frame](properties_Animation.md#loop-back-to-first-frame)
-- [Switch back when Released](properties_Animation.md#switch-back-when-released)
-- [Switch when Roll Over](properties_Animation.md#switch-when-roll-over)
+- [Retroceder al soltar](properties_Animation.md#switch-back-when-released)
+- [Alternar al pasar el ratón por encima](properties_Animation.md#switch-when-roll-over)
 - [Switch continuously on clicks](properties_Animation.md#switch-continuously-on-clicks)
 - [Usar el último fotograma como desactivado](properties_Animation.md#use-last-frame-as-disabled)
 - [Usar último fotograma como desactivado](properties_Animation.md#use-last-frame-as-disabled)
