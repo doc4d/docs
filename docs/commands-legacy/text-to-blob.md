@@ -25,9 +25,9 @@ The *textFormat* parameter can be used to set the internal format and the charac
 
 | Constant                 | Type    | Value |
 | ------------------------ | ------- | ----- |
-| Mac C string             | Longint | 0     |
-| Mac Pascal string        | Longint | 1     |
-| Mac text with length     | Longint | 2     |
+| Mac C string             | Integer | 0     |
+| Mac Pascal string        | Integer | 1     |
+| Mac text with length     | Integer | 2     |
 | Mac text without length  | Longint | 3     |
 | UTF8 C string            | Longint | 4     |
 | UTF8 text with length    | Longint | 5     |

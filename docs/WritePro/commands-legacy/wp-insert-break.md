@@ -10,9 +10,9 @@ displayed_sidebar: docs
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | targetObj | Object | &#8594;  | Range or element or 4D Write Pro document |
-| breakType | Longint | &#8594;  | Type of break to insert |
-| mode | Longint | &#8594;  | Insertion mode |
-| rangeUpdate | Longint | &#8594;  | Range update mode |
+| breakType | Integer | &#8594;  | Type of break to insert |
+| mode | Integer | &#8594;  | Insertion mode |
+| rangeUpdate | Integer | &#8594;  | Range update mode |
 
 <!-- END REF-->
 

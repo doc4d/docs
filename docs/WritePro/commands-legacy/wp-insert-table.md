@@ -5,14 +5,14 @@ slug: /WritePro/commands/wp-insert-table
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP Insert table.Syntax-->**WP Insert table** ( *targetObj* ; *mode* {; *rangeUpdate* {; *nbCols* {; *nbRows*}}} ) -> Function result<!-- END REF-->
+<!--REF #_command_.WP Insert table.Syntax-->**WP Insert table** ( *targetObj* ; *mode* {; *rangeUpdate* {; *nbCols* {; *nbRows*}}} ) : Object<!-- END REF-->
 <!--REF #_command_.WP Insert table.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | targetObj | Object | &#8594;  | Range or element or 4D Write Pro document |
-| mode | Longint | &#8594;  | Insertion mode |
-| rangeUpdate | Longint | &#8594;  | Range update mode |
-| nbCols | Longint | &#8594;  | Number of columns to set in the table |
+| mode | Integer | &#8594;  | Insertion mode |
+| rangeUpdate | Integer | &#8594;  | Range update mode |
+| nbCols | Integer | &#8594;  | Number of columns to set in the table |
 | nbRows | Longint | &#8594;  | Number of rows to set in the table |
 | Function result | Object | &#8592; | Table object |
 

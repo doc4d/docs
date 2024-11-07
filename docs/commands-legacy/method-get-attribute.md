@@ -5,7 +5,7 @@ slug: /commands/method-get-attribute
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD Get attribute.Syntax-->**METHOD Get attribute** ( *path* ; *attribType* {; *} ) -> Function result<!-- END REF-->
+<!--REF #_command_.METHOD Get attribute.Syntax-->**METHOD Get attribute** ( *path* ; *attribType* {; *} ) : Boolean<!-- END REF-->
 <!--REF #_command_.METHOD Get attribute.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
@@ -27,9 +27,9 @@ In the *attribType* parameter, pass a value indicating the type of attribute to 
 
 | Constant                     | Type    | Value | Comment                                                                           |
 | ---------------------------- | ------- | ----- | --------------------------------------------------------------------------------- |
-| Attribute executed on server | Longint | 8     | Corresponds to the "Execute on server" option                                     |
-| Attribute invisible          | Longint | 1     | Corresponds to the "Invisible" option                                             |
-| Attribute published SOAP     | Longint | 3     | Corresponds to the "Offered as a Web Service" option                              |
+| Attribute executed on server | Integer | 8     | Corresponds to the "Execute on server" option                                     |
+| Attribute invisible          | Integer | 1     | Corresponds to the "Invisible" option                                             |
+| Attribute published SOAP     | Integer | 3     | Corresponds to the "Offered as a Web Service" option                              |
 | Attribute published SQL      | Longint | 7     | Corresponds to the "Available through SQL" option                                 |
 | Attribute published Web      | Longint | 2     | Corresponds to the "Available through 4D HTML tags and URLs (4DACTION...)" option |
 | Attribute published WSDL     | Longint | 4     | Corresponds to the "Published in WSDL" option                                     |

@@ -41,9 +41,9 @@ In the *mode* parameter, pass one of the following constants to indicate the ins
 
 | Constant   | Type    | Value | Comment                                |
 | ---------- | ------- | ----- | -------------------------------------- |
-| wk append  | Longint | 2     | Insert contents at end of target       |
-| wk prepend | Longint | 1     | Insert contents at beginning of target |
-| wk replace | Longint | 0     | Replace target contents                |
+| wk append  | Integer | 2     | Insert contents at end of target       |
+| wk prepend | Integer | 1     | Insert contents at beginning of target |
+| wk replace | Integer | 0     | Replace target contents                |
 
 * If *targetObj* is a range, you can use the optional *rangeUpdate* parameter to pass one of the following constants to specify whether or not the inserted *formula* is included in the resulting range:  
     

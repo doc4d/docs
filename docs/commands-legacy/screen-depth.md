@@ -28,9 +28,9 @@ The following predefined constants are provided by 4D:
 
 | Constant                  | Type    | Value |
 | ------------------------- | ------- | ----- |
-| Black and white           | Longint | 0     |
-| Four colors               | Longint | 2     |
-| Millions of colors 24 bit | Longint | 24    |
+| Black and white           | Integer | 0     |
+| Four colors               | Integer | 2     |
+| Millions of colors 24 bit | Integer | 24    |
 | Millions of colors 32 bit | Longint | 32    |
 | Sixteen colors            | Longint | 4     |
 | Thousands of colors       | Longint | 16    |

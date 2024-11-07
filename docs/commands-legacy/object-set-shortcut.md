@@ -31,10 +31,10 @@ In the *key* parameter, pass a string indicating the key to associate with the o
 * or a constant (or its value) from the *Shortcut and Associated Keys* theme:  
 | Constant                      | Type   | Value           | Comment       |  
 | ----------------------------- | ------ | --------------- | ------------- |  
-| Shortcut with Backspace       | String | \[backspace\]   |               |  
-| Shortcut with Carriage Return | String | \[return\]      |               |  
-| Shortcut with Delete          | String | \[del\]         |               |  
-| Shortcut with Down arrow      | String | \[down arrow\]  |               |  
+| Shortcut with Backspace       | Text | \[backspace\]   |               |  
+| Shortcut with Carriage Return | Text | \[return\]      |               |  
+| Shortcut with Delete          | Text | \[del\]         |               |  
+| Shortcut with Down arrow      | Text | \[down arrow\]  |               |  
 | Shortcut with End             | String | \[end\]         |               |  
 | Shortcut with Enter           | String | \[enter\]       |               |  
 | Shortcut with Escape          | String | \[esc\]         |               |  
@@ -66,9 +66,9 @@ In the *modifiers* parameter, you can pass one or more modifier keys to associat
 
 | Constant         | Type    | Value | Comment                                                    |
 | ---------------- | ------- | ----- | ---------------------------------------------------------- |
-| Command key mask | Longint | 256   | Ctrl key under Windows, Command key under OS X             |
-| Control key mask | Longint | 4096  | Ctrl key under OS X, or right click under Windows and OS X |
-| Option key mask  | Longint | 2048  | Alt key (also called Option under OS X)                    |
+| Command key mask | Integer | 256   | Ctrl key under Windows, Command key under OS X             |
+| Control key mask | Integer | 4096  | Ctrl key under OS X, or right click under Windows and OS X |
+| Option key mask  | Integer | 2048  | Alt key (also called Option under OS X)                    |
 | Shift key mask   | Longint | 512   | Windows and OS X                                           |
 
 **Note:** When you omit the *modifiers* parameter, the object is enabled as soon as you press the key that was set. For example, if you associate the "H" key with a button, this button is enabled whenever you press the H key. This kind of functioning is to be reserved for specific interfaces.

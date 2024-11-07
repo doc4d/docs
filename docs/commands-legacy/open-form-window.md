@@ -5,7 +5,7 @@ slug: /commands/open-form-window
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Open form window.Syntax-->**Open form window** ( {*aTable* ;} *formName* {; *type* {; *hPos* {; *vPos* {; *}}}} ) -> Function result<!-- END REF-->
+<!--REF #_command_.Open form window.Syntax-->**Open form window** ( {*aTable* ;} *formName* {; *type* {; *hPos* {; *vPos* {; *}}}} ) : WinRef<!-- END REF-->
 <!--REF #_command_.Open form window.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
@@ -40,9 +40,9 @@ The optional *type* parameter allows you to specify a type for the window. You m
 
 | Constant                         | Type    | Value  |
 | -------------------------------- | ------- | ------ |
-| Controller form window           | Longint | 133056 |
-| Form has full screen mode Mac    | Longint | 65536  |
-| Form has no menu bar             | Longint | 2048   |
+| Controller form window           | Integer | 133056 |
+| Form has full screen mode Mac    | Integer | 65536  |
+| Form has no menu bar             | Integer | 2048   |
 | Modal form dialog box            | Longint | 1      |
 | Movable form dialog box          | Longint | 5      |
 | Movable form dialog box no title | Longint | 524293 |

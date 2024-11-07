@@ -56,9 +56,9 @@ The *dataType* parameter can be used to designate the type of data resulting fro
 
 | Constant   | Type    | Value |
 | ---------- | ------- | ----- |
-| Is Boolean | Longint | 6     |
-| Is date    | Longint | 4     |
-| Is picture | Longint | 3     |
+| Is Boolean | Integer | 6     |
+| Is date    | Integer | 4     |
+| Is picture | Integer | 3     |
 | Is real    | Longint | 1     |
 | Is text    | Longint | 2     |
 | Is time    | Longint | 11    |

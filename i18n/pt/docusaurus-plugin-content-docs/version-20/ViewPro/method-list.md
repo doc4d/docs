@@ -351,8 +351,8 @@ $all:=VP All("ViewProArea") // todas as células da folha atual
 | Parâmetro  | Tipo    |    | Descrição                                  |
 | ---------- | ------- | -- | ------------------------------------------ |
 | vpAreaName | Text    | -> | Nome de objeto formulário área 4D View Pro |
-| column     | Longint | -> | Índice de coluna                           |
-| row        | Longint | -> | Índice de linha                            |
+| column     | Integer | -> | Índice de coluna                           |
+| row        | Integer | -> | Índice de linha                            |
 | sheet      | Integer | -> | Índice da folha (folha atual se omitida)   |
 | Resultados | Object  | <- | Objeto intervalo de uma única célula       |
 <!-- END REF -->

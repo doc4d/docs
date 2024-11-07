@@ -5,7 +5,7 @@ slug: /commands/st-get-content-type
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ST Get content type.Syntax-->**ST Get content type** ( {* ;} *object* {; *startSel* {; *endSel* {; *startBlock* {; *endBlock*}}}} ) -> Function result<!-- END REF-->
+<!--REF #_command_.ST Get content type.Syntax-->**ST Get content type** ( {* ;} *object* {; *startSel* {; *endSel* {; *startBlock* {; *endBlock*}}}} ) : Integer<!-- END REF-->
 <!--REF #_command_.ST Get content type.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
@@ -15,7 +15,7 @@ displayed_sidebar: docs
 | endSel | Integer | &#8594;  | End of selection |
 | startBlock | Integer | &#8592; | Start position of first type of selection |
 | endBlock | Integer | &#8592; | End position of first type of selection |
-| Function result | Longint | &#8592; | Type of content |
+| Function result | Integer | &#8592; | Type of content |
 
 <!-- END REF-->
 
@@ -39,8 +39,8 @@ The optional *startSel* and *endSel* parameters designate a selection of text in
 
 | Constant           | Type    | Value  | Comment                                                             |
 | ------------------ | ------- | ------ | ------------------------------------------------------------------- |
-| ST End highlight   | Longint | \-1001 | Designates last character of current text selection in object (\*)  |
-| ST End text        | Longint | 0      | Designates last character of text contained in object               |
+| ST End highlight   | Integer | \-1001 | Designates last character of current text selection in object (\*)  |
+| ST End text        | Integer | 0      | Designates last character of text contained in object               |
 | ST Start highlight | Longint | \-1000 | Designates first character of current text selection in object (\*) |
 | ST Start text      | Longint | 1      | Designates first character of text contained in object              |
 

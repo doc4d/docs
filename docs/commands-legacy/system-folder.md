@@ -5,12 +5,12 @@ slug: /commands/system-folder
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.System folder.Syntax-->**System folder** {( *type* )} -> Function result<!-- END REF-->
+<!--REF #_command_.System folder.Syntax-->**System folder** {( *type* )} : Text<!-- END REF-->
 <!--REF #_command_.System folder.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | type | Integer | &#8594;  | Type of system folder |
-| Function result | String | &#8592; | Pathname to a system folder |
+| Function result | Text | &#8592; | Pathname to a system folder |
 
 <!-- END REF-->
 
@@ -22,9 +22,9 @@ You pass in the optional *type* parameter a value indicating the type of system 
 
 | Constant                      | Type    | Value | Comment                                                        |
 | ----------------------------- | ------- | ----- | -------------------------------------------------------------- |
-| Applications or program files | Longint | 16    |                                                                |
-| Desktop                       | Longint | 15    |                                                                |
-| Documents folder              | Longint | 17    | "Documents" folder of user                                     |
+| Applications or program files | Integer | 16    |                                                                |
+| Desktop                       | Integer | 15    |                                                                |
+| Documents folder              | Integer | 17    | "Documents" folder of user                                     |
 | Favorites Win                 | Longint | 14    |                                                                |
 | Fonts                         | Longint | 1     |                                                                |
 | Home folder                   | Longint | 18    | Current home folder of the user (usually "/Users/<username>/") |

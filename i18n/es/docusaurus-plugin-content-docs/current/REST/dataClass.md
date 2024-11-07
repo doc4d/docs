@@ -40,7 +40,7 @@ Cada entidad contiene las siguientes propiedades:
 
 | Propiedad                                             | Tipo   | Descripción                                                                                                                        |
 | ----------------------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| __KEY       | String | Valor de la llave primaria definida para la clase de datos.                                                        |
+| __KEY       | Text | Valor de la llave primaria definida para la clase de datos.                                                        |
 | __TIMESTAMP | Fecha  | Marca de tiempo de la última modificación de la entidad                                                                            |
 | __STAMP     | Number | Sello interno que se necesita cuando se modifica alguno de los valores de la entidad al utilizar `$method=update`. |
 

@@ -5,7 +5,7 @@ slug: /commands/is-license-available
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Is license available.Syntax-->**Is license available** {( *license* )} -> Function result<!-- END REF-->
+<!--REF #_command_.Is license available.Syntax-->**Is license available** {( *license* )} : Boolean<!-- END REF-->
 <!--REF #_command_.Is license available.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
@@ -27,9 +27,9 @@ The Is license available command can be used in three different ways:
 * You pass one of the constants of the “*Is License Available*” theme in the *license* parameter:  
 | Constant               | Type    | Value     |  
 | ---------------------- | ------- | --------- |  
-| 4D Client SOAP license | Longint | 808465465 |  
-| 4D Client Web license  | Longint | 808465209 |  
-| 4D for OCI license     | Longint | 808465208 |  
+| 4D Client SOAP license | Integer | 808465465 |  
+| 4D Client Web license  | Integer | 808465209 |  
+| 4D for OCI license     | Integer | 808465208 |  
 | 4D ODBC Pro license    | Longint | 808464946 |  
 | 4D REST Test license   | Longint | 808465719 |  
 | 4D SOAP license        | Longint | 808465464 |  

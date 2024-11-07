@@ -37,9 +37,9 @@ The **QR SET TOTALS DATA** command sets the details of a specific break (total o
 
 | Constant              | Type    | Value |
 | --------------------- | ------- | ----- |
-| qr average            | Longint | 2     |
-| qr count              | Longint | 16    |
-| qr max                | Longint | 8     |
+| qr average            | Integer | 2     |
+| qr count              | Integer | 16    |
+| qr max                | Integer | 8     |
 | qr min                | Longint | 4     |
 | qr standard deviation | Longint | 32    |
 | qr sum                | Longint | 1     |

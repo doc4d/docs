@@ -45,8 +45,8 @@ Para cada sesión de usuario, se devuelve la siguiente información en la colecc
 
 | Propiedad  | Tipo   | Descripción                                                                                          |
 | ---------- | ------ | ---------------------------------------------------------------------------------------------------- |
-| sessionID  | String | Un UUID que referencia la sesión.                                                    |
-| userName   | String | El nombre del usuario que ejecuta la sesión.                                         |
+| sessionID  | Text | Un UUID que referencia la sesión.                                                    |
+| userName   | Text | El nombre del usuario que ejecuta la sesión.                                         |
 | lifeTime   | Number | La duración de una sesión usuario en segundos (3600 por defecto). |
 | expiration | Fecha  | La fecha y la hora actuales de caducidad de la sesión de usuario.                    |
 

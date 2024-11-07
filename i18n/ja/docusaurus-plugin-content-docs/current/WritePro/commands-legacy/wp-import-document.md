@@ -5,7 +5,7 @@ slug: /WritePro/commands/wp-import-document
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP Import document.Syntax-->**WP Import document** ( *filePath* {; *option*} ) -> 戻り値<!-- END REF-->
+<!--REF #_command_.WP Import document.Syntax-->**WP Import document** ( *filePath* {; *option*} ) : Object<!-- END REF-->
 <!--REF #_command_.WP Import document.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

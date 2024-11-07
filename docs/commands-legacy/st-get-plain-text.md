@@ -5,7 +5,7 @@ slug: /commands/st-get-plain-text
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ST Get plain text.Syntax-->**ST Get plain text** ( {* ;} *object* {; *refMode*} ) -> Function result<!-- END REF-->
+<!--REF #_command_.ST Get plain text.Syntax-->**ST Get plain text** ( {* ;} *object* {; *refMode*} ) : Text<!-- END REF-->
 <!--REF #_command_.ST Get plain text.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
@@ -34,9 +34,9 @@ The optional *refMode* parameter indicates the way that references found in *obj
 
 | Constant                                     | Type    | Value | Comment                                                                                                                                                                                                 |
 | -------------------------------------------- | ------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ST 4D Expressions as sources                 | Longint | 2     | The original string of 4D expression references is returned                                                                                                                                             |
-| ST 4D Expressions as values                  | Longint | 1     | 4D expression references are returned in their evaluated form (default functioning in forms)                                                                                                            |
-| ST References as spaces                      | Longint | 0     | Each reference is returned as a non-breaking space character (default operation, used by other commands)                                                                                                |
+| ST 4D Expressions as sources                 | Integer | 2     | The original string of 4D expression references is returned                                                                                                                                             |
+| ST 4D Expressions as values                  | Integer | 1     | 4D expression references are returned in their evaluated form (default functioning in forms)                                                                                                            |
+| ST References as spaces                      | Integer | 0     | Each reference is returned as a non-breaking space character (default operation, used by other commands)                                                                                                |
 | ST Tags as plain text                        | Longint | 64    | The label of the tag is returned in plain text. For example for the tag '<img src="test.jpg" alt="picture">my picture</img>', the plain text is "my picture" (default functioning in forms)             |
 | ST Tags as XML code                          | Longint | 128   | The XML code of the tag is returned in plain text. For example for the tag '<img src="test.jpg" alt="picture">my picture</img>', the plain text is '<img src="test.jpg" alt="picture">my picture</img>' |
 | ST Text displayed with 4D Expression sources | Longint | 86    | Returns the text as it is shown in the forms with the original string of the 4D expressions.<br/>Corresponds a predefined combination of constants 2+4+16+64.                                   |

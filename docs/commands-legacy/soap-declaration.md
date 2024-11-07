@@ -49,9 +49,9 @@ In *type*, pass the corresponding 4D type. Most types of 4D variables and arrays
 
 | Constant      | Type    | Value |
 | ------------- | ------- | ----- |
-| Boolean array | Longint | 22    |
-| Date array    | Longint | 17    |
-| Integer array | Longint | 15    |
+| Boolean array | Integer | 22    |
+| Date array    | Integer | 17    |
+| Integer array | Integer | 15    |
 | Is BLOB       | Longint | 30    |
 | Is Boolean    | Longint | 6     |
 | Is date       | Longint | 4     |

@@ -161,8 +161,8 @@ _italic_
 ```md
 | Parâmetro | Tipo | Descrição |
 | --------- | ------ | ------------ |
-| wpArea | String |Área de escrita profissional|
-| toolbar | String |Nome da barra de ferramentas |
+| wpArea | Text |Área de escrita profissional|
+| toolbar | Text |Nome da barra de ferramentas |
 ```
 
 - A etiqueta de ligação é suportada:
@@ -204,7 +204,7 @@ GetLogo (size) -> logo
 
 | Parameter | Type   | in/out | Description |
 | --------- | ------ | ------ | ----------- |
-| size      | Longint | in | Logo style selector (1 to 5)  |
+| size      | Integer | in | Logo style selector (1 to 5)  |
 | logo      | Picture | out | Selected logo |
 
 

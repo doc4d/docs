@@ -257,7 +257,7 @@ When handling the `method` attribute of form objects, you can define the attribu
 | Propriedade | Tipo | Descrição |
 | ----------- | ---- | --------- |
 |             |      |           |
- source|String|código do método|
+ source|Text|código do método|
 
 4D will create a file using the object name in the "objectMethods" folder with the content of `source` attribute. Esta funcionalidade só está disponível para o código macro.
 

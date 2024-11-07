@@ -36,8 +36,8 @@ title: "$entityset"
 
 | 引数               | 型      | 説明                        |
 | ---------------- | ------ | ------------------------- |
-| $operator        | String | 既存のエンティティセットに対して使用する論理演算子 |
-| $otherCollection | String | エンティティセットID               |
+| $operator        | Text | 既存のエンティティセットに対して使用する論理演算子 |
+| $otherCollection | Text | エンティティセットID               |
 
 ### 説明
 

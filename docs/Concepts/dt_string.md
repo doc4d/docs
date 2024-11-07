@@ -38,7 +38,7 @@ The following escape sequences can be used within strings:
 
 |Operation |Syntax |Returns |Expression |Value|
 |---|---|---|---|---|
-|Concatenation |String + String |String |"abc" + "def" |"abcdef"|
+|Concatenation |String + String |Text |"abc" + "def" |"abcdef"|
 |Repetition |String * Number |String  |"ab" * 3 |"ababab"|
 |Equality |String = String |Boolean |"abc" = "abc" |True|
 |  | ||"abc" = "abd" |False|

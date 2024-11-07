@@ -5,13 +5,13 @@ slug: /commands/ob-get-type
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OB Get type.Syntax-->**OB Get type** ( *object* ; *property* ) -> Function result<!-- END REF-->
+<!--REF #_command_.OB Get type.Syntax-->**OB Get type** ( *object* ; *property* ) : Integer<!-- END REF-->
 <!--REF #_command_.OB Get type.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | object | Object | &#8594;  | Structured object |
 | property | Text | &#8594;  | Property name |
-| Function result | Longint | &#8592; | Property value type |
+| Function result | Integer | &#8592; | Property value type |
 
 <!-- END REF-->
 
@@ -28,8 +28,8 @@ The command returns a longint indicating the type of value. You can compare this
 
 | Constant      | Type    | Value |
 | ------------- | ------- | ----- |
-| Is Boolean    | Longint | 6     |
-| Is collection | Longint | 42    |
+| Is Boolean    | Integer | 6     |
+| Is collection | Integer | 42    |
 | Is date       | Longint | 4     |
 | Is null       | Longint | 255   |
 | Is object     | Longint | 38    |

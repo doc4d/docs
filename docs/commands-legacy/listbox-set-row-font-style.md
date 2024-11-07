@@ -40,9 +40,9 @@ In *style*, you pass a style value. You must use one (or a combination) of the c
 
 | Constant  | Type    | Value |
 | --------- | ------- | ----- |
-| Bold      | Longint | 1     |
-| Italic    | Longint | 2     |
-| Plain     | Longint | 0     |
+| Bold      | Integer | 1     |
+| Italic    | Integer | 2     |
+| Plain     | Integer | 0     |
 | Underline | Longint | 4     |
 
 If an array of font styles has been associated with the list box or column, only the element matching the row is modified. In other words, executing the command has the same effect, in this case, as modifying an element of the font style array.   

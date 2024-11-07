@@ -40,7 +40,7 @@ Chaque entité contient les propriétés suivantes :
 
 | Propriété                                             | Type   | Description                                                                                                                                  |
 | ----------------------------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| __KEY       | String | Valeur de la clé primaire définie pour la dataclass.                                                                         |
+| __KEY       | Text | Valeur de la clé primaire définie pour la dataclass.                                                                         |
 | __TIMESTAMP | Date   | Horodatage de la dernière modification de l'entité                                                                                           |
 | __STAMP     | Number | Tampon interne qui est nécessaire lors de la modification des valeurs de l'entité lors de l'utilisation de `$method=update`. |
 

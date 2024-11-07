@@ -27,9 +27,9 @@ Pass the number of the plug-in to be associated with a group of users in the *pl
 
 | Constant               | Type    | Value     |
 | ---------------------- | ------- | --------- |
-| 4D Client SOAP license | Longint | 808465465 |
-| 4D Client Web license  | Longint | 808465209 |
-| 4D for OCI license     | Longint | 808465208 |
+| 4D Client SOAP license | Integer | 808465465 |
+| 4D Client Web license  | Integer | 808465209 |
+| 4D for OCI license     | Integer | 808465208 |
 | 4D ODBC Pro license    | Longint | 808464946 |
 | 4D View license        | Longint | 808465207 |
 | 4D Write license       | Longint | 808464697 |

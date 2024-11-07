@@ -244,7 +244,7 @@ Lors de la manipulation de l'attribut `method` des objets de formulaire, vous po
 
 | Propriété | Type   | Description        |
 | --------- | ------ | ------------------ |
-| source    | String | code de la méthode |
+| source    | Text | code de la méthode |
 
 4D créera un fichier en utilisant le nom de l'objet dans le dossier "objectMethods" avec le contenu de l'attribut `source`. Cette fonctionnalité n'est disponible que pour le code macro.
 

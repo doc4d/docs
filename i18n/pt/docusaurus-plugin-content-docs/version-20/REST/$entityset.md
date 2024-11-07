@@ -42,8 +42,8 @@ Criar outro conjunto de entidades com base em conjuntos de entidades criados ant
 
 | Parâmetro        | Tipo   | Descrição                                                            |
 | ---------------- | ------ | -------------------------------------------------------------------- |
-| $operator        | String | Um dos operadores lógicos a testar com o outro conjunto de entidades |
-| $otherCollection | String | ID do conjunto de entidades                                          |
+| $operator        | Text | Um dos operadores lógicos a testar com o outro conjunto de entidades |
+| $otherCollection | Text | ID do conjunto de entidades                                          |
 
 
 

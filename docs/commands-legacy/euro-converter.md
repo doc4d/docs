@@ -5,7 +5,7 @@ slug: /commands/euro-converter
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Euro converter.Syntax-->**Euro converter** ( *value* ; *fromCurrency* ; *toCurrency* ) -> Function result<!-- END REF-->
+<!--REF #_command_.Euro converter.Syntax-->**Euro converter** ( *value* ; *fromCurrency* ; *toCurrency* ) : Real<!-- END REF-->
 <!--REF #_command_.Euro converter.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
@@ -34,10 +34,10 @@ To specify a Currency code, 4D proposes the following predefined constants, plac
 
 | Constant            | Type   | Value |
 | ------------------- | ------ | ----- |
-| Austrian Schilling  | String | ATS   |
-| Belgian Franc       | String | BEF   |
-| Deutsche Mark       | String | DEM   |
-| Euro                | String | EUR   |
+| Austrian Schilling  | Text | ATS   |
+| Belgian Franc       | Text | BEF   |
+| Deutsche Mark       | Text | DEM   |
+| Euro                | Text | EUR   |
 | Finnish Markka      | String | FIM   |
 | French Franc        | String | FRF   |
 | Greek Drachma       | String | GRD   |

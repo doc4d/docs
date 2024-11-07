@@ -36,8 +36,8 @@ Crée un autre entity set basé sur des entity sets préalablement créés
 
 | Paramètres       | Type   | Description                                                   |
 | ---------------- | ------ | ------------------------------------------------------------- |
-| $logicOperator   | String | L'un des opérateurs logiques à tester avec l'autre entity set |
-| $otherCollection | String | ID de l'entity set                                            |
+| $logicOperator   | Text | L'un des opérateurs logiques à tester avec l'autre entity set |
+| $otherCollection | Text | ID de l'entity set                                            |
 
 ### Description
 

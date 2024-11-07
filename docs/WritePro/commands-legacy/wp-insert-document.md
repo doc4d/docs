@@ -11,8 +11,8 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | targetObj | Object | &#8594;  | Range or element or 4D Write Pro document |
 | wpDoc | Object | &#8594;  | 4D Write Pro document |
-| mode | Longint | &#8594;  | Insertion mode |
-| rangeUpdate | Longint | &#8594;  | Range update mode |
+| mode | Integer | &#8594;  | Insertion mode |
+| rangeUpdate | Integer | &#8594;  | Range update mode |
 
 <!-- END REF-->
 
@@ -32,7 +32,7 @@ In the *mode* parameter, pass one or a combination of the following constants fr
 
 | Constant   | Type    | Value | Comment                                |
 | ---------- | ------- | ----- | -------------------------------------- |
-| wk append  | Longint | 2     | Insert contents at end of target       |
+| wk append  | Integer | 2     | Insert contents at end of target       |
 | wk prepend | Longint | 1     | Insert contents at beginning of target |
 | wk replace | Longint | 0     | Replace target contents                |
 

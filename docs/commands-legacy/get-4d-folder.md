@@ -5,14 +5,14 @@ slug: /commands/get-4d-folder
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Get 4D folder.Syntax-->**Get 4D folder** {( *folder* {; *options*} {; *})} -> Function result<!-- END REF-->
+<!--REF #_command_.Get 4D folder.Syntax-->**Get 4D folder** {( *folder* {; *options*} {; *})} : Text<!-- END REF-->
 <!--REF #_command_.Get 4D folder.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | folder | Integer | &#8594;  | Folder type (if omitted = active 4D folder) |
 | options | Object | &#8594;  | 4D Client database folder path configuration |
 | * | Operator | &#8594;  | Return folder of host database |
-| Function result | String | &#8592; | Pathname to 4D Folder |
+| Function result | Text | &#8592; | Pathname to 4D Folder |
 
 <!-- END REF-->
 
@@ -24,9 +24,9 @@ In *folder*, you can pass one of the following constants, which are located in t
 
 | Constant                    | Type    | Value |
 | --------------------------- | ------- | ----- |
-| 4D Client database folder   | Longint | 3     |
-| Active 4D Folder            | Longint | 0     |
-| Current resources folder    | Longint | 6     |
+| 4D Client database folder   | Integer | 3     |
+| Active 4D Folder            | Integer | 0     |
+| Current resources folder    | Integer | 6     |
 | Data folder                 | Longint | 9     |
 | Database folder             | Longint | 4     |
 | Database folder Unix syntax | Longint | 5     |

@@ -30,9 +30,9 @@ You pass one of the following values in *what*:
 
 | Constant         | Type    | Value |
 | ---------------- | ------- | ----- |
-| Auto key event   | Longint | 5     |
-| Key down event   | Longint | 3     |
-| Key up event     | Longint | 4     |
+| Auto key event   | Integer | 5     |
+| Key down event   | Integer | 3     |
+| Key up event     | Integer | 4     |
 | Mouse down event | Longint | 1     |
 | Mouse up event   | Longint | 2     |
   

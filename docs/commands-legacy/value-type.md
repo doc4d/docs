@@ -5,12 +5,12 @@ slug: /commands/value-type
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Value type.Syntax-->**Value type** ( *expression* ) -> Function result<!-- END REF-->
+<!--REF #_command_.Value type.Syntax-->**Value type** ( *expression* ) : Integer<!-- END REF-->
 <!--REF #_command_.Value type.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | expression | Expression | &#8594;  | Expression whose resulting value to be tested |
-| Function result | Longint | &#8592; | Data type number |
+| Function result | Integer | &#8592; | Data type number |
 
 <!-- END REF-->
 
@@ -22,8 +22,8 @@ The command returns a numeric value that can be compared with one of the followi
 
 | Constant      | Type    | Value |
 | ------------- | ------- | ----- |
-| \_o\_Is float | Longint | 35    |
-| Is BLOB       | Longint | 30    |
+| \_o\_Is float | Integer | 35    |
+| Is BLOB       | Integer | 30    |
 | Is Boolean    | Longint | 6     |
 | Is collection | Longint | 42    |
 | Is date       | Longint | 4     |

@@ -5,12 +5,12 @@ slug: /commands/day-number
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Day number.Syntax-->**Day number** ( *aDate* ) -> Function result<!-- END REF-->
+<!--REF #_command_.Day number.Syntax-->**Day number** ( *aDate* ) : Integer<!-- END REF-->
 <!--REF #_command_.Day number.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | aDate | Date | &#8594;  | Date for which to return the number |
-| Function result | Longint | &#8592; | Number representing the weekday on which date falls |
+| Function result | Integer | &#8592; | Number representing the weekday on which date falls |
 
 <!-- END REF-->
 
@@ -24,8 +24,8 @@ displayed_sidebar: docs
 
 | Constant  | Type    | Value |
 | --------- | ------- | ----- |
-| Sunday    | Longint | 1     |
-| Monday    | Longint | 2     |
+| Sunday    | Integer | 1     |
+| Monday    | Integer | 2     |
 | Tuesday   | Longint | 3     |
 | Wednesday | Longint | 4     |
 | Thursday  | Longint | 5     |

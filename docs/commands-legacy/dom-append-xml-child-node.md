@@ -5,7 +5,7 @@ slug: /commands/dom-append-xml-child-node
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DOM Append XML child node.Syntax-->**DOM Append XML child node** ( *elementRef* ; *childType* ; *childValue* ) -> Function result<!-- END REF-->
+<!--REF #_command_.DOM Append XML child node.Syntax-->**DOM Append XML child node** ( *elementRef* ; *childType* ; *childValue* ) : Text<!-- END REF-->
 <!--REF #_command_.DOM Append XML child node.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
@@ -24,9 +24,9 @@ The type of node created is specified by the *childType* parameter. In this para
 
 | Constant                   | Type    | Value |
 | -------------------------- | ------- | ----- |
-| XML CDATA                  | Longint | 7     |
-| XML comment                | Longint | 2     |
-| XML DATA                   | Longint | 6     |
+| XML CDATA                  | Integer | 7     |
+| XML comment                | Integer | 2     |
+| XML DATA                   | Integer | 6     |
 | XML DOCTYPE                | Longint | 10    |
 | XML ELEMENT                | Longint | 11    |
 | XML processing instruction | Longint | 3     |

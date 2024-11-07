@@ -36,8 +36,8 @@ Cree otro conjunto de entidades basado en conjuntos de entidades creados anterio
 
 | Parámetros       | Tipo   | Descripción                                                                 |
 | ---------------- | ------ | --------------------------------------------------------------------------- |
-| $logicOperator   | String | Uno de los operadores lógicos para probar con el otro conjunto de entidades |
-| $otherCollection | String | ID del conjunto de entidades                                                |
+| $logicOperator   | Text | Uno de los operadores lógicos para probar con el otro conjunto de entidades |
+| $otherCollection | Text | ID del conjunto de entidades                                                |
 
 ### Descripción
 

@@ -5,7 +5,7 @@ slug: /WritePro/commands/wp-get-view-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP Get view properties.Syntax-->**WP Get view properties** ( * ; *zoneWP* ) -> Résultat<!-- END REF-->
+<!--REF #_command_.WP Get view properties.Syntax-->**WP Get view properties** ( * ; *zoneWP* ) : Object<!-- END REF-->
 <!--REF #_command_.WP Get view properties.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

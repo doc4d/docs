@@ -31,8 +31,8 @@ Aqui está uma descrição das propriedades devolvidas para cada dataclass na da
 
 | Propriedade | Tipo   | Descrição                                                                         |
 | ----------- | ------ | --------------------------------------------------------------------------------- |
-| name        | String | Nome da dataclass.                                                                |
-| uri         | String | A URI allowing you to obtain information about the |dataclass and its attributes. |
+| name        | Text | Nome da dataclass.                                                                |
+| uri         | Text | A URI allowing you to obtain information about the |dataclass and its attributes. |
 | dataURI     | String | Uma URI que lhe permite visualizar os dados no dataclass.                         |
 
 

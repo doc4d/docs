@@ -5,7 +5,7 @@ slug: /commands/pop-up-menu
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Pop up menu.Syntax-->**Pop up menu** ( *contents* {; *default* {; *xCoord* ; *yCoord*}} )  -> Function result<!-- END REF-->
+<!--REF #_command_.Pop up menu.Syntax-->**Pop up menu** ( *contents* {; *default* {; *xCoord* ; *yCoord*}} )  : Integer<!-- END REF-->
 <!--REF #_command_.Pop up menu.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
@@ -13,7 +13,7 @@ displayed_sidebar: docs
 | default | Integer | &#8594;  | Number of menu item selected by default |
 | xCoord | Integer | &#8594;  | X coordinate of upper left corner |
 | yCoord | Integer | &#8594;  | Y coordinate of upper left corner |
-| Function result | Longint | &#8592; | Selected menu item number |
+| Function result | Integer | &#8592; | Selected menu item number |
 
 <!-- END REF-->
 

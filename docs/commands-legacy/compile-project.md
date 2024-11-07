@@ -5,7 +5,7 @@ slug: /commands/compile-project
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Compile project.Syntax-->**Compile project** {( {*projectFile*}{;}{*options*} )} -> Function result<!-- END REF-->
+<!--REF #_command_.Compile project.Syntax-->**Compile project** {( {*projectFile*}{;}{*options*} )} : Object<!-- END REF-->
 <!--REF #_command_.Compile project.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
@@ -52,10 +52,10 @@ The *options* parameter is an object. Here are the available compilation options
 | defaultTypeForNumerics || Integer | Possible value: Is real or Is longint |
 | generateSymbols || Boolean | True to generate symbol information in the .symbols returned object |
 | generateSyntaxFile | |Boolean | True to generate a [syntax file for code completion](../settings/general.md).md#generate-syntax-file-for-code-completion-when-compiled) in the \\Resources\\en.lproj folder of the project |
-| generateTypingMethods || String | "reset" or "append" to generate typing methods. If value is "append", existing variable declarations won't be modified (compiler window behavior). If value is "reset" existing variable declarations are removed beforehand. |
+| generateTypingMethods || Text | "reset" or "append" to generate typing methods. If value is "append", existing variable declarations won't be modified (compiler window behavior). If value is "reset" existing variable declarations are removed beforehand. |
 | plugins || 4D.Folder object | Plug-ins folder to be used instead of the [Plugins folder of the current project](../Project/architecture.md#plugins). This property is only available with the *projectFile* syntax. |
 | targets || Collection of strings | Possible values: "x86_64_generic", "arm64_macOS_lib". Pass an empty collection to execute syntax check only |
-| typeInference || String | "all": The compiler deduces the types of all variables not explicitly declared, "locals": The compiler deduces the types of local variables not explicitly declared, "none": All variables must be explicitly declared in the code (legacy mode), "direct": All variables must be explicitly declared in the code ([direct typing](../Project/compiler.md#enabling-direct-typing)). |
+| typeInference || Text | "all": The compiler deduces the types of all variables not explicitly declared, "locals": The compiler deduces the types of local variables not explicitly declared, "none": All variables must be explicitly declared in the code (legacy mode), "direct": All variables must be explicitly declared in the code ([direct typing](../Project/compiler.md#enabling-direct-typing)). |
 | warnings || Collection of objects | Defines the warnings state |
 || \[\].major | Number | Warning main number, before the dot |
 || \[\].minor | Number | Warning second number, after the dot |
@@ -73,7 +73,7 @@ The object returned by **Compile project** has up to three properties:
 | **Available only in case of error or warning:** |||||
 | errors ||| Collection of objects | collection of objects describing compilation errors or warnings |
 || isError || Boolean | Error if True, warning otherwise |
-|| message || String | Error message |
+|| message || Text | Error message |
 || code || Object | [code object](#code-object) |
 || line || Number | Line number of error in the code. For class methods, line number in the function |
 || lineInFile || Number | Line number in the file (different from "line" for class methods, and takes into account the %attributes prefix line) |

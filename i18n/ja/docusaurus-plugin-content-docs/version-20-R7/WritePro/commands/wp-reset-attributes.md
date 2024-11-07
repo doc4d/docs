@@ -13,7 +13,7 @@ displayed_sidebar: docs
 | ------------------- | ------ | - | ------------------------------------------------- |
 | targetObj           | オブジェクト | → | Range or element or 4D Write Pro document         |
 | sectionOrSubsection | オブジェクト | → | Section or subsection of a 4D Write Pro document  |
-| attribName          | String | → | Name of attribute(s) to remove |
+| attribName          | Text | → | Name of attribute(s) to remove |
 
 <!-- END REF-->
 

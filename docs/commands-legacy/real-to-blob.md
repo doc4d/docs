@@ -25,9 +25,9 @@ The *realFormat* parameter fixes the internal format and byte ordering of the Re
 
 | Constant                     | Type    | Value |
 | ---------------------------- | ------- | ----- |
-| Extended real format         | Longint | 1     |
-| Macintosh double real format | Longint | 2     |
-| Native real format           | Longint | 0     |
+| Extended real format         | Integer | 1     |
+| Macintosh double real format | Integer | 2     |
+| Native real format           | Integer | 0     |
 | PC double real format        | Longint | 3     |
 
 **Platform Independence Note:** If you exchange BLOBs between Macintosh and PC platforms, it is up to you to manage real formats and byte swapping issues when using this command.

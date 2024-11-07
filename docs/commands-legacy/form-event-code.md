@@ -5,11 +5,11 @@ slug: /commands/form-event-code
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Form event code.Syntax-->**Form event code**  -> Function result<!-- END REF-->
+<!--REF #_command_.Form event code.Syntax-->**Form event code**  : Integer<!-- END REF-->
 <!--REF #_command_.Form event code.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
-| Function result | Longint | &#8592; | Form event number |
+| Function result | Integer | &#8592; | Form event number |
 
 <!-- END REF-->
 
@@ -30,8 +30,8 @@ Certain events are generic (generated for any type of object) and others are spe
 
 | Constant                 | Type    | Value | Comment                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ------------------------ | ------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| On Load                  | Longint | 1     | The form is about to be displayed or printed                                                                                                                                                                                                                                                                                                                                                                                     |
-| On Mouse Up              | Longint | 2     | (*Pictures only*) The user has just released the left mouse button in a Picture object                                                                                                                                                                                                                                                                                                                                           |
+| On Load                  | Integer | 1     | The form is about to be displayed or printed                                                                                                                                                                                                                                                                                                                                                                                     |
+| On Mouse Up              | Integer | 2     | (*Pictures only*) The user has just released the left mouse button in a Picture object                                                                                                                                                                                                                                                                                                                                           |
 | On Validate              | Longint | 3     | The record data entry has been validated                                                                                                                                                                                                                                                                                                                                                                                         |
 | On Clicked               | Longint | 4     | A click occurred on an object                                                                                                                                                                                                                                                                                                                                                                                                    |
 | On Header                | Longint | 5     | The form’s header area is about to be printed or displayed                                                                                                                                                                                                                                                                                                                                                                       |

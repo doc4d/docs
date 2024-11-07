@@ -32,9 +32,9 @@ Pass one of the constants of the *Form Area* theme in the *markNum* parameter:
 
 | Constant      | Type    | Value |
 | ------------- | ------- | ----- |
-| Form break0   | Longint | 300   |
-| Form break1   | Longint | 301   |
-| Form break2   | Longint | 302   |
+| Form break0   | Integer | 300   |
+| Form break1   | Integer | 301   |
+| Form break2   | Integer | 302   |
 | Form break3   | Longint | 303   |
 | Form break4   | Longint | 304   |
 | Form break5   | Longint | 305   |

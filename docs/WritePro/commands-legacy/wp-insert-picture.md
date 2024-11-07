@@ -11,8 +11,8 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | targetObj | Object | &#8594;  | Range or element or 4D Write Pro document |
 | picture | Picture | &#8594;  | Picture field or variable, or path to picture file on disk |
-| mode | Longint | &#8594;  | Insertion mode |
-| rangeUpdate | Longint | &#8594;  | Range update mode |
+| mode | Integer | &#8594;  | Insertion mode |
+| rangeUpdate | Integer | &#8594;  | Range update mode |
 
 <!-- END REF-->
 
@@ -38,7 +38,7 @@ In the *mode* parameter, pass one of the following constants to indicate the ins
 
 | Constant   | Type    | Value | Comment                                |
 | ---------- | ------- | ----- | -------------------------------------- |
-| wk append  | Longint | 2     | Insert contents at end of target       |
+| wk append  | Integer | 2     | Insert contents at end of target       |
 | wk prepend | Longint | 1     | Insert contents at beginning of target |
 | wk replace | Longint | 0     | Replace target contents                |
 

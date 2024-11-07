@@ -206,7 +206,7 @@ Class constructor($macro : Object)
 | ---------------------------------------------------------------- | ------ | ------------------------------------------------ |
 | $editor.editor.form              | オブジェクト | フォーム全体                                           |
 | $editor.editor.file              | File   | フォームファイルの Fileオブジェクト                             |
-| $editor.editor.name              | String | フォームの名称                                          |
+| $editor.editor.name              | Text | フォームの名称                                          |
 | $editor.editor.table             | number | フォームのテーブル番号。プロジェクトフォームの場合は 0。                    |
 | $editor.editor.currentPageNumber | number | 現在のページの番号                                        |
 | $editor.editor.currentPage       | オブジェクト | 現在のページ (フォームオブジェクトおよび入力順序を格納) |
@@ -223,7 +223,7 @@ Class constructor($macro : Object)
 | formProperties                    | オブジェクト | マクロによって変更された formProperties       |
 | editor.groups     | オブジェクト | マクロによって変更されたグループ情報                |
 | editor.views      | オブジェクト | マクロによって変更されたビュー情報                 |
-| editor.activeView | String | 有効なビュー名                           |
+| editor.activeView | Text | 有効なビュー名                           |
 
 たとえば、currentPage と editor.groups の内容が変わった場合には、戻り値を次のように設定します:
 

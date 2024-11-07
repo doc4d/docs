@@ -40,7 +40,7 @@ Cada entidade contém as propriedades abaixo:
 
 | Propriedade                                           | Tipo   | Descrição                                                                                                                          |
 | ----------------------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| __KEY       | String | Valor da chave primária definida para a classe de dados.                                                           |
+| __KEY       | Text | Valor da chave primária definida para a classe de dados.                                                           |
 | __TIMESTAMP | Date   | Registro de hora da última modificação da entidade                                                                                 |
 | __STAMP     | Number | Sello interno que se necesita cuando se modifica alguno de los valores de la entidad al utilizar `$method=update`. |
 

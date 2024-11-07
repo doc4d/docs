@@ -28,9 +28,9 @@ If you pass the *modifiers* parameter, you pass one or a combination of the *Eve
 
 | Constant               | Type    | Value | Comment                                                    |
 | ---------------------- | ------- | ----- | ---------------------------------------------------------- |
-| Activate window bit    | Longint | 0     |                                                            |
-| Activate window mask   | Longint | 1     |                                                            |
-| Caps lock key bit      | Longint | 10    | Windows and OS X                                           |
+| Activate window bit    | Integer | 0     |                                                            |
+| Activate window mask   | Integer | 1     |                                                            |
+| Caps lock key bit      | Integer | 10    | Windows and OS X                                           |
 | Caps lock key mask     | Longint | 1024  | Windows and OS X                                           |
 | Command key bit        | Longint | 8     | Ctrl key under Windows, Command key under OS X             |
 | Command key mask       | Longint | 256   | Ctrl key under Windows, Command key under OS X             |

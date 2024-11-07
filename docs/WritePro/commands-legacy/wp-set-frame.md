@@ -10,9 +10,9 @@ displayed_sidebar: docs
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | * | Operator | &#8594;  | If specified, wpArea is a form object name (string). If omitted, wpArea is an object field or variable. |
-| wpArea | String | &#8594;  | Form object name (if * is specified) or 4D Write Pro object variable or field (if * is omitted) |
-| frameSelector | Longint | &#8594;  | Frame where the cursor should be set |
-| textBoxID | String | &#8594;  | Id of the text box where the cursor should be set |
+| wpArea | Text | &#8594;  | Form object name (if * is specified) or 4D Write Pro object variable or field (if * is omitted) |
+| frameSelector | Integer | &#8594;  | Frame where the cursor should be set |
+| textBoxID | Text | &#8594;  | Id of the text box where the cursor should be set |
 
 <!-- END REF-->
 
@@ -31,8 +31,8 @@ You can pass in *frameSelector* one of the following constants from the *4D Writ
 
 | Constant                          | Type    | Value | Comment                                                                                |
 | --------------------------------- | ------- | ----- | -------------------------------------------------------------------------------------- |
-| wk body                           | Longint | 0     | Body frame of the section                                                              |
-| wk current page footer            | Longint | 2     |                                                                                        |
+| wk body                           | Integer | 0     | Body frame of the section                                                              |
+| wk current page footer            | Integer | 2     |                                                                                        |
 | wk current page header            | Longint | 1     |                                                                                        |
 | wk current section default footer | Longint | 10    | Default footer of the section (available only if there is no active subsection footer) |
 | wk current section default header | Longint | 9     | Default header of the section (available only if there is no active subsection header) |

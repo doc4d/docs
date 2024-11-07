@@ -33,9 +33,9 @@ Here is a description of the properties returned for each dataclass in your proj
 
 |Property|	Type|	Description|
 |---|---|---|
-|name|	String|	Name of the dataclass.|
-|uri|	String|	A URI allowing you to obtain information about the dataclass and its attributes.|
-|dataURI|	String|	A URI that allows you to view the data in the dataclass.|
+|name|	Text|	Name of the dataclass.|
+|uri|	Text|	A URI allowing you to obtain information about the dataclass and its attributes.|
+|dataURI|	Text|	A URI that allows you to view the data in the dataclass.|
 
 
 ### Example  
@@ -205,7 +205,7 @@ The following properties are returned for an exposed dataclass:
 
 |Property|	Type|	Description|
 |---|---|---|
-|name|	String|	Name of the dataclass
+|name|	Text|	Name of the dataclass
 |collectionName	|String	|Name of an entity selection on the dataclass
 |tableNumber|Number	|Table number in the 4D database
 |scope|	String|	Scope for the dataclass (note that only dataclasses whose **Scope** is public are displayed)

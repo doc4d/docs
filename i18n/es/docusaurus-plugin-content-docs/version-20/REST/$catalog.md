@@ -31,8 +31,8 @@ A continuación se describen las propiedades devueltas para cada clase de datos 
 
 | Propiedad | Tipo   | Descripción                                                                     |
 | --------- | ------ | ------------------------------------------------------------------------------- |
-| name      | String | Nombre de la dataclass.                                                         |
-| uri       | String | Un URI que permite obtener información sobre la clase de datos y sus atributos. |
+| name      | Text | Nombre de la dataclass.                                                         |
+| uri       | Text | Un URI que permite obtener información sobre la clase de datos y sus atributos. |
 | dataURI   | String | Un URI que permite ver los datos en la clase de datos.                          |
 
 

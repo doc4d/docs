@@ -5,14 +5,14 @@ slug: /WritePro/commands/wp-get-footer
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP Get footer.Syntax-->**WP Get footer** ( *targetObj* ) | (*wpDoc* ; *sectionIndex* {; *sectionSubType*} )  -> Function result<!-- END REF-->
+<!--REF #_command_.WP Get footer.Syntax-->**WP Get footer** ( *targetObj* ) | (*wpDoc* ; *sectionIndex* {; *sectionSubType*} )  : Object<!-- END REF-->
 <!--REF #_command_.WP Get footer.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | targetObj | Object | &#8594;  | 4D Write Pro range or section/sub-section element |
 | wpDoc | Object | &#8594;  | 4D Write Pro document |
-| sectionIndex | Longint | &#8594;  | Section index |
-| sectionSubType | Longint | &#8594;  | Type of subsection (wk first page, wk left page, or wk right page) |
+| sectionIndex | Integer | &#8594;  | Section index |
+| sectionSubType | Integer | &#8594;  | Type of subsection (wk first page, wk left page, or wk right page) |
 | Function result | Object | &#8592; | 4D Write Pro footer |
 
 <!-- END REF-->
@@ -26,7 +26,7 @@ displayed_sidebar: docs
 If the *subSectionType* parameter is passed, the command returns the footer associated to the specified sub-section type. You can pass one of the following constants in the *subSectionType* parameter:  
 | Constant      | Type    | Value |  
 | ------------- | ------- | ----- |  
-| wk first page | Longint | 1     |  
+| wk first page | Integer | 1     |  
 | wk left page  | Longint | 2     |  
 | wk right page | Longint | 3     |  
     

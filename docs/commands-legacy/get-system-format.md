@@ -22,9 +22,9 @@ In the *format* parameter, pass the type of parameter whose value you want to kn
 
 | Constant                   | Type    | Value | Comment                                                                               |
 | -------------------------- | ------- | ----- | ------------------------------------------------------------------------------------- |
-| Currency symbol            | Longint | 2     | Currency symbol (e.g.: “$”)                                                           |
-| Date separator             | Longint | 13    | Separator used in date formats (e.g.: “/”)                                            |
-| Decimal separator          | Longint | 0     | Decimal separator (e.g.: “.”)                                                         |
+| Currency symbol            | Integer | 2     | Currency symbol (e.g.: “$”)                                                           |
+| Date separator             | Integer | 13    | Separator used in date formats (e.g.: “/”)                                            |
+| Decimal separator          | Integer | 0     | Decimal separator (e.g.: “.”)                                                         |
 | Short date day position    | Longint | 15    | Position of the day in the short date format: “1” = left, “2” = middle, “3” = right   |
 | Short date month position  | Longint | 16    | Position of the month in the short date format: “1” = left, “2” = middle, “3” = right |
 | Short date year position   | Longint | 17    | Position of the year in the short date format: “1” = left, “2” = middle, “3” = right  |

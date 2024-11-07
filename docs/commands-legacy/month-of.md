@@ -5,12 +5,12 @@ slug: /commands/month-of
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Month of.Syntax-->**Month of** ( *aDate* ) -> Function result<!-- END REF-->
+<!--REF #_command_.Month of.Syntax-->**Month of** ( *aDate* ) : Integer<!-- END REF-->
 <!--REF #_command_.Month of.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | aDate | Date | &#8594;  | Date for which to return the month |
-| Function result | Longint | &#8592; | Number indicating the month of date |
+| Function result | Integer | &#8592; | Number indicating the month of date |
 
 <!-- END REF-->
 
@@ -24,8 +24,8 @@ To compare the value returned by this function, 4D provides the following predef
 
 | Constant  | Type    | Value |
 | --------- | ------- | ----- |
-| January   | Longint | 1     |
-| February  | Longint | 2     |
+| January   | Integer | 1     |
+| February  | Integer | 2     |
 | March     | Longint | 3     |
 | April     | Longint | 4     |
 | May       | Longint | 5     |

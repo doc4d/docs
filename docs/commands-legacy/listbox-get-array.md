@@ -5,7 +5,7 @@ slug: /commands/listbox-get-array
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX Get array.Syntax-->**LISTBOX Get array** ( {* ;} *object* ; *arrType* ) -> Function result<!-- END REF-->
+<!--REF #_command_.LISTBOX Get array.Syntax-->**LISTBOX Get array** ( {* ;} *object* ; *arrType* ) : Pointer<!-- END REF-->
 <!--REF #_command_.LISTBOX Get array.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
@@ -33,9 +33,9 @@ In *arrType*, pass the type of array for the property you want to get. You can u
 
 | Constant                  | Type    | Value |
 | ------------------------- | ------- | ----- |
-| lk background color array | Longint | 1     |
-| lk control array          | Longint | 3     |
-| lk font color array       | Longint | 0     |
+| lk background color array | Integer | 1     |
+| lk control array          | Integer | 3     |
+| lk font color array       | Integer | 0     |
 | lk row height array       | Longint | 4     |
 | lk style array            | Longint | 2     |
 

@@ -5,12 +5,12 @@ slug: /commands/process-state
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Process state.Syntax-->**Process state** ( *process* ) -> Function result<!-- END REF-->
+<!--REF #_command_.Process state.Syntax-->**Process state** ( *process* ) : Integer<!-- END REF-->
 <!--REF #_command_.Process state.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | process | Integer | &#8594;  | Process number |
-| Function result | Longint | &#8592; | State of the process |
+| Function result | Integer | &#8592; | State of the process |
 
 <!-- END REF-->
 
@@ -25,8 +25,8 @@ The function result can be one of the values provided by the following predefine
 
 | Constant                  | Type    | Value | Comment                                                                                                                                                                                                                                   |
 | ------------------------- | ------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Does not exist            | Longint | \-100 |                                                                                                                                                                                                                                           |
-| Aborted                   | Longint | \-1   |                                                                                                                                                                                                                                           |
+| Does not exist            | Integer | \-100 |                                                                                                                                                                                                                                           |
+| Aborted                   | Integer | \-1   |                                                                                                                                                                                                                                           |
 | Executing                 | Longint | 0     |                                                                                                                                                                                                                                           |
 | Delayed                   | Longint | 1     |                                                                                                                                                                                                                                           |
 | Waiting for user event    | Longint | 2     |                                                                                                                                                                                                                                           |

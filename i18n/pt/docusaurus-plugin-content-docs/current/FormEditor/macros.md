@@ -243,7 +243,7 @@ Ao lidar com o atributo 'método' de objetos de formulário, você pode definir 
 
 | Propriedade | Tipo   | Descrição        |
 | ----------- | ------ | ---------------- |
-| source      | String | Código do método |
+| source      | Text | Código do método |
 
 O 4D criará um arquivo usando o nome do objeto na pasta "objectMethods" com o conteúdo do atributo `source`. Esta funcionalidade só está disponível para o código macro.
 

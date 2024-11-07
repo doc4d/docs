@@ -5,14 +5,14 @@ slug: /WritePro/commands/wp-get-frame
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP Get frame.Syntax-->**WP Get frame** ( {* ;} *wpArea* {; *textBoxID*} ) -> Function result<!-- END REF-->
+<!--REF #_command_.WP Get frame.Syntax-->**WP Get frame** ( {* ;} *wpArea* {; *textBoxID*} ) : Integer<!-- END REF-->
 <!--REF #_command_.WP Get frame.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | * | Operator | &#8594;  | If specified, wpArea is a form object name (string). If omitted, wpArea is an object field or variable. |
-| wpArea | String | &#8594;  | Form object name (if * is specified) or 4D Write Pro object variable or field (if * is omitted) |
-| textBoxID | String | &#x1F858; | ID of the text box (only filled if a text box has the focus) |
-| Function result | Longint | &#8592; | Frame where the cursor is currently set |
+| wpArea | Text | &#8594;  | Form object name (if * is specified) or 4D Write Pro object variable or field (if * is omitted) |
+| textBoxID | Text | &#x1F858; | ID of the text box (only filled if a text box has the focus) |
+| Function result | Integer | &#8592; | Frame where the cursor is currently set |
 
 <!-- END REF-->
 
@@ -31,8 +31,8 @@ The returned value can be compared to one of the following constants from the *4
 
 | Constant                          | Type    | Value | Comment                                                                                |
 | --------------------------------- | ------- | ----- | -------------------------------------------------------------------------------------- |
-| wk body                           | Longint | 0     | Body frame of the section                                                              |
-| wk current section default footer | Longint | 10    | Default footer of the section (available only if there is no active subsection footer) |
+| wk body                           | Integer | 0     | Body frame of the section                                                              |
+| wk current section default footer | Integer | 10    | Default footer of the section (available only if there is no active subsection footer) |
 | wk current section default header | Longint | 9     | Default header of the section (available only if there is no active subsection header) |
 | wk current section first footer   | Longint | 4     | Footer of the first page of the section                                                |
 | wk current section first header   | Longint | 3     | Header of the first page of the section                                                |

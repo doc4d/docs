@@ -5,13 +5,13 @@ slug: /WritePro/commands/wp-get-subsection
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP Get subsection.Syntax-->**WP Get subsection** ( *targetObj* ) | (*wpSection* ; *subSectionType* ) -> Function result<!-- END REF-->
+<!--REF #_command_.WP Get subsection.Syntax-->**WP Get subsection** ( *targetObj* ) | (*wpSection* ; *subSectionType* ) : Object<!-- END REF-->
 <!--REF #_command_.WP Get subsection.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | targetObj | Object | &#8594;  | Range or element |
 | wpSection | Object | &#8594;  | 4D Write Pro section |
-| subSectionType | Longint | &#8594;  | Subsection type (wk first page, wk left page, or wk right page) |
+| subSectionType | Integer | &#8594;  | Subsection type (wk first page, wk left page, or wk right page) |
 | Function result | Object | &#8592; | Subsection |
 
 <!-- END REF-->
@@ -29,8 +29,8 @@ If the range or element belongs to an anchored picture, an error is returned.
     
 | Constant      | Type    | Value |  
 | ------------- | ------- | ----- |  
-| wk first page | Longint | 1     |  
-| wk left page  | Longint | 2     |  
+| wk first page | Integer | 1     |  
+| wk left page  | Integer | 2     |  
 | wk right page | Longint | 3     |  
     
     

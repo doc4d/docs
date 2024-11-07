@@ -5,7 +5,7 @@ slug: /commands/qr-get-text-property
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QR Get text property.Syntax-->**QR Get text property** ( *area* ; *colNum* ; *rowNum* ; *property* ) -> Function result<!-- END REF-->
+<!--REF #_command_.QR Get text property.Syntax-->**QR Get text property** ( *area* ; *colNum* ; *rowNum* ; *property* ) : any<!-- END REF-->
 <!--REF #_command_.QR Get text property.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
@@ -34,9 +34,9 @@ displayed_sidebar: docs
 * one of the constants of the *QR Rows for Properties* theme:  
 | Constant       | Type    | Value | Comment               |  
 | -------------- | ------- | ----- | --------------------- |  
-| qr detail      | Longint | \-2   | Detail area of report |  
-| qr footer      | Longint | \-5   | Page footer           |  
-| qr grand total | Longint | \-3   | Grand total area      |  
+| qr detail      | Integer | \-2   | Detail area of report |  
+| qr footer      | Integer | \-5   | Page footer           |  
+| qr grand total | Integer | \-3   | Grand total area      |  
 | qr header      | Longint | \-4   | Page header           |  
 | qr title       | Longint | \-1   | Title of report       |
 

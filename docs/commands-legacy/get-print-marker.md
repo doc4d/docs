@@ -5,12 +5,12 @@ slug: /commands/get-print-marker
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Get print marker.Syntax-->**Get print marker** ( *markNum* ) -> Function result<!-- END REF-->
+<!--REF #_command_.Get print marker.Syntax-->**Get print marker** ( *markNum* ) : Integer<!-- END REF-->
 <!--REF #_command_.Get print marker.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | markNum | Integer | &#8594;  | Marker number |
-| Function result | Longint | &#8592; | Position of the marker |
+| Function result | Integer | &#8592; | Position of the marker |
 
 <!-- END REF-->
 
@@ -32,8 +32,8 @@ Pass one of the constants of the *Form Area* theme in the *markNum* parameter:
 
 | Constant      | Type    | Value |
 | ------------- | ------- | ----- |
-| Form break0   | Longint | 300   |
-| Form break1   | Longint | 301   |
+| Form break0   | Integer | 300   |
+| Form break1   | Integer | 301   |
 | Form break2   | Longint | 302   |
 | Form break3   | Longint | 303   |
 | Form break4   | Longint | 304   |

@@ -5,7 +5,7 @@ slug: /WritePro/commands/wp-table-append-row
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP Table append row.Syntax-->**WP Table append row** ( *tableRef* ; *value* {; *value2* ; ... ; *valueN*} )  -> 戻り値<!-- END REF-->
+<!--REF #_command_.WP Table append row.Syntax-->**WP Table append row** ( *tableRef* ; *value* {; *value2* ; ... ; *valueN*} )  : Object<!-- END REF-->
 <!--REF #_command_.WP Table append row.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

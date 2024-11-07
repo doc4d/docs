@@ -5,13 +5,13 @@ slug: /commands/object-get-type
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT Get type.Syntax-->**OBJECT Get type** ( {* ;} *object* ) -> Function result<!-- END REF-->
+<!--REF #_command_.OBJECT Get type.Syntax-->**OBJECT Get type** ( {* ;} *object* ) : Integer<!-- END REF-->
 <!--REF #_command_.OBJECT Get type.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | * | Operator | &#8594;  | If specified, object is an object name (string)<br/>If omitted, object is a variable |
 | object | any | &#8594;  | Object name (if * is specified) or Variable (if * is omitted) |
-| Function result | Longint | &#8592; | Type of object |
+| Function result | Integer | &#8592; | Type of object |
 
 <!-- END REF-->
 
@@ -31,8 +31,8 @@ The value returned corresponds to one of the following constants, available in t
 
 | Constant                            | Type    | Value |
 | ----------------------------------- | ------- | ----- |
-| Object type 3D button               | Longint | 16    |
-| Object type 3D checkbox             | Longint | 26    |
+| Object type 3D button               | Integer | 16    |
+| Object type 3D checkbox             | Integer | 26    |
 | Object type 3D radio button         | Longint | 23    |
 | Object type button grid             | Longint | 20    |
 | Object type checkbox                | Longint | 25    |

@@ -28,8 +28,8 @@ Voici une description des propriétés retournées pour chaque dataclass dans le
 
 | Propriété | Type   | Description                                                                                          |
 | --------- | ------ | ---------------------------------------------------------------------------------------------------- |
-| name      | String | Nom de la dataclass.                                                                 |
-| uri       | String | Un URI vous permettant d'obtenir des informations sur la dataclass et ses attributs. |
+| name      | Text | Nom de la dataclass.                                                                 |
+| uri       | Text | Un URI vous permettant d'obtenir des informations sur la dataclass et ses attributs. |
 | dataURI   | String | URI vous permettant d'afficher les données dans la dataclass.                        |
 
 ### Exemple

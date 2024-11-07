@@ -33,9 +33,9 @@ After the call:
 * *fieldType* returns the type of the field. The *fieldType* variable parameter can take a value provided by the following predefined constants (*Field and Variable Types* theme):  
 | Constant           | Type    | Value |  
 | ------------------ | ------- | ----- |  
-| Is alpha field     | Longint | 0     |  
-| Is BLOB            | Longint | 30    |  
-| Is Boolean         | Longint | 6     |  
+| Is alpha field     | Integer | 0     |  
+| Is BLOB            | Integer | 30    |  
+| Is Boolean         | Integer | 6     |  
 | Is date            | Longint | 4     |  
 | Is float           | Longint | 35    |  
 | Is integer         | Longint | 8     |  

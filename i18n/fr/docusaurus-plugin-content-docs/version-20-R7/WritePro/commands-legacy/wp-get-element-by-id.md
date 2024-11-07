@@ -5,7 +5,7 @@ slug: /WritePro/commands/wp-get-element-by-id
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP Get element by ID.Syntax-->**WP Get element by ID** ( *docWP* ; *ID* ) -> Résultat<!-- END REF-->
+<!--REF #_command_.WP Get element by ID.Syntax-->**WP Get element by ID** ( *docWP* ; *ID* ) : Object<!-- END REF-->
 <!--REF #_command_.WP Get element by ID.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

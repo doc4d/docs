@@ -5,7 +5,7 @@ slug: /WritePro/commands/wp-table-get-columns
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP Table get columns.Syntax-->**WP Table get columns**  ( *objTarget* ) | ( *refTabla* ; *colIni* {; *numCol*} )  -> Resultado<!-- END REF-->
+<!--REF #_command_.WP Table get columns.Syntax-->**WP Table get columns**  ( *objTarget* ) | ( *refTabla* ; *colIni* {; *numCol*} )  : Object<!-- END REF-->
 <!--REF #_command_.WP Table get columns.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

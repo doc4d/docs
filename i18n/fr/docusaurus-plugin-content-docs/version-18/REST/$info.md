@@ -40,8 +40,8 @@ Pour chaque session utilisateur, les informations suivantes sont retournées dan
 
 | Propriété  | Type   | Description                                                       |
 | ---------- | ------ | ----------------------------------------------------------------- |
-| sessionID  | String | Un UUID qui référence la session.                                 |
-| userName   | String | Nom de l'utilisateur qui lance la session.                        |
+| sessionID  | Text | Un UUID qui référence la session.                                 |
+| userName   | Text | Nom de l'utilisateur qui lance la session.                        |
 | lifeTime   | Number | La durée d'une session utilisateur en secondes (3600 par défaut). |
 | expiration | Date   | Date et heure d'expiration courante de la session utilisateur.    |
 

@@ -5,12 +5,12 @@ slug: /commands/type
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Type.Syntax-->**Type** ( *fieldVar* ) -> Function result<!-- END REF-->
+<!--REF #_command_.Type.Syntax-->**Type** ( *fieldVar* ) : Integer<!-- END REF-->
 <!--REF #_command_.Type.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | fieldVar | Field, Variable | &#8594;  | field or variable to be tested |
-| Function result | Longint | &#8592; | Data type number |
+| Function result | Integer | &#8592; | Data type number |
 
 <!-- END REF-->
 
@@ -22,8 +22,8 @@ displayed_sidebar: docs
 
 | Constant           | Type    | Value |
 | ------------------ | ------- | ----- |
-| Array 2D           | Longint | 13    |
-| Blob array         | Longint | 31    |
+| Array 2D           | Integer | 13    |
+| Blob array         | Integer | 31    |
 | Boolean array      | Longint | 22    |
 | Date array         | Longint | 17    |
 | Integer array      | Longint | 15    |

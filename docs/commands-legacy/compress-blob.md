@@ -22,9 +22,9 @@ The optional *compression* parameter allows to set the way the BLOB will be comp
 
 | Constant                   | Type    | Value | Comment                                                                                                                                                      |
 | -------------------------- | ------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Compact compression mode   | Longint | 1     | Compressed as much as possible (at the expense of the speed of compression and decompression operations). Default method.                                    |
-| Fast compression mode      | Longint | 2     | Compressed as fast as possible (and will be decompressed as fast as possible), at the expense of the compression ratio (the compressed BLOB will be bigger). |
-| GZIP best compression mode | Longint | \-1   | Most compact GZIP compression                                                                                                                                |
+| Compact compression mode   | Integer | 1     | Compressed as much as possible (at the expense of the speed of compression and decompression operations). Default method.                                    |
+| Fast compression mode      | Integer | 2     | Compressed as fast as possible (and will be decompressed as fast as possible), at the expense of the compression ratio (the compressed BLOB will be bigger). |
+| GZIP best compression mode | Integer | \-1   | Most compact GZIP compression                                                                                                                                |
 | GZIP fast compression mode | Longint | \-2   | Fastest GZIP compression                                                                                                                                     |
 
   

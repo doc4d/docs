@@ -33,9 +33,9 @@ In *arrType*, pass the type of array to associate with the list box or column. Y
 
 | Constant                  | Type    | Value |
 | ------------------------- | ------- | ----- |
-| lk background color array | Longint | 1     |
-| lk control array          | Longint | 3     |
-| lk font color array       | Longint | 0     |
+| lk background color array | Integer | 1     |
+| lk control array          | Integer | 3     |
+| lk font color array       | Integer | 0     |
 | lk row height array       | Longint | 4     |
 | lk style array            | Longint | 2     |
 
