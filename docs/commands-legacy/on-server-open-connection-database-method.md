@@ -12,7 +12,7 @@ displayed_sidebar: docs
 | $1 | Integer | &#8592; | User ID number used internally by 4D Server to identify users |
 | $2 | Integer | &#8592; | Connection ID number used internally by 4D Server to identify a connection |
 | $3 | Integer | &#8592; | Obsolete: Always returns 0 (but must be declared) |
-| $0 | Longint | &#8592; | 0 or omitted = connection accepted; other value = connection refused |
+| $0 | Integer | &#8592; | 0 or omitted = connection accepted; other value = connection refused |
 
 <!-- END REF-->
 

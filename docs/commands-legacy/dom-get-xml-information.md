@@ -26,9 +26,9 @@ In *xmlInfo*, pass a code indicating the type of information to be retrieved. Yo
 | DOCTYPE Name | Integer | 3     | Name of the root element as defined in the DOCTYPE marker                                                     |
 | Document URI | Integer | 6     | URI of the DTD                                                                                                |
 | Encoding     | Integer | 4     | Encoding used (UTF-8, ISO...)                                                                                 |
-| PUBLIC ID    | Longint | 1     | Public identifier (FPI) of the DTD to which the document conforms (if the DOCTYPE xxx PUBLIC tag is present). |
-| SYSTEM ID    | Longint | 2     | System identifier                                                                                             |
-| Version      | Longint | 5     | Accepted XML version                                                                                          |
+| PUBLIC ID    | Integer | 1     | Public identifier (FPI) of the DTD to which the document conforms (if the DOCTYPE xxx PUBLIC tag is present). |
+| SYSTEM ID    | Integer | 2     | System identifier                                                                                             |
+| Version      | Integer | 5     | Accepted XML version                                                                                          |
 
 #### See also 
 

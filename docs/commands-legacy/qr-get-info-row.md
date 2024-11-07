@@ -30,7 +30,7 @@ displayed_sidebar: docs
 | -------------- | ------- | ----- | --------------------- |  
 | qr detail      | Integer | \-2   | Detail area of report |  
 | qr grand total | Integer | \-3   | Grand total area      |  
-| qr title       | Longint | \-1   | Title of report       |
+| qr title       | Integer | \-1   | Title of report       |
 The value returned by **QR Get info row** indicates whether the contents of the row are displayed or hidden. If it equals 1, the contents of the row are hidden; if it equals 0, the contents of the row are displayed. 
 
 If you pass an invalid *area* number, the error -9850 will be generated.  

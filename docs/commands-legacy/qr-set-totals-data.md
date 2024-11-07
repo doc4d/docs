@@ -40,9 +40,9 @@ The **QR SET TOTALS DATA** command sets the details of a specific break (total o
 | qr average            | Integer | 2     |
 | qr count              | Integer | 16    |
 | qr max                | Integer | 8     |
-| qr min                | Longint | 4     |
-| qr standard deviation | Longint | 32    |
-| qr sum                | Longint | 1     |
+| qr min                | Integer | 4     |
+| qr standard deviation | Integer | 32    |
+| qr sum                | Integer | 1     |
 
 If *operator* is 0, there is no operator.
 

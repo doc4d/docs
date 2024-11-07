@@ -36,8 +36,8 @@ In *arrType*, pass the type of array for the property you want to get. You can u
 | lk background color array | Integer | 1     |
 | lk control array          | Integer | 3     |
 | lk font color array       | Integer | 0     |
-| lk row height array       | Longint | 4     |
-| lk style array            | Longint | 2     |
+| lk row height array       | Integer | 4     |
+| lk style array            | Integer | 2     |
 
 The command returns one of the following values:
 

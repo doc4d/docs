@@ -41,8 +41,8 @@ By default, the command returns the value in pixels. You can pass one of the fol
 
 | Constant  | Type    | Value | Comment                                                                                             |
 | --------- | ------- | ----- | --------------------------------------------------------------------------------------------------- |
-| lk lines  | Longint | 1     | Height is expressed as a number of lines. 4D calculates the height of a line according to the font. |
-| lk pixels | Longint | 0     | Height is expressed as a number of pixels (default).                                                |
+| lk lines  | Integer | 1     | Height is expressed as a number of lines. 4D calculates the height of a line according to the font. |
+| lk pixels | Integer | 0     | Height is expressed as a number of pixels (default).                                                |
 
 #### Example 
 

@@ -27,8 +27,8 @@ If the *subSectionType* parameter is passed, the command returns the header asso
 | Constant      | Type    | Value |  
 | ------------- | ------- | ----- |  
 | wk first page | Integer | 1     |  
-| wk left page  | Longint | 2     |  
-| wk right page | Longint | 3     |  
+| wk left page  | Integer | 2     |  
+| wk right page | Integer | 3     |  
     
 If the *subSectionType* is not specified, the main section header will be returned. In this case, if a sub-section is active, the main section header object is *undefined* (the main section header is available only if there is no active wk first page or wk left page sub-section).
 

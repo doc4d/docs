@@ -43,7 +43,7 @@ Create another entity set based on previously created entity sets
 |Parameter|Type|Description	|
 |---|---|---|
 |$logicOperator |Text	|One of the logical operators to test with the other entity set|	
-|$otherCollection |		String	|	Entity set ID	|
+|$otherCollection |		Text	|	Entity set ID	|
 
 
 

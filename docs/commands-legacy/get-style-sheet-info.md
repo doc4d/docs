@@ -42,10 +42,10 @@ In *styles*, the command returns a value corresponding to the style(s) associate
 | Bold                 | Integer | 1     |
 | Bold and Italic      | Integer | 3     |
 | Bold and Underline   | Integer | 5     |
-| Italic               | Longint | 2     |
-| Italic and Underline | Longint | 6     |
-| Plain                | Longint | 0     |
-| Underline            | Longint | 4     |
+| Italic               | Integer | 2     |
+| Italic and Underline | Integer | 6     |
+| Plain                | Integer | 0     |
+| Underline            | Integer | 4     |
 
 If the command is executed correctly, the *OK* system variable is set to 1\. Otherwise (for example, if the *styleSheetName* does not exist), it is set to 0.
 

@@ -43,12 +43,12 @@ displayed_sidebar: docs
 
 | Constant                    | Type    | Value | Comment                  |
 | --------------------------- | ------- | ----- | ------------------------ |
-| qr bottom border            | Longint | 8     | Bottom border            |
-| qr inside horizontal border | Longint | 32    | Inside horizontal border |
-| qr inside vertical border   | Longint | 16    | Inside vertical border   |
-| qr left border              | Longint | 1     | Left border              |
-| qr right border             | Longint | 4     | Right border             |
-| qr top border               | Longint | 2     | Top border               |
+| qr bottom border            | Integer | 8     | Bottom border            |
+| qr inside horizontal border | Integer | 32    | Inside horizontal border |
+| qr inside vertical border   | Integer | 16    | Inside vertical border   |
+| qr left border              | Integer | 1     | Left border              |
+| qr right border             | Integer | 4     | Right border             |
+| qr top border               | Integer | 2     | Top border               |
 
 *border* can contain an accumulation of several values in order to designate several borders simultaneously. For example, a value of 5 passed in *border* would affect the right and left borders.
 

@@ -14,7 +14,7 @@ displayed_sidebar: docs
 | startColumn | Integer | &#8594;  | Position of first cell column |
 | startRow | Integer | &#8594;  | Position of first column row |
 | columnCount | Integer | &#8594;  | Number of columns to merge |
-| rowCount | Longint | &#8594;  | Number of rows to merge |
+| rowCount | Integer | &#8594;  | Number of rows to merge |
 
 <!-- END REF-->
 

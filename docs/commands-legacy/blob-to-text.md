@@ -29,10 +29,10 @@ The *textFormat* parameter fixes the internal format and character set of the te
 | Mac C string             | Integer | 0     |
 | Mac Pascal string        | Integer | 1     |
 | Mac text with length     | Integer | 2     |
-| Mac text without length  | Longint | 3     |
-| UTF8 C string            | Longint | 4     |
-| UTF8 text with length    | Longint | 5     |
-| UTF8 text without length | Longint | 6     |
+| Mac text without length  | Integer | 3     |
+| UTF8 C string            | Integer | 4     |
+| UTF8 text with length    | Integer | 5     |
+| UTF8 text without length | Integer | 6     |
 
 **Notes:**
 

@@ -27,8 +27,8 @@ Otherwise, **Window kind** may return one of the following predefined constants 
 | --------------- | ------- | ----- |
 | External window | Integer | 5     |
 | Floating window | Integer | 14    |
-| Modal dialog    | Longint | 9     |
-| Regular window  | Longint | 8     |
+| Modal dialog    | Integer | 9     |
+| Regular window  | Integer | 8     |
 
 If you omit the *window* parameter, **Window kind** returns the type of the frontmost window for the current process.
 

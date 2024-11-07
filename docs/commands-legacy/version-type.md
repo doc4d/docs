@@ -21,7 +21,7 @@ displayed_sidebar: docs
 | ------------------ | ------- | ----- | ------------------------------------------------------- |
 | 64 bit version     | Integer | 1     |                                                         |
 | Demo version       | Integer | 0     |                                                         |
-| Merged application | Longint | 2     | Version is an application merged with 4D Volume Desktop |
+| Merged application | Integer | 2     | Version is an application merged with 4D Volume Desktop |
 
 **Note:** In current versions of 4D, the demo mode is not available.
 

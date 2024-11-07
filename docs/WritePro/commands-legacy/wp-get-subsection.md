@@ -31,7 +31,7 @@ If the range or element belongs to an anchored picture, an error is returned.
 | ------------- | ------- | ----- |  
 | wk first page | Integer | 1     |  
 | wk left page  | Integer | 2     |  
-| wk right page | Longint | 3     |  
+| wk right page | Integer | 3     |  
     
     
 If no *subSectionType* subsection is defined for the specified *wpSection*, the command returns an undefined object (no error is returned).

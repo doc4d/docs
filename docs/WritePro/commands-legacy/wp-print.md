@@ -27,8 +27,8 @@ The optional *printOptions* parameter can be used to set the HTML WYSIWYG view f
 | ------------------------------- | ------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | wk 4D Write Pro layout          | Integer | 0     | Standard 4D Write Pro layout, which can include some specific style attributes                                                                  |
 | wk do not recompute expressions | Integer | 2     | Specifies that all expressions in the document are not recomputed before printing or freezing.                                                  |
-| wk html wysiwyg                 | Longint | 1     | In this layout, any 4D Write Pro advanced attributes which are not compliant with all browsers are removed (e.g. columns, double underlines...) |
-| wk recompute expressions        | Longint | 0     | Specifies that all expressions in the document are recomputed before printing or freezing (default value).                                      |
+| wk html wysiwyg                 | Integer | 1     | In this layout, any 4D Write Pro advanced attributes which are not compliant with all browsers are removed (e.g. columns, double underlines...) |
+| wk recompute expressions        | Integer | 0     | Specifies that all expressions in the document are recomputed before printing or freezing (default value).                                      |
 
 If *printOptions* is omitted, by default the 4D Write Pro layout is used and expressions are recomputed (if any).
 

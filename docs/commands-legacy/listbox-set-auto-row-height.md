@@ -42,7 +42,7 @@ The *unit* parameter can be set using one of the following constants from the *L
 | Constant  | Type    | Value | Comment                                                                                             |
 | --------- | ------- | ----- | --------------------------------------------------------------------------------------------------- |
 | lk lines  | Integer | 1     | Height is expressed as a number of lines. 4D calculates the height of a line according to the font. |
-| lk pixels | Longint | 0     | Height is expressed as a number of pixels (default).                                                |
+| lk pixels | Integer | 0     | Height is expressed as a number of pixels (default).                                                |
 
 **Note:** The command does not check the consistency of the values. However, at runtime, the minimum value will be applied to both values in case of conflict. For example, if the minimum value is 5 lines and the maximum value is 3 lines (which is inconsistent), the maximum height applied to the list box rows will be 5 lines.
 

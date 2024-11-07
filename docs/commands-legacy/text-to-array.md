@@ -49,7 +49,7 @@ In the *fontStyle* parameter, you pass one or more constants from the *Font Styl
 | Bold      | Integer | 1     |
 | Italic    | Integer | 2     |
 | Plain     | Integer | 0     |
-| Underline | Longint | 4     |
+| Underline | Integer | 4     |
 
 This parameter is optional; when it is omitted, the Plain style is used. 
 

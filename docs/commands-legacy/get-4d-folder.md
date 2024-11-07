@@ -27,13 +27,13 @@ In *folder*, you can pass one of the following constants, which are located in t
 | 4D Client database folder   | Integer | 3     |
 | Active 4D Folder            | Integer | 0     |
 | Current resources folder    | Integer | 6     |
-| Data folder                 | Longint | 9     |
-| Database folder             | Longint | 4     |
-| Database folder Unix syntax | Longint | 5     |
-| HTML Root folder            | Longint | 8     |
-| Licenses folder             | Longint | 1     |
-| Logs folder                 | Longint | 7     |
-| MobileApps folder           | Longint | 10    |
+| Data folder                 | Integer | 9     |
+| Database folder             | Integer | 4     |
+| Database folder Unix syntax | Integer | 5     |
+| HTML Root folder            | Integer | 8     |
+| Licenses folder             | Integer | 1     |
+| Logs folder                 | Integer | 7     |
+| MobileApps folder           | Integer | 10    |
 
 The *options* parameter allows you to customize the local resources folder path. It is only taken into account when using the 4D Client database folder constant (see below). 
 

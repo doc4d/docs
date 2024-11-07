@@ -33,8 +33,8 @@ If you omit the *process* parameter, **Get menu item style** applies to the menu
 | --------- | ------- | ----- |
 | Bold      | Integer | 1     |
 | Italic    | Integer | 2     |
-| Plain     | Longint | 0     |
-| Underline | Longint | 4     |
+| Plain     | Integer | 0     |
+| Underline | Integer | 4     |
 
   
 #### Example 

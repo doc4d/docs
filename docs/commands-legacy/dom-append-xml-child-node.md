@@ -27,9 +27,9 @@ The type of node created is specified by the *childType* parameter. In this para
 | XML CDATA                  | Integer | 7     |
 | XML comment                | Integer | 2     |
 | XML DATA                   | Integer | 6     |
-| XML DOCTYPE                | Longint | 10    |
-| XML ELEMENT                | Longint | 11    |
-| XML processing instruction | Longint | 3     |
+| XML DOCTYPE                | Integer | 10    |
+| XML ELEMENT                | Integer | 11    |
+| XML processing instruction | Integer | 3     |
 
 In *childValue*, pass the data to be inserted. You can pass a string or a 4D variable (string or BLOB). The contents of this parameter will always be converted into text. 
 

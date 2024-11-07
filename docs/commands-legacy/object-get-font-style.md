@@ -30,8 +30,8 @@ You can compare the value returned with the value of one or more of the followin
 | --------- | ------- | ----- |
 | Plain     | Integer | 0     |
 | Bold      | Integer | 1     |
-| Italic    | Longint | 2     |
-| Underline | Longint | 4     |
+| Italic    | Integer | 2     |
+| Underline | Integer | 4     |
 
 #### See also 
 

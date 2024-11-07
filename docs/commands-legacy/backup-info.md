@@ -26,7 +26,7 @@ Pass the type of information to get in *selector*. The type and content of the *
 | Last backup date        | Integer | 0     | *info1* returns the date and *info2* the time of the last backup.                                                                                                                        |
 | Last backup information | Integer | 5     | *info1* returns the last backup duration in milliseconds (longint) and *info2* the last backup begin timestamp (string, see formatting details in the [Timestamp](timestamp.md) command) |
 | Last backup status      | Integer | 2     | *info1* returns the number and *info2* the text of the status of the last backup                                                                                                         |
-| Next backup date        | Longint | 4     | *info1* returns the date and *info2* the time of the next scheduled backup                                                                                                               |
+| Next backup date        | Integer | 4     | *info1* returns the date and *info2* the time of the next scheduled backup                                                                                                               |
 
 #### See also 
 

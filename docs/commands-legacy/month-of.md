@@ -26,16 +26,16 @@ To compare the value returned by this function, 4D provides the following predef
 | --------- | ------- | ----- |
 | January   | Integer | 1     |
 | February  | Integer | 2     |
-| March     | Longint | 3     |
-| April     | Longint | 4     |
-| May       | Longint | 5     |
-| June      | Longint | 6     |
-| July      | Longint | 7     |
-| August    | Longint | 8     |
-| September | Longint | 9     |
-| October   | Longint | 10    |
-| November  | Longint | 11    |
-| December  | Longint | 12    |
+| March     | Integer | 3     |
+| April     | Integer | 4     |
+| May       | Integer | 5     |
+| June      | Integer | 6     |
+| July      | Integer | 7     |
+| August    | Integer | 8     |
+| September | Integer | 9     |
+| October   | Integer | 10    |
+| November  | Integer | 11    |
+| December  | Integer | 12    |
 
   
 #### Example 1 

@@ -34,7 +34,7 @@ You specify the font style of the item in the *itemStyle* parameter. You pass a 
 | Bold      | Integer | 1     |
 | Italic    | Integer | 2     |
 | Plain     | Integer | 0     |
-| Underline | Longint | 4     |
+| Underline | Integer | 4     |
 
   
 

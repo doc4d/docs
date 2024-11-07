@@ -38,15 +38,15 @@ To specify a Currency code, 4D proposes the following predefined constants, plac
 | Belgian Franc       | Text | BEF   |
 | Deutsche Mark       | Text | DEM   |
 | Euro                | Text | EUR   |
-| Finnish Markka      | String | FIM   |
-| French Franc        | String | FRF   |
-| Greek Drachma       | String | GRD   |
-| Irish Pound         | String | IEP   |
-| Italian Lira        | String | ITL   |
-| Luxembourg Franc    | String | LUF   |
-| Netherlands Guilder | String | NLG   |
-| Portuguese Escudo   | String | PTE   |
-| Spanish Peseta      | String | ESP   |
+| Finnish Markka      | Text | FIM   |
+| French Franc        | Text | FRF   |
+| Greek Drachma       | Text | GRD   |
+| Irish Pound         | Text | IEP   |
+| Italian Lira        | Text | ITL   |
+| Luxembourg Franc    | Text | LUF   |
+| Netherlands Guilder | Text | NLG   |
+| Portuguese Escudo   | Text | PTE   |
+| Spanish Peseta      | Text | ESP   |
 
 If necessary, 4D performs rounding automatically on conversion results and keeps 2 decimals —except for conversions to Italian Lires, Belgian Francs, Luxembourg Francs and Spanish Pesetas, for which 4D keeps 0 decimal (the result is an integer number).
 

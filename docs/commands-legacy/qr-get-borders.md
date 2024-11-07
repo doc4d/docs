@@ -43,12 +43,12 @@ displayed_sidebar: docs
 
 | Constant                    | Type    | Value | Comment                  |
 | --------------------------- | ------- | ----- | ------------------------ |
-| qr bottom border            | Longint | 8     | Bottom border            |
-| qr inside horizontal border | Longint | 32    | Inside horizontal border |
-| qr inside vertical border   | Longint | 16    | Inside vertical border   |
-| qr left border              | Longint | 1     | Left border              |
-| qr right border             | Longint | 4     | Right border             |
-| qr top border               | Longint | 2     | Top border               |
+| qr bottom border            | Integer | 8     | Bottom border            |
+| qr inside horizontal border | Integer | 32    | Inside horizontal border |
+| qr inside vertical border   | Integer | 16    | Inside vertical border   |
+| qr left border              | Integer | 1     | Left border              |
+| qr right border             | Integer | 4     | Right border             |
+| qr top border               | Integer | 2     | Top border               |
 
 **Note:** Unlike the command [QR SET BORDERS](qr-set-borders.md), **QR GET BORDERS** does not accept a cumulative value. You must test all the parameters separately to have an overall view of the cell border.
 

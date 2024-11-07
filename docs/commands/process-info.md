@@ -41,7 +41,7 @@ The returned object contains the following properties:
 |sessionID|Text|Session UUID|
 |state|Integer|Current status. Possible values: see below|
 |systemID|Text|ID for the user process, 4D process or spare process|
-|type|Longint|Running process type. Possible values: see below|
+|type|Integer|Running process type. Possible values: see below|
 |visible|Boolean|True if visible, false otherwise|
 
 - Possible values for "state":

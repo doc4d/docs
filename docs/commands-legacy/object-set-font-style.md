@@ -31,7 +31,7 @@ You pass in *styles* a sum of the constants describing your font style selection
 | Bold      | Integer | 1     |
 | Italic    | Integer | 2     |
 | Plain     | Integer | 0     |
-| Underline | Longint | 4     |
+| Underline | Integer | 4     |
 
   
 #### Example 1 

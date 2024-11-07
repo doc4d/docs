@@ -40,9 +40,9 @@ Pass the HTTP method of the request in the *httpMethod* parameter. You can use o
 | HTTP GET method     | Text | GET     | See *RFC 2616*. Same as using [HTTP Get](http-get.md) command. |
 | HTTP HEAD method    | Text | HEAD    | See *RFC 2616*                                                 |
 | HTTP OPTIONS method | Text | OPTIONS | See *RFC 2616*                                                 |
-| HTTP POST method    | String | POST    | See *RFC 2616*                                                 |
-| HTTP PUT method     | String | PUT     | See *RFC 2616*                                                 |
-| HTTP TRACE method   | String | TRACE   | See *RFC 2616*                                                 |
+| HTTP POST method    | Text | POST    | See *RFC 2616*                                                 |
+| HTTP PUT method     | Text | PUT     | See *RFC 2616*                                                 |
+| HTTP TRACE method   | Text | TRACE   | See *RFC 2616*                                                 |
 
 Pass the URL where you want the request sent in the *url* parameter. The syntax to use is:  
 

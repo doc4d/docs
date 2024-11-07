@@ -27,7 +27,7 @@ The *subSectionType* parameter specifies the subsection to create. You can pass 
 | ------------- | ------- | ----- |
 | wk first page | Integer | 1     |
 | wk left page  | Integer | 2     |
-| wk right page | Longint | 3     |
+| wk right page | Integer | 3     |
 
 **Note:** Creating a left page or right page subsection will automatically create the opposite subsection. For example, if you create a left page subsection, the right page subsection is automatically defined.
 

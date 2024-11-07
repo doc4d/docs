@@ -24,20 +24,20 @@ The command returns a numeric value that can be compared with one of the followi
 | ------------- | ------- | ----- |
 | \_o\_Is float | Integer | 35    |
 | Is BLOB       | Integer | 30    |
-| Is Boolean    | Longint | 6     |
-| Is collection | Longint | 42    |
-| Is date       | Longint | 4     |
-| Is longint    | Longint | 9     |
-| Is null       | Longint | 255   |
-| Is object     | Longint | 38    |
-| Is picture    | Longint | 3     |
-| Is pointer    | Longint | 23    |
-| Is real       | Longint | 1     |
-| Is text       | Longint | 2     |
-| Is time       | Longint | 11    |
-| Is undefined  | Longint | 5     |
-| Is variant    | Longint | 12    |
-| Object array  | Longint | 39    |
+| Is Boolean    | Integer | 6     |
+| Is collection | Integer | 42    |
+| Is date       | Integer | 4     |
+| Is longint    | Integer | 9     |
+| Is null       | Integer | 255   |
+| Is object     | Integer | 38    |
+| Is picture    | Integer | 3     |
+| Is pointer    | Integer | 23    |
+| Is real       | Integer | 1     |
+| Is text       | Integer | 2     |
+| Is time       | Integer | 11    |
+| Is undefined  | Integer | 5     |
+| Is variant    | Integer | 12    |
+| Object array  | Integer | 39    |
 
 This command is designed to return the type of a scalar expression, *i.e.* the value stored in or returned by the *expression* parameter. In particular, it can be applied to the following 4D expressions:
 

@@ -32,7 +32,7 @@ You can compare the value returned by the command with the following constants, 
 | ------------------------- | ------- | ----- | -------------------------------------------------- |
 | Asynchronous progress bar | Integer | 3     | Circular indicator displaying continuous animation |
 | Barber shop               | Integer | 2     | Bar displaying continuous animation                |
-| Progress bar              | Longint | 1     | Standard progress bar                              |
+| Progress bar              | Integer | 1     | Standard progress bar                              |
 
 #### See also 
 

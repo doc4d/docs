@@ -34,7 +34,7 @@ The *modifiers* parameter returns a value indicating the modifier key(s) associa
 | Command key mask | Integer | 256   | Ctrl key under Windows, Command key under OS X             |
 | Control key mask | Integer | 4096  | Ctrl key under OS X, or right click under Windows and OS X |
 | Option key mask  | Integer | 2048  | Alt key (also called Option under OS X)                    |
-| Shift key mask   | Longint | 512   | Windows and OS X                                           |
+| Shift key mask   | Integer | 512   | Windows and OS X                                           |
 
 If there are no modifier keys for the shortcut, *modifiers* returns 0\. 
 

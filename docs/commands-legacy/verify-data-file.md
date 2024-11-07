@@ -46,20 +46,20 @@ The *options* parameter is used to set verification options. The following optio
 
 | Constant                | Type    | Value  | Comment                                                                                                                                                                                                                                                                                                                        |
 | ----------------------- | ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Do not create log file  | Longint | 16384  | Generally, this command creates a log file in XML format (refer to the end of the command description). With this option, no log file will be created.                                                                                                                                                                         |
-| Timestamp log file name | Longint | 262144 | When this option is passed, the name of the log file generated will contain the date and time of its creation; as a result, it will not replace any log file already generated previously. By default, if this option is not passed, log file names are not timestamped and each new file generated replaces the previous one. |
+| Do not create log file  | Integer | 16384  | Generally, this command creates a log file in XML format (refer to the end of the command description). With this option, no log file will be created.                                                                                                                                                                         |
+| Timestamp log file name | Integer | 262144 | When this option is passed, the name of the log file generated will contain the date and time of its creation; as a result, it will not replace any log file already generated previously. By default, if this option is not passed, log file names are not timestamped and each new file generated replaces the previous one. |
   
   
 Generally, the VERIFY DATA FILE command creates a log file in XML format (please refer to the end of the description of this command). You can cancel this operation by passing this option. To create the log file, pass 0 in *options*.  
   
 The *method* parameter is used to set a callback method that will be called regularly during the verification. If you pass an empty string or an invalid method name, this parameter is ignored (no method is called). When called, the method receives up to 5 parameters depending on the objects being verified and on the event type originating the call (see calls table). It is imperative to declare these parameters in the method: 
 
-| \- $1 | Longint | Message type (see table) |
+| \- $1 | Integer | Message type (see table) |
 | ----- | ------- | ------------------------ |
-| \- $2 | Longint | Object type              |
+| \- $2 | Integer | Object type              |
 | \- $3 | Text    | Message                  |
-| \- $4 | Longint | Table number             |
-| \- $5 | Longint | Reserved                 |
+| \- $4 | Integer | Table number             |
+| \- $5 | Integer | Reserved                 |
 
 The following table describes the contents of the parameters depending on the event type:
 

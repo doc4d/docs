@@ -31,8 +31,8 @@ Pass one of the constants of the *Form Objects (Properties)* theme in the *align
 | Align center  | Integer | 3     |                                       |
 | Align default | Integer | 1     |                                       |
 | Align left    | Integer | 2     |                                       |
-| Align right   | Longint | 4     |                                       |
-| wk justify    | Longint | 5     | Available for 4D Write Pro areas only |
+| Align right   | Integer | 4     |                                       |
+| wk justify    | Integer | 5     | Available for 4D Write Pro areas only |
 
   
 The form objects to which alignment can be applied are as follows:

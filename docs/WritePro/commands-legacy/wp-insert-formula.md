@@ -32,7 +32,7 @@ In the *formula* parameter, pass the 4D formula to evaluate. You can pass:
 * or an object containing two properties:  
 | **Property** | **Type** | **Description**                                                                                                                                                                                                                                                                       |  
 | ------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |  
-| name         | String   | Name to display for the formula in the document                                                                                                                                                                                                                                       |  
+| name         | Text   | Name to display for the formula in the document                                                                                                                                                                                                                                       |  
 | formula      | Object   | The [formula object](https://developer.4d.com/docs/API/FunctionClass#formula-objects) created by the [**Formula**](https://developer.4d.com/docs/API/FunctionClass#formula) or [**Formula from string**](https://developer.4d.com/docs/API/FunctionClass#formula-from-string) command |  
     
 When you use an object with a formula *name*, this name is displayed in the document instead of the formula reference when formulas are displayed as reference, and in the formula tip when displayed as value or symbols. If the *name* property contains an empty string or is omitted, it is removed from the object and the formula is displayed by default. For more information, see the *Managing formulas* page.
@@ -49,8 +49,8 @@ In the *mode* parameter, pass one of the following constants to indicate the ins
     
 | Constant              | Type    | Value | Comment                                               |  
 | --------------------- | ------- | ----- | ----------------------------------------------------- |  
-| wk exclude from range | Longint | 1     | Inserted contents not included in updated range       |  
-| wk include in range   | Longint | 0     | Inserted contents included in updated range (default) |  
+| wk exclude from range | Integer | 1     | Inserted contents not included in updated range       |  
+| wk include in range   | Integer | 0     | Inserted contents included in updated range (default) |  
     
 If you do not pass a *rangeUpdate* parameter, by default the inserted *formula* is included in the resulting range.
 * If *targetObj* is not a range, *rangeUpdate* is ignored.

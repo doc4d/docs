@@ -27,7 +27,7 @@ The *byteOrder* parameter fixes the byte ordering of the 4-byte Long Integer val
 | ----------------------- | ------- | ----- |
 | Macintosh byte ordering | Integer | 1     |
 | Native byte ordering    | Integer | 0     |
-| PC byte ordering        | Longint | 2     |
+| PC byte ordering        | Integer | 2     |
 
 **Note regarding Platform Independence:** If you exchange BLOBs between Macintosh and PC platforms, it is up to you to manage byte swapping issues while using this command.
 
