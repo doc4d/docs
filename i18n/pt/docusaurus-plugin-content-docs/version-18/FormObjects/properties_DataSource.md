@@ -259,7 +259,7 @@ Specifies a variable or expression that will be assigned the elements or entitie
 
 ---
 
-## Selection Name {#selection-name}
+## Nome da seleção {#selection-name}
 
 `List boxes de tipo seleção nomeada`
 
