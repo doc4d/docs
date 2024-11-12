@@ -364,9 +364,9 @@ End if
 | IPAddress        | Text                             | リモートマシンの IPアドレス。                                                                    |
 | hostType         | Text                             | ホストタイプ: "windows" または "mac"                                         |
 | creationDateTime | 日付 (ISO 8601) | セッション作成の日時                                                                          |
-| state            | テキスト                             | セッションの状態: "active", "postponed", "sleeping"                         |
-| ID               | テキスト                             | セッションUUID ([`.id`](#id) と同じ値))                                   |
-| persistentID     | テキスト                             | リモートセッション: セッションの永続的な ID                                            |
+| state            | Text                             | セッションの状態: "active", "postponed", "sleeping"                         |
+| ID               | Text                             | セッションUUID ([`.id`](#id) と同じ値))                                   |
+| persistentID     | Text                             | リモートセッション: セッションの永続的な ID                                            |
 
 :::note
 
