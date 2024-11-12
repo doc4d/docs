@@ -28,7 +28,7 @@ Leia [**O que há de novo no 4D 20 R6**](https://blog.4d.com/en-whats-new-in-4d-
 
 #### Mudanças de comportamento
 
-- Rolagem nos formulários conectada: subformas pai agora rolam automaticamente quando tiverem objetos roláveis incorporados ([verticalmente](../FormObjects/properties_Appearance.md#vertical-scroll-bar) ou [horizontalmente](. /FormObjects/properties_Appearance.md#horizontal-scroll-bar)) atingiram os limites e o usuário continua rolando usando o mouse ou rastreador (overscrolling).
+- Suporte para perseguir a rolagem nos formulários: subformas pai agora rolam automaticamente quando objetos roláveis incorporados ([verticalmente](../FormObjects/properties_Appearance.md#vertical-scroll-bar) ou [horizontalmente](. /FormObjects/properties_Appearance.md#horizontal-scroll-bar)) atingiram os limites e o usuário continua rolando usando o mouse ou rastreador (overscrolling).
 - A API REST [`$catalog`](../REST/$catalog.md) agora retorna singletons (se houver).
 
 ## 4D 20 R5
