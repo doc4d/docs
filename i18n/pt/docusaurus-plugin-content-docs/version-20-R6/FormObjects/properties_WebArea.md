@@ -77,7 +77,7 @@ La variable URL produce los mismos efectos que el comando [WA OPEN URL](https://
 
 Essa opção permite escolher entre dois mecanismos de renderização para a área Web, dependendo das especificidades de sua aplicação:
 
-- **desmarcada** - `valor JSON: system` (padrão): neste caso, 4D usa o mecanismo "melhor" correspondente ao sistema. This means that you automatically benefit from the latest advances in Web rendering, through HTML5 or JavaScript. No entanto, você poderá notar algumas diferenças de renderização entre as plataformas. No Windows, 4D usa Microsoft Edge WebView2. No macOS, 4D usa a versão atual do WebKit (Safari).
+- **desmarcada** - `valor JSON: system` (padrão): neste caso, 4D usa o mecanismo "melhor" correspondente ao sistema. Isso significa que você se beneficia automaticamente dos mais recentes avanços na renderização da Web, por meio de HTML5 ou JavaScript. No entanto, você poderá notar algumas diferenças de renderização entre as plataformas. No Windows, 4D usa Microsoft Edge WebView2. No macOS, 4D usa a versão atual do WebKit (Safari).
 
 > No Windows, se o Microsoft Edge WebView2 não estiver instalado, o 4D usa o mecanismo incorporado como mecanismo de renderização do sistema. Para saber se ele está instalado no seu sistema, procure "tempo de execução do Microsoft Edge WebView2" no painel de aplicações.
 
