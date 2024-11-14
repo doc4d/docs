@@ -62,7 +62,7 @@ Webサーバー用の TLS証明書ファイルが置かれているフォルダ�
 
 | 設定できる場所          | 名称                                                 | コメント |
 | ---------------- | -------------------------------------------------- | ---- |
-| webServer オブジェクト | [`cipherSuite`](API/WebServerClass.md#ciphersuite) | Text |
+| webServer オブジェクト | [`cipherSuite`](API/WebServerClass.md#ciphersuite) | テキスト |
 
 セキュアプロトコルに使用される暗号リストです。Webサーバーが実装する暗号アルゴリズムの優先順位を設定します。 コロン区切りの文字列として設定できます (例: "ECDHE-RSA-AES128-...")。 詳細は Open SSL サイトの [ciphers ページ](https://www.openssl.org/docs/manmaster/man1/ciphers.html) を参照ください。
 
@@ -133,7 +133,7 @@ Webサーバーの HTTPリクエストログファイル (アプリケーショ�
 
 | 設定できる場所             | 名称                                                         | コメント              |
 | ------------------- | ---------------------------------------------------------- | ----------------- |
-| webServer オブジェクト    | [`defaultHomepage`](API/WebServerClass.md#defaulthomepage) | Text              |
+| webServer オブジェクト    | [`defaultHomepage`](API/WebServerClass.md#defaulthomepage) | テキスト              |
 | `WEB SET HOME PAGE` |                                                            | Webプロセス毎に異なる設定が可能 |
 | 設定ダイアログボックス         | [設定ページ / デフォルトホームページ](../settings/web.md#デフォルトホームページ)      |                   |
 
