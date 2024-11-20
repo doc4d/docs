@@ -1511,7 +1511,7 @@ module.exports =
 						"commands-legacy/resume-process",
 						"commands/session",
 						"commands/session-info",
-						"commands-legacy/session-storage",
+						"commands/session-storage",
 						"commands-legacy/unregister-client"
 					]
 					},
