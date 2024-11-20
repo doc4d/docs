@@ -44,12 +44,14 @@ A CSS file defined at the form level will override default style sheet(s). For m
 
 ## Form Class
 
-Name of an existing [user class](../Concepts/classes.md#class-definition) to associate to the form. The user class can belong to the host project or to a [component](../Extensions/develop-components.md#sharing-of-classes).
+Name of an existing [user class](../Concepts/classes.md#class-definition) to associate to the form. The user class can belong to the host project or to a [component](../Extensions/develop-components.md#sharing-of-classes). When the form is executed, 4D automatically instantiates the user class, available through the [`Form`](../commands-legacy/form.md) object.  
 
 Associating a class to the form allows you to:
+
 - give a [type](../Concepts/data-types.md) to the object returned by the [`Form`](../commands-legacy/form.md) command,
 - enable syntax checking with expressions such as `Form.myProperty`,
-- benefit from the [autocompletion features](../code-editor/write-class-method.md#autocomplete-functions) in the code editor. 
+- benefit from the [autocompletion features](../code-editor/write-class-method.md#autocomplete-functions) in the code editor,
+- directly access class functions defined in the user class through the `Form` command (e.g. `Form.message()`) without having to pass an object as parameter to the [`DIALOG`](../commands-legacy/dialog.md) command
 
 
 #### JSON Grammar
