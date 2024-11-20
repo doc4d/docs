@@ -9,7 +9,7 @@ title: Form Properties
 
 >Color scheme property is only applied on macOS.
 
-This property defines the color scheme for the form. By default when the property is not set, the value for a color scheme is **inherited** (the form uses the scheme defined at the [application level](https://doc.4d.com/4dv19/help/command/en/page1762.html)). This can be changed for the form to one of the following two options:
+This property defines the color scheme for the form. By default when the property is not set, the value for a color scheme is **inherited** (the form uses the scheme defined at the [application level](../commands-legacy/set-application-color-scheme.md)). This can be changed for the form to one of the following two options:
 
 *	dark - light text on a dark background 
 *	light - dark text on a light background
@@ -40,23 +40,27 @@ A CSS file defined at the form level will override default style sheet(s). For m
 ---
 
 
-## Pages
 
-Each form has is made of at least two pages:
 
-- a page 0 (background page)
-- a page 1 (main page)
+## Form Class
 
-For more information, please refer to [Form pages](forms.md#form-pages).
+Name of an existing [user class](../Concepts/classes.md#class-definition) to associate to the form. The user class can belong to the host project or to a [component](../Extensions/develop-components.md#sharing-of-classes).
+
+Associating a class to the form allows you to:
+- give a [type](../Concepts/data-types.md) to the object returned by the [`Form`](../commands-legacy/form.md) command,
+- enable syntax checking with expressions such as `Form.myProperty`,
+- benefit from the [autocompletion features](../code-editor/write-class-method.md#autocomplete-functions) in the code editor. 
 
 
 #### JSON Grammar
 
 |Name|Data Type|Possible Values|
 |---|---|---|
-|pages |collection |Collection of pages (each page is an object, page 0 is the first element|
+|formClass |string |name of an existing user class |
 
 ---
+
+
 
 
 ## Form Name
@@ -136,6 +140,24 @@ Set to `\<None>` in the Property List (or " " in JSON) to inherited from a proje
 |---|---|---|
 |inheritedFormTable|string or number |table name or table number|
 
+
+---
+
+## Pages
+
+Each form has is made of at least two pages:
+
+- a page 0 (background page)
+- a page 1 (main page)
+
+For more information, please refer to [Form pages](forms.md#form-pages).
+
+
+#### JSON Grammar
+
+|Name|Data Type|Possible Values|
+|---|---|---|
+|pages |collection |Collection of pages (each page is an object, page 0 is the first element|
 
 ---
 
