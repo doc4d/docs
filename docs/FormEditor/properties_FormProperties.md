@@ -48,7 +48,13 @@ Name of an existing [user class](../Concepts/classes.md#class-definition) to ass
 
 Associating a class to the form provides the following benefits:
 
-- When you work in the [Form editor](../FormEditor/formEditor.md), the associated class is used for syntax checking of expressions such as `Form.myProperty` in all areas of the [Property list](../FormEditor/formEditor.md#property-list) that support [expressions](../Concepts/quick-tour.md#expressions) (e.g. **Variable or Expression**, **Font color expression**...). You can also to benefit from [autocompletion features](../code-editor/write-class-method.md#autocomplete-functions) in the code editor.
+- When you work in the [Form editor](../FormEditor/formEditor.md), the associated class is used for syntax checking of expressions such as `Form.myProperty` in all areas of the [Property list](../FormEditor/formEditor.md#property-list) that support [expressions](../Concepts/quick-tour.md#expressions) (e.g. **Variable or Expression**, **Font color expression**...). Errors and warnings are displayed in the left column of the Property list: 
+
+![](../assets/en/FormObjects/warning-proplist.png)
+
+- You can also to benefit from [autocompletion features](../code-editor/write-class-method.md#autocomplete-functions) in the code editor. 
+
+- The [compiler](../Project/compiler.md) is able to detect compilation errors related to code expressed in the expressions of the form objects. 
 
 - When the form is executed in the application, 4D automatically instantiates a user class object for the form, which is returned by the [`Form`](../commands-legacy/form.md) object. You can directly access class functions defined in the user class through the `Form` command (e.g. `Form.message()`) without having to pass a *formData* object as parameter to the [`DIALOG`](../commands-legacy/dialog.md), [`Print form`](../commands-legacy/print-form.md), or [`FORM LOAD`](../commands-legacy/form-load.md) commands. 
 

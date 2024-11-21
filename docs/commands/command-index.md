@@ -121,7 +121,7 @@ title: Index
 [`Command name`](../commands-legacy/command-name.md)<br/>
 [`Compact data file`](../commands-legacy/compact-data-file.md)<br/>
 [`Compare strings`](../commands-legacy/compare-strings.md)<br/>
-[`Compile project`](../commands-legacy/compile-project.md)<br/>
+[`Compile project`](compile-project.md)<br/>
 [`COMPONENT LIST`](../commands-legacy/component-list.md)<br/>
 [`COMPRESS BLOB`](../commands-legacy/compress-blob.md)<br/>
 [`CONFIRM`](../commands-legacy/confirm.md)<br/>

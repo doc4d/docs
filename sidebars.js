@@ -457,7 +457,7 @@ module.exports =
 						image: '/img/docusaurus.png',
 						},
 					"items": [
-						"commands-legacy/compile-project",
+						"commands/compile-project",
 						"commands-legacy/idle"
 					]
 					},

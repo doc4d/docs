@@ -18,6 +18,14 @@ displayed_sidebar: docs
 *This command is not thread-safe, it cannot be used in preemptive code.*
 
 
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|20 R8|Support of `type` "formObjectExpression"|
+
+</details>
+
 
 #### Description 
 
@@ -69,7 +77,7 @@ The *options* parameter is an object. Here are the available compilation options
 The object returned by **Compile project** has up to three properties:
 
 | **Property** | **Type** | **Description** |
-| ------------ |--------- |---------------- |
+| ------------ |-------- |---------------- |
 | success  | Boolean  | True if the save action is successful, False otherwise. |
 | errors | Collection of objects | **Available only in case of error or warning**. Collection of objects describing compilation errors or warnings |
 | \[\].isError | Boolean | Error if True, warning otherwise |
@@ -78,20 +86,20 @@ The object returned by **Compile project** has up to three properties:
 | \[\].line | Number | Line number of error in the code. For class methods, line number in the function |
 | \[\].lineInFile | Number | Line number in the file (different from "line" for class methods, and takes into account the %attributes prefix line) |
 | symbols | Object |**Available only if generateSymbols option is set to True:** | 
-|.interprocessVariables | Object | List of all interprocess variables |
-| .interprocessVariables.variables | Collection | Collection of [variable objects](#variable-objects) |
-|.interprocessVariables.size | Number | |
-|.processVariables | Object | List of all process variables |
-|.processVariables.variables | Collection | Collection of [variable objects](#variable-objects) |
-|.processVariables.size | Number | |
-|.localVariables | Collection of objects | List of local variables per method |
-|.localVariables[].code | Object | [code object](#code-object) |
-|.localVariables[].variables | Collection | Collection of [variable objects](#variable-objects) |
-|.methods | Collection of objects | List of methods |
-|.methods\[\].code | Object | [code object](#code-object) |
-|.methods\[\].callCount | Number | Number of times this method has been called |
-|.methods\[\].params | Collection | Collection of parameter types (Value type numerical codes) |
-|.methods\[\]. threadSafe | Boolean | Indicates if this method is thread safe |
+|symbols.interprocessVariables | Object | List of all interprocess variables |
+|symbols.interprocessVariables.variables | Collection | Collection of [variable objects](#variable-objects) |
+|symbols.interprocessVariables.size | Number | |
+|symbols.processVariables | Object | List of all process variables |
+|symbols.processVariables.variables | Collection | Collection of [variable objects](#variable-objects) |
+|symbols.processVariables.size | Number | |
+|symbols.localVariables | Collection of objects | List of local variables per method |
+|symbols.localVariables[].code | Object | [code object](#code-object) |
+|symbols.localVariables[].variables | Collection | Collection of [variable objects](#variable-objects) |
+|symbols.methods | Collection of objects | List of methods |
+|symbols.methods\[\].code | Object | [code object](#code-object) |
+|symbols.methods\[\].callCount | Number | Number of times this method has been called |
+|symbols.methods\[\].params | Collection | Collection of parameter types (Value type numerical codes) |
+|symbols.methods\[\]. threadSafe | Boolean | Indicates if this method is thread safe |
 
 For more information, see [Compilation tools](../Project/compiler.md#compilation-tools).
 
@@ -112,14 +120,15 @@ The `code` property in `methods.code` and `errors.code` is an object with the fo
 
 | **Property**   | **Type** | **Description**  |
 | ------------------- | -------- | ---- |
-| type     | Text   | <li>"projectMethod", "formObjectMethod", "formMethod", "databaseMethod", "triggerMethod", "executeOnServer" (when calling a project method with the *Execute on Server attribute*), "executeFormula" (when executing a formula via [PROCESS 4D TAGS](process-4d-tags.md) or evaluation of a formula in a 4D Write Pro document), "class", "classFunction"|
+| type     | Text   | "projectMethod", "formObjectMethod", "formMethod", "databaseMethod", "triggerMethod", "executeOnServer" (when calling a project method with the *Execute on Server attribute*), "executeFormula" (when executing a formula via [PROCESS 4D TAGS](process-4d-tags.md) or evaluation of a formula in a 4D Write Pro document), "class", "classFunction", "formObjectExpression" (when errors occur in [a form associated to a user class](../FormEditor/properties_FormProperties.md#form-class)|
 | path  | Text   | Method path (same format as [METHOD OPEN PATH](method-open-path.md)) |
 | file | 4D.File  | Method file  |
 ||          |  **Returned depending on the value of the `type` property:**  |
-| methodName  | Text   | Project method  | 
-|table | Number   | Number of the table (returned for a trigger, a table form method or a table form object method)  |
+| methodName  | Text   | Project method  |
+|table| Number   | Number of the table (returned for a trigger, a table form method or a table form object method)  |
 | formName  | Text   | Form name (returned for a form method)  |
 | objectName | Text   | Form object name (returned for an object method)  |
+| propertyName | Text   | Form object property name (returned for an form object expression)  |
 | className  | Text   | Class name   |
 | functionName   | Text   | Class function name   |
 | databaseMethod     | Number   | Database method index        |
