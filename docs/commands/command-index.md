@@ -315,7 +315,7 @@ title: Index
 [`FONT STYLE LIST`](../commands-legacy/font-style-list.md)<br/>
 [`Form`](../commands-legacy/form.md)<br/>
 [`FORM Convert to dynamic`](../commands-legacy/form-convert-to-dynamic.md)<br/>
-[`FORM EDIT`](../commands-legacy/form-edit.md)<br/>
+[`FORM EDIT`](form-edit.md)<br/>
 [`FORM Event`](../commands-legacy/form-event.md)<br/>
 [`Form event code`](../commands-legacy/form-event-code.md)<br/>
 [`FORM FIRST PAGE`](../commands-legacy/form-first-page.md)<br/>

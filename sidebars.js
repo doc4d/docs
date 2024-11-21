@@ -572,7 +572,7 @@ module.exports =
 						},
 					"items": [
 						"commands-legacy/current-method-path",
-						"commands-legacy/form-edit",
+						"commands/form-edit",
 						"commands-legacy/form-get-names",
 						"commands-legacy/method-get-attribute",
 						"commands-legacy/method-get-attributes",
