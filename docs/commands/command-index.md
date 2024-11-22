@@ -329,7 +329,7 @@ title: Index
 [`FORM GET VERTICAL RESIZING`](../commands-legacy/form-get-vertical-resizing.md)<br/>
 [`FORM GOTO PAGE`](../commands-legacy/form-goto-page.md)<br/>
 [`FORM LAST PAGE`](../commands-legacy/form-last-page.md)<br/>
-[`FORM LOAD`](../commands-legacy/form-load.md)<br/>
+[`FORM LOAD`](form-load.md)<br/>
 [`FORM NEXT PAGE`](../commands-legacy/form-next-page.md)<br/>
 [`FORM PREVIOUS PAGE`](../commands-legacy/form-previous-page.md)<br/>
 [`FORM SCREENSHOT`](../commands-legacy/form-screenshot.md)<br/>

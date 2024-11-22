@@ -702,7 +702,7 @@ module.exports =
 						"commands-legacy/form-get-vertical-resizing",
 						"commands-legacy/form-goto-page",
 						"commands-legacy/form-last-page",
-						"commands-legacy/form-load",
+						"commands/form-load",
 						"commands-legacy/form-next-page",
 						"commands-legacy/form-previous-page",
 						"commands-legacy/form-screenshot",
