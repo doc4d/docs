@@ -33,7 +33,7 @@ Quando executar o comando desde um componente, carrega os formulários do compon
 
 ##### formData 
 
-Opcionalmente, pode passar parâmetros ao *formulario* utilizando o objeto *dataForm*. Toda propriedade do objeto *dataForm* estará disponível desde o contexto do formulário através do comando [Form](form.md). Por exemplo, se passar um objeto que contenha {"version", "12"} em *dataForm*, poderá obter ou definir o valor da propriedade "version" no formulario chamando:
+Opcionalmente, pode passar parâmetros ao *formulario* utilizando o objeto *dataForm*. Toda propriedade do objeto *dataForm* estará disponível desde o contexto do formulário através do comando [Form](../commands/form.md). Por exemplo, se passar um objeto que contenha {"version", "12"} em *dataForm*, poderá obter ou definir o valor da propriedade "version" no formulario chamando:
 
 ```4d
  $v:=Form.version //"12"
@@ -42,9 +42,9 @@ Opcionalmente, pode passar parâmetros ao *formulario* utilizando o objeto *data
 
 O objeto *dataForm* está disponível no evento formulário On Load.
 
-*dataForm* lhe permite passar parámetros de forma segura a seus formulários, seja qual for o contexto de chamada. Em particular, se o mesmo formulário for cnamado desde diferentes lugares no mesmo processo, sempre poderá acessar a seus valores específicos simplesmente chamando a [Form](form.md).myProperty. 
+*dataForm* lhe permite passar parámetros de forma segura a seus formulários, seja qual for o contexto de chamada. Em particular, se o mesmo formulário for cnamado desde diferentes lugares no mesmo processo, sempre poderá acessar a seus valores específicos simplesmente chamando a [Form](../commands/form.md).myProperty. 
 
-**Nota:** se não passar o parâmetro *dataForm* ou se passar um objeto indefinido, **FORM LOAD** cria automaticamente um novo objeto vazio vinculado ao *formulario*, disponível através do comando [Form](form.md).
+**Nota:** se não passar o parâmetro *dataForm* ou se passar um objeto indefinido, **FORM LOAD** cria automaticamente um novo objeto vazio vinculado ao *formulario*, disponível através do comando [Form](../commands/form.md).
 
 ##### Impressão de dados 
 

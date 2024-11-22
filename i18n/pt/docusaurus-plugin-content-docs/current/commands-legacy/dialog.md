@@ -37,17 +37,17 @@ No parâmetro *formulario,* pode passar
  a rota (em sintaxe POSIX) para um arquivo json válido contendo uma descrição doe formulário a usar. Veja *Form file path*;  
  um objeto que contenha a descrição do formulário.  
   
-Opcionalmente, pode passar parâmetros ao formulário mediante o objeto formData. Toda propriedade de objeto formData estará disponível desde o contexto de formulário mediante o comando [Form](form.md). Por exemplo, se passar um objeto que contenha {"version","12"} em formData, poderá obter o valor da propriedade "Version" no formulário chamando:  
+Opcionalmente, pode passar parâmetros ao formulário mediante o objeto formData. Toda propriedade de objeto formData estará disponível desde o contexto de formulário mediante o comando [Form](../commands/form.md). Por exemplo, se passar um objeto que contenha {"version","12"} em formData, poderá obter o valor da propriedade "Version" no formulário chamando:  
   
 ```4d
  $v:=Form.version //"12"
 ```
   
   
-Utilizando uma variável local para formData, esta funcionalidade lhe permite passar parâmetros de maneira segura a seus formulários, qualquer que seja o contexto da chamada. Em particular, se o mesmo formulário se chama desde diferentes lugares no mesmo processo, sempre poderá acessar a seus valores específicos simplesmente chamando a [Form](form.md).myProperty. Além disso, dado que os objetos são passados por referência, se o usuário modificar um valor de propriedade no formulário, este se guardará automaticamente no mesmo objeto.  
-Ao combinar o objeto formData e o comando [Form](form.md), pode enviar parâmetros ao formulário ou ler os parâmetros em qualquer momento com código limpo e seguro.  
+Utilizando uma variável local para formData, esta funcionalidade lhe permite passar parâmetros de maneira segura a seus formulários, qualquer que seja o contexto da chamada. Em particular, se o mesmo formulário se chama desde diferentes lugares no mesmo processo, sempre poderá acessar a seus valores específicos simplesmente chamando a [Form](../commands/form.md).myProperty. Além disso, dado que os objetos são passados por referência, se o usuário modificar um valor de propriedade no formulário, este se guardará automaticamente no mesmo objeto.  
+Ao combinar o objeto formData e o comando [Form](../commands/form.md), pode enviar parâmetros ao formulário ou ler os parâmetros em qualquer momento com código limpo e seguro.  
   
-Nota: se não passar nenhum parâmetro formData ou se passar um objeto indefinido, DIALOG cria automaticamente um novo objeto vazio vinculado ao form e disponível através de comando [Form](form.md).
+Nota: se não passar nenhum parâmetro formData ou se passar um objeto indefinido, DIALOG cria automaticamente um novo objeto vazio vinculado ao form e disponível através de comando [Form](../commands/form.md).
 
 O diálogo é aceito se o usuário clicar no botão Aceitar ou pressionar a tecla Enter (teclado numérico) ou se é executado o comando [ACCEPT](accept.md).  
 Lembre que a validação não faz com que os dados modificados sejam guardados. Se o diálogo inclui campos, deve chamar explicitamente ao comando [SAVE RECORD](save-record.md) para guardar os dados que tenham sido modificados.
@@ -60,7 +60,7 @@ Este formulário logo reage "normalmente" as ações do usuário e é fechado qu
 
 **Notas:**
 
-* Pode combinar o uso da sintaxe **DIALOG**(form;\*) com o comando [CALL FORM](call-form.md) para estabelecer a comunicação entre os formulários
+* Pode combinar o uso da sintaxe **DIALOG**(form;\*) com o comando [CALL FORM](../commands/call-form.md) para estabelecer a comunicação entre os formulários
 * deve criar uma janela antes de chamar a instrução **DIALOG**("form";*\**); se não for possível utilizar a janela de diálogo atual no processo nem a janela criada por padrão para cada processo. Do contrário, se gera o erro -9909.
 * Quando for utilizado o parâmetro *\**, a janela é fechada automaticamente depois de uma ação padrão ou uma chamada ao comando [CANCEL](cancel.md) ou [ACCEPT](accept.md). Não tem que gerenciar o fechamento da própria janela.
 
@@ -85,7 +85,7 @@ Em um formulário exibindo o registro de uma pessoa, um botão "Check children" 
 
 **Nota:** O campo objeto "Children" é representado apenas para mostrar sua estrutura para esse exemplo.
 
-No formulário de verificação, se tiver atribuido algumas propriedades de objeto a variáveis [Form](form.md):
+No formulário de verificação, se tiver atribuido algumas propriedades de objeto a variáveis [Form](../commands/form.md):
 
 ![](../assets/en/commands/pict3541682.en.png)
 
@@ -165,7 +165,7 @@ Depois de chamar a DIALOG, se o diálogo é aceito, a variável sistema OK toma 
 
 [ACCEPT](accept.md)  
 [ADD RECORD](add-record.md)  
-[CALL FORM](call-form.md)  
+[CALL FORM](../commands/call-form.md)  
 [CANCEL](cancel.md)  
-[Form](form.md)  
+[Form](../commands/form.md)  
 [Open window](open-window.md)  

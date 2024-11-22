@@ -39,16 +39,16 @@ In the *form* parameter, you can pass:
 * the path (in POSIX syntax) to a valid .json file containing a description of the form to use. See *Form file path*;
 * an object containing a description of the form to use.
 
-Optionally, you can pass parameter(s) to the *form* using the *formData* object. Any properties of the *formData* object will then be available from within the form context through the [Form](form.md) command. For example, if you pass an object containing {"version","12"} in *formData*, you will be able to get the value of the "version" property in the form by calling:
+Optionally, you can pass parameter(s) to the *form* using the *formData* object. Any properties of the *formData* object will then be available from within the form context through the [Form](../commands/form.md) command. For example, if you pass an object containing {"version","12"} in *formData*, you will be able to get the value of the "version" property in the form by calling:
 
 ```4d
  $v:=Form.version //"12"
 ```
 
-Using a local variable for *formData*, this feature allows you to safely pass parameters to your forms, whatever the calling context. In particular, if the same form is called from different places in the same process, you will always be able to access its specific values by simply calling [Form](form.md).myProperty. Moreover, since objects are passed by reference, if the user modifies a property value in the form, it will automatically be saved in the object itself.   
-By combining the *formData* object and the [Form](form.md) command, you can send parameters to the form or read parameters from the form at any moment with clean and safe code.
+Using a local variable for *formData*, this feature allows you to safely pass parameters to your forms, whatever the calling context. In particular, if the same form is called from different places in the same process, you will always be able to access its specific values by simply calling [Form](../commands/form.md).myProperty. Moreover, since objects are passed by reference, if the user modifies a property value in the form, it will automatically be saved in the object itself.   
+By combining the *formData* object and the [Form](../commands/form.md) command, you can send parameters to the form or read parameters from the form at any moment with clean and safe code.
 
-**Note:** If you do not pass the *formData* parameter or if you pass an undefined object, **DIALOG** automatically creates a new empty object bound to the *form*, available through the [Form](form.md) command. 
+**Note:** If you do not pass the *formData* parameter or if you pass an undefined object, **DIALOG** automatically creates a new empty object bound to the *form*, available through the [Form](../commands/form.md) command. 
 
 The dialog is closed by the user either with an "accept" action (triggered by the ak accept standard action, the Enter key, or the [ACCEPT](accept.md) command), or with a "cancel" action (triggered by the ak cancel standard action, the Escape key, or the [CANCEL](cancel.md) command). An accept action will set the OK system variable to 1, while a cancel action will set OK to 0\. 
 
@@ -59,7 +59,7 @@ This form then reacts “normally” to user actions and is closed using a stand
 
 **Notes:** 
 
-* You can combine the use of the **DIALOG**(form;\*) syntax with the [CALL FORM](call-form.md) command to establish communication between the forms.
+* You can combine the use of the **DIALOG**(form;\*) syntax with the [CALL FORM](../commands/call-form.md) command to establish communication between the forms.
 * You must create a window before calling the **DIALOG**(form;\*) statement. It is not possible to use the current dialog window in the process nor the window created by default for each process. Otherwise, error -9909 is generated.
 * When the *\** parameter is used, the window is closed automatically following a standard action or a call to the [CANCEL](cancel.md) or [ACCEPT](accept.md) command. You do not have to manage the closing of the window itself.
 
@@ -84,7 +84,7 @@ In a form displaying the record of a person, a "Check children" button opens a d
 
 **Note:** The "Children" object field is represented only to show its structure for this example.
 
-In the verification form, you have assigned some [Form](form.md) object properties to variables:
+In the verification form, you have assigned some [Form](../commands/form.md) object properties to variables:
 
 ![](../assets/en/commands/pict3541682.en.png)
 
@@ -164,7 +164,7 @@ After a call to **DIALOG**, if the dialog is accepted, OK is set to 1; if it is 
 
 [ACCEPT](accept.md)  
 [ADD RECORD](add-record.md)  
-[CALL FORM](call-form.md)  
+[CALL FORM](../commands/call-form.md)  
 [CANCEL](cancel.md)  
-[Form](form.md)  
+[Form](../commands/form.md)  
 [Open window](open-window.md)  

@@ -48,23 +48,27 @@ Name of an existing [user class](../Concepts/classes.md#class-definition) to ass
 
 Associating a class to the form provides the following benefits:
 
-- When you work in the [Form editor](../FormEditor/formEditor.md), the associated class is used for syntax checking of expressions such as `Form.myProperty` in all areas of the [Property list](../FormEditor/formEditor.md#property-list) that support [expressions](../Concepts/quick-tour.md#expressions) (e.g. **Variable or Expression**, **Font color expression**...). Errors and warnings are displayed in the left column of the Property list: 
+- When you work in the [Form editor](../FormEditor/formEditor.md), the associated class is used for accurate syntax checking of expressions such as `Form.myProperty` in all areas of the [Property list](../FormEditor/formEditor.md#property-list) that support [expressions](../Concepts/quick-tour.md#expressions) (e.g. **Variable or Expression**, **Font color expression**...). Errors are displayed in red and warnings are displayed in yellow in the left column of the Property list and you can hover it to get explanations: 
 
 ![](../assets/en/FormObjects/warning-proplist.png)
 
+- The detection of errors in the code of form object expressions by the [compiler](../Project/compiler.md) is improved. 
+ 
 - You can also to benefit from [autocompletion features](../code-editor/write-class-method.md#autocomplete-functions) in the code editor. 
 
-- The [compiler](../Project/compiler.md) is able to detect compilation errors related to code expressed in the expressions of the form objects. 
+- When the form is executed, 4D automatically instantiates a user class object for the form, which is returned by the [`Form`](../commands/form.md) object. Your code can directly access class functions defined in the user class through the `Form` command (e.g. `Form.message()`) without having to pass a *formData* object as parameter to the [`DIALOG`](../commands-legacy/dialog.md), [`Print form`](../commands/print-form.md), or [`FORM LOAD`](../commands-legacy/form-load.md) commands. 
 
-- When the form is executed in the application, 4D automatically instantiates a user class object for the form, which is returned by the [`Form`](../commands-legacy/form.md) object. You can directly access class functions defined in the user class through the `Form` command (e.g. `Form.message()`) without having to pass a *formData* object as parameter to the [`DIALOG`](../commands-legacy/dialog.md), [`Print form`](../commands-legacy/print-form.md), or [`FORM LOAD`](../commands-legacy/form-load.md) commands. 
+:::note
 
+See [this blog post](http://blog.4d.com/empower-your-development-process-with-your-forms) for an illustration of this feature.
 
+:::
 
 #### JSON Grammar
 
 |Name|Data Type|Possible Values|
 |---|---|---|
-|formClass |string |name of an existing user class, or `<componentNameSpace>.className` (component class)|
+|formClass |string |name of an existing user class ("*className*" or "*componentNameSpace*.*className*")|
 
 ---
 
@@ -87,6 +91,7 @@ The form name is defined by the name of the folder that contains the form.4Dform
 The form type, *i.e.* its destination, defines the features that will be available to the form. For example, [markers](properties_Markers.md) can only be set for list (output) table forms.
 
 Each table in a database generally has at least two table forms. One for listing records on-screen and the other for displaying one record at a time (used for data entry and modifications):
+
 
 - Output form - the *output form* or *list form* displays a list of records, with a single line per record. The results of queries are shown in an output form and users can double-click a line to display the input form for that record.
 ![](../assets/en/FormObjects/formOutput.png)	

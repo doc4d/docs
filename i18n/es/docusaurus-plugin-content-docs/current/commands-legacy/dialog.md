@@ -37,16 +37,16 @@ En el parámetro *formulario,* puede pasar:
 * la ruta (en sintaxis POSIX) a un archivo .json válido que contiene una descripción del formulario a utilizar. Ver *Ruta de archivo del formulario*;
 * un objeto que contiene una descripción del formulario a utilizar.
 
-Opcionalmente, puede pasar parámetros al *form* mediante el objeto *formData*. Toda propiedad del objeto *formData* estará disponible desde el contexto del formulario mediante el comando [Form](form.md). Por ejemplo, si pasa un objeto que contiene {"version","12"} en *formData*, podrá obtener el valor de la propiedad "Version" en el formulario llamando:
+Opcionalmente, puede pasar parámetros al *form* mediante el objeto *formData*. Toda propiedad del objeto *formData* estará disponible desde el contexto del formulario mediante el comando [Form](../commands/form.md). Por ejemplo, si pasa un objeto que contiene {"version","12"} en *formData*, podrá obtener el valor de la propiedad "Version" en el formulario llamando:
 
 ```4d
  $v:=Form.version //"12"
 ```
 
-Utilizando una variable local para *formData*, esta funcionalidad le permite pasar parámetros de manera segura a sus formularios, cualquiera que sea el contexto de la llamada. En particular, si el mismo formulario se llama desde diferentes lugares en el mismo proceso, siempre podrá acceder a sus valores específicos simplemente llamando a [Form](form.md).myProperty. Además, dado que los objetos se pasan por referencia, si el usuario modifica un valor de propiedad en el formulario, éste se guardará automáticamente en el mismo objeto.  
-Al combinar el objeto *formData* y el comando [Form](form.md), puede enviar parámetros al formulario o leer los parámetros en cualquier momento con código limpio y seguro.
+Utilizando una variable local para *formData*, esta funcionalidad le permite pasar parámetros de manera segura a sus formularios, cualquiera que sea el contexto de la llamada. En particular, si el mismo formulario se llama desde diferentes lugares en el mismo proceso, siempre podrá acceder a sus valores específicos simplemente llamando a [Form](../commands/form.md).myProperty. Además, dado que los objetos se pasan por referencia, si el usuario modifica un valor de propiedad en el formulario, éste se guardará automáticamente en el mismo objeto.  
+Al combinar el objeto *formData* y el comando [Form](../commands/form.md), puede enviar parámetros al formulario o leer los parámetros en cualquier momento con código limpio y seguro.
 
-**Nota:** si no pasa el parámetro *formData* o si pasa un objeto indefinido, **DIALOG** crea automáticamente un nuevo objeto vacío vinculado al *form* y disponible a través del comando [Form](form.md). 
+**Nota:** si no pasa el parámetro *formData* o si pasa un objeto indefinido, **DIALOG** crea automáticamente un nuevo objeto vacío vinculado al *form* y disponible a través del comando [Form](../commands/form.md). 
 
 El diálogo es cerrado por el usuario con una acción Aceptar (disparada por la acción estándar ak accept, la tecla Intro o el comando [ACCEPT](accept.md)). Una acción aceptar definirá la variable sistema OK en 1, mientra una acción cancelar definirá OK en 0\.   
 Recuerde que validar no es igual a guardar: si el diálogo incluye campos, debe llamar explícitamente al comando [SAVE RECORD](save-record.md) para guardar los datos que hayan sido modificados.  
@@ -56,7 +56,7 @@ Si pasa el parámetro opcional \*, el formulario se carga y muestra en la últim
 
 **Notas:** 
 
-* Puede combinar el uso de la sintaxis **DIALOG**(form;\*) con el comando [CALL FORM](call-form.md) para establecer la comunicación entre los formularios.
+* Puede combinar el uso de la sintaxis **DIALOG**(form;\*) con el comando [CALL FORM](../commands/call-form.md) para establecer la comunicación entre los formularios.
 * debe crear una ventana antes de llamar la instrucción **DIALOG**(form;\*); si no es posible utilizar la ventana de diálogo actual en el proceso ni la ventana creada por defecto para cada proceso. De lo contrario, se genera el error -9909.
 * cuando se utiliza el parámetro *\**, la ventana se cierra automáticamente después de una acción estándar o una llamada al comando [CANCEL](cancel.md) o [ACCEPT](accept.md). No tiene que gestionar el cierre de la propia ventana.
 
@@ -75,7 +75,7 @@ El siguiente ejemplo puede usarse para crear una paleta de herramientas
 
 #### Ejemplo 2 
 
-En un formulario, usted asignó algunas propiedades de objeto [Form](form.md) a variables:
+En un formulario, usted asignó algunas propiedades de objeto [Form](../commands/form.md) a variables:
 
 ![](../assets/en/commands/pict3515147.en.png)
 
@@ -134,7 +134,7 @@ Después de llamar a DIALOG, si se acepta el diálogo, la variable sistema OK to
 
 [ACCEPT](accept.md)  
 [ADD RECORD](add-record.md)  
-[CALL FORM](call-form.md)  
+[CALL FORM](../commands/call-form.md)  
 [CANCEL](cancel.md)  
-[Form](form.md)  
+[Form](../commands/form.md)  
 [Open window](open-window.md)  

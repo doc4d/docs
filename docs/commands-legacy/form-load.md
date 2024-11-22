@@ -33,7 +33,7 @@ When the command is executed from a component, it loads the component forms by d
 
 ##### formData 
 
-Optionally, you can pass parameters to the *form* using the *formData* object. Any properties of the *formData* object will then be available from within the form context through the [Form](form.md) command. For example, if you pass an object containing {"version","12"} in *formData*, you will be able to get or set the value of the "version" property in the form by calling:
+Optionally, you can pass parameters to the *form* using the *formData* object. Any properties of the *formData* object will then be available from within the form context through the [Form](../commands/form.md) command. For example, if you pass an object containing {"version","12"} in *formData*, you will be able to get or set the value of the "version" property in the form by calling:
 
 ```4d
  $v:=Form.version //"12"
@@ -42,9 +42,9 @@ Optionally, you can pass parameters to the *form* using the *formData* object. A
 
 The *formData* object is available in the On Load form event.
 
-*formData* allows you to safely pass parameters to your forms, whatever the calling context. In particular, if the same form is called from different places in the same process, you will always be able to access its specific values by simply calling [Form](form.md).myProperty. 
+*formData* allows you to safely pass parameters to your forms, whatever the calling context. In particular, if the same form is called from different places in the same process, you will always be able to access its specific values by simply calling [Form](../commands/form.md).myProperty. 
 
-**Note:** If you do not pass the *formData* parameter or if you pass an undefined object, **FORM LOAD** automatically creates a new empty object bound to the *form*, available through the [Form](form.md) command.
+**Note:** If you do not pass the *formData* parameter or if you pass an undefined object, **FORM LOAD** automatically creates a new empty object bound to the *form*, available through the [Form](../commands/form.md) command.
 
 ##### Printing data 
 

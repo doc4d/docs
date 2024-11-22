@@ -33,7 +33,7 @@ Lorsque la commande est exécutée à partir d'un composant, elle charge par dé
 
 ##### formData 
 
-En option, vous pouvez transmettre des paramètres au formuliare à l'aide de l'objet formData. Toutes les propriétés de l'objet formData seront alors disponibles dans le contexte du formulaire par l'intermédiaire de la commande [Form](form.md). Par exemple, si vous passez un objet contenant {"version", "12"} dans formData, vous pourrez obtenir ou définir la valeur de la propriété "version" dans le formulaire en appelant :
+En option, vous pouvez transmettre des paramètres au formuliare à l'aide de l'objet formData. Toutes les propriétés de l'objet formData seront alors disponibles dans le contexte du formulaire par l'intermédiaire de la commande [Form](../commands/form.md). Par exemple, si vous passez un objet contenant {"version", "12"} dans formData, vous pourrez obtenir ou définir la valeur de la propriété "version" dans le formulaire en appelant :
 
 ```4d
  $v:=Form.version //"12"
@@ -42,9 +42,9 @@ En option, vous pouvez transmettre des paramètres au formuliare à l'aide de l'
 
 L'objet *formData* est disponible dans l'événement Sur chargement formulaire.
 
-formData vous permet de passer en toute sécurité des paramètres à vos formulaires, quel que soit le contexte d'appel. En particulier, si le même formulaire est appelé à différents endroits dans le même processus, vous pourrez toujours accéder à ses valeurs spécifiques en appelant simplement [Form](form.md).myProperty.
+formData vous permet de passer en toute sécurité des paramètres à vos formulaires, quel que soit le contexte d'appel. En particulier, si le même formulaire est appelé à différents endroits dans le même processus, vous pourrez toujours accéder à ses valeurs spécifiques en appelant simplement [Form](../commands/form.md).myProperty.
 
-**Note :** Si vous ne passez pas le paramètre formData ou si vous passez un objet non défini, **\[#current\_titl**e\] crée automatiquement un nouvel objet vide lié au formulaire, disponible via la commande [Form](form.md).
+**Note :** Si vous ne passez pas le paramètre formData ou si vous passez un objet non défini, **\[#current\_titl**e\] crée automatiquement un nouvel objet vide lié au formulaire, disponible via la commande [Form](../commands/form.md).
 
 ##### Impression de données 
 

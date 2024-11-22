@@ -690,7 +690,7 @@ module.exports =
 						},
 					"items": [
 						"commands-legacy/current-form-name",
-						"commands-legacy/form",
+						"commands/form",
 						"commands-legacy/form-convert-to-dynamic",
 						"commands-legacy/form-first-page",
 						"commands-legacy/form-get-color-scheme",

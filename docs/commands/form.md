@@ -1,7 +1,6 @@
 ---
 id: form
 title: Form
-slug: /commands/form
 displayed_sidebar: docs
 ---
 
@@ -15,18 +14,29 @@ displayed_sidebar: docs
 
 *This command is not thread-safe, it cannot be used in preemptive code.*
 
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|20 R8|Form class support|
+
+</details>
 
 #### Description 
 
 <!--REF #_command_.Form.Summary-->The **Form** command returns the object associated with the current form, if any.<!-- END REF--> 4D automatically associates an object to the current form in the following cases:
 
-* the current form has been displayed by the [DIALOG](dialog.md) command,
+* the current form has been loaded by one of the [`DIALOG`](../commands-legacy/dialog.md), [`Print form`](print-form.md), or [`FORM LOAD`](../commands-legacy/form-load.md) commands,
 * the current form is a subform,
 * a table form is currently displayed on screen.
 
-##### DIALOG form 
+##### Commands (DIALOG...) 
 
-If the current form is being displayed by a call to the [DIALOG](dialog.md) command, **Form** returns either an empty object, or the *formData* object passed as parameter to this command, if any. 
+If the current form is being displayed or loaded by a call to the [DIALOG](../commands-legacy/dialog.md), [`Print form`](print-form.md), or [`FORM LOAD`](../commands-legacy/form-load.md) commands, **Form** returns either:
+
+- the *formData* object passed as parameter to this command, if any,
+- or, an instantiated object of the [user class associated to the form](../FormEditor/properties_FormProperties.md#form-class), if any,
+- or, an empty object. 
 
 ##### Subform 
 
@@ -57,7 +67,7 @@ In a form displaying the record of a person, a "Check children" button opens a d
 
 **Note:** The "Children" object field is represented only to show its structure for this example.
 
-In the verification form, you have assigned some [Form](form.md) object properties to variables:
+In the verification form, you have assigned some Form object properties to inputs:
 
 ![](../assets/en/commands/pict3541682.en.png)
 
@@ -89,8 +99,6 @@ Here is the code for the "Check children" button:
  End if
 ```
 
-**Note:** This example requires that object notation be enabled in the database (see *Compatibility page*).
-
 The form displays information for each child:
 
 ![](../assets/en/commands/pict3515152.en.png)
@@ -99,4 +107,4 @@ If values are edited and the OK button is clicked, the field is updated (the par
 
 #### See also 
 
-[DIALOG](dialog.md)  
+[DIALOG](../commands-legacy/dialog.md)  

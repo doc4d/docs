@@ -120,7 +120,7 @@ The `code` property in `methods.code` and `errors.code` is an object with the fo
 
 | **Property**   | **Type** | **Description**  |
 | ------------------- | -------- | ---- |
-| type     | Text   | "projectMethod", "formObjectMethod", "formMethod", "databaseMethod", "triggerMethod", "executeOnServer" (when calling a project method with the *Execute on Server attribute*), "executeFormula" (when executing a formula via [PROCESS 4D TAGS](process-4d-tags.md) or evaluation of a formula in a 4D Write Pro document), "class", "classFunction", "formObjectExpression" (when errors occur in [a form associated to a user class](../FormEditor/properties_FormProperties.md#form-class)|
+| type     | Text   | "projectMethod", "formObjectMethod", "formMethod", "databaseMethod", "triggerMethod", "executeOnServer" (when calling a project method with the *Execute on Server attribute*), "executeFormula" (when executing a formula via [PROCESS 4D TAGS](process-4d-tags.md) or evaluation of a formula in a 4D Write Pro document), "class", "classFunction", "formObjectExpression" (for errors occuring in expressions associated to form objects)|
 | path  | Text   | Method path (same format as [METHOD OPEN PATH](method-open-path.md)) |
 | file | 4D.File  | Method file  |
 ||          |  **Returned depending on the value of the `type` property:**  |
@@ -128,7 +128,7 @@ The `code` property in `methods.code` and `errors.code` is an object with the fo
 |table| Number   | Number of the table (returned for a trigger, a table form method or a table form object method)  |
 | formName  | Text   | Form name (returned for a form method)  |
 | objectName | Text   | Form object name (returned for an object method)  |
-| propertyName | Text   | Form object property name (returned for an form object expression)  |
+| propertyName | Text   | Form object property name (returned for a form object expression)  |
 | className  | Text   | Class name   |
 | functionName   | Text   | Class function name   |
 | databaseMethod     | Number   | Database method index        |

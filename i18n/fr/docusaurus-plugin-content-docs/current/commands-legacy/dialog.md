@@ -39,16 +39,16 @@ Dans le paramètre *formulaire*, vous pouvez passer soit :
 * le chemin (en syntaxe POSIX) d'un fichier .json valide contenant la description du formulaire à utiliser (voir *Chemin d'accès du formulaire*),
 * un objet contenant la description du formulaire à utiliser.
 
-Optionnellement, vous pouvez passer un ou plusieurs paramètre(s) au *formulaire* à l'aide de l'objet *formData*. Chaque propriété de l'objet *formData* sera disponible depuis le contexte du formulaire par l'intermédiaire de la commande [Form](form.md). Par exemple, si vous passez un objet contenant {"version","12"} dans *formData*, vous pouvez lire la valeur de la propriété "version" dans le formulaire en exécutant :
+Optionnellement, vous pouvez passer un ou plusieurs paramètre(s) au *formulaire* à l'aide de l'objet *formData*. Chaque propriété de l'objet *formData* sera disponible depuis le contexte du formulaire par l'intermédiaire de la commande [Form](../commands/form.md). Par exemple, si vous passez un objet contenant {"version","12"} dans *formData*, vous pouvez lire la valeur de la propriété "version" dans le formulaire en exécutant :
 
 ```4d
  $v:=Form.version //"12"
 ```
 
-Lorsque vous utilisez une variable locale pour *formData*, cette fonctionnalité vous permet de passer en toute sécurité des paramètres à vos formulaires, quel que soit le contexte d'appel. En particulier, si le même formulaire est appelé depuis différents endroits dans le même process, vous pourrez à tout moment accéder à ses valeurs spécifiques en appelant simplement [Form](form.md).monAttribut. De plus, comme les objets sont passés par référence, si l'utilisateur modifie une valeur de propriété dans le formulaire, elle sera automatiquement mise à jour dans l'objet lui-même.   
-En combinant l'objet *formData* et la commande [Form](form.md), vous pouvez à tout moment passer des paramètres aux formulaires et récupérer des valeurs depuis le formulaire en utilisant du code propre et sûr. 
+Lorsque vous utilisez une variable locale pour *formData*, cette fonctionnalité vous permet de passer en toute sécurité des paramètres à vos formulaires, quel que soit le contexte d'appel. En particulier, si le même formulaire est appelé depuis différents endroits dans le même process, vous pourrez à tout moment accéder à ses valeurs spécifiques en appelant simplement [Form](../commands/form.md).monAttribut. De plus, comme les objets sont passés par référence, si l'utilisateur modifie une valeur de propriété dans le formulaire, elle sera automatiquement mise à jour dans l'objet lui-même.   
+En combinant l'objet *formData* et la commande [Form](../commands/form.md), vous pouvez à tout moment passer des paramètres aux formulaires et récupérer des valeurs depuis le formulaire en utilisant du code propre et sûr. 
 
-**Note :** Si vous ne passez pas le paramètre *formData* ou si vous passez un objet indéfini, **DIALOG** crée automatiquement un nouvel objet vide associé au *formulaire*, accessible via la commande [Form](form.md). 
+**Note :** Si vous ne passez pas le paramètre *formData* ou si vous passez un objet indéfini, **DIALOG** crée automatiquement un nouvel objet vide associé au *formulaire*, accessible via la commande [Form](../commands/form.md). 
 
 Le dialogue est refermé par l'utilisateur soit via une action "accepter" (déclenchée par l'action standard ak accept, la touche **Entrée** ou la commande [ACCEPT](accept.md)), soit via une action "annuler" (déclenchée par l'action standard ak cancel, la touche **Echap** ou la commande [CANCEL](cancel.md)). L'action "accepter" mettra la variable système OK à 1, alors que l'action "annuler" la mettra à 0.
 
@@ -61,7 +61,7 @@ Ce formulaire réagit alors “normalement” aux actions de l’utilisateur et 
 
 **Notes :** 
 
-* Vous pouvez combiner l'utilisation de la syntaxe **DIALOG**(form;\*) avec la commande [CALL FORM](call-form.md) afin d'établir une communication entre les formulaires.
+* Vous pouvez combiner l'utilisation de la syntaxe **DIALOG**(form;\*) avec la commande [CALL FORM](../commands/call-form.md) afin d'établir une communication entre les formulaires.
 * Vous devez créer une fenêtre avant d'appeler l'instruction **DIALOG**(form;\*), il n'est pas possible d'utiliser la fenêtre du dialogue en cours dans le process ni la fenêtre créée par défaut pour chaque process. Dans le cas contraire, l'erreur -9909 est générée.
 * Lorsque le paramètre *\** est utilisé, la fenêtre est refermée automatiquement à la suite d'une action standard ou de l'appel de la commande [CANCEL](cancel.md) ou [ACCEPT](accept.md). Vous ne devez pas gérer vous-même la fermeture de la fenêtre.
 
@@ -86,7 +86,7 @@ Dans un formulaire affichant l'enregistrement d'une personne, un bouton ouvre un
 
 **Note :** Le champ objet "enfants" est représenté uniquement dans cet exemple afin de faire apparaître sa structure.
 
-Dans le formulaire de vérification, vous avez assigné des propriétés d'objet [Form](form.md) aux variables :
+Dans le formulaire de vérification, vous avez assigné des propriétés d'objet [Form](../commands/form.md) aux variables :
 
 ![](../assets/en/commands/pict3541682.en.png)
 
@@ -166,7 +166,7 @@ Si l'utilisateur valide le dialogue, la variable système OK prend la valeur 1, 
 
 [ACCEPT](accept.md)  
 [ADD RECORD](add-record.md)  
-[CALL FORM](call-form.md)  
+[CALL FORM](../commands/call-form.md)  
 [CANCEL](cancel.md)  
-[Form](form.md)  
+[Form](../commands/form.md)  
 [Open window](open-window.md)  
