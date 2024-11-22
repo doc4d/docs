@@ -207,7 +207,7 @@ title: Index
 [`Delete string`](../commands-legacy/delete-string.md)<br/>
 [`DELETE USER`](../commands-legacy/delete-user.md)<br/>
 [`DESCRIBE QUERY EXECUTION`](../commands-legacy/describe-query-execution.md)<br/>
-[`DIALOG`](../commands-legacy/dialog.md)<br/>
+[`DIALOG`](dialog.md)<br/>
 [`DIFFERENCE`](../commands-legacy/difference.md)<br/>
 [`DISABLE MENU ITEM`](../commands-legacy/disable-menu-item.md)<br/>
 [`Discover data key`](../commands-legacy/discover-data-key.md)<br/>

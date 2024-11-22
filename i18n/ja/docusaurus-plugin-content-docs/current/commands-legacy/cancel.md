@@ -20,7 +20,7 @@ displayed_sidebar: docs
 <!--REF #_command_.CANCEL.Summary-->**CANCEL** コマンドは以下の目的で、フォームあるいはオブジェクトメソッド (またはそこから呼ばれるサブルーチンで) 使用されます:
 
 * [ADD RECORD](add-record.md) 、[MODIFY RECORD](modify-record.md) を使用して開始されたレコードのデータ新規あるいは更新入力をキャンセルする。<!-- END REF-->
-* [DIALOG](dialog.md) コマンドで表示されたフォームをキャンセルする。
+* [DIALOG](../commands/dialog.md) コマンドで表示されたフォームをキャンセルする。
 * [DISPLAY SELECTION](display-selection.md) や [MODIFY SELECTION](modify-selection.md) でレコードセレクションを表示したフォームを閉じる。
 * [Print form](../commands/print-form.md) コマンドで印刷されようとしているフォームの印刷をキャンセルする (後述)。
 

@@ -20,7 +20,7 @@ displayed_sidebar: docs
 <!--REF #_command_.CANCEL.Summary-->El comando **CANCEL** se utiliza en métodos de objeto o de formulario (o en una subrutina) para:
 
 * cancelar un registro nuevo o modificado, para el cual la entrada de datos ha sido inicializada utilizando [ADD RECORD](add-record.md) o [MODIFY RECORD](modify-record.md).<!-- END REF-->
-* cancelar un formulario mostrado por intermedio del comando [DIALOG](dialog.md).
+* cancelar un formulario mostrado por intermedio del comando [DIALOG](../commands/dialog.md).
 * salir de un formulario que muestra una selección de registros, utilizando [DISPLAY SELECTION](display-selection.md) o [MODIFY SELECTION](modify-selection.md).
 * cancelar la impresión de un formulario que está a punto de ser impreso utilizando el comando [Print form](../commands/print-form.md) (ver a continuación).
 

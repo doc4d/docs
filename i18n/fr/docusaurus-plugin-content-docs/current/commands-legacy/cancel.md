@@ -20,7 +20,7 @@ displayed_sidebar: docs
 <!--REF #_command_.CANCEL.Summary-->La commande **CANCEL** doit être employée dans une méthode objet ou formulaire (ou une sous-routine) pour : 
 
 * annuler la création ou la modification d'un enregistrement ou un sous-enregistrement — dont les données ont été saisies à la suite d'un [ADD RECORD](add-record.md), [MODIFY RECORD](modify-record.md), *\_o\_ADD SUBRECORD* ou *\_o\_MODIFY SUBRECORD*.<!-- END REF-->
-* annuler un formulaire affiché par l'intermédiaire de la commande [DIALOG](dialog.md).
+* annuler un formulaire affiché par l'intermédiaire de la commande [DIALOG](../commands/dialog.md).
 * quitter un formulaire affichant une sélection d'enregistrements — à l'aide de [DISPLAY SELECTION](display-selection.md) ou [MODIFY SELECTION](modify-selection.md).
 * annuler l'impression d'une ligne sur le point d’être imprimée à l'aide de la commande [Print form](../commands/print-form.md) (voir ci-dessous).
 
