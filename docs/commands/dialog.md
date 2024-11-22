@@ -36,10 +36,11 @@ In the *form* parameter, you can pass:
 * the path (in POSIX syntax) to a valid .json file containing a description of the form to use;
 * an object containing a description of the form to use.
 
-Optionally, you can pass parameter(s) to the *form* using a "form data" object. Any properties of the form data object will then be available from within the form context through the [Form](form.md) command. For example, if you use a form data object containing {"version";"12"}, you will be able to get the value of the "version" property in the form by calling:
+Optionally, you can pass parameter(s) to the *form* using a "form data" object. Any properties of the form data object will then be available from within the form context through the [Form](form.md) command. For example, if you use a form data object containing {"version";"12"}, you will be able to get or set the value of the "version" property in the form by calling:
 
 ```4d
  $v:=Form.version //"12"
+ Form.version:=13
 ```
 
 To fill the "form data" object, you have two possibilities:
