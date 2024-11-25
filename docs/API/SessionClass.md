@@ -392,7 +392,7 @@ The `.info` object contains the following properties:
 |systemUserName|Text|Remote sessions: name of the system session opened on the remote machine.  |
 |IPAddress|Text|IP address of the remote machine|
 |hostType|Text|Host type: "windows" or "mac"|
-|creationDateTime|Date ISO 8601|Date and time of session creation. Standalone session: date and time of application|
+|creationDateTime|Date ISO 8601|Date and time of session creation. Standalone session: date and time of application startup|
 |state|Text|Session state: "active", "postponed", "sleeping"|
 |ID|Text|Session UUID (same value as [`.id`](#id))|
 |persistentID|Text|Remote sessions: Session's persistent ID|
