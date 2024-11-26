@@ -3027,6 +3027,7 @@ module.exports =
 				items: [
 						"WebServer/templates",
 						"WebServer/httpRequests",
+						"WebServer/http-request-handler",
 						"WebServer/allowProject",
 						"WebServer/errorPages",
 						"WebServer/authentication",
