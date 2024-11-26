@@ -1,0 +1,365 @@
+---
+id: http-request-handler
+title: HTTP Request handler
+---
+
+By default, HTTP requests received by the 4D web server are automatically handled through [built-in processing features](httpRequests.md) or the [REST server](../REST/REST_requests.md). 
+
+In addition, 4D supports the implementation of **custom HTTP Request handlers**, allowing you to intercept specific incoming HTTP requests and process them using your own custom code. This feature meets various needs such as:
+
+- using a given URL as a resource provider or a file-uploading box (to download or upload various files),
+– redirecting on specific pages according to a context (user authenticated, privileges granted...),
+– handle an authentication via oAuth 2.0.
+
+
+
+## HTTPHandlers.json File
+
+You define your custom HTTP Request handlers in a configuration file named **HTTPHandlers.json** stored in the [`Project/Sources`](../Project/architecture.md#sources) folder. 
+
+This file contains all listened URL patterns, the handled verbs, and the code to be called. Handlers are provided as a collection in JSON format. 
+
+At runtime, the first pattern matching the URL is executed, the others are ignored.
+
+Here is an example of a *HTTPHandlers.json* file contents:
+
+```json
+
+[
+    {
+        "class": "GeneralHandling",
+        "method": "gettingStarted",
+        "pattern": "start",
+        "verbs": "get, post"
+    }
+]
+```
+
+This handler declaration can be read as: when any request starting by `/start/` with a `GET` or `POST` verb is received by the server, the `gettingStarted` function of the `GeneralHandling` singleton is executed.
+
+
+:::note
+
+You must restart the server so that modifications made in this file are taken into account.
+
+:::
+
+
+## Handler definition
+
+A handler is defined by:
+
+- a listened URL pattern
+- a function and its class where the code is implemented to handle the listened URL pattern
+- the verbs with which the URL can be called to trigger the handler
+
+The handler identifier is the couple [pattern + a verb among the verbs list].
+
+
+### URL patterns
+
+URL patterns can be given as **prefixes** or using **regular expressions**. 
+
+- To declare a prefix pattern, use the "pattern" property name in the HTTPHandlers.json file. Prefixes are considered as regular expressions already containing starting and ending `/`.  
+Ex: `"pattern" : "docs"` or `"pattern" : "docs/invoices"`
+
+- To declare a regular expression pattern, use the "regexPattern" property name in the HTTPHandlers.json file. Regular expressions patterns are handled directly. 
+Ex: `"regexPattern" : "/docs/**/index.html"`
+
+"Pattern" and "regexPattern" properties cannot be used in the same handler definition (in this case, only the "regexPattern" property is taken into account). 
+
+#### Pattern matching
+
+URL patterns are triggered in the given order:
+
+- the first matching pattern is executed
+- the following patterns are not executed even if they match the URL
+
+As a consequence, you need to apply a accurate strategy when writing your handlers: the most detailed patterns must be written before the more general patterns. 
+
+```json
+[
+    {
+        "class": "InvoiceslHandling",
+        "method": "handleTheInvoice",
+        "regexPattern": "/docs/invoices/details/theInvoice",
+        "verbs": "GET"
+    },
+    {
+        "class": "InvoiceslHandling",
+        "method": "handleUnauthorizedVerbs",
+        "regexPattern": "/docs/invoices/details/theInvoice" 
+        //This handler is triggered for all 
+        //the verbs except the GET (handled above)
+    },
+    {
+        "class": "DocsHandling",
+        "method": "handleDocs",
+        "regexPattern": "/docs" 
+        // This handler is triggered for all the verbs
+    }
+]
+
+```
+
+
+#### Forbidden patterns
+
+URL patterns matching 4D built-in HTTP processing features are not allowed in custom HTTP handlers. For example, the following patterns cannot be handled:
+
+`/4DACTION`
+`/rest`
+`/$lib/renderer`
+`/$shared`
+
+### Class and method
+
+You declare the code to be executed when a defined URL pattern is intercepted using the "class" and "method" properties.
+
+- "class": class name without `cs.`, e.g. "UsersHandling" for the `cs.UsersHandling` user class. It must be a [**shared**](../Concepts/classes.md#shared-singleton) and [**singleton**](../Concepts/classes.md#singleton-classes) class. 
+- "method": class function belonging to the class. 
+
+
+### Verbs
+
+You can use the "verbs" property in the handler definition to declare HTTP verbs that are supported fin incoming requests for this handler. A request that uses a verb that is not explicitely allowed is automatically rejected by the server. 
+
+You can declare several verbs, separated by a comma. Verb names are not case sensitive. 
+
+Ex: `"verbs" : "PUT, POST"`
+
+:::notes
+
+No control is done on verb names. All names can be used.   
+
+:::
+
+By default, if the "verbs" property is not used for a handler, **all** HTTP verbs are supported in incoming requests for this handler.   
+
+:::note
+
+The HTTP verb can also be evaluated [within the request handler code](../API/IncomingMessageClass.md#verb) to be accepted or rejected.
+
+:::
+
+## Example
+
+Here is a detailed example of a HTTPHandlers.json file:
+
+```json
+
+[
+   {
+        "class": "GeneralHandling",
+        "method": "handle",
+        "pattern": "info", //URL prefix
+        "verbs": "GET"
+    }, 
+    {
+        "class": "UsersHandling",
+        "method": "manageAccount",
+        "pattern": "userAccount/update",   //URL prefix
+        "verbs": "PUT,POST"
+    }, 
+    {
+        "class": "FinancialHandling",
+        "method": "handleInvoices",
+        "regexPattern": "/docs/invoices/(past|today)", //URL prefix given as a regex
+        "verbs": "GET"
+    },
+    {
+        "class": "DocsHandling",
+        "method": "handleDocs",
+        "regexPattern": "/docs/myPage.html",  //URL prefix given as a regex
+        "verbs": "GET"
+    },
+    {
+        "class": "InvoicesHandling",
+        "method": "handleTheInvoice",
+        "pattern": "docs/invoices/details/theInvoice", // The most specific URL first
+        "verbs": "GET,POST"
+    },
+    {
+        "class": "InvoicesHandling",
+        "method": "handleDetails",
+        "pattern": "docs/invoices/details",    // The general URLs after
+        "verbs": "GET"
+    },
+    {
+        "class": "InvoicesHandling",
+        "method": "handleInvoices",   // The general URLs after
+        "pattern": "docs/invoices",
+        "verbs": "GET"
+    }
+]
+
+```
+
+In this example, you must implement the following functions:
+
+- *handle function* in the *GeneralHandling* class
+- *manageAccount* in the *UsersHandling* class
+- *handleInvoices* in the *FinancialHandling* class
+- *handleDocs* in the *DocsHandling* class
+- *handleTheInvoice* / *handleDetails* / *handleInvoices* in the *InvoicesHandling* class
+
+
+Examples of URLs triggering the handlers:
+
+`IP:port/info/` with a GET verb
+`IP:port/info/general` with a GET verb
+
+`IP:port/userAccount/update/` with a POST verb
+`IP:port/userAccount/update/profile` with a POST verb
+
+`IP:port/docs/invoices/past` with a GET verb
+`IP:port/docs/invoices/today/latest` with a GET verb
+
+`IP:port//docs/myPage.html` with a GET verb
+
+`IP:port//docs/invoices/` with a GET verb, calls *handleInvoices* function (*InvoicesHandling* class)
+`IP:port//docs/invoices/details/` with a GET verb, calls *handleDetails* function (*InvoicesHandling* class)
+`IP:port//docs/invoices/details/theInvoice/xxxxxx` with a GET verb, calls *handleTheInvoice* function (*InvoiceslHandling* class)
+
+
+## Request handler code
+
+The 4D language proposes dedicated APIs to support HTTP request handlers:
+
+- the [4D.IncomingMessage class](../API/IncomingMessageClass.md) to process intercepted HTTP requests
+- the [4D.OutGoingMessage class](../API/OutGoingMessageClass.md) to build and send custom server responses.  
+
+### Input: an instance of the 4D.IncomingMessage class
+
+When a request has been intercepted by the handler, it is received on the server as an object instance of the [4D.IncomingMessage class](../API/IncomingMessageClass.md). 
+
+All necessary information about the request are available in this object, including the request url, verb, headers, and, if any, parameters (put in the URL) and body. 
+ 
+Then, the request handler can use this information to trigger appropriate business logic.
+
+### Output: an instance of the 4D.OutgoingMessage class
+
+The request handler can return an object instance of the [4D.OutGoingMessage class](../API/OutGoingMessageClass.md), i.e. some full web content ready for a browser to handle, such as a file content.
+
+### Example
+
+The following **HTTPHandlers.json** file has been defined:
+
+```json
+[
+    {
+        "class": "GeneralHandling",
+        "method": "gettingStarted",
+        "pattern": "start",
+        "verbs": "get, post"
+    }
+]
+```
+ 
+
+The `http://127.0.0.1/start/example?param=demo&name=4D` request is run with a `GET` verb in a browser. It is handled by the *gettingStarted* function of the following *GeneralHandling* singleton class:
+
+```4d
+shared singleton Class constructor()
+		
+Function gettingStarted($request : 4D.IncomingMessage) : 4D.OutgoingMessage
+	
+	var $result:=4D.OutgoingMessage.new()
+	var $body : Text
+	
+	$body:="Called URL: "+$request.url+Char(Carriage return)
+	
+	$body:=$body+"The parameters are received as an object: "+Char(Carriage return)+JSON Stringify($request.urlQuery; *)+Char(Carriage return)
+	
+	$body:=$body+"The verb is: "+$request.verb+Char(Carriage return)
+	
+	$body:=$body+"There are "+String($request.urlPath.length)+" url parts - Url parts are: "+$request.urlPath.join(" - ")+Char(Carriage return)+Char(Carriage return)
+	
+	
+	$result.setBody($body)
+	$result.setHeader("Content-Type"; "text/plain")
+	
+	return $result
+
+```
+
+The request is received on the server as *$request*, an object instance of the [4D.IncomingMessage class](../API/IncomingMessageClass.md).
+
+Here is the response:
+
+```json
+Called URL: /start/example? param=demo&name=4D 
+The parameters are received as an object:
+{
+  "param": "demo",
+  "name": "4D"
+}
+The verb is: GET
+There are 2 url parts - Url parts are: start - example
+```
+
+### Handle a body in the request
+
+The [4D.IncomingMessage class](../API/IncomingMessageClass.md) provides functions to get the [headers](../API/IncomingMessageClass.md#headers) and the [body](../API/IncomingMessageClass.md#gettext) of the request.
+
+Here is a simple example to upload a file on the server.
+
+The **HTTPHandlers.json** file:
+
+```json
+[
+    {
+        "class": "UploadFile",
+        "method": "uploadFile",
+        "regexPattern": "/putFile",
+        "verbs": "POST"
+    }
+]
+```
+
+The `http://127.0.0.1:8044/putFile?fileName=testFile` request is run with a `POST` verb and a file content in its body.
+
+The *UploadFile* singleton class:
+
+```4d
+Function uploadFile($request : 4D.IncomingMessage) : 4D.OutgoingMessage
+	
+	var $response:=4D.OutgoingMessage.new()
+	
+	var $body:="Not supported file"
+	var $fileName; $fileType : Text
+	var $file : 4D.File
+	var $picture : Picture
+	var $created : Boolean
+	
+	$fileName:=$request.urlQuery.fileName 
+    //The file name is given as parameter in the URL
+	$fileType:=$request.getHeader("Content-Type") 
+    // The header "Content-Type" provides the format of the body
+	
+	Case of 
+		: ($fileType="application/pdf") // The body contains a pdf file
+			$file:=File("/PACKAGE/Files/"+$fileName+".pdf")
+			$created:=$file.create()
+			$file.setContent($request.getBlob()) 
+        // The getBlob() function returns the body of the request as a Blob
+			$body:="Upload OK - File size: "+String($file.size)
+			
+		: ($fileType="image/jpeg")  // The body contains a jpg image
+			$file:=File("/PACKAGE/Files/"+$fileName+".jpg")
+			$picture:=$request.getPicture() 
+        // The getPicture() function returns the body of the request as a Picture
+			WRITE PICTURE FILE($file.platformPath; $picture)
+			$body:="Upload OK - Image size: "+String($file.size)
+			
+	End case 
+	
+	$response.setBody($body)
+	$response.setHeader("Content-Type"; "TEXT/TEXT")
+	
+	return $response
+
+```
+
+The file name is given as parameter (*fileName*) in the URL. It is received in the [`urlQuery`](../API/IncomingMessageClass.md#urlquery) object in the request.
+

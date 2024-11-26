@@ -4,6 +4,10 @@ title: Release Notes
 ---
 
 
+## 4D 20 R8
+
+- Implement your own [**HTTP request handlers**](../WebServer/http-request-handler.md) using the new [`4D.IncomingMessage`](../API/IncomingMessageClass.md) class. 
+
 ## 4D 20 R7
 
 Read [**What’s new in 4D 20 R7**](https://blog.4d.com/en-whats-new-in-4d-v20-R7/), the blog post that lists all new features and enhancements in 4D 20 R7.

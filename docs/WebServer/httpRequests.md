@@ -3,7 +3,7 @@ id: httpRequests
 title: Processing HTTP requests
 ---
 
-The 4D web server provides several features to handle HTTP requests:
+The 4D web server provides several built-in features to handle HTTP requests:
 
 - the `On Web Connection` database method, a router for your web application,
 - the `/4DACTION` URL to call server-side code
@@ -11,6 +11,11 @@ The 4D web server provides several features to handle HTTP requests:
 - other commands such as `WEB GET HTTP BODY`, `WEB GET HTTP HEADER`, or `WEB GET BODY PART` allow to customize the request processing, including cookies.
 - the *COMPILER_WEB* project method, to declare your variables.
 
+:::info
+
+You can also implement your own HTTP request handlers for a customized control over incoming requests and outgoing responses. See [**HTTP Request Handler**](http-request-handler.md) section.
+
+:::
 
 ## On Web Connection
 

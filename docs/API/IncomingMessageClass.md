@@ -62,6 +62,12 @@ The `.getBlob()` function <!-- REF #IncomingMessageClass.getBlob().Summary -->re
 
 If the body has not been given as a binary content, the function tries to convert the value but it can give unexpected results. 
 
+:::note
+
+Parameters given directly in the request with GET verb are handled by the [`urlQuery`](#urlquery) property.
+
+:::
+
 <!-- END REF -->
 
 
@@ -112,13 +118,13 @@ $value := $request.getHeader("content-type")
 
 The `.getJSON()` function <!-- REF #IncomingMessageClass.getJSON().Summary -->returns the body of the request as a JSON resolution<!-- END REF -->. 
 
- If the body has not been given as JSON valid content, an error is raised.
+If the body has not been given as JSON valid content, an error is raised.
 
 <!-- END REF -->
 
 :::note
 
-Parameters given directly in the request with GET verb are handled the [`urlQuery`](#urlquery) property.
+Parameters given directly in the request with the GET verb are handled by the [`urlQuery`](#urlquery) property.
 
 :::
 
@@ -149,7 +155,7 @@ If the body is not received as a valid picture, the function returns null.
 
 :::note
 
-Parameters given directly in the request with GET verb are handled the [`urlQuery`](#urlquery) property.
+Parameters given directly in the request with the GET verb are handled by the [`urlQuery`](#urlquery) property.
 
 :::
 
@@ -288,7 +294,7 @@ $test:=Length($r.urlQuery.mdcode) //5
 
 :::note
 
-Parameters given in the body of the request with POST or PUT verbs are handled through dedicated functions: [`getText()`](#gettext), [`getPicture()`](#getpicture), [`getBlob()`](#getblob), [`getJSON()`](#getjson).
+Parameters given in the body of the request using POST or PUT verbs are handled through dedicated functions: [`getText()`](#gettext), [`getPicture()`](#getpicture), [`getBlob()`](#getblob), [`getJSON()`](#getjson).
 
 :::
 
