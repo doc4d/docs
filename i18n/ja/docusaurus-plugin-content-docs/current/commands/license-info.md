@@ -8,9 +8,9 @@ displayed_sidebar: docs
 
 <!--REF #_command_.License info.Params-->
 
-| 引数  | 型      |   | 説明                                   |
-| --- | ------ | - | ------------------------------------ |
-| 戻り値 | Object | ← | Information about the active licence |
+| 引数  | 型      |   | 説明                |
+| --- | ------ | - | ----------------- |
+| 戻り値 | Object | ← | アクティブなライセンスに関する情報 |
 
 <!-- END REF-->
 
@@ -18,7 +18,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.License info.Summary-->The **License info** command returns an object providing detailed information about the active license.<!-- END REF-->
 
-If the command is executed on a 4D application that does not use locally a license (e.g. 4D remote), the command returns a Null object.
+コマンドが、ローカルではライセンスを使用しない4D アプリケーション上で実行された場合(例: 4D リモートなど)、コマンドはNull オブジェクトを返します。
 
 戻り値のオブジェクトには、以下のプロパティが格納されています:
 
@@ -28,17 +28,17 @@ If the command is executed on a 4D application that does not use locally a licen
     "key": 0,
     "licenseNumber": "string",
     "version": "string",
-    "attributes": ["string1", "string2"], // optional
+    "attributes": ["string1", "string2"], // オプション
     "userName": "string",
     "userMail": "string",
     "companyName": "string",
     "platforms": ["string1", "string2"],
     "expirationDate": { 
-        // details here 
-    }, // optional
-    "renewalFailureCount": 0, // optional
+        // 詳細がここに返される
+    }, // オプション
+    "renewalFailureCount": 0, // オプション
     "products": [
-        { // for each registered expansion product
+        { // それぞれの登録されたエキスパンションプロダクトにつき返される
             "id": 0,
             "name": "string",
             "usedCount": 0,
@@ -47,8 +47,8 @@ If the command is executed on a 4D application that does not use locally a licen
                 {
                     "count": 0,
                     "expirationDate": { 
-                        // details here 
-                    } // optional
+                        // 詳細がここに返される
+                    } // オプション
                 }
             ]
         }
@@ -56,24 +56,24 @@ If the command is executed on a 4D application that does not use locally a licen
 }
 ```
 
-| **Property**        | **Type**              | **Description**                                                                                                                                                                                                                                                             | **Example**                                                                       |
-| ------------------- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| name                | string                | Commercial name                                                                                                                                                                                                                                                             | "4D Developer Professional vXX"                                                   |
-| key                 | number                | ID of the installed product. A unique number is associated to a 4D application (such as 4D Server, 4D in local mode, 4D Desktop, etc.) installed on a machine. This number is encrypted. | 12356789                                                                          |
-| licenseNumber       | string                | License number                                                                                                                                                                                                                                                              | "4DDP16XXXXX1123456789"                                                           |
-| version             | string                | Product version number                                                                                                                                                                                                                                                      | "16", "16R2"                                                                      |
-| attributes          | collection of strings | License type(s) when applicable (optional)                                                                                                                                                                                            | \["application","OEM"\]     |
-| userName            | string                | Name of 4D store account                                                                                                                                                                                                                                                    | "John Smith"                                                                      |
-| userMail            | string                | Mail of 4D store account                                                                                                                                                                                                                                                    | "john.smith@gmail.com"               |
-| companyName         | string                | Company name of 4D store account                                                                                                                                                                                                                                            | "Alpha Cie"                                                                       |
-| platforms           | collection of strings | License platform(s)                                                                                                                                                                                                                                      | \["macOS", "windows"\]      |
-| expirationDate      | object                | Date of expiration (optional)                                                                                                                                                                                                                            | {"day":2, "month":6, "year":2018} |
-| renewalFailureCount | number                | Number of unsuccessful automatic renewal attempts for at least one of the product licenses (optional)                                                                                                                                                    | 3                                                                                 |
-| products            | Object の Collection   | Description of product license (one element per product license). See below.                                                                                                                                             |                                                                                   |
+| **プロパティ**           | **型**                 | **説明**                                                                                                                                      | **例**                                                                             |
+| ------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| name                | string                | ライセンス名                                                                                                                                      | "4D Developer Professional vXX"                                                   |
+| key                 | number                | インストールされたプロダクトのID 4D アプリケーション(4D Server、ローカル4D、4D デスクトップなど) には固有の番号が マシン上にインストールされているアプリケーションに割り振られています。 この番号は暗号化されています。 | 12356789                                                                          |
+| licenseNumber       | string                | License number                                                                                                                              | "4DDP16XXXXX1123456789"                                                           |
+| version             | string                | Product version number                                                                                                                      | "16", "16R2"                                                                      |
+| attributes          | collection of strings | License type(s) when applicable (optional)                                                            | \["application","OEM"\]     |
+| userName            | string                | Name of 4D store account                                                                                                                    | "John Smith"                                                                      |
+| userMail            | string                | Mail of 4D store account                                                                                                                    | "john.smith@gmail.com"               |
+| companyName         | string                | Company name of 4D store account                                                                                                            | "Alpha Cie"                                                                       |
+| platforms           | collection of strings | License platform(s)                                                                                                      | \["macOS", "windows"\]      |
+| expirationDate      | object                | Date of expiration (optional)                                                                                            | {"day":2, "month":6, "year":2018} |
+| renewalFailureCount | number                | Number of unsuccessful automatic renewal attempts for at least one of the product licenses (optional)                    | 3                                                                                 |
+| products            | Object の Collection   | Description of product license (one element per product license). See below.             |                                                                                   |
 
 Each object of the `products` collection can have the following properties:
 
-| **Property** |                                                                                            | **Type**            | **Description**                                                             | **Example**                                                                                              |
+| **プロパティ**    |                                                                                            | **型**               | **Description**                                                             | **Example**                                                                                              |
 | ------------ | ------------------------------------------------------------------------------------------ | ------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | id           |                                                                                            | number              | License number                                                              | For available values, see the [Is license available](../commands-legacy/is-license-available.md) command |
 | name         |                                                                                            | string              | License name                                                                | "4D Write - 4D Write Pro"                                                                                |
