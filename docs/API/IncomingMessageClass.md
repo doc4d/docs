@@ -4,9 +4,9 @@ title: IncomingMessage
 ---
 
 
-The `4D.IncomingMessage` class allows you to handle the object received by a custom [HTTP request handler]. HTTP requests and their properties are automatically received as an instance of the `4D.IncomingMessage` class.
+The `4D.IncomingMessage` class allows you to handle the object received by a custom [**HTTP request handler**](../WebServer/http-request-handler.md). HTTP requests and their properties are automatically received as an instance of the `4D.IncomingMessage` class.
 
- object contains the HTTP request as well as its parameters, if any.
+The HTTP request handler usually returns an instance of the [`4D.OutgoingMessage`](OutGoingMessageClass.md) class.
 
 All properties of this class are read-only. They are automatically filled by the request handler. 
 
@@ -18,6 +18,63 @@ All properties of this class are read-only. They are automatically filled by the
 |20 R8|Class added|
 
 </details>
+
+### Example
+
+The following [**HTTPHandlers.json** file](../WebServer/http-request-handler.md) has been defined:
+
+```json
+[
+    {
+        "class": "GeneralHandling",
+        "method": "gettingStarted",
+        "pattern": "start",
+        "verbs": "get, post"
+    }
+]
+```
+ 
+
+The `http://127.0.0.1/start/example?param=demo&name=4D` request is run with a `GET` verb in a browser. It is handled by the *gettingStarted* function of the following *GeneralHandling* singleton class:
+
+```4d
+shared singleton Class constructor()
+        
+Function gettingStarted($request : 4D.IncomingMessage) : 4D.OutgoingMessage
+    
+    var $result:=4D.OutgoingMessage.new()
+    var $body : Text
+    
+    $body:="Called URL: "+$request.url+Char(Carriage return)
+    
+    $body:=$body+"The parameters are received as an object: "+Char(Carriage return)+JSON Stringify($request.urlQuery; *)+Char(Carriage return)
+    
+    $body:=$body+"The verb is: "+$request.verb+Char(Carriage return)
+    
+    $body:=$body+"There are "+String($request.urlPath.length)+" url parts - Url parts are: "+$request.urlPath.join(" - ")+Char(Carriage return)+Char(Carriage return)
+    
+    
+    $result.setBody($body)
+    $result.setHeader("Content-Type"; "text/plain")
+    
+    return $result
+
+```
+
+The request is received on the server as *$request*, an object instance of the [4D.IncomingMessage class](../API/IncomingMessageClass.md).
+
+Here is the response:
+
+```json
+Called URL: /start/example? param=demo&name=4D 
+The parameters are received as an object:
+{
+  "param": "demo",
+  "name": "4D"
+}
+The verb is: GET
+There are 2 url parts - Url parts are: start - example
+```
 
 
 ### IncomingMessage Object

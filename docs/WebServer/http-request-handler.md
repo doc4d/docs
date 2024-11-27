@@ -119,6 +119,7 @@ You declare the code to be executed when a defined URL pattern is intercepted us
 - "class": class name without `cs.`, e.g. "UsersHandling" for the `cs.UsersHandling` user class. It must be a [**shared**](../Concepts/classes.md#shared-singleton) and [**singleton**](../Concepts/classes.md#singleton-classes) class. 
 - "method": class function belonging to the class. 
 
+[See below](#request-handler-code) for information about the request handler code. 
 
 ### Verbs
 
@@ -224,14 +225,25 @@ Examples of URLs triggering the handlers:
 
 ## Request handler code
 
-The 4D language proposes dedicated APIs to support HTTP request handlers:
 
-- the [4D.IncomingMessage class](../API/IncomingMessageClass.md) to process intercepted HTTP requests
-- the [4D.OutGoingMessage class](../API/OutGoingMessageClass.md) to build and send custom server responses.  
+### Function configuration
+
+The HTTP Request handler code must be implemented in a function of a [**Shared**](../Concepts/classes.md#shared-singleton) [**singleton class**](../Concepts/classes.md#singleton-classes). 
+
+If the singleton is missing or not shared, an error "Cannot find singleton" is raised. If the class or the function [defined as handler](#handler-definition) in the HTTPHandlers.json file is not found, an error "Cannot find singleton function" is raised.
+
+Request handler functions are not necessarily shared, unless some request handler properties are updated by the functions. In this case, you need to declare its functions with the [`shared` keyword](../Concepts/classes.md#shared-functions).
+
+:::note
+
+It is **not recommended** to expose request handler functions to external REST calls using [`exposed`](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) or [`onHttpGet`](../ORDA/ordaClasses.md#onhttpget-keyword) keywords.
+
+:::
+
 
 ### Input: an instance of the 4D.IncomingMessage class
 
-When a request has been intercepted by the handler, it is received on the server as an object instance of the [4D.IncomingMessage class](../API/IncomingMessageClass.md). 
+When a request has been intercepted by the handler, it is received on the server as an instance of the [4D.IncomingMessage class](../API/IncomingMessageClass.md). 
 
 All necessary information about the request are available in this object, including the request url, verb, headers, and, if any, parameters (put in the URL) and body. 
  
@@ -241,62 +253,62 @@ Then, the request handler can use this information to trigger appropriate busine
 
 The request handler can return an object instance of the [4D.OutGoingMessage class](../API/OutGoingMessageClass.md), i.e. some full web content ready for a browser to handle, such as a file content.
 
-### Example
 
-The following **HTTPHandlers.json** file has been defined:
+### Example to upload a file
+
+In the **HTTPHandlers.json** file:
 
 ```json
 [
     {
-        "class": "GeneralHandling",
-        "method": "gettingStarted",
-        "pattern": "start",
-        "verbs": "get, post"
+        "class": "UploadFile",
+        "method": "uploadFile",
+        "regexPattern": "/putFile",
+        "verbs": "POST"
     }
 ]
 ```
- 
 
-The `http://127.0.0.1/start/example?param=demo&name=4D` request is run with a `GET` verb in a browser. It is handled by the *gettingStarted* function of the following *GeneralHandling* singleton class:
+The called URL is: http://127.0.0.1:8044/putFile?fileName=testFile
+
+The binary content of the file is put in the body of the request and a POST verb is used.
 
 ```4d
+    //UploadFile class
+
 shared singleton Class constructor()
-		
-Function gettingStarted($request : 4D.IncomingMessage) : 4D.OutgoingMessage
-	
-	var $result:=4D.OutgoingMessage.new()
-	var $body : Text
-	
-	$body:="Called URL: "+$request.url+Char(Carriage return)
-	
-	$body:=$body+"The parameters are received as an object: "+Char(Carriage return)+JSON Stringify($request.urlQuery; *)+Char(Carriage return)
-	
-	$body:=$body+"The verb is: "+$request.verb+Char(Carriage return)
-	
-	$body:=$body+"There are "+String($request.urlPath.length)+" url parts - Url parts are: "+$request.urlPath.join(" - ")+Char(Carriage return)+Char(Carriage return)
 	
 	
-	$result.setBody($body)
-	$result.setHeader("Content-Type"; "text/plain")
+Function uploadFile($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 	
-	return $result
-
+	var $response:=4D.OutgoingMessage.new()
+	
+	var $body : Blob
+	var $fileName; $fileType : Text
+	var $file : 4D.File
+	var $created : Boolean
+	
+	
+	$body:=$request.getBlob()
+	$fileName:=$request.urlQuery.fileName
+	$fileType:=$request.headers["content-type"]
+	
+	Case of 
+		: ($fileType="application/pdf")
+			$file:=File("/RESOURCES/Files/"+$fileName+".pdf")
+			
+		: ($fileType="application/json")
+			$file:=File("/RESOURCES/Files/"+$fileName+".json")
+	End case 
+	
+	$created:=$file.create()
+	$file.setContent($body)
+	
+	$response.setBody("Upload OK - File size: "+String($file.size))
+	
+	return $response
 ```
 
-The request is received on the server as *$request*, an object instance of the [4D.IncomingMessage class](../API/IncomingMessageClass.md).
-
-Here is the response:
-
-```json
-Called URL: /start/example? param=demo&name=4D 
-The parameters are received as an object:
-{
-  "param": "demo",
-  "name": "4D"
-}
-The verb is: GET
-There are 2 url parts - Url parts are: start - example
-```
 
 ### Handle a body in the request
 
@@ -363,3 +375,7 @@ Function uploadFile($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 
 The file name is given as parameter (*fileName*) in the URL. It is received in the [`urlQuery`](../API/IncomingMessageClass.md#urlquery) object in the request.
 
+
+## See also
+
+[Perfect mastery of your back end business logic thanks to HTTP requests handlers](https://blog.4d.com/perfect-mastery-of-your-back-end-business-logic-thanks-to-HTTP-requests-handlers) (blog post)
