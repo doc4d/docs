@@ -11,7 +11,11 @@ In addition, 4D supports the implementation of **custom HTTP Request handlers**,
 – redirecting on specific pages according to a context (user authenticated, privileges granted...),
 – handle an authentication via oAuth 2.0.
 
+:::note
 
+Custom HTTP Request handlers are only supported with the main Web Server. HTTP Request handlers that may have been defined in [Web Servers of components](../WebServer/webServerObject.md) are ignored. 
+
+:::
 
 ## HTTPHandlers.json File
 
