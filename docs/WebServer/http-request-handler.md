@@ -127,7 +127,7 @@ You declare the code to be executed when a defined URL pattern is intercepted us
 
 ### Verbs
 
-You can use the "verbs" property in the handler definition to declare HTTP verbs that are supported fin incoming requests for this handler. A request that uses a verb that is not explicitely allowed is automatically rejected by the server. 
+You can use the "verbs" property in the handler definition to declare HTTP verbs that are supported in incoming requests for this handler. A request that uses a verb that is not explicitely allowed is automatically rejected by the server. 
 
 You can declare several verbs, separated by a comma. Verb names are not case sensitive. 
 
@@ -139,7 +139,7 @@ No control is done on verb names. All names can be used.
 
 :::
 
-By default, if the "verbs" property is not used for a handler, **all** HTTP verbs are supported in incoming requests for this handler.   
+By default, if the "verbs" property is not used for a handler, **all** HTTP verbs are supported in incoming requests for this handler (except those possibly used beforehand in a more detailed pattern, as shown in the example above).   
 
 :::note
 
@@ -258,9 +258,14 @@ Then, the request handler can use this information to trigger appropriate busine
 The request handler can return an object instance of the [4D.OutGoingMessage class](../API/OutGoingMessageClass.md), i.e. some full web content ready for a browser to handle, such as a file content.
 
 
-### Example to upload a file
+### Example
 
-In the **HTTPHandlers.json** file:
+
+The [4D.IncomingMessage class](../API/IncomingMessageClass.md) provides functions to get the [headers](../API/IncomingMessageClass.md#headers) and the [body](../API/IncomingMessageClass.md#gettext) of the request.
+
+Here is a simple example to upload a file on the server.
+
+The **HTTPHandlers.json** file:
 
 ```json
 [
@@ -287,84 +292,25 @@ Function uploadFile($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 	
 	var $response:=4D.OutgoingMessage.new()
 	
-	var $body : Blob
-	var $fileName; $fileType : Text
-	var $file : 4D.File
-	var $created : Boolean
-	
-	
-	$body:=$request.getBlob()
-	$fileName:=$request.urlQuery.fileName
-	$fileType:=$request.headers["content-type"]
-	
-	Case of 
-		: ($fileType="application/pdf")
-			$file:=File("/RESOURCES/Files/"+$fileName+".pdf")
-			
-		: ($fileType="application/json")
-			$file:=File("/RESOURCES/Files/"+$fileName+".json")
-	End case 
-	
-	$created:=$file.create()
-	$file.setContent($body)
-	
-	$response.setBody("Upload OK - File size: "+String($file.size))
-	
-	return $response
-```
-
-
-### Handle a body in the request
-
-The [4D.IncomingMessage class](../API/IncomingMessageClass.md) provides functions to get the [headers](../API/IncomingMessageClass.md#headers) and the [body](../API/IncomingMessageClass.md#gettext) of the request.
-
-Here is a simple example to upload a file on the server.
-
-The **HTTPHandlers.json** file:
-
-```json
-[
-    {
-        "class": "UploadFile",
-        "method": "uploadFile",
-        "regexPattern": "/putFile",
-        "verbs": "POST"
-    }
-]
-```
-
-The `http://127.0.0.1:8044/putFile?fileName=testFile` request is run with a `POST` verb and a file content in its body.
-
-The *UploadFile* singleton class:
-
-```4d
-Function uploadFile($request : 4D.IncomingMessage) : 4D.OutgoingMessage
-	
-	var $response:=4D.OutgoingMessage.new()
-	
 	var $body:="Not supported file"
 	var $fileName; $fileType : Text
 	var $file : 4D.File
 	var $picture : Picture
 	var $created : Boolean
 	
-	$fileName:=$request.urlQuery.fileName 
-    //The file name is given as parameter in the URL
-	$fileType:=$request.getHeader("Content-Type") 
-    // The header "Content-Type" provides the format of the body
+	$fileName:=$request.urlQuery.fileName
+	$fileType:=$request.getHeader("Content-Type")
 	
 	Case of 
-		: ($fileType="application/pdf") // The body contains a pdf file
+		: ($fileType="application/pdf")
 			$file:=File("/PACKAGE/Files/"+$fileName+".pdf")
 			$created:=$file.create()
-			$file.setContent($request.getBlob()) 
-        // The getBlob() function returns the body of the request as a Blob
+			$file.setContent($request.getBlob())
 			$body:="Upload OK - File size: "+String($file.size)
 			
-		: ($fileType="image/jpeg")  // The body contains a jpg image
+		: ($fileType="image/jpeg")
 			$file:=File("/PACKAGE/Files/"+$fileName+".jpg")
-			$picture:=$request.getPicture() 
-        // The getPicture() function returns the body of the request as a Picture
+			$picture:=$request.getPicture()
 			WRITE PICTURE FILE($file.platformPath; $picture)
 			$body:="Upload OK - Image size: "+String($file.size)
 			

@@ -4,9 +4,9 @@ title: IncomingMessage
 ---
 
 
-The `4D.IncomingMessage` class allows you to handle the object received by a custom [**HTTP request handler**](../WebServer/http-request-handler.md). HTTP requests and their properties are automatically received as an instance of the `4D.IncomingMessage` class.
+The `4D.IncomingMessage` class allows you to handle the object received by a custom [**HTTP request handler**](../WebServer/http-request-handler.md). HTTP requests and their properties are automatically received as an instance of the `4D.IncomingMessage` class. Parameters given directly in the request with GET verb are handled by the [`.urlQuery`](#urlquery) property, while parameters passed in the body of the request are available through functions like [`.getBlob()`](#getblob) or [`getText()`](#gettext).
 
-The HTTP request handler usually returns an instance of the [`4D.OutgoingMessage`](OutGoingMessageClass.md) class.
+The HTTP request handler can return any value (or nothing). It usually returns an instance of the [`4D.OutgoingMessage`](OutGoingMessageClass.md) class. 
 
 All properties of this class are read-only. They are automatically filled by the request handler. 
 
@@ -119,11 +119,6 @@ The `.getBlob()` function <!-- REF #IncomingMessageClass.getBlob().Summary -->re
 
 If the body has not been given as a binary content, the function tries to convert the value but it can give unexpected results. 
 
-:::note
-
-Parameters given directly in the request with GET verb are handled by the [`urlQuery`](#urlquery) property.
-
-:::
 
 <!-- END REF -->
 
@@ -153,7 +148,8 @@ The *key* parameter is not case sensitive.
 #### Example
 
 ```4d
-var $request; $value : Text
+var $value : Text
+var $request : 4D.IncomingMessage
 $value := $request.getHeader("content-type")
 ```
 
@@ -179,11 +175,6 @@ If the body has not been given as JSON valid content, an error is raised.
 
 <!-- END REF -->
 
-:::note
-
-Parameters given directly in the request with the GET verb are handled by the [`urlQuery`](#urlquery) property.
-
-:::
 
 <!-- REF #IncomingMessageClass.getPicture().Desc -->
 ## .getPicture()
@@ -210,12 +201,6 @@ If the request is built using the [`HTTPRequest` class](HTTPRequestClass.md), th
 
 If the body is not received as a valid picture, the function returns null.
 
-:::note
-
-Parameters given directly in the request with the GET verb are handled by the [`urlQuery`](#urlquery) property.
-
-:::
-
 <!-- END REF -->
 
 
@@ -238,11 +223,6 @@ The `.getText()` function <!-- REF #IncomingMessageClass.getText().Summary -->re
 
 If the body has not been given as a string value, the function tries to convert the value but it can give unexpected results. 
 
-:::note
-
-Parameters given directly in the request with GET verb are handled the [`urlQuery`](#urlquery) property.
-
-:::
 
 <!-- END REF -->
 
@@ -313,12 +293,12 @@ The `.urlPath` property is read-only.
 
 #### Description
 
-The `.urlQuery` property contains <!-- REF #IncomingMessageClass.urlQuery.Summary -->the parameters of the request when they has been given in the URL as key/value pairs<!-- END REF -->. 
+The `.urlQuery` property contains <!-- REF #IncomingMessageClass.urlQuery.Summary -->the parameters of the request when they have been given in the URL as key/value pairs<!-- END REF -->. 
 
 The `.urlQuery` property is read-only. 
 
 
-Parameters can be passed in the URL of `GET` requests **directly** or **as JSON contents**.
+Parameters can be passed in the URL of requests **directly** or **as JSON contents**.
 
 #### Direct parameters
 
@@ -329,7 +309,7 @@ In this case, parameters are received as stringified values in the `urlQuery` pr
 
 #### JSON contents parameters
 
-Example: `http://127.0.0.1:8044/myCall/?myparams='[{"firstname": "Marie","isWoman": true,"id": 3}]`.
+Example: `http://127.0.0.1:8044/myCall/?myparams='[{"firstname": "Marie","isWoman": true,"id": 3}]'`.
 
 Parameters are passed in JSON format and enclosed within a collection.
 
@@ -366,9 +346,9 @@ Parameters given in the body of the request using POST or PUT verbs are handled 
 
 #### Description
 
-The `.verb` property contains <!-- REF #IncomingMessageClass.verb.Summary -->the HTTP verb used by the request<!-- END REF -->. 
+The `.verb` property contains <!-- REF #IncomingMessageClass.verb.Summary -->the verb used by the request<!-- END REF -->. 
 
-HTTP request verbs include for example "get", "post", "put", etc.   
+HTTP and HTTPS request verbs include for example "get", "post", "put", etc.   
 
 The `.verb` property is read-only. 
 
