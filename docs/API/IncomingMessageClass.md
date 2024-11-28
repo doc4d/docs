@@ -4,7 +4,7 @@ title: IncomingMessage
 ---
 
 
-The `4D.IncomingMessage` class allows you to handle the object received by a custom [**HTTP request handler**](../WebServer/http-request-handler.md). HTTP requests and their properties are automatically received as an instance of the `4D.IncomingMessage` class. Parameters given directly in the request with GET verb are handled by the [`.urlQuery`](#urlquery) property, while parameters passed in the body of the request are available through functions like [`.getBlob()`](#getblob) or [`getText()`](#gettext).
+The `4D.IncomingMessage` class allows you to handle the object received by a custom [**HTTP request handler**](../WebServer/http-request-handler.md). HTTP requests and their properties are automatically received as an instance of the `4D.IncomingMessage` class. Parameters given directly in the request with GET verb are handled by the [`.urlQuery`](#urlquery) property, while parameters passed in the body of the request are available through functions such as [`.getBlob()`](#getblob) or [`getText()`](#gettext).
 
 The HTTP request handler can return any value (or nothing). It usually returns an instance of the [`4D.OutgoingMessage`](OutGoingMessageClass.md) class. 
 
@@ -45,13 +45,14 @@ Function gettingStarted($request : 4D.IncomingMessage) : 4D.OutgoingMessage
     var $result:=4D.OutgoingMessage.new()
     var $body : Text
     
-    $body:="Called URL: "+$request.url+Char(Carriage return)
+    $body:="Called URL: "+$request.url+"\n"
     
-    $body:=$body+"The parameters are received as an object: "+Char(Carriage return)+JSON Stringify($request.urlQuery; *)+Char(Carriage return)
+    $body+="The parameters are received as an object: \n"+JSON Stringify($request.urlQuery; *)+"\n"
     
-    $body:=$body+"The verb is: "+$request.verb+Char(Carriage return)
+    $body+="The verb is: "+$request.verb+"\n"
     
-    $body:=$body+"There are "+String($request.urlPath.length)+" url parts - Url parts are: "+$request.urlPath.join(" - ")+Char(Carriage return)+Char(Carriage return)
+    $body+="There are "+String($request.urlPath.length)+" url parts - Url parts are: "\
+    +$request.urlPath.join(" - ")+"\n\n"
     
     
     $result.setBody($body)

@@ -3,19 +3,25 @@ id: http-request-handler
 title: HTTP Request handler
 ---
 
-By default, HTTP requests received by the 4D web server are automatically handled through [built-in processing features](httpRequests.md) or the [REST server](../REST/REST_requests.md). 
+By default, HTTP requests received by the 4D web server are handled through [built-in processing features](httpRequests.md) or the [REST server](../REST/REST_requests.md). 
 
-In addition, 4D supports the implementation of **custom HTTP Request handlers**, allowing you to intercept specific incoming HTTP requests and process them using your own custom code. This feature meets various needs such as:
+In addition, 4D supports the implementation of **custom HTTP Request handlers**, allowing you to intercept specific incoming HTTP requests and process them using your own code. When a custom HTTP request handler intercepts a request, it is processed directly and no other processing features (e.g. the [On Web authentication](./authentication.md#on-web-authentication) database method) is called. 
+
+Custom HTTP request handlers meet various needs, including:
 
 - using a given URL as a resource provider or a file-uploading box (to download or upload various files),
-– redirecting on specific pages according to a context (user authenticated, privileges granted...),
-– handle an authentication via oAuth 2.0.
+- redirecting on specific pages according to a context (user authenticated, privileges granted...),
+- handle an authentication via oAuth 2.0.
 
-:::note
 
-Custom HTTP Request handlers are only supported with the main Web Server. HTTP Request handlers that may have been defined in [Web Servers of components](../WebServer/webServerObject.md) are ignored. 
+## Requirements
 
-:::
+Custom HTTP Request handlers are supported:
+
+- when [scalable sessions](./sessions.md#enabling-web-sessions) are enabled,
+- with the main Web Server. HTTP Request handlers that may have been defined in [Web Servers of components](../WebServer/webServerObject.md) are ignored. 
+
+
 
 ## HTTPHandlers.json File
 
@@ -92,15 +98,14 @@ As a consequence, you need to apply a accurate strategy when writing your handle
     {
         "class": "InvoiceslHandling",
         "method": "handleUnauthorizedVerbs",
-        "regexPattern": "/docs/invoices/details/theInvoice" 
-        //This handler is triggered for all 
-        //the verbs except the GET (handled above)
+        "regexPattern": "/docs/invoices/details/theInvoice",
+        "comment": "This handler is triggered for all verbs except GET (handled above)"
     },
     {
         "class": "DocsHandling",
         "method": "handleDocs",
-        "regexPattern": "/docs" 
-        // This handler is triggered for all the verbs
+        "regexPattern": "/docs",
+        "comment": "This handler is triggered for all the verbs"
     }
 ]
 
@@ -111,10 +116,10 @@ As a consequence, you need to apply a accurate strategy when writing your handle
 
 URL patterns matching 4D built-in HTTP processing features are not allowed in custom HTTP handlers. For example, the following patterns cannot be handled:
 
-`/4DACTION`
-`/rest`
-`/$lib/renderer`
-`/$shared`
+- `/4DACTION`
+- `/rest`
+- `/$lib/renderer`
+- `/$shared`
 
 ### Class and method
 
@@ -133,7 +138,7 @@ You can declare several verbs, separated by a comma. Verb names are not case sen
 
 Ex: `"verbs" : "PUT, POST"`
 
-:::notes
+:::note
 
 No control is done on verb names. All names can be used.   
 
@@ -143,7 +148,7 @@ By default, if the "verbs" property is not used for a handler, **all** HTTP verb
 
 :::note
 
-The HTTP verb can also be evaluated [within the request handler code](../API/IncomingMessageClass.md#verb) to be accepted or rejected.
+The HTTP verb can also be evaluated [using the `.verb` property within the request handler code](../API/IncomingMessageClass.md#verb) to be accepted or rejected.
 
 :::
 
@@ -234,7 +239,7 @@ Examples of URLs triggering the handlers:
 
 The HTTP Request handler code must be implemented in a function of a [**Shared**](../Concepts/classes.md#shared-singleton) [**singleton class**](../Concepts/classes.md#singleton-classes). 
 
-If the singleton is missing or not shared, an error "Cannot find singleton" is raised. If the class or the function [defined as handler](#handler-definition) in the HTTPHandlers.json file is not found, an error "Cannot find singleton function" is raised.
+If the singleton is missing or not shared, an error "Cannot find singleton" is returned by the server. If the class or the function [defined as handler](#handler-definition) in the HTTPHandlers.json file is not found, an error "Cannot find singleton function" is returned by the server.
 
 Request handler functions are not necessarily shared, unless some request handler properties are updated by the functions. In this case, you need to declare its functions with the [`shared` keyword](../Concepts/classes.md#shared-functions).
 
@@ -280,7 +285,8 @@ The **HTTPHandlers.json** file:
 
 The called URL is: http://127.0.0.1:8044/putFile?fileName=testFile
 
-The binary content of the file is put in the body of the request and a POST verb is used.
+The binary content of the file is put in the body of the request and a POST verb is used. The file name is given as parameter (*fileName*) in the URL. It is received in the [`urlQuery`](../API/IncomingMessageClass.md#urlquery) object in the request.
+
 
 ```4d
     //UploadFile class
@@ -317,13 +323,11 @@ Function uploadFile($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 	End case 
 	
 	$response.setBody($body)
-	$response.setHeader("Content-Type"; "TEXT/TEXT")
+	$response.setHeader("Content-Type"; "text/plain")
 	
 	return $response
 
 ```
-
-The file name is given as parameter (*fileName*) in the URL. It is received in the [`urlQuery`](../API/IncomingMessageClass.md#urlquery) object in the request.
 
 
 ## See also
