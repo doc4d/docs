@@ -24,7 +24,7 @@ displayed_sidebar: docs
 
 #### Description 
 
-<!--REF #_command_.Form.Summary-->The **Form** command returns the object associated with the current form, if any.<!-- END REF--> 4D automatically associates an object to the current form in the following cases:
+<!--REF #_command_.Form.Summary-->The **Form** command returns the object associated with the current form (filled using the *formData* parameter or the user class assigned in the Form editor).<!-- END REF--> 4D automatically associates an object to the current form in the following cases:
 
 * the current form has been loaded by one of the [`DIALOG`](dialog.md), [`Print form`](print-form.md), or [`FORM LOAD`](form-load.md) commands,
 * the current form is a subform,
@@ -45,7 +45,7 @@ If the current form is a subform, the returned object depends on the parent cont
 * If the variable associated to the parent container has been typed as an object, **Form** returns the value of this variable.  
 In this case, the object returned by **Form** is the same as the one returned by the following expression:  
 ```4d  
- (OBJECT Get pointer(Object subform container))->  
+ (OBJECT Get pointer(Object subform container))->  
 ```
 * If the variable associated to the parent container has not been typed as an object, **Form** returns an empty object, maintained by 4D in the subform context.
 
@@ -74,29 +74,29 @@ In the verification form, you have assigned some Form object properties to input
 Here is the code for the "Check children" button:
 
 ```4d
- var $win;$n;$i : Integer
- var $save : Boolean
- ARRAY OBJECT($children;0)
- OB GET ARRAY([Person]Children;"children";$children) //get the children collection
- $save:=False //initialize the save variable
- 
- $n:=Size of array($children)
- If($n>0)
-    $win:=Open form window("Edit_Children";Movable form dialog box)
-    SET WINDOW TITLE("Check children for "+[Person]Name)
-    For($i;1;$n) //for each child
-       DIALOG("Edit_Children";$children{$i}) //displays dialog filled with values
-       If(OK=1) //the user clicked OK
-          $save:=True
-       End if
-    End for
-    If($save=True)
-       [Person]Children:=[Person]Children //forces object field update
-    End if
-    CLOSE WINDOW($win)
- Else
-    ALERT("No child to check.")
- End if
+ var $win;$n;$i : Integer
+ var $save : Boolean
+ ARRAY OBJECT($children;0)
+ OB GET ARRAY([Person]Children;"children";$children) //get the children collection
+ $save:=False //initialize the save variable
+ 
+ $n:=Size of array($children)
+ If($n>0)
+    $win:=Open form window("Edit_Children";Movable form dialog box)
+    SET WINDOW TITLE("Check children for "+[Person]Name)
+    For($i;1;$n) //for each child
+       DIALOG("Edit_Children";$children{$i}) //displays dialog filled with values
+       If(OK=1) //the user clicked OK
+          $save:=True
+       End if
+    End for
+    If($save=True)
+       [Person]Children:=[Person]Children //forces object field update
+    End if
+    CLOSE WINDOW($win)
+ Else
+    ALERT("No child to check.")
+ End if
 ```
 
 The form displays information for each child:
@@ -106,5 +106,6 @@ The form displays information for each child:
 If values are edited and the OK button is clicked, the field is updated (the parent record must be saved afterwards). 
 
 #### See also 
+
 
 [DIALOG](dialog.md)  
