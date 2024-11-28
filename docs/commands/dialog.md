@@ -39,19 +39,19 @@ In the *form* parameter, you can pass:
 Optionally, you can pass parameter(s) to the *form* using a "form data" object. Any properties of the form data object will then be available from within the form context through the [Form](form.md) command. For example, if you use a form data object containing {"version";"12"}, you will be able to get or set the value of the "version" property in the form by calling:
 
 ```4d
- $v:=Form.version //"12"
- Form.version:=13
+ $v:=Form.version //"12"
+ Form.version:=13
 ```
 
 To fill the "form data" object, you have two possibilities:
 
-- use the *formData* parameter. Using a local variable for *formData* allows you to safely pass parameters to your forms, whatever the calling context. In particular, if the same form is called from different places in the same process, you will always be able to access its specific values by simply calling [Form](form.md).myProperty. Moreover, since objects are passed by reference, if the user modifies a property value in the form, it will automatically be saved in the object itself. By combining the *formData* object and the [Form](form.md) command, you can send parameters to the form or read parameters from the form at any moment with clean and safe code.
+- use the *formData* parameter. Using a local variable for *formData* allows you to safely pass parameters to your forms, whatever the calling context. In particular, if the same form is called from different places in the same process, you will always be able to access its specific values by simply calling [Form](form.md).myProperty. Moreover, since objects are passed by reference, if the user modifies a property value in the form, it will automatically be saved in the object itself.
 
-- [associate a user class to the form](../FormEditor/properties_FormProperties.md#form-class), in which case 4D will automatically instantiate an object of this class when the form will be loaded. The object properties and functions will be automatically available through the object returned by [Form](form.md). You could write for example `Form.myFunction()`. The 
+- [associate a user class to the form](../FormEditor/properties_FormProperties.md#form-class), in which case 4D will automatically instantiate an object of this class when the form will be loaded. The object properties and functions will be automatically available through the object returned by [Form](form.md). You could write for example `Form.myFunction()`.  
 
 :::note
 
-- The *formData* parameter has priority of a form class (the class object is not instantiated if a *formData* parameter is passed).
+- The *formData* parameter has priority over a form class (the class object is not instantiated if a *formData* parameter is passed).
 - If you do not pass the *formData* parameter (or if you pass an undefined object) and no user class is associated to the form, **DIALOG** creates a new empty object bound to the *form*. 
 
 :::
@@ -74,12 +74,12 @@ This form then reacts “normally” to user actions and is closed using a stand
 The following example can be used to create a tool palette:
 
 ```4d
-  //Display tool palette
- $palette_window:=Open form window("tools";Palette form window)
- DIALOG("tools";*) //Give back the control immediately
-  //Display main document windowl
- $document_window:=Open form window("doc";Plain form window)
- DIALOG("doc")
+  //Display tool palette
+ $palette_window:=Open form window("tools";Palette form window)
+ DIALOG("tools";*) //Give back the control immediately
+  //Display main document windowl
+ $document_window:=Open form window("doc";Plain form window)
+ DIALOG("doc")
 ```
 
 #### Example 2 
@@ -97,29 +97,29 @@ In the verification form, you have assigned some [Form](form.md) object properti
 Here is the code for the "Check children" button:
 
 ```4d
- var $win;$n;$i : Integer
- var $save : Boolean
- ARRAY OBJECT($children;0)
- OB GET ARRAY([Person]Children;"children";$children) //get the children collection
- $save:=False //initialize the save variable
- 
- $n:=Size of array($children)
- If($n>0)
-    $win:=Open form window("Edit_Children";Movable form dialog box)
-    SET WINDOW TITLE("Check children for "+[Person]Name)
-    For($i;1;$n) //for each child
-       DIALOG("Edit_Children";$children{$i}) //displays dialog filled with values
-       If(OK=1) //the user clicked OK
-          $save:=True
-       End if
-    End for
-    If($save=True)
-       [Person]Children:=[Person]Children //forces object field update
-    End if
-    CLOSE WINDOW($win)
- Else
-    ALERT("No child to check.")
- End if
+ var $win;$n;$i : Integer
+ var $save : Boolean
+ ARRAY OBJECT($children;0)
+ OB GET ARRAY([Person]Children;"children";$children) //get the children collection
+ $save:=False //initialize the save variable
+ 
+ $n:=Size of array($children)
+ If($n>0)
+    $win:=Open form window("Edit_Children";Movable form dialog box)
+    SET WINDOW TITLE("Check children for "+[Person]Name)
+    For($i;1;$n) //for each child
+       DIALOG("Edit_Children";$children{$i}) //displays dialog filled with values
+       If(OK=1) //the user clicked OK
+          $save:=True
+       End if
+    End for
+    If($save=True)
+       [Person]Children:=[Person]Children //forces object field update
+    End if
+    CLOSE WINDOW($win)
+ Else
+    ALERT("No child to check.")
+ End if
 ```
 
 The form displays information for each child:
@@ -133,9 +133,9 @@ If values are edited and the OK button is clicked, the field is updated (the par
 The following example uses the path to a .json form to display the records in an employee list: 
 
 ```4d
- Open form window("/RESOURCES/OutputPersonnel.json";Plain form window)
- ALL RECORDS([Personnel])
- DIALOG("/RESOURCES/OutputPersonnel.json";*)
+ Open form window("/RESOURCES/OutputPersonnel.json";Plain form window)
+ ALL RECORDS([Personnel])
+ DIALOG("/RESOURCES/OutputPersonnel.json";*)
 ```
 
 which displays:
@@ -147,13 +147,13 @@ which displays:
 The following example uses a .json file as an object and modifies a few properties: 
 
 ```4d
- var $form : Object
- $form:=JSON Parse(Document to text(Get 4D folder(Current resources folder)+"OutputPersonnel.json"))
- $form.windowTitle:="The Avengers"
- $form.pages[1].objects.logo.picture:="/RESOURCES/Images/Avengers.png"
- $form.pages[1].objects.myListBox.borderStyle:="double"
- Open form window($form;Plain form window)
- DIALOG($form;*)
+ var $form : Object
+ $form:=JSON Parse(Document to text(Get 4D folder(Current resources folder)+"OutputPersonnel.json"))
+ $form.windowTitle:="The Avengers"
+ $form.pages[1].objects.logo.picture:="/RESOURCES/Images/Avengers.png"
+ $form.pages[1].objects.myListBox.borderStyle:="double"
+ Open form window($form;Plain form window)
+ DIALOG($form;*)
 ```
 
 The altered form is displayed with the title, logo and border modified:
