@@ -8,7 +8,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Form.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
-| Function result | Object | &#8592; | Form data associated to the current form |
+| Function result | Object | &#8592; | Form data of the current form |
 
 <!-- END REF-->
 
@@ -24,7 +24,7 @@ displayed_sidebar: docs
 
 #### Description 
 
-<!--REF #_command_.Form.Summary-->The **Form** command returns the object associated with the current form (filled using the *formData* parameter or the user class assigned in the Form editor).<!-- END REF--> 4D automatically associates an object to the current form in the following cases:
+<!--REF #_command_.Form.Summary-->The **Form** command returns the object associated with the current form (instantiated from the *formData* parameter or the user class assigned in the Form editor).<!-- END REF--> 4D automatically associates an object to the current form in the following cases:
 
 * the current form has been loaded by one of the [`DIALOG`](dialog.md), [`Print form`](print-form.md), or [`FORM LOAD`](form-load.md) commands,
 * the current form is a subform,
