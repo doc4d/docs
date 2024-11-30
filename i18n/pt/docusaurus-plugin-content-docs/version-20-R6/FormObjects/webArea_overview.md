@@ -60,16 +60,16 @@ $4d.4DMethodName(param1,paramN,function(result){})
 
 - `function(result)`: Função a ser passada como último argumento. Esta função "callback" é chamada de forma síncrona quando o método 4D termina de ser executado. Ele recebe o parâmetro `result`.
 
-- `result`: Resultado da execução do método 4D, retornado na expressão "$0". This result can be of any type supported by JavaScript (string, number, array, object). You can use the `C_OBJECT` command to return the objects.
+- `result`: Resultado da execução do método 4D, retornado na expressão "$0". Esse resultado pode ser de qualquer tipo suportado pelo JavaScript (cadeia de caracteres, número, matriz, objeto). Você pode usar o comando `C_OBJECT` para retornar os objetos.
 
-> Por padrão, 4D trabalha em UTF-8. When you return text containing extended characters, for example characters with accents, make sure the encoding of the page displayed in the Web area is declared as UTF-8, otherwise the characters may be rendered incorrectly. In this case, add the following line in the HTML page to declare the encoding:
+> Por padrão, 4D trabalha em UTF-8. Quando você retornar texto contendo caracteres estendidos, por exemplo, caracteres com acentos, certifique-se de que a codificação da página exibida na área da Web seja declarada como UTF-8, caso contrário, os caracteres poderão ser renderizados incorretamente. Nesse caso, adicione a seguinte linha na página HTML para declarar a codificação:
 > `<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />`
 
 #### Exemplo 1
 
-Given a 4D project method named `today` that does not receive parameters and returns the current date as a string.
+Dado um método de projeto 4D chamado `today` que não recebe parâmetros e retorna a data atual como uma string.
 
-4D code of `today` method:
+Código 4D do método `today`:
 
 ```4d
  C_TEXT($0)
@@ -82,7 +82,7 @@ Na área web, o método 4D pode ser chamado com a sintaxe abaixo:
 $4d.today()
 ```
 
-The 4D method does not receive any parameters but it does return the value of $0 to the callback function called by 4D after the execution of the method. Queremos mostrar a data na página HTML que é carrega pela área Web.
+O método 4D não recebe nenhum parâmetro, mas retorna o valor $0 para a função de callback chamada por 4D após a execução do método. Queremos mostrar a data na página HTML que é carrega pela área Web.
 
 Aqui está o código da página HTML:
 
@@ -105,7 +105,7 @@ $4d.today(function(dollarZero)
 
 #### Exemplo 2
 
-The 4D project method `calcSum` receives parameters (`$1...$n`) and returns their sum in `$0`:
+O método `calcSum` do projeto 4D recebe parâmetros (`$1...$n`) e retorna sua soma em `$0`:
 
 Código 4D do método `calcSum`:
 
