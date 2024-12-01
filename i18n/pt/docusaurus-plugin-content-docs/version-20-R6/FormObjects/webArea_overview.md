@@ -158,11 +158,11 @@ Além disso, áreas web são compatíveis com os eventos de formulário genéric
 Quando o formulário for executado, as funções da interface de navegador padrão estão disponíveis para o usuário na área web, o que permite a interação com outras áreas do formulário:
 
 - Comandos do menu **Editar**: Quando a área da Web está em foco, os comandos do menu **Edit** podem ser usados para executar ações como copiar, colar, selecionar tudo etc., de acordo com a seleção.
-- **Context menu**: It is possible to use the standard [context menu](properties_Entry.md#context-menu) of the system with the web area. Display of the context menu can be controlled using the `WA SET PREFERENCE` command.
-- **Drag and drop**: The user can drag and drop text, pictures and documents within the web area or between a web area and the 4D form objects, according to the 4D object properties.
-  Por razões de segurança, não é permitido mudar os conteúdos da área Web arrastando e soltando seja um arquivo ou URL. In this case, the cursor displays a "forbidden" icon ![](../assets/en/FormObjects/forbidden.png). You have to use the `WA SET PREFERENCE(*;"warea";WA enable URL drop;True)` statement to display a "drop" icon and generate the [`On Window Opening Denied`](Events/onWindowOpeningDenied.md) event. In this event, you can call the [`WA OPEN URL`](https://doc.4d.com/4dv19/help/command/en/page1020.html) command or set the [URL variable](properties_WebArea.md#url) in response to a user drop.
+- **Menu de contexto**: É possível usar o [contexto menu](properties_Entry.md#context-menu) padrão do sistema com a área web. Exibição do menu de contexto pode ser controlado usando o comando `WA SET PREFERENCE`.
+- **Arrastar e soltar**: O usuário pode arrastar e soltar texto, imagens e documentos dentro da área da Web ou entre uma área da Web e os objetos do formulário 4D, de acordo com as propriedades do objeto 4D.
+  Por razões de segurança, não é permitido mudar os conteúdos da área Web arrastando e soltando seja um arquivo ou URL. Neste caso, o cursor exibe um ícone "proibido" ![](../assets/en/FormObjects/forbidden.png). Você precisa usar a instrução `WA SET PREFERENCE(*; "warea";WA enable URL drop;True)` para exibir um ícone "drop" e gerar o evento [`On Window Opening Denied`] (Events/onWindowOpeningDenied.md). Nesse caso, você pode chamar o comando [`WA OPEN URL`] (https://doc.4d.com/4dv19/help/command/en/page1020.html) ou definir a [variável URL] (properties_WebArea.md#url) em resposta a um drop do usuário.
 
-> Drag and drop features described above are not supported in web areas using the [macOS system rendering engine](properties_WebArea.md#use-embedded-web-rendering-engine).
+> Os recursos de arrastar e soltar descritos acima não são compatíveis com as áreas da Web que usam o [mecanismo de renderização do sistema macOS] (properties_WebArea.md#use-embedded-web-rendering-engine).
 
 ### Subformulários
 
@@ -185,24 +185,24 @@ As URLs manejadas por programação em áreas web em macOS devem começar com o 
 
 Pode ver e usar um inspetor web dentro das áreas web de seus formulários. The web inspector is a debugger which is provided by the embedded Web engine. It allows parsing the code and the flow of information of the web pages.
 
-To display the Web inspector, you can either execute the `WA OPEN WEB INSPECTOR` command, or use the context menu of the web area.
+Para exibir o inspetor da Web, você pode executar o comando `WA OPEN WEB INSPECTOR` ou usar o menu de contexto da área da Web.
 
-- **Execute the `WA OPEN WEB INSPECTOR` command**<br/>
-  This command can be used directly with onscreen (form object) and offscreen web areas.
+- **Execute o comando `WA OPEN WEB INSPECTOR`**<br/>
+  Esse comando pode ser usado diretamente com áreas da Web na tela (objeto de formulário) e fora da tela.
 
-- **Use the web area context menu**<br/>
-  This feature can only be used with onscreen web areas and requires that the following conditions are met:
-  - the [context menu](properties_Entry.md#context-menu) for the web area is enabled
+- **Use o menu de contexto da área da Web**<br/>
+  Esse recurso só pode ser usado com áreas da Web na tela e requer que as seguintes condições sejam atendidas:
+  - o [menu de contexto](properties_Entry.md#context-menu) para a área web está ativado
   - Deve habilitar expressamente ao uso do inspetor na área mediante a instrução abaixo:
   ```4d
-  	WA SET PREFERENCE(*;"WA";WA enable Web inspector;True)  
+  	WA SET PREFERENCE(*; "WA";WA enable Web inspector;True)  
   ```
 
-> With [Windows system rendering engine](properties_WebArea.md#use-embedded-web-rendering-engine), a change in this preference requires a navigation action in the area (for example, a page refresh) to be taken into account.
+> Com [engenharia de renderização de sistema Windows](properties_WebArea. d#use-embedded-web-rendering-engine), uma mudança nesta preferência requer que uma ação de navegação na área (por exemplo, uma atualização de página) seja levada em conta.
 
-For more information, refer to the description of the `WA SET PREFERENCE` command.
+Para obter mais informações, consulte a descrição do comando `WA SET PREFERENCE`.
 
-When you have done the settings as described above, you then have new options such as **Inspect Element** in the context menu of the area. Quando selecionar essa opção, a janela do inspetor Web é exibida.
+Quando você fez as configurações conforme descrito acima, você tem novas opções como **Inspecionar Elemento** no menu de contexto da área. Quando selecionar essa opção, a janela do inspetor Web é exibida.
 
 > Para uma descrição detalhada nas funcionalidades do depurador, veja a documentação fornecida pelo motor de renderização web.
 
@@ -212,24 +212,24 @@ When you have done the settings as described above, you then have new options su
 
 ## 4DCEFParameters.json
 
-The 4DCEFParameters.json is a configuration file that allows customization of CEF parameters to manage the behavior of web areas within 4D applications.
+O 4DCEFParameters.json é um arquivo de configuração que permite a personalização dos parâmetros CEF para gerenciar o comportamento das áreas da Web nos aplicativos 4D.
 
-[Default switches](#default-file) are provided, but you can override them by using a custom 4DCEFParameters.json file.
+[As opções padrão](#default-file) são fornecidas, mas você pode substituí-las usando um arquivo 4DCEFParameters.json personalizado.
 
-In the development phase (using 4D application), create a 4DCEFParameters.json file at the following location:
+Na fase de desenvolvimento (usando o aplicativo 4D), crie um arquivo 4DCEFParameters.json no seguinte local:
 
 - Windows: `Users\[userName]\AppData\Roaming\4D\4DCEFParameters.json`
 - macOS: `$HOME/Library/Application Support/4D/4DCEFParameters.json`
 
-Before building a final application, add the custom 4DCEFParameters.json file to the Resources folder of the project.
+Antes de criar um aplicativo final, adicione o arquivo personalizado 4DCEFParameters.json à pasta Resources do projeto.
 
 :::warning
 
-Adding a custom 4DCEFParameters.json file can fundamentally impact all 4D embedded web areas, including [4D View Pro areas](../ViewPro/configuring.md#form-area-properties). It is the developer's responsibility to ensure that the custom switches do not destabilize the 4D application.
+A adição de um arquivo 4DCEFParameters.json personalizado pode afetar fundamentalmente todas as áreas da Web incorporadas 4D, incluindo [áreas 4D View Pro](../ViewPro/configuring.md#form-area-properties). É responsabilidade do desenvolvedor garantir que os switches personalizados não desestabilizem o aplicativo 4D.
 
 :::
 
-The 4DCEFParameters.json file format is as the following:
+O formato do arquivo 4DCEFParameters.json é o seguinte:
 
 ```json
 
@@ -250,17 +250,17 @@ The 4DCEFParameters.json file format is as the following:
 }
 ```
 
-The 4DCEFParameters.json file structure contains:
+A estrutura do arquivo 4DCEFParameters.json contém:
 
-- **switches**: a list of CEF switches and their corresponding values applied for both macOS and Windows.
-- **macOS.switches**: macOS-specific CEF switches.
-- **windows.switches**: Windows-specific CEF switches.
+- **switches**: uma lista de switches CEF e seus valores correspondentes aplicados ao macOS e ao Windows.
+- **macOS.switches**: switches CEF específicos do macOS.
+- **windows.switches**: Comutadores CEF específicos do Windows.
 
-The switches in the custom file take precedence. In case of duplication of switches within the same file, the switches defined in the platform-specific subsection ("macOS.switches" or "windows.switches") are given priority and used for configuration.
+Os interruptores no arquivo personalizado têm prioridade. Em caso de duplicação de switches no mesmo arquivo, os switches definidos na subseção específica da plataforma ("macOS.switches" ou "windows.switches") têm prioridade e são usados para configuração.
 
 :::note
 
-The list of supported switches is constantly evolving and is managed by the CEF development team. For information about available switches, you need to refer to the CEF developer community.
+A lista de switches compatíveis está em constante evolução e é gerenciada pela equipe de desenvolvimento da CEF. Para obter informações sobre os switches disponíveis, você precisa consultar a comunidade de desenvolvedores da CEF.
 
 :::
 
@@ -268,7 +268,7 @@ The list of supported switches is constantly evolving and is managed by the CEF 
 
 #### Arquivo padrão
 
-The default 4DCEFParameters.json file contains the following switches:
+O arquivo 4DCEFParameters.json padrão contém os seguintes botões:
 
 ```json
 {
