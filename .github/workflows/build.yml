@@ -1,4 +1,4 @@
-name: deploy
+name: build
 
 on:
   pull_request:
@@ -11,3 +11,5 @@ on:
 jobs:
   workflow-check:
     uses: ./.github/workflows/workflow-syntax-check.yml
+  workflow-build:
+    uses: ./.github/workflows/workflow-build.yml
