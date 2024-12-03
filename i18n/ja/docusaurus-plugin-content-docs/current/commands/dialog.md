@@ -63,61 +63,61 @@ displayed_sidebar: docs
 ただし、評価することは保存と同等ではないという点に注意して下さい。
 ダイアログにフィールドが含まれる場合、変更されたデータを保存するためには[SAVE RECORD](../commands-legacy/save-record.md) コマンドを明示的に呼び出さなければいけません。
 
-If you pass the optional *\** parameter, the form is loaded and displayed in the last open window of the current process and the command finishes its execution while leaving the active form on the screen.\
-This form then reacts “normally” to user actions and is closed using a standard action or when 4D code related to the form (object method or form method) calls the [CANCEL](../commands-legacy/cancel.md) or [ACCEPT](../commands-legacy/accept.md) command. If the current process terminates, the forms created in this way are automatically closed in the same way as if a [CANCEL](../commands-legacy/cancel.md) command had been called. This opening mode is particularly useful for displaying a floating palette with a document, without necessarily requiring another process.
+オプションの\*\*\* 引数を渡すと、フォームはカレントプロセスで最後に開かれたウィンドウにロードされ、フォームをスクリーン上でアクティブにしたままこのコマンドは実行を終了します。\
+このフォームはユーザーアクションに対し通常通り反応し、標準アクションまたはフォームに関連する4Dコード (オブジェクトメソッドやフォームメソッド) が [CANCEL](../commands-legacy/cancel.md) や [ACCEPT](../commands-legacy/accept.md) コマンドを呼び出すと閉じられます。 カレントプロセスが終了すると、この方法で作成されたフォームは、[CANCEL](../commands-legacy/cancel.md) コマンドが呼ばれたかのように自動で閉じられます。 この開き方では別にプロセスを開始する必要がないため、ドキュメントと一緒にフローティングパレットを表示するなどの場合に便利です。
 
 **注:**
 
-- You can combine the use of the **DIALOG**(form;\*) syntax with the [CALL FORM](call-form.md) command to establish communication between the forms.
-- You must create a window before calling the **DIALOG**(form;\*) statement. It is not possible to use the current dialog window in the process nor the window created by default for each process. Otherwise, error -9909 is generated.
-- When the *\** parameter is used, the window is closed automatically following a standard action or a call to the [CANCEL](../commands-legacy/cancel.md) or [ACCEPT](../commands-legacy/accept.md) command. You do not have to manage the closing of the window itself.
+- **DIALOG**(form;\*) シンタックスと[CALL FORM](call-form.md) コマンドを組み合わせることによってフォーム間で通信をすることができます。
+- **DIALOG**(form;\*) ステートメントの前に、あらかじめウィンドウが作成されている必要があります。 プロセスのカレントダイアログウィンドウや、各プロセスにデフォルトで作成されるウィンドウは使用できません。 でなければ、エラー -9909 が生成されます。
+- オプションの *\** 引数を使用する場合、標準アクションまたは[CANCEL](../commands-legacy/cancel.md) コマンドや[ACCEPT](../commands-legacy/accept.md) コマンドを呼び出すと、ウィンドウは自動的に閉じられます。 ウィンドウ自身の終了を管理する必要はありません。
 
 #### 例題 1
 
-The following example can be used to create a tool palette:
+以下の例題はツールパレットを作成するために使用できます:
 
 ```4d
-  //Display tool palette
+  //ツールパレットを表示
  $palette_window:=Open form window("tools";Palette form window)
- DIALOG("tools";*) //Give back the control immediately
-  //Display main document windowl
+ DIALOG("tools";*) //即座にコントロールを返す
+  //メインのドキュメントを表示
  $document_window:=Open form window("doc";Plain form window)
  DIALOG("doc")
 ```
 
 #### 例題 2
 
-In a form displaying the record of a person, a "Check children" button opens a dialog to verify/modify the names and ages of their children:
+人物のレコードを表示しているフォームにおいて、"Check children" ボタンを押すとその人物の子供の名前と年齢を検証あるいは変更するダイアログが開く場合を考えます:
 
 ![](../assets/en/commands/pict3542015.en.png)
 
-**Note:** The "Children" object field is represented only to show its structure for this example.
+**注:** "Children" オブジェクトフィールドはこの例題においての構造を示すために表示されているだけです。
 
-In the verification form, you have assigned some [Form](form.md) object properties to variables:
+検証フォームにおいて、[Form](form.md) オブジェクトプロパティを変数へと割り当てているものとします:
 
 ![](../assets/en/commands/pict3541682.en.png)
 
-Here is the code for the "Check children" button:
+"Check children" ボタンの中身のコードは以下のようになります:
 
 ```4d
  var $win;$n;$i : Integer
  var $save : Boolean
  ARRAY OBJECT($children;0)
- OB GET ARRAY([Person]Children;"children";$children) //get the children collection
- $save:=False //initialize the save variable
+ OB GET ARRAY([Person]Children;"children";$children) //children コレクションを取得
+ $save:=False //save 変数を初期化
  
  $n:=Size of array($children)
  If($n>0)
     $win:=Open form window("Edit_Children";Movable form dialog box)
     SET WINDOW TITLE("Check children for "+[Person]Name)
-    For($i;1;$n) //for each child
-       DIALOG("Edit_Children";$children{$i}) //displays dialog filled with values
-       If(OK=1) //the user clicked OK
+    For($i;1;$n) // それぞれの子供に対して
+       DIALOG("Edit_Children";$children{$i}) //値が入ったダイアログを表示
+       If(OK=1) // ユーザーがOK をクリックした
           $save:=True
        End if
     End for
     If($save=True)
-       [Person]Children:=[Person]Children //forces object field update
+       [Person]Children:=[Person]Children // 強制的にオブジェクトフィールドを更新
     End if
     CLOSE WINDOW($win)
  Else
@@ -125,15 +125,15 @@ Here is the code for the "Check children" button:
  End if
 ```
 
-The form displays information for each child:
+フォームはそれぞれの子供についての情報を表示します:
 
 ![](../assets/en/commands/pict3515152.en.png)
 
-If values are edited and the OK button is clicked, the field is updated (the parent record must be saved afterwards).
+値が変更されてOKボタンがクリックされた場合、フィールドは更新されます(その後、親のレコードも保存される必要があります)。
 
 #### 例題 3
 
-The following example uses the path to a .json form to display the records in an employee list:
+以下の例では、.json フォームへのパスを使用して従業員リスト内のレコードを表示する場合を考えます:
 
 ```4d
  Open form window("/RESOURCES/OutputPersonnel.json";Plain form window)
@@ -141,13 +141,13 @@ The following example uses the path to a .json form to display the records in an
  DIALOG("/RESOURCES/OutputPersonnel.json";*)
 ```
 
-which displays:
+表示は以下のようになります:
 
 ![](../assets/en/commands/pict3687439.en.png)
 
 #### 例題 4
 
-The following example uses a .json file as an object and modifies a few properties:
+以下の例では.json ファイルをオブジェクトとして使用していくつかのプロパティを変更する場合を考えます:
 
 ```4d
  var $form : Object
@@ -159,13 +159,13 @@ The following example uses a .json file as an object and modifies a few properti
  DIALOG($form;*)
 ```
 
-The altered form is displayed with the title, logo and border modified:
+変更されたフォームが、新しいタイトル、ロゴ、そして境界線とともに表示されます:
 
 ![](../assets/en/commands/pict3688356.en.png)
 
-#### System variables and sets
+#### システム変数およびセット
 
-After a call to **DIALOG**, if the dialog is accepted, OK is set to 1; if it is canceled, OK is set to 0.
+**DIALOG** の呼び出し後ダイアログが受け入れられればOK に1 が、キャンセルされれば0 が設定されます。
 
 #### 参照
 
