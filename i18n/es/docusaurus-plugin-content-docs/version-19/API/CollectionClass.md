@@ -2125,7 +2125,7 @@ Se pueden encontrar más ejemplos de búsquedas en la página `dataClass.query()
 
 #### Descripción
 
-La función `.reduce()` <!-- REF #collection.reduce().Summary -->The `.reduce()` function<!-- END REF -->.
+La función `.reduce()` <!-- REF #collection.reduce().Summary -->aplica el método de retrollamada *methodName* contra un acumulador y cada elemento de la colección (de izquierda a derecha) para reducirlo a un solo valor<!-- END REF -->.
 > Esta función no modifica la colección original.
 
 En *methodName*, pase el nombre del método a utilizar para evaluar los elementos de la colección, junto con su(s) parámetro(s) en param (opcional). *methodName* toma cada elemento de la colección y realiza todas las operaciones deseadas para acumular el resultado en *$1.accumulator*, que se devuelve en *$1.value*.
@@ -2435,7 +2435,7 @@ La colección devuelta contiene el elemento especificado por *startFrom* y todos
 | ---------- | ------- |:--:| --------------------------------------------------------------------------------------- |
 | startFrom  | Integer | -> | Índice para iniciar la prueba en                                                        |
 | methodName | Text    | -> | Nombre del método a llamar para la prueba                                               |
-| param      | Mixed   | -> | Parámetro(s) a pasar a *methodName*                                                     |
+| param      | Mixto   | -> | Parámetro(s) a pasar a *methodName*                                                     |
 | Result     | Boolean | <- | True si al menos un elemento ha superado la prueba con éxito|<!-- END REF -->
 
 |
