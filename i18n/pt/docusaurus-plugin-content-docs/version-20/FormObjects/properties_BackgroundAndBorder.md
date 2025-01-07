@@ -173,7 +173,7 @@ Por exemplo, dada uma caixa de listagem em que as linhas têm uma cor alternada 
 
 ```4d
  <>_BgndColors{$i}:=0x00FFD0B0 // laranja
- <>_BgndColors{$i}:=-255 // valor por defeito
+ <>_BgndColors{$i}:=-255 // valor por padrão
 ```
 
 ![](../assets/en/FormObjects/listbox_styles1.png)
