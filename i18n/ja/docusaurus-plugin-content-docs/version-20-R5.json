@@ -52,7 +52,7 @@
     "description": "The label for category Data Types in sidebar docs"
   },
   "sidebar.docs.category.Classes": {
-    "message": "Classes",
+    "message": "クラス",
     "description": "The label for category Classes in sidebar docs"
   },
   "sidebar.docs.category.Classes.link.generated-index.title": {
@@ -332,7 +332,7 @@
     "description": "The generated-index page description for category Access Rights in sidebar docs"
   },
   "sidebar.docs.category.Forms": {
-    "message": "フォーム",
+    "message": "Forms",
     "description": "The label for category Forms in sidebar docs"
   },
   "sidebar.docs.category.Form Editor": {
