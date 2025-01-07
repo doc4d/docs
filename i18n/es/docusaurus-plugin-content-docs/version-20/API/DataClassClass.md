@@ -1020,13 +1020,13 @@ No obtendrá el resultado esperado porque el valor null será evaluado por 4D co
 
 #### Not equal to null or undefined values
 
-The "not equal to *value*" comparator (`#` or `!=`) does not return attributes whose value is null or undefined. For example, the following query will only return persons whose "info.married" status is `false` and not persons whose "info.married" property is "null" or missing:
+El comparador "not equal to *value*" (`#` o `!`) no devuelve atributos cuyo valor es null o indefinido. Por ejemplo, la siguiente consulta solo devolverá personas cuyo estado "info.married" es `false` y no personas cuya propiedad "info.married" es "null" o falta:
 
 ```4d
 $notMarried:=ds.Person.query("info.married#true") //finds persons with attribute value is false
 ```
 
-If you want to find persons whose "info.married" status is `false`, null, or not defined, you need to write:
+Si desea encontrar personas cuyo estado "info.married" es `false`, null, o no definido, necesita escribir:
 
 ```4d
 $notMarried:=ds.Person.query("info.married#true | info.married=null") //finds false, null and undefined attributes
