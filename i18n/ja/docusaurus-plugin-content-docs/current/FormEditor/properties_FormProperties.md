@@ -9,7 +9,7 @@ title: フォームプロパティ
 
 > 配色プロパティは、macOS でのみ適用されます。
 
-このプロパティは、フォームのカラースキームを定義します。 By default when the property is not set, the value for a color scheme is **inherited** (the form uses the scheme defined at the [application level](../commands-legacy/set-application-color-scheme.md)). これは、フォームに対して以下の 2つのオプションのいずれかに変更することができます:
+このプロパティは、フォームのカラースキームを定義します。 このプロパティが設定されていない場合のデフォルトでは、カラースキームの値は **継承済み** です (フォームは [アプリケーションレベル](../commands-legacy/set-application-color-scheme.md) で定義されたカラースキームを使用します)。 これは、フォームに対して以下の 2つのオプションのいずれかに変更することができます:
 
 - dark - 暗い背景に明るいテキスト
 - light - 明るい背景に暗いテキスト
@@ -38,7 +38,7 @@ title: フォームプロパティ
 
 ---
 
-## Form Class
+## Form クラス
 
 Name of an existing [user class](../Concepts/classes.md#class-definition) to associate to the form . The user class can belong to the host project or to a [component](../Extensions/develop-components.md#sharing-of-classes), in which case the formal syntax is "[_componentNameSpace_](../settings/general.md#component-namespace-in-the-class-store).className".
 
@@ -163,9 +163,9 @@ See [this blog post](http://blog.4d.com/empower-your-development-process-with-yo
 
 #### JSON 文法
 
-| 名称     | データタイプ  | とりうる値       |
-| ------ | ------- | ----------- |
-| shared | boolean | true, false |
+| 名称     | データタイプ | とりうる値       |
+| ------ | ------ | ----------- |
+| shared | ブール    | true, false |
 
 ---
 
@@ -182,9 +182,9 @@ See [this blog post](http://blog.4d.com/empower-your-development-process-with-yo
 
 #### JSON 文法
 
-| 名称               | データタイプ  | とりうる値       |
-| ---------------- | ------- | ----------- |
-| memorizeGeometry | boolean | true, false |
+| 名称               | データタイプ | とりうる値       |
+| ---------------- | ------ | ----------- |
+| memorizeGeometry | ブール    | true, false |
 
 #### 参照
 
