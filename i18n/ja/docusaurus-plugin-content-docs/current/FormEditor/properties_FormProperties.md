@@ -38,17 +38,17 @@ title: フォームプロパティ
 
 ---
 
-## Form クラス
+## フォームクラス
 
-Name of an existing [user class](../Concepts/classes.md#class-definition) to associate to the form . The user class can belong to the host project or to a [component](../Extensions/develop-components.md#sharing-of-classes), in which case the formal syntax is "[_componentNameSpace_](../settings/general.md#component-namespace-in-the-class-store).className".
+フォームに割り当てる既存の[ユーザークラス](../Concepts/classes.md#class-definition) の名前。 ユーザークラスはホストプロジェクトのものでも[コンポーネント](../Extensions/develop-components.md#sharing-of-classes) のものでも使用可能です。後者の場合は正式なシンタックスは"[_componentNameSpace_](../settings/general.md#component-namespace-in-the-class-store).className" となります。
 
-Associating a class to the form provides the following benefits:
+フォームにクラスを割り当てることで、以下のような利点があります:
 
-- When you work in the [Form editor](../FormEditor/formEditor.md), the associated class is used for accurate syntax checking of expressions such as `Form.myProperty` in all areas of the [Property list](../FormEditor/formEditor.md#property-list) that support [expressions](../Concepts/quick-tour.md#expressions) (e.g. **Variable or Expression**, **Font color expression**...). Errors are displayed in red and warnings are displayed in yellow in the left column of the Property list and you can hover it to get explanations:
+- [フォームエディター](../FormEditor/formEditor.md) を使用する際、割り当てられたクラスは[式](../Concepts/quick-tour.md#expressions) をサポートする[プロパティリスト](../FormEditor/formEditor.md#property-list) の全てのエリア(例: **変数または式**、**フォントカラー式**...)において、`Form.myProperty` のような式に対する正確なシンタックスチェックを行うのに使用されます。 エラーは赤、警告は黄色で、プロパティリストの左カラムに表示され、ホバーすることで説明を受けることができます:
 
 ![](../assets/en/FormObjects/warning-proplist.png)
 
-- The detection of errors in the code of form object expressions by the [compiler](../Project/compiler.md) is improved.
+- [コンパイラー](../Project/compiler.md) による、フォームオブジェクトの式内でのコードのエラー検知は改善されました。
 
 - You can also to benefit from [autocompletion features](../code-editor/write-class-method.md#autocomplete-functions) in the code editor.
 
