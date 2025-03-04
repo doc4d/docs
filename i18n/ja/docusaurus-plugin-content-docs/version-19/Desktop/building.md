@@ -174,7 +174,7 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 
 #### Webファイルの場所
 
-ダブルクリックで起動可能なアプリケーションを Webサーバーとして使用する場合、Web フォルダーやファイルは特定の場所にインストールする必要があります :
+ダブルクリックで起動可能なアプリケーションを Webサーバーとして使用する場合、Web フォルダーやファイルは以下の特定の場所にインストールする必要があります :
 
 * *cert.pem* と *key.pem* ファイル (オプション): これらのファイルはTLS接続とデータ暗号化コマンドに使用されます。
 * デフォルト Web ルートフォルダー
@@ -327,7 +327,7 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 
 #### Webファイルの場所
 
-サーバーやクライアントを Webサーバーとして使用する場合、Webサーバーが使用するファイルを特定の場所に配置しなければなりません :
+サーバーやクライアントを Webサーバーとして使用する場合、Webサーバーが使用するファイルを以下の特定の場所に配置しなければなりません :
 
 * *cert.pem* と *key.pem* ファイル (オプション): これらのファイルは SSL接続とデータ暗号化コマンドに使用されます。
 * デフォルト Web ルートフォルダー (WebFolder)
@@ -437,7 +437,7 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 
 \[+] ボタンをクリックすると、ファイルを開くダイアログが表示され、マシンの *Licenses* フォルダーの内容が表示されます。 このフォルダーの場所については 詳しくは [Get 4D folder](https://doc.4d.com/4Dv18/4D/18/Get-4D-folder.301-4505365.ja.html) コマンドの説明を参照してください。
 
-開発ライセンスとそれに対応した配布ライセンスを選択します。 これらのファイルは *4D Developer Professional* ライセンスや *4D Desktop Volume* ライセンスをアクティベーションした際、この場所にコピーされます。
+開発ライセンスとそれに対応した配布ライセンスを格納したファイルを選択します。 これらのファイルは *4D Developer Professional* ライセンスや *4D Desktop Volume* ライセンスをアクティベーションした際、この場所にコピーされます。
 
 ファイルを選択すると、リストに選択内容が反映されます:
 
@@ -449,15 +449,15 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 ライセンスが有効でない場合、警告が表示されます。
 
 必要なだけ有効なファイルを選択することができます。 実行可能アプリケーションをビルドする際に、4D は最も適切なライセンスを使用します。
-> "R-リリース" バージョンのアプリケーションをビルドするには、専用の "R" ライセンスが必要です ("R" 製品用のライセンス番号は "R-" から始まる番号です)。
+> "R-リリース" バージョンのアプリケーションをビルドするには、専用の "R" ライセンスが必要です ("R" 製品用のライセンス番号は "R-4DDP" から始まる番号です)。
 
 アプリケーションビルド後、配布ライセンスファイルは実行可能ファイルと同階層 (Windows) やパッケージ内 (macOS) に自動でコピーされます。
 
-### macOS signing certificate
+### macOS 署名に使用する証明書
 
 アプリケーションビルダーは、macOS 環境下において組み込み4Dアプリに署名をする機能を備えています (macOS のシングルユーザーアプリ、サーバーおよびクライアントアプリ)。 アプリケーションを署名することにより、 macOS において「Mac App Store と確認済みの開発元からのアプリケーションを許可」のオプションが選択されているときに Gatekeeper の機能を使用してアプリケーションを実行することが可能になります (後述の "Gatekeeper について" を参照ください)。
 
-* Check the **Sign application** option to include certification in the application builder procedure for macOS. 4D will check the availability of elements required for certification when the build occurs:
+* Check the **Sign application** option to include certification in the application builder procedure for macOS. 4D は、署名に必要な要素の可用性をビルド時にチェックします:
 
 ![](../assets/en/Admin/buildapposxcertProj.png)
 
@@ -476,7 +476,7 @@ Apple からデベロッパー認証を取得するためには、キーチェ�
 
 #### Gatekeeper について
 
-Gatekeeper is a security feature of macOS that controls the execution of applications downloaded from the Internet. もしダウンロードしたアプリケーションが Apple Store からダウンロードしたものではない、または署名されていない場合には実行が拒否されます。
+Gatekeeper とは macOS のセキュリティ機能で、インターネットからダウンロードしてきたアプリケーションの実行を管理するものです。 もしダウンロードしたアプリケーションが Apple Store からダウンロードしたものではない、または署名されていない場合には実行が拒否されます。
 
 アプリケーションビルダーの **アプリケーションに署名** 機能によって、このセキュリティオプションと互換性のあるアプリケーションをデフォルトで生成することができます。
 
