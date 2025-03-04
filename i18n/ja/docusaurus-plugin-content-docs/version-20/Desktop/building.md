@@ -544,7 +544,7 @@ Your current *4D Developer Professional* license is automatically associated wit
 
 アプリケーションビルダーは、macOS 環境下において組み込み4Dアプリに署名をする機能を備えています (macOS のシングルユーザーアプリ、コンポーネント、サーバーおよびクライアントアプリ)。 アプリケーションを署名することにより、 macOS において「Mac App Store と確認済みの開発元からのアプリケーションを許可」のオプションが選択されているときに Gatekeeper の機能を使用してアプリケーションを実行することが可能になります (後述の "Gatekeeper について" を参照ください)。
 
-* Check the **Sign application** option to include certification in the application builder procedure for macOS. 4D は、署名に必要な要素の可用性をビルド時にチェックします:
+* macOS でのアプリケーションビルド手順に証明書を含めるには、**アプリケーションを署名** オプションをチェックしてください。 4D は、署名に必要な要素の可用性をビルド時にチェックします:
 
 ![](../assets/en/Admin/buildapposxcertProj.png)
 
