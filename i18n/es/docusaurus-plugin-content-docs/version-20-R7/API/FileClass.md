@@ -71,7 +71,7 @@ Los objetos `File` soportan varios nombres de ruta, incluyendo la sintaxis `file
 
 #### Descripción
 
-Lanzamiento Es idéntico al comando [`File`](../commands/file.md) (atajo).
+Lanzamiento Lanzamiento Es idéntico al comando [`File`](../commands/file.md) (atajo).
 
 > Se recomienda utilizar el comando de acceso directo [`File`](../commands/file.md) en lugar de `4D.File.new()`.
 
@@ -412,7 +412,7 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 
 #### Descripción
 
-La función `.open()` <!-- REF #FileClass.open().Summary -->crea y devuelve un nuevo objeto [4D.FileHandle](FileHandleClass) en el archivo, en el modo especificado o con las opciones especificadas<!-- END REF -->. Puede utilizar las funciones y propiedades de la clase [4D.FileHandle](FileHandleClass) para escribir, leer o añadir contenido al archivo.
+Rutas de acceso Puede utilizar las funciones y propiedades de la clase [4D.FileHandle](FileHandleClass) para escribir, leer o añadir contenido al archivo.
 
 Si utiliza el parámetro *mode* (texto), pase el modo de apertura para el file handle:
 
@@ -630,7 +630,7 @@ $infoPlistFile.setAppInfo($info)
 
 #### Descripción
 
-La función `.setContent( )` <!-- REF #FileClass.setContent().Summary -->reescribe todo el contenido del archivo utilizando los datos almacenados en el BLOB *content*<!-- END REF -->. Para obtener información sobre BLOBs, consulte la sección [BLOB](Concepts/dt_blob.md).
+Lanzamiento Para obtener información sobre BLOBs, consulte la sección [BLOB](Concepts/dt_blob.md).
 
 #### Ejemplo
 
