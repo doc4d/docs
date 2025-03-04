@@ -174,16 +174,6 @@ El botón **Restablecer parámetros de fábrica** define todas las casillas de v
 
 Puede controlar las advertencias en partes específicas de su código utilizando comentarios especiales para desactivarlas o activarlas.
 
-Para desactivar las advertencias, inserte los siguientes comentarios antes y después de la sección de código en la que desea desactivar las advertencias:
-
-```4d
-// Antes de la parte de código seleccionada utilice
-  //%W-<warning number>
-
-// Después de la parte de código seleccionada utilice
-  //%W+<warning number>
-```
-
 Para volver a habilitar las advertencias en una sección de código, utilice los siguientes comentarios:
 
 ```4d
@@ -192,6 +182,16 @@ Para volver a habilitar las advertencias en una sección de código, utilice los
 
 // Después de la parte de código seleccionada utilice
   //%W-<warning number>
+```
+
+Para desactivar las advertencias, inserte los siguientes comentarios antes y después de la sección de código en la que desea desactivar las advertencias:
+
+```4d
+// Antes de la parte de código seleccionada utilice
+  //%W-<warning number>
+
+// Después de la parte de código seleccionada utilice
+  //%W+<warning number>
 ```
 
 Sólo las advertencias con números pueden ser desactivadas o activadas. Los números de advertencia se indican al final de cada mensaje en la lista de errores de compilación o en la lista que se encuentra en la pestaña de advertencias.
