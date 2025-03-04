@@ -7,7 +7,7 @@ La clase `HTTPAgent` permite manejar [objetos`HTTPAgent`](#httpagent-object) que
 
 La clase `HTTPAgent` está disponible en el class store `4D`. Puede crear un nuevo [`objeto HTTPAgent`](#httpagent-object) utilizando la función [4D.HTTPAgent.new()](#4dhttpagentnew).
 
-Por defecto El agente por defecto es la forma más simple de agente HTTP, adecuado para casos de uso básicos. Los agentes personalizados se recomiendan para tener un mayor control, a nivel de agente en lugar de para cada petición HTTP, sobre aspectos específicos de la conexión como la configuración de keep-alive, los tiempos de espera o las configuraciones TLS/SSL.
+Cuando no hay ningún agente asociado a una petición HTTP, se utiliza un agente global con valores por defecto. El agente por defecto es la forma más simple de agente HTTP, adecuado para casos de uso básicos. Los agentes personalizados se recomiendan para tener un mayor control, a nivel de agente en lugar de para cada petición HTTP, sobre aspectos específicos de la conexión como la configuración de keep-alive, los tiempos de espera o las configuraciones TLS/SSL.
 
 <details><summary>Historia</summary>
 
@@ -79,7 +79,7 @@ Las opciones de HTTPAgent se fusionarán con [opciones HTTPRequest](HTTPRequestC
 
 :::note
 
-Lanzamiento En ese caso, cada servidor tendrá su propio grupo de conexiones utilizando las mismas opciones de agente.
+Puede solicitar múltiples servidores utilizando el mismo agente. En ese caso, cada servidor tendrá su propio grupo de conexiones utilizando las mismas opciones de agente.
 
 :::
 
