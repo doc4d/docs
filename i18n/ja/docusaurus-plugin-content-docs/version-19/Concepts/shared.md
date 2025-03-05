@@ -31,7 +31,7 @@ title: 共有オブジェクトと共有コレクション
 - オブジェクトプロパティの追加・削除
 - 値の追加・編集 (共有オブジェクトがサポートしている範囲内で)。これには、他の共有オブジェクトやコレクションの追加・編集も含まれます (この場合、共有グループを作成します。後述参照)
 
-共有オブジェクトあるいは共有コレクションを編集するコードは、必ず [`Use...End use`](#use-end-use) 構文で保護されている必要があり、そうでない場合にはエラーが返されます。
+All modification instructions in a shared object or collection require to be protected inside a [`Use...End use`](#useend-use) block, otherwise an error is generated.
 
 ```4d
  $s_obj:=New shared object("prop1";"alpha")
