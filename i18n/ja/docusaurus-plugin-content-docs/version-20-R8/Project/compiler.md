@@ -61,7 +61,7 @@ title: コンパイル
 
 :::info 互換性
 
-このボタンは、変換されたプロジェクトで、[コンパイルパスオプション](#直接型指定の有効化) に **自動変数定義は行わない (直接型指定)** が選択されていない場合にのみ表示されます。 For information about this button, please refer to the [documentation of previous 4D releases](../Project/compiler.md#generate-typing).
+このボタンは、変換されたプロジェクトで、[コンパイルパスオプション](#直接型指定の有効化) に **自動変数定義は行わない (直接型指定)** が選択されていない場合にのみ表示されます。 このボタンに関する情報については、[以前の 4Dリリースのドキュメント](../Project/compiler.md#型宣言を生成する) を参照ください。
 
 :::
 
@@ -131,7 +131,7 @@ Symbolファイルを生成するのに使用します ([Symbolファイル](#sy
 - **デフォルトの型指定**
 - **コンパイラーメソッド...**
 
-これらのオプションは、従来のコードとの互換性のためにのみ維持されています。 For more information, please refer to the [documentation of previous 4D releases](../Project/compiler.md#compiler-settings).
+これらのオプションは、従来のコードとの互換性のためにのみ維持されています。 詳細については、[以前の 4Dリリースのドキュメント](../Project/compiler.md#コンパイラー設定) を参照ください。
 
 変換されたプロジェクトでは、[直接型指定を有効化](#直接型指定の有効化) し、それに準拠した宣言コードを書くことが推奨されます:
 
