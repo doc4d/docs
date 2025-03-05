@@ -54,7 +54,7 @@ title: 変換タグ
 
 もし `[Mail]Letter_type` テキストフィールド自体にもタグ (たとえば`<!--#4DSCRIPT/m_Gender-->`) が含まれていた場合、このタグは 4DHTMLタグの解釈の後に、それに伴って評価されます。
 
-この強力な原則は、テキスト変換に関連するほとんどの需要を満たすことができます。 Note, however, that in some cases this can also allow malicious code to be inserted in the web context, [which can be avoided](../WebServer/templates.md#prevention-of-malicious-code-insertion).
+この強力な原則は、テキスト変換に関連するほとんどの需要を満たすことができます。 しかしながら、Webコンテキストにおいて、これは場合によって悪意のあるコードの侵入を許す可能性があるという点に注意が必要です。 これを防ぐ方法については [悪意あるコードの侵入を防止](WebServer/templates.md#悪意あるコードの侵入を防止) を参照ください。
 
 ### トークンを使用した識別子
 
@@ -70,7 +70,7 @@ title: 変換タグ
 
 `<!--#4DBASE -->` タグは `<!--#4DINCLUDE-->` タグで使用されるワーキングディレクトリを指定します。
 
-When it is called in a Web page, the `<!--#4DBASE -->` tag modifies all subsequent `<!--#4DINCLUDE-->` calls on this page, until the next `<!--#4DBASE -->`, if any. If the `<!--#4DBASE -->` folder is modified from within an included file, it retrieves its original value from the parent file.
+Webページ内で呼び出されると、`<!--#4DBASE -->` タグは同ページ内であとに続くすべての `<!--#4DINCLUDE-->` 呼び出しのディレクトリを変更します (次の `<!--#4DBASE -->` があるまで)。 If the `<!--#4DBASE -->` folder is modified from within an included file, it retrieves its original value from the parent file.
 
 *folderPath* 引数には現在のページに対する相対パスを指定し、パスは "`/`" で終わっていなければなりません。 また、指定フォルダーは Webフォルダー内になければなりません。
 
