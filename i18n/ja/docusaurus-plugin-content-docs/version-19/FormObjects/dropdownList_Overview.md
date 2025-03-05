@@ -135,7 +135,7 @@ Form.myDrop.index //3
 
 #### 選択された項目値 または 選択された項目参照
 
-When you have associated a drop-down list with a choice list and with a field or a variable, you can set the [**Data Type**](properties_DataSource.md#data-type-list) property to **Selected item value** or **Selected item reference**. このオプションにより、保存するデータのサイズを最適化できるようになります。
+選択リスト型のドロップダウンリストをフィールドや変数と関連付けた場合、[**データタイプ**](properties_DataSource.md#データタイプ-(リスト)) プロパティを **選択された項目値** または **選択された項目参照** に設定することができます。 このオプションにより、保存するデータのサイズを最適化できるようになります。
 
 ### 階層型選択リストの使用
 
