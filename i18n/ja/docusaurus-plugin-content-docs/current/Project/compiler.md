@@ -61,7 +61,7 @@ title: コンパイル
 
 :::info 互換性
 
-このボタンは、変換されたプロジェクトで、[コンパイルパスオプション](#直接型指定の有効化) に **自動変数定義は行わない (直接型指定)** が選択されていない場合にのみ表示されます。 For information about this button, please refer to the [documentation of previous 4D releases](../Project/compiler.md#generate-typing).
+このボタンは、変換されたプロジェクトで、[コンパイルパスオプション](#直接型指定の有効化) に **自動変数定義は行わない (直接型指定)** が選択されていない場合にのみ表示されます。 このボタンに関する情報については、[以前の 4Dリリースのドキュメント](../Project/compiler.md#型宣言を生成する) を参照ください。
 
 :::
 
@@ -83,7 +83,7 @@ title: コンパイル
 
 ## コンパイラー設定
 
-ストラクチャー設定ダイアログボックスの "コンパイラー" タブでは、プロジェクトのコンパイルに関連するパラメーターを設定できます。 [コンパイラーウィンドウ](#コンパイラーウィンドウ) の **コンパイラー設定** ボタンをクリックすると、コンパイラーページを直接開くことができます。 You can directly open this page from the [compiler window](#compiler-window-features) by clicking on the **Compiler Settings** button:
+ストラクチャー設定ダイアログボックスの "コンパイラー" タブでは、プロジェクトのコンパイルに関連するパラメーターを設定できます。 [コンパイラーウィンドウ](#コンパイラーウィンドウ) の **コンパイラー設定** ボタンをクリックすると、コンパイラーページを直接開くことができます。 [コンパイラーウィンドウ](#コンパイラーウィンドウ) の **コンパイラー設定** ボタンをクリックすると、コンパイラーページを直接開くことができます。
 
 ![](../assets/en/Project/compilerWin6.png)
 
@@ -93,11 +93,11 @@ title: コンパイル
 
 #### Symbolファイルを生成
 
-Symbolファイルを生成するのに使用します ([Symbolファイル](#symbolファイル) 参照)。 The symbol file is created in the in the [Logs folder](../Project/architecture.md#logs-folder) of the project with the name `ProjectName_symbols.txt`.
+Symbolファイルを生成するのに使用します ([Symbolファイル](#symbolファイル) 参照)。 Symbolファイルは、プロジェクトの [Logs フォルダー](../Project/architecture.md#logs-folder) 内に `ProjectName_symbols.txt` という名前で作成されます。
 
 #### エラーファイルを生成
 
-シンタックスチェック時にエラーファイルを生成するのに使用します ([エラーファイル](#エラーファイル) 参照)。 The error file is created in the [Logs folder](../Project/architecture.md#logs-folder) of the project with the name `ProjectName_errors.xml`.
+シンタックスチェック時にエラーファイルを生成するのに使用します ([エラーファイル](#エラーファイル) 参照)。 エラーファイルは、プロジェクトの [Logs フォルダー](../Project/architecture.md#logs-folder) 内に `ProjectName_error.xml` という名前で作成されます。
 
 #### コンパイル対象CPU
 
@@ -131,7 +131,7 @@ Symbolファイルを生成するのに使用します ([Symbolファイル](#sy
 - **デフォルトの型指定**
 - **コンパイラーメソッド...**
 
-これらのオプションは、従来のコードとの互換性のためにのみ維持されています。 For more information, please refer to the [documentation of previous 4D releases](../Project/compiler.md#compiler-settings).
+これらのオプションは、従来のコードとの互換性のためにのみ維持されています。 詳細については、[以前の 4Dリリースのドキュメント](../Project/compiler.md#コンパイラー設定) を参照ください。
 
 変換されたプロジェクトでは、[直接型指定を有効化](#直接型指定の有効化) し、それに準拠した宣言コードを書くことが推奨されます:
 
@@ -221,7 +221,7 @@ Symbolファイルを生成するのに使用します ([Symbolファイル](#sy
 
 ### Symbolファイル
 
-If you check the [**Generate the symbol file**](#symbol-file) option in the compiler settings, a symbol file called `ProjectName_symbols.txt` is created in the [Logs folder](../Project/architecture.md#logs-folder) of the project during compilation. このドキュメントはいくつかの部分に分かれています:
+コンパイラー設定の [**Symbolファイルを生成**](#symbolファイルを生成) オプションを選択してコンパイルすると、プロジェクトの [Logs フォルダー](../Project/architecture.md#logs-folder) 内に `ProjectName_symbols.txt` という名称の Symbolファイルが作成されます。 このドキュメントはいくつかの部分に分かれています: このドキュメントはいくつかの部分に分かれています:
 
 #### プロセスおよびインタープロセス変数のリスト
 
@@ -268,7 +268,7 @@ If you check the [**Generate the symbol file**](#symbol-file) option in the comp
 
 ### エラーファイル
 
-コンパイラー設定の [**エラーファイルを生成**](#エラーファイルを生成) オプションを使用して、コンパイル時にエラーファイルを生成するかどうかを選択することができます。 エラーファイルは、プロジェクトの [Logsフォルダー](Project/architecture.md#logs)内に `ProjectName_errors.txt` という名前で作成されます。 The error file is automatically named `projectName_errors.xml` and is placed in the [Logs folder](../Project/architecture.md#logs-folder) of the project.
+コンパイラー設定の [**エラーファイルを生成**](#エラーファイルを生成) オプションを使用して、コンパイル時にエラーファイルを生成するかどうかを選択することができます。 エラーファイルは、プロジェクトの [Logsフォルダー](Project/architecture.md#logs)内に `ProjectName_errors.txt` という名前で作成されます。 エラーファイルは、プロジェクトの [Logsフォルダー](../Project/architecture.md#logs-folder)内に `ProjectName_errors.txt` という名前で作成されます。
 
 [コンパイラーウインドウ](#コンパイラーウインドウ) からエラーに直接アクセスすることができますが、マシンからマシンへ送信できるエラーファイルがあると便利な場合があります。 エラーファイルは、その内容を自動的に解析しやすいように XMLフォーマットで生成されます。 これを利用して、エラー表示用に独自のインターフェースを作成することもできます。
 
@@ -334,13 +334,13 @@ If you check the [**Generate the symbol file**](#symbol-file) option in the comp
 
 マシンの OS に関わらず、クラシックコンパイラーは Intel/AMDプロセッサー向けのネイティブコンパイルコードを生成します。 特別な設定は必要ありません。
 
-Resulting compiled code is stored in the [DerivedData](architecture.md#deriveddata-folder) folder of the project.
+結果のコンパイルコードはプロジェクトの [DerivedData](architecture.md#deriveddata-folder) フォルダーに保存されます。
 
 ### Apple Silicon用コンパイラー
 
 Apple Silicon用コンパイラーは *Apple M1* などの Apple Silicon プロセッサー向けのネイティブコンパイルコードを生成します。
 
-Resulting compiled code is stored in the [Libraries](architecture.md#libraries-folder) folder of the project.
+結果のコンパイルコードはプロジェクトの [Libraries](architecture.md#libraries-folder) フォルダーに保存されます。
 
 #### 要件
 
