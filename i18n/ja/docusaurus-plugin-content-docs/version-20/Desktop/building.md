@@ -88,7 +88,7 @@ title: アプリケーションビルド
 
 .4dz ファイルは ZIP 圧縮されたプロジェクトフォルダーです (**注:** バイナリデータベースの場合に生成される .4DC ファイルと同義ではないことに注意が必要です)。 .4dz ファイルは4D Server、4D Volume Desktop(組み込みアプリ)、および4D において使用できます。 圧縮・最適化された .4dz ファイルによってプロジェクトパッケージの展開が容易になります。
 
-> .4dz ファイルを生成する際、4D はデフォルトで **標準的な** zip形式を使用します。 このフォーマットの利点は、あらゆる解凍ツールで簡単に読み取ることができることです。 If you do not want to use this standard format, add the `UseStandardZipFormat` XML key with value `False` in your [`buildApp.4DSettings`](#build-application-settings) file (for more information, see the [4D XML Keys BuildApplication](https://doc.4d.com/4Dv20/4D/20/4D-XML-Keys-BuildApplication.100-5447429.en.html) manual).
+> .4dz ファイルを生成する際、4D はデフォルトで **標準的な** zip形式を使用します。 このフォーマットの利点は、あらゆる解凍ツールで簡単に読み取ることができることです。 この標準形式を使用したくない場合は、値を `False` に設定した `UseStandardZipFormat` XMLキーを [`buildApp.4DSettings`](#アプリケーションビルド設定) ファイルに追加します (詳細については、[アプリケーションビルド設定ファイル](https://doc.4d.com/4Dv20/4D/20/4D-XML-Keys-BuildApplication.100-6335734.ja.html) マニュアルを参照ください)。
 
 #### 関連するフォルダーを含む
 
@@ -120,14 +120,14 @@ title: アプリケーションビルド
 
 **スタンドアロンアプリケーションをビルド** オプションを選択して **ビルド** ボタンをクリックすると、スタンドアロンの (つまり、ダブルクリックで起動可能な) アプリケーションがアプリケーションプロジェクトをもとに作成されます。 Windows においては、.exe 拡張子のついた実行ファイルが作成されます。 macOS においては、ソフトウェアパッケージが作成されます。
 
-The principle consists of merging a compiled structure file with **4D Volume Desktop** (the 4D database engine). 4D Volume Desktop が提供する機能はライセンスページで指定するライセンス情報に基づきます。 この点についての詳細な情報は、4D の [オンラインストア](https://store.4d.com/jp/) と、セールスドキュメンテーションを参照してください。
+この処理はコンパイル済みストラクチャーファイルと**4D Volume Desktop** (4D データベースエンジン)を統合します。 4D Volume Desktop が提供する機能はライセンスページで指定するライセンス情報に基づきます。 この点についての詳細な情報は、4D の [オンラインストア](https://store.4d.com/jp/) と、セールスドキュメンテーションを参照してください。
 
-- You can define a default data file or allow users to [create and use their own data file](#management-of-data-files).
-- You can either embed a deployment license or let the final user enter their license at the first application launch (see the [**About licenses**](#about-licenses) paragraph).
+- デフォルトのデータファイルを定義することも、ユーザーに [独自のデータファイルを作成して使用](#データファイルの管理) してもらうこともできます。
+- 運用ライセンスを埋め込むか、初回起動時にエンドユーザー自身にライセンスを入力させるかを選択することができます([**ライセンスについて**](#ライセンスについて) の段落を参照して下さい)。
 
 :::note
 
-It is possible to [automate the update of merged single-user applications](#automatic-updating-of-server-or-single-user-applications) by means of a sequence of language commands.
+いくつかのランゲージコマンドを特定の順番で使用することによって、[シングルユーザー向け組み込みアプリケーションのアップデートを自動化](#サーバーまたはシングルユーザーアプリケーションの自動更新) することが可能です。
 
 :::
 
@@ -201,8 +201,8 @@ It is possible to [automate the update of merged single-user applications](#auto
 
 | 運用ライセンス                | 説明                                            | 入力する場所                                                                                     |
 | ---------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| *4D OEM Desktop*       | 埋め込まれたカスタムのライセンス。詳細は 4D 営業部にお取り合わせ下さい。        | [Licenses page](#licenses) of the Build application dialog                                 |
-| *4D Unlimited Desktop* | **Discontinued** - Embedded custom license    | [Licenses page](#licenses) of the Build application dialog                                 |
+| *4D OEM Desktop*       | 埋め込まれたカスタムのライセンス。詳細は 4D 営業部にお取り合わせ下さい。        | アプリケーションビルドダイアログの[ライセンスページ](#ライセンス)                                                        |
+| *4D Unlimited Desktop* | **販売終了** - 埋め込まれたカスタムのライセンス                   | アプリケーションビルドダイアログの[ライセンスページ](#ライセンス)                                                        |
 | *4D Desktop*           | ユーザーごとのライセンスで、スタンドアロンの4D アプリケーションを使用するのに必要です。 | [First activation](../Admin/licenses.md#first-activation) dialog box on the user's machine |
 
 
@@ -232,7 +232,7 @@ It is possible to [automate the update of merged single-user applications](#auto
 * サーバーを起動するには、サーバーアプリケーションをダブルクリックします。 プロジェクトファイルを選択する必要はありません。
 * クライアントを起動するにも、同様にクライアントアプリケーションをダブルクリックします。すると、サーバーアプリケーションへの接続が直接おこなわれるため、 接続ダイアログでサーバーを選択する必要はありません。 クライアントは接続対象のサーバーを名称 (サーバーが同じサブネットワーク上にある場合)、あるいはIPアドレスによって認識します。IPアドレスの指定は buildapp.4DSettings ファイル内の `IPAddress` XMLキーを使用して設定されます。 接続が失敗した場合のために、代替機構を実装することができます。これについては [クライアント接続の管理](#クライアント接続の管理) の章で説明されています。 また、**Option** (macOS) や **Alt** (Windows) キーを押しながらクライアントアプリケーション起動すると、標準の接続ダイアログを強制的に表示させることもできます。 サーバーアプリケーションには、対応するクライアントアプリケーションのみが接続できます。 標準の 4Dアプリケーションを使用してサーバーアプリケーションに接続を試みると、接続は拒否されエラーが返されます。
 * クライアント側を [ネットワーク越しに自動更新](#サーバーアプリケーション内部のクライアントアプリケーションのコピー) するようにクライアント/サーバーアプリケーションを設定することも可能です。 クライアントアプリケーションは最初のバージョンのみビルドして配布する必要があります。以降のアップデートは、自動アップデート機構を利用することで管理します。
-* It is also possible to automate the update of the server part through the use of a sequence of language commands ([SET UPDATE FOLDER](https://doc.4d.com/4dv20/help/command/en/page1291.html) and [RESTART 4D](https://doc.4d.com/4dv20/help/command/en/page1292.html).
+* また、ランゲージコマンド ([SET UPDATE FOLDER](https://doc.4d.com/4dv20/help/command/ja/page1291.html)、および [RESTART 4D](https://doc.4d.com/4dv20/help/command/ja/page1292.html)) を使用して、サーバーアプリケーションの更新を自動化することも可能です。
 
 ### サーバーアプリケーションをビルド
 
@@ -503,26 +503,26 @@ Windows用サーバーアプリケーションのビルドに使用される App
 
 ライセンス&証明書のページでは、次のようなことができます:
 
-* designate the license number(s) that you want to integrate into your single-user [stand-alone application](#application-page),
+* シングルユーザーの[スタンドアロンアプリケーション](#アプリケーションページ)に統合するライセンス番号を指定します。
 * macOS 環境下では、証明書を使用してアプリケーションに署名をすることができます。
 
 ![](../assets/en/Admin/buildappCertif.png)
 
 ### ライセンスリスト
 
-This tab displays the list of available [deployment licenses that you can embed](#about-licenses) into your application. デフォルトでリストは空です。
+アプリケーションに[埋め込みに使用できる配布ライセンス](#ライセンスについて)の一覧を表示します。 デフォルトでリストは空です。
 
 :::info
 
-このリストを空のままにしていた場合、埋め込み配布ライセンスのないスタンドアロンアプリケーションをビルドすることになります。 In this case, the end-user will have to purchase and enter a per-user *4D Desktop* license. 配布ライセンスを統合した場合、エンドユーザーは自身のライセンス番号をアプリケーション起動時に入力したり使用する必要はありません。 For more information, see the [**About licenses**](#about-licenses) paragraph.
+このリストを空のままにしていた場合、埋め込み配布ライセンスのないスタンドアロンアプリケーションをビルドすることになります。 この場合、エンドユーザーは *4D Desktop* ライセンスを、ユーザーごとに購入して入力する必要があります。 配布ライセンスを統合した場合、エンドユーザーは自身のライセンス番号をアプリケーション起動時に入力したり使用する必要はありません。 詳細については、[**ライセンスについて**](#ライセンスについて) の段落を参照ください。
 
 :::
 
-Your current *4D Developer Professional* license is automatically associated with each deployment license to be used in the application built. 他の4D Developer Professional 番号やそれに関連づけられたライセンスを追加することができます。
+カレントの *4D Developer Professional* ライセンスは、アプリケーションビルドで使用する各配布ライセンスと自動的に関連づけられています。 他の4D Developer Professional 番号やそれに関連づけられたライセンスを追加することができます。
 
 ライセンスを追加または取り除くにはウィンドウ下部の **[+]** または **[-]** ボタンをクリックします。
 
-\[+] ボタンをクリックすると、ファイルを開くダイアログが表示され、マシンの *Licenses* フォルダーの内容が表示されます。 For more information about the location of this folder, refer to the [Get 4D folder](https://doc.4d.com/4Dv20/4D/20/Get-4D-folder.301-4311294.en.html) command.
+\[+] ボタンをクリックすると、ファイルを開くダイアログが表示され、マシンの *Licenses* フォルダーの内容が表示されます。 このフォルダーの場所については [Get 4D folder](https://doc.4d.com/4dv20/help/command/ja/page 485.html) コマンドの説明を参照してください。
 
 開発ライセンスとそれに対応した配布ライセンスを格納したファイルを選択します。 これらのファイルは *4D Developer Professional* ライセンスや *4D Desktop Volume* ライセンスをアクティベーションした際、この場所にコピーされます。
 
