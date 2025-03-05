@@ -468,7 +468,7 @@ ALERT("Time is over") // 1つの引数
 
 プロジェクトメソッドも同様に、同じ型の引数であれば、右側に不定数の引数を受け取ることができます。 任意パラメーターの問題は、それらが指定されない場合への対処が必要だということです。 欠落がエラーに繋がってはいけません。 使用されなかったパラメーターにデフォルト値を代入するやり方が効果的です。
 
-> When optional parameters are needed in your methods, you might also consider using [object properties as named parameters](#using-object-properties-as-named-parameters) which provide a flexible way to handle variable numbers of parameters.
+> 任意パラメーターが必要な場合、[オブジェクトプロパティを名前付き引数として使用する](#オブジェクトプロパティを名前付き引数として使用する) と型の制限がなく、柔軟で便利です。
 
 `Count parameters` コマンドを使用すると、メソッドに渡された引数の数を確認することができるため、数に応じて異なる処理をおこなえます。
 
@@ -545,7 +545,7 @@ ALERT([People]Name)
  ALERT($0)
 ```
 
-このようにサブルーチンの戻り値を使うことを "関数を使う" と言います。 This is described in the [Returning values](#returned-value) paragraph.
+このようにサブルーチンの戻り値を使うことを "関数を使う" と言います。 詳細については [戻り値](#戻り値) の章を参照ください。
 
 
 ### 特殊ケース: オブジェクトやコレクションの場合
