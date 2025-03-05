@@ -845,7 +845,7 @@ Este exemplo cria uma nova entidade na classe de dados "Log" e registra a inform
 
 A função `.newSelection()` <!-- REF #DataClassClass.newSelection().Summary -->cria uma nova seleção de entidades em branco, não compartilhável, relacionada à dataclass, na memória<!-- END REF -->.
 
-> Para informações sobre seleções de entidades não compartilháveis, consulte [esta seção](ORDA/entities.md#seleções-de-entidades-compartilháveis-ou-não-compartilháveis).
+> For information on non-shareable entity selections, please refer to [this section](ORDA/entities.md#shareable-or-alterable-entity-selections).
 
 Se quiser criar uma seleção de entidades ordenada, passe o seletor `dk keep ordered` no parâmetro *keepOrder*. Por padrão, se você omitir este parâmetro, ou se passar o seletor `dk non ordered`, o método cria uma seleção de entidades não ordenada. As seleções de entidades desordenadas são mais rápidas mas não se pode confiar nas posições das entidades. As seleções de entidades desordenadas são mais rápidas mas não se pode confiar nas posições das entidades.
 
