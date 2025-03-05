@@ -93,7 +93,7 @@ Windows上では "推奨選択肢" の概念はサポートされていないた
 
 #### 対象オブジェクト
 
-[階層リスト](list_overview.md#overview) - [サブフォーム](subform_overview.md#overview) - [リストボックス](listbox_overview.md#overview) - [入力](input_overview.md) - [4D Write Pro エリア](writeProArea_overview.md)
+[Hierarchical List](list_overview.md) - [Subform](subform_overview.md#overview) - [List Box](listbox_overview.md) - [Input](input_overview.md) - [4D Write Pro area](writeProArea_overview.md)
 
 #### 参照
 
@@ -222,7 +222,7 @@ Windows上では "推奨選択肢" の概念はサポートされていないた
 
 ---
 
-## HTML WYSYWIG 表示
+## Show HTML WYSIWYG
 
 HTML WYSIWYG ビューを有効/無効にします。 このビューでは、すべてのブラウザーに対応していない 4D Write Pro の属性が取り除かれます。
 
@@ -365,7 +365,7 @@ HTML WYSIWYG ビューを有効/無効にします。 このビューでは、�
 
 #### 対象オブジェクト
 
-[階層リスト](list_overview.md#overview) - [サブフォーム](subform_overview.md#overview) - [リストボックス](listbox_overview.md#overview) - [入力](input_overview.md) - [4D Write Pro エリア](writeProArea_overview.md)
+[Hierarchical List](list_overview.md) - [Subform](subform_overview.md#overview) - [List Box](listbox_overview.md) - [Input](input_overview.md) - [4D Write Pro area](writeProArea_overview.md)
 
 #### 参照
 
