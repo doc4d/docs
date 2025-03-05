@@ -5,7 +5,7 @@ title: プラグインエリア
 
 プラグインエリアは、[プラグイン](../Extensions/develop-plug-ins.md) によって完全に制御されるフォーム上のエリアです。 フォームにプラグインエリアを追加できることで、カスタムアプリケーションを作成する際の可能性が限りなく広がります。
 
-アプリケーションを開く際、4Dは [アプリケーションにインストール](../Concepts/plug-ins.md#プラグインのインストール) されたプラグインのリストを内部的に作成します。 プラグインエリアをフォームに挿入すると、そのプロパティリスト内の **タイプ** リスト ("オブジェクト"テーマ内) にて、プラグインを割り当てることができます:
+When opening an application, 4D creates an internal list of the plug-ins [installed in your application](../Concepts/plug-ins.md#how-to-install-a-plug-in). プラグインエリアをフォームに挿入すると、そのプロパティリスト内の **タイプ** リスト ("オブジェクト"テーマ内) にて、プラグインを割り当てることができます:
 
 ![](../assets/en/FormObjects/pluginArea.png)
 
