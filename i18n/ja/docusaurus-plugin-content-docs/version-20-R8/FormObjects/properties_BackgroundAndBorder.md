@@ -67,7 +67,7 @@ title: 背景色と境界線
 
 ---
 
-## Border Line Style {#border-line-style}
+## 境界線スタイル{#border-line-style}
 
 リストボックスの境界線のスタイルを設定します。
 
@@ -83,7 +83,7 @@ title: 背景色と境界線
 
 ---
 
-## Dotted Line Type {#dotted-line-type}
+## 点線タイプ {#dotted-line-type}
 
 点線のタイプを、点と白のパターンにより指定します。
 
