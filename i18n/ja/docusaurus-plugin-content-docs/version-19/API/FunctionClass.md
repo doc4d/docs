@@ -15,7 +15,7 @@ title: Function
 
 ### Formula オブジェクト
 
-[Formula](#formula) あるいは [Formula from string](#formula-from-string) コマンドを使用すると、[`4D.Function`オブジェクト](#4dfunction-オブジェクトについて) を作成することができ、それによってあらゆる 4D式やテキストとして表されたコードを実行することが可能です。
+The [Formula](#formula) and [Formula from string](#formula-from-string) commands allow you to create `4D.Function` objects to execute any 4D expression or code expressed as text.
 
 Formulaオブジェクトは、オブジェクトプロパティに格納することができます。
 
@@ -139,7 +139,7 @@ Formulaオブジェクトは、オブジェクトプロパティに格納する�
 返されたフォーミュラは以下の方法で呼び出すことが可能です:
 
 *   [`.call()`](#call) あるいは [`.apply()`](#apply) 関数
-*   オブジェクト記法シンタックス ([Formula オブジェクト](#formula-オブジェクト) 参照)
+*   object notation syntax (see [formula object](#formula-objects)).
 
 ```4d
  var $f : 4D.Function
