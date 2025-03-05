@@ -126,7 +126,7 @@ title: フォームエディター
 
 フォームにオブジェクトを追加する方法は複数あります:
 
-- オブジェクトバーでオブジェクトタイプを選択し、フォームエディター上で直接それを描画する ([オブジェクトバーを使用する](#オブジェクトバーを使用する) 参照)。
+- By drawing the object directly in the form after selecting its type in the object bar (see [Using the object bar](#object-bar))
 - オブジェクトバーからオブジェクトをドラッグ＆ドロップする。
 - 定義済み [オブジェクトライブラリ](objectLibrary.md) から選択したオブジェクトをドラッグ＆ドロップあるいはコピー/ペーストする。
 - 他のフォームからオブジェクトをドラッグ＆ドロップする。
