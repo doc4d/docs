@@ -27,7 +27,7 @@ title: リサイズオプション
 
 余白カラムのヘッダー/フッターはクリック可能ですが、他のカラムには何の影響も及ぼしません (つまり並び替えなどはおこなわれません)。しかしながら、`On Clicked`、`On Header Click` そして `On Footer Click` イベントはそれぞれ生成されます。
 
-If a cell in the fake column is clicked, the [LISTBOX GET CELL POSITION](../commands-legacy/listbox-get-cell-position.md) command returns "X+1" for its column number (where X is the number of existing columns).
+余白カラム内のセルがクリックされた場合、[LISTBOX GET CELL POSITION](../commands-legacy/listbox-get-cell-position.md) コマンドは列番号として "X+1" を返します (X は既存の列数です)。
 
 #### JSON 文法
 
@@ -43,7 +43,7 @@ If a cell in the fake column is clicked, the [LISTBOX GET CELL POSITION](../comm
 
 ## 横方向サイズ変更
 
-This property specifies if an object should be horizontally moved or resized when a user resizes the form. このプロパティは `OBJECT SET RESIZING OPTIONS` ランゲージコマンドによっても設定することができます。
+このプロパティは、ユーザーがフォームの高さをサイズ変更したときに、当該オブジェクトの縦方向に移動するかリサイズするかを指定します。 このプロパティは `OBJECT SET RESIZING OPTIONS` ランゲージコマンドによっても設定することができます。
 
 次の値が提供されています:
 
