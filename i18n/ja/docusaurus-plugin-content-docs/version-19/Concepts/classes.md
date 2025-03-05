@@ -177,7 +177,7 @@ Function <name>({$parameterName : type; ...}){->$parameterName : type}
 :::
 
 
-クラス関数とは、当該クラスのプロパティです。 クラス関数は [4D.Function](API/FunctionClass.md#4dfunction-オブジェクトについて) クラスのオブジェクトです。
+クラス関数とは、当該クラスのプロパティです。 They are objects of the [4D.Function](../API/FunctionClass.md#about-function-objects) class.
 
 クラス定義ファイルでは、`Function` キーワードと関数名を使用して宣言をおこないます。 関数名は [プロパティ名の命名規則](Concepts/identifiers.md#オブジェクトプロパティ) に準拠している必要があります。
 
@@ -202,7 +202,7 @@ Function getFullname()->$fullname : Text
 
 クラス関数の場合には、`Current method name` コマンドは次を返します: `<ClassName>.<FunctionName>` (例: "MyClass.myMethod")。
 
-アプリケーションのコード内では、クラス関数はオブジェクトインスタンスのメンバーメソッドとして呼び出され、[引数](#クラス関数の引数) を受け取ることができます。 以下のシンタックスがサポートされています:
+アプリケーションのコード内では、クラス関数はオブジェクトインスタンスのメンバーメソッドとして呼び出され、[引数](#引数) を受け取ることができます。 以下のシンタックスがサポートされています:
 
 - `()` 演算子の使用。 例: `myObject.methodName("hello")`
 - "4D.Function" クラスメンバーメソッドの使用:
@@ -388,7 +388,7 @@ Super($text1) // テキスト型引数をスーパークラスコンストラク
 This.param:=$text2 // 2番目の引数を使用します
 ```
 
-2. [クラスメンバー関数](#function) 内において、`Super` はスーパークラスのプロトタイプを指し、スーパークラス階層のメンバーメソッドの呼び出しを可能にします。
+2. Inside a [class member function](#function), `Super` designates the prototype of the superclass and allows to call a function of the superclass hierarchy.
 
 ```4d
 Super.doSomething(42) // スーパークラスにて宣言されている
