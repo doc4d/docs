@@ -3,7 +3,7 @@ id: comboBoxOverview
 title: コンボボックス
 ---
 
-A combo box is similar to a [drop-down list](dropdownList_Overview.md), except that it accepts text entered from the keyboard and has additional options.
+コンボボックスは [ドロップダウンリスト](dropdownList_Overview.md) と似ていますが、キーボードから入力されたテキストを受けいれる点と、追加のオプションがついている点が異なります。
 
 ![](../assets/en/FormObjects/combo_box.png)
 
@@ -13,7 +13,7 @@ A combo box is similar to a [drop-down list](dropdownList_Overview.md), except t
 
 入力エリアへの入力内容は、その他の入力フォームオブジェクトと同様に [`On Data Change`](Events/onDataChange.md) イベントを使用して管理します。
 
-You initialize a combo box in exactly the same way as a [drop-down list](dropdownList_Overview.md): using an object, an array, or a choice list.
+コンボボックスの初期化方法は、[ドロップダウンリスト](dropdownList_Overview.md) とまったく同じで、オブジェクト、配列、または選択リストを使用できます。
 
 ### オブジェクトの使用
 
@@ -53,7 +53,7 @@ You initialize a combo box in exactly the same way as a [drop-down list](dropdow
 
 - [自動挿入](properties_DataSource.md#自動挿入): このオプションがチェックされていると、オブジェクトに関連付けられたリストにない値をユーザーが入力した場合に、その値が自動的にデータソースに追加されます。
 - [除外リスト](properties_RangeOfValues.md#除外リスト) (除外される値のリスト): 除外される値のリストを関連付けることができます。 ユーザーがこのリストに含まれる値を入力したとき、その入力は自動的に却下され、エラーメッセージが表示されます。
-> [指定リスト](properties_RangeOfValues.md#指定リスト) は、コンボボックスに割り当てることができません。 In an interface, if an object must propose a finite list of required values, then you must use a [drop-down list](dropdownList_Overview.md) object.
+> [指定リスト](properties_RangeOfValues.md#指定リスト) は、コンボボックスに割り当てることができません。 ユーザーインターフェースにおいて、オブジェクト内にいくつかの指定された値を表示したいときには、[ドロップダウンリスト](dropdownList_Overview.md) のオブジェクトを使用して下さい。
 
 ## プロパティ一覧
 
