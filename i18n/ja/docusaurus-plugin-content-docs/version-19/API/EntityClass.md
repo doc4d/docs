@@ -1518,7 +1518,7 @@ employeeObject:=employeeSelected.toObject("directReports.*")
 <!-- END REF -->
 
 <!-- REF EntityClass.touched().Desc -->
-## .touched( )
+## .touched()
 
 <details><summary>履歴</summary>
 
@@ -1563,7 +1563,7 @@ employeeObject:=employeeSelected.toObject("directReports.*")
 <!-- END REF -->
 
 <!-- REF EntityClass.touchedAttributes().Desc -->
-## .touchedAttributes( )
+## .touchedAttributes()
 
 <details><summary>履歴</summary>
 
