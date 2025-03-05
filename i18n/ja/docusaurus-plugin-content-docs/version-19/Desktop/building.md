@@ -21,7 +21,7 @@ title: プロジェクトパッケージのビルド
 プロジェクトパッケージをビルドするには次の方法があります:
 
 * [`BUILD APPLICATION`](https://doc.4d.com/4Dv19/4D/19/BUILD-APPLICATION.301-5392523.ja.html) コマンドを使う
-* [アプリケーションビルド](#application-builder) ウィンドウを使う
+* or the **Build Application** window.
 
 このウィンドウを開くには 4D の **デザイン** メニューから **アプリケーションビルド...** を選択します。
 
@@ -153,15 +153,15 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 * *Windows*
   * MyProject.exe - 実行可能ファイル、そして MyProject.rsr (アプリケーションリソースファイル)
   * 4D Extensions および Resources フォルダー、さまざまなライブラリ (DLL)、 Native Components フォルダー、SASL Plugins フォルダーなど、アプリケーション実行に必要なファイル
-  * Databaseフォルダー: Resources フォルダーと MyProject.4DZ ファイルが格納されています。 これらはプロジェクトのコンパイル済みストラクチャーおよびプロジェクトの Resources フォルダーです。 **注**: このフォルダーには、定義されていれば *Default Data* フォルダーも含まれています ([最終アプリケーションでのデータファイルの管理](#データファイルの管理)を参照してください)。
-  * (オプション) データベースに含まれるコンポーネントやプラグインが配置された Components フォルダーおよび Plugins フォルダー。 この点に関する詳細は [プラグイン＆コンポーネントページ](#プラグイン＆コンポーネントページ) を参照してください。
-  * Licenses フォルダー - アプリケーションに統合されたライセンス番号の XML ファイルが含まれます。 この点に関する詳細は [ライセンス＆証明書ページ](#ライセンス＆証明書ページ) を参照してください。
+  * Databaseフォルダー: Resources フォルダーと MyProject.4DZ ファイルが格納されています。 これらはプロジェクトのコンパイル済みストラクチャーおよびプロジェクトの Resources フォルダーです。 **Note**: This folder also contains the *Default Data* folder, if it has been defined (see [Data file management in final applications](#data-file-management-in-final-applications).
+  * (オプション) データベースに含まれるコンポーネントやプラグインが配置された Components フォルダーおよび Plugins フォルダー。 For more information about this, refer to the [Plugins and components](#plugins--components-page) section.
+  * Licenses フォルダー - アプリケーションに統合されたライセンス番号の XML ファイルが含まれます。 For more information about this, refer to the [Licenses & Certificate](#licenses--certificate-page) section.
   * 4D Volume Desktop フォルダーに追加されたその他の項目 (あれば) ([4D Volume Desktop フォルダーのカスタマイズ](#4d-volume-desktop-フォルダーのカスタマイズ) 参照)
 
  実行ファイルの動作には、これらすべての項目が同じフォルダー内に必要です。
 
 * *macOS*
-  * MyProject.app という名称のソフトウェアパッケージに、プラグインやコンポーネント、ライセンスなど必要な項目がすべて格納されます。 プラグインやコンポーネントの統合に関する詳細は [プラグイン＆コンポーネントページ](#プラグイン＆コンポーネントページ) を参照してください。 ライセンスの統合に関しては [ライセンス＆証明書ページ](#ライセンス＆証明書ページ) を参照してください。 **注**: macOSでは、4D ランゲージの [Application file](https://doc.4d.com/4Dv18R4/4D/18-R4/Application-file.301-4982855.en.html) コマンドが返すのは、ソフトウェアパッケージ内の "Contents:macOS" フォルダー内にコピーされる ApplicationName ファイルのパス名です (ソフトウェアパッケージの "Contents:Resources" フォルダー内の .comp ファイルのパスではありません)。
+  * MyProject.app という名称のソフトウェアパッケージに、プラグインやコンポーネント、ライセンスなど必要な項目がすべて格納されます。 プラグインやコンポーネントの統合に関する詳細は [プラグイン＆コンポーネントページ](#プラグイン＆コンポーネントページ) を参照ください。 For more information about integrating licenses, refer to the [Licenses & Certificate](#licenses--certificate-page) section. **注**: macOSでは、4D ランゲージの [Application file](https://doc.4d.com/4Dv18R4/4D/18-R4/Application-file.301-4982855.en.html) コマンドが返すのは、ソフトウェアパッケージ内の "Contents:macOS" フォルダー内にコピーされる ApplicationName ファイルのパス名です (ソフトウェアパッケージの "Contents:Resources" フォルダー内の .comp ファイルのパスではありません)。
 
 #### 4D Volume Desktop フォルダーのカスタマイズ
 
@@ -206,7 +206,7 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 
 * サーバーを起動するには、サーバーアプリケーションをダブルクリックします。 プロジェクトファイルを選択する必要はありません。
 * クライアントを起動するにも、同様にクライアントアプリケーションをダブルクリックします。すると、サーバーアプリケーションへの接続が直接おこなわれるため、 接続ダイアログでサーバーを選択する必要はありません。 クライアントは接続対象のサーバーを名称 (サーバーが同じサブネットワーク上にある場合)、あるいはIPアドレスによって認識します。IPアドレスの指定は buildapp.4DSettings ファイル内の `IPAddress` XMLキーを使用して設定されます。 接続が失敗した場合のために、代替機構を実装することができます。これについては [クライアント接続の管理](#クライアント接続の管理) の章で説明されています。 また、**Option** (macOS) や **Alt** (Windows) キーを押しながらクライアントアプリケーション起動すると、標準の接続ダイアログを強制的に表示させることもできます。 サーバーアプリケーションには、対応するクライアントアプリケーションのみが接続できます。 標準の 4Dアプリケーションを使用してサーバーアプリケーションに接続を試みると、接続は拒否されエラーが返されます。
-* クライアント側を [ネットワーク越しに自動更新](#サーバーアプリケーション内部のクライアントアプリケーションのコピー) するようにクライアント/サーバーアプリケーションを設定することも可能です。 クライアントアプリケーションは最初のバージョンのみビルドして配布する必要があります。以降のアップデートは、自動アップデート機構を利用することで管理します。
+* A client/server application can be set so that the client portion [can be updated automatically over the network](#copy-of-client-applications-inside-the-server-application). クライアントアプリケーションは最初のバージョンのみビルドして配布する必要があります。以降のアップデートは、自動アップデート機構を利用することで管理します。
 * また、ランゲージコマンド ([SET UPDATE FOLDER](https://doc.4d.com/4dv19/help/command/ja/page1291.html)、および [RESTART 4D](https://doc.4d.com/4dv19/help/command/ja/page1292.html)) を使用して、サーバーアプリケーションの更新を自動化することも可能です。
 
 ### サーバーアプリケーションをビルド
@@ -298,7 +298,7 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 
 更新を強制するには、サーバーアプリケーションと互換性のあるバージョン番号の範囲からクライアントアプリケーションの現バージョン番号を除外します。 すると、未更新クライアントからの接続は更新メカニズムによって拒否されます。 たとえば、クライアントサーバーアプリケーションの新しいバージョン番号がの 6 の場合、バージョン番号が 5 以下のクライアントアプリケーションを許可しないようにできます。
 
-[現在のバージョン番号](#現在のバージョン) はアプリケーションビルドダイアログのクライアント/サーバーページで設定できます。 接続を許可するバージョン番号の範囲は [XMLキー](#アプリケーションビルド設定) で設定します。
+The [current version number](#current-version) is set on the Client/Server page of the Build Application dialog box. 接続を許可するバージョン番号の範囲は [XMLキー](#アプリケーションビルド設定) で設定します。
 
 #### エラーが発生する場合
 
@@ -484,7 +484,7 @@ Gatekeeper とは macOS のセキュリティ機能で、インターネット�
 
 macOS 10.14.5 (Mojave) および 10.15 (Catalina) において、アプリケーションのノータリゼーション (公証) が Apple より強く推奨されています。公証を得ていないアプリケーションをインターネットからダウンロードした場合、デフォルトでブロックされます。
 
-Apple の公証サービスを利用するのに必要な条件を満たすため、4D v18 で [ビルトインの署名機能](#os-x-署名に使用する証明書) が更新されています。 公証自体はデベロッパーによっておこなわなくてはいけないもので、4D とは直接関係ありません。なお、Xcode のインストールが必須である点に注意してください。 公証についての詳細は [4D ブログ記事 (英語)](https://blog.4d.com/how-to-notarize-your-merged-4d-application/) や関連の [テクニカルノート (日本語)](https://4d-jp.github.io/tech_notes/20-02-25-notarization/) を参照ください。
+In 4D v18, the [built-in signing features](#macos-signing-certificate) have been updated to meet all of Apple's requirements to allow using the Apple notary service. 公証自体はデベロッパーによっておこなわなくてはいけないもので、4D とは直接関係ありません。なお、Xcode のインストールが必須である点に注意してください。 公証についての詳細は [4D ブログ記事 (英語)](https://blog.4d.com/how-to-notarize-your-merged-4d-application/) や関連の [テクニカルノート (日本語)](https://4d-jp.github.io/tech_notes/20-02-25-notarization/) を参照ください。
 
 公証についての詳細は、[Apple のデベロッパー Web サイト](https://developer.apple.com/documentation/xcode/notarizing_your_app_before_distribution/customizing_the_notarization_workflow) を参照ください。
 
@@ -559,7 +559,7 @@ userPrefs:=Get 4D folder(Active 4D Folder)
 
 このデータリンクモードはアプリケーションビルドの際に選択することができます。 これには、次の二つの方法があります:
 
-* アプリケーションビルダーの [アプリケーションページ](#アプリケーションページ) または [クライアント/サーバーページ](#クライアント-サーバーページ) を使用する。
+* Use the [Application page](#application-page) or [Client/Server page](#clientserver-page) of the Build Application dialog box.
 * シングルユーザーまたはサーバーアプリケーションの **LastDataPathLookup** XMLキーを使用する。
 
 ### デフォルトのデータフォルダーを定義する
