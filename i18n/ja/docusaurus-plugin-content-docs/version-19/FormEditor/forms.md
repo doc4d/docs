@@ -11,7 +11,7 @@ title: 4D フォームについて
 また、以下の機能により、フォームは他のフォームを含むことができます:
 
 - [サブフォームオブジェクト](FormObjects/subform_overview.md)
-- [継承フォーム](properties_FormProperties.md#継承フォーム)
+- [継承フォーム](./properties_FormProperties.md#inherited-form-name)
 
 ## フォームを作成する
 
