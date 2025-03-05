@@ -489,8 +489,8 @@ This log file records events related to TCP connections. Events include data tra
 | protocol    | Text      | Indicates whether the event is related to `TCP`                                            |
 | event       | Text      | The type of event:`open`, `close`, `error`, `send`, `receive`, or `listen` |
 | size        | Number    | The amount of data sent or received (in bytes), 0 if not applicable     |
-| excerpt     | Number    | First 10 bytes of data in hexadecimal format                                               |
-| textExcerpt | Text      | First 10 bytes of data in text format                                                      |
+| 抜粋          | Number    | 最初の10 バイトのデータは16進数形式です。                                                                    |
+| textExcerpt | Text      | 最初の10 バイトのデータはテキスト形式です。                                                                    |
 | comment     | Text      | Additional information about the event, such as error details or encryption status         |
 
 ## ログ設定ファイルを使用する
