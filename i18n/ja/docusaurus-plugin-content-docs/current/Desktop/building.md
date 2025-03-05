@@ -168,15 +168,15 @@ macOS 上でアプリケーションを[公証](#ノータリゼーション_\\(
  - MyProject.exe - 実行可能ファイル、そして MyProject.rsr (アプリケーションリソースファイル)
  - 4D Extensions および Resources フォルダー、さまざまなライブラリ (DLL)、 Native Components フォルダー、SASL Plugins フォルダーなど、アプリケーション実行に必要なファイル
  - Databaseフォルダー - Resources フォルダーと MyProject.4DZ ファイルが格納されています。 これらはプロジェクトのコンパイル済みストラクチャーおよびプロジェクトの Resources フォルダーです。
-  **Note**: This folder also contains the *Default Data* folder, if it has been defined (see [Data file management in final applications](#data-file-management-in-final-applications).
- - (オプション) データベースに含まれるコンポーネントやプラグインが配置された Components フォルダーおよび Plugins フォルダー。 For more information about this, refer to the [Plugins and components](#plugins--components-page) section.
- - (オプション) Licenses フォルダー - アプリケーションに統合されたライセンス番号の XML ファイルが(あれば)含まれます。 For more information about this, refer to the [Licenses & Certificate](#licenses--certificate-page) section.
+  **注**: このフォルダーには、定義されていれば *Default Data* フォルダーも含まれています ([最終アプリケーションでのデータファイルの管理](#データファイルの管理)を参照してください)。
+ - (オプション) データベースに含まれるコンポーネントやプラグインが配置された Components フォルダーおよび Plugins フォルダー。 この点に関する詳細は [プラグイン＆コンポーネントページ](#プラグイン＆コンポーネントページ) を参照してください。
+ - (オプション) Licenses フォルダー - アプリケーションに統合されたライセンス番号の XML ファイルが(あれば)含まれます。 この点に関する詳細は [ライセンス＆証明書ページ](#ライセンス＆証明書ページ) を参照してください。
  - 4D Volume Desktop フォルダーに追加されたその他の項目 (あれば) ([4D Volume Desktop フォルダーのカスタマイズ](#4d-volume-desktop-フォルダーのカスタマイズ) 参照)
 
 実行ファイルの動作には、これらすべての項目が同じフォルダー内に必要です。
 
 - *macOS*
- - MyProject.app という名称のソフトウェアパッケージに、プラグインやコンポーネント、ライセンスなど必要な項目がすべて格納されます。 For more information about integrating plug-ins and components, refer to the [Plugins and components](#plugins--components-page) section. For more information about integrating licenses, refer to the [Licenses & Certificate](#licenses--certificate-page) section. **注意**: macOSでは、4D ランゲージの [Application file](../commands-legacy/application-file.md) コマンドは(ソフトウェアパッケージの Contents:macOS フォルダにある)アプリケーション名 ファイルのパス名を返し、(ソフトウェアパッケージのContents:Resources フォルダにある) .comp ファイルのパス名は返しません。
+ - MyProject.app という名称のソフトウェアパッケージに、プラグインやコンポーネント、ライセンスなど必要な項目がすべて格納されます。 プラグインやコンポーネントの統合に関する詳細は [プラグイン＆コンポーネントページ](#プラグイン＆コンポーネントページ) を参照してください。 ライセンスの統合に関しては [ライセンス＆証明書ページ](#ライセンス＆証明書ページ) を参照してください。 **注意**: macOSでは、4D ランゲージの [Application file](../commands-legacy/application-file.md) コマンドは(ソフトウェアパッケージの Contents:macOS フォルダにある)アプリケーション名 ファイルのパス名を返し、(ソフトウェアパッケージのContents:Resources フォルダにある) .comp ファイルのパス名は返しません。
 
 #### 4D Volume Desktop フォルダーのカスタマイズ
 
@@ -223,7 +223,7 @@ macOS 上でアプリケーションを[公証](#ノータリゼーション_\\(
 - サーバーを起動するには、サーバーアプリケーションをダブルクリックします。 プロジェクトファイルを選択する必要はありません。
 - クライアントを起動するにも、同様にクライアントアプリケーションをダブルクリックします。すると、サーバーアプリケーションへの接続が直接おこなわれるため、 接続ダイアログでサーバーを選択する必要はありません。 クライアントは接続対象のサーバーを名称 (サーバーが同じサブネットワーク上にある場合)、あるいはIPアドレスによって認識します。IPアドレスの指定は buildapp.4DSettings ファイル内の `IPAddress` XMLキーを使用して設定されます。 接続失敗時の特定の機構を実装することもできます。 詳細は [クライアント接続の管理](#クライアント接続の管理) で説明されています。 また、**Option** (macOS) や **Alt** (Windows) キーを押しながらクライアントアプリケーション起動すると、標準の接続ダイアログを強制的に表示させることもできます。
  サーバーアプリケーションには、対応するクライアントアプリケーションのみが接続できます。 標準の 4Dアプリケーションを使用してサーバーアプリケーションに接続を試みると、接続は拒否されエラーが返されます。
-- A client/server application can be set so that the client portion [can be updated automatically over the network](#copy-of-client-applications-inside-the-server-application). クライアントアプリケーションは最初のバージョンのみビルドして配布する必要があります。以降のアップデートは、自動アップデート機構を利用することで管理します。
+- クライアント側を [ネットワーク越しに自動更新](#サーバーアプリケーション内部のクライアントアプリケーションのコピー) するようにクライアント/サーバーアプリケーションを設定することも可能です。 クライアントアプリケーションは最初のバージョンのみビルドして配布する必要があります。以降のアップデートは、自動アップデート機構を利用することで管理します。
 - また、ランゲージコマンド ([SET UPDATE FOLDER](../commands-legacy/set-update-folder.md) および [RESTART 4D](../commands-legacy/restart-4d.md)) を使用して、サーバーアプリケーションの更新を自動化することも可能です。
 
 ### サーバーアプリケーションをビルド
@@ -350,7 +350,7 @@ Windows用サーバーアプリケーションのビルドに使用される App
 
 更新を強制するには、サーバーアプリケーションと互換性のあるバージョン番号の範囲からクライアントアプリケーションの現バージョン番号を除外します。 すると、未更新クライアントからの接続は更新メカニズムによって拒否されます。 たとえば、クライアントサーバーアプリケーションの新しいバージョン番号がの 6 の場合、バージョン番号が 5 以下のクライアントアプリケーションを許可しないようにできます。
 
-The [current version number](#current-version) is set on the Client/Server page of the Build Application dialog box. 接続を許可するバージョン番号の範囲は [XMLキー](#アプリケーションビルド設定) で設定します。
+[現在のバージョン番号](#現在のバージョン) はアプリケーションビルドダイアログ のクライアント/サーバーページで設定できます。 接続を許可するバージョン番号の範囲は [XMLキー](#アプリケーションビルド設定) で設定します。
 
 #### エラーが発生する場合
 
@@ -503,15 +503,15 @@ The [current version number](#current-version) is set on the Client/Server page 
 
 ### ライセンスについて
 
-A built 4D application requires a deployment license. これは開発者によってビルドの段階で埋め込むか、以下の表で説明されているように、初回起動時にエンドユーザーによって入力される必要があります:
+ビルドされた4D アプリケーションには運用ライセンスが必要となります。 これは開発者によってビルドの段階で埋め込むか、以下の表で説明されているように、初回起動時にエンドユーザーによって入力される必要があります:
 
-| 運用ライセンス                | 説明                                                           | 入力する場所                                                               |
-| ---------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------- |
-| *4D OEM Desktop*       | 埋め込まれたカスタムのライセンス。詳細は 4D 営業部にお取り合わせ下さい。                       | アプリケーションビルドダイアログの[ライセンスページ](#ライセンス)                                  |
-| *4D Unlimited Desktop* | **販売終了** - 埋め込まれたカスタムのライセンス                                  | アプリケーションビルドダイアログの[ライセンスページ](#ライセンス)                                  |
-| *4D Desktop*           | ユーザーごとのライセンスで、スタンドアロンの4D アプリケーションを使用するのに必要です。                | ユーザーマシン上での[初回起動時](../Admin/licenses.md#初回のアクティベーション) に表示されるダイアログボックス |
-| *4D Server OEM*        | 埋め込まれたカスタムのライセンス。詳細は 4D 営業部にお取り合わせ下さい。                       | アプリケーションビルドダイアログの[ライセンスページ](#ライセンス)                                  |
-| *4D Server*            | Per-user license, allowing them to use 4D Server and clients | ユーザーマシン上での[初回起動時](../Admin/licenses.md#初回のアクティベーション) に表示されるダイアログボックス |
+| 運用ライセンス                | 説明                                              | 入力する場所                                                               |
+| ---------------------- | ----------------------------------------------- | -------------------------------------------------------------------- |
+| *4D OEM Desktop*       | 埋め込まれたカスタムのライセンス。詳細は 4D 営業部にお取り合わせ下さい。          | アプリケーションビルドダイアログの[ライセンスページ](#ライセンス)                                  |
+| *4D Unlimited Desktop* | **販売終了** - 埋め込まれたカスタムのライセンス                     | アプリケーションビルドダイアログの[ライセンスページ](#ライセンス)                                  |
+| *4D Desktop*           | ユーザーごとのライセンスで、スタンドアロンの4D アプリケーションを使用するのに必要です。   | ユーザーマシン上での[初回起動時](../Admin/licenses.md#初回のアクティベーション) に表示されるダイアログボックス |
+| *4D Server OEM*        | 埋め込まれたカスタムのライセンス。詳細は 4D 営業部にお取り合わせ下さい。          | アプリケーションビルドダイアログの[ライセンスページ](#ライセンス)                                  |
+| *4D Server*            | 各ユーザーごとに必要なライセンスで、4D Server とクライアントを使用するのに必要です。 | ユーザーマシン上での[初回起動時](../Admin/licenses.md#初回のアクティベーション) に表示されるダイアログボックス |
 
 :::note
 
@@ -529,9 +529,9 @@ You can use this tab to build:
 - a licensed application without embedded license (the user has to have a per-user license),
 - a licensed application with embedded license(s).
 
-#### Build an evaluation application
+#### 評価版アプリケーションをビルド
 
-Check this option to create an evaluation version of your application.
+アプリケーションの評価版を作成するには、このオプションをチェックして下さい。
 
 An evaluation application allows the end-user to run a full-featured version of your stand-alone or server application on their machine for a limited period of time, starting at first launch. At the end of the evaluation period, the application can no longer be used for a certain period of time on the same machine.
 
@@ -791,4 +791,4 @@ You can automate this procedure to a large extent using the following language c
 
 アップデートログは、`YYYY-MM-DD_HH-MM-SS_log_X.txt` という名前で、たとえば、2021年 8月 25日の 14:23 に作成されたファイルに対しては `2021-08-25_14-23-00_log_1.txt` という名前になります。
 
-このファイルは、システムユーザーフォルダー内の "Updater" アプリケーションフォルダー内に作成されます。 You can find out the location of this file at any time using the [`Last update log path`](../commands-legacy/last-update-log-path.md) command.
+このファイルは、システムユーザーフォルダー内の "Updater" アプリケーションフォルダー内に作成されます。 [`Last update log path`](../commands-legacy/last-update-log-path.md) コマンドを使用することで、このファイルの保存場所を探すことができます。
