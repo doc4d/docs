@@ -54,7 +54,7 @@ title: 変換タグ
 
 もし `[Mail]Letter_type` テキストフィールド自体にもタグ (たとえば`<!--#4DSCRIPT/m_Gender-->`) が含まれていた場合、このタグは 4DHTMLタグの解釈の後に、それに伴って評価されます。
 
-この強力な原則は、テキスト変換に関連するほとんどの需要を満たすことができます。 しかしながら、Webコンテキストにおいて、これは場合によって悪意のあるコードの侵入を許す可能性があるという点に注意が必要です。 これを防ぐ方法については [悪意あるコードの侵入を防止](WebServer/templates.md#悪意あるコードの侵入を防止) を参照ください。
+この強力な原則は、テキスト変換に関連するほとんどの需要を満たすことができます。 Note, however, that in some cases this can also allow malicious code to be inserted in the web context, [which can be avoided](../WebServer/templates.md#prevention-of-malicious-code-insertion).
 
 ### トークンを使用した識別子
 
@@ -319,7 +319,7 @@ TEXT TO DOCUMENT("customers.txt"; $output)
 
 解釈エラーの場合、"`<!--#4DEVAL expr-->: ## エラー # エラーコード`" というテキストが挿入されます。
 
-> セキュリティ上の理由から、[悪意あるコードの侵入・挿入](WebServer/templates.md#悪意あるコードの侵入を防止)を防ぐために、アプリケーション外から導入されたデータを処理するときには [`4DTEXT`](#4dtext) タグの使用が推奨されます。
+> For security reasons, it is recommended to use the [`4DTEXT`](#4dtext) tag when processing data introduced from outside the application, in order to prevent the [insertion of malicious code](../WebServer/templates.md#prevention-of-malicious-code-insertion).
 
 ## 4DHTML
 
@@ -338,7 +338,7 @@ TEXT TO DOCUMENT("customers.txt"; $output)
 
 解釈エラーの場合、"`<!--#4DHTML myvar-->: ## エラー # エラーコード`" というテキストが挿入されます。
 
-> セキュリティ上の理由から、[悪意あるコードの侵入・挿入](WebServer/templates.md#悪意あるコードの侵入を防止)を防ぐために、アプリケーション外から導入されたデータを処理するときには [`4DTEXT`](#4dtext) タグの使用が推奨されます。
+> For security reasons, it is recommended to use the [`4DTEXT`](#4dtext) tag when processing data introduced from outside the application, in order to prevent the [insertion of malicious code](../WebServer/templates.md#prevention-of-malicious-code-insertion).
 
 ## 4DIF, 4DELSE, 4DELSEIF と 4DENDIF
 
@@ -651,7 +651,7 @@ However, if the HTML page specified does not contain `<body>` and `</body>` tags
 
 4DTEXT タグを使用して、4D式も挿入できます。 たとえば、フィールドの値を直接挿入できるほか (`<!--#4DTEXT [tableName]fieldName-->`) 、配列要素の値も挿入できますし (`<!--#4DTEXT tabarr{1}-->`) 、値を返すメソッドも使用できます (`<!--#4DTEXT mymethod-->`)。 式の変換には、変数の場合と同じルールが適用されます。 さらに、式は 4Dのシンタックスルールに適合していなければなりません。
 
-> セキュリティ上の理由から、[悪意あるコードの侵入・挿入](WebServer/templates.md#悪意あるコードの侵入を防止)を防ぐために、アプリケーション外から導入されたデータを処理するときには、このタグの使用が推奨されます。
+> For security reasons, it is recommended to use this tag when processing data introduced from outside the application, in order to prevent the [insertion of malicious code](../WebServer/templates.md#prevention-of-malicious-code-insertion).
 
 解釈エラーの場合、"`<!--#4DTEXT myvar--> : ## エラー # エラーコード`" というテキストが挿入されます。
 
@@ -706,7 +706,7 @@ $シンタックスを使用すると、パーサーによって以下のコー�
 
 ここで、`$4dtag` と `<--#4dtag-->` は厳密には同じではないという点に注意が必要です。`<--#4dtag-->` とは異なり、`$4dtag` は 4Dタグを [繰り返し解釈](#再起的処理) することはありません。 `$` タグは常に一度だけ解釈され、その結果は標準テキストとして読まれます。
 
-この違いの理由は、悪意あるコードの侵入を防ぐためにあります。 [悪意あるコードの侵入を防止](WebServer/templates.md#悪意あるコードの侵入を防止) の章で説明されているように、ユーザーテキストを使用する場合に不要なタグの再解釈を避けるには、`4DHTML` タグではなく `4DTEXT` タグの使用が強く推奨されます。 しかしながら、`4DTEXT` は `$` 記号をエスケープしないため、悪意あるコードの侵入を防ぐために `$4dtag (expression)` シンタックスにおける再帰的処理はサポートしないことになりました。
+この違いの理由は、悪意あるコードの侵入を防ぐためにあります。 As [explained below](../WebServer/templates.md#prevention-of-malicious-code-insertion), it is strongly recommended to use `4DTEXT` tags instead of `4DHTML` tags when handling user text to protect against unwanted reinterpretation of tags: with `4DTEXT`, special characters such as "<" are escaped, thus any 4D tags using the `<!--#4dtag expression -->` syntax will lose their particular meaning. しかしながら、`4DTEXT` は `$` 記号をエスケープしないため、悪意あるコードの侵入を防ぐために `$4dtag (expression)` シンタックスにおける再帰的処理はサポートしないことになりました。
 
 以下の例では、使用されるシンタックスとタグによる処理の結果の違いを表しています:
 
