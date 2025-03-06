@@ -160,7 +160,7 @@ title: DataStore
 
 #### 説明
 
-`.encryptionStatus()` 関数は、<!-- REF #DataStoreClass.encryptionStatus().Summary -->カレントデータファイルの暗号化状態を示すオブジェクトを返します<!-- END REF -->。カレントデータファイルとはつまり、`ds` データストアのデータファイルです。 各テーブルの状態も提供されます。 各テーブルの状態も提供されます。 各テーブルの状態も提供されます。 各テーブルの状態も提供されます。 各テーブルの状態も提供されます。
+`.encryptionStatus()` 関数は、<!-- REF #DataStoreClass.encryptionStatus().Summary -->カレントデータファイルの暗号化状態を示すオブジェクトを返します<!-- END REF -->。カレントデータファイルとはつまり、`ds` データストアのデータファイルです。 各テーブルの状態も提供されます。
 
 > その他のデータファイルの暗号化状態を調べるには、`Data file encryption status` コマンドを使います。
 
