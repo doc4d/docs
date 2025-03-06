@@ -442,7 +442,7 @@ APPEND TEXT(vtSomeText;"";$wpArea) // メッセージを表示して、 $wpArea 
 
 :::tip
 
-When optional parameters are needed in your methods, you might also consider using [object properties as named parameters](#using-object-properties-as-named-parameters) which provide a flexible way to handle variable numbers of parameters.
+任意パラメーターが必要な場合、[オブジェクトプロパティを名前付き引数として使用する](#オブジェクトプロパティを名前付き引数として使用する) と型の制限がなく、柔軟で便利です。
 
 :::
 
@@ -493,7 +493,7 @@ ALERT($param->)
  ALERT($result)
 ```
 
-このようにサブルーチンの戻り値を使うことを "関数を使う" と言います。  This is described in the [Returning values](#returned-value) paragraph.
+このようにサブルーチンの戻り値を使うことを "関数を使う" と言います。  詳細については [戻り値](#戻り値) の章を参照ください。
 
 ### 特殊ケース: オブジェクトやコレクションの場合
 
