@@ -93,11 +93,11 @@ title: コンパイル
 
 #### Symbolファイルを生成
 
-Symbolファイルを生成するのに使用します ([Symbolファイル](#symbolファイル) 参照)。 Symbolファイルを生成するのに使用します ([Symbolファイル](#symbolファイル) 参照)。 Symbolファイルは、プロジェクトの [Logs フォルダー](Project/architecture.md#logs) 内に `ProjectName_symbols.txt` という名前で作成されます。
+Symbolファイルを生成するのに使用します ([Symbolファイル](#symbolファイル) 参照)。 Symbolファイルは、プロジェクトの [Logs フォルダー](Project/architecture.md#logs) 内に `ProjectName_symbols.txt` という名前で作成されます。
 
 #### エラーファイルを生成
 
-シンタックスチェック時にエラーファイルを生成するのに使用します ([エラーファイル](#エラーファイル) 参照)。 シンタックスチェック時にエラーファイルを生成するのに使用します ([エラーファイル](#エラーファイル) 参照)。 エラーファイルは、プロジェクトの [Logs フォルダー](Project/architecture.md#logs) 内に `ProjectName_error.xml` という名前で作成されます。
+シンタックスチェック時にエラーファイルを生成するのに使用します ([エラーファイル](#エラーファイル) 参照)。 エラーファイルは、プロジェクトの [Logs フォルダー](Project/architecture.md#logs) 内に `ProjectName_error.xml` という名前で作成されます。
 
 #### コンパイル対象CPU
 
@@ -221,7 +221,7 @@ Symbolファイルを生成するのに使用します ([Symbolファイル](#sy
 
 ### Symbolファイル
 
-コンパイラー設定の [**Symbolファイルを生成**](#symbolファイルを生成) オプションを選択してコンパイルすると、プロジェクトの [Logs フォルダー](Project/architecture.md#logs) 内に `ProjectName_symbols.txt` という名称の Symbolファイルが作成されます。 このドキュメントはいくつかの部分に分かれています: このドキュメントはいくつかの部分に分かれています:
+コンパイラー設定の [**Symbolファイルを生成**](#symbolファイルを生成) オプションを選択してコンパイルすると、プロジェクトの [Logs フォルダー](Project/architecture.md#logs) 内に `ProjectName_symbols.txt` という名称の Symbol ファイルが作成されます。 このドキュメントはいくつかの部分に分かれています:
 
 #### プロセスおよびインタープロセス変数のリスト
 
