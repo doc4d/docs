@@ -202,7 +202,7 @@ module.exports = {
           title: 'Support',
           items: [
             {
-              label: 'Documentation download',
+              label: '<i class="fa-solid fa-rocket"></i> Documentation ddownload',
               href: 'https://github.com/4d/docs/releases/tag/latest',
             },
             {
@@ -264,5 +264,11 @@ module.exports = {
       maintainCase: false,
     },
   },
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: ['@docusaurus/theme-mermaid'],  
+  scripts: [
+    {
+      src: 'https://kit.fontawesome.com/daeacc3fc4.js',
+      crossorigin: 'anonymous',
+    },
+  ],
 }

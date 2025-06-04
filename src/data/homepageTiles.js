@@ -31,15 +31,15 @@ const localizedLinks = {
 
 const Sections = [
   {
-    title: translate({
-      message: 'Getting Started',
-      id: 'homepage.sections.getting-started.title',
-    }),
-    image: {
-      src: '/img/illu_GettingStarted.png',
-      width: 1009.54,
-      height: 717.96,
-    },
+    
+title: (
+    <>
+      <i class="fa-solid fa-rocket" style={{ marginRight: '0.1rem', color: '#6c63ff' }}></i>
+      <Translate id="homepage.sections.getting-started.title">
+        Getting Started
+      </Translate>
+    </>
+  ),
     links: (
       <div className="homepageLinks">
         <Link to="GettingStarted/installation" >
@@ -54,15 +54,14 @@ const Sections = [
       </div>
     ),
   }, {
-    title: translate({
-      message: 'Core Development',
-      id: 'homepage.sections.core-development.title',
-    }),
-    image: {
-      src: '/img/illu_CoreDevelopment.png',
-      width: 1108,
-      height: 731.18,
-    },
+    title: (
+    <>
+      <i class="fa-solid fa-folder" style={{ marginRight: '0.1rem', color: '#6c63ff' }}></i>
+      <Translate id="homepage.sections.core-development.title">
+        Project management & IDE
+      </Translate>
+    </>
+  ),
     links: (
       <div className="homepageLinks">
         <Link to="Project/overview" >
