@@ -133,14 +133,14 @@ title: (
   ),
     links: (
       <div className="homepageLinks">
+         <Link to="https://developer.qodly.com/docs">
+          <Translate>4D Qodly Pro</Translate> <i class="fa-solid fa-up-right-from-square"></i>
+        </Link>
         <Link to="WebServer/overview">
           <Translate>Web Server</Translate>
         </Link>
         <Link to="WebServer/gettingStarted">
           <Translate>Web Development</Translate>
-        </Link>
-        <Link to="WebServer/qodly-studio">
-          <Translate>Qodly Studio</Translate>
         </Link>
         <Link to="REST/gettingStarted">
           <Translate>REST Server</Translate>
@@ -166,34 +166,10 @@ title: (
           <Translate>Access Rights</Translate>
         </Link>
         <Link to="FormEditor/forms" >
-          <Translate>Forms</Translate>
+          <Translate>Forms & UI</Translate>
         </Link>
-        <Link to="Menus/overview" >
-          <Translate>Menus</Translate>
-        </Link>
-        <Link to="Desktop/user-settings" >
-          <Translate>User Settings</Translate>
-        </Link>
-                <Link to="Admin/tls">
-          <Translate>TLS Protocol</Translate>
-        </Link>
-        <Link to="Admin/licenses">
-          <Translate>Licenses</Translate>
-        </Link>
-        <Link to="MSC/overview">
-          <Translate>Maintenance and Security Center</Translate>
-        </Link>
-        <Link to="Backup/overview">
-          <Translate>Backup and Restore</Translate>
-        </Link>
-                 <Link to="ORDA/overview" >
-          <Translate>Object Relational Data Access (ORDA)</Translate>
-        </Link>
-        <Link to="Develop/processes" >
-          <Translate>Processes</Translate>
-        </Link>
-        <Link to="Tags/transformation-tags" >
-          <Translate>Transformation Tags</Translate>
+        <Link to="Desktop/labels" >
+          <Translate>Labels</Translate>
         </Link>
 
       </div>
@@ -274,6 +250,9 @@ title: (
         </Link>
         <Link to="Backup/overview">
           <Translate>Backup and Restore</Translate>
+        </Link>
+        <Link to="Desktop/user-settings" >
+          <Translate>User Settings</Translate>
         </Link>
       </div>
     ),
