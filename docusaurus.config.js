@@ -202,7 +202,7 @@ module.exports = {
           title: 'Support',
           items: [
             {
-              label: '<i class="fa-solid fa-rocket"></i> Documentation ddownload',
+              label: 'Documentation download',
               href: 'https://github.com/4d/docs/releases/tag/latest',
             },
             {

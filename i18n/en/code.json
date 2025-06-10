@@ -11,6 +11,9 @@
   "homepage.sections.core-development.title": {
     "message": "Project Management & IDE"
   },
+  "homepage.sections.language.title": {
+    "message": "4D Language & ORDA"
+  },
   "Project Management": {
     "message": "Project Management"
   },
@@ -131,8 +134,8 @@
   "Build Application": {
     "message": "Build Application"
   },
-  "homepage.sections.mobile-applications.title": {
-    "message": "Mobile Applications"
+  "homepage.sections.more.title": {
+    "message": "More docs"
   },
   "Go Mobile with 4D": {
     "message": "Go Mobile with 4D"

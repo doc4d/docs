@@ -35,10 +35,6 @@ module.exports =
         {
           type: "category",
           label: "Project Management",
-          link: {
-            type: "doc",
-            id: "Project/overview"
-          },
           items: [
             "Project/architecture",
             {
