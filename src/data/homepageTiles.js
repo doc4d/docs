@@ -136,11 +136,11 @@ title: (
          <Link to="https://developer.qodly.com/docs">
           <Translate>4D Qodly Pro</Translate> <i class="fa-solid fa-up-right-from-square"></i>
         </Link>
-        <Link to="WebServer/overview">
-          <Translate>Web Server</Translate>
-        </Link>
         <Link to="WebServer/gettingStarted">
           <Translate>Web Development</Translate>
+        </Link>
+        <Link to="WebServer/overview">
+          <Translate>Web Server</Translate>
         </Link>
         <Link to="REST/gettingStarted">
           <Translate>REST Server</Translate>
@@ -213,9 +213,6 @@ title: (
         <Link to="Extensions/develop-components">
           <Translate>Developing Components</Translate>
         </Link>
-        <Link to="Extensions/develop-plug-ins">
-          <Translate>Developing Plugins</Translate>
-        </Link>
       </div>
     ),
   },
@@ -277,6 +274,10 @@ title: (
         <Link to={localizedLinks["homepage.sections.mobile-applications.4D-for-iOS-Archive-url"]}>
           <Translate>4D for iOS (Archive)</Translate> <i class="fa-solid fa-up-right-from-square"></i>
         </Link>
+        <Link to="Extensions/develop-plug-ins">
+          <Translate>Developing Plugins</Translate>
+        </Link>
+
       </div>
     ),
   },
