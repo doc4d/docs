@@ -58,17 +58,17 @@ title: (
     <>
       <i class="fa-solid fa-hammer" style={{ marginRight: '0.6rem', color: '#6c63ff' }}></i>
       <Translate id="homepage.sections.core-development.title">
-          Project management & IDE
+          Project & IDE
       </Translate>
     </>
   ),
     links: (
       <div className="homepageLinks">
         <Link to="Project/architecture" >
-          <Translate>Architecture</Translate>
+          <Translate>Project Files</Translate>
         </Link>
         <Link to="settings/overview" >
-          <Translate>Project Settings</Translate>
+          <Translate>Settings</Translate>
         </Link>
         <Link to="Project/code-overview" >
           <Translate>Methods & Classes</Translate>
@@ -83,13 +83,13 @@ title: (
           <Translate>Dependencies</Translate>
         </Link>
         <Link to="Desktop/building" >
-          <Translate>Build Application</Translate>
+          <Translate>Application builder</Translate>
         </Link>
         <Link to="Debugging/basics" >
-          <Translate>Debugging & logs</Translate>
+          <Translate>Debugger & logs</Translate>
         </Link>
         <Link to="Preferences/overview" >
-          <Translate>Preferences</Translate>
+          <Translate>Application Preferences</Translate>
         </Link>
       </div>
     ),
@@ -186,8 +186,8 @@ title: (
   ),
     links: (
       <div className="homepageLinks">
-        <Link to="Extensions/overview">
-          <Translate>Overview</Translate>
+        <Link to="https://developer.qodly.com/docs">
+          <Translate>4D Qodly Pro</Translate> <i class="fa-solid fa-up-right-from-square"></i>
         </Link>
         <Link to="ViewPro/getting-started">
           <Translate>4D View Pro</Translate>
@@ -210,8 +210,14 @@ title: (
         <Link to={localizedLinks["homepage.sections.textensions.4D-Widgets-url"]}>
           <Translate>4D Widgets</Translate> <i class="fa-solid fa-up-right-from-square"></i>
         </Link>
+       <Link to="https://github.com/4d/4D-QPDF?tab=readme-ov-file#readme">
+          <Translate>4D QPDF</Translate> <i class="fa-solid fa-up-right-from-square"></i>
+        </Link>
         <Link to="Extensions/develop-components">
           <Translate>Developing Components</Translate>
+        </Link>
+         <Link to="Extensions/develop-plug-ins">
+          <Translate>Developing Plugins</Translate>
         </Link>
       </div>
     ),
@@ -265,19 +271,13 @@ title: (
   ),
     links: (
       <div className="homepageLinks">
+        
         <Link to={localizedLinks["homepage.sections.mobile-applications.go-mobile-url"]}>
           <Translate>Go Mobile with 4D</Translate> <i class="fa-solid fa-up-right-from-square"></i>
         </Link>
-        <Link to="https://github.com/4d/4D-Mobile-App-Server">
-          <Translate>4D Mobile App Server</Translate> <i class="fa-solid fa-up-right-from-square"></i>
+        <Link to="https://github.com/4d-depot/Build4D?tab=readme-ov-file#readme">
+          <Translate>Build4D</Translate> <i class="fa-solid fa-up-right-from-square"></i>
         </Link>
-        <Link to={localizedLinks["homepage.sections.mobile-applications.4D-for-iOS-Archive-url"]}>
-          <Translate>4D for iOS (Archive)</Translate> <i class="fa-solid fa-up-right-from-square"></i>
-        </Link>
-        <Link to="Extensions/develop-plug-ins">
-          <Translate>Developing Plugins</Translate>
-        </Link>
-
       </div>
     ),
   },
