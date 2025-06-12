@@ -70,9 +70,6 @@ title: (
         <Link to="settings/overview" >
           <Translate>Settings</Translate>
         </Link>
-        <Link to="Project/code-overview" >
-          <Translate>Methods & Classes</Translate>
-        </Link>
         <Link to="code-editor/write-class-method" >
           <Translate>Code Editor</Translate>
         </Link>
@@ -162,11 +159,11 @@ title: (
         <Link to="Desktop/clientServer" >
           <Translate>Client/Server</Translate>
         </Link>
-        <Link to="Users/overview">
-          <Translate>Access Rights</Translate>
-        </Link>
         <Link to="FormEditor/forms" >
-          <Translate>Forms & UI</Translate>
+          <Translate>Forms</Translate>
+        </Link>
+        <Link to="Menus/overview" >
+          <Translate>Menus</Translate>
         </Link>
         <Link to="Desktop/labels" >
           <Translate>Labels</Translate>
@@ -186,6 +183,9 @@ title: (
   ),
     links: (
       <div className="homepageLinks">
+        <Link to="Extensions/overview">
+          <Translate>Extending 4D applications</Translate>
+        </Link>
         <Link to="https://developer.qodly.com/docs">
           <Translate>4D Qodly Pro</Translate> <i class="fa-solid fa-up-right-from-square"></i>
         </Link>
@@ -213,12 +213,6 @@ title: (
        <Link to="https://github.com/4d/4D-QPDF?tab=readme-ov-file#readme">
           <Translate>4D QPDF</Translate> <i class="fa-solid fa-up-right-from-square"></i>
         </Link>
-        <Link to="Extensions/develop-components">
-          <Translate>Developing Components</Translate>
-        </Link>
-         <Link to="Extensions/develop-plug-ins">
-          <Translate>Developing Plugins</Translate>
-        </Link>
       </div>
     ),
   },
@@ -227,23 +221,23 @@ title: (
     <>
       <i class="fa-solid fa-user-tie" style={{ marginRight: '0.6rem', color: '#6c63ff' }}></i>
       <Translate id="homepage.sections.administration.title">
-          Administration
+          Server & Admin
       </Translate>
     </>
   ),
     links: (
       <div className="homepageLinks">
         <Link to="ServerWindow/overview" >
-          <Translate>4D Server Administration Window</Translate>
+          <Translate>4D Server Window</Translate>
         </Link>
         <Link to="Admin/webAdmin">
-          <Translate>Web Administration</Translate>
+          <Translate>WebAdmin & Data Explorer</Translate>
         </Link>
         <Link to="Admin/cli">
           <Translate>Command Line Interface</Translate>
         </Link>
         <Link to="Admin/tls">
-          <Translate>TLS Protocol</Translate>
+          <Translate>TLS</Translate>
         </Link>
         <Link to="Admin/licenses">
           <Translate>Licenses</Translate>
@@ -253,6 +247,9 @@ title: (
         </Link>
         <Link to="Backup/overview">
           <Translate>Backup and Restore</Translate>
+        </Link>
+                <Link to="Users/overview">
+          <Translate>Access Rights</Translate>
         </Link>
         <Link to="Desktop/user-settings" >
           <Translate>User Settings</Translate>
