@@ -21,30 +21,31 @@ module.exports =
     },
     {
       type: "category",
-      label: "Core Development",
+      label: "Project & IDE",
       link: {
         type: "generated-index",
-        title: "Core Development",
-        slug: "/category/core-development",
+        title: "Project & IDE",
+        slug: "/category/project-ide",
         keywords: [
-          "core"
+          "ide"
         ],
         image: "/img/docusaurus.png"
       },
       items: [
         {
           type: "category",
-          label: "Project Management",
+          label: "Project Files",
           items: [
             "Project/architecture",
-            {
-              type: "category",
-              label: "Settings",
-              link: {
-                type: "doc",
-                id: "settings/overview"
-              },
-              items: [
+            "Project/code-overview",
+            "Project/documentation"
+          ]
+        },
+        {
+          type: "category",
+          label: "Settings",
+          items: [
+                "settings/overview",
                 "settings/general",
                 "settings/interface",
                 "settings/compiler",
@@ -58,40 +59,28 @@ module.exports =
                 "settings/compatibility"
               ]
             },
-            "Project/components",
-            "Project/date-time-formats",
-            "Project/documentation"
+          "code-editor/write-class-method",
+          "Project/components",
+          "Desktop/building"
           ]
         },
+       
         {
-          type: "category",
-          label: "Development Environment",
-          items: [
-            "Project/code-overview",
-            "code-editor/write-class-method",
-            "Project/compiler",
-            {
-              type: "category",
-              label: "Debugging",
-              link: {
-                type: "doc",
-                id: "Debugging/basics"
-              },
-              items: [
+           type: "category",
+           label: "Debugger & logs",
+           items: [
+                "Debugging/basics",
                 "Debugging/debugger",
                 "Debugging/breakpoints",
-                "Debugging/debugging-remote"
+                "Debugging/debugging-remote",
+                "Debugging/debugLogFiles",
               ]
             },
-            "Debugging/debugLogFiles",
-               {
+            {
                   type: "category",
                   label: "Preferences",
-                  link: {
-                    type: "doc",
-                    id: "Preferences/overview"
-                },
                   items: [
+                    "Preferences/overview",
                     "Preferences/general",
                     "Preferences/structure",
                     "Preferences/forms",
@@ -102,45 +91,26 @@ module.exports =
 
         ]
         },
-        {
+
+
+      {
           type: "category",
-          label: "ORDA",
-          link: {
-            type: "doc",
-            id: "ORDA/overview"
-          },
+          label: "Development Environment",
           items: [
-            "ORDA/dsmapping",
-            "ORDA/ordaClasses",
-            "ORDA/entities",
-            "ORDA/global-stamp",
-            "ORDA/datastores",
-            "ORDA/privileges",
-            "ORDA/client-server-optimization",
-            "ORDA/glossary"
-          ]
-        },
-        {
-          type: "category",
-          label: "Processes",
-          items: [
-            "Develop/processes",
-            "Develop/preemptive-processes"
-          ]
-        },
-        "Develop-legacy/transactions",
-        "Tags/transformation-tags"
+            "Project/code-overview",
+            "code-editor/write-class-method",
+            "Project/compiler",
       ]
     },
     {
       type: "category",
-      label: "4D Language",
+      label: "4D Language & ORDA",
       link: {
         type: "generated-index",
-        title: "4D Language",
+        title: "4D Language & ORDA",
         slug: "/category/4d-language",
         keywords: [
-          "language"
+          "language","orda"
         ],
         image: "/img/docusaurus.png"
       },
@@ -191,10 +161,10 @@ module.exports =
         },
         {
           type: "category",
-          label: "Commands",
+          label: "Commands by theme",
           link: {
             type: "generated-index",
-            title: "Commands",
+            title: "Commands by theme",
             slug: "/category/commands",
             keywords: [
               "commands"
@@ -2309,7 +2279,51 @@ module.exports =
             ],
             image: "/img/docusaurus.png"
           }
-        }
+        },
+                {
+          type: "category",
+          label: "ORDA",
+          link: {
+            type: "generated-index",
+            title: "ORDA",
+            slug: "/category/orda",
+            keywords: [
+              "orda"
+            ],
+            image: "/img/docusaurus.png"
+          },
+          items: [
+            "ORDA/overview",
+            "ORDA/dsmapping",
+            "ORDA/ordaClasses",
+            "ORDA/entities",
+            "ORDA/global-stamp",
+            "ORDA/datastores",
+            "ORDA/privileges",
+            "ORDA/client-server-optimization",
+            "ORDA/glossary"
+          ]
+        },
+        {
+          type: "category",
+          label: "Core Features",
+          link: {
+            type: "generated-index",
+            title: "Core features",
+            slug: "/category/core-features",
+            keywords: [
+              "features"
+            ],
+            image: "/img/docusaurus.png"
+          },
+          items: [
+            "Develop/processes",
+            "Develop/preemptive-processes",
+            "Develop-legacy/transactions",
+            "Tags/transformation-tags",
+            "Project/date-time-formats"
+          ]
+        },
       ]
     },
     {
@@ -3308,11 +3322,6 @@ module.exports =
         },
         {
           type: "doc",
-          label: "Build Application",
-          id: "Desktop/building"
-        },
-        {
-          type: "doc",
           label: "Labels",
           id: "Desktop/labels"
         }
@@ -3334,5 +3343,3 @@ module.exports =
         }
       ]
     }
-  ]
-}
