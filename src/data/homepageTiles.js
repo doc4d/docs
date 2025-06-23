@@ -80,13 +80,13 @@ title: (
           <Translate>Dependencies</Translate>
         </Link>
         <Link to="Desktop/building" >
-          <Translate>Application builder</Translate>
+          <Translate>Application Builder</Translate>
         </Link>
         <Link to="Debugging/basics" >
           <Translate>Debugger & logs</Translate>
         </Link>
         <Link to="Preferences/overview" >
-          <Translate>Application Preferences</Translate>
+          <Translate>Preferences</Translate>
         </Link>
       </div>
     ),
@@ -104,9 +104,13 @@ title: (
         <Link to="Concepts/about">
           <Translate>Concepts</Translate>
         </Link>
+        <Link to="commands/command-index">
+          <Translate>Command index</Translate>
+        </Link>
         <Link to="category/commands">
           <Translate>Commands by theme</Translate>
         </Link>
+
         <Link to="category/class-API-reference" >
           <Translate>Classes</Translate>
         </Link>
@@ -114,7 +118,7 @@ title: (
           <Translate>ORDA</Translate>
         </Link>
         <Link to="category/develop">
-          <Translate>Core features</Translate>
+          <Translate>Core development</Translate>
         </Link>
       </div>
     ),
