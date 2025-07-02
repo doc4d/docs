@@ -26,4 +26,7 @@ slug: /commands/theme/String
 |[<!-- INCLUDE #_command_.Split string.Syntax -->](../../commands-legacy/split-string.md)<br/>|
 |[<!-- INCLUDE #_command_.String.Syntax -->](../../commands-legacy/string.md)<br/>|
 |[<!-- INCLUDE #_command_.Substring.Syntax -->](../../commands-legacy/substring.md)<br/>|
+|[<!-- INCLUDE #_command_.Trim.Syntax -->](../trim.md)<br/>|
+|[<!-- INCLUDE #_command_.Trim end.Syntax -->](../trim-end.md)<br/>|
+|[<!-- INCLUDE #_command_.Trim start.Syntax -->](../trim-start.md)<br/>|
 |[<!-- INCLUDE #_command_.Uppercase.Syntax -->](../../commands-legacy/uppercase.md)<br/>|

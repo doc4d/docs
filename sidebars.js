@@ -1721,6 +1721,9 @@ module.exports =
                 "commands-legacy/split-string",
                 "commands-legacy/string",
                 "commands-legacy/substring",
+                "commands/trim",
+                "commands/trim-end",
+                "commands/trim-start",
                 "commands-legacy/uppercase"
               ]
             },
