@@ -82,7 +82,7 @@ This example compares the results obtained depending on the “current” separa
 
 [Bool](bool.md)  
 [GET SYSTEM FORMAT](get-system-format.md)  
-[String](string.md)  
+[String](../commands/string.md)  
 
 ## Properties
 
