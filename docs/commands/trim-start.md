@@ -30,7 +30,7 @@ The **Trim start** command <!--REF #_command_.Trim start.Summary--> removes **wh
 
 To return a new string with whitespace trimmed from both ends, use [`Trim`](./trim.md). To return a new string with whitespace trimmed from the end of *aString*, use [`Trim end`](./trim-end.md).
 
-This command is based upon Ecmascript specifications. **whitespace** is defined as [space characters](https://tc39.es/ecma262/multipage/ecmascript-language-lexical-grammar.html#sec-white-space) (space characters, tabs, etc.) and [line terminators](https://tc39.es/ecma262/multipage/ecmascript-language-lexical-grammar.html#sec-line-terminators) (LF, CR, etc.).
+This command is based upon Ecmascript specifications. **Whitespace** is defined as [space characters](https://tc39.es/ecma262/multipage/ecmascript-language-lexical-grammar.html#sec-white-space) (spaces, tabs, etc.) and [line terminators](https://tc39.es/ecma262/multipage/ecmascript-language-lexical-grammar.html#sec-line-terminators) (LF, CR, etc.).
 
 In the *aString* parameter, you can pass any text expression. It will be left untouched by the command. 
 
@@ -54,7 +54,7 @@ $output:=Trim start($input) //"Hello World!    "
 
 |  |  |
 | --- | --- |
-| Command number | XX |
+| Command number | 1854 |
 | Thread safe | &check; |
 
 
