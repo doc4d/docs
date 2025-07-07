@@ -27,7 +27,7 @@ There are three reserved characters that Num treats specially: the decimal separ
 * The decimal separator is interpreted as a decimal place and must appear embedded in a numeric string. By default, the command uses the decimal separator set by the operating system. You can modify this character using the *separator* parameter (see below).
 * The hyphen causes the number or exponent to be negative. The hyphen must appear before any negative numeric characters or after the “e” for an exponent. Except for the “e” character, if a hyphen is embedded in a numeric string, the portion of the string after the hyphen is ignored. For example, **Num**("123-456") returns 123, but **Num**("-9") returns -9.
 * The e or E causes any numeric characters to its right to be interpreted as the power of an exponent. The “e” must be embedded in a numeric string. Thus, **Num**("123e–2") returns 1.23.  
-Note that when the string includes more than one "e", conversion might give different results under Mac OS and under Windows.
+Note that when the string includes more than one "e", conversion might give different results under macOS and under Windows.
 
 The *separator* parameter designates a custom decimal separator for evaluating the *expression*. When the string to be evaluated is expressed with a decimal separator different from the system operator, the command returns an incorrect result. The *separator* parameter can be used in this case to obtain a correct evaluation. When this parameter is passed, the command does not take the system decimal separator into account. You can pass one or more characters.
 

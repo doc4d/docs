@@ -5,16 +5,28 @@ slug: /commands/string
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.String.Syntax-->**String** ( *expression* {; *format* {; *addTime*}} ) : Text<!-- END REF-->
+<!--REF #_command_.String.Syntax-->**String** ( *expression* {; *format* {; *addTime*}} ) : Text<br/>**String** ( *expression* ; *base* ) : Text<!-- END REF-->
 <!--REF #_command_.String.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
-| expression | Expression | &#8594;  | Expression for which to return the string form (can be Real, Integer, Long Integer, Date, Time, String, Text, Boolean, Undefined, or Null) |
+| expression | Expression | &#8594;  | Expression for which to return the string form (can be Real, Integer, Long Integer, Date, Time, Text, Boolean, Undefined, or Null) |
 | format | Integer, Text | &#8594;  | Display format |
 | addTime | Time | &#8594;  | Time to add on if expression is a date |
+| base | Integer | &#8594;  | Value between 2 and 36 that represents the radix if expression is a number|
 | Function result | Text | &#8592; | String form of the expression |
 
 <!-- END REF-->
+
+
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|21|Support of *base* parameter|
+
+</details>
+
+
 
 ## Description 
 
@@ -24,8 +36,15 @@ If you do not pass the optional *format* parameter, the string is returned with 
 
 The optional *addTime* parameter adds a time to a date in a combined format. It can only be used when the *expression* parameter is a date (see below).
 
-**Numeric Expressions**  
-If *expression* is a numeric expression (Real, Integer, Long Integer), you can pass an optional string format. Following are some examples:
+The optional *base* parameter can only be used with a numeric *expression*, it returns the number in the specified base. 
+
+### Numeric Expressions
+
+If *expression* is a numeric expression (Real, Integer, Long Integer), you can pass an optional parameter: either *format* (string) or *base* (integer). 
+
+#### *format* parameter
+
+The format is specified in the same way as it would be for a [number input on a form](../FormObjects/properties_Display.md#number-format). You can also pass the name of a custom style in *format*. The custom style name must be preceded by the `|` character. Following are some examples:
 
 | **Example**                        | **Result**           | **Comments**                    |
 | ---------------------------------- | -------------------- | ------------------------------- |
@@ -48,13 +67,35 @@ If *expression* is a numeric expression (Real, Integer, Long Integer), you can p
 | String(1/0)                        | "INF"                | Positive infinite number        |
 | String(-1/0)                       | "-INF"               | Negative infinite number        |
 
-(\*) The algorithm for converting real values into text is based on 13 significant digits.
+(\*) The algorithm for converting real values into text is based on 13 significant digits, see [`SET REAL COMPARISON LEVEL`](../commands-legacy/set-real-comparison-level.md).
 
-The format is specified in the same way as it would be for a number field on a form. See the section *Display formats* in the 4D Design Reference manual for more information about formatting numbers. You can also pass the name of a custom style in *format*. The custom style name must be preceded by the *“|”* character.
+#### *base* parameter
 
-**Note:** The **String** function is not compatible with "Integer 64 bits" type fields in compiled mode.
+You can also pass an optional *base* parameter (integer) to specify the radix in which the number should be returned. For example, this syntax allows you to convert numbers to hexadecimal strings. 
 
-**Date Expressions**  
+:::note
+
+If the specified number value is negative, the sign is preserved. This is the case even if the radix is 2; the returned string is > N, the positive binary representation of the number value preceded by a - sign (not the two's complement of the number value).
+
+:::
+
+| **Example**                        | **Result**           | **Comments**                    |
+| ---------------------------------- | -------------------- | ------------------------------- |
+| String(10;2)                       | "1010"              |  binary string    |
+| String(-10;2)                       | "-1010"      |   binary string (negative)|
+| String(254;16) | "fe" |     hexadecimal string  |
+| String(-16523461; 16)| "-fc20c5"   |  hexadecimal string (negative)  |
+
+
+:::note
+
+The **String** function is not compatible with "Integer 64 bits" type fields in compiled mode.
+
+:::
+
+
+### Date Expressions
+
 If *expression* is a Date expression and if you omit the *format* parameter, the string is returned using the default format specified in the system. 
 
 Otherwise, in the *format* parameter, you can pass:
@@ -62,19 +103,19 @@ Otherwise, in the *format* parameter, you can pass:
 * either a predefined format available though the following constants of the *Date Display Formats* theme (longint value): 
 
 
-| Constant                    | Value | Comment                                                                                                                         |  
-| --------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------- |  
+| Constant                    | Value | Comment   |  
+| --------------------------- | ----- | ------------------------------------- |  
 | Blank if null date          | 100   | To be added to the format constant. Indicates that in the case of a null value, 4D must return an empty string instead of zeros |  
-| Date RFC 1123               | 10    | Fri, 10 Sep 2010 13:07:20 GMT (see Notes)                                                                                       |  
-| Internal date abbreviated   | 6     | Dec 29, 2006                                                                                                                    |  
-| Internal date long          | 5     | December 29, 2006                                                                                                               |  
-| Internal date short         | 7     | 12/29/2006                                                                                                                      |  
-| Internal date short special | 4     | 12/29/06 (but 12/29/1896 or 12/29/2096)                                                                                         |  
-| ISO Date                    | 8     | 2006-12-29T00:00:00 (see Notes)                                                                                                 |  
-| ISO Date GMT                | 9     | 2010-09-13T16:11:53Z (see Notes)                                                                                                |  
-| System date abbreviated     | 2     | Sun, Dec 29, 2006                                                                                                               |  
-| System date long            | 3     | Sunday, December 29, 2006                                                                                                       |  
-| System date short           | 1     | 12/29/2006                                                                                                                      |  
+| Date RFC 1123               | 10    | Fri, 10 Sep 2010 13:07:20 GMT (see Notes)             |  
+| Internal date abbreviated   | 6     | Dec 29, 2006             |  
+| Internal date long          | 5     | December 29, 2006              |  
+| Internal date short         | 7     | 12/29/2006            |  
+| Internal date short special | 4     | 12/29/06 (but 12/29/1896 or 12/29/2096)     |  
+| ISO Date                    | 8     | 2006-12-29T00:00:00 (see Notes)             |  
+| ISO Date GMT                | 9     | 2010-09-13T16:11:53Z (see Notes)       |  
+| System date abbreviated     | 2     | Sun, Dec 29, 2006       |  
+| System date long            | 3     | Sunday, December 29, 2006       |  
+| System date short           | 1     | 12/29/2006           |  
     
 Examples:  
 ```4d  
@@ -90,9 +131,14 @@ Examples:
  $vsResult:=String(!2023-11-27!;"E dd/MM/yyyy zzzz") //"Mon 27/11/2023 GMT+01:00" in French timezone  
 ```
 
-**Note:** Formats can vary depending on system settings.
+:::note
 
-***addTime* parameter** 
+Formats can vary depending on system settings.
+
+:::
+
+#### *addTime* parameter
+
 When processing Date expressions, you can also pass a time in the *addTime* parameter. This parameter lets you combine a date with a time so that you can generate time stamps in compliance with current standards (ISO Date GMT and Date RFC 1123 constants). These formats are particularly useful in the context of xml and Web processing. The *addTime* parameter can only be used when the *expression* parameter is a date. 
 
 This parameter can be used with both predefined or pattern-based date formats. Examples:
@@ -103,7 +149,8 @@ This parameter can be used with both predefined or pattern-based date formats. E
 ```
   
   
-**Notes about combined date/time predefined formats:** 
+#### Notes about combined date/time predefined formats
+
 * The ISO Date GMT format corresponds to the ISO8601 standard, containing a date and a time expressed with respect to the time zone (GMT).  
 ```4d  
  $mydate:=String(Current date;ISO Date GMT;Current time) // returns, for instance, 2010-09-13T16:11:53Z  
@@ -129,27 +176,28 @@ The time expressed takes the time zone into account (GMT zone). If you only pass
  $mydate:=String(!2010-09-09!;Date RFC 1123) // returns Wed, 08 Sep 2010 22:00:00 GMT  
 ```
 
-**Time Expressions**  
+### Time Expressions
+
 If *expression* is a Time expression and if you omit the *format* parameter, the string is returned using the default HH:MM:SS format.
 
 Otherwise, in the *format* parameter, you can pass:
 
 * either a predefined format available though the following constants of the *Time Display Formats* theme (longint value):  
 
-| Constant                     | Value | Comment                                                                                                                                                                                                                               |  
-| ---------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |  
-| Blank if null time           | 100   | To be added to the format constant. Indicates that in the case of a null value, 4D must return an empty string instead of zeros                                                                                                       |  
-| HH MM                        | 2     | 01:02                                                                                                                                                                                                                                 |  
-| HH MM AM PM                  | 5     | 1:02 AM                                                                                                                                                                                                                               |  
-| HH MM SS                     | 1     | 01:02:03                                                                                                                                                                                                                              |  
-| Hour min                     | 4     | 1 hour 2 minutes                                                                                                                                                                                                                      |  
-| Hour min sec                 | 3     | 1 hour 2 minutes 3 seconds                                                                                                                                                                                                            |  
+| Constant                     | Value | Comment            |  
+| ---------------------------- | ----- | ------------------------------------ |  
+| Blank if null time           | 100   | To be added to the format constant. Indicates that in the case of a null value, 4D must return an empty string instead of zeros     |  
+| HH MM                        | 2     | 01:02         |  
+| HH MM AM PM                  | 5     | 1:02 AM           |  
+| HH MM SS                     | 1     | 01:02:03      |  
+| Hour min                     | 4     | 1 hour 2 minutes    |  
+| Hour min sec                 | 3     | 1 hour 2 minutes 3 seconds     |  
 | ISO time                     | 8     | 0000-00-00T01:02:03\. Corresponds to the ISO8601 standard and contains, in theory, a date and a time. Since this format does not support combined dates/times, the date part is filled with 0s. This format expresses the local time. |  
-| Min sec                      | 7     | 62 minutes 3 seconds                                                                                                                                                                                                                  |  
-| MM SS                        | 6     | 62:03                                                                                                                                                                                                                                 |  
-| System time long             | 11    | 1:02:03 AM HNEC (Mac only)                                                                                                                                                                                                            |  
-| System time long abbreviated | 10    | 1•02•03 AM (Mac only)                                                                                                                                                                                                                 |  
-| System time short            | 9     | 01:02:03                                                                                                                                                                                                                              |  
+| Min sec                      | 7     | 62 minutes 3 seconds    |  
+| MM SS                        | 6     | 62:03    |  
+| System time long             | 11    | 1:02:03 AM HNEC (Mac only)   |  
+| System time long abbreviated | 10    | 1•02•03 AM (Mac only)  |  
+| System time short            | 9     | 01:02:03      |  
     
 Examples:  
     
@@ -166,18 +214,22 @@ Examples:
  $vsResult:=String(?17:30:45?;"'It is' K a") //"It is 5 PM"  
 ```
 
-**String Expressions**  
+### String Expressions
+
 If *expression* is of the String or Text type, the command returns the same value as the one passed in the parameter. This can be useful more particularly in generic programming using pointers.  
 In this case, the *format* parameter, if passed, is ignored.
 
-**Boolean Expressions**  
+### Boolean Expressions
+
 If *expression* is of the Boolean type, the command returns the string “True” or “False” in the language of the application (for example, “Vrai” or “Faux” in a French version of 4D).  
 In this case, the *format* parameter, if passed, is ignored.
 
-**Undefined Expressions**  
+### Undefined Expressions
+
 If *expression* is evaluated to undefined, the command returns an empty string. This is useful when you expect the result of an expression (e.g. an object attribute) to be a string, even if it can be undefined.
 
-**Null Expressions**  
+### Null Expressions
+
 If *expression* is evaluated to Null, the command returns the "null" string. This is useful when you expect the result of an expression (e.g. an object attribute) to be a string, even if it can be null.
 
 ## See also 
