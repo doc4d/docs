@@ -24,7 +24,11 @@ Creating and installing 4D components is carried out directly from 4D:
 - You cannot use the datastore, standard tables, or data files in 4D components. However, a component can create and/or use tables, fields and data files using mechanisms of external databases. These are separate 4D databases that you work with using SQL commands.
 - A host project running in interpreted mode can use either interpreted or compiled components. A host project running in compiled mode cannot use interpreted components. In this case, only compiled components can be used.
 
+:::note
 
+Interpreted component code can be [edited directly from the host project](../Project/components.md#editing-component-code) if the context is supported. 
+
+:::
 
 
 ## Scope of language commands

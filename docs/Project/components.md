@@ -32,6 +32,34 @@ The "Contents" folder architecture is recommended for components if you want to 
 
 :::
 
+## Editing component code
+
+You can edit directly the code of a loaded component from the host project using the 4D IDE. Modifications can be immediately tested in the host project, without having to restart. 
+
+This feature is available in the following context:
+
+- the host project is running interpreted,
+- the component source code is available (not compiled),
+- the component files are stored locally (i.e. not in the [local cache](#local-cache-for-dependencies) of the dependency manager).
+
+In this context, an **Edit...** item is available when you right-click on the component name in the **Component Methods** tab of the Explorer. 
+
+![edit-component](../assets/en/Project/edit-component.png)
+
+When you select it, a dedicated tab is added (or highlighted if already added) in the Explorer. In this tab, the component code is editable in the following pages:
+
+![tab-component](../assets/en/Project/tab-component.png)
+
+- Project Methods
+- Database Methods ([on Web connection](../commands-legacy/on-web-connection-database-method.md), [on web authentication](../commands-legacy/on-web-authentication-database-method.md), [on host database event](../commands-legacy/on-host-database-event-database-method.md))
+- Classes
+- Project Form Methods
+
+Standard 4D IDE features are available for the component. You can execute the following actions:
+- add, duplicate, delete, edit/save [methods and classes](../Project/code-overview.md)
+- preview code, show/edit [documentation](../Project/documentation.md), display/edit [method properties](../Project/code-overview.md#project-method-properties), 
+- run methods. 
+
 
 
 ## Loading components
