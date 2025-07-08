@@ -49,6 +49,8 @@ In this context, an **Edit...** item is available when you right-click on the co
 When you select it, a dedicated tab is added (or highlighted if already added) in the Explorer. In this tab, the component code is editable in the following pages:
 
 ![tab-component](../assets/en/Project/tab-component.png)
+![tab-component](../assets/en/Project/tab-component.gif)
+
 
 - Project Methods
 - Database Methods ([on Web connection](../commands-legacy/on-web-connection-database-method.md), [on web authentication](../commands-legacy/on-web-authentication-database-method.md), [on host database event](../commands-legacy/on-host-database-event-database-method.md))
