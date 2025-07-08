@@ -44,7 +44,7 @@ This feature is available in the following context:
 
 In this context, an **Edit...** item is available when you right-click on the component name in the **Component Methods** tab of the Explorer. 
 
-![edit-component](../assets/en/Project/edit-component.png)
+![edit-component](../assets/en/Project/Edit-component.png)
 
 When you select it, a dedicated tab is added (or highlighted if already added) in the Explorer. In this tab, the component code is editable in the following pages:
 
