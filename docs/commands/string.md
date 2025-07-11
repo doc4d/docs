@@ -30,19 +30,30 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.String.Summary-->The String command returns the string form of the numeric, Date, Time, string or Boolean expression you pass in *expression*.<!-- END REF-->
+<!--REF #_command_.String.Summary-->The **String** command returns the string form of the numeric, Date, Time, string or Boolean expression you pass in *expression*.<!-- END REF-->
 
-If you do not pass the optional *format* parameter, the string is returned with the appropriate default format. If you pass *format*, you can force the result string to be of a specific format.
+If you do not pass any parameter, the string is returned with the appropriate default format. If you pass *format*, you can force the result string to be of a specific format.
 
 The optional *addTime* parameter adds a time to a date in a combined format. It can only be used when the *expression* parameter is a date (see below).
 
-The optional *base* parameter can only be used with a numeric *expression*, it returns the number in the specified base. 
+The optional *base* parameter can only be used with a numeric *expression*, it returns the number in the specified base (see below). 
 
 ### Numeric Expressions
 
-If *expression* is a numeric expression (Real, Integer, Long Integer), you can pass an optional parameter: either *format* (string) or *base* (integer). 
+When you use the **String** command with a numeric *expression* (Real, Integer, Long Integer), two syntaxes are available:
 
-#### *format* parameter
+- **String(number{;format})**
+- **String(number;base)**
+
+:::note
+
+The **String** function is not compatible with "Integer 64 bits" type fields in compiled mode.
+
+:::
+
+#### String(number{;format})
+
+If you do not pass the optional *format* parameter, the string is returned with the default number format.
 
 The format is specified in the same way as it would be for a [number input on a form](../FormObjects/properties_Display.md#number-format). You can also pass the name of a custom style in *format*. The custom style name must be preceded by the `|` character. Following are some examples:
 
@@ -69,13 +80,14 @@ The format is specified in the same way as it would be for a [number input on a 
 
 (\*) The algorithm for converting real values into text is based on 13 significant digits, see [`SET REAL COMPARISON LEVEL`](../commands-legacy/set-real-comparison-level.md).
 
-#### *base* parameter
+#### String(number;base)
 
-You can also pass an optional *base* parameter (integer) to specify the radix in which the number should be returned. For example, this syntax allows you to convert numbers to hexadecimal strings. 
+Using a *base* parameter (integer) triggers a specific mode that strictly follows the [`toString` EcmaScript specification regarding radix handling](https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-number.prototype.tostring). In the *base* parameter, pass the radix in which the number should be returned. For example, this syntax allows you to convert numbers to hexadecimal strings. 
 
-:::note
+:::note Notes
 
-If the specified number value is negative, the sign is preserved. This is the case even if the radix is 2; the returned string is > N, the positive binary representation of the number value preceded by a - sign (not the two's complement of the number value).
+- If the specified number value is negative, the sign is preserved. This is the case even if the radix is 2; the returned string is > N, the positive binary representation of the number value preceded by a - sign (not the two's complement of the number value). 
+- If the specified number value is not defined, the "Nan" string is returned. 
 
 :::
 
@@ -85,13 +97,11 @@ If the specified number value is negative, the sign is preserved. This is the ca
 | String(-10;2)                       | "-1010"      |   binary string (negative)|
 | String(254;16) | "fe" |     hexadecimal string  |
 | String(-16523461; 16)| "-fc20c5"   |  hexadecimal string (negative)  |
+| String(Log(-1); 10)| "NaN"   |  Not a number  |
 
 
-:::note
 
-The **String** function is not compatible with "Integer 64 bits" type fields in compiled mode.
 
-:::
 
 
 ### Date Expressions

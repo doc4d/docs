@@ -30,10 +30,17 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Num.Summary-->The **Num** command returns the numeric form of the String, Boolean or numeric expression you pass in *expression*.<!-- END REF-->
 
-When *expression* is of the string type, you can use the *separator* parameter or the *base* parameter (see below).
+When *expression* is of the string type, you can use a *separator* parameter or a *base* parameter (see below).
 
 
 ### String Expressions
+
+When you use the **Num** command with a string *expression*, two syntaxes are available:
+
+- **Num(string{;separator})**
+- **Num(string;base)**
+
+#### Num(string{;separator})
 
 If *expression* consists only of one or more alphabetic characters, **Num** returns a zero. If *expression* includes alphabetic and numeric characters, the command ignores the alphabetic characters. Thus, it transforms the string "a1b2c3" into the number 123. 
 
@@ -50,26 +57,28 @@ The *separator* parameter designates a custom decimal separator for evaluating t
 
 :::note
 
-The [GET SYSTEM FORMAT](../commands-legacy/get-system-format.md) command can be used to find out the current decimal separator as well as several other regional system parameters.
+The [`GET SYSTEM FORMAT`](../commands-legacy/get-system-format.md) command can be used to find out the current decimal separator as well as several other regional system parameters.
 
 :::
 
-#### *base* parameter
+#### Num(string;base)
 
-You can pass an optional *base* parameter (integer) to specify the radix of the number expressed as string in *expression*. You can can pass a value between 2 and 36. For example, this syntax allows you to convert hexadecimal strings to numbers. 
+Using a *base* parameter (integer) triggers a specific mode that strictly follows the [`parseInt` EcmaScript specification](https://tc39.es/ecma262/multipage/global-object.html#sec-parseint-string-radix) and allows you to specify the radix of the number expressed as string in *expression*. For example, this syntax allows you to convert hexadecimal strings to numbers. 
 
-If *expression* string evaluates to a decimal number, only the integer part is converted.
+In the *base* parameter, pass the radix of the number in *expression*. You can pass any integer value between 2 and 36. 
+
+If *expression* evaluates to a decimal number, only the integer part is converted. In compliance with the EcmaScript specification, any character that is not a n
 
 
 
 
 ### Boolean Expressions  
 
-If you pass a Boolean expression, Num returns 1 if the expression is True; otherwise, it returns *0* (zero).
+If you pass a Boolean expression, **Num** returns 1 if the expression is True; otherwise, it returns *0* (zero).
 
 ### Numeric Expressions  
 
-If you pass a numeric expression in the *expression* parameter, Num returns the value passed in the *expression* parameter as is. This can be useful more particularly in the case of generic programming using pointers.
+If you pass a numeric expression in the *expression* parameter, **Num** returns the value passed in the *expression* parameter as is. This can be useful more particularly in the case of generic programming using pointers.
 
 ### Undefined Expressions
 
@@ -77,15 +86,15 @@ If *expression* evaluates to undefined, the command returns 0 (zero). This is us
 
 ## Example 1 
 
-The following example illustrates how Num works when passed a string argument. Each line assigns a number to the *vResult* variable. The comments describe the results:
+The following example illustrates how **Num** works when passed a single string argument:
 
 ```4d
- vResult:=Num("ABCD") // vResult gets 0
- vResult:=Num("A1B2C3") // vResult gets 123
- vResult:=Num("123") // vResult gets 123
- vResult:=Num("123.4") // vResult gets 123.4
- vResult:=Num("–123") // vResult gets –123
- vResult:=Num("–123e2") // vResult gets –12300
+$result:=Num("ABCD") // 0
+$result:=Num("A1B2C3") // 123
+$result:=Num("123") // 123
+$result:=Num("123.4") // 123.4
+$result:=Num("–123") // –123
+$result:=Num("–123e2") // –12300
 ```
 
 ## Example 2 
@@ -113,7 +122,7 @@ This example compares the results obtained depending on the “current” separa
 
 ## Example 4 
 
-This examples illustrate the use of the *base* parameter:
+This example illustrates the use of the *base* syntax:
 
 ```4d
 $result:=Num("123") // 123 (default base 10)
@@ -122,8 +131,7 @@ $result:=Num("ff";16) // 255 (lower-case hexadecimal)
 $result:=Num("0xFF") // 0
 $result:=Num("0xFF";16) // 255
 $result:=Num("2";2) // 0
-$result:=Num("10.3";16)
-// return 16
+$result:=Num("10.3";16) // 16
 
 ```
 
@@ -132,7 +140,7 @@ $result:=Num("10.3";16)
 
 [Bool](../commands-legacy/bool.md)  
 [GET SYSTEM FORMAT](../commands-legacy/get-system-format.md)  
-[String](../commands/string.md)  
+[String](./string.md)  
 
 ## Properties
 
