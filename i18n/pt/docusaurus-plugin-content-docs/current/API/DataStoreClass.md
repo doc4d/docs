@@ -48,7 +48,7 @@ Um [Datastore](ORDA/dsMapping.md#datastore) é o objeto de interface fornecido p
 
 #### Descrição
 
-Cada classe de dados em um datastore está disponível como uma propriedade do [objeto DataStore] (ORDA/dsMapping.md#datastore). O objeto retornado <!-- REF DataStoreClass.dataclassName.Summary -->contém uma descrição da dataclass<!-- END REF -->.
+Cada classe de dados em um datastore está disponível como uma propriedade do [objeto DataStore](ORDA/dsMapping.md#datastore). O objeto retornado <!-- REF DataStoreClass.dataclassName.Summary -->contém uma descrição da dataclass<!-- END REF -->.
 
 #### Exemplo
 
@@ -170,7 +170,7 @@ O objeto retornado contém as propriedades abaixo:
 |             | *tableName* |               | Object     | Tabla encriptada ou cifrada                                                                                                         |
 |             |             | name          | Text       | Nombre da tabela                                                                                                                    |
 |             |             | num           | Number     | Número de tabela                                                                                                                    |
-|             |             | isEncryptable | Parâmetros | Verdadero se a tabela estiver declarada como encriptada no arquivo de estrutura                                                     |
+|             |             | isEncryptable | Parâmetros | True se a tabela estiver declarada como encriptada no arquivo de estrutura                                                          |
 |             |             | isEncrypted   | Parâmetros | True se os registros da tabela estiverem encriptados no arquivo de dados                                                            |
 
 (\*) a chave de criptografia pode ser fornecida:
@@ -657,7 +657,7 @@ A função também retornará `True` se o datastore tiver sido bloqueado por out
 
 A função `.makeSelectionsAlterable()` <!-- REF #DataStoreClass.makeSelectionsAlterable().Summary -->define todas as seleções de entidades como alteráveis por padrão nos datastores do aplicativo atual<!-- END REF --> (incluindo [datastores remotos](ORDA/remoteDatastores.md)). Ele deve ser usado uma vez, por exemplo, no método de banco de dados `On Startup`.
 
-Quando essa função não é chamada, as novas seleções de entidades podem ser compartilháveis, dependendo da natureza de seu "pai" ou [como elas são criadas] (ORDA/entities.md#shareable-or-alterable-entity-selections).
+Quando essa função não é chamada, as novas seleções de entidades podem ser compartilháveis, dependendo da natureza de seu "pai" ou [como elas são criadas](ORDA/entities.md#shareable-or-alterable-entity-selections).
 
 > Essa função não modifica as seleções de entidades criadas por [`.copy()`](./EntitySelectionClass.md#copy) ou `OB Copy` quando a opção explícita `ck shared` é utilizada.
 
@@ -1005,7 +1005,7 @@ Para uma descrição do formato de log do pedido ORDA, por favor, consulte a se�
 Para criar um registo de pedidos ORDA do lado do cliente, chame esta função numa máquina remota. O registro pode ser enviado para um arquivo ou para a memória, dependendo do parâmetro:
 
 - Se você tiver passado um objeto *file* criado com o comando `File`, os dados de registro serão gravados nesse arquivo como uma coleção de objetos (formato JSON). Cada objeto representa uma petição.<br/>Se o arquivo não existir, será criado. No caso contrário, ou seja, se o arquivo já existir, os novos dados de registro serão adicionados a ele.
- Se chamar a.startRequestLog() com um arquivo enquanto se iniciou previamente um registro na memória, o registro em memória para e é esvaziado.
+  Se chamar a.startRequestLog() com um arquivo enquanto se iniciou previamente um registro na memória, o registro em memória para e é esvaziado.
 
 > Deve adicionar manualmente um caractere \N ao final do arquivo para realizar uma validação JSON
 

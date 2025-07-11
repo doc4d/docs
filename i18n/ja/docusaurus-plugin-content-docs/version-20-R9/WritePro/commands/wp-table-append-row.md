@@ -19,17 +19,17 @@ displayed_sidebar: docs
 
 ## 説明
 
-**WP Table append row** コマンドは<!--REF #_command_.WP Table append row.Summary-->*tableRef* 引数で指定した表組に行を一つ追加し、その中に*value* or a *valueColl* で指定した値を入れ、それに対応する行レンジオブジェクトを返します<!-- END REF-->
+The **WP Table append row** command<!--REF #_command_.WP Table append row.Summary--> appends one row to the *tableRef* table, fills it with *value*(s) or a *valueColl* collection, and returns the corresponding row range object.<!-- END REF-->
 
 このコマンドは2種類のシンタックスをサポートします:
 
 - **引数として値を使用:**
- *value* 引数を使用して追加した値の分だけ行内にセルが追加されます。 異なる型の、任意の数の値を渡すことができます。
+  *value* 引数を使用して追加した値の分だけ行内にセルが追加されます。 異なる型の、任意の数の値を渡すことができます。
 
 - **引数として値のコレクションを使用(*valueColl)*:**
- *valueColl* コレクション内の値を使用して行内に値を入れます。 コレクション内の各要素が行内のセルに対応します。
+  *valueColl* コレクション内の値を使用して行内に値を入れます。 コレクション内の各要素が行内のセルに対応します。
 
- 以下の型の値が両シンタックスにおいてサポートされます: テキスト、数値、時間、日付、ピクチャー、(行の要素を返すフォーミュラまたは命名フォーミュラを格納した)オブジェクト。
+  以下の型の値が両シンタックスにおいてサポートされます: テキスト、数値、時間、日付、ピクチャー、(行の要素を返すフォーミュラまたは命名フォーミュラを格納した)オブジェクト。
 
 デフォルトのセルの揃えは値の型によります:
 

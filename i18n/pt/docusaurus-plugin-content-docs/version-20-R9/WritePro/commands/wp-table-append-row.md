@@ -8,33 +8,33 @@ displayed_sidebar: docs
 
 <!--REF #_command_.WP Table append row.Params-->
 
-| Parâmetro | Tipo                                      |                             | Descrição                                     |
-| --------- | ----------------------------------------- | --------------------------- | --------------------------------------------- |
-| tableRef  | Object                                    | &#8594; | Table reference                               |
-| value     | Text, Number, Time, Date, Picture, Object | &#8594; | Value(s) to set in the row |
-| valueColl | Collection                                | &#8594; | Collection of values to set in the row        |
-| Resultado | Object                                    | &#8592; | Row range object                              |
+| Parâmetro | Tipo                                      |                             | Descrição                                               |
+| --------- | ----------------------------------------- | --------------------------- | ------------------------------------------------------- |
+| tableRef  | Object                                    | &#8594; | Referência da tabela                                    |
+| value     | Text, Number, Time, Date, Picture, Object | &#8594; | Valor(es) a serem definidos na linha |
+| valueColl | Collection                                | &#8594; | Collection of values to set in the row                  |
+| Resultado | Object                                    | &#8592; | Objeto intervalo linha                                  |
 
 <!-- END REF-->
 
 ## Descrição
 
-he **WP Table append row** command<!--REF #_command_.WP Table append row.Summary-->T appends one row to the *tableRef* table, fills it with *value*(s) or a *valueColl* collection, and returns the corresponding row range object.<!-- END REF-->
+The **WP Table append row** command<!--REF #_command_.WP Table append row.Summary--> appends one row to the *tableRef* table, fills it with *value*(s) or a *valueColl* collection, and returns the corresponding row range object.<!-- END REF-->
 
 The command supports two syntaxes:
 
 - **Using values as parameters:**
- Adds as many cells in the row as there are values provided in the *value* parameter(s). You can pass any number of values of different types.
+  Adds as many cells in the row as there are values provided in the *value* parameter(s). You can pass any number of values of different types.
 
 - **Using a collection of values (*valueColl)*:**
- Fills the row with values from the *valueColl* collection. Each element of the collection corresponds to a cell in the row.
+  Fills the row with values from the *valueColl* collection. Each element of the collection corresponds to a cell in the row.
 
- The following value types are supported in both syntaxes: Text, Number, Time, Date, Picture and Object (formulas or named formulas returning a row element).
+  The following value types are supported in both syntaxes: Text, Number, Time, Date, Picture and Object (formulas or named formulas returning a row element).
 
 The default cell alignment will depend on the value type:
 
-- text: left aligned
-- pictures: centered
+- texto: alinhada esquerda
+- imagens: centralizada
 - other types (numbers, date, and time): right aligned
 
 :::note Notas

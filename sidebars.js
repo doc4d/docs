@@ -64,6 +64,13 @@ module.exports =
           "Project/compiler",
           "Desktop/building",
           {
+               type: "category",
+               label: "Dababase structure",
+               items: [
+                 "Develop/field-properties",
+                      ]
+            },
+          {
            type: "category",
            label: "Debugger & logs",
            items: [
@@ -818,7 +825,7 @@ module.exports =
               },
               items: [
                 "commands-legacy/change-licenses",
-                "commands-legacy/create-deployment-license",
+                "commands/create-deployment-license",
                 "commands-legacy/is-license-available",
                 "commands/license-info",
                 "commands-legacy/license-usage",
@@ -856,7 +863,7 @@ module.exports =
                 "commands-legacy/listbox-get-number-of-rows",
                 "commands-legacy/listbox-get-objects",
                 "commands-legacy/listbox-get-print-information",
-                "commands-legacy/listbox-get-property",
+                "commands/listbox-get-property",
                 "commands-legacy/listbox-get-row-color",
                 "commands-legacy/listbox-get-row-color-as-number",
                 "commands-legacy/listbox-get-row-font-style",
@@ -884,7 +891,7 @@ module.exports =
                 "commands-legacy/listbox-set-headers-height",
                 "commands-legacy/listbox-set-hierarchy",
                 "commands-legacy/listbox-set-locked-columns",
-                "commands-legacy/listbox-set-property",
+                "commands/listbox-set-property",
                 "commands-legacy/listbox-set-row-color",
                 "commands-legacy/listbox-set-row-font-style",
                 "commands-legacy/listbox-set-row-height",
@@ -1031,6 +1038,7 @@ module.exports =
                 "commands-legacy/object-get-coordinates",
                 "commands-legacy/object-get-corner-radius",
                 "commands-legacy/object-get-data-source",
+                "commands/object-get-data-source-formula",
                 "commands-legacy/object-get-drag-and-drop-options",
                 "commands-legacy/object-get-enabled",
                 "commands-legacy/object-get-enterable",
@@ -1079,6 +1087,7 @@ module.exports =
                 "commands-legacy/object-set-coordinates",
                 "commands-legacy/object-set-corner-radius",
                 "commands-legacy/object-set-data-source",
+                "commands/object-set-data-source-formula",
                 "commands-legacy/object-set-drag-and-drop-options",
                 "commands-legacy/object-set-enabled",
                 "commands-legacy/object-set-enterable",
@@ -2245,6 +2254,7 @@ module.exports =
             "API/TCPConnectionClass",
             "API/TCPEventClass",
             "API/TCPListenerClass",
+            "API/VectorClass",
             "API/WebFormClass",
             "API/WebFormItemClass",
             "API/WebServerClass",
@@ -3249,6 +3259,10 @@ module.exports =
                 "aikit/Classes/openaichatcompletionsstreamresult",
                 "aikit/Classes/openaichathelper",
                 "aikit/Classes/openaichoice",
+                "aikit/Classes/openaiembedding",
+                "aikit/Classes/openaiembeddingsapi",
+                "aikit/Classes/openaiembeddingsparameters",
+                "aikit/Classes/openaiembeddingsresult",
                 "aikit/Classes/openaierror",
                 "aikit/Classes/openaiimage",
                 "aikit/Classes/openaiimageparameters",
@@ -3284,17 +3298,17 @@ module.exports =
         {
           type: "link",
           label: "4D Progress",
-          href: "https://doc.4d.com/4Dv20R9/4D/20-R9/4D-Progress.100-7545461.en.html"
+          href: "https://doc.4d.com/4Dv20R10/4D/20-R10/4D-Progress.100-7614210.en.html"
         },
         {
           type: "link",
           label: "4D SVG",
-          href: "https://doc.4d.com/4Dv20R9/4D/20-R9/4D-SVG-Component.100-7546332.en.html"
+          href: "https://doc.4d.com/4Dv20R10/4D/20-R10/4D-SVG-Component.100-7614300.en.html"
         },
         {
           type: "link",
           label: "4D Widgets",
-          href: "https://doc.4d.com/4Dv20R9/4D/20-R9/4D-Widgets.100-7546981.en.html"
+          href: "https://doc.4d.com/4Dv20R10/4D/20-R10/4D-Widgets.100-7614949.en.html"
         },
         "Extensions/develop-components",
         "Extensions/develop-plug-ins"
