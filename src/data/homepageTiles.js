@@ -95,14 +95,14 @@ title: (
     <>
       <i class="fa-solid fa-code" style={{ marginRight: '0.6rem', color: '#6c63ff' }}></i>
       <Translate id="homepage.sections.language.title">
-          4D Language & ORDA
+          Core Development
       </Translate>
     </>
   ),
     links: (
       <div className="homepageLinks">
         <Link to="Concepts/about">
-          <Translate>Concepts</Translate>
+          <Translate>4D Language Concepts</Translate>
         </Link>
         <Link to="commands/command-index">
           <Translate>Command index</Translate>
@@ -118,7 +118,7 @@ title: (
           <Translate>ORDA</Translate>
         </Link>
         <Link to="category/develop">
-          <Translate>Core development</Translate>
+          <Translate>Back-end features</Translate>
         </Link>
       </div>
     ),
