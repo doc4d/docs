@@ -58,7 +58,7 @@ title: UDPEvent
 
 #### 説明
 
-The `.port` property contains <!-- REF #UDPEvent.port.Summary -->the port number of the remote machine<!-- END REF -->.
+`.port` プロパティには<!-- REF #UDPEvent.port.Summary -->リモートマシンのポート番号<!-- END REF --> が格納されています。
 
 <!-- END REF -->
 
@@ -70,11 +70,11 @@ The `.port` property contains <!-- REF #UDPEvent.port.Summary -->the port number
 
 #### 説明
 
-The `.type` property contains <!-- REF #UDPEvent.type.Summary -->the type of the event<!-- END REF -->. とりうる値:
+`.type` プロパティには<!-- REF #UDPEvent.type.Summary -->イベントのタイプ<!-- END REF --> が格納されています。 とりうる値:
 
 - `"data"`: データが受信されたことを表します。
-- `"error"`: Indicates that an error occurred during the UDPSocket.
-- `"terminate"`: Indicates that the UDPSocket is about to be released.
+- `"error"`: UDPSocket の最中にエラーが発生したことを示します。
+- `"terminate"`: UPDSocket がリリースされる直前であることを示します。
 
 <!-- END REF -->
 
