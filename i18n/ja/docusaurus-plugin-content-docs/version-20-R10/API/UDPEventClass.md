@@ -3,7 +3,7 @@ id: UDPEventClass
 title: UDPEvent
 ---
 
-The `UDPEvent` class provides information about events occurring during the lifecycle of a UDP socket. It is generated when a [UDPSocket](UDPSocketClass.md) is opened and is utilized in callbacks `onData`, `onError`, and `onTerminate`.
+`UDPEvent` クラスはUDP ソケットのライフサイクル中に発生するイベントに関する情報を提供します。 これは[UDPSocket](UDPSocketClass.md) が開いた時に生成され、`onData`、`onError`、および `onTerminate` などのコールバックの中で使用されます。
 
 <details><summary>履歴</summary>
 
@@ -13,9 +13,9 @@ The `UDPEvent` class provides information about events occurring during the life
 
 </details>
 
-### UDPEvent Object
+### UDPEvent オブジェクト
 
-A `UDPEvent` object is immutable and non-streamable.
+`UDPEvent` オブジェクトは変更不可であり、ストリーム不可です。
 
 次のプロパティを利用することができます:
 
@@ -34,7 +34,7 @@ A `UDPEvent` object is immutable and non-streamable.
 
 #### 説明
 
-The `.data` property contains <!-- REF #UDPEvent.data.Summary -->the data associated with the event<!-- END REF -->. It is only valid for events of type "data".
+`.data` プロパティには、<!-- REF #UDPEvent.data.Summary -->イベントに関連づけられたデータ<!-- END REF --> が格納されています。 これは"data" 型のイベントにおいてのみ有効です。
 
 <!-- END REF -->
 
@@ -46,7 +46,7 @@ The `.data` property contains <!-- REF #UDPEvent.data.Summary -->the data associ
 
 #### 説明
 
-The `.ip` property contains <!-- REF #UDPEvent.ip.Summary -->the IP address of the remote machine<!-- END REF -->.
+`.ip` プロパティには<!-- REF #UDPEvent.ip.Summary -->リモートマシンの IP アドレス<!-- END REF --> が格納されています。
 
 <!-- END REF -->
 
