@@ -78,7 +78,7 @@ Cuando esta propiedad está desactivada, se desactiva todo menú emergente asoci
 
 [`OBJECT Get enterable`](../commands-legacy/object-get-enterable.md) - [`OBJECT SET ENTERABLE`](../commands-legacy/object-set-enterable.md)
 
-#### See alos
+#### Ver también
 
 [`FORM GET ENTRY ORDER`](../commands-legacy/form-get-entry-order.md) - [`FORM SET ENTRY ORDER`](../commands-legacy/form-set-entry-order.md)
 
