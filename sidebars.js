@@ -64,9 +64,16 @@ module.exports =
             },
             "Project/components",
             "Project/date-time-formats",
-            "Project/documentation"
-          ]
-        },
+            "Project/documentation",
+            {
+               type: "category",
+               label: "Dababase structure",
+               items: [
+                 "Develop/field-properties",
+                      ]
+            }
+                 ]
+            },
         {
           type: "category",
           label: "Development Environment",
@@ -1079,6 +1086,7 @@ module.exports =
                 "commands-legacy/object-get-coordinates",
                 "commands-legacy/object-get-corner-radius",
                 "commands-legacy/object-get-data-source",
+                "commands/object-get-data-source-formula",
                 "commands-legacy/object-get-drag-and-drop-options",
                 "commands-legacy/object-get-enabled",
                 "commands-legacy/object-get-enterable",
@@ -1127,6 +1135,7 @@ module.exports =
                 "commands-legacy/object-set-coordinates",
                 "commands-legacy/object-set-corner-radius",
                 "commands-legacy/object-set-data-source",
+                "commands/object-set-data-source-formula",
                 "commands-legacy/object-set-drag-and-drop-options",
                 "commands-legacy/object-set-enabled",
                 "commands-legacy/object-set-enterable",
@@ -2297,6 +2306,8 @@ module.exports =
             "API/TCPConnectionClass",
             "API/TCPEventClass",
             "API/TCPListenerClass",
+            "API/UDPEventClass",
+            "API/UDPSocketClass",
             "API/VectorClass",
             "API/WebFormClass",
             "API/WebFormItemClass",
@@ -2867,6 +2878,10 @@ module.exports =
                 "aikit/Classes/openaichatcompletionsstreamresult",
                 "aikit/Classes/openaichathelper",
                 "aikit/Classes/openaichoice",
+                "aikit/Classes/openaiembedding",
+                "aikit/Classes/openaiembeddingsapi",
+                "aikit/Classes/openaiembeddingsparameters",
+                "aikit/Classes/openaiembeddingsresult",
                 "aikit/Classes/openaierror",
                 "aikit/Classes/openaiimage",
                 "aikit/Classes/openaiimageparameters",
@@ -2902,17 +2917,17 @@ module.exports =
         {
           type: "link",
           label: "4D Progress",
-          href: "https://doc.4d.com/4Dv20R9/4D/20-R9/4D-Progress.100-7545461.en.html"
+          href: "https://doc.4d.com/4Dv20R10/4D/20-R10/4D-Progress.100-7614210.en.html"
         },
         {
           type: "link",
           label: "4D SVG",
-          href: "https://doc.4d.com/4Dv20R9/4D/20-R9/4D-SVG-Component.100-7546332.en.html"
+          href: "https://doc.4d.com/4Dv20R10/4D/20-R10/4D-SVG-Component.100-7614300.en.html"
         },
         {
           type: "link",
           label: "4D Widgets",
-          href: "https://doc.4d.com/4Dv20R9/4D/20-R9/4D-Widgets.100-7546981.en.html"
+          href: "https://doc.4d.com/4Dv20R10/4D/20-R10/4D-Widgets.100-7614949.en.html"
         },
         "Extensions/develop-components",
         "Extensions/develop-plug-ins"

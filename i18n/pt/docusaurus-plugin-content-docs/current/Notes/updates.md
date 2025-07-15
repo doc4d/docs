@@ -5,30 +5,31 @@ title: Notas de lançamento
 
 ## 4D 20 R10
 
-#### Destaques
-
-- Handling of [ORDA events on data](../ORDA/orda-events.md).
-
-## 4D 20 R10
-
 Leia [**O que há de novo no 4D 20 R10**](https://blog.4d.com/en-whats-new-in-4d-20-R10/), o post do blog que lista todos os novos recursos e aprimoramentos em 4D 20 R10.
 
 #### Destaques
 
+- Handling of [ORDA events on data](../ORDA/orda-events.md).
 - Nova opção `connectionTimeout` no parâmetro [`options`](../API/TCPConnectionClass.md#options-parameter) da função [`4D.TCPConnection.new()`](../API/TCPConnectionClass.md#4dtcpconnectionnew).
 - New [`4D.Vector`](../API/VectorClass.md) class to process and compare vectors, usually calculated by AIs.
 - Os UUIDs em 4D agora são gerados na **versão 7**. In previous 4D releases, they were generated in version 4.
+- New [`UDPSocket`](../API/UDPSocketClass.md) and [`UDPEvent`](../API/UDPEventClass.md) classes to send data using UDP sockets. Support of detailed logging for UDP events in the [`4DTCPUDPLog.txt`](../Debugging/debugLogFiles.md#4dtcpudplogtxt) log file (renamed from `4DTCPLog.txt`).
 - [Automatic selection of licenses to embed](../Desktop/building.md#application-automatically-embedding-available-licenses) in the Build application dialog box, modified [`Create deployment license`](../commands/create-deployment-license.md) command, new [`AutomaticLicenseIntegration`](https://doc.4d.com/4Dv20R10/4D/20-R10/AutomaticLicenseIntegration.300-7611090.en.html) BuildApplication xml key.
 - Enhanced security for formula copy/paste in [4D Write Pro](../WritePro/managing-formulas.md) and [styled text areas](../FormObjects/input_overview.md): formulas copied from outside the current 4D application are now always pasted as values only.
+- 4D AIKit component: new [OpenAIEmbeddingsAPI class](../aikit/Classes/OpenAIEmbeddingsAPI.md) to create embeddings using OpenAI's API.
+- You can now [associate a class](../Develop/field-properties.md) to an object field in the structure editor.
+- Automatic handling of [recursive dependencies](../Project/components.md#automatic-dependency-resolution).
 - Línguagem 4D:
     - For consistency, [`Create entity selection`](../commands/create-entity-selection.md) and [`USE ENTITY SELECTION`](../commands/use-entity-selection.md) commands have been moved from the ["4D Environment"](../commands/theme/4D_Environment.md) to the ["Selection"](../commands/theme/Selection.md) themes.
     - New [`OBJECT SET DATA SOURCE FORMULA`](../commands/object-set-data-source-formula.md) and [`OBJECT Get data source formula`](../commands/object-get-data-source-formula.md) commands to assign and read `Formula` objects as data sources for form objects.
     - [`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md) e [`LISTBOX Get property`](../commands/listbox-get-property.md) suporta três novas constantes: `lk current item`, `lk current item position` e `lk selected items expression`.
+- [**Fixed bug list**](https://bugs.4d.fr/fixedbugslist?version=20_R10): list of all bugs that have been fixed in 4D 20 R10.
 
 #### Mudanças de comportamento
 
 - On Windows, current printer fonts intended only for printing (i.e. not usable on screen) are no longer loaded by 4D at startup.
 - The *MeCab* library has been removed. This change only affects the processing of Japanese text.
+- When an object variable or parameter is declared with a ["cs" class](../Concepts/classes.md#cs) type, assigning it with an object instance of a different class now generates a syntax error.
 
 ## 4D 20 R9
 
@@ -36,18 +37,18 @@ Leia [**O que há de novo no 4D 20 R9**](https://blog.4d.com/en-whats-new-in-4d-
 
 #### Destaques
 
+- The [*MeCab* library](../settings/database.md#support-of-mecab-japanese-version) is now deprecated and will be removed in the next release.
 - Suporte de [tokens de sessão](../WebServer/sessions.md#session-token-otp) manipulado com as novas funções [`Session.createOTP()`](../API/SessionClass.md#createotp) e [`Session.restore()`](../API/SessionClass.md#restore).
 - O assistente de etiqueta agora usa o editor de fórmula para adicionar ou editar fórmulas na [área de design de etiqueta](../Desktop/labels.md#label-preview).
-- New [`TCPListener`](../API/TCPListenerClass.md) class to create TCP server connections; new properties in related classes: `address`, `listener` and `port` in [`TCPConnection`](../API/TCPConnectionClass.md) class, `ip` and `port` in [`TCPEvent`](../API/TCPEventClass.md) class.
-- Deprecated commands and constants now generate specific warnings in the [live checker and the compiler](../code-editor/write-class-method.md#warnings-and-errors). Você pode saber se um comando está obsoleto usando o comando [`Command name`](../commands/command-name.md).
+- Nova classe [`TCPListener`](../API/TCPListenerClass.md) para criar conexões de servidor TCP; novas propriedades em classes relacionadas: `address`, `listener` e `port` em a classe [`TCPConnection`](../API/TCPConnectionClass.md), `ip` e `port` em a classe [`TCPEvent`](../API/TCPEventClass.md).
+- Os comandos e constantes obsoletos agora geram warnings específicos no [live checker e no compilador](../code-editor/write-class-method.md#warnings-and-errors). Você pode saber se um comando está obsoleto usando o comando [`Command name`](../commands/command-name.md).
 - Novos comandos [WA SET CONTEXT](../commands/wa-set-context.md) e [WA Get context](../commands/wa-get-context.md) para controlar o conteúdo de [$4d](../FormObjects/webArea_overview.md#4d-object) em áreas da Web.
-- New [`RDP optimization` database parameter](../commands-legacy/set-database-parameter.md#rdp-optimization-133) to optimize for instance shared clipboard when using Remote Desktop Protocol with 4D.
+- Novo [parâmetro de banco de dados `RD`](../commands-legacy/set-database-parameter.md#rdp-optimization-133) para otimizar, por exemplo, a área de transferência compartilhada ao usar o protocolo remoto desktop com 4D.
 - Os componentes interpretados agora podem ser [editados a partir do projeto host](../Extensions/develop-components.md#editing-components-from-the-host).
 - [Licencias](../Admin/licenses.md) são agora atualizadas automaticamente na inicialização.
-- New [4D AIKit component](../aikit/overview.md) enabling interaction with third-party AI APIs.
-- The following VP command callbacks now wait for all 4D custom functions to complete their calculations: [VP IMPORT DOCUMENT](../ViewPro/commands/vp-import-document.md), [VP IMPORT FORM BLOB](../ViewPro/commands/vp-import-from-blob.md), [VP IMPORT FROM OBJECT](../ViewPro/commands/vp-import-from-object.md), and [VP FLUSH COMMANDS](../ViewPro/commands/vp-flush-commands.md).
-- New [4D Netkit](https://developer.4d.com/4D-NetKit/) features to manage Google and Microsoft 365 calendars; ability to use the host web server for OAuth 2.0 authentication.
-- The [*MeCab* library](../settings/database.md#support-of-mecab-japanese-version) is now deprecated and will be removed in the next release.
+- Nova [4D AIKit component](../aikit/overview.md) permitindo a interação com APIs de terceiros.
+- Os seguintes comandos de callbacks de comando VP agora esperam que todas as funções personalizadas 4D completem seus cálculos: [VP IMPORT DOCUMENT](../ViewPro/commands/vp-import-document.md), [VP IMPORT FORM BLOB](../ViewPro/commands/vp-import-from-blob.md), [VP IMPORT FROM OBJECT](../ViewPro/commands/vp-import-from-object.md) e [VP FLUSH COMMANDS](../ViewPro/commands/vp-flush-commands.md).
+- Novos recursos [4D Netkit](https://developer.4d.com/4D-NetKit/) para gerenciar agendas do Google e do Microsoft 365; capacidade de usar o servidor web de hospedagem para autenticação OAuth 2.0.
 - 4D Write Pro Interface: New [integrated AI](../WritePro/writeprointerface.md#integrated-ai) to interact with **chatGTP** from your 4D Write Pro documents.
 - [**Lista de bugs corrigidos**](https://bugs.4d.fr/fixedbugslist?version=20_R9): lista de todos os bugs que foram corrigidos no 4D 20 R9.
 
@@ -257,7 +258,7 @@ Veja [**Notas de lançamento para 4D 20.x LTS**](../../versioned_docs/version-20
 | Libuv      | 11.51.0 | **20 R10**       | Usado para QUIC                                                                                                                           |
 | libZip     | 19.5                    | 20               | Utilizado pelos componentes zip class, 4D Write Pro, svg e serverNet                                                                      |
 | LZMA       | 5.4.1   | 20               |                                                                                                                                           |
-| ngtcp2     | 1.13                    | **20 R10**\*\*   | Usado para QUIC                                                                                                                           |
+| ngtcp2     | 1.13                    | **20 R10**       | Usado para QUIC                                                                                                                           |
 | OpenSSL    | 3.3.2   | 20 R7            | O nível de segurança TLS/SSL padrão foi atualizado. Veja [mudanças de comportamento](#behavior-changes) para versão 20 R4 |
 | PDFWriter  | 4.5.11  | 20 R3            |                                                                                                                                           |
 | PHP        | 8.2.4   | 20               |                                                                                                                                           |

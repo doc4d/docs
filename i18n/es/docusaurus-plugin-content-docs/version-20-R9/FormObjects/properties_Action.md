@@ -28,7 +28,7 @@ Para más información, consulte [Arrastrar y soltar](https://doc.4d.com/4Dv20/4
 
 #### Objetos soportados
 
-[Áreas 4D Write Pro](writeProArea_overview.md) - [Entrada](input_overview.md) - [Lista jerárquica](list_overview.md) - [List Box](listbox_overview.md) - [Área de Plug-in](pluginArea_overview.md)
+[Áreas 4D Write Pro](writeProArea_overview.md) - [Combo Box](comboBox_overview.md) - [Entrada](input_overview.md) - [Lista jerárquica](list_overview.md) - [List Box](listbox_overview.md) - [Área de Plug-in](pluginArea_overview.md)
 
 #### Ver también
 
@@ -56,7 +56,7 @@ Para más información, consulte [Arrastrar y soltar](https://doc.4d.com/4Dv20/4
 
 #### Objetos soportados
 
-[Áreas 4D Write Pro](writeProArea_overview.md) - [Botón](button_overview.md) - [Entrada](input_overview.md) - [Lista jerárquica](list_overview.md) - [List Box](listbox_overview.md) - [Área de Plug-in](pluginArea_overview.md)
+[Área 4D Write Pro](writeProArea_overview.md) - [Botón](button_overview.md) - [Combo Box](comboBox_overview.md) - [Entrada](input_overview.md) - [Lista jerárquica](list_overview.md) - [List Box](listbox_overview.md) - [Botón imagen](pictureButton_overview.md) - [Área Plug-in](pluginArea_overview.md)
 
 #### Ver también
 

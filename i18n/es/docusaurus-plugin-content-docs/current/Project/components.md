@@ -159,7 +159,7 @@ Ejemplos:
 
 :::note
 
-If a component path declared in the **environment4d.json** file is not found when the project is started, the component is not loaded and gets the *Not found* [status](#dependency-status), even if a version of the component exists next to the project's package folder.
+Si la ruta de un componente declarado en el archivo **environment4d.json** no se encuentra cuando se inicia el proyecto, el componente no se carga y obtiene el [estado](#dependency-status) *Not found*, incluso si existe una versión del componente junto a la carpeta de paquetes del proyecto.
 
 :::
 
@@ -278,13 +278,13 @@ Si no especifica una etiqueta o una versión, 4D recupera automáticamente la "�
 
 El gestor de dependencias comprueba periódicamente si hay actualizaciones de componentes disponibles en Github. Si hay una nueva versión disponible para un componente, se muestra un indicador de actualización para el componente en la lista de dependencias, [dependiendo de su configuración](#defining-a-github-dependency-version-range).
 
-#### Naming conventions for 4D version tags
+#### Convenciones de nomenclatura para las etiquetas de versión 4D
 
 Si quiere usar la regla de dependencia [**Seguir la versión 4D**](#defining-a-github-dependency-version-range), las etiquetas para las versiones de componentes en el repositorio de Github deben cumplir con convenciones específicas.
 
-- **LTS versions**: `x.y.p` pattern, where `x.y` corresponds to the main 4D version to follow and `p` (optional) can be used for patch versions or additional updates. When a project specifies that it follows the 4D version for *x.y* LTS version, the Dependency Manager will resolve it as "the latest version x.\*" if available or "version below x". If no such version exists, the user will be notified. For example, "20.4" will be resolved by the Dependency manager as "the latest component version 20.\* or version below 20".
+- **Versiones LTS**: modelo `x.y.p`, donde `x.y` corresponde a la versión principal de 4D a seguir y `p` (opcional) puede utilizarse para versiones correctivas o actualizaciones adicionales. Cuando un proyecto especifica que sigue la versión 4D para la versión LTS *x.y*, el Gestor de dependencias lo resolverá como "la última versión x.\*" si está disponible o "versión inferior a x". Si no existe tal versión, se notificará al usuario. Por ejemplo, "20.4" será resuelto por el gestor de dependencias como "la última versión del componente 20.\* o la versión inferior a 20".
 
-- **R-Release versions**: `xRy.p` pattern, where `x` and `y` correspond to the main 4D R-release version to follow and `p` (optional) can be used for patch versions or additional updates. When a project specifies that it follows the 4D version for *xRy* version, the Dependency Manager will resolve it to the "latest version below xR(y+1)" if available. If no such version exists, the user will be notified. For example, "20R9" will be resolved by the Dependency manager as "the latest component version below 20R10".
+- **Versiones R-Release**: modelo `xRy.p`, donde `x` y `y` corresponden a la versión principal de 4D R-release a seguir y `p` (opcional) puede usarse para versiones correctivas o las actualizaciones adicionales. Cuando un proyecto especifica que sigue la versión 4D para la versión *xRy*, el Gestor de dependencias lo resolverá a la "última versión por debajo de xR(y+1)" si está disponible. Si no existe tal versión, se notificará al usuario. Por ejemplo, "20R9" será resuelto por el gestor de dependencias como "la última versión del componente por debajo de 20R10".
 
 :::note
 
@@ -314,6 +314,23 @@ Los componentes GitHub a los que se hace referencia se descargan en una carpeta 
 - en Windows: `C:\Users\<username>\AppData\Local\<app name>\Dependencies`
 
 ...donde `<app name>` puede ser "4D", "4D Server" o "tool4D".
+
+### Automatic dependency resolution
+
+When you add or update a component (whether [local](#local-components) or [from GitHub](#components-stored-on-github)), 4D automatically resolves and installs all dependencies required by that component. Esto incluye:
+
+- **Primary dependencies**: Components you explicitly declare in your `dependencies.json` file
+- **Secondary dependencies**: Components required by primary dependencies or other secondary dependencies, which are automatically resolved and installed
+
+The Dependency manager reads each component's own `dependencies.json` file and recursively installs all required dependencies, respecting version specifications whenever possible. This eliminates the need to manually identify and add nested dependencies one by one.
+
+- **Conflict resolution**: When multiple dependencies require [different versions](#) of the same component, the Dependency manager automatically attempts to resolve conflicts by finding a version that satisfies all overlapping version ranges. If a primary dependency conflicts with secondary dependencies, the primary dependency takes precedence.
+
+:::note
+
+`dependencies.json` files are ignored in components loaded from the [**Components** folder](architecture.md#components).
+
+:::
 
 ### dependency-lock.json
 
@@ -345,9 +362,19 @@ Por defecto, se listan todas las dependencias identificadas por el gestor de dep
 
 ![dependency-tabs](../assets/en/Project/dependency-tabs.png)
 
+- **All**: All dependencies including both primary (declared) and secondary (automatically resolved) dependencies in a flat list view.
+- **Declared**: Primary dependencies that are explicitly declared in the `dependencies.json` file. This tab helps you distinguish between dependencies you've directly added and those that were [automatically resolved](#automatic-dependency-resolution).
 - **Activo**: dependencias que están cargadas y pueden ser utilizadas en el proyecto. Incluye dependencias *overloading*, las cuales son realmente cargadas. Las dependencias *Overloaded* se enumeran en el panel **Conflicts** junto con todas las dependencias en conflicto.
 - **Inactivo**: dependencias que no están cargadas en el proyecto y no están disponibles. Hay muchas razones posibles para este estado: archivos que faltan, incompatibilidad de versiones...
-- **Conflicto**: dependencias que se cargan pero que sobrecargan al menos otra dependencia de menor [nivel de prioridad](#prioridad). También se muestran las dependencias sobrecargadas para que pueda comprobar el origen del conflicto y tomar las medidas oportunas.
+- **Conflicts**: Dependencies that are loaded but that overloads at least one other dependency at a lower [priority level](#priority). También se muestran las dependencias sobrecargadas para que pueda comprobar el origen del conflicto y tomar las medidas oportunas.
+
+### Secondary dependencies
+
+The Dependencies panel displays [**secondary dependencies**](#automatic-dependency-resolution) with the `Component dependency` [origin](#dependency-origin):
+
+![recursive-dependency](../assets/en/Project/recursive.png)
+
+When you hover over a secondary dependency, a tooltip displays the parent dependency that requires it. A secondary dependency cannot be [removed](#removing-a-dependency) directly, you must remove or edit the primary dependency that requires it.
 
 ### Estado de dependencias
 
@@ -380,12 +407,13 @@ El panel Dependencias enumera todas las dependencias del proyecto, sea cual sea 
 
 Las siguientes opciones de origen son posibles:
 
-| Etiqueta de origen                | Descripción                                                                        |
-| --------------------------------- | ---------------------------------------------------------------------------------- |
-| Componente 4D                     | Componente 4D integrado, almacenado en la carpeta `Components` de la aplicación 4D |
-| dependencies.json | Componente declarado en el archivo [`dependencies.json`](#dependenciesjson)        |
-| Entorno                           | Componente declarado en el archivo [`environnement4d.json`](#environment4djson)    |
-| Componente del proyecto           | Componente ubicado en la carpeta [`Components`](architecture.md#components)        |
+| Etiqueta de origen      | Descripción                                                                                                                                  |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Built in 4D             | Componente 4D integrado, almacenado en la carpeta `Components` de la aplicación 4D                                                           |
+| Declared in project     | Componente declarado en el archivo [`dependencies.json`](#dependenciesjson)                                                                  |
+| Declared in environment | Component declared in the [`dependencies.json`](#dependenciesjson) file and overriden in the [`environment4d.json`](#environment4djson) file |
+| Carpeta Components      | Componente ubicado en la carpeta [`Components`](architecture.md#components)                                                                  |
+| Component dependency    | Secondary component ([required by a another component](#automatic-dependency-resolution))                                 |
 
 **Clic derecho** en una línea de dependencia y selecciona **Mostrar en el disco** para revelar la ubicación de una dependencia:
 
@@ -453,7 +481,7 @@ Definir el [rango de versiones de dependencia](#tags-and-versions) a utilizar pa
 
 Haga clic en el botón **Añadir** para añadir la dependencia al proyecto.
 
-The GitHub dependency is declared in the [**dependencies.json**](#dependenciesjson) file and added to the [inactive dependency list](#dependency-status) with the **Available at restart** status. Se cargará cuando se reinicie la aplicación.
+La dependencia de GitHub es declarada en el archivo [**dependencies.json**](#dependenciesjson) y añadida a la [lista de dependencias inactivas](#dependency-status) con el estado **Disponible al reiniciar**. Se cargará cuando se reinicie la aplicación.
 
 #### Definición de un intervalo de versiones de dependencia de GitHub
 
@@ -465,7 +493,7 @@ Puede definir la opción [etiqueta o versión](#tags-and-versions) para una depe
 - **Hasta la próxima versión mayor**: define un [rango de versiones semánticas](#tags-and-versions) para restringir las actualizaciones a la próxima versión principal.
 - **Hasta la siguiente versión menor**: del mismo modo, restringir las actualizaciones a la siguiente versión menor.
 - **Versión exacta (Etiqueta)**: selecciona o introduce manualmente una [etiqueta específica](#tags-and-versions) de la lista disponible.
-- **Follow 4D Version**: Download the latest component release that is compatible with the running 4D version. Puede usar esta regla de dependencia sólo si las etiquetas de release de los componentes siguen la [convención de nombres](#naming-conventions-for-4d-version-tags) apropiada.
+- **Siga la versión 4D**: descargue la última versión del componente compatible con la versión 4D en ejecución. Puede usar esta regla de dependencia sólo si las etiquetas de release de los componentes siguen la [convención de nombres](#naming-conventions-for-4d-version-tags) apropiada.
 
 La versión actual de la dependencia de GitHub se muestra a la derecha del elemento de la dependencia:
 
@@ -571,7 +599,7 @@ Para eliminar una dependencia desde el panel de dependencias, seleccione la depe
 
 :::note
 
-Sólo las dependencias declaradas en el archivo [**dependencies.json**](#dependenciesjson) pueden eliminarse mediante el panel Dependencias. Si no se puede eliminar una dependencia seleccionada, se desactiva el botón **-** y se oculta la opción de menú **Eliminar la dependencia...**.
+Sólo las dependencias primarias declaradas en el archivo [**dependencies.json**](#dependenciesjson) pueden eliminarse utilizando el panel Dependencias. Las dependencias secundarias no pueden eliminarse directamente: para eliminar una dependencia secundaria, debe eliminar la dependencia primaria que la requiere. Si no se puede eliminar una dependencia seleccionada, se desactiva el botón **-** y se oculta la opción de menú **Eliminar la dependencia...**.
 
 :::
 
@@ -581,4 +609,7 @@ Aparece una caja de diálogo de confirmación. Si la dependencia se declaró en 
 
 Si confirma la caja de diálogo, la dependencia eliminada [estado](#estado-dependencia) se marca automáticamente como "Descargar tras reinicio". Se descargará cuando se reinicie la aplicación.
 
+#### Dependency usage warnings
+
+When you attempt to remove a primary dependency that is required by other dependencies in your project, you will be warned that the dependency is still in use. The system will display which other dependencies require it and prompt you to confirm the removal, as removing it may cause those dependent components to stop working properly.
 
