@@ -28,3 +28,9 @@ Si el componente está compilado, su [espacio de nombres](../Extensions/develop-
 Puede seleccionar un [método proyecto](methods.md) o [clase](classes.md) y hacer clic en el botón **Documentación** del Explorador para obtener información sobre el mismo, [si la hay](Project/documentation.md).
 
 ![alt-text](../assets/en/Project/compDoc.png)
+
+:::note
+
+Interpreted component code can be [edited directly from the host project](../Extensions/develop-components.md#editing-components-from-the-host) if the context is supported.
+
+:::
