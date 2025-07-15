@@ -63,11 +63,23 @@ The [`GET SYSTEM FORMAT`](../commands-legacy/get-system-format.md) command can b
 
 #### Num(string;base)
 
-Using a *base* parameter (integer) triggers a specific mode that strictly follows the [`parseInt` EcmaScript specification](https://tc39.es/ecma262/multipage/global-object.html#sec-parseint-string-radix) and allows you to specify the radix of the number expressed as string in *expression*. For example, this syntax allows you to convert hexadecimal strings to numbers. 
+Using a *base* parameter (integer) triggers a specific mode in which you specify the radix (base) of the number expressed as string in *expression*. In particular, this syntax allows you to convert hexadecimal strings to numbers. 
 
 In the *base* parameter, pass the radix of the number in *expression*. You can pass any integer value between 2 and 36. 
 
-If *expression* evaluates to a decimal number, only the integer part is converted. In compliance with the EcmaScript specification, any character that is not a n
+If you pass 0 in *base*, the command determines the radix depending on the *expression* value. If *expression* starts with "0x", base 16 is used. Otherwise, base 10 is used.
+
+If *expression* evaluates to a decimal number, only the integer part is converted. 
+
+:::info
+
+- This syntax strictly follows the [`parseInt` EcmaScript specification](https://tc39.es/ecma262/multipage/global-object.html#sec-parseint-string-radix). 
+- Using this syntax with *base*=10 will not give exactly the same results as using the syntax without *base* parameter. For example, in compliance with the EcmaScript specification, any character that does not belong to the base is considered a separator (see examples).
+
+:::
+
+
+
 
 
 
@@ -125,13 +137,13 @@ This example compares the results obtained depending on the “current” separa
 This example illustrates the use of the *base* syntax:
 
 ```4d
-$result:=Num("123") // 123 (default base 10)
-$result:=Num("123"; 10) // 123 (explicitly specify base 10)
 $result:=Num("ff";16) // 255 (lower-case hexadecimal)
 $result:=Num("0xFF") // 0
 $result:=Num("0xFF";16) // 255
 $result:=Num("2";2) // 0
 $result:=Num("10.3";16) // 16
+$result:=Num("123.20") // 12320 (standard base 10 syntax)
+$result:=Num("123.20"; 10) // 123 (explicitly specify base 10)
 
 ```
 

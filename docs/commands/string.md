@@ -74,7 +74,7 @@ The format is specified in the same way as it would be for a [number input on a 
 | String(50.3;"&xml")                | "50.3"               | Always "." as decimal separator |
 | String(Num(1=1);"True;;False")     | "True"               |                                 |
 | String(Num(1=2);"True;;False")     | "False"              |                                 |
-| String(Log(-1))                    | ""                   | Undefined number                |
+| String(Log(-1))                    | ""                   | Not a number                |
 | String(1/0)                        | "INF"                | Positive infinite number        |
 | String(-1/0)                       | "-INF"               | Negative infinite number        |
 
@@ -82,12 +82,18 @@ The format is specified in the same way as it would be for a [number input on a 
 
 #### String(number;base)
 
-Using a *base* parameter (integer) triggers a specific mode that strictly follows the [`toString` EcmaScript specification regarding radix handling](https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-number.prototype.tostring). In the *base* parameter, pass the radix in which the number should be returned. For example, this syntax allows you to convert numbers to hexadecimal strings. 
+Using a *base* parameter (integer) triggers a specific mode in which you pass the radix (base) of the number to be returned. In particular, this syntax allows you to convert numbers to hexadecimal strings. 
 
-:::note Notes
+In the *base* parameter, pass the radix of the number in *expression*. You can pass any integer value between 2 and 36. 
 
-- If the specified number value is negative, the sign is preserved. This is the case even if the radix is 2; the returned string is > N, the positive binary representation of the number value preceded by a - sign (not the two's complement of the number value). 
-- If the specified number value is not defined, the "Nan" string is returned. 
+If you pass 0 in *base*, the command determines the radix depending on the *expression* value. If *expression* starts with "0x", base 16 is used. Otherwise, base 10 is used.
+
+
+
+:::info
+
+- This syntax strictly follows the [`toString` EcmaScript specification regarding radix handling](https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-number.prototype.tostring).
+- Using this syntax with *base*=10 will not give exactly the same results as using the syntax without *base* parameter. For example, if the specified number value is not a number, the "Nan" string is returned. 
 
 :::
 
@@ -98,9 +104,15 @@ Using a *base* parameter (integer) triggers a specific mode that strictly follow
 | String(254;16) | "fe" |     hexadecimal string  |
 | String(-16523461; 16)| "-fc20c5"   |  hexadecimal string (negative)  |
 | String(Log(-1); 10)| "NaN"   |  Not a number  |
+| String(1/0; 10)                        | "NaN"               | Not a number        |
+| String(-1/0; 10)                       | "NaN"               | Not a number        |
 
 
+:::note
 
+If the specified number value is negative, the sign is preserved. This is the case even if the radix is 2; the returned string is > N, the positive binary representation of the number value preceded by a - sign. 
+
+:::
 
 
 

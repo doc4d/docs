@@ -26,15 +26,19 @@ displayed_sidebar: docs
 
 ## Description 
 
-The **Trim** command <!--REF #_command_.Trim.Summary--> removes **whitespace** from both ends of the *aString* parameter and returns a new string, without modifying the original one.<!-- END REF--> 
+The **Trim** command <!--REF #_command_.Trim.Summary--> removes **whitespace** from both ends of the *aString* parameter and returns a new string, without modifying the original one.<!-- END REF--> **Whitespace** includes spaces, tabs, LF, CR, etc.
 
 To return a new string with whitespace trimmed from just one end, use [`Trim start`](./trim-start.md) or [`Trim end`](./trim-end.md).
-
-This command is based upon Ecmascript specifications. **Whitespace** is defined as [space characters](https://tc39.es/ecma262/multipage/ecmascript-language-lexical-grammar.html#sec-white-space) (spaces, tabs, etc.) and [line terminators](https://tc39.es/ecma262/multipage/ecmascript-language-lexical-grammar.html#sec-line-terminators) (LF, CR, etc.).
 
 In the *aString* parameter, you can pass any text expression. It will be left untouched by the command. 
 
 The command returns the trimmed version of the *aString* string. If there is no whitespace at any end of *aString*, the returned string is identical as the one passed in parameter.  
+
+:::note
+
+This command is based upon the [`TrimString` Ecmascript specification](https://tc39.es/ecma262/multipage/text-processing.html#sec-trimstring). 
+
+:::
 
 
 ## Example

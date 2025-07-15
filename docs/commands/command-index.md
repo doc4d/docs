@@ -1241,6 +1241,9 @@ title: Index
 [`Trigger event`](../commands-legacy/trigger-event.md)<br/>
 [`Trigger level`](../commands-legacy/trigger-level.md)<br/>
 [`TRIGGER PROPERTIES`](../commands-legacy/trigger-properties.md)<br/>
+[`Trim`](trim.md) **new 4D 21**<br/>
+[`Trim end`](trim-end.md) **new 4D 21**<br/>
+[`Trim start`](trim-start.md) **new 4D 21**<br/>
 [`True`](../commands-legacy/true.md)<br/>
 [`Trunc`](../commands-legacy/trunc.md)<br/>
 [`TRUNCATE TABLE`](../commands-legacy/truncate-table.md)<br/>
