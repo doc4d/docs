@@ -245,9 +245,9 @@ Si el depurador ya está conectado a otra máquina o a otra página de Qodly Stu
 
 Para separar el depurador Qodly Studio de su aplicación 4D Server en ejecución:
 
-1. Click the **Debug** button in the Qodly Studio toolbar while a debug session is active.
+1. Haga clic en el botón **Debug** de la barra de herramientas de Qodly Studio mientras esté activa una sesión de depuración.
     Una caja de diálogo de advertencia le pedirá que confirme si desea desconectar el depurador.
-2. Select **Keep in progress** to continue evaluating the code until the end of the current method or function before detaching the debugger, or **Stop** to detach the debugger immediately.
+2. Seleccione **Keep in progress** para continuar evaluando el código hasta el final del método o función actual antes de desconectar el depurador, o **Stop** para desconectar el depurador inmediatamente.
 
 ## Forzar inicio de sesión
 
