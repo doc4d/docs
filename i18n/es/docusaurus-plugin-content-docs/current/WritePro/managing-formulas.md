@@ -98,7 +98,7 @@ Cuando se inserta en una fórmula el comando [**Current date**](../commands-lega
 
 **Time**
 
-When the [**Current time**](../commands-legacy/current-time.md) command, a time variable, or a method returning a time is inserted in a formula, it must be enclosed within a [**String**](../commands-legacy/string.md) command because time type is not supported in JSON. Considera los siguientes ejemplos de fórmulas:
+When the [**Current time**](../commands-legacy/current-time.md) command, a time variable, or a method returning a time is inserted in a formula, it must be enclosed within a [**String**](../commands/string.md) command because time type is not supported in JSON. Considera los siguientes ejemplos de fórmulas:
 
 ```4d
   // This code is the best practice
