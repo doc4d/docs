@@ -137,8 +137,8 @@ También puede pasar valores para todos los atributos de la entidad. Estos valor
 - Si no se proporciona `__KEY`, se crea una nueva entidad en el servidor con los atributos dados.
 - Si `__KEY` es suministrado, la entidad correspondiente a `__KEY` se carga en el servidor con los atributos dados
 
-See examples below for creating or updating entities with POST requests.
-See an example of contents downloading using an entity with a GET request.
+Vea ejemplos a continuación para crear o actualizar entidades con peticiones POST.
+Vea un ejemplo de descarga de contenidos utilizando una entidad con una petición GET.
 
 #### Parámetro de entidad asociado
 
@@ -500,8 +500,8 @@ Class extends Entity
 
 exposed Function putToSchool($school : Object) -> $status : Object
 
-		//$school is a Schools entity
-		//Associate the related entity school to the current Students entity
+		//$school es una entidad Schools
+		//Asocia la entidad relacionada school a la entidad actual Students
 	This.school:=$school
 
 	$status:=This.save()
@@ -541,11 +541,11 @@ exposed Function setFinalExam($es : Object ; $examResult : Text) -> $keys : Coll
 
     var $student, $status : Object
 
-      //$es is an Entity selection
+      //$es es una Entity selection
 
     $keys:=New collection()
 
-      //Loop on the entity selection
+      //Bucle en la entity selection
     For each ($student;$es)
         $student.finalExam:=$examResult
         $status:=$student.save()
@@ -615,7 +615,7 @@ $ageAverage:=$students.getAgeAverage()
 
 ### Devolviendo un documento
 
-You want to propose a link to download the user manual for a selected product with several formats available. Escribe una función `getUserManual()` de la dataclass Products. You return an object of the [`OutgoingMessage` class](../API/OutgoingMessageClass.md).
+Desea proponer un enlace para descargar el manual de usuario de un producto seleccionado con varios formatos disponibles. Escribe una función `getUserManual()` de la dataclass Products. Devuelve un objeto de la clase [`OutgoingMessage`](../API/OutgoingMessageClass.md).
 
 ```4d
 // Product dataclass
@@ -625,15 +625,15 @@ var $file : 4D.File
 var $response:=4D.OutgoingMessage.new()
 var $doc:="/RESOURCES/User manuals/product_"+String($productId)
 
-Case of 
+Caso de 
 	: ($type="pdf")
 		$file:=File($doc+".pdf")
-                $response.setBody($file.getContent()) // This is binary content 
+                $response.setBody($file.getContent()) // Se trata de contenido binario 
 		$response.setHeader("Content-Type"; "application/pdf")
 			
 	: ($type="jpeg")
 		$file:=File($doc+".jpeg")
-                $response.setBody($file.getContent()) // This is binary content 
+                $response.setBody($file.getContent()) // Esto es contenido binario 
 		$response.setHeader("Content-Type"; "image/jpeg")
 End case 
 	
