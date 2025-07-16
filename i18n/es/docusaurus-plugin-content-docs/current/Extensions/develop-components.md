@@ -155,11 +155,11 @@ El código del componente es editable cuando se cumplen las siguientes condicion
 
 - the host project is running interpreted,
 - the component has been [loaded in interpreted mode](../Project/components.md#interpreted-and-compiled-components) and the source code is available,
-- the component files are stored locally (i.e. they are not [downloaded from GitHub](../Project/components.md#adding-a-github-dependency).
+- los archivos de los componentes se almacenan localmente (es decir, no se [descargan de GitHub](../Project/components.md#adding-a-github-dependency).
 
-In this context, you can open, edit, and save your component code in the Code editor on the host project from two places:
+En este contexto, puede abrir, editar y guardar el código de su componente en el Editor de código del proyecto local desde dos lugares:
 
-- from the Component Methods section of the Explorer (shared code only)
+- de la sección Métodos del componente del Explorador (sólo código compartido)
 - in a dedicated component tab (all code)
 
 ### Editing shared component code
