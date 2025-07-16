@@ -19,9 +19,15 @@ La creación e instalación de los componentes 4D se realiza directamente desde 
 
 - Para utilizar un componente, sólo tiene que [instalarlo en su aplicación](../Project/components.md).
 - Un proyecto puede ser a la vez matriz y local, es decir, que un proyecto matriz puede utilizar a su vez uno o varios componentes. Sin embargo, un componente no puede utilizar subcomponentes por sí mismo.
-- Un componente puede llamar a la mayoría de los elementos de 4D: clases, funciones, métodos proyecto, formularios proyecto, barras de menú, listas de selección, etc. No puede llamar a los métodos base ni a los triggers.
-- No es posible utilizar el datastore, las tablas estándar o los archivos de datos en los componentes 4D. Sin embargo, un componente puede crear y/o utilizar tablas, campos y archivos de datos utilizando mecanismos de bases externas. Se trata de bases 4D independientes con las que se trabaja utilizando comandos SQL.
+- A component can call on most of the 4D elements: datastore ([`ds`](../commands/ds.md)), classes, functions, project methods, project forms, menu bars, choice lists, and so on. The following database methods can be used: [On Web Connection](../commands-legacy/on-web-connection-database-method.md), [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md), [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md).
+- A component can create and/or use tables, fields and data files using mechanisms of external databases. Se trata de bases 4D independientes con las que se trabaja utilizando comandos SQL.
 - Un proyecto local que se ejecuta en modo interpretado puede utilizar componentes interpretados o compilados. Un proyecto local que se ejecuta en modo compilado no puede utilizar componentes interpretados. En este caso, sólo se pueden utilizar componentes compilados.
+
+:::note
+
+Interpreted component code can be [edited directly from the host project](#editing-components-from-the-host) if the context is supported.
+
+:::
 
 ## Alcance de los comandos del lenguaje
 
@@ -143,21 +149,52 @@ $rect:=cs.eGeometry._Rectangle.new(10;20)
 
 ## Edición de componentes desde el host
 
-Para facilitar el ajuste de los componentes en el contexto real de los proyectos host, puede modificar y guardar directamente el código de un componente cargado desde un proyecto host interpretado. El código del componente es editable cuando se cumplen las siguientes condiciones:
+To facilitate component tuning in the actual context of host projects, you can directly modify and save the code of a loaded component using the 4D IDE from an interpreted host project. Modifications can be immediately tested in the project, without having to restart.
 
-- el componente ha sido [cargado en modo interpretado](../Project/components.md#interpreted-and-compiled-components),
-- el componente no es cargado de la [caché local del administrador de dependencias](../Project/components.md#local-cache-for-dependencies), es decir, no está [descargado de GitHub](../Project/components.md#adding-a-github-dependency).
+El código del componente es editable cuando se cumplen las siguientes condiciones:
 
-En este caso, puede abrir, editar y guardar el código del componente en el Editor de código del proyecto host, de modo que las modificaciones se tengan en cuenta inmediatamente.
+- the host project is running interpreted,
+- the component has been [loaded in interpreted mode](../Project/components.md#interpreted-and-compiled-components) and the source code is available,
+- the component files are stored locally (i.e. they are not [downloaded from GitHub](../Project/components.md#adding-a-github-dependency).
 
-En el Explorador, un icono específico indica que el código del componente es editable:<br/>
+In this context, you can open, edit, and save your component code in the Code editor on the host project from two places:
+
+- from the Component Methods section of the Explorer (shared code only)
+- in a dedicated component tab (all code)
+
+### Editing shared component code
+
+[Exposed component classes](#sharing-of-classes) and [shared methods](#sharing-of-project-methods) of your component can be edited from the **Component Methods** tab of the Explorer.
+
+A specific icon indicates that the component contains shared code):<br/>
 ![](../assets/en/Develop/editable-component.png)
 
-:::warning
+Select **Edit...** to open your component code in the Code editor. You can edit and save it.
 
-Solo se pueden editar las [clases expuestas](#sharing-of-classes) y los [métodos compartidos](#sharing-of-project-methods) de su componente.
+### Editing all component code
 
-:::
+You can edit directly all the code of a loaded component from the host project in a dedicated component tab, including methods or classes that are not shared.
+
+Select **Edit...** item is available when you right-click on the component name in the **Component Methods** tab of the Explorer.
+
+![edit-component](../assets/en/Project/Edit-component.png)
+
+When you select it, a dedicated tab is added (or highlighted if already added) in the Explorer. In this tab, the component code is editable in the following pages:
+
+![tab-component](../assets/en/Project/tab-component.png)
+
+- Project Methods
+- Database Methods ([On Web Connection](../commands-legacy/on-web-connection-database-method.md), [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md), [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md))
+- Clases
+- Project Form Methods
+
+![tab-component](../assets/en/Project/tab-component.gif)
+
+Standard 4D IDE features are available for the component. You can execute the following actions:
+
+- add, duplicate, delete, edit/save [methods and classes](../Project/code-overview.md)
+- preview code, show/edit [documentation](../Project/documentation.md), display/edit [method properties](../Project/code-overview.md#project-method-properties),
+- run methods.
 
 ## Completar el código de los componentes compilados
 
