@@ -49,7 +49,7 @@ con los datos en el cuerpo de la petición POST: `["Aguada"]`
 
 :::note
 
-The `getCity()` function must have been declared with the `onHTTPGet` keyword (see [Function configuration](#function-configuration) below).
+La función `getCity()` debe haber sido declarada con la palabra clave `onHTTPGet` (ver [Configuración de la función](#function-configuration)).
 
 :::
 
@@ -76,8 +76,8 @@ Ver la sección [Funciones expuestas vs. no expuestas](../ORDA/ordaClasses.md#ex
 Las funciones permitidas para ser llamadas desde solicitudes HTTP `GET` también deben ser declaradas específicamente con la [palabra clave `onHTTPGet`](../ORDA/ordaClasses.md#onhttpget-keyword). Por ejemplo:
 
 ```4d
-//allowing GET requests
-exposed onHTTPGet Function getSomeInfo() : 4D.OutgoingMessage
+//permitir peticiones GET
+expuestas onHTTPGet Function getSomeInfo() : 4D.OutgoingMessage
 ```
 
 ### Hilo seguro
@@ -92,23 +92,23 @@ Puede restringir las llamadas a funciones ORDA específicas configurando los pri
 
 ## Parámetros
 
-You can send parameters to functions defined in ORDA user classes or singletons. Del lado del servidor, serán recibidos en los [parámetros declarados](../Concepts/parameters.md#declaring-parameters) de las funciones clase.
+Puede enviar parámetros a funciones definidas en clases de usuario ORDA o singletons. Del lado del servidor, serán recibidos en los [parámetros declarados](../Concepts/parameters.md#declaring-parameters) de las funciones clase.
 
 Se aplican las siguientes reglas:
 
-- In functions called through POST requests, parameters must be passed **in the body of the POST request**.
-- In functions called through GET requests, parameters must be passed **in the URL with "?$params=" syntax**.
+- En funciones llamadas a través de peticiones POST, los parámetros deben pasarse **en el cuerpo de la petición POST**.
+- En las funciones llamadas a través de peticiones GET, los parámetros deben pasarse **en la URL con la sintaxis "?$params="**.
 - Los parámetros deben estar incluidos en una colección (formato JSON).
 - Todos los tipos de datos escalares soportados en las colecciones JSON pueden ser pasados como parámetros.
-- La selección de entidades y la entidad se pueden pasar como parámetros. The parameter list must contain specific attributes used by the REST server to assign data to the corresponding ORDA objects: `__DATACLASS`, `__ENTITY`, `__ENTITIES`, `__DATASET`.
+- La selección de entidades y la entidad se pueden pasar como parámetros. La lista de parámetros debe contener atributos específicos usados por el servidor REST para asignar datos a los objetos ORDA correspondientes: `__DATACLASS`, `__ENTITY`, `__ENTITIES`, `__DATASET`.
 
 Ver [este ejemplo](#usando-una-entidad-que-se-creará-en-el-servidor) y [este ejemplo](#recibiendo-una-selección-de-entidades-como-parámetro).
 
 ### Parámetro de valor escalar
 
-Scalar value parameter(s) must simply be enclosed in a collection. Todos los tipos de datos JSON son soportados en los parámetros, incluidos los punteros JSON. Las fechas se pueden pasar como cadenas en formato de fecha ISO 8601 (por ejemplo, "2020-08-22T22:00:000Z").
+Los parámetros de valor escalar deben estar simplemente encerrados en una colección. Todos los tipos de datos JSON son soportados en los parámetros, incluidos los punteros JSON. Las fechas se pueden pasar como cadenas en formato de fecha ISO 8601 (por ejemplo, "2020-08-22T22:00:000Z").
 
-For example, with a  dataclass function `getCities()` receiving text parameters:
+Por ejemplo, con una función dataclass `getCities()` que recibe parámetros de texto:
 
 #### Petición POST
 
