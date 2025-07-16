@@ -413,7 +413,7 @@ Las siguientes opciones de origen son posibles:
 | Declared in project     | Componente declarado en el archivo [`dependencies.json`](#dependenciesjson)                                                                  |
 | Declared in environment | Component declared in the [`dependencies.json`](#dependenciesjson) file and overriden in the [`environment4d.json`](#environment4djson) file |
 | Carpeta Components      | Componente ubicado en la carpeta [`Components`](architecture.md#components)                                                                  |
-| Component dependency    | Secondary component ([required by a another component](#automatic-dependency-resolution))                                 |
+| Component dependency    | Componente secundario ([requerido por otro componente](#automatic-dependency-resolution))                                 |
 
 **Clic derecho** en una línea de dependencia y selecciona **Mostrar en el disco** para revelar la ubicación de una dependencia:
 
