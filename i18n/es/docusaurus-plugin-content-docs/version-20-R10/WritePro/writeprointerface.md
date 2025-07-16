@@ -323,9 +323,9 @@ In the current implementation, the feature has the following limitations:
 
 ### Activando la función de IA
 
-The AI dialog box is available by clicking on a button in the 4D Write Pro interface. This button is **hidden by default**, you need to enable it explicitely.
+The AI dialog box is available by clicking on a button in the 4D Write Pro interface. Este botón está **oculto por defecto**, debe activarlo explícitamente.
 
-To display the AI dialog box button, you need to:
+Para mostrar el botón del diálogo AI, es necesario:
 
 1. Obtener una clave API del [sitio web OpenAI](https://openai.com/api/).
 2. Ejecutar el siguiente código 4D:
