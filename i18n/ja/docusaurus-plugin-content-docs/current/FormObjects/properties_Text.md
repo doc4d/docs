@@ -201,7 +201,7 @@ You can also set this property using the [**OBJECT SET RGB COLORS**](../commands
 
 #### コマンド
 
-[OBJECT GET RBG COLOR](../commands-legacy/object-get-rgb-color.md) - [OBJECT SGET RBG COLOR](../commands-legacy/object-set-rgb-color.md)
+[OBJECT GET RGB COLORS](../commands-legacy/object-get-rgb-colors.md) - [OBJECT SET RGB COLORS](../commands-legacy/object-set-rgb-colors.md)
 
 ---
 
@@ -326,7 +326,9 @@ This property can also be handled by the [`OBJECT Get vertical alignment`](../co
 
 #### コマンド
 
-## [`OBJECT Get vertical alignment`](../commands-legacy/object-get-vertical-alignment.md) - [`OBJECT SET VERTICAL ALIGNMENT`](../commands-legacy/object-set-vertical-alignment.md)
+[`OBJECT Get vertical alignment`](../commands-legacy/object-get-vertical-alignment.md) - [`OBJECT SET VERTICAL ALIGNMENT`](../commands-legacy/object-set-vertical-alignment.md)
+
+---
 
 ## メタ情報式
 
@@ -462,7 +464,7 @@ This property enables the possibility of using [specific styles](https://doc.4d.
 
 #### コマンド
 
-[OBJECT Get text orientation](../commands-legacy/object-get-text-orientation.md) - [OBJECT SET TEXT ORIENTATION](../commands/object-set-text-orientation.md)
+[OBJECT Get text orientation](../commands-legacy/object-get-text-orientation.md) - [OBJECT SET TEXT ORIENTATION](../commands-legacy/object-set-text-orientation.md)
 
 ---
 
