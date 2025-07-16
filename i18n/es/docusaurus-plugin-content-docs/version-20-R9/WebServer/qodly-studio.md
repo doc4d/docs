@@ -239,11 +239,11 @@ El proyecto debe ejecutarse en modo interpretado para que el elemento de menú *
 2. En la barra de herramientas de Qodly Studio, haga clic en el botón **Debug**.<br/>
     ![qodly-debug](../assets/en/WebServer/qodly-debug.png)
 
-If the debug session starts successfully, a green bullet appears on the button label ![qodly-debug](../assets/en/WebServer/debug2.png) and you can use the Qodly Studio debugger.
+Si la sesión de depuración se inicia correctamente, aparecerá una viñeta verde en la etiqueta del botón ![qodly-debug](../assets/en/WebServer/debug2.png) y podrá utilizar el depurador de Qodly Studio.
 
-If the debugger is already attached to a another machine or another Qodly Studio page, an error is displayed. Hay que separarlo de antemano de la otra ubicación.
+Si el depurador ya está conectado a otra máquina o a otra página de Qodly Studio, aparecerá un error. Hay que separarlo de antemano de la otra ubicación.
 
-To detach the Qodly Studio debugger from your running 4D Server application:
+Para separar el depurador Qodly Studio de su aplicación 4D Server en ejecución:
 
 1. Click the **Debug** button in the Qodly Studio toolbar while a debug session is active.
     Una caja de diálogo de advertencia le pedirá que confirme si desea desconectar el depurador.
