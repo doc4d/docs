@@ -7,7 +7,7 @@ title: 背景色と境界線
 
 奇数番の行/列に使用するための異なる背景色を設定することができます。 デフォルトでは、*自動* が選択されており、リストボックスレベルで設定されている "交互に使用する背景色" を列も使用します。
 
-You can also set this property using the  command.
+このプロパティはコマンドによっても設定することができます。
 
 #### JSON 文法
 
@@ -31,7 +31,7 @@ You can also set this property using the  command.
 
 リストボックスの場合にはデフォルトで、*自動* が選択されており、リストボックスレベルで設定されている背景色を列も使用します。
 
-You can also set this property using the [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md) command.
+このプロパティは[`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md) コマンドを使用しても設定することができます。
 
 #### JSON 文法
 
@@ -57,9 +57,9 @@ You can also set this property using the [`OBJECT SET RGB COLORS`](../commands-l
 
 `セレクションとコレクション型リストボックス`
 
-リストボックスの各行にカスタムの背景色を指定するための式または変数 (配列変数は使用不可)。 式または変数は表示行ごとに評価され、RGB値を返さなくてはなりません。 For more information, refer to the description of the [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md) command in the *4D Language Reference manual*.
+リストボックスの各行にカスタムの背景色を指定するための式または変数 (配列変数は使用不可)。 式または変数は表示行ごとに評価され、RGB値を返さなくてはなりません。 詳細については、*4Dランゲージリファレンス* マニュアルの [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md) コマンドの説明を参照ください。
 
-You can also set this property using the [`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md) command with `lk background color expression` constant.
+また、このプロパティは [`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md) コマンドに `lk background color expression` 定数を指定して設定することもできます。
 
 > コレクション/エンティティセレクション型リストボックスでは、このプロパティは [メタ情報式](properties_Text.md#メタ情報式) を使用しても設定することができます。
 
@@ -150,7 +150,7 @@ You can also set this property using the [`LISTBOX SET PROPERTY`](../commands/li
 - 16進数値 - 例: "#ff0000"
 - RGB値 - 例: "rgb(255,0,0)"
 
-You can also set this property using the [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md) command.
+このプロパティは[`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md) コマンドを使用しても設定することができます。
 
 #### JSON 文法
 
