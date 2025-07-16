@@ -98,7 +98,7 @@ For security reasons, when formulas are pasted from a different 4D application o
 
 **時間**
 
-[**Current time**](../commands-legacy/current-time.md) コマンド、時間型変数、あるいは時間を返すメソッドがフォーミュラに挿入される場合、この時間は [**String**](../commands-legacy/string.md) コマンドでくくってあげる必要があります。JSON では時間型はサポートされていないからです。 以下のフォーミュラの例を参考にして下さい:
+[**Current time**](../commands-legacy/current-time.md) コマンド、時間型変数、あるいは時間を返すメソッドがフォーミュラに挿入される場合、この時間は [**String**](../commands/string.md) コマンドでくくってあげる必要があります。JSON では時間型はサポートされていないからです。 以下のフォーミュラの例を参考にして下さい:
 
 ```4d
   // このコードがベストプラクティといえます
