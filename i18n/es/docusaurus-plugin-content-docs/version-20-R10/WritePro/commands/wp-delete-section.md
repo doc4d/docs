@@ -68,7 +68,7 @@ Para eliminar todas las secciones a partir de la 5:
 ```4d
  
 wpDoc:=WP Import document("test.wp")
-// remove all sections starting at section 5 (without error unless section 5 does not exist)
+// eliminar todas las secciones a partir de la sección 5 (sin error a menos que la sección 5 no exista)
 WP DELETE SECTION(wpDoc ; 5 ; MAXLONG )
 
 ```
@@ -78,9 +78,9 @@ Para recuperar y eliminar la sección 5:
 ```4d
  
 wpDoc:=WP Import document("test.wp")
-// get section 5
+// obtener sección 5
 $section:=WP Get section(wpDoc, 5)
-// remove $section
+// eliminar $section
 WP DELETE SECTION($section)
 
 ```
