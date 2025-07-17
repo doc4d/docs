@@ -80,7 +80,7 @@ URL patterns can be given as **prefixes** or using **regular expressions**.
 
 "Pattern" and "regexPattern" properties cannot be used in the same handler definition (in this case, only the "regexPattern" property is taken into account).
 
-#### Pattern matching
+#### Concordancia de modelos
 
 URL patterns are triggered in the given order:
 
