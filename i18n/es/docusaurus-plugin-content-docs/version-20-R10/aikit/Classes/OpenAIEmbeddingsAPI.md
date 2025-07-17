@@ -24,7 +24,7 @@ Creates an embeddings for the provided input, model and parameters.
 | *parámetros* | [OpenAIEmbeddingsParameters](OpenAIEmbeddingsParameters.md) | The parameters to customize the embeddings request.                     |
 | Resultado    | [OpenAIEmbeddingsResult](OpenAIEmbeddingsResult.md)         | The embeddings.                                                         |
 
-#### Example Usages
+#### Ejemplos de uso
 
 ##### Get vector for a single text entry
 
@@ -42,7 +42,7 @@ var $result:=$client.embeddings.create($inputs; "text-embedding-ada-002")
 var $vectors : Collection:=$result.vectors // collection of 4D.Vector
 ```
 
-##### Using another service
+##### Utilizar otro servicio
 
 > Before using embeddings with a specific service, please check its documentation to see if embeddings are supported, and select the appropriate embedding model.
 
