@@ -379,7 +379,7 @@ Default translation actions are based upon the current 4D default configuration 
 
 :::
 
-#### Copy buttons
+#### Botones de copia
 
 Estos botones proponen interacciones básicas entre el área de chat, el documento subyacente de 4D Write Pro y el portapapeles:
 
