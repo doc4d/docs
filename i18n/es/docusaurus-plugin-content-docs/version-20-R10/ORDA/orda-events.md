@@ -1,6 +1,6 @@
 ---
 id: orda-events
-title: ORDA Events
+title: Eventos ORDA
 ---
 
 <details><summary>Historia</summary>
@@ -23,7 +23,7 @@ ORDA events in the datastore are equivalent to triggers in the 4D database. Howe
 
 ## Generalidades
 
-### Event level
+### Nivel del evento
 
 A event function is always defined in the [Entity class](../ORDA/ordaClasses.md#entity-class).
 
@@ -51,11 +51,11 @@ With other remote configurations (i.e. Qodly applications, [REST API requests](.
 
 The following table lists ORDA events along with their rules.
 
-| Evento               | Nivel    | Function name                                           |                 (C/S) Executed on                 |
-| :------------------- | :------- | :------------------------------------------------------ | :------------------------------------------------------------------: |
-| Entity instantiation | Entity   | [`constructor()`](./ordaClasses.md#class-constructor-1) |                                client                                |
-| Attribute touched    | Atributo | `event touched <attrName>()`                            | Depends on [`local`](../ORDA/ordaClasses.md#local-functions) keyword |
-|                      | Entity   | `event touched()`                                       | Depends on [`local`](../ORDA/ordaClasses.md#local-functions) keyword |
+| Evento                     | Nivel    | Function name                                           |                 (C/S) Executed on                 |
+| :------------------------- | :------- | :------------------------------------------------------ | :------------------------------------------------------------------: |
+| Instanciación de entidades | Entity   | [`constructor()`](./ordaClasses.md#class-constructor-1) |                                client                                |
+| Attribute touched          | Atributo | `event touched <attrName>()`                            | Depends on [`local`](../ORDA/ordaClasses.md#local-functions) keyword |
+|                            | Entity   | `event touched()`                                       | Depends on [`local`](../ORDA/ordaClasses.md#local-functions) keyword |
 
 :::note
 
