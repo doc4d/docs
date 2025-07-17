@@ -92,7 +92,7 @@ When you use a form, 4D executes any form or object methods associated with it. 
 
 :::
 
-### Graphic area commands
+### Comandos del área gráfica
 
 The graphic area of the editor includes both a tool bar and a context menu that you can use to design your label template.
 
