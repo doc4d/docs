@@ -25,7 +25,7 @@ For debugging and monitoring, you can use the [4DTCPUDPLog.txt log file] that re
 
 ### Ejemplo
 
-### UDPSocket Object
+### Objeto UDPSocket
 
 A UDPSocket object is immutable, non streamable.
 
@@ -49,7 +49,7 @@ UDPSocket objects provide the following properties and functions:
 | ---------- | --------- | --------------------------- | ---------------------------------------------------------------------------------------------- |
 | port       | Integer   | ->                          | Local port used for UDP socket (0 or omitted = find any unused port to use) |
 | options    | Object    | ->                          | Configuration [options](#options-parameter) for the socket                                     |
-| Resultado  | UDPSocket | <- | New UDPSocket object                                                                           |
+| Resultado  | UDPSocket | <- | Nuevo objeto UDPSocket                                                                         |
 
 <!-- END REF -->
 
@@ -82,7 +82,7 @@ Todas las funciones de retrollamada reciben dos parámetros:
 2. `onError` se activa si se produce un error.
 3. `onTerminate` is always triggered just before the port is released (socket is closed or an error occured).
 
-#### UDPEvent object
+#### Objeto UDPEvent
 
 A [`UDPEvent`](UDPEventClass.md) object is returned when a [callback function](#callback-functions) is called.
 
