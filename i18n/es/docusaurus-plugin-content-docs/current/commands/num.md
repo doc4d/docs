@@ -12,7 +12,7 @@ displayed_sidebar: docs
 | Parámetros | Tipo                   |                             | Descripción                                                                                     |
 | ---------- | ---------------------- | --------------------------- | ----------------------------------------------------------------------------------------------- |
 | expresión  | Text, Boolean, Integer | &#8594; | String for which to return the numeric form, or Boolean to return 0 or 1, or Numeric expression |
-| separator  | Text                   | &#8594; | Decimal separator                                                                               |
+| separador  | Text                   | &#8594; | Decimal separator                                                                               |
 | base       | Integer                | &#8594; | Value between 2 and 36 that represents the radix                                                |
 | Resultado  | Real                   | &#8592; | Numeric form of the expression parameter                                                        |
 
@@ -77,15 +77,15 @@ If *expression* evaluates to a decimal number, only the integer part is converte
 
 :::
 
-### Boolean Expressions
+### Expresiones booleanas
 
 If you pass a Boolean expression, **Num** returns 1 if the expression is True; otherwise, it returns *0* (zero).
 
-### Numeric Expressions
+### Expresiones numéricas
 
 If you pass a numeric expression in the *expression* parameter, **Num** returns the value passed in the *expression* parameter as is. This can be useful more particularly in the case of generic programming using pointers.
 
-### Undefined Expressions
+### Expresiones indefinidas
 
 If *expression* evaluates to undefined, the command returns 0 (zero). This is useful when you expect the result of an expression (e.g. an object attribute) to be a number, even if it can be undefined.
 
