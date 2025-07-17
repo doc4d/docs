@@ -169,7 +169,7 @@ En este contexto, puede abrir, editar y guardar el código de su componente en e
 A specific icon indicates that the component contains shared code):<br/>
 ![](../assets/en/Develop/editable-component.png)
 
-Select **Edit...** to open your component code in the Code editor. You can edit and save it.
+Select **Edit...** to open your component code in the Code editor. Puede editarlo y guardarlo.
 
 ### Editing all component code
 
@@ -183,18 +183,18 @@ When you select it, a dedicated tab is added (or highlighted if already added) i
 
 ![tab-component](../assets/en/Project/tab-component.png)
 
-- Project Methods
+- Métodos proyecto
 - Database Methods ([On Web Connection](../commands-legacy/on-web-connection-database-method.md), [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md), [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md))
 - Clases
-- Project Form Methods
+- Métodos formulario proyecto
 
 ![tab-component](../assets/en/Project/tab-component.gif)
 
-Standard 4D IDE features are available for the component. You can execute the following actions:
+Standard 4D IDE features are available for the component. Puede ejecutar las siguientes acciones:
 
-- add, duplicate, delete, edit/save [methods and classes](../Project/code-overview.md)
-- preview code, show/edit [documentation](../Project/documentation.md), display/edit [method properties](../Project/code-overview.md#project-method-properties),
-- run methods.
+- añadir, duplicar, borrar, editar/guardar [métodos y clases](../Project/code-overview.md)
+- previsualizar código, mostrar/editar [documentación](../Project/documentation.md), mostrar/editar [propiedades de método](../Project/code-overview.md#project-method-properties),
+- ejecutar métodos.
 
 ## Completar el código de los componentes compilados
 
