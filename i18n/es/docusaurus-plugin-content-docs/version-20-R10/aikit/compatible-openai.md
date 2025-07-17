@@ -13,7 +13,7 @@ To do so you just have to change the original `baseURL` by the provider one and 
 $client.baseURL:="https://api.mistral.ai/v1"
 ```
 
-Some of them
+Algunos de ellos
 
 ## Remoto
 
