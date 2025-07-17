@@ -49,7 +49,7 @@ You want to replace the selection in a 4D Write Pro area with the contents of a 
  End case
 ```
 
-## Formula context object
+## Objeto de contexto de fórmula
 
 You can insert special expressions related to document attributes in any document area (body, header, footer) using the [WP Insert formula](commands/wp-insert-formula.md) command. Within a formula, a formula context object is automatically exposed. Puede utilizar las propiedades de este objeto a través de [**This**](../commands/this.md):
 
@@ -210,7 +210,7 @@ Only inline formulas can have a name (formulas for anchored images, break rows, 
 
 :::
 
-### Formula tips
+### Consejos sobre fórmulas
 
 Whatever the formula display mode, you can get additional information on formulas through **tips** that are displayed when you hover on formulas.
 
