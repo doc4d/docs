@@ -12,7 +12,7 @@ displayed_sidebar: docs
 | Parámetros | Tipo                   |                             | Descripción                                                                                     |
 | ---------- | ---------------------- | --------------------------- | ----------------------------------------------------------------------------------------------- |
 | expresión  | Text, Boolean, Integer | &#8594; | String for which to return the numeric form, or Boolean to return 0 or 1, or Numeric expression |
-| separador  | Text                   | &#8594; | Decimal separator                                                                               |
+| separador  | Text                   | &#8594; | Separador decimal                                                                               |
 | base       | Integer                | &#8594; | Value between 2 and 36 that represents the radix                                                |
 | Resultado  | Real                   | &#8592; | Numeric form of the expression parameter                                                        |
 
@@ -66,7 +66,7 @@ Using a *base* parameter (integer) triggers a specific mode in which you specify
 
 In the *base* parameter, pass the radix of the number in *expression*. You can pass any integer value between 2 and 36.
 
-If you pass 0 in *base*, the command determines the radix depending on the *expression* value. If *expression* starts with "0x", base 16 is used. Otherwise, base 10 is used.
+If you pass 0 in *base*, the command determines the radix depending on the *expression* value. If *expression* starts with "0x", base 16 is used. En caso contrario, se utiliza la base 10.
 
 If *expression* evaluates to a decimal number, only the integer part is converted.
 
