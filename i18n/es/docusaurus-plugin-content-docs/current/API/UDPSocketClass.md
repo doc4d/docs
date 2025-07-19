@@ -73,7 +73,7 @@ Todas las funciones de retrollamada reciben dos parámetros:
 
 | Parámetros | Tipo                                    | Descripción                                           |
 | ---------- | --------------------------------------- | ----------------------------------------------------- |
-| $socket    | [`UDPSocket` object](#udpsocket-object) | The current UDPSocket instance.       |
+| $socket    | [`UDPSocket` object](#udpsocket-object) | La instancia UDPSocket actual.        |
 | $event     | [`UDPEvent` object](#udpevent-object)   | Contiene información sobre el evento. |
 
 **Secuencia de retrollamadas:**
@@ -127,11 +127,11 @@ The `.port` property contains <!-- REF #UDPSocket.port.Summary -->the port numbe
 
 <!-- REF #UDPSocket.send().params -->
 
-| Parámetros | Tipo    |    | Descripción                                          |
-| ---------- | ------- | -- | ---------------------------------------------------- |
-| data       | Blob    | -> | Datos a enviar                                       |
-| hostName   | Text    | -> | Name or IP address of server                         |
-| remotePort | Integer | -> | Remote port to connect to (0=any) |
+| Parámetros | Tipo    |    | Descripción                                                       |
+| ---------- | ------- | -- | ----------------------------------------------------------------- |
+| data       | Blob    | -> | Datos a enviar                                                    |
+| hostName   | Text    | -> | Nombre o dirección IP del servidor                                |
+| remotePort | Integer | -> | Puerto remoto al que conectarse (0=cualquiera) |
 
 <!-- END REF -->
 
