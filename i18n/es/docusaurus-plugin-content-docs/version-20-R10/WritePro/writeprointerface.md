@@ -317,7 +317,7 @@ In the current implementation, the feature has the following limitations:
 
 - use of a predefined AI provider and necessity to pass your OpenAI key
 - funcionalidades básicas de chat
-- no image handling
+- sin gestión de imágenes
 - non-configurable predefined action commands
 - predefined translations English/French and French/English only
 
