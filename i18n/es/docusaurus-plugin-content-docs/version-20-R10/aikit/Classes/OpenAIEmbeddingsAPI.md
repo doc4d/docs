@@ -22,11 +22,11 @@ Creates an embeddings for the provided input, model and parameters.
 | *entrada*    | Text or Collection of Text                                  | The input to vectorize.                                                 |
 | *model*      | Text                                                        | The [model to use](https://platform.openai.com/docs/guides/embeddings#embedding-models) |
 | *parámetros* | [OpenAIEmbeddingsParameters](OpenAIEmbeddingsParameters.md) | The parameters to customize the embeddings request.                     |
-| Resultado    | [OpenAIEmbeddingsResult](OpenAIEmbeddingsResult.md)         | The embeddings.                                                         |
+| Resultado    | [OpenAIEmbeddingsResult](OpenAIEmbeddingsResult.md)         | Las integraciones.                                                      |
 
 #### Ejemplos de uso
 
-##### Get vector for a single text entry
+##### Obtener el vector de una sola entrada de texto
 
 ```4d
 var $result:=$client.embeddings.create("it rains cats and dogs"; "text-embedding-ada-002")
