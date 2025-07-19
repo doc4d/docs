@@ -58,7 +58,7 @@ You must restart the Web server so that modifications made in this file are take
 
 :::
 
-## Handler definition
+## Definición del gestor
 
 A handler is defined by:
 
