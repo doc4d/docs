@@ -8,10 +8,10 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Trim start.Params-->
 
-| Parámetros | Tipo |                             | Descripción  |
-| ---------- | ---- | --------------------------- | ------------ |
-| aString    | Text | &#8594; | Text to trim |
-| Resultado  | Text | &#8592; | Trimmed text |
+| Parámetros | Tipo |                             | Descripción      |
+| ---------- | ---- | --------------------------- | ---------------- |
+| aString    | Text | &#8594; | Texto a recortar |
+| Resultado  | Text | &#8592; | Texto recortado  |
 
 <!-- END REF-->
 
