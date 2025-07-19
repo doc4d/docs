@@ -21,7 +21,7 @@ Las fórmulas son evaluadas:
 
 Formulas are not evaluated when a document is loaded (using [**WP New**](commands-legacy/wp-new.md), [**WP Insert document body**](commands/wp-insert-document-body.md), or `wpArea:=[table]field`):
 
-- if the document is only offscreen,
+- si el documento sólo está fuera de la pantalla,
 - if the document is displayed onscreen but the form object only shows references.
 
 Formulas become static values if you call the [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md) command (except for page number and page count, see below).
@@ -84,7 +84,7 @@ For example, to insert the page number in the footer area:
   //no funcionaría correctamente
 ```
 
-## Inserting date and time formulas
+## Inserción de fórmulas de fecha y hora
 
 **Date**
 
