@@ -17,7 +17,7 @@ Algunos de ellos
 
 ## Remoto
 
-| Provider                                                                                                                                                                                                 | Url base                                                                                                                                              |
+| Proveedor                                                                                                                                                                                                | Url base                                                                                                                                              |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | https://mistral.ai/                                                                                                                                                      | https://api.mistral.ai/v1                                                                             |
 | https://www.deepseek.com/                                                                                                                                | https://api.deepseek.com                                                                              |
@@ -31,7 +31,7 @@ Algunos de ellos
 
 ## Local
 
-| Provider                                             | Url base por defecto                                                                                      | Doc                                                                           |
+| Proveedor                                            | Url base por defecto                                                                                      | Doc                                                                           |
 | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | https://ollama.com/  | http://127.0.0.1:11434/v1 | https://ollama.com/blog/openai-compatibility  |
 | https://lmstudio.ai/ | http://localhost:1234/v1                                                  | https://lmstudio.ai/docs/api/endpoints/openai |
