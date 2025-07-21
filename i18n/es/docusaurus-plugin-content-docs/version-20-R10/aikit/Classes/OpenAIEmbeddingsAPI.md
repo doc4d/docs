@@ -19,7 +19,7 @@ Creates an embeddings for the provided input, model and parameters.
 
 | Argumento    | Tipo                                                        | Descripción                                                                             |
 | ------------ | ----------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| *entrada*    | Text or Collection of Text                                  | The input to vectorize.                                                 |
+| *entrada*    | Text or Collection of Text                                  | La entrada a vectorizar.                                                |
 | *model*      | Text                                                        | The [model to use](https://platform.openai.com/docs/guides/embeddings#embedding-models) |
 | *parámetros* | [OpenAIEmbeddingsParameters](OpenAIEmbeddingsParameters.md) | The parameters to customize the embeddings request.                     |
 | Resultado    | [OpenAIEmbeddingsResult](OpenAIEmbeddingsResult.md)         | Las integraciones.                                                      |
