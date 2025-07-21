@@ -13,9 +13,9 @@ The `_ImageUtils` internal class provides utility functions for handling images,
 
 Converts a URL to a Blob object by making an HTTP request.
 
-| Argumento | Tipo | Descripción                                           |
-| --------- | ---- | ----------------------------------------------------- |
-| $url      | Text | The URL of the image to be converted. |
+| Argumento | Tipo | Descripción                                      |
+| --------- | ---- | ------------------------------------------------ |
+| $url      | Text | La URL de la imagen a convertir. |
 
 **Devuelve**: Blob o Null si la solicitud falla.
 
