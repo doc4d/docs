@@ -14,15 +14,15 @@ displayed_sidebar: docs
 | expresión  | Text, Boolean, Integer | &#8594; | String for which to return the numeric form, or Boolean to return 0 or 1, or Numeric expression |
 | separador  | Text                   | &#8594; | Separador decimal                                                                               |
 | base       | Integer                | &#8594; | Value between 2 and 36 that represents the radix                                                |
-| Resultado  | Real                   | &#8592; | Numeric form of the expression parameter                                                        |
+| Resultado  | Real                   | &#8592; | Forma numérica del parámetro de expresión                                                       |
 
 <!-- END REF-->
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones              |
-| ----------- | --------------------------- |
-| 21          | Support of *base* parameter |
+| Lanzamiento | Modificaciones               |
+| ----------- | ---------------------------- |
+| 21          | Soporte del parámetro *base* |
 
 </details>
 
@@ -52,7 +52,7 @@ There are three reserved characters that **Num** treats specially: the decimal s
 
 #### *separator* parameter
 
-The *separator* parameter designates a custom decimal separator for evaluating the *expression*. When the string to be evaluated is expressed with a decimal separator different from the system operator, the command returns an incorrect result. The *separator* parameter can be used in this case to obtain a correct evaluation. When this parameter is passed, the command does not take the system decimal separator into account. You can pass one or more characters.
+The *separator* parameter designates a custom decimal separator for evaluating the *expression*. When the string to be evaluated is expressed with a decimal separator different from the system operator, the command returns an incorrect result. The *separator* parameter can be used in this case to obtain a correct evaluation. When this parameter is passed, the command does not take the system decimal separator into account. Puede pasar uno o más caracteres.
 
 :::note
 
