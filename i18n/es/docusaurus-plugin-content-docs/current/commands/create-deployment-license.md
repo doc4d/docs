@@ -36,7 +36,7 @@ In *mergedApp*, pass a [4D.Folder](../API/FolderClass.md) object containing a re
 
 Depending on the second parameter, you [let 4D select automatically the license to use](#automatic-license-selection) for the target or [designate the license(s) to use](#designating-the-licenses-to-use).
 
-### Automatic license selection
+### Selección automática de licencia
 
 If you pass the *autoLicenseTarget* parameter, you let 4D find and use the most appropriate license for the specified target. For more information on the automatic license selection, please refer to the [Build application](../Desktop/building.md#application-automatically-embedding-available-licenses) section.
 
@@ -99,7 +99,7 @@ Use the automatic syntax to create a single-user 4D application:
 
 ## Ejemplo 2
 
-Designate a license to use:
+Designar una licencia de uso:
 
 ```4d
  var $status : Object
