@@ -17,7 +17,7 @@ Custom HTTP request handlers meet various needs, including:
 
 ## Requisitos
 
-Custom HTTP Request handlers are supported:
+Se soportan gestores de solicitudes HTTP personalizados:
 
 - cuando las [sesiones escalables](./sessions.md#enabling-web-sessions) están habilitadas,
 - with the main Web Server only (HTTP Request handlers that may have been defined in [Web Servers of components](../WebServer/webServerObject.md) are ignored).
@@ -225,7 +225,7 @@ Examples of URLs triggering the handlers:
 `IP:port/docs/invoices/past` with a GET verb
 `IP:port/docs/invoices/today/latest` with a GET verb
 
-`IP:port//docs/myPage.html` with a GET verb
+`IP:port//docs/myPage.html` con un verbo GET
 
 `IP:port//docs/invoices/` with a GET verb, calls *handleInvoices* function (*InvoicesHandling* class)
 `IP:port//docs/invoices/details/` with a GET verb, calls *handleDetails* function (*InvoicesHandling* class)
