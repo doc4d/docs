@@ -55,9 +55,9 @@ var $blob:=cs._ImageUtils.me.toBlob($image)
 
 Convierte una imagen en una cadena codificada en base64.
 
-| Argumento  | Tipo    | Descripción                                                 |
-| ---------- | ------- | ----------------------------------------------------------- |
-| $imageInfo | Variant | The image information to convert to base64. |
+| Argumento  | Tipo    | Descripción                                                       |
+| ---------- | ------- | ----------------------------------------------------------------- |
+| $imageInfo | Variant | La información de la imagen a convertir a base64. |
 
 **Returns**: Base64 encoded Text or an empty string if conversion fails.
 
