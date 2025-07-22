@@ -171,7 +171,7 @@ This metric reflects both **similarity** and **magnitude**, and is generally use
 
 **Valor devuelto**
 
-- Depends on vector magnitudes and directions
+- Depende de las magnitudes y direcciones de los vectores
 - The higher the returned value is, more similar vectors are.
 
 #### Ejemplo
