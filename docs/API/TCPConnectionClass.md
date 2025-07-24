@@ -183,7 +183,7 @@ In the *options* parameter, pass an object that can contain the following proper
 |onTerminate|Formula|Callback triggered just before the TCPConnection is released|Undefined|
 |noDelay|Boolean|**Read-only** Disables Nagle's algorithm if `true`|False|
 |connectionTimeout|Real| Maximum time (in seconds) to establish the connection. If exceeded, the connection attempt is aborted| System-defined, generally ≥ 30 |
-|TLS|Boolean|Enables TLS/SSL encryption for connections| False |
+|TLS|Boolean|Enables TLS encryption for connections| False |
 
 
 #### Callback functions
