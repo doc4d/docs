@@ -8,6 +8,7 @@ title: Field properties
 The "Definition" area of the **Inspector palette** configures the basic field properties. Some properties are only available when certain types of fields are selected.
 <!-- END REF -->
 
+<!-- REF my.section.id2.Desc -->
 ### Color
 
 You can assign a color to each field. Colors can be used to distinguish fields according to their role or attributes. For example, you can use one color for unique fields and another for mandatory ones.  
@@ -22,7 +23,7 @@ The color set for a field will be applied to the field name. To set the color of
 - The **Color** option in the **Inspector palette**.
 
 The **Automatic** option can be used to apply the standard original color of the field.
-
+<!-- END REF -->
 ### Invisible
 
 You can make a field invisible in the Application environment and for the plug-ins by selecting the **Invisible** property for this field. The **Invisible** attribute hides the field from the user. A field with this attribute does not appear in any standard 4D editors and dialog boxes that appear in the Application environment. In addition, it cannot be used by plug-ins. The following **editors** and **dialog boxes** in the Application environment are concerned:
