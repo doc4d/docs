@@ -5,6 +5,8 @@ title: Field properties
 
 For other field properties, please refer to [doc.4d.com](https://doc.4d.com/4Dv20R10/4D/20-R10/Field-properties.300-7543749.en.html#5523008).
 
+<!-- INCLUDE my.section.id.Desc -->
+
 ## Class
 
 ![](../assets/en/Develop/inspector-class.png)
