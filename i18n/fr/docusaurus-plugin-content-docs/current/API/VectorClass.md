@@ -41,9 +41,7 @@ Vector objects are shared, immutable, and streamable.
 
 </details>
 
-<!-- REF #4D.Vector.new().Syntax -->
-
-**4D.Vector.new** ( *parameter* : Collection ) : 4D.Vector<!-- END REF -->
+<!-- REF #4D.Vector.new().Syntax -->**4D.Vector.new** ( *parameter* : Collection ) : 4D.Vector<!-- END REF -->
 
 <!--REF #4D.Vector.new().Params -->
 
