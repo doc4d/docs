@@ -41,9 +41,7 @@ AI の世界では、ベクトルとは、機会が複雑なデータを理解�
 
 </details>
 
-<!-- REF #4D.Vector.new().Syntax -->
-
-**4D.Vector.new** ( *parameter* : Collection ) : 4D.Vector<!-- END REF -->
+<!-- REF #4D.Vector.new().Syntax -->**4D.Vector.new** ( *parameter* : Collection ) : 4D.Vector<!-- END REF -->
 
 <!--REF #4D.Vector.new().Params -->
 
