@@ -54,83 +54,83 @@ La función **String** no es compatible con campos de tipo "Integer 64 bits" en 
 
 Si no se pasa el parámetro opcional *format*, la cadena se devuelve con el formato numérico por defecto.
 
-The format is specified in the same way as it would be for a [number input on a form](../FormObjects/properties_Display.md#number-format). You can also pass the name of a custom style in *format*. The custom style name must be preceded by the `|` character. He aquí algunos ejemplos:
+El formato se especifica del mismo modo que se haría para una [entrada numérica en un formulario](../FormObjects/properties_Display.md#number-format). También puede pasar el nombre de un estilo personalizado en *format*. The custom style name must be preceded by the `|` character. He aquí algunos ejemplos:
 
-| **Ejemplo**                                                                         | **Resultado**                     | **Comments**                                    |
-| ----------------------------------------------------------------------------------- | --------------------------------- | ----------------------------------------------- |
-| String(2^15)                                                     | "32768"                           | Formato por defecto                             |
-| String(2^15;"###,##0 Inhabitants")                               | "32,768 Inhabitants"              |                                                 |
-| String(1/3;"##0.00000")                          | "0.33333"         |                                                 |
-| String(1/3)                                                      | "0.3333333333333" | Formato por defecto(\*)      |
-| String(Arctan(1)\*4)                          | "3.14159265359"   | Formato por defecto(\*)      |
-| String(Arctan(1)\*4;"##0.00") | "3.14"            |                                                 |
-| String(-1;"&x")                              | "0xFFFFFFFF"                      |                                                 |
-| String(-1;"&$")                              | "$FFFFFFFF"                       |                                                 |
-| String(0 ?+ 7;"&x")                          | "0x0080"                          |                                                 |
-| String(0 ?+ 7;"&$")                          | "$80"                             |                                                 |
-| String(0 ?+ 14;"&x")                         | "0x4000"                          |                                                 |
-| String(0 ?+ 14;"&$")                         | "$4000"                           |                                                 |
-| String(50.3;"&xml")          | "50.3"            | Always "." as decimal separator |
-| String(Num(1=1);"True;;False")                | "True"                            |                                                 |
-| String(Num(1=2);"True;;False")                | "False"                           |                                                 |
-| String(Log(-1))                               | ""                                | Not a number                                    |
-| String(1/0)                                                      | "INF"                             | Número infinito positivo                        |
-| String(-1/0)                                                     | "-INF"                            | Negative infinite number                        |
+| **Ejemplo**                                                                         | **Resultado**                     | **Comentarios**                                    |
+| ----------------------------------------------------------------------------------- | --------------------------------- | -------------------------------------------------- |
+| String(2^15)                                                     | "32768"                           | Formato por defecto                                |
+| String(2^15;"###,##0 Inhabitants")                               | "32,768 Inhabitants"              |                                                    |
+| String(1/3;"##0.00000")                          | "0.33333"         |                                                    |
+| String(1/3)                                                      | "0.3333333333333" | Formato por defecto(\*)         |
+| String(Arctan(1)\*4)                          | "3.14159265359"   | Formato por defecto(\*)         |
+| String(Arctan(1)\*4;"##0.00") | "3.14"            |                                                    |
+| String(-1;"&x")                              | "0xFFFFFFFF"                      |                                                    |
+| String(-1;"&$")                              | "$FFFFFFFF"                       |                                                    |
+| String(0 ?+ 7;"&x")                          | "0x0080"                          |                                                    |
+| String(0 ?+ 7;"&$")                          | "$80"                             |                                                    |
+| String(0 ?+ 14;"&x")                         | "0x4000"                          |                                                    |
+| String(0 ?+ 14;"&$")                         | "$4000"                           |                                                    |
+| String(50.3;"&xml")          | "50.3"            | Siempre "." como separador decimal |
+| String(Num(1=1);"True;;False")                | "True"                            |                                                    |
+| String(Num(1=2);"True;;False")                | "False"                           |                                                    |
+| String(Log(-1))                               | ""                                | No es un número                                    |
+| String(1/0)                                                      | "INF"                             | Número infinito positivo                           |
+| String(-1/0)                                                     | "-INF"                            | Negative infinite number                           |
 
-(\*) The algorithm for converting real values into text is based on 13 significant digits, see [`SET REAL COMPARISON LEVEL`](../commands-legacy/set-real-comparison-level.md).
+(\*) El algoritmo para convertir valores reales en texto se basa en 13 dígitos significativos, ver [`SET REAL COMPARISON LEVEL`](../commands-legacy/set-real-comparison-level.md).
 
 #### String(number;base)
 
-Using a *base* parameter (integer) triggers a specific mode in which you pass the radix (base) of the number to be returned. In particular, this syntax allows you to convert numbers to hexadecimal strings.
+El uso de un parámetro *base* (integer) activa un modo específico en el que se pasa en la base del número a devolver. En concreto, esta sintaxis permite convertir números en cadenas hexadecimales.
 
-In the *base* parameter, pass the radix of the number in *expression*. You can pass any integer value between 2 and 36.
+En el parámetro *base*, pase la base del número en *expression*. Puede pasar cualquier valor entero entre 2 y 36.
 
-If you pass 0 in *base*, the command determines the radix depending on the *expression* value. If *expression* starts with "0x", base 16 is used. En caso contrario, se utiliza la base 10.
+Si pasa 0 en *base*, el comando determina la base dependiendo del valor de *expression*. Si *expression* empieza por "0x", se utiliza base 16. En caso contrario, se utiliza la base 10.
 
 :::info
 
-- This syntax strictly follows the [`toString` EcmaScript specification regarding radix handling](https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-number.prototype.tostring).
-- Using this syntax with *base*=10 will not give exactly the same results as using the syntax without *base* parameter. For example, if the specified number value is not a number, the "Nan" string is returned.
+- Esta sintaxis sigue estrictamente la especificación [`toString` EcmaScript sobre el manejo del radix](https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-number.prototype.tostring).
+- Utilizar esta sintaxis con *base*=10 no dará exactamente los mismos resultados que utilizar la sintaxis sin el parámetro *base*. Por ejemplo, si el valor numérico especificado no es un número, se devuelve la cadena "Nan".
 
 :::
 
-| **Ejemplo**                                               | **Resultado** | **Comments**                                     |
+| **Ejemplo**                                               | **Resultado** | **Comentarios**                                  |
 | --------------------------------------------------------- | ------------- | ------------------------------------------------ |
 | String(10;2)                           | "1010"        | cadena binaria                                   |
 | String(-10;2)                          | "-1010"       | cadena binaria (negativa)     |
-| String(254;16)                         | "fe"          | hexadecimal string                               |
-| String(-16523461; 16)                  | "-fc20c5"     | hexadecimal string (negative) |
-| String(Log(-1); 10) | "NaN"         | Not a number                                     |
-| String(1/0; 10)                        | "NaN"         | Not a number                                     |
-| String(-1/0; 10)                       | "NaN"         | Not a number                                     |
+| String(254;16)                         | "fe"          | cadena hexadecimal                               |
+| String(-16523461; 16)                  | "-fc20c5"     | cadena hexadecimal (negativa) |
+| String(Log(-1); 10) | "NaN"         | No es un número                                  |
+| String(1/0; 10)                        | "NaN"         | No es un número                                  |
+| String(-1/0; 10)                       | "NaN"         | No es un número                                  |
 
 :::note
 
-If the specified number value is negative, the sign is preserved. This is the case even if the radix is 2; the returned string is > N, the positive binary representation of the number value preceded by a - sign.
+Si el valor del número especificado es negativo, el signo se conserva. Este es el caso incluso si la base es 2; la cadena devuelta es > N, la representación binaria positiva del valor numérico precedido por un signo -.
 
 :::
 
-### Date Expressions
+### Expresiones de tipo Date
 
-If *expression* is a Date expression and if you omit the *format* parameter, the string is returned using the default format specified in the system.
+Si *expression* es una expresión de tipo Date y si omite el parámetro *format*, la cadena se devuelve utilizando el formato por defecto especificado en el sistema.
 
-Otherwise, in the *format* parameter, you can pass:
+De lo contrario, en el parámetro *format*, puede pasar:
 
-- either a predefined format available though the following constants of the *Date Display Formats* theme (longint value):
+- o bien un formato predefinido disponible a través de las siguientes constantes del tema *Formatos de visualización de las fechas* (valor longint):
 
-| Constante                   | Valor | Comentario                                                                                                                                      |
-| --------------------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| Blank if null date          | 100   | To be added to the format constant. Indicates that in the case of a null value, 4D must return an empty string instead of zeros |
-| Date RFC 1123               | 10    | Fri, 10 Sep 2010 13:07:20 GMT (see Notes)                                                    |
-| Internal date abbreviated   | 6     | 29 dic 2006                                                                                                                                     |
-| Internal date long          | 5     | December 29, 2006                                                                                                                               |
-| Internal date short         | 7     | 12/29/2006                                                                                                                                      |
-| Internal date short special | 4     | 12/29/06 (but 12/29/1896 or 12/29/2096)                                                                                      |
-| ISO Date                    | 8     | 2006-12-29T00:00:00 (see Notes)                                                              |
-| ISO Date GMT                | 9     | 2010-09-13T16:11:53Z (see Notes)                                                             |
-| System date abbreviated     | 2     | Sun, Dec 29, 2006                                                                                                                               |
-| System date long            | 3     | Domingo, 29 diciembre 2006                                                                                                                      |
-| System date short           | 1     | 12/29/2006                                                                                                                                      |
+| Constante                   | Valor | Comentario                                                                                                                               |
+| --------------------------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Blank if null date          | 100   | Se añade a la constante format. Indica que en caso de un valor null, 4D debe devolver una cadena vacía en lugar de ceros |
+| Date RFC 1123               | 10    | Fri, 10 Sep 2010 13:07:20 GMT (ver Notas)                                             |
+| Internal date abbreviated   | 6     | 29 dic 2006                                                                                                                              |
+| Internal date long          | 5     | 29 diciembre 2006                                                                                                                        |
+| Internal date short         | 7     | 12/29/2006                                                                                                                               |
+| Internal date short special | 4     | 29/12/06 (pero 29/12/1896 o 29/12/2096)                                                                               |
+| ISO Date                    | 8     | 2006-12-29T00:00:00 (ver Notas)                                                       |
+| ISO Date GMT                | 9     | 2010-09-13T16:11:53Z (ver Notas)                                                      |
+| System date abbreviated     | 2     | dom, 29 dic 2006                                                                                                                         |
+| System date long            | 3     | Domingo, 29 diciembre 2006                                                                                                               |
+| System date short           | 1     | 12/29/2006                                                                                                                               |
 
 Ejemplos:
 
@@ -140,23 +140,23 @@ Ejemplos:
  $vsResult:=String(!2023-11-27!;ISO Date GMT) // "2023-11-26T23:00:00Z" in French timezone  
 ```
 
-- or a [customized format built upon a pattern](../Project/date-time-formats.md) (string value)\
-  Examples:
+- o un [formato personalizado basado en un modelo](../Project/date-time-formats.md) (valor cadena)\
+  Ejemplos:
 
 ```4d
- $vsResult:=String(!2023-11-27!;"EEEE d MMMM y GGGG") //"Monday 27 November 2023 Anno Domini"  
- $vsResult:=String(!2023-11-27!;"E dd/MM/yyyy zzzz") //"Mon 27/11/2023 GMT+01:00" in French timezone  
+ $vsResult:=String(!2023-11-27!;"EEEE d MMMM y GGGG") //"Lunes 27 de Noviembre de 2023 Anno Domini"  
+ $vsResult:=String(!2023-11-27!;"E dd/MM/yyyy zzzz") //"Lun 27/11/2023 GMT+01:00" en la zona horaria francesa  
 ```
 
 :::note
 
-Formats can vary depending on system settings.
+Los formatos pueden variar en función de la configuración del sistema.
 
 :::
 
-#### *addTime* parameter
+#### Parámetro *addTime*
 
-When processing Date expressions, you can also pass a time in the *addTime* parameter. This parameter lets you combine a date with a time so that you can generate time stamps in compliance with current standards (ISO Date GMT and Date RFC 1123 constants). These formats are particularly useful in the context of xml and Web processing. The *addTime* parameter can only be used when the *expression* parameter is a date.
+Al procesar expresiones de fecha, también puede pasar una hora en el parámetro *addTime*. Este parámetro permite combinar una fecha con una hora para generar marcas de tiempo conformes a las normas vigentes (constantes ISO Date GMT y Date RFC 1123). These formats are particularly useful in the context of xml and Web processing. The *addTime* parameter can only be used when the *expression* parameter is a date.
 
 This parameter can be used with both predefined or pattern-based date formats. Ejemplos:
 
@@ -203,13 +203,13 @@ The time expressed takes the time zone into account (GMT zone). If you only pass
 
 If *expression* is a Time expression and if you omit the *format* parameter, the string is returned using the default HH:MM:SS format.
 
-Otherwise, in the *format* parameter, you can pass:
+De lo contrario, en el parámetro *format*, puede pasar:
 
 - either a predefined format available though the following constants of the *Time Display Formats* theme (longint value):
 
 | Constante                    | Valor | Comentario                                                                                                                                                                                                                                                                                                                             |
 | ---------------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Blank if null time           | 100   | To be added to the format constant. Indicates that in the case of a null value, 4D must return an empty string instead of zeros                                                                                                                                                                                        |
+| Blank if null time           | 100   | Se añade a la constante format. Indica que en caso de un valor null, 4D debe devolver una cadena vacía en lugar de ceros                                                                                                                                                                                               |
 | HH MM                        | 2     | 01:02                                                                                                                                                                                                                                                                                                                  |
 | HH MM AM PM                  | 5     | 1:02 AM                                                                                                                                                                                                                                                                                                                |
 | HH MM SS                     | 1     | 01:02:03                                                                                                                                                                                                                                                                                               |
@@ -229,8 +229,8 @@ Ejemplos:
  $vsResult:=String(?17:30:45?;Hour Min Sec) //"17 hours 30 minutes 45 seconds"  
 ```
 
-- or a [customized format built upon a pattern](../Project/date-time-formats.md) (string value)\
-  Examples:
+- o un [formato personalizado basado en un modelo](../Project/date-time-formats.md) (valor cadena)\
+  Ejemplos:
 
 ```4d
  $vsResult:=String(?17:30:45?;"hh:mm aa O") //"05:30 PM GMT+1"  
