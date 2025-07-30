@@ -153,7 +153,6 @@ module.exports =
           ]
         },
         "commands/command-index",
-
         {
           type: "category",
           label: "Commands by theme",
