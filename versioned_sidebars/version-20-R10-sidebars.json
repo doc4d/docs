@@ -84,15 +84,22 @@
                     "Preferences/methods",
                     "Preferences/shortcuts"
                   ]
+            },
+            {
+               "type": "category",
+               "label": "Dababase structure",
+               "items": [
+                 "Develop/field-properties"
+                ]
             }
       ] 
     },
     {
       "type": "category",
-      "label": "Core Development",
+      "label": "4D Language",
       "link": {
         "type": "generated-index",
-        "title": "Core Development",
+        "title": "4D Language",
         "slug": "/category/4d-language",
         "keywords": [
           "language","orda"
@@ -102,7 +109,7 @@
       "items": [
         {
           "type": "category",
-          "label": "Concepts",
+          "label": "4D Language Concepts",
           "items": [
             "Concepts/about",
             "Concepts/quick-tour",
@@ -2296,10 +2303,10 @@
         },
         {
           "type": "category",
-          "label": "Core Features",
+          "label": "Features",
           "link": {
             "type": "generated-index",
-            "title": "Core development",
+            "title": "Features",
             "slug": "/category/core-features",
             "keywords": [
               "features"
@@ -2311,16 +2318,65 @@
             "Develop/preemptive-processes",
             "Develop-legacy/transactions",
             "Tags/transformation-tags",
-            "Project/date-time-formats",
-              {
-               "type": "category",
-               "label": "Dababase structure",
-               "items": [
-                 "Develop/field-properties"
-                      ]
-            }
+            "Project/date-time-formats"
           ]
         }
+      ]
+    },
+        {
+      "type": "category",
+      "label": "Core Development",
+      "link": {
+        "type": "generated-index",
+        "title": "Core Development",
+        "slug": "/category/core",
+        "image": "/img/docusaurus.png"
+      },
+      "items": [
+        {
+          "type": "category",
+          "label": "ORDA",
+          "link": {
+            "type": "generated-index",
+            "title": "ORDA",
+            "slug": "/category/orda",
+            "keywords": [
+              "orda"
+            ],
+            "image": "/img/docusaurus.png"
+          },
+          "items": [
+            "ORDA/overview",
+            "ORDA/dsmapping",
+            "ORDA/ordaClasses",
+            "ORDA/entities",
+            "ORDA/global-stamp",
+            "ORDA/datastores",
+            "ORDA/privileges",
+            "ORDA/client-server-optimization",
+            "ORDA/glossary"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Processes",
+          "link": {
+            "type": "generated-index",
+            "title": "Processes",
+            "slug": "/category/processes",
+            "keywords": [
+              "processes"
+            ],
+            "image": "/img/docusaurus.png"
+          },
+          "items": [
+            "Develop/processes",
+            "Develop/preemptive-processes"
+          ]
+        },
+        "Develop-legacy/transactions",
+          "Tags/transformation-tags",
+          "Project/date-time-formats"
       ]
     },
     {
