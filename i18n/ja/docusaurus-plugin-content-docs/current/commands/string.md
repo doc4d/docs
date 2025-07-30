@@ -9,13 +9,13 @@ displayed_sidebar: docs
 
 <!--REF #_command_.String.Params-->
 
-| 引数      | 型             |                             | 説明                                                                                                                                                    |
-| ------- | ------------- | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 式       | 式             | &#8594; | Expression for which to return the string form (can be Real, Integer, Long Integer, Date, Time, Text, Boolean, Undefined, or Null) |
-| format  | Integer, Text | &#8594; | Display format                                                                                                                                        |
-| addTime | Time          | &#8594; | Time to add on if expression is a date                                                                                                                |
-| base    | Integer       | &#8594; | Value between 2 and 36 that represents the radix if expression is a number                                                                            |
-| 戻り値     | Text          | &#8592; | String form of the expression                                                                                                                         |
+| 引数      | 型             |                             | 説明                                                                            |
+| ------- | ------------- | --------------------------- | ----------------------------------------------------------------------------- |
+| 式       | 式             | &#8594; | 文字列式を返したい式 (実数、整数、倍長整数、日付、時間、文字列、 テキスト、ブール、未定義、Null を指定可能) |
+| format  | Integer, Text | &#8594; | 表示フォーマット                                                                      |
+| addTime | Time          | &#8594; | expressionが日付の時、追加する時間                                                        |
+| base    | Integer       | &#8594; | 式が数値の場合に、基数を表す2 から36 までの値                                                     |
+| 戻り値     | Text          | &#8592; | 式の文字列の形式                                                                      |
 
 <!-- END REF-->
 
@@ -29,11 +29,11 @@ displayed_sidebar: docs
 
 ## 説明
 
-<!--REF #_command_.String.Summary-->The **String** command returns the string form of the numeric, Date, Time, string or Boolean expression you pass in *expression*.<!-- END REF-->
+<!--REF #_command_.String.Summary-->**String** コマンドは、*expression* に渡した数値、日付、時間、文字列、またはブールを文字列に変換します。<!-- END REF-->
 
-If you do not pass any parameter, the string is returned with the appropriate default format. If you pass *format*, you can force the result string to be of a specific format.
+引数を何も渡さなかった場合、適切なデフォルトの形式の文字列で返されます。 *format* を指定すると、結果の文字列は指定した形式になります。
 
-The optional *addTime* parameter adds a time to a date in a combined format. It can only be used when the *expression* parameter is a date (see below).
+オプションの*addTime* 引数は、日付に時間を複合フォーマットで追加します。 この引数は *expression* 引数が日付型の時にのみ使用できます (後述)。
 
 The optional *base* parameter can only be used with a numeric *expression*, it returns the number in the specified base (see below).
 
@@ -247,7 +247,7 @@ In this case, the *format* parameter, if passed, is ignored.
 If *expression* is of the Boolean type, the command returns the string “True” or “False” in the language of the application (for example, “Vrai” or “Faux” in a French version of 4D).\
 In this case, the *format* parameter, if passed, is ignored.
 
-### Undefined Expressions
+### 未定義式
 
 If *expression* is evaluated to undefined, the command returns an empty string. This is useful when you expect the result of an expression (e.g. an object attribute) to be a string, even if it can be undefined.
 
