@@ -85,13 +85,13 @@ displayed_sidebar: docs
 
 数値式を*expression* 引数に渡した場合、**Num** は*expression* 引数に渡された値をそのまま返します。 これは具体的にはポインタを使用するような汎用プログラミングで有効です。
 
-### Undefined Expressions
+### 未定義式
 
-If *expression* evaluates to undefined, the command returns 0 (zero). This is useful when you expect the result of an expression (e.g. an object attribute) to be a number, even if it can be undefined.
+*expression* 引数が未定義と評価された場合、コマンドは0(ゼロ) を返します。 これは、式(例: オブジェクトの属性)の結果が、未定義であっても数値として返されることを期待するような場合に便利です。
 
 ## 例題 1
 
-The following example illustrates how **Num** works when passed a single string argument:
+以下は単一の文字引数を渡した場合の**Num** の振る舞いについて示したものです:
 
 ```4d
 $result:=Num("ABCD") // 0
@@ -104,40 +104,39 @@ $result:=Num("–123e2") // –12300
 
 ## 例題 2
 
-Here, *\[Client\]Debt* is compared with *$1000*. The Num command applied to these comparisons returns 1 or 0\. Multiplying 1 or 0 with a string repeats the string once or returns the empty string. As a result, *\[Client\]Risk* gets either “Good” or “Bad”:
+以下の例は、 *\[Client\]Debt* と *$1000* とを比較します。 この比較に適用されるNum コマンドからは1 または0 が返されます。 文字列に1 や0 を乗算するとその文字または空の文字が返されます。 結果として、 *\[Client\]Risk* には"Good"または"Bad"が返されます:
 
 ```4d
-  // If client owes less than 1000, a good risk.
-  // If client owes more than 1000, a bad risk.
+  // 顧客の負債額が、1000より小さいは「Good」
+  // 顧客の負債額が、1000以上は「Bad」
  [Client]Risk:=("Good"*Num([Client]Debt<1000))+("Bad"*Num([Client]Debt>=1000))
 ```
 
 ## 例題 3
 
-This example compares the results obtained depending on the “current” separator:
+この例は"現在の"小数区切りにより取得される結果を比較します:
 
 ```4d
  $thestring:="33,333.33"
  $thenum:=Num($thestring)
-  // by default, $thenum equals 33,33333 on a French system
+  //  フランスのシステムでは、$thenum は、デフォルトで33,33333と等しい。
  $thenum:=Num($thestring;".")
-  // $thenum will be correctly evaluated regardless of the system;
-  // for example, 33 333,33 on a French system
+  // システムに関係なく、$thenum は正確に評価されます。
+  // 例えば、フランスのシステムでも 33 333.33となります。
 ```
 
 ## 例題 4
 
-This example illustrates the use of the *base* syntax:
+この例題では*base* シンタックスの使用法について紹介します:
 
 ```4d
-$result:=Num("ff";16) // 255 (lower-case hexadecimal)
+$result:=Num("ff";16) // 255 (小文字の16進数)
 $result:=Num("0xFF") // 0
 $result:=Num("0xFF";16) // 255
 $result:=Num("2";2) // 0
 $result:=Num("10.3";16) // 16
-$result:=Num("123.20") // 12320 (standard base 10 syntax)
-$result:=Num("123.20"; 10) // 123 (explicitly specify base 10)
-
+$result:=Num("123.20") // 12320 (標準の10進数シンタックス)
+$result:=Num("123.20"; 10) // 123 (明示的に10進数を指定)
 ```
 
 ## 参照
