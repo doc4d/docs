@@ -13,9 +13,9 @@ title: TCPConnection
 
 TCPConnection オブジェクトはメモリ内にそれへの参照が存在しなくなった時にリリースされます。  これ一般的に、例えばメソッド実行の最後にローカル変数が消去されるときに発生します。 接続を"強制的に" 終了させたい場合には、[**Null** を代入することで**参照を無効化**してください](../Concepts/dt_object.md#リソース)。
 
-:::info 4DTCPUDPLog.txt file
+:::info 4DTCPUDPLog.txt ファイル
 
-For debugging and monitoring, you can use the [4DTCPUDPLog.txt log file] that records events related to TCP connections. 記録されるイベントには、データ送信、エラー、接続ライフサイクル情報などが含まれます。
+TCP 接続に関連したイベントを記録する[4DTCPUDPLog.txt ログファイル]を使用すると、 デバッグやモニタリングを行うことができます。 記録されるイベントには、データ送信、エラー、接続ライフサイクル情報などが含まれます。
 
 :::
 
@@ -147,7 +147,7 @@ TCPConnection オブジェクトは以下のプロパティと関数を提供し
 | [<!-- INCLUDE #TCPConnection.shutdown().Syntax -->](#shutdown)<br/><!-- INCLUDE #TCPConnection.shutdown().Summary --> |
 | [<!-- INCLUDE #TCPConnection.wait().Syntax -->](#wait)<br/><!-- INCLUDE #TCPConnection.wait().Summary -->             |
 
-<!-- REF #4D.TCPConnection.new().Desc -->
+<!-- REF 4D.TCPConnection.new().Desc -->
 
 ## 4D.TCPConnection.new()
 
@@ -206,7 +206,7 @@ TCPConnection オブジェクトは以下のプロパティと関数を提供し
 
 <!-- END REF -->
 
-<!-- REF #TCPConnection.address.Desc -->
+<!-- REF TCPConnection.address.Desc -->
 
 ## .address
 
@@ -218,7 +218,7 @@ TCPConnection オブジェクトは以下のプロパティと関数を提供し
 
 <!-- END REF -->
 
-<!-- REF #TCPConnection.closed.Desc -->
+<!-- REF TCPConnection.closed.Desc -->
 
 ## .closed
 
@@ -230,7 +230,7 @@ TCPConnection オブジェクトは以下のプロパティと関数を提供し
 
 <!-- END REF -->
 
-<!-- REF #TCPConnection.errors.Desc -->
+<!-- REF TCPConnection.errors.Desc -->
 
 ## .errors
 
@@ -249,7 +249,7 @@ TCPConnection オブジェクトは以下のプロパティと関数を提供し
 
 <!-- END REF -->
 
-<!-- REF #TCPConnection.listener.Desc -->
+<!-- REF TCPConnection.listener.Desc -->
 
 ## .listener
 
@@ -261,7 +261,7 @@ TCPConnection オブジェクトは以下のプロパティと関数を提供し
 
 <!-- END REF -->
 
-<!-- REF #TCPConnection.noDelay.Desc -->
+<!-- REF TCPConnection.noDelay.Desc -->
 
 ## .noDelay
 
@@ -273,7 +273,7 @@ TCPConnection オブジェクトは以下のプロパティと関数を提供し
 
 <!-- END REF -->
 
-<!-- REF #TCPConnection.port.Desc -->
+<!-- REF TCPConnection.port.Desc -->
 
 ## .port
 
@@ -285,7 +285,7 @@ TCPConnection オブジェクトは以下のプロパティと関数を提供し
 
 <!-- END REF -->
 
-<!-- REF #TCPConnection.send().Desc -->
+<!-- REF TCPConnection.send().Desc -->
 
 ## .send()
 
@@ -305,7 +305,7 @@ TCPConnection オブジェクトは以下のプロパティと関数を提供し
 
 <!-- END REF -->
 
-<!-- REF #TCPConnection.shutdown().Desc -->
+<!-- REF TCPConnection.shutdown().Desc -->
 
 ## .shutdown()
 
@@ -325,7 +325,7 @@ TCPConnection オブジェクトは以下のプロパティと関数を提供し
 
 <!-- END REF -->
 
-<!-- REF #TCPConnection.wait().Desc -->
+<!-- REF TCPConnection.wait().Desc -->
 
 ## .wait()
 

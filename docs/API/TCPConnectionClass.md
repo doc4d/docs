@@ -160,14 +160,14 @@ TCPConnection objects provide the following properties and functions:
 |serverAddress|Text|->|Domain name or IP address of the server|
 |serverPort|Integer|->|Port number of the server|                          
 |options|Object|->|Configuration [options](#options-parameter) for the connection|
-|Result|TCPConnection|<-|New TCPConnection object|                                
+|Result|4D.TCPConnection|<-|New TCPConnection object|                                
 
 <!-- END REF -->
 
 #### Description
 
 
-The `4D.TCPConnection.new()` function <!-- REF #4D.TCPConnection.new().Summary -->creates a new TCP connection to the specified *serverAddress* and *serverPort*, using the defined *options*, and returns a `4D.HTTPRequest` object<!-- END REF -->.
+The `4D.TCPConnection.new()` function <!-- REF #4D.TCPConnection.new().Summary -->creates a new TCP connection to the specified *serverAddress* and *serverPort*, using the defined *options*, and returns a `4D.TCPConnection` object<!-- END REF -->.
 
 
 #### `options` parameter
@@ -183,6 +183,7 @@ In the *options* parameter, pass an object that can contain the following proper
 |onTerminate|Formula|Callback triggered just before the TCPConnection is released|Undefined|
 |noDelay|Boolean|**Read-only** Disables Nagle's algorithm if `true`|False|
 |connectionTimeout|Real| Maximum time (in seconds) to establish the connection. If exceeded, the connection attempt is aborted| System-defined, generally ≥ 30 |
+|TLS|Boolean|Enables TLS encryption for connections| False |
 
 
 #### Callback functions
