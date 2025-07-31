@@ -239,21 +239,21 @@ displayed_sidebar: docs
 
 ### 文字列式
 
-If *expression* is of the String or Text type, the command returns the same value as the one passed in the parameter. This can be useful more particularly in generic programming using pointers.\
-In this case, the *format* parameter, if passed, is ignored.
+*expression* が文字列またはテキスト型の場合、コマンドは引数として渡されたものと同じ値を返します。 これは特にポインタを使用している汎用プログラミングで有効です。\
+この場合、*format* 引数は渡されても無視されます。
 
 ### ブール式
 
-If *expression* is of the Boolean type, the command returns the string “True” or “False” in the language of the application (for example, “Vrai” or “Faux” in a French version of 4D).\
-In this case, the *format* parameter, if passed, is ignored.
+*expression* がブール 型の場合、コマンドはアプリケーションのランゲージに即した文字列の "True" または"False"を返します(例えば、4Dのフランス語バージョンでは、“Vrai”または“Faux”)。\
+この場合、*format* 引数は渡されても無視されます。
 
 ### 未定義式
 
-If *expression* is evaluated to undefined, the command returns an empty string. This is useful when you expect the result of an expression (e.g. an object attribute) to be a string, even if it can be undefined.
+*expression* が未定義に評価される場合、コマンドは空の文字列を返します。 これは式の結果(オブジェクト属性など)が、たとえ未定義であっても文字列として返されることを期待したい場合などに有効です。
 
-### Null Expressions
+### Null 式
 
-If *expression* is evaluated to Null, the command returns the "null" string. This is useful when you expect the result of an expression (e.g. an object attribute) to be a string, even if it can be null.
+*expression* がNull に評価される場合、コマンドは"null"の文字列を返します。 これはある式(例: オブジェク属性)の結果が、nullである可能性があるが、文字列として返されることを期待する場合に有用です。
 
 ## 参照
 
