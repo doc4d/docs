@@ -2326,6 +2326,65 @@ module.exports =
         },
       ]
     },
+    {  
+        type: "category",
+      label: "Core Development",
+      link: {
+        type: "generated-index",
+        title: "Core Development",
+        slug: "/category/core",
+        keywords: [
+          "core","orda"
+        ],
+        image: "/img/docusaurus.png"
+      },
+      items: [
+       {
+          type: "category",
+          label: "ORDA",
+          link: {
+            type: "generated-index",
+            title: "ORDA",
+            slug: "/category/orda",
+            keywords: [
+              "orda"
+            ],
+            image: "/img/docusaurus.png"
+          },
+          items: [
+            "ORDA/overview",
+            "ORDA/dsmapping",
+            "ORDA/ordaClasses",
+            "ORDA/entities",
+            "ORDA/global-stamp",
+            "ORDA/datastores",
+            "ORDA/privileges",
+            "ORDA/client-server-optimization",
+            "ORDA/glossary"
+          ]
+        },
+        {
+          type: "category",
+          label: "Core Features",
+          link: {
+            type: "generated-index",
+            title: "Core development",
+            slug: "/category/core-features",
+            keywords: [
+              "features"
+            ],
+            image: "/img/docusaurus.png"
+          },
+          items: [
+            "Develop/processes",
+            "Develop/preemptive-processes",
+            "Develop-legacy/transactions",
+            "Tags/transformation-tags",
+            "Project/date-time-formats"
+          ]
+        },
+      ]
+    },
     {
       type: "category",
       label: "Web Applications",

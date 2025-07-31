@@ -94,15 +94,15 @@ title: (
     title: (
     <>
       <i class="fa-solid fa-code" style={{ marginRight: '0.6rem', color: '#6c63ff' }}></i>
-      <Translate id="homepage.sections.language.title">
-          Core Development
+      <Translate id="homepage.sections.test.title">
+          4D Language
       </Translate>
     </>
   ),
     links: (
       <div className="homepageLinks">
         <Link to="Concepts/about">
-          <Translate>4D Language Concepts</Translate>
+          <Translate>Concepts</Translate>
         </Link>
         <Link to="commands/command-index">
           <Translate>Command index</Translate>
@@ -114,11 +114,27 @@ title: (
         <Link to="category/class-API-reference" >
           <Translate>Classes</Translate>
         </Link>
+      </div>
+    ),
+  },{
+    title: (
+    <>
+      <i class="fa-solid fa-gears" style={{ marginRight: '0.6rem', color: '#6c63ff' }}></i>
+      <Translate id="homepage.sections.core.title">
+          Core Development
+      </Translate>
+    </>
+  ),
+    links: (
+      <div className="homepageLinks">
+        <Link to="Develop-legacy/overview">
+          <Translate>Database</Translate>
+        </Link>
         <Link to="ORDA/overview">
           <Translate>ORDA</Translate>
         </Link>
-        <Link to="category/develop">
-          <Translate>Back-end features</Translate>
+        <Link to="category/processes">
+          <Translate>Processes</Translate>
         </Link>
       </div>
     ),
@@ -217,6 +233,12 @@ title: (
        <Link to="https://github.com/4d/4D-QPDF?tab=readme-ov-file#readme">
           <Translate>4D QPDF</Translate> <i class="fa-solid fa-up-right-from-square"></i>
         </Link>
+        <Link to={localizedLinks["homepage.sections.mobile-applications.go-mobile-url"]}>
+          <Translate>Go Mobile with 4D</Translate> <i class="fa-solid fa-up-right-from-square"></i>
+        </Link>
+        <Link to="https://github.com/4d-depot/Build4D?tab=readme-ov-file#readme">
+          <Translate>Build4D</Translate> <i class="fa-solid fa-up-right-from-square"></i>
+        </Link>
       </div>
     ),
   },
@@ -257,27 +279,6 @@ title: (
         </Link>
         <Link to="Desktop/user-settings" >
           <Translate>User Settings</Translate>
-        </Link>
-      </div>
-    ),
-  },
-  {
-    title: (
-    <>
-      <i class="fa-solid fa-plus" style={{ marginRight: '0.6rem', color: '#6c63ff' }}></i>
-      <Translate id="homepage.sections.more.title">
-          More docs
-      </Translate>
-    </>
-  ),
-    links: (
-      <div className="homepageLinks">
-        
-        <Link to={localizedLinks["homepage.sections.mobile-applications.go-mobile-url"]}>
-          <Translate>Go Mobile with 4D</Translate> <i class="fa-solid fa-up-right-from-square"></i>
-        </Link>
-        <Link to="https://github.com/4d-depot/Build4D?tab=readme-ov-file#readme">
-          <Translate>Build4D</Translate> <i class="fa-solid fa-up-right-from-square"></i>
         </Link>
       </div>
     ),
