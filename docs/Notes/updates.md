@@ -15,6 +15,11 @@ Read [**What’s new in 4D 21**](https://blog.4d.com/en-whats-new-in-4d-21/), th
 	- New "trim" commands to remove leading and trailing spaces from a string: [`Trim`](../commands/trim.md), [`Trim start`](../commands/trim-start.md), and [`Trim end`](../commands/trim-end.md).  
 	- [`Num`](../commands/num.md) and [`String`](../commands/string.md) commands have been updated to support conversions in different bases (radix).
 
+#### Behavior changes
+
+- Web services (SOAP): when [scalable sessions](../WebServer/sessions.md#enabling-web-sessions) are enabled in compiled applications, web service processes are now automatically run in [**preemptive mode**](../Develop/preemptive.md). 
+- Web server: the support of database access through deprecated `4DSYNC/` URLs is removed. No specific processing is done on this URL anymore. 
+
 
 ## 4D 20 R10
 
