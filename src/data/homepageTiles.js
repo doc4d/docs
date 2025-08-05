@@ -127,7 +127,7 @@ title: (
   ),
     links: (
       <div className="homepageLinks">
-        <Link to="Develop-legacy/overview">
+        <Link to="Develop/field-properties">
           <Translate>Database</Translate>
         </Link>
         <Link to="ORDA/overview">
