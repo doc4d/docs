@@ -62,23 +62,23 @@ Dans le paramètre *property*, passez une constante indiquant la propriété don
 | lk current item pos expression | 39     | Propriété **[Position élément courant](../FormObjects/properties_DataSource.md#current-item-position)**<br/>S'applique à : List box (Collection / Entity selection)                                                                                                                                                                                                                                                                                                                                                                              |
 | lk selected items expression   | 40     | Propriété **[Eléments sélectionnés](../FormObjects/properties_DataSource.md#selected-items)**<br/>S'applique à : List box (Collection / Entity selection)                                                                                                                                                                                                                                                                                                                                                                                        |
 
-\* These properties only apply to list box columns; if you pass a list box as parameter with one of these properties, **LISTBOX Get property** returns -1, or an empty string, depending on the *property* passed.
+\* Ces propriétés ne s'appliquent qu'aux colonnes de la list box ; si vous passez une list box en paramètre avec une de ces propriétés, **LISTBOX Get property** retourne -1, ou une chaîne vide, selon la *property* passée.
 
-In general, to signal an invalid result **LISTBOX Get property** returns -1 when retrieving properties that have numeric values, or an empty string; however, no errors are generated. More specifically, this occurs in the following cases:
+En général, pour signaler un résultat invalide, **LISTBOX Get property** renvoie -1 lors de la récupération de propriétés ayant des valeurs numériques, ou une chaîne vide ; cependant, aucune erreur n'est générée. Plus précisément, cela se produit dans les cas suivants :
 
-- If you pass a *property* that does not exist
-- If you pass a *property* that is not available for the specified list box or column, e.g. you pass the lk font color expression property with an array type list box
-- If you pass a column as parameter with a *property* that is applied to a list box, and vice versa if you pass a list box as parameter with a *property* that is applied to a column (see \* above)
+- Si vous passez une *property* qui n'existe pas
+- Si vous passez une *property* qui n'est pas disponible pour la list box ou la colonne spécifiée, par exemple si vous passez la propriété lk font color expression avec une list box de type tableau
+- Si vous passez une colonne comme paramètre avec une *property* appliquée à une list box, et vice versa si vous passez une list box comme paramètre avec une *property* appliquée à une colonne (voir \* ci-dessus)
 
-In addition, it is not possible to return values from more than one column at a time; if you attempt to use the "@" symbol as part of a column name to indicate multiple columns with similar names, **LISTBOX Get property** returns the first matching value it finds; as a result, the value returned has no true significance.
+En outre, il n'est pas possible de renvoyer des valeurs provenant de plus d'une colonne à la fois ; si vous essayez d'utiliser le symbole "@" dans le nom d'une colonne pour indiquer plusieurs colonnes avec des noms similaires, **LISTBOX Get property** renvoie la première valeur correspondante qu'il trouve ; par conséquent, la valeur renvoyée n'a pas de véritable signification.
 
 **Note:**
 
-- The lk display footer and lk display header constants are useful for calculating the actual size of a list box area in a form.
+- Les constantes lk display footer et lk display header sont utiles pour calculer la taille réelle d'une zone de list box dans un formulaire.
 
 ## Exemple 1
 
-Étant donné une boîte de liste "MyListbox", si vous exécutez l'instruction suivante :
+Soit une list box "MyListbox", si vous exécutez l'instruction suivante :
 
 ```4d
  $Value:=LISTBOX Get property(*;"MyListbox";lk selection mode) // la valeur retournée indique le mode de sélection
@@ -88,13 +88,13 @@ Dans ce cas, le résultat retourné indique si plusieurs lignes peuvent être s�
 
 ## Exemple 2
 
-Étant donné une boîte de liste "MyListbox", si vous exécutez l'instruction suivante :
+Soit une list box "MyListbox", si vous exécutez l'instruction suivante :
 
 ```4d
  $resizable:=LISTBOX Get property(*;"MyListbox";lk column resizable)
 ```
 
-**LISTBOX Get property** retourne -1 parce que la propriété lk column resizable s'applique aux colonnes et qu'une zone de liste a été passée en paramètre.
+**LISTBOX Get property** retourne -1 parce que la propriété lk column resizable s'applique aux colonnes et qu'une list box a été passée en paramètre.
 
 ## Voir également
 
