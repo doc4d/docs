@@ -87,7 +87,7 @@
             },
             {
                "type": "category",
-               "label": "Dababase structure",
+               "label": "Dababase",
                "items": [
                  "Develop/field-properties"
                 ]
