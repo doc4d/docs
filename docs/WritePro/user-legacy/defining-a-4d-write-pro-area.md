@@ -1,7 +1,6 @@
 ---
 id: defining-a-4d-write-pro-area
 title: Defining a 4D Write Pro area
-slug: /commands/defining-a-4d-write-pro-area
 displayed_sidebar: docs
 ---
 

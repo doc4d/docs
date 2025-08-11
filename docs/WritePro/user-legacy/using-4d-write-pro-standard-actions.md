@@ -1,7 +1,6 @@
 ---
 id: using-4d-write-pro-standard-actions
 title: Using 4D Write Pro standard actions
-slug: /commands/using-4d-write-pro-standard-actions
 displayed_sidebar: docs
 ---
 

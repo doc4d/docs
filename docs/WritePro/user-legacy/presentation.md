@@ -1,7 +1,6 @@
 ---
 id: presentation
 title: Presentation
-slug: /commands/presentation
 displayed_sidebar: docs
 ---
 

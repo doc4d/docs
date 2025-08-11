@@ -1,7 +1,6 @@
 ---
 id: importing-4d-write-documents
 title: Importing 4D Write documents
-slug: /commands/importing-4d-write-documents
 displayed_sidebar: docs
 ---
 
@@ -15,7 +14,7 @@ One of the main features of the new 4D Write Pro object is the ability to import
 * Copying-pasting from a 4D Write document to a 4D Write Pro area is not supported for the moment. A 4D Write document can only be imported using 4D Write Pro language commands.
 * Carriage returns (CR) in formulas behave differently in 4D Write and 4D Write Pro. In 4D Write, they are always interpreted as paragraph breaks, whereas in 4D Write Pro they are interpreted as line breaks by default. To maintain CR in formulas as paragraph breaks in imported 4D Write documents, after conversion use:  
 ```4d  
- WP SET ATTRIBUTES(wp;wk break paragraphs in formulas;wk true)  
+ WP SET ATTRIBUTES(wp;wk break paragraphs in formulas;wk true)  
 ```  
     
 For more information, see *Managing formulas*.

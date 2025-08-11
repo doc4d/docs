@@ -1,7 +1,6 @@
 ---
 id: exporting-to-html-and-mime-html-formats
 title: Exporting to HTML and MIME HTML formats
-slug: /commands/exporting-to-html-and-mime-html-formats
 displayed_sidebar: docs
 ---
 

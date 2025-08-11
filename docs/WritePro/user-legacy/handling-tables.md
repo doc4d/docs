@@ -1,7 +1,6 @@
 ---
 id: handling-tables
 title: Handling tables
-slug: /commands/handling-tables
 displayed_sidebar: docs
 ---
 
@@ -82,10 +81,10 @@ The table cells can be merged:
 2. Call the command [WP TABLE MERGE CELLS](../commands/wp-table-merge-cells) on the selected range .
 
 ```4d
- $cells:=WP Table get cells($table;1;1;3;1)
- WP TABLE MERGE CELLS($cells)
-  //or
- WP TABLE MERGE CELLS($table;1;1;3;1)
+ $cells:=WP Table get cells($table;1;1;3;1)
+ WP TABLE MERGE CELLS($cells)
+  //or
+ WP TABLE MERGE CELLS($table;1;1;3;1)
 ```
 
 Existing data from the original cells is concatenated in the resulting merged cell. 
@@ -102,10 +101,10 @@ after
 2. Call the command [WP TABLE SPLIT CELLS](../commands/wp-table-split-cells) on the selected range.
 
 ```4d
- $cells:=WP Table get cells($table;1;1;1;1)
- WP TABLE SPLIT CELLS($cells)
-  //or
- WP TABLE SPLIT CELLS($table;1;1;1;1)
+ $cells:=WP Table get cells($table;1;1;1;1)
+ WP TABLE SPLIT CELLS($cells)
+  //or
+ WP TABLE SPLIT CELLS($table;1;1;1;1)
 ```
 
 Data from the already merged cell is kept all in the first resulting cell (top left) after the split, the other resulting cells from the split remain empty.
@@ -130,10 +129,10 @@ All the existing table commands are applicable to ranges or elements containing 
 Example : 
 
 ```4d
- $cell1:=WP Table get cells($table;1;1;1;1)
- $cell4:=WP Table get cells($table;4;1;1;1)
- WP SET ATTRIBUTES($cell1;wk background color;"yellow")
- WP SET ATTRIBUTES($cell4;wk background color;"pink")
+ $cell1:=WP Table get cells($table;1;1;1;1)
+ $cell4:=WP Table get cells($table;4;1;1;1)
+ WP SET ATTRIBUTES($cell1;wk background color;"yellow")
+ WP SET ATTRIBUTES($cell4;wk background color;"pink")
 ```
 
 before  
@@ -145,11 +144,11 @@ after
 in this example you can also pass $cell2 or $cell3 instead of $cell1 such as:
 
 ```4d
- $cell2:=WP Table get cells($table;2;1;1;1)
+ $cell2:=WP Table get cells($table;2;1;1;1)
 ```
 
 ```4d
- $cell3:=WP Table get cells($table;3;1;1;1)
+ $cell3:=WP Table get cells($table;3;1;1;1)
 ```
 
 and it will have the same result as using $cell1 because $cell1, $cell2, and $cell3 all refer to the same cell after the merge, and any change applied to $cell1, $cell2, or $cell3 is actually applied to the new merged cell.
@@ -211,8 +210,8 @@ You can assign a formula object as a datasource for a table and access the resul
 To assign a datasource to a table, use the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command with the wk datasource and a *4D formula* object as value. For example, to fill a table with a row for every person living in France:
 
 ```4d
- $formula:=Formula(ds.people.query("country = :1";"France"))
- WP SET ATTRIBUTES($table;wk datasource;$formula)
+ $formula:=Formula(ds.people.query("country = :1";"France"))
+ WP SET ATTRIBUTES($table;wk datasource;$formula)
 ```
 
 * If the datasource formula object returns a (non empty) collection or entity selection, the table is automatically filled when the formula is computed: it contains at least as many rows as there are elements in the collection or entities in the entity selection. The first table row, called the data row, is used as a template row (excluding header row(s) and the possible break row(s)).
@@ -222,7 +221,7 @@ To assign a datasource to a table, use the [WP SET ATTRIBUTES](../commands/wp-se
 To remove a datasource from a table, use the [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) command. It will set the datasource attribute value to *null*:
 
 ```4d
- WP RESET ATTRIBUTES($table;wk datasource)
+ WP RESET ATTRIBUTES($table;wk datasource)
 ```
 
 ##### Building a table with datasource 
@@ -249,7 +248,7 @@ When the formulas are computed, the data row is automatically duplicated as need
 In any cases, the following statement returns the actual number of rows:
 
 ```4d
- WP GET ATTRIBUTES($table;wk row count;$vcount) //31 for the example above
+ WP GET ATTRIBUTES($table;wk row count;$vcount) //31 for the example above
 ```
 
 ##### Carry-over rows 
@@ -286,7 +285,7 @@ Each time the formula value changes, a new break row is inserted. Therefore, for
 The break value is defined through the *wk break formula* attribute. Value is usually a formula based on an item property like "This.item.name'', otherwise the computed value may never change which makes the break formula useless. The *wk break formula* attribute is ignored if the table has no datasource or if the row is a header. A break row must be adjacent to the data row (either before or after), or to another break row, otherwise it is ignored.
 
 ```4d
- WP SET ATTRIBUTES($row_2;wk break formula;Formula(This.item.country))
+ WP SET ATTRIBUTES($row_2;wk break formula;Formula(This.item.country))
 ```
 
 Thanks to the **This.breakItems** expression you can use this feature, for example, to display the total average of the data rows within one break row. breakItems is an evaluated subset of the table datasource, either an entity selection if the table datasource is an entity selection, or a collection if the datasource is a collection. So, inside a break row, you can type: *This.breakItems.sum("salary")*
@@ -298,8 +297,8 @@ To create break rows:
 3. Set the attribute *wk break formula* to the selected row(s):
 
 ```4d
- $row:=WP Table get rows($table;2;1) //select the second row as break
- WP SET ATTRIBUTES($row_2;wk break formula;Formula(This.item.country))
+ $row:=WP Table get rows($table;2;1) //select the second row as break
+ WP SET ATTRIBUTES($row_2;wk break formula;Formula(This.item.country))
 ```
 
 ##### Expressions with This 

@@ -2766,8 +2766,6 @@ module.exports =
             "WritePro/user-legacy/presentation",
             "WritePro/user-legacy/printing-4d-write-pro-documents",
             "WritePro/user-legacy/storing-4d-write-pro-documents-in-4d-object-fields",
-            "WritePro/user-legacy/storing-4d-write-pro-documents-in-4d-object-fields",
-            "WritePro/user-legacy/storing-4d-write-pro-documents-in-4d-object-fields",
             {
               type: "category",
               label: "Commands",

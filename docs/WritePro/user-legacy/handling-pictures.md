@@ -1,7 +1,6 @@
 ---
 id: handling-pictures
 title: Handling pictures
-slug: /commands/handling-pictures
 displayed_sidebar: docs
 ---
 
@@ -94,8 +93,8 @@ Anchored picture expressions are added with the [WP Add picture](../commands/wp-
 Example:
 
 ```4d
- obImage:=WP Add picture(myDoc)
- WP SET ATTRIBUTES(obImage;wk image formula;Formula(m_buildPict))
+ obImage:=WP Add picture(myDoc)
+ WP SET ATTRIBUTES(obImage;wk image formula;Formula(m_buildPict))
 ```
 
 You can also insert picture expressions using [WP SET ATTRIBUTES](../commands/wp-set-attributes) and wk image formula on existing anchored pictures.
@@ -111,14 +110,14 @@ Inline picture expressions are added with the [WP INSERT FORMULA](../commands/wp
 Examples:
 
 ```4d
-  //Insert a picture variable
- WP INSERT FORMULA(wpRange;Formula($vpict);wk prepend)
- 
-  //Insert a field
- WP INSERT FORMULA(wpRange;Formula([DOC]SamplePict);wk prepend)
- 
-  //Insert a 4D method
- WP INSERT FORMULA(wpRange;Formula(M_ComputeChart);wk prepend)
+  //Insert a picture variable
+ WP INSERT FORMULA(wpRange;Formula($vpict);wk prepend)
+ 
+  //Insert a field
+ WP INSERT FORMULA(wpRange;Formula([DOC]SamplePict);wk prepend)
+ 
+  //Insert a 4D method
+ WP INSERT FORMULA(wpRange;Formula(M_ComputeChart);wk prepend)
 ```
 
 #### Empty pictures 
@@ -159,17 +158,17 @@ When you get a picture using one of these attributes, you receive a text. If the
 **Example:**
 
 ```4d
- $range:=WP Get selection(WPArea) //get the picture selected by user
- $range:=WP Picture range($range) //create a range
- $url:="http://doc.4d.com/image/logo/poweredby4D_web.png"
- 
- WP SET ATTRIBUTES($range;wk image;$url) //set an image reference from a URL
- 
-  //get the image
- var vPictureGet : Picture
- WP GET ATTRIBUTES($range;wk image;vPictureGet) //vPictureGet contains an image
- var vPictureURLGet : Text
- WP GET ATTRIBUTES($range;wk image url;vPictureURLGet) //vPictureURLGet=$url
+ $range:=WP Get selection(WPArea) //get the picture selected by user
+ $range:=WP Picture range($range) //create a range
+ $url:="http://doc.4d.com/image/logo/poweredby4D_web.png"
+ 
+ WP SET ATTRIBUTES($range;wk image;$url) //set an image reference from a URL
+ 
+  //get the image
+ var vPictureGet : Picture
+ WP GET ATTRIBUTES($range;wk image;vPictureGet) //vPictureGet contains an image
+ var vPictureURLGet : Text
+ WP GET ATTRIBUTES($range;wk image url;vPictureURLGet) //vPictureURLGet=$url
 ```
 
 #### Retrieving pictures 

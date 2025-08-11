@@ -1,7 +1,6 @@
 ---
 id: importing-and-exporting-in-docx-format
 title: Importing and Exporting in docx format
-slug: /commands/importing-and-exporting-in-docx-format
 displayed_sidebar: docs
 ---
 
@@ -87,11 +86,11 @@ While the majority of .docx settings are preserved, some settings are known to b
 When importing .docx format into 4D Write Pro, a log object is created and included within the imported document object. This object can be retrieved through the "importLog" custom attribute (or wk import log constant):
 
 ```4d
- $myDoc:=WP Import document("test.docx")
- if($myDoc#Null)
-    var $log : Object
-    $log:=$myDoc[wk import log]
- End if
+ $myDoc:=WP Import document("test.docx")
+ if($myDoc#Null)
+    var $log : Object
+    $log:=$myDoc[wk import log]
+ End if
 ```
 
 The import log object contains the following properties:

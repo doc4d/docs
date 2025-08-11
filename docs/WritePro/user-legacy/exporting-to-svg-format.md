@@ -1,7 +1,6 @@
 ---
 id: exporting-to-svg-format
 title: Exporting to SVG format
-slug: /commands/exporting-to-svg-format
 displayed_sidebar: docs
 ---
 
@@ -64,14 +63,14 @@ Imported Google fonts override native fonts when the SVG is rendered. If you int
 This example exports a document page to SVG format and creates an image preview using [SVG EXPORT TO PICTURE](../../commands/svg-export-to-picture).
 
 ```4d
- var $preview : Picture
- var $options : Object
- var $svgRoot : Text
- var $options : Object
- 
- $options:=New object
- $options[wk max picture DPI]:=96
- WP EXPORT VARIABLE(wpDoc;$text;wk svg;$options)
- $svgRoot:=DOM Parse XML variable($text;False)
- SVG EXPORT TO PICTURE($svgRoot;$preview;Own XML data source)
+ var $preview : Picture
+ var $options : Object
+ var $svgRoot : Text
+ var $options : Object
+ 
+ $options:=New object
+ $options[wk max picture DPI]:=96
+ WP EXPORT VARIABLE(wpDoc;$text;wk svg;$options)
+ $svgRoot:=DOM Parse XML variable($text;False)
+ SVG EXPORT TO PICTURE($svgRoot;$preview;Own XML data source)
 ```

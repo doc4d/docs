@@ -1,7 +1,6 @@
 ---
 id: using-a-4d-write-pro-area
 title: Using a 4D Write Pro area
-slug: /commands/using-a-4d-write-pro-area
 displayed_sidebar: docs
 ---
 

@@ -1,7 +1,6 @@
 ---
 id: printing-4d-write-pro-documents
 title: Printing 4D Write Pro documents
-slug: /commands/printing-4d-write-pro-documents
 displayed_sidebar: docs
 ---
 
@@ -29,9 +28,9 @@ Regardless of the **View mode** set for the 4D Write Pro area (see *Configuring 
 The following example shows the effect of the **Print Variable Frame** option on a 4D Write Pro area embedded in the default output form. The following code is executed:
 
 ```4d
- ALL RECORDS([Movies])
- ORDER BY([Movies]Title)
- PRINT SELECTION([Movies])
+ ALL RECORDS([Movies])
+ ORDER BY([Movies]Title)
+ PRINT SELECTION([Movies])
 ```
 
 * Here is the result with the Print Variable Frame option **unchecked** (off):  
