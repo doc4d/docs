@@ -124,7 +124,7 @@ Exemplos:
 
 Se uma imagem estiver vazia (por exemplo, se não foi carregada, ou é resultado de uma expressão que não pôde ser computada, ou se usa um formato de imagem não compatível) como padrão 4D Write Pro exibe um retângulo negro
 
-![](../../assets/en/WritePro/pict3513505.pt.png)
+![](../../assets/en/WritePro/pict3513505.en.png)
 
 Pode remover os retângulos negros da visão atual usando:
 

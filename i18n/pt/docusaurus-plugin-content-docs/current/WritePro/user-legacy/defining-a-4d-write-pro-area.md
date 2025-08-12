@@ -74,7 +74,7 @@ Configurações de vista de documento são gerenciadas através de itens especí
 Por exemplo, se inserir a data atual junto com o formato, a data é exibida:  
 ![](../../assets/en/WritePro/pict3033006.EN.png)  
 Se marcar a opção **Mostrar referências**, a referência é exibida:  
-![](../../assets/en/WritePro/pict3033008.en.png)  
+![](../../assets/en/WritePro/pict3033008.EN.png)  
 **Nota:** expressões 4D podem ser inseridas usando o comando [ST INSERT EXPRESSION](../../commands/st-insert-expression).
 * **Mostrar cabeçalhos e rodapés**: Exibe ou esconde os cabeçalhos e rodapés quando o modo de página estiver estabelecido como "Página" (exibido como padrão). Para saber mais, veja .
 * ****Mostrar fundo**: Exibe/esconde tanto as imagens de fundo quando a cor de fundo (padrão é exibido)
