@@ -72,7 +72,7 @@ Configurações de vista de documento são gerenciadas através de itens especí
 * **Mostrar page frame**: Exibe ou esconde a borda da página quando o modo de vista for estabelecido como "Página". O normal é escondido.
 * **Mostrar referências**: Exibe todas as expressões 4D inseridas no documento como referências. Quando esta opção não estiver marcada (padrão) as expressões 4D são exibidas como valores. Quando inserir um campo ou expressão 4D, 4D Write Pro computa e exibe o valor atual. Se quiser saber que campos ou expressões estão sendo exibidas, marque esta opção. As referências do campo ou expressão vão aparecer em seu documento, com um fundo cinza.  
 Por exemplo, se inserir a data atual junto com o formato, a data é exibida:  
-![](../../assets/en/WritePro/pict3033006.en.png)  
+![](../../assets/en/WritePro/pict3033006.EN.png)  
 Se marcar a opção **Mostrar referências**, a referência é exibida:  
 ![](../../assets/en/WritePro/pict3033008.en.png)  
 **Nota:** expressões 4D podem ser inseridas usando o comando [ST INSERT EXPRESSION](../../commands/st-insert-expression).

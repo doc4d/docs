@@ -48,7 +48,7 @@ Este modo pode ser usado para produzir output do tipo Web (se selecionar também
 
 O modo de visualização pode ser configurardo utilizando a área de menu pop-up:
 
-![](../../assets/en/WritePro/pict3071271.pt.png)
+![](../../assets/en/WritePro/pict3071271.en.png)
 
 **Nota:** o modo de visualização da página não são armazenadas com o documento.
 

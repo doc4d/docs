@@ -59,7 +59,7 @@ As posições das imagens ancoradas podem ser modificadas com os atributos abaix
 
 As imagens ancoradas admitem o ajuste automático do texto quando se ancoram a um documento com opções como à esquerda, à direita, por cima ou por baixo, ou ao reder, oferecidas através da propriedade wk anchor layout ou a ação padrão anchorLayout. Leia esta entrada do blog para saber mais.
 
-![](../../assets/en/WritePro/pict6856159.EN.png)
+![](../../assets/en/WritePro/pict6856159.en.png)
 
 As imagens com ajuste de texto ancoradas ao corpo da página não afetam o cabeçalho nem ao rodapé (a imagem é mostrada na frente do cabeçalhoo ou do rodapé), do contrário, as imagens ancoradas ao cabeçalho e rodapé afetam ao corpo da página nem se sobrepõe com ele.
 
