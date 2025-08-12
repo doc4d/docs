@@ -246,7 +246,7 @@ Los atributos de las cajas de texto se manejan con el comando [WP SET ATTRIBUTES
 
 Las cajas de texto soportan el ajuste automático del texto cuando se anclan a un documento con opciones como a la izquierda, a la derecha, en el lado más grande, arriba y abajo, o todo alrededor suministradas a través de la propiedad wk anchor layout o la acción estándar anchorLayout. Ver esta entrada del blog para más detalles.
 
-![](../../assets/en/WritePro/pict6856163.EN.png)
+![](../../assets/en/WritePro/pict6856163.en.png)
 
 Las cajas de texto con ajuste de texto ancladas al cuerpo de la página no afectan al encabezado ni al pie de página (la caja de texto se muestra delante del encabezado o del pie de página); por el contrario, las cajas de texto ancladas al encabezado y al pie de página afectan al cuerpo de la página si se solapan con él.  
   

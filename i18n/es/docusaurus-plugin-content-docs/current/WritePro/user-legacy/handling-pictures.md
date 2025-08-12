@@ -59,7 +59,7 @@ Las posiciones de las imágenes ancladas se pueden modificar con los siguientes 
 
 Las imágenes ancladas admiten el ajuste automático del texto cuando se anclan a un documento con opciones como a la izquierda, a la derecha, al lado más grande, por encima y por debajo, o todo alrededor ofrecidas a través de la propiedad wk anchor layout o la acción estándar **anchorLayout**. Lea esta [entrada del blog](https://blog.4d.com/4d-write-pro-more-display-options-for-anchored-pictures-and-text-boxes/) para más detalles.
 
-![](../../assets/en/WritePro/pict6856159.EN.png)  
+![](../../assets/en/WritePro/pict6856159.en.png)  
   
 Las imágenes con ajuste de texto ancladas al cuerpo de la página no afectan al encabezado ni al pie de página (la imagen se muestra delante del encabezado o del pie de página); por el contrario, las imágenes ancladas al encabezado y al pie de página afectan al cuerpo de la página si se solapan con él.  
   
