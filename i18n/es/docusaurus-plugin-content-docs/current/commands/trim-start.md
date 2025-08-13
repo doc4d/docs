@@ -29,7 +29,7 @@ The **Trim start** command <!--REF #_command_.Trim start.Summary--> removes **wh
 
 To return a new string with whitespace trimmed from both ends, use [`Trim`](./trim.md). To return a new string with whitespace trimmed from the end of *aString*, use [`Trim end`](./trim-end.md).
 
-In the *aString* parameter, you can pass any text expression. Será dejado sin tocar por el comando.
+En el parámetro *aString*, puede pasar cualquier expresión de tipo texto. Será dejado sin tocar por el comando.
 
 The command returns the trimmed version of the *aString* string. If there is no whitespace at the beginning of *aString*, the returned string is identical as the one passed in parameter.
 
