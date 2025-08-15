@@ -35,7 +35,7 @@ El comando devuelve la versión recortada de la cadena *aString*. Si no hay whit
 
 :::note
 
-This command is based upon the [`trimStart` Ecmascript specification](https://tc39.es/ecma262/multipage/text-processing.html#sec-string.prototype.trimstart).
+Este comando se basa en la especificación [Ecmascript `trimStart`](https://tc39.es/ecma262/multipage/text-processing.html#sec-string.prototype.trimstart).
 
 :::
 
