@@ -178,16 +178,15 @@ This function does nothing in remote client, stored procedure, and standalone se
 
 :::
 
-The `.demote()` function <!-- REF #SessionClass.demote().Summary -->removes the promoted privilege whose id you passed in *promoteId* from the session privileges of the current process, if it was previously added by the [`.promote()`](#promote) function<!-- END REF -->.
+The `.demote()` function <!-- REF #SessionClass.demote().Summary -->removes the promoted privilege whose id you passed in *promoteId* from the session privileges of the web process, if it was previously added by the [`.promote()`](#promote) function<!-- END REF -->.
 
-If no privilege with *promoteId* was promoted using [`.promote()`](#promote) in the current process, the function does nothing. 
+If no privilege with *promoteId* was promoted using [`.promote()`](#promote) in the web process, the function does nothing. 
 
-You can call the `denote()` function several times in the same process to remove different privileges that were added by [`.promote()`](#promote).
+If several privileges have been added to the web process, the `demote()` function must be called for each one with the appropriate *promoteId*. Privileges are stacked in the order they have been added to the process, it is recommended to unstack privileges in a LIFO (*Last In, First Out*) order.
 
 
 #### Example
 
-When several [`promote()`](#promote) calls have been done for the process, the `demote()` function must be called for each one with the appropriate *promoteId*:
 
 ```4d
 exposed Function search($search : Text) : Collection
