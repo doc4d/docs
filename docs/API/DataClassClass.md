@@ -911,19 +911,19 @@ where:
 
 * **comparator**: symbol that compares *attributePath* and *value*. The following symbols are supported:
 
- |Comparison| Symbol(s)| Comment|
- |---|---|---|
- |Equal to |=, == |Gets matching data, supports the wildcard (@), neither case-sensitive nor diacritic.|
- ||===, IS| Gets matching data, considers the @ as a standard character, neither case-sensitive nor diacritic|
- |Not equal to| #, != |Supports the wildcard (@). Equivalent to "Not condition applied on a statement" ([see below](#not-equal-to-in-collections)).|
- ||!==, IS NOT| Considers the @ as a standard character|
- |Not condition applied on a statement| NOT| Parenthesis are mandatory when NOT is used before a statement containing several operators. Equivalent to "Not equal to" ([see below](#not-equal-to-in-collections)).|
- |Less than| <| |
- |Greater than| > ||
- |Less than or equal to| <=||
- |Greater than or equal to| >= ||
- |Included in| IN |Gets data equal to at least one of the values in a collection or in a set of values, supports the wildcard (@)|
- |Contains keyword| %| Keywords can be used in attributes of string or picture type|
+ |Comparison| Symbol(s)| Comment|Supported in vector similarity|
+ |---|---|---|---|
+ |Equal to |=, == |Gets matching data, supports the wildcard (@), neither case-sensitive nor diacritic.||
+ ||===, IS| Gets matching data, considers the @ as a standard character, neither case-sensitive nor diacritic||
+ |Not equal to| #, != |Supports the wildcard (@). Equivalent to "Not condition applied on a statement" ([see below](#not-equal-to-in-collections)).||
+ ||!==, IS NOT| Considers the @ as a standard character||
+ |Not condition applied on a statement| NOT| Parenthesis are mandatory when NOT is used before a statement containing several operators. Equivalent to "Not equal to" ([see below](#not-equal-to-in-collections)).||
+ |Less than| <| |&check;|
+ |Greater than| > ||&check;|
+ |Less than or equal to| <=||&check;|
+ |Greater than or equal to| >= ||&check;|
+ |Included in| IN |Gets data equal to at least one of the values in a collection or in a set of values, supports the wildcard (@)||
+ |Contains keyword| %| Keywords can be used in attributes of string or picture type||
 
 * **value**: the value to compare to the current value of the property of each entity in the entity selection. It can be a **placeholder** (see **Using placeholders** below) or any expression matching the data type property. Note that, in case of type mismatch with scalar types (text, date, number...), 4D will try to convert the **value** type to the attribute data type whenever possible, for an easier handling of values coming from the Internet. For example, if the string "v20" is entered as **value** to compare with an integer attribute, it will be converted to 20.
 When using a constant value, the following rules must be respected:
@@ -933,6 +933,7 @@ When using a constant value, the following rules must be respected:
   * **date** type constants: "YYYY-MM-DD" format
   * **null** constant: using the "null" keyword will find **null** and **undefined** properties.  
   * in case of a query with an IN comparator, *value* must be a collection, or values matching the type of the attribute path between \[ ] separated by commas (for strings, `"` characters must be escaped with `\`).
+  * **object**: only [4D.Vector](../API/VectorClass.md) objects are supported, in the context of **vector similarity queries** (*attributePath* must also contain valid 4D.Vector objects). 
 * **logicalOperator**: used to join multiple conditions in the query (optional). You can use one of the following logical operators (either the name or the symbol can be used):
 
  |Conjunction|Symbol(s)|
@@ -1174,6 +1175,30 @@ $es:=ds.Movie.query("roles.actor.lastName = :1 AND roles.actor{2}.lastName = :2"
 ```
 
 
+#### Query by vector similarity
+
+If *attributePath* designates an attribute storing [**vector objects**](../API/VectorClass.md) (see how to [configure a 4D field to only store 4D.Vector class objects](../Develop/field-properties.md#class)), you can build queries to find entities based on semantics rather than keywords, which is called **similarity search**. 
+
+In this case, the **value** parameter must be a comparison vector object containing the following properties:
+
+|Property|Type|Description|
+|---|---|---|
+|vector|[4D.Vector](../API/VectorClass.md)|Mandatory. The vector to be compared|
+|metric|Text|Optional. [Vector computation](../API/VectorClass.md#understanding-the-different-vector-computations) to use for the query. You can use one of the following (Text) constants:<li>`k metric cosine` (default if omitted): calculates the cosine distance between vectors.</li><li>`k metric dot`: calculates the dot similarity of vectors.</li><li>`k metric euclidean`: calculates the Euclidean distance between vectors.|
+|threshold|Real|Optional (default: 0.5). A threshold value used to filter vector comparisons based on their cosine, dot or euclidean similarity score according to the selected "metric". It is highly recommended to choose a similarity that best fits your specific use case for optimal results.|
+
+Only a subset of **comparator** symbols are supported. Note that they compare results to the threshold value: 
+
+ |Comparison| Symbol(s)| Comment|
+ |---|---|---|
+ |Less than| <| Lower than the threshold|
+ |Greater than| > |Greater than the threshold|
+ |Less than or equal to| <=|Lower than or equal to the threshold|
+ |Greater than or equal to| >= |Greater than or equal to the threshold|
+
+
+See examples 4 and 5 below. 
+
 
 #### formula parameter
 
@@ -1183,7 +1208,7 @@ The formula must have been created using the [`Formula`](../commands/formula.md)
 
 * the *formula* is evaluated for each entity and must return true or false. During the execution of the query, if the formula's result is not a boolean, it is considered as false.
 * within the *formula*, the entity is available through the `This` object.  
-* if the `Formula` object is **null**, the error 1626 ("Expecting a text or formula") is generated, that you call intercept using a method installed with `ON ERR CALL`.
+* if the `Formula` object is **null**, the error 1626 ("Expecting a text or formula") is generated, that you call intercept using a method installed with [`ON ERR CALL`](../commands-legacy/on-err-call.md).
 
  >For security reasons, formula calls within `query()` functions can be disallowed. See *querySettings* parameter description.
 
@@ -1524,6 +1549,44 @@ We want to disallow formulas, for example when the user enters their query:
     $settings:=New object("allowFormulas";False)
     $es:=ds.Students.query($queryString;$settings) //An error is raised if $queryString contains a formula
  End if
+```
+
+#### Example 4
+
+This example illustrates the various syntaxes supported for vector similarity searches:
+
+```4d
+
+var $client:=cs.AIKit.OpenAI.new("my api key")
+var $result:=$client.embeddings.create("my long text to search"; "text-embedding-ada-002"; {})
+var $vector:=$result.vector
+
+  //embedding attribute is based upon a 4D field storing 4D.Vector class objects
+  //search with default metric (cosine)
+var $employees:=ds.Employee.query("embedding > :1"; {vector : $vector})
+  //search with euclidean metric 
+var $employees:=ds.Employee.query("embedding > :1"; {vector: $vector; metric: k metric euclidean})
+  //search with explicit cosine metric and custom threshold
+var $employees:=ds.Employee.query("embedding > :1"; {vector: $vector; metric: k metric cosine; threshold: 0.9})
+  //search with a formula
+var $employees:=ds.Employee.query(Formula(This.embdedding.cosineSimilarity($vector)>0.9))
+
+```
+
+
+#### Example 5
+
+We want to execute a query by vector similarity using vectors with different metrics and order the results by cosine similarity:
+
+```4d
+  //Create the comparison vectors 
+var $vector1Comparator:={vector: $myvector; metric: k metric cosine; threshold: 0.4}
+var $vector2Comparator:={vector: $myvector2; metric: k metric euclidean; threshold:1}
+
+  //vector1 attribute is based upon a 4D field storing 4D.Vector class objects
+ds.VectorTable.query("vector1>:1 and vector1<:2";vector1Comparator;vector2Comparator)\
+.orderByFormula(Formula(This.vector1.cosineSimilarity($vector1Comparator)))
+
 ```
 
 #### See also
