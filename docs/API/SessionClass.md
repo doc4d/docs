@@ -81,8 +81,11 @@ The `.clearPrivileges()` function <!-- REF #SessionClass.clearPrivileges().Summa
 
 Unless in ["forceLogin" mode](../REST/authUsers.md#force-login-mode), the session automatically becomes a Guest session. In "forceLogin" mode, `.clearPrivileges()` does not transform the session to a Guest session, it only clears the session's privileges.
 
-The `.clearPrivileges()` function does not remove **promoted privileges** from the current process within the session, whether they are added through the [roles.json](../ORDA/privileges.md#rolesjson-file) file or the [`promote()`](#promote) function.
+:::note
 
+This function does not remove **promoted privileges** from the web process, whether they are added through the [roles.json](../ORDA/privileges.md#rolesjson-file) file or the [`promote()`](#promote) function.
+
+:::
 
 #### Example
 
@@ -154,7 +157,7 @@ $token := Session.createOTP( 60 ) //the token is valid for 1 mn
 
 |Release|Changes|
 |---|---|
-|21|Added|
+|20 R10|Added|
 
 </details>
 
@@ -589,7 +592,7 @@ End if
 
 |Release|Changes|
 |---|---|
-|21|Added|
+|20 R10|Added|
 
 </details>
 
