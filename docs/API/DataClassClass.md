@@ -855,6 +855,7 @@ When created, the entity selection does not contain any entities (`mySelection.l
 
 |Release|Changes|
 |---|---|
+|21|Support 4D.Vector objects|
 |17 R6|Support of Formula parameters|
 |17 R5|Support of placeholders for values|
 |17|Added|
