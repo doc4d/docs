@@ -77,13 +77,11 @@ This function does nothing and always returns **True** with remote client, store
 
 :::
 
-The `.clearPrivileges()` function <!-- REF #SessionClass.clearPrivileges().Summary -->removes all the privileges associated to the session (except privileges promoted by the [`promote()`](#promote) function) and returns **True** if the execution was successful<!-- END REF -->. Unless in ["forceLogin" mode](../REST/authUsers.md#force-login-mode), the session automatically becomes a Guest session.
+The `.clearPrivileges()` function <!-- REF #SessionClass.clearPrivileges().Summary -->removes all the privileges associated to the session (excluding promoted privileges) and returns **True** if the execution was successful<!-- END REF -->. 
 
-:::note
+Unless in ["forceLogin" mode](../REST/authUsers.md#force-login-mode), the session automatically becomes a Guest session. In "forceLogin" mode, `.clearPrivileges()` does not transform the session to a Guest session, it only clears the session's privileges.
 
-In "forceLogin" mode, `.clearPrivileges()` does not transform the session to a Guest session, it only clears the session's privileges.
-
-:::
+The `.clearPrivileges()` function does not remove **promoted privileges** from the current process within the session, whether they are added through the [roles.json](../ORDA/privileges.md#rolesjson-file) file or the [`promote()`](#promote) function.
 
 
 #### Example

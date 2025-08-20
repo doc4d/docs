@@ -68,7 +68,7 @@ Available actions are related to target resource.
 - An [alias](./ordaClasses.md#alias-attributes-1) can be read as soon as the session privileges allow the access to the alias itself, even if the session privileges do no allow the access to the attributes resolving the alias.
 - A [computed attribute](./ordaClasses.md#computed-attributes-1) can be accessed even if there are no permissions on the attributes upon which it is built.
 - You can assign a permission action to a singleton class (`singleton` type), in which case it will be applied to all its exposed functions, or to a singleton function (`singletonMethod` type). 
-- You can set/remove the **promote** action dynamically to a web process using the [`promote()`] and [`demote()`] functions. 
+- You can set/remove the **promote** action dynamically to a web process using the [`promote()`](../API/SessionClass.md#promote) and [`demote()`](../API/SessionClass.md#demote) functions. 
 - Default values: in the current implementation, only *Null* is available as default value.
 - In REST [force login mode](../REST/authUsers.md#force-login-mode), the [`authentify()` function](../REST/authUsers.md#function-authentify) is always executable by guest users, whatever the permissions configuration.
 
