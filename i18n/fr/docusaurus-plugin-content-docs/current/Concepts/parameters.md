@@ -56,7 +56,7 @@ L'ancienne syntaxe de déclaration, où les paramètres sont automatiquement cop
 Dans les méthodes et fonctions de classe qui sont appelées, les valeurs des paramètres sont assignées aux variables locales. Vous déclarez des paramètres en utilisant un **nom de paramètre** et un **type de paramètre**, séparés par deux points.
 
 - For class functions, parameters are declared along with the function prototype, i.e. when using the `Function` or `Class Constructor` keywords.
-- For methods (project methods, form object methods, database methods, and triggers), parameters are declared using the **`#DECLARE`** keyword at the beginning of the method code.
+- Pour les méthodes (méthodes projet, méthodes d'objets de formulaire, méthodes de base de données et triggers), les paramètres sont déclarés à l'aide du mot-clé **`#DECLARE`** au début du code de la méthode.
 
 Exemples :
 
