@@ -1178,7 +1178,7 @@ $es:=ds.Movie.query("roles.actor.lastName = :1 AND roles.actor{2}.lastName = :2"
 
 #### Query by vector similarity
 
-If *attributePath* designates an attribute storing [**vector objects**](../API/VectorClass.md) (see how to [configure a 4D field to only store 4D.Vector class objects](../Develop/field-properties.md#class)), you can build queries to find entities based on semantics rather than keywords, which is called **similarity search**. 
+If *attributePath* designates an attribute storing [**vector objects**](../API/VectorClass.md) (see how to [configure a 4D field to only store 4D.Vector class objects](../Develop/field-properties.md#class)), you can build queries to find entities based on embeddings rather than keywords. This technology is designed for Artificial Intelligence (AI) workloads and allows you to query data based on semantics, rather than keywords.
 
 In this case, the **value** parameter must be a comparison vector object containing the following properties:
 
