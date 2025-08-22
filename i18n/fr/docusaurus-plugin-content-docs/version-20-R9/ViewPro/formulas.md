@@ -191,11 +191,11 @@ Nous souhaitons imprimer "Hello World" dans une cellule de la zone 4D View Pro e
 
 3. Modifiez le contenu d'une cellule dans une zone 4D View Pro et saisissez :
 
-  ![](../assets/en/ViewPro/vpProjMeth1.PNG)
+   ![](../assets/en/ViewPro/vpProjMeth1.PNG)
 
-  "myMethod" est alors appelé par 4D et la cellule s'affiche :
+   "myMethod" est alors appelé par 4D et la cellule s'affiche :
 
-  ![](../assets/en/ViewPro/vpProjMeth2.PNG)
+   ![](../assets/en/ViewPro/vpProjMeth2.PNG)
 
 ### Paramètres
 
@@ -288,7 +288,7 @@ As soon as `VP SET CUSTOM FUNCTIONS` is called, the functions based upon `SET TA
 
 #### Conditions requises
 
-- Le champ doit appartenir à la structure virtuelle de la base de données, c'est-à-dire qu'il doit être déclaré par les commandes [`SET TABLE TITLES`](../commandes-legacy/set-table-titles.md) et/ou [`SET FIELD TITLES`](../commandes-legacy/set-field-titles.md) avec le paramètre \* (voir l'exemple),
+- Le champ doit appartenir à la structure virtuelle de la base de données, c'est-à-dire qu'il doit être déclaré par les commandes [`SET TABLE TITLES`](../commands-legacy/set-table-titles.md) et/ou [`SET FIELD TITLES`](../commands-legacy/set-field-titles.md) avec le paramètre \* (voir l'exemple),
 - Les noms de table et de champ doivent être conformes à ECMA (voir également [la norme ECMA Script](https://www.ecma-international.org/ecma-262/5.1/#sec-7.6)),
 - Le type de champ doit être pris en charge par 4D View Pro (voir ci-dessus).
 
@@ -321,19 +321,19 @@ Nous souhaitons imprimer le nom d'une personne dans une cellule de la zone 4D Vi
 
 2. Exécuter le code suivant pour initialiser une structure virtuelle :
 
-  ```4d
-  ARRAY TEXT($tableTitles;1)
-  ARRAY LONGINT($tableNum;1)
-  $tableTitles{1}:="Emp"
-  $tableNum{1}:=2
-  SET TABLE TITLES($tableTitles;$tableNum;*)
-   
-  ARRAY TEXT($fieldTitles;1)
-  ARRAY LONGINT($fieldNum;1)
-  $fieldTitles{1}:="Name"
-  $fieldNum{1}:=2 //nom de famille
-  SET FIELD TITLES([Employee];$fieldTitles;$fieldNum;*)
-  ```
+   ```4d
+   ARRAY TEXT($tableTitles;1)
+   ARRAY LONGINT($tableNum;1)
+   $tableTitles{1}:="Emp"
+   $tableNum{1}:=2
+   SET TABLE TITLES($tableTitles;$tableNum;*)
+    
+   ARRAY TEXT($fieldTitles;1)
+   ARRAY LONGINT($fieldNum;1)
+   $fieldTitles{1}:="Name"
+   $fieldNum{1}:=2 //nom de famille
+   SET FIELD TITLES([Employee];$fieldTitles;$fieldNum;*)
+   ```
 
 3. Modifiez le contenu d'une cellule de la zone 4D View Pro et saisir "=e" :
 

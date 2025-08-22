@@ -35,9 +35,9 @@ El siguiente ejemplo ilustra el uso de Change string. Los resultados se asignan 
 
 ## Ver también 
 
-[Delete string](../commands/delete-string.md)  
-[Insert string](../commands/insert-string.md)  
-[Replace string](../commands/replace-string.md)  
+[Delete string](../commands/delete-string)  
+[Insert string](../commands/insert-string)  
+[Replace string](../commands/replace-string)  
 
 ## Propiedades
 
