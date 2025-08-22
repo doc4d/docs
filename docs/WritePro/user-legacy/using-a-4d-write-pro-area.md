@@ -4,40 +4,16 @@ title: Using a 4D Write Pro area
 displayed_sidebar: docs
 ---
 
-#### Managing documents in 4D Write Pro areas 
 
-In 4D applications, 4D Write Pro documents are created, imported, and exported by means of specific commands found in the **4D Write Pro** theme (*WP EXPORT DOCUMENT*, *WP EXPORT VARIABLE*, *WP Import document*, *WP New*).
+## Context menu 
 
-You can also associate a 4D Write Pro area with an Object field in a database form. This way, each 4D Write Pro document is automatically saved with the record and stored in the database's data (see *Storing 4D Write Pro documents in 4D Object fields*). 
-
-#### .4wp document format 
-
-You can save and re-open 4D Write Pro documents to and from disk without any loss using the native **.4wp** format.
-
-The **.4wp** format consists of a zip folder whose name is the document title and whose contents are HTML text and images:
-
-* HTML text combines regular HTML with 4D expressions (which are not computed) as well as 4D-specific tags,
-* images are stored in a folder with the same name as the document title, next to the HTML file.
-
-Since .4wp documents are based on HTML, they can be imported or opened in any external application supporting HTML.
-
-The 4D Write Pro internal document format is a proprietary HTML extension, compatible with HTML5/XHTML5, but which supports its own subset of HTML/CSS attributes and tags. As a result, only HTML documents exported by 4D Write Pro can be opened by 4D Write Pro without any risk of data loss. Importing HTML documents that were created externally could produce errors.
-
-For more information, you can [**download the list of 4D Write pro attributes with associated definition as CSS style or XHTML tag**](https://download.4d.com/Documents/Products%5FDocumentation/LastVersions/Line%5F19/4DWP-attributes-and-xhtml.pdf) in the 4D Write Pro XHTML.
-
-##### Backward compatibility 
-
-You can always reopen a .4wp document with a previous version of 4D Write Pro. If it contains attributes that were added in more recent versions, these attributes are just ignored. However, if you save the document, the attributes are removed from the document and will be lost. 
-
-#### Context menu 
-
-If the **Context menu** property is checked for a 4D Write Pro area (see *Defining a 4D Write Pro area*), a comprehensive context menu is available to users when the form is executed at runtime:  
+If the **Context menu** property is [checked for a 4D Write Pro area](./defining-a-4d-write-pro-area.md#using-the-4d-write-pro-area-object), a comprehensive context menu is available to users when the form is executed at runtime:  
   
 ![](../../assets/en/WritePro/pict3071271.en.png) 
 
 This menu offers access to all the 4D Write Pro user features. 
 
-#### Selecting the view mode 
+## Selecting the view mode 
 
 4D Write Pro documents can be displayed in one of three page view modes:
 
@@ -53,7 +29,7 @@ The page view mode can be configured by means of the area pop-up menu:
 
 For areas embedded in 4D forms, the view mode can also be set by default using the Property List. In this case, the view mode is stored as a property of the 4D Write Pro form object (for more information, please refer to the *Configuring View properties* paragraph). 
 
-#### Basic properties 
+## Basic properties 
 
 When the document is in **Page** view mode, the following document properties are available for the user:
 
@@ -71,7 +47,7 @@ You can also use additional commands such as **Document.../Page size** or **Docu
 * Avoid page break inside property
 * Widow and orphan control.
 
-##### Paragraph breaks 
+### Paragraph breaks 
 
 When displayed in Page or Draft mode (or in the context of a document printing), 4D Write Pro paragraphs can break:
 
@@ -84,17 +60,17 @@ Breaks can be added by programming or by the user. Available actions include:
 * *insertPageBreak* standard action
 * **Insert page break** option of the default contextual menu
 
-**Controlling automatic breaks**
+### Controlling automatic breaks
 
 You can control automatic breaks in paragraphs using the following features: 
 
 * **Widow and orphan control**: When this option is set for a paragraph, 4D Write Pro does not allow widows (last line of a paragraph isolated at the top of a page) or orphans (first line of a paragraph isolated at the bottom of a page) in the document. In the first case, the previous line of the paragraph is added to the top of the page so that two lines are displayed there. In the second case, the single first line is moved onto the next page.
 * **Avoid page break inside**: When this option is set for a paragraph, 4D Write Pro prevents this paragraph from being broken into parts on two or more pages.
-* **Keep with next:** When this option is set for a paragraph, that paragraph cannot be separated from the one that follows it by an automatic break. See wk keep with next and the corresponding standard action (*keepWithNext*, see *Using 4D Write Pro standard actions*).
+* **Keep with next:** When this option is set for a paragraph, that paragraph cannot be separated from the one that follows it by an automatic break. See `wk keep with next` and the corresponding *keepWithNext* standard action](./using-4d-write-pro-standard-actions.md).
 
-These options can be set using the context menu, or attributes (wk avoid widows and orphans, wk page break inside paragraph, see *4D Write Pro Attributes*), or standard actions (*widowAndOrphanControlEnabled*, *avoidPageBreakInside*, see *Using 4D Write Pro standard actions*). 
+These options can be set using the context menu, or [attributes](../commands-legacy/4d-write-pro-attributes.md) (`wk avoid widows and orphans`, `wk page break inside paragraph`, or [*widowAndOrphanControlEnabled* and *avoidPageBreakInside* standard actions](./using-4d-write-pro-standard-actions.md). 
 
-#### Background 
+## Background 
 
 The background of 4D Write Pro documents and document elements (tables, paragraphs, sections, headers/footers, etc.) can be set with the following effects:
 
@@ -105,7 +81,7 @@ The background of 4D Write Pro documents and document elements (tables, paragrap
 * painting area
 * repeat
 
-These attributes can be defined programmatically for either individual elements on a page and/or entire document backgrounds with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command or by *Using 4D Write Pro standard actions*. To see the full list of available background attributes and where they can be applied, see the *4D Write Pro Attributes* article. 
+These [attributes](../commands-legacy/4d-write-pro-attributes.md) can be defined programmatically for either individual elements on a page and/or entire document backgrounds with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command or by [standard actions](./using-4d-write-pro-standard-actions.md). 
 
 Users can modify background attributes via the contextual menu as shown below:
 
@@ -113,7 +89,7 @@ Users can modify background attributes via the contextual menu as shown below:
 
 For an example of adding a full-sized image as a background, see the *How Do I* (HDI) demo [here](http://download.4d.com/Demos/4D%5Fv16%5FR5/HDI%5F4DWP%5FBackImagePaperBox.zip).
 
-#### Handling headers, footers, and sections 
+## Headers, footers, and sections 
 
 4D Write Pro documents support headers and footers. These headers and footers are related to sections.
 
@@ -121,7 +97,7 @@ A section is a part of a document which is defined by a page range and can have 
 
 You can define a set of headers and footers for each section.
 
-##### Defining a section 
+### Defining a section 
 
 A section is a subset of continuous pages in a 4D Write Pro document. A document can contain one or more sections. A section can contain any number of pages, from a single page to the total number of pages in the document. A section page can contain a single column or up to 20 column(s). 
 
@@ -143,7 +119,7 @@ The name you entered is then used as the section name everywhere in the document
 
 Note that if you have defined a different first page or different left/right pages for a section, the page type is also displayed in the menu (see below).
 
-##### Inserting a continuous section break 
+### Inserting a continuous section break 
 
 A continuous section break creates a new section on the same page. This allows you to create pages with sections that have different numbers of columns (see *Creating a page with multiple-column and single column sections*).
 
@@ -151,7 +127,7 @@ Sections created with continuous section breaks are counted in the document (the
 
 **Note:** If you change the page orientation for the new section after you insert a continuous section break, it turns into a regular section break.
 
-##### Section attributes 
+### Section attributes 
 
 Sections inherit attributes from the document. However, common document attributes, including headers and footers, can be modified separately for each section. The contextual pop-up menu displays the properties and attributes available at the section level:  
   
@@ -168,7 +144,7 @@ Sections inherit attributes from the document. However, common document attribut
 * **Header** and **Footer** commands: these options allow you to define separate headers and footers. These options are detailed below.
 * **Margins** / **Paddings** / **Borders** / **Background**: these attributes can be defined separately for each section. For more information on these attributes, please refer the *4D Write Pro Attributes* article.
 
-##### Inserting headers and footers 
+### Inserting headers and footers 
 
 Each section can have specific header and footer. Headers and footers are displayed only when the document page view mode is **Page**. 
 
@@ -203,7 +179,7 @@ For more information on **Margins**, **Paddings**, **Borders**, and **Background
 
 You can remove the entire definition of a header or a footer (contents and attributes) by selecting the **Remove header** or **Remove footer** command in the contextual menu. 
 
-##### Compatibility 
+### Compatibility 
 
 4D Write Pro handles headers and footers of documents converted from the 4D Write plug-in with a fixed height.
 
@@ -213,7 +189,7 @@ The following expressions and properties are also supported and converted from t
 * distinct first page
 * distinct left/right pages
 
-#### Handling text boxes 
+## Text boxes 
 
 Text boxes are areas that are anchored to a page or a section and can be filled with text, inline pictures, or tables. Text boxes can be positioned anywhere on the page and meet specific needs, for example to insert a company’s name or logo or an address area.
 
@@ -225,14 +201,14 @@ Text boxes are added with an absolute position, in front of/behind text, as well
 
 Adding a text box to a 4D Write Pro document can be accomplished in the following ways:
 
-* using the **WP New text box** command,
-* using the *insertTextBox* standard action
+* using the [`WP New text box`](../commands-legacy/wp-new-text-box.md) command,
+* using the *insertTextBox* [standard action](./using-4d-write-pro-standard-actions.md)
 
 To select a text box, the user has to click on it (**Ctrl/Cmd+click** if the text box is on the background layer). Once selected, the text box can be moved or resized using the mouse or arrow keys. 
 
-To remove a selected text box, you can hit the **Delete** or **Backspace** key, use the **textBox/remove** standard action, or execute the **WP DELETE TEXT BOX** command. 
+To remove a selected text box, you can hit the **Delete** or **Backspace** key, use the **textBox/remove** standard action, or execute the [`WP DELETE TEXT BOX`](../commands-legacy/wp-delete-text-box.md) command. 
 
-Text box attributes are handled with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command or *4D Write Pro actions*. The following attributes and actions are available:
+Text box attributes are handled with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command or [standard actions](./using-4d-write-pro-standard-actions.md). The following attributes and actions are available:
 
 | **Property (constant)** | **Standard action**       | **Comments**                                                                |
 | ----------------------- | ------------------------- | --------------------------------------------------------------------------- |
@@ -262,7 +238,7 @@ Text boxes are not displayed if:
 * they are centered or anchored to sections and the **Show HTML WYSIWYG** option is checked;
 * the "visible background" option is not enabled.
 
-#### Handling rulers 
+### Rulers 
 
 Horizontal rulers are available in every viewing mode of 4D Write Pro and have the following characteristics:
 
@@ -284,9 +260,9 @@ You can change the display status of the rulers via standard actions (see *Using
 
 **Note:** A specific 4D Write Pro area property allows defining the default display for the rulers (see *Configuring View properties* section).
 
-##### Adjusting text margins and indents 
+### Adjusting text margins and indents 
 
-###### Horizontal ruler 
+#### Horizontal ruler 
 
 You can modify the left and right margins, indents and tab positions by clicking and dragging the corresponding symbols on the horizontal ruler:  
   
@@ -298,7 +274,7 @@ When you hover the mouse over one of these symbols, the cursor changes to indica
 
 When multiple paragraphs are selected, dragging margin or indent symbols applies these margins or indents to all selected paragraphs. Holding down the **Shift** key while dragging these symbols maintains existing intervals between indents or margins in the selected paragraphs.
 
-###### Vertical ruler 
+#### Vertical ruler 
 
 You can modify the top and bottom margins with the vertical ruler. When you hover the mouse over the margin limit, the cursor changes to indicate that it can be moved, and a horizontal guide line appears while you drag it:  
   
@@ -306,7 +282,7 @@ You can modify the top and bottom margins with the vertical ruler. When you hove
 
 This action can be used to modify the spacing between the top and bottom of the page and the body and the header and footer of a document. 
 
-##### Managing tabs 
+### Managing tabs 
 
 You can use the horizontal ruler's context menu to create, modify or delete tabs:  
   
@@ -316,12 +292,14 @@ To create a tab, just right-click directly on the horizontal ruler and choose it
 
 **Remove tab** is only available when you right-click directly on an existing tab; you can also remove tabs by dragging them outside the horizontal ruler area.
 
-**Notes:** 
+:::note Notes 
 
-* Tabs can also be defined programmatically with the [WP SET ATTRIBUTES](../commands/wp-set-attributes), [WP GET ATTRIBUTES](../commands/wp-get-attributes), and [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) commands with the wk tab default and wk tabs selectors.
-* For decimal tabs, 4D Write Pro considers the first dot or comma character from the right as the decimal separator; this default setting can be modified with the wk tab decimal separator selector.
+* Tabs can also be defined programmatically with the [WP SET ATTRIBUTES](../commands/wp-set-attributes), [WP GET ATTRIBUTES](../commands/wp-get-attributes), and [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) commands with the `wk tab default` and `wk tabs` selectors.
+* For decimal tabs, 4D Write Pro considers the first dot or comma character from the right as the decimal separator; this default setting can be modified with the `wk tab decimal separator` selector.
 
-###### Define leading characters 
+:::
+
+#### Define leading characters 
 
 The characters preceeding tabs (leading characters) can be defined by selecting from five predefined characters or by designating a specific character to use. The predefined characters are:
 
@@ -331,13 +309,13 @@ The characters preceeding tabs (leading characters) can be defined by selecting 
 * \_\_ (underscores)
 * \*\*\* (asterisks)
 
-Leading characters always appear before the tab and follows the text direction (left to right or right to left). They can be defined programmatically with the [WP SET ATTRIBUTES](../commands/wp-set-attributes), [WP GET ATTRIBUTES](../commands/wp-get-attributes), and [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) commands using wk leading with the wk tab default or wk tabs selectors, or via the horizontal ruler's contextual menu (as shown below).
+Leading characters always appear before the tab and follows the text direction (left to right or right to left). They can be defined programmatically with the [WP SET ATTRIBUTES](../commands/wp-set-attributes), [WP GET ATTRIBUTES](../commands/wp-get-attributes), and [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) commands using `wk leading` with the `wk tab default` or `wk tabs` selectors, or via the horizontal ruler's contextual menu (as shown below).
 
 ![](../../assets/en/WritePro/pict5761675.en.png)
 
 When **Other...** is selected, a dialog is displayed where a custom leading character can be defined.
 
-##### Multi-column rulers 
+### Multi-column rulers 
 
 When two or more columns are defined for the document or the section, the horizontal ruler displays a specific area for each column:
 
@@ -345,11 +323,11 @@ When two or more columns are defined for the document or the section, the horizo
 
 **Note:** Multi-column feature is not available in **Embedded** view mode.
 
-##### On After Edit event 
+### On After Edit event 
 
-An On After Edit form event is triggered for a 4D Write Pro area form object whenever any of the tab or margin controls are moved, added or deleted, whether by dragging them or using the context menu.
+An [`On After Edit`](../../Events/onAfterEdit.md) form event is triggered for a 4D Write Pro area form object whenever any of the tab or margin controls are moved, added or deleted, whether by dragging them or using the context menu.
 
-#### Handling columns 
+## Columns 
 
 4D Write Pro allows you to manage columns in your documents. Columns are chained from the left-most column to the right-most column. In other words, when entering text, the text flow will start filling the left column and continue with the column directly to the right until it reaches the end of the page. Once the end of the page is reached, the text flow cycles through the next page. In order to be able to balance the page settings, 4D Write Pro allows you to insert column breaks.
 
@@ -362,21 +340,21 @@ Columns can be defined at the document level (they are displayed in the whole do
 Columns can be set using:
 
 * the **Columns** submenu of the 4D Write Pro area context menu,
-* 4D Write Pro attributes (see *4D Write Pro Attributes*),
-* 4D Write Pro standard actions (see *Using 4D Write Pro standard actions*).
+* 4D Write Pro [attributes](../commands-legacy/4d-write-pro-attributes.md),
+* 4D Write Pro [standard actions](./using-4d-write-pro-standard-actions.md).
 
 You can set or get the following properties and actions for columns:
 
-| **Property**                        | **Description**                                                                                                                                                                                                                                        | *Document* **attributes**                                                | **Standard actions**                                    |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------- |
-| Number of columns                   | You can define up to 20 columns for the document/section                                                                                                                                                                                               | wk column count                                                          | *columnCount*                                           |
-| Column spacing                      | Space between columns in pts, inches, or cm. Note that all columns will have the same size. Each column width is automatically calculated by 4D Write Pro according to the number of columns, the page width, and the spacing                          | wk column spacing                                                        | *columnSpacing*                                         |
-| Column width                        | (read-only attribute) Current width for each column, i.e. computed width                                                                                                                                                                               | wk column width                                                          | \-                                                      |
-| Column rule style, color, and width | You can add a vertical separator (a decorative line) between columns. These options let you design the separator style, color and width. ![](../../assets/en/WritePro/pict3752176.en.png)To remove the vertical separator, select **None** as a style. | wk column rule style, wk column rule color, wk column rule width         | *columnRuleStyle*, *columnRuleColor*, *columnRuleWidth* |
-| Insert break                        | Insert a column break                                                                                                                                                                                                                                  | wk column break, see also [WP INSERT BREAK](../commands/wp-insert-break) | *insertColumnBreak*                                     |
-| Columns menu                        | Create a Columns sub-menu                                                                                                                                                                                                                              | \-                                                                       | *columns*                                               |
+| **Property**      | **Description**  | **Document attributes**| **Standard actions**  |
+| ----------- | -------- | ------- | --------------- |
+| Number of columns    | You can define up to 20 columns for the document/section   | wk column count  | *columnCount*                                           |
+| Column spacing   | Space between columns in pts, inches, or cm. Note that all columns will have the same size. Each column width is automatically calculated by 4D Write Pro according to the number of columns, the page width, and the spacing  | wk column spacing   | *columnSpacing*  |
+| Column width    | (read-only attribute) Current width for each column, i.e. computed width  | wk column width  | \-    |
+| Column rule style, color, and width | You can add a vertical separator (a decorative line) between columns. These options let you design the separator style, color and width. ![](../../assets/en/WritePro/pict3752176.en.png)To remove the vertical separator, select **None** as a style. | wk column rule style, wk column rule color, wk column rule width | *columnRuleStyle*, *columnRuleColor*, *columnRuleWidth* |
+| Insert break  | Insert a column break  | wk column break, see also [WP INSERT BREAK](../commands/wp-insert-break) | *insertColumnBreak*     |
+| Columns menu     | Create a Columns sub-menu  | \- | *columns*   |
 
-##### Creating a page with multiple-column and single column sections 
+### Creating a page with multiple-column and single column sections 
 
 *Inserting a continuous section break* in your document allows you to have multiple-column sections and single column sections on the same page. 
 
