@@ -1,10 +1,9 @@
 ---
 id: handling-tables
-title: Handling tables
+title: Tables
 displayed_sidebar: docs
 ---
 
-#### 
 
 4D Write Pro documents can contain tables. 4D Write Pro tables are created and defined by programming, but their contents can be modified and handled by the user. Various 4D Write Pro table attributes are editable, including row height, alignment, margins, text style, color, or borders. 
 
@@ -12,14 +11,14 @@ displayed_sidebar: docs
 
 **Note:** Since 4D Write Pro tables can be filled by programming, they can contain a large number of columns and rows. Keep in mind that very large tables will impact performances, especially if they are displayed on screen. See also [this blog post](https://blog.4d.com/4d-write-pro-tables-without-limit) for more information.
 
-#### Creating a table 
+## Creating a table 
 
 4D Write Pro tables are created by calling the [WP Insert table](../commands/wp-insert-table) command. You can then add rows by using the [WP Table append row](../commands/wp-table-append-row) command.
 
 **Note:** A user can create a table by copying and pasting a range of cells:   
 ![](../../assets/en/WritePro/pict3307941.en.png)
 
-#### Editing tables 
+## Editing tables 
 
 Cell contents can be added by programming using the [WP Table append row](../commands/wp-table-append-row) command.
 
@@ -47,7 +46,7 @@ When different attributes are applied to concurrent elements of a table, a prior
 2. Rows are rendered (overriding table attributes)
 3. Cells/Columns are rendered (overriding row attributes).
 
-##### Resizing columns 
+### Resizing columns 
 
 The width of table columns can be modified by dragging the column separator to the left or right. The cursor changes to indicate that it can be moved horizontally and vertical line is shown in the ruler: 
 
@@ -65,7 +64,7 @@ If you press the **Shift** key while resizing a column, the size of the adjacent
   
 **Note**: The Enterable property must be enabled for the 4D Write Pro document to allow column resizing.
 
-##### Merging and splitting cells 
+### Merging and splitting cells 
 
 With 4D Write Pro, you can split and merge cells in a table. Merging cells is combining two or more adjacent table cells located in the same row or column into a single cell. Splitting cells is taking already merged cells and separating them into multiple adjacent cells in the same row or column. Cells can be merged using the command [WP TABLE MERGE CELLS](../commands/wp-table-merge-cells) or the standard action **cell/merge,** and splitted using the command [WP TABLE SPLIT CELLS](../commands/wp-table-split-cells) or the standard action **cell/split**.
 
@@ -155,7 +154,7 @@ and it will have the same result as using $cell1 because $cell1, $cell2, and $ce
 
 However if an x number of full rows or full columns are merged together, the following rows or columns’s indexes are decremented by x. 
 
-#### Table pagination 
+## Table pagination 
 
 When displayed in Page or Draft mode (or the context of a document printing), 4D Write Pro tables can split:
 
@@ -190,7 +189,7 @@ When a page break or a column break is inserted through a standard action or the
 * Tables cannot be broken in different sections. Inserting a section break in a table will move the whole table to the new section.
 * Breaks inside rows are not allowed when *Carry-over rows* are enabled.
 
-#### Repeated headers 
+## Repeated headers 
 
 4D Write Pro allows you to define up to five header rows per table. Selected header rows will be repeated on every column or page when a column break or a page break occurs. 
 
@@ -203,7 +202,7 @@ Table headers are the first row(s) of the table. To define header rows, you can:
 
 If you designate more than five rows as header (or if it results from an insertion of rows in an existing header), 4D Write Pro only uses the first five rows as header. If you remove row(s) defined in the header, the number of header rows is decreased. 
 
-#### Table datasource 
+## Table datasource 
 
 You can assign a formula object as a datasource for a table and access the resulting value(s) from within the table using *Expressions with This* (see below). The datasource formula is processed by 4D Write Pro when formulas are computed (e.g. when the document is opened, when the [WP COMPUTE FORMULAS](../commands/wp-compute-formulas) command is called, etc.). This feature takes advantage of data contexts (see [WP SET DATA CONTEXT](../commands/wp-set-data-context)). 
 
@@ -224,7 +223,7 @@ To remove a datasource from a table, use the [WP RESET ATTRIBUTES](../commands/w
  WP RESET ATTRIBUTES($table;wk datasource)
 ```
 
-##### Building a table with datasource 
+### Building a table with datasource 
 
 A table design based upon a datasource can contain the following rows:
 
@@ -251,7 +250,7 @@ In any cases, the following statement returns the actual number of rows:
  WP GET ATTRIBUTES($table;wk row count;$vcount) //31 for the example above
 ```
 
-##### Carry-over rows 
+### Carry-over rows 
 
 Tables based on datasources support **bottom carry-over rows** that are automatically displayed at the bottom of each page/column when the table is split over more than one page/column. A carry-over row can display extra information based on previously displayed/printed items, thanks to the **This.previousItems** expression (see *Expressions with This*). This feature allows you, for example, to add subtotal rows. 
 
@@ -274,7 +273,7 @@ To create carry-over rows:
 
 **Note:** Page breaks inside rows are not allowed when the carry-over row feature is enabled (see *Table pagination*). Corresponding options, if set, are ignored.
 
-##### Break rows 
+### Break rows 
 
 Tables based on datasources support one or several **Sort Break Rows** that can be displayed either before or after the data row. S**ort Break Rows** help you to visually divide your already sorted datasource items in your table into different parts based on a computed formula value.
 
@@ -301,7 +300,7 @@ To create break rows:
  WP SET ATTRIBUTES($row_2;wk break formula;Formula(This.item.country))
 ```
 
-##### Expressions with This 
+### Expressions with This 
 
 When used in a formula within the table, the **This** keyword gives access to different data according to the context:
 
@@ -321,7 +320,7 @@ In any other contexts, these expressions will return *undefined*.
 
 **Note:** For more information about formula insertion, see [WP INSERT FORMULA](../commands/wp-insert-formula).
 
-##### Working with a table datasource 
+### Working with a table datasource 
 
 When a table is filled from a datasource, rows are automatically created when references are computed. You can insert or delete rows, edit cell contents, change the style, etc.:
 

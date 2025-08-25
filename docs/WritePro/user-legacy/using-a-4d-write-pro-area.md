@@ -1,35 +1,13 @@
 ---
 id: using-a-4d-write-pro-area
-title: Using a 4D Write Pro area
+title: Properties & Layout
 displayed_sidebar: docs
+slug: /WritePro/user/properties
 ---
 
 
-## Context menu 
 
-If the **Context menu** property is [checked for a 4D Write Pro area](./defining-a-4d-write-pro-area.md#using-the-4d-write-pro-area-object), a comprehensive context menu is available to users when the form is executed at runtime:  
-  
-![](../../assets/en/WritePro/pict3071271.en.png) 
-
-This menu offers access to all the 4D Write Pro user features. 
-
-## Selecting the view mode 
-
-4D Write Pro documents can be displayed in one of three page view modes:
-
-* **Draft**: draft mode with basic properties
-* **Page** (default): "print view" mode
-* **Embedded**: view mode suitable for embedded areas; it does not display margins, footers, headers, columns, page frames, etc. This mode can also be used to produce a Web-like view output (if you also select the 96 dpi resolution and the **HTML WYSIWYG** option).
-
-The page view mode can be configured by means of the area pop-up menu:  
-  
-![](../../assets/en/WritePro/pict3071271.en.png)  
-
-**Note:** The page view mode is not stored with the document. 
-
-For areas embedded in 4D forms, the view mode can also be set by default using the Property List. In this case, the view mode is stored as a property of the 4D Write Pro form object (for more information, please refer to the *Configuring View properties* paragraph). 
-
-## Basic properties 
+## Basics 
 
 When the document is in **Page** view mode, the following document properties are available for the user:
 
@@ -47,7 +25,7 @@ You can also use additional commands such as **Document.../Page size** or **Docu
 * Avoid page break inside property
 * Widow and orphan control.
 
-### Paragraph breaks 
+## Paragraph breaks 
 
 When displayed in Page or Draft mode (or in the context of a document printing), 4D Write Pro paragraphs can break:
 
@@ -189,56 +167,8 @@ The following expressions and properties are also supported and converted from t
 * distinct first page
 * distinct left/right pages
 
-## Text boxes 
 
-Text boxes are areas that are anchored to a page or a section and can be filled with text, inline pictures, or tables. Text boxes can be positioned anywhere on the page and meet specific needs, for example to insert a company’s name or logo or an address area.
-
-![](../../assets/en/WritePro/pict6131919.en.png)
-
-**Note:** A text box cannot contain headers, footers, columns, anchored images, or other text boxes. 
-
-Text boxes are added with an absolute position, in front of/behind text, as well as anchored to a page or specific parts of a document in Page mode: header, footer, a section, all sections, or a subsection. Text boxes can also be used in embedded mode (anchored to the layer box). 
-
-Adding a text box to a 4D Write Pro document can be accomplished in the following ways:
-
-* using the [`WP New text box`](../commands-legacy/wp-new-text-box.md) command,
-* using the *insertTextBox* [standard action](./using-4d-write-pro-standard-actions.md)
-
-To select a text box, the user has to click on it (**Ctrl/Cmd+click** if the text box is on the background layer). Once selected, the text box can be moved or resized using the mouse or arrow keys. 
-
-To remove a selected text box, you can hit the **Delete** or **Backspace** key, use the **textBox/remove** standard action, or execute the [`WP DELETE TEXT BOX`](../commands-legacy/wp-delete-text-box.md) command. 
-
-Text box attributes are handled with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command or [standard actions](./using-4d-write-pro-standard-actions.md). The following attributes and actions are available:
-
-| **Property (constant)** | **Standard action**       | **Comments**                                                                |
-| ----------------------- | ------------------------- | --------------------------------------------------------------------------- |
-| wk width                | textBox/width             | If set to "auto", width converted to 8cm as text box width cannot be "auto" |
-| wk height               | textBox/height            | If set to "auto", height is adjusted to fit the contents                    |
-| wk padding              | textBox/padding           |                                                                             |
-| wk border \[...\]       | textBox/border\[...\]     |                                                                             |
-| wk background \[...\]   | textBox/background\[...\] |                                                                             |
-| wk vertical align       | textBox/verticalAlign     |                                                                             |
-| wk id                   | \-                        | cannot be empty for a text box                                              |
-| wk anchor \[...\]       | textBox/anchor\[...\]     |                                                                             |
-| wk owner                | \-                        | read-only                                                                   |
-| wk protected            | \-                        |                                                                             |
-| wk style sheet          | \-                        | read-only and always "" (no style sheet)                                    |
-
-Text boxes support automatic text wrapping when anchored to a document with options like on the left, right, largest side, above and below, or all around provided through the property wk anchor layout or the standard action **anchorLayout**. Check this [blog post](https://blog.4d.com/4d-write-pro-more-display-options-for-anchored-pictures-and-text-boxes/) for more details.
-
-![](../../assets/en/WritePro/pict6856163.en.png)
-
-Text boxes with text wrapping anchored to the body of the page do not affect the header or the footer (the text box is displayed in front of the header or the footer); on the contrary, text boxes anchored to the header and footer affect the body of the page if they overlap it.
-
-**Note**: If you want to anchor a text box with text wrapping to the header or footer, you must also set the vertical alignment of the text box to the top.
-
-Text boxes are not displayed if:
-
-* the view mode is Draft;
-* they are centered or anchored to sections and the **Show HTML WYSIWYG** option is checked;
-* the "visible background" option is not enabled.
-
-### Rulers 
+## Rulers 
 
 Horizontal rulers are available in every viewing mode of 4D Write Pro and have the following characteristics:
 
@@ -262,7 +192,7 @@ You can change the display status of the rulers via standard actions (see *Using
 
 ### Adjusting text margins and indents 
 
-#### Horizontal ruler 
+### Horizontal ruler 
 
 You can modify the left and right margins, indents and tab positions by clicking and dragging the corresponding symbols on the horizontal ruler:  
   
@@ -274,7 +204,7 @@ When you hover the mouse over one of these symbols, the cursor changes to indica
 
 When multiple paragraphs are selected, dragging margin or indent symbols applies these margins or indents to all selected paragraphs. Holding down the **Shift** key while dragging these symbols maintains existing intervals between indents or margins in the selected paragraphs.
 
-#### Vertical ruler 
+### Vertical ruler 
 
 You can modify the top and bottom margins with the vertical ruler. When you hover the mouse over the margin limit, the cursor changes to indicate that it can be moved, and a horizontal guide line appears while you drag it:  
   

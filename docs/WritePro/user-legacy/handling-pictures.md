@@ -1,10 +1,25 @@
 ---
 id: handling-pictures
-title: Handling pictures
+title: Pictures
 displayed_sidebar: docs
 ---
 
-#### Background pictures 
+
+## Adding pictures 
+
+Adding pictures to a 4D Write Pro document can be accomplished in multiple ways and depend on your needs:
+
+* to add a **background picture**, use the wk background image or wk background image url attribute with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command
+* to add an **inline picture**, *i.e.* inserted in the text flow just like a character, use the [WP INSERT PICTURE](../commands/wp-insert-picture) or the [ST INSERT EXPRESSION](../../commands/st-insert-expression) command
+* to add an **anchored picture** in the page (behind or in front of the text), use the [WP Add picture](../commands/wp-add-picture) command.
+
+The way you add a picture determines the layer it is positioned in, as illustrated in the diagram below: 
+
+![](../../assets/en/WritePro/pict3626363.en.png)
+
+
+
+## Background pictures 
 
 Pictures can be set as the background of 4D Write Pro documents and document elements (tables, paragraphs, sections, headers/footers, etc.).
 
@@ -26,19 +41,7 @@ Background picture display can also be set either programmatically or via the co
 | wk truncated             | When used as value of wk image display mode, the image is aligned at the top left of the content box, not replicated, and it keeps its original size. When used as value of wk background display mode, presets the following attributes: wk background width \= "auto" wk background height \= "auto" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk left wk background position vertical \= wk top                                  |
 | wk truncated centered    | When used as value of wk image display mode, the image is centered in the content box, not replicated, and it keeps its original size. When used as value of wk background display mode, presets the following attributes: wk background width \= "auto" wk background height \= "auto" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk center wk background position vertical \= wk center                                            |
 
-#### Adding pictures 
-
-Adding pictures to a 4D Write Pro document can be accomplished in multiple ways and depend on your needs:
-
-* to add a **background picture**, use the wk background image or wk background image url attribute with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command
-* to add an **inline picture**, *i.e.* inserted in the text flow just like a character, use the [WP INSERT PICTURE](../commands/wp-insert-picture) or the [ST INSERT EXPRESSION](../../commands/st-insert-expression) command
-* to add an **anchored picture** in the page (behind or in front of the text), use the [WP Add picture](../commands/wp-add-picture) command.
-
-The way you add a picture determines the layer it is positioned in, as illustrated in the diagram below: 
-
-![](../../assets/en/WritePro/pict3626363.en.png)
-
-#### Positioning and displaying of anchored pictures 
+## Positioning and displaying of anchored pictures 
 
 Anchored pictures are added with an absolute position, in front of/behind text, as well as anchored to the page or specific parts of a document (*i.e.*, header, footer, sections). Setting an absolute position for a picture is accomplished with the [WP Add picture](../commands/wp-add-picture) and [WP SET ATTRIBUTES](../commands/wp-set-attributes) commands.
 
@@ -72,7 +75,7 @@ All anchored pictures are displayed in the Page view mode only. They're not disp
 * they are centered or anchored to sections and the **Show HTML WYSIWYG** option is checked;
 * the "Show background" option is not selected.
 
-#### Picture expressions 
+## Picture expressions 
 
 You can insert 4D expressions that return pictures in your 4D Write Pro areas. Expressions can be variables, fields, project methods, formulas, object attributes or collection elements.
 
@@ -86,7 +89,7 @@ All image attributes can be applied to picture expressions (wk image and wk imag
 
 **Note**: As with other expressions, picture expressions are also impacted by the [WP COMPUTE FORMULAS](../commands/wp-compute-formulas) and [WP FREEZE FORMULAS](../commands/wp-freeze-formulas) commands.
 
-##### Anchored pictures 
+### Anchored pictures 
 
 Anchored picture expressions are added with the [WP Add picture](../commands/wp-add-picture) command (without the second parameter), followed by a call to the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command with the wk image formula selector.
 
@@ -103,7 +106,7 @@ You can also insert picture expressions using [WP SET ATTRIBUTES](../commands/wp
 
 Calling the [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) command with wk image formula is similar to calling [WP FREEZE FORMULAS](../commands/wp-freeze-formulas) (on the entire document) in that the expression is cleared from the image attribute. However [WP FREEZE FORMULAS](../commands/wp-freeze-formulas) computes the expression before clearing, whereas [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) does not. If an expression has never been computed, the default black frame image will be displayed.
 
-##### Inline pictures 
+### Inline pictures 
 
 Inline picture expressions are added with the [WP INSERT FORMULA](../commands/wp-insert-formula) command.
 
@@ -120,7 +123,7 @@ Examples:
  WP INSERT FORMULA(wpRange;Formula(M_ComputeChart);wk prepend)
 ```
 
-#### Empty pictures 
+### Empty pictures 
 
 If an image is empty (e.g. it could not be loaded, or it results from an expression that could not be computed, or it uses an unsupported picture format), by default 4D Write Pro displays a black frame rectangle:
 
@@ -136,7 +139,7 @@ You can also use the wk visible empty images selector with the [WP EXPORT DOCUME
 
 Note that when this option is set, missing image elements will not be displayed at all even if they have borders, width, height, or background; this may impact the page layout for inline images.
 
-#### Picture properties 
+## Picture properties 
 
 All pictures have properties (attributes) such as height, width, borders, display mode, etc., that can be get or set via the 4D Write Pro language ([WP GET ATTRIBUTES](../commands/wp-get-attributes) and [WP SET ATTRIBUTES](../commands/wp-set-attributes)) or standard actions.
 
@@ -144,7 +147,7 @@ All pictures have properties (attributes) such as height, width, borders, displa
 * The *Image* section contains attributes that are specific to pictures only.
 * The *Using 4D Write Pro standard actions* page also lists available image properties.
 
-##### Picture reference or picture URL 
+### Picture reference or picture URL 
 
 You can work with picture references (picture variables, fields, expressions) or picture URLs (text representing a local or network address of the picture).
 
@@ -171,21 +174,21 @@ When you get a picture using one of these attributes, you receive a text. If the
  WP GET ATTRIBUTES($range;wk image url;vPictureURLGet) //vPictureURLGet=$url
 ```
 
-#### Retrieving pictures 
+## Retrieving pictures 
 
 The following commands can be used to return pictures:
 
 * [WP Picture range](../commands/wp-picture-range) \- applies only for inline images
 * [WP Selection range](../commands/wp-selection-range) \- applies only for user-selected images
 
-#### Deleting pictures 
+## Deleting pictures 
 
 You can remove inline and anchored pictures with: 
 
 * *Mouse/keyboard actions*
 * the [WP DELETE PICTURE](../commands/wp-delete-picture) command
 
-#### Mouse/keyboard actions 
+## Mouse/keyboard actions 
 
 Pictures can be manipulated via the mouse or the keyboard. Available actions include:
 

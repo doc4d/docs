@@ -4,11 +4,6 @@ title: 4D Write Pro documents
 displayed_sidebar: docs
 ---
 
-## Managing documents in 4D Write Pro areas 
-
-In 4D applications, 4D Write Pro documents are created, imported, and exported by means of specific commands found in the **4D Write Pro** theme ([WP EXPORT DOCUMENT](../commands/wp-export-document), [WP EXPORT VARIABLE](../commands/wp-export-variable), [WP Import document](../commands/wp-import-document), [WP New](../commands/wp-new)).
-
-You can also [associate a 4D Write Pro area with an Object field](#storing-4d-write-pro-documents-in-4d-object-fields) of the database. This way, each 4D Write Pro document is automatically saved with the record and stored in the database's data. 
 
 ## .4wp document format 
 
@@ -116,3 +111,16 @@ Since custom attributes share the same naming space as 4D Write Pro internal att
 :::
 
 **Note:** Custom attributes cannot be handled by the [WP SET ATTRIBUTES](../commands/wp-set-attributes), [WP GET ATTRIBUTES](../commands/wp-get-attributes), and [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) commands (they only support 4D Write Pro internal attributes). 
+
+
+
+
+
+## Opening and exporting documents
+
+In 4D applications, 4D Write Pro documents are created, imported, and exported by means of specific commands found in the **4D Write Pro** theme ([WP EXPORT DOCUMENT](../commands/wp-export-document), [WP EXPORT VARIABLE](../commands/wp-export-variable), [WP Import document](../commands/wp-import-document), [WP New](../commands/wp-new)).
+
+You can also [associate a 4D Write Pro area with an Object field](../user-legacy/defining-a-4d-write-pro-area.md#storing-4d-write-pro-documents-in-4d-object-fields) of the database. This way, each 4D Write Pro document is automatically saved with the record and stored in the database's data. 
+
+
+

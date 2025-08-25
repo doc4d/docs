@@ -4,38 +4,7 @@ title: Configuring 4D Write Pro areas
 displayed_sidebar: docs
 ---
 
-## Creating a 4D Write Pro area
 
-### Using the 4D Write Pro area object 
-
-4D Write Pro documents are displayed and edited manually in a 4D form object: **4D Write Pro**. This object is available as part of the last tool (Plug-in Area, Web Area, etc.) found in the [object bar](../../FormEditor/formEditor.md#object-bar):  
-  
-![](../../assets/en/WritePro/pict4101210.en.png)  
-
-A 4D Write Pro form area is configured by means of standard properties found in the Property List, such as **Object Name** and **Variable or Expression**, **Coordinates**, **Entry**, **Display**, **Appearance**, and/or **Events**.  
-  
-![](../../assets/en/WritePro/pict4101242.en.png)  
-
-The **Variable or Expression** property can be used in the language as a reference to the 4D Write Pro area. Note that the variable must be of the [Object](../../Concepts/dt_object.md) type.
-
-"Entry" properties manage basic features for text entry:
-
-* **Enterable**: enables you to lock/unlock the area in order to allow or prevent editing
-* **Auto Spellcheck**: available for 4D Write Pro areas
-* **Context Menu**: allows you to enable/disable the context menu when the form is executed at runtime (see the [Using a 4D Write Pro area](./using-a-4d-write-pro-area.md))
-* **Selection always visible**: handles text selection as in standard text areas.
-
-### Using 4D Write Pro Interface 
-
-You can create preconfigured 4D Write Pro areas using the **4D Write Pro** objects found in the [Object library](../../FormEditor/objectLibrary.md) of the 4D Form editor ("Entry areas" theme):  
-  
-![](../../assets/en/WritePro/pict4101252.en.png)  
-
-These areas come with either a control panel or a toolbar for managing all the attributes of the area (font, color, style, etc.):  
-  
-![](../../assets/en/WritePro/pict4687892.en.png)  
-
-For more information, refer to the [4D Write Pro Interface](../writeprointerface.md) section.
 
 ## Drag and Drop 
 
@@ -79,3 +48,28 @@ Document view settings are handled through specific items in the **Appearance** 
 * **Show vertical ruler**: Displays/hides the vertical ruler when the document is in Page mode. 
 * **Show empty or unsupported images**: Displays/hides a black rectangle for images that cannot be loaded or computed (empty images or images in an unsupported format). 
 * **Display formula source as symbol**: Displays source text of formulas as ![](../../assets/en/WritePro/pict6013182.en.png) symbols when expressions are shown as references (see above). Displaying formulas as symbols makes template documents more compact and more *wysiwyg*.
+
+## Context menu 
+
+If the **Context menu** property is [checked for a 4D Write Pro area](./defining-a-4d-write-pro-area.md#using-the-4d-write-pro-area-object), a comprehensive context menu is available to users when the form is executed at runtime:  
+  
+![](../../assets/en/WritePro/pict3071271.en.png) 
+
+This menu offers access to all the 4D Write Pro user features. 
+
+## Selecting the view mode 
+
+4D Write Pro documents can be displayed in one of three page view modes:
+
+* **Draft**: draft mode with basic properties
+* **Page** (default): "print view" mode
+* **Embedded**: view mode suitable for embedded areas; it does not display margins, footers, headers, columns, page frames, etc. This mode can also be used to produce a Web-like view output (if you also select the 96 dpi resolution and the **HTML WYSIWYG** option).
+
+The page view mode can be configured by means of the area pop-up menu:  
+  
+![](../../assets/en/WritePro/pict3071271.en.png)  
+
+**Note:** The page view mode is not stored with the document. 
+
+For areas embedded in 4D forms, the view mode can also be set by default using the Property List. In this case, the view mode is stored as a property of the 4D Write Pro form object (for more information, please refer to the *Configuring View properties* paragraph). 
+

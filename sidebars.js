@@ -2754,17 +2754,39 @@ module.exports =
           },
           items: [
             "WritePro/user-legacy/presentation",
-            "WritePro/user-legacy/defining-a-4d-write-pro-area",
             "WritePro/user-legacy/4d-write-pro-documents",
-            "WritePro/user-legacy/using-a-4d-write-pro-area",
-            "WritePro/managing-formulas",
+            "WritePro/user-legacy/defining-a-4d-write-pro-area",
+            {
+                  type: "category",
+                  label: "Elements",
+                  link: {
+                    type: "generated-index",
+                    title: "Working with documents",
+                  },
+                  items: [
+                    "WritePro/user-legacy/using-a-4d-write-pro-area",
+                    "WritePro/user-legacy/handling-pictures",
+                    "WritePro/user-legacy/handling-tables",
+                    "WritePro/user-legacy/text-boxes",
+                    "WritePro/managing-formulas"
+                  ]
+            },
+            {
+                  type: "category",
+                  label: "Import and Export",
+                  link: {
+                    type: "generated-index",
+                    title: "Import and Export",
+                  },
+                  items: [
+                    "WritePro/user-legacy/importing-4d-write-documents",
+                    "WritePro/user-legacy/importing-and-exporting-in-docx-format",
+                    "WritePro/user-legacy/exporting-to-html-and-mime-html-formats",
+                    "WritePro/user-legacy/exporting-to-svg-format"
+                  ]
+            },
             "WritePro/commands-legacy/4d-write-pro-attributes",
-            "WritePro/user-legacy/handling-pictures",
-            "WritePro/user-legacy/handling-tables",
-            "WritePro/user-legacy/importing-4d-write-documents",
-            "WritePro/user-legacy/importing-and-exporting-in-docx-format",
-            "WritePro/user-legacy/exporting-to-html-and-mime-html-formats",
-            "WritePro/user-legacy/exporting-to-svg-format",
+            "WritePro/user-legacy/using-4d-write-pro-standard-actions",
             "WritePro/user-legacy/printing-4d-write-pro-documents",
             "WritePro/writeprointerface",
             {
