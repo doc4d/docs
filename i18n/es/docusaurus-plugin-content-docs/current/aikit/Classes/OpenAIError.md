@@ -13,19 +13,19 @@ The `OpenAIError` class is designed to handle errors returned by the OpenAI API.
 
 | Propiedad | Tipo    | Descripción                                                                    |
 | --------- | ------- | ------------------------------------------------------------------------------ |
-| `errCode` | Integer | The error code returned by the API or the HTTP status.         |
+| `errCode` | Integer | El código de error devuelto por la API o el estado HTTP.       |
 | `message` | Text    | The error message returned by the API or the HTTP status text. |
 
 ### Propiedades de respuesta HTTP
 
-| Propiedad    | Tipo    | Descripción                                                     |
-| ------------ | ------- | --------------------------------------------------------------- |
-| `response`   | Object  | El objeto de respuesta completo.                |
-| `status`     | Integer | El código de estado HTTP de la respuesta.       |
-| `statusText` | Text    | El texto de estado de la respuesta HTTP.        |
-| `body`       | Object  | El cuerpo de la respuesta de error.             |
-| `headers`    | Object  | Los encabezados de la respuesta de error.       |
-| `requestID`  | Text    | The request ID from the error response headers. |
+| Propiedad    | Tipo    | Descripción                                                                 |
+| ------------ | ------- | --------------------------------------------------------------------------- |
+| `response`   | Object  | El objeto de respuesta completo.                            |
+| `status`     | Integer | El código de estado HTTP de la respuesta.                   |
+| `statusText` | Text    | El texto de estado de la respuesta HTTP.                    |
+| `body`       | Object  | El cuerpo de la respuesta de error.                         |
+| `headers`    | Object  | Los encabezados de la respuesta de error.                   |
+| `requestID`  | Text    | El ID de petición de los encabezados de respuesta de error. |
 
 ### OpenAI específico
 
@@ -40,9 +40,9 @@ The `OpenAIError` class is designed to handle errors returned by the OpenAI API.
 | Propiedad                    | Tipo    | Descripción                                                                      |
 | ---------------------------- | ------- | -------------------------------------------------------------------------------- |
 | `isBadRequestError`          | Boolean | Indicates if the error is a 400 Bad Request error.               |
-| `isAuthenticationError`      | Boolean | Indicates if the error is a 401 Authentication error.            |
+| `isAuthenticationError`      | Boolean | Indica si se trata de un error de autenticación 401.             |
 | `isPermissionDeniedError`    | Boolean | Indicates ∏if the error is a 403 Permission Denied error.        |
-| `isNotFoundError`            | Boolean | Indicates if the error is a 404 Not Found error.                 |
+| `isNotFoundError`            | Boolean | Indica si el error es un error 404 Not Found.                    |
 | `isUnprocessableEntityError` | Boolean | Indicates if the error is a 422 Unprocessable Entity error.      |
 | `isRateLimitError`           | Boolean | Indica si el error es un error de límite de velocidad 429.       |
 | `isInternalServerError`      | Boolean | Indicates if the error is a 500 or higher Internal Server error. |

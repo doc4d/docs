@@ -18,19 +18,19 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Create deployment license.Params-->
 
-| Parámetros        | Tipo                      |                             | Descripción                                                  |
-| ----------------- | ------------------------- | --------------------------- | ------------------------------------------------------------ |
-| mergedApp         | 4D.Folder | &#8594; | Carpeta que contiene la aplicación fusionada                 |
-| autoLicenseTarget | Integer                   | &#8594; | Target license for automatic license embedding               |
-| buildLicense      | 4D.File   | &#8594; | License required to generate the embedded license            |
-| oemLicense        | 4D.File   | &#8594; | Licencia 4D OEM XML Key si se trata de una licencia servidor |
-| Resultado         | Object                    | &#8592; | Estado                                                       |
+| Parámetros        | Tipo                      |                             | Descripción                                                   |
+| ----------------- | ------------------------- | --------------------------- | ------------------------------------------------------------- |
+| mergedApp         | 4D.Folder | &#8594; | Carpeta que contiene la aplicación fusionada                  |
+| autoLicenseTarget | Integer                   | &#8594; | Licencia objetivo para la integración automática de licencias |
+| buildLicense      | 4D.File   | &#8594; | Licencia necesaria para generar la licencia integrada         |
+| oemLicense        | 4D.File   | &#8594; | Licencia 4D OEM XML Key si se trata de una licencia servidor  |
+| Resultado         | Object                    | &#8592; | Estado                                                        |
 
 <!-- END REF-->
 
 ## Descripción
 
-<!--REF #_command_.Create deployment license.Summary-->The **Create deployment license** command creates an embedded license file in the Licenses folder of the *mergedApp* built application.<!-- END REF--> If the Licenses folder does not exist in the *mergedApp* folder, it is created by the command.
+<!--REF #_command_.Create deployment license.Summary-->El comando **Create deployment license** crea un archivo de licencia integrado en la carpeta Licenses de la aplicación generada *mergedApp*.<!-- END REF--> If the Licenses folder does not exist in the *mergedApp* folder, it is created by the command.
 
 In *mergedApp*, pass a [4D.Folder](../API/FolderClass.md) object containing a reference to the folder containing the built application in which you want to embed a license.
 
@@ -47,7 +47,7 @@ The following constants are supported in the *autoLicenseTarget* parameter:
 | 4D Volume Desktop | 1     | Create automatically a license for a 4D single-user application |
 | 4D Server         | 5     | Create automatically a license for a 4D Server application      |
 
-If no valid license is found, an error is generated.
+Si no se encuentra una licencia válida, se genera un error.
 
 ### Designación de la(s) licencia(s) a utilizar
 

@@ -15,7 +15,7 @@ Les objets TCPConnection sont libérés lorsqu'il n'existe plus de références 
 
 :::info Fichier 4DTCPUDPLog.txt
 
-For debugging and monitoring, you can use the [4DTCPUDPLog.txt log file](../Debugging/debugLogFiles.md#4dtcpudplogtxt) that records events related to TCP connections. Ces événements comprennent la transmission de données, les erreurs et les informations sur le cycle de vie de la connexion.
+Pour le débogage et la surveillance, vous pouvez utiliser le fichier journal [4DTCPUDPLog.txt](../Debugging/debugLogFiles.md#4dtcpudplogtxt) qui enregistre les événements liés aux connexions TCP. Ces événements comprennent la transmission de données, les erreurs et les informations sur le cycle de vie de la connexion.
 
 :::
 
@@ -166,7 +166,7 @@ Les objets TCPConnection offrent les propriétés et fonctions suivantes :
 
 #### Description
 
-The `4D.TCPConnection.new()` function <!-- REF #4D.TCPConnection.new().Summary -->creates a new TCP connection to the specified *serverAddress* and *serverPort*, using the defined *options*, and returns a `4D.TCPConnection` object<!-- END REF -->.
+La fonction `4D.TCPConnection.new()` <!-- REF #4D.TCPConnection.new().Summary -->crée une nouvelle connexion TCP vers les *serverAddress* et *serverPort* spécifiés, en utilisant les *options* définies, et renvoie un objet `4D.TCPConnection`<!-- END REF -->.
 
 #### Paramètre `options`
 
@@ -197,8 +197,8 @@ Toutes les fonctions de callback reçoivent deux paramètres :
 1. `onConnection` est déclenchée lorsque la connexion est établie.
 2. `onData` est déclenchée à chaque fois que des données sont reçues.
 3. `onShutdown` ou `onError` est déclenchée :
-   - `onShutdown` est déclenchée lorsque la connexion est correctement fermée.
-   - `onError` est déclenchée en cas d'erreur.
+    - `onShutdown` est déclenchée lorsque la connexion est correctement fermée.
+    - `onError` est déclenchée en cas d'erreur.
 4. `onTerminate` est toujours déclenchée juste avant que la TCPConnection soit libérée (la connexion est fermée ou une erreur s'est produite).
 
 #### Objet TCPEvent

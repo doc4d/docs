@@ -14,7 +14,7 @@ This property is available for fields of type **Object** (in 4D projects only). 
 You can enter any valid class name in this property, including:
 
 - Clases usuario (por ejemplo, `cs.MyClass`)
-- Built-in 4D classes (e.g. `4D.File`, `4D.Folder`)
+- Clases 4D integradas (por ejemplo, `4D.File`, `4D.Folder`)
 - [Exposed](../Extensions/develop-components.md#sharing-of-classes) component-defined classes (e.g. `cs.MyComponent.MyClass`)
 
 If you enter an invalid class name, a warning is triggered and the input is rejected.
@@ -25,7 +25,7 @@ If you enter an invalid class name, a warning is triggered and the input is reje
 
 :::
 
-In your code, when assigning a value to a class-typed object field, 4D verifies that it belongs to the declared class. If not or if the object has no class, an error is triggered. Accessing unknown attributes will also raise syntax errors.
+In your code, when assigning a value to a class-typed object field, 4D verifies that it belongs to the declared class. Si no es así o si el objeto no tiene clase, se produce un error. Accessing unknown attributes will also raise syntax errors.
 
 To retrieve the associated class name at runtime, use the [`classID`](../API/DataClassClass.md#attributename) property, for example `ds.MyTable.MyField.classID`.
 

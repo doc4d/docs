@@ -1138,7 +1138,7 @@ $vpObj:=VP Export to object("vpArea";New object("includeFormatInfo";False))
 ### VP Find
 
 <!-- REF #_method_.VP Find.Syntax -->
-**VP Find** (  *rangeObj* : Object ; *searchValue* : Text ) : Object<br/>**VP Find** (  *rangeObj* : Object ; *searchValue* : Text ; *searchCondition* : Object } ) : Object<br/>**VP Find** (  *rangeObj* : Object ; *searchValue* : Text ; *searchCondition* : Object ; *replaceValue* : Text ) : Object<!-- END REF -->
+**VP Find** (  *rangeObj* : Object ; *searchValue* : Text ) : Object<br/>**VP Find** (  *rangeObj* : Object ; *searchValue* : Text ; *searchCondition* : Object ) : Object<br/>**VP Find** (  *rangeObj* : Object ; *searchValue* : Text ; *searchCondition* : Object ; *replaceValue* : Text ) : Object<!-- END REF -->
 
 <!-- REF #_method_.VP Find.Params -->
 
@@ -2325,7 +2325,7 @@ $options:=VP Get sheet options("ViewProArea")
 | Paramètres | Type    |    | Description                                                                          |
 | ---------- | ------- | -- | ------------------------------------------------------------------------------------ |
 | vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro                                              |
-| sheet      | Integer | <- | Numéro d'indice de la feuille                                                        |
+| sheet      | Integer | -> | Numéro d'indice de la feuille                                                        |
 | Résultat   | Boolean | <- | Vrai si les lignes d'impression sont visibles, sinon Faux|<!-- END REF -->
 
 |
@@ -3848,7 +3848,7 @@ VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 </details>
 
 <!-- REF #_method_.VP REMOVE TABLE.Syntax -->
-**VP REMOVE TABLE** ( *vpAreaName* : Text; *tableName* : Text {; *options* : Integer} {; *sheet* : Integer}} )<!-- END REF -->
+**VP REMOVE TABLE** ( *vpAreaName* : Text; *tableName* : Text {; *options* : Integer} {; *sheet* : Integer} )<!-- END REF -->
 
 <!-- REF #_method_.VP REMOVE TABLE.Params -->
 
@@ -3902,7 +3902,7 @@ VP REMOVE TABLE("ViewProArea"; "people"; vk table remove style; 2)
 </details>
 
 <!-- REF #_method_.VP REMOVE TABLE COLUMNS.Syntax -->
-**VP REMOVE TABLE COLUMNS** ( *vpAreaName* : Text ; *tableName* : Text ; *column* : Integer {; *count* : Integer {; *sheet* : Integer }}} )<!-- END REF -->
+**VP REMOVE TABLE COLUMNS** ( *vpAreaName* : Text ; *tableName* : Text ; *column* : Integer {; *count* : Integer {; *sheet* : Integer }} )<!-- END REF -->
 
 <!-- REF #_method_.VP REMOVE TABLE COLUMNS.Params -->
 
@@ -3950,7 +3950,7 @@ VP REMOVE TABLE COLUMNS("ViewProArea"; "dataTable"; 3; 2)
 </details>
 
 <!-- REF #_method_.VP REMOVE TABLE ROWS.Syntax -->
-**VP REMOVE TABLE ROWS** ( *vpAreaName* : Text ; *tableName* : Text ; *row* : Integer {; *count* : Integer {; *sheet* : Integer }}} )<!-- END REF -->
+**VP REMOVE TABLE ROWS** ( *vpAreaName* : Text ; *tableName* : Text ; *row* : Integer {; *count* : Integer {; *sheet* : Integer }} )<!-- END REF -->
 
 <!-- REF #_method_.VP REMOVE TABLE ROWS.Params -->
 
@@ -4165,7 +4165,7 @@ Dans le paramètre optionnel *sheet*, vous pouvez désigner une feuille spécifi
 
 #### Exemple
 
-|
+Vous souhaitez définir une plage pour la ligne ci-dessous (dans la feuille courante) :
 
 ![](../assets/en/ViewPro/cmd_vpRow.PNG)
 
@@ -4780,7 +4780,7 @@ VP SET COLUMN COUNT("ViewProArea";5)
 | Paramètres | Type    |    | Description                                                      |
 | ---------- | ------- | -- | ---------------------------------------------------------------- |
 | vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro                          |
-| sheet      | Integer | <- | Index de la nouvelle feuille courante|<!-- END REF -->
+| sheet      | Integer | -> | Index de la nouvelle feuille courante|<!-- END REF -->
 
 |
 

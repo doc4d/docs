@@ -4,7 +4,7 @@ title: WP SET ATTRIBUTES
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP SET ATTRIBUTES.Syntax-->**WP SET ATTRIBUTES** ( *targetObj* ; *attribName* ; *attribValue* {; *attribName2* ; *attribValue2* ; ... ; *attribNameN* ; *attribValueN*} )<br/>**WP SET ATTRIBUTES** ( *targetObj* ; *attribObj* )<!-- END REF-->
+<!--REF #_command_.WP SET ATTRIBUTES.Syntax-->**WP SET ATTRIBUTES** ( *targetObj* ; *...attribName* ; *...attribValue* )<br/>**WP SET ATTRIBUTES** ( *targetObj* ; *attribObj* )<!-- END REF-->
 
 <!--REF #_command_.WP SET ATTRIBUTES.Params-->
 
@@ -92,7 +92,7 @@ El resultado es:
 
 ![](../../assets/en/WritePro/commands/pict3514231.en.png)
 
-You want to set a background image that covers the whole printable area. All attributes are passed using a single object:
+You want to set a background image that covers the whole printable area. Todos los atributos se pasan utilizando un único objeto:
 
 ```4d
  var WParea : Object
