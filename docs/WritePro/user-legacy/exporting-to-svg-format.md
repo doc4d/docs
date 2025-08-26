@@ -4,11 +4,9 @@ title: Exporting to SVG format
 displayed_sidebar: docs
 ---
 
-#### 
+You can export 4D Write Pro document pages to SVG format using the [WP EXPORT DOCUMENT](../commands/wp-export-document) and [WP EXPORT VARIABLE](../commands/wp-export-variable) commands. This page provides additional details and notes about SVG export. 
 
-You can export 4D Write Pro document pages to SVG format using the [WP EXPORT DOCUMENT](../commands/wp-export-document) and [WP EXPORT VARIABLE](../commands/wp-export-variable) commands. This page contains additional information and notes on SVG export. 
-
-#### SVG Rendering 
+### SVG Rendering 
 
 SVG images and text boxes are rendered according to page settings displayed in Page view mode. The following properties are taken into account:
 
@@ -48,7 +46,7 @@ The following elements are not exported to SVG:
    * Creation date  
    * Modification date
 
-#### Font management 
+### Font management 
 
 Fonts are not embedded in the exported SVG, so text will be rendered correctly only if the font family and style are supported on the platform where the SVG image is rendered. 
 
@@ -58,7 +56,7 @@ Imported Google fonts override native fonts when the SVG is rendered. If you int
 
 **Note:** Only bold and italic styles are preserved. 100% compatibility between native font styles and font style definition in CSS (and thus SVG) is not guaranteed. Export to PDF is more suited for distribution to all platforms or for better WYSIWYG support for fonts, as fonts are embedded in PDF.
 
-#### Example 
+### Example 
 
 This example exports a document page to SVG format and creates an image preview using [SVG EXPORT TO PICTURE](../../commands/svg-export-to-picture).
 

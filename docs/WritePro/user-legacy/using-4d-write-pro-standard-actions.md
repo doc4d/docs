@@ -18,7 +18,7 @@ When assigned to interface objects, standard actions handle the activation/disab
 Two kinds of actions are available for 4D Write Pro areas:
 
 * 4D Write Pro specific actions, that can be used only with 4D Write Pro areas,
-* *Other actions*, including fonts, expressions, spell check, and editing actions, that can be used with 4D Write Pro areas and other 4D areas (see *Standard actions*).
+* [Other actions](#other-actions), including fonts, expressions, spell check, and editing actions, that can be used with 4D Write Pro areas and other 4D areas (see *Standard actions*).
 
 ## 4D Write Pro actions 
 

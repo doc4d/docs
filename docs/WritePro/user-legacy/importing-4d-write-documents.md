@@ -4,8 +4,6 @@ title: Importing 4D Write documents
 displayed_sidebar: docs
 ---
 
-#### 
-
 One of the main features of the new 4D Write Pro object is the ability to import and convert existing 4D Write documents. This will allow you to migrate applications that currently rely on the 4D Write plug-in.
 
 **Compatibility notes:** 
@@ -19,7 +17,7 @@ One of the main features of the new 4D Write Pro object is the ability to import
     
 For more information, see *Managing formulas*.
 
-#### How to import a 4D Write document 
+## How to import a 4D Write document 
 
 4D Write Pro objects offer two ways to import 4D Write documents:
 
@@ -28,7 +26,7 @@ For more information, see *Managing formulas*.
 
 For more information, please refer to the description of these commands.
 
-#### Which properties will be recovered from 4D Write? 
+## Which properties will be recovered from 4D Write? 
 
 To facilitate your migration from the 4D Write plug-in to 4D Write Pro, we want to support as many 4D Write features as possible in 4D Write Pro objects.
 
@@ -36,7 +34,7 @@ This paragraph lists the 4D Write plug-in properties that are currently recovere
 
 Note however that a few differences can be seen, which are not considered as bugs. This is due, for example, to the default font used in 4D Write Pro for bullets, or small conversions in the Underline type. 
 
-##### Document info 
+### Document info 
 
 | **4D Write plug-in**     | **4D Write Pro**                              |
 | ------------------------ | --------------------------------------------- |
@@ -49,7 +47,7 @@ Note however that a few differences can be seen, which are not considered as bug
 | Company                  | Available                                     |
 | Notes                    | Available                                     |
 
-##### Document view parameters 
+### Document view parameters 
 
 | **4D Write plug-in**      | **4D Write Pro**                                                   |
 | ------------------------- | ------------------------------------------------------------------ |
@@ -71,7 +69,7 @@ Note however that a few differences can be seen, which are not considered as bug
 | View Wysiwyg              | Not available                                                      |
 | View zoom                 | Not imported (use Document/Zoom in the context menu)               |
 
-##### Document parameters 
+### Document parameters 
 
 | **4D Write plug-in** | **4D Write Pro**                                                 |
 | -------------------- | ---------------------------------------------------------------- |
@@ -87,7 +85,7 @@ Note however that a few differences can be seen, which are not considered as bug
 
 **Note:** The system separator (as returned by [GET SYSTEM FORMAT](../../commands/get-system-format)) is used as decimal separator for decimal tabs. You can change this parameter using the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command. 
 
-##### Document pagination parameters 
+### Document pagination parameters 
 
 | **4D Write plug-in**                            | **4D Write Pro** |
 | ----------------------------------------------- | ---------------- |
@@ -111,7 +109,7 @@ Note however that a few differences can be seen, which are not considered as bug
 | Footer first page bottom margin                 | Available        |
 | First page is right                             | Available        |
 
-##### Document printing parameters 
+### Document printing parameters 
 
 | **4D Write plug-in** | **4D Write Pro** |
 | -------------------- | ---------------- |
@@ -124,7 +122,7 @@ Note however that a few differences can be seen, which are not considered as bug
 | X resolution         | Not available    |
 | Y resolution         | Not available    |
 
-##### Images 
+### Images 
 
 **Compatibility notes:** 
 
@@ -144,7 +142,7 @@ Note however that a few differences can be seen, which are not considered as bug
 | Is expression                      | Available for inline pictures (starting with v16 R5) |
 | Keep size                          | Not imported (automatic in 4D Write Pro)             |
 
-##### Character properties 
+### Character properties 
 
 | **4D Write plug-in**                        | **4D Write Pro (span properties)** |
 | ------------------------------------------- | ---------------------------------- |
@@ -167,7 +165,7 @@ Note however that a few differences can be seen, which are not considered as bug
 | Appearance                                  | Not available                      |
 | Style sheet                                 | Available (starting with 4D v18)   |
 
-##### Paragraph properties 
+### Paragraph properties 
 
 | **4D Write plug-in**                 | **4D Write Pro** |
 | ------------------------------------ | ---------------- |
@@ -188,7 +186,7 @@ Note however that a few differences can be seen, which are not considered as bug
 | Style Sheet                          | Available        |
 | Tabulations                          | Available        |
 
-##### Hyperlinks 
+### Hyperlinks 
 
 | **4D Write plug-in** | **4D Write Pro**                          |
 | -------------------- | ----------------------------------------- |
@@ -204,7 +202,7 @@ Note however that a few differences can be seen, which are not considered as bug
 | $2             | Text - Link label                    | Object - Link description:.method - Link's method name. Must be be allowed with the [SET ALLOWED METHODS](../../commands/set-allowed-methods) command. .parameter - User parameter value passed to the method (if used).range - Range of the link's label. See *Range handling commands* |  
 | $3             | Longint - User parameter (methodRef) | \-                                                                                                                                                                                                                                                                                       |
 
-##### 4D expressions 
+### 4D expressions 
 
 | **4D Write plug-in** | **4D Write Pro**  |
 | -------------------- | ----------------- |
@@ -217,7 +215,7 @@ Note however that a few differences can be seen, which are not considered as bug
 
 \*\*can be imported as text between **##htmlBegin##** and **##htmlEnd##** tags if you use the wk import html expressions as text constant.
 
-##### Text data 
+### Text data 
 
 | **4D Write plug-in** | **4D Write Pro** |
 | -------------------- | ---------------- |
