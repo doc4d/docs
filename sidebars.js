@@ -2754,14 +2754,15 @@ module.exports =
           },
           items: [
             "WritePro/user-legacy/presentation",
-            "WritePro/user-legacy/4d-write-pro-documents",
             "WritePro/user-legacy/defining-a-4d-write-pro-area",
+            "WritePro/writeprointerface",
+            "WritePro/user-legacy/4d-write-pro-documents",
             {
                   type: "category",
-                  label: "Elements",
+                  label: "Document Elements",
                   link: {
                     type: "generated-index",
-                    title: "Working with documents",
+                    title: "Document Elements",
                   },
                   items: [
                     "WritePro/user-legacy/using-a-4d-write-pro-area",
@@ -2788,7 +2789,6 @@ module.exports =
             "WritePro/commands-legacy/4d-write-pro-attributes",
             "WritePro/user-legacy/using-4d-write-pro-standard-actions",
             "WritePro/user-legacy/printing-4d-write-pro-documents",
-            "WritePro/writeprointerface",
             {
               type: "category",
               label: "Commands",
