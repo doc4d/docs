@@ -3,9 +3,9 @@ id: IncomingMessageClass
 title: IncomingMessage
 ---
 
-La clase `4D.IncomingMessage` le permite manejar el objeto recibido por un [**HTTP request handler**](../WebServer/http-request-handler.md). HTTP requests and their properties are automatically received as an instance of the `4D.IncomingMessage` class. Los parámetros dados directamente en la petición con el verbo GET son manejados por la propiedad [`.urlQuery`](#urlquery), mientras que los parámetros pasados en el cuerpo de la solicitud están disponibles a través de funciones como [`.getBlob()`](#getblob) o [`getText()`](#gettext).
+La clase `4D.IncomingMessage` le permite manejar el objeto recibido por un [**HTTP request handler**](../WebServer/http-request-handler.md). Las peticiones HTTP y sus propiedades se reciben automáticamente como una instancia de la clase `4D.IncomingMessage`. Los parámetros dados directamente en la petición con el verbo GET son manejados por la propiedad [`.urlQuery`](#urlquery), mientras que los parámetros pasados en el cuerpo de la solicitud están disponibles a través de funciones como [`.getBlob()`](#getblob) o [`getText()`](#gettext).
 
-El gestor de peticiones HTTP puede devolver cualquier valor (o nada). It usually returns an instance of the [`4D.OutgoingMessage`](OutgoingMessageClass.md) class.
+El gestor de peticiones HTTP puede devolver cualquier valor (o nada). Normalmente devuelve una instancia de la clase [`4D.OutgoingMessage`](OutgoingMessageClass.md).
 
 Todas las propiedades de esta clase son de sólo lectura. Son automáticamente llenados por el gestor de peticiones.
 
@@ -19,7 +19,7 @@ Todas las propiedades de esta clase son de sólo lectura. Son automáticamente l
 
 ### Ejemplo
 
-The following [**HTTPHandlers.json** file](../WebServer/http-request-handler.md) has been defined:
+El siguiente [archivo **HTTPHandlers.json**](../WebServer/http-request-handler.md) ha sido definido:
 
 ```json
 [
@@ -32,7 +32,7 @@ The following [**HTTPHandlers.json** file](../WebServer/http-request-handler.md)
 ]
 ```
 
-The `http://127.0.0.1/start/example?param=demo&name=4D` request is run with a `GET` verb in a browser. It is handled by the *gettingStarted* function of the following *GeneralHandling* singleton class:
+La petición `http://127.0.0.1/start/example?param=demo&name=4D` se ejecuta con un verbo `GET` en un navegador. Se gestiona mediante la función *gettingStarted* de la siguiente clase singleton *GeneralHandling*:
 
 ```4d
 shared singleton Class constructor()
