@@ -17,9 +17,23 @@ title: データベースページ
 
 このオプションを選択しないかぎり、ロックされたデータファイルを開くことはできません (4Dデータベースのデフォルト動作)。
 
-#### ロックされたファイルについて
+:::info ロックされたファイルについて
 
 ロックされたファイルは読むことはできても内容を変更することはできません。 たとえば (DVDのような) 編集不可のメディアに格納されたファイルや、このようなメディアからコピーされたファイルは、ロックされていることがあります。 DVDに格納されたプロジェクトを使用するような場合、ロックされたデータファイルを使用できるようアプリケーションを設定することができます。 しかしこの場合、データの追加・編集が保存されないロックされているデータファイルを不注意に使用してしまうリスクがあります。 このような状況にならないよう、4D ではデフォルトでロックされたデータファイルを開くことを禁止しています。
+
+:::
+
+#### Auto UUID version
+
+[UUID version](https://en.wikipedia.org/wiki/Universally_unique_identifier) to use for 4D fields with [automatic UUID generation option](https://doc.4d.com/4Dv20/4D/20.2/Field-properties.300-6750280.en.html#106195). Available values are **4** (default) and **7**.
+
+This setting only applies to UUIDs generated afterwards. Already saved auto UUIDs fields are not recomputed.
+
+:::note
+
+For more information on UUID version 7, please read [this blog post](https://blog.4d.com/sort-uuids-with-version-7).
+
+:::
 
 ### テンポラリフォルダーの場所
 
