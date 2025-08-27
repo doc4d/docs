@@ -9,7 +9,7 @@ slug: /WritePro/user/properties
 
 ## Basics 
 
-When the document is in **Page** view mode, the following document properties are available for the user:
+When the document is in [**Page** view mode](./defining-a-4d-write-pro-area.md#selecting-the-view-mode), the following document properties are available for the user:
 
 * Page outlines to represent printing limits
 * Page width and Page height (default: 21x29.7 cm)
@@ -72,6 +72,14 @@ For an example of adding a full-sized image as a background, see the *How Do I* 
 4D Write Pro documents support headers and footers. These headers and footers are related to sections.
 
 A section is a part of a document which is defined by a page range and can have its own paging and common attributes. A document can contain any number of sections (from just one, up to the total number of pages). Each page can only belong to one section, except pages with continuous section breaks (see below). 
+
+4D Write Pro documents can contain:
+
+- one or more sections (one section by default)
+- for each section, up to three subsections:
+   - first page subsection
+   - left page(s) subsection
+   - right page(s) subsection
 
 You can define a set of headers and footers for each section.
 
@@ -295,3 +303,116 @@ For example:
 You can insert a continuous section break and change the number of columns to two for the first section:
 
 ![](../../assets/en/WritePro/pict5562058.en.png)
+
+
+## Bookmarks
+
+4D Write Pro allows you to create and work with dynamic references to parts of your documents, called **bookmarks**. A bookmark is a named reference attached to a specific [range](./ranges.md) in a 4D Write Pro document.
+
+Bookmarks are dynamic, which means that if the user moves, adds or removes text belonging to the bookmark, the associated range will be updated automatically and the bookmark will continue to reference the same content within the document. For example:
+
+- You create a bookmark named "MyBM" that references the "Hello world" text on page 20 of your document.
+- Then you insert 50 pages at the beginning of the document.
+- You will still be able to access the same "Hello world" text automatically, now on page 70 of the document, by means of the "MyBM" bookmark.
+
+A document can contain an unlimited number of bookmarks. Several bookmarks can reference the same range, and bookmark ranges can be interleaved. However, each bookmark name must be unique in the document. Bookmarks are not imported when using the [WP INSERT DOCUMENT BODY](../commands/wp-insert-document-body) command (bookmarks in the destination document cannot be overwritten).
+
+Once created, a bookmark is stored within the document. It is saved with the document, and can be handled by several different commands. It can also be used to reference parts of a template document. These parts can then be assembled automatically with data from the database to produce dynamic output documents such as invoices or catalogs.
+
+Several commands allow you to create, remove, and use bookmarks:
+
+[WP NEW BOOKMARK](../commands/wp-new-bookmark) to create a new bookmark from a range,
+[WP GET BOOKMARKS](../commands/wp-get-bookmarks) to get all bookmarks defined in a document,
+[WP Bookmark range](../commands/wp-bookmark-range) to retrieve a range from an existing bookmark,
+[WP DELETE BOOKMARK](../commands/wp-delete-bookmark) to delete a bookmark.
+
+## Links
+
+4D Write Pro allows you to assign hyperlinks to any target object of your document, including ranges (text, picture, etc.), elements (table, body, footer, etc.), or the whole document. For example, you can set a URL hyperlink to a picture range; if the 4D Write Pro document is exported to HTML, users can click the picture to open a page at a specified address.
+
+Hyperlinks can also be activated from within 4D Write Pro documents using the **Ctrl+click** (Windows) or **Cmd+click** (macOS) shortcut. In a non-enterable 4D Write Pro document, a link can be activated using a simple click.
+
+4D Write Pro supports links of the following types:
+
+| Link Type | Description |
+|-----------|-------------|
+| `url`     | Links to web pages or to any document, opens the associated application when activated (\*). Activating a URL link to a 4D Write Pro document (`.4wp`, `.4w7`) replaces the current document in the 4D Write Pro area.<br>(\*) Just like the command. |
+| `bookmark`| Links to bookmarks in the document |
+| `method`  | Activating a link to a 4D method executes the method (provided it is registered by the method). |
+
+Hyperlinks are managed through the following commands:
+
+- [WP SET LINK](../commands/wp-set-link) to insert a link using a target object
+- [WP Get links](../commands/wp-get-links) to get the collection of all links in a target object.
+
+
+:::note
+
+Links are handled as attributes, thus they can be set or get using the [WP SET ATTRIBUTES](../commands/wp-set-attributes) and [WP GET ATTRIBUTES](../commands/wp-get-attributes) commands along with the `wk link url` constant. However, we recommended using [WP SET LINK](../commands/wp-set-link) and [WP Get links](../commands/wp-get-links) because they automatically encode/decode hyperlinks as URLs. When reading links using the [WP GET ATTRIBUTES](../commands/wp-get-attributes) command, if the target object contains several links, the command returns the first link string.
+
+:::
+
+For example, if you want to transform the text selected by the user into a URL link to a web site:
+
+![](../../assets/en/WritePro/link1.png)
+
+
+You can write:
+
+```4d
+ $range:=WP Get selection(*;"WParea")
+ WP SET LINK($range;New object("url";"http://www.4d.com"))
+```
+
+![](../../assets/en/WritePro/link2.png)
+
+To remove a link from a target object, you can write either:
+
+```4d
+ WP RESET ATTRIBUTES($range;wk link url)
+```
+or
+
+```4d
+ WP SET ATTRIBUTES($range;wk link url;"")
+```
+
+**Note:** If *$range* does not include the whole link, the link is truncated but not entirely removed.
+
+
+## Using commands from the Objects (Forms) theme 
+
+The following 4D commands from the [Objects (Forms)](../../commands/theme/Objects_Forms.md) theme support 4D Write Pro form objects:
+
+
+
+| Command                                              | Comments |
+|------------------------------------------------------|----------|
+| `OBJECT DUPLICATE`                                   |          |
+| `OBJECT Get auto spellcheck` / `OBJECT SET AUTO SPELLCHECK` |          |
+| `OBJECT Get border style` / `OBJECT SET BORDER STYLE`       |          |
+| `OBJECT Get context menu` / `OBJECT SET CONTEXT MENU`       |          |
+| `OBJECT GET COORDINATES` / `OBJECT SET COORDINATES`         |          |
+| `OBJECT Get data source` / `OBJECT SET DATA SOURCE`         |          |
+| `OBJECT GET DRAG AND DROP OPTIONS` / `OBJECT SET DRAG AND DROP OPTIONS` |          |
+| `OBJECT Get enabled` / `OBJECT SET ENABLED`                 |          |
+| `OBJECT Get enterable` / `OBJECT SET ENTERABLE`             |          |
+| `OBJECT GET EVENTS` / `OBJECT SET EVENTS`                   |          |
+| `OBJECT Get focus rectangle invisible` / `OBJECT SET FOCUS RECTANGLE INVISIBLE` |          |
+| `OBJECT Get font` / `OBJECT SET FONT`                       | Applied to current selection (if any) |
+| `OBJECT Get font size` / `OBJECT SET FONT SIZE`             | Applied to current selection (if any) |
+| `OBJECT Get font style` / `OBJECT SET FONT STYLE`           | Applied to current selection (if any) |
+| `OBJECT Get horizontal alignment` / `OBJECT SET HORIZONTAL ALIGNMENT` | Applied to current selection (if any). Support of the `wk justify` constant for 4D Write Pro areas |
+| `OBJECT GET RESIZING OPTIONS` / `OBJECT SET RESIZING OPTIONS` |          |
+| `OBJECT GET RGB COLORS` / `OBJECT SET RGB COLORS`           | Applied to current selection (if any) |
+| `OBJECT Get type`                                           |          |
+| `OBJECT Get vertical alignment` / `OBJECT SET VERTICAL ALIGNMENT` | Vertical alignment of paragraphs: only has an effect when paragraph height is greater than paragraph text height |
+| `OBJECT Get visible` / `OBJECT SET VISIBLE`                 |          |
+| `OBJECT Is styled text`                                     | Returns true |
+| `OBJECT MOVE`                                               |          |
+| `OBJECT GET SUBFORM CONTAINER SIZE`                         |          |
+| `OBJECT Get name`                                           |          |
+| `OBJECT Get pointer`                                        |          |
+
+Any OBJECT commands not listed above are not applicable to 4D Write Pro areas.
+

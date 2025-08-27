@@ -2769,6 +2769,8 @@ module.exports =
                     "WritePro/user-legacy/handling-pictures",
                     "WritePro/user-legacy/handling-tables",
                     "WritePro/user-legacy/text-boxes",
+                    "WritePro/user-legacy/ranges",
+                    "WritePro/user-legacy/stylesheets",
                     "WritePro/managing-formulas"
                   ]
             },
@@ -2787,8 +2789,6 @@ module.exports =
                   ]
             },
             "WritePro/commands-legacy/4d-write-pro-attributes",
-            "WritePro/user-legacy/using-4d-write-pro-standard-actions",
-            "WritePro/user-legacy/printing-4d-write-pro-documents",
             {
               type: "category",
               label: "Commands",
