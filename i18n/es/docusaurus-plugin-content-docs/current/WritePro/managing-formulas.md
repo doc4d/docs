@@ -224,12 +224,12 @@ Sea cual sea el modo de visualización de las fórmulas, puede obtener informaci
 
 En este contexto, puede visualizar el texto fuente de la fórmula pulsando **Ctrl** (Windows) o **Cmd** (macOS) mientras pasa el ratón sobre la fórmula.
 
-- When formulas have names and are displayed as names, no tip is displayed by default.
-  You can display the source text of the formula by pressing **Ctrl** (Windows) or **Cmd** (macOS) while hovering on the formula:
-  [
-  ![](../assets/en/WritePro/wp-formulas9.png)
+- Cuando las fórmulas tienen nombres y se muestran como nombres, no se muestra ningún consejo por defecto.
+  Puede mostrar el texto original de la fórmula presionando **Ctrl** (Windows) o **Cmd** (macOS) mientras pasa el cursor sobre la fórmula:
+
+  !&#x20;
 
 #### Ver también
 
-[Download HDI database](http://download.4d.com/Demos/4D_v16/HDI_4DWP_Filter4DExpressions.zip)</br>
-*Using commands from the Styled Text theme*
+[Descargar base de datos HDI](http://download.4d.com/Demos/4D_v16/HDI_4DWP_Filter4DExpressions.zip)</br>
+*Usar comandos del tema Texto con estilo*
