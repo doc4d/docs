@@ -1205,7 +1205,7 @@ var $comparisonVector := {vector: $myVector; metric: k metric euclidean; thresho
 var $results := ds.MyClass.query("myVectorField <= :1"; $comparisonVector)
 ```
 
-See [more examples below](#example-4-1) (examples 4 and 5). 
+See [more examples below](#example-4-2) (examples 4 and 5). 
 
 
 #### formula parameter
