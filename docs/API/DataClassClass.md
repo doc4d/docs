@@ -1180,7 +1180,7 @@ $es:=ds.Movie.query("roles.actor.lastName = :1 AND roles.actor{2}.lastName = :2"
 
 If *attributePath* designates an attribute storing [**vector objects**](../API/VectorClass.md) (see how to [configure a 4D field to only store 4D.Vector class objects](../Develop/field-properties.md#class)), you can build queries to find entities based on embeddings rather than keywords. This technology is designed for Artificial Intelligence (AI) workloads and allows you to query data based on semantics, rather than keywords.
 
-In this case, the **value** parameter must be a comparison vector object containing the following properties:
+In this case, the *value* parameter must be a **comparison vector object** containing the following properties:
 
 |Property|Type|Description|
 |---|---|---|
@@ -1197,8 +1197,15 @@ Only a subset of **comparator** symbols are supported. Note that they compare re
  |Less than or equal to| <=|Lower than or equal to the threshold|
  |Greater than or equal to| >= |Greater than or equal to the threshold|
 
+For example, you want to return entities of MyClass where the similarity with a vector is greater than 1.2 threshold, using the euclidean metric:
 
-See examples 4 and 5 below. 
+```4d
+var $myVector := 4D.Vector.new([0.123; -0.456; 0.789]) 
+var $comparisonVector := {vector: $myVector; metric: k metric euclidean; threshold: 1.2}
+var $results := ds.MyClass.query("myVectorField <= :1"; $comparisonVector)
+```
+
+See [more examples below](#example-4-1) (examples 4 and 5). 
 
 
 #### formula parameter
@@ -1581,12 +1588,12 @@ We want to execute a query by vector similarity using vectors with different met
 
 ```4d
   //Create the comparison vectors 
-var $vector1Comparator:={vector: $myvector; metric: k metric cosine; threshold: 0.4}
-var $vector2Comparator:={vector: $myvector2; metric: k metric euclidean; threshold:1}
+var $vector1Comparison:={vector: $myvector; metric: k metric cosine; threshold: 0.4}
+var $vector2Comparison:={vector: $myvector; metric: k metric euclidean; threshold:1}
 
-  //vector1 attribute is based upon a 4D field storing 4D.Vector class objects
-ds.VectorTable.query("vector1>:1 and vector1<:2";vector1Comparator;vector2Comparator)\
-.orderByFormula(Formula(This.vector1.cosineSimilarity($vector1Comparator)))
+  //embedding attribute is based upon a 4D field storing 4D.Vector class objects
+ds.VectorTable.query("embedding>:1 and embedding<:2";$vector1Comparison;$vector2Comparison)\
+    .orderByFormula(Formula(This.embedding.cosineSimilarity($vector1Comparison)))
 
 ```
 

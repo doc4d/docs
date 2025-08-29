@@ -33,7 +33,7 @@ For example: `$filter="firstName=john AND salary>20000"` where `firstName` and `
 
 You can also use 4D's `params` property which is a collection of values.
 
-**\{attribute\} {comparator} {placeholder} {AND/OR/EXCEPT} \{attribute\} {comparator} {placeholder}&$params='["{value1}","{value2}"]"'**
+**\{attribute\} {comparator} {placeholder} {AND/OR/EXCEPT} \{attribute\} {comparator} {placeholder}&$params='["{value1}","{value2}"]'**
 
 For example: `$filter="firstName=:1 AND salary>:2"&$params='["john",20000]'` where firstName and salary are attributes in the Employee dataclass.
 
@@ -89,15 +89,15 @@ The comparator must be one of the following values:
 
 ## Vector similarity
 
-If the attribute stores [**vector objects**](../API/VectorClass.md) (see how to [configure a 4D field to only store 4D.Vector class objects](../Develop/field-properties.md#class)), you can filter the dataclass using **vectors**. 
+If the attribute stores [**vector objects**](../API/VectorClass.md) (see how to [configure a 4D field to only store 4D.Vector class objects](../Develop/field-properties.md#class)), you can filter the dataclass using **vectors**, aka **embeddings**. 
 
 For more information about vector similarity searches, please refer to [Query by vector similarity](../API/DataClassClass.md#query-by-vector-similarity) section. 
 
 Use the `params` property to provide the filter with the vector comparison parameter, using a syntax like:
 
-**\{vectorAttribute\} \{vectorComparator\} \{placeholder\}&$params=vectorParameter**
+**\{vectorAttribute\} \{comparator\} \{placeholder\}&$params=vectorComparison**
 
-The vectorParameter is a collection of the following elements:
+The *vectorComparison* parameter is a collection of the following elements:
 
 |Property|Type|Description|
 |---|---|---|
@@ -107,7 +107,7 @@ The vectorParameter is a collection of the following elements:
 
 Only a subset of **comparator** symbols are supported with vector comparisons. Note that they compare results to the threshold value: 
 
- |Comparison| Symbol(s)| Comment|
+ |Comparator| Symbol(s)| Comment|
  |---|---|---|
  |Less than| <| Lower than the threshold|
  |Greater than| > |Greater than the threshold|
