@@ -59,11 +59,26 @@ With other remote configurations (i.e. Qodly applications, [REST API requests](.
 
 The following table lists ORDA events along with their rules. 
 
-| Event  | Level    | Function name   |  (C/S) Executed on |
-| :--------------- |:--------------- | :----- | :-----: |
-| Entity instantiation  | Entity      |   [`constructor()`](./ordaClasses.md#class-constructor-1) |   client | 
-| Attribute touched  | Attribute    |    `event touched <attrName>()`  | Depends on [`local`](../ORDA/ordaClasses.md#local-functions) keyword | 
-|   | Entity   |   `event touched()`  | Depends on [`local`](../ORDA/ordaClasses.md#local-functions) keyword | 
+| Event  | Level    | Function name   |  (C/S) Executed on |Can stop action by returning an error	
+| :------- |:------- | :----- | :-----: |---|
+| Entity instantiation  | Entity      |   [`constructor()`](./ordaClasses.md#class-constructor-1) |   client | no|
+| Attribute touched  | Attribute    |    `event touched <attrName>()`  | Depends on [`local`](../ORDA/ordaClasses.md#local-functions) keyword | no|
+|   | Entity   |   `event touched()`  | Depends on [`local`](../ORDA/ordaClasses.md#local-functions) keyword | no|
+|Before saving an entity|Attribute|`validateSave <attrName>()`|server|yes|
+||Entity|`validateSave()`|server|yes|
+|When saving an entity|Attribute|`saving <attrName>()`|server|yes|
+||Entity|`saving()`|server|yes|
+|After saving an entity|Entity|`afterSave()`|server|no|
+|Before dropping an entity|Attribute|`validateDrop <attrName>()`|server|yes|
+||Entity|`validateDrop()`|server|yes|
+|When dropping an entity|Attribute|`dropping <attrName>()`|server|yes|
+||Entity|`dropping()`|server|yes|
+|After dropping an entity|Entity|`afterDrop()`|server|no|
+
+
+
+
+
 
 :::note
 
@@ -291,6 +306,182 @@ Note over Qodly page: The People Qodly source lastname attribute is uppercased
 
 
 
+### `Function event validateSave`
+
+#### Syntax
+
+```4d
+Function event validateSave($event : Object)
+Function event validateSave <attributeName>($event : Object)
+// code
+```
+
+This event is triggered each time an entity is about to be saved.
+
+- if you defined the function at the entity level (first syntax), it is called for any attribute of the entity. 
+- if you defined the function at the attribute level (second syntax), it is called only for this attribute. This function is **not** executed if the attribute has not been touched in the entity.
+
+The function receives an [*event* object](#event-parameter) as parameter. 
+
+
+This event is triggered by the following functions:
+
+- [`entity.save()`](../API/EntityClass.md#save)
+- [`dataClass.fromCollection()`](../API/DataClassClass.md#fromcollection)
+
+This event is triggered **before** the entity is actually saved and lets you check data consistency so that you can stop the action if needed. For example, you can check in this event that "departure date" < "arrival date". 
+
+To stop the save action, the code of the function can:
+
+- throw an error using the [`throw`](../commands-legacy/throw.md) command. Errors thrown using the [`throw`](../commands-legacy/throw.md) command are managed by the 4D runtime as a [standard error](../Concepts/error-handling.md).
+- return an [error object]().
+
+If both an [error object] and a [`throw`](../commands-legacy/throw.md) are triggered, the `throw` takes precedence.
+
+If a `throw` is triggered, other `validateSave()` events are stopped at the first raised error.
+
+:::note
+
+It is not recommended to update the entity within this function (using `This`).
+
+:::
+
+#### Example 1
+
+In case of an invalid price attribute, you return an error object and thus, stop the save action. 
+
+```4d
+    //ProductsEntity class
+Function event validateSave price ($event : Object) :Object
+
+If (This.price <= 5)
+     var $result:= New object()
+     
+     $result.errCode:=1
+     $result.message:="The price is wrong"
+     $result.extraDescription:={attribute; $event.attributeName; info: "Please enter a price greater than 5 for the product " +           This.name }
+     $result.fatalError:=False
+     return $result
+End if 
+
+```
+
+#### Example 2
+
+In a booking application, the departure date must be lower than the arrival date. In case of wrong dates, you return an error object and thus, stop the save action. 
+
+```4d
+    //BookingEntity class
+Function event validateSave ($event : Object):Object
+
+If (This.arrivalDate < This.departureDate)
+      
+    var $result:= New object()
+     
+     $result.errCode:=1
+     $result.message:="The dates are inconsistent"
+     $result.extraDescription:={attribute; $event.attributeName; info: "Please enter a departure date before the arrival date"}
+     $result.fatalError:=False
+     return $result
+
+End if 
+```
+
+
+### `Function event saving`
+
+#### Syntax
+
+```4d
+Function event saving($event : Object)
+Function event saving <attributeName>($event : Object)
+// code
+```
+
+This event is triggered each time an entity is being saved. 
+
+- if you defined the function at the entity level (first syntax), it is called for any attribute of the entity. The function is executed even if no attribute has been touched in the entity (e.g. in case of sending data to an external app each time a save is done).
+- if you defined the function at the attribute level (second syntax), it is called only for this attribute. The function is **not** executed if the attribute has not been touched in the entity.
+
+This event is triggered by the following functions:
+
+- [`entity.save()`](../API/EntityClass.md#save)
+- [`dataClass.fromCollection()`](../API/DataClassClass.md#fromcollection)
+
+This event is triggered **while** the entity is actually saved. If a [`validateSave()`](#function-event-validatesave) event function was defined, the `saving()` event function is called if no error was triggered by `validateSave()`. For example, you can use this event create a document on a Google Drive account. 
+
+:::note
+
+The business logic should raise errors which can't be detected during the `validateSave()` events, e.g. a network error
+
+:::
+
+During the save action, 4D engine errors can be raised (index, stamp has changed, not enough space on disk).
+
+This event function can throw an error using the [`throw`](../commands-legacy/throw.md) command. Errors thrown using the [`throw`](../commands-legacy/throw.md) command are managed by the 4D runtime as a [standard error](../Concepts/error-handling.md).
+
+If both an [error object] and a [`throw`](../commands-legacy/throw.md) are triggered, the `throw` takes precedence.
+
+If a `throw` is triggered, other `validateSave()` events are stopped at the first raised error.
+
+#### Example 1
+
+When setting the price of a product, a log file is updated on a remote datastore. 
+
+```4d
+    //ProductsEntity class
+Function event saving price ($event : Object) 
+
+var $log : 4D.LogEntity
+var $status: Object
+
+If (This.price >= 5000)
+    This.status:="To Validate"
+End if 
+
+If (This.price >= 10000)
+    $log:=ds.Log.new()
+    $log.productName:=This.name
+    $log.productPrice:=This.price
+    $log.creationDate:=Current date()
+    $status:=$log.save()
+
+    If($status.success=False)
+        throw( {errCode: 1; message:"Error while updating the log file"} )
+    End if
+End if
+
+```
+
+#### Example 2
+
+When creating or updating a product, data is replicated on a remote datastore.
+
+```4d
+    //ProductsEntity class
+Function event saving ($event : Object)
+//
+var $log : 4D.LogEntity
+var $status: Object
+
+If (This.country # "FR")
+    This.status:="To Validate"
+End if 
+
+If (This.status = "To track")
+    $log:=ds.Log.new()
+    $log.productName:=This.name
+    $log.productPrice:=This.price
+    $log.creationDate:=Current date()
+    $status:=$log.save()
+
+    If($status.success=False)
+        throw ( {errCode: 1; message:"Error while updating the log file"} )
+    End if
+
+End if
+
+```
 
 
 
