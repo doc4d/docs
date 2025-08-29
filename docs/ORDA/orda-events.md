@@ -1,6 +1,6 @@
 ---
 id: orda-events
-title: ORDA Events
+title: Events
 ---
 
 <details><summary>History</summary>
