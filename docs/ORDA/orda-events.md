@@ -93,13 +93,13 @@ Event functions accept a single *event* object as parameter. When the function i
 
 | Property name  | Availability  | Type        | Description        | 
 | :--------------- |:---------------  |:--------------- | :--------------- | 
-| `kind`  | Always   |    String  | Event name: "touched", "validateSave", "saving", "afterSave", "validateDrop", "dropping", "afterDrop"|        |    
+| "kind"  | Always   |    String  | Event name: "touched", "validateSave", "saving", "afterSave", "validateDrop", "dropping", "afterDrop"|        |    
 | *attributeName*  | Only for events implemented at attribute level ("validateSave", "saving", "validateDrop", "dropping") |    String  |Attribute name (*e.g.* "firstname")  |      
 | *dataClassName*  | Always       |    String          |  Dataclass name (*e.g.* "Company")          |  
-| *savedAttributes*  | Only in [`afterSave()`](#function-event-aftersave)|Collection of String| Names of attributes properly saved|      
-| *droppedAttributes*  |Only in [`afterDrop()`](#function-event-afterdrop)|Collection of String|  Names of attributes properly dropped       |      
-| *saveStatus*  | Only in [`afterSave()`](#function-event-aftersave)       |    String          |  "success" if the save was successful, "failed" otherwise |      
-| *dropStatus*  | Only in [`afterDrop()`](#function-event-afterdrop) |    String          |   "success" if the drop was successful, "failed" otherwise|      
+| "savedAttributes"  | Only in [`afterSave()`](#function-event-aftersave)|Collection of String| Names of attributes properly saved|      
+| "droppedAttributes"  |Only in [`afterDrop()`](#function-event-afterdrop)|Collection of String|  Names of attributes properly dropped       |      
+| "saveStatus"  | Only in [`afterSave()`](#function-event-aftersave)       |    String          |  "success" if the save was successful, "failed" otherwise |      
+| "dropStatus"  | Only in [`afterDrop()`](#function-event-afterdrop) |    String          |   "success" if the drop was successful, "failed" otherwise|      
 
 
 
@@ -133,7 +133,7 @@ This event is triggered as soon as the 4D Server / 4D engine can detect a modifi
 
 The function receives an [*event* object](#event-parameter) as parameter. 
 
-If this event [throws](../commands/throw) an error, it will not stop the undergoing action. 
+If this function [throws](../commands/throw) an error, it will not stop the undergoing action. 
 
 :::note
 
@@ -340,9 +340,9 @@ This event is triggered **before** the entity is actually saved and lets you che
 To stop the save action, the code of the function can:
 
 - throw an error using the [`throw`](../commands/throw) command. Errors thrown using the [`throw`](../commands/throw) command are managed by the 4D runtime as a [standard error](../Concepts/error-handling.md).
-- return an [error object](#error-object).
+- return directly an [error object](../commands-legacy/throw.md#throwerrorobj).
 
-If both an [error object](#error-object) and a [`throw`](../commands/throw) are triggered, the `throw` takes precedence.
+If both an error object and a [`throw`](../commands/throw) are triggered, the `throw` takes precedence.
 
 If a `throw` is triggered, other `validateSave()` events are stopped at the first raised error.
 
@@ -358,14 +358,14 @@ In case of an invalid price attribute, you return an error object and thus, stop
 
 ```4d
     //ProductsEntity class
-Function event validateSave price ($event : Object) :Object
+Function event validateSave price ($event : Object) : Object
 
 If (This.price <= 5)
      var $result:= New object()
      
      $result.errCode:=1
      $result.message:="The price is wrong"
-     $result.extraDescription:={attribute; $event.attributeName; info: "Please enter a price greater than 5 for the product " +           This.name }
+     $result.extraDescription:={attribute; $event.attributeName; info: "Please enter a price greater than 5 for the product " + This.name }
      $result.fatalError:=False
      return $result
 End if 
@@ -426,9 +426,12 @@ The business logic should raise errors which can't be detected during the `valid
 
 During the save action, 4D engine errors can be raised (index, stamp has changed, not enough space on disk).
 
-This event function can throw an error using the [`throw`](../commands/throw) command. Errors thrown using the [`throw`](../commands/throw) command are managed by the 4D runtime as a [standard error](../Concepts/error-handling.md).
+The code of the function can:
 
-If both an [error object](#error-object) and a [`throw`](../commands/throw) are triggered, the `throw` takes precedence.
+- throw an error using the [`throw`](../commands/throw) command. Errors thrown using the [`throw`](../commands/throw) command are managed by the 4D runtime as a [standard error](../Concepts/error-handling.md).
+- return directly an [error object](../commands-legacy/throw.md#throwerrorobj).
+
+If both an error object and a [`throw`](../commands/throw) are triggered, the `throw` takes precedence.
 
 If a `throw` is triggered, other `validateSave()` events are stopped at the first raised error.
 
@@ -588,9 +591,9 @@ This event is triggered **before** the entity is actually dropped, allowing you 
 To stop the drop action, the code of the function can:
 
 - throw an error using the [`throw`](../commands/throw) command. Errors thrown using the [`throw`](../commands/throw) command are managed by the 4D runtime as a [standard error](../Concepts/error-handling.md).
-- return an [error object](#error-object).
+- return directly an [error object](../commands-legacy/throw.md#throwerrorobj).
 
-If both an [error object](#error-object) and a [`throw`](../commands/throw) are triggered, the `throw` takes precedence.
+If both an error object and a [`throw`](../commands/throw) are triggered, the `throw` takes precedence.
 
 
 #### Example 1
@@ -668,7 +671,7 @@ The business logic should raise errors which cannot be detected during the `vali
 To stop the drop action, the code of the function can:
 
 - throw an error using the [`throw`](../commands/throw) command. Errors thrown using the [`throw`](../commands/throw) command are managed by the 4D runtime as a [standard error](../Concepts/error-handling.md).
-- return an [error object](#error-object).
+- return directly an [error object](../commands-legacy/throw.md#throwerrorobj).
 
 
 #### Example 1
