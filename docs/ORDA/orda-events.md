@@ -7,6 +7,7 @@ title: Events
 
 |Release|Changes|
 |---|---|
+|21|Added events: validateSave / saving / afterSave / validateDrop / dropping / afterDrop
 |20 R10|touched event added
 </details>
 
@@ -92,9 +93,14 @@ Event functions accept a single *event* object as parameter. When the function i
 
 | Property name  | Availability  | Type        | Description        | 
 | :--------------- |:---------------  |:--------------- | :--------------- | 
-| `kind`  | Always   |    String  | Event name ("touched")          |    
-| *attributeName*  | Only for events involving an attribute  |    String  |  Attribute name (*e.g.* "firstname")          |      
-| *dataClassName*  | Always       |    String          |  Dataclass name (*e.g.* "Company")          |      
+| `kind`  | Always   |    String  | Event name: "touched", "validateSave", "saving", "afterSave", "validateDrop", "dropping", "afterDrop"|        |    
+| *attributeName*  | Only for events implemented at attribute level ("validateSave", "saving", "validateDrop", "dropping") |    String  |Attribute name (*e.g.* "firstname")  |      
+| *dataClassName*  | Always       |    String          |  Dataclass name (*e.g.* "Company")          |  
+| *savedAttributes*  | Only in [`afterSave()`](#function-event-aftersave)|Collection of String| Names of attributes properly saved|      
+| *droppedAttributes*  |Only in [`afterDrop()`](#function-event-afterdrop)|Collection of String|  Names of attributes properly dropped       |      
+| *saveStatus*  | Only in [`afterSave()`](#function-event-aftersave)       |    String          |  "success" if the save was successful, "failed" otherwise |      
+| *dropStatus*  | Only in [`afterDrop()`](#function-event-afterdrop) |    String          |   "success" if the drop was successful, "failed" otherwise|      
+
 
 
 ## Event function description
@@ -112,8 +118,8 @@ Event functions accept a single *event* object as parameter. When the function i
 
 This event is triggered each time a value is modified in the entity.
 
-- if you defined the function at the entity level (first syntax), it is triggered for modifications on any attribute of the entity. 
-- if you defined the function at the attribute level (second syntax), it is triggered only for modifications on this attribute.
+- If you defined the function at the entity level (first syntax), it is triggered for modifications on any attribute of the entity. 
+- If you defined the function at the attribute level (second syntax), it is triggered only for modifications on this attribute.
 
 This event is triggered as soon as the 4D Server / 4D engine can detect a modification of attribute value which can be due to the following actions:
 
@@ -127,7 +133,7 @@ This event is triggered as soon as the 4D Server / 4D engine can detect a modifi
 
 The function receives an [*event* object](#event-parameter) as parameter. 
 
-If this event [throws](../commands-legacy/throw.md) an error, it will not stop the undergoing action. 
+If this event [throws](../commands/throw) an error, it will not stop the undergoing action. 
 
 :::note
 
@@ -333,10 +339,10 @@ This event is triggered **before** the entity is actually saved and lets you che
 
 To stop the save action, the code of the function can:
 
-- throw an error using the [`throw`](../commands-legacy/throw.md) command. Errors thrown using the [`throw`](../commands-legacy/throw.md) command are managed by the 4D runtime as a [standard error](../Concepts/error-handling.md).
-- return an [error object]().
+- throw an error using the [`throw`](../commands/throw) command. Errors thrown using the [`throw`](../commands/throw) command are managed by the 4D runtime as a [standard error](../Concepts/error-handling.md).
+- return an [error object](#error-object).
 
-If both an [error object] and a [`throw`](../commands-legacy/throw.md) are triggered, the `throw` takes precedence.
+If both an [error object](#error-object) and a [`throw`](../commands/throw) are triggered, the `throw` takes precedence.
 
 If a `throw` is triggered, other `validateSave()` events are stopped at the first raised error.
 
@@ -400,8 +406,10 @@ Function event saving <attributeName>($event : Object)
 
 This event is triggered each time an entity is being saved. 
 
-- if you defined the function at the entity level (first syntax), it is called for any attribute of the entity. The function is executed even if no attribute has been touched in the entity (e.g. in case of sending data to an external app each time a save is done).
-- if you defined the function at the attribute level (second syntax), it is called only for this attribute. The function is **not** executed if the attribute has not been touched in the entity.
+- If you defined the function at the entity level (first syntax), it is called for any attribute of the entity. The function is executed even if no attribute has been touched in the entity (e.g. in case of sending data to an external app each time a save is done).
+- If you defined the function at the attribute level (second syntax), it is called only for this attribute. The function is **not** executed if the attribute has not been touched in the entity.
+
+The function receives an [*event* object](#event-parameter) as parameter. 
 
 This event is triggered by the following functions:
 
@@ -418,9 +426,9 @@ The business logic should raise errors which can't be detected during the `valid
 
 During the save action, 4D engine errors can be raised (index, stamp has changed, not enough space on disk).
 
-This event function can throw an error using the [`throw`](../commands-legacy/throw.md) command. Errors thrown using the [`throw`](../commands-legacy/throw.md) command are managed by the 4D runtime as a [standard error](../Concepts/error-handling.md).
+This event function can throw an error using the [`throw`](../commands/throw) command. Errors thrown using the [`throw`](../commands/throw) command are managed by the 4D runtime as a [standard error](../Concepts/error-handling.md).
 
-If both an [error object] and a [`throw`](../commands-legacy/throw.md) are triggered, the `throw` takes precedence.
+If both an [error object](#error-object) and a [`throw`](../commands/throw) are triggered, the `throw` takes precedence.
 
 If a `throw` is triggered, other `validateSave()` events are stopped at the first raised error.
 
@@ -484,4 +492,303 @@ End if
 ```
 
 
+### `Function event afterSave`
+
+#### Syntax
+
+```4d
+Function event afterSave($event : Object)
+// code
+```
+
+This event is triggered just after an entity is saved in the data file, when at least one attribute was modified. It is not executed if no attribute has been touched in the entity.
+
+This event is useful after saving data to propagate the save action outside the application or to execute administration tasks. For example, it can be used to send a confirmation email after data have been saved. Or, in case of error while saving data, it can make a rollback to restore a consistent state of data. 
+
+The function receives an [*event* object](#event-parameter) as parameter. 
+
+- To avoid infinite loops, calling a [`save()`](../API/EntityClass.md#save) on the current entity (through `This`) in this function is **not allowed**. It will raise an error. 
+- Throwing an [error object](#error-object) is **not supported** by this function.
+
+
+#### Example 1
+
+Send a mail to the customer with the details of the order. 
+
+```4d
+    //OrderEntity class
+Function event afterSave($event : Object) 
+
+var $oAuth2 : cs.NetKit.OAuth2Provider
+var $google : cs.NetKit.Google
+
+    // $param contains clientId, secretId...
+$oAuth2:=cs.NetKit.OAuth2Provider.new($param)
+$google:=cs.NetKit.Google.new($oAuth2; {mailType: "JMAP"})
+
+    // Email creation
+$email:=New object
+$email.from:="youremail@gmail.com"
+$email.to:="destinationmail@mail.com"
+$email.subject:="Your order is confirmed"
+$email.textBody:="Products numbers: " + This.products.number.join("-")
+
+// Email sending
+$status:=$google.mail.send($email)
+
+```
+
+#### Example 2
+
+Handle business logic because there were errors in the [`saving()`](#function-event-saving) event.
+
+```4d
+    //OrderEntity class
+
+Function event afterSave($event : Object)
+ 
+    // The save action failed   
+If ($event.saveStatus = "failed")
+
+    // The status attribute was to be saved with a new "confirmed" value
+    If ($event.savedAttributes.indexOf("status") = -1)
+        ... // Send a mail to the Admin to check the booking
+    End if
+End if
+
+```
+
+
+### `Function event validateDrop`
+
+#### Syntax
+
+```4d
+Function event validateDrop($event : Object)
+Function event validateDrop <attributeName>($event : Object)
+// code
+```
+
+This event is triggered each time an entity is about to be dropped. 
+
+- If you defined the function at the entity level (first syntax), it is called for any attribute of the entity. 
+- If you defined the function at the attribute level (second syntax), it is called only for this attribute. 
+
+The function receives an [*event* object](#event-parameter) as parameter. 
+
+
+This event is triggered by the following features:
+
+- [`entity.drop()`](../API/EntityClass.md#drop)
+- [`entitySelection.drop()`](../API/DataClassClass.md#fromcollection)
+- [deletion control rules](https://doc.4d.com/4Dv20/4D/20.2/Relation-properties.300-6750290.en.html#107320) that can be defined at the database structure level. 
+
+This event is triggered **before** the entity is actually dropped, allowing you to check data consistency and if necessary, to stop the drop action. 
+
+To stop the drop action, the code of the function can:
+
+- throw an error using the [`throw`](../commands/throw) command. Errors thrown using the [`throw`](../commands/throw) command are managed by the 4D runtime as a [standard error](../Concepts/error-handling.md).
+- return an [error object](#error-object).
+
+If both an [error object](#error-object) and a [`throw`](../commands/throw) are triggered, the `throw` takes precedence.
+
+
+#### Example 1
+
+Products can be deleted only if they have been flagged TO DELETE. 
+
+```4d
+    //ProductsEntity class
+Function event validateDrop status($event : Object) : Object
+
+If (This.status != "TO DELETE")
+        
+    var $result:= New object()
+    $result.errCode:=1
+    $result.message:="The record can't be deleted"
+    $result.extraDescription:={attribute; $event.attributeName; info: "The status must be TO DELETE"}
+    $result.fatalError:=False
+    return $result
+End if 
+```
+
+#### Example 2
+
+The user can delete products if they are flagged as "TO DELETE" and if their creation year is < current year -3.
+
+```4d
+    //ProductsEntity class
+Function event validateDrop($event : Object) : Object
+
+var $yearOffSet : Integer
+$yearOffSet:=Year of(Current date)-3
+
+If ((This.status != "TO DELETE") || (Year of(This.creationDate) >=  $yearOffSet))
+    var $result:=New object()
+    $result.errCode:=1
+    $result.message:="The record can't be deleted"
+    $result.extraDescription:={info: "The status must be TO DELETE and the creation year must be lower than " + String($yearOffSet)}
+    $result.fatalError:=False
+    return $result
+End if 
+```
+
+
+### `Function event dropping`
+
+#### Syntax
+
+```4d
+Function event dropping($event : Object)
+Function event dropping <attributeName>($event : Object)
+// code
+```
+
+This event is triggered each time an entity is being dropped. 
+
+- If you defined the function at the entity level (first syntax), it is called for any attribute of the entity. 
+- If you defined the function at the attribute level (second syntax), it is called only for this attribute. 
+
+The function receives an [*event* object](#event-parameter) as parameter. 
+
+This event is triggered by the following features:
+
+- [`entity.drop()`](../API/EntityClass.md#drop)
+- [`entitySelection.drop()`](../API/DataClassClass.md#fromcollection)
+- [deletion control rules](https://doc.4d.com/4Dv20/4D/20.2/Relation-properties.300-6750290.en.html#107320) that can be defined at the database structure level. 
+
+This event is triggered **while** the entity is actually dropped. If a [`validateDrop()`](#function-event-validatedrop) event function was defined, the `dropping()` event function is called if no error was triggered by `validateDrop()`. 
+
+:::note
+
+The business logic should raise errors which cannot be detected during the `validateDrop()` events, e.g. a network error.
+
+:::
+
+To stop the drop action, the code of the function can:
+
+- throw an error using the [`throw`](../commands/throw) command. Errors thrown using the [`throw`](../commands/throw) command are managed by the 4D runtime as a [standard error](../Concepts/error-handling.md).
+- return an [error object](#error-object).
+
+
+#### Example 1
+
+When dropping an order with *totalPrice >= 500*, a log file is updated.
+
+```4d
+    //OrderEntity class
+Function event dropping totalPrice ($event : Object)
+
+var $log : cs.LogEntity
+var $status: Object
+
+If (This.totalPrice >= 500)
+
+    $log:=ds.Log.new()
+    $log.orderID:=This.ID
+    $log.orderPrice:=This.totalPrice
+    $log.event:="Drop"
+    $log.creationDate:=Current date()
+    $status:=$log.save()
+
+    If($status.success=False)
+        throw ({errCode: 1; message: "Error while updating the log file"})
+    End if
+End if
+
+```
+
+#### Example 2
+
+When a product is dropped, a log file is updated.
+
+```4d
+    //ProductsEntity class
+Function event dropping ($event : Object) 
+
+var $log : cs.LogEntity
+var $status: Object
+
+$log:=ds.Log.new()
+$log.productID:=This.ID
+$log.productPrice:=This.price
+$log.event:="Drop"
+$log.creationDate:=Current date()
+$status:=$log.save()
+
+If($status.success=False)
+    throw ({errCode: 1; message:"Error while updating the log file"})
+End if
+```
+
+### `Function event afterDrop`
+
+#### Syntax
+
+```4d
+Function event afterDrop($event : Object)
+// code
+```
+
+This event is triggered just after an entity is dropped. 
+
+This event is useful after dropping data to propagate the drop action outside the application or to execute administration tasks. For example, it can be used to send a cancellation email after data have been dropped. Or, in case of error while dropping data, it can log an information for the administrator to check data consistency.  
+
+The function receives an [*event* object](#event-parameter) as parameter. 
+
+- To avoid infinite loops, calling a [`drop()`](../API/EntityClass.md#drop) on the current entity (through `This`) in this function is **not allowed**. It will raise an error. 
+- Throwing an [error object](#error-object) is **not supported** by this function.
+
+:::note
+
+The dropped entity is referenced by `This` and `This` still exists in memory.
+
+:::
+
+#### Example 1
+
+Send a mail to the customer with the details of the dropped order. 
+
+```4d
+    //OrderEntity class
+Function event afterDrop ($event : Object) 
+
+var $oAuth2 : cs.NetKit.OAuth2Provider
+var $google : cs.NetKit.Google
+
+    //$param contains clientId, secretId...
+$oAuth2:=cs.NetKit.OAuth2Provider.new($param)
+$google:=cs.NetKit.Google.new($oAuth2; {mailType: "JMAP"})
+
+    //Email creation
+$email:=New object
+$email.from:="youremail@gmail.com"
+$email.to:="destinationmail@mail.com"
+$email.subject:="Your order is cancelled"
+$email.textBody:="Products numbers: " + This.products.number.join("-")
+
+    //Email sending
+$status:=$google.mail.send($email)
+```
+
+#### Example 2
+
+Create an action to do because there were errors in the [`dropping()`](#function-event-dropping) event.
+
+```4d
+    //ProductEntity class
+Function event afterDrop ($event : Object) 
+
+var $action: cs.ActionEntity
+var $status: Object
+
+    // The drop action failed   
+If($event.dropStatus = "failed")
+    $action:=ds.Action.new()
+    $action.label:=Last errors.first().message //message is "Error while dropping product XXX"
+    $action.status:="TO CHECK"
+    $status:=$action.save()
+End if
+
+```
 
