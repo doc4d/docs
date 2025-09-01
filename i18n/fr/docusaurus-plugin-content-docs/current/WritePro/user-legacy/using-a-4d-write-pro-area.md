@@ -4,31 +4,6 @@ title: Utiliser une zone 4D Write Pro
 displayed_sidebar: docs
 ---
 
-#### Gestion des documents dans les zones 4D Write Pro 
-
-Dans les applications 4D, les documents 4D Write Pro sont créés, importés et/ou exportés via des commandes dédiées placées dans le thème **4D Write Pro** (*WP EXPORTER DOCUMENT*, *WP EXPORTER VARIABLE*, *WP Importer document*, *WP Nouveau*). 
-
-Vous pouvez également associer une zone 4D Write Pro à un champ objet de la base dans un formulaire. De cette manière, chaque document 4D Write Pro est automatiquement sauvegardé avec l'enregistrement et est conservé dans les données de la base (cf. section *Stocker les documents 4D Write Pro dans des champs objet 4D*).
-
-#### Format de document .4wp 
-
-Vous pouvez sauvegarder des documents 4D Write Pro sur disque et les rouvrir sans aucune perte de données grâce au format natif **.4wp**.
-
-Le format **.4wp** est constitué d'un dossier zip dont le nom est le titre du document, et contenant du texte HTML et des images :
-
-* le texte HTML combine du HTML standard et des expressions 4D (non interprétées) ainsi que des balises 4D spécifiques,
-* les images sont stockées dans un dossier du même nom que le document, situé à côté du fichier HTML.
-
-Comme les documents .4wp sont basés sur du HTML, ils peuvent être importés et ouverts dans toute application tierce qui prend en charge le format HTML.
-
-Le format interne des documents 4D Write Pro est du HTML étendu propriétaire, compatible HTML5/XHTML5, mais utilisant son propre sous-ensemble d'attributs et de balises HTML/CSS. Par conséquent, seuls les documents HTML exportés par 4D Write Pro peuvent être ouverts par 4D Write Pro sans risque de perte d'informations. Importer des documents HTML qui ont été créés par une source externe peut provoquer des erreurs.
-
-Pour plus d'informations, vous pouvez **[télécharger la liste des attributs de 4D Write pro avec la définition associée en tant que style CSS ou balise XHTML](https://download.4d.com/Documents/Products%5FDocumentation/LastVersions/Line%5F19/4DWP-attributes-and-xhtml.pdf)** dans le 4D Write Pro XHTML.
-
-##### Rétrocompatibilité 
-
-Vous pouvez toujours rouvrir un document .4wp avec une version antérieure de 4D Write Pro. S'il contient des attributs qui ont été ajoutés dans des versions plus récentes, ces attributs sont simplement ignorés. Cependant, si vous enregistrez le document, les attributs sont supprimés du document et seront perdus. 
-
 #### Interface utilisateur 
 
 Lorsque la propriété **Menu contextuel** est cochée pour une zone 4D Write Pro (voir *Définir une zone 4D Write Pro*), un menu contextuel complet est disponible pour les utilisateurs lorsque le formulaire est lancé à l'exécution :

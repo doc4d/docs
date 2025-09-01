@@ -4,30 +4,6 @@ title: Utilizar uma area 4D Write Pro
 displayed_sidebar: docs
 ---
 
-#### Gestão dos documentos nas áreas 4D Write Pro 
-
-Nas aplicações 4D, os documentos, 4D Write Pro são criados importados e exportados por meio de comandos específicos que se encontram no tema **4D Write Pro** (*WP EXPORT DOCUMENT*, *WP EXPORT VARIABLE*, *WP Import document*, *WP New*). 
-
-Também é possível associar uma área 4D Write Pro com um campo Objeto em um formulário do banco de dados. Desta maneira, cada documento 4D Write Pro é automaticamente salvo com o registro e armazenado nos dados do banco de dados (ver *Armazenar os documentos 4D Write Pro nos campos objeto 4D*).
-
-#### Formato de documento .4wp 
-
-É possível salvar e reabrir documentos 4D Write Pro em disco e a partir de disco sem qualquer perda usando o formato nativo **.4wp**.
-
-O formato **.4wp** consiste de uma pasta zip cujo nome é o título do documento e cujos conteúdos são texto HTML e imagens:
-
-* texto HTML combina HTML normal com expressões 4D (que não são computadas) assim como etiquetas 4D especificas,
-* imagens são armazenadas em uma pasta com o mesmo nome que o título do documento, do lado do arquivo HTML.
-
-Já que documentos .4wp são baseados em HTML, podem ser importados ou abertos em qualquer aplicação externa que suporta HTML.
-
-O formato de documento interno 4D Write Pro é uma extensão HTML proprietária, compatível comHTML5/XHTML5, mas que suporta um subconjunto de atributos HTML/CSS e etiquetas. Como resultado, apenas documentos HTML exportados por 4D Write Pro podem ser abertos por 4D Write Pro sem risco de perda de dados. Importar documentos HTML que foram criados externamente pode produzir erros.
-
-Para saber mais, [**baixe a lista de atributos 4D Write pro com definição associada como CSS style ou XHTML tag**](https://download.4d.com/Documents/Products%5FDocumentation/LastVersions/Line%5F19/4DWP-attributes-and-xhtml.pdf) em 4D Write Pro XHTML.
-
-##### Compatibilidade com versões anteriores 
-
-Sempre pode reabrir um documento .4wp com uma versão anterior de 4D Write Pro. Se conter atributos que foram adicionados em versões mais recentes, esses atribuos são apenas ignorados. Entretanto se salvar o documento, os atributos são removidos do documento e serão perdidos. 
 
 #### Interface Usuário 
 

@@ -4,30 +4,6 @@ title: Utilizar un area 4D Write Pro
 displayed_sidebar: docs
 ---
 
-#### Gestión de los documentos en las áreas 4D Write Pro 
-
-En las aplicaciones 4D, los documentos, 4D Write Pro son creados importados y exportados por medio de comandos específicos que se encuentran en el tema **4D Write Pro** (*WP EXPORT DOCUMENT*, *WP EXPORT VARIABLE*, *WP Import document*, *WP New*). 
-
-También puede asociar un área 4D Write Pro con un campo Objeto de la base en un formulario. De esta manera, cada documento 4D Write Pro se guarda automáticamente con el registro y se almacena en los datos de la base (ver *Almacenar los documentos 4D Write Pro en los campos objeto 4D*).
-
-#### Formato del documento .4wp 
-
-Puede guardar los documentos 4D Write Pro en el disco y reabrirlos sin pérdidas con el formato **.4wp** nativo.
-
-El formato **.4wp** consiste en una carpeta zip cuyo nombre es el título del documento y cuyo contenido es el texto HTML y las imágenes:
-
-* el texto HTML combina HTML estándar con expresiones 4D (no interpretadas), así como también etiquetas 4D específicas,
-* las imágenes se almacenan en una carpeta con el mismo nombre que el título del documento, junto al archivo HTML.
-
-Como los documentos .4wp se basan en HTML, pueden importarse o abrirse en cualquier aplicación externa que soporte HTML.
-
-El formato interno de los documentos 4D Write Pro es HTML extendido propietario, compatible con HTML5/XHTML5, pero utiliza su propio subconjunto de atributos y de etiquetas HTML/CSS. Como resultado, sólo los documentos HTML exportados por 4D Write Pro pueden ser abiertos por 4D Write Pro sin riesgo de perder información. La importación de documentos HTML creados externamente puede producir errores.
-
-Para mayor información puede [descargar la lista de atributos de 4D Write pro con la definición asociada como estilo CSS o etiqueta XHTML](https://download.4d.com/Documents/Products%5FDocumentation/LastVersions/Line%5F19/4DWP-attributes-and-xhtml.pdf) en 4D Write Pro XHTML.
-
-##### Retrocompatibilidad 
-
-Siempre puede reabrir un documento .4wp con una versión anterior de 4D Write Pro. Si contiene atributos que fueron añadidos en versiones más recientes, estos atributos son simplemente ignorados. Sin embargo, si guarda el documento, los atributos se eliminan del documento y se pierden.
 
 #### Menú contextual 
 
