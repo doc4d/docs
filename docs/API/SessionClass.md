@@ -613,7 +613,7 @@ This function does nothing in remote client, stored procedure, and standalone se
 
 :::
 
-The `.promote()` function <!-- REF #SessionClass.promote().Summary -->adds the privilege defined in the *privilege* parameter to the session privileges of the current process during the execution of the calling function and returns the id of the promoted privilege<!-- END REF -->.
+The `.promote()` function <!-- REF #SessionClass.promote().Summary -->adds the privilege defined in the *privilege* parameter to the current process during the execution of the calling function and returns the id of the promoted privilege<!-- END REF -->.
 
 The function does nothing and returns 0 if:
 - the *privilege* does not exist in the [`roles.json`](../ORDA/privileges.md#rolesjson-file) file,
@@ -630,154 +630,40 @@ To remove a privilege dynamically, call the `demote()` function with the appropr
 
 #### Example
 
-All users authentify themselves with the "basic" privilege. You want some specific users to access confidential data when using a *search* function depending on any context. 
-You create an "admin" privilege with access to the confidential attribute, and add this privilege to the *search* function by passing it as parameter. 
+Several users connect to a single endpoint that serves different applications. A user from application #1 does not need the level2 privilege because they don't create "VerySensitiveInfos". A user from application #2 needs level2 privilege.
 
-- the `roles.json` file:
-
-```json
-{
-	"forceLogin": true,
-	"permissions": {
-		"allowed": [
-			{
-				"applyTo": "People",
-				"type": "dataclass",
-				"read": [
-					"basic"
-				]
-			},
-			{
-				"applyTo": "People.search",
-				"type": "method",
-				"execute": [
-					"basic"
-				]
-			},
-			{
-				"applyTo": "ds",
-				"type": "datastore",
-				"read": [
-					"none"
-				],
-				"create": [
-					"none"
-				],
-				"update": [
-					"none"
-				],
-				"drop": [
-					"none"
-				],
-				"execute": [
-					"none"
-				]
-			},
-			{
-				"applyTo": "People.secret",
-				"type": "attribute",
-				"read": [
-					"admin"
-				]
-			}
-		]
-	},
-	"privileges": [
-		{
-			"id": "1w5N9CQxsp4VNJ4nnXkdT1",
-			"privilege": "basic",
-			"includes": []
-		},
-		{
-			"id": "29jWTeiMumxRUh4E2rn2bQ",
-			"privilege": "none",
-			"includes": []
-		},
-		{
-			"id": "qbAzdAg93qqVZggsWMdMdS",
-			"privilege": "admin",
-			"includes": []
-		}
-	],
-	"roles": []
-}
-```
-
-- the "search" function:
+You can dynamically provides appropriate privileges in the *CreateInfo* function:
 
 ```4d
-   //In the People dataclass
-Class extends DataClass
 
-exposed Function search($search : Text; $promoteWith : Text) : cs.PeopleSelection
+exposed Function createInfos($info1 : Text; $info2 : Text)
 	
-	var $people : cs.PeopleSelection
-	var $promoteId : Integer
+	var $sensitive : cs.SensitiveInfosEntity
+	var $verySensitiveInfo : cs.VerySensitiveInfosEntity
+	var $status : Object
+	var $promoteId1; $promoteId2 : Integer
 	
-	$search:="@"+$search+"@"
 	
-	If (($promoteWith#Null) && ($promoteWith#""))
-		// The privilege is added to the current process
-		$promoteId:=Session.promote($promoteWith)
+	Case of 
+		: (Session.storage.role.name="userApp1")
+			$promoteId1:=Session.promote("level1")
+			
+		: (Session.storage.role.name="userApp2")
+			$promoteId1:=Session.promote("level1")
+			$promoteId2:=Session.promote("level2")
+	End case 
+	
+	$sensitive:=ds.SensitiveInfos.new()
+	$sensitive.info:=$info1
+	$status:=$sensitive.save()
+	
+	
+	If (Session.storage.role.name="userApp2")
+		$verySensitiveInfo:=ds.VerySensitiveInfos.new()
+		$verySensitiveInfo.info:=$info2
+		$status:=$verySensitiveInfo.save()
 	End if 
-	
-	$people:=This.query("firstname = :1 or lastname = :1"; $search)
-	
-	return $people
-
 ```
-
-
-- Running http://127.0.0.1/rest/People/search with parameters ["m", "admin"] returns
-
-```json
-{
-    "__DATACLASS": "People",
-    "__entityModel": "People",
-    "__GlobalStamp": 0,
-    "__COUNT": 1,
-    "__FIRST": 0,
-    "__ENTITIES": [
-        {
-            "__KEY": "1",
-            "__TIMESTAMP": "2025-08-05T10:26:22.588Z",
-            "__STAMP": 2,
-            "ID": 1,
-            "firstname": "Mary",
-            "lastname": "Smith",
-            "secret": {
-                "label": "Mary's secret"
-            }
-        }
-    ],
-    "__SENT": 1
-}
-```
-
-- Running http://127.0.0.1/rest/People/search with parameters ["m"] returns
-
-```json
-
-{
-    "__DATACLASS": "People",
-    "__entityModel": "People",
-    "__GlobalStamp": 0,
-    "__COUNT": 1,
-    "__FIRST": 0,
-    "__ENTITIES": [
-        {
-            "__KEY": "1",
-            "__TIMESTAMP": "2025-08-05T10:26:22.588Z",
-            "__STAMP": 2,
-            "ID": 1,
-            "firstname": "Mary",
-            "lastname": "Smith"
-        }
-    ],
-    "__SENT": 1
-}
-```
-
 
 
 #### See also
