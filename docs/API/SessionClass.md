@@ -617,12 +617,11 @@ The `.promote()` function <!-- REF #SessionClass.promote().Summary -->adds the p
 
 The function does nothing and returns 0 if:
 - the *privilege* does not exist in the [`roles.json`](../ORDA/privileges.md#rolesjson-file) file,
-- the *privilege* is already declared in the session privileges of the current process (using `.promote()` or through the [`roles.json`](../ORDA/privileges.md#rolesjson-file) file). 
+- the *privilege* is already assigned to the current process (using `.promote()` or through a static [promote action](../ORDA/privileges.md#permission-actions) declared for the calling function in the [`roles.json`](../ORDA/privileges.md#rolesjson-file) file). 
 
 You can call the `promote()` function several times in the same process to add different privileges.
 
 The returned *id* is incremented each time a privilege is dynamically added to the process.
-
 
 
 To remove a privilege dynamically, call the `demote()` function with the appropriate id. 
