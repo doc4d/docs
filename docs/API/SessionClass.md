@@ -629,25 +629,25 @@ To remove a privilege dynamically, call the `demote()` function with the appropr
 
 #### Example
 
-Several users connect to a single endpoint that serves different applications. A user from application #1 does not need the "super_admin" privilege because they don't create "VerySensitiveInfos". A user from application #2 needs "super_admin" privilege.
+Several users connect to a single endpoint that serves different applications. A user from application #1 does not need the "super_admin" privilege because they don't create "VerySensitiveInfo". A user from application #2 needs "super_admin" privilege.
 
-You can dynamically provides appropriate privileges in the *CreateInfo* function:
+You can dynamically provide appropriate privileges in the *CreateInfo* function:
 
 ```4d
-exposed Function createInfos($info1 : Text; $info2 : Text)
+exposed Function createInfo($info1 : Text; $info2 : Text)
 	
-var $sensitive : cs.SensitiveInfosEntity
-var $verySensitiveInfo : cs.VerySensitiveInfosEntity
+var $sensitive : cs.SensitiveInfoEntity
+var $verySensitiveInfo : cs.VerySensitiveInfoEntity
 var $status : Object
 var $promoteId : Integer
 	
-$sensitive:=ds.SensitiveInfos.new()
+$sensitive:=ds.SensitiveInfo.new()
 $sensitive.info:=$info1
 $status:=$sensitive.save()
 	
 If (Session.storage.role.name="userApp2")
 	$promoteId:=Session.promote("super_admin")
-	$verySensitiveInfo:=ds.VerySensitiveInfos.new()
+	$verySensitiveInfo:=ds.VerySensitiveInfo.new()
 	$verySensitiveInfo.info:=$info2
 	$status:=$verySensitiveInfo.save()
 	Session.demote($promoteId)
