@@ -18,7 +18,7 @@ servidor web `WebAdmin` no se lanza. Precisa configurar o lançamento ao início
 
 Pode configurar o servidor web `WebAdmin` para que se lance ao início da aplicação 4D ou 4D Server (antes de que se carregue qualquer projeto).
 
- - Se utilizar uma aplicação 4D con interface, selecione a opção de menu **Arquivo > Administração web > Propriedades...**.
+- Se utilizar uma aplicação 4D con interface, selecione a opção de menu **Arquivo > Administração web > Propriedades...**.
 
 ![alt-text](../assets/en/Admin/waMenu1.png)
 
@@ -26,7 +26,7 @@ Selecione a opção **Iniciar WebAdmin ao iniciar** na caixa de diálogo de par�
 
 ![alt-text](../assets/en/Admin/waSettings.png)
 
- - Se usar uma aplicação 4D que tenha ou não interface, pode habilitar o modo de inicio automático utilizando o argumento abaixo *Interface de linha de comandos*:
+- Se usar uma aplicação 4D que tenha ou não interface, pode habilitar o modo de inicio automático utilizando o argumento abaixo *Interface de linha de comandos*:
 
 ```
 open ~/Desktop/4D.app --webadmin-auto-start true
@@ -72,8 +72,8 @@ Quando esta opção for marcada, pode conectar ao servidor web `WebAdmin` atrav�
 
 **Notas:**
 
- - Conexões com HTTP outras que localhost nunca são aceitas.
- - Mesmo se esta opção for marcada, quando [Accept HTTPS](#accept-https) for marcado e a configuração  TLS for válida, as conexões localhost vão usar HTTPS.
+- Conexões com HTTP outras que localhost nunca são aceitas.
+- Mesmo se esta opção for marcada, quando [Accept HTTPS](#accept-https) for marcado e a configuração  TLS for válida, as conexões localhost vão usar HTTPS.
 
 #### Porta HTTP
 
@@ -95,11 +95,11 @@ Rota da pasta onde o certificado TLS está localizado. Como padrão, a rota da p
 
 O estado ou formato do arquivo de registro da petição HTTP (HTTPDebugLog_*nn*.txt, armazenada na pasta "Logs" da aplicação -- *nn* é o número do arquivo). As opções abaixo estão disponíveis:
 
- - **Desactivado** (por defecto)
- - **Com todas as partes do corpo** - habilitado com partes do cuerpo das petições e respostas
- - **Sem as partes do corpo** - ativado sem partes do corpo (se indica o tamanho do corpo)
- - **Com os corpos das petições** - ativado com as partes do corpo unicamente nas petições
- - **Com a resposta corpos** - ativado com as partes do corpo unicamente nas respostas
+- **Desactivado** (por defecto)
+- **Com todas as partes do corpo** - habilitado com partes do cuerpo das petições e respostas
+- **Sem as partes do corpo** - ativado sem partes do corpo (se indica o tamanho do corpo)
+- **Com os corpos das petições** - ativado com as partes do corpo unicamente nas petições
+- **Com a resposta corpos** - ativado com as partes do corpo unicamente nas respostas
 
 #### Chave de acesso
 
@@ -109,10 +109,10 @@ A configuração de uma chave de acesso é obrigatória para desbloquear o acess
 
 Uma chave de acesso é parecida a uma senha, mas não está associada com um login.
 
- - Para definir uma nova chave de acesso: clique no botão **Definir**, introduza a string da chave de acesso na caixa de diálogo e clique em **OK**. La etiqueta del
-    botón se convierte en **Modificar**.
- - Para modificar a chave de acesso: clique no botão **Modificar**, introduza a nova string da chave de acesso na caixa de diálogo e clique em **OK**.
- - Para eliminar a chave de acesso: clique no botão**Modificar**, deixe vazia a área daa chave de acesso e clique em **OK**.
+- Para definir uma nova chave de acesso: clique no botão **Definir**, introduza a string da chave de acesso na caixa de diálogo e clique em **OK**. La etiqueta del
+  botón se convierte en **Modificar**.
+- Para modificar a chave de acesso: clique no botão **Modificar**, introduza a nova string da chave de acesso na caixa de diálogo e clique em **OK**.
+- Para eliminar a chave de acesso: clique no botão**Modificar**, deixe vazia a área daa chave de acesso e clique em **OK**.
 
 #### Ativar o acesso a Qodly Studio
 
@@ -147,9 +147,9 @@ Exemplo:
 
 ## Autenticação e sessão
 
- - Quando acessar uma página de gestão entrando uma URL e sem identificação prévia, uma autenticação é exigida. O usuário deve introduzir a [chave-de-acesso](#access-key) em uma janela de autenticação. Se a chave de acesso nâo foi definida na configuração de `WebAdmin`, não é possível o acesso via URL.
+- Quando acessar uma página de gestão entrando uma URL e sem identificação prévia, uma autenticação é exigida. O usuário deve introduzir a [chave-de-acesso](#access-key) em uma janela de autenticação. Se a chave de acesso nâo foi definida na configuração de `WebAdmin`, não é possível o acesso via URL.
 
- - Quando uma página de gerenciamento é acessada diretamentee de um item menu 4D ou 4D Servidor (tal como **Records > Data Explorer** ou **Window > Data Explorer** (4D Server)), o acesso é garantido sem autenticação, e o usuário é autenticado automaticamente
+- Quando uma página de gerenciamento é acessada diretamentee de um item menu 4D ou 4D Servidor (tal como **Records > Data Explorer** ou **Window > Data Explorer** (4D Server)), o acesso é garantido sem autenticação, e o usuário é autenticado automaticamente
 
 Quando o acesso é concedido, uma  [sessão web](WebServer/sessions.md) com o privilégio "WebAdmin" é criado na aplicação 4D. Enquanto a sessão atual tiver o privilégio "WebAdmin", o componente `WebAdmin` entrega páginas  solicitadas.
 

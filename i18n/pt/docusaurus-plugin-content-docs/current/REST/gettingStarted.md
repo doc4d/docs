@@ -9,8 +9,8 @@ El servidor REST está incluido en 4D y 4D Server, está automáticamente dispon
 
 Esta seção tem o objetivo de familiarizar com as funcionalidades REST com um exemplo simples. Nós vamos:
 
- - criar e configurar um banco de dados 4D simples
- - acessar aos dados do banco 4D através de REST usando um navegador padrão.
+- criar e configurar um banco de dados 4D simples
+- acessar aos dados do banco 4D através de REST usando um navegador padrão.
 
 Para simplificar o exemplo, vamos usar uma aplicação 4D e um navegador que são executados na mesma máquina. Também poderia usar uma arquitetura remota.
 
@@ -19,9 +19,9 @@ Para simplificar o exemplo, vamos usar uma aplicação 4D e um navegador que sã
 1. Lançar sua aplicação 4D ou 4D server e criar um novo banco de dados. Pode chamar de "Emp4D", por exemplo.
 
 2. Create a table with some fields, for example:
-    - Lastname (Alpha)
-    - Firstname (Alpha)
-    - Salary (Longint)
+   - Lastname (Alpha)
+   - Firstname (Alpha)
+   - Salary (Longint)
 
 ![](../assets/en/REST/getstarted1.png)
 

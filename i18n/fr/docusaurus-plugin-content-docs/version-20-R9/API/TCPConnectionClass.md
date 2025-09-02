@@ -149,18 +149,18 @@ Les objets TCPConnection offrent les propriétés et fonctions suivantes :
 
 <!-- REF #4D.TCPConnection.new().params -->
 
-| Paramètres    | Type          |                             | Description                                                    |
-| ------------- | ------------- | --------------------------- | -------------------------------------------------------------- |
-| serverAddress | Text          | ->                          | Nom de domaine ou adresse IP du serveur                        |
-| serverPort    | Integer       | ->                          | Numéro de port du serveur                                      |
-| options       | Object        | ->                          | [options](#options-parameter) de configuration de la connexion |
-| Résultat      | TCPConnection | <- | Nouvel objet TCPConnection                                     |
+| Paramètres    | Type                             |                             | Description                                                    |
+| ------------- | -------------------------------- | --------------------------- | -------------------------------------------------------------- |
+| serverAddress | Text                             | ->                          | Nom de domaine ou adresse IP du serveur                        |
+| serverPort    | Integer                          | ->                          | Numéro de port du serveur                                      |
+| options       | Object                           | ->                          | [options](#options-parameter) de configuration de la connexion |
+| Résultat      | 4D.TCPConnection | <- | Nouvel objet TCPConnection                                     |
 
 <!-- END REF -->
 
 #### Description
 
-La fonction `4D.TCPConnection.new()` <!-- REF #4D.TCPConnection.new().Summary -->crée une nouvelle connexion TCP vers les *serverAddress* et *serverPort* spécifiés, en utilisant les *options* définies, et renvoie un objet `4D.HTTPRequest`<!-- END REF -->.
+La fonction `4D.TCPConnection.new()` <!-- REF #4D.TCPConnection.new().Summary -->crée une nouvelle connexion TCP vers les *serverAddress* et *serverPort* spécifiés, en utilisant les *options* définies, et renvoie un objet `4D.TCPConnection`<!-- END REF -->.
 
 #### Paramètre `options`
 
@@ -189,8 +189,8 @@ Toutes les fonctions de callback reçoivent deux paramètres :
 1. `onConnection` est déclenchée lorsque la connexion est établie.
 2. `onData` est déclenchée à chaque fois que des données sont reçues.
 3. `onShutdown` ou `onError` est déclenchée :
-    - `onShutdown` est déclenchée lorsque la connexion est correctement fermée.
-    - `onError` est déclenchée en cas d'erreur.
+   - `onShutdown` est déclenchée lorsque la connexion est correctement fermée.
+   - `onError` est déclenchée en cas d'erreur.
 4. `onTerminate` est toujours déclenchée juste avant que la TCPConnection soit libérée (la connexion est fermée ou une erreur s'est produite).
 
 #### Objet TCPEvent

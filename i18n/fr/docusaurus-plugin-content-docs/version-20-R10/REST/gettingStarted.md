@@ -9,8 +9,8 @@ Le serveur REST est inclus dans 4D et 4D Server et automatiquement disponible da
 
 Cette section est destinée à vous familiariser avec la fonctionnalité REST à l'aide d'un exemple simple. Nous allons :
 
- - créer et configurer un projet d'application 4D basique
- - accéder aux données du projet 4D via REST à l'aide d'un navigateur standard.
+- créer et configurer un projet d'application 4D basique
+- accéder aux données du projet 4D via REST à l'aide d'un navigateur standard.
 
 Pour simplifier l'exemple, nous allons utiliser 4D et un navigateur qui s'exécutent sur la même machine. Bien entendu, vous pouvez également utiliser une architecture distante.
 
@@ -19,9 +19,9 @@ Pour simplifier l'exemple, nous allons utiliser 4D et un navigateur qui s'exécu
 1. Lancez votre application 4D ou 4D Server et créez un nouveau projet. Vous pouvez, par exemple, le nommer "Emp4D".
 
 2. Dans l'éditeur de structure, créez une table [Employees] et ajoutez-y les champs suivants :
-    - Lastname (Alpha)
-    - Firstname (Alpha)
-    - Salary (Longint)
+   - Lastname (Alpha)
+   - Firstname (Alpha)
+   - Salary (Longint)
 
 ![](../assets/en/REST/getstarted1.png)
 
