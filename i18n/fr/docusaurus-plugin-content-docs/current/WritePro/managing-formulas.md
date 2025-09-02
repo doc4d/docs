@@ -90,7 +90,31 @@ Par exemple, pour insérer le numéro de page dans la zone de pied de page :
   //would not work correctly
 ```
 
-## Inserting date and time formulas
+## Table formula context object
+
+When used in a formula within the table, the **This** keyword gives access to different data according to the context:
+
+| **Context**                                                                                                            | **Expression**                                                               | **Type**                                                    | **Returns**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Anywhere                                                                                                               | [This](../commands/this.md).table                            | Object                                                      | Current table                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|                                                                                                                        | [This](../commands/this.md).row                              | Object                                                      | Current table row element                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|                                                                                                                        | [This](../commands/this.md).rowIndex                         | Number                                                      | Index of the current row, starting from 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| When a datasource has been defined for the table                                                                       | [This](../commands/this.md).table.dataSource | Objet (formula)                          | Datasource as a formula                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|                                                                                                                        | [This](../commands/this.md).tableData                        | Collection or Entity selection (usually) | Evaluated table.dataSource                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| In each data row when a table datasource returns a collection or an entity selection                                   | [This](../commands/this.md).item.xxx         | Tous                                                        | Mapped to each item of the table datasource collection or entity selection, for example **This.item.firstName** if the associated entity has the *firstName* attribute                                                                                                                                                                                                                                                                                                                                |
+|                                                                                                                        | [This](../commands/this.md).itemIndex                        | Number                                                      | Index of the current item in the collection or entity selection, starting from 0                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| In any row (except header rows) when a table datasource returns a collection or an entity selection | [This](../commands/this.md).previousItems                    | Collection or Entity selection                              | Items displayed on the pages before the bottom carry over row (if any) or before the row of the expression, including the page where is displayed the row containing the expression. <br/>This expression returns the same type of value as the **This.tableData** expression.                                                                                                                                                                                     |
+| In a break row                                                                                                         | [This](../commands/this.md).breakItems                       | Collection or Entity selection                              | Items of the collection or entity selection displayed in the rows between:<br/><ul><li>the current break row and the previous break row of the same level (or the start of the table) if the break row(s) are displayed after the data row.</li><li>the current break and the next break row of the same level (or the end of the table) if the break row(s) are displayed before the data row.</li></ul> |
+
+In any other contexts, these expressions will return *undefined*.
+
+:::note
+
+For more information about formula insertion, see [WP INSERT FORMULA](../commands/wp-insert-formula).
+
+:::
+
+## Insertion des formules date et time
 
 **Date**
 
@@ -98,7 +122,7 @@ When the [**Current date**](../commands-legacy/current-date.md) command, a date 
 
 **Time**
 
-When the [**Current time**](../commands-legacy/current-time.md) command, a time variable, or a method returning a time is inserted in a formula, it must be enclosed within a [**String**](../commands/string.md) command because time type is not supported in JSON. Consider the following examples of formulas:
+When the [**Current time**](../commands-legacy/current-time.md) command, a time variable, or a method returning a time is inserted in a formula, it must be enclosed within a [**String**](../commands/string.md) command because time type is not supported in JSON. Examinez les exemples de formules suivants :
 
 ```4d
   // This code is the best practice
@@ -113,7 +137,7 @@ When the [**Current time**](../commands-legacy/current-time.md) command, a time 
  
 ```
 
-## Support of virtual structure
+## Support de la structure virtuelle
 
 Table and field expressions inserted in 4D Write Pro documents support the virtual structure definition of the database. The virtual structure exposed to formulas is defined through [**SET FIELD TITLES**](../commands-legacy/set-field-titles.md)(...;\*) and [**SET TABLE TITLES**](../commands-legacy/set-table-titles.md)(...;\*) commands.
 
@@ -129,11 +153,11 @@ When a document is displayed in "display expressions" mode, references to tables
 
 :::
 
-## Displaying formulas
+## Affichage des formules
 
-You can control how formulas are displayed in your documents:
+Vous pouvez contrôler comment les formules sont affichées dans vos documents :
 
-- as *values* or as *references*
+- en tant que *valeurs* ou en tant que *références*
 - when shown as references, display source text, symbol, or name.
 
 ### References or Values
@@ -174,7 +198,7 @@ In this case, you can display formula references as ![](../assets/en/WritePro/wp
 
 ![](../assets/en/WritePro/wp-formulas4.png)
 
-To display formula references as symbols, you can:
+Pour afficher les références de formules en tant que symboles, vous pouvez:
 
 - check the **Display formula source as symbol option** in the Property list (see *Configuring View properties*), or
 - use the displayFormulaAsSymbol standard action (see *Using 4D Write Pro standard actions*), or
@@ -184,7 +208,7 @@ To display formula references as symbols, you can:
 
 You can assign names to formulas, making 4D Write Pro template documents easier to read and understand for end-users. When formulas are displayed as references (and not displayed as symbols) and you have defined a name for a formula, the formula name is displayed.
 
-For example, the following formula references are displayed as source text by default:
+Par exemple, les références de formule suivantes sont affichées comme texte source par défaut :
 
 ![](../assets/en/WritePro/wp-formulas5.png)
 
@@ -192,7 +216,7 @@ Si vous attribuez des noms de formule, ils sont affichés à la place des textes
 
 ![](../assets/en/WritePro/wp-formulas6.png)
 
-To assign a name to a formula, you need to use the [WP Insert formula](commands/wp-insert-formula.md) command with an object parameter. Par exemple :
+Pour attribuer un nom à une formule, vous devez utiliser la commande [WP Insert formula](commands/wp-insert-formula.md) avec un paramètre objet. Par exemple :
 
 ```4d
   //inserts the previous day in the document

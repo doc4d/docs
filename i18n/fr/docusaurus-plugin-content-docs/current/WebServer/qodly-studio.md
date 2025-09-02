@@ -46,7 +46,7 @@ Qodly Studio est alimenté par le [serveur WebAdmin](../Admin/webAdmin.md) et af
 
 Pour permettre l'accès à Qodly Studio, vous devez explicitement autoriser deux niveaux :
 
-- at 4D application level
+- au niveau de l'application 4D
 - niveau projet
 
 Si l'un des deux niveaux (ou les deux) n'est pas activé, l'accès à Qodly Studio est refusé (une page 403 est renvoyée).
@@ -95,20 +95,20 @@ La page Qodly Studio est disponible lorsque le [serveur WebAdmin est lancé](../
 Il y a deux façons d'accéder à Qodly Studio :
 
 - by selecting the **Qodly Studio...** menu command from the **Design** menu (4D single-user) or the **Window** menu (4D Server).
-    Si le serveur WebAdmin est déjà en cours d'exécution, selon sa configuration, votre navigateur par défaut s'ouvre à l'adresse `IPaddress:HTTPPort/studio` ou `IPaddress:HTTPSPort/studio`. Sinon, vous serez invité à démarrer d'abord le serveur web WebAdmin.
+  Si le serveur WebAdmin est déjà en cours d'exécution, selon sa configuration, votre navigateur par défaut s'ouvre à l'adresse `IPaddress:HTTPPort/studio` ou `IPaddress:HTTPSPort/studio`. Sinon, vous serez invité à démarrer d'abord le serveur web WebAdmin.
 
 - on a browser, with the WebAdmin web server running (launched from 4D or 4D Server), enter the following address:<br/>
-    `IPaddress:HTTPPort/studio`
+  `IPaddress:HTTPPort/studio`
 
-    ou :
+  ou :
 
-    `IPaddress:HTTPSPort/studio`
+  `IPaddress:HTTPSPort/studio`
 
-    Par exemple, après avoir lancé un serveur web local sur le port 7080, saisissez cette adresse dans votre navigateur :
+  Par exemple, après avoir lancé un serveur web local sur le port 7080, saisissez cette adresse dans votre navigateur :
 
-    `localhost:7080/studio`
+  `localhost:7080/studio`
 
-    Vous serez ensuite invité à saisir l'[access key](../Admin/webAdmin.md#access-key) pour accéder à Qodly Studio.
+  Vous serez ensuite invité à saisir l'[access key](../Admin/webAdmin.md#access-key) pour accéder à Qodly Studio.
 
 ## Developing with Qodly Studio
 
@@ -194,11 +194,11 @@ Gardez à l'esprit que Qodly Studio fonctionne à travers le serveur web 4D WebA
 
 However, page rendering happens outside Qodly Studio, and is served by the standard 4D web server. Dans cette situation, votre application web ne peut pas accéder aux ressources qui ne sont pas exposées en tant que ressources REST. Voir [Fonctions exposées et non exposées](../ORDA/ordaClasses.md#fonctions-exposees-et-non-exposees) et [Exposer des tables](../REST/configuration.md#exposer-des-tables) pour plus d'informations sur la façon d'exposer des ressources.
 
-### Accessing Qodly pages
+### Accès aux pages Qodly
 
 Pour le déploiement, le serveur WebAdmin n'est pas nécessaire. L'accès des utilisateurs finaux à votre application web créée avec Qodly Studio est basé sur le protocole REST 4D, et en tant que tel, il fonctionne comme une application distante 4D conventionnelle.
 
-Your Qodly pages are available through the following url:
+Vos pages Qodly sont disponibles via l'Url suivante :
 
 ```
 IP:port/$lib/renderer/?w=QodlyPageName
@@ -212,7 +212,7 @@ Par exemple :
 https://www.myWebSite.com/$lib/renderer/?w=welcome
 ```
 
-### Preview Qodly Application
+### Aperçu de l'application Qodly
 
 You can preview your Qodly application at any moment by selecting the **Preview Qodly Application...** command in the **Windows** menu (4D Server) or in the **Design** menu (4D single-user).
 
@@ -226,7 +226,7 @@ Note that in this case, the Qodly Studio debugger will display all the code exec
 
 To attach the Qodly Studio debugger to your running 4D Server application:
 
-1. [Open Qodly Studio](#opening-qodly-studio) from 4D Server.
+1. [Ouvrir Qodly Studio](#opening-qodly-studio) depuis le serveur 4D.
 
 :::note
 
@@ -235,7 +235,7 @@ The project must be running in interpreted mode so that **Qodly Studio** menu it
 :::
 
 2. In the Qodly Studio toolbar, click on the **Debug** button.<br/>
-    ![qodly-debug](../assets/en/WebServer/qodly-debug.png)
+   ![qodly-debug](../assets/en/WebServer/qodly-debug.png)
 
 If the debug session starts successfully, a green bullet appears on the button label ![qodly-debug](../assets/en/WebServer/debug2.png) and you can use the Qodly Studio debugger.
 
@@ -244,7 +244,7 @@ If the debugger is already attached to a another machine or another Qodly Studio
 To detach the Qodly Studio debugger from your running 4D Server application:
 
 1. Click the **Debug** button in the Qodly Studio toolbar while a debug session is active.
-    A warning dialog box will prompt you to confirm whether you want to detach the debugger.
+   A warning dialog box will prompt you to confirm whether you want to detach the debugger.
 2. Select **Keep in progress** to continue evaluating the code until the end of the current method or function before detaching the debugger, or **Stop** to detach the debugger immediately.
 
 ## Force login

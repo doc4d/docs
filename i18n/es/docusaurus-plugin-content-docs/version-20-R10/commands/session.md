@@ -96,7 +96,7 @@ IP:port/4DACTION/action_Session
  End case
 ```
 
-### Ver también
+## Ver también
 
 [Session storage](session-storage.md)\
 [Session API](../API/SessionClass.md)\

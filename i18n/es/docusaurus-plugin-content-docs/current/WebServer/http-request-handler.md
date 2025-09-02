@@ -73,19 +73,19 @@ The handler identifier is the couple [pattern + a verb among the verbs list].
 URL patterns can be given as **prefixes** or using **regular expressions**.
 
 - To declare a prefix pattern, use the "pattern" property name in the HTTPHandlers.json file. Prefixes are considered as regular expressions already containing starting and ending `/`.\
-   Ej: `"pattern": "docs"` o `"pattern": "docs/invoices"`
+  Ej: `"pattern": "docs"` o `"pattern": "docs/invoices"`
 
 - To declare a regular expression pattern, use the "regexPattern" property name in the HTTPHandlers.json file. Los modelos de expresiones regulares se manejan directamente.
-   Ej: `"regexPattern" : "/docs/.+/index\.html"`
+  Ej: `"regexPattern" : "/docs/.+/index\.html"`
 
 "Pattern" and "regexPattern" properties cannot be used in the same handler definition (in this case, only the "regexPattern" property is taken into account).
 
 #### Concordancia de modelos
 
-URL patterns are triggered in the given order:
+Los modelos de URL se activan en el orden indicado:
 
 - se ejecuta el primer modelo coincidente
-- the following patterns are not executed even if they match the URL
+- los siguientes patrones no se ejecutan aunque coincidan con la URL
 
 As a consequence, you need to apply a accurate strategy when writing your handlers: the most detailed patterns must be written before the more general patterns.
 
@@ -278,7 +278,7 @@ El archivo **HTTPHandlers.json**:
 ]
 ```
 
-The called URL is: http://127.0.0.1:8044/putFile?fileName=testFile
+La URL llamada es: http://127.0.0.1:8044/putFile?fileName=testFile
 
 The binary content of the file is put in the body of the request and a POST verb is used. El nombre del archivo se da como parámetro (*fileName*) en la URL. Se recibe en el objeto [`urlQuery`](../API/IncomingMessageClass.md#urlquery) en la petición.
 

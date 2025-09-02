@@ -95,20 +95,20 @@ A página Qodly Studio está disponível quando o [servidor web WebAdmin](../Adm
 Há duas maneiras de acessar Qodly Studio:
 
 - selecionando o comando de menu **Qodly Studio...** do menu **Design** (4D single-user) ou o menu **Window** (servidor 4D).
-    Se o servidor web WebAdmin já estiver rodando, dependendo de sua configuração, seu navegador padrão abre em `IPaddress:HTTPPort/studio` ou `IPaddress:HTTPSPort/studio`. Caso contrário, você será solicitado se quiser iniciar o servidor web WebAdmin primeiro.
+  Se o servidor web WebAdmin já estiver rodando, dependendo de sua configuração, seu navegador padrão abre em `IPaddress:HTTPPort/studio` ou `IPaddress:HTTPSPort/studio`. Caso contrário, você será solicitado se quiser iniciar o servidor web WebAdmin primeiro.
 
 - em um navegador, com o servidor web WebAdmin executando (lançado pelo servidor 4D ou 4D), digite o seguinte endereço:<br/>
-    `IPaddress:HTTPPort/studio`
+  `IPaddress:HTTPPort/studio`
 
-    ou :
+  ou :
 
-    `IPaddress:HTTPSPort/studio`
+  `IPaddress:HTTPSPort/studio`
 
-    Por exemplo, depois de lançar um servidor web local na porta 7080, digite esse endereço no seu navegador:
+  Por exemplo, depois de lançar um servidor web local na porta 7080, digite esse endereço no seu navegador:
 
-    `localhost:7080/studio`
+  `localhost:7080/studio`
 
-    Em seguida, você será solicitado a entrar na [chave de acesso](../Admin/webAdmin.md#access-key) para acessar Qodly Studio.
+  Em seguida, você será solicitado a entrar na [chave de acesso](../Admin/webAdmin.md#access-key) para acessar Qodly Studio.
 
 ## Desenvolver com Qodly Studio
 
@@ -236,7 +236,7 @@ O projeto deve estar sendo executado no modo interpretado para que o item de men
 :::
 
 2. Na barra de ferramentas Qodly Studio, clique no botão **Debug**.<br/>
-    ![qodly-debug](../assets/en/WebServer/qodly-debug.png)
+   ![qodly-debug](../assets/en/WebServer/qodly-debug.png)
 
 Se a sessão de depuração iniciar com sucesso, um marcador verde aparece no rótulo de botão![qodly-debug](../assets/en/WebServer/debug2.png) e você pode usar o depurador de Qodly Studio.
 
@@ -245,7 +245,7 @@ Se o depurador já estiver anexado a outra máquina ou outra página do Qodly St
 Para desanexar o depurador Qodly Studio da sua aplicação 4D Server:
 
 1. Clique no botão **Debug** na barra de ferramentas Qodly Studio enquanto uma sessão de depuração está ativa.
-    Uma caixa de diálogo de aviso solicitará que você confirme se deseja desanexar o depurador.
+   Uma caixa de diálogo de aviso solicitará que você confirme se deseja desanexar o depurador.
 2. Selecione **Manter em progresso** para continuar avaliando o código até o final do método ou função atual antes de desconectar o depurador, ou **Parar** para desanexar o depurador imediatamente.
 
 ## Forçar login
