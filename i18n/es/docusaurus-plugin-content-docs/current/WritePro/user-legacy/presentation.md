@@ -29,3 +29,37 @@ Sin embargo, 4D Write Pro utiliza la misma licencia que 4D Write. Usted necesita
 Este manual es la *Guía de Referencia de 4D Write Pro*. Cubre todas las funcionalidades 4D Write Pro, incluyendo la interfaz de usuario y los comandos de lenguaje.
 
 Tenga en cuenta que los objetos 4D Write Pro pueden ser manejados por comandos de lenguaje dedicados (*Lenguaje 4D Write Pro*)**,** así como también por los comandos de otros temas (*Objetos (Formularios)* y *Texto multiestilo*), documentado en el manual *Lenguaje de 4D.*
+
+## Creación de un área 4D Write Pro
+
+### Uso del objeto de área 4D Write Pro
+
+En 4D, los documentos 4D Write Pro se pueden mostrar y editar manualmente en un objeto formulario 4D, llamado **4D Write Pro**. Este objeto está disponible como parte de la última herramienta (Área de plug-in, área Web, etc.) de la [barra de objetos](../../FormEditor/formEditor.md#object-bar):
+  
+![](../../assets/en/WritePro/pict4101210.es.png)  
+
+Un área de formulario 4D Write Pro form se configura por medio de las propiedades estándar de la Lista de propiedades, tales como **nombre del objeto** y **nombre de la variable**, **coordenadas**, **entrada**, **visualización** y **apariencia**, y/o **eventos**.
+
+![](../../assets/en/WritePro/pict4101242.es.png)  
+
+La propiedad **Nombre de la variable** puede ser utilizada en el lenguaje como una referencia al área 4D Write Pro. Tenga en cuenta que la variable debe ser del tipo [objeto](../../Concepts/dt_object.md).
+
+Las propiedades de «Entrada» gestionan las funciones básicas para la introducción de texto:
+
+* **Editable**: le permite bloquear/desbloquear el área con el fin de permitir o impedir su modificación
+* **Auto revisión ortográfica**: disponible para áreas 4D Write Pro
+* **Menú contextual:** le permite activar/desactivar el menú contextual cuando el formulario se ejecute (ver la sección [Utilizar un área 4D Write Pro](./using-a-4d-write-pro-area.md))
+
+* **Selección siempre visible**: se encarga de la selección de texto como en las áreas de texto estándar.
+
+### Uso de la interfaz 4D Write Pro
+
+Puede crear áreas 4D Write Pro preconfigurada utilizando objetos **4D Write Pro** en la [librería de objetos](../../FormEditor/objectLibrary.md) (tema "Áreas de entrada"):
+
+![](../../assets/en/WritePro/pict4101252.es.png)
+
+Estas áreas vienen con un panel de control o una barra de herramientas para gestionar todos los atributos del área (fuente, color, estilo, etc.):
+
+![](../../assets/en/WritePro/pict3254912.es.png)
+
+Para más información, consulte la sección [Área 4D Write Pro](../writeprointerface.md).

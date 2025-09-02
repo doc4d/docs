@@ -28,4 +28,38 @@ Notez cependant que 4D Write Pro utilise la même licence que 4D Write. Cette li
 
 Ce manuel est le *Guide de référence de 4D Write Pro*. Il décrit toutes les fonctionnalités de 4D Write Pro, y compris l'interface utilisateur et les commandes de langage. 
 
-Notez que les objets 4D Write Pro peuvent être gérés par des commandes de langage dédiées (cf. "*4D Write Pro - Langage*") ainsi que des commandes d'autres thèmes ("*Objets (Formulaires)*" et "*Texte multistyle*"), documentés dans le manuel *Langage* de 4D. 
+Notez que les objets 4D Write Pro peuvent être gérés par des commandes de langage dédiées (cf. "*4D Write Pro - Langage*") ainsi que des commandes d'autres thèmes ("*Objets (Formulaires)*" et "*Texte multistyle*"), documentés dans le manuel *Langage* de 4D.   
+
+
+## Création d'une zone 4D Write Pro
+
+### Utilisation de l'objet zone 4D Write Pro
+
+Dans 4D, les documents 4D Write Pro sont affichés et modifiés manuellement dans un objet de formulaire appelé **4D Write Pro**. Cet objet est sélectionnable dans le dernier groupe d'outils (zone de plug-in, zone Web, etc.) de la [barre d'objets](../../FormEditor/formEditor.md#object-bar) de l'éditeur de formulaires :
+
+![](../../assets/en/WritePro/pict4101210.fr.png)
+
+Une zone de formulaire 4D Write Pro est configurée via les options standard de la Liste des propriétés, telles que **nom** et **nom de** **variable**, **coordonnées**, **saisie**, **affichage**, **apparence** et/ou **événements**.
+
+![](../../assets/en/WritePro/pict4101242.fr.png)
+
+La propriété **Nom de variable** peut être utilisée dans le langage comme référence de la zone 4D Write Pro. Notez bien que cette variable doit être du type [objet](../../Concepts/dt_object.md).
+
+Les propriétés du thème "Saisie" contrôlent les fonctions élémentaires de saisie de texte :
+
+* **Saisissable** : vous permet de verrouiller/déverrouiller la zone afin d'autoriser ou d'interdire la saisie.
+* **Correction orthographique** : disponible pour les zones 4D Write Pro
+* **Menu contextuel** : vous permet d'activer/désactiver le menu contextuel lorsque le formulaire est lancé au moment de l'exécution (voir la section [Utiliser une zone 4D Write Pro](./using-a-4d-write-pro-area.md))
+* **Sélection toujours visible** : contrôle la sélection de texte comme dans les zones de texte standard.
+
+### Utiliser l'interface 4D Write Pro
+
+Il est possible de créer directement des zones 4D Write Pro préconfigurées via des objets **4D Write Pro** de la [Bibliothèque d'objets](../../FormEditor/objectLibrary.md) (thème "Zones de saisie") :
+
+![](../../assets/en/WritePro/pict4101252.fr.png)
+
+Les zone ainsi créées sont automatiquement dotées d'un panneau de contrôle ou d'une barre d'outils permettant de gérer tous les attributs de la zone (polices, couleurs, styles...) :
+
+![](../../assets/en/WritePro/pict3254912.fr.png)
+
+Pour plus d'informations, reportez-vous à la section [Interface 4D Write Pro](../writeprointerface.md).

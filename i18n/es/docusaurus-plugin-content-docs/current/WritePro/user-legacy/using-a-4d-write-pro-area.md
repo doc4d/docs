@@ -5,29 +5,7 @@ displayed_sidebar: docs
 ---
 
 
-#### Menú contextual 
-
-Si la propiedad **Menú contextual** está seleccionada por un área 4D Write Pro (ver *Definir un área 4D Write Pro*), un menú contextual completo está disponible para los usuarios en modo Aplicación:  
-  
-![](../../assets/en/WritePro/pict3071271.EN.png) 
-
-Este menú ofrece acceso a todas las funcionalidades de 4D Write Pro.
-
-#### Seleccionar el modo vista 
-
-Los documentos 4D Write Pro se pueden visualizar en tres modos de vista de página:
-
-* **Borrador**: modo borrador con propiedades básicas
-* **Página** (por defecto): modo "vista imprimir"
-* **Embebido**: modo de vista conveniente para áreas anidadas; no muestra márgenes, pies de página, encabezados, columnas, marcos de página, etc.  
-Este modo también se puede utilizar para producir una salida de vista como Web (si selecciona también la resolución 96 dpi y la opción **HTML WYSIWYG**).
-El modo de visualización de la página se puede configurar mediante el menú emergente de área:
-
-![](../../assets/en/WritePro/pict2878453.es.png)
-
-**Nota:** el modo de visualización de la página no se almacena con el documento.
-
-Para las áreas anidadas en formularios 4D, el modo de visualización también se puede configurar por defecto utilizando la lista de propiedades. En este caso, el modo de visualización se almacena como una propiedad del objeto de formulario 4D Write Pro (para más información, consulte el párrafo *Configurar propiedades Vista*). 
+ 
 
 #### Selección de vista página 
 

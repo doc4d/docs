@@ -31,3 +31,36 @@ No entanto, 4D Write Pro utiliza a mesma licença que 4D Write. Você necessita 
 Este manual é a *Guia de Referência de 4D Write Pro*. Cobre todas as funcionalidades 4D Write Pro, incluindo a interface de usuário e os comandos de linguagem.
 
 Tenha em conta que os objetos 4D Write Pro podem ser manipulados por comandos específicos (*Linguagem 4D Write Pro*), como também pelos comandos de outros temas 4D (*Objetos (Formulários)* e *Texto multi estilo* ), documentado no manual *Linguagem de 4D.*
+
+## Criar uma área do 4D Write Pro
+
+### Usando o objeto de área 4D Write Pro 
+
+Os documentos 4D Write Pro podem mostrar e editar manualmente em um objeto formulário 4D, chamado **4D Write Pro**. Este objeto está disponível como parte da última ferramenta (Área Plug-in, Área Web, etc.) da [barra de objetos](../../FormEditor/formEditor.md#object-bar):
+
+![](../../assets/en/WritePro/pict4101210.pt.png)
+
+Uma área 4D Write Pro form se configura por meio das propriedades estandarte da Lista de propriedades, tais como nome do objeto e nome da variável, coordenadas, entrada, visualização e aparência, e/ou eventos.
+
+![](../../assets/en/WritePro/pict4101242.pt.png)
+
+A propriedade Nome da variável pode ser utilizada na linguagem como uma referência a área 4D Write Pro. Tenha em conta que a variável deve ser do tipo [objeto](../../Concepts/dt_object.md).
+
+As propriedades "Entrada" gerenciam funcionalidades básicas para a introdução de texto:
+
+* **Editável**: lhe permite bloquear/desbloquear a área com o propósito de permitir ou impedir sua modificação
+* **Auto revisão ortográfica**: disponível para áreas 4D Write Pro
+* **Menu contextual**: lhe permite ativar/desativar o menu contextual em modo Aplicação (ver a seção [Utilizar uma área 4D Write Pro](./using-a-4d-write-pro-area.md))
+* **Seleção sempre visível**: se encarrega da seleção de texto como nas áreas de texto estandarte.
+
+### Utilizando a interface 4D Write Pro
+
+Pode criar uma área 4D Write Pro pré-configurada utilizando o objeto **4D Write Pro** que se encontra na [biblioteca de objetos](../../FormEditor/objectLibrary.md) (tema "Áreas de entrada"):
+
+![](../../assets/en/WritePro/pict4101252.pt.png)
+
+Esta área vem com um painel de controle para gerenciar todos os atributos da área (fonte, cor, estilo, etc.):
+
+![](../../assets/en/WritePro/pict3254912.pt.png)
+
+Para saber mais, consulte a seção [Área 4D Write Pro](../writeprointerface.md).

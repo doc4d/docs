@@ -4,30 +4,7 @@ title: Utiliser une zone 4D Write Pro
 displayed_sidebar: docs
 ---
 
-#### Interface utilisateur 
 
-Lorsque la propriété **Menu contextuel** est cochée pour une zone 4D Write Pro (voir *Définir une zone 4D Write Pro*), un menu contextuel complet est disponible pour les utilisateurs lorsque le formulaire est lancé à l'exécution :
-
-![](../../assets/en/WritePro/pict3071271.en.png) 
-
-Ce menu donne accès à l'ensemble des fonctions de 4D Write Pro.
-
-#### Sélectionner le mode d'affichage 
-
-4D Write Pro propose trois modes d'affichage pour les documents :
-
-* Brouillon : Mode brouillon avec des propriétés basiques
-* **Page** (défaut) : Mode "vue impression"
-* Inclus : Mode adapté aux zones incluses dans les formulaires ; dans ce mode, les marges, pieds de page, colonnes, en-têtes, cadres, etc, ne sont pas affichés.  
-Ce mode peut également être utilisé pour obtenir un affichage de type Web (si vous avez également sélectionné la résolution 96 dpi et l'option HTML WYSIWYG).
-
-Le mode d'affichage peut être configuré via le menu contextuel de la zone :
-
-![](../../assets/en/WritePro/pict3071271.fr.png)
-
-**Note :** Le mode d'affichage n'est pas stocké avec le document.
-
-Pour les zones incluses dans les formulaires 4D, le mode d'affichage peut également être défini par défaut à l'aide de la Liste des propriétés. Dans ce cas, le mode d'affichage est une propriété de l'objet de formulaire 4D Write Pro (pour plus d'informations, veuillez vous reporter au paragraphe *Configurer les propriétés d'affichage*).
 
 #### Fonctionnalités de l'affichage en page 
 
