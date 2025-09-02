@@ -615,7 +615,7 @@ This function does nothing in remote client, stored procedure, and standalone se
 
 The `.promote()` function <!-- REF #SessionClass.promote().Summary -->adds the privilege defined in the *privilege* parameter to the current process during the execution of the calling function and returns the id of the promoted privilege<!-- END REF -->.
 
-Dynamically adding privileges is useful when access rights depend on the execution context, which cannot be fully defined in the "roles.json" file. This is particularly relevant when the same function can be executed by users with different access levels.
+Dynamically adding privileges is useful when access rights depend on the execution context, which cannot be fully defined in the "roles.json" file. This is particularly relevant when the same function can be executed by users with different access levels. The use of `.promote()` ensures that only the current process is granted the necessary privileges, without affecting others.
 
 The function does nothing and returns 0 if:
 - the *privilege* does not exist in the [`roles.json`](../ORDA/privileges.md#rolesjson-file) file,
