@@ -178,7 +178,7 @@ This function does nothing in remote client, stored procedure, and standalone se
 
 :::
 
-The `.demote()` function <!-- REF #SessionClass.demote().Summary -->removes the promoted privilege whose id you passed in *promoteId* from the session privileges of the web process, if it was previously added by the [`.promote()`](#promote) function<!-- END REF -->.
+The `.demote()` function <!-- REF #SessionClass.demote().Summary -->removes the promoted privilege whose id you passed in *promoteId* from the web process, if it was previously added by the [`.promote()`](#promote) function<!-- END REF -->.
 
 If no privilege with *promoteId* was promoted using [`.promote()`](#promote) in the web process, the function does nothing. 
 
@@ -615,13 +615,15 @@ This function does nothing in remote client, stored procedure, and standalone se
 
 The `.promote()` function <!-- REF #SessionClass.promote().Summary -->adds the privilege defined in the *privilege* parameter to the current process during the execution of the calling function and returns the id of the promoted privilege<!-- END REF -->.
 
+Dynamically adding privileges is useful when access rights depend on the execution context, which cannot be fully defined in the "roles.json" file. This is particularly relevant when the same function can be executed by users with different access levels.
+
 The function does nothing and returns 0 if:
 - the *privilege* does not exist in the [`roles.json`](../ORDA/privileges.md#rolesjson-file) file,
 - the *privilege* is already assigned to the current process (using `.promote()` or through a static [promote action](../ORDA/privileges.md#permission-actions) declared for the calling function in the [`roles.json`](../ORDA/privileges.md#rolesjson-file) file). 
 
 You can call the `promote()` function several times in the same process to add different privileges.
 
-The returned *id* is incremented each time a privilege is dynamically added to the process.
+The returned id is incremented each time a privilege is dynamically added to the process.
 
 
 To remove a privilege dynamically, call the `demote()` function with the appropriate id. 
