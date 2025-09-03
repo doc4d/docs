@@ -28,6 +28,13 @@ Lea [**Novedades en 4D 21**](https://blog.4d.com/en-whats-new-in-4d-21/), la ent
 - Web user sessions are now returned by [`Process activity`](../commands/process-activity.md).
 - The [`HIGHLIGHT TEXT`](../commands/highlight-text) command is now supported in the context of subforms.
 
+#### Cambios de comportamiento
+
+ - Web services (SOAP): when [scalable sessions](../WebServer/sessions.md#enabling-web-sessions) are enabled, web services now run in [**preemptive processes**](../Develop/preemptive.md) in compiled mode. Make sure your SOAP code is thread-safe.
+ - Web server: the support of deprecated `4DSYNC/` and `4DCGI/` URLs is removed. No specific processing is done on these URLs anymore.
+ - Web user sessions are now returned by [`Process activity`](../commands/process-activity.md).
+
+
 ## 4D 20 R10
 
 Lea las [**Novedades en 4D 20 R10**](https://blog.4d.com/en-whats-new-in-4d-20-R10/), la entrada del blog que muestra todas las nuevas funcionalidades y mejoras en 4D 20 R10.
@@ -55,7 +62,7 @@ Lea las [**Novedades en 4D 20 R10**](https://blog.4d.com/en-whats-new-in-4d-20-R
 - En Windows, las fuentes de impresora actuales destinadas únicamente a la impresión (es decir, no se pueden utilizar en pantalla) ya no son cargadas al inicio por 4D.
 - Se ha eliminado la biblioteca *MeCab*. Este cambio sólo afecta al tratamiento del texto en japonés.
 - Cuando una variable o parámetro objeto se declara con un tipo ["cs" class](../Concepts/classes.md#cs), asignarlo con una instancia de objeto de una clase diferente genera ahora un error de sintaxis.
-- The [`Time`](../commands/time) command now returns a negative time expression when the *timeValue* parameter is negative. For instance, `Time("-01:02:03")` will return **-01:02:03**. In previous releases, the negative sign was ignored.
+- The [`Time`](../commands/time) command now returns a negative time expression when the *timeValue* parameter is negative. Por ejemplo, `Time("-01:02:03")` devolverá **-01:02:03**. In previous releases, the negative sign was ignored.
 
 ## 4D 20 R9
 
