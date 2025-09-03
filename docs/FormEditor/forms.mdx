@@ -100,13 +100,20 @@ A multi-page form has both a background page and several display pages. Objects 
 
 ## WinUI 3 rendering (Developer Preview)
 
-4D supports form rendering using **WinUI 3**, Microsoft’s modern graphical user interface technology. **WinUI 3** is the foundation of the Windows App SDK and represents the future of Windows graphical interfaces. 
+4D supports form rendering using **WinUI 3**, Microsoft's modern graphical user interface technology. **WinUI 3** is the foundation of the Windows App SDK and represents the upcoming Windows graphical interfaces. 
 
 :::caution Developer Preview
 
 WinUI 3 support is currently in the Developer Preview phase. It should not be used in production. 
 
 :::
+
+:::info macOS
+
+This feature can only be used on Windows. On macOS, it is ignored. 
+
+:::
+
 
 ### WinUI 3 rendering availability
 
@@ -144,12 +151,20 @@ Each form can define its own rendering via the **Widget appearance** property. T
 
 ![](../assets/en/FormObjects/winui-form.png)
 
+The corresponding [JSON form property](./properties_JSONref.md) is `winUI` with value undefined (i.e. inherited, default value), "true" or "false".
 
 ### Features and limitations
 
-WinUI 3 rendering offers modern and more attractive controls, support of dark/light system themes, smoother rendering optimized for high-resolution displays, and consistent user experience aligned with recent Microsoft applications.
+WinUI 3 rendering offers modern and attractive controls, support of dark/light system themes, smoother rendering optimized for high-resolution displays, and consistent user experience aligned with recent Microsoft applications.
 
-When designing 4D forms for with WinUI 3, you need to pay attention to the following points:
+
+When using 4D forms with WinUI 3 rendering, you need to pay attention to the following points:
+
+- The `FORM Window theme` command returns the actual display theme of the current form. Possible values: "Classic" or "WinUI". If there is no current form or the command is called on macOS, and empty string is returned. 
+- If [`GET STYLE SHEET INFO`](../commands-legacy/get-style-sheet-info.md) is called in the context of a form, the information returned relates to the current appearance of the form (Classic or WinUI). If the command is called outside the context of a form, the information returned relates to the [global project settings](#application-setting).
+- [`SET MENU ITEM STYLE`](../commands-legacy/set-menu-item-style.md) with `Underline` *itemStyle* parameter is not supported (ignored). 
+- A focus ring can be added to picture and text [inputs](../FormObjects/input_overview.md). 
+
 
 
 
