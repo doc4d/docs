@@ -2436,10 +2436,10 @@ module.exports =
         },
         {
           type: "category",
-          label: "REST API",
+          label: "REST Server",
           link: {
             type: "generated-index",
-            title: "REST API",
+            title: "REST Server",
             description: "Exposing your datastore to REST and using the REST API.",
             keywords: [
               "REST server"

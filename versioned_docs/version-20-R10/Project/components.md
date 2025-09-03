@@ -1,6 +1,6 @@
 ---
 id: components
-title: Components
+title: Dependencies
 ---
 
 A 4D component is a set of 4D code and/or 4D forms representing one or more functionalities that you can add and use in your projects. For example, the [4D SVG](https://github.com/4d/4D-SVG) component adds advanced commands and an integrated rendering engine that can be used to display SVG files.

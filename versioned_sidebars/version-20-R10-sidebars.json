@@ -15,6 +15,18 @@
       "items": [
         "GettingStarted/installation",
         "GettingStarted/creating",
+         {
+                  "type": "category",
+                  "label": "Application Preferences",
+                  "items": [
+                    "Preferences/overview",
+                    "Preferences/general",
+                    "Preferences/structure",
+                    "Preferences/forms",
+                    "Preferences/methods",
+                    "Preferences/shortcuts"
+                  ]
+            },
         "Notes/updates"
       ]
     },
@@ -58,6 +70,13 @@
                 "settings/compatibility"
               ]
         },
+           {
+               "type": "category",
+               "label": "Dababase",
+               "items": [
+                 "Develop/field-properties"
+                ]
+            },
           "code-editor/write-class-method",
           "Project/components",
           "Project/compiler",
@@ -72,25 +91,6 @@
                 "Debugging/debugging-remote",
                 "Debugging/debugLogFiles"
               ]
-            },
-            {
-                  "type": "category",
-                  "label": "Application Preferences",
-                  "items": [
-                    "Preferences/overview",
-                    "Preferences/general",
-                    "Preferences/structure",
-                    "Preferences/forms",
-                    "Preferences/methods",
-                    "Preferences/shortcuts"
-                  ]
-            },
-            {
-               "type": "category",
-               "label": "Dababase",
-               "items": [
-                 "Develop/field-properties"
-                ]
             }
       ] 
     },
@@ -2332,7 +2332,8 @@
         },
         "Develop-legacy/transactions",
           "Tags/transformation-tags",
-          "Project/date-time-formats"
+          "Project/date-time-formats",
+          "Extensions/develop-components"
       ]
     },
     {
@@ -3338,7 +3339,6 @@
           "label": "Build4D",
           "href": "https://github.com/4d-depot/Build4D?tab=readme-ov-file#readme"
       },
-        "Extensions/develop-components",
         "Extensions/develop-plug-ins"
       ]
     },

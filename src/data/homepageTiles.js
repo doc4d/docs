@@ -48,6 +48,9 @@ title: (
         <Link to="GettingStarted/creating" >
           <Translate>Creating or opening a project</Translate>
         </Link>
+         <Link to="Preferences/overview" >
+          <Translate>Preferences</Translate>
+        </Link>
         <Link to="Notes/updates" ><i class="fa-solid fa-pen-to-square" style={{ marginRight: '0.6rem', color: '#6c63ff' }}></i>
           <i><Translate>Release Notes</Translate></i>
         </Link>
@@ -70,6 +73,9 @@ title: (
         <Link to="settings/overview" >
           <Translate>Settings</Translate>
         </Link>
+        <Link to="Develop/field-properties">
+          <Translate>Database</Translate>
+        </Link>
         <Link to="code-editor/write-class-method" >
           <Translate>Code Editor</Translate>
         </Link>
@@ -84,9 +90,6 @@ title: (
         </Link>
         <Link to="Debugging/basics" >
           <Translate>Debugger & logs</Translate>
-        </Link>
-        <Link to="Preferences/overview" >
-          <Translate>Preferences</Translate>
         </Link>
       </div>
     ),
@@ -127,15 +130,16 @@ title: (
   ),
     links: (
       <div className="homepageLinks">
-        <Link to="Develop/field-properties">
-          <Translate>Database</Translate>
-        </Link>
         <Link to="ORDA/overview">
           <Translate>ORDA</Translate>
         </Link>
         <Link to="category/processes">
           <Translate>Processes</Translate>
         </Link>
+         <Link to="Extensions/develop-components">
+          <Translate>Components</Translate>
+        </Link>
+
       </div>
     ),
   },
@@ -193,6 +197,47 @@ title: (
     ),
   },
   {
+    title:(
+    <>
+      <i class="fa-solid fa-user-tie" style={{ marginRight: '0.6rem', color: '#6c63ff' }}></i>
+      <Translate id="homepage.sections.administration.title">
+          Server & Admin
+      </Translate>
+    </>
+  ),
+    links: (
+      <div className="homepageLinks">
+        <Link to="ServerWindow/overview" >
+          <Translate>4D Server Window</Translate>
+        </Link>
+        <Link to="Admin/webAdmin">
+          <Translate>WebAdmin & Data Explorer</Translate>
+        </Link>
+        <Link to="Admin/cli">
+          <Translate>Command Line Interface</Translate>
+        </Link>
+        <Link to="Admin/tls">
+          <Translate>TLS</Translate>
+        </Link>
+        <Link to="Admin/licenses">
+          <Translate>Licenses</Translate>
+        </Link>
+        <Link to="MSC/overview">
+          <Translate>Maintenance and Security Center</Translate>
+        </Link>
+        <Link to="Backup/overview">
+          <Translate>Backup and Restore</Translate>
+        </Link>
+                <Link to="Users/overview">
+          <Translate>Access Rights</Translate>
+        </Link>
+        <Link to="Desktop/user-settings" >
+          <Translate>User Settings</Translate>
+        </Link>
+      </div>
+    ),
+  },
+    {
     title: (
     <>
       <i class="fa-solid fa-puzzle-piece" style={{ marginRight: '0.6rem', color: '#6c63ff' }}></i>
@@ -242,47 +287,7 @@ title: (
       </div>
     ),
   },
-  {
-    title:(
-    <>
-      <i class="fa-solid fa-user-tie" style={{ marginRight: '0.6rem', color: '#6c63ff' }}></i>
-      <Translate id="homepage.sections.administration.title">
-          Server & Admin
-      </Translate>
-    </>
-  ),
-    links: (
-      <div className="homepageLinks">
-        <Link to="ServerWindow/overview" >
-          <Translate>4D Server Window</Translate>
-        </Link>
-        <Link to="Admin/webAdmin">
-          <Translate>WebAdmin & Data Explorer</Translate>
-        </Link>
-        <Link to="Admin/cli">
-          <Translate>Command Line Interface</Translate>
-        </Link>
-        <Link to="Admin/tls">
-          <Translate>TLS</Translate>
-        </Link>
-        <Link to="Admin/licenses">
-          <Translate>Licenses</Translate>
-        </Link>
-        <Link to="MSC/overview">
-          <Translate>Maintenance and Security Center</Translate>
-        </Link>
-        <Link to="Backup/overview">
-          <Translate>Backup and Restore</Translate>
-        </Link>
-                <Link to="Users/overview">
-          <Translate>Access Rights</Translate>
-        </Link>
-        <Link to="Desktop/user-settings" >
-          <Translate>User Settings</Translate>
-        </Link>
-      </div>
-    ),
-  },
+
 ];
 
 export default Sections;
