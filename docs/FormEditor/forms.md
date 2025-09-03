@@ -100,7 +100,7 @@ A multi-page form has both a background page and several display pages. Objects 
 
 ## WinUI 3 rendering (Developer Preview)
 
-4D supports form rendering using **WinUI 3**, Microsoft's modern graphical user interface technology. **WinUI 3** is the foundation of the Windows App SDK and represents the upcoming Windows graphical interfaces. 
+4D supports form rendering using **WinUI 3**, Microsoft's modern graphical user interface technology. **WinUI 3** is the foundation of the Windows App SDK and represents the upcoming Windows graphical interfaces.
 
 :::caution Developer Preview
 
@@ -162,11 +162,11 @@ When using 4D forms with WinUI 3 rendering, you need to pay attention to the fol
 
 - The `FORM Window theme` command returns the actual display theme of the current form. Possible values: "Classic" or "WinUI". If there is no current form or the command is called on macOS, and empty string is returned. 
 - If [`GET STYLE SHEET INFO`](../commands-legacy/get-style-sheet-info.md) is called in the context of a form, the information returned relates to the current appearance of the form (Classic or WinUI). If the command is called outside the context of a form, the information returned relates to the [global project settings](#application-setting).
-- [`SET MENU ITEM STYLE`](../commands-legacy/set-menu-item-style.md) with `Underline` *itemStyle* parameter is not supported (ignored). 
+- [`SET MENU ITEM STYLE`](../commands-legacy/set-menu-item-style.md) with `Underline` *itemStyle* parameter is not supported (ignored) for pop up menus. 
 - A focus ring can be added to picture and text [inputs](../FormObjects/input_overview.md). 
-
-
-
+- [Stepper](../FormObjects/stepper.md) form object does not support [double-click event](../Events/onDoubleClicked.md).  
+- [Circle buttons](../FormObjects/button_overview.md#circle) are supported (similar as macOS).
+- The [`WA ZOOM IN`](../commands-legacy/wa-zoom-in.md) / [`WA ZOOM OUT`](../commands-legacy/wa-zoom-out.md) commands are not supported in Web areas with system rendering engine. 
 
 
 

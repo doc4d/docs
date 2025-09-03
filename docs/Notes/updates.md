@@ -16,6 +16,11 @@ Read [**What’s new in 4D 21**](https://blog.4d.com/en-whats-new-in-4d-21/), th
 	- New "trim" commands to remove leading and trailing spaces from a string: [`Trim`](../commands/trim.md), [`Trim start`](../commands/trim-start.md), and [`Trim end`](../commands/trim-end.md).  
 	- [`Num`](../commands/num.md) and [`String`](../commands/string.md) commands have been updated to support conversions in different bases (radix).
 
+#### Developer Preview
+
+[**WinUI** rendering for 4D forms](../FormEditor/forms.md#winui-3-rendering-developer-preview) is proposed in Developer Preview during the beta test program. 
+
+
 #### Behavior changes
 
 :::caution Index rebuild
