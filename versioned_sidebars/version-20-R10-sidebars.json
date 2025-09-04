@@ -2332,8 +2332,7 @@
         },
         "Develop-legacy/transactions",
           "Tags/transformation-tags",
-          "Project/date-time-formats",
-          "Extensions/develop-components"
+          "Project/date-time-formats"
       ]
     },
     {
@@ -2836,10 +2835,27 @@
       "type": "category",
       "label": "Extensions",
       "link": {
-        "type": "doc",
-        "id": "Extensions/overview"
+        "type": "generated-index",
+            "title": "Extensions",
+            "slug": "/category/extensions",
+            "keywords": [
+              "component, extension, plug-in"
+            ],
+            "image": "/img/docusaurus.png"
       },
       "items": [
+            {
+            "type": "category",
+            "label": "Extending 4D applications",
+            "link": {
+              "type": "doc",
+              "id": "Extensions/overview"
+            },
+            "items": [
+                  "Extensions/develop-components",
+                  "Extensions/develop-plug-ins"
+                                ]
+        },
         {
           "type": "category",
           "label": "4D View Pro",
