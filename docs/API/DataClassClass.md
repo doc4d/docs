@@ -1178,7 +1178,7 @@ $es:=ds.Movie.query("roles.actor.lastName = :1 AND roles.actor{2}.lastName = :2"
 
 ### Query by vector similarity
 
-If *attributePath* designates an attribute storing [**vector objects**](../API/VectorClass.md) (see how to [configure a 4D field to only store 4D.Vector class objects](../Develop/field-properties.md#class)), you can build queries to find entities based on embeddings rather than keywords. This technology is designed for Artificial Intelligence (AI) workloads and allows you to query data based on semantics, rather than keywords.
+If *attributePath* designates an attribute storing [**vector objects**](../API/VectorClass.md) (see how to [configure a 4D field to store 4D.Vector class objects](../Develop/field-properties.md#class)), you can build queries to find entities based on **embeddings** rather than keywords. This technology is designed for Artificial Intelligence (AI) workloads and allows you to query data based on semantics, rather than keywords.
 
 In this case, the *value* parameter must be a **comparison vector object** containing the following properties:
 
@@ -1201,13 +1201,19 @@ For example, you want to return entities of MyClass where the similarity with a 
 
 ```4d
 var $myVector : 4D.Vector
-$myVector := getVector //get a vector, e.g. from 4D.AIKit
+$myVector := getVector //method to get a vector, e.g. from 4D.AIKit
 var $comparisonVector := {vector: $myVector; metric: mk euclidean; threshold: 1.2}
 var $results := ds.MyClass.query("myVectorField <= :1"; $comparisonVector)
 ```
 
 See [more examples below](#example-4-2) (examples 4 and 5). 
 
+:::tip Related blog posts
+
+- [4D AI: Searching Entities by Vector Similarity in 4D](https://blog.4d.com/4d-ai-searching-entities-by-vector-similarity-in-4d)
+- [Why Your Search Stack Feels Broken — and How Vector Search Fixes It](https://blog.4d.com/why-your-search-stack-feels-broken-and-how-vector-search-fixes-it)
+
+:::
 
 ### formula parameter
 
@@ -1562,13 +1568,13 @@ We want to disallow formulas, for example when the user enters their query:
 
 #### Example 4
 
-This example illustrates the various syntaxes supported for vector similarity searches:
+This example illustrates the various syntaxes supported for vector similarity searches. It uses [4D-AIKit](../aikit/overview.md):
 
 ```4d
 
 var $client:=cs.AIKit.OpenAI.new("my api key")
 var $result:=$client.embeddings.create("my long text to search"; "text-embedding-ada-002")
-var $vector:=$result.embeddings.vector
+var $vector:=$result.vector
 
   //embedding attribute is based upon a 4D field storing 4D.Vector class objects
   //search with default metric (cosine)
