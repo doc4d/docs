@@ -113,9 +113,11 @@ title: (
         <Link to="category/commands">
           <Translate>Commands by theme</Translate>
         </Link>
-
-        <Link to="category/class-API-reference" >
+       <Link to="category/class-API-reference" >
           <Translate>Classes</Translate>
+        </Link>
+        <Link to="category/database-methods">
+          <Translate>Database Methods</Translate>
         </Link>
       </div>
     ),
@@ -136,10 +138,6 @@ title: (
         <Link to="category/processes">
           <Translate>Processes</Translate>
         </Link>
-         <Link to="Extensions/develop-components">
-          <Translate>Components</Translate>
-        </Link>
-
       </div>
     ),
   },
@@ -251,7 +249,7 @@ title: (
         <Link to="Extensions/overview">
           <Translate>Extending 4D applications</Translate>
         </Link>
-        <Link to="https://developer.qodly.com/docs">
+        <Link to="https://doc4d.github.io/docQodlyPro">
           <Translate>4D Qodly Pro</Translate> <i class="fa-solid fa-up-right-from-square"></i>
         </Link>
         <Link to="ViewPro/getting-started">
