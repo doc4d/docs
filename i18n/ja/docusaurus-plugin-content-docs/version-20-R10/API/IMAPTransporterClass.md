@@ -74,15 +74,15 @@ IMAP Transporter オブジェクトは [IMP New transporter](../commands/imap-ne
 
 </details>
 
-<!-- REF #IMAPTransporterClass.addFlags().Syntax -->**.addFlags**( *msgIDs* : Collection ; *keywords* :  Object ) : Object<br/>**.addFlags**( *msgIDs* : Text ; *keywords* :  Object ) : Object<br/>**.addFlags**( *msgIDs* : Longint  ; *keywords* :  Object ) : Object<!-- END REF -->
+<!-- REF #IMAPTransporterClass.addFlags().Syntax -->**.addFlags**( *msgIDs* : any ; *keywords* :  Object ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.addFlags().Params -->
 
-| 引数       | 型          |                             | 説明                                                                                                                                                                                            |
-| -------- | ---------- | :-------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| msgIDs   | Collection |              ->             | 文字列のコレクション: メッセージの固有ID (テキスト型)<br/>&#xA;テキスト: メッセージの固有ID<br/>&#xA;倍長整数 (IMAP all): 選択されたメールボックス内の全メッセージ |
-| keywords | Object     |              ->             | 追加するキーワードフラグ                                                                                                                                                                                  |
-| 戻り値      | Object     | <- | addFlags処理のステータス                                                                                                                                                                              |
+| 引数       | 型      |                             | 説明                                                                                                                                                                                            |
+| -------- | ------ | :-------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| msgIDs   | any    |              ->             | 文字列のコレクション: メッセージの固有ID (テキスト型)<br/>&#xA;テキスト: メッセージの固有ID<br/>&#xA;倍長整数 (IMAP all): 選択されたメールボックス内の全メッセージ |
+| keywords | Object |              ->             | 追加するキーワードフラグ                                                                                                                                                                                  |
+| 戻り値      | Object | <- | addFlags処理のステータス                                                                                                                                                                              |
 
 <!-- END REF -->
 
@@ -245,7 +245,7 @@ $status:=$imap.append($msg; "Drafts")
 
 <!-- INCLUDE transporter.checkConnection().Desc -->
 
-<!-- REF #IMAPTransporterClass.checkConnectionDelay.Desc -->
+<!-- REF IMAPTransporterClass.checkConnectionDelay.Desc -->
 
 ## .checkConnectionDelay
 
@@ -652,7 +652,7 @@ End if
 
 #### 説明
 
-The `.expunge()` function <!-- REF #IMAPTransporterClass.expunge().Summary -->removes all messages with the "deleted" flag from the IMAP mail server.<!-- END REF --> The "deleted" flag can be set with the [`.delete()`](#delete) or [`.addFlags()`](#addflags) methods.
+`.expunge()` 関数は <!-- REF #IMAPTransporterClass.expunge().Summary -->IMAPメールサーバーから "deleted "フラグのついたメッセー ジをすべて削除します。<!-- END REF --> "deleted" フラグは[`.delete()`](#delete) または [`.addFlags()`](#addflags) 関数によって設定可能です。
 
 **返されるオブジェクト**
 
@@ -1320,15 +1320,15 @@ ID = 1のメッセージを取得します:
 
 </details>
 
-<!-- REF #IMAPTransporterClass.removeFlags().Syntax -->**.removeFlags**( *msgIDs* : Collection ; *keywords* :  Object ) : Object<br/>**.removeFlags**( *msgIDs* : Text ; *keywords* :  Object ) : Object<br/>**.removeFlags**( *msgIDs* : Longint ; *keywords* :  Object ) : Object<!-- END REF -->
+<!-- REF #IMAPTransporterClass.removeFlags().Syntax -->**.removeFlags**( *msgIDs* : any ; *keywords* :  Object ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.removeFlags().Params -->
 
-| 引数       | 型          |                             | 説明                                                                                                                                                                                            |
-| -------- | ---------- | :-------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| msgIDs   | Collection |              ->             | 文字列のコレクション: メッセージの固有ID (テキスト型)<br/>&#xA;テキスト: メッセージの固有ID<br/>&#xA;倍長整数 (IMAP all): 選択されたメールボックス内の全メッセージ |
-| keywords | Object     |              ->             | 削除するキーワードフラグ                                                                                                                                                                                  |
-| 戻り値      | Object     | <- | removeFlags処理のステータス                                                                                                                                                                           |
+| 引数       | 型      |                             | 説明                                                                                                                                                                                            |
+| -------- | ------ | :-------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| msgIDs   | any    |              ->             | 文字列のコレクション: メッセージの固有ID (テキスト型)<br/>&#xA;テキスト: メッセージの固有ID<br/>&#xA;倍長整数 (IMAP all): 選択されたメールボックス内の全メッセージ |
+| keywords | Object |              ->             | 削除するキーワードフラグ                                                                                                                                                                                  |
+| 戻り値      | Object | <- | removeFlags処理のステータス                                                                                                                                                                           |
 
 <!-- END REF -->
 

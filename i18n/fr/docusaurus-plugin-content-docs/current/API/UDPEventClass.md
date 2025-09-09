@@ -19,14 +19,26 @@ Un objet `UDPEvent` est immuable et non-streamable.
 
 Les propriétés suivantes sont disponibles :
 
-|                                                                                             |
-| ------------------------------------------------------------------------------------------- |
-| [<!-- INCLUDE #UDPEvent.data.Syntax -->](#data)<br/><!-- INCLUDE #UDPEvent.data.Summary --> |
-| [<!-- INCLUDE #UDPEvent.ip.Syntax -->](#ip)<br/><!-- INCLUDE #UDPEvent.ip.Summary -->       |
-| [<!-- INCLUDE #UDPEvent.port.Syntax -->](#port)<br/><!-- INCLUDE #UDPEvent.port.Summary --> |
-| [<!-- INCLUDE #UDPEvent.type.Syntax -->](#type)<br/><!-- INCLUDE #UDPEvent.type.Summary --> |
+|                                                                                                      |
+| ---------------------------------------------------------------------------------------------------- |
+| [<!-- INCLUDE #UDPEvent.address.Syntax -->](#address)<br/><!-- INCLUDE #UDPEvent.address.Summary --> |
+| [<!-- INCLUDE #UDPEvent.data.Syntax -->](#data)<br/><!-- INCLUDE #UDPEvent.data.Summary -->          |
+| [<!-- INCLUDE #UDPEvent.port.Syntax -->](#port)<br/><!-- INCLUDE #UDPEvent.port.Summary -->          |
+| [<!-- INCLUDE #UDPEvent.type.Syntax -->](#type)<br/><!-- INCLUDE #UDPEvent.type.Summary -->          |
 
-<!-- REF #UDPEvent.data.Desc -->
+<!-- REF UDPEvent.address.Desc -->
+
+## .adresse
+
+<!-- REF #UDPEvent.address.Syntax -->**address** : Text<!-- END REF -->
+
+#### Description
+
+La propriété `.address` contient <!-- REF #UDPEvent.address.Summary -->l'adresse IP de la machine distante<!-- END REF -->.
+
+<!-- END REF -->
+
+<!-- REF UDPEvent.data.Desc -->
 
 ## .data
 
@@ -38,19 +50,7 @@ La propriété `.data` contient <!-- REF #UDPEvent.data.Summary -->les données 
 
 <!-- END REF -->
 
-<!-- REF #UDPEvent.ip.Desc -->
-
-## .ip
-
-<!-- REF #UDPEvent.ip.Syntax -->**ip** : Text<!-- END REF -->
-
-#### Description
-
-La propriété `.ip` contient <!-- REF #UDPEvent.ip.Summary -->l'adresse IP de la machine distante<!-- END REF -->.
-
-<!-- END REF -->
-
-<!-- REF #UDPEvent.port.Desc -->
+<!-- REF UDPEvent.port.Desc -->
 
 ## .port
 
@@ -62,7 +62,7 @@ La propriété `.port` contient <!-- REF #UDPEvent.port.Summary -->le numéro de
 
 <!-- END REF -->
 
-<!-- REF #UDPEvent.type.Desc -->
+<!-- REF UDPEvent.type.Desc -->
 
 ## .type
 

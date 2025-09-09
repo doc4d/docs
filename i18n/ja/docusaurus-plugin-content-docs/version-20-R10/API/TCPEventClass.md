@@ -7,10 +7,10 @@ title: TCPEvent
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                     |
-| ----- | ---------------------- |
-| 20 R9 | 新しい `ip` および `port` 属性 |
-| 20 R8 | クラスを追加                 |
+| リリース  | 内容                                  |
+| ----- | ----------------------------------- |
+| 20 R9 | New `address` and `port` attributes |
+| 20 R8 | クラスを追加                              |
 
 </details>
 
@@ -20,14 +20,26 @@ title: TCPEvent
 
 次のプロパティを利用することができます:
 
-|                                                                                             |
-| ------------------------------------------------------------------------------------------- |
-| [<!-- INCLUDE #TCPEvent.data.Syntax -->](#data)<br/><!-- INCLUDE #TCPEvent.data.Summary --> |
-| [<!-- INCLUDE #TCPEvent.ip.Syntax -->](#ip)<br/><!-- INCLUDE #TCPEvent.ip.Summary -->       |
-| [<!-- INCLUDE #TCPEvent.port.Syntax -->](#port)<br/><!-- INCLUDE #TCPEvent.port.Summary --> |
-| [<!-- INCLUDE #TCPEvent.type.Syntax -->](#type)<br/><!-- INCLUDE #TCPEvent.type.Summary --> |
+|                                                                                                      |
+| ---------------------------------------------------------------------------------------------------- |
+| [<!-- INCLUDE #TCPEvent.address.Syntax -->](#address)<br/><!-- INCLUDE #TCPEvent.address.Summary --> |
+| [<!-- INCLUDE #TCPEvent.data.Syntax -->](#data)<br/><!-- INCLUDE #TCPEvent.data.Summary -->          |
+| [<!-- INCLUDE #TCPEvent.port.Syntax -->](#port)<br/><!-- INCLUDE #TCPEvent.port.Summary -->          |
+| [<!-- INCLUDE #TCPEvent.type.Syntax -->](#type)<br/><!-- INCLUDE #TCPEvent.type.Summary -->          |
 
-<!-- REF #TCPEvent.data.Desc -->
+<!-- REF TCPEvent.address.Desc -->
+
+## .address
+
+<!-- REF #TCPEvent.address.Syntax -->**address** : Text<!-- END REF -->
+
+#### 説明
+
+The `.address` property contains <!-- REF #TCPEvent.address.Summary -->the IP address of the remote machine<!-- END REF -->.
+
+<!-- END REF -->
+
+<!-- REF TCPEvent.data.Desc -->
 
 ## .data
 
@@ -45,19 +57,7 @@ title: TCPEvent
 
 <!-- END REF -->
 
-<!-- REF #TCPEvent.ip.Desc -->
-
-## .ip
-
-<!-- REF #TCPEvent.ip.Syntax -->**ip** : Text<!-- END REF -->
-
-#### 説明
-
-`.ip` プロパティには、<!-- REF #TCPEvent.ip.Summary -->リモートマシンのIP アドレス<!-- END REF -->が格納されています。
-
-<!-- END REF -->
-
-<!-- REF #TCPEvent.port.Desc -->
+<!-- REF TCPEvent.port.Desc -->
 
 ## .port
 
@@ -69,7 +69,7 @@ title: TCPEvent
 
 <!-- END REF -->
 
-<!-- REF #TCPEvent.type.Desc -->
+<!-- REF TCPEvent.type.Desc -->
 
 ## .type
 

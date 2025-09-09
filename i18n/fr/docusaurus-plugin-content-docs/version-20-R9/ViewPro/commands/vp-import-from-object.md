@@ -5,9 +5,9 @@ title: VP IMPORT FROM OBJECT
 
 <details><summary>Historique</summary>
 
-| Release | Modifications                   |
-| ------- | ------------------------------- |
-| 20 R9   | Support of *paramObj* parameter |
+| Release | Modifications                           |
+| ------- | --------------------------------------- |
+| 20 R9   | Prise en charge du paramètre *paramObj* |
 
 </details>
 
@@ -17,11 +17,11 @@ title: VP IMPORT FROM OBJECT
 
 <!-- REF #_method_.VP IMPORT FROM OBJECT.Params -->
 
-| Paramètres | Type   |    | Description                                  |
-| ---------- | ------ | -- | -------------------------------------------- |
-| vpAreaName | Text   | -> | Nom d'objet formulaire zone 4D View Pro      |
-| viewPro    | Object | -> | Objet 4D View Pro                            |
-| paramObj   | Object | -> | (Optional) import options |
+| Paramètres | Type   |    | Description                                           |
+| ---------- | ------ | -- | ----------------------------------------------------- |
+| vpAreaName | Text   | -> | Nom d'objet formulaire zone 4D View Pro               |
+| viewPro    | Object | -> | Objet 4D View Pro                                     |
+| paramObj   | Object | -> | (Facultatif) options d'importation |
 
 <!-- END REF -->
 
@@ -35,23 +35,23 @@ Dans *viewPro*, passez un objet 4D View Pro valide. Cet objet peut avoir été c
 
 Une erreur est retournée si l'objet *viewPro* est invalide.
 
-In *paramObj*, you can pass the following property:
+Dans *paramObj*, vous pouvez passer la propriété suivante :
 
-| Propriété | Type                        | Description                                                                                                                                                                                                                                                                                 |
-| --------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| formula   | 4D.Function | (Optional) Callback function to be executed when the object is loaded and all 4D custom functions have responded. See [Passing a callback method (formula)](vp-export-document.md#passing-a-callback-method-formula). |
+| Propriété | Type                        | Description                                                                                                                                                                                                                                                                                               |
+| --------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| formula   | 4D.Function | (Facultatif) Fonction callback à exécuter lorsque l'objet est chargé et que toutes les fonctions personnalisées 4D ont répondu. See [Passing a callback method (formula)](vp-export-document.md#passing-a-callback-method-formula). |
 
 Les paramètres suivants peuvent être utilisés dans la méthode de rappel :
 
-| Paramètres |                               | Type    | Description                                                |
-| ---------- | ----------------------------- | ------- | ---------------------------------------------------------- |
-| param1     |                               | Text    | Nom de l'objet 4D View Pro                                 |
-| param2     |                               | Text    | Reserved for compatibility, this parameter is always empty |
-| param3     |                               | Object  | Une référence au paramètre *paramObj* de la commande       |
-| param4     |                               | Object  | Objet retourné par la méthode avec un message de statut    |
-|            | .success      | Boolean | `True` if import was successful, `False` otherwise         |
-|            | .errorCode    | Integer | Code d'erreur                                              |
-|            | .errorMessage | Text    | Message d'erreur                                           |
+| Paramètres |                               | Type    | Description                                                               |
+| ---------- | ----------------------------- | ------- | ------------------------------------------------------------------------- |
+| param1     |                               | Text    | Nom de l'objet 4D View Pro                                                |
+| param2     |                               | Text    | Réservé pour des raisons de compatibilité, ce paramètre est toujours vide |
+| param3     |                               | Object  | Une référence au paramètre *paramObj* de la commande                      |
+| param4     |                               | Object  | Objet retourné par la méthode avec un message de statut                   |
+|            | .success      | Boolean | `True` si l'importation a réussi, `False` sinon                           |
+|            | .errorCode    | Integer | Code d'erreur                                                             |
+|            | .errorMessage | Text    | Message d'erreur                                                          |
 
 :::note
 
@@ -61,7 +61,7 @@ The callback function specified in the `formula` attribute is triggered after al
 
 ## Exemple
 
-You want to import a spreadsheet that was previously saved in an object field, and trigger a callback function after all 4D custom functions have responded:
+Vous voulez importer une feuille de calcul qui a été précédemment enregistrée dans un champ d'objet, et déclencher une fonction de callback après que toutes les fonctions personnalisées 4D ont répondu:
 
 ```4d
 QUERY([VPWorkBooks];[VPWorkBooks]ID=10)
@@ -70,9 +70,9 @@ VP IMPORT FROM OBJECT("ViewProArea1"; [VPWorkBooks]SPBook; {formula: Formula(onI
 ```
 
 ```4d
-// Method 'onImportComplete'
-#DECLARE($name : Text; $path : Text; $paramObj : Object; $status : Object)
-   ALERT("The document has been imported, and all custom functions have finished processing.")
+// Méthode 'onImportComplete'
+#DECLARE($name : Text ; $path : Text ; $paramObj : Object ; $status : Object)
+   ALERT("Le document a été importé et toutes les fonctions personnalisées ont terminé leur traitement.")
 ```
 
 ## Voir également

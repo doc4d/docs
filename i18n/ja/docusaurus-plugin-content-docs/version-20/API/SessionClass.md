@@ -73,13 +73,13 @@ IP:port/4DACTION/action_Session
   //action_Session メソッド
  Case of
     :(Session#Null)
-       If(Session.hasPrivilege("WebAdmin")) // hasPrivilege 関数を呼び出します
-          WEB SEND TEXT("4DACTION --> セッションは WebAdmin です")
+       If(Session.hasPrivilege("WebAdmin")) //"WebAdmin" アクセス権がセッションに紐づいているかを確認
+          WEB SEND TEXT("4DACTION --> WebAdminアクセス権がセッションに付与されている")
        Else
-          WEB SEND TEXT("4DACTION --> セッションは WebAdmin ではありません")
+          WEB SEND TEXT("4DACTION --> WebAdminアクセス権がセッションに付与されていない")
        End if
     Else
-       WEB SEND TEXT("4DACTION --> セッションは null です")
+       WEB SEND TEXT("4DACTION --> セッションはnullである")
  End case
 ```
 

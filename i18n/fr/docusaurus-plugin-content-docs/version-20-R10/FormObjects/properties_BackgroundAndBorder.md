@@ -188,7 +188,7 @@ Désigne l'épaisseur d'une ligne.
 
 ## Tableau couleurs de fond
 
-`Array type list boxes`
+`List box de type tableau`
 
 Le nom d'un tableau pour appliquer une couleur d'arrière-plan personnalisée à chaque ligne ou colonne de la list box.
 
@@ -228,7 +228,7 @@ You can get the same result using the [`LISTBOX SET ROW FONT STYLE`](../commands
 
 #### Commandes
 
-[`LISTBOX Get array`](../commands-legacy/listbox-get-array.md) - [`LISTBOX GET ARRAYS`](../commands-legacy/listbox-get-arrays.md) - [`LISTBOX SET ARRAYS`](../commands-legacy/listbox-set-arrays.md)
+[`LISTBOX Get array`](../commands-legacy/listbox-get-array.md) - [`LISTBOX GET ARRAYS`](../commands-legacy/listbox-get-arrays.md)
 
 ---
 

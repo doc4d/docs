@@ -26,7 +26,7 @@ displayed_sidebar: docs
 
 ## Description
 
-<!--REF #_command_.Process activity.Summary-->The **Process activity** command returns a snapshot of running processes and/or (4D Server only) connected user sessions at a given time.La commande **Process activity** retourne une vue instantanée des pocess en cours d'exécution et/ou (4D Server uniquement) de sessions utilisateur connectées à un moment donné.<!-- END REF--> Cette commande retourne tous les process, y compris les process internes qui ne sont pas accessibles à la commande [Process info](process-info.md). 
+<!--REF #_command_.Process activity.Summary-->La commande **Process activity** retourne une vue instantanée des process en cours d'exécution et/ou (4D Server uniquement) de sessions utilisateur à un moment donné.<!-- END REF--> Cette commande retourne tous les process, y compris les process internes qui ne sont pas accessibles à la commande [Process info](process-info.md). 
 
 Par défaut, lorsqu'elle est utilisée sans aucun paramètre, **Process activity** renvoie un objet contenant les propriétés suivantes :
 
@@ -107,5 +107,7 @@ Vous souhaitez obtenir tous les process liés à la session courante :
 
 ## Voir également
 
-[Session storage](session-storage.md)\
-[WEB Get server info](../commands-legacy/web-get-server-info.md)
+[`Process info`](process-info.md)\
+[`Session info`](session-info.md)\
+[`Session storage`](session-storage.md)\
+[`WEB Get server info`](../commands-legacy/web-get-server-info.md)

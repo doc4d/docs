@@ -17,6 +17,15 @@ title: リリースノート
 
 - [**修正リスト**](https://bugs.4d.com/fixes?version=20.7): 4D 20.7 LTS で修正されたバグのリストです ([日本語版はこちら](https://4d-jp.github.io/2024/276/release-note-version-20/))。
 
+:::caution 4D Server 20.7 以降の最小クライアントバージョンについて
+
+内部的な理由により、4D 20.7 以降の 4D Server に接続するリモートクライアントのバージョンは、4D 20.7 以上でなければなりません。
+
+:::
+
+#### 動作の変更
+
+- As of 4D **20.7 HF2**, the [`Time`](https://doc.4d.com/4dv20/help/command/en/page179.html) command returns a negative time expression when the *timeValue* parameter is negative. For instance, `Time("-01:02:03")` will now return -01:02:03. In previous releases, the negative sign was ignored.
 
 
 ## 4D 20.6 LTS
@@ -25,7 +34,7 @@ title: リリースノート
 
 :::info 評価版アプリケーション
 
-ナイトリービルド**101734**以降、アプリケーションビルド画面には評価版アプリケーションをビルドするための新しいオプションが表示されるようになりました。 詳細は[4D Rx ドキュメンテーションの説明](../../../docs/Desktop/building.md#evaluation-application)を参照してください。
+ナイトリービルド**101734**以降、アプリケーションビルド画面には評価版アプリケーションをビルドするための新しいオプションが表示されるようになりました。 詳細は[4D Rx ドキュメンテーションの説明](../../../docs/Desktop/building#evaluation-application)を参照してください。
 
 :::
 

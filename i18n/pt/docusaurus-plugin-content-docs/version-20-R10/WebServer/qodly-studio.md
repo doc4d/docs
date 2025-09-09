@@ -95,20 +95,20 @@ A página Qodly Studio está disponível quando o [servidor web WebAdmin](../Adm
 Há duas maneiras de acessar Qodly Studio:
 
 - by selecting the **Qodly Studio...** menu command from the **Design** menu (4D single-user) or the **Window** menu (4D Server).
-    If the WebAdmin web server is already running, depending on its configuration, your default browser opens at `IPaddress:HTTPPort/studio` or `IPaddress:HTTPSPort/studio`. Otherwise, you will be prompted if you want to start the WebAdmin web server first.
+  If the WebAdmin web server is already running, depending on its configuration, your default browser opens at `IPaddress:HTTPPort/studio` or `IPaddress:HTTPSPort/studio`. Otherwise, you will be prompted if you want to start the WebAdmin web server first.
 
 - on a browser, with the WebAdmin web server running (launched from 4D or 4D Server), enter the following address:<br/>
-    `IPaddress:HTTPPort/studio`
+  `IPaddress:HTTPPort/studio`
 
-    ou :
+  ou :
 
-    `IPaddress:HTTPSPort/studio`
+  `IPaddress:HTTPSPort/studio`
 
-    For example, after launching a local web server on port 7080, type this address in your browser:
+  For example, after launching a local web server on port 7080, type this address in your browser:
 
-    `localhost:7080/studio`
+  `localhost:7080/studio`
 
-    Em seguida, você será solicitado a entrar na [chave de acesso](../Admin/webAdmin.md#access-key) para acessar Qodly Studio.
+  Em seguida, você será solicitado a entrar na [chave de acesso](../Admin/webAdmin.md#access-key) para acessar Qodly Studio.
 
 ## Developing with Qodly Studio
 
@@ -237,7 +237,7 @@ O projeto deve estar sendo executado no modo interpretado para que o item de men
 :::
 
 2. Na barra de ferramentas Qodly Studio, clique no botão **Debug**.<br/>
-    ![qodly-debug](../assets/en/WebServer/qodly-debug.png)
+   ![qodly-debug](../assets/en/WebServer/qodly-debug.png)
 
 If the debug session starts successfully, a green bullet appears on the button label ![qodly-debug](../assets/en/WebServer/debug2.png) and you can use the Qodly Studio debugger.
 
@@ -246,7 +246,7 @@ If the debugger is already attached to a another machine or another Qodly Studio
 To detach the Qodly Studio debugger from your running 4D Server application:
 
 1. Clique no botão **Debug** na barra de ferramentas Qodly Studio enquanto uma sessão de depuração está ativa.
-    A warning dialog box will prompt you to confirm whether you want to detach the debugger.
+   A warning dialog box will prompt you to confirm whether you want to detach the debugger.
 2. Select **Keep in progress** to continue evaluating the code until the end of the current method or function before detaching the debugger, or **Stop** to detach the debugger immediately.
 
 ## Force login

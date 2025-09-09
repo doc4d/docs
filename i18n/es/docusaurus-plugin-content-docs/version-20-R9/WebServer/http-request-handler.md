@@ -3,7 +3,7 @@ id: http-request-handler
 title: HTTP Request handler
 ---
 
-By default, HTTP requests received by the 4D web server are handled through [built-in processing features](httpRequests.md) or the [REST server](../REST/REST_requests.md).
+Por defecto, las peticiones HTTP recibidas por el servidor web 4D se gestionan a través de [funciones de procesamiento integradas](httpRequests.md) o del [servidor REST](../REST/REST_requests.md).
 
 In addition, 4D supports the implementation of **custom HTTP Request handlers**, allowing you to intercept specific incoming HTTP requests and process them using your own code.
 
@@ -36,7 +36,7 @@ This file contains all listened URL patterns, the handled verbs, and the code to
 
 At runtime, the first pattern matching the URL is executed, the others are ignored.
 
-Here is an example of a *HTTPHandlers.json* file contents:
+Este es un ejemplo del contenido de un archivo *HTTPHandlers.json*:
 
 ```json
 
@@ -73,19 +73,19 @@ The handler identifier is the couple [pattern + a verb among the verbs list].
 URL patterns can be given as **prefixes** or using **regular expressions**.
 
 - To declare a prefix pattern, use the "pattern" property name in the HTTPHandlers.json file. Prefixes are considered as regular expressions already containing starting and ending `/`.\
-   Ej: `"pattern": "docs"` o `"pattern": "docs/invoices"`
+  Ej: `"pattern": "docs"` o `"pattern": "docs/invoices"`
 
 - To declare a regular expression pattern, use the "regexPattern" property name in the HTTPHandlers.json file. Los modelos de expresiones regulares se manejan directamente.
-   Ex: `"regexPattern" : "/docs/.+/index\.html"`
+  Ej: `"regexPattern" : "/docs/.+/index\.html"`
 
 "Pattern" and "regexPattern" properties cannot be used in the same handler definition (in this case, only the "regexPattern" property is taken into account).
 
 #### Concordancia de modelos
 
-URL patterns are triggered in the given order:
+Los modelos de URL se activan en el orden indicado:
 
 - se ejecuta el primer modelo coincidente
-- the following patterns are not executed even if they match the URL
+- los siguientes patrones no se ejecutan aunque coincidan con la URL
 
 As a consequence, you need to apply a accurate strategy when writing your handlers: the most detailed patterns must be written before the more general patterns.
 
@@ -155,50 +155,50 @@ El verbo HTTP también puede ser evaluado [utilizando la propiedad `.verb` dentr
 
 ## Ejemplo
 
-Here is a detailed example of a HTTPHandlers.json file:
+He aquí un ejemplo detallado de un archivo HTTPHandlers.json:
 
 ```json
 
 [
    {
-        "class": "GeneralHandling",
+        "clase": "GeneralHandling",
         "method": "handle",
-        "pattern": "info", //URL prefix
+        "pattern": "info", //prefijo URL 
         "verbs": "GET"
     }, 
     {
         "class": "UsersHandling",
         "method": "manageAccount",
-        "pattern": "userAccount/update",   //URL prefix
+        "pattern": "userAccount/update", //prefijo URL
         "verbs": "PUT,POST"
     }, 
     {
         "class": "FinancialHandling",
         "method": "handleInvoices",
-        "regexPattern": "/docs/invoices/(past|today)", //URL prefix given as a regex
+        "regexPattern": "/docs/invoices/(past|today)", //prefijo de URL dado como regex
         "verbs": "GET"
     },
     {
         "class": "DocsHandling",
         "method": "handleDocs",
-        "regexPattern": "/docs/myPage.html",  //URL prefix given as a regex
+        "regexPattern": "/docs/myPage.html", //prefijo de URL dado como regex
         "verbs": "GET"
     },
     {
         "class": "InvoicesHandling",
         "method": "handleTheInvoice",
-        "pattern": "docs/invoices/details/theInvoice", // The most specific URL first
+                "pattern": "docs/invoices/details/theInvoice", // La URL más específica primero
         "verbs": "GET,POST"
     },
     {
         "class": "InvoicesHandling",
         "method": "handleDetails",
-        "pattern": "docs/invoices/details",    // The general URLs after
+            "pattern": "docs/invoices/details",  // Las URL generales después de
         "verbs": "GET"
     },
     {
         "class": "InvoicesHandling",
-        "method": "handleInvoices",   // The general URLs after
+        "method": "handleInvoices", // Las URL generales después de
         "pattern": "docs/invoices",
         "verbs": "GET"
     }
@@ -206,34 +206,34 @@ Here is a detailed example of a HTTPHandlers.json file:
 
 ```
 
-In this example, you must implement the following functions:
+En este ejemplo, debe implementar las siguientes funciones:
 
-- *handle function* in the *GeneralHandling* class
+- *funciónhandle* en la clase \*GeneralHandling
 - *manageAccount* en la clase *UsersHandling*
 - *handleInvoices* en la clase *FinancialHandling*
 - *handleDocs* en la clase *DocsHandling*
-- *handleTheInvoice* / *handleDetails* / *handleInvoices* in the *InvoicesHandling* class
+- *handleTheInvoice* / *handleDetails* / *handleInvoices* en la clase *InvoicesHandling*
 
 Examples of URLs triggering the handlers:
 
-`IP:port/info/` with a GET verb
-`IP:port/info/general` with a GET verb
+`IP:port/info/` con un verbo GET
+`IP:port/info/general` con un verbo GET
 
-`IP:port/userAccount/update/` with a POST verb
-`IP:port/userAccount/update/profile` with a POST verb
+`IP:port/userAccount/update/` con un verbo POST
+`IP:port/userAccount/update/profile` con un verbo POST
 
-`IP:port/docs/invoices/past` with a GET verb
-`IP:port/docs/invoices/today/latest` with a GET verb
+`IP:port/docs/invoices/past` con un verbo GET
+`IP:port/docs/invoices/today/latest` con un verbo GET
 
 `IP:port//docs/myPage.html` con un verbo GET
 
-`IP:port//docs/invoices/` with a GET verb, calls *handleInvoices* function (*InvoicesHandling* class)
-`IP:port//docs/invoices/details/` with a GET verb, calls *handleDetails* function (*InvoicesHandling* class)
-`IP:port//docs/invoices/details/theInvoice/xxxxxx` with a GET verb, calls *handleTheInvoice* function (*InvoiceslHandling* class)
+`IP:port//docs/invoices/` con un verbo GET, llama a la función *handleInvoices* (clase *InvoicesHandling*)
+`IP:port//docs/invoices/details/` con un verbo GET, llama a la función *handleDetails* (clase *InvoicesHandling*)
+`IP:port//docs/invoices/details/theInvoice/xxxxxx` con un verbo GET, llama a la función *handleTheInvoice* (clase *InvoiceslHandling*)
 
 ## Código del gestor de peticiones
 
-### Function configuration
+### Configuración de funciones
 
 The HTTP Request handler code must be implemented in a function of a [**Shared**](../Concepts/classes.md#shared-singleton) [**singleton class**](../Concepts/classes.md#singleton-classes).
 
@@ -243,7 +243,7 @@ Request handler functions are not necessarily shared, unless some request handle
 
 :::note
 
-It is **not recommended** to expose request handler functions to external REST calls using [`exposed`](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) or [`onHTTPGet`](../ORDA/ordaClasses.md#onhttpget-keyword) keywords.
+**no es recomendado** exponer las funciones del gestor de solicitudes a llamadas REST externas usando las palabras claves [`exposed`](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) o [`onHTTPGet`](../ORDA/ordaClasses.md#onhttpget-keyword).
 
 :::
 
@@ -278,7 +278,7 @@ El archivo **HTTPHandlers.json**:
 ]
 ```
 
-The called URL is: http://127.0.0.1:8044/putFile?fileName=testFile
+La URL llamada es: http://127.0.0.1:8044/putFile?fileName=testFile
 
 The binary content of the file is put in the body of the request and a POST verb is used. El nombre del archivo se da como parámetro (*fileName*) en la URL. Se recibe en el objeto [`urlQuery`](../API/IncomingMessageClass.md#urlquery) en la petición.
 

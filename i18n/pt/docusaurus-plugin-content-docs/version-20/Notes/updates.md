@@ -17,6 +17,15 @@ Leia [**O que há de novo no 4D 20**](https://blog.4d.com/en-whats-new-in-4d-v20
 
 - [**Lista de bugs corrigidos**](https://bugs.4d.com/fixes?version=20.7): lista de todos os erros corrigidos no 4D 20.7 LTS.
 
+:::caution Versão mínima cliente para 4D Server v20.7 e posterior
+
+Por razões internas, a versão de clientes remotos conectando ao 4D Server 20.7 e posterior deve ser pelo menos 4D 20.7.
+
+:::
+
+#### Mudanças de comportamento
+
+- As of 4D **20.7 HF2**, the [`Time`](https://doc.4d.com/4dv20/help/command/en/page179.html) command returns a negative time expression when the *timeValue* parameter is negative. For instance, `Time("-01:02:03")` will now return -01:02:03. In previous releases, the negative sign was ignored.
 
 
 ## 4D 20.6 LTS
@@ -25,7 +34,7 @@ Leia [**O que há de novo no 4D 20**](https://blog.4d.com/en-whats-new-in-4d-v20
 
 :::info Aplicativos de avaliação
 
-A partir da compilação noturna **101734**, a caixa de diálogo Criar aplicativo tem uma nova opção que permite criar aplicativos de avaliação. Consulte [a descrição na documentação do 4D Rx](../../../docs/Desktop/building.md#evaluation-application).
+A partir da compilação noturna **101734**, a caixa de diálogo Criar aplicativo tem uma nova opção que permite criar aplicativos de avaliação. Consulte [a descrição na documentação do 4D Rx](../../../docs/Desktop/building#evaluation-application).
 
 :::
 

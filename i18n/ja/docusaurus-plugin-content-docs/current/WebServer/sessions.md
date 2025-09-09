@@ -12,11 +12,17 @@ Webセッションでは、以下のことが可能です:
 - セッションの [.storage](../API/SessionClass.md#storage) を使用して、Webクライアントのプロセス間でデータを保存および共有。
 - セッションを実行しているユーザーに権限を関連付ける。
 
+:::tip Related blog post
+
+[高度な Webアプリケーションに対応したスケーラブルセッション](https://blog.4d.com/ja/scalable-sessions-for-advanced-web-applications/)
+
+:::
+
 ## 用途
 
 Webセッションは次のものに使用されます:
 
-- HTTPリクエストを送信する [Webアプリケーション](gettingStarted.md)
+- [Web applications](gettingStarted.md) sending http requests (including [SOAP Web services](../commands/theme/Web_Services_Server.md) and [/4DACTION](../WebServer/httpRequests.md#4daction) requests),
 - [リモートデータストア](../ORDA/remoteDatastores.md) や [Qodlyフォーム](qodly-studio.md) が使用する [REST API](../REST/authUsers.md) への呼び出し
 
 ## Webセッションの有効化

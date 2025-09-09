@@ -7,22 +7,22 @@ title: Managing formulas
 
 4D Write Pro documents can contain references to 4D formulas such as variables, fields, expressions, project methods, or 4D commands. Specific information such as the page number can also be referenced through formulas (see [Inserting document and page expressions](#inserting-date-and-time-formulas) below).
 
-Inserting formulas in 4D Write Pro areas is done with the [**WP INSERT FORMULA**](commands/wp-insert-formula.md) command and can be read using the [**WP Get formulas**](commands-legacy/wp-get-formulas.md) command. They are also returned by the [**WP Get text**](commands-legacy/wp-get-text.md) command.
+Inserting formulas in 4D Write Pro areas is done with the [**WP INSERT FORMULA**](commands/wp-insert-formula.md) command and can be read using the [**WP Get formulas**](commands-legacy/wp-get-formulas.md) command. Ils sont également retournés par la commande [**WP Get text**](commands-legacy/wp-get-text.md).
 
-Formulas are evaluated:
+Les formules sont évaluées :
 
-- when they are inserted in a form object which displays computed values
-- when the 4D Write Pro object is loaded in a form object which displays computed values
-- when the [**WP COMPUTE FORMULAS**](commands-legacy/wp-compute-formulas.md) command is called
-- when they are "frozen" using the [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md) command (if not already computed)
-- before printing (if not already computed)
-- before exporting to .docx (if the formula can't be mapped with MS Word formulas)
-- when the standard actions to freeze, print, export, or compute formulas are called. See *Standard actions*
+- lorsqu'ils sont insérés dans un objet de formulaire qui affiche des valeurs calculées
+- lorsque l'objet 4D Write Pro est chargé dans un objet de formulaire qui affiche les valeurs calculées
+- lorsque la commande [**WP COMPUTE FORMULAS**](commands-legacy/wp-compute-formulas.md) est appelée
+- quand ils sont "gelés" en utilisant la commande [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md) (si ce n'est pas déjà calculé)
+- avant impression (si pas déjà calculé)
+- avant d'exporter vers .docx (si la formule ne peut pas être mappée avec les formules MS Word)
+- lorsque les actions standards pour geler, imprimer, exporter ou calculer des formules sont appelées. Voir *Actions standard*
 
-Formulas are not evaluated when a document is loaded (using [**WP New**](commands-legacy/wp-new.md), [**WP Insert document body**](commands/wp-insert-document-body.md), or `wpArea:=[table]field`):
+Les formules ne sont pas évaluées lorsqu'un document est chargé (en utilisant [**WP New**](commands-legacy/wp-new.md), [**WP Insert document body**](commands/wp-insert-document-body.md), ou `wpArea:=[table]field`) :
 
-- if the document is only offscreen,
-- if the document is displayed onscreen but the form object only shows references.
+- si le document est uniquement hors écran,
+- si le document est affiché à l'écran, mais l'objet de formulaire n'affiche que les références.
 
 Formulas become static values if you call the [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md) command (except for page number and page count, see below).
 
@@ -36,7 +36,7 @@ For security reasons, when formulas are pasted from a different 4D application o
 
 ### Exemple
 
-You want to replace the selection in a 4D Write Pro area with the contents of a variable:
+Vous souhaitez remplacer la sélection d'une zone de 4D Write Pro par le contenu d'une variable :
 
 ```4d
  var fullName: Text
@@ -78,10 +78,10 @@ Additional context properties are available when you work with tables. See *Hand
 
 (\*) **Important**: **This.pageNumber**, **This.pageIndex** and **This.pageCount** must be used only directly in a 4D Write Pro formula (they must be present in the *formula.source* string). They will return incorrect values if they are used by the 4D language within a method called by the formula. However, they can be passed as parameters to a method called directly by the formula:
 
-- This will work: « *formatNumber(This.pageNumber)* »
+- Cela fonctionnera : « *formatNumber(This.pageNumber)* »
 - This will NOT work: « *formatNumber* » with *formatNumber* method processing *This.pageNumber*.
 
-For example, to insert the page number in the footer area:
+Par exemple, pour insérer le numéro de page dans la zone de pied de page :
 
 ```4d
  $footer:=WP Get footer(4DWP;1)
@@ -90,7 +90,31 @@ For example, to insert the page number in the footer area:
   //would not work correctly
 ```
 
-## Inserting date and time formulas
+## Table formula context object
+
+When used in a formula within the table, the **This** keyword gives access to different data according to the context:
+
+| **Context**                                                                                                            | **Expression**                                                               | **Type**                                                    | **Returns**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Anywhere                                                                                                               | [This](../commands/this.md).table                            | Object                                                      | Current table                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|                                                                                                                        | [This](../commands/this.md).row                              | Object                                                      | Current table row element                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|                                                                                                                        | [This](../commands/this.md).rowIndex                         | Number                                                      | Index of the current row, starting from 1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| When a datasource has been defined for the table                                                                       | [This](../commands/this.md).table.dataSource | Objet (formula)                          | Datasource as a formula                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|                                                                                                                        | [This](../commands/this.md).tableData                        | Collection or Entity selection (usually) | Evaluated table.dataSource                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| In each data row when a table datasource returns a collection or an entity selection                                   | [This](../commands/this.md).item.xxx         | Tous                                                        | Mapped to each item of the table datasource collection or entity selection, for example **This.item.firstName** if the associated entity has the *firstName* attribute                                                                                                                                                                                                                                                                                                                                |
+|                                                                                                                        | [This](../commands/this.md).itemIndex                        | Number                                                      | Index of the current item in the collection or entity selection, starting from 0                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| In any row (except header rows) when a table datasource returns a collection or an entity selection | [This](../commands/this.md).previousItems                    | Collection or Entity selection                              | Items displayed on the pages before the bottom carry over row (if any) or before the row of the expression, including the page where is displayed the row containing the expression. <br/>This expression returns the same type of value as the **This.tableData** expression.                                                                                                                                                                                     |
+| In a break row                                                                                                         | [This](../commands/this.md).breakItems                       | Collection or Entity selection                              | Items of the collection or entity selection displayed in the rows between:<br/><ul><li>the current break row and the previous break row of the same level (or the start of the table) if the break row(s) are displayed after the data row.</li><li>the current break and the next break row of the same level (or the end of the table) if the break row(s) are displayed before the data row.</li></ul> |
+
+In any other contexts, these expressions will return *undefined*.
+
+:::note
+
+For more information about formula insertion, see [WP INSERT FORMULA](../commands/wp-insert-formula).
+
+:::
+
+## Insertion des formules date et time
 
 **Date**
 
@@ -98,7 +122,7 @@ When the [**Current date**](../commands-legacy/current-date.md) command, a date 
 
 **Time**
 
-When the [**Current time**](../commands-legacy/current-time.md) command, a time variable, or a method returning a time is inserted in a formula, it must be enclosed within a [**String**](../commands/string.md) command because time type is not supported in JSON. Consider the following examples of formulas:
+When the [**Current time**](../commands-legacy/current-time.md) command, a time variable, or a method returning a time is inserted in a formula, it must be enclosed within a [**String**](../commands/string.md) command because time type is not supported in JSON. Examinez les exemples de formules suivants :
 
 ```4d
   // This code is the best practice
@@ -113,15 +137,15 @@ When the [**Current time**](../commands-legacy/current-time.md) command, a time 
  
 ```
 
-## Support of virtual structure
+## Support de la structure virtuelle
 
 Table and field expressions inserted in 4D Write Pro documents support the virtual structure definition of the database. The virtual structure exposed to formulas is defined through [**SET FIELD TITLES**](../commands-legacy/set-field-titles.md)(...;\*) and [**SET TABLE TITLES**](../commands-legacy/set-table-titles.md)(...;\*) commands.
 
-When a virtual structure is defined:
+Quand une structure virtuelle est définie :
 
-- references to expressions containing fields display virtual names when the 4D Write Pro document shows references and not values.
-- [**WP Get text**](commands-legacy/wp-get-text.md) returns virtual structure names if `wk expressions as source` option is set in expressions parameter.
-- [WP Insert formula](commands/wp-insert-formula.md) ignores the virtual structure and always expects real table/field names
+- les références aux expressions contenant des champs affichent des noms virtuels alors que le document 4D Write Pro affiche des références et non des valeurs.
+- [**WP Get text**](commands-legacy/wp-get-text.md) retourne des noms de structures virtuelles si l'option `wk expressions as source` est définie dans le paramètre d'expression.
+- [WP Insert formula](commands/wp-insert-formula.md) ignore la structure virtuelle et attend toujours de vrais noms de table/champs
 
 :::note
 
@@ -129,26 +153,26 @@ When a document is displayed in "display expressions" mode, references to tables
 
 :::
 
-## Displaying formulas
+## Affichage des formules
 
-You can control how formulas are displayed in your documents:
+Vous pouvez contrôler comment les formules sont affichées dans vos documents :
 
-- as *values* or as *references*
+- en tant que *valeurs* ou en tant que *références*
 - when shown as references, display source text, symbol, or name.
 
 ### References or Values
 
 By default, 4D formulas are displayed as values. When you insert a 4D formula, 4D Write Pro computes and displays its current value.  If you wish to know which formula is used or what is its name, you need to display it as a reference.
 
-To display formulas as references, you can:
+Pour afficher les formules en tant que références, vous pouvez:
 
 - check the **Show references** option in the Property list (see *Configuring View properties*), or
 - use the visibleReferences standard action (see *Dynamic expressions*), or
 - use the [**WP SET VIEW PROPERTIES**](commands-legacy/wp-set-view-properties.md) command with the `wk visible references` selector to **True**.
 
-Formula references can be displayed as:
+Les références de formule peuvent être affichées en tant que :
 
-- source texts (default)
+- textes sources (par défaut)
 - symbols
 - names
 
@@ -160,11 +184,11 @@ Par exemple, vous avez inséré la date courante avec un format, la date s'affic
 
 ![](../assets/en/WritePro/wp-formulas1.png)
 
-When you display formulas as references, the **source** of the formula is displayed:
+Lorsque vous affichez les formules comme références, la **source** de la formule est affichée :
 
 ![](../assets/en/WritePro/wp-formulas2.png)
 
-### References as symbols
+### Les références comme symboles
 
 When formula source texts are displayed in a document, the design could be confusing if you work on sophisticated templates using tables for example, and when formulas are complex:
 
@@ -174,7 +198,7 @@ In this case, you can display formula references as ![](../assets/en/WritePro/wp
 
 ![](../assets/en/WritePro/wp-formulas4.png)
 
-To display formula references as symbols, you can:
+Pour afficher les références de formules en tant que symboles, vous pouvez:
 
 - check the **Display formula source as symbol option** in the Property list (see *Configuring View properties*), or
 - use the displayFormulaAsSymbol standard action (see *Using 4D Write Pro standard actions*), or
@@ -184,15 +208,15 @@ To display formula references as symbols, you can:
 
 You can assign names to formulas, making 4D Write Pro template documents easier to read and understand for end-users. When formulas are displayed as references (and not displayed as symbols) and you have defined a name for a formula, the formula name is displayed.
 
-For example, the following formula references are displayed as source text by default:
+Par exemple, les références de formule suivantes sont affichées comme texte source par défaut :
 
 ![](../assets/en/WritePro/wp-formulas5.png)
 
-If you assign formula names, they are displayed instead of texts:
+Si vous attribuez des noms de formule, ils sont affichés à la place des textes :
 
 ![](../assets/en/WritePro/wp-formulas6.png)
 
-To assign a name to a formula, you need to use the [WP Insert formula](commands/wp-insert-formula.md) command with an object parameter. Par exemple :
+Pour attribuer un nom à une formule, vous devez utiliser la commande [WP Insert formula](commands/wp-insert-formula.md) avec un paramètre objet. Par exemple :
 
 ```4d
   //inserts the previous day in the document

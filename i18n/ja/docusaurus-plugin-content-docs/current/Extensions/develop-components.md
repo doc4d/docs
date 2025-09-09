@@ -19,13 +19,13 @@ title: コンポーネントの開発
 
 - コンポーネントを使用するには、[アプリケーションにインストール](../Project/components.md) するだけです。
 - 言い換えれば、マトリクスプロジェクト自体も1 つ以上のコンポーネントを使用できます。 しかしコンポーネントが "サブコンポーネント" を使用することはできません。
-- コンポーネントは次の 4D の要素を呼び出すことができます: データストア([`ds`](../commands/ds.md))、クラス、関数、プロジェクトメソッド、プロジェクトフォーム、メニューバー、選択リストなど。 The following database methods can be used: [On Web Connection](../commands-legacy/on-web-connection-database-method.md), [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md), [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md).
-- A component can create and/or use tables, fields and data files using mechanisms of external databases. 外部データベースは、メインの 4D データベースとは独立して存在し、SQLコマンドでアクセスします。
+- コンポーネントは次の 4D の要素を呼び出すことができます: データストア([`ds`](../commands/ds.md))、クラス、関数、プロジェクトメソッド、プロジェクトフォーム、メニューバー、選択リストなど。 以下のデータベースメソッドを使用することが可能です: [On Web Connection](../commands-legacy/on-web-connection-database-method.md)、 [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md)、 [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md) 。
+- 外部データベースのメカニズムを使用すればテーブルやフィールドを作成し、そこにデータを格納したり読み出したりすることができます。 外部データベースは、メインの 4D データベースとは独立して存在し、SQLコマンドでアクセスします。
 - インタープリターモードで動作するホストプロジェクトは、インタープリターまたはコンパイル済みどちらのコンポーネントも使用できます。 コンパイルモードで実行されるホストデータベースでは、インタープリターのコンポーネントを使用できません。 この場合、コンパイル済みコンポーネントのみが利用可能です。
 
 :::note
 
-Interpreted component code can be [edited directly from the host project](#editing-components-from-the-host) if the context is supported.
+インタープリタ版のコンポーネントのコードは、コンテキストがサポートされていれば、[ホストプロジェクトから直接編集する](#ホストからコンポーネントを編集する) ことが可能です。
 
 :::
 
@@ -149,22 +149,22 @@ $rect:=cs.eGeometry._Rectangle.new(10;20)
 
 ## ホストからコンポーネントを編集する
 
-To facilitate component tuning in the actual context of host projects, you can directly modify and save the code of a loaded component using the 4D IDE from an interpreted host project. Modifications can be immediately tested in the project, without having to restart.
+ホストプロジェクトの実際のコンテキストからコンポーネントをチューニングするのを容易にするために、ロードしたコンポーネントをインタープリターモードのホストプロジェクトから4D 開発環境を使用して直接編集し、そのコードを保存することが可能です。 修正した箇所は再起動することなく、プロジェクト内で即座にテストすることができます。
 
 コンポーネントのコードは、以下の条件を満たしている場合に編集可能です:
 
-- the host project is running interpreted,
-- the component has been [loaded in interpreted mode](../Project/components.md#interpreted-and-compiled-components) and the source code is available,
-- the component files are stored locally (i.e. they are not [downloaded from GitHub](../Project/components.md#adding-a-github-dependency).
+- ホストプロジェクトがインタープリタモードで実行中である
+- コンポーネントが、[インタープリタモードでロードされてい](../Project/components.md#interpreted-and-compiled-components) 、ソースコードが編集可能である
+- コンポーネントのファイルはローカルに保存されている(つまり[GitHub からダウンロードされた](../Project/components.md#adding-a-github-dependency) ものではない)。
 
-In this context, you can open, edit, and save your component code in the Code editor on the host project from two places:
+このコンテキストでは、以下の2箇所において、コンポーネントのコードをコードエディターで開き、編集して、保存することができます:
 
-- from the Component Methods section of the Explorer (shared code only)
-- in a dedicated component tab (all code)
+- エクスプローラーのコンポーネントメソッドのセクションから(公開されたコードのみ)
+- 専用のコンポーネントタブで(全てのコード)
 
-### Editing shared component code
+### 公開されたコンポーネントコードを編集する
 
-[Exposed component classes](#sharing-of-classes) and [shared methods](#sharing-of-project-methods) of your component can be edited from the **Component Methods** tab of the Explorer.
+コンポーネントの[公開されたコンポーネントクラス](#クラスの共有) および [共有されたメソッド](#プロジェクトメソッドの共有) はエクスプローラーの**コンポーネントメソッド** タブから編集することができます。
 
 A specific icon indicates that the component contains shared code):<br/>
 ![](../assets/en/Develop/editable-component.png)
@@ -179,14 +179,18 @@ Select **Edit...** item is available when you right-click on the component name 
 
 ![edit-component](../assets/en/Project/Edit-component.png)
 
-When you select it, a dedicated tab is added (or highlighted if already added) in the Explorer. In this tab, the component code is editable in the following pages:
+When you select it, a dedicated tab is added (or highlighted if already added) in the Explorer. In this tab, the following standard pages are available and give access to the component contents:
 
 ![tab-component](../assets/en/Project/tab-component.png)
 
+- Home, including folders, methods, classes and (preview only) forms
 - ⒋ プロジェクトメソッド
 - Database Methods ([On Web Connection](../commands-legacy/on-web-connection-database-method.md), [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md), [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md))
 - クラス
 - Project Form Methods
+- Commands and Constants
+- プラグイン
+- Trash
 
 ![tab-component](../assets/en/Project/tab-component.gif)
 
@@ -194,7 +198,8 @@ Standard 4D IDE features are available for the component. You can execute the fo
 
 - add, duplicate, delete, edit/save [methods and classes](../Project/code-overview.md)
 - preview code, show/edit [documentation](../Project/documentation.md), display/edit [method properties](../Project/code-overview.md#project-method-properties),
-- run methods.
+- run methods,
+- restore from trash or empty trash.
 
 ## コンパイル済みコンポーネントのコード補完
 
@@ -422,7 +427,7 @@ SAVE RECORD($tablepointer->)
 
 コンポーネントの`Info.plist` ファイル内でサポートされているキーは、大部分は[Apple bundle キー](https://developer.apple.com/documentation/bundleresources/information-property-list) であり、Windows 上では無視されます。 しかしながら、これらは全てのプラットフォームにおいて[依存関係マネージャ](../Project/components.md#コンポーネントの読み込み) によって使用されます。
 
-定義可能なキーは以下の通りです:
+The following keys can be defined:
 
 | key                                                        | description                                                                                                 |
 | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |

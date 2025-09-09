@@ -13,7 +13,7 @@ En el editor de menús, puede introducir directamente la etiqueta como "fijo". T
 
 - Una referencia a un recurso XLIFF del tipo :xliff:MyLabel. Para más información sobre las referencias XLIFF, consulte la sección *Arquitectura XLIFF* en *Referencia Diseño 4D*.
 - Un nombre de variable interproceso seguido de un número, por ejemplo:
-    `:<>vlang,3`. Si se cambia el contenido de esta variable, se modificará la etiqueta del menú cuando se muestre. En este caso, la etiqueta llamará a un recurso XLIFF. El valor contenido en la variable `<>vlang` corresponde al atributo *id* del elemento *group*. El segundo valor (3 en este ejemplo) designa el atributo *id* del elemento *trans-unit*.
+  `:<>vlang,3`. Si se cambia el contenido de esta variable, se modificará la etiqueta del menú cuando se muestre. En este caso, la etiqueta llamará a un recurso XLIFF. El valor contenido en la variable `<>vlang` corresponde al atributo *id* del elemento *group*. El segundo valor (3 en este ejemplo) designa el atributo *id* del elemento *trans-unit*.
 
 Utilizando el lenguaje 4D, se define la propiedad del título a través del parámetro *itemText* de los comandos `APPEND MENU ITEM`, `INSERT MENU ITEM`, y `SET MENU ITEM`.
 
@@ -56,7 +56,7 @@ Puede asignar un método proyecto y/o una acción estándar a un comando de men�
 
 - **Nombre del método**: seleccione un nombre de método proyecto existente en el combo box. Si el método proyecto no existe, introduzca su nombre en el combo "Nombre del método" y haga clic en el botón [...] button. 4D muestra un diálogo de creación de método proyecto que se utiliza para acceder al editor de código.
 - **Acción estándar asociada**: elija o escriba la acción que desea asignar en el combo box "Acción estándar asociada". Puede introducir toda acción soportada y (opcionalmente) el parámetro que desee en el área. Para obtener una lista completa de acciones estándar, consulte la sección **Acciones estándar** en el *Modo Diseño*.
-    **Nota para macOS:** en macOS, los comandos de menús personalizados asociados a la acción *Salir* se colocan automáticamente en el menú de la aplicación, conforme a los estándares de interfaz de la plataforma.
+  **Nota para macOS:** en macOS, los comandos de menús personalizados asociados a la acción *Salir* se colocan automáticamente en el menú de la aplicación, conforme a los estándares de interfaz de la plataforma.
 
 Utilizando el lenguaje 4D, puedes asociar un método proyecto utilizando el comando `SET MENU ITEM METHOD`, y una acción estándar utilizando el comando `SET MENU ITEM PROPERTY`.
 
@@ -103,16 +103,16 @@ Puede añadir atajos de teclado a todo comando de menú. Si un comando de menú 
 También puede añadir la tecla **Mayús**, así como la tecla **Alt** (Windows) u **Opción** (macOS) al acceso directo asociado a un comando de menú. Esto multiplica el número de accesos directos que se pueden utilizar. Por lo tanto, se pueden definir los siguientes tipos de atajos de teclado:
 
 - En Windows:
-    - Ctrl+caracter
-    - Ctrl+Mayús+letra
-    - Ctrl+Alt+caracter
-    - Ctrl+Mayús+Alt+letra
+  - Ctrl+caracter
+  - Ctrl+Mayús+letra
+  - Ctrl+Alt+caracter
+  - Ctrl+Mayús+Alt+letra
 
 - En macOS:
-    - Comando+letra
-    - Comando+Mayús+letra
-    - Comando+Opción+letra
-    - Comando+Mayús+Opción+letra
+  - Comando+letra
+  - Comando+Mayús+letra
+  - Comando+Opción+letra
+  - Comando+Mayús+Opción+letra
 
 > Le recomendamos que mantenga los atajos de teclado por defecto que están asociados a las acciones estándar.
 

@@ -4,7 +4,7 @@ title: WP Get attributes
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP Get attributes.Syntax-->**WP Get attributes** ( *targetObj* ; *attribName* ; *attribValue* {; *attribName2* ; *attribValue2* ; ... ; *attribNameN* ; *attribValueN*} )<br/>**WP Get attributes** ( *targetObj* ; *attribColl* ) : Object<!-- END REF-->
+<!--REF #_command_.WP Get attributes.Syntax-->**WP Get attributes** ( *targetObj* ; *...attribName* ; *...attribValue* ) : Object<br/>**WP Get attributes** ( *targetObj* ; *attribColl* ) : Object<!-- END REF-->
 
 <!--REF #_command_.WP Get attributes.Params-->
 
@@ -20,7 +20,7 @@ displayed_sidebar: docs
 
 ## 説明
 
-The **WP Get attributes** command<!--REF #_command_.WP Get attributes.Summary--> returns the value of any attribute in a 4D Write Pro range, header, body, footer, table, or document.<!-- END REF--> This command gives you access to any kind of 4D Write Pro internal attributes: character, paragraph, document, table, or image.
+**WP Get attributes** コマンドは、<!--REF #_command_.WP Get attributes.Summary-->4D Write Pro レンジ、ヘッダー、本文、フッター、表、あるいはドキュメント内の、任意の属性の値を返します。 このコマンドを使用することで、4D Write Pro の次のようなあらゆる内部属性にアクセスすることができます: 文字、段落、ドキュメント、表、画像。
 
 *targetObj* 引数には、以下のいずれかを渡すことができます:
 

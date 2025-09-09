@@ -1282,10 +1282,10 @@ Puede definir los siguientes parámetros:
 var $col ; $result : Collection
 $col:=New collection(1; 2; 3; 4)
 
-$result:=$col.map(Formula(New collection($1.value*2))
+$result:=$col.map(Formula(New collection($1.value*2)))
  // [[2],[4],[6],[8]]
 
-$result:=$col.flatMap(Formula(New collection($1.value*2))
+$result:=$col.flatMap(Formula(New collection($1.value*2)))
 // [2,4,6,8]
 ```
 
@@ -3297,7 +3297,7 @@ Si la colección contiene objetos, pasa el parámetro *propertyPath* para indica
 | Parámetros | Tipo                                   |                             | Descripción                                                          |
 | ---------- | -------------------------------------- | :-------------------------: | -------------------------------------------------------------------- |
 | value      | Text, Number, Object, Collection, Date |              ->             | Valor(es) a insertar al principio de la colección |
-| Resultado  | Real                                   | <- | Colección que contiene los elementos añadidos                        |
+| Resultado  | Collection                             | <- | Colección que contiene los elementos añadidos                        |
 |            |                                        |                             |                                                                      |
 
 <!-- END REF -->

@@ -17,10 +17,10 @@ The `OpenAIResult` class is designed to handle the response from HTTP requests a
 
 | Propiedad     | Tipo       | Descripción                                                                                                                    |
 | ------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `success`     | Boolean    | A Boolean indicating whether the HTTP request was successful.                                                  |
+| `success`     | Boolean    | Booleano que indica si la petición HTTP se ha realizado correctamente.                                         |
 | `errors`      | Collection | Devuelve una colección de errores. These could be network errors or errors returned by OpenAI. |
-| `terminated`  | Boolean    | A Boolean indicating whether the HTTP request was terminated.                                                  |
-| `headers`     | Object     | Returns the response headers as an object.                                                                     |
+| `terminated`  | Boolean    | Un booleano que indica si la petición HTTP fue terminada.                                                      |
+| `headers`     | Object     | Devuelve los encabezados de respuesta como un objeto.                                                          |
 | `rateLimit`   | Object     | Returns rate limit information from the response headers.                                                      |
 | `utilización` | Object     | Devuelve la información de uso del cuerpo de la respuesta, si existe.                                          |
 
@@ -31,7 +31,7 @@ This information includes the limits, remaining requests, and reset times for bo
 
 For more details on rate limits and the specific headers used, refer to [the OpenAI Rate Limits Documentation](https://platform.openai.com/docs/guides/rate-limits#rate-limits-in-headers).
 
-The structure of the `rateLimit` object is as follows:
+La estructura del objeto `rateLimit` es la siguiente:
 
 | Campo               | Tipo    | Descripción                                                              |
 | ------------------- | ------- | ------------------------------------------------------------------------ |
@@ -40,7 +40,7 @@ The structure of the `rateLimit` object is as follows:
 | `remaining.request` | Integer | Número de peticiones restantes.                          |
 | `remaining.tokens`  | Integer | Número de tokens restantes.                              |
 | `reset.request`     | String  | Tiempo hasta que se restablece el límite de solicitudes. |
-| `reset.tokens`      | String  | Time until token limit resets.                           |
+| `reset.tokens`      | String  | Tiempo hasta que se restablece el límite de fichas.      |
 
 ## Funciones
 

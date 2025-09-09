@@ -73,18 +73,18 @@ The handler identifier is the couple [pattern + a verb among the verbs list].
 URL patterns can be given as **prefixes** or using **regular expressions**.
 
 - To declare a regular expression pattern, use the "regexPattern" property name in the HTTPHandlers.json file. Regular expressions patterns are handled directly.\
-   Ex: `"regexPattern" : "/docs/.+/index\.html"`
+  Ex: `"regexPattern" : "/docs/.+/index\.html"`
 
 - To declare a prefix pattern, use the "pattern" property name in the HTTPHandlers.json file. Regular expressions patterns are handled directly.
-   Ex: `"regexPattern" : "/docs/.+/index\.html"`
+  Ex: `"regexPattern" : "/docs/.+/index\.html"`
 
 "Pattern" and "regexPattern" properties cannot be used in the same handler definition (in this case, only the "regexPattern" property is taken into account).
 
 #### Pattern matching
 
-URL patterns are triggered in the given order:
+Les modèles d'URL sont déclenchés dans l'ordre indiqué :
 
-- the first matching pattern is executed
+- le premier motif correspondant est exécuté
 - the following patterns are not executed even if they match the URL
 
 As a consequence, you need to apply a accurate strategy when writing your handlers: the most detailed patterns must be written before the more general patterns.
@@ -233,7 +233,7 @@ Examples of URLs triggering the handlers:
 
 ## Request handler code
 
-### Function configuration
+### Configuration des fonctions
 
 The HTTP Request handler code must be implemented in a function of a [**Shared**](../Concepts/classes.md#shared-singleton) [**singleton class**](../Concepts/classes.md#singleton-classes).
 

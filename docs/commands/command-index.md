@@ -100,7 +100,7 @@ title: Index
 [`CHANGE CURRENT USER`](../commands-legacy/change-current-user.md)<br/>
 [`CHANGE LICENSES`](../commands-legacy/change-licenses.md)<br/>
 [`CHANGE PASSWORD`](../commands-legacy/change-password.md)<br/>
-[`Change string`](change-string.md)<br/>
+[`Change string`](../commands-legacy/change-string.md)<br/>
 [`Char`](../commands-legacy/char.md)<br/>
 [`Character code`](../commands-legacy/character-code.md)<br/>
 [`CHECK LOG FILE`](../commands-legacy/check-log-file.md)<br/>
@@ -204,7 +204,7 @@ title: Index
 [`DELETE MENU ITEM`](../commands-legacy/delete-menu-item.md)<br/>
 [`DELETE RECORD`](../commands-legacy/delete-record.md)<br/>
 [`DELETE SELECTION`](../commands-legacy/delete-selection.md)<br/>
-[`Delete string`](delete-string.md)<br/>
+[`Delete string`](../commands-legacy/delete-string.md)<br/>
 [`DELETE USER`](../commands-legacy/delete-user.md)<br/>
 [`DESCRIBE QUERY EXECUTION`](../commands-legacy/describe-query-execution.md)<br/>
 [`DIALOG`](dialog.md)<br/>
@@ -341,7 +341,7 @@ title: Index
 [`FORM SET VERTICAL RESIZING`](../commands-legacy/form-set-vertical-resizing.md)<br/>
 [`FORM UNLOAD`](../commands-legacy/form-unload.md)<br/>
 [`Formula`](formula.md)<br/>
-[`Formula from string`](formula-from-string.md)<br/>
+[`Formula from string`](./formula-from-string.md)<br/>
 [`Frontmost process`](../commands-legacy/frontmost-process.md)<br/>
 [`Frontmost window`](../commands-legacy/frontmost-window.md)<br/>
 
@@ -351,7 +351,7 @@ title: Index
 [`Generate digest`](../commands-legacy/generate-digest.md)<br/>
 [`GENERATE ENCRYPTION KEYPAIR`](../commands-legacy/generate-encryption-keypair.md)<br/>
 [`Generate password hash`](../commands-legacy/generate-password-hash.md)<br/>
-[`Generate UUID`](../commands-legacy/generate-uuid.md)<br/>
+[`Generate UUID`](generate-uuid.md) **modified 4D 20 R10**<br/>
 [`Get 4D file`](../commands-legacy/get-4d-file.md)<br/>
 [`Get 4D folder`](../commands-legacy/get-4d-folder.md)<br/>
 [`Get adjusted blobs cache priority`](../commands-legacy/get-adjusted-blobs-cache-priority.md)<br/>
@@ -382,7 +382,7 @@ title: Index
 [`GET GROUP PROPERTIES`](../commands-legacy/get-group-properties.md)<br/>
 [`GET HIGHLIGHT`](../commands-legacy/get-highlight.md)<br/>
 [`GET HIGHLIGHTED RECORDS`](../commands-legacy/get-highlighted-records.md)<br/>
-[`Get indexed string`](get-indexed-string.md)<br/>
+[`Get indexed string`](../commands-legacy/get-indexed-string.md)<br/>
 [`Last update log path`](../commands-legacy/last-update-log-path.md)<br/>
 [`GET LIST ITEM`](../commands-legacy/get-list-item.md)<br/>
 [`Get list item font`](../commands-legacy/get-list-item-font.md)<br/>
@@ -486,7 +486,7 @@ title: Index
 [`INSERT IN BLOB`](../commands-legacy/insert-in-blob.md)<br/>
 [`INSERT IN LIST`](../commands-legacy/insert-in-list.md)<br/>
 [`INSERT MENU ITEM`](../commands-legacy/insert-menu-item.md)<br/>
-[`Insert string`](insert-string.md)<br/>
+[`Insert string`](../commands-legacy/insert-string.md)<br/>
 [`Int`](../commands-legacy/int.md)<br/>
 [`INTEGER TO BLOB`](../commands-legacy/integer-to-blob.md)<br/>
 [`INTEGRATE MIRROR LOG FILE`](../commands-legacy/integrate-mirror-log-file.md)<br/>
@@ -617,7 +617,7 @@ title: Index
 [`LOAD SET`](../commands-legacy/load-set.md)<br/>
 [`LOAD VARIABLES`](../commands-legacy/load-variables.md)<br/>
 [`Localized document path`](../commands-legacy/localized-document-path.md)<br/>
-[`Localized string`](localized-string.md)<br/>
+[`Localized string`](../commands-legacy/localized-string.md)<br/>
 [`Locked`](../commands-legacy/locked.md)<br/>
 [`LOCKED BY`](../commands-legacy/locked-by.md)<br/>
 [`Locked records info`](../commands-legacy/locked-records-info.md)<br/>
@@ -1000,7 +1000,7 @@ title: Index
 [`RELOAD PROJECT`](../commands-legacy/reload-project.md)<br/>
 [`REMOVE FROM SET`](../commands-legacy/remove-from-set.md)<br/>
 [`REMOVE PICTURE FROM LIBRARY`](../commands-legacy/remove-picture-from-library.md)<br/>
-[`Replace string`](replace-string.md)<br/>
+[`Replace string`](../commands-legacy/replace-string.md)<br/>
 [`Request`](../commands-legacy/request.md)<br/>
 [`RESIZE FORM WINDOW`](../commands-legacy/resize-form-window.md)<br/>
 [`RESOLVE ALIAS`](../commands-legacy/resolve-alias.md)<br/>
@@ -1159,7 +1159,7 @@ title: Index
 [`SPELL Get current dictionary`](../commands-legacy/spell-get-current-dictionary.md)<br/>
 [`SPELL GET DICTIONARY LIST`](../commands-legacy/spell-get-dictionary-list.md)<br/>
 [`SPELL SET CURRENT DICTIONARY`](../commands-legacy/spell-set-current-dictionary.md)<br/>
-[`Split string`](split-string.md)<br/>
+[`Split string`](../commands-legacy/split-string.md)<br/>
 [`SQL CANCEL LOAD`](../commands-legacy/sql-cancel-load.md)<br/>
 [`SQL End selection`](../commands-legacy/sql-end-selection.md)<br/>
 [`SQL EXECUTE`](../commands-legacy/sql-execute.md)<br/>
@@ -1201,7 +1201,7 @@ title: Index
 [`String`](string.md)<br/>
 [`STRING LIST TO ARRAY`](../commands-legacy/string-list-to-array.md)<br/>
 [`Structure file`](../commands-legacy/structure-file.md)<br/>
-[`Substring`](substring.md)<br/>
+[`Substring`](../commands-legacy/substring.md)<br/>
 [`Subtotal`](../commands-legacy/subtotal.md)<br/>
 [`Sum`](../commands-legacy/sum.md)<br/>
 [`Sum squares`](../commands-legacy/sum-squares.md)<br/>
@@ -1232,7 +1232,7 @@ title: Index
 [`throw`](../commands-legacy/throw.md)<br/>
 [`Tickcount`](../commands-legacy/tickcount.md)<br/>
 [`Time`](../commands-legacy/time.md)<br/>
-[`Time string`](time-string.md)<br/>
+[`Time string`](../commands-legacy/time-string.md)<br/>
 [`Timestamp`](../commands-legacy/timestamp.md)<br/>
 [`Tool bar height`](../commands-legacy/tool-bar-height.md)<br/>
 [`TRACE`](../commands-legacy/trace.md)<br/>

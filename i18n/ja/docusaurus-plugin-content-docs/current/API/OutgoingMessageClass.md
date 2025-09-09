@@ -7,7 +7,7 @@ title: OutgoingMessage
 
 通常、このクラスは、カスタムの[HTTP リクエストハンドラー関数](../WebServer/http-request-handler.md#関数の設定) またはHTTP GET リクエストを管理するようにデザインされた、[`onHTTPGet`](../ORDA/ordaClasses.md#onhttpget-keyword) キーワードで宣言された関数内で使用することができます。 このようなリクエストは、例えば、ファイルのダウンロード、画像の生成、ダウンロードなどの機能を実装するためや、ブラウザを介して任意のコンテンツタイプを受信するために使用されます。
 
-このクラスのインスタンスは4D Server 上にビルドされ、[4D REST サーバー](../REST/gettingStarted.md) によってのみブラウザに送信することができます。 このクラスを使用することで、HTTP 以外のテクノロジー(例: モバイルなど)を使用することができます。 このクラスを使用することで、HTTP 以外のテクノロジー(例: モバイルなど)を使用することができます。
+このクラスのインスタンスは4D Server 上にビルドされ、[4D REST サーバー](../REST/gettingStarted.md) によってのみブラウザに送信することができます。 このクラスを使用することで、HTTP 以外のテクノロジー(例: モバイルなど)を使用することができます。
 
 <details><summary>履歴</summary>
 
@@ -19,7 +19,7 @@ title: OutgoingMessage
 
 ### 例題
 
-この例題では、`getFile()` 関数は[Datastore クラス](../ORDA/ordaClasses.md#datastore-class) に実装されており、REST リクエストによって[呼び出すことができます](../ORDA/ordaClasses.md#onhttpget-keyword)。 ここでの目的は、**testFile.pdf** ファイルをリクエストへのレスポンスとして返すことです: ここでの目的は、**testFile.pdf** ファイルをリクエストへのレスポンスとして返すことです:
+この例題では、`getFile()` 関数は[Datastore クラス](../ORDA/ordaClasses.md#datastore-class) に実装されており、REST リクエストによって[呼び出すことができます](../ORDA/ordaClasses.md#onhttpget-keyword)。 ここでの目的は、**testFile.pdf** ファイルをリクエストへのレスポンスとして返すことです:
 
 ```4d
 Class extends DataStoreImplementation
@@ -53,7 +53,7 @@ exposed onHTTPGet Function getFile() : 4D.OutgoingMessage
 
 :::
 
-<!-- REF #OutgoingMessageClass.body.Desc -->
+<!-- REF OutgoingMessageClass.body.Desc -->
 
 ## .body
 
@@ -74,7 +74,7 @@ exposed onHTTPGet Function getFile() : 4D.OutgoingMessage
 
 <!-- END REF -->
 
-<!-- REF #OutgoingMessageClass.headers.Desc -->
+<!-- REF OutgoingMessageClass.headers.Desc -->
 
 ## .headers
 
@@ -88,7 +88,7 @@ exposed onHTTPGet Function getFile() : 4D.OutgoingMessage
 
 <!-- END REF -->
 
-<!-- REF #OutgoingMessageClass.setBody().Desc -->
+<!-- REF OutgoingMessageClass.setBody().Desc -->
 
 ## .setBody()
 
@@ -124,7 +124,7 @@ exposed onHTTPGet Function getFile() : 4D.OutgoingMessage
 
 <!-- END REF -->
 
-<!-- REF #OutgoingMessageClass.setHeader().Desc -->
+<!-- REF OutgoingMessageClass.setHeader().Desc -->
 
 ## .setHeader()
 
@@ -143,7 +143,7 @@ exposed onHTTPGet Function getFile() : 4D.OutgoingMessage
 
 `.setHeader()` 関数は、<!-- REF #OutgoingMessageClass.setHeader().Summary -->送信するメッセージのヘッダーの、*key* 引数で指定したキーを、*value* 引数で指定した値で設定します<!-- END REF -->。 両方の引数ともテキスト値でない場合、エラーが発生します。
 
-4D.OutgoingMessage オブジェクトのインスタンスを返すとき、4D は一部のヘッダーを自動的に設定します(例: `Set-Cookie` を `WASID4D=...` および `4DSID__ProjectName_=....` に設定)。
+When returning a 4D.OutgoingMessage object instance, 4D automatically sets some headers (e.g. `Set-Cookie` with `4DSID__ProjectName_=....`).4D.OutgoingMessage オブジェクトインスタンスを返す場合、4D は自動的に一部のヘッダーを自動的に設定します(例: `Set-Cookie` を `4DSID__ProjectName_=....` で設定するなど)。
 
 :::note
 
@@ -153,7 +153,7 @@ exposed onHTTPGet Function getFile() : 4D.OutgoingMessage
 
 <!-- END REF -->
 
-<!-- REF #OutgoingMessageClass.setStatus().Desc -->
+<!-- REF OutgoingMessageClass.setStatus().Desc -->
 
 ## .setStatus()
 
@@ -177,7 +177,7 @@ HTTP ステータスコードの一覧については、[Wikipedia のHTTP ス�
 
 <!-- END REF -->
 
-<!-- REF #OutgoingMessageClass.status.Desc -->
+<!-- REF OutgoingMessageClass.status.Desc -->
 
 ## .status
 

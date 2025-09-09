@@ -141,7 +141,7 @@ Los objetos TCPConnection ofrecen las siguientes propiedades y funciones:
 | [<!-- INCLUDE #TCPConnection.shutdown().Syntax -->](#shutdown)<br/><!-- INCLUDE #TCPConnection.shutdown().Summary --> |
 | [<!-- INCLUDE #TCPConnection.wait().Syntax -->](#wait)<br/><!-- INCLUDE #TCPConnection.wait().Summary -->             |
 
-<!-- REF #4D.TCPConnection.new().Desc -->
+<!-- REF 4D.TCPConnection.new().Desc -->
 
 ## 4D.TCPConnection.new()
 
@@ -149,18 +149,18 @@ Los objetos TCPConnection ofrecen las siguientes propiedades y funciones:
 
 <!-- REF #4D.TCPConnection.new().params -->
 
-| Parámetros    | Tipo          |                             | Descripción                                                   |
-| ------------- | ------------- | --------------------------- | ------------------------------------------------------------- |
-| serverAddress | Text          | ->                          | Nombre de dominio o dirección IP del servidor                 |
-| serverPort    | Integer       | ->                          | Número de puerto del servidor                                 |
-| options       | Object        | ->                          | Configuración [opciones](#options-parameter) para la conexión |
-| Resultado     | TCPConnection | <- | Nuevo objeto TCPConnection                                    |
+| Parámetros    | Tipo                             |                             | Descripción                                                   |
+| ------------- | -------------------------------- | --------------------------- | ------------------------------------------------------------- |
+| serverAddress | Text                             | ->                          | Nombre de dominio o dirección IP del servidor                 |
+| serverPort    | Integer                          | ->                          | Número de puerto del servidor                                 |
+| options       | Object                           | ->                          | Configuración [opciones](#options-parameter) para la conexión |
+| Resultado     | 4D.TCPConnection | <- | Nuevo objeto TCPConnection                                    |
 
 <!-- END REF -->
 
 #### Descripción
 
-La función `4D.TCPConnection.new()` <!-- REF #4D.TCPConnection.new().Summary -->crea una nueva conexión TCP a la *serverAddress* y *serverPort* especificados, usando las *opciones* definidas, y devuelve un objeto `4D.HTTPRequest`<!-- END REF -->.
+The `4D.TCPConnection.new()` function <!-- REF #4D.TCPConnection.new().Summary -->creates a new TCP connection to the specified *serverAddress* and *serverPort*, using the defined *options*, and returns a `4D.TCPConnection` object<!-- END REF -->.
 
 #### Parámetro *options*
 
@@ -199,7 +199,7 @@ Un objeto [`TCPEvent`](TCPEventClass.md) es devuelto cuando se llama una [funci�
 
 <!-- END REF -->
 
-<!-- REF #TCPConnection.address.Desc -->
+<!-- REF TCPConnection.address.Desc -->
 
 ## .address
 
@@ -211,7 +211,7 @@ La propiedad `.address` contiene <!-- REF #TCPConnection.address.Summary -->la d
 
 <!-- END REF -->
 
-<!-- REF #TCPConnection.closed.Desc -->
+<!-- REF TCPConnection.closed.Desc -->
 
 ## .closed
 
@@ -223,7 +223,7 @@ La propiedad `.closed` contiene <!-- REF #TCPConnection.closed.Summary -->si la 
 
 <!-- END REF -->
 
-<!-- REF #TCPConnection.errors.Desc -->
+<!-- REF TCPConnection.errors.Desc -->
 
 ## .errors
 
@@ -242,7 +242,7 @@ La propiedad `.errors` contiene <!-- REF #TCPConnection.errors.Summary -->una co
 
 <!-- END REF -->
 
-<!-- REF #TCPConnection.listener.Desc -->
+<!-- REF TCPConnection.listener.Desc -->
 
 ## .listener
 
@@ -254,7 +254,7 @@ La propiedad `.listener` contiene <!-- REF #TCPConnection.listener.Summary -->el
 
 <!-- END REF -->
 
-<!-- REF #TCPConnection.noDelay.Desc -->
+<!-- REF TCPConnection.noDelay.Desc -->
 
 ## .noDelay
 
@@ -266,7 +266,7 @@ La propiedad `.noDelay` contiene <!-- REF #TCPConnection.noDelay.Summary -->si e
 
 <!-- END REF -->
 
-<!-- REF #TCPConnection.port.Desc -->
+<!-- REF TCPConnection.port.Desc -->
 
 ## .port
 
@@ -278,7 +278,7 @@ La propiedad `.port` contiene <!-- REF #TCPConnection.port.Summary -->el número
 
 <!-- END REF -->
 
-<!-- REF #TCPConnection.send().Desc -->
+<!-- REF TCPConnection.send().Desc -->
 
 ## .send()
 
@@ -298,7 +298,7 @@ La función `send()` <!-- REF #TCPConnection.send().Summary -->envía datos al s
 
 <!-- END REF -->
 
-<!-- REF #TCPConnection.shutdown().Desc -->
+<!-- REF TCPConnection.shutdown().Desc -->
 
 ## .shutdown()
 
@@ -318,7 +318,7 @@ La función `shutdown()`<!-- REF #TCPConnection.shutdown().Summary -->cierra el 
 
 <!-- END REF -->
 
-<!-- REF #TCPConnection.wait().Desc -->
+<!-- REF TCPConnection.wait().Desc -->
 
 ## .wait()
 

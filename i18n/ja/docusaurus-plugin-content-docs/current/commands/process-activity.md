@@ -18,9 +18,10 @@ displayed_sidebar: docs
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                  |
-| ----- | ------------------- |
-| 20 R7 | *sessionID* 引数のサポート |
+| リリース  | 内容                           |
+| ----- | ---------------------------- |
+| 20 R7 | *sessionID* 引数のサポート          |
+| 21    | Support of web user sessions |
 
 </details>
 
@@ -54,10 +55,9 @@ displayed_sidebar: docs
 
 "sessions" プロパティには、サーバーで実行中の全てのユーザーセッション を記述するオブジェクトのコレクションが格納されます。 セッションオブジェクトのプロパティの詳細については、[`Session info`](session-info.md) コマンドを参照してください。
 
-:::note 注記
+:::note
 
-- セッションのオブジェクトは、[Session](session.md) コマンドを使用することで取得できます。
-- `Process activity` はリモートクライアントセッション、ストアドプロシージャーセッションおよびREST セッションを返しますが、Web セッションは返しません(制約)。
+セッションのオブジェクトは、[Session](session.md) コマンドを使用することで取得できます。
 
 :::
 
@@ -107,5 +107,7 @@ displayed_sidebar: docs
 
 ## 参照
 
+[`Process info`](process-info.md)
+[`Session info`](session-info.md)
 [Session storage](session-storage.md)\
 [WEB Get server info](../commands-legacy/web-get-server-info.md)

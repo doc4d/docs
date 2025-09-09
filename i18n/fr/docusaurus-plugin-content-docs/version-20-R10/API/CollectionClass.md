@@ -1303,10 +1303,10 @@ Elle peut définir le(s) paramètre(s) suivant(s) :
 var $col ; $result : Collection
 $col:=New collection(1; 2; 3; 4)
 
-$result:=$col.map(Formula(New collection($1.value*2))
+$result:=$col.map(Formula(New collection($1.value*2)))
  // [[2],[4],[6],[8]]
 
-$result:=$col.flatMap(Formula(New collection($1.value*2))
+$result:=$col.flatMap(Formula(New collection($1.value*2)))
 // [2,4,6,8]
 ```
 
@@ -3344,7 +3344,7 @@ Si la collection contient des objets, passez le paramètre *propertyPath* pour i
 | Paramètres | Type                                   |                             | Description                                                      |
 | ---------- | -------------------------------------- | :-------------------------: | ---------------------------------------------------------------- |
 | value      | Text, Number, Object, Collection, Date |              ->             | Valeur(s) à insérer au début de la collection |
-| Résultat   | Real                                   | <- | Collection contenant des éléments ajoutés                        |
+| Résultat   | Collection                             | <- | Collection contenant des éléments ajoutés                        |
 |            |                                        |                             |                                                                  |
 
 <!-- END REF -->

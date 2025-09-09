@@ -22,8 +22,8 @@ La carpeta del paquete de un componente puede contener:
 
 - para **componentes interpretados**: una [Carpeta Project](../Project/architecture.md) estándar. El nombre de la carpeta del paquete debe llevar el sufijo **.4dbase** si desea instalarlo en la carpeta [**Componentes** de su proyecto](architecture.md#components).
 - para **componentes compilados**:
-    - una carpeta "Contents" que contenga un archivo .4DZ, una carpeta *Resources*, un archivo *Info.plist* (arquitectura recomendada)
-    - o directamente un archivo .4DZ con otras carpetas como *Resources*.
+  - una carpeta "Contents" que contenga un archivo .4DZ, una carpeta *Resources*, un archivo *Info.plist* (arquitectura recomendada)
+  - o directamente un archivo .4DZ con otras carpetas como *Resources*.
 
 :::note
 
@@ -345,10 +345,10 @@ En un proyecto abierto, puede añadir, eliminar, actualizar y obtener informaci�
 Para mostrar el panel Dependencias:
 
 - con 4D, seleccione el ítem de menú **Diseño/Dependencias del Proyecto** (entorno de desarrollo),<br/>
-    ![dependency-menu](../assets/en/Project/dependency-menu.png)
+  ![dependency-menu](../assets/en/Project/dependency-menu.png)
 
 - con 4D Server, seleccione el ítem de menú **Ventana/Dependencias del Proyecto**.<br/>
-    ![dependency-menu-server](../assets/en/Project/dependency-menu-server.png)
+  ![dependency-menu-server](../assets/en/Project/dependency-menu-server.png)
 
 A continuación, se muestra el panel Dependencias. Las dependencias se ordenan por nombre en orden alfabético:
 
@@ -609,7 +609,7 @@ Aparece una caja de diálogo de confirmación. Si la dependencia se declaró en 
 
 Si confirma la caja de diálogo, la dependencia eliminada [estado](#estado-dependencia) se marca automáticamente como "Descargar tras reinicio". Se descargará cuando se reinicie la aplicación.
 
-#### Dependency usage warnings
+#### Advertencias sobre el uso de dependencias
 
 When you attempt to remove a primary dependency that is required by other dependencies in your project, you will be warned that the dependency is still in use. The system will display which other dependencies require it and prompt you to confirm the removal, as removing it may cause those dependent components to stop working properly.
 
