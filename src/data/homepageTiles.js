@@ -152,11 +152,8 @@ title: (
   ),
     links: (
       <div className="homepageLinks">
-         <Link to="https://developer.qodly.com/docs">
+         <Link to="https://doc4d.github.io/docQodlyPro/">
           <Translate>4D Qodly Pro</Translate> <i class="fa-solid fa-up-right-from-square"></i>
-        </Link>
-        <Link to="WebServer/gettingStarted">
-          <Translate>Web Development</Translate>
         </Link>
         <Link to="WebServer/overview">
           <Translate>Web Server</Translate>
@@ -187,10 +184,15 @@ title: (
         <Link to="Menus/overview" >
           <Translate>Menus</Translate>
         </Link>
-        <Link to="Desktop/labels" >
+       <Link to="Desktop/labels" >
           <Translate>Labels</Translate>
         </Link>
-
+        <Link to="Desktop/user-settings" >
+          <Translate>User Settings</Translate>
+        </Link>
+        <Link to="Users/overview">
+          <Translate>Access Rights</Translate>
+        </Link>
       </div>
     ),
   },
@@ -225,12 +227,6 @@ title: (
         </Link>
         <Link to="Backup/overview">
           <Translate>Backup and Restore</Translate>
-        </Link>
-                <Link to="Users/overview">
-          <Translate>Access Rights</Translate>
-        </Link>
-        <Link to="Desktop/user-settings" >
-          <Translate>User Settings</Translate>
         </Link>
       </div>
     ),

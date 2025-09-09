@@ -2248,7 +2248,7 @@
             ],
             "image": "/img/docusaurus.png"
           }
-        }
+        },
         {
           "type": "category",
           "label": "Database Methods",
@@ -2363,19 +2363,10 @@
             "id": "WebServer/webServer"
           },
           "items": [
+            "WebServer/gettingStarted",
             "WebServer/webServerConfig",
             "WebServer/webServerAdmin",
-            "WebServer/webServerObject"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "Web Development",
-          "link": {
-            "type": "doc",
-            "id": "WebServer/gettingStarted"
-          },
-          "items": [
+            "WebServer/webServerObject",
             "WebServer/templates",
             "WebServer/httpRequests",
             "WebServer/http-request-handler",
@@ -2500,24 +2491,6 @@
           "type": "doc",
           "label": "Client/Server",
           "id": "Desktop/clientServer"
-        },
-        {
-          "type": "category",
-          "label": "Access Rights",
-          "link": {
-            "type": "generated-index",
-            "title": "Access Rights",
-            "description": "Access control and user privileges for desktop applications.",
-            "slug": "/category/access-rights",
-            "keywords": [
-              "access rights"
-            ],
-            "image": "/img/docusaurus.png"
-          },
-          "items": [
-            "Users/overview",
-            "Users/editing"
-          ]
         },
         {
           "type": "category",
@@ -2702,6 +2675,11 @@
             }
           ]
         },
+                {
+          "type": "doc",
+          "label": "Labels",
+          "id": "Desktop/labels"
+        },
         {
           "type": "category",
           "label": "Menus",
@@ -2716,15 +2694,28 @@
             "Menus/sdi"
           ]
         },
+                {
+          "type": "category",
+          "label": "Access Rights",
+          "link": {
+            "type": "generated-index",
+            "title": "Access Rights",
+            "description": "Access control and user privileges for desktop applications.",
+            "slug": "/category/access-rights",
+            "keywords": [
+              "access rights"
+            ],
+            "image": "/img/docusaurus.png"
+          },
+          "items": [
+            "Users/overview",
+            "Users/editing"
+          ]
+        },
         {
           "type": "doc",
           "label": "User Settings",
           "id": "Desktop/user-settings"
-        },
-        {
-          "type": "doc",
-          "label": "Labels",
-          "id": "Desktop/labels"
         }
       ]
     },
