@@ -138,6 +138,15 @@ title: (
         <Link to="category/processes">
           <Translate>Processes</Translate>
         </Link>
+         <Link to="Develop-legacy/transactions">
+          <Translate>Transactions</Translate>
+        </Link>
+        <Link to="Tags/transformation-tags">
+          <Translate>Transformation tags</Translate>
+        </Link>
+       <Link to="Project/date-time-formats">
+          <Translate>Date and Time Formats</Translate>
+        </Link>
       </div>
     ),
   },
