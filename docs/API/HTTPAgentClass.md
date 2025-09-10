@@ -82,7 +82,7 @@ HTTPAgent options will be merged with [HTTPRequest options](HTTPRequestClass.md#
 | maxTotalSockets  |Integer| 65535     |Maximum number of sockets for the agent |
 | minTLSVersion  |Text| undefined (see default value in [HTTPRequest.new()](HTTPRequestClass.md#options-parameter)) |Sets the minimum version of TLS for the requests using this agent|
 | protocol |Text| undefined (see default value in [HTTPRequest.new()](HTTPRequestClass.md#options-parameter)) |Protocol used for the requests using the agent |
-|storeCertificateName|Text|""|Name of the system certificate store from where to use certificates instead of those in the certificates folder for the requests using the agent. If the certificate store does not exist in the keychain, an error is returned|
+|storeCertificateName|Text|""|Name of the operating system certificate store (e.g. "LocalMachine") from where to use certificates instead of those in the certificates folder for the requests using the agent. If the certificate store is not found, an error is returned|
 | timeout |Real| undefined |If defined, timeout after which an unused socket is closed  |
 | validateTLSCertificate |Boolean| undefined (see default value in [HTTPRequest.new()](HTTPRequestClass.md#options-parameter)) | validateTLSCertificate for the requests using the agent|
 
