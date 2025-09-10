@@ -41,6 +41,14 @@ Since HTTPAgent is a shareable object, you can add one to a singleton class so y
 
 <!-- REF #4D.HTTPAgent.new().Syntax -->**4D.HTTPAgent.new**( { *options* : Object } ) : 4D.HTTPAgent<!-- END REF -->
 
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|21|Support of *storeCertificateName* property|
+
+</details>
+
 
 <!-- REF #4D.HTTPAgent.new().Params -->
 |Parameter|Type||Description|
@@ -68,13 +76,14 @@ HTTPAgent options will be merged with [HTTPRequest options](HTTPRequestClass.md#
 
 |Property|Type|Default|Description|
 |---|---|---|---|
-| keepAlive              |Boolean | true      |Activates keep alive for the agent                                            |
-| maxSockets             |Integer| 65535     |Maximum number of sockets per server                                                 |
-| maxTotalSockets        |Integer| 65535     |Maximum number of sockets for the agent                                     |
-| timeout                |Real| undefined |If defined, timeout after which an unused socket is closed                   |
-| certificatesFolder     |Folder| undefined (see default value in [HTTPRequest.new()](HTTPRequestClass.md#options-parameter)) |Sets the active client certificates folder for the requests using the agent |
-| minTLSVersion          |Text| undefined (see default value in [HTTPRequest.new()](HTTPRequestClass.md#options-parameter)) |Sets the minimum version of TLS for the requests using this agent            |
-| protocol               |Text| undefined (see default value in [HTTPRequest.new()](HTTPRequestClass.md#options-parameter)) |Protocol used for the requests using the agent                              |
+| certificatesFolder|Folder| undefined (see default value in [HTTPRequest.new()](HTTPRequestClass.md#options-parameter)) |Sets the active client certificates folder for the requests using the agent. Can be overriden by "storeCertificateName" (see below)|
+| keepAlive  |Boolean | true      |Activates keep alive for the agent  |
+| maxSockets  |Integer| 65535     |Maximum number of sockets per server |
+| maxTotalSockets  |Integer| 65535     |Maximum number of sockets for the agent |
+| minTLSVersion  |Text| undefined (see default value in [HTTPRequest.new()](HTTPRequestClass.md#options-parameter)) |Sets the minimum version of TLS for the requests using this agent|
+| protocol |Text| undefined (see default value in [HTTPRequest.new()](HTTPRequestClass.md#options-parameter)) |Protocol used for the requests using the agent |
+|storeCertificateName|Text|""|Name of the system certificate store from where to use certificates instead of those in the certificates folder for the requests using the agent. If the certificate store does not exist in the keychain, an error is returned|
+| timeout |Real| undefined |If defined, timeout after which an unused socket is closed  |
 | validateTLSCertificate |Boolean| undefined (see default value in [HTTPRequest.new()](HTTPRequestClass.md#options-parameter)) | validateTLSCertificate for the requests using the agent|
 
 :::note

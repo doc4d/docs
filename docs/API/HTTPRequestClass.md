@@ -81,6 +81,7 @@ HTTPRequest objects provide the following properties and functions:
 
 |Release|Changes|
 |---|---|
+|21|Support of *storeCertificateName* property|
 |20|TLS validation by default |
 |19 R7|Support of *automaticRedirections* and *decodeData* properties |
 
@@ -134,7 +135,7 @@ In the *options* parameter, pass an object that can contain the following proper
 |agent|[4D.HTTPAgent](HTTPAgentClass.md)|HTTPAgent to use for the HTTPRequest. Agent options will be merged with request options (request options take precedence). If no specific agent is defined, a global agent with default values is used.|Global agent object|
 |automaticRedirections|Boolean|If true, redirections are performed automatically (up to 5 redirections are handled, the 6th redirection response is returned if any)|True|
 |body|Variant|Body of the request (required in case of `post` or `put` requests). Can be a text, a blob, or an object. The content-type is determined from the type of this property unless it is set inside the headers|undefined|
-|certificatesFolder|[Folder](FolderClass.md)|Sets the active client certificates folder|undefined|
+|certificatesFolder|[Folder](FolderClass.md)|Sets the active client certificates folder. Can be overriden by "storeCertificateName" (see below).|undefined|
 |dataType|Text|Type of the response body attribute. Values: "text", "blob", "object", or "auto". If "auto", the type of the body content will be deduced from its MIME type (object for JSON, text for text, javascript, xml, http message and url encoded form, blob otherwise)|"auto"|
 |decodeData|Boolean|If true, the data received in the `onData` callback is uncompressed|False|
 |encoding|Text|Used only in case of requests with a `body` (`post` or `put` methods). Encoding of the request body content if it's a text, ignored if content-type is set inside the headers|"UTF-8"|
@@ -148,8 +149,9 @@ In the *options* parameter, pass an object that can contain the following proper
 |onTerminate|[Function](FunctionClass.md)|Callback when the request is over. It receives two objects as parameters (see below)|undefined|
 |protocol|Text|"auto" or "HTTP1". "auto" means HTTP1 in the current implementation|"auto"|
 |proxyAuthentication|[authentication object](#authentication-object)|Object handling proxy authentication|undefined|
-|serverAuthentication|[authentication object](#authentication-object)|Object handling server authentication|undefined|
 |returnResponseBody|Boolean|If false, the response body is not returned in the [`response` object](#response). Returns an error if false and `onData` is undefined|True|
+|serverAuthentication|[authentication object](#authentication-object)|Object handling server authentication|undefined|
+|storeCertificateName|Text|Name of the system certificate store from where to use certificates instead of those in the certificates folder. If the certificate store does not exist in the keychain, an error is returned|""|
 |timeout|Real|Timeout in seconds. Undefined = no timeout|Undefined|
 |validateTLSCertificate|Boolean|If false, 4D does not validate the TLS certificate and does not return an error if it is invalid (i.e. expired, self-signed...). Important: In the current implementation, the Certification Authority itself is not verified.|True|
 
