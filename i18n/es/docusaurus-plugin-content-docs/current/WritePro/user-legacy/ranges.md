@@ -1,54 +1,54 @@
 ---
 id: ranges
-title: Ranges
+title: Rangos
 displayed_sidebar: docs
 slug: /WritePro/user/ranges
 ---
 
 
 
-4D Write Pro allows you to programmatically select and manipulate document contents. Since the selected content can include text, images, tables, etc., and also (invisible) formatting tags, 4D Write Pro works with objects called **ranges**.
+4D Write Pro le permite seleccionar y manipular por programación el contenido del documento. Dado que el contenido seleccionado puede incluir texto, imágenes, tablas, etc., y también etiquetas de formato (invisibles), 4D Write Pro funciona con objetos llamados **rangos**.
 
-A range is an object that represents a portion of a 4D Write Pro document:
+Un rango es un objeto que representa una porción de un documento 4D Write Pro:
 
-- a range of characters, paragraphs, pictures, or tables is defined through character positions within the parent document,
-- a range of cells, columns and rows is defined through cell positions and are anchored to the parent table.
+- un rango de caracteres, párrafos, imágenes o tablas se define a través de posiciones de caracteres dentro del documento principal,
+- un rango de celdas, columnas y filas se define a través de las posiciones de las celdas y están ancladas a la tabla principal.
 
-A range is used to designate elements to be selected or manipulate attributes on a part of the document (using [`WP GET ATTRIBUTES`](../commands/wp-get-attributes) and [`WP SET ATTRIBUTES`](../commands/wp-set-attributes)).
+Puede usarse para designar elementos a seleccionar o manipular atributos en una parte del documento (usando [`WP GET ATTRIBUTES`](../commands/wp-get-attributes) y [`WP SET ATTRIBUTES`](../commands/wp-set-attributes)).
 
-There are different types of ranges. You can determine the type of a range using the `wk type` attribute (read-only). Each range contains several private attributes that define it:
+Hay diferentes tipos de rangos. Puede determinar el tipo de rango utilizando el atributo `wk type` (solo lectura). Cada rango contiene varios atributos privados que lo definen:
 
+| Constante   | Valor | Comentario |
+|------------|-------|------------|
+| `wk end`   | `end` | (Atributo de rango de sólo lectura) |
+| `wk owner` | `owner` | (Atributo de rango de sólo lectura) |
+| `wk start` | `start` | (Atributo de rango de sólo lectura) |
+| `wk type`  | `type` | (Atributo de rango de sólo lectura) Tipo de rango 4D Write Pro. Puede ser 0: rango por defecto (por defecto), 1: rango párrafo, 2: rango imagen |
 
-| Constant   | Value | Comment |
-|------------|-------|---------|
-| `wk end`   | `end` | *(Read-only attribute)*<br>Range end offset, or section/subsection text end index in the document body (for subsection, text end index of the parent section).<br>**Value type**: Longint |
-| `wk owner` | `owner` | *(Read-only attribute)*<br>Owner of the range/object/section/subsection (reference to the document for section/subsection).<br>**Value type**: Object |
-| `wk start` | `start` | *(Read-only attribute)*<br>Range start offset, or section/subsection text start index in the document body (for subsection, text start index of the parent section).<br>**Value type**: Longint |
-| `wk type`  | `type` | *(Read-only attribute)* Type of 4D Write Pro object. Possible values:<br>- `wk type default`: Range or section with not defined type<br>- `wk type paragraph`: Paragraph type range<br>- `wk type image`: Image (anchored and inline)<br>- `wk type container`: Header or footer, for instance<br>- `wk type table`: Table reference<br>For ranges of cells, columns and rows only:<br>- `wk type table row`: Table row reference<br>- `wk type table cell`: Table cell reference<br>- `wk type table column`: Table column reference<br>For subsections only:<br>- `wk first page`: First page subsection<br>- `wk right page`: Right page subsection<br>- `wk left page`: Left page subsection |
+Los rangos de filas, columnas y celdas de [tables](./handling-tables.md) tienen atributos privados específicos que permiten definirlos:
 
-The ranges of rows, columns and cells of [tables](./handling-tables.md) have specific, private attributes allowing to define them: 
-
-| Constant             | Value           | Comment |
-|----------------------|------------------|---------|
-| `wk cell count`      | `cellCount`      | Total number of cells in the row.<br>**Value type**: Longint *(value for `wk type table row`)* |
-| `wk column count`    | `columnCount`    | *(Available for tables, documents and sections)* Number of columns.<br>**Value type**: Longint<br>For a table: read-only attribute<br>For a document or a section: read-write attribute. Default value = 1 (single column). Maximum value = 20 |
-| `wk first column`    | `firstColumn`    | *(Read-only attribute)* Number of the first table column included in the range.<br>**Value type**: Longint |
-| `wk first row`       | `firstRow`       | *(Read-only attribute)* Number of the first table row included in the range.<br>**Value type**: Longint |
-| `wk header row count`| `headerRowCount` | *(Read/Write)* Number of rows of the table with the attribute `wk header` set to `True`.<br>Maximum value is 5. If you pass a value above 5, `wk header` is set to `True` for the first five rows only *(see [Repeated headers](./handling-tables.md#repeated-headers))*. |
-| `wk row count`       | `rowCount`       | *(Read-only attribute)* Total number of rows.<br>**Value type**: Longint |
-| `wk table`           | `table`          | *(Read-only attribute)* The parent table.<br>**Value type**: Object |
-| `wk table ID`        | `tableID`        | *(Read-only attribute)* ID of the parent table.<br>**Value type**: String |
-
+| Constante              | Valor            | Comentario |
+|------------------------|------------------|-------------|
+| `wk cell count`        | `cellCount`      | Número total de celdas en la fila.<br>**Tipo de valor**: Entero largo *(valor para `wk type table row`)* |
+| `wk column count`      | `columnCount`    | *(Atributo de rango de sólo lectura)* Número total de columnas del rango.<br>**Tipo de valor**: Entero largo |
+| `wk first column`      | `firstColumn`    | *(Atributo de rango de sólo lectura)* Número de la primera columna del rango.<br>**Valor**: Entero largo |
+| `wk first row`         | `firstRow`       | *(Atributo de rango de sólo lectura)* Número de la primera fila del rango.<br>**Valor**: Entero largo |
+| `wk header row count`  | `headerRowCount` | *(Lectura/Escritura)* Número de líneas de la tabla con el atributo `wk header` definido como True.<br>El valor máximo es 5. Si se pasa un valor superior a 5, `wk header` se define como True sólo para las cinco primeras líneas *(ver [Encabezados repetidos](./handling-tables.md#repeated-headers))* |
+| `wk row count`         | `rowCount`       | *(Atributo de rango de sólo lectura)* Número total de columnas en el rango.<br>**Valor**: Entero largo |
+| `wk table`             | `table`          | *(Atributo de solo lectura)* La tabla padre.<br>**Tipo de valor**: objeto |
+| `wk table ID`          | `tableID`        | *(Atributo de rango de sólo lectura)* ID de la tabla principal del rango.<br>**Valor**: cadena |
 
 
 
-Several commands allow you to define document ranges:
-- [WP Text range](../commands/wp-text-range) returns a new range corresponding to boundaries you passed as parameters.
-- [WP Selection range](../commands/wp-selection-range) returns a new range corresponding to the current user selection.
-- [WP Picture range](../commands/wp-picture-range) returns a new range containing only the pictures.
-- [WP Paragraph range](../commands/wp-paragraph-range) returns a new range containing only the paragraphs.
-- [WP Table range](../commands/wp-table-range) returns a new range containing only the tables.
+Varios comandos le permiten definir rangos:
 
-You can get information about the position of a range in a document (page number, column number...) using the [`WP Get position`](../commands/wp-get-position) command.
+- [WP Text range](../commands-legacy/wp-text-range.md): devuelve un nuevo rango correspondiente a los límites que pasa como parámetros.
+- [WP Selection range](../commands-legacy/wp-selection-range): devuelve un nuevo rango que corresponde a la selección usuario actual.
+- [WP Picture range](../commands-legacy/wp-picture-range): devuelve un nuevo rango que contiene solo las imágenes.
+- [WP Paragraph range](../commands-legacy/wp-paragraph-range): devuelve un nuevo rango que contiene solo los párrafos.
+- [WP Table range](../commands-legacy/wp-table-range): devuelve un nuevo rango que contiene solo las tablas.
+
+Puede obtener información sobre la posición de un rango en un documento (número de página, número de columna…) usando la comando [WP Get position](../commands-legacy/wp-get-position).
+
 
 

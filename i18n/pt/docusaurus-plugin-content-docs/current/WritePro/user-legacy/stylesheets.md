@@ -1,65 +1,62 @@
 ---
 id: stylesheets
-title: Style sheets
+title: Folhas de estilo
 displayed_sidebar: docs
 slug: /WritePro/user/stylesheets
 ---
 
 
-A style sheet is an object of defined set of attribute settings used to control the appearance of your 4D Write Pro documents. These settings can be applied to paragraphs and characters, such as the font to display, as well as the font's size, color, and weight. Once a style sheet is defined, it is saved as an object in the 4D Write Pro document so it can easily be reused. Style sheets let you give your documents a distinctive and unique appearance, while saving you time and effort. 
+Uma folha de estilo é um objeto de um conjunto definido de configurações de atributos utilizadas para controlar a aparência de seus documentos 4D Write Pro. Esta configuração pode ser aplicada a parágrafos e caracteres, como a fonte a mostrar, assim como o tamanho, a cor e o peso da fonte. Quando tiver definido uma folha de estilo, é guardada como um objeto no documento 4D Write Pro para que possa ser reutilizada facilmente. As folhas de estilo lhe permitem dar a seus documentos um aspecto diferente e único, enquanto poupa tempo e esforço.
 
+## Estilo “normal”
 
-## Default style
+Todos os documentos 4D Write Pro têm uma folha de estilo de parágrafo definida por padrão, “Normal”. As novas folhas de estilo (criadas com o comando [WP New style sheet](../commands-legacy/wp-new-style-sheet)) se herdam automaticamente do estilo Normal. Os atributos modificados por uma folha de estilo só afetam aos parágrafos aos que forem aplicados, o resto de documento conserva a configuração Normal por padrão. Se for eliminada uma folha de estilo, os atributos modificados voltarão ao estilo Normal.
 
-All 4D Write Pro documents have a default paragraph style sheet, "Normal". New style sheets (created with the [WP New style sheet](../commands/wp-new-style-sheet) command) automatically inherit from the Normal style. Attributes modified by a style sheet effect only the paragraphs they are applied to, the rest of the document retains the default Normal settings. If a style sheet is removed, the modified attributes will revert to the Normal style.
+O estilo Normal define um valor predeterminado para cada atributo de folha de estilo em um documento 4D Write Pro e pode ser recuperado com o comando [WP Get style sheet](../commands-legacy/wp-get-style-sheet). A folha de estilo Normal pode ser modificada (mas não renomeada) com o comando [WP SET ATTRIBUTES](../commands/wp-set-attributes). Apesar das folhas de estilo criadas com o comando [WP New style sheet](../commands-legacy/wp-new-style-sheet) poderem ser eliminadas com o comando [WP DELETE STYLE SHEET](../commands-legacy/wp-delete-style-sheet), a folha de estilo Normal não pode ser reliminada.
 
-The Normal style defines a default value for every style sheet attribute in a 4D Write Pro document and can be retrieved with the [WP Get style sheet](../commands/wp-get-style-sheet) command. The Normal style sheet can be modified (but not renamed) with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command. While style sheets created with the [WP New style sheet](../commands/wp-new-style-sheet) command can be deleted with the [WP DELETE STYLE SHEET](../commands/wp-delete-style-sheet) command, the Normal style sheet can not be deleted.
+## Folhas de estilo de atributos de parágrafo e de caracteres
 
-## Paragraph and character style sheet attributes
+As folhas de estilo lhe permitem definir os atributos de parágrafos completos ou caracteres específicos:
 
-Style sheets allow you to define the attributes of entire paragraphs or specific characters:
+- **Parágrafo** - a grande maioria dos atributos que podem ser modificados se aplicam aos parágrafos. As folhas de estilo de parágrafo incluem configurações de estilo de caracteres, assim como atributos de formato que apenas podem ser aplicados a nível de parágrafo (por exemplo, margens, bordas, abas, etc.).
+- **Caracteres** - as folhas de estilo de caracteres utilizam apenas os atributos apropriados para diferenciar o texto (um ou mais caracteres) do estilo de parágrafo (por exemplo, cabeçalhos, títulos, texto sublinhado, etc.).
 
-- **Paragraph** - The vast majority of the attributes which can be modified apply only to paragraphs. Paragraph style sheets include character style settings, as well as formatting attributes that can only be applied at the paragraph level (e.g. margins, borders, tabs, etc.). 
-- **Character** - Character style sheets use only the attributes appropriate for distinquishing text (one or more characters) from the paragraph style (e.g., headers, titles, underlined text, etc.).
+Lembre que os estilos de parágrafo se aplicam a parágrafos completos. Para aplicar um estilo apenas a uma parte específica de um parágrafo, deve utilizar uma folha de estilo de caracteres.
 
-Note that paragraph styles apply to whole paragraphs. To apply a style only to a specific part of a paragraph, you must use a character style sheet.
+## Precedência de folha de estilo
 
-## Style sheet precedence
+Podem ser combinadas várias folhas de estilo de parágrafos e caracteres dentro do mesmo documento 4D Write Pro. É importante lembrar que a prioridade da folha de estilo estiver determinada pela ordem em que se aplicam.
 
-Multiple paragraph and character style sheets can be combined within the same 4D Write Pro document. It's important to note style sheet precedence is determined by the order they are applied. 
+- Se aplicar uma folha de estilo de parágrafo e depois aplicar uma folha de estilo de caracteres, a folha de estilo de caracteres terá prioridade sobre a folha de estilo de parágrafo. Por exemplo, poderia aplicar uma folha de estilo de parágrafo ao corpo de seu documento, depois poderia criar uma folha de estilo de caracteres “em negrito” e aplicá-la a palavras específicas. A folha de estilo de parágrafo se aplicará ao resto del texto, sin embargo, a folha de estilo de caracteres terá prioridade para as palavras designadas.
+- Se aplicar uma folha de estilo de caracteres e depois aplicar uma folha de estilo de parágrafo, a folha de estilo de parágrafo se aplicará a todo o texto e se eliminarão todos os estilos de caracteres da folha de estilos de caracteres.
 
-- If you apply a paragraph style sheet and then apply a character style sheet, the character style sheet will take precedence over the paragraph style sheet. For example, you could apply a paragraph style sheet to the body of your document, then you could create a "bold" character style sheet and apply it to specific words. The paragraph style sheet will still apply to the rest of the text, however the character style sheet will be prioritized for the designated words. 
-- If you apply a character style sheet and then apply a paragraph style sheet, the paragraph style sheet will be applied to all of the text and any character styles from the character style sheet will be removed.
+## Aplicando folhas de estilo
 
+As folhas de estilo se aplicam com o comando [WP SET ATTRIBUTES](../commands/wp-set-attributes) utilizando as constantes `wk style sheet` ou `wk new line style sheet` (utilizando notação de objetos).
 
-## Applying style sheets
+## Recuperando folhas de estilo
 
-Style sheets are applied with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command using the `wk style sheet` or `wk new line style sheet` constants (or using object notation). 
+O comando [WP Get style sheets](../commands-legacy/wp-get-style-sheets) lhe permite recuperar todas as folhas de estilo de um documento de acordo com seu tipo específico. O comando [WP Get style sheet](../commands-legacy/wp-get-style-sheet) lhe permite recuperar uma única folha de estilo por seu nome.
 
-## Retrieving style sheets
+## Importar e exportar folhas de estilo
 
-The [WP Get style sheets](../commands/wp-get-style-sheets) command lets you retrieve all style sheets in a document according to their specific type. The [WP Get style sheet](../commands/wp-get-style-sheet) command lets you retrieve a single style sheet by its name.
+Devido a que as folhas de estilo se armazenam como objetos, podem ser facilmente importadas entre a outros documentos 4D Write Pro ou ser mantidas quando são exportadas em múltiplos formatos.
 
-## Importing and exporting style sheets
+- **Importar** - pode obter todos os objetos de folha de estilo de um documento 4D Write Pro designado e usá-los em um novo documento com o comando [WP IMPORT STYLE SHEETS](../commands-legacy/wp-import-style-sheets).
+- **Exportar** - os comandos [WP EXPORT DOCUMENT](../commands/wp-export-document) ou [WP EXPORT VARIABLE](../commands/wp-export-variable.md) exportam seus documentos com suas folhas de estilo.
 
-Because style sheets are stored as objects, they can easily be imported into other 4D Write Pro documents or maintained when exported in multiple formats. 
+## Atributos de folhas de estilo
 
-- **Import** - You can get all of the style sheet objects from a designated 4D Write Pro document and use them in a new document with the [WP IMPORT STYLE SHEETS](../commands/wp-import-style-sheets) command. 
-- **Export** - The [WP EXPORT DOCUMENT](../commands/wp-export-document) or [WP EXPORT VARIABLE](../commands/wp-export-variable.md) commands export your documents with their style sheets. 
-
-
-## Style sheet attributes
-
-The following paragraph and character style sheet attributes can be modified with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) and [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) commands, or retrieved with the [WP GET ATTRIBUTES](../commands/wp-get-attributes) command.
+Os atributos abaixo de folha de estilo de parágrafos e caracteres se podem modificar com os comandos [WP SET ATTRIBUTES](../commands/wp-set-attributes) e [WP RESET ATTRIBUTES](../commands/wp-reset-attributes), ou se recuperam com o comando [WP GET ATTRIBUTES](../commands/wp-get-attributes).
 
 :::note
 
-Some attributes are linked together. Therefore when adding only one of these attributes, the other linked attributes will also be created with the default values. For linked attributes, the default value can be different than the value defined in the Normal style sheet. For example, if you define only a red left border, the other borders will be black (default value) even if the borders in the Normal style sheet were previously defined as purple.
+Nota: alguns atributos estão vinculados entre si. Por lo tanto, ao agregar apenas um desses atributos, os outros atributos vinculados também se criarão com os valores predeterminados. Para os atributos vinculados, o valor predeterminado pode ser diferente do valor definido na folha de estilo Normal. Por exemplo, se definir apenas uma borda esquerda vermelha, os outros bordas serão pretas (valor por defeito) mesmo se as bordas na folha de estilo Normal tinham sido previamente definidas como púrpura.
 
 :::
 
 
-| Attribute                        | Paragraph | Character | Linked With |
+| Atributos                        | Parágrafo | Caractere | Associado com |
 |----------------------------------|-----------|-----------|-------------|
 | `wk avoid widows and orphans`    | X         |           |             |
 | `wk background clip`             | X         |           |             |

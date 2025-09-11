@@ -1,54 +1,51 @@
 ---
 id: ranges
-title: Ranges
+title: Faixas
 displayed_sidebar: docs
 slug: /WritePro/user/ranges
 ---
 
 
 
-4D Write Pro allows you to programmatically select and manipulate document contents. Since the selected content can include text, images, tables, etc., and also (invisible) formatting tags, 4D Write Pro works with objects called **ranges**.
+4D Write Pro lhe permite selecionar e manipular por programação o conteúdo do documento. Dado que o conteúdo selecionado pode incluir texto, imagens, tabelas, etc., e também etiquetas de formato (invisíveis), 4D Write Pro funciona com objetos chamados **faixas** (ranges - faixas de seleção ou gama de objetos selecionados).
 
-A range is an object that represents a portion of a 4D Write Pro document:
+Uma faixa é um objeto que representa uma porção de um documento 4D Write Pro:
 
-- a range of characters, paragraphs, pictures, or tables is defined through character positions within the parent document,
-- a range of cells, columns and rows is defined through cell positions and are anchored to the parent table.
+- uma faixa de caracteres, parágrafos, imagens ou de tabelas é definida através de posições de caracteres dentro do documento principal,
+- uma faixa de células, colunas e filas são definidas através das posições das células e estão ancoradas à tabela principal.
 
-A range is used to designate elements to be selected or manipulate attributes on a part of the document (using [`WP GET ATTRIBUTES`](../commands/wp-get-attributes) and [`WP SET ATTRIBUTES`](../commands/wp-set-attributes)).
+Pode ser usado para designar elementos a selecionar ou manipular atributos em uma parte de documento (usando [`WP GET ATTRIBUTES`](../commands/wp-get-attributes) e [`WP SET ATTRIBUTES`](../commands/wp-set-attributes)).
 
-There are different types of ranges. You can determine the type of a range using the `wk type` attribute (read-only). Each range contains several private attributes that define it:
+| Constante   | Valor | Comentário |
+|------------|-------|-------------|
+| `wk end`   | `end` | (Atributo de faixa de só leitura) |
+| `wk owner` | `owner` | (Atributo de faixa de só leitura) |
+| `wk start` | `start` | (Atributo de faixa de só leitura) |
+| `wk type`  | `type` | (Atributo faixa apenas Leitura) Tipo de faixa 4D Write Pro. Pode ser 0: faixa padrão (valor pré-determinado), 1: faixa parágrafo, 2: faixa imagem |
 
+As faixas de filas, colunas e células possuem atributos privados específicos que permitem defini-las: veja [tables](./handling-tables.md)
 
-| Constant   | Value | Comment |
-|------------|-------|---------|
-| `wk end`   | `end` | *(Read-only attribute)*<br>Range end offset, or section/subsection text end index in the document body (for subsection, text end index of the parent section).<br>**Value type**: Longint |
-| `wk owner` | `owner` | *(Read-only attribute)*<br>Owner of the range/object/section/subsection (reference to the document for section/subsection).<br>**Value type**: Object |
-| `wk start` | `start` | *(Read-only attribute)*<br>Range start offset, or section/subsection text start index in the document body (for subsection, text start index of the parent section).<br>**Value type**: Longint |
-| `wk type`  | `type` | *(Read-only attribute)* Type of 4D Write Pro object. Possible values:<br>- `wk type default`: Range or section with not defined type<br>- `wk type paragraph`: Paragraph type range<br>- `wk type image`: Image (anchored and inline)<br>- `wk type container`: Header or footer, for instance<br>- `wk type table`: Table reference<br>For ranges of cells, columns and rows only:<br>- `wk type table row`: Table row reference<br>- `wk type table cell`: Table cell reference<br>- `wk type table column`: Table column reference<br>For subsections only:<br>- `wk first page`: First page subsection<br>- `wk right page`: Right page subsection<br>- `wk left page`: Left page subsection |
-
-The ranges of rows, columns and cells of [tables](./handling-tables.md) have specific, private attributes allowing to define them: 
-
-| Constant             | Value           | Comment |
-|----------------------|------------------|---------|
-| `wk cell count`      | `cellCount`      | Total number of cells in the row.<br>**Value type**: Longint *(value for `wk type table row`)* |
-| `wk column count`    | `columnCount`    | *(Available for tables, documents and sections)* Number of columns.<br>**Value type**: Longint<br>For a table: read-only attribute<br>For a document or a section: read-write attribute. Default value = 1 (single column). Maximum value = 20 |
-| `wk first column`    | `firstColumn`    | *(Read-only attribute)* Number of the first table column included in the range.<br>**Value type**: Longint |
-| `wk first row`       | `firstRow`       | *(Read-only attribute)* Number of the first table row included in the range.<br>**Value type**: Longint |
-| `wk header row count`| `headerRowCount` | *(Read/Write)* Number of rows of the table with the attribute `wk header` set to `True`.<br>Maximum value is 5. If you pass a value above 5, `wk header` is set to `True` for the first five rows only *(see [Repeated headers](./handling-tables.md#repeated-headers))*. |
-| `wk row count`       | `rowCount`       | *(Read-only attribute)* Total number of rows.<br>**Value type**: Longint |
-| `wk table`           | `table`          | *(Read-only attribute)* The parent table.<br>**Value type**: Object |
-| `wk table ID`        | `tableID`        | *(Read-only attribute)* ID of the parent table.<br>**Value type**: String |
+| Constante              | Valor            | Comentário |
+|------------------------|------------------|-------------|
+| `wk cell count`        | `cellCount`      | Número Total de células na fila.<br>**Tipo de Valor**: Inteiro longo *(valor para `wk type table row`)* |
+| `wk column count`      | `columnCount`    | *(Atributo de faixa somente leitura)* Número total de colunas na faixa.<br>**Valor**: inteiro longo |
+| `wk first column`      | `firstColumn`    | *(Atributo de faixa somente leitura)* Número da primeira coluna na faixa.<br>**Valor**: inteiro longo |
+| `wk first row`         | `firstRow`       | *(Atributo de faixa somente leitura)* Número da primeira linha na faixa.<br>**Valor**: inteiro longo |
+| `wk header row count`  | `headerRowCount` | *(Leitura/Escrita)* Número de linhas da tabela com o atributo `wk header` definido como True.<br>O valor máximo é 5. Se passar um valor superior a 5, `wk header` se define como True só para as cinco primeiras linhas *(ver [Cabeçalho repetido](./handling-tables.md#repeated-headers))* |
+| `wk row count`         | `rowCount`       | *(Atributo de faixa somente leitura)* Número total de linhas na faixa.<br>**Valor**: inteiro longo |
+| `wk table`             | `table`          | *(Atributo apenas Leitura)* Tabela pai.<br>**Valor tipo**: Objeto |
+| `wk table ID`          | `tableID`        | *(Atributo de faixa somente leitura)* ID da faixa da tabela pai.<br>**Valor**: String |
 
 
 
+Vários comandos lhe permitem definir faixas:
 
-Several commands allow you to define document ranges:
-- [WP Text range](../commands/wp-text-range) returns a new range corresponding to boundaries you passed as parameters.
-- [WP Selection range](../commands/wp-selection-range) returns a new range corresponding to the current user selection.
-- [WP Picture range](../commands/wp-picture-range) returns a new range containing only the pictures.
-- [WP Paragraph range](../commands/wp-paragraph-range) returns a new range containing only the paragraphs.
-- [WP Table range](../commands/wp-table-range) returns a new range containing only the tables.
+- [WP Text range](../commands-legacy/wp-text-range.md): devolve uma nova faixa correspondente aos limites que passam como parâmetros.
+- [WP Selection range](../commands-legacy/wp-selection-range): devolve uma nova faixa que corresponde à seleção usuário atual.
+- [WP Picture range](../commands-legacy/wp-picture-range): devolve uma nova faixa que contém só as imagens.
+- [WP Paragraph range](../commands-legacy/wp-paragraph-range): devolve uma nova faixa que contém só os parágrafos.
+- [WP Table range](../commands-legacy/wp-table-range): devolve uma nova faixa que contém só as tabelas.
 
-You can get information about the position of a range in a document (page number, column number...) using the [`WP Get position`](../commands/wp-get-position) command.
+Você pode obter informações sobre a posição de uma faixa em um documento (número da página, número da coluna…) usando o comando [WP Get position](../commands-legacy/wp-get-position).
 
 

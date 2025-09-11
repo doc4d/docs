@@ -7,48 +7,46 @@ slug: /WritePro/user/ranges
 
 
 
-4D Write Pro allows you to programmatically select and manipulate document contents. Since the selected content can include text, images, tables, etc., and also (invisible) formatting tags, 4D Write Pro works with objects called **ranges**.
+4D Write Proでは、ドキュメントのコンテンツをプログラム上によって選択し操作することができます。選択されたコンテンツにはテキスト、画像、表、そして非表示のフォーマット用タグが含まれることがあるため、4D Write Proではレンジ（範囲オブジェクト）を使用することでこれらを操作することができます。
 
-A range is an object that represents a portion of a 4D Write Pro document:
+レンジは次のように、4D Write Proドキュメントの一部をオブジェクト型で：
 
-- a range of characters, paragraphs, pictures, or tables is defined through character positions within the parent document,
-- a range of cells, columns and rows is defined through cell positions and are anchored to the parent table.
+- 文字、段落、画像、ピクチャー、表などのレンジは、元の親ドキュメント内の文字の位置を通じて定義されます。
+- セル、カラム、行のレンジは、それらの位置を通じて定義されており、親の表へアンカーされます。
 
-A range is used to designate elements to be selected or manipulate attributes on a part of the document (using [`WP GET ATTRIBUTES`](../commands/wp-get-attributes) and [`WP SET ATTRIBUTES`](../commands/wp-set-attributes)).
+レンジを使用することで選択した要素を指定したりドキュメントの一部の属性を操作（[`WP GET ATTRIBUTES`](../commands/wp-get-attributes) および [`WP SET ATTRIBUTES`](../commands/wp-set-attributes)）することができます。
 
-There are different types of ranges. You can determine the type of a range using the `wk type` attribute (read-only). Each range contains several private attributes that define it:
+レンジにはさまざまなタイプがあり、`wk type` 属性（読み取り専用）を使えば、レンジの種類を知ることができます。各レンジのタイプを定義することができます。また各レンジには、そのレンジを定義する複数の非公開の属性値が含まれます：
 
+| 定数       | 値     | コメント |
+|------------|--------|----------|
+| `wk end`   | `end`  | 読み込み専用のレンジ用属性 |
+| `wk owner` | `owner`| 読み込み専用のレンジ用属性 |
+| `wk start` | `start`| 読み込み専用のレンジ用属性 |
+| `wk type`  | `type` | 読み込み専用のレンジ用属性。4D Write Proオブジェクトの型。取れる値： <br>- `wk type default`: 定義のないレンジ <br>- `wk type paragraph`: 段落のレンジ <br>- `wk type image`: 画像（アンカー付き画像およびインライン画像） <br>- `wk type image anchored`: アンカー画像 <br> `wk type image inline`: インライン画像 <br> `wk type container`: ヘッダーやフッターなど <br> `wk type table`: 表の参照 <br> `wk type table row`: 表の行参照 <br> `wk type table cell`: 表のセル参照 <br> `wk type table column`: 複数のカラム参照（カラム透明行カラムレンジに対してのみ） <br> `wk type body`: 本文のレンジ |
 
-| Constant   | Value | Comment |
-|------------|-------|---------|
-| `wk end`   | `end` | *(Read-only attribute)*<br>Range end offset, or section/subsection text end index in the document body (for subsection, text end index of the parent section).<br>**Value type**: Longint |
-| `wk owner` | `owner` | *(Read-only attribute)*<br>Owner of the range/object/section/subsection (reference to the document for section/subsection).<br>**Value type**: Object |
-| `wk start` | `start` | *(Read-only attribute)*<br>Range start offset, or section/subsection text start index in the document body (for subsection, text start index of the parent section).<br>**Value type**: Longint |
-| `wk type`  | `type` | *(Read-only attribute)* Type of 4D Write Pro object. Possible values:<br>- `wk type default`: Range or section with not defined type<br>- `wk type paragraph`: Paragraph type range<br>- `wk type image`: Image (anchored and inline)<br>- `wk type container`: Header or footer, for instance<br>- `wk type table`: Table reference<br>For ranges of cells, columns and rows only:<br>- `wk type table row`: Table row reference<br>- `wk type table cell`: Table cell reference<br>- `wk type table column`: Table column reference<br>For subsections only:<br>- `wk first page`: First page subsection<br>- `wk right page`: Right page subsection<br>- `wk left page`: Left page subsection |
+行、カラムとセルのレンジには、それらを定義するための非公開の属性が存在します： [tables](./handling-tables.md) を参照してください。
 
-The ranges of rows, columns and cells of [tables](./handling-tables.md) have specific, private attributes allowing to define them: 
-
-| Constant             | Value           | Comment |
-|----------------------|------------------|---------|
-| `wk cell count`      | `cellCount`      | Total number of cells in the row.<br>**Value type**: Longint *(value for `wk type table row`)* |
-| `wk column count`    | `columnCount`    | *(Available for tables, documents and sections)* Number of columns.<br>**Value type**: Longint<br>For a table: read-only attribute<br>For a document or a section: read-write attribute. Default value = 1 (single column). Maximum value = 20 |
-| `wk first column`    | `firstColumn`    | *(Read-only attribute)* Number of the first table column included in the range.<br>**Value type**: Longint |
-| `wk first row`       | `firstRow`       | *(Read-only attribute)* Number of the first table row included in the range.<br>**Value type**: Longint |
-| `wk header row count`| `headerRowCount` | *(Read/Write)* Number of rows of the table with the attribute `wk header` set to `True`.<br>Maximum value is 5. If you pass a value above 5, `wk header` is set to `True` for the first five rows only *(see [Repeated headers](./handling-tables.md#repeated-headers))*. |
-| `wk row count`       | `rowCount`       | *(Read-only attribute)* Total number of rows.<br>**Value type**: Longint |
-| `wk table`           | `table`          | *(Read-only attribute)* The parent table.<br>**Value type**: Object |
-| `wk table ID`        | `tableID`        | *(Read-only attribute)* ID of the parent table.<br>**Value type**: String |
+| 定数      | 値    | コメント|
+|-------------------------|------------------|------------------------|
+| `wk column count`       | `columnCount`    | （テーブル、ドキュメント、セクション用の属性）カラムの数。<br>**値の型**：整数（long）<br>- テーブルの場合：読み込みのみの属性<br>- ドキュメントおよびセクションの場合：読み込み／書き込み可能属性。デフォルト値は 1（単一の行）、最大値は 20 |
+| `wk first column`       | `firstColumn`    | *(読み込みのみの属性)* テーブル内にある最初のカラムの数。<br>**値の型**：整数（long） |
+| `wk first row`          | `firstRow`       | *(読み込みのみの属性)* テーブル内の最初の行の数。<br>**値の型**：整数（long） |
+| `wk row count`          | `rowCount`       | *(読み込みのみの属性)* レンジ内の行数。<br>**値の型**：整数（long） |
+| `wk table`              | `table`          | *(読み出しのみの属性)* 親テーブル。<br>**値の型**：オブジェクト |
+| `wk table ID`           | `tableID`        | *(読み込みのみの属性)* 親テーブルのID。<br>**値の型**：文字列 |
 
 
 
+ドキュメントのレンジは次のように定義できます：
 
-Several commands allow you to define document ranges:
-- [WP Text range](../commands/wp-text-range) returns a new range corresponding to boundaries you passed as parameters.
-- [WP Selection range](../commands/wp-selection-range) returns a new range corresponding to the current user selection.
-- [WP Picture range](../commands/wp-picture-range) returns a new range containing only the pictures.
-- [WP Paragraph range](../commands/wp-paragraph-range) returns a new range containing only the paragraphs.
-- [WP Table range](../commands/wp-table-range) returns a new range containing only the tables.
+- [WP Text range](../commands-legacy/wp-text-range.md) `(wpArea ; startRange ; endRange) -> rangeObj`: 範囲として渡した境界値に基づく新しいレンジを返します。
+- [WP Selection range](../commands-legacy/wp-selection-range) `({*} wpArea) -> rangeObj`: 現在のユーザーセレクションに対応した新しいレンジを返します。
+- [WP Picture range](../commands-legacy/wp-picture-range) `(rangeObj) -> rangeObj`: 新しい画像のみのレンジを返します。
+- [WP Paragraph range](../commands-legacy/wp-paragraph-range) `(rangeObj) -> rangeObj`: 新しい段落のみのレンジを返します。
+- [WP Table range](../commands-legacy/wp-table-range) `(rangeObj) -> rangeObj`: 新しい表のみのレンジを返します。
 
-You can get information about the position of a range in a document (page number, column number...) using the [`WP Get position`](../commands/wp-get-position) command.
+ドキュメント内でのレンジの位置情報（ページ番号、カラム番号など）を取得するには、[`WP Get position`](../commands-legacy/wp-get-position) コマンドを使用してください。
+
 
 

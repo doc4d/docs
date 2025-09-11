@@ -1,65 +1,62 @@
 ---
 id: stylesheets
-title: Style sheets
+title: Feuilles de style
 displayed_sidebar: docs
 slug: /WritePro/user/stylesheets
 ---
 
 
-A style sheet is an object of defined set of attribute settings used to control the appearance of your 4D Write Pro documents. These settings can be applied to paragraphs and characters, such as the font to display, as well as the font's size, color, and weight. Once a style sheet is defined, it is saved as an object in the 4D Write Pro document so it can easily be reused. Style sheets let you give your documents a distinctive and unique appearance, while saving you time and effort. 
+Une feuille de style est un objet composé d’un ensemble de paramètres d’attributs définis pour gérer l’apparence de vos documents 4D Write Pro. Ces paramètres peuvent s’appliquer aux paragraphes et aux caractères, tels que la police à afficher, sa taille, sa couleur et son poids. Une fois la feuille de style définie, elle est sauvegardée en tant qu’objet dans le document 4D Write Pro afin d’être réutilisée facilement. Les feuilles de style vous permettent de donner à vos documents un aspect unique et distinctif, tout en gagnant du temps et au moindre effort.
 
+## Style par défaut
 
-## Default style
+Tous les documents 4D Write Pro ont une feuille de style de paragraphe par défaut, nommée “Normal”. De nouvelles feuilles de style (créées à l’aide de la commande [WP New style sheet](../commands-legacy/wp-new-style-sheet)) sont héritées automatiquement du style Normal. Les attributs modifiés par une feuille de style ont uniquement une incidence sur les paragraphes auxquels ils s’appliquent, le reste du document conserve les paramètres par défaut (Normal). Si une feuille de style est supprimée, les attributs qui ont été modifiés reprennent le style Normal.
 
-All 4D Write Pro documents have a default paragraph style sheet, "Normal". New style sheets (created with the [WP New style sheet](../commands/wp-new-style-sheet) command) automatically inherit from the Normal style. Attributes modified by a style sheet effect only the paragraphs they are applied to, the rest of the document retains the default Normal settings. If a style sheet is removed, the modified attributes will revert to the Normal style.
+Le style Normal définit une valeur par défaut à chaque feuille de style dans un document 4D Write Pro et peut être récupéré à l’aide de la commande [WP Get style sheet](../commands-legacy/wp-get-style-sheet). La feuille de style Normal peut être modifiée (mais ne peut pas être renommée) à l’aide de la commande [WP SET ATTRIBUTES](../commands/wp-set-attributes). Si les feuilles de style créées avec la commande [WP New style sheet](../commands-legacy/wp-new-style-sheet) sont supprimées avec la commande [WP DELETE STYLE SHEET](../commands-legacy/wp-delete-style-sheet), la feuille de style Normal ne peut pas être supprimée.
 
-The Normal style defines a default value for every style sheet attribute in a 4D Write Pro document and can be retrieved with the [WP Get style sheet](../commands/wp-get-style-sheet) command. The Normal style sheet can be modified (but not renamed) with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command. While style sheets created with the [WP New style sheet](../commands/wp-new-style-sheet) command can be deleted with the [WP DELETE STYLE SHEET](../commands/wp-delete-style-sheet) command, the Normal style sheet can not be deleted.
+## Attributs des feuilles de style de paragraphe et de caractère
 
-## Paragraph and character style sheet attributes
+Les feuilles de style vous permettent de définir les attributs de paragraphes entiers ou de caractères spécifiques :
 
-Style sheets allow you to define the attributes of entire paragraphs or specific characters:
+- **Paragraphe** - La majorité des attributs pouvant être modifiés s’appliquent uniquement aux paragraphes. Les feuilles de style de paragraphe incluent les paramètres de style de caractère ainsi que les attributs de formatage qui ne peuvent s’appliquer qu’au niveau des paragraphes (ex : marges, bordures, tabulations, etc.).
+- **Caractère** - Les feuilles de style de caractère utilisent uniquement les attributs appropriés pour distinguer le style du texte (un ou plusieurs caractères) du style du paragraphe (ex : en-têtes, titres, texte surligné, etc.).
 
-- **Paragraph** - The vast majority of the attributes which can be modified apply only to paragraphs. Paragraph style sheets include character style settings, as well as formatting attributes that can only be applied at the paragraph level (e.g. margins, borders, tabs, etc.). 
-- **Character** - Character style sheets use only the attributes appropriate for distinquishing text (one or more characters) from the paragraph style (e.g., headers, titles, underlined text, etc.).
+À noter que les styles de paragraphe s’appliquent à l’ensemble des paragraphes. Si vous souhaitez appliquer un style uniquement à une partie spécifique du paragraphe, vous devez utiliser une feuille de style de caractère.
 
-Note that paragraph styles apply to whole paragraphs. To apply a style only to a specific part of a paragraph, you must use a character style sheet.
+## Priorité des feuilles de style
 
-## Style sheet precedence
+Plusieurs feuilles de style de paragraphe et de caractère peuvent être intégrées au même document 4D Write Pro. Il est important de noter que la priorité des feuilles de style est déterminée selon l’ordre dans lequel elles s’appliquent :
 
-Multiple paragraph and character style sheets can be combined within the same 4D Write Pro document. It's important to note style sheet precedence is determined by the order they are applied. 
+- Si vous appliquez une feuille de style de paragraphe suivie d’une feuille de style de caractère, la feuille de style de caractère sera prioritaire par rapport à la feuille de style de paragraphe. Par exemple, vous pouvez appliquer une feuille de style de paragraphe au corps de votre document et créer ensuite une feuille de caractère “gras” et l’appliquer à certains mots. La feuille de paragraphe continuera de s’appliquer au reste du texte, mais la feuille de style de caractère sera prioritaire pour les mots qui avaient été désignés.
+- Si vous appliquez une feuille de style de caractère suivie d’une feuille de style de paragraphe, la feuille de style de paragraphe s’appliquera à l’ensemble du texte et tous les styles de caractères liés à la feuille de style de caractère seront supprimés.
 
-- If you apply a paragraph style sheet and then apply a character style sheet, the character style sheet will take precedence over the paragraph style sheet. For example, you could apply a paragraph style sheet to the body of your document, then you could create a "bold" character style sheet and apply it to specific words. The paragraph style sheet will still apply to the rest of the text, however the character style sheet will be prioritized for the designated words. 
-- If you apply a character style sheet and then apply a paragraph style sheet, the paragraph style sheet will be applied to all of the text and any character styles from the character style sheet will be removed.
+## Appliquer les feuilles de style
 
+Les feuilles de style s’appliquent à l’aide de la commande [WP SET ATTRIBUTES](../commands/wp-set-attributes) et des constantes `wk style sheet` ou `wk new line style sheet` (ou à l’aide de la notation objets).
 
-## Applying style sheets
+## Récupérer les feuilles de style
 
-Style sheets are applied with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command using the `wk style sheet` or `wk new line style sheet` constants (or using object notation). 
+La commande [WP Get style sheets](../commands-legacy/wp-get-style-sheets) vous permet de récupérer toutes les feuilles de style d’un document en fonction de leur type. La commande [WP Get style sheet](../commands-legacy/wp-get-style-sheet) vous permet de récupérer une feuille de style via son nom.
 
-## Retrieving style sheets
+## Importer et exporter des feuilles de style
 
-The [WP Get style sheets](../commands/wp-get-style-sheets) command lets you retrieve all style sheets in a document according to their specific type. The [WP Get style sheet](../commands/wp-get-style-sheet) command lets you retrieve a single style sheet by its name.
+Les feuilles de style étant stockées sous forme d’objets, elles peuvent être facilement importées dans d’autres documents 4D Write Pro ou maintenues lorsqu’elles sont exportées sous plusieurs formats.
 
-## Importing and exporting style sheets
+- **Import** - Vous pouvez obtenir tous les objets de la feuille de style d’un document 4D Write Pro spécifique et les utiliser dans un nouveau document à l’aide de la commande [WP IMPORT STYLE SHEETS](../commands-legacy/wp-import-style-sheets).
+- **Export** - Les commandes [WP EXPORT DOCUMENT](../commands/wp-export-document) ou [WP EXPORT VARIABLE](../commands/wp-export-variable.md) exportent vos documents avec leurs feuilles de style.
 
-Because style sheets are stored as objects, they can easily be imported into other 4D Write Pro documents or maintained when exported in multiple formats. 
+## Attributs des feuilles de style
 
-- **Import** - You can get all of the style sheet objects from a designated 4D Write Pro document and use them in a new document with the [WP IMPORT STYLE SHEETS](../commands/wp-import-style-sheets) command. 
-- **Export** - The [WP EXPORT DOCUMENT](../commands/wp-export-document) or [WP EXPORT VARIABLE](../commands/wp-export-variable.md) commands export your documents with their style sheets. 
-
-
-## Style sheet attributes
-
-The following paragraph and character style sheet attributes can be modified with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) and [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) commands, or retrieved with the [WP GET ATTRIBUTES](../commands/wp-get-attributes) command.
+Les attributs de paragraphe et de caractère ci-dessous peuvent être modifiés à l’aide des commandes [WP SET ATTRIBUTES](../commands/wp-set-attributes) et [WP RESET ATTRIBUTES](../commands/wp-reset-attributes), ou récupérés à l’aide de la commande [WP GET ATTRIBUTES](../commands/wp-get-attributes).
 
 :::note
 
-Some attributes are linked together. Therefore when adding only one of these attributes, the other linked attributes will also be created with the default values. For linked attributes, the default value can be different than the value defined in the Normal style sheet. For example, if you define only a red left border, the other borders will be black (default value) even if the borders in the Normal style sheet were previously defined as purple.
+Note : Certains attributs sont liés. Ainsi, lorsque vous ajoutez l’un de ces attributs, les autres attributs liés sont également créés avec les valeurs par défaut. La valeur par défaut des attributs liés peut être différente de la valeur définie dans la feuille de style Normal. Par exemple, si vous définissez uniquement une bordure gauche de couleur rouge, les autres bordures seront noires (valeur par défaut) même si les bordures du style Normal étaient précédemment définies comme violettes.
 
 :::
 
 
-| Attribute                        | Paragraph | Character | Linked With |
+| Attributs                        | Paragraphe | Caractère | Lié à |
 |----------------------------------|-----------|-----------|-------------|
 | `wk avoid widows and orphans`    | X         |           |             |
 | `wk background clip`             | X         |           |             |
