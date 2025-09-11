@@ -47,6 +47,7 @@ They provide the following properties and functions:
 |[<!-- INCLUDE #WebServerClass.openSSLVersion.Syntax -->](#opensslversion)<br/><!-- INCLUDE #WebServerClass.openSSLVersion.Summary -->|
 |[<!-- INCLUDE #WebServerClass.perfectForwardSecrecy.Syntax -->](#perfectforwardsecrecy)<br/><!-- INCLUDE #WebServerClass.perfectForwardSecrecy.Summary -->|
 |[<!-- INCLUDE #WebServerClass.rootFolder.Syntax -->](#rootfolder)<br/><!-- INCLUDE #WebServerClass.rootFolder.Summary -->|
+|[<!-- INCLUDE #WebServerClass.rules.Syntax -->](#rules)<br/><!-- INCLUDE #WebServerClass.rules.Summary -->|
 |[<!-- INCLUDE #WebServerClass.scalableSession.Syntax -->](#scalablesession)<br/><!-- INCLUDE #WebServerClass.scalableSession.Summary -->|
 |[<!-- INCLUDE #WebServerClass.sessionCookieDomain.Syntax -->](#sessioncookiedomain)<br/><!-- INCLUDE #WebServerClass.sessionCookieDomain.Summary -->|
 |[<!-- INCLUDE #WebServerClass.sessionCookieName.Syntax -->](#sessioncookiename)<br/><!-- INCLUDE #WebServerClass.sessionCookieName.Summary -->|
@@ -489,6 +490,28 @@ The <!-- REF #WebServerClass.perfectForwardSecrecy.Summary -->PFS availability o
 The <!-- REF #WebServerClass.rootFolder.Summary -->path of web server root folder<!-- END REF -->. The path is formatted in POSIX full path using filesystems. When using this property in the `settings` parameter, it can be a `Folder` object.
 
 <!-- END REF -->
+
+
+<!-- REF WebServerClass.rules.Desc -->
+## .rules
+
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|21|Added|
+
+</details>
+
+<!-- REF #WebServerClass.rules.Syntax -->**.rules** : Collection<!-- END REF -->
+
+*Read-only property*
+
+A <!-- REF #WebServerClass.rules.Summary -->collection of rule objects currently defined to customize HTTP headers<!-- END REF -->. A rule object contains a "regexPattern" property, as well as an action name with a value. Customized HTTP headers can be defined through a HTTPRules.json file or the `settings` parameter. For more information, please refer to the [HTTP Response Headers](../WebServer/http-responses.md) page. 
+
+<!-- END REF -->
+
+
 
 <!-- REF WebServerClass.scalableSession.Desc -->
 
