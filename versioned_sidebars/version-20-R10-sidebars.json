@@ -15,18 +15,6 @@
       "items": [
         "GettingStarted/installation",
         "GettingStarted/creating",
-         {
-                  "type": "category",
-                  "label": "Application Preferences",
-                  "items": [
-                    "Preferences/overview",
-                    "Preferences/general",
-                    "Preferences/structure",
-                    "Preferences/forms",
-                    "Preferences/methods",
-                    "Preferences/shortcuts"
-                  ]
-            },
         "Notes/updates"
       ]
     },
@@ -43,20 +31,15 @@
         "image": "/img/docusaurus.png"
       },
       "items": [
-        {
-          "type": "category",
-          "label": "Project Files",
-          "items": [
-            "Project/architecture",
-            "Project/code-overview",
-            "Project/documentation"
-          ]
-        },
+        "Project/architecture",
         {
           "type": "category",
           "label": "Settings",
+          "link": {
+                "type": "doc",
+                "id": "settings/overview"
+          },
           "items": [
-                "settings/overview",
                 "settings/general",
                 "settings/interface",
                 "settings/compiler",
@@ -72,26 +55,50 @@
         },
            {
                "type": "category",
-               "label": "Dababase",
+               "label": "Dababase structure",
                "items": [
                  "Develop/field-properties"
                 ]
             },
-          "code-editor/write-class-method",
+            {
+               "type": "category",
+               "label": "Code & Methods",
+               "items": [
+                  "Project/code-overview",
+                  "code-editor/write-class-method",
+                  "Project/project-method-properties",
+                  "Project/documentation"
+                ]
+            },
           "Project/components",
           "Project/compiler",
           "Desktop/building",
           {
            "type": "category",
            "label": "Debugger & logs",
+            "link": {
+                "type": "doc",
+                "id": "Debugging/basics"
+              },
            "items": [
-                "Debugging/basics",
                 "Debugging/debugger",
                 "Debugging/breakpoints",
                 "Debugging/debugging-remote",
                 "Debugging/debugLogFiles"
               ]
-            }
+            },
+            {
+               "type": "category",
+                "label": "Application Preferences",
+                "items": [
+                  "Preferences/overview",
+                  "Preferences/general",
+                  "Preferences/structure",
+                  "Preferences/forms",
+                  "Preferences/methods",
+                  "Preferences/shortcuts"
+               ]
+           }
       ] 
     },
     {

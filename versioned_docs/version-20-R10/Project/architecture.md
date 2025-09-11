@@ -1,6 +1,6 @@
 ---
 id: architecture
-title: Architecture of a project
+title: Architecture
 ---
 
 A 4D project is made of several folders and files, stored within a project root folder (package folder). For example:
