@@ -44,9 +44,9 @@ You can control automatic breaks in paragraphs using the following features:
 
 * **Widow and orphan control**: When this option is set for a paragraph, 4D Write Pro does not allow widows (last line of a paragraph isolated at the top of a page) or orphans (first line of a paragraph isolated at the bottom of a page) in the document. In the first case, the previous line of the paragraph is added to the top of the page so that two lines are displayed there. In the second case, the single first line is moved onto the next page.
 * **Avoid page break inside**: When this option is set for a paragraph, 4D Write Pro prevents this paragraph from being broken into parts on two or more pages.
-* **Keep with next:** When this option is set for a paragraph, that paragraph cannot be separated from the one that follows it by an automatic break. See `wk keep with next` and the corresponding *keepWithNext* standard action](./using-4d-write-pro-standard-actions.md).
+* **Keep with next:** When this option is set for a paragraph, that paragraph cannot be separated from the one that follows it by an automatic break. See `wk keep with next` and the corresponding *keepWithNext* [standard action](./defining-a-4d-write-pro-area.md#standard-actions).
 
-These options can be set using the context menu, or [attributes](../commands-legacy/4d-write-pro-attributes.md) (`wk avoid widows and orphans`, `wk page break inside paragraph`, or [*widowAndOrphanControlEnabled* and *avoidPageBreakInside* standard actions](./using-4d-write-pro-standard-actions.md). 
+These options can be set using the context menu, or [attributes](../commands-legacy/4d-write-pro-attributes.md) (`wk avoid widows and orphans`, `wk page break inside paragraph`, or *widowAndOrphanControlEnabled* and *avoidPageBreakInside* [standard actions](./defining-a-4d-write-pro-area.md#standard-actions). 
 
 ## Background 
 
@@ -59,7 +59,7 @@ The background of 4D Write Pro documents and document elements (tables, paragrap
 * painting area
 * repeat
 
-These [attributes](../commands-legacy/4d-write-pro-attributes.md) can be defined programmatically for either individual elements on a page and/or entire document backgrounds with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command or by [standard actions](./using-4d-write-pro-standard-actions.md). 
+These [attributes](../commands-legacy/4d-write-pro-attributes.md) can be defined programmatically for either individual elements on a page and/or entire document backgrounds with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command or by [standard actions](./defining-a-4d-write-pro-area.md#standard-actions). 
 
 Users can modify background attributes via the contextual menu as shown below:
 
@@ -200,7 +200,7 @@ You can change the display status of the rulers via standard actions (see *Using
 
 ### Adjusting text margins and indents 
 
-### Horizontal ruler 
+#### Horizontal ruler 
 
 You can modify the left and right margins, indents and tab positions by clicking and dragging the corresponding symbols on the horizontal ruler:  
   
@@ -212,7 +212,7 @@ When you hover the mouse over one of these symbols, the cursor changes to indica
 
 When multiple paragraphs are selected, dragging margin or indent symbols applies these margins or indents to all selected paragraphs. Holding down the **Shift** key while dragging these symbols maintains existing intervals between indents or margins in the selected paragraphs.
 
-### Vertical ruler 
+#### Vertical ruler 
 
 You can modify the top and bottom margins with the vertical ruler. When you hover the mouse over the margin limit, the cursor changes to indicate that it can be moved, and a horizontal guide line appears while you drag it:  
   
@@ -321,10 +321,10 @@ Once created, a bookmark is stored within the document. It is saved with the doc
 
 Several commands allow you to create, remove, and use bookmarks:
 
-[WP NEW BOOKMARK](../commands/wp-new-bookmark) to create a new bookmark from a range,
-[WP GET BOOKMARKS](../commands/wp-get-bookmarks) to get all bookmarks defined in a document,
-[WP Bookmark range](../commands/wp-bookmark-range) to retrieve a range from an existing bookmark,
-[WP DELETE BOOKMARK](../commands/wp-delete-bookmark) to delete a bookmark.
+[WP NEW BOOKMARK](../commands-legacy/wp-new-bookmark.md) to create a new bookmark from a range,
+[WP GET BOOKMARKS](../commands-legacy/wp-get-bookmarks.md) to get all bookmarks defined in a document,
+[WP Bookmark range](../commands-legacy/wp-bookmark-range.md) to retrieve a range from an existing bookmark,
+[WP DELETE BOOKMARK](../commands-legacy/wp-delete-bookmark.md) to delete a bookmark.
 
 ## Links
 
@@ -336,19 +336,19 @@ Hyperlinks can also be activated from within 4D Write Pro documents using the **
 
 | Link Type | Description |
 |-----------|-------------|
-| `url`     | Links to web pages or to any document, opens the associated application when activated (\*). Activating a URL link to a 4D Write Pro document (`.4wp`, `.4w7`) replaces the current document in the 4D Write Pro area.<br>(\*) Just like the command. |
+| `url`     | Links to web pages or to any document, opens the associated application when activated (\*). Activating a URL link to a 4D Write Pro document (`.4wp`, `.4w7`) replaces the current document in the 4D Write Pro area.<br>(\*) Just like the [OPEN URL](../../commands-legacy/open-url.md) command. |
 | `bookmark`| Links to bookmarks in the document |
-| `method`  | Activating a link to a 4D method executes the method (provided it is registered by the method). |
+| `method`  | Activating a link to a 4D method executes the method (provided it is registered by the [SET ALLOWED METHODS](../../commands/set-allowed-methods.md) method). |
 
 Hyperlinks are managed through the following commands:
 
-- [WP SET LINK](../commands/wp-set-link) to insert a link using a target object
-- [WP Get links](../commands/wp-get-links) to get the collection of all links in a target object.
+- [WP SET LINK](../commands-legacy/wp-set-link.md) to insert a link using a target object
+- [WP Get links](../commands-legacy/wp-get-links.md) to get the collection of all links in a target object.
 
 
 :::note
 
-Links are handled as attributes, thus they can be set or get using the [WP SET ATTRIBUTES](../commands/wp-set-attributes) and [WP GET ATTRIBUTES](../commands/wp-get-attributes) commands along with the `wk link url` constant. However, we recommended using [WP SET LINK](../commands/wp-set-link) and [WP Get links](../commands/wp-get-links) because they automatically encode/decode hyperlinks as URLs. When reading links using the [WP GET ATTRIBUTES](../commands/wp-get-attributes) command, if the target object contains several links, the command returns the first link string.
+Links are handled as attributes, thus they can be set or get using the [WP SET ATTRIBUTES](../commands/wp-set-attributes) and [WP GET ATTRIBUTES](../commands/wp-get-attributes) commands along with the `wk link url` constant. However, we recommended using [WP SET LINK](../commands-legacy/wp-set-link.md) and [WP Get links](../commands-legacy/wp-get-links.md) because they automatically encode/decode hyperlinks as URLs. When reading links using the [WP GET ATTRIBUTES](../commands/wp-get-attributes) command, if the target object contains several links, the command returns the first link string.
 
 :::
 

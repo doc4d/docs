@@ -8,9 +8,9 @@ displayed_sidebar: docs
 
 
 
-#### ビューモードの選択 
+## 基本概念
 
-ドキュメントがページビューモードのとき、以下のドキュメントプロパティがユーザーに表示されます:
+ドキュメントが[ページビューモード](./defining-a-4d-write-pro-area.md#selecting-the-view-mode)のとき、以下のドキュメントプロパティがユーザーに表示されます:
 
 * 印刷範囲を示すページのアウトライン
 * ページ幅とページの高さ (デフォルトは21x29.7 cm)
@@ -26,7 +26,7 @@ displayed_sidebar: docs
 * 内側での改ページを避けるプロパティ
 * ウィドウ&オーファンコントロール
 
-##### 段落ブレーク 
+## 段落ブレーク 
 
 ページモードまたは下書きモードで表示された時(あるいはドキュメント印刷のコンテキストにおいて)、4D Write Pro の段落は、以下のようなときにブレークを行うことがあります:
 
@@ -39,17 +39,17 @@ displayed_sidebar: docs
 * *insertPageBreak* 標準アクション
 * デフォルトのコンテキストメニューの、**段落ブレーク挿入**オプション
 
-**自動ブレークを管理する**
+### 自動ブレークを管理する
 
 以下の機能を使用することで、段落内の自動ブレークを管理することができます: 
 
 * **ウィドウ&オーファンコントロール**: このオプションが段落に対して設定されているとき、4D Write Pro はドキュメント内にてウィドウ (段落の最終行がページ上部に取り残される状態) とオーファン (段落の先頭行がページ下部に取り残される状態) を許可しません。前者の場合には、最終行の一つ前の行を加えた 2行がページ上部に表示されます。後者の場合には、単一の先頭行は次ページへと送られます。
 * **段落内の改ページを避ける**: このオプションが段落に対してチェックされている場合、4D Write Pro はその段落が 2枚以上のページに分割されないようにします。
-* **次の段落につなげる:** このオプションが段落に対して設定されている場合、その段落は、その後に続く段落と自動ブレークでは分割されなくなります。詳細に関してはwk keep with next とそれに対応する標準アクションを参照して下さい(*keepWithNext* 、*4D Write Pro標準アクションの使用*参照)
+* **次の段落につなげる:** このオプションが段落に対して設定されている場合、その段落は、その後に続く段落と自動ブレークでは分割されなくなります。詳細に関しては`wk keep with next` とそれに対応する[標準アクション](./defining-a-4d-write-pro-area.md#standard-actions)を参照して下さい*keepWithNext*.
 
-これらのオプションはコンテキストメニューを使用するか、あるいは属性(wk avoid widows and orphans、wk page break inside paragraph 詳細は*4D Write Pro属性* 参照)、または標準アクション(*widowAndOrphanControlEnabled*、 *avoidPageBreakInside*、 詳細は*4D Write Pro標準アクションの使用* 参照)を使用することで設定できます。
+これらのオプションはコンテキストメニューを使用するか、あるいは[属性](../commands-legacy/4d-write-pro-attributes.md)(`wk avoid widows and orphans`、`wk page break inside paragraph`、または[標準アクション](./defining-a-4d-write-pro-area.md#standard-actions)(*widowAndOrphanControlEnabled*、 *avoidPageBreakInside*。
 
-#### 背景 
+## 背景 
 
 4D Write Pro ドキュメントの背景とドキュメント要素(表、段落、セクション、ヘッダー/フッター等)には、以下のエフェクトを設定することができます:
 
@@ -60,23 +60,32 @@ displayed_sidebar: docs
 * 塗りエリア
 * 繰り返し
 
-これらの属性は、[WP SET ATTRIBUTES](../commands/wp-set-attributes) コマンドあるいは*4D Write Pro標準アクションの使用* コマンドによって、プログラムによってページ上のそれぞれの要素に対して、あるいはドキュメントの背景全体に対して定義することが可能です。利用可能な背景属性と、それがどこに適用可能であるかの一覧については、*4D Write Pro属性*の記事を参照してください。
+これらの[属性](../commands-legacy/4d-write-pro-attributes.md)は、[WP SET ATTRIBUTES](../commands/wp-set-attributes) コマンドあるいは[標準アクション](./defining-a-4d-write-pro-area.md#standard-actions)によってによって、プログラムによってページ上のそれぞれの要素に対して、あるいはドキュメントの背景全体に対して定義することが可能です。
 
 ユーザーは以下のように、コンテキストメニューを通じて背景属性を変更することが可能です:
 
 ![](../../assets/en/WritePro/pict3514201.en.png)
+![](../../assets/en/WritePro/pict3541581.en.png)
 
 背景画像にフルサイズの画像を追加する例については、*[How Do I (HDI) 例題 4DWrite Pro: フチなし全面の背景画像](https://github.com/4D-JP/HDI/releases/download/16r5/HDI%5F4DWP%5FBackImagePaperBox.zip)* にて紹介しています。
 
-#### ヘッダー、フッター、セクションの管理 
+## Headers, footers, and sections
 
 4D Write Pro ドキュメントはヘッダーとフッターをサポートします。ヘッダーとフッターはセクションと関連しています。
 
-セクションとは、ページレンジによって定義されたドキュメントの一部分で、ページングと属性の設定を独自に持つことができます。ドキュメントには複数のセクションを含めることができます (1から合計のページ数まで)。それぞれのページには、継続したセクションブレークを持つページを除き(以下参照)、1ページにつき1セクションのみ含めることができます。
+セクションとは、ページレンジによって定義されたドキュメントの一部分で、ページングと属性の設定を独自に持つことができます。ドキュメントには複数のセクションを含めることができます (1から合計のページ数まで)。それぞれのページには、継続したセクションブレークを持つページを除き(以下参照)、1ページにつき1セクションのみ含めることができます, except pages with continuous section breaks (see below). 
+
+4D Write Pro documents can contain:
+
+- one or more sections (one section by default)
+- for each section, up to three subsections:
+   - first page subsection
+   - left page(s) subsection
+   - right page(s) subsection
 
 各セクションに対して、ヘッダーとフッターのセットを定義することができます。
 
-##### セクションの定義 
+### セクションの定義 
 
 セクションとは4D Write Proドキュメント内の継続したページのサブセットです。ドキュメントは1つ以上のセクションを含むことができます。ひとつのセクションには何ページでも (単一のページからドキュメント内の総ページ数まで) 含めることができます。また、ひとつのセクションにはカラムを1個から最大20個まで含めることができます。
 
@@ -98,7 +107,7 @@ displayed_sidebar: docs
 
 セクションに対し、異なる最初のページ、異なる左/右ページを定義していた場合、そのページタイプもまたメニューに表示されるというに点に注意して下さい (後述参照)。
 
-##### 継続したセクションブレークの挿入 
+### 継続したセクションブレークの挿入 
 
 継続したセクションブレークは、同一ページ内に新しいセクションを作成します。これを使用することで、異なる数のカラムのセクションを持つページを作成することができます(*複数カラムと単一カラムのセクションを持ったページの作成* 参照)。
 
@@ -106,7 +115,7 @@ displayed_sidebar: docs
 
 **注:** 継続したセクションブレークを挿入したあとに新しいセクションに対してページの方向を変更した場合には、そのセクションブレークは通常のセクションブレークへと変換されます。
 
-##### セクション属性 
+### セクション属性 
 
 セクションはドキュメント属性を継承しますが、ヘッダーとフッターを含むドキュメント属性は、セクションごとに個別に編集することも可能です。コンテキストポップアップメニューは、セクションレベルで利用可能なプロパティと属性を表示します:
 
@@ -123,7 +132,7 @@ displayed_sidebar: docs
 * **ヘッダー** と **フッター** コマンド: これらのオプションを使用すると個別のヘッダーとフッターを定義することができます。これらのオプションは以下に詳細な説明があります。
 * **マージン** / **パッディング** / **境界線** / **背景**: これらの属性は各セクションに対して個別に設定が可能です。これらの属性のより詳細な情報については、*4D Write Pro属性*の記事を参照してください。
 
-##### ヘッダーとフッターの挿入 
+### ヘッダーとフッターの挿入 
 
 それぞれのセクションには固有のヘッダーとフッターをつけることができます。ヘッダーとフッターはページビューモードが**ページ**のときのみ表示されます。
 
@@ -158,7 +167,7 @@ displayed_sidebar: docs
 
 コンテキストメニューの**ヘッダーを削除**あるいは**フッターを削除**コマンドを選択すると、ヘッダーまたはフッターの定義全体 (コンテンツと属性) を削除することができます。
 
-##### 互換性 
+### 互換性 
 
 4D Write Proは、4D Writeプラグインから変換されたドキュメントのヘッダーとフッターも(固定長の高さで)扱うことができます。
 
@@ -168,7 +177,7 @@ displayed_sidebar: docs
 * 個別の最初のページ
 * 個別の左/右ページ
 
-#### ルーラーの管理 
+## Rulers 
 
 水平ルーラーは、4D Write Proの全てのビューモードで利用可能で、以下のような特徴を持ちます:
 
@@ -190,7 +199,7 @@ displayed_sidebar: docs
 
 **注:** 特定の4D Write Pro エリアプロパティを使用することで、ルーラーのデフォルトの表示状態を定義することができます(*ビュープロパティの設定* の章を参照してください)。
 
-##### テキストのマージンとインデントを調整する 
+### テキストのマージンとインデントを調整する 
 
 マージン、インデント、そしてタブの位置は、それぞれに対応する記号をクリックしてドラッグすることで変更することができます:
 
@@ -202,7 +211,7 @@ displayed_sidebar: docs
 
 複数の段落が選択されているとき、マージンあるいはインデント記号をドラッグした場合にはそのマージンとインデントは選択されている全ての段落に適用されます。これらの記号をShiftキーを押しながらドラッグした場合には、選択された段落内でのインデント間・マージン間の現在の間隔を維持します。
 
-###### 水平ルーラー 
+#### 水平ルーラー 
 
 水平ルーラーの、対応する記号をクリックしたりドラッグしたりすることで、左右のマージン、インデント、タブ位置などを変更することができます:
 
@@ -214,7 +223,7 @@ displayed_sidebar: docs
 
 複数の段落が選択されている時、マージンあるいはインデントの記号をドラッグすると、そのマージンあるいはインデントは選択された段落全体に対して適用されます。**Shift** キーを押しながら記号をドラッグすると、選択されている段落でのインデントとマージンの間の既存の距離が維持されます。
 
-###### 垂直ルーラー 
+#### 垂直ルーラー 
 
 垂直ルーラーを使用すると、上と下のマージンを変更することができます。マウスをマージンの端にホバーすると、カーソルは形を変えてそれが移動可能であることを示し、またドラッグ中は垂直なガイドラインが表示されます:
 
@@ -222,7 +231,7 @@ displayed_sidebar: docs
 
 このアクションを使用すると、ページの上と下の余白、またはドキュメントの本文とヘッダーとフッターの間の間隔を変更することができます。
 
-##### タブの管理 
+### タブの管理 
 
 水平ルーラーのコンテキストメニューを使用して、タブの作成、変更、削除をすることができます:
 
@@ -232,12 +241,14 @@ displayed_sidebar: docs
 
 **タブを削除**は既存のタブを右クリックした場合にのみ使用可能です。また、タブを水平ルーラーエリアの外へとドラッグすることで削除することもできます。
 
-**注:** 
+:::note 注
 
 * タブは、[WP SET ATTRIBUTES](../commands/wp-set-attributes)、[WP GET ATTRIBUTES](../commands/wp-get-attributes)、あるいは[WP RESET ATTRIBUTES](../commands/wp-reset-attributes) コマンドとwk tab default および wk tabs セレクターを使用することでプログラムで定義することも可能です。
 * 小数点揃えに関しては、4D Write Pro は右からみて最初のドットまたはカンマ文字を小数点区切りとして認識します。このデフォルトの設定はwk tab decimal separator セレクターを使用して変更することができます。
 
-###### タブリーダー文字を定義する 
+:::
+
+#### タブリーダー文字を定義する 
 
 タブの前にくる文字(リーダー文字)は、既定の5つの文字から選択するか、使用する特定の文字を指定することで定義する事ができます。既定の文字とは以下のとおりです:
 
@@ -247,13 +258,13 @@ displayed_sidebar: docs
 * \_\_ (アンダースコア)
 * \*\*\* (アスタリスク)
 
-リーダー文字は必ずタブの前に表示され、テキストの方向(左から右、あるいは右から左)に従います。[WP SET ATTRIBUTES](../commands/wp-set-attributes) 、[WP GET ATTRIBUTES](../commands/wp-get-attributes) 、および[WP RESET ATTRIBUTES](../commands/wp-reset-attributes) コマンドとwk leading と wk tab default または wk tabs セレクターを使用することでプログラミングによる定義も可能ですし、水平ルーラーのコンテキストメニューからユーザーインターフェース経由で定義することも可能です(以下参照)。
+リーダー文字は必ずタブの前に表示され、テキストの方向(左から右、あるいは右から左)に従います。[WP SET ATTRIBUTES](../commands/wp-set-attributes) 、[WP GET ATTRIBUTES](../commands/wp-get-attributes) 、および[WP RESET ATTRIBUTES](../commands/wp-reset-attributes) コマンドと`wk leading` と `wk tab default` または `wk tabs` セレクターを使用することでプログラミングによる定義も可能ですし、水平ルーラーのコンテキストメニューからユーザーインターフェース経由で定義することも可能です(以下参照)。
 
 ![](../../assets/en/WritePro/pict5761675.en.png)
 
 **その他...**が選択された場合、カスタムのリーダー文字を定義可能なダイアログが表示されます。
 
-##### マルチカラムルーラー 
+### マルチカラムルーラー 
 
 ドキュメントあるいはセクションに対して二つ以上のカラムが定義されている時、水平ルーラーは各カラムに対するそれぞれの特定のエリアを表示します:
 
@@ -261,11 +272,11 @@ displayed_sidebar: docs
 
 **注:** マルチカラム機能は、**埋め込み**ビューモードでは利用できません。
 
-##### On After Edit イベント 
+### On After Edit イベント 
 
-どの種類のタブやマージンコントロールでも、それらが(ドラッグあるいはコンテキストメニューを使用して)移動、追加、削除されたときには、4D Write Proエリアフォームオブジェクトに対してOn After Edit フォームイベントがトリガーされます。
+どの種類のタブやマージンコントロールでも、それらが(ドラッグあるいはコンテキストメニューを使用して)移動、追加、削除されたときには、4D Write Proエリアフォームオブジェクトに対して[`On After Edit`](../../Events/onAfterEdit.md) フォームイベントがトリガーされます。
 
-#### カラムの管理 
+## Columns
 
 4D Write Pro ではドキュメント内にカラムを管理することができます。カラムは最も左のカラムから最も右のカラムへと順番につながっています。言い換えると、テキストを入力していくとき、テキストは左にあるカラムを埋めていき、そのあとすぐ右にあるカラムへと続き、それがページの終わりに達するまで続いていきます。ページの終わりまで達すると、テキストは次のページへと続いていきます。ページ設定のバランスをとるために、4D Write Pro ではかカラムブレークを挿入することができます。
 
@@ -278,8 +289,8 @@ displayed_sidebar: docs
 カラムは以下の方法を用いて設定することも可能です:
 
 * 4D Write Pro エリアコンテキストメニューの**カラム**サブメニュー
-* 4D Write Pro 属性(*4D Write Pro属性*参照)
-* 4D Write Pro 標準アクション(*4D Write Pro標準アクションの使用*参照)
+* 4D Write Pro [属性](../commands-legacy/4d-write-pro-attributes.md)
+* 4D Write Pro [標準アクション](./using-4d-write-pro-standard-actions.md)
 
 カラムに対しては、以下のプロパティを設定/取得することができます:
 
@@ -292,7 +303,7 @@ displayed_sidebar: docs
 | ブレークを挿入        | カラムブレークを挿入                                                                                                                                                             | wk column break、[WP INSERT BREAK](../commands/wp-insert-break)も参照してください | *insertColumnBreak*                                   |
 | カラムメニュー        | カラムのサブメニューを作成します                                                                                                                                                       | \-                                                                      | *columns*                                             |
 
-##### 複数カラムと単一カラムのセクションを持ったページの作成 
+### 複数カラムと単一カラムのセクションを持ったページの作成 
 
 ドキュメント内で*継続したセクションブレークの挿入* を使用することで、同じページ上に複数カラムのセクションと単一カラムのセクションを載せることができます。
 
@@ -303,3 +314,114 @@ displayed_sidebar: docs
 継続したセクションブレークを挿入し、最初のセクションに対してカラムの数を2つに変更することができます:
 
 ![](../../assets/en/WritePro/pict5562058.en.png)
+
+## ブックマーク
+
+4D Write Pro ではブックマークと呼ばれる、ドキュメントの一部において動的な参照を作成、使用することができます。ブックマークは、4D Write Pro ドキュメント内の特定の[範囲](./ranges.md)に名前付きで関連付けられる参照です。
+
+ブックマークは動的なものであり、ユーザーにより範囲が移動、追加、または削除されると、ブックマークは自動的に更新され、ドキュメント内の同じ内容を継続して参照することができます。たとえば：
+
+- ドキュメント内のページ20にある "Hello world" を参照する"MyBM" という名前のブックマークを作成します。
+- 次に、ドキュメントの先頭に50ページを挿入します。
+- "MyBM" ブックマークを使用すると、今度はドキュメント内の70ページにある "Hello world" に自動的にアクセスできます。
+
+ドキュメント内には無制限のブックマークを含むことができます。複数のブックマークが同じ範囲を参照することができ、ブックマークの範囲は重なり合うことがあります。ただし、ドキュメント内の各ブックマーク名は一意である必要があります。ブックマークは、[WP INSERER DOCUMENT](../commands/wp-insert-document-body) コマンドが使用されるとインポートされません（移行先のドキュメント内のブックマークは上書きされません）。
+
+一度作成されたブックマークはドキュメント内に保存されます。ブックマークはドキュメントと共に保存され、複数のコマンドで操作することができます。
+
+また、テンプレートドキュメントの一部としてブックマークを使用することができます。これらのパーツは、データベース内のデータを使用して自動的に組み立てられ、請求書やカタログなどの最終的なドキュメントを生成するのに役立ちます。
+
+複数のコマンドを使用して、ブックマークを作成、削除、使用することができます：
+
+- [WP NEW BOOKMARK](../commands-legacy/wp-new-bookmark.md) はレンジから新しいブックマークを作成します。
+- [WP GET BOOKMARKS](../commands-legacy/wp-get-bookmarks.md) はドキュメント内で定義されている全てのブックマークを取得します。
+- [WP Bookmark range](../commands-legacy/wp-bookmark-range.md) は既存のブックマークからレンジを取得します。
+- [WP DELETE BOOKMARK](../commands-legacy/wp-delete-bookmark.md) はブックマークを削除します。
+
+## Links
+
+4D Write Pro では、レンジ（テキスト、ピクチャーなど）や要素（表、本文、フッターなど）を含めるほぼすべてを含むドキュメント全体にハイパーリンクを割り当てることができます。たとえば、ドキュメントの画像に対してハイパーリンクを設定できます。4D Write Pro ドキュメントが HTML にエクスポートされた場合、ユーザーはその画像をクリックして、リンク先のページを開くことができます。
+
+ハイパーリンクは、4D Write Pro ドキュメント内で **Ctrl+クリック**（Windows）または **Cmd+クリック**（macOS）操作をすることで簡単にアクティブ化できます。
+
+4D Write Pro は以下のリンクタイプをサポートします:
+
+| リンクのタイプ | 詳細 |
+|----------------|------|
+| `url` | Web ページあるいは任意のドキュメントのリンク。実行時には関連づけられたアプリケーションが開始されます。4D Write Pro ドキュメント (`.4wp`, `.4w7`) への URL リンクを活性化すると、エリアの 4D Write Pro ドキュメントが置き換えられます。<br>(*) [OPEN URL](../../commands-legacy/open-url.md) コマンドと同じ動作です。 |
+| `bookmark` | ドキュメント内のブックマークへのリンクです |
+| `method` | リンクがアクティブになると 4D メソッドが実行されます（実行されるのはあらかじめ登録されているメソッド [SET ALLOWED METHODS](../../commands/set-allowed-methods.md) に限られます）。 |
+
+ハイパーリンクは以下のコマンドで管理することができます:
+
+- [WP SET LINK](../commands-legacy/wp-set-link.md) を使用して、ターゲットオブジェクトの指定用にリンクを挿入
+- [WP Get links](../commands-legacy/wp-get-links.md) を使用して、ターゲットオブジェクト内のすべてのリンクのコレクションとして取得
+
+:::note
+
+注: リンクは属性として扱われるため、`wk link url` 定数を用いて [WP SET ATTRIBUTES](../commands/wp-set-attributes) および [WP GET ATTRIBUTES](../commands/wp-get-attributes) コマンドで定義・取得することができます。けれども、通常は [WP SET LINK](../commands-legacy/wp-set-link.md) や [WP Get links](../commands-legacy/wp-get-links.md) の使用が推奨されます。これらは自動的に URL としてリンクをエンコード／デコードします。[WP GET ATTRIBUTES](../commands/wp-get-attributes) コマンドを使用してリンクを読み取るとき、ターゲットオブジェクトが複数のリンクを含む場合は、最初のリンク文字列のみが返されます。
+
+:::
+
+たとえば、ユーザーが選択したテキストを Web サイトへの URL リンクに変換したい場合:
+
+![](../../assets/en/WritePro/link1.png)
+
+次のように書きます:
+
+```4d
+$range:=WP Get selection(*;"WParea")
+WP SET LINK($range;New object("url";"http://www.4d.com"))
+```
+
+![](../../assets/en/WritePro/link2.png)
+
+ターゲットオブジェクトからリンクを除去するためには、以下のように書きます:
+
+```4d
+$range:=WP Get selection(*;"WParea")
+WP SET LINK($range;New object("url";"http://www.4d.com"))
+```
+または
+
+```4d
+$range:=WP Get selection(*;"WParea")
+WP SET LINK($range;New object("url";"http://www.4d.com"))
+```
+
+**注:** *$range* がリンク全体を含んでいない場合、リンクは短縮されますが完全に削除されるわけではありません。
+
+## オブジェクト(フォーム)テーマのコマンドの使用
+
+以下の[オブジェクト（フォーム）](../../commands/theme/Objects_Forms.md)テーマの4Dコマンドは、4D Write Proのフォームオブジェクトをサポートします：
+
+| コマンド | 補足 |
+|---------|------|
+| OBJECT DUPLICATE | |
+| OBJECT Get auto spellcheck / OBJECT SET AUTO SPELLCHECK | |
+| OBJECT Get border style / OBJECT SET BORDER STYLE | |
+| OBJECT Get context menu / OBJECT SET CONTEXT MENU | |
+| OBJECT GET COORDINATES / OBJECT SET COORDINATES | |
+| OBJECT Get data source / OBJECT SET DATA SOURCE | |
+| OBJECT GET DRAG AND DROP OPTIONS / OBJECT SET DRAG AND DROP OPTIONS | |
+| OBJECT Get enabled / OBJECT SET ENABLED | |
+| OBJECT Get enterable / OBJECT SET ENTERABLE | |
+| OBJECT GET EVENTS / OBJECT SET EVENTS | |
+| OBJECT Get focus rectangle invisible / OBJECT SET FOCUS RECTANGLE INVISIBLE | |
+| OBJECT Get font / OBJECT SET FONT | カレントセレクションがあればそこに適用 |
+| OBJECT Get font size / OBJECT SET FONT SIZE | カレントセレクションがあればそこに適用 |
+| OBJECT Get font style / OBJECT SET FONT STYLE | カレントセレクションがあればそこに適用 |
+| OBJECT Get horizontal alignment / OBJECT SET HORIZONTAL ALIGNMENT | カレントセレクションがあればそこに適用。4D Write Proエリアの [wk justify](../../constants.md#wk-justify) 定数をサポート |
+| OBJECT GET RESIZING OPTIONS / OBJECT SET RESIZING OPTIONS | |
+| _o OBJECT SET COLOR | カレントセレクションがあればそこに適用 |
+| OBJECT GET RGB COLORS / OBJECT SET RGB COLORS | カレントセレクションがあればそこに適用 |
+| OBJECT Get type | |
+| OBJECT Get vertical alignment / OBJECT SET VERTICAL ALIGNMENT | 段落の垂直方向の行揃え。段落の高さが段落のテキストの高さより高い場合にのみ効力を発揮します。 |
+| OBJECT Get visible / OBJECT SET VISIBLE | |
+| OBJECT Is styled text | trueを返します |
+| OBJECT MOVE | |
+| OBJECT GET SUBFORM CONTAINER SIZE | |
+| OBJECT Get name | |
+| OBJECT Get pointer | |
+
+上記にないOBJECTコマンドはそれぞれ Write Proエリアに対しては使用できません。
