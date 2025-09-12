@@ -116,9 +116,6 @@ title: (
        <Link to="category/class-API-reference" >
           <Translate>Classes</Translate>
         </Link>
-        <Link to="category/database-methods">
-          <Translate>Database Methods</Translate>
-        </Link>
       </div>
     ),
   },{
@@ -137,6 +134,9 @@ title: (
         </Link>
         <Link to="category/processes">
           <Translate>Processes</Translate>
+        </Link>
+       <Link to="category/database-methods">
+          <Translate>Database Methods</Translate>
         </Link>
          <Link to="Develop-legacy/transactions">
           <Translate>Transactions</Translate>

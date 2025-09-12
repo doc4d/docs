@@ -90,8 +90,11 @@
             {
                "type": "category",
                 "label": "Application Preferences",
+                "link": {
+                 "type": "doc",
+                  "id": "Preferences/overview"
+                },
                 "items": [
-                  "Preferences/overview",
                   "Preferences/general",
                   "Preferences/structure",
                   "Preferences/forms",
@@ -2256,7 +2259,52 @@
             "image": "/img/docusaurus.png"
           }
         },
+    {
+      "type": "category",
+      "label": "Core Development",
+      "link": {
+        "type": "generated-index",
+        "title": "Core Development",
+        "slug": "/category/core",
+        "image": "/img/docusaurus.png"
+      },
+      "items": [
         {
+          "type": "category",
+          "label": "ORDA",
+          "link": {
+            "type": "doc",
+            "id": "ORDA/overview"
+          },
+          "items": [
+            "ORDA/dsmapping",
+            "ORDA/ordaClasses",
+            "ORDA/entities",
+            "ORDA/global-stamp",
+            "ORDA/datastores",
+            "ORDA/privileges",
+            "ORDA/client-server-optimization",
+            "ORDA/glossary"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Processes",
+          "link": {
+            "type": "generated-index",
+            "title": "Processes",
+            "slug": "/category/processes",
+            "keywords": [
+              "processes"
+            ],
+            "image": "/img/docusaurus.png"
+          },
+          "items": [
+            "Develop/processes",
+            "Develop/preemptive-processes"
+          ]
+        },
+                {
           "type": "category",
           "label": "Database Methods",
           "link": {
@@ -2288,57 +2336,7 @@
         }
       ]
     },
-    {
-      "type": "category",
-      "label": "Core Development",
-      "link": {
-        "type": "generated-index",
-        "title": "Core Development",
-        "slug": "/category/core",
-        "image": "/img/docusaurus.png"
-      },
-      "items": [
-        {
-          "type": "category",
-          "label": "ORDA",
-          "link": {
-            "type": "generated-index",
-            "title": "ORDA",
-            "slug": "/category/orda",
-            "keywords": [
-              "orda"
-            ],
-            "image": "/img/docusaurus.png"
-          },
-          "items": [
-            "ORDA/overview",
-            "ORDA/dsmapping",
-            "ORDA/ordaClasses",
-            "ORDA/entities",
-            "ORDA/global-stamp",
-            "ORDA/datastores",
-            "ORDA/privileges",
-            "ORDA/client-server-optimization",
-            "ORDA/glossary"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "Processes",
-          "link": {
-            "type": "generated-index",
-            "title": "Processes",
-            "slug": "/category/processes",
-            "keywords": [
-              "processes"
-            ],
-            "image": "/img/docusaurus.png"
-          },
-          "items": [
-            "Develop/processes",
-            "Develop/preemptive-processes"
-          ]
-        },
+
         "Develop-legacy/transactions",
           "Tags/transformation-tags",
           "Project/date-time-formats"
@@ -2854,7 +2852,7 @@
             "items": [
                   "Extensions/develop-components",
                   "Extensions/develop-plug-ins"
-                                ]
+                     ]
         },
         {
           "type": "category",
