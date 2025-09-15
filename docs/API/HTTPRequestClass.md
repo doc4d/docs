@@ -151,8 +151,8 @@ In the *options* parameter, pass an object that can contain the following proper
 |proxyAuthentication|[authentication object](#authentication-object)|Object handling proxy authentication|undefined|
 |returnResponseBody|Boolean|If false, the response body is not returned in the [`response` object](#response). Returns an error if false and `onData` is undefined|True|
 |serverAuthentication|[authentication object](#authentication-object)|Object handling server authentication|undefined|
-|storeCertificateName|Text|Name of the operating system certificate store from where to use certificates instead of those in the certificates folder. If the certificate store is not found, an error is returned|""|
-|timeout|Real|Timeout in seconds. Undefined = no timeout|Undefined|
+|storeCertificateName|Text|(Windows only) Name of the OS certificate store (e.g. "LocalMachine") from where to use certificates instead of those in the certificates folder. If the certificate store is not found, an error is returned. For more information, see [this blog post](https://blog.4d.com/https-requests-now-support-windows-certificate-store).|undefined|
+|timeout|Real|Timeout in seconds. undefined = no timeout|undefined|
 |validateTLSCertificate|Boolean|If false, 4D does not validate the TLS certificate and does not return an error if it is invalid (i.e. expired, self-signed...). Important: In the current implementation, the Certification Authority itself is not verified.|True|
 
 
@@ -169,7 +169,6 @@ Here is the sequence of callback calls:
 
 1. `onHeaders` is always called once
 2. `onData` is called zero or several times (not called if the request does not have a body)
-
 3. If no error occured, `onResponse` is always called once
 4. If an error occurs, `onError` is executed once (and terminates the request)
 5. `onTerminate` is always executed once
