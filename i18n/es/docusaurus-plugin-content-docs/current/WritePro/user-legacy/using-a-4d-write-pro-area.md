@@ -63,7 +63,7 @@ Estos [atributos](../commands-legacy/4d-write-pro-attributes.md) se pueden defin
 Los usuarios pueden modificar atributos de fondo a través del menú contextual como se muestra a continuación:
 
 ![](../../assets/en/WritePro/pict3514201.es.png)  
-![](../../assets/en/WritePro/pict3541581.en.png)
+![](../../assets/en/WritePro/pict3541581.EN.png)
 
 Para ver un ejemplo de cómo añadir una imagen de tamaño completo como fondo, vea la demostración de cómo hacerlo [aquí](http://download.4d.com/Demos/4D%5Fv16%5FR5/HDI%5F4DWP%5FBackImagePaperBox.zip).
 

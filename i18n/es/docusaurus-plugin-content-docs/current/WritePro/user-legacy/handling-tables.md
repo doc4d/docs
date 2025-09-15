@@ -240,11 +240,11 @@ Un diseño de tabla basado en una fuente de datos que contiene las siguientes l�
 
 Ejemplo (Mostrar modo referencias):
 
-![](../../assets/en/WritePro/pict6021229.es.png)
+![](../../assets/en/WritePro/pict7148443.en.png)
 
 Cuando se calculan las fórmulas, la línea duplicada se duplica automáticamente según sea necesario para que coincida con todas las entidades o elementos de la colección devueltos por la fórmula de la fuente de datos:
 
-![](../../assets/en/WritePro/pict5907013.es.png)
+![](../../assets/en/WritePro/pict5907013.en.png)
 
 En todo caso, la siguiente instrucción devuelve el número real de líneas:
 
