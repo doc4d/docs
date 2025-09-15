@@ -54,7 +54,7 @@ Se marcar a opção **Mostrar referências**, a referência é exibida:
 * **Mostrar régua horizonta**l: horizontal. Para saber mais sobre as réguas nas áreas 4D Write Pro, consulte *Manejar réguas*.
 * **Mostrar régua vertical**: mostra/oculta a régua vertical quando o documento estiver em modo Página. Para saber mais sobre as réguas nas áreas 4D Write Pro, consulte *Manejar réguas*.
 * Mostrar imágens vaziaws ou não compatíveis: mostra/oculta um retângulo negro para s imagens que não podem ser carregadas ou calculadas (imagens vazias ou em um formato não compatível). Para saber mais veja *Imagens vazias*.
-* Mostrar a fonte da fórmula como símbolo: mostra o texto fonte das formulas como ![](../../assets/en/WritePro/pict6013182.pt.png) símbolos quando as expressões são mostradas como referencias (ver acima). Mostrar as fórmulas como símbolos faz com que os documentos de modelo sejam mais compactos e mais wysiwyg.
+* Mostrar a fonte da fórmula como símbolo: mostra o texto fonte das formulas como ![](../../assets/en/WritePro/icon-f.png) símbolos quando as expressões são mostradas como referencias (ver acima). Mostrar as fórmulas como símbolos faz com que os documentos de modelo sejam mais compactos e mais wysiwyg.
 
 
 ## Menu contextual 

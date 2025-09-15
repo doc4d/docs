@@ -42,7 +42,7 @@ La configuración de vista del documento se manejan a través de temas específi
    **Nota**: la propiedad Modo Vista sólo se utiliza para la renderización en pantalla. En cuanto a la configuración de impresión, se utilizan automáticamente las reglas de renderización específicas (ver *Impresión de documentos 4D Write Pro*).
 * **Mostrar marco de página:** muestra/oculta el marco de página cuando el modo de vista Página se establece en "Página".
 * **Mostrar referencias**: muestra todas las fórmulas (o expresiones) insertadas en el documento como *referencias* (ver *Gestión de fórmulas*). Cuando esta opción no está marcada, las fórmulas 4D se muestran como *valores*.  
-**Nota**: las referencias de fórmula se pueden mostrar como símbolos ![](../../assets/en/WritePro/pict6013182.es.png) (ver abajo).
+**Nota**: las referencias de fórmula se pueden mostrar como símbolos ![](../../assets/en/WritePro/icon-f.png) (ver abajo).
 * **Mostrar encabezados/pies**: muestra/oculta los encabezados y pies cuando el modo de vista Página se establece en "Página" (que aparece por defecto). Para más información sobre las encabezados y pies de página, por favor consulte la sección *Utilizar un área 4D Write Pro*.
 * **Mostrar fondo y elementos anclados**: muestra/oculta imágenes de fondo, color de fondo, imágenes ancladas y cajas de texto.
 * **Mostrar caracteres ocultos**: muestra/oculta caracteres invisibles.
@@ -50,7 +50,7 @@ La configuración de vista del documento se manejan a través de temas específi
 * **Mostrar regla horizontal**: horizontal. Para más información acerca de las reglas en las áreas 4D Write Pro, consulte la sección *Gestión de reglas*.
 * **Mostrar regla vertical**: muestra/oculta la regla vertical cuando el documento está en modo Página. Para mayor información sobre reglas en áreas 4D Write Pro, ver la sección *Gestión de reglas*.
 * **Mostrar imágenes vacías o no soportadas**: muestra/oculta un rectángulo negro para las imágenes que no se pueden cargar o calcular (imágenes vacías o en un formato no soportado). Para más información, consulte la sección *Imágenes vacías*.
-* **Mostrar la fuente de la fórmula como símbolo**: muestra el texto fuente de las fórmulas como ![](../../assets/en/WritePro/pict6013182.es.png) símbolos cuando las expresiones se muestran como referencias (ver arriba). Mostrar las fórmulas como símbolos hace que los documentos de plantilla sean más compactos y más *wysiwyg*.
+* **Mostrar la fuente de la fórmula como símbolo**: muestra el texto fuente de las fórmulas como ![](../../assets/en/WritePro/icon-f.png) símbolos cuando las expresiones se muestran como referencias (ver arriba). Mostrar las fórmulas como símbolos hace que los documentos de plantilla sean más compactos y más *wysiwyg*.
 
 ## Menú contextual 
 
