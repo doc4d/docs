@@ -1,6 +1,6 @@
 ---
-id: storing-4d-write-pro-documents-in-4d-object-fields
-title: Stocker les documents 4D Write Pro dans des champs objet 4D
+id: 4d-write-pro-documents
+title: Documents 4D Write Pro
 displayed_sidebar: docs
 ---
 
