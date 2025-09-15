@@ -14,7 +14,6 @@
       },
       "items": [
         "GettingStarted/installation",
-        "GettingStarted/creating",
         "Notes/updates"
       ]
     },
@@ -31,8 +30,28 @@
         "image": "/img/docusaurus.png"
       },
       "items": [
+        "GettingStarted/creating",
         "Project/architecture",
-        {
+           {
+               "type": "category",
+               "label": "Dababase structure",
+               "items": [
+                 "Develop/field-properties"
+                ]
+            },
+            {
+               "type": "category",
+               "label": "Code & Methods",
+               "items": [
+                  "Project/code-overview",
+                  "code-editor/write-class-method",
+                  "Project/project-method-properties",
+                  "Project/documentation"
+                ]
+            },
+          "Project/components",
+          "Project/compiler",
+          {
           "type": "category",
           "label": "Settings",
           "link": {
@@ -53,25 +72,6 @@
                 "settings/compatibility"
               ]
         },
-           {
-               "type": "category",
-               "label": "Dababase structure",
-               "items": [
-                 "Develop/field-properties"
-                ]
-            },
-            {
-               "type": "category",
-               "label": "Code & Methods",
-               "items": [
-                  "Project/code-overview",
-                  "code-editor/write-class-method",
-                  "Project/project-method-properties",
-                  "Project/documentation"
-                ]
-            },
-          "Project/components",
-          "Project/compiler",
           "Desktop/building",
           {
            "type": "category",
@@ -86,22 +86,7 @@
                 "Debugging/debugging-remote",
                 "Debugging/debugLogFiles"
               ]
-            },
-            {
-               "type": "category",
-                "label": "Application Preferences",
-                "link": {
-                 "type": "doc",
-                  "id": "Preferences/overview"
-                },
-                "items": [
-                  "Preferences/general",
-                  "Preferences/structure",
-                  "Preferences/forms",
-                  "Preferences/methods",
-                  "Preferences/shortcuts"
-               ]
-           }
+            }
       ] 
     },
     {
@@ -2822,6 +2807,21 @@
             "Backup/restore"
           ]
         },
+                    {
+               "type": "category",
+                "label": "Application Preferences",
+                "link": {
+                 "type": "doc",
+                  "id": "Preferences/overview"
+                },
+                "items": [
+                  "Preferences/general",
+                  "Preferences/structure",
+                  "Preferences/forms",
+                  "Preferences/methods",
+                  "Preferences/shortcuts"
+               ]
+           },
         {
           "type": "doc",
           "label": "Data Collection",

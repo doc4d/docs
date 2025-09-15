@@ -45,8 +45,8 @@ title: (
         <Link to="GettingStarted/installation" >
           <Translate>Installation</Translate>
         </Link>
-        <Link to="GettingStarted/creating" >
-          <Translate>Creating or opening a project</Translate>
+        <Link to="Project/overview" >
+          <Translate>Overview</Translate>
         </Link>
         <Link to="Notes/updates" ><i class="fa-solid fa-pen-to-square" style={{ marginRight: '0.6rem', color: '#6c63ff' }}></i>
           <i><Translate>Release Notes</Translate></i>
@@ -64,11 +64,14 @@ title: (
   ),
     links: (
       <div className="homepageLinks">
+        <Link to="GettingStarted/creating" >
+          <Translate>Creating or opening a project</Translate>
+        </Link>
         <Link to="Project/architecture" >
           <Translate>Architecture</Translate>
         </Link>
         <Link to="settings/overview" >
-          <Translate>Settings</Translate>
+          <Translate>Project Settings</Translate>
         </Link>
         <Link to="Develop/field-properties">
           <Translate>Database structure</Translate>
@@ -88,8 +91,8 @@ title: (
         <Link to="Debugging/basics" >
           <Translate>Debugger & logs</Translate>
         </Link>
-        <Link to="Preferences/overview" >
-          <Translate>Preferences</Translate>
+         <Link to="Preferences/overview" >
+          <Translate>Application Preferences</Translate>
         </Link>
       </div>
     ),
