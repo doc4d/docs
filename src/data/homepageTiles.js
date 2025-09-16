@@ -46,7 +46,7 @@ title: (
           <Translate>Installation</Translate>
         </Link>
         <Link to="Project/overview" >
-          <Translate>Overview</Translate>
+          <Translate>4D at a glance</Translate>
         </Link>
         <Link to="Notes/updates" ><i class="fa-solid fa-pen-to-square" style={{ marginRight: '0.6rem', color: '#6c63ff' }}></i>
           <i><Translate>Release Notes</Translate></i>
@@ -89,7 +89,7 @@ title: (
           <Translate>Application Builder</Translate>
         </Link>
         <Link to="Debugging/basics" >
-          <Translate>Debugger & logs</Translate>
+          <Translate>Debugging</Translate>
         </Link>
          <Link to="Preferences/overview" >
           <Translate>Application Preferences</Translate>
@@ -233,6 +233,9 @@ title: (
         </Link>
         <Link to="Admin/licenses">
           <Translate>Licenses</Translate>
+        </Link>
+         <Link to="Debugging/debugLogFiles">
+          <Translate>Log Files</Translate>
         </Link>
         <Link to="MSC/overview">
           <Translate>Maintenance and Security Center</Translate>

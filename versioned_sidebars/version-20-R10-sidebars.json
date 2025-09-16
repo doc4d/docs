@@ -14,6 +14,7 @@
       },
       "items": [
         "GettingStarted/installation",
+        "Project/overview",
         "Notes/updates"
       ]
     },
@@ -75,7 +76,7 @@
           "Desktop/building",
           {
            "type": "category",
-           "label": "Debugger & logs",
+           "label": "Debugging",
             "link": {
                 "type": "doc",
                 "id": "Debugging/basics"
@@ -83,8 +84,7 @@
            "items": [
                 "Debugging/debugger",
                 "Debugging/breakpoints",
-                "Debugging/debugging-remote",
-                "Debugging/debugLogFiles"
+                "Debugging/debugging-remote"
               ]
             }
       ] 
@@ -2774,6 +2774,11 @@
           "label": "Licenses",
           "id": "Admin/licenses"
         },
+        {
+          "type": "doc",
+          "label": "Log Files",
+          "id": "Debugging/debugLogFiles"
+        },              
         {
           "type": "category",
           "label": "MSC",
