@@ -6,21 +6,22 @@ title: Extensions
 The 4D [project architecture](../Project/architecture.md) is modular. You can provide additional functionalities to your 4D projects by installing [**components**](Concepts/components.md) and [**plug-ins**](../Concepts/plug-ins.md). Components are made of 4D code, while plug-ins can be built using any language. 
 
 
-## Preinstalled 4D components
+## Components developed by 4D
 
-4D includes by default a set of built-in 4D components, that you can see in the **Component Methods** theme of the Explorer's Methods page. All these components can also be found on the [4D github repository](https://github.com/4d). 
+4D proposes various components to the 4D community, covering many development needs. All 4D components can be found on the [**4D github repository**](https://github.com/4d).
+
+A subset of these components is listed by default in the [Dependency Manager](../Project/components.md), including:
 
 
-|Component|Description|Main Features| 
-|---|---|---|
-|[4D AIKit](https://github.com/4d/4D-AIKit)|Set of classes to connect to third-party OpenAI APIs|`OpenAIChat`, `OpenAIImage`...|
-|[4D Labels](https://github.com/4d/4D-Labels)|Internal component required to build label templates||
-|[4D NetKit](https://developer.4d.com/4D-NetKit)|Set of web service tools to connect to third-party APIs|`OAuth2Provider` class, `New OAuth2 provider`, `OAuth2ProviderObject.getToken()` |
-|[4D Progress](https://github.com/4d/4D-Progress)|Open one or more progress bars in the same window|`Progress New`, `Progress SET ON STOP METHOD`, `Progress SET PROGRESS`, ... |
-|[4D SVG](https://github.com/4d/4D-SVG)|Create and manipulate common svg graphic objects|`SVGTool_Display_viewer`, multiple `SVG_` methods |
-|[4D ViewPro](ViewPro/getting-started.md)|Spreadsheet features in your forms|See [4D View Pro documentation](ViewPro/getting-started.md)|
-|[4D Widgets](https://github.com/4d/4D-Widgets)|Manage DatePicker, TimePicker, SearchPicker 4D widgets|`DatePicker calendar`, `DateEntry area`, `TimeEntry`, `SearchPicker SET HELP TEXT`, ...|
-|[4D WritePro Interface](https://github.com/4d/4D-WritePro-Interface)|Manage [4D Write Pro palettes](https://doc.4d.com/4Dv20R9/4D/20-R9/Entry-areas.300-7543821.en.html and [table wizard](../WritePro/writeprointerface.md#table-wizard)|`WP PictureSettings`, `WP ShowTabPages`, `WP SwitchToolbar`, `WP UpdateWidget`|
+|Component|Github repository|Description|Main Features| 
+|---|---|---|---|
+|4D AIKit|https://github.com/4d/4D-AIKit|Set of classes to connect to third-party OpenAI APIs|`OpenAIChat`, `OpenAIImage`...|
+|4D NetKit|https://github.com/4d/4D-NetKit|Set of web service tools to connect to third-party APIs|`OAuth2Provider` class, `New OAuth2 provider`, `OAuth2ProviderObject.getToken()` |
+|4D Progress|https://github.com/4d/4D-Progress|Open one or more progress bars in the same window|`Progress New`, `Progress SET ON STOP METHOD`, `Progress SET PROGRESS`, ... |
+|4D SVG|https://github.com/4d/4D-SVG|Create and manipulate common svg graphic objects|`SVGTool_Display_viewer`, multiple `SVG_` methods |
+|4D ViewPro|https://github.com/4d/4d-view-pro|Spreadsheet features in your forms|See [4D View Pro documentation](ViewPro/getting-started.md)|
+|4D Widgets|https://github.com/4d/4D-Widgets|Manage DatePicker, TimePicker, SearchPicker 4D widgets|`DatePicker calendar`, `DateEntry area`, `TimeEntry`, `SearchPicker SET HELP TEXT`, ...|
+|4D WritePro Interface|https://github.com/4d/4D-WritePro-Interface|Manage 4D Write Pro palettes and [table wizard](../WritePro/writeprointerface.md)|`WP PictureSettings`, `WP ShowTabPages`, `WP SwitchToolbar`, `WP UpdateWidget`|
 
 
 ## Third-party components
