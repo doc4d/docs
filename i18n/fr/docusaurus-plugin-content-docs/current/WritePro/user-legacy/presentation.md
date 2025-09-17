@@ -1,61 +1,60 @@
 ---
-id: presentation
-title: Presentation
+id: présentation
+title: Prise en main
 displayed_sidebar: docs
 ---
 
-4D Write Pro offre aux utilisateurs 4D un outil de traitement de texte avancé, entièrement intégré aux bases de données 4D. Avec 4D Write Pro, vous pouvez écrire des emails préformatés ou des lettres personnalisées ou tout autre document contenant des images, des tableaux, des marque-pages, du texte formaté et des références de variables. Vous pouvez également créer dynamiquement des factures ou des états contenant du texte formaté et des images.
+4D Wite Pro propose aux utilisateurs de 4D un outil de traitement de texte avancé, intégré à votre base 4D. Using 4D Write Pro, you can write pre-formatted emails and/or letters or any documents containing images, tables, bookmarks, a scanned signature, formatted text and placeholders for dynamic variables. Vous pouvez également générer dynamiquement des factures ou des rapports, contenant du texte et des images formatés.
 
-Les fonctions majeures de 4D Write Pro sont :
+The key features of the product are:
 
-* Traitement de texte : un objet 4D Write Pro inclus dans un formulaire donne accès à toutes les fonctions standard de traitement de texte, c'est-à-dire la manipulation de paragraphes et de styles, l'insertion d'images, l'import et l'export de texte, et bien plus encore.
-* Intégration dans la base de données :  
-   * un objet 4D Write Pro peut contenir des parties variables qui seront automatiquement remplies par des données provenant de la base ou calculées par 4D.  
-   * les documents 4D Write Pro peuvent être stockés dans les champs de la base de données ou sur disque.
-   
+- Word processing: a 4D Write Pro object embedded in a form provides standard word-processing features, including text and style manipulation, image insertion, import and export, and much more.
+- Datastore integration:
+  - A 4D Write Pro object can display variable parts which will be filled with data from the datastore, or any data computed by 4D.
+  - 4D Write Pro documents can be stored within database fields or on disk.
 
-4D Write Pro est fourni avec :
+4D Write Pro comes with:
 
-- un **objet formulaire** que vous pouvez installer dans vos formulaires. Vous pouvez charger, manipuler et enregistrer des **documents 4D Write Pro** dans cette zone. Cet objet est configurable via la liste des propriétés et comprend un menu contextuel complet pour les développeurs lors de l'exécution.
-- des **commandes de langage**, ajoutées au langage 4D et vous permettant de personnaliser en profondeur la zone.
-- des **actions standard**, pour vous aider à créer une interface entièrement personnalisée.
-- **4D Write Pro Interface**, une extension qui offre un ensemble de palettes prédéfinies pour les utilisateurs finaux.
+- a **form object** that you can install in your forms. You can load, handle, and save **4D Write Pro documents** in this area. This object is configurable through the Property list and includes a comprehensive developer pop up menu at runtime.
+- **language commands**, added to the 4D Language and allowing you to deeply customize the area.
+- **standard actions**, to help building a fully customized interface.
+- **4D Write Pro Interface**, an extension that offers a set of predefined palettes for end users.
 
-## Installation et activation 
+## Installation et activation
 
-4D Write Pro est entièrement intégré à 4D lui-même, ce qui le rend plus facile à gérer et à déployer. Aucune installation supplémentaire n'est requise, vous pouvez directement ajouter des zones 4D Write Pro dans vos formulaires et gérer les variables 4D Write Pro dans vos applications 4D.
+4D Write Pro is fully integrated into 4D itself, making it easier to deploy and manage. No additional installation is required; you can add 4D Write Pro areas to your forms and handle 4D Write Pro variables directly in your 4D applications.
 
-Cependant, vous devez disposer d'une licence 4D Write Pro installée dans votre application afin d'activer cette fonctionnalité.
+However, you need to have a 4D Write Pro license installed in your application in order to enable the feature.
 
-## Création d'une zone 4D Write Pro
+## Creating a 4D Write Pro area
 
-### Utilisation de l'objet zone 4D Write Pro
+### Using the 4D Write Pro area object
 
-Dans 4D, les documents 4D Write Pro sont affichés et modifiés manuellement dans un objet de formulaire appelé **4D Write Pro**. Cet objet est sélectionnable dans le dernier groupe d'outils (zone de plug-in, zone Web, etc.) de la [barre d'objets](../../FormEditor/formEditor.md#object-bar) de l'éditeur de formulaires :
+4D Write Pro documents can be displayed and edited manually in a 4D form object: **4D Write Pro**. This object is available as part of the last tool (Plug-in Area, Web Area, etc.) found in the [object bar](../../FormEditor/formEditor.md#object-bar):
 
-![](../../assets/en/WritePro/pict4101210.fr.png)
+![](../../assets/en/WritePro/pict4101210.en.png)
 
-Une zone de formulaire 4D Write Pro est configurée via les options standard de la Liste des propriétés, telles que **nom** et **nom de** **variable**, **coordonnées**, **saisie**, **affichage**, **apparence** et/ou **événements**.
+A 4D Write Pro form area is configured by means of standard properties found in the Property List, such as **Object Name** and **Variable or Expression**, **Coordinates**, **Entry**, **Display**, **Appearance**, and/or **Events**.
 
-![](../../assets/en/WritePro/pict4101242.fr.png)
+![](../../assets/en/WritePro/pict4101242.en.png)
 
-La propriété **Nom de variable** peut être utilisée dans le langage comme référence de la zone 4D Write Pro. Notez bien que cette variable doit être du type [objet](../../Concepts/dt_object.md).
+The **Variable or Expression** property can be used in the language as a reference to the 4D Write Pro area. Note that the variable must be of the [Object](../../Concepts/dt_object.md) type.
 
-Les propriétés du thème "Saisie" contrôlent les fonctions élémentaires de saisie de texte :
+"Entry" properties manage basic features for text entry:
 
-* **Saisissable** : vous permet de verrouiller/déverrouiller la zone afin d'autoriser ou d'interdire la saisie.
-* **Correction orthographique** : disponible pour les zones 4D Write Pro
-* **Menu contextuel** : vous permet d'activer/désactiver le menu contextuel lorsque le formulaire est lancé au moment de l'exécution (voir la section [Utiliser une zone 4D Write Pro](./using-a-4d-write-pro-area.md))
-* **Sélection toujours visible** : contrôle la sélection de texte comme dans les zones de texte standard.
+- **Enterable**: enables you to lock/unlock the area in order to allow or prevent editing
+- **Auto Spellcheck**: available for 4D Write Pro areas
+- **Context Menu**: allows you to enable/disable the context menu when the form is executed at runtime (see the [Using a 4D Write Pro area](./using-a-4d-write-pro-area.md))
+- **Selection always visible**: handles text selection as in standard text areas.
 
-### Utiliser l'interface 4D Write Pro
+### Using 4D Write Pro Interface
 
-Il est possible de créer directement des zones 4D Write Pro préconfigurées via des objets **4D Write Pro** de la [Bibliothèque d'objets](../../FormEditor/objectLibrary.md) (thème "Zones de saisie") :
+You can create preconfigured 4D Write Pro areas using the **4D Write Pro** objects found in the [Object library](../../FormEditor/objectLibrary.md) of the 4D Form editor ("Entry areas" theme):
 
-![](../../assets/en/WritePro/pict4101252.fr.png)
+![](../../assets/en/WritePro/pict4101252.en.png)
 
-Les zone ainsi créées sont automatiquement dotées d'un panneau de contrôle ou d'une barre d'outils permettant de gérer tous les attributs de la zone (polices, couleurs, styles...) :
+These areas come with either a control panel or a toolbar for managing all the attributes of the area (font, color, style, etc.):
 
-![](../../assets/en/WritePro/pict3254912.fr.png)
+![](../../assets/en/WritePro/pict4687892.en.png)
 
-Pour plus d'informations, reportez-vous à la section [Interface 4D Write Pro](../writeprointerface.md).
+For more information, refer to the [4D Write Pro Interface](../writeprointerface.md) section.
