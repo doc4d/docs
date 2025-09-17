@@ -16,7 +16,7 @@ You can develop 4D components for your own needs and keep them private. You can 
 
 :::note
 
-You can create a component from the host project directly without needing to go through a matrix project
+You can [create a component directly from the host](#creating-components) project without needing to go through a separate matrix project
 
 :::
 
@@ -39,17 +39,33 @@ Interpreted component code can be [edited directly from the host project](#editi
 
 ## Creating and editing components from the host
 
-In interpreted mode, you can directly create a new component from the host project as well as modify a loaded component. 
+In interpreted mode, you can create a new component directly from the host project, as well as modify the code of a loaded component.
 
-To facilitate component tuning in the actual context of host projects, you can directly modify and save the code of a loaded component using the 4D IDE from an interpreted host project. Modifications can be immediately tested in the project, without having to restart.
+To facilitate component tuning in the actual context of host projects, the 4D IDE allows you to create or edit components without leaving or restarting the current project.
 
 ### Creating components
 
+You can create a new component directly from the host project:
+* by using the **File > New > Component...** option from the File menu,
+* or by clicking the **New > Component...** button in the toolbar.
+This action opens a folder selection dialog where you choose where the component will be stored.
+
+* **Default location**: The first time you create a component, 4D suggests the **Components** folder inside the project package. After that, your used last folder will be automatically remembered and preselected.
+> Make sure the folder you choose has the `.4dbase` extension for 4D to recognize it as a valid component.
+* If the component is stored **next to the project package**, 4D adds it to the [`dependencies.json`](./components.md#dependenciesjson) file.
+* If the component is stored **elsewhere**, its path is added to the [`environment4d.json`](./components.md#environment4djson) file, using either a [relative or an absolute path](../Project/components.md#relative-paths-vs-absolute-paths). A relative path is used if the component is located within no more than two levels above as the `environment4d.json` file, or in its subfolders. Otherwise, an absolute path is used.
+
+:::note 
+
+If the component is stored **inside the project package**, next to the **Components** folder, it won’t load and will trigger an error.
+
+:::
+
+Once created, the component is immediately added to the project, accessible in the **Project dependencies** window, and available for editing.
+
 ### Editing components
 
-To facilitate component tuning in the actual context of host projects, you can directly modify and save the code of a loaded component using the 4D IDE from an interpreted host project. Modifications can be immediately tested in the project, without having to restart. 
-
-The component code is editable when the following conditions are met:
+You can edit a component code as long as the following conditions are met:
 
 - the host project is running interpreted, 
 - the component has been [loaded in interpreted mode](../Project/components.md#interpreted-and-compiled-components) and the source code is available,
