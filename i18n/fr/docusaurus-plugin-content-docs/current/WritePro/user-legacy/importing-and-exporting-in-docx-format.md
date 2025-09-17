@@ -1,193 +1,191 @@
 ---
 id: importing-and-exporting-in-docx-format
-title: Exporter au format docx
+title: Importing and Exporting in docx format
 displayed_sidebar: docs
 ---
 
-#### 
+4D Write Pro can both import and export documents in the .docx format. This format is supported by word processing applications such as Microsoft Word.
 
-4D Write Pro peut à la fois importer et exporter des documents au format .docx. Ce format est pris en charge par les applications de traitement de texte telles que Microsoft Word.
+**Compatibility note**: Support for 4D Write Pro documents imported or exported in .docx format is only certified for Microsoft Word 2010 and newer. Older versions, particularly Microsoft Word 2007, may not be able to open the documents.
 
-**Note de compatibilité :** La prise en charge des documents 4D Write Pro exportés au format .docx est uniquement certifiée pour Microsoft Word 2010 et les versions plus récentes. Les anciennes versions, notamment Microsoft Word 2007, sont susceptibles de ne pas pouvoir ouvrir les documents.
+## How to import .docx format
 
-#### Comment importer au format .docx 
+Documents in .docx format can be imported into 4D Write Pro with the [WP Import document](../commands/wp-import-document) command. For more information, please refer to the description of this command.
 
-Les documents au format .docx peuvent être importés dans 4D Write Pro avec la commande [WP Importer document](../commands/wp-importer-document). Pour plus d'informations, reportez-vous à la description de cette commande.
+### Behavioral changes
 
-##### Changements de comportement 
+While the majority of .docx settings are preserved, some settings are known to be either unsupported or behave differently in 4D Write Pro. These are:
 
-Si la majorité des paramètres .docx sont conservés, certains paramètres sont connus pour être non pris en charge ou pour se comporter différemment dans 4D Write Pro. Il s'agit des paramètres suivants :
+#### Alignment / Layout
 
-###### Alignement / Configuration 
+| **Setting**         | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Anchored text areas | Anchored text areas are imported as text boxes by default (they can also be ignored or imported as inline text, see [WP Import document](../commands/wp-import-document) command option). Only simple text areas can be imported. Inline text areas are imported as anchored in the front layer. Text areas anchored with text around are imported with their text wrapping properties (exception: the .docx wrapping option "tight" is imported as wrap square). |
+| Paragraph layout    | Only Western text layouts are supported. Distributed, Thai and Asian paragraph styles are not supported.                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Page Size           | Different page sizes per section are not supported. Only the page size from the first section is imported.                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
-| **Paramètre**       | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Anchored text areas | Les zones de texte ancrées sont importées par défaut en tant que zones de texte (elles peuvent également être ignorées ou importées en tant que texte en ligne, voir l'option de la commande [WP Importer document](../commands/wp-importer-document)). Seules les zones de texte simples peuvent être importées. Les zones de texte en ligne sont importées comme étant ancrées dans le premier niveau. Les zones de texte ancrées avec du texte autour sont importées avec leurs propriétés d'habillage (exception : l'option d'habillage .docx "tight" est importée en tant qu'habillage carré). |
-| Paragraph layout    | Seules les mises en page de texte occidental sont prises en charge. Les styles de paragraphe distribués, thaïlandais et asiatiques ne sont pas pris en charge.                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| Page Size           | Les différentes tailles de page par section ne sont pas prises en charge. Seule la taille de la page de la première section est importée.                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+#### Background
 
-###### Arrière-plan 
+| **Setting** | **Description** |
+| ----------- | --------------- |
+| Watermark   | Non supporté    |
 
-| **Paramètre** | **Description**    |
-| ------------- | ------------------ |
-| Watermark     | Non pris en charge |
+#### Expressions
 
-###### Expressions 
+| **Setting**       | **Description**                                                     |
+| ----------------- | ------------------------------------------------------------------- |
+| MS Word equations | Non supporté. Data is not imported. |
+| MS Word charts    | Non supporté. Data is not imported. |
 
-| **Paramètre**     | **Description**                                        |
-| ----------------- | ------------------------------------------------------ |
-| MS Word equations | Non pris en charge. Les données ne sont pas importées. |
-| MS Word charts    | Non pris en charge. Les données ne sont pas importées. |
+#### Enumérations
 
-###### Listes 
+| **Setting**        | **Description**                                                                                                                                                   |   |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
+| Hierarchical lists | Multi-level lists are not supported. Multi-level lists are converted to a single level lists so list appearance and/or numbering may be different |   |
 
-| **Paramètre**      | **Description**                                                                                                                                                                                     |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Hierarchical lists | Les listes à plusieurs niveaux ne sont pas prises en charge. Elles sont converties en listes à un seul niveau, de sorte que l'apparence et/ou la numérotation des listes puissent être différentes. |
+#### Pictures / Images
 
-###### Images 
+| **Setting**          | **Description**                                                                                                                                                |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DrawingML shapes     | Only simple DrawingML images (inline or anchored) are imported. Complex DrawingML shapes are not supported. |
+| VML shapes or images | Non supporté. VML is obsolete in MS Word and should not be used in documents created with MS Word 2010 or older.               |
+| 3D models            | Not supported, however the last rendered 2D image of the 3D model may be imported if present in the .docx.                     |
+| SmartArt             | Non supporté.                                                                                                                                  |
 
-| **Paramètre**        | **Description**                                                                                                                                     |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| DrawingML shapes     | Seules les images DrawingML simples (en ligne ou ancrées) sont importées. Les formes DrawingML complexes ne sont pas prises en charge.              |
-| VML shapes or images | Non pris en charge. VML est obsolète dans MS Word et ne doit pas être utilisé dans des documents créés avec MS Word 2010 ou une version antérieure. |
-| 3D models            | Non pris en charge, mais la dernière image 2D rendue par le modèle 3D peut être importée si elle est présente dans le fichier .docx.                |
-| SmartArt             | Non pris en charge.                                                                                                                                 |
+#### References / Review
 
-###### Références 
+| **Setting**  | **Description**                                                        |
+| ------------ | ---------------------------------------------------------------------- |
+| Commentaires | Non supporté. Content is not imported. |
+| Footnotes    | Non supporté. Content is not imported. |
 
-| **Paramètre** | **Description**                          |
-| ------------- | ---------------------------------------- |
-| Comments      | Non pris en charge. Contenu non importé. |
-| Footnotes     | Non pris en charge. Contenu non importé. |
+#### Spacing
 
-###### Espacement 
+| **Setting**             | **Description**                                                                                                                       |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| "At least" line spacing | Non supporté. "At least" line spacing is converted to fixed (single) line spacing. |
+| Fit text                | Non supporté. The normal 4D Write Pro style is used.                                                  |
 
-| **Paramètre**           | **Description**                                                                                           |
-| ----------------------- | --------------------------------------------------------------------------------------------------------- |
-| "At least" line spacing | Non pris en charge. L'espacement "at least" entre les lignes est converti en un espacement fixe (simple). |
-| Fit text                | Non pris en charge. Le style 4D Write Pro normal est utilisé.                                             |
+#### Tables
 
-###### Tableaux 
+| **Setting** | **Description**                                               |
+| ----------- | ------------------------------------------------------------- |
+| Tables      | Contiguous tables do not merge automatically. |
 
-| **Paramètre** | **Description**                                          |
-| ------------- | -------------------------------------------------------- |
-| Tables        | Les tableaux contigus ne fusionnent pas automatiquement. |
+#### Text
 
-###### Texte 
+| **Setting**                                                 | **Description**                                                                                                                                                                                 |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Thèmes                                                      | Text themes are not imported. If a color or font definition references a color or font in a theme, the last computed color or font will be used. Otherwise, the |
+| color or font defined in the theme is used. |                                                                                                                                                                                                 |
 
-| **Paramètre** | **Description**                                                                                                                                                                                                                                                              |
-| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Themes        | Les thèmes de texte ne sont pas importés. Si la définiton d'une couleur ou d'une police fait référence à une couleur ou à une police dans un thème, la dernière couleur ou police calculée sera utilisée. Sinon, la couleur ou la police définie dans le thème est utilisée. |
+### Import log
 
-##### Journal d'import 
-
-Lors de l'import au format .docx dans 4D Write Pro, un objet journal est créé et inclus dans l'objet document importé. Cet objet peut être récupéré via l'attribut personnalisé "importLog" (ou la constante wk import log) :
+When importing .docx format into 4D Write Pro, a log object is created and included within the imported document object. This object can be retrieved through the "importLog" custom attribute (or wk import log constant):
 
 ```4d
- $myDoc:=WP Importer document("test.docx")
- Si($myDoc#Null)
-    var $log : Objet
+ $myDoc:=WP Import document("test.docx")
+ if($myDoc#Null)
+    var $log : Object
     $log:=$myDoc[wk import log]
- Fin de si
+ End if
 ```
 
-L'objet journal d'import contient les propriétés suivantes :
+The import log object contains the following properties:
 
-| Constante     | Comment                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| wk import log | Objet log contenant des informations sur l'opération d'import .docx. Les propriétés sont en lecture seule et ne peuvent pas être définies :  <table> <tbody> <tr> <td>**Propriété**</td> <td> </td> <td>**Type**</td> <td>**Description**</td> </tr> <tr> <td>status</td> <td> </td> <td>Texte</td> <td>Statut de l'import :<br/> successful - le document est importé dans 4D Write Pro failed - an empty 4D Write Pro document is returned  </td> </tr> <tr> <td>developer</td> <td> </td> <td>Collection</td> <td>Collection d'objet(s) message pour les développeurs 4D Write Pro.</td> </tr> <tr> <td> </td> <td>\[ \].type</td> <td>Texte</td> <td>Le type de message enregistré :<br/> info warning error  </td> </tr> <tr> <td> </td> <td>\[ \].message</td> <td>Texte</td> <td>Message concernant l'opération d'import.</td> </tr> <tr> <td>user</td> <td> </td> <td>Collection</td> <td>Collection d'objet(s) message pour les utilisateurs de 4D Write Pro.. </td> </tr> <tr> <td> </td> <td>\[ \].type</td> <td>Texte</td> <td>Le type de message enregistré :<br/> info warning  </td> </tr> <tr> <td> </td> <td>\[ \].messageShort</td> <td>Texte</td> <td>Court message sur l'opération d'import.</td> </tr> <tr> <td> </td> <td>\[ \].messageLong</td> <td>Texte</td> <td>Long message sur l'opération d'import.</td> </tr> </tbody> </table> **Attention :** *importLog* est un attribut personnalisé, la constante wk import log ne peut donc pas être utilisée par les commandes [WP FIXER ATTRIBUTS](../commands/wp-fixer-attributs), [WP LIRE ATTRIBUTS](../commands/wp-lire-attributs) ou [WP REINITIALISER ATTRIBUTS](../commands/wp-reinitialiser-attributs) (pour plus d'informations, voir *Utiliser des attributs personnalisés*). |
+| Constante     | Commentaire                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| wk import log | Log object containing information about the .docx import operation. Properties are read-only and cannot be set:  <table> <tbody> <tr> <td>**Property**</td> <td> </td> <td>**Type**</td> <td>**Description**</td> </tr> <tr> <td>status</td> <td> </td> <td>Text</td> <td>Import status:<br/> successful - the document is imported into 4D Write Pro failed - an empty 4D Write Pro document is returned  </td> </tr> <tr> <td>developer</td> <td> </td> <td>Collection</td> <td>Collection of message object(s) for 4D Write Pro developers.</td> </tr> <tr> <td> </td> <td>\[ \].type</td> <td>Text</td> <td>The kind of message logged:<br/> info warning error  </td> </tr> <tr> <td> </td> <td>\[ \].message</td> <td>Text</td> <td>Message about the import operation.</td> </tr> <tr> <td>user</td> <td> </td> <td>Collection</td> <td>Collection of message object(s) for 4D Write Pro users.</td> </tr> <tr> <td> </td> <td>\[ \].type</td> <td>Text</td> <td>The kind of message logged:<br/> info warning  </td> </tr> <tr> <td> </td> <td>\[ \].messageShort</td> <td>Text</td> <td>Brief message about the import operation.</td> </tr> <tr> <td> </td> <td>\[ \].messageLong</td> <td>Text</td> <td>Extended message about the import operation.</td> </tr> </tbody> </table> **Warning:** *importLog* is a custom attribute, thus the wk import log constant cannot be used by [WP SET ATTRIBUTES](../commands/wp-set-attributes), [WP GET ATTRIBUTES](../commands/wp-get-attributes) or [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) command (for more information, see *Using custom attributes*). |
 
-#### Exporter au format .docx 
+## How to export in .docx format
 
-Les objets 4D Write Pro permettent d'exporter des documents 4D Write Pro au format .docx de deux manières :
+4D Write Pro objects offer two ways to export 4D Write Pro documents in .docx format:
 
-* en tant que fichier .docx exporté sur le disque ; utilisez la commande [WP EXPORTER DOCUMENT](../commands/wp-exporter-document).
-* en tant que BLOB .docx exporté dans une variable ; utilisez la commande [WP EXPORTER VARIABLE](../commands/wp-exporter-variable).
+- as .docx file exported to disk, use the [WP EXPORT DOCUMENT](../commands/wp-export-document) command.
+- as .docx file exported to a BLOB variable, use the [WP EXPORT VARIABLE](../commands/wp-export-variable) command.
 
-Pour plus d'informations, veuillez lire la description de ces commandes.
+For more information, please refer to the description of these commands.
 
-##### Changements de comportement 
+### Behavioral changes
 
-Si la majorité des paramètres 4D Write Pro sont maintenus, certains ne sont pas pris en charge ou fonctionnent différemment dans Microsoft Word. Il s'agit des paramètres suivants :
+While the majority of 4D Write Pro settings are preserved, some settings are known to be either unsupported or behave differently in Microsoft Word. These are:
 
-###### Alignement / Configuration 
+#### Alignment / Layout
 
-| **Paramètre**                                                                                                             | **Paragraphes**                                                                                                                                                                                                                                                                              | **Sections**                                                                                        | **Images** |
-| ------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ---------- |
-| Ancrage                                                                                                                   | Dans Microsoft Word, les images ancrées sont placées relativement à l'angle supérieur gauche de la page et du premier paragraphe. Les images peuvent alors s'afficher à des endroits non souhaités en raison des différences de configuration du texte entre 4D Write Pro et Microsoft Word. |                                                                                                     |            |
-| Les zones de texte ancrées dans la zone intégrée ne sont pas exportées. Le rendu peut être différent dans Microsoft Word. |                                                                                                                                                                                                                                                                                              |                                                                                                     |            |
-| Alignement vertical                                                                                                       | Non pris en charge par Microsoft Word (tous les éléments seront alignés en haut)                                                                                                                                                                                                             | Non pris en charge pour les images en ligne (tous les éléments seront alignés sur la ligne de base) |            |
+| **Setting**                                                                                                                          | **Paragraphs**                                                                                                                                                                                                                                                                                               | **Sections**                                                                    | **Images** |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------- | ---------- |
+| Anchoring                                                                                                                            | In Microsoft Word, anchored images are positioned relatively to the top left origin of the page and first paragraph. This could result in images being displayed in different locations than desired due to text layout differences between 4D Write Pro and Microsoft Word. |                                                                                 |            |
+| Text boxes anchored to embedded area are not exported. Rendering can be different in Microsoft Word. |                                                                                                                                                                                                                                                                                                              |                                                                                 |            |
+| Vertical align                                                                                                                       | Not supported by Microsoft Word (all items will be top-aligned)                                                                                                                                                                                                                           | Not supported for inline images (all items will be baseline) |            |
 
-###### Fond 
+#### Background
 
-| Paramètre                  | **Paragraphes**                                                                                                                   | **Sections**                                                                                                       | **Images**                                                                                                                                       |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Clipping du fond           | Non pris en charge par Microsoft Word (La couleur de fond couvre entièrement le paragraphe, exceptées les bordures et les marges) | Non prises en charge par Microsoft Word (le clipping de fond sera équivalent à la zone des marges intérieures)     |                                                                                                                                                  |
-| Image de fond              | Non pris en charge par Microsoft Word                                                                                             | Plusieurs images/couleurs de fond non prises en charge par Microsoft Word (converties en images ou formes ancrées) | Microsoft Word affiche soit une couleur de fond soit une image de fond. Si une image de fond est définie, la couleur de fond sera "transparent". |
-| Répétition d'image de fond | Blocs horizontaux ou verticaux convertis en blocs entiers dans Microsoft Word                                                     | Blocs horizontaux ou verticaux convertis en blocs entiers dans Microsoft Word                                      |                                                                                                                                                  |
-| Origine du fond            | La zone d'origine prend la même valeur que celle de la zone de clipping du fond.                                                  | Non prise en charge par Microsoft.                                                                                 |                                                                                                                                                  |
+| **Setting**             | **Paragraphs**                                                                                                                  | **Sections**                                                                                                                     | **Images**                                                                                                                                                                           |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Background clipping     | Not supported by Microsoft Word (background color fills entire paragraph, not including borders and margins) | Not supported by Microsoft Word (background clipping will be equal to the padding box)                        |                                                                                                                                                                                      |
+| Background image        | Not supported by Microsoft Word                                                                                                 | Different background pictures/colors not supported by Microsoft Word (converted to anchored images or shapes) | Microsoft Word allows either a background color or a background image. If a background image is defined, the background color will be "transparent". |
+| Background image repeat | Horizontal or vertical tiles are converted to full tiles in Microsoft Word                                                      | Horizontal or vertical tiles are converted to full tiles in Microsoft                                                            |                                                                                                                                                                                      |
+| Background origin       | Origin box is converted to the same value as background clipping box.                                           | Not supported by Microsoft.                                                                                      |                                                                                                                                                                                      |
 
-  
-###### Bordures 
+#### Bordures
 
-| **Paramètre**                         | **Paragraphes**                                                                                                                                                                                                                | **Sections**                                                                                             | **Images** |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------- | ---------- |
-| Couleur de bordure                    | Microsoft Word ne prend pas en charge les bords de différentes couleurs. Le premier bord d'image 4D Write Pro défini (dans cet ordre : en haut, à droite, en bas, à gauche) sera utilisé pour toutes les bordures d'une image. |                                                                                                          |            |
-| Rayon de bordure (bordures arrondies) | Non pris en charge par Microsoft Word                                                                                                                                                                                          |                                                                                                          |            |
-| Largeur de bordure                    | La largeur maximale sous Microsoft Word est de 12pt; la taille des bordures dépassant 12 pt sera réduite.                                                                                                                      | La largeur maximale sous Microsoft Word est de 12pt, la taille des bordures dépassant 12pt sera réduite. |            |
+| **Setting**                                        | **Paragraphs**                                                                                                                                                                                                                                                                             | **Sections**                                                                                 | **Images** |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- | ---------- |
+| Border color                                       | Different border colors for each border line is not supported by Microsoft Word. The first defined 4D Write Pro image border line (in this order: top, right, bottom, left) will be used for all of an image's borders. |                                                                                              |            |
+| Border radius (rounded borders) | Not supported by Microsoft Word                                                                                                                                                                                                                                                            |                                                                                              |            |
+| Border width                                       | Microsoft Word maximum is 12pt, borders exceeding this size will be reduced.                                                                                                                                                                                               | Microsoft Word maximum is 12pt, borders exceeding this size will be reduced. |            |
 
-###### Expressions 
+#### Expressions
 
-| **Paramètre** | **Paragraphes**                                                                                                                                                                                                                                                                                                 | **Sections** | **Images** |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ---------- |
-| Expressions   | Seules les expressions simples de 4D telles que "Date du jour" ou "Heure courante", ou les variables locales propres à 4D Write Pro ($wp\_title, $wp\_pageNumber, etc.) sont converties en champs Microsoft Word. Les autres expressions 4D sont calculées et converties en texte ou en images durant l'export. |              |            |
+| **Setting** | **Paragraphs**                                                                                                                                                                                                                                                                                                                                                                                        | **Sections** | **Images** |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ---------- |
+| Expressions | Only simple 4D expressions such as "Current date" or "Current time", or 4D Write Pro reserved local variables ($wp\_title, $wp\_pageNumber, etc.) are converted to Microsoft Word fields. Other 4D expressions are computed and converted to text or images during the export process. |              |            |
 
-###### Listes 
+#### Enumérations
 
-| **Paramètre**        | **Paragraphes**                                                                                                                       | **Sections** | **Images** |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ---------- |
-| Indentation          | Indentation à zéro pour les éléments de liste (Microsoft Word convertit l'indentation pour les éléments de liste en retrait suspendu) |              |            |
-| Type liste numérotée | Greek, Armenian et Georgian sont convertis en décimaux et les hiragana sont convertis en katakana dans Microsoft Word.                |              |            |
+| **Setting**       | **Paragraphs**                                                                                                                  | **Sections** | **Images** |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------ | ---------- |
+| Indent            | Converted to 0 for list items (list item indent is converted to hanging indent in Microsoft Word)            |              |            |
+| Ordered list type | Greek, Armenian, and Georgian are converted to decimal and Hiragana is converted to Katakana in Microsoft Word. |              |            |
 
-###### Images 
+#### Images
 
-| **Paramètre** | **Paragraphes**                                                                                  | **Sections** | **Images** |
-| ------------- | ------------------------------------------------------------------------------------------------ | ------------ | ---------- |
-| SVG           | Non pris en charge par Microsoft Word (les images au format SVG seront converties au format PNG) |              |            |
+| **Setting** | **Paragraphs**                                                                                            | **Sections** | **Images** |
+| ----------- | --------------------------------------------------------------------------------------------------------- | ------------ | ---------- |
+| SVG         | Not supported by Microsoft Word (images in SVG format will be converted to PNG format) |              |            |
 
-###### Tailles 
+#### Size
 
-| Paramètre                  | **Paragraphes**                                                                             | **Sections** | **Images** |
-| -------------------------- | ------------------------------------------------------------------------------------------- | ------------ | ---------- |
-| Hauteur minimale           | Non prise en charge par Microsoft Word (la hauteur est gérée automatiquement)               |              |            |
-| Largeur / Largeur minimale | Non prise en charge par Microsoft Word (la largeur du paragraphe est gérée automatiquement) |              |            |
+| **Setting**           | **Paragraphs**                                                                                | **Sections** | **Images** |
+| --------------------- | --------------------------------------------------------------------------------------------- | ------------ | ---------- |
+| Minimum height        | Not supported by Microsoft Word (height is handled automatically)          |              |            |
+| Width / Minimum width | Not supported by Microsoft Word (paragraph width is handled automatically) |              |            |
 
-###### Espacement 
+#### Spacing
 
-| **Paramètre**      | **Paragraphes**                                                                                                                           | **Sections**                                                                                                                              | **Images** |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| Marges intérieures | La taille maximale des marges intérieures dans Microsoft Word est de 31pt ; la taille des marges intérieures dépassant 31pt sera réduite. | La taille maximale des marges intérieures sous Microsoft Word est de 31pt ; la taille des marges intérieures dépassant 31pt sera réduite. |            |
+| **Setting** | **Paragraphs**                                                                               | **Sections**                                                                                 | **Images** |
+| ----------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ---------- |
+| Padding     | Microsoft Word maximum is 31pt, padding exceeding this size will be reduced. | Microsoft Word maximum is 31pt, padding exceeding this size will be reduced. |            |
 
-###### Tableaux 
+#### Tables
 
-| **Fonctionnalité**                         | **Description** |
-| ------------------------------------------ | --------------- |
-| Carry-over rows (lignes à reporter en bas) | Non exporté.    |
+| **Feature**           | **Description**               |
+| --------------------- | ----------------------------- |
+| Bottom carry-over row | Not exported. |
 
-###### Tabulations 
+#### Tabs
 
-| **Paramètre**         | **Paragraphes**                                                                                                                                             | **Sections** | **Images** |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ---------- |
-| Tabulation par défaut | Non prise en charge par Microsoft Word (seront convertis en tabulations absolues)                                                                           |              |            |
-| Caractères de suite   | Microsoft Word prend en charge les caractères de suite "point" (...), "tiret" (---), et "tiret bas" (\_\_\_) ; tous les autres seront convertis en "aucun". |              |            |
+| **Setting**            | **Paragraphs**                                                                                                                                                                                                                                                                            | **Sections** | **Images** |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ---------- |
+| Default tab stop       | Not supported by Microsoft Word (will be converted to absolute tab stops)                                                                                                                                                                                              |              |            |
+| Tab leading characters | Microsoft Word supports "dot" (....), "dash" (----), and "underscore" (\*\*\*\*) leading characters, all others will be converted to "none". |              |            |
 
-###### Texte 
+#### Text
 
-| Paramètre           | **Paragraphes**                                                                                                                                                    | **Sections**                                                                                                           | **Images** |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- | ---------- |
-| Barré               | La différence de couleur entre celle du trait et celle du texte n'est pas prise en charge par Microsoft Word. Seuls les styles plein et double sont pris en charge |                                                                                                                        |            |
-| Feuilles de style   | Les feuilles de style des paragraphes sont converties en styles de paragraphes.                                                                                    |                                                                                                                        |            |
-| Alignement du texte | Sous Microsoft Word les espaces sont comprimés, ce qui est susceptible de modifier la configuration du texte justifié.                                             | Sous Microsoft Word, les espaces sont comprimés, ce qui est susceptible de modifier la configuration du texte justifié |            |
-| Ombre du texte      | Dans Microsoft Word, l'ombre 4D Write Pro sera floue et décalée, en utilisant la couleur par défaut.                                                               |                                                                                                                        |            |
-| Soulignement        | Le soulignement semi-transparent est converti en plein.                                                                                                            |                                                                                                                        |            |
+| **Setting**  | **Paragraphs**                                                                                                       | **Sections**                                                                                    | **Images** |
+| ------------ | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------- |
+| Linethrough  | Line color different from text color is not supported by Microsoft Word; only solid and double styles are supported  |                                                                                                 |            |
+| Style Sheets | Paragraph style sheets are converted to paragraph styles.                                            |                                                                                                 |            |
+| Text align   | Microsoft Word compresses spaces, so justified text layout may be reconfigured.                      | Microsoft Word compresses spaces, so justified text layout may be reconfigured. |            |
+| Text shadow  | 4D Write Pro shadow will be converted to blur and offset, using the default color in Microsoft Word. |                                                                                                 |            |
+| Souligné     | Semi-transparent underlines will be converted to solid.                                              |                                                                                                 |            |
