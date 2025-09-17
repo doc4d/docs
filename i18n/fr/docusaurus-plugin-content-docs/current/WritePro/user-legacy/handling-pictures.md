@@ -1,130 +1,126 @@
 ---
 id: handling-pictures
-title: Manipuler des images
+title: Images
 displayed_sidebar: docs
 ---
 
-#### Images en arrière-plan 
+## Adding pictures
 
-Des images peuvent être mises en place en tant qu'arrière-plan de documents 4D Write Pro ou de partie du document (tableau, paragraphe, sections, en-têtes/pieds, etc.).
+Adding pictures to a 4D Write Pro document can be accomplished in multiple ways and depend on your needs:
 
-Voici un exemple montrant deux façons différentes d'utiliser une image comme arrière-plan d'un document :
+- to add a **background picture**, use the wk background image or wk background image url attribute with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command
+- to add an **inline picture**, *i.e.* inserted in the text flow just like a character, use the [WP INSERT PICTURE](../commands/wp-insert-picture) or the [ST INSERT EXPRESSION](../../commands/st-insert-expression) command
+- to add an **anchored picture** in the page (behind or in front of the text), use the [WP Add picture](../commands/wp-add-picture) command.
 
-> ![](../../assets/en/WritePro/pict3687425.fr.png)   
+The way you add a picture determines the layer it is positioned in, as illustrated in the diagram below:
 
-Les images d'arrière-plan peuvent être placées soit par programmation, soit via le menu contextuel. Pour plus d'informations, voir la section *Fond* dans l'article *Utiliser une zone 4D Write Pro*.
+![](../../assets/en/WritePro/pict3626363.en.png)
 
-L'affichage de l'image d'arrière-plan peut également être défini par programmation ou via le menu contextuel. A noter que les valeurs du mode d'affichage en arrière-plan définissent des préréglages des paramètres d'arrière-plan, comme indiqué dans la description de la constante :
+## Background pictures
 
-| Constante                | Comment                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| wk proportional          | Lorsqu'elle est utilisée comme valeur de wk image display mode, l'image est alignée en haut à gauche de la zone de contenu, non répliquée, mise à l'échelle pour s'adapter à la zone de contenu, et conserve son rapport hauteur/largeur. Lorsqu'elle est utilisée comme valeur de wk background display mode, elle prédéfinit les attributs suivants : wk background width \= "contain" wk background height \= "auto" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk left wk background position vertical \= wk top |
-| wk proportional centered | Lorsqu'elle est utilisée comme valeur de wk image display mode, l'image est centrée dans la zone de contenu, non répliquée, mise à l'échelle pour s'adapter à la zone de contenu, et conserve son rapport hauteur/largeur. Lorsqu'elle est utilisé comme valeur de wk background display mode, elle prédéfinit les attributs suivants : wk background width \= "contain" wk background height \= "auto" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk center wk background position vertical \= wk center            |
-| wk replicated            | Lorsqu'elle est utilisée comme valeur de wk image display mode, l'image est alignée en haut à gauche de la zone de contenu, répliquée, et conserve sa taille d'origine. Lorsqu'elle est utilisée comme valeur de wk background display mode, elle prédéfinit les attributs suivants : wk background width \= "auto" wk background height \= "auto" wk background repeat \= wk repeat wk background origin \= wk padding box wk background position horizontal \= wk left wk background position vertical \= wk top                                                                         |
-| wk replicated centered   | Lorsqu'elle est utilisée comme valeur de wk image display mode, l'image est centrée dans la zone de contenu, répliquée, et conserve sa taille d'origine. Lorsqu'elle est utilisée comme valeur de wk background display mode, elle prédéfinit les attributs suivants : wk background width \= "auto" wk background height \= "auto" wk background repeat \= wk repeat wk background origin \= wk padding box wk background position horizontal \= wk center wk background position vertical \= wk center                                                                                   |
-| wk scaled to fit         | Lorsqu'elle est utilisée comme valeur de wk image display mode, l'image est mise à l'échelle pour s'adapter à la zone de contenu et n'est pas répliquée. Lorsqu'elle est utilisée comme valeur de wk background display mode, elle prédéfinit les attributs suivants : wk background width \= "100%" wk background height \= "100%" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk left wk background position vertical \= wk top                                                                                     |
-| wk truncated             | Lorsqu'elle est utilisée comme valeur de wk image display mode, l'image est alignée en haut à gauche de la zone de contenu, non répliquée, et conserve sa taille d'origine. Lorsqu'elle est utilisée comme valeur de wk background display mode, elle prédéfinit les attributs suivants : wk background width \= "auto" wk background height \= "auto" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk left wk background position vertical \= wk top                                                                  |
-| wk truncated centered    | Lorsqu'elle est utilisée comme valeur de wk image display mode, l'image est centrée dans la zone de contenu, non répliquée, et conserve sa taille d'origine. Lorsqu'elle est utilisée comme valeur de wk background display mode, elle prédéfinit les attributs suivants : wk background width \= "auto" wk background height \= "auto" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk center wk background position vertical \= wk center                                                                            |
+Pictures can be set as the background of 4D Write Pro documents and document elements (tables, paragraphs, sections, headers/footers, etc.).
 
-#### Ajouter des images 
+Here is an example showing two different ways a picture can be used as a document's background:
 
-Ajouter des images dans un document 4D Write Pro peut se faire de multiples façons et dépend de vos besoins :
+> ![](../../assets/en/WritePro/pict3541581.en.png)
 
-* pour ajouter une **image d'arrière-plan**, utilisez l'attribut wk background image ou wk background image url avec la commande [WP FIXER ATTRIBUTS](../commands/wp-fixer-attributs)
-* pour ajouter une **image en ligne**, *i.e.* insérée dans le texte comme un caractère, utilisez la commande [WP INSERER IMAGE](../commands/wp-inserer-image) ou la commande [ST INSERER EXPRESSION](../../commands/st-inserer-expression)
-* pour ajouter une **image ancrée** dans la page (derrière ou devant le texte), utilisez la commande [WP Ajouter image](../commands/wp-ajouter-image).
+Background pictures can be set either programmatically or via the context menu. For more information, see the *Background* section in the *Using a 4D Write Pro area* article.
 
-La façon dont vous ajoutez une image détermine la couche où elle est positionnée, comme le montre le diagramme ci-dessous :
+Background picture display can also be set either programmatically or via the context menu. Note that background display mode values actually define presets of background settings, as listed in the constant description:
 
-![](../../assets/en/WritePro/pict3650607.fr.png)
+| Constante                | Commentaire                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| wk proportional          | When used as value of wk image display mode, the image is aligned at the top left of the content box, not replicated, scaled to fit the content box, and it keeps its aspect ratio. When used as value of wk background display mode, presets the following attributes: wk background width \= "contain" wk background height \= "auto" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk left wk background position vertical \= wk top |
+| wk proportional centered | When used as value of wk image display mode, the image is centered in the content box, not replicated, scaled to fit the content box and it keeps its aspect ratio. When used as value of wk background display mode, presets the following attributes: wk background width \= "contain" wk background height \= "auto" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk center wk background position vertical \= wk center            |
+| wk replicated            | When used as value of wk image display mode, the image is aligned at the top left of the content box, replicated, and keeps its original size. When used as value of wk background display mode, presets the following attributes: wk background width \= "auto" wk background height \= "auto" wk background repeat \= wk repeat wk background origin \= wk padding box wk background position horizontal \= wk left wk background position vertical \= wk top                                            |
+| wk replicated centered   | When used as value of wk image display mode, the image is centered in the content box, replicated, and keeps its original size. When used as value of wk background display mode, presets the following attributes: wk background width \= "auto" wk background height \= "auto" wk background repeat \= wk repeat wk background origin \= wk padding box wk background position horizontal \= wk center wk background position vertical \= wk center                                                      |
+| wk scaled to fit         | When used as value of wk image display mode, the image is scaled to fit the content box and is not replicated. When used as value of wk background display mode, modifies the following attributes: wk background width \= "100%" wk background height \= "100%" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk left wk background position vertical \= wk top                                                                        |
+| wk truncated             | When used as value of wk image display mode, the image is aligned at the top left of the content box, not replicated, and it keeps its original size. When used as value of wk background display mode, presets the following attributes: wk background width \= "auto" wk background height \= "auto" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk left wk background position vertical \= wk top                                  |
+| wk truncated centered    | When used as value of wk image display mode, the image is centered in the content box, not replicated, and it keeps its original size. When used as value of wk background display mode, presets the following attributes: wk background width \= "auto" wk background height \= "auto" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk center wk background position vertical \= wk center                                            |
 
-#### Positionnement et affichage des images ancrées 
+## Positioning and displaying of anchored pictures
 
-Les images ancrées sont ajoutées avec une position absolue, devant/derrière le texte, et ancrées à la page ou à des parties spécifiques d'un document (*i.e.*, en-tête, pied de page, section). La définition d'une position absolue pour une image se fait grâce aux commandes [WP Ajouter image](../commands/wp-ajouter-image) et [WP FIXER ATTRIBUTS](../commands/wp-fixer-attributs).
+Anchored pictures are added with an absolute position, in front of/behind text, as well as anchored to the page or specific parts of a document (*i.e.*, header, footer, sections). Setting an absolute position for a picture is accomplished with the [WP Add picture](../commands/wp-add-picture) and [WP SET ATTRIBUTES](../commands/wp-set-attributes) commands.
 
-Les positions d'images ancrées peuvent être modifiées avec les attributs spécifiques et / ou les actions standard suivants :  
+Anchored picture positions can be modified with the following specific attributes and/or standard actions:
 
-| **Propriété (constante)**   | **Action standard**     |
-| --------------------------- | ----------------------- |
-| wk anchor layout            | *anchorLayout*          |
-| wk anchor horizontal offset |                         |
-| wk anchor horizontal align  | *anchorHorizontalAlign* |
-| wk anchor vertical offset   |                         |
-| wk anchor vertical align    | *anchorVerticalAlign*   |
-| wk anchor origin            | *anchorOrigin*          |
-| wk anchor page              | *anchorPage*            |
-| wk anchor section           | *anchorSection*         |
-| | *moveToBack*              |                         |
-| | *moveToFront*             |                         |
+| **Property (constant)** | **Action standard**     |   |
+| ------------------------------------------ | ----------------------- | - |
+| wk anchor layout                           | *anchorLayout*          |   |
+| wk anchor horizontal offset                |                         |   |
+| wk anchor horizontal align                 | *anchorHorizontalAlign* |   |
+| wk anchor vertical offset                  |                         |   |
+| wk anchor vertical align                   | *anchorVerticalAlign*   |   |
+| wk anchor origin                           | *anchorOrigin*          |   |
+| wk anchor page                             | *anchorPage*            |   |
+| wk anchor section                          | *anchorSection*         |   |
+|                                            | *moveToBack*            |   |
+|                                            | *moveToFront*           |   |
 
-Les images ancrées supportent l'habillage automatique du texte lorsqu'elles sont ancrées dans un document avec des options telles que à gauche, à droite, sur le plus grand côté, au-dessus et au-dessous, ou tout autour, fournies par la propriété wk anchor layout ou l'action standard **anchorLayout**. Consultez cet [article de blog](https://blog.4d.com/fr/4d-write-pro-more-display-options-for-anchored-pictures-and-text-boxes/) pour plus de détails.
+Anchored pictures support automatic text wrapping when anchored to a document with options like on the left, right, largest side, above and below, or all around provided through the property wk anchor layout or the standard action **anchorLayout**. Check this [blog post](https://blog.4d.com/4d-write-pro-more-display-options-for-anchored-pictures-and-text-boxes/) for more details.
 
 ![](../../assets/en/WritePro/pict6856159.en.png)
 
-Les images avec habillage ancrées dans le corps de la page n'affectent pas l'en-tête ou le pied de page (l'image est affichée devant l'en-tête ou le pied de page) ; au contraire, les images ancrées dans l'en-tête et le pied de page affectent le corps de la page si elles le chevauchent.
+Pictures with text wrapping anchored to the body of the page do not affect the header or the footer (the picture is displayed in front of the header or the footer); on the contrary, pictures anchored to the header and footer affect the body of the page if they overlap it.
 
-**Note :** Si vous souhaitez ancrer une image avec habillage de texte à l'en-tête ou au pied de page, vous devez également définir l'alignement vertical de l'image sur le haut.
+**Note**: If you want to anchor a picture with text wrapping to the header or footer, you must also set the vertical alignment of the picture to the top.
 
-Les images ancrées sont affichées uniquement en mode Page. Elles ne sont pas affichées si :
+All anchored pictures are displayed in the Page view mode only. They're not displayed if:
 
-* elles sont ancrées à un en-tête ou un pied de page qui n'est pas visible ;
-* le mode d'affichage est le mode Brouillon ;
-* elles sont centrées ou ancrées aux sections, et l'option **Afficher HTML WYSIWYG** est cochée ;
-* l'option "Afficher l'arrière-plan" n'est pas sélectionnée.
+- they are anchored to a header or footer which is not visible;
+- the view mode is Draft;
+- they are centered or anchored to sections and the **Show HTML WYSIWYG** option is checked;
+- the "Show background" option is not selected.
 
-#### Expressions image 
+## Picture expressions
 
-Vous pouvez insérer des expressions 4D qui retournent des images dans vos zones 4D Write Pro. Les expressions peuvent être des variables, champs, méthodes projet, attributs d'objets ou éléments de collections.
+You can insert 4D expressions that return pictures in your 4D Write Pro areas. Expressions can be variables, fields, project methods, formulas, object attributes or collection elements.
 
-Vous pouvez visualiser la référence d'une expression dans l'infobulle de l'image(\*) :
+You can see an expression's reference in the picture tip(\*):
 
 ![](../../assets/en/WritePro/pict3513503.en.png)
 
-(\*)Comme il n'y a pas de texte associé à une image ancrée, une référence d'expression ne peut pas être affichée.
+(\*)As there is no text associated with an anchored image, its expression reference cannot be displayed.
 
-Tous les attributs d'images peuvent être appliqués aux expressions image (les attributs wk image et wk image url peuvent uniquement être lus). Notez cependant que, comme les images ont des attributs spécifiques, 4D Write Pro doit évaluer l'expression au moins une fois pour détecter que son résultat est une image et pouvoir la traiter comme expression image. Cela signifie que lorsqu'une expression image est insérée avec [WP INSERER FORMULE](../commands/wp-inserer-formule), [WP CALCULER FORMULES](../commands/wp-calculer-formules) doit être appelée avant d'appliquer le moindre attribut d'image.
+All image attributes can be applied to picture expressions (wk image and wk image url attributes can only be read). Note however, that since pictures have specific attributes, 4D Write Pro must evaluate the expression at least once to detect that its result is a picture and handle it as a picture expression. It means that when a picture expression is inserted with [WP INSERT FORMULA](../commands/wp-insert-formula), [WP COMPUTE FORMULAS](../commands/wp-compute-formulas) must be called before setting any picture attributes.
 
-Si l'image résultant de l'expression ne peut pas être calculée ou chargée, 4D Write Pro affiche un cadre d'image par défaut noir :
+**Note**: As with other expressions, picture expressions are also impacted by the [WP COMPUTE FORMULAS](../commands/wp-compute-formulas) and [WP FREEZE FORMULAS](../commands/wp-freeze-formulas) commands.
 
-![](../../assets/en/WritePro/pict3513505.en.png)
+### Anchored pictures
 
-**Note** : Comme les autres expressions, les expressions image sont aussi impactées par les commandes [WP CALCULER FORMULES](../commands/wp-calculer-formules) et [WP FIGER FORMULES](../commands/wp-figer-formules).
+Anchored picture expressions are added with the [WP Add picture](../commands/wp-add-picture) command (without the second parameter), followed by a call to the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command with the wk image formula selector.
 
-##### Images ancrées 
-
-Les expression image ancrées sont ajoutées à l'aide la commande [WP Ajouter image](../commands/wp-ajouter-image) (sans le second paramètre), suivie par un appel à la commande [WP FIXER ATTRIBUTS](../commands/wp-fixer-attributs) avec le sélecteur wk image formule.
-
-Exemple :
+Voici un exemple :
 
 ```4d
- obImage:=WP Ajouter image(myDoc)
- WP FIXER ATTRIBUTS(obImage;wk image formule;Formule(m_buildPict))
+ obImage:=WP Add picture(myDoc)
+ WP SET ATTRIBUTES(obImage;wk image formula;Formula(m_buildPict))
 ```
 
-Vous pouvez aussi insérer des expressions image en utilisant [WP FIXER ATTRIBUTS](../commands/wp-fixer-attributs) et wk image formule sur des images ancrées existantes.
+You can also insert picture expressions using [WP SET ATTRIBUTES](../commands/wp-set-attributes) and wk image formula on existing anchored pictures.
 
-**Note de compatibilité :** wk image expression peut toujours être utilisée pour définir des expressions image via du texte. Toutefois, il est recommandé d'utiliser wk image expression et des objets.
+**Compatibility Note:** wk image expression can still be used to define picture expressions through text. However, it is recommended to use wk image formula and objects.
 
-L'appel de la commande [WP REINITIALISER ATTRIBUTS](../commands/wp-reinitialiser-attributs) avec wk image formule est similaire à l'appel de [WP FIGER FORMULES](../commands/wp-figer-formules) (sur le document entier) dans la mesure où l'expression est effacée de l'attribut image. Cependant, [WP FIGER FORMULES](../commands/wp-figer-formules) calcule l'expression avant de l'effacer, contrairement à [WP REINITIALISER ATTRIBUTS](../commands/wp-reinitialiser-attributs). Si une expression n'a jamais été calculée, le cadre d'image par défaut noir est affiché.
+Calling the [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) command with wk image formula is similar to calling [WP FREEZE FORMULAS](../commands/wp-freeze-formulas) (on the entire document) in that the expression is cleared from the image attribute. However [WP FREEZE FORMULAS](../commands/wp-freeze-formulas) computes the expression before clearing, whereas [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) does not. If an expression has never been computed, the default black frame image will be displayed.
 
-##### Images en ligne 
+### Inline pictures
 
-Les expressions image en ligne sont ajoutées dans vos zones 4D Write Pro à l'aide de la commande [WP INSERER FORMULE](../commands/wp-inserer-formule).
+Inline picture expressions are added with the [WP INSERT FORMULA](../commands/wp-insert-formula) command.
 
 Exemples :
 
 ```4d
-  //Insertion d'une variable image
- ST INSERER FORMULE(wpRange;Formule($vpict);wk prepend)
+  //Insert a picture variable
+ WP INSERT FORMULA(wpRange;Formula($vpict);wk prepend)
  
-  //Insertion d'un champ
- ST INSERER FORMULE(wpRange;Formule([DOC]SamplePict);wk prepend)
+  //Insert a field
+ WP INSERT FORMULA(wpRange;Formula([DOC]SamplePict);wk prepend)
  
-  //Insertion d'une méthode 4D
- ST INSERER FORMULE(wpRange;Formule(M_ComputeChart);wk prepend)
+  //Insert a 4D method
+ WP INSERT FORMULA(wpRange;Formula(M_ComputeChart);wk prepend)
 ```
 
-#### Empty pictures 
+### Empty pictures
 
 If an image is empty (e.g. it could not be loaded, or it results from an expression that could not be computed, or it uses an unsupported picture format), by default 4D Write Pro displays a black frame rectangle:
 
@@ -132,78 +128,78 @@ If an image is empty (e.g. it could not be loaded, or it results from an express
 
 You can remove these black rectangles from the current view using:
 
-* the "Show empty or unsupported images" option of the Property list (see *Configuring View properties*), or
-* the [WP SET VIEW PROPERTIES](../commands/wp-set-view-properties) command with the wk visible empty images selector, or
-* the *visibleEmptyImage* standard action (see *Using 4D Write Pro standard actions*).
+- the "Show empty or unsupported images" option of the Property list (see *Configuring View properties*), or
+- the [WP SET VIEW PROPERTIES](../commands/wp-set-view-properties) command with the wk visible empty images selector, or
+- the *visibleEmptyImage* standard action (see *Using 4D Write Pro standard actions*).
 
 You can also use the wk visible empty images selector with the [WP EXPORT DOCUMENT](../commands/wp-export-document) and [WP EXPORT VARIABLE](../commands/wp-export-variable) commands to remove the black rectangles from exported contents.
 
 Note that when this option is set, missing image elements will not be displayed at all even if they have borders, width, height, or background; this may impact the page layout for inline images.
 
-#### Propriétés des images 
+## Picture properties
 
-Toutes les images ont des propriétés (attributs) telles que la hauteur, la largeur, les bordures, le mode d'affichage, etc., qui peuvent être lues ou fixées via le langage 4D Write Pro ([WP LIRE ATTRIBUTS](../commands/wp-lire-attributs) et [WP FIXER ATTRIBUTS](../commands/wp-fixer-attributs)) ou les actions standard.
+All pictures have properties (attributes) such as height, width, borders, display mode, etc., that can be get or set via the 4D Write Pro language ([WP GET ATTRIBUTES](../commands/wp-get-attributes) and [WP SET ATTRIBUTES](../commands/wp-set-attributes)) or standard actions.
 
-* La liste complète des propriétés utilisables pour les images est disponible sur la page *Attributs 4D Write Pro*.
-* La section *Image* contient les attributs spécifiques aux images seules.
-* La page *Utiliser les actions standard 4D Write Pro* liste aussi les propriétés image disponibles.
+- The full list of properties available for pictures is provided on the *4D Write Pro Attributes* page.
+- The *Image* section contains attributes that are specific to pictures only.
+- The *Using 4D Write Pro standard actions* page also lists available image properties.
 
-##### Référence d'image ou URL d'image 
+### Picture reference or picture URL
 
-Vous pouvez travailler avec des références d'images (variable, champ ou expression image) ou des URLs d'images (texte contenant l'adresse locale ou réseau de l'image).
+You can work with picture references (picture variables, fields, expressions) or picture URLs (text representing a local or network address of the picture).
 
-Deux ensembles d'attributs vous permettent de définir si vous voulez fixer ou lire une référence ou un URL d'image :
+Two sets of attributes allow you to define if you want to set or get picture reference or a picture URL:
 
-* wk image, wk background image, wk list style image : pour lire ou fixer des références d'images.  
-Lorsque vous lisez une image à l'aide d'un de ces attributs, vous recevez une image 4D quelle que soit la manière dont l'image a été initialement définie.
-* wk image url, wk background image url, wk list style image url : pour lire ou fixer des URLs d'images.  
-Lorsque vous lisez une image à l'aide d'un de ces attributs, vous recevez un texte. Si l'image a été définie via une référence (par exemple une variable image), vous recevez un URI local suivi de l'image encodée en Base64.
+- wk image, wk background image, wk list style image: to set or to get picture references.\
+  When you get a picture using one of these attributes, you receive a 4D picture, no matter how the picture was defined.
+- wk image url, wk background image url, wk list style image url: to set or get picture URLs.\
+  When you get a picture using one of these attributes, you receive a text. If the picture was defined through a reference (*e.g.* a picture variable), you get a local URI followed by the image in Base64.
 
-**Exemple :**
+**Example:**
 
 ```4d
- $range:=WP Lire selection(WPArea) //lire l'image sélectionnée par l'utilisateur
- $range:=WP Plage images($range) //creer une plage
+ $range:=WP Get selection(WPArea) //get the picture selected by user
+ $range:=WP Picture range($range) //create a range
  $url:="http://doc.4d.com/image/logo/poweredby4D_web.png"
  
- WP FIXER ATTRIBUTS($range;wk image;$url) //définir une image via un URL
+ WP SET ATTRIBUTES($range;wk image;$url) //set an image reference from a URL
  
-  //lire l'image
- C_IMAGE(vPictureGet)
- WP LIRE ATTRIBUTS($range;wk image;vPictureGet) //vPictureGet contient une image
- C_TEXTE(vPictureURLGet)
- WP LIRE ATTRIBUTS($range;wk image url;vPictureURLGet) //vPictureURLGet=$url
+  //get the image
+ var vPictureGet : Picture
+ WP GET ATTRIBUTES($range;wk image;vPictureGet) //vPictureGet contains an image
+ var vPictureURLGet : Text
+ WP GET ATTRIBUTES($range;wk image url;vPictureURLGet) //vPictureURLGet=$url
 ```
 
-#### Récupérer des images 
+## Retrieving pictures
 
-Les commandes ci-dessous peuvent être utilisées pour récupérer des images :
+The following commands can be used to return pictures:
 
-* [WP Plage images](../commands/wp-plage-images) \- s'applique uniquement aux images en ligne
-* [WP Plage selection](../commands/wp-plage-selection) \- s'applique uniquement aux images sélectionnées par l'utilisateur
+- [WP Picture range](../commands/wp-picture-range) \- applies only for inline images
+- [WP Selection range](../commands/wp-selection-range) \- applies only for user-selected images
 
-#### Supprimer des images 
+## Deleting pictures
 
-Vous pouvez supprimer des images en ligne et ancrées à l'aide de : 
+You can remove inline and anchored pictures with:
 
-* *Actions souris / clavier*
-* la commande [WP SUPPRIMER IMAGE](../commands/wp-supprimer-image)
+- *Mouse/keyboard actions*
+- the [WP DELETE PICTURE](../commands/wp-delete-picture) command
 
-#### Actions souris / clavier 
+## Mouse/keyboard actions
 
-Les images peuvent être manipulées via la souris ou le clavier. Les actions disponibles incluent :
+Pictures can be manipulated via the mouse or the keyboard. Available actions include:
 
-* **Sélectionner**  
-   * Les images en avant-plan peuvent être sélectionnées en cliquant dessus ;  
-   * Les images d'arrière-plan peuvent être sélectionnées avec CTRL+ clic (Windows) ou COMMAND+clic (Mac) ;  
-   * Une seule image avec une position absolue peut être sélectionnée à la fois : la sélection multiple n'est pas possible.
-* **Déplacer**  
-   * Les images peuvent être déplacées et redimensionnées à l'aide de la souris. (Les images en ligne ne peuvent pas être déplacées en dehors du document).
-* **Insérer**  
-   * Si des images avec position absolue sont collées en mode Brouillon, elles sont affichées en ligne au début de la sélection courante au clavier.
-* **Couper/Coller/Copier**  
-   * Les images peuvent être copiées dans le presse-papiers, ou coupées/collées, lorsqu'elles sont sélectionnées.  
-   * Coller une image avec une position absolue en mode Page, collera l'image dans la première page sélectionnée et l'ancrera à cette page, quels que soient les paramètrages d'ancrage de la page d'origine ; les images collées conserveront leurs décalages (offsets), sauf si elles sont collées dans un mode différent de celui d'origine (par exemple, si l'image est copiée en mode Page et collée en mode Inclus, les décalages sont réinitialisés à 0).
-* Supprimer \- Les images peuvent être supprimées lorsqu'elles sont sélectionnées avec :  
-   * la touche SUPPRIMER, ou  
-   * le raccourci-clavier pour l'action Effacer
+- **SELECT**
+  - Pictures in the Front layer can be selected by clicking on them;
+  - Background pictures can be selected by CTRL+ clicking on it (Windows) or COMMAND+clicking on it (Mac);
+  - Only a single picture with an absolute position can be selected: multiple selection is not possible.
+- **MOVE**
+  - Pictures can be moved and resized using the mouse; (inline images cannot be dragged outside the document).
+- **INSERT**
+  - If pictures with an absolute position are pasted in Draft mode, they are displayed inline at the beginning of the current keyboard selection.
+- **CUT/PASTE/COPY**
+  - Pictures can be copied to the clipboard, or cut/pasted while selected.
+  - Pasting a picture with an absolute position in Page mode will paste the picture in the first selected page and anchor it to that page, no matter the original page anchoring settings; pasted pictures will retain their offsets, unless it is pasted into a different mode than the original (for instance if the picture is copied in Page mode and pasted in Embedded mode, the offsets are reset to 0).
+- **DELETE** \-Pictures can be deleted while selected with the:
+  - DELETE key, or
+  - keyboard shortcut for the action Clear
