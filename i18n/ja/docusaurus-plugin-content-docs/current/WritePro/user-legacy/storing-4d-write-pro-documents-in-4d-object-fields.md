@@ -4,139 +4,140 @@ title: 4D Write Pro documents
 displayed_sidebar: docs
 ---
 
-## .4wp ドキュメントフォーマット 
+## .4wp document format
 
-**.4wp** を使用する事によって 4D Write Proドキュメントをロスなくディスク上に保存したりディスクから開いたりすることができます。
+You can save and re-open 4D Write Pro documents to and from disk without any loss using the native **.4wp** format.
 
-**.4wp** フォーマットはドキュメント名と同じ名前を持つ ZIPフォルダーと、その中に格納された HTMLテキストと画像から構成されます:
+The **.4wp** format consists of a zip folder whose name is the document title and whose contents are HTML text and images:
 
-* HTMLテキストは、通常の HTML と (計算されていない) 4D式に加え、4D特有のタグを組み合わせます。
-* 画像は、HTMLファイルの隣にある、ドキュメント名と同じ名前を持つフォルダー内に保存されています。
+- HTML text combines regular HTML with 4D expressions (which are not computed) as well as 4D-specific tags,
+- images are stored in a folder with the same name as the document title, next to the HTML file.
 
-.4wp ドキュメントは HTML に基づいているので、HTMLをサポートしているものであればどんな外部アプリケーションでもそれを読み込んだり開いたりすることができます。
+Since .4wp documents are based on HTML, they can be imported or opened in any external application supporting HTML.
 
-4D Write Pro の内部ドキュメントは HTML に 4D独自の拡張を加えたもので、HTML5/XHTML5 に準拠していながら、独自の HTML/CSS属性のサブセットとタグもサポートしています。したがってデータ損失のリスクなく 4D Write Pro で開けるのは、4D Write Pro で書き出された HTMLドキュメントに限られます。外部で作成された HTMLドキュメントの読み込みはエラーを生成する可能性があります。
+The 4D Write Pro internal document format is a proprietary HTML extension, compatible with HTML5/XHTML5, but which supports its own subset of HTML/CSS attributes and tags. As a result, only HTML documents exported by 4D Write Pro can be opened by 4D Write Pro without any risk of data loss. Importing HTML documents that were created externally could produce errors.
 
-より詳細な情報については、[**4D Write Pro 属性およびCSSスタイルとしての関連した定義、および4D Write Pro XHTML で使用できるXHTMLタグの一覧**](https://download.4d.com/Documents/Products%5FDocumentation/LastVersions/Line%5F19/4DWP-attributes-and-xhtml.pdf) をダウンロードしてください。
+For more information, you can [**download the list of 4D Write pro attributes with associated definition as CSS style or XHTML tag**](https://download.4d.com/Documents/Products%5FDocumentation/LastVersions/Line%5F19/4DWP-attributes-and-xhtml.pdf) in the 4D Write Pro XHTML.
 
-### 後方互換性 
+### Backward compatibility
 
-.4wp ドキュメントはいつでも以前のバージョンの4D Write Pro で開くことができます。開いたバージョンより後のバージョンで追加された属性が含まれていた場合、それらの属性は単に無視されるだけです。ただし、その状態でドキュメントを保存した場合、それらの属性はドキュメントから削除され失われてしまいます。
+You can always reopen a .4wp document with a previous version of 4D Write Pro. If it contains attributes that were added in more recent versions, these attributes are just ignored. However, if you save the document, the attributes are removed from the document and will be lost.
 
-## Storing 4D Write Pro documents in 4D Object fields 
+## Storing 4D Write Pro documents in 4D Object fields
 
-4D Write Proドキュメントを自動的に4Dデータファイルに保存できるようになりました。フォーム内に4D Write Proエリアを作成し、そのエリアの中身を保存するオブジェクトフィールドを作成すれば、エリア内に入力したテキストはレコードが評価されるごとにそれぞれのレコードへと自動的に保存されます。その後[QUERY BY ATTRIBUTE](../../commands/query-by-attribute)コマンドを使用して内部属性の値に基づいてレコードを選択する事ができます。また独自の属性を4D Write Proエリアに追加しクエリすることができます。
+You can store your 4D Write Pro documents automatically in the 4D data file. If you created a 4D Write Pro area on a form and created an Object field to store the area’s contents, any text entered in the area is saved automatically with each record when the record is validated. You can then use the [QUERY BY ATTRIBUTE](../../commands/query-by-attribute) command in order to select records based on the value of their internal attributes. You can also add and query your own attributes with 4D Write Pro areas.
 
-この章では以下の機能について説明しています:
+This section describes the following features:
 
-* フォーム内の4D Write Proエリアを4D オブジェクトフィールドへと結びつける
-* 標準のオブジェクトコマンド[OB SET](../../commands/ob-set)、[OB Get](../../commands/ob-get)および[QUERY BY ATTRIBUTE](../../commands/query-by-attribute)を使用して、保存されている4D Write Proドキュメントのカスタムの属性を設定、取得、そしてクエリする
+- Binding a 4D Object field to a 4D Write Pro area in a form
+- Setting, getting, and querying custom attributes of stored 4D Write Pro documents using the [OB SET](../../commands/ob-set), [OB Get](../../commands/ob-get) standard object commands, and [QUERY BY ATTRIBUTE](../../commands/query-by-attribute).
 
-### 4D オブジェクトフィールドを4D Write Proエリアへと割り当てる 
+### Assigning a 4D Object field to a 4D Write Pro area
 
-4D Write Proエリアを4Dオブジェクトフィールドに割り当てるためには、エリアの変数名プロパティにフィールド名を入力するだけです。
+To bind a 4D Write Pro area with a 4D Object field, you just need to reference the field in the Variable Name property of the area.
 
-### ストラクチャー内にオブジェクトフィールドを作成 
+### Creating the Object field in the Structure
 
-データベースのストラクチャー内において、4Dオブジェクトフィールドであればどれでも4D Write Proドキュメントを保存するのに使用する事ができます。他のオブジェクトフィールドと同様、必要に応じて以下のフィールドの標準のプロパティを定義する必要があります:
+In your database structure, any 4D Object field can be used to store 4D Write Pro documents. As with any Object field, you just have to define its standard properties, according to your needs:
 
-* フィールド名
-* "REST resourceに公開"などの属性とインデックス
-* 保存オプション.
+- the field name,
+- its attributes, such as "Expose as REST resource," as well as its index,
+- its storage option.
 
 ![](../../assets/en/WritePro/pict2584929.en.png)
 
-### オブジェクトフィールドを4D Write Proエリアに割り当て 
+### Assigning the Object field to the 4D Write Pro area
 
-4D Write Proドキュメントを保存するオブジェクトフィールドを決めたら、あとはそのエリアを含んでいるフォーム内で参照するだけです。どのようなテーブルフォームもプロジェクトフォームも使用する事ができます。フォームエディター内において、4D Write Proエリアのプロパティリスト内の、**変数名**の欄に標準の"\[Table\]Field"表記を使用してフィールド名を入力して下さい:
+Once you have defined an Object field to store your 4D Write Pro document, you just need to reference it in the form containing the area. You can use any table or a project form.\
+In the Form editor, enter the field name using the standard "\[Table\]Field" notation in the **Variable or Expression** area of the Property list for the 4D Write Pro area:
 
 ![](../../assets/en/WritePro/pict2584938.en.png)
 
-これで4D Write Proエリアはフィールドと関連付けがなされ、エリアの中身はレコード毎に自動的に保存されるようになりました。4D自動アクションボタンを使用しない場合、4Dコマンドを使用してエリアを手動で保存しなければならない点に注意して下さい。
+Your 4D Write Pro area is then associated with the field, ensuring that its contents will be saved automatically with each record. Note that if you do not use the 4D standard action buttons, you will have to save the area manually using 4D commands.
 
-### カスタムの属性を使用 
+### Using custom attributes
 
-4D Write Proエリアがオブジェクトフィールド内に保存されているとき、4D Write Proドキュメントにはカスタムの属性を保存または読み出しすることができます。例えば作者名、ドキュメントのカテゴリーなど、どんな追加情報でも有用だと思えるものは使用する事ができます。そしてカスタムの属性をクエリし、条件に合致したレコードを選択することができます
+When 4D Write Pro areas are stored in Object fields, you can save and read any custom attributes with the 4D Write Pro document, such as, for example, the writer's name, the document category, or any additional information you may find useful. You can then query your custom attributes to select records matching the criteria.
 
-カスタムの属性は [WP EXPORT DOCUMENT](../commands/wp-export-document) または [WP EXPORT VARIABLE](../commands/wp-export-variable) コマンドで書き出されます。カスタムの属性は[JSON Stringify](../../commands/json-stringify)コマンドを使用して4D Write Pro オブジェクトフィールドをJSONに変換する際にも書き出されます(同時に4D Write Pro のメインドキュメント属性も書き出されます)。
+Custom attributes will be exported with the [WP EXPORT DOCUMENT](../commands/wp-export-document) or [WP EXPORT VARIABLE](../commands/wp-export-variable) commands. They will be exported as well when converting a 4D Write Pro Object field to JSON using the [JSON Stringify](../../commands/json-stringify) command (along with the 4D Write Pro main document attributes).
 
-カスタムの属性を設定または取得するためには、オブジェクト記法を使用するか、[OB Get](../../commands/ob-get) と [OB SET](../../commands/ob-set)コマンドを使用するだけです。
+To set or get custom attributes, you just need to use object notation or the [OB Get](../../commands/ob-get) and [OB SET](../../commands/ob-set) commands.
 
-たとえばフォームメソッドにおいて、以下のように書くことがでカスタムの属性を設定できます:
-
-```4d
- If(Form event code=On Validate)
-    [MyDocuments]My4DWP["myatt_Last edition by"]:=Current user
-    [MyDocuments]My4DWP.myatt_Category:="Memo"
-    [MyDocuments]My4DWP:=[MyDocuments]My4DWP //編集を記録
- End if
-```
-
-あるいは:
+For example, in the form method, you can write:
 
 ```4d
- If(Form event code=On Validate)
-    OB SET([MyDocuments]My4DWP;"myatt_Last edition by";Current user)
-    OB SET([MyDocuments]My4DWP;"myatt_Category";"Memo")
- End if
+ If(Form event code=On Validate)
+    [MyDocuments]My4DWP["myatt_Last edition by"]:=Current user
+    [MyDocuments]My4DWP.myatt_Category:="Memo"
+    [MyDocuments]My4DWP:=[MyDocuments]My4DWP //to record the edit
+ End if
 ```
 
-また、以下のように書いて、ドキュメントのカスタムの属性を読み出すことができます:
+または:
 
 ```4d
- vAttrib:=[MyDocuments]My4DWP.myatt_Category
+ If(Form event code=On Validate)
+    OB SET([MyDocuments]My4DWP;"myatt_Last edition by";Current user)
+    OB SET([MyDocuments]My4DWP;"myatt_Category";"Memo")
+ End if
 ```
 
-あるいは:
+You can also read custom attributes of the documents:
 
 ```4d
- vAttrib:=OB Get([MyDocuments]My4DWP;"myatt_Last edition by")
+ vAttrib:=[MyDocuments]My4DWP.myatt_Category
 ```
 
-カスタムの4D Write Pro属性をデータファイルに保存していた場合、これらの属性をクエリして適切な属性の値を含むレコードのセレクションを作成することができます。以下の例では、レコードを選択するためにオブジェクトフィールドを含んでいるテーブルをクエリします:
+または:
 
 ```4d
- QUERY BY ATTRIBUTE([MyDocuments];[MyDocuments]My4DWP;"myatt_Category";=;"Memo")
-  //MyDocuments内の、(4D Write Proエリアに割り当てられている)My4DWPオブジェクトフィールド内で
-  //"myatt_Category"というカスタム属性が"Memo"という値を含んでいるレコードを全て選択します
+ vAttrib:=OB Get([MyDocuments]My4DWP;"myatt_Category")
 ```
 
-:::warning カスタム属性の名前についての注意
+If you have saved custom 4D Write Pro attributes in your data file, you can query these attributes to create a selection of records containing the appropriate attribute value. In the following example, you query the table containing the Object field to select records:
 
-カスタム属性は4D Write Pro内部属性と同じ名前空間を共有するため、内部属性とカスタム属性との衝突を避けるために、独自の属性を定義するときには必ず接頭辞をつけた名前を定義する事が強く推奨されます。接頭辞がついていない名前は4D Write Proの内部属性のために予約されているからです。接頭辞であればどのような独自の接頭辞であっても使用する事ができます(上記の例では"myatt\_" を接頭辞として使用しました)。
+```4d
+ QUERY BY ATTRIBUTE([MyDocuments];[MyDocuments]My4DWP;"myatt_Category";=;"Memo")
+  //selects all records in MyDocuments whose "myatt_Category" custom attribute has the value "Memo"
+  //in the My4DWP Object field (bound to a 4D Write Pro area)
+```
+
+:::warning About custom attribute names
+
+Since custom attributes share the same naming space as 4D Write Pro internal attributes, we strongly recommend that you use prefixes when defining your own attribute names in order to avoid any conflicts between internal and custom attributes. Non-prefixed names are reserved for 4D Write Pro internal attributes. You can use any custom prefix (for instance, we used "myatt\_" as a prefix in the above example).
 
 :::
 
-**注意:** カスタム属性は[WP SET ATTRIBUTES](../commands/wp-set-attributes)、[WP GET ATTRIBUTES](../commands/wp-get-attributes) および [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) コマンドで管理することはできません(これらのコマンドは4D Write Pro の内部属性のみをサポートします)。
+**Note:** Custom attributes cannot be handled by the [WP SET ATTRIBUTES](../commands/wp-set-attributes), [WP GET ATTRIBUTES](../commands/wp-get-attributes), and [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) commands (they only support 4D Write Pro internal attributes).
 
 ## Opening and exporting documents
 
-4D アプリケーションでは、4D Write Proテーマ内にある特定のコマンドを使用することによって、4D Write Proドキュメントを作成、読み込み、書き出しすることができます ([WP EXPORT DOCUMENT](../commands/wp-export-document), [WP EXPORT VARIABLE](../commands/wp-export-variable), [WP Import document](../commands/wp-import-document), [WP New](../commands/wp-new)))。
+In 4D applications, 4D Write Pro documents are created, imported, and exported by means of specific commands found in the **4D Write Pro** theme ([WP EXPORT DOCUMENT](../commands/wp-export-document), [WP EXPORT VARIABLE](../commands/wp-export-variable), [WP Import document](../commands/wp-import-document), [WP New](../commands/wp-new)).
 
-[4D Write Proエリアをデータベースの内のオブジェクトフィールドと関連づけることができます](../user-legacy/defining-a-4d-write-pro-area.md#storing-4d-write-pro-documents-in-4d-object-fields)。これにより、各 4D Write Proドキュメントはレコードとともに自動的に保存され、データベースのデータ内に保存されます。
+You can also [associate a 4D Write Pro area with an Object field](../user-legacy/defining-a-4d-write-pro-area.md#storing-4d-write-pro-documents-in-4d-object-fields) of the database. This way, each 4D Write Pro document is automatically saved with the record and stored in the database's data.
 
-## Printing 4D Write Pro documents 
+## Printing 4D Write Pro documents
 
-4D Write Pro ドキュメントの印刷には次の方法があります:
+4D Write Pro documents can be printed in two ways:
 
-* 4D フォームの一部として
-* 独立したドキュメントとして
+- As parts of 4D forms
+- As independent documents
 
-### 4D フォーム内ドキュメントの印刷 
+### Printing documents in 4D forms
 
-[PRINT SELECTION](../../commands/print-selection) や [PRINT RECORD](../../commands/print-record) などの標準の 4D印刷コマンドを使用して、どのような 4Dフォームでも (プロジェクトフォーム、テーブルフォーム、入力フォーム、出力フォーム)、その中に埋め込まれた 4D Write Pro オブジェクトを印刷することができます。
+You can print 4D Write Pro embedded objects as part of any kind of [4D form](../../FormEditor/forms.md) (project, table, input, or output) using standard 4D printing commands such as [PRINT SELECTION](../../commands/print-selection) or [PRINT RECORD](../../commands/print-record).
 
-標準の *印刷時可変* オプションは 4D Write Pro エリアでもサポートされている (\*) ため、印刷時にサイズを操作することができます。このオプションがチェックされているとき、マージン (内側・外側) と上マージンは先頭のページにのみ適用されます。マージン (内側・外側) と下マージンは最終ページにのみ適用されます。ドキュメントのページ付けプロパティは無視されます。ウィドウ・オーファンコントロールは無効化され、改ページは適用されません (これらのプロパティはスクリーン上でのページレンダリングとドキュメントのスタンドアロン印刷においてのみ使用されます)。**印刷時可変**オプションが選択されていた場合、フォームエリアより上に位置しているオブジェクトのみが印刷されます。このオプションについてのより詳細な情報については、デザインリファレンスマニュアルの "*印刷時可変*" を参照してください。
+The standard *Print Variable Frame* option is also supported(\*) for 4D Write Pro areas, allowing you to manage size during printing. When this option is checked, the margins (outside and inside) and top border are only applied to the first page, and the margins (outside and inside) and bottom border are only applied to the last page. Pagination properties of the document are ignored: widow and orphan control is disabled and page breaks are not applied (these properties are only used for page rendering on screen, or for standalone printing of the document). When the **Print Variable Frame** option is selected, only objects located above the form area are printed. For more information about this option, refer to "*Print Variable Frame*" in the Design Reference manual.
 
-(\*) [Print object](../../commands/print-object) と [Print form](../../commands/print-form) コマンドは、このオプションと併用できません。
+(\*) The [Print object](../../commands/print-object) and [Print form](../../commands/print-form) commands are not compatible with this option.
 
-#### 印刷とビューモード 
+#### View mode for printing
 
-4D Write Pro エリアに設定した**ビューモード** (*ビュープロパティの設定* 参照) にかかわらず、[Print form](../../commands/print-form) などの 4D 印刷コマンドをしようすると、常に **埋め込み** モードで印刷されます。つまり、4D Write Pro フォームオブジェクトの次のアピアランス設定が無視されます: ページビューモード (常に **埋め込み**)、 ヘッダーを表示、フッターを表示、ページ枠を表示 (常に "No")、非表示の文字を表示 (常に "No")。
+Regardless of the **View mode** set for the 4D Write Pro area (see *Configuring View properties*), it is always printed as in the **Embedded** mode when you use a 4D printing command such as [Print form](../../commands/print-form). In this case, the following Appearance settings are not taken into account for the 4D Write Pro form objects: Page view mode (always "Embedded"), Show headers, Show footers, Show page frame (always "No"), Show hidden characters (always "No").
 
-#### 例題 
+#### 例題
 
-以下の例は、デフォルト出力フォームに埋め込まれた4D Write Proエリアにおける**印刷時可変**オプションの効果を示したものです。ここでは以下のコードが実行されています:
+The following example shows the effect of the **Print Variable Frame** option on a 4D Write Pro area embedded in the default output form. 以下のコードが実行されます:
 
 ```4d
  ALL RECORDS([Movies])
@@ -144,29 +145,30 @@ displayed_sidebar: docs
  PRINT SELECTION([Movies])
 ```
 
-* 以下は印刷時可変のオプションがチェック**されていない** (off) 場合の結果です:  
-![](../../assets/en/WritePro/pict2646292.en.png)
-* 以下は印刷時可変のオプションがチェック**されている** (on) 場合の結果です:  
-![](../../assets/en/WritePro/pict2646294.en.png)  
-*(Sample text source: Wikipedia)*
+- Here is the result with the Print Variable Frame option **unchecked** (off):\
+  ![](../../assets/en/WritePro/pict2646292.en.png)
+- Here is the result with the Print Variable Frame option **checked** (on):\
+  ![](../../assets/en/WritePro/pict2646294.en.png)\
+  ![](../../assets/en/WritePro/pict3053372.en.png)\
+  *(Sample text source: Wikipedia)*
 
-### 独立したドキュメントの印刷 
+### Printing independent documents
 
-4D v15 R5以降、4D Write Pro に含まれる新機能によって、独立した 4D Write Pro ドキュメントを印刷できるようになったのに加え、フォーマット、ページの向き、ページ番号と言った標準の印刷オプションの操作が可能になりました。
+Starting with 4D v15 R5, 4D Write Pro includes printing features allowing you to print independent 4D Write Pro documents as well as to control standard printing options such as the format, orientation, or page numbers.
 
-#### 4D Write Pro コマンド 
+#### 4D Write Pro commands
 
-4D Write Proの印刷機能は、主に次の二つのコマンドによって管理されます。**WP PRINT** と **WP USE PAGE SETUP**です。
+Basically, two commands handle the 4D Write Pro printing features: **WP PRINT** and **WP USE PAGE SETUP**.
 
-* [WP PRINT](../commands/wp-print) は 4D Write Pro ドキュメントの印刷ジョブをローンチするか、ドキュメントをカレントの印刷ジョブに追加します。
-* [WP USE PAGE SETUP](../commands/wp-use-page-setup) はカレントプリンターのページ設定を、4D Write Proドキュメント属性のページサイズとページの向きに変更します。
+- [WP PRINT](../commands/wp-print) launches a print job for a 4D Write Pro document or adds the document to a current print job.
+- [WP USE PAGE SETUP](../commands/wp-use-page-setup) modifies the current printer page settings based on the 4D Write Pro document attributes for page size and orientation.
 
-**注**: Windows 7 あるいは Windows Server 2008 R2のマシン上では、*Platform Update for Windows 7* がインストールされており、印刷機能がサポートされていることを確認してください。
+**Note:** On machines with Windows 7 or Windows Server 2008 R2, make sure that the *Platform Update for Windows 7* has been installed so that the printing features are supported.
 
-#### 標準の 4D コマンド 
+#### Regular 4D commands
 
-以下の 4Dコマンドは 4D Write Pro 印刷機能をサポートします:
+The following 4D commands support 4D Write Pro printing features:
 
-* [SET PRINT OPTION](../../commands/set-print-option) と [GET PRINT OPTION](../../commands/get-print-option): すべてのオプションが、[WP PRINT](../commands/wp-print) によって印刷される 4D Write Proドキュメントに対してサポートされています。Paper option と Orientation optionに関しては、[WP USE PAGE SETUP](../commands/wp-use-page-setup) を呼び出してページサイズと向きの属性を 4D Write Pro ドキュメントの設定と同期させる方が効率的な場合もあります。Page range option (15) を使って、印刷するページ範囲を指定することができます。
-* [PRINT SETTINGS](../../commands/print-settings): カレントのプリンターに対して印刷設定を設定します。[WP PRINT](../commands/wp-print) がこの後に呼び出された場合、プリンター設定が PRINT SETTINGS ダイアログで変更されていれば、その設定を使用します (ただし余白ページ設定だけは常に4D Write Proドキュメントの設定を使用します)
-* [OPEN PRINTING JOB](../../commands/open-printing-job) と [CLOSE PRINTING JOB](../../commands/close-printing-job): これらのコマンドの間に [WP PRINT](../commands/wp-print) を呼び出すことによって、一つ以上の4D Write Proドキュメントを一件の印刷ジョブに挿入することができます。
+- [SET PRINT OPTION](../../commands/set-print-option) and [GET PRINT OPTION](../../commands/get-print-option): All options are supported for 4D Write Pro documents printed by [WP PRINT](../commands/wp-print). For Paper option and Orientation option, you may find it more efficient to call [WP USE PAGE SETUP](../commands/wp-use-page-setup) in order to easily synchronize these attributes with the 4D Write Pro document settings. The Page range option (15) allows you to specify the page range to print.
+- [PRINT SETTINGS](../../commands/print-settings): Defines print settings for the current printer; if [WP PRINT](../commands/wp-print) is called afterwards, it takes any print settings modified by means of the Print Settings dialog boxes into account (except for margins, which are always based on the 4D Write Pro document).
+- [OPEN PRINTING JOB](../../commands/open-printing-job) and [CLOSE PRINTING JOB](../../commands/close-printing-job): [WP PRINT](../commands/wp-print) can be called between these commands in order to insert one or more 4D Write Pro documents into a single print job.
