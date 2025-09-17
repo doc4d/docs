@@ -1,148 +1,143 @@
 ---
 id: 4d-write-pro-documents
-title: Documentos 4D Write Pro
+title: 4D Write Pro documents
 displayed_sidebar: docs
 ---
 
-## Formato de documento .4wp 
+## .4wp document format
 
-É possível salvar e reabrir documentos 4D Write Pro em disco e a partir de disco sem qualquer perda usando o formato nativo **.4wp**.
+You can save and re-open 4D Write Pro documents to and from disk without any loss using the native **.4wp** format.
 
-O formato **.4wp** consiste de uma pasta zip cujo nome é o título do documento e cujos conteúdos são texto HTML e imagens:
+The **.4wp** format consists of a zip folder whose name is the document title and whose contents are HTML text and images:
 
-* texto HTML combina HTML normal com expressões 4D (que não são computadas) assim como etiquetas 4D especificas,
-* imagens são armazenadas em uma pasta com o mesmo nome que o título do documento, do lado do arquivo HTML.
+- HTML text combines regular HTML with 4D expressions (which are not computed) as well as 4D-specific tags,
+- images are stored in a folder with the same name as the document title, next to the HTML file.
 
-Já que documentos .4wp são baseados em HTML, podem ser importados ou abertos em qualquer aplicação externa que suporta HTML.
+Since .4wp documents are based on HTML, they can be imported or opened in any external application supporting HTML.
 
-O formato de documento interno 4D Write Pro é uma extensão HTML proprietária, compatível comHTML5/XHTML5, mas que suporta um subconjunto de atributos HTML/CSS e etiquetas. Como resultado, apenas documentos HTML exportados por 4D Write Pro podem ser abertos por 4D Write Pro sem risco de perda de dados. Importar documentos HTML que foram criados externamente pode produzir erros.
+The 4D Write Pro internal document format is a proprietary HTML extension, compatible with HTML5/XHTML5, but which supports its own subset of HTML/CSS attributes and tags. As a result, only HTML documents exported by 4D Write Pro can be opened by 4D Write Pro without any risk of data loss. Importing HTML documents that were created externally could produce errors.
 
-Para saber mais, [**baixe a lista de atributos 4D Write pro com definição associada como CSS style ou XHTML tag**](https://download.4d.com/Documents/Products%5FDocumentation/LastVersions/Line%5F19/4DWP-attributes-and-xhtml.pdf) em 4D Write Pro XHTML.
+For more information, you can [**download the list of 4D Write pro attributes with associated definition as CSS style or XHTML tag**](https://download.4d.com/Documents/Products%5FDocumentation/LastVersions/Line%5F19/4DWP-attributes-and-xhtml.pdf) in the 4D Write Pro XHTML.
 
-### Compatibilidade com versões anteriores 
+### Backward compatibility
 
-Sempre pode reabrir um documento .4wp com uma versão anterior de 4D Write Pro. Se conter atributos que foram adicionados em versões mais recentes, esses atribuos são apenas ignorados. Entretanto se salvar o documento, os atributos são removidos do documento e serão perdidos. 
+You can always reopen a .4wp document with a previous version of 4D Write Pro. If it contains attributes that were added in more recent versions, these attributes are just ignored. However, if you save the document, the attributes are removed from the document and will be lost.
 
-## Armazenar os documentos 4D Write Pro nos campos objeto 4D
+## Storing 4D Write Pro documents in 4D Object fields
 
-Pode armazenar seus documentos 4D Write Pro automaticamente no arquivo de dados 4D. Se criar uma área 4D Write Pro em um formulário e criar um campo Objeto para armazenar os conteúdos da área, qualquer texto digitado na área é salvado automaticamente com cada registro quando o registro for validado. Pode então usar o comando [QUERY BY ATTRIBUTE](../../commands/query-by-attribute) para selecionar registros baseados no valor dos atributos internos. Pode também adicioanr e pesquisar seus próprios atributos com áreas 4D Write Pro. 
+You can store your 4D Write Pro documents automatically in the 4D data file. If you created a 4D Write Pro area on a form and created an Object field to store the area’s contents, any text entered in the area is saved automatically with each record when the record is validated. You can then use the [QUERY BY ATTRIBUTE](../../commands/query-by-attribute) command in order to select records based on the value of their internal attributes. You can also add and query your own attributes with 4D Write Pro areas.
 
-Esta seção descreve as seguintes propriedades:
+This section describes the following features:
 
-* Ligar o campo 4D Object à área 4D Write Pro em um formulário
-* Configurar, obter e pesquisar atributos personalizados dos documentos 4D Write Pro armazenados usando os comandos de objeto padrão [OB SET](../../commands/ob-set), [OB Get](../../commands/ob-get), e [QUERY BY ATTRIBUTE](../../commands/query-by-attribute).
+- Binding a 4D Object field to a 4D Write Pro area in a form
+- Setting, getting, and querying custom attributes of stored 4D Write Pro documents using the [OB SET](../../commands/ob-set), [OB Get](../../commands/ob-get) standard object commands, and [QUERY BY ATTRIBUTE](../../commands/query-by-attribute).
 
-### Atribuindo um campo 4D Object para uma área 4D Write Pro 
+### Assigning a 4D Object field to a 4D Write Pro area
 
-Para ligar uma área 4D Write Pro com um campo 4D Object, só precisa referenciar o campo na propriedade Variable Name da área. 
+To bind a 4D Write Pro area with a 4D Object field, you just need to reference the field in the Variable Name property of the area.
 
-### Criar o campo Objeto na Estrutura 
+### Creating the Object field in the Structure
 
-Em sua estrutura de banco de dados, qualquer campo de Objeto 4D Object pode ser usado para armazenar documentos 4D Write Pro. Assim como qualquer campo Object, tem que definir, dependendo de suas necessidades:
+In your database structure, any 4D Object field can be used to store 4D Write Pro documents. As with any Object field, you just have to define its standard properties, according to your needs:
 
-* o nome do campo,
-* os atributos, tais como "Expose as REST resource," assim como o índice,
-* a opção de armazenamento 
+- the field name,
+- its attributes, such as "Expose as REST resource," as well as its index,
+- its storage option.
 
 ![](../../assets/en/WritePro/pict2584929.en.png)
 
-Estes parâmetros são padrão para campos Objeto.
+### Assigning the Object field to the 4D Write Pro area
 
-### Atribuindo a área 4D Write Pro para o campo 
-
-Quando tiver definido um campo Objeto para armazenar seu documento 4D Write Pro, só precisa referenciar ele no formulário contendo a área. Pode usar qualquer tabela ou um formulário projeto.   
-No editor Formulário, entre o nome do campo usando a notação padrão "\[Table\]Field" na área **Variable Name** da lista de Propriedade para a área 4D Write Pro:
+Once you have defined an Object field to store your 4D Write Pro document, you just need to reference it in the form containing the area. You can use any table or a project form.\
+In the Form editor, enter the field name using the standard "\[Table\]Field" notation in the **Variable or Expression** area of the Property list for the 4D Write Pro area:
 
 ![](../../assets/en/WritePro/pict2584938.en.png)
 
-Sua área 4D Write Pro é então associada com o campo, assegurando que seus conteudos serão salvados automaticamente com cada registro. Note que se não usar os botões automáticos 4D, terá que salvar a área manualmente usando os comandos 4D. 
+Your 4D Write Pro area is then associated with the field, ensuring that its contents will be saved automatically with each record. Note that if you do not use the 4D standard action buttons, you will have to save the area manually using 4D commands.
 
-### Usar atributos personalizáveis 
+### Using custom attributes
 
-Quando as áreas 4D Write Pro forem armazenadas nos campos Objeto, pode salvar e ler qualquer atributo personalizado com o documento 4D Write Pro, tais como o nome do escritor, a categoria do documento ou qualquer informação adicional que achar útil. Pode então pesquisar qualquer atributo personalizável para selecionar registros que se enquadrem nos critérios.
+When 4D Write Pro areas are stored in Object fields, you can save and read any custom attributes with the 4D Write Pro document, such as, for example, the writer's name, the document category, or any additional information you may find useful. You can then query your custom attributes to select records matching the criteria.
 
-* Atributos personalizados não serão exportados com os comandos [WP EXPORT DOCUMENT](../commands/wp-export-document) ou [WP EXPORT VARIABLE](../commands/wp-export-variable). Eles tambèm seráo quando converter um campo de objeto 4D Write Pro para JSON com o comando [JSON Stringify](../../commands/json-stringify) (junto com os principais atributos de documento 4D Write Pro).
+Custom attributes will be exported with the [WP EXPORT DOCUMENT](../commands/wp-export-document) or [WP EXPORT VARIABLE](../commands/wp-export-variable) commands. They will be exported as well when converting a 4D Write Pro Object field to JSON using the [JSON Stringify](../../commands/json-stringify) command (along with the 4D Write Pro main document attributes).
 
-Para estabelecer ou conseguir atributos personalizados, precisa usar os comandos padrão [OB Get](../../commands/ob-get) e [OB SET](../../commands/ob-set).
+To set or get custom attributes, you just need to use object notation or the [OB Get](../../commands/ob-get) and [OB SET](../../commands/ob-set) commands.
 
-Por exemplo, no método de formulário pode escrever:  
-
-```4d
- If(Form event code=On Validate)
-    [MyDocuments]My4DWP["myatt_Last edition by"]:=Current user
-    [MyDocuments]My4DWP.myatt_Category:="Memo"
-    [MyDocuments]My4DWP:=[MyDocuments]My4DWP //to record the edit
- End if
-```
-
-ou:  
-  
-```4d
- If(Form event code=On Validate)
-    OB SET([MyDocuments]My4DWP;"myatt_Last edition by";Current user)
-    OB SET([MyDocuments]My4DWP;"myatt_Category";"Memo")
- End if
-```
-
-Também pode ler atributos personalizados de documentos:
+For example, in the form method, you can write:
 
 ```4d
- vAttrib:=[MyDocuments]My4DWP.myatt_Category
-```
-  
-  
-ou:  
-  
-```4d
- vAttrib:=OB Get([MyDocuments]My4DWP;"myatt_Category")
+ If(Form event code=On Validate)
+    [MyDocuments]My4DWP["myatt_Last edition by"]:=Current user
+    [MyDocuments]My4DWP.myatt_Category:="Memo"
+    [MyDocuments]My4DWP:=[MyDocuments]My4DWP //to record the edit
+ End if
 ```
 
-Se tiver salvo atributos personalizados 4D Write Pro em seu arquivo de dados, pode pesquisar estes atributos para criar uma seleção de registros contendo o valor apropriado do atributo. No exemplo abaixo, pode pesquisar a tabela contendo o campo Objeto para selecionar registros:
+ou :
 
 ```4d
- QUERY BY ATTRIBUTE([MyDocuments];[MyDocuments]My4DWP;"myatt_Category";=;"Memo")
-  //seleciona todos os registros em MyDocuments cujo atributo personalizável "myatt_Category" tenha o valor "Memo"
-  //no campo de objeto My4DWP  (ligado à área 4D Write Pro)
+ If(Form event code=On Validate)
+    OB SET([MyDocuments]My4DWP;"myatt_Last edition by";Current user)
+    OB SET([MyDocuments]My4DWP;"myatt_Category";"Memo")
+ End if
 ```
 
-:::warning Sobre nomes de atributos personalizados 
+You can also read custom attributes of the documents:
 
-Já que atributos personalizados têm o mesmo espaço de nomeação que atributos internos 4D Write Pro, recomenda-se que se use prefixo quando definir seus próprios nomes de atributo, para evitar conflitos entre atributos internos e personalizados. Nomes não prefixados são reservados para os atributos internos 4D Write Pro. Pode usar qualque prefixo personalizável (no exemplo acima foi usado "myatt\_" como prefixo).
+```4d
+ vAttrib:=[MyDocuments]My4DWP.myatt_Category
+```
+
+ou :
+
+```4d
+ vAttrib:=OB Get([MyDocuments]My4DWP;"myatt_Category")
+```
+
+If you have saved custom 4D Write Pro attributes in your data file, you can query these attributes to create a selection of records containing the appropriate attribute value. In the following example, you query the table containing the Object field to select records:
+
+```4d
+ QUERY BY ATTRIBUTE([MyDocuments];[MyDocuments]My4DWP;"myatt_Category";=;"Memo")
+  //selects all records in MyDocuments whose "myatt_Category" custom attribute has the value "Memo"
+  //in the My4DWP Object field (bound to a 4D Write Pro area)
+```
+
+:::warning About custom attribute names
+
+Since custom attributes share the same naming space as 4D Write Pro internal attributes, we strongly recommend that you use prefixes when defining your own attribute names in order to avoid any conflicts between internal and custom attributes. Non-prefixed names are reserved for 4D Write Pro internal attributes. You can use any custom prefix (for instance, we used "myatt\_" as a prefix in the above example).
 
 :::
 
-**Nota:** a partir de 4D v15 R4, os atributos internos de 4D Write Pro também são acessíveis por programação utilizando os comandos padrão [OB Get](../../commands/ob-get) e [OB SET](../../commands/ob-set), mas também utilizando [WP SET ATTRIBUTES](../commands/wp-set-attributes), [WP GET ATTRIBUTES](../commands/wp-get-attributes) e [WP RESET ATTRIBUTES](../commands/wp-reset-attributes). 
- 
-## Abrir e exportar documentos
+**Note:** Custom attributes cannot be handled by the [WP SET ATTRIBUTES](../commands/wp-set-attributes), [WP GET ATTRIBUTES](../commands/wp-get-attributes), and [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) commands (they only support 4D Write Pro internal attributes).
 
-Nas aplicações 4D, os documentos, 4D Write Pro são criados importados e exportados por meio de comandos específicos que se encontram no tema **4D Write Pro** ([WP EXPORT DOCUMENT](../commands/wp-export-document), [WP EXPORT VARIABLE](../commands/wp-export-variable), [WP Import document](../commands/wp-import-document), [WP New](../commands/wp-new)). 
+## Opening and exporting documents
 
-Também é possível [associar uma área 4D Write Pro com um campo Objeto](../user-legacy/defining-a-4d-write-pro-area.md#storing-4d-write-pro-documents-in-4d-object-fields) em um banco de dados. Desta maneira, cada documento 4D Write Pro é automaticamente salvo com o registro e armazenado nos dados do banco de dados.
+In 4D applications, 4D Write Pro documents are created, imported, and exported by means of specific commands found in the **4D Write Pro** theme ([WP EXPORT DOCUMENT](../commands/wp-export-document), [WP EXPORT VARIABLE](../commands/wp-export-variable), [WP Import document](../commands/wp-import-document), [WP New](../commands/wp-new)).
 
-## Imprimir documentos 4D Write Pro 
+You can also [associate a 4D Write Pro area with an Object field](../user-legacy/defining-a-4d-write-pro-area.md#storing-4d-write-pro-documents-in-4d-object-fields) of the database. This way, each 4D Write Pro document is automatically saved with the record and stored in the database's data.
 
-Os documentos 4D Write Pro podem ser impressos de duas formas
+## Printing 4D Write Pro documents
 
-* como partes de formulários 4D
-* como documentos independentes
+4D Write Pro documents can be printed in two ways:
 
-### Imprimindo documentos 
+- As parts of 4D forms
+- As independent documents
 
-Imprimir uma área 4D Write Pro embebida em um formulário 4D é respaldada pelo sistema
+### Printing documents in 4D forms
 
-Pode imprimir objetos 4D Write Pro incluidos em qualquer tipo de [formulário 4D](../../FormEditor/forms.md) (projeto, tabela, input ou output) usando comandos de impressão comuns de 4D tais como [PRINT SELECTION](../../commands/print-selection) ou [PRINT RECORD](../../commands/print-record). 
+You can print 4D Write Pro embedded objects as part of any kind of [4D form](../../FormEditor/forms.md) (project, table, input, or output) using standard 4D printing commands such as [PRINT SELECTION](../../commands/print-selection) or [PRINT RECORD](../../commands/print-record).
 
-A opção padronizada *Impressão tamanho variável* também é compatível (\*) com áreas 4D Write Pro, pérmitindo que maneje tamanho durante impressão. Quando esta opção for marcada, a margem (interior ou exterior) e margem superior são aplicadas apenas para a primeira página. As margens (interior e exterior) e a margem inferior são aplicadas apenas na última página. Propriedades de paginação do documento são ignoradas: controle de linhas viúvas e órfãs é desativado e quebras de página não são aplicadas (estas propriedades são usadas apenas para renderização na tela ou impressão do documento página por página. Quando a opção **Print Variable Frame** for selecionada, apenas objetos localizados acima da área de formulário serão impressos. Para saber mais, veja "*Impressão tamanho variável*" no manual Design Reference.
+The standard *Print Variable Frame* option is also supported(\*) for 4D Write Pro areas, allowing you to manage size during printing. When this option is checked, the margins (outside and inside) and top border are only applied to the first page, and the margins (outside and inside) and bottom border are only applied to the last page. Pagination properties of the document are ignored: widow and orphan control is disabled and page breaks are not applied (these properties are only used for page rendering on screen, or for standalone printing of the document). When the **Print Variable Frame** option is selected, only objects located above the form area are printed. For more information about this option, refer to "*Print Variable Frame*" in the Design Reference manual.
 
-(\*) Os comandos [Print object](../../commands/print-object) e [Print form](../../commands/print-form) não são compatíveis com esta opção. 
+(\*) The [Print object](../../commands/print-object) and [Print form](../../commands/print-form) commands are not compatible with this option.
 
-#### Modo de vista para impressão 
+#### View mode for printing
 
-Qualquer que seja o modo de Vista para a área 4D Write Pro (ver *Configurar propriedades de Vista*), sempre será impresso no modo Embebido quanod usar um comando de impressão 4D tal como [Print form](../../commands/print-form). Neste caso, as configurações de aparência abaixo não são levadas em conta para os objetos de formulário 4D Write Pro: modo de vista Página (sempre "Embebido"), Mostrar cabeçalho, Mostra rodapé, mostrar borda da página (sempre "Não"), Mostrar caracteres ocultos (sempre "Não").
+Regardless of the **View mode** set for the 4D Write Pro area (see *Configuring View properties*), it is always printed as in the **Embedded** mode when you use a 4D printing command such as [Print form](../../commands/print-form). In this case, the following Appearance settings are not taken into account for the 4D Write Pro form objects: Page view mode (always "Embedded"), Show headers, Show footers, Show page frame (always "No"), Show hidden characters (always "No").
 
-#### Exemplo 
+#### Exemplo
 
-O exemplo abaixo mostra o efeito da opção **Print Variable Frame** numa área 4D Write Pro area embebida no formulário de output padrão. O seguinte código é executado:
+The following example shows the effect of the **Print Variable Frame** option on a 4D Write Pro area embedded in the default output form. O seguinte código é executado:
 
 ```4d
  ALL RECORDS([Movies])
@@ -150,31 +145,30 @@ O exemplo abaixo mostra o efeito da opção **Print Variable Frame** numa área 
  PRINT SELECTION([Movies])
 ```
 
-* Com a opção Print Variable Frame **desmarcada** (off), terá o resultado abaixo:  
-![](../../assets/en/WritePro/pict2646292.en.png)
-* Com a opção Print Variable Frame **marcada** (on), terá o resultado abaixo:  
-![](../../assets/en/WritePro/pict2646294.en.png)  
-*(sample text source: wikipedia)*
+- Here is the result with the Print Variable Frame option **unchecked** (off):\
+  ![](../../assets/en/WritePro/pict2646292.en.png)
+- Here is the result with the Print Variable Frame option **checked** (on):\
+  ![](../../assets/en/WritePro/pict2646294.en.png)\
+  ![](../../assets/en/WritePro/pict3053372.en.png)\
+  *(Sample text source: Wikipedia)*
 
-### Imprimir documentos independentes 
+### Printing independent documents
 
-A partir de 4D v15 R5, 4D Write Pro inclui novas funcionalidades de impressão. Utilizando estas funcionalidades padrão, poderá imprimir documentos 4D Write Pro independentes, assim como também controlar as opções de impressão padrão tais como formato, orientação ou números de página.
+Starting with 4D v15 R5, 4D Write Pro includes printing features allowing you to print independent 4D Write Pro documents as well as to control standard printing options such as the format, orientation, or page numbers.
 
-#### Novos comandos 4D Write Pro 
+#### 4D Write Pro commands
 
-Basicamente, dois comandos manejam a função de impressão 4D Write Pro: [WP PRINT](../commands/wp-print) e [WP USE PAGE SETUP](../commands/wp-use-page-setup).
+Basically, two commands handle the 4D Write Pro printing features: **WP PRINT** and **WP USE PAGE SETUP**.
 
-* [WP PRINT](../commands/wp-print) inicia um trabalho de impressão0 para o documento 4D Write Pro ou agrega o documento ao trabalho de impressão atual.
-* [WP USE PAGE SETUP](../commands/wp-use-page-setup) modifica a configuração de página da impressora atual dos atributos de documento 4D Write Pro para o tamanho e orientação.
+- [WP PRINT](../commands/wp-print) launches a print job for a 4D Write Pro document or adds the document to a current print job.
+- [WP USE PAGE SETUP](../commands/wp-use-page-setup) modifies the current printer page settings based on the 4D Write Pro document attributes for page size and orientation.
 
-**Notas** 
+**Note:** On machines with Windows 7 or Windows Server 2008 R2, make sure that the *Platform Update for Windows 7* has been installed so that the printing features are supported.
 
-* Nas máquinas com Windows 7 ou Windows Server 2008 R2, tenha certeza de que a *atualização de plataforma para Windows 7* tenha sido instalado de maneira a que as funcionalidades de impressão sejam compatíveis.
+#### Regular 4D commands
 
-#### Comandos 4D atualizados 
+The following 4D commands support 4D Write Pro printing features:
 
-Os comandos abaixo 4D suportam as funcionalidades de impressão 4D Write Pro:
-
-* [SET PRINT OPTION](../../commands/set-print-option) e [GET PRINT OPTION](../../commands/get-print-option): todas as opções são suportadas para documentos 4D Write Pro impressos por [WP PRINT](../commands/wp-print). Para Paper option e Orientation option, é mais eficiente chamar a [WP USE PAGE SETUP](../commands/wp-use-page-setup) para sincronizar facilmente estes atributos com a configuração do documento 4D Write Pro. Page range option (15) lhe permite definir a faixa de página a imprimir.
-* [PRINT SETTINGS](../../commands/print-settings): permite estabelecer os ajustes de impressão para a impressora atual; se [WP PRINT](../commands/wp-print) for chamado depois, será utilizada a configuração de impressora modificada se foram modificados por diálogos de configuração de impressão (com exceção das márgens de diálogo de configuração de página que sempre se baseiam no documento 4D Write Pro).
-* [OPEN PRINTING JOB](../../commands/open-printing-job) e [CLOSE PRINTING JOB](../../commands/close-printing-job): [WP PRINT](../commands/wp-print) pode ser chamada entre estes comandos para inserir um ou mais documentos 4D Write Pro em um trabalho de impressão.
+- [SET PRINT OPTION](../../commands/set-print-option) and [GET PRINT OPTION](../../commands/get-print-option): All options are supported for 4D Write Pro documents printed by [WP PRINT](../commands/wp-print). For Paper option and Orientation option, you may find it more efficient to call [WP USE PAGE SETUP](../commands/wp-use-page-setup) in order to easily synchronize these attributes with the 4D Write Pro document settings. The Page range option (15) allows you to specify the page range to print.
+- [PRINT SETTINGS](../../commands/print-settings): Defines print settings for the current printer; if [WP PRINT](../commands/wp-print) is called afterwards, it takes any print settings modified by means of the Print Settings dialog boxes into account (except for margins, which are always based on the 4D Write Pro document).
+- [OPEN PRINTING JOB](../../commands/open-printing-job) and [CLOSE PRINTING JOB](../../commands/close-printing-job): [WP PRINT](../commands/wp-print) can be called between these commands in order to insert one or more 4D Write Pro documents into a single print job.
