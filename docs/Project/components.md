@@ -34,7 +34,7 @@ The "Contents" folder architecture is recommended for components if you want to 
 
 
 
-## Loading components
+## Component Locations
 
 
 :::note
@@ -544,7 +544,7 @@ The current GitHub dependency version is displayed on the right side of the depe
 
 #### Modifying the GitHub dependency version range
 
-You can modify the [version setting](#defining-a-github-dependency-version-range) for a listed GitHub dependency: select the dependency to modify and select **Modify the dependency...** from the contextual menu. In the "Modify the dependency" dialog box, edit the Dependency Rule menu and click **Apply**. 
+You can modify the [version setting](#defining-a-github-dependency-version-range) for a listed GitHub dependency: select the dependency to modify and select **Edit the dependency...** from the contextual menu. In the "Edit the dependency" dialog box, edit the Dependency Rule menu and click **Apply**. 
 
 Modifying the version range is useful for example if you use the automatic update feature and want to lock a dependency to a specific version number. 
 

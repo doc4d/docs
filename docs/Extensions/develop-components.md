@@ -12,13 +12,20 @@ You can develop 4D components for your own needs and keep them private. You can 
 
 - **Matrix Project**: 4D project used for developing the component. The matrix project is a standard project with no specific attributes. A matrix project forms a single component.
 - **Host Project**: Application project in which a component is installed and used.
-- **Component**: Matrix project that can be compiled and [built](Desktop/building.md#build-component), [installed in the host application](../Project/components.md) and whose contents are used in the host application.  
+- **Component**: Matrix project that can be compiled and [built](Desktop/building.md#build-component), [installed in the host application](../Project/components.md) and whose contents are used in the host application. 
+
+:::note
+
+You can create a component from the host project directly without needing to go through a matrix project
+
+:::
+
 
 ## Basics
 
 Creating and installing 4D components is carried out directly from 4D:
 
-- To use a component, you simply need to [install it in your application](../Project/components.md).
+- To use a component, you simply need to [install it in your application](../Project/components.md). You can also create a new component directly from the host, in which case it is immediately usable. 
 - A project can be both a matrix and a host, in other words, a matrix project can itself use one or more components. However, a component cannot use "sub-components" itself.
 - A component can call on most of the 4D elements: datastore ([`ds`](../commands/ds.md)), classes, functions, project methods, project forms, menu bars, choice lists, and so on. The following database methods can be used: [On Web Connection](../commands-legacy/on-web-connection-database-method.md), [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md), [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md). 
 - A component can create and/or use tables, fields and data files using mechanisms of external databases. These are separate 4D databases that you work with using SQL commands.
@@ -30,6 +37,68 @@ Interpreted component code can be [edited directly from the host project](#editi
 
 :::
 
+## Creating and editing components from the host
+
+In interpreted mode, you can directly create a new component from the host project as well as modify a loaded component. 
+
+To facilitate component tuning in the actual context of host projects, you can directly modify and save the code of a loaded component using the 4D IDE from an interpreted host project. Modifications can be immediately tested in the project, without having to restart.
+
+### Creating components
+
+### Editing components
+
+To facilitate component tuning in the actual context of host projects, you can directly modify and save the code of a loaded component using the 4D IDE from an interpreted host project. Modifications can be immediately tested in the project, without having to restart. 
+
+The component code is editable when the following conditions are met:
+
+- the host project is running interpreted, 
+- the component has been [loaded in interpreted mode](../Project/components.md#interpreted-and-compiled-components) and the source code is available,
+- the component files are stored locally (i.e. they are not [downloaded from GitHub](../Project/components.md#adding-a-github-dependency).
+
+In this context, you can open, edit, and save your component code in the Code editor on the host project from two places:
+
+- from the Component Methods section of the Explorer (shared code only)
+- in a dedicated component tab (all code)
+
+#### Editing shared component code
+
+[Exposed component classes](#sharing-of-classes) and [shared methods](#sharing-of-project-methods) of your component can be edited from the **Component Methods** tab of the Explorer. 
+
+A specific icon indicates that the component contains shared code):<br/>
+![](../assets/en/Develop/editable-component.png)
+
+Select **Edit...** to open your component code in the Code editor. You can edit and save it. 
+
+
+#### Editing all component code
+
+You can edit directly all the code of a loaded component from the host project in a dedicated component tab, including methods or classes that are not shared. 
+
+Select **Edit...** item is available when you right-click on the component name in the **Component Methods** tab of the Explorer. 
+
+![edit-component](../assets/en/Project/Edit-component.png)
+
+When you select it, a dedicated tab is added (or highlighted if already added) in the Explorer. In this tab, the following standard pages are available and give access to the component contents:
+
+![tab-component](../assets/en/Project/tab-component.png)
+
+- Home, including folders, methods, classes and (preview only) forms 
+- Project Methods
+- Database Methods ([On Web Connection](../commands-legacy/on-web-connection-database-method.md), [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md), [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md))
+- Classes
+- Project Form Methods
+- Commands and Constants
+- Plug-ins
+- Trash
+
+![tab-component](../assets/en/Project/tab-component.gif)
+
+
+Standard 4D IDE features are available for the component. You can execute the following actions:
+- add, duplicate, delete, edit/save [methods and classes](../Project/code-overview.md)
+- preview code, show/edit [documentation](../Project/documentation.md), display/edit [method properties](../Project/code-overview.md#project-method-properties), 
+- run methods,
+- restore from trash or empty trash.
 
 ## Scope of language commands
 
@@ -153,64 +222,6 @@ $rect:=cs.eGeometry._Rectangle.new(10;20)
 ```
 
 > Non-hidden functions inside a hidden class appear as suggestions when you use code completion with a class that [inherits](../Concepts/classes.md#inheritance) from it. For example, if a component has a `Teacher` class that inherits from a `_Person` class, code completion for `Teacher` suggests non-hidden functions from `_Person`.
-
-
-## Editing components from the host
-
-To facilitate component tuning in the actual context of host projects, you can directly modify and save the code of a loaded component using the 4D IDE from an interpreted host project. Modifications can be immediately tested in the project, without having to restart. 
-
-The component code is editable when the following conditions are met:
-
-- the host project is running interpreted, 
-- the component has been [loaded in interpreted mode](../Project/components.md#interpreted-and-compiled-components) and the source code is available,
-- the component files are stored locally (i.e. they are not [downloaded from GitHub](../Project/components.md#adding-a-github-dependency).
-
-In this context, you can open, edit, and save your component code in the Code editor on the host project from two places:
-
-- from the Component Methods section of the Explorer (shared code only)
-- in a dedicated component tab (all code)
-
-### Editing shared component code
-
-[Exposed component classes](#sharing-of-classes) and [shared methods](#sharing-of-project-methods) of your component can be edited from the **Component Methods** tab of the Explorer. 
-
-A specific icon indicates that the component contains shared code):<br/>
-![](../assets/en/Develop/editable-component.png)
-
-Select **Edit...** to open your component code in the Code editor. You can edit and save it. 
-
-
-### Editing all component code
-
-You can edit directly all the code of a loaded component from the host project in a dedicated component tab, including methods or classes that are not shared. 
-
-Select **Edit...** item is available when you right-click on the component name in the **Component Methods** tab of the Explorer. 
-
-![edit-component](../assets/en/Project/Edit-component.png)
-
-When you select it, a dedicated tab is added (or highlighted if already added) in the Explorer. In this tab, the following standard pages are available and give access to the component contents:
-
-![tab-component](../assets/en/Project/tab-component.png)
-
-- Home, including folders, methods, classes and (preview only) forms 
-- Project Methods
-- Database Methods ([On Web Connection](../commands-legacy/on-web-connection-database-method.md), [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md), [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md))
-- Classes
-- Project Form Methods
-- Commands and Constants
-- Plug-ins
-- Trash
-
-![tab-component](../assets/en/Project/tab-component.gif)
-
-
-Standard 4D IDE features are available for the component. You can execute the following actions:
-- add, duplicate, delete, edit/save [methods and classes](../Project/code-overview.md)
-- preview code, show/edit [documentation](../Project/documentation.md), display/edit [method properties](../Project/code-overview.md#project-method-properties), 
-- run methods,
-- restore from trash or empty trash.
-
-
 
 
 ## Code completion for compiled components
