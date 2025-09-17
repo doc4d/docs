@@ -1,427 +1,412 @@
 ---
 id: using-a-4d-write-pro-area
-title: Using a 4D Write Pro area
+title: Properties & Layout
 displayed_sidebar: docs
+slug: /WritePro/user/properties
 ---
 
+## 基本
 
+When the document is in [**Page** view mode](./defining-a-4d-write-pro-area.md#selecting-the-view-mode), the following document properties are available for the user:
 
+- Page outlines to represent printing limits
+- Page width and Page height (default: 21x29.7 cm)
+- Page orientation (default: Portrait)
+- Page margin (default: 2.5 cm)
 
+You can also use additional commands such as **Document.../Page size** or **Document.../Page orientation**.
 
-## 基本概念
+**Note:** When a document is in **Embedded** or **Draft** view mode, page properties can be set, even if their effect is not visible. In **Draft** view mode, the following paragraph property effects are visible:
 
-ドキュメントが[ページビューモード](./defining-a-4d-write-pro-area.md#selecting-the-view-mode)のとき、以下のドキュメントプロパティがユーザーに表示されます:
+- Page height limitation (lines drawn)
+- 列
+- Avoid page break inside property
+- Widow and orphan control.
 
-* 印刷範囲を示すページのアウトライン
-* ページ幅とページの高さ (デフォルトは21x29.7 cm)
-* ページの向き (デフォルト: 縦向き)
-* ページの余白 (デフォルト: 2.5cm)
+## Paragraph breaks
 
-また、**改ページを挿入/カラムを挿入/セクションブレークを挿入**、**文書.../ページサイズ**、**文書.../ページの向き**、といったページ関連の追加のコマンドを使用する事もできます。
+When displayed in Page or Draft mode (or in the context of a document printing), 4D Write Pro paragraphs can break:
 
-**注:** ドキュメントが **埋め込み**モードまたは**下書き**モードのときにページプロパティを変更しても見た目上は変化ありませんが、それでも設定は可能です。以下の段落プロパティは、**下書き**モードでも見た目上の変化があります:
+- automatically, if the paragraph height is greater than the available page height,
+- depending on paragraph breaks set by programming or by the user.
 
-* ページの高さ制限 (線が引かれます)
-* カラム
-* 内側での改ページを避けるプロパティ
-* ウィドウ&オーファンコントロール
+Breaks can be added by programming or by the user. Available actions include:
 
-## 段落ブレーク 
+- [WP INSERT BREAK](../commands/wp-insert-break) command
+- *insertPageBreak* standard action
+- **Insert page break** option of the default contextual menu
 
-ページモードまたは下書きモードで表示された時(あるいはドキュメント印刷のコンテキストにおいて)、4D Write Pro の段落は、以下のようなときにブレークを行うことがあります:
+### Controlling automatic breaks
 
-* 段落の高さが利用可能なページの高さより高いときには自動的に段落ブレークが挿入されます。
-* プログラミングによって、またはユーザーによって設定されていた場合、段落ブレークが挿入されます。
+You can control automatic breaks in paragraphs using the following features:
 
-ブレークはプログラミングによって、またはユーザーの操作で追加することが可能です。利用可能なアクションとしては以下のようなものが含まれます:
+- **Widow and orphan control**: When this option is set for a paragraph, 4D Write Pro does not allow widows (last line of a paragraph isolated at the top of a page) or orphans (first line of a paragraph isolated at the bottom of a page) in the document. In the first case, the previous line of the paragraph is added to the top of the page so that two lines are displayed there. In the second case, the single first line is moved onto the next page.
+- **Avoid page break inside**: When this option is set for a paragraph, 4D Write Pro prevents this paragraph from being broken into parts on two or more pages.
+- **Keep with next:** When this option is set for a paragraph, that paragraph cannot be separated from the one that follows it by an automatic break. See `wk keep with next` and the corresponding *keepWithNext* [standard action](./defining-a-4d-write-pro-area.md#standard-actions).
 
-* [WP INSERT BREAK](../commands/wp-insert-break) コマンド
-* *insertPageBreak* 標準アクション
-* デフォルトのコンテキストメニューの、**段落ブレーク挿入**オプション
+These options can be set using the context menu, or [attributes](../commands-legacy/4d-write-pro-attributes.md) (`wk avoid widows and orphans`, `wk page break inside paragraph`, or *widowAndOrphanControlEnabled* and *avoidPageBreakInside* [standard actions](./defining-a-4d-write-pro-area.md#standard-actions).
 
-### 自動ブレークを管理する
+## Background
 
-以下の機能を使用することで、段落内の自動ブレークを管理することができます: 
+The background of 4D Write Pro documents and document elements (tables, paragraphs, sections, headers/footers, etc.) can be set with the following effects:
 
-* **ウィドウ&オーファンコントロール**: このオプションが段落に対して設定されているとき、4D Write Pro はドキュメント内にてウィドウ (段落の最終行がページ上部に取り残される状態) とオーファン (段落の先頭行がページ下部に取り残される状態) を許可しません。前者の場合には、最終行の一つ前の行を加えた 2行がページ上部に表示されます。後者の場合には、単一の先頭行は次ページへと送られます。
-* **段落内の改ページを避ける**: このオプションが段落に対してチェックされている場合、4D Write Pro はその段落が 2枚以上のページに分割されないようにします。
-* **次の段落につなげる:** このオプションが段落に対して設定されている場合、その段落は、その後に続く段落と自動ブレークでは分割されなくなります。詳細に関しては`wk keep with next` とそれに対応する[標準アクション](./defining-a-4d-write-pro-area.md#standard-actions)を参照して下さい*keepWithNext*.
+- カラー
+- 境界線
+- images
+- origin, horizontal and vertical positioning
+- painting area
+- repeat
 
-これらのオプションはコンテキストメニューを使用するか、あるいは[属性](../commands-legacy/4d-write-pro-attributes.md)(`wk avoid widows and orphans`、`wk page break inside paragraph`、または[標準アクション](./defining-a-4d-write-pro-area.md#standard-actions)(*widowAndOrphanControlEnabled*、 *avoidPageBreakInside*。
+These [attributes](../commands-legacy/4d-write-pro-attributes.md) can be defined programmatically for either individual elements on a page and/or entire document backgrounds with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command or by [standard actions](./defining-a-4d-write-pro-area.md#standard-actions).
 
-## 背景 
+Users can modify background attributes via the contextual menu as shown below:
 
-4D Write Pro ドキュメントの背景とドキュメント要素(表、段落、セクション、ヘッダー/フッター等)には、以下のエフェクトを設定することができます:
+![](../../assets/en/WritePro/pict3514201.en.png) ![](../../assets/en/WritePro/pict3541581.en.png)
 
-* カラー
-* 境界線
-* 画像
-* 原点、水平および垂直位置
-* 塗りエリア
-* 繰り返し
-
-これらの[属性](../commands-legacy/4d-write-pro-attributes.md)は、[WP SET ATTRIBUTES](../commands/wp-set-attributes) コマンドあるいは[標準アクション](./defining-a-4d-write-pro-area.md#standard-actions)によってによって、プログラムによってページ上のそれぞれの要素に対して、あるいはドキュメントの背景全体に対して定義することが可能です。
-
-ユーザーは以下のように、コンテキストメニューを通じて背景属性を変更することが可能です:
-
-![](../../assets/en/WritePro/pict3514201.en.png)
-![](../../assets/en/WritePro/pict3541581.en.png)
-
-背景画像にフルサイズの画像を追加する例については、*[How Do I (HDI) 例題 4DWrite Pro: フチなし全面の背景画像](https://github.com/4D-JP/HDI/releases/download/16r5/HDI%5F4DWP%5FBackImagePaperBox.zip)* にて紹介しています。
+For an example of adding a full-sized image as a background, see the *How Do I* (HDI) demo [here](http://download.4d.com/Demos/4D%5Fv16%5FR5/HDI%5F4DWP%5FBackImagePaperBox.zip).
 
 ## Headers, footers, and sections
 
-4D Write Pro ドキュメントはヘッダーとフッターをサポートします。ヘッダーとフッターはセクションと関連しています。
+4D Write Pro documents support headers and footers. These headers and footers are related to sections.
 
-セクションとは、ページレンジによって定義されたドキュメントの一部分で、ページングと属性の設定を独自に持つことができます。ドキュメントには複数のセクションを含めることができます (1から合計のページ数まで)。それぞれのページには、継続したセクションブレークを持つページを除き(以下参照)、1ページにつき1セクションのみ含めることができます, except pages with continuous section breaks (see below). 
+A section is a part of a document which is defined by a page range and can have its own paging and common attributes. A document can contain any number of sections (from just one, up to the total number of pages). Each page can only belong to one section, except pages with continuous section breaks (see below).
 
 4D Write Pro documents can contain:
 
 - one or more sections (one section by default)
 - for each section, up to three subsections:
-   - first page subsection
-   - left page(s) subsection
-   - right page(s) subsection
+  - first page subsection
+  - left page(s) subsection
+  - right page(s) subsection
 
-各セクションに対して、ヘッダーとフッターのセットを定義することができます。
+You can define a set of headers and footers for each section.
 
-### セクションの定義 
+### Defining a section
 
-セクションとは4D Write Proドキュメント内の継続したページのサブセットです。ドキュメントは1つ以上のセクションを含むことができます。ひとつのセクションには何ページでも (単一のページからドキュメント内の総ページ数まで) 含めることができます。また、ひとつのセクションにはカラムを1個から最大20個まで含めることができます。
+A section is a subset of continuous pages in a 4D Write Pro document. A document can contain one or more sections. A section can contain any number of pages, from a single page to the total number of pages in the document. A section page can contain a single column or up to 20 column(s).
 
-デフォルトで、ドキュメントは**セクション1**と名付けられたひとつのセクションを持ちます。ドキュメント内のどこをクリックしても、4D Write Proコンテキストメニューにそのセクション番号を表示します:
+By default, a document contains a single section, named **Section 1**. The 4D Write Pro contextual menu displays this section number wherever you click in the document:
 
 ![](../../assets/en/WritePro/pict2994904.en.png)
 
-テキストの中にセクションブレークを追加することで新しいセクションを作成することができます:
+You create a new section by adding a section break in the text flow:
 
 ![](../../assets/en/WritePro/pict2994900.en.png)
 
-セクションブレークが追加されたとき、コンテキストメニューはそれぞれのセクションに対しインクリメントされた数字を表示します。セクション名は任意に改名することも可能です:
+When a section break has been added, the contextual menu displays an incremented number for each section. You can, however, rename any section:
 
 ![](../../assets/en/WritePro/pict2994907.en.png)
 
-入力した名前はそのセクションの名前として、ドキュメント全体で使用されます:
+The name you entered is then used as the section name everywhere in the document:
 
 ![](../../assets/en/WritePro/pict2994910.en.png) ![](../../assets/en/WritePro/pict2994913.en.png)
 
-セクションに対し、異なる最初のページ、異なる左/右ページを定義していた場合、そのページタイプもまたメニューに表示されるというに点に注意して下さい (後述参照)。
+Note that if you have defined a different first page or different left/right pages for a section, the page type is also displayed in the menu (see below).
 
-### 継続したセクションブレークの挿入 
+### Inserting a continuous section break
 
-継続したセクションブレークは、同一ページ内に新しいセクションを作成します。これを使用することで、異なる数のカラムのセクションを持つページを作成することができます(*複数カラムと単一カラムのセクションを持ったページの作成* 参照)。
+A continuous section break creates a new section on the same page. This allows you to create pages with sections that have different numbers of columns (see *Creating a page with multiple-column and single column sections*).
 
-継続したセクションブレークで作成されたセクションはドキュメント内でカウントされます(セクション番号を持ちます)。ただし通常のセクションブレークで作成されたセクションとは異なり、ヘッダー、フッター、アンカーされた画像などは実際の改ページが発生したときにのみ考慮されます。
+Sections created with continuous section breaks are counted in the document (they have section numbers), but unlike sections created with regular section breaks, their headers, footers, anchored images, etc. are only taken into account when a physical page break has occurred.
 
-**注:** 継続したセクションブレークを挿入したあとに新しいセクションに対してページの方向を変更した場合には、そのセクションブレークは通常のセクションブレークへと変換されます。
+**Note:** If you change the page orientation for the new section after you insert a continuous section break, it turns into a regular section break.
 
-### セクション属性 
+### Section attributes
 
-セクションはドキュメント属性を継承しますが、ヘッダーとフッターを含むドキュメント属性は、セクションごとに個別に編集することも可能です。コンテキストポップアップメニューは、セクションレベルで利用可能なプロパティと属性を表示します:
+Sections inherit attributes from the document. However, common document attributes, including headers and footers, can be modified separately for each section. The contextual pop-up menu displays the properties and attributes available at the section level:
 
 ![](../../assets/en/WritePro/pict3751849.en.png)
 
-* **ページの向き**: セクションごとに特定のページの向き (横向き/縦向き)を設定することができます。
-* **最初のページを個別に設定**: セクションの最初のページに対して異なる属性を設定することができます。この機能は例えば、余白を作成するのに使用することができます。この属性がチェックされている場合、セクションの最初のページはセクションのサブセクションとして管理され、独自の属性を持つことができます。  
-    
+- **Page orientation**: allows you to set a specific page orientation (Portrait or Landscape) per section.
+- **Different first page**: allows you to set different attributes for the first page of the section; this feature can be used to create flyleaves, for example. When this attribute is checked, the first page of the section is handled as a subsection itself and can have its own attributes.
+
 ![](../../assets/en/WritePro/pict2994942.en.png)
-* **左右のページを個別に設定**: セクションの左ページと右ページで異なる属性を設定することができます。この属性がチェックされていると、セクションの左ページ/右ページはサブセクションとして管理され、それぞれ独自の属性を持つことができます。  
-    
+
+- **Different left and right pages**: allows you to set different attributes for left and right pages of the section. When this attribute is checked, left and right pages of the section are handled as subsections and can have their own attributes.
+
 ![](../../assets/en/WritePro/pict2994945.en.png)
-* **カラム**コマンド: セクションに対してカラムの数とプロパティを定義することができます。これらのオプションは以下に詳細な説明があります。
-* **ヘッダー** と **フッター** コマンド: これらのオプションを使用すると個別のヘッダーとフッターを定義することができます。これらのオプションは以下に詳細な説明があります。
-* **マージン** / **パッディング** / **境界線** / **背景**: これらの属性は各セクションに対して個別に設定が可能です。これらの属性のより詳細な情報については、*4D Write Pro属性*の記事を参照してください。
 
-### ヘッダーとフッターの挿入 
+- **Columns** commands: allow to define the number and properties of columns for the section. These options are detailed below.
+- **Header** and **Footer** commands: these options allow you to define separate headers and footers. These options are detailed below.
+- **Margins** / **Paddings** / **Borders** / **Background**: these attributes can be defined separately for each section. For more information on these attributes, please refer the *4D Write Pro Attributes* article.
 
-それぞれのセクションには固有のヘッダーとフッターをつけることができます。ヘッダーとフッターはページビューモードが**ページ**のときのみ表示されます。
+### Inserting headers and footers
 
-有効化されたオプションによって、ひとつのセクションにつき最大3つまでヘッダーとフッターを定義することが可能です:
+Each section can have specific header and footer. Headers and footers are displayed only when the document page view mode is **Page**.
 
-* 最初のページ
-* 左ページ
-* 右ページ
+Within a section, you can define up to three different headers and footers, depending on the enabled options:
 
-ヘッダーまたはフッターを作成する手順は以下の通りです:
+- first page,
+- left page(s),
+- right page(s).
 
-1. まずドキュメントが**ページ**ビューモードであることを確認してください。
-2. 目的のセクションのヘッダーまたはフッターエリアをダブルクリックして、編集モードに入ります。  
-   * ヘッダーエリアはページの上部にあります:  
-   ![](../../assets/en/WritePro/pict2994956.en.png)  
-   * フッターエリアはページの下部にあります:  
-   ![](../../assets/en/WritePro/pict2994958.en.png)
+To create a header or a footer:
 
-スタティックなコンテンツが入力すると、その入力した内容は各ページのセクションにて自動的に繰り返されます (ただし最初のページが別設定の場合には、そこには反映されません)。
+1. Make sure the document is in **Page** view mode.
+2. Double-click in the header or footer area of the desired section and page to switch to editing mode.
+   - The header area is at the top of the page:\
+     ![](../../assets/en/WritePro/pict2994956.en.png)
+   - The footer area is at the bottom of the page:\
+     ![](../../assets/en/WritePro/pict2994958.en.png)
+
+You can then enter any static contents, which will be repeated automatically on each page of the section (except for the first page, if enabled).
 
 ![](../../assets/en/WritePro/pict2995027.en.png)
 
-[ST INSERT EXPRESSION](../../commands/st-insert-expression) コマンドを使用することで、ページ番号やページ数などの動的なコンテンツを挿入することができます (より詳細な情報については、*式の挿入*の段落を参照してください)。
+You can insert dynamic contents such as the page number or the page count using the [ST INSERT EXPRESSION](../../commands/st-insert-expression) command (for more information, please refer to the *Inserting document and page expressions* paragraph).
 
-**注:** [WP Get header](../commands/wp-get-header) と [WP Get footer](../commands/wp-get-footer) といった特定のコマンドを使用することで、フッターやヘッダーのをプログラミングによって管理することができます。
+**Note:** You can also handle footers and headers by programming using specific commands such as [WP Get header](../commands/wp-get-header) and [WP Get footer](../commands/wp-get-footer).
 
-セクションのヘッダーとフッターが定義できたら、コンテキストメニューを使用してそれらの属性を設定することができます:
+Once a header or a footer has been defined for a section, you can configure its common attributes using the contextual menu:
 
 ![](../../assets/en/WritePro/pict2994965.en.png)
 
-**マージン**、**パッディング**、**境界線**、そして**背景**属性についてのより詳細な情報については、*4D Write Pro属性*の章を参照してください。
+For more information on **Margins**, **Paddings**, **Borders**, and **Background** attributes, please refer the *4D Write Pro Attributes* section.
 
-コンテキストメニューの**ヘッダーを削除**あるいは**フッターを削除**コマンドを選択すると、ヘッダーまたはフッターの定義全体 (コンテンツと属性) を削除することができます。
+You can remove the entire definition of a header or a footer (contents and attributes) by selecting the **Remove header** or **Remove footer** command in the contextual menu.
 
-### 互換性 
+### 互換性
 
-4D Write Proは、4D Writeプラグインから変換されたドキュメントのヘッダーとフッターも(固定長の高さで)扱うことができます。
+4D Write Pro handles headers and footers of documents converted from the 4D Write plug-in with a fixed height.
 
-4D Writeプラグインのヘッダーとフッターから引き続きサポートされ変換される式とプロパティは、以下の通りです:
+The following expressions and properties are also supported and converted from the 4D Write plug-in headers and footers:
 
-* ページ番号とページ数変数
-* 個別の最初のページ
-* 個別の左/右ページ
+- page number and page count variables
+- distinct first page
+- distinct left/right pages
 
-## Rulers 
+## ルーラー
 
-水平ルーラーは、4D Write Proの全てのビューモードで利用可能で、以下のような特徴を持ちます:
+Horizontal rulers are available in every viewing mode of 4D Write Pro and have the following characteristics:
 
-* メモリはcm、mm、inch、あるいはptのうち、4D Write Proドキュメント内で定義されているカレントのレイアウト単位に応じたものになります。単位は、コンテキストメニュー、あるいは wk layout unit 属性を使用して変更することができます。
-* 最初の行のインデント記号
-* 左の段落マージン記号
-* 右の段落マージン記号
-* タブはルーラーの下の端に表示
-* 左と右のページマージンを表す視覚的なカラーコントラスト
+- Graduations in cm, mm, inches or pt according to current layout unit defined in the 4D Write Pro document. You can change measurement units using the context menu or by modifying the wk layout unit attribute.
+- First line indent symbol
+- Left paragraph margin symbol
+- Right paragraph margin symbol
+- Tabs displayed along lower edge of ruler
+- Visible color contrast representing left and right page margins
 
-垂直ルーラーはページモードでのみ利用可能で、以下のような特徴を持ちます:
+Vertical rulers are available in Page mode only and have the following characteristics:
 
-* メモリはcm、mm、inch、あるいはptのうち、4D Write Proドキュメント内で定義されているカレントのレイアウト単位に応じたものになります。単位は、コンテキストメニュー、あるいは wk layout unit 属性を使用して変更することができます。
-* 上と下のページマージンを表す視覚的なカラーコントラスト
+- Graduations in cm, mm, inches or pt according to current layout unit defined in the 4D Write Pro document. You can change measurement units using the context menu or by modifying the wk layout unit attribute.
+- Visible color contrast representing top and bottom page margins
 
-ルーラーの表示状態は、標準アクション(*4D Write Pro標準アクションの使用* 参照)か、あるいは4D Write Proエリアのコンテキストメニュー内の**水平ルーラーを表示**あるいは**垂直ルーラーを表示**をチェックする/チェックを外すことで変更可能です:
+You can change the display status of the rulers via standard actions (see *Using 4D Write Pro standard actions*) or by checking or unchecking the **Show horizontal ruler** or **Show vertical ruler** item in the context menu of the 4D Write Pro area:
 
 ![](../../assets/en/WritePro/pict4101161.en.png)
 
-**注:** 特定の4D Write Pro エリアプロパティを使用することで、ルーラーのデフォルトの表示状態を定義することができます(*ビュープロパティの設定* の章を参照してください)。
+**Note:** A specific 4D Write Pro area property allows defining the default display for the rulers (see *Configuring View properties* section).
 
-### テキストのマージンとインデントを調整する 
+### Adjusting text margins and indents
 
-マージン、インデント、そしてタブの位置は、それぞれに対応する記号をクリックしてドラッグすることで変更することができます:
+#### Horizontal ruler
 
-![](../../assets/en/WritePro/pict3106228.en.png)
-
-これらの記号の上にマウスをホバーさせたとき、カーソルは変わってそれが移動できることを表します。ドラッグ中は垂直のガイドラインが表示されます:
-
-![](../../assets/en/WritePro/pict3133340.en.png)
-
-複数の段落が選択されているとき、マージンあるいはインデント記号をドラッグした場合にはそのマージンとインデントは選択されている全ての段落に適用されます。これらの記号をShiftキーを押しながらドラッグした場合には、選択された段落内でのインデント間・マージン間の現在の間隔を維持します。
-
-#### 水平ルーラー 
-
-水平ルーラーの、対応する記号をクリックしたりドラッグしたりすることで、左右のマージン、インデント、タブ位置などを変更することができます:
+You can modify the left and right margins, indents and tab positions by clicking and dragging the corresponding symbols on the horizontal ruler:
 
 ![](../../assets/en/WritePro/pict5761667.en.png)
 
-これらの記号の上をマウスでホバーすると、カーソルは形を変えてそれが移動可能であることを示し、またドラッグ中は水平なガイドラインが表示されます:
+When you hover the mouse over one of these symbols, the cursor changes to indicate that it can be moved, and a vertical guide line appears while you drag it:
 
 ![](../../assets/en/WritePro/pict5761669.en.png)
 
-複数の段落が選択されている時、マージンあるいはインデントの記号をドラッグすると、そのマージンあるいはインデントは選択された段落全体に対して適用されます。**Shift** キーを押しながら記号をドラッグすると、選択されている段落でのインデントとマージンの間の既存の距離が維持されます。
+When multiple paragraphs are selected, dragging margin or indent symbols applies these margins or indents to all selected paragraphs. Holding down the **Shift** key while dragging these symbols maintains existing intervals between indents or margins in the selected paragraphs.
 
-#### 垂直ルーラー 
+#### Vertical ruler
 
-垂直ルーラーを使用すると、上と下のマージンを変更することができます。マウスをマージンの端にホバーすると、カーソルは形を変えてそれが移動可能であることを示し、またドラッグ中は垂直なガイドラインが表示されます:
+You can modify the top and bottom margins with the vertical ruler. When you hover the mouse over the margin limit, the cursor changes to indicate that it can be moved, and a horizontal guide line appears while you drag it:
 
 ![](../../assets/en/WritePro/pict5761671.en.png)
 
-このアクションを使用すると、ページの上と下の余白、またはドキュメントの本文とヘッダーとフッターの間の間隔を変更することができます。
+This action can be used to modify the spacing between the top and bottom of the page and the body and the header and footer of a document.
 
-### タブの管理 
+### Managing tabs
 
-水平ルーラーのコンテキストメニューを使用して、タブの作成、変更、削除をすることができます:
+You can use the horizontal ruler's context menu to create, modify or delete tabs:
 
 ![](../../assets/en/WritePro/pict5761677.en.png)
 
-タブを作成するには、水平ルーラーを右クリックしてそのタイプをコンテキストメニューから選択してください。単一の左クリックは自動的にデフォルトの左タブを作成します。既存のタブを右クリックすることで、コンテキストメニューを使用してそのタブのタイプを変えることもできます。
+To create a tab, just right-click directly on the horizontal ruler and choose its type from the context menu; a single left click automatically creates a default left tab. You can also right-click on existing tabs to modify their type using the context menu.
 
-**タブを削除**は既存のタブを右クリックした場合にのみ使用可能です。また、タブを水平ルーラーエリアの外へとドラッグすることで削除することもできます。
+**Remove tab** is only available when you right-click directly on an existing tab; you can also remove tabs by dragging them outside the horizontal ruler area.
 
-:::note 注
+:::note 注記
 
-* タブは、[WP SET ATTRIBUTES](../commands/wp-set-attributes)、[WP GET ATTRIBUTES](../commands/wp-get-attributes)、あるいは[WP RESET ATTRIBUTES](../commands/wp-reset-attributes) コマンドとwk tab default および wk tabs セレクターを使用することでプログラムで定義することも可能です。
-* 小数点揃えに関しては、4D Write Pro は右からみて最初のドットまたはカンマ文字を小数点区切りとして認識します。このデフォルトの設定はwk tab decimal separator セレクターを使用して変更することができます。
+- Tabs can also be defined programmatically with the [WP SET ATTRIBUTES](../commands/wp-set-attributes), [WP GET ATTRIBUTES](../commands/wp-get-attributes), and [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) commands with the `wk tab default` and `wk tabs` selectors.
+- For decimal tabs, 4D Write Pro considers the first dot or comma character from the right as the decimal separator; this default setting can be modified with the `wk tab decimal separator` selector.
 
 :::
 
-#### タブリーダー文字を定義する 
+#### Define leading characters
 
-タブの前にくる文字(リーダー文字)は、既定の5つの文字から選択するか、使用する特定の文字を指定することで定義する事ができます。既定の文字とは以下のとおりです:
+The characters preceeding tabs (leading characters) can be defined by selecting from five predefined characters or by designating a specific character to use. The predefined characters are:
 
-* なし (何も文字が表示されない - *デフォルト*)
-* .... (点)
-* \--- (破線)
-* \_\_ (アンダースコア)
-* \*\*\* (アスタリスク)
+- None (no characters are displayed - *default*)
+- .... (dots)
+- \--- (dashes)
+- \*\* (underscores)
+- \*\*\* (asterisks)
 
-リーダー文字は必ずタブの前に表示され、テキストの方向(左から右、あるいは右から左)に従います。[WP SET ATTRIBUTES](../commands/wp-set-attributes) 、[WP GET ATTRIBUTES](../commands/wp-get-attributes) 、および[WP RESET ATTRIBUTES](../commands/wp-reset-attributes) コマンドと`wk leading` と `wk tab default` または `wk tabs` セレクターを使用することでプログラミングによる定義も可能ですし、水平ルーラーのコンテキストメニューからユーザーインターフェース経由で定義することも可能です(以下参照)。
+Leading characters always appear before the tab and follows the text direction (left to right or right to left). They can be defined programmatically with the [WP SET ATTRIBUTES](../commands/wp-set-attributes), [WP GET ATTRIBUTES](../commands/wp-get-attributes), and [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) commands using `wk leading` with the `wk tab default` or `wk tabs` selectors, or via the horizontal ruler's contextual menu (as shown below).
 
 ![](../../assets/en/WritePro/pict5761675.en.png)
 
-**その他...**が選択された場合、カスタムのリーダー文字を定義可能なダイアログが表示されます。
+When **Other...** is selected, a dialog is displayed where a custom leading character can be defined.
 
-### マルチカラムルーラー 
+### Multi-column rulers
 
-ドキュメントあるいはセクションに対して二つ以上のカラムが定義されている時、水平ルーラーは各カラムに対するそれぞれの特定のエリアを表示します:
+When two or more columns are defined for the document or the section, the horizontal ruler displays a specific area for each column:
 
 ![](../../assets/en/WritePro/pict5761673.en.png)
 
-**注:** マルチカラム機能は、**埋め込み**ビューモードでは利用できません。
+**Note:** Multi-column feature is not available in **Embedded** view mode.
 
-### On After Edit イベント 
+### On After Edit event
 
-どの種類のタブやマージンコントロールでも、それらが(ドラッグあるいはコンテキストメニューを使用して)移動、追加、削除されたときには、4D Write Proエリアフォームオブジェクトに対して[`On After Edit`](../../Events/onAfterEdit.md) フォームイベントがトリガーされます。
+An [`On After Edit`](../../Events/onAfterEdit.md) form event is triggered for a 4D Write Pro area form object whenever any of the tab or margin controls are moved, added or deleted, whether by dragging them or using the context menu.
 
-## Columns
+## 列
 
-4D Write Pro ではドキュメント内にカラムを管理することができます。カラムは最も左のカラムから最も右のカラムへと順番につながっています。言い換えると、テキストを入力していくとき、テキストは左にあるカラムを埋めていき、そのあとすぐ右にあるカラムへと続き、それがページの終わりに達するまで続いていきます。ページの終わりまで達すると、テキストは次のページへと続いていきます。ページ設定のバランスをとるために、4D Write Pro ではかカラムブレークを挿入することができます。
+4D Write Pro allows you to manage columns in your documents. Columns are chained from the left-most column to the right-most column. In other words, when entering text, the text flow will start filling the left column and continue with the column directly to the right until it reaches the end of the page. Once the end of the page is reached, the text flow cycles through the next page. In order to be able to balance the page settings, 4D Write Pro allows you to insert column breaks.
 
 ![](../../assets/en/WritePro/pict3752166.en.png)
 
-カラムはドキュメントレベル(ドキュメント全体に表示される)、あるいはセクションレベル(各セクションはそれぞれ独自のカラム設定を持つことができる)において定義することができます。
+Columns can be defined at the document level (they are displayed in the whole document) and/or at the section level (each section can have its own column configuration).
 
-**注:** カラムは**ページビュー**モードと**下書きビュー**モードにおいてのみサポートされます(**埋め込み**ビューモードでは表示されません)。また[WP EXPORT DOCUMENT](../commands/wp-export-document) コマンドを使用して.docx フォーマットへと書き出すことができますが、HTML またはMIME HTML フォーマット(wk web page complete フォーマット)への書き出しはできません。
+**Note:** Columns are supported in **Page view** mode and **Draft view** mode only (they are not displayed in **Embedded** view mode), and they are exported to .docx using [WP EXPORT DOCUMENT](../commands/wp-export-document) but not to HTML and MIME HTML formats (wk web page complete format).
 
-カラムは以下の方法を用いて設定することも可能です:
+Columns can be set using:
 
-* 4D Write Pro エリアコンテキストメニューの**カラム**サブメニュー
-* 4D Write Pro [属性](../commands-legacy/4d-write-pro-attributes.md)
-* 4D Write Pro [標準アクション](./using-4d-write-pro-standard-actions.md)
+- the **Columns** submenu of the 4D Write Pro area context menu,
+- 4D Write Pro [attributes](../commands-legacy/4d-write-pro-attributes.md),
+- 4D Write Pro [standard actions](./using-4d-write-pro-standard-actions.md).
 
-カラムに対しては、以下のプロパティを設定/取得することができます:
+You can set or get the following properties and actions for columns:
 
-| **プロパティ**      | **詳細**                                                                                                                                                                 | *ドキュメント* **属性**                                                         | **標準アクション**                                           |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------- |
-| カラム数           | ドキュメント/セクションに対して最大20個までカラムを定義可能です                                                                                                                                      | wk column count                                                         | *columnCount*                                         |
-| カラム間隔          | カラム間の間隔をpt、インチ、cm単位で指定。全てのカラムに同じ間隔が適用されることに注意してください。各カラムの幅は、カラム数、ページ幅、そしてカラム間隔に応じて、4D Write Proによって自動的に算出されます。                                                         | wk column spacing                                                       | *columnSpacing*                                       |
-| カラム幅           | (読込のみ属性) 各カラムのカレントの(自動算出された)幅。                                                                                                                                         | wk column width                                                         | \-                                                    |
-| 区切り線スタイル、カラー、幅 | カラムの間には垂直のセパレーター(区切り線)を追加することができます。これらのオプションを使用すると、その区切り線のスタイル、カラー、幅をデザインすることができます。![](../../assets/en/WritePro/pict3752176.en.png)区切り線を削除するためには、スタイルから**なし**を選んでください。 | wk column rule style、wk column rule color、wk column rule width          | *columnRuleStyle*、*columnRuleColor*、*columnRuleWidth* |
-| ブレークを挿入        | カラムブレークを挿入                                                                                                                                                             | wk column break、[WP INSERT BREAK](../commands/wp-insert-break)も参照してください | *insertColumnBreak*                                   |
-| カラムメニュー        | カラムのサブメニューを作成します                                                                                                                                                       | \-                                                                      | *columns*                                             |
+| **プロパティ**                           | **Description**                                                                                                                                                                                                                                                                                                           | **Document attributes**                                                  | **標準アクション**                                             |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------- |
+| カラム数                                | You can define up to 20 columns for the document/section                                                                                                                                                                                                                                                                  | wk column count                                                          | *columnCount*                                           |
+| Column spacing                      | Space between columns in pts, inches, or cm. Note that all columns will have the same size. Each column width is automatically calculated by 4D Write Pro according to the number of columns, the page width, and the spacing                                                             | wk column spacing                                                        | *columnSpacing*                                         |
+| カラム幅                                | (read-only attribute) Current width for each column, i.e. computed width                                                                                                                                                                                               | wk column width                                                          | \-                                                     |
+| Column rule style, color, and width | You can add a vertical separator (a decorative line) between columns. These options let you design the separator style, color and width. ![](../../assets/en/WritePro/pict3752176.en.png)To remove the vertical separator, select **None** as a style. | wk column rule style, wk column rule color, wk column rule width         | *columnRuleStyle*, *columnRuleColor*, *columnRuleWidth* |
+| Insert break                        | Insert a column break                                                                                                                                                                                                                                                                                                     | wk column break, see also [WP INSERT BREAK](../commands/wp-insert-break) | *insertColumnBreak*                                     |
+| Columns menu                        | Create a Columns sub-menu                                                                                                                                                                                                                                                                                                 | \-                                                                      | *列*                                                     |
 
-### 複数カラムと単一カラムのセクションを持ったページの作成 
+### Creating a page with multiple-column and single column sections
 
-ドキュメント内で*継続したセクションブレークの挿入* を使用することで、同じページ上に複数カラムのセクションと単一カラムのセクションを載せることができます。
+*Inserting a continuous section break* in your document allows you to have multiple-column sections and single column sections on the same page.
 
-例えば以下のようなドキュメントがある場合:
+例:
 
 ![](../../assets/en/WritePro/pict5562054.en.png)
 
-継続したセクションブレークを挿入し、最初のセクションに対してカラムの数を2つに変更することができます:
+You can insert a continuous section break and change the number of columns to two for the first section:
 
 ![](../../assets/en/WritePro/pict5562058.en.png)
 
 ## ブックマーク
 
-4D Write Pro ではブックマークと呼ばれる、ドキュメントの一部において動的な参照を作成、使用することができます。ブックマークは、4D Write Pro ドキュメント内の特定の[範囲](./ranges.md)に名前付きで関連付けられる参照です。
+4D Write Pro allows you to create and work with dynamic references to parts of your documents, called **bookmarks**. A bookmark is a named reference attached to a specific [range](./ranges.md) in a 4D Write Pro document.
 
-ブックマークは動的なものであり、ユーザーにより範囲が移動、追加、または削除されると、ブックマークは自動的に更新され、ドキュメント内の同じ内容を継続して参照することができます。たとえば：
+Bookmarks are dynamic, which means that if the user moves, adds or removes text belonging to the bookmark, the associated range will be updated automatically and the bookmark will continue to reference the same content within the document. 例:
 
-- ドキュメント内のページ20にある "Hello world" を参照する"MyBM" という名前のブックマークを作成します。
-- 次に、ドキュメントの先頭に50ページを挿入します。
-- "MyBM" ブックマークを使用すると、今度はドキュメント内の70ページにある "Hello world" に自動的にアクセスできます。
+- You create a bookmark named "MyBM" that references the "Hello world" text on page 20 of your document.
+- Then you insert 50 pages at the beginning of the document.
+- You will still be able to access the same "Hello world" text automatically, now on page 70 of the document, by means of the "MyBM" bookmark.
 
-ドキュメント内には無制限のブックマークを含むことができます。複数のブックマークが同じ範囲を参照することができ、ブックマークの範囲は重なり合うことがあります。ただし、ドキュメント内の各ブックマーク名は一意である必要があります。ブックマークは、[WP INSERER DOCUMENT](../commands/wp-insert-document-body) コマンドが使用されるとインポートされません（移行先のドキュメント内のブックマークは上書きされません）。
+A document can contain an unlimited number of bookmarks. Several bookmarks can reference the same range, and bookmark ranges can be interleaved. However, each bookmark name must be unique in the document. Bookmarks are not imported when using the [WP INSERT DOCUMENT BODY](../commands/wp-insert-document-body) command (bookmarks in the destination document cannot be overwritten).
 
-一度作成されたブックマークはドキュメント内に保存されます。ブックマークはドキュメントと共に保存され、複数のコマンドで操作することができます。
+Once created, a bookmark is stored within the document. It is saved with the document, and can be handled by several different commands. It can also be used to reference parts of a template document. These parts can then be assembled automatically with data from the database to produce dynamic output documents such as invoices or catalogs.
 
-また、テンプレートドキュメントの一部としてブックマークを使用することができます。これらのパーツは、データベース内のデータを使用して自動的に組み立てられ、請求書やカタログなどの最終的なドキュメントを生成するのに役立ちます。
+Several commands allow you to create, remove, and use bookmarks:
 
-複数のコマンドを使用して、ブックマークを作成、削除、使用することができます：
-
-- [WP NEW BOOKMARK](../commands-legacy/wp-new-bookmark.md) はレンジから新しいブックマークを作成します。
-- [WP GET BOOKMARKS](../commands-legacy/wp-get-bookmarks.md) はドキュメント内で定義されている全てのブックマークを取得します。
-- [WP Bookmark range](../commands-legacy/wp-bookmark-range.md) は既存のブックマークからレンジを取得します。
-- [WP DELETE BOOKMARK](../commands-legacy/wp-delete-bookmark.md) はブックマークを削除します。
+[WP NEW BOOKMARK](../commands-legacy/wp-new-bookmark.md) to create a new bookmark from a range,
+[WP GET BOOKMARKS](../commands-legacy/wp-get-bookmarks.md) to get all bookmarks defined in a document,
+[WP Bookmark range](../commands-legacy/wp-bookmark-range.md) to retrieve a range from an existing bookmark,
+[WP DELETE BOOKMARK](../commands-legacy/wp-delete-bookmark.md) to delete a bookmark.
 
 ## Links
 
-4D Write Pro では、レンジ（テキスト、ピクチャーなど）や要素（表、本文、フッターなど）を含めるほぼすべてを含むドキュメント全体にハイパーリンクを割り当てることができます。たとえば、ドキュメントの画像に対してハイパーリンクを設定できます。4D Write Pro ドキュメントが HTML にエクスポートされた場合、ユーザーはその画像をクリックして、リンク先のページを開くことができます。
+4D Write Pro allows you to assign hyperlinks to any target object of your document, including ranges (text, picture, etc.), elements (table, body, footer, etc.), or the whole document. For example, you can set a URL hyperlink to a picture range; if the 4D Write Pro document is exported to HTML, users can click the picture to open a page at a specified address.
 
-ハイパーリンクは、4D Write Pro ドキュメント内で **Ctrl+クリック**（Windows）または **Cmd+クリック**（macOS）操作をすることで簡単にアクティブ化できます。
+Hyperlinks can also be activated from within 4D Write Pro documents using the **Ctrl+click** (Windows) or **Cmd+click** (macOS) shortcut. In a non-enterable 4D Write Pro document, a link can be activated using a simple click.
 
-4D Write Pro は以下のリンクタイプをサポートします:
+4D Write Pro supports links of the following types:
 
-| リンクのタイプ | 詳細 |
-|----------------|------|
-| `url` | Web ページあるいは任意のドキュメントのリンク。実行時には関連づけられたアプリケーションが開始されます。4D Write Pro ドキュメント (`.4wp`, `.4w7`) への URL リンクを活性化すると、エリアの 4D Write Pro ドキュメントが置き換えられます。<br>(*) [OPEN URL](../../commands-legacy/open-url.md) コマンドと同じ動作です。 |
-| `bookmark` | ドキュメント内のブックマークへのリンクです |
-| `method` | リンクがアクティブになると 4D メソッドが実行されます（実行されるのはあらかじめ登録されているメソッド [SET ALLOWED METHODS](../../commands/set-allowed-methods.md) に限られます）。 |
+| Link Type  | 説明                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `url`      | Links to web pages or to any document, opens the associated application when activated (\*). Activating a URL link to a 4D Write Pro document (`.4wp`, `.4w7`) replaces the current document in the 4D Write Pro area.<br>(\*) Just like the [OPEN URL](../../commands-legacy/open-url.md) command. |
+| `bookmark` | Links to bookmarks in the document                                                                                                                                                                                                                                                                                                                                                                           |
+| `method`   | Activating a link to a 4D method executes the method (provided it is registered by the [SET ALLOWED METHODS](../../commands/set-allowed-methods.md) method).                                                                                                                                                                                                              |
 
-ハイパーリンクは以下のコマンドで管理することができます:
+Hyperlinks are managed through the following commands:
 
-- [WP SET LINK](../commands-legacy/wp-set-link.md) を使用して、ターゲットオブジェクトの指定用にリンクを挿入
-- [WP Get links](../commands-legacy/wp-get-links.md) を使用して、ターゲットオブジェクト内のすべてのリンクのコレクションとして取得
+- [WP SET LINK](../commands-legacy/wp-set-link.md) to insert a link using a target object
+- [WP Get links](../commands-legacy/wp-get-links.md) to get the collection of all links in a target object.
 
 :::note
 
-注: リンクは属性として扱われるため、`wk link url` 定数を用いて [WP SET ATTRIBUTES](../commands/wp-set-attributes) および [WP GET ATTRIBUTES](../commands/wp-get-attributes) コマンドで定義・取得することができます。けれども、通常は [WP SET LINK](../commands-legacy/wp-set-link.md) や [WP Get links](../commands-legacy/wp-get-links.md) の使用が推奨されます。これらは自動的に URL としてリンクをエンコード／デコードします。[WP GET ATTRIBUTES](../commands/wp-get-attributes) コマンドを使用してリンクを読み取るとき、ターゲットオブジェクトが複数のリンクを含む場合は、最初のリンク文字列のみが返されます。
+Links are handled as attributes, thus they can be set or get using the [WP SET ATTRIBUTES](../commands/wp-set-attributes) and [WP GET ATTRIBUTES](../commands/wp-get-attributes) commands along with the `wk link url` constant. However, we recommended using [WP SET LINK](../commands-legacy/wp-set-link.md) and [WP Get links](../commands-legacy/wp-get-links.md) because they automatically encode/decode hyperlinks as URLs. When reading links using the [WP GET ATTRIBUTES](../commands/wp-get-attributes) command, if the target object contains several links, the command returns the first link string.
 
 :::
 
-たとえば、ユーザーが選択したテキストを Web サイトへの URL リンクに変換したい場合:
+For example, if you want to transform the text selected by the user into a URL link to a web site:
 
 ![](../../assets/en/WritePro/link1.png)
 
-次のように書きます:
+以下のように書くことができます:
 
 ```4d
-$range:=WP Get selection(*;"WParea")
-WP SET LINK($range;New object("url";"http://www.4d.com"))
+ $range:=WP Get selection(*;"WParea")
+ WP SET LINK($range;New object("url";"http://www.4d.com"))
 ```
 
 ![](../../assets/en/WritePro/link2.png)
 
-ターゲットオブジェクトからリンクを除去するためには、以下のように書きます:
+To remove a link from a target object, you can write either:
 
 ```4d
-$range:=WP Get selection(*;"WParea")
-WP SET LINK($range;New object("url";"http://www.4d.com"))
+ WP RESET ATTRIBUTES($range;wk link url)
 ```
+
 または
 
 ```4d
-$range:=WP Get selection(*;"WParea")
-WP SET LINK($range;New object("url";"http://www.4d.com"))
+ WP SET ATTRIBUTES($range;wk link url;"")
 ```
 
-**注:** *$range* がリンク全体を含んでいない場合、リンクは短縮されますが完全に削除されるわけではありません。
+**Note:** If *$range* does not include the whole link, the link is truncated but not entirely removed.
 
-## オブジェクト(フォーム)テーマのコマンドの使用
+## Using commands from the Objects (Forms) theme
 
-以下の[オブジェクト（フォーム）](../../commands/theme/Objects_Forms.md)テーマの4Dコマンドは、4D Write Proのフォームオブジェクトをサポートします：
+The following 4D commands from the [Objects (Forms)](../../commands/theme/Objects_Forms.md) theme support 4D Write Pro form objects:
 
-| コマンド | 補足 |
-|---------|------|
-| OBJECT DUPLICATE | |
-| OBJECT Get auto spellcheck / OBJECT SET AUTO SPELLCHECK | |
-| OBJECT Get border style / OBJECT SET BORDER STYLE | |
-| OBJECT Get context menu / OBJECT SET CONTEXT MENU | |
-| OBJECT GET COORDINATES / OBJECT SET COORDINATES | |
-| OBJECT Get data source / OBJECT SET DATA SOURCE | |
-| OBJECT GET DRAG AND DROP OPTIONS / OBJECT SET DRAG AND DROP OPTIONS | |
-| OBJECT Get enabled / OBJECT SET ENABLED | |
-| OBJECT Get enterable / OBJECT SET ENTERABLE | |
-| OBJECT GET EVENTS / OBJECT SET EVENTS | |
-| OBJECT Get focus rectangle invisible / OBJECT SET FOCUS RECTANGLE INVISIBLE | |
-| OBJECT Get font / OBJECT SET FONT | カレントセレクションがあればそこに適用 |
-| OBJECT Get font size / OBJECT SET FONT SIZE | カレントセレクションがあればそこに適用 |
-| OBJECT Get font style / OBJECT SET FONT STYLE | カレントセレクションがあればそこに適用 |
-| OBJECT Get horizontal alignment / OBJECT SET HORIZONTAL ALIGNMENT | カレントセレクションがあればそこに適用。4D Write Proエリアの [wk justify](../../constants.md#wk-justify) 定数をサポート |
-| OBJECT GET RESIZING OPTIONS / OBJECT SET RESIZING OPTIONS | |
-| _o OBJECT SET COLOR | カレントセレクションがあればそこに適用 |
-| OBJECT GET RGB COLORS / OBJECT SET RGB COLORS | カレントセレクションがあればそこに適用 |
-| OBJECT Get type | |
-| OBJECT Get vertical alignment / OBJECT SET VERTICAL ALIGNMENT | 段落の垂直方向の行揃え。段落の高さが段落のテキストの高さより高い場合にのみ効力を発揮します。 |
-| OBJECT Get visible / OBJECT SET VISIBLE | |
-| OBJECT Is styled text | trueを返します |
-| OBJECT MOVE | |
-| OBJECT GET SUBFORM CONTAINER SIZE | |
-| OBJECT Get name | |
-| OBJECT Get pointer | |
+| コマンド                                                                            | コメント                                                                                                                                  |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `OBJECT DUPLICATE`                                                              |                                                                                                                                       |
+| `OBJECT Get auto spellcheck` / `OBJECT SET AUTO SPELLCHECK`                     |                                                                                                                                       |
+| `OBJECT Get border style` / `OBJECT SET BORDER STYLE`                           |                                                                                                                                       |
+| `OBJECT Get context menu` / `OBJECT SET CONTEXT MENU`                           |                                                                                                                                       |
+| `OBJECT GET COORDINATES` / `OBJECT SET COORDINATES`                             |                                                                                                                                       |
+| `OBJECT Get data source` / `OBJECT SET DATA SOURCE`                             |                                                                                                                                       |
+| `OBJECT GET DRAG AND DROP OPTIONS` / `OBJECT SET DRAG AND DROP OPTIONS`         |                                                                                                                                       |
+| `OBJECT Get enabled` / `OBJECT SET ENABLED`                                     |                                                                                                                                       |
+| `OBJECT Get enterable` / `OBJECT SET ENTERABLE`                                 |                                                                                                                                       |
+| `OBJECT GET EVENTS` / `OBJECT SET EVENTS`                                       |                                                                                                                                       |
+| `OBJECT Get focus rectangle invisible` / `OBJECT SET FOCUS RECTANGLE INVISIBLE` |                                                                                                                                       |
+| `OBJECT Get font` / `OBJECT SET FONT`                                           | Applied to current selection (if any)                                                                              |
+| `OBJECT Get font size` / `OBJECT SET FONT SIZE`                                 | Applied to current selection (if any)                                                                              |
+| `OBJECT Get font style` / `OBJECT SET FONT STYLE`                               | Applied to current selection (if any)                                                                              |
+| `OBJECT Get horizontal alignment` / `OBJECT SET HORIZONTAL ALIGNMENT`           | Applied to current selection (if any). Support of the `wk justify` constant for 4D Write Pro areas |
+| `OBJECT GET RESIZING OPTIONS` / `OBJECT SET RESIZING OPTIONS`                   |                                                                                                                                       |
+| `OBJECT GET RGB COLORS` / `OBJECT SET RGB COLORS`                               | Applied to current selection (if any)                                                                              |
+| `OBJECT Get type`                                                               |                                                                                                                                       |
+| `OBJECT Get vertical alignment` / `OBJECT SET VERTICAL ALIGNMENT`               | Vertical alignment of paragraphs: only has an effect when paragraph height is greater than paragraph text height      |
+| `OBJECT Get visible` / `OBJECT SET VISIBLE`                                     |                                                                                                                                       |
+| `OBJECT Is styled text`                                                         | Returns true                                                                                                                          |
+| `OBJECT MOVE`                                                                   |                                                                                                                                       |
+| `OBJECT GET SUBFORM CONTAINER SIZE`                                             |                                                                                                                                       |
+| `OBJECT Get name`                                                               |                                                                                                                                       |
+| `OBJECT Get pointer`                                                            |                                                                                                                                       |
 
-上記にないOBJECTコマンドはそれぞれ Write Proエリアに対しては使用できません。
+Any OBJECT commands not listed above are not applicable to 4D Write Pro areas.
+
