@@ -1,66 +1,64 @@
 ---
 id: exporting-to-svg-format
-title: Exportar para formato SVG
+title: Exporting to SVG format
 displayed_sidebar: docs
 ---
 
-#### 
+You can export 4D Write Pro document pages to SVG format using the [WP EXPORT DOCUMENT](../commands/wp-export-document) and [WP EXPORT VARIABLE](../commands/wp-export-variable) commands. This page provides additional details and notes about SVG export.
 
-Pode exportar páginas de documentos 4D Write Pro a formato SVG utilizando os comandos [WP EXPORT DOCUMENT](../commands/wp-export-document) e [WP EXPORT VARIABLE](../commands/wp-export-variable). Esta página contém informação adicional e notas sobre a exportação SVG.
+### SVG Rendering
 
-#### Renderização SVG 
+SVG images and text boxes are rendered according to page settings displayed in Page view mode. The following properties are taken into account:
 
-As imagens SVG e as caixas de texto são renderizadas de acordo com a configuração da página mostrada no modo vista Página. São levadas em consideração as propiedades abaixo:
+- Background attributes (if exported)
+- Bordas
+- Margens
+- Orientação
+- Padding
+- Page size
+- Sections (SVG rendering takes into account the section attributes, but the sections themselves are not exported)
 
-* Atributos de fundo (se forem exportados)
-* Bordas
-* Margens
-* Orientação
-* Preenchimento
-* Tamanho de página
-* Seções (a renderização SVG leva em consideração os atributos de seção, mas as seções em si não são exportadas)
+Parts of the document that are exported to SVG:
 
- Partes do documento que são exportadas a SVG:
+- Body
+- Inline images
+- Text boxes
+- Title (metadata wk title)
 
-* Corpo
-* Imagens online
-* Caixas de texto
-* Título (metadatos wk title)
+Parts of the document that are exported to SVG depending on the *option* parameter:
 
-Partes do documento que são exportadas a SVG em função do parâmetro *opcion*:
+- Cabeçalhos
+- Rodapés
+- References or values (regarding values, the wk recompute formulas option determines if the formulas are evaluated before export)
+- Background colors
+- Images defined as background images and anchored images
 
-* Cabeçalhos
-* Rodapés
-* Referências ou valores (em relação aos valores, a opção wk recompute formulas determina se as fórmulas são avaliadas antes da exportação)
-* Cores de fundo
-* Imagens definidas como imagens de fundo e imagens ancoradas
+The following elements are not exported to SVG:
 
-Os elementos abaixo não são exportados a SVG:
+- Fonts (converted to CSS styles, but not embedded in the exported SVG. See *Font management*)
+- Links to bookmarks (rendered but not active)
+- Links to URLs (rendered but not active)
+- Customized formula highlighting
+- Text boxes anchored to embedded view mode
+- Metadata
+  - Author
+  - Subject
+  - Data de criação
+  - Modification date
 
-* Fontes (convertidas a estilos CSS, mas não aninhadas no SVG exportado. Ver *Gerenciamento de fontes*)
-* Links a marcadores (renderizados mas não ativos)
-* Links a URLs (renderizados mas não ativos)
-* Realce de fórmulas personalizado
-* Caixas de texto ancoradas ao modo de vista aninhada
-* Metadatos  
-   * Autor  
-   * Assunto  
-   * Data de criação  
-   * Data de modificação
+### Font management
 
-#### Gerenciamento de fontes 
+Fonts are not embedded in the exported SVG, so text will be rendered correctly only if the font family and style are supported on the platform where the SVG image is rendered.
 
-As fontes não estão aninhadas no SVG exportado, por isso o texto será renderizado corretamente apeans se a família de fontes e o estilo forem compatíveis com a plataforma na que se renderiza a imagen SVG.
+If you want to make sure that the rendering will be equivalent on all platforms, even when fonts are not available, you can use the wk import google fonts option when exporting a 4D Write Pro document.
 
-Se quiser ter certeza de que a renderização será equivalente em todas as plataformas, mesmo quando as fontes não estão disponíveis, pode utilizar a opção wk import google fonts ao exportar um documento 4D Write Pro.
+Imported Google fonts override native fonts when the SVG is rendered. If you intend to render the SVG image on the same platform, we recommend not using the wk import google fonts option as rendering with native fonts is always better.
 
-As fontes Google importadas sustituem às fontes nativas quando se renderizar o SVG. Se quiser renderizar a imagem SVG na mesma plataforma, recomendamos que não utilize a opção wk import google fonts já que a renderização com fontes nativas é sempre melhor.
+**Note:** Only bold and italic styles are preserved. 100% compatibility between native font styles and font style definition in CSS (and thus SVG) is not guaranteed. Export to PDF is more suited for distribution to all platforms or for better WYSIWYG support for fonts, as fonts are embedded in PDF.
 
-**Nota:** só são conservados os estilos de negrito e cursiva. Não é garantida uma compatibilidade de 100% entre os estilos de fontes nativas e a definição de estilos de fontes em CSS (e por tanto, em SVG). A exportação a PDF é mais adequada para a distribuição a todas as plataformas ou para uma melhor compatibilidade WYSIWYG com as fontes, já que estão aninhadas no PDF.
+### Exemplo
 
-#### Exemplo 
-
-Este exemplo exporta uma página de documento a formato SVG e cria uma vista prévia da imagem utilizando [SVG EXPORT TO PICTURE](../../commands/svg-export-to-picture).
+This example exports a document page to SVG format and creates an image preview using [SVG EXPORT TO PICTURE](../../commands/svg-export-to-picture).
 
 ```4d
  var $preview : Picture
