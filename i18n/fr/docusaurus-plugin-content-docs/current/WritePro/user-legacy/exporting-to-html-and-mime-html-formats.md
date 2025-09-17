@@ -1,179 +1,175 @@
 ---
 id: exporting-to-html-and-mime-html-formats
-title: Exporter aux formats HTML et MIME HTML
+title: Exporting to HTML and MIME HTML formats
 displayed_sidebar: docs
 ---
 
-#### 
+4D Write Pro documents can be exported to the HTML and MIME HTML formats using the [WP EXPORT DOCUMENT](../commands/wp-export-document) and [WP EXPORT VARIABLE](../commands/wp-export-variable) commands. Use these tables to check which 4D Write Pro attributes and features are exported to HTML and MIME HTML. The attributes/features are sorted alphabetically. For a detailed list of attributes, see [4D Write Pro Attributes](../commands-legacy/4d-write-pro-attributes.md).
 
-Les documents 4D Write Pro peuvent être exportés aux formats HTML et MIME HTML à l'aide des commandes [WP EXPORTER DOCUMENT](../commands/wp-exporter-document) et [WP EXPORTER VARIABLE](../commands/wp-exporter-variable). Utilisez ces tableaux pour vérifier quels attributs et fonctionnalités de 4D Write Pro sont exportés vers HTML et HTML MIME. Les attributs/fonctionnalités sont triés par ordre alphabétique. Pour une liste détaillée des attributs, reportez-vous à la page *Attributs 4D Write Pro*.
+### Common attributes
 
-#### Common attributes 
+| **Attribute/Feature**                                            | **Exported** | **Comment** |
+| ---------------------------------------------------------------- | ------------ | ----------- |
+| Background clip                                                  | oui          |             |
+| Background color (for element, not character) | oui          |             |
+| Background image                                                 | oui          |             |
+| Background repeat                                                | oui          |             |
+| Background origin                                                | oui          |             |
+| Background position                                              | oui          |             |
+| Background width and height                                      | oui          |             |
+| Border color                                                     | oui          |             |
+| Border radius                                                    | oui          |             |
+| Border style                                                     | oui          |             |
+| Border width                                                     | oui          |             |
+| Element id                                                       | oui          |             |
+| hor.                                             | oui          |             |
+| Padding                                                          | oui          |             |
+| Protected                                                        | non          |             |
+| Style sheet                                                      | oui          |             |
 
-| **Attribut/Fonctionnalités**                  | **Exporté(e)** | **Commentaire** |
-| --------------------------------------------- | -------------- | --------------- |
-| Background clip                               | oui            |                 |
-| Background color (for element, not character) | oui            |                 |
-| Background image                              | oui            |                 |
-| Background repeat                             | oui            |                 |
-| Background origin                             | oui            |                 |
-| Background position                           | oui            |                 |
-| Background width and height                   | oui            |                 |
-| Border color                                  | oui            |                 |
-| Border radius                                 | oui            |                 |
-| Border style                                  | oui            |                 |
-| Border width                                  | oui            |                 |
-| Element id                                    | oui            |                 |
-| Margin                                        | oui            |                 |
-| Padding                                       | oui            |                 |
-| Protected                                     | non            |                 |
-| Style sheet                                   | oui            |                 |
+### Characters
 
-#### Caractères 
+| **Attribute/Feature**  | **Exported** | **Comment**                     |
+| ---------------------- | ------------ | ------------------------------- |
+| Couleur de fond        | oui          |                                 |
+| Font and font styles   | oui          |                                 |
+| Font size              | oui          |                                 |
+| Strikethrough color    | non          |                                 |
+| Strikethrough styles   | partially    | Only solid is exported          |
+| Superscript, subscript | oui          |                                 |
+| Text color             | oui          |                                 |
+| Text shadow            | oui          |                                 |
+| Text transform         | partially    | Small uppercase is not exported |
+| Underline color        | non          |                                 |
+| Underline styles       | partially    | Only solid is exported          |
 
-| **Attribut/Fonctionnalité** | **Exporté(e)** | **Commentaire**                              |
-| --------------------------- | -------------- | -------------------------------------------- |
-| Background color            | oui            |                                              |
-| Font and font styles        | oui            |                                              |
-| Font size                   | oui            |                                              |
-| Strikethrough color         | non            |                                              |
-| Strikethrough styles        | partiellement  | Seul le gras est exporté                     |
-| Superscript, subscript      | oui            |                                              |
-| Text color                  | oui            |                                              |
-| Text shadow                 | oui            |                                              |
-| Text transform              | partiellement  | Les petites majuscules ne sont pas exportées |
-| Underline color             | non            |                                              |
-| Underline styles            | partiellement  | Seul le gras est exporté                     |
+#### Colonnes
 
-#### Colonnes 
+| **Attribute/Feature** | **Exported** | **Comment** |
+| --------------------- | ------------ | ----------- |
+| Nombre de colonnes    | non          |             |
+| Column rule color     | non          |             |
+| Column rule style     | non          |             |
+| Column rule width     | non          |             |
+| Column spacing        | non          |             |
 
-| **Attribut/Fonctionnalité** | **Exporté(e)** | **Commentaire** |
-| --------------------------- | -------------- | --------------- |
-| Column count                | non            |                 |
-| Column rule color           | non            |                 |
-| Column rule style           | non            |                 |
-| Column rule width           | non            |                 |
-| Column spacing              | non            |                 |
+### Document
 
-#### Document 
+| **Attribute/Feature**                          | **Exported** | **Comment**                         |
+| ---------------------------------------------- | ------------ | ----------------------------------- |
+| Break paragraphs in formulas                   | non          |                                     |
+| Document (meta) information | partially    | Only title and subject are exported |
+| Dpi                                            | non          |                                     |
+| Font default                                   | non          |                                     |
+| Header and footer autofit                      | non          |                                     |
+| Page margin                                    | non          |                                     |
+| Orientation de la page                         | non          |                                     |
+| Page width/height                              | non          |                                     |
+| Protection enabled                             | non          |                                     |
+| Tab decimal separator                          | non          |                                     |
+| User unit                                      | non          |                                     |
 
-| **Attribut/Fonctionnalité**  | **Exporté(e)** | **Commentaire**                          |
-| ---------------------------- | -------------- | ---------------------------------------- |
-| Break paragraphs in formulas | non            |                                          |
-| Document (meta) information  | partiellement  | Seuls le titre et le sujet sont exportés |
-| Dpi                          | non            |                                          |
-| Font default                 | non            |                                          |
-| Header and footer autofit    | non            |                                          |
-| Page margin                  | non            |                                          |
-| Page orientation             | non            |                                          |
-| Page width/height            | non            |                                          |
-| Protection enabled           | non            |                                          |
-| Tab decimal separator        | non            |                                          |
-| User unit                    | non            |                                          |
+### Images
 
-#### Images 
+| **Attribute/Feature**                                                   | **Exported** | **Comment**                                                                          |
+| ----------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------ |
+| Alternate text                                                          | oui          |                                                                                      |
+| Anchor align                                                            | partially    | Only right, left, top or bottom                                                      |
+| Anchor embedded                                                         | oui          |                                                                                      |
+| Anchor origin                                                           | partially    | Only for the container box (borders of the web page)              |
+| Anchor to a single page                                                 | non          |                                                                                      |
+| Anchor to all pages                                                     | non          |                                                                                      |
+| Anchor to all sections of a page                                        | non          |                                                                                      |
+| Background image (and related background attributes) | oui          |                                                                                      |
+| Image display mode                                                      | partially    | If an image has a background image, it is exported as scaled to fit. |
+| Image URL                                                               | oui          |                                                                                      |
+| Vertical align                                                          | oui          |                                                                                      |
 
-| **Attribut/Fonctionnalité**                  | **Exporté**   | **Commentaire**                                                                 |
-| -------------------------------------------- | ------------- | ------------------------------------------------------------------------------- |
-| Alternate text                               | oui           |                                                                                 |
-| Anchor align                                 | partiellement | Uniquement droite, gauche, haut ou bas                                          |
-| Anchor embedded                              | oui           |                                                                                 |
-| Anchor offset                                | oui           |                                                                                 |
-| Anchor origin                                | partiellement | Uniquement pour le conteneur (bordures de la page web)                          |
-| Anchor to a single page                      | non           |                                                                                 |
-| Anchor to all pages                          | non           |                                                                                 |
-| Anchor to all sections of a page             | non           |                                                                                 |
-| Background image (et attributs de fond liés) | oui           |                                                                                 |
-| Image display mode                           | partiellement | Si une image contient une image de fond, elle est exportée et mise à l'échelle. |
-| Image URL                                    | oui           |                                                                                 |
-| Vertical align                               | oui           |                                                                                 |
+### Text boxes
 
-#### Zones de texte 
+| **Attribute/Feature**            | **Exported** | **Comment**                                                             |
+| -------------------------------- | ------------ | ----------------------------------------------------------------------- |
+| Anchor align                     | oui          |                                                                         |
+| Anchor embedded                  | oui          | as div                                                                  |
+| Anchor offset                    | oui          |                                                                         |
+| Anchor origin                    | partially    | Only for the container box (borders of the web page) |
+| Anchor to a single page          | non          |                                                                         |
+| Anchor to all sections of a page | non          |                                                                         |
+| Vertical align                   | oui          |                                                                         |
 
-| **Attribut/Fonctionnalité**      | **Exporté**   | **Commentaire**                                        |
-| -------------------------------- | ------------- | ------------------------------------------------------ |
-| Anchor align                     | oui           |                                                        |
-| Anchor embedded                  | oui           | comme div                                              |
-| Anchor offset                    | oui           |                                                        |
-| Anchor origin                    | partiellement | Uniquement pour le conteneur (bordures de la page web) |
-| Anchor to a single page          | non           |                                                        |
-| Anchor to all pages              | non           |                                                        |
-| Anchor to all sections of a page | non           |                                                        |
-| Vertical align                   | oui           |                                                        |
+### Paragraphs
 
-#### Paragraphes 
+| **Attribute/Feature**                                      | **Exported** | **Comment**                                                                                 |
+| ---------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------- |
+| Absolute tab stops                                         | non          |                                                                                             |
+| Column break after                                         | oui          | Single column only (multiple columns are not supported)                  |
+| Direction                                                  | oui          |                                                                                             |
+| Keep with next                                             | oui          |                                                                                             |
+| Line height                                                | oui          |                                                                                             |
+| List font                                                  | non          |                                                                                             |
+| List image                                                 | oui          |                                                                                             |
+| List image height                                          | non          |                                                                                             |
+| List start number                                          | oui          |                                                                                             |
+| List string format (custom format)      | non          |                                                                                             |
+| List style type                                            | partially    | Hollow-square, diamond, and club are not exported, decimal-greek is the same as lower-greek |
+| Min-height                                                 | oui          |                                                                                             |
+| Min-width                                                  | non          |                                                                                             |
+| New line style sheet                                       | non          |                                                                                             |
+| Page break after                                           | oui          |                                                                                             |
+| Page break inside                                          | oui          |                                                                                             |
+| Section break after (continuous or not) | non          |                                                                                             |
+| Text align                                                 | oui          |                                                                                             |
+| Text indent                                                | oui          |                                                                                             |
+| Vertical-align                                             | oui          |                                                                                             |
+| Widow and orphan control                                   | non          |                                                                                             |
+| Largeur                                                    | oui          |                                                                                             |
 
-| **Attribute/Fonctionnalité**            | **Exporté**   | **Commentaire**                                                                                 |
-| --------------------------------------- | ------------- | ----------------------------------------------------------------------------------------------- |
-| Absolute tab stops                      | non           |                                                                                                 |
-| Column break after                      | oui           | Une seule colonne uniquement (colonnes multiples non prises en charge)                          |
-| Direction                               | oui           |                                                                                                 |
-| Keep with next                          | oui           |                                                                                                 |
-| Line height                             | yes           |                                                                                                 |
-| List font                               | non           |                                                                                                 |
-| List image                              | oui           |                                                                                                 |
-| List image height                       | non           |                                                                                                 |
-| List start number                       | oui           |                                                                                                 |
-| List string format (custom format)      | non           |                                                                                                 |
-| List style type                         | partiellement | Hollow-square, diamond, et club ne sont pas exportés, decimal-greek est identique à lower-greek |
-| Min-height                              | oui           |                                                                                                 |
-| Min-width                               | non           |                                                                                                 |
-| New line style sheet                    | non           |                                                                                                 |
-| Page break after                        | oui           |                                                                                                 |
-| Page break inside                       | oui           |                                                                                                 |
-| Section break after (continuous or not) | non           |                                                                                                 |
-| Text align                              | oui           |                                                                                                 |
-| Text indent                             | oui           |                                                                                                 |
-| Vertical-align                          | oui           |                                                                                                 |
-| Widow and orphan control                | non           |                                                                                                 |
-| Width                                   | oui           |                                                                                                 |
+### Sections and page elements
 
-#### Elements de section et de page 
+| **Attribute/Feature**            | **Exported** | **Comment**                                                  |
+| -------------------------------- | ------------ | ------------------------------------------------------------ |
+| First page sub-section           | non          |                                                              |
+| Headers and footers              | non          |                                                              |
+| Left and right page sub-sections | non          |                                                              |
+| Main sections                    | non          | Only document-level attributes are exported to the html body |
+| Page margin                      | non          |                                                              |
+| Orientation de la page           | non          |                                                              |
 
-| **Attribut/Fonctionnalité**      | **Exporté** | **Commentaire**                                                       |
-| -------------------------------- | ----------- | --------------------------------------------------------------------- |
-| First page sub-section           | non         |                                                                       |
-| Headers and footers              | non         |                                                                       |
-| Left and right page sub-sections | non         |                                                                       |
-| Main sections                    | non         | Seuls les attributs au niveau du document sont exportés au corps html |
-| Page margin                      | non         |                                                                       |
-| Page orientation                 | non         |                                                                       |
+### Tables
 
-#### Tableaux 
+| **Attribute/Feature**                                        | **Exported** | **Comment**                                                                |
+| ------------------------------------------------------------ | ------------ | -------------------------------------------------------------------------- |
+| Background image (and related attributes) | oui          |                                                                            |
+| Column break after                                           | oui          | Single column only (multiple columns are not supported) |
+| Horizontal alignment                                         | oui          |                                                                            |
+| Page break after                                             | oui          |                                                                            |
+| Page break inside                                            | oui          |                                                                            |
+| Section break after                                          | non          |                                                                            |
+| Bottom carry-over rows                                       | non          |                                                                            |
 
-| **Attribut/Fonctionnalité**          | **Exporté** | **Commentaire**                                                        |
-| ------------------------------------ | ----------- | ---------------------------------------------------------------------- |
-| Background image (et attributs liés) | oui         |                                                                        |
-| Column break after                   | oui         | Une seule colonne uniquement (colonnes multiples non prises en charge) |
-| Horizontal alignment                 | oui         |                                                                        |
-| Page break after                     | oui         |                                                                        |
-| Page break inside                    | oui         |                                                                        |
-| Section break after                  | non         |                                                                        |
-| Bottom carry-over rows               | non         |                                                                        |
+### Table cells
 
-#### Cellules de tableau 
+| **Attribute/Feature**                                        | **Exported** | **Comment** |
+| ------------------------------------------------------------ | ------------ | ----------- |
+| Background image (and related attributes) | oui          |             |
+| Hauteur                                                      | oui          |             |
+| Vertical align                                               | oui          |             |
+| Largeur                                                      | oui          |             |
 
-| **Attribut/Fonctionnalité**              | **Exporté** | **Commentaire** |
-| ---------------------------------------- | ----------- | --------------- |
-| Background image (et attributs relatifs) | oui         |                 |
-| Height                                   | oui         |                 |
-| Vertical align                           | oui         |                 |
-| Width                                    | oui         |                 |
+### Table rows
 
-#### Ligne de tableau 
+| **Attribute/Feature**                                        | **Exported** | **Comment**                                                                |
+| ------------------------------------------------------------ | ------------ | -------------------------------------------------------------------------- |
+| Background image (and related attributes) | oui          |                                                                            |
+| Column break after                                           | oui          | Single column only (multiple columns are not supported) |
+| Hauteur                                                      | oui          |                                                                            |
+| Page break after                                             | oui          |                                                                            |
 
-| **Attribut/Fonctionnalité**          | **Exporté** | **Commentaire**                                                                   |
-| ------------------------------------ | ----------- | --------------------------------------------------------------------------------- |
-| Background image (et attributs liés) | oui         |                                                                                   |
-| Column break after                   | oui         | Une seule colonne seulement (les colonnes multiples ne sont pas prises en charge) |
-| Height                               | oui         |                                                                                   |
-| Page break after                     | oui         |                                                                                   |
+### Other features
 
-#### Autres fonctionnalités 
-
-| **Attribut/Fonctionnalité**  | **Exporté** | **Commentaire**                   |
-| ---------------------------- | ----------- | --------------------------------- |
-| 4D formulas                  | non         | Calculées et gelées pour l'export |
-| 4D method links              | non         |                                   |
-| Bookmarks and bookmark links | oui         |                                   |
-| URL links                    | oui         |                                   |
+| **Attribute/Feature**        | **Exported** | **Comment**                     |
+| ---------------------------- | ------------ | ------------------------------- |
+| 4D formulas                  | non          | Computed and freezed for export |
+| 4D method links              | non          |                                 |
+| Bookmarks and bookmark links | oui          |                                 |
+| URL links                    | oui          |                                 |
