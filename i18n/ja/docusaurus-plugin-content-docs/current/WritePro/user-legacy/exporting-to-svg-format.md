@@ -4,63 +4,61 @@ title: Exporting to SVG format
 displayed_sidebar: docs
 ---
 
-#### 
+You can export 4D Write Pro document pages to SVG format using the [WP EXPORT DOCUMENT](../commands/wp-export-document) and [WP EXPORT VARIABLE](../commands/wp-export-variable) commands. This page provides additional details and notes about SVG export.
 
-[WP EXPORT DOCUMENT](../commands/wp-export-document) および [WP EXPORT VARIABLE](../commands/wp-export-variable) コマンドを使用することで 4D Write Pro ドキュメントのページをSVG フォーマットへと書き出すことができます。このページではSVG 書き出しに関する補足的な情報と注記を記載しています。
+### SVG Rendering
 
-#### SVG レンダリング 
+SVG images and text boxes are rendered according to page settings displayed in Page view mode. The following properties are taken into account:
 
-SVG 画像は、ページビューモードで表示されるページ設定に応じてレンダリングされます。以下のプロパティが考慮されます:
+- Background attributes (if exported)
+- 境界線
+- マージン
+- 方向
+- Padding
+- Page size
+- Sections (SVG rendering takes into account the section attributes, but the sections themselves are not exported)
 
-* 背景属性(書き出される場合)
-* 境界線
-* 余白
-* ページの向き
-* パディング
-* ページサイズ
-* セクション(SVGレンダリングはセクション属性を考慮しますが、セクションそのものが書き出されるわけではありません)。
+Parts of the document that are exported to SVG:
 
-SVG へと書き出されるドキュメントの部分は以下の通りです:
+- Body
+- Inline images
+- Text boxes
+- Title (metadata wk title)
 
-* 本文
-* インライン画像
-* テキストボックス
-* 題名(wk title のメタデータ)
+Parts of the document that are exported to SVG depending on the *option* parameter:
 
-*option* 引数によってはSVG へと書き出し可能なドキュメントの部分:
+- ヘッダー
+- フッター
+- References or values (regarding values, the wk recompute formulas option determines if the formulas are evaluated before export)
+- Background colors
+- Images defined as background images and anchored images
 
-* ヘッダー
-* フッター
-* 参照または値(値に関しては、wk recompute formulas オプションによって、フォーミュラが書き出し前に評価されるかどうかが決定されます)
-* 背景色
-* 背景画像/アンカーされた画像として定義された画像
+The following elements are not exported to SVG:
 
-以下の要素はSVGには書き出されません:
+- Fonts (converted to CSS styles, but not embedded in the exported SVG. See *Font management*)
+- Links to bookmarks (rendered but not active)
+- Links to URLs (rendered but not active)
+- Customized formula highlighting
+- Text boxes anchored to embedded view mode
+- Metadata
+  - Author
+  - Subject
+  - 作成日
+  - Modification date
 
-* フォント(CSS スタイルに変換されますが、書き出されたSVGには埋め込まれません。*フォント管理* 参照)
-* ブックマークへのリンク(レンダリングはされますがリンクに飛びません)
-* URL へのリンク(レンダリングはされますがリンクに飛びません)
-* カスタマイズされたフォーミュラのハイライト
-* 埋め込みビューモードにアンカーされたテキストボックス
-* メタデータ  
-   * 作者  
-   * 主題  
-   * 作成日  
-   * 編集日
+### Font management
 
-#### フォント管理 
+Fonts are not embedded in the exported SVG, so text will be rendered correctly only if the font family and style are supported on the platform where the SVG image is rendered.
 
-フォントは書き出されたSVG には埋め込まれないため、テキストは、SVG 画像がレンダリングされたプラットフォームにおいてフォントファミリーとスタイルがサポートされている場合に限り、正しくレンダリングされます。
+If you want to make sure that the rendering will be equivalent on all platforms, even when fonts are not available, you can use the wk import google fonts option when exporting a 4D Write Pro document.
 
-全てのプラットフォームにおいて(たとえフォントが利用可能ではなかったとしても)レンダリングが同じになるようにしたい場合には、4D Write Pro ドキュメントを書き出す際にwk import google fonts オプションを使用してください。
+Imported Google fonts override native fonts when the SVG is rendered. If you intend to render the SVG image on the same platform, we recommend not using the wk import google fonts option as rendering with native fonts is always better.
 
-読み込まれたGoogle フォントはSVG がレンダリングされる時にネイティブなフォントを上書きします。SVG 画像を表示するプラットフォームと同じプラットフォーム上でレンダリングする場合には、wk import google fonts オプションを使用しないことが推奨されます。ネイティブのフォントを使用したレンダリングの方が常に良い結果が得られるからです。
+**Note:** Only bold and italic styles are preserved. 100% compatibility between native font styles and font style definition in CSS (and thus SVG) is not guaranteed. Export to PDF is more suited for distribution to all platforms or for better WYSIWYG support for fonts, as fonts are embedded in PDF.
 
-**注:** 保存されるスタイルは太字とイタリックのみです。ネイティブのフォントスタイルとCSS 内のフォントスタイル定義(および生成されたSVG)間の100% の互換性は保障されていません。全てのプラットフォームへの配布、あるいはフォントに対するより良いWYSIWYG サポートのためには、PDF 書き出しがより適しています。この場合フォントはPDF 内に埋め込まれるからです。
+### 例題
 
-#### 例題 
-
-以下の例題はドキュメントページをSVG フォーマットとして書き出し、[SVG EXPORT TO PICTURE](../../commands/svg-export-to-picture) を使用して画像プレビューを作成します。
+This example exports a document page to SVG format and creates an image preview using [SVG EXPORT TO PICTURE](../../commands/svg-export-to-picture).
 
 ```4d
  var $preview : Picture
