@@ -15,7 +15,7 @@ module.exports =
       },
       items: [
         "GettingStarted/installation",
-        "GettingStarted/creating",
+        "Project/overview",
         "Notes/updates"
       ]
     },
@@ -32,20 +32,35 @@ module.exports =
         image: "/img/docusaurus.png"
       },
       items: [
+        "GettingStarted/creating",
+        "Project/architecture",
         {
           type: "category",
-          label: "Project Files",
+          label: "Dababase structure",
           items: [
-            "Project/architecture",
-            "Project/code-overview",
-            "Project/documentation"
+            "Develop/field-properties"
           ]
         },
         {
           type: "category",
-          label: "Settings",
+          label: "Code & Methods",
           items: [
-                "settings/overview",
+            "Project/code-overview",
+            "code-editor/write-class-method",
+            "Project/project-method-properties",
+            "Project/documentation"
+          ]
+        },
+          "Project/components",
+          "Project/compiler",
+        {
+          type: "category",
+          label: "Settings",
+          link: {
+             type: "doc",
+             id: "settings/overview"
+          },
+          items: [
                 "settings/general",
                 "settings/interface",
                 "settings/compiler",
@@ -59,48 +74,40 @@ module.exports =
                 "settings/compatibility"
               ]
         },
-          "code-editor/write-class-method",
-          "Project/components",
-          "Project/compiler",
-          "Desktop/building",
-          {
-               type: "category",
-               label: "Dababase structure",
-               items: [
-                 "Develop/field-properties",
-                      ]
-            },
+         "Desktop/building",
           {
            type: "category",
-           label: "Debugger & logs",
+           label: "Debugging",
+           link: {
+             type: "doc",
+             id: "Debugging/basics"
+          },
            items: [
-                "Debugging/basics",
                 "Debugging/debugger",
                 "Debugging/breakpoints",
-                "Debugging/debugging-remote",
-                "Debugging/debugLogFiles"
+                "Debugging/debugging-remote"
               ]
-            },
-            {
-                  type: "category",
-                  label: "Application Preferences",
-                  items: [
-                    "Preferences/overview",
-                    "Preferences/general",
-                    "Preferences/structure",
-                    "Preferences/forms",
-                    "Preferences/methods",
-                    "Preferences/shortcuts"
-                  ]
-            }
+          },
+                  {
+           type: "category",
+           label: "Application Preferences",
+             items: [
+                "Preferences/overview",
+                "Preferences/general",
+                "Preferences/structure",
+                "Preferences/forms",
+                "Preferences/methods",
+                "Preferences/shortcuts"
+              ]
+          }
       ] 
     },
     {
       type: "category",
-      label: "4D Language & ORDA",
+      label: "4D Language",
       link: {
         type: "generated-index",
-        title: "4D Language & ORDA",
+        title: "4D Language",
         slug: "/category/4d-language",
         keywords: [
           "language","orda"
@@ -432,34 +439,6 @@ module.exports =
                 "commands-legacy/encrypt-data-file",
                 "commands-legacy/new-data-key",
                 "commands-legacy/register-data-key"
-              ]
-            },
-            {
-              type: "category",
-              label: "Database Methods",
-              link: {
-                type: "doc",
-                id: "commands/theme/Database_Methods_theme"
-              },
-              items: [
-                "commands-legacy/on-backup-shutdown-database-method",
-                "commands-legacy/on-backup-startup-database-method",
-                "commands-legacy/on-drop-database-method",
-                "commands-legacy/on-exit-database-method",
-                "commands-legacy/on-host-database-event-database-method",
-                "commands-legacy/on-mobile-app-action-database-method",
-                "commands-legacy/on-mobile-app-authentication-database-method",
-                "commands-legacy/on-rest-authentication-database-method",
-                "commands-legacy/on-server-close-connection-database-method",
-                "commands-legacy/on-server-open-connection-database-method",
-                "commands-legacy/on-server-shutdown-database-method",
-                "commands-legacy/on-server-startup-database-method",
-                "commands-legacy/on-sql-authentication-database-method",
-                "commands-legacy/on-startup-database-method",
-                "commands-legacy/on-system-event-database-method",
-                "commands-legacy/on-web-authentication-database-method",
-                "commands-legacy/on-web-connection-database-method",
-                "commands-legacy/on-web-legacy-close-session-database-method"
               ]
             },
             {
@@ -2279,110 +2258,87 @@ module.exports =
             ],
             image: "/img/docusaurus.png"
           }
-        },
-                {
-          type: "category",
-          label: "ORDA",
-          link: {
-            type: "generated-index",
-            title: "ORDA",
-            slug: "/category/orda",
-            keywords: [
-              "orda"
-            ],
-            image: "/img/docusaurus.png"
-          },
-          items: [
-            "ORDA/overview",
-            "ORDA/dsmapping",
-            "ORDA/ordaClasses",
-            "ORDA/entities",
-            "ORDA/global-stamp",
-            "ORDA/datastores",
-            "ORDA/privileges",
-            "ORDA/client-server-optimization",
-            "ORDA/glossary"
-          ]
-        },
-        {
-          type: "category",
-          label: "Core Features",
-          link: {
-            type: "generated-index",
-            title: "Core development",
-            slug: "/category/core-features",
-            keywords: [
-              "features"
-            ],
-            image: "/img/docusaurus.png"
-          },
-          items: [
-            "Develop/processes",
-            "Develop/preemptive-processes",
-            "Develop-legacy/transactions",
-            "Tags/transformation-tags",
-            "Project/date-time-formats"
-          ]
-        },
+        }
       ]
     },
-    {  
-        type: "category",
-      label: "Core Development",
-      link: {
-        type: "generated-index",
-        title: "Core Development",
-        slug: "/category/core",
-        keywords: [
-          "core","orda"
-        ],
-        image: "/img/docusaurus.png"
-      },
-      items: [
-       {
+    {
           type: "category",
-          label: "ORDA",
+          label: "Core Development",
           link: {
             type: "generated-index",
-            title: "ORDA",
-            slug: "/category/orda",
-            keywords: [
-              "orda"
-            ],
+            title: "Core Development",
+            slug: "/category/core",
             image: "/img/docusaurus.png"
           },
           items: [
-            "ORDA/overview",
-            "ORDA/dsmapping",
-            "ORDA/ordaClasses",
-            "ORDA/entities",
-            "ORDA/global-stamp",
-            "ORDA/datastores",
-            "ORDA/privileges",
-            "ORDA/client-server-optimization",
-            "ORDA/glossary"
+            {
+              type: "category",
+              label: "ORDA",
+              link: {
+                type: "doc",
+                id: "ORDA/overview"
+              },
+              items: [
+                "ORDA/dsmapping",
+                "ORDA/ordaClasses",
+                "ORDA/entities",
+                "ORDA/global-stamp",
+                "ORDA/datastores",
+                "ORDA/privileges",
+                "ORDA/client-server-optimization",
+              "ORDA/glossary"
           ]
         },
         {
           type: "category",
-          label: "Core Features",
+          label: "Processes",
           link: {
             type: "generated-index",
-            title: "Core development",
-            slug: "/category/core-features",
+            title: "Processes",
+            slug: "/category/processes",
             keywords: [
-              "features"
+              "feaprocessestures"
             ],
             image: "/img/docusaurus.png"
           },
           items: [
             "Develop/processes",
-            "Develop/preemptive-processes",
-            "Develop-legacy/transactions",
-            "Tags/transformation-tags",
-            "Project/date-time-formats"
+            "Develop/preemptive-processes"
           ]
         },
+        {
+          type: "category",
+          label: "Database Methods",
+          link: {
+            type: "generated-index",
+            title: "Database Methods",
+            slug: "/category/database-methods",
+            image: "/img/docusaurus.png"
+          },
+          items: [
+           "commands-legacy/on-backup-shutdown-database-method",
+                "commands-legacy/on-backup-startup-database-method",
+                "commands-legacy/on-drop-database-method",
+                "commands-legacy/on-exit-database-method",
+                "commands-legacy/on-host-database-event-database-method",
+                "commands-legacy/on-mobile-app-action-database-method",
+                "commands-legacy/on-mobile-app-authentication-database-method",
+                "commands-legacy/on-rest-authentication-database-method",
+                "commands-legacy/on-server-close-connection-database-method",
+                "commands-legacy/on-server-open-connection-database-method",
+                "commands-legacy/on-server-shutdown-database-method",
+                "commands-legacy/on-server-startup-database-method",
+                "commands-legacy/on-sql-authentication-database-method",
+                "commands-legacy/on-startup-database-method",
+                "commands-legacy/on-system-event-database-method",
+                "commands-legacy/on-web-authentication-database-method",
+                "commands-legacy/on-web-connection-database-method",
+                "commands-legacy/on-web-legacy-close-session-database-method"
+          ]
+        },
+        "Develop-legacy/transactions",
+        "Tags/transformation-tags",
+        "Project/date-time-formats"
       ]
     },
     {
@@ -2411,19 +2367,10 @@ module.exports =
             id: "WebServer/webServer"
           },
           items: [
+            "WebServer/gettingStarted",
             "WebServer/webServerConfig",
             "WebServer/webServerAdmin",
-            "WebServer/webServerObject"
-          ]
-        },
-        {
-          type: "category",
-          label: "Web Development",
-          link: {
-            type: "doc",
-            id: "WebServer/gettingStarted"
-          },
-          items: [
+            "WebServer/webServerObject",
             "WebServer/templates",
             "WebServer/httpRequests",
             "WebServer/http-request-handler",
@@ -2436,10 +2383,10 @@ module.exports =
         },
         {
           type: "category",
-          label: "REST Server",
+          label: "REST API",
           link: {
             type: "generated-index",
-            title: "REST Server",
+            title: "REST API",
             description: "Exposing your datastore to REST and using the REST API.",
             keywords: [
               "REST server"
@@ -2548,24 +2495,6 @@ module.exports =
           type: "doc",
           label: "Client/Server",
           id: "Desktop/clientServer"
-        },
-        {
-          type: "category",
-          label: "Access Rights",
-          link: {
-            type: "generated-index",
-            title: "Access Rights",
-            description: "Access control and user privileges for desktop applications.",
-            slug: "/category/access-rights",
-            keywords: [
-              "access rights"
-            ],
-            image: "/img/docusaurus.png"
-          },
-          items: [
-            "Users/overview",
-            "Users/editing"
-          ]
         },
         {
           type: "category",
@@ -2750,6 +2679,11 @@ module.exports =
             }
           ]
         },
+         {
+          type: "doc",
+          label: "Labels",
+          id: "Desktop/labels"
+        },
         {
           type: "category",
           label: "Menus",
@@ -2765,14 +2699,24 @@ module.exports =
           ]
         },
         {
-          type: "doc",
-          label: "User Settings",
-          id: "Desktop/user-settings"
-        },
-        {
-          type: "doc",
-          label: "Labels",
-          id: "Desktop/labels"
+          type: "category",
+          label: "Access Rights",
+          link: {
+            type: "generated-index",
+            title: "Access Rights",
+            description: "Access control and user privileges for desktop applications.",
+            slug: "/category/access-rights",
+            keywords: [
+              "access rights",
+              "user settings",
+              "permissions"
+            ],
+            image: "/img/docusaurus.png"
+          },
+          items: [
+            "Users/overview",
+            "Users/editing"
+          ]
         }
       ]
     },
@@ -2842,6 +2786,11 @@ module.exports =
           id: "Admin/licenses"
         },
         {
+          type: "doc",
+          label: "Log Files",
+          id: "Debugging/debugLogFiles"
+        },
+        {
           type: "category",
           label: "MSC",
           link: {
@@ -2885,10 +2834,26 @@ module.exports =
       type: "category",
       label: "Extensions",
       link: {
-        type: "doc",
-        id: "Extensions/overview"
+        type: "generated-index",
+        title: "Extensions",
+        slug: "/category/extensions",
+        keywords: [
+          "component, extension, plug-in"],
+        image: "/img/docusaurus.png"
       },
       items: [
+        {
+            type: "category",
+            label: "Extending 4D applications",
+            link: {
+              type: "doc",
+              id: "Extensions/overview"
+            },
+            items: [
+             "Extensions/develop-components",
+              "Extensions/develop-plug-ins"
+                  ]
+        },
         {
           type: "category",
           label: "4D View Pro",
@@ -3406,27 +3371,23 @@ module.exports =
           label: "4D Widgets",
           href: "https://doc.4d.com/4Dv20R10/4D/20-R10/4D-Widgets.100-7614949.en.html"
         },
-        "Extensions/develop-components",
-        "Extensions/develop-plug-ins"
-      ]
-    },
-
-
-    {
-      type: "category",
-      label: "Mobile Applications",
-      items: [
         {
           type: "link",
-          label: "Go Mobile",
-          href: "https://developer.4d.com/go-mobile/"
+          label: "4D QPDF",
+          href: "https://github.com/4d/4D-QPDF?tab=readme-ov-file#readme"
         },
         {
           type: "link",
-          label: "4D for iOS (archive)",
-          href: "https://developer.4d.com/4d-for-ios"
-        }
-      ]
+          label: "Go Mobile with 4D",
+          href: "https://developer.4d.com/go-mobile/"
+        },
+      {
+          type: "link",
+          label: "Build4D",
+          href: "https://github.com/4d-depot/Build4D?tab=readme-ov-file#readme"
+      }
+    ]
     }
   ]
 }
+

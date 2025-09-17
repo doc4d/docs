@@ -86,7 +86,22 @@
                 "Debugging/breakpoints",
                 "Debugging/debugging-remote"
               ]
-            }
+          },
+          {
+               "type": "category",
+                "label": "Application Preferences",
+                "link": {
+                 "type": "doc",
+                  "id": "Preferences/overview"
+                },
+                "items": [
+                  "Preferences/general",
+                  "Preferences/structure",
+                  "Preferences/forms",
+                  "Preferences/methods",
+                  "Preferences/shortcuts"
+               ]
+           }
       ] 
     },
     {
@@ -2699,12 +2714,7 @@
             "Users/overview",
             "Users/editing"
           ]
-        },
-        {
-          "type": "doc",
-          "label": "User Settings",
-          "id": "Desktop/user-settings"
-        }
+        }      
       ]
     },
     {
@@ -2810,21 +2820,6 @@
             "Backup/restore"
           ]
         },
-                    {
-               "type": "category",
-                "label": "Application Preferences",
-                "link": {
-                 "type": "doc",
-                  "id": "Preferences/overview"
-                },
-                "items": [
-                  "Preferences/general",
-                  "Preferences/structure",
-                  "Preferences/forms",
-                  "Preferences/methods",
-                  "Preferences/shortcuts"
-               ]
-           },
         {
           "type": "doc",
           "label": "Data Collection",
