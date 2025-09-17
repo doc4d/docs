@@ -1,132 +1,130 @@
 ---
 id: handling-tables
-title: Handling tables
+title: テーブル
 displayed_sidebar: docs
 ---
 
-#### 表組みの管理 
-
-4D Write Proドキュメントには表を含めることができます。4D Write Pro の表組みはプログラミングによって作成・定義されますが、そのコンテンツについては変更可能で、ユーザーによって管理されます。行の高さ、並び、マージン、テキストスタイル、カラー、境界線を含め、様々な 4D Write Pro 表属性が編集可能です。
+4D Write Pro documents can contain tables. 4D Write Pro tables are created and defined by programming, but their contents can be modified and handled by the user. Various 4D Write Pro table attributes are editable, including row height, alignment, margins, text style, color, or borders.
 
 ![](../../assets/en/WritePro/pict3307937.en.png)
 
-**注意:** 4D Write Pro の表組みはプログラミングによって値を入れることが可能であるため、大量のカラムと列を持たせることができます。巨大な表組みは、特にスクリーン上に表示される場合にパフォーマンスに影響を与える点に注意してください。詳細な情報については[このblog記事](https://blog.4d.com/4d-write-pro-tables-without-limit) をご覧下さい。
+**Note:** Since 4D Write Pro tables can be filled by programming, they can contain a large number of columns and rows. Keep in mind that very large tables will impact performances, especially if they are displayed on screen. See also [this blog post](https://blog.4d.com/4d-write-pro-tables-without-limit) for more information.
 
-#### 表の作成 
+## Creating a table
 
-4D Write Pro の表は[WP Insert table](../commands/wp-insert-table) コマンドを呼び出すことによって作成されます。その後、[WP Table append row](../commands/wp-table-append-row) コマンドを使用して行を追加することができます。
+4D Write Pro tables are created by calling the [WP Insert table](../commands/wp-insert-table) command. You can then add rows by using the [WP Table append row](../commands/wp-table-append-row) command.
 
-**注:** ユーザーはセルの範囲をコピー・ペーストすることによって表を作成することができます:   
+**Note:** A user can create a table by copying and pasting a range of cells:\
 ![](../../assets/en/WritePro/pict3307941.en.png)
 
-#### 表の編集 
+## Editing tables
 
-セルの中身は[WP Table append row](../commands/wp-table-append-row) コマンドを使用することでプログラミングによって追加することができます。
+Cell contents can be added by programming using the [WP Table append row](../commands/wp-table-append-row) command.
 
-表組みの作成後は、セルの中身はユーザーによってランタイムで編集可能です。ユーザーはセル内をクリックし、通常の段落同様、選択、編集、コピー/ペースト、あるいはテキストまたはピクチャーの削除をすることが可能です。また**Tab**キーを使用してセルを移動していくことも可能です(**Shift+Tab**で逆方向に移動していきます)。
+Once a table is created, cell contents can also be edited at runtime by users. They can click into cells and select, edit, copy/paste, or delete text or pictures just like in regular paragraphs. They can navigate through cells using the **Tab** key (**Shift+Tab** to navigate in opposite direction).
 
-セル内で**キャリッジリターン**を使用すると、セル内に新しい段落を作成します。
+Using the **Carriage return** key within a cell creates a new paragraph in the cell.
 
-セルの幅は固定であることに注意して下さい。ユーザーがテキストを入力するかピクチャーを貼り付けると、行の高さが必要に応じて自動的に拡張され、テキストは自動的に折り返されます:
+Note that cell width is fixed: when a user enters text or pastes a picture, the height of the row is automatically extended if necessary and text automatically wraps:
 
 ![](../../assets/en/WritePro/pict3308424.en.png)
 
-ユーザーはまた、カラム、行、あるいはセルを選択し、ビルトインのポップアップメニューあるいはカスタマイズされたインターフェースを使用して、テキストスタイル、カラー、並び、などの利用可能な属性を適用することができます。4D Write Proでは表組みの任意の部分を選択する複数のコマンドを提供します:
+Users can also select columns, rows, or cells and apply available attributes regarding text style, colors, alignment, etc. using the built-in pop up menu or any customized interface. 4D Write Pro provides several commands to select any parts of a table:
 
-* [WP Table get rows](../commands/wp-table-get-rows) は行のレンジ(またはヘッダー行レンジ)を取得します。
-* [WP Table get columns](../commands/wp-table-get-columns) はカラムのレンジを取得します。(\*)
-* [WP Table get cells](../commands/wp-table-get-cells) はセルのレンジを取得します。
+- [WP Table get rows](../commands/wp-table-get-rows) to get a row range (or header row range)
+- [WP Table get columns](../commands/wp-table-get-columns) to get a column range(\*)
+- [WP Table get cells](../commands/wp-table-get-cells) to get a cell range
 
-(\*) カラムは、それに相当するものがhtmlにはありません。4D Write Proでは、カラムのレンジは実際にはセルのレンジであり、これはつまりカラムはセルと同じプロパティを持つことを意味します。
+(\*) Columns do not have equivalent in html. In 4D Write Pro, a column range is actually a range of cells, which means that columns have the same priority as cells.
 
-レンジを選択したら、[WP SET ATTRIBUTES](../commands/wp-set-attributes) コマンドを使用して適切な属性を適用することができます。セルの中では、そのコンテンツに応じて、属性は段落、章、あるいはピクチャーへと適用されます。例えば、表組みあるいは表組みのセルに対しては、高さ、フォントサイズ、境界線、パッディング、などを設定することができます(詳細な情報については、*4D Write Pro属性* の章を参照して下さい)。
+Once you have selected a range, you can apply any appropriate attribute using the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command. Within cells, attributes are applied to paragraphs, characters, or pictures, depending on their contents. For example, you can set the height, font size, border, padding, etc. of tables or table cells (for more information, please refer to the *4D Write Pro Attributes* section).
 
-異なる属性が表の要素に同時に適用された場合、レンダリングには以下の優先順位が適用されます:
+When different attributes are applied to concurrent elements of a table, a priority order is applied for the rendering:
 
-1. 表が最初にレンダリングされます
-2. 行がレンダリングされます(このとき表属性を上書きします)
-3. セル/カラムがレンダリングされます(このとき行属性を上書きします)
+1. Table is rendered first
+2. Rows are rendered (overriding table attributes)
+3. Cells/Columns are rendered (overriding row attributes).
 
-##### 列をリサイズする 
+### Resizing columns
 
-表の列の幅は、列のセパレータを左か右にドラッグすることで変更することができます。セパレータが水平方向に移動できる時、カーソルはルーラー上の水平方向の矢印に変形して移動可能であることを示します:
+The width of table columns can be modified by dragging the column separator to the left or right. The cursor changes to indicate that it can be moved horizontally and vertical line is shown in the ruler:
 
 ![](../../assets/en/WritePro/pict4619596.en.png)
 
-列のリサイズをすると、On After Edit フォームイベントが発生します。
+Resizing columns generates an On After Edit form event.
 
-列をリサイズするには、列セパレータをクリックし、左か右にドラッグします。最小の列幅は8pt です。右の列が最小幅に達すると、それ以降は隣の列より右にある列は全て移動されていきます。最初の列、またはすぐ左の列が最小幅に達した場合、その方向へのリサイズはそれ以上できません。
+To resize a column, click on the column separator and drag it to the left or right. Miniumum column size is 8pt. If the adjacent column on the right reaches the minimum size, all columns on the right will be moved. If the first column or an adjacent column to the left reaches the minimum size, no further resizing can occur in that direction.
 
 ![](../../assets/en/WritePro/pict4619694.en.png)
 
-**Shift** キーを押しながら列をリサイズすると、右の列の幅は変更されません。
+If you press the **Shift** key while resizing a column, the size of the adjacent column on the right will not be modified.
 
 ![](../../assets/en/WritePro/pict4619865.en.png)
 
-****Note:** 列のリサイズをするためには、4D Write Pro ドキュメントの入力可能プロパティが有効化されている必要があります。
+**Note**: The Enterable property must be enabled for the 4D Write Pro document to allow column resizing.
 
-##### セルの結合と結合解除 
+### Merging and splitting cells
 
-4D Write Pro では、表内のセルを結合したり結合解除したりできます。セルの結合とは、表内の同じ行または列にある隣り合った2つ以上のセルを1つのセルへと組み合わせることです。セルの結合解除とは、すでに結合したセルに対して、同じ行または列内にに並んだ複数の隣り合ったセルへと分割することです。セルは、[WP TABLE MERGE CELLS](../commands/wp-table-merge-cells) コマンドまたは**cell/merge** 標準アクションを使用することで結合でき、また[WP TABLE SPLIT CELLS](../commands/wp-table-split-cells) コマンドや**cell/split** 標準コマンドを使用することで結合解除できます。
+With 4D Write Pro, you can split and merge cells in a table. Merging cells is combining two or more adjacent table cells located in the same row or column into a single cell. Splitting cells is taking already merged cells and separating them into multiple adjacent cells in the same row or column. Cells can be merged using the command [WP TABLE MERGE CELLS](../commands/wp-table-merge-cells) or the standard action **cell/merge,** and splitted using the command [WP TABLE SPLIT CELLS](../commands/wp-table-split-cells) or the standard action **cell/split**.
 
 ![](../../assets/en/WritePro/pict6421031.en.png)
 
-表のセルは、以下の様に縦方向にも横方向にもその両方向にも結合することができます: 
+The table cells can be merged:
 
 ![](../../assets/en/WritePro/pict6441966.en.png)
 
-**ランゲージを使用したセル結合の例:**
+**Example of cell merging using the language:**
 
-1. 表内で結合したいセルのレンジを指定します。指定するセルは水平方向、垂直方向、またはその両方向に隣り合っている必要があります。
-2. 選択されたレンジに対して[WP TABLE MERGE CELLS](../commands/wp-table-merge-cells) コマンドを呼び出します。
+1. Designate a range of cells to merge in your table, the cells have to be either adjacent horizontally or vertically, or both.
+2. Call the command [WP TABLE MERGE CELLS](../commands/wp-table-merge-cells) on the selected range .
 
 ```4d
  $cells:=WP Table get cells($table;1;1;3;1)
  WP TABLE MERGE CELLS($cells)
-  //または
+  //or
  WP TABLE MERGE CELLS($table;1;1;3;1)
 ```
 
-元のセル内の既存のデータは、結合されたセル内で連結されます。
+Existing data from the original cells is concatenated in the resulting merged cell.
 
-実行前  
+before\
 ![](../../assets/en/WritePro/pict6421340.en.png)
 
-実行後  
+after\
 ![](../../assets/en/WritePro/pict6421342.en.png)
 
-**ランゲージを使用したセル結合解除の例:**
+**Example of cell splitting using the language:**
 
-1. 表内で結合を解除したいセルのレンジを指定します。選択されたレンジには既に結合されているセルが含まれている必要があります。
-2. 選択されたレンジに対して[WP TABLE SPLIT CELLS](../commands/wp-table-split-cells) コマンドを呼び出します。
+1. Designate a range of cells to be splitted in your table, the selected range has to contain some already merged cells.
+2. Call the command [WP TABLE SPLIT CELLS](../commands/wp-table-split-cells) on the selected range.
 
 ```4d
  $cells:=WP Table get cells($table;1;1;1;1)
  WP TABLE SPLIT CELLS($cells)
-  //または
+  //or
  WP TABLE SPLIT CELLS($table;1;1;1;1)
 ```
 
-既に結合していたセル内のデータは、結合解除の後には全て最初(左上)のセルに残されます。結合解除された他のセルは空のままとなります。
+Data from the already merged cell is kept all in the first resulting cell (top left) after the split, the other resulting cells from the split remain empty.
 
-実行前  
+before\
 ![](../../assets/en/WritePro/pict6421342.en.png)
 
-実行後  
+after\
 ![](../../assets/en/WritePro/pict6421344.en.png)
 
-**重要**: 
+**Important**:
 
-* 特殊行(データ行、ブレーク行、下部キャリーオーバー行)に属するセルは、どれも垂直方向に結合することはできません。
-* ヘッダー行に属するセルは、結合対象であるセルが全て他のヘッダー行に属している場合のみ垂直方向に結合することができます(ヘッダー行の次の、非ヘッダー行とは結合することができません)。
+- Any cell belonging to a special row (data row, a break row or bottom carry-over row) cannot be vertically merged.
+- Cells belonging to header rows can be vertically merged only if they all belong to other header rows (they cannot be merged with none header rows following the header rows).
 
-**結合したセルの指定:** 
+**Designating merged cells:**
 
-結合したセルは、4D Write Pro インターフェース、標準アクション、あるいはWP Set Attributes コマンドを使用することで、単一のセルと同じ様に操作することができます(背景色、境界線スタイル、段落スタイルなど)。
+A merged cell can be manipulated the same as a single cell (background color, border style, paragraph styles..) using the 4D Write Pro interface, the standard actions or the command [WP SET ATTRIBUTES](../commands/wp-set-attributes) .
 
-既存の表コマンドは全て、結合したセルを格納したレンジまたは要素に対して適用可能です。結合したセルが含まれる表においては、セルのインデックスはあたかもどのセルも結合していないのと同じ様に扱われます。  
+All the existing table commands are applicable to ranges or elements containing merged cells. In a table that contains merged cells, the indexes of the cells remain as if no cell has been merged.
 
-例: 
+例題 :
 
 ```4d
  $cell1:=WP Table get cells($table;1;1;1;1)
@@ -135,13 +133,13 @@ displayed_sidebar: docs
  WP SET ATTRIBUTES($cell4;wk background color;"pink")
 ```
 
-実行前  
+before\
 ![](../../assets/en/WritePro/pict6421342.en.png)
 
-実行後  
+after\
 ![](../../assets/en/WritePro/pict6421356.en.png)
 
-この例題では、$cell1 の代わりに$cell2 または$cell3 を渡して以下の様に実行することもできます:
+in this example you can also pass $cell2 or $cell3 instead of $cell1 such as:
 
 ```4d
  $cell2:=WP Table get cells($table;2;1;1;1)
@@ -151,198 +149,198 @@ displayed_sidebar: docs
  $cell3:=WP Table get cells($table;3;1;1;1)
 ```
 
-そして実行した結果は$cell1 を使用したときと同じ結果になります。なぜなら$cell1、$cell2、$cell3 はセル結合後は全て同じセルを参照し、$cell1、$cell2、$cell3 に対して適用された変更は全て実際には新しい結合されたセルへと適用されるからです。
+and it will have the same result as using $cell1 because $cell1, $cell2, and $cell3 all refer to the same cell after the merge, and any change applied to $cell1, $cell2, or $cell3 is actually applied to the new merged cell.
 
-しかし、行全体、あるいは列全体がx行(またはx列)が結合された場合には、その後の行または列のインデックスは、x分だけ減ることになります。
+However if an x number of full rows or full columns are merged together, the following rows or columns’s indexes are decremented by x.
 
-#### 表のページ分け 
+## Table pagination
 
-ページモードあるいは下書きモードで表示した場合(あるいはドキュメント印刷のコンテキストにおいて)、4D Write Pro の表は以下の場合に分割されることがあります:
+When displayed in Page or Draft mode (or the context of a document printing), 4D Write Pro tables can split:
 
-* 表の高さが利用可能なページ/カラムの高さより大きい場合には、自動的に分割されます。
-* あるいはプログラムによって、もしくはユーザーによって設定されたページ/カラムブレークに応じて分割されます。
- 表は行の間で分割することができ、また行そのものも分割可能です。表のページ分けはページの向きやカラムの数が変更された場合などに動的に更新されます。 
+- automatically, if the table height is greater than the available page/column height,
+- depending on page/column breaks set by programming or by the user.
+
+Tables can split between rows, and rows can split too. The table pagination is dynamically updated if the orientation or column number are modified.
 
 **注:**
 
-* wk page break inside row / wk page break inside table 属性(詳細は*4D Write Pro属性* 参照)、または標準アクション(詳細は*4D Write Pro標準アクションの使用* 参照)を使用することで、表内での自動分割を無効化することができます。
-* 表の行と段落とで異なる改ページオプションが設定されていた場合、行に適用されたオプションが優先されます。例えば、段落が改ページを許可していても、その親の行が改ページを許可していない場合、その行は分割されません。
+- You can disable automatic splits in tables by using the wk page break inside row / wk page break inside table attributes (see *4D Write Pro Attributes*) or the *table/avoidPageBreakInside* and *row/avoidPageBreakInside* standard actions (see *Using 4D Write Pro standard actions*).
+- When a table row and a paragraph have different page break options, the options applied to the row have precedence. For example, when a paragraph allows page breaks, but its parent row does not, the row will not split.
 
- 表のページ分けは、プログラムによって、あるいはユーザーによってコントロール可能です。利用可能なアクションには以下のものが含まれます: 
-* 表内に改ページを挿入する:  
-   * [WP INSERT BREAK](../commands/wp-insert-break) コマンド  
-   * *insertPageBreak* 標準アクション  
-   * デフォルトのコンテキストメニューの**改ページを挿入**オプション
-* 表内にカラムブレークを挿入  
-   * [WP INSERT BREAK](../commands/wp-insert-break) コマンド  
-   * *insertColumnBreak* 標準アクション  
-   * デフォルトのコンテキストメニューの**カラムブレークを挿入**オプション
+Table pagination can also be controlled by programming or by the user. Available actions include:
 
-改ページあるいはカラムブレークが標準アクションあるいはコンテキストメニューを介して挿入された時、それらは選択されたコンテンツの前に追加されます。選択範囲の最初の行は次のページあるいは次のカラムの最初に移動されます。例:
+- inserting a page break in a table:
+  - [WP INSERT BREAK](../commands/wp-insert-break) command
+  - *insertPageBreak* standard action
+  - **Insert page break** option of the default contextual menu
+- inserting a column break in a table:
+  - [WP INSERT BREAK](../commands/wp-insert-break) command
+  - *insertColumnBreak* standard action
+  - **Insert column break** option of the default contextual menu
+
+When a page break or a column break is inserted through a standard action or the contextual menu, it is added before the selected contents: the first row of the selection is moved at the beginning of the next page or column. 例:
 
 ![](../../assets/en/WritePro/pict3893246.en.png) \===> ![](../../assets/en/WritePro/pict3893248.en.png)
 
-****注意:** 
+**注:**
 
-* 分割可能なのは本文部分にある表だけです。ヘッダーまたはフッター内にある表にブレークが挿入されても、それは無視されます。
-* 表は異なるセクションへと分解することはできません。表内にセクションブレークを挿入すると、表全体が新しいセクションへと移動されます。
-* *キャリーオーバー行* が有効化されている場合には、行内のブレークは許可されません。
+- Only tables in the body part of a document can split. Breaks inserted in tables in headers and footers are ignored.
+- Tables cannot be broken in different sections. Inserting a section break in a table will move the whole table to the new section.
+- Breaks inside rows are not allowed when *Carry-over rows* are enabled.
 
-#### 繰り返し表示されるヘッダー行 
+## Repeated headers
 
-4D Write Pro では、1つの表につき、5つまでヘッダー行を指定することができます。ヘッダー行として選択された行は、カラムブレーク、あるいは改ページがあればそこに必ず繰り返し表示されます。
+4D Write Pro allows you to define up to five header rows per table. Selected header rows will be repeated on every column or page when a column break or a page break occurs.
 
 ![](../../assets/en/WritePro/pict5859437.en.png)
 
-表のヘッダー行に指定できるのは表の最初の行(あるいは最初の複数の行)です。ヘッダー行を定義するためには、以下の方法があります:
+Table headers are the first row(s) of the table. To define header rows, you can:
 
-* *headerRowCount* 標準アクション(*4D Write Pro標準アクションの使用* 参照)を使用する。
-* [WP SET ATTRIBUTES](../commands/wp-set-attributes) コマンドに対して、wk header row count (ターゲットは表、*テーブル*参照)、あるいは wk header (ターゲットは行、*行とカラム*参照)を使用する。
+- use the *headerRowCount* standard action (see *Using 4D Write Pro standard actions*), or
+- use the [WP SET ATTRIBUTES](../commands/wp-set-attributes) with wk header row count (on a table, see *Tables*), or wk header (on a row, see *Rows and columns*).
 
-5行以上の行をヘッダー行として指定した場合(あるいは既存のヘッダーに対して行を挿入した結果5行以上になった場合)、4D Write Pro は最初の5行のみをヘッダー行として使用します。ヘッダーとして定義されている行を削除した場合、ヘッダー行の数はそれだけ減少します。
+If you designate more than five rows as header (or if it results from an insertion of rows in an existing header), 4D Write Pro only uses the first five rows as header. If you remove row(s) defined in the header, the number of header rows is decreased.
 
-#### 表のデータソース 
+## Table datasource
 
-表に対してフォーミュラオブジェクトをデータソースとして割り当て、表内から*This を使用した式* を使用することで計算された値にアクセスすることができます(以下参照)。データソースのフォーミュラは、フォーミュラが計算されたとき(例: ドキュメントが開かれたとき、[WP COMPUTE FORMULAS](../commands/wp-compute-formulas) コマンドが呼ばれたとき、など)に4D Write Pro によって処理されます。この機能はデータコンテキストの機能を活用しています([WP SET DATA CONTEXT](../commands/wp-set-data-context) 参照)。
+You can assign a formula object as a datasource for a table and access the resulting value(s) from within the table using *Expressions with This* (see below). The datasource formula is processed by 4D Write Pro when formulas are computed (e.g. when the document is opened, when the [WP COMPUTE FORMULAS](../commands/wp-compute-formulas) command is called, etc.). This feature takes advantage of data contexts (see [WP SET DATA CONTEXT](../commands/wp-set-data-context)).
 
-データソースのフォーミュラオブジェクトが(空でない)コレクションまたはエンティティセレクションを返す場合、フォーミュラが計算されるとすぐに表はデータが埋められます。表にはコレクション内にある要素数分だけ、あるいはエンティティセレクション内のエンティティ数分だけ行が表示されます。(ヘッダー行を除いた)最初の行はテンプレート行として使用され、そこにはThis.item.lastname といったような特別なキーワードを使用した式を挿入することができます。式はコレクションまたはエンティティセレクションからのデータの処理中に置き換えられます。このテンプレート行は、フォーミュラが計算された後のコレクションまたはエンティティセレクション内の項目数と項目行の数が合致するように複製されていきます。  
-  
-表にデータソースを割り当てる場合、[WP SET ATTRIBUTES](../commands/wp-set-attributes) コマンドとwk datasource 定数を使用し、値として*4D formula* オブジェクトを渡します。例えば、表の中にFrance に住む全ての人のデータを行に表したい場合、以下のようなコードを使用します:  
-  
+To assign a datasource to a table, use the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command with the wk datasource and a *4D formula* object as value. For example, to fill a table with a row for every person living in France:
+
 ```4d
  $formula:=Formula(ds.people.query("country = :1";"France"))
  WP SET ATTRIBUTES($table;wk datasource;$formula)
 ```
 
-* データソースフォーミュラがオブジェクトが(空ではない)コレクションまたはエンティティセレクションを返す場合、表はフォーミュラが計算される時点で地頭的に埋められていきます。行の数は少なくともコレクション内の要素数、またはエンティティセレクション内のエンティティ数と同じだけ格納されています。データ行と呼ばれる、表の最初の行は、テンプレート行として使用されます(ヘッダー行とブレーク行(あれば)は除く)。
-* データ行(およびブレーク行)内では、This.item.lastname のような特殊なキーワードを使用した式を挿入することができます。式は、処理の過程で、コレクションまたはエンティティセレクションからのデータによって置き換えられます。繰り返される行は、フォーミュラ計算後に項目行がコレクションまたはエンティティセレクション内の項目の数と同じになるように複製されていきます。
-* データソースフォーミュラがコレクションまたはエンティティセレクションを返さない場合、あるいは空のコレクション/エンティティセレクションを返す場合、表の行は自動的には作成されず、全ての行は通常の行として扱われます。データソースが空の場合に表示されるプレースホルダー行を定義することができます。
+- If the datasource formula object returns a (non empty) collection or entity selection, the table is automatically filled when the formula is computed: it contains at least as many rows as there are elements in the collection or entities in the entity selection. The first table row, called the data row, is used as a template row (excluding header row(s) and the possible break row(s)).
+- In the data row (and break row(s)), you can insert expressions that use special keywords such as *This.item.lastname*. Expressions are replaced during processing by data from the collection or entity selection. The data row will be duplicated so that the number of item rows is equal to the number of items in the collection or entity selection after formulas are computed.
+- If the datasource formula does not return a collection or a an entity selection, or if it returns an empty collection/entity selection, the table rows are not created automatically and all rows are treated as regular rows. You can define a placeholder row to be displayed in case of empty datasource.
 
-表からデータソースを削除するためには、[WP RESET ATTRIBUTES](../commands/wp-reset-attributes) コマンドを使用してください。このコマンドはデータソース属性値をnull に設定します:  
-  
+To remove a datasource from a table, use the [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) command. It will set the datasource attribute value to *null*:
+
 ```4d
  WP RESET ATTRIBUTES($table;wk datasource)
 ```
 
-##### データソースに基づく表組み 
+### Building a table with datasource
 
-データソースに基づいた表デザインは、以下のような行を格納しています:
+A table design based upon a datasource can contain the following rows:
 
-| **アイコン**                                                      | **行 <br/>** | **数** | **必須** | **条件**                            | **説明**                                                                                                                                                                                  |
-| ------------------------------------------------------------- | ------------------- | ----- | ------ | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![](../../assets/en/WritePro/pict6260026.en.png)              | ヘッダー行               | 最大5   | \-     | \-                                | 標準の表ヘッダー、*繰り返し表示されるヘッダー行* 参照                                                                                                                                                            |
-| ![](../../assets/en/WritePro/pict7148495.en.png)<br/>        | データ行                | 1     | 必須     | データソースフォーミュラは必ず繰り返される要素を返す必要があります | 表にヘッダー行またはブレーク行がない場合、データ行が表の最初の行となります。それ以外の場合には、ヘッダー行の後の最初の行がこの行となります。一般的には**This** を使用した式(例: *This.item.value* )が記述されています。ドキュメントが*値を表示*モードで行が複製されているとき、この式を通して処理されたデータへとアクセスすることができます。 |
-| ![](../../assets/en/WritePro/pict6260033.en.png)<br/> | ソートブレーク行            | 最大5   | \-     | データソースフォーミュラは必ず繰り返される要素を返す必要があります | データ行の前または後に表示される行。 *ブレーク行* 参照                                                                                                                                                           |
-| ![](../../assets/en/WritePro/pict6260036.en.png)<br/> | 下部キャリーオーバー行         | 1     | \-     | データソースフォーミュラは必ず繰り返される要素を返す必要があります | データ行またはブレーク行のあとに最初に表示される行。*キャリーオーバー行* 参照                                                                                                                                                |
-| ![](../../assets/en/WritePro/pict7014959.en.png)              | プレースホルダー行           | 1     | \-     | データソースが定義されている必要があります             | プレースホルダ行は、表に対してデータソースが空でかつ"プレースホルダー行を表示"属性が*emptyDatasource* 標準アクションまたは*wk empty datasource* 定数を通して設定されていた場合に、データ行の代わりに表示される行です。プレースホルダー行はその他の行の直前に表示されます。                              |
-| |  その他の行                                                      | 無制限                 | \-    | \-     | 標準の行(複製されません)                     |                                                                                                                                                                                         |
+| **icon**                                              | **Rows**              | **Number** | **Mandatory** | **Conditions**                                       | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |   |
+| ----------------------------------------------------- | --------------------- | ---------- | ------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
+| ![](../../assets/en/WritePro/pict6260026.en.png)      | Header rows           | up to 5    | \-           | \-                                                  | Standard table header, see *Repeated headers*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |   |
+| ![](../../assets/en/WritePro/pict7148495.en.png)<br/> | Data row              | 1          | ◯             | The datasource formula must return iterable elements | If the table does not have header rows and/or break row(s), the data row is the first row of the table - otherwise, it is the first row following either the header or the break row(s). It is usually filled with expressions using **This** (e.g. *This.item.value*) that give access to processed data when the document is in *Display values* mode and the row is duplicated. |   |
+| ![](../../assets/en/WritePro/pict6260033.en.png)<br/> | Sort break rows       | up to 5    | \-           | The datasource formula must return iterable elements | The row(s) appearing before or after the data row. See *Break rows*                                                                                                                                                                                                                                                                                                                                                                                                                                      |   |
+| ![](../../assets/en/WritePro/pict6260036.en.png)<br/> | Bottom carry-over row | 1          | \-           | The datasource formula must return iterable elements | The first row following the data row or the break row(s). See *Carry-over rows*                                                                                                                                                                                                                                                                                                                                                                                                                          |   |
+| ![](../../assets/en/WritePro/pict7014959.en.png)      | Placeholder row       | 1          | \-           | The datasource must be defined                       | placeholder row is to be displayed instead of the data row and the break rows (if any) when the datasource is empty and the "Show placeholder row" attribute is set on the table via the standard action *emptyDatasource*or the constant *wk empty datasource*. The placeholder row comes immediately before the other rows.                                                                                                                                                            |   |
+|                                                       | Other rows            | unlimited  | \-           | \-                                                  | Standard rows (not duplicated)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |   |
 
-表示例(*参照を表示* モード):
+Example (*Show references* mode):
 
 ![](../../assets/en/WritePro/pict7148443.en.png)
 
-フォーミュラが計算されると、繰り返される行は、データソースフォーミュラから返される全エンティティ数またはコレクション項目数と合致するまで自動的に複製されます:
+When the formulas are computed, the data row is automatically duplicated as needed to match all entities or collection items returned by the datasource formula:
 
 ![](../../assets/en/WritePro/pict5907013.en.png)
 
-いずれの場合にしても、以下の宣言を使用することで実際の行数を得ることができます:
+In any cases, the following statement returns the actual number of rows:
 
 ```4d
- WP GET ATTRIBUTES($table;wk row count;$vcount) // 上記の例の場合には31
+ WP GET ATTRIBUTES($table;wk row count;$vcount) //31 for the example above
 ```
 
-##### キャリーオーバー行 
+### Carry-over rows
 
-データソースに基づいた表は**下部キャリー行**をサポートします。これは表が複数のページ/カラムに分割される場合に各ページ/カラムの下部に自動的に表示される行です。キャリーオーバー行は**This.previousItems** という式を使用することで、ここまで表示/印刷された項目に基づいた追加の情報を表示することができます(*This を使用した式* 参照)。この機能を使用することで、例えば小計行を追加することなどができます。
+Tables based on datasources support **bottom carry-over rows** that are automatically displayed at the bottom of each page/column when the table is split over more than one page/column. A carry-over row can display extra information based on previously displayed/printed items, thanks to the **This.previousItems** expression (see *Expressions with This*). This feature allows you, for example, to add subtotal rows.
 
 ![](../../assets/en/WritePro/pict6022144.en.png)
 
-キャリーオーバー行は以下のように表示されます: 
+Carry-over rows are displayed:
 
-* データソース表が単一のページ(またはカラム)に収まらない場合に表示されます
-* 表の下部に表示されます
-* 最初のページ(または最初のカラム)を含め、他の全てのページ/カラムに表示されますが、最後のページ/カラムには表示されません。
+- when a datasource table does not fit in a single page (or column)
+- at the bottom of the table
+- on the first page (or first column) and all other ones except on the last one.
 
-**重要:** キャリーオーバー行は、空でないコレクションまたはエンティティセレクションを返すデータソースフォーミュラで埋められた表において、値を表示モードのときにのみ利用できます。それ以外の場合、またはデータソースフォーミュラが計算されていない場合には、キャリーオーバー行は通常の行として表示されます。
+**Important:** Carry-over rows are only available on tables filled by a datasource formula returning a non-empty collection or entity selection and in display values mode. In all other cases or when the datasource formula has not been computed, a carry-over row is displayed as a regular row.
 
-キャリーオーバー行は以下のように作成できます:
+To create carry-over rows:
 
-1. 表のテンプレートに、データ行またはブレーク行のすぐ後に行を追加し、例えば**This.previousItems** のように必要なフォーミュラを中に入力します。
-2. ドキュメントにおいてキャリーオーバー行を有効化します。以下の2つの方法があります:  
-\- *bottomCarryOverRow* 標準アクションを使用する(*4D Write Pro標準アクションの使用* 参照)  
-\- [WP SET ATTRIBUTES](../commands/wp-set-attributes) コマンドに wk bottom carry over row *表* 属性セレクターを組み合わせて使用する
+1. In the table template, add a row just after the data row or the break row(s) and insert any necessary formulas inside, using for example **This.previousItems**.
+2. Enable the carry-over row feature for your document. You can:\
+   \- use the *bottomCarryOverRow* standard action (see *Using 4D Write Pro standard actions*), or\
+   \- use the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command with the wk bottom carry over row *Tables* attribute selector.
 
-**注意:** キャリーオーバー行機能が有効化されている場合、行内の改ページは許可されません(*表のページ分け* 参照)。対応するオプションが設定されてい場合には、無視されます。
+**Note:** Page breaks inside rows are not allowed when the carry-over row feature is enabled (see *Table pagination*). Corresponding options, if set, are ignored.
 
-##### ブレーク行 
+### ブレーク行の管理
 
-データソースに基づいた表では1つまたは複数の**並べ替えブレーク行**をサポートします。これはデータ行の前または後に表示することができます。**並べ替えブレーク行**を使用すると、表内で既に並べ替えられているデータソースの項目を、計算されたフォーミュラの値に基づいて複数の部分に区分けすることができます。
+Tables based on datasources support one or several **Sort Break Rows** that can be displayed either before or after the data row. S**ort Break Rows** help you to visually divide your already sorted datasource items in your table into different parts based on a computed formula value.
 
 ![](../../assets/en/WritePro/pict6236360.en.png)
 
-フォーミュラの値が変わるたびに、新しいブレーク行が挿入されます。そのため、表が正確にレンダリングされるためには、表のデータソースとして使用されているエンティティセレクション(またはコレクション)は**適切にソートされている必要があります**。例えば、国ごとおよび都市ごとにブレーク行を挿入したい場合、データソースは以下のように指定されている必要があります: *ds.people.all().orderBy("country asc, city asc")*
+Each time the formula value changes, a new break row is inserted. Therefore, for tables to be rendered correctly, the entity selection (or collection) used as table datasource **must be sorted accordingly**. For example, if breaks by countries and cities are wanted, then the datasource must be sorted as follows: *ds.people.all().orderBy("country asc, city asc")*
 
-ブレーク値は、*wk break formula*  属性を通して定義されます。値は通常、"This.item.name'' のような、項目のプロパティに基づいたフォーミュラです。そうでない場合には値は全く変化しないことがあり、これではブレークフォーミュラは意味のないものになってしまいます。*wk break formula* 属性は、表に何のデータソースもない場合、あるいは行がヘッダー行の場合には無視されます。ブレーク行はデータ行と(前か後ろに)隣り合うか、他のブレーク行と隣り合うように配置されなければなりません。そうでない場合にはこれは無視されます。
+The break value is defined through the *wk break formula* attribute. Value is usually a formula based on an item property like "This.item.name'', otherwise the computed value may never change which makes the break formula useless. The *wk break formula* attribute is ignored if the table has no datasource or if the row is a header. A break row must be adjacent to the data row (either before or after), or to another break row, otherwise it is ignored.
 
 ```4d
  WP SET ATTRIBUTES($row_2;wk break formula;Formula(This.item.country))
 ```
 
-この機能で使用することができる**This.breakItems** 式を使用することで、例えば、データ行全体の平均を1つのブレーク行で表示することができます。breakItems は、表のデータソースがエンティティセレクションならエンティティセレクションの、表のデータソースがコレクションならコレクションの、データソースの評価されたサブセットです。そのため、ブレーク行内には、以下のように書くことができます: *This.breakItems.sum("salary")*
+Thanks to the **This.breakItems** expression you can use this feature, for example, to display the total average of the data rows within one break row. breakItems is an evaluated subset of the table datasource, either an entity selection if the table datasource is an entity selection, or a collection if the datasource is a collection. So, inside a break row, you can type: *This.breakItems.sum("salary")*
 
-ブレーク行を作成するには、以下の手順に従って下さい:
+To create break rows:
 
-1. データソースを、表示したいブレークに対応したレベルで並べ替えして下さい。例: *ds.People.all().orderBy("continent asc, country asc, city asc")*
-2. ブレーク行を表のテンプレート内に追加します。ブレーク行をデータ行の後に配置したい場合、ブレークはデータソースとは**逆順のソート**と合致する必要があり、繰り替えされる行の前に配置したい場合、ブレークはデータソースと**同じソート順**と合致する必要があります。
-3. 選択された行に対して*wk break formula* 属性を設定します:
+1. Order the datasource with the levels corresponding to the breaks you want to display, for example, *ds.People.all().orderBy("continent asc, country asc, city asc")*
+2. Draw the break row(s) in the table template. If the breaks are located after the data row, they must match the **opposite sort order** as the datasource, and if they are located before the data row, they must match **the same sort order** as the datasource.
+3. Set the attribute *wk break formula* to the selected row(s):
 
 ```4d
- $row:=WP Table get rows($table;2;1) //2行目をブレークとして選択
+ $row:=WP Table get rows($table;2;1) //select the second row as break
  WP SET ATTRIBUTES($row_2;wk break formula;Formula(This.item.country))
 ```
 
-##### This を使用した式 
+### Expressions with This
 
-表内のフォーミュラ内で使用された場合、**This** キーワードはコンテキストに応じて異なるデータへのアクセスを提供します:
+When used in a formula within the table, the **This** keyword gives access to different data according to the context:
 
-| **コンテキスト**                                            | **式<br/>**         | **型**                                           | **返されるもの**                                                                                                                                                          |
-| ----------------------------------------------------- | -------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 全て                                                    | This.table                 | オブジェクト                                          | カレントの表                                                                                                                                                              |
-| |  This.row                                           | オブジェクト                     | カレントの表の行要素                                      |                                                                                                                                                                     |
-| |  This.rowIndex                                      | 数値                         | カレント行のインデックス、1から数え始める                           |                                                                                                                                                                     |
-| 表に対してデータソースが定義されている場合                                 | This.table.dataSource      | オブジェクト (formula)                                | データソースをフォーミュラとして取得                                                                                                                                                  |
-| |  This.tableData                                     | (通常は)コレクションまたはエンティティセレクション | 評価された table.dataSource                          |                                                                                                                                                                     |
-| 表のデータソースがコレクションまたはエンティティセレクションを返す場合のそれぞれのデータ行内        | This.item.xxx              | 不定                                              | 表のデータソースのコレクションまたはエンティティセレクションにマップされたそれぞれの項目。例えば、割り当てられたエンティティに*firstName* 属性がある場合には**This.item.firstName** でアクセス可能                                                 |
-| |  This.itemIndex                                     | 数値                         | コレクションまたはエンティティセレクション内でのカレントの項目のインデックス、0から数え始める |                                                                                                                                                                     |
-| データソースがコレクションまたはエンティティセレクションを返す表における任意の行(ただしヘッダー行を除く) | This.previousItems         | コレクションまたはエンティティセレクション                           | 下部キャリーオーバー行の前まで、あるいは式の行の前までのページに表示された要素。これには式を格納している行を表示しているページも含まれます。<br/>この式は **This.tableData** の式と同じ型の値を返します。                                           |
-| ブレーク行内                                                | This.breakItems            | コレクションまたはエンティティセレクション                           | コレクションまたはエンティティセレクションの項目が以下の場所に表示されます: ブレーク行が、データ行の後に表示される場合には、現在のブレーク行とその同レベルの前のブレーク行(もしくは表のスタート)との間 ブレーク行が、データ行の前に表示される場合には、現在のブレーク行とその同レベルの後のブレーク行(もしくは表の終わり)との間 |
+| **Context**                                                                                                            | **Expression**                                        | **型**                                                       | **戻り値**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |   |
+| ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
+| Anywhere                                                                                                               | This.table                            | Object                                                      | Current table                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |   |
+|                                                                                                                        | This.row                              | Object                                                      | Current table row element                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |   |
+|                                                                                                                        | This.rowIndex                         | Number                                                      | Index of the current row, starting from 1                                                                                                                                                                                                                                                                                                                                                                                                                                                               |   |
+| When a datasource has been defined for the table                                                                       | This.table.dataSource | Object (フォーミュラ)                          | Datasource as a formula                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |   |
+|                                                                                                                        | This.tableData                        | Collection or Entity selection (usually) | Evaluated table.dataSource                                                                                                                                                                                                                                                                                                                                                                                                                                                              |   |
+| In each data row when a table datasource returns a collection or an entity selection                                   | This.item.xxx         | 制限なし                                                        | Mapped to each item of the table datasource collection or entity selection, for example **This.item.firstName** if the associated entity has the *firstName* attribute                                                                                                                                                                                                                                                                                                  |   |
+|                                                                                                                        | This.itemIndex                        | Number                                                      | Index of the current item in the collection or entity selection, starting from 0                                                                                                                                                                                                                                                                                                                                                                                                                        |   |
+| In any row (except header rows) when a table datasource returns a collection or an entity selection | This.previousItems                    | Collection or Entity selection                              | Items displayed on the pages before the bottom carry over row (if any) or before the row of the expression, including the page where is displayed the row containing the expression. <br/>This expression returns the same type of value as the **This.tableData** expression.                                                                                                                                                       |   |
+| In a break row                                                                                                         | This.breakItems                       | Collection or Entity selection                              | Items of the collection or entity selection displayed in the rows between: the current break row and the previous break row of the same level (or the start of the table) if the break row(s) are displayed after the data row. the current break and the next break row of the same level (or the end of the table) if the break row(s) are displayed before the data row. |   |
 
-その他のコンテキストにおいては、これらの式は*undefined* を返します。
+In any other contexts, these expressions will return *undefined*.
 
-**注意:** フォーミュラの挿入についてのより詳しい情報については、[WP INSERT FORMULA](../commands/wp-insert-formula) を参照してください。
+**Note:** For more information about formula insertion, see [WP INSERT FORMULA](../commands/wp-insert-formula).
 
-##### 表のデータソースを扱う 
+### Working with a table datasource
 
-表がデータソースからのデータが表示されている場合、参照が計算されると行が自動的に作成されます。行を挿入または削除したり、セルのコンテンツを削除したり、スタイルを変えたり、といったことができます:
+When a table is filled from a datasource, rows are automatically created when references are computed. You can insert or delete rows, edit cell contents, change the style, etc.:
 
 ![](../../assets/en/WritePro/pict5907021.en.png)
 
-しかしながら、表のデータソースが再計算された場合、計算された行への変更は(最初の行以外)全て失われてしまうという点に注意して下さい。その一方で、最初の行はデータ行であるため、この行に対して行われた変更は、表のデータソースが再計算された際に全ての行へと伝搬していきます。同じことはブレーク行にも適用され、計算されたブレーク行に対して行われた編集はテンプレートブレーク行を除いて全て失われてしまいます(テンプレートのブレーク行は表の最初または最後に配置されます)。
+However, keep in mind that if the table datasource is recomputed, any modifications made on computed rows (except on the first row) are lost. On the other hand, since the first row is the data row, any modification made to this row will be propagated to all rows if the table datasource is recomputed. Same thing goes for break rows, any modifications made on computed break rows are lost, except for the template break rows (which can be located either at the end or the beginning of the table).
 
-例えば、以下の表は、:
+例:
 
 ![](../../assets/en/WritePro/pict5907023.en.png)
 
-式が再計算されたあとは以下のようになります:
+After recomputing expressions:
 
 ![](../../assets/en/WritePro/pict5907026.en.png)
 
-カーソルが、データソースが割り当てられている表のセル内に挿入された時、以下の情報を表示する警告アイコンが左上角に表示されます:
+When the cursor is inserted in a cell of a table filled with a datasource, a warning icon is displayed on the left side along with a tip that displays information:
 
 ![](../../assets/en/WritePro/pict5907030.en.png)
 
-フォーミュラが参照として表示されている場合、あるいはドキュメントを保存した時、最初の行のみがテンプレート行として表示/保存されます(フォーミュラが固定化されていなかった場合)。
+When formulas are displayed as references or when you save the document, only the first row is displayed/saved as template (if formulas are not frozen).
 
-フォーミュラが固定化されると、表は標準の表となり、表のデータソースはリセットされます。
+When the formulas are frozen, the table becomes a standard table and the table datasource is reset.
 
-**注意:** *freezeExpressions* 標準アクションを使用しても、フォーミュラは再計算されません。
+**Note:** *freezeExpressions* standard action does not recompute formulas.
