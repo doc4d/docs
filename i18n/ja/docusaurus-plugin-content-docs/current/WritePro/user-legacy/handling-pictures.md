@@ -1,94 +1,94 @@
 ---
 id: handling-pictures
-title: Handling pictures
+title: ピクチャー
 displayed_sidebar: docs
 ---
 
-#### 背景画像 
+## Adding pictures
 
-ピクチャーは4D Write Pro ドキュメントあるいはドキュメント要素(テーブル、段落、セクション、ヘッダー/フッター等)の、背景画像として設定することが可能です。
+Adding pictures to a 4D Write Pro document can be accomplished in multiple ways and depend on your needs:
 
-以下の図は、ピクチャーをドキュメントの背景として使用する二つの異なる方法を示したものです:
+- to add a **background picture**, use the wk background image or wk background image url attribute with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command
+- to add an **inline picture**, *i.e.* inserted in the text flow just like a character, use the [WP INSERT PICTURE](../commands/wp-insert-picture) or the [ST INSERT EXPRESSION](../../commands/st-insert-expression) command
+- to add an **anchored picture** in the page (behind or in front of the text), use the [WP Add picture](../commands/wp-add-picture) command.
 
-> ![](../../assets/en/WritePro/pict3541581.en.png) 
-
-背景画像はプログラミングによって、あるいはコンテキストメニューによって設定することが可能です。詳細な情報については、*4D Write Pro エリアを使用する* の記事内の*背景* の章を参照してください。
-
-背景画像の表示はプログラムによって、またはコンテキストメニューによって設定することができます。背景表示モードの値は以下の定数の詳細に記されているように背景設定のプリセットを定義するという点に注意してください:
-
-| 定数                       | コメント                                                                                                                                                                                                                                                                                                                                                                                                             |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| wk proportional          | wk image display mode の値として使用された場合、画像はコンテンツボックスの左上に配置され、繰り返しはされず、コンテンツボックスに収まるように縮小/拡大され、元のアスペクト比を保ちます。 wk background display mode の値として使用された場合、以下の属性をプリセットします: wk background width \= "contain" wk background height \= "auto" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk left wk background position vertical \= wk top               |
-| wk proportional centered | wk image display mode の値として使用された場合、画像はコンテンツボックスの中方に配置され、繰り返しはされず、コンテンツボックスに収まるように縮小/拡大され、元のアスペクト比を保ちます。 wk background display mode の値として使用された場合、以下の属性をそれぞれ次のようにプリセットします: wk background width \= "contain" wk background height \= "auto" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk center wk background position vertical \= wk center |
-| wk replicated            | wk image display mode の値として使用された場合、画像はコンテンツボックスの左上に配置され、繰り返され、元のサイズを保ちます。 wk background display mode の値として使用された場合、以下の属性をそれぞれ次のようにプリセットします: wk background width \= "auto" wk background height \= "auto" wk background repeat \= wk repeat wk background origin \= wk padding box wk background position horizontal \= wk left wk background position vertical \= wk top                                          |
-| wk replicated centered   | wk image display mode の値として使用された場合、画像はコンテンツボックスの中央に配置され、繰り返され、元のサイズを保ちます。 wk background display mode の値として使用された場合、以下の属性をそれぞれ次のようにプリセットします: wk background width \= "auto" wk background height \= "auto" wk background repeat \= wk repeat wk background origin \= wk padding box wk background position horizontal \= wk center wk background position vertical \= wk center                                     |
-| wk scaled to fit         | wk image display mode の値として使用された場合、画像はコンテンツボックスに収まるように縮小/拡大され、繰り返しはされません。 wk background display mode の値として使用された場合、以下の属性を変更します: wk background width \= "100%" wk background height \= "100%" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk left wk background position vertical \= wk top                                                   |
-| wk truncated             | wk image display mode の値として使用された場合、画像はコンテンツボックスの左上に配置され、繰り返しはなく、オリジナルのサイズを保ちます。 wk background display mode の値として使用された場合、以下の属性をそれぞれ次のようにプリセットします: wk background width \= "auto" wk background height \= "auto" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk left wk background position vertical \= wk top                                 |
-| wk truncated centered    | wk image display mode の値として使用された場合、画像はコンテンツボックスの中央に配置され、繰り返しはされず、オリジナルのサイズを保ちます。 wk background display mode の値として使用された場合、以下の属性をそれぞれ次のようにプリセットします: wk background width \= "auto" wk background height \= "auto" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk center wk background position vertical \= wk center                           |
-
-#### ピクチャーの追加 
-
-4D Write Pro ドキュメントへのピクチャーの追加は、必要に応じて複数の方法で行うことができます:
-
-* **背景画像**を追加するためには、[WP SET ATTRIBUTES](../commands/wp-set-attributes) コマンドとwk background image 属性あるいは wk background image url 属性を使用します。
-* **インライン画像**(文字のようにテキストフローに挿入された画像)を追加するためには、[WP INSERT PICTURE](../commands/wp-insert-picture) あるいは [ST INSERT EXPRESSION](../../commands/st-insert-expression) コマンドを使用します。
-* **アンカー画像**をページ内(テキストの後ろあるいは前面)に追加するためには、[WP Add picture](../commands/wp-add-picture) コマンドを使用します。
-
-ピクチャーの追加方法によって画像が位置するレイヤーが決定されます。以下の図を参照してください:
+The way you add a picture determines the layer it is positioned in, as illustrated in the diagram below:
 
 ![](../../assets/en/WritePro/pict3626363.en.png)
 
-#### アンカーされたピクチャーの位置と表示 
+## Background pictures
 
-アンカーされたピクチャーは絶対位置で、テキストの前あるいは後ろに追加されます。また、ページあるいはドキュメントの特定のパーツ(ヘッダー、フッター、セクションなど)にアンカーすることもできます。ピクチャーに絶対位置を設定するためには、[WP Add picture](../commands/wp-add-picture) and [WP SET ATTRIBUTES](../commands/wp-set-attributes) コマンドを使用します。
+Pictures can be set as the background of 4D Write Pro documents and document elements (tables, paragraphs, sections, headers/footers, etc.).
 
-アンカーされた画像の位置は以下の特定の属性あるいは標準アクションを使用することで変更可能です:
+Here is an example showing two different ways a picture can be used as a document's background:
 
-| **プロパティ(定数)**               | **標準アクション**             |
-| --------------------------- | ----------------------- |
-| wk anchor layout            | *anchorLayout*          |
-| wk anchor horizontal offset |                         |
-| wk anchor horizontal align  | *anchorHorizontalAlign* |
-| wk anchor vertical offset   |                         |
-| wk anchor vertical align    | *anchorVerticalAlign*   |
-| wk anchor origin            | *anchorOrigin*          |
-| wk anchor page              | *anchorPage*            |
-| wk anchor section           | *anchorSection*         |
-| | *moveToBack*              |                         |
-| | *moveToFront*             |                         |
+> ![](../../assets/en/WritePro/pict3541581.en.png)
 
-アンカーされたピクチャーは、左側/右側/大きい側/上と下またはwk anchor layout プロパティまたは**anchorLayout** 標準アクションを通して提供されるオプションでドキュメントにアンカーされた場合、自動テキスト折り返しをサポートします。詳細については [こちらのblog記事](https://blog.4d.com/4d-write-pro-more-display-options-for-anchored-pictures-and-text-boxes/) を参照してください。
+Background pictures can be set either programmatically or via the context menu. For more information, see the *Background* section in the *Using a 4D Write Pro area* article.
+
+Background picture display can also be set either programmatically or via the context menu. Note that background display mode values actually define presets of background settings, as listed in the constant description:
+
+| 定数                       | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| wk proportional          | When used as value of wk image display mode, the image is aligned at the top left of the content box, not replicated, scaled to fit the content box, and it keeps its aspect ratio. When used as value of wk background display mode, presets the following attributes: wk background width \= "contain" wk background height \= "auto" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk left wk background position vertical \= wk top |
+| wk proportional centered | When used as value of wk image display mode, the image is centered in the content box, not replicated, scaled to fit the content box and it keeps its aspect ratio. When used as value of wk background display mode, presets the following attributes: wk background width \= "contain" wk background height \= "auto" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk center wk background position vertical \= wk center            |
+| wk replicated            | When used as value of wk image display mode, the image is aligned at the top left of the content box, replicated, and keeps its original size. When used as value of wk background display mode, presets the following attributes: wk background width \= "auto" wk background height \= "auto" wk background repeat \= wk repeat wk background origin \= wk padding box wk background position horizontal \= wk left wk background position vertical \= wk top                                            |
+| wk replicated centered   | When used as value of wk image display mode, the image is centered in the content box, replicated, and keeps its original size. When used as value of wk background display mode, presets the following attributes: wk background width \= "auto" wk background height \= "auto" wk background repeat \= wk repeat wk background origin \= wk padding box wk background position horizontal \= wk center wk background position vertical \= wk center                                                      |
+| wk scaled to fit         | When used as value of wk image display mode, the image is scaled to fit the content box and is not replicated. When used as value of wk background display mode, modifies the following attributes: wk background width \= "100%" wk background height \= "100%" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk left wk background position vertical \= wk top                                                                        |
+| wk truncated             | When used as value of wk image display mode, the image is aligned at the top left of the content box, not replicated, and it keeps its original size. When used as value of wk background display mode, presets the following attributes: wk background width \= "auto" wk background height \= "auto" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk left wk background position vertical \= wk top                                  |
+| wk truncated centered    | When used as value of wk image display mode, the image is centered in the content box, not replicated, and it keeps its original size. When used as value of wk background display mode, presets the following attributes: wk background width \= "auto" wk background height \= "auto" wk background repeat \= wk no repeat wk background origin \= wk padding box wk background position horizontal \= wk center wk background position vertical \= wk center                                            |
+
+## Positioning and displaying of anchored pictures
+
+Anchored pictures are added with an absolute position, in front of/behind text, as well as anchored to the page or specific parts of a document (*i.e.*, header, footer, sections). Setting an absolute position for a picture is accomplished with the [WP Add picture](../commands/wp-add-picture) and [WP SET ATTRIBUTES](../commands/wp-set-attributes) commands.
+
+Anchored picture positions can be modified with the following specific attributes and/or standard actions:
+
+| **Property (constant)** | **標準アクション**             |   |
+| ------------------------------------------ | ----------------------- | - |
+| wk anchor layout                           | *anchorLayout*          |   |
+| wk anchor horizontal offset                |                         |   |
+| wk anchor horizontal align                 | *anchorHorizontalAlign* |   |
+| wk anchor vertical offset                  |                         |   |
+| wk anchor vertical align                   | *anchorVerticalAlign*   |   |
+| wk anchor origin                           | *anchorOrigin*          |   |
+| wk anchor page                             | *anchorPage*            |   |
+| wk anchor section                          | *anchorSection*         |   |
+|                                            | *moveToBack*            |   |
+|                                            | *moveToFront*           |   |
+
+Anchored pictures support automatic text wrapping when anchored to a document with options like on the left, right, largest side, above and below, or all around provided through the property wk anchor layout or the standard action **anchorLayout**. Check this [blog post](https://blog.4d.com/4d-write-pro-more-display-options-for-anchored-pictures-and-text-boxes/) for more details.
 
 ![](../../assets/en/WritePro/pict6856159.en.png)
 
-テキスト折り返しが設定されているピクチャーがページの本文に対してアンカーされている場合、それらはヘッダーまたはフッターには影響しません(ピクチャーはヘッダーまたはフッターの前面に表示されます)。その反対に、ヘッダーまたはフッターにアンカーされたピクチャーは、ページの本文と重なった場合にはそちらに影響します。
+Pictures with text wrapping anchored to the body of the page do not affect the header or the footer (the picture is displayed in front of the header or the footer); on the contrary, pictures anchored to the header and footer affect the body of the page if they overlap it.
 
-**注意**: テキスト折り返しが設定されているピクチャーをヘッダーまたはフッターにアンカーしたい場合、ピクチャーの横方向揃えを上揃えに設定する必要があります。
+**Note**: If you want to anchor a picture with text wrapping to the header or footer, you must also set the vertical alignment of the picture to the top.
 
-アンカーされたピクチャーは全てページビューモードでのみ表示されます。以下の場合には表示されません:
+All anchored pictures are displayed in the Page view mode only. They're not displayed if:
 
-* ピクチャーが非表示のヘッダーあるいはフッターにアンカーされている
-* ビューモードが下書きモードである
-* 中央揃えになっているかセクションにアンカーされている状態で、**HTML WYSIWYGで表示**オプションがチェックされている
-* "背景を表示"オプションが選択されていない
+- they are anchored to a header or footer which is not visible;
+- the view mode is Draft;
+- they are centered or anchored to sections and the **Show HTML WYSIWYG** option is checked;
+- the "Show background" option is not selected.
 
-#### ピクチャー式 
+## Picture expressions
 
-4D Write Pro エリア内には、ピクチャーを返す4D 式を挿入することも可能です。式には変数、フィールド、プロジェクトメソッド(\*)、オブジェクト属性あるいはコレクション要素を使用することができます。
+You can insert 4D expressions that return pictures in your 4D Write Pro areas. Expressions can be variables, fields, project methods, formulas, object attributes or collection elements.
 
-ピクチャーtipでは、式の参照を見ることができます(\*):
+You can see an expression's reference in the picture tip(\*):
 
 ![](../../assets/en/WritePro/pict3513503.en.png)
 
-(\*)アンカーされたがずには割り当てられたテキストは何もないため、その式参照は表示されません。
+(\*)As there is no text associated with an anchored image, its expression reference cannot be displayed.
 
-全ての画像属性はピクチャー式に適用することができます(wk imageおよび wk image url 属性は読出し専用です)。しかしながら、ピクチャーには特有の属性があるため、4D Write Pro はそその式の結果がピクチャーであると判定し、それをピクチャー式として扱うために、少なくとも一度は式を評価する必要がある点に注意してください。これはつまり[WP INSERT FORMULA](../commands/wp-insert-formula) を使用してピクチャー式を挿入した場合、どのピクチャー属性を設定するよりも前に[WP COMPUTE FORMULAS](../commands/wp-compute-formulas) を呼び出す必要があるということです。
+All image attributes can be applied to picture expressions (wk image and wk image url attributes can only be read). Note however, that since pictures have specific attributes, 4D Write Pro must evaluate the expression at least once to detect that its result is a picture and handle it as a picture expression. It means that when a picture expression is inserted with [WP INSERT FORMULA](../commands/wp-insert-formula), [WP COMPUTE FORMULAS](../commands/wp-compute-formulas) must be called before setting any picture attributes.
 
-**注**: 他の式同様、ピクチャー式は[WP INSERT FORMULA](../commands/wp-insert-formula) および [WP COMPUTE FORMULAS](../commands/wp-compute-formulas) コマンドの影響を受けます。
+**Note**: As with other expressions, picture expressions are also impacted by the [WP COMPUTE FORMULAS](../commands/wp-compute-formulas) and [WP FREEZE FORMULAS](../commands/wp-freeze-formulas) commands.
 
-##### アンカーされた画像 
+### Anchored pictures
 
-アンカーされたピクチャー式は、[WP Add picture](../commands/wp-add-picture) コマンド(第2引数なし)によって追加され、その後に[WP SET ATTRIBUTES](../commands/wp-set-attributes) コマンドをwk image formula セレクターつきで呼び出します。
+Anchored picture expressions are added with the [WP Add picture](../commands/wp-add-picture) command (without the second parameter), followed by a call to the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command with the wk image formula selector.
 
 例:
 
@@ -97,109 +97,109 @@ displayed_sidebar: docs
  WP SET ATTRIBUTES(obImage;wk image formula;Formula(m_buildPict))
 ```
 
-また、既存のアンカーされたピクチャーに[WP SET ATTRIBUTES](../commands/wp-set-attributes) コマンドとwk image formula を合わせて使用することでピクチャー式を挿入することもできます。
+You can also insert picture expressions using [WP SET ATTRIBUTES](../commands/wp-set-attributes) and wk image formula on existing anchored pictures.
 
-**互換性に関する注意:** テキストを通してピクチャー式を定義するためには、wk image expression 定数は引き続き使用することができます。しかしながら、今後はwk image formula とオブジェクトを使用する方法が推奨されます。
+**Compatibility Note:** wk image expression can still be used to define picture expressions through text. However, it is recommended to use wk image formula and objects.
 
-[WP RESET ATTRIBUTES](../commands/wp-reset-attributes) コマンドをwk image formula と呼び出すことは、式が画像属性から消去されるという点において、[WP FREEZE FORMULAS](../commands/wp-freeze-formulas) を(ドキュメント全体に)呼び出すことに似ています。しかしながら、[WP FREEZE FORMULAS](../commands/wp-freeze-formulas) コマンドは消去の前に式を計算するのに対し、[WP RESET ATTRIBUTES](../commands/wp-reset-attributes) コマンドは計算をしません。式が一度も計算されていない場合、デフォルトの黒いフレーム画像が表示されます。
+Calling the [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) command with wk image formula is similar to calling [WP FREEZE FORMULAS](../commands/wp-freeze-formulas) (on the entire document) in that the expression is cleared from the image attribute. However [WP FREEZE FORMULAS](../commands/wp-freeze-formulas) computes the expression before clearing, whereas [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) does not. If an expression has never been computed, the default black frame image will be displayed.
 
-##### 画像式の挿入 
+### Inline pictures
 
-[WP INSERT FORMULA](../commands/wp-insert-formula) コマンドを使用することでインラインピクチャー式を追加することができます。
+Inline picture expressions are added with the [WP INSERT FORMULA](../commands/wp-insert-formula) command.
 
 例:
 
 ```4d
-  //ピクチャー変数を挿入
+  //Insert a picture variable
  WP INSERT FORMULA(wpRange;Formula($vpict);wk prepend)
  
-  //フィールドを挿入
+  //Insert a field
  WP INSERT FORMULA(wpRange;Formula([DOC]SamplePict);wk prepend)
  
-  //4D メソッドを挿入
+  //Insert a 4D method
  WP INSERT FORMULA(wpRange;Formula(M_ComputeChart);wk prepend)
 ```
 
-#### 空のピクチャー 
+### Empty pictures
 
-画像が空の場合(例: 画像が読み込みできない、計算できない式の結果である、サポートされていないピクチャーフォーマットを使用している等)、デフォルトで4D Write Pro は黒枠の四角形を表示します。
+If an image is empty (e.g. it could not be loaded, or it results from an expression that could not be computed, or it uses an unsupported picture format), by default 4D Write Pro displays a black frame rectangle:
 
 ![](../../assets/en/WritePro/pict3513505.en.png)
 
-以下の方法を使用してこれらの黒い四角形をカレントのビューから消去することができます:
+You can remove these black rectangles from the current view using:
 
-* プロパティリストの"空またはサポートされていない画像を表示"オプション(*ビュープロパティの設定* 参照)を使用する
-* [WP SET VIEW PROPERTIES](../commands/wp-set-view-properties) コマンドとwk visible empty images セレクターを組み合わせて使用する
-* *visibleEmptyImage* 標準アクションを使用する(*4D Write Pro標準アクションの使用* 参照)
+- the "Show empty or unsupported images" option of the Property list (see *Configuring View properties*), or
+- the [WP SET VIEW PROPERTIES](../commands/wp-set-view-properties) command with the wk visible empty images selector, or
+- the *visibleEmptyImage* standard action (see *Using 4D Write Pro standard actions*).
 
-またwk visible empty images セレクターを[WP EXPORT DOCUMENT](../commands/wp-export-document) および [WP EXPORT VARIABLE](../commands/wp-export-variable) コマンドに対して使用することで、書き出されたコンテンツから黒い四角形を消去することもできます。
+You can also use the wk visible empty images selector with the [WP EXPORT DOCUMENT](../commands/wp-export-document) and [WP EXPORT VARIABLE](../commands/wp-export-variable) commands to remove the black rectangles from exported contents.
 
-このオプションが設定されている場合、たとえ画像に境界線、幅、高さ、背景などが設定されてあっても空の画像要素は全く表示されないという点に注意して下さい。これはインライン画像のページレイアウトに影響する可能性があります。
+Note that when this option is set, missing image elements will not be displayed at all even if they have borders, width, height, or background; this may impact the page layout for inline images.
 
-#### ピクチャープロパティ 
+## Picture properties
 
-全てのピクチャーには高さ、幅、境界線、表示モードなどといったプロパティ(属性)があります。これら4D Write Pro ランゲージ([WP GET ATTRIBUTES](../commands/wp-get-attributes) あるいは [WP SET ATTRIBUTES](../commands/wp-set-attributes))あるいは標準アクションを用いて取得あるいは設定することが可能です。
+All pictures have properties (attributes) such as height, width, borders, display mode, etc., that can be get or set via the 4D Write Pro language ([WP GET ATTRIBUTES](../commands/wp-get-attributes) and [WP SET ATTRIBUTES](../commands/wp-set-attributes)) or standard actions.
 
-* ピクチャーに対して使用可能なプロパティの完全な一覧は、*4D Write Pro属性* のページに記載されています。
-* *画像* の章にはピクチャー専用の属性が含まれています。
-* *4D Write Pro標準アクションの使用* のページにも利用可能な画像プロパティの一覧があります。
+- The full list of properties available for pictures is provided on the *4D Write Pro Attributes* page.
+- The *Image* section contains attributes that are specific to pictures only.
+- The *Using 4D Write Pro standard actions* page also lists available image properties.
 
-##### ピクチャー参照またピクチャーURL 
+### Picture reference or picture URL
 
-ピクチャー参照(ピクチャー変数、フィールド、式)を使用する事もできますし、ピクチャーURL(ピクチャーのローカルあるいはネットワークアドレスを表すテキスト)を使用する事もできます。
+You can work with picture references (picture variables, fields, expressions) or picture URLs (text representing a local or network address of the picture).
 
-2組の属性を使用する事で、ピクチャー参照を使用したいか、ピクチャーURLを使用したいかを定義する事ができます:
+Two sets of attributes allow you to define if you want to set or get picture reference or a picture URL:
 
-* wk image、 wk background image、wk list style image: ピクチャー参照を設定あるいは取得します。  
-これらの属性を使用してピクチャーを取得した場合、ピクチャーの定義方法に関係なく、4Dピクチャーを受け取ります。
-* wk image url、wk background image url、wk list style image url: ピクチャーURLを設定あるいは取得します。  
-これらの属性を使用してピクチャーを取得した場合、テキストのみを受け取ります。ピクチャーが参照を通して定義されていた場合(例: ピクチャー変数)、ローカルのURI と、そのあとにBase64 の画像を受け取ります。
+- wk image, wk background image, wk list style image: to set or to get picture references.\
+  When you get a picture using one of these attributes, you receive a 4D picture, no matter how the picture was defined.
+- wk image url, wk background image url, wk list style image url: to set or get picture URLs.\
+  When you get a picture using one of these attributes, you receive a text. If the picture was defined through a reference (*e.g.* a picture variable), you get a local URI followed by the image in Base64.
 
-**例:**
+**例題:**
 
 ```4d
- $range:=WP Get selection(WPArea) //ユーザーが選択した画像を取得
- $range:=WP Picture range($range) //レンジを作成
+ $range:=WP Get selection(WPArea) //get the picture selected by user
+ $range:=WP Picture range($range) //create a range
  $url:="http://doc.4d.com/image/logo/poweredby4D_web.png"
  
- WP SET ATTRIBUTES($range;wk image;$url) //URLから画像参照を設定
+ WP SET ATTRIBUTES($range;wk image;$url) //set an image reference from a URL
  
-  //画像を取得
+  //get the image
  var vPictureGet : Picture
- WP GET ATTRIBUTES($range;wk image;vPictureGet) //vPictureGet に画像が格納される
+ WP GET ATTRIBUTES($range;wk image;vPictureGet) //vPictureGet contains an image
  var vPictureURLGet : Text
  WP GET ATTRIBUTES($range;wk image url;vPictureURLGet) //vPictureURLGet=$url
 ```
 
-#### ピクチャーの取得 
+## Retrieving pictures
 
-以下のコマンドを使用するとピクチャーが返されます:
+The following commands can be used to return pictures:
 
-* [WP Picture range](../commands/wp-picture-range) \- インライン画像に対してのみ適用可能
-* [WP Selection range](../commands/wp-selection-range) \- ユーザーが選択した画像に対してのみ適用可能
+- [WP Picture range](../commands/wp-picture-range) \- applies only for inline images
+- [WP Selection range](../commands/wp-selection-range) \- applies only for user-selected images
 
-#### ピクチャーの削除 
+## Deleting pictures
 
-インライン画像とアンカー画像は、以下の方法で削除することができます:
+You can remove inline and anchored pictures with:
 
-* *マウス/キーボードアクション* を使用する
-* [WP DELETE PICTURE](../commands/wp-delete-picture) コマンドを使用する
+- *Mouse/keyboard actions*
+- the [WP DELETE PICTURE](../commands/wp-delete-picture) command
 
-#### マウス/キーボードアクション 
+## Mouse/keyboard actions
 
-ピクチャーはマウスあるいはキーボードで編集することができます。利用可能なアクションは以下の通りです:
+Pictures can be manipulated via the mouse or the keyboard. Available actions include:
 
-* **選択**  
-   * 前面レイヤーにあるピクチャーはクリックすることで選択することが可能です。  
-   * 背景画像はCTRL+クリック(Windows)あるいはCommand+クリック(Mac)で選択することが可能です。  
-   * 絶対位置をもつピクチャーを一つだけ選択することができます。複数選択することはできません。
-* **移動**  
-   * ピクチャーはマウスを使用して移動およびリサイズすることができます(インライン画像はドキュメントの外へとドラッグすることはできません)。
-* **挿入**  
-   * 絶対位置を持つピクチャーが下書きモードに貼り付け場合、カレントのキーボードセレクションの先頭にインラインとして表示されます。
-* **カット/貼り付け/コピー**  
-   * ピクチャーは選択されていればクリップボードへとコピーしたり、カット/貼り付けなどを行うことができます。  
-   * 絶対位置を持つピクチャーをページモードで貼り付けすると、そのピクチャーは選択されている最初のページに貼り付けられ、元のアンカー設定に関係なく、そのページへとアンカーされます。貼り付けられたピクチャーは元のオフセットは保持しますが、元のモードとは異なるページモードへと貼り付けられた場合には保持しません(例えばピクチャーがページモードでコピーされ、埋め込みモードで貼り付けされた場合には、オフセットは0へとリセットされます)。
-* **削除** \-ピクチャーを選択した状態で以下の操作を行うと、ピクチャーを削除することができます:  
-   * deleteキー  
-   * クリアアクションのキーボードショートカット
+- **SELECT**
+  - Pictures in the Front layer can be selected by clicking on them;
+  - Background pictures can be selected by CTRL+ clicking on it (Windows) or COMMAND+clicking on it (Mac);
+  - Only a single picture with an absolute position can be selected: multiple selection is not possible.
+- **MOVE**
+  - Pictures can be moved and resized using the mouse; (inline images cannot be dragged outside the document).
+- **INSERT**
+  - If pictures with an absolute position are pasted in Draft mode, they are displayed inline at the beginning of the current keyboard selection.
+- **CUT/PASTE/COPY**
+  - Pictures can be copied to the clipboard, or cut/pasted while selected.
+  - Pasting a picture with an absolute position in Page mode will paste the picture in the first selected page and anchor it to that page, no matter the original page anchoring settings; pasted pictures will retain their offsets, unless it is pasted into a different mode than the original (for instance if the picture is copied in Page mode and pasted in Embedded mode, the offsets are reset to 0).
+- **DELETE** \-Pictures can be deleted while selected with the:
+  - DELETE key, or
+  - keyboard shortcut for the action Clear
