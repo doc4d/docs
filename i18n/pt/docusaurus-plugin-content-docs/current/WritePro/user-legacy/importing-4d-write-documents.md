@@ -1,226 +1,224 @@
 ---
 id: importing-4d-write-documents
-title: Importar documentos 4D Write
+title: Importing 4D Write documents
 displayed_sidebar: docs
 ---
 
-#### 
+One of the main features of the new 4D Write Pro object is the ability to import and convert existing 4D Write documents. This will allow you to migrate applications that currently rely on the 4D Write plug-in.
 
-Uma das principais funcionalidades do novo 4D Write Pro é a capacidade de importar e converter documentos 4D Write Pro existentes. Isto lhe permitirá migrar as aplicações que se baseiam no plug-in 4D Write. 
+**Notas de compatibilidade:**
 
-**Nota de compatibilidade**:
+- Only 4D Write documents of the last generation ("4D Write v7") are supported.
+- Copying-pasting from a 4D Write document to a 4D Write Pro area is not supported for the moment. A 4D Write document can only be imported using 4D Write Pro language commands.
+- Carriage returns (CR) in formulas behave differently in 4D Write and 4D Write Pro. In 4D Write, they are always interpreted as paragraph breaks, whereas in 4D Write Pro they are interpreted as line breaks by default. To maintain CR in formulas as paragraph breaks in imported 4D Write documents, after conversion use:
 
-* só os documentos 4D Write da última geração ("4D Write v7") são suportados.
-* Copiar-colar de um documento 4D Write document para uma área 4D Write Pro não é suportada no momento. Importar um documento 4D Write pode apenas ser feito usando os comandos de linguagem 4D Write Pro.
-* Retornos de carro (CR) em fórmulas se comportam diferente em 4D Write do que em 4D Write Pro. Em 4D Write, eles sempre são interpretados como quebras de parágrafo, mas em 4D Write Pro são interpretados como quebras de linha por padrão. Para manter CR em fórmulas como quebras de parágrafos em documentos importados 4D Write, depois da conversão, use:  
-```4d  
+```4d
  WP SET ATTRIBUTES(wp;wk break paragraphs in formulas;wk true)  
-```  
-    
-Para saber mais veja *Gestão de fórmulas*.
+```
 
-#### Como importar um documento 4D Write 
+For more information, see *Managing formulas*.
 
-Os objetos 4D Write Pro oferecem duas maneiras de importar documentos 4D Write:
+## How to import a 4D Write document
 
-* Para os arquivos 4D Write Pro armazenados no disco, se utiliza o comando [WP Import document](../commands/wp-import-document),
-* Para as áreas 4D Write armazenadas em campos BLOB, se utiliza o comando [WP New](../commands/wp-new).
+4D Write Pro objects offer two ways to import 4D Write documents:
 
-Para mais informação, consulte a descrição destes comandos.
+- For 4D Write files stored on disk, you use the [WP Import document](../commands/wp-import-document) command,
+- For 4D Write areas stored in BLOB fields, you use the [WP New](../commands/wp-new) command.
 
-#### Que propriedades se conservam de 4D Write? 
+For more information, please refer to the description of these commands.
 
-Para facilitar a migração desde o plug-in 4D Write a 4D Write Pro, queremos suportar tantas funcionalidades 4D Write como seja possível em objetos 4D Write Pro.
+## Which properties will be recovered from 4D Write?
 
-Este parágrafo mostra as propriedades do plug-in 4D Write que se recuperam em uma área 4D Write Pro depois de uma importação com os comandos [WP Import document](../commands/wp-import-document) ou [WP New](../commands/wp-new). 
+To facilitate your migration from the 4D Write plug-in to 4D Write Pro, we want to support as many 4D Write features as possible in 4D Write Pro objects.
 
-Tenha em conta no entanto, que há algumas diferenças, que não se consideram como bugs. Isto deve ser, por exemplo, a fonte pré determinada utilizada em 4D Write Pro para vinhetas, ou pequenas conversões no tipo Sublinhado.
+This paragraph lists the 4D Write plug-in properties that are currently recovered in a 4D Write Pro area after an import using the [WP Import document](../commands/wp-import-document) or [WP New](../commands/wp-new) commands.
 
-##### Informação do documento 
+Note however that a few differences can be seen, which are not considered as bugs. This is due, for example, to the default font used in 4D Write Pro for bullets, or small conversions in the Underline type.
 
-| **Plug-in** **4D Write** | **4D Write Pro**                                          |
-| ------------------------ | --------------------------------------------------------- |
-| Criação data e hora      | Disponível                                                |
-| Modificação data e hora  | Disponível                                                |
-| Bloqueado                | Não disponível (utilizar a propriedade objeto só leitura) |
-| Título                   | Disponível                                                |
-| Tema                     | Disponível (só texto plano)                               |
-| Autor                    | Disponível                                                |
-| Empresa                  | Disponível                                                |
-| Notas                    | Disponível                                                |
+### Document info
 
-##### Parâmetros de visualização do documento 
+| **4D Write plug-in**                         | **4D Write Pro**                                                 |
+| -------------------------------------------- | ---------------------------------------------------------------- |
+| Creation date & time     | Available                                                        |
+| Modification date & time | Available                                                        |
+| Locked                                       | Not available (use read-only object property) |
+| Título                                       | Available                                                        |
+| Subject                                      | Available (only plain text)                   |
+| Author                                       | Available                                                        |
+| Empresa                                      | Available                                                        |
+| Notas                                        | Available                                                        |
 
-| **Plug-in** **4D Write**           | **4D Write Pro**                                                             |
-| ---------------------------------- | ---------------------------------------------------------------------------- |
-| Vista modo página                  | Não importado (utilizar o modo de vista Documento/Página no menu contextual) |
-| Vista regras                       | Não disponível                                                               |
-| Vista marcos                       | Não disponível                                                               |
-| Vista cabeçalho                    | Não disponível                                                               |
-| Vista rodapé                       | Não disponível                                                               |
-| Vista cabeçalho de primeira página | Não disponível                                                               |
-| Vista rodapé de primeira página    | Não disponível                                                               |
-| Vista imagens                      | Não disponível                                                               |
-| Vista HScrollbar                   | Não importado (utilize a propriedade de objeto deslocável hor.)              |
-| Vista VScrollbar                   | Não importado (utilize a propriedade de objeto deslocável vert.)             |
-| Vista invisible characters         | Não disponível                                                               |
-| Vista referências                  | Não importado (utilize [ST SET OPTIONS](../../commands/st-set-options))      |
-| Vista separadores de coluna        | Não disponível                                                               |
-| Vista H Splitter                   | Não disponível                                                               |
-| Vista V Splitter                   | Não disponível                                                               |
-| Vista Wysiwyg                      | Não disponível                                                               |
-| Vista zoom                         | Não importado (utilize Document/Zoom no menu contextual)                     |
+### Document view parameters
 
-##### Parâmetros do documento 
+| **4D Write plug-in**      | **4D Write Pro**                                                                      |
+| ------------------------- | ------------------------------------------------------------------------------------- |
+| View page mode            | Not imported (use Document/Page view mode in the context menu)     |
+| View rulers               | Not imported (use object property)                                 |
+| View frames               | Not imported (use object property)                                 |
+| View header               | Not imported (use object property)                                 |
+| View footer               | Not imported (use object property)                                 |
+| View first page header    | Not available                                                                         |
+| View first page footer    | Not available                                                                         |
+| View pictures             | Not available                                                                         |
+| View HScrollbar           | Not imported (use hor. scrollbar object property)  |
+| View VScrollbar           | Not imported (use vert. scrollbar object property) |
+| View invisible characters | Not imported (use object property)                                 |
+| View references           | Not imported (use [ST SET OPTIONS](../../commands/st-set-options)) |
+| View column separators    | Available (starting with v17)                                      |
+| View H Splitter           | Not available                                                                         |
+| View V Splitter           | Not available                                                                         |
+| View Wysiwyg              | Not available                                                                         |
+| View zoom                 | Not imported (use Document/Zoom in the context menu)               |
 
-| **Plug-in** **4D Write** | **4D Write Pro**                                                     |
-| ------------------------ | -------------------------------------------------------------------- |
-| Unidade                  | Não importado (use unidades de documento/medidas no menu contextual) |
-| Linguagem                | Não disponível                                                       |
-| Contagem de colunas      | disponível (a partir de v17)                                         |
-| Espaço entre colunas     | disponível (a partir de v17)                                         |
-| Viúvas e órfãos          | disponível                                                           |
-| Aba por padrão           | Disponível                                                           |
-| Aba Líder                | Disponível                                                           |
-| Cor URL                  | Não disponível                                                       |
-| Cor de URL visitado      | Não disponível                                                       |
+### Document parameters
 
-**Nota:** O separador do sistema (como retornado por [GET SYSTEM FORMAT](../../commands/get-system-format)) é usado como separador decimal para tabulação decimal. Pode mudar esse parâmetro usando o comando [WP SET ATTRIBUTES](../commands/wp-set-attributes). 
+| **4D Write plug-in**                 | **4D Write Pro**                                                                    |
+| ------------------------------------ | ----------------------------------------------------------------------------------- |
+| Unit                                 | Not imported (use Document/Measurement unit in the context menu) |
+| Línguagem                            | Not available                                                                       |
+| Count of columns                     | Available (starting with v17)                                    |
+| Column spacing                       | Available (starting with v17)                                    |
+| Widows & orphans | Available                                                                           |
+| Default tab                          | Available                                                                           |
+| Leading tab                          | Available                                                                           |
+| URL color                            | Not available                                                                       |
+| URL visited color                    | Not available                                                                       |
 
-##### Parâmetros de paginação de documentos 
+**Note:** The system separator (as returned by [GET SYSTEM FORMAT](../../commands/get-system-format)) is used as decimal separator for decimal tabs. You can change this parameter using the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command.
 
-| **Plug-in** **4D Write**                                          | **4D Write Pro** |
-| ----------------------------------------------------------------- | ---------------- |
-| Largura de página                                                 | disponível       |
-| Altura página                                                     | disponível       |
-| Número primeira página                                            | disponível       |
-| Primeira página cabeçalho rodapés diferentes                      | disponível       |
-| Página cabeçalho Esquerda e direita e rodapé de página diferentes | disponível       |
-| Encadernação                                                      | disponível       |
-| Páginas opostas                                                   | disponível       |
-| Margens página                                                    | Disponível       |
-| Cabeçalho margem superior                                         | disponível       |
-| Cabeçalho margem inferior                                         | disponível       |
-| Rodapé de página margem superior                                  | disponível       |
-| Rodapé de página margem inferior                                  | disponível       |
-| Primeira página margem superior                                   | disponível       |
-| Primeira página margem inferior                                   | disponível       |
-| Cabeçalho primeira página margem superior                         | disponível       |
-| Cabeçalho primeira página margem inferior                         | disponível       |
-| Rodapé de página primeira página margem superior                  | disponível       |
-| Rodapé de página primeira página margem inferior                  | disponível       |
-| Primeira página é correta                                         | disponível       |
+### Document pagination parameters
 
-##### Parâmetros de impressão de documentos 
+| **4D Write plug-in**                                                                    | **4D Write Pro** |
+| --------------------------------------------------------------------------------------- | ---------------- |
+| Page width                                                                              | Available        |
+| Page height                                                                             | Available        |
+| First page number                                                                       | Available        |
+| First page header & footer are different                            | Available        |
+| Left & right page header & footer are different | Available        |
+| Page binding                                                                            | Available        |
+| Opposite pages                                                                          | Available        |
+| Page margins                                                                            | Available        |
+| Header top margin                                                                       | Available        |
+| Header bottom margin                                                                    | Available        |
+| Footer top margin                                                                       | Available        |
+| Footer bottom margin                                                                    | Available        |
+| First page top margin                                                                   | Available        |
+| First page bottom margin                                                                | Available        |
+| Header first page top margin                                                            | Available        |
+| Header first page bottom margin                                                         | Available        |
+| Footer first page top margin                                                            | Available        |
+| Footer first page bottom margin                                                         | Available        |
+| First page is right                                                                     | Available        |
 
-| **Plug-in 4D Write** | **4D Write Pro** |
+### Document printing parameters
+
+| **4D Write plug-in** | **4D Write Pro** |
 | -------------------- | ---------------- |
-| Classe de papel      | Não disponível   |
-| Paisagem             | Não disponível   |
-| Largura              | Não disponível   |
-| Altura               | Não disponível   |
-| Margens de usuário   | Não disponível   |
-| Escala               | Não disponível   |
-| Resolução X          | Não disponível   |
-| Resolução Y          | Não disponível   |
+| Kind of paper        | Not available    |
+| Landscape            | Not available    |
+| Largura              | Not available    |
+| Alto                 | Not available    |
+| User margins         | Not available    |
+| Escala               | Not available    |
+| X resolution         | Not available    |
+| Y resolution         | Not available    |
 
-##### Imagens 
+### Images
 
-**Notas de compatibilidade**:
+**Notas de compatibilidade:**
 
-Os modos de visualização de imagens são importadas automaticamente a partir de 4D Write Pro v19 R2, utilizando [WP Import document](../commands/wp-import-document). Pode restaurar o comportamento anterior (todas as imagens se escalam para ajuste) utilizando o atributo importDisplayMode.
+- Picture display modes are automatically imported as of 4D Write Pro v19 R2, using [WP Import document](../commands/wp-import-document). You can restore the previous behavior (all images are scaled to fit) using the *importDisplayMode* attribute.
+- On Windows, images having the Mac OS PICT format are imported but cannot be rendered in 4D Write Pro. If you import a document containing images of this type, you need to convert them to another format. Support of PICT format has been removed since 4D v18 and can no longer be used.
 
- Windows imagens com o formato PICT de Mac OS são importadas mas não podem ser geradas em 4D Write Pro . Se quiser importar documentos que contenham imagens desse tipo, deve primeiro converter as imagens para outro formato, Lembre que o formato PICT é obsoleto e não deve mais ser usado (ver ).  
-  
-| **Plug-in** **4D Write**                      | **4D Write Pro** X (esquerda)                              | (& position :absolute) (para imagens em página unicamente) |
-| --------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| Y (acima)                                     | (& position :absolute) (para imagens em página unicamente) |                                                            |
-| Largura                                       | Disponível                                                 |                                                            |
-| Altura                                        | Disponível                                                 |                                                            |
-| Número de página                              | Disponível (a partir de v16 R6)                            |                                                            |
-| Atrás                                         | Disponível (a partir de v16 R6)                            |                                                            |
-| Não em primeira página                        | Disponível (a partir de v16 R6)                            |                                                            |
-| Modo de visualização (escala a ajustar, etc.) | Disponível                                                 |                                                            |
-| É uma expressão                               | Disponível para imagens inline(a partir de v16 R5)         |                                                            |
-| Conservar o tamanho                           | \]Não importado (automático em 4D Write Pro)l              |                                                            |
+| **4D Write plug-in**                                                  | **4D Write Pro**                                                                                                           |
+| --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| X (left)                                           | (& position :absolute) (for images in page only) |
+| Y (top)                                            | (& position :absolute) (for images in page only) |
+| Largura                                                               | Available                                                                                                                  |
+| Alto                                                                  | Available                                                                                                                  |
+| Page number                                                           | Available (starting with v16 R6)                                                                        |
+| Behind                                                                | Available (starting with v16 R6)                                                                        |
+| Not in first page                                                     | Available (starting with v16 R6)                                                                        |
+| Viewport mode (scale to fit, etc.) | Available                                                                                                                  |
+| Is expression                                                         | Available for inline pictures (starting with v16 R5)                                                    |
+| Keep size                                                             | Not imported (automatic in 4D Write Pro)                                                                |
 
-##### Propriedades de caracteres 
+### Character properties
 
-| **Plug-in** **4D Write**                   | **4D Write Pro (span)**          |
-| ------------------------------------------ | -------------------------------- |
-| Itálica                                    | Disponível                       |
-| Negrita                                    | Disponível                       |
-| Tachado                                    | Disponível                       |
-| Sublinhado                                 | Disponível                       |
-| Sombra                                     | Disponível                       |
-| Exponente (superscript ou subscript)       | Disponível                       |
-| Maiúsculas ou pequenas maiúsculas          | Disponível                       |
-| Família de fonte                           | Disponível                       |
-| Tamanho de fonte                           | Disponível                       |
-| Cor texto                                  | Disponível                       |
-| Cor fundo de texto                         | Disponível                       |
-| Cor sublinhado                             | Disponível                       |
-| Cor tachado                                | Disponível                       |
-| Cor sombra                                 | Disponível                       |
-| Propriedade usuário                        | Não disponível                   |
-| Correção ortográfica (sintaxe e gramática) | Não importada (propriedade área) |
-| Aparência                                  | Não disponível                   |
-| Folha de estilo                            | Disponível a partir de 4D v18)   |
+| **4D Write plug-in**                                                               | **4D Write Pro (span properties)** |
+| ---------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| Itálico                                                                            | Available                                             |
+| Negrito                                                                            | Available                                             |
+| Strikeout                                                                          | Available                                             |
+| Sublinhado                                                                         | Available                                             |
+| Shadow                                                                             | Available                                             |
+| Exponent (superscript or subscript)                             | Available                                             |
+| Capitals (uppercase or small uppercase)                         | Available                                             |
+| Família de letras                                                                  | Available                                             |
+| Tamanho fonte                                                                      | Available                                             |
+| Text Color                                                                         | Available                                             |
+| Text Back Color                                                                    | Available                                             |
+| Underline Color                                                                    | Available                                             |
+| Strikeout Color                                                                    | Available                                             |
+| Shadow color                                                                       | Available                                             |
+| User property                                                                      | Not available                                         |
+| Spell checking (syntax & grammar on or off) | Not imported (area property)       |
+| Aparência                                                                          | Not available                                         |
+| Style sheet                                                                        | Available (starting with 4D v18)   |
 
-##### Propriedades parágrafos 
+### Paragraph properties
 
-| **Plug-in** **4D Write**                 | **4D Write Pro** |
-| ---------------------------------------- | ---------------- |
-| Justificação                             | Disponível       |
-| Interlinear                              | Disponível       |
-| Vinhetas                                 | Disponível       |
-| Margem esquerda                          | Disponível       |
-| Margem direita                           | Disponível       |
-| Indentar texto                           | Disponível       |
-| Estilo borde linha                       | Disponível       |
-| Cor borde linha                          | Disponível       |
-| Cor fundo borde                          | Disponível       |
-| Borde esquerdo                           | Disponível       |
-| Borde direito                            | Disponível       |
-| Borde superior e borde interior acima    | Disponível       |
-| Borde inferior e borde interior inferior | Disponível       |
-| Espaço de borde                          | Disponível       |
-| Folha de estilo                          | Disponível       |
-| Tabulações                               | Disponível       |
+| **4D Write plug-in**                                     | **4D Write Pro** |
+| -------------------------------------------------------- | ---------------- |
+| Justification                                            | Available        |
+| Interline                                                | Available        |
+| Bullet                                                   | Available        |
+| Left margin                                              | Available        |
+| Right margin                                             | Available        |
+| Text indent                                              | Available        |
+| Border line style                                        | Available        |
+| Border line color                                        | Available        |
+| Border back color                                        | Available        |
+| Left border                                              | Available        |
+| Right border                                             | Available        |
+| Top border & top inside border       | Available        |
+| Bottom border & bottom inside border | Available        |
+| Border spacing                                           | Available        |
+| Folha de estilo                                          | Available        |
+| Tabulations                                              | Available        |
 
-##### Hyperlinks 
+### Hyperlinks
 
-| **4D Write plug-in** | **4D Write Pro**                            |
-| -------------------- | ------------------------------------------- |
-| URL link             | Disponível (\*)                             |
-| 4D method link       | disponível (\*\*) (a partir de v17 R5)      |
-| Open document link   | Disponível (convertido a URL arquivo local) |
+| **4D Write plug-in** | **4D Write Pro**                                                              |
+| -------------------- | ----------------------------------------------------------------------------- |
+| URL link             | Available (\*)                                             |
+| 4D method link       | Available (\*\*) (starting with v17 R5) |
+| Open document link   | Available (converted to a local file URL)                  |
 
-* (\*) A partir de 4D v16 R4, URL links são convertidos a atributos editáveis. Para saber mais, veja *Manejar URLs*.
-* (\*\*) Precisa adaptar os parâmetros recebidos dentro dos métodos chamados:  
-| **Parâmetros** | **4D Write plug-in**                 | **4D Write Pro**                                                                                                                                                                                                                                                                                      |  
-| -------------- | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |  
-| $1             | Longint - 4D Write area reference    | Text - nome área 4D Write Pro                                                                                                                                                                                                                                                                         |  
-| $2             | Text - Link label                    | Object - Link description:.método - Nome do link de método. Deve ser permitido com o comando [SET ALLOWED METHODS](../../commands/set-allowed-methods). .parâmetro - valor de parâmetro de usuário passado ao método (se usado).range - Range da etiqueta de link. ver *Comandos de seleção de faixa* |  
-| $3             | Longint - User parameter (methodRef) | \-                                                                                                                                                                                                                                                                                                    |
+- (\*) Starting with 4D v16 R4, URL links are converted to editable attributes. For more information, please refer to *Link commands*.
+- (\*\*) You need to adapt parameters received within the called methods:| **Parameters** | **4D Write plug-in**                                    | **4D Write Pro**                                                                                                                                                                                                                                                                                                                                                                                                            |
+  | -------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+  | $1             | Longint - 4D Write area reference                       | Text - 4D Write Pro area name                                                                                                                                                                                                                                                                                                                                                                                               |
+  | $2             | Text - Link label                                       | Object - Link description:.method - Link's method name. Must be be allowed with the [SET ALLOWED METHODS](../../commands/set-allowed-methods) command. .parameter - User parameter value passed to the method (if used).range - Range of the link's label. See *Range handling commands* |
+  | $3             | Longint - User parameter (methodRef) | \-                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
-##### Expressões 4D 
+### 4D expressions
 
-| **Plug-in** **4D Write** | **4D Write Pro** |
-| ------------------------ | ---------------- |
-| Expressão 4D             | Disponível       |
-| Data e hora              | Disponível       |
-| Expressão HTML           | Não disponível\* |
-| Expressão RTF            | Não disponível   |
+| **4D Write plug-in**            | **4D Write Pro**  |
+| ------------------------------- | ----------------- |
+| 4D expression                   | Available\*       |
+| Date & Time | Available         |
+| HTML expression                 | Not available\*\* |
+| RTF expression                  | Not available     |
 
-\*Use o comando [WP SET ATTRIBUTES](../commands/wp-set-attributes) com o atributo wk break paragraphs in formulas para transformar CR (retorno de carro) retornado pelas fórmulas em quebras de parágrafo no documento importado (quebra de linha como padrão). (Ver *Gestão de fórmulas*) 
+\*Use the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command with the wk break paragraphs in formulas attribute to transform CR returned by formulas into paragraph breaks in the imported document (line breaks by default). (See *Managing formulas*)
 
-\*\*pode ser importado como texto entre as tags **##htmlBegin##** e **##htmlEnd##** se usar a constante wk import html expressions as text.
+\*\*can be imported as text between **##htmlBegin##** and **##htmlEnd##** tags if you use the wk import html expressions as text constant.
 
-##### Dados de texto 
+### Text data
 
-| **Plug-in** **4D Write**  | **4D Write Pro** |
-| ------------------------- | ---------------- |
-| Dados de texto principais | Disponível       |
-| Dados de texto cabeçalho  | Disponível       |
-| Dados de texto Rodapé     | Disponível       |
+| **4D Write plug-in** | **4D Write Pro** |
+| -------------------- | ---------------- |
+| Main text data       | Available        |
+| Header text data     | Available        |
+| Footer text data     | Available        |
