@@ -1,369 +1,359 @@
 ---
 id: using-a-4d-write-pro-area
-title: Utilizar uma area 4D Write Pro
+title: Properties & Layout
 displayed_sidebar: docs
+slug: /WritePro/user/properties
 ---
 
+## Básicos
 
+When the document is in [**Page** view mode](./defining-a-4d-write-pro-area.md#selecting-the-view-mode), the following document properties are available for the user:
 
-## Noções básicas
+- Page outlines to represent printing limits
+- Page width and Page height (default: 21x29.7 cm)
+- Page orientation (default: Portrait)
+- Page margin (default: 2.5 cm)
 
-Quando o documento está no [modo de vista **Página**](./defining-a-4d-write-pro-area.md#selecting-the-view-mode), as seguintes propriedades do documento são mostradas ao usuário:
+You can also use additional commands such as **Document.../Page size** or **Document.../Page orientation**.
 
-* Traços de página para representar os limites de impressão
-* Largura de página e Altura da página (normal: 21x29.7 cm)
-* Orientação da página (normal: retrato)
-* Margem da página (normal: 2.5 cm)
+**Note:** When a document is in **Embedded** or **Draft** view mode, page properties can be set, even if their effect is not visible. In **Draft** view mode, the following paragraph property effects are visible:
 
-Você também pode usar comandos adicionais, como **Documento.../Tamanho da página** ou **Documento.../Orientação da página**.
+- Page height limitation (lines drawn)
+- Colunas
+- Avoid page break inside property
+- Widow and orphan control.
 
-**Nota:** quando o documento está em modo Web ou Rascunho, as propriedades da página se podem definir, ainda que seu efeito não for visível. No modo Rascunho, os seguintes efeitos propriedad de parágrafo são visíveis:
+## Paragraph breaks
 
-* Limitação de altura página (línhas desenhadas)
-* Colunas
-* Evitar salto de página dentro da propriedade
-* Controle de viúdas e órfãs.
+When displayed in Page or Draft mode (or in the context of a document printing), 4D Write Pro paragraphs can break:
 
-## Quebras de parágrafo 
+- automatically, if the paragraph height is greater than the available page height,
+- depending on paragraph breaks set by programming or by the user.
 
-Quando exibido em modo Page ou Draft (no contexto de impressão de documento), Parágrafos 4D Write Pro pode quebrar:
+Breaks can be added by programming or by the user. Available actions include:
 
-* automaticamente, se a altura de parágrafo for maior que a altura disponível de página
-* dependendo de quebras de parágrafo estabelecidos por programação ou pelo usuário.
+- [WP INSERT BREAK](../commands/wp-insert-break) command
+- *insertPageBreak* standard action
+- **Insert page break** option of the default contextual menu
 
-Quebras podem ser adicionadas por programação ou pelo usuário. Ações disponíveis incluem:
+### Controlling automatic breaks
 
-* [WP INSERT BREAK](../commands/wp-insert-break) comando
-* *insertPageBreak* ação padrão
-* **Insert page break** opção do menu contextual padrão
+You can control automatic breaks in paragraphs using the following features:
 
-### Controle de Quebra automática
+- **Widow and orphan control**: When this option is set for a paragraph, 4D Write Pro does not allow widows (last line of a paragraph isolated at the top of a page) or orphans (first line of a paragraph isolated at the bottom of a page) in the document. In the first case, the previous line of the paragraph is added to the top of the page so that two lines are displayed there. In the second case, the single first line is moved onto the next page.
+- **Avoid page break inside**: When this option is set for a paragraph, 4D Write Pro prevents this paragraph from being broken into parts on two or more pages.
+- **Keep with next:** When this option is set for a paragraph, that paragraph cannot be separated from the one that follows it by an automatic break. See `wk keep with next` and the corresponding *keepWithNext* [standard action](./defining-a-4d-write-pro-area.md#standard-actions).
 
-Pode controlar quebras automáticas em parágrafos usando as funcionalidades abaixo: 
+These options can be set using the context menu, or [attributes](../commands-legacy/4d-write-pro-attributes.md) (`wk avoid widows and orphans`, `wk page break inside paragraph`, or *widowAndOrphanControlEnabled* and *avoidPageBreakInside* [standard actions](./defining-a-4d-write-pro-area.md#standard-actions).
 
-* **Widow and orphan control**: Quando essa opção for estabelecida para um parágrafo. 4D Write Pro não permite linhas viúvas (a última linha de um parágrafo isolada no topo da próxima página) ou órfãs (a primeira linha de um parágrafo isolada no fundo da página anterior) em um documento. No primeiro caso, a linha anterior do parágrafo é adicionada ao topo da página de forma que duas linhas são exibidas lá. No segundo caso, a primeira linha isolada é movida para a próxima página..
-* **Avoid page break inside**: Quando essa opção for estabelecida para um parágrafo, 4D Write Pro previne que esse parágrafo seja quebrada em partes ou em duas ou mais páginas.
-* **Manter com o próximo**: quando se estabelece esta opção para um parágrafo, esse parágrafo não pode separar-se do que lhe segue por uma quebra automática. Ver `wk keep with next` e a [ação padrão](./defining-a-4d-write-pro-area.md#standard-actions) correspondente *keepWithNext*.
+## Background
 
-Essas opções podem ser estabelecidas usando o menu contextual, ou [atributos](../commands-legacy/4d-write-pro-attributes.md) (`wk avoid widows and orphans`, `wk page break inside paragraph`, ou [ações padrão](./defining-a-4d-write-pro-area.md#standard-actions) *widowAndOrphanControlEnabled*, *avoidPageBreakInside*. 
+The background of 4D Write Pro documents and document elements (tables, paragraphs, sections, headers/footers, etc.) can be set with the following effects:
 
-## Fundo 
+- cores
+- bordas
+- images
+- origin, horizontal and vertical positioning
+- painting area
+- repeat
 
-O fundo de documentos 4D Write e elementos de documentos (tabelas, parágrafos, seções, cabeçalhos/rodapés, etc) podem ser estabelecidos com os efeitos abaixo:
+These [attributes](../commands-legacy/4d-write-pro-attributes.md) can be defined programmatically for either individual elements on a page and/or entire document backgrounds with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command or by [standard actions](./defining-a-4d-write-pro-area.md#standard-actions).
 
-* cores
-* bordas
-* imagens
-* origem, posicionamento horizontal e vertical
-* área de pintura
-* repetir
+Users can modify background attributes via the contextual menu as shown below:
 
-Esses [atributos](../commands-legacy/4d-write-pro-attributes.md) podem ser definidos programaticamente para os elementos indivíduos ou uma página ou fundos de documentos inteiros com o comando [WP SET ATTRIBUTES](../commands/wp-set-attributes) ou por [ações padrão](./defining-a-4d-write-pro-area.md#standard-actions).
+![](../../assets/en/WritePro/pict3514201.en.png) ![](../../assets/en/WritePro/pict3541581.en.png)
 
-Usuários podem modificar atributos de fundo via o menu contextual como mostrado abaixo:
+For an example of adding a full-sized image as a background, see the *How Do I* (HDI) demo [here](http://download.4d.com/Demos/4D%5Fv16%5FR5/HDI%5F4DWP%5FBackImagePaperBox.zip).
 
-![](../../assets/en/WritePro/pict3514201.pt.png)
-![](../../assets/en/WritePro/pict3541581.EN.png)
+## Headers, footers, and sections
 
-Como exemplo de adicionar uma imagem de tamanho inteiro como fundo, veja *How Do I* (HDI) demo [aqui](http://download.4d.com/Demos/4D%5Fv16%5FR5/HDI%5F4DWP%5FBackImagePaperBox.zip).
+4D Write Pro documents support headers and footers. These headers and footers are related to sections.
 
-## Cabeçalhos, rodapés e seções 
+A section is a part of a document which is defined by a page range and can have its own paging and common attributes. A document can contain any number of sections (from just one, up to the total number of pages). Each page can only belong to one section, except pages with continuous section breaks (see below).
 
-Documentos 4D Write Pro são compatíveis com cabeçalhos e rodapés. Cabeçalhos e rodapés são relacionadas à seções
+4D Write Pro documents can contain:
 
-Uma seção é uma parte do documento definida por uma faixa de páginas e pode ter seu próprio paginamento e atributos comuns. Um documento pode conter qualquer número de seções (de uma seção ao número total de páginas). Cada página pode conter apenas uma seção, exceto páginas com quebras de secção contínuas (ver abaixo).
+- one or more sections (one section by default)
+- for each section, up to three subsections:
+  - first page subsection
+  - left page(s) subsection
+  - right page(s) subsection
 
-Os documentos 4D Write Pro podem conter:
+You can define a set of headers and footers for each section.
 
-- uma ou mais secções (uma secção por predefinição)
-- para cada secção, até três subsecções:
-   - subsecção da primeira página
-   - subsecção da(s) página(s) esquerda(s)
-   - subsecção da(s) página(s) direita(s)
+### Defining a section
 
-Pode definir um conjunto de cabeçalhos e rodapés para cada seção
+A section is a subset of continuous pages in a 4D Write Pro document. A document can contain one or more sections. A section can contain any number of pages, from a single page to the total number of pages in the document. A section page can contain a single column or up to 20 column(s).
 
-### Definir uma seção 
+By default, a document contains a single section, named **Section 1**. The 4D Write Pro contextual menu displays this section number wherever you click in the document:
 
-Uma seção é um subconjunto de páginas contínuas em um documento 4D Write Pro. Um documento pode conter uma ou mais seções. Uma seção pode conter qualquer número de páginas, de uma página única ao número total de páginas do documento. Uma seção pode conter de uma coluna até 20 colunas.   
-  
-Como padrão, um documento contém apenas uma seção, chamada **Seção 1**. O menu contextual 4D Write Pro exibe este número de seção sempre que clicar no documento.
+![](../../assets/en/WritePro/pict2994904.en.png)
 
-![](../../assets/en/WritePro/pict2994904.pt.png)
+You create a new section by adding a section break in the text flow:
 
-Pode criar uma nova seção adicionado uma quebra de sessão no fluxo do texto :
+![](../../assets/en/WritePro/pict2994900.en.png)
 
-![](../../assets/en/WritePro/pict2994900.pt.png)
+When a section break has been added, the contextual menu displays an incremented number for each section. You can, however, rename any section:
 
-Quando uma quebra de seção for adicionada, o menu contextual exibe um número incrementado para cada seção. No entanto, pode renomear qualquer seção:
+![](../../assets/en/WritePro/pict2994907.en.png)
 
-![](../../assets/en/WritePro/pict2994907.pt.png)
+The name you entered is then used as the section name everywhere in the document:
 
-O nome que digitar será usado como nome da seção em qualquer ponto do documento
+![](../../assets/en/WritePro/pict2994910.en.png) ![](../../assets/en/WritePro/pict2994913.en.png)
 
-![](../../assets/en/WritePro/pict2994910.pt.png) ![](../../assets/en/WritePro/pict2994913.pt.png)
+Note that if you have defined a different first page or different left/right pages for a section, the page type is also displayed in the menu (see below).
 
-Note que se tiver definido uma primeira página diferente ou a opção de páginas da esquerda e da direita diferentes para a seção, o tipo de página também é exibido no menu (ver abaixo)
+### Inserting a continuous section break
 
-### Inserir uma quebra de seção contínua 
+A continuous section break creates a new section on the same page. This allows you to create pages with sections that have different numbers of columns (see *Creating a page with multiple-column and single column sections*).
 
-Uma quebra de seção contínua cria uma nova seção na mesma página. Isso permite criar páginas com seções que tenham diferentes números de colunas (vet *Criar uma página com seções múltiplas-colunas e únicas colunas*).
+Sections created with continuous section breaks are counted in the document (they have section numbers), but unlike sections created with regular section breaks, their headers, footers, anchored images, etc. are only taken into account when a physical page break has occurred.
 
-As seções criadas com saltos de seção continuos são contadas no documento (têm números de seção), mas diferente das seções criadas com quebras de seção normal, seus cabeçalhos, rodapés, imagens ancoradas, etc, só são levadas em consideração quando for produzido uma quebra de página física.
+**Note:** If you change the page orientation for the new section after you insert a continuous section break, it turns into a regular section break.
 
-**Nota:** se mudar a orientação da página da nova seção depois de inserir uma quebra de seção contínua, se converte em uma quebra de seção padrão.
+### Section attributes
 
-### Atributos de seção 
+Sections inherit attributes from the document. However, common document attributes, including headers and footers, can be modified separately for each section. The contextual pop-up menu displays the properties and attributes available at the section level:
 
-Seções são herdadas de atributos de documentos. Entretanto atributyos comuns de documentos, incluindo cabeçalhos e rodapés podem ser modificados separadamente para cada seção. O menu contextual pop up exibe as propriedades e atributos disponíveis ao nível de seção:
+![](../../assets/en/WritePro/pict3751849.en.png)
 
-![](../../assets/en/WritePro/pict3751849.pt.png)
+- **Page orientation**: allows you to set a specific page orientation (Portrait or Landscape) per section.
+- **Different first page**: allows you to set different attributes for the first page of the section; this feature can be used to create flyleaves, for example. When this attribute is checked, the first page of the section is handled as a subsection itself and can have its own attributes.
 
-* **Orientação de Página**: permite que estabeleça uma orientação de página específica (Orientação vertical ou horizontal) por seção
-* **Primeira página diferente**: permite que estabeleça atributos diferentes para a primeira página da seção. Esta propriedade pode ser usada para criar páginas em branco no começo do texto, por exemplo. Quando este atributo estiver marcado, a primeira página da seção é manejada como uma subseção e pode ter seus próprios atributos.  
-![](../../assets/en/WritePro/pict2994942.pt.png)
-* **Páginas da esquerda e da direita diferentes**: permite que estabelece atributos diferentes para páginas que estão à esquerda e à direita na seção. Quando este atributo for marcado, páginas da esquerda e da direita na seção serão manejadas como subseções e terão seus próprios atributos.  
-![](../../assets/en/WritePro/pict2994945.pt.png)
-* Comandos **Cabeçalho** e **Rodapé**: estas opções permitem que defina cabeçalhos e rodapé separados. Estas opções são detalhadas abaixo
-* **Margens** / **preenchimento** / **Bordas** / **Fundo**: estes atributos podem ser definidos separadamente para cada seção. Para saber mais, veja o artigo *Atributos 4D Write Pro*.
+![](../../assets/en/WritePro/pict2994942.en.png)
 
-### Inserir cabeçalhos e rodapés 
+- **Different left and right pages**: allows you to set different attributes for left and right pages of the section. When this attribute is checked, left and right pages of the section are handled as subsections and can have their own attributes.
 
-Cada seção pode ter cabeçalhos e rodapés específicos. São exibidos apenas quando o modo de vista da página do documento for **Page**. 
+![](../../assets/en/WritePro/pict2994945.en.png)
 
- Dentro de uma seção, pode definir até três diferentes cabeçalhos ou rodapés, dependendo das opções ativadas:
+- **Columns** commands: allow to define the number and properties of columns for the section. These options are detailed below.
+- **Header** and **Footer** commands: these options allow you to define separate headers and footers. These options are detailed below.
+- **Margins** / **Paddings** / **Borders** / **Background**: these attributes can be defined separately for each section. For more information on these attributes, please refer the *4D Write Pro Attributes* article.
 
-* primeira página,
-* páginas esquerda,
-* páginas direita.
+### Inserting headers and footers
 
-Para criar um cabeçalho ou rodapé: 
+Each section can have specific header and footer. Headers and footers are displayed only when the document page view mode is **Page**.
 
-1. Veja se o documento está no modo de vista **Page**.
-2. Dê duplo clique na área de cabeçalho ou rodapé da seção desejada para começar o modo editar.  
-   * A área cabeçalho está no topo da página:  
-   ![](../../assets/en/WritePro/pict2994956.pt.png)  
-   * A área rodapé está no fundo da página:  
-   ![](../../assets/en/WritePro/pict2994958.pt.png)
+Within a section, you can define up to three different headers and footers, depending on the enabled options:
 
-Pode entrar qualquer conteúdo estático, que será automaticamente repetido em cada página da seção (exceto para a primeira página, se ativado)
+- first page,
+- left page(s),
+- right page(s).
 
-![](../../assets/en/WritePro/pict2995027.pt.png)
+To create a header or a footer:
 
-Pode inserir conteúdos dinâmicos tais como número de página ou contador de página usando o comando [ST INSERT EXPRESSION](../../commands/st-insert-expression) (para saber mais, veja o parágrafo *Inserir documentos e expressões de página*).  
-  
-Nota: TAmbém é possível manejar cabeçalhos e rodapés por programação, usando comandos específicos como [WP Get header](../commands/wp-get-header) ou [WP Get footer](../commands/wp-get-footer)
+1. Make sure the document is in **Page** view mode.
+2. Double-click in the header or footer area of the desired section and page to switch to editing mode.
+   - The header area is at the top of the page:\
+     ![](../../assets/en/WritePro/pict2994956.en.png)
+   - The footer area is at the bottom of the page:\
+     ![](../../assets/en/WritePro/pict2994958.en.png)
 
-Quando um cabeçalho ou rodapé tiver sido definido para uma seção, pode configurar seus atributos comuns usando o menu contextual:
+You can then enter any static contents, which will be repeated automatically on each page of the section (except for the first page, if enabled).
 
-![](../../assets/en/WritePro/pict2994965.pt.png)
+![](../../assets/en/WritePro/pict2995027.en.png)
 
-Para saber mais sobre   **Margens**, **Preenchimento**, **Bordas**, e atributos **Fundo**, veja a seção *Atributos 4D Write Pro*. 
+You can insert dynamic contents such as the page number or the page count using the [ST INSERT EXPRESSION](../../commands/st-insert-expression) command (for more information, please refer to the *Inserting document and page expressions* paragraph).
 
-Pode remover a definição total do cabeçalho ou rodapé (conteúdos e atributos) selecionando os comandos **Remove header** ou **Remove footer** no menu contextual. 
+**Note:** You can also handle footers and headers by programming using specific commands such as [WP Get header](../commands/wp-get-header) and [WP Get footer](../commands/wp-get-footer).
 
-### Compatibilidade 
+Once a header or a footer has been defined for a section, you can configure its common attributes using the contextual menu:
 
-4D Write Pro maneja cabeçalhos e rodapés de documentos convertidos do plug-in 4D Write com uma altura fixa
+![](../../assets/en/WritePro/pict2994965.en.png)
 
-A expressão abaixo e propriedades também são compatíveis e convertidas do plugin 4D Write em cabeçalhos e rodapés:
+For more information on **Margins**, **Paddings**, **Borders**, and **Background** attributes, please refer the *4D Write Pro Attributes* section.
 
-* número de página e variáveis de contador de página
-* primeira página diferenciada
-* páginas esquerda/direita diferenciadas
+You can remove the entire definition of a header or a footer (contents and attributes) by selecting the **Remove header** or **Remove footer** command in the contextual menu.
 
-## Réguas 
+### Compatibidade
 
-As réguas estão disponíveis em todos os modos de visualização de 4D Write Pro e têm as seguintes características:
+4D Write Pro handles headers and footers of documents converted from the 4D Write plug-in with a fixed height.
 
-* Graduações em cm, mm, polegadas ou pt de acordo com a unidade de desenho atual definida no documento 4D Write Pro. Pode mudar as unidades de medida mediante o menu contextual ou modificando o atributo wk layout unit.
-* Símbolo de indentação de primeira linha
-* Símbolo de margem de parágrafo esquerdo
-* Símbolo de margem de parágrafo direito
-* Tabulações mostradas ao longo da borda inferior da régua
-* O contraste de cor visível representa as margens de página esquerda e direita
+The following expressions and properties are also supported and converted from the 4D Write plug-in headers and footers:
 
-As réguas verticais estão disponíveis só no modo Página e possuem as características abaixo:
+- page number and page count variables
+- distinct first page
+- distinct left/right pages
 
-* Graduações em cm, mm, polegadas ou pt segundo a unidade de desenho atual definida no documento 4D Write Pro. Pode mudar as unidades de medida utilizando o menu contextual ou modificando o atributo wk layout unit.
-* Contraste de cor visível que representa as margens superior e inferior da página.
+## Regras
 
-Pode mudar o estado de visualização da régua marcando ou desmarcando a opção **Mostrar régua horizontal** ou **Mostrar régua vertical** no menu contextual da área 4D Write Pro:  
-  
-![](../../assets/en/WritePro/pict4101161.pt.png)  
+Horizontal rulers are available in every viewing mode of 4D Write Pro and have the following characteristics:
 
-**Nota:** uma propriedade específica da área 4D Write Pro permite definir a visualização predeterminada para as réguas (ver a seção *Configurar propriedades de Vista*).
+- Graduations in cm, mm, inches or pt according to current layout unit defined in the 4D Write Pro document. You can change measurement units using the context menu or by modifying the wk layout unit attribute.
+- First line indent symbol
+- Left paragraph margin symbol
+- Right paragraph margin symbol
+- Tabs displayed along lower edge of ruler
+- Visible color contrast representing left and right page margins
 
-### Ajustar margens de texto e indentação 
+Vertical rulers are available in Page mode only and have the following characteristics:
 
-Pode modificar margens, indentações e posições de abas clicando e arrastando os símbolos correspondentes:
+- Graduations in cm, mm, inches or pt according to current layout unit defined in the 4D Write Pro document. You can change measurement units using the context menu or by modifying the wk layout unit attribute.
+- Visible color contrast representing top and bottom page margins
 
-![](../../assets/en/WritePro/pict3106228.en.png)
+You can change the display status of the rulers via standard actions (see *Using 4D Write Pro standard actions*) or by checking or unchecking the **Show horizontal ruler** or **Show vertical ruler** item in the context menu of the 4D Write Pro area:
 
-Quando colocar o mouse sobre um destes símbolos, o cursor muda para indicar que pode ser movido e aparece uma linha de guia vertical enquanto for arrastado:
+![](../../assets/en/WritePro/pict4101161.en.png)
 
-![](../../assets/en/WritePro/pict3133340.en.png)
+**Note:** A specific 4D Write Pro area property allows defining the default display for the rulers (see *Configuring View properties* section).
 
-Quando forem selecionados vários parágrafos, arrastar margens ou símbolos de indentação aplica estes margens ou indentações a todos os parágrafos selecionados. Mantendo pressionada a tecla Maiúsc Enquanto arrasta estes símbolos mantém os intervalos existentes entre indentações ou margens nos parágrafos selecionados.
+### Adjusting text margins and indents
 
-#### Régua Horizontal 
+#### Horizontal ruler
 
-Pode modificar margens esquerda e direita, indentações e posições de tabulação clicando e arrastando os símbolos correspondentes na régua horizontal:
+You can modify the left and right margins, indents and tab positions by clicking and dragging the corresponding symbols on the horizontal ruler:
 
 ![](../../assets/en/WritePro/pict5761667.en.png)
 
-Quando colocar o mouse sobre um desses símbolos, o cursor muda para indicar que pode ser movido e aparece uma linha de guia vertical enquanto for arrastado:
+When you hover the mouse over one of these symbols, the cursor changes to indicate that it can be moved, and a vertical guide line appears while you drag it:
 
 ![](../../assets/en/WritePro/pict5761669.en.png)
 
-Quando vários parágrafos forem selecionados, arrastar margens ou símbolos de indentação aplica a estas margens ou indentações a todos os parágrafos selecionados. Mantendo pressionada a tecla Maiúscula (Shift) enquanto arrasta estes símbolos mantém os intervalos existentes entre as identações ou margens nos parágrafos selecionados.
+When multiple paragraphs are selected, dragging margin or indent symbols applies these margins or indents to all selected paragraphs. Holding down the **Shift** key while dragging these symbols maintains existing intervals between indents or margins in the selected paragraphs.
 
-#### Régua Vertical 
+#### Vertical ruler
 
-Pode modificar as margens superior e inferior com a régua vertical. Quando mover o mouse sobre o limite da margem, o cursor muda para indicar que é possível mover, e aparece uma linha de guia horizontal enquanto for arrastado:  
-  
+You can modify the top and bottom margins with the vertical ruler. When you hover the mouse over the margin limit, the cursor changes to indicate that it can be moved, and a horizontal guide line appears while you drag it:
+
 ![](../../assets/en/WritePro/pict5761671.en.png)
 
-Esta ação pode ser usada para modificar o espaço entre a parte superior e inferior da página e o corpo e o cabeçalho e rodapé de um documento. 
+This action can be used to modify the spacing between the top and bottom of the page and the body and the header and footer of a document.
 
-### Gerenciar tabulações 
+### Managing tabs
 
-É possível usar o menu contextual de regua para criar, modificar ou apagar tabulações:
+You can use the horizontal ruler's context menu to create, modify or delete tabs:
 
 ![](../../assets/en/WritePro/pict5761677.en.png)
 
-Para criar uma tabulação, dê um clique direito diretamente na régua e escolha seu tipo do menu contextual; um clique esquerdo automaticamente cria uma aba esquerda padrão. Pode também dar um clique direito em tabulações existentes para modificar seu tipo usando o menu contextual.
+To create a tab, just right-click directly on the horizontal ruler and choose its type from the context menu; a single left click automatically creates a default left tab. You can also right-click on existing tabs to modify their type using the context menu.
 
-**Remover tabulação** só está disponível quando der clique direito diretamente numa tabulação existente; também pode remover tabulações ao arrastar as tabulações fora da área de régua.
+**Remove tab** is only available when you right-click directly on an existing tab; you can also remove tabs by dragging them outside the horizontal ruler area.
 
-:::note Notas 
+:::note Notes
 
-* Abas também podem ser definidas por programação com os comandos [WP SET ATTRIBUTES](../commands/wp-set-attributes), [WP GET ATTRIBUTES](../commands/wp-get-attributes), e [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) com os seletores wk tab default e wk tabs
-* Para separações decimais, 4D Write Pro consida o primeiro caractere ponto ou vírgula da direita como um separador decimal; essa configuração padrão pode ser modificada com o seletor wk tab decimal separator
+- Tabs can also be defined programmatically with the [WP SET ATTRIBUTES](../commands/wp-set-attributes), [WP GET ATTRIBUTES](../commands/wp-get-attributes), and [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) commands with the `wk tab default` and `wk tabs` selectors.
+- For decimal tabs, 4D Write Pro considers the first dot or comma character from the right as the decimal separator; this default setting can be modified with the `wk tab decimal separator` selector.
 
 :::
 
-#### Definir o signo inicial 
+#### Define leading characters
 
-Os caracteres precedendo as tabulações (signos iniciais) podem ser definidos ao selecionar entre cinco caracteres pré-definidos ou definindo um caractere específico a usar. Os caracteres pré-definidos são:
+The characters preceeding tabs (leading characters) can be defined by selecting from five predefined characters or by designating a specific character to use. The predefined characters are:
 
-* Nenhum (nenhum caractere é exibido - padrão)
-* .... (pontos)
-* \--- (traços)
-* \_\_ (subscritos)
-* \*\*\* (asteriscos)
+- None (no characters are displayed - *default*)
+- .... (dots)
+- \--- (dashes)
+- \*\* (underscores)
+- \*\*\* (asterisks)
 
-Signos iniciais sempre aparecem antes da aba e seguem a direção do texto (da esquerda para direita ou direita para esquerda). Podem ser definidos por programação com os comandos [WP SET ATTRIBUTES](../commands/wp-set-attributes), [WP GET ATTRIBUTES](../commands/wp-get-attributes), e [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) usando `wk leading` com os seletores `wk tab default` ou `wk tabs` , ou através do menu contextual da régua horizontal (mostrado abaixo).
+Leading characters always appear before the tab and follows the text direction (left to right or right to left). They can be defined programmatically with the [WP SET ATTRIBUTES](../commands/wp-set-attributes), [WP GET ATTRIBUTES](../commands/wp-get-attributes), and [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) commands using `wk leading` with the `wk tab default` or `wk tabs` selectors, or via the horizontal ruler's contextual menu (as shown below).
 
 ![](../../assets/en/WritePro/pict5761675.en.png)
 
-Quando **Outro...** for selecionado, um diálogo é exibido onde um caractere inicial personalizado pode ser definido.
+When **Other...** is selected, a dialog is displayed where a custom leading character can be defined.
 
-### Réguas Multi-coluna 
+### Multi-column rulers
 
-Quando duas ou mais colunas forem definidas para o documento ou seção, a régua exibe uma área específica para cada coluna:
+When two or more columns are defined for the document or the section, the horizontal ruler displays a specific area for each column:
 
-![](../../assets/en/WritePro/pict3751870.en.png)
+![](../../assets/en/WritePro/pict5761673.en.png)
 
-**Nota:** propriedade Multi-coluna não está disponível em modo **Embedded**.
+**Note:** Multi-column feature is not available in **Embedded** view mode.
 
-### Evento On After Edit 
+### On After Edit event
 
-Um evento de formulário [`On After Edit`](../../Events/onAfterEdit.md) é ativado para objeto de área de formulário 4D Write Pro sempre que uma aba ou controle de margem for movido, adicionado ou apagado, seja arrastando ou usando o menu contextual
+An [`On After Edit`](../../Events/onAfterEdit.md) form event is triggered for a 4D Write Pro area form object whenever any of the tab or margin controls are moved, added or deleted, whether by dragging them or using the context menu.
 
-## Colunas 
+## Colunas
 
-4D Write Pro permite que maneje colunas em seus documentos. Colunas são conectadas da coluna mais à esquerda até a mais à direita. Ou seja, quando digitar texto, o fluxo de texto vai começar preenchendo a coluna mais à esquerda e continuar com a coluna diretamente à direita até chegar ao final da página. Quando o final da página tiver sido alcançado, o fluxo de texto vai para a próxima página. Para poder balancear as configurações de páginas, 4D Write Pro permite que insira quebras de coluna.
+4D Write Pro allows you to manage columns in your documents. Columns are chained from the left-most column to the right-most column. In other words, when entering text, the text flow will start filling the left column and continue with the column directly to the right until it reaches the end of the page. Once the end of the page is reached, the text flow cycles through the next page. In order to be able to balance the page settings, 4D Write Pro allows you to insert column breaks.
 
 ![](../../assets/en/WritePro/pict3752166.en.png)
 
-Colunas podem ser definidas ao nível de documento (são exibidos no documento inteiro) ou no nível da seção (cada seção pode ter sua própria configuração de coluna).
+Columns can be defined at the document level (they are displayed in the whole document) and/or at the section level (each section can have its own column configuration).
 
-**Nota:** Colunas só são compatíveis nos modos **Vista de página** e **Vista rascunho** (não são exibidos em modo **Embedded** e são exportados a .docx por [WP EXPORT DOCUMENT](../commands/wp-export-document) , mas não aos formato HTML e MIME HTML wk web page complete ).
+**Note:** Columns are supported in **Page view** mode and **Draft view** mode only (they are not displayed in **Embedded** view mode), and they are exported to .docx using [WP EXPORT DOCUMENT](../commands/wp-export-document) but not to HTML and MIME HTML formats (wk web page complete format).
 
-Colunas podem ser estabelecidas usando:
+Columns can be set using:
 
-* o submenu **Colunas** do menu contextual de área 4D Write Pro,
-* [atributos](../commands-legacy/4d-write-pro-attributes.md) 4D Write Pro,
-* [ações padrão](./using-4d-write-pro-standard-actions.md) 4D Write Pro.
+- the **Columns** submenu of the 4D Write Pro area context menu,
+- 4D Write Pro [attributes](../commands-legacy/4d-write-pro-attributes.md),
+- 4D Write Pro [standard actions](./using-4d-write-pro-standard-actions.md).
 
-Pode estabelecer ou obter as propriedades abaixo e ações para colunas:
+You can set or get the following properties and actions for columns:
 
-| **Propriedade**                 | **Descrição**                                                                                                                                                                                                                                                            | *Documento* **atributos**                                                   | **Ações padrão**                                        |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------- | ------------------------------------------------------- |
-| Número de colunas               | Pode definir até 20 colunas para o documento/seção                                                                                                                                                                                                                       | wk column count                                                             | *columnCount*                                           |
-| Espaçamento de coluna           | Espaço entre colunas em pts, polegadas, ou cm. Note que todas as colunas vão ter o mesmo tamanho. Cada largura de coluna é automaticamente calculada por 4D Write Pro de acordo com o número de colunas, a largura de página e o espaçamento                             | wk column spacing                                                           | *columnSpacing*                                         |
-| Largura de coluna               | (atributo apenas leitura) Largura atual de cada coluna, ou seja, largura computada                                                                                                                                                                                       | wk column width                                                             | \-                                                      |
-| Estilo, cor e largura de coluna | Pode adicionar um separadador vertical (uma linha decorativa) entre as collunas. Essas opções permitem planejar o estilo de separador, cor e largura. ![](../../assets/en/WritePro/pict3752176.en.png)Para remover o separador vertical, selecione **None** como estilo. | wk column rule style, wk column rule color, wk column rule width            | *columnRuleStyle*, *columnRuleColor*, *columnRuleWidth* |
-| Inserir break                   | Insere uma quebra de coluna                                                                                                                                                                                                                                              | wk column break, veja também [WP INSERT BREAK](../commands/wp-insert-break) | *insertColumnBreak*                                     |
-| Menu de Colunas                 | Crie um sub-menu Colunas                                                                                                                                                                                                                                                 | \-                                                                          | *colunas*                                               |
+| **Propriedade**                     | **Description**                                                                                                                                                                                                                                                                                                           | **Document attributes**                                                  | **Ações padrão**                                        |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------- |
+| Número de colunas                   | You can define up to 20 columns for the document/section                                                                                                                                                                                                                                                                  | wk column count                                                          | *columnCount*                                           |
+| Column spacing                      | Space between columns in pts, inches, or cm. Note that all columns will have the same size. Each column width is automatically calculated by 4D Write Pro according to the number of columns, the page width, and the spacing                                                             | wk column spacing                                                        | *columnSpacing*                                         |
+| Largura da coluna                   | (read-only attribute) Current width for each column, i.e. computed width                                                                                                                                                                                               | wk column width                                                          | \-                                                     |
+| Column rule style, color, and width | You can add a vertical separator (a decorative line) between columns. These options let you design the separator style, color and width. ![](../../assets/en/WritePro/pict3752176.en.png)To remove the vertical separator, select **None** as a style. | wk column rule style, wk column rule color, wk column rule width         | *columnRuleStyle*, *columnRuleColor*, *columnRuleWidth* |
+| Insert break                        | Insert a column break                                                                                                                                                                                                                                                                                                     | wk column break, see also [WP INSERT BREAK](../commands/wp-insert-break) | *insertColumnBreak*                                     |
+| Columns menu                        | Create a Columns sub-menu                                                                                                                                                                                                                                                                                                 | \-                                                                      | *colunas*                                               |
 
-### Criar uma página com seções múltiplas-colunas e únicas colunas 
+### Creating a page with multiple-column and single column sections
 
-*Inserir uma quebra de seção contínua* em seu documento lhe permite ter seções de várias colunas e seções de uma coluna na mesma página. 
+*Inserting a continuous section break* in your document allows you to have multiple-column sections and single column sections on the same page.
 
 Por exemplo:
 
-![](../../assets/en/WritePro/pict5562054.EN.png)
+![](../../assets/en/WritePro/pict5562054.en.png)
 
-Pode inserir uma quebra de seção continua e mudar o número de colunas a duas para a primeira seção:
+You can insert a continuous section break and change the number of columns to two for the first section:
 
-![](../../assets/en/WritePro/pict5562058.EN.png)
+![](../../assets/en/WritePro/pict5562058.en.png)
 
-## Bookmarks
+## Marcadores
 
-4D Write Pro permite criar e trabalhar com referências dinâmicas para faixas, chamadas **bookmarks**. Uma bookmark é uma referência de nome anexada à [faixa](./ranges.md) específica em um documento 4D Write Pro.
+4D Write Pro allows you to create and work with dynamic references to parts of your documents, called **bookmarks**. A bookmark is a named reference attached to a specific [range](./ranges.md) in a 4D Write Pro document.
 
-Bookmarks são dinâmicas, o que significa que se suas faixas associadas são modificadas, estendidas ou reduzidas, a bookmark ainda vai referenciar a mesma faixa dentro do documento. Por exemplo:
+Bookmarks are dynamic, which means that if the user moves, adds or removes text belonging to the bookmark, the associated range will be updated automatically and the bookmark will continue to reference the same content within the document. Por exemplo:
 
-- Se criar uma bookmark chamada "MyBM" que referencia o texto "Hello world" na página 20 do seu documento.
-- Se então inserir 50 páginas no começo do documento.
-- Mesmo assim ainda poderá acessar o mesmo texto "Hello world" automaticamente, agora na página 70 do documento, através do bookmark "MyBM".
+- You create a bookmark named "MyBM" that references the "Hello world" text on page 20 of your document.
+- Then you insert 50 pages at the beginning of the document.
+- You will still be able to access the same "Hello world" text automatically, now on page 70 of the document, by means of the "MyBM" bookmark.
 
-Um documento pode conter um número ilimitado de bookmarks. Diversas bookmarks podem referenciar a mesma faixa, e faixas de bookmarks podem ser intercaladas. Entretanto, cada nome de bookmark deve ser único no documento. Bookmarks não são importadas quando usar o comando [WP INSERT DOCUMENT](../commands/wp-insert-document-body) (bookmarks no documento de destino não podem ser gravadas por cima).
+A document can contain an unlimited number of bookmarks. Several bookmarks can reference the same range, and bookmark ranges can be interleaved. However, each bookmark name must be unique in the document. Bookmarks are not imported when using the [WP INSERT DOCUMENT BODY](../commands/wp-insert-document-body) command (bookmarks in the destination document cannot be overwritten).
 
-Ao ser criada, uma bookmark é armazenada dentro do documento. A bookmark é salva com o documento e pode ser manejada através de diversos comandos. Também pode ser usada para referenciar partes de um documento modelo. Estas partes podem então ser juntadas automaticamente com dados do banco de dados para produzir documentos output dinâmicos tais como faturas ou catálogos.
+Once created, a bookmark is stored within the document. It is saved with the document, and can be handled by several different commands. It can also be used to reference parts of a template document. These parts can then be assembled automatically with data from the database to produce dynamic output documents such as invoices or catalogs.
 
-Diversos comandos permitem que se crie, remova ou use bookmarks:
+Several commands allow you to create, remove, and use bookmarks:
 
-- [WP NEW BOOKMARK](../commands-legacy/wp-new-bookmark.md) para criar uma nova bookmark de uma faixa,
-- [WP GET BOOKMARKS](../commands-legacy/wp-get-bookmarks.md) para obter todas as bookmarks definidas em um documento,
-- [WP Bookmark range](../commands-legacy/wp-bookmark-range.md) para recuperar uma faixa de uma bookmark existente,
-- [WP DELETE BOOKMARK](../commands-legacy/wp-delete-bookmark.md) para apagar uma bookmark.
-
+[WP NEW BOOKMARK](../commands-legacy/wp-new-bookmark.md) to create a new bookmark from a range,
+[WP GET BOOKMARKS](../commands-legacy/wp-get-bookmarks.md) to get all bookmarks defined in a document,
+[WP Bookmark range](../commands-legacy/wp-bookmark-range.md) to retrieve a range from an existing bookmark,
+[WP DELETE BOOKMARK](../commands-legacy/wp-delete-bookmark.md) to delete a bookmark.
 
 ## Links
 
-4D Write Pro permite que atribua hyperlinks para qualquer faixa de seleção do documento, incluindo faixas de texto, parágrafos, imagens, linhas de tabela ou células. Por exemplo, pode estabelecer um hyperlink para uma imagem, quando o documento 4D Write Pro for exportado a HTML, usuários podem clicar a imagem para abrir uma página num endereço específico.
+4D Write Pro allows you to assign hyperlinks to any target object of your document, including ranges (text, picture, etc.), elements (table, body, footer, etc.), or the whole document. For example, you can set a URL hyperlink to a picture range; if the 4D Write Pro document is exported to HTML, users can click the picture to open a page at a specified address.
 
-Hyperlinks podem ser ativados em documentos 4D Write Pro usando os atalhos **Ctrl+clique** (Windows) ou **Cmd+clique** (macOS).
+Hyperlinks can also be activated from within 4D Write Pro documents using the **Ctrl+click** (Windows) or **Cmd+click** (macOS) shortcut. In a non-enterable 4D Write Pro document, a link can be activated using a simple click.
 
-Em um documento 4D Write Pro, um link pode ser ativado utilizando um simples clique.
+4D Write Pro supports links of the following types:
 
-4D Write Pro é compatível com links dos seguintes tipos:
+| Link Type  | Descrição                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `url`      | Links to web pages or to any document, opens the associated application when activated (\*). Activating a URL link to a 4D Write Pro document (`.4wp`, `.4w7`) replaces the current document in the 4D Write Pro area.<br>(\*) Just like the [OPEN URL](../../commands-legacy/open-url.md) command. |
+| `bookmark` | Links to bookmarks in the document                                                                                                                                                                                                                                                                                                                                                                           |
+| `method`   | Activating a link to a 4D method executes the method (provided it is registered by the [SET ALLOWED METHODS](../../commands/set-allowed-methods.md) method).                                                                                                                                                                                                              |
 
-| Tipo de link | Descrição |
-|--------------|-----------|
-| `url` | Links a páginas web ou a qualquer documento, abre a aplicação associada quando se ativar (\*). A ativação de um link URL ao documento 4D Write Pro (`.4wp`, `.4w7`) substitui ao documento atual na área de 4D Write Pro.<br>(\*) Igual que o comando [OPEN URL](../../commands-legacy/open-url.md). |
-| `bookmark` | Links a bookmarks no documento |
-| `method` | Ativando um link a um método 4D executa o método (sempre que esteja registrado pelo método [SET ALLOWED METHODS](../../commands/set-allowed-methods.md)). |
+Hyperlinks are managed through the following commands:
 
-Os hyperlinks são manejados através dos comandos abaixo:
-
-- [WP SET LINK](../commands-legacy/wp-set-link.md) para inserir um link utilizando um objeto de destino.
-- [WP Get links](../commands-legacy/wp-get-links.md) para obter a coleção de todos os links em um objeto de destino.
+- [WP SET LINK](../commands-legacy/wp-set-link.md) to insert a link using a target object
+- [WP Get links](../commands-legacy/wp-get-links.md) to get the collection of all links in a target object.
 
 :::note
 
-Nota: os links são manejados como atributos, portanto podem ser definidos ou obtidos utilizando os comandos [WP SET ATTRIBUTES](../commands/wp-set-attributes) e [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) assim como a constante `wk link url`. Entretanto, recomendamos utilizar [WP SET LINK](../commands-legacy/wp-set-link.md) e [WP Get links](../commands-legacy/wp-get-links.md) porque automaticamente codificam/decodificam links como URLs. Quando são lidos links utilizando o comando [WP GET ATTRIBUTES](../commands/wp-get-attributes), se a range conter vários hyperlinks, o comando devolve a primeira string de url.
+Links are handled as attributes, thus they can be set or get using the [WP SET ATTRIBUTES](../commands/wp-set-attributes) and [WP GET ATTRIBUTES](../commands/wp-get-attributes) commands along with the `wk link url` constant. However, we recommended using [WP SET LINK](../commands-legacy/wp-set-link.md) and [WP Get links](../commands-legacy/wp-get-links.md) because they automatically encode/decode hyperlinks as URLs. When reading links using the [WP GET ATTRIBUTES](../commands/wp-get-attributes) command, if the target object contains several links, the command returns the first link string.
 
 :::
 
-Por exemplo, se quiser transformar o texto selecionado pelo usuário em uma URL em um site web:
+For example, if you want to transform the text selected by the user into a URL link to a web site:
 
 ![](../../assets/en/WritePro/link1.png)
 
-Se pode escrever:
+Você pode escrever:
 
 ```4d
  $range:=WP Get selection(*;"WParea")
@@ -372,50 +362,51 @@ Se pode escrever:
 
 ![](../../assets/en/WritePro/link2.png)
 
-Para eliminar um link da range, pode escrever:
+To remove a link from a target object, you can write either:
 
 ```4d
  WP RESET ATTRIBUTES($range;wk link url)
 ```
+
 ou
+
 ```4d
  WP SET ATTRIBUTES($range;wk link url;"")
 ```
 
-**Nota:** se *$range* não incluir o link todo, o link é truncado mas não é eliminado completamente.
+**Note:** If *$range* does not include the whole link, the link is truncated but not entirely removed.
 
+## Using commands from the Objects (Forms) theme
 
-## Utilizar os comandos do tema Objeto (Formulários)
+The following 4D commands from the [Objects (Forms)](../../commands/theme/Objects_Forms.md) theme support 4D Write Pro form objects:
 
-Os seguintes comandos 4D do tema [Objetos (Formulários)](../../commands/theme/Objects_Forms.md) suportam objetos de formulário do 4D Write Pro:
+| Comando                                                                         | Comentários                                                                                                                           |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `OBJECT DUPLICATE`                                                              |                                                                                                                                       |
+| `OBJECT Get auto spellcheck` / `OBJECT SET AUTO SPELLCHECK`                     |                                                                                                                                       |
+| `OBJECT Get border style` / `OBJECT SET BORDER STYLE`                           |                                                                                                                                       |
+| `OBJECT Get context menu` / `OBJECT SET CONTEXT MENU`                           |                                                                                                                                       |
+| `OBJECT GET COORDINATES` / `OBJECT SET COORDINATES`                             |                                                                                                                                       |
+| `OBJECT Get data source` / `OBJECT SET DATA SOURCE`                             |                                                                                                                                       |
+| `OBJECT GET DRAG AND DROP OPTIONS` / `OBJECT SET DRAG AND DROP OPTIONS`         |                                                                                                                                       |
+| `OBJECT Get enabled` / `OBJECT SET ENABLED`                                     |                                                                                                                                       |
+| `OBJECT Get enterable` / `OBJECT SET ENTERABLE`                                 |                                                                                                                                       |
+| `OBJECT GET EVENTS` / `OBJECT SET EVENTS`                                       |                                                                                                                                       |
+| `OBJECT Get focus rectangle invisible` / `OBJECT SET FOCUS RECTANGLE INVISIBLE` |                                                                                                                                       |
+| `OBJECT Get font` / `OBJECT SET FONT`                                           | Applied to current selection (if any)                                                                              |
+| `OBJECT Get font size` / `OBJECT SET FONT SIZE`                                 | Applied to current selection (if any)                                                                              |
+| `OBJECT Get font style` / `OBJECT SET FONT STYLE`                               | Applied to current selection (if any)                                                                              |
+| `OBJECT Get horizontal alignment` / `OBJECT SET HORIZONTAL ALIGNMENT`           | Applied to current selection (if any). Support of the `wk justify` constant for 4D Write Pro areas |
+| `OBJECT GET RESIZING OPTIONS` / `OBJECT SET RESIZING OPTIONS`                   |                                                                                                                                       |
+| `OBJECT GET RGB COLORS` / `OBJECT SET RGB COLORS`                               | Applied to current selection (if any)                                                                              |
+| `OBJECT Get type`                                                               |                                                                                                                                       |
+| `OBJECT Get vertical alignment` / `OBJECT SET VERTICAL ALIGNMENT`               | Vertical alignment of paragraphs: only has an effect when paragraph height is greater than paragraph text height      |
+| `OBJECT Get visible` / `OBJECT SET VISIBLE`                                     |                                                                                                                                       |
+| `OBJECT Is styled text`                                                         | Returns true                                                                                                                          |
+| `OBJECT MOVE`                                                                   |                                                                                                                                       |
+| `OBJECT GET SUBFORM CONTAINER SIZE`                                             |                                                                                                                                       |
+| `OBJECT Get name`                                                               |                                                                                                                                       |
+| `OBJECT Get pointer`                                                            |                                                                                                                                       |
 
-| Comando | Comentários |
-|--------|-------------|
-| OBJECT DUPLICATE | |
-| OBJECT Get auto spellcheck / OBJECT SET AUTO SPELLCHECK | |
-| OBJECT Get border style / OBJECT SET BORDER STYLE | |
-| OBJECT Get context menu / OBJECT SET CONTEXT MENU | |
-| OBJECT GET COORDINATES / OBJECT SET COORDINATES | |
-| OBJECT Get data source / OBJECT SET DATA SOURCE | |
-| OBJECT GET DRAG AND DROP OPTIONS / OBJECT SET DRAG AND DROP OPTIONS | |
-| OBJECT Get enabled / OBJECT SET ENABLED | |
-| OBJECT Get enterable / OBJECT SET ENTERABLE | |
-| OBJECT GET EVENTS / OBJECT SET EVENTS | |
-| OBJECT Get focus rectangle invisible / OBJECT SET FOCUS RECTANGLE INVISIBLE | |
-| OBJECT Get font / OBJECT SET FONT | Aplicado a seleção atual (se houver) |
-| OBJECT Get font size / OBJECT SET FONT SIZE | Aplicado a seleção atual (se houver) |
-| OBJECT Get font style / OBJECT SET FONT STYLE | Aplicado a seleção atual (se houver) |
-| OBJECT Get horizontal alignment / OBJECT SET HORIZONTAL ALIGNMENT | Aplicado a seleção atual (se houver) |
-| OBJECT GET RESIZING OPTIONS / OBJECT SET RESIZING OPTIONS | |
-| OBJECT SET COLOR | Aplicado a seleção atual (se houver) |
-| OBJECT GET RGB COLORS / OBJECT SET RGB COLORS | Aplicado a seleção atual (se houver) |
-| OBJECT Get type | |
-| OBJECT Get vertical alignment / OBJECT SET VERTICAL ALIGNMENT | Alinhamento vertical de parágrafos: só tem efeito quando a altura do parágrafo é maior a altura do texto do parágrafo |
-| OBJECT Get visible / OBJECT SET VISIBLE | |
-| OBJECT Is styled text | Devolve true |
-| OBJECT MOVE | |
-| OBJECT GET SUBFORM CONTAINER SIZE | |
-| OBJECT Get name | |
-| OBJECT Get pointer | |
+Any OBJECT commands not listed above are not applicable to 4D Write Pro areas.
 
-Todos os comandos OBJECT não enumerados anteriormente não são aplicáveis às áreas 4D Write Pro.
