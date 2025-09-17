@@ -1,86 +1,82 @@
 ---
 id: handling-tables
-title: Manipuler des tableaux
+title: Tables
 displayed_sidebar: docs
 ---
 
-#### 
-
-Les documents 4D Write Pro peuvent contenir des tableaux. Les tableaux 4D Write Pro sont créés et construits par programmation, mais leur contenu peut être modifié et géré par l'utilisateur. Plusieurs attributs de tableau 4D Write Pro peuvent être définis, notamment la hauteur de ligne, l'alignement, les marges, le style de texte, la couleur, ou encore les bordures.
+4D Write Pro documents can contain tables. 4D Write Pro tables are created and defined by programming, but their contents can be modified and handled by the user. Various 4D Write Pro table attributes are editable, including row height, alignment, margins, text style, color, or borders.
 
 ![](../../assets/en/WritePro/pict3307937.en.png)
 
-**Note :** Comme les tableaux de 4D Write Pro peuvent être remplis par programmation, ils peuvent contenir un grand nombre de colonnes et de lignes. Gardez à l'esprit que de très grands tableaux peuvent avoir un impact sur les performances, surtout s'ils sont affichés à l'écran. Voir aussi [cet article de blog](https://blog.4d.com/4d-write-pro-tables-without-limit) pour plus d'informations.
+**Note:** Since 4D Write Pro tables can be filled by programming, they can contain a large number of columns and rows. Keep in mind that very large tables will impact performances, especially if they are displayed on screen. See also [this blog post](https://blog.4d.com/4d-write-pro-tables-without-limit) for more information.
 
-#### Créer un tableau 
+## Creating a table
 
-Pour créer un tableau 4D Write Pro, vous devez appeler la commande [WP Inserer tableau](../commands/wp-inserer-tableau). Vous pouvez ensuite ajouter des lignes à l'aide de la commande [WP Tableau ajouter ligne](../commands/wp-tableau-ajouter-ligne).
+4D Write Pro tables are created by calling the [WP Insert table](../commands/wp-insert-table) command. You can then add rows by using the [WP Table append row](../commands/wp-table-append-row) command.
 
-**Note :** L'utilisateur peut créer un tableau par copier-coller d'une plage de cellules :   
+**Note:** A user can create a table by copying and pasting a range of cells:\
 ![](../../assets/en/WritePro/pict3307941.en.png)
 
-#### Modifier les tableaux 
+## Editing tables
 
-Le contenu des cellules peut être ajouté par programmation à l'aide de la commande [WP Tableau ajouter ligne](../commands/wp-tableau-ajouter-ligne).
+Cell contents can be added by programming using the [WP Table append row](../commands/wp-table-append-row) command.
 
-Une fois qu'un tableau est créé, le contenu des cellulles peut également être modifié à l'exécution par l'utilisateur. Il peut cliquer dans les cellules, puis sélectionner, modifier, copier/coller ou supprimer le texte et les images comme dans tout paragraphe. Il peut naviguer parmi les cellules en appuyant sur la touche **Tabulation** (**Maj+Tabulation** pour se déplacer dans la direction inverse).
+Once a table is created, cell contents can also be edited at runtime by users. They can click into cells and select, edit, copy/paste, or delete text or pictures just like in regular paragraphs. They can navigate through cells using the **Tab** key (**Shift+Tab** to navigate in opposite direction).
 
-Utiliser la touche **Retour chariot** dans une cellule crée un nouveau paragraphe dans la cellule.
+Using the **Carriage return** key within a cell creates a new paragraph in the cell.
 
-Notez que la largeur des cellules est fixe : lorsque l'utilisateur saisit du texte ou colle une image, la hauteur de la ligne est automatiquement ajustée si nécessaire et le texte passe automatiquement à la ligne :
+Note that cell width is fixed: when a user enters text or pastes a picture, the height of the row is automatically extended if necessary and text automatically wraps:
 
 ![](../../assets/en/WritePro/pict3308424.en.png)
 
-Les utilisateurs peuvent également sélectionner des colonnes, des lignes ou des cellules et appliquer divers attributs relatifs au style de texte, aux couleurs, alignements etc., via le pop up menu intégré ou une interface personnalisée. 4D Write Pro fournit plusieurs commandes permettant de sélectionner toutes les parties d'un tableau :
+Users can also select columns, rows, or cells and apply available attributes regarding text style, colors, alignment, etc. using the built-in pop up menu or any customized interface. 4D Write Pro provides several commands to select any parts of a table:
 
-* [WP Tableau lire lignes](../commands/wp-tableau-lire-lignes) pour obtenir une plage de lignes
-* [WP Tableau lire colonnes](../commands/wp-tableau-lire-colonnes) pour obtenir une plage de colonnes(\*)
-* [WP Tableau lire cellules](../commands/wp-tableau-lire-cellules) pour obtenir une plage de cellules
+- [WP Table get rows](../commands/wp-table-get-rows) to get a row range (or header row range)
+- [WP Table get columns](../commands/wp-table-get-columns) to get a column range(\*)
+- [WP Table get cells](../commands/wp-table-get-cells) to get a cell range
 
-(\*) Les colonnes n'ont pas d'équivalent en html. Dans 4D Write Pro, une plage de colonne est en réalité une plage de cellules, ce qui signifie que les colonnes ont la même priorité que les cellules (cf. ci-dessous).
+(\*) Columns do not have equivalent in html. In 4D Write Pro, a column range is actually a range of cells, which means that columns have the same priority as cells.
 
-Une fois que vous avez sélectionné une plage, vous pouvez lui appliquer un attribut à l'aide de la commande [WP FIXER ATTRIBUTS](../commands/wp-fixer-attributs). A l'intérieur des cellules, les attributs sont appliqués aux paragraphes, caractères ou images, suivant leur contenu. Par exemple, vous pouvez définir la hauteur, la taille de police, la bordure, la marge intérieure etc. d'un tableau ou des cellules d'un tableau (pour plus d'informations, veuillez vous référer à la section *Attributs 4D Write Pro*).
+Once you have selected a range, you can apply any appropriate attribute using the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command. Within cells, attributes are applied to paragraphs, characters, or pictures, depending on their contents. For example, you can set the height, font size, border, padding, etc. of tables or table cells (for more information, please refer to the *4D Write Pro Attributes* section).
 
-Lorsque des attributs différents sont appliqués à des éléments concurrents d'un tableau, l'ordre de priorité suivant est utilisé pour le rendu :
+When different attributes are applied to concurrent elements of a table, a priority order is applied for the rendering:
 
-1. Le tableau est dessiné en premier
-2. Les lignes sont ensuite dessinées (écrasant les attributs du tableau)
-3. Les cellules/colonnes sont ensuite dessinées (écrasant les attributs des lignes).
+1. Table is rendered first
+2. Rows are rendered (overriding table attributes)
+3. Cells/Columns are rendered (overriding row attributes).
 
-##### Redimensionner les colonnes 
+### Resizing columns
 
-La largeur des colonnes du tableau peut être modifiée en faisant glisser le séparateur de colonne vers la gauche ou la droite. Le curseur change pour indiquer qu'il peut être déplacé horizontalement et une ligne verticale apparait dans la règle : 
+The width of table columns can be modified by dragging the column separator to the left or right. The cursor changes to indicate that it can be moved horizontally and vertical line is shown in the ruler:
 
 ![](../../assets/en/WritePro/pict4619596.en.png)
 
-Le redimensionnement des colonne génère un événement formulaire Sur après modification.
+Resizing columns generates an On After Edit form event.
 
-Pour redimensionner une colonne, cliquez sur le séparateur de colonnes et glissez-le vrs la gauche ou la droite. La taille minimale d'une colonne est de 8 points. Si la colonne adjacente située à droite atteint la plus petite taille, toutes les colonnes de droite seront déplacées. Si la première colonne ou une colonne adjacente située à gauche atteint la plus petite taille, aucun redimensionnement ne peut s'effectuer dans cette direction.
+To resize a column, click on the column separator and drag it to the left or right. Miniumum column size is 8pt. If the adjacent column on the right reaches the minimum size, all columns on the right will be moved. If the first column or an adjacent column to the left reaches the minimum size, no further resizing can occur in that direction.
 
-  
-![](../../assets/en/WritePro/pict4619694.fr.png)
+![](../../assets/en/WritePro/pict4619694.en.png)
 
-Si vous appuyez sur la touche **Shift** tout en redimensionnant une colonne, la taille de la colonne adjacente de droite ne sera pas modifiée.
+If you press the **Shift** key while resizing a column, the size of the adjacent column on the right will not be modified.
 
-  
-![](../../assets/en/WritePro/pict4619865.fr.png)
+![](../../assets/en/WritePro/pict4619865.en.png)
 
-**Note** : La propriété Saisissable doit être activée pour que le document 4D Write Pro autorise le redimensionnement des colonnes.
+**Note**: The Enterable property must be enabled for the 4D Write Pro document to allow column resizing.
 
-##### Fusionner et fractionner des cellules 
+### Merging and splitting cells
 
-Avec 4D Write Pro, vous pouvez fusionner et fractionner des cellules dans un tableau. La fusion de cellules consiste à combiner deux ou plusieurs cellules de tableau adjacentes situées sur la même ligne ou colonne en une seule cellule. La division de cellules consiste à prendre des cellules déjà fusionnées et à les fusionner en plusieurs cellules adjacentes sur la même ligne ou colonne. Les cellules peuvent être fusionnées à l'aide de la commande [WP TABLE MERGE CELLS](../commands/wp-table-merge-cells) ou de l'action standard **cell/merge**, et fractionnées à l'aide de la commande [WP TABLE SPLIT CELLS](../commands/wp-table-split-cells) ou de l'action standard **cell/split**.
+With 4D Write Pro, you can split and merge cells in a table. Merging cells is combining two or more adjacent table cells located in the same row or column into a single cell. Splitting cells is taking already merged cells and separating them into multiple adjacent cells in the same row or column. Cells can be merged using the command [WP TABLE MERGE CELLS](../commands/wp-table-merge-cells) or the standard action **cell/merge,** and splitted using the command [WP TABLE SPLIT CELLS](../commands/wp-table-split-cells) or the standard action **cell/split**.
 
 ![](../../assets/en/WritePro/pict6421031.en.png)
 
-Les cellules du tableau peuvent être fusionnées :
+The table cells can be merged:
 
-![](../../assets/en/WritePro/pict6441966.fr.png)
+![](../../assets/en/WritePro/pict6441966.en.png)
 
-**Exemple de fusion de cellules à l'aide du langage :**
+**Example of cell merging using the language:**
 
-1. Désignez une plage de cellules à fusionner dans votre tableau. Les cellules doivent être adjacentes horizontalement, verticalement, ou les deux.
-2. Appelez la commande [WP TABLE MERGE CELLS](../commands/wp-table-merge-cells) sur la plage sélectionnée.
+1. Designate a range of cells to merge in your table, the cells have to be either adjacent horizontally or vertically, or both.
+2. Call the command [WP TABLE MERGE CELLS](../commands/wp-table-merge-cells) on the selected range .
 
 ```4d
  $cells:=WP Table get cells($table;1;1;3;1)
@@ -89,19 +85,18 @@ Les cellules du tableau peuvent être fusionnées :
  WP TABLE MERGE CELLS($table;1;1;3;1)
 ```
 
-Les données existantes dans les cellules initiales sont concaténées dans la cellule fusionnée résultante.
+Existing data from the original cells is concatenated in the resulting merged cell.
 
-Avant
-
+before\
 ![](../../assets/en/WritePro/pict6421340.en.png)
 
-Après   
+after\
 ![](../../assets/en/WritePro/pict6421342.en.png)
 
-**Exemple de fractionnement de cellules à l'aide du langage :**
+**Example of cell splitting using the language:**
 
-1. Désignez une plage de cellules à fractionner dans votre tableau. La plage sélectionnée doit contenir des cellules déjà fusionnées.
-2. Appeler la commande [WP TABLE SPLIT CELLS](../commands/wp-table-split-cells) sur la plage sélectionnée.
+1. Designate a range of cells to be splitted in your table, the selected range has to contain some already merged cells.
+2. Call the command [WP TABLE SPLIT CELLS](../commands/wp-table-split-cells) on the selected range.
 
 ```4d
  $cells:=WP Table get cells($table;1;1;1;1)
@@ -110,27 +105,26 @@ Après
  WP TABLE SPLIT CELLS($table;1;1;1;1)
 ```
 
-Les données de la cellule déjà fusionnée sont toutes conservées dans la première cellule résultante (en haut à gauche) après le fractionnement, les autres cellules résultantes du fractionnement restent vides.
+Data from the already merged cell is kept all in the first resulting cell (top left) after the split, the other resulting cells from the split remain empty.
 
-Avant
-
+before\
 ![](../../assets/en/WritePro/pict6421342.en.png)
 
-Après   
+after\
 ![](../../assets/en/WritePro/pict6421344.en.png)
 
-**Important** : 
+**Important**:
 
-* Toute cellule appartenant à une ligne spéciale (lligne de données, ligne de rupture ou ligne à reporter en bas) ne peut pas être fusionnée verticalement.
-* Les cellules appartenant aux lignes d'en-tête peuvent être fusionnées verticalement uniquement si elles appartiennent toutes à d'autres lignes d'en-tête (elles ne peuvent pas être fusionnées avec des lignes qui ne sont pas des en-têtes et qui suivent les lignes d'en-tête).
+- Any cell belonging to a special row (data row, a break row or bottom carry-over row) cannot be vertically merged.
+- Cells belonging to header rows can be vertically merged only if they all belong to other header rows (they cannot be merged with none header rows following the header rows).
 
-**Désignation des cellules fusionnées :**
+**Designating merged cells:**
 
-Une cellule fusionnée peut être manipulée de la même manière qu'une cellule individuelle (couleur de fond, style de bordure, styles de paragraphe...) en utilisant l'interface de 4D Write Pro, les actions standard ou la commande [WP FIXER ATTRIBUTS](../commands/wp-fixer-attributs) .
+A merged cell can be manipulated the same as a single cell (background color, border style, paragraph styles..) using the 4D Write Pro interface, the standard actions or the command [WP SET ATTRIBUTES](../commands/wp-set-attributes) .
 
-Toutes les commandes de tableau existantes s'appliquent aux plages ou aux éléments contenant des cellules fusionnées. Dans un tableau qui contient des cellules fusionnées, les index des cellules restent les mêmes que si aucune cellule n'avait été fusionnée.
+All the existing table commands are applicable to ranges or elements containing merged cells. In a table that contains merged cells, the indexes of the cells remain as if no cell has been merged.
 
-Exemple : 
+Exemple :
 
 ```4d
  $cell1:=WP Table get cells($table;1;1;1;1)
@@ -139,13 +133,13 @@ Exemple :
  WP SET ATTRIBUTES($cell4;wk background color;"pink")
 ```
 
-Avant  
+before\
 ![](../../assets/en/WritePro/pict6421342.en.png)
 
-Après  
+after\
 ![](../../assets/en/WritePro/pict6421356.en.png)
 
-Dans cet exemple, vous pouvez également passer $cell2 ou $cell3 au lieu de $cell1, tel que :
+in this example you can also pass $cell2 or $cell3 instead of $cell1 such as:
 
 ```4d
  $cell2:=WP Table get cells($table;2;1;1;1)
@@ -155,202 +149,198 @@ Dans cet exemple, vous pouvez également passer $cell2 ou $cell3 au lieu de $cel
  $cell3:=WP Table get cells($table;3;1;1;1)
 ```
 
-et le résultat sera le même qu'en utilisant $cell1 car $cell1, $cell2 et $cell3 font tous référence à la même cellule après la fusion, et toute modification appliquée à $cell1, $cell2 ou $cell3 est en fait appliquée à la nouvelle cellule fusionnée.
+and it will have the same result as using $cell1 because $cell1, $cell2, and $cell3 all refer to the same cell after the merge, and any change applied to $cell1, $cell2, or $cell3 is actually applied to the new merged cell.
 
-Toutefois, si un nombre x de lignes entières ou de colonnes entières sont fusionnées, les index des lignes ou des colonnes suivantes sont décrémentés de x.
+However if an x number of full rows or full columns are merged together, the following rows or columns’s indexes are decremented by x.
 
-#### Pagination des tableaux 
+## Table pagination
 
-Lorsqu'ils sont affichés en mode Page ou en mode Brouillon (ou dans le contexte de l'impression de document), les tableaux 4D Write Pro peuvent être coupés :
+When displayed in Page or Draft mode (or the context of a document printing), 4D Write Pro tables can split:
 
-* automatiquement, si la hauteur du tableau est supérieure à la hauteur de page/colonne disponible,
-* en fonction des sauts de pages/sauts de colonnes définis par programmation ou par l'utilisateur.
+- automatically, if the table height is greater than the available page/column height,
+- depending on page/column breaks set by programming or by the user.
 
-Les coupures de tableaux peuvent s'effectuer entre les lignes (les paragraphes à l'intérieur des lignes ne sont jamais coupés).
+Tables can split between rows, and rows can split too. The table pagination is dynamically updated if the orientation or column number are modified.
 
-Les coupures de tableaux peuvent s'effectuer entre les lignes et les coupures de rangées sont également possibles. La pagination de la table est mise à jour dynamiquement si l'orientation ou le numéro de colonne sont modifiés.
+**Notes :**
 
-**Notes :** 
+- You can disable automatic splits in tables by using the wk page break inside row / wk page break inside table attributes (see *4D Write Pro Attributes*) or the *table/avoidPageBreakInside* and *row/avoidPageBreakInside* standard actions (see *Using 4D Write Pro standard actions*).
+- When a table row and a paragraph have different page break options, the options applied to the row have precedence. For example, when a paragraph allows page breaks, but its parent row does not, the row will not split.
 
-* Vous pouvez désactiver les sauts de tableaux automatiques en utilisant les attributs wk page break inside row / wk page break inside table (voir Attributs 4D Write Pro) ou les actions standard table/avoidPageBreakInside et row/avoidPageBreakInside (voir Utilisation des actions standard 4D Write Pro).
-* Lorsqu'une ligne de tableau et un paragraphe ont des options de saut de page différentes, les options appliquées à la ligne sont prioritaires. Par exemple, lorsqu'un paragraphe autorise les sauts de page, mais que sa ligne mère ne les autorise pas, la ligne ne sera pas divisée.
+Table pagination can also be controlled by programming or by the user. Available actions include:
 
-La pagination des tableaux peut également être contrôlée par programmation ou par l'utilisateur. Les actions disponibles incluent :
+- inserting a page break in a table:
+  - [WP INSERT BREAK](../commands/wp-insert-break) command
+  - *insertPageBreak* standard action
+  - **Insert page break** option of the default contextual menu
+- inserting a column break in a table:
+  - [WP INSERT BREAK](../commands/wp-insert-break) command
+  - *insertColumnBreak* standard action
+  - **Insert column break** option of the default contextual menu
 
-* l'insertion d'un saut de page dans un tableau :  
-   * commande [WP INSERER RUPTURE](../commands/wp-inserer-rupture)  
-   * action standard *insertPageBreak*  
-   * option **Insérer saut de page** du menu contextuel par défaut
-* l'insertion d'un saut de colonne dans un tableau :  
-   * commande [WP INSERER RUPTURE](../commands/wp-inserer-rupture)  
-   * action standard *insertColumnBreak*  
-   * option **Insérer saut de colonne** du menu contextuel par défaut
-
-Lorsqu'un saut de page ou de colonne est inséré via une action standard ou le menu contextuel, il est ajouté avant le contenu sélectionné : la première ligne de la sélection est déplacée au début de la page ou de la colonne suivante. Par exemple :
+When a page break or a column break is inserted through a standard action or the contextual menu, it is added before the selected contents: the first row of the selection is moved at the beginning of the next page or column. Par exemple :
 
 ![](../../assets/en/WritePro/pict3893246.en.png) \===> ![](../../assets/en/WritePro/pict3893248.en.png)
 
-**Notes :** 
+**Notes :**
 
-* Seuls les tableaux situés dans le corps d'un document peuvent être rompus. Les ruptures insérées dans les tableaux, dans les en-têtes et les pieds, sont ignorées.
-* Les tableaux ne peuvent pas être séparés dans des sections différentes. Insérer un saut de section dans un tableau déplacera la totalité du tableau dans la nouvelle section.
-* Les saut de page à l'intérieur des lignes ne sont pas autorisés lorsque le *Carry-over rows (Lignes à reporter en bas)* est activé.
+- Only tables in the body part of a document can split. Breaks inserted in tables in headers and footers are ignored.
+- Tables cannot be broken in different sections. Inserting a section break in a table will move the whole table to the new section.
+- Breaks inside rows are not allowed when *Carry-over rows* are enabled.
 
-#### Répétition des en-têtes 
+## Repeated headers
 
-4D Write Pro vous permet de définir jusqu'à cinq lignes d'en-tête par tableau. Les lignes d'en-tête sélectionnées seront répétées sur chaque colonne ou sur chaque page lorsqu'un saut de colonne ou un saut de page se produit. 
+4D Write Pro allows you to define up to five header rows per table. Selected header rows will be repeated on every column or page when a column break or a page break occurs.
 
 ![](../../assets/en/WritePro/pict5859437.en.png)
 
-Les en-têtes de tableau sont la ou les premières lignes du tableau. Pour définir les lignes d'en-tête, vous pouvez :
+Table headers are the first row(s) of the table. To define header rows, you can:
 
-* utiliser l'action standard *headerRowCount* (voir *Utiliser les actions standard 4D Write Pro*), ou
-* utiliser l'action [WP FIXER ATTRIBUTS](../commands/wp-fixer-attributs) avec wk header row count (sur un tableau, voir *Tableaux*), ou wk header (sur une ligne, voir *Lignes et colonnes*).
+- use the *headerRowCount* standard action (see *Using 4D Write Pro standard actions*), or
+- use the [WP SET ATTRIBUTES](../commands/wp-set-attributes) with wk header row count (on a table, see *Tables*), or wk header (on a row, see *Rows and columns*).
 
-Si vous désignez plus de cinq lignes comme en-tête (ou si cela résulte d'une insertion de lignes dans un en-tête existant), 4D Write Pro utilise uniquement les cinq premières lignes comme en-tête. Si vous supprimez la ou les lignes définies dans l'en-tête, le nombre de lignes d'en-tête est réduit. 
+If you designate more than five rows as header (or if it results from an insertion of rows in an existing header), 4D Write Pro only uses the first five rows as header. If you remove row(s) defined in the header, the number of header rows is decreased.
 
-#### Datasource de tableau 
+## Table datasource
 
-Vous pouvez assigner un objet formule comme source de données pour un tableau et accéder aux valeurs résultantes à travers le tableau en utilisant des *Expressions avec This* (voir ci-dessous). La formule de la source de données est évaluée par 4D Write Pro lors du calcul des formules (par exemple à l'ouverture du document, lors de l'appel de la commande [WP CALCULER FORMULES](../commands/wp-calculer-formules), etc.). Cette fonctionnalité bénéficie des contextes de données (voir [WP FIXER CONTEXTE DONNEES](../commands/wp-fixer-contexte-donnees)).
+You can assign a formula object as a datasource for a table and access the resulting value(s) from within the table using *Expressions with This* (see below). The datasource formula is processed by 4D Write Pro when formulas are computed (e.g. when the document is opened, when the [WP COMPUTE FORMULAS](../commands/wp-compute-formulas) command is called, etc.). This feature takes advantage of data contexts (see [WP SET DATA CONTEXT](../commands/wp-set-data-context)).
 
-Pour affecter une source de données à un tableau, utilisez la commande [WP FIXER ATTRIBUTS](../commands/wp-fixer-attributs) avec wk datasource et un objet [formule 4D](https://developer.4d.com/docs/fr/API/FunctionClass/) comme valeur. Par exemple, pour remplir un tableau avec une ligne pour chaque personne vivant en France :
+To assign a datasource to a table, use the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command with the wk datasource and a *4D formula* object as value. For example, to fill a table with a row for every person living in France:
 
 ```4d
  $formula:=Formula(ds.people.query("country = :1";"France"))
  WP SET ATTRIBUTES($table;wk datasource;$formula)
 ```
 
-* Si l'objet formule de la source de données renvoie une collection ou une sélection d'entités (non vide), le tableau est automatiquement rempli lorsque la formule est calculée : il contient au moins autant de lignes qu'il y a d'éléments dans la collection ou d'entités dans la sélection d'entités. La première ligne du tableau, appelée ligne de données, est utilisée comme ligne modèle (à l'exclusion de la ou des lignes d'en-tête et de la ou des lignes de rupture éventuelles).
-* Dans la ligne de données (et la ou les lignes de rupture), vous pouvez insérer des expressions qui utilisent des mots-clés spéciaux tels que This.item.lastname. Les expressions sont remplacées au cours du traitement par les données de la collection ou de la sélection d'entités. La ligne de données sera dupliquée de manière à ce que le nombre de lignes d'éléments soit égal au nombre d'éléments de la collection ou de la sélection d'entités après le traitement des formules.
-* Si la formule de la source de données ne renvoie pas de collection ou de sélection d'entités, ou si elle retourne une collection/sélection d'entités vide, les lignes du tableau ne sont pas créées automatiquement et toutes les lignes sont traitées comme des lignes normales. Vous pouvez définir une ligne de remplacement à afficher en cas de source de données vide.
+- If the datasource formula object returns a (non empty) collection or entity selection, the table is automatically filled when the formula is computed: it contains at least as many rows as there are elements in the collection or entities in the entity selection. The first table row, called the data row, is used as a template row (excluding header row(s) and the possible break row(s)).
+- In the data row (and break row(s)), you can insert expressions that use special keywords such as *This.item.lastname*. Expressions are replaced during processing by data from the collection or entity selection. The data row will be duplicated so that the number of item rows is equal to the number of items in the collection or entity selection after formulas are computed.
+- If the datasource formula does not return a collection or a an entity selection, or if it returns an empty collection/entity selection, the table rows are not created automatically and all rows are treated as regular rows. You can define a placeholder row to be displayed in case of empty datasource.
 
-Pour supprimer une source de données d'un tableau, utilisez la commande [WP REINITIALISER ATTRIBUTS](../commands/wp-reinitialiser-attributs). La valeur de l'attribut de la source de données sera alors *null* :
+To remove a datasource from a table, use the [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) command. It will set the datasource attribute value to *null*:
 
 ```4d
  WP RESET ATTRIBUTES($table;wk datasource)
 ```
 
-##### Créer un tableau avec une datasource 
+### Building a table with datasource
 
-Un tableau fondé sur une datasource peut être composé des lignes suivantes:
+A table design based upon a datasource can contain the following rows:
 
-| **icon**                                                      | **Lignes**              | **Number** | **Mandatory** | **Conditions**                                                 | **Description**                                                                                                                                                                                                                                                                                                                                                                                                           |
-| ------------------------------------------------------------- | ----------------------- | ---------- | ------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![](../../assets/en/WritePro/pict6260026.en.png)<br/> | Lignes d'en-tête        | jusqu'à 5  | \-            | \-                                                             | En-tête de tableau standard, voir *Répétition des en-têtes*                                                                                                                                                                                                                                                                                                                                                               |
-| ![](../../assets/en/WritePro/pict7148495.en.png)<br/> | Ligne de données        | 1          | Oui           | La formule de datasource doit retourner des éléments itérables | Si le tableau n'a pas de lignes d'en-tête et/ou ligne(s) de rupture, la ligne de données est la première ligne du tableau - sinon, c'est la première ligne après l'en-tête ou la (les) ligne(s) de rupture. Elle est généralement remplie d'expressions utilisant **This** (e.g. This.item.value) qui donnent accès aux données traitées lorsque le document est en mode *Display values* et que la ligne est dupliquée.. |
-| ![](../../assets/en/WritePro/pict6260033.en.png)<br/> | Lignes de rupture       | jusqu'à 5  | \-            | La formule de datasource doit retourner des éléments itérables | La (les) ligne(s) apparaissant avant ou après la ligne de données. Voir *Break rows (Lignes de rupture)*                                                                                                                                                                                                                                                                                                                  |
-| ![](../../assets/en/WritePro/pict6260036.en.png)<br/> | Ligne à reporter en bas | 1          | \-            | La formule de datasource doit retourner des éléments itérables | La première ligne suivant la ligne de données ou la (les) ligne(s) de rupture. voir *Carry-over rows (Lignes à reporter en bas)*                                                                                                                                                                                                                                                                                          |
-| ![](../../assets/en/WritePro/pict7014959.en.png)<br/> | ligne de remplacement   | 1          | \-            | La source de données doit être définie                         | La ligne de remplacement doit être affichée à la place de la ligne de données et des lignes de rupture (le cas échéant) lorsque la source de données est vide et que l'attribut "Show placeholder row" est défini sur le tableau via l'action standard *emptyDatasource* ou la constante *wk empty datasource*. La ligne de remplacement précède immédiatement les autres lignes.                                         |
-| |  Autres lignes                                              | illimité                | \-         | \-            | Lignes standard (non dupliquées)                               |                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **icon**                                              | **Rows**              | **Number** | **Obligatoire** | **Conditions**                                       | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |   |
+| ----------------------------------------------------- | --------------------- | ---------- | --------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
+| ![](../../assets/en/WritePro/pict6260026.en.png)      | Header rows           | up to 5    | \-             | \-                                                  | Standard table header, see *Repeated headers*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |   |
+| ![](../../assets/en/WritePro/pict7148495.en.png)<br/> | Data row              | 1          | oui             | The datasource formula must return iterable elements | If the table does not have header rows and/or break row(s), the data row is the first row of the table - otherwise, it is the first row following either the header or the break row(s). It is usually filled with expressions using **This** (e.g. *This.item.value*) that give access to processed data when the document is in *Display values* mode and the row is duplicated. |   |
+| ![](../../assets/en/WritePro/pict6260033.en.png)<br/> | Sort break rows       | up to 5    | \-             | The datasource formula must return iterable elements | The row(s) appearing before or after the data row. See *Break rows*                                                                                                                                                                                                                                                                                                                                                                                                                                      |   |
+| ![](../../assets/en/WritePro/pict6260036.en.png)<br/> | Bottom carry-over row | 1          | \-             | The datasource formula must return iterable elements | The first row following the data row or the break row(s). See *Carry-over rows*                                                                                                                                                                                                                                                                                                                                                                                                                          |   |
+| ![](../../assets/en/WritePro/pict7014959.en.png)      | Placeholder row       | 1          | \-             | The datasource must be defined                       | placeholder row is to be displayed instead of the data row and the break rows (if any) when the datasource is empty and the "Show placeholder row" attribute is set on the table via the standard action *emptyDatasource*or the constant *wk empty datasource*. The placeholder row comes immediately before the other rows.                                                                                                                                                            |   |
+|                                                       | Other rows            | unlimited  | \-             | \-                                                  | Standard rows (not duplicated)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |   |
 
-Exemple (*Mode d'affichage des références*):
+Example (*Show references* mode):
 
 ![](../../assets/en/WritePro/pict7148443.en.png)
 
-Lorsque les formules sont calculées, la ligne de données est automatiquement dupliquée si nécessaire pour correspondre à toutes les *entities* ou éléments de collection retournées par la formule du datasource :
+When the formulas are computed, the data row is automatically duplicated as needed to match all entities or collection items returned by the datasource formula:
 
 ![](../../assets/en/WritePro/pict5907013.en.png)
 
-Dans tous les cas, l'instruction suivante retourne le véritable nombre de lignes :
+In any cases, the following statement returns the actual number of rows:
 
 ```4d
- WP GET ATTRIBUTES($table;wk row count;$vcount) //31 pour l'exemple ci-dessus
+ WP GET ATTRIBUTES($table;wk row count;$vcount) //31 for the example above
 ```
 
-##### Carry-over rows (Lignes à reporter en bas) 
+### Carry-over rows
 
-Les tableaux basés sur des sources de données prennent en charge les **bottom carry-over rows (*lignes à reporter en bas*)** qui s'affichent automatiquement au bas de chaque page/colonne lorsque le tableau est réparti sur plusieurs pages/colonnes.
-
-Les carry-over rows peuvent afficher des informations supplémentaires basées sur les éléments précédemment affichés/imprimés, grâce à l'expression **This.previousItems** (voir *Expressions avec This*). Cette fonctionnalité vous permet, par exemple, d'ajouter des lignes de sous-total.
+Tables based on datasources support **bottom carry-over rows** that are automatically displayed at the bottom of each page/column when the table is split over more than one page/column. A carry-over row can display extra information based on previously displayed/printed items, thanks to the **This.previousItems** expression (see *Expressions with This*). This feature allows you, for example, to add subtotal rows.
 
 ![](../../assets/en/WritePro/pict6022144.en.png)
 
-Les carry-over rows sont affichées : 
+Carry-over rows are displayed:
 
-* lorsqu'un tableau de source de données ne tient pas dans une seule page (ou colonne)
-* au bas du tableau
-* sur la première page (ou première colonne) et toutes les autres sauf la dernière.
+- when a datasource table does not fit in a single page (or column)
+- at the bottom of the table
+- on the first page (or first column) and all other ones except on the last one.
 
-**Important:** Les carry-over rows ne sont disponibles que sur les tableaux remplis par une formule de source de données renvoyant une collection ou une entity selection non vide, et en mode d'affichage des valeurs. Dans tous les autres cas ou lorsque la formule de la source de données n'a pas été calculée, une ligne à reporter en bas est affichée comme une ligne normale.
+**Important:** Carry-over rows are only available on tables filled by a datasource formula returning a non-empty collection or entity selection and in display values mode. In all other cases or when the datasource formula has not been computed, a carry-over row is displayed as a regular row.
 
-Pour créer des carry-over rows :
+To create carry-over rows:
 
-1. Dans le template de tableau, ajoutez une ligne juste après la ligne de données ou la (les) ligne(s) de rupture et insérez-y les formules nécessaires, en utilisant par exemple **This.previousItems**.
-2. Activer la fonctionnalité carry-over row pour votre document. Vous pouvez:  
-\- Utiliser l'action standard *bottomCarryOverRow* (voir *Utiliser les actions standard 4D Write Pro*), ou  
-\- Utiliser la commande [WP FIXER ATTRIBUTS](../commands/wp-fixer-attributs) avec le sélecteur d'attribut wk bottom carry over row *Tableaux*.
+1. In the table template, add a row just after the data row or the break row(s) and insert any necessary formulas inside, using for example **This.previousItems**.
+2. Enable the carry-over row feature for your document. You can:\
+   \- use the *bottomCarryOverRow* standard action (see *Using 4D Write Pro standard actions*), or\
+   \- use the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command with the wk bottom carry over row *Tables* attribute selector.
 
-**Remarque:** Les sauts de page à l'intérieur des lignes ne sont pas autorisés lorsque la fonctionnalité carry-over row est activée (voir *Pagination des tableaux*). Les options correspondantes, si elles sont définies, sont ignorées.
+**Note:** Page breaks inside rows are not allowed when the carry-over row feature is enabled (see *Table pagination*). Corresponding options, if set, are ignored.
 
-##### Break rows (Lignes de rupture) 
+### Lignes de rupture
 
-Les tableaux basés sur des sources de données acceptent une ou plusieurs **Sort Break Rows** (lignes de rupture) qui peuvent être affichées avant ou après la ligne de données. Les lignes de rupture vous permettent de diviser visuellement vos éléments de source de données préalablement triés en différentes parties dans votre tableau selon la valeur d'une formule calculée. 
+Tables based on datasources support one or several **Sort Break Rows** that can be displayed either before or after the data row. S**ort Break Rows** help you to visually divide your already sorted datasource items in your table into different parts based on a computed formula value.
 
 ![](../../assets/en/WritePro/pict6236360.en.png)
 
-Chaque fois que la valeur de la formule change, une nouvelle ligne de rupture est insérée. Par conséquent, pour que votre tableau soit rendu correctement, l'entity selection (ou la collection) utilisée comme source de données du tableau **doit être triée en conséquence**. Par exemple, si on souhaite obtenir des ruptures par pays et par ville, la source de données doit être triée comme suit : *ds.people.all().orderBy("country asc, city asc")*
+Each time the formula value changes, a new break row is inserted. Therefore, for tables to be rendered correctly, the entity selection (or collection) used as table datasource **must be sorted accordingly**. For example, if breaks by countries and cities are wanted, then the datasource must be sorted as follows: *ds.people.all().orderBy("country asc, city asc")*
 
-La valeur de rupture est définie par l'attribut *wk break formula.* La valeur est généralement une formule basée sur une propriété d'élément comme "This.item.name", autrement la valeur calculée risque de ne jamais changer, ce qui rend la formule de rupture inutile. L'attribut *wk break formula* est ignoré si le tableau n'a pas de source de données ou si la ligne est un en-tête. Une ligne de rupture doit être adjacente à la ligne de données (avant ou après) ou à une autre ligne de rupture, sinon elle est ignorée.
+The break value is defined through the *wk break formula* attribute. Value is usually a formula based on an item property like "This.item.name'', otherwise the computed value may never change which makes the break formula useless. The *wk break formula* attribute is ignored if the table has no datasource or if the row is a header. A break row must be adjacent to the data row (either before or after), or to another break row, otherwise it is ignored.
 
 ```4d
  WP SET ATTRIBUTES($row_2;wk break formula;Formula(This.item.country))
 ```
 
-Grâce à l'expression **This.breakItems**, on peut par exemple afficher la moyenne totale des lignes de données à l'intérieur d'une ligne de rupture. breakItems est un sous-ensemble évalué de la source de données de la table, soit une entity selection si la source de données du tableau est une entity selection, soit une collection si la source de données est une collection. Vous pouvez donc taper à l'intérieur d'une ligne de rupture : *This.breakItems.sum("salary")*
+Thanks to the **This.breakItems** expression you can use this feature, for example, to display the total average of the data rows within one break row. breakItems is an evaluated subset of the table datasource, either an entity selection if the table datasource is an entity selection, or a collection if the datasource is a collection. So, inside a break row, you can type: *This.breakItems.sum("salary")*
 
-Pour créer des lignes de rupture :
+To create break rows:
 
-1. Ordonnez la source de données avec les niveaux correspondant aux ruptures que vous souhaitez afficher, par exemple, *ds.People.all().orderBy("continent asc, country asc, city asc")*
-2. Tracer la ou les lignes de rupture dans le modèle de tableau. Si les ruptures sont situées après la ligne de données, elles doivent suivre **l'ordre de tri opposé** à celui de la source de données, et si elles sont situées avant la ligne de données, elles doivent suivre **le même ordre de tri** que celui de la source de données.
-3. Définir la formule de rupture de l'attribut *wk break formula* pour la ou les ligne(s) sélectionnée(s) :
+1. Order the datasource with the levels corresponding to the breaks you want to display, for example, *ds.People.all().orderBy("continent asc, country asc, city asc")*
+2. Draw the break row(s) in the table template. If the breaks are located after the data row, they must match the **opposite sort order** as the datasource, and if they are located before the data row, they must match **the same sort order** as the datasource.
+3. Set the attribute *wk break formula* to the selected row(s):
 
 ```4d
- $row:=WP Table get rows($table;2;1) //sélectionner la deuxième ligne comme rupture
+ $row:=WP Table get rows($table;2;1) //select the second row as break
  WP SET ATTRIBUTES($row_2;wk break formula;Formula(This.item.country))
 ```
 
-##### Expressions avec This 
+### Expressions with This
 
-Lorsqu'il est utilisé dans une formule à l'intérieur du tableau, le mot-clé **This** donne accès à des données différentes selon le contexte :
+When used in a formula within the table, the **This** keyword gives access to different data according to the context:
 
-| **Contexte**                                                                                                                                                    | **Expression**                           | **Type**                                                                                    | **Retourne**                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| N'importe où                                                                                                                                                    | This.table                               | Objet                                                                                       | Tableau courant                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| |  This.row                                                                                                                                                     | Objet                                    | Elément de ligne ou de tableau courant                                                      |                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| |  This.rowIndex                                                                                                                                                | Numérique                                | Indice de ligne courante, commençant par 1                                                  |                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Lorsqu'un datasource a été défini pour un tableau                                                                                                               | This.table.dataSource                    | Objet (formula)                                                                             | Datasource en tant que formula                                                                                                                                                                                                                                                                                                                                                                                                              |
-| |  This.tableData                                                                                                                                               | Collection ou Entity selection (souvent) | Evaluated table.dataSource                                                                  |                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Dans chaque ligne de données lorsqu'une source de données du tableau retourne une collection ou une entity selection.                                           | This.item.xxx                            | Tout type                                                                                   | Correspond à chaque élément de la collection de datasource du tableau ou à l'*entity selection*, par exemple **This.item.firstName** si *l'entity* associée possède l'attribut *firstName*                                                                                                                                                                                                                                                  |
-| |  This.itemIndex                                                                                                                                               | Numérique                                | Indice de l'élément courant dans la collection ou l'*entity selection*, en commençant par 0 |                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Dans n'importe quelle ligne (à l'exception des lignes d'en-tête), lorsqu'une source de données de type table renvoie une collection ou une sélection d'entités. | This.previousItems                       | Collection ou Entity selection                                                              | Éléments affichés sur les pages avant carry over row (le cas échéant) ou avant la ligne de l'expression, y compris la page où est affichée la ligne contenant l'expression. Cette expression renvoie le même type de valeur que l'expression **This.tableData**.                                                                                                                                                                            |
-| Dans une ligne de rupture                                                                                                                                       | This.breakItems                          | Collection ou Entity selection                                                              | Les éléments de la collection ou de la entity selection affichés dans les lignes entre : la ligne de rupture actuelle et la ligne de rupture précédente du même niveau (ou le début du tableau) si la ou les lignes de rupture sont affichées après la ligne de données. la rupture actuelle et la ligne de rupture suivante du même niveau (ou la fin du tableau) si la ou les lignes de rupture sont affichées avant la ligne de données. |
+| **Context**                                                                                                            | **Expression**                                        | **Type**                                                    | **Returns**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |   |
+| ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
+| Anywhere                                                                                                               | This.table                            | Object                                                      | Current table                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |   |
+|                                                                                                                        | This.row                              | Object                                                      | Current table row element                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |   |
+|                                                                                                                        | This.rowIndex                         | Number                                                      | Index of the current row, starting from 1                                                                                                                                                                                                                                                                                                                                                                                                                                                               |   |
+| When a datasource has been defined for the table                                                                       | This.table.dataSource | Objet (formula)                          | Datasource as a formula                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |   |
+|                                                                                                                        | This.tableData                        | Collection or Entity selection (usually) | Evaluated table.dataSource                                                                                                                                                                                                                                                                                                                                                                                                                                                              |   |
+| In each data row when a table datasource returns a collection or an entity selection                                   | This.item.xxx         | Tous                                                        | Mapped to each item of the table datasource collection or entity selection, for example **This.item.firstName** if the associated entity has the *firstName* attribute                                                                                                                                                                                                                                                                                                  |   |
+|                                                                                                                        | This.itemIndex                        | Number                                                      | Index of the current item in the collection or entity selection, starting from 0                                                                                                                                                                                                                                                                                                                                                                                                                        |   |
+| In any row (except header rows) when a table datasource returns a collection or an entity selection | This.previousItems                    | Collection or Entity selection                              | Items displayed on the pages before the bottom carry over row (if any) or before the row of the expression, including the page where is displayed the row containing the expression. <br/>This expression returns the same type of value as the **This.tableData** expression.                                                                                                                                                       |   |
+| In a break row                                                                                                         | This.breakItems                       | Collection or Entity selection                              | Items of the collection or entity selection displayed in the rows between: the current break row and the previous break row of the same level (or the start of the table) if the break row(s) are displayed after the data row. the current break and the next break row of the same level (or the end of the table) if the break row(s) are displayed before the data row. |   |
 
-Dans tout autre contexte, ces expressions retourneront *undefined*.
+In any other contexts, these expressions will return *undefined*.
 
-**Note** : Pour plus d'informations sur l'insertion de formules, voir [WP INSERER FORMULE](../commands/wp-inserer-formule).
+**Note:** For more information about formula insertion, see [WP INSERT FORMULA](../commands/wp-insert-formula).
 
-##### Travailler avec un tableau basé sur une datasource 
+### Working with a table datasource
 
-Lorsqu'un tableau est rempli à partir d'une datasource, les lignes sont automatiquement créées lorsque les références sont calculées. Vous pouvez insérer ou supprimer des lignes, modifier le contenu des cellules, changer le style, etc :
+When a table is filled from a datasource, rows are automatically created when references are computed. You can insert or delete rows, edit cell contents, change the style, etc.:
 
 ![](../../assets/en/WritePro/pict5907021.en.png)
 
-A noter cependant que si la datasource du tableau est recalculée, toutes les modifications effectuées sur les lignes calculées (sauf sur la première ligne) sont perdues. Par contre, comme la première ligne est la ligne de données, toute modification apportée à cette ligne sera propagée à toutes les lignes si la datasource du tableau est recalculée. De même pour les lignes de rupture, toutes les modifications apportées aux lignes de rupture calculées sont perdues, à l'exception des lignes de rupture modèles (qui peuvent être situées soit à la fin, soit au début du tableau).
+However, keep in mind that if the table datasource is recomputed, any modifications made on computed rows (except on the first row) are lost. On the other hand, since the first row is the data row, any modification made to this row will be propagated to all rows if the table datasource is recomputed. Same thing goes for break rows, any modifications made on computed break rows are lost, except for the template break rows (which can be located either at the end or the beginning of the table).
 
 Par exemple :
 
 ![](../../assets/en/WritePro/pict5907023.en.png)
 
-Après le recalcul des expressions :
+After recomputing expressions:
 
 ![](../../assets/en/WritePro/pict5907026.en.png)
 
-Lorsque le curseur est inséré dans une cellule d'un tableau rempli avec une datasource, une icône d'avertissement s'affiche sur le côté gauche ainsi qu'une infobulle qui affiche des informations :
+When the cursor is inserted in a cell of a table filled with a datasource, a warning icon is displayed on the left side along with a tip that displays information:
 
-![](../../assets/en/WritePro/pict5907030.en.png) 
+![](../../assets/en/WritePro/pict5907030.en.png)
 
-Lorsque les formules sont affichées comme références ou lorsque vous enregistrez le document, seule la première ligne est affichée/enregistrée comme modèle (si les formules ne sont pas gelées).
+When formulas are displayed as references or when you save the document, only the first row is displayed/saved as template (if formulas are not frozen).
 
-Lorsque les formules sont gelées, le tableau devient un tableau standard et la datasource du tableau est réinitialisée. 
+When the formulas are frozen, the table becomes a standard table and the table datasource is reset.
 
-**Note** : L'action standard *freezeExpressions* ne recalcule pas les formules.
+**Note:** *freezeExpressions* standard action does not recompute formulas.
