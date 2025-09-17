@@ -4,86 +4,84 @@ title: Importing and Exporting in docx format
 displayed_sidebar: docs
 ---
 
-#### 
+4D Write Pro can both import and export documents in the .docx format. This format is supported by word processing applications such as Microsoft Word.
 
-4D Write Pro は.docx フォーマットでの読み込みと書き出しの両方ができます。このフォーマットはMicrosof Word などのワープロアプリケーションでサポートされているものです。
+**Compatibility note**: Support for 4D Write Pro documents imported or exported in .docx format is only certified for Microsoft Word 2010 and newer. Older versions, particularly Microsoft Word 2007, may not be able to open the documents.
 
-**互換性に関する注意:** 4D Write Pro ドキュメントの.docx フォーマットの読み込み/書き出しに関するサポートは、Microsoft Word 2010 以降にしか認定されていません。それより古いバージョン、具体的にはMicrosoft Word 2007 などは、ドキュメントを開けない可能性があります。
+## How to import .docx format
 
-#### .docx フォーマットのファイルの読み込み方 
+Documents in .docx format can be imported into 4D Write Pro with the [WP Import document](../commands/wp-import-document) command. For more information, please refer to the description of this command.
 
-.docx フォーマットのドキュメントは、[WP Import document](../commands/wp-import-document) コマンドで4D Write Pro に読み込むことができます。詳細な情報については、このコマンドの説明を参照してください。
+### Behavioral changes
 
-##### 振る舞いの変化 
+While the majority of .docx settings are preserved, some settings are known to be either unsupported or behave differently in 4D Write Pro. These are:
 
-大部分の.docx のパラメーターは保存される一方、一部のパラメーターは4D Write Pro ではサポートされないか振る舞いが異なることが知られています。これらのパラメーターは以下にまとめてあります:
+#### Alignment / Layout
 
-###### 揃え / レイアウト 
+| **Setting**         | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Anchored text areas | Anchored text areas are imported as text boxes by default (they can also be ignored or imported as inline text, see [WP Import document](../commands/wp-import-document) command option). Only simple text areas can be imported. Inline text areas are imported as anchored in the front layer. Text areas anchored with text around are imported with their text wrapping properties (exception: the .docx wrapping option "tight" is imported as wrap square). |
+| Paragraph layout    | Only Western text layouts are supported. Distributed, Thai and Asian paragraph styles are not supported.                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Page Size           | Different page sizes per section are not supported. Only the page size from the first section is imported.                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
-| **設定**         | **詳細**                                                                                                                                                                                                                                                                                                                   |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| アンカーされたテキストエリア | アンカーされたテキストエリアはデフォルトではテキストボックスとして読み込まれます(あるいはそれらを無視するか、インラインテキストとして読み込むこともできます。詳細は[WP Import document](../commands/wp-import-document) のオプションを参照してください)。シンプルなテキストエリアのみが読み込まれます。インラインテキストエリアは前面レイヤーにアンカーされたテキストとして読み込まれます。テキストの周りにアンカーされたテキストエリアはそれぞれの折り返しプロパティで読み込まれます(例外: .docx の"tight" 折り返しオプションはスクェア折り返しとして読み込まれます)。 |
-| 段落レイアウト        | 西欧テキストレイアウトのみがサポートされます。均等段落スタイル、タイ/アジア段落スタイルはサポートされません。                                                                                                                                                                                                                                                                  |
-| ページサイズ         | セクションごとの異なるページサイズはサポートされません。最初のセクションのページサイズのみが読み込まれます。                                                                                                                                                                                                                                                                   |
+#### Background
 
-###### 背景 
+| **Setting** | **Description** |
+| ----------- | --------------- |
+| ウォーターマーク    | サポートされていません     |
 
-| **設定** | **詳細**     |
-| ------ | ---------- |
-| 透かし画像  | サポートされません。 |
+#### 式
 
-###### 式 
+| **Setting**       | **Description**                                                    |
+| ----------------- | ------------------------------------------------------------------ |
+| MS Word equations | サポートされていません. Data is not imported. |
+| MS Word charts    | サポートされていません. Data is not imported. |
 
-| **設定**       | **詳細**                  |
-| ------------ | ----------------------- |
-| MS Word 演算式  | サポートされません。データは読み込まれません。 |
-| MS Word チャート | サポートされません。データは読み込まれません。 |
+#### リスト
 
-###### リスト 
+| **Setting**        | **Description**                                                                                                                                                   |   |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
+| Hierarchical lists | Multi-level lists are not supported. Multi-level lists are converted to a single level lists so list appearance and/or numbering may be different |   |
 
-| **設定**      | **詳細**                                                                |
+#### Pictures / Images
+
+| **Setting**          | **Description**                                                                                                                                                |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DrawingML shapes     | Only simple DrawingML images (inline or anchored) are imported. Complex DrawingML shapes are not supported. |
+| VML shapes or images | サポートされていません. VML is obsolete in MS Word and should not be used in documents created with MS Word 2010 or older.                |
+| 3D models            | Not supported, however the last rendered 2D image of the 3D model may be imported if present in the .docx.                     |
+| SmartArt             | サポートされていません.                                                                                                                                   |
+
+#### References / Review
+
+| **Setting** | **Description**                                                       |
 | ----------- | --------------------------------------------------------------------- |
-| 階層リスト       | 複数階層のリストはサポートされません。これらは単一階層のリストへと変換されるので、リストの見た目/ナンバリングは変化する可能性があります。 |
-| 読み込みオペレーション |                                                                       |
+| コメント        | サポートされていません. Content is not imported. |
+| Footnotes   | サポートされていません. Content is not imported. |
 
-###### ピクチャー/画像 
+#### Spacing
 
-| **設定**         | **詳細**                                                                        |
-| -------------- | ----------------------------------------------------------------------------- |
-| DrawingML シェイプ | 単純なDrawingML 画像(インラインまたはアンカーされた画像)のみが読み込まれます。複雑なDrawingML シェイプはサポートされません。     |
-| VML シェイプまたは画像  | サポートされません。VML はMS Word では廃止予定となっており、MS Word 2010 以降で作成されたドキュメント内では使用してはいけません。 |
-| 3D モデル         | サポートされませんが、3D モデルをレンダーした最後の2D 画像は、.docx ファイル内に存在すれば読み込まれます。                   |
-| SmartArt       | サポートされません。                                                                    |
+| **Setting**             | **Description**                                                                                                                      |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| "At least" line spacing | サポートされていません. "At least" line spacing is converted to fixed (single) line spacing. |
+| Fit text                | サポートされていません. The normal 4D Write Pro style is used.                                                  |
 
-###### 参照 / レビュー 
+#### テーブル
 
-| **設定** | **詳細**                    |
-| ------ | ------------------------- |
-| コメント   | サポートされません。コンテンツは読み込まれません。 |
-| 脚注     | サポートされません。コンテンツは読み込まれません。 |
+| **Setting** | **Description**                                               |
+| ----------- | ------------------------------------------------------------- |
+| テーブル        | Contiguous tables do not merge automatically. |
 
-###### 行間隔 
+#### Text
 
-| **設定**       | **詳細**                                    |
-| ------------ | ----------------------------------------- |
-| "最低限" 行間隔    | サポートされません。"最低限"行間隔は固定された(単一の)行間隔へと変換されます。 |
-| テキストをフィットさせる | サポートされません。通常の4D Write Pro スタイルがしようされます。   |
+| **Setting**                                                 | **Description**                                                                                                                                                                                 |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| テーマ                                                         | Text themes are not imported. If a color or font definition references a color or font in a theme, the last computed color or font will be used. Otherwise, the |
+| color or font defined in the theme is used. |                                                                                                                                                                                                 |
 
-###### 表 
+### Import log
 
-| **設定** | **詳細**                |
-| ------ | --------------------- |
-| 表      | 隣接している表は自動的には結合されません。 |
-
-###### テキスト 
-
-| **Paramètre** | **Description**                                                                                                  |
-| ------------- | ---------------------------------------------------------------------------------------------------------------- |
-| テーマ           | テキストテーマは読み込まれません。カラーまたはフォントの定義がテーマのカラーやフォントを参照している場合、最後に計算されたカラーまたはフォントが使用されます。そうでない場合、テーマで定義されたカラーやフォントが使用されます。 |
-
-##### 読み込みログ 
-
-.docx フォーマットを4D Write Pro へと読み込む際、ログオブジェクトが作成され、読み込まれたドキュメントオブジェクトに含まれます。このオブジェクトは、"importLog" カスタム属性(あるいは wk import log 定数)を通して取得することができます:
+When importing .docx format into 4D Write Pro, a log object is created and included within the imported document object. This object can be retrieved through the "importLog" custom attribute (or wk import log constant):
 
 ```4d
  $myDoc:=WP Import document("test.docx")
@@ -93,101 +91,101 @@ displayed_sidebar: docs
  End if
 ```
 
-読み込みログオブジェクトには、以下のプロパティが格納されています :
+The import log object contains the following properties:
 
-| 定数            | コメント                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| wk import log | ログオブジェクトには.docx 読み込みオペレーションについての情報が格納されています。プロパティは読み出し専用で設定することはできません:  <table> <tbody> <tr> <td>**プロパティ**</td> <td> </td> <td>**型**</td> <td>**詳細**</td> </tr> <tr> <td>status</td> <td> </td> <td>テキスト</td> <td>読み込みステータス:<br/> successful - ドキュメントは4D Write Proへと読み込まれました。 failed - 空の4D Write Proドキュメントが返されます。  </td> </tr> <tr> <td>developer</td> <td> </td> <td>コレクション</td> <td>4D Write Pro デベロッパーのためのメッセージオブジェクトのコレクション</td> </tr> <tr> <td> </td> <td>\[ \].type</td> <td>テキスト</td> <td>記録されたメッセージの種類:<br/> info warning error  </td> </tr> <tr> <td> </td> <td>\[ \].message</td> <td>テキスト</td> <td>読み込みオペレーションについてのメッセージ</td> </tr> <tr> <td>user</td> <td> </td> <td>コレクション</td> <td>4D Write Pro ユーザーのためのメッセージオブジェクトのコレクション</td> </tr> <tr> <td> </td> <td>\[ \].type</td> <td>テキスト</td> <td>記録されたメッセージの種類:<br/> info warning  </td> </tr> <tr> <td> </td> <td>\[ \].messageShort</td> <td>テキスト</td> <td>読み込みオペレーションについての短いメッセージ</td> </tr> <tr> <td> </td> <td>\[ \].messageLong</td> <td>テキスト</td> <td>読み込みオペレーションについての詳細なメッセージ</td> </tr> </tbody> </table> **警告:** *importLog* はカスタムの属性であるため、 wk import log 定数を[WP SET ATTRIBUTES](../commands/wp-set-attributes)、[WP GET ATTRIBUTES](../commands/wp-get-attributes) または [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) コマンドで使用することはできません(詳細な情報については*カスタムの属性を使用* を参照してください)。 |
+| 定数            | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| wk import log | Log object containing information about the .docx import operation. Properties are read-only and cannot be set:  <table> <tbody> <tr> <td>**Property**</td> <td> </td> <td>**Type**</td> <td>**Description**</td> </tr> <tr> <td>status</td> <td> </td> <td>Text</td> <td>Import status:<br/> successful - the document is imported into 4D Write Pro failed - an empty 4D Write Pro document is returned  </td> </tr> <tr> <td>developer</td> <td> </td> <td>Collection</td> <td>Collection of message object(s) for 4D Write Pro developers.</td> </tr> <tr> <td> </td> <td>\[ \].type</td> <td>Text</td> <td>The kind of message logged:<br/> info warning error  </td> </tr> <tr> <td> </td> <td>\[ \].message</td> <td>Text</td> <td>Message about the import operation.</td> </tr> <tr> <td>user</td> <td> </td> <td>Collection</td> <td>Collection of message object(s) for 4D Write Pro users.</td> </tr> <tr> <td> </td> <td>\[ \].type</td> <td>Text</td> <td>The kind of message logged:<br/> info warning  </td> </tr> <tr> <td> </td> <td>\[ \].messageShort</td> <td>Text</td> <td>Brief message about the import operation.</td> </tr> <tr> <td> </td> <td>\[ \].messageLong</td> <td>Text</td> <td>Extended message about the import operation.</td> </tr> </tbody> </table> **Warning:** *importLog* is a custom attribute, thus the wk import log constant cannot be used by [WP SET ATTRIBUTES](../commands/wp-set-attributes), [WP GET ATTRIBUTES](../commands/wp-get-attributes) or [WP RESET ATTRIBUTES](../commands/wp-reset-attributes) command (for more information, see *Using custom attributes*). |
 
-#### .docx フォーマットへの書き出し方 
+## How to export in .docx format
 
-4D Write Pro オブジェクトでは、4D Write Pro ドキュメントを.docx フォーマットで書き出しするために、2つの方法を提供しています:
+4D Write Pro objects offer two ways to export 4D Write Pro documents in .docx format:
 
-* .docx ファイルをディスクに書き出しするためには、[WP EXPORT DOCUMENT](../commands/wp-export-document) コマンドを使用します。
-* .docx ファイルをBLOB 変数に書き出しするためには、[WP EXPORT VARIABLE](../commands/wp-export-variable) コマンドを使用します。
+- as .docx file exported to disk, use the [WP EXPORT DOCUMENT](../commands/wp-export-document) command.
+- as .docx file exported to a BLOB variable, use the [WP EXPORT VARIABLE](../commands/wp-export-variable) command.
 
-より詳細な情報については、これらのコマンドの詳細を参照してください。
+For more information, please refer to the description of these commands.
 
-##### 振る舞いの変化 
+### Behavioral changes
 
-4D Write Pro の大部分の設定は保たれますが、いくつかの設定についてはMicrosoft Word ではサポートされないか、振る舞いが変化することがすでに知られています。具体的には以下の設定が関連します:
+While the majority of 4D Write Pro settings are preserved, some settings are known to be either unsupported or behave differently in Microsoft Word. These are:
 
-###### 揃え / レイアウト 
+#### Alignment / Layout
 
-| **設定**                                                                | **段落**                                                                                                                                       | **セクション**                                       | **画像** |
-| --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- | ------ |
-| アンカー                                                                  | Microsoft Word では、アンカーされた画像は、ページおよび最初の段落の左上の原点に対して相対的に配置されます。このため、4D Write Pro とMicrosoft Word とのテキストのレイアウトの差異によって画像が想定と異なる位置に表示される可能性があります。 |                                                 |        |
-| 埋め込みエリアにアンカーされたテキストボックスは書き出されません。Microsoft Word でのレンダリングが異なる可能性があります。 |                                                                                                                                              |                                                 |        |
-| 垂直方向揃え                                                                | Microsoft Word ではサポートされていません(全ての項目は上揃えになります)                                                                                                 | インライン画像に対してはサポートされません(全てのインライン画像はベースライン揃えになります) |        |
+| **Setting**                                                                                                                          | **Paragraphs**                                                                                                                                                                                                                                                                                               | **Sections**                                                                    | **Images** |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------- | ---------- |
+| Anchoring                                                                                                                            | In Microsoft Word, anchored images are positioned relatively to the top left origin of the page and first paragraph. This could result in images being displayed in different locations than desired due to text layout differences between 4D Write Pro and Microsoft Word. |                                                                                 |            |
+| Text boxes anchored to embedded area are not exported. Rendering can be different in Microsoft Word. |                                                                                                                                                                                                                                                                                                              |                                                                                 |            |
+| Vertical align                                                                                                                       | Not supported by Microsoft Word (all items will be top-aligned)                                                                                                                                                                                                                           | Not supported for inline images (all items will be baseline) |            |
 
-###### 背景 
+#### Background
 
-| **設定**    | **段落**                                                       | **セクション**                                                         | **画像**                                                                           |
-| --------- | ------------------------------------------------------------ | ----------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| 背景の切り落とし  | Microsoft Word ではサポートされていません(背景色は背景全体を塗りますが、境界線とマージンは含まれません) | Microsoft Word ではサポートされていません(背景の切り落としはパッディングボックスと同じになります)         |                                                                                  |
-| 背景画像      | Microsoft Word ではサポートされていません                                 | 異なる背景画像/背景色はMicrosoft Word ではサポートされていません(アンカーされた画像あるいは図形へと変換されます) | Microsoft Word では背景色か背景画像のどちらかを設定できます。背景画像が定義されている場合、背景色は "transparent" に設定されます。 |
-| 背景画像の繰り返し | 水平あるいは垂直タイルはMiscrosoft Word では完全なタイルへと変換されます                 | 水平あるいは垂直タイルはMiscrosoft Word では完全なタイルへと変換されます                      |                                                                                  |
-| 背景の原点     | 原点のボックスは、背景切り落としボックスと同じ値へと変換されます。                            | Microsoft ではサポートされていません。                                          |                                                                                  |
+| **Setting**             | **Paragraphs**                                                                                                                  | **Sections**                                                                                                                     | **Images**                                                                                                                                                                           |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Background clipping     | Not supported by Microsoft Word (background color fills entire paragraph, not including borders and margins) | Not supported by Microsoft Word (background clipping will be equal to the padding box)                        |                                                                                                                                                                                      |
+| Background image        | Not supported by Microsoft Word                                                                                                 | Different background pictures/colors not supported by Microsoft Word (converted to anchored images or shapes) | Microsoft Word allows either a background color or a background image. If a background image is defined, the background color will be "transparent". |
+| Background image repeat | Horizontal or vertical tiles are converted to full tiles in Microsoft Word                                                      | Horizontal or vertical tiles are converted to full tiles in Microsoft                                                            |                                                                                                                                                                                      |
+| Background origin       | Origin box is converted to the same value as background clipping box.                                           | Not supported by Microsoft.                                                                                      |                                                                                                                                                                                      |
 
-###### 境界線 
+#### 境界線
 
-| **設定**       | **段落**                                                                                                             | **セクション**                                       | **画像** |
-| ------------ | ------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------- | ------ |
-| 境界線カラー       | 各境界線ごとに異なる境界線カラーを設定することはMicrosoft Word ではサポートされていません。最初に定義された4D Write Pro 画像境界線(優先順位: 上、右、下、左)が全ての画像境界線に対して使用されます。 |                                                 |        |
-| 境界線半径(丸い境界線) | Microsoft Word ではサポートされていません                                                                                       |                                                 |        |
-| 境界線幅         | Microsoft Word での幅の最大値は12pt で、これを超えるサイズは縮小されます。                                                                    | Microsoft Word での幅の最大値は12pt で、これを超えるサイズは縮小されます。 |        |
+| **Setting**                                        | **Paragraphs**                                                                                                                                                                                                                                                                             | **Sections**                                                                                 | **Images** |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------- | ---------- |
+| Border color                                       | Different border colors for each border line is not supported by Microsoft Word. The first defined 4D Write Pro image border line (in this order: top, right, bottom, left) will be used for all of an image's borders. |                                                                                              |            |
+| Border radius (rounded borders) | Not supported by Microsoft Word                                                                                                                                                                                                                                                            |                                                                                              |            |
+| Border width                                       | Microsoft Word maximum is 12pt, borders exceeding this size will be reduced.                                                                                                                                                                                               | Microsoft Word maximum is 12pt, borders exceeding this size will be reduced. |            |
 
-###### 式 
+#### 式
 
-| **設定** | **段落**                                                                                                                                                                                       | **セクション** | **画像** |
-| ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------ |
-| 式      | "Current date" や"Current time" のようなシンプルな4D 式、あるいは4D Write Pro によって予約されているローカル変数($wp\_title、 $wp\_pageNumber、等) のみがMicrosfot Word フィールドへと変換されます。他の4D 式は値が計算され、書き出しプロセスの途中でテキストあるいは画像へと変換されます。 |           |        |
+| **Setting** | **Paragraphs**                                                                                                                                                                                                                                                                                                                                                                                        | **Sections** | **Images** |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ---------- |
+| 式           | Only simple 4D expressions such as "Current date" or "Current time", or 4D Write Pro reserved local variables ($wp\_title, $wp\_pageNumber, etc.) are converted to Microsoft Word fields. Other 4D expressions are computed and converted to text or images during the export process. |              |            |
 
-###### リスト 
+#### リスト
 
-| **設定**   | **段落**                                                                    | **セクション** | **画像** |
-| -------- | ------------------------------------------------------------------------- | --------- | ------ |
-| インデント    | リスト項目については0へと変換されます(リスト項目のインデントは、Microsoft Word ではぶら下げインデントへと変換されます)      |           |        |
-| 順番付きリスト型 | Microsoft Word ではギリシャ風、アルメニアン風、ジョージア風の記号は全て点記号へと変換され、またひらがなはカタカナへと変換されます。 |           |        |
+| **Setting**       | **Paragraphs**                                                                                                                  | **Sections** | **Images** |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------ | ---------- |
+| Indent            | Converted to 0 for list items (list item indent is converted to hanging indent in Microsoft Word)            |              |            |
+| Ordered list type | Greek, Armenian, and Georgian are converted to decimal and Hiragana is converted to Katakana in Microsoft Word. |              |            |
 
-###### ピクチャー 
+#### ピクチャー
 
-| **設定** | **段落**                                                       | **セクション** | **画像** |
-| ------ | ------------------------------------------------------------ | --------- | ------ |
-| SVG    | Microsoft Word ではサポートされません(SVG フォーマットの画像はPNG フォーマットへと変換されます) |           |        |
+| **Setting** | **Paragraphs**                                                                                            | **Sections** | **Images** |
+| ----------- | --------------------------------------------------------------------------------------------------------- | ------------ | ---------- |
+| SVG         | Not supported by Microsoft Word (images in SVG format will be converted to PNG format) |              |            |
 
-###### サイズ 
+#### サイズ
 
-| **設定**  | **段落**                                        | **セクション** | **画像** |
-| ------- | --------------------------------------------- | --------- | ------ |
-| 最小高さ    | Microsoft Word ではサポートされていません(高さは自動的に管理されます)   |           |        |
-| 幅 / 最小幅 | Microsoft Word ではサポートされていません(段落の幅は自動的に管理されます) |           |        |
+| **Setting**           | **Paragraphs**                                                                                | **Sections** | **Images** |
+| --------------------- | --------------------------------------------------------------------------------------------- | ------------ | ---------- |
+| Minimum height        | Not supported by Microsoft Word (height is handled automatically)          |              |            |
+| Width / Minimum width | Not supported by Microsoft Word (paragraph width is handled automatically) |              |            |
 
-###### 間隔 
+#### Spacing
 
-| **設定** | **段落**                                         | **セクション**                                      | **画像** |
-| ------ | ---------------------------------------------- | ---------------------------------------------- | ------ |
-| パッディング | Microsoft Word での最大間隔は31pt で、これをパッディングは縮小されます。 | Microsoft Word での最大間隔は31pt で、これをパッディングは縮小されます。 |        |
+| **Setting** | **Paragraphs**                                                                               | **Sections**                                                                                 | **Images** |
+| ----------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ---------- |
+| Padding     | Microsoft Word maximum is 31pt, padding exceeding this size will be reduced. | Microsoft Word maximum is 31pt, padding exceeding this size will be reduced. |            |
 
-###### 表 
+#### テーブル
 
-| **機能**      | **詳細**   |
-| ----------- | -------- |
-| 下部キャリーオーバー行 | 書き出されません |
+| **Feature**           | **Description**               |
+| --------------------- | ----------------------------- |
+| Bottom carry-over row | Not exported. |
 
-###### タブ 
+#### Tabs
 
-| **設定**      | **段落**                                                                                                  | **セクション** | **画像** |
-| ----------- | ------------------------------------------------------------------------------------------------------- | --------- | ------ |
-| デフォルトタブストップ | Microsoft Word ではサポートされていません(絶対的タブストップに変換されます)                                                          |           |        |
-| タブリーディング文字  | Microsoft Word では"ドット" (....)、"ダッシュ" (----)、および"アンダースコア" (\_\_\_\_) リーディング文字をサポートしています。他は全て"なし"に変換されます。 |           |        |
+| **Setting**            | **Paragraphs**                                                                                                                                                                                                                                                                            | **Sections** | **Images** |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ---------- |
+| Default tab stop       | Not supported by Microsoft Word (will be converted to absolute tab stops)                                                                                                                                                                                              |              |            |
+| Tab leading characters | Microsoft Word supports "dot" (....), "dash" (----), and "underscore" (\*\*\*\*) leading characters, all others will be converted to "none". |              |            |
 
-###### テキスト 
+#### Text
 
-| **設定**   | **段落**                                                                      | **セクション**                                                  | **画像** |
-| -------- | --------------------------------------------------------------------------- | ---------------------------------------------------------- | ------ |
-| 打ち消し線    | テキストカラーと異なる色の線カラーはMicrosoft Word ではサポートされていません。またスタイルでは通常の線と二重線のみがサポートされます。 |                                                            |        |
-| スタイルシート  | 段落のスタイルシートは、段落スタイルへと変換されます。                                                 |                                                            |        |
-| テキストの揃え  | Microsoft Word はスペースを圧縮するので、両端揃えのテキストレイアウトは再構成される可能性があります。                  | Microsoft Word はスペースを圧縮するので、両端揃えのテキストレイアウトは再構成される可能性があります。 |        |
-| テキストシャドウ | 4D Write Pro シャドウは、Microsoft Word のデフォルトのカラーを使用したぼかしまたはオフセットへと変換されます。       |                                                            |        |
-| 下線       | 半透明の下線は通常の下線へと変換されます。                                                       |                                                            |        |
+| **Setting**  | **Paragraphs**                                                                                                       | **Sections**                                                                                    | **Images** |
+| ------------ | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------- |
+| Linethrough  | Line color different from text color is not supported by Microsoft Word; only solid and double styles are supported  |                                                                                                 |            |
+| Style Sheets | Paragraph style sheets are converted to paragraph styles.                                            |                                                                                                 |            |
+| Text align   | Microsoft Word compresses spaces, so justified text layout may be reconfigured.                      | Microsoft Word compresses spaces, so justified text layout may be reconfigured. |            |
+| Text shadow  | 4D Write Pro shadow will be converted to blur and offset, using the default color in Microsoft Word. |                                                                                                 |            |
+| 下線           | Semi-transparent underlines will be converted to solid.                                              |                                                                                                 |            |
