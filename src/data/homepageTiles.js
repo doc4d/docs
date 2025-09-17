@@ -111,7 +111,7 @@ title: (
           <Translate>Concepts</Translate>
         </Link>
         <Link to="commands/command-index">
-          <Translate>Command index</Translate>
+          <Translate>Commands by name</Translate>
         </Link>
         <Link to="category/commands">
           <Translate>Commands by theme</Translate>
