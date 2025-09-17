@@ -5,51 +5,50 @@ displayed_sidebar: docs
 slug: /WritePro/user/text-boxes
 ---
 
+Text boxes are areas that are anchored to a page or a section and can be filled with text, inline pictures, or tables. Text boxes can be positioned anywhere on the page and meet specific needs, for example to insert a company’s name or logo or an address area.
 
+![](../../assets/en/WritePro/pict6131919.en.png)
 
-Las cajas de texto son áreas que se anclan a una página o sección y pueden llenarse con texto, imágenes en línea o tablas. Las cajas de texto pueden colocarse en cualquier lugar de la página y responder a necesidades específicas, por ejemplo, para insertar el nombre o el logotipo de una empresa o un área de direcciones.
+**Note:** A text box cannot contain headers, footers, columns, anchored images, or other text boxes.
 
-![](../../assets/en/WritePro/pict6131919.EN.png)
+Text boxes are added with an absolute position, in front of/behind text, as well as anchored to a page or specific parts of a document in Page mode: header, footer, a section, all sections, or a subsection. Text boxes can also be used in embedded mode (anchored to the layer box).
 
-**Nota:** una caja de texto no puede contener encabezados, pies de página, columnas, imágenes ancladas u otras cajas de texto.
+Adding a text box to a 4D Write Pro document can be accomplished in the following ways:
 
-Las cajas de texto se añaden con una posición absoluta, delante/detrás del texto, así como ancladas a una página o a partes específicas de un documento en el modo Página: encabezado, pie de página, una sección, todas las secciones o una subsección. Las cajas de texto también pueden utilizarse en modo anidado (ancladas a la caja de capa).
+- using the [`WP New text box`](../commands-legacy/wp-new-text-box.md) command,
+- using the *insertTextBox* [standard action](./using-4d-write-pro-standard-actions.md)
 
-Añadir una caja de texto a un documento 4D Write Pro puede hacerse de las siguientes maneras:
+To select a text box, the user has to click on it (**Ctrl/Cmd+click** if the text box is on the background layer). Once selected, the text box can be moved or resized using the mouse or arrow keys.
 
-* utilizando el comando **WP New text box**,
-* utilizando la acción estándar *insertTextBox*
+To remove a selected text box, you can hit the **Delete** or **Backspace** key, use the **textBox/remove** standard action, or execute the [`WP DELETE TEXT BOX`](../commands-legacy/wp-delete-text-box.md) command.
 
-Para seleccionar una caja de texto, el usuario tiene que hacer clic sobre ella (**Ctrl/Cmd+clic** si la caja de texto está en la capa de fondo). Una vez seleccionado, se puede mover o redimensionar la caja de texto utilizando el ratón o las teclas de flecha.
+Text box attributes are handled with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command or [standard actions](./using-4d-write-pro-standard-actions.md). The following attributes and actions are available:
 
-Para eliminar una caja de texto seleccionada, puede presionar la tecla **Suprimir** o **Retroceso**, utilizar la acción estándar **textBox/eliminar**, o ejecutar el comando **WP DELETE TEXT BOX**.
+| **Property (constant)**                                                                                  | **Acción estándar**                                                                                                             | **Comments**                                                                |
+| --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| wk width                                                                                                                    | textBox/width                                                                                                                   | If set to "auto", width converted to 8cm as text box width cannot be "auto" |
+| wk height                                                                                                                   | textBox/height                                                                                                                  | If set to "auto", height is adjusted to fit the contents                    |
+| wk padding                                                                                                                  | textBox/padding                                                                                                                 |                                                                             |
+| wk border \[...\]     | textBox/border\[...\]     |                                                                             |
+| wk background \[...\] | textBox/background\[...\] |                                                                             |
+| wk vertical align                                                                                                           | textBox/verticalAlign                                                                                                           |                                                                             |
+| wk id                                                                                                                       | \-                                                                                                                             | cannot be empty for a text box                                              |
+| wk anchor \[...\]     | textBox/anchor\[...\]     |                                                                             |
+| wk owner                                                                                                                    | \-                                                                                                                             | sólo lectura                                                                |
+| wk protected                                                                                                                | \-                                                                                                                             |                                                                             |
+| wk style sheet                                                                                                              | \-                                                                                                                             | read-only and always "" (no style sheet)                 |
 
-Los atributos de las cajas de texto se manejan con el comando [WP SET ATTRIBUTES](../commands/wp-set-attributes) o *Acciones 4D Write Pro*. Están disponibles los siguientes atributos y acciones:  
-  
-| **Propiedad (constante)** | **Acción estándar**   | **Comentarios**                                                                                              |
-| ------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------ |
-| wk width                  | textBox/ancho         | Si se define en "auto", el ancho se convierte a 8cm ya que el ancho de la caja de texto no puede ser "auto". |
-| wk height                 | textBox/alto          | Si está en "auto", la altura se ajusta al contenido.                                                         |
-| wk padding                | textBox/relleno       |                                                                                                              |
-| wk border \[...\]         | textBox/borde\[...\]  |                                                                                                              |
-| wk background \[...\]     | textBox/fondo\[...\]  |                                                                                                              |
-| wk vertical align         | textBox/verticalAlign |                                                                                                              |
-| wk id                     | \-                    | no puede estar vacío para una caja de texto                                                                  |
-| wk anchor \[...\]         | textBox/anchor\[...\] |                                                                                                              |
-| wk owner                  | \-                    | sólo lectura                                                                                                 |
-| wk protected              | \-                    |                                                                                                              |
-| wk style sheet            | \-                    | sólo lectura y siempre "" (sin hoja de estilo)                                                               |
-
-Las cajas de texto soportan el ajuste automático del texto cuando se anclan a un documento con opciones como a la izquierda, a la derecha, en el lado más grande, arriba y abajo, o todo alrededor suministradas a través de la propiedad wk anchor layout o la acción estándar anchorLayout. Ver esta entrada del blog para más detalles.
+Text boxes support automatic text wrapping when anchored to a document with options like on the left, right, largest side, above and below, or all around provided through the property wk anchor layout or the standard action **anchorLayout**. Check this [blog post](https://blog.4d.com/4d-write-pro-more-display-options-for-anchored-pictures-and-text-boxes/) for more details.
 
 ![](../../assets/en/WritePro/pict6856163.en.png)
 
-Las cajas de texto con ajuste de texto ancladas al cuerpo de la página no afectan al encabezado ni al pie de página (la caja de texto se muestra delante del encabezado o del pie de página); por el contrario, las cajas de texto ancladas al encabezado y al pie de página afectan al cuerpo de la página si se solapan con él.  
-  
-**Nota**: si desea anclar una caja de texto con ajuste de texto al encabezado o al pie de página, también debe definir la alineación vertical de la caja de texto en la parte superior.
+Text boxes with text wrapping anchored to the body of the page do not affect the header or the footer (the text box is displayed in front of the header or the footer); on the contrary, text boxes anchored to the header and footer affect the body of the page if they overlap it.
 
-Las cajas de texto no se muestran si:
+**Note**: If you want to anchor a text box with text wrapping to the header or footer, you must also set the vertical alignment of the text box to the top.
 
-* el modo de vista es Borrador;
-* están centrados o anclados a secciones y la opción **Mostrar HTML WYSIWYG** está marcada;
-* la opción "fondo visible" no está activada.
+Text boxes are not displayed if:
+
+- the view mode is Draft;
+- they are centered or anchored to sections and the **Show HTML WYSIWYG** option is checked;
+- the "visible background" option is not enabled.
+
