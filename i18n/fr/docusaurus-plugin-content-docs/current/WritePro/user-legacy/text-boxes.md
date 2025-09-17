@@ -5,50 +5,50 @@ displayed_sidebar: docs
 slug: /WritePro/user/text-boxes
 ---
 
-
-Les zones de texte sont des zones ancrées à une page ou à une section et qui peuvent contenir du texte, des images en ligne ou des tableaux. Les zones de texte peuvent être positionnées n'importe où sur la page et répondre à des besoins spécifiques, par exemple pour insérer le nom ou le logo d'une entreprise ou une zone d'adresse.
+Text boxes are areas that are anchored to a page or a section and can be filled with text, inline pictures, or tables. Text boxes can be positioned anywhere on the page and meet specific needs, for example to insert a company’s name or logo or an address area.
 
 ![](../../assets/en/WritePro/pict6131919.en.png)
 
-**Note :** Une zone de texte ne peut pas contenir des en-têtes, des pieds de page, des colonnes, des images ancrées ou d'autres zones de texte.
+**Note:** A text box cannot contain headers, footers, columns, anchored images, or other text boxes.
 
-Les zones de texte sont ajoutées avec une position absolue, devant/derrière le texte, ainsi qu'ancrées à une page ou à des parties spécifiques d'un document en mode Page : en-tête, pied de page, une section, toutes les sections ou une sous-section. Les zones de texte peuvent également être utilisées en mode intégré (ancrées à la zone de calque).
+Text boxes are added with an absolute position, in front of/behind text, as well as anchored to a page or specific parts of a document in Page mode: header, footer, a section, all sections, or a subsection. Text boxes can also be used in embedded mode (anchored to the layer box).
 
-L'ajout d'une zone de texte à un document 4D Write Pro peut être réalisé de la manière suivante :
+Adding a text box to a 4D Write Pro document can be accomplished in the following ways:
 
-* en utilisant la commande **WP New text box,**
-* en utilisant l'action standard insertTextBox
+- using the [`WP New text box`](../commands-legacy/wp-new-text-box.md) command,
+- using the *insertTextBox* [standard action](./using-4d-write-pro-standard-actions.md)
 
-Pour sélectionner une zone de texte, l'utilisateur doit cliquer dessus (**Ctrl/Cmd+clic** si la zone de texte se trouve sur la couche de fond). Une fois sélectionnée, la zone de texte peut être déplacée ou redimensionnée à l'aide de la souris ou des flèches du clavier.
+To select a text box, the user has to click on it (**Ctrl/Cmd+click** if the text box is on the background layer). Once selected, the text box can be moved or resized using the mouse or arrow keys.
 
-Pour supprimer une zone de texte sélectionnée, vous pouvez appuyer sur la touche **Effacer** ou **Retour arrière**, utiliser l'action standard **textBox/remove** ou exécuter la commande **WP DELETE TEXT BOX**. 
+To remove a selected text box, you can hit the **Delete** or **Backspace** key, use the **textBox/remove** standard action, or execute the [`WP DELETE TEXT BOX`](../commands-legacy/wp-delete-text-box.md) command.
 
-Les attributs des zones de texte sont gérés par la commande [WP FIXER ATTRIBUTS](../commands/wp-fixer-attributs) ou la commande *Actions 4D Write Pro*. Les attributs et actions suivants sont disponibles :
+Text box attributes are handled with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command or [standard actions](./using-4d-write-pro-standard-actions.md). The following attributes and actions are available:
 
-| **Propriété (constante)** | **Standard action**       | **Commentaires**                                                                                                            |
-| ------------------------- | ------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| wk width                  | textBox/width             | Si elle est réglée sur "auto", la largeur est convertie en 8 cm car la largeur de la zone de texte ne peut pas être "auto". |
-| wk height                 | textBox/height            | Si la valeur est "auto", la hauteur est ajustée en fonction du contenu.                                                     |
-| wk padding                | textBox/padding           |                                                                                                                             |
-| wk border \[...\]         | textBox/border\[...\]     |                                                                                                                             |
-| wk background \[...\]     | textBox/background\[...\] |                                                                                                                             |
-| wk vertical align         | textBox/verticalAlign     |                                                                                                                             |
-| wk id                     | \-                        | ne peut pas être vide pour une zone de texte                                                                                |
-| wk anchor \[...\]         | textBox/anchor\[...\]     |                                                                                                                             |
-| wk owner                  | \-                        | en lecture uniquement                                                                                                       |
-| wk protected              | \-                        |                                                                                                                             |
-| wk style sheet            | \-                        | en lecture uniquement et toujours "" (pas de feuille de style)                                                              |
+| **Property (constant)**                                                                                  | **Action standard**                                                                                                             | **Commentaires**                                                            |
+| --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| wk width                                                                                                                    | textBox/width                                                                                                                   | If set to "auto", width converted to 8cm as text box width cannot be "auto" |
+| wk height                                                                                                                   | textBox/height                                                                                                                  | If set to "auto", height is adjusted to fit the contents                    |
+| wk padding                                                                                                                  | textBox/padding                                                                                                                 |                                                                             |
+| wk border \[...\]     | textBox/border\[...\]     |                                                                             |
+| wk background \[...\] | textBox/background\[...\] |                                                                             |
+| wk vertical align                                                                                                           | textBox/verticalAlign                                                                                                           |                                                                             |
+| wk id                                                                                                                       | \-                                                                                                                             | cannot be empty for a text box                                              |
+| wk anchor \[...\]     | textBox/anchor\[...\]     |                                                                             |
+| wk owner                                                                                                                    | \-                                                                                                                             | lecture seule                                                               |
+| wk protected                                                                                                                | \-                                                                                                                             |                                                                             |
+| wk style sheet                                                                                                              | \-                                                                                                                             | read-only and always "" (no style sheet)                 |
 
-Les zones de texte supportent l'habillage automatique du texte lorsqu'elles sont ancrées dans un document avec des options telles que à gauche, à droite, sur le plus grand côté, au-dessus et au-dessous, ou tout autour, fournies par la propriété wk anchor layout ou l'action standard **anchorLayout**. Consultez cet [article de blog](https://blog.4d.com/fr/4d-write-pro-more-display-options-for-anchored-pictures-and-text-boxes/) pour plus de détails.
+Text boxes support automatic text wrapping when anchored to a document with options like on the left, right, largest side, above and below, or all around provided through the property wk anchor layout or the standard action **anchorLayout**. Check this [blog post](https://blog.4d.com/4d-write-pro-more-display-options-for-anchored-pictures-and-text-boxes/) for more details.
 
 ![](../../assets/en/WritePro/pict6856163.en.png)
 
-Les zones de texte avec habillage ancrées dans le corps de la page n'affectent pas l'en-tête ou le pied de page (la zone de texte est affichée devant l'en-tête ou le pied de page) ; au contraire, les zones de texte ancrées dans l'en-tête et le pied de page affectent le corps de la page si elles le chevauchent.
+Text boxes with text wrapping anchored to the body of the page do not affect the header or the footer (the text box is displayed in front of the header or the footer); on the contrary, text boxes anchored to the header and footer affect the body of the page if they overlap it.
 
-**Note :** Si vous souhaitez ancrer une zone de texte avec habillage de texte à l'en-tête ou au pied de page, vous devez également définir l'alignement vertical de la zone de texte sur le haut.
+**Note**: If you want to anchor a text box with text wrapping to the header or footer, you must also set the vertical alignment of the text box to the top.
 
-Les zones de texte ne sont pas affichées si :
+Text boxes are not displayed if:
 
-* le mode d'affichage est Brouillon ;
-* ils sont centrés ou ancrés à des sections et l'option **Show HTML WYSIWYG** est cochée ;
-* l'option "fond visible" n'est pas activée.
+- the view mode is Draft;
+- they are centered or anchored to sections and the **Show HTML WYSIWYG** option is checked;
+- the "visible background" option is not enabled.
+
