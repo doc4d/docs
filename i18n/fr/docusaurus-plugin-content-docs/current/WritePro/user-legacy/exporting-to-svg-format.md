@@ -1,79 +1,74 @@
 ---
 id: exporting-to-svg-format
-title: Exporter au format SVG
+title: Exporting to SVG format
 displayed_sidebar: docs
 ---
 
-#### 
+You can export 4D Write Pro document pages to SVG format using the [WP EXPORT DOCUMENT](../commands/wp-export-document) and [WP EXPORT VARIABLE](../commands/wp-export-variable) commands. This page provides additional details and notes about SVG export.
 
-Vous pouvez exporter les pages d’un document 4D Write Pro au format SVG à l'aide des commandes [WP EXPORTER DOCUMENT](../commands/wp-exporter-document) et [WP EXPORTER VARIABLE](../commands/wp-exporter-variable). Cette page contient des informations et des notes supplémentaires sur l'exportation SVG.
+### SVG Rendering
 
-#### Rendu SVG 
+SVG images and text boxes are rendered according to page settings displayed in Page view mode. The following properties are taken into account:
 
-Les images SVG et les zones de texte sont rendues selon les paramètres de la page affichée en Mode d'affichage de la page. Les propriétés suivantes sont prises en compte :
+- Background attributes (if exported)
+- Bordures
+- Margins
+- Orientation
+- Padding
+- Page size
+- Sections (SVG rendering takes into account the section attributes, but the sections themselves are not exported)
 
-* Attributs d'arrière-plan (si exportés)
-* Bordures
-* Marges
-* Orientation
-* Marges intérieures (padding)
-* Taille de la page
-* Sections (le rendu SVG prend en compte les attributs des sections, mais les sections elles-mêmes ne sont pas exportées)
+Parts of the document that are exported to SVG:
 
-Parties du document qui sont exportées en SVG :
+- Body
+- Inline images
+- Text boxes
+- Title (metadata wk title)
 
-* Corps
-* Images en ligne
-* Zones de texte
-* Titre (la métadonnée wk title)
+Parts of the document that are exported to SVG depending on the *option* parameter:
 
-Parties du document qui sont exportées en SVG en fonction du paramètre *option* :
+- En-têtes
+- Pieds
+- References or values (regarding values, the wk recompute formulas option determines if the formulas are evaluated before export)
+- Background colors
+- Images defined as background images and anchored images
 
-* En-têtes
-* Pieds de page
-* Références ou valeurs (concernant les valeurs, l'option wk recompute formulas détermine si les formules sont évaluées avant l'exportation)
-* Couleurs d'arrière-plan
-* Images définies comme images de fond et images ancrées
+The following elements are not exported to SVG:
 
-Les éléments suivants ne sont pas exportés en SVG :
+- Fonts (converted to CSS styles, but not embedded in the exported SVG. See *Font management*)
+- Links to bookmarks (rendered but not active)
+- Links to URLs (rendered but not active)
+- Customized formula highlighting
+- Text boxes anchored to embedded view mode
+- Metadata
+  - Author
+  - Subject
+  - Date de création
+  - Modification date
 
-* Polices (converties en styles CSS, mais non intégrées dans le SVG exporté. Voir *Gestion des polices*)
-* Liens vers des signets (rendus mais non actifs)
-* Liens vers des URL (rendus mais non actifs)
-* Mise en évidence des formules personnalisées
-* Zones de texte ancrées dans le mode d'affichage intégré
-* Métadonnées  
-   * Auteur  
-   * Sujet  
-   * Date de création  
-   * Date de modification
+### Font management
 
-#### Gestion des polices 
+Fonts are not embedded in the exported SVG, so text will be rendered correctly only if the font family and style are supported on the platform where the SVG image is rendered.
 
-Les polices ne sont pas intégrées dans le SVG exporté. Le texte ne sera donc rendu correctement que si la famille et le style de police sont supportés sur la plateforme où l'image SVG est rendue.
+If you want to make sure that the rendering will be equivalent on all platforms, even when fonts are not available, you can use the wk import google fonts option when exporting a 4D Write Pro document.
 
-Si vous voulez vous assurer que le rendu sera équivalent sur toutes les plateformes, même lorsque les polices ne sont pas disponibles, vous pouvez utiliser l'option wk import google fonts lors de l'exportation d'un document 4D Write Pro.
+Imported Google fonts override native fonts when the SVG is rendered. If you intend to render the SVG image on the same platform, we recommend not using the wk import google fonts option as rendering with native fonts is always better.
 
-Les polices Google importées remplacent les polices natives lors du rendu du SVG. Si votre intention est de rendre l'image SVG sur la même plateforme, nous vous recommandons de ne pas utiliser l'option wk import google fonts option puisque le rendu avec les polices natives est toujours meilleur.
+**Note:** Only bold and italic styles are preserved. 100% compatibility between native font styles and font style definition in CSS (and thus SVG) is not guaranteed. Export to PDF is more suited for distribution to all platforms or for better WYSIWYG support for fonts, as fonts are embedded in PDF.
 
-**Note :** Seuls les styles en gras et en italique sont préservés. La compatibilité à 100 % entre les styles de police natifs et la définition des styles de police en CSS (et ainsi en SVG) n'est pas garantie. L'exportation vers PDF est plus adaptée pour la distribution vers toutes les plateformes ou pour un meilleur support WYSIWYG des polices, puisque les polices sont intégrées dans le PDF.
+### Exemple
 
-#### Exemple 
-
-Cet exemple exporte une page de document au format SVG et crée un aperçu de l'image en utilisant [SVG EXPORTER VERS IMAGE](../../commands/svg-exporter-vers-image).
+This example exports a document page to SVG format and creates an image preview using [SVG EXPORT TO PICTURE](../../commands/svg-export-to-picture).
 
 ```4d
- 
-var $preview : Picture
+ var $preview : Picture
  var $options : Object
  var $svgRoot : Text
- var $options Object
-
-$options: :=Créer objet
+ var $options : Object
+ 
+ $options:=New object
  $options[wk max picture DPI]:=96
- WP EXPORTER VARIABLE(wpDoc;$text;wk svg;$options)
- $svgRoot:=DOM Analyser variable XML($text;Faux)
- SVG EXPORTER VERS IMAGE($svgRoot;$preview;Posséder source données XML)
-
-
+ WP EXPORT VARIABLE(wpDoc;$text;wk svg;$options)
+ $svgRoot:=DOM Parse XML variable($text;False)
+ SVG EXPORT TO PICTURE($svgRoot;$preview;Own XML data source)
 ```
