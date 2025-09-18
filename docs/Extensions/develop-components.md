@@ -39,9 +39,7 @@ Interpreted component code can be [edited directly from the host project](#editi
 
 ## Creating and editing components from the host
 
-In interpreted mode, you can create a new component directly from the host project, as well as modify the code of a loaded component.
-
-To facilitate component tuning in the actual context of host projects, the 4D IDE allows you to create or edit components without leaving or restarting the current project.
+In interpreted mode, the 4D IDE allows you to create and edit components directly from the host project. It facilitates component development and tuning in the actual context of a host project without having to leave or restart it.
 
 ### Creating components
 
@@ -51,10 +49,15 @@ You can create a new component directly from the host project:
 
 This action opens a folder selection dialog where you choose where the component will be stored.
 
-* Default location: The first time you create a [component](../Project/components#package-folder), 4D suggests the **Components** folder inside the project package. After that, your used last folder will be automatically remembered and preselected. 
-* If the component is stored **next to the project package**, 4D adds it to the [`dependencies.json`](../Project/components#dependenciesjson) file.
-* If the component is stored **elsewhere**, its path is added to the [`environment4d.json`](../Project/components#environment4djson) file, using either a [relative or an absolute path](../Project/components.md#relative-paths-vs-absolute-paths). A relative path is used if the component is located within no more than two levels above as the `environment4d.json` file, or in its subfolders. Otherwise, an absolute path is used.
-* If the component is stored **inside the project package**, next to the **Components** folder, it won’t load and will trigger an error.
+* Default location: The first time you create a component, 4D suggests the **Components** folder inside the [project package](../Project/components#package-folder),. After that, your used last folder will be automatically remembered and preselected. 
+* If you decide to store the component **next to the project package**, 4D adds it to the [`dependencies.json`](../Project/components#dependenciesjson) file.
+* If you decide to store the component **elsewhere**, 4D adds it to the [`environment4d.json`](../Project/components#environment4djson) file, using either a [relative or an absolute path](../Project/components.md#relative-paths-vs-absolute-paths). A relative path is used if the component is located within no more than two levels above as the `environment4d.json` file, or in its subfolders. Otherwise, an absolute path is used.
+
+:::note 
+
+If the component is stored **inside the project package**, next to the **Components** folder, it won’t load and will trigger an error.
+
+:::
 
 Once created, the component is immediately added to the project, accessible in the [Project dependencies](../Project/components#monitoring-project-dependencies) window, and available for editing.
 
