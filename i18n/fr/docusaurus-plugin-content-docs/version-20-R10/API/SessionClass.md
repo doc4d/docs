@@ -5,7 +5,7 @@ title: Session
 
 Les objets session sont retournés par la commande [`Session`](../commands/session.md). Ces objets fournissent au développeur une interface permettant de gérer la session utilisateur courante et d'exécuter des actions telles que le stockage de données contextuelles, le partage d'informations entre les process de la session, le lancement de process préemptifs liés à la session ou (uniquement pour le web) la gestion des [privilèges](../ORDA/privileges.md).
 
-:::tip Related blog posts
+:::tip Articles de blog sur le sujet
 
 - [Sessions évolutives pour applications web avancées](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/)
 - [Permissions : Inspecter les privilèges de la session pour faciliter le débogage](https://blog.4d.com/permissions-inspect-session-privileges-for-easy-debugging/)
