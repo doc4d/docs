@@ -112,7 +112,7 @@ Désignation d'une licence à utiliser:
 
 ## Voir également
 
-[Blog post - Build an application with 4D commands](https://blog.4d.com/build-an-application-with-4d-commands)
+[Article de blog - Créer une application avec les commandes 4D](https://blog.4d.com/build-an-application-with-4d-commands)
 
 ## Propriétés
 
