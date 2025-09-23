@@ -2,6 +2,7 @@
 id: importing-4d-write-documents
 title: Importar documentos 4D Write
 displayed_sidebar: docs
+slug: /WritePro/importing-4d-write-documents
 ---
 
 #### 

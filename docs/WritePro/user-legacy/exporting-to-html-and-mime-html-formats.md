@@ -44,7 +44,7 @@ slug: /WritePro/exporting-to-html-and-mime-html-formats
 | Underline color        | no           |                                 |
 | Underline styles       | partially    | Only solid is exported          |
 
-#### Columns 
+### Columns 
 
 | **Attribute/Feature** | **Exported** | **Comment** |
 | --------------------- | ------------ | ----------- |
