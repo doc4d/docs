@@ -55,7 +55,7 @@ This action opens a folder selection dialog where you choose where [the componen
 
 :::note 
 
-If the component is stored **inside the project package**, next to the **Components** folder, it won’t load and will trigger an error.
+You cannot store a component **in the project package** but **outside the Components folder**. In this case, it won’t load and will trigger an error.
 
 :::
 
