@@ -128,7 +128,7 @@ Sections inherit attributes from the document. However, common document attribut
 ![](../../assets/en/WritePro/pict2994945.en.png)
 * **Columns** commands: allow to define the number and properties of columns for the section. These options are detailed below.
 * **Header** and **Footer** commands: these options allow you to define separate headers and footers. These options are detailed below.
-* **Margins** / **Paddings** / **Borders** / **Background**: these attributes can be defined separately for each section. For more information on these attributes, please refer the *4D Write Pro Attributes* article.
+* **Margins** / **Paddings** / **Borders** / **Background**: these attributes can be defined separately for each section. For more information on these attributes, please refer the [4D Write Pro Attributes](../4d-write-pro-attributes) article.
 
 ### Inserting headers and footers 
 
@@ -161,7 +161,7 @@ Once a header or a footer has been defined for a section, you can configure its 
 
 ![](../../assets/en/WritePro/pict2994965.en.png)
 
-For more information on **Margins**, **Paddings**, **Borders**, and **Background** attributes, please refer the *4D Write Pro Attributes* section. 
+For more information on **Margins**, **Paddings**, **Borders**, and **Background** attributes, please refer the [4D Write Pro Attributes](../4d-write-pro-attributes) section. 
 
 You can remove the entire definition of a header or a footer (contents and attributes) by selecting the **Remove header** or **Remove footer** command in the contextual menu. 
 
@@ -279,7 +279,7 @@ Columns can be set using:
 
 * the **Columns** submenu of the 4D Write Pro area context menu,
 * 4D Write Pro [attributes](../commands-legacy/4d-write-pro-attributes.md),
-* 4D Write Pro [standard actions](./using-4d-write-pro-standard-actions.md).
+* 4D Write Pro [standard actions](./defining-a-4d-write-pro-area.md#standard-actions).
 
 You can set or get the following properties and actions for columns:
 
@@ -307,7 +307,7 @@ You can insert a continuous section break and change the number of columns to tw
 
 ## Bookmarks
 
-4D Write Pro allows you to create and work with dynamic references to parts of your documents, called **bookmarks**. A bookmark is a named reference attached to a specific [range](./ranges.md) in a 4D Write Pro document.
+4D Write Pro allows you to create and work with dynamic references to parts of your documents, called **bookmarks**. A bookmark is a named reference attached to a specific [range](./ranges.md) in the body of a 4D Write Pro document.
 
 Bookmarks are dynamic, which means that if the user moves, adds or removes text belonging to the bookmark, the associated range will be updated automatically and the bookmark will continue to reference the same content within the document. For example:
 
