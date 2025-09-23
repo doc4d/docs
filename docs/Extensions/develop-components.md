@@ -49,7 +49,7 @@ You can create a new component directly from the host project:
 
 This action opens a folder selection dialog where you choose where [the component package](../Project/components.md#package-folder) will be stored.
 
-* Default location: The first time you create a component, 4D suggests the **Components** folder inside the [project package](../Project/architecture.md#components),. After that, your used last folder will be automatically remembered and preselected. 
+* Default location: The first time you create a component, 4D suggests the **Components** folder inside the [project package](../Project/architecture.md#components). After that, your used last folder will be automatically remembered and preselected. 
 * If you decide to store the component **next to the project package**, 4D adds it to the [`dependencies.json`](../Project/components.md#dependenciesjson) file.
 * If you decide to store the component **elsewhere**, 4D adds it to the [`dependencies.json`](../Project/components.md#dependenciesjson) file and its path is added to the [`environment4d.json`](../Project/components.md#environment4djson) file, using either a [relative or an absolute path](../Project/components.md#relative-paths-vs-absolute-paths). A relative path is used if the component is located within no more than two levels above as the `environment4d.json` file, or in its subfolders. Otherwise, an absolute path is used.
 
