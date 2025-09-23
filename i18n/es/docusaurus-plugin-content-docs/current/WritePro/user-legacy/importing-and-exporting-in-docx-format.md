@@ -2,6 +2,7 @@
 id: importing-and-exporting-in-docx-format
 title: Importar y Exportar al formato docx
 displayed_sidebar: docs
+slug: /WritePro/importing-and-exporting-in-docx-format
 ---
 
 #### 
