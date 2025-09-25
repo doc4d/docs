@@ -25,7 +25,7 @@ The easiest way to install 4D View Pro in an opened project is to use the Depend
 3. Click on the **GitHub** tab.
 4. Select **4d/4D-ViewPro** in the [default list of components](../Extensions/overview.md) and (recommended) **Follow 4D version** as [Dependency rule](../Project/components.md#defining-a-github-dependency-version-range), then click **Add**.
 
-![](../assets/en/ViewPro/install1.png)
+![](../assets/en/ViewPro/install.png)
 
 Once you restart the project, the 4D View Pro component is installed as a [Github dependency](../Project/components.md#adding-a-github-dependency).
 
