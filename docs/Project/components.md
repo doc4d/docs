@@ -1,16 +1,21 @@
 ---
 id: components
-title: Components
+title: Dependencies
 ---
 
-A 4D component is a set of 4D code and/or 4D forms representing one or more functionalities that you can add and use in your projects. For example, the [4D SVG](https://github.com/4d/4D-SVG) component adds advanced commands and an integrated rendering engine that can be used to display SVG files.
+The 4D [project architecture](../Project/architecture.md) is modular. You can provide additional functionalities to your 4D projects by installing [**components**](Concepts/components.md) and [**plug-ins**](../Concepts/plug-ins.md). Components are made of 4D code, while plug-ins can be [built using any language](../Extensions/develop-plug-ins.md). 
 
 You can [develop](../Extensions/develop-components.md) and [build](../Desktop/building.md) your own 4D components, or download public components shared by the 4D community that [can be found on GitHub](https://github.com/search?q=4d-component&type=Repositories).
 
-When developing in 4D, the component files can be transparently stored in your computer or on a Github repository.
+
+Once installed in your 4D environment, extensions are handled as **dependencies** with specific properties. 
+
 
 
 ## Interpreted and compiled components
+
+
+When developing in 4D, the component files can be transparently stored in your computer or on a Github repository.
 
 Components can be interpreted or [compiled](../Desktop/building.md). 
 
@@ -32,9 +37,25 @@ The "Contents" folder architecture is recommended for components if you want to 
 
 :::
 
+## Components made by 4D
 
 
-## Loading components
+4D proposes a set of components developed in-house. If you want to use one of them, you need to download and install it from the [4D github repository](https://github.com/4d) automatically using the [Dependency manager](#monitoring-project-dependencies). 
+
+
+|Component|Description|Main Features| 
+|---|---|---|
+|[4D AiIKit](https://github.com/4d/4D-AIKit)|Set of classes to connect to third-party OpenAI APIs|`OpenAIChat`, `OpenAIImage`...|
+|[4D Labels](https://github.com/4d/4D-Labels)|Internal component required to build label templates||
+|[4D NetKit](https://developer.4d.com/4D-NetKit)|Set of web service tools to connect to third-party APIs|`OAuth2Provider` class, `New OAuth2 provider`, `OAuth2ProviderObject.getToken()` |
+|[4D Progress](https://github.com/4d/4D-Progress)|Open one or more progress bars in the same window|`Progress New`, `Progress SET ON STOP METHOD`, `Progress SET PROGRESS`, ... |
+|[4D SVG](https://github.com/4d/4D-SVG)|Create and manipulate common svg graphic objects|`SVGTool_Display_viewer`, multiple `SVG_` methods |
+|[4D ViewPro](ViewPro/getting-started.md)|Spreadsheet features in your forms|See [4D View Pro documentation](ViewPro/getting-started.md)|
+|[4D Widgets](https://github.com/4d/4D-Widgets)|Manage DatePicker, TimePicker, SearchPicker 4D widgets|`DatePicker calendar`, `DateEntry area`, `TimeEntry`, `SearchPicker SET HELP TEXT`, ...|
+|[4D WritePro Interface](https://github.com/4d/4D-WritePro-Interface)|Manage [4D Write Pro palettes](https://doc.4d.com/4Dv20R9/4D/20-R9/Entry-areas.300-7543821.en.html) and [table wizard](../WritePro/writeprointerface.md#table-wizard)|`WP PictureSettings`, `WP ShowTabPages`, `WP SwitchToolbar`, `WP UpdateWidget`|
+
+
+## Component Locations
 
 
 :::note
@@ -544,7 +565,7 @@ The current GitHub dependency version is displayed on the right side of the depe
 
 #### Modifying the GitHub dependency version range
 
-You can modify the [version setting](#defining-a-github-dependency-version-range) for a listed GitHub dependency: select the dependency to modify and select **Modify the dependency...** from the contextual menu. In the "Modify the dependency" dialog box, edit the Dependency Rule menu and click **Apply**. 
+You can modify the [version setting](#defining-a-github-dependency-version-range) for a listed GitHub dependency: select the dependency to modify and select **Edit the dependency...** from the contextual menu. In the "Edit the dependency" dialog box, edit the Dependency Rule menu and click **Apply**. 
 
 Modifying the version range is useful for example if you use the automatic update feature and want to lock a dependency to a specific version number. 
 
