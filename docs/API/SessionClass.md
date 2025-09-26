@@ -66,6 +66,7 @@ The availability of properties and functions in the `Session` object depends on 
 
 |Release|Changes|
 |---|---|
+|21|Support of remote sessions|
 |18 R6|Added|
 
 </details>
@@ -84,7 +85,7 @@ The availability of properties and functions in the `Session` object depends on 
 
 :::note
 
-This function does nothing and always returns **True** with remote client, stored procedure, and standalone sessions.
+This function does nothing and always returns **True** with stored procedure sessions and standalone sessions.
 
 :::
 
@@ -97,6 +98,8 @@ Unless in ["forceLogin" mode](../REST/authUsers.md#force-login-mode), the sessio
 This function does not remove **promoted privileges** from the web process, whether they are added through the [roles.json](../ORDA/privileges.md#rolesjson-file) file or the [`promote()`](#promote) function.
 
 :::
+
+Regarding remote client sessions, the function only impacts [code accessing the web server](../WebServer/preemptiveWeb.md#writing-thread-safe-web-server-code). 
 
 #### Example
 
@@ -277,6 +280,7 @@ $expiration:=Session.expirationDate //eg "2021-11-05T17:10:42Z"
 
 |Release|Changes|
 |---|---|
+|21|Support of remote client sessions|
 |20 R6|Added|
 
 </details>
@@ -300,7 +304,10 @@ This function returns privileges assigned to a Session using the [`setPrivileges
 
 :::
 
-With remote client, stored procedure and standalone sessions, this function returns a collection only containing "WebAdmin".
+Regarding remote client sessions, the function only impacts [code accessing the web server](../WebServer/preemptiveWeb.md#writing-thread-safe-web-server-code). 
+
+
+With stored procedure sessions and standalone sessions, this function returns a collection only containing "WebAdmin".
 
 #### Example
 
@@ -376,7 +383,7 @@ $privileges := Session.getPrivileges()
 
 |Release|Changes|
 |---|---|
-|21|Returns True for promoted privileges|
+|21|Returns True for promoted privileges, Support of remote client sessions|
 |18 R6|Added|
 
 </details>
@@ -403,7 +410,9 @@ This function returns True for the *privilege* if called from a function that wa
 
 :::
 
-With remote client, stored procedure and standalone sessions, this function always returns True, whatever the *privilege*.
+Regarding remote client sessions, the function only impacts [code accessing the web server](../WebServer/preemptiveWeb.md#writing-thread-safe-web-server-code). 
+
+With stored procedure sessions and standalone sessions, this function always returns True, whatever the *privilege*.
 
 
 #### Example
@@ -759,6 +768,7 @@ Function callback($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 
 |Release|Changes|
 |---|---|
+|21|Support of remote client sessions|
 |19 R8|Support of "roles" Settings property|
 |18 R6|Added|
 
@@ -780,23 +790,21 @@ Function callback($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 
 :::note
 
-This function does nothing and always returns **False** with remote client, stored procedure, and standalone sessions.
+This function does nothing and always returns **False** with stored procedure sessions and standalone sessions.
 
 :::
 
 The `.setPrivileges()` function <!-- REF #SessionClass.setPrivileges().Summary -->associates the privilege(s) and/or role(s) defined in the parameter to the session and returns **True** if the execution was successful<!-- END REF -->.
 
 - In the *privilege* parameter, pass a string containing a privilege name (or several comma-separated privilege names).
-
 - In the *privileges* parameter, pass a collection of strings containing privilege names.
-
 - In the *settings* parameter, pass an object containing the following properties:
 
 |Property|Type|Description|
 |---|---|---|
 |privileges|Text or Collection|<li>String containing a privilege name, or</li><li>Collection of strings containing privilege names</li>|
 |roles|Text or Collection|<li>String containing a role, or</li><li>Collection of strings containing roles</li>|
-|userName|Text|User name to associate to the session (optional)|
+|userName|Text|User name to associate to the session (optional, web sessions only). Not available in remote client sessions (ignored).|
 
 :::note
 
@@ -809,6 +817,9 @@ If the `privileges` or `roles` property contains a name that is not declared in 
 By default when no privilege or role is associated to the session, the session is a [Guest session](#isguest).
 
 The [`userName`](#username) property is available at session object level (read-only).
+
+Regarding remote client sessions, the function only impacts [code accessing the web server](../WebServer/preemptiveWeb.md#writing-thread-safe-web-server-code). 
+
 
 #### Example
 

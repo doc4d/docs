@@ -123,9 +123,9 @@ All stored procedures on the server share the same virtual user session. For mor
 
 ### Sharing the session with Qodly pages in Web areas
 
-Remote user sessions can be used to handle Client/Server applications where [Qodly pages](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/pageLoaderOverview) are used for the interface, running on remote machines. Your application has modern CSS-based web interface while using the power and simplicity of integrated client/server development. In such applications, Qodly pages are executed within standard 4D [Web areas](../FormObjects/webArea_overview.md). 
+Remote client sessions can be used to handle Client/Server applications where [Qodly pages](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/pageLoaderOverview) are used for the interface, running on remote machines. With this configuration, your applications have modern CSS-based web interfaces but still benefit from the power and simplicity of integrated client/server development. In such applications, Qodly pages are executed within standard 4D [Web areas](../FormObjects/webArea_overview.md). 
 
-To manage this configuration, you need to use remote user sessions. Actually, both the remote 4D application and its Qodly pages loaded in Web areas need to connect to 4D Server and work inside a user session. You need to assign and share the same session between a remote user and its web accesses so that you can have the appropriate privileges and data context in the same client connection.  
+To manage this configuration, you need to use remote client sessions. Actually, requests coming from both the remote 4D application and its Qodly pages loaded in Web areas need to work inside a single user session. You nejust have to share the same session between the remote client and its web pages so that you can have the same privileges and data context (and client license) whatever the request origin.  
 
 Shared sessions are handled through [OTP tokens](../WebServer/sessions.md#session-token-otp). After you created an OTP token on the server for the user session, you add the token (through the `$4DSID` parameter value) to web requests sent from web areas containing Qodly pages so that the user session on the server is identified and shared.
 
