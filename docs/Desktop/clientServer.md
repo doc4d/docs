@@ -91,6 +91,11 @@ However, you need to pay attention to the following behavior differences compare
 
 On the server, the [`Session`](../commands/session.md) command returns a `session` object describing the current user session. This object is handled through the functions and properties of the [`Session` class](../API/SessionClass.md).
 
+:::tip Related blog posts
+
+[4D remote session object with Client/Server connection and Stored procedure](https://blog.4d.com/new-4D-remote-session-object-with-client-server-connection-and-stored-procedure).
+
+:::
 
 ### Usage
 
@@ -114,7 +119,4 @@ All stored procedures on the server share the same virtual user session. For mor
 
 :::
 
-### See also (blog post)
-
-[4D remote session object with Client/Server connection and Stored procedure](https://blog.4d.com/new-4D-remote-session-object-with-client-server-connection-and-stored-procedure).
 
