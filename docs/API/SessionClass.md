@@ -119,6 +119,7 @@ $isGuest:=Session.isGuest() //$isGuest is True
 
 |Release|Changes|
 |---|---|
+|21|Support of remote sessions|
 |20 R9|Added|
 
 </details>
@@ -138,7 +139,7 @@ $isGuest:=Session.isGuest() //$isGuest is True
 
 :::note
 
-This function is only available with web user sessions. It returns an empty string in other contexts.  
+This function is available with web user sessions and remote sessions. It returns an empty string in stored procedure and standalone sessions.  
 
 :::
 
@@ -146,9 +147,14 @@ The `.createOTP()` function <!-- REF #SessionClass.createOTP().Summary -->create
 
 For more information about the OTP tokens, please refer to [this section](../WebServer/sessions.md#session-token-otp).
 
-By default, if the *lifespan* parameter is omitted, the token is created with the same lifespan as the [`.idleTimeOut`](#idletimeout) of the session. You can set a custom timeout by passing a value in seconds in *lifespan*. If an expired token is used to restore a web user session, it is ignored. 
+You can set a custom timeout by passing a value in seconds in *lifespan*. If an expired token is used to restore a session, it is ignored. By default, if the *lifespan* parameter is omitted:
 
-The returned token can then be used in exchanges with third-party applications or websites to securely identify the session. For example, the session OTP token can be used with a payment application. 
+- with web user sessions, the token is created with the same lifespan as the [`.idleTimeOut`](#idletimeout) of the session. 
+- with remote sessions, the token is created with a 10 seconds lifespan. 
+
+For **web user sessions**, the returned token can be used in exchanges with third-party applications or websites to securely identify the session. For example, the session OTP token can be used with a payment application. 
+
+For **remote sessions**, the returned token can be used on 4D Server to identitfy requests coming from a [remote 4D running Qodly forms in a Web area](../Desktop/clientServer.md#remote-user-sessions). 
 
 
 #### Example
