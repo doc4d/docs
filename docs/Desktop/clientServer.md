@@ -144,8 +144,6 @@ ds.whoAmI("basic")
 // An OTP is created on the server for this remote client session
 $otp:=ds.getOTP()
 
-```
-
 
 // The user has already the required privileges for a web access
 // and the same session is shared between this remote user and the web Qodly app
