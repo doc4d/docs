@@ -2208,6 +2208,7 @@ module.exports =
         {
           type: "category",
           label: "Classes",
+          key: "4D-classes",
           items: [
             "API/BlobClass",
             "API/ClassClass",
@@ -2883,6 +2884,7 @@ module.exports =
             {
               type: "category",
               label: "Commands",
+              key: "ViewPro-commands",
               link: {
                 type: "doc",
                 id: "ViewPro/commands"
@@ -3209,6 +3211,7 @@ module.exports =
             {
               type: "category",
               label: "Commands",
+              key: "WritePro-commands",
               link: {
                 type: "doc",
                 id: "WritePro/commands/command-index"
@@ -3320,6 +3323,7 @@ module.exports =
             {
               type: "category",
               label: "Classes",
+              key: "aikit-classes",
               items: [
                 "aikit/Classes/openai",
                 "aikit/Classes/openaiapiresource",
