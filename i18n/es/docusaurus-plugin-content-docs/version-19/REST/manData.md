@@ -22,7 +22,7 @@ Para añadir y modificar entidades, puede llamar a [`$method=update`]($method.md
 
 Además la recuperación de una sola entidad en una clase de datos utilizando [\{dataClass\}({key})](%7BdataClass%7D_%7Bkey%7D.html), también puede escribir una [función de clase](ClassFunctions.md#function-calls) que devuelva una entity selection (o una colección).
 
-Antes de devolver una selección, también puede ordenarla utilizando [`$orderby`]($orderby.md) uno o varios atributos (incluso los atributos de relación).
+Antes de devolver una selección, también puede ordenarla utilizando [`$orderby`]($orderby.md) en uno o varios atributos (incluso los atributos de relación).
 
 
 ## Navegación de datos
@@ -33,7 +33,7 @@ Añada el [`$skip`]($skip.md) (para definir con qué entidad empezar) y [`$top/$
 
 ## Creación y gestión del conjunto de entidades
 
-Un conjunto de entidades (también conocido como *selección de entidades*) es una colección de entidades obtenidas a través de una petición REST que se almacena en la caché de 4D Server. El uso de un conjunto de entidades evita que se consulte continuamente la aplicación para obtener los mismos resultados. El acceso a un conjunto de entidades es mucho más rápido y puede mejorar la velocidad de su aplicación.
+Un conjunto de entidades es una colección de entidades obtenidas a través de una petición REST que se almacena en la caché de 4D Server. El uso de un conjunto de entidades evita que se consulte continuamente la aplicación para obtener los mismos resultados. El acceso a un conjunto de entidades es mucho más rápido y puede mejorar la velocidad de su aplicación.
 
 Para crear un conjunto de entidades, llame a [`$method=entityset`]($method.md#methodentityset) en su solicitud REST. Como medida de seguridad, también se puede utilizar [`$savedfilter`]($savedfilter.md) y/o [`$savedorderby`]($savedorderby.md) cuando se llame a [`$filter`]($filter.md) y/o [`$orderby`]($orderby.md) para que si alguna vez el conjunto de entidades se agota o se elimina del servidor, se pueda recuperar rápidamente con el mismo ID que antes.
 

@@ -11,7 +11,11 @@ Le serveur web 4D propose trois modes d'authentification que vous pouvez sélect
 
 ![](../assets/en/WebServer/authentication.png)
 
-> Il est recommandé d'utiliser une authentification **personnalisée**.
+:::warning
+
+Il est recommandé d'utiliser une authentification **personnalisée**.
+
+:::
 
 ### Vue d’ensemble
 
@@ -76,7 +80,7 @@ La méthode base `On Web Authentication` est automatiquement appelée lorsqu'une
 La méthode base `On Web Authentication` est donc appelée :
 
 - lorsque le serveur web reçoit une URL demandant une ressource qui n'existe pas
-- lorsque le serveur web reçoit une URL commençant par `4DACTION/`, `4DCGI/`...
+- when the web server receives a URL beginning with `4DACTION/`
 - when the web server receives a root access URL and no home page has been set in the Settings or by means of the [`WEB SET HOME PAGE`](../commands-legacy/web-set-home-page.md) command
 - lorsque le serveur web traite une balise exécutant du code (par exemple `4DSCRIPT`) dans une page semi-dynamique.
 

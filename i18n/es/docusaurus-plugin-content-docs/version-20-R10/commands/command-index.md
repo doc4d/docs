@@ -1,6 +1,6 @@
 ---
 id: command-index
-title: Índice
+title: Comandos por nombre
 ---
 
 [4D](#4D) - [A](#A) - [B](#B) - [C](#C) - [D](#D) - [E](#E) - [F](#F) - [G](#G) - [H](#H) - [I](#I) - [J](#J) - [K](#K) - [L](#L) - [M](#M) - [N](#N) - [O](#O) - [P](#P) - [Q](#Q) - [R](#R) - [S](#S) - [T](#T) - [U](#U) - [V](#V) - [W](#W) - [X](#X) - [Y](#Y) - [Z](#Z)
@@ -350,7 +350,7 @@ title: Índice
 [`Generate digest`](../commands-legacy/generate-digest.md)<br/>
 [`GENERATE ENCRYPTION KEYPAIR`](../commands-legacy/generate-encryption-keypair.md)<br/>
 [`Generate password hash`](../commands-legacy/generate-password-hash.md)<br/>
-[`Generate UUID`](../commands-legacy/generate-uuid.md)<br/>
+[`Generate UUID`](./generate-uuid.md) **modified 4D 20 R10**<br/>
 [`Get 4D file`](../commands-legacy/get-4d-file.md)<br/>
 [`Get 4D folder`](../commands-legacy/get-4d-folder.md)<br/>
 [`Get adjusted blobs cache priority`](../commands-legacy/get-adjusted-blobs-cache-priority.md)<br/>

@@ -3,7 +3,7 @@ id: object-get-data-source-formula
 title: OBJECT Get data source formula
 ---
 
-<!--REF #_command_.OBJECT Get data source formula.Syntax-->**OBJECT Get data source formula** ( {* ;} *object* ) : *formula*<!-- END REF-->
+<!--REF #_command_.OBJECT Get data source formula.Syntax-->**OBJECT Get data source formula** ( {* ;} *object* ) : 4D.Formula<!-- END REF-->
 
 <!--REF #_command_.OBJECT Get data source formula.Params-->
 
@@ -23,7 +23,7 @@ Passing the optional *\** parameter indicates that the *object* parameter is an 
 
 When a formula is associated with a form object, it acts as the object's data source at runtime.
 
-If this command is applied to an object with no custom formula assigned, it returns the automatically assigned [dynamic form variable](../FormObjects/properties_Object.md#dynamic-variables).\
+If this command is applied to an object with no custom formula assigned, it returns the automatically assigned [dynamic form variable](../FormObjects/properties_Object.md#dynamic-variables).  
 Se o objeto não existe ou não suporta fórmulas, ele retorna `Null`.
 
 ## Exemplo

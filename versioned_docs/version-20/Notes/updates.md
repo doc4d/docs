@@ -17,6 +17,15 @@ Read [**What’s new in 4D 20**](https://blog.4d.com/en-whats-new-in-4d-v20/), t
 
 - [**Fixed bugs list**](https://bugs.4d.com/fixes?version=20.7): list of all bugs that have been fixed in 4D 20.7 LTS.
 
+:::caution Minimal client version for 4D Server 20.7 and later
+
+For internal reasons, the version of remote clients connecting to 4D Server 20.7 and later must be at least 4D 20.7.
+
+:::
+
+#### Behavior changes
+
+- As of 4D **20.7 HF2**, the [`Time`](https://doc.4d.com/4dv20/help/command/en/page179.html) command returns a negative time expression when the *timeValue* parameter is negative. For instance, `Time("-01:02:03")` will now return -01:02:03. In previous releases, the negative sign was ignored. 
 
 
 ## 4D 20.6 LTS
@@ -25,7 +34,7 @@ Read [**What’s new in 4D 20**](https://blog.4d.com/en-whats-new-in-4d-v20/), t
 
 :::info Evaluation applications
 
-Starting with nightly build **101734**, the Build application dialog box has a new option allowing to build evaluation applications. See [description in the 4D Rx documentation](../../../docs/Desktop/building.md#evaluation-application).
+Starting with nightly build **101734**, the Build application dialog box has a new option allowing to build evaluation applications. See [description in the 4D Rx documentation](../../../docs/Desktop/building#evaluation-application).
 
 :::
 

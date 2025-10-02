@@ -3,13 +3,13 @@ id: components
 title: Composants
 ---
 
-Un composant 4D est un ensemble de code et de formulaires 4D représentant une ou plusieurs fonctionnalités que vous pouvez installer et utiliser dans vos projets. Par exemple, le [composant 4D SVG](https://doc.4d.com/4Dv20/4D/20/4D-SVG-Component.100-6342795.en.html) ajoute des commandes avancées et un moteur de rendu intégré qui peut être utilisé pour afficher des fichiers SVG.
+Un composant 4D est un ensemble de code et de formulaires 4D représentant une ou plusieurs fonctionnalités que vous pouvez installer et utiliser dans vos projets. Par exemple, le [composant 4D SVG](https://github.com/4d/4D-SVG) ajoute des commandes avancées et un moteur de rendu intégré qui peut être utilisé pour afficher des fichiers SVG.
 
 ## Installation des composants
 
-Plusieurs composants sont [préinstallés dans l'environnement de développement 4D](Extensions/overview.md), mais de nombreux composants 4D de la communauté 4D sont disponibles sur GitHub. De plus, vous pouvez développer vos propres composants 4D.
-
 L'installation et le chargement des composants dans vos projets 4D sont gérés par le [Gestionnaire de dépendances de 4D](../Project/components.md).
+
+Plusieurs composants sont [développés par 4D](../Extensions/overview.md#components-developed-by-4d), mais de nombreux composants de la communauté 4D [sont publiés sur GitHub](https://github.com/search?q=4d-component&type=Repositories). De plus, vous pouvez [développer vos propres composants 4D](../Extensions/develop-components.md).
 
 ## Utilisation des composants
 
@@ -31,6 +31,6 @@ Vous pouvez sélectionner une [méthode projet](methods.md) ou [classe](classes.
 
 :::note
 
-Interpreted component code can be [edited directly from the host project](../Extensions/develop-components.md#editing-components-from-the-host) if the context is supported.
+Le code d'un composant interprété peut être [édité directement à partir du projet hôte](../Extensions/develop-components.md#editing-components-from-the-host) si le contexte est pris en charge.
 
 :::

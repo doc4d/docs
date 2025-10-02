@@ -1,15 +1,17 @@
 ---
 id: components
-title: Composants
+title: Dependencies
 ---
 
-Un composant 4D est un ensemble de code 4D et de formulaires représentant une ou plusieurs fonctionnalité(s) que vous pouvez installer et utiliser dans vos projets. Par exemple, le composant [4D SVG](https://github.com/4d/4D-SVG) ajoute des commandes avancées et un moteur de rendu intégré qui peut être utilisé pour afficher des fichiers SVG.
+[L'architecture des projets](../Project/architecture.md) 4D est modulaire. Vous pouvez ajouter des fonctionnalités supplémentaires dans vos projets 4D en installant des [**composants**](Concepts/components.md) et des [**plug-ins**](../Concepts/plug-ins.md). Components are made of 4D code, while plug-ins can be [built using any language](../Extensions/develop-plug-ins.md).
 
 Vous pouvez [développer](../Extensions/develop-components.md) et [construire](../Desktop/building.md) vos propres composants 4D, ou télécharger des composants publics partagés par la communauté 4D qui se trouvent sur GitHub.
 
-Lorsque vous développez dans 4D, les fichiers de composants peuvent être stockés de manière transparente sur votre ordinateur ou sur un dépôt Github.
+Once installed in your 4D environment, extensions are handled as **dependencies** with specific properties.
 
 ## Composants interprétés et compilés
+
+Lorsque vous développez dans 4D, les fichiers de composants peuvent être stockés de manière transparente sur votre ordinateur ou sur un dépôt Github.
 
 Les composants peuvent être interprétés ou [compilés](../Desktop/building.md).
 
@@ -22,8 +24,8 @@ Le dossier racine d'un composant (dossier *MyComponent.4dbase*) peut contenir :
 
 - pour les **composants interprétés** : un [dossier project](../Project/architecture.md) standard. Le nom du dossier du dossier racine doit être suffixé **.4dbase** si vous voulez l'installer dans le dossier [**Components**](architecture.md#components) de votre projet.
 - pour les **composants compilés** :
-    - soit un dossier "Contents" contenant un fichier .4DZ, un dossier *Resources*, un fichier *Info.plist* (architecture recommandée)
-    - soit directement un fichier .4DZ avec d'autres dossiers tels que *Resources*.
+  - soit un dossier "Contents" contenant un fichier .4DZ, un dossier *Resources*, un fichier *Info.plist* (architecture recommandée)
+  - soit directement un fichier .4DZ avec d'autres dossiers tels que *Resources*.
 
 :::note
 
@@ -31,7 +33,7 @@ L'architecture de dossier "Contents" est recommandée pour les composants si vou
 
 :::
 
-## Chargement des composants
+## Component Locations
 
 :::note
 
@@ -345,10 +347,10 @@ Dans un projet ouvert, vous pouvez ajouter, supprimer, mettre à jour et obtenir
 Pour afficher la fenêtre Dépendances :
 
 - avec 4D, sélectionnez la ligne de menu **Développement/Dépendances du projet** (environnement de développement),<br/>
-    ![dependency-menu](../assets/en/Project/dependency-menu.png)
+  ![dependency-menu](../assets/en/Project/dependency-menu.png)
 
 - avec 4D Server, sélectionnez la ligne de menu **Fenêtre/Dépendances du projet**.<br/>
-    ![menu-dépendances-serveur](../assets/en/Project/dependency-menu-server.png)
+  ![menu-dépendances-serveur](../assets/en/Project/dependency-menu-server.png)
 
 La fenêtre Dépendances s'affiche alors. Les dépendances sont classées par nom par ordre alphabétique :
 
@@ -465,6 +467,16 @@ Pour ajouter une [dépendance GitHub](#components-stored-on-github), cliquez sur
 
 ![dependency-add-git](../assets/en/Project/dependency-add-git.png)
 
+:::note
+
+By default, [components developed by 4D](../Extensions/overview.md#components-developed-by-4d) are listed in the combo box, so that you can easily select and install these features in your environment:
+
+![dependency-default-git](../assets/en/Project/dependency-default.png)
+
+Components already installed are not listed.
+
+:::
+
 Entrez l'adresse du dépôt GitHub de la dépendance. Il peut s'agir d'une **URL de dépôt** ou d'une **chaîne de nom de compte/dépôt-Github**, par exemple :
 
 ![dependency-add-git-2](../assets/en/Project/dependency-add-git-2.png)
@@ -493,7 +505,7 @@ Vous pouvez définir l'option [règle de dépendance](#tags-and-versions) pour u
 - **Jusqu'à la version majeure suivante** : Définit une [plage sémantique de versions](#tags-and-versions) pour limiter les mises à jour à la version majeure suivante.
 - **Jusqu'à la prochaine version mineure** : De même, limite les mises à jour à la version mineure suivante.
 - **Version exacte (balise)** : Sélectionnez ou saisissez manuellement un [tag spécifique](#tags-and-versions) dans la liste disponible.
-- **Suivre la version 4D** : Téléchargez la dernière version du composant compatible avec la version 4D courante. Vous ne pouvez utiliser cette règle de dépendance que si les tags de release des composants respectent la [convention de nommage](#naming-conventions-for-4d-version-tags) appropriée.
+- **Suivre la version 4D** : Téléchargez la dernière version du composant compatible avec la version 4D courante. Vous ne pouvez utiliser cette règle de dépendance que si les tags de release des composants respectent la [convention de nommage](#naming-conventions-for-4d-version-tags) appropriée. This option is recommended for the [components developed by 4D](../Extensions/overview.md#components-developed-by-4d).
 
 La version courante de la dépendance GitHub est affichée sur le côté droit de l'élément de la dépendance :
 
@@ -501,7 +513,7 @@ La version courante de la dépendance GitHub est affichée sur le côté droit d
 
 #### Modifier la plage de versions des dépendances GitHub
 
-Vous pouvez modifier la [règle de dépendance](#defining-a-github-dependency-version-range) pour une dépendance GitHub listée : sélectionnez la dépendance à modifier et sélectionnez **Editer la dépendance...** dans le menu contextuel. Dans la boîte de dialogue "Editer la dépendance", modifiez le menu Règle de dépendance et cliquez sur **Appliquer**.
+You can modify the [version setting](#defining-a-github-dependency-version-range) for a listed GitHub dependency: select the dependency to modify and select **Edit the dependency...** from the contextual menu. In the "Edit the dependency" dialog box, edit the Dependency Rule menu and click **Apply**.
 
 La modification de la plage de versions est utile par exemple si vous utilisez la fonction de mise à jour automatique et que vous souhaitez verrouiller une dépendance à un numéro de version spécifique.
 

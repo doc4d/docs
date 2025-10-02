@@ -12,7 +12,11 @@ The 4D web server proposes three authentication modes, that you can select in th
 
 ![](../assets/en/WebServer/authentication.png)
 
-> Using a **custom** authentication is recommended.
+:::warning
+
+Using a **custom** authentication is recommended.
+
+:::
 
 ### Overview 
 
@@ -70,7 +74,6 @@ As in BASIC mode, users must enter their name and password when they connect. Th
 >You must restart the web server in order for the changes made to these parameters to be taken into account. 
 
 
-
 ## On Web Authentication 
 
 The `On Web Authentication` database method is in charge of managing web server engine access. It is called by 4D or 4D Server when a dynamic HTTP request is received.
@@ -82,7 +85,7 @@ The `On Web Authentication` database method is automatically called when a reque
 The `On Web Authentication` database method is therefore called:
 
 - when the web server receives a URL requesting a resource that does not exist
-- when the web server receives a URL beginning with `4DACTION/`, `4DCGI/`...
+- when the web server receives a URL beginning with `4DACTION/`
 - when the web server receives a root access URL and no home page has been set in the Settings or by means of the [`WEB SET HOME PAGE`](../commands-legacy/web-set-home-page.md) command
 - when the web server processes a tag executing code (e.g `4DSCRIPT`) in a semi-dynamic page.
 

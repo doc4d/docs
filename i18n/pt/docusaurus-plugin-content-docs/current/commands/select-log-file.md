@@ -8,10 +8,10 @@ displayed_sidebar: docs
 
 <!--REF #_command_.SELECT LOG FILE.Params-->
 
-| Parâmetro | Tipo |                             | Descrição                   |
-| --------- | ---- | --------------------------- | --------------------------- |
-| logFile   | Text | &#8594; | Nome do arquivo de registro |
-| \*        |      | &#8594; | Close the current log file  |
+| Parâmetro | Tipo     |                             | Descrição                   |
+| --------- | -------- | --------------------------- | --------------------------- |
+| logFile   | Text     | &#8594; | Nome do arquivo de registro |
+| \*        | Operador | &#8594; | Close the current log file  |
 
 <!-- END REF-->
 
@@ -33,7 +33,7 @@ OK is set to 1 if the log file is correctly created, or closed.
 
 ## Veja também
 
-[New log file](new-log-file.md)\
+[New log file](new-log-file.md)  
 [ON ERR CALL](../commands-legacy/on-err-call.md)
 
 ## Propriedades

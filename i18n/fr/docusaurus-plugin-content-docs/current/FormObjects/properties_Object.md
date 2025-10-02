@@ -76,7 +76,7 @@ Voici la liste des objets dont la valeur peut être mémorisée :
 
 ---
 
-## Variable ou expression
+## Variable or Expression {#variable-or-expression}
 
 > Voir également **[Expression](properties_DataSource.md#expression)** pour les colonnes de list box de type sélection et collection.
 
@@ -124,7 +124,7 @@ Pour une list box de type tableau, la propriété **Variable ou Expression** con
 
 #### Commandes
 
-[`LISTBOX Get column formula`](../commands-legacy/listbox-get-column-formula.md) - [`LISTBOX SET COLUMN FORMULA`](../commands-legacy/listbox-set-column-formula.md) - [`OBJECT Get data source`](../commands-legacy/object-get-data-source.md) - [`OBJECT Get data source formula`](../commands/object-get-data-source-formula.md) - [`OBJECT Get value`](../commands-legacy/object-get-value.md) - [`OBJECT Get pointer`](../commands-legacy/object-get-pointer.md) - [`OBJECT SET VALUE`](../commands-legacy/object-set-value.md) - [`OBJECT SET DATA SOURCE`](../commands-legacy/object-set-data-source.md) - [`OBJECT SET DATA SOURCE FORMULA`](../commands-legacy/object-set-data-source-formula.md)
+[`LISTBOX Get column formula`](../commands-legacy/listbox-get-column-formula.md) - [`LISTBOX SET COLUMN FORMULA`](../commands-legacy/listbox-set-column-formula.md) - [`OBJECT Get data source`](../commands-legacy/object-get-data-source.md) - [`OBJECT Get data source formula`](../commands/object-get-data-source-formula.md) - [`OBJECT Get value`](../commands-legacy/object-get-value.md) - [`OBJECT Get pointer`](../commands-legacy/object-get-pointer.md) - [`OBJECT SET VALUE`](../commands-legacy/object-set-value.md) - [`OBJECT SET DATA SOURCE`](../commands-legacy/object-set-data-source.md) - [`OBJECT SET DATA SOURCE FORMULA`](../commands/object-set-data-source-formula.md)
 
 ---
 
@@ -194,7 +194,7 @@ La collection ou l'entity selection doit être disponible pour le formulaire lor
 
 #### Commandes
 
-[`OBJECT Get data source`](../commands-legacy/object-get-data-source.md) - [`OBJECT Get data source formula`](../commands/object-get-data-source-formula.md) - [`OBJECT Get value`](../commands-legacy/object-get-value.md) - [`OBJECT Get pointer`](../commands-legacy/object-get-pointer.md) - [`OBJECT SET VALUE`](../commands-legacy/object-set-value.md) - [`OBJECT SET DATA SOURCE`](../commands-legacy/object-set-data-source.md) - [`OBJECT SET DATA SOURCE FORMULA`](../commands-legacy/object-set-data-source-formula.md)
+[`OBJECT Get data source`](../commands-legacy/object-get-data-source.md) - [`OBJECT Get data source formula`](../commands/object-get-data-source-formula.md) - [`OBJECT Get value`](../commands-legacy/object-get-value.md) - [`OBJECT Get pointer`](../commands-legacy/object-get-pointer.md) - [`OBJECT SET VALUE`](../commands-legacy/object-set-value.md) - [`OBJECT SET DATA SOURCE`](../commands-legacy/object-set-data-source.md) - [`OBJECT SET DATA SOURCE FORMULA`](../commands/object-set-data-source-formula.md)
 
 ---
 

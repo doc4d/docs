@@ -1,6 +1,6 @@
 ---
 id: components
-title: コンポーネント
+title: Dependencies
 ---
 
 4D のコンポーネントとは、プロジェクトに追加可能な、1つ以上の機能を持つ 4Dコードや 4Dフォームの一式です。 たとえば、[4D SVG](https://github.com/4d/4D-SVG)コンポーネント は、SVGファイルの表示するための高度なコマンドと統合されたレンダリングエンジンを追加します。
@@ -22,14 +22,29 @@ title: コンポーネント
 
 - **インタープリタ版コンポーネント**の場合: 標準の[Project フォルダ](../Project/architecture.md)。 [プロジェクトの**Components** フォルダ](architecture.md#コンポーネント)にインストールする場合には、パッケージフォルダ名の末尾を **.4dbase** にする必要があります。
 - **コンパイル版コンポーネント**の場合:
-    - .4DZ ファイル、*Resources* フォルダ、*Info.plist* ファイルを格納している"Contents" フォルダ(推奨されるアーキテクチャ)
-    - *Resources* などの他のフォルダを格納している.4DZ ファイル。
+  - .4DZ ファイル、*Resources* フォルダ、*Info.plist* ファイルを格納している"Contents" フォルダ(推奨されるアーキテクチャ)
+  - *Resources* などの他のフォルダを格納している.4DZ ファイル。
 
 :::note
 
 アプリケーションをmacOS 上で[公証](../Desktop/building.md#公証について) したい場合には、"Contents" フォルダアーキテクチャーが推奨されます。
 
 :::
+
+## Components made by 4D
+
+4D includes a set of components developed in-house. They can also be found in the [4D github repository](https://github.com/4d).
+
+| コンポーネント                                                              | 説明                                                                                                                                                                    | 主な機能                                                                                                                                    |
+| -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| [4D AiIKit](https://github.com/4d/4D-AIKit)                          | サードパーティのOpenAI API に接続するためのクラス群                                                                                                                                       | `OpenAIChat`, `OpenAIImage`...                                                          |
+| [4D Labels](https://github.com/4d/4D-Labels)                         | ラベルテンプレートを作成するための内部コンポーネント                                                                                                                                            |                                                                                                                                         |
+| [4D NetKit](https://developer.4d.com/4D-NetKit)                      | サードパーティAPI に接続するためのWeb サービスツール群                                                                                                                                       | `OAuth2Provider` class, `New OAuth2 provider`, `OAuth2ProviderObject.getToken()`                                                        |
+| [4D Progress](https://github.com/4d/4D-Progress)                     | 1つ以上の進捗バーを同じウィンドウで開く                                                                                                                                                  | `Progress New`, `Progress SET ON STOP METHOD`, `Progress SET PROGRESS`, ...             |
+| [4D SVG](https://github.com/4d/4D-SVG)                               | 一般的な svgグラフィックオブジェクトの作成・操作                                                                                                                                            | `SVGTool_Display_viewer`, 複数の `SVG_` メソッド                                                                                               |
+| [4D ViewPro](ViewPro/getting-started.md)                             | フォームに追加できる表計算機能                                                                                                                                                       | [4D View Pro ドキュメンテーション](ViewPro/getting-started.md) 参照。                                                                                |
+| [4D Widgets](https://github.com/4d/4D-Widgets)                       | DatePicker, TimePicker, SearchPicker 4Dウィジェットの管理                                                                                                                      | `DatePicker calendar`, `DateEntry area`, `TimeEntry`, `SearchPicker SET HELP TEXT`, ... |
+| [4D WritePro Interface](https://github.com/4d/4D-WritePro-Interface) | Manage [4D Write Pro palettes](https://doc.4d.com/4Dv20R9/4D/20-R9/Entry-areas.300-7543821.en.html) and [table wizard](../WritePro/writeprointerface.md#table-wizard) | `WP PictureSettings`, `WP ShowTabPages`, `WP SwitchToolbar`, `WP UpdateWidget`                                                          |
 
 ## コンポーネントの読み込み
 
@@ -345,10 +360,10 @@ The Dependency manager reads each component's own `dependencies.json` file and r
 依存関係パネルを表示するには:
 
 - 4D では、**デザイン/プロジェクト依存関係** メニューアイテムを選択します (開発環境)。<br/>
-    ![dependency-menu](../assets/en/Project/dependency-menu.png)
+  ![dependency-menu](../assets/en/Project/dependency-menu.png)
 
-- with 4D Server, select the **Window/Project Dependencies** menu item.<br/>
-    ![dependency-menu-server](../assets/en/Project/dependency-menu-server.png)
+- 4D Server では、**ウィンドウ/プロジェクト依存関係** メニュー項目を選択します。<br/>
+  ![dependency-menu-server](../assets/en/Project/dependency-menu-server.png)
 
 依存関係パネルが表示されます。 依存関係は ABC順にソートされます。
 

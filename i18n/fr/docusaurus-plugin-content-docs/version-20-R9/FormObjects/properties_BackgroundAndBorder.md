@@ -45,7 +45,7 @@ You can also set this property using the [`OBJECT SET RGB COLORS`](../commands-l
 
 ---
 
-## Expression couleur de fond
+## Background Color Expression {#background-color-expression}
 
 `List box de type collection et de type sélection d'entité`
 
@@ -162,9 +162,9 @@ Désigne l'épaisseur d'une ligne.
 
 ---
 
-## Tableau couleurs de fond
+## Row Background Color Array {#row-background-color-array}
 
-`Array type list boxes`
+`List box de type tableau`
 
 Le nom d'un tableau pour appliquer une couleur d'arrière-plan personnalisée à chaque ligne ou colonne de la list box.
 

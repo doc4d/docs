@@ -99,7 +99,7 @@ Cette fonction vous permet de mettre à jour des entités séparément. Notez ce
 
 Cette fonction ne peut être utilisée qu'avec des entités déjà enregistrées dans la base de données. Elle ne peut pas être appelée sur une entité nouvellement créée (pour laquelle [`.isNew()`](#isnew) retourne **True**).
 
-#### Exemple
+#### Exemple 1
 
 ```4d
  var $emp; $empCloned : cs.EmployeeEntity
@@ -108,6 +108,17 @@ Cette fonction ne peut être utilisée qu'avec des entités déjà enregistrées
 
  $emp.lastName:="Smith" //Les mises à jour effectuées sur $emp ne le sont pas sur $empCloned
 
+```
+
+#### Exemple 2
+
+Si vous ne voulez pas que la nouvelle entité partage les références d'attributs de type objet, vous devez les copier.
+
+```4d
+ var $emp; $empCloned : cs.EmployeeEntity
+ $emp:=ds.Employee.all().first()
+ $empCloned:=$emp.clone()
+ $empCloned.objectAtt:=OB Copy($emp.objectAtt)
 ```
 
 <!-- END REF -->
@@ -1685,9 +1696,10 @@ Lorsqu'un enregistrement est verrouillé, il doit être déverrouillé depuis le
 
 L'objet retourné par `.unlock()` contient la propriété suivante :
 
-| Propriété | Type    | Description                                                                                                                                                                                                                                                                 |
-| --------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| success   | Boolean | Vrai si l'action unlock a été exécutée avec succès, Faux sinon. Si le déverrouillage est effectué sur une entité qui a été supprimée, sur un enregistrement non verrouillé ou sur un enregistrement verrouillé par un autre process ou une autre entité, success vaut Faux. |
+| Propriété    | Type    | Description                                                                                                                                                                                                                                                                 |
+| ------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| success      | Boolean | Vrai si l'action unlock a été exécutée avec succès, Faux sinon. Si le déverrouillage est effectué sur une entité qui a été supprimée, sur un enregistrement non verrouillé ou sur un enregistrement verrouillé par un autre process ou une autre entité, success vaut Faux. |
+| wasNotLocked | Boolean | (uniquement si "success" est False) True si l'entité n'était pas verrouillée dans le process.                                                                                                                                                                               |
 
 #### Exemple
 

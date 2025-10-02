@@ -1,24 +1,33 @@
 ---
 id: develop-components
-title: Developing Components
+title: Developing Extensions
 ---
+
+## Components
 
 A 4D component is a set of 4D functions, methods, and forms representing one or more functionalities that can be [installed and used in 4D applications](Concepts/components.md). For example, you can develop a 4D e-mail component that manages every aspect of sending, receiving and storing e-mails in 4D applications.
 
 You can develop 4D components for your own needs and keep them private. You can also [share your components with the 4D community](https://github.com/topics/4d-component).
 
 
-## Definitions
+### Definitions
 
 - **Matrix Project**: 4D project used for developing the component. The matrix project is a standard project with no specific attributes. A matrix project forms a single component.
 - **Host Project**: Application project in which a component is installed and used.
-- **Component**: Matrix project that can be compiled and [built](Desktop/building.md#build-component), [installed in the host application](../Project/components.md) and whose contents are used in the host application.  
+- **Component**: Matrix project that can be compiled and [built](Desktop/building.md#build-component), [installed in the host application](../Project/components.md) and whose contents are used in the host application. 
 
-## Basics
+:::note
+
+You can [create a component directly from the host](#creating-components) project without needing to go through a separate matrix project
+
+:::
+
+
+### Basics
 
 Creating and installing 4D components is carried out directly from 4D:
 
-- To use a component, you simply need to [install it in your application](../Project/components.md).
+- To use a component, you simply need to [install it in your application](../Project/components.md). You can also create a new component directly from the host, in which case it is immediately usable. 
 - A project can be both a matrix and a host, in other words, a matrix project can itself use one or more components. However, a component cannot use "sub-components" itself.
 - A component can call on most of the 4D elements: datastore ([`ds`](../commands/ds.md)), classes, functions, project methods, project forms, menu bars, choice lists, and so on. The following database methods can be used: [On Web Connection](../commands-legacy/on-web-connection-database-method.md), [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md), [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md). 
 - A component can create and/or use tables, fields and data files using mechanisms of external databases. These are separate 4D databases that you work with using SQL commands.
@@ -26,12 +35,88 @@ Creating and installing 4D components is carried out directly from 4D:
 
 :::note
 
-Interpreted component code can be [edited directly from the host project](#editing-components-from-the-host) if the context is supported. 
+Interpreted component code can be [edited directly from the host project](#editing-components) if the context is supported. 
 
 :::
 
+## Creating and editing components from the host
 
-## Scope of language commands
+In interpreted mode, the 4D IDE allows you to create and edit components directly from the host project. It facilitates component development and tuning in the actual context of a host project without having to leave or restart it.
+
+### Creating components
+
+You can create a new component directly from the host project:
+* by using the **File > New > Component...** option from the File menu,
+* or by clicking the **New > Component...** button in the toolbar.
+
+This action opens a folder selection dialog where you choose where [the component package](../Project/components.md#package-folder) will be stored.
+
+* Default location: The first time you create a component, 4D suggests the **Components** folder inside the [project package](../Project/architecture.md#components). After that, your used last folder will be automatically remembered and preselected. 
+* If you decide to store the component **next to the project package**, 4D adds it to the [`dependencies.json`](../Project/components.md#dependenciesjson) file.
+* If you decide to store the component **elsewhere**, 4D adds it to the [`dependencies.json`](../Project/components.md#dependenciesjson) file and its path is added to the [`environment4d.json`](../Project/components.md#environment4djson) file, using either a [relative or an absolute path](../Project/components.md#relative-paths-vs-absolute-paths). A relative path is used if the component is located within no more than two levels above as the `environment4d.json` file, or in its subfolders. Otherwise, an absolute path is used.
+
+:::note 
+
+You cannot store a component **in the project package** but **outside the Components folder**.
+
+:::
+
+Once created, the component is immediately added to the project, accessible in the [Project dependencies](../Project/components.md#monitoring-project-dependencies) window, and available for editing.
+
+### Editing components
+
+You can edit a component code as long as the following conditions are met:
+
+- the host project is running interpreted, 
+- the component has been [loaded in interpreted mode](../Project/components.md#interpreted-and-compiled-components) and the source code is available,
+- the component files are stored locally (i.e. they are not [downloaded from GitHub](../Project/components.md#adding-a-github-dependency)).
+
+In this context, you can open, edit, and save your component code in the Code editor on the host project from two places:
+
+- from the Component Methods section of the Explorer (shared code only)
+- in a dedicated component tab (all code)
+
+#### Editing shared component code
+
+[Exposed component classes](#sharing-of-classes) and [shared methods](#sharing-of-project-methods) of your component can be edited from the **Component Methods** tab of the Explorer. 
+
+A specific icon indicates that the component contains shared code):<br/>
+![](../assets/en/Develop/editable-component.png)
+
+Select **Edit...** to open your component code in the Code editor. You can edit and save it. 
+
+
+#### Editing all component code
+
+You can edit directly all the code of a loaded component from the host project in a dedicated component tab, including methods or classes that are not shared. 
+
+Select **Edit...** item is available when you right-click on the component name in the **Component Methods** tab of the Explorer. 
+
+![edit-component](../assets/en/Project/Edit-component.png)
+
+When you select it, a dedicated tab is added (or highlighted if already added) in the Explorer. In this tab, the following standard pages are available and give access to the component contents:
+
+![tab-component](../assets/en/Project/tab-component.png)
+
+- Home, including folders, methods, classes and (preview only) forms 
+- Project Methods
+- Database Methods ([On Web Connection](../commands-legacy/on-web-connection-database-method.md), [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md), [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md))
+- Classes
+- Project Form Methods
+- Commands and Constants
+- Plug-ins
+- Trash
+
+![tab-component](../assets/en/Project/tab-component.gif)
+
+
+Standard 4D IDE features are available for the component. You can execute the following actions:
+- add, duplicate, delete, edit/save [methods and classes](../Project/code-overview.md)
+- preview code, show/edit [documentation](../Project/documentation.md), display/edit [method properties](../Project/code-overview.md#project-method-properties), 
+- run methods,
+- restore from trash or empty trash.
+
+### Scope of language commands
 
 Except for [Unusable commands](#unusable-commands), a component can use any command of the 4D language.
 
@@ -73,7 +158,7 @@ The following commands are not compatible for use within a component because the
 
 
 
-## Sharing of project methods
+### Sharing of project methods
 
 All the project methods of a matrix project are by definition included in the component (the project is the component), which means that they can be called and executed within the component.
 
@@ -105,11 +190,11 @@ EXECUTE METHOD($param)
 > Keep in mind that an interpreted method can call a compiled method, but not the reverse, except via the use of the `EXECUTE METHOD` and `EXECUTE FORMULA` commands.
 
 
-## Sharing of classes
+### Sharing of classes
 
 By default, component classes cannot be called from the 4D Code Editor of the host project. If you want your component classes to be exposed in the host project and its loaded components, you need to **declare a component namespace**. Additionally, you can control how component classes are suggested in the host Code Editor.
 
-### Declaring the component namespace
+#### Declaring the component namespace
 
 To allow classes of your component to be exposed in the host projects and their loaded components, enter a value in the [**Component namespace in the class store** option in the General page](../settings/general.md#component-namespace-in-the-class-store) of the matrix project Settings. By default, the area is empty: component classes are not available outside of the component context.
 
@@ -142,7 +227,7 @@ Of course, it is recommended to use a distinguished name to avoid any conflict. 
 
 A component's ORDA classes are not available in its host project. For example, if there is a dataclass called Employees in your component, you will not be able to use a "cs.Mycomponent.Employee" class in the host project.
 
-### Hidden classes
+#### Hidden classes
 
 Just like in any project, you can create hidden classes and functions in the component by prefixing names with an underscore ("_"). When a [component namespace is defined](#declaring-the-component-namespace), hidden classes and functions of the component will not appear as suggestions when using code completion.
 
@@ -153,59 +238,6 @@ $rect:=cs.eGeometry._Rectangle.new(10;20)
 ```
 
 > Non-hidden functions inside a hidden class appear as suggestions when you use code completion with a class that [inherits](../Concepts/classes.md#inheritance) from it. For example, if a component has a `Teacher` class that inherits from a `_Person` class, code completion for `Teacher` suggests non-hidden functions from `_Person`.
-
-
-## Editing components from the host
-
-To facilitate component tuning in the actual context of host projects, you can directly modify and save the code of a loaded component using the 4D IDE from an interpreted host project. Modifications can be immediately tested in the project, without having to restart. 
-
-The component code is editable when the following conditions are met:
-
-- the host project is running interpreted, 
-- the component has been [loaded in interpreted mode](../Project/components.md#interpreted-and-compiled-components) and the source code is available,
-- the component files are stored locally (i.e. they are not [downloaded from GitHub](../Project/components.md#adding-a-github-dependency).
-
-In this context, you can open, edit, and save your component code in the Code editor on the host project from two places:
-
-- from the Component Methods section of the Explorer (shared code only)
-- in a dedicated component tab (all code)
-
-### Editing shared component code
-
-[Exposed component classes](#sharing-of-classes) and [shared methods](#sharing-of-project-methods) of your component can be edited from the **Component Methods** tab of the Explorer. 
-
-A specific icon indicates that the component contains shared code):<br/>
-![](../assets/en/Develop/editable-component.png)
-
-Select **Edit...** to open your component code in the Code editor. You can edit and save it. 
-
-
-### Editing all component code
-
-You can edit directly all the code of a loaded component from the host project in a dedicated component tab, including methods or classes that are not shared. 
-
-Select **Edit...** item is available when you right-click on the component name in the **Component Methods** tab of the Explorer. 
-
-![edit-component](../assets/en/Project/Edit-component.png)
-
-When you select it, a dedicated tab is added (or highlighted if already added) in the Explorer. In this tab, the component code is editable in the following pages:
-
-![tab-component](../assets/en/Project/tab-component.png)
-
-- Project Methods
-- Database Methods ([On Web Connection](../commands-legacy/on-web-connection-database-method.md), [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md), [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md))
-- Classes
-- Project Form Methods
-
-![tab-component](../assets/en/Project/tab-component.gif)
-
-
-Standard 4D IDE features are available for the component. You can execute the following actions:
-- add, duplicate, delete, edit/save [methods and classes](../Project/code-overview.md)
-- preview code, show/edit [documentation](../Project/documentation.md), display/edit [method properties](../Project/code-overview.md#project-method-properties), 
-- run methods. 
-
-
 
 
 ## Code completion for compiled components
@@ -219,9 +251,7 @@ A syntax file (JSON format) is then automatically created during the compilation
 
 If you don't enter a [component namespace](#declaring-the-component-namespace), the resources for the classes and exposed methods are not generated even if the syntax file option is checked.
 
-
-
-## Passing variables  
+### Passing variables  
 
 The local, process and interprocess variables are not shared between components and host projects. The only way to modify component variables from the host project and vice versa is using pointers.
 
@@ -281,12 +311,12 @@ In this case, it is necessary to use the comparison of pointers:
      If(myptr1=myptr2) //This test returns False
 ```
 
-## Error handling
+### Error handling
 
 An [error-handling method](Concepts/error-handling.md) installed by the `ON ERR CALL` command only applies to the running application. In the case of an error generated by a component, the `ON ERR CALL` error-handling method of the host project is not called, and vice versa.
 
 
-## Access to tables of the host project
+### Access to tables of the host project
 
 Although components cannot use tables, pointers can allow host projects and components to communicate with each other. For example, here is a method that could be called from a component:
 
@@ -312,11 +342,11 @@ SAVE RECORD($tablepointer->)
 
 > In the context of a component, 4D assumes that a reference to a table form is a reference to the host table form (as components can't have tables.)
 
-## Use of tables and fields
+### Use of tables and fields
 
 A component cannot use the tables and fields defined in the 4D structure of the matrix project. However, you can create and use external databases, and then use their tables and fields according to your needs. You can create and manage external databases using SQL. An external database is a 4D project that is independent from the main 4D project, but that you can work with from the main 4D project. Using an external database means temporarily designating this database as the current database, in other words, as the target database for the SQL queries executed by 4D. You create external databases using the SQL `CREATE DATABASE` command.
 
-### Example
+#### Example
 
 The following code is included in a component and performs three basic actions with an external database:
 
@@ -393,7 +423,7 @@ Reading from an external database:
 ```
 
 
-## Use of forms
+### Use of forms
 
 - Only “project forms” (forms that are not associated with any specific table) can be used in a component. Any project forms present in the matrix project can be used by the component.
 - A component can call table forms of the host project. Note that in this case it is necessary to use pointers rather than table names between brackets [] to specify the forms in the code of the component.
@@ -405,7 +435,7 @@ Reading from an external database:
 > In the context of a component, any referenced project form must belong to the component. For example, inside a component, referencing a host project form using `DIALOG` or `Open form window` will throw an error.
 
 
-## Use of resources
+### Use of resources
 
 Components can use resources located in the Resources folder of the component.
 
@@ -414,7 +444,7 @@ Automatic mechanisms are operational: the XLIFF files found in the Resources fol
 In a host project containing one or more components, each component as well as the host projects has its own “resources string.” Resources are partitioned between the different projects: it is not possible to access the resources of component A from component B or the host project.
 
 
-## Executing initialization code
+### Executing initialization code
 
 A component can execute 4D code automatically when opening or closing the host database, for example in order to load and/or save the preferences or user states related to the operation of the host database.
 
@@ -423,7 +453,7 @@ Executing initialization or closing code is done by means of the `On Host Databa
 > For security reasons, you must explicitly authorize the execution of the `On Host Database Event` database method in the host database in order to be able to call it. To do this, you must check the [**Execute "On Host Database Event" method of the components** option](../settings/security.md#options) in the Security page of the Settings.
 
 
-## Info.plist
+### Info.plist
 
 Components can have an `Info.plist` file at their [root folder](../Project/architecture.md) to provide extra information readable by the system (macOS only) and the [Dependency manager](../Project/components.md#loading-components). 
 
@@ -435,7 +465,7 @@ This file is not mandatory but is required to build [notarizeable and stapleable
 
 Keys supported in component `Info.plist` files are mostly [Apple bundle keys](https://developer.apple.com/documentation/bundleresources/information-property-list) which are ignored on Windows. However, they are used by the [Dependency manager](../Project/components.md#loading-components) on all platforms.
 
-The folling keys can be defined:
+The following keys can be defined:
 
 |key|description|
 |---|---|
@@ -476,7 +506,7 @@ On macOS, information is available from the finder:
 
 
 
-## Protection of components: compilation  
+### Protection of components: compilation  
 
 By default, all the code of a matrix project installed as a component is potentially visible from the host project. In particular:
 
@@ -490,6 +520,48 @@ To protect the code of a component effectively, simply [compile and build](Deskt
 - The other project methods of the matrix project will never appear.
 
 
-## Sharing your components on GitHub
+### Sharing your components on GitHub
 
 We encourage you to support the 4D developer community by sharing your components, preferably on the [GitHub platform](https://github.com/topics/4d-component). We recommend that you use the **`4d-component`** topic to be correctly referenced.  
+
+
+## Plug-ins
+
+### Why the need for a plug-in?
+
+Although 4D provides hundred of built-in methods used to manipulate objects, records and implement user interface, some special use or feature (sometimes platform dependant) may be needed: one may need ODBC under Windows, another may need Apple services under macOS, while yet another may want to implement specific statistics tools, social network login, payment platform, file access over the network, a special user interface, or a private picture structure.
+
+It is obvious that covering all areas of both the macOS and Windows operating systems by way of 4D commands would certainly lead to a product with thousands of commands, and at the same time, most users would have no need for such a large set of capabilities. Also, creating such an all-encompassing tool would make the 4D environment incredibly complex and would take most users months of study before useful results could be expected.
+
+The modular nature of the 4D environment allows the creation of basic applications but does not preclude the development of highly complex systems. The 4D Plug-in architecture opens the 4D environment to any type of application or user. 4D Plug-ins multiply that application or user's power and productivity.
+
+### What is a plug-in and what can it do?
+
+A plug-in is a piece of code that 4D launches at start up. It adds functionality to 4D and thus increases its capacity.
+
+Usually, a plug-in does things that:
+- 4D cannot do (ie, specific platform technology),
+- will be very hard to write just using 4D,
+- are only available as Plug-in Entrypoint
+
+A plug-in usually contains a set of routines given to the 4D Developer. It can handle an External Area and run an external process. 
+
+- A **plug-in routine** is a routine written in native language (usually C or C++) that causes an action. 
+- An **external area** is a part of a form that can display almost everything and interact with the user when necessary.
+- An **external process** is a process that runs alone, usually in a loop, doing almost everything it wants. All process code belongs to the plug-in, 4D is simply present to receive/send events to the process. 
+
+### Important note
+
+A plug-in can be very simple, with just one routine performing a very small task, or it can be very complex, involving hundred of routines and areas. There is virtually no limit to what a plug-in can do, however every plug-in developer should remember that a plug-in is a "sample" piece of code. It is the plug-in that runs within 4D, not the opposite. As a piece of code, it is the host of 4D; it is not a stand-alone application. It shares CPU time and memory with 4D and other plug-ins, thus, it should be a polite code, using just what is necessary to run. For example, in long loops, a plug-in should call `PA_Yield()` to give time to the 4D scheduler unless its task is critical for both it and the application.
+
+### How to create a plug-in?
+
+4D provides on GitHub an open-source [**plug-in SDK**](https://github.com/4d/4D-Plugin-SDK), containing the 4D Plugin API and the 4D Plugin Wizard:
+
+- the [**4D Plugin API**](https://github.com/4d/4D-Plugin-SDK/blob/master/4D%20Plugin%20API), written in C, adds more than 400 functions that help you to easily create your own plug-ins to add new functionnalities to your 4D application. 4D Plug-in API functions manage all the interactions between the 4D application and your plug-in.
+- The [**4D Plugin Wizard**](https://github.com/4d/4D-Plugin-SDK/blob/master/4D%20Plugin%20Wizard) is an essential tool that simplifies the task of developing 4D plug-ins. It writes the code 4D needs to correctly load and interact with a plug-in, allowing you to concentrate on your own code.
+
+
+### Sharing plug-ins
+
+We encourage you to support the 4D developer community by sharing your plug-ins, preferably on the [GitHub platform](https://github.com/topics/4d-plugin). We recommend that you use the **`4d-plugin`** topic to be correctly referenced.  

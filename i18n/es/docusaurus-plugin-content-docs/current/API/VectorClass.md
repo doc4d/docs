@@ -3,25 +3,25 @@ id: VectorClass
 title: Vector
 ---
 
-The `Vector` class allows you to handle **vectors** and to execute distance and similarity calculations between them. Esta clase está disponible en el "class store" de `4D`.
+La clase `Vector` permite manejar **vectores** y ejecutar cálculos de distancia y similitud entre ellos. Esta clase está disponible en el "class store" de `4D`.
 
-In the world of AIs, a vector is a sequence of numbers that enables a machine to understand and manipulate complex data. For a detailed overview of the role of vectors with AIs, you can refer to [this page](https://aiforsocialgood.ca/blog/understanding-the-role-of-vectors-in-artificial-intelligence-a-comprehensive-guide).
+En el mundo de las IA, un vector es una secuencia de números que permite a una máquina comprender y manipular datos complejos. Para una visión detallada del papel de los vectores con las IAs, puede consultar [esta página](https://aiforsocialgood.ca/blog/understanding-the-role-of-vectors-in-artificial-intelligence-a-comprehensive-guide).
 
-### Understanding the different vector computations
+### Comprender los diferentes cálculos vectoriales
 
-The `4D.Vector` class proposes three types of vector computations. The following table summarizes the main characteristics of each one:
+La clase `4D.Vector` propone tres tipos de cálculos vectoriales. La siguiente tabla resume las principales características de cada uno:
 
-|                 | cosineSimilarity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | dotSimilarity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | euclideanDistance                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Definición      | Compares the orientation of two texts represented as vectors. The more they point in the same direction, the closer they are.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Sum of products between each vector dimension. It's like a weighted compatibility score.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Actual distance between two vectors, as if measured with a ruler.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| Analogía simple | ¿Estamos hablando del mismo tema?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Are you talking about the same subject insistently?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Are you really far away from what I'm saying?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| Ejemplo         | Imagine you're looking for movies to watch on a video on-demand streaming service. Cosine similarity is used to compare your tastes (for example, you like action movies with a bit of comedy) to the movie descriptions in their database. It doesn't matter whether you're a "small" fan (you watch 1 film a month) or a "big" fan (you watch 10 films a week), what matters is whether the films have similar characteristics to what you like (action + comedy). The streaming service uses cosine similarity to recommend films that "point in the same direction" as your preferences. | Piense en un motor de búsqueda. When you type "chocolate cake recipe", the algorithm compares your query to web pages. The dot product can be used not only to check whether a page is talking about chocolate cakes (a similar direction to your search), but also to give more weight to pages that are highly relevant (for example, a page with lots of detailed content about chocolate cakes will have a greater "length" and therefore a higher score). A page with just one sentence on the subject will have a lower score. | Imagina una aplicación de citas. The algorithm can use Euclidean distance to compare your profile (your interests, age, location, etc.) with those of other users. If your profiles are very similar (for example, you both like hiking, pop music, and you live 5 km apart), the Euclidean distance between your profiles will be low, and the app will suggest this person as a good "match". Here, all differences (however small) count, not just the general direction of your tastes. |
+|                 | cosineSimilarity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | dotSimilarity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | euclideanDistance                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Definición      | Compara la orientación de dos textos representados como vectores. Cuanto más apunta en la misma dirección, más cerca están.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Suma de productos entre cada dimensión vectorial. Es como una puntuación ponderada de compatibilidad.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Distancia real entre dos vectores, como si se midiera con una regla.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Analogía simple | ¿Estamos hablando del mismo tema?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | ¿Se refiere usted al mismo tema de forma insistente?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | ¿Está realmente lejos de lo que estoy diciendo?                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Ejemplo         | Imagine que busca películas para ver en un servicio de streaming de vídeo a la carta. La similitud del coseno se utiliza para comparar sus gustos (por ejemplo, le gustan las películas de acción con un poco de comedia) con las descripciones de las películas de su base de datos. No importa si es un "pequeño" fan (ve 1 película al mes) o un "gran" fan (ve 10 películas a la semana), lo que importa es si las películas tienen características similares a lo que le gusta (acción + comedia). El servicio de streaming utiliza la similitud del coseno para recomendar películas que "apuntan en la misma dirección" que sus preferencias. | Piense en un motor de búsqueda. Cuando escribe "receta de tarta de chocolate", el algoritmo compara su consulta con páginas web. El producto punto se puede utilizar no sólo para comprobar si una página habla de pasteles de chocolate (una dirección similar a la de su búsqueda), sino también para dar más peso a las páginas que son muy relevantes (por ejemplo, una página con mucho contenido detallado sobre pasteles de chocolate tendrá una mayor "longitud" y, por tanto, una puntuación más alta). Una página con una sola frase sobre el tema tendrá una puntuación más baja. | Imagine una aplicación de citas. El algoritmo puede utilizar la distancia euclidiana para comparar su perfil (sus intereses, edad, ubicación, etc.) con las de otros usuarios. Si sus perfiles son muy similares (por ejemplo, a ambos les gusta el senderismo, la música pop, y viven a 5 km de distancia), la distancia euclidiana entre sus perfiles será baja, y la aplicación sugerirá a esta persona como un buen "match". Aquí cuentan todas las diferencias (por pequeñas que sean), no sólo la orientación general de sus gustos. |
 
-In any cases, it's a good idea to test the different vectors to determine which best suits your needs and data.
+En cualquier caso, conviene probar los distintos vectores para determinar cuál se adapta mejor a sus necesidades y datos.
 
 ### Objeto vector
 
-Vector objects are shared, immutable, and streamable.
+Los objetos vectoriales son compartidos, inmutables y transmisibles.
 
 |                                                                                                                                              |
 | -------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -41,24 +41,22 @@ Vector objects are shared, immutable, and streamable.
 
 </details>
 
-<!-- REF #4D.Vector.new().Syntax -->
-
-**4D.Vector.new** ( *parameter* : Collection ) : 4D.Vector<!-- END REF -->
+<!-- REF #4D.Vector.new().Syntax -->**4D.Vector.new** ( *parameter* : Collection ) : 4D.Vector<!-- END REF -->
 
 <!--REF #4D.Vector.new().Params -->
 
-| Parámetros | Tipo                      |                             | Descripción                                      |
-| ---------- | ------------------------- | --------------------------- | ------------------------------------------------ |
-| parámetros | Collection of reals       | ->                          | Collection of real numbers representing a vector |
-| Resultado  | 4D.Vector | <- | Nuevo objeto vector                              |
+| Parámetros | Tipo                      |                             | Descripción                                           |
+| ---------- | ------------------------- | --------------------------- | ----------------------------------------------------- |
+| parámetros | Colección de reales       | ->                          | Colección de números reales que representan un vector |
+| Resultado  | 4D.Vector | <- | Nuevo objeto vector                                   |
 
 <!-- END REF -->
 
 #### Descripción
 
-The `4D.Vector.new()` function <!-- REF #4D.Vector.new().Summary -->creates and returns a new object of the `4D.Vector` type<!-- END REF -->.
+La función `4D.Vector.new()` <!-- REF #4D.Vector.new().Summary -->crea y devuelve un nuevo objeto del tipo `4D.Vector`<!-- END REF -->.
 
-In *parameter*, pass a collection of real numbers representing the vector to create. These values are provided by artifical intelligences and represent mathematically objects like words or data.
+En *parameter*, pase una colección de números reales que representen el vector a crear. Estos valores los ofrecen las inteligencias artificiales y representan matemáticamente objetos como palabras o datos.
 
 #### Ejemplo
 
@@ -68,7 +66,7 @@ Para crear un vector:
 var $vector := 4D.Vector.new([0.123; -0.456; 0.789]) 
 ```
 
-You can access individual components or convert the entire vector back to a collection:
+Puede acceder a componentes individuales o convertir todo el vector en una colección:
 
 ```4d
 var $firstComponent := $vector[0]
@@ -90,14 +88,14 @@ var $collection := $vector.toCollection()
 
 #### Descripción
 
-The `.cosineSimilarity()` function <!-- REF #VectorClass.cosineSimilarity().Summary -->calculates the cosine similarity between the current 4D vector and the one you passed in the *vector* parameter<!-- END REF -->. Ambos vectores deben tener el mismo tamaño.
+La función `.cosineSimilarity()` <!-- REF #VectorClass.cosineSimilarity().Summary -->calcula la similitud coseno entre el vector 4D actual y el que se paso en el parámetro *vector*<!-- END REF -->. Ambos vectores deben tener el mismo tamaño.
 
-This metric measures the **angle between vectors** and is commonly used to determine semantic similarity between texts. It is recommended for text embeddings, documents, sentences, and any data where **direction** matters more than **magnitude** (e.g. for semantic search or text classification).
+Esta métrica mide el **ángulo entre vectores** y se utiliza habitualmente para determinar la similitud semántica entre textos. Se recomienda para incrustaciones de texto, documentos, frases y cualquier dato en el que la **dirección** importe más que la **magnitud** (por ejemplo, para la búsqueda semántica o la clasificación de textos).
 
 **Valor devuelto**
 
 - Rango: -1 (opuesto) a 1 (idéntico).
-- The higher the returned value is, more similar vectors are.
+- Cuanto mayor sea el valor devuelto, más parecidos son los vectores.
 
 #### Ejemplo 1
 
@@ -111,7 +109,7 @@ var $similarity := $vector.cosineSimilarity($anotherVector)
 
 :::info
 
-This example uses the [4D AIKit extension](../aikit/overview.md) to generate embeddings.
+Este ejemplo utiliza la extensión [4D AIKit](../aikit/overview.md) para generar incrustaciones.
 
 :::
 
@@ -129,23 +127,23 @@ String($people.Phone)+". Family IDs - Father: "+String($people.FatherID)+\
 
 var $clientAI:=cs.AIKit.OpenAI.new(getAIKey())
 
-// Vector calculation with 4D AIKit
+// Cálculo de vectores con 4D AIKit
 var $result:=$clientAI.embeddings.create($prompt; $model)
 
-// 4D.vector object creation
+// Creación de objetos 4D.vector
 var $vector:=$result.vector
 
 var $question:="I'm looking for John who lives in USA"
 
-// Vector calculation with 4D AIKit component
+// Cálculo vectorial con componente 4D AIKit
 var $questionVector:=$clientAI.embeddings.create($question; $model).vector
 
-// similarity calculation
+// cálculo de similitud
 If ($vector.cosineSimilarity($questionVector)>0.9)
   ALERT("Interesting result")
 End if
 
-//actual result: 0,7360136465949
+//resultado real: 0,7360136465949
 
 
 ```
@@ -165,14 +163,14 @@ End if
 
 #### Descripción
 
-The `.dotSimilarity()` function <!-- REF #VectorClass.dotSimilarity().Summary -->calculates the dot product of the current 4D vector and the one you passed in the *vector* parameter<!-- END REF -->. Ambos vectores deben tener el mismo tamaño.
+La función `.dotSimilarity()` <!-- REF #VectorClass.dotSimilarity().Summary -->calcula el producto punto del vector 4D actual y el que pasó en el parámetro *vector*<!-- END REF -->. Ambos vectores deben tener el mismo tamaño.
 
-This metric reflects both **similarity** and **magnitude**, and is generally used in models where vector norms (magnitudes) vary. It is recommended for scenarios where embeddings have been fine-tuned with magnitude in mind (e.g., recommendation engines, scoring relevance).
+Esta métrica refleja tanto la **similitud** como la **magnitud**, y se utiliza generalmente en modelos en los que varían las normas vectoriales (magnitudes). Se recomienda para escenarios en los que las incrustaciones se han afinado teniendo en cuenta la magnitud (por ejemplo, motores de recomendación, puntuación de relevancia).
 
 **Valor devuelto**
 
 - Depende de las magnitudes y direcciones de los vectores
-- The higher the returned value is, more similar vectors are.
+- Cuanto mayor sea el valor devuelto, más parecidos son los vectores.
 
 #### Ejemplo
 
@@ -187,7 +185,7 @@ var $score := $vector.dotSimilarity($anotherVector)
 
 :::info
 
-This example uses the [4D AIKit extension](../aikit/overview.md) to generate embeddings.
+Este ejemplo utiliza la extensión [4D AIKit](../aikit/overview.md) para generar incrustaciones.
 
 :::
 
@@ -202,13 +200,13 @@ $documents:=[{text: "How to bake a chocolate cake"; similarity: 0}; \
 
 $question:="4D coding tutorials"
 
-// Vector calculation with 4D AIKit component
+// Cálculo de vectores con el componente AIKit 4D
 $questionVector:=$clientAI.embeddings.create($question; $model).vector
 
 For each ($document; $documents)
-        // Vector calculation with 4D AIKit component
+        // Cálculo de vectores con el componente AIKit 4D
     $vector:=$clientAI.embeddings.create($document.text; $model).vector
-        // similarity
+        // similitud
     $document.similarity:=$vector.dotSimilarity($questionVector)
 End for each
 
@@ -238,14 +236,14 @@ ALERT("Best answer: "+$documents[0].text)
 
 #### Descripción
 
-The `.euclideanDistance()` function <!-- REF #VectorClass.euclideanDistance().Summary -->calculates the Euclidean distance between the current 4D vector and the one you passed in the *vector* parameter<!-- END REF -->. Ambos vectores deben tener el mismo tamaño.
+La función `.euclideanDistance()` <!-- REF #VectorClass.euclideanDistance().Summary -->calcula la distancia euclídea entre el vector 4D actual y el que pasó en el parámetro *vector*<!-- END REF -->. Ambos vectores deben tener el mismo tamaño.
 
-This measures the straight-line distance in the vector space. It is recommended for numeric or structured data embeddings, or when using models where proximity in raw space directly correlates with similarity.
+Esto mide la distancia de línea recta en el espacio vectorial. Se recomienda para incrustaciones de datos numéricos o estructurados, o cuando se utilizan modelos en los que la proximidad en el espacio bruto se correlaciona directamente con la similitud.
 
 **Valor devuelto**
 
 - valor devuelto >= 0
-- The lower the returned value is, more similar vectors are.
+- Cuanto más bajo sea el valor devuelto, más parecidos son los vectores.
 
 #### Ejemplo 1
 
@@ -283,9 +281,7 @@ ALERT("Nearest monument: "+$places[0].name)
 
 #### Descripción
 
-The `.length` property contains <!-- REF #VectorClass.length.Summary -->the number of vector components<!-- END REF -->.
-
-<!-- END REF -->
+La propiedad `.length` contiene <!-- REF #VectorClass.length.Summary -->el número de componentes del vector<!-- END REF -->.
 
 ## .toCollection()
 
@@ -293,12 +289,12 @@ The `.length` property contains <!-- REF #VectorClass.length.Summary -->the numb
 
 <!--REF #VectorClass.toCollection().Params -->
 
-| Parámetros | Tipo       |                             | Descripción                                                   |
-| ---------- | ---------- | --------------------------- | ------------------------------------------------------------- |
-| Resultado  | Collection | <- | Collection of real numbers representing the vector components |
+| Parámetros | Tipo       |                             | Descripción                                                            |
+| ---------- | ---------- | --------------------------- | ---------------------------------------------------------------------- |
+| Resultado  | Collection | <- | Colección de números reales que representan los componentes del vector |
 
 <!-- END REF -->
 
-The `.toCollection()` function <!-- REF #VectorClass.toCollection().Summary -->returns the vector components as a collection of reals<!-- END REF -->.
+La función `.toCollection()` <!-- REF #VectorClass.toCollection().Summary -->devuelve los componentes del vector como una colección de reales<!-- END REF -->.
 
 

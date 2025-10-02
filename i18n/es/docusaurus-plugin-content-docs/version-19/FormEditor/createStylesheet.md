@@ -45,7 +45,7 @@ Especifique el tipo de objeto, luego entre llaves, declare el estilo o los estil
 :::note
 
 - El tipo objeto corresponde a la propiedad JSON [tipo](FormObjects/properties_Object.md#type) de los objetos formulario.
-- For listboxes, the following specific types are available: *column*, *header*, *footer*.
+- Para listboxes, existen los siguientes tipos específicos: *columna*, *encabezado*, *pie de página*.
 
 :::
 
@@ -73,7 +73,14 @@ El nombre del objeto corresponde al **selector de ID** CSS y define un objeto es
 
 Designe el objeto con un carácter "#" antes del nombre del objeto y, a continuación, entre llaves, declare el o los estilos a aplicar.
 
-En el siguiente ejemplo, el texto del objeto con el nombre "okButton" se mostrará en fuente Helvetica Neue, con un tamaño de 20 píxeles:
+:::note
+
+El nombre de objeto corresponde a la propiedad JSON [>nombre de objeto](../FormObjects/properties_Object.md#object-name) de los objetos formulario.
+
+:::
+
+
+En el siguiente ejemplo, el texto del objeto con el nombre "okButton" se mostrará en la fuente Helvetica Neue, con un tamaño de 20 píxeles:
 
 ```
 #okButton {
@@ -107,7 +114,7 @@ text.center {
 }
 ```
 
-En la descripción del formulario 4D, se asocia un nombre de clase a un objeto mediante el atributo `class`. Este atributo contiene uno o varios nombres de clase, separados por un espacio:
+En la descripción del formulario 4D, se asocia un nombre de clase a un objeto mediante el atributo [class CSS](../FormObjects/properties_Object.md#css-class). Este atributo contiene uno o varios nombres de clase, separados por un espacio:
 
 ```
 class: "okButtons important"       
@@ -189,7 +196,7 @@ text[text|=Hello]
 
 Las consultas de medios se utilizan para aplicar esquemas de color a las aplicaciones.
 
-A media query is composed of a media feature and a value (e.g., `<media feature>:<value>`).
+Una consulta de medios está formada por características y valores de medios (por ejemplo, `<media feature>:<value>`).
 
 Funciones de medios disponibles:
 
@@ -299,7 +306,7 @@ Durante la ejecución, 4D prioriza automáticamente las hojas de estilo en el si
 
 1. El formulario 4D cargará primero el archivo CSS por defecto `/SOURCES/styleSheets.css`.
 2. Luego cargará el archivo CSS para la plataforma actual `/SOURCES/styleSheets_mac.css` o `/SOURCES/styleSheets_windows.css`.
-3. Si existe, entonces cargará un archivo CSS específico definido en el formulario JSON:
+3. Si se define un [atributo "css" de propiedad Form](../FormEditor/properties_FormProperties.md#css) en el formulario 4D, entonces cargará archivo(s) CSS específico(s). Puede pasar:
 
 * un archivo para ambas plataformas:
 

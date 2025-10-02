@@ -597,15 +597,15 @@ Esta opción activa el modo apropiativo para el código del servidor web de su a
 
 Los parámetros siguientes siguen siendo compatibles, pero se basan en funcionalidades o tecnologías obsoletas. Generalmente se recomienda mantener los valores por defecto.
 
-#### Autorizar el acceso a la base de datos a través de las URL 4DSYNC
-
-Esta opción controla el soporte de las peticiones de sincronización HTTP que contienen las URLs obsoletas */4DSYNC*.
-
 #### Validación de la dirección IP de la sesión
 
 > Esta opción no está disponible en [modo sesiones evolutivas](WebServer/sessions.md) (no hay validación).
 
 Estado de validación de la dirección IP para las cookies de sesión. Por razones de seguridad, por defecto el servidor web 4D verifica la dirección IP de cada solicitud que contiene una cookie de sesión y la rechaza si esta dirección no coincide con la dirección IP utilizada para crear la cookie. En algunas aplicaciones específicas, es posible que desee desactivar esta validación y aceptar las cookies de sesión, incluso cuando sus direcciones IP no coinciden. Por ejemplo, cuando los dispositivos móviles cambian entre las redes Wifi y 4G/5G, su dirección IP cambiará. En este caso, debe pasar 0 en esta opción para permitir que los clientes puedan seguir utilizando sus sesiones web aunque las direcciones IP cambien. Tenga en cuenta que este parámetro reduce el nivel de seguridad de su aplicación. Cuando se modifica, esta configuración es efectiva inmediatamente (no es necesario reiniciar el servidor HTTP).
+
+### Generic Web User
+
+This option allows you to designate a user, previously defined in the [4D password table](../Users/handling_users_groups.md), as a "Generic Web User". In this case, each browser allowed to connect to the database gets access authorizations and restrictions associated with this user.
 
 #### Enviar directamente los caracteres extendidos
 
@@ -624,8 +624,8 @@ En algunos casos, se pueden invocar otras funciones internas optimizadas. Las co
 Dos opciones le permiten definir cómo funcionan las conexiones persistentes:
 
 - **Número de peticiones por conexión**: permite definir el número máximo de peticiones y de respuestas capaces de viajar por una conexión persistente. Limitar el número de peticiones por conexión le permite evitar la inundación del servidor debido a un gran número de peticiones entrantes (una técnica utilizada por los hackers).<p>
-   El valor por defecto (100) puede aumentarse o disminuirse en función de los recursos de la máquina que aloja el Servidor Web 4D.</p>
+  El valor por defecto (100) puede aumentarse o disminuirse en función de los recursos de la máquina que aloja el Servidor Web 4D.</p>
 
 - **Tiempo de espera antes de desconexión**: este valor define el periodo máximo de espera (en segundos) durante el cual el servidor web mantiene una conexión TCP abierta sin recibir ninguna petición del navegador web. Una vez transcurrido este periodo, el servidor cierra la conexión.<p>
-   Si el navegador envía una solicitud después de que se haya cerrado la conexión, se crea automáticamente una nueva conexión TCP. Esta operación no es visible para el usuario.</p>
+  Si el navegador envía una solicitud después de que se haya cerrado la conexión, se crea automáticamente una nueva conexión TCP. Esta operación no es visible para el usuario.</p>
 

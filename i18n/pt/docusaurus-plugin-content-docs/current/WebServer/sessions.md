@@ -12,11 +12,17 @@ As sessões Web permitem:
 - armazena e compartilha dados entre processos de um cliente web usando o [.storage](../API/SessionClass.md#storage) da sessão,
 - associate privileges to the user running the session.
 
+:::tip Related blog post
+
+[Scalable sessions for advanced web applications](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/)
+
+:::
+
 ## Usos
 
 As sessões Web são usadas para:
 
-- [Aplicaciones web](gettingStarted.md) que envían peticiones http,
+- [Web applications](gettingStarted.md) sending http requests (including [SOAP Web services](../commands/theme/Web_Services_Server.md) and [/4DACTION](../WebServer/httpRequests.md#4daction) requests),
 - calls to the [REST API](../REST/authUsers.md), which are used by [remote datastores](../ORDA/remoteDatastores.md) and [Qodly forms](qodly-studio.md).
 
 ## Activando sessões web

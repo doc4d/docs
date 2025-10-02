@@ -7,7 +7,7 @@ Um botão de imagem é semelhante a um [botão padrão](button_overview.md). Ent
 
 Os botões imagem podem ser utilizados de duas formas:
 
-- Como botões de comando num formulário. Nesse caso, o botão imagem geralmente inclui quatro estados diferentes: ativado, desativado, clicado e rolado.\
+- Como botões de comando num formulário. Nesse caso, o botão imagem geralmente inclui quatro estados diferentes: ativado, desativado, clicado e rolado.  
   Por exemplo, uma tabela de miniaturas que tem uma linha de quatro colunas, cada miniatura corresponde aos estados Padrão, Clicado, Rolar e Desativado.
 
   | Propriedade                | Nome JSON              | Valor |
@@ -18,7 +18,7 @@ Os botões imagem podem ser utilizados de duas formas:
   | Switch when Roll Over      | switchWhenRollover     | true  |
   | Use Last Frame as Disabled | useLastFrameAsDisabled | true  |
 
-- Como botão de imagem que permite ao usuário escolher entre várias opções. Neste caso, pode ser utilizado um botão de imagem em vez de um menu pop-up de imagem. Com [Menu pop-up de imagem](picturePopupMenu_overview.md), todas as escolhas são exibidas simultaneamente (como os itens no menu pop-up), enquanto o botão imagem mostra as opções consecutivas (como o usuário clica no botão).\
+- Como botão de imagem que permite ao usuário escolher entre várias opções. Neste caso, pode ser utilizado um botão de imagem em vez de um menu pop-up de imagem. Com [Menu pop-up de imagem](picturePopupMenu_overview.md), todas as escolhas são exibidas simultaneamente (como os itens no menu pop-up), enquanto o botão imagem mostra as opções consecutivas (como o usuário clica no botão).  
   Aqui está um exemplo de um botão imagem. Suponha que você deseja dar aos usuários de um aplicativo personalizado a oportunidade de escolher o idioma da interface da aplicação. Você implementa a opção como um botão imagem em uma caixa de diálogo de propriedades personalizadas:
 
 ![](../assets/en/FormObjects/button_pictureButton.png)
@@ -31,7 +31,7 @@ Clicar no objeto altera a imagem.
 
 1. Primeiro, prepare um único gráfico onde a série de imagens esteja organizada em uma linha, uma coluna ou uma grade de linha por coluna.
 
-  ![](../assets/en/FormObjects/pictureButton_grid.png)
+   ![](../assets/en/FormObjects/pictureButton_grid.png)
 
 Você pode organizar as imagens em colunas, linhas ou em uma grade de linha por coluna (como mostrado acima). Ao organizar as imagens em uma grade, elas são numeradas da esquerda para a direita, linha por linha, começando com 0. Por exemplo, a segunda imagem da segunda linha de uma grade que consiste em duas linhas e três colunas é numerada como 4 (a bandeira do Reino Unido no exemplo acima).
 

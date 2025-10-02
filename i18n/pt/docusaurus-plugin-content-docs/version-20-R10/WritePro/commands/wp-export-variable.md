@@ -12,7 +12,7 @@ displayed_sidebar: docs
 | Parâmetro   | Tipo            |                             | Descrição                             |
 | ----------- | --------------- | --------------------------- | ------------------------------------- |
 | wpDoc       | Object          | &#8594; | Variável 4D Write Pro                 |
-| destination | Text, BLOB      | &#8594; | Variable to receive exported contents |
+| destination | Text, Blob      | &#8594; | Variable to receive exported contents |
 | format      | Integer         | &#8594; | Formato de saída variável             |
 | option      | Object, Integer | &#8594; | Opções de exportação                  |
 
@@ -156,9 +156,9 @@ To export the first page of a 4D Write Pro as SVG in a Text variable and hide th
 
 ## Veja também
 
-[4D QPDF (Component) - PDF Get attachments](https://github.com/4d/4D-QPDF)\
-[Blog post - 4D Write Pro: Electronic invoice generation](https://blog.4d.com/4d-write-pro-electronic-invoice-generation)\
-[Blog post - 4D Write Pro: Export to PDF with enclosures](https://blog.4d.com/4d-write-pro-export-to-pdf-with-enclosures)\
+[4D QPDF (Component) - PDF Get attachments](https://github.com/4d/4D-QPDF)  
+[Blog post - 4D Write Pro: Electronic invoice generation](https://blog.4d.com/4d-write-pro-electronic-invoice-generation)  
+[Blog post - 4D Write Pro: Export to PDF with enclosures](https://blog.4d.com/4d-write-pro-export-to-pdf-with-enclosures)  
 [Exporting to HTML and MIME HTML formats](https://doc.4d.com/4Dv20/4D/20/Exporting-to-HTML-and-MIME-HTML-formats.200-6229467.en.html)<br/>
 [Importing and Exporting in .docx format](https://doc.4d.com/4Dv20/4D/20/Importing-and-Exporting-in-docx-format.200-6229466.en.html)<br/>
 [WP EXPORT DOCUMENT](../commands/wp-export-document.md)

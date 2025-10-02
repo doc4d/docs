@@ -65,7 +65,7 @@ Os objectos HTTPRequest fornecem as seguintes propriedades e funções:
 | [<!-- INCLUDE #HTTPRequestClass.url.Syntax -->](#url)<br/><!-- INCLUDE #HTTPRequestClass.url.Summary -->                                    |
 | [<!-- INCLUDE #HTTPRequestClass.wait().Syntax -->](#wait)<br/><!-- INCLUDE #HTTPRequestClass.wait().Summary -->                             |
 
-<!-- REF #4D.HTTPRequest.new().Desc -->
+<!-- REF 4D.HTTPRequest.new().Desc -->
 
 ## 4D.HTTPRequest.new()
 
@@ -73,6 +73,7 @@ Os objectos HTTPRequest fornecem as seguintes propriedades e funções:
 
 | Release | Mudanças                                                       |
 | ------- | -------------------------------------------------------------- |
+| 21      | Support of *storeCertificateName* property                     |
 | 20      | Validação TLS por padrão                                       |
 | 18 R6   | Suporte às propriedades *automaticRedirections* e *decodeData* |
 
@@ -122,29 +123,30 @@ Por exemplo, pode passar as seguintes cordas:
 
 No parâmetro *options*, passe um objeto que possa conter as seguintes propriedades:
 
-| Propriedade            | Tipo                                              | Descrição                                                                                                                                                                                                                                                                                                                                                           | Por padrão           |
-| ---------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- |
-| agent                  | [4D.HTTPAgent](HTTPAgentClass.md) | HTTPAgent para usar para o HTTPRequest. As opções do agente serão mescladas com as opções de solicitação (as opções de solicitação têm precedência). Se nenhum agente específico for definido, será usado um agente global com valores padrão.                                                   | Objeto agente global |
-| automaticRedirections  | Parâmetros                                        | Se true, os redirecionamentos serão realizados automaticamente (até 5 redirecionamentos são tratados, a resposta do 6. º redirecionamento é retornada, se houver)                                                                                                                                                                | True                 |
-| body                   | Diferente de                                      | Corpo do pedido (requerido no caso de `post` ou `put` requests). Pode ser um texto, um blob, ou um objecto. O tipo de conteúdo é determinado a partir do tipo desta propriedade, a menos que seja colocado dentro dos cabeçalhos                                                                                 | indefinido           |
-| certificatesFolder     | [Folder](FolderClass.md)                          | Define a pasta de certificados de cliente activos                                                                                                                                                                                                                                                                                                                   | indefinido           |
-| dataType               | Text                                              | Tipo de atributo do corpo de resposta. Valores: "texto", "blob", "objecto", ou "auto". Se "auto", o tipo do conteúdo do corpo será deduzido do seu tipo MIME (objecto para JSON, texto para texto, javascript, xml, mensagem http e forma codificada url, ou então um blob)                      | "auto"               |
-| decodeData             | Parâmetros                                        | Se for verdade, os dados recebidos em `onData` callback não são compactados                                                                                                                                                                                                                                                                                         | False                |
-| encoding               | Text                                              | Utilizado apenas em caso de pedidos com um `body` (métodos `post` or `put`). Codificação do conteúdo do corpo do pedido se for um texto, ignorado se o tipo de conteúdo for colocado dentro dos cabeçalhos                                                                                                                       | "UTF-8"              |
-| headers                | Object                                            | Cabeçalhos do pedido. Sintaxe: `headers.key=value` (*value* pode ser uma coleção se a mesma chave precisar aparecer várias vezes)                                                                                                                                                                                | Objecto vazio        |
-| method                 | Text                                              | "POST", "GET", ou outro método                                                                                                                                                                                                                                                                                                                                      | "GET"                |
-| minTLSVersion          | Text                                              | Define a versão mínima do TLS: "`TLSv1_0`", "`TLSv1_1`", "`TLSv1_2`", "`TLSv1_3`"                                                                                                                                                                                                                                                                   | "`TLSv1_2`"          |
-| onData                 | [Function](FunctionClass.md)                      | Chamada de retorno quando os dados do corpo são recebidos. Recebe dois objectos como parâmetros (ver abaixo)                                                                                                                                                                                                                     | indefinido           |
-| onError                | [Function](FunctionClass.md)                      | Chamada de retorno quando ocorre um erro. Recebe dois objectos como parâmetros (ver abaixo)                                                                                                                                                                                                                                      | indefinido           |
-| onHeaders              | [Function](FunctionClass.md)                      | Chamada de retorno quando os cabeçalhos são recebidos. Recebe dois objectos como parâmetros (ver abaixo)                                                                                                                                                                                                                         | indefinido           |
-| onResponse             | [Function](FunctionClass.md)                      | Chamada de retorno quando uma resposta é recebida. Recebe dois objectos como parâmetros (ver abaixo)                                                                                                                                                                                                                             | indefinido           |
-| onTerminate            | [Function](FunctionClass.md)                      | Chamada de retorno quando o pedido estiver terminado. Recebe dois objectos como parâmetros (ver abaixo)                                                                                                                                                                                                                          | indefinido           |
-| protocol               | Text                                              | "auto" ou "HTTP1". "auto" significa HTTP1 na implementação actual                                                                                                                                                                                                                                                                                   | "auto"               |
-| proxyAuthentication    | [objeto de autenticação](#authentication-object)  | Autenticação por procuração de tratamento de objectos                                                                                                                                                                                                                                                                                                               | indefinido           |
-| serverAuthentication   | [objeto de autenticação](#authentication-object)  | Autenticação do servidor de tratamento de objectos                                                                                                                                                                                                                                                                                                                  | indefinido           |
-| returnResponseBody     | Parâmetros                                        | Se false, o corpo de resposta não é retornado no objeto [`response`](#response). Devolve um erro se falso e `onData` é indefinido                                                                                                                                                                                                                   | True                 |
-| timeout                | Real                                              | Tempo de espera em segundos. Indefinido = sem timeout                                                                                                                                                                                                                                                                                               | Indefinido           |
-| validateTLSCertificate | Parâmetros                                        | Se false, 4D não valida o certificado TLS e não retorna um erro se ele for inválido (i.e. expirado, auto-assinado...). Importante: Na implementação actual, a Autoridade de Certificação em si não é verificada. | True                 |
+| Propriedade            | Tipo                                              | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Por padrão           |
+| ---------------------- | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- |
+| agent                  | [4D.HTTPAgent](HTTPAgentClass.md) | HTTPAgent para usar para o HTTPRequest. As opções do agente serão mescladas com as opções de solicitação (as opções de solicitação têm precedência). Se nenhum agente específico for definido, será usado um agente global com valores padrão.                                                                                                                                          | Objeto agente global |
+| automaticRedirections  | Parâmetros                                        | Se true, os redirecionamentos serão realizados automaticamente (até 5 redirecionamentos são tratados, a resposta do 6. º redirecionamento é retornada, se houver)                                                                                                                                                                                                                                                       | True                 |
+| body                   | Diferente de                                      | Corpo do pedido (requerido no caso de `post` ou `put` requests). Pode ser um texto, um blob, ou um objecto. O tipo de conteúdo é determinado a partir do tipo desta propriedade, a menos que seja colocado dentro dos cabeçalhos                                                                                                                                                                        | indefinido           |
+| certificatesFolder     | [Folder](FolderClass.md)                          | Define a pasta de certificados de cliente activos. Can be overriden by "storeCertificateName" (see below).                                                                                                                                                                                                                                                                                              | indefinido           |
+| dataType               | Text                                              | Tipo de atributo do corpo de resposta. Valores: "texto", "blob", "objecto", ou "auto". Se "auto", o tipo do conteúdo do corpo será deduzido do seu tipo MIME (objecto para JSON, texto para texto, javascript, xml, mensagem http e forma codificada url, ou então um blob)                                                                                                             | "auto"               |
+| decodeData             | Parâmetros                                        | Se for verdade, os dados recebidos em `onData` callback não são compactados                                                                                                                                                                                                                                                                                                                                                                                | False                |
+| encoding               | Text                                              | Utilizado apenas em caso de pedidos com um `body` (métodos `post` or `put`). Codificação do conteúdo do corpo do pedido se for um texto, ignorado se o tipo de conteúdo for colocado dentro dos cabeçalhos                                                                                                                                                                                                              | "UTF-8"              |
+| headers                | Object                                            | Cabeçalhos do pedido. Sintaxe: `headers.key=value` (*value* pode ser uma coleção se a mesma chave precisar aparecer várias vezes)                                                                                                                                                                                                                                                                       | Objecto vazio        |
+| method                 | Text                                              | "POST", "GET", ou outro método                                                                                                                                                                                                                                                                                                                                                                                                                             | "GET"                |
+| minTLSVersion          | Text                                              | Define a versão mínima do TLS: "`TLSv1_0`", "`TLSv1_1`", "`TLSv1_2`", "`TLSv1_3`"                                                                                                                                                                                                                                                                                                                                                          | "`TLSv1_2`"          |
+| onData                 | [Function](FunctionClass.md)                      | Chamada de retorno quando os dados do corpo são recebidos. Recebe dois objectos como parâmetros (ver abaixo)                                                                                                                                                                                                                                                                                                            | indefinido           |
+| onError                | [Function](FunctionClass.md)                      | Chamada de retorno quando ocorre um erro. Recebe dois objectos como parâmetros (ver abaixo)                                                                                                                                                                                                                                                                                                                             | indefinido           |
+| onHeaders              | [Function](FunctionClass.md)                      | Chamada de retorno quando os cabeçalhos são recebidos. Recebe dois objectos como parâmetros (ver abaixo)                                                                                                                                                                                                                                                                                                                | indefinido           |
+| onResponse             | [Function](FunctionClass.md)                      | Chamada de retorno quando uma resposta é recebida. Recebe dois objectos como parâmetros (ver abaixo)                                                                                                                                                                                                                                                                                                                    | indefinido           |
+| onTerminate            | [Function](FunctionClass.md)                      | Chamada de retorno quando o pedido estiver terminado. Recebe dois objectos como parâmetros (ver abaixo)                                                                                                                                                                                                                                                                                                                 | indefinido           |
+| protocol               | Text                                              | "auto" ou "HTTP1". "auto" significa HTTP1 na implementação actual                                                                                                                                                                                                                                                                                                                                                                          | "auto"               |
+| proxyAuthentication    | [objeto de autenticação](#authentication-object)  | Autenticação por procuração de tratamento de objectos                                                                                                                                                                                                                                                                                                                                                                                                      | indefinido           |
+| returnResponseBody     | Parâmetros                                        | Se false, o corpo de resposta não é retornado no objeto [`response`](#response). Devolve um erro se falso e `onData` é indefinido                                                                                                                                                                                                                                                                                                          | True                 |
+| serverAuthentication   | [objeto de autenticação](#authentication-object)  | Autenticação do servidor de tratamento de objectos                                                                                                                                                                                                                                                                                                                                                                                                         | indefinido           |
+| storeCertificateName   | Text                                              | (Windows only) Name of the OS certificate store (e.g. "LocalMachine") from where to use certificates instead of those in the certificates folder. If the certificate store is not found, an error is returned. For more information, see [this blog post](https://blog.4d.com/https-requests-now-support-windows-certificate-store). | indefinido           |
+| timeout                | Real                                              | Tempo de espera em segundos. indefinido = sem timeout                                                                                                                                                                                                                                                                                                                                                                                      | indefinido           |
+| validateTLSCertificate | Parâmetros                                        | Se false, 4D não valida o certificado TLS e não retorna um erro se ele for inválido (i.e. expirado, auto-assinado...). Importante: Na implementação actual, a Autoridade de Certificação em si não é verificada.                                                                                        | True                 |
 
 #### Funções Callback
 
@@ -158,13 +160,9 @@ Todas as funções de chamada de retorno recebem dois parâmetros de objectos:
 Aqui está a sequência de chamadas de retorno:
 
 1. `onHeaders` é sempre chamado uma vez
-
 2. `onData` é chamado zero ou várias vezes (não chamado se o pedido não tiver um corpo)
-
 3. Se não ocorreu nenhum erro, `onResponse` é sempre chamado uma vez
-
 4. Se ocorrer um erro, `onError` é executado uma vez (e encerra o pedido)
-
 5. `onTerminate` é sempre executado uma vez
 
 :::info
@@ -194,7 +192,7 @@ Um objeto de autenticação manipula a propriedade `options.serverAuthentication
 
 <!-- END REF -->
 
-<!-- REF #HTTPRequestClass.agent.Desc -->
+<!-- REF HTTPRequestClass.agent.Desc -->
 
 ## .agent
 
@@ -206,7 +204,7 @@ A propriedade `.agent` contém <!-- REF #HTTPRequestClass.agent.Summary --> o ob
 
 <!-- END REF -->
 
-<!-- REF #HTTPRequestClass.dataType.Desc -->
+<!-- REF HTTPRequestClass.dataType.Desc -->
 
 ## .dataType
 
@@ -218,7 +216,7 @@ A propriedade `.dataType` contém <!-- REF #HTTPRequestClass.dataType.Summary --
 
 <!-- END REF -->
 
-<!-- REF #HTTPRequestClass.encoding.Desc -->
+<!-- REF HTTPRequestClass.encoding.Desc -->
 
 ## .encoding
 
@@ -230,7 +228,7 @@ A propriedade `.encoding` contém <!-- REF #HTTPRequestClass.encoding.Summary --
 
 <!-- END REF -->
 
-<!-- REF #HTTPRequestClass.errors.Desc -->
+<!-- REF HTTPRequestClass.errors.Desc -->
 
 ## .errors
 
@@ -251,7 +249,7 @@ Aqui está o conteúdo da propriedade `.errors`:
 
 <!-- END REF -->
 
-<!-- REF #HTTPRequestClass.headers.Desc -->
+<!-- REF HTTPRequestClass.headers.Desc -->
 
 ## .headers
 
@@ -263,7 +261,7 @@ A propriedade `.headers` contém <!-- REF #HTTPRequestClass.headers.Summary -->o
 
 <!-- END REF -->
 
-<!-- REF #HTTPRequestClass.method.Desc -->
+<!-- REF HTTPRequestClass.method.Desc -->
 
 ## .method
 
@@ -275,7 +273,7 @@ A propriedade `.method` contém <!-- REF #HTTPRequestClass.method.Summary -->o `
 
 <!-- END REF -->
 
-<!-- REF #HTTPRequestClass.protocol.Desc -->
+<!-- REF HTTPRequestClass.protocol.Desc -->
 
 ## .protocol
 
@@ -287,7 +285,7 @@ A propriedade `.protocol` contém <!-- REF #HTTPRequestClass.protocol.Summary --
 
 <!-- END REF -->
 
-<!-- REF #HTTPRequestClass.response.Desc -->
+<!-- REF HTTPRequestClass.response.Desc -->
 
 ## .response
 
@@ -317,7 +315,7 @@ Um objeto `response` é um objeto não compartilhável. Contém as seguintes pro
 
 <!-- END REF -->
 
-<!-- REF #HTTPRequestClass.returnResponseBody.Desc -->
+<!-- REF HTTPRequestClass.returnResponseBody.Desc -->
 
 ## .returnResponseBody
 
@@ -329,7 +327,7 @@ A propriedade `.returnResponseBody` contém <!-- REF #HTTPRequestClass.returnRes
 
 <!-- END REF -->
 
-<!-- REF #HTTPRequestClass.terminate().Desc -->
+<!-- REF HTTPRequestClass.terminate().Desc -->
 
 ## .terminate()
 
@@ -351,7 +349,7 @@ A função `.terminate()` <!-- REF #HTTPRequestClass.terminate().Summary -->abor
 
 <!-- END REF -->
 
-<!-- REF #HTTPRequestClass.terminated.Desc -->
+<!-- REF HTTPRequestClass.terminated.Desc -->
 
 ## .terminated
 
@@ -363,7 +361,7 @@ A propriedade `.terminated` contém <!-- REF #HTTPRequestClass.terminated.Summar
 
 <!-- END REF -->
 
-<!-- REF #HTTPRequestClass.timeout.Desc -->
+<!-- REF HTTPRequestClass.timeout.Desc -->
 
 ## .timeout
 
@@ -375,7 +373,7 @@ A propriedade `.timeout` contém <!-- REF #HTTPRequestClass.timeout.Summary -->o
 
 <!-- END REF -->
 
-<!-- REF #HTTPRequestClass.url.Desc -->
+<!-- REF HTTPRequestClass.url.Desc -->
 
 ## .url
 
@@ -387,7 +385,7 @@ A propriedade `.url` contém <!-- REF #HTTPRequestClass.url.Summary --> a URL da
 
 <!-- END REF -->
 
-<!-- REF #HTTPRequestClass.wait().Desc -->
+<!-- REF HTTPRequestClass.wait().Desc -->
 
 ## .wait()
 

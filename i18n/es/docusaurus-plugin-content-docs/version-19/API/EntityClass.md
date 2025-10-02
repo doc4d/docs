@@ -99,7 +99,7 @@ Esta función permite actualizar las entidades por separado. Sin embargo, tenga 
 
 Esta función sólo puede utilizarse con entidades ya guardadas en la base de datos. No se puede llamar a una entidad recién creada (para la que [`.isNew()`](#isnew) devuelve **True**).
 
-#### Ejemplo
+#### Ejemplo 1
 
 ```4d
  var $emp; $empCloned : cs.EmployeeEntity
@@ -108,6 +108,17 @@ Esta función sólo puede utilizarse con entidades ya guardadas en la base de da
 
  $emp.lastName:="Smith" //Las actualizaciones realizadas en $emp no se realizan en $empCloned
 
+```
+
+#### Ejemplo 2
+
+Si no desea que la nueva entidad comparta referencias de atributos de tipo objeto, debe copiarlas.
+
+```4d
+ var $emp; $empCloned : cs.EmployeeEntity
+ $emp:=ds.Employee.all().first()
+ $empCloned:=$emp.clone()
+ $empCloned.objectAtt:=OB Copy($emp.objectAtt)
 ```
 
 <!-- END REF -->
@@ -1685,9 +1696,10 @@ Cuando un registro se bloquea, debe desbloquearse desde el proceso de bloqueo y 
 
 El objeto devuelto por <`.unlock()<` contiene la siguiente propiedad:
 
-| Propiedad | Tipo    | Descripción                                                                                                                                                                                                                         |
-| --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| success   | Boolean | True si la acción de desbloquear tiene éxito, False en caso contrario. Si el desbloqueo se realiza en una entidad abandonada, en un registro no bloqueado o en un registro bloqueado por otro proceso o entidad, el éxito es False. |
+| Propiedad    | Tipo    | Descripción                                                                                                                                                                                                                         |
+| ------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| success      | Boolean | True si la acción de desbloquear tiene éxito, False en caso contrario. Si el desbloqueo se realiza en una entidad abandonada, en un registro no bloqueado o en un registro bloqueado por otro proceso o entidad, el éxito es False. |
+| wasNotLocked | Boolean | (sólo si "success" es False) True si la entidad no fue bloqueada en el proceso.                                                                                                                                                     |
 
 #### Ejemplo
 

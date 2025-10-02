@@ -70,27 +70,30 @@ Se admiten los siguientes operadores de asignación compuestos:
 | Adición        | Text += Text       | Text    | `$t+=" World"  //$t:=$t+" World"`                                              |
 |                | Number += Number   | Number  | `$n+=5 //$n:=$n+5`                                                             |
 |                | Date += Number     | Fecha   | `$d+=5 //$d:=$d+5`                                                             |
-|                | Time += Time       | Hora    | `$t1+=$t2 //$t1:=$t1+$t2`                                                      |
+|                | Time += Time       | Time    | `$t1+=$t2 //$t1:=$t1+$t2`                                                      |
 |                | Time += Number     | Number  | `$t1+=5 //$t1:=$t1+5`                                                          |
 |                | Picture += Picture | Picture | `$p1+=$p2 //$p1:=$p1+$p2 (add $p2 to the right of $p1)`                        |
 |                | Picture += Number  | Picture | `$p1+=5 //$p1:=$p1+5 (move $p1 horizontally 5 pixels to the right)`            |
 | Resta          | Number -= Number   | Number  | `$n-=5 //$n:=$n-5`                                                             |
 |                | Date -= Number     | Fecha   | `$d-=5 //$d:=$d-5`                                                             |
-|                | Time -= Time       | Hora    | `$t1-=$t2 //$t1:=$t1-$t2`                                                      |
+|                | Time -= Time       | Time    | `$t1-=$t2 //$t1:=$t1-$t2`                                                      |
 |                | Time -= Number     | Number  | `$t1-=5 //$t1:=$t1-5`                                                          |
 |                | Picture -= Number  | Picture | `$p1-=5 //$p1:=$p1-5 (mover horizontalemente $p1 de 5 píxeles a la izquierda)` |
 | División       | Number /= Number   | Number  | `$n/=5 //$n:=$n/5`                                                             |
-|                | Time /= Time       | Hora    | `$t1/=$t2 //$t1:=$t1/$t2`                                                      |
+|                | Time /= Time       | Time    | `$t1/=$t2 //$t1:=$t1/$t2`                                                      |
 |                | Time /= Number     | Number  | `$t1/=5 //$t1:=$t1/5`                                                          |
 |                | Picture /= Picture | Picture | `$p1/=$p2 //$p1:=$p1/$p2 (añadir $p2 debajo de $p1)`                           |
 |                | Picture /= Number  | Picture | `$p1/=5 //$p1:=$p1/5 (desplazar verticalmente $p1 de 5 píxeles)`               |
 | Multiplicación | Text \*= Number    | Text    | `$t*="abc"  //$t:=$t*"abc"`                                                    |
 |                | Number \*= Number  | Number  | `$n*=5 //$n:=$n*5`                                                             |
-|                | Time \*= Time      | Hora    | `$t1*=$t2 //$t1:=$t1*$t2`                                                      |
+|                | Time \*= Time      | Time    | `$t1*=$t2 //$t1:=$t1*$t2`                                                      |
 |                | Time \*= Number    | Number  | `$t1*=5 //$t1:=$t1*5`                                                          |
 |                | Picture \*= Number | Picture | `$p1*=5 //$p1:=$p1*5 (redimensionar $p1 de 5)`                                 |
 
-Estos operadores se aplican a todas las [expresiones asignables](quick-tour.md#assignable-vs-non-assignable-expressions) (excepto de las imágenes como propiedades de objeto o elementos de colección).
+Estos operadores se aplican a cualquier [expresión asignable](quick-tour.md#assignable-vs-non-assignable-expressions) excepto:
+
+- pictures as object properties or collection elements,
+- las variables de índice de array.
 
 La operación "source `operator` value" no es estrictamente equivalente a "source := source `operator` value" porque la expresión que designa la fuente (variable, campo, propiedad del objeto, elemento de colección) sólo se evalúa una vez. Por ejemplo, en una expresión tal como `getPointer()->+=1` el método `getPointer` es llamado sólo una vez.
 

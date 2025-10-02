@@ -3,8 +3,6 @@ id: creating
 title: Creating or opening a project
 ---
 
-4D projects are created and developed using the **4D** application, which provides a comprehensive Integrated Development Environment (IDE). **4D Server** can also create new, empty projects.
-
 
 ## Creating a project
 
@@ -14,8 +12,8 @@ To create a new project:
 
 1. Launch 4D or 4D Server.
 2. Do one of the following:
-    * Select **New > Project...** from the **File** menu: ![](../assets/en/getStart/projectCreate1.png)
-    * (4D only) Select **Project...** from the **New** toolbar button:<p>![](../assets/en/getStart/projectCreate2.png)</p>A standard **Save** dialog appears so you can choose the name and location of the 4D project's main folder.
+    * Select **New > Project...** from the **File** menu: ![](../assets/en/getStart/projectCreate-1.png)
+    * (4D only) Select **Project...** from the **New** toolbar button:<p>![](../assets/en/getStart/projectCreate-2.png)</p>A standard **Save** dialog appears so you can choose the name and location of the 4D project's main folder.
 
 3. Enter the name of your project folder and click **Save**. This name will be used:
 

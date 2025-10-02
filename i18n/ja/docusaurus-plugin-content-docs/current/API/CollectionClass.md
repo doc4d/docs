@@ -1305,10 +1305,10 @@ $col.flat(MAXLONG)
 var $col ; $result : Collection
 $col:=New collection(1; 2; 3; 4)
 
-$result:=$col.map(Formula(New collection($1.value*2))
+$result:=$col.map(Formula(New collection($1.value*2)))
  // [[2],[4],[6],[8]]
 
-$result:=$col.flatMap(Formula(New collection($1.value*2))
+$result:=$col.flatMap(Formula(New collection($1.value*2)))
 // [2,4,6,8]
 ```
 
@@ -2510,7 +2510,7 @@ $o.parameters:={name:"Chicago")
 $c:=$myCol.query(":att=:name";$o)
 ```
 
-*queryString* には、すべての種類の引数を混ぜて渡すことができます。 *queryString* には、すべての種類の引数を混ぜて渡すことができます。 *queryString* 引数は、*propertyPath* と *値* に以下のものを含めることができます: *queryString* には、すべての種類の引数を混ぜて渡すことができます。 *queryString* 引数は、*propertyPath* と *値* に以下のものを含めることができます: *queryString* には、すべての種類の引数を混ぜて渡すことができます。 *queryString* 引数は、*propertyPath* と *値* に以下のものを含めることができます: *queryString* には、すべての種類の引数を混ぜて渡すことができます。 *queryString* 引数は、*propertyPath* と *値* に以下のものを含めることができます: *queryString* には、すべての種類の引数を混ぜて渡すことができます。 *queryString* 引数は、*propertyPath* と *値* に以下のものを含めることができます:
+*queryString* には、すべての種類の引数を混ぜて渡すことができます。 *queryString* には、すべての種類の引数を混ぜて渡すことができます。 *queryString* 引数は、*propertyPath* と *値* に以下のものを含めることができます:
 
 - 定数値 (プレースホルダーを使用しない)
 - インデックスプレースホルダーや命名プレースホルダー
@@ -2524,7 +2524,7 @@ $c:=$myCol.query(":att=:name";$o)
  $result:=$col.query($vquery)
 ```
 
-非公開のデータがフィルタリングされているため、このクエリは一見安全なように見えます。 非公開のデータがフィルタリングされているため、このクエリは一見安全なように見えます。 しかしながら、もしユーザーが *myname* に *smith OR status='private'* のような入力をした場合、クエリ文字列は解釈時に変更され、非公開データも返してしまう可能性があります。
+非公開のデータがフィルタリングされているため、このクエリは一見安全なように見えます。 しかしながら、もしユーザーが *myname* に *smith OR status='private'* のような入力をした場合、クエリ文字列は解釈時に変更され、非公開データも返してしまう可能性があります。
 
 プレースホルダーを使用した場合、セキュリティ条件を上書きすることは不可能です:
 
@@ -3348,7 +3348,7 @@ $col3:=$col.sort(Formula(String($1.value)<String($1.value2))) // アルファベ
 | 引数    | 型                                      |                             | 説明               |
 | ----- | -------------------------------------- | :-------------------------: | ---------------- |
 | value | Text, Number, Object, Collection, Date |              ->             | コレクションの先頭に挿入する値  |
-| 戻り値   | Real                                   | <- | 要素の追加された元のコレクション |
+| 戻り値   | Collection                             | <- | 要素の追加された元のコレクション |
 |       |                                        |                             |                  |
 
 <!-- END REF -->

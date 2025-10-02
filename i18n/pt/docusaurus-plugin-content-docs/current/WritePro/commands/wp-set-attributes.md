@@ -4,7 +4,7 @@ title: WP SET ATTRIBUTES
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP SET ATTRIBUTES.Syntax-->**WP SET ATTRIBUTES** ( *targetObj* ; *attribName* ; *attribValue* {; *attribName2* ; *attribValue2* ; ... ; *attribNameN* ; *attribValueN*} )<br/>**WP SET ATTRIBUTES** ( *targetObj* ; *attribObj* )<!-- END REF-->
+<!--REF #_command_.WP SET ATTRIBUTES.Syntax-->**WP SET ATTRIBUTES** ( *targetObj* ; *...attribName* ; *...attribValue* )<br/>**WP SET ATTRIBUTES** ( *targetObj* ; *attribObj* )<!-- END REF-->
 
 <!--REF #_command_.WP SET ATTRIBUTES.Params-->
 
@@ -33,7 +33,7 @@ Você pode especificar atributos para *targetObj* de uma de duas maneiras:
 
 - Use the *attribObj* parameter to pass a single object containing attribute names and their corresponding values as object properties.
 
-For a comprehensive list of attributes to pass, as well as their scope and respective values, please refer to the *4D Write Pro Attributes* section.
+For a comprehensive list of attributes to pass, as well as their scope and respective values, please refer to the [4D Write Pro Attributes](../4d-write-pro-attributes) section.
 
 ## Exemplo 1
 
@@ -148,6 +148,6 @@ O resultado é:
 
 ## Veja também
 
-*4D Write Pro Attributes*\
-[WP GET ATTRIBUTES](../commands/wp-get-attributes.md)\
+[4D Write Pro Attributes](../4d-write-pro-attributes)  
+[WP GET ATTRIBUTES](../commands/wp-get-attributes.md)  
 [WP RESET ATTRIBUTES](../commands/wp-reset-attributes.md)

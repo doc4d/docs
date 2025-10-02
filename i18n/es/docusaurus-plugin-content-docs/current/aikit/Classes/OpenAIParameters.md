@@ -9,16 +9,24 @@ The `OpenAIParameters` class is designed to handle execution and request paramet
 
 ## Propiedades
 
-### Propiedades de la programación asíncrona
+### Propiedades de retrollamada asíncrona
 
-| Propiedad                 | Tipo     | Descripción                                                                                                                                                   |
-| ------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `formula` u `onTerminate` | Function | A function to be called asynchronously when finished. Asegúrese de que el proceso actual no termina.                          |
-| `onResponse`              | Function | A function to be called asynchronously when the request finishes successfully. Asegúrese de que el proceso actual no termina. |
-| `onError`                 | Function | A function to be called asynchronously when the request finishes with errors. Asegúrese de que el proceso actual no termina.  |
-| `throw`                   | Boolean  | Si es true, lanza un error si se produce uno. Only if no formula callback defined.                                            |
+Use this callback property to receive the result regardless of success or error:
 
-Ver la [documentación sobre código asíncrono](../asynchronous-call.md)
+| Propiedad                                         | Tipo                        | Descripción                                                                                                                                  |
+| ------------------------------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `onTerminate`<br>(o `formula`) | 4D.Function | Una función que se llamará de forma asíncrona cuando termine. Asegúrese de que el proceso actual no termina. |
+
+Use these callback properties for more granular control over success and error handling:
+
+| Propiedad    | Tipo                        | Descripción                                                                                                                                                       |
+| ------------ | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `onResponse` | 4D.Function | A function to be called asynchronously when the request finishes **successfully**. Asegúrese de que el proceso actual no termina. |
+| `onError`    | 4D.Function | A function to be called asynchronously when the request finishes **with errors**. Asegúrese de que el proceso actual no termina.  |
+
+> The callback function will receive the same result object type (one of [OpenAIResult](./OpenAIResult.md) child classes) that would be returned by the function in synchronous code.
+
+See [documentation about asynchronous code for examples](../asynchronous-call.md)
 
 ### Propiedades de la red
 
@@ -35,9 +43,15 @@ Ver la [documentación sobre código asíncrono](../asynchronous-call.md)
 | --------- | ---- | ----------------------------------------------------------------------------------------------------------- |
 | `user`    | Text | A unique identifier representing the end-user, which helps OpenAI monitor and detect abuse. |
 
+### Otras
+
+| Propiedad | Tipo    | Descripción                                                                                                                              |
+| --------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `throw`   | Boolean | Si es true, lanza un error si se produce uno. Sólo si no se ha definido ninguna retrollamada de fórmula. |
+
 ## Clases heredadas
 
-Several classes inherit from `OpenAIParameters` to extend its functionality for specific use cases. Below are some of the classes that extend `OpenAIParameters`:
+Several classes inherit from `OpenAIParameters` to extend its functionality for specific use cases. A continuación se muestran algunas de las clases que extienden `OpenAIParameters`:
 
 - [OpenAIChatCompletionsParameters](OpenAIChatCompletionsParameters.md)
 - [OpenAIChatCompletionsMessagesParameters](OpenAIChatCompletionsMessagesParameters.md)

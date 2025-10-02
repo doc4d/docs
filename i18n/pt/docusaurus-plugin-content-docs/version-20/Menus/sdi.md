@@ -8,7 +8,7 @@ No Windows, os desenvolvedores 4D podem testar e configurar suas aplicações 4D
 
 :::info
 
-O conceito sdi.mdI não existe no macOS. Esta funcionalidade diz respeito apenas a aplicações Windows e as opções relacionadas são ignoradas no macOS.
+O conceito SDI/MDI não existe no macOS. Esta funcionalidade diz respeito apenas a aplicações Windows e as opções relacionadas são ignoradas no macOS.
 
 :::
 
@@ -31,7 +31,7 @@ Uma vez ativada, para executar efetivamente a sua aplicação no modo SDI, pode:
 
 :::info
 
-Como o ambiente de desenvolvimento é executado em MDI, mudar do modo de desenvolvimento para o modo de tempo de execução usando o item de menu **Test Application in SDI Mode** é equivalente a reiniciar sua aplicação.
+Because the development environment is executed in MDI, switching from design mode to runtime mode using the **Test Application in SDI Mode** menu item is equivalent to restarting your application.
 
 :::
 
@@ -57,7 +57,7 @@ Assim, as janelas podem ser utilizadas nos modos MDI ou SDI sem que seja necess�
 
 ### Depurador
 
-Quando apresentada no modo SDI, a janela do  [depurador](../Debugging/debugger.md) não contém [botões de edição ](../Debugging/debugger.md#tool-bar-buttons), porque a mudança para o ambiente de desenvolvimento exige que se aborte a execução e se reinicie a aplicação no modo MDI.
+When displayed in SDI mode, the [debugger window](../Debugging/debugger.md) does not contain [editing buttons](../Debugging/debugger.md#tool-bar-buttons), because switching to design environment requires to abort execution and restart the application in MDI mode.
 
 ### Saída automática
 

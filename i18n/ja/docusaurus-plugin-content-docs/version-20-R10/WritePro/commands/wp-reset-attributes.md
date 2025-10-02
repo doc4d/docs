@@ -4,7 +4,7 @@ title: WP RESET ATTRIBUTES
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP RESET ATTRIBUTES.Syntax-->**WP RESET ATTRIBUTES** ( *targetObj* ; *attribName* {; *attribName2* ; ... ; *attribNameN*} )<br/> **WP RESET ATTRIBUTES** ( *sectionOrSubsection* {; *attribName* }{; *attribName2* ; ... ; *attribNameN*} )<br/>**WP RESET ATTRIBUTES** ( *targetObj* ; *attribColl* )<br/> **WP RESET ATTRIBUTES** ( *sectionOrSubsection* {; *attribColl*})<!-- END REF-->
+<!--REF #_command_.WP RESET ATTRIBUTES.Syntax-->**WP RESET ATTRIBUTES** ( *targetObj* ; *...attribName* )<br/>**WP RESET ATTRIBUTES** ( *sectionOrSubsection* {; *...attribName* })<br/>**WP RESET ATTRIBUTES** ( *targetObj* ; *attribColl* )<br/> **WP RESET ATTRIBUTES** ( *sectionOrSubsection* {; *attribColl*})<!-- END REF-->
 
 <!--REF #_command_.WP RESET ATTRIBUTES.Params-->
 
@@ -19,7 +19,7 @@ displayed_sidebar: docs
 
 ## 説明
 
-The **WP RESET ATTRIBUTES** command <!--REF #_command_.WP RESET ATTRIBUTES.Summary--> allows you to reset the value of one or more attributes in the range, element, or document passed as parameter.<!-- END REF--> This command can remove any kind of 4D Write Pro internal attribute: character, paragraph, document, table, or image. リセットしたい属性の名前を*attribName* 引数に渡すか、あるいは*attribColl* 引数に属性名のコレクションを渡すことで、複数の属性を一度にリセットすることもできます。
+**WP RESET ATTRIBUTES** コマンドは、<!--REF #_command_.WP RESET ATTRIBUTES.Summary--> 引数として渡されたレンジ、要素、ドキュメント内の一つ以上の属性の値をリセットすることができます。<!-- END REF--> このコマンドを使用することで、4D Write Pro の次のようなあらゆる内部属性を削除することができます: 文字、段落、ドキュメント、表、画像。 リセットしたい属性の名前を*attribName* 引数に渡すか、あるいは*attribColl* 引数に属性名のコレクションを渡すことで、複数の属性を一度にリセットすることもできます。
 
 > セクションかサブセクションの場合、*sectionOrSubsection* 引数単体を渡すだけで、すべての属性は一度にリセットされます。
 
@@ -29,7 +29,7 @@ The **WP RESET ATTRIBUTES** command <!--REF #_command_.WP RESET ATTRIBUTES.Summa
 - 要素(ヘッダー / フッター / 本文 / 表 / 段落 / アンカーされた画像またはインラインの画像 / セクション / サブセクション / スタイルシート)
 - 4D Write Pro ドキュメント
 
-**WP RESET ATTRIBUTES** コマンドを使用して属性の値が削除された場合、*targetObj* あるいは *sectionOrSubsection* にはデフォルトの値が適用されます。 デフォルトの値については、*4D Write Pro Attributes* の章に記載されています。 **WP RESET ATTRIBUTES** コマンドを使用して属性の値が削除された場合、*targetObj* あるいは *sectionOrSubsection* にはデフォルトの値が適用されます。 デフォルトの値については、*4D Write Pro Attributes* の章に記載されています。 デフォルトの値については、*4D Write Pro Attributes* の章に記載されています。 **WP RESET ATTRIBUTES** コマンドを使用して属性の値が削除された場合、*targetObj* あるいは *sectionOrSubsection* にはデフォルトの値が適用されます。 デフォルトの値については、*4D Write Pro Attributes* の章に記載されています。 デフォルトの値については、*4D Write Pro Attributes* の章に記載されています。 **WP RESET ATTRIBUTES** コマンドを使用して属性の値が削除された場合、*targetObj* あるいは *sectionOrSubsection* にはデフォルトの値が適用されます。 デフォルトの値については、*4D Write Pro Attributes* の章に記載されています。 デフォルトの値については、*4D Write Pro Attributes* の章に記載されています。 デフォルトの値については、*4D Write Pro Attributes* の章に記載されています。
+**WP RESET ATTRIBUTES** コマンドを使用して属性の値が削除された場合、*targetObj* あるいは *sectionOrSubsection* にはデフォルトの値が適用されます。 デフォルトの値については、*4D Write Pro Attributes* の章に記載されています。 **WP RESET ATTRIBUTES** コマンドを使用して属性の値が削除された場合、*targetObj* あるいは *sectionOrSubsection* にはデフォルトの値が適用されます。 デフォルトの値については、*4D Write Pro Attributes* の章に記載されています。 デフォルトの値については、*4D Write Pro Attributes* の章に記載されています。 **WP RESET ATTRIBUTES** コマンドを使用して属性の値が削除された場合、*targetObj* あるいは *sectionOrSubsection* にはデフォルトの値が適用されます。 デフォルトの値については、*4D Write Pro Attributes* の章に記載されています。 デフォルトの値については、*4D Write Pro Attributes* の章に記載されています。 **WP RESET ATTRIBUTES** コマンドを使用して属性の値が削除された場合、*targetObj* あるいは *sectionOrSubsection* にはデフォルトの値が適用されます。 デフォルトの値については、*4D Write Pro Attributes* の章に記載されています。 デフォルトの値については、*4D Write Pro Attributes* の章に記載されています。 Default values are listed in the [4D Write Pro Attributes](../4d-write-pro-attributes) section.
 
 :::note 注記
 
@@ -84,6 +84,6 @@ WP RESET ATTRIBUTES($subSection) // サブセクションの全ての属性が�
 
 ## 参照
 
-*4D Write Pro Attributes*\
-[WP GET ATTRIBUTES](wp-get-attributes.md)\
+[4D Write Pro Attributes](../4d-write-pro-attributes)  
+[WP GET ATTRIBUTES](wp-get-attributes.md)  
 [WP SET ATTRIBUTES](wp-set-attributes.md)

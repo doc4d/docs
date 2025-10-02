@@ -5,6 +5,15 @@ title: Session
 
 Los objetos de sesión son devueltos por el comando [`Session`](../commands/session.md). Estos objetos ofrecen al desarrollador una interfaz que permite gestionar la sesión de usuario actual y ejecutar acciones como almacenar datos contextuales, compartir información entre procesos de sesión, lanzar procesos preferentes relacionados con la sesión o (sólo web) gestionar [privilegios](../ORDA/privileges.md).
 
+:::info Para aprender más
+
+Articulos de blog sobre esta funcionalidad:
+
+- [Sesiones escalables para aplicaciones web avanzadas](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/)
+- [Permissions: inspeccionar los privilegios de la sesión para facilitar la depuración](https://blog.4d.com/permissions-inspect-session-privileges-for-easy-debugging/)
+
+:::
+
 ### Tipos de sesiones
 
 Los siguientes tipos de sesiones están soportados por esta clase:
@@ -124,7 +133,7 @@ La función `.createOTP()` <!-- REF #SessionClass.createOTP().Summary -->crea un
 
 Para más información sobre los tokens OTP, por favor consulte [esta sección](../WebServer/sessions.md#session-token-otp).
 
-Por defecto, si se omite el parámetro *lifespan*, el token se crea con el mismo tiempo de vida que el [`.idleTimeOut`](#idletimeout) de la sesión. Puede definir un tiempo de espera personalizado pasando un valor en segundos en *lifespan* (el valor mínimo es de 10 segundos, *lifespan* se restablece a 10 si se pasa un valor menor). Si se utiliza un token caducado para restaurar una sesión de usuario web, se ignora.
+Por defecto, si se omite el parámetro *lifespan*, el token se crea con el mismo tiempo de vida que el [`.idleTimeOut`](#idletimeout) de la sesión. Puede definir un tiempo de espera personalizado pasando un valor en segundos en *lifespan*. Si se utiliza un token caducado para restaurar una sesión de usuario web, se ignora.
 
 El token devuelto puede ser utilizado en intercambios con aplicaciones de terceros o sitios web para identificar la sesión de forma segura. Por ejemplo, el token OTP de sesión se puede utilizar con una aplicación de pago.
 
@@ -308,6 +317,10 @@ Else
 
 End if
 ```
+
+#### Ver también
+
+[*Publicaciones de blog sobre esta funcionalidad*](https://blog.4d.com/?s=hasPrivilege)
 
 <!-- END REF -->
 

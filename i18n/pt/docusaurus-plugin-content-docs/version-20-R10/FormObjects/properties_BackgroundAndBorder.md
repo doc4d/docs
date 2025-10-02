@@ -53,7 +53,7 @@ Você também pode definir esta propriedade usando o comando [`OBJECT SET RGB CO
 
 ---
 
-## Expressão cor de fundo
+## Background Color Expression {#background-color-expression}
 
 `List box de tipo coleção e seleção de entidades`
 
@@ -186,7 +186,7 @@ Designa a espessura de uma linha.
 
 ---
 
-## Array controle linha
+## Row Background Color Array {#row-background-color-array}
 
 `List boxes de tipo array`
 
@@ -228,7 +228,7 @@ Você pode obter o mesmo resultado usando os comandos [`LISTBOX SET ROW STYLE`](
 
 #### Comandos
 
-[`LISTBOX Get array`](../commands-legacy/listbox-get-array.md) - [`LISTBOX GET ARRAYS`](../commands-legacy/listbox-get-arrays.md) - [`LISTBOX SET ARRAYS`](../commands-legacy/listbox-set-arrays.md)
+[`LISTBOX Get array`](../commands-legacy/listbox-get-array.md) - [`LISTBOX GET ARRAYS`](../commands-legacy/listbox-get-arrays.md)
 
 ---
 

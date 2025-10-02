@@ -96,11 +96,12 @@ IP:port/4DACTION/action_Session
  End case
 ```
 
-### Voir également
+## Voir également
 
-[Session storage](session-storage.md)\
-[Session API](../API/SessionClass.md)\
-[Web server user sessions](../WebServer/sessions.md)
+[Session storage](session-storage.md)  
+[Session API](../API/SessionClass.md)  
+[Sessions Web](../WebServer/sessions.md)  
+[*Sessions évolutives pour les applications web avancées* (blog post)](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/)
 
 ## Propriétés
 

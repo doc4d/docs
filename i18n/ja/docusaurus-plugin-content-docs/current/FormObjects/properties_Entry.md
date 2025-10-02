@@ -53,7 +53,7 @@ title: 入力
 
 #### コマンド
 
-[`OBJECT Get context menu`](../commands-legacy/object-get-context-menu.md) - [`OBJECT SET CONTEXT MENU`](../commands-legacy/object-set-context-menu..md) - [`WA GET PREFERENCE`](../commands-legacy/wa-get-preference.md) - [`WA SET PREFERENCE`](../commands-legacy/wa-set-preference.md)
+[`OBJECT Get context menu`](../commands-legacy/object-get-context-menu.md) - [`OBJECT SET CONTEXT MENU`](../commands-legacy/object-set-context-menu.md) - [`WA GET PREFERENCE`](../commands-legacy/wa-get-preference.md) - [`WA SET PREFERENCE`](../commands-legacy/wa-set-preference.md)
 
 ---
 
@@ -183,7 +183,7 @@ title: 入力
 
 #### コマンド
 
-[`OBJECT Get enterable`](../commands-legacy/object-get-focusable.md) - [`OBJECT SET ENTERABLE`](../commands-legacy/object-set-enterable.md)
+[`OBJECT Get enterable`](../commands-legacy/object-get-enterable.md) - [`OBJECT SET ENTERABLE`](../commands-legacy/object-set-enterable.md)
 
 ---
 
@@ -224,7 +224,7 @@ title: 入力
 #### ×
 
 - 一行の入力オブジェクトでは、行の最後にある単語はエリアからはみ出し、改行はおこなわれません。
-- テキストは常に一行で表示されます。 文字やテキストのフィールドまたは変数が改行文字を含んでいる場合、エリアが更新されるとすぐに最初のキャリッジリターンより後のテキストが取り除かれます:\
+- テキストは常に一行で表示されます。 文字やテキストのフィールドまたは変数が改行文字を含んでいる場合、エリアが更新されるとすぐに最初のキャリッジリターンより後のテキストが取り除かれます:  
   ![](../assets/en/FormObjects/multilineNo.png)
 
 #### ◯

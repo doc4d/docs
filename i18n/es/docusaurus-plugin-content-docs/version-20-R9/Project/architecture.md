@@ -6,20 +6,20 @@ title: Arquitectura de un proyecto
 Un proyecto 4D se compone de varias carpetas y archivos, almacenados dentro de una carpeta raíz del proyecto (carpeta paquete). Por ejemplo:
 
 - MyPackage (*carpeta raíz del proyecto*)
-    - `Componentes`
-    - `Data`
-        - `Logs`
-        - `Settings`
-    - `Documentation`
-    - `Plugins`
-    - `Project`
-        - `DerivedData`
-        - `Sources`
-        - `Trash`
-    - `Resources`
+  - `Componentes`
+  - `Data`
+    - `Logs`
     - `Settings`
-    - `userPreferences.jSmith`
-    - `WebFolder`
+  - `Documentation`
+  - `Plugins`
+  - `Project`
+    - `DerivedData`
+    - `Sources`
+    - `Trash`
+  - `Resources`
+  - `Settings`
+  - `userPreferences.jSmith`
+  - `WebFolder`
 
 > Si su proyecto se ha convertido desde una base binaria, puede haber carpetas adicionales. Ver "Conversión de bases en proyectos" en [doc.4d.com](https://doc.4d.com).
 
@@ -29,12 +29,12 @@ La carpeta Project suele contener la siguiente jerarquía:
 
 - archivo `<applicationName>.4DProject`
 - `Sources`
-    - `Clases`
-    - `DatabaseMethods`
-    - `Métodos`
-    - `Formularios`
-    - `TableForms`
-    - `Triggers`
+  - `Clases`
+  - `DatabaseMethods`
+  - `Métodos`
+  - `Formularios`
+  - `TableForms`
+  - `Triggers`
 - `DerivedData`
 - `Trash` (si hay)
 
@@ -63,7 +63,7 @@ Este archivo de texto también puede contener llaves de configuración, en parti
 | lists.json                                   | Listas definidas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | JSON    |
 | filters.json                                 | Filtros definidos                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | JSON    |
 | dependencies.json                            | Nombres de [componentes a cargar](components.md) en el proyecto                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | JSON    |
-| HTTPHandlers.json                            | Custom [HTTP request handlers](../WebServer/http-request-handler.md) defined for the web server                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | JSON    |
+| HTTPHandlers.json                            | Personalizado [HTTP request handlers](../WebServer/http-request-handler.md) definido para el servidor web                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | JSON    |
 | styleSheets.css                              | Hojas de estilo CSS                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | CSS     |
 | styleSheets_mac.css     | Hojas de estilo css de Mac (a partir de una base binaria convertida)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | CSS     |
 | styleSheets_windows.css | Hojas de estilo css en Windows (a partir de una base binaria convertida)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | CSS     |

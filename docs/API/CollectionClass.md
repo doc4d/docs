@@ -1383,10 +1383,10 @@ It can set the following parameter(s):
 var $col ; $result : Collection
 $col:=New collection(1; 2; 3; 4)
 
-$result:=$col.map(Formula(New collection($1.value*2))
+$result:=$col.map(Formula(New collection($1.value*2)))
  // [[2],[4],[6],[8]]
 
-$result:=$col.flatMap(Formula(New collection($1.value*2))
+$result:=$col.flatMap(Formula(New collection($1.value*2)))
 // [2,4,6,8]
 ```
 
@@ -3578,7 +3578,7 @@ If the collection contains objects, pass the *propertyPath* parameter to indicat
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
 |value |Text, Number, Object, Collection, Date |->|Value(s) to insert at the beginning of the collection|
-|Result|Real|<-|Collection containing added element(s)
+|Result|Collection|<-|Collection containing added element(s)
 |
 <!-- END REF -->
 

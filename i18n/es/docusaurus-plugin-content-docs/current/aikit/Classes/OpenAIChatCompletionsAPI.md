@@ -32,7 +32,7 @@ Ofrece la lista completa de mensajes
 ```4d
 var $messages:=[]
 $messages.push({role: "system"; content: "You are a helpful assistant."})
-$messages.push({"role":"user"; "content": "Hello, how are you?"})
+$messages.push({role: "user"; content: "Hello, how are you?"})
 // ...
 
 var $result:=$client.chat.completions.create($messages; {model: "gpt-4o-mini" })
@@ -89,7 +89,7 @@ https://platform.openai.com/docs/api-reference/chat/update
 | *parámetros*   | [OpenAIParameters](OpenAIParameters.md) | Parámetros adicionales para la petición.         |
 | Resultado      | Boolean                                 | Si la eliminación se ha realizado correctamente. |
 
-Delete a stored chat compltions.
+Borrar una conversación almacenada.
 
 https://platform.openai.com/docs/api-reference/chat/delete
 

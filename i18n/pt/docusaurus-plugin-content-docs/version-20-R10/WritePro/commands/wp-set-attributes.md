@@ -4,7 +4,7 @@ title: WP SET ATTRIBUTES
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP SET ATTRIBUTES.Syntax-->**WP SET ATTRIBUTES** ( *targetObj* ; *attribName* ; *attribValue* {; *attribName2* ; *attribValue2* ; ... ; *attribNameN* ; *attribValueN*} )<br/>**WP SET ATTRIBUTES** ( *targetObj* ; *attribObj* )<!-- END REF-->
+<!--REF #_command_.WP SET ATTRIBUTES.Syntax-->**WP SET ATTRIBUTES** ( *targetObj* ; *...attribName* ; *...attribValue* )<br/>**WP SET ATTRIBUTES** ( *targetObj* ; *attribObj* )<!-- END REF-->
 
 <!--REF #_command_.WP SET ATTRIBUTES.Params-->
 
@@ -19,7 +19,7 @@ displayed_sidebar: docs
 
 ## Descrição
 
-O comando **WP REDEFINIR ATTRIBUTES** <!--REF #_command_.WP REDEFINIR ATTRIBUTES. ummary--> permite que você reinicie o valor de um ou mais atributos no intervalo, elemento ou documento passado como parâmetro.<!-- FIM REF--> Este comando lhe dá acesso a qualquer tipo de atributo interno da 4D Write Pro: caractere, parágrafo, tabela ou imagem.
+O comando **WP SET ATTRIBUTES** <!--REF #_command_.WP SET ATTRIBUTES.Summary--> permite que você reinicie o valor de um ou mais atributos no intervalo, elemento ou documento passado como parâmetro.<!-- END REF--> Este comando lhe dá acesso a qualquer tipo de atributo interno da 4D Write Pro: caractere, parágrafo, tabela ou imagem.
 
 Em *targetObj*, você pode passar:
 
@@ -33,7 +33,7 @@ Você pode especificar atributos para *targetObj* de uma de duas maneiras:
 
 - Use the *attribObj* parameter to pass a single object containing attribute names and their corresponding values as object properties.
 
-For a comprehensive list of attributes to pass, as well as their scope and respective values, please refer to the *4D Write Pro Attributes* section.
+For a comprehensive list of attributes to pass, as well as their scope and respective values, please refer to the [4D Write Pro Attributes](../4d-write-pro-attributes) section.
 
 ## Exemplo 1
 
@@ -148,6 +148,6 @@ O resultado é:
 
 ## Veja também
 
-*4D Write Pro Attributes*\
-[WP GET ATTRIBUTES](../commands/wp-get-attributes.md)\
+[4D Write Pro Attributes](../4d-write-pro-attributes)  
+[WP GET ATTRIBUTES](../commands/wp-get-attributes.md)  
 [WP RESET ATTRIBUTES](../commands/wp-reset-attributes.md)

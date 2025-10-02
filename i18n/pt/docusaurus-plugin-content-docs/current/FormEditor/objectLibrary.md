@@ -12,7 +12,7 @@ Pode utilizar bibliotecas de objectos nos seus formulários. Uma biblioteca de o
 
 ## Criar e utilizar bibliotecas de objetos personalizadas
 
-A biblioteca de objetos padrão está disponível no editor de formulários: clique no último botão da barra de ferramentas:\
+A biblioteca de objetos padrão está disponível no editor de formulários: clique no último botão da barra de ferramentas:  
 ![](../assets/en/FormEditor/library1.png)
 
 A biblioteca é apresentada numa janela separada:
@@ -23,11 +23,11 @@ A janela tem as seguintes características principais:
 
 - Área de visualização com dicas: a área central exibe uma visualização de cada objeto. Você pode passar o mouse sobre um objeto para obter informações sobre ele em uma dica.
 - Você pode filtrar o conteúdo da janela usando o menu **Categorias**:
-    ![](../assets/en/FormEditor/library3.png)
+  ![](../assets/en/FormEditor/library3.png)
 - Para utilizar um objeto da biblioteca no seu formulário, pode:
-    - clicar com o botão direito do rato num objeto e selecionar **Copiar** no menu contextual
-    - ou arraste e solte o objeto da biblioteca.
-        O objeto é então adicionado ao formulário.
+  - clicar com o botão direito do rato num objeto e selecionar **Copiar** no menu contextual
+  - ou arraste e solte o objeto da biblioteca.
+    O objeto é então adicionado ao formulário.
 
 Esta biblioteca é só de leitura. Se quiser editar objetos padrão ou criar sua própria biblioteca de objetos pré-configurados ou formulários projetos, você precisará criar uma biblioteca de objetos personalizada (veja abaixo).
 

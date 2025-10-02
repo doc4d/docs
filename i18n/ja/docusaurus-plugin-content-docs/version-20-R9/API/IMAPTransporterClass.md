@@ -74,15 +74,15 @@ IMAP Transporter オブジェクトは [IMP New transporter](../commands/imap-ne
 
 </details>
 
-<!-- REF #IMAPTransporterClass.addFlags().Syntax -->**.addFlags**( *msgIDs* : Collection ; *keywords* :  Object ) : Object<br/>**.addFlags**( *msgIDs* : Text ; *keywords* :  Object ) : Object<br/>**.addFlags**( *msgIDs* : Longint  ; *keywords* :  Object ) : Object<!-- END REF -->
+<!-- REF #IMAPTransporterClass.addFlags().Syntax -->**.addFlags**( *msgIDs* : any ; *keywords* :  Object ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.addFlags().Params -->
 
-| 引数       | 型          |                             | 説明                                                                                                                                                                                            |
-| -------- | ---------- | :-------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| msgIDs   | Collection |              ->             | 文字列のコレクション: メッセージの固有ID (テキスト型)<br/>&#xA;テキスト: メッセージの固有ID<br/>&#xA;倍長整数 (IMAP all): 選択されたメールボックス内の全メッセージ |
-| keywords | Object     |              ->             | 追加するキーワードフラグ                                                                                                                                                                                  |
-| 戻り値      | Object     | <- | addFlags処理のステータス                                                                                                                                                                              |
+| 引数       | 型      |                             | 説明                                                                                                                                                                                            |
+| -------- | ------ | :-------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| msgIDs   | any    |              ->             | 文字列のコレクション: メッセージの固有ID (テキスト型)<br/>&#xA;テキスト: メッセージの固有ID<br/>&#xA;倍長整数 (IMAP all): 選択されたメールボックス内の全メッセージ |
+| keywords | Object |              ->             | 追加するキーワードフラグ                                                                                                                                                                                  |
+| 戻り値      | Object | <- | addFlags処理のステータス                                                                                                                                                                              |
 
 <!-- END REF -->
 
@@ -245,7 +245,7 @@ $status:=$imap.append($msg; "Drafts")
 
 <!-- INCLUDE transporter.checkConnection().Desc -->
 
-<!-- REF #IMAPTransporterClass.checkConnectionDelay.Desc -->
+<!-- REF IMAPTransporterClass.checkConnectionDelay.Desc -->
 
 ## .checkConnectionDelay
 
@@ -652,7 +652,7 @@ End if
 
 #### 説明
 
-The `.expunge()` function <!-- REF #IMAPTransporterClass.expunge().Summary -->removes all messages with the "deleted" flag from the IMAP mail server.<!-- END REF --> The "deleted" flag can be set with the [`.delete()`](#delete) or [`.addFlags()`](#addflags) methods.
+`.expunge()` 関数は <!-- REF #IMAPTransporterClass.expunge().Summary -->IMAPメールサーバーから "deleted "フラグのついたメッセー ジをすべて削除します。<!-- END REF --> "deleted" フラグは[`.delete()`](#delete) または [`.addFlags()`](#addflags) 関数によって設定可能です。
 
 **返されるオブジェクト**
 
@@ -1320,15 +1320,15 @@ ID = 1のメッセージを取得します:
 
 </details>
 
-<!-- REF #IMAPTransporterClass.removeFlags().Syntax -->**.removeFlags**( *msgIDs* : Collection ; *keywords* :  Object ) : Object<br/>**.removeFlags**( *msgIDs* : Text ; *keywords* :  Object ) : Object<br/>**.removeFlags**( *msgIDs* : Longint ; *keywords* :  Object ) : Object<!-- END REF -->
+<!-- REF #IMAPTransporterClass.removeFlags().Syntax -->**.removeFlags**( *msgIDs* : any ; *keywords* :  Object ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.removeFlags().Params -->
 
-| 引数       | 型          |                             | 説明                                                                                                                                                                                            |
-| -------- | ---------- | :-------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| msgIDs   | Collection |              ->             | 文字列のコレクション: メッセージの固有ID (テキスト型)<br/>&#xA;テキスト: メッセージの固有ID<br/>&#xA;倍長整数 (IMAP all): 選択されたメールボックス内の全メッセージ |
-| keywords | Object     |              ->             | 削除するキーワードフラグ                                                                                                                                                                                  |
-| 戻り値      | Object     | <- | removeFlags処理のステータス                                                                                                                                                                           |
+| 引数       | 型      |                             | 説明                                                                                                                                                                                            |
+| -------- | ------ | :-------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| msgIDs   | any    |              ->             | 文字列のコレクション: メッセージの固有ID (テキスト型)<br/>&#xA;テキスト: メッセージの固有ID<br/>&#xA;倍長整数 (IMAP all): 選択されたメールボックス内の全メッセージ |
+| keywords | Object |              ->             | 削除するキーワードフラグ                                                                                                                                                                                  |
+| 戻り値      | Object | <- | removeFlags処理のステータス                                                                                                                                                                           |
 
 <!-- END REF -->
 
@@ -1589,40 +1589,40 @@ searchCriteria = CHARSET "ISO-8859" BODY "Help"
 
 #### 利用可能な検索キー
 
-**ALL**: メールボックスの全メッセージ\
-**ANSWERED**: \Answered フラグが設定されたメッセージ\
-**UNANSWERED**: \Answered フラグが設定されていないメッセージ\
-**DELETED**: \Deleted フラグが設定されたメッセージ\
-**UNDELETED**: \Deleted フラグが設定されていないメッセージ\
-**DRAFT**: \Draft フラグが設定されているメッセージ\
-**UNDRAFT**: \Draft フラグが設定されていないメッセージ\
-**FLAGGED**: \Flagged フラグが設定されているメッセージ\
-**UNFLAGGED**: \Flagged フラグが設定されていないメッセージ\
-**RECENT**: \Recent フラグが設定されているメッセージ\
-**OLD**: \Recent フラグが設定されていないメッセージ\
-**SEEN**: \Seen フラグが設定されているメッセージ\
-**UNSEEN**: \Seen フラグが設定されていないメッセージ\
-**NEW**: \Recent フラグが設定されているが \Seen フラグが設定されていないメッセージ。 これは機能的には “(RECENT UNSEEN)” と同じです。\
-**KEYWORD* flag*\*\*: 指定されたキーワードが設定されているメッセージ\
-**UNKEYWORD* flag*\*\*: 指定されたキーワードが設定されていないメッセージ\
-**BEFORE* date*\*\*: 内部の日付が指定日より前のメッセージ\
-**ON* date*\*\*: 内部の日付が指定日に合致するメッセージ\
-**SINCE* date*\*\*: 内部の日付が指定日より後のメッセージ\
-**SENTBEFORE* date*\*\*: 日付ヘッダーが指定日より前のメッセージ\
-**SENTON* date*\*\*: 日付ヘッダーが指定日に合致するメッセージ\
-**SENTSINCE* date*\*\*: 日付ヘッダーが指定日以降のメッセージ\
-**TO* string*\*\*: TO ヘッダーに指定文字列が含まれているメッセージ\
-**FROM* string*\*\*: FROM ヘッダーに指定文字列が含まれているメッセージ\
-**CC* string*\*\*: CC ヘッダーに指定文字列が含まれているメッセージ\
-**BCC* string*\*\*: BCC ヘッダーに指定文字列が含まれているメッセージ\
-**SUBJECT* string*\*\*: 件名ヘッダーに指定文字列が含まれているメッセージ\
-**BODY* string*\*\*: メッセージ本文に指定文字列が含まれているメッセージ\
-**TEXT* string*\*\*: ヘッダーまたはメッセージ本文に指定文字列が含まれているメッセージ\
-**HEADER *field-name* *string***: 指定フィールド名のヘッダーを持ち、そのフィールド内に指定文字列が含まれているメッセージ\
-**UID *message-UID***: 指定された固有識別子に対応する固有識別子を持つメッセージ\
-**LARGER *n***: 指定バイト数以上のサイズを持つメッセージ\
-**SMALLER *n***: 指定バイト数以下のサイズを持つメッセージ\
-**NOT *search-key***: 指定検索キーに合致しないメッセージ\
+**ALL**: メールボックスの全メッセージ  
+**ANSWERED**: \Answered フラグが設定されたメッセージ  
+**UNANSWERED**: \Answered フラグが設定されていないメッセージ  
+**DELETED**: \Deleted フラグが設定されたメッセージ  
+**UNDELETED**: \Deleted フラグが設定されていないメッセージ  
+**DRAFT**: \Draft フラグが設定されているメッセージ  
+**UNDRAFT**: \Draft フラグが設定されていないメッセージ  
+**FLAGGED**: \Flagged フラグが設定されているメッセージ  
+**UNFLAGGED**: \Flagged フラグが設定されていないメッセージ  
+**RECENT**: \Recent フラグが設定されているメッセージ  
+**OLD**: \Recent フラグが設定されていないメッセージ  
+**SEEN**: \Seen フラグが設定されているメッセージ  
+**UNSEEN**: \Seen フラグが設定されていないメッセージ  
+**NEW**: \Recent フラグが設定されているが \Seen フラグが設定されていないメッセージ。 これは機能的には “(RECENT UNSEEN)” と同じです。  
+**KEYWORD* flag*\*\*: 指定されたキーワードが設定されているメッセージ  
+**UNKEYWORD* flag*\*\*: 指定されたキーワードが設定されていないメッセージ  
+**BEFORE* date*\*\*: 内部の日付が指定日より前のメッセージ  
+**ON* date*\*\*: 内部の日付が指定日に合致するメッセージ  
+**SINCE* date*\*\*: 内部の日付が指定日より後のメッセージ  
+**SENTBEFORE* date*\*\*: 日付ヘッダーが指定日より前のメッセージ  
+**SENTON* date*\*\*: 日付ヘッダーが指定日に合致するメッセージ  
+**SENTSINCE* date*\*\*: 日付ヘッダーが指定日以降のメッセージ  
+**TO* string*\*\*: TO ヘッダーに指定文字列が含まれているメッセージ  
+**FROM* string*\*\*: FROM ヘッダーに指定文字列が含まれているメッセージ  
+**CC* string*\*\*: CC ヘッダーに指定文字列が含まれているメッセージ  
+**BCC* string*\*\*: BCC ヘッダーに指定文字列が含まれているメッセージ  
+**SUBJECT* string*\*\*: 件名ヘッダーに指定文字列が含まれているメッセージ  
+**BODY* string*\*\*: メッセージ本文に指定文字列が含まれているメッセージ  
+**TEXT* string*\*\*: ヘッダーまたはメッセージ本文に指定文字列が含まれているメッセージ  
+**HEADER *field-name* *string***: 指定フィールド名のヘッダーを持ち、そのフィールド内に指定文字列が含まれているメッセージ  
+**UID *message-UID***: 指定された固有識別子に対応する固有識別子を持つメッセージ  
+**LARGER *n***: 指定バイト数以上のサイズを持つメッセージ  
+**SMALLER *n***: 指定バイト数以下のサイズを持つメッセージ  
+**NOT *search-key***: 指定検索キーに合致しないメッセージ  
 **OR *search-key1* *search-key2***: いずれかの検索キーに合致するメッセージ
 
 <!-- END REF -->

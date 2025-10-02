@@ -27,9 +27,9 @@ title: $filter
 
 ### paramsプロパティの使用
 
-4D の paramsプロパティを使うこともできます。
+You can also use 4D's `params` property which is a collection of values.
 
-**\{attribute\} {comparator} {placeholder} {AND/OR/EXCEPT} \{attribute\} {comparator} {placeholder}&$params='["{value1}","{value2}"]"'**
+**\{attribute\} {comparator} {placeholder} {AND/OR/EXCEPT} \{attribute\} {comparator} {placeholder}&$params='["{value1}","{value2}"]'**
 
 たとえば: `$filter="firstName=:1 AND salary>:2"&$params='["john",20000]'` (firstName および salary は Employee データクラスの属性です)。
 
@@ -40,7 +40,7 @@ title: $filter
 > <li>単一引用符 ('): \u0027</li>
 > <li>二重引用符 ("): \u0022</li>
 >
-> たとえば、単一引用符が含まれる値を *params* プロパティに渡すには、次のように書きます:\
+> たとえば、単一引用符が含まれる値を *params* プロパティに渡すには、次のように書きます:  
 > `http://127.0.0.1:8081/rest/Person/?$filter="lastName=:1"&$params='["O\u0027Reilly"]'`
 >
 > 値を直接渡す場合は、次のように書けます: `http://127.0.0.1:8081/rest/Person/?$filter="lastName=O'Reilly"`
@@ -77,6 +77,33 @@ title: $filter
 | <= | 以下    |
 | begin                       | 前方一致  |
 
+## Vector similarity
+
+If the attribute stores [**vector objects**](../API/VectorClass.md) (see how to [configure a 4D field to only store 4D.Vector class objects](../Develop/field-properties.md#class)), you can filter the dataclass using **vectors**, aka **embeddings**.
+
+For more information about vector similarity searches, please refer to [Query by vector similarity](../API/DataClassClass.md#query-by-vector-similarity) section.
+
+Use the `params` property to provide the filter with the vector comparison parameter, using a syntax like:
+
+**\{vectorAttribute\} \{comparator\} \{placeholder\}&$params=vectorComparison**
+
+The *vectorComparison* parameter is a collection of the following elements:
+
+| プロパティ                                                                         | 型                                                                                | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                                                                                                                  |
+| ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [].vector | Object の Collection)                                                             | 必須設定です。 A collection that represents the vector to compare                                                                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                  |
+| [].metric | Text                                                                             | 任意。 クエリに使用する[ベクトル計算](../API/VectorClass.md#ことなるベクトル計算を理解する)。 Supported values:<li>"cosine" (default if omitted): calculates the cosine distance between vectors.</li><li>"dot": calculates the dot similarity of vectors.</li><li>"euclidean": calculates the Euclidean distance between vectors. |                                                                                                                                                                                                  |
+|                                                                               | [].threshold | Real                                                                                                                                                                                                                                                                                                                                                                                                                                 | 任意(デフォルト: 0.5)。 選択された"metric"に従って、コサイン、ドット、またはユークリッド類似度に基づいたベクトル比較をフィルタリングするために使用されるしきい値。 最適な結果を得るためには、特定の用途に最適な類似度のしきい値をきちんと選択することが強く推奨されます。 |
+
+Only a subset of **comparator** symbols are supported with vector comparisons. これらの比較記号は、結果としきい値を比較するのに使用されるという点に注意してください:
+
+| 比較演算子 | 記号                          | 説明        |
+| ----- | --------------------------- | --------- |
+| 小さい   | <  | しきい値より小さい |
+| 大きい   | >                           | しきい値より大きい |
+| 以下    | <= | しきい値以下である |
+| 以上    | > =                         | しきい値以上である |
+
 ## 例題
 
 名字が "j" で始まる社員を検索します:
@@ -96,4 +123,10 @@ Person データクラスより、anotherobj オブジェクト属性の number 
 
 ```
  GET  /rest/Person/?filter="anotherobj.mynum > 50"
+```
+
+In this example, we do a vector search with basic values:
+
+```
+ GET  /rest/Person/?filter="VectorAtt>=:1"&$params='[{vector:[1,2,3],threshold:1}]'
 ```

@@ -162,9 +162,7 @@ O comando `VP ADD SHEET` <!-- REF #_method_.VP ADD SHEET.Summary -->insere uma f
 
 Em *vpAreaName*, passe o nome da área 4D View Pro.
 
-
-Em *index*, pode passar um índice para a nova folha. Se o *index* passado for inferior ou igual a 0, o comando insere a nova folha no início. Se o *index* exceder o número de folhas, o comando insere a nova folha após as existentes.
-
+In *index*, you can pass an index for the new sheet. Se o *index* passado for inferior ou igual a 0, o comando insere a nova folha no início. Se o *index* exceder o número de folhas, o comando insere a nova folha após as existentes.
 > A indexação começa em 0.
 
 Em *name*, pode indicar um nome para a nova folha. O novo nome não pode conter os seguintes caracteres: `*, :, [, ], ?,\,/`
@@ -1135,7 +1133,7 @@ $vpObj:=VP Export to object("vpArea";New object("includeFormatInfo";False))
 ### VP Find
 
 <!-- REF #_method_.VP Find.Syntax -->
-**VP Find** (  *rangeObj* : Object ; *searchValue* : Text ) : Object<br/>**VP Find** (  *rangeObj* : Object ; *searchValue* : Text ; *searchCondition* : Object } ) : Object<br/>**VP Find** (  *rangeObj* : Object ; *searchValue* : Text ; *searchCondition* : Object ; *replaceValue* : Text ) : Object<!-- END REF -->
+**VP Find** (  *rangeObj* : Object ; *searchValue* : Text ) : Object<br/>**VP Find** (  *rangeObj* : Object ; *searchValue* : Text ; *searchCondition* : Object ) : Object<br/>**VP Find** (  *rangeObj* : Object ; *searchValue* : Text ; *searchCondition* : Object ; *replaceValue* : Text ) : Object<!-- END REF -->
 
 <!-- REF #_method_.VP Find.Params -->
 
@@ -2319,7 +2317,7 @@ If($options.colHeaderVisible) //column headers are visible
 | Parâmetro  | Tipo       |    | Descrição                                                                                      |
 | ---------- | ---------- | -- | ---------------------------------------------------------------------------------------------- |
 | vpAreaName | Text       | -> | Nome de objeto formulário área 4D View Pro                                                     |
-| sheet      | Integer    | <- | Índice da folha                                                                                |
+| sheet      | Integer    | -> | Índice da folha                                                                                |
 | Resultado  | Parâmetros | <- | True se as linhas de impressão forem visíveis, False caso contrário|<!-- END REF -->
 
 |
@@ -3834,7 +3832,7 @@ VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 </details>
 
 <!-- REF #_method_.VP REMOVE TABLE.Syntax -->
-**VP REMOVE TABLE** ( *vpAreaName* : Text; *tableName* : Text {; *options* : Integer} {; *sheet* : Integer}} )<!-- END REF -->
+**VP REMOVE TABLE** ( *vpAreaName* : Text; *tableName* : Text {; *options* : Integer} {; *sheet* : Integer} )<!-- END REF -->
 
 <!-- REF #_method_.VP REMOVE TABLE.Params -->
 
@@ -3888,7 +3886,7 @@ VP REMOVE TABLE("ViewProArea"; "people"; vk table remove style; 2)
 </details>
 
 <!-- REF #_method_.VP REMOVE TABLE COLUMNS.Syntax -->
-**VP REMOVE TABLE COLUMNS** ( *vpAreaName* : Text ; *tableName* : Text ; *column* : Integer {; *count* : Integer {; *sheet* : Integer }}} )<!-- END REF -->
+**VP REMOVE TABLE COLUMNS** ( *vpAreaName* : Text ; *tableName* : Text ; *column* : Integer {; *count* : Integer {; *sheet* : Integer }} )<!-- END REF -->
 
 <!-- REF #_method_.VP REMOVE TABLE COLUMNS.Params -->
 
@@ -3936,7 +3934,7 @@ VP REMOVE TABLE COLUMNS("ViewProArea"; "dataTable"; 3; 2)
 </details>
 
 <!-- REF #_method_.VP REMOVE TABLE ROWS.Syntax -->
-**VP REMOVE TABLE ROWS** ( *vpAreaName* : Text ; *tableName* : Text ; *row* : Integer {; *count* : Integer {; *sheet* : Integer }}} )<!-- END REF -->
+**VP REMOVE TABLE ROWS** ( *vpAreaName* : Text ; *tableName* : Text ; *row* : Integer {; *count* : Integer {; *sheet* : Integer }} )<!-- END REF -->
 
 <!-- REF #_method_.VP REMOVE TABLE ROWS.Params -->
 
@@ -4750,7 +4748,7 @@ VP SET COLUMN COUNT("ViewProArea";5)
 | Parâmetro  | Tipo    |    | Descrição                                             |
 | ---------- | ------- | -- | ----------------------------------------------------- |
 | vpAreaName | Text    | -> | Nome de objeto formulário área 4D View Pro            |
-| sheet      | Integer | <- | Índice da nova folha atual|<!-- END REF -->
+| sheet      | Integer | -> | Índice da nova folha atual|<!-- END REF -->
 
 |
 

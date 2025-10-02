@@ -87,7 +87,14 @@ text, input {
 
 シャープ記号 "#" の後にオブジェクト名を指定し、中カッコ { } の中に適用するスタイルを宣言します。
 
-次の例では、"okButton" というオブジェクト名を持つすべてのオブジェクトについて、表示するフォントを Helvetica Neue に、フォントサイズを 20 ピクセルに指定します:
+:::note
+
+オブジェクト名は、JSON 文法におけるフォームオブジェクトの [オブジェクト名](../FormObjects/properties_Object.md#オブジェクト名) プロパティに対応しています。
+
+:::
+
+
+In the following example, the text of the object with the name "okButton" will be displayed in Helvetica Neue font, with a size of 20 pixels:
 
 ```
 #okButton {
@@ -121,7 +128,7 @@ text.center {
 }
 ```
 
-4D フォームの JSON式記述においては、フォームオブジェクトにクラス名を設定するには `class` 属性を使います。 この属性には一つ以上のクラス名を指定することができます。 複数の場合はクラス名を半角スペースで区切ります:
+さらに、フォームの定義で[CSSクラス](../FormObjects/properties_Object.md#cssクラス) プロパティを使用し、フォームオブジェクトにクラス名を関連づけます。 この属性には一つ以上のクラス名を指定することができます。 複数の場合はクラス名を半角スペースで区切ります:
 
 ```
 class: "okButtons important"       
@@ -312,7 +319,7 @@ icon: url("edit.png"); /* フォームファイルを基準とした相対パス
 
 1. 4D フォームはまずデフォルトの CSS ファイル `/SOURCES/styleSheets.css` を読み込みます。
 2. 次に、カレントプラットフォーム専用の CSS ファイル `/SOURCES/styleSheets_mac.css` または `/SOURCES/styleSheets_windows.css` がロードされます。
-3. その後、JSON フォーム内に CSS ファイルが定義されていれば、それを読み込みます:
+3. [フォームプロパティの "css" 属性](../FormEditor/properties_FormProperties.md#css) がフォームレベルで定義されている場合、特定された CSS ファイルが読み込まれます。 以下のものを渡すことができます:
 
  * 両プラットフォーム用のファイル:
 

@@ -3,7 +3,7 @@ id: object-get-data-source-formula
 title: OBJECT Get data source formula
 ---
 
-<!--REF #_command_.OBJECT Get data source formula.Syntax-->**OBJECT Get data source formula** ( {* ;} *object* ) : *formula*<!-- END REF-->
+<!--REF #_command_.OBJECT Get data source formula.Syntax-->**OBJECT Get data source formula** ( {* ;} *object* ) : 4D.Formula<!-- END REF-->
 
 <!--REF #_command_.OBJECT Get data source formula.Params-->
 
@@ -23,7 +23,7 @@ title: OBJECT Get data source formula
 
 フォームオブジェクトにフォーミュラが割り当てられている場合、それはランタイムにオブジェクトのデータソースとして振る舞います。
 
-もしこのコマンドがフォーミュラが割り当てられていないオブジェクトに対して適用された場合、コマンドは自動的に割り当てられている[ダイナミックフォーム変数](../FormObjects/properties_Object.md#ダイナミック変数)を返します。\
+もしこのコマンドがフォーミュラが割り当てられていないオブジェクトに対して適用された場合、コマンドは自動的に割り当てられている[ダイナミックフォーム変数](../FormObjects/properties_Object.md#ダイナミック変数)を返します。  
 フォームオブジェクトが存在しないかフォーミュラをサポートしていない場合、 `Null` を返します。
 
 ## 例題

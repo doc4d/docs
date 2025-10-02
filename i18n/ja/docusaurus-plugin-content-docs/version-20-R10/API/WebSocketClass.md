@@ -98,14 +98,14 @@ WebSocketオブジェクトは、以下のプロパティと機能を提供し�
 - コールバックは、接続を開始したフォームまたはワーカーのコンテキストで自動的に呼び出されます。
 - フォームまたはワーカーが閉じられていない限り、WebSocket は有効です。
 
-| プロパティ       | 型                            | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ----------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| onMessage   | [Function](FunctionClass.md) | WebSocket データ用のコールバック関数。 WebSocket がデータを受信するたびに呼び出されます。 コールバックは以下の引数を受け取ります:<li>`$1`: WebSocket オブジェクト</li><li>`$2`: Object</li><ul><li>`$2.type` (text): 常に "message"</li><li>`$2.data` (text, BLOB, または object。`dataType` 参照): 受信データ</li></ul>                                                                                                                                                                                                                                                                                                                                |
-| onError     | [Function](FunctionClass.md) | 実行エラー用のコールバック関数。 The callback receives the following parameters:<li>`$1`: WebSocket object</li><li>`$2`: Object</li><ul><li>`$2.type` (text): always "error"</li><li>`$2.errors`: collection of 4D errors stack in case of execution error.<ul><li>`[].errCode` (number): 4D error code</li><li>`[].message` (text): Description of the 4D error</li><li>`[].componentSignature` (text): Signature of the internal component which returned the error</li></ul></li></ul> |
-| onTerminate | [Function](FunctionClass.md) | WebSocket が終了した時のコールバック関数。 The callback receives the following parameters:<li>`$1`: WebSocket object</li><li>`$2`: Object</li><ul><li>`$2.code` (number, read-only): unsigned short containing the close code sent by the server.</li><li>`$2.reason` (text, read-only): Reason why the server closed the connection. これは、対象のサーバーとサブプロトコルに固有のものです。</li></ul>                                                                                                                                                                                    |
-| onOpen      | [Function](FunctionClass.md) | WebSocket が開始した時のコールバック関数。 コールバックは以下の引数を受け取ります:<li>`$1`: WebSocket オブジェクト</li><li>`$2`: Object</li><ul><li>`$2.type` (text): 常に "open"</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| dataType    | Text                         | 受信または送信されたデータの型。 可能な値: "text" (デフォルト), "blob", "object"。 "text" = utf-8                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| headers     | Object                       | Headers of the WebSocket.<li>Syntax for standard key assignment: `headers.*key*:=*value*` (*value* can be a Collection if the same key appears multiple times)</li><li>Syntax for Cookie assignment (particular case): `headers.Cookie:="*name*=*value* {; *name2*=*value2*{; ... } }"`</li>                                                                                                                                                                                                                                                                                                                    |
+| プロパティ       | 型                            | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ----------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| onMessage   | [Function](FunctionClass.md) | WebSocket データ用のコールバック関数。 WebSocket がデータを受信するたびに呼び出されます。 コールバックは以下の引数を受け取ります:<li>`$1`: WebSocket オブジェクト</li><li>`$2`: Object</li><ul><li>`$2.type` (text): 常に "message"</li><li>`$2.data` (text, BLOB, または object。`dataType` 参照): 受信データ</li></ul>                                                                                                                                                                                   |
+| onError     | [Function](FunctionClass.md) | 実行エラー用のコールバック関数。 コールバックは以下の引数を受け取ります:<li>`$1`: WebSocket オブジェクト</li><li>`$2`: オブジェクト</li><ul><li>`$2.type` (text): 常に "error"</li><li>`$2.errors`: 実行エラーの場合、4D エラースタックのコレクション<ul><li>`[].errCode` (number): 4D エラーコード</li><li>`[].message` (text): 4D エラーの詳細</li><li>`[].componentSignature` (text): エラーを返した内部コンポーネントの署名</li></ul></li></ul> |
+| onTerminate | [Function](FunctionClass.md) | WebSocket が終了した時のコールバック関数。 コールバックは以下の引数を受け取ります:<li>`$1`: WebSocket オブジェクト</li><li>`$2`: Object</li><ul><li>`$2.code` (number、読み取り専用): 符号なし短整数型で、サーバーから送られたクローズコードを格納します。</li><li>`$2.reason` (text, read-only): Reason why the server closed the connection. これは、対象のサーバーとサブプロトコルに固有のものです。</li></ul>                                                                                                                |
+| onOpen      | [Function](FunctionClass.md) | WebSocket が開始した時のコールバック関数。 コールバックは以下の引数を受け取ります:<li>`$1`: WebSocket オブジェクト</li><li>`$2`: Object</li><ul><li>`$2.type` (text): 常に "open"</li></ul>                                                                                                                                                                                                                                                                                                                      |
+| dataType    | Text                         | 受信または送信されたデータの型。 可能な値: "text" (デフォルト), "blob", "object"。 "text" = utf-8                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| headers     | Object                       | Headers of the WebSocket.<li>Syntax for standard key assignment: `headers.*key*:=*value*` (*value* can be a Collection if the same key appears multiple times)</li><li>Syntax for Cookie assignment (particular case): `headers.Cookie:="*name*=*value* {; *name2*=*value2*{; ... } }"`</li>                                                                                                                                                                       |
 
 以下は、コールバック呼び出しの流れです:
 
@@ -131,7 +131,7 @@ This.headers.Cookie:="yummy_cookie=choco; tasty_cookie=strawberry"
 
 ```
 
-<!-- REF #WebSocketClass.dataType.Desc -->
+<!-- REF WebSocketClass.dataType.Desc -->
 
 ## .dataType
 
@@ -145,7 +145,7 @@ This.headers.Cookie:="yummy_cookie=choco; tasty_cookie=strawberry"
 
 <!-- END REF -->
 
-<!-- REF #WebSocketClass.handler.Desc -->
+<!-- REF WebSocketClass.handler.Desc -->
 
 ## .handler
 
@@ -159,7 +159,7 @@ This.headers.Cookie:="yummy_cookie=choco; tasty_cookie=strawberry"
 
 <!-- END REF -->
 
-<!-- REF #WebSocketClass.id.Desc -->
+<!-- REF WebSocketClass.id.Desc -->
 
 ## .id
 
@@ -173,7 +173,7 @@ This.headers.Cookie:="yummy_cookie=choco; tasty_cookie=strawberry"
 
 <!-- END REF -->
 
-<!-- REF #WebSocketClass.send().Desc -->
+<!-- REF WebSocketClass.send().Desc -->
 
 ## .send()
 
@@ -201,7 +201,7 @@ This.headers.Cookie:="yummy_cookie=choco; tasty_cookie=strawberry"
 
 <!-- END REF -->
 
-<!-- REF #WebSocketClass.status.Desc -->
+<!-- REF WebSocketClass.status.Desc -->
 
 ## .status
 
@@ -215,7 +215,7 @@ This.headers.Cookie:="yummy_cookie=choco; tasty_cookie=strawberry"
 
 <!-- END REF -->
 
-<!-- REF #WebSocketClass.terminate().Desc -->
+<!-- REF WebSocketClass.terminate().Desc -->
 
 ## .terminate()
 
@@ -243,7 +243,7 @@ This.headers.Cookie:="yummy_cookie=choco; tasty_cookie=strawberry"
 
 <!-- END REF -->
 
-<!-- REF #WebSocketClass.url.Desc -->
+<!-- REF WebSocketClass.url.Desc -->
 
 ## .url
 

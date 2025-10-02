@@ -84,7 +84,7 @@ De acuerdo con la gestión de proyectos 4D, sólo se admiten los siguientes usos
 
 :::warning
 
-Puede abrir Qodly Studio, [debug](#using-qodly-debugger-on-4d-server) y editar páginas Qodly directamente en una máquina 4D Server cuando un proyecto se está ejecutando en modo interpretado. This feature is only provided for testing and debugging purposes, for example to evaluate the application flow with actual data, or in multi-user environment. It must NOT be considered as a regular way to develop applications since it does not provide any control over concurrent accesses.
+Puede abrir Qodly Studio, [debug](#using-qodly-debugger-on-4d-server) y editar páginas Qodly directamente en una máquina 4D Server cuando un proyecto se está ejecutando en modo interpretado. This feature is only provided for testing and debugging purposes, for example to evaluate the application flow with actual data, or in multi-user environment. NO debe considerarse como una forma habitual de desarrollar aplicaciones, ya que no ofrece ningún control sobre los accesos concurrentes.
 
 :::
 
@@ -95,20 +95,20 @@ La página Qodly Studio está disponible cuando el [servidor web WebAdmin está 
 Hay dos formas de acceder a Qodly Studio:
 
 - by selecting the **Qodly Studio...** menu command from the **Design** menu (4D single-user) or the **Window** menu (4D Server).
-    Si el servidor web WebAdmin ya está en funcionamiento, dependiendo de su configuración, su navegador por defecto se abre en `IPaddress:HTTPPort/studio` o `IPaddress:HTTPSPort/studio`. De lo contrario, se le preguntará si desea iniciar primero el servidor web WebAdmin.
+  Si el servidor web WebAdmin ya está en funcionamiento, dependiendo de su configuración, su navegador por defecto se abre en `IPaddress:HTTPPort/studio` o `IPaddress:HTTPSPort/studio`. De lo contrario, se le preguntará si desea iniciar primero el servidor web WebAdmin.
 
 - on a browser, with the WebAdmin web server running (launched from 4D or 4D Server), enter the following address:<br/>
-    `IPaddress:HTTPPort/studio`
+  `IPaddress:HTTPPort/studio`
 
-    o:
+  o:
 
-    `IPaddress:HTTPSPort/studio`
+  `IPaddress:HTTPSPort/studio`
 
-    Por ejemplo, después de iniciar un servidor web local en el puerto 7080, escriba esta dirección en su navegador:
+  Por ejemplo, después de iniciar un servidor web local en el puerto 7080, escriba esta dirección en su navegador:
 
-    `localhost:7080/studio`
+  `localhost:7080/studio`
 
-    A continuación, se le pedirá que introduzca la [llave de acceso](../Admin/webAdmin.md#access-key) para acceder a Qodly Studio.
+  A continuación, se le pedirá que introduzca la [llave de acceso](../Admin/webAdmin.md#access-key) para acceder a Qodly Studio.
 
 ## Desarrollar con Qodly Studio
 
@@ -237,7 +237,7 @@ El proyecto debe ejecutarse en modo interpretado para que el elemento de menú *
 :::
 
 2. En la barra de herramientas de Qodly Studio, haga clic en el botón **Debug**.<br/>
-    ![qodly-debug](../assets/en/WebServer/qodly-debug.png)
+   ![qodly-debug](../assets/en/WebServer/qodly-debug.png)
 
 Si la sesión de depuración se inicia correctamente, aparecerá una viñeta verde en la etiqueta del botón ![qodly-debug](../assets/en/WebServer/debug2.png) y podrá utilizar el depurador de Qodly Studio.
 
@@ -246,7 +246,7 @@ Si el depurador ya está conectado a otra máquina o a otra página de Qodly Stu
 Para separar el depurador Qodly Studio de su aplicación 4D Server en ejecución:
 
 1. Haga clic en el botón **Debug** de la barra de herramientas de Qodly Studio mientras esté activa una sesión de depuración.
-    Una caja de diálogo de advertencia le pedirá que confirme si desea desconectar el depurador.
+   Una caja de diálogo de advertencia le pedirá que confirme si desea desconectar el depurador.
 2. Seleccione **Keep in progress** para continuar evaluando el código hasta el final del método o función actual antes de desconectar el depurador, o **Stop** para desconectar el depurador inmediatamente.
 
 ## Forzar inicio de sesión

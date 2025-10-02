@@ -44,13 +44,13 @@ Vous pouvez à tout moment savoir si votre application utilise un fichier d’hi
 Pour créer un fichier d’historique :
 
 1. Dans la page **Backup/Configuration** des Paramètres de structure, cochez l'option **Use Log** .
-  Le programme affiche une boîte de dialogue standard d'ouverture/création de fichier. Le programme affiche une boîte de dialogue standard d'ouverture/création de fichier.
+   Le programme affiche une boîte de dialogue standard d'ouverture/création de fichier. Le programme affiche une boîte de dialogue standard d'ouverture/création de fichier.
 
 2. Conservez le nom par défaut ou renommez-le, puis sélectionnez l'emplacement du fichier.
-  Si vous disposez d'au moins deux disques durs, il est recommandé de placer le fichier journal sur un disque autre que celui contenant le projet d'application. En cas de perte du disque dur de l'application, vous pouvez toujours rappeler votre fichier journal.
+   Si vous disposez d'au moins deux disques durs, il est recommandé de placer le fichier journal sur un disque autre que celui contenant le projet d'application. En cas de perte du disque dur de l'application, vous pouvez toujours rappeler votre fichier journal.
 
 3. Cliquez sur **Enregistrer**.
-  Le disque et le nom du fichier journal ouvert sont maintenant affichés dans la zone **Use Log** de la boîte de dialogue. Vous pouvez cliquer sur cette zone pour afficher un menu contextuel contenant le chemin d'accès au journal sur le disque.
+   Le disque et le nom du fichier journal ouvert sont maintenant affichés dans la zone **Use Log** de la boîte de dialogue. Vous pouvez cliquer sur cette zone pour afficher un menu contextuel contenant le chemin d'accès au journal sur le disque.
 
 4. Validez la boîte de dialogue des Propriétés.
 
@@ -69,7 +69,7 @@ Vous devrez créer un autre fichier d’historique si vous créez un nouveau fic
 
 Les [paramètres du fichier journal](settings.md#log-management) sont basés sur deux informations : une valeur booléenne et un chemin d'accès.
 
-1. **Valeur booléenne** : indique si la fonction "Use Log File" est activée ou désactivée dans l'application. Par défaut, la valeur booléenne est stockée dans *catalog.4DCatalog*. Toutefois, lorsque les [paramètres utilisateur](../Desktop/user-settings.md) sont activés, la configuration du fichier *catalog.4DCatalog* est remplacée, et la valeur booléenne peut alors être définie soit dans le fichier *Backup.4DSettings* [à côté du fichier de données](../Project/architecture.md#settings-user-data) ou dans le fichier *Backup.4DSettings* [dans le dossier du projet](../Project/architecture.md#settings-user) (voir également la documentation de la clé xml backup `JournalFileEnabled` sur [doc.4d.com](https://doc.4d.com)).
+1. **Valeur booléenne** : indique si la fonction "Use Log File" est activée ou désactivée dans l'application. Par défaut, la valeur booléenne est stockée dans *catalog.4DCatalog*. Toutefois, lorsque les [paramètres utilisateur](../settings/overview.md#user-settings) sont activés, la configuration du fichier *catalog.4DCatalog* est remplacée, et la valeur booléenne peut alors être définie soit dans le fichier *Backup.4DSettings* [à côté du fichier de données](../Project/architecture.md#settings-user-data) ou dans le fichier *Backup.4DSettings* [dans le dossier du projet](../Project/architecture.md#settings-user) (voir également la documentation de la clé xml backup `JournalFileEnabled` sur [doc.4d.com](https://doc.4d.com)).
 
 2. **Chemin**: une chaîne pointant vers l'emplacement du fichier journal. Le chemin d'accès du fichier journal est toujours enregistré dans le fichier de données lié.
 
