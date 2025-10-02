@@ -29,6 +29,17 @@ Lea [**Novedades en 4D 21**](https://blog.4d.com/en-whats-new-in-4d-21/), la ent
 - Web server: the support of deprecated `4DSYNC/` and `4DCGI/` URLs is removed. No specific processing is done on these URLs anymore.
 - Web user sessions are now returned by [`Process activity`](../commands/process-activity.md).
 - The [`HIGHLIGHT TEXT`](../commands/highlight-text) command is now supported in the context of subforms.
+- **Components no longer embedded**: starting with 4D 21, components developed by 4D (4D NetKit, 4D SVG..., see [this list](../Extensions/overview-old.md)) are no longer embedded in the 4D application. When upgrading a project to 4D 21 or higher, a dialog box is displayed:<br/>
+  ![alt-text](../assets/en/getStart/convert.png)<br/>
+  \- **Import**: import automatically 4D components as dependencies to the project<br/>
+  \- **Ignore**: do not import components and let you [manage components manually](../Project/components.md)<br/>
+  \- **Ask later**: do not import components and display the dialog at the next project opening.
+
+:::note
+
+In binary databases, you need to select the required components in the 4D installer or download them from the [4D Product Download portal](https://product-download.4d.com/?type=components).
+
+:::
 
 ## 4D 20 R10
 
@@ -268,7 +279,7 @@ Ver [**Notas de lanzamiento para LTS 4D 20.x**](../../versioned_docs/version-20/
 
 | Librería  | Versión actual                         | Actualizado en 4D | Comentario                                                                                                                                         |
 | --------- | -------------------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| BoringSSL | 0697c88                                | **21**            | Utilizado para QUIC                                                                                                                                |
+| BoringSSL | fa47b1d                                | **21**            | Utilizado para QUIC                                                                                                                                |
 | CEF       | 7258                                   | **21**            | Chromium 139                                                                                                                                       |
 | Hunspell  | 1.7.2  | 20                | Utilizado para la corrección ortográfica en formularios 4D y 4D Write Pro                                                                          |
 | ICU       | 77.1                   | **21**            | This upgrade forces an automatic rebuild of alphanumeric, text and object indexes.                                                 |
@@ -278,11 +289,11 @@ Ver [**Notas de lanzamiento para LTS 4D 20.x**](../../versioned_docs/version-20/
 | Libuv     | 1.51.0 | **21**            | Utilizado para QUIC                                                                                                                                |
 | libZip    | 1.11.4 | **21**            | Utilizado por los componentes zip class, 4D Write Pro, svg y serverNet                                                                             |
 | LZMA      | 5.8.1  | **21**            |                                                                                                                                                    |
-| ngtcp2    | 1.14.0 | **21**            | Utilizado para QUIC                                                                                                                                |
+| ngtcp2    | 1.16.0 | **21**            | Utilizado para QUIC                                                                                                                                |
 | OpenSSL   | 3.5.2  | **21**            |                                                                                                                                                    |
 | PDFWriter | 4.7.0  | **21**            | Used for [`WP Export document`](../WritePro/commands/wp-export-document.md) and [`WP Export variable`](../WritePro/commands/wp-export-variable.md) |
 | PHP       | 8.2.4  | 20                |                                                                                                                                                    |
 | SpreadJS  | 17.1.0 | 20 R7             | Consulte [esta entrada de blog](https://blog.4d.com/4d-view-pro-whats-new-in-4d-20-r7/) para obtener una visión general de las nuevas funciones    |
 | webKit    | WKWebView                              | 19                |                                                                                                                                                    |
-| Xerces    | 3.3.0  | **21**            | Used for XML commands                                                                                                                              |
+| Xerces    | 3.3.0  | **21**            | Utilizado para comandos XML                                                                                                                        |
 | Zlib      | 1.3.1  | **21**            |                                                                                                                                                    |

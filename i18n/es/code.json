@@ -677,34 +677,34 @@
     "message": "Arquitectura"
   },
   "Project Settings": {
-    "message": "Project Settings"
+    "message": "Parámetros del proyecto"
   },
   "Database structure": {
-    "message": "Database structure"
+    "message": "Estructura de la base de datos"
   },
   "Code & Methods": {
-    "message": "Code & Methods"
+    "message": "Código y métodos"
   },
   "Dependencies": {
-    "message": "Dependencies"
+    "message": "Dependencias"
   },
   "Compilation": {
     "message": "Compilación"
   },
   "Application Builder": {
-    "message": "Application Builder"
+    "message": "Creador de aplicaciones"
   },
   "Application Preferences": {
-    "message": "Application Preferences"
+    "message": "Preferencias de la aplicación"
   },
   "Concepts": {
     "message": "Conceptos"
   },
   "Commands by name": {
-    "message": "Commands by name"
+    "message": "Comandos por nombre"
   },
   "Commands by theme": {
-    "message": "Commands by theme"
+    "message": "Comandos por tema"
   },
   "Classes": {
     "message": "Clases"
@@ -737,19 +737,19 @@
     "message": "Servidor y administrador"
   },
   "4D Server Window": {
-    "message": "4D Server Window"
+    "message": "Ventana 4D Server"
   },
   "WebAdmin & Data Explorer": {
-    "message": "WebAdmin & Data Explorer"
+    "message": "WebAdmin y Explorador de datos"
   },
   "TLS": {
     "message": "TLS"
   },
   "Log Files": {
-    "message": "Log Files"
+    "message": "Archivos de registro"
   },
   "Extending 4D applications": {
-    "message": "Extending 4D applications"
+    "message": "Extensión de las aplicaciones 4D"
   },
   "4D QPDF": {
     "message": "4D QPDF"
@@ -758,15 +758,15 @@
     "message": "Build4D"
   },
   "theme.colorToggle.ariaLabel.mode.system": {
-    "message": "system mode",
+    "message": "modo sistema",
     "description": "The name for the system color mode"
   },
   "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
-    "message": "Expand the dropdown",
+    "message": "Expandir el menú desplegable",
     "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
   },
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
-    "message": "Collapse the dropdown",
+    "message": "Colapsar el menú desplegable",
     "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   }
 }
