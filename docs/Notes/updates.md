@@ -13,6 +13,7 @@ Read [**What’s new in 4D 21**](https://blog.4d.com/en-whats-new-in-4d-21/), th
 - Support of TLS encryption for the [4D.TCPConnection](../API/TCPConnectionClass.md#4dtcpconnectionnew) class.
 - New option allowing to use certificates from Windows Certificate Store instead of a local certificates folder in [`HTTPRequest`](../API/HTTPRequestClass.md#4dhttprequestnew) and [`HTTPAgent`](../API/HTTPAgentClass.md#4dhttpagentnew) classes. 
 - You can now [create components directly from the host project](../Extensions/develop-components.md#creating-components) and [edit their code from a dedicated tab](../Extensions/develop-components.md#editing-all-component-code) in the 4D Explorer without leaving or restarting the project.
+- The 4D product activation step has been simplified and automated during [sign-in](../GettingStarted/Installation.md#sign-in). 
 - 4D AIKit component: new features to [invoke a specific tool automatically](../aikit/Classes/OpenAIChatHelper.md#registertool) and [specify a response format](../aikit/Classes/OpenAIChatCompletionsParameters.md#response-format). 
 - 4D Language:
 	- New "trim" commands to remove leading and trailing spaces from a string: [`Trim`](../commands/trim.md), [`Trim start`](../commands/trim-start.md), and [`Trim end`](../commands/trim-end.md).  
@@ -314,7 +315,7 @@ See [**Release Notes for 4D 20.x LTS**](../../versioned_docs/version-20/Notes/up
 
 |Library|Current version|Updated in 4D|Comment|
 |---|---|---|----|
-|BoringSSL|0697c88|**21**|Used for QUIC|
+|BoringSSL|fa47b1d|**21**|Used for QUIC|
 |CEF|7258|**21**|Chromium 139|
 |Hunspell|1.7.2|20|Used for spell checking in 4D forms and 4D Write Pro|
 |ICU|77.1|**21**|This upgrade forces an automatic rebuild of alphanumeric, text and object indexes.|
@@ -324,7 +325,7 @@ See [**Release Notes for 4D 20.x LTS**](../../versioned_docs/version-20/Notes/up
 |Libuv |1.51.0|**21**|Used for QUIC|
 |libZip|1.11.4|**21**|Used by zip class, 4D Write Pro, svg and serverNet components|
 |LZMA|5.8.1|**21**||
-|ngtcp2|1.14.0|**21**|Used for QUIC|
+|ngtcp2|1.16.0|**21**|Used for QUIC|
 |OpenSSL|3.5.2|**21**||
 |PDFWriter|4.7.0|**21**|Used for [`WP Export document`](../WritePro/commands/wp-export-document.md) and [`WP Export variable`](../WritePro/commands/wp-export-variable.md) |
 |PHP|8.2.4|20||
