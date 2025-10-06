@@ -102,6 +102,48 @@ Event functions accept a single *event* object as parameter. When the function i
 | "dropStatus"  | Only in [`afterDrop()`](#function-event-afterdrop) |    String          |   "success" if the drop was successful, "failed" otherwise|      
 
 
+## error object
+
+[Some event functions](#summary-table) can return an **error object** to raise an error and stop the action. 
+
+When an error occurs in an event, the other events are stopped at the first raised error and the action (save or drop) is also stopped. This error is sent before other potential errors like [stamp has changed, entity locked](../API/EntityClass.md#save), etc.
+
+### Error object properties
+
+|Property|Type|Description|Set by the developer|
+|---|---|----|----|
+|errCode|Integer|Same as for [`Last errors`](../commands/last-errors.md) command|Yes|
+|message|Text|Same as for [`Last errors`](../commands/last-errors.md) command|Yes|
+|extraDescription|Object|Free information to set up|Yes|
+|fatalError|Boolean|True=fatal error|Yes (default is false), see below|
+|componentSignature|Text|Always "DBEV"|no|
+
+The errors are stacked in the `errors` collection property of the **status object** returned by the [`save()`](../API/EntityClass.md#save) or [`drop()`](../API/EntityClass.md#drop) functions. 
+
+### Not fatal errors
+
+status is 7 (dk status mild validation error)
+statusText: Mild Validation Error
+
+They can be returned only in Validate events and do not require a try catch.
+
+They are not stacked in the errors returned by the Last errors() command.
+
+Fatal errors:
+status is 8 (dk status serious validation error)
+statusText: Serious Validation Error
+
+They can be returned only in Validate events and require a try catch.
+
+They are raised at the end of the event and reach the client requesting the save / drop action (REST client for example).
+
+They are also stacked in the errors returned by the Last errors() command.
+
+In saving / dropping events, when an error object is returned, the error is always raised as a serious error (status 4 - dk status serious error) whatever the fatalError boolean property.
+
+
+
+
 
 ## Event function description
 
