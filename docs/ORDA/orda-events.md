@@ -102,7 +102,7 @@ Event functions accept a single *event* object as parameter. When the function i
 | "dropStatus"  | Only in [`afterDrop()`](#function-event-afterdrop) |    String          |   "success" if the drop was successful, "failed" otherwise|      
 
 
-## error object
+## Error object
 
 [Some event functions](#summary-table) can return an **error object** to raise an error and stop the running action. 
 
