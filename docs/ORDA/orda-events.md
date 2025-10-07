@@ -104,7 +104,7 @@ Event functions accept a single *event* object as parameter. When the function i
 
 ## error object
 
-[Some event functions](#summary-table) can return an **error object** to raise an error and stop the action. 
+[Some event functions](#summary-table) can return an **error object** to raise an error and stop the running action. 
 
 When an error occurs in an event, the other events are stopped at the first raised error and the action (save or drop) is also stopped. This error is sent before other potential errors like [stamp has changed, entity locked](../API/EntityClass.md#save), etc.
 
@@ -115,31 +115,14 @@ When an error occurs in an event, the other events are stopped at the first rais
 |errCode|Integer|Same as for [`Last errors`](../commands/last-errors.md) command|Yes|
 |message|Text|Same as for [`Last errors`](../commands/last-errors.md) command|Yes|
 |extraDescription|Object|Free information to set up|Yes|
-|fatalError|Boolean|True=fatal error|Yes (default is false), see below|
-|componentSignature|Text|Always "DBEV"|no|
+|fatalError|Boolean|Used only with validate events (see below). Will insert a specific `status` value in the [`save()`](../API/EntityClass.md#save) or [`drop()`](../API/EntityClass.md#drop) function:<li>If true: `dk status serious validation error`</li><li>If false: `dk status mild validation error`</li>|Yes (default is false)|
+|componentSignature|Text|Always "DBEV"|No|
 
-The errors are stacked in the `errors` collection property of the **status object** returned by the [`save()`](../API/EntityClass.md#save) or [`drop()`](../API/EntityClass.md#drop) functions. 
-
-### Not fatal errors
-
-status is 7 (dk status mild validation error)
-statusText: Mild Validation Error
-
-They can be returned only in Validate events and do not require a try catch.
-
-They are not stacked in the errors returned by the Last errors() command.
-
-Fatal errors:
-status is 8 (dk status serious validation error)
-statusText: Serious Validation Error
-
-They can be returned only in Validate events and require a try catch.
-
-They are raised at the end of the event and reach the client requesting the save / drop action (REST client for example).
-
-They are also stacked in the errors returned by the Last errors() command.
-
-In saving / dropping events, when an error object is returned, the error is always raised as a serious error (status 4 - dk status serious error) whatever the fatalError boolean property.
+- The errors are stacked in the `errors` collection property of the **Result object** returned by the [`save()`](../API/EntityClass.md#save) or [`drop()`](../API/EntityClass.md#drop) functions.
+- In case of an error triggered by a **validate** event, the `fatalError` property allows you to insert a specific `status` and its associated `statusText` in the **Result object** returned by the [`save()`](../API/EntityClass.md#save) or [`drop()`](../API/EntityClass.md#drop) functions:
+    - If false: `status`=`dk status mild validation error`, `statusText`="Mild Validation Error". Such errors do not require a [try catch](../Concepts/error-handling.md#trycatchend-try) and are not stacked in the errors returned by the [`Last errors`](../commands/last-errors.md) command.
+    - If true: `status`=`dk status serious validation error`, `statusText`="Serious Validation Error". Such errors require a [try catch](../Concepts/error-handling.md#trycatchend-try) and are not stacked in the errors returned by the [`Last errors`](../commands/last-errors.md) command. They are raised at the end of the event and reach the client requesting the save/drop action (REST client for example).
+- In case of an error triggered by a **saving/dropping** event, when an error object is returned, the error is always raised as a serious error (`dk status serious error`) whatever the `fatalError` property value.
 
 
 
@@ -379,14 +362,7 @@ This event is triggered by the following functions:
 
 This event is triggered **before** the entity is actually saved and lets you check data consistency so that you can stop the action if needed. For example, you can check in this event that "departure date" < "arrival date". 
 
-To stop the save action, the code of the function can:
-
-- throw an error using the [`throw`](../commands/throw) command. Errors thrown using the [`throw`](../commands/throw) command are managed by the 4D runtime as a [standard error](../Concepts/error-handling.md).
-- return directly an [error object](../commands-legacy/throw.md#throwerrorobj).
-
-If both an error object and a [`throw`](../commands/throw) are triggered, the `throw` takes precedence.
-
-If a `throw` is triggered, other `validateSave()` events are stopped at the first raised error.
+To stop the action, the code of the function must return an [error object](#error-object).
 
 :::note
 
@@ -394,46 +370,32 @@ It is not recommended to update the entity within this function (using `This`).
 
 :::
 
-#### Example 1
+#### Example
 
-In case of an invalid price attribute, you return an error object and thus, stop the save action. 
+In this example, the user is not allowed to save a product with a margin lower than the average. In case of an invalid price attribute, you return an error object and thus, stop the save action. 
 
 ```4d
-    //ProductsEntity class
-Function event validateSave price ($event : Object) : Object
-
-If (This.price <= 5)
-     var $result:= New object()
-     
-     $result.errCode:=1
-     $result.message:="The price is wrong"
-     $result.extraDescription:={attribute; $event.attributeName; info: "Please enter a price greater than 5 for the product " + This.name }
-     $result.fatalError:=False
-     return $result
+// ProductsEntity class
+Function event validateSave margin($event : Object) : Object
+	
+var $result : Object
+var $marginAverage : Real
+	
+$marginAverage:=ds.Products.query("category= :1"; This.category).average("margin")
+		
+If (This.margin<$marginAverage)
+	$result:={\
+    errCode: 1; \
+    message: "The margin of this product ("+String(This.margin)+") is under the average"; \
+	extraDescription: {\
+        info: "For the "+This.category+" category the margin average is: "+String($marginAverage)};\
+    fatalError: False}
 End if 
+	
+return $result
 
 ```
 
-#### Example 2
-
-In a booking application, the departure date must be lower than the arrival date. In case of wrong dates, you return an error object and thus, stop the save action. 
-
-```4d
-    //BookingEntity class
-Function event validateSave ($event : Object):Object
-
-If (This.arrivalDate < This.departureDate)
-      
-    var $result:= New object()
-     
-     $result.errCode:=1
-     $result.message:="The dates are inconsistent"
-     $result.extraDescription:={attribute; $event.attributeName; info: "Please enter a departure date before the arrival date"}
-     $result.fatalError:=False
-     return $result
-
-End if 
-```
 
 
 ### `Function event saving`
@@ -468,73 +430,38 @@ The business logic should raise errors which can't be detected during the `valid
 
 During the save action, 4D engine errors can be raised (index, stamp has changed, not enough space on disk).
 
-The code of the function can:
+To stop the action, the code of the function must return an [error object](#error-object).
 
-- throw an error using the [`throw`](../commands/throw) command. Errors thrown using the [`throw`](../commands/throw) command are managed by the 4D runtime as a [standard error](../Concepts/error-handling.md).
-- return directly an [error object](../commands-legacy/throw.md#throwerrorobj).
+#### Example
 
-If both an error object and a [`throw`](../commands/throw) are triggered, the `throw` takes precedence.
-
-If a `throw` is triggered, other `validateSave()` events are stopped at the first raised error.
-
-#### Example 1
-
-When setting the price of a product, a log file is updated on a remote datastore. 
+When a product is saved, some information is logged to an external system which may be unavailable.
 
 ```4d
-    //ProductsEntity class
-Function event saving price ($event : Object) 
+Function event saving($event : Object) : Object
+	
+var $result; $status : Object
+var $log : cs.Entity
+var $remote : 4D.DataStoreImplementation
+		
+Try	 
+	$remote:=Open datastore({hostname: "events@acme.com"}; "logs")	
+	$log:=$remote.Logs.new()
+	$log.productId:=This.ID
+	$log.stamp:=Timestamp
+	$log.event:="Created by "+Current user()
+	$status:=$log.save()
+Catch
+	$result:={\
+    errCode: Last errors.last().errCode;\
+    message: Last errors.last().message; \
+    extraDescription: {info: "The external Logs can't be reached"}}
+End try
+	
+return $result
 
-var $log : 4D.LogEntity
-var $status: Object
-
-If (This.price >= 5000)
-    This.status:="To Validate"
-End if 
-
-If (This.price >= 10000)
-    $log:=ds.Log.new()
-    $log.productName:=This.name
-    $log.productPrice:=This.price
-    $log.creationDate:=Current date()
-    $status:=$log.save()
-
-    If($status.success=False)
-        throw( {errCode: 1; message:"Error while updating the log file"} )
-    End if
-End if
 
 ```
 
-#### Example 2
-
-When creating or updating a product, data is replicated on a remote datastore.
-
-```4d
-    //ProductsEntity class
-Function event saving ($event : Object)
-//
-var $log : 4D.LogEntity
-var $status: Object
-
-If (This.country # "FR")
-    This.status:="To Validate"
-End if 
-
-If (This.status = "To track")
-    $log:=ds.Log.new()
-    $log.productName:=This.name
-    $log.productPrice:=This.price
-    $log.creationDate:=Current date()
-    $status:=$log.save()
-
-    If($status.success=False)
-        throw ( {errCode: 1; message:"Error while updating the log file"} )
-    End if
-
-End if
-
-```
 
 
 ### `Function event afterSave`
@@ -558,47 +485,26 @@ The function receives an [*event* object](#event-parameter) as parameter.
 
 #### Example 1
 
-Send a mail to the customer with the details of the order. 
+If an error occurred in the above saving event, the product is recorded in the ProductsInFailure dataclass so an employee can review it later.
+
 
 ```4d
-    //OrderEntity class
-Function event afterSave($event : Object) 
-
-var $oAuth2 : cs.NetKit.OAuth2Provider
-var $google : cs.NetKit.Google
-
-    // $param contains clientId, secretId...
-$oAuth2:=cs.NetKit.OAuth2Provider.new($param)
-$google:=cs.NetKit.Google.new($oAuth2; {mailType: "JMAP"})
-
-    // Email creation
-$email:=New object
-$email.from:="youremail@gmail.com"
-$email.to:="destinationmail@mail.com"
-$email.subject:="Your order is confirmed"
-$email.textBody:="Products numbers: " + This.products.number.join("-")
-
-// Email sending
-$status:=$google.mail.send($email)
-
-```
-
-#### Example 2
-
-Handle business logic because there were errors in the [`saving()`](#function-event-saving) event.
-
-```4d
-    //OrderEntity class
-
+// ProductsEntity class
 Function event afterSave($event : Object)
- 
-    // The save action failed   
-If ($event.saveStatus = "failed")
+	
+var $failure : cs.ProductsInFailureEntity
+var $status : Object
 
-    // The status attribute was to be saved with a new "confirmed" value
-    If ($event.savedAttributes.indexOf("status") = -1)
-        ... // Send a mail to the Admin to check the booking
-    End if
+    // $event.status.errors is filled if the error comes from a validateSave event
+If (($event.status.success=False) && ($event.status.errors=Null))  
+	$failure:=ds.ProductsInFailure.new()
+	$failure.name:=This.name
+	$failure.category:=This.category
+	$failure.costPrice:=This.costPrice
+	$failure.retailPrice:=This.retailPrice
+	$failure.reason:="Error during the save action"
+	$failure.stamp:=Timestamp
+	$status:=$failure.save()
 End if
 
 ```
@@ -630,12 +536,7 @@ This event is triggered by the following features:
 
 This event is triggered **before** the entity is actually dropped, allowing you to check data consistency and if necessary, to stop the drop action. 
 
-To stop the drop action, the code of the function can:
-
-- throw an error using the [`throw`](../commands/throw) command. Errors thrown using the [`throw`](../commands/throw) command are managed by the 4D runtime as a [standard error](../Concepts/error-handling.md).
-- return directly an [error object](../commands-legacy/throw.md#throwerrorobj).
-
-If both an error object and a [`throw`](../commands/throw) are triggered, the `throw` takes precedence.
+To stop the action, the code of the function must return an [error object](#error-object).
 
 
 #### Example 1
@@ -710,11 +611,7 @@ The business logic should raise errors which cannot be detected during the `vali
 
 :::
 
-To stop the drop action, the code of the function can:
-
-- throw an error using the [`throw`](../commands/throw) command. Errors thrown using the [`throw`](../commands/throw) command are managed by the 4D runtime as a [standard error](../Concepts/error-handling.md).
-- return directly an [error object](../commands-legacy/throw.md#throwerrorobj).
-
+To stop the action, the code of the function must return an [error object](#error-object).
 
 #### Example 1
 
