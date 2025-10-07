@@ -134,7 +134,7 @@ $isGuest:=Session.isGuest() //$isGuest is True
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
 |lifespan|Integer|->|Session token lifespan in seconds|
-|Result|Text|<-|UUID of the session|
+|Result|Text|<-|UUID of the token|
 <!-- END REF -->
 
 
@@ -304,8 +304,7 @@ This function returns privileges assigned to a Session using the [`setPrivileges
 
 :::
 
-Regarding remote client sessions, the function only impacts [code accessing the web server](../WebServer/preemptiveWeb.md#writing-thread-safe-web-server-code). 
-
+With remote client sessions, the privileges only concerns the code executed in the context of a [web request sent through a Web area](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas). 
 
 With stored procedure sessions and standalone sessions, this function returns a collection only containing "WebAdmin".
 
@@ -818,7 +817,7 @@ By default when no privilege or role is associated to the session, the session i
 
 The [`userName`](#username) property is available at session object level (read-only).
 
-Regarding remote client sessions, the function only impacts [code accessing the web server](../WebServer/preemptiveWeb.md#writing-thread-safe-web-server-code). 
+Regarding remote client sessions, the function only concerns the code executed in the context of a [web request sent through a Web area](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas). 
 
 
 #### Example
