@@ -198,7 +198,7 @@ The <!-- REF #WebServerClass.defaultHomepage.Summary -->name of the default home
 
 *Read-only property*
 
-A <!-- REF #WebServerClass.handlers.Summary -->collection of the loaded HTTP handler objects<!-- END REF -->. An HTTP handler object contains a listened URL pattern, a handled verb, and the code to be called. HTTP handlers can be defined through a HTTPHandlers.json file or the `settings` parameter. For more information, please refer to the [HTTP Request handler](../WebServer/http-request-handler.md) page. 
+A <!-- REF #WebServerClass.handlers.Summary -->collection of custom HTTP handler objects<!-- END REF -->. An HTTP handler object contains a listened URL pattern, a handled verb, and the code to be called. HTTP handlers can be defined through a HTTPHandlers.json file or the *settings* parameter of the [`.start()`](#start) function. For more information, please refer to the [HTTP Request handler](../WebServer/http-request-handler.md) page. 
 
 <!-- END REF -->
 
@@ -529,7 +529,7 @@ The <!-- REF #WebServerClass.rootFolder.Summary -->path of web server root folde
 
 *Read-only property*
 
-A <!-- REF #WebServerClass.rules.Summary -->collection of rule objects currently handled to customize HTTP headers<!-- END REF -->. A rule object contains a "regexPattern" property, as well as an action name with a value. HTTP rules can be defined through a HTTPRules.json file or the `settings` parameter. For more information, please refer to the [HTTP Rules](../WebServer/http-rules.md) page. 
+A <!-- REF #WebServerClass.rules.Summary -->collection of rule objects currently handled to customize HTTP headers<!-- END REF -->. A rule object contains a "regexPattern" property, as well as an action name with a value. HTTP rules can be defined through a HTTPRules.json file or the *settings* parameter of the [`.start()`](#start) function. For more information, please refer to the [HTTP Rules](../WebServer/http-rules.md) page. 
 
 <!-- END REF -->
 

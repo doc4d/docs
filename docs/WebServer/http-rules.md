@@ -5,7 +5,7 @@ title: HTTP Rules
 
 You can define HTTP rules to control HTTP response headers for any requests received by the 4D web server, including REST requests. You can add, modify, or remove HTTP headers, send redirections or set the HTTP status. This feature is useful to implement security policies based upon the handling of headers. 
 
-To define HTTP rules, you just need to write some RegEx to declare the URL patterns you want to control, as well as how to modify response headers. You can set these rules using a `HTTPRules.json` file stored in the project folder, or using the *settings* parameter of the web server object [start()](../API/WebServerClass.md#start) function.  
+To define HTTP rules, you just need to write some RegEx to declare the URL patterns you want to control, as well as how to modify response headers. You can set these rules using a `HTTPRules.json` file stored in the project folder, or using the *settings* parameter [`start()`](../API/WebServerClass.md#start) function of the web server object.  
 
 
 ## Requirements
@@ -21,7 +21,7 @@ HTTP rules are supported in the following contexts:
 You can declare HTTP response rules:
 
 - in a configuration file named **HTTPRules.json** stored in the [`Project/Sources`](../Project/architecture.md#sources) folder of the project. Rules are loaded and applied in the main Web server once it is started.
-- using the [`.rules`](../API/WebServerClass.md#rules) property of the *settings* parameter of the [start()](../API/WebServerClass.md#start) function: 
+- using a [`.rules`](../API/WebServerClass.md#rules) property set in the *settings* parameter of the [`start()`](../API/WebServerClass.md#start) function, for any web server object:  
 
 ```4d
 WEB Server.start($settings.rules) //set rules at web server startup
@@ -40,8 +40,10 @@ The **HTTPRules.json** file or the [`.rules`](../API/WebServerClass.md#rules) pr
 A rule object is defined by:
 
 - a RegEx describing a URL pattern, e.g. "^(.*\\.(jpg|jpeg|png|gif))"
-- the name of the action to execute for the HTTP response, e.g. "removedHeaders"
+- the name of the action to execute for the HTTP response, e.g. "removeHeaders"
 - the value of the action, e.g. "X-Unwanted-Header1"
+
+Other properties are ignored. 
 
 
 ### URL patterns
@@ -58,19 +60,19 @@ The following action keywords are supported:
 
 |Keyword|Value type|Description|
 |---|---|----|
-|`removedHeaders`|Text or Collection of texts|Header(s) to remove from the HTTP responses. If a header to remove does not exist in the response header, it is ignored.|
-|`addedHeaders`|Object|Name (text) and value (text) of header(s) to add to the HTTP responses. If a header to add already exists in the response header, its value is replaced.|
+|`removeHeaders`|Text or Collection of texts|Header(s) to remove from the HTTP responses. If a header to remove does not exist in the response header, it is ignored.|
+|`addHeaders`|Object|Name (text) and value (text) of header(s) to add to the HTTP responses.|
+|`setHeaders`|Object|Name (text) and value (text) of header(s) to modify in the HTTP responses. If a header to modify does not exist in the response header, it is added.|
 |`denyAccess`|Boolean|true to deny access to the resource, false to allow access. When the access to a resource is denied, the web server returns a 403 status by default  |
-|`redirection`|Text|Redirection URL. When a redirection is triggered, the web server returns a 302 status by default|
+|`redirect`|Text|Redirection URL. When a redirection is triggered, the web server returns a 302 status by default|
 |`status`|Number|HTTP status|
 
 
 ### Non-modifiable headers
 
-The following headers could not be modified by the `removedHeaders` or `addHeaders` actions: 
+The following headers could not be modified by the `removeHeaders`, `setHeaders`, or `addHeaders` actions: 
 
 - "Date", 
-- "Content-Type"
 - "Content-Length"
 
 Modifying these headers do not generate errors, however modifications will be ignored.   
@@ -84,61 +86,145 @@ var $rules : Collection
 $rules:=WEB Server.rules //current rules
 ```
 
-## Example
+## Examples
 
-Here is an example of HTTPRules.json file:
+Rules can be set using a `HTTPRules.json` file or the *settings* parameter of the [`.start()`](../API/WebServerClass.md#start) web server function.
+
+### Using a HTTPRules.json file
 
 ```json
 
 [
-    {
-        "regexPattern": "/(.*)",
-        "removedHeaders": [
-            "X-Unwanted-Header1"
-        ],
-        "addedHeaders": {
-            "X-Custom-Header1": "MyHeader1Value",
-            "X-Custom-Header2": "MyHeader2Value"
-        }
-    },
-    {
-        "regexPattern": "/(.*).html",
-        "removedHeaders": [
-            "X-Unwanted-Header2",
-             "X-Unwanted-Header3"
-        ],
-        "addedHeaders": {
-          "X-Custom-Header3": "MyHeader3Value"
-        }
-    },
-    {
-        "regexPattern": "/Test/(.*)",
-        "denyAccess": true,
-        "status": 403
-    },
-    {
-        "regexPattern": "/Test/Authorized/(.*)",
-        "denyAccess": false
-    },
-    {
-        "regexPattern": "/Test/Authorized_Bis/(.*)",
-        "denyAccess": false
-    },
-    {
-        "regexPattern": "^(.*\\.(jpg|jpeg|png|gif))",
-        "redirection": "http://cdn1.example.com/",
-        "status": 301
-    },
-    {
-        "regexPattern": "^(.*\\.(css|js))",
-        "redirection": "http://cdn2.example.com/",
-        "status": 302
-    }
+	{
+		"comment": "All requests: allow GET method for, remove 'Server' header and set security headers",
+		"regexPattern": "/(.*)",
+		"setHeaders": {
+			"Allow": "GET",
+			"X-Frame-Options": "SAMEORIGIN",
+			"Content-Security-Policy": "default-src 'self'"
+		},
+		"removeHeaders": [
+			"Server"
+		]
+	},
+	{
+		"comment": "REST requests: allow POST method",
+		"regexPattern": "/rest/(.*)",
+		"addHeaders": {
+			"Allow": "POST"
+		}
+	},
+	{
+		"comment": "HTML files in 'doc' folder: set cache control",
+		"regexPattern": "/docs/(.*).html",
+		"setHeaders": {
+			"Cache-Control": "max-age=3600"
+		},
+		"removeHeaders": [
+			"X-Powered-By"
+		]
+	},
+	{
+		"comment": "Status 503 on 'maintenance' page",
+		"regexPattern": "^/maintenance.html",
+		"status": 503
+	},
+	{
+		"comment": "Redirect CSS and JS files",
+		"regexPattern": "^(.*\\\\.(css|js))",
+		"redirect": "https://cdn.example.com/"
+	},
+	{
+		"comment": "Redirect images with permanent status code",
+		"regexPattern": "^(.*\\\\.(jpg|jpeg|png|gif))",
+		"redirect": "https://cdn.example.com/images/",
+		"status": 301
+	},
+	{
+		"comment": "Deny access for all resources placed in the 'private' folder",
+		"regexPattern": "/private/(.*)",
+		"denyAccess": true
+	},
+	{
+		"comment": "Allow access to all resources placed in the 'private/allowed' folder",
+		"regexPattern": "/private/allowed/(.*)",
+		"denyAccess": false
+	}
 ]
 
+```
 
+### Using a *settings* parameter
+
+
+
+```4d
+var $rule:={}
+
+var $settings:={}
+
+$settings.rules:=[]
+
+$rule:={}
+$rule.comment:="All requests: allow GET method for, remove 'Server' header and set security headers"
+$rule.regexPattern:="/(.*)"
+$rule.setHeaders:={Allow: "GET"}
+$rule.setHeaders["X-Frame-Options"]:="SAMEORIGIN"
+$rule.setHeaders["Content-Security-Policy"]:="default-src 'self'"
+$rule.removeHeaders:=["Server"]
+$settings.rules.push($rule)
+
+$rule:={}
+$rule.comment:="REST requests: allow POST method"
+$rule.regexPattern:="/rest/(.*)"
+$rule.addHeaders:={Allow: "POST"}
+$settings.rules.push($rule)
+
+$rule:={}
+$rule.comment:="HTML files in 'doc' folder: set cache control"
+$rule.regexPattern:="/docs/(.*).html"
+$rule.setHeaders:={}
+$rule.setHeaders["Cache-Control"]:="max-age=3600"
+$rule.removeHeaders:=["X-Powered-By"]
+$settings.rules.push($rule)
+
+$rule:={}
+$rule.comment:="Status 503 on 'maintenance' page"
+$rule.regexPattern:="^/maintenance.html"
+$rule.status:=503
+$settings.rules.push($rule)
+
+$rule:={}
+$rule.comment:="Redirect CSS and JS files"
+$rule.regexPattern:="^(.*\\\\.(css|js))"
+$rule.redirect:="https://cdn.example.com/"
+$settings.rules.push($rule)
+
+$rule:={}
+$rule.comment:="Redirect images with permanent status code"
+$rule.regexPattern:="^(.*\\\\.(jpg|jpeg|png|gif))"
+$rule.redirect:="https://cdn.example.com/images/"
+$rule.status:=301
+$settings.rules.push($rule)
+
+$rule:={}
+$rule.comment:="Deny access for all resources placed in the 'private' folder"
+$rule.regexPattern:="/private/(.*)"
+$rule.denyAccess:=True
+$settings.rules.push($rule)
+
+$rule:={}
+$rule.comment:="Allow access to all resources placed in the 'private/allowed' folder"
+$rule.regexPattern:="/private/allowed/(.*)"
+$rule.denyAccess:=False
+$settings.rules.push($rule)
+
+$return:=WEB Server.start($settings)
 
 ```
+
+
+
 
 :::tip Related blog post
 
