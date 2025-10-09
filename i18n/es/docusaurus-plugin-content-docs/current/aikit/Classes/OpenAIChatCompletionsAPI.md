@@ -32,7 +32,7 @@ Ofrece la lista completa de mensajes
 ```4d
 var $messages:=[]
 $messages.push({role: "system"; content: "You are a helpful assistant."})
-$messages.push({"role":"user"; "content": "Hello, how are you?"})
+$messages.push({role: "user"; content: "Hello, how are you?"})
 // ...
 
 var $result:=$client.chat.completions.create($messages; {model: "gpt-4o-mini" })
@@ -44,7 +44,7 @@ Obtener la respuesta como texto
 var $text:=$result.choice.text
 ```
 
-Append assistant response for next completion request
+Anexar la respuesta del asistente para la siguiente solicitud de finalización
 
 ```
 $messages.push($result.choice.message) // {"role":"assistant"; "content": "xxx" }

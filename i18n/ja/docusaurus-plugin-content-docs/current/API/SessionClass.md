@@ -5,12 +5,11 @@ title: Session
 
 Session オブジェクトは [`Session`](../commands/session.md) コマンドによって返されます。  このオブジェクトは、カレントユーザーセッションを管理するためのインターフェースをデベロッパーに対して提供し、コンテキストデータの保存、プロセス間の情報共有、セッションに関連したプリエンプティブプロセスの開始などのアクションの実行や、[アクセス権](../ORDA/privileges.md) の管理を可能にします。
 
-:::info To learn more
-
-Blog posts about this feature:
+:::tip 関連したblog 記事
 
 - [高度な Webアプリケーションに対応したスケーラブルセッション](https://blog.4d.com/ja/scalable-sessions-for-advanced-web-applications/)
 - [Permissions: Inspect Session Privileges for Easy Debugging](https://blog.4d.com/permissions-inspect-session-privileges-for-easy-debugging/)
+- [Webセッションのワンタイムパスワード (OTP) の使い方](https://blog.4d.com/ja/connect-your-web-apps-to-third-party-systems/)
 
 :::
 
@@ -35,6 +34,7 @@ Blog posts about this feature:
 | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | [<!-- INCLUDE #SessionClass.clearPrivileges().Syntax -->](#clearprivileges)<br/><!-- INCLUDE #SessionClass.clearPrivileges().Summary --> |
 | [<!-- INCLUDE #SessionClass.createOTP().Syntax -->](#createotp)<br/><!-- INCLUDE #SessionClass.createOTP().Summary -->                   |
+| [<!-- INCLUDE #SessionClass.demote().Syntax -->](#demote)<br/><!-- INCLUDE #SessionClass.demote().Summary -->                            |
 | [<!-- INCLUDE #SessionClass.expirationDate.Syntax -->](#expirationdate)<br/><!-- INCLUDE #SessionClass.expirationDate.Summary -->        |
 | [<!-- INCLUDE #SessionClass.getPrivileges().Syntax -->](#getprivileges)<br/><!-- INCLUDE #SessionClass.getPrivileges().Summary -->       |
 | [<!-- INCLUDE #SessionClass.hasPrivilege().Syntax -->](#hasprivilege)<br/><!-- INCLUDE #SessionClass.hasPrivilege().Summary -->          |
@@ -42,6 +42,7 @@ Blog posts about this feature:
 | [<!-- INCLUDE #SessionClass.idleTimeout.Syntax -->](#idletimeout)<br/><!-- INCLUDE #SessionClass.idleTimeout.Summary -->                 |
 | [<!-- INCLUDE #SessionClass.info.Syntax -->](#info)<br/><!-- INCLUDE #SessionClass.info.Summary -->                                      |
 | [<!-- INCLUDE #SessionClass.isGuest().Syntax -->](#isguest)<br/><!-- INCLUDE #SessionClass.isGuest().Summary -->                         |
+| [<!-- INCLUDE #SessionClass.promote().Syntax -->](#promote)<br/><!-- INCLUDE #SessionClass.promote().Summary -->                         |
 | [<!-- INCLUDE #SessionClass.restore().Syntax -->](#restore)<br/><!-- INCLUDE #SessionClass.restore().Summary -->                         |
 | [<!-- INCLUDE #SessionClass.setPrivileges().Syntax -->](#setprivileges)<br/><!-- INCLUDE #SessionClass.setPrivileges().Summary -->       |
 | [<!-- INCLUDE #SessionClass.storage.Syntax -->](#storage)<br/><!-- INCLUDE #SessionClass.storage.Summary -->                             |
@@ -53,9 +54,10 @@ Blog posts about this feature:
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容 |
-| ----- | -- |
-| 18 R6 | 追加 |
+| リリース  | 内容                         |
+| ----- | -------------------------- |
+| 21    | Support of remote sessions |
+| 18 R6 | 追加                         |
 
 </details>
 
@@ -73,17 +75,21 @@ Blog posts about this feature:
 
 :::note
 
-この関数は、リモートクライアント、ストアドプロシージャー、およびスタンドアロンのセッションでは何もせず、常に **true** を返します。
+This function does nothing and always returns **True** with stored procedure sessions and standalone sessions.
 
 :::
 
-`.clearPrivileges()` 関数は、<!-- REF #SessionClass.clearPrivileges().Summary -->対象セッションに紐づいているアクセス権をすべて削除し、実行が成功した場合に **true** を返します<!-- END REF -->。 ["強制ログイン" モード](../REST/authUsers.md#force-login-mode) でない限り、セッションは自動的にゲストセッションとなります。
+`.clearPrivileges()` 関数は、<!-- REF #SessionClass.clearPrivileges().Summary -->対象セッションに紐づいているアクセス権をすべて削除し(昇格した権限を除く)、実行が成功した場合に **true** を返します<!-- END REF -->。
+
+["強制ログイン" モード](../REST/authUsers.md#force-login-mode) でない限り、セッションは自動的にゲストセッションとなります。 "強制ログイン" モードでは、`.clearPrivileges()` はセッションをゲストセッションへと変換するのではなく、セッションの権限を消去するだけです。
 
 :::note
 
-"強制ログイン" モードでは、`.clearPrivileges()` はセッションをゲストセッションへと変換するのではなく、セッションの権限を消去するだけです。
+この関数は [roles.json](../ORDA/privileges.md#rolesjsonファイル) ファイルで追加されたものであれ [`promote()`](#promote) 関数で追加されたものであれ、Web プロセスから**昇格された権限** を削除しません。
 
 :::
+
+Regarding remote client sessions, the function only impacts [code accessing the web server](../WebServer/preemptiveWeb.md#writing-thread-safe-web-server-code).
 
 #### 例題
 
@@ -104,9 +110,10 @@ $isGuest:=Session.isGuest() // $isGuest は true
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容 |
-| ----- | -- |
-| 20 R9 | 追加 |
+| リリース  | 内容                         |
+| ----- | -------------------------- |
+| 21    | Support of remote sessions |
+| 20 R9 | 追加                         |
 
 </details>
 
@@ -117,7 +124,7 @@ $isGuest:=Session.isGuest() // $isGuest は true
 | 引数       | 型       |                             | 説明                                   |
 | -------- | ------- | :-------------------------: | ------------------------------------ |
 | lifespan | Integer |              ->             | セッショントークンの有効期限(秒) |
-| 戻り値      | Text    | <- | セッションのUUID                           |
+| 戻り値      | Text    | <- | UUID of the token                    |
 
 <!-- END REF -->
 
@@ -125,7 +132,7 @@ $isGuest:=Session.isGuest() // $isGuest は true
 
 :::note
 
-この関数は、Webユーザーセッションの場合にのみ使用できます。 他のコンテキストにおいては空の文字列を返します。
+This function is available with web user sessions and remote sessions. It returns an empty string in stored procedure and standalone sessions.
 
 :::
 
@@ -133,9 +140,14 @@ $isGuest:=Session.isGuest() // $isGuest は true
 
 OTP トークンについてのより詳細な情報については、[こちらの章](../WebServer/sessions.md#セッショントークンotp)を参照して下さい。
 
-デフォルトで、*lifespan* 引数が省略された場合、トークンはセッションの[`.idleTimeOut`](#idletimeout) と同じ有効期限を持って作成されます。 *lifespan* 引数に秒単位の値を渡すことで、カスタムのタイムアウトを設定することができます(最小値は10秒間で、それより小さい値が渡された場合には*lifespan* は10にリセットされます)。 Web ユーザーセッションを復元するために失効したトークンを使用した場合、それは無視されます。
+*lifespan* に秒単位の値を渡すことで、カスタムのタイムアウト時間を設定することができます。 If an expired token is used to restore a session, it is ignored. By default, if the *lifespan* parameter is omitted:
 
-返されたトークンは、サードパーティアプリケーションや他のWebサイトとのやり取りで使用することでセッションを安全に特定することができます。 例えば、セッションOTP トークンは支払いアプリケーションなどにおいて使用することができます。
+- with web user sessions, the token is created with the same lifespan as the [`.idleTimeOut`](#idletimeout) of the session.
+- with remote sessions, the token is created with a 10 seconds lifespan.
+
+For **web user sessions**, the returned token can be used in exchanges with third-party applications or websites to securely identify the session. 例えば、セッションOTP トークンは支払いアプリケーションなどにおいて使用することができます。
+
+For **remote sessions**, the returned token can be used on 4D Server to identitfy requests coming from a [remote 4D running Qodly forms in a Web area](../Desktop/clientServer.md#remote-user-sessions).
 
 #### 例題
 
@@ -143,6 +155,69 @@ OTP トークンについてのより詳細な情報については、[こちら
 var $token : Text
 $token := Session.createOTP( 60 ) // トークンは1分間有効
 ```
+
+<!-- END REF -->
+
+<!-- REF SessionClass.demote().Desc -->
+
+## .demote()
+
+<details><summary>履歴</summary>
+
+| リリース   | 内容 |
+| ------ | -- |
+| 20 R10 | 追加 |
+
+</details>
+
+<!-- REF #SessionClass.demote().Syntax -->**.demote**( *promoteId* : Integer )<!-- END REF -->
+
+<!-- REF #SessionClass.demote().Params -->
+
+| 引数        | 型       |     | 説明                     |
+| --------- | ------- | :-: | ---------------------- |
+| promoteId | Integer |  -> | `promote()` 関数から返されたID |
+
+<!-- END REF -->
+
+#### 説明
+
+:::note
+
+この関数はリモートクライアント、ストアドプロシージャー、スタンドアロンのセッションにおいては何もしません。
+
+:::
+
+`.demote()` 関数は<!-- REF #SessionClass.demote().Summary --> *promoteId* 引数に ID を渡した昇格した権限を、Web プロセスから削除します(その権限が [`.promote()`](#promote) 関数を使用して以前追加された場合)<!-- END REF -->。
+
+Web プロセス内において *promoteId* で指定した権限が [`.promote()`](#promote) を使用して昇格したものではなかった場合、この関数は何もしません。
+
+Web プロセスに複数の権限が追加されていた場合、 `demote()` 関数はそれぞれの権限に対して適切な *promoteId* を使用して呼び出す必要があります。 権限はプロセスに対して追加された順番でスタックされているため、スタックを解除する場合にはLIFO (*Last In, First Out*) 順で解除することが推奨されます。
+
+#### 例題
+
+```4d
+exposed Function search($search : Text) : Collection
+	
+	var $employees : Collection
+	var $promoteId1; $promoteId2 : Integer
+	
+	$promoteId1:=Session.promote("admin")
+	$promoteId2:=Session.promote("superAdmin")
+	
+	$search:="@"+$search+"@"
+	
+	$employees:=This.query("type = :1 and lastname = :2"; "Intern"; $search).toCollection()
+	
+	Session.demote($promoteId2)
+	Session.demote($promoteId1)
+	
+	return $employees
+```
+
+#### 参照
+
+[`.promote()`](#promote)
 
 <!-- END REF -->
 
@@ -187,9 +262,10 @@ $expiration:=Session.expirationDate // 例: "2021-11-05T17:10:42Z"
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容 |
-| ----- | -- |
-| 20 R6 | 追加 |
+| リリース  | 内容                                |
+| ----- | --------------------------------- |
+| 21    | Support of remote client sessions |
+| 20 R6 | 追加                                |
 
 </details>
 
@@ -207,13 +283,15 @@ $expiration:=Session.expirationDate // 例: "2021-11-05T17:10:42Z"
 
 `.getPrivileges()` 関数は、<!-- REF #SessionClass.getPrivileges().Summary -->対象セッションに紐づいている全アクセス権の名称のコレクションを返します<!-- END REF -->。
 
-リモートクライアント、ストアドプロシージャーおよびスタンドアロンセッションでは、この関数は "WebAdmin" のみを含むコレクションを返します。
+:::note
 
-:::info
-
-権限は、[`setPrivileges()`](#setprivileges) 関数によって、セッションに割り当てられます。
+この関数は、 [`setPrivileges()`](#setprivileges) 関数を使用してセッションに割り当てられた権限を返します。 昇格した権限は、[roles.json](../ORDA/privileges.md#rolesjson-file) ファイルで追加されたか [`promote()`](#promote) 関数で追加されたかに関わらず、この関数によっては返されません。
 
 :::
+
+With remote client sessions, the privileges only concerns the code executed in the context of a [web request sent through a Web area](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas).
+
+With stored procedure sessions and standalone sessions, this function returns a collection only containing "WebAdmin".
 
 #### 例題
 
@@ -282,9 +360,10 @@ $privileges := Session.getPrivileges()
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容 |
-| ----- | -- |
-| 18 R6 | 追加 |
+| リリース  | 内容                                                                      |
+| ----- | ----------------------------------------------------------------------- |
+| 21    | Returns True for promoted privileges, Support of remote client sessions |
+| 18 R6 | 追加                                                                      |
 
 </details>
 
@@ -303,7 +382,15 @@ $privileges := Session.getPrivileges()
 
 `.hasPrivilege()` 関数は、<!-- REF #SessionClass.hasPrivilege().Summary -->対象セッションに *privilege* のアクセス権が紐づいていれば true、でなければ false を返します<!-- END REF -->。
 
-リモートクライアント、ストアドプロシージャーおよびスタンドアロンセッションでは、この関数は *privilege* に関係なく、常に True を返します。
+:::note
+
+この関数は、 *privilege* 引数で指定した権限が、その権限にのために([roles.json](../ORDA/privileges.md#rolesjson-file) ファイルまたは [`promote()`](#promote) 関数を通して)昇格された関数から呼び出された場合には、True を返します。
+
+:::
+
+Regarding remote client sessions, the function only impacts [code accessing the web server](../WebServer/preemptiveWeb.md#writing-thread-safe-web-server-code).
+
+With stored procedure sessions and standalone sessions, this function always returns True, whatever the *privilege*.
 
 #### 例題
 
@@ -319,7 +406,7 @@ End if
 
 #### 参照
 
-[*Blog posts about this feature*](https://blog.4d.com/?s=hasPrivilege)
+[*この機能に関連するBlog 記事*](https://blog.4d.com/?s=hasPrivilege)
 
 <!-- END REF -->
 
@@ -495,6 +582,85 @@ End if
 
 <!-- END REF -->
 
+<!-- REF SessionClass.promote().Desc -->
+
+## .promote()
+
+<details><summary>履歴</summary>
+
+| リリース   | 内容 |
+| ------ | -- |
+| 20 R10 | 追加 |
+
+</details>
+
+<!-- REF #SessionClass.promote().Syntax -->**.promote**( *privilege* : Text ) : Integer<!-- END REF -->
+
+<!-- REF #SessionClass.promote().Params -->
+
+| 引数        | 型       |                             | 説明                                             |
+| --------- | ------- | :-------------------------: | ---------------------------------------------- |
+| privilege | Text    |              ->             | アクセス権の名称                                       |
+| 戻り値       | Integer | <- | [`demote()`](#demote) function関数を呼び出す際に使用する ID |
+
+<!-- END REF -->
+
+#### 説明
+
+:::note
+
+この関数はリモートクライアント、ストアドプロシージャー、スタンドアロンのセッションにおいては何もしません。
+
+:::
+
+`.promote()` 関数は、<!-- REF #SessionClass.promote().Summary -->*privilege* 引数で定義された権限を、呼び出し関数の実行中にカレントプロセスに追加し、昇格した権限の ID を返します<!-- END REF -->。
+
+権限を動的に付与することは、アクセス権が実行コンテキストに依存する場合には有用です。この場合 "roles.json" ファイルだけでは完全に定義しきることはできないからです。 これは、異なるアクセスレベルのユーザーによって同じ関数が実行され得る場合に関連します。 `.promote()` を使用することで、他のプロセスに影響することなく、カレントプロセスにのみ必要な権限が与えられるようにすることができます。
+
+この関数は、以下の場合には何もせずに 0 を返します:
+
+- [`roles.json`](../ORDA/privileges.md#rolesjson-file) ファイル内に *privilege* 引数で指定した権限が存在しない場合
+- *privilege* が既に(`.promote()` を使用するか、あるいは [`roles.json`](../ORDA/privileges.md#rolesjsonファイル) ファイル内で呼び出し関数に対して宣言されている静的な[昇格アクション](../ORDA/privileges.md#permission-actions) を通して)カレントプロセスに対して割り当てられている場合。
+
+`promote()` 関数を同じプロセスに対して複数回呼び出すことで、異なる権限を追加することができます。
+
+権限がプロセスに対して動的に追加されるたびに、返されるID はインクリメントされます。
+
+権限を動的に削除するためには、適切なID で `demote()` 関数を呼び出してください。
+
+#### 例題
+
+複数のユーザーが、異なるアプリケーションとして振る舞う単一のエンドポイントに接続する場合を考えます。 #1 のアプリケーションからのユーザーは、"VerySensitiveInfo" を作成しないため、 "super_admin" 権限を必要としません。 一方で#2 のアプリケーションからのユーザーは "super_admin" 権限を必要とします。
+
+この場合、*CreateInfo* 関数内において、適切な権限を動的に適用することができます:
+
+```4d
+exposed Function createInfo($info1 : Text; $info2 : Text)
+	
+var $sensitive : cs.SensitiveInfoEntity
+var $verySensitiveInfo : cs.VerySensitiveInfoEntity
+var $status : Object
+var $promoteId : Integer
+	
+$sensitive:=ds.SensitiveInfo.new()
+$sensitive.info:=$info1
+$status:=$sensitive.save()
+	
+If (Session.storage.role.name="userApp2")
+	$promoteId:=Session.promote("super_admin")
+	$verySensitiveInfo:=ds.VerySensitiveInfo.new()
+	$verySensitiveInfo.info:=$info2
+	$status:=$verySensitiveInfo.save()
+	Session.demote($promoteId)
+End if 
+```
+
+#### 参照
+
+[`.demote()`](#demote)<br/>[`hasPrivilege()`](#hasprivilege)
+
+<!-- END REF -->
+
 <!-- REF SessionClass.restore().Desc -->
 
 ## .restore()
@@ -562,10 +728,11 @@ Function callback($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容               |
-| ----- | ---------------- |
-| 19 R8 | roles プロパティをサポート |
-| 18 R6 | 追加               |
+| リリース  | 内容                                |
+| ----- | --------------------------------- |
+| 21    | Support of remote client sessions |
+| 19 R8 | roles プロパティをサポート                  |
+| 18 R6 | 追加                                |
 
 </details>
 
@@ -586,23 +753,21 @@ Function callback($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 
 :::note
 
-この関数は、リモートクライアント、ストアドプロシージャー、およびスタンドアロンのセッションでは何もせず、常に **false** を返します。
+This function does nothing and always returns **False** with stored procedure sessions and standalone sessions.
 
 :::
 
 `.setPrivileges()` 関数は、<!-- REF #SessionClass.setPrivileges().Summary -->引数として渡したアクセス権やロールをセッションと紐づけ、実行が成功した場合に **true** を返します<!-- END REF -->。
 
 - *privilege* には、アクセス権の名称を文字列として渡します (複数の場合はカンマ区切り)。
-
 - *privileges* には、アクセス権の名称を文字列のコレクションとして渡します。
-
 - *settings* には、以下のプロパティを持つオブジェクトを渡します:
 
-| プロパティ      | 型                   | 説明                                        |
-| ---------- | ------------------- | ----------------------------------------- |
-| privileges | Text または Collection | <li>アクセス権名の文字列</li><li>アクセス権名のコレクション</li> |
-| roles      | Text または Collection | <li>ロールの文字列</li><li>ロールの文字列のコレクション</li>   |
-| userName   | Text                | (任意) セッションと紐づけるユーザー名   |
+| プロパティ      | 型                   | 説明                                                                                                                                                                                            |
+| ---------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| privileges | Text または Collection | <li>アクセス権名の文字列</li><li>アクセス権名のコレクション</li>                                                                                                                                                     |
+| roles      | Text または Collection | <li>ロールの文字列</li><li>ロールの文字列のコレクション</li>                                                                                                                                                       |
+| userName   | Text                | User name to associate to the session (optional, web sessions only). Not available in remote client sessions (ignored). |
 
 :::note
 
@@ -615,6 +780,8 @@ Function callback($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 セッションにアクセス権またはロールが紐づいていない場合、そのセッションはデフォルトで [ゲストセッション](#isguest) です。
 
 [`userName`](#username) プロパティは Session オブジェクトレベルで利用可能です (読み取り専用)。
+
+Regarding remote client sessions, the function only concerns the code executed in the context of a [web request sent through a Web area](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas).
 
 #### 例題
 

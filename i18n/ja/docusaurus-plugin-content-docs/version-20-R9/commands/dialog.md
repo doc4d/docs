@@ -19,7 +19,7 @@ displayed_sidebar: docs
 
 ## 説明
 
-<!--REF #_command_.DIALOG.Summary-->The **DIALOG** command presents the *form* to the user, along with *formData* parameter(s) (optional).<!-- END REF--> 
+<!--REF #_command_.DIALOG.Summary-->**DIALOG** コマンドはユーザーに対して*form* 引数で指定したフォームを、*formData* 引数(オプション)とともに表示します。<!-- END REF--> 
 
 このコマンドは、フォームを基にした、カスタマイズされた高度なユーザーインターフェースで動作するように設計されています。 これを使用してデータベースや他の場所からの情報を表示したり、あるいはデータ入力機能を提供することができます。 [ADD RECORD](../commands-legacy/add-record.md) や [MODIFY RECORD](../commands-legacy/modify-record.md) とは異なり、**DIALOG** コマンドは、フォームとそのコンテンツ、内容、評価ボタンなどに対して、完全にコントロールすることができます。
 
@@ -60,7 +60,7 @@ displayed_sidebar: docs
 ただし、評価することは保存と同等ではないという点に注意して下さい。
 ダイアログにフィールドが含まれる場合、変更されたデータを保存するためには[SAVE RECORD](../commands-legacy/save-record.md) コマンドを明示的に呼び出さなければいけません。
 
-オプションの\*\*\* 引数を渡すと、フォームはカレントプロセスで最後に開かれたウィンドウにロードされ、フォームをスクリーン上でアクティブにしたままこのコマンドは実行を終了します。\
+オプションの\*\*\* 引数を渡すと、フォームはカレントプロセスで最後に開かれたウィンドウにロードされ、フォームをスクリーン上でアクティブにしたままこのコマンドは実行を終了します。  
 このフォームはユーザーアクションに対し通常通り反応し、標準アクションまたはフォームに関連する4Dコード (オブジェクトメソッドやフォームメソッド) が [CANCEL](../commands-legacy/cancel.md) や [ACCEPT](../commands-legacy/accept.md) コマンドを呼び出すと閉じられます。 カレントプロセスが終了すると、この方法で作成されたフォームは、[CANCEL](../commands-legacy/cancel.md) コマンドが呼ばれたかのように自動で閉じられます。 この開き方では別にプロセスを開始する必要がないため、ドキュメントと一緒にフローティングパレットを表示するなどの場合に便利です。
 
 **注:**

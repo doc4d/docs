@@ -7,10 +7,10 @@ La classe `TCPEvent` fournit des informations sur les événements survenant au 
 
 <details><summary>Historique</summary>
 
-| Release | Modifications                       |
-| ------- | ----------------------------------- |
-| 20 R9   | New `address` and `port` attributes |
-| 20 R8   | Classe ajoutée                      |
+| Release | Modifications                          |
+| ------- | -------------------------------------- |
+| 20 R9   | Nouveaux attributs `address` et `port` |
+| 20 R8   | Classe ajoutée                         |
 
 </details>
 
@@ -29,13 +29,13 @@ Les propriétés suivantes sont disponibles :
 
 <!-- REF TCPEvent.address.Desc -->
 
-## .adresse
+## .address
 
 <!-- REF #TCPEvent.address.Syntax -->**address** : Text<!-- END REF -->
 
 #### Description
 
-The `.address` property contains <!-- REF #TCPEvent.address.Summary -->the IP address of the remote machine<!-- END REF -->.
+La propriété `.address` contient <!-- REF #TCPEvent.address.Summary -->l'adresse IP de la machine distante<!-- END REF -->.
 
 <!-- END REF -->
 

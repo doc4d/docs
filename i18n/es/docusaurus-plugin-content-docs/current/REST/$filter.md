@@ -27,9 +27,9 @@ Por ejemplo: `$filter="firstName=john AND salary>20000"` donde `firstName` y `sa
 
 ### Utilizar la propiedad params
 
-También puede utilizar la propiedad params de 4D.
+You can also use 4D's `params` property which is a collection of values.
 
-**\{attribute\} {comparator} {placeholder} {AND/OR/EXCEPT} \{attribute\} {comparator} {placeholder}&$params='["{value1}","{value2}"]"'**
+**\{attribute\} {comparator} {placeholder} {AND/OR/EXCEPT} \{attribute\} {comparator} {placeholder}&$params='["{value1}","{value2}"]'**
 
 Por ejemplo: `$filter="firstName=:1 AND salary>:2"&$params='["john",20000]'` donde firstName y salary son los atributos de la clase de datos Employee.
 
@@ -40,7 +40,7 @@ Para más información sobre cómo consultar datos en 4D, consulte la documentac
 > <li>Comillas ('): \u0027</li>
 > <li>Comillas dobles ("): \u0022</li>
 >
-> Por ejemplo, puede escribir lo siguiente al pasar un valor con comillas cuando utilice la propiedad \*params\
+> Por ejemplo, puede escribir lo siguiente al pasar un valor con comillas cuando utilice la propiedad \*params  
 > `http://127.0.0.1:8081/rest/Person/?$filter="lastName=:1"&$params='["O\u0027Reilly"]'`
 >
 > Si pasa el valor directamente, puede escribir lo siguiente:
@@ -78,6 +78,33 @@ El comparador debe ser uno de los siguientes valores:
 | <= | menor o igual que |
 | begin                       | comienza con      |
 
+## Vector similarity
+
+If the attribute stores [**vector objects**](../API/VectorClass.md) (see how to [configure a 4D field to only store 4D.Vector class objects](../Develop/field-properties.md#class)), you can filter the dataclass using **vectors**, aka **embeddings**.
+
+For more information about vector similarity searches, please refer to [Query by vector similarity](../API/DataClassClass.md#query-by-vector-similarity) section.
+
+Use the `params` property to provide the filter with the vector comparison parameter, using a syntax like:
+
+**\{vectorAttribute\} \{comparator\} \{placeholder\}&$params=vectorComparison**
+
+The *vectorComparison* parameter is a collection of the following elements:
+
+| Propiedad                                                                     | Tipo                                                                             | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [].vector | Colección de objetos)                                                            | Obligatorio. Una colección que representa el vector a comparar                                                                                                                                                                                                                                                                                                                                                                                                                                                            |                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| [].metric | Text                                                                             | Opcional. [Cálculo vectorial](../API/VectorClass.md#understanding-the-different-vector-computations) a utilizar para la consulta. Supported values:<li>"cosine" (default if omitted): calculates the cosine distance between vectors.</li><li>"dot": calculates the dot similarity of vectors.</li><li>"euclidean": calculates the Euclidean distance between vectors. |                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|                                                                               | [].threshold | Real                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Opcional (por defecto: 0,5). Un valor umbral utilizado para filtrar las comparaciones de vectores en función de su puntuación de similitud coseno, punto o euclídea según la "métrica" seleccionada. Es altamente recomendable elegir una similitud que se adapte mejor a su caso de uso específico para obtener resultados óptimos. |
+
+Only a subset of **comparator** symbols are supported with vector comparisons. Tenga en cuenta que comparan los resultados con el valor umbral:
+
+| Comparador        | Símbolo(s) | Comentario                  |
+| ----------------- | ----------------------------- | --------------------------- |
+| Menor que         | <    | Inferior al umbral          |
+| Mayor que         | >                             | Superior al umbral          |
+| Menor o igual que | <=   | Inferior o igual al umbral  |
+| Mayor o igual que | > =                           | Mayor o igual que el umbral |
+
 ## Ejemplos
 
 En el siguiente ejemplo, buscamos a todos los empleados cuyo apellido empieza por "j":
@@ -97,4 +124,10 @@ En este ejemplo, buscamos en la clase de datos Person todas las personas cuya pr
 
 ```
  GET  /rest/Person/?filter="anotherobj.mynum > 50"
+```
+
+In this example, we do a vector search with basic values:
+
+```
+ GET  /rest/Person/?filter="VectorAtt>=:1"&$params='[{vector:[1,2,3],threshold:1}]'
 ```

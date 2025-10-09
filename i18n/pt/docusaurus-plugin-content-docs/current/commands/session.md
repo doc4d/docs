@@ -57,6 +57,7 @@ O objeto `Session` das sessões remotas de clientes está disponível em:
 
 - Métodos de projeto que têm o atributo [Execute on Server](../Project/code-overview.md#execute-on-server) (são executados no processo "geminado" do processo do cliente),
 - Triggers,
+- ORDA [funções do modelo de dados](../ORDA/ordaClasses.md) (exceto aquelas declaradas com a palavra-chave [`local`](../ORDA/ordaClasses.md#local-functions),
 - 'Conexão aberta com o servidor' e 'Conexão com o servidor' métodos de banco de dados.
 
 Para mais informações em sessões usuários remotos, consulte o parágrafo [**Sessões usuário cliente remoto**](../Desktop/clientServer.md#remote-user-sessions).
@@ -98,12 +99,10 @@ IP:port/4DACTION/action_Session
 
 ## Veja também
 
-[Session storage](session-storage.md)\
-[Session API](../API/SessionClass.md)\
-[Web server user sessions](../WebServer/sessions.md)
+[Session storage](session-storage.md)  
+[Session API](../API/SessionClass.md)  
+[Web server user sessions](../WebServer/sessions.md)  
 [*Scalable sessions for advanced web applications* (blog post)](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/)
-
-- [*Permissions: Inspect Session Privileges for Easy Debugging* (blog post)](https://blog.4d.com/permissions-inspect-session-privileges-for-easy-debugging/)
 
 ## Propriedades
 

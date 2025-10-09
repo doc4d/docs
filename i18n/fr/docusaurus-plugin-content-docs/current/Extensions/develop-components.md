@@ -3,6 +3,8 @@ id: develop-components
 title: Développement de composants
 ---
 
+## Composants
+
 Un composant 4D est un ensemble de fonctions, méthodes et de formulaires 4D représentant une ou plusieurs fonctionnalité(s) qu’il est possible [d’installer et d'utiliser dans des applications 4D](Concepts/components.md). Par exemple, vous pouvez développer un composant 4D de courrier électronique gérant tous les aspects de l’envoi, la réception et le stockage d’emails au sein des applications 4D.
 
 Vous pouvez développer des composants 4D pour vos propres besoins et les garder privés. Nous vous encourageons à soutenir la communauté des développeurs 4D en partageant vos composants, de préférence sur la [plateforme GitHub](https://github.com/topics/4d-component).
@@ -13,11 +15,17 @@ Vous pouvez développer des composants 4D pour vos propres besoins et les garder
 - **Projet hôte :** projet dans lequel un composant est installé et utilisé.
 - **Composant** : Projet de matrice qui peut être compilé et [construit](Desktop/building.md#build-component), [installé dans l'application hôte](../Project/components.md) et dont le contenu est utilisé dans l'application hôte.
 
+:::note
+
+You can [create a component directly from the host](#creating-components) project without needing to go through a separate matrix project
+
+:::
+
 ## Principes de base
 
 La création et l’installation des composants 4D s’effectuent directement depuis 4D :
 
-- Pour utiliser un composant, il suffit de [l'installer dans votre application](../Project/components.md).
+- Pour utiliser un composant, il suffit de [l'installer dans votre application](../Project/components.md). You can also create a new component directly from the host, in which case it is immediately usable.
 - Un projet peut être à la fois "matrice" et "hôte", c'est-à-dire qu'un projet utilisé comme matrice peut lui-même utiliser un ou plusieurs composants. En revanche, un composant ne peut pas lui-même utiliser de "sous-composants".
 - Un composant peut faire appel à la plupart des éléments 4D : datastore ([`ds`](../commands/ds.md)), classes, fonctions, méthodes projet, formulaires projet, barres de menu, énumérations, etc. Les méthodes base de données suivantes peuvent être utilisées : [On Web Connection](../commands-legacy/on-web-connection-database-method.md), [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md), [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md).
 - Un composant peut créer et/ou utiliser des tables, des champs et des fichiers de données en utilisant des mécanismes de bases de données externes. Les bases externes sont des bases 4D indépendantes manipulées via les commandes SQL.
@@ -25,9 +33,86 @@ La création et l’installation des composants 4D s’effectuent directement de
 
 :::note
 
-Le code d'un composant interprété peut être [modifié directement à partir du projet hôte](#editing-components-from-the-host) si le contexte est pris en charge.
+Le code d'un composant interprété peut être [modifié directement à partir du projet hôte](#editing-components) si le contexte est pris en charge.
 
 :::
+
+## Creating and editing components from the host
+
+In interpreted mode, the 4D IDE allows you to create and edit components directly from the host project. It facilitates component development and tuning in the actual context of a host project without having to leave or restart it.
+
+### Creating components
+
+You can create a new component directly from the host project:
+
+- by using the **File > New > Component...** option from the File menu,
+- or by clicking the **New > Component...** button in the toolbar.
+
+This action opens a folder selection dialog where you choose where [the component package](../Project/components.md#package-folder) will be stored.
+
+- Default location: The first time you create a component, 4D suggests the **Components** folder inside the [project package](../Project/architecture.md#components). After that, your used last folder will be automatically remembered and preselected.
+- If you decide to store the component **next to the project package**, 4D adds it to the [`dependencies.json`](../Project/components.md#dependenciesjson) file.
+- If you decide to store the component **elsewhere**, 4D adds it to the [`dependencies.json`](../Project/components.md#dependenciesjson) file and its path is added to the [`environment4d.json`](../Project/components.md#environment4djson) file, using either a [relative or an absolute path](../Project/components.md#relative-paths-vs-absolute-paths). A relative path is used if the component is located within no more than two levels above as the `environment4d.json` file, or in its subfolders. Otherwise, an absolute path is used.
+
+:::note
+
+You cannot store a component **in the project package** but **outside the Components folder**.
+
+:::
+
+Once created, the component is immediately added to the project, accessible in the [Project dependencies](../Project/components.md#monitoring-project-dependencies) window, and available for editing.
+
+### Editing components
+
+You can edit a component code as long as the following conditions are met:
+
+- le projet hôte est exécuté en interprété,
+- le composant a été [chargé en mode interprété](../Project/components.md#interpreted-and-compiled-components) et le code source est disponible,
+- les fichiers des composants sont stockés localement (c'est-à-dire qu'ils ne sont pas [téléchargés depuis GitHub](../Project/components.md#adding-a-github-dependency)).
+
+Dans ce contexte, vous pouvez ouvrir, modifier et sauvegarder le code de vos composants dans l'éditeur de code du projet hôte à partir de deux endroits :
+
+- dans la section Méthodes composants de l'Explorateur (code partagé uniquement)
+- dans un onglet dédié au composant (tout le code)
+
+#### Modification du code partagé des composants
+
+Les [classes exposées](#sharing-of-classes) et les [méthodes partagées](#sharing-of-project-methods) de vos composants peuvent être modifiées à partir de l'onglet **Méthodes composant** de l'Explorateur.
+
+Une icône spécifique indique que le composant contient du code partagé) :<br/>
+![](../assets/en/Develop/editable-component.png)
+
+Sélectionnez **Modifier...** pour ouvrir le code de votre composant dans l'éditeur de code. Vous pouvez le modifier et le sauvegarder.
+
+#### Modification de la totalité du code des composants
+
+Vous pouvez modifier directement tout le code d'un composant chargé depuis le projet hôte dans un onglet dédié au composant, y compris les méthodes ou les classes qui ne sont pas partagées.
+
+L'option **Modifier...** est disponible lorsque vous cliquez avec le bouton droit de la souris sur le nom du composant dans l'onglet **Méthodes composant** de l'Explorateur.
+
+![edit-component](../assets/en/Project/Edit-component.png)
+
+Lorsque vous la sélectionnez, un onglet dédié est ajouté (ou activé s'il est déjà ajouté) dans l'explorateur. Dans cet onglet, les pages standard suivantes sont disponibles et donnent accès au contenu des composants :
+
+![tab-component](../assets/en/Project/tab-component.png)
+
+- Démarrage, y compris les dossiers, les méthodes, les classes et (en prévisualisation uniquement) les formulaires
+- Méthodes projet
+- Méthodes base ([On Web Connection](../commands-legacy/on-web-connection-database-method.md), [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md), [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md))
+- Classes
+- Méthodes formulaire projet
+- Commandes et constantes
+- Plug-ins
+- Trash
+
+![tab-component](../assets/en/Project/tab-component.gif)
+
+Les fonctionnalités standard de l'IDE 4D sont disponibles pour le composant. Vous pouvez exécuter les actions suivantes :
+
+- ajouter, dupliquer, supprimer, modifier/sauvegarder les [méthodes et classes](../Project/code-overview.md)
+- prévisualiser le code, afficher/modifier la [documentation](../Project/documentation.md), afficher/modifier les [propriétés des méthodes](../Project/code-overview.md#project-method-properties),
+- exécuter des méthodes,
+- restaurer à partir de la corbeille ou vider la corbeille.
 
 ## Portée des commandes du langage
 
@@ -95,7 +180,7 @@ component_method("host_method_name")
 EXECUTE METHOD($param)
 ```
 
-> Vous pouvez compiler ou effectuer une vérification syntaxique dans une base hôte interprétée qui contient des composants interprétés si elle n'appelle pas de méthodes du composant interprété. Dans le cas contraire, une boîte de dialogue d'avertissement apparaît lorsque vous tentez de lancer la compilation ou un contrôle syntaxique et il n'est pas possible d'effectuer l'opération.\
+> Vous pouvez compiler ou effectuer une vérification syntaxique dans une base hôte interprétée qui contient des composants interprétés si elle n'appelle pas de méthodes du composant interprété. Dans le cas contraire, une boîte de dialogue d'avertissement apparaît lorsque vous tentez de lancer la compilation ou un contrôle syntaxique et il n'est pas possible d'effectuer l'opération.  
 > N'oubliez pas qu'une méthode interprétée peut appeler une méthode compilée, mais pas l'inverse, sauf via l'utilisation des commandes `EXECUTE METHOD` et `EXECUTE FORMULA`.
 
 ## Partage des classes
@@ -146,60 +231,6 @@ $rect:=cs.eGeometry._Rectangle.new(10;20)
 ```
 
 > Les fonctions non cachées à l'intérieur d'une classe cachée apparaissent comme des suggestions lorsque vous utilisez la complétion de code avec une classe qui en [hérite](../Concepts/classes.md#inheritance). Par exemple, si un composant possède une classe `Teacher` qui hérite d'une classe `_Person`, la complétion de code pour `Teacher` suggère des fonctions non cachées de `_Person`.
-
-## Modification des composants à partir de l'hôte
-
-Pour faciliter la mise au point des composants dans le contexte réel des projets hôtes, vous pouvez modifier et sauvegarder directement le code d'un composant chargé à l'aide de l'IDE 4D depuis un projet hôte interprété. Les modifications peuvent être immédiatement testées dans le projet, sans avoir à le redémarrer.
-
-Le code du composant est modifiable lorsque les conditions suivantes sont remplies :
-
-- le projet hôte est exécuté en interprété,
-- le composant a été [chargé en mode interprété](../Project/components.md#interpreted-and-compiled-components) et le code source est disponible,
-- les fichiers des composants sont stockés localement (c'est-à-dire qu'ils ne sont pas [téléchargés depuis GitHub](../Project/components.md#adding-a-github-dependency).
-
-Dans ce contexte, vous pouvez ouvrir, modifier et sauvegarder le code de vos composants dans l'éditeur de code du projet hôte à partir de deux endroits :
-
-- dans la section Méthodes composants de l'Explorateur (code partagé uniquement)
-- dans un onglet dédié au composant (tout le code)
-
-### Modification du code partagé des composants
-
-Les [classes exposées](#sharing-of-classes) et les [méthodes partagées](#sharing-of-project-methods) de vos composants peuvent être modifiées à partir de l'onglet **Méthodes composant** de l'Explorateur.
-
-Une icône spécifique indique que le composant contient du code partagé) :<br/>
-![](../assets/en/Develop/editable-component.png)
-
-Sélectionnez **Modifier...** pour ouvrir le code de votre composant dans l'éditeur de code. Vous pouvez le modifier et le sauvegarder.
-
-### Modification de la totalité du code des composants
-
-Vous pouvez modifier directement tout le code d'un composant chargé depuis le projet hôte dans un onglet dédié au composant, y compris les méthodes ou les classes qui ne sont pas partagées.
-
-L'option **Modifier...** est disponible lorsque vous cliquez avec le bouton droit de la souris sur le nom du composant dans l'onglet **Méthodes composant** de l'Explorateur.
-
-![edit-component](../assets/en/Project/Edit-component.png)
-
-Lorsque vous la sélectionnez, un onglet dédié est ajouté (ou activé s'il est déjà ajouté) dans l'explorateur. Dans cet onglet, les pages standard suivantes sont disponibles et donnent accès au contenu des composants :
-
-![tab-component](../assets/en/Project/tab-component.png)
-
-- Démarrage, y compris les dossiers, les méthodes, les classes et (en prévisualisation uniquement) les formulaires
-- Méthodes projet
-- Méthodes base ([On Web Connection](../commands-legacy/on-web-connection-database-method.md), [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md), [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md))
-- Classes
-- Méthodes formulaire projet
-- Commandes et constantes
-- Plug-ins
-- Trash
-
-![tab-component](../assets/en/Project/tab-component.gif)
-
-Les fonctionnalités standard de l'IDE 4D sont disponibles pour le composant. Vous pouvez exécuter les actions suivantes :
-
-- ajouter, dupliquer, supprimer, modifier/sauvegarder les [méthodes et classes](../Project/code-overview.md)
-- prévisualiser le code, afficher/modifier la [documentation](../Project/documentation.md), afficher/modifier les [propriétés des méthodes](../Project/code-overview.md#project-method-properties),
-- exécuter des méthodes,
-- restaurer à partir de la corbeille ou vider la corbeille.
 
 ## Complétion de code pour les composants compilés
 
@@ -277,7 +308,9 @@ Dans ce cas, il est nécessaire d’utiliser la comparaison de pointeurs :
 
 ## Gestion des erreurs
 
-Une [méthode de gestion d'erreurs](Concepts/error-handling.md) installée par la commande `ON ERR CALL` s'applique à l'application en cours d'exécution uniquement. En cas d'erreur générée par un composant, la méthode d'appel sur erreur `ON ERR CALL` du projet hôte n'est pas appelée, et inversement.
+An [error-handling method](Concepts/error-handling.md) installed by the [`ON ERR CALL`](../commands-legacy/on-err-call.md) command only applies to the running application. En cas d'erreur générée par un composant, la méthode d'appel sur erreur `ON ERR CALL` du projet hôte n'est pas appelée, et inversement.
+
+However, you can install a [component error handler in the host application](../Concepts/error-handling.md#scope-and-components) to manage uncaught errors from compponents.
 
 ## Accès aux tables du projet hôte
 
@@ -309,7 +342,7 @@ SAVE RECORD($tablepointer-
 
 Un composant ne peut pas utiliser les tables et les champs définis dans la structure 4D du projet utilisé comme matrice. En revanche, il peut créer et utiliser des bases externes, et donc utiliser des tables et des champs en fonction de ses besoins. Les bases externes sont créées et gérées via le langage SQL. En revanche, il peut créer et utiliser des bases externes, et donc utiliser des tables et des champs en fonction de ses besoins. Utiliser une base externe signifie désigner temporairement cette base comme base courante, c’est-à-dire comme base cible des requêtes SQL exécutées par 4D. Les bases externes sont créées à l'aide de la commande SQL `CREATE DATABASE`.
 
-### Exemple
+#### Exemple
 
 Le code suivant est inclus dans un composant et effectue trois actions élémentaires avec une base de données externe :
 
@@ -477,3 +510,4 @@ Pour assurer la protection du code d'un composant, [compilez et générerez](Des
 ## Partager vos composants sur GitHub
 
 Vous pouvez également [partager vos composants avec la communauté 4D](https://github.com/topics/4d-component). Afin d'être correctement référencé, nous vous recommandons d'utiliser le "topic" **`4d-component`**.
+

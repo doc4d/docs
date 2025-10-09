@@ -1,6 +1,6 @@
 ---
 id: architecture
-title: Architecture of a project
+title: Architecture
 ---
 
 A 4D project is made of several folders and files, stored within a project root folder (package folder). For example:
@@ -60,12 +60,13 @@ catalog_editor.json|Custom positions and colors of tables, fields, and links in 
 folders.json|Explorer folder definitions|JSON
 menus.json|Menu definitions|JSON
 roles.json|[Privileges, permissions](../ORDA/privileges.md#rolesjson-file) and other security settings for the project|JSON
-settings.4DSettings|*Structure* database settings. They are not taken into account if *[user settings](#settings-user)* or *[user settings for data](#settings-user-data)* are defined (see also [Priority of settings](../Desktop/user-settings.md#priority-of-settings). **Warning**: In compiled applications, structure settings are stored in the .4dz file (read-only). For deployment needs, it is necessary to [enable](../Desktop/user-settings.md#enabling-user-settings) and use *user settings* or *user settings for data* to define custom settings.|XML
+settings.4DSettings|*Structure* database settings. They are not taken into account if *[user settings](#settings-user)* or *[user settings for data](#settings-user-data)* are defined (see also [Priority of settings](../settings/overview.md#user-settings#priority-of-settings). **Warning**: In compiled applications, structure settings are stored in the .4dz file (read-only). For deployment needs, it is necessary to [enable](../settings/overview.md#user-settings#enabling-user-settings) and use *user settings* or *user settings for data* to define custom settings.|XML
 tips.json|Defined tips|JSON
 lists.json|Defined lists|JSON
 filters.json|Defined filters|JSON
 dependencies.json|Names of [components to load](components.md) in the project|JSON|
 HTTPHandlers.json|Custom [HTTP request handlers](../WebServer/http-request-handler.md) defined for the web server|JSON|
+HTTPRules.json|Custom [HTTP response headers](../WebServer/http-responses.md) defined for the web server|JSON|
 styleSheets.css|CSS style sheets|CSS
 styleSheets_mac.css|Mac css style sheets (from converted binary database)|CSS    
 styleSheets_windows.css|Windows css style sheets (from converted binary database)|CSS    
@@ -170,9 +171,9 @@ data.match|(internal) UUID matching table number|XML
 
 ### `Settings` (user data)
 
-This folder contains [**user settings for data**](../Desktop/user-settings.md#user-settings-for-data-file) used for application administration.
+This folder contains [**user settings for data**](../settings/overview.md#user-settings#user-settings-for-data-file) used for application administration.
 
-> These settings take priority over [user settings](#settings-user) and [structure settings](#sources). See also [Priority of settings](../Desktop/user-settings.md#priority-of-settings).
+> These settings take priority over [user settings](#settings-user) and [structure settings](#sources). See also [Priority of settings](../settings/overview.md#user-settings#priority-of-settings).
 
 |Contents|Description|Format|
 |----|----|---|
@@ -195,9 +196,9 @@ The Logs folder contains all log files used by the project. Log files include, i
 
 ## `Settings` (user)
 
-This folder contains [**user settings**](../Desktop/user-settings.md#user-settings) used for application administration.
+This folder contains [**user settings**](../settings/overview.md#user-settings#user-settings) used for application administration.
 
-> These settings take priority over [structure settings](#sources) file. However, if [user settings for data](#settings-user-data) exist, they take priority over the user settings. See also [Priority of settings](../Desktop/user-settings.md#priority-of-settings).
+> These settings take priority over [structure settings](#sources) file. However, if [user settings for data](#settings-user-data) exist, they take priority over the user settings. See also [Priority of settings](../settings/overview.md#user-settings#priority-of-settings).
 
 |Contents|Description|Format|
 |----|----|---|

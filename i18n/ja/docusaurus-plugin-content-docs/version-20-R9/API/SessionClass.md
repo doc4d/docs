@@ -5,9 +5,9 @@ title: Session
 
 Session オブジェクトは [`Session`](../commands/session.md) コマンドによって返されます。  このオブジェクトは、カレントユーザーセッションを管理するためのインターフェースをデベロッパーに対して提供し、コンテキストデータの保存、プロセス間の情報共有、セッションに関連したプリエンプティブプロセスの開始などのアクションの実行や、[アクセス権](../ORDA/privileges.md) の管理を可能にします。
 
-:::info To learn more
+:::info 詳細はこちら
 
-Blog posts about this feature:
+この機能に関するBlog 記事:
 
 - [高度な Webアプリケーションに対応したスケーラブルセッション](https://blog.4d.com/ja/scalable-sessions-for-advanced-web-applications/)
 - [Permissions: Inspect Session Privileges for Easy Debugging](https://blog.4d.com/permissions-inspect-session-privileges-for-easy-debugging/)
@@ -117,7 +117,7 @@ $isGuest:=Session.isGuest() // $isGuest は true
 | 引数       | 型       |                             | 説明                                   |
 | -------- | ------- | :-------------------------: | ------------------------------------ |
 | lifespan | Integer |              ->             | セッショントークンの有効期限(秒) |
-| 戻り値      | Text    | <- | セッションのUUID                           |
+| 戻り値      | Text    | <- | OTP トークンのUUID                        |
 
 <!-- END REF -->
 
@@ -133,7 +133,7 @@ $isGuest:=Session.isGuest() // $isGuest は true
 
 OTP トークンについてのより詳細な情報については、[こちらの章](../WebServer/sessions.md#セッショントークンotp)を参照して下さい。
 
-デフォルトで、*lifespan* 引数が省略された場合、トークンはセッションの[`.idleTimeOut`](#idletimeout) と同じ有効期限を持って作成されます。 *lifespan* 引数に秒単位の値を渡すことで、カスタムのタイムアウトを設定することができます(最小値は10秒間で、それより小さい値が渡された場合には*lifespan* は10にリセットされます)。 Web ユーザーセッションを復元するために失効したトークンを使用した場合、それは無視されます。
+デフォルトで、*lifespan* 引数が省略された場合、トークンはセッションの[`.idleTimeOut`](#idletimeout) と同じ有効期限を持って作成されます。 *lifespan* に秒単位の値を渡すことで、カスタムのタイムアウト時間を設定することができます。 Web ユーザーセッションを復元するために失効したトークンを使用した場合、それは無視されます。
 
 返されたトークンは、サードパーティアプリケーションや他のWebサイトとのやり取りで使用することでセッションを安全に特定することができます。 例えば、セッションOTP トークンは支払いアプリケーションなどにおいて使用することができます。
 
@@ -319,7 +319,7 @@ End if
 
 #### 参照
 
-[*Blog posts about this feature*](https://blog.4d.com/?s=hasPrivilege)
+[*この機能に関連するBlog 記事*](https://blog.4d.com/?s=hasPrivilege)
 
 <!-- END REF -->
 

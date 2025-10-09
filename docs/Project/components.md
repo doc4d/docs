@@ -1,16 +1,21 @@
 ---
 id: components
-title: Components
+title: Dependencies
 ---
 
-A 4D component is a set of 4D code and/or 4D forms representing one or more functionalities that you can add and use in your projects. For example, the [4D SVG](https://github.com/4d/4D-SVG) component adds advanced commands and an integrated rendering engine that can be used to display SVG files.
+The 4D [project architecture](../Project/architecture.md) is modular. You can provide additional functionalities to your 4D projects by installing [**components**](Concepts/components.md) and [**plug-ins**](../Concepts/plug-ins.md). Components are made of 4D code, while plug-ins can be [built using any language](../Extensions/develop-plug-ins.md). 
 
 You can [develop](../Extensions/develop-components.md) and [build](../Desktop/building.md) your own 4D components, or download public components shared by the 4D community that [can be found on GitHub](https://github.com/search?q=4d-component&type=Repositories).
 
-When developing in 4D, the component files can be transparently stored in your computer or on a Github repository.
+
+Once installed in your 4D environment, extensions are handled as **dependencies** with specific properties. 
+
 
 
 ## Interpreted and compiled components
+
+
+When developing in 4D, the component files can be transparently stored in your computer or on a Github repository.
 
 Components can be interpreted or [compiled](../Desktop/building.md). 
 
@@ -33,8 +38,7 @@ The "Contents" folder architecture is recommended for components if you want to 
 :::
 
 
-
-## Loading components
+## Component Locations
 
 
 :::note
@@ -506,6 +510,16 @@ To add a [GitHub dependency](#components-stored-on-github), click on the **+** b
 
 ![dependency-add-git](../assets/en/Project/dependency-add-git.png)
 
+:::note
+
+By default, [components developed by 4D](../Extensions/overview.md#components-developed-by-4d) are listed in the combo box, so that you can easily select and install these features in your environment: 
+
+![dependency-default-git](../assets/en/Project/dependency-default.png)
+
+Components already installed are not listed. 
+
+:::
+
 Enter the path of the GitHub repository of the dependency. It could be a **repository URL** or a **github-account/repository-name string**, for example:
 
 ![dependency-add-git-2](../assets/en/Project/dependency-add-git-2.png)
@@ -534,7 +548,7 @@ You can define the [tag or version](#tags-and-versions) option for a dependency:
 - **Up to Next Major Version**: Define a [semantic version range](#tags-and-versions) to restrict updates to the next major version.
 - **Up to Next Minor Version**: Similarly, restrict updates to the next minor version.
 - **Exact Version (Tag)**: Select or manually enter a [specific tag](#tags-and-versions) from the available list.
-- **Follow 4D Version**: Download the latest component release that is compatible with the running 4D version. You can use this dependency rule only if the component release tags follow the appropriate [naming convention](#naming-conventions-for-4d-version-tags). 
+- **Follow 4D Version**: Download the latest component release that is compatible with the running 4D version. You can use this dependency rule only if the component release tags follow the appropriate [naming convention](#naming-conventions-for-4d-version-tags). This option is recommended for the [components developed by 4D](../Extensions/overview.md#components-developed-by-4d).
 
 The current GitHub dependency version is displayed on the right side of the dependency item:
 
@@ -544,7 +558,7 @@ The current GitHub dependency version is displayed on the right side of the depe
 
 #### Modifying the GitHub dependency version range
 
-You can modify the [version setting](#defining-a-github-dependency-version-range) for a listed GitHub dependency: select the dependency to modify and select **Modify the dependency...** from the contextual menu. In the "Modify the dependency" dialog box, edit the Dependency Rule menu and click **Apply**. 
+You can modify the [version setting](#defining-a-github-dependency-version-range) for a listed GitHub dependency: select the dependency to modify and select **Edit the dependency...** from the contextual menu. In the "Edit the dependency" dialog box, edit the Dependency Rule menu and click **Apply**. 
 
 Modifying the version range is useful for example if you use the automatic update feature and want to lock a dependency to a specific version number. 
 

@@ -28,13 +28,13 @@ Les propriétés suivantes sont disponibles :
 
 <!-- REF UDPEvent.address.Desc -->
 
-## .adresse
+## .address
 
 <!-- REF #UDPEvent.address.Syntax -->**address** : Text<!-- END REF -->
 
 #### Description
 
-The `.address` property contains <!-- REF #UDPEvent.address.Summary -->the IP address of the remote machine<!-- END REF -->.
+La propriété `.address` contient <!-- REF #UDPEvent.address.Summary -->l'adresse IP de la machine distante<!-- END REF -->.
 
 <!-- END REF -->
 

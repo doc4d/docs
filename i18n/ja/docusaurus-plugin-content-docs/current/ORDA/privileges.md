@@ -1,6 +1,6 @@
 ---
 id: privileges
-title: 権限
+title: Roles and Privileges
 ---
 
 データ保護と、承認ユーザーによる迅速かつ容易なデータアクセスを両立することは、Webアプリケーションにとって大きな課題です。 ORDA のセキュリティアーキテクチャーはデータストアの中心に実装されており、プロジェクト内のさまざまなリソース (データストア、データクラス、関数など) に対して、すべての Web または REST ユーザーセッションに特定の権限を定義することができます。
@@ -17,9 +17,11 @@ Webユーザーまたは RESTユーザーがログインすると、そのセッ
 
 ![schema](../assets/en/ORDA/privileges-schema.png)
 
-### 参照
+:::tip Related Blog posts
 
-詳細なアクセス権限アーキテクチャーの概要については、[**完全な権限システムでデータアクセスをフィルタリングする**](https://blog.4d.com/ja/filter-access-to-your-data-with-a-complete-system-of-permissions/) ブログ記事を参照ください。
+[**Filter access to your data with a complete system of permissions**](https://blog.4d.com/filter-access-to-your-data-with-a-complete-system-of-permissions/)
+
+:::
 
 ## Resources
 
@@ -49,22 +51,25 @@ Webユーザーまたは RESTユーザーがログインすると、そのセッ
 
 利用可能なアクションは対象となるリソースによります。
 
-| アクション       | データストア                                                                        | dataclass                                                             | 属性                                                                        | データモデル関数またはシングルトン関数                                                                                     |
-| ----------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| **create**  | 任意のデータクラスにおいてエンティティを作成                                                        | 当該データクラスにおいてエンティティを作成                                                 | 当該属性に許可されたデフォルト値とは異なる値を持つエンティティを作成 (エイリアス属性の場合は無視されます) | n/a                                                                                                     |
-| **read**    | 任意のデータクラスにおいて属性を読み取り                                                          | 当該データクラスにおいて属性を読み取り                                                   | 当該属性を読み取り                                                                 | n/a                                                                                                     |
-| **update**  | 任意のデータクラスにおいて属性を更新                                                            | 当該データクラスにおいて属性を更新                                                     | 当該属性を更新 (エイリアス属性の場合は無視されます)                            | n/a                                                                                                     |
-| **drop**    | 任意のデータクラスにおいてデータを削除                                                           | 当該データクラスにおいてデータを削除                                                    | 当該属性の null でない値を削除 (エイリアス属性と計算属性を除く)                   | n/a                                                                                                     |
-| **execute** | プロジェクトの任意の関数を実行 (データストア、データクラス、エンティティセレクション、エンティティ、シングルトン) | データクラスの任意の関数を実行。 データクラス関数、エンティティ関数、エンティティセレクション関数は、データクラスの関数として扱われます。 | n/a                                                                       | 当該関数を実行                                                                                                 |
-| **promote** | n/a                                                                           | n/a                                                                   | n/a                                                                       | 関数の実行に指定の権限を関連付けます。 権限は一時的にセッションに追加され、関数の実行終了とともに削除されます。 セキュリティ上、セッション全体ではなく、当該関数を実行するプロセスのみに権限が追加されます。 |
+| アクション       | データストア                                                                        | dataclass                                                             | 属性                                                                        | データモデル関数またはシングルトン関数                                                                                                                                                   |
+| ----------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **create**  | 任意のデータクラスにおいてエンティティを作成                                                        | 当該データクラスにおいてエンティティを作成                                                 | 当該属性に許可されたデフォルト値とは異なる値を持つエンティティを作成 (エイリアス属性の場合は無視されます) | n/a                                                                                                                                                                   |
+| **read**    | 任意のデータクラスにおいて属性を読み取り                                                          | 当該データクラスにおいて属性を読み取り                                                   | 当該属性を読み取り                                                                 | n/a                                                                                                                                                                   |
+| **update**  | 任意のデータクラスにおいて属性を更新                                                            | 当該データクラスにおいて属性を更新                                                     | 当該属性を更新 (エイリアス属性の場合は無視されます)                            | n/a                                                                                                                                                                   |
+| **drop**    | 任意のデータクラスにおいてデータを削除                                                           | 当該データクラスにおいてデータを削除                                                    | 当該属性の null でない値を削除 (エイリアス属性と計算属性を除く)                   | n/a                                                                                                                                                                   |
+| **execute** | プロジェクトの任意の関数を実行 (データストア、データクラス、エンティティセレクション、エンティティ、シングルトン) | データクラスの任意の関数を実行。 データクラス関数、エンティティ関数、エンティティセレクション関数は、データクラスの関数として扱われます。 | n/a                                                                       | 当該関数を実行                                                                                                                                                               |
+| **promote** | n/a                                                                           | n/a                                                                   | n/a                                                                       | 関数の実行に指定の権限を関連付けます。 The privilege is temporary added and removed at the end of the function execution. セキュリティ上、セッション全体ではなく、当該関数を実行するプロセスのみに権限が追加されます。 |
 
-**注:**
+:::note 注記
 
-- エイリアス属性の元である属性に対するアクセス権をセッションが持っていない場合でも、エイリアス属性へのアクセス権があれば、これを読み取ることができます。
-- 計算属性を構成する属性に対するアクセス権をセッションが持っていない場合でも、計算属性へのアクセス権があれば、これを読み取ることができます。
+- An [alias](./ordaClasses.md#alias-attributes-1) can be read as soon as the session privileges allow the access to the alias itself, even if the session privileges do no allow the access to the attributes resolving the alias.
+- A [computed attribute](./ordaClasses.md#computed-attributes-1) can be accessed even if there are no permissions on the attributes upon which it is built.
 - シングルトンクラス (`singleton` 型) には許諾アクションを割り当てることができます。その場合、そのシングルトンクラスの公開関数すべて、および、シングルトン関数 (`singletonMethod` 型）に適用されます。
+- You can set/remove the **promote** action dynamically to a web process using the [`promote()`](../API/SessionClass.md#promote) and [`demote()`](../API/SessionClass.md#demote) functions.
 - デフォルト値: 現在の実装では、*Null* のみデフォルト値として利用可能です。
 - REST の [強制ログインモード](../REST/authUsers.md#強制ログインモード) では、[`authentify()`関数](../REST/authUsers.md#function-authentify) は、権限の設定に関係なく常にゲストユーザーによって実行可能です。
+
+:::
 
 権限の設定には一貫性が必要です。特に、**update** および **drop** 権限は**read** 権限も必要とします(ただし**create** はそれを必要としません)。
 
@@ -74,7 +79,7 @@ Webユーザーまたは RESTユーザーがログインすると、そのセッ
 
 権限は、複数の "リソース+アクション" の組み合わせと関連付けることができます。 また、一つのアクションに複数の権限を関連付けることができます。 権限は、他の権限を含むことができます。
 
-- 権限やロールの **作成** は `roles.json` ファイル内にておこないます (後述参照)。 アクセス権の範囲を **設定** するには、リソースに適用される許諾アクションに権限名を割り当てます。
+- 権限やロールの **作成** は `roles.json` ファイル内にておこないます (後述参照)。 アクセス権の範囲を **設定** するには、リソースに適用される許諾アクションに権限名を割り当てます。 アクセス権の範囲を **設定** するには、リソースに適用される許諾アクションに権限名を割り当てます。 アクセス権の範囲を **設定** するには、リソースに適用される許諾アクションに権限名を割り当てます。 アクセス権の範囲を **設定** するには、リソースに適用される許諾アクションに権限名を割り当てます。 アクセス権の範囲を **設定** するには、リソースに適用される許諾アクションに権限名を割り当てます。 アクセス権の範囲を **設定** するには、リソースに適用される許諾アクションに権限名を割り当てます。 アクセス権の範囲を **設定** するには、リソースに適用される許諾アクションに権限名を割り当てます。 アクセス権の範囲を **設定** するには、リソースに適用される許諾アクションに権限名を割り当てます。 アクセス権の範囲を **設定** するには、リソースに適用される許諾アクションに権限名を割り当てます。
 
 - 各ユーザーセッションに権限やロールを **許可** するには、`Session` クラスの [`.setPrivileges()`](../API/SessionClass.md#setprivileges) 関数を使用します。
 
@@ -120,7 +125,7 @@ exposed Function authenticate($identifier : Text; $password : Text)->$result : T
 {
     "privileges": [
         {
-            "privilege": "none",
+            "privilege": "all",
             "includes": []
         }
     ],
@@ -132,12 +137,12 @@ exposed Function authenticate($identifier : Text; $password : Text)->$result : T
             {
                 "applyTo": "ds",
                 "type": "datastore",
-                "read": ["none"],
-                "create": ["none"],
-                "update": ["none"],
-                "drop": ["none"],
-                "execute": ["none"],
-                "promote": ["none"]                
+                "read": ["all"],
+                "create": ["all"],
+                "update": ["all"],
+                "drop": ["all"],
+                "execute": ["all"],
+                "promote": ["all"]                
             }
         ]
     },
@@ -148,7 +153,8 @@ exposed Function authenticate($identifier : Text; $password : Text)->$result : T
 
 ```
 
-最高レベルのセキュリティのため、データストア ("ds") のすべての許諾アクションに "none" の権限名が割り当てられています。したがって、デフォルトでは `ds` オブジェクト全体へのデータアクセスが無効になっています。 この "none" 権限はセキュリティのため、使用も変更もしないことが推奨されています。Web や RESTリクエストから利用可能にしたい各リソースには、それ専用の権限を新たに追加することが推奨されています ([以下の例を参照](#権限設定の例))。
+For a highest level of security, the "all" privilege is assigned to all permissions in the datastore, thus data access on the whole `ds` object is disabled by default. The principle is as follows: assigning a permission is like putting a lock on a door. Only sessions with privilege having the corresponding key (i.e., a permission) will be able to open the lock.
+この "none" 権限はセキュリティのため、使用も変更もしないことが推奨されています。Web や RESTリクエストから利用可能にしたい各リソースには、それ専用の権限を新たに追加することが推奨されています ([以下の例を参照](#権限設定の例))。
 
 :::caution
 
@@ -263,14 +269,14 @@ End if
 
 ## 権限設定の例
 
-グッドプラクティスは、"none" 権限によってすべてのデータアクセスをデフォルトでロックしておき、`roles.json` ファイルを設定して、許可されたセッションにのみ限定的に一部を開放することです。  たとえば、制限されたアクセスをゲストセッションに対して許可する場合:
+The good practice is to keep all data access locked by default thanks to the "all" privilege and to configure the `roles.json` file to only open controlled parts to authorized sessions. For example, to allow some accesses to "guest" sessions:
 
 ```json title="/Project/Sources/roles.json"
 
 {
   "privileges": [
     {
-      "privilege": "none",
+      "privilege": "all",
       "includes": []
     }
   ],
@@ -281,22 +287,22 @@ End if
         "applyTo": "ds",
         "type": "datastore",
         "read": [
-          "none"
+          "all"
         ],
         "create": [
-          "none"
+          "all"
         ],
         "update": [
-          "none"
+          "all"
         ],
         "drop": [
-          "none"
+          "all"
         ],
         "execute": [
-          "none"
+          "all"
         ],
         "promote": [
-          "none"
+          "all"
         ]
       },
       {

@@ -3,6 +3,8 @@ id: develop-components
 title: Componentes de desenvolvimento
 ---
 
+## Componentes
+
 Um componente 4D é um conjunto de funções, métodos e formulários 4D que representam uma ou mais funcionalidades que podem ser [instaladas e usadas em aplicativos 4D](Concepts/components.md). Por exemplo, você pode desenvolver um componente de e-mail 4D que gerencia todos os aspectos de envio, recebimento e armazenamento de e-mails em aplicativos 4D.
 
 Você pode desenvolver componentes 4D para suas próprias necessidades e mantê-los privados. Você também pode [compartilhar seus componentes com a comunidade 4D](https://github.com/topics/4d-component).
@@ -13,11 +15,17 @@ Você pode desenvolver componentes 4D para suas próprias necessidades e mantê-
 - **Projeto Host**: projeto aplicação onde um componente é instalado e usado.
 - **Componente**: projeto Matriz que pode ser compilado e [creado](Desktop/building.md#build-component), [instalado na aplicação host](../Project/components.md) e cujo conteúdo é usado na aplicação host.
 
+:::note
+
+You can [create a component directly from the host](#creating-components) project without needing to go through a separate matrix project
+
+:::
+
 ## Básicos
 
 Criar e instalar componentes 4D é realizado diretamente a partir de 4D:
 
-- Para usar um componente, basta [instalá-lo em seu aplicação](../Project/components.md).
+- Para usar um componente, basta [instalá-lo em seu aplicação](../Project/components.md). You can also create a new component directly from the host, in which case it is immediately usable.
 - Um projeto pode ser tanto uma matriz quanto um host, em outras palavras, um projeto de matriz pode usar um ou mais componentes. No entanto, um componente não pode utilizar ele próprio "subcomponentes".
 - A component can call on most of the 4D elements: datastore ([`ds`](../commands/ds.md)), classes, functions, project methods, project forms, menu bars, choice lists, and so on. The following database methods can be used: [On Web Connection](../commands-legacy/on-web-connection-database-method.md), [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md), [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md).
 - A component can create and/or use tables, fields and data files using mechanisms of external databases. São bancos 4D independentes com as que se trabalha utilizando comandos SQL.
@@ -25,9 +33,86 @@ Criar e instalar componentes 4D é realizado diretamente a partir de 4D:
 
 :::note
 
-Interpreted component code can be [edited directly from the host project](#editing-components-from-the-host) if the context is supported.
+Interpreted component code can be [edited directly from the host project](#editing-components) if the context is supported.
 
 :::
+
+## Creating and editing components from the host
+
+In interpreted mode, the 4D IDE allows you to create and edit components directly from the host project. It facilitates component development and tuning in the actual context of a host project without having to leave or restart it.
+
+### Creating components
+
+You can create a new component directly from the host project:
+
+- by using the **File > New > Component...** option from the File menu,
+- or by clicking the **New > Component...** button in the toolbar.
+
+This action opens a folder selection dialog where you choose where [the component package](../Project/components.md#package-folder) will be stored.
+
+- Default location: The first time you create a component, 4D suggests the **Components** folder inside the [project package](../Project/architecture.md#components). After that, your used last folder will be automatically remembered and preselected.
+- If you decide to store the component **next to the project package**, 4D adds it to the [`dependencies.json`](../Project/components.md#dependenciesjson) file.
+- If you decide to store the component **elsewhere**, 4D adds it to the [`dependencies.json`](../Project/components.md#dependenciesjson) file and its path is added to the [`environment4d.json`](../Project/components.md#environment4djson) file, using either a [relative or an absolute path](../Project/components.md#relative-paths-vs-absolute-paths). A relative path is used if the component is located within no more than two levels above as the `environment4d.json` file, or in its subfolders. Otherwise, an absolute path is used.
+
+:::note
+
+You cannot store a component **in the project package** but **outside the Components folder**.
+
+:::
+
+Once created, the component is immediately added to the project, accessible in the [Project dependencies](../Project/components.md#monitoring-project-dependencies) window, and available for editing.
+
+### Editing components
+
+You can edit a component code as long as the following conditions are met:
+
+- the host project is running interpreted,
+- the component has been [loaded in interpreted mode](../Project/components.md#interpreted-and-compiled-components) and the source code is available,
+- the component files are stored locally (i.e. they are not [downloaded from GitHub](../Project/components.md#adding-a-github-dependency)).
+
+In this context, you can open, edit, and save your component code in the Code editor on the host project from two places:
+
+- from the Component Methods section of the Explorer (shared code only)
+- in a dedicated component tab (all code)
+
+#### Editing shared component code
+
+[Exposed component classes](#sharing-of-classes) and [shared methods](#sharing-of-project-methods) of your component can be edited from the **Component Methods** tab of the Explorer.
+
+A specific icon indicates that the component contains shared code):<br/>
+![](../assets/en/Develop/editable-component.png)
+
+Select **Edit...** to open your component code in the Code editor. You can edit and save it.
+
+#### Editing all component code
+
+You can edit directly all the code of a loaded component from the host project in a dedicated component tab, including methods or classes that are not shared.
+
+Select **Edit...** item is available when you right-click on the component name in the **Component Methods** tab of the Explorer.
+
+![edit-component](../assets/en/Project/Edit-component.png)
+
+When you select it, a dedicated tab is added (or highlighted if already added) in the Explorer. In this tab, the following standard pages are available and give access to the component contents:
+
+![tab-component](../assets/en/Project/tab-component.png)
+
+- Home, including folders, methods, classes and (preview only) forms
+- Project Methods
+- Database Methods ([On Web Connection](../commands-legacy/on-web-connection-database-method.md), [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md), [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md))
+- Classes
+- Project Form Methods
+- Commands and Constants
+- Plug-ins
+- Trash
+
+![tab-component](../assets/en/Project/tab-component.gif)
+
+Standard 4D IDE features are available for the component. You can execute the following actions:
+
+- add, duplicate, delete, edit/save [methods and classes](../Project/code-overview.md)
+- preview code, show/edit [documentation](../Project/documentation.md), display/edit [method properties](../Project/code-overview.md#project-method-properties),
+- run methods,
+- restore from trash or empty trash.
 
 ## Escopo dos comandos de linguagem
 
@@ -95,7 +180,7 @@ component_method("host_method_name")
 EXECUTE METHOD($param)
 ```
 
-> Um banco de dados de host interpretado que contém componentes interpretados pode ser compilado ou verificado quanto à sintaxe se não chamar métodos do componente interpretado. Caso contrário, uma caixa de diálogo de aviso será exibida quando você tentar iniciar a compilação ou uma verificação de sintaxe, e não será possível executar a operação.\
+> Um banco de dados de host interpretado que contém componentes interpretados pode ser compilado ou verificado quanto à sintaxe se não chamar métodos do componente interpretado. Caso contrário, uma caixa de diálogo de aviso será exibida quando você tentar iniciar a compilação ou uma verificação de sintaxe, e não será possível executar a operação.  
 > Lembre-se de que um método interpretado pode chamar um método compilado, mas não o contrário, exceto pelo uso dos comandos `EXECUTE METHOD` e `EXECUTE FORMULA`.
 
 ## Compartilhamento de classes
@@ -146,60 +231,6 @@ $rect:=cs.eGeometry._Rectangle.new(10;20)
 ```
 
 > As funções não ocultas dentro de uma classe oculta aparecem como sugestões quando você usa a funcionalidade autocompletar código com uma classe que [herda](../Concepts/classes.md#inheritance) dela. Por exemplo, se um componente tiver uma classe `Teacher` que herda de uma classe `_Person`, o recurso autocompletar código para `Teacher` sugere funções não ocultas de `_Person`.
-
-## Editing components from the host
-
-To facilitate component tuning in the actual context of host projects, you can directly modify and save the code of a loaded component using the 4D IDE from an interpreted host project. Modifications can be immediately tested in the project, without having to restart.
-
-The component code is editable when the following conditions are met:
-
-- the host project is running interpreted,
-- the component has been [loaded in interpreted mode](../Project/components.md#interpreted-and-compiled-components) and the source code is available,
-- the component files are stored locally (i.e. they are not [downloaded from GitHub](../Project/components.md#adding-a-github-dependency).
-
-In this context, you can open, edit, and save your component code in the Code editor on the host project from two places:
-
-- from the Component Methods section of the Explorer (shared code only)
-- in a dedicated component tab (all code)
-
-### Editing shared component code
-
-[Exposed component classes](#sharing-of-classes) and [shared methods](#sharing-of-project-methods) of your component can be edited from the **Component Methods** tab of the Explorer.
-
-A specific icon indicates that the component contains shared code):<br/>
-![](../assets/en/Develop/editable-component.png)
-
-Select **Edit...** to open your component code in the Code editor. You can edit and save it.
-
-### Editing all component code
-
-You can edit directly all the code of a loaded component from the host project in a dedicated component tab, including methods or classes that are not shared.
-
-Select **Edit...** item is available when you right-click on the component name in the **Component Methods** tab of the Explorer.
-
-![edit-component](../assets/en/Project/Edit-component.png)
-
-When you select it, a dedicated tab is added (or highlighted if already added) in the Explorer. In this tab, the following standard pages are available and give access to the component contents:
-
-![tab-component](../assets/en/Project/tab-component.png)
-
-- Home, including folders, methods, classes and (preview only) forms
-- Project Methods
-- Database Methods ([On Web Connection](../commands-legacy/on-web-connection-database-method.md), [On Web Authentication](../commands-legacy/on-web-authentication-database-method.md), [On Host Database Event](../commands-legacy/on-host-database-event-database-method.md))
-- Classes
-- Project Form Methods
-- Commands and Constants
-- Plug-ins
-- Trash
-
-![tab-component](../assets/en/Project/tab-component.gif)
-
-Standard 4D IDE features are available for the component. You can execute the following actions:
-
-- add, duplicate, delete, edit/save [methods and classes](../Project/code-overview.md)
-- preview code, show/edit [documentation](../Project/documentation.md), display/edit [method properties](../Project/code-overview.md#project-method-properties),
-- run methods,
-- restore from trash or empty trash.
 
 ## Completar o código dos componentes compilados
 
@@ -277,7 +308,9 @@ Neste caso é preciso usar a comparação de ponteiros:
 
 ## Gestão de erros
 
-Um [método de tratamento de erros](Concepts/error-handling.md) instalado pelo comando `ON ERR CALL` aplica-se somente ao aplicativo em execução. No caso de um erro gerado por um componente, o método de tratamento de erros `ON ERR CALL` do projeto host não é chamado, e vice-versa.
+An [error-handling method](Concepts/error-handling.md) installed by the [`ON ERR CALL`](../commands-legacy/on-err-call.md) command only applies to the running application. No caso de um erro gerado por um componente, o método de tratamento de erros `ON ERR CALL` do projeto host não é chamado, e vice-versa.
+
+However, you can install a [component error handler in the host application](../Concepts/error-handling.md#scope-and-components) to manage uncaught errors from compponents.
 
 ## Acesso às tabelas do projeto local
 
@@ -309,7 +342,7 @@ SAVE RECORD($tablepointer->)
 
 Um componente não pode usar as tabelas e os campos definidos na estrutura 4D do projeto de matriz. Mas pode criar e usar bancos de dados externos e então usar suas tabelas e campos de acordo com suas necessidades. Pode criar e gerenciar bancos de dados externos usando SQL. Mas pode criar e usar bancos de dados externos e então usar suas tabelas e campos de acordo com suas necessidades. Usar um banco externo significa designar temporariamente esse banco de dados como o banco atual, em outras palavras, o banco alvo para as pesquisas SQL executadas por 4D. Você cria bancos de dados externos usando o comando SQL `CREATE DATABASE`.
 
-### Exemplo
+#### Exemplo
 
 O código abaixo está incluído em um componente e realiza três ações básicas com um banco externo:
 
@@ -477,3 +510,4 @@ Para proteger o código de um componente de forma eficaz, basta [compilar e cons
 ## Sharing your components on GitHub
 
 Nós encorajamos você a apoiar a comunidade de desenvolvedores 4D compartilhando seus componentes, de preferência na [plataforma GitHub](https://github.com/topics/4d-component). Recomendamos que você use o tópico **`4d-component`** para ser referenciado corretamente.
+

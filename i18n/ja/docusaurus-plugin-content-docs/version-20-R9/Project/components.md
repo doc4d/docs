@@ -330,7 +330,7 @@ GitHubでリリースが作成されると、そこに**タグ**と**バージ�
 - 4D では、**デザイン/プロジェクト依存関係** メニューアイテムを選択します (開発環境)。<br/>
   ![dependency-menu](../assets/en/Project/dependency-menu.png)
 
-- with 4D Server, select the **Window/Project Dependencies** menu item.<br/>
+- 4D Server では、**ウィンドウ/プロジェクト依存関係** メニュー項目を選択します。<br/>
   ![dependency-menu-server](../assets/en/Project/dependency-menu-server.png)
 
 依存関係パネルが表示されます。 依存関係は ABC順にソートされます。
@@ -364,9 +364,9 @@ GitHubでリリースが作成されると、そこに**タグ**と**バージ�
 - **Duplicated**: 依存関係は読み込まれていません。同じ名前を持つ別の依存関係が同じ場所に存在し、すでに読み込まれています。
 - **Available after restart**: [インターフェースによって](#プロジェクトの依存関係の監視) 依存関係の参照が追加・更新されました。この依存関係は、アプリケーションの再起動後に読み込まれます。
 - **Unloaded after restart**: [インターフェースによって](#プロジェクトの依存関係の監視) 依存関係の参照が削除されました。この依存関係は、アプリケーションの再起動時にアンロードされます。
-- **Update available \<version\>**: A new version of the GitHub dependency matching your [component version configuration](#defining-a-github-dependency-version-range) has been detected.
-- **Refreshed after restart**: The [component version configuration](#defining-a-github-dependency-version-range) of the GitHub dependency has been modified, it will be adjusted the next startup.
-- **Recent update**: A new version of the GitHub dependency has been loaded at startup.
+- **Update available \<version\>**: [コンポーネントバージョン設定](#defining-a-github-dependency-version-range) に合致するGitHub 依存関係の新しいバージョンが検知されました。
+- **Refreshed after restart**: GitHub 依存関係の[コンポーネントバージョン設定](#github-依存関係のバージョン範囲の定義) が変更されたので、次回起動時に調整されます。
+- **Recent update**: GitHub 依存関係の新しいバージョンが開始時にロードされました。
 
 依存関係の行にマウスオーバーするとツールチップが表示され、ステータスに関する追加の情報を提供します:
 
@@ -449,13 +449,13 @@ GitHubでリリースが作成されると、そこに**タグ**と**バージ�
 
 :::
 
-Define the [dependency version range](#tags-and-versions) to use for this project. By defaut, "Latest" is selected, which means that the lastest version will be automatically used.
+このプロジェクトで使用する[依存関係のバージョン範囲](#タグとバージョン) を定義します。 デフォルトでは"Latest" が選択されており、これは最新のバージョンが自動的に使用されるということを意味します。
 
 プロジェクトに依存関係を追加するには、**追加** ボタンをクリックします。
 
-The GitHub dependency is declared in the [**dependencies.json**](#dependenciesjson) file and added to the [inactive dependency list](#dependency-status) with the **Available at restart** status. このコンポーネントはアプリケーションの再起動後にロードされます。
+GitHub 依存関係は[**dependencies.json**](#dependenciesjson) ファイル内で宣言され、[無効化依存関係一覧](#dependency-status) 内に、**Available at restart** のステータスで追加されます。 このコンポーネントはアプリケーションの再起動後にロードされます。
 
-#### Defining a GitHub dependency version range
+#### GitHub 依存関係のバージョン範囲を定義
 
 依存関係の [タグとバージョン](#タグとバージョン) オプションを定義することができます:
 
@@ -467,90 +467,90 @@ The GitHub dependency is declared in the [**dependencies.json**](#dependenciesjs
 - **自動更新しない(タグ指定)**: 利用可能なリストから [特定のタグ](#セマンティックバージョン範囲]) を選択するか、手動で入力します。
 - **4Dのバージョンに追随する**: 実行中の4D バージョンと互換性のある最新のコンポーネントリリースをダウンロードします。 この依存関係ルールは、コンポーネントのリリースタグが適切な[命名規則](#4dバージョンタグの命名規則) に従っていた場合にのみ使用できます。
 
-The current GitHub dependency version is displayed on the right side of the dependency item:
+現在のGitHub 依存関係バージョンは、依存関係の項目の右側に表示されます:
 
 ![dependency-origin](../assets/en/Project/dependency-version.png)
 
-#### Modifying the GitHub dependency version range
+#### GitHub 依存関係バージョン範囲の変更
 
 You can modify the [version setting](#defining-a-github-dependency-version-range) for a listed GitHub dependency: select the dependency to modify and select **Modify the dependency...** from the contextual menu. In the "Modify the dependency" dialog box, edit the Dependency Rule menu and click **Apply**.
 
-Modifying the version range is useful for example if you use the automatic update feature and want to lock a dependency to a specific version number.
+バージョン範囲の変更は、自動アップデート機能を使用しているときに依存関係を特定のバージョン番号にロックしておきたいときに有用です。
 
-### Updating GitHub dependencies
+### GitHub 依存関係の更新
 
-The Dependency manager provides an integrated handling of updates on GitHub. The following features are supported:
+依存関係マネージャはGitHub 上の更新を統合的に管理する方法を提供します。 以下の機能がサポートされています:
 
-- Automatic and manual checking of available versions
-- Automatic and manual updating of components
+- 利用可能なバージョンの自動および手動でのチェック
+- コンポーネントの自動および手動での更新
 
-Manual operations can be done **per dependency** or **for all dependencies**.
+手動での操作は、**依存関係ごと** あるいは**全ての依存関係** に対して行うことができます。
 
 #### 新バージョンをチェック
 
-Dependencies are regularly checked for updates on GitHub. This checking is done transparently in background.
+依存関係は、GitHub 上での更新を定期的にチェックされています。 このチェックはバックグラウンドで透過的に行われています。
 
 :::note
 
-If you provide an [access token](#providing-your-github-access-token), checks are performed more frequently, as GitHub then allows a higher frequency of requests to repositories.
+[アクセストークン](#自分のgithub-アクセストークンの提供) を提供した場合、このチェックはより頻繁に実行されます。GitHub はリポジトリへのより高頻度のリクエストを許可するからです。
 
 :::
 
-In addition, you can check for updates at any moment, for a single dependency or for all dependencies:
+これに加えて、単一の依存関係あるいは全ての依存関係に対して、いつでも更新をチェックすることができます:
 
-- To check for updates of a single dependency, right-click on the dependency and select **Check for updates** in the contextual menu.
+- 単一の依存関係に対して更新をチェクするためには、依存関係を右クリックしてコンテキストメニューから**更新をチェックする** を選択します。
 
 ![check component](../assets/en/Project/check-component-one.png)
 
-- To check for updates of all dependencies, click on the **options** menu at the bottom of the Dependency manager window and select **Check for updates**.
+- 全ての依存関係に対して更新をチェックするためには、依存関係マネージャウィンドウの下部から**オプション**をクリックし、**更新をチェックする** を選択します。
 
 ![check components](../assets/en/Project/check-component-all.png)
 
-If a new component version matching your [component versioning configuration](#defining-a-github-dependency-version-range) is detected on GitHub, a specific dependency status is displayed:
+[コンポーネントバージョン設定](#github-依存関係のバージョン範囲を定義) に合致する新しいコンポーネントのバージョンがGitHub 上で検知された場合、特殊な依存関係ステータスが表示されます:
 
 ![dependency-new-version](../assets/en/Project/dependency-available.png)
 
-You can decide to [update the component](#updating-dependencies) or not.
+そこで[コンポーネントを更新する](#依存関係の更新) かどうかを決めることができます。
 
-If you do not want to use a component update (for example you want to stay with a specific version), just let the current status (make sure the [**Automatic update**](#automatic-update) feature is not checked).
+コンポーネントの更新を使用したくない場合(例えば特定のバージョンにとどまっていたいなど)、現在のステータスをそのままにして下さい([**自動アップデート**](#自動アップデート) 機能がチェックされていないことを確認して下さい)。
 
 #### 依存関係の更新
 
-**Updating a dependency** means downloading a new version of the dependency from GitHub and keeping it ready to be loaded the next time the project is started.
+**依存関係の更新** とはGitHub から依存関係の新しいバージョンをダウンロードし、次にプロジェクトが開始されたときにロードされるように用意しておくということを意味します。
 
-You can update dependencies at any moment, for a single dependency or for all dependencies:
+依存関係はいつでも更新することができ、また単一の依存関係に対してでも、依存関係全てに対してでも更新することが可能です:
 
-- To update a single dependency, right-click on the dependency and select **Update \<component name\> on next startup** in the contextual menu or in the **options** menu at the bottom of the Dependency manager window:
+- 単一の依存関係を更新するためには、依存関係を右クリックし、コンテキストメニュー内から、あるいは依存関係マネージャウィンドウの下部の**オプション**メニューから、**次回起動時に\<component name\> を更新** を選択します:
 
 ![check component](../assets/en/Project/update-component-one.png)
 
-- To update all dependencies at once, click on the **options** menu at the bottom of the Dependency manager window and select **Update all remote dependencies on next startup**:
+- 全ての依存関係を一度に更新するためには、依存関係マネージャウィンドウの下部から**オプション** メニューをクリックし、**次回起動時に全ての依存関係を更新する** を選択します:
 
 ![check components](../assets/en/Project/update-component-all.png)
 
-In any cases, whatever the current dependency status, an automatic checking is done on GitHub before updating the dependency, to make sure the most recent version is retrieved, [according to your component versioning configuration](#defining-a-github-dependency-version-range).
+どちらの場合においても、現在の依存関係ステータスに関わらず、依存関係が更新される前にGitHub 上で自動チェックが実行されます。これによって[コンポーネントバージョン設定基づいた](#github-依存関係のバージョン範囲を定義) 最新のバージョンが取得されるようにします。
 
-When you select an update command:
+更新コマンドを選択すると:
 
-- a dialog box is displayed and proposes to **restart the project**, so that the updated dependencies are immediately available. It is usually recommended to restart the project to evaluate updated dependencies.
-- if you click Later, the update command is no longer available in the menu, meaning the action has been planned for the next startup.
+- ダイアログボックスが表示され**プロジェクトを再起動する**ことが提示されます。再起動することによって更新された依存関係が直ちに利用可能になります。 通常、更新された依存関係を直ちに有効化するためにプロジェクトを再起動することが推奨されます。
+- 「あとで」をクリックすると、更新コマンドはメニューには表示されなくなります。これは次回起動時に更新が予定されるということになります。
 
-#### Automatic update
+#### 自動アップデート
 
-The **Automatic update** option is available in the **options** menu at the bottom of the Dependency manager window.
+依存関係マネージャウィンドウの下部の**オプション**メニューから、**自動アップデート** オプションを選択することができます。
 
-When this option is checked (default), new GitHub component versions matching your [component versioning configuration](#defining-a-github-dependency-version-range) are automatically updated for the next project startup. This option facilitates the day-to-day management of dependency updates, by eliminating the need to manually select updates.
+このオプションがチェックされている場合(デフォルトでチェック)、GitHub コンポーネントで[コンポーネントバージョン設定](#github依存関係バージョン範囲の定義) に合致している新しいバージョンは、次回プロジェクト起動時に自動的に更新されます。 このオプションは手動で更新を洗濯する必要性を排除することで、日々の依存関係アップデートの管理を容易にします。
 
-When this option is unchecked, a new component version matching your [component versioning configuration](#defining-a-github-dependency-version-range) is only indicated as available and will require a [manual updating](#updating-dependencies). Unselect the **Automatic update** option if you want to monitor dependency updates precisely.
+このオプションがチェックされていない場合、[コンポーネントバージョン設定](#github依存関係バージョン範囲の定義) に合致している新しいコンポーネントバージョンは、利用可能であることが表示されるに止まり、[手動での更新](#依存関係の更新) を必要とします。 依存関係の更新を正確に監視したい場合には、**自動アップデート** オプションの選択を外します。
 
 ### GitHubアクセストークンの提供
 
-Registering your personal access token in the Dependency manager is:
+依存関係マネージャにパーソナルアクセストークンを登録することは:
 
-- mandatory if the component is stored on a [private GitHub repository](#private-repositories),
-- recommended for a more frequent [checking of dependency updates](#updating-github-dependencies).
+- コンポーネントが[プライベートなGitHub レポジトリ](#プライベートリポジトリ) に保存されている場合には必須です。
+- [依存関係の更新のチェック](#github-依存関係の更新) をより頻繁にしたい場合には推奨されます。
 
-To provide your GitHub access token, you can either:
+GitHub アクセストークンを提供するには、次のいずれかを実行します:
 
 - "依存関係を追加..." ダイアログボックスで、GitHub のプライベートリポジトリパスを入力した後に表示される \*\*パーソナルアクセストークンを追加... \*\* ボタンをクリックします。
 - または、依存関係マネージャーのメニューで、**GitHubパーソナルアクセストークンを追加...** をいつでも選択できます。
@@ -563,7 +563,7 @@ To provide your GitHub access token, you can either:
 
 パーソナルアクセストークンは 1つしか入力できません。 入力されたトークンは編集することができます。
 
-The provided token is stored in a **github.json** file in the [active 4D folder](../commands-legacy/get-4d-folder.md#active-4d-folder).
+提供されたトークンは、[アクティブな4Dフォルダー](../commands-legacy/get-4d-folder.md#active-4d-folder) 内の**github.json** ファイルに保存されます。
 
 ### 依存関係の削除
 

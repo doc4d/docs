@@ -3,14 +3,13 @@ id: SessionClass
 title: Session
 ---
 
-Les objets de session sont retournés par la commande [`Session`](../commands/session.md). Ces objets fournissent au développeur une interface permettant de gérer la session utilisateur courante et d'exécuter des actions telles que le stockage de données contextuelles, le partage d'informations entre les process de la session, le lancement de process préemptifs liés à la session ou (uniquement pour le web) la gestion des [privilèges](../ORDA/privileges.md).
+Les objets session sont retournés par la commande [`Session`](../commands/session.md). Ces objets fournissent au développeur une interface permettant de gérer la session utilisateur courante et d'exécuter des actions telles que le stockage de données contextuelles, le partage d'informations entre les process de la session, le lancement de process préemptifs liés à la session ou (uniquement pour le web) la gestion des [privilèges](../ORDA/privileges.md).
 
-:::info To learn more
-
-Blog posts about this feature:
+:::tip Articles de blog sur le sujet
 
 - [Sessions évolutives pour applications web avancées](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/)
-- [Permissions: Inspect Session Privileges for Easy Debugging](https://blog.4d.com/permissions-inspect-session-privileges-for-easy-debugging/)
+- [Permissions : Inspecter les privilèges de la session pour faciliter le débogage](https://blog.4d.com/permissions-inspect-session-privileges-for-easy-debugging/)
+- [Générer, partager et utiliser des passcodes à usage unique (OTP) pour les sessions web](https://blog.4d.com/connect-your-web-apps-to-third-party-systems/)
 
 :::
 
@@ -35,6 +34,7 @@ La disponibilité des propriétés et des fonctions de l'objet `Session` dépend
 | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | [<!-- INCLUDE #SessionClass.clearPrivileges().Syntax -->](#clearprivileges)<br/><!-- INCLUDE #SessionClass.clearPrivileges().Summary --> |
 | [<!-- INCLUDE #SessionClass.createOTP().Syntax -->](#createotp)<br/><!-- INCLUDE #SessionClass.createOTP().Summary -->                   |
+| [<!-- INCLUDE #SessionClass.demote().Syntax -->](#demote)<br/><!-- INCLUDE #SessionClass.demote().Summary -->                            |
 | [<!-- INCLUDE #SessionClass.expirationDate.Syntax -->](#expirationdate)<br/><!-- INCLUDE #SessionClass.expirationDate.Summary -->        |
 | [<!-- INCLUDE #SessionClass.getPrivileges().Syntax -->](#getprivileges)<br/><!-- INCLUDE #SessionClass.getPrivileges().Summary -->       |
 | [<!-- INCLUDE #SessionClass.hasPrivilege().Syntax -->](#hasprivilege)<br/><!-- INCLUDE #SessionClass.hasPrivilege().Summary -->          |
@@ -42,6 +42,7 @@ La disponibilité des propriétés et des fonctions de l'objet `Session` dépend
 | [<!-- INCLUDE #SessionClass.idleTimeout.Syntax -->](#idletimeout)<br/><!-- INCLUDE #SessionClass.idleTimeout.Summary -->                 |
 | [<!-- INCLUDE #SessionClass.info.Syntax -->](#info)<br/><!-- INCLUDE #SessionClass.info.Summary -->                                      |
 | [<!-- INCLUDE #SessionClass.isGuest().Syntax -->](#isguest)<br/><!-- INCLUDE #SessionClass.isGuest().Summary -->                         |
+| [<!-- INCLUDE #SessionClass.promote().Syntax -->](#promote)<br/><!-- INCLUDE #SessionClass.promote().Summary -->                         |
 | [<!-- INCLUDE #SessionClass.restore().Syntax -->](#restore)<br/><!-- INCLUDE #SessionClass.restore().Summary -->                         |
 | [<!-- INCLUDE #SessionClass.setPrivileges().Syntax -->](#setprivileges)<br/><!-- INCLUDE #SessionClass.setPrivileges().Summary -->       |
 | [<!-- INCLUDE #SessionClass.storage.Syntax -->](#storage)<br/><!-- INCLUDE #SessionClass.storage.Summary -->                             |
@@ -53,9 +54,10 @@ La disponibilité des propriétés et des fonctions de l'objet `Session` dépend
 
 <details><summary>Historique</summary>
 
-| Release | Modifications |
-| ------- | ------------- |
-| 18 R6   | Ajout         |
+| Release | Modifications              |
+| ------- | -------------------------- |
+| 21      | Support of remote sessions |
+| 18 R6   | Ajout                      |
 
 </details>
 
@@ -73,17 +75,21 @@ La disponibilité des propriétés et des fonctions de l'objet `Session` dépend
 
 :::note
 
-Cette fonction ne fait rien et retourne toujours **True** avec les sessions client distants, procédure stockée et autonomes.
+This function does nothing and always returns **True** with stored procedure sessions and standalone sessions.
 
 :::
 
-La fonction `.clearPrivileges()` <!-- REF #SessionClass.clearPrivileges().Summary -->supprime tous les privilèges associés à la session et retourne **True** si l'exécution a réussi<!-- END REF -->. Hormis si vous êtes en mode ["forceLogin"](../REST/authUsers.md#force-login-mode), la session devient automatiquement une session Invité.
+La fonction `.clearPrivileges()` <!-- REF #SessionClass.clearPrivileges().Summary -->supprime tous les privilèges associés à la session (à l'exception des privilèges promus) et renvoie **True** si l'exécution a réussi<!-- END REF -->.
+
+Hormis si vous êtes en mode ["forceLogin"](../REST/authUsers.md#force-login-mode), la session devient automatiquement une session Invité. En mode "forceLogin", `.clearPrivileges()` ne transforme pas la session en session Invité, elle efface seulement les privilèges de la session.
 
 :::note
 
-En mode "forceLogin", `.clearPrivileges()` ne transforme pas la session en session Invité, elle efface seulement les privilèges de la session.
+Cette fonction ne supprime pas les **privilèges promus** du process web, qu'ils aient été ajoutés par le biais du fichier [roles.json](../ORDA/privileges.md#rolesjson-file) ou de la fonction [`promote()`](#promote).
 
 :::
+
+Regarding remote client sessions, the function only impacts [code accessing the web server](../WebServer/preemptiveWeb.md#writing-thread-safe-web-server-code).
 
 #### Exemple
 
@@ -104,9 +110,10 @@ $isGuest:=Session.isGuest() //$isGuest est True
 
 <details><summary>Historique</summary>
 
-| Release | Modifications |
-| ------- | ------------- |
-| 20 R9   | Ajout         |
+| Release | Modifications              |
+| ------- | -------------------------- |
+| 21      | Support of remote sessions |
+| 20 R9   | Ajout                      |
 
 </details>
 
@@ -117,7 +124,7 @@ $isGuest:=Session.isGuest() //$isGuest est True
 | Paramètres | Type    |                             | Description                                  |
 | ---------- | ------- | :-------------------------: | -------------------------------------------- |
 | lifespan   | Integer |              ->             | Durée de vie du token de session en secondes |
-| Résultat   | Text    | <- | UUID de la session                           |
+| Résultat   | Text    | <- | UUID of the token                            |
 
 <!-- END REF -->
 
@@ -125,7 +132,7 @@ $isGuest:=Session.isGuest() //$isGuest est True
 
 :::note
 
-Cette fonction est uniquement disponible avec les sessions utilisateur web. Elle retourne une chaîne vide dans les autres contextes.
+This function is available with web user sessions and remote sessions. It returns an empty string in stored procedure and standalone sessions.
 
 :::
 
@@ -133,9 +140,14 @@ La fonction `.createOTP()` <!-- REF #SessionClass.createOTP().Summary -->crée u
 
 Pour plus d'informations sur les tokens OTP, veuillez consulter [cette section](../WebServer/sessions.md#session-token-otp).
 
-Par défaut, si le paramètre *lifespan* est omis, le token est créé avec la même durée de vie que le [`.idleTimeOut`](#idletimeout) de la session. Vous pouvez définir un délai personnalisé en passant une valeur en secondes dans *lifespan* (la valeur minimale est de 10 secondes, *lifespan* est réinitialisé à 10 si une valeur inférieure est passée). Si un token expiré est utilisé pour restaurer la session d'un utilisateur web, il est ignoré.
+Vous pouvez définir un délai personnalisé en passant une valeur en secondes dans *lifespan*. If an expired token is used to restore a session, it is ignored. By default, if the *lifespan* parameter is omitted:
 
-Le token retourné peut ensuite être utilisé lors d'échanges avec des applications tierces ou des sites Web pour identifier la session de manière sécurisée. Par exemple, le token OTP de session peut être utilisé avec une application de paiement.
+- with web user sessions, the token is created with the same lifespan as the [`.idleTimeOut`](#idletimeout) of the session.
+- with remote sessions, the token is created with a 10 seconds lifespan.
+
+For **web user sessions**, the returned token can be used in exchanges with third-party applications or websites to securely identify the session. Par exemple, le token OTP de session peut être utilisé avec une application de paiement.
+
+For **remote sessions**, the returned token can be used on 4D Server to identitfy requests coming from a [remote 4D running Qodly forms in a Web area](../Desktop/clientServer.md#remote-user-sessions).
 
 #### Exemple
 
@@ -143,6 +155,69 @@ Le token retourné peut ensuite être utilisé lors d'échanges avec des applica
 var $token : Text
 $token := Session.createOTP( 60 ) //le token est valable pendant 1 mn
 ```
+
+<!-- END REF -->
+
+<!-- REF SessionClass.demote().Desc -->
+
+## .demote()
+
+<details><summary>Historique</summary>
+
+| Release | Modifications |
+| ------- | ------------- |
+| 20 R10  | Ajout         |
+
+</details>
+
+<!-- REF #SessionClass.demote().Syntax -->**.demote**( *promoteId* : Integer )<!-- END REF -->
+
+<!-- REF #SessionClass.demote().Params -->
+
+| Paramètres | Type    |     | Description                             |
+| ---------- | ------- | :-: | --------------------------------------- |
+| promoteId  | Integer |  -> | Id retourné par la fonction `promote()` |
+
+<!-- END REF -->
+
+#### Description
+
+:::note
+
+Cette fonction ne fait rien dans les sessions clients distants, procédures stockées et autonomes.
+
+:::
+
+La fonction `.demote()` <!-- REF #SessionClass.demote().Summary -->supprime du process web le privilège promu dont l'identifiant a été passé dans *promoteId*, s'il a été précédemment ajouté par la fonction [`.promote()`](#promote)<!-- END REF -->.
+
+Si aucun privilège avec *promoteId* n'a été promu à l'aide de [`.promote()`](#promote) dans le process web, la fonction ne fait rien.
+
+Si plusieurs privilèges ont été ajoutés au process web, la fonction `demote()` doit être appelée pour chacun d'entre eux avec le *promoteId* approprié. Les privilèges sont empilés dans l'ordre dans lequel ils ont été ajoutés au process, il est recommandé de dépiler les privilèges dans l'ordre LIFO (*Last In, First Out*).
+
+#### Exemple
+
+```4d
+exposed Function search($search : Text) : Collection
+	
+	var $employees : Collection
+	var $promoteId1; $promoteId2 : Integer
+	
+	$promoteId1:=Session.promote("admin")
+	$promoteId2:=Session.promote("superAdmin")
+	
+	$search:="@"+$search+"@"
+	
+	$employees:=This.query("type = :1 and lastname = :2"; "Intern"; $search).toCollection()
+	
+	Session.demote($promoteId2)
+	Session.demote($promoteId1)
+	
+	return $employees
+```
+
+#### Voir également
+
+[`.promote()`](#promote)
 
 <!-- END REF -->
 
@@ -187,9 +262,10 @@ $expiration:=Session.expirationDate //ex : "2021-11-05T17:10:42Z"
 
 <details><summary>Historique</summary>
 
-| Release | Modifications |
-| ------- | ------------- |
-| 20 R6   | Ajout         |
+| Release | Modifications                     |
+| ------- | --------------------------------- |
+| 21      | Support of remote client sessions |
+| 20 R6   | Ajout                             |
 
 </details>
 
@@ -207,13 +283,15 @@ $expiration:=Session.expirationDate //ex : "2021-11-05T17:10:42Z"
 
 La fonction `.getPrivileges()` <!-- REF #SessionClass.getPrivileges().Summary -->renvoie une collection contenant tous les noms de privilèges associés à la session<!-- END REF -->.
 
-Avec les sessions client distant, procédures stockées et autonomes, cette fonction retourne une collection contenant uniquement "WebAdmin".
+:::note
 
-:::info
-
-Les privilèges sont assignés à une Session en utilisant la fonction [`setPrivileges()`](#setprivileges).
+Cette fonction renvoie les privilèges attribués à une session en utilisant la fonction [`setPrivileges()`](#setprivileges) uniquement. Les privilèges promus ne sont PAS renvoyés par la fonction, qu'ils aient été ajoutés via le fichier [roles.json](../ORDA/privileges.md#rolesjson-file) ou la fonction [`promote()`](#promote).
 
 :::
+
+With remote client sessions, the privileges only concerns the code executed in the context of a [web request sent through a Web area](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas).
+
+With stored procedure sessions and standalone sessions, this function returns a collection only containing "WebAdmin".
 
 #### Exemple
 
@@ -272,7 +350,7 @@ $privileges := Session.getPrivileges()
 #### Voir également
 
 [.setPrivileges()](#setprivileges)<br/>
-[*Permissions – Inspect the privileges in the session for an easy debugging* (blog post)](https://blog.4d.com/permissions-inspect-the-privileges-in-the-session-for-an-easy-debugging)
+[*Permissions – Inspect the privileges in the session for an easy debugging* (article de blog)](https://blog.4d.com/permissions-inspect-the-privileges-in-the-session-for-an-easy-debugging)
 
 <!-- END REF -->
 
@@ -282,9 +360,10 @@ $privileges := Session.getPrivileges()
 
 <details><summary>Historique</summary>
 
-| Release | Modifications |
-| ------- | ------------- |
-| 18 R6   | Ajout         |
+| Release | Modifications                                                           |
+| ------- | ----------------------------------------------------------------------- |
+| 21      | Returns True for promoted privileges, Support of remote client sessions |
+| 18 R6   | Ajout                                                                   |
 
 </details>
 
@@ -303,7 +382,15 @@ $privileges := Session.getPrivileges()
 
 La fonction `.hasPrivilege()` <!-- REF #SessionClass.hasPrivilege().Summary -->renvoie True si le *privilege* est associé à la session, et False sinon<!-- END REF -->.
 
-Avec les sessions client distant, procédures stockées et autonomes, cette fonction retourne toujours True, quel que soit le *privilege*.
+:::note
+
+Cette fonction renvoie True pour le *privilège* si elle est appelée depuis une fonction qui a été promue pour ce privilège (soit via le fichier [roles.json](../ORDA/privileges.md#rolesjson-file), soit via la fonction [`promote()`](#promote)).
+
+:::
+
+Regarding remote client sessions, the function only impacts [code accessing the web server](../WebServer/preemptiveWeb.md#writing-thread-safe-web-server-code).
+
+With stored procedure sessions and standalone sessions, this function always returns True, whatever the *privilege*.
 
 #### Exemple
 
@@ -320,7 +407,7 @@ End if
 
 #### Voir également
 
-[*Blog posts about this feature*](https://blog.4d.com/?s=hasPrivilege)
+[*Articles de blog sur cette fonctionnalité*](https://blog.4d.com/?s=hasPrivilege)
 
 <!-- END REF -->
 
@@ -496,6 +583,85 @@ End if
 
 <!-- END REF -->
 
+<!-- REF SessionClass.promote().Desc -->
+
+## .promote()
+
+<details><summary>Historique</summary>
+
+| Release | Modifications |
+| ------- | ------------- |
+| 20 R10  | Ajout         |
+
+</details>
+
+<!-- REF #SessionClass.promote().Syntax -->**.promote**( *privilege* : Text ) : Integer<!-- END REF -->
+
+<!-- REF #SessionClass.promote().Params -->
+
+| Paramètres | Type    |                             | Description                                                     |
+| ---------- | ------- | :-------------------------: | --------------------------------------------------------------- |
+| privilege  | Text    |              ->             | Nom de privilège                                                |
+| Résultat   | Integer | <- | id à utiliser pour l'appel de la fonction [`demote()`](#demote) |
+
+<!-- END REF -->
+
+#### Description
+
+:::note
+
+Cette fonction ne fait rien dans les sessions clients distants, procédures stockées et autonomes.
+
+:::
+
+La fonction `.promote()` <!-- REF #SessionClass.promote().Summary -->ajoute le privilège défini dans le paramètre *privilege* au process courant durant l'exécution de la fonction appelante et renvoie l'identifiant du privilège promu<!-- END REF -->.
+
+L'ajout dynamique de privilèges est utile lorsque les droits d'accès dépendent du contexte d'exécution, qui ne peut pas être entièrement défini dans le fichier "roles.json". Ceci est particulièrement le cas lorsque la même fonction peut être exécutée par des utilisateurs ayant des niveaux d'accès différents. L'utilisation de `.promote()` permet de s'assurer que seul le process en cours bénéficie des privilèges nécessaires, sans affecter les autres.
+
+La fonction ne fait rien et renvoie 0 si :
+
+- le *privilege* n'existe pas dans le fichier [`roles.json`](../ORDA/privileges.md#rolesjson-file),
+- le *privilege* est déjà assigné au process courant (en utilisant `.promote()` ou à travers une [action de promotion statique](../ORDA/privileges.md#permission-actions) déclarée pour la fonction appelante dans le fichier [`roles.json`](../ORDA/privileges.md#rolesjson-file)).
+
+Vous pouvez appeler la fonction `promote()` plusieurs fois dans le même process pour ajouter différents privilèges.
+
+L'identifiant renvoyé est incrémenté chaque fois qu'un privilège est ajouté dynamiquement au process.
+
+Pour supprimer un privilège de manière dynamique, appelez la fonction `demote()` avec l'identifiant du privilège.
+
+#### Exemple
+
+Plusieurs utilisateurs se connectent à un seul point d'accès qui sert différentes applications. Un utilisateur de l'application n°1 n'a pas besoin du privilège "super_admin" car il ne crée pas de "VerySensitiveInfo". Un utilisateur de l'application n° 2 a besoin du privilège "super_admin".
+
+Vous pouvez allouer dynamiquement les privilèges appropriés dans la fonction *CreateInfo* :
+
+```4d
+exposed Function createInfo($info1 : Text; $info2 : Text)
+	
+var $sensitive : cs.SensitiveInfoEntity
+var $verySensitiveInfo : cs.VerySensitiveInfoEntity
+var $status : Object
+var $promoteId : Integer
+	
+$sensitive:=ds.SensitiveInfo.new()
+$sensitive.info:=$info1
+$status:=$sensitive.save()
+	
+If (Session.storage.role.name="userApp2")
+	$promoteId:=Session.promote("super_admin")
+	$verySensitiveInfo:=ds.VerySensitiveInfo.new()
+	$verySensitiveInfo.info:=$info2
+	$status:=$verySensitiveInfo.save()
+	Session.demote($promoteId)
+End if 
+```
+
+#### Voir également
+
+[`.demote()`](#demote)<br/>[`hasPrivilege()`](#hasprivilege)
+
+<!-- END REF -->
+
 <!-- REF SessionClass.restore().Desc -->
 
 ## .restore()
@@ -565,6 +731,7 @@ Function callback($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 
 | Release | Modifications                                         |
 | ------- | ----------------------------------------------------- |
+| 21      | Support of remote client sessions                     |
 | 19 R8   | Prise en charge de la propriété "roles" dans settings |
 | 18 R6   | Ajout                                                 |
 
@@ -587,23 +754,21 @@ Function callback($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 
 :::note
 
-Cette fonction ne fait rien et retourne toujours **False** avec les sessions client distants, procédures stockées et autonomes.
+This function does nothing and always returns **False** with stored procedure sessions and standalone sessions.
 
 :::
 
 La fonction `.setPrivileges()` <!-- REF #SessionClass.setPrivileges().Summary -->associe le ou les privilège(s) et/ou rôle(s) défini(s) en paramètre à la session et renvoie **True** si l'exécution a réussi<!-- END REF -->.
 
 - Dans le paramètre *privilege*, passez une chaîne contenant un nom de privilège (ou plusieurs noms de privilèges séparés par des virgules).
-
 - Dans le paramètre *privileges*, passez une collection de chaînes contenant des noms de privilèges.
-
 - Dans le paramètre *settings*, passez un objet contenant les propriétés suivantes :
 
-| Propriété  | Type               | Description                                                                                                      |
-| ---------- | ------------------ | ---------------------------------------------------------------------------------------------------------------- |
-| privileges | Text ou Collection | <li>Chaîne contenant un nom de privilège, ou</li><li>Collection de chaînes contenant des noms de privilèges</li> |
-| roles      | Text ou Collection | <li>Chaîne contenant un rôle, ou</li><li>Collection de chaînes contenant des rôles</li>                          |
-| userName   | Text               | Nom d'utilisateur à associer à la session (optionnel)                                         |
+| Propriété  | Type               | Description                                                                                                                                                                                   |
+| ---------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| privileges | Text ou Collection | <li>Chaîne contenant un nom de privilège, ou</li><li>Collection de chaînes contenant des noms de privilèges</li>                                                                              |
+| roles      | Text ou Collection | <li>Chaîne contenant un rôle, ou</li><li>Collection de chaînes contenant des rôles</li>                                                                                                       |
+| userName   | Text               | User name to associate to the session (optional, web sessions only). Not available in remote client sessions (ignored). |
 
 :::note
 
@@ -616,6 +781,8 @@ Si la propriété `privileges` ou `roles` contient un nom qui n'est pas déclar�
 Par défaut lorsqu'aucun privilège ou rôle n'est associé à la session, la session est une [session Guest](#isguest).
 
 La propriété [`userName`](#username) est accessible au niveau de l'objet session (lecture seulement).
+
+Regarding remote client sessions, the function only concerns the code executed in the context of a [web request sent through a Web area](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas).
 
 #### Exemple
 

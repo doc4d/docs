@@ -19,7 +19,7 @@ displayed_sidebar: docs
 
 ## 説明
 
-The **WP SET ATTRIBUTES** command <!--REF #_command_.WP SET ATTRIBUTES.Summary-->allows you to set the value of any attribute in a range, element, document.<!-- END REF--> This command gives you access to any kind of 4D Write Pro internal attribute: character, paragraph, document, table, or image.
+**WP SET ATTRIBUTES** コマンドは、<!--REF #_command_.WP SET ATTRIBUTES.Summary-->引数として渡されたレンジ、要素、ドキュメント内の一つ以上の属性の値を設定することができます。<!-- END REF--> このコマンドを使用することで、4D Write Pro の次のようなあらゆる内部属性にアクセスすることができます: 文字、段落、ドキュメント、表、画像。
 
 *targetObj* 引数には、以下のいずれかを渡すことができます :
 
@@ -33,7 +33,7 @@ The **WP SET ATTRIBUTES** command <!--REF #_command_.WP SET ATTRIBUTES.Summary--
 
 - *attribObj* 引数を使用して、属性の名前と対応する値をオブジェクトのプロパティとして格納した一つのオブジェクトを渡すことができます。
 
-渡すことのできる属性の包括的な一覧と、そのスコープおよび対応する値については、*4D Write Pro属性* の章を参照してください。
+For a comprehensive list of attributes to pass, as well as their scope and respective values, please refer to the [4D Write Pro Attributes](../4d-write-pro-attributes) section.
 
 ## 例題 1
 
@@ -148,6 +148,6 @@ paper box の値はドキュメントあるいはセクションに対しての�
 
 ## 参照
 
-*4D Write Pro Attributes*\
-[WP GET ATTRIBUTES](../commands/wp-get-attributes.md)\
+[4D Write Pro Attributes](../4d-write-pro-attributes)  
+[WP GET ATTRIBUTES](../commands/wp-get-attributes.md)  
 [WP RESET ATTRIBUTES](../commands/wp-reset-attributes.md)

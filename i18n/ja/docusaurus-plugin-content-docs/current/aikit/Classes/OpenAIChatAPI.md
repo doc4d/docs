@@ -24,3 +24,9 @@ title: OpenAIChatAPI
 | -------------- | --------------------------------------- | ------------------------- |
 | *systemPrompt* | Text                                    | チャットを初期化するシステムプロント。       |
 | 戻り値            | [OpenAIChatHelper](OpenAIChatHelper.md) | チャットのやり取りを管理するヘルパーインスタンス。 |
+
+#### 使用例
+
+```4D
+var $chatHelper:=$client.chat.create("You are a helpful assistant.")
+```

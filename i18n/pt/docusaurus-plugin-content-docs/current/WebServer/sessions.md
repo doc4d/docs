@@ -12,6 +12,12 @@ As sessões Web permitem:
 - armazena e compartilha dados entre processos de um cliente web usando o [.storage](../API/SessionClass.md#storage) da sessão,
 - associate privileges to the user running the session.
 
+:::tip Related blog post
+
+[Scalable sessions for advanced web applications](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/)
+
+:::
+
 ## Usos
 
 As sessões Web são usadas para:
@@ -206,6 +212,12 @@ For more examples, please refer to the [Scalable sessions for advanced web appli
 The 4D web server allows you to generate, share, and use OTP (One-Time Passcode) session tokens. OTP session tokens are used to secure communications with third-party applications or websites. For information on OTP, please refer to the [One-time password page](https://en.wikipedia.org/wiki/One-time_password) on Wikipedia.
 
 In 4D, OTP session tokens are useful when calling external URLs and being called back in another browser or device (mobile/computer). Typically, a third-party application sends a confirmation email containing a callback link on which the user has to click. The callback link includes the OTP token, so that the session which triggered the callback is loaded along with its data and privileges. This principle allows you to share the same session on multiple devices. Graças a esta arquitetura, o [cookie de sessão](#session-implementation) não está exposto na rede, o que elimina o risco de ataque do homem-meio.
+
+:::tips Related blog posts
+
+[Connect Your Web Apps to Third-Party Systems](https://blog.4d.com/connect-your-web-apps-to-third-party-systems/)
+
+:::
 
 ### Visão Geral
 
@@ -471,8 +483,4 @@ A session token has a lifespan, and the session itself has a lifespan. O tempo d
 
 A session is only restored by a token if both the session token lifespan and the session lifespan have not expired. In other cases (the session token has expired and/or the session itself has expired), a guest session is created when a web request with a session token is received.
 
-:::note
 
-For more information, please refer to the [Connect Your Web Apps to Third-Party Systems](https://blog.4d.com/connect-your-web-apps-to-third-party-systems/) blog post.
-
-:::

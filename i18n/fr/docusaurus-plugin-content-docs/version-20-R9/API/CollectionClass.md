@@ -2451,11 +2451,11 @@ où :
 - **valeur** : valeur à comparer à la valeur actuelle de la propriété de chaque élément de la collection. Il peut s'agir de n'importe quelle valeur d'expression constante correspondant au type de données de l'élément ou d'un [**placeholder**](#using-placeholders).
   Lorsque vous utilisez une valeur constante, les règles suivantes doivent être respectées :
   - Les valeurs constantes de type **texte** peuvent être passées avec ou sans guillemets (voir **Utilisation des guillemets** ci-dessous). Pour rechercher une chaîne dans une chaîne (recherche de type "contient"), utilisez le symbole joker (@) dans valeur pour isoler la chaîne à chercher, comme dans cet exemple : "@Smith@". Les mots-clés suivants sont interdits pour des constantes de type texte : true, false.
-  - Valeurs constantes de type**booléen**: **true** or **false** (sensible à la casse).
+  - Valeurs constantes de type **booléen**: **true** or **false** (sensible à la casse).
   - Valeurs constantes de type **numérique** : les décimales doivent être séparées par un '.'
   - Constantes de type **date** : "YYYY-MM-DD" format
   - Constantes **null** : en utilisant le mot-clé "null", la recherche trouvera les propriétés ayant la valeur **null** et **undefined**.
-  - Dans le cas d'une recherche avec un comparateur IN, *value*doit être une collection, ou des valeurs du même type que les données du chemin d'attribut, fournies entre \[ ] et séparées par des virgules (pour les chaînes, les caractères `"` doivent être écha
+  - dans le cas d'une recherche avec un comparateur IN, *value* doit être une collection ou des valeurs correspondant au type de l'attribut path entre \[ ] séparés par des virgules (pour les chaînes, les caractères `"` doivent être échappés avec `\`).
 
 - **logicalOperator** : utilisé pour relier des conditions multiples dans la recherche (optionnel). Vous pouvez utiliser un des opérateurs logiques suivants (le nom ou le symbole peut être passé) :
 
@@ -3195,16 +3195,17 @@ Vous voulez savoir si au moins une valeur de la collection est >0.
 
 </details>
 
-<!-- REF #collection.sort().Syntax -->**.sort**() : Collection<br/>**.sort**( *formula* : 4D.Function { ; *...extraParam* : any } ) : Collection<br/>**.sort**( *methodName* : Text { ; *...extraParam* : any } ) : Collection <!-- END REF -->
+<!-- REF #collection.sort().Syntax -->**.sort**() : Collection<br/>**.sort**( *ascOrDesc* : Integer ) : Collection <br/>**.sort**( *formula* : 4D.Function { ; *...extraParam* : any } ) : Collection<br/>**.sort**( *methodName* : Text { ; *...extraParam* : any } ) : Collection<!-- END REF -->
 
 <!-- REF #collection.sort().Params -->
 
-| Paramètres | Type                        |                             | Description                                           |
-| ---------- | --------------------------- | :-------------------------: | ----------------------------------------------------- |
-| formula    | 4D.Function |              ->             | Objet formule                                         |
-| methodName | Text                        |              ->             | Nom de méthode                                        |
-| extraParam | any                         |              ->             | Paramètre(s) à passer à la méthode |
-| Résultat   | Collection                  | <- | Collection d'origine triée                            |
+| Paramètres | Type                        |                             | Description                                                              |
+| ---------- | --------------------------- | :-------------------------: | ------------------------------------------------------------------------ |
+| ascOrDesc  | Integer                     |              ->             | `ck ascending` ou `ck descending` (valeurs scalaires) |
+| formula    | 4D.Function |              ->             | Objet formule                                                            |
+| methodName | Text                        |              ->             | Nom de méthode                                                           |
+| extraParam | any                         |              ->             | Paramètre(s) à passer à la méthode                    |
+| Résultat   | Collection                  | <- | Collection d'origine triée                                               |
 
 <!-- END REF -->
 
@@ -3214,7 +3215,19 @@ La fonction `.sort()` <!-- REF #collection.sort().Summary -->trie les éléments
 
 > Cette fonction modifie la collection d'origine.
 
-Si `.sort()` est appelé sans paramètres, seules les valeurs scalaires (nombres, textes, dates, booléens) sont triées. Les éléments sont triés par défaut par ordre croissant, en fonction de leur type. Si la collection contient des éléments de différents types, ils sont d'abord groupés par type et triés par la suite. Les types sont renvoyés dans l'ordre suivant :
+Si `.sort()` est appelé sans paramètres, seules les valeurs scalaires (nombres, textes, dates, booléens) sont triées. Les éléments sont triés par défaut par ordre croissant, en fonction de leur type.
+You can also pass one of the following constants in the *ascOrDesc* parameter:
+
+ ```
+ |Constant|	Type|Value|Comment|
+ |---|---|---|---|
+ |ck ascending|Integer|0|Elements are ordered in ascending order (default)|
+ |ck descending|Integer|1|Elements are ordered in descending order|
+ 
+ This syntax orders scalar values in the collection only (other element types such as objects or collections are returned unordered).
+ ```
+
+Si la collection contient des éléments de différents types, ils sont d'abord groupés par type et triés par la suite. Les types sont renvoyés dans l'ordre suivant :
 
 1. Null
 2. booléens
