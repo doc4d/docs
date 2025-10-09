@@ -18,14 +18,14 @@ Custom HTTP request handlers meet various needs, including:
 
 ## Requirements
 
-Custom HTTP Request handlers are supported:
+Custom HTTP Request handlers are supported in the following context:
 
-- when [scalable sessions](./sessions.md#enabling-web-sessions) are enabled,
-- with the main Web Server only (HTTP Request handlers that may have been defined in [Web Servers of components](../WebServer/webServerObject.md) are ignored). 
+- [scalable sessions](./sessions.md#enabling-web-sessions) or [no sessions](../settings/web.md#no-sessions) are enabled,
+- a web server run locally by 4D or 4D Server, including those [run by components](./webServerObject.md). 
 
 :::warning
 
-[By default](../ORDA/privileges.md#default-file) for security reasons, external access to the datastore is not allowed in 4D. You need to configure the [ORDA privileges](../ORDA/privileges.md) to allow HTTP requests.  
+For security reasons, external access to the datastore can be disallowed in 4D. You need to configure the [ORDA privileges](../ORDA/privileges.md) to allow HTTP requests.  
 
 :::
 

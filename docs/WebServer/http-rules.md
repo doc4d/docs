@@ -1,25 +1,20 @@
 ---
-id: http-responses
-title: HTTP Response Headers
+id: http-rules
+title: HTTP Rules
 ---
 
-You can customize HTTP response headers for any requests received by the 4D web server, including REST requests. You can add or remove HTTP headers, send redirections or set the HTTP status. This feature is useful to implement security policies based upon the control of headers. 
+You can define HTTP rules to control HTTP response headers for any requests received by the 4D web server, including REST requests. You can add, modify, or remove HTTP headers, send redirections or set the HTTP status. This feature is useful to implement security policies based upon the handling of headers. 
 
-To customize HTTP response headers, you just need to write some ReGex to declare the URL patterns you want to control, as well as how to modify response headers. You can set these rules using a `HTTPRules.json` file stored in the project folder, or using the *settings* parameter of the web server object [start()](../API/WebServerClass.md#start) function.  
+To define HTTP rules, you just need to write some RegEx to declare the URL patterns you want to control, as well as how to modify response headers. You can set these rules using a `HTTPRules.json` file stored in the project folder, or using the *settings* parameter of the web server object [start()](../API/WebServerClass.md#start) function.  
 
 
 ## Requirements
 
-HTTP response header customization is supported in the following contexts:
+HTTP rules are supported in the following contexts:
 
 - [scalable sessions](./sessions.md#enabling-web-sessions) or [no sessions](../settings/web.md#no-sessions) are enabled,
 - a web server run locally by 4D or 4D Server, including those [run by components](./webServerObject.md). 
 
-:::note
-
-Using a web server on a remote 4D is **deprecated** and is not supported by this feature. 
-
-:::
 
 ## How to set rules
 
@@ -147,6 +142,6 @@ Here is an example of HTTPRules.json file:
 
 :::tip Related blog post
 
-[XX](https://blog.4d.com/master-http-requests-with-4d-request-handlers/)
+[New Way to Control Your HTTP Responses](https://blog.4d.com/new-way-to-control-your-http-responses/)
 
 :::

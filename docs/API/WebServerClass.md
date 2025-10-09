@@ -24,6 +24,7 @@ They provide the following properties and functions:
 |[<!-- INCLUDE #WebServerClass.CORSSettings.Syntax -->](#corssettings)<br/><!-- INCLUDE #WebServerClass.CORSSettings.Summary --> |
 |[<!-- INCLUDE #WebServerClass.debugLog.Syntax -->](#debuglog)<br/><!-- INCLUDE #WebServerClass.debugLog.Summary -->|
 |[<!-- INCLUDE #WebServerClass.defaultHomepage.Syntax -->](#defaulthomepage)<br/><!-- INCLUDE #WebServerClass.defaultHomepage.Summary -->|
+|[<!-- INCLUDE #WebServerClass.handlers.Syntax -->](#handlers)<br/><!-- INCLUDE #WebServerClass.handlers.Summary -->|
 |[<!-- INCLUDE #WebServerClass.HSTSEnabled.Syntax -->](#hstsenabled)<br/><!-- INCLUDE #WebServerClass.HSTSEnabled.Summary --> |
 |[<!-- INCLUDE #WebServerClass.HSTSMaxAge.Syntax -->](#hstsmaxage)<br/><!-- INCLUDE #WebServerClass.HSTSMaxAge.Summary -->|
 |[<!-- INCLUDE #WebServerClass.HTTPCompressionLevel.Syntax -->](#httpcompressionlevel)<br/><!-- INCLUDE #WebServerClass.HTTPCompressionLevel.Summary -->|
@@ -181,6 +182,27 @@ The <!-- REF #WebServerClass.debugLog.Summary -->status of the HTTP request log 
 The <!-- REF #WebServerClass.defaultHomepage.Summary -->name of the default home page<!-- END REF --> or "" to not send the custom home page.
 
 <!-- END REF -->
+
+<!-- REF WebServerClass.handlers.Desc -->
+## .handlers
+
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|21|Added|
+
+</details>
+
+<!-- REF #WebServerClass.handlers.Syntax -->**.handlers** : Collection<!-- END REF -->
+
+*Read-only property*
+
+A <!-- REF #WebServerClass.handlers.Summary -->collection of the loaded HTTP handler objects<!-- END REF -->. An HTTP handler object contains a listened URL pattern, a handled verb, and the code to be called. HTTP handlers can be defined through a HTTPHandlers.json file or the `settings` parameter. For more information, please refer to the [HTTP Request handler](../WebServer/http-request-handler.md) page. 
+
+<!-- END REF -->
+
+
 
 <!-- REF WebServerClass.HSTSEnabled.Desc -->
 
@@ -507,7 +529,7 @@ The <!-- REF #WebServerClass.rootFolder.Summary -->path of web server root folde
 
 *Read-only property*
 
-A <!-- REF #WebServerClass.rules.Summary -->collection of rule objects currently defined to customize HTTP headers<!-- END REF -->. A rule object contains a "regexPattern" property, as well as an action name with a value. Customized HTTP headers can be defined through a HTTPRules.json file or the `settings` parameter. For more information, please refer to the [HTTP Response Headers](../WebServer/http-responses.md) page. 
+A <!-- REF #WebServerClass.rules.Summary -->collection of rule objects currently handled to customize HTTP headers<!-- END REF -->. A rule object contains a "regexPattern" property, as well as an action name with a value. HTTP rules can be defined through a HTTPRules.json file or the `settings` parameter. For more information, please refer to the [HTTP Rules](../WebServer/http-rules.md) page. 
 
 <!-- END REF -->
 
