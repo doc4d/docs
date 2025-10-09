@@ -98,13 +98,13 @@ There are no restrictions on the number of pages a form can have. The same field
 A multi-page form has both a background page and several display pages. Objects that are placed on the background page may be visible on all display pages, but can be selected and edited only on the background page. In multi-page forms, you should put your button palette on the background page. You also need to include one or more objects on the background page that provide page navigation tools for the user.
 
 
-## WinUI 3 rendering (Developer Preview)
+## Fluent UI rendering (Developer Preview)
 
-4D supports form rendering using **WinUI 3**, Microsoft's modern graphical user interface technology. **WinUI 3** is the foundation of the Windows App SDK and represents the upcoming Windows graphical interfaces.
+On Windows, 4D supports **Fluent UI** form rendering, Microsoft's modern graphical user interface design, based upon **WinUI 3** technology. **WinUI 3** is the foundation of the Windows App SDK and represents the upcoming Windows graphical interfaces.
 
 :::caution Developer Preview
 
-WinUI 3 support is currently in the Developer Preview phase. It should not be used in production. 
+Fluent UI support is currently in the Developer Preview phase. It should not be used in production. 
 
 :::
 
@@ -115,9 +115,9 @@ This feature can only be used on Windows. On macOS, it is ignored.
 :::
 
 
-### WinUI 3 rendering availability
+### Fluent UI rendering availability
 
-The WinUI 3 rendering is available in the following execution environments only:
+The Fluent UI rendering is available in the following execution environments only:
 
 - Windows with [Windows App SDK](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/downloads) version 1.7.3 installed (you need to install this SDK on any Windows machine displaying your forms).
 - Merged [stand-alone](../Desktop/building.md#build-stand-alone-application) or [client](../Desktop/building.md#build-client-application) 4D application
@@ -129,17 +129,17 @@ If the Windows App SDK is not properly installed, 4D will render all your forms 
 
 :::
 
-### Enabling the WinUI 3 rendering
+### Enabling the Fluent UI rendering
 
-You can enable the WinUI 3 rendering mode at the application level or at the form level. Form setting has priority over application setting.
+You can enable the Fluent UI rendering mode at the application level or at the form level. Form setting has priority over application setting.
 
 #### Application setting
 
-Check the **Use WinUI on Windows** option in the "Interface" page of the Settings dialog box. 
+Check the **Use Fluent UI on Windows** option in the "Interface" page of the Settings dialog box. 
 
-![](../assets/en/FormObjects/winui-setting.png)
+![](../assets/en/FormObjects/fluentui-setting.png)
 
-In this case, the WinUI 3 rendering mode will be used by default on Windows for all forms.
+In this case, the Fluent UI rendering mode will be used by default on Windows for all forms.
 
 #### Form setting
 
@@ -147,21 +147,20 @@ Each form can define its own rendering via the **Widget appearance** property. T
 
 - **Inherited**: inherits the global application setting (default),
 - **Classic**: uses the classic Windows style,
-- **WinUI**: enables the modern rendering based on WinUI 3.
+- **Fluent UI**: enables the modern rendering based on Fluent UI. <br/>
+![](../assets/en/FormObjects/fluentui-form.png)
 
-![](../assets/en/FormObjects/winui-form.png)
-
-The corresponding [JSON form property](./properties_JSONref.md) is `winUI` with value undefined (i.e. inherited, default value), "true" or "false".
+The corresponding [JSON form property](./properties_JSONref.md) is `fluentUI` with value undefined (i.e. inherited, default value), "true" or "false".
 
 ### Features and limitations
 
-WinUI 3 rendering offers modern and attractive controls, support of dark/light system themes, smoother rendering optimized for high-resolution displays, and consistent user experience aligned with recent Microsoft applications.
+Fluent UI rendering offers modern and attractive controls, support of dark/light system themes, smoother rendering optimized for high-resolution displays, and consistent user experience aligned with recent Microsoft applications.
 
 
-When using 4D forms with WinUI 3 rendering, you need to pay attention to the following points:
+When using 4D forms with Fluent UI rendering, you need to pay attention to the following points:
 
-- The `FORM Window theme` command returns the actual display theme of the current form. Possible values: "Classic" or "WinUI". If there is no current form or the command is called on macOS, and empty string is returned. 
-- If [`GET STYLE SHEET INFO`](../commands-legacy/get-style-sheet-info.md) is called in the context of a form, the information returned relates to the current appearance of the form (Classic or WinUI). If the command is called outside the context of a form, the information returned relates to the [global project settings](#application-setting).
+- The `FORM Window theme` command returns the actual display theme of the current form. Possible values: "Classic" or "FluentUI". If there is no current form or the command is called on macOS, and empty string is returned. 
+- If [`GET STYLE SHEET INFO`](../commands-legacy/get-style-sheet-info.md) is called in the context of a form, the information returned relates to the current appearance of the form (Classic or FluentUI). If the command is called outside the context of a form, the information returned relates to the [global project settings](#application-setting).
 - [`SET MENU ITEM STYLE`](../commands-legacy/set-menu-item-style.md) with `Underline` *itemStyle* parameter is not supported (ignored) for pop up menus. 
 - A focus ring can be added to picture and text [inputs](../FormObjects/input_overview.md). 
 - [Stepper](../FormObjects/stepper.md) form object does not support [double-click event](../Events/onDoubleClicked.md).  

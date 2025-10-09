@@ -18,7 +18,7 @@ Read [**What’s new in 4D 21**](https://blog.4d.com/en-whats-new-in-4d-21/), th
 
 #### Developer Preview
 
-[**WinUI** rendering for 4D forms](../FormEditor/forms.md#winui-3-rendering-developer-preview) is proposed in Developer Preview during the beta test program. 
+[**FluentUI** rendering for 4D forms](../FormEditor/forms.md#fluent-ui-rendering-developer-preview) is proposed in Developer Preview during the beta test program. 
 
 
 #### Behavior changes
