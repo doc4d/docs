@@ -31,7 +31,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.String.Summary-->**String** コマンドは、*expression* に渡した数値、日付、時間、文字列、またはブールを文字列に変換します。<!-- END REF-->
 
-If you do not pass any other parameter, the string is returned with the appropriate default format. *format* を指定すると、結果の文字列は指定した形式になります。
+引数を何も渡さなかった場合、適切なデフォルトの形式の文字列で返されます。 *format* を指定すると、結果の文字列は指定した形式になります。
 
 オプションの*addTime* 引数は、日付に時間を複合フォーマットで追加します。 この引数は *expression* 引数が日付型の時にのみ使用できます (後述)。
 
@@ -90,7 +90,7 @@ If you do not pass any other parameter, the string is returned with the appropri
 :::info
 
 - このシンタックスは[基数の取扱に関する`toString` EcmaScript 仕様](https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-number.prototype.tostring) に厳密に従います。
-- *base*=10 のシンタックスを使用した場合、 *base* 引数を使用しなかったシンタックスと全く同じ結果は返しません。 For example, if the specified number value is not a number, the "NaN" string is returned.
+- *base*=10 のシンタックスを使用した場合、 *base* 引数を使用しなかったシンタックスと全く同じ結果は返しません。 例えば、指定された数値が数字でなかった場合、 "NaN" の文字列が返されます。
 
 :::
 
@@ -140,7 +140,7 @@ If you do not pass any other parameter, the string is returned with the appropri
  $vsResult:=String(!2023-11-27!;ISO Date GMT) // フランス時間では "2023-11-26T23:00:00Z"
 ```
 
-- あるいは[パターンに基づいてビルドされたカスタマイズされたフォーマット](../Project/date-time-formats.md) (文字列値)\
+- あるいは[パターンに基づいてビルドされたカスタマイズされたフォーマット](../Project/date-time-formats.md) (文字列値)  
   例:
 
 ```4d
@@ -173,7 +173,7 @@ If you do not pass any other parameter, the string is returned with the appropri
  $mydate:=String(Current date;ISO Date GMT;Current time) // 例えば、2010-09-13T16:11:53Z を返します
 ```
 
-上記の例の最後の"Z"はGMTフォーマットを表します。\
+上記の例の最後の"Z"はGMTフォーマットを表します。  
 *addTime* 引数を渡さなかった場合、このコマンドはローカルタイムの午前0時をGMT 標準時で表現したものを返します。そのためローカルの時間帯に応じて日付が前後することがあります:
 
 ```4d
@@ -229,7 +229,7 @@ If you do not pass any other parameter, the string is returned with the appropri
  $vsResult:=String(?17:30:45?;Hour Min Sec) //"17 時 30 分 45 秒 "
 ```
 
-- あるいは[パターンに基づいてビルドされたカスタマイズされたフォーマット](../Project/date-time-formats.md) (文字列値)\
+- あるいは[パターンに基づいてビルドされたカスタマイズされたフォーマット](../Project/date-time-formats.md) (文字列値)  
   例:
 
 ```4d
@@ -239,12 +239,12 @@ If you do not pass any other parameter, the string is returned with the appropri
 
 ### 文字列式
 
-*expression* が文字列またはテキスト型の場合、コマンドは引数として渡されたものと同じ値を返します。 これは特にポインタを使用している汎用プログラミングで有効です。\
+*expression* が文字列またはテキスト型の場合、コマンドは引数として渡されたものと同じ値を返します。 これは特にポインタを使用している汎用プログラミングで有効です。  
 この場合、*format* 引数は渡されても無視されます。
 
 ### ブール式
 
-*expression* がブール 型の場合、コマンドはアプリケーションのランゲージに即した文字列の "True" または"False"を返します(例えば、4Dのフランス語バージョンでは、“Vrai”または“Faux”)。\
+*expression* がブール 型の場合、コマンドはアプリケーションのランゲージに即した文字列の "True" または"False"を返します(例えば、4Dのフランス語バージョンでは、“Vrai”または“Faux”)。  
 この場合、*format* 引数は渡されても無視されます。
 
 ### 未定義式
@@ -257,10 +257,10 @@ If you do not pass any other parameter, the string is returned with the appropri
 
 ## 参照
 
-[Bool](../commands-legacy/bool.md)\
-[Date](../commands-legacy/date.md)\
-[Num](num.md)\
-[Time string](../commands-legacy/time-string.md)\
+[Bool](../commands-legacy/bool.md)  
+[Date](../commands-legacy/date.md)  
+[Num](num.md)  
+[Time string](../commands-legacy/time-string.md)  
 [Timestamp](../commands-legacy/timestamp.md)
 
 ## プロパティ

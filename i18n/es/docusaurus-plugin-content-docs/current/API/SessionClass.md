@@ -5,11 +5,11 @@ title: Session
 
 Los objetos de sesión son devueltos por el comando [`Session`](../commands/session.md). Estos objetos ofrecen al desarrollador una interfaz que permite gestionar la sesión de usuario actual y ejecutar acciones como almacenar datos contextuales, compartir información entre procesos de sesión, lanzar procesos preferentes relacionados con la sesión o (sólo web) gestionar [privilegios](../ORDA/privileges.md).
 
-:::tip Related blog posts
+:::tip Entradas de blog relacionadas
 
 - [Sesiones escalables para aplicaciones web avanzadas](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/)
-- [Permissions: Inspect Session Privileges for Easy Debugging](https://blog.4d.com/permissions-inspect-session-privileges-for-easy-debugging/)
-- [Generate, share and use web sessions One-Time Passcodes (OTP)](https://blog.4d.com/connect-your-web-apps-to-third-party-systems/)
+- [Permissions: inspeccionar los privilegios de la sesión para facilitar la depuración](https://blog.4d.com/permissions-inspect-session-privileges-for-easy-debugging/)
+- [Generar, compartir y utilizar contraseñas de un solo uso (OTP) para las sesiones web](https://blog.4d.com/connect-your-web-apps-to-third-party-systems/)
 
 :::
 
@@ -54,9 +54,10 @@ La disponibilidad de las propiedades y funciones del objeto `Session` depende de
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones |
-| ----------- | -------------- |
-| 18 R6       | Añadidos       |
+| Lanzamiento | Modificaciones             |
+| ----------- | -------------------------- |
+| 21          | Support of remote sessions |
+| 18 R6       | Añadidos                   |
 
 </details>
 
@@ -74,19 +75,21 @@ La disponibilidad de las propiedades y funciones del objeto `Session` depende de
 
 :::note
 
-Esta función no hace nada y siempre devuelve **True** con cliente remoto, procedimiento almacenado y sesiones independientes.
+This function does nothing and always returns **True** with stored procedure sessions and standalone sessions.
 
 :::
 
-The `.clearPrivileges()` function <!-- REF #SessionClass.clearPrivileges().Summary -->removes all the privileges associated to the session (excluding promoted privileges) and returns **True** if the execution was successful<!-- END REF -->.
+La función `.clearPrivileges()` <!-- REF #SessionClass.clearPrivileges().Summary -->elimina todos los privilegios asociados a la sesión (excluyendo privilegios promocionados)y devuelve **True** si la ejecución se ha realizado correctamente<!-- END REF -->.
 
 A menos que esté en modo ["forceLogin"](../REST/authUsers.md#force-login-mode), la sesión se convierte automáticamente en una sesión de Invitado. En modo "forceLogin", `.clearPrivileges()` no transforma la sesión a una sesión de invitado, sólo elimina los privilegios de la sesión.
 
 :::note
 
-This function does not remove **promoted privileges** from the web process, whether they are added through the [roles.json](../ORDA/privileges.md#rolesjson-file) file or the [`promote()`](#promote) function.
+Esta función no elimina los **privilegios promovidos** del proceso web, tanto si se han añadido a través del archivo [roles.json](../ORDA/privileges.md#rolesjson-file) como de la función [`promote()`](#promote).
 
 :::
+
+Regarding remote client sessions, the function only impacts [code accessing the web server](../WebServer/preemptiveWeb.md#writing-thread-safe-web-server-code).
 
 #### Ejemplo
 
@@ -107,9 +110,10 @@ $isGuest:=Session.isGuest() //$isGuest es True
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones |
-| ----------- | -------------- |
-| 20 R9       | Añadidos       |
+| Lanzamiento | Modificaciones             |
+| ----------- | -------------------------- |
+| 21          | Support of remote sessions |
+| 20 R9       | Añadidos                   |
 
 </details>
 
@@ -120,7 +124,7 @@ $isGuest:=Session.isGuest() //$isGuest es True
 | Parámetros | Tipo    |                             | Descripción                                         |
 | ---------- | ------- | :-------------------------: | --------------------------------------------------- |
 | lifespan   | Integer |              ->             | Duración de la vida del token de sesión en segundos |
-| Resultado  | Text    | <- | UUID de la sesión                                   |
+| Resultado  | Text    | <- | UUID del token                                      |
 
 <!-- END REF -->
 
@@ -128,7 +132,7 @@ $isGuest:=Session.isGuest() //$isGuest es True
 
 :::note
 
-Esta función solo está disponible con sesiones usuario web. Devuelve una cadena vacía en otros contextos.
+This function is available with web user sessions and remote sessions. It returns an empty string in stored procedure and standalone sessions.
 
 :::
 
@@ -136,9 +140,14 @@ La función `.createOTP()` <!-- REF #SessionClass.createOTP().Summary -->crea un
 
 Para más información sobre los tokens OTP, por favor consulte [esta sección](../WebServer/sessions.md#session-token-otp).
 
-Por defecto, si se omite el parámetro *lifespan*, el token se crea con el mismo tiempo de vida que el [`.idleTimeOut`](#idletimeout) de la sesión. Puede definir un tiempo de espera personalizado pasando un valor en segundos en *lifespan* (el valor mínimo es de 10 segundos, *lifespan* se restablece a 10 si se pasa un valor menor). Si se utiliza un token caducado para restaurar una sesión de usuario web, se ignora.
+Puede definir un tiempo de espera personalizado pasando un valor en segundos en *lifespan*. If an expired token is used to restore a session, it is ignored. By default, if the *lifespan* parameter is omitted:
 
-El token devuelto puede ser utilizado en intercambios con aplicaciones de terceros o sitios web para identificar la sesión de forma segura. Por ejemplo, el token OTP de sesión se puede utilizar con una aplicación de pago.
+- with web user sessions, the token is created with the same lifespan as the [`.idleTimeOut`](#idletimeout) of the session.
+- with remote sessions, the token is created with a 10 seconds lifespan.
+
+For **web user sessions**, the returned token can be used in exchanges with third-party applications or websites to securely identify the session. Por ejemplo, el token OTP de sesión se puede utilizar con una aplicación de pago.
+
+For **remote sessions**, the returned token can be used on 4D Server to identitfy requests coming from a [remote 4D running Qodly forms in a Web area](../Desktop/clientServer.md#remote-user-sessions).
 
 #### Ejemplo
 
@@ -165,9 +174,9 @@ $token := Session.createOTP( 60 ) //el token es válido durante 1 mn
 
 <!-- REF #SessionClass.demote().Params -->
 
-| Parámetros | Tipo    |     | Descripción                             |
-| ---------- | ------- | :-: | --------------------------------------- |
-| promoteId  | Integer |  -> | Id returned by the `promote()` function |
+| Parámetros | Tipo    |     | Descripción                            |
+| ---------- | ------- | :-: | -------------------------------------- |
+| promoteId  | Integer |  -> | Id devuelto por la función `promote()` |
 
 <!-- END REF -->
 
@@ -175,15 +184,15 @@ $token := Session.createOTP( 60 ) //el token es válido durante 1 mn
 
 :::note
 
-This function does nothing in remote client, stored procedure, and standalone sessions.
+Esta función no hace nada en las sesiones cliente remoto, procedimientos almacenados y autónomos.
 
 :::
 
-The `.demote()` function <!-- REF #SessionClass.demote().Summary -->removes the promoted privilege whose id you passed in *promoteId* from the web process, if it was previously added by the [`.promote()`](#promote) function<!-- END REF -->.
+La función `.demote()` <!-- REF #SessionClass.demote().Summary -->elimina del proceso web el privilegio promocionado cuyo id pasó en *promoteId*, si fue añadido previamente por la función [`.promote()`](#promote)<!-- END REF -->.
 
-If no privilege with *promoteId* was promoted using [`.promote()`](#promote) in the web process, the function does nothing.
+Si ningún privilegio con *promoteId* fue promovido usando [`.promote()`](#promote) en el proceso web, la función no hace nada.
 
-If several privileges have been added to the web process, the `demote()` function must be called for each one with the appropriate *promoteId*. Privileges are stacked in the order they have been added to the process, it is recommended to unstack privileges in a LIFO (*Last In, First Out*) order.
+Si se han añadido varios privilegios al proceso web, se debe llamar a la función `demote()` para cada uno de ellos con el *promoteId* apropiado. Los privilegios se apilan en el orden en que se han añadido al proceso, se recomienda desapilar los privilegios en un orden LIFO (*Last In, First Out*).
 
 #### Ejemplo
 
@@ -253,9 +262,10 @@ $expiration:=Session.expirationDate //eg "2021-11-05T17:10:42Z"
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones |
-| ----------- | -------------- |
-| 20 R6       | Añadidos       |
+| Lanzamiento | Modificaciones                      |
+| ----------- | ----------------------------------- |
+| 21          | Soporte de sesiones cliente remotas |
+| 20 R6       | Añadidos                            |
 
 </details>
 
@@ -275,11 +285,13 @@ La función `.getPrivileges()` <!-- REF #SessionClass.getPrivileges().Summary --
 
 :::note
 
-This function returns privileges assigned to a Session using the [`setPrivileges()`](#setprivileges) function only. Promoted privileges are NOT returned by the function, whether they are added through the [roles.json](../ORDA/privileges.md#rolesjson-file) file or the [`promote()`](#promote) function.
+Esta función devuelve los privilegios asignados a una Sesión utilizando únicamente la función [`setPrivileges()`](#setprivileges). Los privilegios promocionados NO son devueltos por la función, ya sea a través del archivo [roles.json](../ORDA/privileges.md#rolesjson-file) o la función [`promote()`](#promote).
 
 :::
 
-Con clientes remotos, procedimientos almacenados y sesiones independientes, esta función devuelve una colección que sólo contiene "WebAdmin".
+With remote client sessions, the privileges only concerns the code executed in the context of a [web request sent through a Web area](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas).
+
+With stored procedure sessions and standalone sessions, this function returns a collection only containing "WebAdmin".
 
 #### Ejemplo
 
@@ -348,10 +360,10 @@ $privileges := Session.getPrivileges()
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones                       |
-| ----------- | ------------------------------------ |
-| 21          | Returns True for promoted privileges |
-| 18 R6       | Añadidos                             |
+| Lanzamiento | Modificaciones                                                          |
+| ----------- | ----------------------------------------------------------------------- |
+| 21          | Returns True for promoted privileges, Support of remote client sessions |
+| 18 R6       | Añadidos                                                                |
 
 </details>
 
@@ -372,11 +384,13 @@ La función `.hasPrivilege()` <!-- REF #SessionClass.hasPrivilege().Summary -->d
 
 :::note
 
-This function returns True for the *privilege* if called from a function that was promoted for this privilege (either through the [roles.json](../ORDA/privileges.md#rolesjson-file) file or the [`promote()`](#promote) function).
+Esta función devuelve True para el *privilegio* si se llama desde una función que fue promovida para este privilegio (ya sea a través del archivo [roles.json](../ORDA/privileges.md#rolesjson-file) o la función [`promote()`](#promote)).
 
 :::
 
-Con cliente remoto, procedimientos almacenados y sesiones independientes, esta función siempre devuelve True, sea cual sea el *privilege*.
+Regarding remote client sessions, the function only impacts [code accessing the web server](../WebServer/preemptiveWeb.md#writing-thread-safe-web-server-code).
+
+With stored procedure sessions and standalone sessions, this function always returns True, whatever the *privilege*.
 
 #### Ejemplo
 
@@ -393,7 +407,7 @@ End if
 
 #### Ver también
 
-[*Blog posts about this feature*](https://blog.4d.com/?s=hasPrivilege)
+[*Publicaciones de blog sobre esta funcionalidad*](https://blog.4d.com/?s=hasPrivilege)
 
 <!-- END REF -->
 
@@ -585,10 +599,10 @@ End if
 
 <!-- REF #SessionClass.promote().Params -->
 
-| Parámetros | Tipo    |                             | Descripción                                               |
-| ---------- | ------- | :-------------------------: | --------------------------------------------------------- |
-| privilege  | Text    |              ->             | Nombre del privilegio                                     |
-| Resultado  | Integer | <- | id to use when calling the [`demote()`](#demote) function |
+| Parámetros | Tipo    |                             | Descripción                                                |
+| ---------- | ------- | :-------------------------: | ---------------------------------------------------------- |
+| privilege  | Text    |              ->             | Nombre del privilegio                                      |
+| Resultado  | Integer | <- | id a utilizar al llamar a la función [`demote()`](#demote) |
 
 <!-- END REF -->
 
@@ -596,30 +610,30 @@ End if
 
 :::note
 
-This function does nothing in remote client, stored procedure, and standalone sessions.
+Esta función no hace nada en las sesiones cliente remoto, procedimientos almacenados y autónomos.
 
 :::
 
-The `.promote()` function <!-- REF #SessionClass.promote().Summary -->adds the privilege defined in the *privilege* parameter to the current process during the execution of the calling function and returns the id of the promoted privilege<!-- END REF -->.
+La función `.promote()` <!-- REF #SessionClass.promote().Summary -->añade el privilegio definido en el parámetro *privilege* al proceso actual durante la ejecución de la función de llamada y devuelve el id del privilegio promovido<!-- END REF -->.
 
-Dynamically adding privileges is useful when access rights depend on the execution context, which cannot be fully defined in the "roles.json" file. This is particularly relevant when the same function can be executed by users with different access levels. The use of `.promote()` ensures that only the current process is granted the necessary privileges, without affecting others.
+La adición dinámica de privilegios es útil cuando los derechos de acceso dependen del contexto de ejecución, que no puede definirse completamente en el archivo "roles.json". Esto es especialmente relevante cuando la misma función puede ser ejecutada por usuarios con diferentes niveles de acceso. El uso de `.promote()` asegura que sólo el proceso actual reciba los privilegios necesarios, sin afectar a otros.
 
-The function does nothing and returns 0 if:
+La función no hace nada y devuelve 0 si:
 
-- the *privilege* does not exist in the [`roles.json`](../ORDA/privileges.md#rolesjson-file) file,
-- the *privilege* is already assigned to the current process (using `.promote()` or through a static [promote action](../ORDA/privileges.md#permission-actions) declared for the calling function in the [`roles.json`](../ORDA/privileges.md#rolesjson-file) file).
+- el *privilegio* no existe en el archivo [`roles.json`](../ORDA/privileges.md#rolesjson-file),
+- el *privilegio* ya está asignado al proceso actual (usando `.promote()` o a través de una [acción de promoción estática](../ORDA/privileges.md#permission-actions) declarada para la función de llamada en el archivo [`roles.json`](../ORDA/privileges.md#rolesjson-file)).
 
-You can call the `promote()` function several times in the same process to add different privileges.
+Puede llamar a la función `promote()` varias veces en el mismo proceso para añadir diferentes privilegios.
 
-The returned id is incremented each time a privilege is dynamically added to the process.
+El id devuelto se incrementa cada vez que un privilegio se añade dinámicamente al proceso.
 
-To remove a privilege dynamically, call the `demote()` function with the appropriate id.
+Para eliminar un privilegio dinámicamente, llame a la función `demote()` con el id apropiado.
 
 #### Ejemplo
 
-Several users connect to a single endpoint that serves different applications. A user from application #1 does not need the "super_admin" privilege because they don't create "VerySensitiveInfo". A user from application #2 needs "super_admin" privilege.
+Varios usuarios se conectan a un único punto final que sirve a distintas aplicaciones. Un usuario de la aplicación #1 no necesita el privilegio "super_admin" porque no crea "VerySensitiveInfo". Un usuario de la aplicación #2 necesita privilegios "super_admin".
 
-You can dynamically provide appropriate privileges in the *CreateInfo* function:
+Puede proporcionar dinámicamente los privilegios adecuados en la función *CreateInfo*:
 
 ```4d
 exposed Function createInfo($info1 : Text; $info2 : Text)
@@ -717,6 +731,7 @@ Function callback($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 
 | Lanzamiento | Modificaciones                                      |
 | ----------- | --------------------------------------------------- |
+| 21          | Soporte de sesiones cliente remotas                 |
 | 19 R8       | Compatibilidad con la propiedad "roles" en Settings |
 | 18 R6       | Añadidos                                            |
 
@@ -739,23 +754,21 @@ Function callback($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 
 :::note
 
-Esta función no hace nada y siempre devuelve **False** con cliente remoto, procedimiento almacenado y sesiones independientes.
+This function does nothing and always returns **False** with stored procedure sessions and standalone sessions.
 
 :::
 
 La función `.setPrivileges()` <!-- REF #SessionClass.setPrivileges().Summary -->asocia a la sesión los privilegios y/o roles definidos en el parámetro y devuelve **True** si la ejecución se ha realizado correctamente<!-- END REF -->.
 
 - En el parámetro *privilege*, pase una cadena que contenga un nombre de privilegio (o varios nombres de privilegio separados por comas).
-
 - En el parámetro *privileges*, pase una colección de cadenas que contengan nombres de privilegios.
-
 - En el parámetro *settings*, pase un objeto que contenga las siguientes propiedades:
 
-| Propiedad  | Tipo              | Descripción                                                                                                               |
-| ---------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| privileges | Text o Collection | <li>Cadena que contiene un nombre de privilegio, o</li><li>Colección de cadenas que contienen nombres de privilegios</li> |
-| roles      | Text o Collection | <li>Cadena que contiene un rol, o</li><li>Colección de cadenas que contienen roles</li>                                   |
-| userName   | Text              | Nombre de usuario para asociar a la sesión (opcional)                                                  |
+| Propiedad  | Tipo              | Descripción                                                                                                                                                                                   |
+| ---------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| privileges | Text o Collection | <li>Cadena que contiene un nombre de privilegio, o</li><li>Colección de cadenas que contienen nombres de privilegios</li>                                                                     |
+| roles      | Text o Collection | <li>Cadena que contiene un rol, o</li><li>Colección de cadenas que contienen roles</li>                                                                                                       |
+| userName   | Text              | User name to associate to the session (optional, web sessions only). Not available in remote client sessions (ignored). |
 
 :::note
 
@@ -768,6 +781,8 @@ Si la propiedad `privileges` o `roles` contiene un nombre que no está declarado
 Por defecto, cuando no hay ningún privilegio o rol asociado a la sesión, la sesión es una [sesión de invitado](#isguest).
 
 La propiedad [`userName`](#username) está disponible a nivel de objeto de sesión (sólo lectura).
+
+Regarding remote client sessions, the function only concerns the code executed in the context of a [web request sent through a Web area](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas).
 
 #### Ejemplo
 

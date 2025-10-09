@@ -37,15 +37,15 @@ UUID は16 バイトの数字(128 bit)です。 32 文字の16 進数を格納�
 
 :::note
 
-For more information on UUID version 7, please read [this blog post](https://blog.4d.com/sort-uuids-with-version-7).
+UUID バージョン7の詳細な情報については、 [こちらのblog記事](https://blog.4d.com/sort-uuids-with-version-7) を参照してください。
 
 :::
 
-In 4D, UUID numbers can be stored in fields (see [UUID Format](https://doc.4d.com/4Dv20/4D/20.2/Field-properties.300-6750280.en.html#106190). A [4D settings option](../settings/database.md#auto-uuid-version) allows generating version 7 UUIDs in automatic fields.
+4D では、UUID 番号をフィールドに格納することができます(詳細は [UUID フォーマット](https://doc.4d.com/4Dv20/4D/20.2/Field-properties.300-6750280.ja.html#106190) を参照してください)。 [4D 設定オプション](../settings/database.md#自動uuidバージョン) を使用することで、自動フィールドでバージョン7 のUUID の生成ができるようになります。
 
 ## 例題
 
-Generation of a UUID in a variable:
+変数内にUUID を生成します:
 
 ```4d
  var MyUUID : Text

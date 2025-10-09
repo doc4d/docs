@@ -18,10 +18,10 @@ displayed_sidebar: docs
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                           |
-| ----- | ---------------------------- |
-| 20 R7 | *sessionID* 引数のサポート          |
-| 21    | Support of web user sessions |
+| リリース  | 内容                  |
+| ----- | ------------------- |
+| 20 R7 | *sessionID* 引数のサポート |
+| 21    | Web ユーザーセッションのサポート  |
 
 </details>
 
@@ -109,5 +109,5 @@ displayed_sidebar: docs
 
 [`Process info`](process-info.md)
 [`Session info`](session-info.md)
-[Session storage](session-storage.md)\
+[Session storage](session-storage.md)  
 [WEB Get server info](../commands-legacy/web-get-server-info.md)

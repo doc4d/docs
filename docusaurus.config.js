@@ -65,9 +65,31 @@ module.exports = {
           },
           // Sidebars file relative to website dir.
           sidebarPath: require.resolve('./sidebars.js'),
+          async sidebarItemsGenerator({ defaultSidebarItemsGenerator, ...args }) {
+            const sidebarItems = await defaultSidebarItemsGenerator(args);
+
+            function sortAlphabetically(items) {
+              return items
+                .map(item => {
+                  if (item.type === 'category') {
+                    return {
+                      ...item,
+                      items: sortAlphabetically(item.items),
+                    };
+                  }
+                  return item;
+                })
+                .sort((a, b) => {
+                  const labelA = (a.label || a.id || '').toLowerCase();
+                  const labelB = (b.label || b.id || '').toLowerCase();
+                  return labelA.localeCompare(labelB);
+                });
+            }
+            return sortAlphabetically(sidebarItems);
+          },
           versions: {
               '20-R10': {
-              label: '20 R10 BETA',
+              label: '20 R10',
               banner: 'none',
             },
               '20-R9': {
@@ -268,5 +290,11 @@ module.exports = {
       maintainCase: false,
     },
   },
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: ['@docusaurus/theme-mermaid'],  
+  scripts: [
+    {
+      src: 'https://kit.fontawesome.com/daeacc3fc4.js',
+      crossorigin: 'anonymous',
+    },
+  ],
 }

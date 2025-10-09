@@ -57,6 +57,7 @@ L'objet `Session` des sessions client distants est disponible depuis :
 
 - Les méthodes projet qui ont l'attribut [Exécuter sur serveur](../Project/code-overview.md#execute-on-server) (elles sont exécutées dans le process jumeau du process client),
 - Les Triggers,
+- Les [fonctions du modèle de données](../ORDA/ordaClasses.md) ORDA (sauf celles déclarées avec le mot-clé [`local`](../ORDA/ordaClasses.md#local-functions),
 - Les méthodes base `On Server Open Connection` et `On Server Shutdown Connection`.
 
 Pour plus d'informations sur les sessions utilisateur distantes, veuillez vous référer au paragraphe [**Sessions utilisateur client distants**](../Desktop/clientServer.md#remote-user-sessions).
@@ -98,10 +99,10 @@ IP:port/4DACTION/action_Session
 
 ## Voir également
 
-[Session storage](session-storage.md)\
-[Session API](../API/SessionClass.md)\
-[Web server user sessions](../WebServer/sessions.md)\
-[*Scalable sessions for advanced web applications* (blog post)](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/)
+[Session storage](session-storage.md)  
+[Session API](../API/SessionClass.md)  
+[Sessions Web](../WebServer/sessions.md)  
+[*Sessions évolutives pour les applications web avancées* (blog post)](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/)
 
 ## Propriétés
 

@@ -89,7 +89,7 @@ component_method("host_method_name")
 EXECUTE METHOD($param)
 ```
 
-> インタープリターコンポーネントがインストールされたインタープリターホストデータベースは、それがインタープリターコンポーネントのメソッドを呼び出さなければ、コンパイル/シンタックスチェックができます。 そうでない場合、コンパイルまたはシンタックスチェックを実行しようとすると警告ダイアログが表示され、操作を実行することはできません。\
+> インタープリターコンポーネントがインストールされたインタープリターホストデータベースは、それがインタープリターコンポーネントのメソッドを呼び出さなければ、コンパイル/シンタックスチェックができます。 そうでない場合、コンパイルまたはシンタックスチェックを実行しようとすると警告ダイアログが表示され、操作を実行することはできません。  
 > 一般的に、インタープリターメソッドはコンパイル済みメソッドを呼び出せますが、逆はできません。これをおこなうには `EXECUTE METHOD` や `EXECUTE FORMULA` コマンドを使用します。
 
 ## クラスの共有
@@ -108,7 +108,7 @@ EXECUTE METHOD($param)
 
 :::
 
-When you enter a value, you declare that component classes will be available in the [user class store (**cs**)](../Concepts/classes.md#cs) of the host project as well as its loaded components, through the `cs.<value>` namespace. たとえば、`getArea()` 関数を持つ `Rectangle` クラスが存在する場合に、コンポーネント名前空間として "eGeometry" を入力すると、このプロジェクトがコンポーネントとしてインストールされると、ホストプロジェクトの開発者は次のように記述することができます:
+値を入力すると、ホストプロジェクトおよび読み込まれているコンポーネントのコードにおいて、[ユーザークラスストア (**cs**)](../Concepts/classes.md#cs) ユーザークラスストア (cs) 内の `cs.<value>` 名前空間を介して、コンポーネントのクラスが利用可能になることを宣言することになります。 たとえば、`getArea()` 関数を持つ `Rectangle` クラスが存在する場合に、コンポーネント名前空間として "eGeometry" を入力すると、このプロジェクトがコンポーネントとしてインストールされると、ホストプロジェクトの開発者は次のように記述することができます:
 
 ```4d
 // ホストプロジェクトまたは読み込まれているコンポーネントにて
@@ -236,6 +236,8 @@ component_method($input_t)
 ## エラー処理
 
 `ON ERR CALL` コマンドによって実装された [エラー処理メソッド](Concepts/error-handling.md) は、実行中のプロジェクトに対してのみ適用されます。 コンポーネントによって生成されたエラーの場合、ホストプロジェクトの `ON ERR CALL` エラー処理メソッドは呼び出されず、その逆もまた然りです。
+
+However, you can install a [component error handler in the host application](../Concepts/error-handling.md#scope-and-components) to manage uncaught errors from compponents.
 
 ## ホストプロジェクトのテーブルへのアクセス
 
@@ -385,7 +387,7 @@ SAVE RECORD($tablepointer->)
 
 コンポーネントの`Info.plist` ファイル内でサポートされているキーは、大部分は[Apple bundle キー](https://developer.apple.com/documentation/bundleresources/information-property-list) であり、Windows 上では無視されます。 しかしながら、これらは全てのプラットフォームにおいて[依存関係マネージャ](../Project/components.md#コンポーネントの読み込み) によって使用されます。
 
-The following keys can be defined:
+定義可能なキーは以下の通りです:
 
 | key                                                        | description                                                                                                 |
 | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
