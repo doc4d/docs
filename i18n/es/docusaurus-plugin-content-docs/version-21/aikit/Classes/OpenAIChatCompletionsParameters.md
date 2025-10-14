@@ -30,9 +30,9 @@ The `OpenAIChatCompletionParameters` class is designed to handle the parameters 
 
 ### Propiedades de retrollamada asíncrona
 
-| Propiedad                                  | Tipo                        | Descripción                                                                                                                                      |
-| ------------------------------------------ | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `onData` (or `formula`) | 4D.Function | A function to be called asynchronously when receiving data chunk. Asegúrese de que el proceso actual no termina. |
+| Propiedad                                 | Tipo                        | Descripción                                                                                                                                      |
+| ----------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `onData` (o `formula`) | 4D.Function | A function to be called asynchronously when receiving data chunk. Asegúrese de que el proceso actual no termina. |
 
 `onData` will receive as argument an [OpenAIChatCompletionsStreamResult](./OpenAIChatCompletionsStreamResult.md).
 
