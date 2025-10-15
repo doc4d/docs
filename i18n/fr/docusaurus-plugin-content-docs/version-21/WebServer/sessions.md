@@ -201,9 +201,9 @@ Else
 End if
 ```
 
-:::note
+:::tips Articles de blog sur le sujet
 
-Pour plus d'exemples, veuillez vous référer à l'article [Sessions évolutives pour les applications web avancées](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/).
+[Sessions évolutives pour applications web avancées](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/)
 
 :::
 
