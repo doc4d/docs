@@ -14,7 +14,7 @@ HTTP rules are supported in the following contexts:
 - [scalable sessions](./sessions.md#enabling-web-sessions) or [no sessions](../settings/web.md#no-sessions) are enabled,
 - a web server run locally by 4D or 4D Server, including those [run by components](./webServerObject.md).
 
-## How to set rules
+## Cómo definir reglas
 
 You can declare HTTP response rules:
 
@@ -29,7 +29,7 @@ If both a **HTTPRules.json** file and a call to the [`WEB Server`](../commands/w
 
 If the URI of the request does not match any of the RegEx patterns, the web server returns a default response.
 
-## Rules Definition
+## Definición de reglas
 
 The **HTTPRules.json** file or the [`.rules`](../API/WebServerClass.md#rules) property must contain a collection of **rule objects**.
 
