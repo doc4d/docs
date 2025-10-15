@@ -201,9 +201,9 @@ Else
 End if
 ```
 
-:::note
+:::tips Articles de blog sur le sujet
 
-Pour plus d'exemples, veuillez vous référer à l'article [Sessions évolutives pour les applications web avancées](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/).
+[Sessions évolutives pour applications web avancées](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/)
 
 :::
 
@@ -344,24 +344,24 @@ sequenceDiagram
   FrontEnd ->>+ 4DServer: Validate()
 
 
-    4DServer ->> 4DServer: Generate OTP with session.createOTP()
+    4DServer ->> 4DServer: Créer OTP avec session.createOTP()
     Note over 4DServer: e.g. OTP is 2E5D0D5xxx
 
-  4DServer ->> ExternalPlatform: Call the external platform giving the OTP, for example as a state parameter (depends on the platform)
+  4DServer ->> ExternalPlatform: Appel de la plate-forme externe en donnant l'OTP, par exemple sous forme de paramètre state (dépend de la plate-forme)
     Note right of 4DServer: e.g. https://thirdPartSystem.com/validate?state=2E5D0D5xxx&redirect_uri=https://acme.com/my4DApp/completeOperation
-      Note right of 4DServer: The callback URL will be like: https://acme.com/my4DApp/completeOperation?state=2E5D0D5xxx
- ExternalPlatform ->> ExternalPlatform: Process request
-  ExternalPlatform ->> 4DServer: The state parameter is sent back by the third party system in the callback
+      Note right of 4DServer: L'URLde rappel sera du type : https://acme.com/my4DApp/completeOperation?state=2E5D0D5xxx
+ ExternalPlatform ->> ExternalPlatform: Traitement de la requête
+  ExternalPlatform ->> 4DServer: Le paramètre state est renvoyé par le système tiers dans la callback
         Note right of 4DServer: e.g. https://acme.com/my4DApp/completeOperation?state=2E5D0D5xxx
- 4DServer ->> 4DServer: An HTTP request handler processes the URL pattern "/my4DApp/completeOperation"<br/> (e.g. handleOperation() function of the OperationHandler singleton, see code below)
+ 4DServer ->> 4DServer: Un HTTP request handler traite le motif d'URL "/my4DApp/completeOperation"<br/> (e.g. fonction handleOperation() du singleton OperationHandler, voir code ci-dessous)
 
 4DServer ->> 4DServer: Session.restore()
 
 
- Note over 4DServer:The state parameter is got from the received request ($req.urlQuery.state)
-   Note over 4DServer:The original session is retrieved by calling the restore() function
-  Note over 4DServer:Session object refers to the session which generated the OTP
-   4DServer ->>+ FrontEnd: Restore session
+ Note over 4DServer:Le paramètre state est extrait de la requête reçue ($req.urlQuery.state)
+   Note over 4DServer:La session originale est restaurée par l'appel à la fonction restore()
+  Note over 4DServer: L'objet Session référence la session qui a généré l'OTP
+   4DServer ->>+ FrontEnd: Restauration de la session
 
 
 ```
@@ -388,9 +388,9 @@ shared singleton Class constructor()
     Session.restore($req.urlQuery.state)
 ```
 
-### Example of email validation with $4DSID
+### Exemple de validation d'email avec $4DSID
 
-1. A user account is created in a *Users* dataclass. A *$info* object is received with the email and password. An OTP corresponding to the current session is generated. An URL is then returned with this OTP given in the $4DSID parameter.
+1. Un compte d'utilisateur est créé dans une dataclass *Users*. Un objet *$info* est reçu avec l'email et le mot de passe. Un OTP correspondant à la session courante est généré. Une URL est alors renvoyée avec l'OTP indiqué dans le paramètre $4DSID.
 
 ```4d
 //cs.Users class
@@ -401,26 +401,26 @@ var $user : cs.UsersEntity
 var $status : Object
 var $token : Text
 	
-$user:=This.new() //create a new user
+$user:=This.new() //créatoin d'un user
 $user.fromObject($info)
 $status:=$user.save()
 	
-//Store information in the session
-//including user creation status
+//Stockage d'information dans la session
+//y compris le statut de création de l'utilisateur
 Use (Session.storage)
 	Session.storage.status:=New shared object("step"; "Waiting for validation email"; /
     "email"; $user.email; "ID"; $user.ID)
 End use 
 	
-//Generate an OTP corresponding to the session
+//Génération d'un OTP correspondant à la session
 $token:=Session.createOTP()
 
-// Return an URL with a $4DSID parameter
+// Renvoi d'un URL avec un paramètre $4DSID
 return "https://my.server.com/tools/validateEmail?$4DSID="+$token`
 
 ```
 
-2. The user is sent this URL as a link in an email. The URL prefix `/validateEmail` is handled by a [custom HTTP request handler](./http-request-handler.md):
+2. L'utilisateur reçoit cette URL sous la forme d'un lien dans un courrier électronique. Le préfixe d'URL `/validateEmail` est traité par un [gestionnaire de requête HTTP personnalisé](./http-request-handler.md) :
 
 ```json
 [
@@ -433,7 +433,7 @@ return "https://my.server.com/tools/validateEmail?$4DSID="+$token`
 ]
 ```
 
-The *validateEmail()* function of the RequestHandler singleton:
+La fonction *validateEmail()* du singleton RequestHandler :
 
 ```4d
 //validateEmail class
@@ -443,12 +443,12 @@ shared singleton Class constructor()
 Function validateEmail() : 4D.OutgoingMessage
 	
  var $result:=4D.OutgoingMessage.new()
-    //The session which generated the OTP is retrieved 
-    //thanks to the $4DSID parameter given in the URL
+    //La session qui a généré l'OTP est restaurée 
+    //grâce au paramètre $4DSID fourni dans l'URL
  If (Session.storage.status.step="Waiting for validation email")
 	
   $user:=ds.Users.get(Session.storage.status.ID)
-  $user.emailValidated() //set to true
+  $user.emailValidated() //fixé à vrai
 		
   $result.setBody("Congratulations <br>"\
   +"Your email "+Session.storage.status.email+" has been validated")
@@ -466,21 +466,21 @@ Function validateEmail() : 4D.OutgoingMessage
 
 ```
 
-Since the `$4DSID` parameter contains a valid OTP corresponding to the original session, the `Session` object refers to the session that created the OTP.
+Comme le paramètre `$4DSID` contient un OTP valide correspondant à la session d'origine, l'objet `Session` référence la session qui a créé l'OTP.
 
-A new user is created, and some information is stored in the session, especially the current step of the user account creation process (Waiting for validation email) and the user ID.
+Un nouvel utilisateur est créé et des informations sont stockées dans la session, en particulier l'étape courante du processus de création du compte utilisateur (attente du courriel de validation) et l'identifiant de l'utilisateur.
 
-### Supported contexts
+### Contextes pris en charge
 
-- Both HTTP and HTTPS schemas are supported.
-- Only [scalable sessions](#enabling-web-sessions) can be reused with tokens.
-- Only sessions of the host database can be reused (sessions created in component web servers cannot be restored).
-- Tokens are not supported with client/server sessions or single-user sessions.
+- Les schémas HTTP et HTTPS sont tous deux pris en charge.
+- Seules des [sessions évolutives](#enabling-web-sessions) peuvent être réutilisées avec des tokens.
+- Seules les sessions de la base de données hôte peuvent être réutilisées (les sessions créées dans les serveurs web des composants ne peuvent pas être restaurées).
+- Les tokens ne sont pas pris en charge dans les sessions client/serveur ou les sessions mono-utilisateur.
 
-### Lifespan
+### Durée de vie
 
-A session token has a lifespan, and the session itself has a lifespan. The session token lifespan can be set [at the token creation](../API/SessionClass.md#createotp). By default, the token lifespan is the same value as the [`.idleTimeout`](../API/SessionClass.md#idletimeout) value.
+Un token de session a une durée de vie, et la session elle-même a une durée de vie. La durée de vie du token de session peut être définie [lors de sa création](../API/SessionClass.md#createotp). Par défaut, la durée de vie du token est la même que la valeur [`.idleTimeout`](../API/SessionClass.md#idletimeout).
 
-A session is only restored by a token if both the session token lifespan and the session lifespan have not expired. In other cases (the session token has expired and/or the session itself has expired), a guest session is created when a web request with a session token is received.
+Une session n'est restaurée par un token que si ni la durée de vie du token de session ni celle de la session n'ont expiré. Dans les autres cas (le token de session a expiré et/ou la session elle-même a expiré), une session *guest* est créée lorsqu'une requête web avec un token de session est reçue.
 
 
