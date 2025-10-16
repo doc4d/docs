@@ -8,219 +8,292 @@ A **trigger** is a method attached to a table. It is a property of a table. You 
 
 Triggers can prevent "illegal" operations on the records of your database. They are a very powerful tool for restricting operations on a table, as well as preventing accidental data loss or tampering. For example, in an invoicing system, you can prevent anyone from adding an invoice without specifying the customer to whom the invoice is billed.
 
-:::info Triggers and ORDA entity events
+## Triggers vs ORDA entity events
 
-Triggers and [ORDA entity events](../ORDA/orda-events.md) have similar purposes: they declare rules to control fundamental operations on the data (create, edit, or delete). Triggers operate at a very low level 
+**Triggers** (aka database events) and [**ORDA entity events**](../ORDA/orda-events.md) have similar purposes: they establish rules to control fundamental operations on the data (create, edit, or delete). However, they do not operate at the same level:
+- triggers are handled at the database level, which is the lowest level,
+- ORDA entity events are handled at the [datastore](../ORDA/dsMapping.md#datastore) level, which is related to your business logic.
+
+Actions on data executed through the datastore, such as [`.save()`](../API/EntityClass.md#save) or [`.drop`](../API/EntityClass.md#drop), will call the triggers, if any.
+
+On the other hand, actions triggered at the 4D database level using the 4D classic language commands, such as [`SAVE RECORD`](../commands/save-record) or [standard actions](https://doc.4d.com/4Dv20/4D/20.2/Standard-actions.300-6750239.en.html#3371159) will NOT trigger ORDA entity events. 
 
 
-ORDA entity events are triggered at the datastore level, when your development relies on  
+
+## Activating and Creating a Trigger
+
+By default, when you create a table in the Design Environment, it has no trigger.
+
+To use a trigger for a table, you need to:
+
+- Activate the trigger and tell 4D when it has to be invoked.
+- Write the code for the trigger.
+
+Activating a trigger that is not yet written or writing a trigger without activating it will not affect the operations performed on a table.
+
+1. To activate a trigger for a table, you must select one of the **Triggers** options (database events) for the table in the Inspector window of the structure:
+
+![](../assets/en/Develop/triggers-set.png)
+
+2. Creating a Trigger.
+
+To create a trigger for a table, click on the **Edit...** button in the Inspector window or press **Alt** (Windows)/**Option** (macOS) and double-click on the table title in the Structure window ans write the code corresponding to the trigger that you want to create. 
+
+
+
+## Description of the triggers
+
+### On saving an existing record
+
+If this option is selected, the trigger will be invoked each time a record of the table is modified. This happens when:
+
+- Modifying a record in data entry (Design environment, [`MODIFY RECORD`](../commands/modify-record) command or the SQL `UPDATE` command).
+- Saving an already existing record using [`SAVE RECORD`](../commands/save-record).
+- Calling any other commands that save existing records (i.e., [`ARRAY TO SELECTION`](../commands/array-to-selection), [`APPLY TO SELECTION`](../commands/apply-to-selection), etc.).
+- Using an ORDA function that saves the entity.
+
+:::note
+
+For optimization reasons, the trigger is not called when the record is saved by the user or via the [`SAVE RECORD`](../commands/save-record) command if no field in the table has been modified in the record. If you want to "force" the calling of the trigger in this case, you can simply assign a field to itself:
+
+```4d
+[thetable]thefield:=[thetable]thefield
+```
 
 :::
 
+### On deleting a record 
 
-### Example
+If this option is selected, the trigger will be invoked each time a record of the table is deleted. This happens when:
 
-In this example, the database is a simple invoicing system. The invoice lines are stored in a table called [Invoice Lines], which is related to the table [Invoices] by means of a relation between the fields [Invoices]Invoice ID and [Invoice Lines]Invoice ID. When an invoice is added, a unique ID is calculated, using the [`Sequence number`](../commands-legacy/sequence-number.md) command. The relation between [Invoices] and [Invoice Lines] is an automatic Relate Many relation. The **Auto assign related value in subform** check box is checked.
+- Deleting a record (Design environment or calling [`DELETE RECORD`](../commands/delete-record), [`DELETE SELECTION`](../commands/delete-selection) or the SQL `DELETE` command).
+- Performing any operation that provokes deletion of related records through the deletion control options of a relation.
+- Using an ORDA function that deletes the entity.
 
-The relation between [Invoice Lines] and [Parts] is manual.
+:::note
 
-![](../assets/en/Develop/transactions-structure.png)
+The [`TRUNCATE TABLE`](../commands/trucate-table) command does NOT call the trigger.
+
+:::
+
+### On saving a new record  
+
+If this option is selected, the trigger will be invoked each time a record is added to the table. This happens when:
+
+- Adding a record in data entry (Design environment, [`ADD RECORD`](../commands/add-record) command or the SQL `INSERT` command).
+- Creating and saving a record with [`CREATE RECORD`](../commands/create-record) and [`SAVE RECORD`](../commands/save-record). Note that the trigger is invoked at the moment you call [`SAVE RECORD`](../commands/save-record), not when it is created.
+- Importing records (Design environment or using an import command).
+- Calling any other commands that create and/or save new records (i.e., [`ARRAY TO SELECTION`](../commands/array-to-selection), [`SAVE RELATED ONE`](../commands/save-related-one), etc.).
+- Using ORDA functions such as [`ds.dataclass.new()`](../API/DataClassClass.md#new) and [`entity.save()`](../API/EntityClass.md#save).
 
 
-When a user enters an invoice, the following actions are executed:
+## Database events
 
-- Add a record in the table [Invoices].
-- Add several records in the table [Invoice Lines].
-- Update the [Parts]In Warehouse field of each part listed in the invoice.
+A trigger can be invoked for one of the three database events described above. Within the trigger, you detect which event is occurring by calling the [`Trigger event`](../commands/trigger-event) command. This function returns a numeric value that denotes the database event.
 
-This example is a typical situation in which you need to use a transaction. You must be sure that you can save all these records during the operation or that you will be able to cancel the transaction if a record cannot be added or updated. In other words, you must save related data. If you do not use a transaction, you cannot guarantee the logical data integrity of your database. For example, if one record of the [Parts] records is locked, you will not be able to update the quantity stored in the field [Parts]In Warehouse. Therefore, this field will become logically incorrect. The sum of the parts sold and the parts remaining in the warehouse will not be equal to the original quantity entered in the record. You can avoid such a situation by using transactions.
-
-There are several ways of performing data entry using transactions:
-
-1. You can handle the transactions yourself by using the transaction commands [`START TRANSACTION`](../commands-legacy/start-transaction.md), [`VALIDATE TRANSACTION`](../commands-legacy/validate-transaction.md) and [`CANCEL TRANSACTION`](../commands-legacy/cancel-transaction.md). You can write, for example:
-
-```4d
- READ WRITE([Invoice Lines])
- READ WRITE([Parts])
- FORM SET INPUT([Invoices];"Input")
- Repeat
-    START TRANSACTION
-    ADD RECORD([Invoices])
-    If(OK=1)
-       VALIDATE TRANSACTION
-    Else
-       CANCEL TRANSACTION
-    End if
- Until(OK=0)
- READ ONLY(*)
-```
-
-2. To reduce record locking while performing the data entry, you can also choose to manage transactions from within the form method and access the tables in `READ WRITE` only when it becomes necessary. You perform the data entry using the input form for [Invoices], which contains the related table [Invoice Lines] in a subform. The form has two buttons: *bCancel* and *bOK*, both of which are no action buttons.
-
-The adding loop becomes:
+Typically, you write a trigger with a [`Case of` structure](../Concepts/flow-control.md#case-ofelseend-case) on the result returned by [`Trigger event`](../commands/trigger-event). 
 
 ```4d
- READ WRITE([Invoice Lines])
- READ ONLY([Parts])
- FORM SET INPUT([Invoices];"Input")
- Repeat
-    ADD RECORD([Invoices])
- Until(bOK=0)
- READ ONLY([Invoice Lines])
-```
-
-Note that the [Parts] table is now in read-only access mode during data entry. Read/write access will be available only if the data entry is validated.
-
-The transaction is started in the [Invoices] input form method listed here:
-
-```4d
+  //Trigger for [anyTable]
+#DECLARE -> $result : Integer
+$result:=0 // Assume the database request will be granted
  Case of
-    :(Form event code=On Load)
-       START TRANSACTION
-       [Invoices]Invoice ID:=Sequence number([Invoices]Invoice ID)
-    Else
-       [Invoices]Total Invoice:=Sum([Invoice Lines]Total line)
+    :(Trigger event=On Saving New Record Event)
+  // Perform appropriate actions for the saving of a newly created record
+    :(Trigger event=On Saving Existing Record Event)
+  // Perform appropriate actions for the saving of an already existing record
+    :(Trigger event=On Deleting Record Event)
+  // Perform appropriate actions for the deletion of a record
  End case
-```
-
-If you click the *bCancel* button, the data entry as well as the transaction must be canceled. Here is the object method of the *bCancel* button:
-
-```4d
- Case of
-    :(Form event code=On Clicked)
-       CANCEL TRANSACTION
-       CANCEL
- End case
-```
-
-If you click the *bOK* button, the data entry must be accepted and the transaction must be validated. Here is the object method of the *bOK* button:
-
-```4d
- Case of
-    :(Form event code=On Clicked)
-       var $NbLines:=Records in selection([Invoice Lines])
-       READ WRITE([Parts]) //Switch to Read/Write access for the [Parts] table
-       FIRST RECORD([Invoice Lines]) //Start at the first line
-       var $ValidTrans:=True //Assume everything will be OK
-       var $Line : Integer
-       For($Line;1;$NbLines) //For each line
-          RELATE ONE([Invoice Lines]Part No)
-          OK:=1 //Assume you want to continue
-          While(Locked([Parts]) & (OK=1)) //Try getting the record in Read/Write access
-             CONFIRM("The Part "+[Invoice Lines]Part No+" is in use. Wait?")
-             If(OK=1)
-                DELAY PROCESS(Current process;60)
-                LOAD RECORD([Parts])
-             End if
-          End while
-          If(OK=1)
-               //Update quantity in the warehouse
-             [Parts]In Warehouse:=[Parts]In Warehouse-[Invoice Lines]Quantity
-             SAVE RECORD([Parts]) //Save the record
-          Else
-             $Line:=$NbLines+1 //Leave the loop
-             $ValidTrans:=False
-          End if
-          NEXT RECORD([Invoice Lines]) //Go next line
-       End for
-       READ ONLY([Parts]) //Set the table state to read only
-       If($ValidTrans)
-          SAVE RECORD([Invoices]) //Save the Invoices record
-          VALIDATE TRANSACTION //Validate all database modifications
-       Else
-          CANCEL TRANSACTION //Cancel everything
-       End if
-       CANCEL //Leave the form
- End case
-```
-
-In this code, we call the `CANCEL` command regardless of the button clicked. The new record is not validated by a call to [`ACCEPT`](../commands-legacy/accept.md), but by the [`SAVE RECORD`](../commands-legacy/save-record.md) command. In addition, note that `SAVE RECORD` is called just before the [`VALIDATE TRANSACTION`](../commands-legacy/validate-transaction.md) command. Therefore, saving the [Invoices] record is actually a part of the transaction. Calling the `ACCEPT` command would also validate the record, but in this case the transaction would be validated before the [Invoices] record was saved. In other words, the record would be saved outside the transaction.
-
-Depending on your needs, you can customize your database, as shown in these examples. In the last example, the handling of locked records in the [Parts] table could be developed further.
-
-
-## Suspending transactions
-
-### Principle
-
-Suspending a transaction is useful when you need to perform, from within a transaction, certain operations that do not need to be executed under the control of this transaction. For example, imagine the case where a customer places an order, thus within a transaction, and also updates their address. Next the customer changes their mind and cancels the order. The transaction is cancelled, but you do not want the address change to be reverted. This is a typical example where suspending the transaction is useful. Three commands are used to suspend and resume transactions:
-
-- [`SUSPEND TRANSACTION`](../commands-legacy/suspend-transaction.md): pauses current transaction. Any updated or added records remain locked.
-- [`RESUME TRANSACTION`](../commands-legacy/resume-transaction.md): reactivates a suspended transaction.
-- [`Active transaction`](../commands-legacy/active-transaction.md): returns False if the transaction is suspended or if there is no current transaction, and True if it is started or resumed.
-
-### Example  
-
-This example illustrates the need for a suspended transaction. In an Invoices database, we want to get a new invoice number during a transaction. This number is computed and stored in a [Settings] table. In a multi-user environment, concurrent accesses must be protected; however, because of the transaction, the [Settings] table could be locked by another user even though this data is independent from the main transaction. In this case, you can suspend the transaction when accessing the table.
-
-```4d
-  //Standard method that creates an invoice
- START TRANSACTION
- ...
- CREATE RECORD([Invoices])
- //call the method to get an available number
- [Invoices]InvoiceID:=GetInvoiceNum 
- ...
- SAVE RECORD([Invoices])
- VALIDATE TRANSACTION
-
  ```
 
-The *GetInvoiceNum* method suspends the transaction before executing. Note that this code will work even when the method is called from outside of a transaction:
+
+## Triggers are Functions  
+
+A trigger can be invoked for one of the three database events described above. Within the trigger, you detect which event is occurring by calling the [`Trigger event`](../commands/trigger-event) command. This function returns a numeric value that denotes the database event. Typically, you write a trigger with a [`Case of` structure](../Concepts/flow-control.md#case-ofelseend-case) on the result returned by [`Trigger event`](../commands/trigger-event). 
+
+A trigger has two purposes:
+
+- Performing actions on the record just before it is saved or deleted.
+- Granting or rejecting a database operation.
+
+
+### Performing Actions  
+
+Each time a record is saved (added or modified) to a [Documents] table, you want to "mark" the record with a time stamp for creation and another one for the most recent modification. You can write the following trigger:
 
 ```4d
-  //GetInvoiceNum project method
-  //GetInvoiceNum -> Next available invoice number
- #DECLARE -> $freeNum : Integer
- SUSPEND TRANSACTION
- ALL RECORDS([Settings])
- If(Locked([Settings])) //multi-user access
-    While(Locked([Settings]))
-       MESSAGE("Waiting for locked Settings record")
-       DELAY PROCESS(Current process;30)
-       LOAD RECORD([Settings])
-    End while
- End if
- [Settings]InvoiceNum:=[Settings]InvoiceNum+1
- $freeNum:=[Settings]InvoiceNum
- SAVE RECORD([Settings])
- UNLOAD RECORD([Settings])
- RESUME TRANSACTION
-
+  // Trigger for table [Documents]
+ Case of
+    :(Trigger event=On Saving New Record Event)
+       [Documents]CreationStamp:=myTimeStamp
+       [Documents]ModificationStamp:=myTimeStamp
+    :(Trigger event=On Saving Existing Record Event)
+       [Documents]ModificationStamp:=myTimeStamp
+ End case
 ```
 
-### Detailed operation
+:::note
 
-#### How does a suspended transaction work?  
+The *myTimeStamp* function used in this example is a small project method that returns the number of seconds elapsed since a fixed date was chosen arbitrarily.
 
-When a transaction is suspended, the following principles are implemented:
+:::
 
-- You can access records that were added or modified during the transaction, and you cannot see any records that were deleted during the transaction.
-- You can create, save, delete, or modify records outside the transaction.
-- You can start a new transaction, but within this included transaction you will not be able to see any records or record values that were added or modified during the suspended transaction. In fact, this new transaction is totally independent from the suspended one, similar to a transaction of another process, and since the suspended transaction could later be resumed or canceled, any added or modified records are automatically hidden for the new transaction. As soon as you commit or cancel the new transaction, you can see these records again.
-- Any records that are modified, deleted or added within the suspended transaction remain locked for other processes. If you try to modify or delete these records outside the transaction or in a new transaction, an error is generated.
+After this trigger has been written and activated, no matter what way you add or modify a record to the [Documents] table (data entry, import, project method, ORDA function), the fields [Documents]CreationStamp and [Documents]ModificationStamp will automatically be assigned by the trigger before the record is eventually written to the disk.
 
-These implementations are summarized in the following graphic:
+### Granting or rejecting the database operation  
 
-![](../assets/en/Develop/transactions-schema1.png)
+To grant or reject a database operation, the trigger must **return a trigger error code** in the function result.
+
+#### Example
+
+Let's take the case of an [Employees] table. During data entry, you enforce a rule on the social security number field for the [Employees] table. When you click the validation button, you check the field using the object method of the button:
+
+```4d
+  // bAccept button object method
+ If(GoodSSnumber([Employees]SSNumber))
+    ACCEPT
+ Else
+    BEEP
+    ALERT("Enter a Social Security Number then click OK again.")
+ End if
+```
+
+If the field value is valid, you accept the data entry; if the field value is not valid, you display an alert and you stay in data entry.
+
+If you also create [Employees] records programmatically, the following piece of code would be programmatically valid, but would violate the rule expressed in the previous object method:
+
+```4d
+  // Extract from a project method
+  // ...
+ CREATE RECORD([Employees])
+ [Employees]Name:="DOE"
+ SAVE RECORD([Employees]) // <-- DB rule violation! The SS number has not been assigned!
+  // ...
+```
+
+Using a trigger for the [Employees] table, you can enforce the [Employees]SSNumber rule at all the levels of the database. The trigger would look like this:
+
+```4d
+  // Trigger for [Employees]
+ #DECLARE -> $result : Integer
+ $result:=0
+ $dbEvent:=Trigger event
+ Case of
+    :(($dbEvent=On Saving New Record Event)|($dbEvent=On Saving Existing Record Event))
+       If(Not(GoodSSnumber([Employees]SSNumber)))
+          $result:=-15050
+       Else
+  // ...
+       End if
+  // ...
+ End case
+```
+
+Once this trigger is written and activated, the line `SAVE RECORD([Employees])` will generate a database engine error -15050, and the record will NOT be saved.
+
+Similarly, if a 4D Plug-in attempted to save an [Employees] record with an invalid social security number, the trigger will generate the same error and the record will not be saved.
+
+The trigger guarantees that nobody (user, database designer, plug-in) can violate the social security number rule, either deliberately or accidentally.
+
+Note that even if you do not have a trigger for a table, you can get database engine errors while attempting to save or delete a record. For example, if you attempt to save a record with a duplicated value in a unique indexed field, the error -9998 is returned.
+
+Therefore, triggers returning errors add database engine errors to your application:
+
+- 4D manages the "regular" errors: unique index, relational data control, and so on.
+- Using triggers, you manage the custom errors unique to your application.
+
+**Important:** You can return an error code value of your choice. However, do NOT use error codes already taken by the 4D database engine. We strongly recommend that you use error codes between -32000 and -15000. We reserve error codes above -15000 for the database engine.
+
+At the process level, you handle trigger errors the same way you handle database engine errors:
+
+- You can let 4D display the standard error dialog box, then the method is halted.
+- You can use an [error-handling method](../Concepts/error-handling.md) and recover the error the appropriate way (except for commands acting on a selection of records, see the note below).
+
+:::note Notes
+
+- During data entry, if a trigger error is returned while attempting to validate or delete a record, the error is handled like a unique indexed error. The error dialog is displayed, and you stay in data entry. Even if you use a database in the Design environment (not in the Application environment), you have the benefit of using triggers.
+- When an error is generated by a trigger for a record within the framework of a command acting on a selection of records ([`DELETE SELECTION`](../commands/delete-selection), [`APPLY TO SELECTION`](../commands/apply-to-selection), [`ARRAY TO SELECTION`](../commands/array-to-selection)...), the record is not processed but is automatically registered in the [`LockedSet` of the process](../Develop/processes.md#elements-of-a-process). The command continues its execution until the end and no error can be catched. The error-handling method, if any, is not called. To know if errors have been generated in this context, you need to test the `LockedSet` just after the command call. Also, in the trigger, you have to store error codes, for example in a collection, and handle them afterwards. 
+
+:::
+
+Even when a trigger returns no error ($result=0), this does not mean that a database operation will be successful—a unique index violation may occur. If the operation is the update of a record, the record may be locked, an I/O error may occur, and so on. The checking is done after the execution of the trigger. However, at the higher level of the executing process, errors returned by the database engine or a trigger are the same—a trigger error is a database engine error.
 
 
-*Values edited during transaction A (ID1 record gets Val11) are not available in a new transaction (B) created during the "suspended" period. Values edited during the "suspended" period (ID2 record gets Val22 and ID3 record gets Val33) are saved even after transaction A is cancelled.*
 
-Specific features have been added to handle errors:
+## Triggers and the 4D Architecture  
 
-- The current record of each table becomes temporarily locked if it is modified during the transaction and is automatically unlocked when the transaction is resumed. This mechanism is important to prevent unwanted saves on parts of the transaction.
-- If you execute an invalid sequence such as start transaction / suspend transaction / start transaction / resume transaction, an error is generated. This mechanism prevents developers from forgetting to commit or cancel any included transactions before resuming the suspended transaction.
+Triggers execute at the database engine level. This is summarized in the following diagram:
+
+![](../assets/en/Develop/triggers-architecture.png)
+
+Triggers are executed on the machine where the database engine is actually located. This is obvious with a 4D single-user version. On 4D Server, triggers are executed within the acting process on the server machine (in the "twinned" process of the process that set off the trigger), not on the client machine.
+
+When a trigger is invoked, it executes within the context of the process that attempts the database operation. This process, which invokes the trigger execution, is called the **invoking process**. The elements included in this context differ according to whether the database is executed with 4D in local mode or with 4D Server :
+
+- With 4D in local mode, the trigger works with the current selections, current records, table read/write states, record locking operations, etc., of the invoking process.
+- With 4D Server, only the context of the database of the invoking client process is preserved (locked records and transactional states). 4D Server also (and only) guarantees that the current record of the table of the trigger is correctly positioned. The other elements of the context (current selections for example) are those of the trigger process.
+
+Be careful about using other database or language objects of the 4D environment, because a trigger may execute on a machine other than that of the invoking process—this is the case with 4D Server!
+
+- **Process variables**: Each trigger has its own table of process variables. A trigger has no access to the process variables of the invoking process.
+- **Local variables**: You can use local variables in a trigger. Their scope is the trigger execution; they are created/deleted at each execution.
+- **Semaphores**: A trigger can test or set global semaphores as well as local semaphores (on the machine where it executes). However, a trigger must execute quickly, so you must be very careful when testing or setting semaphores from within triggers.
+- **Sets and Named selections**: If you use a set or a named selection from within a trigger, you work on the machine where the trigger executes. In client/server mode, "process" sets and named selections (whose names do not begin with a $ nor with \<>) that are created on the client machine are visible in a trigger.
+- **User Interface**: Do NOT use user interface elements in a trigger (no alerts, no messages, no dialog boxes). Accordingly, you should limit any tracing of triggers in the [Debugging window](../Debugging/debugger.md). Remember that in Client/Server, triggers execute on the 4D Server machine. An alert message on the server machine does not help a user on a client machine. Let the invoking process handle the user interface.
+
+Note that in client-server mode, if you use 4D's password system, you can execute the [`Current user`](../commands/current-user) command in the trigger in order, for example, to save the name of the user at the origin of the trigger call in a journaled table.
 
 
-#### Suspended transactions and process status 
+## Triggers and Transactions 
 
-The [`In transaction`](../commands-legacy/in-transaction.md) command returns True when a transaction has been started, even if it is suspended. To find out whether the current transaction is suspended, you need to use the [`Active transaction`](../commands-legacy/active-transaction.md) command, which returns False in this case. 
+[Transactions](./transactions.md) must be handled at the invoking process level. They must not be managed at the trigger level. During one trigger execution, if you have to add, modify or delete multiple records (see the following case study), you must first use the [`In transaction`](../commands/in-transaction) command from within the trigger to test if the invoking process is currently in transaction. If this is not the case, the trigger may potentially encounter a locked record. Therefore, if the invoking process is not in transaction, do not even start the operations on the records. Just return an error in the trigger $result in order to signal to the invoking process that the database operation it is trying to perform must be executed in a transaction. Otherwise, if locked records are met, the invoking process will have no means to roll back the actions of the trigger.
 
-Both commands, however, also return False if no transaction has been started. You may then need to use the [`Transaction level`](../commands-legacy/transaction-level.md) command, which returns 0 in this context (no transaction started).
 
-The following graphic illustrates the various transaction contexts and the corresponding values returned by the transaction commands:
+:::note
 
-![](../assets/en/Develop/transactions-schema2.png)
+In order to optimize the combined operation of triggers and transactions, 4D does not call triggers after the execution of [`VALIDATE TRANSACTION`](../commands/validate-transaction). This prevents the triggers from being executed twice.
+
+:::
+
+## Cascading Triggers  
+
+Given the following example structure:
+
+![](../assets/en/Develop/triggers-cascade.png)
+
+
+Note: The tables have been collapsed; they have more fields than shown here.
+
+Let's say that the database "authorizes" the deletion of an invoice. We can examine how such an operation would be handled at the trigger level (because you could also perform deletions at the process level).
+
+In order to maintain the relational integrity of the data, deleting an invoice requires the following actions to be performed in the trigger for [Invoices]:
+
+- In the [Customer] record, decrement the Gross Sales field by the amount of the invoice.
+- Delete all the [Line Items] records related to the invoice.
+- This also implies that the [Line Items] trigger decrements the Quantity Sold field of the [Products] record related to the line item to be deleted.
+- Delete all the [Payments] records related to the deleted invoice.
+
+First, the trigger for [Invoices] must perform these actions only if the invoking process is in transaction, so that a roll-back is possible if a locked record is met.
+
+Second, the trigger for [Line Items] is **cascading** with the trigger for [Invoices]. The [Line Items] trigger executes "within" the execution of the [Invoices] trigger, because the deletion of the list items are consequent to a call to `DELETE SELECTION` from within the [Invoices] trigger.
+
+Consider that all tables in this example have triggers activated for all database events. The cascade of triggers will be:
+
+- [Invoices] trigger is invoked because the invoking process deletes an invoice
+   - [Customers] trigger is invoked because the [Invoices] trigger updates the Gross Sales field
+   - [Line Items] trigger is invoked because the [Invoices] trigger deletes a line item (repeated)
+      - [Products] trigger is invoked because the [Line Items] trigger updates the Quantity Sold fiel
+   - [Payments] trigger is invoked because the [Invoices] trigger deletes a payment (repeated)
+
+In this cascade relationship, the [Invoices] trigger is said to be executing at level 1, the [Customers], [Line Items], and [Payments] triggers at level 2, and the [Products] trigger at level 3.
+
+From within the triggers, you can use the [`Trigger level`](../commands/trigger-level) command to detect the level at which a trigger is executed. In addition, you can use the [`TRIGGER PROPERTIES`](../commands/trigger-properties) command to get information about the other levels.
+
+For example, if a [Products] record is being deleted at a process level, the [Products] trigger would be executed at level 1, not at level 3.
+
+Using [`Trigger level`](../commands/trigger-level) and [`TRIGGER PROPERTIES`](../commands/trigger-properties), you can detect the cause of an action. In our example, an invoice is deleted at a process level. If we delete a [Customers] record at a process level, then the [Customers] trigger should attempt to delete all the invoices related to that customer. This means that the [Invoices] trigger will be invoked as above, but for another reason. From within the [Invoices] trigger, you can detect if it executed at level 1 or 2. If it did execute at level 2, you can then check whether or not it is because the [Customers] record is deleted. If this is the case, you do not even need to bother updating the Gross Sales field.
+
+
 
 
