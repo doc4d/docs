@@ -4,49 +4,48 @@ title: Triggers
 ---
 
 
-A **trigger** is a method attached to a table. It is a property of a table. You do not call triggers; they are automatically invoked by the 4D database engine each time you manipulate table records (add, delete and modify). You can write very simple triggers, and then make them more sophisticated.
+Un **trigger** es un método asociado a una tabla. Es una propiedad de una tabla. Usted no llama a los triggers; los triggers son llamados automáticamente por el motor de 4D cada vez que manipula registros de la tabla (adición, eliminación, modificación, y carga). Puede escribir triggers muy simples, y luego volverlos más sofisticados.
 
-Triggers can prevent "illegal" operations on the records of your database. They are a very powerful tool for restricting operations on a table, as well as preventing accidental data loss or tampering. For example, in an invoicing system, you can prevent anyone from adding an invoice without specifying the customer to whom the invoice is billed.
+Los triggers pueden evitar operaciones “ilegales” en los registros de su base. Son una herramienta muy poderosa que permite controlar las operaciones en tablas, como también evitar perdidas de datos accidentales. Por ejemplo, en un sistema de facturación, puede evitar que un usuario cree una factura sin especificar el cliente al que debe facturarse.
 
 
 <!-- INCLUDE triggers.vs-events.Desc -->
 
 
-## Activating and Creating a Trigger
+## Activar y crear un trigger
 
-By default, when you create a table in the Design Environment, it has no trigger.
+Por defecto, cuando crea una tabla en el entorno Diseño, la tabla no tiene trigger.
 
-To use a trigger for a table, you need to:
+Para utilizar un trigger para una tabla, necesita:
 
-- Activate the trigger and tell 4D when it has to be invoked.
-- Write the code for the trigger.
+- Activar el trigger e indicar a 4D cuando llamarlo.
+- Escribir el código para el trigger.
 
-Activating a trigger that is not yet written or writing a trigger without activating it will not affect the operations performed on a table.
 
-1. To activate a trigger for a table, you must select one of the **Triggers** options (database events) for the table in the Inspector window of the structure:
+Activar un trigger que no está escrito o escribir un trigger sin activarlo no afecta las operaciones efectuadas en una tabla.
+
+
+1. Para activar un trigger, seleccione las opciones **Triggers** para la tabla en la ventana de propiedades de la tabla::
 
 ![](../assets/en/Develop/triggers-set.png)
 
-2. Creating a Trigger.
-
-To create a trigger for a table, click on the **Edit...** button in the Inspector window or press **Alt** (Windows)/**Option** (macOS) and double-click on the table title in the Structure window ans write the code corresponding to the trigger that you want to create. 
+2. Para crear un trigger para una tabla, utilice la ventana de propiedades de la tabla, haga clic en el botón **Editar** o presione **Alt** (Windows)/**Opción** (macOS) y doble clic en la tabla en la ventana de estructura. 
 
 
+## Descripción de los triggers
 
-## Description of the triggers
+### Al guardar un registro existente
 
-### On saving an existing record
+Si se selecciona esta opción, el trigger se llamará cada vez que se modifique un registro de la tabla. Esto sucede cuando:
 
-If this option is selected, the trigger will be invoked each time a record of the table is modified. This happens when:
-
-- Modifying a record in data entry (Design environment, [`MODIFY RECORD`](../commands/modify-record) command or the SQL `UPDATE` command).
-- Saving an already existing record using [`SAVE RECORD`](../commands/save-record).
-- Calling any other commands that save existing records (i.e., [`ARRAY TO SELECTION`](../commands/array-to-selection), [`APPLY TO SELECTION`](../commands/apply-to-selection), etc.).
-- Using an ORDA function that saves the entity.
+- se modifica un registro en la entrada de datos (entorno Diseño, comando [`MODIFY RECORD`](../commands/modify-record) o el comando SQL `UPDATE`).
+- se guarda un registro existente utilizando [`SAVE RECORD`](../commands/save-record).
+- se llama un comando que guarda registros existentes (por ejemplo, [`ARRAY TO SELECTION`](../commands/array-to-selection), [`APPLY TO SELECTION`](../commands/apply-to-selection), etc.).
+- se utiliza función ORDA que guarda la entidad.
 
 :::note
 
-For optimization reasons, the trigger is not called when the record is saved by the user or via the [`SAVE RECORD`](../commands/save-record) command if no field in the table has been modified in the record. If you want to "force" the calling of the trigger in this case, you can simply assign a field to itself:
+Por razones de optimización, el trigger no se llama cuando el registro es guardado por el usuario o vía el comando [`SAVE RECORD`](../commands/save-record) si ningún campo de la tabla ha sido modificado en el registro. Si quiere "forzar" el llamado del trigger en este caso, simplemente puede asignar un campo:
 
 ```4d
 [thetable]thefield:=[thetable]thefield
@@ -54,63 +53,64 @@ For optimization reasons, the trigger is not called when the record is saved by 
 
 :::
 
-### On deleting a record 
+### Al borrar un registro 
 
-If this option is selected, the trigger will be invoked each time a record of the table is deleted. This happens when:
+Si selecciona esta opción, el trigger se llamará cada vez que se borre un registro de la tabla. Esto sucede cuando:
 
-- Deleting a record (Design environment or calling [`DELETE RECORD`](../commands/delete-record), [`DELETE SELECTION`](../commands/delete-selection) or the SQL `DELETE` command).
-- Performing any operation that provokes deletion of related records through the deletion control options of a relation.
-- Using an ORDA function that deletes the entity.
+- Cuando se borra un registro (entorno Diseño o llamando a los comandos [`DELETE RECORD`](../commands/delete-record), [`DELETE SELECTION`](../commands/delete-selection) o al comando SQL `DELETE`).
+- Cuando se efectúan operaciones que provocan la eliminación de un registro relacionado por intermedio de las opciones de control de eliminación de una relación
+- Cuando se utiliza una función ORDA que elimina la entidad.
 
 :::note
 
-The [`TRUNCATE TABLE`](../commands/trucate-table) command does NOT call the trigger.
+El comando [`TRUNCATE TABLE`](../commands/trucate-table) no llama al trigger.
 
 :::
 
-### On saving a new record  
+### Al guardar un nuevo registro    
 
-If this option is selected, the trigger will be invoked each time a record is added to the table. This happens when:
+Si esta opción se selecciona, el trigger se llamará cada vez que un registro se cree en la tabla, es decir en las siguientes circunstancias:
 
-- Adding a record in data entry (Design environment, [`ADD RECORD`](../commands/add-record) command or the SQL `INSERT` command).
-- Creating and saving a record with [`CREATE RECORD`](../commands/create-record) and [`SAVE RECORD`](../commands/save-record). Note that the trigger is invoked at the moment you call [`SAVE RECORD`](../commands/save-record), not when it is created.
-- Importing records (Design environment or using an import command).
-- Calling any other commands that create and/or save new records (i.e., [`ARRAY TO SELECTION`](../commands/array-to-selection), [`SAVE RELATED ONE`](../commands/save-related-one), etc.).
-- Using ORDA functions such as [`ds.dataclass.new()`](../API/DataClassClass.md#new) and [`entity.save()`](../API/EntityClass.md#save).
+- Cuando se añade un registro en la entrada de datos (entorno Diseño, comando [`ADD RECORD`](../commands/add-record) o comando SQL `INSERT`).
+- Cuando se crea y guarda un registro con [`CREATE RECORD`](../commands/create-record) y [`SAVE RECORD`](../commands/save-record). Note que el trigger se llama en el momento en que llama [`SAVE RECORD`](../commands/save-record), no cuando se crea.
+- Cuando se importan registros (entorno Diseño o utilizando un comando de importación).
+- Cuando se llaman otros comandos que crean y/o guardan nuevos registros (por ejemplo, [`ARRAY TO SELECTION`](../commands/array-to-selection), [`SAVE RELATED ONE`](../commands/save-related-one), etc.).
+- Cuando se utiliza funciones ORDA como [`ds.dataclass.new()`](../API/DataClassClass.md#new) y [`entity.save()`](../API/EntityClass.md#save).
 
 
-## Database events
+## Eventos de base
 
-A trigger can be invoked for one of the three database events described above. Within the trigger, you detect which event is occurring by calling the [`Trigger event`](../commands/trigger-event) command. This function returns a numeric value that denotes the database event.
+Un trigger puede ser llamado por uno de los cuatro eventos de base descritos anteriormente. En el trigger, puede detectar qué evento está ocurriendo llamando la función [`Trigger event`](../commands/trigger-event). Esta función devuelve un valor numérico que indica el evento de base.
 
-Typically, you write a trigger with a [`Case of` structure](../Concepts/flow-control.md#case-ofelseend-case) on the result returned by [`Trigger event`](../commands/trigger-event). 
+Generalmente, se escribe un trigger con una estructura de tipo [`Case of`](../Concepts/flow-control.md#case-ofelseend-case) sobre el resultado devuelto por [`Trigger event`](../commands/trigger-event). 
+
 
 ```4d
   //Trigger for [anyTable]
 #DECLARE -> $result : Integer
-$result:=0 // Assume the database request will be granted
+$result:=0 // Asume que la petición será aceptada
  Case of
     :(Trigger event=On Saving New Record Event)
-  // Perform appropriate actions for the saving of a newly created record
+  // Realizar las acciones apropiadas para guardar el nuevo registro creado
     :(Trigger event=On Saving Existing Record Event)
-  // Perform appropriate actions for the saving of an already existing record
+  // Realizar las acciones apropiadas para guardar un registro existente
     :(Trigger event=On Deleting Record Event)
-  // Perform appropriate actions for the deletion of a record
+  // Realizar las acciones apropiadas para borrar un registro
  End case
  ```
 
 
-## Triggers are Functions  
+## Los triggers son funciones  
 
-A trigger has two purposes:
+Un trigger tiene dos propósitos:
 
-- Performing actions on the record just before it is saved or deleted.
-- Granting or rejecting a database operation.
+- Efectuar acciones sobre el registro justo antes de que se guarde o borre, o justo después de ser cargado.
+- Aceptar o rechazar una operación de base de datos.
 
 
-### Performing Actions  
+### Efectuar las acciones  
 
-Each time a record is saved (added or modified) to a [Documents] table, you want to "mark" the record with a time stamp for creation and another one for the most recent modification. You can write the following trigger:
+Cada vez que se guarda un registro (añadido o modificado) a una tabla [Documentos], usted quiere “marcar” el registro con los marcadores de creación y modificación. Puede escribir el siguiente trigger:
 
 ```4d
   // Trigger for table [Documents]
@@ -125,54 +125,57 @@ Each time a record is saved (added or modified) to a [Documents] table, you want
 
 :::note
 
-The *myTimeStamp* function used in this example is a small project method that returns the number of seconds elapsed since a fixed date was chosen arbitrarily.
+La función *myTimeStamp* utilizada en este ejemplo es un pequeño método de proyecto que devuelve el número de segundos transcurridos desde una fecha elegida arbitrariamente.
 
 :::
 
-After this trigger has been written and activated, no matter what way you add or modify a record to the [Documents] table (data entry, import, project method, ORDA function), the fields [Documents]CreationStamp and [Documents]ModificationStamp will automatically be assigned by the trigger before the record is eventually written to the disk.
+Una vez este trigger ha sido escrito y activado, no importa de que manera añada o modifique un registro en la tabla de la tabla [Documents] (entrada de datos, importación, método de proyecto, ORDA function), los campos [Documents]CreationStamp y [Documents]ModificationStamp serán asignados automáticamente por el trigger antes de que el registro se escriba en el disco.
 
-### Granting or rejecting the database operation  
 
-To grant or reject a database operation, the trigger must **return a trigger error code** in the function result.
+### Aceptar o rechazar la operación de una base  
 
-#### Example
+Para aceptar o rechazar una operación de la base, el trigger debe devolver un **código de error de trigger** en el resultado de la función.
 
-Let's take the case of an [Employees] table. During data entry, you enforce a rule on the social security number field for the [Employees] table. When you click the validation button, you check the field using the object method of the button:
+
+#### ExEjemplo  mple
+
+Tomemos el caso de una tabla [Empleados]. Durante la entrada de datos, usted controla el campo [Empleados]Numero_Seguridad_Social. Por ejemplo, cuando el usuario hace clic en el botón de validación, usted verifica el campo utilizando el método objeto del botón:
+
 
 ```4d
-  // bAccept button object method
- If(GoodSSnumber([Employees]SSNumber))
+  // Método objeto bAccept
+ If(Good SS number([Empleados]Numero_Seguridad_Social))
     ACCEPT
  Else
     BEEP
-    ALERT("Enter a Social Security Number then click OK again.")
+    ALERT("Introduzca un número de seguridad social y haga clic de nuevo en OK.")
  End if
 ```
 
-If the field value is valid, you accept the data entry; if the field value is not valid, you display an alert and you stay in data entry.
+Si el valor del campo es correcto, acepta la entrada de datos; si el valor del campo no es correcto, muestra una alerta y permanece en entrada de datos.
 
-If you also create [Employees] records programmatically, the following piece of code would be programmatically valid, but would violate the rule expressed in the previous object method:
+Si también crea registros para la tabla [Empleados] por programación, el siguiente código sería válido pero violaría la regla expresada en el método objeto creado anteriormente:
 
 ```4d
-  // Extract from a project method
+  // Extracción de un método proyecto
   // ...
- CREATE RECORD([Employees])
- [Employees]Name:="DOE"
- SAVE RECORD([Employees]) // <-- DB rule violation! The SS number has not been assigned!
+ CREATE RECORD([Empleados])
+ [Empleados]Name:="DOE"
+ SAVE RECORD([Empleados]) // <-- ¡Violación de la regla! El número de seguridad social no ha sido asignado
   // ...
 ```
 
-Using a trigger for the [Employees] table, you can enforce the [Employees]SSNumber rule at all the levels of the database. The trigger would look like this:
+Utilizando un trigger para la tabla [Empleados], puede implementar la regla [Empleados]Numero_Seguridad_Social en todos los niveles de la base. El trigger se vería así:
 
 ```4d
-  // Trigger for [Employees]
+  // Trigger for [Empleados]
  #DECLARE -> $result : Integer
  $result:=0
  $dbEvent:=Trigger event
  Case of
     :(($dbEvent=On Saving New Record Event)|($dbEvent=On Saving Existing Record Event))
-       If(Not(GoodSSnumber([Employees]SSNumber)))
-          $result:=-15050
+       If(Not(Good SS number([Empleados]Numero_Seguridad_Social)))
+          $0:=-15050
        Else
   // ...
        End if
@@ -180,109 +183,115 @@ Using a trigger for the [Employees] table, you can enforce the [Employees]SSNumb
  End case
 ```
 
-Once this trigger is written and activated, the line `SAVE RECORD([Employees])` will generate a database engine error -15050, and the record will NOT be saved.
+Una vez este trigger está escrito y activado, la línea `SAVE RECORD([Empleados])` del método proyecto generará un error base -15050, y el registro NO se guardará.
 
-Similarly, if a 4D Plug-in attempted to save an [Employees] record with an invalid social security number, the trigger will generate the same error and the record will not be saved.
+De la misma forma, si un plug-in 4D intenta guardar un registro en [Empleados] con un número de seguridad social incorrecto, el trigger generará el mismo error y el registro no se guardará.
 
-The trigger guarantees that nobody (user, database designer, plug-in) can violate the social security number rule, either deliberately or accidentally.
+El trigger garantiza que nadie (usuario, desarrollador, plug-in...) pueda violar la regla del número de seguridad social (bien sea deliberada o accidentalmente).
 
-Note that even if you do not have a trigger for a table, you can get database engine errors while attempting to save or delete a record. For example, if you attempt to save a record with a duplicated value in a unique indexed field, the error -9998 is returned.
+Note que incluso si no tiene un trigger para una tabla, la base puede devolver errores base cuando se trata de guardar o borrar un registro. Por ejemplo, si intenta guardar un registro con un valor duplicado en un campo indexado único, se devuelve el error -9998.
 
-Therefore, triggers returning errors add database engine errors to your application:
+Los triggers devuelven nuevos tipos de errores en 4D:
 
-- 4D manages the "regular" errors: unique index, relational data control, and so on.
-- Using triggers, you manage the custom errors unique to your application.
+- 4D administra los errores “normales”: índice único, control de datos relacionales, etc.
+- Utilizando triggers, puede crear códigos de errores propios al contenido de su aplicación.
 
-**Important:** You can return an error code value of your choice. However, do NOT use error codes already taken by the 4D database engine. We strongly recommend that you use error codes between -32000 and -15000. We reserve error codes above -15000 for the database engine.
+**Importante**: puede devolver el código de error de su elección. Sin embargo, NO utilice códigos de errores ya utilizados por el motor de 4D. Recomendamos utilizar códigos de error entre -32 000 y -15 000. Nos reservamos los errores superiores a -15 000 para el motor de 4D.
 
-At the process level, you handle trigger errors the same way you handle database engine errors:
+A nivel del proceso, usted administra los errores trigger de la misma manera que los errores de motor de base de datos:
 
-- You can let 4D display the standard error dialog box, then the method is halted.
-- You can use an [error-handling method](../Concepts/error-handling.md) and recover the error the appropriate way (except for commands acting on a selection of records, see the note below).
+- Puede permitir a 4D mostrar la caja de diálogo estándar de error, luego se interrumpe el método.
+- Puede utilizar un [método de gestión de errores](../Concepts/error-handling.md) y recuperar el error de la manera apropiada.
 
-:::note Notes
 
-- During data entry, if a trigger error is returned while attempting to validate or delete a record, the error is handled like a unique indexed error. The error dialog is displayed, and you stay in data entry. Even if you use a database in the Design environment (not in the Application environment), you have the benefit of using triggers.
-- When an error is generated by a trigger for a record within the framework of a command acting on a selection of records ([`DELETE SELECTION`](../commands/delete-selection), [`APPLY TO SELECTION`](../commands/apply-to-selection), [`ARRAY TO SELECTION`](../commands/array-to-selection)...), the record is not processed but is automatically registered in the [`LockedSet` of the process](../Develop/processes.md#elements-of-a-process). The command continues its execution until the end and no error can be catched. The error-handling method, if any, is not called. To know if errors have been generated in this context, you need to test the `LockedSet` just after the command call. Also, in the trigger, you have to store error codes, for example in a collection, and handle them afterwards. 
+:::note Notas
+
+- Durante la entrada de datos, si un error trigger es devuelto mientras intenta validar o borrar un registro, el error se trata como un error de índice único. La caja de diálogo de error se muestra, y permanece en la entrada de datos. Incluso si utiliza una base en el entorno Diseño (no en el entorno Aplicación), usted se beneficia del uso de triggers.
+- Cuando se genera un error por un trigger para un registro en el marco de un comando que actúa sobre una selección de registros ([`DELETE SELECTION`](../commands/delete-selection), [`APPLY TO SELECTION`](../commands/apply-to-selection), [`ARRAY TO SELECTION`](../commands/array-to-selection)...), el registro no es procesado pero se registra automáticamente en el Locke[`LockedSet`](../Develop/processes.md#elements-of-a-process). El comando continúa su ejecución hasta el final y no se detecta ningún error. No se llama al método de manejo de errores, si lo hay. Para saber si se han generado errores en este contexto, debe probar `LockedSet` justo después de la llamada al comando. Además, en el trigger, debe almacenar códigos de error, en una colección por ejemplo y manejarlos después.
 
 :::
 
-Even when a trigger returns no error ($result=0), this does not mean that a database operation will be successful—a unique index violation may occur. If the operation is the update of a record, the record may be locked, an I/O error may occur, and so on. The checking is done after the execution of the trigger. However, at the higher level of the executing process, errors returned by the database engine or a trigger are the same—a trigger error is a database engine error.
+
+Incluso si un trigger no devuelve un error ($result=0), esto no significa que una operación de la base se efectuará correctamente, puede ocurrir una violación de índice único. Si la operación es la actualización de un registro, el registro puede estar bloqueado, se puede producir un error de entrada/salida puede ocurrir, etc. Estas verificaciones son efectuadas después de la ejecución del trigger. Sin embargo, desde el punto de vista del nivel superior del proceso en ejecución, los errores devueltos por el motor de la base de datos o por un trigger son de la misma naturaleza, un error trigger es un error del motor de la base de datos.
 
 
 
-## Triggers and the 4D Architecture  
+## Triggers y la arquitectura 4D   
 
-Triggers execute at the database engine level. This is summarized in the following diagram:
+Los triggers funcionan al nivel del motor de la base de datos. Este punto se resume en el siguiente diagrama:
 
 ![](../assets/en/Develop/triggers-architecture.png)
 
-Triggers are executed on the machine where the database engine is actually located. This is obvious with a 4D single-user version. On 4D Server, triggers are executed within the acting process on the server machine (in the "twinned" process of the process that set off the trigger), not on the client machine.
+Los triggers se ejecutan en el equipo donde está el motor de la base de datos. Esto es evidente en el caso de 4D en local. En 4D Server, los triggers se ejecutan en el equipo servidor (en el proceso activo) y no en el equipo cliente. 
 
-When a trigger is invoked, it executes within the context of the process that attempts the database operation. This process, which invokes the trigger execution, is called the **invoking process**. The elements included in this context differ according to whether the database is executed with 4D in local mode or with 4D Server :
+Cuando se llama un trigger, se ejecuta dentro del contexto del proceso que intenta la operación. Este proceso, invoca la ejecución del trigger y se llama **proceso llamante**.**
 
-- With 4D in local mode, the trigger works with the current selections, current records, table read/write states, record locking operations, etc., of the invoking process.
-- With 4D Server, only the context of the database of the invoking client process is preserved (locked records and transactional states). 4D Server also (and only) guarantees that the current record of the table of the trigger is correctly positioned. The other elements of the context (current selections for example) are those of the trigger process.
+Los elementos incluidos en este contexto difieren si la base se ejecuta con 4D en modo local o con 4D Server:
 
-Be careful about using other database or language objects of the 4D environment, because a trigger may execute on a machine other than that of the invoking process—this is the case with 4D Server!
+- Con 4D en modo local, el trigger funciona con las selecciones actuales, registros actuales, estados de lectura/escritura de las tablas, operaciones de bloqueos de registros, etc., del proceso llamante.
+- Con 4D Server, sólo el contexto de base de datos del proceso cliente llamante se conserva (bloqueo de registros, estados transaccionales).
+4D Server igualmente garantiza que el registro actual de la tabla del trigger esté correctamente posicionado.
+Los otros elementos contextuales (selecciones actuales por ejemplo) son las del proceso del trigger.
 
-- **Process variables**: Each trigger has its own table of process variables. A trigger has no access to the process variables of the invoking process.
-- **Local variables**: You can use local variables in a trigger. Their scope is the trigger execution; they are created/deleted at each execution.
-- **Semaphores**: A trigger can test or set global semaphores as well as local semaphores (on the machine where it executes). However, a trigger must execute quickly, so you must be very careful when testing or setting semaphores from within triggers.
-- **Sets and Named selections**: If you use a set or a named selection from within a trigger, you work on the machine where the trigger executes. In client/server mode, "process" sets and named selections (whose names do not begin with a $ nor with \<>) that are created on the client machine are visible in a trigger.
-- **User Interface**: Do NOT use user interface elements in a trigger (no alerts, no messages, no dialog boxes). Accordingly, you should limit any tracing of triggers in the [Debugging window](../Debugging/debugger.md). Remember that in Client/Server, triggers execute on the 4D Server machine. An alert message on the server machine does not help a user on a client machine. Let the invoking process handle the user interface.
+Tenga cuidado cuando utilice otros objetos de la base y del lenguaje del entorno 4D, porque un trigger podría ejecutarse en una maquina diferente de la del proceso que lo llama ¡Este es el caso con 4D Server!
 
-Note that in client-server mode, if you use 4D's password system, you can execute the [`Current user`](../commands/current-user) command in the trigger in order, for example, to save the name of the user at the origin of the trigger call in a journaled table.
+- **Variables proceso**: cada trigger tiene su propia tabla de variables proceso. Un trigger no tiene acceso a las variables proceso del proceso llamante.
+- **Variables locales**: puede utilizar las variables locales en un trigger. Su alcance es la ejecución del trigger; se crean/eliminan en cada ejecución.
+- **Semáforos**: un trigger puede probar o fijar semáforos globales y locales (en el equipo donde se ejecuta). Sin embargo, un trigger debe ejecutar rápidamente, de manera que debe ser muy cuidadoso cuando pruebe o defina semáforos dentro de triggers.
+- **Conjuntos y selecciones temporales**: si utiliza un conjunto o una selección temporal en un trigger, trabaja en el equipo donde los triggers se ejecutan.
+- **Interfaz del usuario**: NO utilice elementos de la interfaz del usuario en un trigger (alertas, mensajes o cajas de diálogo). De la misma forma, debe limitar todo seguimiento de triggers en la [ventana del **Depurador**](../Debugging/debugger.md). Recuerde que en Cliente/Servidor, los triggers se ejecutan en el equipo 4D Server. Un mensaje de alerta en el equipo servidor no ayuda al usuario en un equipo cliente. Deje al proceso llamante administrar la interfaz del usuario.
+
+Tenga en cuenta que si utiliza el sistema de contraseñas de 4D, puede ejecutar el comando [`Current user`](../commands/current-user) en el trigger con el fin, por ejemplo, de guardar el nombre del usuario en el origen de la llamada del trigger en una tabla con historial, incluso en modo cliente-servidor.
 
 
-## Triggers and Transactions 
 
-[Transactions](./transactions.md) must be handled at the invoking process level. They must not be managed at the trigger level. During one trigger execution, if you have to add, modify or delete multiple records (see the following case study), you must first use the [`In transaction`](../commands/in-transaction) command from within the trigger to test if the invoking process is currently in transaction. If this is not the case, the trigger may potentially encounter a locked record. Therefore, if the invoking process is not in transaction, do not even start the operations on the records. Just return an error in the trigger $result in order to signal to the invoking process that the database operation it is trying to perform must be executed in a transaction. Otherwise, if locked records are met, the invoking process will have no means to roll back the actions of the trigger.
+## Triggers y transacciones
 
+Las [transacciones](./transactions.md) deben administrarse en el nivel del proceso llamante. No deben administrarse a nivel del trigger. Si durante la ejecución del trigger, tiene que añadir, modificar o borrar varios registros, primero debe utilizar el comando [`In transaction`](../commands/in-transaction) desde el trigger para probar si el proceso llamante está en transacción actualmente. Si no es el caso, el trigger podría encontrarse con un registro bloqueado. Por lo tanto, si el proceso llamante no está en transacción, no comienzan las operaciones en los registros y devuelve un error en $0 para indicar al proceso llamante que la operación de la base de datos debe ejecutarse en una transacción. Por otra parte, si encuentra registros bloqueados, el proceso llamante no podrá deshacer las acciones del trigger.
 
 :::note
 
-In order to optimize the combined operation of triggers and transactions, 4D does not call triggers after the execution of [`VALIDATE TRANSACTION`](../commands/validate-transaction). This prevents the triggers from being executed twice.
+Con el fin de optimizar el funcionamiento combinado de los triggers y transacciones, 4D no llama triggers después de la ejecución de [`VALIDATE TRANSACTION`](../commands/validate-transaction). Esto evita que los triggers se ejecuten dos veces.
 
 :::
 
-## Cascading Triggers  
+## Triggers en cascada  
 
-Given the following example structure:
+Dada la siguiente estructura de ejemplo:
 
 ![](../assets/en/Develop/triggers-cascade.png)
 
+Nota: las tablas han sido contraídas; tienen más campos de los que se muestran.
 
-Note: The tables have been collapsed; they have more fields than shown here.
+Supongamos que la base de datos “autoriza” la eliminación de una factura. Podemos examinar cómo sería tratada tal operación a nivel del trigger (porque también podría realizar eliminaciones a nivel del proceso).
 
-Let's say that the database "authorizes" the deletion of an invoice. We can examine how such an operation would be handled at the trigger level (because you could also perform deletions at the process level).
+Para conservar la integridad relacional de los datos, la eliminación de una factura requiere las siguientes acciones de parte del trigger de [Facturas]:
 
-In order to maintain the relational integrity of the data, deleting an invoice requires the following actions to be performed in the trigger for [Invoices]:
+- Disminuir el campo Ventas de la tabla [Clientes], en la cantidad de la factura.
+- Borrar todos los registros de [Linea_Factura] relacionados con la factura.
+- Esto también implica que el trigger de [Linea_Factura] disminuya el campo Cantidad vendida de los registros [Productos] relacionados con la línea de factura a eliminar.
+- Borrar todos los registros de [Pagos] relacionados con la factura borrada.
 
-- In the [Customer] record, decrement the Gross Sales field by the amount of the invoice.
-- Delete all the [Line Items] records related to the invoice.
-- This also implies that the [Line Items] trigger decrements the Quantity Sold field of the [Products] record related to the line item to be deleted.
-- Delete all the [Payments] records related to the deleted invoice.
+Primero, el trigger de [Facturas] debe efectuar estas acciones sólo si el proceso llamante está en transacción, de manera que sea posible deshacer en caso de encontrar un registro bloqueado.
 
-First, the trigger for [Invoices] must perform these actions only if the invoking process is in transaction, so that a roll-back is possible if a locked record is met.
+Segundo, el trigger de [Linea_Factura] está en **cascada** con el trigger de [Facturas]. El trigger [Linea_Factura] se ejecuta dentro de la ejecución del trigger [Facturas], porque la eliminación de los elementos de la lista es consecutiva a una llamada a `DELETE SELECTION` desde el trigger de [Facturas].
 
-Second, the trigger for [Line Items] is **cascading** with the trigger for [Invoices]. The [Line Items] trigger executes "within" the execution of the [Invoices] trigger, because the deletion of the list items are consequent to a call to `DELETE SELECTION` from within the [Invoices] trigger.
+Imagine que todas las tablas en este ejemplo tienen triggers activados para todos los eventos de la base de datos. La cascada de triggers será:
 
-Consider that all tables in this example have triggers activated for all database events. The cascade of triggers will be:
+- El trigger de [Facturas] se llama porque el proceso llamante borra una factura
+   - El trigger de [Clientes] se llama porque el trigger de [Facturas] trigger actualiza el campo Ventas_Brutas
+   - El trigger de [Linea_Factura] se llama porque el trigger [Facturas] borra una línea(repetida)
+      - El trigger de [Productos] se llama porque el trigger de [Linea_Factura] actualiza el campo Cantidad_Vendida
+   - El trigger de [Pagos] se llama porque el trigger de [Facturas] borra un pago(repetido)
 
-- [Invoices] trigger is invoked because the invoking process deletes an invoice
-   - [Customers] trigger is invoked because the [Invoices] trigger updates the Gross Sales field
-   - [Line Items] trigger is invoked because the [Invoices] trigger deletes a line item (repeated)
-      - [Products] trigger is invoked because the [Line Items] trigger updates the Quantity Sold fiel
-   - [Payments] trigger is invoked because the [Invoices] trigger deletes a payment (repeated)
+En esta cascada, el trigger de [Facturas] se ejecuta en el nivel 1, los triggers de [Clientes], [Linea_Factura], y [Pagos] en el nivel 2 y el trigger de [Productos] en el nivel 3.
 
-In this cascade relationship, the [Invoices] trigger is said to be executing at level 1, the [Customers], [Line Items], and [Payments] triggers at level 2, and the [Products] trigger at level 3.
+Desde dentro de los triggers, puede utilizar el comando [`Trigger level`](../commands/trigger-level) para detectar el nivel en el cual se ejecuta un trigger. Además, puede utilizar el comando [`TRIGGER PROPERTIES`](../commands/trigger-properties) para obtener información sobre los otros niveles.
 
-From within the triggers, you can use the [`Trigger level`](../commands/trigger-level) command to detect the level at which a trigger is executed. In addition, you can use the [`TRIGGER PROPERTIES`](../commands/trigger-properties) command to get information about the other levels.
+Por ejemplo, si borra un registro de [Productos] a nivel del proceso, el trigger de [Productos] se ejecutará en el nivel 1, no en el nivel 3.
 
-For example, if a [Products] record is being deleted at a process level, the [Products] trigger would be executed at level 1, not at level 3.
+Con [`Trigger level`](../commands/trigger-level) y [`TRIGGER PROPERTIES`](../commands/trigger-properties), puede identificar la causa de una acción. En nuestro ejemplo, una factura se borra al nivel del proceso. Si borramos un registro de [Clientes] a nivel del proceso, el trigger de [Clientes] debe intentar borrar todas las facturas relacionadas con ese cliente. Esto significa que el trigger [Facturas] será llamado como se llamó anteriormente, pero por otra razón. Desde el trigger de [Facturas], puede detectar si se ejecuta en el nivel 1 ó 2. Si se ejecutó en el nivel 2, puede verificar si fue porque se borro el registro de [Clientes]. Si este es el caso, no tiene que preocuparse en actualizar el campo Ventas_Brutas.
 
-Using [`Trigger level`](../commands/trigger-level) and [`TRIGGER PROPERTIES`](../commands/trigger-properties), you can detect the cause of an action. In our example, an invoice is deleted at a process level. If we delete a [Customers] record at a process level, then the [Customers] trigger should attempt to delete all the invoices related to that customer. This means that the [Invoices] trigger will be invoked as above, but for another reason. From within the [Invoices] trigger, you can detect if it executed at level 1 or 2. If it did execute at level 2, you can then check whether or not it is because the [Customers] record is deleted. If this is the case, you do not even need to bother updating the Gross Sales field.
 
 
 
