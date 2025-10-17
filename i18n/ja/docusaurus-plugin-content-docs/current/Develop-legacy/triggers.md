@@ -1,52 +1,53 @@
 ---
 id: triggers
-title: Triggers
+title: トリガ
 ---
 
 
-A **trigger** is a method attached to a table. It is a property of a table. You do not call triggers; they are automatically invoked by the 4D database engine each time you manipulate table records (add, delete and modify). You can write very simple triggers, and then make them more sophisticated.
+トリガーはテーブルに付属するメソッドであり、テーブルのプロパティです。トリガーを呼び出す必要はありません。テーブルレコードを操作 (追加、削除、修正) するたびに4Dのデータベースエンジンが自動的に呼び出します。まず簡単なトリガーを記述し、後からより洗練されたものにすることができます。
 
-Triggers can prevent "illegal" operations on the records of your database. They are a very powerful tool for restricting operations on a table, as well as preventing accidental data loss or tampering. For example, in an invoicing system, you can prevent anyone from adding an invoice without specifying the customer to whom the invoice is billed.
+トリガーを使用すれば、データベースのレコードに対して "不正な" 操作が行われるのを防ぐことができます。偶発的なデータの紛失や改ざんを防ぎ、テーブル上での操作を制限することのできる非常に強力なツールです。例えば請求書システムにおいては、請求書の送付先である顧客を指定せずに誰かが請求書を追加するのを防止することができます。
+
 
 
 <!-- INCLUDE triggers.vs-events.Desc -->
 
 
-## Activating and Creating a Trigger
+## トリガーのアクティブ化と作成
 
-By default, when you create a table in the Design Environment, it has no trigger.
+デザインモードでテーブルを作成したときには、デフォルトでテーブルにトリガーがありません。
 
-To use a trigger for a table, you need to:
+テーブルのトリガーを使用するには、以下を実行する必要があります。
 
-- Activate the trigger and tell 4D when it has to be invoked.
-- Write the code for the trigger.
+- トリガーをアクティブにし、4Dに対してトリガーをいつ起動すべきか知らせる。
+- トリガー用のコードを記述する。
 
-Activating a trigger that is not yet written or writing a trigger without activating it will not affect the operations performed on a table.
+まだメソッドとして記述されていないトリガーをアクティブにする、あるいはトリガーをアクティブにしないでメソッドに記述しても、テーブルに対して実行される操作に影響を与えることはありません。
 
-1. To activate a trigger for a table, you must select one of the **Triggers** options (database events) for the table in the Inspector window of the structure:
+1. トリガをアクティブにする 
+テーブルのトリガーをアクティブにするには、ストラクチャーの**インスペクタ**ーウィンドウでテーブルのトリガー オプション (データベースイベント) を選択しなければなりません。
 
 ![](../assets/en/Develop/triggers-set.png)
 
-2. Creating a Trigger.
-
-To create a trigger for a table, click on the **Edit...** button in the Inspector window or press **Alt** (Windows)/**Option** (macOS) and double-click on the table title in the Structure window ans write the code corresponding to the trigger that you want to create. 
-
+2. トリガを作成する
+テーブルのトリガーを作成するには、**エクスプローラー**を使用するか、ストラクチャーエディターのインスペクターウィンドウにある**編集...** ボタンをクリックするか、Alt (Windowsの場合) または Option (Mac OSの場合) キーを押して、ストラクチャーエディターのテーブルタイトルをダブルクリックしてください。
 
 
-## Description of the triggers
 
-### On saving an existing record
 
-If this option is selected, the trigger will be invoked each time a record of the table is modified. This happens when:
+## トリガーの説明
 
-- Modifying a record in data entry (Design environment, [`MODIFY RECORD`](../commands/modify-record) command or the SQL `UPDATE` command).
-- Saving an already existing record using [`SAVE RECORD`](../commands/save-record).
-- Calling any other commands that save existing records (i.e., [`ARRAY TO SELECTION`](../commands/array-to-selection), [`APPLY TO SELECTION`](../commands/apply-to-selection), etc.).
-- Using an ORDA function that saves the entity.
+### 既存レコード保存時  
 
-:::note
+このオプションを選択すると、テーブルのレコードが修正されるたびに、トリガーが起動します。
+以下の場合にトリガーが起動します。
 
-For optimization reasons, the trigger is not called when the record is saved by the user or via the [`SAVE RECORD`](../commands/save-record) command if no field in the table has been modified in the record. If you want to "force" the calling of the trigger in this case, you can simply assign a field to itself:
+- データ入力時にレコードを修正する (デザインモード、 [`MODIFY RECORD`](../commands/modify-record)コマンド またはUPDATEコマンド等を使用) 。
+- [`SAVE RECORD`](../commands/save-record)を使用して既存レコードを保存する。
+- 既存レコードを保存するコマンドを使用する [`ARRAY TO SELECTION`](../commands/array-to-selection), [`APPLY TO SELECTION`](../commands/apply-to-selection)など) 。
+- [`SAVE RECORD`](../commands/save-record) コマンドを呼び出すプラグインを使用する。
+
+注: 最適化のため、ユーザーがレコードを保存したり[`SAVE RECORD`](../commands/save-record)コマンドでレコードが保存されたりする際、レコードのフィールドが全く変更されていなければ、トリガーは呼び出されません。トリガーを強制的に呼び出したいときは、フィールドに同じ値を代入します:
 
 ```4d
 [thetable]thefield:=[thetable]thefield
@@ -54,125 +55,137 @@ For optimization reasons, the trigger is not called when the record is saved by 
 
 :::
 
-### On deleting a record 
+### レコード削除時 
 
-If this option is selected, the trigger will be invoked each time a record of the table is deleted. This happens when:
+このオプションを選択すると、テーブルのレコードが削除されるたびに、トリガーが起動します。
+以下の場合にトリガが起動します。
 
-- Deleting a record (Design environment or calling [`DELETE RECORD`](../commands/delete-record), [`DELETE SELECTION`](../commands/delete-selection) or the SQL `DELETE` command).
-- Performing any operation that provokes deletion of related records through the deletion control options of a relation.
-- Using an ORDA function that deletes the entity.
+- レコードを削除する (デザインモード、[`DELETE RECORD`](../commands/delete-record)コマンド、[`DELETE SELECTION`](../commands/delete-selection)コマンドまたはSQLのDELETEコマンドを使用する) 。
+- リレートの削除制御オプションによって、リレート先レコードの削除を引き起こす何らかの操作を実行する。
+- DELETE RECORDコマンドを呼び出すプラグインを使用する。
 
 :::note
 
-The [`TRUNCATE TABLE`](../commands/trucate-table) command does NOT call the trigger.
+[`TRUNCATE TABLE`](../commands/trucate-table) コマンドはトリガーを呼び出しません。
 
 :::
 
-### On saving a new record  
+### 新規レコード保存時  
 
-If this option is selected, the trigger will be invoked each time a record is added to the table. This happens when:
+このオプションを選択すると、レコードがテーブルに追加されるたびに、トリガーが起動します。
 
-- Adding a record in data entry (Design environment, [`ADD RECORD`](../commands/add-record) command or the SQL `INSERT` command).
-- Creating and saving a record with [`CREATE RECORD`](../commands/create-record) and [`SAVE RECORD`](../commands/save-record). Note that the trigger is invoked at the moment you call [`SAVE RECORD`](../commands/save-record), not when it is created.
-- Importing records (Design environment or using an import command).
-- Calling any other commands that create and/or save new records (i.e., [`ARRAY TO SELECTION`](../commands/array-to-selection), [`SAVE RELATED ONE`](../commands/save-related-one), etc.).
-- Using ORDA functions such as [`ds.dataclass.new()`](../API/DataClassClass.md#new) and [`entity.save()`](../API/EntityClass.md#save).
+以下の場合にトリガーが起動します。
+
+- データ入力時にレコードを追加する(デザインモード、[`ADD RECORD`](../commands/add-record)コマンド または SQLのINSERTコマンド等を使用) 。
+- [`CREATE RECORD`](../commands/create-record) や [`SAVE RECORD`](../commands/save-record)を使用してレコードを作成し、保存する。トリガーは[`SAVE RECORD`](../commands/save-record)を呼び出したときに起動します。レコードを作成したときではありません。
+- レコードを読み込む (デザインモード、または読み込みコマンドを使用して) 。
+- 新規レコードを作成または保存するコマンドを使用する ([`ARRAY TO SELECTION`](../commands/array-to-selection), [`SAVE RELATED ONE`](../commands/save-related-one)など) 。
+- [`CREATE RECORD`](../commands/create-record) や [`SAVE RECORD`](../commands/save-record)コマンドを呼び出すプラグインを使用する。
 
 
-## Database events
+## データベースイベント
 
-A trigger can be invoked for one of the three database events described above. Within the trigger, you detect which event is occurring by calling the [`Trigger event`](../commands/trigger-event) command. This function returns a numeric value that denotes the database event.
+トリガーは、前述の3つのデータベースイベントのいずれかに対して起動することができます。トリガー内で[`Trigger event`](../commands/trigger-event) 関数を呼び出すことによって、どのイベントが発生しているかを検出します。この関数はデータベースイベントを示す数値を返します。
 
-Typically, you write a trigger with a [`Case of` structure](../Concepts/flow-control.md#case-ofelseend-case) on the result returned by [`Trigger event`](../commands/trigger-event). 
+一般的には、[`Trigger event`](../commands/trigger-event) から返される結果に関して、 [Case of](../Concepts/flow-control.md#case-ofelseend-case) ストラクチャーを用いて、トリガーを記述します。Trigger Events テーマの定数を使用できます。
 
 ```4d
-  //Trigger for [anyTable]
+  //トリガー用の[anyTable] テーブル
 #DECLARE -> $result : Integer
-$result:=0 // Assume the database request will be granted
+var $event_l : Integer
+$result:=0 // データベースリクエストが許可されると仮定する
+$event_l:=Trigger event // データベースイベントを取得
  Case of
-    :(Trigger event=On Saving New Record Event)
-  // Perform appropriate actions for the saving of a newly created record
-    :(Trigger event=On Saving Existing Record Event)
-  // Perform appropriate actions for the saving of an already existing record
-    :(Trigger event=On Deleting Record Event)
-  // Perform appropriate actions for the deletion of a record
+    :($event_l=On Saving New Record Event)
+  // 新規に作成されたレコードの保存のために適切な動作 (アクション) を実行する
+    :($event_l=On Saving Existing Record Event)
+  // 既存のレコードの保存のために適切な動作を実行する
+    :($event_l=On Deleting Record Event)
+  // レコードの削除のために適切な動作を実行する
  End case
  ```
 
 
-## Triggers are Functions  
+## トリガと関数  
 
-A trigger has two purposes:
+トリガーには、2つの目的があります。
 
-- Performing actions on the record just before it is saved or deleted.
-- Granting or rejecting a database operation.
+レコードが保存、削除される前に、レコードに対して動作 (アクション) を実行する。
+データベース操作を許可または拒絶する。
+.
 
 
-### Performing Actions  
+### 動作を実行する   
 
-Each time a record is saved (added or modified) to a [Documents] table, you want to "mark" the record with a time stamp for creation and another one for the most recent modification. You can write the following trigger:
+[Documents] テーブルにレコードが保存 (追加または修正) されるたびに、作成時を示すタイムスタンプと最新の修正時を示すタイムスタンプでレコードを "マーク" したいとします。この場合、以下のようなトリガーを記述できます。
+
 
 ```4d
-  // Trigger for table [Documents]
+  //トリガー用の [Documents] テーブル
+var $event_l : Integer
+ $event_l:=Trigger event
  Case of
-    :(Trigger event=On Saving New Record Event)
-       [Documents]CreationStamp:=myTimeStamp
-       [Documents]ModificationStamp:=myTimeStamp
-    :(Trigger event=On Saving Existing Record Event)
-       [Documents]ModificationStamp:=myTimeStamp
+    :($event_l=On Saving New Record Event)
+       [Documents]Creation Stamp:=Time stamp
+       [Documents]Modification Stamp:=Time stamp
+    :($event_l=On Saving Existing Record Event)
+       [Documents]Modification Stamp:=Time stamp
  End case
 ```
 
 :::note
 
-The *myTimeStamp* function used in this example is a small project method that returns the number of seconds elapsed since a fixed date was chosen arbitrarily.
+この例題で使用している Time stamp 関数は、固定日付が任意に選択された時点から経過数秒を返す小さなプロジェクトメソッドです
 
 :::
 
-After this trigger has been written and activated, no matter what way you add or modify a record to the [Documents] table (data entry, import, project method, ORDA function), the fields [Documents]CreationStamp and [Documents]ModificationStamp will automatically be assigned by the trigger before the record is eventually written to the disk.
+いったんこのトリガーを記述してアクティブにすると、ユーザーがどのような方法で [Documents] テーブルにレコードを追加または修正しても (データ入力、読み込み、プロジェクトメソッド、4Dプラグイン) 、レコードが最終的にディスクに書き込まれる前に、トリガーによって、[Documents]Creation Stamp フィールドと [Documents]Modification Stamp フィールドに自動的に日付が割り当てられます。
 
-### Granting or rejecting the database operation  
 
-To grant or reject a database operation, the trigger must **return a trigger error code** in the function result.
+### データベース操作を許可または拒絶する   
 
-#### Example
+データベース操作を許可または拒絶するために、トリガーは、戻り値 $result にトリガーエラーコードを返さなければなりません。
 
-Let's take the case of an [Employees] table. During data entry, you enforce a rule on the social security number field for the [Employees] table. When you click the validation button, you check the field using the object method of the button:
+
+#### 例題 
+
+[Employees] テーブルの場合を取り上げてみましょう。データ入力時に、[Employees]Social Security number フィールドで規則を強制します。確認ボタンをクリックする際に、ボタンのオブジェクトメソッドを使用してそのフィールドをチェックします。
 
 ```4d
-  // bAccept button object method
- If(GoodSSnumber([Employees]SSNumber))
+  // bAcceptボタンのオブジェクトメソッド
+ If(Good SS number([Employees]SS number))
     ACCEPT
  Else
     BEEP
-    ALERT("Enter a Social Security Number then click OK again.")
+    ALERT("Enter a Social Security number then click OK again.")
  End if
+
 ```
+フィールド値が有効な場合、データ入力を受け入れます。フィールド値が無効な場合、警告を表示して、データ入力の状態になります。
 
-If the field value is valid, you accept the data entry; if the field value is not valid, you display an alert and you stay in data entry.
-
-If you also create [Employees] records programmatically, the following piece of code would be programmatically valid, but would violate the rule expressed in the previous object method:
+[Employees] レコードをプログラムで作成した場合、以下のコードはプログラムとしては正当ですが、前述のオブジェクトメソッドで強制した規則に違反します。
 
 ```4d
-  // Extract from a project method
+  //プロジェクトメソッドから抽出する
   // ...
  CREATE RECORD([Employees])
  [Employees]Name:="DOE"
- SAVE RECORD([Employees]) // <-- DB rule violation! The SS number has not been assigned!
+ SAVE RECORD([Employees]) ` <-- DB規則の違反! 保険証番号は保存されない!
   // ...
 ```
 
-Using a trigger for the [Employees] table, you can enforce the [Employees]SSNumber rule at all the levels of the database. The trigger would look like this:
+[Employees] テーブルのトリガーを使用して、データベースのすべてのレベルで[Employees]SS number の規則を強制することができます。トリガーは以下のようになります。
 
 ```4d
   // Trigger for [Employees]
  #DECLARE -> $result : Integer
+ var $result : Integer
  $result:=0
  $dbEvent:=Trigger event
  Case of
     :(($dbEvent=On Saving New Record Event)|($dbEvent=On Saving Existing Record Event))
-       If(Not(GoodSSnumber([Employees]SSNumber)))
-          $result:=-15050
+       If(Not(Good SS number([Employees]SS number)))
+          $0:=-15050
        Else
   // ...
        End if
@@ -180,109 +193,114 @@ Using a trigger for the [Employees] table, you can enforce the [Employees]SSNumb
  End case
 ```
 
-Once this trigger is written and activated, the line `SAVE RECORD([Employees])` will generate a database engine error -15050, and the record will NOT be saved.
+いったんこのトリガーを記述しアクティブにすると、SAVE RECORD([Employees]) 行はデータベースエンジンエラー-15050を生成し、そのレコードは保存されません。
 
-Similarly, if a 4D Plug-in attempted to save an [Employees] record with an invalid social security number, the trigger will generate the same error and the record will not be saved.
+同様に4Dプラグインが無効な保険証番号で[Employees] レコードを保存しようとしても、トリガーは同じエラーを生成しレコードは保存されません。
 
-The trigger guarantees that nobody (user, database designer, plug-in) can violate the social security number rule, either deliberately or accidentally.
+トリガーを使用すれば、誰も (ユーザー、データベース設計者、プラグイン) 保険証番号の規則を故意にまたは偶発的に違反できないことが保証されます。
 
-Note that even if you do not have a trigger for a table, you can get database engine errors while attempting to save or delete a record. For example, if you attempt to save a record with a duplicated value in a unique indexed field, the error -9998 is returned.
+テーブルのトリガーが無くても、レコードを保存または削除しようとしているときに、データベースエンジンエラーが生じる場合があるので注意してくださ い。例えば、重複不可属性を持つインデックスフィールドで重複する値を持つレコードを保存しようとすると、エラー-9998が返されます。
 
-Therefore, triggers returning errors add database engine errors to your application:
+したがって、エラーを返すトリガーは、新しいデータベースエンジンエラーをアプリケーションへ追加します。
 
-- 4D manages the "regular" errors: unique index, relational data control, and so on.
-- Using triggers, you manage the custom errors unique to your application.
+4Dは "通常" エラー、すなわち重複不可のインデックス、リレーショナルデータのコントロールなどを管理します。
+トリガーを使用して、開発者はアプリケーションに固有のカスタムエラーを管理できます。
+**重要**: エラーコード値は任意のものを返すことができます。ただし、4Dデータベースエンジンによって既に確保されているエラーコードは使用できません。 -32000 から -15000 の間のエラーコードを使用することを強く勧めます。 -15000を超えるエラーコードは、データベースエンジン用に予約されています。
 
-**Important:** You can return an error code value of your choice. However, do NOT use error codes already taken by the 4D database engine. We strongly recommend that you use error codes between -32000 and -15000. We reserve error codes above -15000 for the database engine.
+プロセスレベルでは、データベースエンジンエラーと同じ方法で、トリガーエラーを処理します。
 
-At the process level, you handle trigger errors the same way you handle database engine errors:
+4Dに標準のエラーダイアログボックスを表示させ、その後メソッドが停止します。
+ON ERR CALLでインストールしたエラー処理メソッドを使用して、適切な方法でエラーから回復します。
 
-- You can let 4D display the standard error dialog box, then the method is halted.
-- You can use an [error-handling method](../Concepts/error-handling.md) and recover the error the appropriate way (except for commands acting on a selection of records, see the note below).
+:::note 注
 
-:::note Notes
-
-- During data entry, if a trigger error is returned while attempting to validate or delete a record, the error is handled like a unique indexed error. The error dialog is displayed, and you stay in data entry. Even if you use a database in the Design environment (not in the Application environment), you have the benefit of using triggers.
-- When an error is generated by a trigger for a record within the framework of a command acting on a selection of records ([`DELETE SELECTION`](../commands/delete-selection), [`APPLY TO SELECTION`](../commands/apply-to-selection), [`ARRAY TO SELECTION`](../commands/array-to-selection)...), the record is not processed but is automatically registered in the [`LockedSet` of the process](../Develop/processes.md#elements-of-a-process). The command continues its execution until the end and no error can be catched. The error-handling method, if any, is not called. To know if errors have been generated in this context, you need to test the `LockedSet` just after the command call. Also, in the trigger, you have to store error codes, for example in a collection, and handle them afterwards. 
+- データ入力時に、レコードを受け入れまたは削除しようとしているときにトリガーエラーが返されると、エラーは重複不可なインデックスエラーのように処理されます。エラーダイアログが表示され、データ入力状態になります。デザインモード (アプリケーションモードでなく) でデータベースを使用する場合でも、トリガーを使用することのメリットが得られます。
+- レコードのセレクションで動作しているコマンドのフレームワーク内のトリガーによってエラーが生成されると ([`DELETE SELECTION`](../commands/delete-selection), [`APPLY TO SELECTION`](../commands/apply-to-selection), [`ARRAY TO SELECTION`](../commands/array-to-selection)など)レコードは処理されず、自動的にLockedSet に登録されます(セット 参照)。コマンドは終わりまで実行が続けられ、このときエラーはキャッチされません。つまりエラーハンドリングメソッドは(あったとしても)呼び出されません。このコンテキストにおいて、エラーが生成されたかどうかを確認するためには、コマンドの呼び出しの直後にLockedSet をテストする必要があります。また、トリガでは、エラーをあとで適切に管理するためには、エラーコードを例えばコレクションなどに保存する必要があります。
 
 :::
 
-Even when a trigger returns no error ($result=0), this does not mean that a database operation will be successful—a unique index violation may occur. If the operation is the update of a record, the record may be locked, an I/O error may occur, and so on. The checking is done after the execution of the trigger. However, at the higher level of the executing process, errors returned by the database engine or a trigger are the same—a trigger error is a database engine error.
+
+トリガーがエラーを返さないからといって ($result=0) 、データベース操作が成功したという意味ではありません。重複不可なインデックス違反が生じる場合があります。操作がレコードの更新である場合、レコードがロックされたり I/O エラーが生じたりすることがあります。トリガーの実行後にチェックが終了します。ただしプロセスを実行する高レベルにおいては、データベースエンジンまたはトリガーによって返されるエラーは同じものです。トリガーエラーはデータベースエンジンエラーです。
 
 
+## トリガーと4Dアーキテクチャ    
 
-## Triggers and the 4D Architecture  
-
-Triggers execute at the database engine level. This is summarized in the following diagram:
+トリガーはデータベースエンジンレベルで実行されます。以下の図にその様子をまとめています。
 
 ![](../assets/en/Develop/triggers-architecture.png)
 
-Triggers are executed on the machine where the database engine is actually located. This is obvious with a 4D single-user version. On 4D Server, triggers are executed within the acting process on the server machine (in the "twinned" process of the process that set off the trigger), not on the client machine.
+データベースエンジンが実際に配置されているマシンでトリガーは実行されます。これはシングルユーザー版の4Dでは明白です。4D Serverではクライアントマシンではなく、サーバーマシン (トリガーを起動させるプロセスの "対の" プロセスで) 上で動作しているプロセス内でトリガーは実行されます。
 
-When a trigger is invoked, it executes within the context of the process that attempts the database operation. This process, which invokes the trigger execution, is called the **invoking process**. The elements included in this context differ according to whether the database is executed with 4D in local mode or with 4D Server :
+トリガーが起動される場合、トリガーはデータベース操作を実行しようとするプロセスのコンテキスト内で実行されます。トリガーの実行を引き起こすこのプロセスは**起動プロセス**と呼ばれます。
+コンテキストに含まれるエレメントは、データベースが4Dのローカルモードで実行されたか、または4D Serverで実行されたかにより異なります。
 
-- With 4D in local mode, the trigger works with the current selections, current records, table read/write states, record locking operations, etc., of the invoking process.
-- With 4D Server, only the context of the database of the invoking client process is preserved (locked records and transactional states). 4D Server also (and only) guarantees that the current record of the table of the trigger is correctly positioned. The other elements of the context (current selections for example) are those of the trigger process.
+4Dのローカルモードでは、トリガーは起動プロセスのカレントセレクション、カレントレコードテーブルの読み/書き状態、およびレコードロック操作を用いて動作します。
+4D Serverでは、起動クライアントプロセスのデータベースのコンテキストのみが保持されます (ロックされたレコードやトランザクションの状態など) 。また4D Serverはトリガーのテーブルのカレントレコードが正確に配置されていることのみを保証します。コンテキストの他の要素 (例えばカレントセレクション) はトリガープロセスのものです。
+4D環境の他のデータベースオブジェクトや言語オブジェクトは注意して使用してください。これは、トリガーが起動プロセスのマシンとは別のマシン上で実行される可能性があるためです。4D Serverがこれに当てはまります。
 
-Be careful about using other database or language objects of the 4D environment, because a trigger may execute on a machine other than that of the invoking process—this is the case with 4D Server!
-
-- **Process variables**: Each trigger has its own table of process variables. A trigger has no access to the process variables of the invoking process.
-- **Local variables**: You can use local variables in a trigger. Their scope is the trigger execution; they are created/deleted at each execution.
-- **Semaphores**: A trigger can test or set global semaphores as well as local semaphores (on the machine where it executes). However, a trigger must execute quickly, so you must be very careful when testing or setting semaphores from within triggers.
-- **Sets and Named selections**: If you use a set or a named selection from within a trigger, you work on the machine where the trigger executes. In client/server mode, "process" sets and named selections (whose names do not begin with a $ nor with \<>) that are created on the client machine are visible in a trigger.
-- **User Interface**: Do NOT use user interface elements in a trigger (no alerts, no messages, no dialog boxes). Accordingly, you should limit any tracing of triggers in the [Debugging window](../Debugging/debugger.md). Remember that in Client/Server, triggers execute on the 4D Server machine. An alert message on the server machine does not help a user on a client machine. Let the invoking process handle the user interface.
-
-Note that in client-server mode, if you use 4D's password system, you can execute the [`Current user`](../commands/current-user) command in the trigger in order, for example, to save the name of the user at the origin of the trigger call in a journaled table.
+- **プロセス変数**: 各トリガーは独自のプロセス変数テーブルを持っています。トリガーは、トリガーを起動する元となったプロセスのプロセス変数にアクセスすることはできません。
+- **ローカル変数**: トリガー内でローカル変数を使用できます。その有効範囲はトリガーの実行中です。ローカル変数はトリガーの実行のたびに作成され、削除されます。
+- **セマフォー**: トリガー、(トリガーが実行されるマシン上の) ローカルセマフォーだけでなく、グローバルセマフォーもテスト、または設定できます。ただしトリガーは即座に実行されなければならないため、トリガー内か らセマフォーをテストまたは設定する場合には、十分な注意が必要です。
+- **セットと命名セレクション**: トリガー内からセットまたは命名セレクションを使用する場合、トリガーが実行されるマシン上で作業することになります。クライアント/サーバーモードでは、クライアントマシン上で作成されるプロセスセットとプロセス命名セレクションは、トリガー内で可視です。
+- **ユーザーインターフェース**: トリガー内でユーザーインターフェースエレメントを使用してないでください (警告、メッセージ、ダイアログボックスを使用しない) 。したがって、トリガーのトレースはデバッグウィンドウに限定する必要があります。クライアント/サーバーでは、トリガーは4D Server上で実行されることを覚えておいてください。サーバーマシン上で警告メッセージを表示しても、クライアント上のユーザーの助けにはなりません。起動プロセスにユーザインターフェースの処理も行わせるようにしてください。
 
 
-## Triggers and Transactions 
+4Dパスワードシステムを使用した場合、トリガー内で[`Current user`](../commands/current-user) コマンドを使用できることに注意して下さい。これを使用すると、例えばジャーナルを取っているテーブルのトリガー呼び出し元にユーザー名を保存することができます(クライアント・サーバーモードにおいても可能です)。
 
-[Transactions](./transactions.md) must be handled at the invoking process level. They must not be managed at the trigger level. During one trigger execution, if you have to add, modify or delete multiple records (see the following case study), you must first use the [`In transaction`](../commands/in-transaction) command from within the trigger to test if the invoking process is currently in transaction. If this is not the case, the trigger may potentially encounter a locked record. Therefore, if the invoking process is not in transaction, do not even start the operations on the records. Just return an error in the trigger $result in order to signal to the invoking process that the database operation it is trying to perform must be executed in a transaction. Otherwise, if locked records are met, the invoking process will have no means to roll back the actions of the trigger.
+
+
+## トリガとトランザクション   
+
+トランザクションは起動プロセスレベルで処理されなければなりません。トリガーレベルでトランザクションを管理してはいけません。一つのトリガーを実行してい る間に、複数のレコード (下記の例を参照) を追加、修正、削除する必要がある場合、最初にトリガー内から[`In transaction`](../commands/in-transaction)コマンド を使用して、起動プロセスが現在トランザクション内にあるかどうかテストしなければなりません。そうでない場合には、トリガーがロックされたレコードに出く わす可能性があります。そのため、起動プロセスがトランザクション内に無い場合は、レコードに対する操作を開始しないでください。起動プロセスに、実行し ようとしているデータベース操作はトランザクション内で実行されなければならないことを知らせるためにエラーを$0 に返すだけにしてください。そうしないとロックされたレコードに出くわした場合、起動プロセスにはトリガーの動作をロールバックする方法がなくなります。
+
+注: 
+
 
 
 :::note
 
-In order to optimize the combined operation of triggers and transactions, 4D does not call triggers after the execution of [`VALIDATE TRANSACTION`](../commands/validate-transaction). This prevents the triggers from being executed twice.
+トリガーとトランザクションを統合した操作を最適化するため、4Dでは[`VALIDATE TRANSACTION`](../commands/validate-transaction)を実行した後、トリガーは呼び出されません。これにより、トリガーの実行を2度繰り返すことを防ぎます。
 
 :::
 
-## Cascading Triggers  
+## トリガのカスケード   
 
-Given the following example structure:
+以下の例のようなストラクチャーがあるとします。
 
 ![](../assets/en/Develop/triggers-cascade.png)
 
 
-Note: The tables have been collapsed; they have more fields than shown here.
+注: 上記のテーブルは簡略化されています。実際には、テーブルにはここに示したよりも多くのフィールドがあります。
 
-Let's say that the database "authorizes" the deletion of an invoice. We can examine how such an operation would be handled at the trigger level (because you could also perform deletions at the process level).
+データベースがある請求書の削除を "許可" するとしましょう。そのような操作がトリガーレベルでどのように処理されるか検討してみます (プロセスレベルで削除を実行することも可能です) 。
 
-In order to maintain the relational integrity of the data, deleting an invoice requires the following actions to be performed in the trigger for [Invoices]:
+リレートに関するデータの整合性を維持するには、請求書の削除において、[Invoices] のトリガー内で実行される以下の動作が必要となります。
 
-- In the [Customer] record, decrement the Gross Sales field by the amount of the invoice.
-- Delete all the [Line Items] records related to the invoice.
-- This also implies that the [Line Items] trigger decrements the Quantity Sold field of the [Products] record related to the line item to be deleted.
-- Delete all the [Payments] records related to the deleted invoice.
+[Customer] レコードにおいて、送り状の金額分だけ総売上フィールドの額を減らす。
+- 送り状に関連したすべての [Line Items] レコードを削除する。
+- これはまた、 [Line Items] トリガーが、削除された明細品目に関連した [Products] レコードの売り上げ数量フィールドの数量を減らすことを意味する。
+- 削除された送り状に関連するすべての [Payments] レコードを削除する。
 
-First, the trigger for [Invoices] must perform these actions only if the invoking process is in transaction, so that a roll-back is possible if a locked record is met.
+最初に、 [Invoices] のトリガーは、起動プロセスがトランザクション内にある場合に限り、これらの動作を実行しなければなりません。そのため、ロックされたレコードに出くわした場合にロールバックが可能になります。
 
-Second, the trigger for [Line Items] is **cascading** with the trigger for [Invoices]. The [Line Items] trigger executes "within" the execution of the [Invoices] trigger, because the deletion of the list items are consequent to a call to `DELETE SELECTION` from within the [Invoices] trigger.
+次に、 [Line Items] のトリガーは、 [Invoices] のトリガーと**カスケー**ドしています。明細品目の削除は [Invoices] のトリガー内から`DELETE SELECTION`を呼び出した結果であるため、 [Line Items] のトリガーは [Invoices] のトリガーの実行の "範囲内で" 実行されます。
 
-Consider that all tables in this example have triggers activated for all database events. The cascade of triggers will be:
+この例題にあるすべてのテーブルは、すべてのデータベースイベント対してアクティブなトリガーを持っているとします。トリガーのカスケードは以下のようになります。
 
-- [Invoices] trigger is invoked because the invoking process deletes an invoice
-   - [Customers] trigger is invoked because the [Invoices] trigger updates the Gross Sales field
-   - [Line Items] trigger is invoked because the [Invoices] trigger deletes a line item (repeated)
-      - [Products] trigger is invoked because the [Line Items] trigger updates the Quantity Sold fiel
-   - [Payments] trigger is invoked because the [Invoices] trigger deletes a payment (repeated)
+- 起動プロセスが請求書を削除するため [Invoices] トリガーが起動される。
+   - [Invoices] トリガーが総売上フィールドを更新するため、 [Customers] トリガーが起動される。
+   - [Invoices] トリガーが明細品目を削除するため (繰り返し) 、[Line Items] トリガーが起動される。
+      - [Line Items] トリガーが売上数量フィールドを更新するため、[Products] トリガーが起動される。
+   - [Invoices] トリガーが支払を削除するため (繰り返し) 、[Payments] トリガーが起動される。
 
-In this cascade relationship, the [Invoices] trigger is said to be executing at level 1, the [Customers], [Line Items], and [Payments] triggers at level 2, and the [Products] trigger at level 3.
+こ のカスケードの関係においては、[Invoices] のトリガーはレベル1で、 [Customers]、 [Line Items]、 と [Payments] のトリガーはレベル2で、そして [Products] のトリガーはレベル3で実行されていると言えます。
 
-From within the triggers, you can use the [`Trigger level`](../commands/trigger-level) command to detect the level at which a trigger is executed. In addition, you can use the [`TRIGGER PROPERTIES`](../commands/trigger-properties) command to get information about the other levels.
+トリガー内から[`Trigger level`](../commands/trigger-level)コマンドを使用して、トリガーが実行されるレベルを検出します。更に[`TRIGGER PROPERTIES`](../commands/trigger-properties)コマンドを使用して、他のレベルに関する情報を入手することができます。
 
-For example, if a [Products] record is being deleted at a process level, the [Products] trigger would be executed at level 1, not at level 3.
+例えば、 [Products] レコードがプロセスレベルで削除されている場合、 [Products] のトリガーは、レベル3ではなく、レベル1で実行されます。
 
-Using [`Trigger level`](../commands/trigger-level) and [`TRIGGER PROPERTIES`](../commands/trigger-properties), you can detect the cause of an action. In our example, an invoice is deleted at a process level. If we delete a [Customers] record at a process level, then the [Customers] trigger should attempt to delete all the invoices related to that customer. This means that the [Invoices] trigger will be invoked as above, but for another reason. From within the [Invoices] trigger, you can detect if it executed at level 1 or 2. If it did execute at level 2, you can then check whether or not it is because the [Customers] record is deleted. If this is the case, you do not even need to bother updating the Gross Sales field.
+[`Trigger level`](../commands/trigger-level)と[`TRIGGER PROPERTIES`](../commands/trigger-properties)を使用すれば、動作の原因を検出できます。前述の例では、請求書がプロセスレベルで削除されています。[Customers] レコードをプロセスレベルで削除すると、 [Customers] のトリガーは、その顧客に関連するすべての請求書を削除しようとします。これにより、前述の例と同じように、 [Invoices] のトリガーが起動されることになりますが、起動される理由は異なります。[Invoices] トリガー内から、そのトリガーがレベル1で実行されたか、レベル2で実行されたかを、検出することができます。トリガーがレベル2で実行された場合には、次に、 それが [Customers] レコードが削除されたためであるかどうかをチェックできます。そうであれば、総売上フィールドの更新にわずらわされる必要はありません。
+
 
 
 

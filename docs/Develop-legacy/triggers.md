@@ -167,6 +167,7 @@ Using a trigger for the [Employees] table, you can enforce the [Employees]SSNumb
 ```4d
   // Trigger for [Employees]
  #DECLARE -> $result : Integer
+ var $dbEvent : Integer
  $result:=0
  $dbEvent:=Trigger event
  Case of

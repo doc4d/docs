@@ -170,6 +170,7 @@ Utilizando un trigger para la tabla [Empleados], puede implementar la regla [Emp
 ```4d
   // Trigger for [Empleados]
  #DECLARE -> $result : Integer
+ var $dbEvent : Integer
  $result:=0
  $dbEvent:=Trigger event
  Case of

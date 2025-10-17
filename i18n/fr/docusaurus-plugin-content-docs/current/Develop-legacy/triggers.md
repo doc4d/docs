@@ -163,6 +163,7 @@ En utilisant un trigger pour la table [Employees], vous pouvez appliquer la cont
 ```4d
   // Trigger pour  [Employees]
  #DECLARE -> $result : Integer
+ var $dbEvent : Integer
  $result:=0
  $dbEvent:=Trigger event
  Case of
