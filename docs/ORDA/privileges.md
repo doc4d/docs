@@ -16,6 +16,8 @@ When web users or REST users get logged, their session is automatically loaded w
 
 Every user request sent within the session is evaluated against privileges defined in the project's `roles.json` file.
 
+Assigning a permission action is like putting a lock on a door. Only sessions with privilege having the corresponding key (i.e., a permission) will be able to open the lock. 
+
 If a user attempts to execute an action and does not have the appropriate access rights, a privilege error is generated or, in the case of missing Read permission on attributes, they are not sent.
 
 ![schema](../assets/en/ORDA/privileges-schema.png)
@@ -121,7 +123,180 @@ exposed Function authenticate($identifier : Text; $password : Text)->$result : T
 ## `roles.json` file
 
 
-The `roles.json` file describes the whole security settings for the project.
+The `roles.json` file describes the whole web security settings for the project. The `roles.json` file syntax is the following:
+
+|Property name|||Type|Mandatory|Description|
+|---|---|---|---|---|---|
+|privileges|||Collection of `privilege` objects|X|List of defined privileges|
+||\[].privilege||Text||Privilege name|
+||\[].includes||Collection of strings||List of included privilege names|
+|roles|||Collection of `role` objects||List of defined roles|
+||\[].role||Text||Role name|
+||\[].privileges||Collection of strings||List of included privilege names|
+|permissions|||Object|X|List of allowed actions|
+||allowed||Collection of `permission` objects||List of allowed permissions|
+|||\[].applyTo|Text|X|Targeted [resource](#resources) name|
+|||\[].type|Text|X|[Resource](#resources) type: "datastore", "dataclass", "attribute", "method", "singletonMethod", "singleton"|
+|||\[].read|Collection of strings||List of privileges|
+|||\[].create|Collection of strings||List of privileges|
+|||\[].update|Collection of strings||List of privileges|
+|||\[].drop|Collection of strings||List of privileges|
+|||\[].execute|Collection of strings||List of privileges|
+|||\[].promote|Collection of strings||List of privileges|
+|restrictedByDefault|||Boolean||True to restrict all accesses to data and ORDA model in web processes (default: false) |
+|forceLogin|||Boolean||True to enable the ["forceLogin" mode](../REST/authUsers.md#force-login-mode) (default: false) |
+
+
+:::caution Reminder
+
+- The "WebAdmin" privilege name is reserved to the application. It is not recommended to use this name for custom privileges.
+- `privileges` and `roles` names are case insensitive.
+
+:::
+
+## Configuring the roles.json file
+
+The most appropriate configuration for the *roles.json* file actually depends on the environment in which it is used: production or development.
+
+- In **production environment**, both the `restrictedByDefault` and `forceLogin` properties should be set to **True** (recommended configuration). In this case, any web connection to your application requires the user to be properly logged and their session automatically receives appropriate privileges, and access to resources is restricted by default (only explicitely allowed resources can be used). This configuration requires a certain stability in the resources used in your application, since you must assign each of them the appropriate permissions based on your business logic. 
+- In **development environment**, both the `restrictedByDefault` and `forceLogin` properties should be set to **False** (default configuration for new projects). In this case, the login is not mandatory for web access to your application, and resources without permissions are free. This is particularly suitable for the application development and debugging phase.  
+
+
+, This configuration offers the highest security level and allows you to control access to all parts of your application 
+
+the "all" privilege is assigned to all permissions in the datastore, thus data access on the whole `ds` object is disabled by default. The principle is as follows: assigning a permission is like putting a lock on a door. Only sessions with privilege having the corresponding key (i.e., a permission) will be able to open the lock. 
+It is recommended not to modified or use this locking privilege, but to add specific permissions to each resource you wish to make available from web or REST requests ([see example below](#example-of-privilege-configuration)).
+
+
+### `restrictedByDefault` and `forceLogin`
+
+You can define how to handle the web/REST access to your data and business logic using the `restrictedByDefault` property. This property controls the following features:
+
+- Data is accessible
+- [ORDA data model functions](../ORDA/ordaClasses.md)
+- [singleton functions](../)
+
+
+- when `restrictedByDefault` is set to **false** (default for new projects), all accesses are free, 
+
+### `restrictedByDefault` and `forceLogin`
+
+The `restrictedByDefault` property configures how a resource must be protected by default when no privilege has been set on it. 
+
+
+You can define how to handle the web/REST access to your data and business logic using the `restrictedByDefault` property. This property controls the following features:
+
+- Data is accessible
+- [ORDA data model functions](../ORDA/ordaClasses.md)
+- [singleton functions](../)
+
+
+
+### Default file
+
+When you create a project, a default `roles.json` file is created at the following location: `<project folder>/Project/Sources/` (see [Architecture](../Project/architecture.md#sources) section).
+
+The default file has the following contents:
+
+```json title="/Project/Sources/roles.json"
+
+{
+  "privileges": [
+  ],
+  "roles": [
+  ],
+  "permissions": {
+    "allowed": [
+      {
+        "applyTo": "ds",
+        "type": "datastore",
+        "read": [],
+        "create": [],
+        "update": [],
+        "drop": [],
+        "execute": [],
+        "promote": []
+      }
+    ]
+  },
+  "restrictedByDefault": false,
+  "forceLogin": false
+}
+```
+
+:::caution
+
+By default, for quick start and smooth development of ORDA web features, the `restrictedByDefault` is set to false. It means that the whole data and datastore are available for external access through web sessions (see below). This configuration allows you to develop the application without having to worry about access right, but is obviously  in production environment. 
+
+:::
+
+For a highest level of security, the "all" privilege is assigned to all permissions in the datastore, thus data access on the whole `ds` object is disabled by default. The principle is as follows: assigning a permission is like putting a lock on a door. Only sessions with privilege having the corresponding key (i.e., a permission) will be able to open the lock. 
+It is recommended not to modified or use this locking privilege, but to add specific permissions to each resource you wish to make available from web or REST requests ([see example below](#example-of-privilege-configuration)).
+
+:::caution
+
+When no specific parameters are defined in the `roles.json` file, accesses are not limited. This configuration allows you to develop the application without having to worry about accesses, but is not recommended in production environment.
+
+:::
+
+:::note Compatibility
+
+In previous releases, the `roles.json` file was not created by default. As of 4D 20 R6, when opening an existing project that does not contain a `roles.json` file or the `"forceLogin": true` settings, the **Activate REST authentication through ds.authentify() function** button is available in the [**Web Features** page of the Settings dialog box](../settings/web.md#access). This button automatically upgrades your security settings (you may have to modify your code, [see this blog post](https://blog.4d.com/force-login-becomes-default-for-all-rest-auth/)).
+
+:::
+
+:::note Qodly Studio
+
+In Qodly Studio for 4D, the mode can be set using the [**Force login** option](../WebServer/qodly-studio.md#force-login) in the Privileges panel.
+
+:::
+
+
+#### Assigning permissions to ORDA class functions
+
+When configuring permissions, ORDA class functions are declared in the `applyTo` element using the following syntax:
+
+```json
+<DataclassName>.<functionName>
+```
+For example, if you want to apply a permission to the following function:
+
+```4d
+// cs.CityEntity class
+Class extends Entity
+  Function getPopulation() : Integer
+   ...
+```
+... you have to write:
+
+```json
+"applyTo":"City.getPopulation"
+```
+
+It means that you cannot use the same function names in the various ORDA classes (entity, entity selection, dataclass) if you want them to be assigned privileges. In this case, you need to use distinct function names. For example, if you have created a "drop" function in both `cs.CityEntity` and `cs.CitySelection` classes, you need to give them different names such as `dropEntity()` and `dropSelection()`. You can then write in the "roles.json" file:
+
+```json
+	"permissions": {
+		"allowed": [
+			{
+				"applyTo": "City.dropEntity",
+				"type": "method",
+				"promote": [
+					"name"
+				]
+			},
+			{
+				"applyTo": "City.dropSelection",
+				"type": "method",
+				"promote": [
+					"name"
+				]
+			}
+    ]
+```
+
+
+
 
 ### Default file
 
@@ -174,6 +349,7 @@ When no specific parameters are defined in the `roles.json` file, accesses are n
 :::note Compatibility
 
 In previous releases, the `roles.json` file was not created by default. As of 4D 20 R6, when opening an existing project that does not contain a `roles.json` file or the `"forceLogin": true` settings, the **Activate REST authentication through ds.authentify() function** button is available in the [**Web Features** page of the Settings dialog box](../settings/web.md#access). This button automatically upgrades your security settings (you may have to modify your code, [see this blog post](https://blog.4d.com/force-login-becomes-default-for-all-rest-auth/)).
+
 :::
 
 :::note Qodly Studio
@@ -184,79 +360,6 @@ In Qodly Studio for 4D, the mode can be set using the [**Force login** option](.
 
 
 ### Syntax
-
-The `roles.json` file syntax is the following:
-
-|Property name|||Type|Mandatory|Description|
-|---|---|---|---|---|---|
-|privileges|||Collection of `privilege` objects|X|List of defined privileges|
-||\[].privilege||Text||Privilege name|
-||\[].includes||Collection of strings||List of included privilege names|
-|roles|||Collection of `role` objects||List of defined roles|
-||\[].role||Text||Role name|
-||\[].privileges||Collection of strings||List of included privilege names|
-|permissions|||Object|X|List of allowed actions|
-||allowed||Collection of `permission` objects||List of allowed permissions|
-|||\[].applyTo|Text|X|Targeted [resource](#resources) name|
-|||\[].type|Text|X|[Resource](#resources) type: "datastore", "dataclass", "attribute", "method", "singletonMethod", "singleton"|
-|||\[].read|Collection of strings||List of privileges|
-|||\[].create|Collection of strings||List of privileges|
-|||\[].update|Collection of strings||List of privileges|
-|||\[].drop|Collection of strings||List of privileges|
-|||\[].execute|Collection of strings||List of privileges|
-|||\[].promote|Collection of strings||List of privileges|
-|forceLogin|||Boolean||True to enable the ["forceLogin" mode](../REST/authUsers.md#force-login-mode) |
-
-
-:::caution Reminder
-
-- The "WebAdmin" privilege name is reserved to the application. It is not recommended to use this name for custom privileges.
-- `privileges` and `roles` names are case insensitive.
-
-:::
-
-#### Assigning permissions to ORDA class functions
-
-When configuring permissions, ORDA class functions are declared in the `applyTo` element using the following syntax:
-
-```json
-<DataclassName>.<functionName>
-```
-For example, if you want to apply a permission to the following function:
-
-```4d
-// cs.CityEntity class
-Class extends Entity
-  Function getPopulation() : Integer
-   ...
-```
-... you have to write:
-
-```json
-"applyTo":"City.getPopulation"
-```
-
-It means that you cannot use the same function names in the various ORDA classes (entity, entity selection, dataclass) if you want them to be assigned privileges. In this case, you need to use distinct function names. For example, if you have created a "drop" function in both `cs.CityEntity` and `cs.CitySelection` classes, you need to give them different names such as `dropEntity()` and `dropSelection()`. You can then write in the "roles.json" file:
-
-```json
-	"permissions": {
-		"allowed": [
-			{
-				"applyTo": "City.dropEntity",
-				"type": "method",
-				"promote": [
-					"name"
-				]
-			},
-			{
-				"applyTo": "City.dropSelection",
-				"type": "method",
-				"promote": [
-					"name"
-				]
-			}
-    ]
-```
 
 
 
@@ -367,6 +470,7 @@ The good practice is to keep all data access locked by default thanks to the "al
       }
     ]
   },
+  "restrictedByDefault" : true,
   "forceLogin": true
 }
 ```
