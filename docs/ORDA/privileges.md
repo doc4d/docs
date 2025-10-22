@@ -16,8 +16,6 @@ When web users or REST users get logged, their session is automatically loaded w
 
 Every user request sent within the session is evaluated against privileges defined in the project's `roles.json` file.
 
-Assigning a permission action is like putting a lock on a door. Only sessions with privilege having the corresponding key (i.e., a permission) will be able to open the lock. 
-
 If a user attempts to execute an action and does not have the appropriate access rights, a privilege error is generated or, in the case of missing Read permission on attributes, they are not sent.
 
 ![schema](../assets/en/ORDA/privileges-schema.png)
@@ -32,13 +30,18 @@ If a user attempts to execute an action and does not have the appropriate access
 
 You can assign specific permission actions to the following resources in your project:
 
-- the datastore
-- a dataclass
-- an attribute (including computed and alias)
-- a data model class function
-- a [singleton](../REST/$singleton.md) function
+- the [datastore](../ORDA/dsMapping.md#datastore)
+- [dataclasses](../ORDA/dsMapping.md#dataclass)
+- [attributes](../ORDA/dsMapping.md#attribute) (including computed and alias)
+- [data model class](../ORDA/ordaClasses.md) functions
+- [singleton](../REST/$singleton.md) functions
 
 Each time a resource is accessed within a session (whatever the way it is accessed), 4D checks that the session has the appropriate permissions, and rejects the access if it is not authorized. 
+
+
+## Permissions
+
+Assigning a permission is like putting a lock on a door. When no specific lock has been installed, the door is either closed or open for all requests, depending on the [`restrictedByDefault`](#restrictedbydefault) property value. When a lock is installed, only sessions with privilege having the corresponding key (i.e., a permission action) will be able to open the lock. 
 
 A permission action defined at a given level is inherited by default at lower levels, but several permissions can be set:
 
@@ -52,8 +55,8 @@ Permissions control access to datastore objects or functions. If you want to fil
 
 :::
 
-## Permission actions
 
+### Permission actions
 
 Available actions are related to target resource.
 
@@ -143,7 +146,7 @@ The `roles.json` file describes the whole web security settings for the project.
 |||\[].drop|Collection of strings||List of privileges|
 |||\[].execute|Collection of strings||List of privileges|
 |||\[].promote|Collection of strings||List of privileges|
-|restrictedByDefault|||Boolean||True to restrict all accesses to data and ORDA model in web processes (default: false) |
+|restrictedByDefault|||Boolean||True to [restrict by default](#restrictedbydefault) all accesses to resources in web processes (default: false) |
 |forceLogin|||Boolean||True to enable the ["forceLogin" mode](../REST/authUsers.md#force-login-mode) (default: false) |
 
 
@@ -154,47 +157,33 @@ The `roles.json` file describes the whole web security settings for the project.
 
 :::
 
-## Configuring the roles.json file
+### Configuring the roles.json file
 
-The most appropriate configuration for the *roles.json* file actually depends on the environment in which it is used: production or development.
+The most appropriate configuration for the *roles.json* file actually depends on the environment in which it is used: **production** or **development**.
 
-- In **production environment**, both the `restrictedByDefault` and `forceLogin` properties should be set to **True** (recommended configuration). In this case, any web connection to your application requires the user to be properly logged and their session automatically receives appropriate privileges, and access to resources is restricted by default (only explicitely allowed resources can be used). This configuration requires a certain stability in the resources used in your application, since you must assign each of them the appropriate permissions based on your business logic. 
-- In **development environment**, both the `restrictedByDefault` and `forceLogin` properties should be set to **False** (default configuration for new projects). In this case, the login is not mandatory for web access to your application, and resources without permissions are free. This is particularly suitable for the application development and debugging phase.  
-
-
-, This configuration offers the highest security level and allows you to control access to all parts of your application 
-
-the "all" privilege is assigned to all permissions in the datastore, thus data access on the whole `ds` object is disabled by default. The principle is as follows: assigning a permission is like putting a lock on a door. Only sessions with privilege having the corresponding key (i.e., a permission) will be able to open the lock. 
-It is recommended not to modified or use this locking privilege, but to add specific permissions to each resource you wish to make available from web or REST requests ([see example below](#example-of-privilege-configuration)).
+- In **production** environment**, both the `restrictedByDefault` and `forceLogin` properties should be set to **True** (recommended configuration). This configuration offers the highest security level and allows you to control access to all parts of your application. In this case, any web connection to your application requires the user to be properly logged and their session automatically receives appropriate privileges. Access to resources is restricted by default, and only [explicitely allowed resources](#permission-actions) can be used. This configuration requires some stability in the resources used in your application, since you must assign each of them the appropriate permissions based on your business logic. 
+- In **development** environment, both the `restrictedByDefault` and `forceLogin` properties should be set to **False** (default configuration for new projects). In this case, the login step is not mandatory for web/REST access to your application, and access to resources without permissions is free. This is particularly suitable for the application development and debugging phase.  
 
 
-### `restrictedByDefault` and `forceLogin`
+### `restrictedByDefault`
 
-You can define how to handle the web/REST access to your data and business logic using the `restrictedByDefault` property. This property controls the following features:
+The `restrictedByDefault` property configures how every [resource](#resources) will be accessed by default when [no permission action has been set on it](#permission-actions):
 
-- Data is accessible
-- [ORDA data model functions](../ORDA/ordaClasses.md)
-- [singleton functions](../)
-
-
-- when `restrictedByDefault` is set to **false** (default for new projects), all accesses are free, 
-
-### `restrictedByDefault` and `forceLogin`
-
-The `restrictedByDefault` property configures how a resource must be protected by default when no privilege has been set on it. 
+- if set to **false** (default for new projects): access to a resource for which no specific permission action has been declared is free for all requests.
+- if set to **true** (recommended for production, see above): access to a resource for which no specific permission action has been declared is forbidden for all requests.
 
 
-You can define how to handle the web/REST access to your data and business logic using the `restrictedByDefault` property. This property controls the following features:
+:::note Compatibility
 
-- Data is accessible
-- [ORDA data model functions](../ORDA/ordaClasses.md)
-- [singleton functions](../)
+When enabling access to Qodly Studio using the [One-click configuration dialog](https://developer.4d.com/qodly/4DQodlyPro/gettingStarted#one-click-configuration) in projects converted form previous releases, the `restrictedByDefault` property is added with value **true** in the *roles.json* file. 
+
+:::
 
 
 
 ### Default file
 
-When you create a project, a default `roles.json` file is created at the following location: `<project folder>/Project/Sources/` (see [Architecture](../Project/architecture.md#sources) section).
+When you create a project, a default `roles.json` file is created at the following location: `<project folder>/Project/Sources/` (see [Architecture](../Project/architecture.md#sources) section). 
 
 The default file has the following contents:
 
@@ -226,18 +215,10 @@ The default file has the following contents:
 
 :::caution
 
-By default, for quick start and smooth development of ORDA web features, the `restrictedByDefault` is set to false. It means that the whole data and datastore are available for external access through web sessions (see below). This configuration allows you to develop the application without having to worry about access right, but is obviously  in production environment. 
+Keep in mind that this default configuration is tailored for quick start and smooth development. In production environment, [it is recommended to set the `restrictedByDefault` and `forceLogin` properties to **true**](#configuring-the-rolesjson-file).
 
 :::
 
-For a highest level of security, the "all" privilege is assigned to all permissions in the datastore, thus data access on the whole `ds` object is disabled by default. The principle is as follows: assigning a permission is like putting a lock on a door. Only sessions with privilege having the corresponding key (i.e., a permission) will be able to open the lock. 
-It is recommended not to modified or use this locking privilege, but to add specific permissions to each resource you wish to make available from web or REST requests ([see example below](#example-of-privilege-configuration)).
-
-:::caution
-
-When no specific parameters are defined in the `roles.json` file, accesses are not limited. This configuration allows you to develop the application without having to worry about accesses, but is not recommended in production environment.
-
-:::
 
 :::note Compatibility
 
@@ -247,12 +228,12 @@ In previous releases, the `roles.json` file was not created by default. As of 4D
 
 :::note Qodly Studio
 
-In Qodly Studio for 4D, the mode can be set using the [**Force login** option](../WebServer/qodly-studio.md#force-login) in the Privileges panel.
+In Qodly Studio for 4D, the mode can be set using the [**Force login** option](https://developer.4d.com/qodly/4DQodlyPro/force-login) in the Roles and Privileges panel.
 
 :::
 
 
-#### Assigning permissions to ORDA class functions
+### Assigning permissions to ORDA class functions
 
 When configuring permissions, ORDA class functions are declared in the `applyTo` element using the following syntax:
 
@@ -294,74 +275,6 @@ It means that you cannot use the same function names in the various ORDA classes
 			}
     ]
 ```
-
-
-
-
-### Default file
-
-When you create a project, a default `roles.json` file is created at the following location: `<project folder>/Project/Sources/` (see [Architecture](../Project/architecture.md#sources) section).
-
-The default file has the following contents:
-
-```json title="/Project/Sources/roles.json"
-
-{
-    "privileges": [
-        {
-            "privilege": "all",
-            "includes": []
-        }
-    ],
-
-    "roles": [],
-
-    "permissions": {
-        "allowed": [
-            {
-                "applyTo": "ds",
-                "type": "datastore",
-                "read": ["all"],
-                "create": ["all"],
-                "update": ["all"],
-                "drop": ["all"],
-                "execute": ["all"],
-                "promote": ["all"]                
-            }
-        ]
-    },
-
-    "forceLogin": true
-
-}
-
-```
-
-For a highest level of security, the "all" privilege is assigned to all permissions in the datastore, thus data access on the whole `ds` object is disabled by default. The principle is as follows: assigning a permission is like putting a lock on a door. Only sessions with privilege having the corresponding key (i.e., a permission) will be able to open the lock. 
-It is recommended not to modified or use this locking privilege, but to add specific permissions to each resource you wish to make available from web or REST requests ([see example below](#example-of-privilege-configuration)).
-
-:::caution
-
-When no specific parameters are defined in the `roles.json` file, accesses are not limited. This configuration allows you to develop the application without having to worry about accesses, but is not recommended in production environment.
-
-:::
-
-:::note Compatibility
-
-In previous releases, the `roles.json` file was not created by default. As of 4D 20 R6, when opening an existing project that does not contain a `roles.json` file or the `"forceLogin": true` settings, the **Activate REST authentication through ds.authentify() function** button is available in the [**Web Features** page of the Settings dialog box](../settings/web.md#access). This button automatically upgrades your security settings (you may have to modify your code, [see this blog post](https://blog.4d.com/force-login-becomes-default-for-all-rest-auth/)).
-
-:::
-
-:::note Qodly Studio
-
-In Qodly Studio for 4D, the mode can be set using the [**Force login** option](../WebServer/qodly-studio.md#force-login) in the Privileges panel.
-
-:::
-
-
-### Syntax
-
-
 
 
 ### `Roles_Errors.json` file
