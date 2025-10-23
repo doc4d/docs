@@ -157,13 +157,6 @@ The `roles.json` file describes the whole web security settings for the project.
 
 :::
 
-### Configuring the roles.json file
-
-The most appropriate configuration for the *roles.json* file actually depends on the environment in which it is used: **production** or **development**.
-
-- In **production** environment**, both the `restrictedByDefault` and `forceLogin` properties should be set to **True** (recommended configuration). This configuration offers the highest security level and allows you to control access to all parts of your application. In this case, any web connection to your application requires the user to be properly logged and their session automatically receives appropriate privileges. Access to resources is restricted by default, and only [explicitely allowed resources](#permission-actions) can be used. This configuration requires some stability in the resources used in your application, since you must assign each of them the appropriate permissions based on your business logic. 
-- In **development** environment, both the `restrictedByDefault` and `forceLogin` properties should be set to **False** (default configuration for new projects). In this case, the login step is not mandatory for web/REST access to your application, and access to resources without permissions is free. This is particularly suitable for the application development and debugging phase.  
-
 
 ### `restrictedByDefault`
 
@@ -179,6 +172,12 @@ When enabling access to Qodly Studio using the [One-click configuration dialog](
 
 :::
 
+### Configuring `restrictedByDefault` and `forceLogin` properties
+
+The most appropriate configuration for the *roles.json* file actually depends on the environment in which it is used: **production** or **development**.
+
+- In **production** environment, both the `restrictedByDefault` and `forceLogin` properties should be set to **True** (recommended configuration). This configuration offers the highest security level and allows you to control access to all parts of your application. In this case, any web connection to your application requires the user to be properly logged and their session automatically receives appropriate privileges. Access to resources is restricted by default, and only [explicitely allowed resources](#permission-actions) can be used. This configuration requires some stability in the resources used in your application, since you must assign each of them the appropriate permissions based on your business logic. 
+- In **development** environment, both the `restrictedByDefault` and `forceLogin` properties should be set to **False** (default configuration for new projects). In this case, the login step is not mandatory for web/REST access to your application, and access to resources without permissions is free. This is particularly suitable for the application development and debugging phase.  
 
 
 ### Default file
