@@ -214,7 +214,7 @@ The default file has the following contents:
 
 :::caution
 
-Keep in mind that this default configuration is tailored for quick start and smooth development. In production environment, [it is recommended to set the `restrictedByDefault` and `forceLogin` properties to **true**](#configuring-the-rolesjson-file).
+Keep in mind that this default configuration is tailored for quick start and smooth development. In production environment, [it is recommended to set the `restrictedByDefault` and `forceLogin` properties to **true**](#configuring-restrictedbydefault-and-forcelogin-properties).
 
 :::
 
