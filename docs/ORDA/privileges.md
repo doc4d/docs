@@ -41,7 +41,7 @@ Each time a resource is accessed within a session (whatever the way it is access
 
 ## Permissions
 
-Assigning a permission is like putting a lock on a door. When no specific lock has been installed, the door is either closed or open for all requests, depending on the [`restrictedByDefault`](#restrictedbydefault) property value. When a lock is installed, only sessions with privilege having the corresponding key (i.e., a permission action) will be able to open the lock. 
+Assigning a permission is like putting a lock on a door. When no specific lock has been installed, the door is either closed or open for all requests, depending on the [`restrictedByDefault` property value](#restrictedbydefault). When a lock is installed, only sessions with privilege having the corresponding key (i.e., a permission action) will be able to open the lock. 
 
 A permission action defined at a given level is inherited by default at lower levels, but several permissions can be set:
 
