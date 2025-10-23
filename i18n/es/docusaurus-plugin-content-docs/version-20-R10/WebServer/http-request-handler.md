@@ -5,14 +5,14 @@ title: HTTP Request handler
 
 Por defecto, las peticiones HTTP recibidas por el servidor web 4D se gestionan a través de [funciones de procesamiento integradas](httpRequests.md) o del [servidor REST](../REST/REST_requests.md).
 
-In addition, 4D supports the implementation of **custom HTTP Request handlers**, allowing you to intercept specific incoming HTTP requests and process them using your own code.
+Además, 4D soporta la implementación de **gestores de peticiones HTTP personalizadas**, permitiéndole interceptar peticiones HTTP entrantes específicas y procesarlas utilizando su propio código.
 
 Cuando un manejador de peticiones HTTP personalizado intercepta una solicitud, se procesa directamente y no hay otras funcionalidades de procesamiento (por ejemplo, son llamados métodos base [On Web authentication](./authentication.md#on-web-authentication) o [On Web connection](./httpRequests.md#on-web-connection).
 
-Custom HTTP request handlers meet various needs, including:
+Los gestores de peticiones HTTP personalizados satisfacen diversas necesidades, entre ellas:
 
-- using a given URL as a resource provider or a file-uploading box (to download or upload various files),
-- redirecting on specific pages according to a context (user authenticated, privileges granted...),
+- la utilización de una URL dedicada como proveedor de recursos o como cuadro de carga de archivos (para descargar o cargar varios archivos),
+- la redirección en páginas específicas en función de un contexto (usuario autentificado, privilegios otorgados...),
 - gestionar una autenticación a través de oAuth 2.0.
 
 ## Requisitos
@@ -24,7 +24,7 @@ Se soportan gestores de solicitudes HTTP personalizados:
 
 :::warning
 
-[Por defecto](../ORDA/privileges.md#default-file) por razones de seguridad, el acceso externo al datastore no está permitido en 4D. You need to configure the [ORDA privileges](../ORDA/privileges.md) to allow HTTP requests.
+[Por defecto](../ORDA/privileges.md#default-file) por razones de seguridad, el acceso externo al datastore no está permitido en 4D. Necesita configurar los [privilegios ORDA](../ORDA/privileges.md) para permitir peticiones HTTP.
 
 :::
 
@@ -34,7 +34,7 @@ Define sus manejadores de petición HTTP personalizados en un archivo de configu
 
 This file contains all listened URL patterns, the handled verbs, and the code to be called. Los administradores se proporcionan en forma de colección en formato JSON.
 
-At runtime, the first pattern matching the URL is executed, the others are ignored.
+Al momento de la ejecución, se ejecuta el primer patrón que coincida con la URL, los demás se ignoran.
 
 Este es un ejemplo del contenido de un archivo *HTTPHandlers.json*:
 
@@ -50,11 +50,11 @@ Este es un ejemplo del contenido de un archivo *HTTPHandlers.json*:
 ]
 ```
 
-This handler declaration can be read as: when any request starting by `/start/` with a `GET` or `POST` verb is received by the server, the `gettingStarted` function of the `GeneralHandling` singleton is executed.
+Esta declaración de handler puede leerse como: cuando cualquier petición que comience por `/start/` con un verbo `GET` o `POST` es recibida por el servidor, se ejecuta la función `gettingStarted` del singleton `GeneralHandling`.
 
 :::note
 
-You must restart the Web server so that modifications made in this file are taken into account.
+Debe reiniciar el servidor Web para que se tengan en cuenta las modificaciones realizadas en este archivo.
 
 :::
 
@@ -63,7 +63,7 @@ You must restart the Web server so that modifications made in this file are take
 Un manejador está definido por:
 
 - un patrón de URL a interceptar
-- a function and its class where the code is implemented to handle the listened URL pattern
+- una función y su clase donde se implementa el código para manejar el patrón URL escuchado
 - the verbs with which the URL can be called to trigger the handler
 
 The handler identifier is the couple [pattern + a verb among the verbs list].
@@ -214,7 +214,7 @@ En este ejemplo, debe implementar las siguientes funciones:
 - *handleDocs* en la clase *DocsHandling*
 - *handleTheInvoice* / *handleDetails* / *handleInvoices* en la clase *InvoicesHandling*
 
-Examples of URLs triggering the handlers:
+Ejemplos de URL que activan los gestores personalizados:
 
 `IP:port/info/` con un verbo GET
 `IP:port/info/general` con un verbo GET
