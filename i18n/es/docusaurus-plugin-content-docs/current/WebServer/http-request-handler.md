@@ -5,47 +5,47 @@ title: HTTP Request handler
 
 Por defecto, las peticiones HTTP recibidas por el servidor web 4D se gestionan a través de [funciones de procesamiento integradas](httpRequests.md) o del [servidor REST](../REST/REST_requests.md).
 
-In addition, 4D supports the implementation of **custom HTTP Request handlers**, allowing you to intercept specific incoming HTTP requests and process them using your own code.
+Además, 4D soporta la implementación de **gestores de peticiones HTTP personalizadas**, permitiéndole interceptar peticiones HTTP entrantes específicas y procesarlas utilizando su propio código.
 
 Cuando un manejador de peticiones HTTP personalizado intercepta una solicitud, se procesa directamente y no hay otras funcionalidades de procesamiento (por ejemplo, son llamados métodos base [On Web authentication](./authentication.md#on-web-authentication) o [On Web connection](./httpRequests.md#on-web-connection).
 
-Custom HTTP request handlers meet various needs, including:
+Los gestores de peticiones HTTP personalizados satisfacen diversas necesidades, entre ellas:
 
-- using a given URL as a resource provider or a file-uploading box (to download or upload various files),
-- redirecting on specific pages according to a context (user authenticated, privileges granted...),
+- la utilización de una URL dedicada como proveedor de recursos o como cuadro de carga de archivos (para descargar o cargar varios archivos),
+- la redirección en páginas específicas en función de un contexto (usuario autentificado, privilegios otorgados...),
 - gestionar una autenticación a través de oAuth 2.0.
 
 ## Requisitos
 
-Custom HTTP Request handlers are supported in the following context:
+Los manejadores de peticiones HTTP personalizadas están soportados en el siguiente contexto:
 
-- [scalable sessions](./sessions.md#enabling-web-sessions) or [no sessions](../settings/web.md#no-sessions) are enabled,
-- a web server run locally by 4D or 4D Server, including those [run by components](./webServerObject.md).
+- las [sesiones escalables](./sessions.md#enabling-web-sessions) o [sin sesiones](../settings/web.md#no-sessions) están activadas,
+- un servidor web ejecutado localmente por 4D o 4D Server, incluyendo aquellos [ejecutados por componentes](./webServerObject.md).
 
 :::warning
 
-For security reasons, external access to the datastore can be disallowed in 4D. You need to configure the [ORDA privileges](../ORDA/privileges.md) to allow HTTP requests.
+Por razones de seguridad, el acceso externo al datastore puede ser desautorizado en 4D. Necesita configurar los [privilegios ORDA](../ORDA/privileges.md) para permitir peticiones HTTP.
 
 :::
 
-## Cómo definir los manejadores
+## Cómo definir los gestores
 
-You can declare HTTP Request handlers:
+Puede declarar gestores de peticiones HTTP:
 
-- in a configuration file named **HTTPHandlers.json** stored in the [`Project/Sources`](../Project/architecture.md#sources) folder of the project. HTTP Request handlers are loaded and applied in the main Web server once it is started.
-- using a [`.handlers`](../API/WebServerClass.md#handlers) property set in the *settings* parameter of the [start()](../API/WebServerClass.md#start) function, for any web server object:
+- en un archivo de configuración llamado **HTTPHandlers.json** almacenado en la carpeta [`Project/Sources`](../Project/architecture.md#sources) del proyecto. Los gestores de peticiones HTTP se cargan y aplican en el servidor Web principal una vez se inicia.
+- utilizando una propiedad [`.handlers`](../API/WebServerClass.md#handlers) definida en el parámetro *settings* de la función [start()](../API/WebServerClass.md#start), para todo objeto servidor web:
 
 ```4d
-WEB Server.start($settings.handlers) //set rules at web server startup
+WEB Server.start($settings.handlers) //definir reglas al inicio del servidor web
 ```
 
-If both a **HTTPHandlers.json** file and a call to the [`WEB Server`](../commands/web-server.md) command with a valid `$settings.handlers` are used, the `WEB Server` command has priority.
+Si se utiliza tanto un archivo **HTTPHandlers.json** como una llamada al comando [`WEB Server`](../commands/web-server.md) con un `$settings.handlers` válido, el comando `WEB Server` tiene prioridad.
 
-The json file (or the object in the *settings* parameter) contains all listened URL patterns, the handled verbs, and the code to be called.
+El archivo json (o el objeto en el parámetro *settings*) contiene todos los modelos URL escuchados, los verbos manejados y el código a llamar.
 
-Handlers are provided as a collection.
+Los *handlers* se proporcionan como una colección.
 
-At runtime, the first pattern matching the URL is executed, the others are ignored.
+Al momento de la ejecución, se ejecuta el primer patrón que coincida con la URL, los demás se ignoran.
 
 Este es un ejemplo del contenido de un archivo *HTTPHandlers.json*:
 
@@ -61,11 +61,11 @@ Este es un ejemplo del contenido de un archivo *HTTPHandlers.json*:
 ]
 ```
 
-This handler declaration can be read as: when any request starting by `/start/` with a `GET` or `POST` verb is received by the server, the `gettingStarted` function of the `GeneralHandling` singleton is executed.
+Esta declaración de handler puede leerse como: cuando cualquier petición que comience por `/start/` con un verbo `GET` o `POST` es recibida por el servidor, se ejecuta la función `gettingStarted` del singleton `GeneralHandling`.
 
 :::note
 
-You must restart the Web server so that modifications made in this file are taken into account.
+Debe reiniciar el servidor Web para que se tengan en cuenta las modificaciones realizadas en este archivo.
 
 :::
 
@@ -74,7 +74,7 @@ You must restart the Web server so that modifications made in this file are take
 Un manejador está definido por:
 
 - un patrón de URL a interceptar
-- a function and its class where the code is implemented to handle the listened URL pattern
+- una función y su clase donde se implementa el código para manejar el patrón URL escuchado
 - the verbs with which the URL can be called to trigger the handler
 
 The handler identifier is the couple [pattern + a verb among the verbs list].
@@ -225,7 +225,7 @@ En este ejemplo, debe implementar las siguientes funciones:
 - *handleDocs* en la clase *DocsHandling*
 - *handleTheInvoice* / *handleDetails* / *handleInvoices* en la clase *InvoicesHandling*
 
-Examples of URLs triggering the handlers:
+Ejemplos de URL que activan los gestores personalizados:
 
 `IP:port/info/` con un verbo GET
 `IP:port/info/general` con un verbo GET
