@@ -31,9 +31,9 @@ If a user attempts to execute an action and does not have the appropriate access
 You can assign specific permission actions to the following resources in your project:
 
 - the [datastore](../ORDA/dsMapping.md#datastore)
-- [dataclasses](../ORDA/dsMapping.md#dataclass)
-- [attributes](../ORDA/dsMapping.md#attribute) (including computed and alias)
-- [data model class](../ORDA/ordaClasses.md) functions
+- the [dataclasses](../ORDA/dsMapping.md#dataclass)
+- [attributes](../ORDA/dsMapping.md#attribute) (including [computed](./ordaClasses.md#computed-attributes-1) and [alias](./ordaClasses.md#alias-attributes-1))
+- functions of the [data model classes](../ORDA/ordaClasses.md)
 - [singleton](../REST/$singleton.md) functions
 
 Each time a resource is accessed within a session (whatever the way it is accessed), 4D checks that the session has the appropriate permissions, and rejects the access if it is not authorized. 
