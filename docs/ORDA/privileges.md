@@ -295,7 +295,7 @@ End if
 
 ## Example of privilege configuration
 
-The good practice is to keep all data access locked by default thanks to the "all" privilege and to configure the `roles.json` file to only open controlled parts to authorized sessions. For example, to allow some accesses to "guest" sessions:
+The good practice is to keep all data access locked by default to configure the `roles.json` file to only open controlled parts to authorized sessions. For example, to allow some accesses to "guest" sessions:
 
 ```json title="/Project/Sources/roles.json"
 
