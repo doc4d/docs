@@ -1,6 +1,7 @@
 ---
 id: web-form
 title: Web Form
+displayed_sidebar: docs
 ---
 
 <!-- REF #_command_.Web Form.Syntax -->**Web Form** : 4D.Web Form<!-- END REF -->
@@ -11,7 +12,7 @@ title: Web Form
 |Result|4D.WebForm|&#8592;|New `Web Form` proxy object
 <!-- END REF -->
 
-#### Description
+## Description
 
 The `Web Form` command <!-- REF #_command_.Web Form.Summary --> returns a `4D.Web Form` proxy object, providing a means to work with and effectively emulates the Page's properties and functions<!-- END REF -->.
 

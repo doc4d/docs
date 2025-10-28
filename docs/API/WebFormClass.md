@@ -75,7 +75,7 @@ This function does nothing if:
 
 If you [enable](#enablestate) or disable several states in the same user function, all modifications are sent at the same time to the client once the function ends.
 
-For more information on web form states, please refer to [States section on developer.qodly.com](https://developer.qodly.com/docs/studio/pageLoaders/states).
+For more information on web form states, please refer to [States section on developer.qodly.com](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/states/stateOverview).
 
 
 
@@ -100,7 +100,7 @@ This function does nothing if:
 
 If you enable or [disable](#disablestate) several states within the same user function, all modifications are sent at the same time to the client once the function ends.
 
-For more information on web form states, please refer to [States section on developer.qodly.com](https://developer.qodly.com/docs/studio/pageLoaders/states).
+For more information on web form states, please refer to [States section on developer.qodly.com](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/states/stateOverview).
 
 #### Example
 
@@ -165,6 +165,6 @@ For more information, please refer to the [`.setWarning()` description in the Qo
 
 ## See also 
 
-[Web Form](web-form.md)
+[Web Form](web-form.md)</br>
 [Web Event](web-event.md)</br>
 [WebFormItem class](../API/WebFormItemClass.md)

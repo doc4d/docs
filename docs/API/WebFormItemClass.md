@@ -118,7 +118,7 @@ The `.removeCSSClass()` function <!-- REF #WebFormItemClass.removeCSSClass().Sum
 
 ## See also 
 
-[Web Form](../commands/web-form.md)
+[Web Form](../commands/web-form.md)</br>
 [Web Event](../commands/web-event.md)</br>
 [WebForm class](../API/WebFormClass.md)
 

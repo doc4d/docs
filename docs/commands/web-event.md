@@ -1,6 +1,7 @@
 ---
 id: web-event
 title: Web Event
+displayed_sidebar: docs
 ---
 
 <!-- REF #_command_.Web Event.Syntax -->**Web Event** : object<!-- END REF -->
@@ -11,7 +12,7 @@ title: Web Event
 |Result|object|&#8592;| object
 <!-- END REF -->
 
-#### Description
+## Description
 
 `Web Event` <!-- REF #_command_.Web Event.Summary -->returns an object with information on a triggered event linked to a Page component<!-- END REF -->.
 
