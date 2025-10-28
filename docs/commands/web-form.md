@@ -22,7 +22,7 @@ Keep in mind that a `4D.Web Form` object  is a **proxy object**, and not a direc
 
 :::
 
-Each property of the returned object is an object of the [4D.WebFormItem](../WebFormItemClass.md) class.
+Each property of the returned object is an object of the [4D.WebFormItem](../API/WebFormItemClass.md) class.
 
 The command returns `null` if it is called in a request that does not originate from Qodly Studio.
 

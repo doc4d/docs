@@ -6,9 +6,9 @@ title: WebFormItem
 
 The `4D.WebFormItem` class allows you to handle the behavior of your webform components. 
 
-`4D.WebFormItem` objects are properties of the [`4D.WebForm`](WebFormItemClass.md) object returned by the [`Web Form`](WebFormClass.md#web-form) command. 
+`4D.WebFormItem` objects are properties of the [`4D.WebForm`](WebFormClass.md) object returned by the [`Web Form`](../commands/web-form.md) command. 
 
-When you call the [`webForm`](./commands/web-form.md) command, the returned `4D.WebForm` proxy object holds as many `4D.WebFormItems` as there are components with [**server-side references**](../../4DQodlyPro/pageLoaders/pageLoaderOverview.md#server-side) in your webform.
+When you call the [`webForm`](../commands/web-form.md) command, the returned `4D.WebForm` proxy object holds as many `4D.WebFormItems` as there are components with [**server-side references**](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/pageLoaderOverview#server-side) in your webform.
 
 For example, `WebFormObject.myImage` refers to the image component with `myImage` as server reference.
  
@@ -45,9 +45,6 @@ For example, `WebFormObject.myImage` refers to the image component with `myImage
 #### Description
 
 The `.hide()` function <!-- REF #WebFormItemClass.hide().Summary -->hides the component<!-- END REF -->.
-
-
-For more information, please refer to the [`.hide()` description in the Qodly documentation](https://developer.qodly.com/docs/language/WebFormItemClass#hide). 
 
 #### Example
 
@@ -121,8 +118,8 @@ The `.removeCSSClass()` function <!-- REF #WebFormItemClass.removeCSSClass().Sum
 
 ## See also 
 
-[Web Form](web-form.md)</br>  
-[Web Event](web-event.md)</br>
+[Web Form](../commands/web-form.md)
+[Web Event](../commands/web-event.md)</br>
 [WebForm class](../API/WebFormClass.md)
 
 
