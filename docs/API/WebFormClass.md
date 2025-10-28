@@ -165,3 +165,8 @@ The `.setWarning()` function  <!-- REF #WebFormClass.setWarning().Summary -->sen
 
 For more information, please refer to the [`.setWarning()` description in the Qodly documentation](https://developer.qodly.com/docs/language/WebFormClass#setwarning).
 
+## See also 
+
+[Web Form](web-form.md)</br>  
+[Web Event](web-event.md)</br>
+[WebFormItem class](../API/WebFormItemClass.md)

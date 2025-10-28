@@ -33,9 +33,9 @@ The returned object contains the following properties:
 
 ## See also 
 
-[Web Form](web-form.md)  
-[WebForm class](../API/WebFormClass.md)
-[WebFormItem class](../API/WebFormItemClass.md)  
+[Web Form](web-form.md)</br>
+[WebForm class](../API/WebFormClass.md)</br>
+[WebFormItem class](../API/WebFormItemClass.md)
 
 ## Properties
 
