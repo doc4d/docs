@@ -1,19 +1,19 @@
 ---
 id: web-event
-title: webEvent
+title: Web Event
 ---
 
-<!-- REF #_command_.webEvent.Syntax -->**webEvent** : object<!-- END REF -->
+<!-- REF #_command_.Web Event.Syntax -->**Web Event** : object<!-- END REF -->
 
-<!-- REF #_command_.webEvent.Params -->
-|Parameter|Type||Description|
+<!-- REF #_command_.Web Event.Params -->
+|Parameter|Type| |Description|
 |---------|--- |:---:|------|
 |Result|object|&#8592;| object
 <!-- END REF -->
 
 #### Description
 
-`webEvent` <!-- REF #_command_.webEvent.Summary -->returns an object with information on a triggered event linked to a Page component<!-- END REF -->.
+`Web Event` <!-- REF #_command_.Web Event.Summary -->returns an object with information on a triggered event linked to a Page component<!-- END REF -->.
 
 The command must be called in the context of a Page handled by the Qodly web server.
 
@@ -31,49 +31,16 @@ The returned object contains the following properties:
 | 	|name |string|Data Table component: qodlysource name of the column (e.g. "firstname", "address.city")|
 
 
-#### Example
+## See also 
 
-The objective is to display/hide a help text when the user hovers over the component:
+[Web Form](web-form.md)  
+[WebForm class](../API/WebFormClass.md)
+[WebFormItem class](../API/WebFormItemClass.md)  
 
-![alt-text](img/web-event-2.png)
+## Properties
 
-This is done by attaching `onmouseenter` and `onmouseleave` events to a **Text input** component that displays the information stored in a **Text** component (displaying "This is the help"). 
-
-![alt-text](img/web-event-1.png)
-
-In this scenario: 
-
-* The Text input component has `orderNumber` as Server side reference.
-	![alt-text](img/web-event-3.png)
-* The Text component has `orderNumber` as Server side reference.
-	![alt-text](img/web-event-4.png)
-* The exposed function `help()` is attached to both the `onmouseenter` and `onmouseleave` events and contains the following code: 
-
-```qs
-exposed function help()
-
-var event : object
-var myForm : 4D.WebForm
-var componentRef : string
-
-myForm = webForm
-event = webEvent
-componentRef = event.caller
-
-switch 
-: (event.eventType == "onmouseenter")  // event is onmouseenter 
-	myForm["helpOn_"+componentRef].show()  // show the help on "orderNumber" by showing  
-	// the text component with reference "helpOn_orderNumber" 
-: (event.eventType == "onmouseleave")  // event is onmouseleave 
- 	myForm["helpOn_"+componentRef].hide()  // hide the help on orderNumber
-end 
-
-```
-
-To open the Page with the help on `orderNumber` hidden, you can associate this function to the `onload` event of the Page:
-
-```qs
-exposed function hideOnLoad()
-	webForm.helpOn_orderNumber.hide()
-```
+|  |  |
+| --- | --- |
+| Command number | 1734 |
+| Thread safe | &cross; |
 

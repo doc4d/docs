@@ -4,9 +4,13 @@ title: WebFormItem
 ---
 
 
+The `4D.WebFormItem` class allows you to handle the behavior of your webform components. 
+
 `4D.WebFormItem` objects are properties of the [`4D.WebForm`](WebFormItemClass.md) object returned by the [`Web Form`](WebFormClass.md#web-form) command. 
 
-The `WebFormItem` class is detailed in the [Qodly documentation](https://developer.qodly.com/docs/language/WebFormItemClass).
+When you call the [`webForm`](./commands/web-form.md) command, the returned `4D.WebForm` proxy object holds as many `4D.WebFormItems` as there are components with [**server-side references**](../../4DQodlyPro/pageLoaders/pageLoaderOverview.md#server-side) in your webform.
+
+For example, `WebFormObject.myImage` refers to the image component with `myImage` as server reference.
  
 <details><summary>History</summary>
 
@@ -45,6 +49,26 @@ The `.hide()` function <!-- REF #WebFormItemClass.hide().Summary -->hides the co
 
 For more information, please refer to the [`.hide()` description in the Qodly documentation](https://developer.qodly.com/docs/language/WebFormItemClass#hide). 
 
+#### Example
+
+To call a function that hides an image when the user clicks a button: 
+
+1. Select the image component on the canvas, and enter a server-side reference in the Properties Panel > Server Side, for example "myImage".
+2. Create an exposed function named `isHidden` that contains the following code:
+
+```4d  
+//to update 
+exposed function isHidden()
+
+var myComponent : 4D.WebFormItem
+
+myComponent = webForm.myImage
+myComponent.hide() // Hide the component that has "myImage" as server reference 
+```
+
+3. Select the Button component and add an `onclick` event to it.
+4. Attach the `isHidden` function to the event.  
+
 
 ### .show()
 
@@ -60,9 +84,8 @@ For more information, please refer to the [`.hide()` description in the Qodly do
 
 #### Description
 
-The `.show()` function <!-- REF #WebFormItemClass.show().Summary -->makes the component visible<!-- END REF -->.
+The `.show()` function <!-- REF #WebFormItemClass.show().Summary -->makes the component visible<!-- END REF -->.If the component was already visible, the function does nothing.
 
-For more information, please refer to the [`.show()` description in the Qodly documentation](https://developer.qodly.com/docs/language/WebFormItemClass#show). 
 
 
 ### .addCSSClass()
@@ -78,8 +101,6 @@ For more information, please refer to the [`.show()` description in the Qodly do
 #### Description
 
 The `.addCSSClass` function <!-- REF #WebFormItemClass.addCSSClass().Summary -->adds the class specified in *className* to the component<!-- END REF -->.
-
-For more information, please refer to the [`.addCSSClass` description in the Qodly documentation](https://developer.qodly.com/docs/language/WebFormItemClass#addcssclass). 
 
 
 ### .removeCSSClass()
@@ -97,7 +118,7 @@ For more information, please refer to the [`.addCSSClass` description in the Qod
 
 The `.removeCSSClass()` function <!-- REF #WebFormItemClass.removeCSSClass().Summary -->removes the class specified in *className* from the component<!-- END REF -->.
 
-For more information, please refer to the [`.removeCSSClass()` description in the Qodly documentation](https://developer.qodly.com/docs/language/WebFormItemClass#removecssclass). 
+
 
 
 
