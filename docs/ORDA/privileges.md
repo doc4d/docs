@@ -168,7 +168,7 @@ The `restrictedByDefault` property configures how every [resource](#resources) w
 
 :::note Compatibility
 
-When enabling access to Qodly Studio using the [One-click configuration dialog](https://developer.4d.com/qodly/4DQodlyPro/gettingStarted#one-click-configuration) in projects converted form previous releases, the `restrictedByDefault` property is added with value **true** in the *roles.json* file. 
+When enabling access to Qodly Studio using the [One-click configuration dialog](https://developer.4d.com/qodly/4DQodlyPro/gettingStarted#one-click-configuration) in projects converted from previous releases, the `restrictedByDefault` property is added with value **true** in the *roles.json* file. 
 
 :::
 
