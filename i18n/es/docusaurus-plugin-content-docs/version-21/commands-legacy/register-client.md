@@ -33,7 +33,7 @@ displayed_sidebar: docs
 * Si este comando se utiliza con 4D en modo local, no tiene efecto.
 * Más de una estación 4D client puede tener el mismo nombre registrado.
 
-Cuando se ejecuta este comando, un proceso, llamado *nomCllient*, se crea en el equipo cliente. Este proceso sólo puede ser abortado por el comando [`UNREGISTER CLIENT`](unregister-client.md).   
+Cuando se ejecuta este comando, un proceso, llamado *nomClient*, se crea en el equipo cliente. Este proceso sólo puede ser abortado por el comando [`UNREGISTER CLIENT`](unregister-client.md).   
 
 Una vez ejecutado el comando, no es posible modificar rápidamente el nombre del cliente 4D o el periodo de interrogación al servidor. Para hacerlo, debe llamar al comando [`UNREGISTER CLIENT`](unregister-client.md), y luego ejecutar el comando **REGISTER CLIENT**.
 
