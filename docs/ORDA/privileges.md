@@ -163,7 +163,7 @@ The `roles.json` file describes the whole web security settings for the project.
 The `restrictedByDefault` property configures how every [resource](#resources) will be accessed by default when [no permission action has been set on it](#permission-actions):
 
 - if set to **false** (default for new projects): access to a resource for which no specific permission action has been declared is free for all requests.
-- if set to **true** (recommended for production, see above): access to a resource for which no specific permission action has been declared is forbidden for all requests.
+- if set to **true** (recommended for production, see below): access to a resource for which no specific permission action has been declared is forbidden for all requests.
 
 
 :::note Compatibility
