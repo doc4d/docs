@@ -5,7 +5,7 @@ title: OpenAITool
 
 # OpenAITool
 
-The `OpenAITool` class represents a tool that can be called by the OpenAI model during a conversation. Tools allow the AI to perform specific functions and interact with external systems or retrieve information.
+La clase `OpenAITool` representa una herramienta que puede ser llamada por el modelo OpenAI durante una conversación. Tools allow the AI to perform specific functions and interact with external systems or retrieve information.
 
 See [OpenAIMessage](OpenAIMessage.md) to see how to responds to a tool call.
 
@@ -24,7 +24,7 @@ See [OpenAIMessage](OpenAIMessage.md) to see how to responds to a tool call.
 
 | Propiedad     | Tipo | Descripción                                                                    |
 | ------------- | ---- | ------------------------------------------------------------------------------ |
-| `name`        | Text | The name of the tool, which works as an identifier.            |
+| `name`        | Text | El nombre de la herramienta, que funciona como identificador.  |
 | `descripción` | Text | Description of the tool to help the LLM decide when to use it. |
 
 ### Propiedades específicas de la función
