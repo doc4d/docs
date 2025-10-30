@@ -113,7 +113,7 @@ Les propriétés prises en charge dépendent du type de list box.
 | ------------------------------------------------------------------------------------------- | ---------------- | ------------------- | --------------------------------------- |
 | [Couleur de fond alternée](properties_BackgroundAndBorder.md#alternate-background-color)    | X                | X                   | X                                       |
 | [Couleur de fond](properties_BackgroundAndBorder.md#background-color--fill-color)           | X                | X                   | X                                       |
-| [Souligné](properties_Text.md#bold)                                                         | X                | X                   | X                                       |
+| [Gras](properties_Text.md#bold)                                                             | X                | X                   | X                                       |
 | [Expression couleur de fond](properties_BackgroundAndBorder.md#background-color-expression) |                  | X                   | X                                       |
 | [Style de la bordure](properties_BackgroundAndBorder.md#border-line-style)                  | X                | X                   | X                                       |
 | [Bas](properties_CoordinatesAndSizing.md#bottom)                                            | X                | X                   | X                                       |
@@ -221,7 +221,7 @@ Les propriétés prises en charge dépendent du type de list box.
 | On Scroll            | <li>[horizontalScroll](#propriétés-supplémentaires)</li><li>[verticalScroll](#propriétés-supplémentaires)</li>                                                                                                                   |                                                                                                       |
 | On Unload            |                                                                                                                                                                        |                                                                                                       |
 
-#### Additional Properties {additional-properties}
+#### Propriétés supplémentaires {additional-properties}
 
 Les événements formulaire sur les list box ou colonnes de list box peuvent retourner les propriétés supplémentaires suivantes :
 
