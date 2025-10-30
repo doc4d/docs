@@ -7,7 +7,7 @@ title: Text
 
 ## Autoriser sélecteur police/couleur
 
-When this property is enabled, the [OPEN FONT PICKER](../commands-legacy/open-font-picker.md) and [OPEN COLOR PICKER](../commands-legacy/open-color-picker.md) commands can be called to display the system font and color picker windows. A l'aide de ces fenêtres, les utilisateurs peuvent modifier la police ou la couleur d'un objet formulaire dont le focus est accessible directement au clic. Lorsque cette propriété est désactivée (par défaut), les commandes d'ouverture du sélecteur ne produisent aucun effet.
+Lorsque cette propriété est activée, les commandes [OPEN FONT PICKER](../commands-legacy/open-font-picker.md) et [OPEN COLOR PICKER](../commands-legacy/open-color-picker.md) peuvent être appelées pour afficher les fenêtres de sélection des polices et des couleurs du système. A l'aide de ces fenêtres, les utilisateurs peuvent modifier la police ou la couleur d'un objet formulaire dont le focus est accessible directement au clic. Lorsque cette propriété est désactivée (par défaut), les commandes d'ouverture du sélecteur ne produisent aucun effet.
 
 #### Grammaire JSON
 
@@ -21,14 +21,14 @@ When this property is enabled, the [OPEN FONT PICKER](../commands-legacy/open-fo
 
 ---
 
-## Souligné
+## Gras
 
 Le texte sélectionné est plus foncé et plus épais.
 
 Vous pouvez définir cette propriété en utilisant la commande [**OBJECT SET FONT STYLE**](../commands-legacy/object-set-font-style.md).
 
-> This is normal text.<br/>
-> **This is bold text.**
+> Ceci est du texte normal.<br/>
+> **Ceci est du texte en gras.**
 
 #### Grammaire JSON
 
