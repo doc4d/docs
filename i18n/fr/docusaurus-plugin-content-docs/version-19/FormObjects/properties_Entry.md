@@ -275,7 +275,7 @@ Pour afficher une liste de tous les raccourcis utilisés dans l'environnement de
 | shortcutControl | boolean         | true, false (macOS Control)                        |
 | shortcutShift   | boolean         | true, false                                        |
 |                 |                 |                                                    |
-| shortcutKey     | string          | <li>toute touche de caractère : "a", "b"...</li><li>[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
+| shortcutKey     | string          | <li>toute touche de caractère : "a", "b"...</li><li>"[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
 
 #### Objets pris en charge
 
