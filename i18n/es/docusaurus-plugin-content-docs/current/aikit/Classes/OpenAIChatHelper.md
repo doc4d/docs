@@ -81,25 +81,25 @@ El parámetro *handler* puede ser:
 
 La función de gestión recibe un objeto que contiene los parámetros pasados por la llamada a la herramienta OpenAI. Este objeto contiene pares llave-valor en los que las llaves corresponden a los nombres de los parámetros definidos en el esquema de la herramienta, y los valores son los argumentos reales ofrecidos por el modelo de IA.
 
-#### Ejemplo de herramienta de registro
+#### Ejemplo de Register Tool
 
 ```4D
-// Example 1: Simple registration with direct handler
+// Ejemplo 1: Registro simple con gestor directo
 var $tool:={type: "function"; function: {name: "get_weather"; description: "Get current weather"; parameters: {type: "object"; properties: {location: {type: "string"; description: "City name"}}}}}
 var $handler:=Formula(return "Sunny, 25°C in "+$1.location)
 
 $chatHelper.registerTool($tool; $handler)
 
-// Example 2: Tool with handler property (no second parameter needed)
-var $tool:={name: "calculate"; description: "Perform calculations"; handler: Formula(return String(Num($1.expression)))}
+// Ejemplo 2: Herramienta con propiedad handler (no se necesita un segundo parámetro)
+var $tool:={name: "calculate"; description: "Realiza cálculos"; handler: Formula(return String(Num($1.expression)))}
 $chatHelper.registerTool($tool)
 
-// Example 3: Using object notation
+// Ejemplo 3: Uso de la notación objeto
 $chatHelper.registerTool({tool: $tool; handler: $handler})
 
-// Example 4: Handler as object with formula matching tool name
+// Ejemplo 4: objeto con función correspondiente al nombre de la herramienta
 var $tool:={name: "getTime"; description: "Get current time"}
-var $handlerObj:=cs.MyTimeTool.new() // class with a getTime function
+var $handlerObj:=cs.MyTimeTool.new() // clase con una función getTime
 $chatHelper.registerTool($tool; $handlerObj)
 ```
 
@@ -107,11 +107,11 @@ $chatHelper.registerTool($tool; $handlerObj)
 
 **registerTools**(*toolsWithHandlers* : Variant)
 
-| Parámetros          | Tipo    | Descripción                                              |
-| ------------------- | ------- | -------------------------------------------------------- |
-| *toolsWithHandlers* | Variant | Object or Collection containing tools and their handlers |
+| Parámetros          | Tipo    | Descripción                                                     |
+| ------------------- | ------- | --------------------------------------------------------------- |
+| *toolsWithHandlers* | Variant | Objeto o colección que contiene las herramientas y sus gestores |
 
-Registers multiple tools at once. El parámetro puede ser:
+Registra varias herramientas a la vez. El parámetro puede ser:
 
 - **Collection**: Array of tool objects (with handlers embedded or separate)
 - **Object**: Object with function names as keys mapping to tool definitions
