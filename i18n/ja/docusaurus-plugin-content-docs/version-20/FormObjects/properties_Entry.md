@@ -273,7 +273,7 @@ xliff 参照を ":xliff:resname" の形でプレースホルダーとして使�
 | shortcutControl | boolean | true, false (macOS: Control)                       |
 | shortcutShift   | boolean | true, false                                        |
 |                 |         |                                                    |
-| shortcutKey     | string  | <li>任意の文字キー: "a", "b"...</li><li>"[F1]" - "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
+| shortcutKey     | string  | <li>任意の文字キー: "a", "b"...</li><li>"[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
 
 #### 対象オブジェクト
 
