@@ -136,7 +136,7 @@ myCol:=myCol.push("new value") // リストボックスに new value を表示
 | [ヘッダーを表示](properties_Headers.md#ヘッダーを表示)                                 | X         | X             | X                            |
 | [フッターを表示](properties_Footers.md#フッターを表示)                                 | X         | X             | X                            |
 | [行をダブルクリック](properties_ListBox.md#行をダブルクリック)                             |           | X             |                              |
-| [ドラッグ有効](properties_Action.md#ドラッグ有効)                                    | X         | X             | X                            |
+| [Draggable](properties_Action.md#draggable)                              | X         | X             | X                            |
 | [ドロップ有効](properties_Action.md#ドロップ有効)                                    | X         | X             | X                            |
 | [フォーカス可](properties_Entry.md#フォーカス可)                                     | X         | X             | X                            |
 | [フォント](properties_Text.md#フォント)                                          | X         | X             | X                            |
@@ -923,10 +923,10 @@ If the user selects a break row, [`LISTBOX GET CELL POSITION`](../commands/listb
 これらのプロパティを定義するには、適切な属性をオブジェクト内に設定する必要があります (使用可能な属性は以下に一覧としてまとめてあります)。  たとえば、以下ような簡単なコードを使用してオブジェクトカラム内に "Hello World!" 書き込むことができます:
 
 ```4d
-ARRAY OBJECT(obColumn;0) // カラム配列
- C_OBJECT($ob) // 第一要素
- OB SET($ob;"valueType";"text") // 値の型を定義 (必須)
- OB SET($ob;"value";"Hello World!") // 値を定義
+ARRAY OBJECT(obColumn;0) //column array
+ var $ob : Object //first element
+ OB SET($ob;"valueType";"text") //defines the value type (mandatory)
+ OB SET($ob;"value";"Hello World!") //defines the value
  APPEND TO ARRAY(obColumn;$ob)  
 ```
 
@@ -1005,15 +1005,15 @@ ARRAY OBJECT(obColumn;0) // カラム配列
 セルの値は "value" 属性に保存されています。 この属性は入力と出力に使用されるほか、 この属性は入力と出力に使用されるほか、 リストを使用する際のデフォルト値を定義するのにも使用できます (以下参照)。 リストを使用する際のデフォルト値を定義するのにも使用できます (以下参照)。
 
 ```4d
- ARRAY OBJECT(obColumn;0) // カラム配列
- C_OBJECT($ob1)
- $entry:="Hello world!"
+ ARRAY OBJECT(obColumn;0) //column array
+ var $ob1;$ob2;$ob3 : Object
+ var $entry:="Hello world!"
  OB SET($ob1;"valueType";"text")
- OB SET($ob1;"value";$entry) // ユーザーが新しい値を入力した場合、 編集された値は$entry に格納されます
- C_OBJECT($ob2)
+ OB SET($ob1;"value";$entry) // if the user enters a new value, $entry will contain the edited value
+
  OB SET($ob2;"valueType";"real")
  OB SET($ob2;"value";2/3)
- C_OBJECT($ob3)
+
  OB SET($ob3;"valueType";"boolean")
  OB SET($ob3;"value";True)
 
@@ -1033,8 +1033,8 @@ ARRAY OBJECT(obColumn;0) // カラム配列
 これらの属性を使用すると入力値の範囲を管理することができます。 セルが評価されたとき (フォーカスを失ったとき)、入力された値が min の値より低い場合、または max の値より大きい場合には、その値は拒否されます。 この場合、入力をする前の値が保持され、tip として説明が表示されます。
 
 ```4d
- C_OBJECT($ob3)
- $entry3:=2015
+ var $ob3 : Object
+ var $entry3:=2015
  OB SET($ob3;"valueType";"integer")
  OB SET($ob3;"value";$entry3)
  OB SET($ob3;"min";2000)
@@ -1052,11 +1052,9 @@ behavior 属性は、値の通常の表示とは異なる表示方法を提供�
 | behavior | threeStates | integer   | スリーステートチェックボックスを数値として表現します。 <br/>2=セミチェック、1=チェック、0=チェックされていない、-1=非表示、-2=チェックなしが無効化、-3=チェックが無効化、-4=セミチェックが無効化 |
 
 ```4d
- C_OBJECT($ob3)
+ var $ob3; $ob4 : Object
  OB SET($ob3;"valueType";"integer")
-
  OB SET($ob3;"value";-3)
- C_OBJECT($ob4)
  OB SET($ob4;"valueType";"integer")
  OB SET($ob4;"value";-3)
  OB SET($ob4;"behavior";"threeStates")
@@ -1083,7 +1081,7 @@ behavior 属性は、値の通常の表示とは異なる表示方法を提供�
 	ARRAY TEXT($RequiredList;0)
 	APPEND TO ARRAY($RequiredList;"Open")
 	APPEND TO ARRAY($RequiredList;"Closed")
-	C_OBJECT($ob)
+	var $ob Object
 	OB SET($ob;"valueType";"text")
 	OB SET($ob;"value";"Closed")
 	OB SET ARRAY($ob;"requiredList";$RequiredList)
@@ -1100,9 +1098,9 @@ behavior 属性は、値の通常の表示とは異なる表示方法を提供�
 	APPEND TO ARRAY($ChoiceList;20)
 	APPEND TO ARRAY($ChoiceList;50)
 	APPEND TO ARRAY($ChoiceList;100)
-	C_OBJECT($ob)
+	var $ob : Object
 	OB SET($ob;"valueType";"integer")
-	OB SET($ob;"value";10) // 10 をデフォルト値として使用
+	OB SET($ob;"value";10) //10 as default value
 	OB SET ARRAY($ob;"choiceList";$ChoiceList)
 ```
 
@@ -1124,7 +1122,7 @@ behavior 属性は、値の通常の表示とは異なる表示方法を提供�
 ![](../assets/en/FormObjects/listbox_column_objectArray_colors.png)
 
 ```4d
-	C_OBJECT($ob)
+	var $ob : Object
 	OB SET($ob;"valueType";"text")
 	OB SET($ob;"saveAs";"value")
 	OB SET($ob;"value";"blue")
@@ -1141,10 +1139,10 @@ behavior 属性は、値の通常の表示とは異なる表示方法を提供�
 	APPEND TO LIST(<>List;"London";2)
 	APPEND TO LIST(<>List;"Berlin";3)
 	APPEND TO LIST(<>List;"Madrid";4)
-	C_OBJECT($ob)
+	var $ob : Object
 	OB SET($ob;"valueType";"integer")
 	OB SET($ob;"saveAs";"reference")
-	OB SET($ob;"value";2) // デフォルトでLondonを表示
+	OB SET($ob;"value";2) //displays London by default
 	OB SET($ob;"requiredListReference";<>List)
 ```
 
@@ -1168,7 +1166,7 @@ behavior 属性は、値の通常の表示とは異なる表示方法を提供�
 ![](../assets/en/FormObjects/listbox_column_objectArray_colors.png)
 
 ```4d
- C_OBJECT($ob)
+ var $ob : Object
  OB SET($ob;"valueType";"text")
 
  OB SET($ob;"value";"blue")
@@ -1199,7 +1197,7 @@ behavior 属性は、値の通常の表示とは異なる表示方法を提供�
 ARRAY TEXT($_units;0)
 APPEND TO ARRAY($_units;"lines")
 APPEND TO ARRAY($_units;"pixels")
-C_OBJECT($ob)
+var $ob : Object
 OB SET($ob;"valueType";"integer")
 OB SET($ob;"value";2) // 2 "units"
 OB SET($ob;"unitReference";1) //"lines"
@@ -1217,10 +1215,10 @@ OB SET ARRAY($ob;"unitsList";$_units)
 例:
 
 ```4d
-C_OBJECT($ob1)
-$entry:="Hello world!"
+var $ob1 : Object
+var $entry:="Hello world!"
 OB SET($ob;"valueType";"text")
-OB SET($ob;"alternateButton";true)
+OB SET($ob;"alternateButton";True)
 OB SET($ob;"value";$entry)
 ```
 
@@ -1233,7 +1231,7 @@ OB SET($ob;"value";$entry)
 - 値が数字の場合、色付けされた長方形がセル内に表示されます。 例:
 
   ```4d
-  C_OBJECT($ob4)
+  var $ob4 : Object
   OB SET($ob4;"valueType";"color")
   OB SET($ob4;"value";0x00FF0000)
   ```
@@ -1251,7 +1249,7 @@ OB SET($ob;"value";$entry)
 例:
 
 ```4d
-C_OBJECT($ob)
+var $ob : Object
 OB SET($ob;"valueType";"event")
 OB SET($ob;"label";"Edit...")
 ```
