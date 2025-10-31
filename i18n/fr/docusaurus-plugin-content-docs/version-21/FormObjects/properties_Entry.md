@@ -78,7 +78,7 @@ Lorsque cette propriété est désactivée, tous les pop-up menus associés à u
 
 [`OBJECT Get enterable`](../commands-legacy/object-get-enterable.md) - [`OBJECT SET ENTERABLE`](../commands-legacy/object-set-enterable.md)
 
-#### Voir aussi
+#### Voir également
 
 [`FORM GET ENTRY ORDER`](../commands-legacy/form-get-entry-order.md) - [`FORM SET ENTRY ORDER`](../commands-legacy/form-set-entry-order.md)
 
@@ -303,14 +303,14 @@ Pour afficher une liste de tous les raccourcis utilisés dans l'IDE de 4D, voir 
 
 #### Grammaire JSON
 
-| Nom             | Type de données | Valeurs possibles                                                                                                                                                                                                                                      |
-| --------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| shortcutAccel   | boolean         | true, false (Ctrl Windows/Command macOS)                                                                                                                                                                                            |
-| shortcutAlt     | boolean         | true, false                                                                                                                                                                                                                                            |
-| shortcutControl | boolean         | true, false (macOS Control)                                                                                                                                                                                                         |
-| shortcutShift   | boolean         | true, false                                                                                                                                                                                                                                            |
-|                 |                 |                                                                                                                                                                                                                                                        |
-| shortcutKey     | string          | <li>toute touche : "a", "b"...</li><li>"[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
+| Nom             | Type de données | Valeurs possibles                                                                                                                                                                                                                                          |
+| --------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| shortcutAccel   | boolean         | true, false (Ctrl Windows/Command macOS)                                                                                                                                                                                                |
+| shortcutAlt     | boolean         | true, false                                                                                                                                                                                                                                                |
+| shortcutControl | boolean         | true, false (macOS Control)                                                                                                                                                                                                             |
+| shortcutShift   | boolean         | true, false                                                                                                                                                                                                                                                |
+|                 |                 |                                                                                                                                                                                                                                                            |
+| shortcutKey     | string          | <li>any character key: "a", "b"...</li><li>"[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
 
 #### Objets pris en charge
 
