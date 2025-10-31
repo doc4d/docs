@@ -695,6 +695,7 @@
             {
               "type": "category",
               "label": "Import and Export",
+              "key": "import-export-commands",
               "link": {
                 "type": "doc",
                 "id": "commands/theme/Import_and_Export_theme"
@@ -2362,11 +2363,6 @@
       },
       "items": [
         {
-          "type": "link",
-          "label": "4D Qodly Pro",
-          "href": "https://developer.qodly.com/docs"
-        },
-        {
           "type": "category",
           "label": "Web Server",
           "link": {
@@ -3201,6 +3197,7 @@
             {
               "type": "category",
               "label": "Import and Export",
+              "key": "import-export-writepro",
               "link": {
                 "type": "generated-index",
                 "title": "Import and Export"

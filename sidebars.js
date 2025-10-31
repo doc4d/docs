@@ -543,6 +543,7 @@ module.exports =
             {
               "type": "category",
               "label": "Form Events",
+              key: "form-events-commands",
               "link": {
                 "type": "doc",
                 "id": "commands/theme/Form_Events_theme"
@@ -572,6 +573,7 @@ module.exports =
             {
               "type": "category",
               "label": "Forms",
+              "key": "form-commands",
               "link": {
                 "type": "doc",
                 "id": "commands/theme/Forms_theme"
@@ -694,6 +696,7 @@ module.exports =
             {
               "type": "category",
               "label": "Import and Export",
+              key: "import-export-commands",
               "link": {
                 "type": "doc",
                 "id": "commands/theme/Import_and_Export_theme"
@@ -925,6 +928,7 @@ module.exports =
             {
               "type": "category",
               "label": "Menus",
+              "key": "menus-commands",
               "link": {
                 "type": "doc",
                 "id": "commands/theme/Menus_theme"
@@ -1296,6 +1300,7 @@ module.exports =
             {
               "type": "category",
               "label": "Processes",
+              key: "processes-commands",
               "link": {
                 "type": "doc",
                 "id": "commands/theme/Processes_theme"
@@ -2011,6 +2016,7 @@ module.exports =
             {
               "type": "category",
               "label": "Web Server",
+              "key": "web-server-commands",
               "link": {
                 "type": "doc",
                 "id": "commands/theme/Web_Server_theme"
@@ -2295,6 +2301,7 @@ module.exports =
         {
           type: "category",
           label: "Processes",
+          key: "processes",
           link: {
             type: "generated-index",
             title: "Processes",
@@ -2357,14 +2364,10 @@ module.exports =
         image: "/img/docusaurus.png"
       },
       items: [
-                {
-          type: "link",
-          label: "4D Qodly Pro",
-          href: "https://developer.qodly.com/docs"
-        },
         {
           type: "category",
           label: "Web Server",
+          key: "web-server",
           link: {
             type: "doc",
             id: "WebServer/webServer"
@@ -2503,6 +2506,7 @@ module.exports =
         {
           type: "category",
           label: "Forms",
+          key: "form-editor",
           link: {
             type: "doc",
             id: "FormEditor/forms"
@@ -2614,6 +2618,7 @@ module.exports =
             {
               type: "category",
               label: "Form Events",
+              key: "form-events-events",
               link: {
                 type: "doc",
                 id: "Events/overview"
@@ -2691,6 +2696,7 @@ module.exports =
         {
           type: "category",
           label: "Menus",
+          key: "menus",
           link: {
             type: "doc",
             id: "Menus/overview"
@@ -3196,6 +3202,7 @@ module.exports =
             {
                   type: "category",
                   label: "Import and Export",
+                  key: "import-export-writepro",
                   link: {
                     type: "generated-index",
                     title: "Import and Export",
