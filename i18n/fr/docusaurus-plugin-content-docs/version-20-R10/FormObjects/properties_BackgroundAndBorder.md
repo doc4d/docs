@@ -252,4 +252,4 @@ Définit l'arrière-plan de la list box sur "Transparent". Lorsqu'elle est défi
 
 #### Voir également
 
-[Background Color / Fill Color](#background-color--fill-color)
+[Couleur de fond](#background-color--fill-color)
