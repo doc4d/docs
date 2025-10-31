@@ -153,7 +153,7 @@ Trois options sont disponibles :
 
 - **Référence de liste**: déclare que la liste déroulante est hiérarchique. Cela signifie que la liste déroulante peut afficher jusqu'à deux niveaux hiérarchiques et que son contenu peut être géré par les commandes du langage 4D du thème **Listes hiérarchiques**.
 - **Valeur de l'élément sélectionné** (par défaut) : la liste déroulante n'est pas hiérarchique et la valeur de l'élément choisi dans la liste par l'utilisateur est enregistrée directement. Par exemple, si l'utilisateur choisit la valeur "Bleu", cette valeur est enregistrée dans le champ.
-- **Référence de l'élément sélectionné**: la liste déroulante n'est pas hiérarchique et la référence de l'élément de la liste de choix est enregistrée dans l'objet. This reference is the numeric value associated with each item either through the *itemRef* parameter of the [`APPEND TO LIST`](../commands-legacy/append-to-list.md) or [`SET LIST ITEM`](../commands-legacy/set-list-item.md) commands, or in the list editor. Cette option permet d'optimiser l'utilisation de la mémoire : le stockage de valeurs numériques dans les champs occupe moins d'espace que le stockage de chaînes de caractères. Il facilite également la traduction des applications : il suffit de créer plusieurs listes dans différentes langues mais avec les mêmes références d'éléments, puis de charger la liste en fonction de la langue de l'application.
+- **Référence de l'élément sélectionné**: la liste déroulante n'est pas hiérarchique et la référence de l'élément de la liste de choix est enregistrée dans l'objet. Cette référence est la valeur numérique associée à chaque élément, soit par l'intermédiaire du paramètre *itemRef* des commandes [`APPEND TO LIST`](../commands-legacy/append-to-list.md) ou [`SET LIST ITEM`](../commands-legacy/set-list-item.md), soit dans l'éditeur d'énumérations. Cette option permet d'optimiser l'utilisation de la mémoire : le stockage de valeurs numériques dans les champs occupe moins d'espace que le stockage de chaînes de caractères. Il facilite également la traduction des applications : il suffit de créer plusieurs listes dans différentes langues mais avec les mêmes références d'éléments, puis de charger la liste en fonction de la langue de l'application.
 
 L'utilisation de l'option de **Référence élément sélectionné** nécessite le respect des principes suivants :
 
@@ -279,7 +279,7 @@ Cette propriété est disponible dans les conditions suivantes :
 Cette propriété spécifie, dans le contexte d'un champ ou d'une variable associée à une liste de valeurs, le type de contenu à sauvegarder :
 
 - **Enregistrer comme valeur** (option par défaut) : la valeur de l'élément choisi dans la liste par l'utilisateur est enregistrée directement. Par exemple, si l'utilisateur choisit la valeur "Bleu", cette valeur est enregistrée dans le champ.
-- **Enregistrer comme référence** : la référence de l'élément de l'énumération est enregistrée dans l'objet. This reference is the numeric value associated with each item either through the *itemRef* parameter of the [`APPEND TO LIST`](../commands-legacy/append-to-list.md) or [`SET LIST ITEM`](../commands-legacy/set-list-item.md) commands, or in the list editor.
+- **Enregistrer comme référence** : la référence de l'élément de l'énumération est enregistrée dans l'objet. Cette référence est la valeur numérique associée à chaque élément, soit par l'intermédiaire du paramètre *itemRef* des commandes [`APPEND TO LIST`](../commands-legacy/append-to-list.md) ou [`SET LIST ITEM`](../commands-legacy/set-list-item.md), soit dans l'éditeur d'énumérations.
 
 Cette option permet d'optimiser l'utilisation de la mémoire : le stockage de valeurs numériques dans les champs occupe moins d'espace que le stockage de chaînes de caractères. Il facilite également la traduction des applications : il suffit de créer plusieurs listes dans différentes langues mais avec les mêmes références d'éléments, puis de charger la liste en fonction de la langue de l'application.
 
@@ -300,7 +300,7 @@ L'utilisation de cette propriété nécessite le respect des principes suivants 
 
 ---
 
-## Selected Items {#selected-items}
+## Eléments sélectionnés {#selected-items}
 
 `Listbox de type collection ou entity selection`
 
@@ -313,9 +313,9 @@ Spécifie une variable ou une expression qui sera assignée aux éléments ou en
 
 #### Grammaire JSON
 
-| Nom                 | Type de données | Valeurs possibles                          |
-| ------------------- | --------------- | ------------------------------------------ |
-| selectedItemsSource | string          | Assignable collection or object expression |
+| Nom                 | Type de données | Valeurs possibles                         |
+| ------------------- | --------------- | ----------------------------------------- |
+| selectedItemsSource | string          | Collection ou expression objet assignable |
 
 #### Objets pris en charge
 
@@ -329,11 +329,11 @@ Spécifie une variable ou une expression qui sera assignée aux éléments ou en
 
 ## Sélection temporaire
 
-`Listbox de type sélection nommée`
+`Named selection list boxes`
 
 Spécifie la sélection temporaire à utiliser. Vous devez entrer le nom d'une sélection temporaire valide. Il peut s'agir d'une sélection temporaire process ou interprocess. Le contenu de la list box sera basé sur cette sélection. La sélection temporaire doit exister et être valide au moment où la list box est affichée, sinon la list box sera affichée vide.
 
-> Les sélections temporaires sont des listes ordonnées d'enregistrements. Elles sont utilisées pour garder en mémoire l'ordre et l'enregistrement courant d'une sélection. Pour plus d'informations, reportez-vous à la section **Sélections nommées** du *manuel de référence du langage 4D*.
+> Les sélections temporaires sont des listes ordonnées d'enregistrements. Elles sont utilisées pour garder en mémoire l'ordre et l'enregistrement courant d'une sélection. Pour plus d'informations, reportez-vous à la section **Sélections temporaires** du langage 4D.
 
 #### Grammaire JSON
 
