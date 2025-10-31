@@ -880,11 +880,11 @@ des paramètres supplémentaires (optionnel) : dépend du type de valeur
 Pour définir ces propriétés, vous devez placer les attributs adéquats dans l'objet (la liste des attributs disponibles est fournie ci-dessous). Par exemple, vous pouvez écrire "Hello World!" dans une colonne objet à l'aide de ce simple code :
 
 ```4d
-ARRAY OBJECT(obColumn;0) //column array
- var $ob : Object //first element
- OB SET($ob;"valueType";"text") //defines the value type (mandatory)
- OB SET($ob;"value";"Hello World!") //defines the value
- APPEND TO ARRAY(obColumn;$ob)  
+ARRAY OBJECT(obColumn;0) //tableau de colonnes
+ var $ob : Object //premier élément
+ OB SET($ob; "valueType" ; "text") //définit le type de valeur (obligatoire)
+ OB SET($ob; "value" ; "Hello World !") //définit la valeur
+ APPEND TO ARRAY(obColumn ;$ob)  
 ```
 
 ![](../assets/en/FormObjects/listbox_column_objectArray_helloWorld.png)
@@ -962,21 +962,21 @@ L'unique attribut obligatoire est "valueType" et ses valeurs acceptées sont "te
 La valeur des cellules est stockée dans l'attribut "value". Cet attribut est utilisé pour la saisie (entrée) et pour l'affichage (sortie). Il peut également être utilisé pour définir des valeurs par défaut lors de l'utilisation des listes (voir ci-dessous).
 
 ```4d
- ARRAY OBJECT(obColumn;0) //column array
+ ARRAY OBJECT(obColumn;0) // tableau de colonnes
  var $ob1;$ob2;$ob3 : Object
- var $entry:="Hello world!"
- OB SET($ob1;"valueType";"text")
- OB SET($ob1;"value";$entry) // if the user enters a new value, $entry will contain the edited value
+ var $entry:="Hello world !"
+ OB SET($ob1; "valueType" ; "text")
+ OB SET($ob1; "value" ;$entry) // si l'utilisateur entre une nouvelle valeur, $entry contiendra la valeur éditée
 
- OB SET($ob2;"valueType";"real")
+ OB SET($ob2; "valueType" ; "real")
  OB SET($ob2;"value";2/3)
 
- OB SET($ob3;"valueType";"boolean")
- OB SET($ob3;"value";True)
+ OB SET($ob3; "valueType" ; "boolean")
+ OB SET($ob3; "value";True)
 
- APPEND TO ARRAY(obColumn;$ob1)
- APPEND TO ARRAY(obColumn;$ob2)
- APPEND TO ARRAY(obColumn;$ob3)
+ APPEND TO ARRAY(obColumn ;$ob1)
+ APPEND TO ARRAY(obColumn ;$ob2)
+ APPEND TO ARRAY(obColumn ;$ob3)
 ```
 
 ![](../assets/en/FormObjects/listbox_column_objectArray_helloWorld_value.png)
@@ -992,10 +992,10 @@ Ces attributs peuvent être utilisés pour contrôler la plage de valeurs d'entr
 ```4d
  var $ob3 : Object
  var $entry3:=2015
- OB SET($ob3;"valueType";"integer")
- OB SET($ob3;"value";$entry3)
- OB SET($ob3;"min";2000)
- OB SET($ob3;"max";3000)
+ OB SET($ob3; "valueType" ; "integer")
+ OB SET($ob3; "value" ;$entry3)
+ OB SET($ob3; "min";2000)
+ OB SET($ob3; "max";3000)
 ```
 
 ![](../assets/en/FormObjects/listbox_column_objectArray_helloWorld_minMax.png)
@@ -1010,11 +1010,11 @@ L'attribut behavior propose des variations de la représentation standard des va
 
 ```4d
  var $ob3; $ob4 : Object
- OB SET($ob3;"valueType";"integer")
- OB SET($ob3;"value";-3)
- OB SET($ob4;"valueType";"integer")
- OB SET($ob4;"value";-3)
- OB SET($ob4;"behavior";"threeStates")
+ OB SET($ob3; "valueType" ; "integer")
+ OB SET($ob3; "value";-3)
+ OB SET($ob4; "valueType" ; "integer")
+ OB SET($ob4; "value";-3)
+ OB SET($ob4; "behavior" ; "threeStates")
 ```
 
 ![](../assets/en/FormObjects/listbox_column_objectArray_helloWorld_behavior.png)
@@ -1036,12 +1036,12 @@ Exemples :
 
 ```4d
 	ARRAY TEXT($RequiredList;0)
-	APPEND TO ARRAY($RequiredList;"Open")
-	APPEND TO ARRAY($RequiredList;"Closed")
-	var $ob Object
-	OB SET($ob;"valueType";"text")
-	OB SET($ob;"value";"Closed")
-	OB SET ARRAY($ob;"requiredList";$RequiredList)
+	APPEND TO ARRAY($RequiredList; "Open")
+	APPEND TO ARRAY($RequiredList; "Closed")
+	var $ob : Object
+	OB SET($ob; "valueType" ; "text")
+	OB SET($ob; "value" ; "Closed")
+	OB SET ARRAY($ob; "requiredList" ;$RequiredList)
 ```
 
 ![](../assets/en/FormObjects/listbox_column_objectArray_helloWorld_openClosed.png)
@@ -1056,9 +1056,9 @@ Exemples :
 	APPEND TO ARRAY($ChoiceList;50)
 	APPEND TO ARRAY($ChoiceList;100)
 	var $ob : Object
-	OB SET($ob;"valueType";"integer")
-	OB SET($ob;"value";10) //10 as default value
-	OB SET ARRAY($ob;"choiceList";$ChoiceList)
+	OB SET($ob; "valueType" ; "integer")
+	OB SET($ob; "value";10) //10 comme valeur par défaut
+	OB SET ARRAY($ob; "choiceList" ;$ChoiceList)
 ```
 
 ![](../assets/en/FormObjects/listbox_column_objectArray_helloWorld_commonValues.png)
@@ -1080,10 +1080,10 @@ Exemples :
 
 ```4d
 	var $ob : Object
-	OB SET($ob;"valueType";"text")
-	OB SET($ob;"saveAs";"value")
-	OB SET($ob;"value";"blue")
-	OB SET($ob;"requiredListName";"colors")
+	OB SET($ob; "valueType" ; "text")
+	OB SET($ob; "saveAs" ; "value")
+	OB SET($ob; "value" ; "blue")
+	OB SET($ob; "requiredListName" ; "colors")
 ```
 
 ![](../assets/en/FormObjects/listbox_column_objectArray_colorsResult.png)
@@ -1091,16 +1091,16 @@ Exemples :
 - Vous voulez afficher une liste déroulante basée sur une liste créée par programmation, et la stocker en tant que référence :
 
 ```4d
-	<>List:=New list
-	APPEND TO LIST(<>List;"Paris";1)
-	APPEND TO LIST(<>List;"London";2)
-	APPEND TO LIST(<>List;"Berlin";3)
-	APPEND TO LIST(<>List;"Madrid";4)
+	<>List:=Nouvelle liste
+	APPEND TO LIST(<>List ; "Paris";1)
+	APPEND TO LIST(<>List ; "London";2)
+	APPEND TO LIST(<>List ; "Berlin";3)
+	APPEND TO LIST(<>List ; "Madrid";4)
 	var $ob : Object
-	OB SET($ob;"valueType";"integer")
-	OB SET($ob;"saveAs";"reference")
-	OB SET($ob;"value";2) //displays London by default
-	OB SET($ob;"requiredListReference";<>List)
+	OB SET($ob; "valueType" ; "integer")
+	OB SET($ob; "saveAs" ; "reference")
+	OB SET($ob; "value";2) //affiche Londres par défaut
+	OB SET($ob; "requiredListReference";<>List)
 ```
 
 ```
@@ -1124,10 +1124,10 @@ Vous voulez afficher une combo box basée sur une énumération nommée "colors"
 
 ```4d
  var $ob : Object
- OB SET($ob;"valueType";"text")
+ OB SET($ob; "valueType" ; "text")
 
- OB SET($ob;"value";"blue")
- OB SET($ob;"choiceListName";"colors")
+ OB SET($ob; "value" ; "blue")
+ OB SET($ob; "choiceListName" ; "colors")
 ```
 
 ![](../assets/en/FormObjects/listbox_column_objectArray_colorsResult.png)
@@ -1152,13 +1152,13 @@ Vous souhaitez définir une valeur de saisie numérique suivie d'une unité parm
 
 ```4d
 ARRAY TEXT($_units;0)
-APPEND TO ARRAY($_units;"lines")
-APPEND TO ARRAY($_units;"pixels")
+APPEND TO ARRAY($_units; "lines")
+APPEND TO ARRAY($_units; "pixels")
 var $ob : Object
-OB SET($ob;"valueType";"integer")
-OB SET($ob;"value";2) // 2 "units"
-OB SET($ob;"unitReference";1) //"lines"
-OB SET ARRAY($ob;"unitsList";$_units)
+OB SET($ob; "valueType" ; "integer")
+OB SET($ob; "value";2) // 2 "unités"
+OB SET($ob; "unitReference";1) // "lignes"
+OB SET ARRAY($ob; "unitsList" ;$_units)
 ```
 
 ![](../assets/en/FormObjects/listbox_column_objectArray_unitList.png)
@@ -1173,10 +1173,10 @@ Voici un exemple :
 
 ```4d
 var $ob1 : Object
-var $entry:="Hello world!"
-OB SET($ob;"valueType";"text")
-OB SET($ob;"alternateButton";True)
-OB SET($ob;"value";$entry)
+var $entry:= "Hello world !"
+OB SET($ob; "valueType" ; "text")
+OB SET($ob; "alternateButton";True)
+OB SET($ob; "value" ;$entry)
 ```
 
 ![](../assets/en/FormObjects/listbox_column_objectArray_alternateButton.png)
@@ -1189,8 +1189,8 @@ L'attribut "valueType" de valeur "color" vous permet d'afficher soit une couleur
 
   ```4d
   var $ob4 : Object
-  OB SET($ob4;"valueType";"color")
-  OB SET($ob4;"value";0x00FF0000)
+  OB SET($ob4; "valueType" ; "color")
+  OB SET($ob4; "value";0x00FF0000)
   ```
 
 ![](../assets/en/FormObjects/listbox_column_objectArray_colorValue.png)
