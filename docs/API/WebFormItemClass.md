@@ -50,21 +50,20 @@ The `.hide()` function <!-- REF #WebFormItemClass.hide().Summary -->hides the co
 
 To call a function that hides an image when the user clicks a button: 
 
-1. Select the image component on the canvas, and enter a server-side reference in the Properties Panel > Server Side, for example "myImage".
-2. Create an exposed function named `isHidden` that contains the following code:
+&. Create an exposed function inside a shared singleton class named `isHidden` that contains the following code:
 
 ```4d  
-//to update 
-exposed function isHidden()
 
-var myComponent : 4D.WebFormItem
-
-myComponent = webForm.myImage
-myComponent.hide() // Hide the component that has "myImage" as server reference 
+shared singleton Class constructor()
+exposed Function isHidden()
+	var myComponent : 4D.WebFormItem
+	
+	myComponent:=Web Form.myImage
+	myComponent.hide()  // Hide the component that has "myImage" as server reference 
 ```
-
+2. In Qodly Studio: Select the image component on the canvas, and enter a server-side reference in the Properties Panel > Server Side, for example "myImage".
 3. Select the Button component and add an `onclick` event to it.
-4. Attach the `isHidden` function to the event.  
+4. Attach the `isHidden` function to the event. 
 
 
 ### .show()

@@ -31,6 +31,53 @@ The returned object contains the following properties:
 | 	|row |number|Data Table component: row number |
 | 	|name |string|Data Table component: qodlysource name of the column (e.g. "firstname", "address.city")|
 
+#### Example
+
+The objective is to display/hide a help text when the user hovers over the component:
+
+![alt-text](img/web-event-2.png)
+
+This is done by attaching `onmouseenter` and `onmouseleave` events to a **Text input** component that displays the information stored in a **Text** component (displaying "This is the help"). 
+
+![alt-text](img/web-event-1.png)
+
+In this scenario: 
+
+* The Text input component has `orderNumber` as Server side reference.
+	![alt-text](img/web-event-3.png)
+* The Text component has `orderNumber` as Server side reference.
+	![alt-text](img/web-event-4.png)
+* The exposed function `help()` is attached to both the `onmouseenter` and `onmouseleave` events and contains the following code: 
+
+```4d
+shared singleton Class constructor()
+exposed Function help()
+	
+	var event : Object
+	var myForm : 4D.WebForm
+	var componentRef : Text
+	
+	myForm:=webForm
+	event:=webEvent
+	componentRef:=event.caller
+	
+	Case of 
+		: (event.eventType="onmouseenter")  // event is onmouseenter 
+			myForm["helpOn_"+componentRef].show()  // show the help on "orderNumber" by showing  
+			// the text component with reference "helpOn_orderNumber" 
+		: (event.eventType="onmouseleave")  // event is onmouseleave 
+			myForm["helpOn_"+componentRef].hide()  // hide the help on orderNumber
+			
+	End case 
+
+```
+
+To open the webform with the help on `orderNumber` hidden, you can associate this function to the `onload` event of the webform:
+
+```4d
+exposed function hideOnLoad()
+	webForm.helpOn_orderNumber.hide()
+```
 
 ## See also 
 

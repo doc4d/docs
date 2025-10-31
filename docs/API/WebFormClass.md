@@ -41,12 +41,13 @@ The returned objects are of the [`4D.WebFormItem`](WebFormItemClass.md) class. T
 #### Example
 
 ```4d  
-// to update
-var myForm: 4D.WebForm
-var component: 4D.WebFormItem
-
-myForm = webForm //returns the page as an object, each property is a component
-component = myForm.myImage //returns the myImage component of the page
+shared singleton Class constructor()
+	
+	var myForm : 4D.WebForm
+	var component : 4D.WebFormItem
+	
+	myForm:=webForm  //returns the page as an object, each property is a component
+	component:=myForm.myImage  //returns the myImage component of the page
 
 ```
 :::info
@@ -106,7 +107,7 @@ For more information on web form states, please refer to [States section on deve
 
 You enable a specific state named "wrongCredentials" in case of error in your login page:
 
-```4d
+```4d  
 Function authenticationError()
 	If (Session.info.type#"remote")
 		Web Form.enableState("wrongCredentials")
@@ -130,6 +131,20 @@ The `.setError()` function <!-- REF #WebFormClass.setError().Summary -->sends *m
 
 For more information, please refer to the [`.setError()` description in the Qodly documentation](https://developer.qodly.com/docs/language/WebFormClass#seterror).
 
+#### Example
+
+```4d  
+shared singleton Class constructor()
+exposed function myError()
+
+webForm.setError("My error message")
+
+```
+
+If the [**Provide feedback**](../../4DQodlyPro/pageLoaders/events/bindingActionToEvents.md#providing-feedback) feature is enabled for the event, the *message* is automatically displayed as a red *toast* at the bottom of the Page and disappears automatically after 5 seconds:
+
+![](img/message-error.png)
+
 ### .setMessage()
 
 <!-- REF #WebFormClass.setMessage().Syntax -->**.setMessage**( *msg* : string)<!-- END REF -->
@@ -146,6 +161,19 @@ The `.setMessage()` function <!-- REF #WebFormClass.setMessage().Summary -->send
 
 For more information, please refer to the [`.setMessage()` description in the Qodly documentation](https://developer.qodly.com/docs/language/WebFormClass#setmessage).
 
+#### Example
+
+```qs
+shared singleton Class constructor()
+exposed function myMessage()
+
+webForm.setMessage("My information message")
+
+```
+
+If the [**Provide feedback**](../../4DQodlyPro/pageLoaders/events/bindingActionToEvents.md#providing-feedback) feature is enabled for the event, the *message* is automatically displayed as a green *toast* at the bottom of the Page and disappears automatically after 5 seconds:
+
+![](img/message-info.png)
 
 ### .setWarning()
 
@@ -162,6 +190,20 @@ For more information, please refer to the [`.setMessage()` description in the Qo
 The `.setWarning()` function  <!-- REF #WebFormClass.setWarning().Summary -->sends *msg* as a warning message to the web form<!-- END REF -->.
 
 For more information, please refer to the [`.setWarning()` description in the Qodly documentation](https://developer.qodly.com/docs/language/WebFormClass#setwarning).
+
+#### Example
+
+```4d
+shared singleton Class constructor()
+exposed function myWarning()
+
+webForm.setWarning("My warning message")
+
+```
+
+If the [**Provide feedback**](../../4DQodlyPro/pageLoaders/events/bindingActionToEvents.md#providing-feedback) feature is enabled for the event, the *message* is automatically displayed as a yellow *toast* at the bottom of the Page and disappears automatically after 5 seconds:
+
+![](img/message-warning.png)
 
 ## See also 
 
