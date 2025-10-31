@@ -52,8 +52,8 @@ Fait pencher le texte sélectionné légèrement vers la droite.
 
 Vous pouvez également définir cette propriété via la commande [**OBJECT SET FONT STYLE**](../commands-legacy/object-set-font-style.md).
 
-> This is normal text.<br/>
-> *This is text in italics.*
+> Ceci est du texte normal.<br/>
+> *Ceci est du texte en italique.*
 
 #### Grammaire JSON
 
@@ -135,9 +135,9 @@ Trois thèmes de polices sont disponibles :
 Il existe deux types de noms de familles de polices :
 
 - *family-name :* Le nom d'une famille de polices, comme "times", "courier", "arial", etc.
-- \*generic-family \*: Le nom d'une famille générique, comme "serif", "sans-serif", "cursive", "fantasy", "monospace".
+- *generic-family*: Le nom d'une famille générique, comme "serif", "sans-serif", "cursive", "fantasy", "monospace".
 
-You can set this using the [`OBJECT SET FONT`](../commands-legacy/object-set-font.md) command.
+Vous pouvez le définir en utilisant la commande [`OBJECT SET FONT`](../commands-legacy/object-set-font.md).
 
 #### Grammaire JSON
 
@@ -145,7 +145,7 @@ You can set this using the [`OBJECT SET FONT`](../commands-legacy/object-set-fon
 | ---------- | --------------- | ------------------------------- |
 | fontFamily | string          | Nom d'une famille de police CSS |
 
-> 4D recommande d'utiliser uniquement les polices de [sécurité Web](https://www.w3schools.com/cssref/css_websafe_fonts.asp).
+> 4D recommande d'utiliser uniquement les polices [compatibles Web](https://www.w3schools.com/cssref/css_websafe_fonts.asp).
 
 #### Objets pris en charge
 
@@ -187,7 +187,7 @@ La couleur peut être spécifiée par :
 - une valeur HEX - comme "# ff0000"
 - une valeur RVB - comme "rgb (255,0,0)"
 
-You can also set this property using the [**OBJECT SET RGB COLORS**](../commands-legacy/object-set-rgb-colors.md) command.
+Vous pouvez également définir cette propriété à l'aide de la commande [**OBJECT SET RGB COLORS**](../commands-legacy/object-set-rgb-colors.md).
 
 #### Grammaire JSON
 
@@ -207,13 +207,13 @@ You can also set this property using the [**OBJECT SET RGB COLORS**](../commands
 
 ## Expression couleur police
 
-`Selection and collection/entity selection type list boxes`
+`List box de type collection/sélection/entity selection`
 
-Utilisée pour appliquer une couleur de police personnalisée à chaque ligne de la list box. Vous devez utiliser des valeurs de couleur RVB. For more information about this, refer to the description of the [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md) command.
+Utilisée pour appliquer une couleur de police personnalisée à chaque ligne de la list box. Vous devez utiliser des valeurs de couleur RVB. Pour plus d'informations, voir la description de la commande [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md).
 
-Vous devez saisir une expression ou une variable (les variables de type tableau ne peuvent pas être utilisées). L'expression ou la variable sera évaluée pour chaque ligne affichée. You can use the constants described in the [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md) command.
+Vous devez saisir une expression ou une variable (les variables de type tableau ne peuvent pas être utilisées). L'expression ou la variable sera évaluée pour chaque ligne affichée. Vous pouvez utiliser les constantes décrites dans la commande [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md).
 
-You can also set this property using the [`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md) command with `lk font color expression` constant.
+Vous pouvez également définir cette propriété en utilisant la commande [`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md) avec la constante `lk font color expression`.
 
 > Cette propriété peut également être définie à l'aide d'une [expression Meta Info](properties_Text.md#meta-info-expression).
 
@@ -240,13 +240,13 @@ Foreground color;Dark shadow color)
 
 ---
 
-## Style Expression {#style-expression}
+## Expression style {#style-expression}
 
-`Selection and collection/entity selection type list boxes`
+`List box de type collection/sélection/entity selection`
 
 Utilisé pour appliquer un style de police personnalisé à chaque ligne de list box ou de chaque cellule de la colonne.
 
-Vous devez saisir une expression ou une variable (les variables de type tableau ne peuvent pas être utilisées). L'expression ou variable sera évaluée pour chaque ligne affichée (si elle s'applique à la list box) ou chaque cellule affichée (si elle s'applique à la list box). You can use the constants listed in the [`LISTBOX SET ROW FONT STYLE`](../commands-legacy/listbox-set-row-font-style.md) command.
+Vous devez saisir une expression ou une variable (les variables de type tableau ne peuvent pas être utilisées). L'expression ou variable sera évaluée pour chaque ligne affichée (si elle s'applique à la list box) ou chaque cellule affichée (si elle s'applique à la list box). Vous pouvez utiliser les constantes listées dans la commande [`LISTBOX SET ROW FONT STYLE`](../commands-legacy/listbox-set-row-font-style.md).
 
 Voici un exemple :
 
@@ -254,7 +254,7 @@ Voici un exemple :
 Choose([Companies]ID;Bold;Plain;Italic;Underline)
 ```
 
-You can also set this property using the [`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md) command with `lk font style expression` constant.
+Vous pouvez également définir cette propriété en utilisant la commande [`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md) avec la constante `lk font style expression`.
 
 > Cette propriété peut également être définie à l'aide d'une [expression Meta Info](properties_Text.md#meta-info-expression).
 
@@ -286,8 +286,8 @@ Emplacement horizontal du texte dans la zone où il apparait.
 
 :::note
 
-- "automatic" is not supported by [check boxes](checkbox_overview.md) and [radio buttons](radio_overview.md)
-- "justify" is only supported by [inputs](input_overview.md) and [text areas](text.md)
+- "automatic" n'est pas pris en charge par les [cases à cocher](checkbox_overview.md) et les [boutons radio](radio_overview.md)
+- "justify" n'est pris en charge que par les [zones de saisie](input_overview.md) et les [zones de texte](text.md)
 
 :::
 
@@ -310,7 +310,7 @@ L'option **Default** (valeur JSON `automatique`) définit l'alignement en foncti
 - `bas` pour toutes les données (sauf les images) et
 - `haut` pour les données de type image.
 
-This property can also be handled by the [`OBJECT Get vertical alignment`](../commands-legacy/object-get-vertical-alignment.md) and [`OBJECT SET VERTICAL ALIGNMENT`](../commands-legacy/object-set-vertical-alignment.md) commands.
+Cette propriété peut également être gérée par les commandes [`OBJECT Get vertical alignment`](../commands-legacy/object-get-vertical-alignment.md) et [`OBJECT SET VERTICAL ALIGNMENT`](../commands-legacy/object-set-vertical-alignment.md).
 
 #### Grammaire JSON
 
@@ -328,9 +328,9 @@ This property can also be handled by the [`OBJECT Get vertical alignment`](../co
 
 ---
 
-## Meta Info expression
+## Meta info expression
 
-`Collection or entity selection type list boxes`
+`List box collection ou entity selection`
 
 Indique une expression ou une variable qui sera évaluée pour chaque ligne affichée. Elle permet de définir un ensemble d'attributs texte des lignes. Vous devez passer une **variable objet** ou une **expression qui retourne un objet**. Les propriétés suivantes sont prises en charge :
 
@@ -342,7 +342,7 @@ Indique une expression ou une variable qui sera évaluée pour chaque ligne affi
 | fontWeight       | string  | "normal","bold"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | textDecoration   | string  | "normal","underline"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | unselectable     | boolean | Désigne la ligne correspondante comme n'étant pas sélectionnable (c'est-à-dire que le surlignage n'est pas possible). Les zones saisissables ne sont plus saisissables si cette option est activée, à moins que l'option «Single-click Edit » ne soit également activée. Les contrôles tels que les cases à cocher et les listes restent fonctionnels. Ce paramètre est ignoré si le mode de sélection de la listbox est "None". Valeur par défaut : False. |
-| disabled         | boolean | Désactive la ligne correspondante. Les zones saisissables ne sont plus saisissables si cette option est activée. Text and controls (checkboxes, lists, etc.) appear dimmed or grayed out. Valeur par défaut : False.                                                                                                                                                                                                                                        |
+| disabled         | boolean | Désactive la ligne correspondante. Les zones saisissables ne sont plus saisissables si cette option est activée. Les textes et contrôles (cases à cocher, listes, etc.) apparaissent atténués ou grisés. Valeur par défaut : False.                                                                                                                                                                                                                         |
 
 La propriété spéciale "cell" permet d'appliquer un ensemble de propriétés à une seule colonne :
 
@@ -352,20 +352,20 @@ La propriété spéciale "cell" permet d'appliquer un ensemble de propriétés �
 |                  | *columnName* |                | object | *columnName* est le nom d'objet de la colonne de listbox                                                                                                                                                                                                                                                                                    |
 |                  |              | *propertyName* | string | Les propriétés "stroke", "fill", "fontStyle", "fontWeight" ou "textDecoration" (voir ci-dessus). **Note** : les propriétés "unselectable" et "disabled" ne peuvent être définies qu'au niveau de la ligne. Elles sont ignorées si elles sont passées dans l'objet "cell" |
 
-> Style settings made with this property are ignored if other style settings are already defined through expressions (*i.e.*, [Style Expression](#style-expression), [Font Color Expression](#font-color-expression), [Background Color Expression](./properties_BackgroundAndBorder.md#background-color-expression)).
+> Les paramètres de style définis à l'aide de cette propriété sont ignorés si d'autres paramètres de style sont déjà définis à l'aide d'expressions (*i.e.*, [Expression style](#style-expression), [Expression couleur de police](#font-color-expression), [Expression couleur d'arrière-plan](./properties_BackgroundAndBorder.md#background-color-expression)).
 
-**Examples**
+**Exemples**
 
 Dans une méthode projet *Color*, écrivez le code suivant :
 
 ```4d
-//Color method
-//Sets font color for certain rows and background color for Col2 and Col3 columns
+//Méthode Color
+//Définit la couleur de la police pour certaines lignes et la couleur d'arrière-plan pour les colonnes Col2 et Col3
 Form.meta:=New object
-If(This.ID>5) //ID is an attribute of collection objects/entities
+If(This.ID>5) //ID est un attribut de la collection d'objets/entités
   Form.meta.stroke:="purple"
-  Form.meta.cell:=New object("Col2";New object("fill";"black");\
-  	"Col3";New object("fill";"red"))
+  Form.meta.cell:=New object("Col2";New object("fill" ; "black");\
+    "Col3";New object("fill" ; "red"))
 Else
   Form.meta.stroke:="orange"
 End if
@@ -374,25 +374,25 @@ End if
 **Bonne pratique :** Pour des raisons d'optimisation, il est généralement recommandé de créer l'objet `meta.cell` une seule fois dans la méthode du formulaire :
 
 ```4d
-  //form method
+  // méthode formulaire
  Case of
     :(Form event code=On Load)
-       Form.colStyle:=New object("Col2";New object("fill";"black");\
-       	"Col3";New object("fill";"red"))  
- // you can also define other style sets  
-       Form.colStyle2:=New object("Col2";New object("fill";"green");\
-       	"Col3";New object("fontWeight";"bold"))  
+       Form.colStyle:=New object("Col2";New object("fill" ; "black");\
+        "Col3";New object("fill" ; "red"))  
+ // vous pouvez également définir d'autres jeux de styles  
+       Form.colStyle2:=New object("Col2";New object("fill" ; "green");\
+        "Col3";New object("fontWeight" ; "bold"))  
  End case
 ```
 
 La méthode *Color* contiendrait alors :
 
 ```4d
-  //Color method
+  //Méthode Color
  ...
  If(This.ID>5)
     Form.meta.stroke:="purple"
-    Form.meta.cell:=Form.colStyle //reuse the same object for better performance
+    Form.meta.cell:=Form.colStyle //réutiliser le même objet pour de meilleures performances
  Else
  	Form.meta.stroke:="orange"
 	Form.meta.cell:=Form.colStyle2
@@ -418,7 +418,7 @@ La méthode *Color* contiendrait alors :
 
 ## Multistyle
 
-This property enables the possibility of using [specific styles](https://doc.4d.com/4Dv20/4D/20.6/Supported-tags.300-7488021.en.html) in the selected area. Lorsque cette option est cochée, 4D interprète toutes les balises `<SPAN> HTML` trouvées dans la zone.
+Cette propriété permet d'utiliser des [styles spécifiques](https://doc.4d.com/4Dv20/4D/20.6/Supported-tags.300-7488021.en.html) dans la zone sélectionnée. Lorsque cette option est cochée, 4D interprète toutes les balises `<SPAN> HTML` trouvées dans la zone.
 
 Par défaut, cette option n'est pas activée.
 
@@ -467,13 +467,13 @@ En plus des [zones de texte statiques](text.md), les objets de texte des [zones 
 
 ---
 
-## Row Font Color Array {#row-font-color-array}
+## Tableau couleurs de police {#row-font-color-array}
 
 `List box de type tableau`
 
 Permet de définir un style de police personnalisé à chaque ligne de list box ou de chaque cellule de la colonne.
 
-Le nom d'un tableau Entier Long doit être utilisé. Chaque élément de ce tableau correspond à une ligne de la zone de list box (si elle est appliquée à la liste box) ou à une cellule de la colonne (si elle est appliquée à une colonne), le tableau doit donc avoir la même taille que le tableau associé à la colonne. You can use the constants described in the [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md) command. Si vous souhaitez que la cellule hérite de la couleur d'arrière-plan définie au niveau supérieur, passez la valeur -255 à l'élément de tableau correspondant.
+Le nom d'un tableau Entier Long doit être utilisé. Chaque élément de ce tableau correspond à une ligne de la zone de list box (si elle est appliquée à la liste box) ou à une cellule de la colonne (si elle est appliquée à une colonne), le tableau doit donc avoir la même taille que le tableau associé à la colonne. Vous pouvez utiliser les constantes décrites dans la commande [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md). Si vous souhaitez que la cellule hérite de la couleur d'arrière-plan définie au niveau supérieur, passez la valeur -255 à l'élément de tableau correspondant.
 
 #### Grammaire JSON
 
@@ -491,13 +491,13 @@ Le nom d'un tableau Entier Long doit être utilisé. Chaque élément de ce tabl
 
 ---
 
-## Row Style Array {#row-style-array)
+## Tableau de styles {#row-style-array)
 
 `List box de type tableau`
 
 <a href="listbox_overview.md">List Box</a> - <a href="listbox_overview.md#list-box-columns">Colonne List Box</a>
 
-Le nom d'un tableau Entier Long doit être utilisé. Chaque élément de ce tableau correspond à une ligne de la zone de list box (si elle est appliquée à la liste box) ou à une cellule de la colonne (si elle est appliquée à une colonne), le tableau doit donc avoir la même taille que le tableau associé à la colonne. To fill the array (using a method), use the constants listed in the [`LISTBOX SET ROW FONT STYLE`](../commands-legacy/listbox-set-row-font-style.md) command. Vous pouvez ajouter des constantes ensemble pour combiner plusieurs styles. Si vous souhaitez que la cellule hérite du style défini au niveau supérieur, passez la valeur -255 à l'élément de tableau correspondant.
+Le nom d'un tableau Entier Long doit être utilisé. Chaque élément de ce tableau correspond à une ligne de la zone de list box (si elle est appliquée à la liste box) ou à une cellule de la colonne (si elle est appliquée à une colonne), le tableau doit donc avoir la même taille que le tableau associé à la colonne. Pour remplir le tableau (à l'aide d'une méthode), utilisez les constantes listées dans la commande [`LISTBOX SET ROW FONT STYLE`](../commands-legacy/listbox-set-row-font-style.md). Vous pouvez ajouter des constantes ensemble pour combiner plusieurs styles. Si vous souhaitez que la cellule hérite du style défini au niveau supérieur, passez la valeur -255 à l'élément de tableau correspondant.
 
 #### Grammaire JSON
 
