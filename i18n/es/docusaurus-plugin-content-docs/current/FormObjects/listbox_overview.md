@@ -136,7 +136,7 @@ Las propiedades soportadas dependen del tipo de list box.
 | [Mostrar encabezados](properties_Headers.md#display-headers)                                      | X              | X                  | X                                     |
 | [Mostrar pies de página](properties_Footers.md#display-footers)                                   | X              | X                  | X                                     |
 | [Doble clic en la fila](properties_ListBox.md#double-click-on-row)                                |                | X                  |                                       |
-| [Arrastrable](properties_Action.md#droppable)                                                     | X              | X                  | X                                     |
+| [Arrastrable](properties_Action.md#draggable)                                                     | X              | X                  | X                                     |
 | [Soltable](properties_Action.md#droppable)                                                        | X              | X                  | X                                     |
 | [Enfocable](properties_Entry.md#focusable)                                                        | X              | X                  | X                                     |
 | [Fuente](properties_Text.md#fuente)                                                               | X              | X                  | X                                     |
@@ -877,10 +877,10 @@ the value type (mandatory): text, color, event, etc. the value itself (optional)
 the cell content display (optional): button, list, etc. additional settings (optional): depend on the value type To define these properties, you need to set the appropriate attributes in the object (available attributes are listed below). Por ejemplo, puede escribir "¡Hola Mundo!" en una columna objeto utilizando este sencillo código:
 
 ```4d
-ARRAY OBJECT(obColumn;0) //array de columnas
- C_OBJECT($ob) //primer elemento
- OB SET($ob; "valueType"; "text") //define el tipo de valor (obligatorio)
- OB SET($ob; "value"; "Hello World!") //define el valor
+ARRAY OBJECT(obColumn;0) //column array
+ var $ob : Object //first element
+ OB SET($ob;"valueType";"text") //defines the value type (mandatory)
+ OB SET($ob;"value";"Hello World!") //defines the value
  APPEND TO ARRAY(obColumn;$ob)  
 ```
 
@@ -959,15 +959,15 @@ El único atributo obligatorio es "valueType" y sus valores soportados son "text
 Los valores de las celdas se almacenan en el atributo "value". Este atributo se utiliza tanto para la entrada como para la salida. También puede utilizarse para definir valores por defecto cuando se utilizan listas (ver a continuación).
 
 ```4d
- ARRAY OBJECT(obColumn;0) //array columna 
- C_OBJECT($ob1)
- $entry:="Hello world!"
+ ARRAY OBJECT(obColumn;0) //column array
+ var $ob1;$ob2;$ob3 : Object
+ var $entry:="Hello world!"
  OB SET($ob1;"valueType";"text")
- OB SET($ob1;"value";$entry) // si el usuario introduce un nuevo valor, $entry contendrá el valor editado
- C_OBJECT($ob2)
+ OB SET($ob1;"value";$entry) // if the user enters a new value, $entry will contain the edited value
+
  OB SET($ob2;"valueType";"real")
  OB SET($ob2;"value";2/3)
- C_OBJECT($ob3)
+
  OB SET($ob3;"valueType";"boolean")
  OB SET($ob3;"value";True)
 
@@ -987,8 +987,8 @@ Cuando el "valueType" es "real" o "integer", el objeto también acepta atributos
 Estos atributos pueden utilizarse para controlar el rango de valores de entrada. Cuando se valida una celda (cuando pierde el foco), si el valor de entrada es menor que el valor mínimo o mayor que el valor máximo, entonces se rechaza. En este caso, se mantiene el valor anterior y un consejo muestra una explicación.
 
 ```4d
- C_OBJECT($ob3)
- $entry3:=2015
+ var $ob3 : Object
+ var $entry3:=2015
  OB SET($ob3;"valueType";"integer")
  OB SET($ob3;"value";$entry3)
  OB SET($ob3;"min";2000)
@@ -1006,11 +1006,9 @@ El atributo behavior ofrece variaciones a la representación estándar de los va
 | behavior | threeStates                                                   | integer                         | Representa un valor numérico como una casilla de selección de tres estados.<br/> 2=intermediario, 1=seleccionado, 0=no seleccionado, -1=invisible, -2=no seleccionado desactivado, -3=seleccionado desactivado, -4=semi seleccionado desactivado |
 
 ```4d
- C_OBJECT($ob3)
+ var $ob3; $ob4 : Object
  OB SET($ob3;"valueType";"integer")
-
  OB SET($ob3;"value";-3)
- C_OBJECT($ob4)
  OB SET($ob4;"valueType";"integer")
  OB SET($ob4;"value";-3)
  OB SET($ob4;"behavior";"threeStates")
@@ -1037,7 +1035,7 @@ Ejemplos:
 	ARRAY TEXT($RequiredList;0)
 	APPEND TO ARRAY($RequiredList;"Open")
 	APPEND TO ARRAY($RequiredList;"Closed")
-	C_OBJECT($ob)
+	var $ob Object
 	OB SET($ob;"valueType";"text")
 	OB SET($ob;"value";"Closed")
 	OB SET ARRAY($ob;"requiredList";$RequiredList)
@@ -1054,9 +1052,9 @@ Ejemplos:
 	APPEND TO ARRAY($ChoiceList;20)
 	APPEND TO ARRAY($ChoiceList;50)
 	APPEND TO ARRAY($ChoiceList;100)
-	C_OBJECT($ob)
+	var $ob : Object
 	OB SET($ob;"valueType";"integer")
-	OB SET($ob;"value";10) //10 como valor por defecto
+	OB SET($ob;"value";10) //10 as default value
 	OB SET ARRAY($ob;"choiceList";$ChoiceList)
 ```
 
@@ -1078,7 +1076,7 @@ Ejemplos:
 ![](../assets/en/FormObjects/listbox_column_objectArray_colors.png)
 
 ```4d
-	C_OBJECT($ob)
+	var $ob : Object
 	OB SET($ob;"valueType";"text")
 	OB SET($ob;"saveAs";"value")
 	OB SET($ob;"value";"blue")
@@ -1095,10 +1093,10 @@ Ejemplos:
 	APPEND TO LIST(<>List;"London";2)
 	APPEND TO LIST(<>List;"Berlin";3)
 	APPEND TO LIST(<>List;"Madrid";4)
-	C_OBJECT($ob)
+	var $ob : Object
 	OB SET($ob;"valueType";"integer")
 	OB SET($ob;"saveAs";"reference")
-	OB SET($ob;"value";2) //muestra London por defecto
+	OB SET($ob;"value";2) //displays London by default
 	OB SET($ob;"requiredListReference";<>List)
 ```
 
@@ -1122,7 +1120,7 @@ Ejemplo:
 ![](../assets/en/FormObjects/listbox_column_objectArray_colors.png)
 
 ```4d
- C_OBJECT($ob)
+ var $ob : Object
  OB SET($ob;"valueType";"text")
 
  OB SET($ob;"value";"blue")
@@ -1153,7 +1151,7 @@ Queremos definir una entrada numérica seguida de dos posibles unidades: " líne
 ARRAY TEXT($_units;0)
 APPEND TO ARRAY($_units;"lines")
 APPEND TO ARRAY($_units;"pixels")
-C_OBJECT($ob)
+var $ob : Object
 OB SET($ob;"valueType";"integer")
 OB SET($ob;"value";2) // 2 "units"
 OB SET($ob;"unitReference";1) //"lines"
@@ -1171,8 +1169,8 @@ Cuando este botón es presionado por un usuario, se generará un evento `On Alte
 Ejemplo:
 
 ```4d
-C_OBJECT($ob1)
-$entry:="Hello world!"
+var $ob1 : Object
+var $entry:="Hello world!"
 OB SET($ob;"valueType";"text")
 OB SET($ob;"alternateButton";True)
 OB SET($ob;"value";$entry)
@@ -1187,7 +1185,7 @@ El atributo valueType de valor "color" permite mostrar un color o un texto.
 - Si el valor es un número, se dibuja un rectángulo de color dentro de la celda. Ejemplo:
 
   ```4d
-  C_OBJECT($ob4)
+  var $ob4 : Object
   OB SET($ob4;"valueType";"color")
   OB SET($ob4;"value";0x00FF0000)
   ```
@@ -1205,7 +1203,7 @@ Opcionalmente, se puede pasar un atributo "label".
 Ejemplo:
 
 ```4d
-C_OBJECT($ob)
+var $ob : Object
 OB SET($ob;"valueType";"event")
 OB SET($ob;"label";"Edit...")
 ```
