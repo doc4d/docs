@@ -86,7 +86,7 @@ For a [multi-style](properties_Text.md#multi-style) text type [input](input_over
 
 [`OBJECT Get enterable`](../commands-legacy/object-get-enterable.md) - [`OBJECT SET ENTERABLE`](../commands-legacy/object-set-enterable.md)
 
-#### 参照:
+#### 参照
 
 [`FORM GET ENTRY ORDER`](../commands-legacy/form-get-entry-order.md) - [`FORM SET ENTRY ORDER`](../commands-legacy/form-set-entry-order.md)
 
@@ -320,14 +320,14 @@ xliff 参照を ":xliff:resname" の形でプレースホルダーとして使�
 
 #### JSON 文法
 
-| 名称              | データタイプ  | とりうる値                                                                                                                                                                                                                                           |
-| --------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| shortcutAccel   | boolean | true, false (Windows: Ctrl/macOS: Command)                                                                                                                                                   |
-| shortcutAlt     | boolean | true, false                                                                                                                                                                                                                                     |
-| shortcutControl | boolean | true, false (macOS: Control)                                                                                                                                                                                 |
-| shortcutShift   | boolean | true, false                                                                                                                                                                                                                                     |
-|                 |         |                                                                                                                                                                                                                                                 |
-| shortcutKey     | string  | <li>任意の文字キー: "a", "b"...</li><li>[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
+| 名称              | データタイプ  | とりうる値                                                                                                                                                                                                                                                      |
+| --------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| shortcutAccel   | boolean | true, false (Windows: Ctrl/macOS: Command)                                                                                                                                                              |
+| shortcutAlt     | boolean | true, false                                                                                                                                                                                                                                                |
+| shortcutControl | boolean | true, false (macOS: Control)                                                                                                                                                                                            |
+| shortcutShift   | boolean | true, false                                                                                                                                                                                                                                                |
+|                 |         |                                                                                                                                                                                                                                                            |
+| shortcutKey     | string  | <li>any character key: "a", "b"...</li><li>"[F1]" -> "[F15]", "[Return]", "[Enter]", "[Backspace]", "[Tab]", "[Esc]", "[Del]", "[Home]", "[End]", "[Help]", "[Page up]", "[Page down]", "[left arrow]", "[right arrow]", "[up arrow]", "[down arrow]"</li> |
 
 #### 対象オブジェクト
 
