@@ -57,8 +57,8 @@ exposed Function help()
 	var myForm : 4D.WebForm
 	var componentRef : Text
 	
-	myForm:=webForm
-	event:=webEvent
+	myForm:=web Form
+	event:=web Event
 	componentRef:=event.caller
 	
 	Case of 
@@ -76,7 +76,8 @@ To open the webform with the help on `orderNumber` hidden, you can associate thi
 
 ```4d
 exposed function hideOnLoad()
-	webForm.helpOn_orderNumber.hide()
+	myForm:=web Form
+	myForm["helpOn_orderNumber"].hide()
 ```
 
 ## See also 
