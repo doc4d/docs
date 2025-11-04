@@ -39,21 +39,12 @@ You can assign specific permission actions to the following resources in your pr
 Each time a resource is accessed within a session (whatever the way it is accessed), 4D checks that the session has the appropriate permissions, and rejects the access if it is not authorized. 
 
 
+
 ## Permissions
 
-Assigning a permission is like putting a lock on a door. When no specific lock has been installed, the door is either closed or open for all requests, depending on the [`restrictedByDefault` property value](#restrictedbydefault). When a lock is installed, only sessions with privilege having the corresponding key (i.e., a permission action) will be able to open the lock. 
+A permission is the ability to do an action on a resource. For example, *execute the ds.myTable.myFunction()* represents a **permission**. Permissions are defined for the project in the [`roles.json`](#rolesjson-file) file. Each permission can be given to one or more [privileges](#privileges-and-roles). 
 
-A permission action defined at a given level is inherited by default at lower levels, but several permissions can be set:
-
-- A permission action defined at the datastore level is automatically assigned to all dataclasses. The *execute* permission action defined at the datastore level applies to all functions of the project, including all [singleton](../REST/$singleton.md) functions. 
-- A permission action defined at a dataclass level overrides the datastore setting (if any). By default, all attributes of the dataclass inherit from the dataclass permission(s).
-- Unlike dataclass permissions, a permission action defined at the attribute level does not override the parent dataclass permission(s), but is added to. For example, if you assigned the "general" privilege to a dataclass and the "detail" privilege to an attribute of the dataclass, both "general" and "detail" privileges must be set to the session to access the attribute.
-
-:::info
-
-Permissions control access to datastore objects or functions. If you want to filter read data according to some criteria, you might consider [restricting entity selections](entities.md#restricting-entity-selections) which can be more appropriate in this case.
-
-:::
+When **no specific permission** has been defined for a resource, access to the resource may be automatically **unrestricted** or **restricted** depending on the [default mode defined for the project](#restriction-modes). 
 
 
 ### Permission actions
@@ -81,6 +72,65 @@ Available actions are related to target resource.
 :::
 
 Setting permissions requires to be consistent, in particular **update** and **drop** permissions also need **read** permission (but **create** does not need it).
+
+
+
+### Inherited permissions
+
+A permission action defined at a given level is inherited by default at lower levels, but several permissions can be set:
+
+- A permission action defined at the datastore level is automatically assigned to all dataclasses. The *execute* permission action defined at the datastore level applies to all functions of the project, including all [singleton](../REST/$singleton.md) functions. 
+- A permission action defined at a dataclass level overrides the datastore setting (if any). By default, all attributes of the dataclass inherit from the dataclass permission(s).
+- Unlike dataclass permissions, a permission action defined at the attribute level does not override the parent dataclass permission(s), but is added to. For example, if you assigned the "general" privilege to a dataclass and the "detail" privilege to an attribute of the dataclass, both "general" and "detail" privileges must be set to the session to access the attribute.
+
+:::info
+
+Permissions control access to datastore objects or functions. If you want to filter read data according to some criteria, you might consider [restricting entity selections](entities.md#restricting-entity-selections) which can be more appropriate in this case.
+
+:::
+
+### Assigning permissions to ORDA class functions
+
+When configuring permissions, ORDA class functions are declared in the `applyTo` element using the following syntax:
+
+```json
+<DataclassName>.<functionName>
+```
+For example, if you want to apply a permission to the following function:
+
+```4d
+// cs.CityEntity class
+Class extends Entity
+  Function getPopulation() : Integer
+   ...
+```
+... you have to write:
+
+```json
+"applyTo":"City.getPopulation"
+```
+
+It means that you cannot use the same function names in the various ORDA classes (entity, entity selection, dataclass) if you want them to be assigned privileges. In this case, you need to use distinct function names. For example, if you have created a "drop" function in both `cs.CityEntity` and `cs.CitySelection` classes, you need to give them different names such as `dropEntity()` and `dropSelection()`. You can then write in the "roles.json" file:
+
+```json
+	"permissions": {
+		"allowed": [
+			{
+				"applyTo": "City.dropEntity",
+				"type": "method",
+				"promote": [
+					"name"
+				]
+			},
+			{
+				"applyTo": "City.dropSelection",
+				"type": "method",
+				"promote": [
+					"name"
+				]
+			}
+    ]
+```
 
 
 
@@ -146,45 +196,28 @@ The `roles.json` file describes the whole web security settings for the project.
 |||\[].drop|Collection of strings||List of privileges|
 |||\[].execute|Collection of strings||List of privileges|
 |||\[].promote|Collection of strings||List of privileges|
-|restrictedByDefault|||Boolean||True to [restrict by default](#restrictedbydefault) all accesses to resources in web processes (default: false) |
-|forceLogin|||Boolean||True to enable the ["forceLogin" mode](../REST/authUsers.md#force-login-mode) (default: false) |
+|restrictedByDefault|||Boolean||If true, access to resources without explicit permissions is denied |
+|forceLogin|||Boolean||If true, enables ["forceLogin" mode](../REST/authUsers.md#force-login-mode) |
 
 
 :::caution Reminder
 
 - The "WebAdmin" privilege name is reserved to the application. It is not recommended to use this name for custom privileges.
-- `privileges` and `roles` names are case insensitive.
+- `privileges` and `roles` names are case-insensitive.
 
 :::
 
+### Default File Location and Content
 
-### `restrictedByDefault`
+When a new project is created, a default `roles.json` file is generated at:
 
-The `restrictedByDefault` property configures how every [resource](#resources) will be accessed by default when [no permission action has been set on it](#permission-actions):
+```
+<project folder>/Project/Sources/ 
+```
 
-- if set to **false** (default for new projects): access to a resource for which no specific permission action has been declared is free for all requests.
-- if set to **true** (recommended for production, see below): access to a resource for which no specific permission action has been declared is forbidden for all requests.
+See [Architecture](../Project/architecture.md#sources) section.
 
-
-:::note Compatibility
-
-When enabling access to Qodly Studio using the [One-click configuration dialog](https://developer.4d.com/qodly/4DQodlyPro/gettingStarted#one-click-configuration) in projects converted from previous releases, the `restrictedByDefault` property is added with value **true** in the *roles.json* file. 
-
-:::
-
-### Configuring `restrictedByDefault` and `forceLogin` properties
-
-The most appropriate configuration for the *roles.json* file actually depends on the environment in which it is used: **production** or **development**.
-
-- In **production** environment, both the `restrictedByDefault` and [`forceLogin`](../REST/authUsers.md#force-login-mode) properties should be set to **True** (recommended configuration). This configuration offers the highest security level and allows you to control access to all parts of your application. In this case, any web connection to your application requires the user to be properly logged and their session automatically receives appropriate privileges. Access to resources is restricted by default, and only [explicitely allowed resources](#permission-actions) can be used. This configuration requires some stability in the resources used in your application, since you must assign each of them the appropriate permissions based on your business logic. 
-- In **development** environment, both the `restrictedByDefault` and `forceLogin` properties should be set to **False** (default configuration for new projects). In this case, the login step is not mandatory for web/REST access to your application, and access to resources without permissions is free. You can progressively lock some areas of your application by setting permissions to appropriate resources. This is particularly suitable for the application development and debugging phase.  
-
-
-### Default file
-
-When you create a project, a default `roles.json` file is created at the following location: `<project folder>/Project/Sources/` (see [Architecture](../Project/architecture.md#sources) section). 
-
-The default file has the following contents:
+Default content:
 
 ```json title="/Project/Sources/roles.json"
 
@@ -212,11 +245,7 @@ The default file has the following contents:
 }
 ```
 
-:::caution
 
-Keep in mind that this default configuration is tailored for quick start and smooth development. In production environment, [it is recommended to set the `restrictedByDefault` and `forceLogin` properties to **true**](#configuring-restrictedbydefault-and-forcelogin-properties).
-
-:::
 
 
 :::note Compatibility
@@ -232,48 +261,31 @@ In Qodly Studio for 4D, the login mode can be set using the [**Force login** opt
 :::
 
 
-### Assigning permissions to ORDA class functions
+## Restriction Modes
 
-When configuring permissions, ORDA class functions are declared in the `applyTo` element using the following syntax:
+The `restrictedByDefault` property configures how every [resource](#resources) are accessed when [no specific permission is defined for it](#permission):
 
-```json
-<DataclassName>.<functionName>
-```
-For example, if you want to apply a permission to the following function:
+- **Unrestricted mode** (`restrictedByDefault`: **false**): Resources without defined permissions are accessible to all requests. This mode is suitable for development environments where access can be gradually restricted.
+- **Restricted mode** (`restrictedByDefault`: **true**): Resources without defined permissions are blocked by default. This mode is recommended for production environments where access must be explicitly granted.
 
-```4d
-// cs.CityEntity class
-Class extends Entity
-  Function getPopulation() : Integer
-   ...
-```
-... you have to write:
 
-```json
-"applyTo":"City.getPopulation"
-```
+:::note Compatibility
 
-It means that you cannot use the same function names in the various ORDA classes (entity, entity selection, dataclass) if you want them to be assigned privileges. In this case, you need to use distinct function names. For example, if you have created a "drop" function in both `cs.CityEntity` and `cs.CitySelection` classes, you need to give them different names such as `dropEntity()` and `dropSelection()`. You can then write in the "roles.json" file:
+- When **creating a new project**, the `restrictedByDefault` property is set to **false** in the *roles.json* file (see below). Keep in mind that this configuration is tailored for quick start and smooth development. In production environment, [it is recommended to set the `restrictedByDefault` and `forceLogin` properties to **true**](#configuring-restrictedbydefault-and-forcelogin-properties).
+- In **projects converted from previous releases**; when enabling access to Qodly Studio using the [One-click configuration dialog](https://developer.4d.com/qodly/4DQodlyPro/gettingStarted#one-click-configuration), the `restrictedByDefault` property is added with value **true** in the *roles.json* file. 
 
-```json
-	"permissions": {
-		"allowed": [
-			{
-				"applyTo": "City.dropEntity",
-				"type": "method",
-				"promote": [
-					"name"
-				]
-			},
-			{
-				"applyTo": "City.dropSelection",
-				"type": "method",
-				"promote": [
-					"name"
-				]
-			}
-    ]
-```
+:::
+
+### Recommended Configuration
+
+Depending on your environment, the recommended settings are:
+
+- **Production**: Set both `restrictedByDefault` and [`forceLogin`](../REST/authUsers.md#force-login-mode) to **true**. This ensures maximum security by requiring user authentication and explicitly defined permissions for resource access. 
+- **Development**: Set both `restrictedByDefault` and [`forceLogin`](../REST/authUsers.md#force-login-mode) to **false**. This allows easier access during development and debugging, with the possibility to gradually apply restrictions.
+
+
+
+
 
 
 ### `Roles_Errors.json` file
@@ -295,94 +307,28 @@ End if
 
 ## Example of privilege configuration
 
-The good practice is to keep all data access locked by default to configure the `roles.json` file to only open controlled parts to authorized sessions. For example, to allow some accesses to "guest" sessions:
 
 ```json title="/Project/Sources/roles.json"
 
 {
-  "privileges": [
-    {
-      "privilege": "all",
-      "includes": []
-    }
-  ],
-  "roles": [],
-  "permissions": {
-    "allowed": [
-      {
-        "applyTo": "ds",
-        "type": "datastore",
-        "read": [
-          "all"
-        ],
-        "create": [
-          "all"
-        ],
-        "update": [
-          "all"
-        ],
-        "drop": [
-          "all"
-        ],
-        "execute": [
-          "all"
-        ],
-        "promote": [
-          "all"
-        ]
-      },
-      {
-        "applyTo": "ds.loginAs",
-        "type": "method",
-        "execute": [
-          "guest"
-        ]
-      },
-      {
-        "applyTo": "ds.hasPrivilege",
-        "type": "method",
-        "execute": [
-          "guest"
-        ]
-      },
-      {
-        "applyTo": "ds.clearPrivileges",
-        "type": "method",
-        "execute": [
-          "guest"
-        ]
-      },
-      {
-        "applyTo": "ds.isGuest",
-        "type": "method",
-        "execute": [
-          "guest"
-        ]
-      },
-      {
-        "applyTo": "ds.getPrivileges",
-        "type": "method",
-        "execute": [
-          "guest"
-        ]
-      },
-      {
-        "applyTo": "ds.setAllPrivileges",
-        "type": "method",
-        "execute": [
-          "guest"
-        ]
-      },
-      {
-        "applyTo": "mySingletonClass.createID",
-        "type": "singletonMethod",
-        "execute": [
-          "guest"
-        ]
-      }
-    ]
-  },
-  "restrictedByDefault" : true,
-  "forceLogin": true
-}
-```
+	"forceLogin": true,
+	"restrictedByDefault": true,
+	"permissions": {
+		"allowed": [
+						{
+				"applyTo": "People",
+				"type": "dataclass",
+				"read": [
+					"viewPeople"
+				]
+			}
+		]
+	},
+	"privileges": [
+		{
+			"privilege": "viewPeople",
+			"includes": []
+		}
+	],
+	"roles": []
+}```
