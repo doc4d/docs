@@ -18,7 +18,7 @@ L'application 4D crée des process pour ses propres besoins, par exemple le proc
 Il existe plusieurs façons de créer un nouveau process :
 
 - Exécuter une méthode en mode Développement en sélectionnant la case à cocher **Nouveau process** dans la boîte de dialogue d'exécution de méthode. La méthode choisie dans ce dialogue est la méthode process.
-- La méthode passée en tant que paramètre à la commande `New process` est la méthode process. Utilisez la commande [`New process`](../commands-legacy/new-process.md).
+- Utiliser la commande [`New process`](../commands-legacy/new-process.md). La méthode passée en paramètre à la commande [`New process`](../commands/new-process) est la méthode process.
 - Utiliser la commande [`Execute on server`](../commands-legacy/execute-on-server.md) afin de créer une procédure stockée sur le serveur. La méthode passée en paramètre à la commande est la méthode process.
 - Utiliser la commande [`CALL WORKER`](../commands-legacy/call-worker.md). Si le process du worker n'existe pas déjà, il est créé.
 
@@ -70,25 +70,11 @@ Chaque process a également une sélection courante et un enregistrement courant
 
 :::
 
-## Process globaux et locaux
+## Process sur clients
 
-Les process peuvent être globaux ou locaux dans leur portée. Par défaut, tous les process sont globaux.
+Lorsque vous créez un process sur un 4D distant, un process "jumeau" est créé sur le serveur pour gérer l'accès aux données et le contexte de la base de données dès que nécessaire, c'est-à-dire la première fois que le process sur le 4D distant doit accéder aux données.
 
-S process globaux peuvent effectuer n'importe quelle opération, y compris accéder aux données et les manipuler. Dans la plupart des cas, vous utiliserez des process globaux. Les process locaux ne doivent être utilisés que pour des opérations qui n'accèdent pas aux données. Par exemple, vous pouvez utiliser un process local pour contrôler les éléments d'interface comme les palettes flottantes ou exécuter une méthode de gestion d'événements.
-
-Vous spécifiez qu'un process est local via son nom. Le nom d'un process local doit commencer par le symbole dollar ($).
-
-:::warning
-
-Si vous tentez d'accéder aux données à partir d'un process local, vous accédez aux données par l'intermédiaire du Process principal (process #1), et prenez donc le risque d'entrer en conflit avec les opérations effectuées dans ce process.
-
-:::
-
-### 4D Server
-
-L'utilisation de process locaux côté distant pour les opérations qui ne nécessitent pas d'accès aux données permet de réserver davantage de temps de traitement pour les tâches à forte intensité sur le serveur. Lorsque vous créez un process local au client (à l'aide de `New process` par exemple), il n'existe que sur le 4D distant.
-
-Lorsque vous créez un process global sur le client, un process "jumeau" est créé sur le serveur, consommant donc les ressources du serveur, pour gérer l'accès aux données et le contexte de base de données. Toutefois, pour des raisons d'optimisation, le process jumeau n'est créé qu'en cas de nécessité, c'est-à-dire la première fois que le process global doit accéder à des données.
+Pour des raisons d'optimisation, si aucun accès au serveur n'est nécessaire, par exemple si le process sur le 4D distant exécute une méthode de gestion d'événements ou contrôle des fenêtres flottantes, aucun process jumeau n'est créé sur le serveur.
 
 ## Process Workers
 
@@ -109,7 +95,7 @@ Cette fonctionnalité répond aux besoins suivants en matière de communication 
 
 :::note
 
-Bien qu'ils aient été conçus principalement pour la communication interprocess dans le contexte des process préemptifs, `CALL WORKER` et `CALL FORM` peuvent être utilisés avec des process coopératifs.
+Bien qu'ils aient été conçus principalement pour la communication interprocess dans le contexte de process préemptifs, [`CALL WORKER`](../commands/call-worker) et [`CALL FORM`](../commands/call-form) peuvent être utilisés avec des process coopératifs.
 
 :::
 
@@ -122,25 +108,25 @@ Un worker est utilisé pour demander à un process d'exécuter des méthodes pro
 - une boîte aux lettres
 - une méthode de démarrage (facultatif)
 
-Vous demandez à un worker d'exécuter une méthode projet en appelant la commande `CALL WORKER`. Le worker et sa boîte aux lettres sont créés lors de la première utilisation ; le process qui lui est associé est également lancé automatiquement lors de la première utilisation. Si le process worker meurt par la suite, la boîte aux lettres reste ouverte et tout nouveau message dans la boîte lancera un nouveau process worker.
+Vous demandez à un worker d'exécuter une méthode projet en appelant la commande [`CALL WORKER`](../commands/call-worker). Le worker et sa boîte aux lettres sont créés lors de la première utilisation ; le process qui lui est associé est également lancé automatiquement lors de la première utilisation. Si le process worker meurt par la suite, la boîte aux lettres reste ouverte et tout nouveau message dans la boîte lancera un nouveau process worker.
 
 L'animation suivante illustre cette séquence :
 
 ![](../assets/en/Develop/WorkerAnimation.gif)
 
-Contrairement à un process créé avec la commande `New process`, un process worker **reste en vie après la fin de l'exécution de la méthode process**. Cela signifie que toutes les exécutions de méthodes pour le même worker seront exécutées dans le même process, qui conserve toutes les informations relatives à l'état du process (variables process, enregistrement courant et sélection courante, etc.). Par conséquent, les méthodes exécutées successivement accèdent aux mêmes informations et les partagent, ce qui permet la communication entre les process. La boîte aux lettres du worker traite les appels successifs de manière asynchrone.
+Contrairement à un process créé avec la commande [`New process`](../commands/new-process), un process worker **reste en vie après la fin de l'exécution de la méthode process**. Cela signifie que toutes les exécutions de méthodes pour le même worker seront exécutées dans le même process, qui conserve toutes les informations relatives à l'état du process (variables process, enregistrement courant et sélection courante, etc.). Par conséquent, les méthodes exécutées successivement accèdent aux mêmes informations et les partagent, ce qui permet la communication entre les process. La boîte aux lettres du worker traite les appels successifs de manière asynchrone.
 
-`CALL WORKER` encapsule à la fois le nom de la méthode et les arguments de la commande dans un message qui est posté dans la boîte aux lettres du worker. Le process worker est alors lancé, s'il n'existe pas déjà, et il lui est demandé d'exécuter le message. Cela signifie que `CALL WORKER` retournera généralement avant que la méthode ne soit réellement exécutée (le traitement est asynchrone). C'est pourquoi `CALL WORKER` ne renvoie aucune valeur. Si vous avez besoin qu'un worker renvoie des informations au process qui l'a appelé (callback), vous devez utiliser `CALL WORKER` à nouveau pour transmettre les informations nécessaires à l'appelant. Bien entendu, dans ce cas, l'appelant lui-même doit être un worker.
+[`CALL WORKER`](../commands/call-worker) encapsule à la fois le nom de la méthode et les arguments de la commande dans un message qui est posté dans la boîte aux lettres du worker. Le process worker est alors lancé, s'il n'existe pas déjà, et il lui est demandé d'exécuter le message. Cela signifie que [`CALL WORKER`](../commands/call-worker) sera généralement renvoyé avant que la méthode ne soit réellement exécutée (le traitement est asynchrone). C'est pourquoi [`CALL WORKER`](../commands/call-worker) ne renvoie aucune valeur. Si vous avez besoin qu'un worker renvoie des informations au process qui l'a appelé (callback), vous devez utiliser [`CALL WORKER`](../commands/call-worker) à nouveau pour transmettre les informations nécessaires à l'appelant. Bien entendu, dans ce cas, l'appelant lui-même doit être un worker.
 
-Il n'est pas possible d'utiliser `CALL WORKER` pour exécuter une méthode dans un process créé par la commande `New process`. Seuls les process worker ont une boîte aux lettres et peuvent donc être appelés par `CALL WORKER`. Notez qu'un process créé par `New process` peut appeler un worker, mais ne peut pas être rappelé.
+Il n'est pas possible d'utiliser [`CALL WORKER`](../commands/call-worker) pour exécuter une méthode dans un process créé par la commande [`New process`](../commands/new-process). Seuls les process worker ont une boîte aux lettres et peuvent donc être appelés par `CALL WORKER`. Notez qu'un process créé par [`New process`](../commands/new-process) peut appeler un worker, mais ne peut pas être rappelé.
 
-Les process Worker peuvent être créés sur 4D Server par le biais de procédures stockées : par exemple, vous pouvez utiliser la commande `Execute on server` pour exécuter une méthode qui appelle la commande `CALL WORKER`.
+Les process worker peuvent être créés sur 4D Server par l'intermédiaire de procédures stockées : par exemple, vous pouvez utiliser la commande `Execute on server` pour exécuter une méthode qui appelle la commande [`CALL WORKER`](../commands/call-worker).
 
 Un process worker est fermé par un appel à la commande [`KILL WORKER`](../commands-legacy/kill-worker.md), qui vide la boîte aux lettres du worker et demande au process associé d'arrêter de traiter les messages et de terminer son exécution dès que la tâche en cours est terminée.
 
-La méthode de démarrage d'un worker est la méthode utilisée pour créer le worker (à la première utilisation). Si `CALL WORKER` est appelé avec un paramètre *méthode* vide, la méthode de démarrage est automatiquement réutilisée comme méthode à exécuter.
+La méthode de démarrage d'un worker est la méthode utilisée pour créer le worker (à la première utilisation). Si [`CALL WORKER`](../commands/call-worker) est appelé avec un paramètre *method* vide, la méthode de démarrage est automatiquement réutilisée comme méthode à exécuter.
 
-Le process principal créé par 4D lors de l'ouverture d'une base de données pour les modes utilisateur et application est un process worker et peut être appelé en utilisant `CALL WORKER`. Notez que le nom du process principal peut varier en fonction de la langue de localisation de 4D, mais il a toujours le numéro de process 1 ; par conséquent, il est plus pratique de le désigner par son numéro de process plutôt que par son nom lors de l'appel à `CALL WORKER`.
+Le process principal créé par 4D lors de l'ouverture d'une base de données pour les modes utilisateur et application est un process worker et peut être appelé en utilisant [`CALL WORKER`](../commands/call-worker). Notez que le nom du process principal peut varier en fonction de la langue de localisation de 4D, mais qu'il porte toujours le numéro de process 1. Par conséquent, il est plus pratique de le désigner par son numéro de process plutôt que par son nom lors de l'appel à [`CALL WORKER`](../commands/call-worker).
 
 ### Identifier les process worker
 

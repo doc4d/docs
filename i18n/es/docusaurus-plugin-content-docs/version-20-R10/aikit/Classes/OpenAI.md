@@ -21,7 +21,7 @@ The `OpenAI` class provides a client for accessing various OpenAI API resources.
 | Nombre de la propiedad | Tipo                                                                             | Descripción                                                                   |
 | ---------------------- | -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | `timeout`              | Real                                                                             | Tiempo en segundos antes de que se agote el tiempo de espera. |
-| `maxRetries`           | Real                                                                             | Maximum number of retry attempts in case of failure.          |
+| `maxRetries`           | Real                                                                             | Número máximo de reintentos en caso de fallo.                 |
 | `httpAgent`            | [4D.HTTPAgent](https://developer.4d.com/docs/API/HTTPAgentClass) | Agente HTTP utilizado para realizar peticiones.               |
 | `customHeaders`        | Real                                                                             | Custom headers to be included in the HTTP requests.           |
 
@@ -29,9 +29,9 @@ The `OpenAI` class provides a client for accessing various OpenAI API resources.
 
 Crear una instancia de la clase cliente OpenAI.
 
-| Nombre del argumento      | Tipo           | Descripción                                             |
-| ------------------------- | -------------- | ------------------------------------------------------- |
-| `apiKey or configuration` | Texto u objeto | apiKey if Text or configuration Object. |
+| Nombre del argumento      | Tipo           | Descripción                                               |
+| ------------------------- | -------------- | --------------------------------------------------------- |
+| `apiKey or configuration` | Texto u objeto | apiKey si Text u objeto de configuración. |
 
 #### Llave API
 
