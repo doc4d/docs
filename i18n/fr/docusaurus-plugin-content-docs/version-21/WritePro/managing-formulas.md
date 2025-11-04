@@ -69,15 +69,15 @@ You can insert special expressions related to document attributes in any documen
 | [This](../commands/this.md).data                               | Object | Contexte des données du document 4D Write Pro défini par [**WP SET DATA CONTEXT**](commands-legacy/wp-set-data-context.md)                                                                                                                                                                                                                                                                                           |
 | [This](../commands/this.md).sectionIndex                       | Number | The Index of the section in the 4D Write Pro document starting from 1                                                                                                                                                                                                                                                                                                                                                |
 | [This](../commands/this.md).pageIndex                          | Number | The actual page number in the 4D Write Pro document starting from 1 (regardless of the section page numbers)                                                                                                                                                                                                                                                                                      |
-| [This](../commands/this.md).sectionName                        | String | The name that the user gives to the section                                                                                                                                                                                                                                                                                                                                                                          |
+| [This](../commands/this.md).sectionName                        | String | Le nom que l'utilisateur donne à la section                                                                                                                                                                                                                                                                                                                                                                          |
 
 :::note
 
-Additional context properties are available when you work with tables. See *Handling tables* for more information.
+Des propriétés de contexte supplémentaires sont disponibles lorsque vous travaillez avec des tables. Voir *Manipulation des tables* pour plus d'informations.
 
 :::
 
-(\*) **Important**: **This.pageNumber**, **This.pageIndex** and **This.pageCount** must be used only directly in a 4D Write Pro formula (they must be present in the *formula.source* string). They will return incorrect values if they are used by the 4D language within a method called by the formula. However, they can be passed as parameters to a method called directly by the formula:
+(\*) **Important**: **This.pageNumber**, **This.pageIndex** and **This.pageCount** must be used only directly in a 4D Write Pro formula (they must be present in the *formula.source* string). They will return incorrect values if they are used by the 4D language within a method called by the formula. Cependant, ils peuvent être passés en tant que paramètres à une méthode appelée directement par la formule :
 
 - Cela fonctionnera : « *formatNumber(This.pageNumber)* »
 - This will NOT work: « *formatNumber* » with *formatNumber* method processing *This.pageNumber*.
@@ -107,11 +107,11 @@ When used in a formula within the table, the **This** keyword gives access to di
 | In any row (except header rows) when a table datasource returns a collection or an entity selection | [This](../commands/this.md).previousItems                    | Collection or Entity selection                              | Items displayed on the pages before the bottom carry over row (if any) or before the row of the expression, including the page where is displayed the row containing the expression. <br/>This expression returns the same type of value as the **This.tableData** expression.                                                                                                                                                                                                                                            |
 | In a break row                                                                                                         | [This](../commands/this.md).breakItems                       | Collection or Entity selection                              | Éléments de la collection ou de l'entity selection affichés dans les lignes entre :<br/><ul><li>la ligne de rupture actuelle et la ligne de rupture précédente du même niveau (ou le début du tableau) si la ou les ligne(s) de rupture sont affichées après la ligne de données.</li><li>la ligne de rupture courante et la suivante du même niveau (ou la fin du tableau) si la ou les ligne(s) de rupture sont affichées avant la ligne de données.</li></ul> |
 
-In any other contexts, these expressions will return *undefined*.
+Dans tous les autres contextes, ces expressions retourneront *undefined*.
 
 :::note
 
-For more information about formula insertion, see [WP INSERT FORMULA](../commands/wp-insert-formula).
+Pour plus d'informations sur l'insertion de formules, voir [WP INSERT FORMULA](../commands/wp-insert-formula).
 
 :::
 
@@ -159,11 +159,11 @@ When a document is displayed in "display expressions" mode, references to tables
 Vous pouvez contrôler comment les formules sont affichées dans vos documents :
 
 - en tant que *valeurs* ou en tant que *références*
-- when shown as references, display source text, symbol, or name.
+- lorsqu'il est affiché en tant que références, afficher le texte source, symbole ou nom.
 
-### References or Values
+### Références ou valeurs
 
-By default, 4D formulas are displayed as values. When you insert a 4D formula, 4D Write Pro computes and displays its current value.  If you wish to know which formula is used or what is its name, you need to display it as a reference.
+Par défaut, les formules 4D sont affichées sous forme de valeurs. When you insert a 4D formula, 4D Write Pro computes and displays its current value.  If you wish to know which formula is used or what is its name, you need to display it as a reference.
 
 Pour afficher les formules en tant que références, vous pouvez:
 
