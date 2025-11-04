@@ -19,7 +19,7 @@ Two specific variables can be associated with each web area:
 - [`URL`](properties_WebArea.md#url) --to control the URL displayed by the web area
 - [`Progression`](properties_WebArea.md#progression) -- to control the loading percentage of the page displayed in the web area. 
 
-> As of 4D v19 R5, the Progression variable is no longer updated in Web Areas using the [Windows system rendering engine](./webArea_overview.md#web-rendering-engine).
+> As of 4D 19 R5, the Progression variable is no longer updated in Web Areas using the [Windows system rendering engine](./webArea_overview.md#web-rendering-engine).
 
 ### Web rendering engine
 
@@ -116,9 +116,9 @@ $4d.today(function(result)
 
 #### Example 2  
 
-Instead of using a standalone method, we can also define a **class** to handle the calculation. 
+Instead of using a standalone method, we can also use a class function to handle the calculation. 
 
-Define the Class with 4D project method `calcSum` which receives parameters and returns their sum:
+Define a "SumCalculator" 4D user class with a `calcSum` function which receives parameters and returns their sum:
 
 ```4d
 // SumCalculator user class

@@ -148,7 +148,7 @@ Pour sélectionner un objet à l’aide de la barre d’outils :
 
 1. Click the Arrow tool  in the toolbar.<br/>![](../assets/en/FormEditor/selection.png)
 
-<br/>When you move the pointer into the form area, it becomes a standard arrow-shaped pointer.
+<br/>Lorsque vous le faites glisser au-dessus du formulaire, le pointeur prend la forme du pointeur standard.
 
 2. Cliquez sur l’objet que vous souhaitez sélectionner. Resizing handles identify the selected object.<br/>![](../assets/en/FormEditor/selectResize.png)
 
@@ -348,7 +348,13 @@ Pour modifier le plan d'un objet, sélectionnez-le et choisissez :
 
 ![](../assets/en/FormEditor/level2.png)
 
-> Lorsque plusieurs objets sont superposés, le raccourci **Ctrl+Maj+clic** / **Commande+Maj+clic** permet de sélectionner successivement chaque objet en descendant d'un plan à chaque clic.
+Lorsque plusieurs objets sont superposés, le raccourci **Ctrl+Maj+clic** / **Commande+Maj+clic** permet de sélectionner successivement chaque objet en descendant d'un plan à chaque clic.
+
+:::note
+
+Dans les bases de données binaires, utilisez **Ctrl+Clic / Commande+Clic** pour effectuer cette action.
+
+:::
 
 Pour ordonner les différents plans, 4D va toujours de l’arrière-plan vers l’avant-plan. Par conséquent, le plan précédent fait reculer la sélection d’objets d’un plan vers l’arrière-plan du formulaire. Le plan suivant fait avancer la sélection d’objets d’un plan vers l’avant-plan du formulaire.
 
