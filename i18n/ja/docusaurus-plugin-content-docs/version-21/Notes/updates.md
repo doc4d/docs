@@ -3,7 +3,7 @@ id: updates
 title: リリースノート
 ---
 
-## 4D 21
+## 4D 21 LTS
 
 [**4D 21 での新機能**](https://blog.4d.com/en-whats-new-in-4d-21/): 4D 21 の新機能と拡張機能をすべてリストアップしたブログ記事です。
 
@@ -57,7 +57,7 @@ In binary databases, you need to select the required components in the 4D instal
 
 :::
 
-## 4D 20 R10
+### 4D 20 R10
 
 [**4D 20 R10の新機能**](https://blog.4d.com/en-whats-new-in-4d-20-R10/) 4D 20 R10 の新機能と拡張機能をすべてリストアップしたブログ記事です。
 
@@ -88,7 +88,7 @@ In binary databases, you need to select the required components in the 4D instal
 - [`.hasPrivilege()`](../API/SessionClass.md#hasprivilege) 関数は、Web プロセス内において昇格された権限に対してはTrue を返すようになりました。
 - [`Time`](../commands/time) コマンドは、*timeValue* 引数が負の値の場合には、負の時間式を返すようになりました。 例えば、`Time("-01:02:03")` は **-01:02:03** を返します。 過去のリリースにおいては、負の符号は無視されていました。
 
-## 4D 20 R9
+### 4D 20 R9
 
 [**4D 20 R9 の新機能**](https://blog.4d.com/en-whats-new-in-4d-20-R9/): 4D 20 R9 の新機能と拡張機能をすべてリストアップしたブログ記事です。
 
@@ -109,7 +109,7 @@ In binary databases, you need to select the required components in the 4D instal
 - 4D Write Pro インターフェース: 新しい [統合されたAI](../WritePro/writeprointerface.md#integrated-ai) を使用して、4D Write Pro ドキュメントから**chatGTP** とやり取りすることができます。
 - [**修正リスト**](https://bugs.4d.fr/fixedbugslist?version=20_R9): 4D 20 R9 で修正されたバグのリストです(日本語版は [こちら](https://4d-jp.github.io/2025/99/release-note-version-20r9//))。
 
-## 4D 20 R8
+### 4D 20 R8
 
 [**4D 20 R8 の新機能**](https://blog.4d.com/ja-whats-new-in-4d-v20-R8/): 4D 20 R8 の新機能と拡張機能をすべてリストアップしたブログ記事です。
 
@@ -139,7 +139,7 @@ In binary databases, you need to select the required components in the 4D instal
 - [`SELECT LOG FILE`](../commands/select-log-file.md) コマンドあるいは [バックアップ設定](../Backup/settings.md#ログ管理) を使用してログファイルを変更したあと、[`New log file`](../commands/new-log-file.md) コマンドは、バックアップを待たずに変更を検証するようになりました。 エラー -4447 (バックアップが必要です) は発生しなくなりました。
 - [新アーキテクチャ](../Desktop/building.md#build-component) 導入の影響により、4D 20 R8 以降でビルドされたコンポーネントはそれ以前の4D リリースへとインストールすることはできません。
 
-## 4D 20 R7
+### 4D 20 R7
 
 [**4D 20 R7 の新機能**](https://blog.4d.com/ja-whats-new-in-4d-v20-R7/): 4D 20 R7 の新機能と拡張機能をすべてリストアップしたブログ記事です。
 
@@ -171,7 +171,7 @@ In binary databases, you need to select the required components in the 4D instal
 - [`File`](../commands/file.md) コマンド (および [`4D.File.new()`](../API/FileClass.md#4dfilenew) コマンド) は、引数として与えられた *path* のシンタックスをより厳しくチェックする様になりました。
 - [permission](../ORDA/privileges.md#permission-actions) の利用可能なアクションから、**describe** アクションが削除されました。 [`/rest/$catalog`](../REST/$catalog.md) URL へのアクセスは制御されなくなりました。 Session の *describe* 権限は今後は無視されます。
 
-## 4D 20 R6
+### 4D 20 R6
 
 [**4D 20 R6 の新機能**](https://blog.4d.com/ja-whats-new-in-4d-20-R6/): 4D 20 R6 の新機能と拡張機能をすべてリストアップしたブログ記事です。
 
@@ -197,7 +197,7 @@ In binary databases, you need to select the required components in the 4D instal
 - フォーム内のスクロールチェーンをサポート: 埋め込まれたスクロール可能なオブジェクト ([縦スクロールバー](../FormObjects/properties_Appearance.md#縦スクロールバー)・[横スクロールバー](../FormObjects/properties_Appearance.md#横スクロールバー)) がスクロール境界に達しても、マウスやトラックパッドを使用してユーザーがスクロールを続ける場合、親サブフォームは自動的にスクロールします (オーバースクロール)。
 - [`$catalog` REST API](../REST/$catalog.md) は、シングルトンを返すようになりました (あれば)。
 
-## 4D 20 R5
+### 4D 20 R5
 
 [**4D 20 R5 の新機能**](https://blog.4d.com/ja-whats-new-in-4d-20-R5/): 4D 20 R5 の新機能と拡張機能をすべてリストアップしたブログ記事です。
 
@@ -219,7 +219,7 @@ In binary databases, you need to select the required components in the 4D instal
 - *4D Internet Commands* および *4D for OCI* プラグインは、4Dインストーラーに含まれなくなりました。 これらのプラグインを入手するには、[**4D製品ダウンロードポータル**](https://product-download.4d.com/) に接続する必要があります。
 - ストラクチャーエディターでテーブルやフィールドのグラフィカルな表示 (色、位置、順序など)  に加えた変更は、`catalog_editor.json` という個別ファイルに保存されるようになりました。このファイルはプロジェクトの [`Sources`フォルダー](../Project/architecture.md#sources) に保存されます。
 
-## 4D 20 R4
+### 4D 20 R4
 
 [**4D 20 R4 の新機能**](https://blog.4d.com/ja-whats-new-in-4d-v20-R4/): 4D 20 R4 の新機能と拡張機能をすべてリストアップしたブログ記事です。
 
@@ -244,7 +244,7 @@ In binary databases, you need to select the required components in the 4D instal
 - 更新された [OpenSSL ライブラリ](#ライブラリの一覧) では、デフォルトの SSL/TLS セキュリティレベルが 1 から 2 に変更されました。  1024ビット以上2048ビット未満のRSA、DSA、DH鍵、および 160ビット以上224ビット未満の ECC鍵は使用できなくなりました。 デフォルトでは、以前の OpenSSLバージョンですでに TLS圧縮が無効にされていました。 セキュリティレベル2では、これを有効化できません。 1024ビット以上2048ビット未満のRSA、DSA、DH鍵、および 160ビット以上224ビット未満の ECC鍵は使用できなくなりました。 デフォルトでは、以前の OpenSSLバージョンですでに TLS圧縮が無効にされていました。 セキュリティレベル2では、これを有効化できません。
 - [4D ユーザーがbcrypt アルゴリズムを使用できる](https://blog.4d.com/bcrypt-support-for-passwords/) ようにするため、[`Open datastore`](../commands/open-datastore.md) コマンドの*connectionInfo* 引数内の"password" の値はデフォルトでは平文で送信されるようになりました。 そのため、"On REST authentication" データベースメソッドがパスワードを平文で扱えるようにすること(そのため第3引数は**False** となります)と、`Open datastore` の*connectionInfo* の"tls" オプションに**True**  を渡すことで接続を暗号化するようにすることを忘れないようにして下さい。 特定の場合には、新しい "passwordAlgorithm" オプションも互換性のために使用できます ([`Open datastore`](../commands/open-datastore.md) コマンド参照)。
 
-## 4D 20 R3
+### 4D 20 R3
 
 [**4D 20 R3 の新機能**](https://blog.4d.com/ja-whats-new-in-4d-v20-R3/): 4D 20 R3 の新機能と拡張機能をすべてリストアップしたブログ記事です。
 
@@ -266,7 +266,7 @@ In binary databases, you need to select the required components in the 4D instal
 - いくつかのエラーは、[エラー処理メソッド](../Concepts/error-handling.md) によってインタプリタモードのみでキャッチ可能でした。 この問題の修正後、以下のエラーがコンパイルモードでも検出されるようになりました: *範囲外のインデックス*、*互換性のない型*、*Null ポインターの逆参照*。 ただし、Intelプロセッサーでは、このようなエラーによって以前と同様に処理が中断されますが、Apple Siliconプロセッサーでは、[`ABORT`](../commands-legacy/abort.md) コマンドを呼び出さない限り、処理は中断されません。
 - 4D は内部的な PHPインタプリターを実装しなくなりました。  PHPコマンドを使用するには、[別途PHPインタプリターをセットアップして実行する](https://blog.4d.com/ja/deprecation-of-php-commands-removal-of-4d-built-in-php-interpreter) 必要があります。
 
-## 4D 20 R2
+### 4D 20 R2
 
 [**4D 20 R2 の新機能**](https://blog.4d.com/ja-whats-new-in-4d-v20-R2/): 4D 20 R2 の新機能と拡張機能をすべてリストアップしたブログ記事です。
 
