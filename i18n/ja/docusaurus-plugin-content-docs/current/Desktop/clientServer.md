@@ -120,7 +120,7 @@ title: クライアント/サーバー管理
 
 ### Webエリア内のQodlyページとセッションを共有する
 
-Remote client sessions can be used to handle Client/Server applications where [Qodly pages](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/pageLoaderOverview) are used for the interface, running on remote machines. With this configuration, your applications have modern CSS-based web interfaces but still benefit from the power and simplicity of integrated client/server development. In such applications, Qodly pages are executed within standard 4D [Web areas](../FormObjects/webArea_overview.md).
+リモートクライアントセッションを使用して、リモートマシン上で実行中の、[Qodly ページ](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/pageLoaderOverview) がインターフェースとして使用されているクライアント/サーバーアプリケーションを管理することができます。 With this configuration, your applications have modern CSS-based web interfaces but still benefit from the power and simplicity of integrated client/server development. In such applications, Qodly pages are executed within standard 4D [Web areas](../FormObjects/webArea_overview.md).
 
 To manage this configuration, you need to use remote client sessions. Actually, requests coming from both the remote 4D application and its Qodly pages loaded in Web areas need to work inside a single user session. You just have to share the same session between the remote client and its web pages so that you can have the same [session storage](../API/SessionClass.md#storage) and client license, whatever the request origin.
 
