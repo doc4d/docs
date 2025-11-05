@@ -54,10 +54,10 @@ La disponibilidad de las propiedades y funciones del objeto `Session` depende de
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones             |
-| ----------- | -------------------------- |
-| 21          | Support of remote sessions |
-| 18 R6       | Añadidos                   |
+| Lanzamiento | Modificaciones              |
+| ----------- | --------------------------- |
+| 21          | Soporte de sesiones remotas |
+| 18 R6       | Añadidos                    |
 
 </details>
 
@@ -110,10 +110,10 @@ $isGuest:=Session.isGuest() //$isGuest es True
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones             |
-| ----------- | -------------------------- |
-| 21          | Support of remote sessions |
-| 20 R9       | Añadidos                   |
+| Lanzamiento | Modificaciones              |
+| ----------- | --------------------------- |
+| 21          | Soporte de sesiones remotas |
+| 20 R9       | Añadidos                    |
 
 </details>
 
