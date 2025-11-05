@@ -59,7 +59,7 @@ The following action keywords are supported:
 | `addHeaders`    | Object                      | Name (text) and value (text) of header(s) to add to the HTTP responses.                                                                                              |
 | `setHeaders`    | Object                      | Name (text) and value (text) of header(s) to modify in the HTTP responses. If a header to modify does not exist in the response header, it is added. |
 | `denyAccess`    | Boolean                     | true to deny access to the resource, false to allow access. When the access to a resource is denied, the web server returns a 403 status by default                                                                           |
-| `redirect`      | Text                        | Redirection URL. When a redirection is triggered, the web server returns a 302 status by default                                                                                                                              |
+| `redirect`      | Text                        | Redirigir URL. When a redirection is triggered, the web server returns a 302 status by default                                                                                                                                |
 | `status`        | Number                      | Estado HTTP                                                                                                                                                                                                                                   |
 
 ### Encabezados no modificables
@@ -76,7 +76,7 @@ Some headers could not be added, modified or removed:
 
 Unauthorized changes on these headers do not generate errors, however modifications will be ignored.
 
-### Current rules
+### Reglas actuales
 
 Puede conocer las reglas actuales utilizando la propiedad [`.rules` del objeto Web Server](../API/WebServerClass.md#rules):
 
