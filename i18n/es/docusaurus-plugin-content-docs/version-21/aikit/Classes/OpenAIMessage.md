@@ -85,7 +85,7 @@ When you receive a tool call message, you need to:
 3. **Respond with the tool result:**
    Create a response message using the exact `tool_call_id` from the original request.
 
-**Example tool response:**
+**Ejemplo de respuesta de la herramienta:**
 
 ```4d
 // Parse the function arguments (if any)
