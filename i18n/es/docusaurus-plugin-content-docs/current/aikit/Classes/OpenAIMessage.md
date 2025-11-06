@@ -70,7 +70,7 @@ When an assistant needs to use external functions, it generates a message with `
 }
 ```
 
-**Handling the tool call:**
+**Gestión de la llamada de la herramienta:**
 
 When you receive a tool call message, you need to:
 
