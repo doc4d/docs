@@ -5,26 +5,26 @@ title: Eventos de entidad
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones                                                                                        |
-| ----------- | ----------------------------------------------------------------------------------------------------- |
-| 21          | Added events: validateSave / saving / afterSave / validateDrop / dropping / afterDrop |
-| 20 R10      | se ha añadido un evento touched                                                                       |
+| Lanzamiento | Modificaciones                                                                                            |
+| ----------- | --------------------------------------------------------------------------------------------------------- |
+| 21          | Eventos añadidos: validateSave / saving / afterSave / validateDrop / dropping / afterDrop |
+| 20 R10      | se ha añadido un evento touched                                                                           |
 
 </details>
 
-Entity events are functions that are automatically invoked by ORDA each time entities and entity attributes are manipulated (added, deleted, or modified). You can write very simple events, and then make them more sophisticated.
+Los eventos de entidad son funciones que ORDA invoca automáticamente cada vez que las entidades y los atributos de entidad se manipulan (añaden, eliminan o modifican). Puede escribir eventos muy sencillos y luego hacerlos más sofisticados.
 
-No se puede activar directamente la ejecución de la función de evento. Events are called automatically by ORDA based on user actions or operations performed through code on entities and their attributes.
+No se puede activar directamente la ejecución de la función de evento. Los eventos son llamados automáticamente por ORDA basándose en las acciones del usuario o en las operaciones realizadas mediante código sobre las entidades y sus atributos.
 
 :::tip Entrada de blog relacionada
 
-[ORDA – Handle an event-driven logic during data persistence actions](https://blog.4d.com/orda-handle-an-event-driven-logic-during-database-operations)
+[ORDA - Manejar una lógica basada en eventos durante las acciones de persistencia de datos](https://blog.4d.com/orda-handle-an-event-driven-logic-during-database-operations)
 
 :::
 
 :::info Nota de compatibilidad
 
-ORDA entity events in the datastore are equivalent to triggers in the 4D database. However, actions triggered at the 4D database level using the 4D classic language commands or standard actions do not trigger ORDA events.
+Los eventos de entidad ORDA en el almacen de datos equivalen a triggers en la base de datos 4D. Sin embargo, las acciones desencadenadas a nivel de la base de datos 4D utilizando los comandos del lenguaje clásico 4D o las acciones estándar no desencadenan eventos ORDA.
 
 :::
 
@@ -32,47 +32,47 @@ ORDA entity events in the datastore are equivalent to triggers in the 4D databas
 
 ### Nivel del evento
 
-A event function is always defined in the [Entity class](../ORDA/ordaClasses.md#entity-class).
+Una función de evento se define siempre en la [clase Entity](../ORDA/ordaClasses.md#entity-class).
 
-It can be set at the **entity** level and/or the **attribute** level (it includes [**computed attributes**](../ORDA/ordaClasses.md#computed-attributes)). In the first case, it will be triggered for any attributes of the entity; on the other case, it will only be triggered for the targeted attribute.
+Un evento puede definirse al nivel de la **entidad** y/o a nivel del **atributo** (incluye los [**atributos calculados**](../ORDA/ordaClasses.md#computed-attributes)). En el primer caso, se activará para cualquier atributo de la entidad; en el otro caso, sólo se activará para el atributo objetivo.
 
-For the same event, you can define different functions for different attributes.
+Para un mismo evento, puede definir diferentes funciones para diferentes atributos.
 
-You can also define the same event at both attribute and entity levels. The attribute event is called first and then the entity event.
+También puede definir el mismo evento tanto a nivel del atributo como de la entidad. El evento atributo se llama primero y luego el evento entidad.
 
 ### Ejecución en configuraciones remotas
 
 Normalmente, los eventos ORDA se ejecutan en el servidor.
 
-In client/server configuration however, the `touched()` event function can be executed on the **server or the client**, depending on the use of [`local`](./ordaClasses.md#local-functions) keyword. A specific implementation on the client side allows the triggering of the event on the client.
+Sin embargo, en la configuración cliente/servidor, la función de evento `touched()` puede ejecutarse en el **servidor o en el cliente**, dependiendo del uso de la palabra clave [`local`](./ordaClasses.md#local-functions). Una implementación específica en el lado del cliente permite la activación del evento en el cliente.
 
 :::note
 
-ORDA [`constructor()`](./ordaClasses.md#class-constructor) functions are always executed on the client.
+Las funciones ORDA [`constructor()`](./ordaClasses.md#class-constructor) se ejecutan siempre en el cliente.
 
 :::
 
-With other remote configurations (i.e. [Qodly applications](https://developer.4d.com/qodly), [REST API requests](../REST/REST_requests.md), or requests through [`Open datastore`](../commands/open-datastore.md)), the `touched()` event function is always executed **server-side**. It means that you have to make sure the server can "see" that an attribute has been touched to trigger the event (see below).
+Con otras configuraciones remotas (p. ej. [aplicaciones Qodly](https://developer.4d.com/qodly), [peticiones API REST](../REST/REST_requests.md), o peticiones a través de [`Open datastore`](../commands/open-datastore.md)), la función de evento `touched()` se ejecuta siempre **del lado del servidor**. Esto significa que tiene que asegurarse de que el servidor puede "ver" que se ha tocado un atributo para activar el evento (ver abajo).
 
 ### Tabla resumen
 
 La siguiente tabla lista los eventos ORDA junto con sus reglas.
 
-| Evento                         | Nivel    | Nombre de la función                                    |                     (C/S) Ejecutado en                     | Can stop action by returning an error |
-| :----------------------------- | :------- | :------------------------------------------------------ | :---------------------------------------------------------------------------: | ------------------------------------- |
-| Instanciación de entidades     | Entity   | [`constructor()`](./ordaClasses.md#class-constructor-1) |                                     client                                    | no                                    |
-| Atributo tocado                | Atributo | `event touched <attrName>()`                            | Depende de la palabra clave [`local`](../ORDA/ordaClasses.md#local-functions) | no                                    |
-|                                | Entity   | `event touched()`                                       | Depende de la palabra clave [`local`](../ORDA/ordaClasses.md#local-functions) | no                                    |
-| Antes de guardar una entidad   | Atributo | `validateSave <attrName>()`                             |                                     server                                    | sí                                    |
-|                                | Entity   | `validateSave()`                                        |                                     server                                    | sí                                    |
-| Al guardar una entidad         | Atributo | `saving <attrName>()`                                   |                                     server                                    | sí                                    |
-|                                | Entity   | `saving()`                                              |                                     server                                    | sí                                    |
-| Después de guardar una entidad | Entity   | `afterSave()`                                           |                                     server                                    | no                                    |
-| Antes de eliminar una entidad  | Atributo | `validateDrop <attrName>()`                             |                                     server                                    | sí                                    |
-|                                | Entity   | `validateDrop()`                                        |                                     server                                    | sí                                    |
-| Al soltar una entidad          | Atributo | `dropping <attrName>()`                                 |                                     server                                    | sí                                    |
-|                                | Entity   | `dropping()`                                            |                                     server                                    | sí                                    |
-| After dropping an entity       | Entity   | `afterDrop()`                                           |                                     server                                    | no                                    |
+| Evento                         | Nivel    | Nombre de la función                                    |                     (C/S) Ejecutado en                     | Puede detener la acción devolviendo un error |
+| :----------------------------- | :------- | :------------------------------------------------------ | :---------------------------------------------------------------------------: | -------------------------------------------- |
+| Instanciación de entidades     | Entity   | [`constructor()`](./ordaClasses.md#class-constructor-1) |                                     client                                    | no                                           |
+| Atributo tocado                | Atributo | `event touched <attrName>()`                            | Depende de la palabra clave [`local`](../ORDA/ordaClasses.md#local-functions) | no                                           |
+|                                | Entity   | `event touched()`                                       | Depende de la palabra clave [`local`](../ORDA/ordaClasses.md#local-functions) | no                                           |
+| Antes de guardar una entidad   | Atributo | `validateSave <attrName>()`                             |                                     server                                    | sí                                           |
+|                                | Entity   | `validateSave()`                                        |                                     server                                    | sí                                           |
+| Al guardar una entidad         | Atributo | `saving <attrName>()`                                   |                                     server                                    | sí                                           |
+|                                | Entity   | `saving()`                                              |                                     server                                    | sí                                           |
+| Después de guardar una entidad | Entity   | `afterSave()`                                           |                                     server                                    | no                                           |
+| Antes de eliminar una entidad  | Atributo | `validateDrop <attrName>()`                             |                                     server                                    | sí                                           |
+|                                | Entity   | `validateDrop()`                                        |                                     server                                    | sí                                           |
+| Al soltar una entidad          | Atributo | `dropping <attrName>()`                                 |                                     server                                    | sí                                           |
+|                                | Entity   | `dropping()`                                            |                                     server                                    | sí                                           |
+| After dropping an entity       | Entity   | `afterDrop()`                                           |                                     server                                    | no                                           |
 
 :::note
 
@@ -89,8 +89,8 @@ Event functions accept a single *event* object as parameter. When the function i
 | "kind"              | siempre                                                                                                                  | String               | Event name: "touched", "validateSave", "saving", "afterSave", "validateDrop", "dropping", "afterDrop" |   |
 | *attributeName*     | Only for events implemented at attribute level ("validateSave", "saving", "validateDrop", "dropping") | String               | Nombre del atributo (por ejemplo, "nombre")                                                        |   |
 | *dataClassName*     | siempre                                                                                                                  | String               | Nombre de la Dataclass (*ej.* "Company")                                           |   |
-| "savedAttributes"   | Sólo en [`afterSave()`](#function-event-aftersave)                                                                       | Colección de cadenas | Names of attributes properly saved                                                                                    |   |
-| "droppedAttributes" | Sólo en [`afterDrop()`](#function-event-afterdrop)                                                                       | Colección de cadenas | Names of attributes properly dropped                                                                                  |   |
+| "savedAttributes"   | Sólo en [`afterSave()`](#function-event-aftersave)                                                                       | Colección de cadenas | Nombres de atributos guardados correctamente                                                                          |   |
+| "droppedAttributes" | Sólo en [`afterDrop()`](#function-event-afterdrop)                                                                       | Colección de cadenas | Nombres de atributos suprimidos correctamente                                                                         |   |
 | "saveStatus"        | Sólo en [`afterSave()`](#function-event-aftersave)                                                                       | String               | "success" if the save was successful, "failed" otherwise                                                              |   |
 | "dropStatus"        | Sólo en [`afterDrop()`](#function-event-afterdrop)                                                                       | String               | "success" if the drop was successful, "failed" otherwise                                                              |   |
 
@@ -116,7 +116,7 @@ When an error occurs in an event, the other events are stopped at the first rais
   - If **false** (default): a [silent (predictable) error is generated](../Concepts/error-handling.md#predictable-vs-unpredictable-errors). It does not trigger any exception and is not stacked in the errors returned by the [`Last errors`](../commands/last-errors.md) command. In the result object of the calling function, `status` gets `dk status validation failed` and `statusText` gets "Mild Validation Error".
 - In case of an error triggered by a **saving/dropping** event, when an error object is returned, the error is always raised as a serious error whatever the `seriousError` property value.
 
-## Event function description
+## Descripción de las funciones
 
 ### `Function event touched`
 
