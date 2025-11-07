@@ -58,63 +58,63 @@ Con otras configuraciones remotas (p. ej. [aplicaciones Qodly](https://developer
 
 La siguiente tabla lista los eventos ORDA junto con sus reglas.
 
-| Evento                         | Nivel    | Nombre de la función                                    |                     (C/S) Ejecutado en                     | Puede detener la acción devolviendo un error |
-| :----------------------------- | :------- | :------------------------------------------------------ | :---------------------------------------------------------------------------: | -------------------------------------------- |
-| Instanciación de entidades     | Entity   | [`constructor()`](./ordaClasses.md#class-constructor-1) |                                     client                                    | no                                           |
-| Atributo tocado                | Atributo | `event touched <attrName>()`                            | Depende de la palabra clave [`local`](../ORDA/ordaClasses.md#local-functions) | no                                           |
-|                                | Entity   | `event touched()`                                       | Depende de la palabra clave [`local`](../ORDA/ordaClasses.md#local-functions) | no                                           |
-| Antes de guardar una entidad   | Atributo | `validateSave <attrName>()`                             |                                     server                                    | sí                                           |
-|                                | Entity   | `validateSave()`                                        |                                     server                                    | sí                                           |
-| Al guardar una entidad         | Atributo | `saving <attrName>()`                                   |                                     server                                    | sí                                           |
-|                                | Entity   | `saving()`                                              |                                     server                                    | sí                                           |
-| Después de guardar una entidad | Entity   | `afterSave()`                                           |                                     server                                    | no                                           |
-| Antes de eliminar una entidad  | Atributo | `validateDrop <attrName>()`                             |                                     server                                    | sí                                           |
-|                                | Entity   | `validateDrop()`                                        |                                     server                                    | sí                                           |
-| Al soltar una entidad          | Atributo | `dropping <attrName>()`                                 |                                     server                                    | sí                                           |
-|                                | Entity   | `dropping()`                                            |                                     server                                    | sí                                           |
-| After dropping an entity       | Entity   | `afterDrop()`                                           |                                     server                                    | no                                           |
+| Evento                          | Nivel    | Nombre de la función                                    |                     (C/S) Ejecutado en                     | Puede detener la acción devolviendo un error |
+| :------------------------------ | :------- | :------------------------------------------------------ | :---------------------------------------------------------------------------: | -------------------------------------------- |
+| Instanciación de entidades      | Entity   | [`constructor()`](./ordaClasses.md#class-constructor-1) |                                     client                                    | no                                           |
+| Atributo tocado                 | Atributo | `event touched <attrName>()`                            | Depende de la palabra clave [`local`](../ORDA/ordaClasses.md#local-functions) | no                                           |
+|                                 | Entity   | `event touched()`                                       | Depende de la palabra clave [`local`](../ORDA/ordaClasses.md#local-functions) | no                                           |
+| Antes de guardar una entidad    | Atributo | `validateSave <attrName>()`                             |                                     server                                    | sí                                           |
+|                                 | Entity   | `validateSave()`                                        |                                     server                                    | sí                                           |
+| Al guardar una entidad          | Atributo | `saving <attrName>()`                                   |                                     server                                    | sí                                           |
+|                                 | Entity   | `saving()`                                              |                                     server                                    | sí                                           |
+| Después de guardar una entidad  | Entity   | `afterSave()`                                           |                                     server                                    | no                                           |
+| Antes de eliminar una entidad   | Atributo | `validateDrop <attrName>()`                             |                                     server                                    | sí                                           |
+|                                 | Entity   | `validateDrop()`                                        |                                     server                                    | sí                                           |
+| Al soltar una entidad           | Atributo | `dropping <attrName>()`                                 |                                     server                                    | sí                                           |
+|                                 | Entity   | `dropping()`                                            |                                     server                                    | sí                                           |
+| Después de eliminar una entidad | Entity   | `afterDrop()`                                           |                                     server                                    | no                                           |
 
 :::note
 
-The [`constructor()`](./ordaClasses.md#class-constructor-1) function is not actually an event function but is always called when a new entity is instantiated.
+La función [`constructor()`](./ordaClasses.md#class-constructor-1) no es realmente una función de evento, pero siempre es llamada cuando una nueva entidad es instanciada.
 
 :::
 
 ## Parámetro *event*
 
-Event functions accept a single *event* object as parameter. When the function is called, the parameter is filled with several properties:
+Las funciones de evento aceptan un único objeto *event* como parámetro. Cuando se llama a la función, el parámetro se llena con varias propiedades:
 
-| Nombre de propiedad | Disponibilidad                                                                                                           | Tipo                 | Descripción                                                                                                           |   |
-| :------------------ | :----------------------------------------------------------------------------------------------------------------------- | :------------------- | :-------------------------------------------------------------------------------------------------------------------- | - |
-| "kind"              | siempre                                                                                                                  | String               | Event name: "touched", "validateSave", "saving", "afterSave", "validateDrop", "dropping", "afterDrop" |   |
-| *attributeName*     | Only for events implemented at attribute level ("validateSave", "saving", "validateDrop", "dropping") | String               | Nombre del atributo (por ejemplo, "nombre")                                                        |   |
-| *dataClassName*     | siempre                                                                                                                  | String               | Nombre de la Dataclass (*ej.* "Company")                                           |   |
-| "savedAttributes"   | Sólo en [`afterSave()`](#function-event-aftersave)                                                                       | Colección de cadenas | Nombres de atributos guardados correctamente                                                                          |   |
-| "droppedAttributes" | Sólo en [`afterDrop()`](#function-event-afterdrop)                                                                       | Colección de cadenas | Nombres de atributos suprimidos correctamente                                                                         |   |
-| "saveStatus"        | Sólo en [`afterSave()`](#function-event-aftersave)                                                                       | String               | "success" if the save was successful, "failed" otherwise                                                              |   |
-| "dropStatus"        | Sólo en [`afterDrop()`](#function-event-afterdrop)                                                                       | String               | "success" if the drop was successful, "failed" otherwise                                                              |   |
+| Nombre de propiedad | Disponibilidad                                                                                                                 | Tipo                 | Descripción                                                                                                                  |   |
+| :------------------ | :----------------------------------------------------------------------------------------------------------------------------- | :------------------- | :--------------------------------------------------------------------------------------------------------------------------- | - |
+| "kind"              | siempre                                                                                                                        | String               | Nombre del evento: "touched", "validateSave", "saving", "afterSave", "validateDrop", "dropping", "afterDrop" |   |
+| *attributeName*     | Sólo para eventos implementados a nivel de atributos ("validateSave", "saving", "validateDrop", "dropping") | String               | Nombre del atributo (por ejemplo, "nombre")                                                               |   |
+| *dataClassName*     | siempre                                                                                                                        | String               | Nombre de la Dataclass (*ej.* "Company")                                                  |   |
+| "savedAttributes"   | Sólo en [`afterSave()`](#function-event-aftersave)                                                                             | Colección de cadenas | Nombres de atributos guardados correctamente                                                                                 |   |
+| "droppedAttributes" | Sólo en [`afterDrop()`](#function-event-afterdrop)                                                                             | Colección de cadenas | Nombres de atributos suprimidos correctamente                                                                                |   |
+| "saveStatus"        | Sólo en [`afterSave()`](#function-event-aftersave)                                                                             | String               | "success" si el guardado fue exitoso, "failed" de lo contrario                                                               |   |
+| "dropStatus"        | Sólo en [`afterDrop()`](#function-event-afterdrop)                                                                             | String               | "success" si la eliminación fue exitosa, "failed" de lo contrario                                                            |   |
 
-## Objeto de error
+## Objeto error
 
-[Some event functions](#summary-table) can return an **error object** to raise an error and stop the running action.
+[Ciertas funciones de evento](#summary-table) pueden devolver un **objeto error** para plantear un error y detener la acción en ejecución.
 
-When an error occurs in an event, the other events are stopped at the first raised error and the action (save or drop) is also stopped. This error is sent before other potential errors like [stamp has changed, entity locked](../API/EntityClass.md#save), etc.
+Cuando ocurre un error en un evento, los otros eventos se detienen en el primer error planteado y la acción (guardar o soltar) también se detiene. Este error se envía antes de que otros posibles errores como [stamp has changed, entity locked](../API/EntityClass.md#save), etc.
 
 ### Propiedades del objeto error
 
-| Propiedad          | Tipo    | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Definido por el desarrollador                |
-| ------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
-| errCode            | Integer | Igual al comando [`Last errors`](../commands/last-errors.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Sí                                           |
-| message            | Text    | Igual al comando [`Last errors`](../commands/last-errors.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Sí                                           |
-| extraDescription   | Object  | Información libre a definir                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Sí                                           |
-| seriousError       | Boolean | Used only with validate events (see below). <li>`True`: creates a [serious (unpredictable) error](../Concepts/error-handling.md#predictable-vs-unpredictable-errors) and triggers an exception. Adds the `dk status serious validation error` status</li><li>`False`: creates only a [silent (predictable) error](../Concepts/error-handling.md#predictable-vs-unpredictable-errors). Añade el estado `dk status validation failed`.</li> | Sí (por defecto es false) |
-| componentSignature | Text    | Siempre "DBEV"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | No                                           |
+| Propiedad          | Tipo    | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Definido por el desarrollador                |
+| ------------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| errCode            | Integer | Igual al comando [`Last errors`](../commands/last-errors.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Sí                                           |
+| message            | Text    | Igual al comando [`Last errors`](../commands/last-errors.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Sí                                           |
+| extraDescription   | Object  | Información libre a definir                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Sí                                           |
+| seriousError       | Boolean | Utilizado sólo con eventos de validación (ver abajo). <li>`True`: crea un [error grave (imprevisible)](../Concepts/error-handling.md#predictable-vs-unpredictable-errors) y activa una excepción. Añade el estado `dk status serious validation error`</li><li>`False`: crea sólo un [error silencioso (previsible)](../Concepts/error-handling.md#predictable-vs-unpredictable-errors). Añade el estado `dk status validation failed`.</li> | Sí (por defecto es false) |
+| componentSignature | Text    | Siempre "DBEV"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | No                                           |
 
-- [Serious errors](../Concepts/error-handling.md#predictable-vs-unpredictable-errors) are stacked in the `errors` collection property of the **Result object** returned by the [`save()`](../API/EntityClass.md#save) or [`drop()`](../API/EntityClass.md#drop) functions.
-- In case of an error triggered by a **validate** event, the `seriousError` property allows you to choose the level of the error to generate:
-  - If **true**: a serious error is thrown and should be handled by the [error processing code](../Concepts/error-handling.md#predictable-vs-unpredictable-errors), such as a [try catch](../Concepts/error-handling.md#trycatchend-try). In the result object of the calling function, `status` gets `dk status serious validation error` and `statusText` gets "Serious Validation Error". The error is raised at the end of the event and reach the client requesting the save/drop action (REST client for example).
-  - If **false** (default): a [silent (predictable) error is generated](../Concepts/error-handling.md#predictable-vs-unpredictable-errors). It does not trigger any exception and is not stacked in the errors returned by the [`Last errors`](../commands/last-errors.md) command. In the result object of the calling function, `status` gets `dk status validation failed` and `statusText` gets "Mild Validation Error".
-- In case of an error triggered by a **saving/dropping** event, when an error object is returned, the error is always raised as a serious error whatever the `seriousError` property value.
+- Los [errores críticos](../Concepts/error-handling.md#predictable-vs-unpredictable-errors) están apilados en la colección de la propiedad `errors` del **objeto Result** devuelto por las funciones [`save()`](../API/EntityClass.md#save) o [`drop()`](../API/EntityClass.md#drop).
+- En caso de un error provocado por un evento **validate**, la propiedad `seriousError` le permite elegir el nivel del error a generar:
+  - Si es **true**: se arroja un error crítico y debe ser manejado por el [código de procesamiento de errores](../Concepts/error-handling.md#predictable-vs-unpredictable-errors), tal como un [try catch](../Concepts/error-handling.md#trycatchend-try). En el objeto resultante de la función llamante, `status` obtiene `dk status serious validation error` y `statusText` obtiene "Serious Validation Error". El error se genera al final del evento y llega al cliente solicitando la acción guardar/soltar (cliente REST por ejemplo).
+  - Si es **false** (por defecto): se genera un [error silencioso (previsible)](../Concepts/error-handling.md#predictable-vs-unpredictable-errors). No dispara ninguna excepción y no se acumula en los errores devueltos por el comando [`Last errors`](../commands/last-errors.md). En el objeto resultante de la función llamante, `status` obtiene `dk status validation failed` y `statusText` obtiene "Mild Validation Error".
+- En caso de un error provocado por un evento **guardar/soltar** cuando se retorna un objeto de error, el error siempre se plantea como un error crítico, sea cual sea el valor de la propiedad `seriousError`.
 
 ## Descripción de las funciones
 
@@ -125,39 +125,39 @@ When an error occurs in an event, the other events are stopped at the first rais
 ```4d
 {local} Function event touched($event : Object)
 {local} Function event touched <attributeName>($event : Object)
-// code
+// código
 ```
 
-This event is triggered each time a value is modified in the entity.
+Este evento se activa cada vez que se modifica un valor en la entidad.
 
-- If you defined the function at the entity level (first syntax), it is triggered for modifications on any attribute of the entity.
-- If you defined the function at the attribute level (second syntax), it is triggered only for modifications on this attribute.
+- Si define la función a nivel de entidad (primera sintaxis), se activa para modificaciones en cualquier atributo de la entidad.
+- Si ha definido la función en el nivel de atributo (segunda sintaxis), se activa sólo para modificaciones en este atributo.
 
-This event is triggered as soon as the 4D Server / 4D engine can detect a modification of attribute value which can be due to the following actions:
+Este evento se activa tan pronto como el motor de 4D Server / 4D detecta una modificación del valor del atributo que puede deberse a las siguientes acciones:
 
 - en **cliente/servidor con la [palabra clave `local`](../ORDA/ordaClasses.md#local-functions)** o en **4D monousuario**:
   - el usuario define un valor en un formulario 4D,
   - el código 4D realiza una asignación con el operador `:=`. El evento también se activa en caso de autoasignación (`$entity.attribute:=$entity.attribute`).
-- in **client/server without the `local` keyword**: some 4D code that makes an assignment with the `:=` operator is [executed on the server](../commands-legacy/execute-on-server.md).
-- in **client/server without the `local` keyword**, in **[Qodly application](https://developer.4d.com/qodly)** and **[remote datastore](../commands/open-datastore.md)**: the entity is received on 4D Server while calling an ORDA function (on the entity or with the entity as parameter). It means that you might have to implement a *refresh* or *preview* function on the remote application that sends an ORDA request to the server and triggers the event.
-- with the REST server: the value is received on the REST server with a [REST request](../REST/$method.md#methodupdate) (`$method=update`)
+- en **cliente/servidor sin la palabra clave `local`**: algún código 4D que hace una asignación con el operador `:=` es [ejecutado en el servidor](../commands-legacy/execute-on-server.md).
+- in **client/server without the `local` keyword**, in **[Qodly application](https://developer.4d.com/qodly)** and **[remote datastore](../commands/open-datastore.md)**: the entity is received on 4D Server while calling an ORDA function (on the entity or with the entity as parameter). Significa que puede que tenga que implementar una función *refresh* o *preview* en la aplicación remota que envía una petición ORDA al servidor y activa el evento.
+- con el servidor REST: el valor es recibido en el servidor REST con una [petición REST](../REST/$method.md#methodupdate) (`$method=update`)
 
-The function receives an [*event* object](#event-parameter) as parameter.
+La función recibe un [objeto *event*](#event-parameter) como parámetro.
 
-If this function [throws](../commands/throw) an error, it will not stop the undergoing action.
+Si esta función [genera](../commands/throw) un error, no detendrá la acción en curso.
 
 :::note
 
 Este evento también se activa:
 
 - cuando los atributos son asignados por el evento [`constructor()`](./ordaClasses.md#class-constructor-1),
-- when attributes are edited through the [Data Explorer](../Admin/dataExplorer.md).
+- cuando los atributos son editados a través del [Explorador de datos](../Admin/dataExplorer.md).
 
 :::
 
 #### Ejemplo 1
 
-You want to uppercase all text attributes of an entity when it is updated.
+Quiere en mayúsculas todos los atributos de texto de una entidad cuando se actualiza.
 
 ```4d
     //ProductsEntity class
@@ -170,7 +170,7 @@ Function event touched($event : Object)
 
 #### Ejemplo 2
 
-The "touched" event is useful when it is not possible to write indexed query code in [`Function query()`](./ordaClasses.md#function-query-attributename) for a [computed attribute](./ordaClasses.md#computed-attributes).
+El evento "touched" es útil cuando no es posible escribir código de consulta indexada en [`Function query()`](./ordaClasses.md#function-query-attributename) para un [atributo calculado](./ordaClasses.md#computed-attributes).
 
 This is the case for example, when your [`query`](./ordaClasses.md#function-query-attributename) function has to compare the value of different attributes from the same entity with each other. You must use formulas in the returned ORDA query -- which triggers sequential queries.
 
@@ -329,7 +329,7 @@ This event is triggered each time an entity is about to be saved.
 - if you defined the function at the entity level (first syntax), it is called for any attribute of the entity.
 - if you defined the function at the attribute level (second syntax), it is called only for this attribute. This function is **not** executed if the attribute has not been touched in the entity.
 
-The function receives an [*event* object](#event-parameter) as parameter.
+La función recibe un [objeto *event*](#event-parameter) como parámetro.
 
 This event is triggered by the following functions:
 
@@ -382,7 +382,7 @@ This event is triggered each time an entity is being saved.
 - If you defined the function at the entity level (first syntax), it is called for any attribute of the entity. The function is executed even if no attribute has been touched in the entity (e.g. in case of sending data to an external app each time a save is done).
 - If you defined the function at the attribute level (second syntax), it is called only for this attribute. The function is **not** executed if the attribute has not been touched in the entity.
 
-The function receives an [*event* object](#event-parameter) as parameter.
+La función recibe un [objeto *event*](#event-parameter) como parámetro.
 
 This event is triggered by the following functions:
 
@@ -447,7 +447,7 @@ This event is triggered just after an entity is saved in the data file, when at 
 
 This event is useful after saving data to propagate the save action outside the application or to execute administration tasks. For example, it can be used to send a confirmation email after data have been saved. Or, in case of error while saving data, it can make a rollback to restore a consistent state of data.
 
-The function receives an [*event* object](#event-parameter) as parameter.
+La función recibe un [objeto *event*](#event-parameter) como parámetro.
 
 - To avoid infinite loops, calling a [`save()`](../API/EntityClass.md#save) on the current entity (through `This`) in this function is **not allowed**. Se producirá un error.
 - Throwing an [error object](#error-object) is **not supported** by this function.
@@ -488,7 +488,7 @@ This event is triggered each time an entity is about to be dropped.
 - If you defined the function at the entity level (first syntax), it is called for any attribute of the entity.
 - If you defined the function at the attribute level (second syntax), it is called only for this attribute.
 
-The function receives an [*event* object](#event-parameter) as parameter.
+La función recibe un [objeto *event*](#event-parameter) como parámetro.
 
 This event is triggered by the following features:
 
@@ -535,7 +535,7 @@ This event is triggered each time an entity is being dropped.
 - If you defined the function at the entity level (first syntax), it is called for any attribute of the entity.
 - If you defined the function at the attribute level (second syntax), it is called only for this attribute.
 
-The function receives an [*event* object](#event-parameter) as parameter.
+La función recibe un [objeto *event*](#event-parameter) como parámetro.
 
 This event is triggered by the following features:
 
@@ -593,7 +593,7 @@ This event is triggered just after an entity is dropped.
 
 This event is useful after dropping data to propagate the drop action outside the application or to execute administration tasks. For example, it can be used to send a cancellation email after data have been dropped. Or, in case of error while dropping data, it can log an information for the administrator to check data consistency.
 
-The function receives an [*event* object](#event-parameter) as parameter.
+La función recibe un [objeto *event*](#event-parameter) como parámetro.
 
 - To avoid infinite loops, calling a [`drop()`](../API/EntityClass.md#drop) on the current entity (through `This`) in this function is **not allowed**. Se producirá un error.
 - Throwing an [error object](#error-object) is **not supported** by this function.
