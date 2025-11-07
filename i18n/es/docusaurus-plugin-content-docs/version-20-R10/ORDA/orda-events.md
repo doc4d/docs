@@ -129,9 +129,9 @@ Function event touched($event : Object)
 
 El evento "touched" es útil cuando no es posible escribir código de consulta indexada en [`Function query()`](./ordaClasses.md#function-query-attributename) para un [atributo calculado](./ordaClasses.md#computed-attributes).
 
-This is the case for example, when your [`query`](./ordaClasses.md#function-query-attributename) function has to compare the value of different attributes from the same entity with each other. You must use formulas in the returned ORDA query -- which triggers sequential queries.
+Este es el caso, por ejemplo, cuando tu función [`query`](./ordaClasses.md#function-query-attributename) tiene que comparar el valor de diferentes atributos de la misma entidad entre sí. Debe usar fórmulas en la consulta ORDA devuelta, que activa consultas secuenciales.
 
-To fully understand this case, let's examine the following two calculated attributes:
+Para entender plenamente este caso, examinemos los siguientes dos atributos calculados:
 
 ```4d
 Function get onGoing() : Boolean
@@ -141,9 +141,9 @@ Function get sameDay() : Boolean
         return (This.departureDate=This.arrivalDate)
 ```
 
-Even though they are very similar, these functions cannot be associated with identical queries because they do not compare the same types of values. The first compares attributes to a given value, while the second compares attributes to each other.
+Aunque son muy similares, estas funciones no pueden ser asociadas con consultas idénticas porque no comparan los mismos tipos de valores. La primera compara los atributos a un valor determinado, mientras que la segunda compara los atributos entre sí.
 
-- For the *onGoing* attribute, the [`query`](./ordaClasses.md#function-query-attributename) function is simple to write and uses indexed attributes:
+- Para el atributo *onGoing*, la función [`query`](./ordaClasses.md#function-query-attributename) es sencilla de escribir y utiliza atributos indexados:
 
 ```4d
 Function query onGoing($event : Object) : Object
@@ -164,7 +164,7 @@ Function query onGoing($event : Object) : Object
     End case 
 
     $myQuery:=($onGoingValue) ? "departureDate <= :1 AND arrivalDate >= :1" : "departureDate > :1 OR arrivalDate < :1"
-        // the ORDA query string uses indexed attributes, it will be indexed
+        // la cadena de consulta ORDA utiliza atributos indexados, se indexará
     $parameters.push(Current date)
     return {query: $myQuery; parameters: $parameters}
 ```
