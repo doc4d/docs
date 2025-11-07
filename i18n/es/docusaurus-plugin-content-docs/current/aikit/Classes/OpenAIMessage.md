@@ -74,7 +74,7 @@ When an assistant needs to use external functions, it generates a message with `
 
 When you receive a tool call message, you need to:
 
-1. **Extract the function information:**
+1. **Extraer la información relativa a la función:**
    - `function.name`: The name of the function to call (must match a function defined in your [OpenAITool](OpenAITool.md) - you can select code to execute according to this name)
    - `function.arguments`: A JSON string containing the function parameters that must be parsed with `JSON Parse`
    - `id`: el identificador único para esta llamada específica a la herramienta
