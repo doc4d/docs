@@ -59,13 +59,13 @@ The following table lists ORDA entity events along with their rules.
 
 :::note
 
-The [`constructor()`](./ordaClasses.md#class-constructor-1) function is not actually an event function but is always called when a new entity is instantiated.
+La función [`constructor()`](./ordaClasses.md#class-constructor-1) no es realmente una función de evento, pero siempre es llamada cuando una nueva entidad es instanciada.
 
 :::
 
 ## Parámetro *event*
 
-Event functions accept a single *event* object as parameter. When the function is called, the parameter is filled with several properties:
+Las funciones de evento aceptan un único objeto *event* como parámetro. Cuando se llama a la función, el parámetro se llena con varias propiedades:
 
 | Nombre de propiedad | Disponibilidad                               | Tipo   | Descripción                                                                 |
 | :------------------ | :------------------------------------------- | :----- | :-------------------------------------------------------------------------- |
@@ -82,24 +82,24 @@ Event functions accept a single *event* object as parameter. When the function i
 ```4d
 {local} Function event touched($event : Object)
 {local} Function event touched <attributeName>($event : Object)
-// code
+// código
 ```
 
-This event is triggered each time a value is modified in the entity.
+Este evento se activa cada vez que se modifica un valor en la entidad.
 
 - if you defined the function at the entity level (first syntax), it is triggered for modifications on any attribute of the entity.
 - if you defined the function at the attribute level (second syntax), it is triggered only for modifications on this attribute.
 
-This event is triggered as soon as the 4D Server / 4D engine can detect a modification of attribute value which can be due to the following actions:
+Este evento se activa tan pronto como el motor de 4D Server / 4D detecta una modificación del valor del atributo que puede deberse a las siguientes acciones:
 
 - en **cliente/servidor con la [palabra clave `local`](../ORDA/ordaClasses.md#local-functions)** o en **4D monousuario**:
   - el usuario define un valor en un formulario 4D,
   - el código 4D realiza una asignación con el operador `:=`. El evento también se activa en caso de autoasignación (`$entity.attribute:=$entity.attribute`).
-- in **client/server without the `local` keyword**: some 4D code that makes an assignment with the `:=` operator is [executed on the server](../commands-legacy/execute-on-server.md).
-- in **client/server without the `local` keyword**, in **[Qodly application](https://developer.qodly.com/docs)** and **[remote datastore](../commands/open-datastore.md)**: the entity is received on 4D Server while calling an ORDA function (on the entity or with the entity as parameter). It means that you might have to implement a *refresh* or *preview* function on the remote application that sends an ORDA request to the server and triggers the event.
-- with the REST server: the value is received on the REST server with a [REST request](../REST/$method.md#methodupdate) (`$method=update`)
+- en **cliente/servidor sin la palabra clave `local`**: algún código 4D que hace una asignación con el operador `:=` es [ejecutado en el servidor](../commands-legacy/execute-on-server.md).
+- in **client/server without the `local` keyword**, in **[Qodly application](https://developer.qodly.com/docs)** and **[remote datastore](../commands/open-datastore.md)**: the entity is received on 4D Server while calling an ORDA function (on the entity or with the entity as parameter). Significa que puede que tenga que implementar una función *refresh* o *preview* en la aplicación remota que envía una petición ORDA al servidor y activa el evento.
+- con el servidor REST: el valor es recibido en el servidor REST con una [petición REST](../REST/$method.md#methodupdate) (`$method=update`)
 
-The function receives an [*event* object](#event-parameter) as parameter.
+La función recibe un [objeto *event*](#event-parameter) como parámetro.
 
 If this event [throws](../commands-legacy/throw.md) an error, it will not stop the undergoing action.
 
@@ -108,13 +108,13 @@ If this event [throws](../commands-legacy/throw.md) an error, it will not stop t
 Este evento también se activa:
 
 - cuando los atributos son asignados por el evento [`constructor()`](./ordaClasses.md#class-constructor-1),
-- when attributes are edited through the [Data Explorer](../Admin/dataExplorer.md).
+- cuando los atributos son editados a través del [Explorador de datos](../Admin/dataExplorer.md).
 
 :::
 
 #### Ejemplo 1
 
-You want to uppercase all text attributes of an entity when it is updated.
+Quiere en mayúsculas todos los atributos de texto de una entidad cuando se actualiza.
 
 ```4d
     //ProductsEntity class
@@ -127,7 +127,7 @@ Function event touched($event : Object)
 
 #### Ejemplo 2
 
-The "touched" event is useful when it is not possible to write indexed query code in [`Function query()`](./ordaClasses.md#function-query-attributename) for a [computed attribute](./ordaClasses.md#computed-attributes).
+El evento "touched" es útil cuando no es posible escribir código de consulta indexada en [`Function query()`](./ordaClasses.md#function-query-attributename) para un [atributo calculado](./ordaClasses.md#computed-attributes).
 
 This is the case for example, when your [`query`](./ordaClasses.md#function-query-attributename) function has to compare the value of different attributes from the same entity with each other. You must use formulas in the returned ORDA query -- which triggers sequential queries.
 
