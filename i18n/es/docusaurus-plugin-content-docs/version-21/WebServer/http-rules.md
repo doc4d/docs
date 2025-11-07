@@ -16,7 +16,7 @@ Las reglas HTTP se soportan en los siguientes contextos:
 
 ## Cómo definir reglas
 
-You can declare HTTP response rules:
+Puede declarar las reglas de respuesta HTTP:
 
 - in a configuration file named **HTTPRules.json** stored in the [`Project/Sources`](../Project/architecture.md#sources) folder of the project. Rules are loaded and applied in the main Web server once it is started.
 - using a [`.rules`](../API/WebServerClass.md#rules) property set in the *settings* parameter of the [`start()`](../API/WebServerClass.md#start) function, for any web server object:
