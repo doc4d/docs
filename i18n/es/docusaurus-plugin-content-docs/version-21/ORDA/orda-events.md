@@ -212,7 +212,7 @@ Function query onGoing($event : Object) : Object
     return {query: $myQuery; parameters: $parameters}
 ```
 
-- For the *sameDay* attribute, the [`query`](./ordaClasses.md#function-query-attributename) function requires an ORDA query based on formulas and will be sequential:
+- Para el atributo *sameDay*, la función [`query`](./ordaClasses.md#function-query-attributename) requiere una consulta ORDA basada en fórmulas y será secuencial:
 
 ```4d
 Function query sameDay($event : Object) : Text
@@ -230,7 +230,7 @@ Function query sameDay($event : Object) : Text
         End case 
 
     return ($sameDayValue) ? "eval(This.departureDate = This.arrivalDate)" : "eval(This.departureDate != This.arrivalDate)"
-        // the ORDA query string uses a formula, it will not be indexed
+        // la cadena de consulta ORDA utiliza una fórmula, no será indexada
 
 ```
 
@@ -321,13 +321,13 @@ Note over Qodly page: The People Qodly source lastname attribute is uppercased
 ```4d
 Function event validateSave($event : Object)
 Function event validateSave <attributeName>($event : Object)
-// code
+// código
 ```
 
-This event is triggered each time an entity is about to be saved.
+Este evento se activa cada vez que una entidad está a punto de ser guardada.
 
-- if you defined the function at the entity level (first syntax), it is called for any attribute of the entity.
-- if you defined the function at the attribute level (second syntax), it is called only for this attribute. This function is **not** executed if the attribute has not been touched in the entity.
+- si define la función a nivel de entidad (primera sintaxis), se llama para cualquier atributo de la entidad.
+- si definió la función en el nivel de atributo (segunda sintaxis), sólo se llama para este atributo. This function is **not** executed if the attribute has not been touched in the entity.
 
 La función recibe un [objeto *event*](#event-parameter) como parámetro.
 
@@ -480,7 +480,7 @@ End if
 ```4d
 Function event validateDrop($event : Object)
 Function event validateDrop <attributeName>($event : Object)
-// code
+// código
 ```
 
 This event is triggered each time an entity is about to be dropped.
@@ -490,7 +490,7 @@ This event is triggered each time an entity is about to be dropped.
 
 La función recibe un [objeto *event*](#event-parameter) como parámetro.
 
-This event is triggered by the following features:
+Este evento se activa con las siguientes funcionalidades:
 
 - [`entity.drop()`](../API/EntityClass.md#drop)
 - [`entitySelection.drop()`](../API/DataClassClass.md#fromcollection)
@@ -502,10 +502,10 @@ To stop the action, the code of the function must return an [error object](#erro
 
 #### Ejemplo
 
-In this example, it is not allowed to drop a product that is not labelled "TO DELETE". In this case, you return an error object and thus, stop the drop action.
+En este ejemplo, no está permitido eliminar un producto que no esté etiquetado como "TO DELETE". In this case, you return an error object and thus, stop the drop action.
 
 ```4d
-// ProductsEntity class
+// Clase ProductsEntity
 
 Function event validateDrop status($event : Object) : Object
 
@@ -527,7 +527,7 @@ return $result
 ```4d
 Function event dropping($event : Object)
 Function event dropping <attributeName>($event : Object)
-// code
+// código
 ```
 
 This event is triggered each time an entity is being dropped.
@@ -537,7 +537,7 @@ This event is triggered each time an entity is being dropped.
 
 La función recibe un [objeto *event*](#event-parameter) como parámetro.
 
-This event is triggered by the following features:
+Este evento se activa con las siguientes funcionalidades:
 
 - [`entity.drop()`](../API/EntityClass.md#drop)
 - [`entitySelection.drop()`](../API/DataClassClass.md#fromcollection)
@@ -586,7 +586,7 @@ return $result
 
 ```4d
 Function event afterDrop($event : Object)
-// code
+// código
 ```
 
 This event is triggered just after an entity is dropped.
