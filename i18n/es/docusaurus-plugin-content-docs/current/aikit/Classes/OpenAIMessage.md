@@ -72,7 +72,7 @@ When an assistant needs to use external functions, it generates a message with `
 
 **Gestión de la llamada de la herramienta:**
 
-When you receive a tool call message, you need to:
+Cuando reciba un mensaje de llamada de herramienta, debe:
 
 1. **Extraer la información relativa a la función:**
    - `function.name`: The name of the function to call (must match a function defined in your [OpenAITool](OpenAITool.md) - you can select code to execute according to this name)
