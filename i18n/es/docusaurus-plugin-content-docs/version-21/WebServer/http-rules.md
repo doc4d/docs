@@ -37,7 +37,7 @@ Un objeto regla se define por:
 
 - a RegEx describing a URL pattern, e.g. "^(.\*\\.(jpg|jpeg|png|gif))"
 - the name of the action to execute for the HTTP response, e.g. "removeHeaders"
-- the value of the action, e.g. "X-Unwanted-Header1"
+- el valor de la acción, por ejemplo, "X-Unwanted-Header1"
 
 Las demás propiedades se ignoran.
 
