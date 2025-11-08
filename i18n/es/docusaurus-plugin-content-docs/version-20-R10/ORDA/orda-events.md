@@ -169,7 +169,7 @@ Function query onGoing($event : Object) : Object
     return {query: $myQuery; parameters: $parameters}
 ```
 
-- For the *sameDay* attribute, the [`query`](./ordaClasses.md#function-query-attributename) function requires an ORDA query based on formulas and will be sequential:
+- Para el atributo *sameDay*, la función [`query`](./ordaClasses.md#function-query-attributename) requiere una consulta ORDA basada en fórmulas y será secuencial:
 
 ```4d
 Function query sameDay($event : Object) : Text
@@ -187,7 +187,7 @@ Function query sameDay($event : Object) : Text
         End case 
 
     return ($sameDayValue) ? "eval(This.departureDate = This.arrivalDate)" : "eval(This.departureDate != This.arrivalDate)"
-        // the ORDA query string uses a formula, it will not be indexed
+        // la cadena de consulta ORDA utiliza una fórmula, no será indexada
 
 ```
 
