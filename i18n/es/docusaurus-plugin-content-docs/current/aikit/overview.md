@@ -43,7 +43,7 @@ var $result:=$client.<resource>.<function>(<parameters...>)
 
 El `$result` contiene el `HTTPRequest`, un estado `success`, una colección de `errors` y más. Ver [OpenAIResult](Classes/OpenAIResult.md)
 
-See some examples below.
+Vea algunos ejemplos a continuación.
 
 #### Chat
 
