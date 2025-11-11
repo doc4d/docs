@@ -51,7 +51,7 @@ La propiedad `.data` contiene <!-- REF #TCPEvent.data.Summary -->los datos asoci
 
 :::note
 
-When working with low-level TCP/IP connections, keep in mind there is no guarantee that all data will arrive in a single packet. Data arrives in order but may be fragmented across multiple packets.
+When working with low-level TCP/IP connections, keep in mind there is no guarantee that all data will arrive in a single packet. Los datos llegan en orden, pero pueden fragmentarse a través de múltiples paquetes.
 
 :::
 
