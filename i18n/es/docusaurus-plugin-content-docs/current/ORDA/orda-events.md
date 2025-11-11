@@ -606,7 +606,7 @@ The dropped entity is referenced by `This` and still exists in memory.
 
 #### Ejemplo
 
-If the drop action failed, then the product must be checked manually:
+Si la acción de soltar falló, el producto debe ser verificado manualmente:
 
 ```4d
 Function event afterDrop($event : Object)
