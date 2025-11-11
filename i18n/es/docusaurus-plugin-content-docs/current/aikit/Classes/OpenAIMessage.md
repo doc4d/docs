@@ -38,7 +38,7 @@ Añade una URL de imagen al contenido del mensaje.
 
 ## Ejemplo de Uso
 
-### Create a simple message and attach an image
+### Crear un mensaje simple y adjuntar una imagen
 
 ```4d
 // Create an instance of OpenAIMessage
@@ -52,7 +52,7 @@ $message.addImageURL("http://example.com/image.jpg"; "high")
 
 When an assistant needs to use external functions, it generates a message with `tool_calls` to request function execution.
 
-**Assistant message requesting tool calls:**
+**Mensaje del asistente solicitando las llamadas de la herramienta:**
 
 ```json
 {
