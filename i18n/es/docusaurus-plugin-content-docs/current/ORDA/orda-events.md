@@ -377,7 +377,7 @@ Function event saving <attributeName>($event : Object)
 // code
 ```
 
-This event is triggered each time an entity is being saved.
+Este evento se activa cada vez que se guarda una entidad.
 
 - If you defined the function at the entity level (first syntax), it is called for any attribute of the entity. The function is executed even if no attribute has been touched in the entity (e.g. in case of sending data to an external app each time a save is done).
 - If you defined the function at the attribute level (second syntax), it is called only for this attribute. The function is **not** executed if the attribute has not been touched in the entity.
@@ -389,7 +389,7 @@ This event is triggered by the following functions:
 - [`entity.save()`](../API/EntityClass.md#save)
 - [`dataClass.fromCollection()`](../API/DataClassClass.md#fromcollection)
 
-This event is triggered **while** the entity is actually saved. If a [`validateSave()`](#function-event-validatesave) event function was defined, the `saving()` event function is called if no error was triggered by `validateSave()`. For example, you can use this event to create a document on a Google Drive account.
+Este evento se activa **mientras** la entidad se guarda. If a [`validateSave()`](#function-event-validatesave) event function was defined, the `saving()` event function is called if no error was triggered by `validateSave()`. For example, you can use this event to create a document on a Google Drive account.
 
 :::note
 
@@ -530,7 +530,7 @@ Function event dropping <attributeName>($event : Object)
 // código
 ```
 
-This event is triggered each time an entity is being dropped.
+Este evento se activa cada vez que se elimina una entidad.
 
 - If you defined the function at the entity level (first syntax), it is called for any attribute of the entity.
 - If you defined the function at the attribute level (second syntax), it is called only for this attribute.
