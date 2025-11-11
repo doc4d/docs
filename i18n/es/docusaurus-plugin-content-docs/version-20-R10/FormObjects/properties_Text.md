@@ -413,7 +413,7 @@ Además de [áreas de texto estáticas](text.md), los objetos de texto de las [�
 
 ---
 
-## Row Font Color Array {#row-font-color-array}
+## Array colores de fuente {#row-font-color-array}
 
 `List boxes de tipo array`
 
