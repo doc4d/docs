@@ -754,7 +754,7 @@ Function callback($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 
 :::note
 
-This function does nothing and always returns **False** with stored procedure sessions and standalone sessions.
+Esta función no hace nada y siempre devuelve **False** con sesiones de procedimientos almacenadas y las sesiones independientes.
 
 :::
 
