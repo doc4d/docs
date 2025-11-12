@@ -59,12 +59,12 @@ Se soportan las siguientes palabras clave de acción:
 | `addHeaders`    | Object                      | Name (text) and value (text) of header(s) to add to the HTTP responses.                                                                                                    |
 | `setHeaders`    | Object                      | Name (text) and value (text) of header(s) to modify in the HTTP responses. Si un encabezado a modificar no existe en el encabezado de respuesta, se añade. |
 | `denyAccess`    | Boolean                     | true para negar el acceso al recurso, false para permitir el acceso. When the access to a resource is denied, the web server returns a 403 status by default                                                                        |
-| `redirect`      | Text                        | Redirigir URL. When a redirection is triggered, the web server returns a 302 status by default                                                                                                                                      |
+| `redirect`      | Text                        | Redirigir URL. Cuando se activa una redirección, el servidor web devuelve un estado 302 por defecto                                                                                                                                 |
 | `status`        | Number                      | Estado HTTP                                                                                                                                                                                                                                         |
 
 ### Encabezados no modificables
 
-Some headers could not be added, modified or removed:
+Algunos encabezados no pudieron ser añadidos, modificados o eliminados:
 
 | Encabezado       | Acción de añadir | Set           | Remove |
 | ---------------- | ---------------- | ------------- | ------ |
