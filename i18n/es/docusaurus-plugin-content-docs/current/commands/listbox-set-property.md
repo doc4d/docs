@@ -69,7 +69,7 @@ In the *property* and *value* parameters, you indicate, respectively, the proper
 
 ## Ejemplo 1
 
-You want to make all columns of the "MyListbox" list box resizable:
+Quiere que todas las columnas del list box "MyListbox" sean redimensionables:
 
 ```4d
  LISTBOX SET PROPERTY(*;"MyListbox";lk column resizable;lk yes) //Todas las columnas del list box "MyListbox" se establecen como redimensionables
