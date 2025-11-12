@@ -5,7 +5,7 @@ title: OpenAIChatCompletionsListParameters
 
 # OpenAIChatCompletionsListParameters
 
-This class is used to define parameters for retrieving a list of chat completions from the OpenAI API. It allows customization of pagination, sorting, and filtering of chat messages.
+This class is used to define parameters for retrieving a list of chat completions from the OpenAI API. Permite personalizar la paginación, ordenar y filtrar los mensajes de chat.
 
 ## Hereda
 
