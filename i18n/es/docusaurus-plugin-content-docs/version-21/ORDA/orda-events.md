@@ -336,13 +336,13 @@ This event is triggered by the following functions:
 - [`entity.save()`](../API/EntityClass.md#save)
 - [`dataClass.fromCollection()`](../API/DataClassClass.md#fromcollection)
 
-This event is triggered **before** the entity is actually saved and lets you check data consistency so that you can stop the action if needed. For example, you can check in this event that "departure date" < "arrival date".
+This event is triggered **before** the entity is actually saved and lets you check data consistency so that you can stop the action if needed. Por ejemplo, puede comprobar en este evento que "fecha de salida" < "fecha de llegada".
 
 To stop the action, the code of the function must return an [error object](#error-object).
 
 :::note
 
-It is not recommended to update the entity within this function (using `This`).
+No se recomienda actualizar la entidad dentro de esta función (utilizando `This`).
 
 :::
 
