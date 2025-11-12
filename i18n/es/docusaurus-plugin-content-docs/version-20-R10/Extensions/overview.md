@@ -3,7 +3,7 @@ id: overview
 title: Extendiendo aplicaciones 4D
 ---
 
-The 4D architecture is open and can be extended in different ways. Si necesita una funcionalidad que no está disponible de forma nativa en 4D, siempre puede integrarla en su aplicación de diversas maneras, por ejemplo:
+La arquitectura 4D está abierta y puede ampliarse de diferentes maneras. Si necesita una funcionalidad que no está disponible de forma nativa en 4D, siempre puede integrarla en su aplicación de diversas maneras, por ejemplo:
 
 - Los [**workers del sistema**](../API/SystemWorkerClass.md) permiten al código 4D llamar a cualquier proceso externo (un comando shell, PHP, cualquier script, etc.) y supervisar su ejecución.
 - Los [**comandos SQL**](../commands/theme/SQL) permiten conectar y utilizar diversas fuentes de datos SQL.
