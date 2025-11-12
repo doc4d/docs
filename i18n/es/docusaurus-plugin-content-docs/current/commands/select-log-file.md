@@ -19,7 +19,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.SELECT LOG FILE.Summary-->The **SELECT LOG FILE** command creates, or closes the log file according to the value you pass in parameter<!-- END REF-->.
 
-In *logFile*, pass the name or the full pathname of the log file to be created. If you only pass a name, the file will be created in the "Logs" folder of the database located next to the database structure file.
+En *logFile*, pase el nombre o la ruta completa del archivo de registro a ser creado. If you only pass a name, the file will be created in the "Logs" folder of the database located next to the database structure file.
 
 If you pass an empty string in *logFile*, **SELECT LOG FILE** presents an Save File dialog box, allowing the user to choose the name and location of the log file to be created. Si el archivo se crea correctamente, la variable OK toma el valor 1. Otherwise, if the user clicks Cancel or if the log file could not be created, OK is set to 0.
 
