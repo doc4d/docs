@@ -17,7 +17,7 @@ Puede introducir cualquier nombre de clase válido en esta propiedad, incluyendo
 - Clases 4D integradas (por ejemplo, `4D.File`, `4D.Folder`)
 - [Exposed](../Extensions/develop-components.md#sharing-of-classes) component-defined classes (e.g. `cs.MyComponent.MyClass`)
 
-If you enter an invalid class name, a warning is triggered and the input is rejected.
+Si introduce un nombre de clase inválido, se activa una advertencia y se rechaza la entrada.
 
 :::note
 
