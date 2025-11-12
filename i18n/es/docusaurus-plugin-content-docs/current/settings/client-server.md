@@ -92,7 +92,7 @@ En caso de modificación, deberá reiniciar la aplicación para que se tenga en 
 
 :::note
 
-This option is not available when the [QUIC](#network-layer) network layer is selected.
+Esta opción no está disponible cuando se selecciona la capa de red [QUIC](#network-layer).
 
 :::
 
