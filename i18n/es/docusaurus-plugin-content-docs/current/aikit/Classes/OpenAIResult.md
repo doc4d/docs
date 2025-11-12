@@ -21,7 +21,7 @@ The `OpenAIResult` class is designed to handle the response from HTTP requests a
 | `errors`      | Collection | Devuelve una colección de errores. Estos podrían ser errores de red o errores devueltos por OpenAI. |
 | `terminated`  | Boolean    | Un booleano que indica si la petición HTTP fue terminada.                                                           |
 | `headers`     | Object     | Devuelve los encabezados de respuesta como un objeto.                                                               |
-| `rateLimit`   | Object     | Returns rate limit information from the response headers.                                                           |
+| `rateLimit`   | Object     | Devuelve la información relativa al límite de tasa de los encabezados de la respuesta.                              |
 | `utilización` | Object     | Devuelve la información de uso del cuerpo de la respuesta, si existe.                                               |
 
 ### rateLimit
