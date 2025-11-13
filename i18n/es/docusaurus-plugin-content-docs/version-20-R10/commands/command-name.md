@@ -82,7 +82,7 @@ En un formulario, quiere una lista desplegable con los comandos básicos de info
 
 En la versión inglesa de 4D, la lista desplegable leerá: Sum, Average, Min y Max. En la versión francésa \*, la lista desplegable dirá: Somme, Moyenne, Min, y Max.
 
-\*with a 4D application configured to use the French programming language (see compatibility note)
+\*con una aplicación 4D configurada para usar el lenguaje de programación en francés (ver nota de compatibilidad)
 
 ## Ejemplo 3
 
