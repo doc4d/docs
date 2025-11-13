@@ -374,12 +374,12 @@ return $result
 ```4d
 Function event saving($event : Object)
 Function event saving <attributeName>($event : Object)
-// code
+// código
 ```
 
 Este evento se activa cada vez que se guarda una entidad.
 
-- If you defined the function at the entity level (first syntax), it is called for any attribute of the entity. The function is executed even if no attribute has been touched in the entity (e.g. in case of sending data to an external app each time a save is done).
+- Si define la función a nivel de entidad (primera Sintaxis), se llama para cualquier atributo de la entidad. The function is executed even if no attribute has been touched in the entity (e.g. in case of sending data to an external app each time a save is done).
 - If you defined the function at the attribute level (second syntax), it is called only for this attribute. La función **no** se ejecuta si el atributo no ha sido tocado en la entidad.
 
 La función recibe un [objeto *event*](#event-parameter) como parámetro.
@@ -397,7 +397,7 @@ The business logic should raise errors which can't be detected during the `valid
 
 :::
 
-During the save action, 4D engine errors can be raised (index, stamp has changed, not enough space on disk).
+Durante la acción de guardar, se pueden producir errores en el motor 4D (índice, sello ha cambiado, no hay suficiente espacio en el disco).
 
 To stop the action, the code of the function must return an [error object](#error-object).
 
@@ -445,7 +445,7 @@ Función evento afterSave($event : Object)
 
 This event is triggered just after an entity is saved in the data file, when at least one attribute was modified. No se ejecuta si no se ha tocado ningún atributo en la entidad.
 
-This event is useful after saving data to propagate the save action outside the application or to execute administration tasks. Por ejemplo, se puede utilizar para enviar un correo electrónico de confirmación después de guardar los datos. Or, in case of error while saving data, it can make a rollback to restore a consistent state of data.
+This event is useful after saving data to propagate the save action outside the application or to execute administration tasks. Por ejemplo, se puede utilizar para enviar un correo electrónico de confirmación después de guardar los datos. O, en caso de error al guardar los datos, puede hacer una cancelación para restaurar un estado consistente de los datos.
 
 La función recibe un [objeto *event*](#event-parameter) como parámetro.
 
@@ -485,7 +485,7 @@ Function event validateDrop <attributeName>($event : Object)
 
 Este evento se activa cada vez que una entidad está a punto de ser soltada.
 
-- If you defined the function at the entity level (first syntax), it is called for any attribute of the entity.
+- Si define la función a nivel de entidad (primera Sintaxis), se llama para cualquier atributo de la entidad.
 - If you defined the function at the attribute level (second syntax), it is called only for this attribute.
 
 La función recibe un [objeto *event*](#event-parameter) como parámetro.
@@ -532,7 +532,7 @@ Function event dropping <attributeName>($event : Object)
 
 Este evento se activa cada vez que se elimina una entidad.
 
-- If you defined the function at the entity level (first syntax), it is called for any attribute of the entity.
+- Si define la función a nivel de entidad (primera Sintaxis), se llama para cualquier atributo de la entidad.
 - If you defined the function at the attribute level (second syntax), it is called only for this attribute.
 
 La función recibe un [objeto *event*](#event-parameter) como parámetro.
