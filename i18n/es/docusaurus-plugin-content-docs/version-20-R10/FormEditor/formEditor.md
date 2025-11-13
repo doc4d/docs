@@ -148,7 +148,7 @@ Para seleccionar un objeto utilizando la barra de herramientas:
 
 1. Haga clic en la herramienta Flecha de la barra de herramientas.<br/>![](../assets/en/FormEditor/selection.png)
 
-<br/>When you move the pointer into the form area, it becomes a standard arrow-shaped pointer.
+<br/>Cuando mueve el puntero en el área del formulario, se convierte en un puntero estándar con forma de flecha.
 
 2. Haga clic en el objeto que desea seleccionar. Las manillas de redimensionamiento identifican el objeto seleccionado.<br/>![](../assets/en/FormEditor/selectResize.png)
 
@@ -247,7 +247,7 @@ Para agrupar los objetos:
 Para desagrupar un grupo de objetos:
 
 1. Seleccione el grupo de objetos que desea desagrupar.
-2. Seleccione **Ungroup** en el menú **Object**.<br/>OR<br/>Click the **Ungroup** button (variant of the **Group** button) in the toolbar of the Form editor.<br/>Si **Desagrupar** está atenuado, significa que el objeto seleccionado ya está separado en su forma más simple. 4D marca los bordes de los objetos individuales con marcas.
+2. Seleccione **Ungroup** en el menú **Object**.<br/>OR<br/>Haga clic en el botón **Ungroup** (variante del botón **Group**) en la barra de herramientas del editor de formularios.<br/>Si **Desagrupar** está atenuado, significa que el objeto seleccionado ya está separado en su forma más simple. 4D marca los bordes de los objetos individuales con marcas.
 
 ### Alinear objetos
 
