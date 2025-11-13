@@ -25,7 +25,7 @@ displayed_sidebar: docs
 
 ## Descripción
 
-<!--REF #_command_.Call chain.Summary-->The **Call chain** command returns a collection of objects describing each step of the method call chain within the current process.<!-- END REF--> Ofrece la misma información que la ventana Depurador. It has the added benefit of being able to be executed from any 4D environment, including compiled mode.
+<!--REF #_command_.Call chain.Summary-->The **Call chain** command returns a collection of objects describing each step of the method call chain within the current process.<!-- END REF--> Ofrece la misma información que la ventana Depurador. Tiene la ventaja adicional de poder ser ejecutado desde cualquier entorno 4D, incluyendo el modo compilado.
 
 The command facilitates debugging by enabling the identification of the method or formula called, the component that called it, and the line number where the call was made. Cada objeto de la colección devuelta contiene las siguientes propiedades:
 
@@ -45,7 +45,7 @@ Para que este comando pueda operar en modo compilado, la [verificación de rango
 
 ## Ejemplo
 
-The following code returns a collection of objects containing information about the method call chain:
+El siguiente código devuelve una colección de objetos que contienen información acerca de la cadena de llamadas de métodos:
 
 ```4d
 var $currentCallChain : Collection
