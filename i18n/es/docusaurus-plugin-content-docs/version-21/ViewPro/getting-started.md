@@ -13,7 +13,7 @@ La integración de áreas de 4D View Pro en sus formularios le permite importar 
 
 ## Instalación y activación
 
-4D View Pro debe estar instalado en sus proyectos. The 4D View Pro component is available from the [**4D-ViewPro github repository**](https://github.com/4d/4D-ViewPro).
+4D View Pro debe estar instalado en sus proyectos. El componente 4D View Pro está disponible en el [\*\*repositorio github 4D-ViewPro \*\*](https://github.com/4d/4D-ViewPro).
 
 La forma más fácil de instalar 4D View Pro en un proyecto abierto es utilizar el Administrador de dependencias:
 
