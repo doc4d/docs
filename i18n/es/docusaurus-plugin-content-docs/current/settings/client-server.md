@@ -110,7 +110,7 @@ Cuando esta opción está marcada, todas las máquinas remotas 4D que se conecta
 
 :::note
 
-This option is not available when the [QUIC](#network-layer) network layer option is selected.
+Esta opción no está disponible cuando se selecciona la opción capa de red [QUIC](#network-layer).
 
 :::
 
