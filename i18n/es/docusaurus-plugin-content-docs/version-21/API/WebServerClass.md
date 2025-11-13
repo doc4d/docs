@@ -187,7 +187,7 @@ El <!-- REF #WebServerClass.defaultHomepage.Summary -->nombre de la página de i
 
 *Propiedad de sólo lectura*
 
-A <!-- REF #WebServerClass.handlers.Summary -->collection of custom HTTP handler objects<!-- END REF -->. An HTTP handler object contains a listened URL pattern, a handled verb, and the code to be called. HTTP handlers can be defined through a HTTPHandlers.json file or the *settings* parameter of the [`.start()`](#start) function. For more information, please refer to the [HTTP Request handler](../WebServer/http-request-handler.md) page.
+A <!-- REF #WebServerClass.handlers.Summary -->collection of custom HTTP handler objects<!-- END REF -->. An HTTP handler object contains a listened URL pattern, a handled verb, and the code to be called. HTTP handlers can be defined through a HTTPHandlers.json file or the *settings* parameter of the [`.start()`](#start) function. Para más información, consulte la página [HTTP Request handler](../WebServer/http-request-handler.md).
 
 <!-- END REF -->
 
