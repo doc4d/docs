@@ -25,7 +25,7 @@ Si pasa el parámetro opcional *\**, indica que el parámetro *object* es un nom
 
 **Note:** If the list box or list box column specified using the *object* and *\** parameters does not exist, the command does nothing and no error is triggered.
 
-In the *property* and *value* parameters, you indicate, respectively, the property to set and its new value. Puede utilizar las siguientes constantes encontradas en el tema “*List Box*:
+En los parámetros *property* y *value*, usted indica, respectivamente, la propiedad a definir y su nuevo valor. Puede utilizar las siguientes constantes encontradas en el tema “*List Box*:
 
 | Constante                      | Valor | Comentario                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | ------------------------------ | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
