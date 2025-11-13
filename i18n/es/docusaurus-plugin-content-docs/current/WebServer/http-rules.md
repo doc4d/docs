@@ -74,7 +74,7 @@ Algunos encabezados no pudieron ser añadidos, modificados o eliminados:
 | Vary             | Sí               | No            | No     |
 | Set-Cookie       | Sí               | Añadir cookie | No     |
 
-Unauthorized changes on these headers do not generate errors, however modifications will be ignored.
+Los cambios no autorizados en estos encabezados no generan errores, sin embargo las modificaciones serán ignoradas.
 
 ### Reglas actuales
 
