@@ -248,8 +248,8 @@ In Qodly Studio for 4D, the login mode can be set using the [**Force login** opt
 
 The `restrictedByDefault` property configures how every [resource](#resources) are accessed when [no specific permission is defined for it](#permission):
 
-- **Unrestricted mode** (`restrictedByDefault`: **false**): Resources without defined permissions are accessible to all requests. This mode is suitable for development environments where access can be gradually restricted.
-- **Restricted mode** (`restrictedByDefault`: **true**): Resources without defined permissions are blocked by default. This mode is recommended for production environments where access must be explicitly granted.
+- **Unrestricted mode** (`restrictedByDefault`: **false**): Resources without defined permissions are accessible to all requests. Este modo es adecuado para entornos de desarrollo donde el acceso se puede restringir gradualmente.
+- **Restricted mode** (`restrictedByDefault`: **true**): Resources without defined permissions are blocked by default. Este modo se recomienda para entornos de producción donde el acceso debe ser otorgado explícitamente.
 
 :::note Compatibilidad
 
@@ -262,7 +262,7 @@ The `restrictedByDefault` property configures how every [resource](#resources) a
 
 Depending on your environment, the recommended settings are:
 
-- **Production**: Set both `restrictedByDefault` and [`forceLogin`](../REST/authUsers.md#force-login-mode) to **true**. This ensures maximum security by requiring user authentication and explicitly defined permissions for resource access.
+- **Production**: Set both `restrictedByDefault` and [`forceLogin`](../REST/authUsers.md#force-login-mode) to **true**. Esto garantiza la máxima seguridad al requerir autenticación de usuario y permisos explícitamente definidos para el acceso a recursos.
 - **Development**: Set both `restrictedByDefault` and [`forceLogin`](../REST/authUsers.md#force-login-mode) to **false**. This allows easier access during development and debugging, with the possibility to gradually apply restrictions.
 
 ### Archivo `Roles_Errors.json`
