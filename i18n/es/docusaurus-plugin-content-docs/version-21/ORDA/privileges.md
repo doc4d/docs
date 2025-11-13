@@ -262,7 +262,7 @@ The `restrictedByDefault` property configures how every [resource](#resources) a
 
 Depending on your environment, the recommended settings are:
 
-- **Production**: Set both `restrictedByDefault` and [`forceLogin`](../REST/authUsers.md#force-login-mode) to **true**. This ensures maximum security by requiring user authentication and explicitly defined permissions for resource access.
+- **Production**: Set both `restrictedByDefault` and [`forceLogin`](../REST/authUsers.md#force-login-mode) to **true**. Esto garantiza la máxima seguridad al requerir autenticación de usuario y permisos explícitamente definidos para el acceso a recursos.
 - **Development**: Set both `restrictedByDefault` and [`forceLogin`](../REST/authUsers.md#force-login-mode) to **false**. This allows easier access during development and debugging, with the possibility to gradually apply restrictions.
 
 ### Archivo `Roles_Errors.json`
