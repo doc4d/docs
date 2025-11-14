@@ -53,7 +53,7 @@ También puede definir esta propiedad utilizando el comando [`OBJECT SET RGB COL
 
 ---
 
-## Background Color Expression {#background-color-expression}
+## Expresión color de fondo {#background-color-expression}
 
 `List box de tipo colección y de tipo selección de entidades`
 
@@ -186,7 +186,7 @@ Designa el grosor de una línea.
 
 ---
 
-## Row Background Color Array {#row-background-color-array}
+## Array colores de fondo {#row-background-color-array}
 
 `List boxes de tipo array`
 

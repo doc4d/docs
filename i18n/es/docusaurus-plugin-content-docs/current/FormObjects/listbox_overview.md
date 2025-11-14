@@ -812,7 +812,7 @@ If the user selects a break row, [`LISTBOX GET CELL POSITION`](../commands/listb
 
 ![](../assets/en/FormObjects/hierarch11.png)
 
-... [`LISTBOX GET CELL POSITION`](../commands/listbox-get-cell-position) returns (2;4). To select a break row by programming, you will need to use the [`LISTBOX SELECT BREAK`](../commands/listbox-select-break) command.
+... [`LISTBOX GET CELL POSITION`](../commands/listbox-get-cell-position) devuelve (2;4). To select a break row by programming, you will need to use the [`LISTBOX SELECT BREAK`](../commands/listbox-select-break) command.
 
 Las líneas de rotura no se tienen en cuenta en los arrays internos utilizados para gestionar el aspecto gráfico de los list box (estilos y colores). No obstante, es posible modificar estas características para las líneas de ruptura mediante los comandos de gestión gráfica de los objetos. Basta con ejecutar los comandos adecuados en los arrays que constituyen la jerarquía.
 
@@ -1035,7 +1035,7 @@ Ejemplos:
 	ARRAY TEXT($RequiredList;0)
 	APPEND TO ARRAY($RequiredList;"Open")
 	APPEND TO ARRAY($RequiredList;"Closed")
-	var $ob Object
+	var $ob : Object
 	OB SET($ob;"valueType";"text")
 	OB SET($ob;"value";"Closed")
 	OB SET ARRAY($ob;"requiredList";$RequiredList)
@@ -1100,9 +1100,7 @@ Ejemplos:
 	OB SET($ob;"requiredListReference";<>List)
 ```
 
-```
 ![](../assets/en/FormObjects/listbox_column_objectArray_cities.png)
-```
 
 #### choiceListName y choiceListReference
 

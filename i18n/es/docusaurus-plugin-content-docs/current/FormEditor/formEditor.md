@@ -148,7 +148,7 @@ Para seleccionar un objeto utilizando la barra de herramientas:
 
 1. Haz clic en la herramienta Flecha en la barra de herramientas.<br/>![](../assets/en/FormEditor/selection.png)
 
-<br/>When you move the pointer into the form area, it becomes a standard arrow-shaped pointer.
+<br/>Cuando mueve el puntero en el área del formulario, se convierte en un puntero estándar con forma de flecha.
 
 2. Haga clic en el objeto que desea seleccionar. Las asas de redimensionamiento identifican el objeto seleccionado.<br/>![](../assets/en/FormEditor/selectResize.png)
 
@@ -157,7 +157,7 @@ Para seleccionar un objeto utilizando la Lista de propiedades:
 1. Seleccione el nombre del objeto en la lista desplegable de objetos situada en la parte superior de la lista de propiedades. Con estos dos métodos, puede seleccionar un objeto que esté oculto por otros objetos o que se encuentre fuera del área visible de la ventana actual.
    Para deseleccionar un objeto, haga clic fuera del límite del objeto o **Mayúsculas+clic** en el objeto.
 
-> It is also possible to select objects by double-clicking them in the result window of "Find in design" operation.
+> También es posible seleccionar objetos haciendo doble clic en la ventana de resultados de la operación "Buscar en diseño".
 
 ### Selección de múltiples objetos
 
@@ -352,7 +352,7 @@ Cuando se superponen varios objetos, se puede utilizar el atajo **Ctrl+Mayús+cl
 
 :::note
 
-In binary databases, use **Ctrl+Click / Command+Click** to perform the same action.
+En bases de datos binarias, utilice **Ctrl+Clic / Comando+Clic** para efectuar la misma acción.
 
 :::
 

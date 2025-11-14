@@ -28,7 +28,7 @@ displayed_sidebar: docs
 
 ## Descripción
 
-The **Command name** command <!--REF #_command_.Command name.Summary-->returns the name as well as (optionally) the properties of the command whose command number you pass in *command*.<!-- END REF-->The number of each command is indicated in the Explorer as well as in the Properties area of this documentation.
+The **Command name** command <!--REF #_command_.Command name.Summary-->returns the name as well as (optionally) the properties of the command whose command number you pass in *command*.<!-- END REF-->El número de cada comando se indica tanto en el explorador como en el área Propiedades de esta documentación.
 
 **Compatibility note:** A command name may vary from one 4D version to the next (commands renamed), this command was used in previous versions to designate a command directly by means of its number, especially in non-tokenized portions of code. This need has diminished over time as 4D continues to evolve because, for non-tokenized statements (formulas), 4D now provides a token syntax. This syntax allows you to avoid potential problems due to variations in command names as well as other elements such as tables, while still being able to type these names in a legible manner (for more information, refer to the *Using tokens in formulas* section). Tenga en cuenta también que la opción \*[Usar parámetros del sistema regional\* de las Preferencias](../Preferences/methods.md#4d-programming-language-use-regional-system-settings) le permite seguir usando el idioma francés en una versión francesa de 4D.
 
@@ -36,7 +36,7 @@ Hay dos parámetros opcionales:
 
 - *info*: propiedades del comando. The returned value is a *bit field*, where the following bits are meaningful:
   - Primer bit (bit 0): definido en 1 si el comando es [**hilo-seguro**](../Develop/preemptive.md#thread-safe-vs-thread-unsafe-code) (es decir, compatible con la ejecución en un proceso apropiativo) y 0 si es **hilo-inseguro**. Only thread-safe commands can be used in [preemptive processes](../Develop/preemptive.md).
-  - Second bit (bit 1): set to 1 if the command is **deprecated**, and 0 if it is not. A deprecated command will continue to work normally as long as it is supported, but should be replaced whenever possible and must no longer be used in new code. Los comandos obsoletos en su código generan advertencias en el [Live Checker y el compilador](../code-editor/write-class-method.md#warnings-and-errors).
+  - Segundo bit (bit 1): se define en 1 si el comando es **obsoleto**, y en 0 si no lo es. A deprecated command will continue to work normally as long as it is supported, but should be replaced whenever possible and must no longer be used in new code. Los comandos obsoletos en su código generan advertencias en el [Live Checker y el compilador](../code-editor/write-class-method.md#warnings-and-errors).
 
 *theme*: nombre del tema del lenguaje 4D para el comando.
 
@@ -80,9 +80,9 @@ En un formulario, quiere una lista desplegable con los comandos básicos de info
  End case
 ```
 
-In the English version of 4D, the drop-down list will read: Sum, Average, Min, and Max. In the French version\*, the drop-down list will read: Somme, Moyenne, Min, and Max.
+En la versión inglesa de 4D, la lista desplegable leerá: Sum, Average, Min y Max. In the French version\*, the drop-down list will read: Somme, Moyenne, Min, and Max.
 
-\*with a 4D application configured to use the French programming language (see compatibility note)
+\*con una aplicación 4D configurada para usar el lenguaje de programación en francés (ver nota de compatibilidad)
 
 ## Ejemplo 3
 
@@ -101,7 +101,7 @@ You want to create a method that returns **True** if the command, whose number i
  End if
 ```
 
-Then, for the "SAVE RECORD" command (53) for example, you can write:
+Luego, para el comando "SAVE RECORD" (53) por ejemplo, puede escribir:
 
 ```4d
  $isSafe:=Is_Thread_Safe(53)
@@ -110,7 +110,7 @@ Then, for the "SAVE RECORD" command (53) for example, you can write:
 
 ## Ejemplo 4
 
-You want to return a collection of all deprecated commands in your version of 4D.
+Quiere devolver una colección de todos los comandos obsoletos en su versión de 4D.
 
 ```4d
 var $info; $Lon_id : Integer

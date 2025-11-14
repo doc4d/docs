@@ -462,7 +462,7 @@ Function event restrict() -> $result : cs.*DataClassName*Selection
 
 Esta función se llama cada vez que se solicita una selección de entidades o una entidad de la dataclass. El filtro se ejecuta una vez, cuando se crea la selección de entidades.
 
-El filtro debe devolver una selección de entidades de la clase de datos. It can be an entity selection built upon a query, stored in the [`Storage`](../API/SessionClass.md#storage), etc.
+El filtro debe devolver una selección de entidades de la clase de datos. Puede ser una selección de entidades basada en una petición, almacenada en el [`Storage`](../API/SessionClass.md#storage), etc.
 
 :::note
 
@@ -566,7 +566,7 @@ El siguiente diagrama ilustra el bloqueo optimista:
 
 1. Dos procesos cargan la misma entidad.<br/><br/>![](../assets/en/ORDA/optimisticLock1.png)
 
-2. El primer proceso modifica la entidad y valida el cambio. Se llama al método `entity.save( )`. El motor 4D compara automáticamente el valor del marcador interno de la entidad modificada con el de la entidad almacenada en los datos. Since they match, the entity is saved and its stamp value is incremented.<br/><br/>![](../assets/en/ORDA/optimisticLock2.png)
+2. El primer proceso modifica la entidad y valida el cambio. Se llama al método `entity.save( )`. El motor 4D compara automáticamente el valor del marcador interno de la entidad modificada con el de la entidad almacenada en los datos. Como corresponden, la entidad se guarda y el valor de su marcador se incrementa.<br/><br/>![](../assets/en/ORDA/optimisticLock2.png)
 
 3. El segundo proceso también modifica la entidad cargada y valida sus cambios. Se llama al método `entity.save( )`. Since the stamp value of the modified entity does not match the one of the entity stored in the data, the save is not performed and an error is returned.<br/><br/>![](../assets/en/ORDA/optimisticLock3.png)
 
