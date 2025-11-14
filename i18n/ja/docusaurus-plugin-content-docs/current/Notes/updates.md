@@ -14,14 +14,6 @@ Read [**What’s new in 4D 21 R2**](https://blog.4d.com/en-whats-new-in-4d-21-r2
 
 #### 動作の変更
 
-## 4D 21.x LTS
-
-[**4D 21.x LTS のリリースノート**](../../21/Notes/updates) を参照して下さい。
-
-## 4D 20.x LTS
-
-[**4D 20.x LTS のリリースノート**](../../20/Notes/updates) を参照して下さい。
-
 ## ライブラリの一覧
 
 | ライブラリ     | 現在のバージョン                               | 更新された 4D バージョン | 説明                                                                                                                                                 |
