@@ -595,6 +595,9 @@ SET DATABASE PARAMETER(Log command list;"-1666;-323")
 ```
 
 
+ SET DATABASE PARAMETER(Log command list;"277;341") //Grabar solo los comandos QUERY y QUERY SELECTION O SET DATABASE PARAMETER(Log command list;"-1666;-323") //Excluir SET USER ALIAS y DELAY PROCESS commands from being recorded
+ 
+ 
 
 
  SET DATABASE PARAMETER(Log command list;"277;341") //Grabar solo los comandos QUERY y QUERY SELECTION O SET DATABASE PARAMETER(Log command list;"-1666;-323") //Excluir SET USER ALIAS y DELAY PROCESS commands from being recorded
