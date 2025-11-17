@@ -16,7 +16,7 @@ The `TCPEvent` class provides information about events occurring during the life
 
 ### Objeto TCPEvent
 
-A `TCPEvent` object is immutable and non-streamable.
+Un objeto `TCPEvent` es inmutable y no se puede transmitir.
 
 Las siguientes propiedades están disponibles:
 
@@ -35,7 +35,7 @@ Las siguientes propiedades están disponibles:
 
 #### Descripción
 
-The `.address` property contains <!-- REF #TCPEvent.address.Summary -->the IP address of the remote machine<!-- END REF -->.
+La propiedad `.address` contiene <!-- REF #TCPEvent.address.Summary -->la dirección IP de la máquina remota<!-- END REF -->.
 
 <!-- END REF -->
 
@@ -51,7 +51,7 @@ La propiedad `.data` contiene <!-- REF #TCPEvent.data.Summary -->los datos asoci
 
 :::note
 
-When working with low-level TCP/IP connections, keep in mind there is no guarantee that all data will arrive in a single packet. Data arrives in order but may be fragmented across multiple packets.
+When working with low-level TCP/IP connections, keep in mind there is no guarantee that all data will arrive in a single packet. Los datos llegan en orden, pero pueden fragmentarse a través de múltiples paquetes.
 
 :::
 
@@ -79,11 +79,11 @@ La propiedad `.port` contiene <!-- REF #TCPEvent.port.Summary -->el número de p
 
 La propiedad `.type` contiene <!-- REF #TCPEvent.type.Summary -->el tipo del evento<!-- END REF -->. Los valores posibles son:
 
-- `"connection"`: Indicates that a TCPConnection was successfully established.
+- `"connection"`: indica que una conexión TCP fue establecida con éxito.
 - `"data"`: indica que los datos han sido recibidos.
-- `"error"`: Indicates that an error occurred during the TCPConnection.
-- `"close"`: Indicates that the TCPConnection has been properly closed.
-- `"terminate"`: Indicates that the TCPConnection is about to be released.
+- `"error"`: indica que se ha producido un error durante la TCPConnection.
+- `"close"`: indica que la TCPConnection ha sido correctamente cerrada.
+- `"terminate"`: indica que el TCPConnection está a punto de ser liberado.
 
 <!-- END REF -->
 

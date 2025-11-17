@@ -9,12 +9,12 @@ Vous pouvez définir plusieurs propriétés à partir des lignes de menu, telles
 
 La propriété **Titre** contient le libellé d'un menu ou d'une ligne de menu, tel qu'il sera affiché dans l'interface de l'application.
 
-Dans l'éditeur de menus, vous pouvez saisir directement le libellé "en dur". Vous pouvez également saisir une référence pour une variable ou un élément XLIFF, ce qui facilitera la mise à jour et la traduction des applications. Vous pouvez utiliser types de références suivants :
+Dans l'éditeur de menus, vous pouvez saisir directement le libellé "en dur". Vous pouvez également saisir une référence pour une variable ou un élément XLIFF, ce qui facilitera la mise à jour et la traduction des applications. Vous pouvez utiliser les types de références suivants :
 
 - Une référence à une ressource XLIFF, du type :xliff:MonLibellé. Pour plus d’informations sur les références XLIFF, reportez-vous à la section *Annexe B : Architecture XLIFF* du *Mode Développement 4D*.
-- Un nom de variable interprocess suivi d’un chiffre, par exemple :`:<>vlang,3`. Il suffit de changer le contenu de cette variable pour modifier le libellé du menu lors de son affichage. Dans ce cas, le libellé fera appel à une ressource XLIFF. La valeur contenue dans la variable `<>vlang` correspond à l’attribut *id* de l’élément *group*. La seconde valeur (3 dans cet exemple) désigne l’attribut *id* de l’élément *trans-unit*.
+- (**Obsolète**) Un nom de variable interprocess suivi d'un nombre, par exemple : `:<>vlang,3`. Il suffit de changer le contenu de cette variable pour modifier le libellé du menu lors de son affichage. Dans ce cas, le libellé fera appel à une ressource XLIFF. La valeur contenue dans la variable `<>vlang` correspond à l’attribut *id* de l’élément *group*. La seconde valeur (3 dans cet exemple) désigne l’attribut *id* de l’élément *trans-unit*.
 
-En utilisant le langage 4D, vous définissez la propriété Title à l'aide du paramètre *itemText* des commandes `APPEND MENU ITEM`, `INSERT MENU ITEM`, et `SET MENU ITEM`.
+En utilisant le langage 4D, vous définissez la propriété du titre par le biais du paramètre *itemText* des commandes [`APPEND MENU ITEM`](../commands/append-menu-item), [`INSERT MENU ITEM`](../commands/insert-menu-item) et [`SET MENU ITEM`](../commands/set-menu-item).
 
 ### Caractères de contrôle
 
@@ -33,9 +33,9 @@ Les caractères de contrôle n’apparaissent pas dans les libellés des command
 
 ## Paramètres
 
-Il est possible d’associer un paramètre personnalisé à chaque ligne de menu. Un paramètre de ligne de menu est une chaîne de caractères dont le contenu est libre. Il peut être défini dans l'éditeur de menu ou à l'aide de la commande `SET MENU ITEM PARAMETER`.
+Il est possible d’associer un paramètre personnalisé à chaque ligne de menu. Un paramètre de ligne de menu est une chaîne de caractères dont le contenu est libre. Il peut être défini dans l'éditeur de menus ou à l'aide de la commande [`SET MENU ITEM PARAMETER`](../commands/set-menu-item-parameter).
 
-Les paramètres de lignes de menus sont utiles pour la gestion programmée des menus, en particulier lors de l’utilisation des commandes `Dynamic pop up menu`, `Get menu item parameter` et `Get selected menu item parameter`.
+Les paramètres des éléments de menus sont utiles pour la gestion programmée des menus, en particulier lors de l'utilisation des commandes [`Dynamic pop up menu`](../commands/dynamic-pop-up-menu), [`Get menu item parameter`](../commands/get-menu-item-parameter) et [`Get selected menu item parameter`](../commands/get-selected-menu-item-parameter).
 
 ## Action
 
@@ -43,7 +43,7 @@ Chaque commande de menu peut avoir une méthode projet ou une action standard qu
 
 Si aucune méthode ou action standard n'est affectée à une commande de menu, le choix de cette commande provoquera la fermeture du mode Application et l'ouverture du mode Développement. Si seul le mode Application est disponible, ce qui signifie un retour au Desktop.
 
-Standard actions can be used to carry out various current operations linked to system functions (copy, quit, etc.) or to those of the database (add record, select all, etc.).
+Les actions standard permettent d'effectuer diverses opérations courantes liées aux fonctions du système (copier, quitter, etc.) ou à celles de la base de données (ajouter un enregistrement, sélectionner tout, etc.).
 
 Vous pouvez associer à la fois une action standard et une méthode projet à une commande de menu. Dans ce cas, l’action standard n’est jamais exécutée ; toutefois, 4D utilise cette action pour activer/inactiver la commande de menu en fonction du contexte et pour associer une opération spécifique en fonction de la plateforme. Lorsqu’une commande de menu est inactivée, la méthode projet associée ne peut être exécutée.
 
@@ -53,11 +53,11 @@ Vous choisissez d’associer une action standard ou une méthode projet à la co
 
 Pour associer une méthode projet et/ou une action standard à une commande de menu sélectionnée dans l'éditeur de menu :
 
-- **Nom de la méthode** : sélectionnez une méthode projet existante dans la combo box. If the project method does not exist, enter its name in the "Method Name" combo box then click on the [...] bouton. 4D affiche une boîte de dialogue de création de méthode de projet qui permet d'accéder à l'éditeur de code.
+- **Nom de la méthode** : sélectionnez une méthode projet existante dans la combo box. Si la méthode projet n’existe pas, saisissez son nom dans la combo box “Nom de la méthode” puis cliquez sur le bouton [...] . 4D affiche une boîte de dialogue de création de méthode de projet qui permet d'accéder à l'éditeur de code.
 - **Action standard associée** : Choisissez ou saisissez le nom de l’action que vous souhaitez associer dans la combo box "Action standard associée". Vous pouvez saisir toute action prise en charge et (optionnellement) tout paramètre dans la zone. Pour la liste complète des actions standard, veuillez vous reporter à la section **Actions standard** dans le *Mode Développement*.
   **Note macOS :** Sous macOS, les commandes de menus créés associées à l'action *Quitter* sont automatiquement placées dans le menu de l’application, conformément aux normes d’interface de cette plate-forme.
 
-A l'aide du langage 4D, vous pouvez associer une méthode projet via la commande `SET MENU ITEM METHOD` et une action standard via la commande `SET MENU ITEM PROPERTY`.
+En utilisant le langage 4D, vous pouvez associer une méthode projet en utilisant la commande [`SET MENU ITEM METHOD`](../commands/set-menu-item-method) et une action standard en utilisant la commande [`SET MENU ITEM PROPERTY`](../commands/set-menu-item-property).
 
 ### Démarrer un process
 
@@ -93,7 +93,7 @@ Vous ajoutez un filet de séparation en créant une commande de menu.
 Dans l'éditeur de menus, au lieu de saisir le nom de la commande de menu, il suffit de cocher l’option **Ligne de séparation**. La ligne apparaît alors dans la zone de la commande courante. La ligne apparaît alors dans la zone de la commande courante. Lorsque cette option est cochée, les autres propriétés sont sans effet.
 **Note :** Sous macOS, il est possible de procéder en faisant commencer le nom de la commande par un tiret “-”. Cette commande sera alors affichée comme une ligne de séparation.
 
-Dans le langage 4D, vous insérez une ligne de séparation en saisissant `-` ou `(-` comme itemText pour les commandes `APPEND MENU ITEM`, `INSERT MENU ITEM`, ou `SET MENU ITEM`.
+Dans le langage 4D, vous insérez une ligne de séparation en entrant `-` ou `(-` comme *itemText* pour les commandes [`APPEND MENU ITEM`](../commands/append-menu-item), [`INSERT MENU ITEM`](../commands/insert-menu-item) ou [`SET MENU ITEM`](../commands/set-menu-item).
 
 ### Raccourcis clavier
 
@@ -131,7 +131,7 @@ Les combinaisons réservées sont décrites dans le tableau suivant :
 Pour affecter un raccourci clavier dans l'éditeur de menus :
 
 Sélectionnez la ligne de menu à laquelle vous souhaitez affecter un raccourci clavier.
-Click on the [...] button to the right of the "Shortcut" entry area. La fenêtre suivante apparaît :
+Cliquez sur le bouton [...] à droite de la zone de saisie "Raccourci". La fenêtre suivante apparaît :
 
 ![](../assets/en/Menus/Shortcut.png)
 
@@ -153,13 +153,13 @@ Par défaut, 4D active automatiquement toute commande de menu ajoutée à un men
 
 ### Coche
 
-Cette option de l'éditeur de menus permet d’associer par défaut une coche système à la ligne de menu. Vous pourrez ensuite gérer (masquer ou afficher) la coche au moyen des commandes du langage (`SET MENU ITEM MARK` et `Get menu item mark`).
+Cette option de l'éditeur de menus permet d’associer par défaut une coche système à la ligne de menu. Vous pouvez ensuite gérer l'affichage de la coche à l'aide des commandes de langage ([`SET MENU ITEM MARK`](../commands/set-menu-item-mark) et [`Get menu item mark`](../commands/get-menu-item-mark)).
 
 Les coches sont généralement utilisées pour des menus à action permanente et indiquent que l’action est en cours.
 
 ### Styles des polices
 
-4D vous permet de personnaliser les menus en appliquant différents styles de caractères aux commandes de menus. Vous pouvez personnaliser vos menus avec les styles Gras, Italique ou Souligné, ou à l'aide de la commande `SET MENU ITEM STYLE`.
+4D vous permet de personnaliser les menus en appliquant différents styles de caractères aux commandes de menus. You can customize your menus with the Bold, Italic or Underline styles through options in the Menu editor, [`SET MENU ITEM STYLE`](../commands/set-menu-item-style).
 
 En règle générale, les styles de police doivent être appliqués à vos menus avec parcimonie, afin d’éviter de conférer une apparence confuse à votre application.
 
@@ -177,4 +177,4 @@ Pour définir l’icône dans l'éditeur de menu, choisissez l'option **Ouvrir**
 
 Pour supprimer l’icône de ligne, choisissez l’option **Pas d’icône** dans le menu de la zone “Icône ligne”.
 
-Pour définir ds icônes de ligne à l'aide du langage 4D, appelez la commande `SET MENU ITEM ICON`.
+Pour définir les icônes des éléments à l'aide du langage 4D, appelez la commande [`SET MENU ITEM ICON`](../commands/set-menu-item-icon).

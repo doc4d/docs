@@ -89,7 +89,7 @@ This function does not remove **promoted privileges** from the web process, whet
 
 :::
 
-Regarding remote client sessions, the function only impacts [code accessing the web server](../WebServer/preemptiveWeb.md#writing-thread-safe-web-server-code).
+Regarding remote client sessions, the function only concerns the code executed in the context of a [web request sent through a Web area](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas).
 
 #### Exemplo
 
@@ -388,7 +388,7 @@ This function returns True for the *privilege* if called from a function that wa
 
 :::
 
-Regarding remote client sessions, the function only impacts [code accessing the web server](../WebServer/preemptiveWeb.md#writing-thread-safe-web-server-code).
+Regarding remote client sessions, the function only concerns the code executed in the context of a [web request sent through a Web area](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas).
 
 With stored procedure sessions and standalone sessions, this function always returns True, whatever the *privilege*.
 
@@ -443,10 +443,9 @@ Você pode usar essa propriedade para obter o objeto [`.storage`](#storage) de u
 
 <details><summary>História</summary>
 
-| Release | Mudanças |
-| ------- | -------- |
-
-|v18 R6|Adicionado|
+| Release | Mudanças   |
+| ------- | ---------- |
+| 18 R6   | Adicionado |
 
 </details>
 

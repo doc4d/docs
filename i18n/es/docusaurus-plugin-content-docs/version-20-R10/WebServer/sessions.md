@@ -201,9 +201,9 @@ Else
 End if
 ```
 
-:::note
+:::tips Entradas de blog relacionadas
 
-Para más ejemplos, por favor consulte la publicación de blog [Sesiones escalables para aplicaciones web avanzadas](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/).
+[Sesiones escalables para aplicaciones web avanzadas](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/)
 
 :::
 
@@ -211,7 +211,7 @@ Para más ejemplos, por favor consulte la publicación de blog [Sesiones escalab
 
 El servidor web 4D le permite generar, compartir y utilizar tokens de sesión OTP (One-Time Passcode). Los tokens de sesión OTP se utilizan para asegurar comunicaciones con aplicaciones de terceros o sitios web. For information on OTP, please refer to the [One-time password page](https://en.wikipedia.org/wiki/One-time_password) on Wikipedia.
 
-In 4D, OTP session tokens are useful when calling external URLs and being called back in another browser or device (mobile/computer). Typically, a third-party application sends a confirmation email containing a callback link on which the user has to click. The callback link includes the OTP token, so that the session which triggered the callback is loaded along with its data and privileges. This principle allows you to share the same session on multiple devices. Gracias a esta arquitectura, la [cookie de sesión](#session-implementation) no está expuesta en la red, lo que elimina el riesgo de un ataque de hombre en el medio.
+In 4D, OTP session tokens are useful when calling external URLs and being called back in another browser or device (mobile/computer). Normalmente, una aplicación de terceros envía un correo electrónico de confirmación que contiene un enlace de retrollamada en el que el usuario tiene que hacer clic. El enlace de retrollamada incluye el token OTP, para que la sesión que activó la retrollamada se cargue junto con sus datos y privilegios. This principle allows you to share the same session on multiple devices. Gracias a esta arquitectura, la [cookie de sesión](#session-implementation) no está expuesta en la red, lo que elimina el riesgo de un ataque de hombre en el medio.
 
 ### Generalidades
 
@@ -245,7 +245,7 @@ Una url [`4DACCIÓN`](./httpRequests.md#4daction) también puede ser usada en el
 
 #### Utilizar un parámetro personalizado
 
-The OTP token can also be provided as a custom parameter that you need to process specifically to restore the session. Debe utilizar esta solución si:
+El token OTP también se puede suministrar como un parámetro personalizado que necesita procesar específicamente para restaurar la sesión. Debe utilizar esta solución si:
 
 - la aplicación de terceros no permite insertar parámetros como un `$4DSID` directamente en la Uri de redirección, y proporciona una API dedicada (la implementación depende de la aplicación de terceros),
 - o, quiere llamar a una función ORDA a través de REST para procesar la retrollamada, en cuyo caso es necesario pasar el OTP con la [sintaxis de parámetro REST](../REST/ClassFunctions.md#parameters) (por ejemplo, `?$params='["XXX123"]'`).
@@ -261,16 +261,16 @@ El token OTP se considera inválido si:
 - el token de sesión no existe,
 - la propia sesión original ha caducado.
 
-In this case, no web user session is restored and the current session (if any) is left unchanged. Usually, you can decide to display a login page or to open a guest session.
+In this case, no web user session is restored and the current session (if any) is left unchanged. Normalmente, puede decidir mostrar una página de conexión o abrir una sesión guest.
 
-Verifying if the received OTP token is valid depends on how it was handled:
+La verificación de la validez del token OTP recibido depende de cómo fue manejado:
 
 - Si utilizó un `$4DSID`, puede almacenar una propiedad de estado personalizada en el [almacenamiento de sesión](../API/SessionClass.md#storage) en el momento de la creación de tokens, y compruebe este estado una vez que el token OTP fue recibido para ver si es el mismo valor (ver ejemplo).
 - Si uso la función [`Session.restore()`](../API/SessionClass.md#restore), devuelve true si la sesión se restauró correctamente.
 
 ### Escenario con $4DSID
 
-The scenario using the `$4DSID` key is illustrated in the following diagram:
+El escenario utilizando la clave `$4DSID` se ilustra en el siguiente diagrama:
 
 ```mermaid
 sequenceDiagram
@@ -471,7 +471,7 @@ Se crea un nuevo usuario y se almacena cierta información en la sesión, especi
 - Sólo se pueden reutilizar las sesiones de la base de datos local (las sesiones creadas en servidores web de componentes no se pueden restaurar).
 - Los tokens no son compatibles con las sesiones cliente/servidor ni con las sesiones monousuario.
 
-### Lifespan
+### Vida útil
 
 Un testigo de sesión tiene una vida útil, y la propia sesión tiene una vida útil. El tiempo de vida útil del token de sesión puede definirse [en la creación de tokens](../API/SessionClass.md#createotp). Por defecto, el tiempo de vida del token es el mismo valor que el valor de [`.idleTimeout`](../API/SessionClass.md#idletimeout).
 

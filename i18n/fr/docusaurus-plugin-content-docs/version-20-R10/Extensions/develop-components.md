@@ -108,7 +108,7 @@ Un *namespace* garantit qu'aucun conflit n'émerge lorsqu'un projet hôte utilis
 
 :::
 
-Lorsque vous entrez une valeur, vous déclarez que les classes de composants seront disponibles dans la [user class store (**cs**)](../Concepts/classes.md#cs) du projet hôte ainsi que ses composants chargés, à travers les `cs.<value>` espace de noms. Par exemple, si vous entrez "eGeometry" comme namespace, en supposant que vous avez créé une classe `Rectangle` contenant une fonction `getArea()`, une fois votre projet installé comme composant, le développeur du projet hôte peut écrire :
+Lorsque vous entrez une valeur, vous déclarez que les classes de composants seront disponibles dans la [class store utilisateurs (**cs**)](../Concepts/classes.md#cs) du projet hôte ainsi que ses composants chargés, à travers les espaces de noms `cs.<value>`. Par exemple, si vous entrez "eGeometry" comme namespace, en supposant que vous avez créé une classe `Rectangle` contenant une fonction `getArea()`, une fois votre projet installé comme composant, le développeur du projet hôte peut écrire :
 
 ```4d
 //dans le projet hôte ou l'une de ses composantes
@@ -143,19 +143,19 @@ $rect:=cs.eGeometry._Rectangle.new(10;20)
 
 ## Modification des composants à partir de l'hôte
 
-To facilitate component tuning in the actual context of host projects, you can directly modify and save the code of a loaded component from an interpreted host project. Le code du composant est modifiable lorsque les conditions suivantes sont remplies :
+Pour faciliter la mise au point des composants dans le contexte réel des projets hôtes, vous pouvez modifier et sauvegarder directement le code d'un composant chargé depuis un projet hôte interprété. Le code du composant est modifiable lorsque les conditions suivantes sont remplies :
 
-- the component has been [loaded in interpreted mode](../Project/components.md#interpreted-and-compiled-components),
-- the component is not loaded from the [local cache of the Dependency manager](../Project/components.md#local-cache-for-dependencies), i.e. it is not [downloaded from GitHub](../Project/components.md#adding-a-github-dependency).
+- le composant a été [chargé en mode interprété](../Project/components.md#interpreted-and-compiled-components),
+- le composant n'est pas chargé à partir du [cache local du gestionnaire de dépendances](../Project/components.md#local-cache-for-dependencies), c'est-à-dire qu'il n'est pas [téléchargé depuis GitHub](../Project/components.md#adding-a-github-dependency).
 
-In this case, you can open, edit, and save your component code in the Code editor on the host project, so that modifications are immediately taken into account.
+Dans ce cas, vous pouvez ouvrir, éditer et enregistrer le code de votre composant dans l'éditeur de code du projet hôte, afin que les modifications soient immédiatement prises en compte.
 
-In the Explorer, a specific icon indicates that the component code is editable:<br/>
+Dans l'Explorateur, une icône spécifique indique que le code du composant est modifiable :<br/>
 ![](../assets/en/Develop/editable-component.png)
 
 :::warning
 
-Only [exposed classes](#sharing-of-classes) and [shared methods](#sharing-of-project-methods) of your component can be edited.
+Seules les [classes exposées](#sharing-of-classes) et les [méthodes partagées](#sharing-of-project-methods) de votre composant peuvent être modifiées.
 
 :::
 
@@ -172,28 +172,29 @@ Si vous ne saisissez pas de [namespace](#declaring-the-component-namespace), les
 
 ## Passage de variables
 
-Les composants et les projets hôtes ne partagent pas de variables locales, process ou interprocess. La seule façon de modifier les variables de composants du projet hôte et vice versa est d'utiliser des pointeurs.
+Les variables ne sont pas partagées entre les composants et les projets hôtes. La seule façon de modifier les variables de composants du projet hôte et vice versa est d'utiliser des pointeurs.
 
 Exemple utilisant un tableau :
 
 ```4d
 //Dans le projet hôte :
-    ARRAY INTEGER(MyArray;10)
-    AMethod(->MyArray)
+     ARRAY INTEGER(MyArray;10)
+     AMethod(->MyArray)
 
-//Dans le composant, la méthode projet UneMéthode contient : 
-     APPEND TO ARRAY($1->;2)
+//Dans le composant, la méthode projet AMethod contient :
+     #DECLARE($ptr : Pointer)
+     APPEND TO ARRAY($ptr->;2)
 ```
 
 Exemples utilisant des variables :
 
 ```4d
-C_TEXT(myvariable)
+var myvariable : Text
 component_method1(->myvariable)
 ```
 
 ```4d
-C_POINTER($p)
+var $p : Pointer
 $p:=component_method2(...)
 ```
 
@@ -201,10 +202,10 @@ Sans pointeur, un composant peut toujours accéder à la valeur d'une variable d
 
 ```4d
 //Dans la base hôte
-C_TEXT($input_t)
+var $input_t : Text
 $input_t:="DoSomething"
 component_method($input_t)
-// component_method obtient "DoSomething" in $1 (mais pas la variable $input_t)
+// component_method obtient "DoSomething" en paramètre (mais pas la variable $input_t)
 ```
 
 L’utilisation de pointeurs pour faire communiquer les composants et le projet hôte nécessite de prendre en compte les spécificités suivantes :
@@ -218,7 +219,7 @@ L’utilisation de pointeurs pour faire communiquer les composants et le projet 
 
 - Si le composant I définit la variable `mavarI`, le composant C ne peut pas accéder à cette variable en utilisant le pointeur `->mavarI`. Cette syntaxe provoque une erreur d’exécution.
 
-- La comparaison des pointeurs en utilisant la commande `RESOLVE POINTER` n'est pas recommandée avec les composants, car le principe de partitionnement des variables permet la coexistence de variables ayant le même nom mais avec un contenu radicalement différent dans un composant et le projet hôte (ou un autre composant). Le type de la variable peut même être différent dans les deux contextes. Si les pointeurs `monptr1` et `monptr2` pointent chacun sur une variable, la comparaison suivante produira un résultat erroné :
+- La comparaison des pointeurs en utilisant la commande [`RESOLVE POINTER`](../commands/resolve-pointer) n'est pas recommandée avec les composants, car le principe de partitionnement des variables permet la coexistence de variables ayant le même nom mais avec un contenu radicalement différent dans un composant et le projet hôte (ou un autre composant). Le type de la variable peut même être différent dans les deux contextes. Si les pointeurs `monptr1` et `monptr2` pointent chacun sur une variable, la comparaison suivante produira un résultat erroné :
 
 ```4d
      RESOLVE POINTER(monptr1;vNomVar1;vnumtable1;vnumchamp1)
@@ -235,9 +236,9 @@ Dans ce cas, il est nécessaire d’utiliser la comparaison de pointeurs :
 
 ## Gestion des erreurs
 
-Une [méthode de gestion d'erreurs](Concepts/error-handling.md) installée par la commande `ON ERR CALL` s'applique à l'application en cours d'exécution uniquement. En cas d'erreur générée par un composant, la méthode d'appel sur erreur `ON ERR CALL` du projet hôte n'est pas appelée, et inversement.
+Une [méthode de gestion d'erreurs](Concepts/error-handling.md) installée par la commande [`ON ERR CALL`](../commands-legacy/on-err-call.md) ne s'applique qu'à l'application en cours d'exécution. En cas d'erreur générée par un composant, la méthode d'appel sur erreur `ON ERR CALL` du projet hôte n'est pas appelée, et inversement.
 
-However, you can install a [component error handler in the host application](../Concepts/error-handling.md#scope-and-components) to manage uncaught errors from compponents.
+Cependant, vous pouvez installer un [gestionnaire d'erreurs de composants dans l'application hôte](../Concepts/error-handling.md#scope-and-components) pour gérer les erreurs non capturées des composants.
 
 ## Accès aux tables du projet hôte
 
@@ -251,23 +252,19 @@ methCreateRec(->[PERSONNES];->[PERSONNES]Nom;"Julie Andrews")
 Dans le composant, le code de la méthode `methCreateRec` :
 
 ```4d
-C_POINTER($1) //Pointeur vers une table du projet hôte
-C_POINTER($2) //Pointeur vers un champ du projet hôte
-C_TEXT($3) // Valeur à insérer
+#DECLARE($tablepointer : Pointer ; $fieldpointer : Pointer ; $value : Text) //Pointeur sur une table dans le projet hôte
 
-$tablepointer:=$1
-$fieldpointer:=$2
 CREATE RECORD($tablepointer->)
 
-$fieldpointer->:=$3
-SAVE RECORD($tablepointer-
+$fieldpointer->:=$value
+SAVE RECORD($tablepointer->)
 ```
 
 > Dans le contexte d'un composant, 4D suppose qu'une référence à un formulaire table est une référence au formulaire table hôte (car les composants ne peuvent pas avoir de tables)
 
 ## Utilisation de tables et de champs
 
-Un composant ne peut pas utiliser les tables et les champs définis dans la structure 4D du projet utilisé comme matrice. En revanche, il peut créer et utiliser des bases externes, et donc utiliser des tables et des champs en fonction de ses besoins. Les bases externes sont créées et gérées via le langage SQL. En revanche, il peut créer et utiliser des bases externes, et donc utiliser des tables et des champs en fonction de ses besoins. Utiliser une base externe signifie désigner temporairement cette base comme base courante, c’est-à-dire comme base cible des requêtes SQL exécutées par 4D. Les bases externes sont créées à l'aide de la commande SQL `CREATE DATABASE`.
+Un composant ne peut pas utiliser les tables et les champs définis dans la structure 4D du projet utilisé comme matrice. En revanche, il peut créer et utiliser des bases externes, et donc utiliser des tables et des champs en fonction de ses besoins. Les bases externes sont créées et gérées via le langage SQL. Une base de données externe est un projet 4D indépendant du projet 4D principal, mais avec lequel vous pouvez travailler à partir du projet 4D principal. Utiliser une base externe signifie désigner temporairement cette base comme base courante, c’est-à-dire comme base cible des requêtes SQL exécutées par 4D. Les bases externes sont créées à l'aide de la commande SQL `CREATE DATABASE`.
 
 ### Exemple
 
@@ -384,7 +381,7 @@ Ce fichier n'est pas obligatoire mais il est nécessaire pour construire des com
 
 Les clés prises en charge dans les fichiers `Info.plist` des composants sont principalement des [clés bundle d'Apple](https://developer.apple.com/documentation/bundleresources/information-property-list) qui sont ignorées sous Windows. Cependant, elles sont utilisés par le [Gestionnaire de dépendances](../Project/components.md#loading-components) sur toutes les plates-formes.
 
-The following keys can be defined:
+Les clés suivantes peuvent être définies :
 
 | key                                                        | Description                                                                                                                                                                                    |
 | ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

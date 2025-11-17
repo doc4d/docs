@@ -12,22 +12,27 @@ const LANGUAGE_TO_BUILD = process.env.LANGUAGE_TO_BUILD ?? "en"
 const BASE_URL_LANGUAGE = LANGUAGE_TO_BUILD !== "en" ? `${LANGUAGE_TO_BUILD}/` : "";
 console.log("Language ", BASE_URL_LANGUAGE)
 
-const locales = isStatic ? [language] : ["en", "fr", "es", "ja", "pt"]
+const locales = isStatic ? [language] : ['en', 'fr', 'es', 'ja', 'pt']
 const localeConfigs = isStatic ? {} : {
   en: {
     label: "English",
+    baseUrl: "/docs/",
   },
   fr: {
     label: "Français",
+    baseUrl: "/docs/fr/",
   },
   es: {
     label: "Español",
+    baseUrl: "/docs/es/",
   },
   ja: {
     label: "日本語",
+    baseUrl: "/docs/ja/",
   },
   pt: {
     label: "Português",
+    baseUrl: "/docs/pt/",
   },
 }
 
@@ -63,30 +68,7 @@ module.exports = {
             const body = `Please enter your comment:`;
             return `https://github.com/4d/docs/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`
           },
-          // Sidebars file relative to website dir.
           sidebarPath: require.resolve('./sidebars.js'),
-          async sidebarItemsGenerator({ defaultSidebarItemsGenerator, ...args }) {
-            const sidebarItems = await defaultSidebarItemsGenerator(args);
-
-            function sortAlphabetically(items) {
-              return items
-                .map(item => {
-                  if (item.type === 'category') {
-                    return {
-                      ...item,
-                      items: sortAlphabetically(item.items),
-                    };
-                  }
-                  return item;
-                })
-                .sort((a, b) => {
-                  const labelA = (a.label || a.id || '').toLowerCase();
-                  const labelB = (b.label || b.id || '').toLowerCase();
-                  return labelA.localeCompare(labelB);
-                });
-            }
-            return sortAlphabetically(sidebarItems);
-          },
           versions: {
               '21': {
               label: '21 BETA',
@@ -292,9 +274,9 @@ module.exports = {
   },
   themes: ['@docusaurus/theme-mermaid'],  
   scripts: [
-    {
-      src: 'https://kit.fontawesome.com/daeacc3fc4.js',
-      crossorigin: 'anonymous',
-    },
-  ],
+     {
+      src: 'https://kit.fontawesome.com/daeacc3fc4.js',
+      crossorigin: 'anonymous',
+    },
+  ],
 }

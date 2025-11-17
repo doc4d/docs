@@ -9,9 +9,9 @@ Es posible crear varias áreas web en el mismo formulario. Tenga en cuenta, sin 
 
 Varias [acciones estándar](#standard-actions) dedicadas, numerosos [comandos de lenguaje](../category/web-area) así como [eventos de formulario](#form-events) genéricos y específicos permiten al desarrollador controlar el funcionamiento de las áreas web. Se pueden utilizar variables específicas para intercambiar información entre el área y el entorno 4D.
 
-:::info Displaying Qodly pages
+:::info Mostrar páginas Qodly
 
-In 4D client/server applications, Web areas can be used to display Qodly pages and [share the remote user session](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas). This feature allows you to design web-based interfaces for your client/server desktop applications.
+In 4D client/server applications, Web areas can be used to display Qodly pages and [share the remote user session](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas). Esta funcionalidad le permite diseñar interfaces web para sus aplicaciones de escritorio cliente/servidor.
 
 :::
 
@@ -53,11 +53,11 @@ Por ejemplo, llamando al método `HelloWorld` en 4D:
 $4d.HelloWorld();
 ```
 
-> **Note:** JavaScript is **case-sensitive**, so the object is named **`$4d`** (with a lowercase "d").
+> **Nota:** JavaScript es **sensible a mayúsculas**, así que el objeto se llama **`$4d`** (con una minúscula "d").
 
 ### Controlar el acceso a $4d
 
-Con [`WA SET CONTEXT`](../commands/wa-set-context.md), los desarrolladores pueden controlar lo que puede estar disponible a través de `$4d` desde un área Web. Using this command you define a **context object** that declares for example 4D methods through formulas and class instances.
+Con [`WA SET CONTEXT`](../commands/wa-set-context.md), los desarrolladores pueden controlar lo que puede estar disponible a través de `$4d` desde un área Web. Este comando permite definir un **objeto contexto** que declara, por ejemplo, los métodos 4D a través de fórmulas e instancias de clase.
 
 Para verificar el contexto definido actualmente, utilice [`WA Get context`](../commands/wa-get-context.md).
 
@@ -121,9 +121,9 @@ $4d.today(function(result)
 
 #### Ejemplo 2
 
-En lugar de utilizar un método independiente, también podemos definir una **clase** que se encargue del cálculo.
+Instead of using a standalone method, we can also use a class function to handle the calculation.
 
-Define the Class with 4D project method `calcSum` which receives parameters and returns their sum:
+Define a "SumCalculator" 4D user class with a `calcSum` function which receives parameters and returns their sum:
 
 ```4d
 // SumCalculator user class

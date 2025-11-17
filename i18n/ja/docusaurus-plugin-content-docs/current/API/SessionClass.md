@@ -54,10 +54,10 @@ Session オブジェクトは [`Session`](../commands/session.md) コマンド�
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                         |
-| ----- | -------------------------- |
-| 21    | Support of remote sessions |
-| 18 R6 | 追加                         |
+| リリース  | 内容             |
+| ----- | -------------- |
+| 21    | リモートセッションのサポート |
+| 18 R6 | 追加             |
 
 </details>
 
@@ -75,7 +75,7 @@ Session オブジェクトは [`Session`](../commands/session.md) コマンド�
 
 :::note
 
-This function does nothing and always returns **True** with stored procedure sessions and standalone sessions.
+この関数は、すトアドプロシージャーセッションおよびスタンドアロンセッションでは何もせず、常に **True** を返します。
 
 :::
 
@@ -89,7 +89,7 @@ This function does nothing and always returns **True** with stored procedure ses
 
 :::
 
-Regarding remote client sessions, the function only impacts [code accessing the web server](../WebServer/preemptiveWeb.md#writing-thread-safe-web-server-code).
+リモートクライアントセッションにおいては、この関数は[Web エリアを通して送信されたWeb リクエスト](../Desktop/clientServer.md#webエリア内のqodlyページ内でセッションを共有する) のコンテキストで実行されたコンテキストのみに関係します。
 
 #### 例題
 
@@ -110,10 +110,10 @@ $isGuest:=Session.isGuest() // $isGuest は true
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                         |
-| ----- | -------------------------- |
-| 21    | Support of remote sessions |
-| 20 R9 | 追加                         |
+| リリース  | 内容             |
+| ----- | -------------- |
+| 21    | リモートセッションのサポート |
+| 20 R9 | 追加             |
 
 </details>
 
@@ -124,7 +124,7 @@ $isGuest:=Session.isGuest() // $isGuest は true
 | 引数       | 型       |                             | 説明                                   |
 | -------- | ------- | :-------------------------: | ------------------------------------ |
 | lifespan | Integer |              ->             | セッショントークンの有効期限(秒) |
-| 戻り値      | Text    | <- | UUID of the token                    |
+| 戻り値      | Text    | <- | トークンの UUID                           |
 
 <!-- END REF -->
 
@@ -132,7 +132,7 @@ $isGuest:=Session.isGuest() // $isGuest は true
 
 :::note
 
-This function is available with web user sessions and remote sessions. It returns an empty string in stored procedure and standalone sessions.
+この関数はWeb ユーザーセッションとリモートセッションにおいて利用可能です。 ストアドプロシージャーとスタンドアロンセッションでは空の文字列を返します。
 
 :::
 
@@ -140,14 +140,14 @@ This function is available with web user sessions and remote sessions. It return
 
 OTP トークンについてのより詳細な情報については、[こちらの章](../WebServer/sessions.md#セッショントークンotp)を参照して下さい。
 
-*lifespan* に秒単位の値を渡すことで、カスタムのタイムアウト時間を設定することができます。 If an expired token is used to restore a session, it is ignored. By default, if the *lifespan* parameter is omitted:
+*lifespan* に秒単位の値を渡すことで、カスタムのタイムアウト時間を設定することができます。 セッションを復元するために失効したトークンを使用した場合、それは無視されます。 *lifespan* 引数が省略された場合はデフォルトで:
 
-- with web user sessions, the token is created with the same lifespan as the [`.idleTimeOut`](#idletimeout) of the session.
-- with remote sessions, the token is created with a 10 seconds lifespan.
+- Web ユーザーセッションの場合、トークンはセッションの[`.idleTimeOut`](#idletimeout) と同じ有効期限を持って作成されます。
+- リモートセッションの場合、トークンは10秒の有効期限を持って作成されます。
 
-For **web user sessions**, the returned token can be used in exchanges with third-party applications or websites to securely identify the session. 例えば、セッションOTP トークンは支払いアプリケーションなどにおいて使用することができます。
+**Web ユーザーセッション** の場合、返されたトークンは、サードパーティアプリケーションや他のWebサイトとのやり取りで使用することでセッションを安全に特定することができます。 例えば、セッションOTP トークンは支払いアプリケーションなどにおいて使用することができます。
 
-For **remote sessions**, the returned token can be used on 4D Server to identitfy requests coming from a [remote 4D running Qodly forms in a Web area](../Desktop/clientServer.md#remote-user-sessions).
+**リモートセッション** の場合、返されたトークンを4D Server 上で使用することで[Web エリアでQodly フォームを実行しているリモート 4D](../Desktop/clientServer.md#リモートユーザーセッション) からのリクエストを識別することができます。
 
 #### 例題
 
@@ -262,10 +262,10 @@ $expiration:=Session.expirationDate // 例: "2021-11-05T17:10:42Z"
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                |
-| ----- | --------------------------------- |
-| 21    | Support of remote client sessions |
-| 20 R6 | 追加                                |
+| リリース  | 内容                   |
+| ----- | -------------------- |
+| 21    | リモートクライアントセッションのサポート |
+| 20 R6 | 追加                   |
 
 </details>
 
@@ -289,9 +289,9 @@ $expiration:=Session.expirationDate // 例: "2021-11-05T17:10:42Z"
 
 :::
 
-With remote client sessions, the privileges only concerns the code executed in the context of a [web request sent through a Web area](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas).
+リモートクライアントセッションでは、権限は[Web エリアを通して送信されたWeb リクエスト](../Desktop/clientServer.md#webエリア内のqodlyページ内でセッションを共有する) のコンテキストで実行されたコンテキストのみに関係します。
 
-With stored procedure sessions and standalone sessions, this function returns a collection only containing "WebAdmin".
+ストアドプロシージャーセッションとスタンドアロンセッションでは、この関数は"WebAdmin" のみを格納したコレクションを返します。
 
 #### 例題
 
@@ -360,10 +360,10 @@ $privileges := Session.getPrivileges()
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                                                      |
-| ----- | ----------------------------------------------------------------------- |
-| 21    | Returns True for promoted privileges, Support of remote client sessions |
-| 18 R6 | 追加                                                                      |
+| リリース  | 内容                                    |
+| ----- | ------------------------------------- |
+| 21    | 昇格した権限ならTrue を返す、リモートクライアントセッションのサポート |
+| 18 R6 | 追加                                    |
 
 </details>
 
@@ -388,9 +388,9 @@ $privileges := Session.getPrivileges()
 
 :::
 
-Regarding remote client sessions, the function only impacts [code accessing the web server](../WebServer/preemptiveWeb.md#writing-thread-safe-web-server-code).
+リモートクライアントセッションにおいては、この関数は[Web エリアを通して送信されたWeb リクエスト](../Desktop/clientServer.md#webエリア内のqodlyページ内でセッションを共有する) のコンテキストで実行されたコンテキストのみに関係します。
 
-With stored procedure sessions and standalone sessions, this function always returns True, whatever the *privilege*.
+ストアドプロシージャーセッションとスタンドアロンセッションの場合、この関数は*privilege* に関わらず必ずTrue を返します。
 
 #### 例題
 
@@ -442,10 +442,9 @@ End if
 
 <details><summary>履歴</summary>
 
-| リリース | 内容 |
-| ---- | -- |
-
-|18 R6|追加|
+| リリース  | 内容 |
+| ----- | -- |
+| 18 R6 | 追加 |
 
 </details>
 
@@ -728,11 +727,11 @@ Function callback($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                |
-| ----- | --------------------------------- |
-| 21    | Support of remote client sessions |
-| 19 R8 | roles プロパティをサポート                  |
-| 18 R6 | 追加                                |
+| リリース  | 内容                   |
+| ----- | -------------------- |
+| 21    | リモートクライアントセッションのサポート |
+| 19 R8 | roles プロパティをサポート     |
+| 18 R6 | 追加                   |
 
 </details>
 
@@ -753,7 +752,7 @@ Function callback($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 
 :::note
 
-This function does nothing and always returns **False** with stored procedure sessions and standalone sessions.
+この関数は、ストアドプロシージャーセッションおよびスタンドアロンセッションでは何もせず、常に**False** を返します。
 
 :::
 
@@ -763,11 +762,11 @@ This function does nothing and always returns **False** with stored procedure se
 - *privileges* には、アクセス権の名称を文字列のコレクションとして渡します。
 - *settings* には、以下のプロパティを持つオブジェクトを渡します:
 
-| プロパティ      | 型                   | 説明                                                                                                                                                                                            |
-| ---------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| privileges | Text または Collection | <li>アクセス権名の文字列</li><li>アクセス権名のコレクション</li>                                                                                                                                                     |
-| roles      | Text または Collection | <li>ロールの文字列</li><li>ロールの文字列のコレクション</li>                                                                                                                                                       |
-| userName   | Text                | User name to associate to the session (optional, web sessions only). Not available in remote client sessions (ignored). |
+| プロパティ      | 型                   | 説明                                                                                                        |
+| ---------- | ------------------- | --------------------------------------------------------------------------------------------------------- |
+| privileges | Text または Collection | <li>アクセス権名の文字列</li><li>アクセス権名のコレクション</li>                                                                 |
+| roles      | Text または Collection | <li>ロールの文字列</li><li>ロールの文字列のコレクション</li>                                                                   |
+| userName   | Text                | セッションに関連づけるユーザー名(任意、Web セッションのみ)。 リモートクライアントセッションでは利用できません(無視されます)。 |
 
 :::note
 
@@ -781,7 +780,7 @@ This function does nothing and always returns **False** with stored procedure se
 
 [`userName`](#username) プロパティは Session オブジェクトレベルで利用可能です (読み取り専用)。
 
-Regarding remote client sessions, the function only concerns the code executed in the context of a [web request sent through a Web area](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas).
+リモートクライアントセッションにおいては、この関数は[Web エリアを通して送信されたWeb リクエスト](../Desktop/clientServer.md#webエリア内のqodlyページ内でセッションを共有する) のコンテキストで実行されたコンテキストのみに関係します。
 
 #### 例題
 

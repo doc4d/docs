@@ -11,6 +11,16 @@ title: リリースノート
 :::
 
 
+## 4D 20.8 LTS
+
+#### ハイライト
+
+- 4D 20.8 LTS is certified on Windows 11 25H2.
+- 4D 20.8 LTS is certified on macOS Tahoe (macOS 26).
+- [**修正リスト**](https://bugs.4d.com/fixes?version=20.8): 4D 20.8 LTS で修正されたバグのリストです ([日本語版はこちら](https://4d-jp.github.io/2024/276/release-note-version-20/))。
+
+
+
 ## 4D 20.7 LTS
 
 #### ハイライト
@@ -25,7 +35,7 @@ title: リリースノート
 
 #### 動作の変更
 
-- As of 4D **20.7 HF2**, the [`Time`](https://doc.4d.com/4dv20/help/command/en/page179.html) command returns a negative time expression when the *timeValue* parameter is negative. For instance, `Time("-01:02:03")` will now return -01:02:03. 過去のリリースにおいては、負の符号は無視されていました。
+- 4D **20.7 HF2** 以降、[`Time`](https://doc.4d.com/4dv20/help/command/ja/page179.html) コマンドは、*timeValue* 引数が負の値の場合には負の時間式を返すようになりました。 例えば、`Time("-01:02:03")` は、 -01:02:03 を返すようになりました。 過去のリリースにおいては、負の符号は無視されていました。
 
 
 ## 4D 20.6 LTS
@@ -344,12 +354,6 @@ ALERT($param1+" "+$param2)
 - 新規プロジェクト作成時に [デフォルトの.gitignoreファイル](../Preferences/general.md#gitignore-ファイルを作成する) が作成可能
 - 新しい [`4D.Blob`](Concepts/dt_blob.md#blob-の種類) オブジェクトを扱うための新しい[BlobクラスAPI](../API/BlobClass.md)
 - [`.setText()`](../API/FileClass.md#settext) におけるデフォルトの改行コード (EOL) の指定と `no-bom` のサポート
-
-
-## 4D 19.x LTS
-
-
-[**4D 19.x LTS のリリースノート**](../../version-19/Notes/updates.md) 参照。
 
 
 

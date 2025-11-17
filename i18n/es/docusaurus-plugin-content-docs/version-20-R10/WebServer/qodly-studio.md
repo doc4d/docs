@@ -11,7 +11,7 @@ Qodly Studio también puede utilizarse en la [**plataforma Qodly Cloud**](https:
 
 Qodly Studio propone una interfaz web completa, que le permite:
 
-- create Qodly pages by placing components on a canvas
+- crear páginas Qodly colocando componentes en un lienzo
 - mapear componentes a Qodly Sources
 - activar código 4D configurando eventos
 - y mucho más.
@@ -80,7 +80,7 @@ La autenticación en el servidor web WebAdmin se realiza utilizando una llave de
 De acuerdo con la gestión de proyectos 4D, sólo se admiten los siguientes usos:
 
 - el desarrollo con Qodly Studio debe realizarse a través de **4D** (monousuario).
-- deployment of 4D applications powered with Qodly pages must be done using **4D Server**.
+- el despliegue de aplicaciones 4D alimentadas por páginas Qodly debe hacerse utilizando **4D Server**.
 
 :::warning
 

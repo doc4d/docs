@@ -19,7 +19,7 @@ displayed_sidebar: docs
 
 ## Description
 
-La commande **WP SET ATTRIBUTES** <!--REF #_command_.WP SET ATTRIBUTES.Summary-->permet de définir la valeur de n'importe quel attribut d'une plage, d'un élément, d'un document.<!-- END REF--> Cette commande permet d'accéder à n'importe quel type d'attribut interne à 4D Write Pro : caractère, paragraphe, document, tableau ou image.
+La commande **WP SET ATTRIBUTES** <!--REF #_command_.WP SET ATTRIBUTES.Summary-->vous permet de définir la valeur d'un attribut de plage, élément ou document.<!-- END REF--> Cette commande vous donne accès à tout type d'attribut interne 4D Write Pro : caractère, paragraphe, document, tableau ou image.
 
 Dans *targetObj*, vous pouvez passer :
 
@@ -33,7 +33,7 @@ Vous pouvez spécifier les attributs à définir pour *targetObj* d'une des deux
 
 - Utilisez le paramètre *attribObj* pour passer un seul objet contenant les noms d'attributs et leurs valeurs correspondantes en tant que propriétés d'objet.
 
-For a comprehensive list of attributes to pass, as well as their scope and respective values, please refer to the [4D Write Pro Attributes](../4d-write-pro-attributes) section.
+Pour une liste complète des attributs à passer, ainsi que leur portée et leurs valeurs respectives, veuillez vous référer à la section [Attributs 4D Write Pro](../4d-write-pro-attributes) .
 
 ## Exemple 1
 

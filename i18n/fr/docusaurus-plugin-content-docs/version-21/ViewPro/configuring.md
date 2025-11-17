@@ -297,7 +297,7 @@ Les caractères spéciaux suivants permettent l'ajout ou la mise en forme automa
 | G                     | Image                                                | printInfo.headerLeftImage:=smiley<br/>printInfo.headerLeft:="&G"  | ![](../assets/en/ViewPro/apx_vpPrintAttributes1.PNG)             |   |
 | S                     | Barré                                                | printInfo.headerLeft:="&SThis is text."                                           | ~~This is text.~~                                |   |
 | U                     | Souligné                                             | printInfo.headerLeft:="&UThis is text."                                           | This is text. (Souligné)      |   |
-| B                     | Souligné                                             | printInfo.headerLeft:="&BThis is text."                                           | **This is text.**                                |   |
+| B                     | Gras                                                 | printInfo.headerLeft:="&BThis is text."                                           | **This is text.**                                |   |
 | I                     | Italique                                             | printInfo.headerLeft:="&IThis is text."                                           | *This is text.*                                  |   |
 | "                     | Préfixe de police                                    | printInfo.headerLeft:="&\"Lucida Console\"&14This is text." | ![](../assets/en/ViewPro/apx_vpPrintAttributes2.PNG)             |   |
 | K                     | Préfixe de couleur du texte                          | printInfo.headerLeft:="&KFF0000This is text."                                     | This is text (en rouge).      |   |
@@ -340,8 +340,8 @@ Les attributs de page sont utilisés pour spécifier les paramètres généraux 
 | pageOrder       | entier long | L'ordre d'impression des pages. Valeurs disponibles : `vk print page order auto` (par défaut), `vk print page order down then over`, `vk print page order over then down`.                                 |
 | pageRange       | text        | La plage de pages pour l'impression                                                                                                                                                                                                                                           |
 | qualityFactor   | entier long | Le facteur de qualité pour l'impression (1 - 8).  Plus le facteur de qualité est élevé, meilleure est la qualité d'impression, cependant les performances d'impression peuvent être affectées.<p>Valeur par défaut = 2</p> |
-| useMax          | boolean     | Seules les colonnes et les lignes avec des données sont imprimées.<p>Valeur par défaut = true</p>                                                                                                                                                             |
-| zoomFactor      | réel        | Le montant de l'agrandissement ou de la réduction de la page imprimée.<p>Valeur par défaut = 1</p>                                                                                                                                                            |
+| useMax          | boolean     | Seules les colonnes et les lignes contenant des données sont imprimées.<p>Valeur par défaut = true</p>                                                                                                                                                        |
+| zoomFactor      | réel        | Le montant pour agrandir ou réduire la page imprimée.<p>Valeur par défaut = 1</p>                                                                                                                                                                             |
 
 ### Taille du papier
 

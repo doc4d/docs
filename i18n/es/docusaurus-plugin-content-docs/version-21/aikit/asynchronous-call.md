@@ -11,11 +11,11 @@ To make asynchronous calls, you must provide a callback `4D.Function`(`Formula`)
 
 The callback function will receive the same result object type (one of [OpenAIResult](Classes/OpenAIResult.md) child classes) that would be returned by the function in synchronous code. Ver ejemplos más abajo.
 
-## Process Considerations
+## Consideraciones sobre el proceso
 
 The asynchronous method is based on [4D.HTTPRequest](https://developer.4d.com/docs/API/HTTPRequestClass), so the response will be received within the current process.
 
-> ⚠️ If your process ends at the conclusion of the current method (e.g., using New process, or playing in the method editor), the callback formula might not be called asynchronously. In such cases, consider using `CALL WORKER` or `CALL FORM`.
+> ⚠️ If your process ends at the conclusion of the current method (e.g., using New process, or playing in the method editor), the callback formula might not be called asynchronously. En estos casos, considere la posibilidad de utilizar `CALL WORKER` o `CALL FORM`.
 
 ## Ejemplos de uso
 
@@ -25,7 +25,7 @@ The asynchronous method is based on [4D.HTTPRequest](https://developer.4d.com/do
 $client.models.list({formula: Formula(MyReceiveMethod($1))})
 ```
 
-`$1` will be an instance of [OpenAIModelListResult](Classes/OpenAIModelListResult.md), so `MyReceiveMethod` method could be:
+`$1` será una instancia de [OpenAIModelListResult](Classes/OpenAIModelListResult.md), por lo que el método `MyReceiveMethod` podría ser:
 
 ```4d
 #DECLARE($result: cs.AIKit.OpenAIModelListResult)

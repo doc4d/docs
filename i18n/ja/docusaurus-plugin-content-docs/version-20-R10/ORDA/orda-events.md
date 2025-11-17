@@ -1,6 +1,6 @@
 ---
 id: orda-events
-title: ORDA Events
+title: Entity Events
 ---
 
 <details><summary>履歴</summary>
@@ -11,13 +11,13 @@ title: ORDA Events
 
 </details>
 
-ORDA events are functions that are automatically invoked by ORDA each time entities and entity attributes are manipulated (added, deleted, or modified). You can write very simple events, and then make them more sophisticated.
+Entity events are functions that are automatically invoked by ORDA each time entities and entity attributes are manipulated (added, deleted, or modified). You can write very simple events, and then make them more sophisticated.
 
 You cannot directly trigger event function execution. Events are called automatically by ORDA based on user actions or operations performed through code on entities and their attributes.
 
 :::info note Compatibility note
 
-ORDA events in the datastore are equivalent to triggers in the 4D database. However, actions triggered at the 4D database level using the 4D classic language commands or standard actions do not trigger ORDA events.
+ORDA entity events in the datastore are equivalent to triggers in the 4D database. However, actions triggered at the 4D database level using the 4D classic language commands or standard actions do not trigger ORDA events.
 
 :::
 
@@ -25,7 +25,7 @@ ORDA events in the datastore are equivalent to triggers in the 4D database. Howe
 
 ### Event level
 
-A event function is always defined in the [Entity class](../ORDA/ordaClasses.md#entity-class).
+エンティティイベント関数は必ず[Entity クラス](../ORDA/ordaClasses.md#entity-class) 内で定義されます。
 
 It can be set at the **entity** level and/or the **attribute** level (it includes [**computed attributes**](../ORDA/ordaClasses.md#computed-attributes)). In the first case, it will be triggered for any attributes of the entity; on the other case, it will only be triggered for the targeted attribute.
 
@@ -45,11 +45,11 @@ ORDA [`constructor()`](./ordaClasses.md#class-constructor) functions are always 
 
 :::
 
-With other remote configurations (i.e. Qodly applications, [REST API requests](../REST/REST_requests.md), or requests through [`Open datastore`](../commands/open-datastore.md)), the `touched()` event function is always executed **server-side**. It means that you have to make sure the server can "see" that an attribute has been touched to trigger the event (see below).
+他のリモート設定(例:  Qodly アプリケーション、[REST API リクエスト](../REST/REST_requests.md)、あるいは[`Open datastore`](../commands/open-datastore.md) を通したリクエスト) では、`touched()` イベント関数は必ず**サーバー側**で実行されます。 これはつまり、イベントがトリガーされるためには、属性がタッチされたということを必ずサーバーが"見える"ようにしておかなければならないということを意味します(以下参照)。
 
 ### Summary table
 
-The following table lists ORDA events along with their rules.
+以下の表は、ORDA エンティティイベントの一覧とそのルールをまとめたものです。
 
 | イベント                 | レベル    | Function name                                           |                 (C/S) Executed on                 |
 | :------------------- | :----- | :------------------------------------------------------ | :------------------------------------------------------------------: |
@@ -67,11 +67,11 @@ The [`constructor()`](./ordaClasses.md#class-constructor-1) function is not actu
 
 Event functions accept a single *event* object as parameter. When the function is called, the parameter is filled with several properties:
 
-| プロパティ名          | 利用可能性                                  | 型   | 説明                                                                                     |
-| :-------------- | :------------------------------------- | :-- | :------------------------------------------------------------------------------------- |
-| `kind`          | Always                                 | 文字列 | Event name ("touched")                                              |
-| *attributeName* | Only for events involving an attribute | 文字列 | Attribute name (*e.g.* "firstname") |
-| *dataClassName* | Always                                 | 文字列 | Dataclass name (*e.g.* "Company")   |
+| プロパティ名          | 利用可能性        | 型   | 説明                                                                                     |
+| :-------------- | :----------- | :-- | :------------------------------------------------------------------------------------- |
+| `kind`          | Always       | 文字列 | イベント名("touched")                                                    |
+| *attributeName* | 属性に関するイベントのみ | 文字列 | Attribute name (*e.g.* "firstname") |
+| *dataClassName* | Always       | 文字列 | Dataclass name (*e.g.* "Company")   |
 
 ## Event function description
 
@@ -87,8 +87,8 @@ Event functions accept a single *event* object as parameter. When the function i
 
 This event is triggered each time a value is modified in the entity.
 
-- if you defined the function at the entity level (first syntax), it is triggered for modifications on any attribute of the entity.
-- if you defined the function at the attribute level (second syntax), it is triggered only for modifications on this attribute.
+- 関数をエンティティレベルで定義していた場合(第一シンタックス)、その関数はエンティティの任意の属性における変更に対してトリガーされます。
+- 関数を属性レベルで定義していた場合(第二シンタックス)、関数はその属性に対する変更に対してのみトリガーされます。
 
 This event is triggered as soon as the 4D Server / 4D engine can detect a modification of attribute value which can be due to the following actions:
 
@@ -96,12 +96,12 @@ This event is triggered as soon as the 4D Server / 4D engine can detect a modifi
   - the user sets a value on a 4D form,
   - the 4D code makes an assignment with the `:=` operator. The event is also triggered in case of self-assignment (`$entity.attribute:=$entity.attribute`).
 - in **client/server without the `local` keyword**: some 4D code that makes an assignment with the `:=` operator is [executed on the server](../commands-legacy/execute-on-server.md).
-- in **client/server without the `local` keyword**, in **[Qodly application](https://developer.qodly.com/docs)** and **[remote datastore](../commands/open-datastore.md)**: the entity is received on 4D Server while calling an ORDA function (on the entity or with the entity as parameter). It means that you might have to implement a *refresh* or *preview* function on the remote application that sends an ORDA request to the server and triggers the event.
+- **`local` キーワードを使用しないクライアント/サーバー**、**[Qodly アプリケーション](https://developer.qodly.com/docs)** および **[リモートデータストア](../commands/open-datastore.md)**: ORDA 関数(エンティティ上の関数あるいはエンティティを引数として使用する関数)を呼び出した場合にはエンティティは4D Server に受信されます。 It means that you might have to implement a *refresh* or *preview* function on the remote application that sends an ORDA request to the server and triggers the event.
 - with the REST server: the value is received on the REST server with a [REST request](../REST/$method.md#methodupdate) (`$method=update`)
 
 The function receives an [*event* object](#event-parameter) as parameter.
 
-If this event [throws](../commands-legacy/throw.md) an error, it will not stop the undergoing action.
+このイベントがエラーを[throw](../commands-legacy/throw.md) する場合でも、進行中のアクションは停止しません。
 
 :::note
 

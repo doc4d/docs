@@ -19,7 +19,7 @@ displayed_sidebar: docs
 
 ## Description
 
-La commande **WP RESET ATTRIBUTES** <!--REF #_command_.WP RESET ATTRIBUTES.Summary--> permet de réinitialiser la valeur d'un ou plusieurs attributs dans la plage, l'élément ou le document passé en paramètre.<!-- END REF--> Cette commande permet de supprimer tout type d'attribut interne à 4D Write Pro : caractère, paragraphe, document, tableau ou image. Vous pouvez passer le nom de l'attribut à réinitialiser dans *attribName* ou vous pouvez passer une collection d'attributs dans *attribColl* pour réinitialiser plusieurs attributs à la fois.
+La commande **WP RESET ATTRIBUTES** <!--REF #_command_.WP RESET ATTRIBUTES.Summary--> permet de réinitialiser la valeur d'un ou plusieurs attributs dans la plage, l'élément ou le document passé en paramètre.<!-- END REF--> Cette commande permet de supprimer tout type d'attribut interne de 4D Write Pro : caractère, paragraphe, document, tableau ou image. Vous pouvez passer le nom de l'attribut à réinitialiser dans *attribName* ou vous pouvez passer une collection d'attributs dans *attribColl* pour réinitialiser plusieurs attributs à la fois.
 
 > Dans le cas d'une section ou d'une sous-section, l'objet *sectionOrSubsection* peut être transmis seul et tous les attributs sont réinitialisés en une seule fois.
 
@@ -29,7 +29,7 @@ Dans le paramètre *targetObj*, vous pouvez passer soit :
 - un élément (en-tête / pied de page / corps / tableau / paragraphe / image ancrée ou en ligne / section / sous-section / feuille de style), ou
 - un document 4D Write Pro
 
-Lorsqu'une valeur d'attribut est supprimée à l'aide de la commande **WP RESET ATTRIBUTES**, la valeur par défaut est appliquée à *targetObj* ou *sectionOrSubsection*. Default values are listed in the [4D Write Pro Attributes](../4d-write-pro-attributes) section.
+Lorsqu'une valeur d'attribut est supprimée à l'aide de la commande **WP RESET ATTRIBUTES**, la valeur par défaut est appliquée à *targetObj* ou *sectionOrSubsection*. Les valeurs par défaut sont listées dans la section [4D Write Pro Attributes](../4d-write-pro-attributes).
 
 :::note Notes
 

@@ -79,17 +79,17 @@ In addition, it is not possible to return values from more than one column at a 
 
 ## Ejemplo 1
 
-Given a listbox "MyListbox", if you execute the following statement:
+Dado un list box "MyListbox", si ejecuta la siguiente instrucción:
 
 ```4d
  $Value:=LISTBOX Get property(*; "MyListbox";lk selection mode) // el valor devuelto indica el modo de selección
 ```
 
-In this case, the result returned indicates whether multiple rows can be selected.
+En este caso, el resultado devuelto indica si varios registros pueden ser seleccionados.
 
 ## Ejemplo 2
 
-Given a list box "MyListbox", if you execute the following statement:
+Dado un list box "MyListbox", si ejecuta la siguiente instrucción:
 
 ```4d
  $resizable:=LISTBOX Get property(*;"MyListbox";lk column resizable)

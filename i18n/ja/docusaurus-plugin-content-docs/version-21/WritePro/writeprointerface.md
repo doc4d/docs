@@ -4,16 +4,18 @@ title: 4D WritePro インターフェース
 slug: /WritePro/write-pro-interface
 ---
 
-4D WritePro インターフェースは、エンドユーザーが 4D Write Proドキュメントを簡単にカスタマイズできるパレットを提供します。
+4D Write Pro Interface offers a set of palettes, which allow end users to easily customize a 4D Write Pro document.
 
 4D のデベロッパーは、これらのパレットをアプリケーションに簡単に実装することができます。 それにより、エンドユーザーは、フォントやテキストの揃え方向、ブックマーク、表レイアウト、フレームなど、4D Write Pro のプロパティをすべて管理することができます。
 
-インターフェースのマニュアルについては、*4D デザインリファレンス* の [4D Write Pro エリアのドキュメント](https://doc.4d.com/4Dv20/4D/20/Entry-areas.300-6263967.ja.html) を参照ください。
+## Installation & documentation
 
-You will find below:
+4D Write Pro Interface is a **4D component** that needs to be [installed in your project](../Project/components.md#overview). 4D Write Pro Interface source files are [provided on Github](https://github.com/4d/4D-WritePro-Interface).
 
-- the Table Wizard configuration documentation,
-- the integrated A.I. ドキュメント.
+インターフェースのマニュアルについては、*4D デザインリファレンス* の [4D Write Pro エリアのドキュメント](https://doc.4d.com/4Dv20/4D/20/Entry-areas.300-6263967.ja.html) を参照ください。 ここには以下のような情報があります:
+
+- 表ウィザード設定ドキュメンテーション
+- 統合されたAIについての ドキュメント.
 
 ## 表ウィザード
 
@@ -303,36 +305,36 @@ JSONファイルで設定する各属性に対して、以下の WP属性を定�
 
 [4D Write Pro - 表ウィザード (チュートリアル動画)](https://www.youtube.com/watch?v=2ChlTju-mtM)
 
-## Integrated AI
+## 統合されたAI
 
-You can use an integrated AI in the 4D Write Pro interface so that you can easily translate or enhance your documents without having to use an external AI application.
+4D Write Pro インターフェース内に統合されたAI を使用して、外部AI アプリケーションを使用することなくドキュメントを簡単に要約したり改善したりすることができます。
 
-Once you have enabled the AI feature, you can display a chat box over your 4D Write Pro document and interact with *chatGPT* to modify the text of the selection or of the document itself.
+AI 機能を有効化すると、4D Write Pro ドキュメント上にチャットボックスが表示され、そこから*chatGPT* とやりとりをすることで選択したテキストやドキュメント自身を変更することができます。
 
 :::note
 
-The 4D Write Pro interface uses OpenAI, for which you need to provide your own key (see below).
+4D Write Pro インターフェースはOpenAI を使用し、これを使用するためにはご自身のキーを提供する必要があります(以下参照)。
 
 :::
 
-### Limitations (Developer Preview)
+### Limitations
 
-In the current implementation, the feature has the following limitations:
+現在の実装では、この機能では以下のような制約があります:
 
-- use of a predefined AI provider and necessity to pass your OpenAI key
-- basic chatting features
-- no image handling
-- non-configurable predefined action commands
-- predefined translations English/French and French/English only
+- 使用するAI プロバイダーが決められていることと、OpenAI キーを渡す必要があること
+- 基本的なチャット機能
+- 画像処理なし
+- 設定不可な定義済みアクションコマンド
+- 定義済みの翻訳は英語→フランス語とフランス語→英語のみ
 
-### Enabling the AI feature
+### AI機能の有効化
 
-The AI dialog box is available by clicking on a button in the 4D Write Pro interface. This button is **hidden by default**, you need to enable it explicitely.
+AI ダイアログボックスは4D Write Pro インターフェース内のボタンをクリックすることで利用可能になります。 このボタンは**デフォルトでは非表示** なので、明示的に有効化する必要があります。
 
-To display the AI dialog box button, you need to:
+AI ダイアログボックスボタンを表示するためには、以下の操作が必要です:
 
-1. Get an API key from the [OpenAI website](https://openai.com/api/).
-2. Execute the following 4D code:
+1. [OpenAI website](https://openai.com/api/) からAPI キーを取得する。
+2. 以下の4D コードを実行する:
 
 ```4d
 
@@ -342,44 +344,44 @@ WP SetAIKey ("<Your OpenAI Key>") //
 
 :::note
 
-No checking is done on the OpenAI key validity. If it is invalid, the *chatGPT* box will stay empty.
+OpenAi キーの有効性に関するチェックは行われません。 キーが無効だった場合には、*chatGPT* ボックスは空のままになります。
 
 :::
 
-The **A.I.** button is then displayed:
+その後**A.I.** ボタンは、以下の場所に表示されます:
 
 ![ai button](../assets/en/WritePro/ai-button.png)
 
-- in the 4D Write Pro Toolbar, in the **Import Export** tab,
-- in the 4D Write Pro Widget, in the **Font Style** tab.
+- **読み込み書き出し** タブ内の4D Write Pro ツールバー内
+- **フォントスタイル** タブ内の4D Write Pro ウィジェット内。
 
-Click on the button to display the AI dialog box.
+AI ダイアログボックスを表示するには、ボタンをクリックしてください。
 
-### AI dialog box
+### AI ダイアログボックス
 
-The 4D Write Pro AI dialog box allows a straightforward interaction between the chat area and the 4D Write Pro document.
+4D Write Pro AI ダイアログボックスを使用するとチャットエリアと4D Write Pro ドキュメントとの簡単なやりとりを可能にします。
 
-#### Prompt area
+#### プロンプトエリア
 
-At the bottom of the window, the **prompt area** allows you to enter any question to send to the AI.
+ウィンドウの下部には、**プロンプトエリア** があり、ここにAI に送信したい質問を入力することができます。
 
-To send your question to the AI, click on the Send button:
+AI に質問を送信するためには、送信ボタンをクリックします:
 
 ![ai send](../assets/en/WritePro/ai-send.png)
 
-The button icon changes when the same request is sent again:
+同じリクエストが再度送信されると、ボタンのアイコンが変わります:
 
 ![ai resend](../assets/en/WritePro/ai-resend.png)
 
-On the left side of this area, a pop up menu provides examples of common actions that can be usually delegated to the AI.
+このエリアの左側にあるポップアップメニューには、通常AI にたずねるような一般的なアクションの一例が提供されています。
 
-Selecting an action writes a corresponding question to the prompt. If necessary, you can modify the question and then to click on the Send button to actually send it:
+アクションを選択すると、それに対応した質問がプロンプトに入力さます。 必要であれば、質問を書き換えてから送信ボタンを押して送信することもできます:
 
 ![ai menu](../assets/en/WritePro/ai-menu.png)
 
 :::note
 
-Default translation actions are based upon the current 4D default configuration and depend on available languages.
+デフォルトの翻訳アクションはカレントの4D のデフォルト設定に基づき、利用可能な言語に依存します。
 
 :::
 

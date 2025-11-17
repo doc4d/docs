@@ -1,9 +1,9 @@
 ---
 id: privileges
-title: Roles and Privileges
+title: Rôles et privilèges
 ---
 
-La protection des données tout en permettant un accès rapide et facile aux utilisateurs autorisés est un défi majeur pour les applications Web. L'architecture de sécurité ORDA est implémentée au cœur de votre datastore et vous permet de définir des privilèges spécifiques à toutes les sessions utilisateur web ou REST pour les différentes ressources de votre projet (datastore, dataclasses, fonctions, etc.).
+Protéger les données tout en permettant un accès rapide et facile aux utilisateurs autorisés est un défi majeur pour les applications web. L'architecture de sécurité ORDA est implémentée au cœur de votre datastore et vous permet de définir des privilèges spécifiques à toutes les sessions utilisateur web ou REST pour les différentes ressources de votre projet (datastore, dataclasses, fonctions, etc.).
 
 ## Vue d’ensemble
 
@@ -17,9 +17,9 @@ Si un utilisateur tente d'exécuter une action et ne dispose pas des droits d'ac
 
 ![schema](../assets/en/ORDA/privileges-schema.png)
 
-:::tip Related Blog posts
+:::tip Articles de blog liés
 
-[**Filter access to your data with a complete system of permissions**](https://blog.4d.com/filter-access-to-your-data-with-a-complete-system-of-permissions/)
+[**Filtrez l'accès à vos données avec un système complet de permissions**](https://blog.4d.com/filter-access-to-your-data-with-a-complete-system-of-permissions/)
 
 :::
 
@@ -27,17 +27,51 @@ Si un utilisateur tente d'exécuter une action et ne dispose pas des droits d'ac
 
 Vous pouvez assigner des actions de permission spécifiques aux ressources suivantes dans votre projet :
 
-- le datastore
-- une dataclass
-- un attribut (y compris calculé et alias)
-- une fonction de classe du modèle de données
-- une fonction [singleton](../REST/$singleton.md)
+- the [datastore](../ORDA/dsMapping.md#datastore)
+- the [dataclasses](../ORDA/dsMapping.md#dataclass)
+- [attributes](../ORDA/dsMapping.md#attribute) (including [computed](./ordaClasses.md#computed-attributes-1) and [alias](./ordaClasses.md#alias-attributes-1))
+- functions of the [data model classes](../ORDA/ordaClasses.md)
+- [singleton](../REST/$singleton.md) functions
 
 Chaque fois qu'on accède à une ressource dans une session (quelle que soit la manière dont on y accède), 4D vérifie que la session dispose des autorisations appropriées et rejette l'accès s'il n'est pas autorisé.
 
+## Permissions
+
+A permission is the ability to do an action on a resource. For example, *execute the ds.myTable.myFunction()* represents a **permission**. Permissions are defined for the project in the [`roles.json`](#rolesjson-file) file. Each permission can be given to one or more [privileges](#privileges-and-roles).
+
+When **no specific permission** has been defined for a resource, access to the resource may be automatically **unrestricted** or **restricted** depending on the [default mode defined for the project](#restriction-modes).
+
+### Actions de permission
+
+Les actions disponibles sont liées à la ressource cible.
+
+| Actions     | datastore                                                                                                                   | dataclass                                                                                                                                                                     | attribut                                                                                                                                                              | fonction du modèle de données ou fonction singleton                                                                                                                                                                                                                                                                   |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **create**  | Créer une entité dans n'importe quelle dataclass                                                                            | Créer une entité dans cette dataclass                                                                                                                                         | Créer une entité avec une valeur différente de la valeur par défaut autorisée pour cet attribut (ignoré pour les attributs alias). | n/a                                                                                                                                                                                                                                                                                                                   |
+| **read**    | Lire les attributs de n'importe quelle dataclass                                                                            | Lire les attributs de cette dataclass                                                                                                                                         | Lire ce contenu d'attribut                                                                                                                                            | n/a                                                                                                                                                                                                                                                                                                                   |
+| **update**  | Mettre à jour les attributs dans n'importe quelle dataclass.                                                | Mettre à jour les attributs de cette dataclass.                                                                                                               | Mettre à jour le contenu de cet attribut (ignoré pour les attributs alias).                                                        | n/a                                                                                                                                                                                                                                                                                                                   |
+| **drop**    | Supprimer des données dans n'importe quelle dataclass.                                                      | Supprimer des données dans cette dataclass.                                                                                                                   | Supprimer une valeur non nulle pour cet attribut (sauf pour les attributs alias et calculés).                                      | n/a                                                                                                                                                                                                                                                                                                                   |
+| **execute** | Exécuter n'importe quelle fonction du projet (datastore, dataclass, entity selection, entité, singleton) | Exécuter n'importe quelle fonction de dataclass. Les fonctions de dataclass, d'entité et d'entity selection sont considérées comme des fonctions de dataclass | n/a                                                                                                                                                                   | Exécuter cette fonction                                                                                                                                                                                                                                                                                               |
+| **promote** | n/a                                                                                                                         | n/a                                                                                                                                                                           | n/a                                                                                                                                                                   | Associe un privilège donné lors de l'exécution de la fonction. Le privilège est ajouté temporairement et supprimé à la fin de l'exécution de la fonction. Par mesure de sécurité, seul le process exécutant la fonction reçoit le privilège, et non toute la session. |
+
+:::note Notes
+
+- Un [alias](./ordaClasses.md#alias-attributes-1) peut être lu dès que les privilèges de la session autorisent l'accès à l'alias lui-même, même si les privilèges de la session n'autorisent pas l'accès aux attributs résolvant l'alias.
+- Un [attribut calculé](./ordaClasses.md#computed-attributes-1) est accessible même si les attributs sur lesquels il est construit ne font l'objet d'aucune autorisation.
+- Vous pouvez assigner une action de permission à une classe singleton (type `singleton`), auquel cas elle sera appliquée à toutes ses fonctions exposées, ou bien à une fonction de singleton (type `singletonMethod`).
+- Vous pouvez définir/supprimer l'action **promote** dynamiquement pour un process web en utilisant les fonctions [`promote()`](../API/SessionClass.md#promote) et [`demote()`](../API/SessionClass.md#demote).
+- Valeurs par défaut : dans l'implémentation actuelle, seul *Null* est disponible en tant que valeur par défaut.
+- En mode REST [force login](../REST/authUsers.md#force-login-mode), la fonction [`authentify()`](../REST/authUsers.md#function-authentify) est toujours exécutable par les utilisateurs guest, quelle que soit la configuration des permissions.
+
+:::
+
+Le paramétrage des permissions nécessite d'être cohérent, en particulier les permissions **update** et **drop** ont également besoin d'une permission **read** (mais **create** n'en a pas besoin).
+
+### Inherited permissions
+
 Une action de permission définie à un certain niveau est héritée par défaut aux niveaux inférieurs, mais plusieurs niveaux de permissions peuvent être définis :
 
-- Une action de permission définie au niveau du datastore est automatiquement assignée à toutes les dataclass. Une action de permission définie au niveau du datastore est automatiquement assignée à toutes les dataclass.
+- Une action de permission définie au niveau du datastore est automatiquement assignée à toutes les dataclass. L'action de permission *execute* définie au niveau du datastore s'applique à toutes les fonctions du projet, y compris aux fonctions [singleton](../REST/$singleton.md).
 - Une action de permission définie au niveau dataclass remplace le paramétrage du datastore (le cas échéant). Par défaut, tous les attributs de la dataclass héritent des permissions de la dataclass.
 - Contrairement aux permissions des dataclass, une action de permission définie au niveau de l'attribut ne remplace pas la permission de la dataclass parente, mais y est ajoutée. Par exemple, si vous avez attribué le privilège "général" à une dataclass et le privilège "détail" à un attribut de la dataclass, les deux privilèges, "général" et "détail", doivent être définis dans la session afin d'accéder à l'attribut.
 
@@ -47,163 +81,7 @@ Les permissions contrôlent l'accès aux objets ou fonctions du datastore. Si vo
 
 :::
 
-## Actions de permission
-
-Les actions disponibles sont liées à la ressource cible.
-
-| Actions     | datastore                                                                                                                   | dataclass                                                                                                                                                                     | attribut                                                                                                                                                              | fonction du modèle de données ou fonction singleton                                                                                                                                                                                                                                                           |
-| ----------- | --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **create**  | Créer une entité dans n'importe quelle dataclass                                                                            | Créer une entité dans cette dataclass                                                                                                                                         | Créer une entité avec une valeur différente de la valeur par défaut autorisée pour cet attribut (ignoré pour les attributs alias). | n/a                                                                                                                                                                                                                                                                                                           |
-| **read**    | Lire les attributs de n'importe quelle dataclass                                                                            | Lire les attributs de cette dataclass                                                                                                                                         | Lire ce contenu d'attribut                                                                                                                                            | n/a                                                                                                                                                                                                                                                                                                           |
-| **update**  | Mettre à jour les attributs dans n'importe quelle dataclass.                                                | Mettre à jour les attributs de cette dataclass.                                                                                                               | Mettre à jour le contenu de cet attribut (ignoré pour les attributs alias).                                                        | n/a                                                                                                                                                                                                                                                                                                           |
-| **drop**    | Supprimer des données dans n'importe quelle dataclass.                                                      | Supprimer des données dans cette dataclass.                                                                                                                   | Supprimer une valeur non nulle pour cet attribut (sauf pour les attributs alias et calculés).                                      | n/a                                                                                                                                                                                                                                                                                                           |
-| **execute** | Exécuter n'importe quelle fonction du projet (datastore, dataclass, entity selection, entité, singleton) | Exécuter n'importe quelle fonction de dataclass. Les fonctions de dataclass, d'entité et d'entity selection sont considérées comme des fonctions de dataclass | n/a                                                                                                                                                                   | Exécuter cette fonction                                                                                                                                                                                                                                                                                       |
-| **promote** | n/a                                                                                                                         | n/a                                                                                                                                                                           | n/a                                                                                                                                                                   | Associe un privilège donné lors de l'exécution de la fonction. The privilege is temporary added and removed at the end of the function execution. Par mesure de sécurité, seul le process exécutant la fonction reçoit le privilège, et non toute la session. |
-
-:::note Notes
-
-- An [alias](./ordaClasses.md#alias-attributes-1) can be read as soon as the session privileges allow the access to the alias itself, even if the session privileges do no allow the access to the attributes resolving the alias.
-- A [computed attribute](./ordaClasses.md#computed-attributes-1) can be accessed even if there are no permissions on the attributes upon which it is built.
-- Vous pouvez assigner une action de permission à une classe singleton (type `singleton`), auquel cas elle sera appliquée à toutes ses fonctions exposées, ou bien à une fonction de singleton (type `singletonMethod`).
-- You can set/remove the **promote** action dynamically to a web process using the [`promote()`](../API/SessionClass.md#promote) and [`demote()`](../API/SessionClass.md#demote) functions.
-- Valeurs par défaut : dans l'implémentation actuelle, seul *Null* est disponible en tant que valeur par défaut.
-- En mode REST [force login](../REST/authUsers.md#force-login-mode), la fonction [`authentify()`](../REST/authUsers.md#function-authentify) est toujours exécutable par les utilisateurs guest, quelle que soit la configuration des permissions.
-
-:::
-
-Le paramétrage des permissions nécessite d'être cohérent, en particulier les permissions **update** et **drop** ont également besoin d'une permission **read** (mais **create** n'en a pas besoin).
-
-## Privilèges et Rôles
-
-Un **privilège** est la capacité technique d'exécuter des **actions** sur des **ressources**, tandis qu'un **rôle** est un privilège public destiné à être utilisé par un administrateur. Fondamentalement, un rôle rassemble plusieurs privilèges pour définir un profil utilisateur métier. Par exemple, "manageInvoices" pourrait être un privilège tandis que "secrétaire" pourrait être un rôle (qui inclut "manageInvoices" et d'autres privilèges).
-
-Un privilège ou un rôle peut être associé à plusieurs combinaisons "action + ressource". Plusieurs privilèges peuvent être associés à une action. Un privilège peut inclure d'autres privilèges.
-
-- Vous **créez** des privilèges et/ou des rôles dans le fichier `roles.json` (voir ci-dessous). Vous **configurez** leur portée en les assignant aux actions de permission appliquées aux ressources.
-
-- Vous **autorisez** les privilèges et/ou les rôles pour chaque session utilisateur à l'aide de la fonction [`.setPrivileges()`](../API/SessionClass.md#setprivileges) de la classe `Session`.
-
-### Exemple
-
-Pour permettre un rôle dans une session :
-
-```4d
-
-exposed Function authenticate($identifier : Text; $password : Text)->$result : Text
-
-    var $user : cs.UsersEntity
-
-    Session.clearPrivileges()
-
-    $result:="Your are authenticated as Guest"
-
-    $user:=ds.Users.query("identifier = :1"; $identifier).first()
-
-    If ($user#Null)
-        If (Verify password hash($password; $user.password))
-            Session.setPrivileges(New object("roles"; $user.role))
-            $result:="Your are authenticated as "+$user.role
-        End if
-    End if
-
-
-```
-
-## `roles.json`
-
-Le fichier `roles.json` décrit l'ensemble des paramètres de sécurité du projet.
-
-### Fichier par défaut
-
-Lorsque vous créez un projet, un fichier `roles.json` par défaut est créé à l'emplacement suivant : `<project folder>/Project/Sources/` (voir la section [Architecture](../Project/architecture.md#sources)).
-
-Le fichier par défaut a le contenu suivant :
-
-```json title="/Project/Sources/roles.json"
-
-{
-    "privileges": [
-        {
-            "privilege": "all",
-            "includes": []
-        }
-    ],
-
-    "roles": [],
-
-    "permissions": {
-        "allowed": [
-            {
-                "applyTo": "ds",
-                "type": "datastore",
-                "read": ["all"],
-                "create": ["all"],
-                "update": ["all"],
-                "drop": ["all"],
-                "execute": ["all"],
-                "promote": ["all"]                
-            }
-        ]
-    },
-
-    "forceLogin": true
-
-}
-
-```
-
-For a highest level of security, the "all" privilege is assigned to all permissions in the datastore, thus data access on the whole `ds` object is disabled by default. The principle is as follows: assigning a permission is like putting a lock on a door. Only sessions with privilege having the corresponding key (i.e., a permission) will be able to open the lock.
-Il est recommandé de ne pas modifier ou utiliser ce privilège de verrouillage, mais d'ajouter des permissions spécifiques à chaque ressource que vous souhaitez rendre disponible à partir de requêtes web ou REST ([voir l'exemple ci-dessous](#example-of-privilege-configuration)).
-
-:::caution
-
-Si aucun paramètre spécifique n'est défini dans le fichier `roles.json`, les accès ne sont pas limités. Cette configuration vous permet de développer l'application sans avoir à vous soucier des accès, mais est fortement déconseillée dans un environnement de production.
-
-:::
-
-:::note Compatibilité
-
-Dans les versions précédentes, le fichier `roles.json` n'était pas créé par défaut. Depuis 4D 20 R6, lors de l'ouverture d'un projet existant qui ne contient pas de fichier `roles.json` ou les paramètres `"forceLogin" : true`, le bouton **Activer l'authentification REST via la fonction ds.authentify()** est disponible dans la page [**Fonctionnalités Web** de la boîte de dialogue Paramètres](../settings/web.md#access). Ce bouton met automatiquement à jour vos paramètres de sécurité (vous devrez peut-être modifier votre code, [voir cet article de blog](https://blog.4d.com/force-login-becomes-default-for-all-rest-auth/)).
-:::
-
-:::note Qodly Studio
-
-Dans Qodly Studio for 4D, le mode peut être défini en utilisant l'option [**Force login**](../WebServer/qodly-studio.md#force-login) dans l'onglet Privileges.
-
-:::
-
-### Syntaxe
-
-La syntaxe du fichier `roles.json` est la suivante:
-
-| Nom de propriété |                                                                                     |                                                                                  | Type                             | Obligatoire | Description                                                                                                                        |
-| ---------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| privileges       |                                                                                     |                                                                                  | Collection d'objets `privilege`  | X           | Liste de privilèges définis                                                                                                        |
-|                  | \[].privilege  |                                                                                  | Text                             |             | Nom de privilège                                                                                                                   |
-|                  | \[].includes   |                                                                                  | Collection de chaînes            |             | Liste de noms de privilèges inclus                                                                                                 |
-| roles            |                                                                                     |                                                                                  | Collection d'objets `role`       |             | Liste de rôles définis                                                                                                             |
-|                  | \[].role       |                                                                                  | Text                             |             | Nom de rôle                                                                                                                        |
-|                  | \[].privileges |                                                                                  | Collection de chaînes            |             | Liste de noms de privilèges inclus                                                                                                 |
-| permissions      |                                                                                     |                                                                                  | Object                           | X           | Liste d'actions autorisées                                                                                                         |
-|                  | allowed                                                                             |                                                                                  | Collection d'objets `permission` |             | Liste de permissions autorisées                                                                                                    |
-|                  |                                                                                     | \[].applyTo | Text                             | X           | Nom de [ressource](#resources) cible                                                                                               |
-|                  |                                                                                     | \[].type    | Text                             | X           | Type de [ressource](#ressources) : "datastore", "dataclass", "attribute", "method", "singletonMethod", "singleton" |
-|                  |                                                                                     | \[].read    | Collection de chaînes            |             | Liste de privilèges                                                                                                                |
-|                  |                                                                                     | \[].create  | Collection de chaînes            |             | Liste de privilèges                                                                                                                |
-|                  |                                                                                     | \[].update  | Collection de chaînes            |             | Liste de privilèges                                                                                                                |
-|                  |                                                                                     | \[].drop    | Collection de chaînes            |             | Liste de privilèges                                                                                                                |
-|                  |                                                                                     | \[].execute | Collection de chaînes            |             | Liste de privilèges                                                                                                                |
-|                  |                                                                                     | \[].promote | Collection de chaînes            |             | Liste de privilèges                                                                                                                |
-| forceLogin       |                                                                                     |                                                                                  | Boolean                          |             | True pour activer le [mode "forceLogin"](../REST/authUsers.md#force-login-mode)                                                    |
-
-:::caution Rappel
-
-- Le nom de privilège "WebAdmin" est réservé à l'application. Il est déconseillé d'utiliser ce nom pour les privilèges personnalisés.
-- Les noms `privileges` et `roles` sont insensibles à la casse.
-
-:::
-
-#### Attribution de permissions aux fonctions de la classe ORDA
+### Attribution de permissions aux fonctions de la classe ORDA
 
 Lors de la configuration des permissions, les fonctions de classe ORDA sont déclarées dans l'élément `applyTo` en utilisant la syntaxe suivante :
 
@@ -248,6 +126,145 @@ Cela signifie que vous ne pouvez pas utiliser les mêmes noms de fonctions dans 
     ]
 ```
 
+## Privilèges et Rôles
+
+Un **privilège** est la capacité technique d'exécuter des **actions** sur des **ressources**, tandis qu'un **rôle** est un privilège public destiné à être utilisé par un administrateur. Fondamentalement, un rôle rassemble plusieurs privilèges pour définir un profil utilisateur métier. Par exemple, "manageInvoices" pourrait être un privilège tandis que "secrétaire" pourrait être un rôle (qui inclut "manageInvoices" et d'autres privilèges).
+
+Un privilège ou un rôle peut être associé à plusieurs combinaisons "action + ressource". Plusieurs privilèges peuvent être associés à une action. Un privilège peut inclure d'autres privilèges.
+
+- Vous **créez** des privilèges et/ou des rôles dans le fichier `roles.json` (voir ci-dessous). Vous **configurez** leur portée en les assignant aux actions de permission appliquées aux ressources.
+
+- Vous **autorisez** les privilèges et/ou les rôles pour chaque session utilisateur à l'aide de la fonction [`.setPrivileges()`](../API/SessionClass.md#setprivileges) de la classe `Session`.
+
+### Exemple
+
+Pour permettre un rôle dans une session :
+
+```4d
+
+exposed Function authenticate($identifier : Text; $password : Text)->$result : Text
+
+    var $user : cs.UsersEntity
+
+    Session.clearPrivileges()
+
+    $result:="Your are authenticated as Guest"
+
+    $user:=ds.Users.query("identifier = :1"; $identifier).first()
+
+    If ($user#Null)
+        If (Verify password hash($password; $user.password))
+            Session.setPrivileges(New object("roles"; $user.role))
+            $result:="Your are authenticated as "+$user.role
+        End if
+    End if
+
+
+```
+
+## `roles.json`
+
+The `roles.json` file describes the whole web security settings for the project. La syntaxe du fichier `roles.json` est la suivante:
+
+| Nom de propriété    |                                                                                     |                                                                                  | Type                             | Obligatoire | Description                                                                                                                        |
+| ------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| privileges          |                                                                                     |                                                                                  | Collection d'objets `privilege`  | X           | Liste de privilèges définis                                                                                                        |
+|                     | \[].privilege  |                                                                                  | Text                             |             | Nom de privilège                                                                                                                   |
+|                     | \[].includes   |                                                                                  | Collection de chaînes            |             | Liste de noms de privilèges inclus                                                                                                 |
+| roles               |                                                                                     |                                                                                  | Collection d'objets `role`       |             | Liste de rôles définis                                                                                                             |
+|                     | \[].role       |                                                                                  | Text                             |             | Nom de rôle                                                                                                                        |
+|                     | \[].privileges |                                                                                  | Collection de chaînes            |             | Liste de noms de privilèges inclus                                                                                                 |
+| permissions         |                                                                                     |                                                                                  | Object                           | X           | Liste d'actions autorisées                                                                                                         |
+|                     | allowed                                                                             |                                                                                  | Collection d'objets `permission` |             | Liste de permissions autorisées                                                                                                    |
+|                     |                                                                                     | \[].applyTo | Text                             | X           | Nom de [ressource](#resources) cible                                                                                               |
+|                     |                                                                                     | \[].type    | Text                             | X           | Type de [ressource](#ressources) : "datastore", "dataclass", "attribute", "method", "singletonMethod", "singleton" |
+|                     |                                                                                     | \[].read    | Collection de chaînes            |             | Liste de privilèges                                                                                                                |
+|                     |                                                                                     | \[].create  | Collection de chaînes            |             | Liste de privilèges                                                                                                                |
+|                     |                                                                                     | \[].update  | Collection de chaînes            |             | Liste de privilèges                                                                                                                |
+|                     |                                                                                     | \[].drop    | Collection de chaînes            |             | Liste de privilèges                                                                                                                |
+|                     |                                                                                     | \[].execute | Collection de chaînes            |             | Liste de privilèges                                                                                                                |
+|                     |                                                                                     | \[].promote | Collection de chaînes            |             | Liste de privilèges                                                                                                                |
+| restrictedByDefault |                                                                                     |                                                                                  | Boolean                          |             | If true, access to resources without explicit permissions is denied                                                                |
+| forceLogin          |                                                                                     |                                                                                  | Boolean                          |             | If true, enables ["forceLogin" mode](../REST/authUsers.md#force-login-mode)                                                        |
+
+:::caution Rappel
+
+- Le nom de privilège "WebAdmin" est réservé à l'application. Il est déconseillé d'utiliser ce nom pour les privilèges personnalisés.
+- `privileges` and `roles` names are case-insensitive.
+
+:::
+
+### Default File Location and Content
+
+When a new project is created, a default `roles.json` file is generated at:
+
+```
+<project folder>/Project/Sources/ 
+```
+
+Voir la section [Architecture](../Project/architecture.md#sources) .
+
+Default content:
+
+```json title="/Project/Sources/roles.json"
+
+{
+  "privileges": [
+  ],
+  "roles": [
+  ],
+  "permissions": {
+    "allowed": [
+      {
+        "applyTo": "ds",
+        "type": "datastore",
+        "read": [],
+        "create": [],
+        "update": [],
+        "drop": [],
+        "execute": [],
+        "promote": []
+      }
+    ]
+  },
+  "restrictedByDefault": false,
+  "forceLogin": false
+}
+```
+
+:::note Compatibilité
+
+Dans les versions précédentes, le fichier `roles.json` n'était pas créé par défaut. Depuis 4D 20 R6, lors de l'ouverture d'un projet existant qui ne contient pas de fichier `roles.json` ou les paramètres `"forceLogin" : true`, le bouton **Activer l'authentification REST via la fonction ds.authentify()** est disponible dans la page [**Fonctionnalités Web** de la boîte de dialogue Paramètres](../settings/web.md#access). Ce bouton met automatiquement à jour vos paramètres de sécurité (vous devrez peut-être modifier votre code, [voir cet article de blog](https://blog.4d.com/force-login-becomes-default-for-all-rest-auth/)).
+
+:::
+
+:::note Qodly Studio
+
+In Qodly Studio for 4D, the login mode can be set using the [**Force login** option](https://developer.4d.com/qodly/4DQodlyPro/force-login) in the Roles and Privileges panel.
+
+:::
+
+## Restriction Modes
+
+The `restrictedByDefault` property configures how every [resource](#resources) are accessed when [no specific permission is defined for it](#permission):
+
+- **Unrestricted mode** (`restrictedByDefault`: **false**): Resources without defined permissions are accessible to all requests. This mode is suitable for development environments where access can be gradually restricted.
+- **Restricted mode** (`restrictedByDefault`: **true**): Resources without defined permissions are blocked by default. This mode is recommended for production environments where access must be explicitly granted.
+
+:::note Compatibilité
+
+- When **creating a new project**, the `restrictedByDefault` property is set to **false** in the *roles.json* file (see below). Keep in mind that this configuration is tailored for quick start and smooth development. In production environment, [it is recommended to set the `restrictedByDefault` and `forceLogin` properties to **true**](#configuring-restrictedbydefault-and-forcelogin-properties).
+- In **projects converted from previous releases**; when enabling access to Qodly Studio using the [One-click configuration dialog](https://developer.4d.com/qodly/4DQodlyPro/gettingStarted#one-click-configuration), the `restrictedByDefault` property is added with value **true** in the *roles.json* file.
+
+:::
+
+### Recommended Configuration
+
+Depending on your environment, the recommended settings are:
+
+- **Production**: Set both `restrictedByDefault` and [`forceLogin`](../REST/authUsers.md#force-login-mode) to **true**. This ensures maximum security by requiring user authentication and explicitly defined permissions for resource access.
+- **Development**: Set both `restrictedByDefault` and [`forceLogin`](../REST/authUsers.md#force-login-mode) to **false**. This allows easier access during development and debugging, with the possibility to gradually apply restrictions.
+
 ### `Roles_Errors.json`
 
 Le fichier `roles.json` est analysé par 4D au démarrage. Vous devez redémarrer l'application pour que les modifications dans ce fichier soient prises en compte.
@@ -267,93 +284,28 @@ End if
 
 ## Exemple de configuration de privilèges
 
-The good practice is to keep all data access locked by default thanks to the "all" privilege and to configure the `roles.json` file to only open controlled parts to authorized sessions. For example, to allow some accesses to "guest" sessions:
-
 ```json title="/Project/Sources/roles.json"
 
 {
-  "privileges": [
-    {
-      "privilege": "all",
-      "includes": []
-    }
-  ],
-  "roles": [],
-  "permissions": {
-    "allowed": [
-      {
-        "applyTo": "ds",
-        "type": "datastore",
-        "read": [
-          "all"
-        ],
-        "create": [
-          "all"
-        ],
-        "update": [
-          "all"
-        ],
-        "drop": [
-          "all"
-        ],
-        "execute": [
-          "all"
-        ],
-        "promote": [
-          "all"
-        ]
-      },
-      {
-        "applyTo": "ds.loginAs",
-        "type": "method",
-        "execute": [
-          "guest"
-        ]
-      },
-      {
-        "applyTo": "ds.hasPrivilege",
-        "type": "method",
-        "execute": [
-          "guest"
-        ]
-      },
-      {
-        "applyTo": "ds.clearPrivileges",
-        "type": "method",
-        "execute": [
-          "guest"
-        ]
-      },
-      {
-        "applyTo": "ds.isGuest",
-        "type": "method",
-        "execute": [
-          "guest"
-        ]
-      },
-      {
-        "applyTo": "ds.getPrivileges",
-        "type": "method",
-        "execute": [
-          "guest"
-        ]
-      },
-      {
-        "applyTo": "ds.setAllPrivileges",
-        "type": "method",
-        "execute": [
-          "guest"
-        ]
-      },
-      {
-        "applyTo": "mySingletonClass.createID",
-        "type": "singletonMethod",
-        "execute": [
-          "guest"
-        ]
-      }
-    ]
-  },
-  "forceLogin": true
+	"forceLogin": true,
+	"restrictedByDefault": true,
+	"permissions": {
+		"allowed": [
+						{
+				"applyTo": "People",
+				"type": "dataclass",
+				"read": [
+					"viewPeople"
+				]
+			}
+		]
+	},
+	"privileges": [
+		{
+			"privilege": "viewPeople",
+			"includes": []
+		}
+	],
+	"roles": []
 }
 ```

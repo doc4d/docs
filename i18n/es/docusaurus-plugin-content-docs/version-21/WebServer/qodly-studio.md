@@ -11,7 +11,7 @@ Qodly Studio también puede utilizarse en la [**plataforma Qodly Cloud**](https:
 
 Qodly Studio propone una interfaz web completa, que le permite:
 
-- create Qodly pages by placing components on a canvas
+- crear páginas Qodly colocando componentes en un lienzo
 - mapear componentes a Qodly Sources
 - activar código 4D configurando eventos
 - y mucho más.
@@ -80,7 +80,7 @@ La autenticación en el servidor web WebAdmin se realiza utilizando una llave de
 De acuerdo con la gestión de proyectos 4D, sólo se admiten los siguientes usos:
 
 - el desarrollo con Qodly Studio debe realizarse a través de **4D** (monousuario).
-- deployment of 4D applications powered with Qodly pages must be done using **4D Server**.
+- el despliegue de aplicaciones 4D alimentadas por páginas Qodly debe hacerse utilizando **4D Server**.
 
 :::warning
 
@@ -138,7 +138,8 @@ No existe compatibilidad directa entre las aplicaciones implementadas con 4D y l
 | Depurador                                                                        | 4D IDE debugger<br/>*4D Server only*: Qodly Studio debugger (see [this paragraph](#using-qodly-debugger-on-4d-server))                                                                   | Qodly Studio debugger                                                         |
 | Roles y privilegios REST/Web                                                     | Edición directa de roles.json/Editor de roles y permisos Qodly Studio                                                                                                                                       | Editor de roles y privilegios de Qodly Studio                                 |
 
-Note that in 4D single-user, if you open some 4D code with the Qodly Studio code editor, syntax coloring is not available and a "Lsp not loaded" warning is displayed. (1) The **Model** item is disabled in Qodly Studio.<br/>
+(1) El elemento **Modelo** está desactivado en Qodly Studio.<br/>
+(2) En el servidor 4D, la apertura del código 4D con el editor de código Qodly Studio es soportada **para pruebas y depuración** (ver [este párrafo](#development-and-deployment)). (1) The **Model** item is disabled in Qodly Studio.<br/>
 (2) In 4D Server, opening 4D code with the Qodly Studio code editor is supported **for testing and debugging purposes** (see [this paragraph](#development-and-deployment)).
 
 ### Lenguaje
@@ -235,7 +236,7 @@ El proyecto debe ejecutarse en modo interpretado para que el elemento de menú *
 
 :::
 
-2. In the Qodly Studio toolbar, click on the **Debug** button.<br/>
+2. En la barra de herramientas de Qodly Studio, haga clic en el botón **Debug**.<br/>
    ![qodly-debug](../assets/en/WebServer/qodly-debug.png)
 
 Si la sesión de depuración se inicia correctamente, aparecerá una viñeta verde en la etiqueta del botón ![qodly-debug](../assets/en/WebServer/debug2.png) y podrá utilizar el depurador de Qodly Studio.
