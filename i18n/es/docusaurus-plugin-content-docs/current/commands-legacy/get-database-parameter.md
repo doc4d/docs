@@ -140,6 +140,7 @@ Por defecto, si este selector no se utiliza, 4D descarga mínimo 10% de la cach�
 **Descripción:** constante obsoleta (se conserva por compatibilidad únicamente). Ahora recomendamos utilizar los comandos [WEB SET OPTION](web-set-option.md) y [WEB GET OPTION](web-get-option.md) para la configuración del servidor HTTP.
 
 
+**Descripción:** *constante obsoleta (se conserva por compatibilidad únicamente).* Ahora recomendamos utilizar los comandos [WEB SET OPTION](web-set-option.md) y [WEB GET OPTION](web-get-option.md) para la configuración del servidor HTTP.
 
 
 ### Circular log limitation (90)

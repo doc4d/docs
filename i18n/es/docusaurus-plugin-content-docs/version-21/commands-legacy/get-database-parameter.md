@@ -183,6 +183,9 @@ Este selector puede utilizarse para modificar por programación el puerto TCP ut
 Este selector funciona exactamente igual que el selector 39; sin embargo, aplica a todos los equipos 4D remotos utilizados como servidores web. Si quiere modificar el valor de ciertos equipos clientes únicamente, utilice la caja de diálogo de Preferencias de 4D remoto.
 
 
+ SET DATABASE PARAMETER(Log command list;"277;341") //Grabar solo los comandos QUERY y QUERY SELECTION O SET DATABASE PARAMETER(Log command list;"-1666;-323") //Excluir SET USER ALIAS y DELAY PROCESS commands from being recorded
+ 
+ 
 
 
 ### Client log recording (45)
