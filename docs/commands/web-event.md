@@ -47,7 +47,7 @@ In this scenario:
 	![alt-text](img/web-event-3.png)
 * The Text component has `orderNumber` as Server side reference.
 	![alt-text](img/web-event-4.png)
-* The exposed function `help()` is attached to both the `onmouseenter` and `onmouseleave` events and contains the following code: 
+* The [exposed](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) function `help()` is attached to both the `onmouseenter` and `onmouseleave` events and contains the following code: 
 
 ```4d
 shared singleton Class constructor()

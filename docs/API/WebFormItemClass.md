@@ -31,6 +31,23 @@ For example, `WebFormObject.myImage` refers to the image component with `myImage
 |[<!-- INCLUDE #WebFormItemClass.show().Syntax -->](#show)<br/><!-- INCLUDE #WebFormItemClass.show().Summary -->|
 
 
+
+### .addCSSClass()
+
+<!-- REF #WebFormItemClass.addCSSClass().Syntax -->**.addCSSClass**(*className* : string)<!-- END REF -->
+
+<!-- REF #WebFormItemClass.addCSSClass().Params -->
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|className|string|->|Name of the CSS class to add to the component|
+<!-- END REF -->
+
+#### Description
+
+The `.addCSSClass` function <!-- REF #WebFormItemClass.addCSSClass().Summary -->adds the class specified in *className* to the component<!-- END REF -->.
+
+
+
 ### .hide()
 
 <!-- REF #WebFormItemClass.hide().Syntax -->**.hide**()<!-- END REF -->
@@ -50,7 +67,7 @@ The `.hide()` function <!-- REF #WebFormItemClass.hide().Summary -->hides the co
 
 To call a function that hides an image when the user clicks a button: 
 
-&. Create an exposed function inside a shared singleton class named `isHidden` that contains the following code:
+&. Create an [exposed](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) function inside a shared singleton class named `isHidden` that contains the following code:
 
 ```4d  
 
@@ -64,6 +81,24 @@ exposed Function isHidden()
 2. In Qodly Studio: Select the image component on the canvas, and enter a server-side reference in the Properties Panel > Server Side, for example "myImage".
 3. Select the Button component and add an `onclick` event to it.
 4. Attach the `isHidden` function to the event. 
+
+
+
+### .removeCSSClass()
+
+
+<!-- REF #WebFormItemClass.removeCSSClass().Syntax -->**.removeCSSClass**(*className*: string)<!-- END REF -->
+
+<!-- REF #WebFormItemClass.removeCSSClass().Params -->
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|className|string|->|Name of the CSS class to remove from the component|
+<!-- END REF -->
+
+#### Description
+
+The `.removeCSSClass()` function <!-- REF #WebFormItemClass.removeCSSClass().Summary -->removes the class specified in *className* from the component<!-- END REF -->.
+
 
 
 ### .show()
@@ -83,43 +118,11 @@ exposed Function isHidden()
 The `.show()` function <!-- REF #WebFormItemClass.show().Summary -->makes the component visible<!-- END REF -->.If the component was already visible, the function does nothing.
 
 
-
-### .addCSSClass()
-
-<!-- REF #WebFormItemClass.addCSSClass().Syntax -->**.addCSSClass**(*className* : string)<!-- END REF -->
-
-<!-- REF #WebFormItemClass.addCSSClass().Params -->
-|Parameter|Type||Description|
-|---------|--- |:---:|------|
-|className|string|->|Name of the CSS class to add to the component|
-<!-- END REF -->
-
-#### Description
-
-The `.addCSSClass` function <!-- REF #WebFormItemClass.addCSSClass().Summary -->adds the class specified in *className* to the component<!-- END REF -->.
-
-
-### .removeCSSClass()
-
-
-<!-- REF #WebFormItemClass.removeCSSClass().Syntax -->**.removeCSSClass**(*className*: string)<!-- END REF -->
-
-<!-- REF #WebFormItemClass.removeCSSClass().Params -->
-|Parameter|Type||Description|
-|---------|--- |:---:|------|
-|className|string|->|Name of the CSS class to remove from the component|
-<!-- END REF -->
-
-#### Description
-
-The `.removeCSSClass()` function <!-- REF #WebFormItemClass.removeCSSClass().Summary -->removes the class specified in *className* from the component<!-- END REF -->.
-
-
 ## See also 
 
 [Web Form](../commands/web-form.md)</br>
 [Web Event](../commands/web-event.md)</br>
-[WebForm class](../API/WebFormClass.md)
+[WebForm class](WebFormClass.md)
 
 
 

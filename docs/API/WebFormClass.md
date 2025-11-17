@@ -163,7 +163,7 @@ For more information, please refer to the [`.setMessage()` description in the Qo
 
 #### Example
 
-```qs
+```4d
 shared singleton Class constructor()
 exposed function myMessage()
 
@@ -207,6 +207,6 @@ If the [**Provide feedback**](../../4DQodlyPro/pageLoaders/events/bindingActionT
 
 ## See also 
 
-[Web Form](web-form.md)</br>
-[Web Event](web-event.md)</br>
+[Web Form](../commands/web-form.md)</br>
+[Web Event](../commands/web-event.md)</br>
 [WebFormItem class](../API/WebFormItemClass.md)
