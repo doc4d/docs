@@ -1,40 +1,40 @@
 ---
 id: orda-events
-title: Entity Events
+title: エンティティイベント
 ---
 
 <details><summary>履歴</summary>
 
-| リリース   | 内容                                                                                                    |
-| ------ | ----------------------------------------------------------------------------------------------------- |
-| 21     | Added events: validateSave / saving / afterSave / validateDrop / dropping / afterDrop |
-| 20 R10 | touched event added                                                                                   |
+| リリース   | 内容                                                                                                 |
+| ------ | -------------------------------------------------------------------------------------------------- |
+| 21     | 追加されたイベント: validateSave / saving / afterSave / validateDrop / dropping / afterDrop |
+| 20 R10 | touched イベント追加                                                                                     |
 
 </details>
 
-Entity events are functions that are automatically invoked by ORDA each time entities and entity attributes are manipulated (added, deleted, or modified). You can write very simple events, and then make them more sophisticated.
+エンティティイベントとは、エンティティやエンティティ属性が操作(追加、削除、変更)されるたびに ORDA によって自動的に呼び出される関数です。 シンプルなイベントを書き、それをより洗練されたものに変えていくことができます。
 
-You cannot directly trigger event function execution. Events are called automatically by ORDA based on user actions or operations performed through code on entities and their attributes.
+イベント関数の実行は直接トリガーすることはできません。 イベントは、ユーザーアクションや、エンティティまたはその属性に対するコードを通して実行された操作に基づいて、ORDA によって自動的に呼び出されます。
 
-:::tip Related blog post
+:::tip 関連したblog 記事
 
 [ORDA – Handle an event-driven logic during data persistence actions](https://blog.4d.com/orda-handle-an-event-driven-logic-during-database-operations)
 
 :::
 
-:::info note Compatibility note
+:::info 互換性に関する注意
 
-ORDA entity events in the datastore are equivalent to triggers in the 4D database. However, actions triggered at the 4D database level using the 4D classic language commands or standard actions do not trigger ORDA events.
+データストアにおける ORDA エンティティイベントは、4D データベースにおけるトリガに相当します。 しかしながら、4D クラシックランゲージコマンドを使用して 4D データベースレベルでトリガーされたアクション、あるいは標準アクションは、ORDA イベントをトリガーしません。 Note also that, unlike triggers, ORDA entity events do not lock the entire underlying table of a dataclass while saving or dropping entities. Several events can run in parallel as long as they involve distinct entities (i.e. records).
 
 :::
 
 ## 概要
 
-### Event level
+### イベントレベル
 
-A event function is always defined in the [Entity class](../ORDA/ordaClasses.md#entity-class).
+イベント関数は必ず[Entity クラス](../ORDA/ordaClasses.md#エンティティクラス) 内で定義されます。
 
-It can be set at the **entity** level and/or the **attribute** level (it includes [**computed attributes**](../ORDA/ordaClasses.md#computed-attributes)). In the first case, it will be triggered for any attributes of the entity; on the other case, it will only be triggered for the targeted attribute.
+イベントは **エンティティ** レベルまたは **属性** レベルで設定することができます(属性には [**計算属性**](../ORDA/ordaClasses.md#計算属性) も含まれます)。 前者の場合、エンティティのあらゆる属性でイベントがトリガーされます。それ以外の場合、イベントは対象となる属性に対してのみトリガーされます。
 
 For the same event, you can define different functions for different attributes.
 
@@ -420,7 +420,9 @@ If (This.userManualPath#"")
 	// The user manual document file is created on the disk
 	// This may fail if no more space is available
 	Try
-		$fileCreated:=$userManualFile.create() 
+        // The file content has been generated and stored in a map in Storage.docMap previously
+	    $docInfo:=Storage.docMap.query("name = :1"; This.name).first()
+        $userManualFile.setContent($docInfo.content)
 	Catch
 		// No more room on disk for example
 		$result:={/
@@ -433,6 +435,12 @@ End if
 return $result
 
 ```
+
+:::note
+
+The content of the file is generated outside the `saving` event because it can be time consuming.
+
+:::
 
 ### `Function event afterSave`
 
