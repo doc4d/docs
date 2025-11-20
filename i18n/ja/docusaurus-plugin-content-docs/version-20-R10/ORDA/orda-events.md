@@ -73,7 +73,7 @@ ORDA [`constructor()`](./ordaClasses.md#class-constructor) 関数は必ずクラ
 | *attributeName* | 属性に関するイベントのみ | 文字列 | 属性名 (*例* "firstname")   |
 | *dataClassName* | 常に           | 文字列 | データクラス名 (*例* "Company") |
 
-## Event function description
+## イベント関数の詳細
 
 ### `Function event touched`
 
@@ -82,33 +82,33 @@ ORDA [`constructor()`](./ordaClasses.md#class-constructor) 関数は必ずクラ
 ```4d
 {local} Function event touched($event : Object)
 {local} Function event touched <attributeName>($event : Object)
-// code
+// コード
 ```
 
-This event is triggered each time a value is modified in the entity.
+このイベントはエンティティ内の値が編集されるたびにトリガーされます。
 
 - 関数をエンティティレベルで定義していた場合(第一シンタックス)、その関数はエンティティの任意の属性における変更に対してトリガーされます。
 - 関数を属性レベルで定義していた場合(第二シンタックス)、関数はその属性に対する変更に対してのみトリガーされます。
 
-This event is triggered as soon as the 4D Server / 4D engine can detect a modification of attribute value which can be due to the following actions:
+このイベントは4D Server / 4Dエンジンが属性値の変更を検知するとすぐにトリガーされます。この変更は、以下のようなアクションによって引き起こされます:
 
-- in **client/server with the [`local` keyword](../ORDA/ordaClasses.md#local-functions)** or in **4D single-user**:
-  - the user sets a value on a 4D form,
-  - the 4D code makes an assignment with the `:=` operator. The event is also triggered in case of self-assignment (`$entity.attribute:=$entity.attribute`).
-- in **client/server without the `local` keyword**: some 4D code that makes an assignment with the `:=` operator is [executed on the server](../commands-legacy/execute-on-server.md).
-- **`local` キーワードを使用しないクライアント/サーバー**、**[Qodly アプリケーション](https://developer.qodly.com/docs)** および **[リモートデータストア](../commands/open-datastore.md)**: ORDA 関数(エンティティ上の関数あるいはエンティティを引数として使用する関数)を呼び出した場合にはエンティティは4D Server に受信されます。 It means that you might have to implement a *refresh* or *preview* function on the remote application that sends an ORDA request to the server and triggers the event.
-- with the REST server: the value is received on the REST server with a [REST request](../REST/$method.md#methodupdate) (`$method=update`)
+- **[`local` キーワード](../ORDA/ordaClasses.md#local関数) を使用したクライアント/サーバー** あるいは **シングルユーザーモードの4D**:
+  - ユーザーが4D フォーム上で値を設定した
+  - 4D コードが `:=` 演算子によって代入を行った。 このイベントは自己代入の場合にもトリガーされます(`$entity.attribute:=$entity.attribute`)。
+- **`local` キーワード を使用しないクライアント/サーバー**: `:=` 演算子によって代入を行う一部の4D コードは、[サーバー上で実行されます](../commands-legacy/execute-on-server.md)。
+- **`local` キーワードを使用しないクライアント/サーバー**、**[Qodly アプリケーション](https://developer.qodly.com/docs)** および **[リモートデータストア](../commands/open-datastore.md)**: ORDA 関数(エンティティ上の関数あるいはエンティティを引数として使用する関数)を呼び出した場合にはエンティティは4D Server に受信されます。 これはつまり、リモートアプリケーション側に*refresh* あるいは *preview* 関数を実装することでORDA リクエストをサーバーに送信し、イベントをトリガーするようにする必要があるかもしれない、ということです。
+- REST サーバー: 値は REST サーバーに、[REST リクエスト](../REST/$method.md#methodupdate) (`$method=update`) とともに受信されます。
 
-The function receives an [*event* object](#event-parameter) as parameter.
+関数は [*event* オブジェクト](#event-引数) を引数として受け取ります。
 
 このイベントがエラーを[throw](../commands-legacy/throw.md) する場合でも、進行中のアクションは停止しません。
 
 :::note
 
-This event is also triggered:
+このイベントは以下の場合にもトリガーされます:
 
-- when attributes are assigned by the [`constructor()`](./ordaClasses.md#class-constructor-1) event,
-- when attributes are edited through the [Data Explorer](../Admin/dataExplorer.md).
+- 属性の値が [`constructor()`](./ordaClasses.md#class-constructor-1) イベントによって代入された場合
+- 属性の値が [データエクスプローラー](../Admin/dataExplorer.md) を通して編集された場合。
 
 :::
 
