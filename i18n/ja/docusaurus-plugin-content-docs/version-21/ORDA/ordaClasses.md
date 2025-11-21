@@ -214,9 +214,9 @@ ORDA で公開されるテーブル毎に、Entity クラスが `cs` クラス�
 
 #### Class constructor
 
-You can define a **class constructor** for an Entity class. The class constructor is called whenever an entity is created in memory and can be used to initialize some values.
+エンティティクラスに対して **class constructor** を定義することができます。 クラスコンストラクターはエンティティがメモリ内に作成されるたびに呼び出され、これを使用して一部の値を初期化することができます。
 
-For information, please refer to the [Class constructor](#class-constructor-1) section.
+詳細な情報については[Class constructor](#class-constructor-1) を参照してください。
 
 #### 計算属性
 
@@ -278,7 +278,7 @@ End if
 
 - クラス定義の際、[`Class extends`](../Concepts/classes.md#class-extends-classname) ステートメントに使用する親クラスの名前は完全に合致するものでなくてはいけません (文字の大小が区別されます)。 たとえば、EntitySelection クラスを継承するには `Class extends EntitySelection` と書きます。
 
-- データモデルクラスオブジェクトのインスタンス化に `new()` キーワードは使えません (エラーが返されます)。 You must use a regular function as listed in the [`Instantiated by` column of the ORDA class table](#architecture).
+- データモデルクラスオブジェクトのインスタンス化に `new()` キーワードは使えません (エラーが返されます)。 上述の ORDA クラステーブルに一覧化されている、通常の [インスタンス化の方法](#アーキテクチャー) を使う必要があります。
 
 - **`4D`** [クラスストア](Concepts/classes.md#クラスストア) のネイティブな ORDA クラス関数を、データモデルユーザークラス関数でオーバーライドすることはできません。
 
@@ -306,7 +306,7 @@ End if
 ```4d
 // Entity class 
 Class constructor()
-// code
+// コード
 ```
 
 :::note
@@ -315,48 +315,48 @@ Class constructor()
 
 :::
 
-An ORDA class constructor function is triggered just after a new entity is created in memory, [whatever the way it is created](#commands-that-trigger-the-class-constructor-functions). It is useful to set initial values for entity instantiation, for example a custom ID.
+ORDA クラスコンストラクター関数は、[作成された方法に関わらず](#クラス関数をトリガーするコマンド)、新規エンティティがメモリ内に作成された直後にトリガーされます。 これは例えばカスタムのID など、エンティティインスタンス化時に初期値を設定するのに有用です。
 
-This function can only be set at the [entity level](#entity-class). There can only be one constructor function in an entity class (otherwise an error is returned).
+この関数は [エンティティレベル](#entity-クラス) でのみ設定可能です。 コンストラクター関数は、1つのエンティティクラスに 1つしか存在できません (そうでない場合はエラーが返されます)。
 
-This ORDA class constructor function does not receive or return parameters. However, you can use it to initialize attribute values using [`This`](../commands/this.md). Note that values initialized by the constructor are overriden if corresponding attributes are filled by the code.
+ORDA クラスコンストラクター関数は、引数を受け取ることも返すこともしません。 しかし、 [`This`](../commands/this.md).を使用して属性値を初期化することができます。 コンストラクターによって初期化された値は、対応する属性がコードによって値が入力される場合にはそれによって上書きされるということに注意してください。
 
 :::note
 
-An ORDA class constructor function is similar to a [user class constructor function](../Concepts/classes.md#class-constructor), with the following differences:
+ORDA クラスコンストラクター関数は、[ユーザークラスコンストラクター関数](../Concepts/classes.md#class-constructor) と似ていますが、以下の点において違います:
 
-- you cannot pass parameters to the constructor,
-- you cannot use `shared`, `session`, or `singleton` keywords,
-- you cannot call the [`Super`](../Concepts/classes.md#super) keyword within the function,
-- the class constructor cannot be called using the `new()` function on an entity (entities can only be created by specific functions, see below).
+- コンストラクターには引数を渡すことはできません
+- `shared`、 `session` または `singleton` キーワードを使用することはできません
+- 関数内で [`Super`](../Concepts/classes.md#super) キーワードを呼び出すことはできません
+- クラスコンストラクターは、エンティティに `new()` 関数を使用することでは呼び出せません(エンティティは特定の関数でしか作成することはできません、以下参照)。
 
 :::
 
-#### Commands that trigger the Class constructor functions
+#### クラスコンストラクター関数をトリガーするコマンド
 
-The `Class constructor` function is triggered by the following commands and features:
+`Class constructor` 関数は、以下のコマンドと機能によってトリガーされます:
 
 - [`dataClass.new()`](../API/DataClassClass.md#new)
 - [`dataClass.fromCollection()`](../API/DataClassClass#fromcollection)
-- [REST API $method=update](../REST/$method.md#methodupdate) in a POST without the `__KEY` and `__STAMP` parameters
-- the [Data Explorer](../Admin/dataExplorer.md#editing-data).
+- `__KEY` および `__STAMP` 引数のない POST での[REST API $method=update](../REST/$method.md#methodupdate)
+- [データエクスプローラー](../Admin/dataExplorer.md#editing-data)
 
 :::note 注記
 
-- The [`entity.clone()`](../API/EntityClass.md#clone) function does not trigger the entity Class constructor.
-- Records created at the 4D database level using 4D classic language commands or standard actions do not trigger the entity Class constructor.
+- [`entity.clone()`](../API/EntityClass.md#clone) 関数はエンティティクラスコンストラクターをトリガーしません。
+- 4D クラシックランゲージ言語コマンドまたは標準アクションを使用して4D データベースレベルで作成されたレコードは、エンティティクラスコンストラクターをトリガーしません。
 
 :::
 
-#### Remote configurations
+#### リモート構成
 
-When using a remote configurations, you need to pay attention to the following principles:
+リモート構成を使用している場合、以下の原則に対して注意する必要があります:
 
-- In **client/server** the function can be called on the client or on the server, depending on the location of the calling code. When it is called on the client, it is not triggered again when the client attempts to save the new entity and sends an update request to the server to create in memory on the server.
+- **クライアント/サーバー** では、コードを呼び出した場所によっては関数はクライアントまたはサーバーのどちらでも呼び出すことができます。 クライアント上で呼び出された場合、クライアントが新規エンティティを保存しようとして、サーバーのメモリ上に作成するために更新リクエストを送信したときにはもう一度トリガーされることはありません。
 
 :::warning
 
-Since functions such as [`dataClass.fromCollection()`](../API/DataClassClass.md#fromcollection) can create a large number of entities and thus trigger the entity Class constructor consequently, you need to make sure the constructor code does not execute excessive time-consuming processings, for performance reasons. In remote configurations (see below), the code should not trigger multiple requests to the server.
+[`dataClass.fromCollection()`](../API/DataClassClass.md#fromcollection) のような関数は大量のエンティティを一度を作成し、結果としてエンティティクラスコンストラクターをトリガーしうるため、パフォーマンス上の理由から、コンストラクターコードに過度に時間を消費するような処理を実行しないように注意する必要があります。 リモート設定においては(以下参照)、コードはサーバーに対して複数のリクエストをトリガーしてはいけません。
 
 :::
 
@@ -372,7 +372,7 @@ Class constructor()
 
 ```
 
-#### Example 2 (diagram): Client/server
+#### 例題 2 (図): クライアント/サーバー
 
 ```mermaid
 
@@ -382,7 +382,7 @@ Client->>+Client: Form.product:=ds.Products.new()
 
 Note over Client: Class constructor <br> This.creationDate:=Current date() <br>This.comment:="Automatic comment"
 
-Note over Client: Form.product.creationDate is "06/17/25" <br> Form.product.comment is "Automatic comment"
+Note over Client: Form.product.creationDate は "25/06/17" <br> Form.product.comment は "Automatic comment"
 
 Client->>+Server: Form.product.save()
 
@@ -391,47 +391,47 @@ Server-->>-Client: Success
 
 ```
 
-#### Example 3 (diagram): Qodly - Standard action
+#### 例題 3 (図): Qodly - 標準アクション
 
 ```mermaid
 
 sequenceDiagram
 
-    Qodly page->>+   Qodly page: Standard action Create a new entity (product Qodly source)
+    Qodly page->>+   Qodly page: 標準アクションで新規エンティティを作成 (product Qodlyソース)
 
-    Qodly page->>+Server: Function call product.apply() OR Save standard action for the product Qodly source
+    Qodly page->>+Server: 関数がproduct Qodly ソースに対して product.apply() または Save 標準アクション を呼び出し
 
      Note over Server: Class constructor <br> This.creationDate:=Current date() <br>This.comment:="Automatic comment"
 
- Server-->>-Qodly page: The product Qodly source creationDate and comment attributes are filled
+ Server-->>-Qodly page: product Qodlyソースの creationDate と comment 属性に値が入れられる
 
- Note over Qodly page: product.creationDate is "06/17/25" <br> and product.comment is "Automatic comment"
+ Note over Qodly page: product.creationDate は "06/17/25" <br> そして product.comment は "Automatic comment"
 
 ```
 
-#### Example 4 (diagram): Qodly - Standard action and update value on the newly created entity
+#### 例題 4 (図): Qodly - 標準アクションと新規作成エンティティの値を更新
 
 ```mermaid
 
 sequenceDiagram
 
-Qodly page->>+ Qodly page: Standard action Create a new entity (product Qodly source)
+Qodly page->>+ Qodly page: 標準アクションで新規エンティティを作成(product Qodlyソース)
 
-Qodly page->>+ Qodly page: Update product comment with "Front end comment"
+Qodly page->>+ Qodly page: product の comment を "Front end comment" で更新
 
-Qodly page->>+Server: Function call product.apply() OR Save standard action for the product Qodly source
+Qodly page->>+Server: 関数が product Qodlyソースに対して product.apply() またはSave 標準アクションを呼び出し
 
 Note over Server: Class constructor <br> This.creationDate:=Current date() <br>This.comment:="Automatic comment"
 
-Note over Server: The comment attribute is set with "Front end comment"
+Note over Server: comment 属性は "Front end comment" に設定
 
-Server-->>-Qodly page: The product Qodly source creationDate and comment attributes are filled
+Server-->>-Qodly page: product Qodlyソースの creationDate と comment 属性には値が入る
 
-Note over Qodly page: product.creationDate is "06/17/25" <br> and product.comment is "Front end comment"
+Note over Qodly page: product.creationDate は "25/06/17" <br> そして product.comment は "Front end comment"
 
 ```
 
-#### Example 5 (diagram): Qodly - Entity instanciated in a function
+#### 例題 5 (図): Qodly - 関数内でインスタンス化されたエンティティ
 
 ```mermaid
 
