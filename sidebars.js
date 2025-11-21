@@ -3215,6 +3215,7 @@ module.exports =
                   ]
             },
             "WritePro/commands-legacy/4d-write-pro-attributes",
+            "WritePro/user-legacy/standard-actions",
             {
               type: "category",
               label: "Commands",

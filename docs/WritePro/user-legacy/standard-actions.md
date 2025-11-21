@@ -9,7 +9,7 @@ slug: /WritePro/standard-actions
 The user interface of 4D Write Pro areas can be handled through a wide set of **standard actions**. Standard actions can be assigned to:
 
 * menu commands, available through the **menu bar** or the [Dynamic pop up menu](../../commands/dynamic-pop-up-menu) command
-* [list items](./using-a-4d-write-pro-area.md#list-styles) (including bullet lists), available through pop-up/drop-down lists or hierarchical pop-up menus,
+* list items, available through pop-up/drop-down lists or hierarchical pop-up menus,
 * buttons, check boxes,
 * or executed by the [INVOKE ACTION](../../commands/invoke-action) command.
 

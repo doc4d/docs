@@ -47,23 +47,31 @@ You can control automatic breaks in paragraphs using the following features:
 * **Avoid page break inside**: When this option is set for a paragraph, 4D Write Pro prevents this paragraph from being broken into parts on two or more pages.
 * **Keep with next:** When this option is set for a paragraph, that paragraph cannot be separated from the one that follows it by an automatic break. See `wk keep with next` and the corresponding *keepWithNext* [standard action](./user-legacy/standard-actions.md).
 
-These options can be set using the context menu, or [attributes](../commands-legacy/4d-write-pro-attributes.md) (`wk avoid widows and orphans`, `wk page break inside paragraph`, or *widowAndOrphanControlEnabled* and *avoidPageBreakInside* [standard actions](./user-legacy/standard-actions.md). 
+These options can be set using the context menu, or [attributes](../commands-legacy/4d-write-pro-attributes.md) (`wk avoid widows and orphans`, `wk page break inside paragraph`, or *widowAndOrphanControlEnabled* and *avoidPageBreakInside* [standard actions](./standard-actions). 
 
 
-## List styles
+## Lists
 
-Lists in 4D Write Pro can contain bullets, custom bullets, numbers, or images used as markers. 
+4D Write Pro supports two main types of lists:
 
-They can be created using 
-* [the interface](../writeprointerface.md) (sidebar or toolbar), 
-* [standard actions](./user-legacy/standard-actions.md) such as listStyleType or listStyleImage, 
-* or programmatically using [WP SET ATTRIBUTE](../commands/wp-set-attributes.md). 
+* unordered lists: where list items are marked with bullets, custom bullets, or images used as markers. 
+* ordered lists: where list items are marked with numbers or letters
 
-::: note
+They can be created using: 
+* the toolbar or sidebar of the [4D Write Pro interface](https://doc.4d.com/4Dv20/4D/20.2/Entry-areas.300-6750367.en.html#5865253)
+* the `listStyleType` or `listStyleImage` [standard actions](./standard-actions) , 
+* or [programmatically](../commands-legacy/4d-write-pro-attributes.md#lists) using [WP SET ATTRIBUTE](../commands/wp-set-attributes.md). 
 
-When a list is applied to a paragraph using standard actions (as well as through), 4D Write Pro automatically inserts an margin before the text so that the marker is correctly positioned inside it. When the list is removed, this margin is removed as well. The value of the inserted or removed margin corresponds to the offset of the default tab (wk tab default).
+When a list is created using a standard action (`listStyleType` or `listStyleImage`) or the toolbar/sidebar, 4D Write Pro automatically inserts a margin before the text so that the marker is positioned inside it. The value of the inserted margin corresponds to the offset of the default tab (`wk tab default`). 
 
+![](../../assets/en/WritePro/margin-bullets.png)
+
+When the list is created using [the WP SET ATTRIBUTE command](../commands-legacy/4d-write-pro-attributes.md#lists), no specific margin is managed, by default the marker is added at the left boundary of the paragraph. The developer can add a custom margin if necessary.
+
+:::info Related blog post
+[4D Write Pro – Adding a margin automatically when bullets are set using standard actions]()
 :::
+
 
 ## Background 
 
@@ -76,7 +84,7 @@ The background of 4D Write Pro documents and document elements (tables, paragrap
 * painting area
 * repeat
 
-These [attributes](../commands-legacy/4d-write-pro-attributes.md) can be defined programmatically for either individual elements on a page and/or entire document backgrounds with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command or by [standard actions](./user-legacy/standard-actions.md). 
+These [attributes](../commands-legacy/4d-write-pro-attributes.md) can be defined programmatically for either individual elements on a page and/or entire document backgrounds with the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command or by [standard actions](./standard-actions). 
 
 Users can modify background attributes via the contextual menu as shown below:
 
@@ -296,7 +304,7 @@ Columns can be set using:
 
 * the **Columns** submenu of the 4D Write Pro area context menu,
 * 4D Write Pro [attributes](../commands-legacy/4d-write-pro-attributes.md),
-* 4D Write Pro [standard actions](./user-legacy/standard-actions.md).
+* 4D Write Pro [standard actions](./standard-actions).
 (./user-legacy/standard-actions.md)
 You can set or get the following properties and actions for columns:
 
