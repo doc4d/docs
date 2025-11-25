@@ -4,7 +4,7 @@ title: WebForm
 ---
 
 
-The `WebForm` class contains functions and properties allowing to handle your Qodly webform components. `4D.WebForm` objects are instantiated with the [`webForm`](../commands/web-form.md) command.
+The `WebForm` class contains functions and properties allowing to handle your Qodly web page components. `4D.WebForm` objects are instantiated with the [`webForm`](../commands/web-form.md) command.
 
 <details><summary>History</summary>
 
@@ -34,7 +34,7 @@ The `WebForm` class contains functions and properties allowing to handle your Qo
 
 #### Description
 
-The components of webforms are <!-- REF #WebFormClass.componentName.Summary -->objects that are available directly as properties<!-- END REF --> of these webforms.
+The components of web pages are <!-- REF #WebFormClass.componentName.Summary -->objects that are available directly as properties<!-- END REF --> of these web pages.
 
 The returned objects are of the [`4D.WebFormItem`](WebFormItemClass.md) class. These objects have functions that you can use to manage your components dynamically.
 
@@ -46,8 +46,8 @@ shared singleton Class constructor()
 	var myForm : 4D.WebForm
 	var component : 4D.WebFormItem
 	
-	myForm:=webForm  //returns the page as an object, each property is a component
-	component:=myForm.myImage  //returns the myImage component of the page
+	myForm:=webForm  //returns the web page as an object, each property is a component
+	component:=myForm.myImage  //returns the myImage component of the web page
 
 ```
 :::info
@@ -63,20 +63,20 @@ While `myForm` may not display typical object properties when examined in the de
 <!-- REF #WebFormClass.disableState().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|state|string|->|Name of state to disable from the web form|
+|state|string|->|Name of state to disable from the web page|
 <!-- END REF -->
 
 #### Description
 
-The `.disableState()` function <!-- REF #WebFormClass.disableState().Summary -->disables the rendering of the *state* in the current web form<!-- END REF -->.
+The `.disableState()` function <!-- REF #WebFormClass.disableState().Summary -->disables the rendering of the *state* in the current web page<!-- END REF -->.
 
 This function does nothing if:
-- the *state* is currently not enabled in the web form,
-- the *state* does not exist for the web form.
+- the *state* is currently not enabled in the web page,
+- the *state* does not exist for the web page.
 
 If you [enable](#enablestate) or disable several states in the same user function, all modifications are sent at the same time to the client once the function ends.
 
-For more information on web form states, please refer to [States section on developer.qodly.com](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/states/stateOverview).
+For more information on web pages states, please refer to [States section on developer.qodly.com](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/states/stateOverview).
 
 
 
@@ -88,20 +88,20 @@ For more information on web form states, please refer to [States section on deve
 <!-- REF #WebFormClass.enableState().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|state|string|->|Name of state to enable on the web form|
+|state|string|->|Name of state to enable on the web pages|
 <!-- END REF -->
 
 #### Description
 
-The `.enableState()` function <!-- REF #WebFormClass.enableState().Summary -->enables the rendering of the *state* in the current web form<!-- END REF -->.
+The `.enableState()` function <!-- REF #WebFormClass.enableState().Summary -->enables the rendering of the *state* in the current web page<!-- END REF -->.
 
 This function does nothing if:
-- the *state* has already been enabled on the web form,
-- the *state* does not exist for the web form.
+- the *state* has already been enabled on the web page,
+- the *state* does not exist for the web page.
 
 If you enable or [disable](#disablestate) several states within the same user function, all modifications are sent at the same time to the client once the function ends.
 
-For more information on web form states, please refer to [States section on developer.qodly.com](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/states/stateOverview).
+For more information on web page states, please refer to [States section on developer.qodly.com](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/states/stateOverview).
 
 #### Example
 
@@ -122,14 +122,14 @@ Function authenticationError()
 <!-- REF #WebFormClass.setError().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|msg|string|->|Error message to display in the web form|
+|msg|string|->|Error message to display in the web page|
 <!-- END REF -->
 
 #### Description
 
-The `.setError()` function <!-- REF #WebFormClass.setError().Summary -->sends *msg* as an error message to the web form<!-- END REF -->.
+The `.setError()` function <!-- REF #WebFormClass.setError().Summary -->sends *msg* as an error message to the web page<!-- END REF -->.
 
-For more information, please refer to the [`.setError()` description in the Qodly documentation](https://developer.qodly.com/docs/language/WebFormClass#seterror).
+The function returns a response with a `200 OK` status and a `__WEBFORM` object in the body with a `__NOTIFICATION.message` property set to *msg* and a `__NOTIFICATION.type` set to "error".
 
 #### Example
 
@@ -137,13 +137,15 @@ For more information, please refer to the [`.setError()` description in the Qodl
 shared singleton Class constructor()
 exposed function myError()
 
-webForm.setError("My error message")
+var myForm : 4D.WebForm
+myForm:=web Form
+
+myForm.setError("My error message")
 
 ```
 
 If the [**Provide feedback**](../../4DQodlyPro/pageLoaders/events/bindingActionToEvents.md#providing-feedback) feature is enabled for the event, the *message* is automatically displayed as a red *toast* at the bottom of the Page and disappears automatically after 5 seconds:
 
-![](img/message-error.png)
 
 ### .setMessage()
 
@@ -152,14 +154,14 @@ If the [**Provide feedback**](../../4DQodlyPro/pageLoaders/events/bindingActionT
 <!-- REF #WebFormClass.setMessage().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|msg|string|->|Information message to display in the web form|
+|msg|string|->|Information message to display in the web page|
 <!-- END REF -->
 
 #### Description
 
-The `.setMessage()` function <!-- REF #WebFormClass.setMessage().Summary -->sends *msg* as an information message to the web form<!-- END REF -->.
+The `.setMessage()` function <!-- REF #WebFormClass.setMessage().Summary -->sends *msg* as an information message to the web page<!-- END REF -->.
 
-For more information, please refer to the [`.setMessage()` description in the Qodly documentation](https://developer.qodly.com/docs/language/WebFormClass#setmessage).
+The function returns a response with a `200 OK` status and a `__WEBFORM` object in the body with a `__NOTIFICATION.message` property set to *msg* and a `__NOTIFICATION.type` set to "message".
 
 #### Example
 
@@ -167,13 +169,15 @@ For more information, please refer to the [`.setMessage()` description in the Qo
 shared singleton Class constructor()
 exposed function myMessage()
 
-webForm.setMessage("My information message")
+var myForm : 4D.WebForm
+myForm:=web Form
+
+myForm.setMessage("My information message")
 
 ```
 
 If the [**Provide feedback**](../../4DQodlyPro/pageLoaders/events/bindingActionToEvents.md#providing-feedback) feature is enabled for the event, the *message* is automatically displayed as a green *toast* at the bottom of the Page and disappears automatically after 5 seconds:
 
-![](img/message-info.png)
 
 ### .setWarning()
 
@@ -182,14 +186,14 @@ If the [**Provide feedback**](../../4DQodlyPro/pageLoaders/events/bindingActionT
 <!-- REF #WebFormClass.setWarning().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|msg|string|->|Warning message to display in the web form|
+|msg|string|->|Warning message to display in the web page|
 <!-- END REF -->
 
 #### Description
 
-The `.setWarning()` function  <!-- REF #WebFormClass.setWarning().Summary -->sends *msg* as a warning message to the web form<!-- END REF -->.
+The `.setWarning()` function  <!-- REF #WebFormClass.setWarning().Summary -->sends *msg* as a warning message to the web page<!-- END REF -->.
 
-For more information, please refer to the [`.setWarning()` description in the Qodly documentation](https://developer.qodly.com/docs/language/WebFormClass#setwarning).
+The function returns a response with a `200 OK` status and a `__WEBFORM` object in the body with a `__NOTIFICATION.message` property set to *msg* and a `__NOTIFICATION.type` set to "warning".
 
 #### Example
 
@@ -197,13 +201,16 @@ For more information, please refer to the [`.setWarning()` description in the Qo
 shared singleton Class constructor()
 exposed function myWarning()
 
-webForm.setWarning("My warning message")
+var myForm : 4D.WebForm
+myForm:=web Form
+
+myForm.setWarning("My warning message")
 
 ```
 
-If the [**Provide feedback**](../../4DQodlyPro/pageLoaders/events/bindingActionToEvents.md#providing-feedback) feature is enabled for the event, the *message* is automatically displayed as a yellow *toast* at the bottom of the Page and disappears automatically after 5 seconds:
+If the [**Provide feedback**](../../4DQodlyPro/pageLoaders/events/bindingActionToEvents.md#providing-feedback) feature is enabled for the event, the *message* is automatically displayed as a yellow *toast* at the bottom of the web page and disappears automatically after 5 seconds:
 
-![](img/message-warning.png)
+
 
 ## See also 
 

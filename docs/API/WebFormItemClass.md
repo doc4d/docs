@@ -67,7 +67,7 @@ The `.hide()` function <!-- REF #WebFormItemClass.hide().Summary -->hides the co
 
 To call a function that hides an image when the user clicks a button: 
 
-&. Create an [exposed](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) function inside a shared singleton class named `isHidden` that contains the following code:
+1. Create an [exposed](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) function inside a shared singleton class named `isHidden` that contains the following code:
 
 ```4d  
 

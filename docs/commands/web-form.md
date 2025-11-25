@@ -4,7 +4,7 @@ title: Web Form
 displayed_sidebar: docs
 ---
 
-<!-- REF #_command_.Web Form.Syntax -->**Web Form** : 4D.Web Form<!-- END REF -->
+<!-- REF #_command_.Web Form.Syntax -->**Web Form** : 4D.WebForm<!-- END REF -->
 
 <!-- REF #_command_.Web Form.Params -->
 |Parameter|Type| |Description|
@@ -14,12 +14,12 @@ displayed_sidebar: docs
 
 ## Description
 
-The `Web Form` command <!-- REF #_command_.Web Form.Summary --> returns a `4D.Web Form` proxy object, providing a means to work with and effectively emulates the Page's properties and functions<!-- END REF -->.
+The `Web Form` command <!-- REF #_command_.Web Form.Summary --> returns a `4D.WebForm` proxy object, providing a means to work with and effectively emulates the Page's properties and functions<!-- END REF -->.
 
 
 :::info
 
-Keep in mind that a `4D.Web Form` object  is a **proxy object**, and not a direct reference to the web form object itself. As a consequence for example, the `4D.Web Form` object does not expose all Page properties in the Debugger. 
+Keep in mind that a `4D.WebForm` object  is a **proxy object**, and not a direct reference to the web form object itself. As a consequence for example, the `4D.WebForm` object does not expose all Page properties in the Debugger. 
 
 :::
 
