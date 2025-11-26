@@ -54,5 +54,5 @@ The example below sorts the entity set by lastName attribute in ascending order:
 `$orderby` statement is supported in [vector similarity filters](./$filter.md#vector-similarity):  
 
 ```
-http://127.0.0.1/rest/Person?$filter="Vector>=:1"&$params=[{"vector":[1,2,3],"metric":"cosine","threshold":0.95}]&$orderby="Vector desc"
+GET /rest/Person?$filter="Vector>=:1"&$params=[{"vector":[1,2,3],"metric":"cosine","threshold":0.95}]&$orderby="Vector desc"
 ```
