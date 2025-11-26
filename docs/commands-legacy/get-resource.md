@@ -11,8 +11,7 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | resType | Text | &#8594;  | 4-character resource type |
 | resID | Integer | &#8594;  | Resource ID number |
-| resData | Blob | &#8594;  | BLOB field or variable to receive the data |
-| &#8592; | Contents of the resource |
+| resData | Blob | &#8596;  | *in:* BLOB field or variable to receive the data <br/>*out:* Contents of the resource |
 | resFile | Time | &#8594;  | Resource file reference number, or all open resource files, if omitted |
 
 <!-- END REF-->
