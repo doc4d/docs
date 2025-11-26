@@ -1,14 +1,12 @@
 ---
-id: search-replace
-title: Search and replace
+id: find-in-design
+title: Find in design
 ---
 
-For the complete documentation of the "Search and replace" features, please refer to [doc.4d.com](https://doc.4d.com/4Dv20/4D/20.2/Searching-and-replacing-in-the-Design.200-6750077.en.html).
+For the complete documentation of the "Find in design" dialog box, please refer to [doc.4d.com](https://doc.4d.com/4Dv20/4D/20.2/Searching-and-replacing-in-the-Design.200-6750077.en.html).
 
 
-## Find in Design
-
-### Search in components
+## Find in components
 
 When your current project references [editable components](../Extensions/develop-components.md#editing-components), you can designate one or all your components as a target for the search.
 
@@ -18,7 +16,7 @@ By default, a search is executed in the host code only. To modify the default ta
 
 :::note
 
-When no searchable component is found, only the project name is displayed (the menu is not available).   
+When no searchable component is found, only the project name is displayed (no menu is available).   
 
 :::
 
@@ -31,8 +29,7 @@ You can select as target:
 
 ### Results window
 
-The Results window lists all elements found which match the search criteria set using different types of searches. When an element found belongs to a component, the component name is added in parenthesis at the right side of the element name:
+The Results window lists all elements found which match the search criteria set using different types of searches:
 
-![](../assets/en/Project/find-components-results.png)
 
-You can double-click or select **Replace in contents** on elements belonging to components, thus 
+
