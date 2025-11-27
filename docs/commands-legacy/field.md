@@ -5,18 +5,15 @@ slug: /commands/field
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Field.Syntax-->**Field** ( *tableNum* ; *fieldNum* ) -> fieldPtr  <br/>
-**Field** ( *fieldPtr* ) -> fieldNum<!-- END REF-->
+<!--REF #_command_.Field.Syntax-->**Field** ( *tableNum* ; *fieldNum* ) -> Pointer<br/>**Field** ( *fieldPtr* ) -> Integer<!-- END REF-->
 <!--REF #_command_.Field.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | tableNum | Integer | &#8594;  | Table number |
 | fieldNum | Integer | &#8594;  | Field number |
-| fieldPtr | Pointer | &#8592; | Field pointer |
-| Field ( fieldPtr ) -> fieldNum |
-| Parameter | Type | Description |
-| fieldPtr | Pointer | &#8594;  | Field pointer |
-| fieldNum | Integer | &#8592; | Field number |
+| fieldPtr | Pointer | &#8594; | Field pointer |
+| Function result | Pointer | &#8592;   | Field pointer |
+| Function result | Integer | &#8592; | Field number |
 
 <!-- END REF-->
 
