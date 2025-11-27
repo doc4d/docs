@@ -12,8 +12,7 @@ displayed_sidebar: docs
 | folderName | Text | &#8594;  | Name of Home page folder |
 | methodType | Integer | &#8594;  | Selector of method type to get |
 | arrPaths | Text array | &#8592; | Array of method paths and names |
-| stamp | Real | &#8594;  | Minimum value of stamp |
-| &#8592; | New current value |
+| stamp | Real | &#8596;  | *in:* Minimum value of stamp<br/>*out:* New current value  |
 | * | Operator | &#8594;  | If passed = command applies to host database when executed from a component (parameter ignored outside of this context) |
 
 <!-- END REF-->

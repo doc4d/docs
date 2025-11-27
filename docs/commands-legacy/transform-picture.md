@@ -9,8 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.TRANSFORM PICTURE.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
-| picture | Picture | &#8594;  | Source picture to be transformed |
-| &#8592; | Resulting picture after transformation |
+| picture | Picture | &#8596;  | *in:* Source picture to be transformed<br/> *out:* Resulting picture after transformation|
 | operator | Integer | &#8594;  | Type of transformation to be done |
 | param1 | Real | &#8594;  | Transformation parameter |
 | param2 | Real | &#8594;  | Transformation parameter |

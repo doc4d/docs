@@ -9,8 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Set group properties.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
-| groupID | Integer | &#8594;  | Unique ID number of group, -1 for adding a group |
-| &#8592; | Unique ID number of added group (if any) |
+| groupID | Integer | &#8596;  | *in:* Unique ID number of group, -1 for adding a group <br/>*out:* Unique ID number of added group (if any)|
 | name | Text | &#8594;  | New group name |
 | owner | Integer | &#8594;  | User ID number of new group owner (Binary databases only) |
 | members | Integer array | &#8594;  | New group members |

@@ -9,8 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Set user properties.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
-| userID | Integer | &#8594;  | Unique ID number of user account, -1 for adding a user |
-| &#8592; | Unique ID number of added user account (if any) |
+| userID | Integer | &#8596;  |*in:* Unique ID number of user account, -1 for adding a user <br/>*out:* Unique ID number of added user account (if any) |
 | name | Text | &#8594;  | New user name |
 | startup | Text | &#8594;  | Name of new user startup method |
 | password | Text | &#8594;  | New (unencrypted) password, or * to leave the password unchanged |

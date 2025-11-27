@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | path | Text | &#8594;  | Path of method to open |
-| line | Number | &#8594;  | Line number |
+| line | Real | &#8594;  | Line number |
 | * | Operator | &#8594;  | If passed = command applies to host database when executed from a component (parameter ignored outside of this context) |
 
 <!-- END REF-->
