@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | targetObj | Object | &#8594;  | Range or element or 4D Write Pro document |
-| expressions | Number | &#8594;  | Instructions for expression evaluation |
+| expressions | Real | &#8594;  | Instructions for expression evaluation |
 | Function result | Text | &#8592; | Text of targetObj |
 
 <!-- END REF-->

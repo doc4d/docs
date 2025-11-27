@@ -52,7 +52,7 @@ For more information, please refer to the [`.componentName` description in the Q
 <!-- REF #WebFormClass.disableState().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|state|string|->|Name of state to disable from the web form|
+|state|Text|->|Name of state to disable from the web form|
 <!-- END REF -->
 
 #### Description
@@ -77,7 +77,7 @@ For more information on web form states, please refer to [developer.qodly.com](h
 <!-- REF #WebFormClass.enableState().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|state|string|->|Name of state to enable on the web form|
+|state|Text|->|Name of state to enable on the web form|
 <!-- END REF -->
 
 #### Description
@@ -111,7 +111,7 @@ Function authenticationError()
 <!-- REF #WebFormClass.setError().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|msg|string|->|Error message to display in the web form|
+|msg|Text|->|Error message to display in the web form|
 <!-- END REF -->
 
 #### Description
@@ -129,7 +129,7 @@ For more information, please refer to the [`.setError()` description in the Qodl
 <!-- REF #WebFormClass.setMessage().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|msg|string|->|Information message to display in the web form|
+|msg|Text|->|Information message to display in the web form|
 <!-- END REF -->
 
 #### Description
@@ -146,7 +146,7 @@ For more information, please refer to the [`.setMessage()` description in the Qo
 <!-- REF #WebFormClass.setWarning().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|msg|string|->|Warning message to display in the web form|
+|msg|Text|->|Warning message to display in the web form|
 <!-- END REF -->
 
 #### Description
@@ -180,7 +180,7 @@ For more information, please refer to the [`webForm` command description in the 
 <!-- REF #_command_.Web Event.Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|Result|object|<-| object
+|Result|Object|<-| object
 <!-- END REF -->
 
 #### Description

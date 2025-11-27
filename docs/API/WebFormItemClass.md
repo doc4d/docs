@@ -72,7 +72,7 @@ For more information, please refer to the [`.show()` description in the Qodly do
 <!-- REF #WebFormItemClass.addCSSClass().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|className|string|->|Name of the CSS class to add to the component|
+|className|Text|->|Name of the CSS class to add to the component|
 <!-- END REF -->
 
 #### Description
@@ -90,7 +90,7 @@ For more information, please refer to the [`.addCSSClass` description in the Qod
 <!-- REF #WebFormItemClass.removeCSSClass().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|className|string|->|Name of the CSS class to remove from the component|
+|className|Text|->|Name of the CSS class to remove from the component|
 <!-- END REF -->
 
 #### Description

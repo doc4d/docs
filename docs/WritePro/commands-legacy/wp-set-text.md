@@ -11,8 +11,8 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | targetObj | Object | &#8594;  | Range or element or 4D Write Pro document |
 | newText | Text | &#8594;  | Text to insert |
-| textPosition | Number | &#8594;  | Insertion position (replace, before, after) |
-| rangeUpdate | Number | &#8594;  | Includes or excludes the inserted content within the range |
+| textPosition | Real | &#8594;  | Insertion position (replace, before, after) |
+| rangeUpdate | Real | &#8594;  | Includes or excludes the inserted content within the range |
 
 <!-- END REF-->
 
