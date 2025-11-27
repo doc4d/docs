@@ -89,6 +89,7 @@ The callback method must also return a *$result* integer value, which is used to
 
 **Note:** You cannot interrupt execution via $result after the *End of execution* event ($1=4) has been generated.
 
+
 Two optional arrays can also be used by this command:
 
 * The *tablesArray* array contains the numbers of the tables whose records are to be checked. It can be used to limit checking to only certain tables. If this parameter is not passed or if the array is empty and the *objects* parameter contains Verify Records, all the tables will be checked.
