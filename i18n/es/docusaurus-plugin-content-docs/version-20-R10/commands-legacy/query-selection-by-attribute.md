@@ -1,12 +1,12 @@
 ---
-id: query-by-attribute
-title: QUERY BY ATTRIBUTE
-slug: /commands/query-by-attribute
+id: query-selection-by-attribute
+title: QUERY SELECTION BY ATTRIBUTE
+slug: /commands/query-selection-by-attribute
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QUERY BY ATTRIBUTE.Syntax-->**QUERY BY ATTRIBUTE** ( {*tabla*}{;}{*opConj* ;} *campoObjeto* ; *rutaAtributo* ; *opBusq* ; *valor* {; *} )<!-- END REF-->
-<!--REF #_command_.QUERY BY ATTRIBUTE.Params-->
+<!--REF #_command_.QUERY SELECTION BY ATTRIBUTE.Syntax-->**QUERY SELECTION BY ATTRIBUTE** ( {*tabla*}{;}{*opConj* ;} *campoObjeto* ; *rutaAtributo* ; *opBusq* ; *valor* {; *} )<!-- END REF-->
+<!--REF #_command_.QUERY SELECTION BY ATTRIBUTE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
 | tabla | Table | &#8594;  | Tabla para la cual devolver una selección de registros o Tabla por defecto si se omite |
