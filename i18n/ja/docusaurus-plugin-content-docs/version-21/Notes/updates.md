@@ -28,6 +28,7 @@ title: リリースノート
   - 文字列から先頭と末尾のスペースを削除する新しい "trim" 系コマンド: [`Trim`](../commands/trim.md)、[`Trim start`](../commands/trim-start.md)、および[`Trim end`](../commands/trim-end.md)。
   - [`Num`](../commands/num.md) および [`String`](../commands/string.md) コマンドは、異なる基数での変換をサポートするようにアップデートされました。
 - [**修正リスト**](https://bugs.4d.fr/fixedbugslist?version=21): 4D 21 で修正されたバグのリストです(日本語版は [こちら](https://4d-jp.github.io/2025/279/release-note-version-21/))。
+- [**4D Qodly Pro Release notes**](https://developer.4d.com/qodly/4DQodlyPro/release-notes): what's new in Qodly Studio.
 
 #### デベロッパー・プレビュー
 
@@ -41,7 +42,7 @@ title: リリースノート
 
 :::
 
-- Web サービス(SOAP): [スケーラブルセッション](../WebServer/sessions.md#webセッションの有効化) が有効化されている場合、コンパイルモードにおいてはWeb サービスは[**プリエンプティブプロセス**](../Develop/preemptive.md) で実行されます。 そのためSOAP コードは必ずスレッドセーフであるようにしてください。
+- Web サービス(SOAP): [スケーラブルセッション](../WebServer/sessions.md#webセッションの有効化) が有効化されている場合、コンパイルモードにおいてはWeb サービスは[**プリエンプティブプロセス**](../Develop/preemptive.md) で実行されます。 Make sure that your SOAP code is thread-safe and that the session in which it runs has appropriate [privileges](../API/SessionClass.md#setprivileges).
 - Web サーバー: 廃止予定だった`4DSYNC/` および `4DCGI/` URL のサポートが削除されました。 これらのURL に関しては今後は何も特殊な処理は行われません。
 - Web ユーザーセッションは今後[`Process activity`](../commands/process-activity.md) コマンドで返されるようになります。
 - [`HIGHLIGHT TEXT`](../commands/highlight-text) コマンドは今後サブフォームのコンテキストでサポートされるようになりました。
@@ -291,23 +292,23 @@ title: リリースノート
 
 ## ライブラリの一覧 (4D 21 LTS)
 
-| ライブラリ     | 現在のバージョン                               | 更新された 4D バージョン | 説明                                                                                                                                                 |
-| --------- | -------------------------------------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| BoringSSL | fa47b1d                                | **21**         | QUIC に使用                                                                                                                                           |
-| CEF       | 7258                                   | **21**         | Chromium 139                                                                                                                                       |
-| Hunspell  | 1.7.2  | 20             | 4D フォームと 4D Write Pro でスペルチェックに使用されます。                                                                                                             |
-| ICU       | 77.1                   | **21**         | This upgrade forces an automatic rebuild of alphanumeric, text and object indexes.                                                 |
-| libldap   | 2.6.10 | **21**         |                                                                                                                                                    |
-| libsasl   | 2.1.28 | 20             |                                                                                                                                                    |
-| Liblsquic | 4.2.0  | 20 R10         | QUIC に使用                                                                                                                                           |
-| Libuv     | 1.51.0 | **21**         | QUIC に使用                                                                                                                                           |
-| libZip    | 1.11.4 | **21**         | Zip クラス、4D Write Pro、svg および serverNet コンポーネントによって使用。                                                                                              |
-| LZMA      | 5.8.1  | **21**         |                                                                                                                                                    |
-| ngtcp2    | 1.16.0 | **21**         | QUIC に使用                                                                                                                                           |
-| OpenSSL   | 3.5.2  | **21**         |                                                                                                                                                    |
-| PDFWriter | 4.7.0  | **21**         | Used for [`WP Export document`](../WritePro/commands/wp-export-document.md) and [`WP Export variable`](../WritePro/commands/wp-export-variable.md) |
-| PHP       | 8.2.4  | 20             |                                                                                                                                                    |
-| SpreadJS  | 17.1.0 | 20 R7          | 新機能の概要については、[このブログ記事](https://blog.4d.com/ja/4d-view-pro-whats-new-in-4d-20-r7/) を参照ください。                                                          |
-| webKit    | WKWebView                              | 19             |                                                                                                                                                    |
-| Xerces    | 3.3.0  | **21**         | Used for XML commands                                                                                                                              |
-| Zlib      | 1.3.1  | **21**         |                                                                                                                                                    |
+| ライブラリ     | 現在のバージョン                               | 更新された 4D バージョン | 説明                                                                                                                                                   |
+| --------- | -------------------------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| BoringSSL | fa47b1d                                | **21**         | QUIC に使用                                                                                                                                             |
+| CEF       | 7258                                   | **21**         | Chromium 139                                                                                                                                         |
+| Hunspell  | 1.7.2  | 20             | 4D フォームと 4D Write Pro でスペルチェックに使用されます。                                                                                                               |
+| ICU       | 77.1                   | **21**         | このアップグレードにより、英数字とテキスト、オブジェクトのインデックスが自動的に再構築されます。                                                                                                     |
+| libldap   | 2.6.10 | **21**         |                                                                                                                                                      |
+| libsasl   | 2.1.28 | 20             |                                                                                                                                                      |
+| Liblsquic | 4.2.0  | 20 R10         | QUIC に使用                                                                                                                                             |
+| Libuv     | 1.51.0 | **21**         | QUIC に使用                                                                                                                                             |
+| libZip    | 1.11.4 | **21**         | Zip クラス、4D Write Pro、svg および serverNet コンポーネントによって使用。                                                                                                |
+| LZMA      | 5.8.1  | **21**         |                                                                                                                                                      |
+| ngtcp2    | 1.16.0 | **21**         | QUIC に使用                                                                                                                                             |
+| OpenSSL   | 3.5.2  | **21**         |                                                                                                                                                      |
+| PDFWriter | 4.7.0  | **21**         | [`WP Export document`](../WritePro/commands/wp-export-document.md) および [`WP Export variable`](../WritePro/commands/wp-export-variable.md) において使用されます |
+| PHP       | 8.2.4  | 20             |                                                                                                                                                      |
+| SpreadJS  | 17.1.0 | 20 R7          | 新機能の概要については、[このブログ記事](https://blog.4d.com/ja/4d-view-pro-whats-new-in-4d-20-r7/) を参照ください。                                                            |
+| webKit    | WKWebView                              | 19             |                                                                                                                                                      |
+| Xerces    | 3.3.0  | **21**         | XML コマンドにおいて使用されます                                                                                                                                   |
+| Zlib      | 1.3.1  | **21**         |                                                                                                                                                      |
