@@ -922,7 +922,7 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 <!-- REF #collection.fill().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|value|number, Text, Collection, Object, Date, Boolean|->|Filling value|
+|value|any|->|Filling value|
 |startFrom|Integer|->|Start index (included)|
 |end|Integer|->|End index (not included)|
 |Result|Collection|<-|Original collection with filled values|
