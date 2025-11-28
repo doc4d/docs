@@ -4,7 +4,7 @@ title: WebFormItem
 ---
 
 
-The `4D.WebFormItem` class allows you to handle the behavior of your webform components. 
+The `4D.WebFormItem` class allows you to handle the behavior of your Qodly webform components. 
 
 `4D.WebFormItem` objects are properties of the [`4D.WebForm`](WebFormClass.md) object returned by the [`Web Form`](../commands/web-form.md) command. 
 
