@@ -12,8 +12,8 @@ displayed_sidebar: docs
 | pattern | Text | &#8594;  | Regular expression (complete equality with two-parameters syntax)|
 | aString | Text | &#8594;  | String in which search will be done |
 | start | Integer | &#8594;  | Position in aString where search will start |
-| pos_found | Integer, Array integer  | &#8592; | Position of occurrence |
-| length_found | Integer, Array integer | &#8592; | Length of occurrence |
+| pos_found | Integer, Integer array | &#8592; | Position of occurrence |
+| length_found | Integer, Integer array | &#8592; | Length of occurrence |
 | * | Operator | &#8594;  | If passed: only searches at position indicated |
 | Function result | Boolean | &#8592; | True = search has found an occurrence; Otherwise, False. |
 

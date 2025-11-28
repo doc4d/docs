@@ -5,8 +5,7 @@ slug: /commands/position
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Position.Syntax-->**Position** ( *find* ; *aString* {; *start* {; *lengthFound*}}{; *} ) -> Function result <br/>
-**Position** ( *find* ; *aString* ; *start* ; *lengthFound* ; *options* ) -> Function result<!-- END REF-->
+<!--REF #_command_.Position.Syntax-->**Position** ( *find* ; *aString* {; *start* {; *lengthFound*}}{; *} ) -> Function result <br/>**Position** ( *find* ; *aString* ; *start* ; *lengthFound* ; *options* ) -> Function result<!-- END REF-->
 <!--REF #_command_.Position.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
@@ -15,15 +14,9 @@ displayed_sidebar: docs
 | start | Integer | &#8594;  | Position in string where search will start |
 | lengthFound | Integer | &#8592; | Length of string found |
 | * | Operator | &#8594;  | If passed: evaluation based on character codes |
-| Function result | Integer | &#8592; | Position of first occurrence |
-| Position ( find ; aString ; start ; lengthFound ; options ) -> Function result |
-| Parameter | Type | Description |
-| find | Text | &#8594;  | String to find |
-| aText | Text | &#8594;  | String in which to search |
-| start | Integer | &#8594;  | Position in string where search will start |
-| lengthFound | Integer | &#8594;  | Length of string found |
 | options | Integer | &#8594;  | Search condition(s) |
 | Function result | Integer | &#8592; | Position of first occurrence |
+
 
 <!-- END REF-->
 

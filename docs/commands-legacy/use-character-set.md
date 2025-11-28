@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.USE CHARACTER SET.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
-| map | Text, * | &#8594;  | Name of character set  to use, or * to reset to default character set |
+| map | Text, Operator | &#8594;  | Name of character set  to use, or * to reset to default character set |
 | mapInOut | Integer | &#8594;  | 0 = Output map 1 = Input map, If omitted, output map |
 
 <!-- END REF-->

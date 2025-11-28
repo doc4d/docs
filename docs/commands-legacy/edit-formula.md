@@ -10,8 +10,7 @@ displayed_sidebar: docs
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | aTable | Table | &#8594;  | Table to display by default in the Formula editor |
-| formula | Text | &#8594;  | Variable containing the formula to display in the Formula editor or "" to display editor only |
-|| &#8592; | Formula validated by the user |
+| formula | Text | &#8596;  | *in:* Variable containing the formula to display in the Formula editor or "" to display editor only<br/>*out:* Formula validated by the user|
 
 <!-- END REF-->
 

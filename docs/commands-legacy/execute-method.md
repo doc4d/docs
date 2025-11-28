@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | methodName | Text | &#8594;  | Name of project method to be executed |
-| result | Variable, * | &#8592; | Variable receiving the method result or * for a method not returning a result |
+| result | Variable, Operator | &#8592; | Variable receiving the method result or * for a method not returning a result |
 | param | Expression | &#8594;  | Parameter(s) of the method |
 
 <!-- END REF-->
