@@ -23,8 +23,6 @@ Two kinds of actions are available for 4D Write Pro areas:
 ### 4D Write Pro actions 
 
 The following standard actions are available with 4D Write Pro areas.  
- 
-Standard actions also include actions for managing bullet lists, such as `listStyleType` and `listStyleImage`.
 
 **Notes:**
 
