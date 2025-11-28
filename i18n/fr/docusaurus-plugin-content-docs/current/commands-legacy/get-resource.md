@@ -33,9 +33,6 @@ Si vous passez un numéro de référence de fichier de ressources valide dans *r
 
  Rappelez-vous que vous travaillez avec des ressources issues de Mac OS. Quelle que soit la plate-forme utilisée, les valeurs internes des ressources comme des entiers longs sont stockées avec l'ordre d'octets ("byte ordering") Mac OS. Sous Windows, pour les données des ressources standard (telles que les ressources listes de chaînes et les ressources images) l'ordre des octets est automatiquement inversé ("byte swapping") si nécessaire. D'un autre côté, si vous créez et utilisez vos propres structures internes de données, c'est à vous d'effectuer l'inversion d'octets des données lorsque vous les extrayez d'un BLOB (par exemple en passant Macintosh byte ordering à une commande telle que [BLOB to longint](blob-to-longint.md)).
 
-## Exemple 
-
-Reportez-vous à l'exemple de la commande .
 
 ## Variables et ensembles système 
 
