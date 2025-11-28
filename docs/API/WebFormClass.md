@@ -144,8 +144,9 @@ myForm.setError("My error message")
 
 ```
 
-If the [**Provide feedback**](../../4DQodlyPro/pageLoaders/events/bindingActionToEvents.md#providing-feedback) feature is enabled for the event, the *message* is automatically displayed as a red *toast* at the bottom of the Page and disappears automatically after 5 seconds:
+If the [**Provide feedback**](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/events/bindingActionToEvents#providing-feedback) feature is enabled for the event, the *message* is automatically displayed as a red *toast* at the bottom of the Page and disappears automatically after 5 seconds:
 
+![](../assets/en/API/webformClass-pic1.png)
 
 ### .setMessage()
 
@@ -176,8 +177,9 @@ myForm.setMessage("My information message")
 
 ```
 
-If the [**Provide feedback**](../../4DQodlyPro/pageLoaders/events/bindingActionToEvents.md#providing-feedback) feature is enabled for the event, the *message* is automatically displayed as a green *toast* at the bottom of the Page and disappears automatically after 5 seconds:
+If the [**Provide feedback**](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/events/bindingActionToEvents#providing-feedback) feature is enabled for the event, the *message* is automatically displayed as a green *toast* at the bottom of the Page and disappears automatically after 5 seconds:
 
+![](../assets/en/API/webformClass-pic2.png)
 
 ### .setWarning()
 
@@ -208,9 +210,9 @@ myForm.setWarning("My warning message")
 
 ```
 
-If the [**Provide feedback**](../../4DQodlyPro/pageLoaders/events/bindingActionToEvents.md#providing-feedback) feature is enabled for the event, the *message* is automatically displayed as a yellow *toast* at the bottom of the web page and disappears automatically after 5 seconds:
+If the [**Provide feedback**](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/events/bindingActionToEvents#providing-feedback) feature is enabled for the event, the *message* is automatically displayed as a yellow *toast* at the bottom of the web page and disappears automatically after 5 seconds:
 
-
+![](../assets/en/API/webformClass-pic3.png)
 
 ## See also 
 
