@@ -33,9 +33,6 @@ Se passa um número de referência de arquivo de recursos válido em *resArquivo
 
  Lembre que trabalha com recursos baseados em Mac OS. Sem importar a plataforma, os valores internos dos recursos como os Inteiros Longos são armazenados usando ordenação de bytes ("byte ordering") Macintosh. No Windows, para os dados dos recursos padrão (tais como os recursos listas de cadeias e os recursos imagens) a ordenação de bytes é automaticamente inversa ("byte swapping") quando for necessário. Por outra parte, se criar e utilizar suas próprias estruturas de dados internas, você decide se aplica a ordenação inversa aos dados que extraiu do BLOB (por exemplo, ao passar Macintosh byte ordering a um comando como [BLOB to longint](blob-to-longint.md "BLOB to longint")).
 
-## Exemplo 
-
-Ver o exemplo do comando SET RESOURCE.
 
 ## Variáveis e conjuntos do sistema 
 
