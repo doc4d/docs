@@ -11,7 +11,7 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | * | Operator | &#8594;  | If specified, object is an object name (string)<br/>If omitted, object is a field or variable |
 | object | any | &#8594;  | Object name (if * is specified) or <br/>Field or variable (if * is omitted) |
-| maxValue | Date, Time, Number | &#8592; | Current maximum value for object |
+| maxValue | Date, Time, Real | &#8592; | Current maximum value for object |
 
 <!-- END REF-->
 

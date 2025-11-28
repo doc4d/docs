@@ -12,7 +12,7 @@ displayed_sidebar: docs
 | * | Operator | &#8594;  | If specified, object is an object name (string) If omitted, object is a variable |
 | object | any | &#8594;  | Object name (if * is specified) or Variable (if * is omitted) |
 | colNum | Integer | &#8594;  | Column number(s) to sort |
-| order | * | &#8594;  | ">" to sort in ascending order or "<" to sort in descending order |
+| order | Operator | &#8594;  | `>` to sort in ascending order or `<` to sort in descending order |
 
 <!-- END REF-->
 

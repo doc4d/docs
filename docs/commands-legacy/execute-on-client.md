@@ -11,7 +11,7 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | clientName | Text | &#8594;  | 4D Client’s registered name |
 | methodName | Text | &#8594;  | Name of the method to execute |
-| param | &#8594;  | Method’s parameter(s) |
+| param | any| &#8594;  | Method’s parameter(s) |
 
 <!-- END REF-->
 

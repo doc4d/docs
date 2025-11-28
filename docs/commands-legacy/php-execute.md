@@ -13,7 +13,7 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | scriptPath | Text | &#8594;  | Pathname to PHP script or<br/>"" to execute a PHP function |
 | functionName | Text | &#8594;  | PHP function to be executed |
-| phpResult | *, Variable, Field | &#8592; | Result of PHP function execution or * to not receive any result |
+| phpResult | Variable, Field, Operator | &#8592; | Result of PHP function execution or * to not receive any result |
 | param | Text, Boolean, Real, Integer, Date, Time | &#8594;  | Parameter(s) of PHP function |
 | Function result | Boolean | &#8592; | True = execution correct<br/>False = execution error |
 

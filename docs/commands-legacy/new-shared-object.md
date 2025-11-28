@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | property | Text | &#8594;  | Name of property to create |
-| value | Text, Date, Boolean, Pointer, Number, Object | &#8594;  | Value of property |
+| value | any | &#8594;  | Value of property |
 | Function result | Object | &#8592; | New shared object |
 
 <!-- END REF-->

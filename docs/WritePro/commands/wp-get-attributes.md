@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | targetObj | Object | &#8594;  | Range or element or 4D Write Pro document |
 | attribName | Text | &#8594;  | Name of attribute to get |
-| attribValue | Text, Number, Array, Collection, Picture, Date | &#8592; | Current value of attribute for the target |
+| attribValue | any | &#8592; | Current value of attribute for the target |
 | attribColl | Collection | &#8594; | Collection of attribute names to get |
 | Function result | Object | &#8592; | Attribute names and values |
 <!-- END REF-->

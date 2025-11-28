@@ -12,7 +12,7 @@ displayed_sidebar: docs
 | menu | Integer, Text | &#8594;  | Menu reference or menu number |
 | menuItem | Integer | &#8594;  | Number of menu item or -1 for the last item added to the menu |
 | property | Text | &#8594;  | Property type |
-| value | Text, Number, Boolean | &#8594;  | Property value |
+| value | Text, Real, Boolean | &#8594;  | Property value |
 | process | Integer | &#8594;  | Process number |
 
 <!-- END REF-->
