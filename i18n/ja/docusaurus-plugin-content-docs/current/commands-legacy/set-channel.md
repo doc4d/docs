@@ -12,8 +12,8 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | port | Integer | &#8594; | シリアルポート番号 |
 | settings | Integer | &#8594; | シリアルポート設定 |
-| SET CHANNEL ( operation ; document ) | Integer | &#8594; | Document operation to perform |
-| 引数 | 型 | 説明 | Document name |
+| operation | Integer | &#8594; | 行うドキュメント処理 |
+| document | Text | &#8594; | ドキュメント名 |
 
 <!-- END REF-->
 

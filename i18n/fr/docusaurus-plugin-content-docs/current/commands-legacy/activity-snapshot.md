@@ -12,10 +12,9 @@ displayed_sidebar: docs
 | tabActivités &#124; tabUUID | Tableau objet, Tableau texte | &#8592; | Description complète des opérations (tableau objet) ouUUIDs des opérations (tableau texte) |
 | tabDébut | Text array | &#8592; | Heures de démarrage des opérations |
 | tabDurée | Integer array | &#8592; | Durées des opérations en millisecondes |
-| tabInfo | Integer array | &#8592; | Description |
+| tabInfo | Text array | &#8592; | Description |
 | tabDétails | Object array | &#8592; | Détails du contexte et Sous-opérations (le cas échéant) |
 | * | Opérateur | &#8594; | Si passé = Lire activité serveur |
-| * | Operator | &#8594; | If passed = Get server activity |
 
 <!-- END REF-->
 

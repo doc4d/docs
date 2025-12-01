@@ -12,8 +12,8 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | port | Integer | &#8594; | Numéro de port série |
 | param | Integer | &#8594; | Paramètres de communication |
-| SET CHANNEL ( opération ; nomFichier ) | Integer | &#8594; | Document operation to perform |
-| Paramètre | Type | Description | Document name |
+| opération | Integer | &#8594; | Opération à effectuer sur document |
+| nomFichier | Text | &#8594; | Nom du document |
 
 <!-- END REF-->
 

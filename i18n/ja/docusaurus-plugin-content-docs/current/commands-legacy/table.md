@@ -9,10 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.Table.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| tableNum &#124; aPtr | 倍長整数, ポインター | &#8594; | テーブル番号、または テーブルポインタ、または フィールドポインタ |
+| tableNum &#124; aPtr | Integer, Pointer | &#8594; | テーブル番号、または テーブルポインタ、または フィールドポインタ |
 | 戻り値 | Pointer, Integer | &#8592; | テーブル番号を渡した場合テーブルポインタ テーブルポインタを渡した場合テーブル番号 フィールドポインタを渡した場合テーブル番号 |
-| fieldPtr | Pointer | &#8594; | Field pointer |
-| Function result | any | &#8592; | Table pointer, if a Table number is passed<br/>Table number if a Table pointer or a Field pointer is passed |
 
 <!-- END REF-->
 
