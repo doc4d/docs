@@ -12,8 +12,7 @@ displayed_sidebar: docs
 | tableNum | Integer | &#8594;  | Table number |
 | fieldNum | Integer | &#8594;  | Field number |
 | fieldPtr | Pointer | &#8594; | Field pointer |
-| Function result | Pointer | &#8592;   | Field pointer |
-| Function result | Integer | &#8592; | Field number |
+| Function result | Pointer, Integer | &#8592; | Field pointer or Field number |
 
 <!-- END REF-->
 
@@ -21,8 +20,8 @@ displayed_sidebar: docs
 
 The **Field** command has two forms:
 
-* If you pass a table number in *tableNum* and a field number in *fieldNum*, **Field** returns a pointer to the field.
-* If you pass a field pointer in *fieldPtr*, **Field** <!--REF #_command_.Field.Summary-->returns the field number of the field<!-- END REF-->.
+<!--REF #_command_.Field.Summary-->* If you pass a table number in *tableNum* and a field number in *fieldNum*, **Field** returns a pointer to the field.
+* If you pass a field pointer in *fieldPtr*, **Field** returns the field number of the field<!-- END REF-->.
 
 ## Example 1 
 

@@ -5,25 +5,23 @@ slug: /commands/field
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Field.Syntax-->**Field** ( *numTabla* ; *numCamp* ) -> Resultado <br/>
-**Field** ( *ptrCamp* ) -> numCampo<!-- END REF-->
+<!--REF #_command_.Field.Syntax-->**Field** ( *numTabla* ; *numCamp* ) -> Resultado <br/>**Field** ( *ptrCamp* ) -> numCampo<!-- END REF-->
 <!--REF #_command_.Field.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
 | numTabla | Integer | &#8594; | Número de tabla |
 | numCamp | Integer | &#8594; | Número de campo |
-| Resultado | Pointer | &#8594; | Puntero de campo |
-| Function result | Pointer | &#8592; | Field pointer |
-| Function result | Integer | &#8592; | Field number |
+| ptrCamp | Pointer | &#8594; | Puntero del campo |
+| Resultado | Pointer, Integer | &#8592; | Puntero de campo o Número de campo|
 
 <!-- END REF-->
 
 ## Descripción 
 
-<!--REF #_command_.Field.Summary-->El comando Field tiene dos sintaxis: 
+El comando **Field** tiene dos sintaxis: 
 
-* Si pasa un número de tabla en *numTabla* y un número de campo en *numCampo*, Field devuelve un puntero al campo.<!-- END REF-->
-* Si pasa un puntero a un campo en *ptrCamp*, Field devuelve el número del campo.
+<!--REF #_command_.Field.Summary-->* Si pasa un número de tabla en *numTabla* y un número de campo en *numCampo*, Field devuelve un puntero al campo.
+* Si pasa un puntero a un campo en *ptrCamp*, Field devuelve el número del campo.<!-- END REF-->
 
 ## Ejemplo 1 
 

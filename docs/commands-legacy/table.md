@@ -12,17 +12,17 @@ displayed_sidebar: docs
 | tableNum | Integer | &#8594;  | Table number |
 | tablePtr | Pointer | &#8594;  | Table pointer |
 | fieldPtr | Pointer | &#8594;  | Field pointer |
-| Function result | any | &#8592; | Table pointer, if a Table number is passed<br/>Table number if a Table pointer or a Field pointer is passed |
+| Function result | Pointer, Number | &#8592; | Table pointer, if a Table number is passed<br/>Table number if a Table pointer or a Field pointer is passed|
 
 <!-- END REF-->
 
 ## Description 
 
-<!--REF #_command_.Table.Summary-->The Table command has three forms:
+The `Table` command has three forms:
 
-* If you pass a table number in *tableNum*, Table returns a pointer to the table.<!-- END REF-->
-* If you pass a table pointer in *aPtr*, Table returns the table number of the table.
-* If you pass a field pointer in *aPtr*, Table returns the table number of the field.
+<!--REF #_command_.Table.Summary-->* If you pass a table number in *tableNum*, Table returns a pointer to the table.
+* If you pass a table pointer in *tablePtr*, Table returns the table number of the table.
+* If you pass a field pointer in *fieldPtr*, Table returns the table number of the field.<!-- END REF-->
 
 ## Example 1 
 

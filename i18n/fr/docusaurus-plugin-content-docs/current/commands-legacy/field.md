@@ -13,16 +13,16 @@ displayed_sidebar: docs
 | numTable | Integer | &#8594; | Numéro de table |
 | numChamp | Integer | &#8594; | Numéro de champ |
 | ptrChamp | Pointer | &#8594; | Pointeur de champ |
-| Function result | Pointer | &#8592; | Field pointer |
-| Function result | Integer | &#8592; | Field number |
+| Résultat  | Pointer, Integer | &#8592; | Pointeur de champ ou Numéro de champ |
 
 <!-- END REF-->
 
 ## Description 
 
-<!--REF #_command_.Field.Summary-->La commande **Field** a deux syntaxes :
+La commande **Field** a deux syntaxes :
 
-* Si vous passez un numéro de table dans *numTable* et un numéro de champ dans *numChamp*, **Field** retourne un pointeur vers le champ.<!-- END REF-->retourne le numéro du champ.
+<!--REF #_command_.Field.Summary-->* Si vous passez un numéro de table dans *numTable* et un numéro de champ dans *numChamp*, **Field** retourne un pointeur vers le champ.
+*  Si vous passez un pointeur vers un champ dans *ptrChamp*, **Field** retourne le numéro du champ.<!-- END REF-->
 
 ## Exemple 1 
 
