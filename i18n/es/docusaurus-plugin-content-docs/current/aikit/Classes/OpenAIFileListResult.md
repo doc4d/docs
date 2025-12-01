@@ -40,7 +40,7 @@ For each ($file; $files)
 End for each
 ```
 
-### Pagination Example
+### Ejemplo de paginación
 
 ```4d
 var $params:=cs.AIKit.OpenAIFileListParameters.new()
