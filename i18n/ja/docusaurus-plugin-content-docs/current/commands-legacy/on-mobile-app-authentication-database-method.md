@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.On Mobile App Authentication database method.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| mobileInfo | Object | &#8594;  | モバイルアプリケーションから渡された情報 |
+| mobileInfo | Object | &#8594; | モバイルアプリケーションから渡された情報 |
 | status | Object | &#8592; | 認証ステータス |
 
 <!-- END REF-->

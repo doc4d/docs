@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.WEB Get server info.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| avecCache | Boolean | &#8594;  | Vrai pour obtenir la description du cache Web. Sinon (par défaut) la description du cache n'est pas retournée. |
+| avecCache | Boolean | &#8594; | Vrai pour obtenir la description du cache Web. Sinon (par défaut) la description du cache n'est pas retournée. |
 | Résultat | Object | &#8592; | Informations sur le serveur Web et le serveur SOAP en cours d'exécution. |
 
 <!-- END REF-->

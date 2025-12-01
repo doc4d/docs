@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
 | numBuild | Integer | &#8592; | Numéro de build |
-| * | Opérateur | &#8594;  | Si passé = numéro de version long Si omis = numéro de version court |
+| * | Opérateur | &#8594; | Si passé = numéro de version long Si omis = numéro de version court |
 | Résultat | Text | &#8592; | Numéro de version dans une chaîne encodée |
 
 <!-- END REF-->

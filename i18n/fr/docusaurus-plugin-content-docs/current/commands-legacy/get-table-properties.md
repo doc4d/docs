@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.GET TABLE PROPERTIES.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| ptrTable &#124; numTable | Pointeur, Entier long | &#8594;  | Pointeur de table ou Numéro de table |
+| ptrTable &#124; numTable | Pointeur, Entier long | &#8594; | Pointeur de table ou Numéro de table |
 | invisible | Boolean | &#8592; | Vrai = Invisible, Faux = Visible |
 | trigSvgdeNouv | Boolean | &#8592; | Vrai = Trigger “Sur sauvegarde nouvel enreg” activé, sinon Faux |
 | trigSvgdeEnr | Boolean | &#8592; | Vrai = Trigger “Sur sauvegarde enregistrement” activé, sinon Faux |

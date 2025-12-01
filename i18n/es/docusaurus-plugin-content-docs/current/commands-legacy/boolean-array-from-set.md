@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
 | arrBool | Boolean array | &#8592; | Array para indicar si un registro está en un conjunto o no |
-| conjunto | Text | &#8594;  | Nombre del conjunto o UserSet si se omite este parámetro |
+| conjunto | Text | &#8594; | Nombre del conjunto o UserSet si se omite este parámetro |
 
 <!-- END REF-->
 

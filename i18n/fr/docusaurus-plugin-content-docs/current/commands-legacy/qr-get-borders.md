@@ -9,10 +9,10 @@ displayed_sidebar: docs
 <!--REF #_command_.QR GET BORDERS.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| zone | Integer | &#8594;  | Référence de la zone |
-| colonne | Integer | &#8594;  | Numéro de colonne |
-| ligne | Integer | &#8594;  | Numéro de ligne |
-| encadrement | Integer | &#8594;  | Valeur d'encadrement |
+| zone | Integer | &#8594; | Référence de la zone |
+| colonne | Integer | &#8594; | Numéro de colonne |
+| ligne | Integer | &#8594; | Numéro de ligne |
+| encadrement | Integer | &#8594; | Valeur d'encadrement |
 | ligne | Integer | &#8592; | Epaisseur de trait |
 | couleur | Integer | &#8592; | Couleur de l'encadrement |
 

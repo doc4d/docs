@@ -9,7 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.PAGE BREAK.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| * &#124; > |Operator| &#8594;  | * Cancela la impresión iniciada por Print form, o > Manda un trabajo de impresión |
+| * | Operator | &#8594; | Cancel printing job started with Print form |
+| > | Operator | &#8594; | Force one printing job |
 
 <!-- END REF-->
 

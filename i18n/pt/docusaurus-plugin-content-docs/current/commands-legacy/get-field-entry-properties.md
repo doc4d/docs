@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.GET FIELD ENTRY PROPERTIES.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| pontCampo&#124;numTabela | Ponteiro, Inteiro longo | &#8594;  | Ponteiro de campo ou número da tabela |
-| numCampo | Integer | &#8594;  | Número de campo se o número da tabela for passado como primeiro parâmetro |
+| pontCampo&#124;numTabela | Ponteiro, Inteiro longo | &#8594; | Ponteiro de campo ou número da tabela |
+| numCampo | Integer | &#8594; | Número de campo se o número da tabela for passado como primeiro parâmetro |
 | lista | Text | &#8592; | Lista associada ao campo ou string vazia |
 | obrigatório | Boolean | &#8592; | True = Obrigatório, False = Opcional |
 | nãoEditável | Boolean | &#8592; | True=não editável, False = Editável |

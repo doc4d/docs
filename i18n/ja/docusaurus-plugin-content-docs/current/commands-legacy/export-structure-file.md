@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.Export structure file.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| folderPath | Text | &#8594;  | プロジェクトファイルの保存先フォルダのパス |
-| options | Object | &#8594;  | 書き出しオプション |
+| folderPath | Text | &#8594; | プロジェクトファイルの保存先フォルダのパス |
+| options | Object | &#8594; | 書き出しオプション |
 | 戻り値 | Object | &#8592; | 書き出しステータスと(あれば)エラーについてのメッセージ |
 
 <!-- END REF-->

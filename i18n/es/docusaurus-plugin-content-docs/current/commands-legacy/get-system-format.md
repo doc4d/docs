@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.GET SYSTEM FORMAT.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| formato | Integer | &#8594;  | Formato de sistema a recuperar |
+| formato | Integer | &#8594; | Formato de sistema a recuperar |
 | valor | Text | &#8592; | Formato de sistema a recuperar |
 
 <!-- END REF-->

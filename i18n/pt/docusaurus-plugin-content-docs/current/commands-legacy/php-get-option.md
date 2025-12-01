@@ -12,7 +12,7 @@ displayed_sidebar: docs
 <!--REF #_command_.PHP GET OPTION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| opção | Integer | &#8594;  | Opção a conseguir |
+| opção | Integer | &#8594; | Opção a conseguir |
 | valor | Boolean | &#8592; | Valor atual da opção |
 
 <!-- END REF-->

@@ -9,12 +9,12 @@ displayed_sidebar: docs
 <!--REF #_command_.LDAP SEARCH ALL.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| dnRootEntry | Text | &#8594;  | Distinguished Name de l'élément racine où démarrer la recherche |
+| dnRootEntry | Text | &#8594; | Distinguished Name de l'élément racine où démarrer la recherche |
 | tabRésultat | Object array | &#8592; | Résultat de la recherche |
-| filtre | Text | &#8594;  | Filtre de recherche LDAP |
-| scope | Text | &#8594;  | Champ d'action de la recherche : "base" (défaut), "one" ou "sub" |
-| attributs | Text array | &#8594;  | Attribut(s) à récupérer |
-| attributsEnTableau | Boolean array | &#8594;  | Vrai = forcer le retour des attributs en tableaux, Faux = forcer le retour des attributs en variables simples |
+| filtre | Text | &#8594; | Filtre de recherche LDAP |
+| scope | Text | &#8594; | Champ d'action de la recherche : "base" (défaut), "one" ou "sub" |
+| attributs | Text array | &#8594; | Attribut(s) à récupérer |
+| attributsEnTableau | Boolean array | &#8594; | Vrai = forcer le retour des attributs en tableaux, Faux = forcer le retour des attributs en variables simples |
 
 <!-- END REF-->
 

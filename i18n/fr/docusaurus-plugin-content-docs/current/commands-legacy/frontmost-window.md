@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Frontmost window.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| * | Opérateur | &#8594;  | Si omis = ignorer les fenêtres flottantes, Si spécifié = prendre en compte les fenêtres flottantes |
+| * | Opérateur | &#8594; | Si omis = ignorer les fenêtres flottantes, Si spécifié = prendre en compte les fenêtres flottantes |
 | Résultat | Integer | &#8592; | Numéro de référence de fenêtre |
 
 <!-- END REF-->

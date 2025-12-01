@@ -9,9 +9,9 @@ displayed_sidebar: docs
 <!--REF #_command_.EXECUTE ON CLIENT.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| nomeCliente | Text | &#8594;  | Nome da sessão 4D Client |
-| nomeMetodo | Text | &#8594;  | Nome do método a ser executado |
-| param | &#8594;  | Parâmetro(s) do método |
+| nomeCliente | Text | &#8594; | Nome da sessão 4D Client |
+| nomeMetodo | Text | &#8594; | Nome do método a ser executado |
+| param | any | &#8594; | Method’s parameter(s) |
 
 <!-- END REF-->
 

@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.BLOB PROPERTIES.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| blob | Blob | &#8594;  | BLOB sur lequel vous voulez obtenir des informations |
+| Blob | Blob | &#8594; | BLOB for which to get information |
 | compressé | Integer | &#8592; | 0 = pas de compression, 1 = interne compact, 2 = interne rapide, -1 = GZIP compact, -2 = GZIP rapide |
 | tailleDécompressée | Integer | &#8592; | Taille du BLOB décompressé en octets |
 | tailleCourante | Integer | &#8592; | Taille courante du BLOB en octets |

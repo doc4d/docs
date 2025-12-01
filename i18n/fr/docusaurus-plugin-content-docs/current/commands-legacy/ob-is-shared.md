@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.OB Is shared.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| toCheck | Object, Collection | &#8594;  | Object or collection or to check |
+| toCheck | Object, Collection | &#8594; | Object or collection or to check |
 | Résultat | Boolean | &#8592; | True if the object or collection is shareable, False if it is alterable |
 
 <!-- END REF-->

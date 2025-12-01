@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.MINIMIZE WINDOW.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| fenêtre | Integer | &#8594;  | Numéro de référence de la fenêtre Si omis = Toutes les fenêtres (Windows) ou Fenêtre de premier plan du process courant (macOS) |
+| fenêtre | Integer | &#8594; | Numéro de référence de la fenêtre Si omis = Toutes les fenêtres (Windows) ou Fenêtre de premier plan du process courant (macOS) |
 
 <!-- END REF-->
 

@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.DOM Append XML element.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| refElémentCible | Text | &#8594;  | Référence de l’élément XML parent |
-| refElémentSource | Text | &#8594;  | Référence de l’élément XML à ajouter |
+| refElémentCible | Text | &#8594; | Référence de l’élément XML parent |
+| refElémentSource | Text | &#8594; | Référence de l’élément XML à ajouter |
 | Résultat | Text | &#8592; | Référence du nouvel élément XML |
 
 <!-- END REF-->

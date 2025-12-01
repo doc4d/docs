@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.QR Get report kind.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| area | Integer | &#8594;  | Referência da área |
+| area | Integer | &#8594; | Referência da área |
 | Resultado | Integer | &#8592; | Tipo de relatório |
 
 <!-- END REF-->

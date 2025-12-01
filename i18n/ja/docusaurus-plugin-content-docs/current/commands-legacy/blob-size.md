@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.BLOB size.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| Blob | Blob | &#8594;  | BLOBフィールドまたは変数 |
+| Blob | Blob | &#8594; | BLOB field or variable |
 | 戻り値 | Integer | &#8592; | バイト単位のBLOBサイズ |
 
 <!-- END REF-->

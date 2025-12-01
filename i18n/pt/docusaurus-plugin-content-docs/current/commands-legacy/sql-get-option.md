@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.SQL GET OPTION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| opçao | Integer | &#8594;  | Número de opção |
+| opçao | Integer | &#8594; | Número de opção |
 | valor | Integer, Text | &#8592; | Valor de opção |
 
 <!-- END REF-->

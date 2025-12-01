@@ -10,8 +10,8 @@ displayed_sidebar: docs
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
 | valorDevuelto | Variable | &#8592; | Valor devuelto por el servicio web |
-| nombreDevuelto | Text | &#8594;  | Nombre del parámetro a recuperar |
-| * | Operator |  &#8594;  | Liberar memoria |
+| nombreDevuelto | Text | &#8594; | Nombre del parámetro a recuperar |
+| * | Operator | &#8594; | Liberar memoria |
 
 <!-- END REF-->
 

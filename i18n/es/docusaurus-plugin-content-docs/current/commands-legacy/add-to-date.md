@@ -9,10 +9,10 @@ displayed_sidebar: docs
 <!--REF #_command_.Add to date.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| fecha | Date | &#8594;  | Fecha a la cual añadir días, meses y años |
-| años | Integer | &#8594;  | Número de años a añadir a la fecha |
-| meses | Integer | &#8594;  | Número de meses a añadir a la fecha |
-| días | Integer | &#8594;  | Número de días a añadir a la fecha |
+| fecha | Date | &#8594; | Fecha a la cual añadir días, meses y años |
+| años | Integer | &#8594; | Número de años a añadir a la fecha |
+| meses | Integer | &#8594; | Número de meses a añadir a la fecha |
+| días | Integer | &#8594; | Número de días a añadir a la fecha |
 | Resultado | Date | &#8592; | Fecha resultante |
 
 <!-- END REF-->

@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.OB Is defined.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| objet | Object, Object | &#8594;  | Objet structuré |
-| propriété | Text | &#8594;  | Si passé = propriété à vérifier, si omis = vérifier l’objet |
+| objet | Object, Object | &#8594; | Objet structuré |
+| propriété | Text | &#8594; | Si passé = propriété à vérifier, si omis = vérifier l’objet |
 | Résultat | Boolean | &#8592; | Si propriété omis : Vrai si objet est défini, sinon Faux.<br/>Si propriété passé : Vrai si propriété est définie, sinon Faux |
 
 <!-- END REF-->

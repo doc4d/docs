@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.GET USER PROPERTIES.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| userID | Integer | &#8594;  | ユニークなユーザーID番号 |
+| userID | Integer | &#8594; | ユニークなユーザーID番号 |
 | name | Text | &#8592; | ユーザー名 |
 | startup | Text | &#8592; | スタートアップメソッドの名前 |
 | password | Text | &#8592; | 常に空の文字列 |

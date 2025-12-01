@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Window kind.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| fenêtre | Integer | &#8594;  | Numéro de référence de la fenêtre ou Fenêtre de premier plan du process courant si omis |
+| fenêtre | Integer | &#8594; | Numéro de référence de la fenêtre ou Fenêtre de premier plan du process courant si omis |
 | Résultat | Integer | &#8592; | Type de la fenêtre |
 
 <!-- END REF-->

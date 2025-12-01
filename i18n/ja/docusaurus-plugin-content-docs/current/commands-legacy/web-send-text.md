@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.WEB SEND TEXT.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| htmlText | Text | &#8594;  | Webブラウザへ送られるHTMLテキストフィールド または変数 |
-| type | Text | &#8594;  | MIME型 |
+| htmlText | Text | &#8594; | Webブラウザへ送られるHTMLテキストフィールド または変数 |
+| type | Text | &#8594; | MIME型 |
 
 <!-- END REF-->
 

@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.WA Back URL available.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| * | Operador | &#8594;  | Se especificado, objeto é um nome de objeto (string); se omitido, objeto é uma variável |
-| objeto | any | &#8594;  | Nome objeto (se * for especificado) ou Variável (se * é omitido) |
+| * | Operador | &#8594; | Se especificado, objeto é um nome de objeto (string); se omitido, objeto é uma variável |
+| objeto | any | &#8594; | Nome objeto (se * for especificado) ou Variável (se * é omitido) |
 | Resultado | Boolean | &#8592; | TRUE se houver uma URL anterior na sequência de URLs abertas; senão, FALSE |
 
 <!-- END REF-->

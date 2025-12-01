@@ -9,11 +9,11 @@ displayed_sidebar: docs
 <!--REF #_command_.Replace string.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| source | Text | &#8594;  | Chaîne de départ |
-| obsolète | Text | &#8594;  | Caractère(s) à remplacer |
-| nouveau | Text | &#8594;  | Chaîne de remplacement (si chaîne vide, toutes les occurrences sont effacées) |
-| combien | Integer | &#8594;  | Nombre de remplacements à effectuer |
-| * | Opérateur | &#8594;  | Si passé : évaluation basée sur les codes de caractères |
+| source | Text | &#8594; | Chaîne de départ |
+| obsolète | Text | &#8594; | Caractère(s) à remplacer |
+| nouveau | Text | &#8594; | Chaîne de remplacement (si chaîne vide, toutes les occurrences sont effacées) |
+| combien | Integer | &#8594; | Nombre de remplacements à effectuer |
+| * | Opérateur | &#8594; | Si passé : évaluation basée sur les codes de caractères |
 | Résultat | Text | &#8592; | Chaîne résultante |
 
 <!-- END REF-->

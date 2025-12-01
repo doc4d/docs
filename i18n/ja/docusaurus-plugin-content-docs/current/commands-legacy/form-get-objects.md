@@ -11,8 +11,8 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | objectsArray | Text array | &#8592; | フォームオブジェクト名 |
 | variablesArray | Pointer array | &#8592; | オブジェクトに関連付けられた 変数やフィールドへのポインタ |
-| pagesArray | Array integer | &#8592; | オブジェクトごとのページ番号 |
-| formPageOption &#124; * | 倍長整数, 演算子 | &#8594;  | 1=Form current page, 2=Form all pages, 4=Form inherited<br/>* 指定時(廃止予定) = Form current pageとForm inherited |
+| pagesArray | Integer array | &#8592; | オブジェクトごとのページ番号 |
+| formPageOption &#124; * | 倍長整数, 演算子 | &#8594; | 1=Form current page, 2=Form all pages, 4=Form inherited<br/>* 指定時(廃止予定) = Form current pageとForm inherited |
 
 <!-- END REF-->
 

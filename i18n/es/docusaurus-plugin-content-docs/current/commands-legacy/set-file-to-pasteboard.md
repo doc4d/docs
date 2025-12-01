@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.SET FILE TO PASTEBOARD.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| archivo | Text | &#8594;  | Nombre del archivo o ruta de acceso completa del archivo |
-| * | Operador | &#8594;  | Si se pasa = añadir; Si se omite= reemplazar |
+| archivo | Text | &#8594; | Nombre del archivo o ruta de acceso completa del archivo |
+| * | Operador | &#8594; | Si se pasa = añadir; Si se omite= reemplazar |
 
 <!-- END REF-->
 

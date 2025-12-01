@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.Path to object.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| rota | Text | &#8594;  | Nome da rota |
-| tipoRota | Integer | &#8594;  | Sintaxe do tipo de rota: System (padrão) ou Posix |
+| rota | Text | &#8594; | Nome da rota |
+| tipoRota | Integer | &#8594; | Sintaxe do tipo de rota: System (padrão) ou Posix |
 | Resultado | Object | &#8592; | Objeto que descreve o conteúdo da rota. |
 
 <!-- END REF-->

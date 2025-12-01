@@ -9,10 +9,10 @@ displayed_sidebar: docs
 <!--REF #_command_.BLOB TO VARIABLE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| Blob | Blob | &#8594;  | BLOB que contiene variables 4D |
+| Blob | Blob | &#8594; | BLOB containing 4D variables |
 | variable | Variable | &#8592; | Variable a escribir con el contenido del BLOB |
 | offset | Integer | &#8596; | Posición de la variable en el BLOB |
-| || | Posición de la variable siguiente en el  BLOB |
+|  |  |  | Posición de la variable siguiente en el  BLOB |
 
 <!-- END REF-->
 

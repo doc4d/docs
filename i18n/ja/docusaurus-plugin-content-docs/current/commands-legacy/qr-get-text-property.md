@@ -9,10 +9,10 @@ displayed_sidebar: docs
 <!--REF #_command_.QR Get text property.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| area | Integer | &#8594;  | エリア参照 |
-| colNum | Integer | &#8594;  | カラム番号 |
-| rowNum | Integer | &#8594;  | 行番号 |
-| property | Integer | &#8594;  | プロパティ番号 |
+| area | Integer | &#8594; | エリア参照 |
+| colNum | Integer | &#8594; | カラム番号 |
+| rowNum | Integer | &#8594; | 行番号 |
+| property | Integer | &#8594; | プロパティ番号 |
 | 戻り値 | Integer, Text | &#8592; | 選択したプロパティの値 |
 
 <!-- END REF-->

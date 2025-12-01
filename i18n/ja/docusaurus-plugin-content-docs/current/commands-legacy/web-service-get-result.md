@@ -10,8 +10,8 @@ displayed_sidebar: docs
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
 | returnValue | Variable | &#8592; | Webサービスから返された値 |
-| returnName | Text | &#8594;  | 取得する引数の名前 |
-| * | Operator |  &#8594;  | メモリを解放 |
+| returnName | Text | &#8594; | 取得する引数の名前 |
+| * | Operator | &#8594; | メモリを解放 |
 
 <!-- END REF-->
 

@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Is new record.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| aTable | Table | &#8594;  | レコードを検査するテーブル または 省略時、デフォルトテーブル |
+| aTable | Table | &#8594; | レコードを検査するテーブル または 省略時、デフォルトテーブル |
 | 戻り値 | Boolean | &#8592; | True: レコードは未保存の新規レコード, そうでなければFalse |
 
 <!-- END REF-->

@@ -12,9 +12,10 @@ displayed_sidebar: docs
 | arrActividades &#124; arrUUID | Array objeto, Array texto | &#8592; | Descripción completa de operaciones (array objeto) o<br/>UUIDs de las operaciones (array texto) |
 | arrInicio | Text array | &#8592; | Horas de inicio de las operaciones |
 | arrDuracion | Integer array | &#8592; | Duración de las operaciones en milisegundos |
-| arrInfo | Text array | &#8592; | Descripción |
+| arrInfo | Integer array | &#8592; | Descripción |
 | arrDetails | Object array | &#8592; | Detalles del contexto y sub operaciones (si las hay) |
-| * | Operador | &#8594;  | Si se pasa = Traer actividad del servidor |
+| * | Operador | &#8594; | Si se pasa = Traer actividad del servidor |
+| * | Operator | &#8594; | If passed = Get server activity |
 
 <!-- END REF-->
 

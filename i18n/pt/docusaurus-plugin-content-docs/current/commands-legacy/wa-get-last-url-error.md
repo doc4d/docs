@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.WA GET LAST URL ERROR.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| * | Operador | &#8594;  | Se especificado, objeto é um nome de objeto (string); se omitido, objeto é uma variável |
-| objeto | any | &#8594;  | Nome objeto (se * for especificado) ou Variável (se * é omitido) |
+| * | Operador | &#8594; | Se especificado, objeto é um nome de objeto (string); se omitido, objeto é uma variável |
+| objeto | any | &#8594; | Nome objeto (se * for especificado) ou Variável (se * é omitido) |
 | url | Text | &#8592; | URL na origem do erro |
 | descriçao | Text | &#8592; | Description of error (macOS) |
 | codigoErro | Integer | &#8592; | Código de Erro |

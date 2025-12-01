@@ -10,8 +10,8 @@ displayed_sidebar: docs
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
 | collection | Collection | &#8592; | Collection qui reçoit les données du tableau |
-| tableau | Array | &#8594;  | Tableau à copier vers la collection ; si le paramètre nomPropriété est passé, sont copiées les valeurs correspondantes à la propriété dans la collection |
-| nomPropriété | Text | &#8594;  | Nom de propriété Objet dont les valeurs remplissent les éléments du tableau |
+| tableau | Array | &#8594; | Tableau à copier vers la collection ; si le paramètre nomPropriété est passé, sont copiées les valeurs correspondantes à la propriété dans la collection |
+| nomPropriété | Text | &#8594; | Nom de propriété Objet dont les valeurs remplissent les éléments du tableau |
 
 <!-- END REF-->
 

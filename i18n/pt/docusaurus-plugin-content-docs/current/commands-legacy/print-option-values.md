@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.PRINT OPTION VALUES.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| opçao | Integer | &#8594;  | Número de opção |
+| opçao | Integer | &#8594; | Número de opção |
 | arrayNoms | Text array | &#8592; | Nomes dos valores |
 | info1Array | Integer array | &#8592; | Valores (1) da opção |
 | info2Array | Integer array | &#8592; | Valores (2) da opção |

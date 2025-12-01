@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.QR BLOB TO REPORT.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| area | Integer | &#8594;  | Referencia del área |
-| Blob | Blob | &#8594;  | BLOB que contiene el informe |
+| area | Integer | &#8594; | Referencia del área |
+| Blob | Blob | &#8594; | BLOB that houses the report |
 
 <!-- END REF-->
 

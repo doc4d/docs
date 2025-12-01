@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Get print marker.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| markNum | Integer | &#8594;  | マーカ番号 |
+| markNum | Integer | &#8594; | マーカ番号 |
 | 戻り値 | Integer | &#8592; | マーカの位置 |
 
 <!-- END REF-->

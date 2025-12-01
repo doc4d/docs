@@ -9,9 +9,9 @@ displayed_sidebar: docs
 <!--REF #_command_.WA GET PREFERENCE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| * | Operador | &#8594;  | Se especificado, objeto é um nome de objeto (string); se omitido, objeto é uma variável |
-| objeto | any | &#8594;  | Nome objeto (se * for especificado) ou Variável (se * é omitido) |
-| seletor | Integer | &#8594;  | Preferência a obter |
+| * | Operador | &#8594; | Se especificado, objeto é um nome de objeto (string); se omitido, objeto é uma variável |
+| objeto | any | &#8594; | Nome objeto (se * for especificado) ou Variável (se * é omitido) |
+| seletor | Integer | &#8594; | Preferência a obter |
 | valor | Variable | &#8592; | Valor atual da preferência |
 
 <!-- END REF-->

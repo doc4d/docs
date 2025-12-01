@@ -18,7 +18,7 @@ displayed_sidebar: docs
 <!--REF #_command_.REGISTER CLIENT.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| nomClient | Text | &#8594;  | Nom de la session cliente 4D |
+| nomClient | Text | &#8594; | Nom de la session cliente 4D |
 
 <!-- END REF-->
 

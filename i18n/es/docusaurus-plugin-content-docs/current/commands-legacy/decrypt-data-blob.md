@@ -9,9 +9,9 @@ displayed_sidebar: docs
 <!--REF #_command_.Decrypt data BLOB.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| blobADescifrar | Blob | &#8594;  | BLOB a descifrar |
-| objetoLlave &#124; frasePasar | Objeto, Texto | &#8594;  | Objeto JSON que contiene la llave de cifrado o la frase de paso para la generación directa de la llave de cifrado (texto) |
-| sal | Integer | &#8594;  | Sal adicional para el algoritmo |
+| blobADescifrar | Blob | &#8594; | BLOB a descifrar |
+| objetoLlave &#124; frasePasar | Objeto, Texto | &#8594; | Objeto JSON que contiene la llave de cifrado o la frase de paso para la generación directa de la llave de cifrado (texto) |
+| sal | Integer | &#8594; | Sal adicional para el algoritmo |
 | blobDescifrado | Blob | &#8592; | BLOB descifrado |
 | Resultado | Boolean | &#8592; | True si la desencriptación se ha realizado correctamente, False en caso contrario |
 

@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.WEB GET BODY PART.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| partie | Integer | &#8594;  | Numéro de partie |
+| partie | Integer | &#8594; | Numéro de partie |
 | contenuPartie | Blob, Text | &#8592; | Contenu de la partie |
 | nomPartie | Text | &#8592; | Nom de la variable "input" |
 | typeMime | Text | &#8592; | Type mime du fichier |

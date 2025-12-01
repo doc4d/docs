@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.GET RELATION PROPERTIES.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| ptrChp &#124; numTable | Pointeur, Entier long | &#8594;  | Pointeur de champ ou Numéro de table |
-| numChamp | Integer | &#8594;  | Numéro de champ si un numéro de table est passé en premier paramètre |
+| ptrChp &#124; numTable | Pointeur, Entier long | &#8594; | Pointeur de champ ou Numéro de table |
+| numChamp | Integer | &#8594; | Numéro de champ si un numéro de table est passé en premier paramètre |
 | tableDest | Integer | &#8592; | Numéro de la table cible ou 0 si aucun lien ne part du champ |
 | champDest | Integer | &#8592; | Numéro du champ cible ou 0 si aucun lien ne part du champ |
 | discriminant | Integer | &#8592; | Numéro du champ discriminant ou 0 si aucun champ discriminant |

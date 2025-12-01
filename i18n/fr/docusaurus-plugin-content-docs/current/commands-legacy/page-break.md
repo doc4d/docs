@@ -9,7 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.PAGE BREAK.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| * &#124; > |Operator| &#8594;  | * Annule l'impression lancée par Imprimer ligne ou > Rend l'impression prioritaire |
+| * | Operator | &#8594; | Cancel printing job started with Print form |
+| > | Operator | &#8594; | Force one printing job |
 
 <!-- END REF-->
 

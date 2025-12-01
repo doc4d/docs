@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.SQL SET PARAMETER.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| objet | Object | &#8594;  | Objet 4D à utiliser (variable, tableau ou champ) |
-| typeParam | Integer | &#8594;  | Type du paramètre |
+| objet | Object | &#8594; | Objet 4D à utiliser (variable, tableau ou champ) |
+| typeParam | Integer | &#8594; | Type du paramètre |
 
 <!-- END REF-->
 

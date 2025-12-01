@@ -11,7 +11,7 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | arrayCodec | Text array | &#8592; | Identificadores de codecs de imagens disponíveis |
 | arrayNomes | Text array | &#8592; | Nomes dos Codecs de imagens |
-| * | Operador | &#8594;  | Retorna a lista de Codecs de leitura |
+| * | Operador | &#8594; | Retorna a lista de Codecs de leitura |
 
 <!-- END REF-->
 

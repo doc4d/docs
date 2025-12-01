@@ -9,10 +9,10 @@ displayed_sidebar: docs
 <!--REF #_command_.SET FIELD TITLES.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| laTable | Table | &#8594;  | Table dont vous voulez redéfinir les titres des champs |
-| titresChamps | Text array | &#8594;  | Nouveaux titres des champs |
-| numChamps | Integer array | &#8594;  | Numéros des champs |
-| * | Operator |  &#8594;  | Utiliser les noms personnalisés dans l’éditeur de formules |
+| laTable | Table | &#8594; | Table dont vous voulez redéfinir les titres des champs |
+| titresChamps | Text array | &#8594; | Nouveaux titres des champs |
+| numChamps | Integer array | &#8594; | Numéros des champs |
+| * | Operator | &#8594; | Utiliser les noms personnalisés dans l’éditeur de formules |
 
 <!-- END REF-->
 

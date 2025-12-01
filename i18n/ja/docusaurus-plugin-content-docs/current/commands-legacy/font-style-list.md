@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.FONT STYLE LIST.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| fontFamily | Text | &#8594;  | フォントファミリー名 |
+| fontFamily | Text | &#8594; | フォントファミリー名 |
 | fontStyleList | Text array | &#8592; | フォントファミリーによってサポートされるフォントスタイルの一覧 |
 | fontNameList | Text array | &#8592; | フォントファミリーによってサポートされるフォント名の完全な一覧 |
 

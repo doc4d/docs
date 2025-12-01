@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
 | objectNames | Text array | &#8592; | Nomes de objeto ordenados por ordem de entrada |
-| numPagina &#124; * | Inteiro longo, Operador | &#8594;  | Número de página para o qual obter a ordem definida de entrada (página atual se omitida) |
+| numPagina &#124; * | Inteiro longo, Operador | &#8594; | Número de página para o qual obter a ordem definida de entrada (página atual se omitida) |
 
 <!-- END REF-->
 

@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Process state.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| processo | Integer | &#8594;  | Número de processo |
+| processo | Integer | &#8594; | Número de processo |
 | Resultado | Integer | &#8592; | Estado do processo |
 
 <!-- END REF-->

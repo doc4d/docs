@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.DISTINCT ATTRIBUTE PATHS.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| campoObjeto | Field | &#8594;  | campo objeto indexado |
+| campoObjeto | Field | &#8594; | campo objeto indexado |
 | rotaArray | Text array | &#8592; | Array que vai receber a lsita de diferentes rotas |
 
 <!-- END REF-->

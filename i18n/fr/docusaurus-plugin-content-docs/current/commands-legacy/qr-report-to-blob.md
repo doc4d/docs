@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.QR REPORT TO BLOB.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| zone | Integer | &#8594;  | Référence de la zone |
-| blob | Blob | &#8592; | BLOB devant recevoir l'état rapide |
+| zone | Integer | &#8594; | Référence de la zone |
+| Blob | Blob | &#8592; | BLOB to house the Quick Report |
 
 <!-- END REF-->
 

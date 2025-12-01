@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.FONT STYLE LIST.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| famillePolice | Text | &#8594;  | Nom de la famille de police |
+| famillePolice | Text | &#8594; | Nom de la famille de police |
 | listeStylesPolice | Text array | &#8592; | Liste des styles pris en charge par la famille de police |
 | listeNomsPolice | Text array | &#8592; | Liste des noms complets pris en charge par la famille de police |
 

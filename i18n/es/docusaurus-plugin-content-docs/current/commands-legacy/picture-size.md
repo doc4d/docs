@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Picture size.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| imagen | Picture | &#8594;  | Imagen para la cual devolver el tamaño en bytes |
+| imagen | Picture | &#8594; | Imagen para la cual devolver el tamaño en bytes |
 | Resultado | Integer | &#8592; | Tamaño en bytes de la imagen |
 
 <!-- END REF-->

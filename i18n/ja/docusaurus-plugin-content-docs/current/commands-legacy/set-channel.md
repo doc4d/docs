@@ -10,12 +10,10 @@ displayed_sidebar: docs
 <!--REF #_command_.SET CHANNEL.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| port | Integer | &#8594;  | シリアルポート番号 |
-| settings | Integer | &#8594;  | シリアルポート設定 |
-| SET CHANNEL ( operation ; document ) |
-| 引数 | 型 | 説明 |
-| operation | Integer | &#8594;  | 行うドキュメント処理 |
-| document | Text | &#8594;  | ドキュメント名 |
+| port | Integer | &#8594; | シリアルポート番号 |
+| settings | Integer | &#8594; | シリアルポート設定 |
+| SET CHANNEL ( operation ; document ) | Integer | &#8594; | Document operation to perform |
+| 引数 | 型 | 説明 | Document name |
 
 <!-- END REF-->
 

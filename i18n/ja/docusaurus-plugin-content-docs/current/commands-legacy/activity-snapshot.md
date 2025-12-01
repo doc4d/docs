@@ -12,9 +12,10 @@ displayed_sidebar: docs
 | arrActivities &#124; arrUUID | Object array, テキスト配列 | &#8592; | オペレーションの詳細な情報(オブジェクト配列)<br/>またはオペレーションの UUID(テキスト配列) |
 | arrStart | Text array | &#8592; | オペレーションの開始時刻 |
 | arrDuration | Integer array | &#8592; | オペレーションの所要時間(ミリ秒単位) |
-| arrInfo | Text array | &#8592; | オペレーションを説明するラベル |
+| arrInfo | Integer array | &#8592; | オペレーションを説明するラベル |
 | arrDetails | Object array | &#8592; | コンテキストと、(あれば)サブオペレーションの詳細 |
-| * | 演算子 | &#8594;  | 渡した場合、サーバーの状態を取得 |
+| * | 演算子 | &#8594; | 渡した場合、サーバーの状態を取得 |
+| * | Operator | &#8594; | If passed = Get server activity |
 
 <!-- END REF-->
 

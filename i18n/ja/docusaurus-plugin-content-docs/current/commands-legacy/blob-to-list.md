@@ -9,9 +9,9 @@ displayed_sidebar: docs
 <!--REF #_command_.BLOB to list.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| Blob | Blob | &#8594;  | 階層リストが格納されたBLOB |
-| offset | Integer | &#8596;  | BLOB内のオフセット (バイト単位) |
-| || | 読み込み後の新しいオフセット |
+| Blob | Blob | &#8594; | BLOB containing a hierarchical list |
+| offset | Integer | &#8596; | BLOB内のオフセット (バイト単位) |
+|  |  |  | 読み込み後の新しいオフセット |
 | 戻り値 | Integer | &#8592; | 新しく作成されたリスト参照 |
 
 <!-- END REF-->

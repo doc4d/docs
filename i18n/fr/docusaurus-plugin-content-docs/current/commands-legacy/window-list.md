@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
 | fenêtres | Array | &#8592; | Tableau des numéros de référence des fenêtres |
-| * | Opérateur | &#8594;  | Si omis, ignorer fenêtres flottantes Si spécifié, tenir compte des fenêtres flottantes |
+| * | Opérateur | &#8594; | Si omis, ignorer fenêtres flottantes Si spécifié, tenir compte des fenêtres flottantes |
 
 <!-- END REF-->
 

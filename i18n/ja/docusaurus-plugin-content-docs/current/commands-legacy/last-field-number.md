@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Last field number.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| tableNum &#124; tablePtr | 倍長整数, ポインター | &#8594;  | テーブル番号、またはテーブルポインタ |
+| tableNum &#124; tablePtr | 倍長整数, ポインター | &#8594; | テーブル番号、またはテーブルポインタ |
 | 戻り値 | Integer | &#8592; | テーブルの最大フィールド番号 |
 
 <!-- END REF-->

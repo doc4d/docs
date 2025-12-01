@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.Find window.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| gauche | Integer | &#8594;  | Coordonnée globale gauche |
-| haut | Integer | &#8594;  | Coordonnée globale supérieure |
+| gauche | Integer | &#8594; | Coordonnée globale gauche |
+| haut | Integer | &#8594; | Coordonnée globale supérieure |
 | partieFenêtre | Integer | &#8592; | 3 si une fenêtre est "touchée", 0 sinon |
 | Résultat | Integer | &#8592; | Numéro de référence de fenêtre |
 

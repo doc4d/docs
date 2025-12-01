@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.LOCKED BY.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| laTable | Table | &#8594;  | Table de l'enregistrement verrouillé ou Table par défaut si ce paramètre est omis |
+| laTable | Table | &#8594; | Table de l'enregistrement verrouillé ou Table par défaut si ce paramètre est omis |
 | process | Integer | &#8592; | Numéro du process |
 | utilisateur4D | Text | &#8592; | Nom de l'utilisateur 4D |
 | utilisateurSession | Text | &#8592; | Nom de l'utilisateur ayant ouvert la session de travail |

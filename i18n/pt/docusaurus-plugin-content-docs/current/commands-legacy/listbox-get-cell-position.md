@@ -9,10 +9,10 @@ displayed_sidebar: docs
 <!--REF #_command_.LISTBOX GET CELL POSITION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| * | Operador | &#8594;  | se especificado, objeto é um nome de objeto (string). Se omitido, objeto é uma variável |
-| objeto | any | &#8594;  | Nome objeto (se * for especificado) ou Variável (se * é omitido) |
-| X | Real | &#8594;  | Horizontal coordinate of mouse |
-| Y | Real | &#8594;  | Vertical coordinate of mouse |
+| * | Operador | &#8594; | se especificado, objeto é um nome de objeto (string). Se omitido, objeto é uma variável |
+| objeto | any | &#8594; | Nome objeto (se * for especificado) ou Variável (se * é omitido) |
+| X | Real | &#8594; | Horizontal coordinate of mouse |
+| Y | Real | &#8594; | Vertical coordinate of mouse |
 | coluna | Integer | &#8592; | Número de coluna |
 | linha | Integer | &#8592; | Número da fila |
 | varCol | Pointer | &#8592; | Ponteiro para a variável coluna |

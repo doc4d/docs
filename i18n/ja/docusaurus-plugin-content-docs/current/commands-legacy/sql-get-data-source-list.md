@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.SQL GET DATA SOURCE LIST.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| sourceType | Integer | &#8594;  | ソースタイプ: ユーザまたはシステム |
+| sourceType | Integer | &#8594; | ソースタイプ: ユーザまたはシステム |
 | sourceNamesArr | Text array | &#8592; | データソース名の配列 |
 | driversArr | Text array | &#8592; | ソース用のドライバの配列 |
 

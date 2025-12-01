@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Sequence number.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| tabla | Table | &#8594;  | Tabla a numerar automáticamente o Tabla por defecto, si se omite |
+| tabla | Table | &#8594; | Tabla a numerar automáticamente o Tabla por defecto, si se omite |
 | Resultado | Integer | &#8592; | Número automático |
 
 <!-- END REF-->

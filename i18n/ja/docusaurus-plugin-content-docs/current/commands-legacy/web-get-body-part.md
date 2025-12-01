@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.WEB GET BODY PART.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| part | Integer | &#8594;  | パート番号 |
+| part | Integer | &#8594; | パート番号 |
 | contents | Blob, Text | &#8592; | パートを受け取る変数 |
 | name | Text | &#8592; | input要素のname属性値 |
 | mimeType | Text | &#8592; | ファイルのMIMEタイプ |

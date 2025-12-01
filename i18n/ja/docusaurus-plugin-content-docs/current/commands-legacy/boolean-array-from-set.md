@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
 | booleanArr | Boolean array | &#8592; | レコードがセットに含まれているかいないかを示す配列 |
-| set | Text | &#8594;  | セット名、または 引数が省略された場合UserSet |
+| set | Text | &#8594; | セット名、または 引数が省略された場合UserSet |
 
 <!-- END REF-->
 

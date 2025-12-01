@@ -10,11 +10,11 @@ displayed_sidebar: docs
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
 | imagenResult | Picture | &#8592; | Imagen resultante de la combinación |
-| imag1 | Picture | &#8594;  | Primera imagen a combinar |
-| operador | Integer | &#8594;  | Tipo de combinación a realizar |
-| imag2 | Picture | &#8594;  | Segunda imagen a combinar |
-| despHor | Integer | &#8594;  | Desplazamiento horizontal para la superposición |
-| despVert | Integer | &#8594;  | Desplazamiento vertical para la superposición |
+| imag1 | Picture | &#8594; | Primera imagen a combinar |
+| operador | Integer | &#8594; | Tipo de combinación a realizar |
+| imag2 | Picture | &#8594; | Segunda imagen a combinar |
+| despHor | Integer | &#8594; | Desplazamiento horizontal para la superposición |
+| despVert | Integer | &#8594; | Desplazamiento vertical para la superposición |
 
 <!-- END REF-->
 

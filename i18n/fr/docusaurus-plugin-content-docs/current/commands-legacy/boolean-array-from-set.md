@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
 | tabBooléen | Boolean array | &#8592; | Tableau d'appartenance des enregistrements à l’ensemble |
-| ensemble | Text | &#8594;  | Nom de l’ensemble ou Ensemble UserSet si ce paramètre est omis |
+| ensemble | Text | &#8594; | Nom de l’ensemble ou Ensemble UserSet si ce paramètre est omis |
 
 <!-- END REF-->
 

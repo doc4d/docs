@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.Convert to text.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| Blob | Blob | &#8594;  | Blob que contém texto expresso num conjunto de caracteres específico |
-| conjuntoCaracteres | Text, Integer | &#8594;  | Nome ou número do conjunto de caracteres do BLOB |
+| Blob | Blob | &#8594; | BLOB containing text expressed in a specific character set |
+| conjuntoCaracteres | Text, Integer | &#8594; | Nome ou número do conjunto de caracteres do BLOB |
 | Resultado | Text | &#8592; | Conteúdos do BLOB expressos em conjunto de caracteres 4D |
 
 <!-- END REF-->

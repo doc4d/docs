@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.GET USER PROPERTIES.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| réfUtilisateur | Integer | &#8594;  | Numéro de référence unique de l'utilisateur |
+| réfUtilisateur | Integer | &#8594; | Numéro de référence unique de l'utilisateur |
 | nom | Text | &#8592; | Nom de l'utilisateur |
 | démarrage | Text | &#8592; | Nom de la méthode de démarrage |
 | motDePasse | Text | &#8592; | *** obsolète (chaîne vide)  *** |

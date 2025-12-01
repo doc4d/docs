@@ -13,8 +13,8 @@ displayed_sidebar: docs
 | top | Integer | &#8592; | 画面エリアの上端のグローバル座標 |
 | right | Integer | &#8592; | 画面エリアの右端のグローバル座標 |
 | bottom | Integer | &#8592; | 画面エリアの下端のグローバル座標 |
-| screen | Integer | &#8594;  | 画面番号、または省略した場合には主画面(メインスクリーン) |
-| screenArea | Integer | &#8594;  | 画面全体(デフォルト)または利用可能エリア |
+| screen | Integer | &#8594; | 画面番号、または省略した場合には主画面(メインスクリーン) |
+| screenArea | Integer | &#8594; | 画面全体(デフォルト)または利用可能エリア |
 
 <!-- END REF-->
 
