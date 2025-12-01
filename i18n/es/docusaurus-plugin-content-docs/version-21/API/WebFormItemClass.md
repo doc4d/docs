@@ -78,7 +78,7 @@ exposed Function isHidden()
 
 2. In Qodly Studio: Select the image component on the canvas, and enter a server-side reference in the Properties Panel > Server Side, for example "myImage".
 3. Select the Button component and add an `onclick` event to it.
-4. Attach the `isHidden` function to the event.
+4. Adjunta la función `isHidden` al evento.
 
 ### .removeCSSClass()
 
