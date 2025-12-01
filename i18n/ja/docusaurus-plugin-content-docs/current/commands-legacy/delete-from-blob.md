@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.DELETE FROM BLOB.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| Blob | Blob | &#8594; | BLOB from which to delete bytes |
+| Blob | Blob | &#8594; | バイト列を削除するBLOB |
 | offset | Integer | &#8594; | バイト削除開始位置 |
 | len | Integer | &#8594; | 削除するバイト数 |
 

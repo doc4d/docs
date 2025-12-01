@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.EXPAND BLOB.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| Blob | Blob | &#8594; | BLOB to expand |
+| Blob | Blob | &#8594; | BLOB à décompresser |
 
 <!-- END REF-->
 

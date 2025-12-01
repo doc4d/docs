@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.BLOB to text.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| Blob | Blob | &#8594; | BLOB from which to get the text |
+| Blob | Blob | &#8594; | BLOB do qual obter o texto |
 | formatoTexto | Integer | &#8594; | Formato e conjunto de caracteres de texto |
 | offset | Variable | &#8596; | Offset no BLOB (expressado em bytes) |
 |  |  |  | Novo offset depois da leitura |

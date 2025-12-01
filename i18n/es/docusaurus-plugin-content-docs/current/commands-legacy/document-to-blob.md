@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
 | documento | Text | &#8594; | Nombre del documento |
-| Blob | Blob | &#8596; | BLOB field or variable to receive the document |
+| Blob | Blob | &#8596; | Campo o variable de tipo BLOB a recibir el documento |
 |  |  |  | Contenido del documento |
 
 <!-- END REF-->

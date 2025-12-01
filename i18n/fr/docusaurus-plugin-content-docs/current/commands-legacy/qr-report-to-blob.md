@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
 | zone | Integer | &#8594; | Référence de la zone |
-| Blob | Blob | &#8592; | BLOB to house the Quick Report |
+| Blob | Blob | &#8592; | BLOB devant recevoir l'état rapide |
 
 <!-- END REF-->
 

@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.BLOB to longint.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| Blob | Blob | &#8594; | BLOB from which to get the Long Integer value |
+| Blob | Blob | &#8594; | BLOB duquel extraire la valeur de type Entier long |
 | ordreOctet | Integer | &#8594; | 0 = Ordre d'octets natif 1 = Ordre d'octets Macintosh 2 = Ordre d'octets PC |
 | offset | Variable | &#8596; | Offset (en octets) dans le BLOB |
 |  |  |  | Nouvel offset après lecture |

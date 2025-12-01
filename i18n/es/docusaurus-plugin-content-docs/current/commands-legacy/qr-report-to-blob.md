@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
 | area | Integer | &#8594; | Referencia del área |
-| Blob | Blob | &#8592; | BLOB to house the Quick Report |
+| Blob | Blob | &#8592; | Blob a recibir el informe rápido |
 
 <!-- END REF-->
 

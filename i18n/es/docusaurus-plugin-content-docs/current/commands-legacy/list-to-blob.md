@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
 | lista | Integer | &#8594; | Lista jerárquica a almacenar en el BLOB |
-| Blob | Blob | &#8594; | BLOB to receive the Hierarchical list |
+| Blob | Blob | &#8594; | BLOB a recibir la lista jerárquica |
 | * | Operador | &#8594; | * añadir el valor |
 
 <!-- END REF-->

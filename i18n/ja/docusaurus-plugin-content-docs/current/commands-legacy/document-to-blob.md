@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
 | document | Text | &#8594; | ドキュメント名 |
-| Blob | Blob | &#8596; | BLOB field or variable to receive the document |
+| Blob | Blob | &#8596; | ドキュメントを受け取るBLOBフィールドまたは変数 |
 |  |  |  | ドキュメントの内容 |
 
 <!-- END REF-->

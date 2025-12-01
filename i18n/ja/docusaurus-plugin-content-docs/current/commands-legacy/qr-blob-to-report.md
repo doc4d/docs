@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
 | area | Integer | &#8594; | エリア参照 |
-| Blob | Blob | &#8594; | BLOB that houses the report |
+| Blob | Blob | &#8594; | レポートを納めたBLOB |
 
 <!-- END REF-->
 

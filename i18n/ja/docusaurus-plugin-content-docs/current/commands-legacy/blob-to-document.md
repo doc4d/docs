@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
 | document | Text | &#8594; | ドキュメント名 |
-| Blob | Blob | &#8594; | New contents for the document |
+| Blob | Blob | &#8594; | ドキュメントの新しいコンテンツ |
 
 <!-- END REF-->
 

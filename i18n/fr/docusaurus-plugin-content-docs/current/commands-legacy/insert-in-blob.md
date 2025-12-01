@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.INSERT IN BLOB.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| Blob | Blob | &#8594; | BLOB into which bytes will be inserted |
+| Blob | Blob | &#8594; | BLOB dans lequel insérer les octets |
 | décalage | Integer | &#8594; | Position de début d'insertion des octets |
 | nombre | Integer | &#8594; | Nombre d'octets à insérer |
 | remplisseur | Integer | &#8594; | Valeur d'octet par défaut (0x00..0xFF) 0x00 si ce paramètre est omis |

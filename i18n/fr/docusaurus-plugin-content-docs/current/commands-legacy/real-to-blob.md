@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
 | réel | Real | &#8594; | Valeur de type Réel à écrire dans le BLOB |
-| Blob | Blob | &#8594; | BLOB to receive the Real value |
+| Blob | Blob | &#8594; | BLOB devant recevoir la valeur Réel |
 | formatRéel | Integer | &#8594; | 0=Format réel natif, 1=Format réel étendu, 2=Format réel double Macintosh, 3=Format réel double Windows |
 | offset &#124; * | Variable, Opérateur | &#8596; | Offset (en octets) dans le BLOB ou  * pour ajouter la valeur à la fin du BLOB |
 |  |  |  | Nouvel offset après l'écriture si * omis |

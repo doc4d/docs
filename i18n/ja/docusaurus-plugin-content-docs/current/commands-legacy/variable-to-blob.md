@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
 | variable | Variable | &#8594; | BLOBに格納する変数 |
-| Blob | Blob | &#8594; | BLOB to receive the variable |
+| Blob | Blob | &#8594; | 変数を受け取るBLOB |
 | offset &#124; * | 変数, 演算子 | &#8596; | BLOB内のオフセット (バイト単位) または値を追加する場合 * |
 |  |  |  | *でない場合、書き込み後の新しいオフセット |
 

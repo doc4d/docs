@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
 | text | Text | &#8594; | BLOBに書き込むテキスト |
-| Blob | Blob | &#8594; | BLOB to receive the text |
+| Blob | Blob | &#8594; | テキストを受け取るBLOB |
 | textFormat | Integer | &#8594; | テキストのフォーマットと文字セット |
 | offset &#124; * | 変数, 演算子 | &#8596; | BLOB内のオフセット (バイト単位) または値を追加する場合 * |
 |  |  |  | *でない場合、書き込み後の新しいオフセット |

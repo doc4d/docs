@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
 | area | Integer | &#8594; | エリア参照 |
-| Blob | Blob | &#8592; | BLOB to house the Quick Report |
+| Blob | Blob | &#8592; | クイックレポートを納めるBLOB |
 
 <!-- END REF-->
 

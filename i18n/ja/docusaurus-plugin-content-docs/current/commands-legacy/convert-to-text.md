@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Convert to text.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| Blob | Blob | &#8594; | BLOB containing text expressed in a specific character set |
+| Blob | Blob | &#8594; | 特定の文字セットで記述されている テキストを含むBLOB |
 | charSet | Text, Integer | &#8594; | BLOB文字セットの番号または名前 |
 | 戻り値 | Text | &#8592; | 4Dの文字セットで表現されたBLOBの内容 |
 

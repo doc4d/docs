@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
 | real | Real | &#8594; | BLOBに書き込む実数値 |
-| Blob | Blob | &#8594; | BLOB to receive the Real value |
+| Blob | Blob | &#8594; | 実数値を受け取るBLOB |
 | realFormat | Integer | &#8594; | 0 Native real format 1 Extended real format 2  Macintosh Double real format 3  Windows Double real format |
 | offset &#124; * | 変数, 演算子 | &#8596; | BLOB内のオフセット (バイト単位) または値を追加する場合 * |
 |  |  |  | *でない場合、書き込み後の新しいオフセット |

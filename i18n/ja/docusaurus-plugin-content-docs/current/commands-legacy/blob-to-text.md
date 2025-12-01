@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.BLOB to text.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| Blob | Blob | &#8594; | BLOB from which to get the text |
+| Blob | Blob | &#8594; | テキストを取り出すBLOB |
 | textFormat | Integer | &#8594; | テキストのフォーマットと文字セット |
 | offset | Variable | &#8596; | BLOB内のオフセット (バイト単位) |
 |  |  |  | 読み込み後の新しいオフセット |

@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
 | entierLong | Integer | &#8594; | Valeur de type Entier long à écrire dans BLOB |
-| Blob | Blob | &#8594; | BLOB to receive the Long Integer value |
+| Blob | Blob | &#8594; | BLOB devant recevoir l'entier long |
 | ordreOctet | Integer | &#8594; | 0=Ordre d'octets natif, 1=Ordre d'octets Macintosh, 2=Ordre d'octets PC |
 | offset &#124; * | Variable, Opérateur | &#8596; | Offset (en octets) dans le BLOB ou * pour ajouter la valeur à la fin du BLOB |
 |  |  |  | Nouvel offset après l'écriture si * omis |

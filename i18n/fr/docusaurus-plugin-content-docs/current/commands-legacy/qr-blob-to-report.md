@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
 | zone | Integer | &#8594; | Référence de la zone |
-| Blob | Blob | &#8594; | BLOB that houses the report |
+| Blob | Blob | &#8594; | BLOB contenant l'état |
 
 <!-- END REF-->
 

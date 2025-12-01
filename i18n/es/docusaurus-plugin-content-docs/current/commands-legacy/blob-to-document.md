@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
 | documento | Text | &#8594; | Nombre del documento |
-| Blob | Blob | &#8594; | New contents for the document |
+| Blob | Blob | &#8594; | Nuevo contenido del documento |
 
 <!-- END REF-->
 

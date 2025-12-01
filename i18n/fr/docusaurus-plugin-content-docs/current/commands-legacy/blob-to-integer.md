@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.BLOB to integer.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| Blob | Blob | &#8594; | BLOB from which to get the integer value |
+| Blob | Blob | &#8594; | BLOB duquel obtenir la valeur entière |
 | ordreOctet | Integer | &#8594; | 0 Ordre d'octets mode natif 1 Ordre d'octets Macintosh 2 Ordre d'octets PC |
 | offset | Variable | &#8596; | Offset (en octets) dans le BLOB |
 |  |  |  | Nouvel offset après la lecture |

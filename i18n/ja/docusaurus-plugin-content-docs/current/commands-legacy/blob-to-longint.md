@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.BLOB to longint.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| Blob | Blob | &#8594; | BLOB from which to get the Long Integer value |
+| Blob | Blob | &#8594; | 倍長整数値を取り出すBLOB |
 | byteOrder | Integer | &#8594; | 0 Native byte ordering 1 Macintosh byte ordering 2 PC byte ordering |
 | offset | Variable | &#8596; | BLOB中のオフセット (バイト単位) |
 |  |  |  | 読み込み後、新しいオフセット |

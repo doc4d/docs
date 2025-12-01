@@ -12,6 +12,8 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | puerto | Integer | &#8594; | Número de puerto serial |
 | param | Integer | &#8594; | Parámetros de puerto serial |
+| SET CHANNEL ( operacion ; doc ) |  |  |  |
+| Parámetro | Tipo | Descripción |  |
 | operacion | Integer | &#8594; | Operación a efectuar en el documento |
 | doc | Text | &#8594; | Nombre del documento |
 

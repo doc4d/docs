@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.BLOB PROPERTIES.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| Blob | Blob | &#8594; | BLOB for which to get information |
+| Blob | Blob | &#8594; | 情報を取得するBLOB |
 | compressed | Integer | &#8592; | 0 = BLOBは圧縮されていない 1 = BLOBは圧縮率優先で圧縮されている 2 = BLOBは速度優先で圧縮されている |
 | expandedSize | Integer | &#8592; | 非圧縮時のBLOBのサイズ (バイト単位) |
 | currentSize | Integer | &#8592; | BLOBの現在のサイズ (バイト単位) |

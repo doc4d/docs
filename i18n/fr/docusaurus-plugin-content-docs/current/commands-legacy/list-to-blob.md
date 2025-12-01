@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
 | liste | Integer | &#8594; | Liste hiérarchique à stocker dans le BLOB |
-| Blob | Blob | &#8594; | BLOB to receive the Hierarchical list |
+| Blob | Blob | &#8594; | BLOB devant recevoir la liste hiérarchique |
 | blob | * | &#8594; | Ajouter la liste à la fin du BLOB |
 
 <!-- END REF-->

@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
 | entier | Integer | &#8594; | Valeur entière à écrire dans le BLOB |
-| Blob | Blob | &#8594; | BLOB to receive the Integer value |
+| Blob | Blob | &#8594; | BLOB devant recevoir la valeur entière |
 | ordreOctet | Integer | &#8594; | 0=Ordre des octets en mode natif, 1=Ordre des octets Macintosh, 2=Ordre des octets PC |
 | offset &#124; * | Variable, Opérateur | &#8596; | Offset (en octets) de l'entier dans le BLOB ou * pour ajouter la valeur à la fin du BLOB |
 |  |  |  | Nouvel offset après écriture si * omis |
