@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.OBJECT GET SCROLLBAR.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| * | Opérateur | &#8594;  | Si spécifié, objet est un nom d'objet (chaîne) <br/>Si omis, objet est une variable ou un champ |
-| objet | any | &#8594;  | Nom d'objet (si * spécifié) ou Variable ou champ (si * omis) |
+| * | Opérateur | &#8594; | Si spécifié, objet est un nom d'objet (chaîne) <br/>Si omis, objet est une variable ou un champ |
+| objet | any | &#8594; | Nom d'objet (si * spécifié) ou Variable ou champ (si * omis) |
 | horizontale | Boolean, Integer | &#8592; | Visibilité de la barre horizontale |
 | verticale | Boolean, Integer | &#8592; | Visibilité de la barre verticale |
 

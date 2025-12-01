@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.LISTBOX GET ARRAYS.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| * | Opérateur | &#8594;  | Si spécifié, objet est un nom d'objet (chaîne) Si omis, objet est une variable |
-| objet | any | &#8594;  | Nom d’objet (si * est spécifié) ou Variable (si * est omis) |
+| * | Opérateur | &#8594; | Si spécifié, objet est un nom d'objet (chaîne) Si omis, objet est une variable |
+| objet | any | &#8594; | Nom d’objet (si * est spécifié) ou Variable (si * est omis) |
 | tabNomsCols | Text array | &#8592; | Noms d’objet des colonnes |
 | tabNomsEntêtes | Text array | &#8592; | Noms d’objet des en-têtes |
 | tabVarCols | Pointer array | &#8592; | Pointeurs vers les variables des colonnes ou Pointeurs vers les champs des colonnes ou Nil |

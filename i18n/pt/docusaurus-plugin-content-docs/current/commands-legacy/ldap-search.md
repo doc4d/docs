@@ -9,11 +9,11 @@ displayed_sidebar: docs
 <!--REF #_command_.LDAP Search.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| dnRootEntry | Text | &#8594;  | Nome distinto da root entry onde a pesquisa começa |
-| filtro | Text | &#8594;  | Filtro de pesquisa LDAP |
-| escopo | Text | &#8594;  | Escopo da pesquisa: "base" (padrão), "one", ou "sub" |
-| atributos | Text array | &#8594;  | Atributos a capturar |
-| atributoComoArray | Boolean array | &#8594;  | True= força atributos a ser retornados como array, False = força atributos a ser retornados como uma variável simples |
+| dnRootEntry | Text | &#8594; | Nome distinto da root entry onde a pesquisa começa |
+| filtro | Text | &#8594; | Filtro de pesquisa LDAP |
+| escopo | Text | &#8594; | Escopo da pesquisa: "base" (padrão), "one", ou "sub" |
+| atributos | Text array | &#8594; | Atributos a capturar |
+| atributoComoArray | Boolean array | &#8594; | True= força atributos a ser retornados como array, False = força atributos a ser retornados como uma variável simples |
 | Resultado | Object | &#8592; | Atributos Chave/Valor |
 
 <!-- END REF-->

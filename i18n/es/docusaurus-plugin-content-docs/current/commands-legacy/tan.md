@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Tan.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| Numero | Real | &#8594;  | Número, en radianes, cuya tangente se devuelve |
+| Numero | Real | &#8594; | Número, en radianes, cuya tangente se devuelve |
 | Resultado | Real | &#8592; | Tangente del número |
 
 <!-- END REF-->

@@ -9,10 +9,10 @@ displayed_sidebar: docs
 <!--REF #_command_.ST Get content type.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| * | Operador | &#8594;  | Se especificado, objeto é um nome de objeto (cadeia) Se omitido, objeto é um campo ou uma variável |
-| objeto | any | &#8594;  | Nome de objeto (se * for especificado) ou<br/>Campo ou variável (se * for omitido) |
-| inicioSel | Integer | &#8594;  | Inicio da seleção |
-| fimSel | Integer | &#8594;  | Fim da seleção |
+| * | Operador | &#8594; | Se especificado, objeto é um nome de objeto (cadeia) Se omitido, objeto é um campo ou uma variável |
+| objeto | any | &#8594; | Nome de objeto (se * for especificado) ou<br/>Campo ou variável (se * for omitido) |
+| inicioSel | Integer | &#8594; | Inicio da seleção |
+| fimSel | Integer | &#8594; | Fim da seleção |
 | inicioBloq | Integer | &#8592; | Inicio de posição do primeiro tipo da seleção |
 | fimBloq | Integer | &#8592; | Fim de posição do primeiro tipo da seleção |
 | Resultado | Integer | &#8592; | Tipo de conteúdo |

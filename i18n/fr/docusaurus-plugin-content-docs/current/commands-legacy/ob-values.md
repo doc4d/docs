@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.OB Values.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| objet | Object | &#8594;  | Objet retournant les valeurs des propriétés |
+| objet | Object | &#8594; | Objet retournant les valeurs des propriétés |
 | Résultat | Collection | &#8592; | Collection de valeurs des propriétés (variant) |
 
 <!-- END REF-->

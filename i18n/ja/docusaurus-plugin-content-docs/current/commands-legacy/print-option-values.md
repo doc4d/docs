@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.PRINT OPTION VALUES.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| option | Integer | &#8594;  | オプション番号 |
+| option | Integer | &#8594; | オプション番号 |
 | namesArray | Text array | &#8592; | 値の名前 |
 | info1Array | Integer array | &#8592; | オプションの値(1) |
 | info2Array | Integer array | &#8592; | オプションの値(2) |

@@ -11,7 +11,7 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | profundidad | Integer | &#8592; | Profundidad de la pantalla (número de colores = 2 ^ profundidad) |
 | color | Integer | &#8592; | 1 = Pantalla color 0 = Pantalla blanco y negro o escala de grises |
-| pantalla | Integer | &#8594;  | Número de la pantalla, o pantalla principal si se omite |
+| pantalla | Integer | &#8594; | Número de la pantalla, o pantalla principal si se omite |
 
 <!-- END REF-->
 

@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.OBJECT Get value.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| objectName | Text | &#8594;  | オブジェクト名 |
+| objectName | Text | &#8594; | オブジェクト名 |
 | 戻り値 | any | &#8592; | フォームオブジェクトのデータソースのカレント値 |
 
 <!-- END REF-->

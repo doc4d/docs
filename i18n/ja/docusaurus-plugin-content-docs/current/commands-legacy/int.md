@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Int.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| number | Real | &#8594;  | 整数部を求める数値 |
+| number | Real | &#8594; | 整数部を求める数値 |
 | 戻り値 | Real | &#8592; | 整数部の数値 |
 
 <!-- END REF-->

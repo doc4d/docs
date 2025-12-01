@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.DOM Get parent XML element.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| refElemento | Text | &#8594;  | Referência de elemento XML |
+| refElemento | Text | &#8594; | Referência de elemento XML |
 | nomeElemPai | Text | &#8592; | Nome do elemento XML pai |
 | valorElemPai | Text | &#8592; | Valor do elemento XML pai |
 | Resultado | Text | &#8592; | Referencia do elemento XML pai |

@@ -9,10 +9,10 @@ displayed_sidebar: docs
 <!--REF #_command_.GENERATE CERTIFICATE REQUEST.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| cléPrivée | Blob | &#8594;  | BLOB contenant la clé privée |
+| cléPrivée | Blob | &#8594; | BLOB contenant la clé privée |
 | demCertif | Blob | &#8592; | BLOB devant recevoir la demande de certificat |
-| tabCodes | Integer array | &#8594;  | Liste des codes d’informations |
-| tabLibellés | Text array | &#8594;  | Liste des libellés d’informations |
+| tabCodes | Integer array | &#8594; | Liste des codes d’informations |
+| tabLibellés | Text array | &#8594; | Liste des libellés d’informations |
 
 <!-- END REF-->
 

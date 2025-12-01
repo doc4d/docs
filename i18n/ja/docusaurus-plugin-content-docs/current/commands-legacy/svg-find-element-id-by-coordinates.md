@@ -9,10 +9,10 @@ displayed_sidebar: docs
 <!--REF #_command_.SVG Find element ID by coordinates.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| * | 演算子 | &#8594;  | 指定時、pictureObjectはオブジェクト名 (文字列) 省略時、pictureObjectはフィールドまたは変数 |
-| pictureObject | Picture | &#8594;  | オブジェクト名 (* 指定時) または フィーウドまたは変数 (* 省略時) |
-| x | Integer | &#8594;  | X座標 (ピクセル) |
-| y | Integer | &#8594;  | Y座標 (ピクセル) |
+| * | 演算子 | &#8594; | 指定時、pictureObjectはオブジェクト名 (文字列) 省略時、pictureObjectはフィールドまたは変数 |
+| pictureObject | Picture | &#8594; | オブジェクト名 (* 指定時) または フィーウドまたは変数 (* 省略時) |
+| x | Integer | &#8594; | X座標 (ピクセル) |
+| y | Integer | &#8594; | Y座標 (ピクセル) |
 | 戻り値 | Text | &#8592; | X, Yの位置に見つかった要素のID |
 
 <!-- END REF-->

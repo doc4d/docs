@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.QR GET HEADER AND FOOTER.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| area | Integer | &#8594;  | Referência da área |
-| seletor | Integer | &#8594;  | 1= Cabeçalho, 2 = Rodapé |
+| area | Integer | &#8594; | Referência da área |
+| seletor | Integer | &#8594; | 1= Cabeçalho, 2 = Rodapé |
 | tituloEsq | Text | &#8592; | Título mostrado à esquerda |
 | tituloCentro | Text | &#8592; | Texto mostrado ao centro |
 | tituloDir | Text | &#8592; | Texto exibido à direita |

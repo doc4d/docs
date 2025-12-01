@@ -9,9 +9,9 @@ displayed_sidebar: docs
 <!--REF #_command_.SET TABLE TITLES.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| titulosTabela | Text array | &#8594;  | Nomes de tabela da maneira que aparecem na caixa de diálogo |
-| numTabelas | Integer array | &#8594;  | Número atual de tabela |
-| * | Operador | &#8594;  | Use os nomes personalizados no editor de fórmulas |
+| titulosTabela | Text array | &#8594; | Nomes de tabela da maneira que aparecem na caixa de diálogo |
+| numTabelas | Integer array | &#8594; | Número atual de tabela |
+| * | Operador | &#8594; | Use os nomes personalizados no editor de fórmulas |
 
 <!-- END REF-->
 

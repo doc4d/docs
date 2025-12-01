@@ -9,10 +9,10 @@ displayed_sidebar: docs
 <!--REF #_command_.LISTBOX INSERT ROWS.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| * | Operador | &#8594;  | Se especificado, objeto é um nome de objeto (string). Se omitido, objeto é uma variável |
-| objeto | any | &#8594;  | Nome objeto (se * for especificado) ou Variável (se * é omitido) |
-| posiçao | Integer | &#8594;  | Posição da fila a apagar |
-| numFilas | Integer | &#8594;  | Número de filas a inserir |
+| * | Operador | &#8594; | Se especificado, objeto é um nome de objeto (string). Se omitido, objeto é uma variável |
+| objeto | any | &#8594; | Nome objeto (se * for especificado) ou Variável (se * é omitido) |
+| posiçao | Integer | &#8594; | Posição da fila a apagar |
+| numFilas | Integer | &#8594; | Número de filas a inserir |
 
 <!-- END REF-->
 

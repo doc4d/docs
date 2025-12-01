@@ -11,7 +11,7 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | 4Dsignatures | Text array | &#8592; | データタイプの4D シグネチャ |
 | nativeTypes | Text array | &#8592; | ネイティブデータタイプ |
-| formatNames | Text array | &#8592; | フォーマット名|
+| formatNames | Text array | &#8592; | フォーマット名 |
 
 <!-- END REF-->
 

@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.GET TABLE PROPERTIES.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| PtrTabla&#124;numTabla | Puntero, Entero largo | &#8594;  | Puntero de tabla o número de tabla |
+| PtrTabla&#124;numTabla | Puntero, Entero largo | &#8594; | Puntero de tabla o número de tabla |
 | invisible | Boolean | &#8592; | True = Invisible, False = Visible |
 | trigGuardarNuevo | Boolean | &#8592; | True = Trigger “On saving new record” activado; de lo contrario, False |
 | trigGuardaReg | Boolean | &#8592; | True = Trigger “On saving an existing record” activado; de lo contrario, False |

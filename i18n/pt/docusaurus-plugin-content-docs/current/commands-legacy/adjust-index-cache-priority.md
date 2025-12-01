@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.ADJUST INDEX CACHE PRIORITY.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| Field | Field | &#8594;  | Campo cujos valores de prioridade índice serão ajustados |
-| prioridade | Integer | &#8594;  | Valor de prioridade de cache para campos índice |
+| Field | Field | &#8594; | Campo cujos valores de prioridade índice serão ajustados |
+| prioridade | Integer | &#8594; | Valor de prioridade de cache para campos índice |
 
 <!-- END REF-->
 

@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.QR Get info row.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| area | Integer | &#8594;  | Referencia del área creada |
-| linea | Integer | &#8594;  | Línea |
+| area | Integer | &#8594; | Referencia del área creada |
+| linea | Integer | &#8594; | Línea |
 | Resultado | Integer | &#8592; | 0 = visible, 1 = oculta |
 
 <!-- END REF-->

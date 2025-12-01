@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.SEND MESSAGE TO REMOTE USER.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| mensaje | Text | &#8594;  | Texto enviado al usuario |
-| sesionUsuario | Text | &#8594;  | ID de sesión del usuario |
+| mensaje | Text | &#8594; | Texto enviado al usuario |
+| sesionUsuario | Text | &#8594; | ID de sesión del usuario |
 
 <!-- END REF-->
 

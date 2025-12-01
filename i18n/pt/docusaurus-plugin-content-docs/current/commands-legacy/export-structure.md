@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
 | estruturaXML | Text | &#8592; | Exportação da definição XML da estrutura de banco de dados 4D |
-| formato | Text | &#8594;  | Formato de exportação: formato xml (padrão) ou formato html |
+| formato | Text | &#8594; | Formato de exportação: formato xml (padrão) ou formato html |
 
 <!-- END REF-->
 

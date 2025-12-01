@@ -9,9 +9,9 @@ displayed_sidebar: docs
 <!--REF #_command_.LOG EVENT.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| tipoSalida | Integer | &#8594;  | Tipo de salida del mensaje |
-| mensaje | Text | &#8594;  | Contenido del mensaje |
-| importancia | Integer | &#8594;  | Nivel de importancia del mensaje (sólo para Windows) |
+| tipoSalida | Integer | &#8594; | Tipo de salida del mensaje |
+| mensaje | Text | &#8594; | Contenido del mensaje |
+| importancia | Integer | &#8594; | Nivel de importancia del mensaje (sólo para Windows) |
 
 <!-- END REF-->
 

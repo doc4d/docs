@@ -9,9 +9,9 @@ displayed_sidebar: docs
 <!--REF #_command_.Delete string.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| source | Text | &#8594;  | Chaîne de départ |
-| positionDépart | Integer | &#8594;  | Premier caractère à supprimer |
-| nbCars | Integer | &#8594;  | Nombre de caractères à supprimer |
+| source | Text | &#8594; | Chaîne de départ |
+| positionDépart | Integer | &#8594; | Premier caractère à supprimer |
+| nbCars | Integer | &#8594; | Nombre de caractères à supprimer |
 | Résultat | Text | &#8592; | Chaîne résultante |
 
 <!-- END REF-->

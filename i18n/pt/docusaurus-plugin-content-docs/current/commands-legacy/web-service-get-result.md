@@ -10,8 +10,8 @@ displayed_sidebar: docs
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
 | valorRetornado | Variable | &#8592; | Valor retornado pelo Web Service |
-| nomeRetornado | Text | &#8594;  | Nome do parâmetro a ser retornado |
-| * | Operator |  &#8594;  | Liberar memória |
+| nomeRetornado | Text | &#8594; | Nome do parâmetro a ser retornado |
+| * | Operator | &#8594; | Liberar memória |
 
 <!-- END REF-->
 

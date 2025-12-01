@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.Create document.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| nomFichier | Text | &#8594;  | Nom de document ou Chemin d'accès complet de document ou Chaîne vide pour afficher la boîte de dialogue standard d'enregistrement de fichiers |
-| typeFichier | Text | &#8594;  | Liste des types de documents à filtrer, ou "*" pour ne pas filtrer les documents |
+| nomFichier | Text | &#8594; | Nom de document ou Chemin d'accès complet de document ou Chaîne vide pour afficher la boîte de dialogue standard d'enregistrement de fichiers |
+| typeFichier | Text | &#8594; | Liste des types de documents à filtrer, ou "*" pour ne pas filtrer les documents |
 | Résultat | Time | &#8592; | Numéro de référence du document |
 
 <!-- END REF-->

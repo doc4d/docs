@@ -9,9 +9,9 @@ displayed_sidebar: docs
 <!--REF #_command_.Max.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| series | Field, Array | &#8594;  | 最大値を求めるデータ |
-| attributePath | Text | &#8594;  | 最大値を取得したい属性のパス |
-| 戻り値 | Number, Date | &#8592; | series中の最大値 |
+| series | Field, Array | &#8594; | 最大値を求めるデータ |
+| attributePath | Text | &#8594; | 最大値を取得したい属性のパス |
+| 戻り値 | Date, Real | &#8592; | series中の最大値 |
 
 <!-- END REF-->
 

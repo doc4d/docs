@@ -9,13 +9,11 @@ displayed_sidebar: docs
 <!--REF #_command_.HTTP Get.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| url | Text | &#8594;  | URL ao qual enviar o pedido |
+| url | Text | &#8594; | URL ao qual enviar o pedido |
 | resposta | Text, Blob, Picture, Object | &#8592; | Resposta da solicitação |
-| nomesCab | Text array | &#8594;  | Nomes dos cabeçalhos da solicitação |
-| &#8592; | Nomes dos cabeçalhos devolvidos |
-| valoresCab | Text array | &#8594;  | Valores dos cabeçalhos da solicitação |
-| &#8592; | Valores dos cabeçalhos devolvidos |
-| * | Operador | &#8594;  | Se passado, a conexão se mantém (keep-alive)Se omitida,a conexão é fechada automaticamente |
+| nomesCab | Text array | &#8596; | *in:* Header names of the request<br/> *out:* Returned header names |
+| valoresCab | Text array | &#8596; | *in:* Header values of the request<br/> *out:* Returned header values |
+| * | Operador | &#8594; | Se passado, a conexão se mantém (keep-alive)Se omitida,a conexão é fechada automaticamente |
 | Resultado | Integer | &#8592; | Código de estado HTTP |
 
 <!-- END REF-->

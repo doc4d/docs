@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.MAXIMIZE WINDOW.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| janela | Integer | &#8594;  | Número de referência da janela ou se for omitido, todos os processos atuais de janela de primeiro plano; ou processo atual da janela de primeiro plano (macOS) |
+| janela | Integer | &#8594; | Número de referência da janela ou se for omitido, todos os processos atuais de janela de primeiro plano; ou processo atual da janela de primeiro plano (macOS) |
 
 <!-- END REF-->
 

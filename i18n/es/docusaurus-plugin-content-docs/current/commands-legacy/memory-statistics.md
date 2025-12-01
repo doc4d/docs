@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.MEMORY STATISTICS.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| tipoInfo | Integer | &#8594;  | Selector de información a obtener |
+| tipoInfo | Integer | &#8594; | Selector de información a obtener |
 | arrayNombres | Text array | &#8592; | Títulos de la información |
 | arrayValores | Real array | &#8592; | Valores de la información |
 | ArrayContador | Real array | &#8592; | Número de objetos respectivos (si disponible) |

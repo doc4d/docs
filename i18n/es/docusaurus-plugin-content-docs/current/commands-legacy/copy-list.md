@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Copy list.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| lista | Integer | &#8594;  | Número de referencia de la lista a copiar |
+| lista | Integer | &#8594; | Número de referencia de la lista a copiar |
 | Resultado | Integer | &#8592; | Número de referencia de la nueva lista |
 
 <!-- END REF-->

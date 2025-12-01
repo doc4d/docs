@@ -9,10 +9,10 @@ displayed_sidebar: docs
 <!--REF #_command_.WA GET URL HISTORY.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| * | Opérateur | &#8594;  | Si spécifié, objet est un nom d'objet (chaîne) Si omis, objet est une variable |
-| objet | any | &#8594;  | Nom d'objet (si * est spécifié) ou Variable (si * est omis) |
+| * | Opérateur | &#8594; | Si spécifié, objet est un nom d'objet (chaîne) Si omis, objet est une variable |
+| objet | any | &#8594; | Nom d'objet (si * est spécifié) ou Variable (si * est omis) |
 | tabsUrls | Text array | &#8592; | Tableau des URLs visités |
-| sens | Integer | &#8594;  | 0 ou omis=Liste des URLs précédents, 1=Liste des URLs suivants |
+| sens | Integer | &#8594; | 0 ou omis=Liste des URLs précédents, 1=Liste des URLs suivants |
 | tabTitres | Text array | &#8592; | Tableau des titres de fenêtres |
 
 <!-- END REF-->

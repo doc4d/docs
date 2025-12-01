@@ -9,9 +9,9 @@ displayed_sidebar: docs
 <!--REF #_command_.DOCUMENT LIST.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| pathname | Text | &#8594;  | ボリューム、ディレクトリ、またはフォルダーへのパス名 |
+| pathname | Text | &#8594; | ボリューム、ディレクトリ、またはフォルダーへのパス名 |
 | documents | Text array | &#8592; | この場所にあるドキュメントの名前 |
-| options | Integer | &#8594;  | 取得するリストを指定するオプション |
+| options | Integer | &#8594; | 取得するリストを指定するオプション |
 
 <!-- END REF-->
 

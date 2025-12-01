@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.GET USER PROPERTIES.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| refUsuario | Integer | &#8594;  | Nº de referência de usuário |
+| refUsuario | Integer | &#8594; | Nº de referência de usuário |
 | nome | Text | &#8592; | Nome de usuário |
 | inicio | Text | &#8592; | Nome de método de início |
 | senha | Text | &#8592; | Sempre é uma cadeia vazia |

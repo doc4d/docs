@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Date.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| dataCadeia | Text, Date | &#8594;  | Cadeia que contém a data a resolver |
+| dataCadeia | Text, Date | &#8594; | Cadeia que contém a data a resolver |
 | Resultado | Date | &#8592; | Data |
 
 <!-- END REF-->

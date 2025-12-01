@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.CLEAR SEMAPHORE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| semaforo | Text | &#8594;  | Semáforo a borrar |
+| semaforo | Text | &#8594; | Semáforo a borrar |
 
 <!-- END REF-->
 

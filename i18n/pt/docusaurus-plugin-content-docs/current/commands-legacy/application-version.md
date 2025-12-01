@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
 | buildNum | Integer | &#8592; | Número de build |
-| * | Operador | &#8594;  | Se passar número de versão longo, caso contrário número de versão curto |
+| * | Operador | &#8594; | Se passar número de versão longo, caso contrário número de versão curto |
 | Resultado | Text | &#8592; | Número de versão em uma string codificada |
 
 <!-- END REF-->

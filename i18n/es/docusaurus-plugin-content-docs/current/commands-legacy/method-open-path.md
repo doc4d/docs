@@ -9,9 +9,9 @@ displayed_sidebar: docs
 <!--REF #_command_.METHOD OPEN PATH.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| ruta | Text | &#8594;  | Ruta del método a abrir |
-| line | Number | &#8594;  | Line number |
-| * | Operador | &#8594;  | Si se pasa = el comando se aplica a la base local cuando se ejecuta desde un componente(parámetro ignorado fuera de este contexto) |
+| ruta | Text | &#8594; | Ruta del método a abrir |
+| line | Real | &#8594; | Line number |
+| * | Operador | &#8594; | Si se pasa = el comando se aplica a la base local cuando se ejecuta desde un componente(parámetro ignorado fuera de este contexto) |
 
 <!-- END REF-->
 

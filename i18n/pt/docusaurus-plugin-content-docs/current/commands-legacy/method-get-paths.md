@@ -9,12 +9,11 @@ displayed_sidebar: docs
 <!--REF #_command_.METHOD GET PATHS.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| nomPasta | Text | &#8594;  | Nome da página da pasta de inicio |
-| tipoMetodo | Integer | &#8594;  | Seletor de tipo de método a recuperar |
+| nomPasta | Text | &#8594; | Nome da página da pasta de inicio |
+| tipoMetodo | Integer | &#8594; | Seletor de tipo de método a recuperar |
 | arrRotas | Text array | &#8592; | Arrays de rotas e nomes dos métodos |
-| marcador | Real | &#8594;  | Valor mínimo de marcador |
-| &#8592; | Novo valor atual |
-| * | Operador | &#8594;  | Se passado = o comando se aplica à base local quando se executa desde um componente (parâmetro ignorado fora deste contexto) |
+| marcador | Real | &#8596; | *in:* Minimum value of stamp<br/>*out:* New current value |
+| * | Operador | &#8594; | Se passado = o comando se aplica à base local quando se executa desde um componente (parâmetro ignorado fora deste contexto) |
 
 <!-- END REF-->
 

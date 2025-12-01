@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.VOLUME ATTRIBUTES.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| volumen | Text | &#8594;  | Nombre del volumen |
+| volumen | Text | &#8594; | Nombre del volumen |
 | tamaño | Real | &#8592; | Tamaño del volumen expresado en bytes |
 | utilizado | Real | &#8592; | Espacio utilizado expresado en bytes |
 | libre | Real | &#8592; | Espacio libre expresado en bytes |

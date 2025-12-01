@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
 | janelas | Array | &#8592; | Array de números de referência de janelas |
-| * | Operador | &#8594;  | Se especificado, considere janela flutuante, se omitido, ignore janela flutuante |
+| * | Operador | &#8594; | Se especificado, considere janela flutuante, se omitido, ignore janela flutuante |
 
 <!-- END REF-->
 

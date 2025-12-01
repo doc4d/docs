@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.OB Entries.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| objeto | Object | &#8594;  | Objeto para devolver contenidos |
+| objeto | Object | &#8594; | Objeto para devolver contenidos |
 | Resultado | Collection | &#8592; | Colección de objetos con propiedades llave/valor |
 
 <!-- END REF-->

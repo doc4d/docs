@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Current user.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| user | Integer | &#8594;  | ユーザーエイリアスまたは4Dユーザーアカウント |
+| user | Integer | &#8594; | ユーザーエイリアスまたは4Dユーザーアカウント |
 | 戻り値 | Text | &#8592; | カレントユーザのユーザ名 |
 
 <!-- END REF-->

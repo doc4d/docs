@@ -11,7 +11,7 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | chavPriv | Blob | &#8592; | BLOB que contém a chave privada |
 | chavPublica | Blob | &#8592; | BLOB que contém a chave pública |
-| tamanho | Integer | &#8594;  | Tamanho da chave (bits) [512...2048]. O valor normal é  512 |
+| tamanho | Integer | &#8594; | Tamanho da chave (bits) [512...2048]. O valor normal é  512 |
 
 <!-- END REF-->
 

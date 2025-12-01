@@ -11,7 +11,7 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | assinaturas4D | Text array | &#8592; | Assinaturas 4D de tipos de dados |
 | tiposNativos | Text array | &#8592; | Tipos de dados nativos |
-| nomesFormatos | Text array | &#8592; | Nomes de formato|
+| nomesFormatos | Text array | &#8592; | Nomes de formato |
 
 <!-- END REF-->
 

@@ -13,7 +13,7 @@ displayed_sidebar: docs
 | top | Integer | &#8592; | ウィンドウの内容領域の上座標 |
 | right | Integer | &#8592; | ウィンドウの内容領域の右座標 |
 | bottom | Integer | &#8592; | ウィンドウの内容領域の下座標 |
-| window | Integer | &#8594;  | ウィンドウ参照番号, または 省略時はカレントプロセスの最前面ウィンドウ, または -1のときはMDIウィンドウ (Windows) |
+| window | Integer | &#8594; | ウィンドウ参照番号, または 省略時はカレントプロセスの最前面ウィンドウ, または -1のときはMDIウィンドウ (Windows) |
 
 <!-- END REF-->
 

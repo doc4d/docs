@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.GET MACRO PARAMETER.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| selector | Integer | &#8594;  | 使用するセレクション |
+| selector | Integer | &#8594; | 使用するセレクション |
 | textParam | Text | &#8592; | 返されたテキスト |
 
 <!-- END REF-->

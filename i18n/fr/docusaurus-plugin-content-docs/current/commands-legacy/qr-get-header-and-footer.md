@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.QR GET HEADER AND FOOTER.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| zone | Integer | &#8594;  | Référence de la zone |
-| sélecteur | Integer | &#8594;  | 1 = En-tête, 2 = Pied de page |
+| zone | Integer | &#8594; | Référence de la zone |
+| sélecteur | Integer | &#8594; | 1 = En-tête, 2 = Pied de page |
 | titreGauche | Text | &#8592; | Texte affiché sur le côté gauche |
 | titreCentre | Text | &#8592; | Texte affiché au centre |
 | titreDroit | Text | &#8592; | Texte affiché sur le côté droit |

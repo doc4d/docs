@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.LOCKED BY.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| aTable | Table | &#8594;  | レコードロックをテストするテーブル, または 省略時、デフォルトテーブル |
+| aTable | Table | &#8594; | レコードロックをテストするテーブル, または 省略時、デフォルトテーブル |
 | process | Integer | &#8592; | プロセス参照番号 |
 | 4Duser | Text | &#8592; | 4Dユーザ名 |
 | sessionUser | Text | &#8592; | ワークセッションを開いているユーザ |

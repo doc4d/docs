@@ -9,9 +9,9 @@ displayed_sidebar: docs
 <!--REF #_command_.QR GET TOTALS DATA.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| zone | Integer | &#8594;  | Référence de la zone |
-| numColonne | Integer | &#8594;  | Numéro de colonne |
-| numRupture | Integer | &#8594;  | Numéro de rupture |
+| zone | Integer | &#8594; | Référence de la zone |
+| numColonne | Integer | &#8594; | Numéro de colonne |
+| numRupture | Integer | &#8594; | Numéro de rupture |
 | opérateur | Integer | &#8592; | Opérateur de la cellule |
 | texte | Text | &#8592; | Contenu de la cellule |
 

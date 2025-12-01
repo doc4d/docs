@@ -9,11 +9,10 @@ displayed_sidebar: docs
 <!--REF #_command_.GET RESOURCE.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| resType | Text | &#8594;  | Type de ressource (4 caractères) |
-| resNum | Integer | &#8594;  | Numéro de ressource |
-| resDonnées | Blob | &#8594;  | Champ ou variable BLOB devant recevoir les données |
-| &#8592; | Contenu de la ressource |
-| resFichier | Time | &#8594;  | Numéro de référence de fichier de ressources ou Tous les fichiers de ressources ouverts si omis |
+| resType | Text | &#8594; | Type de ressource (4 caractères) |
+| resNum | Integer | &#8594; | Numéro de ressource |
+| resDonnées | Blob | &#8596; | *in:* BLOB field or variable to receive the data <br/>*out:* Contents of the resource |
+| resFichier | Time | &#8594; | Numéro de référence de fichier de ressources ou Tous les fichiers de ressources ouverts si omis |
 
 <!-- END REF-->
 

@@ -9,11 +9,11 @@ displayed_sidebar: docs
 <!--REF #_command_.OBJECT SET SUBFORM.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| * | Operador | &#8594;  | Se especificado, objeto é um nome de objeto (cadeia)Se omitido, objeto é uma variável |
-| objeto | any | &#8594;  | Nome de objeto (se especificado *) ou Variável (se omitido *) |
-| aTable | Table | &#8594;  | Tabela de formulário (se tabela de formulário) |
-| subFormDet | Text, Object | &#8594;  | Nome do formulário detalhado de sub-formulário |
-| subFormList | Text, Object | &#8594;  | Nome do formulário listado de sub-formulário (formulário tabela) |
+| * | Operador | &#8594; | Se especificado, objeto é um nome de objeto (cadeia)Se omitido, objeto é uma variável |
+| objeto | any | &#8594; | Nome de objeto (se especificado *) ou Variável (se omitido *) |
+| aTable | Table | &#8594; | Tabela de formulário (se tabela de formulário) |
+| subFormDet | Text, Object | &#8594; | Nome do formulário detalhado de sub-formulário |
+| subFormList | Text, Object | &#8594; | Nome do formulário listado de sub-formulário (formulário tabela) |
 
 <!-- END REF-->
 

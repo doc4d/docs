@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.GET RELATION PROPERTIES.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| ptrCamp&#124;numTabla | Puntero, Entero largo | &#8594;  | Puntero de campo o número de tabla |
-| numCamp | Integer | &#8594;  | Número de campo si se pasa un número de tabla  como primer parámetro |
+| ptrCamp&#124;numTabla | Puntero, Entero largo | &#8594; | Puntero de campo o número de tabla |
+| numCamp | Integer | &#8594; | Número de campo si se pasa un número de tabla  como primer parámetro |
 | tablaUno | Integer | &#8592; | Número de la tabla Uno ó 0 si no se define  ninguna relación desde el campo |
 | campUno | Integer | &#8592; | Número de campo Uno ó 0 si no se define  ninguna relación desde el campo |
 | discriminante | Integer | &#8592; | Número de campo discriminante o 0 si ningún campo discriminante |

@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.PICTURE PROPERTIES.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| imagem | Picture | &#8594;  | Imagem para a qual conseguir informação |
+| imagem | Picture | &#8594; | Imagem para a qual conseguir informação |
 | largura | Real | &#8592; | Largura da imagem expressa em pixels |
 | altura | Real | &#8592; | Altura da imagem expressa em pixels |
 | hDesp | Integer | &#8592; | Offset horizontal quando a imagem é exibida no segundo plano |

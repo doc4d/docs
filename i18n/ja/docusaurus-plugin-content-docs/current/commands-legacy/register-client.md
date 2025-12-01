@@ -19,7 +19,7 @@ displayed_sidebar: docs
 <!--REF #_command_.REGISTER CLIENT.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| clientName | Text | &#8594;  | 4Dクライアントセッション名 |
+| clientName | Text | &#8594; | 4Dクライアントセッション名 |
 
 <!-- END REF-->
 

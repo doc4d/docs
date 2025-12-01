@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.QR GET SELECTION.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| zone | Integer | &#8594;  | Référence de la zone |
+| zone | Integer | &#8594; | Référence de la zone |
 | gauche | Integer | &#8592; | Limite gauche |
 | haut | Integer | &#8592; | Limite supérieure |
 | droite | Integer | &#8592; | Limite droite |

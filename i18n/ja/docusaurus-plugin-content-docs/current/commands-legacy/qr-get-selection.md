@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.QR GET SELECTION.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| area | Integer | &#8594;  | エリア参照 |
+| area | Integer | &#8594; | エリア参照 |
 | left | Integer | &#8592; | 左境界 |
 | top | Integer | &#8592; | 上境界 |
 | right | Integer | &#8592; | 右境界 |

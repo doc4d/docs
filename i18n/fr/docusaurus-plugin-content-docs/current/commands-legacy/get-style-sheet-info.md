@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.GET STYLE SHEET INFO.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| nomFeuilleStyle | Text | &#8594;  | Nom de la feuille de style |
+| nomFeuilleStyle | Text | &#8594; | Nom de la feuille de style |
 | police | Text | &#8592; | Police de caractères |
 | taille | Integer | &#8592; | Taille de police |
 | styles | Integer | &#8592; | Valeur de style |

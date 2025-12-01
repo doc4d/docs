@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.GET TABLE PROPERTIES.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| ponTabela&#124;NumTabela | Ponteiro, Inteiro longo | &#8594;  | Ponteiro de tabela ou número de tabela |
+| ponTabela&#124;NumTabela | Ponteiro, Inteiro longo | &#8594; | Ponteiro de tabela ou número de tabela |
 | invisivel | Boolean | &#8592; | True = invisível, False = visível |
 | trigSalvarNovo | Boolean | &#8592; | True = Trigger "On saving new record" ativado; senão, False |
 | trigSalvarRegistro | Boolean | &#8592; | True = Trigger "On saving an existing record" ativado; senão, False |

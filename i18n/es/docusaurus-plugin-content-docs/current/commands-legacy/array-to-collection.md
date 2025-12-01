@@ -10,8 +10,8 @@ displayed_sidebar: docs
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
 | coleccion | Collection | &#8592; | Colección a recibir los datos del array |
-| array | Array | &#8594;  | Array a copiar a la colección; si se pasó nombreProp, array a copiar a los valores de nombreProp en la colección. |
-| nombreProp | Text | &#8594;  | Nombre de la propiedad del objeto cuyo valor llenar con elementos del array |
+| array | Array | &#8594; | Array a copiar a la colección; si se pasó nombreProp, array a copiar a los valores de nombreProp en la colección. |
+| nombreProp | Text | &#8594; | Nombre de la propiedad del objeto cuyo valor llenar con elementos del array |
 
 <!-- END REF-->
 

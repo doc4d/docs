@@ -9,9 +9,9 @@ displayed_sidebar: docs
 <!--REF #_command_.QR GET TOTALS DATA.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| area | Integer | &#8594;  | Referencia del área |
-| numColumna | Integer | &#8594;  | Número de columna |
-| numRuptura | Integer | &#8594;  | Número de ruptura |
+| area | Integer | &#8594; | Referencia del área |
+| numColumna | Integer | &#8594; | Número de columna |
+| numRuptura | Integer | &#8594; | Número de ruptura |
 | operador | Integer | &#8592; | Operador de la celda |
 | texto | Text | &#8592; | Contenido de la celda |
 

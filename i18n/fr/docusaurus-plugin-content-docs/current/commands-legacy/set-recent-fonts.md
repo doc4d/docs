@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.SET RECENT FONTS.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| tabPolices | Text array | &#8594;  | Tableau de noms de polices |
+| tabPolices | Text array | &#8594; | Tableau de noms de polices |
 
 <!-- END REF-->
 

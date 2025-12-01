@@ -11,7 +11,7 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | profondeur | Integer | &#8592; | Profondeur de l'écran (nombre de couleurs = 2 ^ profondeur) |
 | couleur | Integer | &#8592; | 1 = écran couleur 0 = écran noir et blanc ou niveaux de gris |
-| écran | Integer | &#8594;  | Numéro de l'écran ou écran principal si omis |
+| écran | Integer | &#8594; | Numéro de l'écran ou écran principal si omis |
 
 <!-- END REF-->
 

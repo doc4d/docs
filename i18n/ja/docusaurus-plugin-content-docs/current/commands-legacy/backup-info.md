@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.BACKUP INFO.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| selector | Integer | &#8594;  | 取得する情報のタイプ |
+| selector | Integer | &#8594; | 取得する情報のタイプ |
 | info1 | Integer, Date | &#8592; | セレクタの値1 |
 | info2 | Time, Text | &#8592; | セレクタの値2 |
 

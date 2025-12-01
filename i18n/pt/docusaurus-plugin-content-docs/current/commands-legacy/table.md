@@ -9,9 +9,9 @@ displayed_sidebar: docs
 <!--REF #_command_.Table.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| numTabela | Integer | &#8594;  | Número de tabela |
-| ptrTabela | Pointer | &#8594;  | Ponteiro de Tabela |
-| ptrCampo | Pointer | &#8594;  | Ponteiro de Campo |
+| numTabela | Integer | &#8594; | Número de tabela |
+| ptrTabela | Pointer | &#8594; | Ponteiro de Tabela |
+| ptrCampo | Pointer | &#8594; | Ponteiro de Campo |
 | Resultado | any | &#8592; | Ponteiro tabela, se um número de tabela for passado<br/>Número de tabela, se um ponteiro de tabela ou um ponteiro de Campo for passado |
 
 <!-- END REF-->

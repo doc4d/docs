@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.QR GET INFO COLUMN.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| area | Integer | &#8594;  | エリア参照 |
-| colNum | Integer | &#8594;  | カラム番号 |
+| area | Integer | &#8594; | エリア参照 |
+| colNum | Integer | &#8594; | カラム番号 |
 | title | Text | &#8592; | カラムタイトル |
 | object | Text | &#8592; | カラムに割り当てられたオブジェクト |
 | hide | Integer | &#8592; | 0 = 表示, 1 = 非表示 |

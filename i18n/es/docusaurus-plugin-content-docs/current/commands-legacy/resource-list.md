@@ -9,10 +9,10 @@ displayed_sidebar: docs
 <!--REF #_command_.RESOURCE LIST.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| resTipo | Text | &#8594;  | Tipo de recurso (4 caracteres) |
+| resTipo | Text | &#8594; | Tipo de recurso (4 caracteres) |
 | resNums | Integer array | &#8592; | Números de recursos de este tipo |
 | resNoms | Text array | &#8592; | Nombres de los recursos de este tipo |
-| resArchivo | Time | &#8594;  | Número de referencia del archivo de recursos o Todos los archivos de recursos abiertos, si se omite |
+| resArchivo | Time | &#8594; | Número de referencia del archivo de recursos o Todos los archivos de recursos abiertos, si se omite |
 
 <!-- END REF-->
 
