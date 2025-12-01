@@ -194,7 +194,7 @@ El archivo `roles.json` describe todos los parámetros de seguridad web del proy
 
 :::
 
-### Default File Location and Content
+### Ubicación y contenido del archivo por defecto
 
 Cuando se crea un nuevo proyecto, se genera un archivo `roles.json` por defecto en:
 
@@ -244,7 +244,7 @@ In Qodly Studio for 4D, the login mode can be set using the [**Force login** opt
 
 :::
 
-## Restriction Modes
+## Modos de restricción
 
 The `restrictedByDefault` property configures how every [resource](#resources) are accessed when [no specific permission is defined for it](#permission):
 
