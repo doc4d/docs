@@ -46,7 +46,7 @@ API 参照: <https://platform.openai.com/docs/api-reference/files>
 
 #### ファイルフォーマットの要件
 
-- **Fine-tuning API:** Only supports `.jsonl` files with specific required formats
+- **微調整API:** 特定のフォーマットを持つ `.jsonl` ファイルのみがサポートされます
 - **Batch API:** Only supports `.jsonl` files up to 200 MB with specific required format
 - **Assistants API:** Supports specific file types (see Assistants Tools guide)
 - **Chat Completions API:** PDFs are only supported
