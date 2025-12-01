@@ -12,7 +12,7 @@ displayed_sidebar: docs
 | tableNum | Integer | &#8594;  | Table number |
 | tablePtr | Pointer | &#8594;  | Table pointer |
 | fieldPtr | Pointer | &#8594;  | Field pointer |
-| Function result | Pointer, Number | &#8592; | Table pointer, if a Table number is passed<br/>Table number if a Table pointer or a Field pointer is passed|
+| Function result | Pointer, Integer | &#8592; | Table pointer, if a Table number is passed<br/>Table number if a Table pointer or a Field pointer is passed|
 
 <!-- END REF-->
 
