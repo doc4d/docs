@@ -11,7 +11,7 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | cléPrivée | Blob | &#8592; | BLOB devant recevoir la clé privée |
 | cléPublique | Blob | &#8592; | BLOB devant recevoir la clé publique |
-| longueur | Integer | &#8594;  | Longueur des clés en bits [512...2048] Par défaut = 512 |
+| longueur | Integer | &#8594; | Longueur des clés en bits [512...2048] Par défaut = 512 |
 
 <!-- END REF-->
 

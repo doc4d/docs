@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.OBJECT Get enabled.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| * | Operador | &#8594;  | Se especificado, objeto é um nome de objeto (string) se omitido, objeto é uma variável |
-| objeto | any | &#8594;  | Object name (if * is specified) or <br/>Variable (if * is omitted) |
+| * | Operador | &#8594; | Se especificado, objeto é um nome de objeto (string) se omitido, objeto é uma variável |
+| objeto | any | &#8594; | Object name (if * is specified) or <br/>Variable (if * is omitted) |
 | Resultado | Boolean | &#8592; | True = objeto ativado: ou então é falso |
 
 <!-- END REF-->

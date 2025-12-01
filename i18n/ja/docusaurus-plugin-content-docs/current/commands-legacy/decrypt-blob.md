@@ -10,9 +10,9 @@ displayed_sidebar: docs
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
 | toDecrypt | Blob | &#8596; | 復号するデータ |
-||| | 複合されたデータ |
-| sendPubKey | Blob | &#8594;  | 送信者の公開鍵 |
-| recipPrivKey | Blob | &#8594;  | 受信者の秘密鍵 |
+|  |  |  | 複合されたデータ |
+| sendPubKey | Blob | &#8594; | 送信者の公開鍵 |
+| recipPrivKey | Blob | &#8594; | 受信者の秘密鍵 |
 
 <!-- END REF-->
 

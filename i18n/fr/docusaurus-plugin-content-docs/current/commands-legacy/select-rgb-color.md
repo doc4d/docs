@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.Select RGB color.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| coulDefaut | Integer | &#8594;  | Couleur RVB présélectionnée |
-| message | Text | &#8594;  | Titre de la fenêtre de sélection |
+| coulDefaut | Integer | &#8594; | Couleur RVB présélectionnée |
+| message | Text | &#8594; | Titre de la fenêtre de sélection |
 | Résultat | Integer | &#8592; | Couleur RVB |
 
 <!-- END REF-->

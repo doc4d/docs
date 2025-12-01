@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.QR GET HEADER AND FOOTER.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| area | Integer | &#8594;  | エリア参照 |
-| selector | Integer | &#8594;  | 1 = ヘッダ, 2 = フッタ |
+| area | Integer | &#8594; | エリア参照 |
+| selector | Integer | &#8594; | 1 = ヘッダ, 2 = フッタ |
 | leftTitle | Text | &#8592; | 左側に表示されるテキスト |
 | centerTitle | Text | &#8592; | 中央に表示されるテキスト |
 | rightTitle | Text | &#8592; | 右側に表示されるテキスト |

@@ -13,7 +13,7 @@ displayed_sidebar: docs
 | superior | Integer | &#8592; | Coordenada superior da área de conteúdo da janela |
 | direita | Integer | &#8592; | Coordenada direita da área de conteúdo da janela |
 | inferior | Integer | &#8592; | Coordenada inferior da área de conteúdo da janela |
-| janela | Integer | &#8594;  | Número de referência de janela; ou janela do primeiro plano do processo atual, se omitido; ou janela MDI se for -1 (Windows) |
+| janela | Integer | &#8594; | Número de referência de janela; ou janela do primeiro plano do processo atual, se omitido; ou janela MDI se for -1 (Windows) |
 
 <!-- END REF-->
 

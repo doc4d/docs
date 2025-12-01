@@ -12,7 +12,7 @@ displayed_sidebar: docs
 <!--REF #_command_.PHP GET OPTION.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| option | Integer | &#8594;  | Option à lire |
+| option | Integer | &#8594; | Option à lire |
 | valeur | Boolean | &#8592; | Valeur courante de l’option |
 
 <!-- END REF-->

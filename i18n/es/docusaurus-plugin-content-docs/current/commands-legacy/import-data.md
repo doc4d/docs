@@ -9,10 +9,9 @@ displayed_sidebar: docs
 <!--REF #_command_.IMPORT DATA.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| nomArchivo | Text | &#8594;  | Ruta de acceso y nombre del archivo a importar |
-| proyecto | Text, Blob | &#8594;  | Contenido del proyecto de importación |
-| &#8592; | Nuevo contenido del proyecto de importación (si se  pasa el parámetro *) |
-| * | Operador | &#8594;  | Visualización de la caja de diálogo de importación y actualización del proyecto |
+| nomArchivo | Text | &#8594; | Ruta de acceso y nombre del archivo a importar |
+| proyecto | Text, Blob | &#8596; | *in:* Contents of the import project<br/> *out:* New contents of the import project (if the * parameter has been passed) |
+| * | Operador | &#8594; | Visualización de la caja de diálogo de importación y actualización del proyecto |
 
 <!-- END REF-->
 

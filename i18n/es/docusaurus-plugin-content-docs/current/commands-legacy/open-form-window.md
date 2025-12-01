@@ -9,12 +9,12 @@ displayed_sidebar: docs
 <!--REF #_command_.Open form window.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| tabla | Table | &#8594;  | Tabla del formulario o tabla por defecto, si se omite |
-| nomForm | Text, Object | &#8594;  | Nombre del formulario |
-| tipo | Integer | &#8594;  | Tipo de la ventana |
-| posH | Integer | &#8594;  | Posición horizontal de la ventana |
-| posV | Integer | &#8594;  | Posición vertical de la ventana |
-| * | Operador | &#8594;  | Conservar la posición actual y el tamaño de la ventana |
+| tabla | Table | &#8594; | Tabla del formulario o tabla por defecto, si se omite |
+| nomForm | Text, Object | &#8594; | Nombre del formulario |
+| tipo | Integer | &#8594; | Tipo de la ventana |
+| posH | Integer | &#8594; | Posición horizontal de la ventana |
+| posV | Integer | &#8594; | Posición vertical de la ventana |
+| * | Operador | &#8594; | Conservar la posición actual y el tamaño de la ventana |
 | Resultado | Integer | &#8592; | Número de referencia de la ventana |
 
 <!-- END REF-->

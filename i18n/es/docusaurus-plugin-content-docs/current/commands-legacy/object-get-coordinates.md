@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.OBJECT GET COORDINATES.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| * | Operador | &#8594;  | Si se especifica, objeto es el nombre del objeto (cadena) Si se omite, objeto es una variable |
-| objeto | any | &#8594;  | Nombre de objeto (si se especifica *), o Campo o variable (si se omite *) |
+| * | Operador | &#8594; | Si se especifica, objeto es el nombre del objeto (cadena) Si se omite, objeto es una variable |
+| objeto | any | &#8594; | Nombre de objeto (si se especifica *), o Campo o variable (si se omite *) |
 | izquierdo | Integer | &#8592; | Coordenada izquierada del objeto |
 | superior | Integer | &#8592; | Coordenada superior del objeto |
 | derecho | Integer | &#8592; | Coordenada derecha del objeto |

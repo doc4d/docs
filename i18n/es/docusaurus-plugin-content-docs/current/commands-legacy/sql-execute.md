@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.SQL EXECUTE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| instruccionSQL | Text | &#8594;  | Comando SQL a ejecutar |
+| instruccionSQL | Text | &#8594; | Comando SQL a ejecutar |
 | objAsoc | Variable, Field | &#8592; | Recibe el resultado (si es necesario) |
 
 <!-- END REF-->

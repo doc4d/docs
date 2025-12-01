@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
 | structureXML | Text | &#8592; | Export de la définition XML de la structure de la base 4D |
-| format | Text | &#8594;  | Export format: xml format (default) or html format |
+| format | Text | &#8594; | Export format: xml format (default) or html format |
 
 <!-- END REF-->
 

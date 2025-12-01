@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Size of array.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| array | Array | &#8594;  | Array cujo tamanho é retornado |
+| array | Array | &#8594; | Array cujo tamanho é retornado |
 | Resultado | Integer | &#8592; | Retorna o número de elementos no array |
 
 <!-- END REF-->

@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.DISTINCT ATTRIBUTE PATHS.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| champObjet | Field | &#8594;  | Champ objet indexé |
+| champObjet | Field | &#8594; | Champ objet indexé |
 | tabChemins | Text array | &#8592; | Tableau devant recevoir les chemins d'attributs du champ |
 
 <!-- END REF-->

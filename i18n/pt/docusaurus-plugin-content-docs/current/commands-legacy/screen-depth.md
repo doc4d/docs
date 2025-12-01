@@ -11,7 +11,7 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | profundidade | Integer | &#8592; | Profundidade da tela (número de cores = 2 ^ profundidade) |
 | cor | Integer | &#8592; | 1 = Tela cor 0 = Tela branco e preto ou escala de cinzas |
-| tela | Integer | &#8594;  | Número da tela, ou tela principal se omitida |
+| tela | Integer | &#8594; | Número da tela, ou tela principal se omitida |
 
 <!-- END REF-->
 

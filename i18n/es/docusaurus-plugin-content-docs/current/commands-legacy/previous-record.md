@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.PREVIOUS RECORD.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| tabla | Table | &#8594;  | Tabla en la cual mover el registro anterior de la selección actual o Tabla por defecto, si se omite |
+| tabla | Table | &#8594; | Tabla en la cual mover el registro anterior de la selección actual o Tabla por defecto, si se omite |
 
 <!-- END REF-->
 

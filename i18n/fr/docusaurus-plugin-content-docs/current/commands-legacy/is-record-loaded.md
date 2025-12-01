@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Is record loaded.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| laTable | Table | &#8594;  | Table de l’enregistrement à examiner ou Table par défaut si ce paramètre est omis |
+| laTable | Table | &#8594; | Table de l’enregistrement à examiner ou Table par défaut si ce paramètre est omis |
 | Résultat | Boolean | &#8592; | Vrai si l’enregistrement est chargé, Faux sinon |
 
 <!-- END REF-->

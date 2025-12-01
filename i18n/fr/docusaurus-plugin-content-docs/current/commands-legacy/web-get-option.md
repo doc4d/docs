@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.WEB GET OPTION.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| sélecteur | Integer | &#8594;  | Code de l’option à modifier |
+| sélecteur | Integer | &#8594; | Code de l’option à modifier |
 | valeur | Integer, Text, Collection | &#8592; | Valeur de l’option |
 
 <!-- END REF-->

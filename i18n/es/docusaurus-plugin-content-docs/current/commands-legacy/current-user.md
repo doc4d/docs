@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Current user.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| usuario | Integer | &#8594;  | Alias de usuario o cuenta de usuario 4D |
+| usuario | Integer | &#8594; | Alias de usuario o cuenta de usuario 4D |
 | Resultado | Text | &#8592; | Nombre del usuario actual |
 
 <!-- END REF-->

@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Last field number.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| numTabela&#124;pontTabela | Inteiro longo, Ponteiro | &#8594;  | Número da tabela ou ponteiro a tabela |
+| numTabela&#124;pontTabela | Inteiro longo, Ponteiro | &#8594; | Número da tabela ou ponteiro a tabela |
 | Resultado de função | Integer | &#8592; | Maior número de campo na tabela |
 
 <!-- END REF-->

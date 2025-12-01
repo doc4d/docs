@@ -11,7 +11,7 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | llavePriv | Blob | &#8592; | BLOB que contiene la llave privada |
 | llavepublica | Blob | &#8592; | BLOB que contiene la llave pública |
-| longitud | Integer | &#8594;  | Longitud de la llave (bits) [512...2048] Valor por defecto = 512 |
+| longitud | Integer | &#8594; | Longitud de la llave (bits) [512...2048] Valor por defecto = 512 |
 
 <!-- END REF-->
 

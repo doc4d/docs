@@ -14,7 +14,7 @@ displayed_sidebar: docs
 | arrDuracion | Integer array | &#8592; | Duración de las operaciones en milisegundos |
 | arrInfo | Text array | &#8592; | Descripción |
 | arrDetails | Object array | &#8592; | Detalles del contexto y sub operaciones (si las hay) |
-| * | Operador | &#8594;  | Si se pasa = Traer actividad del servidor |
+| * | Operador | &#8594; | Si se pasa = Traer actividad del servidor |
 
 <!-- END REF-->
 

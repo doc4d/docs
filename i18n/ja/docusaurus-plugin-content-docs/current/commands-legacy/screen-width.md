@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Screen width.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| * | 演算子 | &#8594;  | ･･Windows: *が指定されている場合、アプリケーションウィンドウの幅、 または画面の幅 Macintosh: メイン画面の幅 |
+| * | 演算子 | &#8594; | ･･Windows: *が指定されている場合、アプリケーションウィンドウの幅、 または画面の幅 Macintosh: メイン画面の幅 |
 | 戻り値 | Integer | &#8592; | ピクセル数で表される幅 |
 
 <!-- END REF-->

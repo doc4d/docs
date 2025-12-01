@@ -11,7 +11,7 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | codecArray | Text array | &#8592; | 利用可能なピクチャCodecのID |
 | namesArray | Text array | &#8592; | ピクチャCodecの名前 |
-| * | 演算子 | &#8594;  | 読み込み (デコード) CODECのリストを返す |
+| * | 演算子 | &#8594; | 読み込み (デコード) CODECのリストを返す |
 
 <!-- END REF-->
 

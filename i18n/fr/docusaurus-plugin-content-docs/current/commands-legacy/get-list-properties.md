@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.GET LIST PROPERTIES.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| liste | Integer | &#8594;  | Numéro de référence de la liste |
+| liste | Integer | &#8594; | Numéro de référence de la liste |
 | apparence | Integer | &#8592; | Style graphique de la liste 1 = Liste hiérarchique à la Macintosh 2 = Liste hiérarchique à la Windows |
 | icône | Integer | &#8592; | *** Paramètre obsolète, retourne 0 *** |
 | hauteurLigne | Integer | &#8592; | Hauteur minimale de la ligne (pixels) |

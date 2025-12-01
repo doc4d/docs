@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.QR GET SELECTION.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| area | Integer | &#8594;  | Referencia del área |
+| area | Integer | &#8594; | Referencia del área |
 | izquierda | Integer | &#8592; | Límite izquierdo |
 | superior | Integer | &#8592; | Límite superior |
 | derecha | Integer | &#8592; | Límite derecho |

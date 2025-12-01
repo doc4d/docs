@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Abs.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| nombre | Real | &#8594;  | Nombre dont vous voulez obtenir la valeur absolue |
+| nombre | Real | &#8594; | Nombre dont vous voulez obtenir la valeur absolue |
 | Résultat | Real | &#8592; | Valeur absolue de nombre |
 
 <!-- END REF-->

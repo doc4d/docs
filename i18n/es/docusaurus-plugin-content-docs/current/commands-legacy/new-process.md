@@ -18,11 +18,11 @@ displayed_sidebar: docs
 <!--REF #_command_.New process.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| metodo | Text | &#8594;  | Método a ejecutar en el proceso |
-| pila | Integer | &#8594;  | Tamaño de la pila en bytes |
-| nombre | Text | &#8594;  | Nombre del proceso creado |
-| param | Expression | &#8594;  | Parámetros del método |
-| * | Operador | &#8594;  | Proceso único |
+| metodo | Text | &#8594; | Método a ejecutar en el proceso |
+| pila | Integer | &#8594; | Tamaño de la pila en bytes |
+| nombre | Text | &#8594; | Nombre del proceso creado |
+| param | Expression | &#8594; | Parámetros del método |
+| * | Operador | &#8594; | Proceso único |
 | Resultado | Integer | &#8592; | Número del proceso creado recientemente o del proceso que está siendo ejecutado |
 
 <!-- END REF-->

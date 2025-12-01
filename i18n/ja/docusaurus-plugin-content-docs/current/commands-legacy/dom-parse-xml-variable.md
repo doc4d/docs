@@ -9,9 +9,9 @@ displayed_sidebar: docs
 <!--REF #_command_.DOM Parse XML variable.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| variable | Blob, Text | &#8594;  | 変数名 |
-| validation | Boolean | &#8594;  | True = DTDによる検証を行う False = 検証なし |
-| dtd &#124; schema | 文字 | &#8594;  | DTDまたはXMLスキーマの場所 |
+| variable | Blob, Text | &#8594; | 変数名 |
+| validation | Boolean | &#8594; | True = DTDによる検証を行う False = 検証なし |
+| dtd &#124; schema | 文字 | &#8594; | DTDまたはXMLスキーマの場所 |
 | 戻り値 | Text | &#8592; | XML要素参照 |
 
 <!-- END REF-->

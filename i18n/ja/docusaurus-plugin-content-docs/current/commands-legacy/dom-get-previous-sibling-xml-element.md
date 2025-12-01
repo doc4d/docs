@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.DOM Get previous sibling XML element.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| elementRef | Text | &#8594;  | XML要素参照 |
+| elementRef | Text | &#8594; | XML要素参照 |
 | siblingElemName | Text | &#8592; | 兄弟XML要素名 |
 | siblingElemValue | Text | &#8592; | 兄弟XML要素値 |
 | 戻り値 | Text | &#8592; | 兄弟XML要素参照 |

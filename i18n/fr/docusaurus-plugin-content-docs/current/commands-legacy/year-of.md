@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Year of.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| date | Date | &#8594;  | Date dont vous voulez extraire l'année |
+| date | Date | &#8594; | Date dont vous voulez extraire l'année |
 | Résultat | Integer | &#8592; | Nombre indiquant l'année de date |
 
 <!-- END REF-->

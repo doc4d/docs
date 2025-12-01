@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.RESTORE INFO.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| sélecteur | Integer | &#8594;  | Type d’information à récupérer |
+| sélecteur | Integer | &#8594; | Type d’information à récupérer |
 | info1 | Integer, Date | &#8592; | Valeur 1 du sélecteur |
 | info2 | Text, Time | &#8592; | Valeur 2 du sélecteur |
 

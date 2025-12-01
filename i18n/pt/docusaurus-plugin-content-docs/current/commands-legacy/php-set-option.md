@@ -11,9 +11,9 @@ displayed_sidebar: docs
 <!--REF #_command_.PHP SET OPTION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| opçao | Integer | &#8594;  | Opção a ser estabelecida |
-| valor | Boolean | &#8594;  | Novo valor da opção |
-| * | Operador | &#8594;  | Se passado: modificação apenas se aplica à próxima chamada |
+| opçao | Integer | &#8594; | Opção a ser estabelecida |
+| valor | Boolean | &#8594; | Novo valor da opção |
+| * | Operador | &#8594; | Se passado: modificação apenas se aplica à próxima chamada |
 
 <!-- END REF-->
 

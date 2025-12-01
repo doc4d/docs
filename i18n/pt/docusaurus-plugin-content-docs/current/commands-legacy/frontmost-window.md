@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Frontmost window.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| * | Operador | &#8594;  | Se especificado, considere janela flutuante, se omitido, ignore janela flutuante |
+| * | Operador | &#8594; | Se especificado, considere janela flutuante, se omitido, ignore janela flutuante |
 | Resultado | Integer | &#8592; | Número de referência de janela |
 
 <!-- END REF-->

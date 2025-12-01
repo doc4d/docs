@@ -9,11 +9,10 @@ displayed_sidebar: docs
 <!--REF #_command_.GET RESOURCE.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| resType | Text | &#8594;  | 4文字のリソースタイプ |
-| resID | Integer | &#8594;  | リソースID番号 |
-| resData | Blob | &#8594;  | データを受け取るBLOBフィールドまたは変数 |
-| &#8592; | リソースの内容 |
-| resFile | Time | &#8594;  | リソースファイル参照番号、または 省略時、開かれている全てのリソースファイル |
+| resType | Text | &#8594; | 4文字のリソースタイプ |
+| resID | Integer | &#8594; | リソースID番号 |
+| resData | Blob | &#8596; | *in:* BLOB field or variable to receive the data <br/>*out:* Contents of the resource |
+| resFile | Time | &#8594; | リソースファイル参照番号、または 省略時、開かれている全てのリソースファイル |
 
 <!-- END REF-->
 

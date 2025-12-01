@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Get file from pasteboard.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| indiceN | Integer | &#8594;  | N archivo incluido en la acción arrastrar |
+| indiceN | Integer | &#8594; | N archivo incluido en la acción arrastrar |
 | Resultado | Text | &#8592; | Ruta de acceso al archivo extraído del portapapeles |
 
 <!-- END REF-->

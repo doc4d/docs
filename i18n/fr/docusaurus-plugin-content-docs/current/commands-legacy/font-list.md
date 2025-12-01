@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
 | polices | Text array | &#8592; | Tableau des noms des polices vectorielles disponibles |
-| typeListe &#124; * | Entier long, Opérateur | &#8594;  | Type de liste de police à retourner ou * pour retourner des noms de police sous macOS |
+| typeListe &#124; * | Entier long, Opérateur | &#8594; | Type de liste de police à retourner ou * pour retourner des noms de police sous macOS |
 
 <!-- END REF-->
 

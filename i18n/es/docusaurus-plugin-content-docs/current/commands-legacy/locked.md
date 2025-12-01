@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Locked.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| tabla | Table | &#8594;  | Tabla en la cual verificar si el registro actual está bloqueado o Tabla por defecto, si se omite |
+| tabla | Table | &#8594; | Tabla en la cual verificar si el registro actual está bloqueado o Tabla por defecto, si se omite |
 | Resultado | Boolean | &#8592; | El registro está bloqueado (TRUE), o El registro no está bloqueado (FALSE) |
 
 <!-- END REF-->

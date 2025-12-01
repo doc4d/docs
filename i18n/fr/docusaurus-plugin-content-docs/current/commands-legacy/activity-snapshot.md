@@ -14,7 +14,7 @@ displayed_sidebar: docs
 | tabDurée | Integer array | &#8592; | Durées des opérations en millisecondes |
 | tabInfo | Text array | &#8592; | Description |
 | tabDétails | Object array | &#8592; | Détails du contexte et Sous-opérations (le cas échéant) |
-| * | Opérateur | &#8594;  | Si passé = Lire activité serveur |
+| * | Opérateur | &#8594; | Si passé = Lire activité serveur |
 
 <!-- END REF-->
 

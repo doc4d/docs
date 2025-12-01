@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.LOAD VARIABLES.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| doc | Text | &#8594;  | Documento que contiene el o las variables 4D |
+| doc | Text | &#8594; | Documento que contiene el o las variables 4D |
 | variable | Variable | &#8592; | Variables a recibir los valores |
 
 <!-- END REF-->

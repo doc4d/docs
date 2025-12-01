@@ -9,9 +9,9 @@ displayed_sidebar: docs
 <!--REF #_command_.Compare strings.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| aString | Text | &#8594;  | Chaîne à comparer |
-| bString | Text | &#8594;  | Chaîne à comparer |
-| options | Integer | &#8594;  | Règle(s) de comparaison |
+| aString | Text | &#8594; | Chaîne à comparer |
+| bString | Text | &#8594; | Chaîne à comparer |
+| options | Integer | &#8594; | Règle(s) de comparaison |
 | Résultat | Integer | &#8592; | Résultat de la comparaison de chaînes |
 
 <!-- END REF-->

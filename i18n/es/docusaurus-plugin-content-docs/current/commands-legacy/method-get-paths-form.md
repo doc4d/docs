@@ -9,12 +9,11 @@ displayed_sidebar: docs
 <!--REF #_command_.METHOD GET PATHS FORM.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| laTable | Table | &#8594;  | Referencia de tabla |
+| laTable | Table | &#8594; | Referencia de tabla |
 | arrRutas | Text array | &#8592; | Array de rutas y nombres de los métodos |
-| filtro | Text | &#8594;  | Filtros de nombres |
-| marcador | Real | &#8594;  | Valor mínimo de marcador |
-| &#8592; | Nuevo valor actual |
-| * | Operador | &#8594;  | Si se pasa = el comando se aplica a la base local cuando se ejecuta desde un componente (parámetro ignorado fuera de este contexto) |
+| filtro | Text | &#8594; | Filtros de nombres |
+| marcador | Real | &#8596; | *in:* Minimum value of stamp<br/>*out:* New current value |
+| * | Operador | &#8594; | Si se pasa = el comando se aplica a la base local cuando se ejecuta desde un componente (parámetro ignorado fuera de este contexto) |
 
 <!-- END REF-->
 

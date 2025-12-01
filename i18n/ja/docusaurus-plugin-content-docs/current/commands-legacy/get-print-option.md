@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.GET PRINT OPTION.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| option | Integer | &#8594;  | オプション番号 |
+| option | Integer | &#8594; | オプション番号 |
 | value1 | Integer, Text | &#8592; | オプションの値1 |
 | value2 | Integer, Text | &#8592; | オプションの値2 |
 

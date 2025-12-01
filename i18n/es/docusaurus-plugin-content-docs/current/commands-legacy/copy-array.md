@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.COPY ARRAY.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| fuente | Array | &#8594;  | Array a copiar |
+| fuente | Array | &#8594; | Array a copiar |
 | destino | Array | &#8592; | Array de destino |
 
 <!-- END REF-->

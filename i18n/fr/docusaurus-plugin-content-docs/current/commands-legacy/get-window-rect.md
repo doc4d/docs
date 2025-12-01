@@ -13,7 +13,7 @@ displayed_sidebar: docs
 | haut | Integer | &#8592; | Coordonnée supérieure de l'intérieur de la fenêtre |
 | droite | Integer | &#8592; | Coordonnée droite de l'intérieur de la fenêtre |
 | bas | Integer | &#8592; | Coordonnée inférieure de l'intérieur de la fenêtre |
-| fenêtre | Integer | &#8594;  | Numéro de référence de la fenêtre ou Fenêtre de premier plan du process si omis ou Fenêtre MDI si -1 (Windows) |
+| fenêtre | Integer | &#8594; | Numéro de référence de la fenêtre ou Fenêtre de premier plan du process si omis ou Fenêtre MDI si -1 (Windows) |
 
 <!-- END REF-->
 

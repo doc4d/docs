@@ -9,11 +9,11 @@ displayed_sidebar: docs
 <!--REF #_command_.ST GET ATTRIBUTES.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| * | Operador | &#8594;  | se especificado, objeto é um nome de objeto (string) se omitido, objeto é uma variável ou campo |
-| objeto | any | &#8594;  | Nome de objeto (se * é específico) ou variável ou campo (se * é omitido) |
-| inicioSel | Integer | &#8594;  | início da seleção de texto |
-| fimSel | Integer | &#8594;  | Fim da seleção de texto |
-| nomeAtributo | Integer | &#8594;  | Atributo a ser lido |
+| * | Operador | &#8594; | se especificado, objeto é um nome de objeto (string) se omitido, objeto é uma variável ou campo |
+| objeto | any | &#8594; | Nome de objeto (se * é específico) ou variável ou campo (se * é omitido) |
+| inicioSel | Integer | &#8594; | início da seleção de texto |
+| fimSel | Integer | &#8594; | Fim da seleção de texto |
+| nomeAtributo | Integer | &#8594; | Atributo a ser lido |
 | valorAtrib | Variable | &#8592; | Valor atual do atributo |
 
 <!-- END REF-->

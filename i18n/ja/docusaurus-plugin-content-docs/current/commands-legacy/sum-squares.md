@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Sum squares.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| series | Field, Array | &#8594;  | 平方和を求めるデータ |
+| series | Field, Array | &#8594; | 平方和を求めるデータ |
 | 戻り値 | Real | &#8592; | seriesの平方和 |
 
 <!-- END REF-->

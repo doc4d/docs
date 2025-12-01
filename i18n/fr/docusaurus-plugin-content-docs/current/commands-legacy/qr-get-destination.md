@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.QR GET DESTINATION.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| zone | Integer | &#8594;  | Référence de la zone |
+| zone | Integer | &#8594; | Référence de la zone |
 | type | Integer | &#8592; | Type d'état |
 | spécificités | Text, Variable | &#8592; | Spécificités de la destination |
 

@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Time string.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
-| segundos | Integer, Time | &#8594;  | Segundos desde a meia noite |
+| segundos | Integer, Time | &#8594; | Segundos desde a meia noite |
 | Resultado | Text | &#8592; | Hora como uma cadeia em formato 24 horas |
 
 <!-- END REF-->

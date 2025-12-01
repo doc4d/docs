@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.REJECT NEW REMOTE CONNECTIONS.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| statutRejet | Boolean | &#8594;  | Vrai si rejet des nouvelles connexions, sinon Faux. |
+| statutRejet | Boolean | &#8594; | Vrai si rejet des nouvelles connexions, sinon Faux. |
 
 <!-- END REF-->
 

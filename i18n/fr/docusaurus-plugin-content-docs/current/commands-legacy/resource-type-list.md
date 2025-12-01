@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
 | resTypes | Text array | &#8592; | Liste des types de ressources disponibles |
-| resFichier | Time | &#8594;  | Numéro de référence de fichier de ressources ou tous les fichiers de ressources ouverts (si ce paramètre est omis) |
+| resFichier | Time | &#8594; | Numéro de référence de fichier de ressources ou tous les fichiers de ressources ouverts (si ce paramètre est omis) |
 
 <!-- END REF-->
 

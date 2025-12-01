@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.CREATE FOLDER.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| rutaCarpeta | Text | &#8594;  | Ruta de acceso a la nueva carpeta a crear |
-| * | * | &#8594;  | Crear carpeta jerárquica |
+| rutaCarpeta | Text | &#8594; | Ruta de acceso a la nueva carpeta a crear |
+| * | * | &#8594; | Crear carpeta jerárquica |
 
 <!-- END REF-->
 

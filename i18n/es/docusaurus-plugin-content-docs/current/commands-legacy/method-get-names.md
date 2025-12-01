@@ -10,8 +10,8 @@ displayed_sidebar: docs
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
 | arrNoms | Text array | &#8592; | Array de nombres de métodos de proyecto |
-| filtro | Text | &#8594;  | Filtros de nombres |
-| * | Operador | &#8594;  | Si se pasa = el comando se aplica a la base local cuando se ejecuta desde un componente (parámetro ignorado fuera de este contexto) |
+| filtro | Text | &#8594; | Filtros de nombres |
+| * | Operador | &#8594; | Si se pasa = el comando se aplica a la base local cuando se ejecuta desde un componente (parámetro ignorado fuera de este contexto) |
 
 <!-- END REF-->
 

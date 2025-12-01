@@ -10,11 +10,11 @@ displayed_sidebar: docs
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
 | resultingPict | Picture | &#8592; | 重ね合わせた結果のピクチャ |
-| pict1 | Picture | &#8594;  | 重ね合わせる1つ目のピクチャ |
-| operator | Integer | &#8594;  | 重ね合わせのタイプ |
-| pict2 | Picture | &#8594;  | 重ね合わせる2つ目のピクチャ |
-| horOffset | Integer | &#8594;  | 重ね合わせの横オフセット |
-| vertOffset | Integer | &#8594;  | 重ね合わせの縦オフセット |
+| pict1 | Picture | &#8594; | 重ね合わせる1つ目のピクチャ |
+| operator | Integer | &#8594; | 重ね合わせのタイプ |
+| pict2 | Picture | &#8594; | 重ね合わせる2つ目のピクチャ |
+| horOffset | Integer | &#8594; | 重ね合わせの横オフセット |
+| vertOffset | Integer | &#8594; | 重ね合わせの縦オフセット |
 
 <!-- END REF-->
 

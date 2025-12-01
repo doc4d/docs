@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.GET LIST PROPERTIES.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| list | Integer | &#8594;  | リスト参照番号 |
+| list | Integer | &#8594; | リスト参照番号 |
 | appearance | Integer | &#8592; | リストの描画スタイル 1 = Macスタイル 2 = Windowsスタイル |
 | icon | Integer | &#8592; | *** 廃止予定、常に0を返します *** |
 | lineHeight | Integer | &#8592; | 行の最小高さ (ピクセル単位) |

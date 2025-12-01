@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.Is nil pointer.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| pointeur | Pointer | &#8594;  | Pointeur à tester |
+| pointeur | Pointer | &#8594; | Pointeur à tester |
 | Résultat | Boolean | &#8592; | VRAI = Pointeur Nil (->[]) FAUX = Pointeur valide vers un objet existant |
 
 <!-- END REF-->

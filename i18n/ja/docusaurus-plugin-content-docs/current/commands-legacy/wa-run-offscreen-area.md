@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.WA Run offscreen area.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| parameters | Object | &#8594;  | Web エリアの属性を格納したオブジェクト |
+| parameters | Object | &#8594; | Web エリアの属性を格納したオブジェクト |
 | 戻り値 | any | &#8592; | コールバックメソッドによって返された値 |
 
 <!-- END REF-->

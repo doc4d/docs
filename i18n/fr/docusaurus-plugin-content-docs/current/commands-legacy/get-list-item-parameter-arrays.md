@@ -9,9 +9,9 @@ displayed_sidebar: docs
 <!--REF #_command_.GET LIST ITEM PARAMETER ARRAYS.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| * | Opérateur | &#8594;  | Si spécifié, liste est un nom d’objet (chaîne)Si omis, liste est un numéro de référence de liste |
-| liste | Integer, Text | &#8594;  | Numéro de référence de liste (si * omis) ouNom d'objet de type liste (si * passé) |
-| refElément &#124; * | Entier long, Opérateur | &#8594;  | Numéro de référence d’élément ou0 pour le dernier élément ajouté à la liste ou* pour l’élément courant de la liste |
+| * | Opérateur | &#8594; | Si spécifié, liste est un nom d’objet (chaîne)Si omis, liste est un numéro de référence de liste |
+| liste | Integer, Text | &#8594; | Numéro de référence de liste (si * omis) ouNom d'objet de type liste (si * passé) |
+| refElément &#124; * | Entier long, Opérateur | &#8594; | Numéro de référence d’élément ou0 pour le dernier élément ajouté à la liste ou* pour l’élément courant de la liste |
 | tabSélecteurs | Text array | &#8592; | Tableau des noms de paramètres |
 | tabValeurs | Text array | &#8592; | Tableau des valeurs de paramètres |
 

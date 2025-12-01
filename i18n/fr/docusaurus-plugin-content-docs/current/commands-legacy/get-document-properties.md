@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.GET DOCUMENT PROPERTIES.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
-| nomFichier | Text | &#8594;  | Nom du document |
+| nomFichier | Text | &#8594; | Nom du document |
 | verrouillé | Boolean | &#8592; | Verrouillé (Vrai) ou non verrouillé (Faux) |
 | invisible | Boolean | &#8592; | Invisible (Vrai) ou visible (Faux) |
 | créé le | Date | &#8592; | Date de création |

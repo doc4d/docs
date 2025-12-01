@@ -9,10 +9,10 @@ displayed_sidebar: docs
 <!--REF #_command_.QR GET BORDERS.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
-| area | Integer | &#8594;  | エリア参照 |
-| column | Integer | &#8594;  | カラム番号 |
-| row | Integer | &#8594;  | 行番号 |
-| border | Integer | &#8594;  | 罫線の値 |
+| area | Integer | &#8594; | エリア参照 |
+| column | Integer | &#8594; | カラム番号 |
+| row | Integer | &#8594; | 行番号 |
+| border | Integer | &#8594; | 罫線の値 |
 | line | Integer | &#8592; | 線の太さ |
 | color | Integer | &#8592; | 罫線のカラー |
 
