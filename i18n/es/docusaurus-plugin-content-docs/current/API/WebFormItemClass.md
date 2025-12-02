@@ -3,7 +3,7 @@ id: WebFormItemClass
 title: WebFormItem
 ---
 
-The `4D.WebFormItem` class allows you to handle the behavior of your Qodly webform components.
+La clase `4D.WebFormItem` le permite manejar el comportamiento de sus componentes webform Qodly.
 
 Los objetos `4D.WebFormItem` son propiedades del objeto [`4D.WebForm`](WebFormClass.md) devuelto por el comando [`Web Form`](../commands/web-form.md).
 
@@ -62,7 +62,7 @@ La función `.hide()` <!-- REF #WebFormItemClass.hide().Summary -->oculta el com
 
 #### Ejemplo
 
-To call a function that hides an image when the user clicks a button:
+Para llamar a una función que oculta una imagen cuando el usuario hace clic en un botón:
 
 1. Create an [exposed](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) function inside a shared singleton class named `isHidden` that contains the following code:
 
