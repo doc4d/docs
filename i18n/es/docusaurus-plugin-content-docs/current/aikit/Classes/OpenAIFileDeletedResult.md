@@ -5,7 +5,7 @@ title: OpenAIFileDeletedResult
 
 # OpenAIFileDeletedResult
 
-The `OpenAIFileDeletedResult` class contains the result of a file deletion operation.
+La clase `OpenAIFileDeletedResult` contiene el resultado de una operación de borrado de archivos.
 
 ## Hereda
 
