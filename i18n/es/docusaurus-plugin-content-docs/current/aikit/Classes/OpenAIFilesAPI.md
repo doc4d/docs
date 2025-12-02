@@ -9,7 +9,7 @@ The `OpenAIFilesAPI` class provides functionalities to manage files using OpenAI
 
 > **Nota:** esta API sólo es compatible con OpenAI. Other providers listed in the [compatible providers](../compatible-openai.md) documentation do not support file management operations.
 
-API Reference: <https://platform.openai.com/docs/api-reference/files>
+Referencia API: <https://platform.openai.com/docs/api-reference/files>
 
 ## Límites de tamaño de los archivos
 
@@ -29,7 +29,7 @@ Upload a file that can be used across various endpoints.
 | Parámetros   | Tipo                                                                                                                                             | Descripción                                                                                |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
 | `file`       | [4D.File](https://developer.4d.com/docs/API/FileClass) or [4D.Blob](https://developer.4d.com/docs/API/BlobClass) | The File or Blob object (not file name) to be uploaded. |
-| `purpose`    | Text                                                                                                                                             | **Required.** The intended purpose of the uploaded file.   |
+| `purpose`    | Text                                                                                                                                             | **Requerido.** el propósito previsto del archivo subido.   |
 | `parámetros` | [OpenAIFileParameters](OpenAIFileParameters.md)                                                                                                  | Parámetros opcionales, incluida la política de expiración.                 |
 | Resultado    | [OpenAIFileResult](OpenAIFileResult.md)                                                                                                          | El resultado del archivo                                                                   |
 
@@ -39,7 +39,7 @@ Upload a file that can be used across various endpoints.
 
 - `assistants`: Used in the Assistants API (⚠️ [deprecated by OpenAI](https://platform.openai.com/docs/assistants/whats-new))
 - `batch`: Used in the [Batch API](https://platform.openai.com/docs/api-reference/batch) (expires after 30 days by default)
-- `fine-tune`: Used for [fine-tuning](https://platform.openai.com/docs/api-reference/fine-tuning)
+- `fine-tune`: utilizado para [ajuste fino](https://platform.openai.com/docs/api-reference/fine-tuning)
 - `vision`: imágenes utilizadas para afinar la visión
 - `user_data`: tipo de archivo flexible para cualquier propósito
 - `evals`: se utiliza para evaluar conjuntos de datos
