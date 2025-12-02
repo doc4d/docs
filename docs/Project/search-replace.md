@@ -12,7 +12,7 @@ title: Search and Replace in Design
 
 :::note
 
-There are also functions for searching among the methods of your database, which are available in the context menu of the Methods Page in the Explorer: **Search Callers** and **Search Dependencies**. Both functions display the items found in a [Results window](#results-window). 
+There are also functions for searching among the methods of your project in the context menu of the Methods Page in the Explorer: **Search Callers** (aussi available in the [Code editor](../code-editor/write-class-method.md#search-callers) and **Search Dependencies**. Both functions display the items found in a [Results window](#results-window). 
 
 :::
 
@@ -160,7 +160,7 @@ You can select options that can help speed up your searches:
 
 
 
-### Results window
+## Results window
 
 The Results window lists all elements found that match the search criteria set using different types of searches:
 
@@ -187,7 +187,7 @@ When an element found belongs to a component, the **component name** is displaye
 Once a search is completed, you can use the ![](../assets/en/Project/result-window-re.png) button to perform the search again with the same criteria and options.
 
 
-#### Options menu  
+### Options menu  
 
 You can perform various actions using the options menu:
 
@@ -209,7 +209,7 @@ You can perform various actions using the options menu:
 
 
 
-### Replace in content
+## Replace in content
 
 The Replace in content function allows you to replace one character string with another within the listed objects in the Results window. It is available in the [options menu](#options-menu) of the window. 
 
@@ -236,10 +236,32 @@ Replacing operations work as follows:
 - Elements are never renamed themselves by the **Replace in content** feature, except for form objects. Hence it is possible that certain items in the list may not be affected by the replacing operation. This can occur when only the item name corresponds to the initial search criteria. In this case, the list items do not necessarily all appear in italics and the final replacement count may be less than the number of occurrences found by the initial search.
 
 
+## Renaming project methods and variables
+
+4D provides a dedicated renaming function with distribution throughout the entire project for project methods and variables. 
+
+The **Rename...** command is available from the [Code editor] (for project methods and variables) and the Explorer context menu (for project methods).
+
+![](../assets/en/Project/rename.png)
+
+When you select this command, a dialog box appears where you enter the new name for the object:
+
+![](../assets/en/Project/rename-dial.png)
+
+The new name must comply with [naming rules](../Concepts/identifiers.md); otherwise a warning appears when you validate the dialog box. For example, you cannot rename a method with a command name such as "Alert". 
+
+Depending on the type of object you are renaming (project method or variable), the renaming dialog box may also contain a distribution option:
+
+- Project method: The **Update callers in whole database** option renames the method in all the project code that references it. You can also uncheck this option in order, for example, to rename the method only in the Explorer itself.
+- Process variable: The **Rename variable in whole database** option renames the variable in all the project code that references it. If you uncheck this option, the variable is only renamed in the current method.
+- Local variable: No distribution option for this object; the variable is only renamed in the current method or class.
+
+
+
+
 ## Searching for unused elements
 
-Two specific search commands allow you to detect variables and methods that are not used in your code. You can then remove them to free up memory.
-These commands are found in the **Edit** menu of the Design environment. 
+Two specific search commands allow you to detect variables and methods that are not used in the code of your host project. You can then remove them to free up memory. These commands are found in the **Edit** menu of the Design environment. 
 
 ### Find Unused Methods and Global Variables  
 
