@@ -105,7 +105,7 @@ For more information, refer to [4D SQL engine implementation](https://doc.4d.com
 
 *This option is deprecated. Calling code through REST calls is only supported with [ORDA data model class functions](../REST/ClassFunctions.md).*
 
-### Batch setting for method attributes  
+## Batch setting for method attributes  
 
 Using the "Attributes for methods" dialog box, you can modify an attribute (Invisible, Offered as a Web Service, etc.) for all or part of the database project methods in a single operation. This feature is especially useful for modifying the attributes of a large number of project methods. It can also be used during development to apply common attributes to groups of similar methods quickly.
 
