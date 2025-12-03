@@ -1,5 +1,5 @@
 ---
-id: search-replace
+id: search-replace-comp
 title: Search and replace
 ---
 
