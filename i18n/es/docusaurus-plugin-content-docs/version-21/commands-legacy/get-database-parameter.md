@@ -882,7 +882,7 @@ Para obtener más información sobre los archivos 4DSMTPLog\_X.txt, consulte la 
 
 **Alcance**: aplicación 4D
 
-**Se conserva entre dos sesiones**: no
+ **Se conserva entre dos sesiones**: no
 
 **Valores posibles**: 0 (por defecto) = corrector macOS nativo (Hunspell desactivado), 1 = corrector Hunspell activo. 
 
