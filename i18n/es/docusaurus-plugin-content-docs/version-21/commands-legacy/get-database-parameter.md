@@ -230,6 +230,7 @@ Estos archivos texto almacenan en formato tabulado simple diferente información
 
 **Descripción**: permite especificar este parámetro para todos los equipos 4D remotos utilizados como servidores web. Los valores definidos utilizando estos selectores se aplican a todos los equipos remotos utilizados como servidores web. Si quiere definir valores sólo para ciertos equipos remotos, utilice la caja de diálogo de Preferencias de 4D en modo remoto.
 
+**Descripción**: permite especificar este parámetro para todos los equipos 4D remotos utilizados como servidores web. Los valores definidos utilizando estos selectores se aplican a todos los equipos remotos utilizados como servidores web. Si quiere definir valores sólo para ciertos equipos remotos, utilice la caja de diálogo de Preferencias de 4D en modo remoto.
 
 
 
@@ -495,6 +496,7 @@ Para más información sobre los archivos 4DIMAPLog\_X.txt, consulte la sección
 ### Current process debug log recording (111)
 
 
+### Current process debug log recording (111)
 
 ### Is current database a project (112)
 
@@ -867,7 +869,7 @@ Para obtener más información sobre los archivos 4DSMTPLog\_X.txt, consulte la 
 
 **Alcance**: aplicación 4D
 
-**Se conserva entre dos sesiones**: no
+ **Se conserva entre dos sesiones**: no
 
 **Valores posibles**: 0 (por defecto) = corrector macOS nativo (Hunspell desactivado), 1 = corrector Hunspell activo. 
 
