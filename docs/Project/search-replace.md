@@ -1,6 +1,6 @@
 ---
 id: search-replace
-title: Search and Replace in Design
+title: Search and Replace
 ---
 
 4D provides several search and replace functions for elements in all of the Design environment.
@@ -117,8 +117,8 @@ When your current project references [editable components](../Extensions/develop
 
 You can select as target:
 
-- the **host project** (default option): the search will only be executed within the host project code and forms, excluding components.
-- the **host project and all its components**: the search will be executed in the host project and in all the loaded components.
+- the **host project** (default option, top of the list): the search will only be executed within the host project code and forms, excluding components.
+- the **host project and all its components**: the search will be executed in the host project and in all its loaded components.
 - a **specific component**, among the list of all searchable components: the search will be restricted to this component only, excluding the host and other components.
 
 :::note
@@ -128,7 +128,7 @@ When no searchable component is found, no menu is available.
 :::
 
 
-The **in the folder** menu (see below) is updated when you select a project since the availability of folders depends on the selected search target(s). The menu is disabled when you select the "host project and all its components" option. 
+The **in the folder** menu (see below) is updated when you select a project since the availability of folders depends on the selected search target(s). The menu is hidden when you select the "host project and all its components" option. 
 
 
 ### Folder  
@@ -155,7 +155,7 @@ This menu restricts the search with respect to the creation/modification date of
 You can select options that can help speed up your searches:
 
 - **Search in forms**: When this option is deselected, the search is done throughout the project, except in forms.
-- **Search in code**: When this option is deselected, the search is done throughout the project, except in methods and classes.
+- **Search in methods**: When this option is deselected, the search is done throughout the project, except in methods.
 - **Case Sensitive**: When this option is selected, the search uses the case of the characters as they have been entered in the Find area.
 
 
@@ -164,11 +164,11 @@ You can select options that can help speed up your searches:
 
 The Results window lists all elements found that match the search criteria set using different types of searches:
 
-- standard search (see Performing a search)
-- search for unused elements (see Searching for unused elements)
-- search for callers (see Searching for callers)
-- search for dependencies (see Searching for dependencies)
-- renaming of project methods and variables (see Renaming)
+- [standard search](#starting-a-search)
+- [search for unused elements](#find-unused-methods-and-global-variables)
+- [search for callers](../code-editor/write-class-method.md#search-callers)
+- search for dependencies
+- [renaming of project methods and variables](#renaming-project-methods-and-variables)
 
 It shows the results as a hierarchical list organized by type of elements found. You can expand or collapse all the hierarchical items in the list using the options menu (found at the bottom left of the window) or in the context menu.
 
@@ -200,7 +200,7 @@ You can perform various actions using the options menu:
 - **Select >**: selects one type of item (project methods, object names, and so on) from among all the items found in the Results window. The hierarchical sub-menu also provides commands to select (All) or deselect (None) all the items at once.
 - **Collapse all/Expand all**: expands or collapses all the hierarchical items in the list of results.
 - **Export Results**: exports information about the search criteria and elements listed in the Results window. This text file can then be imported into a spreadsheet such as Excel, for example. For each item, the following information is exported as tab-separated values in a text file:
-    - Host project or component name (if the project contains editable components)
+    - Host project or component name
     - Type (method, Class, formObject, trigger...)
     - Path 
     - Property (if accurate): provides the property of the object that matches the criteria. For example, a string could be found in a variable name (variable property) and an object name (name property) within in the same form. This field is empty when the matching element is the object itself.
@@ -287,7 +287,7 @@ EXECUTE FORMULA("my"+v+String(42))
 
 This code builds a method name. The *mymethod42* project method is considered unused when in fact it is called. Therefore, it is advisable to check that the elements declared as unused are in fact unnecessary before you remove them.
 
-### Find unused local variables  
+### Find Unused Local Variables  
 
 This command looks for local variables that are declared but not used. The search results appear in a standard [Results window](#results-window).
 
