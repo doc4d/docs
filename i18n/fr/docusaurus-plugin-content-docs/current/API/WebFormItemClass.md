@@ -3,13 +3,13 @@ id: WebFormItemClass
 title: WebFormItem
 ---
 
-The `4D.WebFormItem` class allows you to handle the behavior of your Qodly webform components.
+La classe `4D.WebFormItem` vous permet de gérer le comportement de vos composants dans les pages web Qodly.
 
 Les objets `4D.WebFormItem` sont des propriétés de l'objet [`4D.WebForm`](WebFormClass.md) renvoyé par la commande [`Web Form`](../commands/web-form.md).
 
-When you call the [`Web Form`](../commands/web-form.md) command, the returned `4D.WebForm` proxy object holds as many `4D.WebFormItems` as there are components with [**server-side references**](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/pageLoaderOverview#server-side) in your webform.
+Lorsque vous appelez la commande [`Web Form`](../commands/web-form.md), l'objet proxy `4D.WebForm` retourné contient autant de `4D.WebFormItems` qu'il y a de composants avec [**références serveur**](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/pageLoaderOverview#server-side) dans votre page Qodly.
 
-For example, `WebFormObject.myImage` refers to the image component with `myImage` as server reference.
+Par exemple, `WebFormObject.myImage` fait référence au composant image avec `myImage` comme référence serveur.
 
 <details><summary>Historique</summary>
 
