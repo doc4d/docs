@@ -62,9 +62,9 @@ La fonction `.hide()` <!-- REF #WebFormItemClass.hide().Summary -->masque le com
 
 #### Exemple
 
-To call a function that hides an image when the user clicks a button:
+Pour appeler une fonction qui masque une image lorsque l'utilisateur clique sur un bouton :
 
-1. Create an [exposed](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) function inside a shared singleton class named `isHidden` that contains the following code:
+1. Créez une fonction [exposed](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) à l'intérieur d'une classe singleton partagée nommée `isHidden` qui contient le code suivant :
 
 ```4d
 
@@ -73,12 +73,12 @@ exposed Function isHidden()
 	var myComponent : 4D.WebFormItem
 	
 	myComponent:=Web Form.myImage
-	myComponent.hide()  // Hide the component that has "myImage" as server reference 
+	myComponent.hide() // Cache le composant qui a "myImage" comme référence serveur 
 ```
 
-2. In Qodly Studio: Select the image component on the canvas, and enter a server-side reference in the Properties Panel > Server Side, for example "myImage".
-3. Select the Button component and add an `onclick` event to it.
-4. Attach the `isHidden` function to the event.
+2. Dans Qodly Studio : Sélectionnez le composant image dans la page et entrez une référence côté serveur dans le panneau Properties > Server Side, par exemple "myImage".
+3. Sélectionnez le composant Button et ajoutez-lui un événement `onclick`.
+4. Attachez la fonction `isHidden` à l'événement.
 
 ### .removeCSSClass()
 
@@ -110,7 +110,7 @@ La fonction `.removeCSSClass()` <!-- REF #WebFormItemClass.removeCSSClass().Summ
 
 #### Description
 
-The `.show()` function <!-- REF #WebFormItemClass.show().Summary -->makes the component visible<!-- END REF -->.If the component was already visible, the function does nothing.
+La fonction `.show()` <!-- REF #WebFormItemClass.show().Summary -->rend le composant visible<!-- END REF -->. Si le composant était déjà visible, la fonction ne fait rien.
 
 ## Voir également
 
