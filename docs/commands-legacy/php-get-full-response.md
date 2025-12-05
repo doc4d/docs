@@ -7,7 +7,7 @@ displayed_sidebar: docs
 
 <!-- IREF #_command_.PHP GET FULL RESPONSE.deprecated -->
 
-<!--REF #_command_.PHP GET FULL RESPONSE.Syntax-->**PHP GET FULL RESPONSE** ( *stdOut* {; *errLabels* ; *errValues*} {; *httpHeaderFields* {; *httpHeaderValues*}} )<!-- END REF-->
+<!--REF #_command_.PHP GET FULL RESPONSE.Syntax-->**PHP GET FULL RESPONSE** ( *stdOut* : Text {; *errLabels* : Text array ; *errValues* : Text array} {; *httpHeaderFields* : Text array {; *httpHeaderValues* : Text array}} )<br/>**PHP GET FULL RESPONSE** ( *stdOut* : Blob {; *errLabels* : Text array ; *errValues* : Text array} {; *httpHeaderFields* : Text array {; *httpHeaderValues* : Text array}} )<!-- END REF-->
 <!--REF #_command_.PHP GET FULL RESPONSE.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

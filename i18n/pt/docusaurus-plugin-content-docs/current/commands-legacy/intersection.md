@@ -5,7 +5,7 @@ slug: /commands/intersection
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.INTERSECTION.Syntax-->**INTERSECTION** ( *conjunto1* ; *conjunto2* ; *conjuntoResultado* )<!-- END REF-->
+<!--REF #_command_.INTERSECTION.Syntax-->**INTERSECTION** ( *conjunto1* : Text ; *conjunto2* : Text ; *conjuntoResultado* : Text )<!-- END REF-->
 <!--REF #_command_.INTERSECTION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

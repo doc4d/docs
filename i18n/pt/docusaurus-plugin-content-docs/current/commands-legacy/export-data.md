@@ -5,7 +5,7 @@ slug: /commands/export-data
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.EXPORT DATA.Syntax-->**EXPORT DATA** ( *nomeArquivo* {; *projeto* {; *}} )<!-- END REF-->
+<!--REF #_command_.EXPORT DATA.Syntax-->**EXPORT DATA** ( *nomeArquivo* : Text {; *projeto* : Text {; *}} )<br/>**EXPORT DATA** ( *nomeArquivo* : Text {; *projeto* : Blob {; *}} )<!-- END REF-->
 <!--REF #_command_.EXPORT DATA.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

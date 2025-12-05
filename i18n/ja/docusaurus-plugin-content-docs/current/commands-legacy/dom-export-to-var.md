@@ -5,7 +5,7 @@ slug: /commands/dom-export-to-var
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DOM EXPORT TO VAR.Syntax-->**DOM EXPORT TO VAR** ( *elementRef* ; *vXmlVar* )<!-- END REF-->
+<!--REF #_command_.DOM EXPORT TO VAR.Syntax-->**DOM EXPORT TO VAR** ( *elementRef* : Text ; *vXmlVar* : Text )<br/>**DOM EXPORT TO VAR** ( *elementRef* : Text ; *vXmlVar* : Blob )<!-- END REF-->
 <!--REF #_command_.DOM EXPORT TO VAR.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

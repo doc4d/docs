@@ -7,7 +7,7 @@ displayed_sidebar: docs
 
 <!-- IREF #_command_.PHP GET FULL RESPONSE.deprecated -->
 
-<!--REF #_command_.PHP GET FULL RESPONSE.Syntax-->**PHP GET FULL RESPONSE** ( *stdOut* {; *etiquetaErr* ; *valoresErr*} {; *camposCabHttp* {; *valoresCabHttp*}} )<!-- END REF-->
+<!--REF #_command_.PHP GET FULL RESPONSE.Syntax-->**PHP GET FULL RESPONSE** ( *stdOut* : Text {; *etiquetaErr* : Text array ; *valoresErr* : Text array} {; *camposCabHttp* : Text array {; *valoresCabHttp* : Text array}} )<br/>**PHP GET FULL RESPONSE** ( *stdOut* : Blob {; *etiquetaErr* : Text array ; *valoresErr* : Text array} {; *camposCabHttp* : Text array {; *valoresCabHttp* : Text array}} )<!-- END REF-->
 <!--REF #_command_.PHP GET FULL RESPONSE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

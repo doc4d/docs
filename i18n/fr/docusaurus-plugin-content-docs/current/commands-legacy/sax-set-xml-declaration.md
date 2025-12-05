@@ -5,7 +5,7 @@ slug: /commands/sax-set-xml-declaration
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SAX SET XML DECLARATION.Syntax-->**SAX SET XML DECLARATION** ( *document* ; *encodage* {; *autonome*} )<!-- END REF-->
+<!--REF #_command_.SAX SET XML DECLARATION.Syntax-->**SAX SET XML DECLARATION** ( *document* : Time ; *encodage* : Text {; *autonome* : Boolean} )<!-- END REF-->
 <!--REF #_command_.SAX SET XML DECLARATION.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

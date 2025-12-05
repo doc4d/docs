@@ -7,7 +7,7 @@ displayed_sidebar: docs
 
 <!-- IREF #_command_.PHP GET FULL RESPONSE.deprecated -->
 
-<!--REF #_command_.PHP GET FULL RESPONSE.Syntax-->**PHP GET FULL RESPONSE** ( *stdOut* {; *libellésErr* ; *valeursErr*} {; *chpsEnteteHttp* {; *valeursEnteteHttp*}} )<!-- END REF-->
+<!--REF #_command_.PHP GET FULL RESPONSE.Syntax-->**PHP GET FULL RESPONSE** ( *stdOut* : Text {; *libellésErr* : Text array ; *valeursErr* : Text array} {; *chpsEnteteHttp* : Text array {; *valeursEnteteHttp* : Text array}} )<br/>**PHP GET FULL RESPONSE** ( *stdOut* : Blob {; *libellésErr* : Text array ; *valeursErr* : Text array} {; *chpsEnteteHttp* : Text array {; *valeursEnteteHttp* : Text array}} )<!-- END REF-->
 <!--REF #_command_.PHP GET FULL RESPONSE.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/http-request
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.HTTP Request.Syntax-->**HTTP Request** ( *metodoHTTP* ; *url* ; *conteúdo* ; *resultado* {; *nomCab* ; *valCab*}{; *} ) : Integer<!-- END REF-->
+<!--REF #_command_.HTTP Request.Syntax-->**HTTP Request** ( *metodoHTTP* : Text ; *url* : Text ; *conteúdo* : Text ; *resultado* : Integer {; *nomCab* : Text array ; *valCab* : Text array}{; *} ) : Integer<br/>**HTTP Request** ( *metodoHTTP* : Text ; *url* : Text ; *conteúdo* : Blob ; *resultado* : Integer {; *nomCab* : Text array ; *valCab* : Text array}{; *} ) : Integer<br/>**HTTP Request** ( *metodoHTTP* : Text ; *url* : Text ; *conteúdo* : Picture ; *resultado* : Integer {; *nomCab* : Text array ; *valCab* : Text array}{; *} ) : Integer<br/>**HTTP Request** ( *metodoHTTP* : Text ; *url* : Text ; *conteúdo* : Object ; *resultado* : Integer {; *nomCab* : Text array ; *valCab* : Text array}{; *} ) : Integer<!-- END REF-->
 <!--REF #_command_.HTTP Request.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

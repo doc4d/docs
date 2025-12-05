@@ -5,7 +5,7 @@ slug: /commands/web-send-text
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WEB SEND TEXT.Syntax-->**WEB SEND TEXT** ( *textoHTML* {; *semContexto*} )<!-- END REF-->
+<!--REF #_command_.WEB SEND TEXT.Syntax-->**WEB SEND TEXT** ( *textoHTML* : Text {; *semContexto* : Text} )<!-- END REF-->
 <!--REF #_command_.WEB SEND TEXT.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

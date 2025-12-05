@@ -5,7 +5,7 @@ slug: /commands/list-to-array
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LIST TO ARRAY.Syntax-->**LIST TO ARRAY** ( *list* ; *array* {; *itemRefs*} )<!-- END REF-->
+<!--REF #_command_.LIST TO ARRAY.Syntax-->**LIST TO ARRAY** ( *list* : Text ; *array* : Array {; *itemRefs* : Array} )<br/>**LIST TO ARRAY** ( *list* : Integer ; *array* : Array {; *itemRefs* : Array} )<!-- END REF-->
 <!--REF #_command_.LIST TO ARRAY.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

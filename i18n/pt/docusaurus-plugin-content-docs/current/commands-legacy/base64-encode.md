@@ -5,7 +5,7 @@ slug: /commands/base64-encode
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.BASE64 ENCODE.Syntax-->**BASE64 ENCODE** ( *BLOB* {; *textoCodificado*}{; *} )<!-- END REF-->
+<!--REF #_command_.BASE64 ENCODE.Syntax-->**BASE64 ENCODE** ( *BLOB* : Blob {; *textoCodificado* : Blob}{; *} )<br/>**BASE64 ENCODE** ( *BLOB* : Blob {; *textoCodificado* : Text}{; *} )<br/>**BASE64 ENCODE** ( *BLOB* : Text {; *textoCodificado* : Blob}{; *} )<br/>**BASE64 ENCODE** ( *BLOB* : Text {; *textoCodificado* : Text}{; *} )<!-- END REF-->
 <!--REF #_command_.BASE64 ENCODE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

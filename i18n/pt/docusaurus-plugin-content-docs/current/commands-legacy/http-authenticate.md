@@ -5,7 +5,7 @@ slug: /commands/http-authenticate
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.HTTP AUTHENTICATE.Syntax-->**HTTP AUTHENTICATE** ( *nome* ; *senha* {; *metodoAut*} {; *} )<!-- END REF-->
+<!--REF #_command_.HTTP AUTHENTICATE.Syntax-->**HTTP AUTHENTICATE** ( *nome* : Text ; *senha* : Text {; *metodoAut* : Integer} {; *} )<!-- END REF-->
 <!--REF #_command_.HTTP AUTHENTICATE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

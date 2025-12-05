@@ -5,7 +5,7 @@ slug: /commands/query-by-example
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QUERY BY EXAMPLE.Syntax-->**QUERY BY EXAMPLE** ( {*tabla*}{;}{*} )<!-- END REF-->
+<!--REF #_command_.QUERY BY EXAMPLE.Syntax-->**QUERY BY EXAMPLE** ( {*tabla* : Table}{;}{*} )<!-- END REF-->
 <!--REF #_command_.QUERY BY EXAMPLE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

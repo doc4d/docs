@@ -5,7 +5,7 @@ slug: /commands/set-about
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET ABOUT.Syntax-->**SET ABOUT** ( *textoElem* ; *metodo* )<!-- END REF-->
+<!--REF #_command_.SET ABOUT.Syntax-->**SET ABOUT** ( *textoElem* : Text ; *metodo* : Text )<!-- END REF-->
 <!--REF #_command_.SET ABOUT.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

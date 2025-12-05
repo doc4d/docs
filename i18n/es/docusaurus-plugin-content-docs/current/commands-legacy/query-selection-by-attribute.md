@@ -5,7 +5,7 @@ slug: /commands/query-selection-by-attribute
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QUERY SELECTION BY ATTRIBUTE.Syntax-->**QUERY SELECTION BY ATTRIBUTE** ( {*tabla*}{;}{*opConj* ;} *campoObjeto* ; *rutaAtributo* ; *opBusq* ; *valor* {; *} )<!-- END REF-->
+<!--REF #_command_.QUERY SELECTION BY ATTRIBUTE.Syntax-->**QUERY SELECTION BY ATTRIBUTE** ( {*tabla* : Table}{;}{*opConj* ;} *campoObjeto* : Field ; *rutaAtributo* : Text ; *opBusq* : Text ; *valor* : Text {; *} )<br/>**QUERY SELECTION BY ATTRIBUTE** ( {*tabla* : Table}{;}{*opConj* ;} *campoObjeto* : Field ; *rutaAtributo* : Text ; *opBusq* : Text ; *valor* : Real {; *} )<br/>**QUERY SELECTION BY ATTRIBUTE** ( {*tabla* : Table}{;}{*opConj* ;} *campoObjeto* : Field ; *rutaAtributo* : Text ; *opBusq* : Text ; *valor* : Date {; *} )<br/>**QUERY SELECTION BY ATTRIBUTE** ( {*tabla* : Table}{;}{*opConj* ;} *campoObjeto* : Field ; *rutaAtributo* : Text ; *opBusq* : Text ; *valor* : Time {; *} )<br/>**QUERY SELECTION BY ATTRIBUTE** ( {*tabla* : Table}{;}{*opConj* ;} *campoObjeto* : Field ; *rutaAtributo* : Text ; *opBusq* : Operator ; *valor* : Text {; *} )<br/>**QUERY SELECTION BY ATTRIBUTE** ( {*tabla* : Table}{;}{*opConj* ;} *campoObjeto* : Field ; *rutaAtributo* : Text ; *opBusq* : Operator ; *valor* : Real {; *} )<br/>**QUERY SELECTION BY ATTRIBUTE** ( {*tabla* : Table}{;}{*opConj* ;} *campoObjeto* : Field ; *rutaAtributo* : Text ; *opBusq* : Operator ; *valor* : Date {; *} )<br/>**QUERY SELECTION BY ATTRIBUTE** ( {*tabla* : Table}{;}{*opConj* ;} *campoObjeto* : Field ; *rutaAtributo* : Text ; *opBusq* : Operator ; *valor* : Time {; *} )<!-- END REF-->
 <!--REF #_command_.QUERY SELECTION BY ATTRIBUTE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

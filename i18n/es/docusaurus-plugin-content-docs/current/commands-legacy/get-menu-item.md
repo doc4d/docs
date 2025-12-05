@@ -5,7 +5,7 @@ slug: /commands/get-menu-item
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Get menu item.Syntax-->**Get menu item** ( *menu* ; *lineamenu* {; *proceso*} ) : Text<!-- END REF-->
+<!--REF #_command_.Get menu item.Syntax-->**Get menu item** ( *menu* : Integer ; *lineamenu* : Integer {; *proceso* : Integer} ) : Text<br/>**Get menu item** ( *menu* : Text ; *lineamenu* : Integer {; *proceso* : Integer} ) : Text<!-- END REF-->
 <!--REF #_command_.Get menu item.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

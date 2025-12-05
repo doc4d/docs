@@ -5,7 +5,7 @@ slug: /commands/modify-selection
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.MODIFY SELECTION.Syntax-->**MODIFY SELECTION** ( {*tabela*}{; *modoSelecao*}{; *entraLista*}{; *}{; *} )<!-- END REF-->
+<!--REF #_command_.MODIFY SELECTION.Syntax-->**MODIFY SELECTION** ( {*tabela* : Table}{; *modoSelecao* : Integer}{; *entraLista* : Boolean}{; *}{; *} )<!-- END REF-->
 <!--REF #_command_.MODIFY SELECTION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

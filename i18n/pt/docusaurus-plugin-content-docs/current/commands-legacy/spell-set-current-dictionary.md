@@ -5,7 +5,7 @@ slug: /commands/spell-set-current-dictionary
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SPELL SET CURRENT DICTIONARY.Syntax-->**SPELL SET CURRENT DICTIONARY** ( *dicionário* )<!-- END REF-->
+<!--REF #_command_.SPELL SET CURRENT DICTIONARY.Syntax-->**SPELL SET CURRENT DICTIONARY** ( *dicionário* : Integer )<br/>**SPELL SET CURRENT DICTIONARY** ( *dicionário* : Text )<!-- END REF-->
 <!--REF #_command_.SPELL SET CURRENT DICTIONARY.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/open-url
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OPEN URL.Syntax-->**OPEN URL** ( *rota* {; *appName*}{; *} )<!-- END REF-->
+<!--REF #_command_.OPEN URL.Syntax-->**OPEN URL** ( *rota* : Text {; *appName* : Text}{; *} )<!-- END REF-->
 <!--REF #_command_.OPEN URL.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

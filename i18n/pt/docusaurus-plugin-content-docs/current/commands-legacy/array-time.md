@@ -5,7 +5,7 @@ slug: /commands/array-time
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ARRAY TIME.Syntax-->**ARRAY TIME** ( *nomArray* ; *tamanho* {; *tamanho2*} )<!-- END REF-->
+<!--REF #_command_.ARRAY TIME.Syntax-->**ARRAY TIME** ( *nomArray* : Array ; *tamanho* : Integer {; *tamanho2* : Integer} )<!-- END REF-->
 <!--REF #_command_.ARRAY TIME.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

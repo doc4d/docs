@@ -5,7 +5,7 @@ slug: /commands/convert-from-text
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CONVERT FROM TEXT.Syntax-->**CONVERT FROM TEXT** ( *texto4D* ; *juegoCaracteres* ; *blobConvertido* )<!-- END REF-->
+<!--REF #_command_.CONVERT FROM TEXT.Syntax-->**CONVERT FROM TEXT** ( *texto4D* : Text ; *juegoCaracteres* : Text ; *blobConvertido* : Blob )<br/>**CONVERT FROM TEXT** ( *texto4D* : Text ; *juegoCaracteres* : Integer ; *blobConvertido* : Blob )<!-- END REF-->
 <!--REF #_command_.CONVERT FROM TEXT.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

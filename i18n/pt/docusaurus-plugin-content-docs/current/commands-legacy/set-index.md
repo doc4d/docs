@@ -5,7 +5,7 @@ slug: /commands/set-index
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET INDEX.Syntax-->**SET INDEX** ( *campo* ; *indice* {; *} )<!-- END REF-->
+<!--REF #_command_.SET INDEX.Syntax-->**SET INDEX** ( *campo* : Field ; *indice* : Boolean {; *} )<br/>**SET INDEX** ( *campo* : Field ; *indice* : Integer {; *} )<!-- END REF-->
 <!--REF #_command_.SET INDEX.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

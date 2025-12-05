@@ -5,7 +5,7 @@ slug: /commands/http-get
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.HTTP Get.Syntax-->**HTTP Get** ( *url* ; *resposta* {; *nomesCab* ; *valoresCab*}{; *} ) : Integer<!-- END REF-->
+<!--REF #_command_.HTTP Get.Syntax-->**HTTP Get** ( *url* : Text ; *resposta* : Text {; *nomesCab* : Text array ; *valoresCab* : Text array}{; *} ) : Integer<br/>**HTTP Get** ( *url* : Text ; *resposta* : Blob {; *nomesCab* : Text array ; *valoresCab* : Text array}{; *} ) : Integer<br/>**HTTP Get** ( *url* : Text ; *resposta* : Picture {; *nomesCab* : Text array ; *valoresCab* : Text array}{; *} ) : Integer<br/>**HTTP Get** ( *url* : Text ; *resposta* : Object {; *nomesCab* : Text array ; *valoresCab* : Text array}{; *} ) : Integer<!-- END REF-->
 <!--REF #_command_.HTTP Get.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

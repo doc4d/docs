@@ -5,7 +5,7 @@ slug: /commands/add-record
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ADD RECORD.Syntax-->**ADD RECORD** ( {*laTable*}{;}{*} )<!-- END REF-->
+<!--REF #_command_.ADD RECORD.Syntax-->**ADD RECORD** ( {*laTable* : Table}{;}{*} )<!-- END REF-->
 <!--REF #_command_.ADD RECORD.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

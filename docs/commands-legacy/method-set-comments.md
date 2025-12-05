@@ -5,7 +5,7 @@ slug: /commands/method-set-comments
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD SET COMMENTS.Syntax-->**METHOD SET COMMENTS** ( *path* ; *comments* {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD SET COMMENTS.Syntax-->**METHOD SET COMMENTS** ( *path* : Text ; *comments* : Text {; *} )<br/>**METHOD SET COMMENTS** ( *path* : Text ; *comments* : Text array {; *} )<br/>**METHOD SET COMMENTS** ( *path* : Text array ; *comments* : Text {; *} )<br/>**METHOD SET COMMENTS** ( *path* : Text array ; *comments* : Text array {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD SET COMMENTS.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

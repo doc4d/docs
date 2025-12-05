@@ -5,7 +5,7 @@ slug: /commands/import-data
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.IMPORT DATA.Syntax-->**IMPORT DATA** ( *nomFichier* {; *projet* {; *}} )<!-- END REF-->
+<!--REF #_command_.IMPORT DATA.Syntax-->**IMPORT DATA** ( *nomFichier* : Text {; *projet* : Text {; *}} )<br/>**IMPORT DATA** ( *nomFichier* : Text {; *projet* : Blob {; *}} )<!-- END REF-->
 <!--REF #_command_.IMPORT DATA.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

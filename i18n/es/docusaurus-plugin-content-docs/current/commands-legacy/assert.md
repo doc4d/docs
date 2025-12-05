@@ -5,7 +5,7 @@ slug: /commands/assert
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ASSERT.Syntax-->**ASSERT** ( *expresionBool* {; *textoMensaje*} )<!-- END REF-->
+<!--REF #_command_.ASSERT.Syntax-->**ASSERT** ( *expresionBool* : Boolean {; *textoMensaje* : Text} )<!-- END REF-->
 <!--REF #_command_.ASSERT.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

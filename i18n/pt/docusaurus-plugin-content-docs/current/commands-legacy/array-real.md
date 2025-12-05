@@ -5,7 +5,7 @@ slug: /commands/array-real
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ARRAY REAL.Syntax-->**ARRAY REAL** ( *nomeArray* ; *tamanho* {; *tamanho2*} )<!-- END REF-->
+<!--REF #_command_.ARRAY REAL.Syntax-->**ARRAY REAL** ( *nomeArray* : Array ; *tamanho* : Integer {; *tamanho2* : Integer} )<!-- END REF-->
 <!--REF #_command_.ARRAY REAL.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

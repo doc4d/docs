@@ -5,7 +5,7 @@ slug: /commands/get-menu-items
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET MENU ITEMS.Syntax-->**GET MENU ITEMS** ( *menu* ; *arrayTitMenus* ; *arraysRefMenus* )<!-- END REF-->
+<!--REF #_command_.GET MENU ITEMS.Syntax-->**GET MENU ITEMS** ( *menu* : Integer ; *arrayTitMenus* : Text array ; *arraysRefMenus* : Text array )<br/>**GET MENU ITEMS** ( *menu* : Text ; *arrayTitMenus* : Text array ; *arraysRefMenus* : Text array )<!-- END REF-->
 <!--REF #_command_.GET MENU ITEMS.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

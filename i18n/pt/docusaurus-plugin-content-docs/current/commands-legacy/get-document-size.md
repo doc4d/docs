@@ -5,7 +5,7 @@ slug: /commands/get-document-size
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Get document size.Syntax-->**Get document size** ( *documento* {; *} ) : Real<!-- END REF-->
+<!--REF #_command_.Get document size.Syntax-->**Get document size** ( *documento* : Text {; *} ) : Real<br/>**Get document size** ( *documento* : Time {; *} ) : Real<!-- END REF-->
 <!--REF #_command_.Get document size.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

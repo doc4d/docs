@@ -5,7 +5,7 @@ slug: /commands/qr-set-borders
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QR SET BORDERS.Syntax-->**QR SET BORDERS** ( *area* ; *columna* ; *linea* ; *borde* ; *grueso* {; *color*} )<!-- END REF-->
+<!--REF #_command_.QR SET BORDERS.Syntax-->**QR SET BORDERS** ( *area* : Integer ; *columna* : Integer ; *linea* : Integer ; *borde* : Integer ; *grueso* : Integer {; *color* : Integer} )<!-- END REF-->
 <!--REF #_command_.QR SET BORDERS.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

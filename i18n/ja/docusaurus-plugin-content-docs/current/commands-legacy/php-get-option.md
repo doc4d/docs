@@ -8,7 +8,7 @@ displayed_sidebar: docs
 <!-- IREF #_command_.PHP GET OPTION.deprecated -->
 
 
-<!--REF #_command_.PHP GET OPTION.Syntax-->**PHP GET OPTION** ( *option* ; *value* )<!-- END REF-->
+<!--REF #_command_.PHP GET OPTION.Syntax-->**PHP GET OPTION** ( *option* : Integer ; *value* : Boolean )<!-- END REF-->
 <!--REF #_command_.PHP GET OPTION.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

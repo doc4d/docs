@@ -5,8 +5,8 @@ slug: /commands/match-regex
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Match regex.Syntax-->**Match regex** ( *pattern* ; *aString* ; *start* {; pos_found ; length_found}{; *} ) -> 戻り値 <br/>
-**Match regex** ( *pattern* ; *aString* ) -> 戻り値<!-- END REF-->
+<!--REF #_command_.Match regex.Syntax-->**Match regex** ( *pattern* : Text ; *aString* : Text ; *start* : Integer {; pos_found ; length_found}{; *} ) -> 戻り値 <br/>
+**Match regex** ( *pattern* : Text ; *aString* : Text ) -> 戻り値<!-- END REF-->
 <!--REF #_command_.Match regex.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

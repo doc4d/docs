@@ -5,7 +5,7 @@ slug: /commands/execute-method-in-subform
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.EXECUTE METHOD IN SUBFORM.Syntax-->**EXECUTE METHOD IN SUBFORM** ( *objetoSubForm* ; *nomMetodo* {; *retorno* {; *param*} {; *param2* ; ... ; *paramN*}} )<!-- END REF-->
+<!--REF #_command_.EXECUTE METHOD IN SUBFORM.Syntax-->**EXECUTE METHOD IN SUBFORM** ( *objetoSubForm* : Text ; *nomMetodo* : Object {; *retorno* : Variable {; *param* : Expression} {; *param2* ; ... ; *paramN*}} )<br/>**EXECUTE METHOD IN SUBFORM** ( *objetoSubForm* : Text ; *nomMetodo* : Text {; *retorno* : Variable {; *param* : Expression} {; *param2* ; ... ; *paramN*}} )<!-- END REF-->
 <!--REF #_command_.EXECUTE METHOD IN SUBFORM.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

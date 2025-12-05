@@ -5,7 +5,7 @@ slug: /commands/array-picture
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ARRAY PICTURE.Syntax-->**ARRAY PICTURE** ( *nomeArray* ; *tamanho* {; *tamanho2*} )<!-- END REF-->
+<!--REF #_command_.ARRAY PICTURE.Syntax-->**ARRAY PICTURE** ( *nomeArray* : Array ; *tamanho* : Integer {; *tamanho2* : Integer} )<!-- END REF-->
 <!--REF #_command_.ARRAY PICTURE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

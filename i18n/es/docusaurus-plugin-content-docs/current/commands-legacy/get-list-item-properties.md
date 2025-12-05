@@ -5,7 +5,7 @@ slug: /commands/get-list-item-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET LIST ITEM PROPERTIES.Syntax-->**GET LIST ITEM PROPERTIES** ( {* ;} *lista* ; refElem | * ; *editable* {; *estilos* {; *icono* {; *color*}}} )<!-- END REF-->
+<!--REF #_command_.GET LIST ITEM PROPERTIES.Syntax-->**GET LIST ITEM PROPERTIES** ( {* ;} *lista* ; refElem | * ; *editable* : Boolean {; *estilos* : Integer {; *icono* : Text {; *color* : Integer}}} )<br/>**GET LIST ITEM PROPERTIES** ( {* ;} *lista* ; refElem | * ; *editable* : Boolean {; *estilos* : Integer {; *icono* : Integer {; *color* : Integer}}} )<!-- END REF-->
 <!--REF #_command_.GET LIST ITEM PROPERTIES.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

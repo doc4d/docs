@@ -5,7 +5,7 @@ slug: /commands/sax-get-xml-comment
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SAX GET XML COMMENT.Syntax-->**SAX GET XML COMMENT** ( *documento* ; *comentario* )<!-- END REF-->
+<!--REF #_command_.SAX GET XML COMMENT.Syntax-->**SAX GET XML COMMENT** ( *documento* : Time ; *comentario* : Text )<!-- END REF-->
 <!--REF #_command_.SAX GET XML COMMENT.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

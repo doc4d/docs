@@ -5,8 +5,8 @@ slug: /commands/multi-sort-array
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.MULTI SORT ARRAY.Syntax-->**MULTI SORT ARRAY** ( *array* {; *ordem*}{; *array2* ; *ordem2* ; ... ; *arrayN* ; *ordemN*} ) <br/>
-**MULTI SORT ARRAY** ( *ptrArrayNome*  ; *sortArrayNome*  )<!-- END REF-->
+<!--REF #_command_.MULTI SORT ARRAY.Syntax-->**MULTI SORT ARRAY** ( *array* : Array {; *ordem* : Operator}{; *array2* ; *ordem2* ; ... ; *arrayN* ; *ordemN*} ) <br/>
+**MULTI SORT ARRAY** ( *ptrArrayNome* : Pointer array  ; *sortArrayNome* : Integer array  )<!-- END REF-->
 <!--REF #_command_.MULTI SORT ARRAY.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

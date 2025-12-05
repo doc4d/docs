@@ -5,7 +5,7 @@ slug: /commands/variance
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Variance.Syntax-->**Variance** ( *séries* ) : Real<!-- END REF-->
+<!--REF #_command_.Variance.Syntax-->**Variance** ( *séries* : Field ) : Real<br/>**Variance** ( *séries* : Array ) : Real<!-- END REF-->
 <!--REF #_command_.Variance.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

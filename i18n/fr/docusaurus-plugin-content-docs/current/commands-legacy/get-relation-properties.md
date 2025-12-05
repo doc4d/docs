@@ -5,7 +5,7 @@ slug: /commands/get-relation-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET RELATION PROPERTIES.Syntax-->**GET RELATION PROPERTIES** ( *ptrChp* ; *tableDest* ; *champDest* {; *discriminant* {; *allerAuto* {; *retourAuto*}}} )<br/>**GET RELATION PROPERTIES** ( *numTable* ; *numChamp* ; *tableDest* ; *champDest* {; *discriminant* {; *allerAuto* {; *retourAuto*}}} )<!-- END REF-->
+<!--REF #_command_.GET RELATION PROPERTIES.Syntax-->**GET RELATION PROPERTIES** ( *ptrChp* ; *tableDest* : Integer ; *champDest* : Integer {; *discriminant* : Integer {; *allerAuto* : Boolean {; *retourAuto* : Boolean}}} )<br/>**GET RELATION PROPERTIES** ( *numTable* ; *numChamp* : Integer ; *tableDest* : Integer ; *champDest* : Integer {; *discriminant* : Integer {; *allerAuto* : Boolean {; *retourAuto* : Boolean}}} )<!-- END REF-->
 <!--REF #_command_.GET RELATION PROPERTIES.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

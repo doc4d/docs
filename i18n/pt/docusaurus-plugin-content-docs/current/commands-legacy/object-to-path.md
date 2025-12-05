@@ -5,7 +5,7 @@ slug: /commands/object-to-path
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Object to path.Syntax-->**Object to path** ( *objRota* ) : Text<!-- END REF-->
+<!--REF #_command_.Object to path.Syntax-->**Object to path** ( *objRota* : Object ) : Text<!-- END REF-->
 <!--REF #_command_.Object to path.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

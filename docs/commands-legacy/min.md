@@ -5,7 +5,7 @@ slug: /commands/min
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Min.Syntax-->**Min** ( *series* {; *attributePath*} ) : any<!-- END REF-->
+<!--REF #_command_.Min.Syntax-->**Min** ( *series* : Field {; *attributePath* : Text} ) : any<br/>**Min** ( *series* : Array {; *attributePath* : Text} ) : any<!-- END REF-->
 <!--REF #_command_.Min.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

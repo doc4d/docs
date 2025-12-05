@@ -5,7 +5,7 @@ slug: /commands/load-set
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LOAD SET.Syntax-->**LOAD SET** ( {*tabla* ;} *conjunto* ; *doc* )<!-- END REF-->
+<!--REF #_command_.LOAD SET.Syntax-->**LOAD SET** ( {*tabla* : Table ;} *conjunto* : Text ; *doc* : Text )<!-- END REF-->
 <!--REF #_command_.LOAD SET.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

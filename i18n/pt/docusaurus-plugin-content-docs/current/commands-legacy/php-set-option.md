@@ -7,7 +7,7 @@ displayed_sidebar: docs
 
 <!-- IREF #_command_.PHP SET OPTION.deprecated -->
 
-<!--REF #_command_.PHP SET OPTION.Syntax-->**PHP SET OPTION** ( *opçao* ; *valor* {; *} )<!-- END REF-->
+<!--REF #_command_.PHP SET OPTION.Syntax-->**PHP SET OPTION** ( *opçao* : Integer ; *valor* : Boolean {; *} )<!-- END REF-->
 <!--REF #_command_.PHP SET OPTION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

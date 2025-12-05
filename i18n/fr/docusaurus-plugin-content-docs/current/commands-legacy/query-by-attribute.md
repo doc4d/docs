@@ -5,7 +5,7 @@ slug: /commands/query-by-attribute
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QUERY BY ATTRIBUTE.Syntax-->**QUERY BY ATTRIBUTE** ( {*laTable*}{;}{*opConj* ;} *champObjet* ; *cheminAttribut* ; *opRech* ; *valeur* {; *} )<!-- END REF-->
+<!--REF #_command_.QUERY BY ATTRIBUTE.Syntax-->**QUERY BY ATTRIBUTE** ( {*laTable* : Table}{;}{*opConj* : Operator ;} *champObjet* : Field ; *cheminAttribut* : Text ; *opRech* : Text ; *valeur* : Text {; *} )<br/>**QUERY BY ATTRIBUTE** ( {*laTable* : Table}{;}{*opConj* : Operator ;} *champObjet* : Field ; *cheminAttribut* : Text ; *opRech* : Text ; *valeur* : Real {; *} )<br/>**QUERY BY ATTRIBUTE** ( {*laTable* : Table}{;}{*opConj* : Operator ;} *champObjet* : Field ; *cheminAttribut* : Text ; *opRech* : Text ; *valeur* : Date {; *} )<br/>**QUERY BY ATTRIBUTE** ( {*laTable* : Table}{;}{*opConj* : Operator ;} *champObjet* : Field ; *cheminAttribut* : Text ; *opRech* : Text ; *valeur* : Time {; *} )<br/>**QUERY BY ATTRIBUTE** ( {*laTable* : Table}{;}{*opConj* : Operator ;} *champObjet* : Field ; *cheminAttribut* : Text ; *opRech* : Operator ; *valeur* : Text {; *} )<br/>**QUERY BY ATTRIBUTE** ( {*laTable* : Table}{;}{*opConj* : Operator ;} *champObjet* : Field ; *cheminAttribut* : Text ; *opRech* : Operator ; *valeur* : Real {; *} )<br/>**QUERY BY ATTRIBUTE** ( {*laTable* : Table}{;}{*opConj* : Operator ;} *champObjet* : Field ; *cheminAttribut* : Text ; *opRech* : Operator ; *valeur* : Date {; *} )<br/>**QUERY BY ATTRIBUTE** ( {*laTable* : Table}{;}{*opConj* : Operator ;} *champObjet* : Field ; *cheminAttribut* : Text ; *opRech* : Operator ; *valeur* : Time {; *} )<!-- END REF-->
 <!--REF #_command_.QUERY BY ATTRIBUTE.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

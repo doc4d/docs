@@ -5,7 +5,7 @@ slug: /commands/get-menu-item-icon
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET MENU ITEM ICON.Syntax-->**GET MENU ITEM ICON** ( *menu* ; *ligneMenu* ; *refIcône* {; *process*} )<!-- END REF-->
+<!--REF #_command_.GET MENU ITEM ICON.Syntax-->**GET MENU ITEM ICON** ( *menu* : Integer ; *ligneMenu* : Integer ; *refIcône* : Text {; *process* : Integer} )<br/>**GET MENU ITEM ICON** ( *menu* : Integer ; *ligneMenu* : Integer ; *refIcône* : Integer {; *process* : Integer} )<br/>**GET MENU ITEM ICON** ( *menu* : Text ; *ligneMenu* : Integer ; *refIcône* : Text {; *process* : Integer} )<br/>**GET MENU ITEM ICON** ( *menu* : Text ; *ligneMenu* : Integer ; *refIcône* : Integer {; *process* : Integer} )<!-- END REF-->
 <!--REF #_command_.GET MENU ITEM ICON.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

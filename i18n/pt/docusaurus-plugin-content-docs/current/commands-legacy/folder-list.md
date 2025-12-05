@@ -5,7 +5,7 @@ slug: /commands/folder-list
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.FOLDER LIST.Syntax-->**FOLDER LIST** ( *nomeRota* ; *diretorios* )<!-- END REF-->
+<!--REF #_command_.FOLDER LIST.Syntax-->**FOLDER LIST** ( *nomeRota* : Text ; *diretorios* : Text array )<!-- END REF-->
 <!--REF #_command_.FOLDER LIST.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

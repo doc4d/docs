@@ -5,7 +5,7 @@ slug: /commands/query-with-array
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QUERY WITH ARRAY.Syntax-->**QUERY WITH ARRAY** ( *campoAlvo* ; *array* )<!-- END REF-->
+<!--REF #_command_.QUERY WITH ARRAY.Syntax-->**QUERY WITH ARRAY** ( *campoAlvo* : Field ; *array* : Array )<!-- END REF-->
 <!--REF #_command_.QUERY WITH ARRAY.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

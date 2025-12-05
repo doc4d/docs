@@ -5,7 +5,7 @@ slug: /commands/call-form
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CALL FORM.Syntax-->**CALL FORM** ( *fenêtre* ; *formule* {; *param*}{; *param2* ; ... ; *paramN*} )<!-- END REF-->
+<!--REF #_command_.CALL FORM.Syntax-->**CALL FORM** ( *fenêtre* : Integer ; *formule* : Object {; *param* : Expression}{; *param2* ; ... ; *paramN*} )<br/>**CALL FORM** ( *fenêtre* : Integer ; *formule* : Text {; *param* : Expression}{; *param2* ; ... ; *paramN*} )<!-- END REF-->
 <!--REF #_command_.CALL FORM.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

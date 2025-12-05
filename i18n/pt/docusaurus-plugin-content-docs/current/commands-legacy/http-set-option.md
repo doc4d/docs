@@ -5,7 +5,7 @@ slug: /commands/http-set-option
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.HTTP SET OPTION.Syntax-->**HTTP SET OPTION** ( *opção* ; *valor* )<!-- END REF-->
+<!--REF #_command_.HTTP SET OPTION.Syntax-->**HTTP SET OPTION** ( *opção* : Integer ; *valor* : Integer )<!-- END REF-->
 <!--REF #_command_.HTTP SET OPTION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

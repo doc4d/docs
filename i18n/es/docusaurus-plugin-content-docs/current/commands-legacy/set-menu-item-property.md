@@ -5,7 +5,7 @@ slug: /commands/set-menu-item-property
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET MENU ITEM PROPERTY.Syntax-->**SET MENU ITEM PROPERTY** ( *menu* ; *lineaMenu* ; *propiedad* ; *valor* {; *proceso*} )<!-- END REF-->
+<!--REF #_command_.SET MENU ITEM PROPERTY.Syntax-->**SET MENU ITEM PROPERTY** ( *menu* : Integer ; *lineaMenu* : Integer ; *propiedad* : Text ; *valor* : Text {; *proceso* : Integer} )<br/>**SET MENU ITEM PROPERTY** ( *menu* : Integer ; *lineaMenu* : Integer ; *propiedad* : Text ; *valor* : Real {; *proceso* : Integer} )<br/>**SET MENU ITEM PROPERTY** ( *menu* : Integer ; *lineaMenu* : Integer ; *propiedad* : Text ; *valor* : Boolean {; *proceso* : Integer} )<br/>**SET MENU ITEM PROPERTY** ( *menu* : Text ; *lineaMenu* : Integer ; *propiedad* : Text ; *valor* : Text {; *proceso* : Integer} )<br/>**SET MENU ITEM PROPERTY** ( *menu* : Text ; *lineaMenu* : Integer ; *propiedad* : Text ; *valor* : Real {; *proceso* : Integer} )<br/>**SET MENU ITEM PROPERTY** ( *menu* : Text ; *lineaMenu* : Integer ; *propiedad* : Text ; *valor* : Boolean {; *proceso* : Integer} )<!-- END REF-->
 <!--REF #_command_.SET MENU ITEM PROPERTY.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/method-get-attributes
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD GET ATTRIBUTES.Syntax-->**METHOD GET ATTRIBUTES** ( *caminho* ; *atributos* {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD GET ATTRIBUTES.Syntax-->**METHOD GET ATTRIBUTES** ( *caminho* : Text ; *atributos* : Object {; *} )<br/>**METHOD GET ATTRIBUTES** ( *caminho* : Text ; *atributos* : Object array {; *} )<br/>**METHOD GET ATTRIBUTES** ( *caminho* : Text array ; *atributos* : Object {; *} )<br/>**METHOD GET ATTRIBUTES** ( *caminho* : Text array ; *atributos* : Object array {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD GET ATTRIBUTES.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

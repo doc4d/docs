@@ -5,7 +5,7 @@ slug: /commands/soap-get-info
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SOAP Get info.Syntax-->**SOAP get info** ( *numInfo* ) : Text<!-- END REF-->
+<!--REF #_command_.SOAP Get info.Syntax-->**SOAP get info** ( *numInfo* : Integer ) : Text<!-- END REF-->
 <!--REF #_command_.SOAP Get info.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

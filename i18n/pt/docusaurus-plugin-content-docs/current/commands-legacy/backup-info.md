@@ -5,7 +5,7 @@ slug: /commands/backup-info
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.BACKUP INFO.Syntax-->**BACKUP INFO** ( *seletor* ; *info1* ; *info2* )<!-- END REF-->
+<!--REF #_command_.BACKUP INFO.Syntax-->**BACKUP INFO** ( *seletor* : Integer ; *info1* : Integer ; *info2* : Time )<br/>**BACKUP INFO** ( *seletor* : Integer ; *info1* : Integer ; *info2* : Text )<br/>**BACKUP INFO** ( *seletor* : Integer ; *info1* : Date ; *info2* : Time )<br/>**BACKUP INFO** ( *seletor* : Integer ; *info1* : Date ; *info2* : Text )<!-- END REF-->
 <!--REF #_command_.BACKUP INFO.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

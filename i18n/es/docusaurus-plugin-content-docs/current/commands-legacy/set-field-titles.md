@@ -5,7 +5,7 @@ slug: /commands/set-field-titles
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET FIELD TITLES.Syntax-->**SET FIELD TITLES** ( *tabla* ; *titulosCampos* ; *numCampos* {; *} )<!-- END REF-->
+<!--REF #_command_.SET FIELD TITLES.Syntax-->**SET FIELD TITLES** ( *tabla* : Table ; *titulosCampos* : Text array ; *numCampos* : Integer array {; *} )<!-- END REF-->
 <!--REF #_command_.SET FIELD TITLES.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

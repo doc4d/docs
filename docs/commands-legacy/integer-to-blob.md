@@ -5,7 +5,7 @@ slug: /commands/integer-to-blob
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.INTEGER TO BLOB.Syntax-->**INTEGER TO BLOB** ( *integer* ; *blob* ; *byteOrder* {; offset} )<br/>**INTEGER TO BLOB** ( *integer* ; *blob* ; *byteOrder* {; *} )<!-- END REF-->
+<!--REF #_command_.INTEGER TO BLOB.Syntax-->**INTEGER TO BLOB** ( *integer* : Integer ; *blob* : Blob ; *byteOrder* : Integer {; offset} )<br/>**INTEGER TO BLOB** ( *integer* : Integer ; *blob* : Blob ; *byteOrder* : Integer {; *} )<!-- END REF-->
 <!--REF #_command_.INTEGER TO BLOB.Params-->
 
 | Parameter | Type |  | Description |

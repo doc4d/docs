@@ -5,7 +5,7 @@ slug: /commands/add-to-set
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ADD TO SET.Syntax-->**ADD TO SET** ( {*tabela* ;} *conjunto* )<!-- END REF-->
+<!--REF #_command_.ADD TO SET.Syntax-->**ADD TO SET** ( {*tabela* : Table ;} *conjunto* : Text )<!-- END REF-->
 <!--REF #_command_.ADD TO SET.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

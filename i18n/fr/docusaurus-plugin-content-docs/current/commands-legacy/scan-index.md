@@ -5,7 +5,7 @@ slug: /commands/scan-index
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SCAN INDEX.Syntax-->**SCAN INDEX** ( *leChamp* ; *nombre* {; > ou <} )<!-- END REF-->
+<!--REF #_command_.SCAN INDEX.Syntax-->**SCAN INDEX** ( *leChamp* ; *nombre* : Integer {; > ou <} )<!-- END REF-->
 <!--REF #_command_.SCAN INDEX.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

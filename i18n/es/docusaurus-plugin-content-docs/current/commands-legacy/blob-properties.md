@@ -5,7 +5,7 @@ slug: /commands/blob-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.BLOB PROPERTIES.Syntax-->**BLOB PROPERTIES** ( *BLOB* ; *comprimido* {; *descompTam* {; *tamañoActual*}} )<!-- END REF-->
+<!--REF #_command_.BLOB PROPERTIES.Syntax-->**BLOB PROPERTIES** ( *BLOB* : Blob ; *comprimido* : Integer {; *descompTam* : Integer {; *tamañoActual* : Integer}} )<!-- END REF-->
 <!--REF #_command_.BLOB PROPERTIES.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/list-to-blob
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LIST TO BLOB.Syntax-->**LIST TO BLOB** ( *list* ; *BLOB* {; *} )<!-- END REF-->
+<!--REF #_command_.LIST TO BLOB.Syntax-->**LIST TO BLOB** ( *list* : Integer ; *BLOB* : Blob {; *} )<!-- END REF-->
 <!--REF #_command_.LIST TO BLOB.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/method-get-comments
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD GET COMMENTS.Syntax-->**METHOD GET COMMENTS** ( *chemin* ; *commentaires* {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD GET COMMENTS.Syntax-->**METHOD GET COMMENTS** ( *chemin* : Text ; *commentaires* : Text {; *} )<br/>**METHOD GET COMMENTS** ( *chemin* : Text ; *commentaires* : Text array {; *} )<br/>**METHOD GET COMMENTS** ( *chemin* : Text array ; *commentaires* : Text {; *} )<br/>**METHOD GET COMMENTS** ( *chemin* : Text array ; *commentaires* : Text array {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD GET COMMENTS.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

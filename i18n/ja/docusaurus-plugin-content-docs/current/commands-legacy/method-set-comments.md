@@ -5,7 +5,7 @@ slug: /commands/method-set-comments
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD SET COMMENTS.Syntax-->**METHOD SET COMMENTS** ( *path* ; *comments* {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD SET COMMENTS.Syntax-->**METHOD SET COMMENTS** ( *path* : Text ; *comments* : Text {; *} )<br/>**METHOD SET COMMENTS** ( *path* : Text ; *comments* : Text配列 {; *} )<br/>**METHOD SET COMMENTS** ( *path* : Text配列 ; *comments* : Text {; *} )<br/>**METHOD SET COMMENTS** ( *path* : Text配列 ; *comments* : Text配列 {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD SET COMMENTS.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

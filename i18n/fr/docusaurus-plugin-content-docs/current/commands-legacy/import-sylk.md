@@ -5,7 +5,7 @@ slug: /commands/import-sylk
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.IMPORT SYLK.Syntax-->**IMPORT SYLK** ( {*laTable* ;} *nomFichier* )<!-- END REF-->
+<!--REF #_command_.IMPORT SYLK.Syntax-->**IMPORT SYLK** ( {*laTable* : Table ;} *nomFichier* : Text )<!-- END REF-->
 <!--REF #_command_.IMPORT SYLK.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

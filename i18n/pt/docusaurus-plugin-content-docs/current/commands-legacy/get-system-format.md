@@ -5,7 +5,7 @@ slug: /commands/get-system-format
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET SYSTEM FORMAT.Syntax-->**GET SYSTEM FORMAT** ( *formato* ; *valor* )<!-- END REF-->
+<!--REF #_command_.GET SYSTEM FORMAT.Syntax-->**GET SYSTEM FORMAT** ( *formato* : Integer ; *valor* : Text )<!-- END REF-->
 <!--REF #_command_.GET SYSTEM FORMAT.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

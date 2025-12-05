@@ -5,7 +5,7 @@ slug: /commands/set-list-item-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET LIST ITEM PROPERTIES.Syntax-->**SET LIST ITEM PROPERTIES** ( {* ;} *list* ; *itemRef* ; *enterable* ; *styles* {; *icon* {; *color*}} )<br/>**SET LIST ITEM PROPERTIES** ( * ; *list* ; * ; *enterable* ; *styles* {; *icon* {; *color*}} )<!-- END REF-->
+<!--REF #_command_.SET LIST ITEM PROPERTIES.Syntax-->**SET LIST ITEM PROPERTIES** ( {* ;} *list* ; *itemRef* ; *enterable* ; *styles* {; *icon* {; *color*}} )<br/>**SET LIST ITEM PROPERTIES** ( * ; *list* ; * ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Text {; *color* : Integer}} )<br/>**SET LIST ITEM PROPERTIES** ( * ; *list* ; * ; *enterable* : Boolean ; *styles* : Integer {; *icon* : Integer {; *color* : Integer}} )<!-- END REF-->
 <!--REF #_command_.SET LIST ITEM PROPERTIES.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

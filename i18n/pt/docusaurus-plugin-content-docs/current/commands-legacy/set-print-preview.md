@@ -5,7 +5,7 @@ slug: /commands/set-print-preview
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET PRINT PREVIEW.Syntax-->**SET PRINT PREVIEW** ( *vistaprevia* )<!-- END REF-->
+<!--REF #_command_.SET PRINT PREVIEW.Syntax-->**SET PRINT PREVIEW** ( *vistaprevia* : Boolean )<!-- END REF-->
 <!--REF #_command_.SET PRINT PREVIEW.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

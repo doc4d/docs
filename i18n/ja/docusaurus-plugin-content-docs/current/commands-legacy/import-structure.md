@@ -5,7 +5,7 @@ slug: /commands/import-structure
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.IMPORT STRUCTURE.Syntax-->**IMPORT STRUCTURE** ( *xmlStructure* )<!-- END REF-->
+<!--REF #_command_.IMPORT STRUCTURE.Syntax-->**IMPORT STRUCTURE** ( *xmlStructure* : Text )<!-- END REF-->
 <!--REF #_command_.IMPORT STRUCTURE.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/set-window-title
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET WINDOW TITLE.Syntax-->**SET WINDOW TITLE** ( *titulo* {; *janela*} )<!-- END REF-->
+<!--REF #_command_.SET WINDOW TITLE.Syntax-->**SET WINDOW TITLE** ( *titulo* : Text {; *janela* : Integer} )<!-- END REF-->
 <!--REF #_command_.SET WINDOW TITLE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/method-get-code
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD GET CODE.Syntax-->**METHOD GET CODE** ( *chemin* ; *code* {; *option*} {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD GET CODE.Syntax-->**METHOD GET CODE** ( *chemin* : Text ; *code* : Text {; *option* : Integer} {; *} )<br/>**METHOD GET CODE** ( *chemin* : Text ; *code* : Text array {; *option* : Integer} {; *} )<br/>**METHOD GET CODE** ( *chemin* : Text array ; *code* : Text {; *option* : Integer} {; *} )<br/>**METHOD GET CODE** ( *chemin* : Text array ; *code* : Text array {; *option* : Integer} {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD GET CODE.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

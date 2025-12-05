@@ -5,7 +5,7 @@ slug: /commands/method-set-code
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD SET CODE.Syntax-->**METHOD SET CODE** ( *chemin* ; *code* {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD SET CODE.Syntax-->**METHOD SET CODE** ( *chemin* : Text ; *code* : Text {; *} )<br/>**METHOD SET CODE** ( *chemin* : Text ; *code* : Text array {; *} )<br/>**METHOD SET CODE** ( *chemin* : Text array ; *code* : Text {; *} )<br/>**METHOD SET CODE** ( *chemin* : Text array ; *code* : Text array {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD SET CODE.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

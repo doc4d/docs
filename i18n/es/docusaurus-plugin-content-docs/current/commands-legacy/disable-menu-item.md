@@ -5,7 +5,7 @@ slug: /commands/disable-menu-item
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DISABLE MENU ITEM.Syntax-->**DISABLE MENU ITEM** ( *menu* ; *lineamenu* {; *proceso*} )<!-- END REF-->
+<!--REF #_command_.DISABLE MENU ITEM.Syntax-->**DISABLE MENU ITEM** ( *menu* : Integer ; *lineamenu* : Integer {; *proceso* : Integer} )<br/>**DISABLE MENU ITEM** ( *menu* : Text ; *lineamenu* : Integer {; *proceso* : Integer} )<!-- END REF-->
 <!--REF #_command_.DISABLE MENU ITEM.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

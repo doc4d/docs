@@ -5,7 +5,7 @@ slug: /commands/sql-get-option
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SQL GET OPTION.Syntax-->**SQL GET OPTION** ( *opçao* ; *valor* )<!-- END REF-->
+<!--REF #_command_.SQL GET OPTION.Syntax-->**SQL GET OPTION** ( *opçao* : Integer ; *valor* : Integer )<br/>**SQL GET OPTION** ( *opçao* : Integer ; *valor* : Text )<!-- END REF-->
 <!--REF #_command_.SQL GET OPTION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

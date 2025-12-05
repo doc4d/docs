@@ -5,7 +5,7 @@ slug: /commands/array-object
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ARRAY OBJECT.Syntax-->**ARRAY OBJECT** ( *nomArray* ; *tam* {; *tam2*} )<!-- END REF-->
+<!--REF #_command_.ARRAY OBJECT.Syntax-->**ARRAY OBJECT** ( *nomArray* : Array ; *tam* : Integer {; *tam2* : Integer} )<!-- END REF-->
 <!--REF #_command_.ARRAY OBJECT.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

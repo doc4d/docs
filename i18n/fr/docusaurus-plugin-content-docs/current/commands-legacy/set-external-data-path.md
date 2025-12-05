@@ -5,7 +5,7 @@ slug: /commands/set-external-data-path
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET EXTERNAL DATA PATH.Syntax-->**SET EXTERNAL DATA PATH** ( *leChamp* ; *chemin* )<!-- END REF-->
+<!--REF #_command_.SET EXTERNAL DATA PATH.Syntax-->**SET EXTERNAL DATA PATH** ( *leChamp* : Text ; *chemin* : Text )<br/>**SET EXTERNAL DATA PATH** ( *leChamp* : Text ; *chemin* : Integer )<br/>**SET EXTERNAL DATA PATH** ( *leChamp* : Blob ; *chemin* : Text )<br/>**SET EXTERNAL DATA PATH** ( *leChamp* : Blob ; *chemin* : Integer )<br/>**SET EXTERNAL DATA PATH** ( *leChamp* : Picture ; *chemin* : Text )<br/>**SET EXTERNAL DATA PATH** ( *leChamp* : Picture ; *chemin* : Integer )<!-- END REF-->
 <!--REF #_command_.SET EXTERNAL DATA PATH.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

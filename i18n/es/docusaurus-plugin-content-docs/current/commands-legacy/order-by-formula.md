@@ -5,7 +5,7 @@ slug: /commands/order-by-formula
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ORDER BY FORMULA.Syntax-->**ORDER BY FORMULA** ( *tabla* ; *formula* {; > o <}{; *formula2* ; > o <2 ; ... ; *formulaN* ; > o <N} )<!-- END REF-->
+<!--REF #_command_.ORDER BY FORMULA.Syntax-->**ORDER BY FORMULA** ( *tabla* : Table ; *formula* : Expression {; > o <}{; *formula2* ; > o <2 ; ... ; *formulaN* ; > o <N} )<!-- END REF-->
 <!--REF #_command_.ORDER BY FORMULA.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/sax-open-xml-element
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SAX OPEN XML ELEMENT.Syntax-->**SAX OPEN XML ELEMENT** ( *documento* ; *etiqueta* {; *nomeAtrib* ; *valorAtributo*} {; *nomeAtrib2* ; *valorAtributo2* ; ... ; *nomeAtribN* ; *valorAtributoN*} )<!-- END REF-->
+<!--REF #_command_.SAX OPEN XML ELEMENT.Syntax-->**SAX OPEN XML ELEMENT** ( *documento* : Time ; *etiqueta* : Text {; *nomeAtrib* : Text ; *valorAtributo* : Text} {; *nomeAtrib2* ; *valorAtributo2* ; ... ; *nomeAtribN* ; *valorAtributoN*} )<!-- END REF-->
 <!--REF #_command_.SAX OPEN XML ELEMENT.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

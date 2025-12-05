@@ -5,7 +5,7 @@ slug: /commands/get-menu-item-modifiers
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Get menu item modifiers.Syntax-->**Get menu item modifiers** ( *menu* ; *lineaMenu* {; *proceso*} ) : Integer<!-- END REF-->
+<!--REF #_command_.Get menu item modifiers.Syntax-->**Get menu item modifiers** ( *menu* : Integer ; *lineaMenu* : Integer {; *proceso* : Integer} ) : Integer<br/>**Get menu item modifiers** ( *menu* : Text ; *lineaMenu* : Integer {; *proceso* : Integer} ) : Integer<!-- END REF-->
 <!--REF #_command_.Get menu item modifiers.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
