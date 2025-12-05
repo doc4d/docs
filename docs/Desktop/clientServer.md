@@ -121,15 +121,17 @@ All stored procedures on the server share the same virtual user session. For mor
 
 :::
 
-### Sharing the session with Qodly pages in Web areas
+### Sharing the remote session for web accesses
 
-Remote client sessions can be used to handle Client/Server applications where [Qodly pages](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/pageLoaderOverview) are used for the interface, running on remote machines. With this configuration, your applications have modern CSS-based web interfaces but still benefit from the power and simplicity of integrated client/server development. In such applications, Qodly pages are executed within standard 4D [Web areas](../FormObjects/webArea_overview.md). 
+Remote client sessions can be used to handle web accesses to the application by the same user and thus, manage their [privileges](../ORDA/privileges.md). 
 
-To manage this configuration, you need to use remote client sessions. Actually, requests coming from both the remote 4D application and its Qodly pages loaded in Web areas need to work inside a single user session. You just have to share the same session between the remote client and its web pages so that you can have the same [session storage](../API/SessionClass.md#storage) and client license, whatever the request origin.  
+This possibility is particularly useful for Client/Server applications where [Qodly pages](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/pageLoaderOverview) are used for the interface, running on remote machines. With this configuration, your applications have modern CSS-based web interfaces but still benefit from the power and simplicity of integrated client/server development. In such applications, Qodly pages are executed within standard 4D [Web areas](../FormObjects/webArea_overview.md). 
 
-Note that [privileges](../ORDA/privileges.md) should be set in the session before executing a web request from a Web area, so that the user automatically gets their privileges for web access (see example). Keep in mind that privileges only apply to requests coming from the web, not to the 4D code executed in a standard remote session. 
+To manage this configuration, you need to use remote client sessions. Actually, requests coming from both the remote 4D application and its Qodly pages loaded in Web areas need to work inside the same session. You just have to share the session between the remote client and its web pages so that you can have the same [session storage](../API/SessionClass.md#storage) and client license, wherever the request comes from (web or remote 4D).  
 
-Shared sessions are handled through [OTP tokens](../WebServer/sessions.md#session-token-otp). After you created an OTP token on the server for the user session, you add the token (through the `$4DSID` parameter value) to web requests sent from web areas containing Qodly pages so that the user session on the server is identified and shared. On the web server side, if a web request contains an *OTP id* in the $4DSID parameter, the session corresponding to this OTP token is used.
+Note that [privileges](../ORDA/privileges.md) should be set in the session before executing a web request, so that the user automatically gets their privileges for web access (see example). Keep in mind that privileges **only apply to requests coming from the web**, not to the 4D code executed in a standard remote session. 
+
+Shared sessions are handled through [OTP tokens](../WebServer/sessions.md#session-token-otp). After you created an OTP token on the server for the user session, you add the token (through the `$4DSID` parameter value) to web requests sent from Web areas containing Qodly pages so that the user session on the server is identified and shared. On the web server side, if a web request contains an *OTP id* in the $4DSID parameter, the session corresponding to this OTP token is used.
 
 :::tip Related blog post
 

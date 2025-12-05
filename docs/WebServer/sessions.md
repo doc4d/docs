@@ -492,7 +492,7 @@ A new user is created, and some information is stored in the session, especially
 - Both HTTP and HTTPS schemas are supported. 
 - Only [scalable sessions](#enabling-web-sessions) can be reused with tokens.
 - Only sessions of the host database can be reused (sessions created in component web servers cannot be restored).
-- Tokens are not supported with client/server sessions or single-user sessions.
+- Tokens can be **shared** with [client/server sessions](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas) and [standalone sessions](XXX) for hybrid accesses (desktop and web).
 
 ### Lifespan 
 
