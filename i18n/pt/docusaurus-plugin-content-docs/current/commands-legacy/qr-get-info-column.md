@@ -5,7 +5,7 @@ slug: /commands/qr-get-info-column
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QR GET INFO COLUMN.Syntax-->**QR GET INFO COLUMN** ( *area* ; *numColuna* ; *titulo* ; *objeto* ; *ocultar* ; *tamanho* ; *valoresRepetidos* ; *formato* {; *resultVar*} )<!-- END REF-->
+<!--REF #_command_.QR GET INFO COLUMN.Syntax-->**QR GET INFO COLUMN** ( *area* : Integer ; *numColuna* : Integer ; *titulo* : Text ; *objeto* : Text ; *ocultar* : Integer ; *tamanho* : Integer ; *valoresRepetidos* : Integer ; *formato* : Text {; *resultVar* : Text} )<!-- END REF-->
 <!--REF #_command_.QR GET INFO COLUMN.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

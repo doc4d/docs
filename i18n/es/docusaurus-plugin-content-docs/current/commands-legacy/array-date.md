@@ -5,7 +5,7 @@ slug: /commands/array-date
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ARRAY DATE.Syntax-->**ARRAY DATE** ( *nombreArray* ; *tamaño* {; *tamaño2*} )<!-- END REF-->
+<!--REF #_command_.ARRAY DATE.Syntax-->**ARRAY DATE** ( *nombreArray* : Array ; *tamaño* : Integer {; *tamaño2* : Integer} )<!-- END REF-->
 <!--REF #_command_.ARRAY DATE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/print-option-values
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.PRINT OPTION VALUES.Syntax-->**PRINT OPTION VALUES** ( *option* ; *namesArray* {; *info1Array* {; *info2Array*}} )<!-- END REF-->
+<!--REF #_command_.PRINT OPTION VALUES.Syntax-->**PRINT OPTION VALUES** ( *option* : Integer ; *namesArray* : Text array {; *info1Array* : Integer array {; *info2Array* : Integer array}} )<!-- END REF-->
 <!--REF #_command_.PRINT OPTION VALUES.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

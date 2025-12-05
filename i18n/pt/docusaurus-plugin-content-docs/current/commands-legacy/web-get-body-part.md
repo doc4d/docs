@@ -5,7 +5,7 @@ slug: /commands/web-get-body-part
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WEB GET BODY PART.Syntax-->**WEB GET BODY PART** ( *parte* ; *conteudo* ; *nome* ; *tipoMime* ; *nomArquivo* )<!-- END REF-->
+<!--REF #_command_.WEB GET BODY PART.Syntax-->**WEB GET BODY PART** ( *parte* : Integer ; *conteudo* : Blob ; *nome* : Text ; *tipoMime* : Text ; *nomArquivo* : Text )<br/>**WEB GET BODY PART** ( *parte* : Integer ; *conteudo* : Text ; *nome* : Text ; *tipoMime* : Text ; *nomArquivo* : Text )<!-- END REF-->
 <!--REF #_command_.WEB GET BODY PART.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

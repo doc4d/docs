@@ -5,7 +5,7 @@ slug: /commands/set-menu-item-style
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET MENU ITEM STYLE.Syntax-->**SET MENU ITEM STYLE** ( *menu* ; *lineamenu* ; *estiloItem* {; *proceso*} )<!-- END REF-->
+<!--REF #_command_.SET MENU ITEM STYLE.Syntax-->**SET MENU ITEM STYLE** ( *menu* : Integer ; *lineamenu* : Integer ; *estiloItem* : Integer {; *proceso* : Integer} )<br/>**SET MENU ITEM STYLE** ( *menu* : Text ; *lineamenu* : Integer ; *estiloItem* : Integer {; *proceso* : Integer} )<!-- END REF-->
 <!--REF #_command_.SET MENU ITEM STYLE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

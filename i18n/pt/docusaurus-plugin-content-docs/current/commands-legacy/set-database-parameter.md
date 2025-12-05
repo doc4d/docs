@@ -5,7 +5,7 @@ slug: /commands/set-database-parameter
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET DATABASE PARAMETER.Syntax-->**SET DATABASE PARAMETER** ( {*tabela* ;} *seletor* ; *value* )<!-- END REF-->
+<!--REF #_command_.SET DATABASE PARAMETER.Syntax-->**SET DATABASE PARAMETER** ( {*tabela* : Table ;} *seletor* : Integer ; *value* : Real )<br/>**SET DATABASE PARAMETER** ( {*tabela* : Table ;} *seletor* : Integer ; *value* : Text )<!-- END REF-->
 <!--REF #_command_.SET DATABASE PARAMETER.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

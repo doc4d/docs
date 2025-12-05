@@ -5,7 +5,7 @@ slug: /commands/get-list-item-icon
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET LIST ITEM ICON.Syntax-->**GET LIST ITEM ICON** ( {* ;} *lista* ; refElem | * ; *icone* )<!-- END REF-->
+<!--REF #_command_.GET LIST ITEM ICON.Syntax-->**GET LIST ITEM ICON** ( {* ;} *lista* ; refElem | * ; *icone* : Picture )<!-- END REF-->
 <!--REF #_command_.GET LIST ITEM ICON.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

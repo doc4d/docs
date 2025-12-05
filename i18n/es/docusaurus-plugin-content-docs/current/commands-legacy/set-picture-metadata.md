@@ -5,7 +5,7 @@ slug: /commands/set-picture-metadata
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET PICTURE METADATA.Syntax-->**SET PICTURE METADATA** ( *imagen* ; *nomMeta* ; *ContenidoMeta* {; *nomMeta2* ; *ContenidoMeta2* ; ... ; *nomMetaN* ; *ContenidoMetaN*} )<!-- END REF-->
+<!--REF #_command_.SET PICTURE METADATA.Syntax-->**SET PICTURE METADATA** ( *imagen* : Picture ; *nomMeta* : Text ; *ContenidoMeta* : Variable {; *nomMeta2* ; *ContenidoMeta2* ; ... ; *nomMetaN* ; *ContenidoMetaN*} )<!-- END REF-->
 <!--REF #_command_.SET PICTURE METADATA.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

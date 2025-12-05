@@ -5,7 +5,7 @@ slug: /commands/set-menu-item-shortcut
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET MENU ITEM SHORTCUT.Syntax-->**SET MENU ITEM SHORTCUT** ( *menu* ; *lineamenu* ; *tecla* ; *modificadores* {; *proceso*} )<!-- END REF-->
+<!--REF #_command_.SET MENU ITEM SHORTCUT.Syntax-->**SET MENU ITEM SHORTCUT** ( *menu* : Integer ; *lineamenu* : Integer ; *tecla* : Text ; *modificadores* : Integer {; *proceso* : Integer} )<br/>**SET MENU ITEM SHORTCUT** ( *menu* : Integer ; *lineamenu* : Integer ; *tecla* : Integer ; *modificadores* : Integer {; *proceso* : Integer} )<br/>**SET MENU ITEM SHORTCUT** ( *menu* : Text ; *lineamenu* : Integer ; *tecla* : Text ; *modificadores* : Integer {; *proceso* : Integer} )<br/>**SET MENU ITEM SHORTCUT** ( *menu* : Text ; *lineamenu* : Integer ; *tecla* : Integer ; *modificadores* : Integer {; *proceso* : Integer} )<!-- END REF-->
 <!--REF #_command_.SET MENU ITEM SHORTCUT.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

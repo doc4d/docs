@@ -5,7 +5,7 @@ slug: /commands/launch-external-process
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LAUNCH EXTERNAL PROCESS.Syntax-->**LAUNCH EXTERNAL PROCESS** ( *fileName* {; *inputStream* {; *outputStream* {; *errorStream*}}}{; *pid*} )<!-- END REF-->
+<!--REF #_command_.LAUNCH EXTERNAL PROCESS.Syntax-->**LAUNCH EXTERNAL PROCESS** ( *fileName* : Text {; *inputStream* : Text {; *outputStream* : Text {; *errorStream* : Text}}}{; *pid* : Integer} )<br/>**LAUNCH EXTERNAL PROCESS** ( *fileName* : Text {; *inputStream* : Text {; *outputStream* : Text {; *errorStream* : Blob}}}{; *pid* : Integer} )<br/>**LAUNCH EXTERNAL PROCESS** ( *fileName* : Text {; *inputStream* : Text {; *outputStream* : Blob {; *errorStream* : Text}}}{; *pid* : Integer} )<br/>**LAUNCH EXTERNAL PROCESS** ( *fileName* : Text {; *inputStream* : Text {; *outputStream* : Blob {; *errorStream* : Blob}}}{; *pid* : Integer} )<br/>**LAUNCH EXTERNAL PROCESS** ( *fileName* : Text {; *inputStream* : Blob {; *outputStream* : Text {; *errorStream* : Text}}}{; *pid* : Integer} )<br/>**LAUNCH EXTERNAL PROCESS** ( *fileName* : Text {; *inputStream* : Blob {; *outputStream* : Text {; *errorStream* : Blob}}}{; *pid* : Integer} )<br/>**LAUNCH EXTERNAL PROCESS** ( *fileName* : Text {; *inputStream* : Blob {; *outputStream* : Blob {; *errorStream* : Text}}}{; *pid* : Integer} )<br/>**LAUNCH EXTERNAL PROCESS** ( *fileName* : Text {; *inputStream* : Blob {; *outputStream* : Blob {; *errorStream* : Blob}}}{; *pid* : Integer} )<!-- END REF-->
 <!--REF #_command_.LAUNCH EXTERNAL PROCESS.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

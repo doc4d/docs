@@ -5,7 +5,7 @@ slug: /commands/get-print-option
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET PRINT OPTION.Syntax-->**GET PRINT OPTION** ( *option* ; *valeur1* {; *valeur2*} )<!-- END REF-->
+<!--REF #_command_.GET PRINT OPTION.Syntax-->**GET PRINT OPTION** ( *option* : Integer ; *valeur1* : Integer {; *valeur2* : Integer} )<br/>**GET PRINT OPTION** ( *option* : Integer ; *valeur1* : Integer {; *valeur2* : Text} )<br/>**GET PRINT OPTION** ( *option* : Integer ; *valeur1* : Text {; *valeur2* : Integer} )<br/>**GET PRINT OPTION** ( *option* : Integer ; *valeur1* : Text {; *valeur2* : Text} )<!-- END REF-->
 <!--REF #_command_.GET PRINT OPTION.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

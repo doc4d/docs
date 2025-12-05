@@ -5,7 +5,7 @@ slug: /commands/copy-parameters
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Copy parameters.Syntax-->**Copy parameters** {( *inicioDesde* )} : Collection<!-- END REF-->
+<!--REF #_command_.Copy parameters.Syntax-->**Copy parameters** {( *inicioDesde* : Integer )} : Collection<!-- END REF-->
 <!--REF #_command_.Copy parameters.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

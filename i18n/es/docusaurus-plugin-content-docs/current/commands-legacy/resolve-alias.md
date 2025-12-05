@@ -5,7 +5,7 @@ slug: /commands/resolve-alias
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.RESOLVE ALIAS.Syntax-->**RESOLVE ALIAS** ( *rutaAlias* ; *rutaObjetivo* )<!-- END REF-->
+<!--REF #_command_.RESOLVE ALIAS.Syntax-->**RESOLVE ALIAS** ( *rutaAlias* : Text ; *rutaObjetivo* : Text )<!-- END REF-->
 <!--REF #_command_.RESOLVE ALIAS.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

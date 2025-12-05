@@ -5,7 +5,7 @@ slug: /commands/sql-execute
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SQL EXECUTE.Syntax-->**SQL EXECUTE** ( *sqlStatement* {; *boundObj*}{; *boundObj2* ; ... ; *boundObjN*} )<!-- END REF-->
+<!--REF #_command_.SQL EXECUTE.Syntax-->**SQL EXECUTE** ( *sqlStatement* : Text {; *boundObj* : Variable}{; *boundObj2* ; ... ; *boundObjN*} )<br/>**SQL EXECUTE** ( *sqlStatement* : Text {; *boundObj* : Field}{; *boundObj2* ; ... ; *boundObjN*} )<!-- END REF-->
 <!--REF #_command_.SQL EXECUTE.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

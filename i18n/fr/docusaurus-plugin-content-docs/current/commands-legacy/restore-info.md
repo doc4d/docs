@@ -5,7 +5,7 @@ slug: /commands/restore-info
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.RESTORE INFO.Syntax-->**RESTORE INFO** ( *sélecteur* ; *info1* ; *info2* )<!-- END REF-->
+<!--REF #_command_.RESTORE INFO.Syntax-->**RESTORE INFO** ( *sélecteur* : Integer ; *info1* : Integer ; *info2* : Text )<br/>**RESTORE INFO** ( *sélecteur* : Integer ; *info1* : Integer ; *info2* : Time )<br/>**RESTORE INFO** ( *sélecteur* : Integer ; *info1* : Date ; *info2* : Text )<br/>**RESTORE INFO** ( *sélecteur* : Integer ; *info1* : Date ; *info2* : Time )<!-- END REF-->
 <!--REF #_command_.RESTORE INFO.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/array-text
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ARRAY TEXT.Syntax-->**ARRAY TEXT** ( *arrayName* ; *size* {; *size2*} )<!-- END REF-->
+<!--REF #_command_.ARRAY TEXT.Syntax-->**ARRAY TEXT** ( *arrayName* : Array ; *size* : Integer {; *size2* : Integer} )<!-- END REF-->
 <!--REF #_command_.ARRAY TEXT.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

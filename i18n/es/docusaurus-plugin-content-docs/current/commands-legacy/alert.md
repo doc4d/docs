@@ -5,7 +5,7 @@ slug: /commands/alert
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ALERT.Syntax-->**ALERT** ( *mensaje* {; *titulobotonOK*} )<!-- END REF-->
+<!--REF #_command_.ALERT.Syntax-->**ALERT** ( *mensaje* : Text {; *titulobotonOK* : Text} )<!-- END REF-->
 <!--REF #_command_.ALERT.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/post-key
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.POST KEY.Syntax-->**POST KEY** ( *codigo* {; *modificadores* {; *processo*}} )<!-- END REF-->
+<!--REF #_command_.POST KEY.Syntax-->**POST KEY** ( *codigo* : Integer {; *modificadores* : Integer {; *processo* : Integer}} )<!-- END REF-->
 <!--REF #_command_.POST KEY.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

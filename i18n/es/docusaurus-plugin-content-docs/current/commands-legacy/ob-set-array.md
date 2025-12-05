@@ -5,7 +5,7 @@ slug: /commands/ob-set-array
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OB SET ARRAY.Syntax-->**OB SET ARRAY** ( *objeto* ; *propiedad* ; *array* )<!-- END REF-->
+<!--REF #_command_.OB SET ARRAY.Syntax-->**OB SET ARRAY** ( *objeto* : Object ; *propiedad* : Text ; *array* : Array )<br/>**OB SET ARRAY** ( *objeto* : Object ; *propiedad* : Text ; *array* : Variable )<br/>**OB SET ARRAY** ( *objeto* : Object ; *propiedad* : Text ; *array* : Array )<br/>**OB SET ARRAY** ( *objeto* : Object ; *propiedad* : Text ; *array* : Variable )<!-- END REF-->
 <!--REF #_command_.OB SET ARRAY.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

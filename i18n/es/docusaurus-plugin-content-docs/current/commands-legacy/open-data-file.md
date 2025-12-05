@@ -5,7 +5,7 @@ slug: /commands/open-data-file
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OPEN DATA FILE.Syntax-->**OPEN DATA FILE** ( *rutaAcceso* )<!-- END REF-->
+<!--REF #_command_.OPEN DATA FILE.Syntax-->**OPEN DATA FILE** ( *rutaAcceso* : Text )<!-- END REF-->
 <!--REF #_command_.OPEN DATA FILE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

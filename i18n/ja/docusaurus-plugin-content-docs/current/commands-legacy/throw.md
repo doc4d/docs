@@ -5,9 +5,9 @@ slug: /commands/throw
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.throw.Syntax-->**throw** ( *errorCode* {; *description*} ) 
+<!--REF #_command_.throw.Syntax-->**throw** ( *errorCode* : Integer {; *description* : Text} ) 
         
-            *throw* {( *errorObj* )}<!-- END REF-->
+            *throw* {( *errorObj* : Object )}<!-- END REF-->
 <!--REF #_command_.throw.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/mouse-position
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.MOUSE POSITION.Syntax-->**MOUSE POSITION** ( *mouseX* ; *mouseY* ; *botaoMouse* {; *} )<!-- END REF-->
+<!--REF #_command_.MOUSE POSITION.Syntax-->**MOUSE POSITION** ( *mouseX* : Real ; *mouseY* : Real ; *botaoMouse* : Integer {; *} )<!-- END REF-->
 <!--REF #_command_.MOUSE POSITION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

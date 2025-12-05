@@ -5,7 +5,7 @@ slug: /commands/qr-set-info-row
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QR SET INFO ROW.Syntax-->**QR SET INFO ROW** ( *area* ; *linha* ; *ocultar* )<!-- END REF-->
+<!--REF #_command_.QR SET INFO ROW.Syntax-->**QR SET INFO ROW** ( *area* : Integer ; *linha* : Integer ; *ocultar* : Integer )<!-- END REF-->
 <!--REF #_command_.QR SET INFO ROW.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

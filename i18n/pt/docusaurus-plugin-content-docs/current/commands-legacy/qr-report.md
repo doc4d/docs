@@ -5,7 +5,7 @@ slug: /commands/qr-report
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QR REPORT.Syntax-->**QR REPORT** ( {*tabela* ;} *documento* {; *nomeMetodo*}{; *} )<!-- END REF-->
+<!--REF #_command_.QR REPORT.Syntax-->**QR REPORT** ( {*tabela* : Table ;} *documento* : Text {; *nomeMetodo* : Text}{; *} )<!-- END REF-->
 <!--REF #_command_.QR REPORT.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

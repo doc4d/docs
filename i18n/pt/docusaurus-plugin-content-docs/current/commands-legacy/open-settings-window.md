@@ -5,7 +5,7 @@ slug: /commands/open-settings-window
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OPEN SETTINGS WINDOW.Syntax-->**OPEN SETTINGS WINDOW** ( *seletor* {; *acesso* {; *tipoConfiguração*}} )<!-- END REF-->
+<!--REF #_command_.OPEN SETTINGS WINDOW.Syntax-->**OPEN SETTINGS WINDOW** ( *seletor* : Text {; *acesso* : Boolean {; *tipoConfiguração* : Integer}} )<!-- END REF-->
 <!--REF #_command_.OPEN SETTINGS WINDOW.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

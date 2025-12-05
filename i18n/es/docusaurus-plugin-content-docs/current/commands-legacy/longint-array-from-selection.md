@@ -5,7 +5,7 @@ slug: /commands/longint-array-from-selection
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LONGINT ARRAY FROM SELECTION.Syntax-->**LONGINT ARRAY FROM SELECTION** ( *tabla* ; *arrReg* {; *seleccion*} )<!-- END REF-->
+<!--REF #_command_.LONGINT ARRAY FROM SELECTION.Syntax-->**LONGINT ARRAY FROM SELECTION** ( *tabla* : Table ; *arrReg* : Integer array {; *seleccion* : Text} )<!-- END REF-->
 <!--REF #_command_.LONGINT ARRAY FROM SELECTION.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

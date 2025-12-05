@@ -5,7 +5,7 @@ slug: /commands/find-in-field
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Find in field.Syntax-->**Find in field** ( *campoAlvo* ; *valor* ) : Integer<!-- END REF-->
+<!--REF #_command_.Find in field.Syntax-->**Find in field** ( *campoAlvo* : Field ; *valor* : Field ) : Integer<br/>**Find in field** ( *campoAlvo* : Field ; *valor* : Variable ) : Integer<!-- END REF-->
 <!--REF #_command_.Find in field.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

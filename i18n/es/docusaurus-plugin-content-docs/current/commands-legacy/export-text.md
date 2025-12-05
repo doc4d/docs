@@ -5,7 +5,7 @@ slug: /commands/export-text
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.EXPORT TEXT.Syntax-->**EXPORT TEXT** ( {*tabla* ;} *doc* )<!-- END REF-->
+<!--REF #_command_.EXPORT TEXT.Syntax-->**EXPORT TEXT** ( {*tabla* : Table ;} *doc* : Text )<!-- END REF-->
 <!--REF #_command_.EXPORT TEXT.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

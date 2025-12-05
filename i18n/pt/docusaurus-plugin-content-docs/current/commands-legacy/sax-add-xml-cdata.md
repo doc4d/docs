@@ -5,7 +5,7 @@ slug: /commands/sax-add-xml-cdata
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SAX ADD XML CDATA.Syntax-->**SAX ADD XML CDATA** ( *documento* ; *dados* )<!-- END REF-->
+<!--REF #_command_.SAX ADD XML CDATA.Syntax-->**SAX ADD XML CDATA** ( *documento* : Time ; *dados* : Blob )<br/>**SAX ADD XML CDATA** ( *documento* : Time ; *dados* : Text )<!-- END REF-->
 <!--REF #_command_.SAX ADD XML CDATA.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

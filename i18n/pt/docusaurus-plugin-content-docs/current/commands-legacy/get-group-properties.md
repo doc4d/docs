@@ -5,7 +5,7 @@ slug: /commands/get-group-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET GROUP PROPERTIES.Syntax-->**GET GROUP PROPERTIES** ( *refGrupo* ; *nome* ; *proprietario* {; *membros*} )<!-- END REF-->
+<!--REF #_command_.GET GROUP PROPERTIES.Syntax-->**GET GROUP PROPERTIES** ( *refGrupo* : Integer ; *nome* : Text ; *proprietario* : Integer {; *membros* : Integer array} )<!-- END REF-->
 <!--REF #_command_.GET GROUP PROPERTIES.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/set-picture-file-name
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET PICTURE FILE NAME.Syntax-->**SET PICTURE FILE NAME** ( *imagem* ; *nomArquivo* )<!-- END REF-->
+<!--REF #_command_.SET PICTURE FILE NAME.Syntax-->**SET PICTURE FILE NAME** ( *imagem* : Picture ; *nomArquivo* : Text )<br/>**SET PICTURE FILE NAME** ( *imagem* : Picture ; *nomArquivo* : Text )<!-- END REF-->
 <!--REF #_command_.SET PICTURE FILE NAME.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

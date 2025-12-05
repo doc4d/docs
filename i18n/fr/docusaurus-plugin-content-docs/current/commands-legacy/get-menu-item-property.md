@@ -5,7 +5,7 @@ slug: /commands/get-menu-item-property
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET MENU ITEM PROPERTY.Syntax-->**GET MENU ITEM PROPERTY** ( *menu* ; *ligneMenu* ; *propriété* ; *valeur* {; *process*} )<!-- END REF-->
+<!--REF #_command_.GET MENU ITEM PROPERTY.Syntax-->**GET MENU ITEM PROPERTY** ( *menu* : Integer ; *ligneMenu* : Integer ; *propriété* : Text ; *valeur* : any {; *process* : Integer} )<!-- END REF-->
 <!--REF #_command_.GET MENU ITEM PROPERTY.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

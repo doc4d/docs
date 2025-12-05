@@ -5,7 +5,7 @@ slug: /commands/sql-execute
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SQL EXECUTE.Syntax-->**SQL EXECUTE** ( *instrucaoSQL* {; *objAssoc*}{; *objAssoc2* ; ... ; *objAssocN*} )<!-- END REF-->
+<!--REF #_command_.SQL EXECUTE.Syntax-->**SQL EXECUTE** ( *instrucaoSQL* : Text {; *objAssoc* : Variable}{; *objAssoc2* ; ... ; *objAssocN*} )<br/>**SQL EXECUTE** ( *instrucaoSQL* : Text {; *objAssoc* : Field}{; *objAssoc2* ; ... ; *objAssocN*} )<!-- END REF-->
 <!--REF #_command_.SQL EXECUTE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/set-update-folder
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET UPDATE FOLDER.Syntax-->**SET UPDATE FOLDER** ( *rutaCarpeta* {; *erroresDiscretos*} )<!-- END REF-->
+<!--REF #_command_.SET UPDATE FOLDER.Syntax-->**SET UPDATE FOLDER** ( *rutaCarpeta* : Text {; *erroresDiscretos* : Boolean} )<!-- END REF-->
 <!--REF #_command_.SET UPDATE FOLDER.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

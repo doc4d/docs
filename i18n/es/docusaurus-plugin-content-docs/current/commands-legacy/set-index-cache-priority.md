@@ -5,7 +5,7 @@ slug: /commands/set-index-cache-priority
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET INDEX CACHE PRIORITY.Syntax-->**SET INDEX CACHE PRIORITY** ( *campo* ; *prioridad* )<!-- END REF-->
+<!--REF #_command_.SET INDEX CACHE PRIORITY.Syntax-->**SET INDEX CACHE PRIORITY** ( *campo* : Field ; *prioridad* : Integer )<!-- END REF-->
 <!--REF #_command_.SET INDEX CACHE PRIORITY.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

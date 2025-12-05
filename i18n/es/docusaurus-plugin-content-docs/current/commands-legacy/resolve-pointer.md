@@ -5,7 +5,7 @@ slug: /commands/resolve-pointer
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.RESOLVE POINTER.Syntax-->**RESOLVE POINTER** ( *puntero* ; *nomVar* ; *numTabla* ; *numCamp* )<!-- END REF-->
+<!--REF #_command_.RESOLVE POINTER.Syntax-->**RESOLVE POINTER** ( *puntero* : Pointer ; *nomVar* : Text ; *numTabla* : Integer ; *numCamp* : Integer )<!-- END REF-->
 <!--REF #_command_.RESOLVE POINTER.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

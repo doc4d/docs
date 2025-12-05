@@ -5,7 +5,7 @@ slug: /commands/base64-encode
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.BASE64 ENCODE.Syntax-->**BASE64 ENCODE** ( àEncoder {; *encodé*}{; *} )<!-- END REF-->
+<!--REF #_command_.BASE64 ENCODE.Syntax-->**BASE64 ENCODE** ( àEncoder {; *encodé* : Blob}{; *} )<br/>**BASE64 ENCODE** ( àEncoder {; *encodé* : Text}{; *} )<!-- END REF-->
 <!--REF #_command_.BASE64 ENCODE.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

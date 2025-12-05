@@ -5,7 +5,7 @@ slug: /commands/form-get-objects
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.FORM GET OBJECTS.Syntax-->**FORM GET OBJECTS** ( *arrObjetos* {; *arrVariaveis*  {; *arrPags*}} {; *opcaoPag*} )<!-- END REF-->
+<!--REF #_command_.FORM GET OBJECTS.Syntax-->**FORM GET OBJECTS** ( *arrObjetos* : Text array {; *arrVariaveis* : Pointer array  {; *arrPags* : Integer array}} {; *opcaoPag* : Integer} )<br/>**FORM GET OBJECTS** ( *arrObjetos* : Text array {; *arrVariaveis* : Pointer array  {; *arrPags* : Integer array}} {; *opcaoPag* : *} )<!-- END REF-->
 <!--REF #_command_.FORM GET OBJECTS.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

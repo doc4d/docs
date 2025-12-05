@@ -5,7 +5,7 @@ slug: /commands/play
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.PLAY.Syntax-->**PLAY** ( *objectName* {; *channel*} )<!-- END REF-->
+<!--REF #_command_.PLAY.Syntax-->**PLAY** ( *objectName* : Text {; *channel* : Integer} )<!-- END REF-->
 <!--REF #_command_.PLAY.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

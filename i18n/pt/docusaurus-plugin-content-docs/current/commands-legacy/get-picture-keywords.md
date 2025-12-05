@@ -5,7 +5,7 @@ slug: /commands/get-picture-keywords
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET PICTURE KEYWORDS.Syntax-->**GET PICTURE KEYWORDS** ( *imagem* ; *arrayPalavrasChaves* {; *} )<!-- END REF-->
+<!--REF #_command_.GET PICTURE KEYWORDS.Syntax-->**GET PICTURE KEYWORDS** ( *imagem* : Picture ; *arrayPalavrasChaves* : Text array {; *} )<br/>**GET PICTURE KEYWORDS** ( *imagem* : Picture ; *arrayPalavrasChaves* : Text array {; *} )<!-- END REF-->
 <!--REF #_command_.GET PICTURE KEYWORDS.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

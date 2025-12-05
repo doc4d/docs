@@ -5,7 +5,7 @@ slug: /commands/dom-set-xml-attribute
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DOM SET XML ATTRIBUTE.Syntax-->**DOM SET XML ATTRIBUTE** ( *refElemento* ; *nomeAtrib* ; *valorAtrib* {; *nomeAtrib2* ; *valorAtrib2* ; ... ; *nomeAtribN* ; *valorAtribN*} )<!-- END REF-->
+<!--REF #_command_.DOM SET XML ATTRIBUTE.Syntax-->**DOM SET XML ATTRIBUTE** ( *refElemento* : Text ; *nomeAtrib* : Text ; *valorAtrib* : Text {; *nomeAtrib2* ; *valorAtrib2* ; ... ; *nomeAtribN* ; *valorAtribN*} )<br/>**DOM SET XML ATTRIBUTE** ( *refElemento* : Text ; *nomeAtrib* : Text ; *valorAtrib* : Boolean {; *nomeAtrib2* ; *valorAtrib2* ; ... ; *nomeAtribN* ; *valorAtribN*} )<br/>**DOM SET XML ATTRIBUTE** ( *refElemento* : Text ; *nomeAtrib* : Text ; *valorAtrib* : Integer {; *nomeAtrib2* ; *valorAtrib2* ; ... ; *nomeAtribN* ; *valorAtribN*} )<br/>**DOM SET XML ATTRIBUTE** ( *refElemento* : Text ; *nomeAtrib* : Text ; *valorAtrib* : Real {; *nomeAtrib2* ; *valorAtrib2* ; ... ; *nomeAtribN* ; *valorAtribN*} )<br/>**DOM SET XML ATTRIBUTE** ( *refElemento* : Text ; *nomeAtrib* : Text ; *valorAtrib* : Time {; *nomeAtrib2* ; *valorAtrib2* ; ... ; *nomeAtribN* ; *valorAtribN*} )<br/>**DOM SET XML ATTRIBUTE** ( *refElemento* : Text ; *nomeAtrib* : Text ; *valorAtrib* : Date {; *nomeAtrib2* ; *valorAtrib2* ; ... ; *nomeAtribN* ; *valorAtribN*} )<!-- END REF-->
 <!--REF #_command_.DOM SET XML ATTRIBUTE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

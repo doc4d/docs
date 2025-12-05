@@ -5,7 +5,7 @@ slug: /commands/activity-snapshot
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ACTIVITY SNAPSHOT.Syntax-->**ACTIVITY SNAPSHOT** ( arrActividades | arrUUID ; *arrInicio* ; *arrDuracion* ; *arrInfo* {; *arrDetails*}{; *} )<!-- END REF-->
+<!--REF #_command_.ACTIVITY SNAPSHOT.Syntax-->**ACTIVITY SNAPSHOT** ( arrActividades | arrUUID ; *arrInicio* : Text array ; *arrDuracion* : Integer array ; *arrInfo* : Text array {; *arrDetails* : Object array}{; *} )<!-- END REF-->
 <!--REF #_command_.ACTIVITY SNAPSHOT.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

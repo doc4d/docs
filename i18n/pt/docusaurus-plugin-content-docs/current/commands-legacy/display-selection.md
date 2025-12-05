@@ -5,7 +5,7 @@ slug: /commands/display-selection
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DISPLAY SELECTION.Syntax-->**DISPLAY SELECTION** ( {*tabela*}{; *modoSelecao*}{; *entraLista*}{; *}{; *} )<!-- END REF-->
+<!--REF #_command_.DISPLAY SELECTION.Syntax-->**DISPLAY SELECTION** ( {*tabela* : Table}{; *modoSelecao* : Integer}{; *entraLista* : Boolean}{; *}{; *} )<!-- END REF-->
 <!--REF #_command_.DISPLAY SELECTION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/get-document-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET DOCUMENT PROPERTIES.Syntax-->**GET DOCUMENT PROPERTIES** ( *documento* ; *bloqueado* ; *invisivel* ; *criadoEm* ; *criadoAs* ; *modificadoEm* ; *modificadoAs* )<!-- END REF-->
+<!--REF #_command_.GET DOCUMENT PROPERTIES.Syntax-->**GET DOCUMENT PROPERTIES** ( *documento* : Text ; *bloqueado* : Boolean ; *invisivel* : Boolean ; *criadoEm* : Date ; *criadoAs* : Time ; *modificadoEm* : Date ; *modificadoAs* : Time )<!-- END REF-->
 <!--REF #_command_.GET DOCUMENT PROPERTIES.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

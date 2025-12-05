@@ -5,7 +5,7 @@ slug: /commands/use-character-set
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.USE CHARACTER SET.Syntax-->**USE CHARACTER SET** ( *map* {; *mapInOut*} )<!-- END REF-->
+<!--REF #_command_.USE CHARACTER SET.Syntax-->**USE CHARACTER SET** ( *map* : Text {; *mapInOut* : Integer} )<br/>**USE CHARACTER SET** ( *map* : Operator {; *mapInOut* : Integer} )<!-- END REF-->
 <!--REF #_command_.USE CHARACTER SET.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

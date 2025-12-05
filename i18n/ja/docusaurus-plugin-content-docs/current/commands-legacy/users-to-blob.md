@@ -5,7 +5,7 @@ slug: /commands/users-to-blob
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.USERS TO BLOB.Syntax-->**USERS TO BLOB** ( *users* )<!-- END REF-->
+<!--REF #_command_.USERS TO BLOB.Syntax-->**USERS TO BLOB** ( *users* : Blob )<!-- END REF-->
 <!--REF #_command_.USERS TO BLOB.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

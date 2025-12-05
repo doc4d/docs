@@ -5,7 +5,7 @@ slug: /commands/order-by-attribute
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ORDER BY ATTRIBUTE.Syntax-->**ORDER BY ATTRIBUTE** ( {*laTable* ;} *champObjet* ; *cheminAttribut* ; > ou < {; *champObjet2* ; *cheminAttribut2* ; > ou <2 ; ... ; *champObjetN* ; *cheminAttributN* ; > ou <N} {; *} )<!-- END REF-->
+<!--REF #_command_.ORDER BY ATTRIBUTE.Syntax-->**ORDER BY ATTRIBUTE** ( {*laTable* : Table ;} *champObjet* : Object ; *cheminAttribut* : Text ; > ou < {; *champObjet2* ; *cheminAttribut2* ; > ou <2 ; ... ; *champObjetN* ; *cheminAttributN* ; > ou <N} {; *} )<!-- END REF-->
 <!--REF #_command_.ORDER BY ATTRIBUTE.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

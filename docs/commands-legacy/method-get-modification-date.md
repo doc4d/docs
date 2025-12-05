@@ -5,7 +5,7 @@ slug: /commands/method-get-modification-date
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD GET MODIFICATION DATE.Syntax-->**METHOD GET MODIFICATION DATE** ( *path* ; *modDate* ; *modTime* {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD GET MODIFICATION DATE.Syntax-->**METHOD GET MODIFICATION DATE** ( *path* : Text ; *modDate* : Date ; *modTime* : Time {; *} )<br/>**METHOD GET MODIFICATION DATE** ( *path* : Text ; *modDate* : Date ; *modTime* : Integer array {; *} )<br/>**METHOD GET MODIFICATION DATE** ( *path* : Text ; *modDate* : Date array ; *modTime* : Time {; *} )<br/>**METHOD GET MODIFICATION DATE** ( *path* : Text ; *modDate* : Date array ; *modTime* : Integer array {; *} )<br/>**METHOD GET MODIFICATION DATE** ( *path* : Text array ; *modDate* : Date ; *modTime* : Time {; *} )<br/>**METHOD GET MODIFICATION DATE** ( *path* : Text array ; *modDate* : Date ; *modTime* : Integer array {; *} )<br/>**METHOD GET MODIFICATION DATE** ( *path* : Text array ; *modDate* : Date array ; *modTime* : Time {; *} )<br/>**METHOD GET MODIFICATION DATE** ( *path* : Text array ; *modDate* : Date array ; *modTime* : Integer array {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD GET MODIFICATION DATE.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

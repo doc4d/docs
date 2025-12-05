@@ -5,7 +5,7 @@ slug: /commands/get-pasteboard-data
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET PASTEBOARD DATA.Syntax-->**GET PASTEBOARD DATA** ( *tipoDatos* ; *datos* )<!-- END REF-->
+<!--REF #_command_.GET PASTEBOARD DATA.Syntax-->**GET PASTEBOARD DATA** ( *tipoDatos* : Text ; *datos* : Blob )<!-- END REF-->
 <!--REF #_command_.GET PASTEBOARD DATA.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

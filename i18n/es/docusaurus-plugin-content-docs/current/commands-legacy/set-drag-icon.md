@@ -5,7 +5,7 @@ slug: /commands/set-drag-icon
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET DRAG ICON.Syntax-->**SET DRAG ICON** ( *icono* {; *despH* {; *despV*}} )<!-- END REF-->
+<!--REF #_command_.SET DRAG ICON.Syntax-->**SET DRAG ICON** ( *icono* : Picture {; *despH* : Integer {; *despV* : Integer}} )<!-- END REF-->
 <!--REF #_command_.SET DRAG ICON.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

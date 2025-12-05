@@ -5,7 +5,7 @@ slug: /commands/accumulate
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ACCUMULATE.Syntax-->**ACCUMULATE** ( *dados* {; *dados2* ; ... ; *dadosN*} )<!-- END REF-->
+<!--REF #_command_.ACCUMULATE.Syntax-->**ACCUMULATE** ( *dados* : Field {; *dados2* ; ... ; *dadosN*} )<br/>**ACCUMULATE** ( *dados* : Variable {; *dados2* ; ... ; *dadosN*} )<!-- END REF-->
 <!--REF #_command_.ACCUMULATE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

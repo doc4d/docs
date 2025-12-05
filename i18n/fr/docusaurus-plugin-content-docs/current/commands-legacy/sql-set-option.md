@@ -5,7 +5,7 @@ slug: /commands/sql-set-option
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SQL SET OPTION.Syntax-->**SQL SET OPTION** ( *option* ; *valeur* )<!-- END REF-->
+<!--REF #_command_.SQL SET OPTION.Syntax-->**SQL SET OPTION** ( *option* : Integer ; *valeur* : Integer )<br/>**SQL SET OPTION** ( *option* : Integer ; *valeur* : Text )<!-- END REF-->
 <!--REF #_command_.SQL SET OPTION.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

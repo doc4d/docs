@@ -5,7 +5,7 @@ slug: /commands/xml-decode
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.XML DECODE.Syntax-->**XML DECODE** ( *valorXML* ; *objeto4D* )<!-- END REF-->
+<!--REF #_command_.XML DECODE.Syntax-->**XML DECODE** ( *valorXML* : Text ; *objeto4D* : Field )<br/>**XML DECODE** ( *valorXML* : Text ; *objeto4D* : Variable )<!-- END REF-->
 <!--REF #_command_.XML DECODE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

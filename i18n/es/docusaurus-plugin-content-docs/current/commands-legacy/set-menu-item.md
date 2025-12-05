@@ -5,7 +5,7 @@ slug: /commands/set-menu-item
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET MENU ITEM.Syntax-->**SET MENU ITEM** ( *menu* ; *lineamenu* ; *textoElem* {; *proceso*}{; *} )<!-- END REF-->
+<!--REF #_command_.SET MENU ITEM.Syntax-->**SET MENU ITEM** ( *menu* : Integer ; *lineamenu* : Integer ; *textoElem* : Text {; *proceso* : Integer}{; *} )<br/>**SET MENU ITEM** ( *menu* : Text ; *lineamenu* : Integer ; *textoElem* : Text {; *proceso* : Integer}{; *} )<!-- END REF-->
 <!--REF #_command_.SET MENU ITEM.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

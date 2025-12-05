@@ -5,7 +5,7 @@ slug: /commands/insert-menu-item
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.INSERT MENU ITEM.Syntax-->**INSERT MENU ITEM** ( *menu* ; *depoisItem* ; *textoElem* {; *subMenu* {; *processo*}}{; *} )<!-- END REF-->
+<!--REF #_command_.INSERT MENU ITEM.Syntax-->**INSERT MENU ITEM** ( *menu* : Integer ; *depoisItem* : Integer ; *textoElem* : Text {; *subMenu* : Text {; *processo* : Integer}}{; *} )<!-- END REF-->
 <!--REF #_command_.INSERT MENU ITEM.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

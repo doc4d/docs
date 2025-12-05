@@ -5,7 +5,7 @@ slug: /commands/form-get-names
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.FORM GET NAMES.Syntax-->**FORM GET NAMES** ( {*tabla* ;} *arrayNoms* {; *filtro* {; *marcador*}}{; *} )<!-- END REF-->
+<!--REF #_command_.FORM GET NAMES.Syntax-->**FORM GET NAMES** ( {*tabla* : Table ;} *arrayNoms* : Text array {; *filtro* : Text {; *marcador* : Real}}{; *} )<!-- END REF-->
 <!--REF #_command_.FORM GET NAMES.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

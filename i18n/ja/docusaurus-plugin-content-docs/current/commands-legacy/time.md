@@ -5,7 +5,7 @@ slug: /commands/time
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Time.Syntax-->**Time** ( *timeValue* ) : Time<!-- END REF-->
+<!--REF #_command_.Time.Syntax-->**Time** ( *timeValue* : Text ) : Time<br/>**Time** ( *timeValue* : Integer ) : Time<!-- END REF-->
 <!--REF #_command_.Time.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/folder-list
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.FOLDER LIST.Syntax-->**FOLDER LIST** ( *pathname* ; *directories* )<!-- END REF-->
+<!--REF #_command_.FOLDER LIST.Syntax-->**FOLDER LIST** ( *pathname* : Text ; *directories* : Text array )<!-- END REF-->
 <!--REF #_command_.FOLDER LIST.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

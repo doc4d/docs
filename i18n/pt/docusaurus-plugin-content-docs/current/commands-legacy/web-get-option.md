@@ -5,7 +5,7 @@ slug: /commands/web-get-option
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WEB GET OPTION.Syntax-->**WEB GET OPTION** ( *seletor* ; *valor* )<!-- END REF-->
+<!--REF #_command_.WEB GET OPTION.Syntax-->**WEB GET OPTION** ( *seletor* : Integer ; *valor* : Integer )<br/>**WEB GET OPTION** ( *seletor* : Integer ; *valor* : Text )<br/>**WEB GET OPTION** ( *seletor* : Integer ; *valor* : Collection )<!-- END REF-->
 <!--REF #_command_.WEB GET OPTION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

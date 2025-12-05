@@ -5,7 +5,7 @@ slug: /commands/delete-menu-item
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DELETE MENU ITEM.Syntax-->**DELETE MENU ITEM** ( *menu* ; *lineamenu* {; *proceso*} )<!-- END REF-->
+<!--REF #_command_.DELETE MENU ITEM.Syntax-->**DELETE MENU ITEM** ( *menu* : Integer ; *lineamenu* : Integer {; *proceso* : Integer} )<br/>**DELETE MENU ITEM** ( *menu* : Text ; *lineamenu* : Integer {; *proceso* : Integer} )<!-- END REF-->
 <!--REF #_command_.DELETE MENU ITEM.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

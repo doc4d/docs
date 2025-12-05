@@ -5,7 +5,7 @@ slug: /commands/dom-create-xml-element
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DOM Create XML element.Syntax-->**DOM Create XML element** ( *refElemento* ; *xRota* {; *nomeAtrib* ; *valorAtrib*} {; *nomeAtrib2* ; *valorAtrib2* ; ... ; *nomeAtribN* ; *valorAtribN*} ) : Text<!-- END REF-->
+<!--REF #_command_.DOM Create XML element.Syntax-->**DOM Create XML element** ( *refElemento* : Text ; *xRota* : Text {; *nomeAtrib* : Text ; *valorAtrib* : Text} {; *nomeAtrib2* ; *valorAtrib2* ; ... ; *nomeAtribN* ; *valorAtribN*} ) : Text<br/>**DOM Create XML element** ( *refElemento* : Text ; *xRota* : Text {; *nomeAtrib* : Text ; *valorAtrib* : Boolean} {; *nomeAtrib2* ; *valorAtrib2* ; ... ; *nomeAtribN* ; *valorAtribN*} ) : Text<br/>**DOM Create XML element** ( *refElemento* : Text ; *xRota* : Text {; *nomeAtrib* : Text ; *valorAtrib* : Integer} {; *nomeAtrib2* ; *valorAtrib2* ; ... ; *nomeAtribN* ; *valorAtribN*} ) : Text<br/>**DOM Create XML element** ( *refElemento* : Text ; *xRota* : Text {; *nomeAtrib* : Text ; *valorAtrib* : Real} {; *nomeAtrib2* ; *valorAtrib2* ; ... ; *nomeAtribN* ; *valorAtribN*} ) : Text<br/>**DOM Create XML element** ( *refElemento* : Text ; *xRota* : Text {; *nomeAtrib* : Text ; *valorAtrib* : Time} {; *nomeAtrib2* ; *valorAtrib2* ; ... ; *nomeAtribN* ; *valorAtribN*} ) : Text<br/>**DOM Create XML element** ( *refElemento* : Text ; *xRota* : Text {; *nomeAtrib* : Text ; *valorAtrib* : Date} {; *nomeAtrib2* ; *valorAtrib2* ; ... ; *nomeAtribN* ; *valorAtribN*} ) : Text<!-- END REF-->
 <!--REF #_command_.DOM Create XML element.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

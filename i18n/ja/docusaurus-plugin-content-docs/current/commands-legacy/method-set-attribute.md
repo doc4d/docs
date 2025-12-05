@@ -5,7 +5,7 @@ slug: /commands/method-set-attribute
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD SET ATTRIBUTE.Syntax-->**METHOD SET ATTRIBUTE** ( *path* ; *attribType* ; *attribValue* {; *attribType2* ; *attribValue2* ; ... ; *attribTypeN* ; *attribValueN*}{; *} )<!-- END REF-->
+<!--REF #_command_.METHOD SET ATTRIBUTE.Syntax-->**METHOD SET ATTRIBUTE** ( *path* : Text ; *attribType* : Integer ; *attribValue* : Boolean {; *attribType2* ; *attribValue2* ; ... ; *attribTypeN* ; *attribValueN*}{; *} )<br/>**METHOD SET ATTRIBUTE** ( *path* : Text ; *attribType* : Integer ; *attribValue* : Text {; *attribType2* ; *attribValue2* ; ... ; *attribTypeN* ; *attribValueN*}{; *} )<!-- END REF-->
 <!--REF #_command_.METHOD SET ATTRIBUTE.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

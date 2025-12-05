@@ -5,7 +5,7 @@ slug: /commands/sax-get-xml-document-values
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SAX GET XML DOCUMENT VALUES.Syntax-->**SAX GET XML DOCUMENT VALUES** ( *documento* ; *codificaçao* ; *versao* ; *autonomo* )<!-- END REF-->
+<!--REF #_command_.SAX GET XML DOCUMENT VALUES.Syntax-->**SAX GET XML DOCUMENT VALUES** ( *documento* : Time ; *codificaçao* : Text ; *versao* : Text ; *autonomo* : Boolean )<!-- END REF-->
 <!--REF #_command_.SAX GET XML DOCUMENT VALUES.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

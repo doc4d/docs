@@ -5,7 +5,7 @@ slug: /commands/on-err-call
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ON ERR CALL.Syntax-->**ON ERR CALL** ( *metodoErro* {; *escopo*} )<!-- END REF-->
+<!--REF #_command_.ON ERR CALL.Syntax-->**ON ERR CALL** ( *metodoErro* : Text {; *escopo* : Integer} )<!-- END REF-->
 <!--REF #_command_.ON ERR CALL.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

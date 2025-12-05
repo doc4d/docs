@@ -5,7 +5,7 @@ slug: /commands/method-set-attribute
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD SET ATTRIBUTE.Syntax-->**METHOD SET ATTRIBUTE** ( *ruta* ; *tipoAtrib* ; *valorAtrib* {; *tipoAtrib2* ; *valorAtrib2* ; ... ; *tipoAtribN* ; *valorAtribN*}{; *operador*} )<!-- END REF-->
+<!--REF #_command_.METHOD SET ATTRIBUTE.Syntax-->**METHOD SET ATTRIBUTE** ( *ruta* : Text ; *tipoAtrib* : Integer ; *valorAtrib* : Boolean {; *tipoAtrib2* ; *valorAtrib2* ; ... ; *tipoAtribN* ; *valorAtribN*}{; *operador* : *} )<br/>**METHOD SET ATTRIBUTE** ( *ruta* : Text ; *tipoAtrib* : Integer ; *valorAtrib* : Text {; *tipoAtrib2* ; *valorAtrib2* ; ... ; *tipoAtribN* ; *valorAtribN*}{; *operador* : *} )<!-- END REF-->
 <!--REF #_command_.METHOD SET ATTRIBUTE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

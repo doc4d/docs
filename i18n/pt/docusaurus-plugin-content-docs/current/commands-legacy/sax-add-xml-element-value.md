@@ -5,7 +5,7 @@ slug: /commands/sax-add-xml-element-value
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SAX ADD XML ELEMENT VALUE.Syntax-->**SAX ADD XML ELEMENT VALUE** ( *documento* ; *dados* {; *} )<!-- END REF-->
+<!--REF #_command_.SAX ADD XML ELEMENT VALUE.Syntax-->**SAX ADD XML ELEMENT VALUE** ( *documento* : Time ; *dados* : Text {; *} )<br/>**SAX ADD XML ELEMENT VALUE** ( *documento* : Time ; *dados* : Variable {; *} )<!-- END REF-->
 <!--REF #_command_.SAX ADD XML ELEMENT VALUE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

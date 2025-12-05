@@ -5,7 +5,7 @@ slug: /commands/selection-range-to-array
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SELECTION RANGE TO ARRAY.Syntax-->**SELECTION RANGE TO ARRAY** ( *start* ; *end* {; field | table ; *array*} {; field | table2 ; *array2* ; ... ; field | tableN ; *arrayN*} )<!-- END REF-->
+<!--REF #_command_.SELECTION RANGE TO ARRAY.Syntax-->**SELECTION RANGE TO ARRAY** ( *start* : Integer ; *end* : Integer {; field | table ; *array* : Array} {; field | table2 ; *array2* ; ... ; field | tableN ; *arrayN*} )<!-- END REF-->
 <!--REF #_command_.SELECTION RANGE TO ARRAY.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |
