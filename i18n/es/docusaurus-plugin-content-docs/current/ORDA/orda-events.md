@@ -24,7 +24,7 @@ No se puede activar directamente la ejecución de la función de evento. Los eve
 
 :::info Nota de compatibilidad
 
-Los eventos de entidad ORDA en el almacen de datos equivalen a triggers en la base de datos 4D. Sin embargo, las acciones desencadenadas a nivel de la base de datos 4D utilizando los comandos del lenguaje clásico 4D o las acciones estándar no desencadenan eventos ORDA. Note also that, unlike triggers, ORDA entity events do not lock the entire underlying table of a dataclass while saving or dropping entities. Several events can run in parallel as long as they involve distinct entities (i.e. records).
+Los eventos de entidad ORDA en el almacen de datos equivalen a triggers en la base de datos 4D. Sin embargo, las acciones desencadenadas a nivel de la base de datos 4D utilizando los comandos del lenguaje clásico 4D o las acciones estándar no desencadenan eventos ORDA. Note also that, unlike triggers, ORDA entity events do not lock the entire underlying table of a dataclass while saving or dropping entities. Varios eventos pueden ejecutarse en paralelo siempre que afecten a entidades distintas (es decir, registros).
 
 :::
 
@@ -453,7 +453,7 @@ Función evento afterSave($event : Object)
 
 Este evento se activa justo después de guardar una entidad en el archivo de datos, cuando se ha modificado al menos un atributo. No se ejecuta si no se ha tocado ningún atributo en la entidad.
 
-This event is useful after saving data to propagate the save action outside the application or to execute administration tasks. Por ejemplo, se puede utilizar para enviar un correo electrónico de confirmación después de guardar los datos. O, en caso de error al guardar los datos, puede hacer una cancelación para restaurar un estado consistente de los datos.
+Este evento es útil después de guardar datos para propagar la acción de guardar fuera de la aplicación o para ejecutar tareas de administración. Por ejemplo, se puede utilizar para enviar un correo electrónico de confirmación después de guardar los datos. O, en caso de error al guardar los datos, puede hacer una cancelación para restaurar un estado consistente de los datos.
 
 La función recibe un [objeto *event*](#event-parameter) como parámetro.
 

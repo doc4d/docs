@@ -848,10 +848,6 @@ title: Commands by name
 [`Path to object`](../commands-legacy/path-to-object.md)<br/>
 [`PAUSE INDEXES`](../commands-legacy/pause-indexes.md)<br/>
 [`PAUSE PROCESS`](../commands-legacy/pause-process.md)<br/>
-[`PHP Execute`](../commands-legacy/php-execute.md)<br/>
-[`PHP GET FULL RESPONSE`](../commands-legacy/php-get-full-response.md)<br/>
-[`PHP GET OPTION`](../commands-legacy/php-get-option.md)<br/>
-[`PHP SET OPTION`](../commands-legacy/php-set-option.md)<br/>
 [`PICTURE CODEC LIST`](../commands-legacy/picture-codec-list.md)<br/>
 [`PICTURE LIBRARY LIST`](../commands-legacy/picture-library-list.md)<br/>
 [`PICTURE PROPERTIES`](../commands-legacy/picture-properties.md)<br/>
@@ -1290,6 +1286,8 @@ title: Commands by name
 [`WA STOP LOADING URL`](../commands-legacy/wa-stop-loading-url.md)<br/>
 [`WA ZOOM IN`](../commands-legacy/wa-zoom-in.md)<br/>
 [`WA ZOOM OUT`](../commands-legacy/wa-zoom-out.md)<br/>
+[`Web Event`](web-event.md)<br/>
+[`Web Form`](web-form.md)<br/>
 [`WEB GET BODY PART`](../commands-legacy/web-get-body-part.md)<br/>
 [`WEB Get body part count`](../commands-legacy/web-get-body-part-count.md)<br/>
 [`WEB Get current session ID`](../commands-legacy/web-get-current-session-id.md)<br/>

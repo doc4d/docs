@@ -49,6 +49,7 @@ module.exports =
             "Project/code-overview",
             "code-editor/write-class-method",
             "Project/project-method-properties",
+            "Project/search-replace",
             "Project/documentation"
           ]
         },
@@ -1157,20 +1158,6 @@ module.exports =
             },
             {
               "type": "category",
-              "label": "PHP",
-              "link": {
-                "type": "doc",
-                "id": "commands/theme/PHP_theme"
-              },
-              "items": [
-                "commands-legacy/php-execute",
-                "commands-legacy/php-get-full-response",
-                "commands-legacy/php-get-option",
-                "commands-legacy/php-set-option"
-              ]
-            },
-            {
-              "type": "category",
               "label": "Pasteboard",
               "link": {
                 "type": "doc",
@@ -2022,6 +2009,8 @@ module.exports =
                 "id": "commands/theme/Web_Server_theme"
               },
               "items": [
+                "commands/web-event",
+                "commands/web-form",
                 "commands-legacy/web-get-body-part",
                 "commands-legacy/web-get-body-part-count",
                 "commands-legacy/web-get-current-session-id",
@@ -3215,6 +3204,7 @@ module.exports =
                   ]
             },
             "WritePro/commands-legacy/4d-write-pro-attributes",
+            "WritePro/user-legacy/standard-actions",
             {
               type: "category",
               label: "Commands",
@@ -3350,6 +3340,7 @@ module.exports =
                 "aikit/Classes/openaiembeddingsresult",
                 "aikit/Classes/openaierror",
                 "aikit/Classes/openaifile",
+                "aikit/Classes/openaifiledeleted",
                 "aikit/Classes/openaifiledeletedresult",
                 "aikit/Classes/openaifilelistparameters",
                 "aikit/Classes/openaifilelistresult",
