@@ -195,13 +195,15 @@ $token := Session.createOTP( 60 ) //the token is valid for 1 mn
 
 #### Description
 
-:::note
-
-This function does nothing in remote client, stored procedure, and standalone sessions.
-
-:::
-
 The `.demote()` function <!-- REF #SessionClass.demote().Summary -->removes the promoted privilege whose id you passed in *promoteId* from the web process, if it was previously added by the [`.promote()`](#promote) function<!-- END REF -->.
+
+|Can be called in sessions||
+|---|---|
+|web|&check; |
+|remote client|&cross; |
+|standalone|&cross;|
+|stored procedure|&cross; |
+
 
 If no privilege with *promoteId* was promoted using [`.promote()`](#promote) in the web process, the function does nothing. 
 
@@ -256,13 +258,16 @@ exposed Function search($search : Text) : Collection
 
 #### Description
 
-:::note
-
-This property is only available with web user sessions.
-
-:::
 
 The `.expirationDate` property contains <!-- REF #SessionClass.expirationDate.Summary -->the expiration date and time of the session cookie<!-- END REF -->. The value is expressed as text in the ISO 8601 format: `YYYY-MM-DDTHH:MM:SS.mmmZ`.
+
+|Can be called in sessions||
+|---|---|
+|web|&check; |
+|remote client|&cross; |
+|standalone|&cross;|
+|stored procedure|&cross; |
+
 
 This property is **read-only**. It is automatically recomputed if the [`.idleTimeout`](#idletimeout) property value is modified.
 
@@ -283,7 +288,7 @@ $expiration:=Session.expirationDate //eg "2021-11-05T17:10:42Z"
 
 |Release|Changes|
 |---|---|
-|21|Support of remote client sessions|
+|21|Support of remote and standalone sessions|
 |20 R6|Added|
 
 </details>
@@ -301,15 +306,23 @@ $expiration:=Session.expirationDate //eg "2021-11-05T17:10:42Z"
 
 The `.getPrivileges()` function <!-- REF #SessionClass.getPrivileges().Summary -->returns a collection of all the privilege names associated to the session<!-- END REF -->.
 
+|Can be called in sessions||
+|---|---|
+|web|&check; |
+|remote client|&check; |
+|standalone|&check;|
+|stored procedure|&cross; |
+
 :::note
 
 This function returns privileges assigned to a Session using the [`setPrivileges()`](#setprivileges) function only. Promoted privileges are NOT returned by the function, whether they are added through the [roles.json](../ORDA/privileges.md#rolesjson-file) file or the [`promote()`](#promote) function. 
 
 :::
 
-With remote client sessions, the privileges only concerns the code executed in the context of a [web request sent through a Web area](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas). 
 
-With stored procedure sessions and standalone sessions, this function returns a collection only containing "WebAdmin".
+- **Remote/Standalone sessions**: The function only concerns the code executed in the context of a [web access sharing the session](../Desktop/clientServer.md#sharing-the-remote-session-for-web-accesses).
+- **Stored procedure sessions**: The function does nothing and always returns an empty collection.
+
 
 #### Example
 
@@ -385,7 +398,7 @@ $privileges := Session.getPrivileges()
 
 |Release|Changes|
 |---|---|
-|21|Returns True for promoted privileges, Support of remote client sessions|
+|21|Returns True for promoted privileges, Support of remote and standalone sessions|
 |18 R6|Added|
 
 </details>
@@ -406,15 +419,22 @@ $privileges := Session.getPrivileges()
 
 The `.hasPrivilege()` function <!-- REF #SessionClass.hasPrivilege().Summary -->returns True if the *privilege* is associated to the session, and False otherwise<!-- END REF -->.
 
+|Can be called in sessions||
+|---|---|
+|web|&check; |
+|remote client|&check; |
+|standalone|&check;|
+|stored procedure|&cross; |
+
+
 :::note
 
 This function returns True for the *privilege* if called from a function that was promoted for this privilege (either through the [roles.json](../ORDA/privileges.md#rolesjson-file) file or the [`promote()`](#promote) function). 
 
 :::
 
-Regarding remote client sessions, the function only concerns the code executed in the context of a [web request sent through a Web area](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas). 
-
-With stored procedure sessions and standalone sessions, this function always returns True, whatever the *privilege*.
+- **Remote/Standalone sessions**: The function only concerns the code executed in the context of a [web access sharing the session](../Desktop/clientServer.md#sharing-the-remote-session-for-web-accesses).
+- **Stored procedure sessions**: The function does nothing and always returns True, whatever the *privilege*.
 
 
 #### Example
@@ -432,7 +452,7 @@ End if
 
 #### See also
 
-[*Blog posts about this feature*](https://blog.4d.com/?s=hasPrivilege)
+[*Restrict data according to privileges or information saved in session storage* (blog post)](https://blog.4d.com/?s=hasPrivilege)
 
 <!-- END REF -->
 
@@ -453,6 +473,13 @@ End if
 #### Description
 
 The `.id` property contains <!-- REF #SessionClass.id.Summary -->the unique identifier (UUID) of the user session<!-- END REF -->. With 4D Server, this unique string is automatically assigned by the server for each session and allows you to identify its processes.
+
+|Can be called in sessions||
+|---|---|
+|web|&check; |
+|remote client|&check; |
+|standalone|&check;|
+|stored procedure|&check; |
 
 
 :::tip
@@ -481,13 +508,15 @@ You can use this property to get the [`.storage`](#storage) object of a session 
 
 #### Description
 
-:::note
-
-This property is only available with web user sessions.
-
-:::
-
 The `.idleTimeout` property contains <!-- REF #SessionClass.idleTimeout.Summary -->the inactivity session timeout (in minutes), after which the session is automatically closed by 4D<!-- END REF -->.
+
+|Can be called in sessions||
+|---|---|
+|web|&check; |
+|remote client|&cross; |
+|standalone|&cross;|
+|stored procedure|&cross;|
+
 
 If this property is not set, the default value is 60 (1h).
 
@@ -529,21 +558,18 @@ End if
 
 #### Description
 
-:::note
-
-This property is only available with remote client, stored procedure, and standalone sessions.
-
-:::
-
 The `.info` property <!-- REF #SessionClass.info.Summary -->describes the remote client or stored procedure session on the server, or the standalone session<!-- END REF -->.
 
-:::note
+|Can be called in sessions||
+|---|---|
+|web|&cross; |
+|remote client|&check; |
+|standalone|&check;|
+|stored procedure|&check;|
 
-- The `.info` object is the same object as the one returned in the "session" property by the [`Process activity`](../commands/process-activity.md) command for remote client and stored procedure sessions.
-- The `.info` object is the same object as the one returned by the [`Session info`](../commands/session-info.md) command for a standalone session.
+- **Remote sessions** and **Stored procedure sessions**: The `.info` object is the same object as the one returned in the "session" property by the [`Process activity`](../commands/process-activity.md) command.
+- **Standalone sessions**: The `.info` object is the same object as the one returned by the [`Session info`](../commands/session-info.md) command.
 
-
-:::
 
 The `.info` object contains the following properties:
 
@@ -592,13 +618,17 @@ Since `.info` is a computed property, it is recommended to call it once and then
 
 #### Description
 
-:::note
-
-This function always returns **False** with remote client, stored procedure, and standalone sessions.
-
-:::
 
 The `.isGuest()` function <!-- REF #SessionClass.isGuest().Summary -->returns True if the session is a Guest session (i.e. it has no privileges)<!-- END REF -->.
+
+|Can be called in sessions||
+|---|---|
+|web|&check; |
+|remote client|&cross; |
+|standalone|&cross; |
+|stored procedure|&cross;|
+
+**Remote/Standalone sessions** and **Stored procedure sessions**: this function always returns **False**.
 
 
 #### Example
@@ -645,6 +675,14 @@ This function does nothing in remote client, stored procedure, and standalone se
 :::
 
 The `.promote()` function <!-- REF #SessionClass.promote().Summary -->adds the privilege defined in the *privilege* parameter to the current process during the execution of the calling function and returns the id of the promoted privilege<!-- END REF -->.
+
+|Can be called in sessions||
+|---|---|
+|web|&check; |
+|remote client|&cross; |
+|standalone|&cross;|
+|stored procedure|&cross; |
+
 
 Dynamically adding privileges is useful when access rights depend on the execution context, which cannot be fully defined in the "roles.json" file. This is particularly relevant when the same function can be executed by users with different access levels. The use of `.promote()` ensures that only the current process is granted the necessary privileges, without affecting others.
 
@@ -720,13 +758,17 @@ End if
 
 #### Description
 
-:::note
-
-This function is only available with web user sessions. It returns False in other contexts.  
-
-:::
 
 The `.restore()` function <!-- REF #SessionClass.restore().Summary -->replaces the current web user session with their original session corresponding to the *token* UUID<!-- END REF -->. Session's storage and privileges are restored. 
+
+|Can be called in sessions||
+|---|---|
+|web|&check; |
+|remote client|&cross; |
+|standalone|&cross;|
+|stored procedure|&cross; |
+
+
 
 If the original user session has been correctly restored, the function returns `true`. 
 
@@ -769,7 +811,7 @@ Function callback($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 
 |Release|Changes|
 |---|---|
-|21|Support of remote client sessions|
+|21|Support of remote and standalone sessions|
 |19 R8|Support of "roles" Settings property|
 |18 R6|Added|
 
@@ -789,13 +831,15 @@ Function callback($request : 4D.IncomingMessage) : 4D.OutgoingMessage
 
 #### Description
 
-:::note
-
-This function does nothing and always returns **False** with stored procedure sessions and standalone sessions.
-
-:::
-
 The `.setPrivileges()` function <!-- REF #SessionClass.setPrivileges().Summary -->associates the privilege(s) and/or role(s) defined in the parameter to the session and returns **True** if the execution was successful<!-- END REF -->.
+
+|Can be called in sessions||
+|---|---|
+|web|&check; |
+|remote client|&check; |
+|standalone|&check;|
+|stored procedure|&cross; |
+
 
 - In the *privilege* parameter, pass a string containing a privilege name (or several comma-separated privilege names).
 - In the *privileges* parameter, pass a collection of strings containing privilege names.
