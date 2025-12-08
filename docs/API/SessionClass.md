@@ -628,7 +628,7 @@ The `.isGuest()` function <!-- REF #SessionClass.isGuest().Summary -->returns Tr
 |standalone|&cross; |
 |stored procedure|&cross;|
 
-**Remote/Standalone sessions** and **Stored procedure sessions**: this function always returns **False**.
+In **Remote/Standalone sessions** and **Stored procedure sessions**, this function always returns **False**.
 
 
 #### Example
@@ -838,7 +838,7 @@ The `.setPrivileges()` function <!-- REF #SessionClass.setPrivileges().Summary -
 |web|&check; |
 |remote client|&check; |
 |standalone|&check;|
-|stored procedure|&cross; |
+|stored procedure|&check; |
 
 
 - In the *privilege* parameter, pass a string containing a privilege name (or several comma-separated privilege names).
@@ -863,7 +863,8 @@ By default when no privilege or role is associated to the session, the session i
 
 The [`userName`](#username) property is available at session object level (read-only).
 
-Regarding remote client sessions, the function only concerns the code executed in the context of a [web request sent through a Web area](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas). 
+- **Remote/Standalone sessions**: The function only concerns the code executed in the context of a [web access sharing the session](../Desktop/clientServer.md#sharing-the-remote-session-for-web-accesses).
+- **Stored procedure sessions**: The function does nothing and always returns True.
 
 
 #### Example
@@ -897,7 +898,7 @@ End if
 
 |Release|Changes|
 |---|---|
-|20 R5|Support of remote client and stored procedure sessions|
+|20 R5|Support of remote, standalone, and stored procedure sessions|
 |18 R6|Added|
 
 </details>
@@ -907,6 +908,14 @@ End if
 #### Description
 
 The `.storage` property contains <!-- REF #SessionClass.storage.Summary -->a shared object that can be used to store information available to all processes of the session<!-- END REF -->.
+
+|Can be called in sessions||
+|---|---|
+|web|&check; |
+|remote client|&check; |
+|standalone|&check;|
+|stored procedure|&check; |
+
 
 When a `Session` object is created, the `.storage` property is empty. Since it is a shared object, this property will be available in the `Storage` object of the server.
 
@@ -959,7 +968,7 @@ End use
 
 |Release|Changes|
 |---|---|
-|20 R5|Support of remote client and stored procedure sessions|
+|20 R5|Support of remote, standalone, and stored procedure sessions|
 |18 R6|Added|
 
 </details>
@@ -970,9 +979,16 @@ End use
 
 The `.userName` property contains <!-- REF #SessionClass.userName.Summary -->the user name associated to the session<!-- END REF -->. You can use it to identify the user within your code.
 
-- With web sessions, this property is an empty string by default. It can be set using the `privileges` property of the [`setPrivileges()`](#setprivileges) function.
-- With remote and stored procedure sessions, this property returns the same user name as the [`Current user`](../commands-legacy/current-user.md) command.
-- With standalone sessions, this property contains "designer" or the name set with the [`SET USER ALIAS`](../commands-legacy/set-user-alias.md) command. 
+|Can be called in sessions||
+|---|---|
+|web|&check; |
+|remote client|&check; |
+|standalone|&check;|
+|stored procedure|&check; |
+
+- **Web sessions**: This property is an empty string by default. It can be set using the `privileges` property of the [`setPrivileges()`](#setprivileges) function.
+- **Remote/Stored procedure sessions**: This property returns the same user name as the [`Current user`](../commands-legacy/current-user.md) command.
+- **Standalone sessions**: This property contains "designer" or the name set with the [`SET USER ALIAS`](../commands-legacy/set-user-alias.md) command.
 
 This property is **read only**.
 
