@@ -518,11 +518,6 @@ End if
 
 #### Description
 
-:::note 
-
-This property is not available in web user sessions.
-
-:::
 
 The `.info` property <!-- REF #SessionClass.info.Summary -->describes the remote client or stored procedure session on the server, or the standalone session<!-- END REF -->.
 
@@ -534,7 +529,7 @@ The `.info` object contains the following properties:
 
 |Property|Type|Description|
 |---|---|---|
-|type|Text|Session type: "remote", "storedProcedure", "standalone"|
+|type|Text|Session type: "remote", "storedProcedure", "standalone", "rest", "web"|
 |userName|Text|4D user name (same value as [`.userName`](#username))|
 |machineName|Text|Remote sessions: name of the remote machine. Stored procedures session: name of the server machine. Standalone session: name of the machine|
 |systemUserName|Text|Remote sessions: name of the system session opened on the remote machine.  |
