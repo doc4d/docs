@@ -92,7 +92,7 @@ The `.clearPrivileges()` function <!-- REF #SessionClass.clearPrivileges().Summa
 |web|&check; |
 |remote client|&check; |
 |standalone|&check;|
-|stored procedure|&cross; |
+|stored procedure|&check; |
 
 :::note
 
@@ -101,8 +101,7 @@ This function does not remove **promoted privileges** from the web process, whet
 :::
 
 - **Web sessions**: Unless in ["forceLogin" mode](../REST/authUsers.md#force-login-mode), the session automatically becomes a Guest session. In "forceLogin" mode, `.clearPrivileges()` does not transform the session to a Guest session, it only clears the session's privileges.
-- **Remote / standalone sessions**: The function only concerns the code executed in the context of a [web access sharing the session](../Desktop/clientServer.md#sharing-the-remote-session-for-web-accesses).
-- **Stored procedures sessions**: The function does nothing and always returns **True**.
+- **Remote/standalone/stored procedures sessions**: The function only concerns the code executed in the context of a [web access sharing the session](../Desktop/clientServer.md#sharing-the-remote-session-for-web-accesses).
 
 
 
@@ -152,15 +151,14 @@ The `.createOTP()` function <!-- REF #SessionClass.createOTP().Summary -->create
 |web|&check; |
 |remote client|&check; |
 |standalone|&check;|
-|stored procedure|&cross; |
+|stored procedure|&check; |
 
 For more information about the OTP tokens, please refer to [this section](../WebServer/sessions.md#session-token-otp).
 
 You can set a custom timeout by passing a value in seconds in *lifespan*. If an expired token is used to restore a session, it is ignored. 
 
 - **Web sessions**: By default, if the *lifespan* parameter is omitted, the token is created with the same lifespan as the [`.idleTimeOut`](#idletimeout) of the session. The returned token can be used in exchanges with third-party applications or websites to securely identify the session. For example, the session OTP token can be used with a payment application. 
-- **Remote/Standalone sessions**: By default, if the *lifespan* parameter is omitted, the token is created with the same lifespan as the [`.idleTimeOut`](#idletimeout) of the session. The returned token can be used on 4D Server or 4D single-user application to identify requests coming from the web that [share the session](../Desktop/clientServer.md#remote-user-sessions). 
-- **Stored procedure sessions**: The function does nothing and always returns an empty string.
+- **Remote/Standalone/Stored procedure sessions**: By default, if the *lifespan* parameter is omitted, the token is created with the same lifespan as the [`.idleTimeOut`](#idletimeout) of the session. The returned token can be used on 4D Server or 4D single-user application to identify requests coming from the web that [share the session](../Desktop/clientServer.md#remote-user-sessions). 
 
 
 #### Example
@@ -311,7 +309,7 @@ The `.getPrivileges()` function <!-- REF #SessionClass.getPrivileges().Summary -
 |web|&check; |
 |remote client|&check; |
 |standalone|&check;|
-|stored procedure|&cross; |
+|stored procedure|&check; |
 
 :::note
 
@@ -320,8 +318,7 @@ This function returns privileges assigned to a Session using the [`setPrivileges
 :::
 
 
-- **Remote/Standalone sessions**: The function only concerns the code executed in the context of a [web access sharing the session](../Desktop/clientServer.md#sharing-the-remote-session-for-web-accesses).
-- **Stored procedure sessions**: The function does nothing and always returns an empty collection.
+- **Remote/Standalone/Stored procedure sessions**: The function only concerns the code executed in the context of a [web access sharing the session](../Desktop/clientServer.md#sharing-the-remote-session-for-web-accesses).
 
 
 #### Example
@@ -424,7 +421,7 @@ The `.hasPrivilege()` function <!-- REF #SessionClass.hasPrivilege().Summary -->
 |web|&check; |
 |remote client|&check; |
 |standalone|&check;|
-|stored procedure|&cross; |
+|stored procedure|&check; |
 
 
 :::note
@@ -433,8 +430,7 @@ This function returns True for the *privilege* if called from a function that wa
 
 :::
 
-- **Remote/Standalone sessions**: The function only concerns the code executed in the context of a [web access sharing the session](../Desktop/clientServer.md#sharing-the-remote-session-for-web-accesses).
-- **Stored procedure sessions**: The function does nothing and always returns True, whatever the *privilege*.
+**Remote/Standalone/Stored procedure sessions**: The function only concerns the code executed in the context of a [web access sharing the session](../Desktop/clientServer.md#sharing-the-remote-session-for-web-accesses).
 
 
 #### Example
@@ -628,7 +624,7 @@ The `.isGuest()` function <!-- REF #SessionClass.isGuest().Summary -->returns Tr
 |standalone|&cross; |
 |stored procedure|&cross;|
 
-In **Remote/Standalone sessions** and **Stored procedure sessions**, this function always returns **False**.
+**Remote/Standalone/Stored procedure sessions**: this function always returns **False**.
 
 
 #### Example
@@ -863,8 +859,7 @@ By default when no privilege or role is associated to the session, the session i
 
 The [`userName`](#username) property is available at session object level (read-only).
 
-- **Remote/Standalone sessions**: The function only concerns the code executed in the context of a [web access sharing the session](../Desktop/clientServer.md#sharing-the-remote-session-for-web-accesses).
-- **Stored procedure sessions**: The function does nothing and always returns True.
+**Remote/Standalone/Stored procedure sessions**: The function only concerns the code executed in the context of a [web access sharing the session](../Desktop/clientServer.md#sharing-the-remote-session-for-web-accesses).
 
 
 #### Example
