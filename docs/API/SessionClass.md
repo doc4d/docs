@@ -66,7 +66,7 @@ The availability of properties and functions in the `Session` object depends on 
 
 |Release|Changes|
 |---|---|
-|21|Support of remote sessions|
+|21|Support of remote and standalone sessions|
 |18 R6|Added|
 
 </details>
@@ -83,15 +83,16 @@ The availability of properties and functions in the `Session` object depends on 
 
 #### Description
 
-:::note
-
-This function does nothing and always returns **True** with stored procedure sessions and standalone sessions.
-
-:::
 
 The `.clearPrivileges()` function <!-- REF #SessionClass.clearPrivileges().Summary -->removes all the privileges associated to the session (excluding promoted privileges) and returns **True** if the execution was successful<!-- END REF -->. 
 
-Unless in ["forceLogin" mode](../REST/authUsers.md#force-login-mode), the session automatically becomes a Guest session. In "forceLogin" mode, `.clearPrivileges()` does not transform the session to a Guest session, it only clears the session's privileges.
+
+|Can be called in sessions||
+|---|---|
+|web|&check; |
+|remote client|&check; |
+|standalone|&check;|
+|stored procedure|&cross; |
 
 :::note
 
@@ -99,7 +100,12 @@ This function does not remove **promoted privileges** from the web process, whet
 
 :::
 
-Regarding remote client sessions, the function only concerns the code executed in the context of a [web request sent through a Web area](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas). 
+- **Web sessions**: Unless in ["forceLogin" mode](../REST/authUsers.md#force-login-mode), the session automatically becomes a Guest session. In "forceLogin" mode, `.clearPrivileges()` does not transform the session to a Guest session, it only clears the session's privileges.
+- **Remote / standalone sessions**: The function only concerns the code executed in the context of a [web access sharing the session](../Desktop/clientServer.md#sharing-the-remote-session-for-web-accesses).
+- **Stored procedures sessions**: The function does nothing and always returns **True**.
+
+
+
 
 #### Example
 
@@ -114,7 +120,6 @@ $isGuest:=Session.isGuest() //$isGuest is True
 
 <!-- END REF -->
 
-
 <!-- REF SessionClass.createOTP().Desc -->
 ## .createOTP()
 
@@ -122,7 +127,7 @@ $isGuest:=Session.isGuest() //$isGuest is True
 
 |Release|Changes|
 |---|---|
-|21|Support of remote sessions|
+|21|Support of remote and standalone sessions|
 |20 R9|Added|
 
 </details>
@@ -140,24 +145,22 @@ $isGuest:=Session.isGuest() //$isGuest is True
 
 #### Description
 
-:::note
-
-This function is available with web user sessions and remote sessions. It returns an empty string in stored procedure and standalone sessions.  
-
-:::
-
 The `.createOTP()` function <!-- REF #SessionClass.createOTP().Summary -->creates a new OTP (One Time Passcode) for the session and returns its token UUID<!-- END REF -->. This token is unique to the session in which it was generated.
+
+|Can be called in sessions||
+|---|---|
+|web|&check; |
+|remote client|&check; |
+|standalone|&check;|
+|stored procedure|&cross; |
 
 For more information about the OTP tokens, please refer to [this section](../WebServer/sessions.md#session-token-otp).
 
-You can set a custom timeout by passing a value in seconds in *lifespan*. If an expired token is used to restore a session, it is ignored. By default, if the *lifespan* parameter is omitted:
+You can set a custom timeout by passing a value in seconds in *lifespan*. If an expired token is used to restore a session, it is ignored. 
 
-- with web user sessions, the token is created with the same lifespan as the [`.idleTimeOut`](#idletimeout) of the session. 
-- with remote sessions, the token is created with a 10 seconds lifespan. 
-
-For **web user sessions**, the returned token can be used in exchanges with third-party applications or websites to securely identify the session. For example, the session OTP token can be used with a payment application. 
-
-For **remote sessions**, the returned token can be used on 4D Server to identitfy requests coming from a [remote 4D running Qodly forms in a Web area](../Desktop/clientServer.md#remote-user-sessions). 
+- **Web sessions**: By default, if the *lifespan* parameter is omitted, the token is created with the same lifespan as the [`.idleTimeOut`](#idletimeout) of the session. The returned token can be used in exchanges with third-party applications or websites to securely identify the session. For example, the session OTP token can be used with a payment application. 
+- **Remote/Standalone sessions**: By default, if the *lifespan* parameter is omitted, the token is created with the same lifespan as the [`.idleTimeOut`](#idletimeout) of the session. The returned token can be used on 4D Server or 4D single-user application to identify requests coming from the web that [share the session](../Desktop/clientServer.md#remote-user-sessions). 
+- **Stored procedure sessions**: The function does nothing and always returns an empty string.
 
 
 #### Example
