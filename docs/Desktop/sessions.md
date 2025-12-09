@@ -8,7 +8,7 @@ A **desktop session** is a user-related execution context on 4D Server or 4D sin
 
 Just like a [**web user session**](../WebServer/sessions.md), the code executed in a desktop session has access to a [`Session`](../API/SessionClass.md) object which provides functions and properties to store and share values between user processes such as the [`session.storage`](../API/SessionClass.md#storage) object.   
 
-However, unlike code executed in web user session, desktop session code is not controlled by [roles and privileges](../ORDA/privileges.md). It can access any parts of the 4D application, including ORDA and data model classes. 
+However, unlike code executed in web user session, desktop session code is not controlled by [roles and privileges](../ORDA/privileges.md). It can access any parts of the 4D application, including ORDA and data model classes. On 4D Server, [users and groups feature](../Users/handling_users_groups.md) can manage user accesses.  
 
 You can nevertheless **share** a desktop session with a web session so that a desktop user can access your 4D application through a web interface, using for example Qodly pages and Web areas. 
 
@@ -19,6 +19,10 @@ Desktop sessions include:
 - **Remote user sessions**: In client/server applications, the session that manages the user processes on the server.
 - **Stored procedures sessions**: In client/server applications, the unique virtual user session that manages all stored procedures executed on the server.
 - **Standalone sessions**: Local session object returned in single-user application (useful in development and test phases of client/server applications).
+
+
+![](../assets/en/Desktop/sessions.png)
+
 
 
 ## Remote user sessions
@@ -65,6 +69,19 @@ The `session` object of stored procedures is available from:
 - Project methods that are called by the [`Execute on Server`](../commands-legacy/execute-on-server.md) command,
 - ORDA [data model functions](../ORDA/ordaClasses.md) called from a stored procedure, 
 - Database methods such as [`On Server Startup`](../commands/on-server-startup-database-method) and [`On Server Shutdown`](../commands/on-server-shutdown-database-method.md).
+
+
+## Standalone sessions
+
+A standalone session is the single-user session running when you work locally with 4D.  
+
+### Usage
+
+The standalone session can be used to develop and test your client/server application and its interaction with web sessions and [OTP sharing](#sharing-a-desktop-session-for-web-accesses). You can use the `session` object in your code in standalone session just as the `session` object of the remote sessions.
+
+### Availability
+ 
+The `session` object of a standalone is available from all methods and code executed on the 4D application. 
 
 
 
@@ -131,13 +148,4 @@ Function getOTP(): Text
 	
 ```
 
-
-
-## Session OTP
-
-### Sharing the session with web accesses
-
-
-
-![](../assets/en/Develop/WorkerAnimation.gif)
 
