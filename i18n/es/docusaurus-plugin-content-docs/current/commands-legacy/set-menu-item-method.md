@@ -5,7 +5,7 @@ slug: /commands/set-menu-item-method
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET MENU ITEM METHOD.Syntax-->**SET MENU ITEM METHOD** ( *menu* : Integer ; *lineaMenu* : Integer ; *nomMetodo* : Text {; *proceso* : Integer} )<br/>**SET MENU ITEM METHOD** ( *menu* : Text ; *lineaMenu* : Integer ; *nomMetodo* : Text {; *proceso* : Integer} )<!-- END REF-->
+<!--REF #_command_.SET MENU ITEM METHOD.Syntax-->**SET MENU ITEM METHOD** ( *menu* ; *lineaMenu* ; *nomMetodo* {; *proceso*} )<!-- END REF-->
 <!--REF #_command_.SET MENU ITEM METHOD.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

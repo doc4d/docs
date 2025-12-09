@@ -5,7 +5,7 @@ slug: /commands/dom-set-xml-declaration
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DOM SET XML DECLARATION.Syntax-->**DOM SET XML DECLARATION** ( *elementRef* : Text ; *codificacion* : Text {; *autonomo* : Boolean {; *indentacion* : Boolean}} )<!-- END REF-->
+<!--REF #_command_.DOM SET XML DECLARATION.Syntax-->**DOM SET XML DECLARATION** ( *elementRef* ; *codificacion* {; *autonomo* {; *indentacion*}} )<!-- END REF-->
 <!--REF #_command_.DOM SET XML DECLARATION.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

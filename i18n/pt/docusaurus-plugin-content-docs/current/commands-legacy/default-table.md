@@ -5,7 +5,7 @@ slug: /commands/default-table
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DEFAULT TABLE.Syntax-->**DEFAULT TABLE** ( *tabela* : Table )<!-- END REF-->
+<!--REF #_command_.DEFAULT TABLE.Syntax-->**DEFAULT TABLE** ( *tabela* )<!-- END REF-->
 <!--REF #_command_.DEFAULT TABLE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

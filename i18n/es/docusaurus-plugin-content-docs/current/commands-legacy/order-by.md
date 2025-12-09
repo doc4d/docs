@@ -5,7 +5,7 @@ slug: /commands/order-by
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ORDER BY.Syntax-->**ORDER BY** ( {*tabla* : Table ;}{ *unCampo* }{; > o < }{; *unCampo2* ; > o <2 ; ... ; *unCampoN* ; > o <N}{; *} )<!-- END REF-->
+<!--REF #_command_.ORDER BY.Syntax-->**ORDER BY** ( {*tabla* ;}{ *unCampo* }{; > o < }{; *unCampo2* ; > o <2 ; ... ; *unCampoN* ; > o <N}{; *} )<!-- END REF-->
 <!--REF #_command_.ORDER BY.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

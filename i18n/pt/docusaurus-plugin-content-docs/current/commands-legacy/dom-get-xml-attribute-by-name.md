@@ -5,7 +5,7 @@ slug: /commands/dom-get-xml-attribute-by-name
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DOM GET XML ATTRIBUTE BY NAME.Syntax-->**DOM GET XML ATTRIBUTE BY NAME** ( *refElemento* : Text ; *nomeAtrib* : Text ; *valorAtrib* : Variable )<!-- END REF-->
+<!--REF #_command_.DOM GET XML ATTRIBUTE BY NAME.Syntax-->**DOM GET XML ATTRIBUTE BY NAME** ( *refElemento* ; *nomeAtrib* ; *valorAtrib* )<!-- END REF-->
 <!--REF #_command_.DOM GET XML ATTRIBUTE BY NAME.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/xml-get-options
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.XML GET OPTIONS.Syntax-->**XML GET OPTIONS** ( refElement | document ; *selector* : Integer ; *valor* : Integer {; *selector2* ; *valor2* ; ... ; *selectorN* ; *valorN*} )<!-- END REF-->
+<!--REF #_command_.XML GET OPTIONS.Syntax-->**XML GET OPTIONS** ( refElement | document ; *selector* ; *valor* {; *selector2* ; *valor2* ; ... ; *selectorN* ; *valorN*} )<!-- END REF-->
 <!--REF #_command_.XML GET OPTIONS.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/difference
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DIFFERENCE.Syntax-->**DIFFERENCE** ( *conjunto1* : Text ; *conjunto2* : Text ; *conjuntoResultado* : Text )<!-- END REF-->
+<!--REF #_command_.DIFFERENCE.Syntax-->**DIFFERENCE** ( *conjunto1* ; *conjunto2* ; *conjuntoResultado* )<!-- END REF-->
 <!--REF #_command_.DIFFERENCE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

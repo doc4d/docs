@@ -5,7 +5,7 @@ slug: /commands/sax-get-xml-entity
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SAX GET XML ENTITY.Syntax-->**SAX GET XML ENTITY** ( *documento* : Time ; *nome* : Text ; *valor* : Text )<!-- END REF-->
+<!--REF #_command_.SAX GET XML ENTITY.Syntax-->**SAX GET XML ENTITY** ( *documento* ; *nome* ; *valor* )<!-- END REF-->
 <!--REF #_command_.SAX GET XML ENTITY.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/qr-get-selection
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QR GET SELECTION.Syntax-->**QR GET SELECTION** ( *area* : Integer ; *izquierda* : Integer ; *superior* : Integer {; *derecha* : Integer {; *inferior* : Integer}} )<!-- END REF-->
+<!--REF #_command_.QR GET SELECTION.Syntax-->**QR GET SELECTION** ( *area* ; *izquierda* ; *superior* {; *derecha* {; *inferior*}} )<!-- END REF-->
 <!--REF #_command_.QR GET SELECTION.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

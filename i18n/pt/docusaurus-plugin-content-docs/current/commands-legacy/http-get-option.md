@@ -5,7 +5,7 @@ slug: /commands/http-get-option
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.HTTP GET OPTION.Syntax-->**HTTP GET OPTION** ( *opção* : Integer ; *valor* : Integer )<!-- END REF-->
+<!--REF #_command_.HTTP GET OPTION.Syntax-->**HTTP GET OPTION** ( *opção* ; *valor* )<!-- END REF-->
 <!--REF #_command_.HTTP GET OPTION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

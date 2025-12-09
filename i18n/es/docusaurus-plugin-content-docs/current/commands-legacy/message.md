@@ -5,7 +5,7 @@ slug: /commands/message
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.MESSAGE.Syntax-->**MESSAGE** ( *mensaje* : Text )<!-- END REF-->
+<!--REF #_command_.MESSAGE.Syntax-->**MESSAGE** ( *mensaje* )<!-- END REF-->
 <!--REF #_command_.MESSAGE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

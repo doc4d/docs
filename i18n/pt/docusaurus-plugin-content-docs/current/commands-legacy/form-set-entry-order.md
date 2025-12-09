@@ -5,7 +5,7 @@ slug: /commands/form-set-entry-order
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.FORM SET ENTRY ORDER.Syntax-->**FORM SET ENTRY ORDER** ( *nomeObj* : Text array {; *numPagina* : Integer} )<!-- END REF-->
+<!--REF #_command_.FORM SET ENTRY ORDER.Syntax-->**FORM SET ENTRY ORDER** ( *nomeObj* {; *numPagina*} )<!-- END REF-->
 <!--REF #_command_.FORM SET ENTRY ORDER.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

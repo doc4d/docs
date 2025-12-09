@@ -5,7 +5,7 @@ slug: /commands/method-set-attributes
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD SET ATTRIBUTES.Syntax-->**METHOD SET ATTRIBUTES** ( *path* : Text ; *attributes* : Object {; *} )<br/>**METHOD SET ATTRIBUTES** ( *path* : Text ; *attributes* : Object array {; *} )<br/>**METHOD SET ATTRIBUTES** ( *path* : Text配列 ; *attributes* : Object {; *} )<br/>**METHOD SET ATTRIBUTES** ( *path* : Text配列 ; *attributes* : Object array {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD SET ATTRIBUTES.Syntax-->**METHOD SET ATTRIBUTES** ( *path* ; *attributes* {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD SET ATTRIBUTES.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

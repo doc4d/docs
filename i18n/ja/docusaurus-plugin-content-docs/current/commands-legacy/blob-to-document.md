@@ -5,7 +5,7 @@ slug: /commands/blob-to-document
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.BLOB TO DOCUMENT.Syntax-->**BLOB TO DOCUMENT** ( *document* : Text ; *BLOB* : Blob )<!-- END REF-->
+<!--REF #_command_.BLOB TO DOCUMENT.Syntax-->**BLOB TO DOCUMENT** ( *document* ; *BLOB* )<!-- END REF-->
 <!--REF #_command_.BLOB TO DOCUMENT.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

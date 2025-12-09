@@ -5,7 +5,7 @@ slug: /commands/xml-get-error
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.XML GET ERROR.Syntax-->**XML GET ERROR** ( *refElemento* : Text ; *textoErro* : Variable {; *linha* : Variable {; *coluna* : Variable}} )<!-- END REF-->
+<!--REF #_command_.XML GET ERROR.Syntax-->**XML GET ERROR** ( *refElemento* ; *textoErro* {; *linha* {; *coluna*}} )<!-- END REF-->
 <!--REF #_command_.XML GET ERROR.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

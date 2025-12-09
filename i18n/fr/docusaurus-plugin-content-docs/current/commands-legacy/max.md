@@ -5,7 +5,7 @@ slug: /commands/max
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Max.Syntax-->**Max** ( *séries* : Field {; *cheminAttribut* : Text} ) : any<br/>**Max** ( *séries* : Array {; *cheminAttribut* : Text} ) : any<!-- END REF-->
+<!--REF #_command_.Max.Syntax-->**Max** ( *séries* {; *cheminAttribut*} ) : any<!-- END REF-->
 <!--REF #_command_.Max.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

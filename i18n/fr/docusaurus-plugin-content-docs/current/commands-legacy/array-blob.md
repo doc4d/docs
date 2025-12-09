@@ -5,7 +5,7 @@ slug: /commands/array-blob
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ARRAY BLOB.Syntax-->**ARRAY BLOB** ( *nomTableau* ; *taille* : Integer {; *taille2* : Integer} )<!-- END REF-->
+<!--REF #_command_.ARRAY BLOB.Syntax-->**ARRAY BLOB** ( *nomTableau* ; *taille* {; *taille2*} )<!-- END REF-->
 <!--REF #_command_.ARRAY BLOB.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

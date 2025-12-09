@@ -5,7 +5,7 @@ slug: /commands/import-text
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.IMPORT TEXT.Syntax-->**IMPORT TEXT** ( {*tabla* : Table ;} *doc* : Text )<!-- END REF-->
+<!--REF #_command_.IMPORT TEXT.Syntax-->**IMPORT TEXT** ( {*tabla* ;} *doc* )<!-- END REF-->
 <!--REF #_command_.IMPORT TEXT.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

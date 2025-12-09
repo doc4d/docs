@@ -5,7 +5,7 @@ slug: /commands/delete-from-array
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DELETE FROM ARRAY.Syntax-->**DELETE FROM ARRAY** ( *array* : Array ; *posição* : Integer {; *quantos* : Integer} )<!-- END REF-->
+<!--REF #_command_.DELETE FROM ARRAY.Syntax-->**DELETE FROM ARRAY** ( *array* ; *posição* {; *quantos*} )<!-- END REF-->
 <!--REF #_command_.DELETE FROM ARRAY.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

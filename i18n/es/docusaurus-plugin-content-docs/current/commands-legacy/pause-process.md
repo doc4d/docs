@@ -5,7 +5,7 @@ slug: /commands/pause-process
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.PAUSE PROCESS.Syntax-->**PAUSE PROCESS** ( *proceso* : Integer )<!-- END REF-->
+<!--REF #_command_.PAUSE PROCESS.Syntax-->**PAUSE PROCESS** ( *proceso* )<!-- END REF-->
 <!--REF #_command_.PAUSE PROCESS.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

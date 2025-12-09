@@ -5,7 +5,7 @@ slug: /commands/document-list
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DOCUMENT LIST.Syntax-->**DOCUMENT LIST** ( *nombreRuta* : Text ; *documentos* : Text array {; *opciones* : Integer} )<!-- END REF-->
+<!--REF #_command_.DOCUMENT LIST.Syntax-->**DOCUMENT LIST** ( *nombreRuta* ; *documentos* {; *opciones*} )<!-- END REF-->
 <!--REF #_command_.DOCUMENT LIST.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

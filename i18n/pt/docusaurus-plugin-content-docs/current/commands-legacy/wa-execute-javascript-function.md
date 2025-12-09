@@ -5,7 +5,7 @@ slug: /commands/wa-execute-javascript-function
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WA EXECUTE JAVASCRIPT FUNCTION.Syntax-->**WA EXECUTE JAVASCRIPT FUNCTION** ( {* ;} *objeto* ; *funcaoJS* ; resultado|* {; *param* : any}{; *param2* ; ... ; *paramN*} )<!-- END REF-->
+<!--REF #_command_.WA EXECUTE JAVASCRIPT FUNCTION.Syntax-->**WA EXECUTE JAVASCRIPT FUNCTION** ( {* ;} *objeto* ; *funcaoJS* ; resultado|* {; *param*}{; *param2* ; ... ; *paramN*} )<!-- END REF-->
 <!--REF #_command_.WA EXECUTE JAVASCRIPT FUNCTION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

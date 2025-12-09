@@ -5,7 +5,7 @@ slug: /commands/delete-from-blob
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DELETE FROM BLOB.Syntax-->**DELETE FROM BLOB** ( *BLOB* : Blob ; *offset* : Integer ; *len* : Integer )<!-- END REF-->
+<!--REF #_command_.DELETE FROM BLOB.Syntax-->**DELETE FROM BLOB** ( *BLOB* ; *offset* ; *len* )<!-- END REF-->
 <!--REF #_command_.DELETE FROM BLOB.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

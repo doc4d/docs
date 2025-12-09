@@ -14,7 +14,7 @@ displayed_sidebar: docs
 </details>
 
 
-<!--REF #_command_.New process.Syntax-->**New process** ( *metodo* : Text ; *pila* : Integer {; *nombre* : Text {; *param* : Expression {; *param2* ; ... ; *paramN*}}}{; *} ) : Integer<!-- END REF-->
+<!--REF #_command_.New process.Syntax-->**New process** ( *metodo* ; *pila* {; *nombre* {; *param* {; *param2* ; ... ; *paramN*}}}{; *} ) : Integer<!-- END REF-->
 <!--REF #_command_.New process.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

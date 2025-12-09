@@ -5,7 +5,7 @@ slug: /commands/web-legacy-close-session
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WEB LEGACY CLOSE SESSION.Syntax-->**WEB LEGACY CLOSE SESSION** ( *sessao* : Text )<!-- END REF-->
+<!--REF #_command_.WEB LEGACY CLOSE SESSION.Syntax-->**WEB LEGACY CLOSE SESSION** ( *sessao* )<!-- END REF-->
 <!--REF #_command_.WEB LEGACY CLOSE SESSION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

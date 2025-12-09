@@ -5,7 +5,7 @@ slug: /commands/distinct-values
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DISTINCT VALUES.Syntax-->**DISTINCT VALUES** ( *leChamp* ; *tableau* : Array {; *tabNbVal* : Integer array} )<!-- END REF-->
+<!--REF #_command_.DISTINCT VALUES.Syntax-->**DISTINCT VALUES** ( *leChamp* ; *tableau* {; *tabNbVal*} )<!-- END REF-->
 <!--REF #_command_.DISTINCT VALUES.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/get-resource
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET RESOURCE.Syntax-->**GET RESOURCE** ( *resTipo* : Text ; *resNum* : Integer ; *resDatos* : Blob {; *resArchivo* : Time} )<!-- END REF-->
+<!--REF #_command_.GET RESOURCE.Syntax-->**GET RESOURCE** ( *resTipo* ; *resNum* ; *resDatos* {; *resArchivo*} )<!-- END REF-->
 <!--REF #_command_.GET RESOURCE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

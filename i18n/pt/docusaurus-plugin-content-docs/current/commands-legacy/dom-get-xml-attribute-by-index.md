@@ -5,7 +5,7 @@ slug: /commands/dom-get-xml-attribute-by-index
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DOM GET XML ATTRIBUTE BY INDEX.Syntax-->**DOM GET XML ATTRIBUTE BY INDEX** ( *refElemento* : Text ; *indexAtrib* : Integer ; *nomeAtrib* : Variable ; *valorAtrib* : Variable )<!-- END REF-->
+<!--REF #_command_.DOM GET XML ATTRIBUTE BY INDEX.Syntax-->**DOM GET XML ATTRIBUTE BY INDEX** ( *refElemento* ; *indexAtrib* ; *nomeAtrib* ; *valorAtrib* )<!-- END REF-->
 <!--REF #_command_.DOM GET XML ATTRIBUTE BY INDEX.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

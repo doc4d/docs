@@ -5,7 +5,7 @@ slug: /commands/get-external-data-path
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Get external data path.Syntax-->**Get external data path** ( *leChamp* : Text ) : Text<br/>**Get external data path** ( *leChamp* : Blob ) : Text<br/>**Get external data path** ( *leChamp* : Picture ) : Text<!-- END REF-->
+<!--REF #_command_.Get external data path.Syntax-->**Get external data path** ( *leChamp* ) : Text<!-- END REF-->
 <!--REF #_command_.Get external data path.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

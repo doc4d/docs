@@ -5,7 +5,7 @@ slug: /commands/ob-get-array
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OB GET ARRAY.Syntax-->**OB GET ARRAY** ( *object* : Object ; *property* : Text ; *array* : Array )<!-- END REF-->
+<!--REF #_command_.OB GET ARRAY.Syntax-->**OB GET ARRAY** ( *object* ; *property* ; *array* )<!-- END REF-->
 <!--REF #_command_.OB GET ARRAY.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

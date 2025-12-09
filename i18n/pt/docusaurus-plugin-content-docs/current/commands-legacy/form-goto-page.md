@@ -5,7 +5,7 @@ slug: /commands/form-goto-page
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.FORM GOTO PAGE.Syntax-->**FORM GOTO PAGE** ( *numPag* : Integer {; *} )<!-- END REF-->
+<!--REF #_command_.FORM GOTO PAGE.Syntax-->**FORM GOTO PAGE** ( *numPag* {; *} )<!-- END REF-->
 <!--REF #_command_.FORM GOTO PAGE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

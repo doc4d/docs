@@ -5,7 +5,7 @@ slug: /commands/char
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Char.Syntax-->**Char** ( *codigoCaractere* : Integer ) : Text<!-- END REF-->
+<!--REF #_command_.Char.Syntax-->**Char** ( *codigoCaractere* ) : Text<!-- END REF-->
 <!--REF #_command_.Char.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

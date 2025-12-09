@@ -5,7 +5,7 @@ slug: /commands/union
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.UNION.Syntax-->**UNION** ( *conjunto1* : Text ; *conjunto2* : Text ; *resultado* : Text )<!-- END REF-->
+<!--REF #_command_.UNION.Syntax-->**UNION** ( *conjunto1* ; *conjunto2* ; *resultado* )<!-- END REF-->
 <!--REF #_command_.UNION.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

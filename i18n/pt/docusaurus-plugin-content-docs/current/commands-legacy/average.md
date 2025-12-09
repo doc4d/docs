@@ -5,7 +5,7 @@ slug: /commands/average
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Average.Syntax-->**Average** ( *series* : Field {; *atributoRota* : Text} ) : Real<br/>**Average** ( *series* : Array {; *atributoRota* : Text} ) : Real<!-- END REF-->
+<!--REF #_command_.Average.Syntax-->**Average** ( *series* {; *atributoRota*} ) : Real<!-- END REF-->
 <!--REF #_command_.Average.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

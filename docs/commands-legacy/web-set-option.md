@@ -5,7 +5,7 @@ slug: /commands/web-set-option
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WEB SET OPTION.Syntax-->**WEB SET OPTION** ( *selector* : Integer ; *value* : Integer )<br/>**WEB SET OPTION** ( *selector* : Integer ; *value* : Text )<br/>**WEB SET OPTION** ( *selector* : Integer ; *value* : Collection )<!-- END REF-->
+<!--REF #_command_.WEB SET OPTION.Syntax-->**WEB SET OPTION** ( *selector* ; *value* )<!-- END REF-->
 <!--REF #_command_.WEB SET OPTION.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/create-alias
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CREATE ALIAS.Syntax-->**CREATE ALIAS** ( *rutaObjetivo* : Text ; *rutaAlias* : Text )<!-- END REF-->
+<!--REF #_command_.CREATE ALIAS.Syntax-->**CREATE ALIAS** ( *rutaObjetivo* ; *rutaAlias* )<!-- END REF-->
 <!--REF #_command_.CREATE ALIAS.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

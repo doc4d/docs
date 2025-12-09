@@ -5,7 +5,7 @@ slug: /commands/create-thumbnail
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CREATE THUMBNAIL.Syntax-->**CREATE THUMBNAIL** ( *fonte* : Picture ; *dest* : Picture {; *largura* : Integer {; *altura* : Integer {; *modo* : Integer {; *profundidade* : Integer}}}} )<!-- END REF-->
+<!--REF #_command_.CREATE THUMBNAIL.Syntax-->**CREATE THUMBNAIL** ( *fonte* ; *dest* {; *largura* {; *altura* {; *modo* {; *profundidade*}}}} )<!-- END REF-->
 <!--REF #_command_.CREATE THUMBNAIL.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

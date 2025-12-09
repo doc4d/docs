@@ -5,7 +5,7 @@ slug: /commands/picture-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.PICTURE PROPERTIES.Syntax-->**PICTURE PROPERTIES** ( *imagem* : Picture ; *largura* : Real ; *altura* : Real {; *hDesp* : Integer {; *vDesp* : Integer {; *modo* : Integer}}} )<!-- END REF-->
+<!--REF #_command_.PICTURE PROPERTIES.Syntax-->**PICTURE PROPERTIES** ( *imagem* ; *largura* ; *altura* {; *hDesp* {; *vDesp* {; *modo*}}} )<!-- END REF-->
 <!--REF #_command_.PICTURE PROPERTIES.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

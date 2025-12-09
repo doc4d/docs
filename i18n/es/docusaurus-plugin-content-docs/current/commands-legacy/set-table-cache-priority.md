@@ -5,7 +5,7 @@ slug: /commands/set-table-cache-priority
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET TABLE CACHE PRIORITY.Syntax-->**SET TABLE CACHE PRIORITY** ( *tabla* : Table ; *prioridad* : Integer )<!-- END REF-->
+<!--REF #_command_.SET TABLE CACHE PRIORITY.Syntax-->**SET TABLE CACHE PRIORITY** ( *tabla* ; *prioridad* )<!-- END REF-->
 <!--REF #_command_.SET TABLE CACHE PRIORITY.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

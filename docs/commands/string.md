@@ -5,7 +5,7 @@ slug: /commands/string
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.String.Syntax-->**String** ( *expression* : Expression {; *format* : Integer {; *addTime* : Time}} ) : Text<br/>**String** ( *expression* : Expression {; *format* : Text {; *addTime* : Time}} ) : Text<br/>**String** ( *expression* : Expression ; *base* : Integer ) : Text<!-- END REF-->
+<!--REF #_command_.String.Syntax-->**String** ( *expression* {; *format* {; *addTime*}} ) : Text<br/>**String** ( *expression* ; *base* ) : Text<!-- END REF-->
 <!--REF #_command_.String.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

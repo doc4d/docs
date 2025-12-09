@@ -5,7 +5,7 @@ slug: /commands/array-to-list
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ARRAY TO LIST.Syntax-->**ARRAY TO LIST** ( *tableau* : Array ; *liste* : Text {; *réfEléments* : Array} )<br/>**ARRAY TO LIST** ( *tableau* : Array ; *liste* : Integer {; *réfEléments* : Array} )<!-- END REF-->
+<!--REF #_command_.ARRAY TO LIST.Syntax-->**ARRAY TO LIST** ( *tableau* ; *liste* {; *réfEléments*} )<!-- END REF-->
 <!--REF #_command_.ARRAY TO LIST.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

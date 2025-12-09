@@ -5,7 +5,7 @@ slug: /commands/method-get-modification-date
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD GET MODIFICATION DATE.Syntax-->**METHOD GET MODIFICATION DATE** ( *ruta* : Text ; *fechaMod* : Date ; *horaMod* : Time {; *operador* : *} )<br/>**METHOD GET MODIFICATION DATE** ( *ruta* : Text ; *fechaMod* : Date ; *horaMod* : Integer array {; *operador* : *} )<br/>**METHOD GET MODIFICATION DATE** ( *ruta* : Text ; *fechaMod* : Date array ; *horaMod* : Time {; *operador* : *} )<br/>**METHOD GET MODIFICATION DATE** ( *ruta* : Text ; *fechaMod* : Date array ; *horaMod* : Integer array {; *operador* : *} )<br/>**METHOD GET MODIFICATION DATE** ( *ruta* : Text array ; *fechaMod* : Date ; *horaMod* : Time {; *operador* : *} )<br/>**METHOD GET MODIFICATION DATE** ( *ruta* : Text array ; *fechaMod* : Date ; *horaMod* : Integer array {; *operador* : *} )<br/>**METHOD GET MODIFICATION DATE** ( *ruta* : Text array ; *fechaMod* : Date array ; *horaMod* : Time {; *operador* : *} )<br/>**METHOD GET MODIFICATION DATE** ( *ruta* : Text array ; *fechaMod* : Date array ; *horaMod* : Integer array {; *operador* : *} )<!-- END REF-->
+<!--REF #_command_.METHOD GET MODIFICATION DATE.Syntax-->**METHOD GET MODIFICATION DATE** ( *ruta* ; *fechaMod* ; *horaMod* {; *operador*} )<!-- END REF-->
 <!--REF #_command_.METHOD GET MODIFICATION DATE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

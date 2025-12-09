@@ -5,7 +5,7 @@ slug: /commands/invoke-action
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.INVOKE ACTION.Syntax-->**INVOKE ACTION** ( *ação* : Text {; *alvo* : Integer} )<!-- END REF-->
+<!--REF #_command_.INVOKE ACTION.Syntax-->**INVOKE ACTION** ( *ação* {; *alvo*} )<!-- END REF-->
 <!--REF #_command_.INVOKE ACTION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

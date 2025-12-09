@@ -5,7 +5,7 @@ slug: /commands/integrate-mirror-log-file
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.INTEGRATE MIRROR LOG FILE.Syntax-->**INTEGRATE MIRROR LOG FILE** ( *rutaAcceso* : Text ; *numOperacion* : Real {; *modo* : Integer {; *objError* : Object}} )<!-- END REF-->
+<!--REF #_command_.INTEGRATE MIRROR LOG FILE.Syntax-->**INTEGRATE MIRROR LOG FILE** ( *rutaAcceso* ; *numOperacion* {; *modo* {; *objError*}} )<!-- END REF-->
 <!--REF #_command_.INTEGRATE MIRROR LOG FILE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

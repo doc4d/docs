@@ -5,7 +5,7 @@ slug: /commands/start-monitoring-activity
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.START MONITORING ACTIVITY.Syntax-->**START MONITORING ACTIVITY** ( *duracion* : Real {; *fuente* : Integer} )<!-- END REF-->
+<!--REF #_command_.START MONITORING ACTIVITY.Syntax-->**START MONITORING ACTIVITY** ( *duracion* {; *fuente*} )<!-- END REF-->
 <!--REF #_command_.START MONITORING ACTIVITY.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

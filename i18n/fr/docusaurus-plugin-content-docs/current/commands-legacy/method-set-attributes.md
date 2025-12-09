@@ -5,7 +5,7 @@ slug: /commands/method-set-attributes
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD SET ATTRIBUTES.Syntax-->**METHOD SET ATTRIBUTES** ( *chemin* : Text ; *attributs* : Object {; *} )<br/>**METHOD SET ATTRIBUTES** ( *chemin* : Text ; *attributs* : Object array {; *} )<br/>**METHOD SET ATTRIBUTES** ( *chemin* : Text array ; *attributs* : Object {; *} )<br/>**METHOD SET ATTRIBUTES** ( *chemin* : Text array ; *attributs* : Object array {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD SET ATTRIBUTES.Syntax-->**METHOD SET ATTRIBUTES** ( *chemin* ; *attributs* {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD SET ATTRIBUTES.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

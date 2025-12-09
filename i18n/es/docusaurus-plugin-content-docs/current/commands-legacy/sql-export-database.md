@@ -5,7 +5,7 @@ slug: /commands/sql-export-database
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SQL EXPORT DATABASE.Syntax-->**SQL EXPORT DATABASE** ( *rutaCarpeta* : Text {; *numArchivos* : Integer {; *tamLimiteArchivos* : Integer {; *tamLimiteCampos* : Integer}}} )<!-- END REF-->
+<!--REF #_command_.SQL EXPORT DATABASE.Syntax-->**SQL EXPORT DATABASE** ( *rutaCarpeta* {; *numArchivos* {; *tamLimiteArchivos* {; *tamLimiteCampos*}}} )<!-- END REF-->
 <!--REF #_command_.SQL EXPORT DATABASE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

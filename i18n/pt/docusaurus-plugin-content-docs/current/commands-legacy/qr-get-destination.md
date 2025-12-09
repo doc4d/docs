@@ -5,7 +5,7 @@ slug: /commands/qr-get-destination
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QR GET DESTINATION.Syntax-->**QR GET DESTINATION** ( *area* : Integer ; *tipo* : Integer {; *especificos* : Text} )<br/>**QR GET DESTINATION** ( *area* : Integer ; *tipo* : Integer {; *especificos* : Variable} )<!-- END REF-->
+<!--REF #_command_.QR GET DESTINATION.Syntax-->**QR GET DESTINATION** ( *area* ; *tipo* {; *especificos*} )<!-- END REF-->
 <!--REF #_command_.QR GET DESTINATION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

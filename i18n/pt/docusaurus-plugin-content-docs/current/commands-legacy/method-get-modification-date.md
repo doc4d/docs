@@ -5,7 +5,7 @@ slug: /commands/method-get-modification-date
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD GET MODIFICATION DATE.Syntax-->**METHOD GET MODIFICATION DATE** ( *rota* : Text ; *dataMod* : Date ; *horaMod* : Time {; *} )<br/>**METHOD GET MODIFICATION DATE** ( *rota* : Text ; *dataMod* : Date ; *horaMod* : Integer array {; *} )<br/>**METHOD GET MODIFICATION DATE** ( *rota* : Text ; *dataMod* : Date array ; *horaMod* : Time {; *} )<br/>**METHOD GET MODIFICATION DATE** ( *rota* : Text ; *dataMod* : Date array ; *horaMod* : Integer array {; *} )<br/>**METHOD GET MODIFICATION DATE** ( *rota* : Text array ; *dataMod* : Date ; *horaMod* : Time {; *} )<br/>**METHOD GET MODIFICATION DATE** ( *rota* : Text array ; *dataMod* : Date ; *horaMod* : Integer array {; *} )<br/>**METHOD GET MODIFICATION DATE** ( *rota* : Text array ; *dataMod* : Date array ; *horaMod* : Time {; *} )<br/>**METHOD GET MODIFICATION DATE** ( *rota* : Text array ; *dataMod* : Date array ; *horaMod* : Integer array {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD GET MODIFICATION DATE.Syntax-->**METHOD GET MODIFICATION DATE** ( *rota* ; *dataMod* ; *horaMod* {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD GET MODIFICATION DATE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

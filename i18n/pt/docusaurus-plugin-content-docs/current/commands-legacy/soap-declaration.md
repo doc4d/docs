@@ -5,7 +5,7 @@ slug: /commands/soap-declaration
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SOAP DECLARATION.Syntax-->**SOAP DECLARATION** ( *variavel* : Variable ; *tipo* : Integer ; entrada_saida {; *apelido* : Text} )<!-- END REF-->
+<!--REF #_command_.SOAP DECLARATION.Syntax-->**SOAP DECLARATION** ( *variavel* ; *tipo* ; entrada_saida {; *apelido*} )<!-- END REF-->
 <!--REF #_command_.SOAP DECLARATION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

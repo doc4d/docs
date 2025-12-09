@@ -5,7 +5,7 @@ slug: /commands/method-set-attributes
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD SET ATTRIBUTES.Syntax-->**METHOD SET ATTRIBUTES** ( *caminho* : Text ; *atributos* : Object {; *} )<br/>**METHOD SET ATTRIBUTES** ( *caminho* : Text ; *atributos* : Object array {; *} )<br/>**METHOD SET ATTRIBUTES** ( *caminho* : Text array ; *atributos* : Object {; *} )<br/>**METHOD SET ATTRIBUTES** ( *caminho* : Text array ; *atributos* : Object array {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD SET ATTRIBUTES.Syntax-->**METHOD SET ATTRIBUTES** ( *caminho* ; *atributos* {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD SET ATTRIBUTES.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

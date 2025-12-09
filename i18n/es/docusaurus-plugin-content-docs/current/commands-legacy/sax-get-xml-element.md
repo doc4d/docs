@@ -5,7 +5,7 @@ slug: /commands/sax-get-xml-element
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SAX GET XML ELEMENT.Syntax-->**SAX GET XML ELEMENT** ( *documento* : Time ; *nombre* : Text ; *prefijo* : Text ; *nomsAtributos* : Text array ; *valoresAtributos* : Text array )<!-- END REF-->
+<!--REF #_command_.SAX GET XML ELEMENT.Syntax-->**SAX GET XML ELEMENT** ( *documento* ; *nombre* ; *prefijo* ; *nomsAtributos* ; *valoresAtributos* )<!-- END REF-->
 <!--REF #_command_.SAX GET XML ELEMENT.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

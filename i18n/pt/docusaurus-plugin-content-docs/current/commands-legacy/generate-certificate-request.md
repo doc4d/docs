@@ -5,7 +5,7 @@ slug: /commands/generate-certificate-request
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GENERATE CERTIFICATE REQUEST.Syntax-->**GENERATE CERTIFICATE REQUEST** ( *chavPriv* : Blob ; *peticaoCertificado* : Blob ; *codigoArray* : Integer array ; *arrayNome* : Text array )<!-- END REF-->
+<!--REF #_command_.GENERATE CERTIFICATE REQUEST.Syntax-->**GENERATE CERTIFICATE REQUEST** ( *chavPriv* ; *peticaoCertificado* ; *codigoArray* ; *arrayNome* )<!-- END REF-->
 <!--REF #_command_.GENERATE CERTIFICATE REQUEST.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

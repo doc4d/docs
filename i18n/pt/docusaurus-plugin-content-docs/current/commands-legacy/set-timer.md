@@ -5,7 +5,7 @@ slug: /commands/set-timer
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET TIMER.Syntax-->**SET TIMER** ( *ticCont* : Integer )<!-- END REF-->
+<!--REF #_command_.SET TIMER.Syntax-->**SET TIMER** ( *ticCont* )<!-- END REF-->
 <!--REF #_command_.SET TIMER.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

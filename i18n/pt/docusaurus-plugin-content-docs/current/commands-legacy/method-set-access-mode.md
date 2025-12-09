@@ -5,7 +5,7 @@ slug: /commands/method-set-access-mode
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD SET ACCESS MODE.Syntax-->**METHOD SET ACCESS MODE** ( *modo* : Integer )<!-- END REF-->
+<!--REF #_command_.METHOD SET ACCESS MODE.Syntax-->**METHOD SET ACCESS MODE** ( *modo* )<!-- END REF-->
 <!--REF #_command_.METHOD SET ACCESS MODE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

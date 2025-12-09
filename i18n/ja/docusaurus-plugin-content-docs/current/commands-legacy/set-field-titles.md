@@ -5,7 +5,7 @@ slug: /commands/set-field-titles
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET FIELD TITLES.Syntax-->**SET FIELD TITLES** ( *aTable* : Table ; *fieldTitles* : Text array ; *fieldNumbers* : Integer array {; *} )<!-- END REF-->
+<!--REF #_command_.SET FIELD TITLES.Syntax-->**SET FIELD TITLES** ( *aTable* ; *fieldTitles* ; *fieldNumbers* {; *} )<!-- END REF-->
 <!--REF #_command_.SET FIELD TITLES.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

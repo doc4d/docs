@@ -5,7 +5,7 @@ slug: /commands/sql-get-data-source-list
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SQL GET DATA SOURCE LIST.Syntax-->**SQL GET DATA SOURCE LIST** ( *tipoFonte* : Integer ; *arrayNomesFontes* : Text array ; *arrayDrivers* : Text array )<!-- END REF-->
+<!--REF #_command_.SQL GET DATA SOURCE LIST.Syntax-->**SQL GET DATA SOURCE LIST** ( *tipoFonte* ; *arrayNomesFontes* ; *arrayDrivers* )<!-- END REF-->
 <!--REF #_command_.SQL GET DATA SOURCE LIST.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

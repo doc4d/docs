@@ -5,7 +5,7 @@ slug: /commands/set-cache-size
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET CACHE SIZE.Syntax-->**SET CACHE SIZE** ( *tam* : Real {; *libMin* : Real} )<!-- END REF-->
+<!--REF #_command_.SET CACHE SIZE.Syntax-->**SET CACHE SIZE** ( *tam* {; *libMin*} )<!-- END REF-->
 <!--REF #_command_.SET CACHE SIZE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/get-picture-from-library
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET PICTURE FROM LIBRARY.Syntax-->**GET PICTURE FROM LIBRARY** ( refImag | nomImag ; *imagem* : Picture )<!-- END REF-->
+<!--REF #_command_.GET PICTURE FROM LIBRARY.Syntax-->**GET PICTURE FROM LIBRARY** ( refImag | nomImag ; *imagem* )<!-- END REF-->
 <!--REF #_command_.GET PICTURE FROM LIBRARY.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

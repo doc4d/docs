@@ -5,7 +5,7 @@ slug: /commands/get-menu-item-style
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Get menu item style.Syntax-->**Get menu item style** ( *menu* : Integer ; *menuItem* : Integer {; *processo* : Integer} ) : Integer<br/>**Get menu item style** ( *menu* : Text ; *menuItem* : Integer {; *processo* : Integer} ) : Integer<!-- END REF-->
+<!--REF #_command_.Get menu item style.Syntax-->**Get menu item style** ( *menu* ; *menuItem* {; *processo*} ) : Integer<!-- END REF-->
 <!--REF #_command_.Get menu item style.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

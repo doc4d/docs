@@ -5,7 +5,7 @@ slug: /commands/pop-up-menu
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Pop up menu.Syntax-->**Pop up menu** ( *contenido* : Text {; *porDefecto* : Integer {; *CoordX* : Integer ; *CoordY* : Integer}} )  : Integer<!-- END REF-->
+<!--REF #_command_.Pop up menu.Syntax-->**Pop up menu** ( *contenido* {; *porDefecto* {; *CoordX* ; *CoordY*}} )  : Integer<!-- END REF-->
 <!--REF #_command_.Pop up menu.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/screen-coordinates
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SCREEN COORDINATES.Syntax-->**SCREEN COORDINATES** ( *esquerda* : Integer ; *superior* : Integer ; *direita* : Integer ; *inferior* : Integer  {; *tela* : Integer {; *areaTela* : Integer}} )<!-- END REF-->
+<!--REF #_command_.SCREEN COORDINATES.Syntax-->**SCREEN COORDINATES** ( *esquerda* ; *superior* ; *direita* ; *inferior*  {; *tela* {; *areaTela*}} )<!-- END REF-->
 <!--REF #_command_.SCREEN COORDINATES.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

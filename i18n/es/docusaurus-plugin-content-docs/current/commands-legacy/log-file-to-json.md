@@ -5,7 +5,7 @@ slug: /commands/log-file-to-json
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LOG FILE TO JSON.Syntax-->**LOG FILE TO JSON** ( *rutaCarpetaDest* : Text {; *tamMax* : Integer {; *rutaHist* : Text {; *atribCampo* : Integer}}} )<!-- END REF-->
+<!--REF #_command_.LOG FILE TO JSON.Syntax-->**LOG FILE TO JSON** ( *rutaCarpetaDest* {; *tamMax* {; *rutaHist* {; *atribCampo*}}} )<!-- END REF-->
 <!--REF #_command_.LOG FILE TO JSON.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

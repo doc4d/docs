@@ -5,7 +5,7 @@ slug: /commands/verify-data-file
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.VERIFY DATA FILE.Syntax-->**VERIFY DATA FILE** ( *structurePath* : Text ; *dataPath* : Text ; *objects* : Integer ; *options* : Integer ; *method* : Text {; *tablesArray* : Integer array {; *fieldsArray* : Integer array}} )<!-- END REF-->
+<!--REF #_command_.VERIFY DATA FILE.Syntax-->**VERIFY DATA FILE** ( *structurePath* ; *dataPath* ; *objects* ; *options* ; *method* {; *tablesArray* {; *fieldsArray*}} )<!-- END REF-->
 <!--REF #_command_.VERIFY DATA FILE.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

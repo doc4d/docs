@@ -5,7 +5,7 @@ slug: /commands/reload-external-data
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.RELOAD EXTERNAL DATA.Syntax-->**RELOAD EXTERNAL DATA** ( *oCampo* : Text )<br/>**RELOAD EXTERNAL DATA** ( *oCampo* : Blob )<br/>**RELOAD EXTERNAL DATA** ( *oCampo* : Picture )<br/>**RELOAD EXTERNAL DATA** ( *oCampo* : Object )<!-- END REF-->
+<!--REF #_command_.RELOAD EXTERNAL DATA.Syntax-->**RELOAD EXTERNAL DATA** ( *oCampo* )<!-- END REF-->
 <!--REF #_command_.RELOAD EXTERNAL DATA.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

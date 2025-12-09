@@ -5,7 +5,7 @@ slug: /commands/filter-keystroke
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.FILTER KEYSTROKE.Syntax-->**FILTER KEYSTROKE** ( *carFiltro* : Text )<!-- END REF-->
+<!--REF #_command_.FILTER KEYSTROKE.Syntax-->**FILTER KEYSTROKE** ( *carFiltro* )<!-- END REF-->
 <!--REF #_command_.FILTER KEYSTROKE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

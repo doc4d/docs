@@ -5,7 +5,7 @@ slug: /commands/insert-in-blob
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.INSERT IN BLOB.Syntax-->**INSERT IN BLOB** ( *blob* : Blob ; *offset* : Integer ; *len* : Integer {; *filler* : Integer} )<!-- END REF-->
+<!--REF #_command_.INSERT IN BLOB.Syntax-->**INSERT IN BLOB** ( *blob* ; *offset* ; *len* {; *filler*} )<!-- END REF-->
 <!--REF #_command_.INSERT IN BLOB.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

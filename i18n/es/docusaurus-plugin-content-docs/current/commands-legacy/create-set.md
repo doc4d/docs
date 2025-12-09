@@ -5,7 +5,7 @@ slug: /commands/create-set
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CREATE SET.Syntax-->**CREATE SET** ( {*tabla* : Table ;} *conjunto* : Text )<!-- END REF-->
+<!--REF #_command_.CREATE SET.Syntax-->**CREATE SET** ( {*tabla* ;} *conjunto* )<!-- END REF-->
 <!--REF #_command_.CREATE SET.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

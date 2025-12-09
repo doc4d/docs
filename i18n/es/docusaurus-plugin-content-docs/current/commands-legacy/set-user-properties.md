@@ -5,7 +5,7 @@ slug: /commands/set-user-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Set user properties.Syntax-->**Set user properties** ( *refUsuario* : Integer ; *nombre* : Text ; *inicio* : Text ; *contraseña* : Text ; *nbLogin* : Integer ; *ultimoLogin* : Date {; *membrecias* : Integer array {; *grupoPropietario* : Integer}} ) : Integer<!-- END REF-->
+<!--REF #_command_.Set user properties.Syntax-->**Set user properties** ( *refUsuario* ; *nombre* ; *inicio* ; *contraseña* ; *nbLogin* ; *ultimoLogin* {; *membrecias* {; *grupoPropietario*}} ) : Integer<!-- END REF-->
 <!--REF #_command_.Set user properties.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

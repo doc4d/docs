@@ -5,7 +5,7 @@ slug: /commands/create-index
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CREATE INDEX.Syntax-->**CREATE INDEX** ( *tabela* : Table ; *arrayCampos* : Pointer array ; *tipoIndice* : Integer ; *nomeIndice* : Text {; *} )<!-- END REF-->
+<!--REF #_command_.CREATE INDEX.Syntax-->**CREATE INDEX** ( *tabela* ; *arrayCampos* ; *tipoIndice* ; *nomeIndice* {; *} )<!-- END REF-->
 <!--REF #_command_.CREATE INDEX.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

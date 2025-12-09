@@ -5,7 +5,7 @@ slug: /commands/get-highlighted-records
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET HIGHLIGHTED RECORDS.Syntax-->**GET HIGHLIGHTED RECORDS** ( {*tabla* : Table ;} *nomConjunto* : Text )<!-- END REF-->
+<!--REF #_command_.GET HIGHLIGHTED RECORDS.Syntax-->**GET HIGHLIGHTED RECORDS** ( {*tabla* ;} *nomConjunto* )<!-- END REF-->
 <!--REF #_command_.GET HIGHLIGHTED RECORDS.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

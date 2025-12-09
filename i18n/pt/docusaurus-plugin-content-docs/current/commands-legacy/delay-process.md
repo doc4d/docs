@@ -5,7 +5,7 @@ slug: /commands/delay-process
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DELAY PROCESS.Syntax-->**DELAY PROCESS** ( *processo* : Integer ; *duraçao* : Real )<!-- END REF-->
+<!--REF #_command_.DELAY PROCESS.Syntax-->**DELAY PROCESS** ( *processo* ; *duraçao* )<!-- END REF-->
 <!--REF #_command_.DELAY PROCESS.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

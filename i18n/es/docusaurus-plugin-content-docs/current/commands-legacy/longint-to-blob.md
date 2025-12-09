@@ -5,7 +5,7 @@ slug: /commands/longint-to-blob
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LONGINT TO BLOB.Syntax-->**LONGINT TO BLOB** ( *enteroLargo* : Integer ; *BLOB* : Blob ; *byteOrden* : Integer {; offset | *} )<!-- END REF-->
+<!--REF #_command_.LONGINT TO BLOB.Syntax-->**LONGINT TO BLOB** ( *enteroLargo* ; *BLOB* ; *byteOrden* {; offset | *} )<!-- END REF-->
 <!--REF #_command_.LONGINT TO BLOB.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

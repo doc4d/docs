@@ -5,7 +5,7 @@ slug: /commands/web-set-http-header
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WEB SET HTTP HEADER.Syntax-->**WEB SET HTTP HEADER** ( cabeçalho|arrayCampo {; *valorArray* : Text array} )<!-- END REF-->
+<!--REF #_command_.WEB SET HTTP HEADER.Syntax-->**WEB SET HTTP HEADER** ( cabeçalho|arrayCampo {; *valorArray*} )<!-- END REF-->
 <!--REF #_command_.WEB SET HTTP HEADER.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

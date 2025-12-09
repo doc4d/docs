@@ -5,7 +5,7 @@ slug: /commands/drop-remote-user
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DROP REMOTE USER.Syntax-->**DROP REMOTE USER** ( *sessaoUsuario* : Text )<!-- END REF-->
+<!--REF #_command_.DROP REMOTE USER.Syntax-->**DROP REMOTE USER** ( *sessaoUsuario* )<!-- END REF-->
 <!--REF #_command_.DROP REMOTE USER.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/resource-list
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.RESOURCE LIST.Syntax-->**RESOURCE LIST** ( *resTipo* : Text ; *resNums* : Integer array ; *resNoms* : Text array {; *resArchivo* : Time} )<!-- END REF-->
+<!--REF #_command_.RESOURCE LIST.Syntax-->**RESOURCE LIST** ( *resTipo* ; *resNums* ; *resNoms* {; *resArchivo*} )<!-- END REF-->
 <!--REF #_command_.RESOURCE LIST.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

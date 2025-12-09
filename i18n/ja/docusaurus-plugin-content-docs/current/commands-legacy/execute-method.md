@@ -5,7 +5,7 @@ slug: /commands/execute-method
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.EXECUTE METHOD.Syntax-->**EXECUTE METHOD** ( *methodName* : Text {; result | * {; *param*}}{; *param2* ; ... ; *paramN*} )<!-- END REF-->
+<!--REF #_command_.EXECUTE METHOD.Syntax-->**EXECUTE METHOD** ( *methodName* {; result | * {; *param*}}{; *param2* ; ... ; *paramN*} )<!-- END REF-->
 <!--REF #_command_.EXECUTE METHOD.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

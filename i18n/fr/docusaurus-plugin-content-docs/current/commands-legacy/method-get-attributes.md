@@ -5,7 +5,7 @@ slug: /commands/method-get-attributes
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD GET ATTRIBUTES.Syntax-->**METHOD GET ATTRIBUTES** ( *chemin* : Text ; *attributs* : Object {; *} )<br/>**METHOD GET ATTRIBUTES** ( *chemin* : Text ; *attributs* : Object array {; *} )<br/>**METHOD GET ATTRIBUTES** ( *chemin* : Text array ; *attributs* : Object {; *} )<br/>**METHOD GET ATTRIBUTES** ( *chemin* : Text array ; *attributs* : Object array {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD GET ATTRIBUTES.Syntax-->**METHOD GET ATTRIBUTES** ( *chemin* ; *attributs* {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD GET ATTRIBUTES.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

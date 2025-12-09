@@ -5,7 +5,7 @@ slug: /commands/window-list
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WINDOW LIST.Syntax-->**WINDOW LIST** ( *ventanas* : Array {; *} )<!-- END REF-->
+<!--REF #_command_.WINDOW LIST.Syntax-->**WINDOW LIST** ( *ventanas* {; *} )<!-- END REF-->
 <!--REF #_command_.WINDOW LIST.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

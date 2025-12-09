@@ -5,7 +5,7 @@ slug: /commands/write-picture-file
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WRITE PICTURE FILE.Syntax-->**WRITE PICTURE FILE** ( *nomeArquivo* : Text ; *imagem* : Picture {; *codec* : Text} )<!-- END REF-->
+<!--REF #_command_.WRITE PICTURE FILE.Syntax-->**WRITE PICTURE FILE** ( *nomeArquivo* ; *imagem* {; *codec*} )<!-- END REF-->
 <!--REF #_command_.WRITE PICTURE FILE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

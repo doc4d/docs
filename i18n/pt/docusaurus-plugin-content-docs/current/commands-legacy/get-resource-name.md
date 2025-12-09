@@ -5,7 +5,7 @@ slug: /commands/get-resource-name
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Get resource name.Syntax-->**Get resource name** ( *resTipo* : Text ; *resNum* : Integer {; *resArquivo* : Time} ) : Text<!-- END REF-->
+<!--REF #_command_.Get resource name.Syntax-->**Get resource name** ( *resTipo* ; *resNum* {; *resArquivo*} ) : Text<!-- END REF-->
 <!--REF #_command_.Get resource name.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

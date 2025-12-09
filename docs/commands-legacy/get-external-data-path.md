@@ -5,7 +5,7 @@ slug: /commands/get-external-data-path
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Get external data path.Syntax-->**Get external data path** ( *aField* : Text ) : Text<br/>**Get external data path** ( *aField* : Blob ) : Text<br/>**Get external data path** ( *aField* : Picture ) : Text<!-- END REF-->
+<!--REF #_command_.Get external data path.Syntax-->**Get external data path** ( *aField* ) : Text<!-- END REF-->
 <!--REF #_command_.Get external data path.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

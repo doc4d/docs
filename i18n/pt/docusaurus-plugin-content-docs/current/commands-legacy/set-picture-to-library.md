@@ -5,7 +5,7 @@ slug: /commands/set-picture-to-library
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET PICTURE TO LIBRARY.Syntax-->**SET PICTURE TO LIBRARY** ( *imagem* : Picture ; *refImag* : Integer ; *nomeImagem* : Text )<!-- END REF-->
+<!--REF #_command_.SET PICTURE TO LIBRARY.Syntax-->**SET PICTURE TO LIBRARY** ( *imagem* ; *refImag* ; *nomeImagem* )<!-- END REF-->
 <!--REF #_command_.SET PICTURE TO LIBRARY.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

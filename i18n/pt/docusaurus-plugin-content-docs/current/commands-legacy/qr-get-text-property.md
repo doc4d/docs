@@ -5,7 +5,7 @@ slug: /commands/qr-get-text-property
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QR Get text property.Syntax-->**QR Get text property** ( *area* : Integer ; *numColuna* : Integer ; *numLinha* : Integer ; *propriedade* : Integer ) : any<!-- END REF-->
+<!--REF #_command_.QR Get text property.Syntax-->**QR Get text property** ( *area* ; *numColuna* ; *numLinha* ; *propriedade* ) : any<!-- END REF-->
 <!--REF #_command_.QR Get text property.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

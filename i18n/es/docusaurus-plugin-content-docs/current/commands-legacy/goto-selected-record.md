@@ -5,7 +5,7 @@ slug: /commands/goto-selected-record
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GOTO SELECTED RECORD.Syntax-->**GOTO SELECTED RECORD** ( {*tabla* : Table ;} *registro* : Integer )<!-- END REF-->
+<!--REF #_command_.GOTO SELECTED RECORD.Syntax-->**GOTO SELECTED RECORD** ( {*tabla* ;} *registro* )<!-- END REF-->
 <!--REF #_command_.GOTO SELECTED RECORD.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

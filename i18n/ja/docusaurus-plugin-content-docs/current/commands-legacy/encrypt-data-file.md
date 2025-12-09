@@ -5,7 +5,7 @@ slug: /commands/encrypt-data-file
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Encrypt data file.Syntax-->**Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newPassPhrase* {; *archiveFolder* : Text {; *curPassPhrase* {; *methodName* : Text}}}} ) : Text<br/>**Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newDataKey* {; *archiveFolder* : Text {; *curDataKey* {; *methodName* : Text}}}} ) : Text<!-- END REF-->
+<!--REF #_command_.Encrypt data file.Syntax-->**Encrypt data file** ( *structurePath* ; *dataPath* {; *newPassPhrase* {; *archiveFolder* {; *curPassPhrase* {; *methodName*}}}} ) : Text<br/>**Encrypt data file** ( *structurePath* ; *dataPath* {; *newDataKey* {; *archiveFolder* {; *curDataKey* {; *methodName*}}}} ) : Text<!-- END REF-->
 <!--REF #_command_.Encrypt data file.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

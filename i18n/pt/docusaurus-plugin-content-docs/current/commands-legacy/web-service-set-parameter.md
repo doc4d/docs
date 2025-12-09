@@ -5,7 +5,7 @@ slug: /commands/web-service-set-parameter
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WEB SERVICE SET PARAMETER.Syntax-->**WEB SERVICE SET PARAMETER** ( *nome* : Text ; *valor* : Variable {; *tipoSoap* : Text} )<!-- END REF-->
+<!--REF #_command_.WEB SERVICE SET PARAMETER.Syntax-->**WEB SERVICE SET PARAMETER** ( *nome* ; *valor* {; *tipoSoap*} )<!-- END REF-->
 <!--REF #_command_.WEB SERVICE SET PARAMETER.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

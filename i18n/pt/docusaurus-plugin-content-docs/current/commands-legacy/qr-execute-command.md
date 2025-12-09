@@ -5,7 +5,7 @@ slug: /commands/qr-execute-command
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QR EXECUTE COMMAND.Syntax-->**QR EXECUTE COMMAND** ( *area* : Integer ; *comando* : Integer )<!-- END REF-->
+<!--REF #_command_.QR EXECUTE COMMAND.Syntax-->**QR EXECUTE COMMAND** ( *area* ; *comando* )<!-- END REF-->
 <!--REF #_command_.QR EXECUTE COMMAND.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

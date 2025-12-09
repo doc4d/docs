@@ -5,7 +5,7 @@ slug: /commands/method-get-comments
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD GET COMMENTS.Syntax-->**METHOD GET COMMENTS** ( *path* : Text ; *comments* : Text {; *} )<br/>**METHOD GET COMMENTS** ( *path* : Text ; *comments* : Text配列 {; *} )<br/>**METHOD GET COMMENTS** ( *path* : Text配列 ; *comments* : Text {; *} )<br/>**METHOD GET COMMENTS** ( *path* : Text配列 ; *comments* : Text配列 {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD GET COMMENTS.Syntax-->**METHOD GET COMMENTS** ( *path* ; *comments* {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD GET COMMENTS.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

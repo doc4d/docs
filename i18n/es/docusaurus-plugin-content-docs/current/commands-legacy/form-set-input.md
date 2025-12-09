@@ -5,7 +5,7 @@ slug: /commands/form-set-input
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.FORM SET INPUT.Syntax-->**FORM SET INPUT** ( {*tabla* : Table ;} *form* : Text {; *formUsuario* : Text {; *}} )<br/>**FORM SET INPUT** ( {*tabla* : Table ;} *form* : Object {; *formUsuario* : Text {; *}} )<!-- END REF-->
+<!--REF #_command_.FORM SET INPUT.Syntax-->**FORM SET INPUT** ( {*tabla* ;} *form* {; *formUsuario* {; *}} )<!-- END REF-->
 <!--REF #_command_.FORM SET INPUT.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

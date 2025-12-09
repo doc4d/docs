@@ -5,7 +5,7 @@ slug: /commands/qr-on-command
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QR ON COMMAND.Syntax-->**QR ON COMMAND** ( *area* : Integer ; *nomMetodo* : Text )<!-- END REF-->
+<!--REF #_command_.QR ON COMMAND.Syntax-->**QR ON COMMAND** ( *area* ; *nomMetodo* )<!-- END REF-->
 <!--REF #_command_.QR ON COMMAND.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/array-blob
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ARRAY BLOB.Syntax-->**ARRAY BLOB** ( *nomArray* : Array ; *tam* : Integer {; *tam2* : Integer} )<!-- END REF-->
+<!--REF #_command_.ARRAY BLOB.Syntax-->**ARRAY BLOB** ( *nomArray* ; *tam* {; *tam2*} )<!-- END REF-->
 <!--REF #_command_.ARRAY BLOB.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

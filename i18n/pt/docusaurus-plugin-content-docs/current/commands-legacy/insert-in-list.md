@@ -5,7 +5,7 @@ slug: /commands/insert-in-list
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.INSERT IN LIST.Syntax-->**INSERT IN LIST** ( {* ;} *lista* ; antesElem | *  ; *textoElem* : Text ; *refElem* : Integer {; *sublista* : Integer ; *expandida* : Boolean} )<!-- END REF-->
+<!--REF #_command_.INSERT IN LIST.Syntax-->**INSERT IN LIST** ( {* ;} *lista* ; antesElem | *  ; *textoElem* ; *refElem* {; *sublista* ; *expandida*} )<!-- END REF-->
 <!--REF #_command_.INSERT IN LIST.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/select-rgb-color
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Select RGB color.Syntax-->**Select RGB color** {( *corDefeito* : Integer {; *mensagem* : Text} )} : Integer<!-- END REF-->
+<!--REF #_command_.Select RGB color.Syntax-->**Select RGB color** {( *corDefeito* {; *mensagem*} )} : Integer<!-- END REF-->
 <!--REF #_command_.Select RGB color.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/decrypt-blob
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DECRYPT BLOB.Syntax-->**DECRYPT BLOB** ( *aDecifrar* : Blob  ; *enviarChavePub* : Blob  {; *recepChavePriv* : Blob } )<!-- END REF-->
+<!--REF #_command_.DECRYPT BLOB.Syntax-->**DECRYPT BLOB** ( *aDecifrar*  ; *enviarChavePub*  {; *recepChavePriv* } )<!-- END REF-->
 <!--REF #_command_.DECRYPT BLOB.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

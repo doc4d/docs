@@ -5,7 +5,7 @@ slug: /commands/enable-menu-item
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ENABLE MENU ITEM.Syntax-->**ENABLE MENU ITEM** ( *menu* : Integer ; *menuItem* : Integer {; *processo* : Integer} )<br/>**ENABLE MENU ITEM** ( *menu* : Text ; *menuItem* : Integer {; *processo* : Integer} )<!-- END REF-->
+<!--REF #_command_.ENABLE MENU ITEM.Syntax-->**ENABLE MENU ITEM** ( *menu* ; *menuItem* {; *processo*} )<!-- END REF-->
 <!--REF #_command_.ENABLE MENU ITEM.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/process-4d-tags
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.PROCESS 4D TAGS.Syntax-->**PROCESS 4D TAGS** ( *inputData* : Text ; *outputData* : Text {; *param* : Expression}{; *param2* ; ... ; *paramN*} )<!-- END REF-->
+<!--REF #_command_.PROCESS 4D TAGS.Syntax-->**PROCESS 4D TAGS** ( *inputData* ; *outputData* {; *param*}{; *param2* ; ... ; *paramN*} )<!-- END REF-->
 <!--REF #_command_.PROCESS 4D TAGS.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

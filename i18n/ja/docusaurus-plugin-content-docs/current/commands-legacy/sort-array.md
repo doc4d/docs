@@ -5,7 +5,7 @@ slug: /commands/sort-array
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SORT ARRAY.Syntax-->**SORT ARRAY** ( *array* : Array {; *array2* ; ... ; *arrayN*}{; > または <} )<!-- END REF-->
+<!--REF #_command_.SORT ARRAY.Syntax-->**SORT ARRAY** ( *array* {; *array2* ; ... ; *arrayN*}{; > または <} )<!-- END REF-->
 <!--REF #_command_.SORT ARRAY.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

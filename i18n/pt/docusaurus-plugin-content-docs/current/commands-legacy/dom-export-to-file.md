@@ -5,7 +5,7 @@ slug: /commands/dom-export-to-file
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DOM EXPORT TO FILE.Syntax-->**DOM EXPORT TO FILE** ( *refElemento* : Text ; *viaArquivo* : Text )<!-- END REF-->
+<!--REF #_command_.DOM EXPORT TO FILE.Syntax-->**DOM EXPORT TO FILE** ( *refElemento* ; *viaArquivo* )<!-- END REF-->
 <!--REF #_command_.DOM EXPORT TO FILE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

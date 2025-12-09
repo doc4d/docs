@@ -5,7 +5,7 @@ slug: /commands/dom-create-xml-element
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DOM Create XML element.Syntax-->**DOM Create XML element** ( *elementRef* : Text ; *xPath* : Text {; *attrName* : Text ; *attrValue* : Text} {; *attrName2* ; *attrValue2* ; ... ; *attrNameN* ; *attrValueN*} ) : Text<br/>**DOM Create XML element** ( *elementRef* : Text ; *xPath* : Text {; *attrName* : Text ; *attrValue* : Boolean} {; *attrName2* ; *attrValue2* ; ... ; *attrNameN* ; *attrValueN*} ) : Text<br/>**DOM Create XML element** ( *elementRef* : Text ; *xPath* : Text {; *attrName* : Text ; *attrValue* : Integer} {; *attrName2* ; *attrValue2* ; ... ; *attrNameN* ; *attrValueN*} ) : Text<br/>**DOM Create XML element** ( *elementRef* : Text ; *xPath* : Text {; *attrName* : Text ; *attrValue* : Real} {; *attrName2* ; *attrValue2* ; ... ; *attrNameN* ; *attrValueN*} ) : Text<br/>**DOM Create XML element** ( *elementRef* : Text ; *xPath* : Text {; *attrName* : Text ; *attrValue* : Time} {; *attrName2* ; *attrValue2* ; ... ; *attrNameN* ; *attrValueN*} ) : Text<br/>**DOM Create XML element** ( *elementRef* : Text ; *xPath* : Text {; *attrName* : Text ; *attrValue* : Date} {; *attrName2* ; *attrValue2* ; ... ; *attrNameN* ; *attrValueN*} ) : Text<!-- END REF-->
+<!--REF #_command_.DOM Create XML element.Syntax-->**DOM Create XML element** ( *elementRef* ; *xPath* {; *attrName* ; *attrValue*} {; *attrName2* ; *attrValue2* ; ... ; *attrNameN* ; *attrValueN*} ) : Text<!-- END REF-->
 <!--REF #_command_.DOM Create XML element.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

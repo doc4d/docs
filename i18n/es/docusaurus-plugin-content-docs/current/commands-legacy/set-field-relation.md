@@ -5,7 +5,7 @@ slug: /commands/set-field-relation
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET FIELD RELATION.Syntax-->**SET FIELD RELATION** ( tablasN | CampoN ; *uno* : Integer ; *muchos* : Integer )<!-- END REF-->
+<!--REF #_command_.SET FIELD RELATION.Syntax-->**SET FIELD RELATION** ( tablasN | CampoN ; *uno* ; *muchos* )<!-- END REF-->
 <!--REF #_command_.SET FIELD RELATION.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

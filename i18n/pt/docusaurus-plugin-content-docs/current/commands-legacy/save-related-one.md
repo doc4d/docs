@@ -5,7 +5,7 @@ slug: /commands/save-related-one
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SAVE RELATED ONE.Syntax-->**SAVE RELATED ONE** ( *campo* : Field )<!-- END REF-->
+<!--REF #_command_.SAVE RELATED ONE.Syntax-->**SAVE RELATED ONE** ( *campo* )<!-- END REF-->
 <!--REF #_command_.SAVE RELATED ONE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

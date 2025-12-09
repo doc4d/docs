@@ -5,7 +5,7 @@ slug: /commands/resize-form-window
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.RESIZE FORM WINDOW.Syntax-->**RESIZE FORM WINDOW** ( *ancho* : Integer ; *alto* : Integer )<!-- END REF-->
+<!--REF #_command_.RESIZE FORM WINDOW.Syntax-->**RESIZE FORM WINDOW** ( *ancho* ; *alto* )<!-- END REF-->
 <!--REF #_command_.RESIZE FORM WINDOW.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

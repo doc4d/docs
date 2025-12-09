@@ -5,7 +5,7 @@ slug: /commands/web-send-blob
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WEB SEND BLOB.Syntax-->**WEB SEND BLOB** ( *BLOB* : Blob ; *type* : Text )<!-- END REF-->
+<!--REF #_command_.WEB SEND BLOB.Syntax-->**WEB SEND BLOB** ( *BLOB* ; *type* )<!-- END REF-->
 <!--REF #_command_.WEB SEND BLOB.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

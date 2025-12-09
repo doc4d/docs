@@ -5,7 +5,7 @@ slug: /commands/method-get-code
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD GET CODE.Syntax-->**METHOD GET CODE** ( *path* : Text ; *code* : Text {; *option* : Integer} {; *} )<br/>**METHOD GET CODE** ( *path* : Text ; *code* : Text配列 {; *option* : Integer} {; *} )<br/>**METHOD GET CODE** ( *path* : Text配列 ; *code* : Text {; *option* : Integer} {; *} )<br/>**METHOD GET CODE** ( *path* : Text配列 ; *code* : Text配列 {; *option* : Integer} {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD GET CODE.Syntax-->**METHOD GET CODE** ( *path* ; *code* {; *option*} {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD GET CODE.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

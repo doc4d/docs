@@ -5,7 +5,7 @@ slug: /commands/get-user-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET USER PROPERTIES.Syntax-->**GET USER PROPERTIES** ( *userID* : Integer ; *name* : Text ; *startup* : Text ; *password* : Text ; *nbLogin* : Integer ; *lastLogin* : Date {; *memberships* : Integer array {; *groupOwner* : Integer}} )<!-- END REF-->
+<!--REF #_command_.GET USER PROPERTIES.Syntax-->**GET USER PROPERTIES** ( *userID* ; *name* ; *startup* ; *password* ; *nbLogin* ; *lastLogin* {; *memberships* {; *groupOwner*}} )<!-- END REF-->
 <!--REF #_command_.GET USER PROPERTIES.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

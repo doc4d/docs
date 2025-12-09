@@ -5,7 +5,7 @@ slug: /commands/json-parse-array
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.JSON PARSE ARRAY.Syntax-->**JSON PARSE ARRAY** ( *cadeiaJSON* : Text ; *arrayObjeto* : Array )<!-- END REF-->
+<!--REF #_command_.JSON PARSE ARRAY.Syntax-->**JSON PARSE ARRAY** ( *cadeiaJSON* ; *arrayObjeto* )<!-- END REF-->
 <!--REF #_command_.JSON PARSE ARRAY.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

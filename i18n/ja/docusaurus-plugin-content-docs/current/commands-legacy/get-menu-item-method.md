@@ -5,7 +5,7 @@ slug: /commands/get-menu-item-method
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Get menu item method.Syntax-->**Get menu item method** ( *menu* : Integer ; *menuItem* : Integer {; *process* : Integer} ) : Text<br/>**Get menu item method** ( *menu* : Text ; *menuItem* : Integer {; *process* : Integer} ) : Text<!-- END REF-->
+<!--REF #_command_.Get menu item method.Syntax-->**Get menu item method** ( *menu* ; *menuItem* {; *process*} ) : Text<!-- END REF-->
 <!--REF #_command_.Get menu item method.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

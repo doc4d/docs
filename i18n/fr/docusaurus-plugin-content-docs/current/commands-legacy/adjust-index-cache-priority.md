@@ -5,7 +5,7 @@ slug: /commands/adjust-index-cache-priority
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ADJUST INDEX CACHE PRIORITY.Syntax-->**ADJUST INDEX CACHE PRIORITY** ( *leChamp* ; *priorité* : Integer )<!-- END REF-->
+<!--REF #_command_.ADJUST INDEX CACHE PRIORITY.Syntax-->**ADJUST INDEX CACHE PRIORITY** ( *leChamp* ; *priorité* )<!-- END REF-->
 <!--REF #_command_.ADJUST INDEX CACHE PRIORITY.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/method-set-code
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD SET CODE.Syntax-->**METHOD SET CODE** ( *rota* : Text ; *codigo* : Text {; *} )<br/>**METHOD SET CODE** ( *rota* : Text ; *codigo* : Text array {; *} )<br/>**METHOD SET CODE** ( *rota* : Text array ; *codigo* : Text {; *} )<br/>**METHOD SET CODE** ( *rota* : Text array ; *codigo* : Text array {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD SET CODE.Syntax-->**METHOD SET CODE** ( *rota* ; *codigo* {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD SET CODE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

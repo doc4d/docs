@@ -5,7 +5,7 @@ slug: /commands/resource-type-list
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.RESOURCE TYPE LIST.Syntax-->**RESOURCE TYPE LIST** ( *resTipos* : Text array {; *resArchivo* : Time} )<!-- END REF-->
+<!--REF #_command_.RESOURCE TYPE LIST.Syntax-->**RESOURCE TYPE LIST** ( *resTipos* {; *resArchivo*} )<!-- END REF-->
 <!--REF #_command_.RESOURCE TYPE LIST.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

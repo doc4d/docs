@@ -5,7 +5,7 @@ slug: /commands/sort-list
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SORT LIST.Syntax-->**SORT LIST** ( *list* : Integer {; > または <} )<!-- END REF-->
+<!--REF #_command_.SORT LIST.Syntax-->**SORT LIST** ( *list* {; > または <} )<!-- END REF-->
 <!--REF #_command_.SORT LIST.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/select-folder
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Select folder.Syntax-->**Select folder** ( {*message* : Text }{;}{ *répertoire* : Text {; *options* : Integer}} ) : Text<br/>**Select folder** ( {*message* : Text }{;}{ *répertoire* : Integer {; *options* : Integer}} ) : Text<!-- END REF-->
+<!--REF #_command_.Select folder.Syntax-->**Select folder** ( {*message* }{;}{ *répertoire* {; *options*}} ) : Text<!-- END REF-->
 <!--REF #_command_.Select folder.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

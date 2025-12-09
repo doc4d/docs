@@ -5,7 +5,7 @@ slug: /commands/time-string
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Time string.Syntax-->**Time string** ( *secondes* : Integer ) : Text<br/>**Time string** ( *secondes* : Time ) : Text<!-- END REF-->
+<!--REF #_command_.Time string.Syntax-->**Time string** ( *secondes* ) : Text<!-- END REF-->
 <!--REF #_command_.Time string.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

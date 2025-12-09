@@ -5,7 +5,7 @@ slug: /commands/query-by-attribute
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QUERY BY ATTRIBUTE.Syntax-->**QUERY BY ATTRIBUTE** ( {*tabla* : Table}{;}{*opConj* : Operator ;} *campoObjeto* : Field ; *rutaAtributo* : Text ; *opBusq* : Text ; *valor* : Text {; *} )<br/>**QUERY BY ATTRIBUTE** ( {*tabla* : Table}{;}{*opConj* : Operator ;} *campoObjeto* : Field ; *rutaAtributo* : Text ; *opBusq* : Text ; *valor* : Real {; *} )<br/>**QUERY BY ATTRIBUTE** ( {*tabla* : Table}{;}{*opConj* : Operator ;} *campoObjeto* : Field ; *rutaAtributo* : Text ; *opBusq* : Text ; *valor* : Date {; *} )<br/>**QUERY BY ATTRIBUTE** ( {*tabla* : Table}{;}{*opConj* : Operator ;} *campoObjeto* : Field ; *rutaAtributo* : Text ; *opBusq* : Text ; *valor* : Time {; *} )<br/>**QUERY BY ATTRIBUTE** ( {*tabla* : Table}{;}{*opConj* : Operator ;} *campoObjeto* : Field ; *rutaAtributo* : Text ; *opBusq* : Operator ; *valor* : Text {; *} )<br/>**QUERY BY ATTRIBUTE** ( {*tabla* : Table}{;}{*opConj* : Operator ;} *campoObjeto* : Field ; *rutaAtributo* : Text ; *opBusq* : Operator ; *valor* : Real {; *} )<br/>**QUERY BY ATTRIBUTE** ( {*tabla* : Table}{;}{*opConj* : Operator ;} *campoObjeto* : Field ; *rutaAtributo* : Text ; *opBusq* : Operator ; *valor* : Date {; *} )<br/>**QUERY BY ATTRIBUTE** ( {*tabla* : Table}{;}{*opConj* : Operator ;} *campoObjeto* : Field ; *rutaAtributo* : Text ; *opBusq* : Operator ; *valor* : Time {; *} )<!-- END REF-->
+<!--REF #_command_.QUERY BY ATTRIBUTE.Syntax-->**QUERY BY ATTRIBUTE** ( {*tabla*}{;}{*opConj* ;} *campoObjeto* ; *rutaAtributo* ; *opBusq* ; *valor* {; *} )<!-- END REF-->
 <!--REF #_command_.QUERY BY ATTRIBUTE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

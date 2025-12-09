@@ -5,7 +5,7 @@ slug: /commands/show-process
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SHOW PROCESS.Syntax-->**SHOW PROCESS** ( *proceso* : Integer )<!-- END REF-->
+<!--REF #_command_.SHOW PROCESS.Syntax-->**SHOW PROCESS** ( *proceso* )<!-- END REF-->
 <!--REF #_command_.SHOW PROCESS.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/split-string
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Split string.Syntax-->**Split string** ( *stringAseparar* : Text ; *string* : Text {; *opções* : Integer} ) : Collection<!-- END REF-->
+<!--REF #_command_.Split string.Syntax-->**Split string** ( *stringAseparar* ; *string* {; *opções*} ) : Collection<!-- END REF-->
 <!--REF #_command_.Split string.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

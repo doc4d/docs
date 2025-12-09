@@ -5,7 +5,7 @@ slug: /commands/launch-external-process
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LAUNCH EXTERNAL PROCESS.Syntax-->**LAUNCH EXTERNAL PROCESS** ( *nomeArquivo* : Text {; *fluxoEntrada* : Text {; *fluxoSaida* : Text {; *fluxoErro* : Text}}}{; *pid* : Integer} )<br/>**LAUNCH EXTERNAL PROCESS** ( *nomeArquivo* : Text {; *fluxoEntrada* : Text {; *fluxoSaida* : Text {; *fluxoErro* : Blob}}}{; *pid* : Integer} )<br/>**LAUNCH EXTERNAL PROCESS** ( *nomeArquivo* : Text {; *fluxoEntrada* : Text {; *fluxoSaida* : Blob {; *fluxoErro* : Text}}}{; *pid* : Integer} )<br/>**LAUNCH EXTERNAL PROCESS** ( *nomeArquivo* : Text {; *fluxoEntrada* : Text {; *fluxoSaida* : Blob {; *fluxoErro* : Blob}}}{; *pid* : Integer} )<br/>**LAUNCH EXTERNAL PROCESS** ( *nomeArquivo* : Text {; *fluxoEntrada* : Blob {; *fluxoSaida* : Text {; *fluxoErro* : Text}}}{; *pid* : Integer} )<br/>**LAUNCH EXTERNAL PROCESS** ( *nomeArquivo* : Text {; *fluxoEntrada* : Blob {; *fluxoSaida* : Text {; *fluxoErro* : Blob}}}{; *pid* : Integer} )<br/>**LAUNCH EXTERNAL PROCESS** ( *nomeArquivo* : Text {; *fluxoEntrada* : Blob {; *fluxoSaida* : Blob {; *fluxoErro* : Text}}}{; *pid* : Integer} )<br/>**LAUNCH EXTERNAL PROCESS** ( *nomeArquivo* : Text {; *fluxoEntrada* : Blob {; *fluxoSaida* : Blob {; *fluxoErro* : Blob}}}{; *pid* : Integer} )<!-- END REF-->
+<!--REF #_command_.LAUNCH EXTERNAL PROCESS.Syntax-->**LAUNCH EXTERNAL PROCESS** ( *nomeArquivo* {; *fluxoEntrada* {; *fluxoSaida* {; *fluxoErro*}}}{; *pid*} )<!-- END REF-->
 <!--REF #_command_.LAUNCH EXTERNAL PROCESS.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/kill-worker
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.KILL WORKER.Syntax-->**KILL WORKER** {( *process* : Text )}<br/>**KILL WORKER** {( *process* : Integer )}<!-- END REF-->
+<!--REF #_command_.KILL WORKER.Syntax-->**KILL WORKER** {( *process* )}<!-- END REF-->
 <!--REF #_command_.KILL WORKER.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/copy-set
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.COPY SET.Syntax-->**COPY SET** ( *srcCon* : Text ; *dstCon* : Text )<!-- END REF-->
+<!--REF #_command_.COPY SET.Syntax-->**COPY SET** ( *srcCon* ; *dstCon* )<!-- END REF-->
 <!--REF #_command_.COPY SET.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

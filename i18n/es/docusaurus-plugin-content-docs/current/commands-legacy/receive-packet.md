@@ -5,7 +5,7 @@ slug: /commands/receive-packet
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.RECEIVE PACKET.Syntax-->**RECEIVE PACKET** ( {*docRef* : Time ;} *varRecep* : Text ; stopCar | numBytes )<br/>**RECEIVE PACKET** ( {*docRef* : Time ;} *varRecep* : Blob ; stopCar | numBytes )<!-- END REF-->
+<!--REF #_command_.RECEIVE PACKET.Syntax-->**RECEIVE PACKET** ( {*docRef* ;} *varRecep* ; stopCar | numBytes )<!-- END REF-->
 <!--REF #_command_.RECEIVE PACKET.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

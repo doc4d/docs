@@ -5,7 +5,7 @@ slug: /commands/dom-set-xml-element-value
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DOM SET XML ELEMENT VALUE.Syntax-->**DOM SET XML ELEMENT VALUE** ( *elementRef* : Text {; *xRuta* : Text}; *valorElement* : Text {; *} )<br/>**DOM SET XML ELEMENT VALUE** ( *elementRef* : Text {; *xRuta* : Text}; *valorElement* : Variable {; *} )<!-- END REF-->
+<!--REF #_command_.DOM SET XML ELEMENT VALUE.Syntax-->**DOM SET XML ELEMENT VALUE** ( *elementRef* {; *xRuta*}; *valorElement* {; *} )<!-- END REF-->
 <!--REF #_command_.DOM SET XML ELEMENT VALUE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

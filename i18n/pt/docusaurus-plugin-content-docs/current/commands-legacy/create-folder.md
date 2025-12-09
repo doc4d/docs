@@ -5,7 +5,7 @@ slug: /commands/create-folder
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CREATE FOLDER.Syntax-->**CREATE FOLDER** ( *rotaPasta* : Text {; *} )<!-- END REF-->
+<!--REF #_command_.CREATE FOLDER.Syntax-->**CREATE FOLDER** ( *rotaPasta* {; *} )<!-- END REF-->
 <!--REF #_command_.CREATE FOLDER.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

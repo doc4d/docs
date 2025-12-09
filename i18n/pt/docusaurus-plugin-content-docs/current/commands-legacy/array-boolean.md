@@ -5,7 +5,7 @@ slug: /commands/array-boolean
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ARRAY BOOLEAN.Syntax-->**ARRAY BOOLEAN** ( *nomeArray* : Array ; *tamanho* : Integer {; *tamanho2* : Integer} )<!-- END REF-->
+<!--REF #_command_.ARRAY BOOLEAN.Syntax-->**ARRAY BOOLEAN** ( *nomeArray* ; *tamanho* {; *tamanho2*} )<!-- END REF-->
 <!--REF #_command_.ARRAY BOOLEAN.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

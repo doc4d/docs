@@ -5,7 +5,7 @@ slug: /commands/create-data-file
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CREATE DATA FILE.Syntax-->**CREATE DATA FILE** ( *rutaAcceso* : Text )<!-- END REF-->
+<!--REF #_command_.CREATE DATA FILE.Syntax-->**CREATE DATA FILE** ( *rutaAcceso* )<!-- END REF-->
 <!--REF #_command_.CREATE DATA FILE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

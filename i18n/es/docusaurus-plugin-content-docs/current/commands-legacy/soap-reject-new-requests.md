@@ -5,7 +5,7 @@ slug: /commands/soap-reject-new-requests
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SOAP REJECT NEW REQUESTS.Syntax-->**SOAP REJECT NEW REQUESTS** ( *estadoRechazar* : Boolean )<!-- END REF-->
+<!--REF #_command_.SOAP REJECT NEW REQUESTS.Syntax-->**SOAP REJECT NEW REQUESTS** ( *estadoRechazar* )<!-- END REF-->
 <!--REF #_command_.SOAP REJECT NEW REQUESTS.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

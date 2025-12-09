@@ -5,7 +5,7 @@ slug: /commands/edit-formula
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.EDIT FORMULA.Syntax-->**EDIT FORMULA** ( *tabela* : Table ; *formula* : Text )<!-- END REF-->
+<!--REF #_command_.EDIT FORMULA.Syntax-->**EDIT FORMULA** ( *tabela* ; *formula* )<!-- END REF-->
 <!--REF #_command_.EDIT FORMULA.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

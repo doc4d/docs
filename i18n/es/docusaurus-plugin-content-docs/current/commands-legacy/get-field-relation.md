@@ -5,7 +5,7 @@ slug: /commands/get-field-relation
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET FIELD RELATION.Syntax-->**GET FIELD RELATION** ( *campoN* : Field ; *uno* : Integer ; *muchos* : Integer {; *} )<!-- END REF-->
+<!--REF #_command_.GET FIELD RELATION.Syntax-->**GET FIELD RELATION** ( *campoN* ; *uno* ; *muchos* {; *} )<!-- END REF-->
 <!--REF #_command_.GET FIELD RELATION.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

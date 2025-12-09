@@ -5,7 +5,7 @@ slug: /commands/old-related-many
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OLD RELATED MANY.Syntax-->**OLD RELATED MANY** ( *aField* : Field )<!-- END REF-->
+<!--REF #_command_.OLD RELATED MANY.Syntax-->**OLD RELATED MANY** ( *aField* )<!-- END REF-->
 <!--REF #_command_.OLD RELATED MANY.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

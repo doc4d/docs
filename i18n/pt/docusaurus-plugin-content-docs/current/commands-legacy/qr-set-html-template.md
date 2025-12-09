@@ -5,7 +5,7 @@ slug: /commands/qr-set-html-template
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QR SET HTML TEMPLATE.Syntax-->**QR SET HTML TEMPLATE** ( *area* : Integer ; *modelo* : Text )<!-- END REF-->
+<!--REF #_command_.QR SET HTML TEMPLATE.Syntax-->**QR SET HTML TEMPLATE** ( *area* ; *modelo* )<!-- END REF-->
 <!--REF #_command_.QR SET HTML TEMPLATE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

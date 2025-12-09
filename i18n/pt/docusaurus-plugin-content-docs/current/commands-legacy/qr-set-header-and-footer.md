@@ -5,7 +5,7 @@ slug: /commands/qr-set-header-and-footer
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QR SET HEADER AND FOOTER.Syntax-->**QR SET HEADER AND FOOTER** ( *area* : Integer ; *seletor* : Integer ; *tituloEsq* : Text ; *tituloCentro* : Text ; *tituloDir* : Text ; *altura* : Integer {; *imagem* : Picture {; *alinImag* : Integer}} )<!-- END REF-->
+<!--REF #_command_.QR SET HEADER AND FOOTER.Syntax-->**QR SET HEADER AND FOOTER** ( *area* ; *seletor* ; *tituloEsq* ; *tituloCentro* ; *tituloDir* ; *altura* {; *imagem* {; *alinImag*}} )<!-- END REF-->
 <!--REF #_command_.QR SET HEADER AND FOOTER.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/volume-attributes
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.VOLUME ATTRIBUTES.Syntax-->**VOLUME ATTRIBUTES** ( *volumen* : Text ; *tamaño* : Real ; *utilizado* : Real ; *libre* : Real )<!-- END REF-->
+<!--REF #_command_.VOLUME ATTRIBUTES.Syntax-->**VOLUME ATTRIBUTES** ( *volumen* ; *tamaño* ; *utilizado* ; *libre* )<!-- END REF-->
 <!--REF #_command_.VOLUME ATTRIBUTES.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

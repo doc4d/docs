@@ -5,7 +5,7 @@ slug: /commands/distinct-attribute-values
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DISTINCT ATTRIBUTE VALUES.Syntax-->**DISTINCT ATTRIBUTE VALUES** ( *objectField* : Field ; *path* : Text ; *valuesArray* : Array )<!-- END REF-->
+<!--REF #_command_.DISTINCT ATTRIBUTE VALUES.Syntax-->**DISTINCT ATTRIBUTE VALUES** ( *objectField* ; *path* ; *valuesArray* )<!-- END REF-->
 <!--REF #_command_.DISTINCT ATTRIBUTE VALUES.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

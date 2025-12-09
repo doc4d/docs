@@ -5,7 +5,7 @@ slug: /commands/get-window-rect
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET WINDOW RECT.Syntax-->**GET WINDOW RECT** ( *esquerda* : Integer ; *superior* : Integer ; *direita* : Integer ; *inferior* : Integer {; *janela* : Integer} )<!-- END REF-->
+<!--REF #_command_.GET WINDOW RECT.Syntax-->**GET WINDOW RECT** ( *esquerda* ; *superior* ; *direita* ; *inferior* {; *janela*} )<!-- END REF-->
 <!--REF #_command_.GET WINDOW RECT.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

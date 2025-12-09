@@ -5,7 +5,7 @@ slug: /commands/distinct-values
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DISTINCT VALUES.Syntax-->**DISTINCT VALUES** ( *aField* : Field ; *array* : Array {; *countArray* : Integer array} )<!-- END REF-->
+<!--REF #_command_.DISTINCT VALUES.Syntax-->**DISTINCT VALUES** ( *aField* ; *array* {; *countArray*} )<!-- END REF-->
 <!--REF #_command_.DISTINCT VALUES.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/object-set-action
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT SET ACTION.Syntax-->**OBJECT SET ACTION** ( {*sup* : * ;} *objeto* : any ; *accion* : Text )<!-- END REF-->
+<!--REF #_command_.OBJECT SET ACTION.Syntax-->**OBJECT SET ACTION** ( {*sup* ;} *objeto* ; *accion* )<!-- END REF-->
 <!--REF #_command_.OBJECT SET ACTION.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

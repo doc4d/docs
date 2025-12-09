@@ -5,7 +5,7 @@ slug: /commands/convert-coordinates
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CONVERT COORDINATES.Syntax-->**CONVERT COORDINATES** ( *xCoord* : Integer ; *yCoord* : Integer ; *from* : Integer ; *to* : Integer )<!-- END REF-->
+<!--REF #_command_.CONVERT COORDINATES.Syntax-->**CONVERT COORDINATES** ( *xCoord* ; *yCoord* ; *from* ; *to* )<!-- END REF-->
 <!--REF #_command_.CONVERT COORDINATES.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/create-set-from-array
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CREATE SET FROM ARRAY.Syntax-->**CREATE SET FROM ARRAY** ( *laTable* : Table ; *tabEnrg* : Integer {; *nomEnsemble* : Text} )<br/>**CREATE SET FROM ARRAY** ( *laTable* : Table ; *tabEnrg* : Boolean array {; *nomEnsemble* : Text} )<!-- END REF-->
+<!--REF #_command_.CREATE SET FROM ARRAY.Syntax-->**CREATE SET FROM ARRAY** ( *laTable* ; *tabEnrg* {; *nomEnsemble*} )<!-- END REF-->
 <!--REF #_command_.CREATE SET FROM ARRAY.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

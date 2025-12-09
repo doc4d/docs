@@ -5,7 +5,7 @@ slug: /commands/reduce-selection
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.REDUCE SELECTION.Syntax-->**REDUCE SELECTION** ( {*tabela* : Table ;} *numero* : Integer )<!-- END REF-->
+<!--REF #_command_.REDUCE SELECTION.Syntax-->**REDUCE SELECTION** ( {*tabela* ;} *numero* )<!-- END REF-->
 <!--REF #_command_.REDUCE SELECTION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

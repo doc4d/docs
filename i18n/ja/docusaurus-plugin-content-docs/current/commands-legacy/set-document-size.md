@@ -5,7 +5,7 @@ slug: /commands/set-document-size
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET DOCUMENT SIZE.Syntax-->**SET DOCUMENT SIZE** ( *DocRef* ; *size* : Real )<!-- END REF-->
+<!--REF #_command_.SET DOCUMENT SIZE.Syntax-->**SET DOCUMENT SIZE** ( *DocRef* ; *size* )<!-- END REF-->
 <!--REF #_command_.SET DOCUMENT SIZE.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

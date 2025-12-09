@@ -5,7 +5,7 @@ slug: /commands/ob-copy
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OB Copy.Syntax-->**OB Copy** ( *objet* : Object {; *résoudrePtrs* : Boolean } )  : Object<br/>**OB Copy** ( *objet* : Object {; *résoudrePtrs* : Boolean } )  : Object<br/>**OB Copy** ( *objet* : Object {; *option* : Integer {; *grouperAvec* : Collection}} )  : Object<br/>**OB Copy** ( *objet* : Object {; *option* : Integer {; *grouperAvec* : Object}} )  : Object<br/>**OB Copy** ( *objet* : Object {; *option* : Integer {; *grouperAvec* : Collection}} )  : Object<br/>**OB Copy** ( *objet* : Object {; *option* : Integer {; *grouperAvec* : Object}} )  : Object<!-- END REF-->
+<!--REF #_command_.OB Copy.Syntax-->**OB Copy** ( *objet* {; *résoudrePtrs* } )  : Object<br/>**OB Copy** ( *objet* {; *option* {; *grouperAvec*}} )  : Object<!-- END REF-->
 <!--REF #_command_.OB Copy.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/ob-set
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OB SET.Syntax-->**OB SET** ( *objet* : Object ; *propriété* : Text ; *valeur* : Expression {; *propriété2* ; *valeur2* ; ... ; *propriétéN* ; *valeurN*} )<br/>**OB SET** ( *objet* : Object ; *propriété* : Text ; *valeur* : Expression {; *propriété2* ; *valeur2* ; ... ; *propriétéN* ; *valeurN*} )<!-- END REF-->
+<!--REF #_command_.OB SET.Syntax-->**OB SET** ( *objet* ; *propriété* ; *valeur* {; *propriété2* ; *valeur2* ; ... ; *propriétéN* ; *valeurN*} )<!-- END REF-->
 <!--REF #_command_.OB SET.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

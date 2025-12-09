@@ -5,7 +5,7 @@ slug: /commands/get-indexed-string
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Get indexed string.Syntax-->**Get indexed string** ( *resID* : Integer ; *cadeiaNum* : Integer {; *resArquivo* : Time} ) : Text<!-- END REF-->
+<!--REF #_command_.Get indexed string.Syntax-->**Get indexed string** ( *resID* ; *cadeiaNum* {; *resArquivo*} ) : Text<!-- END REF-->
 <!--REF #_command_.Get indexed string.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

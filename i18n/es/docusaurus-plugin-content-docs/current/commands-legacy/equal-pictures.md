@@ -5,7 +5,7 @@ slug: /commands/equal-pictures
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Equal pictures.Syntax-->**Equal pictures** ( *imagen1* : Picture ; *imagen2* : Picture ; *mascara* : Picture ) : Boolean<br/>**Equal pictures** ( *imagen1* : Picture ; *imagen2* : Picture ; *mascara* : Picture ) : Boolean<br/>**Equal pictures** ( *imagen1* : Picture ; *imagen2* : Picture ; *mascara* : Picture ) : Boolean<br/>**Equal pictures** ( *imagen1* : Picture ; *imagen2* : Picture ; *mascara* : Picture ) : Boolean<br/>**Equal pictures** ( *imagen1* : Picture ; *imagen2* : Picture ; *mascara* : Picture ) : Boolean<br/>**Equal pictures** ( *imagen1* : Picture ; *imagen2* : Picture ; *mascara* : Picture ) : Boolean<br/>**Equal pictures** ( *imagen1* : Picture ; *imagen2* : Picture ; *mascara* : Picture ) : Boolean<br/>**Equal pictures** ( *imagen1* : Picture ; *imagen2* : Picture ; *mascara* : Picture ) : Boolean<!-- END REF-->
+<!--REF #_command_.Equal pictures.Syntax-->**Equal pictures** ( *imagen1* ; *imagen2* ; *mascara* ) : Boolean<!-- END REF-->
 <!--REF #_command_.Equal pictures.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

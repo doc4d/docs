@@ -5,7 +5,7 @@ slug: /commands/set-external-data-path
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET EXTERNAL DATA PATH.Syntax-->**SET EXTERNAL DATA PATH** ( *aCampo* : Text ; *ruta* : Text )<br/>**SET EXTERNAL DATA PATH** ( *aCampo* : Text ; *ruta* : Integer )<br/>**SET EXTERNAL DATA PATH** ( *aCampo* : Blob ; *ruta* : Text )<br/>**SET EXTERNAL DATA PATH** ( *aCampo* : Blob ; *ruta* : Integer )<br/>**SET EXTERNAL DATA PATH** ( *aCampo* : Picture ; *ruta* : Text )<br/>**SET EXTERNAL DATA PATH** ( *aCampo* : Picture ; *ruta* : Integer )<!-- END REF-->
+<!--REF #_command_.SET EXTERNAL DATA PATH.Syntax-->**SET EXTERNAL DATA PATH** ( *aCampo* ; *ruta* )<!-- END REF-->
 <!--REF #_command_.SET EXTERNAL DATA PATH.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

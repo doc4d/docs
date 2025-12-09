@@ -5,7 +5,7 @@ slug: /commands/text-to-document
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.TEXT TO DOCUMENT.Syntax-->**TEXT TO DOCUMENT** ( *nomArchivo* : Text ; *texto* : Text {; *conjCaract* : Text {; *ModoRetorno* : Integer}} )<br/>**TEXT TO DOCUMENT** ( *nomArchivo* : Text ; *texto* : Text {; *conjCaract* : Integer {; *ModoRetorno* : Integer}} )<!-- END REF-->
+<!--REF #_command_.TEXT TO DOCUMENT.Syntax-->**TEXT TO DOCUMENT** ( *nomArchivo* ; *texto* {; *conjCaract* {; *ModoRetorno*}} )<!-- END REF-->
 <!--REF #_command_.TEXT TO DOCUMENT.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

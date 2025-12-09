@@ -5,7 +5,7 @@ slug: /commands/set-menu-item-icon
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET MENU ITEM ICON.Syntax-->**SET MENU ITEM ICON** ( *menu* : Integer ; *lineamenu* : Integer ; *refIcon* : Text	 {; *proceso* : Integer} )<br/>**SET MENU ITEM ICON** ( *menu* : Integer ; *lineamenu* : Integer ; *refIcon* : Integer	 {; *proceso* : Integer} )<br/>**SET MENU ITEM ICON** ( *menu* : Text ; *lineamenu* : Integer ; *refIcon* : Text	 {; *proceso* : Integer} )<br/>**SET MENU ITEM ICON** ( *menu* : Text ; *lineamenu* : Integer ; *refIcon* : Integer	 {; *proceso* : Integer} )<!-- END REF-->
+<!--REF #_command_.SET MENU ITEM ICON.Syntax-->**SET MENU ITEM ICON** ( *menu* ; *lineamenu* ; *refIcon*	 {; *proceso*} )<!-- END REF-->
 <!--REF #_command_.SET MENU ITEM ICON.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/qr-set-sorts
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QR SET SORTS.Syntax-->**QR SET SORTS** ( *area* : Integer ; *aColumnas* : Real array {; *aOrden* : Real array} )<!-- END REF-->
+<!--REF #_command_.QR SET SORTS.Syntax-->**QR SET SORTS** ( *area* ; *aColumnas* {; *aOrden*} )<!-- END REF-->
 <!--REF #_command_.QR SET SORTS.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

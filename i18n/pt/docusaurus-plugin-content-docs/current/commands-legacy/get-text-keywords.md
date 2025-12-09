@@ -5,7 +5,7 @@ slug: /commands/get-text-keywords
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET TEXT KEYWORDS.Syntax-->**GET TEXT KEYWORDS** ( *texto* : Text ; *arrPalavrasChaves* : Text array {; *} )<!-- END REF-->
+<!--REF #_command_.GET TEXT KEYWORDS.Syntax-->**GET TEXT KEYWORDS** ( *texto* ; *arrPalavrasChaves* {; *} )<!-- END REF-->
 <!--REF #_command_.GET TEXT KEYWORDS.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

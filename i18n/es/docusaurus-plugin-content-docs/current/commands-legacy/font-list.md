@@ -5,7 +5,7 @@ slug: /commands/font-list
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.FONT LIST.Syntax-->**FONT LIST** ( *fuentes* : Text array {; *tipoLista* : Integer} )<br/>**FONT LIST** ( *fuentes* : Text array {; *tipoLista* : *} )<!-- END REF-->
+<!--REF #_command_.FONT LIST.Syntax-->**FONT LIST** ( *fuentes* {; *tipoLista*} )<!-- END REF-->
 <!--REF #_command_.FONT LIST.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

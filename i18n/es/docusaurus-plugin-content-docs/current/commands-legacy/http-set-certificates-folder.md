@@ -5,7 +5,7 @@ slug: /commands/http-set-certificates-folder
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.HTTP SET CERTIFICATES FOLDER.Syntax-->**HTTP SET CERTIFICATES FOLDER** ( *carpetaCertificados* : Text )<!-- END REF-->
+<!--REF #_command_.HTTP SET CERTIFICATES FOLDER.Syntax-->**HTTP SET CERTIFICATES FOLDER** ( *carpetaCertificados* )<!-- END REF-->
 <!--REF #_command_.HTTP SET CERTIFICATES FOLDER.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

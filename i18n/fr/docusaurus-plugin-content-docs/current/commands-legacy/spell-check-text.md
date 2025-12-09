@@ -5,7 +5,7 @@ slug: /commands/spell-check-text
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SPELL CHECK TEXT.Syntax-->**SPELL CHECK TEXT** ( *leTexte* ; *posErr* : Integer ; *longErr* : Integer ; *posVérif* : Integer ; *tabSuggest* : Text array )<!-- END REF-->
+<!--REF #_command_.SPELL CHECK TEXT.Syntax-->**SPELL CHECK TEXT** ( *leTexte* ; *posErr* ; *longErr* ; *posVérif* ; *tabSuggest* )<!-- END REF-->
 <!--REF #_command_.SPELL CHECK TEXT.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

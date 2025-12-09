@@ -5,7 +5,7 @@ slug: /commands/blob-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.BLOB PROPERTIES.Syntax-->**BLOB PROPERTIES** ( *blob* : Blob ; *compressed* : Integer {; *expandedSize* : Integer {; *currentSize* : Integer}} )<!-- END REF-->
+<!--REF #_command_.BLOB PROPERTIES.Syntax-->**BLOB PROPERTIES** ( *blob* ; *compressed* {; *expandedSize* {; *currentSize*}} )<!-- END REF-->
 <!--REF #_command_.BLOB PROPERTIES.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

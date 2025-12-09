@@ -5,7 +5,7 @@ slug: /commands/display-notification
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DISPLAY NOTIFICATION.Syntax-->**DISPLAY NOTIFICATION** ( *titulo* : Text ; *texto* : Text {; *duraçao* : Integer} )<!-- END REF-->
+<!--REF #_command_.DISPLAY NOTIFICATION.Syntax-->**DISPLAY NOTIFICATION** ( *titulo* ; *texto* {; *duraçao*} )<!-- END REF-->
 <!--REF #_command_.DISPLAY NOTIFICATION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/transform-picture
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.TRANSFORM PICTURE.Syntax-->**TRANSFORM PICTURE** ( *imagem* : Picture ; *operador* : Integer {; *param1* : Real {; *param2* : Real {; *param3* : Real {; *param4* : Real}}}} )<!-- END REF-->
+<!--REF #_command_.TRANSFORM PICTURE.Syntax-->**TRANSFORM PICTURE** ( *imagem* ; *operador* {; *param1* {; *param2* {; *param3* {; *param4*}}}} )<!-- END REF-->
 <!--REF #_command_.TRANSFORM PICTURE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

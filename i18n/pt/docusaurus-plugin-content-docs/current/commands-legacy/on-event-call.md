@@ -5,7 +5,7 @@ slug: /commands/on-event-call
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ON EVENT CALL.Syntax-->**ON EVENT CALL** ( *metodoEvento* : Text {; *nomeProcesso* : Text} )<!-- END REF-->
+<!--REF #_command_.ON EVENT CALL.Syntax-->**ON EVENT CALL** ( *metodoEvento* {; *nomeProcesso*} )<!-- END REF-->
 <!--REF #_command_.ON EVENT CALL.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

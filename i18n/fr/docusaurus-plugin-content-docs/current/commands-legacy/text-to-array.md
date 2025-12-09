@@ -5,7 +5,7 @@ slug: /commands/text-to-array
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.TEXT TO ARRAY.Syntax-->**TEXT TO ARRAY** ( *varTexte* ; *tabTexte* : Text array ; *largeur* : Integer ; *nomPolice* : Text ; *taillePolice* : Integer {; *stylePolice* : Integer {; *}} )<!-- END REF-->
+<!--REF #_command_.TEXT TO ARRAY.Syntax-->**TEXT TO ARRAY** ( *varTexte* ; *tabTexte* ; *largeur* ; *nomPolice* ; *taillePolice* {; *stylePolice* {; *}} )<!-- END REF-->
 <!--REF #_command_.TEXT TO ARRAY.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

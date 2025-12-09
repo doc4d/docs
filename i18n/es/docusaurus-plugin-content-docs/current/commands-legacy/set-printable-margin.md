@@ -5,7 +5,7 @@ slug: /commands/set-printable-margin
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET PRINTABLE MARGIN.Syntax-->**SET PRINTABLE MARGIN** ( *izquierda* : Integer ; *superior* : Integer ; *derecha* : Integer ; *inferior* : Integer )<!-- END REF-->
+<!--REF #_command_.SET PRINTABLE MARGIN.Syntax-->**SET PRINTABLE MARGIN** ( *izquierda* ; *superior* ; *derecha* ; *inferior* )<!-- END REF-->
 <!--REF #_command_.SET PRINTABLE MARGIN.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

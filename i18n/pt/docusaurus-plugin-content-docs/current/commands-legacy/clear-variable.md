@@ -5,7 +5,7 @@ slug: /commands/clear-variable
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CLEAR VARIABLE.Syntax-->**CLEAR VARIABLE** ( *variavel* : Variable )<!-- END REF-->
+<!--REF #_command_.CLEAR VARIABLE.Syntax-->**CLEAR VARIABLE** ( *variavel* )<!-- END REF-->
 <!--REF #_command_.CLEAR VARIABLE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

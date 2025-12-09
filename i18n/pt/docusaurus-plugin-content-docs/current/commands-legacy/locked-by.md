@@ -5,7 +5,7 @@ slug: /commands/locked-by
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LOCKED BY.Syntax-->**LOCKED BY** ( {*tabela* : Table ;} *processo* : Integer ; *usuario4D* : Text ; *usuarioSessao* : Text ; *nomeProcesso* : Text )<!-- END REF-->
+<!--REF #_command_.LOCKED BY.Syntax-->**LOCKED BY** ( {*tabela* ;} *processo* ; *usuario4D* ; *usuarioSessao* ; *nomeProcesso* )<!-- END REF-->
 <!--REF #_command_.LOCKED BY.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

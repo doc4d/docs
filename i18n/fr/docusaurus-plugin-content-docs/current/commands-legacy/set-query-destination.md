@@ -5,7 +5,7 @@ slug: /commands/set-query-destination
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET QUERY DESTINATION.Syntax-->**SET QUERY DESTINATION** ( *destinationType* : Integer {; *destinationObjet* : Text {; *destinationPtr* : Pointer}} )<br/>**SET QUERY DESTINATION** ( *destinationType* : Integer {; *destinationObjet* : Variable {; *destinationPtr* : Pointer}} )<!-- END REF-->
+<!--REF #_command_.SET QUERY DESTINATION.Syntax-->**SET QUERY DESTINATION** ( *destinationType* {; *destinationObjet* {; *destinationPtr*}} )<!-- END REF-->
 <!--REF #_command_.SET QUERY DESTINATION.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

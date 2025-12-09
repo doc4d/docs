@@ -5,7 +5,7 @@ slug: /commands/sax-get-xml-node
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SAX Get XML node.Syntax-->**SAX Get XML node** ( *documento* : Time ) : Integer<!-- END REF-->
+<!--REF #_command_.SAX Get XML node.Syntax-->**SAX Get XML node** ( *documento* ) : Integer<!-- END REF-->
 <!--REF #_command_.SAX Get XML node.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

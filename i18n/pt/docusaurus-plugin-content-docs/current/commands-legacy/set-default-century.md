@@ -5,7 +5,7 @@ slug: /commands/set-default-century
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET DEFAULT CENTURY.Syntax-->**SET DEFAULT CENTURY** ( *seculo* : Integer {; *anoPivo* : Integer} )<!-- END REF-->
+<!--REF #_command_.SET DEFAULT CENTURY.Syntax-->**SET DEFAULT CENTURY** ( *seculo* {; *anoPivo*} )<!-- END REF-->
 <!--REF #_command_.SET DEFAULT CENTURY.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

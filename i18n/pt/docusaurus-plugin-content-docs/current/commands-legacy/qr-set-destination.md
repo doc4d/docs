@@ -5,7 +5,7 @@ slug: /commands/qr-set-destination
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QR SET DESTINATION.Syntax-->**QR SET DESTINATION** ( *area* : Integer ; *tipo* : Integer {; *especificos* : Text} )<br/>**QR SET DESTINATION** ( *area* : Integer ; *tipo* : Integer {; *especificos* : Variable} )<!-- END REF-->
+<!--REF #_command_.QR SET DESTINATION.Syntax-->**QR SET DESTINATION** ( *area* ; *tipo* {; *especificos*} )<!-- END REF-->
 <!--REF #_command_.QR SET DESTINATION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

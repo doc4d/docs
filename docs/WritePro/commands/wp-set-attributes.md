@@ -4,7 +4,7 @@ title: WP SET ATTRIBUTES
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP SET ATTRIBUTES.Syntax-->**WP SET ATTRIBUTES** ( *targetObj* : Object ; *...attribName* ; *...attribValue* )<br/>**WP SET ATTRIBUTES** ( *targetObj* : Object ; *attribObj* : Object )<!-- END REF-->
+<!--REF #_command_.WP SET ATTRIBUTES.Syntax-->**WP SET ATTRIBUTES** ( *targetObj* ; *...attribName* ; *...attribValue* )<br/>**WP SET ATTRIBUTES** ( *targetObj* ; *attribObj* )<!-- END REF-->
 <!--REF #_command_.WP SET ATTRIBUTES.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

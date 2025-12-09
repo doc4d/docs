@@ -5,7 +5,7 @@ slug: /commands/get-process-variable
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET PROCESS VARIABLE.Syntax-->**GET PROCESS VARIABLE** ( *proceso* : Integer ; *srcVar* : Variable ; *dstVar* : Variable {; *srcVar2* ; *dstVar2* ; ... ; *srcVarN* ; *dstVarN*} )<!-- END REF-->
+<!--REF #_command_.GET PROCESS VARIABLE.Syntax-->**GET PROCESS VARIABLE** ( *proceso* ; *srcVar* ; *dstVar* {; *srcVar2* ; *dstVar2* ; ... ; *srcVarN* ; *dstVarN*} )<!-- END REF-->
 <!--REF #_command_.GET PROCESS VARIABLE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

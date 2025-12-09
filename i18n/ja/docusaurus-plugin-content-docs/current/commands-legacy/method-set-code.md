@@ -5,7 +5,7 @@ slug: /commands/method-set-code
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD SET CODE.Syntax-->**METHOD SET CODE** ( *path* : Text ; *code* : Text {; *} )<br/>**METHOD SET CODE** ( *path* : Text ; *code* : Text配列 {; *} )<br/>**METHOD SET CODE** ( *path* : Text配列 ; *code* : Text {; *} )<br/>**METHOD SET CODE** ( *path* : Text配列 ; *code* : Text配列 {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD SET CODE.Syntax-->**METHOD SET CODE** ( *path* ; *code* {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD SET CODE.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

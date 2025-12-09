@@ -5,7 +5,7 @@ slug: /commands/import-dif
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.IMPORT DIF.Syntax-->**IMPORT DIF** ( {*tabla* : Table ;} *doc* : Text )<!-- END REF-->
+<!--REF #_command_.IMPORT DIF.Syntax-->**IMPORT DIF** ( {*tabla* ;} *doc* )<!-- END REF-->
 <!--REF #_command_.IMPORT DIF.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

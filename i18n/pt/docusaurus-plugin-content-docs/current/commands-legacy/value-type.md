@@ -5,7 +5,7 @@ slug: /commands/value-type
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Value type.Syntax-->**Value type** ( *expressão* : Expression ) : Integer<!-- END REF-->
+<!--REF #_command_.Value type.Syntax-->**Value type** ( *expressão* ) : Integer<!-- END REF-->
 <!--REF #_command_.Value type.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/qr-move-column
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QR MOVE COLUMN.Syntax-->**QR MOVE COLUMN** ( *area* : Integer ; *numColuna* : Integer ; *novaPosição* : Integer )<!-- END REF-->
+<!--REF #_command_.QR MOVE COLUMN.Syntax-->**QR MOVE COLUMN** ( *area* ; *numColuna* ; *novaPosição* )<!-- END REF-->
 <!--REF #_command_.QR MOVE COLUMN.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

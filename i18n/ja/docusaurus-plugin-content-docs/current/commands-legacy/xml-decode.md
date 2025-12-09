@@ -5,7 +5,7 @@ slug: /commands/xml-decode
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.XML DECODE.Syntax-->**XML DECODE** ( *xmlValue* : Text ; *4Dvar* : Field )<br/>**XML DECODE** ( *xmlValue* : Text ; *4Dvar* : Variable )<!-- END REF-->
+<!--REF #_command_.XML DECODE.Syntax-->**XML DECODE** ( *xmlValue* ; *4Dvar* )<!-- END REF-->
 <!--REF #_command_.XML DECODE.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

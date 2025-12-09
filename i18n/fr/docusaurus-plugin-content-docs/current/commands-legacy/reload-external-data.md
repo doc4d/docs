@@ -5,7 +5,7 @@ slug: /commands/reload-external-data
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.RELOAD EXTERNAL DATA.Syntax-->**RELOAD EXTERNAL DATA** ( *leChamp* : Text )<br/>**RELOAD EXTERNAL DATA** ( *leChamp* : Blob )<br/>**RELOAD EXTERNAL DATA** ( *leChamp* : Picture )<br/>**RELOAD EXTERNAL DATA** ( *leChamp* : Object )<!-- END REF-->
+<!--REF #_command_.RELOAD EXTERNAL DATA.Syntax-->**RELOAD EXTERNAL DATA** ( *leChamp* )<!-- END REF-->
 <!--REF #_command_.RELOAD EXTERNAL DATA.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

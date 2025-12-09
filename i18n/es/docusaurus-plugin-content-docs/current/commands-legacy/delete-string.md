@@ -5,7 +5,7 @@ slug: /commands/delete-string
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Delete string.Syntax-->**Delete string** ( *fuente* : Text ; *posicion* : Integer ; *numCaracteres* : Integer ) : Text<!-- END REF-->
+<!--REF #_command_.Delete string.Syntax-->**Delete string** ( *fuente* ; *posicion* ; *numCaracteres* ) : Text<!-- END REF-->
 <!--REF #_command_.Delete string.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
