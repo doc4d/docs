@@ -6,11 +6,11 @@ title: Desktop Sessions
 
 A **desktop session** is a user-related execution context on 4D Server or 4D single-user that does not result from any web or REST access.  
 
-Just like a [**web user session**](../WebServer/sessions.md), the code executed in a desktop session has access to a [`Session`](../API/SessionClass.md) object which provides functions and properties to store and share values between user processes such as the [`session.storage`](../API/SessionClass.md#storage) object.   
+Just like in a [**web user session**](../WebServer/sessions.md), the code executed in a desktop session has access to a [`Session`](../API/SessionClass.md) object which provides functions and properties allowing you to store session values and to share them between user processes, for example using the [`session.storage`](../API/SessionClass.md#storage) object.   
 
-However, unlike code executed in web user session, desktop session code is not controlled by [roles and privileges](../ORDA/privileges.md). It can access any parts of the 4D application, including ORDA and data model classes. On 4D Server, [users and groups feature](../Users/handling_users_groups.md) can manage user accesses.  
+However, unlike the code executed in web user sessions, the code executed in desktop sessions is not controlled by [roles and privileges](../ORDA/privileges.md). It can access any parts of the 4D application, including ORDA and data model classes. On 4D Server, [users and groups feature](../Users/handling_users_groups.md) can manage user accesses.  
 
-You can nevertheless **share** a desktop session with a web session so that a desktop user can access your 4D application through a web interface, using for example Qodly pages and Web areas. 
+You can nevertheless [**share** a desktop session with a web session](#sharing-a-desktop-session-for-web-accesses) so that a desktop user can access your 4D application through a web interface, using for example Qodly pages and Web areas. 
 
 ## Session types
 
@@ -20,6 +20,15 @@ Desktop sessions include:
 - **Stored procedures sessions**: In client/server applications, the unique virtual user session that manages all stored procedures executed on the server.
 - **Standalone sessions**: Local session object returned in single-user application (useful in development and test phases of client/server applications).
 
+:::note
+
+Keep in mind that **Web sessions** are used as soon as the 4D project is accessed through web or REST requests.[ Web sessions are detailed in this page](../WebServer/sessions.md). 
+
+:::
+
+
+The following diagram shows the different session types and how they interact:
+
 
 ![](../assets/en/Desktop/sessions.png)
 
@@ -27,7 +36,7 @@ Desktop sessions include:
 
 ## Remote user sessions
 
-On the server, in processes related to remote users, the [`Session`](../commands/session.md) command returns a `session` object describing the current user session. This object is handled through the functions and properties of the [`Session` class](../API/SessionClass.md).
+On the server, in "user processes" (i.e. processes related to remote users), the [`Session`](../commands/session.md) command returns a `session` object describing the current user session. This object is handled through the functions and properties of the [`Session` class](../API/SessionClass.md).
 
 :::tip Related blog posts
 
@@ -91,7 +100,7 @@ Desktop sessions can be used to handle web accesses to the application by the sa
 
 To manage this configuration in production, you need to use remote user sessions. Actually, requests coming from both the remote 4D application and its Qodly pages loaded in Web areas need to work inside the same session. You just have to share the session between the remote client and its web pages so that you can have the same [session storage](../API/SessionClass.md#storage) and client license, wherever the request comes from (web or remote 4D).  
 
-Note that [privileges](../ORDA/privileges.md) should be set in the session before executing a web request, so that the user automatically gets their privileges for web access (see example). Keep in mind that privileges **only apply to requests coming from the web**, not to the 4D code executed in a standard remote session. 
+Note that [privileges](../ORDA/privileges.md) should be set in the session before executing a web request, so that the user automatically gets their privileges for web access (see example). Keep in mind that privileges **only apply to requests coming from the web**. 
 
 
 You can develop this configuration in your 4D Developer application (single-user): you can use the [standalone session](#standalone-sessions) to code and test all features related to web access, whether your application is intended for single-user or client/server deployment. 
