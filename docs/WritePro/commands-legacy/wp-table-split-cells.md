@@ -5,7 +5,7 @@ slug: /WritePro/commands/wp-table-split-cells
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP TABLE SPLIT CELLS.Syntax-->**WP TABLE SPLIT CELLS** ( *targetObj* ) | ( *tableRef* ; *startColumn* ; *startRow* {; *columnCount*{; *rowCount*}} )<!-- END REF-->
+<!--REF #_command_.WP TABLE SPLIT CELLS.Syntax-->**WP TABLE SPLIT CELLS** ( *targetObj* )<br/>**WP TABLE SPLIT CELLS** ( *tableRef* ; *startColumn* ; *startRow* {; *columnCount*{; *rowCount*}} )<!-- END REF-->
 <!--REF #_command_.WP TABLE SPLIT CELLS.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

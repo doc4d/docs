@@ -9,8 +9,8 @@ displayed_sidebar: docs
 <!--REF #_command_.Compare strings.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
-| aText | Text | &#8594;  | String to compare |
-| bText | Text | &#8594;  | String to compare |
+| aString | Text | &#8594;  | String to compare |
+| bString | Text | &#8594;  | String to compare |
 | options | Integer | &#8594;  | Comparison rule(s) |
 | Function result | Integer | &#8592; | Result of string comparison |
 
