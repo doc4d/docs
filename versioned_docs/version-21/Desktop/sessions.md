@@ -22,7 +22,7 @@ Desktop sessions include:
 
 :::note
 
-Keep in mind that **Web sessions** are used as soon as the 4D project is accessed through web or REST requests.[ Web sessions are detailed in this page](../WebServer/sessions.md). 
+Keep in mind that [**Web sessions**](../WebServer/sessions.md) are used as soon as the 4D project is accessed through web or REST requests and [scalable sessions](../WebServer/sessions.md#enabling-web-sessions) are enabled. 
 
 :::
 
@@ -34,9 +34,17 @@ The following diagram shows the different session types and how they interact:
 
 
 
+
 ## Remote user sessions
 
 On the server, in "user processes" (i.e. processes related to remote users), the [`Session`](../commands/session.md) command returns a `session` object describing the current user session. This object is handled through the functions and properties of the [`Session` class](../API/SessionClass.md).
+
+:::note
+
+On a remote 4D, the `session` object always returns null.
+
+:::
+
 
 :::tip Related blog posts
 

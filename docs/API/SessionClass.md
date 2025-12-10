@@ -22,10 +22,10 @@ Session objects are returned by the [`Session`](../commands/session.md) command.
 
 The following types of sessions are supported by this class:
 
-- [**Web user sessions**](WebServer/sessions.md): Web user sessions are available when [scalable sessions are enabled in your project](WebServer/sessions.md#enabling-web-sessions). They are used for Web and REST connections, and are controlled by assigned [privileges](../ORDA/privileges.md).
+- [**Web user sessions**](WebServer/sessions.md): Web user sessions are available when [scalable sessions are enabled in your project](WebServer/sessions.md#enabling-web-sessions). They are used for Web connections (including and REST access), and are controlled by assigned [privileges](../ORDA/privileges.md).
 - [**Desktop sessions**](../Desktop/sessions.md), including: 
    - [**Remote user sessions**](../Desktop/sessions.md#remote-user-sessions): In client/server applications, remote users have their own sessions managed on the server.
-   - [**Stored procedures sessions**](../Desktop/sessions.md#stored-procedure-sessions): All stored procedures executed on the server share the same virtual user session.
+   - [**Stored procedures sessions**](../Desktop/sessions.md#stored-procedure-sessions): Virtual user session for all stored procedures executed on the server.
    - [**Standalone sessions**](../Desktop/sessions.md#standalone-sessions): Local session object returned in single-user application (useful in development and test phases of client/server applications). 
 
 
@@ -94,13 +94,10 @@ This function does not remove **promoted privileges** from the web process, whet
 
 :::
 
-In [legacy web sessions](../REST/authUsers.md#force-login-mode), the session automatically becomes a Guest session. 
-
 
 :::note
 
-Keep in mind that whatever the [session type](#session-types) on which this function is executed, privileges only apply to the code executed in the context of a [web access sharing the session](../Desktop/clientServer.md#sharing-the-remote-session-for-web-accesses).
-
+Keep in mind that privileges only apply to the code executed through web accesses, whatever the [session type](#session-types) on which this function is executed.
 :::
 
 
@@ -135,7 +132,7 @@ $isOK:=Session.clearPrivileges()
 <!-- REF #SessionClass.createOTP().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|lifespan|Integer|->|Session token lifespan in seconds|
+|lifespan|Integer|->|Session token lifespan in seconds (web sessions only)|
 |Result|Text|<-|UUID of the token|
 <!-- END REF -->
 
@@ -147,13 +144,15 @@ The `.createOTP()` function <!-- REF #SessionClass.createOTP().Summary -->create
 
 For more information about the OTP tokens, please refer to [this section](../WebServer/sessions.md#session-token-otp).
 
-You can set a custom timeout by passing a value in seconds in *lifespan*. If an expired token is used to restore a session, it is ignored. 
+If an expired token is used to restore a session, it is ignored. 
 
-By default, if the *lifespan* parameter is omitted, the token is created with the same lifespan as the [`.idleTimeOut`](#idletimeout) of the session. 
+For web sessions, you can set a custom timeout by passing a value in seconds in *lifespan*. By default, if the *lifespan* parameter is omitted, the token is created with the same lifespan as the [`.idleTimeOut`](#idletimeout) of the session. 
+
+For desktop sessions, the token is created with a 10 seconds lifespan. 
 
 The returned token can be used in exchanges with third-party applications or websites to securely identify the session. For example, the session OTP token can be used with a payment application. 
 
-The returned token can be used by 4D Server or 4D single-user application to identify requests coming from the web that [share the session](../Desktop/clientServer.md#remote-user-sessions). 
+The returned token can be used by 4D Server or 4D single-user application to identify requests coming from the web that [share the session](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses). 
 
 
 #### Example
@@ -299,8 +298,7 @@ This function returns privileges assigned to a Session using the [`setPrivileges
 
 :::note
 
-Keep in mind that whatever the [session type](#session-types) on which this function is executed, privileges only apply to the code executed in the context of a [web access sharing the session](../Desktop/clientServer.md#sharing-the-remote-session-for-web-accesses).
-
+Keep in mind that privileges only apply to the code executed through web accesses, whatever the [session type](#session-types) on which this function is executed.
 :::
 
 
@@ -408,8 +406,7 @@ This function returns True for the *privilege* if called from a function that wa
 
 :::note
 
-Keep in mind that whatever the [session type](#session-types) on which this function is executed, privileges only apply to the code executed in the context of a [web access sharing the session](../Desktop/clientServer.md#sharing-the-remote-session-for-web-accesses).
-
+Keep in mind that privileges only apply to the code executed through web accesses, whatever the [session type](#session-types) on which this function is executed.
 :::
 
 
@@ -477,6 +474,12 @@ You can use this property to get the [`.storage`](#storage) object of a session 
 
 #### Description
 
+:::note
+
+This property is only available with web user sessions. 
+
+:::
+
 The `.idleTimeout` property contains <!-- REF #SessionClass.idleTimeout.Summary -->the inactivity session timeout (in minutes), after which the session is automatically closed by 4D<!-- END REF -->.
 
 If this property is not set, the default value is 60 (1h).
@@ -520,7 +523,7 @@ End if
 #### Description
 
 
-The `.info` property <!-- REF #SessionClass.info.Summary -->describes the remote client or stored procedure session on the server, or the standalone session<!-- END REF -->.
+The `.info` property <!-- REF #SessionClass.info.Summary -->describes the desktop or web session<!-- END REF -->.
 
 - **Remote sessions** and **Stored procedure sessions**: The `.info` object is the same object as the one returned in the "session" property by the [`Process activity`](../commands/process-activity.md) command.
 - **Standalone sessions**: The `.info` object is the same object as the one returned by the [`Session info`](../commands/session-info.md) command.
@@ -568,19 +571,25 @@ Since `.info` is a computed property, it is recommended to call it once and then
 <!-- REF #SessionClass.isGuest().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|Result|Boolean|<-|True if session is a Guest one, False otherwise|
+|Result|Boolean|<-|True if session is a Guest one, False otherwise (web sessions only)|
 <!-- END REF -->
 
 #### Description
 
 :::note
 
-This function always returns **False** with remote, stored procedure, and standalone sessions.
+This function always returns **False** with desktop sessions.
 
 :::
 
 
-The `.isGuest()` function <!-- REF #SessionClass.isGuest().Summary -->returns True if the session is a Guest session (i.e. it has no privileges)<!-- END REF -->.
+The `.isGuest()` function <!-- REF #SessionClass.isGuest().Summary -->returns True as long as `setPrivileges()` is not called in the session or after a [Qodly logout](https://developer.4d.com/qodly/4DQodlyPro/force-login#logout) has been executed in the session<!-- END REF -->.
+
+:::note Compatibility
+
+With legacy sessions, `.isGuest()` returns True if the session has no privileges. 
+
+:::
 
 
 #### Example
@@ -639,8 +648,7 @@ To remove a privilege dynamically, call the `demote()` function with the appropr
 
 :::note
 
-Keep in mind that whatever the [session type](#session-types) on which this function is executed, privileges only apply to the code executed in the context of a [web access sharing the session](../Desktop/clientServer.md#sharing-the-remote-session-for-web-accesses).
-
+Keep in mind that privileges only apply to the code executed through web accesses, whatever the [session type](#session-types) on which this function is executed.
 :::
 
 
@@ -795,8 +803,7 @@ The [`userName`](#username) property is available at session object level (read-
 
 :::note
 
-Keep in mind that whatever the [session type](#session-types) on which this function is executed, privileges only apply to the code executed in the context of a [web access sharing the session](../Desktop/clientServer.md#sharing-the-remote-session-for-web-accesses).
-
+Keep in mind that privileges only apply to the code executed through web accesses, whatever the [session type](#session-types) on which this function is executed.
 :::
 
 
@@ -842,7 +849,7 @@ End if
 
 The `.storage` property contains <!-- REF #SessionClass.storage.Summary -->a shared object that can be used to store information available to all processes of the session<!-- END REF -->.
 
-When a `Session` object is created, the `.storage` property is empty. Since it is a shared object, this property will be available in the `Storage` object of the server.
+When a `Session` object is created, the `.storage` property is empty. Since it is a shared object, this property will be available in the `Storage` object of the server. 
 
 > Like the `Storage` object of the server, the `.storage` property is always "single": adding a shared object or a shared collection to `.storage` does not create a shared group.
 
@@ -893,7 +900,7 @@ End use
 
 |Release|Changes|
 |---|---|
-|20 R5|Support of remote, standalone, and stored procedure sessions|
+|20 R5|Support of desktop sessions|
 |18 R6|Added|
 
 </details>
@@ -908,7 +915,7 @@ The `.userName` property contains <!-- REF #SessionClass.userName.Summary -->the
 - **Remote/Stored procedure sessions**: This property returns the same user name as the [`Current user`](../commands-legacy/current-user.md) command.
 - **Standalone sessions**: This property contains "designer" or the name set with the [`SET USER ALIAS`](../commands-legacy/set-user-alias.md) command.
 
-This property is **read only**.
+This property is **read only** for desktop sessions. 
 
 
 
