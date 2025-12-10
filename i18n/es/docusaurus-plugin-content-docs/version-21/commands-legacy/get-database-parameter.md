@@ -42,6 +42,7 @@ Tres modos de sincronización son posibles del lado del cliente. El selector Aut
 
 
 
+
 ### 4D Server log recording (28)
 
 **Hilo seguro**: sí
@@ -188,6 +189,7 @@ Este selector funciona exactamente igual que el selector 39; sin embargo, aplica
  
 
 
+
 ### Client log recording (45)
 
 **Alcance**: equipo 4D remoto 
@@ -231,6 +233,7 @@ Estos archivos texto almacenan en formato tabulado simple diferente información
 **Descripción**: permite especificar este parámetro para todos los equipos 4D remotos utilizados como servidores web. Los valores definidos utilizando estos selectores se aplican a todos los equipos remotos utilizados como servidores web. Si quiere definir valores sólo para ciertos equipos remotos, utilice la caja de diálogo de Preferencias de 4D en modo remoto.
 
 **Descripción**: permite especificar este parámetro para todos los equipos 4D remotos utilizados como servidores web. Los valores definidos utilizando estos selectores se aplican a todos los equipos remotos utilizados como servidores web. Si quiere definir valores sólo para ciertos equipos remotos, utilice la caja de diálogo de Preferencias de 4D en modo remoto.
+
 
 
 
@@ -498,6 +501,7 @@ Para más información sobre los archivos 4DIMAPLog\_X.txt, consulte la sección
 
 ### Current process debug log recording (111)
 
+
 ### Is current database a project (112)
 
 **Nota:** solo puede utilizar este selector con el comando [Get database parameter](get-database-parameter.md) y su valor no se puede definir.
@@ -590,6 +594,12 @@ O
 //Excluye los comandos SET USER ALIAS y DELAY PROCESS de ser grabados
 SET DATABASE PARAMETER(Log command list;"-1666;-323") 
 ```
+O
+```4d
+//Excluye los comandos SET USER ALIAS y DELAY PROCESS de ser grabados
+SET DATABASE PARAMETER(Log command list;"-1666;-323") 
+```
+
 
 
 
@@ -869,7 +879,7 @@ Para obtener más información sobre los archivos 4DSMTPLog\_X.txt, consulte la 
 
 **Alcance**: aplicación 4D
 
- **Se conserva entre dos sesiones**: no
+**Se conserva entre dos sesiones**: no
 
 **Valores posibles**: 0 (por defecto) = corrector macOS nativo (Hunspell desactivado), 1 = corrector Hunspell activo. 
 
