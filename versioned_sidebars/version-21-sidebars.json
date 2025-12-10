@@ -2503,6 +2503,11 @@
           "id": "Desktop/clientServer"
         },
         {
+          "type": "doc",
+          "label": "Sessions",
+          "id": "Desktop/desktop-sessions"
+        },
+        {
           "type": "category",
           "label": "Forms",
           "link": {
