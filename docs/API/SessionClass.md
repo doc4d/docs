@@ -23,7 +23,7 @@ Session objects are returned by the [`Session`](../commands/session.md) command.
 The following types of sessions are supported by this class:
 
 - [**Web user sessions**](WebServer/sessions.md): Web user sessions are available when [scalable sessions are enabled in your project](WebServer/sessions.md#enabling-web-sessions). They are used for Web connections (including and REST access), and are controlled by assigned [privileges](../ORDA/privileges.md).
-- [**Desktop sessions**](../Desktop/sessions.md), including: 
+- [**Desktop sessions**](../Desktop/sessions.md), which include: 
    - [**Remote user sessions**](../Desktop/sessions.md#remote-user-sessions): In client/server applications, remote users have their own sessions managed on the server.
    - [**Stored procedures sessions**](../Desktop/sessions.md#stored-procedure-sessions): Virtual user session for all stored procedures executed on the server.
    - [**Standalone sessions**](../Desktop/sessions.md#standalone-sessions): Local session object returned in single-user application (useful in development and test phases of client/server applications). 
@@ -838,7 +838,7 @@ End if
 
 |Release|Changes|
 |---|---|
-|20 R5|Support of remote, standalone, and stored procedure sessions|
+|20 R5|Support of desktop sessions|
 |18 R6|Added|
 
 </details>
@@ -860,6 +860,8 @@ This property is **read only** itself but it returns a read-write object.
 You can get the `.storage` property of a session using the [`Session storage`](../commands/session-storage.md) command.  
 
 :::
+
+When a desktop session and a web session are [shared using an OTP](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses), they also share the same `.storage` object. 
 
 
 #### Web session example
