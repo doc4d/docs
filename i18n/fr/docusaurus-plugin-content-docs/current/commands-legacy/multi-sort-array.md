@@ -5,8 +5,7 @@ slug: /commands/multi-sort-array
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.MULTI SORT ARRAY.Syntax-->**MULTI SORT ARRAY** ( *tableau* {; *sensDuTri*}{; *tableau2* ; *sensDuTri2* ; ... ; *tableauN* ; *sensDuTriN*} ) <br/>
-**MULTI SORT ARRAY** ( *tabPointeurs* ; *tabTris* )<!-- END REF-->
+<!--REF #_command_.MULTI SORT ARRAY.Syntax-->**MULTI SORT ARRAY** ( *tableau* : Array {; *sensDuTri* : Operator}{; ...*tableau* : Array ; ...*sensDuTri* : Operator} )<br/>**MULTI SORT ARRAY** ( *tabPointeurs* : Pointer array ; *tabTris* : Integer array )<!-- END REF-->
 <!--REF #_command_.MULTI SORT ARRAY.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

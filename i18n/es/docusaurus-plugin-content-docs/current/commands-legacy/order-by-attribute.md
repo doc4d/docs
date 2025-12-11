@@ -5,7 +5,7 @@ slug: /commands/order-by-attribute
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ORDER BY ATTRIBUTE.Syntax-->**ORDER BY ATTRIBUTE** ( {*tabla* ;} *campoObjeto* ; *rutaAtrib* ; > o < {; *campoObjeto2* ; *rutaAtrib2* ; > o <2 ; ... ; *campoObjetoN* ; *rutaAtribN* ; > o <N} {; *} )<!-- END REF-->
+<!--REF #_command_.ORDER BY ATTRIBUTE.Syntax-->**ORDER BY ATTRIBUTE** ( {*tabla* : Table ;} {; ...(*campoObjeto* : Field ; *rutaAtrib* : Text  {; >,<})} {; *} )<!-- END REF-->
 <!--REF #_command_.ORDER BY ATTRIBUTE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

@@ -5,13 +5,13 @@ slug: /commands/position
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Position.Syntax-->**Position** ( àChercher ; *laChaîne* {; *début* {; *longTrouvée*}}{; *} ) -> Résultat <br/>
-**Position** ( àChercher ; *laChaîne* ; *début* ; *longTrouvée* ; *options* ) -> Résultat<!-- END REF-->
+<!--REF #_command_.Position.Syntax-->**Position** ( *àChercher* : Text ; *laChaîne* : Text {; *début* : Integer {; *longTrouvée* : Integer}}{; *} ) -> Integer<br/>**Position** ( *àChercher* : Text ; *laChaîne* : Text; *début* : Integer ; *longTrouvée* : Integer ; *options* : Integer ) -> Integer
+<!-- END REF-->
 <!--REF #_command_.Position.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
 | àChercher | Text | &#8594; | Chaîne à rechercher |
-| laText | Text | &#8594; | Chaîne dans laquelle effectuer la recherche |
+| laChaîne | Text | &#8594; | Chaîne dans laquelle effectuer la recherche |
 | début | Integer | &#8594; | Position dans laChaîne où débuter la recherche |
 | longTrouvée | Integer | &#8592; | Longueur de la chaîne trouvée |
 | * | Opérateur | &#8594; | Si passé : évaluation basée sur les codes de caractères |

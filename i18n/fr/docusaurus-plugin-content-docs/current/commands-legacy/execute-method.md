@@ -5,7 +5,7 @@ slug: /commands/execute-method
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.EXECUTE METHOD.Syntax-->**EXECUTE METHOD** ( *nomMéthode* {; *résultat* {; *param*}}{; *param2* ; ... ; *paramN*} )<!-- END REF-->
+<!--REF #_command_.EXECUTE METHOD.Syntax-->**EXECUTE METHOD** ( *nomMéthode* : Text ; *résultat* : Variable {; ...*param* : Expression} )<br/>**EXECUTE METHOD** ( *nomMéthode* : Text ; * {; ...*param* : Expression} )<!-- END REF-->
 <!--REF #_command_.EXECUTE METHOD.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

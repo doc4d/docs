@@ -5,8 +5,8 @@ slug: /commands/position
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Position.Syntax-->**Position** ( *pesquisar* ; *cadeia* {; *inicio* {; *comprEncont*}}{; *} ) -> Resultado  <br/>
-**Position** ( *pesquisar* ; *string* ; *inicio* ; *comprimentoEncontrado* ; *opções* ) -> Resultado<!-- END REF-->
+<!--REF #_command_.Position.Syntax-->**Position** ( *find* : Text ; *aString* : Text {; *start* : Integer {; *lengthFound* : Integer}}{; *} ) -> Integer<br/>**Position** ( *find* : Text ; *aString* : Text; *start* : Integer ; *lengthFound* : Integer ; *options* : Integer ) -> Integer
+<!-- END REF-->
 <!--REF #_command_.Position.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |
