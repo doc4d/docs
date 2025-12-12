@@ -85,7 +85,7 @@ The `session` object of stored procedures is available from:
 
 - Project methods that are called by the [`Execute on Server`](../commands-legacy/execute-on-server.md) command,
 - ORDA [data model functions](../ORDA/ordaClasses.md) called from a stored procedure, 
-- Database methods such as [`On Server Startup`](../commands/on-server-startup-database-method) and [`On Server Shutdown`](../commands/on-server-shutdown-database-method.md).
+- Database methods such as [`On Server Startup`](../commands/on-server-startup-database-method) and [`On Server Shutdown`](../commands/on-server-shutdown-database-method).
 
 
 ## Standalone sessions
@@ -117,7 +117,7 @@ Shared sessions are handled through [OTP tokens](../WebServer/sessions.md#sessio
 
 :::tip Related blog post
 
-[Share your 4D remote client session with web accesses](https://blog.4d.com/share-your-4d-remote-client-session-with-web-accesses)
+[Embed Qodly pages in a 4D web area without extra cost](https://blog.4d.com/embed-qodly-pages-in-a-4d-web-area-without-extra-cost)
 
 :::
 

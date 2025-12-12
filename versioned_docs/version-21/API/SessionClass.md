@@ -587,7 +587,7 @@ The `.isGuest()` function <!-- REF #SessionClass.isGuest().Summary -->returns Tr
 
 :::note Compatibility
 
-With legacy sessions, `.isGuest()` returns True if the session has no privileges. 
+In a REST session when the [**Force login mode**](../REST/authUsers.md#force-login-mode) is not enabled, `.isGuest()` returns True if the session has no privileges. 
 
 :::
 

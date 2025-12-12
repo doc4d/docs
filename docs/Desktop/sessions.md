@@ -22,7 +22,7 @@ Desktop sessions include:
 
 :::note
 
-Keep in mind that **Web sessions** are used as soon as the 4D project is accessed through web or REST requests.[ Web sessions are detailed in this page](../WebServer/sessions.md). 
+Keep in mind that [**Web sessions**](../WebServer/sessions.md) are used as soon as the 4D project is accessed through web or REST requests and [scalable sessions](../WebServer/sessions.md#enabling-web-sessions) are enabled. 
 
 :::
 
@@ -34,9 +34,17 @@ The following diagram shows the different session types and how they interact:
 
 
 
+
 ## Remote user sessions
 
 On the server, in "user processes" (i.e. processes related to remote users), the [`Session`](../commands/session.md) command returns a `session` object describing the current user session. This object is handled through the functions and properties of the [`Session` class](../API/SessionClass.md).
+
+:::note
+
+On a remote 4D, the `session` object always returns null.
+
+:::
+
 
 :::tip Related blog posts
 
@@ -77,7 +85,7 @@ The `session` object of stored procedures is available from:
 
 - Project methods that are called by the [`Execute on Server`](../commands-legacy/execute-on-server.md) command,
 - ORDA [data model functions](../ORDA/ordaClasses.md) called from a stored procedure, 
-- Database methods such as [`On Server Startup`](../commands/on-server-startup-database-method) and [`On Server Shutdown`](../commands/on-server-shutdown-database-method.md).
+- Database methods such as [`On Server Startup`](../commands/on-server-startup-database-method) and [`On Server Shutdown`](../commands/on-server-shutdown-database-method).
 
 
 ## Standalone sessions
@@ -109,7 +117,7 @@ Shared sessions are handled through [OTP tokens](../WebServer/sessions.md#sessio
 
 :::tip Related blog post
 
-[Share your 4D remote client session with web accesses](https://blog.4d.com/share-your-4d-remote-client-session-with-web-accesses)
+[Embed Qodly pages in a 4D web area without extra cost](https://blog.4d.com/embed-qodly-pages-in-a-4d-web-area-without-extra-cost)
 
 :::
 

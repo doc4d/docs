@@ -24,20 +24,21 @@ displayed_sidebar: docs
 
 ## Description
 
-The `Session` command <!-- REF #_command_.Session.Summary -->returns the `Session` object corresponding to the current user session<!-- END REF -->.
+The `Session` command <!-- REF #_command_.Session.Summary -->returns the `Session` object corresponding to the current user session in the current execution context<!-- END REF -->.
 
 Depending on the process from which the command is called, the current user session can be:
 
 - a web session (when [scalable sessions are enabled](WebServer/sessions.md#enabling-web-sessions)),
-- a remote client session,
+- a remote client session (on the server),
 - the stored procedures session,
-- the *designer* session in a standalone application.
+- a standalone session.
 
 For more information, see the [Session types](../API/SessionClass.md#session-types) paragraph.
 
-If the command is called from a non supported context (e.g. scalable sessions disabled), it returns *Null*.
+If the command is called from a non supported context (e.g. scalable sessions disabled or a remote 4D), it returns *Null*.
 
-## Web sessions
+
+### Web sessions
 
 The `Session` object of web sessions is available from any web process:
 
@@ -49,7 +50,7 @@ The `Session` object of web sessions is available from any web process:
 
 For more information on web user sessions, please refer to the [Web Server Sessions](../WebServer/sessions.md) section.
 
-## Remote client sessions
+### Remote client sessions
 
 The `Session` object of remote client sessions is available from:
 
@@ -60,7 +61,7 @@ The `Session` object of remote client sessions is available from:
 
 For more information on remote user sessions, please refer to the [**Remote client user sessions**](../Desktop/clientServer.md#remote-user-sessions) paragraph.
 
-## Stored procedures session
+### Stored procedures session
 
 All stored procedure processes share the same virtual user session. The `Session` object of stored procedures is available from:
 
@@ -70,9 +71,24 @@ All stored procedure processes share the same virtual user session. The `Session
 For information on stored procedures virtual user session, please refer to the [4D Server and the 4D Language](https://doc.4d.com/4Dv20/4D/20/4D-Server-and-the-4D-Language.300-6330554.en.html) page.
 
 
-## Standalone session
+### Standalone session
 
 The `Session` object is available from any process in standalone (single-user) applications so that you can write and test your client/server code using the `Session` object in your 4D development environment.
+
+
+### Specific calling contexts
+
+The context from which the `Session` command is called also impacts the object it returns. 
+
+|Specific context|Description of the Session object|Comment|
+|---|---|---|
+|Component code in 4D single-user|Standalone session of the component|Each component as well as the host project has its own `session` object |
+|4D Remote application code|Null|The `Session` object is null on a 4D remote application |
+|Desktop session executing web a request through OTP|Session object with privileges|Even in a Desktop session, any code executed in a web context supports privileges |
+|Legacy sessions or no sessions are used|Null|The `session` object is not created |
+
+
+
 
 
 ## Example
@@ -100,7 +116,8 @@ IP:port/4DACTION/action_Session
 ## See also
 
 [Session storage](session-storage.md)  
-[Session API](../API/SessionClass.md)  
+[Session API](../API/SessionClass.md) 
+[Desktop sessions](../Desktop/sessions.md) 
 [Web server user sessions](../WebServer/sessions.md)  
 [*Scalable sessions for advanced web applications* (blog post)](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/)
 
