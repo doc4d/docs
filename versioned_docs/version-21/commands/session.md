@@ -24,18 +24,21 @@ displayed_sidebar: docs
 
 ## Description
 
-The `Session` command <!-- REF #_command_.Session.Summary -->returns the `Session` object corresponding to the current user session in the current execution context<!-- END REF -->.
+The `Session` command <!-- REF #_command_.Session.Summary -->returns the `Session` object corresponding to the current session<!-- END REF -->.
 
-Depending on the process from which the command is called, the current user session can be:
+Depending on the process from which the command is called, the current session can be:
 
 - a web session (when [scalable sessions are enabled](WebServer/sessions.md#enabling-web-sessions)),
 - a remote client session (on the server),
-- the stored procedures session,
+- a stored procedures session,
 - a standalone session.
 
 For more information, see the [Session types](../API/SessionClass.md#session-types) paragraph.
 
-If the command is called from a non supported context (e.g. scalable sessions disabled or a remote 4D), it returns *Null*.
+The command returns *Null* if:
+
+- it is called in a web process and scalable sessions are disabled on the web server,
+- it is called on a remote 4D.
 
 
 ### Web sessions
@@ -81,7 +84,15 @@ For more information on standalone sessions, please refer to the [**Standalone s
 
 
 
+### `Session` and components 
 
+When `Session` is called from the code of different components loaded in the project, the command returns an object depending on the calling request and the context:
+
+- in case of a web request, `Session` always returns the session attached to the target web server of the request (and not a session of the component's web server),
+- in case of a remote request executed on the server, `Session` always returns the session attached to the remote user, 
+- in case of a stored procedure session or a standalone session, `Session` always returns the single current session (the same object is used during all the work session).
+
+![](../assets/en/API/session-chart.png)
 
 
 ## Example

@@ -108,7 +108,7 @@ Desktop sessions can be used to handle web accesses to the application by the sa
 
 To manage this configuration in production, you need to use remote user sessions. Actually, requests coming from both the remote 4D application and its Qodly pages loaded in Web areas need to work inside the same session. You just have to share the session between the remote client and its web pages so that you can have the same [session storage](../API/SessionClass.md#storage) and client license, wherever the request comes from (web or remote 4D).  
 
-Note that [privileges](../ORDA/privileges.md) should be set in the session before executing a web request, so that the user automatically gets their privileges for web access (see example). Keep in mind that privileges **only apply to requests coming from the web**. 
+Note that [privileges](../ORDA/privileges.md) should be set in the session before executing a web request, so that the user automatically gets their privileges for web access (see example). Keep in mind that privileges **only apply to requests coming from the web**.
 
 
 You can develop this configuration in your 4D Developer application (single-user): you can use the [standalone session](#standalone-sessions) to code and test all features related to web access, whether your application is intended for single-user or client/server deployment. 
@@ -117,7 +117,7 @@ Shared sessions are handled through [OTP tokens](../WebServer/sessions.md#sessio
 
 :::note
 
-When creating an OTP token in client/server environment, you need to make sure that the [OTP creation code](../API/SessionClass.md#createotp) is executed on the server (the `Session` object is Null on a remote 4D). You can use for example the [`On Server Open Connection`](../commands-legacy/on-server-open-connection-database-method.md) database method. 
+When creating an OTP token in client/server environment, you need to execute the [OTP creation code](../API/SessionClass.md#createotp) **on the server** (the `Session` object is Null on a remote 4D). You can use for example the [`On Server Open Connection`](../commands-legacy/on-server-open-connection-database-method.md) database method. 
 
 :::
 
@@ -173,19 +173,3 @@ Function getOTP(): Text
 ```
 
 
-## Specific calling contexts
-
-The context from which the `Session` command is called also impacts the object it returns. 
-
-|Specific context|Session object|Comment|
-|---|---|---|
-|Component code in 4D single-user|Standalone session of the component|Each component as well as the host project has its own `session` object |
-|4D Remote application|Null|The `session` object is null on a 4D remote application |
-|Any 4D application using "legacy sessions" or "no sessions"|Null|The `session` object is not created |
-
-
-:::note
-
-Any code executed in a **web context** is controlled by [privilege management](../ORDA/privileges.md). When a desktop session executes a web request [through a shared OTP](#sharing-a-desktop-session-for-web-accesses), the session must [have appropriate privileges](../API/SessionClass.md#setprivileges), otherwise the web request will be rejected. 
-
-:::
