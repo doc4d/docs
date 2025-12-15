@@ -123,7 +123,7 @@ Shared sessions are handled through [OTP tokens](../WebServer/sessions.md#sessio
 
 
 
-#### Example 
+### Example 
 
 ```4d
 var $otp : Text
@@ -166,3 +166,19 @@ Function getOTP(): Text
 ```
 
 
+## Specific calling contexts
+
+The context from which the `Session` command is called also impacts the object it returns. 
+
+|Specific context|Session object|Comment|
+|---|---|---|
+|Component code in 4D single-user|Standalone session of the component|Each component as well as the host project has its own `session` object |
+|4D Remote application|Null|The `session` object is null on a 4D remote application |
+|Any 4D application using "legacy sessions" or "no sessions"|Null|The `session` object is not created |
+
+
+:::note
+
+Any code executed in a **web context** is controlled by [privilege management](../ORDA/privileges.md). When a desktop session executes a web request [through a shared OTP](#sharing-a-desktop-session-for-web-accesses), the session must [have appropriate privileges](../API/SessionClass.md#setprivileges), otherwise the web request will be rejected. 
+
+:::
