@@ -115,6 +115,13 @@ You can develop this configuration in your 4D Developer application (single-user
 
 Shared sessions are handled through [OTP tokens](../WebServer/sessions.md#session-token-otp). After you created an OTP token for the desktop session on the server or on the single-user 4D application, you add the token (through the `$4DSID` parameter value) to web requests sent from Web areas containing Qodly pages (or from any web browser) so that the user session on the server or the single-user application is identified and shared. On the web server side, if a web request contains an *OTP id* in the $4DSID parameter, the session corresponding to this OTP token is used.
 
+:::note
+
+When creating an OTP token in client/server environment, you need to make sure that the [OTP creation code](../API/SessionClass.md#createotp) is executed on the server (the `Session` object is Null on a remote 4D). You can use for example the [`On Server Open Connection`](../commands-legacy/on-server-open-connection-database-method.md) database method. 
+
+:::
+
+
 :::tip Related blog post
 
 [Embed Qodly pages in a 4D web area without extra cost](https://blog.4d.com/embed-qodly-pages-in-a-4d-web-area-without-extra-cost)
