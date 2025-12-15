@@ -92,7 +92,22 @@ When `Session` is called from the code of different components loaded in the pro
 - in case of a remote request executed on the server, `Session` always returns the session attached to the remote user, 
 - in case of a stored procedure session or a standalone session, `Session` always returns the single current session (the same object is used during all the work session).
 
-![](../assets/en/API/session-chart.png)
+```mermaid
+flowchart TD
+    A[Need a session] --> B{Is it a web request?}
+    B -->|Yes| C[Use the session attached to the web server of the web request]
+    B -->|No| D{Is it a remote request?}
+    D -->|Yes| E[Use the object of the remote user session]
+    D -->|No| F[Use the unique object of the stored procedure/standalone session]
+
+    classDef decision fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef process fill:#bbf,stroke:#333,stroke-width:2px;
+    classDef start fill:#bfb,stroke:#333,stroke-width:2px;
+
+    class B,D decision
+    class A start
+    class C,E,F process
+```
 
 
 ## Example
