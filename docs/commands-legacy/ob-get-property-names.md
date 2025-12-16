@@ -5,7 +5,7 @@ slug: /commands/ob-get-property-names
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OB GET PROPERTY NAMES.Syntax-->**OB GET PROPERTY NAMES** ( *object* ; *arrProperties* {; *arrTypes*} )<!-- END REF-->
+<!--REF #_command_.OB GET PROPERTY NAMES.Syntax-->**OB GET PROPERTY NAMES** ( *object* : Object ; *arrProperties* : Text array {; *arrTypes* : Integer array} )<!-- END REF-->
 <!--REF #_command_.OB GET PROPERTY NAMES.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

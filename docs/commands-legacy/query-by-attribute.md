@@ -5,7 +5,7 @@ slug: /commands/query-by-attribute
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QUERY BY ATTRIBUTE.Syntax-->**QUERY BY ATTRIBUTE** ( {*aTable*}{;}{*conjOp* ;} *objectField* ; *attributePath* ; *queryOp* ; *value* {; *} )<!-- END REF-->
+<!--REF #_command_.QUERY BY ATTRIBUTE.Syntax-->**QUERY BY ATTRIBUTE** ( {*aTable* : Table}{;}{*conjOp* : Operator ;} *objectField* : Field ; *attributePath* : Text ; *queryOp* : Text, Operator ; *value* : Text, Real, Date, Time {; *} )<!-- END REF-->
 <!--REF #_command_.QUERY BY ATTRIBUTE.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

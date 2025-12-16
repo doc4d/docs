@@ -5,7 +5,7 @@ slug: /commands/dom-get-xml-child-nodes
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DOM GET XML CHILD NODES.Syntax-->**DOM GET XML CHILD NODES** ( *elementRef* ; *childTypesArr* ; *nodeRefsArr* )<!-- END REF-->
+<!--REF #_command_.DOM GET XML CHILD NODES.Syntax-->**DOM GET XML CHILD NODES** ( *elementRef* : Text ; *childTypesArr* : Integer array ; *nodeRefsArr* : Text array )<!-- END REF-->
 <!--REF #_command_.DOM GET XML CHILD NODES.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
