@@ -132,14 +132,16 @@ When creating an OTP token in client/server environment, you need to execute the
 
 ### Example 
 
+In the [*On Server Open Connection*](../commands-legacy/on-server-open-connection-database-method.md) database method:
+
 ```4d
 var $otp : Text
 
 // Some privileges are put in the remote user session on the server for a further web access
-ds.resetPrivileges("basic")
+resetPrivileges("basic")
 
 // An OTP is created on the server for this remote client session
-$otp:=ds.getOTP()
+$otp:=getOTP
 
 
 // The user has already the required privileges for a web access
@@ -148,27 +150,27 @@ WA OPEN URL(*; "Welcome"; "http://127.0.0.1/$lib/renderer/?w=People&$4DSID="+$ot
 
 ```
 
-*resetPrivileges()* function in the Datastore class:
+*resetPrivileges* project method:
 
 ```4d
 // This function is run on the server
 // and puts some privileges in the session for a further web access
 
-Function resetPrivileges($priv : Text) 
+#DECLARE ($priv : Text) 
 	
-	Session.clearPrivileges()
-	Session.setPrivileges($priv)
+Session.clearPrivileges()
+Session.setPrivileges($priv)
 ```
 
-*getOTP()* function in the Datastore class:
+*getOTP* project method:
 
 ```4d
-// This function is run on the server 
+// This project method is run on the server 
 // and generates an OTP able to retrieve this remote user session 
 
-Function getOTP(): Text 
+#DECLARE : Text 
 	
-	return Session.createOTP()
+return Session.createOTP()
 	
 ```
 
