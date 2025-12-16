@@ -96,11 +96,11 @@ title: Forms
 
 マルチページフォームには、1つの背景ページと複数の表示ページが存在します。 背景ページ上に置かれたオブジェクトはすべての表示ページに現れますが、それらのオブジェクトの選択や編集は背景ページでのみ可能です。 複数ページフォームでは、ボタンパレットを背景ページに置くべきです。 また、ページ移動ツールオブジェクトを背景ページに配置し、ユーザーに提供する必要があります。
 
-## Fluent UI rendering (Developer Preview)
+## Fluent UIレンダリング(デベロッパープレビュー)
 
-On Windows, 4D supports **Fluent UI** form rendering, Microsoft's modern graphical user interface design, based upon **WinUI 3** technology. **WinUI 3** is the foundation of the Windows App SDK and represents the upcoming Windows graphical interfaces.
+Windows では、4D は **Fluent UI** フォームレンダリングをサポートしています。これは **WinUI 3** テクノロジーに基づいた、Microsoft のモダンなグラフィカルユーザーインターフェースデザインです。 **WinUI 3** はWindows App SDK の基礎であり、今後のWindows グラフィカルインターフェースを象徴するものです。
 
-Fluent UI rendering offers modern and attractive controls, support of dark/light system themes, smoother rendering optimized for high-resolution displays, and consistent user experience aligned with recent Microsoft applications.
+Fluent UI レンダリングは現代的かつ魅力的なコントロールを提供するだけでなく、ダーク/ライトシステムテーマのサポート、高解像度ディスプレイのために最適化されたよりスムーズなレンダリング、そして最近のMicrosoft アプリケーションに沿った、一貫したユーザーエクスペリエンスを提供します。
 
 | ライトテーマ                                  | ダークテーマ                                       |
 | --------------------------------------- | -------------------------------------------- |
@@ -108,13 +108,13 @@ Fluent UI rendering offers modern and attractive controls, support of dark/light
 
 :::caution デベロッパー・プレビュー
 
-Fluent UI support is currently in the Developer Preview phase. 本番環境で使用すべきではありません。
+Fluent UI のサポートは現在デベロッパープレビューのフェーズです。 本番環境で使用すべきではありません。
 
 :::
 
 :::info 利用可能性
 
-This feature can be used **in 4D projects on Windows**. It is not available on macOS or in binary 4D databases on Windows.
+この機能は、**Windows の4D プロジェクト内** で使用可能です。 macOS や、Windows のバイナリー4D データベースなどではご利用いただけません。
 
 :::
 
