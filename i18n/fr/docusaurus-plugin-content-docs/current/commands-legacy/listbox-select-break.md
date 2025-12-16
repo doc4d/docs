@@ -5,7 +5,7 @@ slug: /commands/listbox-select-break
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX SELECT BREAK.Syntax-->**LISTBOX SELECT BREAK** ( {* ;} *objet* ; *ligne* ; *colonne* {; *action*} )<!-- END REF-->
+<!--REF #_command_.LISTBOX SELECT BREAK.Syntax-->**LISTBOX SELECT BREAK** ( * ; *objet* : Text ; *ligne* : Integer ; *colonne* : Integer {; *action* : Integer} )<br/>**LISTBOX SELECT BREAK** ( *objet* : Field, Variable ; *ligne* : Integer ; *colonne* : Integer {; *action* : Integer} )<!-- END REF-->
 <!--REF #_command_.LISTBOX SELECT BREAK.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

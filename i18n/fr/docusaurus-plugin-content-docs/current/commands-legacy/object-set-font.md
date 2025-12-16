@@ -5,7 +5,7 @@ slug: /commands/object-set-font
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT SET FONT.Syntax-->**OBJECT SET FONT** ( {* ;} *objet* ; *police* )<!-- END REF-->
+<!--REF #_command_.OBJECT SET FONT.Syntax-->**OBJECT SET FONT** ( * ; *objet* : Text ; *police* : Text )<br/>**OBJECT SET FONT** ( *objet* : Field, Variable ; *police* : Text )<!-- END REF-->
 <!--REF #_command_.OBJECT SET FONT.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/use-named-selection
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.USE NAMED SELECTION.Syntax-->**USE NAMED SELECTION** ( *nombre* )<!-- END REF-->
+<!--REF #_command_.USE NAMED SELECTION.Syntax-->**USE NAMED SELECTION** ( *nombre* : Text )<!-- END REF-->
 <!--REF #_command_.USE NAMED SELECTION.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

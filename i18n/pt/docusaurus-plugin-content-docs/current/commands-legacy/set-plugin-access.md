@@ -5,7 +5,7 @@ slug: /commands/set-plugin-access
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET PLUGIN ACCESS.Syntax-->**SET PLUGIN ACCESS** ( *plugIn* ; *grupo* )<!-- END REF-->
+<!--REF #_command_.SET PLUGIN ACCESS.Syntax-->**SET PLUGIN ACCESS** ( *plugIn* : Integer ; *grupo* : Text )<!-- END REF-->
 <!--REF #_command_.SET PLUGIN ACCESS.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

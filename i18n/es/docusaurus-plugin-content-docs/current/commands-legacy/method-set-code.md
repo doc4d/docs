@@ -5,7 +5,7 @@ slug: /commands/method-set-code
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD SET CODE.Syntax-->**METHOD SET CODE** ( *ruta* ; *codigo* {; *operador*} )<!-- END REF-->
+<!--REF #_command_.METHOD SET CODE.Syntax-->**METHOD SET CODE** ( *ruta* : Text, Text array ; *codigo* : Text, Text array {; *operador* : *} )<!-- END REF-->
 <!--REF #_command_.METHOD SET CODE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

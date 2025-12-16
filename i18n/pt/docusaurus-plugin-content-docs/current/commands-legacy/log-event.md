@@ -5,7 +5,7 @@ slug: /commands/log-event
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LOG EVENT.Syntax-->**LOG EVENT** ( {*tipoSaida* ;} *mensagem* {; *importancia*} )<!-- END REF-->
+<!--REF #_command_.LOG EVENT.Syntax-->**LOG EVENT** ( {*tipoSaida* : Integer ;} *mensagem* : Text {; *importancia* : Integer} )<!-- END REF-->
 <!--REF #_command_.LOG EVENT.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

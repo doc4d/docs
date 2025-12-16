@@ -5,7 +5,7 @@ slug: /commands/svg-set-attribute
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SVG SET ATTRIBUTE.Syntax-->**SVG SET ATTRIBUTE** ( {* ;} *pictureObject* ; element_ID ; *attrName* ; *attribValue* {; *attrName2* ; *attribValue2* ; ... ; *attrNameN* ; *attribValueN*} {; *})<!-- END REF-->
+<!--REF #_command_.SVG SET ATTRIBUTE.Syntax-->**SVG SET ATTRIBUTE** ( {* ;} *pictureObject* : Picture ; element_ID ; *attrName* : Text ; *attribValue* : Text, Integer {; ...(*attrName* : Text, *attribValue* : Text, Integer)} {; *})<!-- END REF-->
 <!--REF #_command_.SVG SET ATTRIBUTE.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/svg-show-element
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SVG SHOW ELEMENT.Syntax-->**SVG SHOW ELEMENT** ( {* ;} *objetoImagen* ; *id* {; *margen*} )<!-- END REF-->
+<!--REF #_command_.SVG SHOW ELEMENT.Syntax-->**SVG SHOW ELEMENT** ( {* ;} *objetoImagen* ; *id* : Text {; *margen* : Integer} )<!-- END REF-->
 <!--REF #_command_.SVG SHOW ELEMENT.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

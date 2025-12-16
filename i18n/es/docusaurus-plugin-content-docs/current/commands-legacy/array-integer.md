@@ -5,7 +5,7 @@ slug: /commands/array-integer
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ARRAY INTEGER.Syntax-->**ARRAY INTEGER** ( *nombreArray* ; *tamaño* {; *tamaño2*} )<!-- END REF-->
+<!--REF #_command_.ARRAY INTEGER.Syntax-->**ARRAY INTEGER** ( *nombreArray* : Array ; *tamaño* : Integer {; *tamaño2* : Integer} )<!-- END REF-->
 <!--REF #_command_.ARRAY INTEGER.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

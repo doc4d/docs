@@ -5,7 +5,7 @@ slug: /commands/st-insert-expression
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ST INSERT EXPRESSION.Syntax-->**ST INSERT EXPRESSION** ( {* ;} *objeto* ; *expressao* {; *inicioSel* {; *fimSel*}} )<!-- END REF-->
+<!--REF #_command_.ST INSERT EXPRESSION.Syntax-->**ST INSERT EXPRESSION** ( {* ;} *objeto* : Object ; *expressao* : Text {; *inicioSel* : Integer {; *fimSel* : Integer}} )<!-- END REF-->
 <!--REF #_command_.ST INSERT EXPRESSION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

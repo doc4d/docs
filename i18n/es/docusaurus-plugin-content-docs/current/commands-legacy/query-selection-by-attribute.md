@@ -5,7 +5,7 @@ slug: /commands/query-selection-by-attribute
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QUERY SELECTION BY ATTRIBUTE.Syntax-->**QUERY SELECTION BY ATTRIBUTE** ( {*tabla*}{;}{*opConj* ;} *campoObjeto* ; *rutaAtributo* ; *opBusq* ; *valor* {; *} )<!-- END REF-->
+<!--REF #_command_.QUERY SELECTION BY ATTRIBUTE.Syntax-->**QUERY SELECTION BY ATTRIBUTE** ( {*tabla* : Table}{;}{*opConj* ;} *campoObjeto* : Field ; *rutaAtributo* : Text ; *opBusq* : Text, Operator ; *valor* : Text, Real, Date, Time {; *} )<!-- END REF-->
 <!--REF #_command_.QUERY SELECTION BY ATTRIBUTE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

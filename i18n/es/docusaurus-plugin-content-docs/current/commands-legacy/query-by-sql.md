@@ -5,7 +5,7 @@ slug: /commands/query-by-sql
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QUERY BY SQL.Syntax-->**QUERY BY SQL** ( {*tabla* ;} *formulaSQL* )<!-- END REF-->
+<!--REF #_command_.QUERY BY SQL.Syntax-->**QUERY BY SQL** ( {*tabla* : Table ;} *formulaSQL* : Text )<!-- END REF-->
 <!--REF #_command_.QUERY BY SQL.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

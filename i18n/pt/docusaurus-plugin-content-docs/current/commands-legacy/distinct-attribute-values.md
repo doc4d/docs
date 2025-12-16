@@ -5,7 +5,7 @@ slug: /commands/distinct-attribute-values
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DISTINCT ATTRIBUTE VALUES.Syntax-->**DISTINCT ATTRIBUTE VALUES** ( *campoObjeto* ; *rota* ; *arrayValores* )<!-- END REF-->
+<!--REF #_command_.DISTINCT ATTRIBUTE VALUES.Syntax-->**DISTINCT ATTRIBUTE VALUES** ( *campoObjeto* : Field ; *rota* : Text ; *arrayValores* : Array )<!-- END REF-->
 <!--REF #_command_.DISTINCT ATTRIBUTE VALUES.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

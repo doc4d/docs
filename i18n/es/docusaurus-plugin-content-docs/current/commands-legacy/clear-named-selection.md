@@ -5,7 +5,7 @@ slug: /commands/clear-named-selection
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CLEAR NAMED SELECTION.Syntax-->**CLEAR NAMED SELECTION** ( *nombre* )<!-- END REF-->
+<!--REF #_command_.CLEAR NAMED SELECTION.Syntax-->**CLEAR NAMED SELECTION** ( *nombre* : Text )<!-- END REF-->
 <!--REF #_command_.CLEAR NAMED SELECTION.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

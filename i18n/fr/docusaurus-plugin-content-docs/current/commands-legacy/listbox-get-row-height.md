@@ -5,7 +5,7 @@ slug: /commands/listbox-get-row-height
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX Get row height.Syntax-->**LISTBOX Get row height** ( {* ;} *objet* ; *ligne* ) : Integer<!-- END REF-->
+<!--REF #_command_.LISTBOX Get row height.Syntax-->**LISTBOX Get row height** ( * ; *objet* : Text ; *ligne* : Integer ) : Integer<br/>**LISTBOX Get row height** ( *objet* : Field, Variable ; *ligne* : Integer ) : Integer<!-- END REF-->
 <!--REF #_command_.LISTBOX Get row height.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

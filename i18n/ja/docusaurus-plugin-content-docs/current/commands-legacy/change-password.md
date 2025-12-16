@@ -5,7 +5,7 @@ slug: /commands/change-password
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CHANGE PASSWORD.Syntax-->**CHANGE PASSWORD** ( *password* )<!-- END REF-->
+<!--REF #_command_.CHANGE PASSWORD.Syntax-->**CHANGE PASSWORD** ( *password* : Text )<!-- END REF-->
 <!--REF #_command_.CHANGE PASSWORD.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

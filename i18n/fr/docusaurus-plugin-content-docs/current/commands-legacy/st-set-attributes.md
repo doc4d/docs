@@ -5,7 +5,7 @@ slug: /commands/st-set-attributes
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ST SET ATTRIBUTES.Syntax-->**ST SET ATTRIBUTES** ( {* ;} *objet* ; *débutSél* ; *finSél* ; *nomAttribut* ; *valeurAttribut* {; *nomAttribut2* ; *valeurAttribut2* ; ... ; *nomAttributN* ; *valeurAttributN*} )<!-- END REF-->
+<!--REF #_command_.ST SET ATTRIBUTES.Syntax-->**ST SET ATTRIBUTES** ( * ; *objet* : Text ; *débutSél* : Integer ; *finSél* : Integer ; *nomAttribut* : Text ; *valeurAttribut* : Text, Integer {; ...(*nomAttribut* : Text, *valeurAttribut* : Text, Integer)} )<br/>**ST SET ATTRIBUTES** ( *objet* : Field, Variable ; *débutSél* : Integer ; *finSél* : Integer ; *nomAttribut* : Text ; *valeurAttribut* : Text, Integer {; ...(*nomAttribut* : Text, *valeurAttribut* : Text, Integer)} )<!-- END REF-->
 <!--REF #_command_.ST SET ATTRIBUTES.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

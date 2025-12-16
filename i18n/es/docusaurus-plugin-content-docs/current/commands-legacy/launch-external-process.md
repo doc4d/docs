@@ -5,7 +5,7 @@ slug: /commands/launch-external-process
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LAUNCH EXTERNAL PROCESS.Syntax-->**LAUNCH EXTERNAL PROCESS** ( *nomArchivo* {; *flujoEntrada* {; *flujoSalida* {; *flujoError*}}}{; *pid*} )<!-- END REF-->
+<!--REF #_command_.LAUNCH EXTERNAL PROCESS.Syntax-->**LAUNCH EXTERNAL PROCESS** ( *nomArchivo* : Text {; *flujoEntrada* : Text, Blob {; *flujoSalida* : Text, Blob {; *flujoError* : Text, Blob}}}{; *pid* : Integer} )<!-- END REF-->
 <!--REF #_command_.LAUNCH EXTERNAL PROCESS.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

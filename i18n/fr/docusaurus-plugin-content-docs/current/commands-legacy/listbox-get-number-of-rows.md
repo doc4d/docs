@@ -5,7 +5,7 @@ slug: /commands/listbox-get-number-of-rows
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX Get number of rows.Syntax-->**LISTBOX Get number of rows** ( {* ;} *objet* ) : Integer<!-- END REF-->
+<!--REF #_command_.LISTBOX Get number of rows.Syntax-->**LISTBOX Get number of rows** ( * ; *objet* : Text ) : Integer<br/>**LISTBOX Get number of rows** ( *objet* : Field, Variable ) : Integer<!-- END REF-->
 <!--REF #_command_.LISTBOX Get number of rows.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

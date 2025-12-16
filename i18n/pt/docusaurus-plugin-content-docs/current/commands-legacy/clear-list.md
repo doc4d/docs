@@ -5,7 +5,7 @@ slug: /commands/clear-list
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CLEAR LIST.Syntax-->**CLEAR LIST** ( *lista* {; *} )<!-- END REF-->
+<!--REF #_command_.CLEAR LIST.Syntax-->**CLEAR LIST** ( *lista* : Integer {; *} )<!-- END REF-->
 <!--REF #_command_.CLEAR LIST.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

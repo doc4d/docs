@@ -5,7 +5,7 @@ slug: /commands/register-client
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.REGISTER CLIENT.Syntax-->**REGISTER CLIENT** ( *nomeCliente* {; *periodo*}{; *} )<!-- END REF-->
+<!--REF #_command_.REGISTER CLIENT.Syntax-->**REGISTER CLIENT** ( *nomeCliente* : Text {; *periodo* : Integer}{; *} )<!-- END REF-->
 <!--REF #_command_.REGISTER CLIENT.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

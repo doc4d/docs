@@ -5,7 +5,7 @@ slug: /commands/listbox-delete-rows
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX DELETE ROWS.Syntax-->**LISTBOX DELETE ROWS** ( {* ;} *objet* ; *positionLigne* {; *nbLignes*} )<!-- END REF-->
+<!--REF #_command_.LISTBOX DELETE ROWS.Syntax-->**LISTBOX DELETE ROWS** ( * ; *objet* : Text ; *positionLigne* : Integer {; *nbLignes* : Integer} )<br/>**LISTBOX DELETE ROWS** ( *objet* : Field, Variable ; *positionLigne* : Integer {; *nbLignes* : Integer} )<!-- END REF-->
 <!--REF #_command_.LISTBOX DELETE ROWS.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/goto-record
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GOTO RECORD.Syntax-->**GOTO RECORD** ( {*tabela* ;} *registro* )<!-- END REF-->
+<!--REF #_command_.GOTO RECORD.Syntax-->**GOTO RECORD** ( {*tabela* : Table ;} *registro* : Integer )<!-- END REF-->
 <!--REF #_command_.GOTO RECORD.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

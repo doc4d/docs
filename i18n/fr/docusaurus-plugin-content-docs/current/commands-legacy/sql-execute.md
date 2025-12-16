@@ -5,7 +5,7 @@ slug: /commands/sql-execute
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SQL EXECUTE.Syntax-->**SQL EXECUTE** ( *instructionSQL* {; *objetLié*}{; *objetLié2* ; ... ; *objetLiéN*} )<!-- END REF-->
+<!--REF #_command_.SQL EXECUTE.Syntax-->**SQL EXECUTE** ( *instructionSQL* : Text {; *...objetLié* : Variable, Field} )<!-- END REF-->
 <!--REF #_command_.SQL EXECUTE.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

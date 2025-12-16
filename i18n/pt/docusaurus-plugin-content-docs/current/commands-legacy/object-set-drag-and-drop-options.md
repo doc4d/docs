@@ -5,7 +5,7 @@ slug: /commands/object-set-drag-and-drop-options
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT SET DRAG AND DROP OPTIONS.Syntax-->**OBJECT SET DRAG AND DROP OPTIONS** ( {* ;} *objeto* ; *arrastavel* ; *arrastavelAuto* ; *soltavel* ; *soltavelAuto* )<!-- END REF-->
+<!--REF #_command_.OBJECT SET DRAG AND DROP OPTIONS.Syntax-->**OBJECT SET DRAG AND DROP OPTIONS** ( * ; *objeto* : Text ; *arrastavel* : Boolean ; *arrastavelAuto* : Boolean ; *soltavel* : Boolean ; *soltavelAuto* : Boolean )<br/>**OBJECT SET DRAG AND DROP OPTIONS** ( *objeto* : Field, Variable ; *arrastavel* : Boolean ; *arrastavelAuto* : Boolean ; *soltavel* : Boolean ; *soltavelAuto* : Boolean )<!-- END REF-->
 <!--REF #_command_.OBJECT SET DRAG AND DROP OPTIONS.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

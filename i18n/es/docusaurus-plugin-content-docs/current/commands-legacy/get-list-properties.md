@@ -5,7 +5,7 @@ slug: /commands/get-list-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET LIST PROPERTIES.Syntax-->**GET LIST PROPERTIES** ( *lista* ; *apariencia* {; *icono* {; *altoLinea* {; *dobleClic* {; *multiSeleccion* {; *editable*}}}}} )<!-- END REF-->
+<!--REF #_command_.GET LIST PROPERTIES.Syntax-->**GET LIST PROPERTIES** ( *lista* : Integer ; *apariencia* : Integer {; *icono* : Integer {; *altoLinea* : Integer {; *dobleClic* : Integer {; *multiSeleccion* : Integer {; *editable* : Integer}}}}} )<!-- END REF-->
 <!--REF #_command_.GET LIST PROPERTIES.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

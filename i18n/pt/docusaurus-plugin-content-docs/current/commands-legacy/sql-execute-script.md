@@ -5,7 +5,7 @@ slug: /commands/sql-execute-script
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SQL EXECUTE SCRIPT.Syntax-->**SQL EXECUTE SCRIPT** ( *rotaScript* ; *açãoErro* {; *nomeAtrib* ; *valorAtrib*} {; *nomeAtrib2* ; *valorAtrib2* ; ... ; *nomeAtribN* ; *valorAtribN*} )<!-- END REF-->
+<!--REF #_command_.SQL EXECUTE SCRIPT.Syntax-->**SQL EXECUTE SCRIPT** ( *rotaScript* : Text ; *açãoErro* : Integer {; *nomeAtrib* : Text ; *valorAtrib* : Text} {; ...(*nomeAtrib* : Text, *valorAtrib* : Text)} )<!-- END REF-->
 <!--REF #_command_.SQL EXECUTE SCRIPT.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

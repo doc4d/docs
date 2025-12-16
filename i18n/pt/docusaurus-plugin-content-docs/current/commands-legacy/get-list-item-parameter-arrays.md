@@ -5,7 +5,7 @@ slug: /commands/get-list-item-parameter-arrays
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET LIST ITEM PARAMETER ARRAYS.Syntax-->**GET LIST ITEM PARAMETER ARRAYS** ( {* ;} *list* ; *refElemento* ; *arrSeletores* {; *arrValores*} )<!-- END REF-->
+<!--REF #_command_.GET LIST ITEM PARAMETER ARRAYS.Syntax-->**GET LIST ITEM PARAMETER ARRAYS** ( {* ;} *list* : Integer, Text ; *refElemento* : Integer, * ; *arrSeletores* : Text array {; *arrValores* : Text array} )<!-- END REF-->
 <!--REF #_command_.GET LIST ITEM PARAMETER ARRAYS.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

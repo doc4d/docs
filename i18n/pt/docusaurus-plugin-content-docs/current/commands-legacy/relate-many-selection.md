@@ -5,7 +5,7 @@ slug: /commands/relate-many-selection
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.RELATE MANY SELECTION.Syntax-->**RELATE MANY SELECTION** ( *campo* )<!-- END REF-->
+<!--REF #_command_.RELATE MANY SELECTION.Syntax-->**RELATE MANY SELECTION** ( *campo* : Field )<!-- END REF-->
 <!--REF #_command_.RELATE MANY SELECTION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

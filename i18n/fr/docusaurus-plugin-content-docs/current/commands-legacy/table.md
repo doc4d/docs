@@ -5,7 +5,7 @@ slug: /commands/table
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Table.Syntax-->**Table** ( *tableNum* ) : Pointer<br/>**Table** ( *tablePtr* ) : Integer<br/>**Table** ( *fieldPtr* ) : Integer<!-- END REF-->
+<!--REF #_command_.Table.Syntax-->**Table** ( *tableNum* : Integer ) : Pointer<br/>**Table** ( *tablePtr* : Pointer ) : Integer<br/>**Table** ( *fieldPtr* : Pointer ) : Integer<!-- END REF-->
 <!--REF #_command_.Table.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

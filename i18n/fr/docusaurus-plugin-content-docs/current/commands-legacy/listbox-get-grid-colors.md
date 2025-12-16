@@ -5,7 +5,7 @@ slug: /commands/listbox-get-grid-colors
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX GET GRID COLORS.Syntax-->**LISTBOX GET GRID COLORS** ( {* ;} *objet* ; *couleurH* ; *couleurV* )<!-- END REF-->
+<!--REF #_command_.LISTBOX GET GRID COLORS.Syntax-->**LISTBOX GET GRID COLORS** ( * ; *objet* : Text ; *couleurH* : Text, Integer ; *couleurV* : Text, Integer )<br/>**LISTBOX GET GRID COLORS** ( *objet* : Field, Variable ; *couleurH* : Text, Integer ; *couleurV* : Text, Integer )<!-- END REF-->
 <!--REF #_command_.LISTBOX GET GRID COLORS.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

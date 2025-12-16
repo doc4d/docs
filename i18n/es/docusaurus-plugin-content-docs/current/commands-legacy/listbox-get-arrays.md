@@ -5,7 +5,7 @@ slug: /commands/listbox-get-arrays
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX GET ARRAYS.Syntax-->**LISTBOX GET ARRAYS** ( {* ;} *objeto* ; *arrNomsCols* ; *arrNomsEncabezados* ; *arrVarCols* ; *arrVarEncabezados* ; *arrColsVisibles* ; *arrEstilos* {; *arrNomsPies* ; *arrVarsPies*} )<!-- END REF-->
+<!--REF #_command_.LISTBOX GET ARRAYS.Syntax-->**LISTBOX GET ARRAYS** ( * ; *objeto* : Text ; *arrNomsCols* : Text array ; *arrNomsEncabezados* : Text array ; *arrVarCols* : Pointer array ; *arrVarEncabezados* : Pointer array ; *arrColsVisibles* : Boolean array ; *arrEstilos* : Pointer array {; *arrNomsPies* : Text array ; *arrVarsPies* : Pointer array} )<br/>**LISTBOX GET ARRAYS** ( *objeto* : Field, Variable ; *arrNomsCols* : Text array ; *arrNomsEncabezados* : Text array ; *arrVarCols* : Pointer array ; *arrVarEncabezados* : Pointer array ; *arrColsVisibles* : Boolean array ; *arrEstilos* : Pointer array {; *arrNomsPies* : Text array ; *arrVarsPies* : Pointer array} )<!-- END REF-->
 <!--REF #_command_.LISTBOX GET ARRAYS.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

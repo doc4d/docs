@@ -5,7 +5,7 @@ slug: /commands/get-list-item-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET LIST ITEM PROPERTIES.Syntax-->**GET LIST ITEM PROPERTIES** ( {* ;} *list* ; *itemRef* ; *enterable* {; *styles* {; *icon* {; *color*}}} )<br/>**GET LIST ITEM PROPERTIES** ( * ; *list* ; * ; *enterable* {; *styles* {; *icon* {; *color*}}} )<!-- END REF-->
+<!--REF #_command_.GET LIST ITEM PROPERTIES.Syntax-->**GET LIST ITEM PROPERTIES** ( {* ;} *list* : Integer, Text ; *itemRef* : 演算子, 倍長整数 ; *enterable* : Boolean {; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}}} )<br/>**GET LIST ITEM PROPERTIES** ( * ; *list* : Integer, Text ; * ; *enterable* : Boolean {; *styles* : Integer {; *icon* : Text, Integer {; *color* : Integer}}} )<!-- END REF-->
 <!--REF #_command_.GET LIST ITEM PROPERTIES.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

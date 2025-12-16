@@ -5,7 +5,7 @@ slug: /commands/object-get-drag-and-drop-options
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT GET DRAG AND DROP OPTIONS.Syntax-->**OBJECT GET DRAG AND DROP OPTIONS** ( {* ;} *objeto* ; *arrastrable* ; *arrastrableAuto* ; *soltable* ; *soltableAuto* )<!-- END REF-->
+<!--REF #_command_.OBJECT GET DRAG AND DROP OPTIONS.Syntax-->**OBJECT GET DRAG AND DROP OPTIONS** ( * ; *objeto* : Text ; *arrastrable* : Boolean ; *arrastrableAuto* : Boolean ; *soltable* : Boolean ; *soltableAuto* : Boolean )<br/>**OBJECT GET DRAG AND DROP OPTIONS** ( *objeto* : Field, Variable ; *arrastrable* : Boolean ; *arrastrableAuto* : Boolean ; *soltable* : Boolean ; *soltableAuto* : Boolean )<!-- END REF-->
 <!--REF #_command_.OBJECT GET DRAG AND DROP OPTIONS.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

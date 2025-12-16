@@ -5,7 +5,7 @@ slug: /commands/old-related-one
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OLD RELATED ONE.Syntax-->**OLD RELATED ONE** ( *campo* )<!-- END REF-->
+<!--REF #_command_.OLD RELATED ONE.Syntax-->**OLD RELATED ONE** ( *campo* : Field )<!-- END REF-->
 <!--REF #_command_.OLD RELATED ONE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

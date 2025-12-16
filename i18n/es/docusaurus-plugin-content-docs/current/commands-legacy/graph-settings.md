@@ -5,7 +5,7 @@ slug: /commands/graph-settings
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GRAPH SETTINGS.Syntax-->**GRAPH SETTINGS** ( *graf* ; *xmin* ; *xmax* ; *ymin* ; *ymax* ; *xprop* ; *xgrid* ; *ygrid* ; *titulo* {; *titulo2* ; ... ; *tituloN*} )<!-- END REF-->
+<!--REF #_command_.GRAPH SETTINGS.Syntax-->**GRAPH SETTINGS** ( *graf* : Picture ; *xmin* : Integer, Date, Time ; *xmax* : Integer, Date, Time ; *ymin* : Integer ; *ymax* : Integer ; *xprop* : Boolean ; *xgrid* : Boolean ; *ygrid* : Boolean ; *titulo* : Text {; *...titulo* : Text} )<!-- END REF-->
 <!--REF #_command_.GRAPH SETTINGS.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/json-stringify-array
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.JSON Stringify array.Syntax-->**JSON Stringify array** ( *tab* {; *} ) : Text<!-- END REF-->
+<!--REF #_command_.JSON Stringify array.Syntax-->**JSON Stringify array** ( *tab* : Text array, Real array, Boolean array, Pointer array, Object array {; *} ) : Text<!-- END REF-->
 <!--REF #_command_.JSON Stringify array.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

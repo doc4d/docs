@@ -5,7 +5,7 @@ slug: /commands/object-set-auto-spellcheck
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT SET AUTO SPELLCHECK.Syntax-->**OBJECT SET AUTO SPELLCHECK** ( {* ;} *objet* ; *correctionAuto* )<!-- END REF-->
+<!--REF #_command_.OBJECT SET AUTO SPELLCHECK.Syntax-->**OBJECT SET AUTO SPELLCHECK** ( * ; *objet* : Text ; *correctionAuto* : Boolean )<br/>**OBJECT SET AUTO SPELLCHECK** ( *objet* : Field, Variable ; *correctionAuto* : Boolean )<!-- END REF-->
 <!--REF #_command_.OBJECT SET AUTO SPELLCHECK.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

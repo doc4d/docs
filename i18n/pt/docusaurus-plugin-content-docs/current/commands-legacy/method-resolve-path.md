@@ -5,7 +5,7 @@ slug: /commands/method-resolve-path
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD RESOLVE PATH.Syntax-->**METHOD RESOLVE PATH** ( *rota* ; *tipoMetodo* ; *prtTabela* ; *nomObjeto* ; *nomObjetoForm* {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD RESOLVE PATH.Syntax-->**METHOD RESOLVE PATH** ( *rota* : Text ; *tipoMetodo* : Integer ; *prtTabela* : Pointer ; *nomObjeto* : Text ; *nomObjetoForm* : Text {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD RESOLVE PATH.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

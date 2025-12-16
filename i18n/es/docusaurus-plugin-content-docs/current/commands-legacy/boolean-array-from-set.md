@@ -5,7 +5,7 @@ slug: /commands/boolean-array-from-set
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.BOOLEAN ARRAY FROM SET.Syntax-->**BOOLEAN ARRAY FROM SET** ( *arrBool* {; *conjunto*} )<!-- END REF-->
+<!--REF #_command_.BOOLEAN ARRAY FROM SET.Syntax-->**BOOLEAN ARRAY FROM SET** ( *arrBool* : Boolean array {; *conjunto* : Text} )<!-- END REF-->
 <!--REF #_command_.BOOLEAN ARRAY FROM SET.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

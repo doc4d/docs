@@ -5,7 +5,7 @@ slug: /commands/method-get-comments
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD GET COMMENTS.Syntax-->**METHOD GET COMMENTS** ( *rota* ; *comentários* {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD GET COMMENTS.Syntax-->**METHOD GET COMMENTS** ( *rota* : Text, Text array ; *comentários* : Text, Text array {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD GET COMMENTS.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

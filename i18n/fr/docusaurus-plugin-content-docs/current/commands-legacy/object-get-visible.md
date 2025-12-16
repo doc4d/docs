@@ -5,7 +5,7 @@ slug: /commands/object-get-visible
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT Get visible.Syntax-->**OBJECT Get visible** ( {* ;} *objet* ) : Boolean<!-- END REF-->
+<!--REF #_command_.OBJECT Get visible.Syntax-->**OBJECT Get visible** ( * ; *objet* : Text ) : Boolean<br/>**OBJECT Get visible** ( *objet* : Field, Variable ) : Boolean<!-- END REF-->
 <!--REF #_command_.OBJECT Get visible.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/cut-named-selection
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CUT NAMED SELECTION.Syntax-->**CUT NAMED SELECTION** ( {*tabela* ;} *nome* )<!-- END REF-->
+<!--REF #_command_.CUT NAMED SELECTION.Syntax-->**CUT NAMED SELECTION** ( {*tabela* : Table ;} *nome* : Text )<!-- END REF-->
 <!--REF #_command_.CUT NAMED SELECTION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

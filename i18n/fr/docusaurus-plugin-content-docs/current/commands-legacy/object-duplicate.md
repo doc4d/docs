@@ -5,7 +5,7 @@ slug: /commands/object-duplicate
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT DUPLICATE.Syntax-->**OBJECT DUPLICATE** ( {* ;} *objet* {; *nouvNom* {; *nouvVar* {; *reliéA* {; *dépH* {; *dépV* {; *redimH* {; *redimV*}}}}}}} {; *} )<!-- END REF-->
+<!--REF #_command_.OBJECT DUPLICATE.Syntax-->**OBJECT DUPLICATE** ( * ; *objet* : Text {; *nouvNom* : Text {; *nouvVar* : Pointer {; *reliéA* : Text {; *dépH* : Integer {; *dépV* : Integer {; *redimH* : Integer {; *redimV* : Integer}}}}}}} {; *} )<br/>**OBJECT DUPLICATE** ( *objet* : Field, Variable {; *nouvNom* : Text {; *nouvVar* : Pointer {; *reliéA* : Text {; *dépH* : Integer {; *dépV* : Integer {; *redimH* : Integer {; *redimV* : Integer}}}}}}} {; *} )<!-- END REF-->
 <!--REF #_command_.OBJECT DUPLICATE.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

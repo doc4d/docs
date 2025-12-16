@@ -5,7 +5,7 @@ slug: /commands/st-set-plain-text
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ST SET PLAIN TEXT.Syntax-->**ST SET PLAIN TEXT** ( {* ;} *objeto* ; *nuevTexto* {; *inicioSel* {; *finSel*}} )<!-- END REF-->
+<!--REF #_command_.ST SET PLAIN TEXT.Syntax-->**ST SET PLAIN TEXT** ( * ; *objeto* : Text ; *nuevTexto* {; *inicioSel* : Integer {; *finSel* : Integer}} )<br/>**ST SET PLAIN TEXT** ( *objeto* : Field, Variable ; *nuevTexto* {; *inicioSel* : Integer {; *finSel* : Integer}} )<!-- END REF-->
 <!--REF #_command_.ST SET PLAIN TEXT.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/listbox-set-grid
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX SET GRID.Syntax-->**LISTBOX SET GRID** ( {* ;} *objet* ; *horizontal* ; *vertical* )<!-- END REF-->
+<!--REF #_command_.LISTBOX SET GRID.Syntax-->**LISTBOX SET GRID** ( * ; *objet* : Text ; *horizontal* : Boolean ; *vertical* : Boolean )<br/>**LISTBOX SET GRID** ( *objet* : Field, Variable ; *horizontal* : Boolean ; *vertical* : Boolean )<!-- END REF-->
 <!--REF #_command_.LISTBOX SET GRID.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

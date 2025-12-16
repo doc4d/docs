@@ -5,7 +5,7 @@ slug: /commands/relate-one
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.RELATE ONE.Syntax-->**RELATE ONE** ( *tableN* {; *discriminant*} )<br/>**RELATE ONE** ( *champN* {; *discriminant*} )<!-- END REF-->
+<!--REF #_command_.RELATE ONE.Syntax-->**RELATE ONE** ( *tableN* : Table, Champ {; *discriminant* : Field} )<br/>**RELATE ONE** ( *champN* : Table, Champ {; *discriminant* : Field} )<!-- END REF-->
 <!--REF #_command_.RELATE ONE.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/encrypt-blob
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ENCRYPT BLOB.Syntax-->**ENCRYPT BLOB** ( *aCifrar* ; *enviarLlavePriv* {; *recepLlavePub*} )<!-- END REF-->
+<!--REF #_command_.ENCRYPT BLOB.Syntax-->**ENCRYPT BLOB** ( *aCifrar* : Blob ; *enviarLlavePriv* : Blob {; *recepLlavePub* : Blob} )<!-- END REF-->
 <!--REF #_command_.ENCRYPT BLOB.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

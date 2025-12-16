@@ -5,7 +5,7 @@ slug: /commands/font-style-list
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.FONT STYLE LIST.Syntax-->**FONT STYLE LIST** ( *familiaFuiente* ; *listaEstilosFuente* ; *listaNomsFuente* )<!-- END REF-->
+<!--REF #_command_.FONT STYLE LIST.Syntax-->**FONT STYLE LIST** ( *familiaFuiente* : Text ; *listaEstilosFuente* : Text array ; *listaNomsFuente* : Text array )<!-- END REF-->
 <!--REF #_command_.FONT STYLE LIST.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

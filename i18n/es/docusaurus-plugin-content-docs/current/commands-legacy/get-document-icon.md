@@ -5,7 +5,7 @@ slug: /commands/get-document-icon
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET DOCUMENT ICON.Syntax-->**GET DOCUMENT ICON** ( *rutaDoc* ; *icono* {; *tamaño*} )<!-- END REF-->
+<!--REF #_command_.GET DOCUMENT ICON.Syntax-->**GET DOCUMENT ICON** ( *rutaDoc* : Text ; *icono* : Picture, Picture {; *tamaño* : Integer} )<!-- END REF-->
 <!--REF #_command_.GET DOCUMENT ICON.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

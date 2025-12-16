@@ -5,7 +5,7 @@ slug: /commands/listbox-insert-column
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX INSERT COLUMN.Syntax-->**LISTBOX INSERT COLUMN** ( {* ;} *objet* ; *positionCol* ; *nomCol* ; *variableCol* ; *nomEnTête* ; *variableEntête* {; *nomPied* ; *variablePied*} )<!-- END REF-->
+<!--REF #_command_.LISTBOX INSERT COLUMN.Syntax-->**LISTBOX INSERT COLUMN** ( * ; *objet* : Text ; *positionCol* : Integer ; *nomCol* : Text ; *variableCol* : Array, Field, Variable, Pointer ; *nomEnTête* : Text ; *variableEntête* : Integer, Pointer {; *nomPied* : Text ; *variablePied* : Variable, Pointer} )<br/>**LISTBOX INSERT COLUMN** ( *objet* : Field, Variable ; *positionCol* : Integer ; *nomCol* : Text ; *variableCol* : Array, Field, Variable, Pointer ; *nomEnTête* : Text ; *variableEntête* : Integer, Pointer {; *nomPied* : Text ; *variablePied* : Variable, Pointer} )<!-- END REF-->
 <!--REF #_command_.LISTBOX INSERT COLUMN.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/wa-set-preference
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WA SET PREFERENCE.Syntax-->**WA SET PREFERENCE** ( {* ;} *objet* ; *sélecteur* ; *valeur* )<!-- END REF-->
+<!--REF #_command_.WA SET PREFERENCE.Syntax-->**WA SET PREFERENCE** ( * ; *objet* : Text ; *sélecteur* : Integer ; *valeur* : Boolean )<br/>**WA SET PREFERENCE** ( *objet* : Field, Variable ; *sélecteur* : Integer ; *valeur* : Boolean )<!-- END REF-->
 <!--REF #_command_.WA SET PREFERENCE.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

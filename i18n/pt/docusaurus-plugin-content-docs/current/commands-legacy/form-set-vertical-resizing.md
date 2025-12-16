@@ -5,7 +5,7 @@ slug: /commands/form-set-vertical-resizing
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.FORM SET VERTICAL RESIZING.Syntax-->**FORM SET VERTICAL RESIZING** ( *redimensao* {; *alturaMin* {; *alturaMax*}} )<!-- END REF-->
+<!--REF #_command_.FORM SET VERTICAL RESIZING.Syntax-->**FORM SET VERTICAL RESIZING** ( *redimensao* : Boolean {; *alturaMin* : Integer {; *alturaMax* : Integer}} )<!-- END REF-->
 <!--REF #_command_.FORM SET VERTICAL RESIZING.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

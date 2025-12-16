@@ -5,7 +5,7 @@ slug: /commands/trigger-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.TRIGGER PROPERTIES.Syntax-->**TRIGGER PROPERTIES** ( *nivelTrigger* ; *eventoBase* ; *numTabla* ; *regNum* )<!-- END REF-->
+<!--REF #_command_.TRIGGER PROPERTIES.Syntax-->**TRIGGER PROPERTIES** ( *nivelTrigger* : Integer ; *eventoBase* : Integer ; *numTabla* : Integer ; *regNum* : Integer )<!-- END REF-->
 <!--REF #_command_.TRIGGER PROPERTIES.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

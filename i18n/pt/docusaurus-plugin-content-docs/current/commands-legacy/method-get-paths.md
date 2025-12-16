@@ -5,7 +5,7 @@ slug: /commands/method-get-paths
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD GET PATHS.Syntax-->**METHOD GET PATHS** ( {*nomPasta* ;} *tipoMetodo* ; *arrRotas* {; *marcador*}{; *} )<!-- END REF-->
+<!--REF #_command_.METHOD GET PATHS.Syntax-->**METHOD GET PATHS** ( {*nomPasta* : Text ;} *tipoMetodo* : Integer ; *arrRotas* : Text array {; *marcador* : Real}{; *} )<!-- END REF-->
 <!--REF #_command_.METHOD GET PATHS.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

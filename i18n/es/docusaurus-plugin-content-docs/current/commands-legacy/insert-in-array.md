@@ -5,7 +5,7 @@ slug: /commands/insert-in-array
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.INSERT IN ARRAY.Syntax-->**INSERT IN ARRAY** ( *array* ; *posicion* {; *reemplazos*} )<!-- END REF-->
+<!--REF #_command_.INSERT IN ARRAY.Syntax-->**INSERT IN ARRAY** ( *array* : Array ; *posicion* : Integer {; *reemplazos* : Integer} )<!-- END REF-->
 <!--REF #_command_.INSERT IN ARRAY.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

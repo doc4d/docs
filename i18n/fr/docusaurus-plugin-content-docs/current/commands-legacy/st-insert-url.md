@@ -5,7 +5,7 @@ slug: /commands/st-insert-url
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ST INSERT URL.Syntax-->**ST INSERT URL** ( {* ;} *objet* ; *texteURL* ; *adresseURL* {; *débutSél* {; *finSél*}} )<!-- END REF-->
+<!--REF #_command_.ST INSERT URL.Syntax-->**ST INSERT URL** ( * ; *objet* : Text ; *texteURL* : Text ; *adresseURL* : Text {; *débutSél* : Integer {; *finSél* : Integer}} )<br/>**ST INSERT URL** ( *objet* : Field, Variable ; *texteURL* : Text ; *adresseURL* : Text {; *débutSél* : Integer {; *finSél* : Integer}} )<!-- END REF-->
 <!--REF #_command_.ST INSERT URL.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

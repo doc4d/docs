@@ -5,7 +5,7 @@ slug: /commands/set-menu-item-mark
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET MENU ITEM MARK.Syntax-->**SET MENU ITEM MARK** ( *menu* ; *lineamenu* ; *marca* {; *proceso*} )<!-- END REF-->
+<!--REF #_command_.SET MENU ITEM MARK.Syntax-->**SET MENU ITEM MARK** ( *menu* : Integer, Text ; *lineamenu* : Integer ; *marca* : Text {; *proceso* : Integer} )<!-- END REF-->
 <!--REF #_command_.SET MENU ITEM MARK.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

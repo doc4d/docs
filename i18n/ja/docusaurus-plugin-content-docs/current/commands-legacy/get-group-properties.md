@@ -5,7 +5,7 @@ slug: /commands/get-group-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET GROUP PROPERTIES.Syntax-->**GET GROUP PROPERTIES** ( *groupID* ; *name* ; *owner* {; *members*} )<!-- END REF-->
+<!--REF #_command_.GET GROUP PROPERTIES.Syntax-->**GET GROUP PROPERTIES** ( *groupID* : Integer ; *name* : Text ; *owner* : Integer {; *members* : Integer array} )<!-- END REF-->
 <!--REF #_command_.GET GROUP PROPERTIES.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

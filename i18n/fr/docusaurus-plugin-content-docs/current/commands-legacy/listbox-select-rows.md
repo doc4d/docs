@@ -5,7 +5,7 @@ slug: /commands/listbox-select-rows
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX SELECT ROWS.Syntax-->**LISTBOX SELECT ROWS** ( {* ;} *objet* ; *sélection* {; *action*} )<!-- END REF-->
+<!--REF #_command_.LISTBOX SELECT ROWS.Syntax-->**LISTBOX SELECT ROWS** ( * ; *objet* : Text ; *sélection* : Object, Collection {; *action* : Integer} )<br/>**LISTBOX SELECT ROWS** ( *objet* : Field, Variable ; *sélection* : Object, Collection {; *action* : Integer} )<!-- END REF-->
 <!--REF #_command_.LISTBOX SELECT ROWS.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

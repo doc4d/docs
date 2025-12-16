@@ -5,7 +5,7 @@ slug: /commands/listbox-set-row-color
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX SET ROW COLOR.Syntax-->**LISTBOX SET ROW COLOR** ( {* ;} *objet* ; *ligne* ; *couleur* {; *typeCouleur*} )<!-- END REF-->
+<!--REF #_command_.LISTBOX SET ROW COLOR.Syntax-->**LISTBOX SET ROW COLOR** ( * ; *objet* : Text ; *ligne* : Integer ; *couleur* : Text, Integer {; *typeCouleur* : Integer} )<br/>**LISTBOX SET ROW COLOR** ( *objet* : Field, Variable ; *ligne* : Integer ; *couleur* : Text, Integer {; *typeCouleur* : Integer} )<!-- END REF-->
 <!--REF #_command_.LISTBOX SET ROW COLOR.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

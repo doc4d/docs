@@ -5,7 +5,7 @@ slug: /commands/create-selection-from-array
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CREATE SELECTION FROM ARRAY.Syntax-->**CREATE SELECTION FROM ARRAY** ( *tabla* ; *regArray* {; *temp*} )<!-- END REF-->
+<!--REF #_command_.CREATE SELECTION FROM ARRAY.Syntax-->**CREATE SELECTION FROM ARRAY** ( *tabla* : Table ; *regArray* : Integer, Boolean array {; *temp* : Text} )<!-- END REF-->
 <!--REF #_command_.CREATE SELECTION FROM ARRAY.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

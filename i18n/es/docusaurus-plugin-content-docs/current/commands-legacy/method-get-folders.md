@@ -5,7 +5,7 @@ slug: /commands/method-get-folders
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD GET FOLDERS.Syntax-->**METHOD GET FOLDERS** ( *arrNoms* {; *filtro*}{; *} )<!-- END REF-->
+<!--REF #_command_.METHOD GET FOLDERS.Syntax-->**METHOD GET FOLDERS** ( *arrNoms* : Text array {; *filtro* : Text}{; *} )<!-- END REF-->
 <!--REF #_command_.METHOD GET FOLDERS.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

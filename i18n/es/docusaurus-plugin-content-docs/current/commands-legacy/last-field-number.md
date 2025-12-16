@@ -5,7 +5,7 @@ slug: /commands/last-field-number
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Last field number.Syntax-->**Last field number** ( *numTabla* ) : Integer<br/>**Last field number** ( *ptrTabla* ) : Integer<!-- END REF-->
+<!--REF #_command_.Last field number.Syntax-->**Last field number** ( *numTabla* : Entero largo, Puntero ) : Integer<br/>**Last field number** ( *ptrTabla* : Entero largo, Puntero ) : Integer<!-- END REF-->
 <!--REF #_command_.Last field number.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

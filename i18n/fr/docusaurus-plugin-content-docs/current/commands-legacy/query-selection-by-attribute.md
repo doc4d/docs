@@ -5,7 +5,7 @@ slug: /commands/query-selection-by-attribute
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QUERY SELECTION BY ATTRIBUTE.Syntax-->**QUERY SELECTION BY ATTRIBUTE** ( {*laTable*}{;}{*opConj* ;} *champObjet* ; *cheminAttribut* ; *opRecherche* ; *valeur* {; *} )<!-- END REF-->
+<!--REF #_command_.QUERY SELECTION BY ATTRIBUTE.Syntax-->**QUERY SELECTION BY ATTRIBUTE** ( {*laTable* : Table}{;}{*opConj* : Operator ;} *champObjet* : Field ; *cheminAttribut* : Text ; *opRecherche* : Text, Operator ; *valeur* : Text, Real, Date, Time {; *} )<!-- END REF-->
 <!--REF #_command_.QUERY SELECTION BY ATTRIBUTE.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

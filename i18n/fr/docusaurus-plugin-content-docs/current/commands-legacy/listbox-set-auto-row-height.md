@@ -5,7 +5,7 @@ slug: /commands/listbox-set-auto-row-height
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX SET AUTO ROW HEIGHT.Syntax-->**LISTBOX SET AUTO ROW HEIGHT** ( {* ;} *objet* ; *sélecteur* ; *valeur* ; *unité* )<!-- END REF-->
+<!--REF #_command_.LISTBOX SET AUTO ROW HEIGHT.Syntax-->**LISTBOX SET AUTO ROW HEIGHT** ( * ; *objet* : Text ; *sélecteur* : Integer ; *valeur* : Integer ; *unité* : Integer )<br/>**LISTBOX SET AUTO ROW HEIGHT** ( *objet* : Field, Variable ; *sélecteur* : Integer ; *valeur* : Integer ; *unité* : Integer )<!-- END REF-->
 <!--REF #_command_.LISTBOX SET AUTO ROW HEIGHT.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

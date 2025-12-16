@@ -5,7 +5,7 @@ slug: /commands/mod
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Mod.Syntax-->**Mod** ( *número1* ; *número2* ) : Real<!-- END REF-->
+<!--REF #_command_.Mod.Syntax-->**Mod** ( *número1* : Integer ; *número2* : Integer ) : Real<!-- END REF-->
 <!--REF #_command_.Mod.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

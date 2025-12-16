@@ -5,7 +5,7 @@ slug: /commands/ldap-search
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LDAP Search.Syntax-->**LDAP Search** ( *dnRootEntry* ; *filtro* {; *escopo* {; *atributos* {; *atributoComoArray*}}} ) : Object<!-- END REF-->
+<!--REF #_command_.LDAP Search.Syntax-->**LDAP Search** ( *dnRootEntry* : Text ; *filtro* : Text {; *escopo* : Text {; *atributos* : Text array {; *atributoComoArray* : Boolean array}}} ) : Object<!-- END REF-->
 <!--REF #_command_.LDAP Search.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

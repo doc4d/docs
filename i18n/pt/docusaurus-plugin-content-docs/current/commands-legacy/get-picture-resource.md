@@ -5,7 +5,7 @@ slug: /commands/get-picture-resource
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET PICTURE RESOURCE.Syntax-->**GET PICTURE RESOURCE** ( *resNum* ; *resDados* {; *resArquivo*} )<!-- END REF-->
+<!--REF #_command_.GET PICTURE RESOURCE.Syntax-->**GET PICTURE RESOURCE** ( *resNum* : Integer ; *resDados* : Field, Variable {; *resArquivo* : Time} )<!-- END REF-->
 <!--REF #_command_.GET PICTURE RESOURCE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

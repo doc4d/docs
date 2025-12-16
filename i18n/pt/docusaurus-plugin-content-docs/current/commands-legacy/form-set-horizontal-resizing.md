@@ -5,7 +5,7 @@ slug: /commands/form-set-horizontal-resizing
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.FORM SET HORIZONTAL RESIZING.Syntax-->**FORM SET HORIZONTAL RESIZING** ( *redimensao* {; *larguraMin* {; *larguraMax*}} )<!-- END REF-->
+<!--REF #_command_.FORM SET HORIZONTAL RESIZING.Syntax-->**FORM SET HORIZONTAL RESIZING** ( *redimensao* : Boolean {; *larguraMin* : Integer {; *larguraMax* : Integer}} )<!-- END REF-->
 <!--REF #_command_.FORM SET HORIZONTAL RESIZING.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

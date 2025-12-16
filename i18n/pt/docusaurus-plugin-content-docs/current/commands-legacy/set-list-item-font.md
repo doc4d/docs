@@ -5,7 +5,7 @@ slug: /commands/set-list-item-font
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET LIST ITEM FONT.Syntax-->**SET LIST ITEM FONT** ( {* ;} *lista* ; refElem | *  ; *fonte* )<!-- END REF-->
+<!--REF #_command_.SET LIST ITEM FONT.Syntax-->**SET LIST ITEM FONT** ( {* ;} *lista* : Integer, Text ; refElem | *  ; *fonte* : Text, Integer )<!-- END REF-->
 <!--REF #_command_.SET LIST ITEM FONT.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

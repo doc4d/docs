@@ -5,7 +5,7 @@ slug: /commands/web-set-http-header
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WEB SET HTTP HEADER.Syntax-->**WEB SET HTTP HEADER** ( *entête* )<br/>**WEB SET HTTP HEADER** ( *tabChamps* ; *tabValeurs* )<!-- END REF-->
+<!--REF #_command_.WEB SET HTTP HEADER.Syntax-->**WEB SET HTTP HEADER** ( *entête* : Texte, Tableau texte )<br/>**WEB SET HTTP HEADER** ( *tabChamps* : Texte, Tableau texte ; *tabValeurs* : Text array )<!-- END REF-->
 <!--REF #_command_.WEB SET HTTP HEADER.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

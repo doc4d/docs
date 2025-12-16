@@ -5,7 +5,7 @@ slug: /commands/listbox-set-static-columns
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX SET STATIC COLUMNS.Syntax-->**LISTBOX SET STATIC COLUMNS** ( {* ;} *objet* ; *nbColonnes* )<!-- END REF-->
+<!--REF #_command_.LISTBOX SET STATIC COLUMNS.Syntax-->**LISTBOX SET STATIC COLUMNS** ( * ; *objet* : Text ; *nbColonnes* : Integer )<br/>**LISTBOX SET STATIC COLUMNS** ( *objet* : Field, Variable ; *nbColonnes* : Integer )<!-- END REF-->
 <!--REF #_command_.LISTBOX SET STATIC COLUMNS.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

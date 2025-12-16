@@ -5,7 +5,7 @@ slug: /commands/array-text
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ARRAY TEXT.Syntax-->**ARRAY TEXT** ( *nomeArray* ; *tamanho* {; *tamanho2*} )<!-- END REF-->
+<!--REF #_command_.ARRAY TEXT.Syntax-->**ARRAY TEXT** ( *nomeArray* : Array ; *tamanho* : Integer {; *tamanho2* : Integer} )<!-- END REF-->
 <!--REF #_command_.ARRAY TEXT.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

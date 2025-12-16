@@ -5,7 +5,7 @@ slug: /commands/object-set-minimum-value
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT SET MINIMUM VALUE.Syntax-->**OBJECT SET MINIMUM VALUE** ( {* ;} *objet* ; *valeurMini* )<!-- END REF-->
+<!--REF #_command_.OBJECT SET MINIMUM VALUE.Syntax-->**OBJECT SET MINIMUM VALUE** ( * ; *objet* : Text ; *valeurMini* : Date, Time, Real )<br/>**OBJECT SET MINIMUM VALUE** ( *objet* : Field, Variable ; *valeurMini* : Date, Time, Real )<!-- END REF-->
 <!--REF #_command_.OBJECT SET MINIMUM VALUE.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

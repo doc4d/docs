@@ -5,7 +5,7 @@ slug: /commands/set-window-rect
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET WINDOW RECT.Syntax-->**SET WINDOW RECT** ( *esquerda* ; *superior* ; *direita* ; *inferior* {; *janela*}{; *} )<!-- END REF-->
+<!--REF #_command_.SET WINDOW RECT.Syntax-->**SET WINDOW RECT** ( *esquerda* : Integer ; *superior* : Integer ; *direita* : Integer ; *inferior* : Integer {; *janela* : Integer}{; *} )<!-- END REF-->
 <!--REF #_command_.SET WINDOW RECT.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

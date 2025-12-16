@@ -5,7 +5,7 @@ slug: /commands/object-get-subform
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT GET SUBFORM.Syntax-->**OBJECT GET SUBFORM** ( {* ;} *objet* ; *ptrTable* ; *sousFormDetail* {; *sousFormListe*} )<!-- END REF-->
+<!--REF #_command_.OBJECT GET SUBFORM.Syntax-->**OBJECT GET SUBFORM** ( * ; *objet* : Text ; *ptrTable* : Table ; *sousFormDetail* : Text {; *sousFormListe* : Text} )<br/>**OBJECT GET SUBFORM** ( *objet* : Field, Variable ; *ptrTable* : Table ; *sousFormDetail* : Text {; *sousFormListe* : Text} )<!-- END REF-->
 <!--REF #_command_.OBJECT GET SUBFORM.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

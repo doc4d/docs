@@ -5,7 +5,7 @@ slug: /commands/object-set-horizontal-alignment
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT SET HORIZONTAL ALIGNMENT.Syntax-->**OBJECT SET HORIZONTAL ALIGNMENT** ( {* ;} *objeto* ; *alinhamento* )<!-- END REF-->
+<!--REF #_command_.OBJECT SET HORIZONTAL ALIGNMENT.Syntax-->**OBJECT SET HORIZONTAL ALIGNMENT** ( * ; *objeto* : Text ; *alinhamento* : Integer )<br/>**OBJECT SET HORIZONTAL ALIGNMENT** ( *objeto* : Field, Variable ; *alinhamento* : Integer )<!-- END REF-->
 <!--REF #_command_.OBJECT SET HORIZONTAL ALIGNMENT.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

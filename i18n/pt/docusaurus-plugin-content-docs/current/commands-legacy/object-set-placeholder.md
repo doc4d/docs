@@ -5,7 +5,7 @@ slug: /commands/object-set-placeholder
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT SET PLACEHOLDER.Syntax-->**OBJECT SET PLACEHOLDER** ( {* ;} *objeto* ; *textoExemplo* )<!-- END REF-->
+<!--REF #_command_.OBJECT SET PLACEHOLDER.Syntax-->**OBJECT SET PLACEHOLDER** ( * ; *objeto* : Text ; *textoExemplo* : Text )<br/>**OBJECT SET PLACEHOLDER** ( *objeto* : Field, Variable ; *textoExemplo* : Text )<!-- END REF-->
 <!--REF #_command_.OBJECT SET PLACEHOLDER.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

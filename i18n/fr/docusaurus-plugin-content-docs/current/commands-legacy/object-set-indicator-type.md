@@ -5,7 +5,7 @@ slug: /commands/object-set-indicator-type
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT SET INDICATOR TYPE.Syntax-->**OBJECT SET INDICATOR TYPE** ( {* ;} *objet* ; *indicateur* )<!-- END REF-->
+<!--REF #_command_.OBJECT SET INDICATOR TYPE.Syntax-->**OBJECT SET INDICATOR TYPE** ( * ; *objet* : Text ; *indicateur* : Integer )<br/>**OBJECT SET INDICATOR TYPE** ( *objet* : Field, Variable ; *indicateur* : Integer )<!-- END REF-->
 <!--REF #_command_.OBJECT SET INDICATOR TYPE.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/confirm
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CONFIRM.Syntax-->**CONFIRM** ( *message* {; OK button title {; cancel button title}} )<!-- END REF-->
+<!--REF #_command_.CONFIRM.Syntax-->**CONFIRM** ( *message* : Text {; OK button title {; cancel button title}} )<!-- END REF-->
 <!--REF #_command_.CONFIRM.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

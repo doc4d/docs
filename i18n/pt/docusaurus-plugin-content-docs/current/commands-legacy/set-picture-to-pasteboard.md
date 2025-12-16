@@ -5,7 +5,7 @@ slug: /commands/set-picture-to-pasteboard
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET PICTURE TO PASTEBOARD.Syntax-->**SET PICTURE TO PASTEBOARD** ( *imagem* )<!-- END REF-->
+<!--REF #_command_.SET PICTURE TO PASTEBOARD.Syntax-->**SET PICTURE TO PASTEBOARD** ( *imagem* : Picture )<!-- END REF-->
 <!--REF #_command_.SET PICTURE TO PASTEBOARD.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

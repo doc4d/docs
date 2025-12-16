@@ -5,7 +5,7 @@ slug: /commands/call-worker
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CALL WORKER.Syntax-->**CALL WORKER** ( *processo* ; *método* {; *param*}{; *param2* ; ... ; *paramN*} )<!-- END REF-->
+<!--REF #_command_.CALL WORKER.Syntax-->**CALL WORKER** ( *processo* : Text, Integer ; *método* : Object, Text {; *...param* : Expression} )<!-- END REF-->
 <!--REF #_command_.CALL WORKER.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

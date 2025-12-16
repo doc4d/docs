@@ -5,7 +5,7 @@ slug: /commands/object-set-format
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT SET FORMAT.Syntax-->**OBJECT SET FORMAT** ( {* ;} *objet* ; *formatAffich* )<!-- END REF-->
+<!--REF #_command_.OBJECT SET FORMAT.Syntax-->**OBJECT SET FORMAT** ( * ; *objet* : Text ; *formatAffich* : Text )<br/>**OBJECT SET FORMAT** ( *objet* : Field, Variable ; *formatAffich* : Text )<!-- END REF-->
 <!--REF #_command_.OBJECT SET FORMAT.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

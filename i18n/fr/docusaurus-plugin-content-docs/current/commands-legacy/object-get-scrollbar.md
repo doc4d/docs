@@ -5,7 +5,7 @@ slug: /commands/object-get-scrollbar
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT GET SCROLLBAR.Syntax-->**OBJECT GET SCROLLBAR** ( {* ;} *objet* ; *horizontale* ; *verticale* )<!-- END REF-->
+<!--REF #_command_.OBJECT GET SCROLLBAR.Syntax-->**OBJECT GET SCROLLBAR** ( * ; *objet* : Text ; *horizontale* : Boolean, Integer ; *verticale* : Boolean, Integer )<br/>**OBJECT GET SCROLLBAR** ( *objet* : Field, Variable ; *horizontale* : Boolean, Integer ; *verticale* : Boolean, Integer )<!-- END REF-->
 <!--REF #_command_.OBJECT GET SCROLLBAR.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

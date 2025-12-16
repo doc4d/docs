@@ -5,7 +5,7 @@ slug: /commands/method-get-modification-date
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD GET MODIFICATION DATE.Syntax-->**METHOD GET MODIFICATION DATE** ( *path* ; *modDate* ; *modTime* {; *} )<!-- END REF-->
+<!--REF #_command_.METHOD GET MODIFICATION DATE.Syntax-->**METHOD GET MODIFICATION DATE** ( *path* : Text, Text配列 ; *modDate* : Date, Date配列 ; *modTime* : Time, Integer array {; *} )<!-- END REF-->
 <!--REF #_command_.METHOD GET MODIFICATION DATE.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

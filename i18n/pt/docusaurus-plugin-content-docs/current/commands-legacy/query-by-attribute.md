@@ -5,7 +5,7 @@ slug: /commands/query-by-attribute
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QUERY BY ATTRIBUTE.Syntax-->**QUERY BY ATTRIBUTE** ( {*umaTabela*}{;}{*opConj* ;} *campoObjeto* ; *caminhoAtributo* ; *opPesq* ; *valor* {; *} )<!-- END REF-->
+<!--REF #_command_.QUERY BY ATTRIBUTE.Syntax-->**QUERY BY ATTRIBUTE** ( {*umaTabela*}{;}{*opConj* : Operator ;} *campoObjeto* : Field ; *caminhoAtributo* : Text ; *opPesq* : Text, Operator ; *valor* : Text, Real, Date, Time {; *} )<!-- END REF-->
 <!--REF #_command_.QUERY BY ATTRIBUTE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/method-open-path
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD OPEN PATH.Syntax-->**METHOD OPEN PATH** ( *rota* {; *line*}{; *} )<!-- END REF-->
+<!--REF #_command_.METHOD OPEN PATH.Syntax-->**METHOD OPEN PATH** ( *rota* : Text {; *line* : Real}{; *} )<!-- END REF-->
 <!--REF #_command_.METHOD OPEN PATH.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

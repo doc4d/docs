@@ -5,7 +5,7 @@ slug: /commands/set-menu-item-parameter
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET MENU ITEM PARAMETER.Syntax-->**SET MENU ITEM PARAMETER** ( *menu* ; *lineaMenu* ; *param* )<!-- END REF-->
+<!--REF #_command_.SET MENU ITEM PARAMETER.Syntax-->**SET MENU ITEM PARAMETER** ( *menu* : Integer, Text ; *lineaMenu* : Integer ; *param* : Text )<!-- END REF-->
 <!--REF #_command_.SET MENU ITEM PARAMETER.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/object-move
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT MOVE.Syntax-->**OBJECT MOVE** ( {* ;} *objeto* ; *moverH* ; *moverV* {; *redimH* {; *redimV* {; *}}} )<!-- END REF-->
+<!--REF #_command_.OBJECT MOVE.Syntax-->**OBJECT MOVE** ( * ; *objeto* : Text ; *moverH* : Integer ; *moverV* : Integer {; *redimH* : Integer {; *redimV* : Integer {; *}}} )<br/>**OBJECT MOVE** ( *objeto* : Field, Variable ; *moverH* : Integer ; *moverV* : Integer {; *redimH* : Integer {; *redimV* : Integer {; *}}} )<!-- END REF-->
 <!--REF #_command_.OBJECT MOVE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

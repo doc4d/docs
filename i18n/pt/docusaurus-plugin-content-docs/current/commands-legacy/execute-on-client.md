@@ -5,7 +5,7 @@ slug: /commands/execute-on-client
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.EXECUTE ON CLIENT.Syntax-->**EXECUTE ON CLIENT** ( *nomeCliente* ; *nomeMetodo* {; *param*}{; *param2* ; ... ; *paramN*} )<!-- END REF-->
+<!--REF #_command_.EXECUTE ON CLIENT.Syntax-->**EXECUTE ON CLIENT** ( *nomeCliente* : Text ; *nomeMetodo* : Text {; *...param* : any} )<!-- END REF-->
 <!--REF #_command_.EXECUTE ON CLIENT.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

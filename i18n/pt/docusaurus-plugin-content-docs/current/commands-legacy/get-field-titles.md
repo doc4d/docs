@@ -5,7 +5,7 @@ slug: /commands/get-field-titles
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET FIELD TITLES.Syntax-->**GET FIELD TITLES** ( *tabela* ; *titulosCampos* ; *numCampos* )<!-- END REF-->
+<!--REF #_command_.GET FIELD TITLES.Syntax-->**GET FIELD TITLES** ( *tabela* : Table ; *titulosCampos* : Text array ; *numCampos* : Integer array )<!-- END REF-->
 <!--REF #_command_.GET FIELD TITLES.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

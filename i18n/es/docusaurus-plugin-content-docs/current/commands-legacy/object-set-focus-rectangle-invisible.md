@@ -5,7 +5,7 @@ slug: /commands/object-set-focus-rectangle-invisible
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT SET FOCUS RECTANGLE INVISIBLE.Syntax-->**OBJECT SET FOCUS RECTANGLE INVISIBLE** ( {* ;} *objeto* ; *invisible* )<!-- END REF-->
+<!--REF #_command_.OBJECT SET FOCUS RECTANGLE INVISIBLE.Syntax-->**OBJECT SET FOCUS RECTANGLE INVISIBLE** ( * ; *objeto* : Text ; *invisible* : Boolean )<br/>**OBJECT SET FOCUS RECTANGLE INVISIBLE** ( *objeto* : Field, Variable ; *invisible* : Boolean )<!-- END REF-->
 <!--REF #_command_.OBJECT SET FOCUS RECTANGLE INVISIBLE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

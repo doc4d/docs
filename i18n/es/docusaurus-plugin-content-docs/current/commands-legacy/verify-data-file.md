@@ -5,7 +5,7 @@ slug: /commands/verify-data-file
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.VERIFY DATA FILE.Syntax-->**VERIFY DATA FILE** ( *rutaEstructura* ; *rutaDatos* ; *objetos* ; *opciones* ; *metodo* {; *arrayTablas* {; *arrayCampos*}} )<!-- END REF-->
+<!--REF #_command_.VERIFY DATA FILE.Syntax-->**VERIFY DATA FILE** ( *rutaEstructura* : Text ; *rutaDatos* : Text ; *objetos* : Integer ; *opciones* : Integer ; *metodo* : Text {; *arrayTablas* : Integer array {; *arrayCampos* : Integer array}} )<!-- END REF-->
 <!--REF #_command_.VERIFY DATA FILE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

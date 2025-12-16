@@ -5,7 +5,7 @@ slug: /commands/object-get-style-sheet
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT Get style sheet.Syntax-->**OBJECT Get style sheet** ( {* ;} *objet* ) : Text<!-- END REF-->
+<!--REF #_command_.OBJECT Get style sheet.Syntax-->**OBJECT Get style sheet** ( * ; *objet* : Text ) : Text<br/>**OBJECT Get style sheet** ( *objet* : Field, Variable ) : Text<!-- END REF-->
 <!--REF #_command_.OBJECT Get style sheet.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

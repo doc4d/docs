@@ -5,7 +5,7 @@ slug: /commands/describe-query-execution
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DESCRIBE QUERY EXECUTION.Syntax-->**DESCRIBE QUERY EXECUTION** ( *estado* )<!-- END REF-->
+<!--REF #_command_.DESCRIBE QUERY EXECUTION.Syntax-->**DESCRIBE QUERY EXECUTION** ( *estado* : Boolean )<!-- END REF-->
 <!--REF #_command_.DESCRIBE QUERY EXECUTION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

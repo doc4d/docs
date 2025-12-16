@@ -5,7 +5,7 @@ slug: /commands/save-variables
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SAVE VARIABLES.Syntax-->**SAVE VARIABLES** ( *documento* ; *variavel* {; *variavel2* ; ... ; *variavelN*} )<!-- END REF-->
+<!--REF #_command_.SAVE VARIABLES.Syntax-->**SAVE VARIABLES** ( *documento* : Text ; *variavel* : Variable {; *...variavel* : Variable} )<!-- END REF-->
 <!--REF #_command_.SAVE VARIABLES.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

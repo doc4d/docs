@@ -5,7 +5,7 @@ slug: /commands/print-record
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.PRINT RECORD.Syntax-->**PRINT RECORD** ( {*tabela*}{;}{* | > } )<!-- END REF-->
+<!--REF #_command_.PRINT RECORD.Syntax-->**PRINT RECORD** ( {*tabela* : Table}{;}{* | > } )<!-- END REF-->
 <!--REF #_command_.PRINT RECORD.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

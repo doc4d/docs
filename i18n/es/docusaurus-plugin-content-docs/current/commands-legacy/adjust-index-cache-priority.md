@@ -5,7 +5,7 @@ slug: /commands/adjust-index-cache-priority
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ADJUST INDEX CACHE PRIORITY.Syntax-->**ADJUST INDEX CACHE PRIORITY** ( *campo* ; *prioridad* )<!-- END REF-->
+<!--REF #_command_.ADJUST INDEX CACHE PRIORITY.Syntax-->**ADJUST INDEX CACHE PRIORITY** ( *campo* : Field ; *prioridad* : Integer )<!-- END REF-->
 <!--REF #_command_.ADJUST INDEX CACHE PRIORITY.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

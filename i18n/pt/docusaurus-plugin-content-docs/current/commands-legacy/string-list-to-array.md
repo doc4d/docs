@@ -5,7 +5,7 @@ slug: /commands/string-list-to-array
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.STRING LIST TO ARRAY.Syntax-->**STRING LIST TO ARRAY** ( *resNum* ; *cadeias* {; *resArquivo*} )<!-- END REF-->
+<!--REF #_command_.STRING LIST TO ARRAY.Syntax-->**STRING LIST TO ARRAY** ( *resNum* : Integer ; *cadeias* : Text array {; *resArquivo* : Time} )<!-- END REF-->
 <!--REF #_command_.STRING LIST TO ARRAY.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

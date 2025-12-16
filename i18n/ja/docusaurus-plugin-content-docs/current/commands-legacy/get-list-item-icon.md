@@ -5,7 +5,7 @@ slug: /commands/get-list-item-icon
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET LIST ITEM ICON.Syntax-->**GET LIST ITEM ICON** ( {* ;} *list* ; *itemRef* ; *icon* )<br/>**GET LIST ITEM ICON** ( * ; *list* ; * ; *icon* <!-- END REF-->
+<!--REF #_command_.GET LIST ITEM ICON.Syntax-->**GET LIST ITEM ICON** ( {* ;} *list* : Integer, Text ; *itemRef* : 演算子, 倍長整数 ; *icon* : Picture )<br/>**GET LIST ITEM ICON** ( * ; *list* : Integer, Text ; * ; *icon* : Picture<!-- END REF-->
 <!--REF #_command_.GET LIST ITEM ICON.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

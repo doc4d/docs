@@ -5,7 +5,7 @@ slug: /commands/xml-set-options
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.XML SET OPTIONS.Syntax-->**XML SET OPTIONS** ( *refElément* ; *sélecteur* ; *valeur* {; *sélecteur2* ; *valeur2* ; ... ; *sélecteurN* ; *valeurN*} )<br/>**XML SET OPTIONS** ( *document* ; *sélecteur* ; *valeur* {; *sélecteur2* ; *valeur2* ; ... ; *sélecteurN* ; *valeurN*} )<!-- END REF-->
+<!--REF #_command_.XML SET OPTIONS.Syntax-->**XML SET OPTIONS** ( *refElément* : Texte ; *sélecteur* : Integer ; *valeur* : Integer {; ...(*sélecteur* : Integer, *valeur* : Integer)} )<br/>**XML SET OPTIONS** ( *document* : Texte ; *sélecteur* : Integer ; *valeur* : Integer {; ...(*sélecteur* : Integer, *valeur* : Integer)} )<!-- END REF-->
 <!--REF #_command_.XML SET OPTIONS.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
