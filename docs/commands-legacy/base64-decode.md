@@ -5,7 +5,7 @@ slug: /commands/base64-decode
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.BASE64 DECODE.Syntax-->**BASE64 DECODE** ( *toDecode* {; *decoded*}{; *} )<!-- END REF-->
+<!--REF #_command_.BASE64 DECODE.Syntax-->**BASE64 DECODE** ( *toDecode* : Text, Blob {; *decoded* : Text, Blob}{; *} )<!-- END REF-->
 <!--REF #_command_.BASE64 DECODE.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

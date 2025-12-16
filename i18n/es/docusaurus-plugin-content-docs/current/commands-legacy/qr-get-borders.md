@@ -5,7 +5,7 @@ slug: /commands/qr-get-borders
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QR GET BORDERS.Syntax-->**QR GET BORDERS** ( *area* ; *columna* ; *linea* ; *borde* ; *grueso* {; *color*} )<!-- END REF-->
+<!--REF #_command_.QR GET BORDERS.Syntax-->**QR GET BORDERS** ( *area* : Integer ; *columna* : Integer ; *linea* : Integer ; *borde* : Integer ; *grueso* : Integer {; *color* : Integer} )<!-- END REF-->
 <!--REF #_command_.QR GET BORDERS.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

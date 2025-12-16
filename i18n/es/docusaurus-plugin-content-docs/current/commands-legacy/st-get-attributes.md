@@ -5,7 +5,7 @@ slug: /commands/st-get-attributes
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ST GET ATTRIBUTES.Syntax-->**ST GET ATTRIBUTES** ( {* ;} *objeto* ; *inicioSel* ; *finSel* ; *nomAtrib* ; *valorAtrib* {; *nomAtrib2* ; *valorAtrib2* ; ... ; *nomAtribN* ; *valorAtribN*} )<!-- END REF-->
+<!--REF #_command_.ST GET ATTRIBUTES.Syntax-->**ST GET ATTRIBUTES** ( * ; *objeto* : Text ; *inicioSel* : Integer ; *finSel* : Integer ; *nomAtrib* : Integer ; *valorAtrib* : Variable {; ...(*nomAtrib* : Integer, *valorAtrib* : Variable)} )<br/>**ST GET ATTRIBUTES** ( *objeto* : Field, Variable ; *inicioSel* : Integer ; *finSel* : Integer ; *nomAtrib* : Integer ; *valorAtrib* : Variable {; ...(*nomAtrib* : Integer, *valorAtrib* : Variable)} )<!-- END REF-->
 <!--REF #_command_.ST GET ATTRIBUTES.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/object-set-visible
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT SET VISIBLE.Syntax-->**OBJECT SET VISIBLE** ( {* ;} *objet* ; *visible* )<!-- END REF-->
+<!--REF #_command_.OBJECT SET VISIBLE.Syntax-->**OBJECT SET VISIBLE** ( * ; *objet* : Text ; *visible* : Boolean )<br/>**OBJECT SET VISIBLE** ( *objet* : Field, Variable ; *visible* : Boolean )<!-- END REF-->
 <!--REF #_command_.OBJECT SET VISIBLE.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

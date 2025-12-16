@@ -5,7 +5,7 @@ slug: /commands/form-get-properties
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.FORM GET PROPERTIES.Syntax-->**FORM GET PROPERTIES** ( {*tabela* ;} *nomeForm* ; *largura* ; *altura* {; *numPags* {; *larguraFixa* {; *alturaFixa* {; *titulo*}}}} )<!-- END REF-->
+<!--REF #_command_.FORM GET PROPERTIES.Syntax-->**FORM GET PROPERTIES** ( {*tabela* : Table ;} *nomeForm* : Text ; *largura* : Integer ; *altura* : Integer {; *numPags* : Integer {; *larguraFixa* : Boolean {; *alturaFixa* : Boolean {; *titulo* : Text}}}} )<!-- END REF-->
 <!--REF #_command_.FORM GET PROPERTIES.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

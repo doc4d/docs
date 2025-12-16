@@ -5,7 +5,7 @@ slug: /commands/object-get-events
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT GET EVENTS.Syntax-->**OBJECT GET EVENTS** ( {* ;} *objet* ; *tabEvénements* )<!-- END REF-->
+<!--REF #_command_.OBJECT GET EVENTS.Syntax-->**OBJECT GET EVENTS** ( * ; *objet* : Text ; *tabEvénements* : Integer array )<br/>**OBJECT GET EVENTS** ( *objet* : Field, Variable ; *tabEvénements* : Integer array )<!-- END REF-->
 <!--REF #_command_.OBJECT GET EVENTS.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

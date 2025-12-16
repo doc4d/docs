@@ -5,7 +5,7 @@ slug: /commands/json-parse
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.JSON Parse.Syntax-->**JSON Parse** ( *cadeiaJSON* {; *tipo*}{; *} ) : any<!-- END REF-->
+<!--REF #_command_.JSON Parse.Syntax-->**JSON Parse** ( *cadeiaJSON* : Text {; *tipo* : Integer}{; *} ) : any<!-- END REF-->
 <!--REF #_command_.JSON Parse.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

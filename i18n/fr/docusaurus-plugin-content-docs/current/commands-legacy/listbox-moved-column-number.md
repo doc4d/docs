@@ -5,7 +5,7 @@ slug: /commands/listbox-moved-column-number
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX MOVED COLUMN NUMBER.Syntax-->**LISTBOX MOVED COLUMN NUMBER** ( {* ;} *objet* ; *ancPosition* ; *nouvPosition* )<!-- END REF-->
+<!--REF #_command_.LISTBOX MOVED COLUMN NUMBER.Syntax-->**LISTBOX MOVED COLUMN NUMBER** ( * ; *objet* : Text ; *ancPosition* : Integer ; *nouvPosition* : Integer )<br/>**LISTBOX MOVED COLUMN NUMBER** ( *objet* : Field, Variable ; *ancPosition* : Integer ; *nouvPosition* : Integer )<!-- END REF-->
 <!--REF #_command_.LISTBOX MOVED COLUMN NUMBER.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

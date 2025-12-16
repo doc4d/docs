@@ -5,7 +5,7 @@ slug: /commands/select-list-items-by-position
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SELECT LIST ITEMS BY POSITION.Syntax-->**SELECT LIST ITEMS BY POSITION** ( {* ;} *lista* ; *posiçaoElem*  {; *posiçaoArray*} )<!-- END REF-->
+<!--REF #_command_.SELECT LIST ITEMS BY POSITION.Syntax-->**SELECT LIST ITEMS BY POSITION** ( {* ;} *lista* : Integer, Text ; *posiçaoElem* : Integer  {; *posiçaoArray* : Integer array} )<!-- END REF-->
 <!--REF #_command_.SELECT LIST ITEMS BY POSITION.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

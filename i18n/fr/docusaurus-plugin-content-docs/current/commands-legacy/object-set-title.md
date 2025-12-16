@@ -5,7 +5,7 @@ slug: /commands/object-set-title
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT SET TITLE.Syntax-->**OBJECT SET TITLE** ( {* ;} *objet* ; *libellé* )<!-- END REF-->
+<!--REF #_command_.OBJECT SET TITLE.Syntax-->**OBJECT SET TITLE** ( * ; *objet* : Text ; *libellé* : Text )<br/>**OBJECT SET TITLE** ( *objet* : Field, Variable ; *libellé* : Text )<!-- END REF-->
 <!--REF #_command_.OBJECT SET TITLE.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/listbox-get-hierarchy
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX GET HIERARCHY.Syntax-->**LISTBOX GET HIERARCHY** ( {* ;} *objet* ; *hiérarchique* {; *hiérarchie*} )<!-- END REF-->
+<!--REF #_command_.LISTBOX GET HIERARCHY.Syntax-->**LISTBOX GET HIERARCHY** ( * ; *objet* : Text ; *hiérarchique* : Boolean {; *hiérarchie* : Pointer array} )<br/>**LISTBOX GET HIERARCHY** ( *objet* : Field, Variable ; *hiérarchique* : Boolean {; *hiérarchie* : Pointer array} )<!-- END REF-->
 <!--REF #_command_.LISTBOX GET HIERARCHY.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

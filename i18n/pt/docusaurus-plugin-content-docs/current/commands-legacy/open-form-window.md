@@ -5,7 +5,7 @@ slug: /commands/open-form-window
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Open form window.Syntax-->**Open form window** ( {*tabela* ;} *nomeForm* {; *tipo* {; *hPos* {; *vPos* {; *}}}} ) : Integer<!-- END REF-->
+<!--REF #_command_.Open form window.Syntax-->**Open form window** ( {*tabela* : Table ;} *nomeForm* : Text, Object {; *tipo* : Integer {; *hPos* : Integer {; *vPos* : Integer {; *}}}} ) : Integer<!-- END REF-->
 <!--REF #_command_.Open form window.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

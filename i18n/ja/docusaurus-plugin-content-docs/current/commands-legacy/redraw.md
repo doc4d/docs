@@ -5,7 +5,7 @@ slug: /commands/redraw
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.REDRAW.Syntax-->**REDRAW** ( *object* )<!-- END REF-->
+<!--REF #_command_.REDRAW.Syntax-->**REDRAW** ( *object* : any )<!-- END REF-->
 <!--REF #_command_.REDRAW.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

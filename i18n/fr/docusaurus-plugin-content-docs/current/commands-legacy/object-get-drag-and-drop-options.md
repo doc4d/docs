@@ -5,7 +5,7 @@ slug: /commands/object-get-drag-and-drop-options
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT GET DRAG AND DROP OPTIONS.Syntax-->**OBJECT GET DRAG AND DROP OPTIONS** ( {* ;} *objet* ; *glissable* ; *glissableAuto* ; *déposable* ; *déposableAuto* )<!-- END REF-->
+<!--REF #_command_.OBJECT GET DRAG AND DROP OPTIONS.Syntax-->**OBJECT GET DRAG AND DROP OPTIONS** ( * ; *objet* : Text ; *glissable* : Boolean ; *glissableAuto* : Boolean ; *déposable* : Boolean ; *déposableAuto* : Boolean )<br/>**OBJECT GET DRAG AND DROP OPTIONS** ( *objet* : Field, Variable ; *glissable* : Boolean ; *glissableAuto* : Boolean ; *déposable* : Boolean ; *déposableAuto* : Boolean )<!-- END REF-->
 <!--REF #_command_.OBJECT GET DRAG AND DROP OPTIONS.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

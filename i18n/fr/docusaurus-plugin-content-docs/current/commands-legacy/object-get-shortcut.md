@@ -5,7 +5,7 @@ slug: /commands/object-get-shortcut
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT GET SHORTCUT.Syntax-->**OBJECT GET SHORTCUT** ( {* ;} *objet* ; *touche* ; *modifiers* )<!-- END REF-->
+<!--REF #_command_.OBJECT GET SHORTCUT.Syntax-->**OBJECT GET SHORTCUT** ( * ; *objet* : Text ; *touche* : Text ; *modifiers* : Integer )<br/>**OBJECT GET SHORTCUT** ( *objet* : Field, Variable ; *touche* : Text ; *modifiers* : Integer )<!-- END REF-->
 <!--REF #_command_.OBJECT GET SHORTCUT.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

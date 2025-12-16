@@ -5,7 +5,7 @@ slug: /commands/listbox-set-headers-height
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX SET HEADERS HEIGHT.Syntax-->**LISTBOX SET HEADERS HEIGHT** ( {* ;} *objeto* ; *altura* {; *unidade*} )<!-- END REF-->
+<!--REF #_command_.LISTBOX SET HEADERS HEIGHT.Syntax-->**LISTBOX SET HEADERS HEIGHT** ( * ; *objeto* : Text ; *altura* : Integer {; *unidade* : Integer} )<br/>**LISTBOX SET HEADERS HEIGHT** ( *objeto* : Field, Variable ; *altura* : Integer {; *unidade* : Integer} )<!-- END REF-->
 <!--REF #_command_.LISTBOX SET HEADERS HEIGHT.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

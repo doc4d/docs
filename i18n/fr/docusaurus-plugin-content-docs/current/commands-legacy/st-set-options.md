@@ -5,7 +5,7 @@ slug: /commands/st-set-options
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ST SET OPTIONS.Syntax-->**ST SET OPTIONS** ( {* ;} *objet* ; *option* ; *valeur* {; *option2* ; *valeur2* ; ... ; *optionN* ; *valeurN*} )<!-- END REF-->
+<!--REF #_command_.ST SET OPTIONS.Syntax-->**ST SET OPTIONS** ( * ; *objet* : Text ; *option* : Integer ; *valeur* : Integer {; ...(*option* : Integer, *valeur* : Integer)} )<br/>**ST SET OPTIONS** ( *objet* : Field, Variable ; *option* : Integer ; *valeur* : Integer {; ...(*option* : Integer, *valeur* : Integer)} )<!-- END REF-->
 <!--REF #_command_.ST SET OPTIONS.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/choose
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Choose.Syntax-->**Choose** ( *critère* ; *valeur* {; *valeur2* ; ... ; *valeurN*} )  : any<!-- END REF-->
+<!--REF #_command_.Choose.Syntax-->**Choose** ( *critère* : Boolean, Integer ; *valeur* : Expression {; *...valeur* : Expression} )  : any<!-- END REF-->
 <!--REF #_command_.Choose.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

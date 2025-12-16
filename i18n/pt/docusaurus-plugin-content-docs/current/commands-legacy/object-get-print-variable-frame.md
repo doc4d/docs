@@ -5,7 +5,7 @@ slug: /commands/object-get-print-variable-frame
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT GET PRINT VARIABLE FRAME.Syntax-->**OBJECT GET PRINT VARIABLE FRAME** ( {* ;} *objeto* ; *tamVariavel* {; *subformFixo*} )<!-- END REF-->
+<!--REF #_command_.OBJECT GET PRINT VARIABLE FRAME.Syntax-->**OBJECT GET PRINT VARIABLE FRAME** ( * ; *objeto* : Text ; *tamVariavel* : Boolean {; *subformFixo* : Integer} )<br/>**OBJECT GET PRINT VARIABLE FRAME** ( *objeto* : Field, Variable ; *tamVariavel* : Boolean {; *subformFixo* : Integer} )<!-- END REF-->
 <!--REF #_command_.OBJECT GET PRINT VARIABLE FRAME.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

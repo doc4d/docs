@@ -5,7 +5,7 @@ slug: /commands/listbox-set-footers-height
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX SET FOOTERS HEIGHT.Syntax-->**LISTBOX SET FOOTERS HEIGHT** ( {* ;} *objet* ; *hauteur* {; *unité*} )<!-- END REF-->
+<!--REF #_command_.LISTBOX SET FOOTERS HEIGHT.Syntax-->**LISTBOX SET FOOTERS HEIGHT** ( * ; *objet* : Text ; *hauteur* : Integer {; *unité* : Integer} )<br/>**LISTBOX SET FOOTERS HEIGHT** ( *objet* : Field, Variable ; *hauteur* : Integer {; *unité* : Integer} )<!-- END REF-->
 <!--REF #_command_.LISTBOX SET FOOTERS HEIGHT.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

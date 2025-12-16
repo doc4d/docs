@@ -5,7 +5,7 @@ slug: /commands/object-get-rgb-colors
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT GET RGB COLORS.Syntax-->**OBJECT GET RGB COLORS** ( {* ;} *objet* ; *couleurAvantPlan* {; *couleurArrièrePlan* {; *couleurArrièrePlanAlt*}} )<!-- END REF-->
+<!--REF #_command_.OBJECT GET RGB COLORS.Syntax-->**OBJECT GET RGB COLORS** ( * ; *objet* : Text ; *couleurAvantPlan* : Text, Integer {; *couleurArrièrePlan* : Text, Integer {; *couleurArrièrePlanAlt* : Text, Integer}} )<br/>**OBJECT GET RGB COLORS** ( *objet* : Field, Variable ; *couleurAvantPlan* : Text, Integer {; *couleurArrièrePlan* : Text, Integer {; *couleurArrièrePlanAlt* : Text, Integer}} )<!-- END REF-->
 <!--REF #_command_.OBJECT GET RGB COLORS.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

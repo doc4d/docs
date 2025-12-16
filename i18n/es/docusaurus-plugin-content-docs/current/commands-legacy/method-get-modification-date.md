@@ -5,7 +5,7 @@ slug: /commands/method-get-modification-date
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD GET MODIFICATION DATE.Syntax-->**METHOD GET MODIFICATION DATE** ( *ruta* ; *fechaMod* ; *horaMod* {; *operador*} )<!-- END REF-->
+<!--REF #_command_.METHOD GET MODIFICATION DATE.Syntax-->**METHOD GET MODIFICATION DATE** ( *ruta* : Text, Text array ; *fechaMod* : Date, Date array ; *horaMod* : Time, Integer array {; *operador* : *} )<!-- END REF-->
 <!--REF #_command_.METHOD GET MODIFICATION DATE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

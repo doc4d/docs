@@ -5,7 +5,7 @@ slug: /commands/listbox-set-footer-calculation
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX SET FOOTER CALCULATION.Syntax-->**LISTBOX SET FOOTER CALCULATION** ( {* ;} *objeto* ; *calculo* )<!-- END REF-->
+<!--REF #_command_.LISTBOX SET FOOTER CALCULATION.Syntax-->**LISTBOX SET FOOTER CALCULATION** ( * ; *objeto* : Text ; *calculo* : Integer )<br/>**LISTBOX SET FOOTER CALCULATION** ( *objeto* : Field, Variable ; *calculo* : Integer )<!-- END REF-->
 <!--REF #_command_.LISTBOX SET FOOTER CALCULATION.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

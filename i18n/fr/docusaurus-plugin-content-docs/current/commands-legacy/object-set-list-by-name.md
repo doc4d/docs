@@ -5,7 +5,7 @@ slug: /commands/object-set-list-by-name
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT SET LIST BY NAME.Syntax-->**OBJECT SET LIST BY NAME** ( {* ;} *objet* {; *typeListe*}; énumération )<!-- END REF-->
+<!--REF #_command_.OBJECT SET LIST BY NAME.Syntax-->**OBJECT SET LIST BY NAME** ( * ; *objet* : Text {; *typeListe* : Integer}; énumération )<br/>**OBJECT SET LIST BY NAME** ( *objet* : Field, Variable {; *typeListe* : Integer}; énumération )<!-- END REF-->
 <!--REF #_command_.OBJECT SET LIST BY NAME.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/method-get-paths
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.METHOD GET PATHS.Syntax-->**METHOD GET PATHS** ( {*folderName* ;} *methodType* ; *arrPaths* {; *stamp*}{; *} )<!-- END REF-->
+<!--REF #_command_.METHOD GET PATHS.Syntax-->**METHOD GET PATHS** ( {*folderName* : Text ;} *methodType* : Integer ; *arrPaths* : Text array {; *stamp* : Real}{; *} )<!-- END REF-->
 <!--REF #_command_.METHOD GET PATHS.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

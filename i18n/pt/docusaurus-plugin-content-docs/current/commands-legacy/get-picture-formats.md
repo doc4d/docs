@@ -5,7 +5,7 @@ slug: /commands/get-picture-formats
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET PICTURE FORMATS.Syntax-->**GET PICTURE FORMATS** ( *imagem* ; *codecID* )<!-- END REF-->
+<!--REF #_command_.GET PICTURE FORMATS.Syntax-->**GET PICTURE FORMATS** ( *imagem* : Picture ; *codecID* : Text array )<!-- END REF-->
 <!--REF #_command_.GET PICTURE FORMATS.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

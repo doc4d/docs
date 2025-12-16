@@ -5,7 +5,7 @@ slug: /commands/post-click
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.POST CLICK.Syntax-->**POST CLICK** ( *ratonX* ; *ratonY* {; *proceso*} {; *} )<!-- END REF-->
+<!--REF #_command_.POST CLICK.Syntax-->**POST CLICK** ( *ratonX* : Integer ; *ratonY* : Integer {; *proceso* : Integer} {; *} )<!-- END REF-->
 <!--REF #_command_.POST CLICK.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

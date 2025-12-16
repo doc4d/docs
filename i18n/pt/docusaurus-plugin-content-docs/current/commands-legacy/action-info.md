@@ -5,7 +5,7 @@ slug: /commands/action-info
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Action info.Syntax-->**Action info** ( *ação* {; *alvo*} ) : Object<!-- END REF-->
+<!--REF #_command_.Action info.Syntax-->**Action info** ( *ação* : Text {; *alvo* : Integer} ) : Object<!-- END REF-->
 <!--REF #_command_.Action info.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

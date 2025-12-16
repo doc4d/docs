@@ -5,7 +5,7 @@ slug: /commands/listbox-get-grid
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX GET GRID.Syntax-->**LISTBOX GET GRID** ( {* ;} *objet* ; *horizontal* ; *vertical* )<!-- END REF-->
+<!--REF #_command_.LISTBOX GET GRID.Syntax-->**LISTBOX GET GRID** ( * ; *objet* : Text ; *horizontal* : Boolean ; *vertical* : Boolean )<br/>**LISTBOX GET GRID** ( *objet* : Field, Variable ; *horizontal* : Boolean ; *vertical* : Boolean )<!-- END REF-->
 <!--REF #_command_.LISTBOX GET GRID.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

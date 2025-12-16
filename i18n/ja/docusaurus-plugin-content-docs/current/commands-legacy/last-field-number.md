@@ -5,7 +5,7 @@ slug: /commands/last-field-number
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Last field number.Syntax-->**Last field number** ( *tableNum* ) : Integer<br/>**Last field number** ( *tablePtr* ) : Integer<!-- END REF-->
+<!--REF #_command_.Last field number.Syntax-->**Last field number** ( *tableNum* : 倍長整数, ポインター ) : Integer<br/>**Last field number** ( *tablePtr* : 倍長整数, ポインター ) : Integer<!-- END REF-->
 <!--REF #_command_.Last field number.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

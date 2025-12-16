@@ -5,7 +5,7 @@ slug: /commands/object-get-print-variable-frame
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT GET PRINT VARIABLE FRAME.Syntax-->**OBJECT GET PRINT VARIABLE FRAME** ( {* ;} *objet* ; *tailleVariable* {; *fixeSousForm*} )<!-- END REF-->
+<!--REF #_command_.OBJECT GET PRINT VARIABLE FRAME.Syntax-->**OBJECT GET PRINT VARIABLE FRAME** ( * ; *objet* : Text ; *tailleVariable* : Boolean {; *fixeSousForm* : Integer} )<br/>**OBJECT GET PRINT VARIABLE FRAME** ( *objet* : Field, Variable ; *tailleVariable* : Boolean {; *fixeSousForm* : Integer} )<!-- END REF-->
 <!--REF #_command_.OBJECT GET PRINT VARIABLE FRAME.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

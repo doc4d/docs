@@ -5,7 +5,7 @@ slug: /commands/convert-picture
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.CONVERT PICTURE.Syntax-->**CONVERT PICTURE** ( *imagen* ; *codec* {; *compresion*} )<!-- END REF-->
+<!--REF #_command_.CONVERT PICTURE.Syntax-->**CONVERT PICTURE** ( *imagen* : Picture ; *codec* : Text {; *compresion* : Real} )<!-- END REF-->
 <!--REF #_command_.CONVERT PICTURE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

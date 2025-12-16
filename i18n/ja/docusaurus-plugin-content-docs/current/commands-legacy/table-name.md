@@ -5,7 +5,7 @@ slug: /commands/table-name
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Table name.Syntax-->**Table name** ( *tableNum* ) : Text<br/>**Table name** ( *tablePtr* ) : Text<!-- END REF-->
+<!--REF #_command_.Table name.Syntax-->**Table name** ( *tableNum* : 倍長整数, ポインター ) : Text<br/>**Table name** ( *tablePtr* : 倍長整数, ポインター ) : Text<!-- END REF-->
 <!--REF #_command_.Table name.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/wa-get-url-history
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WA GET URL HISTORY.Syntax-->**WA GET URL HISTORY** ( {* ;} *objeto* ; *arrayURLs* {; *endereço* {; *arrTitulos*}} )<!-- END REF-->
+<!--REF #_command_.WA GET URL HISTORY.Syntax-->**WA GET URL HISTORY** ( * ; *objeto* : Text ; *arrayURLs* : Text array {; *endereço* : Integer {; *arrTitulos* : Text array}} )<br/>**WA GET URL HISTORY** ( *objeto* : Field, Variable ; *arrayURLs* : Text array {; *endereço* : Integer {; *arrTitulos* : Text array}} )<!-- END REF-->
 <!--REF #_command_.WA GET URL HISTORY.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

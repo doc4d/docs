@@ -5,7 +5,7 @@ slug: /commands/log-file-to-json
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LOG FILE TO JSON.Syntax-->**LOG FILE TO JSON** ( *rotaPastaDest* {; *tamMax* {; *rotaHist* {; *atrCampo*}}} )<!-- END REF-->
+<!--REF #_command_.LOG FILE TO JSON.Syntax-->**LOG FILE TO JSON** ( *rotaPastaDest* : Text {; *tamMax* : Integer {; *rotaHist* : Text {; *atrCampo* : Integer}}} )<!-- END REF-->
 <!--REF #_command_.LOG FILE TO JSON.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

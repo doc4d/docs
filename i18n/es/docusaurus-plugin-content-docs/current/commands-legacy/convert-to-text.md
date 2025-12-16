@@ -5,7 +5,7 @@ slug: /commands/convert-to-text
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Convert to text.Syntax-->**Convert to text** ( *BLOB* ; *juegoCaracteres* ) : Text<!-- END REF-->
+<!--REF #_command_.Convert to text.Syntax-->**Convert to text** ( *BLOB* : Blob ; *juegoCaracteres* : Text, Integer ) : Text<!-- END REF-->
 <!--REF #_command_.Convert to text.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

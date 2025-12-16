@@ -5,7 +5,7 @@ slug: /commands/object-set-context-menu
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT SET CONTEXT MENU.Syntax-->**OBJECT SET CONTEXT MENU** ( {* ;} *objet* ; *menuContext* )<!-- END REF-->
+<!--REF #_command_.OBJECT SET CONTEXT MENU.Syntax-->**OBJECT SET CONTEXT MENU** ( * ; *objet* : Text ; *menuContext* : Boolean )<br/>**OBJECT SET CONTEXT MENU** ( *objet* : Field, Variable ; *menuContext* : Boolean )<!-- END REF-->
 <!--REF #_command_.OBJECT SET CONTEXT MENU.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

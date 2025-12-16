@@ -5,7 +5,7 @@ slug: /commands/listbox-get-table-source
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX GET TABLE SOURCE.Syntax-->**LISTBOX GET TABLE SOURCE** ( {* ;} *objeto* ; *numTabla* {; *nombre* {; *nomSel*}} )<!-- END REF-->
+<!--REF #_command_.LISTBOX GET TABLE SOURCE.Syntax-->**LISTBOX GET TABLE SOURCE** ( * ; *objeto* : Text ; *numTabla* : Integer {; *nombre* : Text {; *nomSel* : Text}} )<br/>**LISTBOX GET TABLE SOURCE** ( *objeto* : Field, Variable ; *numTabla* : Integer {; *nombre* : Text {; *nomSel* : Text}} )<!-- END REF-->
 <!--REF #_command_.LISTBOX GET TABLE SOURCE.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

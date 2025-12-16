@@ -5,7 +5,7 @@ slug: /commands/listbox-get-row-font-style
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX Get row font style.Syntax-->**LISTBOX Get row font style** ( {* ;} *objet* ; *ligne* ) : Integer<!-- END REF-->
+<!--REF #_command_.LISTBOX Get row font style.Syntax-->**LISTBOX Get row font style** ( * ; *objet* : Text ; *ligne* : Integer ) : Integer<br/>**LISTBOX Get row font style** ( *objet* : Field, Variable ; *ligne* : Integer ) : Integer<!-- END REF-->
 <!--REF #_command_.LISTBOX Get row font style.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

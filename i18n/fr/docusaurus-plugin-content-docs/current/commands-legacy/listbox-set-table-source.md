@@ -5,7 +5,7 @@ slug: /commands/listbox-set-table-source
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX SET TABLE SOURCE.Syntax-->**LISTBOX SET TABLE SOURCE** ( {* ;} *objet* ; *numTable* {; *nomSurlignage*} )<br/>**LISTBOX SET TABLE SOURCE** ( {* ;} *objet* ; *tempo* {; *nomSurlignage*} )<!-- END REF-->
+<!--REF #_command_.LISTBOX SET TABLE SOURCE.Syntax-->**LISTBOX SET TABLE SOURCE** ( * ; *objet* : Text ; *numTable* : Entier long, Chaîne {; *nomSurlignage* : Text} )<br/>**LISTBOX SET TABLE SOURCE** ( *objet* : Field, Variable ; *numTable* : Entier long, Chaîne {; *nomSurlignage* : Text} )<br/>**LISTBOX SET TABLE SOURCE** ( * ; *objet* : Text ; *tempo* : Entier long, Chaîne {; *nomSurlignage* : Text} )<br/>**LISTBOX SET TABLE SOURCE** ( *objet* : Field, Variable ; *tempo* : Entier long, Chaîne {; *nomSurlignage* : Text} )<!-- END REF-->
 <!--REF #_command_.LISTBOX SET TABLE SOURCE.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

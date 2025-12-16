@@ -5,7 +5,7 @@ slug: /commands/goto-object
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GOTO OBJECT.Syntax-->**GOTO OBJECT** ( {* ;} *objet* )<!-- END REF-->
+<!--REF #_command_.GOTO OBJECT.Syntax-->**GOTO OBJECT** ( {* ;} *objet* : Field, Variable )<!-- END REF-->
 <!--REF #_command_.GOTO OBJECT.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

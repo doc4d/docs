@@ -5,7 +5,7 @@ slug: /commands/query-by-formula
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QUERY BY FORMULA.Syntax-->**QUERY BY FORMULA** ( *tabela* {; *formula*} )<!-- END REF-->
+<!--REF #_command_.QUERY BY FORMULA.Syntax-->**QUERY BY FORMULA** ( *tabela* : Table {; *formula* : Boolean} )<!-- END REF-->
 <!--REF #_command_.QUERY BY FORMULA.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

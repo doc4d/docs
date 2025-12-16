@@ -5,7 +5,7 @@ slug: /commands/get-highlight
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET HIGHLIGHT.Syntax-->**GET HIGHLIGHT** ( {* ;} *objeto* ; *inicioSel* ; *finSel* )<!-- END REF-->
+<!--REF #_command_.GET HIGHLIGHT.Syntax-->**GET HIGHLIGHT** ( {* ;} *objeto* : Field, Variable, any ; *inicioSel* : Integer ; *finSel* : Integer )<!-- END REF-->
 <!--REF #_command_.GET HIGHLIGHT.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

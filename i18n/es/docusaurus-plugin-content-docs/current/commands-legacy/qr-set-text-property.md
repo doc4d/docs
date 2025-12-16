@@ -5,7 +5,7 @@ slug: /commands/qr-set-text-property
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.QR SET TEXT PROPERTY.Syntax-->**QR SET TEXT PROPERTY** ( *area* ; *numColumna* ; *numLinea* ; *propiedad* ; *valor* )<!-- END REF-->
+<!--REF #_command_.QR SET TEXT PROPERTY.Syntax-->**QR SET TEXT PROPERTY** ( *area* : Integer ; *numColumna* : Integer ; *numLinea* : Integer ; *propiedad* : Integer ; *valor* : Integer, Text )<!-- END REF-->
 <!--REF #_command_.QR SET TEXT PROPERTY.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

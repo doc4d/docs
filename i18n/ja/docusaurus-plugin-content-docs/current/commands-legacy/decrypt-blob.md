@@ -5,7 +5,7 @@ slug: /commands/decrypt-blob
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DECRYPT BLOB.Syntax-->**DECRYPT BLOB** ( *toDecrypt* ; *sendPubKey* {; *recipPrivKey*} )<!-- END REF-->
+<!--REF #_command_.DECRYPT BLOB.Syntax-->**DECRYPT BLOB** ( *toDecrypt* : Blob ; *sendPubKey* : Blob {; *recipPrivKey* : Blob} )<!-- END REF-->
 <!--REF #_command_.DECRYPT BLOB.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

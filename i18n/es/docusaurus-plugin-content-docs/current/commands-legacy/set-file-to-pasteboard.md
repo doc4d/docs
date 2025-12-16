@@ -5,7 +5,7 @@ slug: /commands/set-file-to-pasteboard
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET FILE TO PASTEBOARD.Syntax-->**SET FILE TO PASTEBOARD** ( *archivo* {; *} )<!-- END REF-->
+<!--REF #_command_.SET FILE TO PASTEBOARD.Syntax-->**SET FILE TO PASTEBOARD** ( *archivo* : Text {; *} )<!-- END REF-->
 <!--REF #_command_.SET FILE TO PASTEBOARD.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

@@ -5,7 +5,7 @@ slug: /commands/web-service-authenticate
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WEB SERVICE AUTHENTICATE.Syntax-->**WEB SERVICE AUTHENTICATE** ( *nome* ; *senha* {; *metAutenticaçao*} {; *} )<!-- END REF-->
+<!--REF #_command_.WEB SERVICE AUTHENTICATE.Syntax-->**WEB SERVICE AUTHENTICATE** ( *nome* : Text ; *senha* : Text {; *metAutenticaçao* : Integer} {; *} )<!-- END REF-->
 <!--REF #_command_.WEB SERVICE AUTHENTICATE.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

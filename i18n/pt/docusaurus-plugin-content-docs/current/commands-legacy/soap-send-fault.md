@@ -5,7 +5,7 @@ slug: /commands/soap-send-fault
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SOAP SEND FAULT.Syntax-->**SOAP SEND FAULT** ( *tipoErro* ; *descriçao* )<!-- END REF-->
+<!--REF #_command_.SOAP SEND FAULT.Syntax-->**SOAP SEND FAULT** ( *tipoErro* : Integer ; *descriçao* : Text )<!-- END REF-->
 <!--REF #_command_.SOAP SEND FAULT.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

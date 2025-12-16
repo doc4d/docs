@@ -5,7 +5,7 @@ slug: /commands/get-subrecord-key
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Get subrecord key.Syntax-->**Get subrecord key** ( *campoID* ) : Integer<!-- END REF-->
+<!--REF #_command_.Get subrecord key.Syntax-->**Get subrecord key** ( *campoID* : Field ) : Integer<!-- END REF-->
 <!--REF #_command_.Get subrecord key.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

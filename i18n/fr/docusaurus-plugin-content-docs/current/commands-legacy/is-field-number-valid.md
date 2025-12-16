@@ -5,7 +5,7 @@ slug: /commands/is-field-number-valid
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Is field number valid.Syntax-->**Is field number valid** ( *ptrTable* ; *numChamp* ) : Boolean<br/>**Is field number valid** ( *numTable* ; *numChamp* ) : Boolean<!-- END REF-->
+<!--REF #_command_.Is field number valid.Syntax-->**Is field number valid** ( *ptrTable* : Entier long, Pointeur ; *numChamp* : Integer ) : Boolean<br/>**Is field number valid** ( *numTable* : Entier long, Pointeur ; *numChamp* : Integer ) : Boolean<!-- END REF-->
 <!--REF #_command_.Is field number valid.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

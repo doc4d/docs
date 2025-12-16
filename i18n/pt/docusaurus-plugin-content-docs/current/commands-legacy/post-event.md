@@ -5,7 +5,7 @@ slug: /commands/post-event
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.POST EVENT.Syntax-->**POST EVENT** ( *que* ; *mensagem* ; *quando* ; *mouseX* ; *mouseY* ; *modificadores* {; *processo*} )<!-- END REF-->
+<!--REF #_command_.POST EVENT.Syntax-->**POST EVENT** ( *que* : Integer ; *mensagem* : Integer ; *quando* : Integer ; *mouseX* : Integer ; *mouseY* : Integer ; *modificadores* : Integer {; *processo* : Integer} )<!-- END REF-->
 <!--REF #_command_.POST EVENT.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

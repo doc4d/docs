@@ -5,7 +5,7 @@ slug: /commands/get-picture-metadata
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.GET PICTURE METADATA.Syntax-->**GET PICTURE METADATA** ( *imagen* ; *nomMeta* ; *ContenidoMeta* {; *nomMeta2* ; *ContenidoMeta2* ; ... ; *nomMetaN* ; *ContenidoMetaN*} )<!-- END REF-->
+<!--REF #_command_.GET PICTURE METADATA.Syntax-->**GET PICTURE METADATA** ( *imagen* : Picture ; *nomMeta* : Text ; *ContenidoMeta* : Variable {; ...(*nomMeta* : Text, *ContenidoMeta* : Variable)} )<!-- END REF-->
 <!--REF #_command_.GET PICTURE METADATA.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

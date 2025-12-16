@@ -5,7 +5,7 @@ slug: /commands/hide-process
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.HIDE PROCESS.Syntax-->**HIDE PROCESS** ( *proceso* )<!-- END REF-->
+<!--REF #_command_.HIDE PROCESS.Syntax-->**HIDE PROCESS** ( *proceso* : Integer )<!-- END REF-->
 <!--REF #_command_.HIDE PROCESS.Params-->
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |

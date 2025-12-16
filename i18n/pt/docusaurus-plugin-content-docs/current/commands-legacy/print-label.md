@@ -5,7 +5,7 @@ slug: /commands/print-label
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.PRINT LABEL.Syntax-->**PRINT LABEL** ( {*tabela* }{;}{ *documento* {; *|>}} )<!-- END REF-->
+<!--REF #_command_.PRINT LABEL.Syntax-->**PRINT LABEL** ( {*tabela* : Table }{;}{ *documento* : Text {; *|>}} )<!-- END REF-->
 <!--REF #_command_.PRINT LABEL.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

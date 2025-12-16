@@ -5,7 +5,7 @@ slug: /commands/object-set-help-tip
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.OBJECT SET HELP TIP.Syntax-->**OBJECT SET HELP TIP** ( {* ;} *objeto* ; *mensagemAjuda* )<!-- END REF-->
+<!--REF #_command_.OBJECT SET HELP TIP.Syntax-->**OBJECT SET HELP TIP** ( * ; *objeto* : Text ; *mensagemAjuda* : Text )<br/>**OBJECT SET HELP TIP** ( *objeto* : Field, Variable ; *mensagemAjuda* : Text )<!-- END REF-->
 <!--REF #_command_.OBJECT SET HELP TIP.Params-->
 | Parâmetro | Tipo |  | Descrição |
 | --- | --- | --- | --- |

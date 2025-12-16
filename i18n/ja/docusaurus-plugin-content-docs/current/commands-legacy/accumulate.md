@@ -5,7 +5,7 @@ slug: /commands/accumulate
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.ACCUMULATE.Syntax-->**ACCUMULATE** ( *...data* )<!-- END REF-->
+<!--REF #_command_.ACCUMULATE.Syntax-->**ACCUMULATE** ( *...data* : Field, Variable )<!-- END REF-->
 <!--REF #_command_.ACCUMULATE.Params-->
 | 引数 | 型 |  | 説明 |
 | --- | --- | --- | --- |

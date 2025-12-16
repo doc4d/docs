@@ -5,7 +5,7 @@ slug: /commands/delete-index
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.DELETE INDEX.Syntax-->**DELETE INDEX** ( *ptrChp* {; *} )<br/>**DELETE INDEX** ( *nomIndex* {; *} )<!-- END REF-->
+<!--REF #_command_.DELETE INDEX.Syntax-->**DELETE INDEX** ( *ptrChp* : Pointeur, Chaîne {; *} )<br/>**DELETE INDEX** ( *nomIndex* : Pointeur, Chaîne {; *} )<!-- END REF-->
 <!--REF #_command_.DELETE INDEX.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |

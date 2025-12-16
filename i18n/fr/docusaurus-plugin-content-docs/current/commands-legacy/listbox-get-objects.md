@@ -5,7 +5,7 @@ slug: /commands/listbox-get-objects
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX GET OBJECTS.Syntax-->**LISTBOX GET OBJECTS** ( {* ;} *objet* ; *tabNomsObj* )<!-- END REF-->
+<!--REF #_command_.LISTBOX GET OBJECTS.Syntax-->**LISTBOX GET OBJECTS** ( * ; *objet* : Text ; *tabNomsObj* : Text array )<br/>**LISTBOX GET OBJECTS** ( *objet* : Field, Variable ; *tabNomsObj* : Text array )<!-- END REF-->
 <!--REF #_command_.LISTBOX GET OBJECTS.Params-->
 | Paramètre | Type |  | Description |
 | --- | --- | --- | --- |
