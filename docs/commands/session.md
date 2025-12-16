@@ -86,7 +86,7 @@ For more information on standalone sessions, please refer to the [**Standalone s
 
 ### `Session` and components 
 
-When `Session` is called from the code of different components loaded in the project, the command returns an object depending on the calling request and the context:
+When `Session` is called from the code of different [components loaded in the project](../Concepts/components.md), the command returns an object depending on the calling request and the context:
 
 - in case of a web request, `Session` always returns the session attached to the target web server of the request (and not a session of the component's web server),
 - in case of a remote request executed on the server, `Session` always returns the session attached to the remote user, 
