@@ -39,7 +39,7 @@ Para obtener más información, consulte el párrafo [Tipos de sesion](../API/Se
 
 El comando devuelve *Null* si:
 
-- it is called in a web process and scalable sessions are disabled on the web server,
+- se llama en un proceso web y se desactivan las sesiones escalables en el servidor web,
 - se llama en un 4D remoto.
 
 ### Sesiones web
