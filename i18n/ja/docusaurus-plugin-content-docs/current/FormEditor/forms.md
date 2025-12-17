@@ -126,27 +126,27 @@ Fluent UI のサポートは現在デベロッパープレビューのフェー�
 
 ### 要件
 
-The Fluent UI rendering requires that the [**Windows App SDK version 1.7.3**](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/downloads) be installed. You need to install this SDK on any Windows machine displaying your forms.
+Fluent UI レンダリングには、[**Windows App SDK version 1.7.3**](https://learn.microsoft.com/ja-jp/windows/apps/windows-app-sdk/downloads) がインストールされている必要があります。 フォームを表示するためには、この SDK をWindows マシンにインストールする必要があります。
 
-If the Windows App SDK is not properly installed, 4D will render all your forms in classic mode with no error.
+Windows App SDK が適切にインストールされていない場合、4D はフォームを全てクラシックモードで、エラーなしに表示します。
 
-### Enabling the Fluent UI rendering
+### Fluent UI レンダリングを有効化する
 
-You can enable the Fluent UI rendering mode at the application level or at the form level. Form setting has priority over application setting.
+Fluent UI レンダリングモードは、アプリケーションレベルまたはフォームレベルで有効化することができます。 フォームでの設定の方がアプリケーションの設定より優先されます。
 
-#### Application setting
+#### アプリケーション設定
 
-Check the **Use Fluent UI on Windows** option in the "Interface" page of the Settings dialog box.
+ストラクチャー設定ダイアログボックスの"インターフェース" ページ内にある **Windows で Fluent UI を使用する** オプションをチェックします。
 
 ![](../assets/en/FormObjects/fluentui-setting.png)
 
-In this case, the Fluent UI rendering mode will be used by default on Windows for all forms.
+この場合、Windows 上ではデフォルトで全てのフォームにおいてFluent UI レンダリングモードが使用されます。
 
-#### Form setting
+#### フォーム設定
 
-Each form can define its own rendering via the **Widget appearance** property. 次のオプションから選択することができます:
+それぞれのフォームは、 **Widget appearance** プロパティによって独自のレンダリング設定を定義することができます。 次のオプションから選択することができます:
 
-- **Inherited**: inherits the global application setting (default),
+- **継承**: グローバルなアプリケーション設定を継承します(デフォルト)
 - **Classic**: uses the classic Windows style,
 - **Fluent UI**: enables the modern rendering based on Fluent UI. <br/>
   ![](../assets/en/FormObjects/fluentui-form.png)
