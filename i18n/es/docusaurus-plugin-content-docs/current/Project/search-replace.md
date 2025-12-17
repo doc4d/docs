@@ -18,7 +18,7 @@ There are also functions for searching among the methods of your project in the 
 
 ## Buscar ubicación
 
-When you search the Design environment, the following elements are searched:
+Cuando se busca en el entorno Diseño, se buscan los siguientes elementos:
 
 - Names of project methods and classes
 - Contenido de todos los métodos y clases
@@ -28,7 +28,7 @@ When you search the Design environment, the following elements are searched:
   - names of help tips, pictures, variables, style sheets,
   - formatting strings
   - expresiones
-- Menus (names and items) and commands associated with menu items
+- Menús (nombres y elementos) y comandos asociados a los elementos de menú
 - Listas de selección (nombres y elementos)
 - Consejos de ayuda (nombres y contenido)
 - Formatos / filtros (nombres y contenido)
@@ -76,7 +76,7 @@ You specify the type of element to look for using the **Find** menu. Las siguien
 
 :::note
 
-The end result of both types of searches depends on the [search mode](#search-mode) selected.
+El resultado final de ambos tipos de búsqueda depende del [modo de búsqueda](#search-mode) seleccionado.
 
 :::
 
@@ -103,7 +103,7 @@ The search mode menu (i.e. "which", "that is" or "whose name") specifies how to 
 - Opciones de búsqueda de Texto o Comentario:
   - **contains**: Searches all text in the Design environment for the specified string. Search results for "var" can include "myvar", "variable1" or "aVariable".
   - **contiene la palabra completa**: busca en todo el texto del entorno Diseño la cadena como palabra entera. Los resultados de la búsqueda de "var" sólo incluyen apariciones exactas. They will not include "myvar" but will include, for example, "var:=10" or "ID+var" because the symbols : or + are word separators.
-  - **begins with / ends with**: Searches for the string at the beginning or end of the word (text search) or at the beginning or end of the comment line (comment search). In "Text ends with" mode, searching for "var" will find "myvar".
+  - **begins with / ends with**: Searches for the string at the beginning or end of the word (text search) or at the beginning or end of the comment line (comment search). En modo "El texto termina en", si busca "var" encontrará "myvar".
 - Search options for Language element: The menu offers standard options (matches, contains, begins with, ends with). Note that you can use the search wildcard (@) with the matches option (returns all objects of the type specified).
 
 ### Search in components
@@ -190,7 +190,7 @@ Puede realizar varias acciones utilizando el menú opciones:
 - [**Reemplazar en contenido**](#replace-in-contents): reemplaza una cadena de caracteres dentro del elemento o elementos seleccionados.
 - **Select >**: selects one type of item (project methods, object names, and so on) from among all the items found in the Results window. The hierarchical sub-menu also provides commands to select (All) or deselect (None) all the items at once.
 - **Contraer todo/Expandir todo**: expande o contrae todos los elementos jerárquicos de la lista de resultados.
-- **Exportar resultados**: exporta información sobre los criterios de búsqueda y los elementos que aparecen en la ventana Resultados. This text file can then be imported into a spreadsheet such as Excel, for example. For each item, the following information is exported as tab-separated values in a text file:
+- **Exportar resultados**: exporta información sobre los criterios de búsqueda y los elementos que aparecen en la ventana Resultados. Este archivo de texto puede importarse a una hoja de cálculo como Excel, por ejemplo. For each item, the following information is exported as tab-separated values in a text file:
   - Proyecto anfitrión o nombre del componente
   - Type (method, Class, formObject, trigger...)
   - Path
@@ -221,7 +221,7 @@ Las operaciones de sustitución funcionan del siguiente modo:
 - Para cada objeto modificado, 4D comprueba si ya está cargado por otra máquina o en otra ventana. In the case of conflict, a standard dialog box appears indicating that the object is locked. You can close the object and then try again or cancel its replacement. The replacing operation will then continue with the other objects in the list.
 - If a method or form concerned by a "replace in content" operation is currently being edited by the same 4D application, it will be modified directly in the open editor (no warning appears). Forms and methods modified in this way are not saved automatically: you will need to use the **Save** or **Save All** command explicitly to validate the changes.
 - After a replacement is made in a list item, it will appear in italics. A count of replacements made in real time appears at the bottom of the window.
-- Los elementos nunca son renombrados por la función **Reemplazar en contenido**, excepto los objetos formulario. Por lo tanto, es posible que ciertos elementos de la lista no se vean afectados por la operación de reemplazo. This can occur when only the item name corresponds to the initial search criteria. In this case, the list items do not necessarily all appear in italics and the final replacement count may be less than the number of occurrences found by the initial search.
+- Los elementos nunca son renombrados por la función **Reemplazar en contenido**, excepto los objetos formulario. Por lo tanto, es posible que ciertos elementos de la lista no se vean afectados por la operación de reemplazo. Esto puede ocurrir cuando sólo el nombre del artículo corresponde a los criterios de búsqueda iniciales. In this case, the list items do not necessarily all appear in italics and the final replacement count may be less than the number of occurrences found by the initial search.
 
 ## Renombrar métodos y variables del proyecto
 
@@ -249,7 +249,7 @@ Two specific search commands allow you to detect variables and methods that are 
 
 ### Find Unused Methods and Global Variables
 
-This command looks for project methods as well as "global" variables (process and interprocess variables) that are declared but not used. The search results appear in a standard [Results window](#results-window).
+This command looks for project methods as well as "global" variables (process and interprocess variables) that are declared but not used. Los resultados de la búsqueda aparecen en una [ventana de resultados](#results-window).
 
 A project method is considered to be unused when:
 
@@ -275,7 +275,7 @@ Este código construye un nombre de método. The *mymethod42* project method is 
 
 ### Buscar variables locales no utilizadas
 
-This command looks for local variables that are declared but not used. The search results appear in a standard [Results window](#results-window).
+This command looks for local variables that are declared but not used. Los resultados de la búsqueda aparecen en una [ventana de resultados](#results-window).
 
 A local variable is considered to be unused when:
 
