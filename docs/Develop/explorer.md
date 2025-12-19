@@ -26,6 +26,12 @@ This section allows you to view the list of Qodly pages defined your project. Yo
 
 The pages listed in the Qodly Pages section are stored in the [**WebForm** subfolder](../Project/architecture.md#webforms) of the project's Sources folder.
 
+:::note
+
+Qodly pages are not supported in the **Home** page of the Explorer.
+
+:::
+
 
 ### Requirements
 
