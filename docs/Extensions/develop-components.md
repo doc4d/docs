@@ -474,11 +474,10 @@ To declare a custom icon for your component:
 
 1. Create a picture file for the icon and name it `logo.svg` or `logo.png`.
 
-The picture will be displayed in 512x512 pixels (it is automatically resized if necessary). 
+Note that the picture will be displayed with a square shape (and automatically resized if necessary). The svg format is recommended.
 
-2. Copy the icon file in the [**root folder**](../Project/architecture.md) or [**Resources folder**](../Project/architecture.md#resources) of the component.
+2. Copy the icon file in the [**Resources folder**](../Project/architecture.md#resources) of the component.
 
-![](../assets/en/Develop/icon-comp-folder.png)
 
 The logo file will be used in the Project Dependency window for the component, whether it is interpreted or [built](../Desktop/building.md#build-component). 
 
@@ -487,7 +486,7 @@ The logo file will be used in the Project Dependency window for the component, w
 
 :::note
 
-If a "logo" file is located in both locations, the root folder takes priority. If both a `logo.svg` and `logo.png` files are found, the `logo.svg` takes priority. 
+If both a `logo.svg` and `logo.png` files are found, the `logo.svg` takes priority. 
 
 :::
 
