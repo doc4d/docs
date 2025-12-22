@@ -472,9 +472,7 @@ When no custom icon is defined, components use a **default icon**:
 
 To declare a custom icon for your component:
 
-1. Create a picture file for the icon and name it `logo.svg` or `logo.png`.
-
-Note that the picture will be displayed with a square shape (and automatically resized if necessary). The svg format is recommended.
+1. Create a picture file for the icon and name it `logo.svg` or `logo.png`. Note that the picture will be displayed with a square shape (and automatically resized if necessary). The **svg** format is recommended.
 
 2. Copy the icon file in the [**Resources folder**](../Project/architecture.md#resources) of the component.
 
