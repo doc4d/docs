@@ -858,6 +858,6 @@ La propiedad `.userName` contiene <!-- REF #SessionClass.userName.Summary -->el 
 - **Remote/Stored procedure sessions**: This property returns the same user name as the [`Current user`](../commands-legacy/current-user.md) command.
 - **Standalone sessions**: This property contains "designer" or the name set with the [`SET USER ALIAS`](../commands-legacy/set-user-alias.md) command.
 
-This property is **read only** for desktop sessions.
+Esta propiedad es **sólo de lectura** para las sesiones de escritorio.
 
 <!-- END REF -->
