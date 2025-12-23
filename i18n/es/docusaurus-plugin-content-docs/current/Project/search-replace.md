@@ -83,18 +83,18 @@ El resultado final de ambos tipos de búsqueda depende del [modo de búsqueda](#
 - **Language expression**: Used to search for any valid 4D expression; the search is performed in the "contains" search mode. La validez es importante porque 4D debe ser capaz de evaluar una expresión para poder buscarla. For example, a search for "[clients" (invalid expression) will not return any result whereas "[clients]" is correct. Esta opción es especialmente adecuada para la búsqueda de asignaciones de valor y comparaciones. Por ejemplo:
   - Buscar "myvar:=" (asignación)
   - Buscar "myvar=" (comparación)
-- **Language element**: Used to search for a specific language element by its name. 4D can distinguish between the following elements:
+- **Language element**: Used to search for a specific language element by its name. 4D puede distinguir entre los siguientes elementos:
   - **Cualquier elemento del lenguaje**: todo elemento de la lista de abajo.
   - **Método proyecto o clase**: nombre de un método proyecto o clase, por ejemplo "M_Add" o "EmployeeEntity".
   - **Form:** Form name, for example "Input". El comando busca entre formularios proyecto y formularios tabla.
   - **Field or Table**: Name of a table or field, for example "Customers".
-  - **Variable**: Any variable name, such as "$myvar".
+  - **Variable**: todo nombre de variable, como "$myvar".
     **4D constant**: Any constant, such as "Is Picture".
     **String in quotes**: Literal text constant; i.e. any value within quotes in the code editor or inserted into text areas of the Form editor (static text or group boxes). For example, a search for "Martin" will return results if your code contains the line: `ds.Customer.query("name = :1"; "Martin")`
   - **4D command**: Any 4D command, for example "Alert".
   - **Plug-in command**: Plug-in command installed in the application.
   - **Properties**: An object property name (includes ORDA attribute names). For example "lastname" will find "$o.lastname" and "ds.Employee.lastname".
-- **Cualquier objeto**: esta opción busca entre todos los elementos del entorno Diseño. Only the modification date filter is available. Use this option, for example, to search for "anything modified today".
+- **Cualquier objeto**: esta opción busca entre todos los elementos del entorno Diseño. Sólo está disponible el filtro de fecha de modificación. Use this option, for example, to search for "anything modified today".
 
 ### Modo de búsqueda
 
@@ -108,7 +108,7 @@ The search mode menu (i.e. "which", "that is" or "whose name") specifies how to 
 
 ### Search in components
 
-When your current project references [editable components](../Extensions/develop-components.md#editing-components), you can designate one or all your components as a target for the search. By default, a search is executed in the host only. To modify the target for a search, deploy the **in the project** menu:
+When your current project references [editable components](../Extensions/develop-components.md#editing-components), you can designate one or all your components as a target for the search. Por defecto, una búsqueda se ejecuta sólo en el host. To modify the target for a search, deploy the **in the project** menu:
 
 ![](../assets/en/Project/find-components.png)
 
@@ -247,11 +247,11 @@ Depending on the type of object you are renaming (project method or variable), t
 
 Two specific search commands allow you to detect variables and methods that are not used in the code of your host project. You can then remove them to free up memory. These commands are found in the **Edit** menu of the Design environment.
 
-### Find Unused Methods and Global Variables
+### Encontrar métodos y variables globales no utilizados
 
 This command looks for project methods as well as "global" variables (process and interprocess variables) that are declared but not used. Los resultados de la búsqueda aparecen en una [ventana de resultados](#results-window).
 
-A project method is considered to be unused when:
+Se considera que un método proyecto no se utiliza cuando:
 
 - no está en la Papelera,
 - it is not called anywhere in the 4D code,
@@ -277,7 +277,7 @@ Este código construye un nombre de método. The *mymethod42* project method is 
 
 This command looks for local variables that are declared but not used. Los resultados de la búsqueda aparecen en una [ventana de resultados](#results-window).
 
-A local variable is considered to be unused when:
+Se considera que una variable local no se utiliza cuando:
 
 - it is [declared](../Concepts/variables.md#declaring-variables) in the 4D code,
 - it is not used anywhere else within the same method.
