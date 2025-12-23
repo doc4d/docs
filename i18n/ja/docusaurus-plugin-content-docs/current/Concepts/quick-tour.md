@@ -429,5 +429,6 @@ End for
 4D ランゲージドキュメントでは、次の表記が使われています:
 
 - 中カッコ `{ }` は、任意のパラメーターを示します。 たとえば、`.delete( { option : Integer } )` という表記の場合、関数を呼び出す際に *option* パラメーターを省略することができます。
-- `{ ; ...param }` という表記は、パラメーターの数に制限がないことを示します。 たとえば、`.concat( value : any { ;...valueN } ) : Collection` という表記の場合、データ型および数に制限なく関数に引数を渡すことができます。
+- the `{; ...*param* : Type}` notation indicates an unlimited number of parameters of the same type. For example, `.concat( value : any { ;...valueN : Text } ) : Collection` means that an unlimited number of values of any type can be passed to the function.
+- the `{; ...(*param* : Type ; *param2* : Type) }` notation indicates an unlimited number of groups of parameters. For example, `COLLECTION TO ARRAY ( collection : Collection ; array : Array {; propertyName : Text}{; ...(array : Array ; propertyName : Text) } )` means that an unlimited number of couple values or type array/text can be passed to the command.
 - `any` キーワードは、あらゆる型(数値、テキスト、ブール、日付、時間、オブジェクト、コレクション、など)が可能な引数に対して使用されます。
