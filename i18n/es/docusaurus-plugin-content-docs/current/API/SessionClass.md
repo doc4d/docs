@@ -379,7 +379,7 @@ Keep in mind that privileges only apply to the code executed through web accesse
 
 #### Ejemplo
 
-You want to check if the "CreateInvoices" privilege is associated to the web user session:
+Desea verificar si el privilegio "CreateInvoices" está asociado a la sesión del usuario web:
 
 ```4d
 If (Session.hasPrivilege("CreateInvoices"))
