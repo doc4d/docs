@@ -80,7 +80,7 @@ El objeto `Session` está disponible desde cualquier proceso en aplicaciones ind
 
 For more information on standalone sessions, please refer to the [**Standalone sessions**](../Desktop/sessions.md#standalone-sessions) paragraph.
 
-### `Session` and components
+### `Session` y componentes
 
 When `Session` is called from the code of different [components loaded in the project](../Concepts/components.md), the command returns an object depending on the calling request and the context:
 
