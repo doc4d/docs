@@ -25,7 +25,7 @@ Session オブジェクトは [`Session`](../commands/session.md) コマンド�
 
 :::warning セッション権限について
 
-All session types can handle privileges, but only the code executed in a **web context** is actually controlled by session's privileges.
+全てのセッションタイプは権限を管理できますが、**web コンテキスト** 内で実行されたコードに関してだけは、実際にはセッションの権限によって管理されます。
 
 :::
 
@@ -90,7 +90,7 @@ All session types can handle privileges, but only the code executed in a **web c
 #### 例題
 
 ```4d
-//Invalidate a web user session
+// Web ユーザーセッションを無効化する
 var $isOK : Boolean
 
 $isOK:=Session.clearPrivileges()
