@@ -1,22 +1,22 @@
 ---
 id: desktop-sessions
-title: Desktop Sessions
+title: デスクトップセッション
 ---
 
-A **desktop session** is a user-related execution context on 4D Server or 4D single-user that does not result from any web or REST access.
+**デスクトップセッション** とは、4D Server または4D シングルユーザー版のユーザー関連の実行コンテキストであり、Web やREST アクセスに起因するものではないものです。
 
-Just like in a [**web user session**](../WebServer/sessions.md), the code executed in a desktop session has access to a [`Session`](../API/SessionClass.md) object which provides functions and properties allowing you to store session values and to share them between user processes, for example using the [`session.storage`](../API/SessionClass.md#storage) object.
+[**Web ユーザーセッション**](../WebServer/sessions.md) 同様、デスクトップセッションで実行されたコードは[`Session`](../API/SessionClass.md) オブジェクトへのアクセスが可能で、これによって提供される関数やプロパティによって(例えば[`session.storage`](../API/SessionClass.md#storage) オブジェクトを使用することによって)セッションの値を保存したりユーザープロセス間で共有することが可能になります。
 
-However, unlike the code executed in web user sessions, the code executed in desktop sessions is not controlled by [roles and privileges](../ORDA/privileges.md). It can access any parts of the 4D application, including ORDA and data model classes. On 4D Server, [users and groups feature](../Users/handling_users_groups.md) can manage user accesses.
+しかしながら、Web ユーザーセッション内で実行されたコードとは違い、デスクトップセッション内で実行されたコードは[ロールと権限](../ORDA/privileges.md)によっては管理されません。 これはORDA およびデータモデルクラスを含め、4D アプリケーションのどの部分へもアクセスすることができます。 4D Server 上では、[ユーザー&グループ機能](../Users/handling_users_groups.md) でユーザーアクセスを管理することができます。
 
-You can nevertheless [**share** a desktop session with a web session](#sharing-a-desktop-session-for-web-accesses) so that a desktop user can access your 4D application through a web interface, using for example Qodly pages and Web areas.
+それでも、[デスクトップセッションをWeb セッションと**共有** すること](#webアクセス用にデスクトップセッションを共有する) ことができ、これによってデスクトップユーザーは、例えばQodly ページとWeb エリアを使用して、Web インターフェースを通して4D アプリケーションへとアクセスうすることができます。
 
 ## セッションの種類
 
-Desktop sessions include:
+デスクトップセッションには以下のような種類が含まれます:
 
-- **Remote user sessions**: In client/server applications, the session that manages the user processes on the server.
-- **Stored procedures sessions**: In client/server applications, the unique virtual user session that manages all stored procedures executed on the server.
+- **リモートユーザーセッション**: クライアント/サーバーアプリケーションにおいては、サーバー上でユーザープロセスを管理するセッション。
+- **ストアドプロシージャーセッション**: クライアント/サーバーアプリケーションにおいては、サーバー上で実行される全てのストアドプロシージャーを管理する固有のバーチャルユーザーセッション。
 - **Standalone sessions**: Local session object returned in single-user application (useful in development and test phases of client/server applications).
 
 :::note
