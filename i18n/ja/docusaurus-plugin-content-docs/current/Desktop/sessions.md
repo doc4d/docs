@@ -21,21 +21,21 @@ title: デスクトップセッション
 
 :::note
 
-Keep in mind that [**Web sessions**](../WebServer/sessions.md) are used as soon as the 4D project is accessed through web or REST requests and [scalable sessions](../WebServer/sessions.md#enabling-web-sessions) are enabled.
+[スケーラブルセッション](../WebServer/sessions.md#webセッションの有効化) 有効化されているときに、4D プロジェクトがWeb またはREST 経由でアクセスがあれば、すぐに[**Web セッション**](../WebServer/sessions.md) が使用されるという点に注意してください。
 
 :::
 
-The following diagram shows the different session types and how they interact:
+以下の図は、異なるセッションの種類とそれらがどのように関連するかを表しています:
 
 ![](../assets/en/Desktop/sessions.png)
 
 ## リモートユーザーセッション
 
-On the server, in "user processes" (i.e. processes related to remote users), the [`Session`](../commands/session.md) command returns a `session` object describing the current user session. このオブジェクトを扱うには、[`Session` クラス](../API/SessionClass.md) の関数とプロパティを使用します。
+サーバー上では、"ユーザープロセス"(つまりリモートユーザーに関連したプロセス)内では、[`Session`](../commands/session.md) コマンドはカレントのユーザーセッションを表す `session` オブジェクトを返します。  このオブジェクトを扱うには、[`Session` クラス](../API/SessionClass.md) の関数とプロパティを使用します。
 
 :::note
 
-On a remote 4D, the `session` object always returns null.
+リモート4D では、 `session` オブジェクトは常に null を返します。
 
 :::
 
@@ -59,12 +59,12 @@ On a remote 4D, the `session` object always returns null.
 
 - [サーバー上で実行](../Project/code-overview.md#サーバー上で実行) 属性を持つプロジェクトメソッド (クライアントプロセスの "双子" プロセスで実行されます)
 - トリガー
-- ORDA [data model functions](../ORDA/ordaClasses.md) (except those declared with the [`local`](../ORDA/ordaClasses.md#local-functions) keyword),
-- Database methods such as [`On Server Open Connection`](../commands/on-server-open-connection-database-method) and [`On Server Close Connection`](../commands/on-server-close-connection-database-method).
+- ORDA [データモデル関数](../ORDA/ordaClasses.md) (ただし、[`local`](../ORDA/ordaClasses.md#local-functions) キーワードで宣言されているものを除く)
+- [`On Server Open Connection`](../commands/on-server-open-connection-database-method) と [`On Server Close Connection`](../commands/on-server-close-connection-database-method)などのデータベースメソッド。
 
-## Stored procedure sessions
+## ストアドプロシージャーセッション
 
-On the server, all [stored procedures](https://doc.4d.com/4Dv20/4D/20/Stored-Procedures.300-6330553.en.html) share the same virtual user session.
+サーバー上では、全ての[ストアドプロシージャー](https://doc.4d.com/4Dv20/4D/20/Stored-Procedures.300-6330553.ja.html) は同じバーチャルユーザーセッションを共有します。
 
 ### 効果
 
