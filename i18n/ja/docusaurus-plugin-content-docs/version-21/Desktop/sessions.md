@@ -17,7 +17,7 @@ title: デスクトップセッション
 
 - **リモートユーザーセッション**: クライアント/サーバーアプリケーションにおいては、サーバー上でユーザープロセスを管理するセッション。
 - **ストアドプロシージャーセッション**: クライアント/サーバーアプリケーションにおいては、サーバー上で実行される全てのストアドプロシージャーを管理する固有のバーチャルユーザーセッション。
-- **Standalone sessions**: Local session object returned in single-user application (useful in development and test phases of client/server applications).
+- **スタンドアロンセッション**: シングルユーザーアプリケーション内で返されるローカルセッションオブジェクト(クライアント/サーバーアプリケーションの開発およびテストフェーズにおいて有用です)。
 
 :::note
 
