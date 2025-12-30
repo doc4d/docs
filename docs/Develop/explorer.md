@@ -28,7 +28,7 @@ The pages listed in the Qodly Pages section are stored in the [**WebForm** subfo
 
 :::note
 
-Qodly pages are not supported in the **Home** page of the Explorer.
+Qodly pages are not visible in the **Home** page of the Explorer.
 
 :::
 
