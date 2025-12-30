@@ -500,7 +500,7 @@ Les modules optionnels suivants peuvent être désélectionnés :
 
 ## Page Licences & Certificat
 
-La page Licences & Certificat vous permet de :
+The Licenses & Certificate page can be used to:
 
 - configurer les [licences de déploiement](../Admin/licenses.md#deployment-licenses) que vous souhaitez intégrer dans votre application [autonome](#application-page) ou [client-serveur](#clientserver-page),
 - signer l'application à l'aide d'un certificat sous macOS.
