@@ -69,23 +69,17 @@ This text file can also contain configuration keys, in particular [`"tokenizedTe
 | styleSheets_mac.css     | Feuilles de style css sur Windows (à partir d'une base binaire convertie)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | CSS    |
 | styleSheets_windows.css | Feuilles de style css sur Mac (à partir d'une base binaire convertie)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | CSS    |
 
-#### `DatabaseMethods`
-
-| Contenu                                  | Description                                                                        | Format |
-| ---------------------------------------- | ---------------------------------------------------------------------------------- | ------ |
-| *databaseMethodName*.4dm | Méthodes base définies dans le projet. Un fichier par méthode base | text   |
-
-#### `Methods`
-
-| Contenu                          | Description                                                                     | Format |
-| -------------------------------- | ------------------------------------------------------------------------------- | ------ |
-| *methodName*.4dm | Méthodes projet définies dans le projet. Un fichier par méthode | text   |
-
 #### `Classes`
 
 | Contenu                         | Description                                                                                                                                                                   | Format |
 | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | *className*.4dm | Méthode de définition de classe utilisateur, permettant d'instancier des objets spécifiques. Un fichier par classe, le nom du fichier est le nom de la classe | text   |
+
+#### `DatabaseMethods`
+
+| Contenu                                  | Description                                                                        | Format |
+| ---------------------------------------- | ---------------------------------------------------------------------------------- | ------ |
+| *databaseMethodName*.4dm | Méthodes base définies dans le projet. Un fichier par méthode base | text   |
 
 #### `Formulaires`
 
@@ -95,6 +89,20 @@ This text file can also contain configuration keys, in particular [`"tokenizedTe
 | *formName*/method.4dm                     | Méthode formulaire projet                                    | text    |
 | *formName*/Images/*pictureName*                           | Image statique du formulaire projet                          | picture |
 | *formName*/ObjectMethods/*objectName*.4dm | Méthodes objet. Un fichier par méthode objet | text    |
+
+#### `Methods`
+
+| Contenu                          | Description                                                                     | Format |
+| -------------------------------- | ------------------------------------------------------------------------------- | ------ |
+| *methodName*.4dm | Méthodes projet définies dans le projet. Un fichier par méthode | text   |
+
+#### `Shared`
+
+| Contenu                                                 | Description                                                                                                                                           | Format |
+| ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| assets/                                                 | [Shared files](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/events/bindingActionToEvents#shared-folder) such as pictures used in Qodly pages | variés |
+| CustomComponents/                                       | [Custom components](https://developer.4d.com/qodly/Integrations/customComponent/overview) files used in Qodly pages                                   | json   |
+| *other_files*.json | shared elements such as css or datasources used in Qodly pages                                                                                        | json   |
 
 #### `TableForms`
 
@@ -116,6 +124,13 @@ This text file can also contain configuration keys, in particular [`"tokenizedTe
 | table__n_.4dm | Méthodes trigger définies dans le projet. Un fichier de trigger par table (n étant le numéro de table) | text   |
 
 **Note:** The .4dm file extension is a text-based file format, containing the code of a 4D method. Il est compatible avec les outils de contrôle de version.
+
+#### `WebForms`
+
+| Contenu                                                      | Description                                                                                                                 | Format |
+| ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- | ------ |
+| *QodlyFormName*.WebForm                      | Json representations of Qodly pages                                                                                         | JSON   |
+| crafted_components.json | Description of [components crafted](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/craftedComponents) on Qodly pages | JSON   |
 
 ### `Trash`
 
