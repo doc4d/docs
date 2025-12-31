@@ -1,5 +1,5 @@
 ---
-id: explorador
+id: explorer
 title: Explorador
 ---
 
