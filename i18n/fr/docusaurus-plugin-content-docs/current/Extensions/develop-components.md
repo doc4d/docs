@@ -114,9 +114,9 @@ Les fonctionnalités standard de l'IDE 4D sont disponibles pour le composant. Vo
 - exécuter des méthodes,
 - restaurer à partir de la corbeille ou vider la corbeille.
 
-### Search and replace
+### Rechercher et Remplacer
 
-You can use the [**Search and replace** features](../Project/search-replace.md) of the host project to search elements within the code or the forms of your editable components. The **Search in project** menu allows you to select one or all components as search target:
+Vous pouvez utiliser les [**fonctions de recherche et de remplacement**](../Project/search-replace.md) du projet hôte pour rechercher des éléments dans le code ou les formulaires de vos composants modifiables. Le menu **Chercher dans le projet** vous permet de sélectionner un ou tous les composant(s) comme cible de la recherche :
 
 ![](../assets/en/Project/find-components.png)
 
@@ -447,6 +447,30 @@ Un composant peut exécuter automatiquement du code 4D lors de l'ouverture ou de
 L'exécution du code d'initialisation ou de fermeture se fait au moyen de la méthode base `On Host Database Event`.
 
 > Pour des raisons de sécurité, vous devez autoriser explicitement l'exécution de la méthode base `On Host Database Event` dans la base hôte afin de pouvoir l'appeler. Pour ce faire, vous devez cocher l'option [**Exécuter la méthode "Sur événement base hôte" des composants**](../settings/security.md#options) dans la page Sécurité des Propriétés du projet.
+
+## Icône personnalisée
+
+Vous pouvez utiliser une **icône personnalisée** pour votre dépendance, afin de la distinguer visuellement des autres composants dans la [fenêtre des dépendances du projet](../Project/components.md#monitoring-project-dependencies).
+
+Si aucune icône personnalisée n'est définie, les composants utilisent une **icône par défaut** :
+
+![](../assets/en/Develop/icon-comp-default.png)
+
+Pour déclarer une icône personnalisée pour votre composant :
+
+1. Créez un fichier image pour l'icône et nommez-le `logo.svg` ou `logo.png`. Notez que l'image sera affichée avec une forme carrée (et automatiquement redimensionnée si nécessaire). Le format **svg** est recommandé.
+
+2. Copiez le fichier d'icône dans le dossier [**Resources**](../Project/architecture.md#resources) du composant.
+
+Le fichier logo sera utilisé dans la fenêtre de dépendance du projet pour le composant, qu'il soit interprété ou [généré](../Desktop/building.md#build-component).
+
+![](../assets/en/Develop/icon-comp.png)
+
+:::note
+
+Si les deux fichiers `logo.svg` et `logo.png` sont trouvés, le `logo.svg` est prioritaire.
+
+:::
 
 ## Info.plist
 

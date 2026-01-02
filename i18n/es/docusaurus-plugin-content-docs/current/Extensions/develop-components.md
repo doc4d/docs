@@ -114,7 +114,7 @@ Las funcionalidades estándar del IDE 4D están disponibles para el componente. 
 - ejecutar métodos,
 - restaurar desde la papelera o vaciar la papelera.
 
-### Search and replace
+### Buscar y reemplazar
 
 You can use the [**Search and replace** features](../Project/search-replace.md) of the host project to search elements within the code or the forms of your editable components. The **Search in project** menu allows you to select one or all components as search target:
 
@@ -447,6 +447,30 @@ Un componente puede ejecutar automáticamente código 4D al abrir o cerrar la ba
 La ejecución del código de inicialización o cierre se realiza mediante el método base `On Host Database Event`.
 
 > Por razones de seguridad, debe autorizar explícitamente la ejecución del método base `On Host Database Event` en la base local para poder llamarlo. Para ello, debe marcar la opción [**Ejecutar el método "On Host Database Event" de los componentes**](../settings/security.md#options) en la página Seguridad de la Configuración.
+
+## Ícono personalizado
+
+You can use a **custom icon** for your dependency, so that it can be visually distinguished from other components in the [Project Dependencies panel](../Project/components.md#monitoring-project-dependencies).
+
+When no custom icon is defined, components use a **default icon**:
+
+![](../assets/en/Develop/icon-comp-default.png)
+
+To declare a custom icon for your component:
+
+1. Create a picture file for the icon and name it `logo.svg` or `logo.png`. Note that the picture will be displayed with a square shape (and automatically resized if necessary). The **svg** format is recommended.
+
+2. Copy the icon file in the [**Resources folder**](../Project/architecture.md#resources) of the component.
+
+The logo file will be used in the Project Dependency window for the component, whether it is interpreted or [built](../Desktop/building.md#build-component).
+
+![](../assets/en/Develop/icon-comp.png)
+
+:::note
+
+If both a `logo.svg` and `logo.png` files are found, the `logo.svg` takes priority.
+
+:::
 
 ## Info.plist
 

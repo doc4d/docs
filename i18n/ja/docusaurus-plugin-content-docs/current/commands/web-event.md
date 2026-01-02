@@ -35,21 +35,21 @@ displayed_sidebar: docs
 
 #### 例題
 
-The objective is to display/hide a help text when the user hovers over the component:
+ここでの目的は、ユーザーがコンポーネント上をホバーした際にヘルプテキストを表示/非表示することです:
 
 ![](../assets/en/commands/web-event1.png)
 
-This is done by attaching `onmouseenter` and `onmouseleave` events to a **Text input** component that displays the information stored in a **Text** component (displaying "This is the help text").
+これは、("これはヘルプテキストです"というテキストを表示する)**Text** コンポーネントに保存された情報を表示する **Text input** コンポーネントに `onmouseenter` および `onmouseleave` イベントを割り当てることで可能になります。
 
 ![](../assets/en/commands/web-event2.png)
 
-In this scenario:
+このシナリオでは以下のような前提があります:
 
-- The Text input component has `orderNumber` as Server side reference.
+- Text input コンポーネントは、 `orderNumber` というサーバー側参照を持ちます。
   ![](../assets/en/commands/web-event3.png)
-- The Text component has `helpOn_orderNumber` as Server side reference.
+- Text コンポーネントは `helpOn_orderNumber` というサーバー側参照を持ちます。
   ![](../assets/en/commands/web-event4.png)
-- The [exposed](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) function `help()` is attached to both the `onmouseenter` and `onmouseleave` events and contains the following code:
+- `onmouseenter` および `onmouseleave` イベントの両方には[公開された](../ORDA/ordaClasses.md#exposed-vs-non-exposed-functions) `help()` 関数が割り当てられており、そこには以下のようなコードが書かれています:
 
 ```4d
 shared singleton Class constructor()
@@ -64,17 +64,17 @@ exposed Function help()
 	componentRef:=event.caller
 
 	Case of 
-		: (event.eventType="onmouseenter")  // event is onmouseenter 
-			myForm["helpOn_"+componentRef].show()  // show the help on "orderNumber" by showing  
-			// the text component with reference "helpOn_orderNumber" 
-		: (event.eventType="onmouseleave")  // event is onmouseleave 
-			myForm["helpOn_"+componentRef].hide()  // hide the help on orderNumber
+		: (event.eventType="onmouseenter")  // onmouseenter イベント
+			myForm["helpOn_"+componentRef].show()  // "helpOn_orderNumber" という参照のText コンポーネントを
+			// 表示することで "orderNumber" にヘルプを表示する
+		: (event.eventType="onmouseleave")  // onmouseleave イベント
+			myForm["helpOn_"+componentRef].hide()  // orderNumber のヘルプを非表示にする
 			
 	End case 
 
 ```
 
-To open the web page with the help on `orderNumber` hidden, you can associate this function to the `onload` event of the web page:
+このヘルプが表示されていない状態でWeb ページを開くためには、この関数をWeb ページの `onload` イベントに割り当てます:
 
 ```4d
 exposed function hideOnLoad()

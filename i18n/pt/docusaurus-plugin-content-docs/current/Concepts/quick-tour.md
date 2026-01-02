@@ -306,7 +306,7 @@ Refere-se a uma expressão pelo tipo de dados que devolve. Existem vários tipos
 | Col[5]                                | Elemento de colecção | Um elemento de coleção é uma expressão que pode ser de qualquer tipo suportado                                                                                                                                                               |
 | $entitySel[0]                         | Entity               | Um elemento de uma seleção de entidade ORDA é uma expressão do tipo entidade. Este tipo de expresión es **no asignable**                                                                                                     |
 
-### Assignable vs non-assignable expressions {#assignable-vs-non-assignable-expressions} {#assignable-vs-non-assignable-expressions}
+### Assignable vs non-assignable expressions {#assignable-vs-non-assignable-expressions}
 
 Uma expressão pode ser simplesmente uma constante literal, como o número 4 ou a string "Hello", ou uma variável como `$myButton`. Também pode utilizar operadores. Por exemplo, 4 + 2 é uma expressão que utiliza o operador de adição para somar dois números e devolver o resultado 6. Em qualquer dos casos, estas expressões são **não atribuíveis**, o que significa que não lhes pode ser atribuído um valor.
 Em 4D, as expressões podem ser **atribuíveis**. Uma expressão é atribuível quando pode ser utilizada no lado esquerdo de uma atribuição. Por exemplo:
@@ -422,5 +422,6 @@ No exemplo a seguir, o caractere **Carriage return** (sequência de escape `\r`)
 The following conventions are used in the 4D language documentation:
 
 - os caracteres `{ }` (chaves) indicam parâmetros opcionais. Por exemplo, `.delete( { option : Integer } )` significa que o parâmetro *option* pode ser omisso ao chamar a função.
-- a notação `{ ; ...param }` indica um número ilimitado de parâmetros. Por exemplo, `.concat( value : any { ;...valueN } ): Collection` significa que um número ilimitado de valores de qualquer tipo pode ser passado para a função.
+- the `{; ...*param* : Type}` notation indicates an unlimited number of parameters of the same type. For example, `.concat( value : any { ;...valueN : Text } ) : Collection` means that an unlimited number of values of any type can be passed to the function.
+- the `{; ...(*param* : Type ; *param2* : Type) }` notation indicates an unlimited number of groups of parameters. For example, `COLLECTION TO ARRAY ( collection : Collection ; array : Array {; propertyName : Text}{; ...(array : Array ; propertyName : Text) } )` means that an unlimited number of couple values or type array/text can be passed to the command.
 - the `any` keyword is used for parameters that can be of any type (number, text, boolean, date, time, object, collection...).

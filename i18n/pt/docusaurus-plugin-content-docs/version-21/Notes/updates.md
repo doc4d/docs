@@ -18,9 +18,8 @@ Leia [**O que há de novo no 4D 21**](https://blog.4d.com/en-whats-new-in-4d-21/
 - New [ORDA events on data](../ORDA/orda-events.md): validateSave, saving, afterSave, validateDrop, dropping, afterDrop.
 - Support of the new [`restrictedByDefault` property](../ORDA/privileges.md#restriction-modes) in the `roles.json` file to block access by default to all resources without explicit permission.
 - New option allowing to use certificates from Windows Certificate Store instead of a local certificates folder in [`HTTPRequest`](../API/HTTPRequestClass.md#4dhttprequestnew) and [`HTTPAgent`](../API/HTTPAgentClass.md#4dhttpagentnew) classes.
-- Client/server:
-  - You can display Qodly pages in Web areas and [share the remote client session](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas).
-  - The [QUIC network layer](../settings/client-server.md#network-layer) has been enhanced to handle network interface changes transparently, for example when you travel with your laptop. See [this blog post](https://blog.4d.com/work-and-move-with-quic-and-network-switching).
+- [Sessions API](../API/SessionClass.md) now supports all [desktop sessions](../Desktop/sessions.md) and you can [share a desktop session with a web access](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses), facilitating the development of applications using Qodly pages in Web areas.
+- The [QUIC network layer](../settings/client-server.md#network-layer) has been enhanced to handle network interface changes transparently, for example when you travel with your laptop. See [this blog post](https://blog.4d.com/work-and-move-with-quic-and-network-switching).
 - You can now [create components directly from the host project](../Extensions/develop-components.md#creating-components) and [edit their code from a dedicated tab](../Extensions/develop-components.md#editing-all-component-code) in the 4D Explorer without leaving or restarting the project.
 - The 4D product activation step has been simplified and automated during [sign-in](../GettingStarted/Installation.md#sign-in).
 - 4D AIKit component: new features to [invoke a specific tool automatically](../aikit/Classes/OpenAIChatHelper.md#registertool) and [specify a response format](../aikit/Classes/OpenAIChatCompletionsParameters.md#response-format).
@@ -29,10 +28,6 @@ Leia [**O que há de novo no 4D 21**](https://blog.4d.com/en-whats-new-in-4d-21/
   - [`Num`](../commands/num.md) and [`String`](../commands/string.md) commands have been updated to support conversions in different bases (radix).
 - [**Fixed bug list**](https://bugs.4d.fr/fixedbugslist?version=21): list of all bugs that have been fixed in 4D 21.
 - [**4D Qodly Pro Release notes**](https://developer.4d.com/qodly/4DQodlyPro/release-notes): what's new in Qodly Studio.
-
-#### Prévia do desenvolvedor
-
-[**Fluent UI** rendering for 4D forms](../FormEditor/forms.md#fluent-ui-rendering-developer-preview) is proposed in Developer Preview during the beta test program.
 
 #### Mudanças de comportamento
 
@@ -43,8 +38,11 @@ Leia [**O que há de novo no 4D 21**](https://blog.4d.com/en-whats-new-in-4d-21/
 :::
 
 - Web services (SOAP): when [scalable sessions](../WebServer/sessions.md#enabling-web-sessions) are enabled, web services now run in [**preemptive processes**](../Develop/preemptive.md) in compiled mode. Make sure that your SOAP code is thread-safe and that the session in which it runs has appropriate [privileges](../API/SessionClass.md#setprivileges).
-- Web server: the support of deprecated `4DSYNC/` and `4DCGI/` URLs is removed. No specific processing is done on these URLs anymore.
+- Web server:
+  - the support of deprecated `4DSYNC/` and `4DCGI/` URLs is removed. No specific processing is done on these URLs anymore,
+  - web processes are no longer recycled when [scalable sessions](../WebServer/sessions.md#enabling-web-sessions) are enabled.
 - Web user sessions are now returned by [`Process activity`](../commands/process-activity.md).
+- PHP commands are now [deprecated](https://blog.4d.com/deprecation-of-php-commands-removal-of-4d-built-in-php-interpreter/) and should no longer be used in your developments.
 - The [`HIGHLIGHT TEXT`](../commands/highlight-text) command is now supported in the context of subforms.
 - In client/server, the concept of local processes is removed. The "$" has no longer a specific meaning in process names and the \* parameter in [`REGISTER CLIENT`](../commands/register-client) is ignored.
 - **Components no longer embedded**: starting with 4D 21, components developed by 4D (4D NetKit, 4D SVG..., see [this list](../Extensions/overview.md#components-developed-by-4d)) are no longer embedded in the 4D application. When upgrading a project to 4D 21 or higher, a dialog box is displayed:<br/>
@@ -154,7 +152,7 @@ Leia [**O que há de novo no 4D 20 R7**](https://blog.4d.com/en-whats-new-in-4d-
 - Suporte a [Session singletons](../Concepts/classes.md#singleton-classes) e à nova propriedade de classe [`.isSessionSingleton`](../API/ClassClass.md#issessionsingleton).
 - New [`onHTTPGet` function keyword](../ORDA/ordaClasses.md#onhttpget-keyword) to define singleton or ORDA functions that can be called through [HTTP REST GET requests](../REST/ClassFunctions.md#function-calls).
 - Nova classe [`4D.OutgoingMessage`](../API/OutgoingMessageClass.md) para que o servidor REST retorne qualquer conteúdo Web.
-- Qodly Studio: agora você pode [anexar o depurador Qodly a 4D Server](../WebServer/qodly-studio.md#using-qodly-debugger-on-4d-server).
+- Qodly Studio: agora você pode [anexar o depurador Qodly a 4D Server](developer.4d.com/qodly/4DQodlyPro/debugging#using-qodly-debugger-on-4d-server).
 - New Build Application keys para aplicativos 4D remotos para validar a autoridade de certificação do servidor [signatures](https://doc.4d.com/4Dv20R7/4D/20-R7/CertificateAuthoritiesCertificates.300-7425900.en.html) e/ou [domain](https://doc.4d.com/4Dv20R7/4D/20-R7/CertificateDomainName.300-7425906.en.html).
 - Capacidade de [criar aplicações independentes sem licenças incorporadas](../Desktop/building.md#licenses).
 - Línguagem 4D:
@@ -210,7 +208,7 @@ Leia [**O que há de novo no 4D 20 R5**](https://blog.4d.com/en-whats-new-in-4d-
 - Soporte de [selecciones de entidades restringidas](../ORDA/entities.md#restricting-entity-selections).
 - Soporte de [clases compartidas](../Concepts/classes.md#shared-classes) y de [clases singleton](../Concepts/classes.md#singleton-classes). Novas propriedades de classe: [`isShared`](../API/ClassClass.md#isshared), [`isSingleton`](../API/ClassClass.md#issingleton), [`me`](../API/ClassClass.md#me).
 - Suporte à [inicializando uma propriedade de classe em sua linha de declaração](../Concepts/classes.md#initializing-the-property-in-the-declaration-line).
-- Novo modo [forçar  login para solicitações REST](../REST/authUsers.md#force-login-mode) com um suporte específico [no Qodly Studio para 4D](../WebServer/qodly-studio.md#force-login).
+- Novo modo [forçar  login para solicitações REST](../REST/authUsers.md#force-login-mode) com um suporte específico [no Qodly Studio para 4D](\(developer.4d.com/qodly/4DQodlyPro/force-login\)).
 - Novo parâmetro REST [$format](../REST/$format.md).
 - O objeto [`Session`](../commands/session.md) agora está disponível em sessões de usuários remotos e sessões de procedimentos armazenados.
 - [**Lista de erros corrigida**](https://bugs.4d.fr/fixedbugslist?version=20_R5): lista de todos os bugs corrigidos em 4D 20 R5.
@@ -293,7 +291,7 @@ Se suas aplicações 4D utilizam conexões TLS, é recomendado que você faça a
 
 | Biblioteca | Versão atual                           | Atualizado em 4D | Comentário                                                                                                                                         |
 | ---------- | -------------------------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| BoringSSL  | fa47b1d                                | **21**           | Usado para QUIC                                                                                                                                    |
+| BoringSSL  | 9b86817                                | **21**           | Usado para QUIC                                                                                                                                    |
 | CEF        | 7258                                   | **21**           | Chromium 139                                                                                                                                       |
 | Hunspell   | 7.3.27 | 20               | Usado para verificação ortográfica em formulários 4D e 4D Write Pro                                                                                |
 | ICU        | 77.1                   | **21**           | This upgrade forces an automatic rebuild of alphanumeric, text and object indexes.                                                 |
@@ -303,10 +301,9 @@ Se suas aplicações 4D utilizam conexões TLS, é recomendado que você faça a
 | Libuv      | 1.51.0 | **21**           | Usado para QUIC                                                                                                                                    |
 | libZip     | 1.11.4 | **21**           | Utilizado pelos componentes zip class, 4D Write Pro, svg e serverNet                                                                               |
 | LZMA       | 5.8.1  | **21**           |                                                                                                                                                    |
-| ngtcp2     | 1.16.0 | **21**           | Usado para QUIC                                                                                                                                    |
+| ngtcp2     | 1.18.0 | **21**           | Usado para QUIC                                                                                                                                    |
 | OpenSSL    | 3.5.2  | **21**           |                                                                                                                                                    |
 | PDFWriter  | 4.7.0  | **21**           | Used for [`WP Export document`](../WritePro/commands/wp-export-document.md) and [`WP Export variable`](../WritePro/commands/wp-export-variable.md) |
-| PHP        | 8.2.4  | 20               |                                                                                                                                                    |
 | SpreadJS   | 17.1.0 | 20 R7            | Veja [este post de blog](https://blog.4d.com/4d-view-pro-whats-new-in-4d-20-r7/) para uma visão geral dos novos recursos                           |
 | webKit     | WKWebView                              | 19               |                                                                                                                                                    |
 | Xerces     | 3.3.0  | **21**           | Used for XML commands                                                                                                                              |

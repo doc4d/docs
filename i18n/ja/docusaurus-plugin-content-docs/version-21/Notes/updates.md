@@ -18,9 +18,8 @@ title: リリースノート
 - 新しい[データに対するORDA イベント](../ORDA/orda-events.md): validateSave、saving、afterSave、validateDrop、dropping、afterDrop
 - Support of the new [`restrictedByDefault` property](../ORDA/privileges.md#restriction-modes) in the `roles.json` file to block access by default to all resources without explicit permission.
 - [`HTTPRequest`](../API/HTTPRequestClass.md#4dhttprequestnew) および [`HTTPAgent`](../API/HTTPAgentClass.md#4dhttpagentnew) クラスにおいて、ローカルの証明書フォルダの代わりにWindows 証明書ストアからの証明書を使用することを許可する新しいオプション。
-- クライアント/サーバー:
-  - Web エリア内でQodly ページを表示し、[リモートクライアントセッションを共有](../Desktop/clientServer.md#web-エリア内のqodly-ページでセッションを共有する)することができるようになりました。
-  - [QUIC ネットワークレイヤー](../settings/client-server.md#ネットワークレイヤー) はネットワークインターフェースの変更(例えばラップトップを持って良好するような場合)を透過的に管理できるように改善されました。 [こちらの blog 記事](https://blog.4d.com/work-and-move-with-quic-and-network-switching) をご覧ください。
+- [Sessions API](../API/SessionClass.md) now supports all [desktop sessions](../Desktop/sessions.md) and you can [share a desktop session with a web access](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses), facilitating the development of applications using Qodly pages in Web areas.
+- [QUIC ネットワークレイヤー](../settings/client-server.md#ネットワークレイヤー) はネットワークインターフェースの変更(例えばラップトップを持って良好するような場合)を透過的に管理できるように改善されました。 [こちらの blog 記事](https://blog.4d.com/work-and-move-with-quic-and-network-switching) をご覧ください。
 - プロジェクトを閉じたり再起動したりすることなく、4D エクスプローラーから[ホストプロジェクトから直接コンポーネントを作成](../Extensions/develop-components.md#コンポーネントの作成)したり、あるいは[専用のタブからコンポーネントのコードを編集する](../Extensions/develop-components.md#全てのコンポーネントコードを編集) ことができるようになりました。
 - 4D プロダクトのアクティベーションステップが、簡略化されて[サインイン](../GettingStarted/Installation.md#sign-in) 中に自動化されました。
 - 4D AIKit コンポーネント: [特定のツールを自動的に呼び出す](../aikit/Classes/OpenAIChatHelper.md#registertool) ことと [レスポンスフォーマットを指定する](../aikit/Classes/OpenAIChatCompletionsParameters.md#response-format) 新機能。
@@ -29,10 +28,6 @@ title: リリースノート
   - [`Num`](../commands/num.md) および [`String`](../commands/string.md) コマンドは、異なる基数での変換をサポートするようにアップデートされました。
 - [**修正リスト**](https://bugs.4d.fr/fixedbugslist?version=21): 4D 21 で修正されたバグのリストです(日本語版は [こちら](https://4d-jp.github.io/2025/279/release-note-version-21/))。
 - [**4D Qodly Pro Release notes**](https://developer.4d.com/qodly/4DQodlyPro/release-notes): what's new in Qodly Studio.
-
-#### デベロッパー・プレビュー
-
-[4D フォームにおける**Fluent UI** レンダリング](../FormEditor/forms.md#fluent-ui-rendering-developer-preview) はベータテストプログラム期間中、デベロッパープレビューとして提供されています。
 
 #### 動作の変更
 
@@ -43,8 +38,11 @@ title: リリースノート
 :::
 
 - Web サービス(SOAP): [スケーラブルセッション](../WebServer/sessions.md#webセッションの有効化) が有効化されている場合、コンパイルモードにおいてはWeb サービスは[**プリエンプティブプロセス**](../Develop/preemptive.md) で実行されます。 Make sure that your SOAP code is thread-safe and that the session in which it runs has appropriate [privileges](../API/SessionClass.md#setprivileges).
-- Web サーバー: 廃止予定だった`4DSYNC/` および `4DCGI/` URL のサポートが削除されました。 これらのURL に関しては今後は何も特殊な処理は行われません。
+- Web server:
+  - the support of deprecated `4DSYNC/` and `4DCGI/` URLs is removed. No specific processing is done on these URLs anymore,
+  - web processes are no longer recycled when [scalable sessions](../WebServer/sessions.md#enabling-web-sessions) are enabled.
 - Web ユーザーセッションは今後[`Process activity`](../commands/process-activity.md) コマンドで返されるようになります。
+- PHP commands are now [deprecated](https://blog.4d.com/deprecation-of-php-commands-removal-of-4d-built-in-php-interpreter/) and should no longer be used in your developments.
 - [`HIGHLIGHT TEXT`](../commands/highlight-text) コマンドは今後サブフォームのコンテキストでサポートされるようになりました。
 - クライアント/サーバーでは、ローカルプロセスという概念が削除されました。 プロセス名に置いて"$"記号をつけることは今後何も特別な意味を持たなくなり、また[`REGISTER CLIENT`](../commands/register-client) コマンドの \* 引数は無視されます。
 - **コンポーネントは埋め込まれなくなりました**: 4D 21 以降、4D によって開発されたコンポーネント(4D NetKit、4D SVG、など。詳細は[こちらの一覧](../Extensions/overview.md#4dによって開発されたコンポーネント)を参照) は4Dアプリケーションには埋め込まれなくなりました。 プロジェクトを4D 21 以降にアップグレードする場合、以下のようなダイアログボックスが表示されます:<br/>
@@ -154,7 +152,7 @@ title: リリースノート
 - [セッションシングルトン](../Concepts/classes.md#シングルトンクラス) と、新しい [`.isSessionSingleton`](../API/ClassClass.md#issessionsingleton) クラスプロパティをサポート。
 - 新しい[`onHTTPGet` 関数キーワード](../ORDA/ordaClasses.md#onhttpget-keyword) を使用して[HTTP REST GET requests](../REST/ClassFunctions.md#function-calls) 経由で呼び出し可能なシングルトンまたはORDA 関数を定義できるようになりました。
 - 新しい [`4D.OutgoingMessage`](../API/OutgoingMessageClass.md) クラスを使用してREST サーバーがあらゆるWeb コンテンツを返すようになりました。
-- Qodly Studio: [Qodly Studio デバッガーを 4D Server で有効化](../WebServer/qodly-studio.md#4d-server-で-qodlyデバッガーを使用する) できるようになりました。
+- Qodly Studio: You can now [attach the Qodly debugger to 4D Server](developer.4d.com/qodly/4DQodlyPro/debugging#using-qodly-debugger-on-4d-server).
 - 4Dクライアントアプリケーション用の新しいアプリケーションビルド XMLキー: 接続時にサーバーから送信される証明書について、認証局の&#x20;
   署名 や [ドメイン](https://doc.4d.com/4Dv20R7/4D/20-R7/CertificateDomainName.300-7425906.ja.html) を検証するためのキーが追加されました。
 - [埋め込みライセンスなしでスタンドアロンアプリケーションをビルドすること](../Desktop/building.md#licenses) が可能になりました。
@@ -211,7 +209,7 @@ title: リリースノート
 - [制限付エンティティセレクション](../ORDA/entities.md#制限付エンティティセレクション) をサポート。
 - [共有クラス](../Concepts/classes.md#共有クラス) と [シングルトンクラス](../Concepts/classes.md#シングルトンクラス) をサポート。 新しいクラスプロパティ: [`.isShared`](../API/ClassClass.md#isshared), [`.isSingleton`](../API/ClassClass.md#issingleton), [`.me`](../API/ClassClass.md#me).
 - [クラスプロパティを宣言の行において初期化すること](../Concepts/classes.md#initializing-the-property-in-the-declaration-line) がサポートされるようになりました。
-- RESTリクエスト用の新しい [強制ログインモード](../REST/authUsers.md#強制ログインモード) と、[Qodly Studio for 4D での専用サポート](../WebServer/qodly-studio.md#強制ログイン)。
+- New [force login mode for REST requests](../REST/authUsers.md#force-login-mode) with a [specific support in Qodly Studio for 4D](\(developer.4d.com/qodly/4DQodlyPro/force-login\)).
 - 新しい [$format](../REST/$format.md) RESTパラメーター。
 - [`Session`](../commands/session.md) オブジェクトはリモートユーザーセッションおよびすトアドプロシージャーセッションにおいても利用可能になりました。
 - [**修正リスト**](https://bugs.4d.fr/fixedbugslist?version=20_R5): 4D 20 R5 で修正されたバグのリストです ([日本語版はこちら](https://4d-jp.github.io/2024/122/release-note-version-20r5/))。
@@ -294,7 +292,7 @@ title: リリースノート
 
 | ライブラリ     | 現在のバージョン                               | 更新された 4D バージョン | 説明                                                                                                                                                   |
 | --------- | -------------------------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| BoringSSL | fa47b1d                                | **21**         | QUIC に使用                                                                                                                                             |
+| BoringSSL | 9b86817                                | **21**         | QUIC に使用                                                                                                                                             |
 | CEF       | 7258                                   | **21**         | Chromium 139                                                                                                                                         |
 | Hunspell  | 1.7.2  | 20             | 4D フォームと 4D Write Pro でスペルチェックに使用されます。                                                                                                               |
 | ICU       | 77.1                   | **21**         | このアップグレードにより、英数字とテキスト、オブジェクトのインデックスが自動的に再構築されます。                                                                                                     |
@@ -304,10 +302,9 @@ title: リリースノート
 | Libuv     | 1.51.0 | **21**         | QUIC に使用                                                                                                                                             |
 | libZip    | 1.11.4 | **21**         | Zip クラス、4D Write Pro、svg および serverNet コンポーネントによって使用。                                                                                                |
 | LZMA      | 5.8.1  | **21**         |                                                                                                                                                      |
-| ngtcp2    | 1.16.0 | **21**         | QUIC に使用                                                                                                                                             |
+| ngtcp2    | 1.18.0 | **21**         | QUIC に使用                                                                                                                                             |
 | OpenSSL   | 3.5.2  | **21**         |                                                                                                                                                      |
 | PDFWriter | 4.7.0  | **21**         | [`WP Export document`](../WritePro/commands/wp-export-document.md) および [`WP Export variable`](../WritePro/commands/wp-export-variable.md) において使用されます |
-| PHP       | 8.2.4  | 20             |                                                                                                                                                      |
 | SpreadJS  | 17.1.0 | 20 R7          | 新機能の概要については、[このブログ記事](https://blog.4d.com/ja/4d-view-pro-whats-new-in-4d-20-r7/) を参照ください。                                                            |
 | webKit    | WKWebView                              | 19             |                                                                                                                                                      |
 | Xerces    | 3.3.0  | **21**         | XML コマンドにおいて使用されます                                                                                                                                   |
