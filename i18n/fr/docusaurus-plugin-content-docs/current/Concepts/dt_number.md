@@ -49,7 +49,7 @@ Les nombres négatifs s’écrivent précédés du signe moins (-). Par exemple 
 | Soustraction        | Nombre - Nombre                           | Number   | 3 – 2                             | 1                   |
 | Multiplication      | Number \* Number                          | Number   | 5 \* 2                            | 10                  |
 | Division            | Number / Number                           | Number   | 5 / 2                             | 2.5 |
-| Integer division    | Nombre \ Nombre                           | Number   | 5 \ 2                             | 2                   |
+| Division entière    | Nombre \ Nombre                           | Number   | 5 \ 2                             | 2                   |
 | Modulo              | Nombre % Nombre                           | Number   | 5 % 2                             | 1                   |
 | Exponentiation      | Nombre ^ Nombre                           | Number   | 2 ^ 3                             | 8                   |
 | Egalité             | Nombre = Nombre                           | Boolean  | 10 = 10                           | True                |
@@ -79,7 +79,7 @@ L'opérateur modulo % retourne des valeurs significatives avec des nombres appar
 
 :::
 
-### Integer division
+### Division entière
 
 L'opérateur de division entière divise un nombre par un autre et renvoie la partie entière du résultat, en rejetant tout reste. `a\b` est équivalent à `Int(a/b)`. Cet opérateur renvoie des valeurs significatives uniquement avec des nombres entiers.
 

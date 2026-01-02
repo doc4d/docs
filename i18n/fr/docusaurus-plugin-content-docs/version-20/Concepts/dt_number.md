@@ -73,7 +73,7 @@ L'opérateur modulo % retourne des valeurs significatives avec des nombres appar
 
 :::
 
-### Integer division
+### Division entière
 
 L'opérateur de division entière divise un nombre par un autre et renvoie la partie entière du résultat, en rejetant tout reste. `a\b` is equivalent to `Int(a/b)`. Cet opérateur renvoie des valeurs significatives uniquement avec des nombres entiers.
 
