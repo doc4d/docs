@@ -7,7 +7,7 @@ title: Release Notes
 
 #### Behavior changes
 
-- The [`JSON Validate`](../commands/json-validate.md) command now generates an error if a non-supported *$schema* key is present in the schema. 
+- The [`JSON Validate`](../commands/json-validate.md) command now takes the *$schema* key into account and generates an error if a non-supported version is declared in the schema. 
 
 
 ## 4D 21 R2
