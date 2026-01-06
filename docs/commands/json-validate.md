@@ -36,11 +36,11 @@ In *vSchema*, pass the JSON schema to use for the validation. For more informati
 
 ### Supported JSON schema validation drafts
 
-To validate a JSON object, 4D uses the norm described in a **JSON Schema Validation draft document**. Several versions of these documents have been produced over the time. 
+To validate a JSON object, 4D uses the norm described in a **JSON Schema Validation draft document**. Several versions of these documents have been produced over time. 
 
 4D supports two versions of the draft:
 
-- [version 2020-12](https://json-schema.org/draft/2020-12/json-schema-validation) (most recent implementation, recommended). All parts of the norm are supported, except:
+- [version 2020-12](https://json-schema.org/draft/2020-12/json-schema-validation) (recommended). All parts of the norm are supported, except:
     - vocabulary
     - `contentEncoding`, `contentMediaType`, and `contentSchema` (validation of non-JSON content)
     - for references: `$dynamicRef`/`$dynamicAnchor` and references in `https:...`
@@ -63,7 +63,7 @@ The version to use should be inserted in the schema using the *$schema* key:
 ```
 
 
-For compatibility reasons, the version 4 is used if the *$schema* key is omitted. However, it is recoommended to use the version 2020-12 which provides more reliable controls.
+For compatibility reasons, the version 4 is used if the *$schema* key is omitted. However, it is recommended to use the version 2020-12 which provides the most reliable controls.
 
 :::note
 
