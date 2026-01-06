@@ -114,7 +114,7 @@ IP:port/4DACTION/action_Session
 ```
 
 ```4d
-  //action_Session method
+  //método action_Session
  Case of
     :(Session#Null)
        If(Session.hasPrivilege("CreateInvoices")) //llamando a la función hasPrivilege
