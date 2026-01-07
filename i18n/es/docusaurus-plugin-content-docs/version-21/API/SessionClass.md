@@ -17,7 +17,7 @@ Los objetos de sesión son devueltos por el comando [`Session`](../commands/sess
 
 Los siguientes tipos de sesiones están soportados por esta clase:
 
-- [**Sesiones usuario web**](WebServer/sessions.md): las sesiones usuario web están disponibles cuando [las sesiones escalables están activas en su proyecto](WebServer/sessions.md#enabling-web-sessions). They are used for Web connections (including REST access), and are controlled by assigned [privileges](../ORDA/privileges.md).
+- [**Sesiones usuario web**](WebServer/sessions.md): las sesiones usuario web están disponibles cuando [las sesiones escalables están activas en su proyecto](WebServer/sessions.md#enabling-web-sessions). Se utilizan para las conexiones Web (incluidos los accesos REST) y se controlan mediante los [privilegios](../ORDA/privileges.md) asignados.
 - [**Sesiones de escritorio**](../Desktop/sessions.md), que incluyen:
   - [Sesiones usuario remoto\*\*](../Desktop/sessions.md#remote-user-sessions): en las aplicaciones cliente/servidor, los usuarios remotos tienen sus propias sesiones gestionadas en el servidor.
   - [Sesiones procedimientos almacenados\*\*](../Desktop/sessions.md#stored-procedure-sessions): sesión usuario virtual para todos los procedimientos almacenados ejecutados en el servidor.
@@ -105,10 +105,10 @@ $isOK:=Session.clearPrivileges()
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones                            |
-| ----------- | ----------------------------------------- |
-| 21          | Support of remote and standalone sessions |
-| 20 R9       | Añadidos                                  |
+| Lanzamiento | Modificaciones                          |
+| ----------- | --------------------------------------- |
+| 21          | Soporte de sesiones remotas y autónomas |
+| 20 R9       | Añadidos                                |
 
 </details>
 
@@ -116,10 +116,10 @@ $isOK:=Session.clearPrivileges()
 
 <!-- REF #SessionClass.createOTP().Params -->
 
-| Parámetros | Tipo    |                             | Descripción                                                              |
-| ---------- | ------- | :-------------------------: | ------------------------------------------------------------------------ |
-| lifespan   | Integer |              ->             | Session token lifespan in seconds (web sessions only) |
-| Resultado  | Text    | <- | UUID del token                                                           |
+| Parámetros | Tipo    |                             | Descripción                                                                     |
+| ---------- | ------- | :-------------------------: | ------------------------------------------------------------------------------- |
+| lifespan   | Integer |              ->             | Duración del token de sesión en segundos (solo sesiones web) |
+| Resultado  | Text    | <- | UUID del token                                                                  |
 
 <!-- END REF -->
 
@@ -131,13 +131,13 @@ Para más información sobre los tokens OTP, por favor consulte [esta sección](
 
 Si se utiliza un token caducado para restaurar la sesión, se ignora.
 
-For web sessions, you can set a custom timeout by passing a value in seconds in *lifespan*. Por defecto, si se omite el parámetro *lifespan*, el token se crea con el mismo tiempo de vida que el [`.idleTimeOut`](#idletimeout) de la sesión.
+Para las sesiones web, puede definir un tiempo de espera personalizado pasando un valor en segundos en *lifespan*. Por defecto, si se omite el parámetro *lifespan*, el token se crea con el mismo tiempo de vida que el [`.idleTimeOut`](#idletimeout) de la sesión.
 
-For desktop sessions, the token is created with a 10 seconds lifespan.
+Para las sesiones de escritorio, el token se crea con una vida útil de 10 segundos.
 
-The returned token can be used in exchanges with third-party applications or websites to securely identify the session. Por ejemplo, el token OTP de sesión se puede utilizar con una aplicación de pago.
+El token devuelto puede ser utilizado en intercambios con aplicaciones de terceros o sitios web para identificar la sesión de forma segura. Por ejemplo, el token OTP de sesión se puede utilizar con una aplicación de pago.
 
-The returned token can be used by 4D Server or 4D single-user application to identify requests coming from the web that [share the session](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses).
+El token devuelto puede ser utilizado por 4D Server o la aplicación monousuario 4D para identificar las peticiones procedentes de la web que [comparten la sesión](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses).
 
 #### Ejemplo
 
