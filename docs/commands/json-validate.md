@@ -93,9 +93,9 @@ Each error object of the *errors* collection contains the following properties:
 | *offset*          | Number   | Line offset of the error in the JSON file. This property is filled if the JSON has been parsed by [JSON Parse](json-parse.md) with the *\** parameter. Otherwise, the property is omitted. |
 | *schemaPaths*     | Text   | JSON path in the schema that causes the validation error                                                                                                                                   |
 
-### Errors 
+### Error list
 
-The following errors may be returned :   
+<details>The following errors may be returned:
 
 | **Code** | **JSON Keyword**     | **Message**                                                                                                   |
 | -------- | -------------------- | ------------------------------------------------------------------------------------------------------------- |
@@ -122,6 +122,16 @@ The following errors may be returned :
 | 22       | oneOf                | The JSON does not match any value.                                                                            |
 | 23       | not                  | The JSON is valid against the value of 'not'.                                                                 |
 | 24       | format               | The string does not match ("{s1}")                                                                            |
+</details>
+
+
+:::tip Related blog post
+
+[Simplify JSON Validation and Boost Robustness](https://blog.4d.com/simplify-json-validation-and-boost-robustness)
+
+:::
+
+
 
 ## Example 
 
@@ -142,6 +152,8 @@ You want to validate a JSON object with a schema and get the list of validation 
     End for
  End if
 ```
+
+
 
 
 ## See also 
