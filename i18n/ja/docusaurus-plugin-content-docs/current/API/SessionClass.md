@@ -17,7 +17,7 @@ Session オブジェクトは [`Session`](../commands/session.md) コマンド�
 
 このクラスは以下の種類のセッションをサポートしています:
 
-- [**Webユーザーセッション**](WebServer/sessions.md): [プロジェクトにおいてスケーラブルセッションが有効化されている](WebServer/sessions.md#webセッションの有効化) 場合、Webユーザーセッションが利用可能です。 They are used for Web connections (including REST access), and are controlled by assigned [privileges](../ORDA/privileges.md).
+- [**Webユーザーセッション**](WebServer/sessions.md): [プロジェクトにおいてスケーラブルセッションが有効化されている](WebServer/sessions.md#webセッションの有効化) 場合、Webユーザーセッションが利用可能です。 これらは(REST アクセスを含めた)Web 接続に使用され、割り当てられた[権限](../ORDA/privileges.md) によって管理されます。
 - [**デスクトップセッション**](../Desktop/sessions.md)。これには以下のものが含まれます:
   - [**リモートユーザー セッション**](../Desktop/sessions.md#リモートユーザーセッション): クライアント/サーバーアプリケーションでは、リモートユーザーは、サーバー上で管理される独自のセッションを持ちます。
   - [**ストアドプロシージャーセッション**](../Desktop/sessions.md#ストアドプロシージャーセッション): サーバー上で実行される全てのストアドプロシージャーセッションの仮想ユーザーセッション。
