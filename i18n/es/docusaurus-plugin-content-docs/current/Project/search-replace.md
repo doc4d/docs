@@ -169,7 +169,7 @@ Muestra los resultados como una lista jerárquica organizada por tipo de element
 
 Puede hacer doble clic en una línea de esta ventana para ver el elemento en su editor, como el [editor de código](../code-editor/write-class-method.md). Si realiza varias búsquedas, cada búsqueda abre su propia ventana de resultados, dejando abiertas las ventanas de resultados anteriores.
 
-When more than one occurrence has been found, the list indicates their **count** next to the element name.
+Cuando se ha encontrado más de una ocurrencia, la lista indica su **conteo** junto al nombre del elemento.
 
 Each line can display a tip that provides additional information, for example the element property that matches the criteria, or the number of the form page that contains the occurrence.
 
