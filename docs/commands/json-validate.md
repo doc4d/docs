@@ -85,13 +85,13 @@ The **JSON Validate** returns an object that provides the status of the validati
 Each error object of the *errors* collection contains the following properties:  
 
 | **Property name** | **Type** | **Description**                                                                                                                                                                            |
-| ----------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| *code*            | Number   | Error code                                                                                                                                                                                 |
-| *jsonPath*        | Text   | JSON path that cannot be validated in *vJson*                                                                                                                                              |
+| ----------------- | -------- | ----------------- |
+| *code*            | Number   | Error code      |
+| *jsonPath*        | Text   | JSON path that cannot be validated in *vJson*    |
 | *line*            | Number   | Line number of the error in the JSON file. This property is filled if the JSON has been parsed by [JSON Parse](json-parse.md) with the *\** parameter. Otherwise, the property is omitted. |
-| *message*         | Text   | Error message                                                                                                                                                                              |
+| *message*         | Text   | Error message    |
 | *offset*          | Number   | Line offset of the error in the JSON file. This property is filled if the JSON has been parsed by [JSON Parse](json-parse.md) with the *\** parameter. Otherwise, the property is omitted. |
-| *schemaPaths*     | Text   | JSON path in the schema that causes the validation error                                                                                                                                   |
+| *schemaPaths*     | Text   | JSON path in the schema that causes the validation error      |
 
 ### Error list
 
@@ -120,8 +120,21 @@ Each error object of the *errors* collection contains the following properties:
 | 20       | type                 | Incorrect type. Expected type is: {s1}                                                                        |
 | 21       | oneOf                | The JSON matches more than one value.                                                                         |
 | 22       | oneOf                | The JSON does not match any value.                                                                            |
-| 23       | not                  | The JSON is valid against the value of 'not'.                                                                 |
+| 23       | not                  | The JSON is invalid against the value of 'not'.                                                                 |
 | 24       | format               | The string does not match ("{s1}")                                                                            |
+| 25       | const               | Value "{s1}" does not match the 'const' value in the schema.                                                  |
+| 26       |                | Unevaluated properties are not allowed by the schema. The property(ies) {s1} should be removed.              |
+| 27       |                | Unevaluated array items are not allowed. Item at index {s1} is not covered by any schema.                     |
+| 28       |                | Property name "{s1}" does not validate against the 'propertyNames' schema.                                    |
+| 29       |                | Array does not contain any items matching the 'contains' schema.                                              |
+| 30       |                | Array must contain at least {s1} items matching the 'contains' schema, but only {s2} were found.              |
+| 31       |                | Array must contain at most {s1} items matching the 'contains' schema, but {s2} were found.                    |
+| 32       |                | The property "{s1}" requires the property "{s2}" to be present.                                               |
+| 35       |                | Array items at the beginning do not match the 'prefixItems' schemas.                                          |
+| 36       |                | Validation failed against 'dependentSchemas'.                                                                 |
+| 37       |                | Reference could not be resolved.                                                                              |
+| 38       |                | Circular reference detected.                                                                                  |
+
 </details>
 
 
