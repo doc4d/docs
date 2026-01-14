@@ -2358,6 +2358,7 @@ module.exports =
         {
           type: "link",
           label: "4D Qodly Pro",
+          key: "qodly-pro-link1",
           href: "https://developer.4d.com/qodly/"
         },        
         {
@@ -2868,6 +2869,7 @@ module.exports =
         {
           type: "link",
           label: "4D Qodly Pro",
+          key: "qodly-pro-link2",
           href: "https://developer.4d.com/qodly/"
         },        
         {
