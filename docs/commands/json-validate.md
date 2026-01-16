@@ -120,20 +120,20 @@ Each error object of the *errors* collection contains the following properties:
 | 20       | type                 | Incorrect type. Expected type is: {s1}                                                                        |
 | 21       | oneOf                | The JSON matches more than one value.                                                                         |
 | 22       | oneOf                | The JSON does not match any value.                                                                            |
-| 23       | not                  | The JSON is invalid against the value of 'not'.                                                                 |
+| 23       | not                  | The JSON is invalid against the value of 'not'.                                                               |
 | 24       | format               | The string does not match ("{s1}")                                                                            |
-| 25       | const               | Value "{s1}" does not match the 'const' value in the schema.                                                  |
-| 26       |                | Unevaluated properties are not allowed by the schema. The property(ies) {s1} should be removed.              |
-| 27       |                | Unevaluated array items are not allowed. Item at index {s1} is not covered by any schema.                     |
-| 28       |                | Property name "{s1}" does not validate against the 'propertyNames' schema.                                    |
-| 29       |                | Array does not contain any items matching the 'contains' schema.                                              |
-| 30       |                | Array must contain at least {s1} items matching the 'contains' schema, but only {s2} were found.              |
-| 31       |                | Array must contain at most {s1} items matching the 'contains' schema, but {s2} were found.                    |
-| 32       |                | The property "{s1}" requires the property "{s2}" to be present.                                               |
-| 35       |                | Array items at the beginning do not match the 'prefixItems' schemas.                                          |
-| 36       |                | Validation failed against 'dependentSchemas'.                                                                 |
-| 37       |                | Reference could not be resolved.                                                                              |
-| 38       |                | Circular reference detected.                                                                                  |
+| 25       | const               | Value "{s1}" does not match the 'const' value in the schema.                                                   |
+| 26       | unevalutedProperties| Unevaluated properties are not allowed by the schema. The property(ies) {s1} should be removed.                |
+| 27       | unevalutedItems     | Unevaluated array items are not allowed. Item at index {s1} is not covered by any schema.                      |
+| 28       | propertyNames      | Property name "{s1}" does not validate against the 'propertyNames' schema.                                      |
+| 29       | contains           | Array does not contain any items matching the 'contains' schema.                                                |
+| 30       | contains           | Array must contain at least {s1} items matching the 'contains' schema, but only {s2} were found.                |
+| 31       | contains           | Array must contain at most {s1} items matching the 'contains' schema, but {s2} were found.                      |
+| 32       | required           | The property "{s1}" requires the property "{s2}" to be present.                                                 |
+| 35       | prefixItems        | Array items at the beginning do not match the 'prefixItems' schemas.                                            |
+| 36       | dependentSchemas   | Validation failed against 'dependentSchemas'.                                                                   |
+| 37       | $ref               | Reference could not be resolved.                                                                                |
+| 38       | $ref               | Circular reference detected.                                                                                    |
 
 </details>
 
