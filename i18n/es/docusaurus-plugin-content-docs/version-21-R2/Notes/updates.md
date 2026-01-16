@@ -5,7 +5,7 @@ title: Notas del lanzamiento
 
 ## 4D 21 R2
 
-Lea [**Novedades en 4D 21 R2**](https://blog.4d.com/en-whats-new-in-4d-21-r2/), la entrada del blog que muestra todas las nuevas funcionalidades y mejoras en 4D 21 R2.
+Lea [**Novedades en 4D 21 R2**](https://blog.4d.com/whats-new-in-4d-21-r2/), la entrada del blog que muestra todas las nuevas funcionalidades y mejoras en 4D 21 R2.
 
 #### Lo más destacado
 
