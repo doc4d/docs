@@ -283,13 +283,13 @@ For more information about this format and on the use of the *4DDebugLog* file, 
 
 **Description**: Defines the way dates are stored within objects, as well as how they will be imported/exported in JSON. 
 
-- `Date type` (default value for databases created with 4D 17 and higher): 4D dates are stored with the date type within objects. When converted to JSON format, date attributes will be converted to strings which do not include a time. 
+- `Date type` (default value): 4D dates are stored with the date type within objects. When converted to JSON format, date attributes will be converted to strings which do not include a time. 
 - `String type with time zone`: Converts 4D dates into ISO strings and takes the local time zone into account. For example, converting the date 23/08/2013 gives you "2013-08-22T22:00:000Z" in JSON format when the operation is performed in France during Daylight Savings Time (GMT+2). This principle conforms to the standard operation of JavaScript.
 - `String type without time zone`: Converts 4D dates into ISO strings and does not take the local time zone into account. Taking the local time zone into account (previous option) can be a source of errors when you want to send JSON date values to someone in a different time zone. This is the case for example when you export a table using [Selection to JSON](selection-to-json.md) in France that is meant to be reimported in the US using [JSON TO SELECTION](json-to-selection.md). Since dates are re-interpreted in each time zone, the time values stored in the database will be different. When setting `String type without time zone`, converting the date 23/08/2013 will then give you "2013-08-23T00:00:00Z" in all cases.
 
 :::note
 
-In `Date type` mode (default), only JSON date strings in short format (e.g. "2026-08-23") are imported as date values in 4D objects. JSON date strings in datetime format (e.g. "20126-08-23T00:00:00Z") are imported as string values.
+In `Date type` mode (default), only JSON date strings in short format (e.g. "2026-08-23") are imported as date values in 4D objects. JSON date strings in datetime format (e.g. "2026-08-23T00:00:00Z") are imported as string values.
 
 :::
 
