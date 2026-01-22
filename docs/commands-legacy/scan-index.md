@@ -5,7 +5,7 @@ slug: /commands/scan-index
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SCAN INDEX.Syntax-->**SCAN INDEX** ( *aField* : Field ; *number* : Integer {; *> or <* } )<!-- END REF-->
+<!--REF #_command_.SCAN INDEX.Syntax-->**SCAN INDEX** ( *aField* : Field ; *number* : Integer {; *>_or_<* : Comparator} )<!-- END REF-->
 <!--REF #_command_.SCAN INDEX.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |

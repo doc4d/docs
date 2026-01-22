@@ -4,12 +4,12 @@ title: WA Get context
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WA Get context.Syntax-->**WA Get context** ( * ; *object* : Text ) -> Object<br/>**WA Get context** ( *object* : Field, Variable ) -> Object<!-- END REF-->
+<!--REF #_command_.WA Get context.Syntax-->**WA Get context** ( * ; *object* : Text ) -> Object<br/>**WA Get context** ( *object* : Variable ) -> Object<!-- END REF-->
 <!--REF #_command_.WA Get context.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | * | Operator | &#8594;  | If specified, *object* is an object name (string). If omitted, *object* is a variable. |
-| object | any | &#8594;  | Object name (if * is specified) or Variable (if * is omitted). |
+| object | Text, Variable | &#8594;  | Object name (if * is specified) or Variable (if * is omitted). |
 | Function result | Object | &#8592;  | Context object if previously defined, otherwise `null`. |
 
 <!-- END REF-->

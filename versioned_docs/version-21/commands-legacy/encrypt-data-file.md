@@ -11,7 +11,8 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | structurePath | Text | &#8594;  | Pathname of structure file |
 | dataPath | Text | &#8594;  | Pathname of data file to encrypt |
-| newPassPhrase &#124; newDataKey | Text, Object | &#8594;  | In case of replacement: new passPhrase (text) or new encryption key (object) |
+| newPassPhrase | Text | &#8594;  | In case of replacement: new passPhrase |
+| newDataKey | Object | &#8594;  | In case of replacement: new encryption key (object) |
 | archiveFolder | Text | &#8594;  | Pathname of folder where original files will be stored |
 | curPassPhrase | Text | &#8594;  | Current passPhrase |
 | curDataKey | Object | &#8594;  | Current encryption key |

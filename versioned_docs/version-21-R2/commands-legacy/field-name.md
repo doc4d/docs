@@ -5,7 +5,7 @@ slug: /commands/field-name
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Field name.Syntax-->**Field name** ( *fieldPtr* : Pointer, Integer ) : Text<br/>**Field name** ( *tableNum* : Pointer, Integer ; *fieldNum* : Integer ) : Text<!-- END REF-->
+<!--REF #_command_.Field name.Syntax-->**Field name** ( *fieldPtr* : Pointer ) : Text<br/>**Field name** ( *tableNum* : Integer ; *fieldNum* : Integer ) : Text<!-- END REF-->
 <!--REF #_command_.Field name.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
