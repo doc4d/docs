@@ -9,7 +9,7 @@ displayed_sidebar: docs
 <!--REF #_command_.ST INSERT EXPRESSION.Params-->
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
-| * | Operator | &#8594;  | If specified, object is an object name (string)<br/>If omitted, object is a field or variable |
+| * | Operator | &#8594;  | If specified, object is an object name (string) ; if omitted, object is a variable or a field |
 | object | Object | &#8594;  | Object name (if * is specified) or <br/>Field or variable (if * is omitted) |
 | expression | Text | &#8594;  | Expression and (optional) format to insert |
 | startSel | Integer | &#8594;  | Start of selection |
