@@ -11,7 +11,7 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | aField | Field | &#8594;  | Indexed field on which to scan index |
 | number | Integer | &#8594;  | Number of records to return |
-| > or < | Comparator | &#8594;  | > from beginning of index < from end of index |
+| >_or_< | Comparator | &#8594;  | > from beginning of index < from end of index |
 
 <!-- END REF-->
 

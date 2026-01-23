@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | * | Operator | &#8594;  | If specified, object is an object name (string) If omitted, object is a variable |
-| object | any | &#8594;  | Object name (if * is specified) or<br/>Variable (if * is omitted) of the column to be duplicated |
+| object | Text, Variable | &#8594;  | Object name (if * is specified) or<br/>Variable (if * is omitted) of the column to be duplicated |
 | colPosition | Integer | &#8594;  | Location of new duplicated column |
 | colName | Text | &#8594;  | Name of new column |
 | colVariable | Array, Field, Variable, Pointer | &#8594;  | Name of the column array variable or field or variable |

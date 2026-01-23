@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | * | Operator | &#8594;  | If specified, object is an object name (string) ; if omitted, object is a variable or a field |
-| object | any | &#8594;  | Object name (if * is specified) or <br/>Field or variable (if * is omitted) |
+| object | Text, Variable, Field | &#8594;  | Object name (if * is specified) or <br/>Variable or field (if * is omitted) |
 | urlText | Text | &#8592; | Visible text of URL |
 | urlAddress | Text | &#8592; | URL address |
 | startSel | Integer | &#8594;  | Start of selection |

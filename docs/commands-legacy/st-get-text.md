@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | * | Operator | &#8594;  | If specified, object is an object name (string) <br/>If omitted, object is a variable or a field |
-| object | any | &#8594;  | Object name (if * is specified) or <br/>Text field or variable (if * is omitted) |
+| object | Text, Variable, Field | &#8594;  | Object name (if * is specified) or <br/>Variable or field (if * is omitted) |
 | startSel | Integer | &#8594;  | Start of selection |
 | endSel | Integer | &#8594;  | End of selection |
 | Function result | Text | &#8592; | Text including style tags |
