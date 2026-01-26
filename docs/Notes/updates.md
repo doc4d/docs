@@ -5,6 +5,12 @@ title: Release Notes
 
 ## 4D 21 R3
 
+
+#### Highlights
+
+- The [`JSON Validate`](../commands/json-validate.md) command now supports of JSON Schema draft 2020-12. 
+
+
 #### Behavior changes
 
 - The [`JSON Validate`](../commands/json-validate.md) command now takes the *$schema* key into account and generates an error if a non-supported version is declared in the schema. 
