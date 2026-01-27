@@ -1502,7 +1502,7 @@ const sidebar = subCategories.map((sub) => ({
   label: sub.titles[locale], // Titre traduit
     link: {
     type: "doc",
-    id: `commands/theme/${sub.titles['en'].replace(/ /g, '_')}_theme`
+    id: `commands/theme/${sub.titles['en'].replace(/[()]/g, '').replace(/ /g, '_')}`
   },
   items: itemsBySubCategory[sub.id], // Items associés
 }
