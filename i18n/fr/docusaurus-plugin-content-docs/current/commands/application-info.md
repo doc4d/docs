@@ -25,9 +25,9 @@ displayed_sidebar: docs
 
 ## Description
 
-<!--REF #_command_.Application info.Summary-->The **Application info** command returns an object providing detailed information about the active application's activity and network configuration.<!-- END REF-->
+<!--REF #_command_.Application info.Summary-->La commande **Application info** renvoie un objet fournissant des informations détaillées sur l'activité de l'application active et la configuration du réseau.<!-- END REF-->
 
-The command can be executed on applications running in both standalone and client/server environments. The information returned depends on where **Application info** is executed. For example, if executed from a remote 4D, the information applies only to the remote workstation. If the command is called in a method that is executed on the server, the information returned applies to the the server.
+La commande peut être exécutée sur des applications fonctionnant dans des environnements autonomes ou client/serveur. Les informations retournées dépendent de l'endroit où la commande **Application info** est exécutée. Par exemple, si elle est exécutée à partir d'un poste de travail distant, l'information ne s'applique qu'au poste de travail distant. If the command is called in a method that is executed on the server, the information returned applies to the the server.
 
 L'objet retourné contient les propriétés suivantes :
 
