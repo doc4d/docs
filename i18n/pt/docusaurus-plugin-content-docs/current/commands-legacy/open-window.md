@@ -28,7 +28,7 @@ displayed_sidebar: docs
 * *superior* é a distância em píxels entre a altura da janela da aplicação e a borda superior do interior da janela.
 * *direita* é a distância em píxels entre o lado esquerdo da janela da aplicação e o lado interior direito da janela.
 * *inferior* é a distância em píxels desde a parte superior da janela da aplicação e borda interior inferior da janela.
-**Nota de compatibilidad**e: Open window integra diferentes opções que evolucionaram através das versões, e agora só se conserva por razões de compatibilidade. Quando escrever código novo para a gestão de janelas, geralmente é mais prático utilizar o comando [Open form window](open-form-window.md), que se adapta melhor às interfaces atuais.  
+**Nota de compatibilidad**e: Open window integra diferentes opções que evolucionaram através das versões, e agora só se conserva por razões de compatibilidade. Quando escrever código novo para a gestão de janelas, geralmente é mais prático utilizar o comando [Open form window](../commands/open-form-window.md), que se adapta melhor às interfaces atuais.  
   
 Se passar -1 em *direita* e *inferior*, lhe indica a 4D que redimensione automaticamente a janela sob as seguintes condições:  
 * Você criou um formulário e definido susa opções de redimensionamento na janela de propriedadees do formulário no ambiente Desenho
@@ -135,7 +135,7 @@ Este exemplo ilustra o mecanismo de “atraso” de mostrar janelas em macOS:
 
 [CLOSE WINDOW](close-window.md)  
 *Criar janela*  
-[Open form window](open-form-window.md)  
+[Open form window](../commands/open-form-window.md)  
 
 ## Propriedades
 

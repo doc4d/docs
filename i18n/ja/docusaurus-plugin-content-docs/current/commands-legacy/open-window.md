@@ -29,7 +29,7 @@ displayed_sidebar: docs
 * *right* はアプリケーションウィンドウの左端から、ウィンドウ内側の右端までの距離 (ピクセル単位) です。
 * *bottom* はアプリケーションウィンドウの上端から、ウィンドウ内側の下端までの距離 (ピクセル単位) です。
 
-**互換性に関する注意:** **Open window** はバージョンを経るごとに進化し、現在はもはや互換性のためだけに残されている様々なオプションを統合します。今後ウィンドウ管理の新しいコードを書く場合には、現行のインターフェースにより適している [Open form window](open-form-window.md) コマンドの使用が強く推奨されます。
+**互換性に関する注意:** **Open window** はバージョンを経るごとに進化し、現在はもはや互換性のためだけに残されている様々なオプションを統合します。今後ウィンドウ管理の新しいコードを書く場合には、現行のインターフェースにより適している [Open form window](../commands/open-form-window.md) コマンドの使用が強く推奨されます。
 
 *right* と *bottom*両方に -1 を渡すと、4Dは以下の条件のときウィンドウのサイズを自動で決定します:
 
@@ -132,7 +132,7 @@ CloseColorPalette メソッドは[CANCEL](cancel.md)コマンドを呼び出し�
 ## 参照 
 
 [CLOSE WINDOW](close-window.md)  
-[Open form window](open-form-window.md)  
+[Open form window](../commands/open-form-window.md)  
 *Open Window*  
 
 ## プロパティ

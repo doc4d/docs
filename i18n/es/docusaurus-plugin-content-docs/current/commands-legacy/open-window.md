@@ -29,7 +29,7 @@ displayed_sidebar: docs
 * *derecha* es la distancia en píxeles entre el lado izquierdo de la ventana de la aplicación y el costado interior derecho de la ventana.
 * *inferior* es la distancia en píxeles desde la parte superior de la ventana de la aplicación y borde interior inferior de la ventana.
 
-**Nota de compatibilidad**: **Open window** integra diferentes opciones que han evolucionado a través de las versiones y ahora sólo se conserva por razones de compatibilidad. Cuando se escribe nuevo código para la gestión de ventanas, por lo general es más práctico utilizar el comando [Open form window](open-form-window.md), que se adapta mejor a las interfaces actuales.
+**Nota de compatibilidad**: **Open window** integra diferentes opciones que han evolucionado a través de las versiones y ahora sólo se conserva por razones de compatibilidad. Cuando se escribe nuevo código para la gestión de ventanas, por lo general es más práctico utilizar el comando [Open form window](../commands/open-form-window.md), que se adapta mejor a las interfaces actuales.
 
 Si pasa -1 en *derecha* e *inferior,* le indica a 4D que redimensione automáticamente la ventana si se cumplen las siguientes condiciones:
 
@@ -158,7 +158,7 @@ Este ejemplo ilustra el mecanismo de “retraso” de mostrar ventanas bajo macO
 ## Ver también 
 
 [CLOSE WINDOW](close-window.md)  
-[Open form window](open-form-window.md)  
+[Open form window](../commands/open-form-window.md)  
 
 
 ## Propiedades

@@ -28,7 +28,7 @@ Se abrir uma janela com [Open window](open-window.md), todas as chamadas a **MES
 * A janela é apenas uma janela de output e não se redesenha quando outras janelas forem colocadas sobre ela.
 * Pode modificar a fonte e tamanho dos caracteres na janela através da página "Interface" nas Preferências de Banco de Dados.
 
-**Nota:** **MESSAGE** é compatível com o comando [Open form window](open-form-window.md); entretanto, no contexto do segundo parâmetro *\** de [Open form window](open-form-window.md), que salva o tamanho e posição da janela, não é suportado 
+**Nota:** **MESSAGE** é compatível com o comando [Open form window](../commands/open-form-window.md); entretanto, no contexto do segundo parâmetro *\** de [Open form window](../commands/open-form-window.md), que salva o tamanho e posição da janela, não é suportado 
 
 ## Exemplo 1 
 

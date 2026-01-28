@@ -30,7 +30,7 @@ Si une fenêtre a été ouverte par la commande [Open window](open-window.md), t
 * La fenêtre est une fenêtre d'affichage statique : son contenu n'est pas redessiné lorsque d'autres fenêtres s'affichent par-dessus.
 * La police et la taille des caractères affichés dans la fenêtre peuvent être modifiées via la page "Interface" des Propriétés de la base.
 
-**Note :** **MESSAGE** est compatible avec la commande [Open form window](open-form-window.md), toutefois dans ce contexte le second paramètre *\** de [Open form window](open-form-window.md), permettant de conserver la taille et position de la fenêtre, n'est pas pris en charge. 
+**Note :** **MESSAGE** est compatible avec la commande [Open form window](../commands/open-form-window.md), toutefois dans ce contexte le second paramètre *\** de [Open form window](../commands/open-form-window.md), permettant de conserver la taille et position de la fenêtre, n'est pas pris en charge. 
 
 ## Exemple 1 
 

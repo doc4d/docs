@@ -28,7 +28,7 @@ Si se abre una ventana con [Open window](open-window.md "Open window"), todas la
 * La ventana es sólo una ventana de salida y su contenido no puede ser rediseñado cuando otras ventanas se colocan sobre ella.
 * Puede modificar la fuente y el tamaño de los caracteres mostrados en la ventana a través de la página "Interfaz" en las Propiedades de la base.
 
-**Nota:** **MESSAGE** es compatible con el comando [Open form window](open-form-window.md); sin embargo, en este contexto, el segundo parámetro *\** de [Open form window](open-form-window.md), que guarda el tamaño y la posición de la ventana, no es compatible.
+**Nota:** **MESSAGE** es compatible con el comando [Open form window](../commands/open-form-window.md); sin embargo, en este contexto, el segundo parámetro *\** de [Open form window](../commands/open-form-window.md), que guarda el tamaño y la posición de la ventana, no es compatible.
 
 ## Ejemplo 1 
 

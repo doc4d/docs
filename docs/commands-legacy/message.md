@@ -28,7 +28,7 @@ If a window is opened with [Open window](open-window.md), all subsequent calls t
 * The window is only an output window and does not redraw when other windows overlap it.
 * You can modify the font and size of characters displayed in the window by means of the "Interface" page in the Database Settings.
 
-**Note:** **MESSAGE** is compatible with the [Open form window](open-form-window.md) command; however, in this context the second *\** parameter of [Open form window](open-form-window.md), which saves the window's size and position, is not supported. 
+**Note:** **MESSAGE** is compatible with the [Open form window](../commands/open-form-window.md) command; however, in this context the second *\** parameter of [Open form window](../commands/open-form-window.md), which saves the window's size and position, is not supported. 
 
 ## Example 1 
 

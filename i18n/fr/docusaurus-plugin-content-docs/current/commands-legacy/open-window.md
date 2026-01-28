@@ -29,7 +29,7 @@ displayed_sidebar: docs
 * *droite* est la distance en pixels entre le côté gauche de la fenêtre de l'application et le côté intérieur droit de la fenêtre.
 * *bas* est la distance en pixels entre le haut de la fenêtre de l'application et le bord inférieur de l'intérieur de la fenêtre.
 
-**Note de compatibilité :** **Open window** a intégré différentes options qui ont évolué au fil des versions, et n'est plus conservée que pour des raisons de compatibilité. Lorsque vous écrivez du nouveau code de gestion des fenêtres, il est vivement conseillé d'utiliser la commande [Open form window](open-form-window.md), mieux adaptée aux interfaces actuelles. 
+**Note de compatibilité :** **Open window** a intégré différentes options qui ont évolué au fil des versions, et n'est plus conservée que pour des raisons de compatibilité. Lorsque vous écrivez du nouveau code de gestion des fenêtres, il est vivement conseillé d'utiliser la commande [Open form window](../commands/open-form-window.md), mieux adaptée aux interfaces actuelles. 
 
 Si vous passez -1 dans *droite* et *bas*, vous indiquez à 4D qu'il faut redimensionner automatiquement la fenêtre si les conditions suivantes sont réunies :
 
@@ -151,7 +151,7 @@ Cet exemple illustre le mécanisme de “retard” d’affichage des fenêtres f
 ## Voir aussi 
 
 [CLOSE WINDOW](close-window.md)  
-[Open form window](open-form-window.md)  
+[Open form window](../commands/open-form-window.md)  
 
 ## Propriétés
 

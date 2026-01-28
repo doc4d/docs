@@ -828,7 +828,7 @@ title: Commands by name
 [`Open datastore`](open-datastore.md)<br/>
 [`Open document`](../commands-legacy/open-document.md)<br/>
 [`OPEN FONT PICKER`](../commands-legacy/open-font-picker.md)<br/>
-[`Open form window`](../commands-legacy/open-form-window.md)<br/>
+[`Open form window`](open-form-window.md)<br/>
 [`OPEN PRINTING JOB`](../commands-legacy/open-printing-job.md)<br/>
 [`Open resource file`](../commands-legacy/open-resource-file.md)<br/>
 [`OPEN RUNTIME EXPLORER`](../commands-legacy/open-runtime-explorer.md)<br/>

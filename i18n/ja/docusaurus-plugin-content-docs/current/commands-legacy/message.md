@@ -28,7 +28,7 @@ displayed_sidebar: docs
 * このウィンドウは単なる出力用ウィンドウであり、別のウィンドウがオーバーラップしても再描画されません。
 * ウィンドウに表示される文字のフォントとサイズは、データベース設定"インターフェース"ページ内にて変更することができます。
 
-**注:** **MESSAGE** は[Open form window](open-form-window.md) コマンドと互換性がありますが、このコンテキストでは、[Open form window](open-form-window.md)コマンドの、ウィンドウのサイズと位置を保存する第2*\** 引数はサポートされません。
+**注:** **MESSAGE** は[Open form window](../commands/open-form-window.md) コマンドと互換性がありますが、このコンテキストでは、[Open form window](../commands/open-form-window.md)コマンドの、ウィンドウのサイズと位置を保存する第2*\** 引数はサポートされません。
 
 ## 例題 1 
 

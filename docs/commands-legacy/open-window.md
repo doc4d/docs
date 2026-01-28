@@ -29,7 +29,7 @@ displayed_sidebar: docs
 * *right* is the distance in pixels from the left edge of the application window to the right internal edge of the window.
 * *bottom* is the distance in pixels from the top of the application window to the bottom internal edge of the window.
 
-**Compatibility note:** **Open window** integrates various options which have evolved over the versions, and is now only kept for compatibility reasons. When you write new code for managing windows, we strongly recommend using the [Open form window](open-form-window.md) command, which is better suited to current interfaces. 
+**Compatibility note:** **Open window** integrates various options which have evolved over the versions, and is now only kept for compatibility reasons. When you write new code for managing windows, we strongly recommend using the [Open form window](../commands/open-form-window.md) command, which is better suited to current interfaces. 
 
 If you pass -1 in both *right* and *bottom,* you instruct 4D to automatically size the window under the following conditions:
 
@@ -158,7 +158,7 @@ This example illustrates the “delay” mechanism for displaying sheet windows 
 ## See also 
 
 [CLOSE WINDOW](close-window.md)  
-[Open form window](open-form-window.md)  
+[Open form window](../commands/open-form-window.md)  
 
 
 ## Properties
