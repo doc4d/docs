@@ -10,7 +10,7 @@ displayed_sidebar: docs
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | * | Operator | &#8594;  | If specified, object is an object name (string) ; if omitted, object is a variable or a field |
-| object | any | &#8594;  | Object name (if * is specified) or <br/>Field or variable (if * is omitted) |
+| object | Text, Variable, Field | &#8594;  | Object name (if * is specified) or <br/>Variable or field (if * is omitted) |
 | option | Integer | &#8594;  | Option to get |
 | value | Integer | &#8592; | Current value of option |
 
