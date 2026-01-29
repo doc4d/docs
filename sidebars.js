@@ -2098,7 +2098,7 @@ module.exports =
                 "commands-legacy/minimize-window",
                 "commands-legacy/next-window",
                 "commands/open-form-window",
-                "commands-legacy/open-window",
+                "commands/open-window",
                 "commands-legacy/redraw-window",
                 "commands-legacy/reduce-restore-window",
                 "commands-legacy/resize-form-window",

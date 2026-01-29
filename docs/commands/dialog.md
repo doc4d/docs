@@ -168,7 +168,7 @@ After a call to **DIALOG**, if the dialog is accepted, OK is set to 1; if it is 
 [CALL FORM](../commands-legacy/call-form.md)  
 [CANCEL](../commands-legacy/cancel.md)  
 [Form](form.md)  
-[Open window](../commands-legacy/open-window.md)  
+[Open window](open-window.md)  
 
 ## Properties
 

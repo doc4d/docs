@@ -36,20 +36,22 @@ The *formName* is not displayed in the window. If you want to display the form, 
 
 The optional *type* parameter allows you to specify a type for the window. You must pass one of the following predefined constants (integer, placed in the *Open Form Window* theme):
 
-| Constant                         | Desc    | Value  |
-| -------------------------------- | ------- | ------ |
-| Controller form window           | Integer | 133056 |
-| Form has full screen mode Mac    | Integer | 65536  |
-| Form has no menu bar             | Integer | 2048   |
-| Modal form dialog box            | Integer | 1      |
-| Movable form dialog box          | Integer | 5      |
-| Movable form dialog box no title | Integer | 524293 |
-| Palette form window              | Integer | 1984   |
-| Plain form window                | Integer | 8      |
-| Plain form window no title       | Integer | 524296 |
-| Pop up form window               | Integer | 32     |
-| Sheet form window                | Integer | 33     |
-| Toolbar form window              | Integer | 35     |
+| Constant                         | Value  |
+| --------------------------------| ------ |
+| Controller form window          | 133056 |
+| Form has full screen mode Mac    | 65536  |
+| Form has no menu bar             | 2048   |
+| Modal form dialog box           | 1      |
+| Movable form dialog box          | 5      |
+| Movable form dialog box no title  | 524293 |
+| Palette form window              | 1984   |
+| Plain form window                | 8      |
+| Plain form window no title       | 524296 |
+| Pop up form window               | 32     |
+| Sheet form window                 | 33     |
+| Toolbar form window             | 35     |
+
+For a description of window types, see [**Window types**](#window-types) below.
 
 :::note
 
@@ -57,10 +59,33 @@ The `Form has full screen mode Mac` and `Form has no menu bar` constants must be
 
 :::
 
-
 By default, if the *type* parameter is not passed, a window of the [Plain form window](#plain-form-window-plain-form-window-no-title) type is opened.
 
-### Window types
+
+
+The optional parameter *hPos* allows you to define the horizontal position of the window. You can pass a defined position in pixels or one of the following constants:
+
+| Constant              | Type    | Value  |
+| --------------------- | ------- | ------ |
+| Horizontally centered | Integer | 65536  |
+| On the left           | Integer | 131072 |
+| On the right          | Integer | 196608 |
+
+The optional parameter *vPos* allows you to define the vertical position of the window. You can pass a defined position in pixels or one of the following constants:
+
+| Constant            | Type    | Value  |
+| ------------------- | ------- | ------ |
+| At the bottom       | Integer | 393216 |
+| At the top          | Integer | 327680 |
+| Vertically centered | Integer | 262144 |
+
+These parameters are expressed relative to the top left corner of the contents area of the application window (Windows MDI mode) or to the main screen (macOS and Windows SDI mode). They take into account the presence of the tool bar and menu bar.
+
+If you pass the optional parameter *\**, the current position and size of the window are memorized when closed. When the window is reopened again, its previous position and size are respected. In this case, the *vPos* and *hPos* parameters are only used the first time the window is opened.
+
+
+
+### Window types {#window-types}
 
 #### Controller form window {#controller-form-window}
 
@@ -211,27 +236,7 @@ If "Window Size" properties of the *formName* are not set to "fixed", the opened
 
 **Note:** Some attributes (grow box, close box...) of the window created depend on the interface specifications of the operating system for the chosen *type*. It is therefore possible to obtain different results depending on the platform used.
 
-### *hPos* and *vPos*
 
-The optional parameter *hPos* allows you to define the horizontal position of the window. You can pass a defined position in pixels or one of the following constants:
-
-| Constant              | Type    | Value  |
-| --------------------- | ------- | ------ |
-| Horizontally centered | Integer | 65536  |
-| On the left           | Integer | 131072 |
-| On the right          | Integer | 196608 |
-
-The optional parameter *vPos* allows you to define the vertical position of the window. You can pass a defined position in pixels or one of the following constants:
-
-| Constant            | Type    | Value  |
-| ------------------- | ------- | ------ |
-| At the bottom       | Integer | 393216 |
-| At the top          | Integer | 327680 |
-| Vertically centered | Integer | 262144 |
-
-These parameters are expressed relative to the top left corner of the contents area of the application window (Windows MDI mode) or to the main screen (macOS and Windows SDI mode). They take into account the presence of the tool bar and menu bar.
-
-If you pass the optional parameter *\**, the current position and size of the window are memorized when closed. When the window is reopened again, its previous position and size are respected. In this case, the *vPos* and *hPos* parameters are only used the first time the window is opened.
 
 ## Example 1 
 

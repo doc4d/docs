@@ -835,7 +835,7 @@ title: Commands by name
 [`OPEN SECURITY CENTER`](../commands-legacy/open-security-center.md)<br/>
 [`OPEN SETTINGS WINDOW`](../commands-legacy/open-settings-window.md)<br/>
 [`OPEN URL`](../commands-legacy/open-url.md)<br/>
-[`Open window`](../commands-legacy/open-window.md)<br/>
+[`Open window`](open-window.md)<br/>
 [`ORDER BY`](../commands-legacy/order-by.md)<br/>
 [`ORDER BY ATTRIBUTE`](../commands-legacy/order-by-attribute.md)<br/>
 [`ORDER BY FORMULA`](../commands-legacy/order-by-formula.md)<br/>
