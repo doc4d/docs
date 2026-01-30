@@ -23,7 +23,7 @@ displayed_sidebar: docs
 
 Este comando está diseñado para trabajar con interfaces de usuario personalizadas y avanzadas basadas en formularios. Puede utilizarlo para mostrar información procedente de la base de datos o de otras ubicaciones, o para proporcionar funciones de entrada de datos. A diferencia de [ADD RECORD](../commands-legacy/add-record.md) o [MODIFY RECORD](../commands-legacy/modify-record.md), **DIALOG** le ofrece un control total sobre el formulario, su contenido y los botones de navegación y validación.
 
-This command is typically called along with the [Open form window](open-form-window.md) to display sophisticated forms, as shown in the following example:
+Este comando suele invocarse junto con el comando [Open form window](open-form-window.md) para mostrar formularios sofisticados, como se muestra en el siguiente ejemplo:
 
 ![](../assets/en/commands/pict3541609.en.png)
 
@@ -165,11 +165,11 @@ Tras una llamada a **DIALOG**, si se acepta el diálogo, OK se pone en 1; si se 
 
 ## Ver también
 
-[ACCEPT](../commands-legacy/accept.md)  
-[ADD RECORD](../commands-legacy/add-record.md)  
-[CALL FORM](../commands-legacy/call-form.md)  
-[CANCEL](../commands-legacy/cancel.md)  
-[Form](form.md)  
+[ACCEPT](../commands-legacy/accept.md)\
+[ADD RECORD](../commands-legacy/add-record.md)\
+[CALL FORM](../commands-legacy/call-form.md)\
+[CANCEL](../commands-legacy/cancel.md)\
+[Form](form.md)\
 [Open window](open-window.md)
 
 ## Propiedades
