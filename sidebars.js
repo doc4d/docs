@@ -73,6 +73,7 @@ module.exports =
                 "settings/web",
                 "settings/sql",
                 "settings/php",
+                "settings/ai",
                 "settings/security",
                 "settings/compatibility"
               ]
