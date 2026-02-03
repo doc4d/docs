@@ -8,7 +8,11 @@ title: Release Notes
 
 #### Highlights
 
+- New [**AI** page in Settings](../settings/ai.md), allowing to configure [Provider model aliases](../aikit/provider-model-aliases.md) that can be called in the code using 4D AIKit component. 
 - The [`JSON Validate`](../commands/json-validate.md) command now supports of JSON Schema draft 2020-12. 
+- 4D AIKit component: new [Providers](../aikit/Classes/OpenAIProviders.md) class to instantiate and handle [Provider model aliases](../aikit/provider-model-aliases.md). 
+
+
 
 
 #### Behavior changes
