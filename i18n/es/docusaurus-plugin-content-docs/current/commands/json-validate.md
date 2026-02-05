@@ -41,7 +41,7 @@ To validate a JSON object, 4D uses the norm described in a **JSON Schema Validat
 
 4D supports two versions of the draft:
 
-- [versión 2020-12](https://json-schema.org/draft/2020-12/json-schema-validation) (recomendado). All parts of the norm are supported, except:
+- [versión 2020-12](https://json-schema.org/draft/2020-12/json-schema-validation) (recomendado). Se soportan todas las partes de la norma, excepto:
   - vocabulary
   - `contentEncoding`, `contentMediaType`, and `contentSchema` (validation of non-JSON content)
   - for references: `$dynamicRef`/`$dynamicAnchor` and references in `https:...`
@@ -120,7 +120,7 @@ Cada objeto de error de la colección *errors* contiene las siguientes propiedad
 | 20       | type                   | Tipo incorrecto. El tipo esperado es: {s1}                                                                                        |
 | 21       | oneOf                  | El JSON coincide con más de un valor.                                                                                                             |
 | 22       | oneOf                  | El JSON no coincide con ningún valor.                                                                                                             |
-| 23       | not                    | The JSON is invalid against the value of 'not'.                                                                                                   |
+| 23       | not                    | El JSON no es válido para el valor 'not'.                                                                                                         |
 | 24       | format                 | The string does not match ("{s1}")                                                                                                             |
 | 25       | const                  | Value "{s1}" does not match the 'const' value in the schema.                                                                                      |
 | 26       | unevalutedProperties   | Unevaluated properties are not allowed by the schema. The property(ies) {s1} should be removed.                |
