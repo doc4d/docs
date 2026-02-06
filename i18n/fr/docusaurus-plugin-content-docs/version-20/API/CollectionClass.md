@@ -85,10 +85,10 @@ Une collection est initialisée avec :
 <!-- REF #_command_.New collection.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètre|Type||Description|
 |---------|--- |:---:|------|
-|value|Number, Text, Date, Time, Boolean, Object, Collection, Picture, Pointer|->|Collection's value(s)|
-|Result|Collection|<-|The new collection|
+|value|Number, Text, Date, Time, Boolean, Object, Collection, Picture, Pointer|->|Valeur(s) de la collection|
+|Résultat|Collection|<-|The new collection|
 </div>
 <!-- END REF -->
 
@@ -174,10 +174,10 @@ Vous souhaitez créer une nouvelle collection puis ajouter un élément :
 <!-- REF #_command_.New shared collection.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètre|Type||Description|
 |---------|--- |:---:|------|
-|value|Number, Text, Date, Time, Boolean, Object, Collection|->|Shared collection's value(s)|
-|Result|Collection|<-|The new shared collection|
+|value|Number, Text, Date, Time, Boolean, Object, Collection|->|Valeur(s) de la collection partagée|
+|Résultat|Collection|<-|The new shared collection|
 </div>
 <!-- END REF -->
 
@@ -300,10 +300,10 @@ $element:=$col.at(10) // undefined
 <!-- REF #collection.average().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètre|Type||Description|
 |---------|--- |:---:|------|
-|propertyPath|Text|->|Object property path to be used for calculation|
-|Result|Real, Undefined|<-|Arithmetic mean (average) of collection values|
+|propertyPath|Text|->|Chemin de propriété d'objet à utiliser pour évaluer les valeurs|
+|Résultat|Real, Undefined|<-|Arithmetic mean (average) of collection values|
 </div>
 <!-- END REF -->
 
@@ -366,9 +366,9 @@ Si la collection contient des objets, passez le paramètre *propertyPath* si vou
 <!-- REF #collection.clear().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètre|Type||Description|
 |---------|--- |:---:|------|
-|Result|Collection|<-|Original collection with all elements removed|
+|Résultat|Collection|<-|Original collection with all elements removed|
 </div>
 <!-- END REF -->
 
@@ -410,11 +410,11 @@ $vSize:=$col.length //$vSize=0
 <!-- REF #collection.combine().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|col2|Collection|->|Collection to combine|
-|index|Integer|->|Position to which insert elements to combine in collection (default=length+1)|
-|Result|Collection|<-|Original collection containing combined element(s)|
+|col2|Collection|->|Collection à combiner|
+|index|Integer|->|Emplacement où insérer les éléments à combiner (défaut=length+1)|
+|Résultat|Collection|<-|Original collection containing combined element(s)|
 </div>
 <!-- END REF -->
 
@@ -464,10 +464,10 @@ $c.combine($fruits;3) //[1,2,3,"Orange","Banana","Apple","Grape",4,5,6]
 <!-- REF #collection.concat().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|value|any|->|Value(s) to concatenate. If *value* is a collection, all collection elements are added to the original collection|
-|Result|Collection|<-|New collection with value(s) added to the original collection|
+|value|any|->|Valeur(s) à concaténer. Si *value* est une collection, tous ses éléments sont ajoutés comme de nouveaux éléments à la fin de la collection d'origine|
+|Résultat|Collection|<-|New collection with value(s) added to the original collection|
 </div>
 <!-- END REF -->
 
@@ -514,12 +514,12 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 <!-- REF #collection.copy().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|option|Integer|->|`ck resolve pointers`: resolve pointers before copying,<br/>`ck shared`: return a shared collection|
-|groupWithCol |Collection|->|Shared collection to be grouped with the resulting collection|
-|groupWithObj |Object|->|Shared object to be grouped with the resulting collection|
-|Result|Collection|<-|Deep copy of the original collection|
+|option|Integer|->|`ck resolve pointers`: résoudre les pointeurs avant la copie,<br/>`ck shared`: retourner une collection partagée|
+|groupWithCol |Collection|->|Collection partagée à grouper avec la collection résultante|
+|groupWithObj |Object|->|Objet partagé à grouper avec la collection résultante|
+|Résultat|Collection|<-|Deep copy of the original collection|
 </div>
 <!-- END REF -->
 
@@ -648,10 +648,10 @@ Cet exemple illustre l'utilisation de l'option `ck resolve pointers` :
 <!-- REF #collection.count().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|propertyPath|Text|->|Object property path to be used for calculation|
-|Result|Real|<-|Number of elements in the collection|
+|propertyPath|Text|->|Chemin de propriété d'objet à utiliser pour évaluer les valeurs|
+|Résultat|Real|<-|Number of elements in the collection|
 </div>
 <!-- END REF -->
 
@@ -700,11 +700,11 @@ Si la collection contient des objets, vous pouvez passer le paramètre *property
 <!-- REF #collection.countValues().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|value|Text, Number, Boolean, Date, Object, Collection|->|Value to count|
-|propertyPath|Text|->|Object property path to be used for calculation|
-|Result|Real|<-|Number of occurrences of the value  |
+|value|Text, Number, Boolean, Date, Object, Collection|->|Valeur à compter|
+|propertyPath|Text|->|Chemin de propriété d'objet à utiliser pour évaluer les valeurs|
+|Résultat|Real|<-|Number of occurrences of the value  |
 </div>
 <!-- END REF -->
 
@@ -851,11 +851,11 @@ Dans le paramètre *options*, vous pouvez passer une ou une combinaison des cons
 <!-- REF #collection.equal().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|collection2|Collection|->|Collection to compare|
-|option|Integer|->|`ck diacritical`: diacritical evaluation ("A" # "a" for example)
-|Result|Boolean|<-|True if collections are identical, false otherwise|
+|collection2|Collection|->|Collection à comparer|
+|option|Integer|->|`ck diacritical`: évaluation diacritique ("A" # "a" par exemple)
+|Résultat|Boolean|<-|True if collections are identical, false otherwise|
 </div>
 <!-- END REF -->
 
@@ -1020,10 +1020,10 @@ $b:=$c.every($f;Is real) //$b=false
 
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|propertyPath|Text|->|Object property path whose values must be extracted to the new collection|
-|targetpath|Text|->|Target property path or property name|
-|option|Integer|->|`ck keep null`: include null properties in the returned collection (ignored by default). Parameter ignored if *targetPath* passed.|
-|Result|Collection|<-|New collection containing extracted values|
+|propertyPath|Text|->|Chemin de propriété d'objet dont les valeurs doivent être extraites dans la nouvelle collection|
+|targetpath|Text|->|Chemin ou nom de propriété cible|
+|option|Integer|->|`ck keep null`: inclure les propriétés null dans la collection retournée (ignorées par défaut). Paramètre ignoré si *targetPath* est passé.|
+|Résultat|Collection|<-|New collection containing extracted values|
 </div>
 <!-- END REF -->
 
@@ -1098,12 +1098,12 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 <!-- REF #collection.fill().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|value|number, Text, Collection, Object, Date, Boolean|->|Filling value|
-|startFrom|Integer|->|Start index (included)|
-|end|Integer|->|End index (not included)|
-|Result|collection|<-|Original collection with filled values|
+|value|number, Text, Collection, Object, Date, Boolean|->|Valeur de remplissage|
+|startFrom|Integer|->|Indice l'élément de départ (inclus)|
+|end|Integer|->|Indice de fin (non inclus)|
+|Résultat|collection|<-|Original collection with filled values|
 </div>
 <!-- END REF -->
 
@@ -1422,9 +1422,9 @@ $val3:=$c.findIndex($val2+1;Formula($1.value.name=$2);"Clanton") //$val3=4
 <!-- REF #collection.first().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|Result|any|<-|First element of collection|
+|Résultat|any|<-|First element of collection|
 </div>
 <!-- END REF -->
 
@@ -1693,11 +1693,11 @@ Optionnellement, vous pouvez passer le numéro de l'élément auquel démarrer l
 <!-- REF #collection.indexOf().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|toSearch|expression|->|Expression to search in the collection|
-|startFrom|Integer|->|Index to start the search at|
-|Result|Integer |<-|Index of the first occurrence of toSearch in the collection, -1 if not found|
+|toSearch|expression|->|Expression à rechercher dans la collection|
+|startFrom|Integer|->|Indice d'élément à partir duquel débuter la recherche|
+|Résultat|Integer |<-|Index of the first occurrence of toSearch in the collection, -1 if not found|
 </div>
 <!-- END REF -->
 
@@ -1754,11 +1754,11 @@ Optionnellement, vous pouvez passer le numéro de l'élément auquel démarrer l
 <!-- REF #collection.indices().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|queryString|Text|->|Search criteria|
-|value|any|->|Value(s) to compare when using placeholder(s)|
-|Result|Collection |<-|Element index(es) matching queryString in the collection|
+|queryString|Text|->|Critère(s) de recherche|
+|value|any|->|Valeur(s) à comparer lors de l'utilisation de paramètre(s) dans la chaîne|
+|Résultat|Collection |<-|Element index(es) matching queryString in the collection|
 </div>
 <!-- END REF -->
 
@@ -1814,11 +1814,11 @@ Pour une description détaillée de la construction de recherches à l'aide des 
 <!-- REF #collection.insert().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|index|Integer|->|Where to insert the element|
-|element|any|->|Element to insert in the collection|
-|Result|Collection |<-|Original collection containing inserted element|
+|index|Integer|->|Où insérer l'élément|
+|element|any|->|Elément à insérer dans la collection|
+|Résultat|Collection |<-|Original collection containing inserted element|
 </div>
 <!-- END REF -->
 
@@ -1870,18 +1870,18 @@ Vous pouvez passer tout type d'élément accepté par les collections, y compris
 <!-- REF #collection.join().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|delimiter|Text|->|Separator to use between elements|
-|option|Integer|->|`ck ignore null or empty`: ignore null and empty strings in the result|
-|Result|Text |<-|String containing all elements of the collection, separated by delimiter|
+|delimiter|Text|->|Séparateur à utiliser entre les éléments|
+|option|Integer|->|`ck ignore null or empty`: ignorer les chaînes null ou vides dans le résultat|
+|Résultat|Text |<-|String containing all elements of the collection, separated by delimiter|
 </div>
 <!-- END REF -->
 
 
 #### Description
 
-La fonction `.concat()` <!-- REF #collection.join().Summary -->retourne une nouvelle collection avec le contenu du paramètre *value* ajouté à la fin de la collection d'origine<!-- END REF -->. La fonction retourne la chaîne résultante.
+La fonction `.join()` <!-- REF #collection.join().Summary -->retourne une nouvelle collection avec le contenu du paramètre *value* ajouté à la fin de la collection d'origine<!-- END REF -->. La fonction retourne la chaîne résultante.
 > Cette fonction ne modifie pas la collection d'origine.
 
 Par défaut, les éléments null ou vides de la collection sont inclus dans la chaîne résultante. Passez la constante `ck ignore null or empty` dans le paramètre *option* si vous souhaitez les exclure de la chaîne résultante.
@@ -1919,9 +1919,9 @@ Par défaut, les éléments null ou vides de la collection sont inclus dans la c
 <!-- REF #collection.last().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|Result|any |<-|Last element of collection|
+|Résultat|any |<-|Last element of collection|
 </div>
 <!-- END REF -->
 
@@ -1971,11 +1971,11 @@ $last:=$emptyCol.last() // retourne Undefined
 <!-- REF #collection.lastIndexOf().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|toSearch|expression|->|The element that is to be searched for within the collection|
-|startFrom|Integer|->|Index to start the search at|
-|Result|Integer |<-|Index of last occurrence of toSearch in the collection, -1 if not found|
+|toSearch|expression|->|Elément à chercher dans la collection|
+|startFrom|Integer|->|Indice d'élément à partir duquel débuter la recherche|
+|Résultat|Integer |<-|Index of last occurrence of toSearch in the collection, -1 if not found|
 </div>
 <!-- END REF -->
 
@@ -2140,10 +2140,10 @@ $c2:=$c.map(Formula(Round(($1.value/$2)*100; 2)); $c.sum())
 <!-- REF #collection.max().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|propertyPath|Text|->|Object property path to be used for evaluation|
-|Result|Boolean, Text, Number, Collection, Object, Date |<-|Maximum value in the collection|
+|propertyPath|Text|->|Chemin de propriété d'objet à utiliser pour évaluer les valeurs|
+|Résultat|Boolean, Text, Number, Collection, Object, Date |<-|Maximum value in the collection|
 </div>
 <!-- END REF -->
 
@@ -2196,10 +2196,10 @@ Si la collection est vide, `.max()` retourne *Undefined*.
 <!-- REF #collection.min().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|propertyPath|Text|->|Object property path to be used for evaluation|
-|Result|Boolean, Text, Number, Collection, Object, Date |<-|Minimum value in the collection|
+|propertyPath|Text|->|Chemin de propriété d'objet à utiliser pour évaluer les valeurs|
+|Résultat|Boolean, Text, Number, Collection, Object, Date |<-|Minimum value in the collection|
 </div>
 <!-- END REF -->
 
@@ -2251,12 +2251,12 @@ Si la collection est vide, `.min()` retourne *Undefined*.
 <!-- REF #collection.orderBy().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|pathStrings|Text|->|Property path(s) on which to order the collection|
-|pathObjects|Collection|->|Collection of criteria objects|
-|ascOrDesc|Integer|->|`ck ascending` or `ck descending` (scalar values)|
-|Result|Collection |<-|Ordered copy of the collection (shallow copy)|
+|pathStrings|Text|->|Chemin(s) de propriété(s) à utiliser pour trier la collection|
+|pathObjects|Collection|->|Collection d'objets critère|
+|ascOrDesc|Integer|->|`ck ascending` ou `ck descending` (valeurs scalaires)|
+|Résultat|Collection |<-|Ordered copy of the collection (shallow copy)|
 </div>
 <!-- END REF -->
 
@@ -2508,9 +2508,9 @@ $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 <!-- REF #collection.pop().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|Result|any |<-|Last element of collection|
+|Résultat|any |<-|Last element of collection|
 </div>
 <!-- END REF -->
 
@@ -2560,10 +2560,10 @@ Lorsqu'elle est appliquée à une collection vide, .`pop()` retourne ***undefine
 <!-- REF #collection.push().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|element|Mixed|->|Element(s) to add to the collection|
-|Result|Collection |<-|Original collection containing added elements|
+|element|Mixed|->|Élément(s) à ajouter à la collection|
+|Résultat|Collection |<-|Original collection containing added elements|
 </div>
 <!-- END REF -->
 
@@ -2624,12 +2624,12 @@ Vous souhaitez trier la collection obtenue :
 <!-- REF #collection.query().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|queryString|Text|->|Search criteria|
-|value|Mixed|->|Value(s) to compare when using placeholder(s)|
-|querySettings|Object|->|Query options: parameters, attributes|
-|Result|Collection |<-|Element(s) matching queryString in the collection|
+|queryString|Text|->|Critère(s) de recherche|
+|value|Mixed|->|Valeur(s) à comparer lors de l'utilisation de paramètre(s) dans la chaîne|
+|querySettings|Object|->|Options de recherche : paramètres, attributs|
+|Résultat|Collection |<-|Element(s) matching queryString in the collection|
 </div>
 <!-- END REF -->
 
@@ -2926,11 +2926,11 @@ Avec la méthode ***Flatten*** suivante :
 <!-- REF #collection.remove().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|index |Integer|->|Element at which to start removal|
-|howMany |Integer|->|Number of elements to remove, or 1 element if omitted|
-|Result|Collection|<-|Modified collection without removed element(s)|
+|index |Integer|->|Élément à partir duquel la suppression peut commencer|
+|howMany |Integer|->|Nombre d'éléments à supprimer, ou 1 élément si omis|
+|Résultat|Collection|<-|Modified collection without removed element(s)|
 </div>
 <!-- END REF -->
 
@@ -2993,11 +2993,11 @@ Si vous essayez de supprimer un élément d'une collection vide, la méthode ne 
 <!-- REF #collection.resize().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|size |Integer|->|New size of the collection|
-|defaultValue |Number, Text, Object, Collection, Date, Boolean|->|Default value to fill new elements|
-|Result|Collection|<-|Resized original collection|
+|size |Integer|->|Nouvelle taille de la collection|
+|defaultValue |Number, Text, Object, Collection, Date, Boolean|->|Valeur par défaut pour remplir de nouveaux éléments|
+|Résultat|Collection|<-|Resized original collection|
 </div>
 <!-- END REF -->
 
@@ -3055,9 +3055,9 @@ Par défaut, les nouveaux éléments sont remplis par des valeurs **null**. Vous
 <!-- REF #collection.reverse().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètre|Type||Description|
 |---------|--- |:---:|------|
-|Result|Collection|<-|Inverted copy of the collection|
+|Résultat|Collection|<-|Inverted copy of the collection|
 </div>
 <!-- END REF -->
 
@@ -3099,9 +3099,9 @@ La fonction `.reverse()` <!-- REF #collection.reverse().Summary -->retourne une 
 <!-- REF #collection.shift().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|Result|any|<-|First element of collection|
+|Résultat|any|<-|First element of collection|
 </div>
 <!-- END REF -->
 
@@ -3150,11 +3150,11 @@ Si la collection est vide, cette méthode ne fait rien.
 <!-- REF #collection.slice().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|startFrom |Integer |->|Start index (included)|
-|end |Integer |->|End index (not included)|
-|Result|Collection|<-|New collection containing sliced elements (shallow copy)|
+|startFrom |Integer |->|Indice l'élément de départ (inclus)|
+|end |Integer |->|Indice de fin (non inclus)|
+|Résultat|Collection|<-|New collection containing sliced elements (shallow copy)|
 </div>
 <!-- END REF -->
 
@@ -3394,10 +3394,10 @@ $col3:=$col.sort(Formula(String($1.value)<String($1.value2))) //tri alphabétiqu
 <!-- REF #collection.sum().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|propertyPath |Text |->|Object property path to be used for calculation|
-|Result|Real|<-|Sum of collection values|
+|propertyPath |Text |->|Chemin de propriété d'objet à utiliser pour évaluer les valeurs|
+|Résultat|Real|<-|Sum of collection values|
 </div>
 <!-- END REF -->
 
@@ -3461,10 +3461,10 @@ Si la collection contient des objets, passez le paramètre *propertyPath* si vou
 <!-- REF #collection.unshift().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Paramètres|Type||Description|
 |---------|--- |:---:|------|
-|value |Text, Number, Object, Collection, Date |->|Value(s) to insert at the beginning of the collection|
-|Result|Collection|<-|Collection containing added element(s)
+|value |Text, Number, Object, Collection, Date |->|Valeur(s) à insérer au début de la collection|
+|Résultat|Collection|<-|Collection containing added element(s)
 |
 </div>
 <!-- END REF -->
