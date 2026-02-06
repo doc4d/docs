@@ -24,7 +24,7 @@ No se puede activar directamente la ejecución de la función de evento. Los eve
 
 :::info Nota de compatibilidad
 
-Los eventos de entidad ORDA en el almacen de datos equivalen a triggers en la base de datos 4D. Sin embargo, las acciones desencadenadas a nivel de la base de datos 4D utilizando los comandos del lenguaje clásico 4D o las acciones estándar no desencadenan eventos ORDA. Note also that, unlike triggers, ORDA entity events do not lock the entire underlying table of a dataclass while saving or dropping entities. Varios eventos pueden ejecutarse en paralelo siempre que afecten a entidades distintas (es decir, registros).
+Los eventos de entidad ORDA en el almacen de datos equivalen a triggers en la base de datos 4D. Sin embargo, las acciones desencadenadas a nivel de la base de datos 4D utilizando los comandos del lenguaje clásico 4D o las acciones estándar no desencadenan eventos ORDA. Tenga en cuenta también que, a diferencia de los triggers, los eventos de la entidad ORDA no bloquean toda la tabla subyacente de un dataclass mientras se guardan o se eliminan entidades. Varios eventos pueden ejecutarse en paralelo siempre que afecten a entidades distintas (es decir, registros).
 
 :::
 
@@ -265,7 +265,7 @@ Note over Client:$people.lastname is uppercased
 
     Client->>+Server: $people.apply()
    
-   Note over Server: The $people entity is received with the lastname attribute uppercased
+      Nota sobre el servidor: la entidad $people se recibe con el atributo lastname en mayúsculas
 
 ```
 
@@ -285,9 +285,9 @@ sequenceDiagram
 
    Note over Server: Function event touched lastname($event : Object) <br>  This.lastname:=Uppercase(This.lastname)
 
-    Server-->>-Client: The $people entity is updated
+    Server-->>-Client: la entidad $people se actualiza
 
-   Note over Client:$people.lastname is uppercased
+   Note over Client:$people.lastname se pone en mayúsculas
 
 
 ```
@@ -336,7 +336,7 @@ Este evento es activado por las siguientes funciones:
 - [`entity.save()`](../API/EntityClass.md#save)
 - [`dataClass.fromCollection()`](../API/DataClassClass.md#fromcollection)
 
-This event is triggered **before** the entity is actually saved and lets you check data consistency so that you can stop the action if needed. Por ejemplo, puede comprobar en este evento que "fecha de salida" < "fecha de llegada".
+Este evento se activa **antes** de que la entidad se guarde realmente y le permite comprobar la coherencia de los datos para que pueda detener la acción si es necesario. Por ejemplo, puede comprobar en este evento que "fecha de salida" < "fecha de llegada".
 
 Para detener la acción, el código de la función debe devolver un [objeto error](#error-object).
 
@@ -379,7 +379,7 @@ Function event saving <attributeName>($event : Object)
 
 Este evento se activa cada vez que se guarda una entidad.
 
-- Si define la función a nivel de entidad (primera Sintaxis), se llama para cualquier atributo de la entidad. The function is executed even if no attribute has been touched in the entity (e.g. in case of sending data to an external app each time a save is done).
+- Si define la función a nivel de entidad (primera Sintaxis), se llama para cualquier atributo de la entidad. La función se ejecuta incluso si no se ha tocado ningún atributo en la entidad (por ejemplo, en caso de enviar datos a una app externa cada vez que se efectúa un guardado).
 - Si definió la función en el nivel de atributo (segunda Sintaxis), solo se llama para este atributo. La función **no** se ejecuta si el atributo no ha sido tocado en la entidad.
 
 La función recibe un [objeto *event*](#event-parameter) como parámetro.
@@ -389,7 +389,7 @@ Este evento es activado por las siguientes funciones:
 - [`entity.save()`](../API/EntityClass.md#save)
 - [`dataClass.fromCollection()`](../API/DataClassClass.md#fromcollection)
 
-Este evento se activa **mientras** la entidad se guarda. If a [`validateSave()`](#function-event-validatesave) event function was defined, the `saving()` event function is called if no error was triggered by `validateSave()`. Por ejemplo, puede utilizar este evento para crear un documento en una cuenta de Google Drive.
+Este evento se activa **mientras** la entidad se guarda. Si se ha definido una función de evento [`validateSave()`](#function-event-validatesave), se llama a la función de evento `saving()` si no se ha producido ningún error con `validateSave()`. Por ejemplo, puede utilizar este evento para crear un documento en una cuenta de Google Drive.
 
 :::note
 
@@ -504,7 +504,7 @@ Este evento se activa con las siguientes funcionalidades:
 - [`entitySelection.drop()`](../API/DataClassClass.md#fromcollection)
 - [deletion control rules](https://doc.4d.com/4Dv20/4D/20.2/Relation-properties.300-6750290.en.html#107320) that can be defined at the database structure level.
 
-This event is triggered **before** the entity is actually dropped, allowing you to check data consistency and if necessary, to stop the drop action.
+Este evento se activa **antes** de que la entidad sea realmente eliminada, permitiéndole comprobar la consistencia de los datos y, si es necesario, detener la acción de eliminación.
 
 Para detener la acción, el código de la función debe devolver un [objeto error](#error-object).
 
@@ -599,7 +599,7 @@ Function event afterDrop($event : Object)
 
 Este evento se activa justo después de que una entidad es soltada.
 
-Este evento es útil después de soltar datos para propagar la acción de soltar fuera de la aplicación o para ejecutar tareas de administración. Por ejemplo, se puede utilizar para enviar un correo electrónico de cancelación después de soltar los datos. Or, in case of error while dropping data, it can log an information for the administrator to check data consistency.
+Este evento es útil después de soltar datos para propagar la acción de soltar fuera de la aplicación o para ejecutar tareas de administración. Por ejemplo, se puede utilizar para enviar un correo electrónico de cancelación después de soltar los datos. O, en caso de error al soltar datos, puede registrar una información para que el administrador verifique la coherencia de los datos.
 
 La función recibe un [objeto *event*](#event-parameter) como parámetro.
 

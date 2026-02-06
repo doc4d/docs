@@ -340,7 +340,7 @@ GitHubでリリースが作成されると、そこに**タグ**と**バージ�
 
 このファイルは、依存関係・パス・url・読み込みエラー・その他の情報などをログに記録します。 これは、コンポーネントの読み込み管理やトラブルシューティングに役立ちます。
 
-## プロジェクトの依存関係の監視
+## Monitoring Project Dependencies {#monitoring-project-dependencies}
 
 開かれているプロジェクトでは、**依存関係** パネルで依存関係の追加・削除・更新ができるほか、現在の読み込み状態に関する情報を取得することができます。
 
@@ -440,7 +440,7 @@ GitHubでリリースが作成されると、そこに**タグ**と**バージ�
 
 ![dependency-add](../assets/en/Project/dependency-add.png)
 
-**ローカル** タブが選択されていることを確認し、**...** ボタンをクリックします。 標準の "ファイルを開く" ダイアログボックスが表示され、追加するコンポーネントを選択できます。 [**.4DZ**](../Desktop/building.md#コンポーネントをビルド) または [**.4DProject**](architecture.md#applicationname4dproject-ファイル) ファイルを選択できます。
+Make sure the **Local** tab is selected and click on the *...*\*\* button. 標準の "ファイルを開く" ダイアログボックスが表示され、追加するコンポーネントを選択できます。 [**.4DZ**](../Desktop/building.md#コンポーネントをビルド) または [**.4DProject**](architecture.md#applicationname4dproject-ファイル) ファイルを選択できます。
 
 選択した項目が有効であれば、その名前と場所がダイアログボックスに表示されます。
 

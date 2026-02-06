@@ -9,6 +9,8 @@ displayed_sidebar: docs
 
 <!--REF #_command_.WP EXPORT VARIABLE.Params-->
 
+<div class="no-index">
+
 | Paramètres  | Type            |                             | Description                                  |
 | ----------- | --------------- | --------------------------- | -------------------------------------------- |
 | wpDoc       | Object          | &#8594; | Variable 4D Write Pro                        |
@@ -16,6 +18,7 @@ displayed_sidebar: docs
 | format      | Integer         | &#8594; | Format de sortie variable                    |
 | option      | Object, Integer | &#8594; | Options d'export                             |
 
+</div>
 <!-- END REF-->
 
 ## Description
@@ -48,7 +51,7 @@ Dans le paramètre *format*, passez une constante du thème *4D Write Pro Consta
 - Lors de l'exportation au format SVG avec cette commande, les images sont intégrées au format base64.
 - Pour plus d'informations sur l'exportation au format SVG, voir [Exportation au format SVG](https://doc.4d.com/4Dv20/4D/20/Exporting-to-SVG-format.200-6229468.en.html).
 
-### option parameter
+### Paramètre option
 
 Pass an [object](# "Data structured as a native 4D object") in *option* containing the values to define the properties of the exported document. Les propriétés suivantes sont disponibles :
 

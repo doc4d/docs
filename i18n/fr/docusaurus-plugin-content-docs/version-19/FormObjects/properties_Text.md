@@ -366,7 +366,7 @@ La méthode *Color* contiendrait alors :
 
 ## Multistyle
 
-This property enables the possibility of using [specific styles](https://doc.4d.com/4Dv20/4D/20.6/Supported-tags.300-7488021.en.html) in the selected area. Lorsque cette option est cochée, 4D interprète toutes les balises `<SPAN> HTML` trouvées dans la zone.
+Cette propriété permet d'utiliser des [styles spécifiques](https://doc.4d.com/4Dv20/4D/20.6/Supported-tags.300-7488021.en.html) dans la zone sélectionnée. Lorsque cette option est cochée, 4D interprète toutes les balises `<SPAN> HTML` trouvées dans la zone.
 
 Par défaut, cette option n'est pas activée.
 
@@ -427,7 +427,7 @@ Le nom d'un tableau Entier Long doit être utilisé. Chaque élément de ce tabl
 
 ---
 
-## Tableau de styles {#row-style-array)
+## Tableau de styles {#row-style-array}
 
 `List box de type tableau`
 

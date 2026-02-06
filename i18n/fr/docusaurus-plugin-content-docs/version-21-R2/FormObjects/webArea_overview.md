@@ -9,9 +9,17 @@ Il est possible de créer plusieurs zones web dans un même formulaire. Notez to
 
 Plusieurs [actions standard](#standard-actions), de nombreuses [commandes du langage](../category/web-area) ainsi que des [événements formulaire](#form-events) génériques et spécifiques permettent au développeur de contrôler le fonctionnement des zones web. Des variables spécifiques permettent d’échanger des informations entre la zone et l’environnement 4D.
 
-:::info Affichage des pages Qodly
+## Affichage des pages Qodly
 
-Dans les applications client/serveur 4D, les zones Web peuvent être utilisées pour afficher des pages Qodly et [partager la session distante](../Desktop/clientServer.md#sharing-the-session-with-qodly-pages-in-web-areas). Cette fonctionnalité vous permet de concevoir des interfaces web pour vos applications desktop client/serveur.
+Les zones Web peuvent être utilisées pour afficher des [pages Qodly](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/pageLoaderOverview) et fournir aux utilisateurs d'applications desktop 4D une interface Web moderne basée sur les CSS.
+
+Vous pouvez intégrer une page Qodly dans une zone Web et mettre à jour les [sources Qodly](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/qodlySources) à partir de 4D en appelant [`WA EXECUTE JAVASCRIPT FUNCTION`](../commands-legacy/wa-execute-javascript-function.md).
+
+In 4D client/server applications, Qodly pages inside Web areas can [share their session with the remote user](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses) for a high level of security.
+
+:::tip Article(s) de blog sur le sujet
+
+[Améliorez l'interface de votre application de bureau avec des widgets Web en utilisant 4D Qodly Pro](https://blog.4d.com/build-modern-hybrid-desktop-apps-with-4d-and-qodly-pro/)
 
 :::
 
@@ -235,7 +243,7 @@ Lorsque vous avez effectué les réglages décrits ci-dessus, vous disposez de n
 
 ## Propriétés prises en charge
 
-[Style de ligne de bordure](properties_BackgroundAndBorder.md#border-line-style) - [Bas](properties_CoordinatesAndSizing.md#bottom) - [Classe](properties_Object.md#css-class) - [Menu contextuel](properties_Entry.md#context-menu) - [Hauteur](properties_CoordinatesAndSizing.md#height) - [Taille horizontale](properties_ResizingOptions.md#horizontal-sizing) - [Gauche](properties_CoordinatesAndSizing.md#left) - [Méthode](properties_Action.md#method) - [Nom de l'objet](properties_Object.md#object-name) - [Progression](properties_WebArea.md#progression) - [Droite](properties_CoordinatesAndSizing.md#right) - [Haut](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - [URL](properties_WebArea.md#url) - [Utiliser un moteur de rendu Web intégré](properties_WebArea.md#use-embedded-web-rendering-engine) - [Variable ou expression](properties_Object.md#variable-or-expression) - [Taille verticale](properties_ResizingOptions.md#vertical-sizing) - [Visibilité](properties_Display.md#visibility) - [Largeur](properties_CoordinatesAndSizing.md#width)
+[Access 4D methods](properties_WebArea.md#access-4d-methods) - [Border Line Style](properties_BackgroundAndBorder.md#border-line-style) - [Bottom](properties_CoordinatesAndSizing.md#bottom) - [Class](properties_Object.md#css-class) - [Context Menu](properties_Entry.md#context-menu) - [Height](properties_CoordinatesAndSizing.md#height) - [Horizontal Sizing](properties_ResizingOptions.md#horizontal-sizing) - [Left](properties_CoordinatesAndSizing.md#left) - [Method](properties_Action.md#method) - [Object Name](properties_Object.md#object-name) - [Progression](properties_WebArea.md#progression) - [Right](properties_CoordinatesAndSizing.md#right) - [Top](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - [URL](properties_WebArea.md#url) - [Use embedded Web rendering engine](properties_WebArea.md#use-embedded-web-rendering-engine) - [Variable or Expression](properties_Object.md#variable-or-expression) - [Vertical Sizing](properties_ResizingOptions.md#vertical-sizing) - [Visibilty](properties_Display.md#visibility) - [Width](properties_CoordinatesAndSizing.md#width)
 
 ## 4DCEFParameters.json
 
@@ -338,9 +346,9 @@ Le fichier 4DCEFParameters.json par défaut contient les commutateurs suivants :
 }
 ```
 
-:::info Article(s) de blog sur le sujet
+:::tip Article(s) de blog sur le sujet
 
-[Custom Parameters for Initializing Embedded Web Area](https://blog.4d.com/custom-parameters-for-initializing-embedded-web-area/)
+[Paramètres personnalisés pour l'initialisation des zones Web intégrées](https://blog.4d.com/custom-parameters-for-initializing-embedded-web-area/)
 
 :::
 

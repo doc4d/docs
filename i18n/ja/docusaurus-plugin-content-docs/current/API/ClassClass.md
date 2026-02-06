@@ -141,15 +141,18 @@ title: Class
 
 </details>
 
-<!-- REF #ClassClass.new().Syntax -->**.new**( { *...param* : any } ) : 4D.Object<!-- END REF -->
+<!-- REF #ClassClass.new().Syntax -->**.new**( { ...*param* : any } ) : 4D.Object<!-- END REF -->
 
 <!-- REF #ClassClass.new().Params -->
+
+<div class="no-index">
 
 | 引数    | 型                         |                             | 説明              |
 | ----- | ------------------------- | :-------------------------: | --------------- |
 | param | any                       |              ->             | コンストラクター関数に渡す引数 |
 | 戻り値   | 4D.Object | <- | クラスの新規オブジェクト    |
 
+</div>
 <!-- END REF -->
 
 #### 説明

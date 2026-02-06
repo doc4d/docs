@@ -4,7 +4,7 @@ title: Collection
 ---
 
 
-The Collection class manages [Collection](Concepts/dt_collection.md) type expressions.
+La classe Collection gère les expressions de type [Collection](Concepts/dt_collection.md).
 
 Une collection est initialisée avec :
 
@@ -855,7 +855,7 @@ La fonction `.equal()` <!-- REF #collection.equal().Summary -->compare la collec
 
 :::note Notes
 
-- La fonction `.equal()` ne vérifie l'égalité que pour les éléments de type chaîne, booléen, nombre et null dans les collections. Elle ne vérifie pas l'égalité pour les objets natifs.
+- La fonction `.equal()` ne vérifie l'égalité que pour les éléments de type chaîne, booléen, nombre et null dans les collections. La callback reçoit les paramètres suivants :
 - Les éléments avec des valeurs **null** ne sont pas égaux aux éléments Undefined.
 
 :::
@@ -2434,12 +2434,12 @@ Vous souhaitez trier une collection par code de caractère ou par langage :
 var $strings1; $strings2 : Collection
 $strings1:=New collection("Alpha";"Charlie";"alpha";"bravo";"Bravo";"charlie")
 
-//utilisation du code de caractère:
-$strings2:=$strings1.orderByMethod(Function(sortCollection);sk character codes)
+//using the character code:
+$strings2:=$strings1.orderByMethod(Formula(sortCollection);sk char codes)
 // result : ["Alpha","Bravo","Charlie","alpha","bravo","charlie"]
 
-//utilisation du langage:
-$strings2:=$strings1.orderByMethod(Function(sortCollection);sk strict)
+//using the language:
+$strings2:=$strings1.orderByMethod(Formula(sortCollection);sk strict)
 // result : ["alpha","Alpha","bravo","Bravo","charlie","Charlie"]
 ```
 
@@ -3250,13 +3250,13 @@ Vous voulez savoir si au moins une valeur de la collection est >0.
 
 
 <!-- REF #collection.sort().Params -->
-| Paramètres | Type        |    | Description                                           |
-| ---------- | ----------- |:--:| ----------------------------------------------------- |
-| ascOrDesc  | Integer     | -> | `ck ascending` ou `ck descending` (valeurs scalaires) |
-| formula    | 4D.Function | -> | Objet formule                                         |
-| methodName | Text        | -> | Nom de méthode                                        |
-| extraParam | any         | -> | Paramètre(s) à passer à la méthode                    |
-| Résultat   | Collection  | <- | Collection d'origine triée                            |
+| Paramètres | Type        |    | Description                                                                                                                   |
+| ---------- | ----------- |:--:| ----------------------------------------------------------------------------------------------------------------------------- |
+| ascOrDesc  | Integer     | -> | `ck ascending` ou `ck descending` (valeurs scalaires)                                                                         |
+| formula    | 4D.Function | -> | Objet formule                                                                                                                 |
+| methodName | Text        | -> | Nom de méthode                                                                                                                |
+| extraParam | any         | -> | Paramètre(s) à passer à la méthode                                                                                            |
+| Résultat   | Collection  | <- | Optionnellement, vous pouvez passer des paramètres à *formula* ou *methodName* en utilisant le(s) paramètre(s) *param*. |
 <!-- END REF -->
 
 
@@ -3265,14 +3265,14 @@ Vous voulez savoir si au moins une valeur de la collection est >0.
 La fonction `.sort()` <!-- REF #collection.sort().Summary -->trie les éléments de la collection d'origine et retourne également une référence vers cette collection triée<!-- END REF --> .
 > Cette fonction modifie la collection d'origine.
 
-Si `.sort()` est appelé sans paramètre, seules les valeurs scalaires (numérique, texte, date, booléens) sont triées. Les éléments sont triés par défaut par ordre croissant, en fonction de leur type. You can also pass one of the following constants in the *ascOrDesc* parameter:
+Si `.sort()` est appelé sans paramètre, seules les valeurs scalaires (numérique, texte, date, booléens) sont triées. Les éléments sont triés par défaut par ordre croissant, en fonction de leur type. Vous pouvez également passer l'une des constantes suivantes dans le paramètre *ascOrDesc* :
 
-    |Constant|  Type|Value|Comment|
-    |---|---|---|---|
-    |ck ascending|Integer|0|Elements are ordered in ascending order (default)|
-    |ck descending|Integer|1|Elements are ordered in descending order|
+    |Constante| Type|Valeur|Comment|
+    |---|---|---|
+    |ck ascending|Integer|0|Les éléments sont classés par ordre croissant (par défaut)|
+    |ck descending|Integer|1|Les éléments sont classés par ordre décroissant|
     
-    This syntax orders scalar values in the collection only (other element types such as objects or collections are returned unordered).
+    Cette syntaxe ordonne uniquement les valeurs scalaires dans la collection (les autres types d'éléments tels que les objets ou les collections sont renvoyés non ordonnés).
 
  Si la collection contient des éléments de différents types, ils sont d'abord groupés par type et triés par la suite. Les types sont renvoyés dans l'ordre suivant :
 

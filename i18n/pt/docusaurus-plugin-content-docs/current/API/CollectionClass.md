@@ -82,11 +82,14 @@ Uma coleção é inicializada com os comandos [`New collection`](../commands/new
 
 <!-- REF #collection.at().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo    |                             | Descrição                     |
 | ---------- | ------- | :-------------------------: | ----------------------------- |
 | index      | Integer |              ->             | Índice de elemento a devolver |
 | Resultados | any     | <- | O elemento nesse índice       |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -129,11 +132,14 @@ $element:=$col.at(10) // undefined
 
 <!-- REF #collection.average().Params -->
 
+<div class="no-index">
+
 | Parâmetro    | Tipo            |                             | Descrição                                            |
 | ------------ | --------------- | :-------------------------: | ---------------------------------------------------- |
 | propertyPath | Text            |              ->             | Rota de propriedade objeto a ser usado para cálculos |
 | Resultados   | Real, Undefined | <- | Média aritmética dos valores coleção                 |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -187,10 +193,13 @@ Se a coleção contiver objetos, passe o parâmetro *propertyPath* para indicar 
 
 <!-- REF #collection.clear().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo       |                             | Descrição                                            |
 | ---------- | ---------- | :-------------------------: | ---------------------------------------------------- |
 | Resultados | Collection | <- | Collection original com todos os elementos removidos |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -226,12 +235,15 @@ $vSize:=$col.length //$vSize=0
 
 <!-- REF #collection.combine().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo       |                             | Descrição                                                                                              |
 | ---------- | ---------- | :-------------------------: | ------------------------------------------------------------------------------------------------------ |
 | col2       | Collection |              ->             | Collection a combinar                                                                                  |
 | index      | Integer    |              ->             | Posição para a qual inserir elementos para combinar em coleção (padrão = length +1) |
 | Resultados | Collection | <- | Collection original contendo elementos combinados                                                      |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -271,15 +283,18 @@ $c.combine($fruits;3) //[1,2,3,"Orange","Banana","Apple","Grape",4,5,6]
 
 </details>
 
-<!-- REF #collection.concat().Syntax -->**.concat**( *value* : any { ; *...valueN* } ) : Collection<!-- END REF -->
+<!-- REF #collection.concat().Syntax -->**.concat**( *value* : any { ; ...*valueN* } ) : Collection<!-- END REF -->
 
 <!-- REF #collection.concat().Params -->
+
+<div class="no-index">
 
 | Parâmetro  | Tipo       |                             | Descrição                                                                                                                                                                      |
 | ---------- | ---------- | :-------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | value      | any        |              ->             | Valores a concatenar. Se *valor* for uma coleção, todos os seus elementos serão adicionados como novos elementos no final da coleção original. |
 | Resultados | Collection | <- | Nova coleção com valores adicionados à coleção original                                                                                                                        |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -320,6 +335,8 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 
 <!-- REF #collection.copy().Params -->
 
+<div class="no-index">
+
 | Parâmetro    | Tipo       |                             | Descrição                                                                                                                                 |
 | ------------ | ---------- | :-------------------------: | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | option       | Integer    |              ->             | `ck resolve pointers`: resolve ponteiros antes de copiar,<br/>`ck shared`: retorna uma coleção partilhada |
@@ -327,6 +344,7 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 | groupWithObj | Object     |              ->             | Objeto partilhado a ser agrupado com a coleção resultante                                                                                 |
 | Resultados   | Collection | <- | Cópia profunda da collection original                                                                                                     |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -442,11 +460,14 @@ Este exemplo ilustra o uso da opção `ck resolve pointers`:
 
 <!-- REF #collection.count().Params -->
 
+<div class="no-index">
+
 | Parâmetro    | Tipo |                             | Descrição                                            |
 | ------------ | ---- | :-------------------------: | ---------------------------------------------------- |
 | propertyPath | Text |              ->             | Rota de propriedade objeto a ser usado para cálculos |
 | Resultados   | Real | <- | Número de elementos na coleção                       |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -488,12 +509,15 @@ Se a coleção contiver objetos, você poderá passar o parâmetro *propertyPath
 
 <!-- REF #collection.countValues().Params -->
 
+<div class="no-index">
+
 | Parâmetro    | Tipo |                             | Descrição                                            |
 | ------------ | ---- | :-------------------------: | ---------------------------------------------------- |
 | value        | any  |              ->             | Valor a contar                                       |
 | propertyPath | Text |              ->             | Rota de propriedade objeto a ser usado para cálculos |
 | Resultados   | Real | <- | Número de ocorrências do valor                       |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -565,12 +589,15 @@ O parâmetro opcional *propertyPath* permite que você conte os valores dentro d
 
 <!-- REF #collection.distinct().Params -->
 
+<div class="no-index">
+
 | Parâmetro    | Tipo       |                             | Descrição                                 |
 | ------------ | ---------- | :-------------------------: | ----------------------------------------- |
 | propertyPath | Text       |              ->             | Rota do atributo cujos valores quer obter |
 | options      | Integer    |              ->             | `ck diacritical`, `ck count values`       |
 | Resultados   | Collection | <- | Nova coleção com apenas valores distintos |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -624,12 +651,15 @@ No parâmetro *opções*, você pode passar uma ou uma combinação das seguinte
 
 <!-- REF #collection.equal().Params -->
 
+<div class="no-index">
+
 | Parâmetro   | Tipo       |                             | Descrição                                                                                          |
 | ----------- | ---------- | :-------------------------: | -------------------------------------------------------------------------------------------------- |
 | collection2 | Collection |              ->             | Coleção a comparar                                                                                 |
 | option      | Integer    |              ->             | `ck diacritical`: avaliação diacrítica ("A" # "a", por exemplo) |
 | Resultados  | Parâmetros | <- | True se as coleções forem idênticas, senão false                                                   |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -689,9 +719,11 @@ Uma comparação recursiva de coleções pode consumir muito tempo se a coleçã
 
 </details>
 
-<!-- REF #collection.every().Syntax -->**.every**( { *startFrom* : Integer ; } *formula* : 4D.Function { ;*...param* : any } ) : Boolean<br/>**.every**( { *startFrom* : Integer ; } *methodName* : Text { ;*...param* : any } ) : Boolean<!-- END REF -->
+<!-- REF #collection.every().Syntax -->**.every**( { *startFrom* : Integer ; } *formula* : 4D.Function { ;...*param* : any } ) : Boolean<br/>**.every**( { *startFrom* : Integer ; } *methodName* : Text { ;...*param* : any } ) : Boolean<!-- END REF -->
 
 <!-- REF #collection.every().Params -->
+
+<div class="no-index">
 
 | Parâmetro  | Tipo                         |                             | Descrição                                                                                                                 |
 | ---------- | ---------------------------- | :-------------------------: | ------------------------------------------------------------------------------------------------------------------------- |
@@ -701,6 +733,7 @@ Uma comparação recursiva de coleções pode consumir muito tempo se a coleçã
 | param      | any                          |              ->             | Parâmetro(s) a ser(em) passado(s) para *formula* ou *methodName* |
 | Resultados | Parâmetros                   | <- | True se todos os elementos passarem o teste com sucesso                                                                   |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -781,6 +814,8 @@ $b:=$c.every("TypeLookUp";Is real) //$b=false
 
 <!-- REF #collection.extract().Params -->
 
+<div class="no-index">
+
 | Parâmetro    | Tipo       |                             | Descrição                                                                                                                                                                                              |
 | ------------ | ---------- | :-------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | propertyPath | Text       |              ->             | Rota de propriedade de objeto cujos valores serão extraídos para nova coleção                                                                                                                          |
@@ -788,6 +823,7 @@ $b:=$c.every("TypeLookUp";Is real) //$b=false
 | option       | Integer    |              ->             | `ck keep null`: include null properties na coleção retornada (ignorado por padrão). Parâmetro ignorado se *targetPath* for passado. |
 | Resultados   | Collection | <- | Nova collection contendo valores extraídos                                                                                                                                                             |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -851,6 +887,8 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 
 <!-- REF #collection.fill().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo       |                             | Descrição                                         |
 | ---------- | ---------- | :-------------------------: | ------------------------------------------------- |
 | value      | any        |              ->             | Valores preenchido                                |
@@ -858,6 +896,7 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 | end        | Integer    |              ->             | Final do índice (não incluído) |
 | Resultados | Collection | <- | Coleção original com valores preenchidos          |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -902,9 +941,11 @@ Em caso de inconsistências, as regras abaixos são seguidas:
 
 </details>
 
-<!-- REF #collection.filter().Syntax -->**.filter**( *formula* : 4D.Function { ; *...param* : any } ) : Collection<br/>**.filter**( *methodName* : Text { ; *...param* : any } ) : Collection<!-- END REF -->
+<!-- REF #collection.filter().Syntax -->**.filter**( *formula* : 4D.Function { ; ...*param* : any } ) : Collection<br/>**.filter**( *methodName* : Text { ; ...*param* : any } ) : Collection<!-- END REF -->
 
 <!-- REF #collection.filter().Params -->
+
+<div class="no-index">
 
 | Parâmetro  | Tipo                         |                             | Descrição                                                                                                                 |
 | ---------- | ---------------------------- | :-------------------------: | ------------------------------------------------------------------------------------------------------------------------- |
@@ -913,6 +954,7 @@ Em caso de inconsistências, as regras abaixos são seguidas:
 | param      | any                          |              ->             | Parâmetro(s) a ser(em) passado(s) para *formula* ou *methodName* |
 | Resultados | Collection                   | <- | Nova coleção contendo elementos filtrados (cópia superficial)                                          |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -988,9 +1030,11 @@ Se quiser filtrar elementos de acordo com seu tipo de valor:
 
 </details>
 
-<!-- REF #collection.find().Syntax -->**.find**( { *startFrom* : Integer ; }  *formula* : 4D.Function { ; *...param* : any } ) : any<br/>**.find**( { *startFrom* : Integer ; }  *methodName* : Text { ; *...param* : any } ) : any<!-- END REF -->
+<!-- REF #collection.find().Syntax -->**.find**( { *startFrom* : Integer ; }  *formula* : 4D.Function { ; ...*param* : any } ) : any<br/>**.find**( { *startFrom* : Integer ; }  *methodName* : Text { ; ...*param* : any } ) : any<!-- END REF -->
 
 <!-- REF #collection.find().Params -->
+
+<div class="no-index">
 
 | Parâmetro  | Tipo                         |                             | Descrição                                                                                                                 |
 | ---------- | ---------------------------- | :-------------------------: | ------------------------------------------------------------------------------------------------------------------------- |
@@ -1000,6 +1044,7 @@ Se quiser filtrar elementos de acordo com seu tipo de valor:
 | param      | any                          |              ->             | Parâmetro(s) a ser(em) passado(s) para *formula* ou *methodName* |
 | Resultados | any                          | <- | Primeiro valor encontrado ou Undefined se não encontrado                                                                  |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -1077,9 +1122,11 @@ $c2:=$c.find(Formula($1.value.name=$2); "Clanton")  //$c2={name:Clanton,zc:35046
 
 </details>
 
-<!-- REF #collection.findIndex().Syntax -->**.findIndex**( { *startFrom* : Integer ; }  *formula* : 4D.Function { ; *...param* : any } ) : Integer<br/>**.findIndex**( { *startFrom* : Integer ; }  *methodName* : Text { ; *...param* : any } ) : Integer<!-- END REF -->
+<!-- REF #collection.findIndex().Syntax -->**.findIndex**( { *startFrom* : Integer ; }  *formula* : 4D.Function { ; ...*param* : any } ) : Integer<br/>**.findIndex**( { *startFrom* : Integer ; }  *methodName* : Text { ; ...*param* : any } ) : Integer<!-- END REF -->
 
 <!-- REF #collection.findIndex().Params -->
+
+<div class="no-index">
 
 | Parâmetro  | Tipo                         |                             | Descrição                                                                                                                 |
 | ---------- | ---------------------------- | :-------------------------: | ------------------------------------------------------------------------------------------------------------------------- |
@@ -1089,6 +1136,7 @@ $c2:=$c.find(Formula($1.value.name=$2); "Clanton")  //$c2={name:Clanton,zc:35046
 | param      | any                          |              ->             | Parâmetro(s) a ser(em) passado(s) para *formula* ou *methodName* |
 | Resultados | Integer                      | <- | Indice do primeiro valor encontrado ou -1 se não encontrado                                                               |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -1158,10 +1206,13 @@ var $c : Collection
 
 <!-- REF #collection.first().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo |                             | Descrição                     |
 | ---------- | ---- | :-------------------------: | ----------------------------- |
 | Resultados | any  | <- | Primeiro elemento de colecção |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -1198,11 +1249,14 @@ var $col : Collection
 
 <!-- REF #collection.flat().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo       |                             | Descrição                                                                                             |
 | ---------- | ---------- | :-------------------------: | ----------------------------------------------------------------------------------------------------- |
 | depth      | Integer    |              ->             | A profundidade a que uma estrutura de colecção aninhada deve ser aplanada. O padrão=1 |
 | Resultados | Collection | <- | Colecção achatada                                                                                     |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -1247,9 +1301,11 @@ $col.flat(MAXLONG)
 
 </details>
 
-<!-- REF #collection.flatMap().Syntax -->**.flatMap**( *formula* : 4D.Function { ; *...param* : any } ) : Collection<br/>**.flatMap**( *methodName* : Text { ; *...param* : any } ) : Collection <!-- END REF -->
+<!-- REF #collection.flatMap().Syntax -->**.flatMap**( *formula* : 4D.Function { ; ...*param* : any } ) : Collection<br/>**.flatMap**( *methodName* : Text { ; ...*param* : any } ) : Collection <!-- END REF -->
 
 <!-- REF #collection.flatMap().Params -->
+
+<div class="no-index">
 
 | Parâmetro  | Tipo                         |                             | Descrição                                                                                                                 |
 | ---------- | ---------------------------- | :-------------------------: | ------------------------------------------------------------------------------------------------------------------------- |
@@ -1258,6 +1314,7 @@ $col.flat(MAXLONG)
 | param      | any                          |              ->             | Parâmetro(s) a ser(em) passado(s) para *formula* ou *methodName* |
 | Resultados | Collection                   | <- | Collection of transformed values and flattened by a depth of 1                                                            |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -1341,12 +1398,15 @@ var $c; $c2 : Collection
 
 <!-- REF #collection.includes().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo       |                             | Descrição                                    |
 | ---------- | ---------- | :-------------------------: | -------------------------------------------- |
 | toSearch   | Expression |              ->             | Expressão a pesquisar na coleção             |
 | startFrom  | Integer    |              ->             | Índice onde inicia a pesquisa                |
 | Resultados | Parâmetros | <- | True se *toSearch* for encontrado na coleção |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -1404,12 +1464,15 @@ Opcionalmente pode passar o índice da coleção para a qual iniciar a pesquisa 
 
 <!-- REF #collection.indexOf().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo       |                             | Descrição                                                                  |
 | ---------- | ---------- | :-------------------------: | -------------------------------------------------------------------------- |
 | toSearch   | Expression |              ->             | Expressão a pesquisar na coleção                                           |
 | startFrom  | Integer    |              ->             | Índice onde inicia a pesquisa                                              |
 | Resultados | Integer    | <- | Índice da primeira ocorrência de toSearch na coleção, -1 se não encontrado |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -1460,9 +1523,11 @@ Opcionalmente pode passar o índice da coleção para a qual iniciar a pesquisa 
 
 </details>
 
-<!-- REF #collection.indices().Syntax -->**.indices**(  *queryString* : Text { ; *...value* : any } ) : Collection <!-- END REF -->
+<!-- REF #collection.indices().Syntax -->**.indices**(  *queryString* : Text { ; ...*value* : any } ) : Collection <!-- END REF -->
 
 <!-- REF #collection.indices().Params -->
+
+<div class="no-index">
 
 | Parâmetro   | Tipo       |                             | Descrição                                                                            |
 | ----------- | ---------- | :-------------------------: | ------------------------------------------------------------------------------------ |
@@ -1470,6 +1535,7 @@ Opcionalmente pode passar o índice da coleção para a qual iniciar a pesquisa 
 | value       | any        |              ->             | Valores a comparar quando usar placeholders (valores temporários) |
 | Resultados  | Collection | <- | Índices elemento correspondendo a queryString na coleção                             |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -1519,12 +1585,15 @@ Para uma descrição detalhada dos parâmetros *queryString* e *value*, por favo
 
 <!-- REF #collection.insert().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo       |                             | Descrição                                        |
 | ---------- | ---------- | :-------------------------: | ------------------------------------------------ |
 | index      | Integer    |              ->             | Onde inserir os elementos                        |
 | element    | any        |              ->             | Elemento a inserir na coleção                    |
 | Resultados | Collection | <- | Collection original contendo elementos inseridos |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -1571,12 +1640,15 @@ Qualquer tipo de elemento aceito por uma coleção pode ser inserido, mesmo outr
 
 <!-- REF #collection.join().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo    |                             | Descrição                                                                                           |
 | ---------- | ------- | :-------------------------: | --------------------------------------------------------------------------------------------------- |
 | delimiter  | Text    |              ->             | Separador a usar entre os elementos                                                                 |
 | option     | Integer |              ->             | `ck ignore null or empty`: ignora cadeias de caracteres nulas e vazias no resultado |
 | Resultados | Text    | <- | String contendo todos os elementos da coleção, separados por um delimitador                         |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -1615,10 +1687,13 @@ Como padrão, elementos null ou vazios da coleção são retornados na string re
 
 <!-- REF #collection.last().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo |                             | Descrição                  |
 | ---------- | ---- | :-------------------------: | -------------------------- |
 | Resultados | any  | <- | Último elemento da coleção |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -1661,12 +1736,15 @@ $last:=$emptyCol.last() // devolve Undefined
 
 <!-- REF #collection.lastIndexOf().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo       |                             | Descrição                                                                |
 | ---------- | ---------- | :-------------------------: | ------------------------------------------------------------------------ |
 | toSearch   | Expression |              ->             | O elemento que é pesquisado dentro da coleção                            |
 | startFrom  | Integer    |              ->             | Índice onde inicia a pesquisa                                            |
 | Resultados | Integer    | <- | Índice da última ocorrência de toSearch na coleção, -1 se não encontrado |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -1743,9 +1821,11 @@ A propriedade `.length` é inicializada quando a coleção é criada. Adicionar 
 
 </details>
 
-<!-- REF #collection.map().Syntax -->**.map**( *formula* : 4D.Function { ; *...param* : any } ) : Collection<br/>**.map**( *methodName* : Text { ; *...param* : any } ) : Collection <!-- END REF -->
+<!-- REF #collection.map().Syntax -->**.map**( *formula* : 4D.Function { ; ...*param* : any } ) : Collection<br/>**.map**( *methodName* : Text { ; ...*param* : any } ) : Collection <!-- END REF -->
 
 <!-- REF #collection.map().Params -->
+
+<div class="no-index">
 
 | Parâmetro  | Tipo                         |                             | Descrição                                                                                                                 |
 | ---------- | ---------------------------- | :-------------------------: | ------------------------------------------------------------------------------------------------------------------------- |
@@ -1754,6 +1834,7 @@ A propriedade `.length` é inicializada quando a coleção é criada. Adicionar 
 | param      | any                          |              ->             | Parâmetro(s) a ser(em) passado(s) para *formula* ou *methodName* |
 | Resultados | Collection                   | <- | Collection de valores transformados                                                                                       |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -1806,11 +1887,14 @@ var $1 : Object
 
 <!-- REF #collection.max().Params -->
 
+<div class="no-index">
+
 | Parâmetro    | Tipo |                             | Descrição                                             |
 | ------------ | ---- | :-------------------------: | ----------------------------------------------------- |
 | propertyPath | Text |              ->             | Rota de propriedade objeto a ser usado para avaliação |
 | Resultados   | any  | <- | Valor máximo na coleção                               |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -1856,11 +1940,14 @@ Se a coleção estiver vazia, `.max()` retorna *Undefined*.
 
 <!-- REF #collection.min().Params -->
 
+<div class="no-index">
+
 | Parâmetro    | Tipo |                             | Descrição                                             |
 | ------------ | ---- | :-------------------------: | ----------------------------------------------------- |
 | propertyPath | Text |              ->             | Rota de propriedade objeto a ser usado para avaliação |
 | Resultados   | any  | <- | Valor mínimo na coleção                               |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -1906,12 +1993,15 @@ Se a coleção estiver vazia, `.min()` devolve *Undefined*.
 
 <!-- REF #collection.multiSort().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo                         |                             | Descrição                                                                                                                                              |
 | ---------- | ---------------------------- | :-------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | formula    | 4D. Function |              ->             | Objecto fórmula                                                                                                                                        |
 | colsToSort | Collection                   |              ->             | Coleção de coleções e/ou objetos com propriedades {`collection`:*colToSort*;`order`:`ck ascending` ou `ck descending`} |
 | Resultados | Collection                   | <- | Colecção original ordenada                                                                                                                             |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -2042,6 +2132,8 @@ $name.multiSort(Formula($1.value.firstname<$1.value2.firstname); [$address])
 
 <!-- REF #collection.orderBy().Params -->
 
+<div class="no-index">
+
 | Parâmetro   | Tipo       |                             | Descrição                                                                                                                                    |
 | ----------- | ---------- | :-------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | pathStrings | Text       |              ->             | Caminho(s) de propriedade(s) no(s) qual(is) encomendar a coleção |
@@ -2049,6 +2141,7 @@ $name.multiSort(Formula($1.value.firstname<$1.value2.firstname); [$address])
 | ascOrDesc   | Integer    |              ->             | `ck ascending` ou `ck descending` (valores escalares)                                                                     |
 | Resultados  | Collection | <- | Cópia ordenada da coleção (cópia superficial)                                                                             |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -2183,6 +2276,8 @@ Ordenar com uma rota de propriedade:
 
 <!-- REF #collection.orderByMethod().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo                         |                             | Descrição                                                             |
 | ---------- | ---------------------------- | :-------------------------: | --------------------------------------------------------------------- |
 | formula    | 4D. Function |              ->             | Objecto fórmula                                                       |
@@ -2190,6 +2285,7 @@ Ordenar com uma rota de propriedade:
 | extraParam | any                          |              ->             | Parâmetro(s) a transmitir                          |
 | Resultados | Collection                   | <- | Cópia ordenada da coleção (cópia superficial)      |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -2247,10 +2343,16 @@ Se quiser ordenar a coleção de strings de acordo com seu tamanho:
 Se quiser ordenar a coleção por código de caractere ou alfabeticamente:
 
 ```4d
-var $fruits; $c2 : Collection
- $fruits:=New collection("Orange";"Apple";"Grape";"pear";"Banana";"fig";"Blackberry";"Passion fruit")
- $c2:=$fruits.orderByMethod("WordLength")
-  //$c2=[Passion fruit,Blackberry,Orange,Banana,Apple,Grape,pear,fig]
+var $strings1; $strings2 : Collection
+$strings1:=New collection("Alpha";"Charlie";"alpha";"bravo";"Bravo";"charlie")
+
+//using the character code:
+$strings2:=$strings1.orderByMethod(Formula(sortCollection);sk char codes)
+// result : ["Alpha","Bravo","Charlie","alpha","bravo","charlie"]
+
+//using the language:
+$strings2:=$strings1.orderByMethod(Formula(sortCollection);sk strict)
+// result : ["alpha","Alpha","bravo","Bravo","charlie","Charlie"]
 ```
 
 O método ***sortCollection***:
@@ -2279,10 +2381,13 @@ $toSort.result:=(Compare strings($toSort.value;$toSort.value2;$option2)<0)
 
 <!-- REF #collection.pop().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo |                             | Descrição                  |
 | ---------- | ---- | :-------------------------: | -------------------------- |
 | Resultados | any  | <- | Último elemento da coleção |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -2325,11 +2430,14 @@ O `.pop()`, usado em conjunto com [`.push()`](#push), pode ser usado para implem
 
 <!-- REF #collection.push().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo       |                             | Descrição                                        |
 | ---------- | ---------- | :-------------------------: | ------------------------------------------------ |
 | element    | any        |              ->             | Elementos a adicionar à coleção                  |
 | Resultados | Collection | <- | Collection original contendo elementos inseridos |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -2376,9 +2484,11 @@ Você deseja ordenar a coleção resultante:
 
 </details>
 
-<!-- REF #collection.query().Syntax -->**.query**( *queryString* : Text ) : Collection<br/>**.query**( *queryString* : Text ; *...value* : any ) : Collection<br/>**.query**( *queryString* : Text ; *querySettings* : Object ) : Collection <!-- END REF -->
+<!-- REF #collection.query().Syntax -->**.query**( *queryString* : Text ) : Collection<br/>**.query**( *queryString* : Text ; ...*value* : any ) : Collection<br/>**.query**( *queryString* : Text ; *querySettings* : Object ) : Collection <!-- END REF -->
 
 <!-- REF #collection.query().Params -->
+
+<div class="no-index">
 
 | Parâmetro     | Tipo       |                             | Descrição                                                                            |
 | ------------- | ---------- | :-------------------------: | ------------------------------------------------------------------------------------ |
@@ -2387,6 +2497,7 @@ Você deseja ordenar a coleção resultante:
 | querySettings | Object     |              ->             | Opções de pesquisa: parâmetros, atributos                            |
 | Resultados    | Collection | <- | Elementos que correspondem com queryString na coleção                                |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -2677,9 +2788,11 @@ Mais exemplos de consultas podem ser encontrados na página `dataClass.query()`.
 
 </details>
 
-<!-- REF #collection.reduce().Syntax -->**.reduce**( *formula* : 4D.Function { ; *initValue* : any { ; *...param* : expression }} ) : any<br/>**.reduce**( *methodName* : Text { ; *initValue* : any { ; *...param* : expression }} ) : any <!-- END REF -->
+<!-- REF #collection.reduce().Syntax -->**.reduce**( *formula* : 4D.Function { ; *initValue* : any { ; ...*param* : expression }} ) : any<br/>**.reduce**( *methodName* : Text { ; *initValue* : any { ; ...*param* : expression }} ) : any <!-- END REF -->
 
 <!-- REF #collection.reduce().Params -->
+
+<div class="no-index">
 
 | Parâmetro  | Tipo                         |                             | Descrição                                                                                      |
 | ---------- | ---------------------------- | :-------------------------: | ---------------------------------------------------------------------------------------------- |
@@ -2689,6 +2802,7 @@ Mais exemplos de consultas podem ser encontrados na página `dataClass.query()`.
 | param      | Expression                   |              ->             | Parâmetro(s) a transmitir                                                   |
 | Resultados | any                          | <- | Resultado do valor do acumulador                                                               |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -2762,9 +2876,11 @@ Com o seguinte método ***Flatten***:
 
 </details>
 
-<!-- REF #collection.reduceRight().Syntax -->**.reduceRight**( *formula* : 4D.Function { ; *initValue* : any { ; *...param* : expression }} ) : any<br/>**.reduceRight**( *methodName* : Text { ; *initValue* : any { ; *...param* : expression }} ) : any <!-- END REF -->
+<!-- REF #collection.reduceRight().Syntax -->**.reduceRight**( *formula* : 4D.Function { ; *initValue* : any { ; ...*param* : expression }} ) : any<br/>**.reduceRight**( *methodName* : Text { ; *initValue* : any { ; ...*param* : expression }} ) : any <!-- END REF -->
 
 <!-- REF #collection.reduceRight().Params -->
+
+<div class="no-index">
 
 | Parâmetro  | Tipo                         |                             | Descrição                                                                                      |
 | ---------- | ---------------------------- | :-------------------------: | ---------------------------------------------------------------------------------------------- |
@@ -2774,6 +2890,7 @@ Com o seguinte método ***Flatten***:
 | param      | Expression                   |              ->             | Parâmetro(s) a transmitir                                                   |
 | Resultados | any                          | <- | Resultado do valor do acumulador                                                               |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -2853,12 +2970,15 @@ Com o seguinte método ***Flatten***:
 
 <!-- REF #collection.remove().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo       |                             | Descrição                                                                            |
 | ---------- | ---------- | :-------------------------: | ------------------------------------------------------------------------------------ |
 | index      | Integer    |              ->             | Elemento no qual que se inicia a eliminação                                          |
 | howMany    | Integer    |              ->             | Número de elementos a eliminar, ou 1 elemento se omitir                              |
 | Resultados | Collection | <- | Coleção modificada sem elemento(s) removido(s) |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -2909,12 +3029,15 @@ Se tentar remover um elemento de uma coleção vazia, o método não faz nada (n
 
 <!-- REF #collection.resize().Params -->
 
+<div class="no-index">
+
 | Parâmetro    | Tipo       |                             | Descrição                                   |
 | ------------ | ---------- | :-------------------------: | ------------------------------------------- |
 | size         | Integer    |              ->             | Nova dimensão da colecção                   |
 | defaultValue | any        |              ->             | Valor padrão para preencher novos elementos |
 | Resultados   | Collection | <- | Colecção original redimensionada            |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -2964,10 +3087,13 @@ Por padrão, novos elementos são preenchidos com valores **null**. Pode especif
 
 <!-- REF #collection.reverse().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo       |                             | Descrição                   |
 | ---------- | ---------- | :-------------------------: | --------------------------- |
 | Resultados | Collection | <- | Cópia invertida da colecção |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -3002,10 +3128,13 @@ A função `.reverse()` <!-- REF #collection.reverse().Summary -->retorna uma c�
 
 <!-- REF #collection.shift().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo |                             | Descrição                     |
 | ---------- | ---- | :-------------------------: | ----------------------------- |
 | Resultados | any  | <- | Primeiro elemento de colecção |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -3045,12 +3174,15 @@ Se a colecção estiver vazia, este método não faz nada.
 
 <!-- REF #collection.slice().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo       |                             | Descrição                                                                        |
 | ---------- | ---------- | :-------------------------: | -------------------------------------------------------------------------------- |
 | startFrom  | Integer    |              ->             | Início do índice (incluído)                                   |
 | end        | Integer    |              ->             | Final do índice (não incluído)                                |
 | Resultados | Collection | <- | Nova colecção contendo elementos cortados (cópia superficial) |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -3092,9 +3224,11 @@ A coleção devolvida contém o elemento especificado por *startFrom* e todos os
 
 </details>
 
-<!-- REF #collection.some().Syntax -->**.some**( { *startFrom* : Integer ; } *formula* : 4D.Function { ; *...param* : any } ) : Boolean<br/>**.some**( { *startFrom* : Integer ; } *methodName* : Text { ; *...param* : any } ) : Boolean<!-- END REF -->
+<!-- REF #collection.some().Syntax -->**.some**( { *startFrom* : Integer ; } *formula* : 4D.Function { ; ...*param* : any } ) : Boolean<br/>**.some**( { *startFrom* : Integer ; } *methodName* : Text { ; ...*param* : any } ) : Boolean<!-- END REF -->
 
 <!-- REF #collection.some().Params -->
+
+<div class="no-index">
 
 | Parâmetro  | Tipo                         |                             | Descrição                                                             |
 | ---------- | ---------------------------- | :-------------------------: | --------------------------------------------------------------------- |
@@ -3104,6 +3238,7 @@ A coleção devolvida contém o elemento especificado por *startFrom* e todos os
 | param      | any                          |              ->             | Parâmetro(s) a transmitir                          |
 | Resultados | Parâmetros                   | <- | True se todos os elementos passarem o teste com sucesso               |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -3172,9 +3307,11 @@ Quer saber se pelo menos um valor de coleção é >0.
 
 </details>
 
-<!-- REF #collection.sort().Syntax -->**.sort**() : Collection<br/>**.sort**( *ascOrDesc* : Integer ) : Collection <br/>**.sort**( *formula* : 4D.Function { ; *...extraParam* : any } ) : Collection<br/>**.sort**( *methodName* : Text { ; *...extraParam* : any } ) : Collection<!-- END REF -->
+<!-- REF #collection.sort().Syntax -->**.sort**() : Collection<br/>**.sort**( *ascOrDesc* : Integer ) : Collection <br/>**.sort**( *formula* : 4D.Function { ; ...*extraParam* : any } ) : Collection<br/>**.sort**( *methodName* : Text { ; ...*extraParam* : any } ) : Collection<!-- END REF -->
 
 <!-- REF #collection.sort().Params -->
+
+<div class="no-index">
 
 | Parâmetro  | Tipo                         |                             | Descrição                                                                |
 | ---------- | ---------------------------- | :-------------------------: | ------------------------------------------------------------------------ |
@@ -3184,6 +3321,7 @@ Quer saber se pelo menos um valor de coleção é >0.
 | extraParam | any                          |              ->             | Parâmetros para o método                                                 |
 | Resultados | Collection                   | <- | Colecção original ordenada                                               |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -3269,11 +3407,14 @@ $col3:=$col.sort(Formula(String($1.value)<String($1.value2))) //alphabetical sor
 
 <!-- REF #collection.sum().Params -->
 
+<div class="no-index">
+
 | Parâmetro    | Tipo |                             | Descrição                                            |
 | ------------ | ---- | :-------------------------: | ---------------------------------------------------- |
 | propertyPath | Text |              ->             | Rota de propriedade objeto a ser usado para cálculos |
 | Resultados   | Real | <- | Soma dos valores da colecção                         |
 
+</div>
 <!-- END REF -->
 
 #### Descrição
@@ -3329,12 +3470,15 @@ Se a coleção contiver objetos, passe o parâmetro *propertyPath* para indicar 
 
 <!-- REF #collection.unshift().Params -->
 
+<div class="no-index">
+
 | Parâmetro  | Tipo       |                             | Descrição                                                                         |
 | ---------- | ---------- | :-------------------------: | --------------------------------------------------------------------------------- |
 | value      | any        |              ->             | Valor(es) a inserir no início da colecção                      |
 | Resultados | Collection | <- | Colecção contendo elemento(s) adicionado(s) |
 |            |            |                             |                                                                                   |
 
+</div>
 <!-- END REF -->
 
 #### Descrição

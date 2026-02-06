@@ -337,7 +337,7 @@ title: Commandes par nom
 [`FORM SET OUTPUT`](../commands-legacy/form-set-output.md)<br/>
 [`FORM SET SIZE`](../commands-legacy/form-set-size.md)<br/>
 [`FORM SET VERTICAL RESIZING`](../commands-legacy/form-set-vertical-resizing.md)<br/>
-[`FORM theme`](form-theme.md) **new 4D 21 R2**<br/>
+[`FORM theme`](form-theme.md) **nouveau 4D 21 R2**<br/>
 [`FORM UNLOAD`](../commands-legacy/form-unload.md)<br/>
 [`Formula`](formula.md)<br/>
 [`Formula from string`](formula-from-string.md)<br/>
@@ -350,7 +350,7 @@ title: Commandes par nom
 [`Generate digest`](../commands-legacy/generate-digest.md)<br/>
 [`GENERATE ENCRYPTION KEYPAIR`](../commands-legacy/generate-encryption-keypair.md)<br/>
 [`Generate password hash`](../commands-legacy/generate-password-hash.md)<br/>
-[`Generate UUID`](generate-uuid.md) **modified 4D 20 R10**<br/>
+[`Generate UUID`](generate-uuid.md) **modifié 4D 20 R10**<br/>
 [`Get 4D file`](../commands-legacy/get-4d-file.md)<br/>
 [`Get 4D folder`](../commands-legacy/get-4d-folder.md)<br/>
 [`Get adjusted blobs cache priority`](../commands-legacy/get-adjusted-blobs-cache-priority.md)<br/>
@@ -521,7 +521,7 @@ title: Commandes par nom
 [`JSON Stringify`](../commands-legacy/json-stringify.md)<br/>
 [`JSON Stringify array`](../commands-legacy/json-stringify-array.md)<br/>
 [`JSON TO SELECTION`](../commands-legacy/json-to-selection.md)<br/>
-[`JSON Validate`](../commands-legacy/json-validate.md)<br/>
+[`JSON Validate`](json-validate.md)<br/>
 
 <a id="K"><b>K</b></a>
 
@@ -826,14 +826,14 @@ title: Commandes par nom
 [`Open datastore`](open-datastore.md)<br/>
 [`Open document`](../commands-legacy/open-document.md)<br/>
 [`OPEN FONT PICKER`](../commands-legacy/open-font-picker.md)<br/>
-[`Open form window`](../commands-legacy/open-form-window.md)<br/>
+[`Open form window`](open-form-window.md)<br/>
 [`OPEN PRINTING JOB`](../commands-legacy/open-printing-job.md)<br/>
 [`Open resource file`](../commands-legacy/open-resource-file.md)<br/>
 [`OPEN RUNTIME EXPLORER`](../commands-legacy/open-runtime-explorer.md)<br/>
 [`OPEN SECURITY CENTER`](../commands-legacy/open-security-center.md)<br/>
 [`OPEN SETTINGS WINDOW`](../commands-legacy/open-settings-window.md)<br/>
 [`OPEN URL`](../commands-legacy/open-url.md)<br/>
-[`Open window`](../commands-legacy/open-window.md)<br/>
+[`Open window`](open-window.md)<br/>
 [`ORDER BY`](../commands-legacy/order-by.md)<br/>
 [`ORDER BY ATTRIBUTE`](../commands-legacy/order-by-attribute.md)<br/>
 [`ORDER BY FORMULA`](../commands-legacy/order-by-formula.md)<br/>

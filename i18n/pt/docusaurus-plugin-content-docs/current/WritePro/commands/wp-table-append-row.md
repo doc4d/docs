@@ -4,9 +4,11 @@ title: WP Table append row
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP Table append row.Syntax-->**WP Table append row** ( *tableRef* : Object ; *...value* : any )  : Object<br/>**WP Table append row** ( *tableRef* : Object ; *valueColl* : Collection ) : Object<!-- END REF-->
+<!--REF #_command_.WP Table append row.Syntax-->**WP Table append row** ( *tableRef* : Object ; ...*value* : any )  : Object<br/>**WP Table append row** ( *tableRef* : Object ; *valueColl* : Collection ) : Object<!-- END REF-->
 
 <!--REF #_command_.WP Table append row.Params-->
+
+<div class="no-index">
 
 | Parâmetro | Tipo       |                             | Descrição                                               |
 | --------- | ---------- | --------------------------- | ------------------------------------------------------- |
@@ -15,6 +17,7 @@ displayed_sidebar: docs
 | valueColl | Collection | &#8594; | Collection of values to set in the row                  |
 | Resultado | Object     | &#8592; | Objeto intervalo linha                                  |
 
+</div>
 <!-- END REF-->
 
 ## Descrição

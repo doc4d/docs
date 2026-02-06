@@ -7,10 +7,12 @@ displayed_sidebar: docs
 
 <!--REF #_command_.FORM Event.Syntax-->**FORM Event** : Object<!-- END REF-->
 <!--REF #_command_.FORM Event.Params-->
+<div class="no-index">
+
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | Function result | Object | &#8592; | Event object |
-
+</div>
 <!-- END REF-->
 
 ## Description 
@@ -35,7 +37,7 @@ For example, in the case of a click on a button, the object contains the followi
 
 The event object can contain additional properties, depending on the object for which the event occurs. For *eventObj* objects generated on:
 
-* List box or list box column objects, see [this section](../FormObjects/listbox_overview.md#additional-properties).
+* List box or list box column objects, see [this section](../FormObjects/listbox_overview.md#supported-form-events).
 * 4D View Pro areas, see [On VP Ready form event](../Events/onVpReady.md).
 
 **Note:** If there is no current event, **FORM Event** returns a null object.

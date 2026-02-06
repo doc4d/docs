@@ -212,14 +212,14 @@ Una consulta de medios está formada por características y valores de medios (p
 
 Available media features and values:
 
-| Media features         | Valores                                        | Descripción                                                                                                                                                              |
-| ---------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `prefers-color-scheme` | <li>**light**</li><li>**dark**</li>            | Color scheme to use                                                                                                                                                      |
-| `form-theme`           | <li>**fluent-ui**</li><li>**win-classic**</li> | Platform theme to use (Windows). For more information on **fluent-ui** theme, refer to [this section](./forms.md#fluent-ui-rendering) |
+| Media features         | Valores                                        | Descripción                                                                                                                                                                              |
+| ---------------------- | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `prefers-color-scheme` | <li>**light**</li><li>**dark**</li>            | Color scheme to use                                                                                                                                                                      |
+| `form-theme`           | <li>**fluent-ui**</li><li>**win-classic**</li> | Tema de la plataforma a utilizar (Windows). Para más información sobre el tema **fluent-ui**, consulte [esta sección](./forms.md#fluent-ui-rendering) |
 
 :::note
 
-Color schemes are not supported with **win-classic** platform theme.
+Los esquemas de color no son compatibles con el tema de plataforma **win-classic**.
 
 :::
 
@@ -389,7 +389,7 @@ Durante la ejecución, 4D prioriza automáticamente las hojas de estilo en el si
 Las rutas de los archivos pueden ser relativas o absolutas.
 
 - Las rutas relativas se resuelven en relación con el archivo de descripción del formulario JSON.
-- For security reasons, only [filesystem paths](../Concepts/paths.md#filesystem-pathnames) are accepted for absolute paths (*e.g.*, "/RESOURCES", "/DATA").
+- Por razones de seguridad, sólo se aceptan [rutas filesystem](../Concepts/paths.md#filesystem-pathnames) para rutas absolutas (*e.g.*, "/RESOURCES", "/DATA").
 
 :::
 

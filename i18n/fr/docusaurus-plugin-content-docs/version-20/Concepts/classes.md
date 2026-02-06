@@ -377,7 +377,7 @@ Le type de propriété peut être l'un des suivants :
 
 :::info
 
-The `property` keyword can only be used in class methods and outside any `Function` or `Class constructor` block.
+Le mot-clé `property` ne peut être utilisé que dans les méthodes de classe et en dehors de tout bloc `Function` ou `Class constructor`.
 
 :::
 
@@ -670,12 +670,12 @@ $val:=$o.f() //42
 Lorsqu'une fonction [class constructor](#class-constructor) est utilisée (avec la fonction [`new()`](API/ClassClass.md#new)), son `This` désigne le nouvel objet en cours de construction.
 
 ```4d
-//Class: ob
+//Classe : ob
 
 Class constructor  
 
- // Create properties on This as
- // desired by assigning to them
+ // Créer des propriétés sur This comme
+ // souhaité par assignation
  This.a:=42
 ```
 

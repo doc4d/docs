@@ -336,7 +336,7 @@ Este evento es activado por las siguientes funciones:
 - [`entity.save()`](../API/EntityClass.md#save)
 - [`dataClass.fromCollection()`](../API/DataClassClass.md#fromcollection)
 
-This event is triggered **before** the entity is actually saved and lets you check data consistency so that you can stop the action if needed. Por ejemplo, puede comprobar en este evento que "fecha de salida" < "fecha de llegada".
+Este evento se activa **antes** de que la entidad se guarde realmente y le permite comprobar la coherencia de los datos para que pueda detener la acción si es necesario. Por ejemplo, puede comprobar en este evento que "fecha de salida" < "fecha de llegada".
 
 Para detener la acción, el código de la función debe devolver un [objeto error](#error-object).
 
@@ -379,7 +379,7 @@ Function event saving <attributeName>($event : Object)
 
 Este evento se activa cada vez que se guarda una entidad.
 
-- Si define la función a nivel de entidad (primera Sintaxis), se llama para cualquier atributo de la entidad. The function is executed even if no attribute has been touched in the entity (e.g. in case of sending data to an external app each time a save is done).
+- Si define la función a nivel de entidad (primera Sintaxis), se llama para cualquier atributo de la entidad. La función se ejecuta incluso si no se ha tocado ningún atributo en la entidad (por ejemplo, en caso de enviar datos a una app externa cada vez que se efectúa un guardado).
 - Si definió la función en el nivel de atributo (segunda Sintaxis), solo se llama para este atributo. La función **no** se ejecuta si el atributo no ha sido tocado en la entidad.
 
 La función recibe un [objeto *event*](#event-parameter) como parámetro.
@@ -389,7 +389,7 @@ Este evento es activado por las siguientes funciones:
 - [`entity.save()`](../API/EntityClass.md#save)
 - [`dataClass.fromCollection()`](../API/DataClassClass.md#fromcollection)
 
-Este evento se activa **mientras** la entidad se guarda. If a [`validateSave()`](#function-event-validatesave) event function was defined, the `saving()` event function is called if no error was triggered by `validateSave()`. Por ejemplo, puede utilizar este evento para crear un documento en una cuenta de Google Drive.
+Este evento se activa **mientras** la entidad se guarda. Si se ha definido una función de evento [`validateSave()`](#function-event-validatesave), se llama a la función de evento `saving()` si no se ha producido ningún error con `validateSave()`. Por ejemplo, puede utilizar este evento para crear un documento en una cuenta de Google Drive.
 
 :::note
 
@@ -599,7 +599,7 @@ Function event afterDrop($event : Object)
 
 Este evento se activa justo después de que una entidad es soltada.
 
-Este evento es útil después de soltar datos para propagar la acción de soltar fuera de la aplicación o para ejecutar tareas de administración. Por ejemplo, se puede utilizar para enviar un correo electrónico de cancelación después de soltar los datos. Or, in case of error while dropping data, it can log an information for the administrator to check data consistency.
+Este evento es útil después de soltar datos para propagar la acción de soltar fuera de la aplicación o para ejecutar tareas de administración. Por ejemplo, se puede utilizar para enviar un correo electrónico de cancelación después de soltar los datos. O, en caso de error al soltar datos, puede registrar una información para que el administrador verifique la coherencia de los datos.
 
 La función recibe un [objeto *event*](#event-parameter) como parámetro.
 

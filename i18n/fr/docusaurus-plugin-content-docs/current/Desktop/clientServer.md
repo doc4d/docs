@@ -49,7 +49,7 @@ Si le projet publié n'est pas affiché dans la liste **Disponible**, sélection
   - Si deux serveurs sont exécutés simultanément sur la même machine, l'adresse IP doit être suivie de deux points et d'un numéro de port, par exemple : `192.168.92.104:19814`.
   - Par défaut, le port de publication d'un 4D Server est 19813. Ce numéro peut être modifié dans les paramètres du projet.
 
-> L'option **Activer le mode développement** ouvre la connexion à distance dans un mode lecture/écriture spécial et nécessite d'accéder au dossier du projet depuis le 4D distant (option de compatibilité).
+> L'option [**Activer le mode développement**](#development-mode) ouvre la connexion à distance dans un mode lecture/écriture spécial et nécessite de pouvoir accéder au dossier du projet depuis le 4D distant.
 
 Une fois que cette page attribue un serveur, cliquez sur le bouton **OK** pour vous connecter au serveur.
 
@@ -61,7 +61,7 @@ Une fois la connexion au serveur établie, le projet distant sera répertorié d
 
 - Une version .4dz mise à jour du projet est automatiquement produite lorsque cela est nécessaire, c'est-à-dire lorsque le projet a été modifié et rechargé par 4D Server. Le projet est rechargé :
   - automatiquement, lorsque la fenêtre de l'application 4D Server arrive à l'avant de l'OS ou lorsque l'application 4D sur la même machine enregistre une modification (voir ci-dessous).
-  - lorsque la commande `RELOAD PROJECT` est exécutée. L'appel de cette commande est nécessaire lorsque, par exemple, vous avez extrait une nouvelle version du projet depuis la plateforme de contrôle de version.
+  - lorsque la commande [`RELOAD PROJECT`](../commands-legacy/reload-project.md) est exécutée. L'appel de cette commande est nécessaire lorsque, par exemple, vous avez extrait une nouvelle version du projet depuis la plateforme de contrôle de version.
 
 ### Mettre à jour des fichiers de projet sur les machines distantes
 
@@ -71,7 +71,7 @@ Lorsqu'une version .4dz mise à jour du projet a été produite sur 4D Server, l
 
 Lorsque 4D se connecte à un 4D Server sur la même machine, l'application se comporte comme 4D en mode monoposte et l'environnement de développement permet d'éditer les fichiers du projet. Cette fonctionnalité vous permet de développer une application client/serveur dans le même contexte que le contexte de déploiement.
 
-> Lorsque 4D se connecte à un 4D Server sur la même machine, le **mode développement** est automatiquement activé, quel que soit l'état de l'option [Activer le mode développement](#opening-a-remote-project).
+> Lorsque 4D se connecte à un 4D Server sur la même machine, le **mode de développement** est automatiquement activé, quel que soit l'état de l'option [Activer le mode développement](#development-mode).
 
 A chaque fois que 4D effectue une action **Enregistrer tout** depuis l'environnement de développement (explicitement depuis le menu **Fichier** ou implicitement en passant en mode application par exemple), 4D Server recharge de manière synchrone les fichiers du projet. 4D attend que 4D Server termine le rechargement des fichiers du projet avant de continuer.
 
@@ -85,3 +85,42 @@ Veillez cependant aux différences de comportement suivantes, comparées à [l'a
 
 > Il n'est pas recommandé d'installer des plug-ins ou des composants au niveau de l'application 4D ou 4D Server.
 
+## Mode développement
+
+Le **Mode développement** de 4D Server est un mode spécial d'ouverture de projet qui permet l'accès en lecture/écriture aux applications 4D distantes connectées. Le projet doit être disponible en [**interprété**](../Concepts/interpreted.md).
+
+Ce mode permet à un ou plusieurs développeurs de travailler simultanément sur le même projet dans l'environnement de Développement. Lorsqu'un projet est ouvert en **mode développement** :
+
+- les fichiers du projet sont disponibles en lecture/écriture afin que vous puissiez éditer les méthodes, les formulaires, etc.
+- plusieurs développeurs 4D distants peuvent ouvrir simultanément les mêmes fichiers du projet interprété et les modifier. Un système de verrouillage automatique empêche les accès simultanés à la même ressource.
+- les modifications sont mises à la disposition de tous les développeurs distants. A noter cependant qu'il n'y a pas de "push" automatique vers les développeurs distants., ils doivent actualiser pour obtenir les dernières versions des fichiers (un rafraîchissement est effectué chaque fois que le développeur passe du mode développement au mode application par exemple, ou lorsqu'il sélectionne **Enregistrer tout** dans le menu **Fichier**).
+
+Pour utiliser ce mode, sélectionnez l'option **Activer le mode développement** dans la [boîte de dialogue de connexion](#opening-a-remote-project) à partir de votre 4D distant. Vous êtes invité à **Sélectionner le fichier de projet 4D** : vous devez sélectionner le [fichier .project](../Project/architecture.md#applicationname4dproject-file) que 4D Server a ouvert. Si vous sélectionnez un autre fichier, une boîte de dialogue d'alerte vous avertit que le mode développement n'est pas disponible. Cela signifie que le 4D distant doit avoir accès au dossier du projet sur le réseau (l'ensemble du dossier du projet doit être partagé, c'est-à-dire le dossier racine du projet).
+
+:::caution
+
+Pour des raisons de performance avec cette configuration, il est fortement recommandé de stocker le dossier du projet sur un serveur de fichiers dédié (par exemple un NAS) sur un réseau local.
+
+:::
+
+:::note
+
+Lorsque le serveur et le 4D distant se trouvent sur la même machine, [des règles supplémentaires s'appliquent](#using-4d-and-4d-server-on-the-same-machine).
+
+:::
+
+Voici un aperçu de l'architecture du mode de développement :
+
+![](../assets/en/Desktop/develop-mode.png)
+
+:::note Compatibilité
+
+Cette fonctionnalité est destinée aux équipes de développement qui ont l'habitude de travailler sur des bases de données binaires et qui souhaitent bénéficier des fonctionnalités des projets tout en conservant leur organisation actuelle. Cependant, pour un développement multi-utilisateurs sur des projets 4D, nous recommandons d'utiliser une architecture standard où les développeurs travaillent sur leur machine et gèrent leur travail à l'aide d'outils de gestion de version (Git, SVN, etc.). Cette organisation offre une grande flexibilité en permettant aux développeurs de travailler sur différentes branches, et de comparer, fusionner, ou annuler les modifications qui ont été apportées.
+
+:::
+
+:::tip Article(s) de blog sur le sujet
+
+[Développement simultané sur 4D Server en mode projet](https://blog.4d.com/developing-concurrently-on-4d-server-in-project-mode/)
+
+:::

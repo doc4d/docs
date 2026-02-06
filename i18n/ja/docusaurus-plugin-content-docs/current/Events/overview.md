@@ -28,7 +28,7 @@ End if
 
 イベントが発生したオブジェクトによっては追加のプロパティが含まれていることがあります。 特に:
 
-- [リストボックス](FormObjects/listbox_overview.md#フォームイベント) および [リストボックス列](FormObjects/listbox_overview.md#フォームイベント-1) は、`columnName` や `isRowSelected` といった、[追加のプロパティ](FormObjects/listbox_overview.md#追加プロパティ) を返します。
+- [リストボックス](FormObjects/listbox_overview.md#supported-form-events) および [リストボックス列](FormObjects/listbox_overview.md#supported-form-events-1) は、`columnName` や `isRowSelected` といった、[追加のプロパティ](FormObjects/listbox_overview.md#supported-form-events) を返します。
 - [4D View Pro エリア](FormObjects/viewProArea_overview.md) は、`sheetName` や `action` といったプロパティを [On After Edit](onAfterEdit.md) イベントオブジェクトに返します。
 
 ## イベントとメソッド

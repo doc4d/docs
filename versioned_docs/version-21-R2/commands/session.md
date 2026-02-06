@@ -6,10 +6,12 @@ displayed_sidebar: docs
 
 <!-- REF #_command_.Session.Syntax -->**Session** : 4D.Session<!-- END REF -->
 <!--REF #_command_.Session.Params-->
+<div class="no-index">
+
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | Function result | 4D.Session | &#8592; | Session object |
-
+</div>
 <!-- END REF-->
 
 <details><summary>History</summary>
@@ -57,7 +59,7 @@ For more information on web user sessions, please refer to the [Web Server Sessi
 
 The `Session` object of remote user sessions is available from:
 
-- Project methods that have the [Execute on Server](../Project/code-overview.md#execute-on-server) attribute (they are executed in the "twinned" process of the client process),
+- Project methods that have the [Execute on Server](../Project/project-method-properties.md#execute-on-server) attribute (they are executed in the "twinned" process of the client process),
 - Triggers,
 - ORDA [data model functions](../ORDA/ordaClasses.md) (except those declared with the [`local`](../ORDA/ordaClasses.md#local-functions) keyword, 
 - `On Server Open Connection` and `On Server Shutdown Connection` database methods.

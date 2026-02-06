@@ -4,9 +4,11 @@ title: WP RESET ATTRIBUTES
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP RESET ATTRIBUTES.Syntax-->**WP RESET ATTRIBUTES** ( *targetObj* : Object ; *...attribName* : Text )<br/>**WP RESET ATTRIBUTES** ( *sectionOrSubsection* : Object {; *...attribName* : Text })<br/>**WP RESET ATTRIBUTES** ( *targetObj* : Object ; *attribColl* : Collection )<br/> **WP RESET ATTRIBUTES** ( *sectionOrSubsection* : Object {; *attribColl* : Collection})<!-- END REF-->
+<!--REF #_command_.WP RESET ATTRIBUTES.Syntax-->**WP RESET ATTRIBUTES** ( *targetObj* : Object ; ...*attribName* : Text )<br/>**WP RESET ATTRIBUTES** ( *sectionOrSubsection* : Object {; ...*attribName* : Text })<br/>**WP RESET ATTRIBUTES** ( *targetObj* : Object ; *attribColl* : Collection )<br/> **WP RESET ATTRIBUTES** ( *sectionOrSubsection* : Object {; *attribColl* : Collection})<!-- END REF-->
 
 <!--REF #_command_.WP RESET ATTRIBUTES.Params-->
+
+<div class="no-index">
 
 | Parámetros          | Tipo       |                             | Descripción                                         |
 | ------------------- | ---------- | --------------------------- | --------------------------------------------------- |
@@ -15,6 +17,7 @@ displayed_sidebar: docs
 | attribName          | Text       | &#8594; | Nombre de atributo(s) a eliminar |
 | attribColl          | Collection | &#8594; | Colección de atributos a eliminar                   |
 
+</div>
 <!-- END REF-->
 
 ## Descripción

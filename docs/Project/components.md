@@ -370,7 +370,7 @@ This file logs information such as the state of dependencies, paths, urls, loadi
 
 
 
-## Monitoring Project Dependencies
+## Monitoring Project Dependencies {#monitoring-project-dependencies}
 
 In an opened project, you can add, remove, update, and get information about dependencies and their current loading status in the **Dependencies** panel.
 
@@ -482,7 +482,7 @@ To add a local dependency, click on the **+** button in the footer area of the p
 
 ![dependency-add](../assets/en/Project/dependency-add.png)
 
-Make sure the **Local** tab is selected and click on the **...** button. A standard Open file dialog box is displayed, allowing you to select the component to add. You can select a [**.4DZ**](../Desktop/building.md#build-component) or a [**.4DProject**](architecture.md#applicationname4dproject-file) file. 
+Make sure the **Local** tab is selected and click on the *...*** button. A standard Open file dialog box is displayed, allowing you to select the component to add. You can select a [**.4DZ**](../Desktop/building.md#build-component) or a [**.4DProject**](architecture.md#applicationname4dproject-file) file. 
  
  If the selected item is valid, its name and location are displayed in the dialog box. 
  

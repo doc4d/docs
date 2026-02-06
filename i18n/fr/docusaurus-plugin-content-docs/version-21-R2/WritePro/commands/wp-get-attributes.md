@@ -11,7 +11,7 @@ displayed_sidebar: docs
 | Paramètres  | Type       |                             | Description                               |
 | ----------- | ---------- | --------------------------- | ----------------------------------------- |
 | targetObj   | Object     | &#8594; | Plage ou élément ou document 4D Write Pro |
-| attribName  | Text       | &#8594; | Name of attribute to get                  |
+| attribName  | Text       | &#8594; | Nom de l'attribut à récupérer             |
 | attribValue | any        | &#8592; | Current value of attribute for the target |
 | attribColl  | Collection | &#8594; | Collection of attribute names to get      |
 | Résultat    | Object     | &#8592; | Attribute names and values                |
@@ -22,7 +22,7 @@ displayed_sidebar: docs
 
 La commande **WP Get attributes**<!--REF #_command_.WP Get attributes.Summary--> renvoie la valeur de n'importe quel attribut de plage, en-tête, corps, pied de page, tableau ou document de 4D Write Pro.<!-- END REF--> Cette commande vous donne accès à tout type d'attribut interne 4D Write Pro : caractère, paragraphe, document, tableau ou image.
 
-In *targetObj*, you can pass:
+Dans *targetObj*, vous pouvez passer:
 
 - une plage, ou
 - un élément (en-tête / pied de page / corps / tableau / paragraphe / image ancrée ou en ligne / section / sous-section / feuille de style), ou

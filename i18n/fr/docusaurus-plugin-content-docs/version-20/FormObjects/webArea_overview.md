@@ -19,7 +19,7 @@ Deux variables spécifiques sont automatiquement associées à chaque zone web :
 - [`URL`](properties_WebArea.md#url) -- pour contrôler l’URL affiché par la zone web
 - [`Progression`](properties_WebArea.md#progression) -- pour contrôler le pourcentage de chargement de la page affichée dans la zone web.
 
-> As of 4D 19 R5, the Progression variable is no longer updated in Web Areas using the [Windows system rendering engine](./webArea_overview.md#web-rendering-engine).
+> À partir de 4D 19 R5, la variable de Progression n'est plus mise à jour dans les zones Web utilisant le [moteur de rendu du système Windows](./webArea_overview.md#web-rendering-engine).
 
 ### Moteur de rendu Web
 
@@ -191,9 +191,9 @@ Vous pouvez visualiser et utiliser un inspecteur web dans les zones web de vos f
 
 Pour afficher l'inspecteur web, vous pouvez soit exécuter la commande `WA OPEN WEB INSPECTOR`, soit utiliser le menu contextuel de la zone web.
 
-- **Execute the `WA OPEN WEB INSPECTOR` command**<br/> This command can be used directly with onscreen (form object) and offscreen web areas.
+- **Exécuter la commande `WA OPEN WEB INSPECTOR`**<br/> Cette commande peut être utilisée directement avec les zones web à l'écran (objet formulaire) et hors écran.
 
-- **Use the web area context menu**<br/> This feature can only be used with onscreen web areas and requires that the following conditions are met:
+- **Utiliser le menu contextuel de la zone web**<br/> Cette fonction ne peut être utilisée qu'avec les zones web à l'écran et nécessite que les conditions suivantes soient remplies :
     - le [menu contextuel](properties_Entry.md#context-menu) de la zone Web est activé
     - l'utilisation de l'inspecteur est expressément autorisée dans la zone via la déclaration suivante :
     ```4d
@@ -213,7 +213,7 @@ Lorsque les paramétrages décrits ci-dessus sont effectués, vous disposez de n
 
 ## Propriétés prises en charge
 
-[Style de la bordure](properties_BackgroundAndBorder.md#border-line-style) - [Bas](properties_CoordinatesAndSizing.md#bottom) - [CSS Class](properties_Object.md#css-class) - [Menu contextuel](properties_Entry.md#context-menu) - [Hauteur](properties_CoordinatesAndSizing.md#height) - [Dim. horizontal](properties_ResizingOptions.md#horizontal-sizing) - [Gauche](properties_CoordinatesAndSizing.md#left) - [Méthode](properties_Action.md#method) - [Nom](properties_Object.md#object-name) - [Progression](properties_WebArea.md#progression) - [Droite](properties_CoordinatesAndSizing.md#right) - [Haut](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - [URL](properties_WebArea.md#url) - [Utiliser le moteur de rendu Web intégré](properties_WebArea.md#use-embedded-web-rendering-engine) - [Variable ou expression](properties_Object.md#variable-or-expression) - [Dim. vertical](properties_ResizingOptions.md#vertical-sizing) - [Visibilité](properties_Display.md#visibility) - [Largeur](properties_CoordinatesAndSizing.md#width) 
+[Access 4D methods](properties_WebArea.md#access-4d-methods) - [Border Line Style](properties_BackgroundAndBorder.md#border-line-style) - [Bottom](properties_CoordinatesAndSizing.md#bottom) - [Class](properties_Object.md#css-class) - [Context Menu](properties_Entry.md#context-menu) - [Height](properties_CoordinatesAndSizing.md#height) - [Horizontal Sizing](properties_ResizingOptions.md#horizontal-sizing) - [Left](properties_CoordinatesAndSizing.md#left) - [Method](properties_Action.md#method) - [Object Name](properties_Object.md#object-name) - [Progression](properties_WebArea.md#progression) - [Right](properties_CoordinatesAndSizing.md#right) - [Top](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - [URL](properties_WebArea.md#url) - [Use embedded Web rendering engine](properties_WebArea.md#use-embedded-web-rendering-engine) - [Variable or Expression](properties_Object.md#variable-or-expression) - [Vertical Sizing](properties_ResizingOptions.md#vertical-sizing) - [Visibilty](properties_Display.md#visibility) - [Width](properties_CoordinatesAndSizing.md#width) 
 
 
 

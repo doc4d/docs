@@ -4,9 +4,11 @@ title: WP Get attributes
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP Get attributes.Syntax-->**WP Get attributes** ( *targetObj* : Object ; *...attribName* : Text ; *...attribValue* : any ) : Object<br/>**WP Get attributes** ( *targetObj* : Object ; *attribColl* : Collection ) : Object<!-- END REF-->
+<!--REF #_command_.WP Get attributes.Syntax-->**WP Get attributes** ( *targetObj* : Object ; ...*attribName* : Text ; ...*attribValue* : any ) : Object<br/>**WP Get attributes** ( *targetObj* : Object ; *attribColl* : Collection ) : Object<!-- END REF-->
 
 <!--REF #_command_.WP Get attributes.Params-->
+
+<div class="no-index">
 
 | 引数          | 型          |                             | 説明                             |
 | ----------- | ---------- | --------------------------- | ------------------------------ |
@@ -16,6 +18,7 @@ displayed_sidebar: docs
 | attribColl  | Collection | &#8594; | 取得する属性名のコレクション                 |
 | 戻り値         | Object     | &#8592; | 属性名と値                          |
 
+</div>
 <!-- END REF-->
 
 ## 説明

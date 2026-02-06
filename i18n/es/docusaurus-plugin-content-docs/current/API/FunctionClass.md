@@ -47,13 +47,13 @@ También puede ejecutar una función utilizando las funciones [`apply()`](#apply
 
 #### Paso de parámetros
 
-You can pass parameters to your formulas using a sequential parameter syntax based upon `$1, $2,...,$n`. The numbering of the $ parameters represents the order in which they will be passed to the formula. Por ejemplo, puede escribir:
+Puede pasar parámetros a sus fórmulas utilizando una sintaxis secuencial de parámetros basada en `$1, $2,...,$n`. La numeración de los parámetros $ representa el orden en que se pasarán a la fórmula. Por ejemplo, puede escribir:
 
 ```4d
  var $f : Object
  $f:=New object
  $f.message:=Formula(ALERT("Hello "+$2+", "+$1))
- $f.message("John";"Smith") //displays "Hello Smith, John"
+ $f.message("John";"Smith") //muestra "Hello Smith, John"
 ```
 
 O utilizando la función [.call()](#call):
@@ -112,12 +112,15 @@ Los parámetros se reciben en el método, en el orden en que se especifican en l
 
 <!-- REF #FunctionClass.apply().Params -->
 
+<div class="no-index">
+
 | Parámetros    | Tipo       |                             | Descripción                                                                                                                |
 | ------------- | ---------- | :-------------------------: | -------------------------------------------------------------------------------------------------------------------------- |
 | thisObj       | Object     |              ->             | Objeto a devolver por el comando This en la fórmula                                                                        |
 | formulaParams | Collection |              ->             | Colección de valores que se pasan como $1...$n cuando se ejecuta `formula` |
 | Resultado     | any        | <- | Valor obtenido de la ejecución de la fórmula                                                                               |
 
+</div>
 <!-- END REF -->
 
 #### Descripción
@@ -172,12 +175,15 @@ Tenga en cuenta que `.apply()` es similar a [`.call()`](#call) excepto que los p
 
 <!-- REF #FunctionClass.call().Params -->
 
+<div class="no-index">
+
 | Parámetros | Tipo   |                             | Descripción                                                                                                                                              |
 | ---------- | ------ | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | thisObj    | Object | ->                          | Objeto a devolver por el comando This en la fórmula                                                                                                      |
 | params     | any    | ->                          | Valor(es) que se pasa(n) como $1...$n cuando se ejecuta la fórmula |
 | Resultado  | any    | <- | Valor obtenido de la ejecución de la fórmula                                                                                                             |
 
+</div>
 <!-- END REF -->
 
 #### Descripción

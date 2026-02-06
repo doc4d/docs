@@ -21,7 +21,7 @@ Los productos 4D se instalan desde el sitio web de 4D:
 
 :::info
 
-The Windows Setup panel includes a link allowing you to download the **Windows App SDK** installer. You may need to install this SDK to be able to [use Fluent UI in your 4D application on Windows](../FormEditor/forms.md#fluent-ui-rendering) (if not already installed in your OS, see [this blog post](https://blog.4d.com/deploy-fluent-ui-effortlessly-in-your-4d-applications)).
+El panel de instalación de Windows incluye un enlace que le permite descargar el instalador del **Windows App SDK**. You may need to install this SDK to be able to [use Fluent UI in your 4D application on Windows](../FormEditor/forms.md#fluent-ui-rendering) (if not already installed in your OS, see [this blog post](https://blog.4d.com/deploy-fluent-ui-effortlessly-in-your-4d-applications)).
 
 :::
 
@@ -39,7 +39,7 @@ A continuación, aparece el Asistente de bienvenida:
 
 - Si ya tiene una cuenta en 4D, haga clic en el enlace **Iniciar sesión** en la parte superior derecha del diálogo del Asistente de Bienvenida e introduzca los datos de su cuenta.
   - Any already activated 4D products are automatically updated (or additional expansion packs loaded) on your machine.
-  - If no product is activated on the machine but there is a development license associated with the 4D account, a dialog box appears, prompting you to install it directly.
+  - Si no hay ningún producto activado en la máquina pero existe una licencia de desarrollo asociada a la cuenta 4D, aparecerá un cuadro de diálogo que le pedirá que la instale directamente.
 
 Despliegue el área **Abrir o crear un proyecto aplicación** y seleccione la acción que desea realizar:
 

@@ -47,7 +47,6 @@ module.exports = {
   favicon: "img/favicon/4d.gif",
   trailingSlash: false,
   onBrokenLinks: "ignore",
-  onBrokenMarkdownLinks: "warn",
   noIndex: isProduction ? false : true,
   presets: [
     [
@@ -211,10 +210,14 @@ module.exports = {
           items: [
             {
               label: 'Documentation download',
-              href: 'https://github.com/4d/docs/releases/tag/latest',
+              to: 'https://github.com/4d/docs/releases/tag/latest',
             },
             {
-              label: '4D Doc Center (Where It All Began)',
+              label: 'Learn 4D',
+              to: 'https://learn.4d.com',
+            },
+            {
+              label: '4D Doc Center (legacy documentation web site) ',
               to: 'https://doc.4d.com',
             },
             {
@@ -223,7 +226,7 @@ module.exports = {
             },
             {
               label: 'Downloads',
-              to: 'https://us.4d.com/product-download/Feature-Release',
+              to: 'https://us.4d.com/product-download',
             },
             {
               label: 'Resources',
@@ -257,7 +260,7 @@ module.exports = {
           ],
         },
       ],
-      "copyright": "© 2025 4D SAS - All rights reserved",
+      "copyright": "© 2026 4D SAS - All rights reserved",
     },
   },
   markdown: {
@@ -270,6 +273,10 @@ module.exports = {
     },
     anchors: {
       maintainCase: false,
+    },
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+      //onBrokenMarkdownImages: 'throw',
     },
   },
   themes: ['@docusaurus/theme-mermaid'],  

@@ -141,15 +141,18 @@ Esta propiedad es de **solo lectura**.
 
 </details>
 
-<!-- REF #ClassClass.new().Syntax -->**.new**( { *...param* : any } ) : 4D.Object<!-- END REF -->
+<!-- REF #ClassClass.new().Syntax -->**.new**( { ...*param* : any } ) : 4D.Object<!-- END REF -->
 
 <!-- REF #ClassClass.new().Params -->
+
+<div class="no-index">
 
 | Parámetros | Tipo                      |                             | Descripción                                                      |
 | ---------- | ------------------------- | :-------------------------: | ---------------------------------------------------------------- |
 | param      | any                       |              ->             | Parámetro(s) a pasar a la función constructor |
 | Resultado  | 4D.Object | <- | Nuevo objeto de la clase                                         |
 
+</div>
 <!-- END REF -->
 
 #### Descripción

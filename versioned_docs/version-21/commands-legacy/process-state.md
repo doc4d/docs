@@ -7,11 +7,13 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Process state.Syntax-->**Process state** ( *process* ) : Integer<!-- END REF-->
 <!--REF #_command_.Process state.Params-->
+<div class="no-index">
+
 | Parameter | Type |  | Description |
 | --- | --- | --- | --- |
 | process | Integer | &#8594;  | Process number |
 | Function result | Integer | &#8592; | State of the process |
-
+</div>
 <!-- END REF-->
 
 ## Description 
@@ -30,7 +32,6 @@ The function result can be one of the values provided by the following predefine
 | Waiting for input output  | Integer | 3     |                                                                                                                                                                                                                                           |
 | Waiting for internal flag | Integer | 4     |                                                                                                                                                                                                                                           |
 | Paused                    | Integer | 5     |                                                                                                                                                                                                                                           |
-| \_o\_Hidden modal dialog  | Integer | 6     | **Compatibility:** This process state no longer exists starting with 4D v16\. An equivalent status is returned by the [Process info](../commands/process-info.md) command when *procState*\=Waiting for user event and *procMode*\=False. |
 
 If the process does not exist (which means you did not pass a number in the range 1 to [Count tasks](count-tasks.md)), **Process state** returns Does not exist (-100).
 

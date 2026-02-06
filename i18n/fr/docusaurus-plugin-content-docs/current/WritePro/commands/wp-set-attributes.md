@@ -4,9 +4,11 @@ title: WP SET ATTRIBUTES
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP SET ATTRIBUTES.Syntax-->**WP SET ATTRIBUTES** ( *targetObj* : Object ; *...attribName* : Text ; *...attribValue* : any )<br/>**WP SET ATTRIBUTES** ( *targetObj* : Object ; *attribObj* : Object )<!-- END REF-->
+<!--REF #_command_.WP SET ATTRIBUTES.Syntax-->**WP SET ATTRIBUTES** ( *targetObj* : Object ; ...*attribName* : Text ; ...*attribValue* : any )<br/>**WP SET ATTRIBUTES** ( *targetObj* : Object ; *attribObj* : Object )<!-- END REF-->
 
 <!--REF #_command_.WP SET ATTRIBUTES.Params-->
+
+<div class="no-index">
 
 | Paramètres  | Type   |                             | Description                                                                       |
 | ----------- | ------ | --------------------------- | --------------------------------------------------------------------------------- |
@@ -15,6 +17,7 @@ displayed_sidebar: docs
 | attribValue | any    | &#8594; | Nouvelle valeur d'attribut                                                        |
 | attribObj   | Object | &#8594; | Objet contenant les noms des attributs et leurs valeurs correspondantes à définir |
 
+</div>
 <!-- END REF-->
 
 ## Description

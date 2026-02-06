@@ -4,9 +4,11 @@ title: WP Get attributes
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP Get attributes.Syntax-->**WP Get attributes** ( *targetObj* : Object ; *...attribName* : Text ; *...attribValue* : any ) : Object<br/>**WP Get attributes** ( *targetObj* : Object ; *attribColl* : Collection ) : Object<!-- END REF-->
+<!--REF #_command_.WP Get attributes.Syntax-->**WP Get attributes** ( *targetObj* : Object ; ...*attribName* : Text ; ...*attribValue* : any ) : Object<br/>**WP Get attributes** ( *targetObj* : Object ; *attribColl* : Collection ) : Object<!-- END REF-->
 
 <!--REF #_command_.WP Get attributes.Params-->
+
+<div class="no-index">
 
 | Parámetros  | Tipo       |                             | Descripción                                 |
 | ----------- | ---------- | --------------------------- | ------------------------------------------- |
@@ -16,6 +18,7 @@ displayed_sidebar: docs
 | attribColl  | Collection | &#8594; | Colección de nombres de atributos a obtener |
 | Resultado   | Object     | &#8592; | Nombres y valores de los atributos          |
 
+</div>
 <!-- END REF-->
 
 ## Descripción

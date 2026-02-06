@@ -7,11 +7,13 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Process state.Syntax-->**Process state** ( *proceso* : Integer ) : Integer<!-- END REF-->
 <!--REF #_command_.Process state.Params-->
+<div class="no-index">
+
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
 | proceso | Integer | &#8594; | Número de proceso |
 | Resultado | Integer | &#8592; | Estado del proceso |
-
+</div>
 <!-- END REF-->
 
 ## Descripción 
@@ -30,7 +32,6 @@ El resultado de la función puede ser uno de los valores de las siguientes const
 | Waiting for input output  | Entero largo | 3     |                                                                                                                                                                                                                                                 |
 | Waiting for internal flag | Entero largo | 4     |                                                                                                                                                                                                                                                 |
 | Paused                    | Entero largo | 5     |                                                                                                                                                                                                                                                 |
-| \_o\_Hidden modal dialog  | Entero largo | 6     | **Compatibilidad**: este estado de proceso ya no existe a partir de 4D v16\. El comando [Process info](../commands/process-info.md) <br/>devuelve un estado equivalente cuando *procState*\=Waiting for user event y *procMode*\=False. |
 
 Si el proceso no existe (lo cual significa que no pasó un número en el rango de 1 a [Count tasks](count-tasks.md "Count tasks")), Process state devuelve Does not exist (-100).
 
