@@ -21,27 +21,27 @@ You can set standard properties (text, background color, etc.) for each column o
 
 |Form event|Additional Properties Returned (see [Form event](https://doc.4d.com/4Dv20/4D/20.6/FORM-Event.301-7487450.en.html) for main properties)| Comments|
 |---|---|---|
-|On After Edit|<li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[row](#additional-properties)</li>||
-|On After Keystroke|<li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[row](#additional-properties)</li>||
-|On After Sort|<li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[headerName](#additional-properties)</li>|*Compound formulas cannot be sorted. <br/>(e.g., This.firstName + This.lastName)*|
-|On Alternative Click|<li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[row](#additional-properties)</li>|*Arrays list boxes only*|
-|On Before Data Entry|<li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[row](#additional-properties)</li>||
-|On Before Keystroke|<li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[row](#additional-properties)</li>||
-|On Begin Drag Over|<li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[row](#additional-properties)</li>||
-|On Clicked|<li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[row](#additional-properties)</li>||
-|On Column Moved|<li>[columnName](#additional-properties)</li><li>[newPosition](#additional-properties)</li><li>[oldPosition](#additional-properties)</li>||
-|On Column Resize|<li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[newSize](#additional-properties)</li><li>[oldSize](#additional-properties)</li>||
-|On Data Change|<li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[row](#additional-properties)</li>||
-|On Double Clicked|<li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[row](#additional-properties)</li>||
-|On Drag Over|<li>[area](#additional-properties)</li><li>[areaName](#additional-properties)</li><li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[row](#additional-properties)</li>||
-|On Drop|<li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[row](#additional-properties)</li>||
-|On Footer Click|<li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[footerName](#additional-properties)</li>|*Arrays, Current Selection & Named Selection list boxes only*|
-|On Getting Focus|<li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[row](#additional-properties)</li>|*Additional properties returned only when editing a cell*|
-|On Header Click|<li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[headerName](#additional-properties)</li>||
+|On After Edit|<li>[column](./listbox-object#additional-properties)</li><li>[columnName](./listbox-object#additional-properties)</li><li>[row](./listbox-object#additional-properties)</li>||
+|On After Keystroke|<li>[column](./listbox-object#additional-properties)</li><li>[columnName](./listbox-object#additional-properties)</li><li>[row](./listbox-object#additional-properties)</li>||
+|On After Sort|<li>[column](./listbox-object#additional-properties)</li><li>[columnName](./listbox-object#additional-properties)</li><li>[headerName](./listbox-object#additional-properties)</li>|*Compound formulas cannot be sorted. <br/>(e.g., This.firstName + This.lastName)*|
+|On Alternative Click|<li>[column](./listbox-object#additional-properties)</li><li>[columnName](./listbox-object#additional-properties)</li><li>[row](./listbox-object#additional-properties)</li>|*Arrays list boxes only*|
+|On Before Data Entry|<li>[column](./listbox-object#additional-properties)</li><li>[columnName](./listbox-object#additional-properties)</li><li>[row](./listbox-object#additional-properties)</li>||
+|On Before Keystroke|<li>[column](./listbox-object#additional-properties)</li><li>[columnName](./listbox-object#additional-properties)</li><li>[row](./listbox-object#additional-properties)</li>||
+|On Begin Drag Over|<li>[column](./listbox-object#additional-properties)</li><li>[columnName](./listbox-object#additional-properties)</li><li>[row](./listbox-object#additional-properties)</li>||
+|On Clicked|<li>[column](./listbox-object#additional-properties)</li><li>[columnName](./listbox-object#additional-properties)</li><li>[row](./listbox-object#additional-properties)</li>||
+|On Column Moved|<li>[columnName](./listbox-object#additional-properties)</li><li>[newPosition](./listbox-object#additional-properties)</li><li>[oldPosition](./listbox-object#additional-properties)</li>||
+|On Column Resize|<li>[column](./listbox-object#additional-properties)</li><li>[columnName](./listbox-object#additional-properties)</li><li>[newSize](./listbox-object#additional-properties)</li><li>[oldSize](./listbox-object#additional-properties)</li>||
+|On Data Change|<li>[column](./listbox-object#additional-properties)</li><li>[columnName](./listbox-object#additional-properties)</li><li>[row](./listbox-object#additional-properties)</li>||
+|On Double Clicked|<li>[column](./listbox-object#additional-properties)</li><li>[columnName](./listbox-object#additional-properties)</li><li>[row](./listbox-object#additional-properties)</li>||
+|On Drag Over|<li>[area](./listbox-object#additional-properties)</li><li>[areaName](./listbox-object#additional-properties)</li><li>[column](./listbox-object#additional-properties)</li><li>[columnName](./listbox-object#additional-properties)</li><li>[row](./listbox-object#additional-properties)</li>||
+|On Drop|<li>[column](./listbox-object#additional-properties)</li><li>[columnName](./listbox-object#additional-properties)</li><li>[row](./listbox-object#additional-properties)</li>||
+|On Footer Click|<li>[column](./listbox-object#additional-properties)</li><li>[columnName](./listbox-object#additional-properties)</li><li>[footerName](./listbox-object#additional-properties)</li>|*Arrays, Current Selection & Named Selection list boxes only*|
+|On Getting Focus|<li>[column](./listbox-object#additional-properties)</li><li>[columnName](./listbox-object#additional-properties)</li><li>[row](./listbox-object#additional-properties)</li>|*Additional properties returned only when editing a cell*|
+|On Header Click|<li>[column](./listbox-object#additional-properties)</li><li>[columnName](./listbox-object#additional-properties)</li><li>[headerName](./listbox-object#additional-properties)</li>||
 |On Load||
-|On Losing Focus|<li>[column](#additional-properties)</li><li>[columnName](#additional-properties)</li><li>[row](#additional-properties)</li>|*Additional properties returned only when editing a cell has been completed*|
-|On Row Moved|<li>[newPosition](#additional-properties)</li><li>[oldPosition](#additional-properties)</li>|*Arrays list boxes only*|
-|On Scroll|<li>[horizontalScroll](#additional-properties)</li><li>[verticalScroll](#additional-properties)</li>||
+|On Losing Focus|<li>[column](./listbox-object#additional-properties)</li><li>[columnName](./listbox-object#additional-properties)</li><li>[row](./listbox-object#additional-properties)</li>|*Additional properties returned only when editing a cell has been completed*|
+|On Row Moved|<li>[newPosition](./listbox-object#additional-properties)</li><li>[oldPosition](./listbox-object#additional-properties)</li>|*Arrays list boxes only*|
+|On Scroll|<li>[horizontalScroll](./listbox-object#additional-properties)</li><li>[verticalScroll](./listbox-object#additional-properties)</li>||
 |On Unload|||
 
 

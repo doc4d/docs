@@ -24,7 +24,7 @@ After the [`On Before Keystroke`](onBeforeKeystroke.md) and `On After Keystroke`
 
 The `On After Keystroke` event is not generated:
 
-- in [list box columns](FormObjects/listbox_overview.md#list-box-columns) method except when a cell is being edited (however it is generated in any cases in the [list box](FormObjects/listbox_overview.md) method),
+- in [list box columns](FormObjects/listbox-column.md) method except when a cell is being edited (however it is generated in any cases in the [list box](FormObjects/listbox_overview.md) method),
 - when user modifications are not carried out using the keyboard (paste, drag-and-drop, checkbox, drop down list, combo box). To process these events, you must use [`On After Edit`](onAfterEdit.md).
 
 ### Keystroke sequence

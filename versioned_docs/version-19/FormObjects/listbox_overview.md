@@ -310,8 +310,8 @@ You can set the value of the variable (for example, Header2:=2) in order to "for
 
 There are several different ways to set background colors, font colors and font styles for list boxes:
 
-* at the level of the [list box object properties](#list-box-objects),
-* at the level of the [column properties](#list-box-columns),
+* at the level of the [list box object properties](./listbox-object.md),
+* at the level of the [column properties](./listbox-column.md),
 * using [arrays or expressions properties](#using-arrays-and-expressions) for the list box and/or for each column,
 * at the level of the text of each cell (if [multi-style text](properties_Text.md#multi-style)).
 
