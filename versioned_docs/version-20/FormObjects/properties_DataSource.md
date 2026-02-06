@@ -192,8 +192,8 @@ You must enter a list of values. In the Form editor, a specific dialog box allow
 
 ## Expression
 
-This description is specific to [selection](listbox_overview.md#selection-list-boxes)
- and [collection](listbox_overview.md#collection-or-entity-selection-list-boxes) type list box columns. See also **[Variable or Expression](properties_Object.md#variable-or-expression)** section.
+This description is specific to [selection](FormObjects/listbox-object.md#selection-list-boxes)
+ and [collection](FormObjects/listbox-object.md#collection-or-entity-selection-list-boxes) type list box columns. See also **[Variable or Expression](properties_Object.md#variable-or-expression)** section.
 
 A 4D expression to be associated with a column. You can enter:
 
