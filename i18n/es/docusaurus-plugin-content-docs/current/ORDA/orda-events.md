@@ -563,7 +563,7 @@ Para detener la acción, el código de la función debe devolver un [objeto erro
 
 #### Ejemplo
 
-Estes es un ejemplo del evento `dropping` a nivel de entidad:
+Este es un ejemplo del evento `dropping` a nivel de entidad:
 
 ```4d
 // ProductsEntity class
