@@ -3,46 +3,48 @@ id: ordering
 title: Ordering collections and objects
 ---
 
-To sort a series of data, 4D compares each value with the others and determines whether it is greater than or less than based on [internal criteria](#basics-rules). This principle is easy to understand and use when all data is of the same [data type](./data-types.md). 
+To sort a series of data, 4D compares each value against the others by applying comparison criteria defined according to the data type (see [sorting rules](#sorting-rules)). This process relies on a sorting algorithm that establishes a total order across all elements. When all data belongs to the same [data type](./data-types.md), the comparison rules are straightforward and well-defined.
 
-However, [collections](./dt_collection.md) and [objects](./dt_object.md) such as [entity selections](../ORDA/dsMapping.md#entity-selection) can contain elements and attributes of different data types, either scalar (text, numbers...) or complex, like objects. When ordering a collection or an object that contains heterogeneous values, 4D applies some specific rules. 
+However, [collections](./dt_collection.md) and [objects](./dt_object.md), including [entity selections](../ORDA/dsMapping.md#entity-selection), can contain elements and attributes of heterogeneous types: scalar types (text, numbers, booleans, dates) or complex types (objects, blobs, collections). When ordering a collection or object containing heterogeneous values, 4D applies a stratified sorting scheme that first partitions elements by type, then applies comparison rules within each type partition. 
 
 
 ## Ordering functions
 
-Multiple 4D language features order collection elements and object attributes or are based upon their order to provide results:
+The 4D language provides several mechanisms that rely on sorting collection elements, object attributes, or orchestrate sorting to produce an ordered result:
 
-- ordering functions on collections (`collection.multiSort()`, `collection.orderBy()`, `collection.sort()`) and on entity selection objects (`entitySelection.orderBy()`),
-- query functions that can return an ordered result (`entitySelection.query()`, `dataClass.query()` with the `order by attributePath` keyword),
-- statistic functions that rely on an ordering (`collection.max()`, `collection.min()` and `entitySelection.max()`,`entitySelection.min()`)
+- **Collection sorting functions**: `collection.multiSort()` (multi-criteria sorting with explicit key and order specification), `collection.orderBy()` (sorting by evaluating an expression on each element), `collection.sort()` (in-place sorting according to the natural ordering relation),
+- **Entity selection sorting functions**: `entitySelection.orderBy()`, which applies the same sorting rules as collections,
+- **Query functions with ordering**: `entitySelection.query()`, `dataClass.query()` with the `order by attributePath` keyword, which return results in deterministic order,
+- **Order-dependent statistical functions**: `collection.max()`, `collection.min()`, `entitySelection.max()`, `entitySelection.min()`, which rely on the ordering relation to identify extrema,
+- **`ORDER BY ATTRIBUTE`** command to order a database table based upon an object field.
 
 
-## Ordering rules
+## Sorting rules
 
-When a collection or an entity selection attribute containing elements of different types is sorted, the following sequence is applied:
+When a collection or entity selection containing elements of different types is sorted, a **type-based stratification** is applied according to the following algorithm:
 
-1. Contents are **grouped by type** 
-2. Inside groups, contents are sorted using internal comparison rules. Default order is always "ascending".  
+1. **Partitioning phase**: Elements are grouped into equivalence classes based on their base type. This phase establishes a partition of the entire element set.
+2. **Intra-class ordering phase**: Within each class, elements are sorted according to type-specific comparison rules. The default order is **ascending**.
 
-Types are returned in the following order and are sorted upon the following comparison principles in ascending order (default):
+Types are ordered according to the following sequence, with their respective comparison relations in ascending order:
 
-|Group rank|Type|Also includes type(s)|Internal comparison rules|
-|---|----|---|---|
-|1|null|pointers (nil only for collections)|no specific order|
-|2|booleans||false `<` true|
-|3|strings||by lexicographical order ("a" `<` "ab" `<` "b")|
-|4|numbers|time (converted to number in ms or s depending on the `Time inside objects` database parameter) |standard algebric order|
-|5|objects|blobs, pictures, not-nil pointers (collections)|internal order (stable for collection functions) |
-|6|collections||internal order (stable for collection functions)|
-|7|dates||oldest to most recent (!1990-01-01! `<` !2000-01-01!)|
+|Rank|Type|Also includes|Comparison rule|
+|---|---|---|---|
+|1|null|pointers (null pointers only for collections)|no comparison criteria applicable|
+|2|booleans||logical ordering: false < true|
+|3|strings||lexicographical order (e.g., "a" < "ab" < "b")|
+|4|numbers|time (converted to milliseconds or seconds depending on the `Time inside objects` database setting)|standard algebraic order (numeric comparison)|
+|5|objects|blobs, pictures, non-null pointers (collections)|internal order (stable for collection functions, see below)|
+|6|collections||internal order (stable for collection functions, see below)|
+|7|dates||chronological order (older dates < newer dates, e.g., !1990-01-01! < !2000-01-01!)|
 
-### Special number values
+### Special numeric values
 
-When placed in a collection, the values `+INF`, `-INF`, and `NaN` are sorted in the following way `NaN < -INF < finite values < +INF`.
+Special floating-point values `+INF` (positive infinity), `-INF` (negative infinity), and `NaN` (Not-a-Number) present in collections and objects are ordered according to the following sequence: **NaN < -INF < finite values < +INF**. This ordering reflects the natural extension of the real number line toward extreme values.
 
-### Stable order in collections
+### Stable ordering in collections
 
-Collection ordering functions (see above) produce a **stable** order for complex types. It means that successive calls to `collection.orderBy()` for example will produce on the same collection the same ordering regarding data of type object or collection.
+Native collection sorting functions (see [Ordering functions](#ordering-functions) section above) implement a **stable sort** for complex types. By "stable," we mean that successive calls to the same sorting function (e.g., `collection.orderBy()`) on the same collection produce identical ordering with respect to elements of object or collection type. Formally, if a sort expression yields the same comparative result for two elements, the relative order of those elements is preserved from the initial state.
 
-Other features do not guarantee stable order when sorting with internal order. 
+In contrast, other 4D sorting operations do not guarantee preservation of this stability invariant when relying on internal order for comparison. 
 
