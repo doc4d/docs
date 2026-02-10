@@ -40,7 +40,7 @@ Types are ordered according to the following sequence, with their respective com
 
 ### Special numeric values
 
-Special floating-point values `+INF` (positive infinity), `-INF` (negative infinity), and `NaN` (Not-a-Number) present in collections and objects are ordered according to the following sequence: **NaN < -INF < finite values < +INF**. This ordering reflects the natural extension of the real number line toward extreme values.
+Special floating-point values `+INF` (positive infinity), `-INF` (negative infinity), and `NaN` (Not-a-Number) present in collections and objects are ordered according to the following natural sequence: **NaN < -INF < finite values < +INF**. 
 
 ### Stable ordering in collections
 
