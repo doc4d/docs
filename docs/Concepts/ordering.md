@@ -44,7 +44,7 @@ Special floating-point values `+INF` (positive infinity), `-INF` (negative infin
 
 ### Stable ordering in collections
 
-Native collection sorting functions (see [Ordering functions](#ordering-functions) section above) implement a **stable sort** for complex types. By "stable," we mean that successive calls to the same sorting function (e.g., `collection.orderBy()`) on the same collection produce identical ordering with respect to elements of object or collection type. Formally, if a sort expression yields the same comparative result for two elements, the relative order of those elements is preserved from the initial state.
+Collection sorting functions (see [Ordering functions](#ordering-functions) section above) implement a **stable sort** for complex types. By "stable," we mean that successive calls to the same sorting function (e.g., `collection.orderBy()`) on the same collection produce identical ordering with respect to elements of object or collection type. Formally, if a sort expression yields the same comparative result for two elements, the relative order of those elements is preserved from the initial state.
 
 In contrast, other 4D sorting operations do not guarantee preservation of this stability invariant when relying on internal order for comparison. 
 
