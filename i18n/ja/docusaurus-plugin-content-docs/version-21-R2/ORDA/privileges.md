@@ -255,16 +255,16 @@ Qodly Studio for 4D においては、ログインモードはRoles and Privileg
 :::note 互換性
 
 - **新規プロジェクト作成時**、この `restrictedByDefault` プロパティは*roles.json* ファイルの中で**false** に設定されています(以下参照)。 この設定は、すぐに、かつスムーズに開発を始められるようにすることが目的であることに注意して下さい。 プロダクション環境においては、[`restrictedByDefault` および `forceLogin` プロパティを **true** に設定することが推奨されます](#recommended-configuration)。
-- In **projects converted from previous releases**; when enabling access to Qodly Studio using the [One-click configuration dialog](https://developer.4d.com/qodly/4DQodlyPro/gettingStarted#one-click-configuration), the `restrictedByDefault` property is added with value **true** in the *roles.json* file.
+- **以前のリリースから変換されたプロジェクトの場合**、 Qodly Studio へのアクセスを[ワンクリック設定ダイアログ](https://developer.4d.com/qodly/4DQodlyPro/gettingStarted#one-click-configuration) を使用して有効化した場合、 `restrictedByDefault` プロパティは、 *roles.json* ファイル内に値が **true** の状態で追加されます。
 
 :::
 
-### Recommended Configuration {#recommended-configuration}
+### 推奨される設定{#recommended-configuration}
 
-Depending on your environment, the recommended settings are:
+環境によって、推奨される設定は以下のようになります:
 
-- **Production**: Set both `restrictedByDefault` and [`forceLogin`](../REST/authUsers.md#force-login-mode) to **true**. This ensures maximum security by requiring user authentication and explicitly defined permissions for resource access.
-- **Development**: Set both `restrictedByDefault` and [`forceLogin`](../REST/authUsers.md#force-login-mode) to **false**. This allows easier access during development and debugging, with the possibility to gradually apply restrictions.
+- **プロダクション環境**: `restrictedByDefault` および [`forceLogin`](../REST/authUsers.md#force-login-mode) を両方とも **true** に設定する。 この設定によりリソースへのアクセスにはユーザー認証と明示的に定義されたパーミッションが必要になり、最大限のセキュリティを保証します。
+- **開発環境**: `restrictedByDefault` および [`forceLogin`](../REST/authUsers.md#force-login-mode) を両方とも **false** に設定する。 この設定により、開発およびデバッグ中は簡単にアクセスすることができ、それでいて後から徐々に制限を厳しくしていくという方法が可能になります。
 
 ### `Roles_Errors.json` ファイル
 
