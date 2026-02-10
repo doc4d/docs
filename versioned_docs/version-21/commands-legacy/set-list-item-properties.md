@@ -76,7 +76,7 @@ The following example changes the text of the current item of *list* to bold and
 ## See also 
 
 [GET LIST ITEM PROPERTIES](get-list-item-properties.md)  
-[Hierarchical Lists](../FormObjects/list_overview.md)
+[Hierarchical Lists](../FormObjects/list_overview.md)  
 [SET LIST ITEM](set-list-item.md)  
 [SET LIST ITEM ICON](set-list-item-icon.md)  
 
