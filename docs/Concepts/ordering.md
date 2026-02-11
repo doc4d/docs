@@ -12,11 +12,11 @@ However, [collections](./dt_collection.md) and [objects](./dt_object.md), includ
 
 The 4D language provides several mechanisms that rely on sorting collection elements, object attributes, or orchestrate sorting to produce an ordered result:
 
-- **Collection sorting functions**: `collection.multiSort()` (multi-criteria sorting with explicit key and order specification), `collection.orderBy()` (sorting by evaluating an expression on each element), `collection.sort()` (in-place sorting according to the natural ordering relation),
-- **Entity selection sorting functions**: `entitySelection.orderBy()`, which applies the same sorting rules as collections,
-- **Query functions with ordering**: `entitySelection.query()`, `dataClass.query()` with the `order by attributePath` keyword, which return results in deterministic order,
-- **Order-dependent statistical functions**: `collection.max()`, `collection.min()`, `entitySelection.max()`, `entitySelection.min()`, which rely on the ordering relation to identify extrema,
-- **`ORDER BY ATTRIBUTE`** command to order a database table based upon an object field.
+- **Collection sorting functions**: [`collection.multiSort()`](../API/CollectionClass.md#multisort) (multi-criteria sorting with explicit key and order specification), [`collection.orderBy()`](../API/CollectionClass.md#orderby) (sorting by evaluating an expression on each element), [`collection.sort()`](../API/CollectionClass.md#sort) (in-place sorting according to the natural ordering relation),
+- **Entity selection sorting functions**: [`entitySelection.orderBy()`](../API/EntitySelectionClass.md#orderby), which applies the same sorting rules as collections,
+- **Query functions with ordering**: [`entitySelection.query()`](../API/EntitySelectionClass.md#query), [`dataClass.query()`](../API/DataClassClass.md#query) with the `order by attributePath` keyword, which return results in deterministic order,
+- **Order-dependent statistical functions**: [`collection.max()`](../API/CollectionClass.md#max), [`collection.min()`](../API/CollectionClass.md#min), [`entitySelection.max()`](../API/EntitySelectionClass.md#max), [`entitySelection.min()`](../API/EntitySelectionClass.md#min), which rely on the ordering relation to identify extrema,
+- [**`ORDER BY ATTRIBUTE`**](../commands/order-by-attribute) command to order a database table based upon an object field.
 
 
 ## Sorting rules
