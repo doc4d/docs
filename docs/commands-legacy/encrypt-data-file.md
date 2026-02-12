@@ -55,13 +55,13 @@ If you passed "" in *archiveFolder*, a standard **Open folder** dialog will appe
 
 The *method* parameter is used to set a callback method that will be called regularly during the encryption process. If you pass an empty string or an invalid method name, this parameter is ignored (no method is called). When it is called, this method receives up to 5 parameters depending on the event type originating the call (see below). It is imperative to declare these parameters in the method:
 
-| **Event**           | **$1 (Longint)** | **$2 (Longint)** | **$3 (Text)**                                                                               | **$4 (Longint)**            | **$5 (Longint)** |
-| ------------------- | ---------------- | ---------------- | ------------------------------------------------------------------------------------------- | --------------------------- | ---------------- |
-| Message             | 1                | 0                | Progress message (*e.g.* "Encrypting BLOBs in table Documents")                             | Percentage done (*e.g.* 50) | Reserved         |
-| Encryption finished | 2                | 0                | OK message (*e.g.* "Done")                                                                  | 0                           | Reserved         |
-| Error               | 3                | 0                | Error message (*e.g.* "Problem on the XX data table: Encryption key has not been provided") | 0                           | Reserved         |
-| End of execution    | 4                | 0                | "Done"                                                                                      | 0                           | Reserved         |
-| Warning(\*)         | 5                | Object type      | Text of error                                                                               | Table or index number       | Reserved         |
+| **Event**    | **$messageType (Integer)** | **$objectType (Integer)** | **$messageText (Text)**      | **$table (Integer)**    | **$reserved (Integer)** |
+| ------------- | --------- | ---------------- | ------------------- | --------------------------- | ---------------- |
+| Message        | 1      | 0     | Progress message (*e.g.* "Encrypting BLOBs in table Documents")   | Percentage done (*e.g.* 50) | Reserved     |
+| Encryption finished | 2    | 0      | OK message (*e.g.* "Done")    | 0      | Reserved         |
+| Error              | 3     | 0    | Error message (*e.g.* "Problem on the XX data table: Encryption key has not been provided") | 0  | Reserved      |
+| End of execution   | 4  | 0   | "Done"    | 0         | Reserved         |
+| Warning(\*)    | 5  | Object type   | Text of error   | Table or index number       | Reserved         |
 
 (\*) Warning returned at the verification step (see [VERIFY DATA FILE](verify-data-file.md) command).
 
