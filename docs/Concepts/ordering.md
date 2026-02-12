@@ -30,21 +30,20 @@ Types are ordered according to the following sequence, with their respective com
 
 |Rank|Type|Also includes|Comparison rule|
 |---|---|---|---|
-|1|null|pointers (null pointers only for collections)|no comparison criteria applicable|
-|2|booleans||logical ordering: false < true|
-|3|strings||lexicographical order (e.g., "a" < "ab" < "b")|
-|4|numbers|time (converted to milliseconds or seconds depending on the `Time inside objects` database setting)|standard algebraic order (numeric comparison)|
-|5|objects|blobs, pictures, non-null pointers (collections)|internal order (stable for collection functions, see below)|
-|6|collections||internal order (stable for collection functions, see below)|
-|7|dates||chronological order (older dates < newer dates, e.g., !1990-01-01! < !2000-01-01!)|
+|1|**null**|pointers (null pointers only for collections)|no comparison criteria applicable|
+|2|**boolean**||logical ordering: false *before* true|
+|3|**string**||lexicographical order (e.g., "a" *before* "ab" *before* "b")|
+|4|**number**|time (converted to milliseconds or seconds depending on the `Time inside objects` database setting)|standard algebraic order (numeric comparison)|
+|5|**object**|blobs, pictures, non-null pointers (collections)|internal order (consistent for collection functions, see below)|
+|6|**collection**||internal order (consistent for collection functions, see below)|
+|7|**date**||chronological order (older dates *before* newer dates, e.g., !1990-01-01! *before* !2000-01-01!)|
 
 ### Special numeric values
 
 Special floating-point values `+INF` (positive infinity), `-INF` (negative infinity), and `NaN` (Not-a-Number) present in collections and objects are ordered according to the following natural sequence: **NaN < -INF < finite values < +INF**. 
 
-### Stable ordering in collections
+### Consistent ordering in collections
 
-Collection sorting functions (see [Ordering functions](#ordering-functions) section above) implement a **stable sort** for complex types. By "stable," we mean that successive calls to the same sorting function (e.g., `collection.orderBy()`) on the same collection produce identical ordering with respect to elements of object or collection type. Formally, if a sort expression yields the same comparative result for two elements, the relative order of those elements is preserved from the initial state.
+Collection sorting functions (see [Ordering functions](#ordering-functions) section above) implement a **consistent sort** for complex types such as objects and collections. By "consistent", we mean that successive calls to the same sorting function (e.g., `collection.orderBy()`) on the same collection produce identical ordering for complex type values. Formally, if a sort expression yields the same comparative result for two elements, the relative order of those elements is preserved.
 
-In contrast, other 4D sorting operations do not guarantee preservation of this stability invariant when relying on internal order for comparison. 
-
+Other 4D sorting operations do not provide this stability guarantee when comparing complex types.
