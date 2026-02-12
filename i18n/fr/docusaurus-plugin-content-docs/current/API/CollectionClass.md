@@ -144,7 +144,7 @@ $element:=$col.at(10) // undefined
 
 #### Description
 
-Différent de
+La fonction .average() <!-- REF #collection.average().Summary -->retourne la moyenne arithmétique des valeurs définies dans la collection<!-- END REF -->.
 
 Seuls les éléments ayant une valeur numérique sont pris en compte pour le calcul (les autres types d'éléments sont ignorés).
 
@@ -154,7 +154,7 @@ Vous pouvez passer tout type d'élément accepté par les collections, y compris
 
 - la collection est vide,
 - la collection ne contient pas d'éléments numériques,
-- Egal à
+- *propertyPath* n'est pas trouvé dans la collection.
 
 #### Exemple 1
 
@@ -204,7 +204,7 @@ Vous pouvez passer tout type d'élément accepté par les collections, y compris
 
 #### Description
 
-Vous devez prêter attention aux problèmes de conversion suivants :
+La fonction `.clear()` <!-- REF #collection.clear().Summary -->supprime tous les éléments de la collection et retourne une collection vide<!-- END REF -->.
 
 > Cette fonction modifie la collection d'origine.
 
@@ -248,17 +248,17 @@ $vSize:=$col.length //$vSize=0
 
 #### Description
 
-Vous pouvez passer : Vous pouvez passer :
+La fonction `.combine()` <!-- REF #collection.combine().Summary -->insère des éléments *col2* à la fin ou à la position *index* spécifiée dans l'instance de collection et renvoie la collection modifiée<!-- END REF -->. A la différence de la fonction `.insert()`, `.combine()` ajoute chaque valeur de *col2* dans la collection d'origine, et non en tant qu'élément unique de collection.
 
 > Cette fonction modifie la collection d'origine.
 
-Nom de méthode Exemples :
+Par défaut, les éléments *col2* sont ajoutés à la fin de la collection originale. Exemples :
 
-> Exemple 1
+> **Attention** : N'oubliez pas que la numérotation des éléments de collection débute à 0.
 
-- Exemple 2
-- Inclus parmi
-- Vous souhaitez un tri croissant des première et troisième collections, et une synchronisation pour la deuxième collection :
+- Si *index* > la longueur de la collection, l'*index* de départ sera fixé à la longueur de la collection.
+- Si *index* < 0, il est recalculé comme *index:=index+length* (il est considéré comme le décalage par rapport à la fin de la collection).
+- Si la valeur calculée est négative, *index* est mis à 0.
 
 #### Exemple
 
@@ -292,18 +292,18 @@ $c.combine($fruits;3) //[1,2,3,"Orange","Banana","Apple","Grape",4,5,6]
 | Paramètres | Type       |                             | Description                                                                                                                                                                                              |
 | ---------- | ---------- | :-------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | value      | any        |              ->             | Valeur(s) à concaténer. Si *value* est une collection, tous ses éléments sont ajoutés comme de nouveaux éléments à la fin de la collection d'origine. |
-| Résultat   | Collection | <- | En cas d'incohérence, les règles suivantes sont appliquées :                                                                                                                             |
+| Résultat   | Collection | <- | Nouvelle collection avec valeur(s) ajoutée(s) à la collection originale                                                                                            |
 
 </div>
 <!-- END REF -->
 
 #### Description
 
-Par exemple :
+La fonction `.concat()` <!-- REF #collection.concat().Summary -->renvoie une nouvelle collection contenant les éléments de la collection originale avec tous les éléments du paramètre *value* ajoutés à la fin<!-- END REF -->.
 
 > Cette fonction ne modifie pas la collection d'origine.
 
-La collection retournée contient l'élément spécifié par *startFrom* et tous les éléments suivants jusqu'à l'élément spécifié par *end* (mais non compris). Si seul le paramètre *startFrom* est spécifié, la collection retournée contient tous les éléments de *startFrom* au dernier élément de la collection d'origine.
+Si *value* est une collection, tous ses éléments sont ajoutés en tant que nouveaux éléments à la fin de la collection d'origine. Si la *value* n'est pas une collection, elle est ajoutée elle-même en tant que nouvel élément.
 
 #### Exemple
 
@@ -324,10 +324,10 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 
 <details><summary>Historique</summary>
 
-| Release | Modifications                                                                                                                                                                                                                                                                                                                                                            |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 18 R3   | Les dates sont stockées sous la forme de date « aaaa-mm-jj » ou des chaînes au format « AAAA-MM-JJTHH: ss.SSSZ: mm » , selon la configuration actuelle « dates à l'intérieur des objets » de la base de données. Cet exemple retourne des personnes embauchées il y a plus de 90 jours : |
-| v16 R6  | Ajout                                                                                                                                                                                                                                                                                                                                                                    |
+| Release | Modifications                                                                |
+| ------- | ---------------------------------------------------------------------------- |
+| 18 R3   | Nouvelle option *ck shared*. Nouveaux paramètres *groupWith* |
+| v16 R6  | Ajout                                                                        |
 
 </details>
 
@@ -1592,7 +1592,7 @@ Nom de méthode
 
 Cet exemple retourne des personnes dont l'âge n'est pas connu (propriété définie sur null ou indéfinie) :
 
-> Exemple 1
+> **Attention** : N'oubliez pas que la numérotation des éléments de collection débute à 0.
 
 - Exemple 2
 - Exemple 3
@@ -2935,9 +2935,9 @@ La fonction `.remove()` <!-- REF #collection.remove().Summary -->supprime un ou 
 
 Dans *index*, passez la position à partir de laquelle vous souhaitez supprimer des éléments de la collection.
 
-> Exemple 1 Si *startFrom* < 0, la fin de la collection est considérée comme point de départ du calcul de la position (*startFrom:=startFrom+length*).
+> **Attention** : N'oubliez pas que la numérotation des éléments de collection débute à 0. Si *startFrom* < 0, la fin de la collection est considérée comme point de départ du calcul de la position (*startFrom:=startFrom+length*).
 
-- Inclus parmi
+- Si *index* < 0, il est recalculé comme *index:=index+length* (il est considéré comme le décalage par rapport à la fin de la collection).
 - Si la valeur calculée < 0, *index* est défini à 0.
 - Si la valeur calculée > la longueur de la collection, *index* est défini à cette longueur.
 
@@ -3374,7 +3374,7 @@ Les positions sont retournées dans un ordre croissant.
 
 - la collection est vide,
 - la collection ne contient pas d'éléments numériques,
-- Egal à
+- *propertyPath* n'est pas trouvé dans la collection.
 
 #### Exemple 1
 
