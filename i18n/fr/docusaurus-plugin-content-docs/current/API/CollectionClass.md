@@ -94,13 +94,13 @@ Une collection est initialisée avec les commandes [`New collection`](../command
 
 #### Description
 
-Différent de
+La fonction `.at()` <!-- REF #collection.at().Summary -->retourne l'élément à la position *index*, acceptant des entiers positifs et négatifs<!-- END REF -->.
 
 > Cette fonction ne modifie pas la collection d'origine.
 
 Les nombres entiers négatifs déterminent la position à partir du dernier élément de la collection.
 
-Voici un exemple :
+La fonction renvoie la valeur Undefined si *index* dépasse les limites de la collection.
 
 #### Exemple
 
@@ -150,7 +150,7 @@ Seuls les éléments ayant une valeur numérique sont pris en compte pour le cal
 
 Les positions sont retournées dans un ordre croissant.
 
-Vous pouvez passer tout type d'élément accepté par les collections, y compris une autre collection.
+`.average()` retourne `undefined` si :
 
 - la collection est vide,
 - la collection ne contient pas d'éléments numériques,
@@ -252,7 +252,7 @@ La fonction `.combine()` <!-- REF #collection.combine().Summary -->insère des �
 
 > Cette fonction modifie la collection d'origine.
 
-Par défaut, les éléments *col2* sont ajoutés à la fin de la collection originale. Exemples :
+Par défaut, les éléments *col2* sont ajoutés à la fin de la collection originale. Vous pouvez passer dans *index* la position à laquelle vous souhaitez que les éléments *col2* soient insérés dans la collection.
 
 > **Attention** : N'oubliez pas que la numérotation des éléments de collection débute à 0.
 
@@ -292,7 +292,7 @@ $c.combine($fruits;3) //[1,2,3,"Orange","Banana","Apple","Grape",4,5,6]
 | Paramètres | Type       |                             | Description                                                                                                                                                                                              |
 | ---------- | ---------- | :-------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | value      | any        |              ->             | Valeur(s) à concaténer. Si *value* est une collection, tous ses éléments sont ajoutés comme de nouveaux éléments à la fin de la collection d'origine. |
-| Résultat   | Collection | <- | Nouvelle collection avec valeur(s) ajoutée(s) à la collection originale                                                                                            |
+| Résultat   | Collection | <- | Nouvelle collection contenant les valeurs d'origine et les valeurs ajoutées                                                                                                                              |
 
 </div>
 <!-- END REF -->
@@ -337,40 +337,40 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 
 <div class="no-index">
 
-| Paramètres   | Type       |                             | Description                                                                                                                                                                                                             |
-| ------------ | ---------- | :-------------------------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| option       | Integer    |              ->             | Exemple 3                                                                                                                                                                                                               |
-| groupWithCol | Collection |              ->             | Collection partagée à grouper avec la collection résultante                                                                                                                                                             |
-| groupWithObj | Object     |              ->             | Objet partagé à grouper avec la collection résultante                                                                                                                                                                   |
-| Résultat     | Collection | <- | *pathStrings* contient une formule constituée de 1 à N chemin(s) de propriété(s) et (optionnellement) ordres de tri, séparés par des virgules. |
+| Paramètres   | Type       |                             | Description                                                                                                                                      |
+| ------------ | ---------- | :-------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| option       | Integer    |              ->             | `ck resolve pointers`: résoudre les pointeurs avant la copie,<br/>`ck shared`: retourner une collection partagée |
+| groupWithCol | Collection |              ->             | Collection partagée à grouper avec la collection résultante                                                                                      |
+| groupWithObj | Object     |              ->             | Objet partagé à grouper avec la collection résultante                                                                                            |
+| Résultat     | Collection | <- | Copie profonde de la collection d'origine (deep copy)                                                                         |
 
 </div>
 <!-- END REF -->
 
 #### Description
 
-Lorsque vous utilisez une valeur constante, les règles suivantes doivent être respectées :
+La fonction `.copy()` <!-- REF #collection.copy().Summary --> renvoie une copie profonde (deep copy) de l'instance de collection<!-- END REF -->. ***Deep copy*** signifie que les objets ou les collections présents dans la collection d'origine sont dupliqués et ne partagent pas leur référence avec la collection qui est retournée.
 
 > Cette fonction ne modifie pas la collection d'origine.
 
-Utilisation de guillemets
+S'il est passé, le paramètre *option* peut contenir l'une des constantes suivantes (ou les deux) :
 
-| option                | Description                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ck resolve pointers` | Si la collection d'origine contient des valeurs de type pointeur, par défaut la copie contient également les pointeurs. Si la collection d'origine contient des valeurs de type pointeur, par défaut la copie contient également les pointeurs. Dans ce cas, chaque pointeur contenu dans la collection est évalué lors de la copie et sa valeur déréférencée est utilisée. |
-| `ck shared`           | Prise en charge des formules Symbole(s) L'évaluation est sensible à la casse et différencie les caractères accentués.                                                                                                                                                                                                                                                                    |
+| option                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ck resolve pointers` | Si la collection d'origine contient des valeurs de type pointeur, par défaut la copie contient également les pointeurs. Toutefois, vous pouvez résoudre les pointeurs au moment de la copie en passant la constante `ck resolve pointers`. Dans ce cas, chaque pointeur contenu dans la collection est évalué lors de la copie et sa valeur déréférencée est utilisée.                                  |
+| `ck shared`           | Par défaut, `copy()` retourne une collection standard (non partagée), même si la fonction s'applique à une collection partagée. Passez la constante `ck shared` pour créer une collection partagée. Dans ce cas, vous pouvez utiliser le paramètre *groupWith* pour associer la collection partagée à une autre collection ou à un autre objet (voir ci-dessous). |
 
-Par défaut si omis, une évaluation non diacritique est effectuée
+Les paramètres *groupWithCol* ou *groupWithObj* vous permettent de désigner une collection ou un objet avec lequel la collection résultante doit être associée.
 
 :::note
 
-Les objets Datastore, dataclass et entity ne sont pas copiables. Collection mise à plat
+Les objets Datastore, dataclass et entity ne sont pas copiables. Si `.copy()` est appelé avec eux, les valeurs `Null` sont retournées.
 
 :::
 
 #### Exemple 1
 
-Inférieur ou égal à Null
+Nous souhaitons copier la collection régulière (non partagée) *$lastnames* dans l'objet partagé *$sharedObject*. Pour cela, nous devons créer une copie partagée de la collection (*$sharedLastnames*).
 
 ```4d
 var $sharedObject : Object
@@ -392,7 +392,7 @@ End use
 
 #### Exemple 2
 
-Null Etant donné qu'ils appartiennent à différents groupes partagés, une combinaison directe pourrait générer une erreur. Etant donné qu'ils appartiennent à différents groupes partagés, une combinaison directe pourrait générer une erreur.
+Nous voulons combiner *$sharedColl1* et *$sharedColl2*. Etant donné qu'ils appartiennent à différents groupes partagés, une combinaison directe pourrait générer une erreur. Par conséquent, nous devons faire une copie partagée de *$sharedColl1* et désigner *$sharedColl2* comme étant un groupe partagé pour la copie.
 
 ```4d
 var $sharedColl1;$sharedColl2;$copyColl : Collection
@@ -409,7 +409,7 @@ $sharedColl2:=New shared collection(New shared object("lastname";"Brown"))
 
 #### Exemple 3
 
-Supérieur ou égal à Paramètre querySettings
+Nous avons une collection standard (*$lastnames*) et nous souhaitons la placer dans le **Storage** de l'application. Pour cela, nous devons créer une copie partagée au préalable (*$sharedLastnames*).
 
 ```4d
 var $lastnames;$sharedLastnames : Collection
@@ -427,10 +427,24 @@ End use
 
 #### Exemple 4
 
-Collection d'origine dont tous les éléments ont été supprimés
+Cet exemple illustre l'utilisation de l'option `ck resolve pointers` :
 
 ```4d
-Résultat
+ var $col : Collection
+ var $p : Pointer
+ $p:=->$what
+
+ $col:=New collection
+ $col.push(New object("alpha";"Hello";"num";1))
+ $col.push(New object("beta";"You";"what";$p))
+
+ $col2:=$col.copy()
+ $col2[1].beta:="World!"
+ ALERT($col[0].alpha+" "+$col2[1].beta) //"Hello World!"
+
+ $what:="You!"
+ $col3:=$col2.copy(ck resolve pointers)
+ ALERT($col3[0].alpha+" "+$col3[1].what) //"Hello You!"
 ```
 
 <!-- END REF -->
@@ -453,19 +467,19 @@ Résultat
 
 <div class="no-index">
 
-| Paramètres   | Type |                             | Description                                                                                         |
-| ------------ | ---- | :-------------------------: | --------------------------------------------------------------------------------------------------- |
-| propertyPath | Text |              ->             | Chemin de propriété d'objet à utiliser pour évaluer les valeurs                                     |
-| Résultat     | Real | <- | La recherche d'une personne nommée "smith OR status='private"' échouera simplement. |
+| Paramètres   | Type |                             | Description                                                     |
+| ------------ | ---- | :-------------------------: | --------------------------------------------------------------- |
+| propertyPath | Text |              ->             | Chemin de propriété d'objet à utiliser pour évaluer les valeurs |
+| Résultat     | Real | <- | Nombre d'éléments dans la collection                            |
 
 </div>
 <!-- END REF -->
 
 #### Description
 
-Ajout
+La fonction `.count()` <!-- REF #collection.count().Summary -->retourne le nombre d'éléments non nuls dans la collection<!-- END REF -->.
 
-Exemple 2 Tri d'une collection de nombres par ordre croissant ou décroissant :
+Si la collection contient des objets, vous pouvez passer le paramètre *propertyPath*. Dans ce cas, seuls les éléments qui contiennent le *propertyPath* sont pris en compte.
 
 #### Exemple
 
@@ -502,27 +516,27 @@ Exemple 2 Tri d'une collection de nombres par ordre croissant ou décroissant :
 
 <div class="no-index">
 
-| Paramètres   | Type |                             | Description                                                                                                                                                           |
-| ------------ | ---- | :-------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| value        | any  |              ->             | Valeur à compter                                                                                                                                                      |
-| propertyPath | Text |              ->             | Chemin de propriété d'objet à utiliser pour évaluer les valeurs                                                                                                       |
-| Résultat     | Real | <- | Par défaut, `copy()` retourne une collection standard (non partagée), même si la commande est appliquée à une collection partagée. |
+| Paramètres   | Type |                             | Description                                                     |
+| ------------ | ---- | :-------------------------: | --------------------------------------------------------------- |
+| value        | any  |              ->             | Valeur à compter                                                |
+| propertyPath | Text |              ->             | Chemin de propriété d'objet à utiliser pour évaluer les valeurs |
+| Résultat     | Real | <- | Nombre d'occurrences de la valeur                               |
 
 </div>
 <!-- END REF -->
 
 #### Description
 
-Lorsque vous utilisez des placeholders, le contournement des options de sécurité n'est pas possible :
+La fonction `.countValues()` <!-- REF #collection.countValues().Summary -->retourne le nombre d'occurrences de *value* dans la collection<!-- END REF -->.
 
-L'ordre dans lequel les propriétés sont passées détermine la priorité de tri des éléments de la collection.
+Vous pouvez passer dans *value* :
 
 - une valeur scalaire (texte, numérique, booléen, date),
 - une référence d'objet ou de collection.
 
-La callback reçoit les paramètres suivants :
+Pour qu'un élément soit comptabilisé, le type de *value* doit être égal à celui de l'élément ; la fonction utilise l'opérateur d'égalité.
 
-Comparaison
+Le paramètre optionnel *propertyPath* vous permet de compter des valeurs à l'intérieur d'une collection d'objets : passez dans *propertyPath* le chemin de la propriété dont vous souhaitez comptabiliser le nombre de valeurs.
 
 > Cette fonction ne modifie pas la collection d'origine.
 
@@ -569,10 +583,10 @@ Comparaison
 
 <details><summary>Historique</summary>
 
-| Release | Modifications                                                                          |
-| ------- | -------------------------------------------------------------------------------------- |
-| 20      | Vous souhaitez créer une nouvelle collection puis ajouter un élément : |
-| v16 R6  | Ajout                                                                                  |
+| Release | Modifications                        |
+| ------- | ------------------------------------ |
+| 20      | Prise en charge de `ck count values` |
+| v16 R6  | Ajout                                |
 
 </details>
 
