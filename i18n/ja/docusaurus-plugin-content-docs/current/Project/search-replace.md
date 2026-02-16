@@ -44,11 +44,11 @@ title: 検索と置換
    または
    **編集** メニュー内から **デザインモードを検索...** コマンドを選択します。
 
-The "Find in design" window appears:
+"デザインモードを検索" ウィンドウが表示されます:
 
 ![](../assets/en/Project/find-in-design.png)
 
-The areas of the "Find in design" vary dynamically depending on the selections made in the menus. You can expand this window so that all options are visible:
+メニューの選択に応じて、"デザインモードを検索"のエリアは動的に変化します。 ウィンドウを展開することで、全てのオプションを表示することもできます:
 
 ![](../assets/en/Project/find-in-design-expanded.png)
 
