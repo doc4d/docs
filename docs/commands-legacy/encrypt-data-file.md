@@ -5,7 +5,7 @@ slug: /commands/encrypt-data-file
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Encrypt data file.Syntax-->**Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newPassPhrase* : Text {; *archiveFolder* : Text, 4D.Folder {; *curPassPhrase* : Text {; *methodName* : Text}}}} ) : Text<br/>**Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newDataKey* : Object {; *archiveFolder* : Text, 4D.Folder {; *curDataKey* : Object {; *methodName* : Text}}}} ) : Text<!-- END REF-->
+<!--REF #_command_.Encrypt data file.Syntax-->**Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newPassPhrase* : Text {; *archiveFolder* : Text {; *curPassPhrase* : Text {; *methodName* : Text}}}} ) : Text<br/>**Encrypt data file** ( *structurePath* : Text ; *dataPath* : Text {; *newDataKey* : Object {; *archiveFolder* : Text {; *curDataKey* : Object {; *methodName* : Text}}}} ) : Text<!-- END REF-->
 <!--REF #_command_.Encrypt data file.Params-->
 <div class="no-index">
 
@@ -15,7 +15,7 @@ displayed_sidebar: docs
 | dataPath | Text | &#8594;  | Pathname of data file to encrypt |
 | newPassPhrase | Text | &#8594;  | In case of replacement: new passPhrase |
 | newDataKey | Object | &#8594;  | In case of replacement: new encryption key (object) |
-| archiveFolder | Text, 4D.Folder | &#8594;  | Pathname or object of folder where original files will be stored |
+| archiveFolder | Text | &#8594;  | Pathname of folder where original files will be stored |
 | curPassPhrase | Text | &#8594;  | Current passPhrase |
 | curDataKey | Object | &#8594;  | Current encryption key |
 | methodName | Text | &#8594;  | Name of 4D callback method |
