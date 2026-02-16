@@ -5,7 +5,7 @@ slug: /WritePro/commands/wp-get-style-sheet
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP Get style sheet.Syntax-->**WP Get style sheet** ( *wpDoc* : Object ; *styleSheetName* : Text ) : Object<!-- END REF-->
+<!--REF #_command_.WP Get style sheet.Syntax-->**WP Get style sheet** ( *wpDoc* : Object ; *styleSheetName* : Text {; listLevelIndex : Integer } ) : Object<!-- END REF-->
 <!--REF #_command_.WP Get style sheet.Params-->
 <div class="no-index">
 
@@ -13,13 +13,14 @@ displayed_sidebar: docs
 | --- | --- | --- | --- |
 | wpDoc | Object | &#8594;  | 4D Write Pro document |
 | styleSheetName | Text | &#8594;  | Style sheet name |
+| listLevelIndex | Integer | &#8594;  | Level of the style sheet in the hierarchy |
 | Function result | Object | &#8592; | Style sheet object |
 </div>
 <!-- END REF-->
 
 ## Description 
 
-<!--REF #_command_.WP Get style sheet.Summary-->The **WP Get style sheet** command returns the style sheet object designated by the *styleSheetName*.<!-- END REF-->
+<!--REF #_command_.WP Get style sheet.Summary-->The **WP Get style sheet** command returns the style sheet object designated by the *styleSheetName* or by the style sheet name and the *listLevelIndex* in the case of a [hierarchical paragraph style sheet](../user/user-new.md#hierarchical-paragraph-style-sheets).<!-- END REF-->
 
 In *wpDoc*, pass the 4D Write Pro document that contains the style sheet.
 

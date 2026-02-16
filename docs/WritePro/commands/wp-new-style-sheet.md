@@ -5,7 +5,8 @@ slug: /WritePro/commands/wp-new-style-sheet
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP New style sheet.Syntax-->**WP New style sheet** ( *wpDoc* : Object ; *styleSheetType* : Integer ; *styleSheetName* : Text ) : Object<!-- END REF-->
+<!--REF #_command_.WP New style sheet.Syntax-->**WP New style sheet** ( *wpDoc* : Object ; *styleSheetType* : Integer ; *styleSheetName* : Text {; listLevelCount : Integer} ) : Object <!-- END REF-->
+
 <!--REF #_command_.WP New style sheet.Params-->
 <div class="no-index">
 
@@ -14,6 +15,7 @@ displayed_sidebar: docs
 | wpDoc | Object | &#8594;  | 4D Write Pro document |
 | styleSheetType | Integer | &#8594;  | Type of style sheet |
 | styleSheetName | Text | &#8594;  | Name of style sheet |
+| listLevelCount | Integer | &#8594;  | Total number of levels in the hierarchy |
 | Function result | Object | &#8592; | Style sheet object |
 </div>
 <!-- END REF-->
@@ -36,6 +38,8 @@ Pass a name for the style sheet in the *styleSheetName* parameter. The style she
 * it must be unique in the document regardless of the type
 * it must not start with "section", which is reserved
 * the "\_" is replaced by a space and trailing spaces are removed.
+
+paragraph about the new parameter
 
 You can specify the attributes of the style sheet using the [WP SET ATTRIBUTES](../commands/wp-set-attributes.md) command or the object notation (see [4D Write Pro Attributes](../4d-write-pro-attributes)). For the list of available attributes, see the *Style sheet attributes* section.
 

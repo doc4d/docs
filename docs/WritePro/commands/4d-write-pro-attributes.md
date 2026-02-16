@@ -456,11 +456,13 @@ Style sheet attributes are used to apply existing style sheet objects to the fol
 
 | Constant                | Comment                                                                                                                                                                                                      |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| wk list concat string format |            |
-| wk list level count          |            |
-| wk list level index          |            |
+| wk list concat string format | Specifies whether the numbering marker should be concatenated with the marker of the previous level. Possible values:<br/><ul><li>True</li><li>False</li></ul> |
+| wk list level count          | (Read-only for sub-level style sheet) Total number of levels in the hierarchy. Possible values:<br/><ul><li>From 1 to 9</li></ul>|
+| wk list level index          | (Read-only) Level of the style sheet in the hierarchy. Possible values:<br/><ul><li>From 1 to 9</li></ul>|
+| wk list root style           | (Read-only) Name of the root-level style sheet to which the current style sheet is related Possible values:<br/><ul><li>existing style sheet name for sub-level style sheet</li><li>and empty string for the root-level style sheet</li></ul>|
 | wk new line style sheet | Specifies style sheet to use when adding a new line in the paragraph. Possible values:<br/><ul><li>existing style sheet name or empty string (default) to use the same style for a new line</li><li>style sheet object (must belong to the same document)</li></ul> |
 | wk style sheet          | Specifies current style sheet for the selected element(s). Possible values:<br/><ul><li>style sheet object (must belong to the same document)</li><li>existing style sheet name</li></ul>            |
+
 
 
 For information about creating style sheet objects and defining the attributes within them, see the [*Style sheets* page](../user-legacy/stylesheets.md).
