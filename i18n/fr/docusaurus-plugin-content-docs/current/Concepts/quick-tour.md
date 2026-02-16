@@ -58,7 +58,7 @@ La ligne de code se lit "MyOtherDate obtient la date actuelle plus 30 jours." Ce
 
 ## Commandes
 
-Les commandes 4D sont des méthodes intégrées qui permettent d'effectuer une action. Les commandes sont souvent utilisées avec des paramètres qui sont passés entre parenthèses () et séparés par des points-virgules (;). Voici un exemple :
+Les commandes 4D sont des méthodes intégrées qui permettent d'effectuer une action. Les commandes sont souvent utilisées avec des paramètres qui sont passés entre parenthèses () et séparés par des points-virgules (;). Exemple :
 
 ```4d
 COPY DOCUMENT("dossier1\\nom1";"dossier2\\" ; "nouveau")
@@ -365,7 +365,7 @@ Les deux styles de commentaires peuvent être utilisés simultanément.
 
 #### Commentaires sur une seule ligne (`//commentaire`)
 
-Insérez les caractères `//` au début de la ligne ou après une instruction pour ajouter une ligne de commentaire. Voici un exemple :
+Insérez les caractères `//` au début de la ligne ou après une instruction pour ajouter une ligne de commentaire. Exemple :
 
 ```4d
 //Ceci est un commentaire
@@ -380,7 +380,7 @@ End for
 
 Encadrez le contenu avec les caractères `/*` ... `*/` pour créer des blocs de commentaires en ligne ou multi-lignes. Les blocs de commentaire en ligne et multi-lignes commencent par `/*` et se terminent par `*/`.
 
-- Les **lignes de commentaires en ligne** - peuvent être insérées n'importe où dans le code. Voici un exemple :
+- Les **lignes de commentaires en ligne** - peuvent être insérées n'importe où dans le code. Exemple :
 
 ```4d
 For /* ligne de commentaire */ ($vCounter;1;100)
@@ -388,7 +388,7 @@ For /* ligne de commentaire */ ($vCounter;1;100)
 End for
 ```
 
-- Les **blocs de commentaires multi-lignes** permettent de commenter un nombre illimité de lignes. Les blocs de commentaires peuvent être imbriqués (ce qui est utile, étant donné que l'éditeur de code 4D prend en charge les blocs condensés). Voici un exemple :
+- Les **blocs de commentaires multi-lignes** permettent de commenter un nombre illimité de lignes. Les blocs de commentaires peuvent être imbriqués (ce qui est utile, étant donné que l'éditeur de code 4D prend en charge les blocs condensés). Exemple :
 
 ```4d
 For ($vCounter;1;100)
@@ -430,5 +430,5 @@ Les conventions suivantes sont utilisées dans la documentation du langage 4D :
 
 - les caractères `{ }` (accolades) indiquent des paramètres facultatifs. Par exemple, `.delete( { option : Integer } )` signifie que le paramètre *option* peut être omis lors de l'appel de la fonction.
 - le mot-clé `any` est utilisé pour les paramètres qui peuvent être de n'importe quel type (nombre, texte, booléen, date, heure, objet, collection...).
-- la notation `{ ; ...*param* : Type}` indique un nombre illimité de paramètres du même type. For example, `.concat( value : any { ;...valueN : any } ) : Collection` means that an unlimited number of values of any type can be passed to the function.
+- the `{; *...param* : Type}` notation indicates an unlimited number of parameters of the same type. For example, `.concat( value : any { ;...valueN : any } ) : Collection` means that an unlimited number of values of any type can be passed to the function.
 - la notation `{ ; ...(*param* : Type ; *param2* : Type) }` indique un nombre illimité de groupes de paramètres. For example, `COLLECTION TO ARRAY ( collection : Collection ; array : Array {; propertyName : Text}{; ...(array : Array ; propertyName : Text) } )` means that an unlimited number of couple values of type array/text can be passed to the command.
