@@ -3290,7 +3290,7 @@ Por defecto, `.some()` comprueba toda la colección. Opcionalmente, puede pasar 
 
 #### Ejemplo
 
-Soporte de fórmula
+Quiere saber si al menos un valor de la colección es >0.
 
 ```4d
  var $c : Collection
@@ -3341,7 +3341,7 @@ Soporte de fórmula
 
 #### Descripción
 
-Ejemplo 2
+La función `.sort()` <!-- REF #collection.sort().Summary -->ordena los elementos de la colección original y además devuelve la colección ordenada<!-- END REF -->.
 
 > Esta función modifica la colección original.
 
@@ -3374,9 +3374,9 @@ La retrollamada recibe los siguientes parámetros:
   - *$1.value2* (todo tipo): valor del segundo elemento a comparar
 - $2...$N (cualquier tipo): parámetros adicionales
 
-Resultado
+Si utilizó un método, debe definir el siguiente parámetro:
 
-- Elemento a insertar en la colección
+- *$1.result* (boolean): **true** si *$1.value < $1.value2*, **false** de lo contrario.
 
 #### Ejemplo 1
 
@@ -3424,23 +3424,23 @@ $col3:=$col.sort(Formula(String($1.value)<String($1.value2))) //alphabetical sor
 
 <div class="no-index">
 
-| Parámetros   | Tipo |                             | Descripción                                                                                                                                                                           |
-| ------------ | ---- | :-------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| propertyPath | Text |              ->             | Ruta de la propiedad del objeto que se utilizará para el cálculo                                                                                                                      |
-| Resultado    | Real | <- | `.pop()`, utilizado junto con [`.push()`](#push), puede utilizarse para implementar una funcionalidad primera entrada última salida de tratamiento de datos apilados: |
+| Parámetros   | Tipo |                             | Descripción                                                      |
+| ------------ | ---- | :-------------------------: | ---------------------------------------------------------------- |
+| propertyPath | Text |              ->             | Ruta de la propiedad del objeto que se utilizará para el cálculo |
+| Resultado    | Real | <- | Suma de los valores de la colección                              |
 
 </div>
 <!-- END REF -->
 
 #### Descripción
 
-Añadidos
+La función `.sum()` <!-- REF #collection.sum().Summary --> devuelve la suma de todos los valores de la instancia de la colección<!-- END REF -->.
 
 Para el cálculo sólo se tienen en cuenta los elementos numéricos (se ignoran otros tipos de elementos).
 
 Si la colección contiene objetos, pasa el parámetro *propertyPath* para indicar la propiedad del objeto a tener en cuenta.
 
-Esta función no modifica la colección original.
+`.sum()` devuelve 0 si:
 
 - la colección está vacía,
 - la colección no contiene elementos numéricos,
@@ -3498,7 +3498,7 @@ Esta función no modifica la colección original.
 
 #### Descripción
 
-Ejemplo
+La función `.unshift()` <!-- REF #collection.unshift().Summary -->inserta el *valor*(es) dado al principio de la colección <!-- END REF -->y devuelve la colección modificada.
 
 > Esta función modifica la colección original.
 
