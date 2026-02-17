@@ -9,6 +9,7 @@ title: Release Notes
 #### Highlights
 
 - The [`JSON Validate`](../commands/json-validate.md) command now supports of JSON Schema draft 2020-12. 
+- 4D Write Pro now supports [hierarchical paragraph style sheets](../user-legacy/stylesheets.md#hierarchical-paragraph-style-sheets), enabling the creation and management of structured [multi-level lists](../WritePro/user-legacy/using-a-4d-write-pro-area.md#multi-level-lists) with automatic numbering.
 
 
 #### Behavior changes

@@ -39,16 +39,27 @@ Pass a name for the style sheet in the *styleSheetName* parameter. The style she
 * it must not start with "section", which is reserved
 * the "\_" is replaced by a space and trailing spaces are removed.
 
-paragraph about the new parameter
-
 You can specify the attributes of the style sheet using the [WP SET ATTRIBUTES](../commands/wp-set-attributes.md) command or the object notation (see [4D Write Pro Attributes](../4d-write-pro-attributes)). For the list of available attributes, see the *Style sheet attributes* section.
+
+If the *styleSheetType* parameter is set to `wk type paragraph`, you can optionally pass the *listLevelCount* parameter to create a hierarchical paragraph style sheet.
+
+The *listLevelCount* parameter defines the total number of levels in the hierarchy. When specified (value ≥ 1), the command automatically creates a root-level style sheet and the corresponding sub-level style sheets.
+
+The following predefined values are applied:
+
+* `wk list style type` is set to `wk decimal`
+* `wk list level index` is automatically assigned (1 for the root level, incremented for sub-levels)
+* `wk list level count` is set to the specified value for all levels
+* `wk margin left` is automatically calculated (0.75 cm × level index)
+
+If the parameter is omitted or set to 0, a standard (non-list) paragraph style sheet is created.
 
 **Notes**: 
 
 * A style sheet only modifies the display of a character or paragraph, not how it is stored in the document. If a style sheet is removed, the text will revert to the default style.
 * Any style attributes not defined in the new style sheet will automatically use the Normal style. For more information, see the [*Style sheets* page](../user-legacy/stylesheets.md).
 
-## Example 
+## Example 1
 
 The following code creates and defines a paragraph style sheet:
 
@@ -69,6 +80,35 @@ The following code creates and defines a paragraph style sheet:
     WP SET ATTRIBUTES($Paragraphs[0];wk style sheet;$styleSheet)
  End if
 ```
+
+## Example 2
+
+The following code creates a hierarchical paragraph style sheet with 3 levels:
+
+```4d
+var $mainList : Object
+
+$mainList:=WP New style sheet(wpArea; wk type paragraph; "MainList"; 3)
+
+// The command automatically creates:
+// - 1 root-level style sheet ("MainList")
+// - 2 sub-level style sheets ("MainList lvl 2" and "MainList lvl 3")
+
+```
+Result:
+
+* The root style sheet has:
+  * `wk list level index` = 1
+  * `wk list level count` = 3
+  * `wk list style type` = `wk decimal`
+
+* The sub-level style sheets:
+  * have incremented `wk list level index` values (2 and 3)
+  * share the same `wk list level count`
+  * are automatically indented (0.75 cm × level index)
+  * reference the root style sheet through `wk root style`
+
+These style sheets can then be applied to paragraphs using `WP SET ATTRIBUTE`.
 
 ## See also 
 

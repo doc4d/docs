@@ -28,14 +28,42 @@ This command provides two ways to remove a style sheet. You can specify:
 * the style sheet object (created with the [WP New style sheet](wp-new-style-sheet.md) or returned by the [WP Get style sheet](wp-get-style-sheet.md) command) to remove in the *styleSheetType* parameter, or
 * the 4D Write Pro document along with the name of the style sheet to remove in the *wpDoc* and *styleSheetName* parameters.
 
-In the case of a [hierarchical paragraph style sheet](../user/user-new.md#hierarchical-paragraph-style-sheets) 
-you can delete on top of using name and object by using
-the name of the root style and the list level index
-Pay attention if you delete a hierarchical paragrapj style sheet, the *listLevelIndex* of the rest following style sheet get decremented 
-and the listlevelcount attribute of all the style sheets also gets decremeted
-and if you delete the root style, all the sub-levels attached to it are deleted as well
+When the style sheet to delete belongs to a [hierarchical paragraph style sheet](../user-legacy/stylesheets.md#hierarchical-paragraph-style-sheets), the behavior depends on the level being removed. You can delete:
+* the root-level style sheet, or
+* a specific sub-level style sheet by providing the optional `listLevelIndex` parameter.
+
+If `listLevelIndex` is omitted, the root-level style sheet is deleted. All associated sub-level style sheets are deleted automatically and the entire hierarchical structure is removed from the document.
+
+When a sub-level style sheet is deleted:
+* The `wk list level index` of all subsequent sub-level style sheets is decremented to maintain continuous level numbering.
+* The names of the affected sub-level style sheets are updated to reflect their new level index.
+* The `wk list level count` attribute of the root style sheet and all remaining sub-level style sheets is decremented to match the new total number of levels.
+
+The command performs no action if the specified level does not exist, or if the style sheet is not part of a hierarchical list and `listLevelIndex` is greater than 1.
 
 **Note**: The default ("Normal") style sheet can not be deleted.
+
+## Example
+
+The following example deletes the second level of a hierarchical paragraph style sheet:
+
+```4d
+// Delete level 2 of the "MainList" hierarchical style sheet
+WP DELETE STYLE SHEET(wpArea; "MainList"; 2)
+```
+
+After execution:
+
+* The former level 3 becomes level 2.
+* The `wk list level index` values are updated.
+* The `wk list level count` is decremented.
+* The hierarchy remains consistent.
+
+To delete the entire hierarchical style sheet (root and all associated sub-levels):
+
+```4d
+WP DELETE STYLE SHEET(wpArea; "MainList")
+```
 
 ## See also 
 
