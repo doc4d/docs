@@ -85,7 +85,7 @@ Hierarchical paragraph style sheets can then be:
 
 * retrieved using [`WP Get style sheet`](../commands/wp-get-style-sheet.md),
 * modified using [`WP SET ATTRIBUTES`](../commands/wp-set-attributes.md),
-* applied to paragraphs or text ranges,
+* applied to paragraphs using [`WP Get elements`](../commands-legacy/wp-get-elements.md) and [`WP SET ATTRIBUTES`](../commands/wp-set-attributes.md),
 * or removed using [`WP DELETE STYLE SHEET`](../commands/wp-delete-style-sheet.md).
 
 To define and manage the hierarchy, the paragraph style sheet object uses the following [attributes](../commands/4d-write-pro-attributes.md):
