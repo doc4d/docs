@@ -5,7 +5,7 @@ slug: /WritePro/commands/wp-delete-style-sheet
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP DELETE STYLE SHEET.Syntax-->**WP DELETE STYLE SHEET** ( *styleSheetObj* : Object )<br/>**WP DELETE STYLE SHEET** (*wpDoc* : Object ; *styleSheetName* : Text {; listLevelIndex : Integer })<!-- END REF-->
+<!--REF #_command_.WP DELETE STYLE SHEET.Syntax-->**WP DELETE STYLE SHEET** ( *styleSheetObj* : Object )<br/>**WP DELETE STYLE SHEET** (*wpDoc* : Object ; *styleSheetName* : Text {; *listLevelIndex* : Integer })<!-- END REF-->
 
 <!--REF #_command_.WP DELETE STYLE SHEET.Params-->
 <div class="no-index">
@@ -19,6 +19,17 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|4D 18|Created|
+|4D 21 R3|*listLevelIndex* parameter added|
+
+</details>
+</div>
+
 ## Description 
 
 <!--REF #_command_.WP DELETE STYLE SHEET.Summary-->The **WP DELETE STYLE SHEET** command removes the designated paragraph or character style sheet from the current document.<!-- END REF--> When a style sheet is removed, every character or paragraph that it was applied to reverts to its original style (*i.e.* the default).
@@ -30,16 +41,16 @@ This command provides two ways to remove a style sheet. You can specify:
 
 When the style sheet to delete belongs to a [hierarchical paragraph style sheet](../user-legacy/stylesheets.md#hierarchical-paragraph-style-sheets), the behavior depends on the level being removed. You can delete:
 * the root-level style sheet, or
-* a specific sub-level style sheet by providing the optional `listLevelIndex` parameter.
+* a specific sub-level style sheet by providing the optional *listLevelIndex* parameter.
 
-If `listLevelIndex` is omitted, the root-level style sheet is deleted. All associated sub-level style sheets are deleted automatically and the entire hierarchical structure is removed from the document.
+When you delete the root-level style sheet (by passing 1 in the *listLevelIndex* parameter or ommitting it), all associated sub-level style sheets are deleted automatically and the entire hierarchical structure is removed from the document.
 
-When a sub-level style sheet is deleted:
+When you delete a sub-level style sheet:
 * The `wk list level index` of all subsequent sub-level style sheets is decremented to maintain continuous level numbering.
 * The names of the affected sub-level style sheets are updated to reflect their new level index.
 * The `wk list level count` attribute of the root style sheet and all remaining sub-level style sheets is decremented to match the new total number of levels.
 
-The command performs no action if the specified level does not exist, or if the style sheet is not part of a hierarchical list and `listLevelIndex` is greater than 1.
+The command performs no action if the specified level does not exist, or if the style sheet is not part of a hierarchical list and *listLevelIndex* is greater than 1.
 
 **Note**: The default ("Normal") style sheet can not be deleted.
 
@@ -54,10 +65,9 @@ WP DELETE STYLE SHEET(wpArea; "MainList"; 2)
 
 After execution:
 
-* The former level 3 becomes level 2.
-* The `wk list level index` values are updated.
+* The `wk list level index` values are updated (former level 3 becomes level 2).
 * The `wk list level count` is decremented.
-* The hierarchy remains consistent.
+
 
 To delete the entire hierarchical style sheet (root and all associated sub-levels):
 
@@ -67,8 +77,8 @@ WP DELETE STYLE SHEET(wpArea; "MainList")
 
 ## See also 
 
-*Accessing document contents by programming*  
+[Style sheets](../user-legacy/stylesheets.md)  
 [WP Get style sheet](wp-get-style-sheet.md)  
-[WP Get style sheets](wp-get-style-sheets.md)  
+[WP Get style sheets](../commands-legacy/wp-get-style-sheets.md)  
 [WP IMPORT STYLE SHEETS](wp-import-style-sheets.md)  
 [WP New style sheet](wp-new-style-sheet.md)  
