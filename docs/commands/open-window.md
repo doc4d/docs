@@ -86,7 +86,7 @@ If you pass an empty string ("") in *title,* you instruct 4D to use the Window T
 
 If more than one window is open for a process, the last window opened is the active (frontmost) window for that process. Only information within the active window can be modified. Any other windows can be viewed. When the user types, the active window will always come to the front, if it is not already there.
 
-Forms are displayed inside an open window. Text from the [MESSAGE](message.md) command also appears in the window.
+Forms are displayed inside an open window. Text from the [MESSAGE](../commands-legacy/message.md) command also appears in the window.
 
 
 ### Window types {#window-types} 
@@ -307,7 +307,7 @@ The following example opens a floating window that has a Control-menu box (Windo
  DIALOG([Dialogs];"Color Palette")
 ```
 
-The CloseColorPalette method calls the [CANCEL](cancel.md) command:
+The CloseColorPalette method calls the [`CANCEL`](../commands-legacy/cancel.md) command:
 
 ```4d
  CANCEL
@@ -343,7 +343,7 @@ This example illustrates the “delay” mechanism for displaying sheet windows 
 
 ## See also 
 
-[CLOSE WINDOW](close-window.md)  
+[CLOSE WINDOW](../commands-legacy/close-window.md)  
 [Open form window](../commands/open-form-window.md)  
 
 
