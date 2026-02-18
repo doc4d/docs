@@ -14,9 +14,20 @@ displayed_sidebar: docs
 | aTable | Table | &#8594;  | Table to print, or Default table, if omitted |
 | document | Text | &#8594;  | Name of disk label document |
 | * |Operator| &#8594;  | Suppress the printing dialog box |
-| > |Comparator | &#8594;  | Do not reinitialize print settings |
+| > |> | &#8594;  | Do not reinitialize print settings |
 </div>
 <!-- END REF-->
+
+<div class="no-index">
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|2004|Modified|
+|<6|Created|
+
+</details>
+</div>
 
 ## Description 
 
