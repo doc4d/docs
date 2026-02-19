@@ -41,15 +41,6 @@ Since HTTPAgent is a shareable object, you can add one to a singleton class so y
 
 <!-- REF #4D.HTTPAgent.new().Syntax -->**4D.HTTPAgent.new**( { *options* : Object } ) : 4D.HTTPAgent<!-- END REF -->
 
-<details><summary>History</summary>
-
-|Release|Changes|
-|---|---|
-|21 R3|Support of *storeCertificateName* property on macOS|
-|21|Support of *storeCertificateName* property on Windows|
-
-</details>
-
 
 <!-- REF #4D.HTTPAgent.new().Params -->
 <div class="no-index">
@@ -60,6 +51,17 @@ Since HTTPAgent is a shareable object, you can add one to a singleton class so y
 |Result|[4D.HTTPAgent](#httpagent-object)|<-|New HTTPAgent object|
 </div>
 <!-- END REF -->
+
+
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|21 R3|Support of *storeCertificateName* property on macOS|
+|21|Support of *storeCertificateName* property on Windows|
+
+</details>
+
 
 #### Description
 

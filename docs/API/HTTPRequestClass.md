@@ -77,17 +77,6 @@ HTTPRequest objects provide the following properties and functions:
 ## 4D.HTTPRequest.new()
 
 
-<details><summary>History</summary>
-
-|Release|Changes|
-|---|---|
-|21 R3|Support of *storeCertificateName* property on macOS|
-|21|Support of *storeCertificateName* property on Windows|
-|20|TLS validation by default |
-|19 R7|Support of *automaticRedirections* and *decodeData* properties |
-
-</details>
-
 <!-- REF #4D.HTTPRequest.new().Syntax -->**4D.HTTPRequest.new**( *url* : Text { ; *options* : Object } ) : 4D.HTTPRequest<!-- END REF -->
 
 
@@ -101,6 +90,18 @@ HTTPRequest objects provide the following properties and functions:
 |Result|4D.HTTPRequest|<-|New HTTPRequest object|
 </div>
 <!-- END REF -->
+
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|21 R3|Support of *storeCertificateName* property on macOS|
+|21|Support of *storeCertificateName* property on Windows|
+|20|TLS validation by default |
+|19 R7|Support of *automaticRedirections* and *decodeData* properties |
+
+</details>
+
 
 #### Description
 
