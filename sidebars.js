@@ -2225,6 +2225,7 @@ module.exports =
             "API/IMAPTransporterClass",
             "API/IncomingMessageClass",
             "API/MailAttachmentClass",
+            "API/MethodClass",
             "API/OutgoingMessageClass",
             "API/POP3TransporterClass",
             "API/SessionClass",
