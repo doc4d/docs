@@ -10,8 +10,11 @@ title: Release Notes
 
 - The [`JSON Validate`](../commands/json-validate.md) command now supports of JSON Schema draft 2020-12. 
 - Ability to use a custom certificate from the macOS keychain instead of a local certificates folder in [`HTTPRequest`](../API/HTTPRequestClass.md#4dhttprequestnew) and [`HTTPAgent`](../API/HTTPAgentClass.md#4dhttpagentnew) classes. 
+- New <a href="../API/MethodClass">`4D.Method`</a> class to create and execute code from text source.
 
+#### Modified commands
 
+- **METHOD Get path** and **METHOD RESOLVE PATH**: New `path volatile method` constant (128).
 
 #### Behavior changes
 
