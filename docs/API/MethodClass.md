@@ -1,0 +1,1 @@
+Add documentation for 4D.Method class

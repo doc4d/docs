@@ -1,0 +1,1 @@
+Add one-line entry for 21 R3: Added 4D.Method class to create and execute methods from text, even in compiled mode.
