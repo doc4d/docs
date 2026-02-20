@@ -39,7 +39,7 @@ This command provides two ways to remove a style sheet. You can specify:
 * the style sheet object (created with the [WP New style sheet](wp-new-style-sheet.md) or returned by the [WP Get style sheet](wp-get-style-sheet.md) command) to remove in the *styleSheetType* parameter, or
 * the 4D Write Pro document along with the name of the style sheet to remove in the *wpDoc* and *styleSheetName* parameters.
 
-When the style sheet to delete belongs to a [hierarchical paragraph style sheet](../user-legacy/stylesheets.md#hierarchical-paragraph-style-sheets), the behavior depends on the level being removed. You can delete:
+When the style sheet to delete belongs to a [hierarchical list style sheet](../user-legacy/stylesheets.md#hierarchical-list-style-sheets), the behavior depends on the level being removed. You can delete:
 * the root-level style sheet, or
 * a specific sub-level style sheet by providing the optional *listLevelIndex* parameter.
 
@@ -56,7 +56,7 @@ The command performs no action if the specified level does not exist, or if the 
 
 ## Example
 
-The following example deletes the second level of a hierarchical paragraph style sheet:
+The following example deletes the second level of a hierarchical list style sheet:
 
 ```4d
 // Delete level 2 of the "MainList" hierarchical style sheet

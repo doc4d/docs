@@ -40,7 +40,7 @@ In the *wpDoc* parameter, pass a 4D Write Pro document.
 The *styleSheetType* parameter lets you designate the type of the style sheet, *i.e.* the part of the *wpDoc* that will be affected by the style sheet. Two types are available:
 
 * wk type character: Applies style attributes to characters.
-* wk type paragraph: Applies style attributes to paragraphs (required if you want to create [hierarchical paragraph style sheets](#hierarchical-paragraph-style-sheet)).
+* wk type paragraph: Applies style attributes to paragraphs (required if you want to create [hierarchical list style sheets](#hierarchical-list-style-sheet)).
 
 Pass a name for the style sheet in the *styleSheetName* parameter. The style sheet's name is stored with the document and facilitates reusing or modifying the style. It can also be used with the [WP Get style sheet](wp-get-style-sheet.md) and [WP DELETE STYLE SHEET](wp-delete-style-sheet.md) commands. The style sheet name must comply with the following rules:
 
@@ -57,9 +57,9 @@ You can specify the attributes of the style sheet using the [WP SET ATTRIBUTES](
 * A style sheet only modifies the display of a character or paragraph, not how it is stored in the document. If a style sheet is removed, the text will revert to the default style.
 * Any style attributes not defined in the new style sheet will automatically use the Normal style. For more information, see the [*Style sheets* page](../user-legacy/stylesheets.md).
 
-### Hierarchical paragraph style sheet
+### Hierarchical list style sheet
 
-If the *styleSheetType* parameter is set to `wk type paragraph`, you can optionally pass the *listLevelCount* parameter to create a [hierarchical paragraph style sheet](../user-legacy/stylesheets.md#hierarchical-paragraph-style-sheets).
+If the *styleSheetType* parameter is set to `wk type paragraph`, you can optionally pass the *listLevelCount* parameter to create a [hierarchical list style sheet](../user-legacy/stylesheets.md#hierarchical-list-style-sheets).
 
 The *listLevelCount* parameter defines the total number of levels in the hierarchy. When specified (value ≥ 1), the command automatically creates a root-level style sheet and the corresponding sub-level style sheets.
 
@@ -96,7 +96,7 @@ The following code creates and defines a paragraph style sheet:
 
 ## Example 2
 
-The following code creates a hierarchical paragraph style sheet with 3 levels:
+The following code creates a hierarchical list style sheet with 3 levels:
 
 ```4d
 var $mainList : Object
