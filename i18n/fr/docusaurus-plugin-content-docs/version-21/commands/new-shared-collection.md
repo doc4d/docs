@@ -8,12 +8,25 @@ displayed_sidebar: docs
 
 <!--REF #_command_.New shared collection.Params-->
 
-| Paramètres | Type                                                  |                             | Description                                            |
-| ---------- | ----------------------------------------------------- | --------------------------- | ------------------------------------------------------ |
-| value      | Number, Text, Date, Time, Boolean, Object, Collection | &#8594; | Valeur(s) de la collection partagée |
-| Résultat   | Collection                                            | &#8592; | New shared collection                                  |
+<div class="no-index">
 
+| Paramètres | Type       |                             | Description                                            |
+| ---------- | ---------- | --------------------------- | ------------------------------------------------------ |
+| value      | any        | &#8594; | Valeur(s) de la collection partagée |
+| Résultat   | Collection | &#8592; | New shared collection                                  |
+
+</div>
 <!-- END REF-->
+
+<div class="no-index">
+<details><summary>Historique</summary>
+
+| Release | Modifications |
+| ------- | ------------- |
+| 16 R6   | Created       |
+
+</details>
+</div>
 
 ## Description
 
@@ -35,7 +48,7 @@ Vous devez affecter la référence retournée à une variable 4D de type Collect
 
 Symbole(s) Sinon, vous pouvez ajouter ou modifier des éléments ultérieurement via l'assignation en notation objet (cf. exemple).
 
-Prise en charge des formules
+If the new element index is beyond the last existing element of the shared collection, the collection is automatically resized and all new intermediary elements are assigned a **null** value.
 
 Vous pouvez passer tout nombre de valeurs de n'importe quel type pris en charge :
 
