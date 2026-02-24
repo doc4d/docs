@@ -26,7 +26,7 @@ El Método base On Backup Shutdown permite verificar que el backup fue ejecutado
 * Si el backup fue interrumpido por el usuario o por un error, *$status* es diferente de 0\.
    * Si el backup fue detenido por el *Método de base de datos On Backup Startup* (*$result* \# 0), *$status* obtiene el valor devuelto en el parámetro *$result*. Esto le permite implementar un sistema de gestión de errores personalizado.
    * Si el backup fue detenido por un error, el código del error se devuelve en *$status*.
- En todos los casos, puede obtener información sobre el error utilizando el comando [BACKUP INFO](../commands/backup-info.md).
+ En todos los casos, puede obtener información sobre el error utilizando el comando [BACKUP INFO](../commands/backup-info).
 
 **Nota**: debe declarar el parámetro *$status* (entero largo) en el método de la base:
 

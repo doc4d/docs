@@ -103,7 +103,7 @@ The [On Web Connection database method](on-web-connection-database-method.md) is
 
 **Notes :**
 
-* Do not call any interface elements in the **On Web Authentication database method** ([ALERT](../commands/alert.md), [DIALOG](../commands/dialog), etc.) because otherwise its execution will be interrupted and the connection refused. The same thing will happen if an error occurs during its processing.
+* Do not call any interface elements in the **On Web Authentication database method** ([ALERT](../commands/alert), [DIALOG](../commands/dialog), etc.) because otherwise its execution will be interrupted and the connection refused. The same thing will happen if an error occurs during its processing.
 * It is possible to prevent execution by *4DACTION* or *4DSCRIPT* for each project method via the “Available through 4D HTML tags and URLs (4DACTION...)” option in the Method properties dialog box. For more information about this point, please refer to the *Connection Security* section.
 
 ## On Web Authentication Database Method calls 
@@ -114,7 +114,7 @@ The On Web Authentication database method is therefore called in the following c
 
 * when 4D receives a URL beginning with *4DACTION/*
 * when 4D receives a URL requesting a static page that does not exist
-* when 4D receives a root access URL and no home page has been set in the Database Settings or by means of the [WEB SET HOME PAGE](../commands/web-set-home-page.md) command
+* when 4D receives a root access URL and no home page has been set in the Database Settings or by means of the [WEB SET HOME PAGE](../commands/web-set-home-page) command
 * when 4D processes a *4DSCRIPT* tag in a semi-dynamic page
 * when 4D processes a *4DLOOP* tag based on a method in a semi-dynamic page.
 

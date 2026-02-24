@@ -101,7 +101,7 @@ La [On Web Connection database method](on-web-connection-database-method.md) n�
 
 **Notes :**
 
-* N’appelez aucun élément d’interface dans la **On Web Authentication database method** (([ALERT](../commands/alert.md), [DIALOG](../commands/dialog), etc.), sinon son exécution sera interrompue et la connexion refusée. Il en est de même si une erreur se produit durant son traitement.
+* N’appelez aucun élément d’interface dans la **On Web Authentication database method** (([ALERT](../commands/alert), [DIALOG](../commands/dialog), etc.), sinon son exécution sera interrompue et la connexion refusée. Il en est de même si une erreur se produit durant son traitement.
 * Il est possible d'interdire l'exécution par *4DACTION* ou *4DSCRIPT* de chaque méthode projet à l'aide de l'option “Disponible via les balises HTML et URLs 4D (4DACTION...)” dans la boîte de dialogue des Propriétés des méthodes. Pour plus d'informations sur ce point, reportez-vous à la section *Sécurité des connexions*.
 
 ## Appels de la Méthode base Sur authentification Web 
@@ -114,7 +114,7 @@ La **On Web Authentication database method** est donc appelée dans les cas suiv
 * lorsque 4D reçoit un URL débutant par *4DCGI/*
 * lorsque 4D reçoit un URL débutant par *4DSYNC/*
 * lorsque 4D reçoit un URL demandant une page statique inexistante
-* lorsque 4D reçoit un URL d'accès à la racine et qu'aucune page d'accueil n'est définie dans les propriétés de la base ou via la commande [WEB SET HOME PAGE](../commands/web-set-home-page.md)
+* lorsque 4D reçoit un URL d'accès à la racine et qu'aucune page d'accueil n'est définie dans les propriétés de la base ou via la commande [WEB SET HOME PAGE](../commands/web-set-home-page)
 * lorsque 4D traite une balise *4DSCRIPT* dans une page semi-dynamique
 * lorsque 4D traite une balise *4DLOOP* basée sur une méthode dans une page semi-dynamique
 **Note de compatibilité :** La méthode base est également appelée lorsque 4D reçoit un URL débutant par *4DMETHOD/.* Cet URL obsolète est conservé par compatibilité uniquement.
