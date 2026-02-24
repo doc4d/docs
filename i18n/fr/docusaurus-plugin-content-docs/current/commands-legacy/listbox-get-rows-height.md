@@ -47,9 +47,9 @@ Par défaut, si vous omettez le paramètre *unité*, la hauteur de ligne retourn
 
 ## Voir aussi 
 
-[LISTBOX Get auto row height](listbox-get-auto-row-height.md)  
-[LISTBOX Get row height](listbox-get-row-height.md)  
-[LISTBOX SET ROWS HEIGHT](listbox-set-rows-height.md)  
+[LISTBOX Get auto row height](listbox-get-auto-row-height)  
+[LISTBOX Get row height](listbox-get-row-height)  
+[LISTBOX SET ROWS HEIGHT](listbox-set-rows-height)  
 
 ## Propriétés
 

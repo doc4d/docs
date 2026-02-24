@@ -67,8 +67,8 @@ You want to allow the user to select a row beginning with the typed letter or nu
 
 ## See also 
 
-[FILTER KEYSTROKE](filter-keystroke.md)  
-[Get edited text](get-edited-text.md)  
+[FILTER KEYSTROKE](filter-keystroke)  
+[Get edited text](get-edited-text)  
 [Type ahead made easy (blog post)](https://blog.4d.com/type-ahead-made-easy/)  
 
 ## Properties

@@ -37,11 +37,11 @@ Se realiza as operações (adição, modificação, ou eliminação de registros
 
 ## Ver também 
 
-[Active transaction](active-transaction.md)  
-[CANCEL TRANSACTION](cancel-transaction.md)  
-[START TRANSACTION](start-transaction.md)  
+[Active transaction](active-transaction)  
+[CANCEL TRANSACTION](cancel-transaction)  
+[START TRANSACTION](start-transaction)  
 *Triggers*  
-[VALIDATE TRANSACTION](validate-transaction.md)  
+[VALIDATE TRANSACTION](validate-transaction)  
 
 ## Propriedades
 

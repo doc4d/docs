@@ -44,7 +44,7 @@ El siguiente ejemplo apila el registro de un cliente:
 
 ## Ver también 
 
-[POP RECORD](pop-record.md)  
+[POP RECORD](pop-record)  
 *Uso de la pila de registros*  
 
 ## Propiedades

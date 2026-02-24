@@ -72,8 +72,8 @@ Después de la ejecución de estas instrucciones:
 
 ## Ver también 
 
-[DOM Append XML child node](dom-append-xml-child-node.md)  
-[DOM Get XML document ref](dom-get-xml-document-ref.md)  
+[DOM Append XML child node](dom-append-xml-child-node)  
+[DOM Get XML document ref](dom-get-xml-document-ref)  
 
 ## Propiedades
 

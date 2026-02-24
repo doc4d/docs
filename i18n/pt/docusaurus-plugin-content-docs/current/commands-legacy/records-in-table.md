@@ -30,7 +30,7 @@ O exemplo a seguir mostra um alerta que indica o número de registros na tabela:
 
 ## Ver também 
 
-[Records in selection](records-in-selection.md)  
+[Records in selection](records-in-selection)  
 
 ## Propriedades
 

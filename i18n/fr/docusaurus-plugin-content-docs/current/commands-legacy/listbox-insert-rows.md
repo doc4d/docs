@@ -47,7 +47,7 @@ Si le paramètre *positionLigne* est supérieur au nombre de lignes des tableaux
 
 #### Voir aussi 
 
-[LISTBOX DELETE ROWS](listbox-delete-rows.md)  
+[LISTBOX DELETE ROWS](listbox-delete-rows)  
 
 #### Propriétés
 

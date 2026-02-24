@@ -47,9 +47,9 @@ Se o parâmetro *linha* é incorreto, se gera o erro -9852.
 
 ## Ver também 
 
-[QR GET INFO COLUMN](qr-get-info-column.md)  
-[QR SET INFO COLUMN](qr-set-info-column.md)  
-[QR SET INFO ROW](qr-set-info-row.md)  
+[QR GET INFO COLUMN](qr-get-info-column)  
+[QR SET INFO COLUMN](qr-set-info-column)  
+[QR SET INFO ROW](qr-set-info-row)  
 
 ## Propriedades
 

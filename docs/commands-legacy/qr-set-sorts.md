@@ -56,7 +56,7 @@ If you pass an invalid *area* number, the error -9850 will be generated.
 
 ## See also 
 
-[QR GET SORTS](qr-get-sorts.md)  
+[QR GET SORTS](qr-get-sorts)  
 
 ## Properties
 

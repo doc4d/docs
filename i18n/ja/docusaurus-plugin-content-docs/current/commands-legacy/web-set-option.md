@@ -127,8 +127,8 @@ Server: 4D/16.0.1
 
 ## 参照 
 
-[WEB GET OPTION](web-get-option.md)  
-[WEB LEGACY GET SESSION EXPIRATION](web-legacy-get-session-expiration.md)  
+[WEB GET OPTION](web-get-option)  
+[WEB LEGACY GET SESSION EXPIRATION](web-legacy-get-session-expiration)  
 
 ## プロパティ
 

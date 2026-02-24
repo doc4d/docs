@@ -33,11 +33,11 @@ A compter de la version 11 de 4D, vous pouvez imbriquer plusieurs transactions (
 
 ## Voir aussi 
 
-[CANCEL TRANSACTION](cancel-transaction.md)  
-[In transaction](in-transaction.md)  
-[Transaction level](transaction-level.md)  
-[Transactions](../Develop-legacy/transactions.md)
-[VALIDATE TRANSACTION](validate-transaction.md)  
+[CANCEL TRANSACTION](cancel-transaction)  
+[In transaction](in-transaction)  
+[Transaction level](transaction-level)  
+[Transactions](../Develop-legacy/transactions)
+[VALIDATE TRANSACTION](validate-transaction)  
 
 ## Propriétés
 

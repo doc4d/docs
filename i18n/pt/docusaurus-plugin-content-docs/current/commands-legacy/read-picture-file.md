@@ -42,7 +42,7 @@ Passe em *imagem* a variável ou o campo imagem que deva receber a imagem lida.
 
 **Nota:** O formato interno da imagem se armazena dentro da variável ou campo 4D. 
 
-Se passar o parâmetro opcional \*, o comando aceitará qualquer tipo de arquivo. Isso significa que você pode trabalhar com imagens sem necessariamente ter os codecs adequados (ver a descrição do comando [BLOB TO PICTURE](blob-to-picture.md)).
+Se passar o parâmetro opcional \*, o comando aceitará qualquer tipo de arquivo. Isso significa que você pode trabalhar com imagens sem necessariamente ter os codecs adequados (ver a descrição do comando [BLOB TO PICTURE](blob-to-picture)).
 
 ## Variáveis e conjuntos do sistema 
 
@@ -50,10 +50,10 @@ Se a execução do comando é correta, a variável sistema Document contém a ro
 
 ## Ver também 
 
-[BLOB TO PICTURE](blob-to-picture.md)  
+[BLOB TO PICTURE](blob-to-picture)  
 *Imagens*  
-[PICTURE CODEC LIST](picture-codec-list.md)  
-[WRITE PICTURE FILE](write-picture-file.md)  
+[PICTURE CODEC LIST](picture-codec-list)  
+[WRITE PICTURE FILE](write-picture-file)  
 
 ## Propriedades
 

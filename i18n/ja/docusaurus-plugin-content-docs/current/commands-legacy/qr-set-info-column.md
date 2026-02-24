@@ -116,9 +116,9 @@ QR SET INFO COLUMNコマンドを使用しても、すべてのセルに対応�
 
 ## 参照 
 
-[QR GET INFO COLUMN](qr-get-info-column.md)  
-[QR Get info row](qr-get-info-row.md)  
-[QR SET INFO ROW](qr-set-info-row.md)  
+[QR GET INFO COLUMN](qr-get-info-column)  
+[QR Get info row](qr-get-info-row)  
+[QR SET INFO ROW](qr-set-info-row)  
 
 ## プロパティ
 

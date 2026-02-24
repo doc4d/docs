@@ -34,8 +34,8 @@ L'exemple suivant affiche la fenêtre de gestion des utilisateur et des groupes 
 
 ## Voir aussi 
 
-[CHANGE CURRENT USER](change-current-user.md)  
-[CHANGE PASSWORD](change-password.md)  
+[CHANGE CURRENT USER](change-current-user)  
+[CHANGE PASSWORD](change-password)  
 
 ## Propriétés
 

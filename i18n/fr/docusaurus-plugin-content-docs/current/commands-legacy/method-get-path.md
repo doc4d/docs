@@ -73,9 +73,9 @@ Si la commande est exécutée depuis un composant, elle retourne par défaut les
 
 ## Voir aussi 
 
-[Current method path](current-method-path.md)  
-[METHOD OPEN PATH](method-open-path.md)  
-[METHOD RESOLVE PATH](method-resolve-path.md)  
+[Current method path](current-method-path)  
+[METHOD OPEN PATH](method-open-path)  
+[METHOD RESOLVE PATH](method-resolve-path)  
 
 ## Propriétés
 

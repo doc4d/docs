@@ -25,8 +25,8 @@ OLD RELATED MANY muda a seleção da tabela relacionada e seleciona o primeiro r
 
 ## Ver também 
 
-[OLD RELATED ONE](old-related-one.md)  
-[RELATE MANY](relate-many.md)  
+[OLD RELATED ONE](old-related-one)  
+[RELATE MANY](relate-many)  
 
 ## Propriedades
 

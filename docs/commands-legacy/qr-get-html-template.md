@@ -36,7 +36,7 @@ If you pass an invalid area number, the error -9850 will be generated.
 
 ## See also 
 
-[QR SET HTML TEMPLATE](qr-set-html-template.md)  
+[QR SET HTML TEMPLATE](qr-set-html-template)  
 
 ## Properties
 

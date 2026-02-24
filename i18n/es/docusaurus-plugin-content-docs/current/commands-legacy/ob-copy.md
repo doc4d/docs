@@ -177,7 +177,7 @@ Queremos copiar *$sharedObj e*n *$sharedColl* pero dado que pertenecen a diferen
 
 ## Ver también 
 
-[OB Get](ob-get.md)  
+[OB Get](ob-get)  
 *Objetos y colecciones compartidos*  
 
 ## Propiedades

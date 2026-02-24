@@ -128,8 +128,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[DOM Count XML elements](dom-count-xml-elements.md)  
-[DOM Create XML element](dom-create-xml-element.md)  
+[DOM Count XML elements](dom-count-xml-elements)  
+[DOM Create XML element](dom-create-xml-element)  
 
 ## プロパティ
 

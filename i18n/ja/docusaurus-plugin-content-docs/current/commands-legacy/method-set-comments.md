@@ -74,7 +74,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[METHOD GET COMMENTS](method-get-comments.md)  
+[METHOD GET COMMENTS](method-get-comments)  
 
 ## プロパティ
 

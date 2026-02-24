@@ -72,12 +72,12 @@ Voici un exemple de traitement à la volée des caractères saisis dans un champ
  End if
 ```
 
-**Note :** Cet exemple n’est pas exhaustif puisque l’on considère que les mots sont séparés par des espaces uniquement ([Char](char.md)(32)). La mise au point d’un système complet nécessiterait l’ajout d’autres filtres afin de repérer tous les mots (point-virgules, virgules, apostrophes, etc...).
+**Note :** Cet exemple n’est pas exhaustif puisque l’on considère que les mots sont séparés par des espaces uniquement ([Char](char)(32)). La mise au point d’un système complet nécessiterait l’ajout d’autres filtres afin de repérer tous les mots (point-virgules, virgules, apostrophes, etc...).
 
 ## Voir aussi 
 
-[Form event code](../commands/form-event-code.md)  
-[Is editing text](is-editing-text.md)  
+[Form event code](../commands/form-event-code)  
+[Is editing text](is-editing-text)  
 
 ## Propriétés
 

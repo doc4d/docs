@@ -92,7 +92,7 @@ Se quiser copiar um array de texto em uma coleção compartilhada:
 
 ## Ver também 
 
-[COLLECTION TO ARRAY](collection-to-array.md)  
+[COLLECTION TO ARRAY](collection-to-array)  
 *Conversões de Tipo entre coleções e arrays 4D*  
 
 ## Propriedades

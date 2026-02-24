@@ -25,8 +25,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[DELAY PROCESS](delay-process.md)  
-[PAUSE PROCESS](pause-process.md)  
+[DELAY PROCESS](delay-process)  
+[PAUSE PROCESS](pause-process)  
 
 ## プロパティ
 

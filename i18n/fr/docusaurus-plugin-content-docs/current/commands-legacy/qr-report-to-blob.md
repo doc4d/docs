@@ -42,7 +42,7 @@ L'instruction suivante affecte l'état rapide stocké dans la zone MaZone à un 
 
 ## Voir aussi 
 
-[QR BLOB TO REPORT](qr-blob-to-report.md)  
+[QR BLOB TO REPORT](qr-blob-to-report)  
 
 ## Propriétés
 

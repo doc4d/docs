@@ -41,7 +41,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT Get three states checkbox](object-get-three-states-checkbox.md)  
+[OBJECT Get three states checkbox](object-get-three-states-checkbox)  
 
 ## プロパティ
 

@@ -44,7 +44,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[POP RECORD](pop-record.md)  
+[POP RECORD](pop-record)  
 *レコードスタックの使用*  
 
 ## プロパティ

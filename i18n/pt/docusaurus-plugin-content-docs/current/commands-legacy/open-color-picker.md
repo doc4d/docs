@@ -39,7 +39,7 @@ Se a cor mudou, o evento formulário On After Edit é gerado para o objeto.
 
 ## Ver também 
 
-[OPEN FONT PICKER](open-font-picker.md)  
+[OPEN FONT PICKER](open-font-picker)  
 
 ## Propriedades
 

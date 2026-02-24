@@ -127,7 +127,7 @@ Vous souhaitez exporter uniquement les méthodes projet et les méthodes base, a
 
 ## Voir aussi 
 
-[FORM Convert to dynamic](form-convert-to-dynamic.md)  
+[FORM Convert to dynamic](form-convert-to-dynamic)  
 
 ## Propriétés
 

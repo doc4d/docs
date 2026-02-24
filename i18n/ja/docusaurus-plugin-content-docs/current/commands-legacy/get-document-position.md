@@ -34,9 +34,9 @@ Get document positionは、ドキュメントの最初から見て、次の読�
 
 ## 参照 
 
-[RECEIVE PACKET](receive-packet.md)  
-[SEND PACKET](send-packet.md)  
-[SET DOCUMENT POSITION](set-document-position.md)  
+[RECEIVE PACKET](receive-packet)  
+[SEND PACKET](send-packet)  
+[SET DOCUMENT POSITION](set-document-position)  
 
 ## プロパティ
 

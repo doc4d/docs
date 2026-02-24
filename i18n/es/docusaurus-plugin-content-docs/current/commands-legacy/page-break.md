@@ -55,8 +55,8 @@ Consulte el ejemplo del comando [SET PRINT MARKER](set-print-marker.md "SET PRIN
 
 ## Ver también 
 
-[CANCEL](cancel.md)  
-[Print form](../commands/print-form.md)  
+[CANCEL](cancel)  
+[Print form](../commands/print-form)  
 
 ## Propiedades
 

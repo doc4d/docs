@@ -29,9 +29,9 @@ displayed_sidebar: docs
 
 ## Descripción 
 
-<!--REF #_command_.USE CHARACTER SET.Summary-->USE CHARACTER SET modifica el conjunto de caracteres utilizado por 4D para todas las operaciones de transferencia de datos entre la base y un documento o puerto serial para el proceso actual.<!-- END REF--> Las operaciones de transferencia incluyen la importación y exportación de texto, DIF y SYLK. Un mapa de caracteres también funciona con los datos enviados por los comandos [SEND PACKET](send-packet.md), [RECEIVE PACKET](receive-packet.md) (para paquetes de tipo texto), y [RECEIVE BUFFER](receive-buffer.md). No tiene efecto en transferencias de datos realizadas con [SEND RECORD](send-record.md), [SEND VARIABLE](send-variable.md), [RECEIVE RECORD](receive-record.md), [SEND PACKET](send-packet.md), [RECEIVE PACKET](receive-packet.md) (para paquetes tipo BLOB) y [RECEIVE VARIABLE](receive-variable.md).
+<!--REF #_command_.USE CHARACTER SET.Summary-->USE CHARACTER SET modifica el conjunto de caracteres utilizado por 4D para todas las operaciones de transferencia de datos entre la base y un documento o puerto serial para el proceso actual.<!-- END REF--> Las operaciones de transferencia incluyen la importación y exportación de texto, DIF y SYLK. Un mapa de caracteres también funciona con los datos enviados por los comandos [SEND PACKET](send-packet), [RECEIVE PACKET](receive-packet) (para paquetes de tipo texto), y [RECEIVE BUFFER](receive-buffer). No tiene efecto en transferencias de datos realizadas con [SEND RECORD](send-record), [SEND VARIABLE](send-variable), [RECEIVE RECORD](receive-record), [SEND PACKET](send-packet), [RECEIVE PACKET](receive-packet) (para paquetes tipo BLOB) y [RECEIVE VARIABLE](receive-variable).
 
-El parámetro *mapa* debe corresponder al nombre "IANA" del conjunto de caracteres a utilizar, o a uno de sus alias. Por ejemplo, los nombres "iso-8859-1" o "utf-8" son ambos nombres válidos, así como los alias "latin1" u "11". Para mayor información sobre estos nombres, por favor consulte la siguiente dirección: *http://www.iana.org/assignments/character-sets*. También se presentan ejemplos de nombres IANA en la descripción del comando [CONVERT FROM TEXT](convert-from-text.md). 
+El parámetro *mapa* debe corresponder al nombre "IANA" del conjunto de caracteres a utilizar, o a uno de sus alias. Por ejemplo, los nombres "iso-8859-1" o "utf-8" son ambos nombres válidos, así como los alias "latin1" u "11". Para mayor información sobre estos nombres, por favor consulte la siguiente dirección: *http://www.iana.org/assignments/character-sets*. También se presentan ejemplos de nombres IANA en la descripción del comando [CONVERT FROM TEXT](convert-from-text). 
 
 Si *mapaImpExp* es 0, el mapa está definido para la exportación. Si *mapaImpExp* es 1, el mapa es para importación. Si no pasa el parámetro *mapaImpExp*, se utiliza el mapa de exportación por defecto.
 
@@ -55,15 +55,15 @@ La variable sistema OK toma el valor 1 si el mapa se carga correctamente, de lo 
 
 ## Ver también 
 
-[EXPORT DIF](export-dif.md)  
-[EXPORT SYLK](export-sylk.md)  
-[EXPORT TEXT](export-text.md)  
-[IMPORT DIF](import-dif.md)  
-[IMPORT SYLK](import-sylk.md)  
-[IMPORT TEXT](import-text.md)  
-[RECEIVE BUFFER](receive-buffer.md)  
-[RECEIVE PACKET](receive-packet.md)  
-[SEND PACKET](send-packet.md)  
+[EXPORT DIF](export-dif)  
+[EXPORT SYLK](export-sylk)  
+[EXPORT TEXT](export-text)  
+[IMPORT DIF](import-dif)  
+[IMPORT SYLK](import-sylk)  
+[IMPORT TEXT](import-text)  
+[RECEIVE BUFFER](receive-buffer)  
+[RECEIVE PACKET](receive-packet)  
+[SEND PACKET](send-packet)  
 
 ## Propiedades
 

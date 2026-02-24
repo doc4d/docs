@@ -40,7 +40,7 @@ Si se ejecuta este comando desde un componente, devuelve por defecto las rutas d
 
 ## Ver también 
 
-[METHOD GET PATHS](method-get-paths.md)  
+[METHOD GET PATHS](method-get-paths)  
 
 ## Propiedades
 

@@ -75,8 +75,8 @@ Vous souhaitez connaître la configuration actuelle de la feuille de style "Auto
 
 ## Voir aussi 
 
-[LIST OF STYLE SHEETS](list-of-style-sheets.md)  
-[OBJECT SET STYLE SHEET](object-set-style-sheet.md)  
+[LIST OF STYLE SHEETS](list-of-style-sheets)  
+[OBJECT SET STYLE SHEET](object-set-style-sheet)  
 
 ## Propriétés
 

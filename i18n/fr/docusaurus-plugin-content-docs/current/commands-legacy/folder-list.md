@@ -34,8 +34,8 @@ S'il n'y pas de dossier à cet endroit, la commande retourne un tableau vide. Si
 
 ## Voir aussi 
 
-[DOCUMENT LIST](document-list.md)  
-[VOLUME LIST](volume-list.md)  
+[DOCUMENT LIST](document-list)  
+[VOLUME LIST](volume-list)  
 
 ## Propriétés
 

@@ -34,7 +34,7 @@ Se omitir o parâmetro *janela*, Window process devolve o número do processo da
 
 ## Ver também 
 
-[Current process](current-process.md)  
+[Current process](current-process)  
 
 ## Propriedades
 

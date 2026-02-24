@@ -35,7 +35,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[WA Get page content](wa-get-page-content.md)  
+[WA Get page content](wa-get-page-content)  
 
 ## プロパティ
 

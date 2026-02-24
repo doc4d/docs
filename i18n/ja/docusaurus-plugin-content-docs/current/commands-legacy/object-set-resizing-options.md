@@ -52,7 +52,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT GET RESIZING OPTIONS](object-get-resizing-options.md)  
+[OBJECT GET RESIZING OPTIONS](object-get-resizing-options)  
 
 ## プロパティ
 

@@ -61,7 +61,7 @@ Este exemplo cria um array interprocesso de 50 elementos do tipo Booleano e dete
 
 ## Ver também 
 
-[ARRAY INTEGER](array-integer.md)  
+[ARRAY INTEGER](array-integer)  
 
 ## Propriedades
 

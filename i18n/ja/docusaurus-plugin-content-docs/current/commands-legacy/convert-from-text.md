@@ -201,7 +201,7 @@ CONVERT FROM TEXTと[Convert to text](convert-to-text.md "Convert to text")コ�
 
 ## 参照 
 
-[Convert to text](convert-to-text.md)  
+[Convert to text](convert-to-text)  
 
 ## プロパティ
 

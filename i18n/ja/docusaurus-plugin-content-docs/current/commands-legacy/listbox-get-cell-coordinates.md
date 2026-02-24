@@ -63,8 +63,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX GET CELL POSITION](listbox-get-cell-position.md)  
-[OBJECT GET COORDINATES](object-get-coordinates.md)  
+[LISTBOX GET CELL POSITION](listbox-get-cell-position)  
+[OBJECT GET COORDINATES](object-get-coordinates)  
 
 ## プロパティ
 

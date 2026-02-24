@@ -61,7 +61,7 @@ Polygon というクラスを作成した場合を考えます:
 
 ## 参照 
 
-[OB Class](ob-class.md)  
+[OB Class](ob-class)  
 
 ## プロパティ
 

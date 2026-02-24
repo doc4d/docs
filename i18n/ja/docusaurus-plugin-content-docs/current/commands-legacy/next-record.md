@@ -27,11 +27,11 @@ NEXT RECORDでカレントセレクションの最後を超えてカレントレ
 
 ## 参照 
 
-[Before selection](before-selection.md)  
-[End selection](end-selection.md)  
-[FIRST RECORD](first-record.md)  
-[LAST RECORD](last-record.md)  
-[PREVIOUS RECORD](previous-record.md)  
+[Before selection](before-selection)  
+[End selection](end-selection)  
+[FIRST RECORD](first-record)  
+[LAST RECORD](last-record)  
+[PREVIOUS RECORD](previous-record)  
 
 ## プロパティ
 

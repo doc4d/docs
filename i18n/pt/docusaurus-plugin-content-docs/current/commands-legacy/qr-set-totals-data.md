@@ -109,7 +109,7 @@ Se o parâmetro *numQuebra* for incorreto, se gera o erro -9853.
 
 ## Ver também 
 
-[QR GET TOTALS DATA](qr-get-totals-data.md)  
+[QR GET TOTALS DATA](qr-get-totals-data)  
 
 ## Propriedades
 

@@ -39,7 +39,7 @@ El comando admite el asterisco *\** como parámetro opcional. Por defecto, cuand
 
 ## Ver también 
 
-[Get file from pasteboard](get-file-from-pasteboard.md)  
+[Get file from pasteboard](get-file-from-pasteboard)  
 
 ## Propiedades
 

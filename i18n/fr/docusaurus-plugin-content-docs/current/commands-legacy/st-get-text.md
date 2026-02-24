@@ -70,9 +70,9 @@ A noter qu’en cas d’erreur, la variable n’est pas modifiée. Lorsqu’une 
 
 ## Voir aussi 
 
-[ST Get plain text](st-get-plain-text.md)  
-[ST SET TEXT](st-set-text.md)  
-[TEXT TO ARRAY](text-to-array.md)  
+[ST Get plain text](st-get-plain-text)  
+[ST SET TEXT](st-set-text)  
+[TEXT TO ARRAY](text-to-array)  
 
 ## Propriétés
 

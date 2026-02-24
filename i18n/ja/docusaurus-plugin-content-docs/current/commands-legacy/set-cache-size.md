@@ -49,7 +49,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Get cache size](get-cache-size.md)  
+[Get cache size](get-cache-size)  
 
 ## プロパティ
 

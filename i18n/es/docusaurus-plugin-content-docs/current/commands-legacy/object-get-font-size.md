@@ -35,7 +35,7 @@ Si pasa el parámetro opcional *\**, indica que el parámetro objeto es un nombr
 
 ## Ver también 
 
-[OBJECT SET FONT SIZE](object-set-font-size.md)  
+[OBJECT SET FONT SIZE](object-set-font-size)  
 
 ## Propiedades
 

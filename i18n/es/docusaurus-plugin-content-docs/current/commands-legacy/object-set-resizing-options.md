@@ -53,7 +53,7 @@ En el parámetro *vertical*, pase un valor que indique la opción de redimension
 
 ## Ver también 
 
-[OBJECT GET RESIZING OPTIONS](object-get-resizing-options.md)  
+[OBJECT GET RESIZING OPTIONS](object-get-resizing-options)  
 
 ## Propiedades
 

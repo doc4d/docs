@@ -42,7 +42,7 @@ Cette commande vous permet notamment de recopier le fichier externe.
 
 ## Voir aussi 
 
-[SET EXTERNAL DATA PATH](set-external-data-path.md)  
+[SET EXTERNAL DATA PATH](set-external-data-path)  
 
 ## Propriétés
 

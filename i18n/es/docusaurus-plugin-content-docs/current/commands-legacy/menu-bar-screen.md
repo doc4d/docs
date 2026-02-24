@@ -33,8 +33,8 @@ displayed_sidebar: docs
 
 ## Ver también 
 
-[Count screens](count-screens.md)  
-[Menu bar height](menu-bar-height.md)  
+[Count screens](count-screens)  
+[Menu bar height](menu-bar-height)  
 
 ## Propiedades
 

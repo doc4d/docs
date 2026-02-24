@@ -71,7 +71,7 @@ To enable URL drops in the 'myarea' Web area:
 
 ## See also 
 
-[WA GET PREFERENCE](wa-get-preference.md)  
+[WA GET PREFERENCE](wa-get-preference)  
 
 ## Properties
 

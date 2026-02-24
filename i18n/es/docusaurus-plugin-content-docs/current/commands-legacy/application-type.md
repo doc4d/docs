@@ -53,8 +53,8 @@ En alguna parte de su código, diferente del *Método base On Server Startup*, d
 
 ## Ver también 
 
-[Application version](application-version.md)  
-[Version type](version-type.md)  
+[Application version](application-version)  
+[Version type](version-type)  
 
 ## Propiedades
 

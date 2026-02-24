@@ -78,7 +78,7 @@ La variable sistema OK toma el valor 1 si el comando se ejecuta correctamente, s
 
 ## Ver también 
 
-[RESOLVE ALIAS](resolve-alias.md)  
+[RESOLVE ALIAS](resolve-alias)  
 
 ## Propiedades
 

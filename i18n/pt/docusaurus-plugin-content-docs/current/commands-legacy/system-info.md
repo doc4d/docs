@@ -53,7 +53,7 @@ O comando devolve a informação abaixo:
 |                   | name           |             | cadena                       | só em Mac - nome do volume                                                                                                                                                                      | "iMac-27-Program6"                                                              |
 |                   |                |             |                              |                                                                                                                                                                                                 |                                                                                 |
 
-(\*) Para determinar só a plataforma que se utiliza, há dois comandos disponíveis: [Is macOS](is-macos.md) e [Is Windows](is-windows.md).
+(\*) Para determinar só a plataforma que se utiliza, há dois comandos disponíveis: [Is macOS](is-macos) e [Is Windows](is-windows).
 
 **Nota**: no caso das máquinas virtuais, a informação devolvida será a da máquina virtual.
 
@@ -143,9 +143,9 @@ devolve um objeto que contém a informação abaixo:
 
 ## Ver também 
 
-[Application info](../commands/application-info.md)  
-[Is macOS](is-macos.md)  
-[Is Windows](is-windows.md)  
+[Application info](../commands/application-info)  
+[Is macOS](is-macos)  
+[Is Windows](is-windows)  
 
 ## Propriedades
 

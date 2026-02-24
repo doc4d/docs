@@ -83,8 +83,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[WEB SERVICE CALL](web-service-call.md)  
-[WEB SERVICE GET RESULT](web-service-get-result.md)  
+[WEB SERVICE CALL](web-service-call)  
+[WEB SERVICE GET RESULT](web-service-get-result)  
 
 ## プロパティ
 

@@ -39,7 +39,7 @@ The command accepts the star *\** as an optional parameter. By default, when thi
 
 ## See also 
 
-[Get file from pasteboard](get-file-from-pasteboard.md)  
+[Get file from pasteboard](get-file-from-pasteboard)  
 
 ## Properties
 

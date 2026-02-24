@@ -37,7 +37,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SET TIMER](set-timer.md)  
+[SET TIMER](set-timer)  
 
 ## プロパティ
 

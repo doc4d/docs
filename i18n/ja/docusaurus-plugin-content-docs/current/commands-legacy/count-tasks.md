@@ -27,10 +27,10 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Count user processes](count-user-processes.md)  
-[Count users](count-users.md)  
-[Process info](../commands/process-info.md)  
-[Process state](process-state.md)  
+[Count user processes](count-user-processes)  
+[Count users](count-users)  
+[Process info](../commands/process-info)  
+[Process state](process-state)  
 
 ## プロパティ
 

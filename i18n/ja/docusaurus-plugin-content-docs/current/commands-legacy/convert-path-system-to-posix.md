@@ -69,10 +69,10 @@ Windowsでの例題
 
 ## 参照 
 
-[Convert path POSIX to system](convert-path-posix-to-system.md)  
-[Object to path](object-to-path.md)  
-[Path to object](path-to-object.md)  
-[Test path name](test-path-name.md)  
+[Convert path POSIX to system](convert-path-posix-to-system)  
+[Object to path](object-to-path)  
+[Path to object](path-to-object)  
+[Test path name](test-path-name)  
 
 ## プロパティ
 

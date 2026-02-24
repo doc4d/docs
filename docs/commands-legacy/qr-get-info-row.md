@@ -48,9 +48,9 @@ If you pass an invalid *row* value, the error -9852 will be generated.
 
 ## See also 
 
-[QR GET INFO COLUMN](qr-get-info-column.md)  
-[QR SET INFO COLUMN](qr-set-info-column.md)  
-[QR SET INFO ROW](qr-set-info-row.md)  
+[QR GET INFO COLUMN](qr-get-info-column)  
+[QR SET INFO COLUMN](qr-set-info-column)  
+[QR SET INFO ROW](qr-set-info-row)  
 
 ## Properties
 

@@ -48,8 +48,8 @@ O exemplo a seguir pesquisa os clientes que são atendidos por dois representant
 
 ## Ver também 
 
-[DIFFERENCE](difference.md)  
-[UNION](union.md)  
+[DIFFERENCE](difference)  
+[UNION](union)  
 
 ## Propriedades
 

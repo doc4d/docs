@@ -66,7 +66,7 @@ SORT LIST コマンドは、カレントリスト項目またはリストやサ�
 
 ## 参照 
 
-[Selected list items](selected-list-items.md)  
+[Selected list items](selected-list-items)  
 
 ## プロパティ
 

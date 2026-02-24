@@ -88,8 +88,8 @@ Definición del atajo de teclado F4 para la opción de menú "Cerrar":
 
 ## Ver también 
 
-[Get menu item key](get-menu-item-key.md)  
-[Get menu item modifiers](get-menu-item-modifiers.md)  
+[Get menu item key](get-menu-item-key)  
+[Get menu item modifiers](get-menu-item-modifiers)  
 
 ## Propiedades
 

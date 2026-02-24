@@ -38,8 +38,8 @@ Si vous passez le paramètre *process*, le clic est envoyé au process dont vous
 
 ## Voir aussi 
 
-[POST EVENT](post-event.md)  
-[POST KEY](post-key.md)  
+[POST EVENT](post-event)  
+[POST KEY](post-key)  
 
 ## Propriétés
 

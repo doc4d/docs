@@ -37,7 +37,7 @@ Consulte el ejemplo del comando [HIDE WINDOW](hide-window.md "HIDE WINDOW").
 
 #### Ver también 
 
-[HIDE WINDOW](hide-window.md)  
+[HIDE WINDOW](hide-window)  
 
 #### Propiedades
 

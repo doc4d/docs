@@ -82,8 +82,8 @@ Creation of the "\\February\\" subfolder in the existing "C:\\Archives\\" folder
 
 ## See also 
 
-[FOLDER LIST](folder-list.md)  
-[Test path name](test-path-name.md)  
+[FOLDER LIST](folder-list)  
+[Test path name](test-path-name)  
 
 ## Properties
 

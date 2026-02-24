@@ -79,7 +79,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[FORM GET NAMES](form-get-names.md)  
+[FORM GET NAMES](form-get-names)  
 
 ## プロパティ
 

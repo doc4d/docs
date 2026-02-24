@@ -50,7 +50,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[METHOD SET ATTRIBUTE](method-set-attribute.md)  
+[METHOD SET ATTRIBUTE](method-set-attribute)  
 
 ## プロパティ
 

@@ -55,8 +55,8 @@ TextまたはBLOB 型の変数を*value* 引数に渡します。BLOBを渡す�
 
 ## 参照 
 
-[SAX ADD XML ELEMENT VALUE](sax-add-xml-element-value.md)  
-[SAX Get XML node](sax-get-xml-node.md)  
+[SAX ADD XML ELEMENT VALUE](sax-add-xml-element-value)  
+[SAX Get XML node](sax-get-xml-node)  
 
 ## プロパティ
 

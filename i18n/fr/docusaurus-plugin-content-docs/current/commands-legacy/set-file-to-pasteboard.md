@@ -39,7 +39,7 @@ La commande admet l’étoile *\** en paramètre optionnel. Par défaut, lorsque
 
 ## Voir aussi 
 
-[Get file from pasteboard](get-file-from-pasteboard.md)  
+[Get file from pasteboard](get-file-from-pasteboard)  
 
 ## Propriétés
 

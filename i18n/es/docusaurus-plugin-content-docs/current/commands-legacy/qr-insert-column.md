@@ -49,7 +49,7 @@ La siguiente instrucción inserta (o crea) una primera columna en el área MiAre
 
 ## Ver también 
 
-[QR DELETE COLUMN](qr-delete-column.md)  
+[QR DELETE COLUMN](qr-delete-column)  
 
 ## Propiedades
 

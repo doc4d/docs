@@ -28,8 +28,8 @@ Ver o exemplo de [Semaphore](semaphore.md "Semaphore").
 ## Ver também 
 
 *Semáforos e Sinais*  
-[Semaphore](semaphore.md)  
-[Test semaphore](test-semaphore.md)  
+[Semaphore](semaphore)  
+[Test semaphore](test-semaphore)  
 
 ## Propriedades
 

@@ -33,7 +33,7 @@ Se este comando se chama fora do contexto de uma sessão web, devolve uma cadeia
 
 ## Ver também 
 
-[WEB LEGACY GET SESSION EXPIRATION](web-legacy-get-session-expiration.md)  
+[WEB LEGACY GET SESSION EXPIRATION](web-legacy-get-session-expiration)  
 *Web Sessions Management (Legacy)*  
 
 ## Propriedades

@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[WA STOP LOADING URL](wa-stop-loading-url.md)  
+[WA STOP LOADING URL](wa-stop-loading-url)  
 
 ## プロパティ
 

@@ -54,7 +54,7 @@ Vous souhaitez interdire le multiligne dans une zone de saisie :
 
 ## Voir aussi 
 
-[OBJECT Get multiline](object-get-multiline.md)  
+[OBJECT Get multiline](object-get-multiline)  
 
 ## Propriétés
 

@@ -45,7 +45,7 @@ In *xmlInfo*, pass a code indicating the type of information to be retrieved. Yo
 
 ## See also 
 
-[XML GET ERROR](xml-get-error.md)  
+[XML GET ERROR](xml-get-error)  
 
 ## Properties
 

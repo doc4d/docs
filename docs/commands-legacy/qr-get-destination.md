@@ -45,7 +45,7 @@ If you pass an invalid *area* number, the error -9850 will be generated.
 
 ## See also 
 
-[QR SET DESTINATION](qr-set-destination.md)  
+[QR SET DESTINATION](qr-set-destination)  
 
 ## Properties
 

@@ -72,7 +72,7 @@ El siguiente código permite cambiar el modo de visualización del área:
 
 ## Ver también 
 
-[ST GET OPTIONS](st-get-options.md)  
+[ST GET OPTIONS](st-get-options)  
 
 ## Propiedades
 

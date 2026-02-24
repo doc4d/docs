@@ -167,7 +167,7 @@ QUERY BY SQL コマンドを使用する場合:
 
 ## 参照 
 
-[QUERY BY FORMULA](query-by-formula.md)  
+[QUERY BY FORMULA](query-by-formula)  
 
 ## プロパティ
 

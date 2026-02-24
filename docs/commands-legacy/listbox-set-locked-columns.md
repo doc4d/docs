@@ -41,8 +41,8 @@ To remove the column locking, pass 0 or a negative value in *numColumns*.
 
 ## See also 
 
-[LISTBOX Get locked columns](listbox-get-locked-columns.md)  
-[LISTBOX SET STATIC COLUMNS](listbox-set-static-columns.md)  
+[LISTBOX Get locked columns](listbox-get-locked-columns)  
+[LISTBOX SET STATIC COLUMNS](listbox-set-static-columns)  
 
 ## Properties
 

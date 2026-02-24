@@ -48,9 +48,9 @@ El siguiente ejemplo envía cartas a los 50 peores clientes y 50 a los mejores c
 
 ## Ver también 
 
-[ORDER BY](order-by.md)  
-[QUERY](query.md)  
-[REDUCE SELECTION](reduce-selection.md)  
+[ORDER BY](order-by)  
+[QUERY](query)  
+[REDUCE SELECTION](reduce-selection)  
 
 ## Propiedades
 

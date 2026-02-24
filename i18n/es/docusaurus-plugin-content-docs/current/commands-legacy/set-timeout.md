@@ -47,10 +47,10 @@ El siguiente ejemplo fija el puerto serial para recibir datos y el timeout. Los 
 ## Ver también 
 
 [ON ERR CALL](on-err-call.md)  
-[RECEIVE BUFFER](receive-buffer.md)  
-[RECEIVE PACKET](receive-packet.md)  
-[RECEIVE RECORD](receive-record.md)  
-[RECEIVE VARIABLE](receive-variable.md)  
+[RECEIVE BUFFER](receive-buffer)  
+[RECEIVE PACKET](receive-packet)  
+[RECEIVE RECORD](receive-record)  
+[RECEIVE VARIABLE](receive-variable)  
 
 ## Propiedades
 

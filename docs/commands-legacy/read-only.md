@@ -26,8 +26,8 @@ Use READ ONLY when you do not need to modify the record or records.
 
 ## See also 
 
-[Read only state](read-only-state.md)  
-[READ WRITE](read-write.md)  
+[Read only state](read-only-state)  
+[READ WRITE](read-write)  
 *Record Locking*  
 
 ## Properties

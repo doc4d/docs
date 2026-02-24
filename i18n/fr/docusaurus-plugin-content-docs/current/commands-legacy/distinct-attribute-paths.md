@@ -80,7 +80,7 @@ Le tableau *aTPaths* reçoit les éléments suivants :
 ## Voir aussi 
 
   
-[DISTINCT ATTRIBUTE VALUES](distinct-attribute-values.md)  
+[DISTINCT ATTRIBUTE VALUES](distinct-attribute-values)  
 
 ## Propriétés
 

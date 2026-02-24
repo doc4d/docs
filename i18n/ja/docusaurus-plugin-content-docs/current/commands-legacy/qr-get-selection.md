@@ -49,7 +49,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR SET SELECTION](qr-set-selection.md)  
+[QR SET SELECTION](qr-set-selection)  
 
 ## プロパティ
 

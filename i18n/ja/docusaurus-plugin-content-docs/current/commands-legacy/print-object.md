@@ -35,13 +35,13 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Print object.Summary-->**Print object** コマンドを使用して *object*と*\** 引数で指定したフォームオブジェクトを、*posX*と*posY*の位置に、任意のサイズで印刷できます。<!-- END REF-->
 
-**Print object** コマンドを呼び出す前に、印刷するテーブルまたはオブジェクトを含むプロジェクトフォームを新しい [FORM LOAD](../commands/form-load.md) で指定しなければなりません。
+**Print object** コマンドを呼び出す前に、印刷するテーブルまたはオブジェクトを含むプロジェクトフォームを新しい [FORM LOAD](../commands/form-load) で指定しなければなりません。
 
 オプションの*\** 引数を渡すと、*object*引数にはオブジェクト名 (文字列) を渡します。*\** 引数を渡さない場合、*object*には変数を指定します。この場合、文字列ではなく変数参照 (オブジェクトタイプのみ) を渡します。
 
 *posX*と*posY*引数はオブジェクトを印刷する開始位置を指定します。これらの値はピクセル単位で指定ます。これらの引数を省略すると、オブジェクトはフォーム上の位置に基づいて印刷されます。
 
-*width*と*height*引数はフォームオブジェクトの幅と高さを指定します。**Print object** コマンドは可変長のオブジェクトを管理しません。[OBJECT GET BEST SIZE](object-get-best-size.md) コマンドでオブジェクトのサイズを管理しなければなりません。また[OBJECT GET BEST SIZE](object-get-best-size.md) コマンドでテキストを含むオブジェクトのもっとも適切なサイズを知ることができます。同様に、**Print object** はページブレークを自動では生成しません。必要に応じて開発者が管理しなければなりません。 
+*width*と*height*引数はフォームオブジェクトの幅と高さを指定します。**Print object** コマンドは可変長のオブジェクトを管理しません。[OBJECT GET BEST SIZE](object-get-best-size) コマンドでオブジェクトのサイズを管理しなければなりません。また[OBJECT GET BEST SIZE](object-get-best-size) コマンドでテキストを含むオブジェクトのもっとも適切なサイズを知ることができます。同様に、**Print object** はページブレークを自動では生成しません。必要に応じて開発者が管理しなければなりません。 
 
 4Dコマンドを使用してオブジェクトプロパティ (色やサイズなど) をオンザフライで変更できます。
 
@@ -50,9 +50,9 @@ displayed_sidebar: docs
 **注:**  
 
 * 4D の現在のバージョンでは、リストボックスタイプのオブジェクトのみがこのメカニズムを持っています (他のオブジェクトではコマンドは常に Trueを返します)。4Dの将来のバージョンでこの機能は他の可変長オブジェクトに拡張されます。
-* [LISTBOX GET PRINT INFORMATION](listbox-get-print-information.md) コマンドを使用して、処理中に印刷状況を知ることができます。
+* [LISTBOX GET PRINT INFORMATION](listbox-get-print-information) コマンドを使用して、処理中に印刷状況を知ることができます。
 
-**Print object** コマンドは事前に[OPEN PRINTING JOB](open-printing-job.md) で開かれた印刷ジョブのコンテキストでのみ使用できます。このコンテキストの外で呼び出された場合、コマンドはなにも行いません。同じ印刷ジョブ内で**Print object** コマンドを複数回呼び出すことができます。
+**Print object** コマンドは事前に[OPEN PRINTING JOB](open-printing-job) で開かれた印刷ジョブのコンテキストでのみ使用できます。このコンテキストの外で呼び出された場合、コマンドはなにも行いません。同じ印刷ジョブ内で**Print object** コマンドを複数回呼び出すことができます。
 
 ****注:** 階層リスト、サブフォーム、およびWebエリアを印刷することはできません。
 
@@ -107,7 +107,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[FORM LOAD](../commands/form-load.md)  
+[FORM LOAD](../commands/form-load)  
 
 ## プロパティ
 

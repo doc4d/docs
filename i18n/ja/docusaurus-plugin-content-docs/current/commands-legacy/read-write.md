@@ -29,8 +29,8 @@ READ WRITEコマンドは、レコードを修正しその結果を保存しな�
 
 ## 参照 
 
-[READ ONLY](read-only.md)  
-[Read only state](read-only-state.md)  
+[READ ONLY](read-only)  
+[Read only state](read-only-state)  
 *レコードのロック*  
 
 ## プロパティ

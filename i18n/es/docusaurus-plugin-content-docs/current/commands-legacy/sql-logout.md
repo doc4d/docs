@@ -34,7 +34,7 @@ Si la conexión se cierra correctamente, la variable sistema OK toma el valor 1;
 
 #### Ver también 
 
-[SQL LOGIN](sql-login.md)  
+[SQL LOGIN](sql-login)  
 
 #### Propiedades
 

@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[WA Run offscreen area](wa-run-offscreen-area.md)  
+[WA Run offscreen area](wa-run-offscreen-area)  
 *Webエリアのプログラムによる管理*  
 
 ## プロパティ

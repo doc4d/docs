@@ -34,8 +34,8 @@ DesignerとAdministratorは新規ユーザの追加、およびグループへ�
 
 ## 参照 
 
-[CHANGE CURRENT USER](change-current-user.md)  
-[CHANGE PASSWORD](change-password.md)  
+[CHANGE CURRENT USER](change-current-user)  
+[CHANGE PASSWORD](change-password)  
 
 ## プロパティ
 

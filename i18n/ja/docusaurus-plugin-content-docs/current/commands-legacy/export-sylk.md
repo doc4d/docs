@@ -47,10 +47,10 @@ EXPORT SYLKを使用する際、デフォルトのフィールド区切り文字
 
 ## 参照 
 
-[EXPORT DIF](export-dif.md)  
-[EXPORT TEXT](export-text.md)  
-[IMPORT SYLK](import-sylk.md)  
-[USE CHARACTER SET](use-character-set.md)  
+[EXPORT DIF](export-dif)  
+[EXPORT TEXT](export-text)  
+[IMPORT SYLK](import-sylk)  
+[USE CHARACTER SET](use-character-set)  
 
 ## プロパティ
 

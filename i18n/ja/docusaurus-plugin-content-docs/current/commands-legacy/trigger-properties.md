@@ -31,7 +31,7 @@ displayed_sidebar: docs
 
 ## 説明 
 
-<!--REF #_command_.TRIGGER PROPERTIES.Summary-->**TRIGGER PROPERTIES**コマンドは、*triggerLevel*に渡すトリガーの実行レベルに関する情報を返します。<!-- END REF-->トリガー実行レベルのカスケードに基づいて異なる動作を実行するには、**TRIGGER PROPERTIES**と[Trigger level](trigger-level.md)を組み合わせて使用します。詳細については*トリガ*にあるトリガーのカスケードを参照してください。
+<!--REF #_command_.TRIGGER PROPERTIES.Summary-->**TRIGGER PROPERTIES**コマンドは、*triggerLevel*に渡すトリガーの実行レベルに関する情報を返します。<!-- END REF-->トリガー実行レベルのカスケードに基づいて異なる動作を実行するには、**TRIGGER PROPERTIES**と[Trigger level](trigger-level)を組み合わせて使用します。詳細については*トリガ*にあるトリガーのカスケードを参照してください。
 
 存在しないトリガー実行レベルを渡すと、コマンドはすべての引数に0を返します。
 
@@ -48,8 +48,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Trigger event](trigger-event.md)  
-[Trigger level](trigger-level.md)  
+[Trigger event](trigger-event)  
+[Trigger level](trigger-level)  
 *トリガ*  
 *レコード番号について*  
 

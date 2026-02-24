@@ -49,8 +49,8 @@ The following example finds the customers who are served by two sales representa
 
 ## See also 
 
-[DIFFERENCE](difference.md)  
-[UNION](union.md)  
+[DIFFERENCE](difference)  
+[UNION](union)  
 
 ## Properties
 

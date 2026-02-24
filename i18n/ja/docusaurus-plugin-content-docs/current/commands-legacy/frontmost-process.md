@@ -33,8 +33,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[BRING TO FRONT](bring-to-front.md)  
-[WINDOW LIST](window-list.md)  
+[BRING TO FRONT](bring-to-front)  
+[WINDOW LIST](window-list)  
 
 ## プロパティ
 

@@ -54,7 +54,7 @@ You want to prohibit multiple lines in an entry area:
 
 ## See also 
 
-[OBJECT Get multiline](object-get-multiline.md)  
+[OBJECT Get multiline](object-get-multiline)  
 
 ## Properties
 

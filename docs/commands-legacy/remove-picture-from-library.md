@@ -68,9 +68,9 @@ The following example deletes from the Picture Library any pictures whose names 
 
 ## See also 
 
-[GET PICTURE FROM LIBRARY](get-picture-from-library.md)  
-[PICTURE LIBRARY LIST](picture-library-list.md)  
-[SET PICTURE TO LIBRARY](set-picture-to-library.md)  
+[GET PICTURE FROM LIBRARY](get-picture-from-library)  
+[PICTURE LIBRARY LIST](picture-library-list)  
+[SET PICTURE TO LIBRARY](set-picture-to-library)  
 
 ## Properties
 

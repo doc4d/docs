@@ -34,7 +34,7 @@ En el siguiente ejemplo, si una búsqueda no encuentra ningún registro, se emit
 
 ## Ver también 
 
-[PLAY](play.md)  
+[PLAY](play)  
 
 ## Propiedades
 

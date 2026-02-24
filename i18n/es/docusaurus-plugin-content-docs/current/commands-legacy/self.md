@@ -52,9 +52,9 @@ Ver el ejemplo del comando [RESOLVE POINTER](resolve-pointer.md "RESOLVE POINTER
 
 ## Ver también 
 
-[OBJECT Get pointer](object-get-pointer.md)  
-[RESOLVE POINTER](resolve-pointer.md)  
-[This ](../commands/this.md)  
+[OBJECT Get pointer](object-get-pointer)  
+[RESOLVE POINTER](resolve-pointer)  
+[This ](../commands/this)  
 
 ## Propiedades
 

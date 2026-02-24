@@ -42,8 +42,8 @@ Vous voulez appeler un process worker et lui passer comme paramètre le nom du p
 ## Voir aussi 
 
 *A propos des workers*  
-[CALL WORKER](call-worker.md)  
-[KILL WORKER](kill-worker.md)  
+[CALL WORKER](call-worker)  
+[KILL WORKER](kill-worker)  
 
 ## Propriétés
 

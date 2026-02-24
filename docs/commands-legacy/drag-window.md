@@ -57,8 +57,8 @@ Then you can drag the window by clicking anywhere on the borders.
 
 ## See also 
 
-[GET WINDOW RECT](get-window-rect.md)  
-[SET WINDOW RECT](set-window-rect.md)  
+[GET WINDOW RECT](get-window-rect)  
+[SET WINDOW RECT](set-window-rect)  
 
 ## Properties
 

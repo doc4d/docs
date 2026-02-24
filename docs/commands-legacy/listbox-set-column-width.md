@@ -47,7 +47,7 @@ The optional *minWidth* and *maxWidth* parameters can be used to set limits for 
 
 ## See also 
 
-[LISTBOX Get column width](listbox-get-column-width.md)  
+[LISTBOX Get column width](listbox-get-column-width)  
 
 ## Properties
 

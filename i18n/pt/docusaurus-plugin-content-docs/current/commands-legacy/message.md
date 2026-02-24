@@ -28,20 +28,20 @@ displayed_sidebar: docs
 
 ## Descrição 
 
-<!--REF #_command_.MESSAGE.Summary-->O comando **MESSAGE** geralmente se utiliza para informar ao usuário sobre alguma atividade.<!-- END REF--> Mostra *mensagem* na tela em uma janela de mensagem especial que se abre e fecha cada vez que chamar a **MESSAGE**, a menos que trabalhe com uma janela que abriu previamente utilizando [Open window](../commands/open-window.md) (ver detalhes abaixo). A mensagem é temporária e é apagada assim que um formulário for exibido ou o método parar de executar. Se outra **MESSAGE** for executada, a mensagem antiga é apagada.
+<!--REF #_command_.MESSAGE.Summary-->O comando **MESSAGE** geralmente se utiliza para informar ao usuário sobre alguma atividade.<!-- END REF--> Mostra *mensagem* na tela em uma janela de mensagem especial que se abre e fecha cada vez que chamar a **MESSAGE**, a menos que trabalhe com uma janela que abriu previamente utilizando [Open window](../commands/open-window) (ver detalhes abaixo). A mensagem é temporária e é apagada assim que um formulário for exibido ou o método parar de executar. Se outra **MESSAGE** for executada, a mensagem antiga é apagada.
 
-Se abrir uma janela com [Open window](../commands/open-window.md), todas as chamadas a **MESSAGE** mostram as mensagens nessa janela. A janela se comporta como um terminal:
+Se abrir uma janela com [Open window](../commands/open-window), todas as chamadas a **MESSAGE** mostram as mensagens nessa janela. A janela se comporta como um terminal:
 
 * As mensagens sucessivas não apagam as mensagens anteriores quando são mostradas na janela, são concatenadas em mensagens existentes.
 * Se uma mensagem for mais larga que a janela, 4D insere automaticamente um retorno a linha.
 * Se uma mensagem tiver mais linhas que a janela, 4D automaticamente desce a página.
 * Para controlar quebras de linha, inclua retornos de carro — **Char(13)** — em sua mensagem.
-* Para exibir o texto em um lugar específico da janela, chame [GOTO XY](goto-xy.md).
-* Para apagar os conteúdos da janela, chame [ERASE WINDOW](erase-window.md).
+* Para exibir o texto em um lugar específico da janela, chame [GOTO XY](goto-xy).
+* Para apagar os conteúdos da janela, chame [ERASE WINDOW](erase-window).
 * A janela é apenas uma janela de output e não se redesenha quando outras janelas forem colocadas sobre ela.
 * Pode modificar a fonte e tamanho dos caracteres na janela através da página "Interface" nas Preferências de Banco de Dados.
 
-**Nota:** **MESSAGE** é compatível com o comando [Open form window](../commands/open-form-window.md); entretanto, no contexto do segundo parâmetro *\** de [Open form window](../commands/open-form-window.md), que salva o tamanho e posição da janela, não é suportado 
+**Nota:** **MESSAGE** é compatível com o comando [Open form window](../commands/open-form-window); entretanto, no contexto do segundo parâmetro *\** de [Open form window](../commands/open-form-window), que salva o tamanho e posição da janela, não é suportado 
 
 ## Exemplo 1 
 
@@ -121,10 +121,10 @@ O resultado é o seguinte (em Windows):
 
 ## Ver também 
 
-[CLOSE WINDOW](close-window.md)  
-[ERASE WINDOW](erase-window.md)  
-[GOTO XY](goto-xy.md)  
-[Open window](../commands/open-window.md)  
+[CLOSE WINDOW](close-window)  
+[ERASE WINDOW](erase-window)  
+[GOTO XY](goto-xy)  
+[Open window](../commands/open-window)  
 
 ## Propriedades
 

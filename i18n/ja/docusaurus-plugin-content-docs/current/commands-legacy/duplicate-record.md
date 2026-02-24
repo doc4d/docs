@@ -36,7 +36,7 @@ DUPLICATE RECORDはデータ入力中にも実行可能です。これにより�
 
 ## 参照 
 
-[SAVE RECORD](save-record.md)  
+[SAVE RECORD](save-record)  
 
 ## プロパティ
 

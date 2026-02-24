@@ -60,7 +60,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OPEN SECURITY CENTER](open-security-center.md)  
+[OPEN SECURITY CENTER](open-security-center)  
 
 ## プロパティ
 

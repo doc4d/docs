@@ -49,7 +49,7 @@ In the *borderStyle* parameter, pass the value of the border line style that you
 
 ## See also 
 
-[OBJECT Get border style](object-get-border-style.md)  
+[OBJECT Get border style](object-get-border-style)  
 
 ## Properties
 

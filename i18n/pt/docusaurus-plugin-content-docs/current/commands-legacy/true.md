@@ -29,8 +29,8 @@ O exemplo a seguir atribui a variável *vbOpcoes* a Verdadeiro :
 
 ## Ver também 
 
-[False](false.md)  
-[Not](not.md)  
+[False](false)  
+[Not](not)  
 
 ## Propriedades
 

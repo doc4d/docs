@@ -43,7 +43,7 @@ This command does nothing on Windows with the [Web system rendering engine](../F
 
 ## See also 
 
-[WA ZOOM OUT](wa-zoom-out.md)  
+[WA ZOOM OUT](wa-zoom-out)  
 
 ## Properties
 

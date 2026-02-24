@@ -57,7 +57,7 @@ En cas d’erreur, la commande retourne une erreur qui peut être interceptée v
 
 ## Voir aussi 
 
-[SAX ADD XML COMMENT](sax-add-xml-comment.md)  
+[SAX ADD XML COMMENT](sax-add-xml-comment)  
 
 ## Propriétés
 

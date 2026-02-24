@@ -34,8 +34,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Locked](locked.md)  
-[UNLOAD RECORD](unload-record.md)  
+[Locked](locked)  
+[UNLOAD RECORD](unload-record)  
 *レコードのロック*  
 
 ## プロパティ

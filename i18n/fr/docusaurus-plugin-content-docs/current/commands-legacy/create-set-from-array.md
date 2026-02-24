@@ -49,8 +49,8 @@ Dans un tableau d'entier longs, si un numéro d'enregistrement est invalide (enr
 
 ## Voir aussi 
 
-[BOOLEAN ARRAY FROM SET](boolean-array-from-set.md)  
-[CREATE SELECTION FROM ARRAY](create-selection-from-array.md)  
+[BOOLEAN ARRAY FROM SET](boolean-array-from-set)  
+[CREATE SELECTION FROM ARRAY](create-selection-from-array)  
 
 ## Propriétés
 

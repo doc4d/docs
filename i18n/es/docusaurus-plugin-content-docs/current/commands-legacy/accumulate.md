@@ -44,10 +44,10 @@ Ver el ejemplo del comando [BREAK LEVEL](break-level.md "BREAK LEVEL").
 
 ## Ver también 
 
-[BREAK LEVEL](break-level.md)  
-[ORDER BY](order-by.md)  
-[PRINT SELECTION](print-selection.md)  
-[Subtotal](subtotal.md)  
+[BREAK LEVEL](break-level)  
+[ORDER BY](order-by)  
+[PRINT SELECTION](print-selection)  
+[Subtotal](subtotal)  
 
 ## Propiedades
 

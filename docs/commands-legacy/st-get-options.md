@@ -45,7 +45,7 @@ Pass the code of the option to get in the *option* parameter. The command return
 
 ## See also 
 
-[ST SET OPTIONS](st-set-options.md)  
+[ST SET OPTIONS](st-set-options)  
 
 ## Properties
 

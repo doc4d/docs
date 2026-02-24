@@ -143,8 +143,8 @@ Using a picture array:
 
 ## See also 
 
-[OB GET ARRAY](ob-get-array.md)  
-[OB SET](ob-set.md)  
+[OB GET ARRAY](ob-get-array)  
+[OB SET](ob-set)  
 *Type conversions between collections and 4D arrays*  
 
 ## Properties

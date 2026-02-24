@@ -33,7 +33,7 @@ displayed_sidebar: docs
 
 El parámetro *url* contiene el nuevo URL que permite redirigir la petición. Si este parámetro es un url a un archivo, debe contener la referencia a este archivo, por ejemplo: **WEB SEND HTTP REDIRECT** ("/MiPagina.HTM"). 
 
-Este comando prevalece sobre los comandos de envío de datos ([WEB SEND FILE](web-send-file.md), [WEB SEND BLOB](web-send-blob.md), etc.) que puedan estar en el mismo método. 
+Este comando prevalece sobre los comandos de envío de datos ([WEB SEND FILE](web-send-file), [WEB SEND BLOB](web-send-blob), etc.) que puedan estar en el mismo método. 
 
 Este comando también permite redirigir una petición a otro servidor web. 
 

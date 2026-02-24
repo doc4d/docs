@@ -56,8 +56,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[DELETE FROM ARRAY](delete-from-array.md)  
-[Size of array](size-of-array.md)  
+[DELETE FROM ARRAY](delete-from-array)  
+[Size of array](size-of-array)  
 
 ## プロパティ
 

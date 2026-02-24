@@ -32,13 +32,13 @@ displayed_sidebar: docs
 
 The sizes returned do not vary from one page to another (after a page break, for instance). 
 
-Associated with the [Get printed height](get-printed-height.md) command, this command is useful for knowing the number of pixels available for printing or for centering an object on the page. 
+Associated with the [Get printed height](get-printed-height) command, this command is useful for knowing the number of pixels available for printing or for centering an object on the page. 
 
-**Note:** For more information regarding Printing management and terminology in 4D, refer to the [GET PRINTABLE MARGIN](get-printable-margin.md) command description. 
+**Note:** For more information regarding Printing management and terminology in 4D, refer to the [GET PRINTABLE MARGIN](get-printable-margin) command description. 
 
 To know the total size of the page, you can:
 
-* either add the margins supplied by the [GET PRINTABLE MARGIN](get-printable-margin.md) command to the values returned by this command.
+* either add the margins supplied by the [GET PRINTABLE MARGIN](get-printable-margin) command to the values returned by this command.
 * or use the following syntax:
 
 ```4d
@@ -48,8 +48,8 @@ To know the total size of the page, you can:
 
 ## See also 
 
-[GET PRINTABLE MARGIN](get-printable-margin.md)  
-[Print form](../commands/print-form.md)  
+[GET PRINTABLE MARGIN](get-printable-margin)  
+[Print form](../commands/print-form)  
 
 ## Properties
 

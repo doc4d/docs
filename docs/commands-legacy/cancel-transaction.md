@@ -27,17 +27,17 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.CANCEL TRANSACTION.Summary-->**CANCEL TRANSACTION** cancels the [transaction](../Develop-legacy/transactions.md) that was started with [START TRANSACTION](start-transaction.md) of the corresponding level in the current process.<!-- END REF-->cancels the operations executed on the data and stored during the transaction.
+<!--REF #_command_.CANCEL TRANSACTION.Summary-->**CANCEL TRANSACTION** cancels the [transaction](../Develop-legacy/transactions) that was started with [START TRANSACTION](start-transaction) of the corresponding level in the current process.<!-- END REF-->cancels the operations executed on the data and stored during the transaction.
 
 **Note:** **CANCEL TRANSACTION** does not have an effect on any changes made in the current records that were not saved - they remain displayed after the command is executed.
 
 ## See also 
 
-[In transaction](in-transaction.md)  
-[START TRANSACTION](start-transaction.md)  
-[Transaction level](transaction-level.md)  
-[Transactions](../Develop-legacy/transactions.md)
-[VALIDATE TRANSACTION](validate-transaction.md)  
+[In transaction](in-transaction)  
+[START TRANSACTION](start-transaction)  
+[Transaction level](transaction-level)  
+[Transactions](../Develop-legacy/transactions)
+[VALIDATE TRANSACTION](validate-transaction)  
 
 ## Properties
 

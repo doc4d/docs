@@ -31,12 +31,12 @@ displayed_sidebar: docs
 
 ## Exemple 
 
-Référez-vous à l'exemple de la fonction [Milliseconds](milliseconds.md).
+Référez-vous à l'exemple de la fonction [Milliseconds](milliseconds).
 
 ## Voir aussi 
 
-[Current time](current-time.md)  
-[Milliseconds](milliseconds.md)  
+[Current time](current-time)  
+[Milliseconds](milliseconds)  
 
 ## Propriétés
 

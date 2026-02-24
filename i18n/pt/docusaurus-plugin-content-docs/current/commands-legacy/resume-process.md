@@ -25,8 +25,8 @@ Se *processo* foi atrasado anteriormente, consulte os comandos [PAUSE PROCESS](p
 
 ## Ver também 
 
-[DELAY PROCESS](delay-process.md)  
-[PAUSE PROCESS](pause-process.md)  
+[DELAY PROCESS](delay-process)  
+[PAUSE PROCESS](pause-process)  
 
 ## Propriedades
 

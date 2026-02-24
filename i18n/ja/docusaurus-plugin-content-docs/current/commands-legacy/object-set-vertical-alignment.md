@@ -50,9 +50,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT Get horizontal alignment](object-get-horizontal-alignment.md)  
-[OBJECT Get vertical alignment](object-get-vertical-alignment.md)  
-[OBJECT SET HORIZONTAL ALIGNMENT](object-set-horizontal-alignment.md)  
+[OBJECT Get horizontal alignment](object-get-horizontal-alignment)  
+[OBJECT Get vertical alignment](object-get-vertical-alignment)  
+[OBJECT SET HORIZONTAL ALIGNMENT](object-set-horizontal-alignment)  
 
 ## プロパティ
 

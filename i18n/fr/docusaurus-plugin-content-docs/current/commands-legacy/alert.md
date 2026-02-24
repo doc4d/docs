@@ -39,7 +39,7 @@ Par défaut, le libellé du bouton OK est “OK”. Si vous voulez changer ce li
 
 ## Exemple 1 
 
-L'exemple suivant appelle une boîte de dialogue d'alerte qui affiche des informations sur une société. Notez que le message contient des retours chariot ([Char](char.md)(13)) qui forcent le texte à passer sur la ligne suivante :
+L'exemple suivant appelle une boîte de dialogue d'alerte qui affiche des informations sur une société. Notez que le message contient des retours chariot ([Char](char)(13)) qui forcent le texte à passer sur la ligne suivante :
 
 ```4d
  ALERT("Société: "+[Société]Nom+Char(13)+"Personnes dans la société: "+\
@@ -77,9 +77,9 @@ Ce code affiche la boîte de dialogue d'alerte suivante :
 
 ## Voir aussi 
 
-[CONFIRM](confirm.md)  
-[DISPLAY NOTIFICATION](display-notification.md)  
-[Request](request.md)  
+[CONFIRM](confirm)  
+[DISPLAY NOTIFICATION](display-notification)  
+[Request](request)  
 
 ## Propriétés
 

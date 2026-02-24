@@ -27,15 +27,15 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.Get assert enabled.Summary-->The **Get assert enabled** command returns True or False according to whether or not assertions are enabled in the current process.<!-- END REF--> For more information about assertions, please refer to the description of the [ASSERT](assert.md) command. 
+<!--REF #_command_.Get assert enabled.Summary-->The **Get assert enabled** command returns True or False according to whether or not assertions are enabled in the current process.<!-- END REF--> For more information about assertions, please refer to the description of the [ASSERT](assert) command. 
 
-By default, assertions are enabled but they may have been disabled using the [SET ASSERT ENABLED](set-assert-enabled.md) command. 
+By default, assertions are enabled but they may have been disabled using the [SET ASSERT ENABLED](set-assert-enabled) command. 
 
 ## See also 
 
-[ASSERT](assert.md)  
-[Asserted](asserted.md)  
-[SET ASSERT ENABLED](set-assert-enabled.md)  
+[ASSERT](assert)  
+[Asserted](asserted)  
+[SET ASSERT ENABLED](set-assert-enabled)  
 
 ## Properties
 

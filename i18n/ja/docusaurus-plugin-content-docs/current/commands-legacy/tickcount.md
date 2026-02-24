@@ -35,8 +35,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Current time](current-time.md)  
-[Milliseconds](milliseconds.md)  
+[Current time](current-time)  
+[Milliseconds](milliseconds)  
 
 ## プロパティ
 

@@ -60,8 +60,8 @@ Si el comando ha sido ejecutado correctamente, la variable sistema OK toma el va
 
 ## Ver también 
 
-[DOM GET XML ATTRIBUTE BY INDEX](dom-get-xml-attribute-by-index.md)  
-[DOM REMOVE XML ATTRIBUTE](dom-remove-xml-attribute.md)  
+[DOM GET XML ATTRIBUTE BY INDEX](dom-get-xml-attribute-by-index)  
+[DOM REMOVE XML ATTRIBUTE](dom-remove-xml-attribute)  
 
 ## Propiedades
 

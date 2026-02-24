@@ -40,11 +40,11 @@ Somente as informações de que a modificação ocorreu é enviada. Cada máquin
 * Exibição de um aviso para que o usuário possa efetuar uma sincronização, se desejar.
 O parâmetro atual pode estar definido:
 * a nível global do banco através do parâmetro das Propriedades do banco. Neste caso, se aplica a todas as máquinas remotas;
-* localmente, utilizando o comando [SET DATABASE PARAMETER](set-database-parameter.md) executado na máquina remota (seletor Auto Synchro Resources Folder ). Neste caso, "invalida" o do banco e se aplica unicamente à maquina remota para a sessão.
+* localmente, utilizando o comando [SET DATABASE PARAMETER](set-database-parameter) executado na máquina remota (seletor Auto Synchro Resources Folder ). Neste caso, "invalida" o do banco e se aplica unicamente à maquina remota para a sessão.
 
 ## Ver também 
 
-[Get 4D folder](get-4d-folder.md)  
+[Get 4D folder](get-4d-folder)  
 
 ## Propriedades
 

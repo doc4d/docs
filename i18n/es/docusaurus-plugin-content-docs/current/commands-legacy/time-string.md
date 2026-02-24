@@ -36,8 +36,8 @@ El siguiente muestra una caja de alerta con el mensaje, “46 800 segundos repre
 
 ## Ver también 
 
-[String](../commands/string.md)  
-[Time](time.md)  
+[String](../commands/string)  
+[Time](time)  
 
 ## Propiedades
 

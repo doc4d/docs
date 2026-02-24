@@ -47,7 +47,7 @@ O seguinte exemplo utiliza Char para inserir um retorno de carro no texto de uma
 
 ## Ver também 
 
-[Character code](character-code.md)  
+[Character code](character-code)  
 *Códigos Unicode*  
 *Símbolos de referência de caracteres*  
 

@@ -33,7 +33,7 @@ Le résultat de la fonction peut être l'une des valeurs des constantes prédéf
 | Waiting for internal flag | Entier long | 4      |                                                                                                                                                                                                                                                         |
 | Waiting for user event    | Entier long | 2      |                                                                                                                                                                                                                                                         |
 
-Si le process n'existe pas (ce qui signifie le numéro que vous avez passé est hors de l'intervalle de 1 à [Count tasks](count-tasks.md)), **Process state** retourne Does not exist (-100).
+Si le process n'existe pas (ce qui signifie le numéro que vous avez passé est hors de l'intervalle de 1 à [Count tasks](count-tasks)), **Process state** retourne Does not exist (-100).
 
 ## Exemple 
 
@@ -58,8 +58,8 @@ L'exemple suivant retourne le nom et le numéro de référence de chaque process
 
 ## Voir aussi 
 
-[Count tasks](count-tasks.md)  
-[Process info](../commands/process-info.md)  
+[Count tasks](count-tasks)  
+[Process info](../commands/process-info)  
 
 ## Propriétés
 

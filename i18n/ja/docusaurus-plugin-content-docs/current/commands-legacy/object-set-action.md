@@ -99,7 +99,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT Get action](object-get-action.md)  
+[OBJECT Get action](object-get-action)  
 
 ## プロパティ
 

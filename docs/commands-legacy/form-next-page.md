@@ -27,7 +27,7 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.FORM NEXT PAGE.Summary-->FORM NEXT PAGE changes the currently displayed form page to the next form page.<!-- END REF--> If no form is being displayed or loaded by the [FORM LOAD](../commands/form-load.md) command, or if the last form page is already displayed, FORM NEXT PAGE does nothing.
+<!--REF #_command_.FORM NEXT PAGE.Summary-->FORM NEXT PAGE changes the currently displayed form page to the next form page.<!-- END REF--> If no form is being displayed or loaded by the [FORM LOAD](../commands/form-load) command, or if the last form page is already displayed, FORM NEXT PAGE does nothing.
 
 ## Example 
 
@@ -39,11 +39,11 @@ The following example is a one-line method called from a menu command. It displa
 
 ## See also 
 
-[FORM FIRST PAGE](form-first-page.md)  
-[FORM Get current page](form-get-current-page.md)  
-[FORM GOTO PAGE](form-goto-page.md)  
-[FORM LAST PAGE](form-last-page.md)  
-[FORM PREVIOUS PAGE](form-previous-page.md)  
+[FORM FIRST PAGE](form-first-page)  
+[FORM Get current page](form-get-current-page)  
+[FORM GOTO PAGE](form-goto-page)  
+[FORM LAST PAGE](form-last-page)  
+[FORM PREVIOUS PAGE](form-previous-page)  
 
 ## Properties
 

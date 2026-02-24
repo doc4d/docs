@@ -36,8 +36,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[WA GET URL FILTERS](wa-get-url-filters.md)  
-[WA SET EXTERNAL LINKS FILTERS](wa-set-external-links-filters.md)  
+[WA GET URL FILTERS](wa-get-url-filters)  
+[WA SET EXTERNAL LINKS FILTERS](wa-set-external-links-filters)  
 
 ## プロパティ
 

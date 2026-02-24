@@ -24,7 +24,7 @@ Los números de registro pueden variar. Los números de registros borrados son r
 
 **4D Server:** este comando devuelve un resultado diferente en el contexto del evento de formulario On Validate dependiendo de si se ejecuta en 4D en modo local o 4D en modo remoto. En versión monopuesto, el comando devuelve un número de registro (el registro se considera como creado). En versión cliente/servidor, el comando devuelve -3 porque en ese caso, el registros ya ha sido creado en el servidor pero la información no ha sido enviada al cliente.
 
-**Nota:** se recomienda utilizar el comando [Is new record](is-new-record.md) para verificar si el registro está en proceso de creación. 
+**Nota:** se recomienda utilizar el comando [Is new record](is-new-record) para verificar si el registro está en proceso de creación. 
 
 ## Ejemplo 
 
@@ -41,10 +41,10 @@ El siguiente ejemplo guarda el número del registro actual y luego busca en la t
 ## Ver también 
 
 *Acerca de números de registros*  
-[GOTO RECORD](goto-record.md)  
-[Is new record](is-new-record.md)  
-[Selected record number](selected-record-number.md)  
-[Sequence number](sequence-number.md)  
+[GOTO RECORD](goto-record)  
+[Is new record](is-new-record)  
+[Selected record number](selected-record-number)  
+[Sequence number](sequence-number)  
 
 ## Propiedades
 

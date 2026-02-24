@@ -32,11 +32,11 @@ displayed_sidebar: docs
 
 If there is already a list with this name, its contents are replaced.
 
-**Note:** This command cannot be used in a structure loaded in **read only**, such as a .4dz project (which includes [remote projects](../Desktop/clientServer.md)) or a component.
+**Note:** This command cannot be used in a structure loaded in **read only**, such as a .4dz project (which includes [remote projects](../Desktop/clientServer)) or a component.
 
 ## See also 
 
-[Load list](load-list.md)  
+[Load list](load-list)  
 
 ## Properties
 

@@ -55,8 +55,8 @@ Regresando ao exemplo do serviço Web “Raiz\_quadrada” da descrição do com
 
 ## Ver também 
 
-[SOAP DECLARATION](soap-declaration.md)  
-[SOAP get info](soap-get-info.md)  
+[SOAP DECLARATION](soap-declaration)  
+[SOAP get info](soap-get-info)  
 
 ## Propriedades
 

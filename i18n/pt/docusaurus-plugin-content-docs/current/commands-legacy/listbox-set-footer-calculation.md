@@ -61,7 +61,7 @@ Se o tipo de dados da coluna ou de pelo menos uma coluna do list box (se objeto 
 
 ## Ver também 
 
-[LISTBOX Get footer calculation](listbox-get-footer-calculation.md)  
+[LISTBOX Get footer calculation](listbox-get-footer-calculation)  
 
 ## Propriedades
 

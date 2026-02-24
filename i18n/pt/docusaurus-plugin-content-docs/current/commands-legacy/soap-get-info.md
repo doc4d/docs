@@ -42,12 +42,12 @@ Passe no parâmetro *numInfo* o número do tipo de informação SOAP que deseja 
 | SOAP service name | Inteiro longo | 2     |
   
   
-**Nota**: Por razões de segurança, é possível obter o tamanho máximo das petições de serviços web enviadas a 4D. Esta configuração é realizada utilizando o comando [SET DATABASE PARAMETER](set-database-parameter.md). 
+**Nota**: Por razões de segurança, é possível obter o tamanho máximo das petições de serviços web enviadas a 4D. Esta configuração é realizada utilizando o comando [SET DATABASE PARAMETER](set-database-parameter). 
 
 ## Ver também 
 
-[SET DATABASE PARAMETER](set-database-parameter.md)  
-[SOAP SEND FAULT](soap-send-fault.md)  
+[SET DATABASE PARAMETER](set-database-parameter)  
+[SOAP SEND FAULT](soap-send-fault)  
 
 ## Propriedades
 

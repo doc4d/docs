@@ -38,8 +38,8 @@ If the command has been correctly executed, the system variable OK is set to 1\.
 
 ## See also 
 
-[DOM Parse XML source](dom-parse-xml-source.md)  
-[DOM Parse XML variable](dom-parse-xml-variable.md)  
+[DOM Parse XML source](dom-parse-xml-source)  
+[DOM Parse XML variable](dom-parse-xml-variable)  
 
 ## Properties
 

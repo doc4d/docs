@@ -34,7 +34,7 @@ Si pasa un número de *area* inválido, se genera el error -9850.
 
 ## Ver también 
 
-[QR SET REPORT TABLE](qr-set-report-table.md)  
+[QR SET REPORT TABLE](qr-set-report-table)  
 
 ## Propiedades
 

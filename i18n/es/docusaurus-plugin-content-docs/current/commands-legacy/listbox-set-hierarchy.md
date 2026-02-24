@@ -64,7 +64,7 @@ Definición de los arrays aPais, aRegion y aCiudad como jerarquía de un list bo
 
 ## Ver también 
 
-[LISTBOX GET HIERARCHY](listbox-get-hierarchy.md)  
+[LISTBOX GET HIERARCHY](listbox-get-hierarchy)  
 
 ## Propiedades
 

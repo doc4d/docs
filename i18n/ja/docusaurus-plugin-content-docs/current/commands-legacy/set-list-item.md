@@ -84,11 +84,11 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET LIST ITEM](get-list-item.md)  
-[GET LIST ITEM PROPERTIES](get-list-item-properties.md)  
-[SET LIST ITEM FONT](set-list-item-font.md)  
-[SET LIST ITEM ICON](set-list-item-icon.md)  
-[SET LIST ITEM PROPERTIES](set-list-item-properties.md)  
+[GET LIST ITEM](get-list-item)  
+[GET LIST ITEM PROPERTIES](get-list-item-properties)  
+[SET LIST ITEM FONT](set-list-item-font)  
+[SET LIST ITEM ICON](set-list-item-icon)  
+[SET LIST ITEM PROPERTIES](set-list-item-properties)  
 
 ## プロパティ
 

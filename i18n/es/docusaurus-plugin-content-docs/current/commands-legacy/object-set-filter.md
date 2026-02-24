@@ -67,8 +67,8 @@ El siguiente ejemplo permite únicamente la entrada de las letras “a,” “b,
 
 ## Ver también 
 
-[OBJECT Get filter](object-get-filter.md)  
-[OBJECT SET FORMAT](object-set-format.md)  
+[OBJECT Get filter](object-get-filter)  
+[OBJECT SET FORMAT](object-set-format)  
 
 ## Propiedades
 

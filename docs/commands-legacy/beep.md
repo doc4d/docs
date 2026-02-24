@@ -34,7 +34,7 @@ In the following example, if no records are found by the query, a beep is emitte
 
 ## See also 
 
-[PLAY](play.md)  
+[PLAY](play)  
 
 ## Properties
 

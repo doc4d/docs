@@ -54,8 +54,8 @@ Ao final da lista de registros há um botão com um método de objeto. O método
 
 ## Ver também 
 
-[INTERSECTION](intersection.md)  
-[UNION](union.md)  
+[INTERSECTION](intersection)  
+[UNION](union)  
 
 ## Propriedades
 

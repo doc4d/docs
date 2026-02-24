@@ -133,7 +133,7 @@ Les exemples suivants créent différents fichiers et dossiers dans le dossier d
 
 ## Voir aussi 
 
-[MOVE DOCUMENT](move-document.md)  
+[MOVE DOCUMENT](move-document)  
 *Présentation des documents système*  
 
 ## Propriétés

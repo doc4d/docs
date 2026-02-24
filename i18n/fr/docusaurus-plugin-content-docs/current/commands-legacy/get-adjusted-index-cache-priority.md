@@ -34,9 +34,9 @@ displayed_sidebar: docs
 
 ## Voir aussi 
 
-[ADJUST INDEX CACHE PRIORITY](adjust-index-cache-priority.md)  
+[ADJUST INDEX CACHE PRIORITY](adjust-index-cache-priority)  
 *Gestion des priorités dans le cache de la base*  
-[SET INDEX CACHE PRIORITY](set-index-cache-priority.md)  
+[SET INDEX CACHE PRIORITY](set-index-cache-priority)  
 
 ## Propriétés
 

@@ -62,7 +62,7 @@ Resultado:
 
 ## Ver también 
 
-[TRANSFORM PICTURE](transform-picture.md)  
+[TRANSFORM PICTURE](transform-picture)  
 
 ## Propiedades
 

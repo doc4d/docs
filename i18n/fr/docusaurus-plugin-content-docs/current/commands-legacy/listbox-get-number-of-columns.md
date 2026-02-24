@@ -36,7 +36,7 @@ Si vous passez le paramètre optionnel *\**, vous indiquez que le paramètre *ob
 
 #### Voir aussi 
 
-[LISTBOX DELETE COLUMN](listbox-delete-column.md)  
+[LISTBOX DELETE COLUMN](listbox-delete-column)  
 
 #### Propriétés
 

@@ -48,8 +48,8 @@ Se o parâmetro *posição* é superior ao número de linhas do array do list bo
 
 ## Ver também 
 
-[LISTBOX Get number of rows](listbox-get-number-of-rows.md)  
-[LISTBOX INSERT ROWS](listbox-insert-rows.md)  
+[LISTBOX Get number of rows](listbox-get-number-of-rows)  
+[LISTBOX INSERT ROWS](listbox-insert-rows)  
 
 ## Propriedades
 

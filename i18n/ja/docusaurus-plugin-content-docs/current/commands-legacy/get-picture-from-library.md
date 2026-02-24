@@ -70,9 +70,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[PICTURE LIBRARY LIST](picture-library-list.md)  
-[REMOVE PICTURE FROM LIBRARY](remove-picture-from-library.md)  
-[SET PICTURE TO LIBRARY](set-picture-to-library.md)  
+[PICTURE LIBRARY LIST](picture-library-list)  
+[REMOVE PICTURE FROM LIBRARY](remove-picture-from-library)  
+[SET PICTURE TO LIBRARY](set-picture-to-library)  
 
 ## プロパティ
 

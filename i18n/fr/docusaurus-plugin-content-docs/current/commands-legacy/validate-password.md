@@ -71,9 +71,9 @@ Dans la [On REST Authentication database method](on-rest-authentication-database
 
 ## Voir aussi 
 
-[GET USER PROPERTIES](get-user-properties.md)  
-[Set user properties](set-user-properties.md)  
-[WEB Validate digest](web-validate-digest.md)  
+[GET USER PROPERTIES](get-user-properties)  
+[Set user properties](set-user-properties)  
+[WEB Validate digest](web-validate-digest)  
 
 ## Propriétés
 

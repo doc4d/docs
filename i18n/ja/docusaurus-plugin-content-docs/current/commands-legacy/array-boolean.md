@@ -63,7 +63,7 @@ ARRAY BOOLEANを既存の配列に適用する場合、
 
 ## 参照 
 
-[ARRAY INTEGER](array-integer.md)  
+[ARRAY INTEGER](array-integer)  
 
 ## プロパティ
 

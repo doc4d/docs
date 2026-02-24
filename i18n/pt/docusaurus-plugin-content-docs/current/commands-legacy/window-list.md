@@ -60,8 +60,8 @@ O método de projeto abaixo coloca em mosaico todas as janelas abertas atualment
 
 ## Ver também 
 
-[Window kind](window-kind.md)  
-[Window process](window-process.md)  
+[Window kind](window-kind)  
+[Window process](window-process)  
 
 ## Propriedades
 

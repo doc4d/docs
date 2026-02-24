@@ -34,12 +34,12 @@ L'exemple suivant illustre l'utilisation de **Year of**. Les résultats sont ass
 
 ## Exemple 2 
 
-Reportez-vous à l'exemple de la fonction [Current date](current-date.md). 
+Reportez-vous à l'exemple de la fonction [Current date](current-date). 
 
 ## Voir aussi 
 
-[Day of](day-of.md)  
-[Month of](month-of.md)  
+[Day of](day-of)  
+[Month of](month-of)  
 
 ## Propriétés
 

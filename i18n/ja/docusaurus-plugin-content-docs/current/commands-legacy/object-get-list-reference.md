@@ -46,8 +46,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT Get list name](object-get-list-name.md)  
-[OBJECT SET LIST BY REFERENCE](object-set-list-by-reference.md)  
+[OBJECT Get list name](object-get-list-name)  
+[OBJECT SET LIST BY REFERENCE](object-set-list-by-reference)  
 
 ## プロパティ
 

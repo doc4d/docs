@@ -55,8 +55,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[INTERSECTION](intersection.md)  
-[UNION](union.md)  
+[INTERSECTION](intersection)  
+[UNION](union)  
 
 ## プロパティ
 

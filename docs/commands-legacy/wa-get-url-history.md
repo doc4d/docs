@@ -55,7 +55,7 @@ If it is passed, the *titlesArr* parameter contains the list of window names ass
 
 ## See also 
 
-[WA Create URL history menu](wa-create-url-history-menu.md)  
+[WA Create URL history menu](wa-create-url-history-menu)  
 
 ## Properties
 

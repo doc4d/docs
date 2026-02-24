@@ -48,14 +48,14 @@ Ver el ejemplo del comando [APPEND TO LIST](append-to-list.md "APPEND TO LIST").
 
 ## Ver también 
 
-[APPEND TO LIST](append-to-list.md)  
-[BLOB to list](blob-to-list.md)  
-[CLEAR LIST](clear-list.md)  
-[Copy list](copy-list.md)  
-[DELETE FROM LIST](delete-from-list.md)  
-[INSERT IN LIST](insert-in-list.md)  
-[LIST TO BLOB](list-to-blob.md)  
-[Load list](load-list.md)  
+[APPEND TO LIST](append-to-list)  
+[BLOB to list](blob-to-list)  
+[CLEAR LIST](clear-list)  
+[Copy list](copy-list)  
+[DELETE FROM LIST](delete-from-list)  
+[INSERT IN LIST](insert-in-list)  
+[LIST TO BLOB](list-to-blob)  
+[Load list](load-list)  
 
 ## Propiedades
 

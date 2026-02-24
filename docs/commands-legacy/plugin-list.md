@@ -37,10 +37,10 @@ PLUGIN LIST takes all plug-ins into account, including those that are integrated
 
 ## See also 
 
-[COMPONENT LIST](component-list.md)  
-[Get plugin access](get-plugin-access.md)  
-[Is license available](is-license-available.md)  
-[SET PLUGIN ACCESS](set-plugin-access.md)  
+[COMPONENT LIST](component-list)  
+[Get plugin access](get-plugin-access)  
+[Is license available](is-license-available)  
+[SET PLUGIN ACCESS](set-plugin-access)  
 
 ## Properties
 

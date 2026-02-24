@@ -52,7 +52,7 @@ Windows 環境下では、メッセージウィンドウは何らかの動作が
 
 ## 参照 
 
-[ALERT](alert.md)  
+[ALERT](alert)  
 
 ## プロパティ
 

@@ -63,8 +63,8 @@ En este ejemplo, queremos encontrar la declaración DTD del documento XML:
 
 ## Ver también 
 
-[DOM Append XML child node](dom-append-xml-child-node.md)  
-[DOM GET XML CHILD NODES](dom-get-xml-child-nodes.md)  
+[DOM Append XML child node](dom-append-xml-child-node)  
+[DOM GET XML CHILD NODES](dom-get-xml-child-nodes)  
 
 ## Propiedades
 

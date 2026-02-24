@@ -130,7 +130,7 @@ Vous souhaitez charger un formulaire et obtenir la liste de tous les objets des 
 
 ## Voir aussi 
 
-[FORM GET PROPERTIES](form-get-properties.md)  
+[FORM GET PROPERTIES](form-get-properties)  
 *Objets (Formulaires)*  
 *Objets de formulaire (Accès)*  
 

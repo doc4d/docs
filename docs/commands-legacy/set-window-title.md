@@ -61,7 +61,7 @@ While performing data entry in a form, you click on a button that executes a len
 
 ## See also 
 
-[Get window title](get-window-title.md)  
+[Get window title](get-window-title)  
 
 ## Properties
 

@@ -54,8 +54,8 @@ You want a collection with all first-level property names of an object:
 
 ## See also 
 
-[OB Entries](ob-entries.md)  
-[OB Values](ob-values.md)  
+[OB Entries](ob-entries)  
+[OB Values](ob-values)  
 
 ## Properties
 

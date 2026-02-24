@@ -42,7 +42,7 @@ A seguinte instrução atribui o relatório rápido armazenado na área MinhaAre
 
 ## Ver também 
 
-[QR BLOB TO REPORT](qr-blob-to-report.md)  
+[QR BLOB TO REPORT](qr-blob-to-report)  
 
 ## Propriedades
 

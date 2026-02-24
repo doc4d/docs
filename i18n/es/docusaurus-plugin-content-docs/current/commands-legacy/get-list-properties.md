@@ -49,7 +49,7 @@ Para una completa descripción de la apariencia, iconos de nodos, altura de lín
 
 ## Ver también 
 
-[SET LIST PROPERTIES](set-list-properties.md)  
+[SET LIST PROPERTIES](set-list-properties)  
 
 ## Propiedades
 

@@ -36,8 +36,8 @@ Se não houver pastas na localização especificada, o comando retorna um array 
 
 ## Ver também 
 
-[DOCUMENT LIST](document-list.md)  
-[VOLUME LIST](volume-list.md)  
+[DOCUMENT LIST](document-list)  
+[VOLUME LIST](volume-list)  
 
 ## Propriedades
 

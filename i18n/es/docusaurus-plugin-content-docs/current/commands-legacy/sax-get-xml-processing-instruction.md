@@ -50,8 +50,8 @@ La siguiente instrucción devolverá “PI” en *vNom* y “TextProcess” en *
 
 ## Ver también 
 
-[SAX ADD PROCESSING INSTRUCTION](sax-add-processing-instruction.md)  
-[SAX Get XML node](sax-get-xml-node.md)  
+[SAX ADD PROCESSING INSTRUCTION](sax-add-processing-instruction)  
+[SAX Get XML node](sax-get-xml-node)  
 
 ## Propiedades
 

@@ -28,7 +28,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Cache info](cache-info.md)  
+[Cache info](cache-info)  
 
 ## プロパティ
 

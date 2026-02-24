@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 :::info Compatibility
 
-<!--REF #_command_.LAUNCH EXTERNAL PROCESS.Summary-->Starting with 4D v19 R4, we recommend the use of the [`4D.SystemWorker class`](../API/SystemWorkerClass.md) to run and control external processes.<!-- END REF--> However, this command is still supported. 
+<!--REF #_command_.LAUNCH EXTERNAL PROCESS.Summary-->Starting with 4D v19 R4, we recommend the use of the [`4D.SystemWorker class`](../API/SystemWorkerClass) to run and control external processes.<!-- END REF--> However, this command is still supported. 
 
 :::
 
@@ -50,12 +50,12 @@ Under macOS, you can also pass the application name only; 4D will then use the P
 
 The *inputStream* parameter (optional) contains the *stdin* of the external process. Once the command has been executed, the *outputStream* and *errorStream* parameters (if passed) return respectively the *stdout* and *stderr* of the external process. You can use BLOB parameters instead of strings if you are working with binary data (such as pictures).
 
-4D provides three specific environment variables that can be set using [SET ENVIRONMENT VARIABLE](set-environment-variable.md) and are available for use in the context of **LAUNCH EXTERNAL PROCESS**:
+4D provides three specific environment variables that can be set using [SET ENVIRONMENT VARIABLE](set-environment-variable) and are available for use in the context of **LAUNCH EXTERNAL PROCESS**:
 
 * *\_4D\_OPTION\_CURRENT\_DIRECTORY*: Used to set the current directory of the external process to be launched. In *varValue*, you must pass the pathname of the directory (HFS type syntax on macOS and DOS on Windows).
 * *\_4D\_OPTION\_HIDE\_CONSOLE* (Windows only): Used to hide the window of the DOS console. You must pass "true" in *varValue* to hide the console or "false" to display it.
 * *\_4D\_OPTION\_BLOCKING\_EXTERNAL\_PROCESS*: Used to execute the external process in asynchronous mode, in other words, non-blocking for other applications. You must pass "false" in varValue to set an asynchronous execution or "true" to set a synchronous execution (default). For this variable, passing "" in *varValue* does nothing.  
-If you set the *\_4D\_OPTION\_BLOCKING\_EXTERNAL\_PROCESS* environment variable to "false" via the [SET ENVIRONMENT VARIABLE](set-environment-variable.md) command (asynchronous execution), the *outputStream* and *errorStream* parameters are not returned.
+If you set the *\_4D\_OPTION\_BLOCKING\_EXTERNAL\_PROCESS* environment variable to "false" via the [SET ENVIRONMENT VARIABLE](set-environment-variable) command (asynchronous execution), the *outputStream* and *errorStream* parameters are not returned.
 
 These variables are valid in the current process for the next call to **LAUNCH EXTERNAL PROCESS**.
 
@@ -156,8 +156,8 @@ If the command has been executed correctly, the system variable OK is set to 1\.
 
 ## See also 
 
-[OPEN URL](open-url.md)  
-[SET ENVIRONMENT VARIABLE](set-environment-variable.md)  
+[OPEN URL](open-url)  
+[SET ENVIRONMENT VARIABLE](set-environment-variable)  
 
 ## Properties
 

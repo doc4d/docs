@@ -40,10 +40,10 @@ El siguiente método de proyecto crea el array *asCampos*, con los nombres de lo
 
 ## Ver también 
 
-[Field name](field-name.md)  
-[GET FIELD PROPERTIES](get-field-properties.md)  
-[Last table number](last-table-number.md)  
-[Is field number valid](is-field-number-valid.md)  
+[Field name](field-name)  
+[GET FIELD PROPERTIES](get-field-properties)  
+[Last table number](last-table-number)  
+[Is field number valid](is-field-number-valid)  
 
 ## Propiedades
 

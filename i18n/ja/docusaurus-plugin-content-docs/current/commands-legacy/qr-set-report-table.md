@@ -37,7 +37,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR Get report table](qr-get-report-table.md)  
+[QR Get report table](qr-get-report-table)  
 
 ## プロパティ
 

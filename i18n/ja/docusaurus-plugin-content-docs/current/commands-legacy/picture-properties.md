@@ -41,7 +41,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Picture size](picture-size.md)  
+[Picture size](picture-size)  
 
 ## プロパティ
 

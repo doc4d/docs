@@ -32,11 +32,11 @@ displayed_sidebar: docs
 
 ## See also 
 
-[Menu bar screen](menu-bar-screen.md)  
-[SCREEN COORDINATES](screen-coordinates.md)  
-[SCREEN DEPTH](screen-depth.md)  
-[Screen height](screen-height.md)  
-[Screen width](screen-width.md)  
+[Menu bar screen](menu-bar-screen)  
+[SCREEN COORDINATES](screen-coordinates)  
+[SCREEN DEPTH](screen-depth)  
+[Screen height](screen-height)  
+[Screen width](screen-width)  
 
 ## Properties
 

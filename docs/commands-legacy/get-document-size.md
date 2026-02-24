@@ -40,9 +40,9 @@ On Macintosh, if you do not pass the optional *\** parameter, the size of the da
 
 ## See also 
 
-[Get document position](get-document-position.md)  
-[SET DOCUMENT POSITION](set-document-position.md)  
-[SET DOCUMENT SIZE](set-document-size.md)  
+[Get document position](get-document-position)  
+[SET DOCUMENT POSITION](set-document-position)  
+[SET DOCUMENT SIZE](set-document-size)  
 
 ## Properties
 

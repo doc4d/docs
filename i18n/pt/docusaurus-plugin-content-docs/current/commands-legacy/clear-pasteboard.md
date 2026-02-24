@@ -51,7 +51,7 @@ Ver o exemplo do comando [APPEND DATA TO PASTEBOARD](append-data-to-pasteboard.m
 
 ## Ver também 
 
-[APPEND DATA TO PASTEBOARD](append-data-to-pasteboard.md)  
+[APPEND DATA TO PASTEBOARD](append-data-to-pasteboard)  
 
 ## Propriedades
 

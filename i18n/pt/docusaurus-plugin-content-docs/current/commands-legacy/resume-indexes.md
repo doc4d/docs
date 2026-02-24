@@ -28,7 +28,7 @@ displayed_sidebar: docs
 
 ## Descrição 
 
-<!--REF #_command_.RESUME INDEXES.Summary-->The **RESUME INDEXES** command reactivates all the indexes of *aTable* when they have been paused previously using the [PAUSE INDEXES](pause-indexes.md) command.<!-- END REF--> If the indexes of *aTable* have not been paused, this command does nothing. 
+<!--REF #_command_.RESUME INDEXES.Summary-->The **RESUME INDEXES** command reactivates all the indexes of *aTable* when they have been paused previously using the [PAUSE INDEXES](pause-indexes) command.<!-- END REF--> If the indexes of *aTable* have not been paused, this command does nothing. 
 
 In most cases, executing this command triggers the rebuilding of the indexes for *aTable*.   
 If you pass the optional *\** parameter, the rebuilding of the indexes is performed in asynchronous mode. This means that the method calling the command continues its execution after this call, regardless of whether the indexing is finished or not. If you omit this parameter, the rebuilding of the indexes blocks the execution of the method until the rebuilding operation is completed. 
@@ -37,8 +37,8 @@ The **RESUME INDEXES** command can only be called from 4D Server or a local 4D. 
 
 ## Ver também 
 
-[CREATE INDEX](create-index.md)  
-[PAUSE INDEXES](pause-indexes.md)  
+[CREATE INDEX](create-index)  
+[PAUSE INDEXES](pause-indexes)  
 
 ## Propriedades
 

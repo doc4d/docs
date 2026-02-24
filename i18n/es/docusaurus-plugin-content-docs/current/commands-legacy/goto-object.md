@@ -62,8 +62,8 @@ Ver el ejemplo del comando [REJECT](reject.md "REJECT").
 
 ## Ver también 
 
-[CALL SUBFORM CONTAINER](call-subform-container.md)  
-[REJECT](reject.md)  
+[CALL SUBFORM CONTAINER](call-subform-container)  
+[REJECT](reject)  
 
 ## Propiedades
 

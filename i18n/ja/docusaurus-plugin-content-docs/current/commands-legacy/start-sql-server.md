@@ -36,7 +36,7 @@ SQLサーバが正しく起動されるとOKシステム変数は1に、そう�
 
 ## 参照 
 
-[STOP SQL SERVER](stop-sql-server.md)  
+[STOP SQL SERVER](stop-sql-server)  
 
 ## プロパティ
 

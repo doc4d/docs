@@ -39,8 +39,8 @@ Em *evento*, pode passar todo evento de formulário pré-definido de 4D (pode ut
 
 ## Ver também 
 
-[Form event code](../commands/form-event-code.md)  
-[GOTO OBJECT](goto-object.md)  
+[Form event code](../commands/form-event-code)  
+[GOTO OBJECT](goto-object)  
 
 ## Propriedades
 

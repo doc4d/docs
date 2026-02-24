@@ -44,13 +44,13 @@ When the *expression* does not match the ISO format, the regional settings defin
 * If the value is greater than or equal to 30, 4D considers the century to be the 20th and adds 19 to the beginning of the value.
 * If the value is less than 30, 4D considers the century to be the 21st and adds 20 to the beginning of the value.
 
-This mechanism can be configured using the [SET DEFAULT CENTURY](set-default-century.md) command.   
+This mechanism can be configured using the [SET DEFAULT CENTURY](set-default-century) command.   
 The following characters are valid date separators: slash (/), space, period (.), comma (,), and dash (-).
 
 * If you pass an invalid date (such as "13/35/94" or "aa/12/94") in *expression*, **Date** returns an empty date (00/00/00). It is your responsibility to verify that *expression* is a valid date.
 * If the *expression* evaluates to undefined, **Date** returns an empty date (00/00/00). This is useful when you expect the result to be a date, even if it can be undefined (*e.g.* an object attribute).
 
-**Note:** Dates can be stored in object attributes as date type or as string type values, depending on your current [database date settings](./set-database-parameter.md#dates-inside-objects-85). To know if an attribute contains a date stored as a string or as a date, you need to use the [Value type](./value-type.md) command (see last example).
+**Note:** Dates can be stored in object attributes as date type or as string type values, depending on your current [database date settings](./set-database-parameter.md#dates-inside-objects-85). To know if an attribute contains a date stored as a string or as a date, you need to use the [Value type](./value-type) command (see last example).
 
 **Date type expression**  
 If *expression* is of date type, **Date** returns the date passed in the parameter 'as is'. This is particularly useful in the context of generic programming using pointers or object attributes.
@@ -104,8 +104,8 @@ You want to get a date from an object attribute, whatever the current attribute 
 
 ## See also 
 
-[Bool](bool.md)  
-[String](../commands/string.md)  
+[Bool](bool)  
+[String](../commands/string)  
 
 ## Properties
 

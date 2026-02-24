@@ -53,7 +53,7 @@ Polygon というクラスを作成した場合を考えます:
 
 ## 参照 
 
-[OB Instance of](ob-instance-of.md)  
+[OB Instance of](ob-instance-of)  
 
 ## プロパティ
 

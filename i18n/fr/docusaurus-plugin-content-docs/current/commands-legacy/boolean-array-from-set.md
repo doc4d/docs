@@ -43,7 +43,7 @@ Si vous ne passez pas le paramètre *ensemble*, la commande utilisera l’ensemb
 
 ## Voir aussi 
 
-[CREATE SET FROM ARRAY](create-set-from-array.md)  
+[CREATE SET FROM ARRAY](create-set-from-array)  
 
 ## Propriétés
 

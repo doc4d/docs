@@ -24,7 +24,7 @@ Une sélection temporaire ne contient pas les enregistrements, mais une liste tr
 
 **4D Server :** La sélection temporaire *nom* ainsi que la sélection courante sont logées dans la mémoire du poste serveur. En conséquence, assurez-vous que le serveur dispose de suffisamment de mémoire.
 
-Utilisez la commande [CLEAR NAMED SELECTION](clear-named-selection.md) pour libérer la mémoire utilisée par *nom*.
+Utilisez la commande [CLEAR NAMED SELECTION](clear-named-selection) pour libérer la mémoire utilisée par *nom*.
 
 ## Exemple 
 
@@ -51,9 +51,9 @@ L'exemple suivant permet de vérifier s'il y a des factures impayées dans la ta
 
 ## Voir aussi 
 
-[CLEAR NAMED SELECTION](clear-named-selection.md)  
-[CUT NAMED SELECTION](cut-named-selection.md)  
-[USE NAMED SELECTION](use-named-selection.md)  
+[CLEAR NAMED SELECTION](clear-named-selection)  
+[CUT NAMED SELECTION](cut-named-selection)  
+[USE NAMED SELECTION](use-named-selection)  
 
 ## Propriétés
 

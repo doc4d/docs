@@ -30,7 +30,7 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.GET GROUP PROPERTIES.Summary-->**GET GROUP PROPERTIES** retourne les propriétés du groupe dont le numéro de référence est passé dans *réfGroupe*.<!-- END REF--> Vous passez le numéro de référence du groupe retourné par la commande [GET GROUP LIST](get-group-list.md). 
+<!--REF #_command_.GET GROUP PROPERTIES.Summary-->**GET GROUP PROPERTIES** retourne les propriétés du groupe dont le numéro de référence est passé dans *réfGroupe*.<!-- END REF--> Vous passez le numéro de référence du groupe retourné par la commande [GET GROUP LIST](get-group-list). 
 
 Si vous ne passez pas un numéro de référence valide, **GET GROUP PROPERTIES** renvoie des paramètres vides.
 
@@ -48,9 +48,9 @@ Si vous n'avez pas les privilèges d'accès pour appeler la commande **GET GROUP
 
 ## Voir aussi 
 
-[GET GROUP LIST](get-group-list.md)  
-[GET USER LIST](get-user-list.md)  
-[Set group properties](set-group-properties.md)  
+[GET GROUP LIST](get-group-list)  
+[GET USER LIST](get-user-list)  
+[Set group properties](set-group-properties)  
 
 ## Propriétés
 

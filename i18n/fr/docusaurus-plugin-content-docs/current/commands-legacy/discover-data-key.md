@@ -60,7 +60,7 @@ Les fichiers de clés (fichiers d'extension ".4DKeyChain") doivent être stocké
 ## Voir aussi 
 
   
-[New data key](new-data-key.md)  
+[New data key](new-data-key)  
 
 ## Propriétés
 

@@ -45,7 +45,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[ST SET OPTIONS](st-set-options.md)  
+[ST SET OPTIONS](st-set-options)  
 
 ## プロパティ
 

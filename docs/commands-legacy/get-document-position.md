@@ -28,13 +28,13 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.Get document position.Summary-->This command operates only on a document that is currently open whose document reference number you pass in *docRef*.<!-- END REF-->returns the position, starting from the beginning of the document, where the next read ([RECEIVE PACKET](receive-packet.md)) or write ([SEND PACKET](send-packet.md)) will occur.
+<!--REF #_command_.Get document position.Summary-->This command operates only on a document that is currently open whose document reference number you pass in *docRef*.<!-- END REF-->returns the position, starting from the beginning of the document, where the next read ([RECEIVE PACKET](receive-packet)) or write ([SEND PACKET](send-packet)) will occur.
 
 ## See also 
 
-[RECEIVE PACKET](receive-packet.md)  
-[SEND PACKET](send-packet.md)  
-[SET DOCUMENT POSITION](set-document-position.md)  
+[RECEIVE PACKET](receive-packet)  
+[SEND PACKET](send-packet)  
+[SET DOCUMENT POSITION](set-document-position)  
 
 ## Properties
 

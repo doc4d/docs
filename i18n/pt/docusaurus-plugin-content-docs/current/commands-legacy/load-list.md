@@ -30,7 +30,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Load list.Summary-->Load list cria uma lista hierárquica cujo conteúdo é copiado da lista passada em *nomeLista*.<!-- END REF--> Depois retorna o número de referência da lista criada recentemente. 
 
-Para ter certeza de que a lista especificada por *nomeLista* existe, utilize a função [Is a list](is-a-list.md).
+Para ter certeza de que a lista especificada por *nomeLista* existe, utilize a função [Is a list](is-a-list).
 
 Note que a nova lista é uma cópia da lista definida no ambiente Desenho. Portanto, qualquer modificação realizada à nova lista não afetará a lista definida no ambiente Desenho. Da mesma maneira, toda modificação posterior à lista definida no ambiente Desenho não afetará a lista que acaba de criar.
 
@@ -57,9 +57,9 @@ Você cria um banco para o mercado internacional e necessita mudar aos diferente
 
 ## Ver também 
 
-[CLEAR LIST](clear-list.md)  
-[Is a list](is-a-list.md)  
-[SAVE LIST](save-list.md)  
+[CLEAR LIST](clear-list)  
+[Is a list](is-a-list)  
+[SAVE LIST](save-list)  
 
 ## Propriedades
 

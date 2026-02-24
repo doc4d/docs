@@ -58,12 +58,12 @@ Vous souhaitez que plus aucun objet du formulaire n'ait le focus :
 
 ## Exemple 3 
 
-Reportez-vous à l'exemple de la commande [REJECT](reject.md).
+Reportez-vous à l'exemple de la commande [REJECT](reject).
 
 ## Voir aussi 
 
-[CALL SUBFORM CONTAINER](call-subform-container.md)  
-[REJECT](reject.md)  
+[CALL SUBFORM CONTAINER](call-subform-container)  
+[REJECT](reject)  
 
 ## Propriétés
 

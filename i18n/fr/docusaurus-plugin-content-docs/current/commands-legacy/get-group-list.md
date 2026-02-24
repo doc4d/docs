@@ -41,9 +41,9 @@ Si vous n'avez pas les privilèges d'accès pour appeler la commande **GET GROUP
 
 ## Voir aussi 
 
-[GET GROUP PROPERTIES](get-group-properties.md)  
-[GET USER LIST](get-user-list.md)  
-[Set group properties](set-group-properties.md)  
+[GET GROUP PROPERTIES](get-group-properties)  
+[GET USER LIST](get-user-list)  
+[Set group properties](set-group-properties)  
 
 ## Propriétés
 

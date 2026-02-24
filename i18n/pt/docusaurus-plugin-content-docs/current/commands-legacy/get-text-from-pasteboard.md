@@ -42,9 +42,9 @@ Se o texto for extraído corretamente, OK toma o valor 1; do contrário OK toma 
 
 ## Ver também 
 
-[GET PASTEBOARD DATA](get-pasteboard-data.md)  
-[GET PICTURE FROM PASTEBOARD](get-picture-from-pasteboard.md)  
-[Pasteboard data size](pasteboard-data-size.md)  
+[GET PASTEBOARD DATA](get-pasteboard-data)  
+[GET PICTURE FROM PASTEBOARD](get-picture-from-pasteboard)  
+[Pasteboard data size](pasteboard-data-size)  
 
 ## Propriedades
 

@@ -52,9 +52,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Get plugin access](get-plugin-access.md)  
-[PLUGIN LIST](plugin-list.md)  
-[SET GROUP ACCESS](set-group-access.md)  
+[Get plugin access](get-plugin-access)  
+[PLUGIN LIST](plugin-list)  
+[SET GROUP ACCESS](set-group-access)  
 
 ## プロパティ
 

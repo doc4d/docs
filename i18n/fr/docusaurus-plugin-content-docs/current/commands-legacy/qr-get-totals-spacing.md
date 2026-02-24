@@ -46,7 +46,7 @@ Si le paramètre *sousTotal* est incorrect, l’erreur -9852 est générée.
 
 ## Voir aussi 
 
-[QR SET TOTALS SPACING](qr-set-totals-spacing.md)  
+[QR SET TOTALS SPACING](qr-set-totals-spacing)  
 
 ## Propriétés
 

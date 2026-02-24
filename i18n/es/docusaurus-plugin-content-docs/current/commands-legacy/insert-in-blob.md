@@ -42,7 +42,7 @@ Antes de llamar el comando, pase en la variable del parámetro *offset* la posic
 
 ## Ver también 
 
-[DELETE FROM BLOB](delete-from-blob.md)  
+[DELETE FROM BLOB](delete-from-blob)  
 
 ## Propiedades
 

@@ -89,8 +89,8 @@ You want to find out the current configuration of the "Automatic" style sheet:
 
 ## See also 
 
-[LIST OF STYLE SHEETS](list-of-style-sheets.md)  
-[OBJECT SET STYLE SHEET](object-set-style-sheet.md)  
+[LIST OF STYLE SHEETS](list-of-style-sheets)  
+[OBJECT SET STYLE SHEET](object-set-style-sheet)  
 
 ## Properties
 

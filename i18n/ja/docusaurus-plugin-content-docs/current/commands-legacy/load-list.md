@@ -58,9 +58,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[CLEAR LIST](clear-list.md)  
-[Is a list](is-a-list.md)  
-[SAVE LIST](save-list.md)  
+[CLEAR LIST](clear-list)  
+[Is a list](is-a-list)  
+[SAVE LIST](save-list)  
 
 ## プロパティ
 

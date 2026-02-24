@@ -70,7 +70,7 @@ A função JavaScript "getCustomerInfo" recebe um número ID como parâmetro e d
 
 ## Ver também 
 
-[WA Evaluate JavaScript](wa-evaluate-javascript.md)  
+[WA Evaluate JavaScript](wa-evaluate-javascript)  
 
 ## Propriedades
 

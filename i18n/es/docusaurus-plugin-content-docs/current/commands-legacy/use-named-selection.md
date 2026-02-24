@@ -28,9 +28,9 @@ Recuerde que una selección temporal es una representación de una selección de
 
 ## Ver también 
 
-[CLEAR NAMED SELECTION](clear-named-selection.md)  
-[COPY NAMED SELECTION](copy-named-selection.md)  
-[CUT NAMED SELECTION](cut-named-selection.md)  
+[CLEAR NAMED SELECTION](clear-named-selection)  
+[COPY NAMED SELECTION](copy-named-selection)  
+[CUT NAMED SELECTION](cut-named-selection)  
 
 ## Propiedades
 

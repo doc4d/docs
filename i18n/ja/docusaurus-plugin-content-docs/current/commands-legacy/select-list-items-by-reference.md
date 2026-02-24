@@ -60,9 +60,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[EDIT ITEM](edit-item.md)  
-[SELECT LIST ITEMS BY POSITION](select-list-items-by-position.md)  
-[Selected list items](selected-list-items.md)  
+[EDIT ITEM](edit-item)  
+[SELECT LIST ITEMS BY POSITION](select-list-items-by-position)  
+[Selected list items](selected-list-items)  
 
 ## プロパティ
 

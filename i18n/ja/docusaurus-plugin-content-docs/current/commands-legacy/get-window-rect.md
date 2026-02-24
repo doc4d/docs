@@ -46,8 +46,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[CONVERT COORDINATES](convert-coordinates.md)  
-[SET WINDOW RECT](set-window-rect.md)  
+[CONVERT COORDINATES](convert-coordinates)  
+[SET WINDOW RECT](set-window-rect)  
 
 ## プロパティ
 

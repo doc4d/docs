@@ -44,7 +44,7 @@ Si *cheminAlias* désigne bien un alias/raccourci, la variable système OK prend
 
 ## Voir aussi 
 
-[CREATE ALIAS](create-alias.md)  
+[CREATE ALIAS](create-alias)  
 
 ## Propriétés
 

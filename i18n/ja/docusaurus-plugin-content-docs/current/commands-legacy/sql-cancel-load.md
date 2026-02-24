@@ -61,8 +61,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SQL LOAD RECORD](sql-load-record.md)  
-[SQL LOGIN](sql-login.md)  
+[SQL LOAD RECORD](sql-load-record)  
+[SQL LOGIN](sql-login)  
 
 ## プロパティ
 

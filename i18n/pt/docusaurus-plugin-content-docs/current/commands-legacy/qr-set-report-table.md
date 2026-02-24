@@ -38,7 +38,7 @@ Se o parâmetro *tabela* for incorreto, se gera o erro -9852.
 
 ## Ver também 
 
-[QR Get report table](qr-get-report-table.md)  
+[QR Get report table](qr-get-report-table)  
 
 ## Propriedades
 

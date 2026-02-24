@@ -30,9 +30,9 @@ displayed_sidebar: docs
 
 <!--REF #_command_.RESTART 4D.Summary-->The **RESTART 4D** command restarts the current 4D application.<!-- END REF--> 
 
-This command is mainly intended for use in the context of a merged application (client/server or single-user) and in conjunction with the [SET UPDATE FOLDER](set-update-folder.md) command. In this case, the automatic update process is launched: the new version of the application designated by [SET UPDATE FOLDER](set-update-folder.md) automatically replaces the current version at the time of the restart resulting from **RESTART 4D**. The pathname of the data file is saved and used automatically. 
+This command is mainly intended for use in the context of a merged application (client/server or single-user) and in conjunction with the [SET UPDATE FOLDER](set-update-folder) command. In this case, the automatic update process is launched: the new version of the application designated by [SET UPDATE FOLDER](set-update-folder) automatically replaces the current version at the time of the restart resulting from **RESTART 4D**. The pathname of the data file is saved and used automatically. 
 
-If no update information was specified using the [SET UPDATE FOLDER](set-update-folder.md) command in the current session, the command simply restarts the 4D application with the current structure and data files. 
+If no update information was specified using the [SET UPDATE FOLDER](set-update-folder) command in the current session, the command simply restarts the 4D application with the current structure and data files. 
 
 You can use the *time* parameter to defer restarting the application in order to give client machines time to disconnect. You must pass a value in seconds for the *time*. If you omit this parameter, the server application waits, for a maximum of 10 minutes, for all the client applications to be disconnected. After that, all client applications are automatically disconnected. 
 
@@ -44,8 +44,8 @@ If the command is executed correctly, the OK system variable is set to 1; otherw
 
 ## See also 
 
-[Last update log path](last-update-log-path.md)  
-[SET UPDATE FOLDER](set-update-folder.md)  
+[Last update log path](last-update-log-path)  
+[SET UPDATE FOLDER](set-update-folder)  
 
 ## Properties
 

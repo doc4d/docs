@@ -47,7 +47,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT Get enabled](object-get-enabled.md)  
+[OBJECT Get enabled](object-get-enabled)  
 
 ## プロパティ
 

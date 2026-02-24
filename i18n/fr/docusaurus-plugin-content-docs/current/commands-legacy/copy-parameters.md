@@ -91,7 +91,7 @@ Puisque la commande retourne une collection, elle peut être utilisée avec **.j
 
 ## Voir aussi 
 
-[Count parameters](count-parameters.md)  
+[Count parameters](count-parameters)  
 
 ## Propriétés
 

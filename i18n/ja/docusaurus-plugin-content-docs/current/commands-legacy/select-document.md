@@ -110,8 +110,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Open document](open-document.md)  
-[Select folder](select-folder.md)  
+[Open document](open-document)  
+[Select folder](select-folder)  
 
 ## プロパティ
 

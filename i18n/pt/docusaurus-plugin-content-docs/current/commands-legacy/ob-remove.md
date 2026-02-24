@@ -49,7 +49,7 @@ Você quer eliminar a propriedade "idade" de um objeto:
 
 ## Ver também 
 
-[OB SET](ob-set.md)  
+[OB SET](ob-set)  
 
 ## Propriedades
 

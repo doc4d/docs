@@ -43,8 +43,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SQL CANCEL LOAD](sql-cancel-load.md)  
-[SQL EXECUTE](sql-execute.md)  
+[SQL CANCEL LOAD](sql-cancel-load)  
+[SQL EXECUTE](sql-execute)  
 
 ## プロパティ
 

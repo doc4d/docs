@@ -49,9 +49,9 @@ El siguiente ejemplo permite verificar si hay otras facturas vencidas en la tabl
 
 ## Ver también 
 
-[CLEAR NAMED SELECTION](clear-named-selection.md)  
-[CUT NAMED SELECTION](cut-named-selection.md)  
-[USE NAMED SELECTION](use-named-selection.md)  
+[CLEAR NAMED SELECTION](clear-named-selection)  
+[CUT NAMED SELECTION](cut-named-selection)  
+[USE NAMED SELECTION](use-named-selection)  
 
 ## Propiedades
 

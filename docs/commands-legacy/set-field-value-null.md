@@ -38,8 +38,8 @@ The NULL value is used by the SQL kernel of 4D. For more information, please ref
 
 ## See also 
 
-[Is field value Null](is-field-value-null.md)  
-[Null](null.md)  
+[Is field value Null](is-field-value-null)  
+[Null](null)  
 
 ## Properties
 

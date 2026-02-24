@@ -33,16 +33,16 @@ Macintosh command down retorna TRUE se a tecla Comando Macintosh estiver pressio
 
 ## Exemplo 
 
-Ver exemplo do comando [Shift down](shift-down.md).
+Ver exemplo do comando [Shift down](shift-down).
 
 ## Ver também 
 
-[Caps lock down](caps-lock-down.md)  
-[Macintosh control down](macintosh-control-down.md)  
-[Macintosh option down](macintosh-option-down.md)  
-[Shift down](shift-down.md)  
-[Windows Alt down](windows-alt-down.md)  
-[Windows Ctrl down](windows-ctrl-down.md)  
+[Caps lock down](caps-lock-down)  
+[Macintosh control down](macintosh-control-down)  
+[Macintosh option down](macintosh-option-down)  
+[Shift down](shift-down)  
+[Windows Alt down](windows-alt-down)  
+[Windows Ctrl down](windows-ctrl-down)  
 
 ## Propriedades
 

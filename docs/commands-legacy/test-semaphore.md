@@ -30,7 +30,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Test semaphore.Summary-->The **Test semaphore** command tests for the existence of a semaphore.<!-- END REF-->
 
-The difference between the [Semaphore](semaphore.md) function and the **Test semaphore** function is that **Test semaphore** doesn’t create the *semaphore* if it doesn’t exist. If the *semaphore* exists, the function returns **True**. Otherwise, it returns **False**. 
+The difference between the [Semaphore](semaphore) function and the **Test semaphore** function is that **Test semaphore** doesn’t create the *semaphore* if it doesn’t exist. If the *semaphore* exists, the function returns **True**. Otherwise, it returns **False**. 
 
 ## Example 
 
@@ -52,8 +52,8 @@ The following example allows you to know the state of a process (in our case, wh
 
 ## See also 
 
-[CLEAR SEMAPHORE](clear-semaphore.md)  
-[Semaphore](semaphore.md)  
+[CLEAR SEMAPHORE](clear-semaphore)  
+[Semaphore](semaphore)  
 
 ## Properties
 

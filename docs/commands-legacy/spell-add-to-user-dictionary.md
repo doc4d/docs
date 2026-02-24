@@ -47,7 +47,7 @@ Adding proper nouns to the user dictionary:
 
 ## See also 
 
-[SPELL CHECK TEXT](spell-check-text.md)  
+[SPELL CHECK TEXT](spell-check-text)  
 
 ## Properties
 

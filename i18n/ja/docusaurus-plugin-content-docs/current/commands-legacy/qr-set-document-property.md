@@ -45,7 +45,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR Get document property](qr-get-document-property.md)  
+[QR Get document property](qr-get-document-property)  
 
 ## プロパティ
 

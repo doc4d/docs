@@ -76,7 +76,7 @@ displayed_sidebar: docs
 ## 参照 
 
   
-[DISTINCT ATTRIBUTE VALUES](distinct-attribute-values.md)  
+[DISTINCT ATTRIBUTE VALUES](distinct-attribute-values)  
 
 ## プロパティ
 

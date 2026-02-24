@@ -39,8 +39,8 @@ In *minValue*, pass the new minimum value you want to assign to the object for t
 
 ## See also 
 
-[OBJECT GET MINIMUM VALUE](object-get-minimum-value.md)  
-[OBJECT SET MAXIMUM VALUE](object-set-maximum-value.md)  
+[OBJECT GET MINIMUM VALUE](object-get-minimum-value)  
+[OBJECT SET MAXIMUM VALUE](object-set-maximum-value)  
 
 ## Properties
 

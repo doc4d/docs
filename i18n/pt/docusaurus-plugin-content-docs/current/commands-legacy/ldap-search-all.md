@@ -126,7 +126,7 @@ Estes exemplos ilustram o uso do parâmetro *atributosEmArray*:
 ## Ver também 
 
 *LDAP*  
-[LDAP Search](ldap-search.md)  
+[LDAP Search](ldap-search)  
 
 ## Propriedades
 

@@ -54,9 +54,9 @@ Note que el *Depurador* 4D evaluará el código SQL línea por línea. En alguno
 
 ## Ver también 
 
-[End SQL](end-sql.md)  
-[SQL Get current data source](sql-get-current-data-source.md)  
-[SQL LOGIN](sql-login.md)  
+[End SQL](end-sql)  
+[SQL Get current data source](sql-get-current-data-source)  
+[SQL LOGIN](sql-login)  
 
 ## Propiedades
 

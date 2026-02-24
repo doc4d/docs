@@ -45,7 +45,7 @@ Cette commande peut être appliquée aux types d'objets suivants :
 
 ## Voir aussi 
 
-[OBJECT SET ENABLED](object-set-enabled.md)  
+[OBJECT SET ENABLED](object-set-enabled)  
 
 ## Propriétés
 

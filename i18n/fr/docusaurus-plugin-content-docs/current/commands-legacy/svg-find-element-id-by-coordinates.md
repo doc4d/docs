@@ -63,7 +63,7 @@ Si *objetImage* ne contient pas une image SVG valide, la commande retourne une c
 
 ## Voir aussi 
 
-[SVG Find element IDs by rect](svg-find-element-ids-by-rect.md)  
+[SVG Find element IDs by rect](svg-find-element-ids-by-rect)  
 
 ## Propriétés
 

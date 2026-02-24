@@ -59,8 +59,8 @@ When the form is submitted to the Web server, the $requestText variable receives
 
 ## See also 
 
-[WEB GET BODY PART](web-get-body-part.md)  
-[WEB GET HTTP HEADER](web-get-http-header.md)  
+[WEB GET BODY PART](web-get-body-part)  
+[WEB GET HTTP HEADER](web-get-http-header)  
 
 ## Properties
 

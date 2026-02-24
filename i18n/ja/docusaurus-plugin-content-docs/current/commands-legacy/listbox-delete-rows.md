@@ -48,8 +48,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX Get number of rows](listbox-get-number-of-rows.md)  
-[LISTBOX INSERT ROWS](listbox-insert-rows.md)  
+[LISTBOX Get number of rows](listbox-get-number-of-rows)  
+[LISTBOX INSERT ROWS](listbox-insert-rows)  
 
 ## プロパティ
 

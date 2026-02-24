@@ -33,9 +33,9 @@ La ventana del formulario actual puede ser generada automáticamente por un coma
 
 ## Ver también 
 
-[Open form window](../commands/open-form-window.md)  
-[Open window](../commands/open-window.md)  
-[RESIZE FORM WINDOW](resize-form-window.md)  
+[Open form window](../commands/open-form-window)  
+[Open window](../commands/open-window)  
+[RESIZE FORM WINDOW](resize-form-window)  
 
 ## Propiedades
 

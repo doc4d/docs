@@ -48,8 +48,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET PRINTABLE MARGIN](get-printable-margin.md)  
-[Print form](../commands/print-form.md)  
+[GET PRINTABLE MARGIN](get-printable-margin)  
+[Print form](../commands/print-form)  
 
 ## プロパティ
 

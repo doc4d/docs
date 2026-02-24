@@ -39,7 +39,7 @@ Les pointeurs JSON sont particulièrement utiles pour :
 
 Passez dans le paramètre *objet* un objet contenant des pointeurs JSON à résoudre (pour une description de la syntaxe des pointeurs JSON, veuillez vous reporter au paragraphe *Defining JSON Pointers* ci-dessous). 
 
-**Note :** L'*objet* source sera mis à jour avec le résultat de la résolution des pointeurs après l'exécution de la commande (sauf si le résultat n'est pas un objet, voir ci-dessous). Si vous souhaitez conserver une version originale de *objet*, il sera nécessaire d'appeler la commande [OB Copy](ob-copy.md) au préalable. 
+**Note :** L'*objet* source sera mis à jour avec le résultat de la résolution des pointeurs après l'exécution de la commande (sauf si le résultat n'est pas un objet, voir ci-dessous). Si vous souhaitez conserver une version originale de *objet*, il sera nécessaire d'appeler la commande [OB Copy](ob-copy) au préalable. 
 
 Optionnellement, vous pouvez passer dans *options* un objet contenant des propriétés spécifiques à utiliser lors de la résolution des pointeurs. Les propriétés suivantes sont prises en charge :
 

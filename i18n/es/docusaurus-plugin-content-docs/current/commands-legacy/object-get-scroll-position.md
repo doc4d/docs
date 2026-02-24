@@ -42,7 +42,7 @@ Si *objeto* designa una imagen (variable o campo), *posicionLinea* devuelve el d
 
 ## Ver también 
 
-[OBJECT SET SCROLL POSITION ](object-set-scroll-position.md)  
+[OBJECT SET SCROLL POSITION ](object-set-scroll-position)  
 
 ## Propiedades
 

@@ -40,9 +40,9 @@ Dependiendo del ancla puede pasar valores positivos o negativos en *offset*.
 
 ## Ver también 
 
-[Get document position](get-document-position.md)  
-[RECEIVE PACKET](receive-packet.md)  
-[SEND PACKET](send-packet.md)  
+[Get document position](get-document-position)  
+[RECEIVE PACKET](receive-packet)  
+[SEND PACKET](send-packet)  
 
 ## Propiedades
 

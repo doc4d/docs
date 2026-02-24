@@ -49,8 +49,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Count list items](count-list-items.md)  
-[SELECT LIST ITEMS BY REFERENCE](select-list-items-by-reference.md)  
+[Count list items](count-list-items)  
+[SELECT LIST ITEMS BY REFERENCE](select-list-items-by-reference)  
 
 ## プロパティ
 

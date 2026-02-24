@@ -42,7 +42,7 @@ In *hColor* and *vColor*, the command returns the values of the RGB colors. The 
 
 ## See also 
 
-[LISTBOX SET GRID COLOR](listbox-set-grid-color.md)  
+[LISTBOX SET GRID COLOR](listbox-set-grid-color)  
 
 ## Properties
 

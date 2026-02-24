@@ -73,7 +73,7 @@ Ver o exemplo do comando [FILTER KEYSTROKE](filter-keystroke.md "FILTER KEYSTROK
 
 ## Ver também 
 
-[GET HIGHLIGHT](get-highlight.md)  
+[GET HIGHLIGHT](get-highlight)  
 
 ## Propriedades
 

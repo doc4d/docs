@@ -39,7 +39,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT Get context menu](object-get-context-menu.md)  
+[OBJECT Get context menu](object-get-context-menu)  
 
 ## プロパティ
 

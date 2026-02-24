@@ -44,8 +44,8 @@ Web サービスのサーバーにおいて新規リクエストを全て拒否�
 
 ## 参照 
 
-[REJECT NEW REMOTE CONNECTIONS](reject-new-remote-connections.md)  
-[WEB Get server info](web-get-server-info.md)  
+[REJECT NEW REMOTE CONNECTIONS](reject-new-remote-connections)  
+[WEB Get server info](web-get-server-info)  
 
 ## プロパティ
 

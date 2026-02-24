@@ -23,13 +23,13 @@ Notez que le délai défini représente la durée totale permise pour que la com
 
 Les commandes de communication série affectées par ce paramétrage sont les suivantes :
 
-* [RECEIVE PACKET](receive-packet.md)
-* [RECEIVE RECORD](receive-record.md)
-* [RECEIVE VARIABLE](receive-variable.md)
+* [RECEIVE PACKET](receive-packet)
+* [RECEIVE RECORD](receive-record)
+* [RECEIVE VARIABLE](receive-variable)
 
 ## Exemple 
 
-L'exemple suivant fixe le port série devant recevoir des données et le timeout. Les données sont lues à l'aide de [RECEIVE PACKET](receive-packet.md). Si les données ne sont pas bien reçues dans le temps défini, une erreur survient :
+L'exemple suivant fixe le port série devant recevoir des données et le timeout. Les données sont lues à l'aide de [RECEIVE PACKET](receive-packet). Si les données ne sont pas bien reçues dans le temps défini, une erreur survient :
 
 ```4d
   // Ouverture du port série
@@ -47,10 +47,10 @@ L'exemple suivant fixe le port série devant recevoir des données et le timeout
 ## Voir aussi 
 
 [ON ERR CALL](on-err-call.md)  
-[RECEIVE BUFFER](receive-buffer.md)  
-[RECEIVE PACKET](receive-packet.md)  
-[RECEIVE RECORD](receive-record.md)  
-[RECEIVE VARIABLE](receive-variable.md)  
+[RECEIVE BUFFER](receive-buffer)  
+[RECEIVE PACKET](receive-packet)  
+[RECEIVE RECORD](receive-record)  
+[RECEIVE VARIABLE](receive-variable)  
 
 ## Propriétés
 

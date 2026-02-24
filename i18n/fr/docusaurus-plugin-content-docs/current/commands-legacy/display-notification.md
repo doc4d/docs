@@ -52,7 +52,7 @@ Sous Windows, la fenêtre du message reste affichée tant qu'aucune activité n'
 
 ## Voir aussi 
 
-[ALERT](alert.md)  
+[ALERT](alert)  
 
 ## Propriétés
 

@@ -73,8 +73,8 @@ You want to save an existing file in the picture field, stored outside of the da
 
 ## See also 
 
-[Get external data path](get-external-data-path.md)  
-[RELOAD EXTERNAL DATA](reload-external-data.md)  
+[Get external data path](get-external-data-path)  
+[RELOAD EXTERNAL DATA](reload-external-data)  
 
 ## Properties
 

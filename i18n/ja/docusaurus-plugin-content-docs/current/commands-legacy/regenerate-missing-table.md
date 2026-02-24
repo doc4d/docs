@@ -70,7 +70,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET MISSING TABLE NAMES](get-missing-table-names.md)  
+[GET MISSING TABLE NAMES](get-missing-table-names)  
 
 ## プロパティ
 

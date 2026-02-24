@@ -29,9 +29,9 @@ Siempre y cuando se haya definido una tabla por defecto, la siguiente línea de 
 
 ## Ver también 
 
-[DEFAULT TABLE](default-table.md)  
-[Table](table.md)  
-[Table name](table-name.md)  
+[DEFAULT TABLE](default-table)  
+[Table](table)  
+[Table name](table-name)  
 
 ## Propiedades
 

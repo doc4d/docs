@@ -37,9 +37,9 @@ Sous Mac OS, c'est la taille de la data fork du document qui est modifiée.
 
 ## Voir aussi 
 
-[Get document position](get-document-position.md)  
-[Get document size](get-document-size.md)  
-[SET DOCUMENT POSITION](set-document-position.md)  
+[Get document position](get-document-position)  
+[Get document size](get-document-size)  
+[SET DOCUMENT POSITION](set-document-position)  
 
 ## Propriétés
 

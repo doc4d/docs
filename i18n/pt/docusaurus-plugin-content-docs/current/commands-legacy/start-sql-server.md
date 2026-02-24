@@ -36,7 +36,7 @@ Se o servidor SQL tiver sido lançado corretamente, a variável Sistema OK assum
 
 ## Ver também 
 
-[STOP SQL SERVER](stop-sql-server.md)  
+[STOP SQL SERVER](stop-sql-server)  
 
 ## Propriedades
 

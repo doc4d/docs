@@ -59,8 +59,8 @@ Lorsque le formulaire est soumis au serveur Web, la variable $texteRequete reço
 
 ## Voir aussi 
 
-[WEB GET BODY PART](web-get-body-part.md)  
-[WEB GET HTTP HEADER](web-get-http-header.md)  
+[WEB GET BODY PART](web-get-body-part)  
+[WEB GET HTTP HEADER](web-get-http-header)  
 
 ## Propriétés
 

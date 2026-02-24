@@ -38,7 +38,7 @@ Pour chaque association *varDestination;exprSource*, le type de l'expression doi
 Lorsque le process courant écrit les variables du process de destination, ce dernier n'est averti en aucune manière de l'écriture de l'instance de ses variables par un autre process. 
 
 **4D Server :** A partir d'un 4D Client, vous pouvez écrire des variables dans un process de destination exécuté sur le poste serveur (procédure stockée). Pour cela, passez dans process le numéro du process serveur en négatif, c'est-à-dire précédé du signe - (moins).   
-Attention, la communication process “intermachine” permise par les commandes **SET PROCESS VARIABLE**, [GET PROCESS VARIABLE](get-process-variable.md) et [VARIABLE TO VARIABLE](variable-to-variable.md) n’est possible que du client vers le serveur. C’est toujours un process client qui lit ou écrit les variables d’une procédure stockée.
+Attention, la communication process “intermachine” permise par les commandes **SET PROCESS VARIABLE**, [GET PROCESS VARIABLE](get-process-variable) et [VARIABLE TO VARIABLE](variable-to-variable) n’est possible que du client vers le serveur. C’est toujours un process client qui lit ou écrit les variables d’une procédure stockée.
 
 **Astuce :** Si vous ne connaissez pas le numéro du process serveur de destination, vous pouvez tout de même écrire dans les variables interprocess du serveur. Pour cela, il vous suffit de passer toute valeur négative dans *process*. En d'autres termes, il n'est pas nécessaire de connaître précisément le numéro d'un process exécuté sur le serveur pour utiliser **SET PROCESS VARIABLE** avec des variables interprocess du serveur.   
 Cette possibilité s'avère particulièrement utile dans le cas d'une procédure stockée lancée sur le serveur par l'intermédiaire de la [On Server Startup database method](on-server-startup-database-method.md). Comme les postes clients ne connaissent pas automatiquement le numéro de ce process serveur, il vous suffit de passer une valeur négative (n'importe laquelle) dans le paramètre *process*.
@@ -50,7 +50,7 @@ Cette possibilité s'avère particulièrement utile dans le cas d'une procédure
 **SET PROCESS VARIABLE** accepte tout type de variable process ou interprocess de destination, à l'exception :
 
 * des variables de type Pointeur.
-* des tableaux de tous types. Pour écrire un tableau entier d'un process vers un autre, utilisez la commande [VARIABLE TO VARIABLE](variable-to-variable.md). Notez cependant que **SET PROCESS VARIABLE** vous permet d'écrire des éléments de tableaux.
+* des tableaux de tous types. Pour écrire un tableau entier d'un process vers un autre, utilisez la commande [VARIABLE TO VARIABLE](variable-to-variable). Notez cependant que **SET PROCESS VARIABLE** vous permet d'écrire des éléments de tableaux.
 * des éléments de tableaux de pointeurs et des éléments de tableaux à deux dimensions.
 
 Le process de destination doit être un process utilisateur, ce ne peut être un des process du moteur de 4D. Si le process de destination n'existe pas, la commande ne fait rien.
@@ -105,10 +105,10 @@ L'exemple suivant écrit l'instance des variables *v1*, *v2*, *v3* dans le proce
 
 ## Voir aussi 
 
-[GET PROCESS VARIABLE](get-process-variable.md)  
+[GET PROCESS VARIABLE](get-process-variable)  
 *Introduction aux process*  
-[POST OUTSIDE CALL](post-outside-call.md)  
-[VARIABLE TO VARIABLE](variable-to-variable.md)  
+[POST OUTSIDE CALL](post-outside-call)  
+[VARIABLE TO VARIABLE](variable-to-variable)  
 
 ## Propriétés
 

@@ -75,7 +75,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[ARRAY TO COLLECTION](array-to-collection.md)  
+[ARRAY TO COLLECTION](array-to-collection)  
 *コレクションと4D配列間での型の変換*  
 
 ## プロパティ

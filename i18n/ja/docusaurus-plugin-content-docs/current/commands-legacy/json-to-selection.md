@@ -79,7 +79,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Selection to JSON](selection-to-json.md)  
+[Selection to JSON](selection-to-json)  
 
 ## プロパティ
 

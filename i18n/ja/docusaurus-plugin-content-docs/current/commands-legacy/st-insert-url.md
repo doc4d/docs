@@ -73,8 +73,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[ST GET URL](st-get-url.md)  
-[ST INSERT EXPRESSION](st-insert-expression.md)  
+[ST GET URL](st-get-url)  
+[ST INSERT EXPRESSION](st-insert-expression)  
 
 ## プロパティ
 

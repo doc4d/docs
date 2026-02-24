@@ -42,13 +42,13 @@ Si vous avez passé Vrai dans le premier paramètre, vous pouvez passer dans les
 
 ## Exemple 
 
-Reportez-vous à l'exemple de la commande [FORM SET SIZE](form-set-size.md). 
+Reportez-vous à l'exemple de la commande [FORM SET SIZE](form-set-size). 
 
 ## Voir aussi 
 
-[FORM GET HORIZONTAL RESIZING](form-get-horizontal-resizing.md)  
-[FORM SET SIZE](form-set-size.md)  
-[FORM SET VERTICAL RESIZING](form-set-vertical-resizing.md)  
+[FORM GET HORIZONTAL RESIZING](form-get-horizontal-resizing)  
+[FORM SET SIZE](form-set-size)  
+[FORM SET VERTICAL RESIZING](form-set-vertical-resizing)  
 
 ## Propriétés
 

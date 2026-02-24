@@ -31,7 +31,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Int](int.md)  
+[Int](int)  
 
 ## プロパティ
 

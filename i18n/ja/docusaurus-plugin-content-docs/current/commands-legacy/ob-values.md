@@ -54,8 +54,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OB Entries](ob-entries.md)  
-[OB Keys](ob-keys.md)  
+[OB Entries](ob-entries)  
+[OB Keys](ob-keys)  
 
 ## プロパティ
 

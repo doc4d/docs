@@ -49,8 +49,8 @@ El siguiente ejemplo busca los clientes que son atendidos por dos representantes
 
 ## Ver también 
 
-[DIFFERENCE](difference.md)  
-[UNION](union.md)  
+[DIFFERENCE](difference)  
+[UNION](union)  
 
 ## Propiedades
 

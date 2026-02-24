@@ -35,7 +35,7 @@ En el contexto de los list boxes en modo selección, la instrucción REDRAW apli
 
 ## Ver también 
 
-[SET TIMER](set-timer.md)  
+[SET TIMER](set-timer)  
 
 ## Propiedades
 

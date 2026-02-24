@@ -113,8 +113,8 @@ The following is the pop-up menu as it appears on Windows (left) and Macintosh (
 
 ## See also 
 
-[Dynamic pop up menu](dynamic-pop-up-menu.md)  
-[MOUSE POSITION](mouse-position.md)  
+[Dynamic pop up menu](dynamic-pop-up-menu)  
+[MOUSE POSITION](mouse-position)  
 
 ## Properties
 

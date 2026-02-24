@@ -68,9 +68,9 @@ Os objetos de formulário aos quais se pode aplicar alinhamento são os seguinte
 
 ## Ver também 
 
-[OBJECT Get vertical alignment](object-get-vertical-alignment.md)  
-[OBJECT SET HORIZONTAL ALIGNMENT](object-set-horizontal-alignment.md)  
-[OBJECT SET VERTICAL ALIGNMENT](object-set-vertical-alignment.md)  
+[OBJECT Get vertical alignment](object-get-vertical-alignment)  
+[OBJECT SET HORIZONTAL ALIGNMENT](object-set-horizontal-alignment)  
+[OBJECT SET VERTICAL ALIGNMENT](object-set-vertical-alignment)  
 
 ## Propriedades
 

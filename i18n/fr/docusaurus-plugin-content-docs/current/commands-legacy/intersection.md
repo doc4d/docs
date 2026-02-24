@@ -49,8 +49,8 @@ L'exemple suivant recherche les clients en contact avec deux représentants, Jea
 
 ## Voir aussi 
 
-[DIFFERENCE](difference.md)  
-[UNION](union.md)  
+[DIFFERENCE](difference)  
+[UNION](union)  
 
 ## Propriétés
 

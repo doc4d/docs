@@ -60,8 +60,8 @@ La méthode projet suivante place en "mosaïque" toutes les fenêtres ouvertes (
 
 ## Voir aussi 
 
-[Window kind](window-kind.md)  
-[Window process](window-process.md)  
+[Window kind](window-kind)  
+[Window process](window-process)  
 
 ## Propriétés
 

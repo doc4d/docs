@@ -29,11 +29,11 @@ El siguiente ejemplo designa el último registro de la tabla \[Personas\] como r
 
 ## Ver también 
 
-[Before selection](before-selection.md)  
-[End selection](end-selection.md)  
-[FIRST RECORD](first-record.md)  
-[NEXT RECORD](next-record.md)  
-[PREVIOUS RECORD](previous-record.md)  
+[Before selection](before-selection)  
+[End selection](end-selection)  
+[FIRST RECORD](first-record)  
+[NEXT RECORD](next-record)  
+[PREVIOUS RECORD](previous-record)  
 
 ## Propiedades
 

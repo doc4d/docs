@@ -49,8 +49,8 @@ El parámetro *fechaVenc* recibe la fecha de vencimiento y el parámetro *horaVe
 ## Ver también 
 
 *Gestión de las sesiones web (heredado)*  
-[WEB Get current session ID](web-get-current-session-id.md)  
-[WEB SET OPTION](web-set-option.md)  
+[WEB Get current session ID](web-get-current-session-id)  
+[WEB SET OPTION](web-set-option)  
 
 ## Propiedades
 

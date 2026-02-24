@@ -43,8 +43,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR DELETE COLUMN](qr-delete-column.md)  
-[QR INSERT COLUMN](qr-insert-column.md)  
+[QR DELETE COLUMN](qr-delete-column)  
+[QR INSERT COLUMN](qr-insert-column)  
 
 ## プロパティ
 

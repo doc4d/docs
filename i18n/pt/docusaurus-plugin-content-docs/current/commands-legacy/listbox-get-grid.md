@@ -38,7 +38,7 @@ O comando devolve nos parâmetros *horizontal* e *vertical*, o valor **True** ou
 
 ## Ver também 
 
-[LISTBOX SET GRID](listbox-set-grid.md)  
+[LISTBOX SET GRID](listbox-set-grid)  
 
 ## Propriedades
 

@@ -50,9 +50,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET FIELD PROPERTIES](get-field-properties.md)  
-[GET RELATION PROPERTIES](get-relation-properties.md)  
-[GET TABLE PROPERTIES](get-table-properties.md)  
+[GET FIELD PROPERTIES](get-field-properties)  
+[GET RELATION PROPERTIES](get-relation-properties)  
+[GET TABLE PROPERTIES](get-table-properties)  
 
 ## プロパティ
 

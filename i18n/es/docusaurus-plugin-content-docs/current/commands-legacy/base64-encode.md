@@ -48,10 +48,10 @@ Por defecto, si se omite el parámetro *\**, el comando utiliza una codificació
 
 ## Ver también 
 
-[BASE64 DECODE](base64-decode.md)  
-[Generate digest](generate-digest.md)  
+[BASE64 DECODE](base64-decode)  
+[Generate digest](generate-digest)  
 *Presentación de los comandos XML DOM*  
-[XML DECODE](xml-decode.md)  
+[XML DECODE](xml-decode)  
 
 ## Propiedades
 

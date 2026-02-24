@@ -23,8 +23,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Count tasks](count-tasks.md)  
-[Count user processes](count-user-processes.md)  
+[Count tasks](count-tasks)  
+[Count user processes](count-user-processes)  
 
 ## プロパティ
 

@@ -34,8 +34,8 @@ A descrição da rota da última pesquisa pode ser comparada com a descrição d
 
 ## Ver também 
 
-[DESCRIBE QUERY EXECUTION](describe-query-execution.md)  
-[Last query plan](last-query-plan.md)  
+[DESCRIBE QUERY EXECUTION](describe-query-execution)  
+[Last query plan](last-query-plan)  
 
 ## Propriedades
 

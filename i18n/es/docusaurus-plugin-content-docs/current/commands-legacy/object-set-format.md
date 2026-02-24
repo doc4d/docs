@@ -54,7 +54,7 @@ Para dar formato a campos booleanos:
 
 Para dar formato a los campos o variables de tipo Fecha u Hora, puede utilizar:
 
-* o bien un **formato predefinido** disponible a través de constantes del tema *Formatos de salida de fechas* o *Formatos de salida de hora* (valor longint). En este caso, debe pasar [Char](char.md)(n) en *displayFormat*, donde *n* es la constante:  
+* o bien un **formato predefinido** disponible a través de constantes del tema *Formatos de salida de fechas* o *Formatos de salida de hora* (valor longint). En este caso, debe pasar [Char](char)(n) en *displayFormat*, donde *n* es la constante:  
     
 Fechas:  
 
@@ -88,7 +88,7 @@ Horas:
 | System time long             | 11    | 1:02:03 AM HNEC (Mac únicamente)                                                                                                                                                                                                    |  
 | System time long abbreviated | 10    | 1•02•03 AM (Mac únicamente)                                                                                                                                                                                                         |  
 | System time short            | 9     |                                                                                                                                                                                                                                     |
-* o un [formato personalizado basado en un modelo](../Project/date-time-formats.md) (valor string). Por ejemplo:  
+* o un [formato personalizado basado en un modelo](../Project/date-time-formats) (valor string). Por ejemplo:  
     
 ```4d  
  OBJECT SET FORMAT(*;"myDate";"dd/MM/yyyy")  
@@ -298,7 +298,7 @@ La siguiente línea de código da formato al campo *\[Empleados\]Fecha Contratad
 
 ## Ejemplo 2 
 
-Este ejemplo formatea una variable fecha y una variable hora utilizando [formatos personalizados](../Project/date-time-formats.md): 
+Este ejemplo formatea una variable fecha y una variable hora utilizando [formatos personalizados](../Project/date-time-formats): 
 
 ```4d
  OBJECT SET FORMAT(*;"mydate";"(yyyy) MMM dd") // (2023) Dec 12
@@ -373,9 +373,9 @@ Pase un termómetro a modo "Barber shop"
 ## Ver también 
 
   
-[GET SYSTEM FORMAT](get-system-format.md)  
-[OBJECT Get format](object-get-format.md)  
-[OBJECT SET FILTER](object-set-filter.md)  
+[GET SYSTEM FORMAT](get-system-format)  
+[OBJECT Get format](object-get-format)  
+[OBJECT SET FILTER](object-set-filter)  
 
 ## Propiedades
 

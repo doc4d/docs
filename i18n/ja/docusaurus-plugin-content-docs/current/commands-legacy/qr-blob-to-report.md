@@ -54,7 +54,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR REPORT TO BLOB](qr-report-to-blob.md)  
+[QR REPORT TO BLOB](qr-report-to-blob)  
 
 ## プロパティ
 

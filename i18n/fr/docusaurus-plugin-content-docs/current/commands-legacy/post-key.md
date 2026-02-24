@@ -64,14 +64,14 @@ Si vous passez le paramètre *process*, la frappe clavier est envoyée au proces
 
 ## Exemple 
 
-Reportez-vous à l'exemple de la fonction [Process number](../commands/process-number.md).
+Reportez-vous à l'exemple de la fonction [Process number](../commands/process-number).
 
 ## Voir aussi 
 
 *Codes ASCII*  
 *Codes des touches de fonction*  
-[POST CLICK](post-click.md)  
-[POST EVENT](post-event.md)  
+[POST CLICK](post-click)  
+[POST EVENT](post-event)  
 
 ## Propriétés
 

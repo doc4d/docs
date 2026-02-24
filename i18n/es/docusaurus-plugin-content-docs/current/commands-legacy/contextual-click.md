@@ -50,8 +50,8 @@ Este método, combinado con un área desplegable, le permite cambiar el valor de
 
 ## Ver también 
 
-[Form event code](../commands/form-event-code.md)  
-[Right click](right-click.md)  
+[Form event code](../commands/form-event-code)  
+[Right click](right-click)  
 
 ## Propiedades
 

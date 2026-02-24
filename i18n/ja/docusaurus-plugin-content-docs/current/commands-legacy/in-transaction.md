@@ -37,10 +37,10 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Active transaction](active-transaction.md)  
-[CANCEL TRANSACTION](cancel-transaction.md)  
-[START TRANSACTION](start-transaction.md)  
-[VALIDATE TRANSACTION](validate-transaction.md)  
+[Active transaction](active-transaction)  
+[CANCEL TRANSACTION](cancel-transaction)  
+[START TRANSACTION](start-transaction)  
+[VALIDATE TRANSACTION](validate-transaction)  
 *トリガ*  
 
 ## プロパティ

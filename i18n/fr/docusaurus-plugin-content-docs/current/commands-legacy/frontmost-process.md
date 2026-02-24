@@ -29,12 +29,12 @@ Si la fonction **Frontmost process** est utilisée dans la méthode formulaire o
 
 ## Exemple 
 
-Référez-vous à l'exemple de [BRING TO FRONT](bring-to-front.md).
+Référez-vous à l'exemple de [BRING TO FRONT](bring-to-front).
 
 ## Voir aussi 
 
-[BRING TO FRONT](bring-to-front.md)  
-[WINDOW LIST](window-list.md)  
+[BRING TO FRONT](bring-to-front)  
+[WINDOW LIST](window-list)  
 
 ## Propriétés
 

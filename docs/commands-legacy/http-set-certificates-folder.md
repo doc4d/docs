@@ -27,7 +27,7 @@ displayed_sidebar: docs
 
 :::info Compatibility
 
-This command is maintained for compatibility reasons only. It is now recommended to use the [`4D.HTTPRequest class`](../API/HTTPRequestClass.md).
+This command is maintained for compatibility reasons only. It is now recommended to use the [`4D.HTTPRequest class`](../API/HTTPRequestClass).
 
 :::
 
@@ -44,13 +44,13 @@ In *certificatesFolder*, pass the pathname of the custom folder containing the c
 * (macOS): Disk:Applications:myserv:folder
 * (Windows): C:\\Applications\\myserv\\folder
 
-Once this command has been executed, the new path is immediately taken into account by commands such as [HTTP Request](http-request.md) that are executed later on (you do not have to restart the application). It is used in all the processes of the database.
+Once this command has been executed, the new path is immediately taken into account by commands such as [HTTP Request](http-request) that are executed later on (you do not have to restart the application). It is used in all the processes of the database.
 
 If the folder specified does not exist at the location defined, or if the pathname passed in *certificatesFolder* is not valid, an error is generated. You can intercept this error using an error-handling method installed by the [ON ERR CALL](on-err-call.md) command. 
 
 ## About SSL certificates 
 
-As described in [this page](../Admin/tls.md), SSL certificates managed by 4D must be in the **PEM format**. If your certificate provider (for example, [startssl](https://www.startssl.com/)) sends you a certificate that is in a binary format such as .crt, .pfx or .p12 (the format also depends on your browser), you have to convert it to PEM format in order to be able to use it. There are Web sites such as *sslshopper* where you can do this conversion on-line.
+As described in [this page](../Admin/tls), SSL certificates managed by 4D must be in the **PEM format**. If your certificate provider (for example, [startssl](https://www.startssl.com/)) sends you a certificate that is in a binary format such as .crt, .pfx or .p12 (the format also depends on your browser), you have to convert it to PEM format in order to be able to use it. There are Web sites such as *sslshopper* where you can do this conversion on-line.
 
 ## Example 
 
@@ -66,8 +66,8 @@ You want to change certificates folder temporarily:
 
 ## See also 
 
-[GENERATE CERTIFICATE REQUEST](generate-certificate-request.md)  
-[HTTP Get certificates folder](http-get-certificates-folder.md)  
+[GENERATE CERTIFICATE REQUEST](generate-certificate-request)  
+[HTTP Get certificates folder](http-get-certificates-folder)  
 
 ## Properties
 

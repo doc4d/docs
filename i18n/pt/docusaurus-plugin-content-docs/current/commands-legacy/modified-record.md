@@ -23,7 +23,7 @@ displayed_sidebar: docs
 Note que essa função sempre retorna True nos seguintes contextos:
 
 * o registro atual é um novo registro,
-* depois da execução dos comandos [PUSH RECORD](push-record.md) e [POP RECORD](pop-record.md),
+* depois da execução dos comandos [PUSH RECORD](push-record) e [POP RECORD](pop-record),
 * logo que um valor tenha sido atribuido ao campo do registro, mesmo que o mesmo valor seja o mesmo que o anterior. Por exemplo, **Modified record** retorna True depois que o seguinte comando for executado:  
 ```4d  
  [Table_1]Field_1:=[Table_1]Field_1  
@@ -41,9 +41,9 @@ O exemplo a seguir mostra uma utilização típica de Modified record:
 
 ## Ver também 
 
-[Modified](modified.md)  
-[Old](old.md)  
-[SAVE RECORD](save-record.md)  
+[Modified](modified)  
+[Old](old)  
+[SAVE RECORD](save-record)  
 
 ## Propriedades
 

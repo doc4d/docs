@@ -27,7 +27,7 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.FORM PREVIOUS PAGE.Summary-->**FORM PREVIOUS PAGE** change la page courante d'un formulaire pour afficher la page précédente.<!-- END REF--> Si aucun formulaire n'est affiché ou chargé via la commande [FORM LOAD](../commands/form-load.md), ou si la page affichée est la première page du formulaire, **FORM PREVIOUS PAGE** ne fait rien.
+<!--REF #_command_.FORM PREVIOUS PAGE.Summary-->**FORM PREVIOUS PAGE** change la page courante d'un formulaire pour afficher la page précédente.<!-- END REF--> Si aucun formulaire n'est affiché ou chargé via la commande [FORM LOAD](../commands/form-load), ou si la page affichée est la première page du formulaire, **FORM PREVIOUS PAGE** ne fait rien.
 
 ## Exemple 
 
@@ -39,11 +39,11 @@ Cet exemple est une méthode appelée par une commande de menu. Elle provoque l'
 
 ## Voir aussi 
 
-[FORM FIRST PAGE](form-first-page.md)  
-[FORM Get current page](form-get-current-page.md)  
-[FORM GOTO PAGE](form-goto-page.md)  
-[FORM LAST PAGE](form-last-page.md)  
-[FORM NEXT PAGE](form-next-page.md)  
+[FORM FIRST PAGE](form-first-page)  
+[FORM Get current page](form-get-current-page)  
+[FORM GOTO PAGE](form-goto-page)  
+[FORM LAST PAGE](form-last-page)  
+[FORM NEXT PAGE](form-next-page)  
 
 ## Propriétés
 

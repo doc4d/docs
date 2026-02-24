@@ -27,11 +27,11 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.MESSAGES ON.Summary-->Reportez-vous à la description de la commande [MESSAGES OFF](messages-off.md).<!-- END REF--> 
+<!--REF #_command_.MESSAGES ON.Summary-->Reportez-vous à la description de la commande [MESSAGES OFF](messages-off).<!-- END REF--> 
 
 ## Voir aussi 
 
-[MESSAGES OFF](messages-off.md)  
+[MESSAGES OFF](messages-off)  
 
 ## Propriétés
 

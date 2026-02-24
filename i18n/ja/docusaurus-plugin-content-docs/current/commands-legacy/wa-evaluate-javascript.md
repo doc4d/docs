@@ -115,7 +115,7 @@ HTML ファイル内にあるJavaScriptファンクションの例:
 
 ## 参照 
 
-[WA EXECUTE JAVASCRIPT FUNCTION](wa-execute-javascript-function.md)  
+[WA EXECUTE JAVASCRIPT FUNCTION](wa-execute-javascript-function)  
 
 ## プロパティ
 

@@ -45,7 +45,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX Get footers height](listbox-get-footers-height.md)  
+[LISTBOX Get footers height](listbox-get-footers-height)  
 
 ## プロパティ
 

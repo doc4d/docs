@@ -48,8 +48,8 @@ Desea rechazar cualquier solicitud nueva a su servidor de servicios web:
 
 #### Ver también 
 
-[REJECT NEW REMOTE CONNECTIONS](reject-new-remote-connections.md)  
-[WEB Get server info](web-get-server-info.md)  
+[REJECT NEW REMOTE CONNECTIONS](reject-new-remote-connections)  
+[WEB Get server info](web-get-server-info)  
 
 #### Propiedades
 

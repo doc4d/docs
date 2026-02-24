@@ -40,8 +40,8 @@ Si el usuario hace clic en el botón Aceptar o presionan la tecla Enter, la vari
 
 ## Ver también 
 
-[ORDER BY](order-by.md)  
-[QUERY](query.md)  
+[ORDER BY](order-by)  
+[QUERY](query)  
 
 ## Propiedades
 

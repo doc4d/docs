@@ -114,8 +114,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[FONT LIST](font-list.md)  
-[ST GET ATTRIBUTES](st-get-attributes.md)  
+[FONT LIST](font-list)  
+[ST GET ATTRIBUTES](st-get-attributes)  
 
 ## プロパティ
 

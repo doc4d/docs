@@ -32,11 +32,11 @@ displayed_sidebar: docs
 
 ## Exemple 
 
-Reportez-vous à l'exemple de la commande [Current machine](current-machine.md).
+Reportez-vous à l'exemple de la commande [Current machine](current-machine).
 
 ## Voir aussi 
 
-[Current machine](current-machine.md)  
+[Current machine](current-machine)  
 
 ## Propriétés
 

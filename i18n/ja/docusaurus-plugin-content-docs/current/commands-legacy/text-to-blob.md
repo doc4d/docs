@@ -51,7 +51,7 @@ displayed_sidebar: docs
 
 * “UTF8”から始まる定数は、Unicodeモードのアプリケーションでのみ使用できます。
 * “Mac”から始まる定数は、32 KBまでのテキストを扱えます。
-* UTF-8以外の文字セットを使用するには[CONVERT FROM TEXT](convert-from-text.md)コマンドを使用します。
+* UTF-8以外の文字セットを使用するには[CONVERT FROM TEXT](convert-from-text)コマンドを使用します。
 
 これらのフォーマットについて説明します:
 
@@ -108,14 +108,14 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[BLOB to integer](blob-to-integer.md)  
-[BLOB to longint](blob-to-longint.md)  
-[BLOB to real](blob-to-real.md)  
-[BLOB to text](blob-to-text.md)  
-[CONVERT FROM TEXT](convert-from-text.md)  
-[INTEGER TO BLOB](integer-to-blob.md)  
-[LONGINT TO BLOB](longint-to-blob.md)  
-[REAL TO BLOB](real-to-blob.md)  
+[BLOB to integer](blob-to-integer)  
+[BLOB to longint](blob-to-longint)  
+[BLOB to real](blob-to-real)  
+[BLOB to text](blob-to-text)  
+[CONVERT FROM TEXT](convert-from-text)  
+[INTEGER TO BLOB](integer-to-blob)  
+[LONGINT TO BLOB](longint-to-blob)  
+[REAL TO BLOB](real-to-blob)  
 
 ## プロパティ
 

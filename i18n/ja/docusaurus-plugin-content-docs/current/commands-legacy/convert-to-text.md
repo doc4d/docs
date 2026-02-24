@@ -42,7 +42,7 @@ Convert to textはByte Order Marks (BOM) をサポートします。指定され
 
 ## 参照 
 
-[CONVERT FROM TEXT](convert-from-text.md)  
+[CONVERT FROM TEXT](convert-from-text)  
 
 ## プロパティ
 

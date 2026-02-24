@@ -47,7 +47,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR Get report kind](qr-get-report-kind.md)  
+[QR Get report kind](qr-get-report-kind)  
 
 ## プロパティ
 

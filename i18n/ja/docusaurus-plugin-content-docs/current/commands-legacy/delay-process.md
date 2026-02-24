@@ -49,8 +49,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[HIDE PROCESS](hide-process.md)  
-[PAUSE PROCESS](pause-process.md)  
+[HIDE PROCESS](hide-process)  
+[PAUSE PROCESS](pause-process)  
 
 ## プロパティ
 

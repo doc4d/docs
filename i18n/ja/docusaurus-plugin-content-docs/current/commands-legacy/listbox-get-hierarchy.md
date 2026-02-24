@@ -45,7 +45,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX SET HIERARCHY](listbox-set-hierarchy.md)  
+[LISTBOX SET HIERARCHY](listbox-set-hierarchy)  
 
 ## プロパティ
 

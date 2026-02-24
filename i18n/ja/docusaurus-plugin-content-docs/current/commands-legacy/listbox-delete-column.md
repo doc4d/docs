@@ -44,8 +44,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX Get number of columns](listbox-get-number-of-columns.md)  
-[LISTBOX INSERT COLUMN](listbox-insert-column.md)  
+[LISTBOX Get number of columns](listbox-get-number-of-columns)  
+[LISTBOX INSERT COLUMN](listbox-insert-column)  
 
 ## プロパティ
 

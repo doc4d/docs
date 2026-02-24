@@ -38,8 +38,8 @@ Si el comando se ha ejecutado correctamente, la variable sistema OK toma el valo
 
 ## Ver también 
 
-[DOM Parse XML source](dom-parse-xml-source.md)  
-[DOM Parse XML variable](dom-parse-xml-variable.md)  
+[DOM Parse XML source](dom-parse-xml-source)  
+[DOM Parse XML variable](dom-parse-xml-variable)  
 
 ## Propiedades
 

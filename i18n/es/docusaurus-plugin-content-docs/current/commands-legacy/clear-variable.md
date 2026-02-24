@@ -56,7 +56,7 @@ En un formulario, utilice una lista desplegable llamada *asMiListaDesplegable* c
 
 ## Ver también 
 
-[Undefined](undefined.md)  
+[Undefined](undefined)  
 
 ## Propiedades
 

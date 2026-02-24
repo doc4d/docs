@@ -71,8 +71,8 @@ Aqui temos uma lista chamada *hList* mostrada no ambiente Aplicação:
 
 ## Ver também 
 
-[List item position](list-item-position.md)  
-[Selected list items](selected-list-items.md)  
+[List item position](list-item-position)  
+[Selected list items](selected-list-items)  
 
 ## Propriedades
 

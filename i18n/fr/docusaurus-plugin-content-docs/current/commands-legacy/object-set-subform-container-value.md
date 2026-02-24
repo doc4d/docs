@@ -33,8 +33,8 @@ displayed_sidebar: docs
 
 ## Voir aussi 
 
-[Form](../commands/form.md)  
-[OBJECT Get subform container value](object-get-subform-container-value.md)  
+[Form](../commands/form)  
+[OBJECT Get subform container value](object-get-subform-container-value)  
 
 ## Propriétés
 

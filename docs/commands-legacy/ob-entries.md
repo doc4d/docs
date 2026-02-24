@@ -64,8 +64,8 @@ Using an object as an hash map (key / value system) provides a quick and direct 
 
 ## See also 
 
-[OB Keys](ob-keys.md)  
-[OB Values](ob-values.md)  
+[OB Keys](ob-keys)  
+[OB Values](ob-values)  
 
 ## Properties
 

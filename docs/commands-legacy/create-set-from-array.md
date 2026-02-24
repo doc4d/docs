@@ -49,8 +49,8 @@ In a Longint array, if a record number is invalid (record not created), the erro
 
 ## See also 
 
-[BOOLEAN ARRAY FROM SET](boolean-array-from-set.md)  
-[CREATE SELECTION FROM ARRAY](create-selection-from-array.md)  
+[BOOLEAN ARRAY FROM SET](boolean-array-from-set)  
+[CREATE SELECTION FROM ARRAY](create-selection-from-array)  
 
 ## Properties
 

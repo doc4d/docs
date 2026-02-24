@@ -72,8 +72,8 @@ Consulte el ejemplo del comando [SET PRINT MARKER](set-print-marker.md "SET PRIN
 
 ## Ver también 
 
-[OBJECT MOVE](object-move.md)  
-[SET PRINT MARKER](set-print-marker.md)  
+[OBJECT MOVE](object-move)  
+[SET PRINT MARKER](set-print-marker)  
 
 ## Propiedades
 

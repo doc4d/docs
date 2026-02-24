@@ -58,7 +58,7 @@ Si la validation ne peut être effectuée (pas de DTD ou d'XSD, URL incorrect, e
 
 La commande retourne une chaîne de caractères (RefElément) constituant la référence en mémoire de la structure virtuelle de la variable. Cette référence devra être utilisée avec les autres commandes d’analyse XML. 
 
-**Important :** Une fois que vous n'en avez plus besoin, n'oubliez pas d'appeler la commande [DOM CLOSE XML](dom-close-xml.md) avec cette référence afin de libérer la mémoire.
+**Important :** Une fois que vous n'en avez plus besoin, n'oubliez pas d'appeler la commande [DOM CLOSE XML](dom-close-xml) avec cette référence afin de libérer la mémoire.
 
 ## Exemple 1 
 
@@ -95,8 +95,8 @@ Si la commande a été correctement exécutée, la variable système OK prend la
 
 ## Voir aussi 
 
-[DOM CLOSE XML](dom-close-xml.md)  
-[DOM Parse XML source](dom-parse-xml-source.md)  
+[DOM CLOSE XML](dom-close-xml)  
+[DOM Parse XML source](dom-parse-xml-source)  
 
 ## Propriétés
 

@@ -71,7 +71,7 @@ Depois da execução, $att contém, por exemplo:
 
 ## Ver também 
 
-[METHOD SET ATTRIBUTES](method-set-attributes.md)  
+[METHOD SET ATTRIBUTES](method-set-attributes)  
 
 ## Propriedades
 

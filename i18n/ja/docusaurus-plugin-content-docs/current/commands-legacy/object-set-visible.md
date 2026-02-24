@@ -69,8 +69,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT Get visible](object-get-visible.md)  
-[OBJECT SET ENTERABLE](object-set-enterable.md)  
+[OBJECT Get visible](object-get-visible)  
+[OBJECT SET ENTERABLE](object-set-enterable)  
 
 ## プロパティ
 

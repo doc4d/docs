@@ -52,7 +52,7 @@ El parámetro opcional *formUsuario* le permite especificar un formulario usuari
 
 Para mayor información sobre formularios usuario, consulte la sección *Presentación de los formularios de usuario*. 
 
-Los formularios de salida son utilizados por tres grupos de comandos. Un grupo muestra una lista de registros en pantalla, otro grupo genera informes, y el tercer grupo exporta datos. Los comandos [DISPLAY SELECTION](display-selection.md) y [MODIFY SELECTION](modify-selection.md)  muestran una lista de registros utilizando un formulario de salida. Utilice el formulario de salida durante la creación de informes con los comandos [PRINT LABEL](print-label.md) y [PRINT SELECTION](print-selection.md) . Cada uno de los comandos de exportación ([EXPORT DIF](export-dif.md), [EXPORT SYLK](export-sylk.md) y [EXPORT TEXT](export-text.md)) utiliza también el formulario de salida.
+Los formularios de salida son utilizados por tres grupos de comandos. Un grupo muestra una lista de registros en pantalla, otro grupo genera informes, y el tercer grupo exporta datos. Los comandos [DISPLAY SELECTION](display-selection) y [MODIFY SELECTION](modify-selection)  muestran una lista de registros utilizando un formulario de salida. Utilice el formulario de salida durante la creación de informes con los comandos [PRINT LABEL](print-label) y [PRINT SELECTION](print-selection) . Cada uno de los comandos de exportación ([EXPORT DIF](export-dif), [EXPORT SYLK](export-sylk) y [EXPORT TEXT](export-text)) utiliza también el formulario de salida.
 
 ## Ejemplo 1 
 
@@ -76,14 +76,14 @@ Los siguientes ejemplos usan la ruta a un formulario .json para imprimir los reg
 
 ## Ver también 
 
-[DISPLAY SELECTION](display-selection.md)  
-[EXPORT DIF](export-dif.md)  
-[EXPORT SYLK](export-sylk.md)  
-[EXPORT TEXT](export-text.md)  
-[FORM SET INPUT](form-set-input.md)  
-[MODIFY SELECTION](modify-selection.md)  
-[PRINT LABEL](print-label.md)  
-[PRINT SELECTION](print-selection.md)  
+[DISPLAY SELECTION](display-selection)  
+[EXPORT DIF](export-dif)  
+[EXPORT SYLK](export-sylk)  
+[EXPORT TEXT](export-text)  
+[FORM SET INPUT](form-set-input)  
+[MODIFY SELECTION](modify-selection)  
+[PRINT LABEL](print-label)  
+[PRINT SELECTION](print-selection)  
 
 ## Propiedades
 

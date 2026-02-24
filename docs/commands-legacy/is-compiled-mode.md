@@ -34,9 +34,9 @@ displayed_sidebar: docs
 The optional *\** parameter is useful in the case of an architecture using components: it can be used to determine the database (host or component) for which you want to find out the running mode.  
 
 * When the command is called from a component:  
-   * If the *\** parameter is passed, the command returns [True](true.md) or [False](false.md) depending on the mode in which the host database is running,  
-   * If the *\** parameter is not passed, the command returns [True](true.md) or [False](false.md) depending on the mode in which the component is running.
-* When the command is called from a method of the host database, it returns [True](true.md) or [False](false.md) depending on the mode in which the host database is running.
+   * If the *\** parameter is passed, the command returns [True](true) or [False](false) depending on the mode in which the host database is running,  
+   * If the *\** parameter is not passed, the command returns [True](true) or [False](false) depending on the mode in which the component is running.
+* When the command is called from a method of the host database, it returns [True](true) or [False](false) depending on the mode in which the host database is running.
 
 ## Example 
 
@@ -52,8 +52,8 @@ In one of your routines, you include debugging code useful only when you are run
 
 ## See also 
 
-[IDLE](idle.md)  
-[Undefined](undefined.md)  
+[IDLE](idle)  
+[Undefined](undefined)  
 
 ## Properties
 

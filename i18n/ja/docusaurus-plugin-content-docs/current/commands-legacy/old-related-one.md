@@ -40,10 +40,10 @@ OLD RELATED ONEは、更新前のカレントレコードの内容にリレー�
 
 ## 参照 
 
-[Old](old.md)  
-[OLD RELATED MANY](old-related-many.md)  
-[RELATE ONE](relate-one.md)  
-[SAVE RELATED ONE](save-related-one.md)  
+[Old](old)  
+[OLD RELATED MANY](old-related-many)  
+[RELATE ONE](relate-one)  
+[SAVE RELATED ONE](save-related-one)  
 
 ## プロパティ
 

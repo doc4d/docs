@@ -48,7 +48,7 @@ If you pass an invalid *type* value, the error -9852 will be generated.
 
 ## See also 
 
-[QR Get report kind](qr-get-report-kind.md)  
+[QR Get report kind](qr-get-report-kind)  
 
 ## Properties
 

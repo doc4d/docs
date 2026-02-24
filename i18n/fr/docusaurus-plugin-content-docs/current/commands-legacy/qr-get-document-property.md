@@ -45,7 +45,7 @@ Si la valeur du paramètre *propriété* est incorrecte, l’erreur -9852 est g�
 
 ## Voir aussi 
 
-[QR SET DOCUMENT PROPERTY](qr-set-document-property.md)  
+[QR SET DOCUMENT PROPERTY](qr-set-document-property)  
 
 ## Propriétés
 

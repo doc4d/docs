@@ -65,8 +65,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Generate digest](generate-digest.md)  
-[Validate password](validate-password.md)  
+[Generate digest](generate-digest)  
+[Validate password](validate-password)  
 
 ## プロパティ
 

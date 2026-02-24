@@ -35,8 +35,8 @@ O exemplo a seguir oculta todas as janelas que pertencem ao processo atual:
 
 ## Ver também 
 
-[Process state](process-state.md)  
-[SHOW PROCESS](show-process.md)  
+[Process state](process-state)  
+[SHOW PROCESS](show-process)  
 
 ## Propriedades
 

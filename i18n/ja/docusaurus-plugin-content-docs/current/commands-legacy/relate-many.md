@@ -67,8 +67,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OLD RELATED MANY](old-related-many.md)  
-[RELATE ONE](relate-one.md)  
+[OLD RELATED MANY](old-related-many)  
+[RELATE ONE](relate-one)  
 
 ## プロパティ
 

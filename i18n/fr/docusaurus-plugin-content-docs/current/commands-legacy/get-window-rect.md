@@ -42,12 +42,12 @@ Les coordonnées retournées sont exprimées relativement au coin supérieur gau
 
 ## Exemple 
 
-Reportez-vous à l'exemple de la commande [WINDOW LIST](window-list.md).
+Reportez-vous à l'exemple de la commande [WINDOW LIST](window-list).
 
 ## Voir aussi 
 
-[CONVERT COORDINATES](convert-coordinates.md)  
-[SET WINDOW RECT](set-window-rect.md)  
+[CONVERT COORDINATES](convert-coordinates)  
+[SET WINDOW RECT](set-window-rect)  
 
 ## Propriétés
 

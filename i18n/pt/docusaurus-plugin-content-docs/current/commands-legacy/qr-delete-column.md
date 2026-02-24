@@ -45,7 +45,7 @@ O exemplo a seguir garante de que o relatório seja listado e apaga a terceira c
 
 ## Ver também 
 
-[QR INSERT COLUMN](qr-insert-column.md)  
+[QR INSERT COLUMN](qr-insert-column)  
 
 ## Propriedades
 

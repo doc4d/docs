@@ -34,8 +34,8 @@ If there are no folders at the specified location, the command returns an empty 
 
 ## See also 
 
-[DOCUMENT LIST](document-list.md)  
-[VOLUME LIST](volume-list.md)  
+[DOCUMENT LIST](document-list)  
+[VOLUME LIST](volume-list)  
 
 ## Properties
 

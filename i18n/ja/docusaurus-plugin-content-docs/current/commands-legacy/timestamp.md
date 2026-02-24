@@ -31,7 +31,7 @@ displayed_sidebar: docs
 
 **Timestamp** によって返された時刻はそれぞれ、ISO 8601標準に従って表現されます。この標準についての詳細な情報については、こちらを参照してください: <https://en.wikipedia.org/wiki/ISO%5F8601>
 
-**注:** この関数は計測目的には適していません。経過時間を計測したい場合には[Milliseconds](milliseconds.md) を使用してください。
+**注:** この関数は計測目的には適していません。経過時間を計測したい場合には[Milliseconds](milliseconds) を使用してください。
 
 ## 例題 
 
@@ -51,9 +51,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Milliseconds](milliseconds.md)  
-[String](../commands/string.md)  
-[Time](time.md)  
+[Milliseconds](milliseconds)  
+[String](../commands/string)  
+[Time](time)  
 
 ## プロパティ
 

@@ -90,12 +90,12 @@ Retrieval of project methods that were modified since the last backup:
 
 ## Example 4 
 
-Refer to the example of the [METHOD SET CODE](method-set-code.md) command.
+Refer to the example of the [METHOD SET CODE](method-set-code) command.
 
 ## See also 
 
-[Current method path](current-method-path.md)  
-[METHOD GET FOLDERS](method-get-folders.md)  
+[Current method path](current-method-path)  
+[METHOD GET FOLDERS](method-get-folders)  
 
 ## Properties
 

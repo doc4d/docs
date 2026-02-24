@@ -31,7 +31,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[MESSAGES OFF](messages-off.md)  
+[MESSAGES OFF](messages-off)  
 
 ## プロパティ
 

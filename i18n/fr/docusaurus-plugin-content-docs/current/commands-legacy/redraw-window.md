@@ -35,7 +35,7 @@ Si vous omettez le paramètre *fenêtre*, **REDRAW WINDOW** s'appliquera à la f
 
 ## Voir aussi 
 
-[ERASE WINDOW](erase-window.md)  
+[ERASE WINDOW](erase-window)  
 
 ## Propriétés
 

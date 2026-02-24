@@ -46,7 +46,7 @@ Webページが完全にロードされると、この関数から返される�
 
 ## 参照 
 
-[WA OPEN URL](wa-open-url.md)  
+[WA OPEN URL](wa-open-url)  
 
 ## プロパティ
 

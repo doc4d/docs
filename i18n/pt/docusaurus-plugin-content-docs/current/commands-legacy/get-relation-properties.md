@@ -48,11 +48,11 @@ Quando o comando tiver sido executado:
 
 ## Ver também 
 
-[GET FIELD ENTRY PROPERTIES](get-field-entry-properties.md)  
-[GET FIELD PROPERTIES](get-field-properties.md)  
-[GET TABLE PROPERTIES](get-table-properties.md)  
-[SET AUTOMATIC RELATIONS](set-automatic-relations.md)  
-[SET FIELD RELATION](set-field-relation.md)  
+[GET FIELD ENTRY PROPERTIES](get-field-entry-properties)  
+[GET FIELD PROPERTIES](get-field-properties)  
+[GET TABLE PROPERTIES](get-table-properties)  
+[SET AUTOMATIC RELATIONS](set-automatic-relations)  
+[SET FIELD RELATION](set-field-relation)  
 
 ## Propriedades
 

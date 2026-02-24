@@ -82,7 +82,7 @@ Se o parâmetro *largura* é incorreto, se gera o erro -9855.
 
 ## Ver também 
 
-[QR GET BORDERS](qr-get-borders.md)  
+[QR GET BORDERS](qr-get-borders)  
 
 ## Propriedades
 

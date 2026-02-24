@@ -46,9 +46,9 @@ En XML, los saltos de línea no son significativos, independientemente de si se 
 
 Por defecto, los archivos XML se escriben sin BOM (Byte order mask).
 
-Puede controlar el final de línea XML y la gestión BOM utilizando el comando [XML SET OPTIONS](xml-set-options.md).
+Puede controlar el final de línea XML y la gestión BOM utilizando el comando [XML SET OPTIONS](xml-set-options).
 
-**Nota de compatibilidad:** en bases/proyectos creados con versiones de 4D hasta la v19.x, por defecto 4D utiliza CR como caracteres de fin de línea en macOS y un BOM. Para activar la nueva configuración por defecto, compruebe los ajustes de compatibilidad (ver *Página Compatibilidad*) o utilice el comando [XML SET OPTIONS](xml-set-options.md).
+**Nota de compatibilidad:** en bases/proyectos creados con versiones de 4D hasta la v19.x, por defecto 4D utiliza CR como caracteres de fin de línea en macOS y un BOM. Para activar la nueva configuración por defecto, compruebe los ajustes de compatibilidad (ver *Página Compatibilidad*) o utilice el comando [XML SET OPTIONS](xml-set-options).
 
 ## Ejemplo 
 
@@ -72,8 +72,8 @@ Se genera un error cuando:
 
 ## Ver también 
 
-[DOM EXPORT TO VAR](dom-export-to-var.md)  
-[SVG EXPORT TO PICTURE](svg-export-to-picture.md)  
+[DOM EXPORT TO VAR](dom-export-to-var)  
+[SVG EXPORT TO PICTURE](svg-export-to-picture)  
 
 ## Propiedades
 

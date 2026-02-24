@@ -56,7 +56,7 @@ Dans un formulaire, vous utilisez une liste déroulante appelée *asMalListeD* n
 
 ## Voir aussi 
 
-[Undefined](undefined.md)  
+[Undefined](undefined)  
 
 ## Propriétés
 

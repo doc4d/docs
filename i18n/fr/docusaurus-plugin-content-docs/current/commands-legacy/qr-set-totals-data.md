@@ -106,7 +106,7 @@ Si le paramètre *numRupture* est incorrect, l’erreur -9853 est générée.
 
 ## Voir aussi 
 
-[QR GET TOTALS DATA](qr-get-totals-data.md)  
+[QR GET TOTALS DATA](qr-get-totals-data)  
 
 ## Propriétés
 

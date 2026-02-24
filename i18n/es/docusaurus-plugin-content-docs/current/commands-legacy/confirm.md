@@ -103,8 +103,8 @@ Mostrará la siguiente caja de diálogo de confirmación (en Windows):
 
 ## Ver también 
 
-[ALERT](alert.md)  
-[Request](request.md)  
+[ALERT](alert)  
+[Request](request)  
 
 ## Propiedades
 

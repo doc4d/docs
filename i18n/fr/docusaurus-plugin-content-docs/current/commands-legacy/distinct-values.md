@@ -40,7 +40,7 @@ Vous pouvez passer à cette commande tout type de champ **indexable**, c’est-�
 
 Le tableau utilisé par **DISTINCT VALUES** doit être du même type que le champ passé en premier paramètre, sinon le tableau est retypé. Il y a une exception à cette règle : si le champ est de type Image (et est associé à un index de mots-clés), le tableau correspondant doit être de type Texte.
 
-Après l'appel, la taille du tableau est égale au nombre de valeurs distinctes trouvées dans la sélection. La commande ne modifie pas la sélection courante ni l'enregistrement courant. Les éléments dans *tableau* sont triés par ordre croissant car **DISTINCT VALUES** utilise l'index du champ. Si cet ordre vous convient, vous n'avez donc pas besoin d'appeler [SORT ARRAY](sort-array.md) après l'exécution de **DISTINCT VALUES**.
+Après l'appel, la taille du tableau est égale au nombre de valeurs distinctes trouvées dans la sélection. La commande ne modifie pas la sélection courante ni l'enregistrement courant. Les éléments dans *tableau* sont triés par ordre croissant car **DISTINCT VALUES** utilise l'index du champ. Si cet ordre vous convient, vous n'avez donc pas besoin d'appeler [SORT ARRAY](sort-array) après l'exécution de **DISTINCT VALUES**.
 
 **Note :** Lorsque **DISTINCT VALUES** est exécutée avec un champ texte ou image associé à un index de mots-clés, la commande remplit le tableau avec les mots-clés de l'index. A la différence des autres types de données, les valeurs retournées diffèrent donc en fonction de l'existence de l'index. Dans le cas d'un champ texte, l'index de mots-clés est toujours pris en compte, même si le champ est également associé à un index standard. Si le champ texte ou image n’est pas associé à un index de mots-clés, le tableau est retourné vide.
 
@@ -90,10 +90,10 @@ Pour calculer des statistiques, vous voulez trier le nombre de valeurs distincte
 ## Voir aussi 
 
   
-[GET TEXT KEYWORDS](get-text-keywords.md)  
+[GET TEXT KEYWORDS](get-text-keywords)  
 [ON ERR CALL](on-err-call.md)  
-[SELECTION RANGE TO ARRAY](selection-range-to-array.md)  
-[SELECTION TO ARRAY](selection-to-array.md)  
+[SELECTION RANGE TO ARRAY](selection-range-to-array)  
+[SELECTION TO ARRAY](selection-to-array)  
 
 ## Propriétés
 

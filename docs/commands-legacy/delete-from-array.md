@@ -55,8 +55,8 @@ The following example deletes the last element from an array, if it exists:
 
 ## See also 
 
-[INSERT IN ARRAY](insert-in-array.md)  
-[Size of array](size-of-array.md)  
+[INSERT IN ARRAY](insert-in-array)  
+[Size of array](size-of-array)  
 
 ## Properties
 

@@ -83,7 +83,7 @@ Si el parámetro *ancho* es incorrecto, se genera el error -9855.
 
 ## Ver también 
 
-[QR GET BORDERS](qr-get-borders.md)  
+[QR GET BORDERS](qr-get-borders)  
 
 ## Propiedades
 

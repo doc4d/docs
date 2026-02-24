@@ -23,11 +23,11 @@ PREVIOUS RECORDで、カレントセレクションの前にカレントレコ�
 
 ## 参照 
 
-[Before selection](before-selection.md)  
-[End selection](end-selection.md)  
-[FIRST RECORD](first-record.md)  
-[LAST RECORD](last-record.md)  
-[NEXT RECORD](next-record.md)  
+[Before selection](before-selection)  
+[End selection](end-selection)  
+[FIRST RECORD](first-record)  
+[LAST RECORD](last-record)  
+[NEXT RECORD](next-record)  
 
 ## プロパティ
 

@@ -45,11 +45,11 @@ La variable sistema OK toma el valor 1 si se acepta el registro y 0 si se cancel
 
 ## Ver también 
 
-[ADD RECORD](add-record.md)  
-[Locked](locked.md)  
-[Modified record](modified-record.md)  
-[READ WRITE](read-write.md)  
-[UNLOAD RECORD](unload-record.md)  
+[ADD RECORD](add-record)  
+[Locked](locked)  
+[Modified record](modified-record)  
+[READ WRITE](read-write)  
+[UNLOAD RECORD](unload-record)  
 
 ## Propiedades
 

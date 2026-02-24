@@ -94,7 +94,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[DISTINCT VALUES](distinct-values.md)  
+[DISTINCT VALUES](distinct-values)  
 
 ## プロパティ
 

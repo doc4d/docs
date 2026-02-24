@@ -36,13 +36,13 @@ displayed_sidebar: docs
 * アプリケーションのストラクチャファイルからの相対パス。例えばWindowsでは "\\\\docs\\\\myFile.txt" またはmacOS では ":docs:myFile.txt"
 * 絶対パス。例えばWindowsでは "c:\\\\app\\\\docs\\\\myFile.txt" またはmacOS では "MacHD:docs:myFile.txt"
 
-ユーザーにドキュメントの名前や場所を指定することを可能にしたい場合は、 [Open document](open-document.md) コマンドまたは [Create document](create-document.md) コマンドに加え、 *Document* システム変数を使用して下さい。
+ユーザーにドキュメントの名前や場所を指定することを可能にしたい場合は、 [Open document](open-document) コマンドまたは [Create document](create-document) コマンドに加え、 *Document* システム変数を使用して下さい。
 
 **Note:** デフォルトでは、このコマンドによって生成されたドキュメントは拡張子を持ちません。拡張子は *fileName* 内に含める必要があります。 *\_o\_SET DOCUMENT TYPE*コマンドを使用することもできます。
 
 *text* 引数には、ディスクに書き込みたいテキストを渡します。文字の定数("my text")を渡す事もできますし、4D テキストフィールドまたは変数を渡す事もできます。
 
-*charSet* 引数には、ドキュメントに書き込む際の文字コードを渡します。標準の文字コード名(例えば“ISO-8859-1” や “UTF-8”)を渡す事もできますし、文字コードの MIBEnum ID (倍長整数)を渡す事もできます。4Dによってサポートされている文字コードの一覧の詳細な情報に関しては、[CONVERT FROM TEXT](convert-from-text.md) コマンドの詳細を参照して下さい。文字コードに対してバイトオーダーマーク(BOM)が存在している場合、使用されている文字コードが接頭辞"-no-bom" を使用している場合(例:"UTF-8-no-bom")を除き、4Dはそれをドキュメント内に挿入します。文字コードを何も指定しなかった場合、4D はデフォルトでBOM なしの"UTF-8" 文字コードを使用します(ただし互換性モードを除く、*互換性ページ* 参照)。
+*charSet* 引数には、ドキュメントに書き込む際の文字コードを渡します。標準の文字コード名(例えば“ISO-8859-1” や “UTF-8”)を渡す事もできますし、文字コードの MIBEnum ID (倍長整数)を渡す事もできます。4Dによってサポートされている文字コードの一覧の詳細な情報に関しては、[CONVERT FROM TEXT](convert-from-text) コマンドの詳細を参照して下さい。文字コードに対してバイトオーダーマーク(BOM)が存在している場合、使用されている文字コードが接頭辞"-no-bom" を使用している場合(例:"UTF-8-no-bom")を除き、4Dはそれをドキュメント内に挿入します。文字コードを何も指定しなかった場合、4D はデフォルトでBOM なしの"UTF-8" 文字コードを使用します(ただし互換性モードを除く、*互換性ページ* 参照)。
 
 *charSet* 引数で指定された文字コードのかわりにバイトオーダーマークが指定した文字コードを使用します(つまり、この引数は無視されます)。文字コードを指定しなかった場合、4Dはデフォルトで "UTF\_8"文字コードをBOMとともに使用します。
 
@@ -92,7 +92,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Document to text](document-to-text.md)  
+[Document to text](document-to-text)  
 *System Documents*  
 
 ## プロパティ

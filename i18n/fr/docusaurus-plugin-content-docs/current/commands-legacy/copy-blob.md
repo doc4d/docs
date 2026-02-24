@@ -39,8 +39,8 @@ Notez que le BLOB de destination peut être redimensionné si nécessaire.
 
 ## Voir aussi 
 
-[DELETE FROM BLOB](delete-from-blob.md)  
-[INSERT IN BLOB](insert-in-blob.md)  
+[DELETE FROM BLOB](delete-from-blob)  
+[INSERT IN BLOB](insert-in-blob)  
 
 ## Propriétés
 

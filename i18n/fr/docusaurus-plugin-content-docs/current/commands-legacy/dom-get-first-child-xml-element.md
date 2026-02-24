@@ -70,7 +70,7 @@ Si la commande a été correctement exécutée, la variable système OK prend la
 
 ## Voir aussi 
 
-[DOM Get next sibling XML element](dom-get-next-sibling-xml-element.md)  
+[DOM Get next sibling XML element](dom-get-next-sibling-xml-element)  
 
 ## Propriétés
 

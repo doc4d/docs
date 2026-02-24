@@ -48,9 +48,9 @@ The following example mails letters to 50 of the worst customers and then to 50 
 
 ## See also 
 
-[ORDER BY](order-by.md)  
-[QUERY](query.md)  
-[REDUCE SELECTION](reduce-selection.md)  
+[ORDER BY](order-by)  
+[QUERY](query)  
+[REDUCE SELECTION](reduce-selection)  
 
 ## Properties
 

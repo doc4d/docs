@@ -39,7 +39,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Get file from pasteboard](get-file-from-pasteboard.md)  
+[Get file from pasteboard](get-file-from-pasteboard)  
 
 ## プロパティ
 

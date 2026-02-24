@@ -47,7 +47,7 @@ If the *rowPosition* value is higher than the total number of rows in the list b
 
 ## See also 
 
-[LISTBOX DELETE ROWS](listbox-delete-rows.md)  
+[LISTBOX DELETE ROWS](listbox-delete-rows)  
 
 ## Properties
 

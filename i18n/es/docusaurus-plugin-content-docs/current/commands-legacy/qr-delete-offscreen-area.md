@@ -33,7 +33,7 @@ Si pasa un número de *area* incorrecto, se genera el error -9850.
 
 ## Ver también 
 
-[QR New offscreen area](qr-new-offscreen-area.md)  
+[QR New offscreen area](qr-new-offscreen-area)  
 
 ## Propiedades
 

@@ -93,7 +93,7 @@ macOS 環境下では、アプリケーションを探すのに、インスト�
 
 ## 参照 
 
-[LAUNCH EXTERNAL PROCESS](launch-external-process.md)  
+[LAUNCH EXTERNAL PROCESS](launch-external-process)  
 
 ## プロパティ
 

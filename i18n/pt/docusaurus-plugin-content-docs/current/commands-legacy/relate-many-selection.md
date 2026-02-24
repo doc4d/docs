@@ -45,9 +45,9 @@ Este exemplo seleciona todas as faturas de clientes com crédito superior ou igu
 
 ## Ver também 
 
-[QUERY](query.md)  
-[RELATE ONE](relate-one.md)  
-[RELATE ONE SELECTION](relate-one-selection.md)  
+[QUERY](query)  
+[RELATE ONE](relate-one)  
+[RELATE ONE SELECTION](relate-one-selection)  
 
 ## Propriedades
 

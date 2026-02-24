@@ -30,7 +30,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Records in selection](records-in-selection.md)  
+[Records in selection](records-in-selection)  
 
 ## プロパティ
 

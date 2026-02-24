@@ -42,7 +42,7 @@ En el parámetro *proceso*, puede especificar el worker utilizando su nombre o s
 
 **Nota:** el **proceso principal**, creado por 4D para la interfaz de usuario y el modo de aplicación cuando se abre una base, es un proceso worker y puede ser llamado por **CALL WORKER**.Sin embargo, ya que su nombre puede variar en función del lenguaje de 4D, es preferible designar este proceso utilizando su número (siempre 1) cuando se utiliza **CALL WORKER**.
 
-El proceso worker aparece en la lista de procesos del Explorador de ejecución y es devuelto por el comando [Process info](../commands/process-info.md) cuando se aplica a este proceso.
+El proceso worker aparece en la lista de procesos del Explorador de ejecución y es devuelto por el comando [Process info](../commands/process-info) cuando se aplica a este proceso.
 
 En *formula*, designe el código 4D que se ejecutará en el contexto del proceso padre de *ventana*. Puede pasar:
 
@@ -57,7 +57,7 @@ También puede pasar parámetros a la fórmula utilizando uno o más parámetros
 * Los parámetros de tipo de colección u objeto estándar se pasan **por copia**, es decir, 4D creará una copia del objeto o la colección en el proceso de destino si el worker está en un proceso diferente del que llama al comando **CALL WORKER**. En este contexto, si desea pasar un objeto o un parámetro colección **by reference**, debe utilizar un objeto o colección compartidos (ver *Objetos y colecciones compartidos*).
 * Si pasa un parámetro de tipo Objeto o una Colección, 4D crea una copia del objeto o de la colección en el proceso de destino si el worker se encuentra en un proceso diferente del que llama al comando **CALL WORKER**.
 
-Un proceso worker se mantiene vivo hasta que la aplicación esté cerrada o el comando [KILL WORKER](kill-worker.md) se llame explícitamente. Para liberar memoria, no olvide llamar a este comando una vez un proceso worker ya no sea necesario.
+Un proceso worker se mantiene vivo hasta que la aplicación esté cerrada o el comando [KILL WORKER](kill-worker) se llame explícitamente. Para liberar memoria, no olvide llamar a este comando una vez un proceso worker ya no sea necesario.
 
 ## Ejemplo 
 
@@ -87,9 +87,9 @@ El código de *workerMethod* es:
 
 ## Ver también 
 
-[CALL FORM](call-form.md)  
-[Current process name](current-process-name.md)  
-[KILL WORKER](kill-worker.md)  
+[CALL FORM](call-form)  
+[Current process name](current-process-name)  
+[KILL WORKER](kill-worker)  
 *Sobre workers*  
 
 ## Propiedades

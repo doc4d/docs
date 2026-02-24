@@ -45,7 +45,7 @@ Pass the height to set in the *height* parameter. By default, if you omit the *u
 
 ## See also 
 
-[LISTBOX Get footers height](listbox-get-footers-height.md)  
+[LISTBOX Get footers height](listbox-get-footers-height)  
 
 ## Properties
 

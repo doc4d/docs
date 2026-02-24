@@ -50,8 +50,8 @@ Par défaut, les valeurs de *dépH*, *dépV*, *redimH* et *redimV* modifient les
 Cette commande fonctionne uniquement dans les contextes suivants :
 
 * Formulaires entrée en mode saisie,
-* Formulaires affichés via la commande [DIALOG](../commands/dialog.md),
-* En-têtes et pieds de page des formulaires sortie affichés par les commandes [MODIFY SELECTION](modify-selection.md) ou [DISPLAY SELECTION](display-selection.md),
+* Formulaires affichés via la commande [DIALOG](../commands/dialog),
+* En-têtes et pieds de page des formulaires sortie affichés par les commandes [MODIFY SELECTION](modify-selection) ou [DISPLAY SELECTION](display-selection),
 * Formulaires en cours d'impression.
 
 ## Exemple 1 
@@ -72,9 +72,9 @@ L’instruction suivante place le bouton “Bouton\_1” aux coordonnées (10;20
 
 ## Voir aussi 
 
-[OBJECT DUPLICATE](object-duplicate.md)  
-[OBJECT GET COORDINATES](object-get-coordinates.md)  
-[OBJECT SET COORDINATES](object-set-coordinates.md)  
+[OBJECT DUPLICATE](object-duplicate)  
+[OBJECT GET COORDINATES](object-get-coordinates)  
+[OBJECT SET COORDINATES](object-set-coordinates)  
 
 ## Propriétés
 

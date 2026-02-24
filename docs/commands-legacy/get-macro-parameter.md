@@ -41,11 +41,11 @@ If you pass Full method text in *selector*, all of the text of the method will b
 
 ## Example 
 
-Refer to the example of the [SET MACRO PARAMETER](set-macro-parameter.md) command.
+Refer to the example of the [SET MACRO PARAMETER](set-macro-parameter) command.
 
 ## See also 
 
-[SET MACRO PARAMETER](set-macro-parameter.md)  
+[SET MACRO PARAMETER](set-macro-parameter)  
 
 ## Properties
 

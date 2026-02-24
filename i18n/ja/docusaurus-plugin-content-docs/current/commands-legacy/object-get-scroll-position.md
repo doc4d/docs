@@ -42,7 +42,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT SET SCROLL POSITION](object-set-scroll-position.md)  
+[OBJECT SET SCROLL POSITION](object-set-scroll-position)  
 
 ## プロパティ
 

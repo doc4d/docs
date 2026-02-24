@@ -90,8 +90,8 @@ Cuanto todos los metadatos se manipulan vía una referencia de elementos DOM, la
 
 ## Ver también 
 
-[GET PICTURE KEYWORDS](get-picture-keywords.md)  
-[GET PICTURE METADATA](get-picture-metadata.md)  
+[GET PICTURE KEYWORDS](get-picture-keywords)  
+[GET PICTURE METADATA](get-picture-metadata)  
 *Nombres de metadatos imágenes*  
 *Picture Metadata Values*  
 

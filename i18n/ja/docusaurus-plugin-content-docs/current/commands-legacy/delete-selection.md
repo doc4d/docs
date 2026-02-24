@@ -62,9 +62,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[DISPLAY SELECTION](display-selection.md)  
-[MODIFY SELECTION](modify-selection.md)  
-[TRUNCATE TABLE](truncate-table.md)  
+[DISPLAY SELECTION](display-selection)  
+[MODIFY SELECTION](modify-selection)  
+[TRUNCATE TABLE](truncate-table)  
 *セット*  
 *レコードのロック*  
 

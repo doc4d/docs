@@ -41,8 +41,8 @@ Este comando debe utilizarse con el evento de formulario On column moved (ver el
 
 ## Ver también 
 
-[Form event code](../commands/form-event-code.md)  
-[LISTBOX MOVED ROW NUMBER](listbox-moved-row-number.md)  
+[Form event code](../commands/form-event-code)  
+[LISTBOX MOVED ROW NUMBER](listbox-moved-row-number)  
 
 ## Propiedades
 

@@ -30,10 +30,10 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[RECEIVE RECORD](receive-record.md)  
-[RECEIVE VARIABLE](receive-variable.md)  
-[SEND RECORD](send-record.md)  
-[SET CHANNEL](set-channel.md)  
+[RECEIVE RECORD](receive-record)  
+[RECEIVE VARIABLE](receive-variable)  
+[SEND RECORD](send-record)  
+[SET CHANNEL](set-channel)  
 
 ## プロパティ
 

@@ -39,8 +39,8 @@ En ambos casos, el comando no devuelve campos invisibles.
 
 ## Ver también 
 
-[GET TABLE TITLES](get-table-titles.md)  
-[SET FIELD TITLES](set-field-titles.md)  
+[GET TABLE TITLES](get-table-titles)  
+[SET FIELD TITLES](set-field-titles)  
 
 ## Propiedades
 

@@ -65,7 +65,7 @@ L'instruction suivante place le libellé “Titre du centre” dans l'en-tête d
 
 ## Voir aussi 
 
-[QR GET HEADER AND FOOTER](qr-get-header-and-footer.md)  
+[QR GET HEADER AND FOOTER](qr-get-header-and-footer)  
 
 ## Propriétés
 

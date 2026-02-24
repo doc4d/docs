@@ -24,9 +24,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Arctan](arctan.md)  
-[Sin](sin.md)  
-[Tan](tan.md)  
+[Arctan](arctan)  
+[Sin](sin)  
+[Tan](tan)  
 
 ## プロパティ
 

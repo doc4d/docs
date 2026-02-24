@@ -45,7 +45,7 @@ Par défaut, si vous omettez le paramètre *unité*, la hauteur de ligne retourn
 
 ## Voir aussi 
 
-[LISTBOX SET HEADERS HEIGHT](listbox-set-headers-height.md)  
+[LISTBOX SET HEADERS HEIGHT](listbox-set-headers-height)  
 
 ## Propriétés
 

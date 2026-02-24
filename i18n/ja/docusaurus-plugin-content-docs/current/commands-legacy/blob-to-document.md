@@ -59,9 +59,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Create document](create-document.md)  
-[DOCUMENT TO BLOB](document-to-blob.md)  
-[Open document](open-document.md)  
+[Create document](create-document)  
+[DOCUMENT TO BLOB](document-to-blob)  
+[Open document](open-document)  
 
 ## プロパティ
 

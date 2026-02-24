@@ -49,8 +49,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[DIFFERENCE](difference.md)  
-[UNION](union.md)  
+[DIFFERENCE](difference)  
+[UNION](union)  
 
 ## プロパティ
 

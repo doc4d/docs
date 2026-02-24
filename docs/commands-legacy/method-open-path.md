@@ -43,7 +43,7 @@ You can execute this command from a component, but in this case, you must pass t
 ## See also 
 
 *Design Object Access Commands*  
-[METHOD Get path](method-get-path.md)  
+[METHOD Get path](method-get-path)  
 
 ## Properties
 

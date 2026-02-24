@@ -31,7 +31,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR New offscreen area](qr-new-offscreen-area.md)  
+[QR New offscreen area](qr-new-offscreen-area)  
 
 ## プロパティ
 

@@ -63,8 +63,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Get 4D folder](get-4d-folder.md)  
-[Temporary folder](temporary-folder.md)  
+[Get 4D folder](get-4d-folder)  
+[Temporary folder](temporary-folder)  
 
 ## プロパティ
 

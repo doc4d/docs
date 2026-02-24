@@ -55,9 +55,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[EXECUTE ON CLIENT](execute-on-client.md)  
-[REGISTER CLIENT](register-client.md)  
-[UNREGISTER CLIENT](unregister-client.md)  
+[EXECUTE ON CLIENT](execute-on-client)  
+[REGISTER CLIENT](register-client)  
+[UNREGISTER CLIENT](unregister-client)  
 
 ## プロパティ
 

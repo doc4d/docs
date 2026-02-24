@@ -62,7 +62,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SVG Find element IDs by rect](svg-find-element-ids-by-rect.md)  
+[SVG Find element IDs by rect](svg-find-element-ids-by-rect)  
 
 ## プロパティ
 

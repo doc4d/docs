@@ -34,7 +34,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SOAP DECLARATION](soap-declaration.md)  
+[SOAP DECLARATION](soap-declaration)  
 
 ## プロパティ
 

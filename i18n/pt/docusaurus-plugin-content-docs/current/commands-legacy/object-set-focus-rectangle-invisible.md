@@ -40,7 +40,7 @@ Passe **True** no parâmetro *invisível* para ocultar o retângulo de foco e **
 
 ## Ver também 
 
-[OBJECT Get focus rectangle invisible](object-get-focus-rectangle-invisible.md)  
+[OBJECT Get focus rectangle invisible](object-get-focus-rectangle-invisible)  
 
 ## Propriedades
 

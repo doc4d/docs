@@ -57,8 +57,8 @@ Cet exemple crée un tableau interprocess de 50 éléments de type [Réel](# "Nu
 
 ## Voir aussi 
 
-[ARRAY INTEGER](array-integer.md)  
-[ARRAY LONGINT](array-longint.md)  
+[ARRAY INTEGER](array-integer)  
+[ARRAY LONGINT](array-longint)  
 
 ## Propriétés
 

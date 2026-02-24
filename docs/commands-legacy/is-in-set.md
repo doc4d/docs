@@ -34,8 +34,8 @@ The following example is a button object method. It tests to see whether or not 
 
 ## See also 
 
-[ADD TO SET](add-to-set.md)  
-[REMOVE FROM SET](remove-from-set.md)  
+[ADD TO SET](add-to-set)  
+[REMOVE FROM SET](remove-from-set)  
 
 ## Properties
 

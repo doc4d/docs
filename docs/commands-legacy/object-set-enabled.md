@@ -47,7 +47,7 @@ This command can be applied to the following types of objects:
 
 ## See also 
 
-[OBJECT Get enabled](object-get-enabled.md)  
+[OBJECT Get enabled](object-get-enabled)  
 
 ## Properties
 

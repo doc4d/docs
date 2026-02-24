@@ -65,8 +65,8 @@ Vous voulez savoir si l'action standard **Copier** est disponible (c'est-à-dire
 
 ## Voir aussi 
 
-[INVOKE ACTION](invoke-action.md)  
-[SET LIST ITEM PARAMETER](set-list-item-parameter.md)  
+[INVOKE ACTION](invoke-action)  
+[SET LIST ITEM PARAMETER](set-list-item-parameter)  
 
 ## Propriétés
 

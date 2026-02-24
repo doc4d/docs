@@ -30,7 +30,7 @@ displayed_sidebar: docs
 
 ## Descrição 
 
-<!--REF #_command_.SET PRINTABLE MARGIN.Summary-->O comando SET PRINTABLE MARGIN\[#descv\]permite atribuir os valores de varias margens de impressão utilizando os comandos [Print form](../commands/print-form.md), [PRINT SELECTION](print-selection.md) e [PRINT RECORD](print-record.md).<!-- END REF--> 
+<!--REF #_command_.SET PRINTABLE MARGIN.Summary-->O comando SET PRINTABLE MARGIN\[#descv\]permite atribuir os valores de varias margens de impressão utilizando os comandos [Print form](../commands/print-form), [PRINT SELECTION](print-selection) e [PRINT RECORD](print-record).<!-- END REF--> 
 
 Pode passar um dos seguintes valores nos parâmetros *esquerda*, *superior*, *direita* e *inferior*:  
   
@@ -40,7 +40,7 @@ Pode passar um dos seguintes valores nos parâmetros *esquerda*, *superior*, *di
   
 Os valores dos parâmetros *direita* e *inferior* são relativos às bordas direita e inferior do papel.  
   
-**Nota**: para maior informação sobre gestão de impressão e terminologia em 4D, consulte a descrição do comando [GET PRINTABLE MARGIN](get-printable-margin.md).  
+**Nota**: para maior informação sobre gestão de impressão e terminologia em 4D, consulte a descrição do comando [GET PRINTABLE MARGIN](get-printable-margin).  
   
 Por padrão, 4D baseia suas impressões nas margens da impressora. Una vez se executa o comando SET PRINTABLE MARGIN, os parâmetros modificados se conservarão no mesmo processo para toda a sessão.
 
@@ -66,9 +66,9 @@ O exemplo a seguir lhe permite obter o tamanho do papel:
 
 ## Ver também 
 
-[GET PRINTABLE MARGIN](get-printable-margin.md)  
-[Get printed height](get-printed-height.md)  
-[Print form](../commands/print-form.md)  
+[GET PRINTABLE MARGIN](get-printable-margin)  
+[Get printed height](get-printed-height)  
+[Print form](../commands/print-form)  
 
 ## Propriedades
 

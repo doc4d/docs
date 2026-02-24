@@ -42,7 +42,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[DELETE FROM BLOB](delete-from-blob.md)  
+[DELETE FROM BLOB](delete-from-blob)  
 
 ## プロパティ
 

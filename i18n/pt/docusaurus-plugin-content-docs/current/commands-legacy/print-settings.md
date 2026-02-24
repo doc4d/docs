@@ -29,7 +29,7 @@ displayed_sidebar: docs
 
 ## Descrição 
 
-<!--REF #_command_.PRINT SETTINGS.Summary-->O comando PRINT SETTINGS mostra una o dos caixas de diálogo de parâmetros de impressão.<!-- END REF--> Este comando deve ser chamado antes de uma série de comandos [Print form](../commands/print-form.md) ou o comando [OPEN PRINTING JOB](open-printing-job.md).
+<!--REF #_command_.PRINT SETTINGS.Summary-->O comando PRINT SETTINGS mostra una o dos caixas de diálogo de parâmetros de impressão.<!-- END REF--> Este comando deve ser chamado antes de uma série de comandos [Print form](../commands/print-form) ou o comando [OPEN PRINTING JOB](open-printing-job).
 
 O parâmetro opcional *dialType* pode ser utilizado para configurar a visualização das caixas de diálogo de impressão. Pode usar uma das constantes abaixo do tema *Opções de Impressão*. A caixa de diálogo exibida vai depender realmente de sua versão 4D como mostrada na tabela abaixo:
 
@@ -38,11 +38,11 @@ O parâmetro opcional *dialType* pode ser utilizado para configurar a visualiza�
 | Page setup dialog | 1     | Visualização de diálogo de configuração de página                                  |
 | Print dialog      | 2     | Visualização da caixa de diálogo de Impressão (padrão se for omitido)<br/> |
 
-**Nota**: A caixa de diálogo de impressão contém a opção **Preview on Screen** permitindo ao usuário visualizar sua impressão na tela. Pode pré-selecionar ou de - selecionar esta opção chamando [OPEN PRINTING JOB](open-printing-job.md) antes de chamar PRINT SETTINGS.
+**Nota**: A caixa de diálogo de impressão contém a opção **Preview on Screen** permitindo ao usuário visualizar sua impressão na tela. Pode pré-selecionar ou de - selecionar esta opção chamando [OPEN PRINTING JOB](open-printing-job) antes de chamar PRINT SETTINGS.
 
 ## Exemplo 
 
-Ver exemplo para o comando [Print form](../commands/print-form.md)..
+Ver exemplo para o comando [Print form](../commands/print-form)..
 
 ## Variáveis e conjuntos do sistema 
 
@@ -50,10 +50,10 @@ Se o usuário clicar em OK em ambas caixas de diálogo, a variável sistema OK t
 
 ## Ver também 
 
-[OPEN PRINTING JOB](open-printing-job.md)  
-[PAGE BREAK](page-break.md)  
-[Print form](../commands/print-form.md)  
-[SET PRINT PREVIEW](set-print-preview.md)  
+[OPEN PRINTING JOB](open-printing-job)  
+[PAGE BREAK](page-break)  
+[Print form](../commands/print-form)  
+[SET PRINT PREVIEW](set-print-preview)  
 
 ## Propriedades
 

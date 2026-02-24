@@ -34,7 +34,7 @@ O comando Next window devolve o número de referência da janela localizada “a
 
 ## Ver também 
 
-[Frontmost window](frontmost-window.md)  
+[Frontmost window](frontmost-window)  
 
 ## Propriedades
 

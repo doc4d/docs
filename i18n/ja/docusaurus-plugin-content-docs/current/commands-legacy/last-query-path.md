@@ -33,8 +33,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[DESCRIBE QUERY EXECUTION](describe-query-execution.md)  
-[Last query plan](last-query-plan.md)  
+[DESCRIBE QUERY EXECUTION](describe-query-execution)  
+[Last query plan](last-query-plan)  
 
 ## プロパティ
 

@@ -38,8 +38,8 @@ En ambos casos, el comando no devuelve las tablas invisibles.
 
 ## Ver también 
 
-[GET FIELD TITLES](get-field-titles.md)  
-[SET TABLE TITLES](set-table-titles.md)  
+[GET FIELD TITLES](get-field-titles)  
+[SET TABLE TITLES](set-table-titles)  
 
 ## Propiedades
 

@@ -38,7 +38,7 @@ Si vous omettez le paramètre *process*, **Get menu title** s'applique à la bar
 
 ## Voir aussi 
 
-[Count menus](count-menus.md)  
+[Count menus](count-menus)  
 
 ## Propriétés
 

@@ -91,7 +91,7 @@ Como el comando devuelve una colección, se puede utilizar con **.join()** para 
 
 ## Ver también 
 
-[Count parameters](count-parameters.md)  
+[Count parameters](count-parameters)  
 
 ## Propiedades
 

@@ -42,8 +42,8 @@ displayed_sidebar: docs
 
 **注意:** 
 
-* **SET AUTOMATIC RELATIONS**コマンドに [True](true.md "True") を渡すと、全ての手動リレートがセッション中に自動モードが"ロック"されます。この場合、 [SET FIELD RELATION](set-field-relation.md) コマンドは**SET AUTOMATIC RELATIONS** の前にあっても後ろにあっても、同じセッション中は呼び出しが無視されます。自動モードを解除して[SET FIELD RELATION](set-field-relation.md) の呼び出しを有効化する際には、**SET AUTOMATIC RELATIONS** に [False](false.md "False")を渡します。
-* 自動リレーション機能はリレートされたテーブルが[DISPLAY SELECTION](display-selection.md) 、[MODIFY SELECTION](modify-selection.md) 、あるいはサブフォームを使用して表示されたリストフォーム内で表示されている場合には、無効化されているということに注意してください。詳細については*自動およびマニュアルリレーション* を参照してください。
+* **SET AUTOMATIC RELATIONS**コマンドに [True](true.md "True") を渡すと、全ての手動リレートがセッション中に自動モードが"ロック"されます。この場合、 [SET FIELD RELATION](set-field-relation) コマンドは**SET AUTOMATIC RELATIONS** の前にあっても後ろにあっても、同じセッション中は呼び出しが無視されます。自動モードを解除して[SET FIELD RELATION](set-field-relation) の呼び出しを有効化する際には、**SET AUTOMATIC RELATIONS** に [False](false.md "False")を渡します。
+* 自動リレーション機能はリレートされたテーブルが[DISPLAY SELECTION](display-selection) 、[MODIFY SELECTION](modify-selection) 、あるいはサブフォームを使用して表示されたリストフォーム内で表示されている場合には、無効化されているということに注意してください。詳細については*自動およびマニュアルリレーション* を参照してください。
 
 ## 例題 
 
@@ -55,11 +55,11 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET AUTOMATIC RELATIONS](get-automatic-relations.md)  
-[GET RELATION PROPERTIES](get-relation-properties.md)  
-[SELECTION RANGE TO ARRAY](selection-range-to-array.md)  
-[SELECTION TO ARRAY](selection-to-array.md)  
-[SET FIELD RELATION](set-field-relation.md)  
+[GET AUTOMATIC RELATIONS](get-automatic-relations)  
+[GET RELATION PROPERTIES](get-relation-properties)  
+[SELECTION RANGE TO ARRAY](selection-range-to-array)  
+[SELECTION TO ARRAY](selection-to-array)  
+[SET FIELD RELATION](set-field-relation)  
 *リレーションについて*  
 
 ## プロパティ

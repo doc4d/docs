@@ -52,9 +52,9 @@ O método abaixo mostra um registro em toda a tela (Macintosh) até que dê um c
 
 ## Ver também 
 
-[HIDE TOOL BAR](hide-tool-bar.md)  
-[SHOW MENU BAR](show-menu-bar.md)  
-[SHOW TOOL BAR](show-tool-bar.md)  
+[HIDE TOOL BAR](hide-tool-bar)  
+[SHOW MENU BAR](show-menu-bar)  
+[SHOW TOOL BAR](show-tool-bar)  
 
 ## Propriedades
 

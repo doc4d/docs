@@ -33,7 +33,7 @@ displayed_sidebar: docs
 | Waiting for internal flag | 倍長整数 | 4     |                                                                                                                                                                             |
 | Paused                    | 倍長整数 | 5     |                                                                                                                                                                             |
 
-プロセスが存在しない (つまり1から[Count tasks](count-tasks.md) までの番号を渡さなかった) 場合、**Process state** はDoes not exist (-100)を返します。
+プロセスが存在しない (つまり1から[Count tasks](count-tasks) までの番号を渡さなかった) 場合、**Process state** はDoes not exist (-100)を返します。
 
 ## 例題 
 
@@ -58,8 +58,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Count tasks](count-tasks.md)  
-[Process info](../commands/process-info.md)  
+[Count tasks](count-tasks)  
+[Process info](../commands/process-info)  
 
 ## プロパティ
 

@@ -35,7 +35,7 @@ Dans le contexte des list box en mode sélection, l’instruction **REDRAW** app
 
 ## Voir aussi 
 
-[SET TIMER](set-timer.md)  
+[SET TIMER](set-timer)  
 
 ## Propriétés
 

@@ -70,7 +70,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[WA Evaluate JavaScript](wa-evaluate-javascript.md)  
+[WA Evaluate JavaScript](wa-evaluate-javascript)  
 
 ## プロパティ
 

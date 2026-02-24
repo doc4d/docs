@@ -56,8 +56,8 @@ This test lets you run different code depending on whether the version is a merg
 
 ## See also 
 
-[Application type](application-type.md)  
-[Application version](application-version.md)  
+[Application type](application-type)  
+[Application version](application-version)  
 
 ## Properties
 

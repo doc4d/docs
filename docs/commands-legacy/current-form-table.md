@@ -30,7 +30,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Current form table.Summary-->The Current form table command returns the pointer to the table of the form being displayed or printed in the current process.<!-- END REF-->
 
-The function returns [Is nil pointer](is-nil-pointer.md) in the following cases:
+The function returns [Is nil pointer](is-nil-pointer) in the following cases:
 
 * There is no form being displayed or printed in the current process,
 * The current form is a project form.
@@ -72,10 +72,10 @@ To do so, use the object method to create the variable *vsCurrentRecord*, then c
 
 ## See also 
 
-[DIALOG](../commands/dialog.md)  
-[FORM SET INPUT](form-set-input.md)  
-[FORM SET OUTPUT](form-set-output.md)  
-[PRINT SELECTION](print-selection.md)  
+[DIALOG](../commands/dialog)  
+[FORM SET INPUT](form-set-input)  
+[FORM SET OUTPUT](form-set-output)  
+[PRINT SELECTION](print-selection)  
 
 ## Properties
 

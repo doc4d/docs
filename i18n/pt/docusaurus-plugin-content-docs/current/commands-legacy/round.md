@@ -38,7 +38,7 @@ O exemplo a seguir ilustra como Round funciona com diferentes argumentos. Cada l
 
 ## Ver também 
 
-[Trunc](trunc.md)  
+[Trunc](trunc)  
 
 ## Propriedades
 

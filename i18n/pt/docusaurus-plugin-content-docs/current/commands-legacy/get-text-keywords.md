@@ -94,7 +94,7 @@ Para contar as palavras de um texto:
 
 ## Ver também 
 
-[DISTINCT VALUES](distinct-values.md)  
+[DISTINCT VALUES](distinct-values)  
 
 ## Propriedades
 

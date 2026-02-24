@@ -39,8 +39,8 @@ Se omite o parâmetro *processo*, Get menu item é aplicado a barra de menus do 
 
 ## Ver também 
 
-[Get menu item key](get-menu-item-key.md)  
-[SET MENU ITEM](set-menu-item.md)  
+[Get menu item key](get-menu-item-key)  
+[SET MENU ITEM](set-menu-item)  
 
 ## Propriedades
 

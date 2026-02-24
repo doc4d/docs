@@ -113,8 +113,8 @@ displayed_sidebar: docs
 ## 参照 
 
   
-[CALL WORKER](call-worker.md)  
-[DIALOG](../commands/dialog.md)  
+[CALL WORKER](call-worker)  
+[DIALOG](../commands/dialog)  
 
 ## プロパティ
 

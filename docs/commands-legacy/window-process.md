@@ -34,7 +34,7 @@ If you omit the *window* parameter, Window process returns the process of the cu
 
 ## See also 
 
-[Current process](current-process.md)  
+[Current process](current-process)  
 
 ## Properties
 

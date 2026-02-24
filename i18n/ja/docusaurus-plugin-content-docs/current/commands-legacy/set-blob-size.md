@@ -61,7 +61,7 @@ BLOBに新しいバイトを割り当て、それらのバイトを特定の値�
 
 ## 参照 
 
-[BLOB size](blob-size.md)  
+[BLOB size](blob-size)  
 
 ## プロパティ
 

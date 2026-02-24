@@ -45,7 +45,7 @@ If the list box is associated with arrays, *tableNum* returns -1 and *name*, if 
 
 ## See also 
 
-[LISTBOX SET TABLE SOURCE](listbox-set-table-source.md)  
+[LISTBOX SET TABLE SOURCE](listbox-set-table-source)  
 
 ## Properties
 

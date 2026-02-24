@@ -99,7 +99,7 @@ Usted quiere asociar un atajo de teclado diferente en función del lenguaje actu
 
 ## Ver también 
 
-[OBJECT GET SHORTCUT](object-get-shortcut.md)  
+[OBJECT GET SHORTCUT](object-get-shortcut)  
 
 ## Propiedades
 

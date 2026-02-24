@@ -43,7 +43,7 @@ Si el usuario hace clic en Cancelar en la caja de diálogo de abrir archivos, o 
 
 ## Ver también 
 
-[SAVE SET](save-set.md)  
+[SAVE SET](save-set)  
 
 ## Propiedades
 

@@ -41,9 +41,9 @@ If you do not have the proper access privileges for calling GET GROUP LIST or if
 
 ## See also 
 
-[GET GROUP PROPERTIES](get-group-properties.md)  
-[GET USER LIST](get-user-list.md)  
-[Set group properties](set-group-properties.md)  
+[GET GROUP PROPERTIES](get-group-properties)  
+[GET USER LIST](get-user-list)  
+[Set group properties](set-group-properties)  
 
 ## Properties
 

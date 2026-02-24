@@ -76,8 +76,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX Get array](listbox-get-array.md)  
-[LISTBOX GET ARRAYS](listbox-get-arrays.md)  
+[LISTBOX Get array](listbox-get-array)  
+[LISTBOX GET ARRAYS](listbox-get-arrays)  
 
 ## プロパティ
 

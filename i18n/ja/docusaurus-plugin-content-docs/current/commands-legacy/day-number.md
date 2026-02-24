@@ -60,7 +60,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Day of](day-of.md)  
+[Day of](day-of)  
 
 ## プロパティ
 

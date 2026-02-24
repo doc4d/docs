@@ -78,8 +78,8 @@ Definição de vários pares de atributos/valores:
 ## Ver também 
 
 *Design Object Access*  
-[METHOD Get attribute](method-get-attribute.md)  
-[METHOD SET ATTRIBUTES](method-set-attributes.md)  
+[METHOD Get attribute](method-get-attribute)  
+[METHOD SET ATTRIBUTES](method-set-attributes)  
 
 ## Propriedades
 

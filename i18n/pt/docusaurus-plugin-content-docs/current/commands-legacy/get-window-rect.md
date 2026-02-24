@@ -42,12 +42,12 @@ As coordenadas retornadas são expressadas em relação ao canto superior esquer
 
 ## Exemplo 
 
-Ver o exemplo do comando [WINDOW LIST](window-list.md)..
+Ver o exemplo do comando [WINDOW LIST](window-list)..
 
 ## Ver também 
 
-[CONVERT COORDINATES](convert-coordinates.md)  
-[SET WINDOW RECT](set-window-rect.md)  
+[CONVERT COORDINATES](convert-coordinates)  
+[SET WINDOW RECT](set-window-rect)  
 
 ## Propriedades
 

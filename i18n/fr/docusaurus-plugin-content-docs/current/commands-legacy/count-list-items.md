@@ -69,8 +69,8 @@ Voici la liste *hList* affichée en mode Application :
 
 ## Voir aussi 
 
-[List item position](list-item-position.md)  
-[Selected list items](selected-list-items.md)  
+[List item position](list-item-position)  
+[Selected list items](selected-list-items)  
 
 ## Propriétés
 

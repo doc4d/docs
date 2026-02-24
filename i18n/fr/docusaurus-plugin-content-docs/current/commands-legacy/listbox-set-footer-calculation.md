@@ -60,7 +60,7 @@ Si le type de données de la colonne ou d’au moins une colonne de la list box 
 
 ## Voir aussi 
 
-[LISTBOX Get footer calculation](listbox-get-footer-calculation.md)  
+[LISTBOX Get footer calculation](listbox-get-footer-calculation)  
 
 ## Propriétés
 

@@ -45,7 +45,7 @@ Cet exemple supprime la troisième colonne de l'état :
 
 ## Voir aussi 
 
-[QR INSERT COLUMN](qr-insert-column.md)  
+[QR INSERT COLUMN](qr-insert-column)  
 
 ## Propriétés
 

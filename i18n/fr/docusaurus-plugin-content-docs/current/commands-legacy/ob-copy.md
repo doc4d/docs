@@ -177,7 +177,7 @@ Nous souhaitons copier *$sharedObj* dans *$sharedColl.* Etant donné qu'ils appa
 
 ## Voir aussi 
 
-[OB Get](ob-get.md)  
+[OB Get](ob-get)  
 *Objets partagés et collections partagées*  
 
 ## Propriétés

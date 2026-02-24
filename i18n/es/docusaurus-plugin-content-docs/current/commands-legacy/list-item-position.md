@@ -49,8 +49,8 @@ Si el elemento no existe, List item position devuelve 0.
 
 ## Ver también 
 
-[Count list items](count-list-items.md)  
-[SELECT LIST ITEMS BY REFERENCE](select-list-items-by-reference.md)  
+[Count list items](count-list-items)  
+[SELECT LIST ITEMS BY REFERENCE](select-list-items-by-reference)  
 
 ## Propiedades
 

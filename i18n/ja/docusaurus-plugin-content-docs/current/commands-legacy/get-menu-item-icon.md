@@ -46,7 +46,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SET MENU ITEM ICON](set-menu-item-icon.md)  
+[SET MENU ITEM ICON](set-menu-item-icon)  
 
 ## プロパティ
 

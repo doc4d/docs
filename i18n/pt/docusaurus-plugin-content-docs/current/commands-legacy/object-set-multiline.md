@@ -53,7 +53,7 @@ Você quer proibir várias linhas em uma área de entrada:
 
 ## Ver também 
 
-[OBJECT Get multiline](object-get-multiline.md)  
+[OBJECT Get multiline](object-get-multiline)  
 
 ## Propriedades
 

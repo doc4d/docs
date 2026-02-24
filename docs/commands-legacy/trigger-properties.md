@@ -31,7 +31,7 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.TRIGGER PROPERTIES.Summary-->The **TRIGGER PROPERTIES** command returns information about the trigger execution level you pass in *triggerLevel*.<!-- END REF--> You use this command in conjunction with [Trigger level](trigger-level.md) to perform different actions depending on the cascading of trigger execution levels. For more information, see *Triggers*.
+<!--REF #_command_.TRIGGER PROPERTIES.Summary-->The **TRIGGER PROPERTIES** command returns information about the trigger execution level you pass in *triggerLevel*.<!-- END REF--> You use this command in conjunction with [Trigger level](trigger-level) to perform different actions depending on the cascading of trigger execution levels. For more information, see *Triggers*.
 
 If you pass a non-existing trigger execution level, the command returns 0 (zero) in all parameters.
 
@@ -48,8 +48,8 @@ The table number and record number for the record involved by the database event
 ## See also 
 
 *About Record Numbers*  
-[Trigger event](trigger-event.md)  
-[Trigger level](trigger-level.md)  
+[Trigger event](trigger-event)  
+[Trigger level](trigger-level)  
 *Triggers*  
 
 ## Properties

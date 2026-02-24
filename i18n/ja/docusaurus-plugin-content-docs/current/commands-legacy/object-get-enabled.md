@@ -45,7 +45,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT SET ENABLED](object-set-enabled.md)  
+[OBJECT SET ENABLED](object-set-enabled)  
 
 ## プロパティ
 

@@ -35,7 +35,7 @@ Si pasa el parámetro opcional *\**, indica que el parámetro objeto es un nombr
 
 ## Ver también 
 
-[OBJECT SET VISIBLE](object-set-visible.md)  
+[OBJECT SET VISIBLE](object-set-visible)  
 
 ## Propiedades
 

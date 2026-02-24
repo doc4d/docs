@@ -48,9 +48,9 @@ O parâmetro *dataVenc* recebe a data de vencimento e o parâmetro *horaVenc* re
 
 ## Ver também 
 
-[WEB Get current session ID](web-get-current-session-id.md)  
+[WEB Get current session ID](web-get-current-session-id)  
 *Web Sessions Management (Legacy)*  
-[WEB SET OPTION](web-set-option.md)  
+[WEB SET OPTION](web-set-option)  
 
 ## Propriedades
 

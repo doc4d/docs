@@ -43,8 +43,8 @@ If, for example, you are working with the database located in the folder Documen
 
 ## See also 
 
-[Application file](application-file.md)  
-[Structure file](structure-file.md)  
+[Application file](application-file)  
+[Structure file](structure-file)  
 
 ## Properties
 

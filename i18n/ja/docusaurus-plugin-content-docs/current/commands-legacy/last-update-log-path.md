@@ -25,8 +25,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[RESTART 4D](restart-4d.md)  
-[SET UPDATE FOLDER](set-update-folder.md)  
+[RESTART 4D](restart-4d)  
+[SET UPDATE FOLDER](set-update-folder)  
 
 ## プロパティ
 

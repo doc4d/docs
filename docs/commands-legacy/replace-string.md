@@ -81,9 +81,9 @@ The following example illustrates the use of the \* parameter in the case of a d
 
 ## See also 
 
-[Change string](change-string.md)  
-[Delete string](delete-string.md)  
-[Insert string](insert-string.md)  
+[Change string](change-string)  
+[Delete string](delete-string)  
+[Insert string](insert-string)  
 
 ## Properties
 

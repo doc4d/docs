@@ -35,7 +35,7 @@ In the context of list boxes in selection mode, when the REDRAW statement is app
 
 ## See also 
 
-[SET TIMER](set-timer.md)  
+[SET TIMER](set-timer)  
 
 ## Properties
 

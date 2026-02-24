@@ -55,7 +55,7 @@ Uso de una imagen ubicada en la carpeta Resources de la base:
 
 ## Ver también 
 
-[GET MENU ITEM ICON](get-menu-item-icon.md)  
+[GET MENU ITEM ICON](get-menu-item-icon)  
 
 ## Propiedades
 

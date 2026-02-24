@@ -66,7 +66,7 @@ A seguiete instrução coloca o título “Título do centro” no cabeçalho do
 
 ## Ver também 
 
-[QR GET HEADER AND FOOTER](qr-get-header-and-footer.md)  
+[QR GET HEADER AND FOOTER](qr-get-header-and-footer)  
 
 ## Propriedades
 

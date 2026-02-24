@@ -64,8 +64,8 @@ On souhaite compter le nombre de fautes potentielles dans un texte :
 
 ## Voir aussi 
 
-[SPELL ADD TO USER DICTIONARY](spell-add-to-user-dictionary.md)  
-[SPELL CHECKING](spell-checking.md)  
+[SPELL ADD TO USER DICTIONARY](spell-add-to-user-dictionary)  
+[SPELL CHECKING](spell-checking)  
 
 ## Propriétés
 

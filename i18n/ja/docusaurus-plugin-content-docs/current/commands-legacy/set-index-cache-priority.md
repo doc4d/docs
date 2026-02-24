@@ -58,8 +58,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[ADJUST INDEX CACHE PRIORITY](adjust-index-cache-priority.md)  
-[Get adjusted index cache priority](get-adjusted-index-cache-priority.md)  
+[ADJUST INDEX CACHE PRIORITY](adjust-index-cache-priority)  
+[Get adjusted index cache priority](get-adjusted-index-cache-priority)  
 
 ## プロパティ
 

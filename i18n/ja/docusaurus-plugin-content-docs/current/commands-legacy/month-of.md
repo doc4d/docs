@@ -53,8 +53,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Day of](day-of.md)  
-[Year of](year-of.md)  
+[Day of](day-of)  
+[Year of](year-of)  
 
 ## プロパティ
 

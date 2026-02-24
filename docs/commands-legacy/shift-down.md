@@ -57,12 +57,12 @@ The following object method for the button *bAnyButton* performs different actio
 
 ## See also 
 
-[Caps lock down](caps-lock-down.md)  
-[Macintosh command down](macintosh-command-down.md)  
-[Macintosh control down](macintosh-control-down.md)  
-[Macintosh option down](macintosh-option-down.md)  
-[Windows Alt down](windows-alt-down.md)  
-[Windows Ctrl down](windows-ctrl-down.md)  
+[Caps lock down](caps-lock-down)  
+[Macintosh command down](macintosh-command-down)  
+[Macintosh control down](macintosh-control-down)  
+[Macintosh option down](macintosh-option-down)  
+[Windows Alt down](windows-alt-down)  
+[Windows Ctrl down](windows-ctrl-down)  
 
 ## Properties
 

@@ -96,9 +96,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Day of](day-of.md)  
-[Month of](month-of.md)  
-[Year of](year-of.md)  
+[Day of](day-of)  
+[Month of](month-of)  
+[Year of](year-of)  
 
 ## プロパティ
 

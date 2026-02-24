@@ -44,11 +44,11 @@ Si las variables se guardan correctamente, la variable sistema OK toma el valor 
 
 ## Ver también 
 
-[BLOB TO DOCUMENT](blob-to-document.md)  
-[BLOB TO VARIABLE](blob-to-variable.md)  
-[DOCUMENT TO BLOB](document-to-blob.md)  
-[LOAD VARIABLES](load-variables.md)  
-[VARIABLE TO BLOB](variable-to-blob.md)  
+[BLOB TO DOCUMENT](blob-to-document)  
+[BLOB TO VARIABLE](blob-to-variable)  
+[DOCUMENT TO BLOB](document-to-blob)  
+[LOAD VARIABLES](load-variables)  
+[VARIABLE TO BLOB](variable-to-blob)  
 *Variables sistema*  
 
 ## Propiedades

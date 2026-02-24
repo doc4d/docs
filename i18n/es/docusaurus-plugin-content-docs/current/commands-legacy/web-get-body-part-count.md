@@ -31,11 +31,11 @@ displayed_sidebar: docs
 
 ## Ejemplo 
 
-Consulte el ejemplo del comando [WEB GET BODY PART](web-get-body-part.md). 
+Consulte el ejemplo del comando [WEB GET BODY PART](web-get-body-part). 
 
 ## Ver también 
 
-[WEB GET BODY PART](web-get-body-part.md)  
+[WEB GET BODY PART](web-get-body-part)  
 
 ## Propiedades
 

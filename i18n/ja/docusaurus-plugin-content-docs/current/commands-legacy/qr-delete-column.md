@@ -45,7 +45,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR INSERT COLUMN](qr-insert-column.md)  
+[QR INSERT COLUMN](qr-insert-column)  
 
 ## プロパティ
 

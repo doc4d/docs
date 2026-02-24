@@ -53,7 +53,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX Get headers height](listbox-get-headers-height.md)  
+[LISTBOX Get headers height](listbox-get-headers-height)  
 
 ## プロパティ
 

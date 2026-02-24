@@ -44,7 +44,7 @@ Pour plus d'informations sur les composants 4D, reportez-vous au manuel *Mode D�
 
 ## Voir aussi 
 
-[PLUGIN LIST](plugin-list.md)  
+[PLUGIN LIST](plugin-list)  
 
 ## Propriétés
 

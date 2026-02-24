@@ -23,9 +23,9 @@ Se *nome* foi criado pelo comando [CUT NAMED SELECTION](cut-named-selection.md "
 
 ## Ver também 
 
-[COPY NAMED SELECTION](copy-named-selection.md)  
-[CUT NAMED SELECTION](cut-named-selection.md)  
-[USE NAMED SELECTION](use-named-selection.md)  
+[COPY NAMED SELECTION](copy-named-selection)  
+[CUT NAMED SELECTION](cut-named-selection)  
+[USE NAMED SELECTION](use-named-selection)  
 
 ## Propriedades
 

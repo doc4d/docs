@@ -123,9 +123,9 @@ DRAG AND DROP PROPERTIESコマンドの例題参照
 
 ## 参照 
 
-[POST OUTSIDE CALL](post-outside-call.md)  
-[SET PROCESS VARIABLE](set-process-variable.md)  
-[VARIABLE TO VARIABLE](variable-to-variable.md)  
+[POST OUTSIDE CALL](post-outside-call)  
+[SET PROCESS VARIABLE](set-process-variable)  
+[VARIABLE TO VARIABLE](variable-to-variable)  
 *ドラッグ＆ドロップ*  
 *プロセス*  
 

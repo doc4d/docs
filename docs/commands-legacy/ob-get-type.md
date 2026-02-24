@@ -65,8 +65,8 @@ We want to get the type of standard values:
 
 ## See also 
 
-[OB GET PROPERTY NAMES](ob-get-property-names.md)  
-[Value type](value-type.md)  
+[OB GET PROPERTY NAMES](ob-get-property-names)  
+[Value type](value-type)  
 
 ## Properties
 

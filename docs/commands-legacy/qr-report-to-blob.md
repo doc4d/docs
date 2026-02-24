@@ -42,7 +42,7 @@ The following statement assigns the Quick Report stored in MyArea into a BLOB Fi
 
 ## See also 
 
-[QR BLOB TO REPORT](qr-blob-to-report.md)  
+[QR BLOB TO REPORT](qr-blob-to-report)  
 
 ## Properties
 

@@ -47,7 +47,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX DELETE ROWS](listbox-delete-rows.md)  
+[LISTBOX DELETE ROWS](listbox-delete-rows)  
 
 ## プロパティ
 

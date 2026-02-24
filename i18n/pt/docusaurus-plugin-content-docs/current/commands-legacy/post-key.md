@@ -39,14 +39,14 @@ Se especificar o parâmetro *processo*, a tecla foi enviada ao processo cujo nú
 
 ## Exemplo 
 
-Ver exemplo do comando [Process number](../commands/process-number.md).
+Ver exemplo do comando [Process number](../commands/process-number).
 
 ## Ver também 
 
 *Códigos ASCII*  
 *Códigos de Função de teclado*  
-[POST CLICK](post-click.md)  
-[POST EVENT](post-event.md)  
+[POST CLICK](post-click)  
+[POST EVENT](post-event)  
 
 ## Propriedades
 

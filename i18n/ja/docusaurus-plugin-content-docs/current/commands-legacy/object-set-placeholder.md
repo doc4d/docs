@@ -56,7 +56,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT Get placeholder](object-get-placeholder.md)  
+[OBJECT Get placeholder](object-get-placeholder)  
 
 ## プロパティ
 

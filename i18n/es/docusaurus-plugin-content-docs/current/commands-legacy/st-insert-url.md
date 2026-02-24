@@ -73,8 +73,8 @@ Usted desea insertar un enlace al sitio web de 4D para reemplazar el texto selec
 
 #### Ver también 
 
-[ST GET URL](st-get-url.md)  
-[ST INSERT EXPRESSION](st-insert-expression.md)  
+[ST GET URL](st-get-url)  
+[ST INSERT EXPRESSION](st-insert-expression)  
 
 #### Propiedades
 

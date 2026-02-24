@@ -73,8 +73,8 @@ You want to insert a link to the 4D Web site to replace the text selected in the
 
 ## See also 
 
-[ST GET URL](st-get-url.md)  
-[ST INSERT EXPRESSION](st-insert-expression.md)  
+[ST GET URL](st-get-url)  
+[ST INSERT EXPRESSION](st-insert-expression)  
 
 ## Properties
 

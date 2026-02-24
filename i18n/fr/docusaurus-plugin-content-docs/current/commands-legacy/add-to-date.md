@@ -33,7 +33,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Add to date.Summary-->**Add to date** ajoute *années*, *mois* et *jours* à la date que vous avez passée dans *laDate*, et retourne la date résultante.<!-- END REF-->
 
-Alors que les [Self](self.md) vous permettent d'ajouter des jours à une date, **Add to date** vous permet d'ajouter rapidement des mois et des années sans vous soucier du nombre de jours par mois ou des années bissextiles (comme vous devriez le faire avec l'opérateur "+" sur les dates).
+Alors que les [Self](self) vous permettent d'ajouter des jours à une date, **Add to date** vous permet d'ajouter rapidement des mois et des années sans vous soucier du nombre de jours par mois ou des années bissextiles (comme vous devriez le faire avec l'opérateur "+" sur les dates).
 
 ## Exemple 
 

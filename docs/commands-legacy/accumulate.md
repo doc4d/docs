@@ -28,26 +28,26 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.ACCUMULATE.Summary-->**ACCUMULATE** specifies the fields or variables to be accumulated during a form report performed using [PRINT SELECTION](print-selection.md).<!-- END REF-->
+<!--REF #_command_.ACCUMULATE.Summary-->**ACCUMULATE** specifies the fields or variables to be accumulated during a form report performed using [PRINT SELECTION](print-selection).<!-- END REF-->
 
-You **must** execute [BREAK LEVEL](break-level.md) and **ACCUMULATE** before every report for which you want to do break processing. These commands activate break processing for a report. See the explanation for the [Subtotal](subtotal.md) command.
+You **must** execute [BREAK LEVEL](break-level) and **ACCUMULATE** before every report for which you want to do break processing. These commands activate break processing for a report. See the explanation for the [Subtotal](subtotal) command.
 
-Use **ACCUMULATE** when you want to include subtotals for numeric fields or variables in a form report. **ACCUMULATE** tells 4D to store subtotals for each of the Data arguments. The subtotals are accumulated for each break level specified with the [Subtotal](subtotal.md) command.
+Use **ACCUMULATE** when you want to include subtotals for numeric fields or variables in a form report. **ACCUMULATE** tells 4D to store subtotals for each of the Data arguments. The subtotals are accumulated for each break level specified with the [Subtotal](subtotal) command.
 
-Execute **ACCUMULATE** before printing the report with [PRINT SELECTION](print-selection.md).
+Execute **ACCUMULATE** before printing the report with [PRINT SELECTION](print-selection).
 
-Use the [Subtotal](subtotal.md) function in the form method or an object method to return the subtotal of one of the *data* arguments.
+Use the [Subtotal](subtotal) function in the form method or an object method to return the subtotal of one of the *data* arguments.
 
 ## Example 
 
-See the example for the [BREAK LEVEL](break-level.md) command.
+See the example for the [BREAK LEVEL](break-level) command.
 
 ## See also 
 
-[BREAK LEVEL](break-level.md)  
-[ORDER BY](order-by.md)  
-[PRINT SELECTION](print-selection.md)  
-[Subtotal](subtotal.md)  
+[BREAK LEVEL](break-level)  
+[ORDER BY](order-by)  
+[PRINT SELECTION](print-selection)  
+[Subtotal](subtotal)  
 
 ## Properties
 

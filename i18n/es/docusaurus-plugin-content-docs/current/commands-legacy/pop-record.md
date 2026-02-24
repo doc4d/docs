@@ -33,7 +33,7 @@ El siguiente ejemplo recupera el registro de un cliente en la pila:
 
 ## Ver también 
 
-[PUSH RECORD](push-record.md)  
+[PUSH RECORD](push-record)  
 *Uso de la pila de registros*  
 
 ## Propiedades

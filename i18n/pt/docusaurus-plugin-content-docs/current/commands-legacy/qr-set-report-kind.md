@@ -49,7 +49,7 @@ Se passa um valor incorreto do parâmetro *propriedade*, se gera o erro -9852.
 
 ## Ver também 
 
-[QR Get report kind](qr-get-report-kind.md)  
+[QR Get report kind](qr-get-report-kind)  
 
 ## Propriedades
 

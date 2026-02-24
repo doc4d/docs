@@ -46,8 +46,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[DELETE FROM ARRAY](delete-from-array.md)  
-[INSERT IN ARRAY](insert-in-array.md)  
+[DELETE FROM ARRAY](delete-from-array)  
+[INSERT IN ARRAY](insert-in-array)  
 
 ## プロパティ
 

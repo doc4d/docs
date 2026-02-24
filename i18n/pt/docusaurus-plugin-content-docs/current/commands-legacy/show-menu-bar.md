@@ -32,13 +32,13 @@ Se a barra de menus já estiver visível, o comando não faz nada.
 
 ## Exemplo 
 
-Ver exemplo do comando [HIDE MENU BAR](hide-menu-bar.md).
+Ver exemplo do comando [HIDE MENU BAR](hide-menu-bar).
 
 ## Ver também 
 
-[HIDE MENU BAR](hide-menu-bar.md)  
-[HIDE TOOL BAR](hide-tool-bar.md)  
-[SHOW TOOL BAR](show-tool-bar.md)  
+[HIDE MENU BAR](hide-menu-bar)  
+[HIDE TOOL BAR](hide-tool-bar)  
+[SHOW TOOL BAR](show-tool-bar)  
 
 ## Propriedades
 

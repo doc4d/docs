@@ -38,7 +38,7 @@ Passez dans *nomFichier* le nom ou le chemin d’accès du fichier à lire. Le f
 * un chemin d’accès relatif au fichier de structure de l’application, par exemple "\\\\docs\\\\monFichier.txt" sous Windows ou "/docs/monFichier.txt" sous macOS.
 * un chemin d’accès absolu, par exemple "c:\\\\app\\\\docs\\\\monFichier.txt" sous Windows ou "MacHD/docs/monFichier.txt" sous macOS.
 
-Vous pouvez passer dans *jeuCaractères* le jeu de caractères à utiliser pour la lecture. Vous pouvez passer une chaîne contenant le nom standard du jeu (par exemple “ISO-8859-1” ou “UTF-8”) ou son identifiant MIBEnum (entier long). Pour plus d’informations sur la liste des jeux de caractères pris en charge par 4D, reportez-vous à la description de la commande [CONVERT FROM TEXT](convert-from-text.md).
+Vous pouvez passer dans *jeuCaractères* le jeu de caractères à utiliser pour la lecture. Vous pouvez passer une chaîne contenant le nom standard du jeu (par exemple “ISO-8859-1” ou “UTF-8”) ou son identifiant MIBEnum (entier long). Pour plus d’informations sur la liste des jeux de caractères pris en charge par 4D, reportez-vous à la description de la commande [CONVERT FROM TEXT](convert-from-text).
 
 Si le document contient une BOM (Byte Order Mark), 4D utilise le jeu de caractères qu’elle définit au lieu du jeu de caractères spécifié dans *jeuCaractères* (ce paramètre est alors ignoré). 
 
@@ -88,7 +88,7 @@ Si vous exécutez ce code :
 ## Voir aussi 
 
 *Documents système*  
-[TEXT TO DOCUMENT](text-to-document.md)  
+[TEXT TO DOCUMENT](text-to-document)  
 
 ## Propriétés
 

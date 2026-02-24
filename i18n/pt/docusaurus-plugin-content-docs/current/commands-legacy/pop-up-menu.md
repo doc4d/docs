@@ -128,8 +128,8 @@ O próximo é o menu pop-up tal como aparece em Windows (esquerda) e Macintosh (
 
 ## Ver também 
 
-[Dynamic pop up menu](dynamic-pop-up-menu.md)  
-[MOUSE POSITION](mouse-position.md)  
+[Dynamic pop up menu](dynamic-pop-up-menu)  
+[MOUSE POSITION](mouse-position)  
 
 ## Propriedades
 

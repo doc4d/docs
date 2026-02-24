@@ -41,7 +41,7 @@ Les paramètres *hOffset*, *vOffset* et *mode* reçoivent la position et le mode
 
 ## Voir aussi 
 
-[Picture size](picture-size.md)  
+[Picture size](picture-size)  
 
 ## Propriétés
 

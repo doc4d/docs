@@ -38,8 +38,8 @@ Ver o exemplo do comando [Current date](current-date.md "Current date").
 
 ## Ver também 
 
-[Day of](day-of.md)  
-[Month of](month-of.md)  
+[Day of](day-of)  
+[Month of](month-of)  
 
 ## Propriedades
 

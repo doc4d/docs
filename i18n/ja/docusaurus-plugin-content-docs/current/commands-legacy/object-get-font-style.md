@@ -44,7 +44,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT SET FONT STYLE](object-set-font-style.md)  
+[OBJECT SET FONT STYLE](object-set-font-style)  
 
 ## プロパティ
 

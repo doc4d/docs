@@ -35,7 +35,7 @@ If you omit the *window* parameter, REDRAW WINDOW applies to the frontmost windo
 
 ## See also 
 
-[ERASE WINDOW](erase-window.md)  
+[ERASE WINDOW](erase-window)  
 
 ## Properties
 

@@ -29,8 +29,8 @@ Utilisez **READ WRITE** lorsque vous devez modifier un enregistrement et sauvega
 
 ## Voir aussi 
 
-[READ ONLY](read-only.md)  
-[Read only state](read-only-state.md)  
+[READ ONLY](read-only)  
+[Read only state](read-only-state)  
 *Verrouillage d'enregistrements*  
 
 ## Propriétés

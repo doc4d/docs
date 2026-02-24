@@ -43,7 +43,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SAVE SET](save-set.md)  
+[SAVE SET](save-set)  
 
 ## プロパティ
 

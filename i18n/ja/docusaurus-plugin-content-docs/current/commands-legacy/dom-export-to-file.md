@@ -66,8 +66,8 @@ XMLにおいて、改行はそれがXML要素の内側あるいは間いずれ�
 
 ## 参照 
 
-[DOM EXPORT TO VAR](dom-export-to-var.md)  
-[SVG EXPORT TO PICTURE](svg-export-to-picture.md)  
+[DOM EXPORT TO VAR](dom-export-to-var)  
+[SVG EXPORT TO PICTURE](svg-export-to-picture)  
 
 ## プロパティ
 

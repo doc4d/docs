@@ -43,8 +43,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[APPEND MENU ITEM](append-menu-item.md)  
-[INSERT MENU ITEM](insert-menu-item.md)  
+[APPEND MENU ITEM](append-menu-item)  
+[INSERT MENU ITEM](insert-menu-item)  
 
 ## プロパティ
 

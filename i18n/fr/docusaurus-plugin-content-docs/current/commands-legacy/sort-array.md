@@ -25,7 +25,7 @@ displayed_sidebar: docs
 
 Le second paramètre spécifie l'ordre du tri : croissant ou décroissant. Si ce paramètre est égal au symbole “supérieur à” (>), l'ordre du tri est croissant. S'il est égal au symbole “inférieur à” (<), l'ordre du tri est décroissant. S'il est omis, l'ordre du tri est croissant.
 
-Si plus d'un tableau est spécifié, les tableaux sont triés en fonction de l'ordre défini pour le premier tableau (les tris multi-niveaux ne sont pas possibles dans ce cas). Utilisez plutôt la commande [MULTI SORT ARRAY](multi-sort-array.md) si vous souhaitez effectuer des tris de tableaux synchronisés.
+Si plus d'un tableau est spécifié, les tableaux sont triés en fonction de l'ordre défini pour le premier tableau (les tris multi-niveaux ne sont pas possibles dans ce cas). Utilisez plutôt la commande [MULTI SORT ARRAY](multi-sort-array) si vous souhaitez effectuer des tris de tableaux synchronisés.
 
 ## Exemple 1 
 
@@ -78,10 +78,10 @@ Vous affichez les noms d'une table \[Personnes\] dans une fenêtre flottante. Ce
 
 ## Voir aussi 
 
-[Find in sorted array](find-in-sorted-array.md)  
-[MULTI SORT ARRAY](multi-sort-array.md)  
-[ORDER BY](order-by.md)  
-[SELECTION TO ARRAY](selection-to-array.md)  
+[Find in sorted array](find-in-sorted-array)  
+[MULTI SORT ARRAY](multi-sort-array)  
+[ORDER BY](order-by)  
+[SELECTION TO ARRAY](selection-to-array)  
 
 ## Propriétés
 

@@ -22,7 +22,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.SET CHANNEL.Summary-->The **SET CHANNEL** command opens a serial port or a document.<!-- END REF--> You can open only one serial port or one document at a time with this command. To close an opened serial port, pass SET CHANNEL (11).
 
-**Historical Note:** This command was originally the first 4D command used for working with serial ports and documents on disks. Since that time, new commands have been added. Today, you will typically work with documents on disk using the commands [Open document](open-document.md), [Create document](create-document.md) and [Append document](append-document.md). With these commands, you can read and write characters to and from documents using [Create document](create-document.md) or [RECEIVE PACKET](receive-packet.md) (these commands work with **SET CHANNEL**, too). However, if you want to use the commands [SEND VARIABLE](send-variable.md), [RECEIVE VARIABLE](receive-variable.md), [SEND RECORD](send-record.md) and [RECEIVE RECORD](receive-record.md), you must use SET CHANNEL to access the document on disk.
+**Historical Note:** This command was originally the first 4D command used for working with serial ports and documents on disks. Since that time, new commands have been added. Today, you will typically work with documents on disk using the commands [Open document](open-document), [Create document](create-document) and [Append document](append-document). With these commands, you can read and write characters to and from documents using [Create document](create-document) or [RECEIVE PACKET](receive-packet) (these commands work with **SET CHANNEL**, too). However, if you want to use the commands [SEND VARIABLE](send-variable), [RECEIVE VARIABLE](receive-variable), [SEND RECORD](send-record) and [RECEIVE RECORD](receive-record), you must use SET CHANNEL to access the document on disk.
 
 The description of SET CHANNEL is composed of two sections:
 
@@ -31,7 +31,7 @@ The description of SET CHANNEL is composed of two sections:
 
 ## Working with Serial Ports: SET CHANNEL (port;settings) 
 
-The first form of the **SET CHANNEL** command opens a serial port, setting the protocol and other port information. Data can be sent with [SEND PACKET](send-packet.md), [SEND RECORD](send-record.md) or [SEND VARIABLE](send-variable.md), and received with [RECEIVE BUFFER](receive-buffer.md), [RECEIVE PACKET](receive-packet.md), [RECEIVE VARIABLE](receive-variable.md) or [RECEIVE RECORD](receive-record.md).
+The first form of the **SET CHANNEL** command opens a serial port, setting the protocol and other port information. Data can be sent with [SEND PACKET](send-packet), [SEND RECORD](send-record) or [SEND VARIABLE](send-variable), and received with [RECEIVE BUFFER](receive-buffer), [RECEIVE PACKET](receive-packet), [RECEIVE VARIABLE](receive-variable) or [RECEIVE RECORD](receive-record).
 
  The first parameter, *port*, selects the port and the protocol. You can address up to 99 serial ports (one at a time).   
 The following table lists the values for *port*:
@@ -150,23 +150,23 @@ All of the operations in this table set the Document system variable if appropri
 
 ### Example 4 
 
-See examples for the [RECEIVE BUFFER](receive-buffer.md), [SET TIMEOUT](set-timeout.md) and [RECEIVE RECORD](receive-record.md) commands.
+See examples for the [RECEIVE BUFFER](receive-buffer), [SET TIMEOUT](set-timeout) and [RECEIVE RECORD](receive-record) commands.
 
 ## See also 
 
-[Append document](append-document.md)  
+[Append document](append-document)  
 [Communications](/category/commands/Communications)  
-[Create document](create-document.md)  
-[GET SERIAL PORT MAPPING](get-serial-port-mapping.md)  
-[Open document](open-document.md)  
-[RECEIVE BUFFER](receive-buffer.md)  
-[RECEIVE PACKET](receive-packet.md)  
-[RECEIVE RECORD](receive-record.md)  
-[RECEIVE VARIABLE](receive-variable.md)  
-[SEND PACKET](send-packet.md)  
-[SEND RECORD](send-record.md)  
-[SEND VARIABLE](send-variable.md)  
-[SET TIMEOUT](set-timeout.md)  
+[Create document](create-document)  
+[GET SERIAL PORT MAPPING](get-serial-port-mapping)  
+[Open document](open-document)  
+[RECEIVE BUFFER](receive-buffer)  
+[RECEIVE PACKET](receive-packet)  
+[RECEIVE RECORD](receive-record)  
+[RECEIVE VARIABLE](receive-variable)  
+[SEND PACKET](send-packet)  
+[SEND RECORD](send-record)  
+[SEND VARIABLE](send-variable)  
+[SET TIMEOUT](set-timeout)  
 
 ## Properties
 

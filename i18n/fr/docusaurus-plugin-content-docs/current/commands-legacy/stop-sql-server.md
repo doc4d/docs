@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 ## Voir aussi 
 
-[START SQL SERVER](start-sql-server.md)  
+[START SQL SERVER](start-sql-server)  
 
 ## Propriétés
 

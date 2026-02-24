@@ -39,8 +39,8 @@ Le paramètre *partieFenêtre* retourne 3 si une fenêtre est touchée, et 0 sin
 
 ## Voir aussi 
 
-[Frontmost window](frontmost-window.md)  
-[Next window](next-window.md)  
+[Frontmost window](frontmost-window)  
+[Next window](next-window)  
 
 ## Propriétés
 

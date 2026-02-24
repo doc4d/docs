@@ -47,10 +47,10 @@ displayed_sidebar: docs
 ## 参照 
 
 [ON ERR CALL](on-err-call.md)  
-[RECEIVE BUFFER](receive-buffer.md)  
-[RECEIVE PACKET](receive-packet.md)  
-[RECEIVE RECORD](receive-record.md)  
-[RECEIVE VARIABLE](receive-variable.md)  
+[RECEIVE BUFFER](receive-buffer)  
+[RECEIVE PACKET](receive-packet)  
+[RECEIVE RECORD](receive-record)  
+[RECEIVE VARIABLE](receive-variable)  
 
 ## プロパティ
 

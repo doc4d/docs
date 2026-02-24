@@ -37,7 +37,7 @@ If you pass an invalid *area* number, the error -9850 will be generated.
 
 ## See also 
 
-[QR DELETE COLUMN](qr-delete-column.md)  
+[QR DELETE COLUMN](qr-delete-column)  
 
 ## Properties
 

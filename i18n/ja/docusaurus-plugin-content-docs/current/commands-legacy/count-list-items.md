@@ -70,8 +70,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[List item position](list-item-position.md)  
-[Selected list items](selected-list-items.md)  
+[List item position](list-item-position)  
+[Selected list items](selected-list-items)  
 
 ## プロパティ
 

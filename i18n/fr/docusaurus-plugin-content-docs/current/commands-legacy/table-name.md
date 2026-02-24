@@ -35,11 +35,11 @@ La méthode suivante est un exemple de méthode générique qui affiche les enre
 
 ## Voir aussi 
 
-[Field name](field-name.md)  
-[Last table number](last-table-number.md)  
-[SET FIELD TITLES](set-field-titles.md)  
-[SET TABLE TITLES](set-table-titles.md)  
-[Table](table.md)  
+[Field name](field-name)  
+[Last table number](last-table-number)  
+[SET FIELD TITLES](set-field-titles)  
+[SET TABLE TITLES](set-table-titles)  
+[Table](table)  
 
 ## Propriétés
 

@@ -55,7 +55,7 @@ Uso de uma imagem localizada na pasta Recursos do banco de dados:
 
 ## Ver também 
 
-[GET MENU ITEM ICON](get-menu-item-icon.md)  
+[GET MENU ITEM ICON](get-menu-item-icon)  
 
 ## Propriedades
 

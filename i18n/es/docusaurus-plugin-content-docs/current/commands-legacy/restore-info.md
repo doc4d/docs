@@ -36,7 +36,7 @@ El tipo y el contenido de los parámetros *info1* e *info2* dependen del valor d
 
 ## Ver también 
 
-[RESTORE](restore.md)  
+[RESTORE](restore)  
 
 ## Propiedades
 

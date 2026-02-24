@@ -70,9 +70,9 @@ No [On 4D Mobile Authentication database method](on-4d-mobile-authentication-dat
 
 ## Ver também 
 
-[GET USER PROPERTIES](get-user-properties.md)  
-[Set user properties](set-user-properties.md)  
-[WEB Validate digest](web-validate-digest.md)  
+[GET USER PROPERTIES](get-user-properties)  
+[Set user properties](set-user-properties)  
+[WEB Validate digest](web-validate-digest)  
 
 ## Propriedades
 

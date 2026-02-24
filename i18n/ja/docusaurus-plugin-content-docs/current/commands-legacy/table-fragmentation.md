@@ -42,7 +42,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Compact data file](compact-data-file.md)  
+[Compact data file](compact-data-file)  
 
 ## プロパティ
 

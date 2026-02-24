@@ -94,7 +94,7 @@ Exemplo com a coleção de objetos:
 
 ## Ver também 
 
-[ LISTBOX SELECT ROW ](listbox-select-row.md)  
+[ LISTBOX SELECT ROW ](listbox-select-row)  
 
 ## Propriedades
 

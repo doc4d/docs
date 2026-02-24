@@ -70,7 +70,7 @@ En el método de proyecto STATS, escriba el siguiente código:
  End for
 ```
 
-Puede enviar la página "stats.shtm" utilizando un enlace URL o utilizando el comando [WEB SEND FILE](web-send-file.md).
+Puede enviar la página "stats.shtm" utilizando un enlace URL o utilizando el comando [WEB SEND FILE](web-send-file).
 
 
 ## Propiedades

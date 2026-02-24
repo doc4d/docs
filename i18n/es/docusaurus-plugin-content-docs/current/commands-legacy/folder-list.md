@@ -34,8 +34,8 @@ Si no hay carpetas en la ubicación especificada, el comando devuelve un array v
 
 ## Ver también 
 
-[DOCUMENT LIST](document-list.md)  
-[VOLUME LIST](volume-list.md)  
+[DOCUMENT LIST](document-list)  
+[VOLUME LIST](volume-list)  
 
 ## Propiedades
 

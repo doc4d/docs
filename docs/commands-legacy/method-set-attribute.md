@@ -78,8 +78,8 @@ Setting several attribute/value pairs:
 ## See also 
 
 *Design Object Access*  
-[METHOD Get attribute](method-get-attribute.md)  
-[METHOD SET ATTRIBUTES](method-set-attributes.md)  
+[METHOD Get attribute](method-get-attribute)  
+[METHOD SET ATTRIBUTES](method-set-attributes)  
 
 ## Properties
 

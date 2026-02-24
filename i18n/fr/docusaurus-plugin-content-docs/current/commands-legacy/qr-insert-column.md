@@ -49,7 +49,7 @@ La ligne suivante insère (ou crée) une première colonne dans la zone MaZone e
 
 ## Voir aussi 
 
-[QR DELETE COLUMN](qr-delete-column.md)  
+[QR DELETE COLUMN](qr-delete-column)  
 
 ## Propriétés
 

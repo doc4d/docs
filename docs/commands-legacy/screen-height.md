@@ -24,8 +24,8 @@ On Macintosh, Screen height returns the height of the main screen, the screen wh
 
 ## See also 
 
-[SCREEN COORDINATES](screen-coordinates.md)  
-[Screen width](screen-width.md)  
+[SCREEN COORDINATES](screen-coordinates)  
+[Screen width](screen-width)  
 
 ## Properties
 

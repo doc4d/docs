@@ -43,8 +43,8 @@ Se quiser determinar se o sistema operativo atual é Windows:
 
 ## Ver também 
 
-[System info](system-info.md)  
-[Is macOS](is-macos.md)  
+[System info](system-info)  
+[Is macOS](is-macos)  
 
 ## Propriedades
 

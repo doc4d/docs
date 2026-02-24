@@ -44,9 +44,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[EXECUTE ON CLIENT](execute-on-client.md)  
-[GET REGISTERED CLIENTS](get-registered-clients.md)  
-[REGISTER CLIENT](register-client.md)  
+[EXECUTE ON CLIENT](execute-on-client)  
+[GET REGISTERED CLIENTS](get-registered-clients)  
+[REGISTER CLIENT](register-client)  
 
 ## プロパティ
 

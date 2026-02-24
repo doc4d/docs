@@ -37,12 +37,12 @@ displayed_sidebar: docs
 
 ## 例題 
 
-このコマンドの具体的な使用例については、[OBJECT Get subform container value](object-get-subform-container-value.md) の章に例題があります。
+このコマンドの具体的な使用例については、[OBJECT Get subform container value](object-get-subform-container-value) の章に例題があります。
 
 ## 参照 
 
-[Form](../commands/form.md)  
-[OBJECT Get subform container value](object-get-subform-container-value.md)  
+[Form](../commands/form)  
+[OBJECT Get subform container value](object-get-subform-container-value)  
 
 ## プロパティ
 

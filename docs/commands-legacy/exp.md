@@ -18,7 +18,7 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.Exp.Summary-->Exp raises the natural log base (e = 2.71828...) by the power of *number*.<!-- END REF--> Exp is the inverse function of [Log](log.md).
+<!--REF #_command_.Exp.Summary-->Exp raises the natural log base (e = 2.71828...) by the power of *number*.<!-- END REF--> Exp is the inverse function of [Log](log).
 
 **Note:** 4D provides the predefined constant *e number* (2.71828...).
 
@@ -32,7 +32,7 @@ The following example assigns the exponential of 1 to *vrE* (the log of *vrE* is
 
 ## See also 
 
-[Log](log.md)  
+[Log](log)  
 
 ## Properties
 

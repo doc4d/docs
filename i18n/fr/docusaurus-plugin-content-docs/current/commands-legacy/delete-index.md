@@ -54,9 +54,9 @@ Cet exemple illustre les deux syntaxes de la commande :
 
 ## Voir aussi 
 
-[CREATE INDEX](create-index.md)  
-[PAUSE INDEXES](pause-indexes.md)  
-[SET INDEX](set-index.md)  
+[CREATE INDEX](create-index)  
+[PAUSE INDEXES](pause-indexes)  
+[SET INDEX](set-index)  
 
 ## Propriétés
 

@@ -29,11 +29,11 @@ The following example makes the last record of the \[People\] table the current 
 
 ## See also 
 
-[Before selection](before-selection.md)  
-[End selection](end-selection.md)  
-[FIRST RECORD](first-record.md)  
-[NEXT RECORD](next-record.md)  
-[PREVIOUS RECORD](previous-record.md)  
+[Before selection](before-selection)  
+[End selection](end-selection)  
+[FIRST RECORD](first-record)  
+[NEXT RECORD](next-record)  
+[PREVIOUS RECORD](previous-record)  
 
 ## Properties
 

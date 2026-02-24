@@ -49,7 +49,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT Get border style](object-get-border-style.md)  
+[OBJECT Get border style](object-get-border-style)  
 
 ## プロパティ
 

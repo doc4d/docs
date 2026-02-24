@@ -40,7 +40,7 @@ El valor numérico devuelto por **Get resource properties** debe considerable co
 
 ## Ejemplo 
 
-Ver el ejemplo del comando [Get resource name](get-resource-name.md).
+Ver el ejemplo del comando [Get resource name](get-resource-name).
 
 ## Variables y conjuntos del sistema 
 

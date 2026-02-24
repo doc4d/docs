@@ -72,7 +72,7 @@ Para esto, es suficiente escribir:
 
 ## Ver también 
 
-[DOM Create XML element](dom-create-xml-element.md)  
+[DOM Create XML element](dom-create-xml-element)  
 
 ## Propiedades
 

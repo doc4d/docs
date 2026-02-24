@@ -63,8 +63,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SPELL ADD TO USER DICTIONARY](spell-add-to-user-dictionary.md)  
-[SPELL CHECKING](spell-checking.md)  
+[SPELL ADD TO USER DICTIONARY](spell-add-to-user-dictionary)  
+[SPELL CHECKING](spell-checking)  
 
 ## プロパティ
 

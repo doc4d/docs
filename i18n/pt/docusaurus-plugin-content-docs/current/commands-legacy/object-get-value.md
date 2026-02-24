@@ -45,11 +45,11 @@ Valor atual da fonte de dados do objeto formulário.
 
 ## Exemplo 
 
-Ver o exemplo para o comando [OBJECT SET VALUE](object-set-value.md). 
+Ver o exemplo para o comando [OBJECT SET VALUE](object-set-value). 
 
 ## Ver também 
 
-[OBJECT SET VALUE](object-set-value.md)  
+[OBJECT SET VALUE](object-set-value)  
 
 ## Propriedades
 

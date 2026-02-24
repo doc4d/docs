@@ -40,9 +40,9 @@ Para maior informação, consulte a descrição do comando [QUERY BY FORMULA](qu
 
 ## Ver também 
 
-[QUERY](query.md)  
-[QUERY BY FORMULA](query-by-formula.md)  
-[QUERY SELECTION](query-selection.md)  
+[QUERY](query)  
+[QUERY BY FORMULA](query-by-formula)  
+[QUERY SELECTION](query-selection)  
 
 ## Propriedades
 

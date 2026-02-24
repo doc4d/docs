@@ -48,7 +48,7 @@ Vous pouvez définir le style de l'élément dans le paramètre *styleLigne*. Vo
 
 ## Voir aussi 
 
-[Get menu item style](get-menu-item-style.md)  
+[Get menu item style](get-menu-item-style)  
 
 ## Propriétés
 

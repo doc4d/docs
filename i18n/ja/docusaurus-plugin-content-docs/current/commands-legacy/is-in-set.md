@@ -35,8 +35,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[ADD TO SET](add-to-set.md)  
-[REMOVE FROM SET](remove-from-set.md)  
+[ADD TO SET](add-to-set)  
+[REMOVE FROM SET](remove-from-set)  
 
 ## プロパティ
 

@@ -42,7 +42,7 @@ Se não tiver definido nenhum valor de largura mínima ou máxima para a coluna,
 
 ## Ver também 
 
-[LISTBOX SET COLUMN WIDTH](listbox-set-column-width.md)  
+[LISTBOX SET COLUMN WIDTH](listbox-set-column-width)  
 
 ## Propriedades
 

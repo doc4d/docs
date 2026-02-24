@@ -47,10 +47,10 @@ OK is set to 1 if the export is successfully completed; otherwise, it is set to 
 
 ## See also 
 
-[EXPORT DIF](export-dif.md)  
-[EXPORT TEXT](export-text.md)  
-[IMPORT SYLK](import-sylk.md)  
-[USE CHARACTER SET](use-character-set.md)  
+[EXPORT DIF](export-dif)  
+[EXPORT TEXT](export-text)  
+[IMPORT SYLK](import-sylk)  
+[USE CHARACTER SET](use-character-set)  
 
 ## Properties
 

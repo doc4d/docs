@@ -64,8 +64,8 @@ Depois pode arrastar a janela clicando em qualquer das margens.
 
 ## Ver também 
 
-[GET WINDOW RECT](get-window-rect.md)  
-[SET WINDOW RECT](set-window-rect.md)  
+[GET WINDOW RECT](get-window-rect)  
+[SET WINDOW RECT](set-window-rect)  
 
 ## Propriedades
 

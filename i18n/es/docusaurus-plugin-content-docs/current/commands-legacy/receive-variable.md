@@ -40,9 +40,9 @@ La variable sistema OK toma el valor 1 si se recibe la variable. De lo contrario
 ## Ver también 
 
 [ON ERR CALL](on-err-call.md)  
-[RECEIVE RECORD](receive-record.md)  
-[SEND RECORD](send-record.md)  
-[SEND VARIABLE](send-variable.md)  
+[RECEIVE RECORD](receive-record)  
+[SEND RECORD](send-record)  
+[SEND VARIABLE](send-variable)  
 
 ## Propiedades
 

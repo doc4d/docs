@@ -47,7 +47,7 @@ Quiere recuperar los números de los registros de la selección actual:
 
 ## Ver también 
 
-[CREATE SELECTION FROM ARRAY](create-selection-from-array.md)  
+[CREATE SELECTION FROM ARRAY](create-selection-from-array)  
 
 ## Propiedades
 

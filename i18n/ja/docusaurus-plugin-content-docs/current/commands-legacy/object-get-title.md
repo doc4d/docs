@@ -40,7 +40,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT SET TITLE](object-set-title.md)  
+[OBJECT SET TITLE](object-set-title)  
 
 ## プロパティ
 

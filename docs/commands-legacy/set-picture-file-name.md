@@ -36,8 +36,8 @@ The default name is used as the file name when the picture is exported in a disk
 
 ## See also 
 
-[Get picture file name](get-picture-file-name.md)  
-[WRITE PICTURE FILE](write-picture-file.md)  
+[Get picture file name](get-picture-file-name)  
+[WRITE PICTURE FILE](write-picture-file)  
 
 ## Properties
 

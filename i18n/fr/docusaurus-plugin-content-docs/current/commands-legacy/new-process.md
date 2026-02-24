@@ -51,7 +51,7 @@ Si le process n'a pas pu être créé, par exemple s'il n'y a pas assez de mémo
 
 Vous passez le nom de la méthode de gestion du nouveau process dans *méthode*. Une fois que 4D a défini le contexte pour le nouveau process, il démarre l'exécution de cette méthode qui devient alors la méthode du process.
 
-Si le contexte d'exécution prend en charge le mode préemptif, et si *méthode* est déclarée "thread-safe", le nouveau process 4D sera exécuté dans un *thread* préemptif lorsque l'application sera exécutée en mode compilé. Pour plus d'informations, veuillez consulter la page [Process 4D préemptifs](../Develop/preemptive.md). 
+Si le contexte d'exécution prend en charge le mode préemptif, et si *méthode* est déclarée "thread-safe", le nouveau process 4D sera exécuté dans un *thread* préemptif lorsque l'application sera exécutée en mode compilé. Pour plus d'informations, veuillez consulter la page [Process 4D préemptifs](../Develop/preemptive). 
 
 ### Pile du process 
 
@@ -64,7 +64,7 @@ Le paramètre *pile* permet d'indiquer la quantité de mémoire allouée pour la
 
 ### Nom du process 
 
-Vous passez le nom du nouveau process dans *nomProcess*. Ce nom s'affichera dans la **liste des process** de l'Explorateur d'exécution et sera retourné par la commande [Process info](../commands/process-info.md). Vous pouvez omettre ce paramètre ; dans ce cas, le nom du process sera une chaîne vide. 
+Vous passez le nom du nouveau process dans *nomProcess*. Ce nom s'affichera dans la **liste des process** de l'Explorateur d'exécution et sera retourné par la commande [Process info](../commands/process-info). Vous pouvez omettre ce paramètre ; dans ce cas, le nom du process sera une chaîne vide. 
 
 ### Paramètres de la méthode process 
 
@@ -72,7 +72,7 @@ Vous pouvez passer des paramètres à la méthode process via un ou plusieurs pa
 
 * les pointeurs vers des tables ou des champs sont autorisés,
 * les pointeurs vers des variables, en particulier des variables process et locales, sont déconseillés car les variables peuvent être indéfinies au moment où la méthode process y accède.
-* les paramètres de type Objet ou Collection sont passés **par copie**, *i.e.* 4D créera une copie de l'objet ou de la collection dans le process de destination, et non une référence. Si vous souhaitez passer un paramètre de type objet ou collection **par référence**, vous devez utiliser un objet ou une collection partagé(e) (voir [Objets partagés et collections partagées](../Concepts/shared.md)).
+* les paramètres de type Objet ou Collection sont passés **par copie**, *i.e.* 4D créera une copie de l'objet ou de la collection dans le process de destination, et non une référence. Si vous souhaitez passer un paramètre de type objet ou collection **par référence**, vous devez utiliser un objet ou une collection partagé(e) (voir [Objets partagés et collections partagées](../Concepts/shared)).
 
 **Note :** Si vous passez des paramètres à la méthode process, vous devez passer le paramètre *nom*, il ne peut être omis dans ce cas. 
 
@@ -92,7 +92,7 @@ Examinons la méthode projet suivante :
  Until(OK=0)
 ```
 
-Si vous associez cette méthode projet à une commande de menu créé dans l'éditeur de barres de menus et que vous lui affectez la propriété **Démarrer un process**, 4D va automatiquement créer un nouveau process lors de l'exécution de la méthode. L'instruction [SET MENU BAR](set-menu-bar.md)(1) associe cette barre de menus au nouveau process. En l'absence de toute fenêtre (que vous pourriez avoir ouverte avec [Open window](../commands/open-window.md)), l'appel à [ADD RECORD](add-record.md) en créera une automatiquement.
+Si vous associez cette méthode projet à une commande de menu créé dans l'éditeur de barres de menus et que vous lui affectez la propriété **Démarrer un process**, 4D va automatiquement créer un nouveau process lors de l'exécution de la méthode. L'instruction [SET MENU BAR](set-menu-bar)(1) associe cette barre de menus au nouveau process. En l'absence de toute fenêtre (que vous pourriez avoir ouverte avec [Open window](../commands/open-window)), l'appel à [ADD RECORD](add-record) en créera une automatiquement.
 
 Si maintenant vous voulez pouvoir démarrer le process Ajout Clients lorsque vous cliquez sur un bouton situé dans un tableau de contrôle personnalisé, vous pouvez écrire : 
 
@@ -124,9 +124,9 @@ Dans l'éditeur de barres de menus, vous remplacez AJOUT CLIENTS par la méthode
 
 ## Voir aussi 
 
-[Execute on server](execute-on-server.md)  
-[Process et Workers](../Develop/processes.md)  
-[Process préemptifs](../Develop/preemptive.md) 
+[Execute on server](execute-on-server)  
+[Process et Workers](../Develop/processes)  
+[Process préemptifs](../Develop/preemptive) 
 
 ## Propriétés
 

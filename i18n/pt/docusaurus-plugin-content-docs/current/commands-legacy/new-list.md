@@ -29,7 +29,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.New list.Summary-->New list cria uma nova lista hierárquica vazia em memória e retorna seu número de referência único.<!-- END REF--> 
 
-**Advertência:** as listas hierárquicas residem na memória. Quando terminar de utilizar uma lista hierárquica, é importante apagá-la para liberar memória, utilizando o comando [CLEAR LIST](clear-list.md).
+**Advertência:** as listas hierárquicas residem na memória. Quando terminar de utilizar uma lista hierárquica, é importante apagá-la para liberar memória, utilizando o comando [CLEAR LIST](clear-list).
 
 Outros comandos lhe permitem criar listas hierárquicas:
 
@@ -39,7 +39,7 @@ Outros comandos lhe permitem criar listas hierárquicas:
 
 Quando tiver criado uma lista hierárquica utilizando New list, pode:
 
-* Adicionar itens a essa lista, utilizando o comando [APPEND TO LIST](append-to-list.md "APPEND TO LIST") ou [INSERT IN LIST](insert-in-list.md).
+* Adicionar itens a essa lista, utilizando o comando [APPEND TO LIST](append-to-list.md "APPEND TO LIST") ou [INSERT IN LIST](insert-in-list).
 * Apagar itens dessa lista, utilizando o comando [DELETE FROM LIST](delete-from-list.md "DELETE FROM LIST").
 
 ## Exemplo 
@@ -48,14 +48,14 @@ Ver o exemplo do comando [APPEND TO LIST](append-to-list.md "APPEND TO LIST").
 
 ## Ver também 
 
-[APPEND TO LIST](append-to-list.md)  
-[BLOB to list](blob-to-list.md)  
-[CLEAR LIST](clear-list.md)  
-[Copy list](copy-list.md)  
-[DELETE FROM LIST](delete-from-list.md)  
-[INSERT IN LIST](insert-in-list.md)  
-[LIST TO BLOB](list-to-blob.md)  
-[Load list](load-list.md)  
+[APPEND TO LIST](append-to-list)  
+[BLOB to list](blob-to-list)  
+[CLEAR LIST](clear-list)  
+[Copy list](copy-list)  
+[DELETE FROM LIST](delete-from-list)  
+[INSERT IN LIST](insert-in-list)  
+[LIST TO BLOB](list-to-blob)  
+[Load list](load-list)  
 
 ## Propriedades
 

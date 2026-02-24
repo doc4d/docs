@@ -69,8 +69,8 @@ Vous souhaitez enregistrer dans le champ image un fichier existant, stocké à l
 
 ## Voir aussi 
 
-[Get external data path](get-external-data-path.md)  
-[RELOAD EXTERNAL DATA](reload-external-data.md)  
+[Get external data path](get-external-data-path)  
+[RELOAD EXTERNAL DATA](reload-external-data)  
 
 ## Propriétés
 

@@ -42,8 +42,8 @@ L'exemple suivant permet à l'utilisateur de modifier son mot de passe :
 
 ## Voir aussi 
 
-[CHANGE CURRENT USER](change-current-user.md)  
-[OBJECT SET FONT](object-set-font.md)  
+[CHANGE CURRENT USER](change-current-user)  
+[OBJECT SET FONT](object-set-font)  
 
 ## Propriétés
 

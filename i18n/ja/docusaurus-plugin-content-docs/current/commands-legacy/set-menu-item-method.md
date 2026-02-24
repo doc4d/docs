@@ -45,7 +45,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Get menu item method](get-menu-item-method.md)  
+[Get menu item method](get-menu-item-method)  
 
 ## プロパティ
 

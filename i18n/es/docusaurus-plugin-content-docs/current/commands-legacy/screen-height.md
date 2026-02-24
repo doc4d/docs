@@ -24,8 +24,8 @@ En Mac OS, Screen height devuelve la altura de la pantalla principal, es decir l
 
 ## Ver también 
 
-[SCREEN COORDINATES](screen-coordinates.md)  
-[Screen width](screen-width.md)  
+[SCREEN COORDINATES](screen-coordinates)  
+[Screen width](screen-width)  
 
 ## Propiedades
 

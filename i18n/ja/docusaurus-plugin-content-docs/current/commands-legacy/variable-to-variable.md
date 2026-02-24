@@ -71,8 +71,8 @@ VARIABLE TO VARIABLE は、任意のタイプの送り先プロセスまたは�
 
 ## 参照 
 
-[GET PROCESS VARIABLE](get-process-variable.md)  
-[SET PROCESS VARIABLE](set-process-variable.md)  
+[GET PROCESS VARIABLE](get-process-variable)  
+[SET PROCESS VARIABLE](set-process-variable)  
 *プロセス*  
 
 ## プロパティ

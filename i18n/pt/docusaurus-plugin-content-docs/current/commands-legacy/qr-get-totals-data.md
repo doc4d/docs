@@ -82,7 +82,7 @@ Se o parâmetro *numQuebra* é incorreto, se gera o erro -9853.
 
 ## Ver também 
 
-[QR SET TOTALS DATA](qr-set-totals-data.md)  
+[QR SET TOTALS DATA](qr-set-totals-data)  
 
 ## Propriedades
 

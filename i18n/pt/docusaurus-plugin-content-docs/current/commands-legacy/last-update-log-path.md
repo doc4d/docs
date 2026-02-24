@@ -25,8 +25,8 @@ Este comando está destinado a ser utilizado em um processo de atualização aut
 
 ## Ver também 
 
-[RESTART 4D](restart-4d.md)  
-[SET UPDATE FOLDER](set-update-folder.md)  
+[RESTART 4D](restart-4d)  
+[SET UPDATE FOLDER](set-update-folder)  
 
 ## Propriedades
 

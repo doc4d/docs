@@ -49,9 +49,9 @@ We want to put the null value in the "age" property for Lea:
 
 ## See also 
 
-[Null](null.md)  
-[OB GET PROPERTY NAMES](ob-get-property-names.md)  
-[OB SET](ob-set.md)  
+[Null](null)  
+[OB GET PROPERTY NAMES](ob-get-property-names)  
+[OB SET](ob-set)  
 
 ## Properties
 

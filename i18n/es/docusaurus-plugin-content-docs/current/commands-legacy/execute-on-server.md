@@ -198,8 +198,8 @@ Consulte la sección *Servicios basados en los procedimientos almacenados (ejemp
 
 ## Ver también 
 
-[EXECUTE ON CLIENT](execute-on-client.md)  
-[New process](new-process.md)  
+[EXECUTE ON CLIENT](execute-on-client)  
+[New process](new-process)  
 
 ## Propiedades
 

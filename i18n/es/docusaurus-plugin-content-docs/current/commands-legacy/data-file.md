@@ -43,8 +43,8 @@ Si está trabajando por ejemplo con la base en la carpeta Documentos:MisCDsƒ: e
 
 ## Ver también 
 
-[Application file](application-file.md)  
-[Structure file](structure-file.md)  
+[Application file](application-file)  
+[Structure file](structure-file)  
 
 ## Propiedades
 

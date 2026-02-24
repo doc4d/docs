@@ -68,7 +68,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET MACRO PARAMETER](get-macro-parameter.md)  
+[GET MACRO PARAMETER](get-macro-parameter)  
 
 ## プロパティ
 

@@ -43,8 +43,8 @@ El siguiente código permite añadir una columna adicional a la derecha de la ú
 
 ## Ver también 
 
-[QR DELETE COLUMN](qr-delete-column.md)  
-[QR INSERT COLUMN](qr-insert-column.md)  
+[QR DELETE COLUMN](qr-delete-column)  
+[QR INSERT COLUMN](qr-insert-column)  
 
 ## Propiedades
 

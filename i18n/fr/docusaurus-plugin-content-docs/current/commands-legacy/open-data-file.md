@@ -42,7 +42,7 @@ Avant de lancer l’opération, la commande teste la validité du fichier de don
 
 Si vous passez une chaîne vide dans *cheminAccès*, la commande rouvre la base sans changer de fichier de données.
 
-**4D Server :** A compter de 4D v13, cette commande peut être exécutée avec 4D Server. Dans ce contexte, elle effectue en interne un appel à [QUIT 4D](quit-4d.md) sur le serveur (entraînant l’apparition, sur chaque poste distant, d’une boîte de dialogue signalant que le serveur est en train de quitter) avant d'ouvrir le fichier désigné.
+**4D Server :** A compter de 4D v13, cette commande peut être exécutée avec 4D Server. Dans ce contexte, elle effectue en interne un appel à [QUIT 4D](quit-4d) sur le serveur (entraînant l’apparition, sur chaque poste distant, d’une boîte de dialogue signalant que le serveur est en train de quitter) avant d'ouvrir le fichier désigné.
 
 ## Exemple 
 
@@ -66,7 +66,7 @@ Dans le contexte du déploiement d'une application fusionnée, vous souhaitez ou
 
 ## Voir aussi 
 
-[CREATE DATA FILE](create-data-file.md)  
+[CREATE DATA FILE](create-data-file)  
 
 ## Propriétés
 

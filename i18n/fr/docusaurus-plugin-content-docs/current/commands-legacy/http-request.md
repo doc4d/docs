@@ -36,7 +36,7 @@ displayed_sidebar: docs
 
 :::info Compatibilité
 
-Cette commande est maintenue pour des raisons de compatibilité uniquement. Il est maintenant recommandé d'utiliser la classe [`4D.HTTPRequest`](../API/HTTPRequestClass.md).
+Cette commande est maintenue pour des raisons de compatibilité uniquement. Il est maintenant recommandé d'utiliser la classe [`4D.HTTPRequest`](../API/HTTPRequestClass).
 
 :::
 
@@ -49,7 +49,7 @@ Passez dans le paramètre *méthodeHTTP* la méthode HTTP de la requête. Vous p
 | Constante           | Type   | Valeur  | Comment                                                                     |
 | ------------------- | ------ | ------- | --------------------------------------------------------------------------- |
 | HTTP DELETE method  | Chaîne | DELETE  | Voir la *RFC 2616*                                                          |
-| HTTP GET method     | Chaîne | GET     | Voir la *RFC 2616*. Equivaut à utiliser la commande [HTTP Get](http-get.md) |
+| HTTP GET method     | Chaîne | GET     | Voir la *RFC 2616*. Equivaut à utiliser la commande [HTTP Get](http-get) |
 | HTTP HEAD method    | Chaîne | HEAD    | Voir la *RFC 2616*                                                          |
 | HTTP OPTIONS method | Chaîne | OPTIONS | Voir la *RFC 2616*                                                          |
 | HTTP POST method    | Chaîne | POST    | Voir la *RFC 2616*                                                          |
@@ -86,7 +86,7 @@ Après exécution de la commande, le paramètre *réponse* récupère le résult
 * Image : lorsque le résultat est attendu sous forme d’image.
 * Objets : lorsque le résultat est attendu sous forme d'objet.
 
-**Note :** Lorsqu'une variable texte est passée dans *réponse*, 4D tente de décoder les données retournées par le serveur. Le programme essaie d'abord de récupérer le charset depuis l'en-tête *content-type*, ou à défaut via la BOM de la page ; en dernier lieu 4D recherche tout attribut *http-equiv charset* (dans le contenu html) ou *encoding* (pour le xml). Si aucun charset ne peut être détecté, 4D décode la réponse en ANSI. Si la conversion échoue, le texte résultant est vide. Si vous n'êtes pas sûr que le serveur retourne une information de charset ou une BOM, mais si vous connaissez l'encodage, il est préférable de passer un BLOB dans *réponse* et d'utiliser la commande [Convert to text](convert-to-text.md).
+**Note :** Lorsqu'une variable texte est passée dans *réponse*, 4D tente de décoder les données retournées par le serveur. Le programme essaie d'abord de récupérer le charset depuis l'en-tête *content-type*, ou à défaut via la BOM de la page ; en dernier lieu 4D recherche tout attribut *http-equiv charset* (dans le contenu html) ou *encoding* (pour le xml). Si aucun charset ne peut être détecté, 4D décode la réponse en ANSI. Si la conversion échoue, le texte résultant est vide. Si vous n'êtes pas sûr que le serveur retourne une information de charset ou une BOM, mais si vous connaissez l'encodage, il est préférable de passer un BLOB dans *réponse* et d'utiliser la commande [Convert to text](convert-to-text).
 
 Si vous passez une variable de type objet dans le paramètre *réponse* et si la requête retourne un résultat ayant le content-type texte, 4D tentera d’analyser le contenu en tant que JSON et retournera le résultat analysé sous forme d'objet. Sinon, un objet *4D.Blob* sera retourné.
 
@@ -136,7 +136,7 @@ Demande d’ajout d’enregistrement en JSON dans une base distante :
 
 ## Voir aussi 
 
-[HTTP Get](http-get.md)  
+[HTTP Get](http-get)  
 
 ## Propriétés
 

@@ -60,7 +60,7 @@ Este método de proyecto puede utilizarse para direccionar el mismo puerto seria
 
 ## Ver también 
 
-[SET CHANNEL](set-channel.md)  
+[SET CHANNEL](set-channel)  
 
 ## Propiedades
 

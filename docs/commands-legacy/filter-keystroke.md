@@ -31,9 +31,9 @@ displayed_sidebar: docs
 
 If you pass an empty string, the keystroke is cancelled and ignored.
 
-Usually, you will call **FILTER KEYSTROKE** within a form or object method while handling an On Before Keystroke form event. To detect keystroke events, use the command [Form event code](../commands/form-event-code.md). To obtain the actual keystroke, use the commands [Keystroke](keystroke.md) or [Get edited text](get-edited-text.md).
+Usually, you will call **FILTER KEYSTROKE** within a form or object method while handling an On Before Keystroke form event. To detect keystroke events, use the command [Form event code](../commands/form-event-code). To obtain the actual keystroke, use the commands [Keystroke](keystroke) or [Get edited text](get-edited-text).
 
-**IMPORTANT NOTE:** The command **FILTER KEYSTROKE** allows you to cancel or replace the character entered by the user with another character. On the other hand, if you want to insert more than one character for a specific keystroke, remember that the text you see on the screen is NOT YET the value of the data source field or variable for the area being edited. The data source field or variable is assigned the entered value after the data entry for the area is validated. It is therefore up to you to “shadow” the data entry into a variable and then to work with this shadow value and reassign the enterable area (see the example in this section). You can also use the [Get edited text](get-edited-text.md) command.
+**IMPORTANT NOTE:** The command **FILTER KEYSTROKE** allows you to cancel or replace the character entered by the user with another character. On the other hand, if you want to insert more than one character for a specific keystroke, remember that the text you see on the screen is NOT YET the value of the data source field or variable for the area being edited. The data source field or variable is assigned the entered value after the data entry for the area is validated. It is therefore up to you to “shadow” the data entry into a variable and then to work with this shadow value and reassign the enterable area (see the example in this section). You can also use the [Get edited text](get-edited-text) command.
 
 You will use the command **FILTER KEYSTROKE** for:
 
@@ -41,7 +41,7 @@ You will use the command **FILTER KEYSTROKE** for:
 * Filtering data entry in a way that you cannot produce using data entry filters
 * Implement dynamic lookup or autocomplete areas
 
-**WARNING:** If you call the command [Keystroke](keystroke.md) after calling **FILTER KEYSTROKE**, the character you pass to this command is returned instead of the character actually entered.
+**WARNING:** If you call the command [Keystroke](keystroke) after calling **FILTER KEYSTROKE**, the character you pass to this command is returned instead of the character actually entered.
 
 ## Example 1 
 
@@ -248,10 +248,10 @@ The Get highlighted text method is listed here:
 
 ## See also 
 
-[Form event code](../commands/form-event-code.md)  
-[Get edited text](get-edited-text.md)  
-[Is editing text](is-editing-text.md)  
-[Keystroke](keystroke.md)  
+[Form event code](../commands/form-event-code)  
+[Get edited text](get-edited-text)  
+[Is editing text](is-editing-text)  
+[Keystroke](keystroke)  
 
 ## Properties
 

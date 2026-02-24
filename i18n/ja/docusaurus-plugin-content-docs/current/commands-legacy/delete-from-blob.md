@@ -37,7 +37,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[INSERT IN BLOB](insert-in-blob.md)  
+[INSERT IN BLOB](insert-in-blob)  
 
 ## プロパティ
 

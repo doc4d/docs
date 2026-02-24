@@ -38,7 +38,7 @@ The following example illustrates how Round works with different arguments. Each
 
 ## See also 
 
-[Trunc](trunc.md)  
+[Trunc](trunc)  
 
 ## Properties
 

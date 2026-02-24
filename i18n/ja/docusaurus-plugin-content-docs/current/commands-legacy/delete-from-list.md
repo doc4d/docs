@@ -53,8 +53,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[CLEAR LIST](clear-list.md)  
-[GET LIST ITEM](get-list-item.md)  
+[CLEAR LIST](clear-list)  
+[GET LIST ITEM](get-list-item)  
 
 ## プロパティ
 

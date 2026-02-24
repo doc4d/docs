@@ -33,7 +33,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[FORM SET VERTICAL RESIZING](form-set-vertical-resizing.md)  
+[FORM SET VERTICAL RESIZING](form-set-vertical-resizing)  
 
 ## プロパティ
 

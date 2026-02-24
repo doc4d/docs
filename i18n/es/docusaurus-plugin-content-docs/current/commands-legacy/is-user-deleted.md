@@ -38,9 +38,9 @@ Si no tiene privilegios de acceso para llamar al comando Is user deleted o si ot
 
 ## Ver también 
 
-[DELETE USER](delete-user.md)  
-[GET USER PROPERTIES](get-user-properties.md)  
-[Set user properties](set-user-properties.md)  
+[DELETE USER](delete-user)  
+[GET USER PROPERTIES](get-user-properties)  
+[Set user properties](set-user-properties)  
 
 ## Propiedades
 

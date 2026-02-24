@@ -33,7 +33,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.CALL FORM.Summary-->The **CALL FORM** command executes the 4D code designated in *formula* with the optional *param*(s) in the context of a form displayed in a *window*, regardless of the process owning the window.<!-- END REF-->
 
-Just like in the [worker-based interprocess communication feature](../Develop/processes.md#worker-processes), a message box is associated with the window and can be used when the window displays a form (after the [On Load](../Events/onLoad.md) form event). **CALL FORM** encapsulates the formula and its arguments in a message that is posted in the window's message box. The form then executes the message in its own process. The calling process can be cooperative or preemptive, thus this feature allows a preemptive process to exchange information with forms.
+Just like in the [worker-based interprocess communication feature](../Develop/processes.md#worker-processes), a message box is associated with the window and can be used when the window displays a form (after the [On Load](../Events/onLoad) form event). **CALL FORM** encapsulates the formula and its arguments in a message that is posted in the window's message box. The form then executes the message in its own process. The calling process can be cooperative or preemptive, thus this feature allows a preemptive process to exchange information with forms.
 
 In *window*, you pass the window reference number of the window displaying the called form.
 
@@ -113,8 +113,8 @@ You can then add other messages by executing the **CALL FORM** command again:
 ## See also 
 
   
-[CALL WORKER](call-worker.md)  
-[DIALOG](../commands/dialog.md)  
+[CALL WORKER](call-worker)  
+[DIALOG](../commands/dialog)  
 
 ## Properties
 

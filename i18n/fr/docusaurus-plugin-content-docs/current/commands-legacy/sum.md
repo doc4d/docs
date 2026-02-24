@@ -60,7 +60,7 @@ La méthode suivante est appelée pour imprimer les enregistrements de la sélec
  PRINT SELECTION([Employés])
 ```
 
-**Note :** La valeur du paramètre de la commande [BREAK LEVEL](break-level.md) doit être égale au nombre de ruptures que contient l'état. Pour plus d'informations sur les ruptures, reportez-vous aux commandes du thème *Impressions*.
+**Note :** La valeur du paramètre de la commande [BREAK LEVEL](break-level) doit être égale au nombre de ruptures que contient l'état. Pour plus d'informations sur les ruptures, reportez-vous aux commandes du thème *Impressions*.
 
 ## Exemple 2 
 
@@ -75,18 +75,18 @@ Cet exemple vous permet d’obtenir la somme de toutes les valeurs placées dans
 
 ## Exemple 3 
 
-Pour un exemple de calcul utilisant un attribut de champ objet, veuillez vous reporter à l'exemple 3 de la commande [Average](average.md).
+Pour un exemple de calcul utilisant un attribut de champ objet, veuillez vous reporter à l'exemple 3 de la commande [Average](average).
 
 ## Voir aussi 
 
-[ACCUMULATE](accumulate.md)  
-[Average](average.md)  
-[BREAK LEVEL](break-level.md)  
-[Max](max.md)  
-[Min](min.md)  
-[ORDER BY](order-by.md)  
-[PRINT SELECTION](print-selection.md)  
-[Subtotal](subtotal.md)  
+[ACCUMULATE](accumulate)  
+[Average](average)  
+[BREAK LEVEL](break-level)  
+[Max](max)  
+[Min](min)  
+[ORDER BY](order-by)  
+[PRINT SELECTION](print-selection)  
+[Subtotal](subtotal)  
 
 ## Propriétés
 

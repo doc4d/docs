@@ -17,15 +17,15 @@ displayed_sidebar: docs
 
 ## Descrição 
 
-<!--REF #_command_.CLOSE WINDOW.Summary-->CLOSE WINDOW fecha a janela ativa aberta pelo comando [Open window](../commands/open-window.md) ou [Open form window](../commands/open-form-window.md) no processo atual.<!-- END REF--> CLOSE WINDOW não faz nada se não houver uma janela personalizada aberta; não fecha as janelas sistema. CLOSE WINDOW tampoco tem efeito se for chamado enquanto um formulário estiver ativo na janela. Deve chamar CLOSE WINDOW quando tiver terminado de utilizar uma janela aberta por [Open window](../commands/open-window.md) ou [Open form window](../commands/open-form-window.md)..  
+<!--REF #_command_.CLOSE WINDOW.Summary-->CLOSE WINDOW fecha a janela ativa aberta pelo comando [Open window](../commands/open-window) ou [Open form window](../commands/open-form-window) no processo atual.<!-- END REF--> CLOSE WINDOW não faz nada se não houver uma janela personalizada aberta; não fecha as janelas sistema. CLOSE WINDOW tampoco tem efeito se for chamado enquanto um formulário estiver ativo na janela. Deve chamar CLOSE WINDOW quando tiver terminado de utilizar uma janela aberta por [Open window](../commands/open-window) ou [Open form window](../commands/open-form-window)..  
 
-É inútil passar um número a CLOSE WINDOW quando o utiliza para fechar as janelas abertas por [Open window](../commands/open-window.md) ou [Open form window](../commands/open-form-window.md) , já que CLOSE WINDOW sempre fechará a última janela criada por um destes comandos.  
+É inútil passar um número a CLOSE WINDOW quando o utiliza para fechar as janelas abertas por [Open window](../commands/open-window) ou [Open form window](../commands/open-form-window) , já que CLOSE WINDOW sempre fechará a última janela criada por um destes comandos.  
   
 Se passar um número de referência de janela externa no parâmetro *janela*, CLOSE WINDOW fecha a janela externa especificada. Para maior informação sobre janelas externas, consulte a função .
 
 ## Exemplo 
 
-O seguinte exemplo abre uma janela formulario e cria novos registros com o comando [ADD RECORD](add-record.md). Ao serem adicionados os registros, a janela se fecha com **CLOSE WINDOW**:
+O seguinte exemplo abre uma janela formulario e cria novos registros com o comando [ADD RECORD](add-record). Ao serem adicionados os registros, a janela se fecha com **CLOSE WINDOW**:
 
 ```4d
  FORM SET INPUT([Employees];"Entry")
@@ -38,8 +38,8 @@ O seguinte exemplo abre uma janela formulario e cria novos registros com o coman
 
 ## Ver também 
 
-[Open form window](../commands/open-form-window.md)  
-[Open window](../commands/open-window.md)  
+[Open form window](../commands/open-form-window)  
+[Open window](../commands/open-window)  
 
 ## Propriedades
 

@@ -60,7 +60,7 @@ Los archivos llave (archivos de extensión ".4DKeyChain") deben almacenarse en e
 ## Ver también 
 
   
-[New data key](new-data-key.md)  
+[New data key](new-data-key)  
 
 ## Propiedades
 

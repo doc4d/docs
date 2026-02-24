@@ -77,9 +77,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[CONFIRM](confirm.md)  
-[DISPLAY NOTIFICATION](display-notification.md)  
-[Request](request.md)  
+[CONFIRM](confirm)  
+[DISPLAY NOTIFICATION](display-notification)  
+[Request](request)  
 
 ## プロパティ
 

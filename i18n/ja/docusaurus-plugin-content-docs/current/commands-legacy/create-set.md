@@ -32,8 +32,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[CLEAR SET](clear-set.md)  
-[CREATE EMPTY SET](create-empty-set.md)  
+[CLEAR SET](clear-set)  
+[CREATE EMPTY SET](create-empty-set)  
 
 ## プロパティ
 

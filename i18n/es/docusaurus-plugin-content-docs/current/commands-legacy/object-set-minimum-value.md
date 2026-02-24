@@ -39,8 +39,8 @@ En *valorMinimo*, pase el nuevo valor mínimo a asignar al objeto para el proces
 
 ## Ver también 
 
-[OBJECT GET MINIMUM VALUE](object-get-minimum-value.md)  
-[OBJECT SET MAXIMUM VALUE](object-set-maximum-value.md)  
+[OBJECT GET MINIMUM VALUE](object-get-minimum-value)  
+[OBJECT SET MAXIMUM VALUE](object-set-maximum-value)  
 
 ## Propiedades
 

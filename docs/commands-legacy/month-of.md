@@ -49,12 +49,12 @@ The following example illustrates the use of **Month of**. The results are assig
 
 ## Example 2 
 
-See example for the [Current date](current-date.md) command.
+See example for the [Current date](current-date) command.
 
 ## See also 
 
-[Day of](day-of.md)  
-[Year of](year-of.md)  
+[Day of](day-of)  
+[Year of](year-of)  
 
 ## Properties
 

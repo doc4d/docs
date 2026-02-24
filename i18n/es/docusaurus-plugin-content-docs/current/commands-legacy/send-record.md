@@ -44,9 +44,9 @@ Ver el ejemplo del comando [RECEIVE RECORD](receive-record.md "RECEIVE RECORD").
 
 ## Ver también 
 
-[RECEIVE RECORD](receive-record.md)  
-[RECEIVE VARIABLE](receive-variable.md)  
-[SEND VARIABLE](send-variable.md)  
+[RECEIVE RECORD](receive-record)  
+[RECEIVE VARIABLE](receive-variable)  
+[SEND VARIABLE](send-variable)  
 
 ## Propiedades
 

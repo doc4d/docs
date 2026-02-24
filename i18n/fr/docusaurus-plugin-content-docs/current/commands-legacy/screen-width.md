@@ -24,8 +24,8 @@ Sous Mac OS, **Screen width** retourne la largeur de l'écran principal, c'est-�
 
 ## Voir aussi 
 
-[SCREEN COORDINATES](screen-coordinates.md)  
-[Screen height](screen-height.md)  
+[SCREEN COORDINATES](screen-coordinates)  
+[Screen height](screen-height)  
 
 ## Propriétés
 

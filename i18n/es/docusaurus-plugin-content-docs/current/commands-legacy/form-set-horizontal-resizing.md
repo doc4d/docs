@@ -46,9 +46,9 @@ Consulte el ejemplo del comando [FORM SET SIZE](form-set-size.md "FORM SET SIZE"
 
 ## Ver también 
 
-[FORM GET HORIZONTAL RESIZING](form-get-horizontal-resizing.md)  
-[FORM SET SIZE](form-set-size.md)  
-[FORM SET VERTICAL RESIZING](form-set-vertical-resizing.md)  
+[FORM GET HORIZONTAL RESIZING](form-get-horizontal-resizing)  
+[FORM SET SIZE](form-set-size)  
+[FORM SET VERTICAL RESIZING](form-set-vertical-resizing)  
 
 ## Propiedades
 

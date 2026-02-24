@@ -34,7 +34,7 @@ Se o logout é feito corretamente, a variável Sistema OK assume o valor 1; do c
 
 ## Ver também 
 
-[SQL LOGIN](sql-login.md)  
+[SQL LOGIN](sql-login)  
 
 ## Propriedades
 

@@ -38,7 +38,7 @@ Ver ejemplo del comando [SET WINDOW TITLE](set-window-title.md "SET WINDOW TITLE
 
 ## Ver también 
 
-[SET WINDOW TITLE](set-window-title.md)  
+[SET WINDOW TITLE](set-window-title)  
 
 ## Propiedades
 

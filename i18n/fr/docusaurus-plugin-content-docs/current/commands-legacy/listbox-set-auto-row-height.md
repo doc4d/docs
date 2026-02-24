@@ -67,9 +67,9 @@ Dans une list box où les hauteurs de lignes sont automatiques, vous voulez déf
 
 ## Voir aussi 
 
-[LISTBOX Get auto row height](listbox-get-auto-row-height.md)  
-[LISTBOX SET ROW HEIGHT](listbox-set-row-height.md)  
-[LISTBOX SET ROWS HEIGHT](listbox-set-rows-height.md)  
+[LISTBOX Get auto row height](listbox-get-auto-row-height)  
+[LISTBOX SET ROW HEIGHT](listbox-set-row-height)  
+[LISTBOX SET ROWS HEIGHT](listbox-set-rows-height)  
 
 ## Propriétés
 

@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 ## 説明 
 
-<!--REF #_command_.BASE64 DECODE.Summary-->**BASE64 DECODE** コマンドは、*toDecode* 引数に渡された、Base64 または Base64URL フォーマットにエンコードされたテキストまたはBlob をデコードします。<!-- END REF-->Base64 およびBase64URL フォーマットについての詳細な情報については、[BASE64 ENCODE](base64-encode.md) コマンドの詳細を参照してください。
+<!--REF #_command_.BASE64 DECODE.Summary-->**BASE64 DECODE** コマンドは、*toDecode* 引数に渡された、Base64 または Base64URL フォーマットにエンコードされたテキストまたはBlob をデコードします。<!-- END REF-->Base64 およびBase64URL フォーマットについての詳細な情報については、[BASE64 ENCODE](base64-encode) コマンドの詳細を参照してください。
 
 *toDecode* 引数には、デコードしたい、Base64 またはBase64URL フォーマットでエンコードされているテキストまたはBlob値を渡します。
 
@@ -65,9 +65,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[BASE64 ENCODE](base64-encode.md)  
-[Generate digest](generate-digest.md)  
-[XML DECODE](xml-decode.md)  
+[BASE64 ENCODE](base64-encode)  
+[Generate digest](generate-digest)  
+[XML DECODE](xml-decode)  
 *XML DOMコマンドの概要*  
 
 ## プロパティ

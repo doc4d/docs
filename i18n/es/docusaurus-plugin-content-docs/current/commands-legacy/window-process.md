@@ -34,7 +34,7 @@ Si omite el parámetro *ventana*, Window process devuelve el número del proceso
 
 ## Ver también 
 
-[Current process](current-process.md)  
+[Current process](current-process)  
 
 ## Propiedades
 

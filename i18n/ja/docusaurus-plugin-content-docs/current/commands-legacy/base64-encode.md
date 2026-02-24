@@ -48,9 +48,9 @@ Bse64 エンコーディングは、8-bit のコードされたデータを編�
 
 ## 参照 
 
-[BASE64 DECODE](base64-decode.md)  
-[Generate digest](generate-digest.md)  
-[XML DECODE](xml-decode.md)  
+[BASE64 DECODE](base64-decode)  
+[Generate digest](generate-digest)  
+[XML DECODE](xml-decode)  
 *XML DOMコマンドの概要*  
 
 ## プロパティ

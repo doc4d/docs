@@ -41,8 +41,8 @@ Si l'utilisateur clique sur le bouton Valider ou appuie sur la touche Entrée, l
 
 ## Voir aussi 
 
-[ORDER BY](order-by.md)  
-[QUERY](query.md)  
+[ORDER BY](order-by)  
+[QUERY](query)  
 
 ## Propriétés
 

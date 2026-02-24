@@ -48,7 +48,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Get menu item mark](get-menu-item-mark.md)  
+[Get menu item mark](get-menu-item-mark)  
 
 ## プロパティ
 

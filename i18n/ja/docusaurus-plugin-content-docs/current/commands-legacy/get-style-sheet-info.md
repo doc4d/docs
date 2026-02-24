@@ -75,8 +75,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LIST OF STYLE SHEETS](list-of-style-sheets.md)  
-[OBJECT SET STYLE SHEET](object-set-style-sheet.md)  
+[LIST OF STYLE SHEETS](list-of-style-sheets)  
+[OBJECT SET STYLE SHEET](object-set-style-sheet)  
 
 ## プロパティ
 

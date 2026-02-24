@@ -59,7 +59,7 @@ Cet exemple crée un tableau interprocess de 50 éléments de type Booléen et a
 
 ## Voir aussi 
 
-[ARRAY INTEGER](array-integer.md)  
+[ARRAY INTEGER](array-integer)  
 
 ## Propriétés
 

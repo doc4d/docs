@@ -63,9 +63,9 @@ Exemplos em Windows:
 
 ## Ver também 
 
-[Convert path system to POSIX](convert-path-system-to-posix.md)  
-[Object to path](object-to-path.md)  
-[Path to object ](path-to-object.md)  
+[Convert path system to POSIX](convert-path-system-to-posix)  
+[Object to path](object-to-path)  
+[Path to object ](path-to-object)  
 
 ## Propriedades
 

@@ -72,7 +72,7 @@ Añadir una fecha de modificación a un comentario de trigger existente:
 
 ## Ver también 
 
-[METHOD GET COMMENTS](method-get-comments.md)  
+[METHOD GET COMMENTS](method-get-comments)  
 
 ## Propiedades
 

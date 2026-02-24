@@ -55,8 +55,8 @@ El siguiente ejemplo borra el último elemento de un array, si existe:
 
 ## Ver también 
 
-[INSERT IN ARRAY](insert-in-array.md)  
-[Size of array](size-of-array.md)  
+[INSERT IN ARRAY](insert-in-array)  
+[Size of array](size-of-array)  
 
 ## Propiedades
 

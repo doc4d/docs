@@ -60,7 +60,7 @@ Desea aplicar una orientación de 270° a una variable en su formulario:
 
 ## Ver también 
 
-[OBJECT Get text orientation](object-get-text-orientation.md)  
+[OBJECT Get text orientation](object-get-text-orientation)  
 
 ## Propiedades
 

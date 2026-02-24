@@ -52,7 +52,7 @@ O comando retorna **True** se for selecionado um atributo e **False** se for des
 
 ## Ver também 
 
-[METHOD SET ATTRIBUTE](method-set-attribute.md)  
+[METHOD SET ATTRIBUTE](method-set-attribute)  
 
 ## Propriedades
 

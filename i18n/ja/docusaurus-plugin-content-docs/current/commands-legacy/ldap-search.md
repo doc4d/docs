@@ -94,7 +94,7 @@ displayed_sidebar: docs
 ## 参照 
 
 *LDAP*  
-[LDAP SEARCH ALL](ldap-search-all.md)  
+[LDAP SEARCH ALL](ldap-search-all)  
 
 ## プロパティ
 

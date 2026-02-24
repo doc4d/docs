@@ -94,7 +94,7 @@ Example with a collection of objects:
 
 ## See also 
 
-[LISTBOX SELECT ROW](listbox-select-row.md)  
+[LISTBOX SELECT ROW](listbox-select-row)  
 
 ## Properties
 

@@ -49,8 +49,8 @@ If the *rowPosition* value is higher than the total number of rows in the list b
 
 ## See also 
 
-[LISTBOX Get number of rows](listbox-get-number-of-rows.md)  
-[LISTBOX INSERT ROWS](listbox-insert-rows.md)  
+[LISTBOX Get number of rows](listbox-get-number-of-rows)  
+[LISTBOX INSERT ROWS](listbox-insert-rows)  
 
 ## Properties
 

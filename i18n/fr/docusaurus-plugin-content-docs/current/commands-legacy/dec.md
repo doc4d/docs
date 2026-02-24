@@ -31,7 +31,7 @@ L'exemple suivant utilise une valeur monétaire exprimée sous forme numérique 
 
 ## Voir aussi 
 
-[Int](int.md)  
+[Int](int)  
 
 ## Propriétés
 

@@ -28,7 +28,7 @@ A l’issue de l’exécution de la commande, les statistiques demandées sont f
 
 ## Voir aussi 
 
-[Cache info](cache-info.md)  
+[Cache info](cache-info)  
 
 ## Propriétés
 

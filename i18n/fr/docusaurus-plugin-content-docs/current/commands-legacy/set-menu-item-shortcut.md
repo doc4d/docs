@@ -90,8 +90,8 @@ Définition du raccourci F4 pour l'élément de menu "Fermer" :
 
 ## Voir aussi 
 
-[Get menu item key](get-menu-item-key.md)  
-[Get menu item modifiers](get-menu-item-modifiers.md)  
+[Get menu item key](get-menu-item-key)  
+[Get menu item modifiers](get-menu-item-modifiers)  
 
 ## Propriétés
 

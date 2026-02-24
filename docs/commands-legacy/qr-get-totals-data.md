@@ -83,7 +83,7 @@ If you pass an invalid *breakNum* number, the error -9853 will be generated.
 
 ## See also 
 
-[QR SET TOTALS DATA](qr-set-totals-data.md)  
+[QR SET TOTALS DATA](qr-set-totals-data)  
 
 ## Properties
 

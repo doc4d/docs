@@ -64,10 +64,10 @@ Cet exemple est une maquette de méthode formulaire. Il traite chaque événemen
 
 ## Voir aussi 
 
-[ACCUMULATE](accumulate.md)  
-[BREAK LEVEL](break-level.md)  
-[Form event code](../commands/form-event-code.md)  
-[PRINT SELECTION](print-selection.md)  
+[ACCUMULATE](accumulate)  
+[BREAK LEVEL](break-level)  
+[Form event code](../commands/form-event-code)  
+[PRINT SELECTION](print-selection)  
 
 ## Propriétés
 

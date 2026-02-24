@@ -36,7 +36,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Load list](load-list.md)  
+[Load list](load-list)  
 
 ## プロパティ
 

@@ -52,7 +52,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SET FILE TO PASTEBOARD](set-file-to-pasteboard.md)  
+[SET FILE TO PASTEBOARD](set-file-to-pasteboard)  
 
 ## プロパティ
 

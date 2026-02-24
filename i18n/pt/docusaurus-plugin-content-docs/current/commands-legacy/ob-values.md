@@ -54,8 +54,8 @@ Se quiser uma coleção com todos os valores de propriedade de um objeto:
 
 ## Ver também 
 
-[OB Entries](ob-entries.md)  
-[OB Keys](ob-keys.md)  
+[OB Entries](ob-entries)  
+[OB Keys](ob-keys)  
 
 ## Propriedades
 

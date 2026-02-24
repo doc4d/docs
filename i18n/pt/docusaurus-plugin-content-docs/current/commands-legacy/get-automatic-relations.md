@@ -41,9 +41,9 @@ Consulte o exemplo do comando [GET FIELD RELATION](get-field-relation.md "GET FI
 
 ## Ver também 
 
-[GET FIELD RELATION](get-field-relation.md)  
-[GET RELATION PROPERTIES](get-relation-properties.md)  
-[SET AUTOMATIC RELATIONS](set-automatic-relations.md)  
+[GET FIELD RELATION](get-field-relation)  
+[GET RELATION PROPERTIES](get-relation-properties)  
+[SET AUTOMATIC RELATIONS](set-automatic-relations)  
 
 ## Propriedades
 

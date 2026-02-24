@@ -44,8 +44,8 @@ displayed_sidebar: docs
 ## 参照 
 
 *ASCII Codes*  
-[POST CLICK](post-click.md)  
-[POST EVENT](post-event.md)  
+[POST CLICK](post-click)  
+[POST EVENT](post-event)  
 *ファンクションキーコード*  
 
 ## プロパティ

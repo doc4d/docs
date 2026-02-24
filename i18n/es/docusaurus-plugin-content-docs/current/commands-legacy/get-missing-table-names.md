@@ -44,7 +44,7 @@ Una vez haya identificado las tablas faltantes de la base, puede reactivarlas v√
 
 ## Ver tambi√©n 
 
-[REGENERATE MISSING TABLE](regenerate-missing-table.md)  
+[REGENERATE MISSING TABLE](regenerate-missing-table)  
 
 ## Propiedades
 

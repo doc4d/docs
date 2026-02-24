@@ -47,9 +47,9 @@ Ver el ejemplo del comando [WINDOW LIST](window-list.md "WINDOW LIST").
 
 ## Ver también 
 
-[GET WINDOW RECT](get-window-rect.md)  
-[Get window title](get-window-title.md)  
-[Window process](window-process.md)  
+[GET WINDOW RECT](get-window-rect)  
+[Get window title](get-window-title)  
+[Window process](window-process)  
 
 ## Propiedades
 

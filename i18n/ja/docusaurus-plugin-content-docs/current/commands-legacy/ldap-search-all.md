@@ -126,7 +126,7 @@ LDAPサーバーには通常、検索のために受け付けられるエント�
 ## 参照 
 
 *LDAP*  
-[LDAP Search](ldap-search.md)  
+[LDAP Search](ldap-search)  
 
 ## プロパティ
 

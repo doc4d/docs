@@ -27,17 +27,17 @@ displayed_sidebar: docs
 
 ## Descrição 
 
-<!--REF #_command_.CANCEL TRANSACTION.Summary-->CANCEL TRANSACTION cancela a transação que foi aberta pelo comando [START TRANSACTION](start-transaction.md) do nível correspondente no processo atual.<!-- END REF--> CANCEL TRANSACTION cancela todas as operações executadas nos dados durante a transação.
+<!--REF #_command_.CANCEL TRANSACTION.Summary-->CANCEL TRANSACTION cancela a transação que foi aberta pelo comando [START TRANSACTION](start-transaction) do nível correspondente no processo atual.<!-- END REF--> CANCEL TRANSACTION cancela todas as operações executadas nos dados durante a transação.
 
 **Nota:** **CANCEL TRANSACTION** não tem efeito nas possíveis modificações realizadas nos registros atuais que não foram guardados, seguem sendo mostradas depois da execução do comando.
 
 ## Ver também 
 
-[In transaction](in-transaction.md)  
-[START TRANSACTION](start-transaction.md)  
-[Transaction level](transaction-level.md)  
+[In transaction](in-transaction)  
+[START TRANSACTION](start-transaction)  
+[Transaction level](transaction-level)  
 *Usar Transações*  
-[VALIDATE TRANSACTION](validate-transaction.md)  
+[VALIDATE TRANSACTION](validate-transaction)  
 
 ## Propriedades
 

@@ -41,8 +41,8 @@ Si pasa el parámetro opcional \*, indica que el parámetro *objeto* es un nombr
 
 ## Ver también 
 
-[LISTBOX DELETE ROWS](listbox-delete-rows.md)  
-[LISTBOX INSERT ROWS](listbox-insert-rows.md)  
+[LISTBOX DELETE ROWS](listbox-delete-rows)  
+[LISTBOX INSERT ROWS](listbox-insert-rows)  
 
 ## Propiedades
 

@@ -55,8 +55,8 @@ Este ejemplo le permite aplicar un color alterno en un formulario listado mostra
 
 ## Ver también 
 
-[Form event code](../commands/form-event-code.md)  
-[Selected record number](selected-record-number.md)  
+[Form event code](../commands/form-event-code)  
+[Selected record number](selected-record-number)  
 
 ## Propiedades
 

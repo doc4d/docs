@@ -106,10 +106,10 @@ Si el usuario hace clic en **Cancelar** en la caja de diálogo estándar de abri
 
 ## Ver también 
 
-[EXPORT DIF](export-dif.md)  
-[EXPORT SYLK](export-sylk.md)  
-[EXPORT TEXT](export-text.md)  
-[IMPORT DATA](import-data.md)  
+[EXPORT DIF](export-dif)  
+[EXPORT SYLK](export-sylk)  
+[EXPORT TEXT](export-text)  
+[IMPORT DATA](import-data)  
 
 ## Propiedades
 

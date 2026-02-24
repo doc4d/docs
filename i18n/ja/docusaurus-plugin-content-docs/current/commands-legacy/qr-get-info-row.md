@@ -48,9 +48,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR GET INFO COLUMN](qr-get-info-column.md)  
-[QR SET INFO COLUMN](qr-set-info-column.md)  
-[QR SET INFO ROW](qr-set-info-row.md)  
+[QR GET INFO COLUMN](qr-get-info-column)  
+[QR SET INFO COLUMN](qr-set-info-column)  
+[QR SET INFO ROW](qr-set-info-row)  
 
 ## プロパティ
 

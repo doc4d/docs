@@ -53,8 +53,8 @@ El siguiente código borra el elemento seleccionado de la lista *hList*. Si el e
 
 ## Ver también 
 
-[CLEAR LIST](clear-list.md)  
-[GET LIST ITEM](get-list-item.md)  
+[CLEAR LIST](clear-list)  
+[GET LIST ITEM](get-list-item)  
 
 ## Propiedades
 

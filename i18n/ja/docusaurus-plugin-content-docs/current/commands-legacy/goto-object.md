@@ -62,8 +62,8 @@ GOTO OBJECTコマンドは以下のように使用します:
 
 ## 参照 
 
-[CALL SUBFORM CONTAINER](call-subform-container.md)  
-[REJECT](reject.md)  
+[CALL SUBFORM CONTAINER](call-subform-container)  
+[REJECT](reject)  
 
 ## プロパティ
 

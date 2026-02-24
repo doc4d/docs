@@ -62,7 +62,7 @@ Se o arquivo a ser enviado existir e o timeout não tiver passado, OK é estabel
 
 ## Ver também 
 
-[WEB SEND BLOB](web-send-blob.md)  
+[WEB SEND BLOB](web-send-blob)  
 
 ## Propriedades
 

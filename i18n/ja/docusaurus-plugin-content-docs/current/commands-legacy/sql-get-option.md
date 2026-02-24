@@ -38,7 +38,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SQL SET OPTION](sql-set-option.md)  
+[SQL SET OPTION](sql-set-option)  
 
 ## プロパティ
 

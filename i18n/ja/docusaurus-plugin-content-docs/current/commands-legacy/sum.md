@@ -62,7 +62,7 @@ displayed_sidebar: docs
  PRINT SELECTION([Employees])
 ```
 
-**注:** [BREAK LEVEL](break-level.md)コマンドの引数は、印刷するレポートのブレーク数と同じ数でなければなりません。ブレーク処理に関する詳細は*印刷*コマンドを参照してください。
+**注:** [BREAK LEVEL](break-level)コマンドの引数は、印刷するレポートのブレーク数と同じ数でなければなりません。ブレーク処理に関する詳細は*印刷*コマンドを参照してください。
 
 ## 例題 2 
 
@@ -77,18 +77,18 @@ displayed_sidebar: docs
 
 ## 例題 3 
 
-オブジェクト型フィールドの属性を計算する例題については、[Average](average.md)コマンドの詳細の例題3を参照して下さい。
+オブジェクト型フィールドの属性を計算する例題については、[Average](average)コマンドの詳細の例題3を参照して下さい。
 
 ## 参照 
 
-[ACCUMULATE](accumulate.md)  
-[Average](average.md)  
-[BREAK LEVEL](break-level.md)  
-[Max](max.md)  
-[Min](min.md)  
-[ORDER BY](order-by.md)  
-[PRINT SELECTION](print-selection.md)  
-[Subtotal](subtotal.md)  
+[ACCUMULATE](accumulate)  
+[Average](average)  
+[BREAK LEVEL](break-level)  
+[Max](max)  
+[Min](min)  
+[ORDER BY](order-by)  
+[PRINT SELECTION](print-selection)  
+[Subtotal](subtotal)  
 
 ## プロパティ
 

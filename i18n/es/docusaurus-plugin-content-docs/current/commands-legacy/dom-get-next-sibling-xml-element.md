@@ -73,7 +73,7 @@ Si el comando se ha ejecutado correctamente y si el elemento analizado no es el 
 
 ## Ver también 
 
-[DOM Get first child XML element](dom-get-first-child-xml-element.md)  
+[DOM Get first child XML element](dom-get-first-child-xml-element)  
 
 ## Propiedades
 

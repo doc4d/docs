@@ -57,7 +57,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SQL GET OPTION](sql-get-option.md)  
+[SQL GET OPTION](sql-get-option)  
 
 ## プロパティ
 

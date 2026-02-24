@@ -144,7 +144,7 @@ Se a última parte da rota for ".something", se considera como um nome de arquiv
 
 ## Exemplo 2 
 
-É possível combinar este comando com [Object to path](object-to-path.md) para mudar o nome de um arquivo em uma rota:
+É possível combinar este comando com [Object to path](object-to-path) para mudar o nome de um arquivo em uma rota:
 
 ```4d
  var $o : Object
@@ -179,12 +179,12 @@ Se quiser saber a quantidade de subpastas em uma rota:
 
 ## Ver também 
 
-[Convert path POSIX to system](convert-path-posix-to-system.md)  
-[Convert path system to POSIX](convert-path-system-to-posix.md)  
-[File](../commands/file.md)    
-[Folder ](folder.md)  
-[Object to path](object-to-path.md)  
-[Test path name](test-path-name.md)  
+[Convert path POSIX to system](convert-path-posix-to-system)  
+[Convert path system to POSIX](convert-path-system-to-posix)  
+[File](../commands/file)    
+[Folder ](folder)  
+[Object to path](object-to-path)  
+[Test path name](test-path-name)  
 
 ## Propriedades
 

@@ -36,9 +36,9 @@ Ver el ejemplo del comando [HIDE MENU BAR](hide-menu-bar.md "HIDE MENU BAR").
 
 #### Ver también 
 
-[HIDE MENU BAR](hide-menu-bar.md)  
-[HIDE TOOL BAR](hide-tool-bar.md)  
-[SHOW TOOL BAR](show-tool-bar.md)  
+[HIDE MENU BAR](hide-menu-bar)  
+[HIDE TOOL BAR](hide-tool-bar)  
+[SHOW TOOL BAR](show-tool-bar)  
 
 #### Propiedades
 

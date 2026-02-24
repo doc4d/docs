@@ -64,10 +64,10 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[ACCUMULATE](accumulate.md)  
-[BREAK LEVEL](break-level.md)  
-[Form event code](../commands/form-event-code.md)  
-[PRINT SELECTION](print-selection.md)  
+[ACCUMULATE](accumulate)  
+[BREAK LEVEL](break-level)  
+[Form event code](../commands/form-event-code)  
+[PRINT SELECTION](print-selection)  
 
 ## プロパティ
 

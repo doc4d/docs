@@ -73,9 +73,9 @@ If the command is executed from a component, it returns by default the paths of 
 
 ## See also 
 
-[Current method path](current-method-path.md)  
-[METHOD OPEN PATH](method-open-path.md)  
-[METHOD RESOLVE PATH](method-resolve-path.md)  
+[Current method path](current-method-path)  
+[METHOD OPEN PATH](method-open-path)  
+[METHOD RESOLVE PATH](method-resolve-path)  
 
 ## Properties
 

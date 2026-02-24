@@ -64,7 +64,7 @@ Si el archivo a enviar existe y si el timeout no ha pasado, OK toma el valor 1\.
 
 ## Ver también 
 
-[WEB SEND BLOB](web-send-blob.md)  
+[WEB SEND BLOB](web-send-blob)  
 
 ## Propiedades
 

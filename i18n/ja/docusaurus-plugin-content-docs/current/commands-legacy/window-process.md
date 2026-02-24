@@ -34,7 +34,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Current process](current-process.md)  
+[Current process](current-process)  
 
 ## プロパティ
 

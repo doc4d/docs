@@ -45,7 +45,7 @@ If you pass an invalid value in the *property* or *value* parameter, the corresp
 
 ## See also 
 
-[QR Get document property](qr-get-document-property.md)  
+[QR Get document property](qr-get-document-property)  
 
 ## Properties
 

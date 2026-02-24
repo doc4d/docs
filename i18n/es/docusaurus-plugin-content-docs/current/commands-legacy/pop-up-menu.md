@@ -113,8 +113,8 @@ El siguiente es el menú pop-up tal como aparece en Windows (izquierda) y Macint
 
 ## Ver también 
 
-[Dynamic pop up menu](dynamic-pop-up-menu.md)  
-[MOUSE POSITION](mouse-position.md)  
+[Dynamic pop up menu](dynamic-pop-up-menu)  
+[MOUSE POSITION](mouse-position)  
 
 ## Propiedades
 

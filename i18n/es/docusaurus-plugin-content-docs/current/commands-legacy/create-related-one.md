@@ -25,7 +25,7 @@ Si ya existe un registro relacionado, CREATE RELATED ONE actúa como [RELATE ONE
 
 ## Ver también 
 
-[SAVE RELATED ONE](save-related-one.md)  
+[SAVE RELATED ONE](save-related-one)  
 
 ## Propiedades
 

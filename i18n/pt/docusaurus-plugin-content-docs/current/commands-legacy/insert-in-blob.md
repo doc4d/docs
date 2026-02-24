@@ -42,7 +42,7 @@ Antes da chamada, você passa no parâmetro *offset* a posição de inserção e
 
 ## Ver também 
 
-[DELETE FROM BLOB](delete-from-blob.md)  
+[DELETE FROM BLOB](delete-from-blob)  
 
 ## Propriedades
 

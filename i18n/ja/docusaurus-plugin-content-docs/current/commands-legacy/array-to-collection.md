@@ -92,7 +92,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[COLLECTION TO ARRAY](collection-to-array.md)  
+[COLLECTION TO ARRAY](collection-to-array)  
 *コレクションと4D配列間での型の変換*  
 
 ## プロパティ

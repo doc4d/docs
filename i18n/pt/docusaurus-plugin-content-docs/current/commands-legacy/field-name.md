@@ -48,9 +48,9 @@ Este exemplo mostra um alerta. Este método passa um ponteiro a um campo:
 
 ## Ver também 
 
-[Field](field.md)  
-[Last field number](last-field-number.md)  
-[Table name](table-name.md)  
+[Field](field)  
+[Last field number](last-field-number)  
+[Table name](table-name)  
 
 ## Propriedades
 

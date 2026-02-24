@@ -60,7 +60,7 @@ If the command has been executed correctly, the OK system variable is set to 1\.
 
 ## See also 
 
-[OPEN SECURITY CENTER](open-security-center.md)  
+[OPEN SECURITY CENTER](open-security-center)  
 
 ## Properties
 

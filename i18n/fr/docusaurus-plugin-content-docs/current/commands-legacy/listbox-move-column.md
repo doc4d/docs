@@ -51,7 +51,7 @@ Vous souhaitez intervertir les 2e et 3e colonnes de la list box :
 
 #### Voir aussi 
 
-[LISTBOX DUPLICATE COLUMN](listbox-duplicate-column.md)  
+[LISTBOX DUPLICATE COLUMN](listbox-duplicate-column)  
 
 #### Propriétés
 

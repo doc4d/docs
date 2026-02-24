@@ -85,7 +85,7 @@ To do this, simply execute the following code:
 
 ## See also 
 
-[DOM Append XML element](dom-append-xml-element.md)  
+[DOM Append XML element](dom-append-xml-element)  
 
 ## Properties
 

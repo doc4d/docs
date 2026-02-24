@@ -47,7 +47,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SPELL CHECK TEXT](spell-check-text.md)  
+[SPELL CHECK TEXT](spell-check-text)  
 
 ## プロパティ
 

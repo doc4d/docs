@@ -42,9 +42,9 @@ Si le texte est correctement extrait, la variable système OK prend la valeur 1,
 
 ## Voir aussi 
 
-[GET PASTEBOARD DATA](get-pasteboard-data.md)  
-[GET PICTURE FROM PASTEBOARD](get-picture-from-pasteboard.md)  
-[Pasteboard data size](pasteboard-data-size.md)  
+[GET PASTEBOARD DATA](get-pasteboard-data)  
+[GET PICTURE FROM PASTEBOARD](get-picture-from-pasteboard)  
+[Pasteboard data size](pasteboard-data-size)  
 
 ## Propriétés
 

@@ -22,9 +22,9 @@ displayed_sidebar: docs
 
 ## Ver também 
 
-[Arctan](arctan.md)  
-[Sin](sin.md)  
-[Tan](tan.md)  
+[Arctan](arctan)  
+[Sin](sin)  
+[Tan](tan)  
 
 ## Propriedades
 

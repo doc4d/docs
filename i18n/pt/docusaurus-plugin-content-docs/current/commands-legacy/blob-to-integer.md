@@ -64,13 +64,13 @@ O exemplo a seguir lê 20 valores inteiros de um BLOB, iniciando no offset 0x200
 
 ## Ver também 
 
-[BLOB to longint](blob-to-longint.md)  
-[BLOB to real](blob-to-real.md)  
-[BLOB to text](blob-to-text.md)  
-[INTEGER TO BLOB](integer-to-blob.md)  
-[LONGINT TO BLOB](longint-to-blob.md)  
-[REAL TO BLOB](real-to-blob.md)  
-[TEXT TO BLOB](text-to-blob.md)  
+[BLOB to longint](blob-to-longint)  
+[BLOB to real](blob-to-real)  
+[BLOB to text](blob-to-text)  
+[INTEGER TO BLOB](integer-to-blob)  
+[LONGINT TO BLOB](longint-to-blob)  
+[REAL TO BLOB](real-to-blob)  
+[TEXT TO BLOB](text-to-blob)  
 
 ## Propriedades
 

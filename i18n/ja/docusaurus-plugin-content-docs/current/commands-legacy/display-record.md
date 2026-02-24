@@ -41,7 +41,7 @@ DISPLAY RECORDは、しばしばオリジナルの進捗メッセージを表示
 
 ## 参照 
 
-[MESSAGE](message.md)  
+[MESSAGE](message)  
 
 ## プロパティ
 

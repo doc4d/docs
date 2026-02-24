@@ -35,7 +35,7 @@ Si vous passez le paramètre optionnel \*, vous indiquez que le paramètre *obje
 
 ## Voir aussi 
 
-[OBJECT SET FILTER](object-set-filter.md)  
+[OBJECT SET FILTER](object-set-filter)  
 
 ## Propriétés
 

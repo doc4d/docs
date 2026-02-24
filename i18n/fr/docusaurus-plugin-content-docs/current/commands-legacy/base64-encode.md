@@ -49,10 +49,10 @@ Par défaut, si le paramètre *\** est omis, la commande utilise un encodage Bas
 
 ## Voir aussi 
 
-[BASE64 DECODE](base64-decode.md)  
-[Generate digest](generate-digest.md)  
+[BASE64 DECODE](base64-decode)  
+[Generate digest](generate-digest)  
 *Présentation des commandes XML DOM*  
-[XML DECODE](xml-decode.md)  
+[XML DECODE](xml-decode)  
 
 ## Propriétés
 

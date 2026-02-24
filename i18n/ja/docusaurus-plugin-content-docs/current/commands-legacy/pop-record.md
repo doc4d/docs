@@ -31,7 +31,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[PUSH RECORD](push-record.md)  
+[PUSH RECORD](push-record)  
 *レコードスタックの使用*  
 
 ## プロパティ

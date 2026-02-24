@@ -34,11 +34,11 @@ If you omit the *window* parameter, **Get window title** returns the title of th
 
 ## Example 
 
-See example for the [SET WINDOW TITLE](set-window-title.md) command.
+See example for the [SET WINDOW TITLE](set-window-title) command.
 
 ## See also 
 
-[SET WINDOW TITLE](set-window-title.md)  
+[SET WINDOW TITLE](set-window-title)  
 
 ## Properties
 

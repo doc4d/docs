@@ -77,7 +77,7 @@ El siguiente código recupera el contenido y la altura del título del encabezad
 
 ## Ver también 
 
-[QR SET HEADER AND FOOTER](qr-set-header-and-footer.md)  
+[QR SET HEADER AND FOOTER](qr-set-header-and-footer)  
 
 ## Propiedades
 

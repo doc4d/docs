@@ -42,7 +42,7 @@ Em *corH* e *corV*, o comando devolve os valores das cores RGB. O formato de cor
 
 ## Ver também 
 
-[LISTBOX SET GRID COLOR](listbox-set-grid-color.md)  
+[LISTBOX SET GRID COLOR](listbox-set-grid-color)  
 
 ## Propriedades
 

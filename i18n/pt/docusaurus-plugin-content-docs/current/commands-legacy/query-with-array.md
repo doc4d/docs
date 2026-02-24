@@ -51,7 +51,7 @@ O exemplo a seguir lhe permite recuperar os registros de clientes franceses e am
 
 ## Ver também 
 
-[QUERY SELECTION WITH ARRAY](query-selection-with-array.md)  
+[QUERY SELECTION WITH ARRAY](query-selection-with-array)  
 
 ## Propriedades
 

@@ -42,13 +42,13 @@ If you passed **True** in the first parameter, you can pass new minimum and maxi
 
 ## Example 
 
-Refer to the example of the [FORM SET SIZE](form-set-size.md) command. 
+Refer to the example of the [FORM SET SIZE](form-set-size) command. 
 
 ## See also 
 
-[FORM GET HORIZONTAL RESIZING](form-get-horizontal-resizing.md)  
-[FORM SET SIZE](form-set-size.md)  
-[FORM SET VERTICAL RESIZING](form-set-vertical-resizing.md)  
+[FORM GET HORIZONTAL RESIZING](form-get-horizontal-resizing)  
+[FORM SET SIZE](form-set-size)  
+[FORM SET VERTICAL RESIZING](form-set-vertical-resizing)  
 
 ## Properties
 

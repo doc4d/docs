@@ -65,14 +65,14 @@ Después de la ejecución del comando, la variable se incrementa en el número d
 
 ## Ver también 
 
-[BLOB to integer](blob-to-integer.md)  
-[BLOB to longint](blob-to-longint.md)  
-[BLOB to real](blob-to-real.md)  
-[Convert to text](convert-to-text.md)  
-[INTEGER TO BLOB](integer-to-blob.md)  
-[LONGINT TO BLOB](longint-to-blob.md)  
-[REAL TO BLOB](real-to-blob.md)  
-[TEXT TO BLOB](text-to-blob.md)  
+[BLOB to integer](blob-to-integer)  
+[BLOB to longint](blob-to-longint)  
+[BLOB to real](blob-to-real)  
+[Convert to text](convert-to-text)  
+[INTEGER TO BLOB](integer-to-blob)  
+[LONGINT TO BLOB](longint-to-blob)  
+[REAL TO BLOB](real-to-blob)  
+[TEXT TO BLOB](text-to-blob)  
 
 ## Propiedades
 

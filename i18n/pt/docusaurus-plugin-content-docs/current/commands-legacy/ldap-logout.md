@@ -30,7 +30,7 @@ displayed_sidebar: docs
 
 ## Ver também 
 
-[LDAP LOGIN](ldap-login.md)  
+[LDAP LOGIN](ldap-login)  
 
 ## Propriedades
 

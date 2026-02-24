@@ -41,7 +41,7 @@ Si un numéro de *zone* invalide est passé, l’erreur -9850 est générée.
 
 ## Voir aussi 
 
-[QR SET REPORT KIND](qr-set-report-kind.md)  
+[QR SET REPORT KIND](qr-set-report-kind)  
 
 ## Propriétés
 

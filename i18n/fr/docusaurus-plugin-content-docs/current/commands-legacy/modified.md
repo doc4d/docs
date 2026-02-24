@@ -37,13 +37,13 @@ Dans le cas de la saisie de données, un champ est considéré comme modifié à
 
 Dans le cas de l'exécution d'une méthode, un champ est considéré comme modifié si une valeur lui a été assignée (différente ou non de sa valeur précédente).
 
-**Note :** La commande **Modified** retourne toujours **Vrai** après l'exécution des commandes [PUSH RECORD](push-record.md) et [POP RECORD](pop-record.md).
+**Note :** La commande **Modified** retourne toujours **Vrai** après l'exécution des commandes [PUSH RECORD](push-record) et [POP RECORD](pop-record).
 
-Dans tous les cas, pour savoir si la valeur d'un champ a été effectivement modifiée, utilisez la commande [Old](old.md). 
+Dans tous les cas, pour savoir si la valeur d'un champ a été effectivement modifiée, utilisez la commande [Old](old). 
 
-**Note :** Bien que la fonction **Modified** puisse être appliquée à tout type de champ, si vous l'utilisez conjointement avec la fonction [Old](old.md), vous devez dans ce cas tenir compte des restrictions liées à cette fonction. Reportez-vous à la description de la commande [Old](old.md).
+**Note :** Bien que la fonction **Modified** puisse être appliquée à tout type de champ, si vous l'utilisez conjointement avec la fonction [Old](old), vous devez dans ce cas tenir compte des restrictions liées à cette fonction. Reportez-vous à la description de la commande [Old](old).
 
-Pendant la saisie de données, il est généralement plus pratique d'effectuer des opérations dans des méthodes objet à l'aide de la commande [Form event code](../commands/form-event-code.md) que d'utiliser la fonction **Modified** dans des méthodes formulaires. Comme une méthode objet reçoit l'événement On Data Change à chaque fois qu'un champ est modifié, utiliser une telle méthode équivaut à appeler **Modified** dans une méthode formulaire.
+Pendant la saisie de données, il est généralement plus pratique d'effectuer des opérations dans des méthodes objet à l'aide de la commande [Form event code](../commands/form-event-code) que d'utiliser la fonction **Modified** dans des méthodes formulaires. Comme une méthode objet reçoit l'événement On Data Change à chaque fois qu'un champ est modifié, utiliser une telle méthode équivaut à appeler **Modified** dans une méthode formulaire.
 
 ## Exemple 1 
 
@@ -76,8 +76,8 @@ Vous sélectionnez un enregistrement de la table *\[uneTable\]*, puis vous appel
 
 ## Voir aussi 
 
-[Form event code](../commands/form-event-code.md)  
-[Old](old.md)  
+[Form event code](../commands/form-event-code)  
+[Old](old)  
 
 ## Propriétés
 

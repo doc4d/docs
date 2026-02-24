@@ -77,7 +77,7 @@ La variable vNOMBRE contiene ROBERTO y vCIUDAD contiene PARIS.
 
 ## Ver también 
 
-[WEB GET BODY PART](web-get-body-part.md)  
+[WEB GET BODY PART](web-get-body-part)  
 
 ## Propiedades
 

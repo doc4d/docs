@@ -32,8 +32,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[False](false.md)  
-[True](true.md)  
+[False](false)  
+[True](true)  
 
 ## プロパティ
 

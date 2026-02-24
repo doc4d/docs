@@ -39,7 +39,7 @@ QUERY SELECTION WITH ARRAYは[QUERY WITH ARRAY](query-with-array.md "QUERY WITH 
 
 ## 参照 
 
-[QUERY WITH ARRAY](query-with-array.md)  
+[QUERY WITH ARRAY](query-with-array)  
 
 ## プロパティ
 

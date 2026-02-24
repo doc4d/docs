@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Log](log.md)  
+[Log](log)  
 
 ## プロパティ
 

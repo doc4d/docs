@@ -38,9 +38,9 @@ El siguiente ejemplo inicializa los elementos del array *asTablas,* con los nomb
 
 ## Ver también 
 
-[Last field number](last-field-number.md)  
-[Is table number valid](is-table-number-valid.md)  
-[Table name](table-name.md)  
+[Last field number](last-field-number)  
+[Is table number valid](is-table-number-valid)  
+[Table name](table-name)  
 
 ## Propiedades
 

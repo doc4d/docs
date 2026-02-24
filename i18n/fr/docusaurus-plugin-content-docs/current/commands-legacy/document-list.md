@@ -124,8 +124,8 @@ Liste de tous les documents en mode récursif POSIX (relatif) :
 
 ## Voir aussi 
 
-[FOLDER LIST](folder-list.md)  
-[VOLUME LIST](volume-list.md)  
+[FOLDER LIST](folder-list)  
+[VOLUME LIST](volume-list)  
 
 ## Propriétés
 

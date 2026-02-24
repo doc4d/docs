@@ -41,7 +41,7 @@ Si la commande a été correctement exécutée, la variable système OK prend la
 
 ## Voir aussi 
 
-[DOM Get XML information](dom-get-xml-information.md)  
+[DOM Get XML information](dom-get-xml-information)  
 
 ## Propriétés
 

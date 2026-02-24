@@ -41,7 +41,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[CREATE ALIAS](create-alias.md)  
+[CREATE ALIAS](create-alias)  
 
 ## プロパティ
 

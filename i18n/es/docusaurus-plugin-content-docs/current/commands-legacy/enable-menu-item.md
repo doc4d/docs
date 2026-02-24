@@ -40,7 +40,7 @@ Si omite el parámetro *proceso*, ENABLE MENU ITEM se aplica a la barra de menú
 
 ## Ver también 
 
-[DISABLE MENU ITEM](disable-menu-item.md)  
+[DISABLE MENU ITEM](disable-menu-item)  
 
 ## Propiedades
 

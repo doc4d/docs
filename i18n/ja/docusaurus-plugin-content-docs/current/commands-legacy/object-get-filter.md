@@ -35,7 +35,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT SET FILTER](object-set-filter.md)  
+[OBJECT SET FILTER](object-set-filter)  
 
 ## プロパティ
 

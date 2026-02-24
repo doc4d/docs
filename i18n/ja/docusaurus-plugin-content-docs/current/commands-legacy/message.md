@@ -28,20 +28,20 @@ displayed_sidebar: docs
 
 ## 説明 
 
-<!--REF #_command_.MESSAGE.Summary-->MESSAGE コマンドは、通常ユーザに対して何らかの動作を知らせるために使用します。<!-- END REF-->このコマンドは画面上の特別なメッセージウィンドウに *message* を表示します。このメッセージウィンドウは、 [Open window](../commands/open-window.md) を使って（後述）あらかじめ開かれたウィンドウを使用していないかぎり、MESSAGE コマンドをコールするたびに表示されたり閉じられたりします。このメッセージは一時的なもので、フォームを表示する、またはメソッドの実行が終了するとすぐに消去されます。別のMESSAGE コマンドを実行すると古いメッセージは、消去されます。 
+<!--REF #_command_.MESSAGE.Summary-->MESSAGE コマンドは、通常ユーザに対して何らかの動作を知らせるために使用します。<!-- END REF-->このコマンドは画面上の特別なメッセージウィンドウに *message* を表示します。このメッセージウィンドウは、 [Open window](../commands/open-window) を使って（後述）あらかじめ開かれたウィンドウを使用していないかぎり、MESSAGE コマンドをコールするたびに表示されたり閉じられたりします。このメッセージは一時的なもので、フォームを表示する、またはメソッドの実行が終了するとすぐに消去されます。別のMESSAGE コマンドを実行すると古いメッセージは、消去されます。 
 
-[Open window](../commands/open-window.md) でウィンドウを開いている場合、続く MESSAGE コマンドの呼び出しはすべてそのウィンドウにメッセージを表示します。ウィンドウはターミナルのようなに振舞います:
+[Open window](../commands/open-window) でウィンドウを開いている場合、続く MESSAGE コマンドの呼び出しはすべてそのウィンドウにメッセージを表示します。ウィンドウはターミナルのようなに振舞います:
 
 * 一連のメッセージがこのウィンドウで表示されると、前のメッセージを消去しません。その代わりに、新しいメッセージは既存のメッセージに続けて表示されます。
 * メッセージがウィンドウの幅よりも長い場合、4Dは自動的に改行を行います。
 * メッセージの行がウィンドウの高さより高い場合、4Dは自動的にメッセージウィンドウをスクロールします。
 * 行の制御を行うには、メッセージ中にキャリッジリターン (Char(13) または "\\r") を挿入します。
-* ウィンドウの特定の位置にメッセージを表示するには、[GOTO XY](goto-xy.md)コマンドを使用します。
-* ウィンドウの内容を消去するには、[ERASE WINDOW](erase-window.md)コマンドを使用します。
+* ウィンドウの特定の位置にメッセージを表示するには、[GOTO XY](goto-xy)コマンドを使用します。
+* ウィンドウの内容を消去するには、[ERASE WINDOW](erase-window)コマンドを使用します。
 * このウィンドウは単なる出力用ウィンドウであり、別のウィンドウがオーバーラップしても再描画されません。
 * ウィンドウに表示される文字のフォントとサイズは、データベース設定"インターフェース"ページ内にて変更することができます。
 
-**注:** **MESSAGE** は[Open form window](../commands/open-form-window.md) コマンドと互換性がありますが、このコンテキストでは、[Open form window](../commands/open-form-window.md)コマンドの、ウィンドウのサイズと位置を保存する第2*\** 引数はサポートされません。
+**注:** **MESSAGE** は[Open form window](../commands/open-form-window) コマンドと互換性がありますが、このコンテキストでは、[Open form window](../commands/open-form-window)コマンドの、ウィンドウのサイズと位置を保存する第2*\** 引数はサポートされません。
 
 ## 例題 1 
 
@@ -97,7 +97,7 @@ MESSAGEをコールするたびに、以下のウィンドウが表示されて�
 
 ## 例題 4 
 
-[GOTO XY](goto-xy.md) コマンドを使用し、何行か追加します:  
+[GOTO XY](goto-xy) コマンドを使用し、何行か追加します:  
 
 ```4d
  Open window(50;50;500;250;5;"Operation in Progress")
@@ -121,10 +121,10 @@ MESSAGEをコールするたびに、以下のウィンドウが表示されて�
 
 ## 参照 
 
-[CLOSE WINDOW](close-window.md)  
-[ERASE WINDOW](erase-window.md)  
-[GOTO XY](goto-xy.md)  
-[Open window](../commands/open-window.md)  
+[CLOSE WINDOW](close-window)  
+[ERASE WINDOW](erase-window)  
+[GOTO XY](goto-xy)  
+[Open window](../commands/open-window)  
 
 ## プロパティ
 

@@ -107,9 +107,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET PICTURE FROM LIBRARY](get-picture-from-library.md)  
-[PICTURE LIBRARY LIST](picture-library-list.md)  
-[REMOVE PICTURE FROM LIBRARY](remove-picture-from-library.md)  
+[GET PICTURE FROM LIBRARY](get-picture-from-library)  
+[PICTURE LIBRARY LIST](picture-library-list)  
+[REMOVE PICTURE FROM LIBRARY](remove-picture-from-library)  
 
 ## プロパティ
 

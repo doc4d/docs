@@ -41,7 +41,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Current system user](current-system-user.md)  
+[Current system user](current-system-user)  
 
 ## プロパティ
 

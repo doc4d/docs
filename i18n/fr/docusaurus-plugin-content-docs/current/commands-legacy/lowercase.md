@@ -60,7 +60,7 @@ Cet exemple compare les résultats obtenus suivant que le paramètre *\** a ét�
 
 ## Voir aussi 
 
-[Uppercase](uppercase.md)  
+[Uppercase](uppercase)  
 
 ## Propriétés
 

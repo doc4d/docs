@@ -69,8 +69,8 @@ Se você deseja guardar o conteúdo de um arquivo existente no campo imagem, arm
 
 ## Ver também 
 
-[Get external data path](get-external-data-path.md)  
-[RELOAD EXTERNAL DATA](reload-external-data.md)  
+[Get external data path](get-external-data-path)  
+[RELOAD EXTERNAL DATA](reload-external-data)  
 
 ## Propriedades
 

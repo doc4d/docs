@@ -40,8 +40,8 @@ If the user clicks the Accept button or presses the Enter key, the OK system var
 
 ## See also 
 
-[ORDER BY](order-by.md)  
-[QUERY](query.md)  
+[ORDER BY](order-by)  
+[QUERY](query)  
 
 ## Properties
 

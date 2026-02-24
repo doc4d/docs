@@ -45,7 +45,7 @@ Em *xmlInfo*, passe um código indicando o tipo de informação a ser recuperado
 
 ## Ver também 
 
-[XML GET ERROR](xml-get-error.md)  
+[XML GET ERROR](xml-get-error)  
 
 ## Propriedades
 

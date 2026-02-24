@@ -57,8 +57,8 @@ This example creates an interprocess array of 50 2-byte [Integer](# "Number betw
 
 ## See also 
 
-[ARRAY LONGINT](array-longint.md)  
-[ARRAY REAL](array-real.md)  
+[ARRAY LONGINT](array-longint)  
+[ARRAY REAL](array-real)  
 
 ## Properties
 

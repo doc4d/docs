@@ -80,7 +80,7 @@ When you use the Web debug log *selector*, you can receive one of the following 
 
 ## See also 
 
-[WEB SET OPTION](web-set-option.md)  
+[WEB SET OPTION](web-set-option)  
 
 ## Properties
 

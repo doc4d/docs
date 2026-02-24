@@ -33,7 +33,7 @@ displayed_sidebar: docs
 
 Si la chaîne *unCaractère* comporte plus d'un caractère, **Character code** retourne uniquement le code du premier caractère.
 
-La fonction **Character code** est l'inverse de [Char](char.md). Elle retourne le caractère désigné par un code UTF-16.
+La fonction **Character code** est l'inverse de [Char](char). Elle retourne le caractère désigné par un code UTF-16.
 
 ## Exemple 1 
 
@@ -95,7 +95,7 @@ Le code suivant :
 
 ## Voir aussi 
 
-[Char](char.md)  
+[Char](char)  
 *Symboles d'indice de chaîne*  
 
 ## Propriétés

@@ -45,8 +45,8 @@ Ver el ejemplo del comando [Process number](process-number.md "Process number").
 
 *Códigos ASCII*  
 *Códigos de teclas de función*  
-[POST CLICK](post-click.md)  
-[POST EVENT](post-event.md)  
+[POST CLICK](post-click)  
+[POST EVENT](post-event)  
 
 ## Propiedades
 

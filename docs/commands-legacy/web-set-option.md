@@ -96,8 +96,8 @@ A log entry looks like this:
 
 ## See also 
 
-[WEB GET OPTION](web-get-option.md)  
-[WEB LEGACY GET SESSION EXPIRATION](web-legacy-get-session-expiration.md)  
+[WEB GET OPTION](web-get-option)  
+[WEB LEGACY GET SESSION EXPIRATION](web-legacy-get-session-expiration)  
 
 ## Properties
 

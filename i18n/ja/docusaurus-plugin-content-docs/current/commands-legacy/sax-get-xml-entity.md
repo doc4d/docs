@@ -59,7 +59,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SAX Get XML node](sax-get-xml-node.md)  
+[SAX Get XML node](sax-get-xml-node)  
 
 ## プロパティ
 

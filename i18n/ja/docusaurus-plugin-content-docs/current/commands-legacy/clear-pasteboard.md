@@ -51,7 +51,7 @@ CLEAR PASTEBOARDを1回呼び出してから、[APPEND DATA TO PASTEBOARD](appen
 
 ## 参照 
 
-[APPEND DATA TO PASTEBOARD](append-data-to-pasteboard.md)  
+[APPEND DATA TO PASTEBOARD](append-data-to-pasteboard)  
 
 ## プロパティ
 

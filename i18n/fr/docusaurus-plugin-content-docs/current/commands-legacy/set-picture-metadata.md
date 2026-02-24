@@ -88,8 +88,8 @@ Lorsque toutes les métadonnées sont manipulées via une référence d’élém
 
 ## Voir aussi 
 
-[GET PICTURE KEYWORDS](get-picture-keywords.md)  
-[GET PICTURE METADATA](get-picture-metadata.md)  
+[GET PICTURE KEYWORDS](get-picture-keywords)  
+[GET PICTURE METADATA](get-picture-metadata)  
 *Noms des métadonnées images*  
 *Valeurs des métadonnées images*  
 

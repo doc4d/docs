@@ -56,8 +56,8 @@ O código abaixo espera até 5 segundos para que um registro bloqueado seja desb
 
 ## Ver também 
 
-[Current time](current-time.md)  
-[Tickcount](tickcount.md)  
+[Current time](current-time)  
+[Tickcount](tickcount)  
 [Timestamp](../commands/timestamp)  
 
 ## Propriedades

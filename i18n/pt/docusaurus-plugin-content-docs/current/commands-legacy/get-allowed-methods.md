@@ -54,7 +54,7 @@ Este exemplo autoriza um conjunto de métodos específicos para criar um relató
 
 ## Ver também 
 
-[SET ALLOWED METHODS](../commands/set-allowed-methods.md)  
+[SET ALLOWED METHODS](../commands/set-allowed-methods)  
 
 ## Propriedades
 

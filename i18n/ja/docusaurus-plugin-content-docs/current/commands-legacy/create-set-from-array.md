@@ -49,8 +49,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[BOOLEAN ARRAY FROM SET](boolean-array-from-set.md)  
-[CREATE SELECTION FROM ARRAY](create-selection-from-array.md)  
+[BOOLEAN ARRAY FROM SET](boolean-array-from-set)  
+[CREATE SELECTION FROM ARRAY](create-selection-from-array)  
 
 ## プロパティ
 

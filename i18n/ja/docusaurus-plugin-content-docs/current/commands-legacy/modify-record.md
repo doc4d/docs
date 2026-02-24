@@ -42,11 +42,11 @@ MODIFY RECORDを使用したが、ユーザがレコードのデータを変更�
 
 ## 参照 
 
-[ADD RECORD](add-record.md)  
-[Locked](locked.md)  
-[Modified record](modified-record.md)  
-[READ WRITE](read-write.md)  
-[UNLOAD RECORD](unload-record.md)  
+[ADD RECORD](add-record)  
+[Locked](locked)  
+[Modified record](modified-record)  
+[READ WRITE](read-write)  
+[UNLOAD RECORD](unload-record)  
 
 ## プロパティ
 

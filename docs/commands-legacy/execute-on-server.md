@@ -38,7 +38,7 @@ displayed_sidebar: docs
 
 You use this function to start a stored procedure. For more information about stored procedures, see the section *Stored Procedures* in the 4D Server Reference manual.
 
-If you call **Execute on server** on a Client machine, the command returns a negative process number. If you call it on the Server machine, it returns a positive process number. Note that calling [New process](new-process.md) on the Server machine does the same thing as calling **Execute on server**.
+If you call **Execute on server** on a Client machine, the command returns a negative process number. If you call it on the Server machine, it returns a positive process number. Note that calling [New process](new-process) on the Server machine does the same thing as calling **Execute on server**.
 
 If the process could not be created (for example, if there is not enough memory), **Execute on server** returns zero (0) and an error is generated. You can catch this error using an error-handling method installed using [ON ERR CALL](on-err-call.md).
 
@@ -57,11 +57,11 @@ The *stack* parameter allows you indicate the amount of memory allocated for the
 
 ### Process Name 
 
- You pass the name of the new process in *name*. In single-user, this name will appear in the list of processes of the Runtime Explorer and will be returned by the [Process info](../commands/process-info.md) command when applied to this new process. In Client/Server, this name will appear in blue in the Stored Procedure list of the 4D Server main window.
+ You pass the name of the new process in *name*. In single-user, this name will appear in the list of processes of the Runtime Explorer and will be returned by the [Process info](../commands/process-info) command when applied to this new process. In Client/Server, this name will appear in blue in the Stored Procedure list of the 4D Server main window.
 
 You can omit this parameter; if you do so, the name of the process will be the empty string. 
 
-**Warning:** Contrary to [New process](new-process.md), do not attempt to make a process local in scope by prefixing its name with the dollar sign (*$*) while using **Execute on server**. This will work in single-user, because **Execute on server** acts as [New process](new-process.md) in this environment. On the other hand, in Client/Server, this will generate an error.
+**Warning:** Contrary to [New process](new-process), do not attempt to make a process local in scope by prefixing its name with the dollar sign (*$*) while using **Execute on server**. This will work in single-user, because **Execute on server** acts as [New process](new-process) in this environment. On the other hand, in Client/Server, this will generate an error.
 
 ### Parameter to Process Method 
 
@@ -94,7 +94,7 @@ The WriteLog method will be executed on the server. It contains, for example:
 
 ## Example 2 
 
-The following example shows how importing data can be dramatically accelerated in Client/Server. The Regular Import method listed below allows you to test how long it takes to import records using the [IMPORT TEXT](import-text.md) command on the Client side:
+The following example shows how importing data can be dramatically accelerated in Client/Server. The Regular Import method listed below allows you to test how long it takes to import records using the [IMPORT TEXT](import-text) command on the Client side:
 
 ```4d
   // Regular Import Project Method
@@ -199,8 +199,8 @@ Refer to the *SP-Based Services (Example)* section in the *4D Server Reference* 
 
 ## See also 
 
-[EXECUTE ON CLIENT](execute-on-client.md)  
-[New process](new-process.md)  
+[EXECUTE ON CLIENT](execute-on-client)  
+[New process](new-process)  
 
 ## Properties
 

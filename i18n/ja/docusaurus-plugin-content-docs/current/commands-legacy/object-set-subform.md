@@ -52,8 +52,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT GET SUBFORM](object-get-subform.md)  
-[OBJECT GET SUBFORM CONTAINER SIZE](object-get-subform-container-size.md)  
+[OBJECT GET SUBFORM](object-get-subform)  
+[OBJECT GET SUBFORM CONTAINER SIZE](object-get-subform-container-size)  
 
 ## プロパティ
 

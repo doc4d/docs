@@ -75,7 +75,7 @@ Vous voulez copier différentes valeurs de propriété d'une collection d'objets
 
 ## Voir aussi 
 
-[ARRAY TO COLLECTION](array-to-collection.md)  
+[ARRAY TO COLLECTION](array-to-collection)  
 *Conversions de type entre les collections et les tableaux 4D*  
 
 ## Propriétés

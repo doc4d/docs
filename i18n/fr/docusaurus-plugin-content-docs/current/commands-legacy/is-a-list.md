@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 ## Exemple 1 
 
-Reportez-vous à l'exemple de la commande [CLEAR LIST](clear-list.md).
+Reportez-vous à l'exemple de la commande [CLEAR LIST](clear-list).
 
 ## Exemple 2 
 

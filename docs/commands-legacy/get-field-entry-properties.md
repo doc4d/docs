@@ -51,9 +51,9 @@ If there is no choice list associated to the field or if the field type is not s
 
 ## See also 
 
-[GET FIELD PROPERTIES](get-field-properties.md)  
-[GET RELATION PROPERTIES](get-relation-properties.md)  
-[GET TABLE PROPERTIES](get-table-properties.md)  
+[GET FIELD PROPERTIES](get-field-properties)  
+[GET RELATION PROPERTIES](get-relation-properties)  
+[GET TABLE PROPERTIES](get-table-properties)  
 
 ## Properties
 

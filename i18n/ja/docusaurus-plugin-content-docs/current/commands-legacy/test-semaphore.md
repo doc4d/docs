@@ -53,8 +53,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[CLEAR SEMAPHORE](clear-semaphore.md)  
-[Semaphore](semaphore.md)  
+[CLEAR SEMAPHORE](clear-semaphore)  
+[Semaphore](semaphore)  
 
 ## プロパティ
 

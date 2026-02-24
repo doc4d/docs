@@ -51,9 +51,9 @@ The *textFormat* parameter fixes the internal format and character set of the te
 
 * The “UTF8” constants can only be used when the application runs in Unicode mode.
 * The “Mac” constants cannot work with texts greater than 32 KB.
-* If you want to work with character sets other than UTF8, use the [Convert to text](convert-to-text.md) command.
+* If you want to work with character sets other than UTF8, use the [Convert to text](convert-to-text) command.
 
-For more information about these constants and the formats they represent, please refer to the description of the [TEXT TO BLOB](text-to-blob.md) command. 
+For more information about these constants and the formats they represent, please refer to the description of the [TEXT TO BLOB](text-to-blob) command. 
 
 **WARNING:** The number of characters to be read is determined by the *textFormat* parameter, EXCEPT for the formats Mac Text without length and UTF8 Text without length, for which you need to specify the number of characters to be read in the *textLength* parameter. For the other formats, *textLength* is ignored and you can omit it.
 
@@ -65,14 +65,14 @@ After the call, the variable is incremented by the number of bytes read. Therefo
 
 ## See also 
 
-[BLOB to integer](blob-to-integer.md)  
-[BLOB to longint](blob-to-longint.md)  
-[BLOB to real](blob-to-real.md)  
-[Convert to text](convert-to-text.md)  
-[INTEGER TO BLOB](integer-to-blob.md)  
-[LONGINT TO BLOB](longint-to-blob.md)  
-[REAL TO BLOB](real-to-blob.md)  
-[TEXT TO BLOB](text-to-blob.md)  
+[BLOB to integer](blob-to-integer)  
+[BLOB to longint](blob-to-longint)  
+[BLOB to real](blob-to-real)  
+[Convert to text](convert-to-text)  
+[INTEGER TO BLOB](integer-to-blob)  
+[LONGINT TO BLOB](longint-to-blob)  
+[REAL TO BLOB](real-to-blob)  
+[TEXT TO BLOB](text-to-blob)  
 
 ## Properties
 

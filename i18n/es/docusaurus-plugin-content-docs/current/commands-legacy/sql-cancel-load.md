@@ -61,8 +61,8 @@ Si el comando se ha ejecutado correctamente, la variable sistema OK devuelve 1\.
 
 ## Ver también 
 
-[SQL LOAD RECORD](sql-load-record.md)  
-[SQL LOGIN](sql-login.md)  
+[SQL LOAD RECORD](sql-load-record)  
+[SQL LOGIN](sql-login)  
 
 ## Propiedades
 

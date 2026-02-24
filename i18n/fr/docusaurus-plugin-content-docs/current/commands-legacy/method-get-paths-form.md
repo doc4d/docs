@@ -78,7 +78,7 @@ Liste de tous les objets des formulaires "input" de la table \[Emp\] à partir d
 
 ## Voir aussi 
 
-[FORM GET NAMES](form-get-names.md)  
+[FORM GET NAMES](form-get-names)  
 
 ## Propriétés
 

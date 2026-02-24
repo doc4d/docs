@@ -35,7 +35,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[WA SET PAGE CONTENT](wa-set-page-content.md)  
+[WA SET PAGE CONTENT](wa-set-page-content)  
 
 ## プロパティ
 

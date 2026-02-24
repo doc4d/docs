@@ -38,8 +38,8 @@ ERASE WINDOWはウィンドウの内容をクリアします。スクリーン�
 
 ## 参照 
 
-[GOTO XY](goto-xy.md)  
-[MESSAGE](message.md)  
+[GOTO XY](goto-xy)  
+[MESSAGE](message)  
 
 ## プロパティ
 

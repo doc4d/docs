@@ -77,7 +77,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR SET HEADER AND FOOTER](qr-set-header-and-footer.md)  
+[QR SET HEADER AND FOOTER](qr-set-header-and-footer)  
 
 ## プロパティ
 

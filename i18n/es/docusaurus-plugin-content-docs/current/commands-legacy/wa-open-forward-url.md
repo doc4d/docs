@@ -34,8 +34,8 @@ Si no hay un URL siguiente (es decir, si el usuario no ha regresado al URL anter
 
 ## Ver también 
 
-[WA OPEN BACK URL](wa-open-back-url.md)  
-[WA OPEN URL](wa-open-url.md)  
+[WA OPEN BACK URL](wa-open-back-url)  
+[WA OPEN URL](wa-open-url)  
 
 ## Propiedades
 

@@ -27,16 +27,16 @@ displayed_sidebar: docs
 
 ## 説明 
 
-<!--REF #_command_.CANCEL TRANSACTION.Summary-->**CANCEL TRANSACTION**は、対応するレベルの[START TRANSACTION](start-transaction.md)で開始したカレントプロセスのトランザクションをキャンセルします。<!-- END REF-->**CANCEL TRANSACTION**は、トランザクション中にデータ上で実行された処理をキャンセルします。
+<!--REF #_command_.CANCEL TRANSACTION.Summary-->**CANCEL TRANSACTION**は、対応するレベルの[START TRANSACTION](start-transaction)で開始したカレントプロセスのトランザクションをキャンセルします。<!-- END REF-->**CANCEL TRANSACTION**は、トランザクション中にデータ上で実行された処理をキャンセルします。
 
 **注:** **CANCEL TRANSACTION**はまだ保存されていないカレントレコードに対して行われた変更には影響しません。このコマンドが実行された後も変更されたデータはそのまま表示されます。
 
 ## 参照 
 
-[In transaction](in-transaction.md)  
-[START TRANSACTION](start-transaction.md)  
-[Transaction level](transaction-level.md)  
-[VALIDATE TRANSACTION](validate-transaction.md)  
+[In transaction](in-transaction)  
+[START TRANSACTION](start-transaction)  
+[Transaction level](transaction-level)  
+[VALIDATE TRANSACTION](validate-transaction)  
 *トランザクションを使用する*  
 
 ## プロパティ

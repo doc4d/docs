@@ -78,7 +78,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[WEB SET OPTION](web-set-option.md)  
+[WEB SET OPTION](web-set-option)  
 
 ## プロパティ
 

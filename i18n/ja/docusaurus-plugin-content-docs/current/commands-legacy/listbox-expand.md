@@ -90,7 +90,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX COLLAPSE](listbox-collapse.md)  
+[LISTBOX COLLAPSE](listbox-collapse)  
 
 ## プロパティ
 

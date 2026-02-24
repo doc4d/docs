@@ -53,7 +53,7 @@ Oldは、すべてのフィールドタイプに適用できます。
 
 ## 参照 
 
-[Modified](modified.md)  
+[Modified](modified)  
 
 ## プロパティ
 

@@ -45,7 +45,7 @@ Si el list box está asociado con arrays, *numTabla* devuelve -1 y *tempo*, si s
 
 ## Ver también 
 
-[LISTBOX SET TABLE SOURCE](listbox-set-table-source.md)  
+[LISTBOX SET TABLE SOURCE](listbox-set-table-source)  
 
 ## Propiedades
 

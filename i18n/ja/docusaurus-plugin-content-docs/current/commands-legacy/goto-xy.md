@@ -59,7 +59,7 @@ GOTO XY コマンドでカーソルの位置を指定してから、[MESSAGE](me
 
 ## 参照 
 
-[MESSAGE](message.md)  
+[MESSAGE](message)  
 
 ## プロパティ
 

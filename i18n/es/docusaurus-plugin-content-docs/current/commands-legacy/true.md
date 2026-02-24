@@ -29,8 +29,8 @@ displayed_sidebar: docs
 
 #### Ver también 
 
-[False](false.md)  
-[Not](not.md)  
+[False](false)  
+[Not](not)  
 
 #### Propiedades
 

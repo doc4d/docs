@@ -56,8 +56,8 @@ Esta prueba permite ejecutar código diferente dependiendo de que versión es un
 
 ## Ver también 
 
-[Application type](application-type.md)  
-[Application version](application-version.md)  
+[Application type](application-type)  
+[Application version](application-version)  
 
 ## Propiedades
 

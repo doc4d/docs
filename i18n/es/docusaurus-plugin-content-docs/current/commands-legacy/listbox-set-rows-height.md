@@ -47,9 +47,9 @@ Por defecto, si omite el parámetro *unidad*, la altura se expresa en píxeles. 
 
 ## Ver también 
 
-[LISTBOX Get rows height](listbox-get-rows-height.md)  
-[LISTBOX SET AUTO ROW HEIGHT](listbox-set-auto-row-height.md)  
-[LISTBOX SET ROW HEIGHT](listbox-set-row-height.md)  
+[LISTBOX Get rows height](listbox-get-rows-height)  
+[LISTBOX SET AUTO ROW HEIGHT](listbox-set-auto-row-height)  
+[LISTBOX SET ROW HEIGHT](listbox-set-row-height)  
 
 ## Propiedades
 

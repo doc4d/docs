@@ -40,9 +40,9 @@ QUERY SELECTION BY FORMULAは[QUERY BY FORMULA](query-by-formula.md "QUERY BY FO
 
 ## 参照 
 
-[QUERY](query.md)  
-[QUERY BY FORMULA](query-by-formula.md)  
-[QUERY SELECTION](query-selection.md)  
+[QUERY](query)  
+[QUERY BY FORMULA](query-by-formula)  
+[QUERY SELECTION](query-selection)  
 
 ## プロパティ
 

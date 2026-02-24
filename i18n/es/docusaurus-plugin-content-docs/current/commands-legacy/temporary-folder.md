@@ -35,7 +35,7 @@ Ver el ejemplo del comando [APPEND DATA TO PASTEBOARD](append-data-to-pasteboard
 
 ## Ver también 
 
-[System folder](system-folder.md)  
+[System folder](system-folder)  
 
 ## Propiedades
 

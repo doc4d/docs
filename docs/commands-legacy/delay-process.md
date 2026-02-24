@@ -45,12 +45,12 @@ See example in *Record Locking*.
 
 ## Example 2 
 
-See example for the command [Process number](../commands/process-number.md).
+See example for the command [Process number](../commands/process-number).
 
 ## See also 
 
-[HIDE PROCESS](hide-process.md)  
-[PAUSE PROCESS](pause-process.md)  
+[HIDE PROCESS](hide-process)  
+[PAUSE PROCESS](pause-process)  
 
 ## Properties
 

@@ -41,7 +41,7 @@ Los parámetros *hDesp*, *vDesp*, y *modo* devuelven las posiciones horizontal y
 
 ## Ver también 
 
-[Picture size](picture-size.md)  
+[Picture size](picture-size)  
 
 ## Propiedades
 

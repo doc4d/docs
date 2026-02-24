@@ -61,9 +61,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[BLOB to list](blob-to-list.md)  
-[Load list](load-list.md)  
-[New list](new-list.md)  
+[BLOB to list](blob-to-list)  
+[Load list](load-list)  
+[New list](new-list)  
 
 ## プロパティ
 

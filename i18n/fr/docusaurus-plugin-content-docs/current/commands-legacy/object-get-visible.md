@@ -35,7 +35,7 @@ Si vous passez le paramètre optionnel *\**, vous indiquez que le paramètre *ob
 
 ## Voir aussi 
 
-[OBJECT SET VISIBLE](object-set-visible.md)  
+[OBJECT SET VISIBLE](object-set-visible)  
 
 ## Propriétés
 

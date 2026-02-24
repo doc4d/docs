@@ -64,8 +64,8 @@ El uso de un objeto como un mapa hash (sistema llave/valor) ofrece un acceso rá
 
 ## Ver también 
 
-[OB Keys](ob-keys.md)  
-[OB Values](ob-values.md)  
+[OB Keys](ob-keys)  
+[OB Values](ob-values)  
 
 ## Propiedades
 

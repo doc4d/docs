@@ -43,8 +43,8 @@ Vous voulez déterminer si le système d'exploitation courant est macOS :
 
 #### Voir aussi 
 
-[System info](system-info.md)  
-[Is Windows](is-windows.md)  
+[System info](system-info)  
+[Is Windows](is-windows)  
 
 #### Propriétés
 

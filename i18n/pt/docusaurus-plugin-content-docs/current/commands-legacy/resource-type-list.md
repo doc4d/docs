@@ -89,7 +89,7 @@ Quando este método de projeto for implementado em um banco, pode escrever:
 
 ## Ver também 
 
-[RESOURCE LIST](resource-list.md)  
+[RESOURCE LIST](resource-list)  
 
 ## Propriedades
 

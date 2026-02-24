@@ -66,7 +66,7 @@ The following statement places the title “Center title” in the header for th
 
 ## See also 
 
-[QR GET HEADER AND FOOTER](qr-get-header-and-footer.md)  
+[QR GET HEADER AND FOOTER](qr-get-header-and-footer)  
 
 ## Properties
 

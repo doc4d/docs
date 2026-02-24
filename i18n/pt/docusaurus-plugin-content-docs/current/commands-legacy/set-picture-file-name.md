@@ -36,8 +36,8 @@ O nome por defeito se utiliza como nome de arquivo quando a imagem se exporta em
 
 ## Ver também 
 
-[Get picture file name](get-picture-file-name.md)  
-[WRITE PICTURE FILE](write-picture-file.md)  
+[Get picture file name](get-picture-file-name)  
+[WRITE PICTURE FILE](write-picture-file)  
 
 ## Propriedades
 

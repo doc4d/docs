@@ -81,7 +81,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[ST INSERT URL](st-insert-url.md)  
+[ST INSERT URL](st-insert-url)  
 
 ## プロパティ
 

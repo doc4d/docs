@@ -248,10 +248,10 @@ El método ObtenerTextoSeleccionado es el siguiente:
 
 ## Ver también 
 
-[Form event code](../commands/form-event-code.md)  
-[Get edited text](get-edited-text.md)  
-[Is editing text](is-editing-text.md)  
-[Keystroke](keystroke.md)  
+[Form event code](../commands/form-event-code)  
+[Get edited text](get-edited-text)  
+[Is editing text](is-editing-text)  
+[Keystroke](keystroke)  
 
 
 ## Propiedades

@@ -40,8 +40,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[ORDER BY](order-by.md)  
-[QUERY](query.md)  
+[ORDER BY](order-by)  
+[QUERY](query)  
 
 ## プロパティ
 

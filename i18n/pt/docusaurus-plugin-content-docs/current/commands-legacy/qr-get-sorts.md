@@ -45,7 +45,7 @@ Se passa um número de área inválido, se gera o erro -9850.
 
 ## Ver também 
 
-[QR SET SORTS](qr-set-sorts.md)  
+[QR SET SORTS](qr-set-sorts)  
 
 ## Propriedades
 

@@ -48,7 +48,7 @@ Si el parámetro *subtotal*, es incorrecto, se genera el error -9852.
 
 ## Ver también 
 
-[QR GET TOTALS SPACING](qr-get-totals-spacing.md)  
+[QR GET TOTALS SPACING](qr-get-totals-spacing)  
 
 ## Propiedades
 

@@ -101,8 +101,8 @@ Windowsにおいて以下のような確認ダイアログボックスを表示�
 
 ## 参照 
 
-[ALERT](alert.md)  
-[Request](request.md)  
+[ALERT](alert)  
+[Request](request)  
 
 ## プロパティ
 

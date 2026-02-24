@@ -63,7 +63,7 @@ Webページ "MyPage.HTM"を送信するには以下のようにします。
 
 ## 参照 
 
-[WEB SEND BLOB](web-send-blob.md)  
+[WEB SEND BLOB](web-send-blob)  
 
 ## プロパティ
 

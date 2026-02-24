@@ -24,7 +24,7 @@ displayed_sidebar: docs
 
 **警告:** **FILTER EVENT** コマンドを呼び出すだけのイベント処理メソッドを作成しないようにしてください。そのようにするとすべてのイベントが4Dから無視されるためです。**FILTER EVENT** コマンドだけのイベント処理メソッドがある場合には、Ctrl+Shift+Alt+Backspace (Windows) またはCommand-Option-Shift-Control-Backspace (Macintosh) キーを押します。これにより、On Event Callプロセスがイベントをまったく受け取らない通常のプロセスに切り替わります。
 
-**特別なケース:** フォームが[DISPLAY SELECTION](display-selection.md) や [MODIFY SELECTION](modify-selection.md) で表示されているとき、**FILTER EVENT** コマンドを標準の出力フォームメソッドで使用できます。この特別なケースでは、**FILTER EVENT** コマンドを使用してレコード上でのダブルクリックをフィルタすることができます（また、この方法でページモードでのレコードオープン以外の動作を実行します）。これを行うには、出力フォームメソッドに次の行を追加します:
+**特別なケース:** フォームが[DISPLAY SELECTION](display-selection) や [MODIFY SELECTION](modify-selection) で表示されているとき、**FILTER EVENT** コマンドを標準の出力フォームメソッドで使用できます。この特別なケースでは、**FILTER EVENT** コマンドを使用してレコード上でのダブルクリックをフィルタすることができます（また、この方法でページモードでのレコードオープン以外の動作を実行します）。これを行うには、出力フォームメソッドに次の行を追加します:
 
 ```4d
  If(Form event code=On Double Clicked)

@@ -37,8 +37,8 @@ O seguinte exemplo testa o estado da tabela \[Faturas\]. Se o estado da tabela \
 
 ## Ver também 
 
-[READ ONLY](read-only.md)  
-[READ WRITE](read-write.md)  
+[READ ONLY](read-only)  
+[READ WRITE](read-write)  
 *Record Locking*  
 
 ## Propriedades

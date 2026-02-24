@@ -36,11 +36,11 @@ The following is an example of a generic method that displays the records of a t
 
 ## See also 
 
-[Field name](field-name.md)  
-[Last table number](last-table-number.md)  
-[SET FIELD TITLES](set-field-titles.md)  
-[SET TABLE TITLES](set-table-titles.md)  
-[Table](table.md)  
+[Field name](field-name)  
+[Last table number](last-table-number)  
+[SET FIELD TITLES](set-field-titles)  
+[SET TABLE TITLES](set-table-titles)  
+[Table](table)  
 
 ## Properties
 

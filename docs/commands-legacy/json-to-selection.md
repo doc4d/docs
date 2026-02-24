@@ -79,7 +79,7 @@ Using the **JSON TO SELECTION** command to add records to the \[Company\] table:
 
 ## See also 
 
-[Selection to JSON](selection-to-json.md)  
+[Selection to JSON](selection-to-json)  
 
 ## Properties
 

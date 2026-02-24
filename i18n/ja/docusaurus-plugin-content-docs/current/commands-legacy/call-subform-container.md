@@ -39,8 +39,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Form event code](../commands/form-event-code.md)  
-[GOTO OBJECT](goto-object.md)  
+[Form event code](../commands/form-event-code)  
+[GOTO OBJECT](goto-object)  
 
 ## プロパティ
 

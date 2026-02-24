@@ -54,8 +54,8 @@ You want a collection with all property values of an object:
 
 ## See also 
 
-[OB Entries](ob-entries.md)  
-[OB Keys](ob-keys.md)  
+[OB Entries](ob-entries)  
+[OB Keys](ob-keys)  
 
 ## Properties
 

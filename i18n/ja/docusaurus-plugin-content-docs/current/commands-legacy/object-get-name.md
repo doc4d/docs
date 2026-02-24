@@ -48,7 +48,7 @@ displayed_sidebar: docs
 ## 参照 
 
 *Form Objects (Access)*  
-[OBJECT Get pointer](object-get-pointer.md)  
+[OBJECT Get pointer](object-get-pointer)  
 *オブジェクト(フォーム)*  
 
 ## プロパティ

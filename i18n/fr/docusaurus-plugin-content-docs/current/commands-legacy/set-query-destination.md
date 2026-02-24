@@ -94,7 +94,7 @@ Ou
  SET QUERY DESTINATION(Into variable;"";->$vlRésultatRech)
 ```
 
-**Note :** Cette seconde syntaxe facilite l'utilisation conjointe de la commande avec [GET QUERY DESTINATION](get-query-destination.md). 
+**Note :** Cette seconde syntaxe facilite l'utilisation conjointe de la commande avec [GET QUERY DESTINATION](get-query-destination). 
 
 Le **nombre** d'enregistrements trouvés par la recherche sera placé dans la variable *$vlRésultatRech*. La sélection courante et l'enregistrement courant de la table dans laquelle vous effectuez la recherche restent inchangés.
 
@@ -102,18 +102,18 @@ Le **nombre** d'enregistrements trouvés par la recherche sera placé dans la va
 
 **SET QUERY DESTINATION** modifie uniquement le comportement des commandes de recherche, c'est-à-dire :
 
-* [QUERY](query.md)
-* [QUERY SELECTION](query-selection.md)
-* [QUERY BY EXAMPLE](query-by-example.md)
-* [QUERY BY FORMULA](query-by-formula.md)
-* [QUERY SELECTION BY FORMULA](query-selection-by-formula.md)
-* [QUERY BY SQL](query-by-sql.md)
-* [QUERY WITH ARRAY](query-with-array.md)
-* [QUERY SELECTION WITH ARRAY](query-selection-with-array.md)
-* [QUERY BY ATTRIBUTE](query-by-attribute.md)
-* [QUERY SELECTION BY ATTRIBUTE](query-selection-by-attribute.md)
+* [QUERY](query)
+* [QUERY SELECTION](query-selection)
+* [QUERY BY EXAMPLE](query-by-example)
+* [QUERY BY FORMULA](query-by-formula)
+* [QUERY SELECTION BY FORMULA](query-selection-by-formula)
+* [QUERY BY SQL](query-by-sql)
+* [QUERY WITH ARRAY](query-with-array)
+* [QUERY SELECTION WITH ARRAY](query-selection-with-array)
+* [QUERY BY ATTRIBUTE](query-by-attribute)
+* [QUERY SELECTION BY ATTRIBUTE](query-selection-by-attribute)
 
-En revanche, **SET QUERY DESTINATION** n'affecte pas les autres commandes qui modifient la sélection courante telles que [ALL RECORDS](all-records.md), [RELATE MANY](relate-many.md) , etc.
+En revanche, **SET QUERY DESTINATION** n'affecte pas les autres commandes qui modifient la sélection courante telles que [ALL RECORDS](all-records), [RELATE MANY](relate-many) , etc.
 
 ## Exemple 1 
 
@@ -256,15 +256,15 @@ Lorsque cette méthode est implémentée dans votre application, vous pouvez éc
 
 ## Voir aussi 
 
-[GET QUERY DESTINATION](get-query-destination.md)  
-[QUERY](query.md)  
-[QUERY BY EXAMPLE](query-by-example.md)  
-[QUERY BY FORMULA](query-by-formula.md)  
-[QUERY BY SQL](query-by-sql.md)  
-[QUERY SELECTION](query-selection.md)  
-[QUERY SELECTION BY FORMULA](query-selection-by-formula.md)  
-[QUERY WITH ARRAY](query-with-array.md)  
-[SET QUERY LIMIT](set-query-limit.md)  
+[GET QUERY DESTINATION](get-query-destination)  
+[QUERY](query)  
+[QUERY BY EXAMPLE](query-by-example)  
+[QUERY BY FORMULA](query-by-formula)  
+[QUERY BY SQL](query-by-sql)  
+[QUERY SELECTION](query-selection)  
+[QUERY SELECTION BY FORMULA](query-selection-by-formula)  
+[QUERY WITH ARRAY](query-with-array)  
+[SET QUERY LIMIT](set-query-limit)  
 
 ## Propriétés
 

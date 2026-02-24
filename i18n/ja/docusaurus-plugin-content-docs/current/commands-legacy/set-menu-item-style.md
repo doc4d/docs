@@ -50,7 +50,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Get menu item style](get-menu-item-style.md)  
+[Get menu item style](get-menu-item-style)  
 
 ## プロパティ
 

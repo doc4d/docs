@@ -46,7 +46,7 @@ The page displayed is the URL "www.apple.com" and the "www.4d.com" page is in th
 
 ## See also 
 
-[WA OPEN URL](wa-open-url.md)  
+[WA OPEN URL](wa-open-url)  
 
 ## Properties
 

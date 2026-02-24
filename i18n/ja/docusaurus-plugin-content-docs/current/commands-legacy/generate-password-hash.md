@@ -42,7 +42,7 @@ displayed_sidebar: docs
 
 ### エラー管理 
 
-以下のエラーが返される可能性があります。これらのエラーは[Last errors](../commands/last-errors.md)  および [ON ERR CALL](on-err-call.md) コマンドで分析することができます。  
+以下のエラーが返される可能性があります。これらのエラーは[Last errors](../commands/last-errors)  および [ON ERR CALL](on-err-call.md) コマンドで分析することができます。  
 
 | **番号** | **メッセージ**                                             |
 | ------ | ----------------------------------------------------- |
@@ -70,13 +70,13 @@ bcryptは、Blowfish暗号に基づいたパスワードハッシュ機能です
  SAVE RECORD([Users])
 ```
 
-**注**: 同じパスワードを複数回渡した場合、ハッシュ化された文字列は毎回異なる結果が返されます。これはbcryptのようなアルゴリズムにとっては仕様で、最適な方法は、毎回ハッシュを生成するごとに新しいランダムなソルトを作成することだからです。パスワードをどのようにチェックするかの例題については、[Verify password hash](verify-password-hash.md) の説明を参照してください。
+**注**: 同じパスワードを複数回渡した場合、ハッシュ化された文字列は毎回異なる結果が返されます。これはbcryptのようなアルゴリズムにとっては仕様で、最適な方法は、毎回ハッシュを生成するごとに新しいランダムなソルトを作成することだからです。パスワードをどのようにチェックするかの例題については、[Verify password hash](verify-password-hash) の説明を参照してください。
 
 ## 参照 
 
   
-[Generate digest](generate-digest.md)  
-[Verify password hash](verify-password-hash.md)  
+[Generate digest](generate-digest)  
+[Verify password hash](verify-password-hash)  
 
 ## プロパティ
 

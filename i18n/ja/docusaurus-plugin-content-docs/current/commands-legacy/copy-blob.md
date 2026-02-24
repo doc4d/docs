@@ -39,8 +39,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[DELETE FROM BLOB](delete-from-blob.md)  
-[INSERT IN BLOB](insert-in-blob.md)  
+[DELETE FROM BLOB](delete-from-blob)  
+[INSERT IN BLOB](insert-in-blob)  
 
 ## プロパティ
 

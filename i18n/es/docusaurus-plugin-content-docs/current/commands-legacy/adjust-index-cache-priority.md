@@ -62,8 +62,8 @@ Usted desea cambiar temporalmente la prioridad de la caché para el índice de c
 
 ## Ver también 
 
-[Get adjusted index cache priority](get-adjusted-index-cache-priority.md)  
-[SET INDEX CACHE PRIORITY](set-index-cache-priority.md)  
+[Get adjusted index cache priority](get-adjusted-index-cache-priority)  
+[SET INDEX CACHE PRIORITY](set-index-cache-priority)  
 
 ## Propiedades
 

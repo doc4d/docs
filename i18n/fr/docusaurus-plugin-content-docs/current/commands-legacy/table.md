@@ -60,9 +60,9 @@ Dans l'exemple suivant, la variable *numTable* est égale au numéro de la table
 
 ## Voir aussi 
 
-[Field](field.md)  
-[Last table number](last-table-number.md)  
-[Table name](table-name.md)  
+[Field](field)  
+[Last table number](last-table-number)  
+[Table name](table-name)  
 
 ## Propriétés
 

@@ -29,13 +29,13 @@ displayed_sidebar: docs
 
 :::info Compatibilidad
 
-Este comando se mantiene sólo por razones de compatibilidad. Ahora se recomienda utilizar [`4D.HTTPRequest class`](../API/HTTPRequestClass.md).
+Este comando se mantiene sólo por razones de compatibilidad. Ahora se recomienda utilizar [`4D.HTTPRequest class`](../API/HTTPRequestClass).
 
 :::
 
 ## Descripción 
 
-<!--REF #_command_.HTTP SET OPTION.Summary-->El comando **HTTP SET OPTION** permite definir diferentes opciones utilizadas durante la próxima petición disparada por los comandos [HTTP Get](http-get.md) o [HTTP Request](http-request.md).<!-- END REF--> Puede llamar este comando tantas veces como opciones a definir.  
+<!--REF #_command_.HTTP SET OPTION.Summary-->El comando **HTTP SET OPTION** permite definir diferentes opciones utilizadas durante la próxima petición disparada por los comandos [HTTP Get](http-get) o [HTTP Request](http-request).<!-- END REF--> Puede llamar este comando tantas veces como opciones a definir.  
   
 **Nota**: las opciones definidas son locales al proceso actual. Para componentes, son locales al componente en ejecución.   
   
@@ -56,8 +56,8 @@ El orden de llamada de las opciones no tiene importancia. Si la misma opción se
 
 ## Ver también 
 
-[HTTP AUTHENTICATE](http-authenticate.md)  
-[HTTP GET OPTION](http-get-option.md)  
+[HTTP AUTHENTICATE](http-authenticate)  
+[HTTP GET OPTION](http-get-option)  
 
 ## Propiedades
 

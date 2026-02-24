@@ -61,9 +61,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[ACCEPT](accept.md)  
-[CANCEL](cancel.md)  
-[GOTO OBJECT](goto-object.md)  
+[ACCEPT](accept)  
+[CANCEL](cancel)  
+[GOTO OBJECT](goto-object)  
 
 ## プロパティ
 

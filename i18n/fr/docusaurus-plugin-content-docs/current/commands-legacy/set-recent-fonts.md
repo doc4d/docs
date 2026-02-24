@@ -52,7 +52,7 @@ Le menu contient alors :
 
 ## Voir aussi 
 
-[FONT LIST](font-list.md)  
+[FONT LIST](font-list)  
 
 ## Propriétés
 

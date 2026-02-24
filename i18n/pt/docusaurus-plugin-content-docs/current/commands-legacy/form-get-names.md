@@ -76,7 +76,7 @@ Exemplos de usos típicos:
 ## Ver também 
 
 *Formulários*  
-[METHOD GET PATHS FORM](method-get-paths-form.md)  
+[METHOD GET PATHS FORM](method-get-paths-form)  
 
 ## Propriedades
 

@@ -27,13 +27,13 @@ displayed_sidebar: docs
 
 ## Descrição 
 
-<!--REF #_command_.DELETE USER.Summary-->O comando [ON ERR CALL](on-err-call.md) apaga o usuário cujo número se passa em *refUsuario*.<!-- END REF--> Deve passar um número válido de usuário retornado pelo comando [GET USER LIST](get-user-list.md).   
+<!--REF #_command_.DELETE USER.Summary-->O comando [ON ERR CALL](on-err-call.md) apaga o usuário cujo número se passa em *refUsuario*.<!-- END REF--> Deve passar um número válido de usuário retornado pelo comando [GET USER LIST](get-user-list).   
 
 Se a conta de usuário não existir ou tiver sido apagadas, o erro -9979 é gerado. Pode interceptar este erro com um método de gestão de erros instalado pelo comando [ON ERR CALL](on-err-call.md).  
   
 Apenas o Desenhador e o Administrador podem apagar usuários. O Administrador não pode apagar um usuário criado pelo Desenhador.  
   
-Os usuários apagados não aparecerão mais no editor de usuários quando chame a [EDIT ACCESS](edit-access.md) nem em modo Desenho. Note que os números de usuários apagados possam ser retribuídos ao criar novas contas.
+Os usuários apagados não aparecerão mais no editor de usuários quando chame a [EDIT ACCESS](edit-access) nem em modo Desenho. Note que os números de usuários apagados possam ser retribuídos ao criar novas contas.
 
 ## Gestão de erros 
 
@@ -41,10 +41,10 @@ Se não tiver os privilégios de acesso para chamar DELETE USER ou se outro proc
 
 ## Ver também 
 
-[GET USER LIST](get-user-list.md)  
-[GET USER PROPERTIES](get-user-properties.md)  
-[Is user deleted](is-user-deleted.md)  
-[Set user properties](set-user-properties.md)  
+[GET USER LIST](get-user-list)  
+[GET USER PROPERTIES](get-user-properties)  
+[Is user deleted](is-user-deleted)  
+[Set user properties](set-user-properties)  
 
 ## Propriedades
 

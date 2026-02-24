@@ -62,11 +62,11 @@ displayed_sidebar: docs
 ## 参照 
 
   
-[Decrypt data BLOB](decrypt-data-blob.md)  
-[Discover data key](discover-data-key.md)  
-[Encrypt data BLOB](encrypt-data-blob.md)  
-[Encrypt data file](encrypt-data-file.md)  
-[Register data key](register-data-key.md)  
+[Decrypt data BLOB](decrypt-data-blob)  
+[Discover data key](discover-data-key)  
+[Encrypt data BLOB](encrypt-data-blob)  
+[Encrypt data file](encrypt-data-file)  
+[Register data key](register-data-key)  
 
 ## プロパティ
 

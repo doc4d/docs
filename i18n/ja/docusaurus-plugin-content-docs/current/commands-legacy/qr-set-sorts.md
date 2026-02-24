@@ -56,7 +56,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR GET SORTS](qr-get-sorts.md)  
+[QR GET SORTS](qr-get-sorts)  
 
 ## プロパティ
 

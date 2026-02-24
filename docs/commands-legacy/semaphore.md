@@ -160,9 +160,9 @@ Syntax:
 
 ## See also 
 
-[CLEAR SEMAPHORE](clear-semaphore.md)  
+[CLEAR SEMAPHORE](clear-semaphore)  
 *Semaphores and signals*  
-[Test semaphore](test-semaphore.md)  
+[Test semaphore](test-semaphore)  
 
 ## Properties
 

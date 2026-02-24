@@ -56,8 +56,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Application type](application-type.md)  
-[Application version](application-version.md)  
+[Application type](application-type)  
+[Application version](application-version)  
 
 ## プロパティ
 

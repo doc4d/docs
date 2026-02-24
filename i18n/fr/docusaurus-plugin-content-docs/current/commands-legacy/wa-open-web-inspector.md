@@ -33,7 +33,7 @@ displayed_sidebar: docs
 ## Voir aussi 
 
 *Gestion programmée des zones Web*  
-[WA Run offscreen area](wa-run-offscreen-area.md)  
+[WA Run offscreen area](wa-run-offscreen-area)  
 
 ## Propriétés
 

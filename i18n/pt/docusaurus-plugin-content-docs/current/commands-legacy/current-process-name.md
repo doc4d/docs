@@ -41,8 +41,8 @@ Se quiser chamar a um processo worker e passar o nome de processo de chamada com
 
 ## Ver também 
 
-[CALL WORKER](call-worker.md)  
-[KILL WORKER](kill-worker.md)  
+[CALL WORKER](call-worker)  
+[KILL WORKER](kill-worker)  
 *Sobre Workers*  
 
 ## Propriedades

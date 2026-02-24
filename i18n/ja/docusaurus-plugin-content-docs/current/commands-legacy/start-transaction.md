@@ -33,10 +33,10 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[CANCEL TRANSACTION](cancel-transaction.md)  
-[In transaction](in-transaction.md)  
-[Transaction level](transaction-level.md)  
-[VALIDATE TRANSACTION](validate-transaction.md)  
+[CANCEL TRANSACTION](cancel-transaction)  
+[In transaction](in-transaction)  
+[Transaction level](transaction-level)  
+[VALIDATE TRANSACTION](validate-transaction)  
 *トランザクションを使用する*  
 
 ## プロパティ

@@ -17,26 +17,26 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.RECEIVE RECORD.Summary-->**RECEIVE RECORD** ajoute dans *laTable* un enregistrement reçu par l'intermédiaire du port série ou d'un document ouvert par la commande [SET CHANNEL](set-channel.md).<!-- END REF--> L'enregistrement doit avoir été envoyé par la commande [SEND RECORD](send-record.md). Lorsque vous exécutez **RECEIVE RECORD**, un nouvel enregistrement est automatiquement créé dans *laTable*. Si l'enregistrement a été correctement reçu, vous pouvez le sauvegarder à l'aide de [SAVE RECORD](save-record.md).
+<!--REF #_command_.RECEIVE RECORD.Summary-->**RECEIVE RECORD** ajoute dans *laTable* un enregistrement reçu par l'intermédiaire du port série ou d'un document ouvert par la commande [SET CHANNEL](set-channel).<!-- END REF--> L'enregistrement doit avoir été envoyé par la commande [SEND RECORD](send-record). Lorsque vous exécutez **RECEIVE RECORD**, un nouvel enregistrement est automatiquement créé dans *laTable*. Si l'enregistrement a été correctement reçu, vous pouvez le sauvegarder à l'aide de [SAVE RECORD](save-record).
 
 L'enregistrement est reçu en totalité, ce qui signifie que les images et BLOBs stockés dans ou avec l'enregistrement sont également reçus.
 
-**Important :** Lorsque des enregistrements sont envoyés et reçus par [SEND RECORD](send-record.md) et **RECEIVE RECORD**, la structure de la table source et celle de la table de destination doivent être compatibles. Si ce n'est pas le cas, 4D convertira les valeurs en fonction des définitions des tables lorsque **RECEIVE RECORD** sera exécutée.
+**Important :** Lorsque des enregistrements sont envoyés et reçus par [SEND RECORD](send-record) et **RECEIVE RECORD**, la structure de la table source et celle de la table de destination doivent être compatibles. Si ce n'est pas le cas, 4D convertira les valeurs en fonction des définitions des tables lorsque **RECEIVE RECORD** sera exécutée.
 
 **Notes :**
 
-1. Si vous recevez un enregistrement provenant d'un document avec cette commande, le document doit avoir été ouvert par la commande [SET CHANNEL](set-channel.md). Vous ne pouvez pas utiliser **RECEIVE RECORD** avec un document ouvert par [Open document](open-document.md), [Create document](create-document.md) ou [Append document](append-document.md).
+1. Si vous recevez un enregistrement provenant d'un document avec cette commande, le document doit avoir été ouvert par la commande [SET CHANNEL](set-channel). Vous ne pouvez pas utiliser **RECEIVE RECORD** avec un document ouvert par [Open document](open-document), [Create document](create-document) ou [Append document](append-document).
 2. Pendant l'exécution d'un **RECEIVE RECORD**, l'utilisateur peut interrompre l'opération en appuyant sur les touches **Ctrl**+**Alt**+**Maj** (sous Windows) ou **Commande**+**Option**+**Maj** (sous Mac OS). Cette interruption génère une erreur -9994 que vous pouvez intercepter à l'aide d'une méthode installée par la commande [ON ERR CALL](on-err-call.md). Généralement, vous devez gérer les interruptions d'une réception uniquement lors d'une communication série.
 
 ## Exemple 
 
-L'utilisation combinée de [SEND VARIABLE](send-variable.md), [SEND RECORD](send-record.md), [RECEIVE VARIABLE](receive-variable.md) et **RECEIVE RECORD** est idéale pour archiver des données ou échanger des données entre des bases monopostes identiques utilisées à différents endroits. Certes, vous pouvez échanger des données entre des bases 4D à l'aide des commandes d'import/export telles que [EXPORT TEXT](export-text.md) et [IMPORT TEXT](import-text.md). Cependant, si vos données contiennent des images et/ou des tables liées, l'utilisation de [SEND RECORD](send-record.md) et **RECEIVE RECORD** est, de loin, plus pratique. 
+L'utilisation combinée de [SEND VARIABLE](send-variable), [SEND RECORD](send-record), [RECEIVE VARIABLE](receive-variable) et **RECEIVE RECORD** est idéale pour archiver des données ou échanger des données entre des bases monopostes identiques utilisées à différents endroits. Certes, vous pouvez échanger des données entre des bases 4D à l'aide des commandes d'import/export telles que [EXPORT TEXT](export-text) et [IMPORT TEXT](import-text). Cependant, si vos données contiennent des images et/ou des tables liées, l'utilisation de [SEND RECORD](send-record) et **RECEIVE RECORD** est, de loin, plus pratique. 
 
 Par exemple, imaginons une documentation créée à l'aide de 4D et 4D Write. Comme plusieurs rédacteurs basés dans différents pays travaillent sur ce projet, nous avons besoin d'un système simple pour échanger les données entre les différentes bases. Voici une vue simplifiée de la structure de la base : 
 
 ![](../assets/en/commands/pict16652.fr.png)
 
-La table *\[Commands\]* contient la description de chaque commande ou section. Les tables *\[CM US Params\]* et *\[CM FR Params\]* contiennent respectivement les paramètres de chaque commande en anglais et en français. La table *\[CM See Also\]* contient les commandes indiquées en tant que Références pour chaque commande ou section. L'échange de la documentation entre les bases consiste donc à envoyer les enregistrements de *\[Commands\]* ainsi que leurs enregistrements liés. Pour cela, nous utilisons [SEND RECORD](send-record.md) et **RECEIVE RECORD**. De plus, nous utilisons [SEND VARIABLE](send-variable.md) et [SEND RECORD](send-record.md) pour "cocher" les enregistrements importés/exportés.
+La table *\[Commands\]* contient la description de chaque commande ou section. Les tables *\[CM US Params\]* et *\[CM FR Params\]* contiennent respectivement les paramètres de chaque commande en anglais et en français. La table *\[CM See Also\]* contient les commandes indiquées en tant que Références pour chaque commande ou section. L'échange de la documentation entre les bases consiste donc à envoyer les enregistrements de *\[Commands\]* ainsi que leurs enregistrements liés. Pour cela, nous utilisons [SEND RECORD](send-record) et **RECEIVE RECORD**. De plus, nous utilisons [SEND VARIABLE](send-variable) et [SEND RECORD](send-record) pour "cocher" les enregistrements importés/exportés.
 
 Voici la méthode projet (simplifiée) d'export de la documentation :
 
@@ -151,9 +151,9 @@ La variable système OK prend la valeur 1 si l'enregistrement est correctement r
 
 ## Voir aussi 
 
-[RECEIVE VARIABLE](receive-variable.md)  
-[SEND RECORD](send-record.md)  
-[SEND VARIABLE](send-variable.md)  
+[RECEIVE VARIABLE](receive-variable)  
+[SEND RECORD](send-record)  
+[SEND VARIABLE](send-variable)  
 
 ## Propriétés
 

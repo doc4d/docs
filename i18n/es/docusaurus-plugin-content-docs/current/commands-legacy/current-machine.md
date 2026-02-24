@@ -41,7 +41,7 @@ Incluso si no está corriendo la versión cliente/servidor de 4D, su aplicación
 
 ## Ver también 
 
-[Current system user](current-system-user.md)  
+[Current system user](current-system-user)  
 
 ## Propiedades
 

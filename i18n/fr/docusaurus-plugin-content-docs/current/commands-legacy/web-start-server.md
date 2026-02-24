@@ -38,7 +38,7 @@ Si le serveur Web est correctement démarré, OK prend la valeur 1, sinon OK pre
 
 ## Voir aussi 
 
-[WEB STOP SERVER](web-stop-server.md)  
+[WEB STOP SERVER](web-stop-server)  
 
 ## Propriétés
 

@@ -58,8 +58,8 @@ Dans la , vous souhaitez définir une priorité très haute pour les index du ch
 
 ## Voir aussi 
 
-[ADJUST INDEX CACHE PRIORITY](adjust-index-cache-priority.md)  
-[Get adjusted index cache priority](get-adjusted-index-cache-priority.md)  
+[ADJUST INDEX CACHE PRIORITY](adjust-index-cache-priority)  
+[Get adjusted index cache priority](get-adjusted-index-cache-priority)  
 
 ## Propriétés
 

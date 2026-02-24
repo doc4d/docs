@@ -68,8 +68,8 @@ Exemple de *Méthode base Sur authentification Web* en mode Digest
 
 ## Voir aussi 
 
-[Generate digest](generate-digest.md)  
-[Validate password](validate-password.md)  
+[Generate digest](generate-digest)  
+[Validate password](validate-password)  
 
 ## Propriétés
 

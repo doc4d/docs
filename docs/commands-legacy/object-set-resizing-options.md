@@ -52,7 +52,7 @@ In the *vertical* parameter, you pass a value indicating the vertical resizing o
 
 ## See also 
 
-[OBJECT GET RESIZING OPTIONS](object-get-resizing-options.md)  
+[OBJECT GET RESIZING OPTIONS](object-get-resizing-options)  
 
 ## Properties
 

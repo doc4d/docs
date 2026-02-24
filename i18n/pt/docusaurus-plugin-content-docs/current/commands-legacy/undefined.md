@@ -55,7 +55,7 @@ Em alguns casos, é possível que não queira que o parâmetro seja avaliado (po
 
 ## Exemplo 
 
-Abaixo os diferentes resultados do comando [Undefined](undefined.md) assim como do comando [Null](null.md) com propriedades de objeto, dependendo do contexto:
+Abaixo os diferentes resultados do comando [Undefined](undefined) assim como do comando [Null](null) com propriedades de objeto, dependendo do contexto:
 
 ```4d
  var vEmp : Object
@@ -75,7 +75,7 @@ Abaixo os diferentes resultados do comando [Undefined](undefined.md) assim como 
 
 ## Ver também 
 
-[CLEAR VARIABLE](clear-variable.md)  
+[CLEAR VARIABLE](clear-variable)  
 
 ## Propriedades
 

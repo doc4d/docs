@@ -29,7 +29,7 @@ Se um registro tiver uma quantidade importante de dados, de campos de imagem, ou
 
 ## Ver também 
 
-[LOAD RECORD](load-record.md)  
+[LOAD RECORD](load-record)  
 *Record Locking*  
 
 ## Propriedades

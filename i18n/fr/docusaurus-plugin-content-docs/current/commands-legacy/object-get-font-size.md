@@ -35,7 +35,7 @@ Si vous passez le paramètre optionnel *\**, vous indiquez que le paramètre *ob
 
 ## Voir aussi 
 
-[OBJECT SET FONT SIZE](object-set-font-size.md)  
+[OBJECT SET FONT SIZE](object-set-font-size)  
 
 ## Propriétés
 

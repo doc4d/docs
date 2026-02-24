@@ -33,11 +33,11 @@ A partir da versão 11 de 4D, pode aninhar várias transações (subtransações
 
 ## Ver também 
 
-[CANCEL TRANSACTION](cancel-transaction.md)  
-[In transaction](in-transaction.md)  
-[Transaction level](transaction-level.md)  
+[CANCEL TRANSACTION](cancel-transaction)  
+[In transaction](in-transaction)  
+[Transaction level](transaction-level)  
 *Usar Transações*  
-[VALIDATE TRANSACTION](validate-transaction.md)  
+[VALIDATE TRANSACTION](validate-transaction)  
 
 ## Propriedades
 

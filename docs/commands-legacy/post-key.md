@@ -64,14 +64,14 @@ If you specify the *process* parameter, the keystroke is sent to the process who
 
 ## Example 
 
-See example for the [Process number](../commands/process-number.md) command.
+See example for the [Process number](../commands/process-number) command.
 
 ## See also 
 
 *ASCII Codes*  
 *Function Key Codes*  
-[POST CLICK](post-click.md)  
-[POST EVENT](post-event.md)  
+[POST CLICK](post-click)  
+[POST EVENT](post-event)  
 
 ## Properties
 

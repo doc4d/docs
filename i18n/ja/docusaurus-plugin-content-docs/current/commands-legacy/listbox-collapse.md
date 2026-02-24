@@ -61,7 +61,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX EXPAND](listbox-expand.md)  
+[LISTBOX EXPAND](listbox-expand)  
 
 ## プロパティ
 

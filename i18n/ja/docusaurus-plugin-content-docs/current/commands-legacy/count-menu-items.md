@@ -38,7 +38,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Count menus](count-menus.md)  
+[Count menus](count-menus)  
 
 ## プロパティ
 

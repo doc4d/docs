@@ -53,12 +53,12 @@ Si un numéro d'enregistrement est invalide (enregistrement non créé), l’err
 
 ## Voir aussi 
 
-[CLEAR NAMED SELECTION](clear-named-selection.md)  
-[COPY NAMED SELECTION](copy-named-selection.md)  
-[CREATE SET FROM ARRAY](create-set-from-array.md)  
-[LONGINT ARRAY FROM SELECTION](longint-array-from-selection.md)  
-[SELECTION TO ARRAY](selection-to-array.md)  
-[USE NAMED SELECTION](use-named-selection.md)  
+[CLEAR NAMED SELECTION](clear-named-selection)  
+[COPY NAMED SELECTION](copy-named-selection)  
+[CREATE SET FROM ARRAY](create-set-from-array)  
+[LONGINT ARRAY FROM SELECTION](longint-array-from-selection)  
+[SELECTION TO ARRAY](selection-to-array)  
+[USE NAMED SELECTION](use-named-selection)  
 
 ## Propriétés
 

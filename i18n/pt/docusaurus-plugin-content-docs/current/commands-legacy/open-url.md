@@ -92,7 +92,7 @@ Pode abrir um arquivo texto com diferentes aplicações:
 
 ## Ver também 
 
-[LAUNCH EXTERNAL PROCESS](launch-external-process.md)  
+[LAUNCH EXTERNAL PROCESS](launch-external-process)  
 
 ## Propriedades
 

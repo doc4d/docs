@@ -39,8 +39,8 @@ En *evento*, puede pasar uno de los [eventos de formulario 4D soportado por subf
 
 ## Ver también 
 
-[Form event code](../commands/form-event-code.md)  
-[GOTO OBJECT](goto-object.md)  
+[Form event code](../commands/form-event-code)  
+[GOTO OBJECT](goto-object)  
 
 ## Propiedades
 

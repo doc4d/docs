@@ -45,7 +45,7 @@ The following example makes sure the report is a list report and deletes the thi
 
 ## See also 
 
-[QR INSERT COLUMN](qr-insert-column.md)  
+[QR INSERT COLUMN](qr-insert-column)  
 
 ## Properties
 

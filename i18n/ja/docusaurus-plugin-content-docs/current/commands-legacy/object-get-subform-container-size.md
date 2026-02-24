@@ -42,8 +42,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT GET SUBFORM](object-get-subform.md)  
-[OBJECT SET SUBFORM](object-set-subform.md)  
+[OBJECT GET SUBFORM](object-get-subform)  
+[OBJECT SET SUBFORM](object-set-subform)  
 
 ## プロパティ
 

@@ -43,8 +43,8 @@ L'exemple suivant permet d'ajouter une colonne supplémentaire à droite de la d
 
 ## Voir aussi 
 
-[QR DELETE COLUMN](qr-delete-column.md)  
-[QR INSERT COLUMN](qr-insert-column.md)  
+[QR DELETE COLUMN](qr-delete-column)  
+[QR INSERT COLUMN](qr-insert-column)  
 
 ## Propriétés
 

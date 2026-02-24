@@ -31,8 +31,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[In transaction](in-transaction.md)  
-[START TRANSACTION](start-transaction.md)  
+[In transaction](in-transaction)  
+[START TRANSACTION](start-transaction)  
 *トランザクションを使用する*  
 
 ## プロパティ

@@ -49,8 +49,8 @@ En un array de enteros largos, si un número de registro no es válido (registro
 
 ## Ver también 
 
-[BOOLEAN ARRAY FROM SET](boolean-array-from-set.md)  
-[CREATE SELECTION FROM ARRAY](create-selection-from-array.md)  
+[BOOLEAN ARRAY FROM SET](boolean-array-from-set)  
+[CREATE SELECTION FROM ARRAY](create-selection-from-array)  
 
 ## Propiedades
 

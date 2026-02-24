@@ -29,7 +29,7 @@ displayed_sidebar: docs
 
 ## Descripción 
 
-<!--REF #_command_.GOTO SELECTED RECORD.Summary-->**GOTO SELECTED RECORD** vuelve el registro especificado en la selección actual de *tabla* el registro actual.<!-- END REF--> La selección actual no cambia. El parámetro *registro* no es el mismo del número devuelto por [Record number](record-number.md); Este parámetro representa la posición del registro en la selección actual. La posición del registro depende de la manera en que la selección ha sido creada y ordenada. 
+<!--REF #_command_.GOTO SELECTED RECORD.Summary-->**GOTO SELECTED RECORD** vuelve el registro especificado en la selección actual de *tabla* el registro actual.<!-- END REF--> La selección actual no cambia. El parámetro *registro* no es el mismo del número devuelto por [Record number](record-number); Este parámetro representa la posición del registro en la selección actual. La posición del registro depende de la manera en que la selección ha sido creada y ordenada. 
 
 **GOTO SELECTED RECORD** no hace nada si:
 
@@ -73,7 +73,7 @@ El siguiente método de objeto del área desplegable *atNames* selecciona el reg
 
 ## Ver también 
 
-[Selected record number](selected-record-number.md)  
+[Selected record number](selected-record-number)  
 
 ## Propiedades
 

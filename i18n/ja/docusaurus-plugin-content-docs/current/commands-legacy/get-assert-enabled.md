@@ -33,9 +33,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[ASSERT](assert.md)  
-[Asserted](asserted.md)  
-[SET ASSERT ENABLED](set-assert-enabled.md)  
+[ASSERT](assert)  
+[Asserted](asserted)  
+[SET ASSERT ENABLED](set-assert-enabled)  
 
 ## プロパティ
 

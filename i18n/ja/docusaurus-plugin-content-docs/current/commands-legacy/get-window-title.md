@@ -38,7 +38,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SET WINDOW TITLE](set-window-title.md)  
+[SET WINDOW TITLE](set-window-title)  
 
 ## プロパティ
 

@@ -38,8 +38,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[POST EVENT](post-event.md)  
-[POST KEY](post-key.md)  
+[POST EVENT](post-event)  
+[POST KEY](post-key)  
 
 ## プロパティ
 

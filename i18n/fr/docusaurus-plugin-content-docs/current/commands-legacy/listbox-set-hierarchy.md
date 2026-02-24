@@ -64,7 +64,7 @@ Définition des tableaux tPays, tRegion et tVille comme hiérarchie d’une list
 
 ## Voir aussi 
 
-[LISTBOX GET HIERARCHY](listbox-get-hierarchy.md)  
+[LISTBOX GET HIERARCHY](listbox-get-hierarchy)  
 
 ## Propriétés
 

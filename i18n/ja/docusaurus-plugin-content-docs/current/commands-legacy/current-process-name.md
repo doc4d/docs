@@ -41,8 +41,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[CALL WORKER](call-worker.md)  
-[KILL WORKER](kill-worker.md)  
+[CALL WORKER](call-worker)  
+[KILL WORKER](kill-worker)  
 *ワーカーについて*  
 
 ## プロパティ

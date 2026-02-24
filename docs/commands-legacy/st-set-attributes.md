@@ -113,8 +113,8 @@ In the case of an error, the variable is not changed. When an error occurs on a 
 
 ## See also 
 
-[FONT LIST](font-list.md)  
-[ST GET ATTRIBUTES](st-get-attributes.md)  
+[FONT LIST](font-list)  
+[ST GET ATTRIBUTES](st-get-attributes)  
 
 ## Properties
 

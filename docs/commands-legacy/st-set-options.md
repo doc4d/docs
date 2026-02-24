@@ -72,7 +72,7 @@ The following code lets you switch the display mode of the area:
 
 ## See also 
 
-[ST GET OPTIONS](st-get-options.md)  
+[ST GET OPTIONS](st-get-options)  
 
 ## Properties
 

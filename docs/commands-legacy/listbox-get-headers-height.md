@@ -45,7 +45,7 @@ By default, if you omit the *unit* parameter, the height of the row returned is 
 
 ## See also 
 
-[LISTBOX SET HEADERS HEIGHT](listbox-set-headers-height.md)  
+[LISTBOX SET HEADERS HEIGHT](listbox-set-headers-height)  
 
 ## Properties
 

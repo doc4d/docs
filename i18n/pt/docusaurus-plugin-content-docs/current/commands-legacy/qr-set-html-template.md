@@ -84,7 +84,7 @@ Se passa um número de área inválido, se gera o erro -9850.
 
 ## Ver também 
 
-[QR Get HTML template](qr-get-html-template.md)  
+[QR Get HTML template](qr-get-html-template)  
 
 ## Propriedades
 

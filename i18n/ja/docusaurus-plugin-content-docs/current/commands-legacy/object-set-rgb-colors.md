@@ -117,8 +117,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT GET RGB COLORS](object-get-rgb-colors.md)  
-[Select RGB color](select-rgb-color.md)  
+[OBJECT GET RGB COLORS](object-get-rgb-colors)  
+[Select RGB color](select-rgb-color)  
 
 ## プロパティ
 

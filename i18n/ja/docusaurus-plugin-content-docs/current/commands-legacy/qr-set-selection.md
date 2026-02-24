@@ -47,7 +47,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR GET SELECTION](qr-get-selection.md)  
+[QR GET SELECTION](qr-get-selection)  
 
 ## プロパティ
 

@@ -143,8 +143,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OB GET ARRAY](ob-get-array.md)  
-[OB SET](ob-set.md)  
+[OB GET ARRAY](ob-get-array)  
+[OB SET](ob-set)  
 *コレクションと4D配列間での型の変換*  
 
 ## プロパティ

@@ -30,7 +30,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Current form table.Summary-->O comando Current form table retorna o ponteiro para a tabela do formulário em tela ou impresso no processo atual.<!-- END REF-->  
   
-A função retorna [Is nil pointer](is-nil-pointer.md) nos seguintes casos:  
+A função retorna [Is nil pointer](is-nil-pointer) nos seguintes casos:  
 
 * Não há formulário mostrado ou impresso no processo atual,
 * O formulário atual é um formulário de projeto.
@@ -70,10 +70,10 @@ Para isso, utilize o método de objeto para criar a variável *vstRegistroAtual*
 
 ## Ver também 
 
-[DIALOG](../commands/dialog.md)  
-[FORM SET OUTPUT](form-set-output.md)  
-[FORM SET INPUT](form-set-input.md)  
-[PRINT SELECTION](print-selection.md)  
+[DIALOG](../commands/dialog)  
+[FORM SET OUTPUT](form-set-output)  
+[FORM SET INPUT](form-set-input)  
+[PRINT SELECTION](print-selection)  
 
 ## Propriedades
 

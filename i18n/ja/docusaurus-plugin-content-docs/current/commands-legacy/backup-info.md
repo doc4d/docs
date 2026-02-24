@@ -30,7 +30,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[RESTORE](restore.md)  
+[RESTORE](restore)  
 
 ## プロパティ
 

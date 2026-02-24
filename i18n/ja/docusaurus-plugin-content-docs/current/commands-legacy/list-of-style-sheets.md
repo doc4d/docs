@@ -59,8 +59,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET STYLE SHEET INFO](get-style-sheet-info.md)  
-[OBJECT SET STYLE SHEET](object-set-style-sheet.md)  
+[GET STYLE SHEET INFO](get-style-sheet-info)  
+[OBJECT SET STYLE SHEET](object-set-style-sheet)  
 
 ## プロパティ
 

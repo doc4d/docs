@@ -82,8 +82,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[FOLDER LIST](folder-list.md)  
-[Test path name](test-path-name.md)  
+[FOLDER LIST](folder-list)  
+[Test path name](test-path-name)  
 
 ## プロパティ
 

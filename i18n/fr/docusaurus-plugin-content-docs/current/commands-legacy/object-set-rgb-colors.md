@@ -98,7 +98,7 @@ La méthode projet appelée par les trois thermomètres est la suivante :
  End if
 ```
 
-Notez l'utilisation des **[SET AUTOMATIC RELATIONS](set-automatic-relations.md)** pour le calcul des valeurs des couleurs à partir de celles des thermomètres.
+Notez l'utilisation des **[SET AUTOMATIC RELATIONS](set-automatic-relations)** pour le calcul des valeurs des couleurs à partir de celles des thermomètres.
 
 En exécution, le formulaire a l'aspect suivant :
 
@@ -118,8 +118,8 @@ Passage du fond en transparent avec couleur de police claire :
 
 ## Voir aussi 
 
-[OBJECT GET RGB COLORS](object-get-rgb-colors.md)  
-[Select RGB color](select-rgb-color.md)  
+[OBJECT GET RGB COLORS](object-get-rgb-colors)  
+[Select RGB color](select-rgb-color)  
 
 ## Propriétés
 

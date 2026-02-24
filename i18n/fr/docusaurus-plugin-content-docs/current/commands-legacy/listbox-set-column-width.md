@@ -46,7 +46,7 @@ Les paramètres optionnels *largeurMini* et *largeurMaxi* permettent de fixer de
 
 ## Voir aussi 
 
-[LISTBOX Get column width](listbox-get-column-width.md)  
+[LISTBOX Get column width](listbox-get-column-width)  
 
 ## Propriétés
 

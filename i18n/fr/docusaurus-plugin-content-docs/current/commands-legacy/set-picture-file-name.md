@@ -36,8 +36,8 @@ Le nom par défaut est utilisé comme nom de fichier en cas d’exportation de l
 
 ## Voir aussi 
 
-[Get picture file name](get-picture-file-name.md)  
-[WRITE PICTURE FILE](write-picture-file.md)  
+[Get picture file name](get-picture-file-name)  
+[WRITE PICTURE FILE](write-picture-file)  
 
 ## Propriétés
 

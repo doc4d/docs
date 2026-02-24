@@ -52,7 +52,7 @@ Pour formater des champs booléens :
 
 Pour formater des champs ou des variables de type Date ou Heure, vous pouvez utiliser :
 
-* soit un **format prédéfini** disponible via des constantes du thème *Formats d'affichage des dates* ou *Formats d'affichage des heures* (valeur longint). Dans ce cas, il faut passer [Char](char.md)(n) dans *formatAffich*, où *n* est la constante :  
+* soit un **format prédéfini** disponible via des constantes du thème *Formats d'affichage des dates* ou *Formats d'affichage des heures* (valeur longint). Dans ce cas, il faut passer [Char](char)(n) dans *formatAffich*, où *n* est la constante :  
     
 Dates :  
 
@@ -86,7 +86,7 @@ Heures :
 | System time long             | 11     | 1:02:03 AM HNEC (Mac uniquement)                                                                                                                                                                                                               |  
 | System time long abbreviated | 10     | 1•02•03 AM (Mac uniquement)                                                                                                                                                                                                                    |  
 | System time short            | 9      | 01:02:03                                                                                                                                                                                                                                       |
-* ou un [format personnalisé basé sur un modèle](../Project/date-time-formats.md) (valeur de chaîne). Par exemple :  
+* ou un [format personnalisé basé sur un modèle](../Project/date-time-formats) (valeur de chaîne). Par exemple :  
     
 ```4d  
  OBJECT SET FORMAT(*;"myDate";"dd/MM/yyyy")  
@@ -107,7 +107,7 @@ Voir également l'exemple 2.
 
 ### Images 
 
-Pour formater des champs ou variables de type Image, passez [Char](char.md)(n) dans *formatAffich*, où *n* peut être une des constantes prédéfinies suivantes (thème *Formats d'affichage des images*) :  
+Pour formater des champs ou variables de type Image, passez [Char](char)(n) dans *formatAffich*, où *n* peut être une des constantes prédéfinies suivantes (thème *Formats d'affichage des images*) :  
 
 | Constante                   | Type        | Valeur |
 | --------------------------- | ----------- | ------ |
@@ -298,7 +298,7 @@ La ligne de code suivante formate le champ *\[Employés\]Date embauche* au cinqu
 
 ## Exemple 2 
 
-Cet exemple formate une variable de date et une variable d'heure en utilisant des [formats personnalisés](../Project/date-time-formats.md) :
+Cet exemple formate une variable de date et une variable d'heure en utilisant des [formats personnalisés](../Project/date-time-formats) :
 
 ```4d
  OBJECT SET FORMAT(*;"mydate";"(yyyy) MMM dd") // (2023) Dec 12
@@ -373,9 +373,9 @@ Passage d'un thermomètre en mode "Barber shop" :
 ## Voir aussi 
 
   
-[GET SYSTEM FORMAT](get-system-format.md)  
-[OBJECT Get format](object-get-format.md)  
-[OBJECT SET FILTER](object-set-filter.md)  
+[GET SYSTEM FORMAT](get-system-format)  
+[OBJECT Get format](object-get-format)  
+[OBJECT SET FILTER](object-set-filter)  
 
 ## Propriétés
 

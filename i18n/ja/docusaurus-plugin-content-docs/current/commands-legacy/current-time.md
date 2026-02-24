@@ -48,9 +48,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Milliseconds](milliseconds.md)  
-[String](../commands/string.md)  
-[Tickcount](tickcount.md)  
+[Milliseconds](milliseconds)  
+[String](../commands/string)  
+[Tickcount](tickcount)  
 
 ## プロパティ
 

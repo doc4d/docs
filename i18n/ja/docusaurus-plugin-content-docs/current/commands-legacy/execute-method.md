@@ -43,7 +43,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[EXECUTE FORMULA](execute-formula.md)  
+[EXECUTE FORMULA](execute-formula)  
 
 ## プロパティ
 

@@ -183,11 +183,11 @@ Vous voulez supprimer tous les noms de tables et de champs personnalisés défin
 
 ## Voir aussi 
 
-[Last table number](last-table-number.md)  
-[GET TABLE TITLES](get-table-titles.md)  
-[Parse formula](parse-formula.md)  
-[SET FIELD TITLES](set-field-titles.md)  
-[Table name](table-name.md)  
+[Last table number](last-table-number)  
+[GET TABLE TITLES](get-table-titles)  
+[Parse formula](parse-formula)  
+[SET FIELD TITLES](set-field-titles)  
+[Table name](table-name)  
 
 ## Propriétés
 

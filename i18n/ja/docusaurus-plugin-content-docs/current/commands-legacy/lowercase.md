@@ -60,7 +60,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Uppercase](uppercase.md)  
+[Uppercase](uppercase)  
 
 ## プロパティ
 

@@ -38,7 +38,7 @@ Se o servidor Web é iniciado corretamente, Ok assume o valor 1; do contrário O
 
 ## Ver também 
 
-[WEB STOP SERVER](web-stop-server.md)  
+[WEB STOP SERVER](web-stop-server)  
 
 ## Propriedades
 

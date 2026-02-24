@@ -101,7 +101,7 @@ Se quiser associar a ação padrão **Validate** com um botão:
 
 ## Ver também 
 
-[OBJECT Get action](object-get-action.md)  
+[OBJECT Get action](object-get-action)  
 
 ## Propriedades
 

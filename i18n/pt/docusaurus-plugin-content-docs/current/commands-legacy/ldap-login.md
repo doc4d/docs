@@ -107,7 +107,7 @@ Este exemplo tenta conectar-se a um aplicativo:
 ## Ver também 
 
 *LDAP*  
-[LDAP LOGOUT](ldap-logout.md)  
+[LDAP LOGOUT](ldap-logout)  
 
 ## Propriedades
 

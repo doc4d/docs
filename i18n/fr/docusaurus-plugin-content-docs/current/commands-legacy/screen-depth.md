@@ -66,7 +66,7 @@ Votre application affiche de nombreux graphiques en couleurs. Vous pouvez écrir
 
 ## Voir aussi 
 
-[Count screens](count-screens.md)  
+[Count screens](count-screens)  
 
 
 ## Propriétés

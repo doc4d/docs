@@ -29,8 +29,8 @@ The following example sets the variable *vbOptions* to False:
 
 ## See also 
 
-[Not](not.md)  
-[True](true.md)  
+[Not](not)  
+[True](true)  
 
 ## Properties
 

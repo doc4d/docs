@@ -64,7 +64,7 @@ Usted quiere obtener información de la caché de la base de datos y todos los c
 
 ## Ver también 
 
-[MEMORY STATISTICS](memory-statistics.md)  
+[MEMORY STATISTICS](memory-statistics)  
 
 ## Propiedades
 

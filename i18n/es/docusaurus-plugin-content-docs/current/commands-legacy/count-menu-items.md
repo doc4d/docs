@@ -38,7 +38,7 @@ Si omite el parámetro *proceso*, Count menu items se aplica a la barra de menú
 
 ## Ver también 
 
-[Count menus](count-menus.md)  
+[Count menus](count-menus)  
 
 ## Propiedades
 

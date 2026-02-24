@@ -54,8 +54,8 @@ Vous souhaitez une collection avec toutes les valeurs des propriétés d'un obje
 
 ## Voir aussi 
 
-[OB Entries](ob-entries.md)  
-[OB Keys](ob-keys.md)  
+[OB Entries](ob-entries)  
+[OB Keys](ob-keys)  
 
 ## Propriétés
 

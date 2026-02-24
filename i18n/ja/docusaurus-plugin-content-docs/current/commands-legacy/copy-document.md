@@ -132,7 +132,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[MOVE DOCUMENT](move-document.md)  
+[MOVE DOCUMENT](move-document)  
 *システムドキュメント*  
 
 ## プロパティ

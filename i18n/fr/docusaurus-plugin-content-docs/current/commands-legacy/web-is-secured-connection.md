@@ -33,11 +33,11 @@ displayed_sidebar: docs
 * Si la connexion est effectuée en TLS ou SSL, la fonction retourne Vrai.
 * Si la connexion est effectuée en mode classique (non sécurisé), la fonction retourne Faux.
 
-Cette commande permet par exemple, le cas échéant, de refuser les tentatives de connexion en mode non sécurisé. Pour plus d’informations sur ce point, reportez-vous à la section [WEB SERVICE SET PARAMETER](web-service-set-parameter.md). 
+Cette commande permet par exemple, le cas échéant, de refuser les tentatives de connexion en mode non sécurisé. Pour plus d’informations sur ce point, reportez-vous à la section [WEB SERVICE SET PARAMETER](web-service-set-parameter). 
 
 ## Voir aussi 
 
-[GENERATE CERTIFICATE REQUEST](generate-certificate-request.md)  
+[GENERATE CERTIFICATE REQUEST](generate-certificate-request)  
 
 ## Propriétés
 

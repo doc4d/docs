@@ -43,8 +43,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SET GROUP ACCESS](set-group-access.md)  
-[SET PLUGIN ACCESS](set-plugin-access.md)  
+[SET GROUP ACCESS](set-group-access)  
+[SET PLUGIN ACCESS](set-plugin-access)  
 
 ## プロパティ
 

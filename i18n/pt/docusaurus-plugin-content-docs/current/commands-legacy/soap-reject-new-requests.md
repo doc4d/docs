@@ -46,8 +46,8 @@ Se quiser recusar qualquer petição nova a seu servidor de serviços web:
 
 ## Ver também 
 
-[REJECT NEW REMOTE CONNECTIONS](reject-new-remote-connections.md)  
-[WEB Get server info](web-get-server-info.md)  
+[REJECT NEW REMOTE CONNECTIONS](reject-new-remote-connections)  
+[WEB Get server info](web-get-server-info)  
 
 ## Propriedades
 

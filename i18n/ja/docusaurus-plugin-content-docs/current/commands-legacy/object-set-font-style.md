@@ -63,10 +63,10 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT Get font style](object-get-font-style.md)  
-[OBJECT SET FONT](object-set-font.md)  
-[OBJECT SET FONT SIZE](object-set-font-size.md)  
-[SET LIST ITEM PROPERTIES](set-list-item-properties.md)  
+[OBJECT Get font style](object-get-font-style)  
+[OBJECT SET FONT](object-set-font)  
+[OBJECT SET FONT SIZE](object-set-font-size)  
+[SET LIST ITEM PROPERTIES](set-list-item-properties)  
 *プログラミングに関する注意*  
 
 ## プロパティ

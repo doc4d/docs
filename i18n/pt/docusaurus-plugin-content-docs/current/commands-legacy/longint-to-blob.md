@@ -119,13 +119,13 @@ Depois de executar esse código:
 
 ## Ver também 
 
-[BLOB to integer](blob-to-integer.md)  
-[BLOB to longint](blob-to-longint.md)  
-[BLOB to real](blob-to-real.md)  
-[BLOB to text](blob-to-text.md)  
-[INTEGER TO BLOB](integer-to-blob.md)  
-[REAL TO BLOB](real-to-blob.md)  
-[TEXT TO BLOB](text-to-blob.md)  
+[BLOB to integer](blob-to-integer)  
+[BLOB to longint](blob-to-longint)  
+[BLOB to real](blob-to-real)  
+[BLOB to text](blob-to-text)  
+[INTEGER TO BLOB](integer-to-blob)  
+[REAL TO BLOB](real-to-blob)  
+[TEXT TO BLOB](text-to-blob)  
 
 ## Propriedades
 

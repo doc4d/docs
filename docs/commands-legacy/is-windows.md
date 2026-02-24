@@ -43,8 +43,8 @@ You want to determine if the current operating system is Windows:
 
 ## See also 
 
-[System info](system-info.md)  
-[Is macOS](is-macos.md)  
+[System info](system-info)  
+[Is macOS](is-macos)  
 
 ## Properties
 

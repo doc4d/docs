@@ -44,7 +44,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[RESTORE](restore.md)  
+[RESTORE](restore)  
 *バックアップマネージャエラー (1401 -> 1421)*  
 
 ## プロパティ

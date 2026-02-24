@@ -27,13 +27,13 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.DELETE USER.Summary-->La commande **DELETE USER** supprime l'utilisateur dont le numéro est passé dans *réfUtilisateur*.<!-- END REF--> Vous devez passer un numéro valide d'utilisateur, retourné par la commande [GET USER LIST](get-user-list.md). 
+<!--REF #_command_.DELETE USER.Summary-->La commande **DELETE USER** supprime l'utilisateur dont le numéro est passé dans *réfUtilisateur*.<!-- END REF--> Vous devez passer un numéro valide d'utilisateur, retourné par la commande [GET USER LIST](get-user-list). 
 
 Si le compte de l'utilisateur n'existe pas ou a déjà été supprimé, une erreur -9979 est genérée. Vous pouvez intercepter cette erreur avec une méthode de gestion d'erreurs installée par la commande [ON ERR CALL](on-err-call.md).
 
 Seuls le Super\_Utilisateur et l'Administrateur peuvent supprimer des utilisateurs. Il n'est pas possible à l'Administrateur de supprimer un utilisateur créé par le Super\_Utilisateur. 
 
-Les utilisateurs supprimés n'apparaissent plus dans l'éditeur d'utilisateurs affiché lorsque vous appelez [EDIT ACCESS](edit-access.md) ni en mode Développement. A noter que les numéros des utilisateurs supprimés peuvent être réattribués lors de la création de nouveaux comptes. 
+Les utilisateurs supprimés n'apparaissent plus dans l'éditeur d'utilisateurs affiché lorsque vous appelez [EDIT ACCESS](edit-access) ni en mode Développement. A noter que les numéros des utilisateurs supprimés peuvent être réattribués lors de la création de nouveaux comptes. 
 
 ## Gestion des erreurs 
 
@@ -41,10 +41,10 @@ Si vous n'avez pas les privilèges d'accès pour appeler **DELETE USER** ou si u
 
 ## Voir aussi 
 
-[GET USER LIST](get-user-list.md)  
-[GET USER PROPERTIES](get-user-properties.md)  
-[Is user deleted](is-user-deleted.md)  
-[Set user properties](set-user-properties.md)  
+[GET USER LIST](get-user-list)  
+[GET USER PROPERTIES](get-user-properties)  
+[Is user deleted](is-user-deleted)  
+[Set user properties](set-user-properties)  
 
 ## Propriétés
 

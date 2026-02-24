@@ -35,7 +35,7 @@ Se passa o parâmetro opcional *\**, indica que o parâmetro objeto é um nome d
 
 ## Ver também 
 
-[OBJECT SET FILTER](object-set-filter.md)  
+[OBJECT SET FILTER](object-set-filter)  
 
 ## Propriedades
 

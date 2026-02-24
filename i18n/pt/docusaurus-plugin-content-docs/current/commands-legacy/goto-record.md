@@ -40,7 +40,7 @@ Veja o exemplo para Record Number.
 
 ## Ver também 
 
-[Record number](record-number.md)  
+[Record number](record-number)  
 *Sobre Números de Registros*  
 
 ## Propriedades

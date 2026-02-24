@@ -91,7 +91,7 @@ Este ejemplo ilustra diferentes modos de utilizar el comando. Dados los siguient
 
 ## Ver también 
 
-[LISTBOX COLLAPSE](listbox-collapse.md)  
+[LISTBOX COLLAPSE](listbox-collapse)  
 
 ## Propiedades
 

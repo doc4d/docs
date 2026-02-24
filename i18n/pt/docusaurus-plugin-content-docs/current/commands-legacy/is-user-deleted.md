@@ -38,9 +38,9 @@ Se não tiver os privilégios de acesso adequados para chamar Is user deleted ou
 
 ## Ver também 
 
-[DELETE USER](delete-user.md)  
-[GET USER PROPERTIES](get-user-properties.md)  
-[Set user properties](set-user-properties.md)  
+[DELETE USER](delete-user)  
+[GET USER PROPERTIES](get-user-properties)  
+[Set user properties](set-user-properties)  
 
 ## Propriedades
 

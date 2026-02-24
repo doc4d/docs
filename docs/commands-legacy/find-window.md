@@ -39,8 +39,8 @@ The *windowPart* parameter returns 3 if the window is touched, and 0 otherwise. 
 
 ## See also 
 
-[Frontmost window](frontmost-window.md)  
-[Next window](next-window.md)  
+[Frontmost window](frontmost-window)  
+[Next window](next-window)  
 
 ## Properties
 

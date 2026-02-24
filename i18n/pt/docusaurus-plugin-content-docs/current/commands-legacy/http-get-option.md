@@ -29,14 +29,14 @@ displayed_sidebar: docs
 
 :::info Compatibilidade
 
-Esse comando é mantido apenas por motivos de compatibilidade. Agora é recomendável usar [`4D.HTTPRequest class`](../API/HTTPRequestClass.md).
+Esse comando é mantido apenas por motivos de compatibilidade. Agora é recomendável usar [`4D.HTTPRequest class`](../API/HTTPRequestClass).
 
 :::
 
 
 ## Descrição 
 
-<!--REF #_command_.HTTP GET OPTION.Summary-->O comando **HTTP GET OPTION** devolve o valor atual das opções HTTP (opções utilizadas pelo cliente para a próxima solicitação provocada pelo comando [HTTP Get](http-get.md) ou [HTTP Request](http-request.md)).<!-- END REF--> O valor atual de uma opção pode ser o valor por defeito ou pode ter sido modificado utilizando o comando [HTTP SET OPTION](http-set-option.md).
+<!--REF #_command_.HTTP GET OPTION.Summary-->O comando **HTTP GET OPTION** devolve o valor atual das opções HTTP (opções utilizadas pelo cliente para a próxima solicitação provocada pelo comando [HTTP Get](http-get) ou [HTTP Request](http-request)).<!-- END REF--> O valor atual de uma opção pode ser o valor por defeito ou pode ter sido modificado utilizando o comando [HTTP SET OPTION](http-set-option).
 
 **Nota:** as opções são locais ao processo atual. Em um componente, são locais ao componente em execução. 
 
@@ -56,7 +56,7 @@ No parâmetro *valor*, passe uma variável para receber o valor atual da *opçã
 
 ## Ver também 
 
-[HTTP SET OPTION](http-set-option.md)  
+[HTTP SET OPTION](http-set-option)  
 
 ## Propriedades
 

@@ -64,7 +64,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[DOM Count XML elements](dom-count-xml-elements.md)  
+[DOM Count XML elements](dom-count-xml-elements)  
 
 ## プロパティ
 

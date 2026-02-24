@@ -52,9 +52,9 @@ El siguiente método muestra un registro en toda la pantalla (Macintosh) hasta q
 
 ## Ver también 
 
-[HIDE TOOL BAR](hide-tool-bar.md)  
-[SHOW MENU BAR](show-menu-bar.md)  
-[SHOW TOOL BAR](show-tool-bar.md)  
+[HIDE TOOL BAR](hide-tool-bar)  
+[SHOW MENU BAR](show-menu-bar)  
+[SHOW TOOL BAR](show-tool-bar)  
 
 ## Propiedades
 

@@ -92,7 +92,7 @@ Vous souhaiter copier un tableau texte dans une collection partagée :
 
 ## Voir aussi 
 
-[COLLECTION TO ARRAY](collection-to-array.md)  
+[COLLECTION TO ARRAY](collection-to-array)  
 *Conversions de type entre les collections et les tableaux 4D*  
 
 ## Propriétés

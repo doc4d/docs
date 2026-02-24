@@ -35,7 +35,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT SET ENTERABLE](object-set-enterable.md)  
+[OBJECT SET ENTERABLE](object-set-enterable)  
 
 ## プロパティ
 

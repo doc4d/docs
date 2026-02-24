@@ -67,10 +67,10 @@ Consulte el ejemplo del comando [REGISTER CLIENT](register-client.md "REGISTER C
 
 ## Ver también 
 
-[Execute on server](execute-on-server.md)  
-[GET REGISTERED CLIENTS](get-registered-clients.md)  
-[REGISTER CLIENT](register-client.md)  
-[UNREGISTER CLIENT](unregister-client.md)  
+[Execute on server](execute-on-server)  
+[GET REGISTERED CLIENTS](get-registered-clients)  
+[REGISTER CLIENT](register-client)  
+[UNREGISTER CLIENT](unregister-client)  
 
 ## Propiedades
 

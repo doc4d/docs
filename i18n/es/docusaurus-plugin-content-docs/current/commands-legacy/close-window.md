@@ -23,7 +23,7 @@ Es inútil pasar un número a CLOSE WINDOW cuando lo utiliza para cerrar las ven
 
 ## Ejemplo 
 
-El siguiente ejemplo abre una ventana formulario y crea nuevos registros con el comando [ADD RECORD](add-record.md). Una vez añadidos los registros, la ventana se cierra con **CLOSE WINDOW**:
+El siguiente ejemplo abre una ventana formulario y crea nuevos registros con el comando [ADD RECORD](add-record). Una vez añadidos los registros, la ventana se cierra con **CLOSE WINDOW**:
 
 ```4d
  FORM SET INPUT([Employees];"Entry")
@@ -36,8 +36,8 @@ El siguiente ejemplo abre una ventana formulario y crea nuevos registros con el 
 
 ## Ver también 
 
-[Open form window](../commands/open-form-window.md)  
-[Open window](../commands/open-window.md)  
+[Open form window](../commands/open-form-window)  
+[Open window](../commands/open-window)  
 
 ## Propiedades
 

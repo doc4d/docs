@@ -38,7 +38,7 @@ L'exemple suivant change la position des numéros de page sur un état pour que 
 
 ## Voir aussi 
 
-[PRINT SELECTION](print-selection.md)  
+[PRINT SELECTION](print-selection)  
 
 ## Propriétés
 

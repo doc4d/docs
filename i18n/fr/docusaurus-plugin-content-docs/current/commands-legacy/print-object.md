@@ -35,13 +35,13 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Print object.Summary-->La commande **Print object** vous permet d’imprimer le ou les objet(s) de formulaire désigné(s) par les paramètres *objet* et *\**, à l’emplacement défini par les paramètres *posX* et *posY*.<!-- END REF-->
 
-Avant d’appeler la commande **Print object**, vous devez désigner le formulaire table ou projet contenant les objets à imprimer, à l’aide de la commande [FORM LOAD](../commands/form-load.md). 
+Avant d’appeler la commande **Print object**, vous devez désigner le formulaire table ou projet contenant les objets à imprimer, à l’aide de la commande [FORM LOAD](../commands/form-load). 
 
 Si vous passez le paramètre optionnel *\**, vous indiquez que le paramètre *objet* est un nom d'objet (une chaîne de caractères). Si vous ne passez pas le paramètre *\**, vous indiquez que *objet* est une variable. Dans ce cas, vous ne passez pas une chaîne mais une référence de variable (de type objet uniquement).
 
 Les paramètres *posX* et *posY* définissent le point de départ de l’impression du ou des objet(s). Ces valeurs doivent être exprimées en pixels. Si ces paramètres sont omis, l’objet sera imprimé en fonction de son emplacement dans le formulaire. 
 
-Les paramètres *largeur* et *hauteur* vous permettent de définir la largeur et la hauteur de l’objet de formulaire. La commande **Print object** ne gère pas les objets de taille variable. Vous devez utiliser la commande [OBJECT GET BEST SIZE](object-get-best-size.md) pour prendre en charge la taille des objets. Vous pouvez également utiliser la commande [OBJECT GET BEST SIZE](object-get-best-size.md) pour connaître la taille la plus adéquate pour les objets contenant du texte. De même, **Print object** ne provoque pas de sauts de page automatiques. Vous devez les gérer en fonction de vos besoins. 
+Les paramètres *largeur* et *hauteur* vous permettent de définir la largeur et la hauteur de l’objet de formulaire. La commande **Print object** ne gère pas les objets de taille variable. Vous devez utiliser la commande [OBJECT GET BEST SIZE](object-get-best-size) pour prendre en charge la taille des objets. Vous pouvez également utiliser la commande [OBJECT GET BEST SIZE](object-get-best-size) pour connaître la taille la plus adéquate pour les objets contenant du texte. De même, **Print object** ne provoque pas de sauts de page automatiques. Vous devez les gérer en fonction de vos besoins. 
 
 Vous pouvez utiliser les commandes de 4D pour modifier à la volée les propriétés des objets (couleur, taille...).
 
@@ -50,9 +50,9 @@ La commande retourne Vrai si l’objet a été imprimé entièrement et Faux dan
 **Notes :**  
 
 * Dans la version actuelle de 4D, seuls les objets de type list box bénéficient de ce mécanisme (la commande retourne toujours Vrai pour tous les autres types d’objets).
-* La commande [LISTBOX GET PRINT INFORMATION](listbox-get-print-information.md) permet de contrôler le statut de l’impression durant l’opération.
+* La commande [LISTBOX GET PRINT INFORMATION](listbox-get-print-information) permet de contrôler le statut de l’impression durant l’opération.
 
-La commande **Print object** peut être utilisée uniquement dans le contexte d’une tâche d’impression préalablement ouverte avec la commande [OPEN PRINTING JOB](open-printing-job.md). Si elle n’est pas appelée dans ce contexte, la commande ne fait rien. Plusieurs commandes **Print object** peuvent être appelées dans la même tâche d’impression. 
+La commande **Print object** peut être utilisée uniquement dans le contexte d’une tâche d’impression préalablement ouverte avec la commande [OPEN PRINTING JOB](open-printing-job). Si elle n’est pas appelée dans ce contexte, la commande ne fait rien. Plusieurs commandes **Print object** peuvent être appelées dans la même tâche d’impression. 
 
 **Note :** Les listes hiérarchiques, les sous-formulaires et les zones Web ne sont pas imprimables.
 
@@ -107,7 +107,7 @@ Exemple d’impression d’une list box complète :
 
 ## Voir aussi 
 
-[FORM LOAD](../commands/form-load.md)  
+[FORM LOAD](../commands/form-load)  
 
 ## Propriétés
 

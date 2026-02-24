@@ -63,7 +63,7 @@ Definition of the aCountry, aRegion and aCity arrays as the hierarchy of a list 
 
 ## See also 
 
-[LISTBOX GET HIERARCHY](listbox-get-hierarchy.md)  
+[LISTBOX GET HIERARCHY](listbox-get-hierarchy)  
 
 ## Properties
 

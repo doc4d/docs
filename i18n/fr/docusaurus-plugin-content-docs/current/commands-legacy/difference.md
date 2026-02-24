@@ -55,8 +55,8 @@ Un bouton associé à une méthode objet est placé en bas de la liste. La méth
 
 ## Voir aussi 
 
-[INTERSECTION](intersection.md)  
-[UNION](union.md)  
+[INTERSECTION](intersection)  
+[UNION](union)  
 
 ## Propriétés
 

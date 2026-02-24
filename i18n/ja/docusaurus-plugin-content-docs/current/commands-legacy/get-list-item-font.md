@@ -41,7 +41,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SET LIST ITEM FONT](set-list-item-font.md)  
+[SET LIST ITEM FONT](set-list-item-font)  
 
 ## プロパティ
 

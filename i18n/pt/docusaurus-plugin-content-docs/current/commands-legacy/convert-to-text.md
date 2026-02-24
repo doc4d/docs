@@ -43,7 +43,7 @@ Se o comando for executado corretamente, a variável OK assume o valor 1\. Do co
 
 ## Ver também 
 
-[CONVERT FROM TEXT](convert-from-text.md)  
+[CONVERT FROM TEXT](convert-from-text)  
 
 ## Propriedades
 

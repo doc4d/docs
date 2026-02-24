@@ -51,7 +51,7 @@ Você quer inverter a segunda e terceira coluna do list box:
 
 ## Ver também 
 
-[LISTBOX DUPLICATE COLUMN](listbox-duplicate-column.md)  
+[LISTBOX DUPLICATE COLUMN](listbox-duplicate-column)  
 
 ## Propriedades
 

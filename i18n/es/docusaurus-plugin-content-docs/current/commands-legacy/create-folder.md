@@ -82,8 +82,8 @@ Creación de la subcarpeta "\\Febrero\\" en la carpeta existente "C:\\Archives\\
 
 ## Ver también 
 
-[FOLDER LIST](folder-list.md)  
-[Test path name](test-path-name.md)  
+[FOLDER LIST](folder-list)  
+[Test path name](test-path-name)  
 
 ## Propiedades
 

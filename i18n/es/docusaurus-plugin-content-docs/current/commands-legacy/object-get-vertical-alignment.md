@@ -51,9 +51,9 @@ La alineación vertical puede aplicarse a los siguientes tipos de objetos de for
 
 ## Ver también 
 
-[OBJECT Get horizontal alignment](object-get-horizontal-alignment.md)  
-[OBJECT SET HORIZONTAL ALIGNMENT](object-set-horizontal-alignment.md)  
-[OBJECT SET VERTICAL ALIGNMENT](object-set-vertical-alignment.md)  
+[OBJECT Get horizontal alignment](object-get-horizontal-alignment)  
+[OBJECT SET HORIZONTAL ALIGNMENT](object-set-horizontal-alignment)  
+[OBJECT SET VERTICAL ALIGNMENT](object-set-vertical-alignment)  
 
 ## Propiedades
 

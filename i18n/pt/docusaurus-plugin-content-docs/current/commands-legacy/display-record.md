@@ -41,7 +41,7 @@ O exemplo a seguir mostra uma série de registros como uma apresentação de sli
 
 ## Ver também 
 
-[MESSAGE](message.md)  
+[MESSAGE](message)  
 
 ## Propriedades
 

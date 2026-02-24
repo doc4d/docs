@@ -49,9 +49,9 @@ Queremos poner el valor nulo en la propiedad "edad" para Lea:
 
 ## Ver también 
 
-[Null](null.md)  
-[OB GET PROPERTY NAMES](ob-get-property-names.md)  
-[OB SET](ob-set.md)  
+[Null](null)  
+[OB GET PROPERTY NAMES](ob-get-property-names)  
+[OB SET](ob-set)  
 
 ## Propiedades
 

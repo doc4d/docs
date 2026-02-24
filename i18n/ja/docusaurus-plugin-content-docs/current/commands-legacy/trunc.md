@@ -36,7 +36,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Round](round.md)  
+[Round](round)  
 
 ## プロパティ
 

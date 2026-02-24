@@ -24,8 +24,8 @@ Macintoshの場合、, Screen width はメイン画面の幅を返します。�
 
 ## 参照 
 
-[SCREEN COORDINATES](screen-coordinates.md)  
-[Screen height](screen-height.md)  
+[SCREEN COORDINATES](screen-coordinates)  
+[Screen height](screen-height)  
 
 ## プロパティ
 

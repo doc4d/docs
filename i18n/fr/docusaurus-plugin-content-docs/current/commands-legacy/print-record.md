@@ -32,14 +32,14 @@ displayed_sidebar: docs
 
 <!--REF #_command_.PRINT RECORD.Summary-->Cette commande provoque l'impression de l'enregistrement courant de *laTable*, sans modifier la sélection courante.<!-- END REF--> Le formulaire sortie courant est utilisé pour l'impression. S’il n’y a pas d’enregistrement courant dans *laTable*, **PRINT RECORD** ne fait rien.
 
-**PRINT RECORD** permet d'imprimer des sous-formulaires, ce qui n'est pas possible avec la commande [Print form](../commands/print-form.md).
+**PRINT RECORD** permet d'imprimer des sous-formulaires, ce qui n'est pas possible avec la commande [Print form](../commands/print-form).
 
 **Note :** Si l'enregistrement a subi des modifications qui n'ont pas encore été sauvegardées sur disque, la commande imprime les valeurs les plus récentes, et non celles stockées sur le disque.
 
 Par défaut, **PRINT RECORD** affiche la boîte de dialogue d'impression. Si l'utilisateur annule la boîte de dialogue, l'exécution de la commande est stoppée.  
 Vous pouvez supprimer son affichage en utilisant soit le paramètre optionnel astérisque (\*), soit le paramètre optionnel “supérieur à” (>).
 
-* Le paramètre *\** provoque une impression avec les paramètres d’impression courants (paramètres par défaut ou définis par les commandes *\_o\_PAGE SETUP* et/ou [SET PRINT OPTION](set-print-option.md)).
+* Le paramètre *\** provoque une impression avec les paramètres d’impression courants (paramètres par défaut ou définis par les commandes *\_o\_PAGE SETUP* et/ou [SET PRINT OPTION](set-print-option)).
 * Le paramètre *\>* provoque en outre l’impression sans réinitialisation des paramètres d’impression. Ce paramètre est utile lorsque vous souhaitez exécuter successivement plusieurs appels à **PRINT RECORD** (par exemple à l'intérieur d’une boucle) tout en conservant des paramètres d’impression personnalisés préalablement définis.
 
 **4D Server :** Cette commande peut être exécutée sur 4D Server dans le cadre d'une procédure stockée. Dans ce contexte :
@@ -47,7 +47,7 @@ Vous pouvez supprimer son affichage en utilisant soit le paramètre optionnel as
 * Veillez à ce qu’aucune boîte de dialogue n’apparaisse sur le poste serveur (sauf besoin spécifique). Pour cela, il est nécessaire d’appeler la commande avec le paramètre *\** ou *\>*.
 * En cas de problème sur l’imprimante (plus de papier, imprimante déconnectée, etc.), aucun message d'erreur n'est généré.
 
-**Attention :** N'utilisez pas la commande [PAGE BREAK](page-break.md) avec **PRINT RECORD**. [PAGE BREAK](page-break.md) est exclusivement réservée à une utilisation combinée avec la commande [Print form](../commands/print-form.md).
+**Attention :** N'utilisez pas la commande [PAGE BREAK](page-break) avec **PRINT RECORD**. [PAGE BREAK](page-break) est exclusivement réservée à une utilisation combinée avec la commande [Print form](../commands/print-form).
 
 ## Exemple 1 
 
@@ -78,7 +78,7 @@ L'exemple suivant imprime le même enregistrement courant dans deux formulaires 
 
 ## Voir aussi 
 
-[Print form](../commands/print-form.md)  
+[Print form](../commands/print-form)  
 
 ## Propriétés
 

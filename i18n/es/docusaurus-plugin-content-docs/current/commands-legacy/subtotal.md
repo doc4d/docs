@@ -71,10 +71,10 @@ La función Subtotal es necesaria para mostrar valores en un formulario.
 
 ## Ver también 
 
-[ACCUMULATE](accumulate.md)  
-[BREAK LEVEL](break-level.md)  
-[Level](level.md)  
-[PRINT SELECTION](print-selection.md)  
+[ACCUMULATE](accumulate)  
+[BREAK LEVEL](break-level)  
+[Level](level)  
+[PRINT SELECTION](print-selection)  
 
 ## Propiedades
 

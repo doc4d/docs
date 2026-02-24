@@ -28,7 +28,7 @@ Depois que o comando for executado, as estatísticas são fornecidas nos arrays 
 
 ## Ver também 
 
-[Cache info](cache-info.md)  
+[Cache info](cache-info)  
 
 ## Propriedades
 

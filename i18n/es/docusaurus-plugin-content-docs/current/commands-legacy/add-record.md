@@ -18,7 +18,7 @@ displayed_sidebar: docs
 
 ## Compatibilidad 
 
-<!--REF #_command_.ADD RECORD.Summary-->**Este comando se implementó en las primeras versiones de 4D y sigue siendo útil para la creación de prototipos o desarrollos básicos.<!-- END REF--> Sin embargo, para construir interfaces personalizadas y modernas, ahora se recomienda utilizar formularios genéricos basados en el comando [DIALOG](../commands/dialog.md) que ofrecen funciones avanzadas y un mejor control sobre el flujo de datos.* 
+<!--REF #_command_.ADD RECORD.Summary-->**Este comando se implementó en las primeras versiones de 4D y sigue siendo útil para la creación de prototipos o desarrollos básicos.<!-- END REF--> Sin embargo, para construir interfaces personalizadas y modernas, ahora se recomienda utilizar formularios genéricos basados en el comando [DIALOG](../commands/dialog) que ofrecen funciones avanzadas y un mejor control sobre el flujo de datos.* 
 
 ## Descripción 
 
@@ -36,15 +36,15 @@ El formulario aparece en la ventana del primer plano del proceso. La ventana tie
 
 **ADD RECORD** muestra el formulario hasta que el usuario acepta o cancela el registro. Si el usuario está añadiendo varios registros, el comando debe ejecutarse una vez para cada registro. 
 
-El registro se guarda (aceptado) si el usuario hace clic en el botón Aceptar o al presionar la tecla Intro (teclado numérico), o si se ejecuta el comando [ACCEPT](accept.md). 
+El registro se guarda (aceptado) si el usuario hace clic en el botón Aceptar o al presionar la tecla Intro (teclado numérico), o si se ejecuta el comando [ACCEPT](accept). 
 
-El registro no se guarda (cancelado) si el usuario hace clic en el botón Cancelar o presiona la tecla de anulación Esc o si se ejecuta el comando [CANCEL](cancel.md). 
+El registro no se guarda (cancelado) si el usuario hace clic en el botón Cancelar o presiona la tecla de anulación Esc o si se ejecuta el comando [CANCEL](cancel). 
 
 **Nota:** este comando no requiere *tabla* para estar en modo lectura/escritura. Puede ser utilizado incluso si la tabla está en modo lectura únicamente (ver *Record Locking*). 
 
 Después de llamar a **ADD RECORD**, OK toma el valor 1 si se acepta el registro y 0 si se cancela.
 
-**Nota:** el registro permanece en memoria, incluso cuando se cancela, y puede guardarse si se ejecuta [SAVE RECORD](save-record.md) antes de que cambie el puntero del registro actual. 
+**Nota:** el registro permanece en memoria, incluso cuando se cancela, y puede guardarse si se ejecuta [SAVE RECORD](save-record) antes de que cambie el puntero del registro actual. 
 
 ## Ejemplo 1 
 
@@ -86,11 +86,11 @@ La variable sistema OK toma el valor 1 si se acepta el registro y 0 si se cancel
 
 ## Ver también 
 
-[ACCEPT](accept.md)  
-[CANCEL](cancel.md)  
-[CREATE RECORD](create-record.md)  
-[MODIFY RECORD](modify-record.md)  
-[SAVE RECORD](save-record.md)  
+[ACCEPT](accept)  
+[CANCEL](cancel)  
+[CREATE RECORD](create-record)  
+[MODIFY RECORD](modify-record)  
+[SAVE RECORD](save-record)  
 
 ## Propiedades
 

@@ -94,7 +94,7 @@ Resolución de una ruta de objeto de método formulario tabla:
 
 ## Ver también 
 
-[METHOD Get path](method-get-path.md)  
+[METHOD Get path](method-get-path)  
 
 ## Propiedades
 

@@ -51,7 +51,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SET MENU ITEM MARK](set-menu-item-mark.md)  
+[SET MENU ITEM MARK](set-menu-item-mark)  
 
 ## プロパティ
 

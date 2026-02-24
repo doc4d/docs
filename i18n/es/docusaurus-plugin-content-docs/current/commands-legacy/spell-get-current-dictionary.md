@@ -44,7 +44,7 @@ Queremos mostrar el lenguaje del diccionario actual:
 
 ## Ver también 
 
-[SPELL SET CURRENT DICTIONARY](spell-set-current-dictionary.md)  
+[SPELL SET CURRENT DICTIONARY](spell-set-current-dictionary)  
 
 ## Propiedades
 

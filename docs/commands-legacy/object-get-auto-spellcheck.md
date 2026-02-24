@@ -33,8 +33,8 @@ displayed_sidebar: docs
 
 This command supports objects of the following types:
 
-- Text-based [inputs](../FormObjects/input_overview.md)
-- [4D Write Pro areas](../FormObjects/writeProArea_overview.md).
+- Text-based [inputs](../FormObjects/input_overview)
+- [4D Write Pro areas](../FormObjects/writeProArea_overview).
 
 If you pass the optional *\** parameter, this indicates that the *object* parameter is an object name (a string). If you do not pass this parameter, this indicates that the *object* is a variable or a field. In this case, you pass a reference instead of a name.
 
@@ -42,7 +42,7 @@ The command returns **True** when automatic spell-checking is enabled for the *o
 
 ## See also 
 
-[OBJECT SET AUTO SPELLCHECK](object-set-auto-spellcheck.md)  
+[OBJECT SET AUTO SPELLCHECK](object-set-auto-spellcheck)  
 
 ## Properties
 

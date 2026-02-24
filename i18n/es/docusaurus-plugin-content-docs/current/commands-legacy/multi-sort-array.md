@@ -117,9 +117,9 @@ Si quiere que el array de nombres se utilice como tercer criterio de ordenación
 
 ## Ver también 
 
-[ORDER BY](order-by.md)  
-[SELECTION TO ARRAY](selection-to-array.md)  
-[SORT ARRAY](sort-array.md)  
+[ORDER BY](order-by)  
+[SELECTION TO ARRAY](selection-to-array)  
+[SORT ARRAY](sort-array)  
 
 ## Propiedades
 

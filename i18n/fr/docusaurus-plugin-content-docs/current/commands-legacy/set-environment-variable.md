@@ -29,33 +29,33 @@ displayed_sidebar: docs
 
 :::info Compatibilité
 
-Cette commande est maintenue pour des raisons de compatibilité uniquement. Il est maintenant recommandé d'utiliser la classe [`4D.HTTPRequest`](../API/HTTPRequestClass.md).
+Cette commande est maintenue pour des raisons de compatibilité uniquement. Il est maintenant recommandé d'utiliser la classe [`4D.HTTPRequest`](../API/HTTPRequestClass).
 
 :::
 
 
 ## Description 
 
-<!--REF #_command_.SET ENVIRONMENT VARIABLE.Summary-->La commande **SET ENVIRONMENT VARIABLE** vous permet de fixer la valeur d’une variable d’environnement sous macOS et Windows.<!-- END REF--> Elle est destinée à une utilisation conjointe avec la commande [LAUNCH EXTERNAL PROCESS](launch-external-process.md). 
+<!--REF #_command_.SET ENVIRONMENT VARIABLE.Summary-->La commande **SET ENVIRONMENT VARIABLE** vous permet de fixer la valeur d’une variable d’environnement sous macOS et Windows.<!-- END REF--> Elle est destinée à une utilisation conjointe avec la commande [LAUNCH EXTERNAL PROCESS](launch-external-process). 
 
 
 Passez dans le paramètre *nomVar* le nom de la variable à définir et dans le paramètre *valeurVar* sa valeur.
 
 * Pour obtenir la liste générale des variables d’environnement et leurs valeurs possibles, reportez-vous à la documentation technique de votre système d’exploitation.
-* Trois variables d’environnement spécifiques peuvent être utilisées dans le contexte de la commande [LAUNCH EXTERNAL PROCESS](launch-external-process.md) :  
+* Trois variables d’environnement spécifiques peuvent être utilisées dans le contexte de la commande [LAUNCH EXTERNAL PROCESS](launch-external-process) :  
 *\_4D\_OPTION\_CURRENT\_DIRECTORY*  
 *\_4D\_OPTION\_HIDE\_CONSOLE* (Windows uniquement)  
 *\_4D\_OPTION\_BLOCKING\_EXTERNAL\_PROCESS*
 
-Pour plus d'informations sur ces variables, veuillez vous reporter à la documentation de la commande [LAUNCH EXTERNAL PROCESS](launch-external-process.md).
+Pour plus d'informations sur ces variables, veuillez vous reporter à la documentation de la commande [LAUNCH EXTERNAL PROCESS](launch-external-process).
 
 ## Exemple 
 
-Reportez-vous aux exemples de la commande [LAUNCH EXTERNAL PROCESS](launch-external-process.md). 
+Reportez-vous aux exemples de la commande [LAUNCH EXTERNAL PROCESS](launch-external-process). 
 
 ## Voir aussi 
 
-[LAUNCH EXTERNAL PROCESS](launch-external-process.md)  
+[LAUNCH EXTERNAL PROCESS](launch-external-process)  
 
 ## Propriétés
 

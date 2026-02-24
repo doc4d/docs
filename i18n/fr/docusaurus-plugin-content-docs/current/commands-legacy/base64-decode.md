@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.BASE64 DECODE.Summary-->La commande **BASE64 DECODE**décode la valeur encodée de type BLOB ou texte au format base64 ou Base64URL passé dans le paramètre àDécoder .<!-- END REF--> Pour plus d'informations sur les formats Base64 et Base64URL, veuillez vous reporter à la description de la commande [BASE64 ENCODE](base64-encode.md).
+<!--REF #_command_.BASE64 DECODE.Summary-->La commande **BASE64 DECODE**décode la valeur encodée de type BLOB ou texte au format base64 ou Base64URL passé dans le paramètre àDécoder .<!-- END REF--> Pour plus d'informations sur les formats Base64 et Base64URL, veuillez vous reporter à la description de la commande [BASE64 ENCODE](base64-encode).
 
 Passez dans àDécoder la valeur encodée de type texte ou BLOB, en Base64 ou Base64URL, que vous souhaitez décoder. 
 
@@ -65,10 +65,10 @@ Cet exemple permet de transférer une image via un BLOB :
 
 ## Voir aussi 
 
-[BASE64 ENCODE](base64-encode.md)  
-[Generate digest](generate-digest.md)  
+[BASE64 ENCODE](base64-encode)  
+[Generate digest](generate-digest)  
 *Présentation des commandes XML DOM*  
-[XML DECODE](xml-decode.md)  
+[XML DECODE](xml-decode)  
 
 ## Propriétés
 

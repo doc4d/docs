@@ -42,7 +42,7 @@ If *object* designates a picture (variable or field), *vPosition* returns the ve
 
 ## See also 
 
-[OBJECT SET SCROLL POSITION](object-set-scroll-position.md)  
+[OBJECT SET SCROLL POSITION](object-set-scroll-position)  
 
 ## Properties
 

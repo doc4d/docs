@@ -113,8 +113,8 @@ Luego puede añadir otros mensajes ejecutando el comando **CALL FORM** nuevament
 ## Ver también 
 
   
-[CALL WORKER](call-worker.md)  
-[DIALOG](../commands/dialog.md)  
+[CALL WORKER](call-worker)  
+[DIALOG](../commands/dialog)  
 
 ## Propiedades
 

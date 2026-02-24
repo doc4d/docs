@@ -85,7 +85,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR GET BORDERS](qr-get-borders.md)  
+[QR GET BORDERS](qr-get-borders)  
 
 ## プロパティ
 

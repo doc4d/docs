@@ -48,8 +48,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[WEB Get current session ID](web-get-current-session-id.md)  
-[WEB SET OPTION](web-set-option.md)  
+[WEB Get current session ID](web-get-current-session-id)  
+[WEB SET OPTION](web-set-option)  
 *Webセッション管理(旧式)*  
 
 ## プロパティ

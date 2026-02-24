@@ -54,7 +54,7 @@ Si el comando se ejecuta correctamente, la variable sistema OK toma el valor 1\.
 
 ## Ver también 
 
-[HIGHLIGHT RECORDS](highlight-records.md)  
+[HIGHLIGHT RECORDS](highlight-records)  
 
 ## Propiedades
 

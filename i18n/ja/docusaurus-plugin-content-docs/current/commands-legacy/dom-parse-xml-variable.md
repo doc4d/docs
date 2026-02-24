@@ -59,7 +59,7 @@ DTDやXSDが存在しなかったり、URLが正しくない場合など検証�
 
 このコマンドは、メモリ中に展開されたドキュメントの仮想構造への参照を表す文字列 (ElementRef) を返します。この参照を他のXML解析コマンドで使用できます。
 
-**重要**: 参照の利用が終了したら、[DOM CLOSE XML](dom-close-xml.md)コマンドを使用してこの参照が使用しているメモリを解放することを忘れないでください。
+**重要**: 参照の利用が終了したら、[DOM CLOSE XML](dom-close-xml)コマンドを使用してこの参照が使用しているメモリを解放することを忘れないでください。
 
 ## 例題 1 
 
@@ -96,8 +96,8 @@ DTDやXSDが存在しなかったり、URLが正しくない場合など検証�
 
 ## 参照 
 
-[DOM CLOSE XML](dom-close-xml.md)  
-[DOM Parse XML source](dom-parse-xml-source.md)  
+[DOM CLOSE XML](dom-close-xml)  
+[DOM Parse XML source](dom-parse-xml-source)  
 
 ## プロパティ
 

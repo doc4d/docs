@@ -32,7 +32,7 @@ L'exemple suivant récupère l'enregistrement d'un client dans la pile :
 
 ## Voir aussi 
 
-[PUSH RECORD](push-record.md)  
+[PUSH RECORD](push-record)  
 *Utiliser la pile d'enregistrements*  
 
 ## Propriétés

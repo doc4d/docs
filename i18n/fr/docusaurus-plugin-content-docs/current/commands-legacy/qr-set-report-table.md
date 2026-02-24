@@ -37,7 +37,7 @@ Si le paramètre *numTable* est incorrect, l’erreur -9852 est générée.
 
 ## Voir aussi 
 
-[QR Get report table](qr-get-report-table.md)  
+[QR Get report table](qr-get-report-table)  
 
 ## Propriétés
 

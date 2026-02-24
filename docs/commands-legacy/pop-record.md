@@ -31,7 +31,7 @@ The following example pops the record for the customer off the record stack:
 
 ## See also 
 
-[PUSH RECORD](push-record.md)  
+[PUSH RECORD](push-record)  
 *Using the Record Stack*  
 
 ## Properties

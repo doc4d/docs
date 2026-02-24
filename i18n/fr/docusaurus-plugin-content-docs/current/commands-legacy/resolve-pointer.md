@@ -113,11 +113,11 @@ Voici un exemple de pointeur vers un tableau 2D :
 
 ## Voir aussi 
 
-[Field](field.md)  
-[Get pointer](get-pointer.md)  
-[Is a variable](is-a-variable.md)  
-[Is nil pointer](is-nil-pointer.md)  
-[Table](table.md)  
+[Field](field)  
+[Get pointer](get-pointer)  
+[Is a variable](is-a-variable)  
+[Is nil pointer](is-nil-pointer)  
+[Table](table)  
 
 ## Propriétés
 

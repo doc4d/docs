@@ -78,7 +78,7 @@ Si vous ne spécifiez pas de statut, celui-ci est automatiquement HTTP/1.0 200 O
 
 ## Voir aussi 
 
-[WEB GET HTTP HEADER](web-get-http-header.md)  
+[WEB GET HTTP HEADER](web-get-http-header)  
 
 ## Propriétés
 

@@ -22,7 +22,7 @@ displayed_sidebar: docs
 
 ## Ver também 
 
-[PICTURE PROPERTIES](picture-properties.md)  
+[PICTURE PROPERTIES](picture-properties)  
 
 ## Propriedades
 

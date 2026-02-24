@@ -42,7 +42,7 @@ Si el parámetro *menuItem* designa un submenú jerárquico, todos los elementos
 
 ## Ver también 
 
-[ENABLE MENU ITEM](enable-menu-item.md)  
+[ENABLE MENU ITEM](enable-menu-item)  
 
 ## Propiedades
 

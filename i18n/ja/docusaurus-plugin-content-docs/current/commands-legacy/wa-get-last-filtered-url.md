@@ -41,10 +41,10 @@ URLは以下のいずれかの理由でフィルタされることがありま�
 
 ## 参照 
 
-[WA GET EXTERNAL LINKS FILTERS](wa-get-external-links-filters.md)  
-[WA GET URL FILTERS](wa-get-url-filters.md)  
-[WA SET EXTERNAL LINKS FILTERS](wa-set-external-links-filters.md)  
-[WA SET URL FILTERS](wa-set-url-filters.md)  
+[WA GET EXTERNAL LINKS FILTERS](wa-get-external-links-filters)  
+[WA GET URL FILTERS](wa-get-url-filters)  
+[WA SET EXTERNAL LINKS FILTERS](wa-set-external-links-filters)  
+[WA SET URL FILTERS](wa-set-url-filters)  
 
 ## プロパティ
 

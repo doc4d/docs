@@ -65,8 +65,8 @@ Example using *On Web Authentication Database Method* in Digest mode:
 
 ## See also 
 
-[Generate digest](generate-digest.md)  
-[Validate password](validate-password.md)  
+[Generate digest](generate-digest)  
+[Validate password](validate-password)  
 
 ## Properties
 

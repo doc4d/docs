@@ -32,7 +32,7 @@ displayed_sidebar: docs
   
 Se a linha mostrada não estiver vazia (quando estiver associada a um registro), o valor retornado por Displayed line number é idêntico ao valor retornado por [Selected record number](selected-record-number.md "Selected record number").  
   
-Do mesmo jeito que [Selected record number](selected-record-number.md), Displayed line number começa em 1\. Este comando é útil quando deseja aplicar um processo a cada linha de um formulário listado ou de um list-box mostrado em tela, incluindo as linhas vazias.
+Do mesmo jeito que [Selected record number](selected-record-number), Displayed line number começa em 1\. Este comando é útil quando deseja aplicar um processo a cada linha de um formulário listado ou de um list-box mostrado em tela, incluindo as linhas vazias.
 
 ## Exemplo 
 
@@ -55,8 +55,8 @@ Este exemplo lhe permite aplicar uma cor alternativa em um formulário listado m
 
 ## Ver também 
 
-[Form event code](../commands/form-event-code.md)  
-[Selected record number](selected-record-number.md)  
+[Form event code](../commands/form-event-code)  
+[Selected record number](selected-record-number)  
 
 ## Propriedades
 

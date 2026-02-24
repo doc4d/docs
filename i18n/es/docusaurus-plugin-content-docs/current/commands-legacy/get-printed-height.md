@@ -39,9 +39,9 @@ Los márgenes de impresión derecha e izquierda no influyen en el valor devuelto
 
 ## Ver también 
 
-[GET PRINTABLE AREA](get-printable-area.md)  
-[Print form](../commands/print-form.md)  
-[SET PRINTABLE MARGIN](set-printable-margin.md)  
+[GET PRINTABLE AREA](get-printable-area)  
+[Print form](../commands/print-form)  
+[SET PRINTABLE MARGIN](set-printable-margin)  
 
 ## Propiedades
 

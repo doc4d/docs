@@ -57,8 +57,8 @@ This example creates an interprocess array of 50 4-byte Long Integer elements an
 
 ## See also 
 
-[ARRAY INTEGER](array-integer.md)  
-[ARRAY REAL](array-real.md)  
+[ARRAY INTEGER](array-integer)  
+[ARRAY REAL](array-real)  
 
 ## Properties
 

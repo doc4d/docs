@@ -30,7 +30,7 @@ displayed_sidebar: docs
 
 ## Descrição 
 
-<!--REF #_command_.GET GROUP PROPERTIES.Summary-->GET GROUP PROPERTIES retorna as propriedades do grupo cujo número de referência único de ID de grupo pode passar em *GrupoID*.<!-- END REF--> Deve passar o número de referência do grupo retornado pelo comando [GET GROUP LIST](get-group-list.md). 
+<!--REF #_command_.GET GROUP PROPERTIES.Summary-->GET GROUP PROPERTIES retorna as propriedades do grupo cujo número de referência único de ID de grupo pode passar em *GrupoID*.<!-- END REF--> Deve passar o número de referência do grupo retornado pelo comando [GET GROUP LIST](get-group-list). 
 
 Se não passar um número de referência válido, GET GROUP PROPERTIES retorna parâmetros vazios.
 
@@ -48,9 +48,9 @@ Se não tiver privilégios de acesso para chamar ao comando GET GROUP PROPERTIES
 
 ## Ver também 
 
-[GET GROUP LIST](get-group-list.md)  
-[GET USER LIST](get-user-list.md)  
-[Set group properties](set-group-properties.md)  
+[GET GROUP LIST](get-group-list)  
+[GET USER LIST](get-user-list)  
+[Set group properties](set-group-properties)  
 
 ## Propriedades
 

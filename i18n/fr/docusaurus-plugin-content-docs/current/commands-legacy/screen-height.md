@@ -24,8 +24,8 @@ Sous Mac OS, **Screen height** retourne la hauteur de l'écran principal, c'est-
 
 ## Voir aussi 
 
-[SCREEN COORDINATES](screen-coordinates.md)  
-[Screen width](screen-width.md)  
+[SCREEN COORDINATES](screen-coordinates)  
+[Screen width](screen-width)  
 
 ## Propriétés
 

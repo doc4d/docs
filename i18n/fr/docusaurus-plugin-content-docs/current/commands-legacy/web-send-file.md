@@ -62,7 +62,7 @@ Si le fichier à envoyer existe et si le timeout n’est pas dépassé, la varia
 
 ## Voir aussi 
 
-[WEB SEND BLOB](web-send-blob.md)  
+[WEB SEND BLOB](web-send-blob)  
 
 ## Propriétés
 

@@ -58,7 +58,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET MENU ITEM ICON](get-menu-item-icon.md)  
+[GET MENU ITEM ICON](get-menu-item-icon)  
 
 ## プロパティ
 

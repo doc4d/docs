@@ -53,7 +53,7 @@ In the *format* parameter, pass the type of parameter whose value you want to kn
 
 ## See also 
 
-[OBJECT SET FORMAT](object-set-format.md)  
+[OBJECT SET FORMAT](object-set-format)  
 
 ## Properties
 

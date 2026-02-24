@@ -42,7 +42,7 @@ Dans *objetChemin*, passez un objet définissant le chemin que vous souhaitez g�
 | extension     | Texte    | Extension du fichier ou du dossier final. Commence par "." (peut être omis). Chaîne vide "" si pas d'extension.                                                                                                                                                                                                           |
 | isFolder      | Booléen  | "true" si "name" est un nom de dossier, sinon "false" ("false" par défaut)                                                                                                                                                                                                                                                |
 
-*objetChemin* sera généralement fourni par la commande [Path to object](path-to-object.md), mais en principe l'objet peut être créé de manière personnaliée. Notez que **Object to path** manipule uniquement des chaînes de caractères. La commande ne vérifie ni la validité du chemin par rapport à son type, ni l'existence réelle des dossiers et fichiers sur le disque. 
+*objetChemin* sera généralement fourni par la commande [Path to object](path-to-object), mais en principe l'objet peut être créé de manière personnaliée. Notez que **Object to path** manipule uniquement des chaînes de caractères. La commande ne vérifie ni la validité du chemin par rapport à son type, ni l'existence réelle des dossiers et fichiers sur le disque. 
 
 ## Exemple 
 
@@ -61,12 +61,12 @@ Nous voulons dupliquer et renommer un fichier dans son dossier actuel :
 
 ## Voir aussi 
 
-[Convert path POSIX to system](convert-path-posix-to-system.md)  
-[Convert path system to POSIX](convert-path-system-to-posix.md)  
-[File](../commands/file.md)    
-[Folder](../commands/folder.md)    
-[Path to object](path-to-object.md)  
-[Test path name](test-path-name.md)  
+[Convert path POSIX to system](convert-path-posix-to-system)  
+[Convert path system to POSIX](convert-path-system-to-posix)  
+[File](../commands/file)    
+[Folder](../commands/folder)    
+[Path to object](path-to-object)  
+[Test path name](test-path-name)  
 
 ## Propriétés
 

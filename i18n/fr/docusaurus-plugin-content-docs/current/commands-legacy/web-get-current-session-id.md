@@ -34,7 +34,7 @@ Si cette commande est appelée hors du contexte d’une session Web, elle retour
 ## Voir aussi 
 
 *Gestion des sessions Web*  
-[WEB LEGACY GET SESSION EXPIRATION](web-legacy-get-session-expiration.md)  
+[WEB LEGACY GET SESSION EXPIRATION](web-legacy-get-session-expiration)  
 
 ## Propriétés
 

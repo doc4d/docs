@@ -80,7 +80,7 @@ El siguiente ejemplo copia los recursos imagen presentes en todos los archivos d
 
 ## Ver también 
 
-[RESOURCE TYPE LIST](resource-type-list.md)  
+[RESOURCE TYPE LIST](resource-type-list)  
 
 ## Propiedades
 

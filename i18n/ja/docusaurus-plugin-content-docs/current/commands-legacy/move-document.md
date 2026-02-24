@@ -60,7 +60,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[COPY DOCUMENT](copy-document.md)  
+[COPY DOCUMENT](copy-document)  
 
 ## プロパティ
 

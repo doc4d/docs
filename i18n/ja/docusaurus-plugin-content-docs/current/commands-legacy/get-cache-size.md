@@ -31,11 +31,11 @@ displayed_sidebar: docs
 
 ## 例題 
 
-[SET CACHE SIZE](set-cache-size.md)コマンドの例題を参照して下さい。
+[SET CACHE SIZE](set-cache-size)コマンドの例題を参照して下さい。
 
 ## 参照 
 
-[SET CACHE SIZE](set-cache-size.md)  
+[SET CACHE SIZE](set-cache-size)  
 
 ## プロパティ
 

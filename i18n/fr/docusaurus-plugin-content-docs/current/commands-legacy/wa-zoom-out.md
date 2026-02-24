@@ -37,7 +37,7 @@ Sous Windows, la portée de cette commande est globale : le paramétrage est con
 
 ## Voir aussi 
 
-[WA ZOOM IN](wa-zoom-in.md)  
+[WA ZOOM IN](wa-zoom-in)  
 
 ## Propriétés
 

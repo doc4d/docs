@@ -82,8 +82,8 @@ Cet exemple définit deux paramètres :
 
 ## Voir aussi 
 
-[WEB SERVICE CALL](web-service-call.md)  
-[WEB SERVICE GET RESULT](web-service-get-result.md)  
+[WEB SERVICE CALL](web-service-call)  
+[WEB SERVICE GET RESULT](web-service-get-result)  
 
 ## Propriétés
 

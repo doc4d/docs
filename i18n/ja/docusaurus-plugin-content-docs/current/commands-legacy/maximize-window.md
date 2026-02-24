@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 このコマンドは4Dアプリケーションウィンドウのズームボックスをクリックするのと同じ効果があります。 最大化したいウィンドウにはズームボックスがある必要があります。*window* で指定したウィンドウにズームボックスがない場合、コマンドは何もしません。
 
-2回目のクリック、または [MINIMIZE WINDOW](minimize-window.md)の呼び出しは、ウィンドウを最初のサイズへと縮小します。Windowsでは、 [MINIMIZE WINDOW](minimize-window.md) コマンドを引数なしで呼び出した場合、全てのアプリケーションウィンドウを最初のサイズへと縮小します。
+2回目のクリック、または [MINIMIZE WINDOW](minimize-window)の呼び出しは、ウィンドウを最初のサイズへと縮小します。Windowsでは、 [MINIMIZE WINDOW](minimize-window) コマンドを引数なしで呼び出した場合、全てのアプリケーションウィンドウを最初のサイズへと縮小します。
 
 *window* で指定されたウィンドウがすでに最大化されている場合、このコマンドは何もしません。
 
@@ -94,9 +94,9 @@ Mac OSのズームボックス
 
 ## 参照 
 
-[Is window maximized](is-window-maximized.md)  
-[MINIMIZE WINDOW](minimize-window.md)  
-[REDUCE RESTORE WINDOW](reduce-restore-window.md)  
+[Is window maximized](is-window-maximized)  
+[MINIMIZE WINDOW](minimize-window)  
+[REDUCE RESTORE WINDOW](reduce-restore-window)  
 
 ## プロパティ
 

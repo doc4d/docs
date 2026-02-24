@@ -43,7 +43,7 @@ If *aliasPath* does specify an alias/shortcut, the OK system variable is set to 
 
 ## See also 
 
-[CREATE ALIAS](create-alias.md)  
+[CREATE ALIAS](create-alias)  
 
 ## Properties
 

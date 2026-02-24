@@ -49,7 +49,7 @@ A seguinte instrução insere (ou cria) uma primeira coluna na área MinhaArea, 
 
 ## Ver também 
 
-[QR DELETE COLUMN](qr-delete-column.md)  
+[QR DELETE COLUMN](qr-delete-column)  
 
 ## Propriedades
 

@@ -149,9 +149,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[RECEIVE VARIABLE](receive-variable.md)  
-[SEND RECORD](send-record.md)  
-[SEND VARIABLE](send-variable.md)  
+[RECEIVE VARIABLE](receive-variable)  
+[SEND RECORD](send-record)  
+[SEND VARIABLE](send-variable)  
 
 ## プロパティ
 

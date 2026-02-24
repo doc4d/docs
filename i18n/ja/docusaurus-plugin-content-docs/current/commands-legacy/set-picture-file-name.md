@@ -34,8 +34,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Get picture file name](get-picture-file-name.md)  
-[WRITE PICTURE FILE](write-picture-file.md)  
+[Get picture file name](get-picture-file-name)  
+[WRITE PICTURE FILE](write-picture-file)  
 
 ## プロパティ
 

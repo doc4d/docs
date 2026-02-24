@@ -38,9 +38,9 @@ La commande permet de basculer l'état de la fenêtre :
 
 ## Voir aussi 
 
-[Is window reduced](is-window-reduced.md)  
-[MAXIMIZE WINDOW](maximize-window.md)  
-[MINIMIZE WINDOW](minimize-window.md)  
+[Is window reduced](is-window-reduced)  
+[MAXIMIZE WINDOW](maximize-window)  
+[MINIMIZE WINDOW](minimize-window)  
 
 ## Propriétés
 

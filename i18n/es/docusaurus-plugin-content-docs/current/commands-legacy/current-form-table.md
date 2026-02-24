@@ -72,10 +72,10 @@ Para esto, utilice el método de objeto para crear la variable *vsCurrentRecord*
 
 ## Ver también 
 
-[DIALOG](../commands/dialog.md)  
-[FORM SET INPUT](form-set-input.md)  
-[FORM SET OUTPUT](form-set-output.md)  
-[PRINT SELECTION](print-selection.md)  
+[DIALOG](../commands/dialog)  
+[FORM SET INPUT](form-set-input)  
+[FORM SET OUTPUT](form-set-output)  
+[PRINT SELECTION](print-selection)  
 
 ## Propiedades
 

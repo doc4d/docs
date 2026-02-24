@@ -51,7 +51,7 @@ O parâmetro opcional *subformFixo* lhe permite configurar uma opção adicional
 
 ## Ver também 
 
-[OBJECT GET PRINT VARIABLE FRAME](object-get-print-variable-frame.md)  
+[OBJECT GET PRINT VARIABLE FRAME](object-get-print-variable-frame)  
 
 ## Propriedades
 

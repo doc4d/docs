@@ -30,7 +30,7 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.GET GROUP PROPERTIES.Summary-->GET GROUP PROPERTIES returns the properties of the group whose unique group ID number you pass in *groupID*.<!-- END REF--> You must pass a valid group ID number returned by the command [GET GROUP LIST](get-group-list.md). 
+<!--REF #_command_.GET GROUP PROPERTIES.Summary-->GET GROUP PROPERTIES returns the properties of the group whose unique group ID number you pass in *groupID*.<!-- END REF--> You must pass a valid group ID number returned by the command [GET GROUP LIST](get-group-list). 
 
 If you do not pass a valid group ID number, GET GROUP PROPERTIES returns empty parameters.
 
@@ -48,9 +48,9 @@ If you do not have the proper access privileges for calling GET GROUP PROPERTIES
 
 ## See also 
 
-[GET GROUP LIST](get-group-list.md)  
-[GET USER LIST](get-user-list.md)  
-[Set group properties](set-group-properties.md)  
+[GET GROUP LIST](get-group-list)  
+[GET USER LIST](get-user-list)  
+[Set group properties](set-group-properties)  
 
 ## Properties
 

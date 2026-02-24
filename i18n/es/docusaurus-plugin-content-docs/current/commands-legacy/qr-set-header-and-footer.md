@@ -66,7 +66,7 @@ La siguiente instrucción coloca el título “Título del centro” en el encab
 
 ## Ver también 
 
-[QR GET HEADER AND FOOTER](qr-get-header-and-footer.md)  
+[QR GET HEADER AND FOOTER](qr-get-header-and-footer)  
 
 ## Propiedades
 

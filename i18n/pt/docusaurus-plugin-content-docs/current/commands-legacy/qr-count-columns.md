@@ -43,8 +43,8 @@ O código a seguir permite adicionar uma coluna adicional à direita da última 
 
 ## Ver também 
 
-[QR DELETE COLUMN](qr-delete-column.md)  
-[QR INSERT COLUMN](qr-insert-column.md)  
+[QR DELETE COLUMN](qr-delete-column)  
+[QR INSERT COLUMN](qr-insert-column)  
 
 ## Propriedades
 

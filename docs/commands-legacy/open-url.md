@@ -94,7 +94,7 @@ The *appName* parameter lets you open the same text file using different applica
 
 ## See also 
 
-[LAUNCH EXTERNAL PROCESS](launch-external-process.md)  
+[LAUNCH EXTERNAL PROCESS](launch-external-process)  
 
 ## Properties
 

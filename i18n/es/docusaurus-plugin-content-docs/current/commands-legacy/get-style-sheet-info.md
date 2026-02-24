@@ -75,8 +75,8 @@ Si quiere conocer la configuración actual de la hoja de estilo "Automatic"
 
 ## Ver también 
 
-[LIST OF STYLE SHEETS](list-of-style-sheets.md)  
-[OBJECT SET STYLE SHEET](object-set-style-sheet.md)  
+[LIST OF STYLE SHEETS](list-of-style-sheets)  
+[OBJECT SET STYLE SHEET](object-set-style-sheet)  
 
 ## Propiedades
 

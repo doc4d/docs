@@ -70,7 +70,7 @@ La fonction JavaScript "getCustomerInfos" reçoit un identifiant numérique en p
 
 ## Voir aussi 
 
-[WA Evaluate JavaScript](wa-evaluate-javascript.md)  
+[WA Evaluate JavaScript](wa-evaluate-javascript)  
 
 ## Propriétés
 

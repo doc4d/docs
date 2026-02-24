@@ -42,9 +42,9 @@ If the text is correctly extracted, OK is set to 1; otherwise OK is set to 0.
 
 ## See also 
 
-[GET PASTEBOARD DATA](get-pasteboard-data.md)  
-[GET PICTURE FROM PASTEBOARD](get-picture-from-pasteboard.md)  
-[Pasteboard data size](pasteboard-data-size.md)  
+[GET PASTEBOARD DATA](get-pasteboard-data)  
+[GET PICTURE FROM PASTEBOARD](get-picture-from-pasteboard)  
+[Pasteboard data size](pasteboard-data-size)  
 
 ## Properties
 

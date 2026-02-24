@@ -65,8 +65,8 @@ Desea saber si la acción copiar está disponible (es decir, si se han seleccion
 
 ## Ver también 
 
-[INVOKE ACTION](invoke-action.md)  
-[SET LIST ITEM PARAMETER](set-list-item-parameter.md)  
+[INVOKE ACTION](invoke-action)  
+[SET LIST ITEM PARAMETER](set-list-item-parameter)  
 
 ## Propiedades
 

@@ -115,7 +115,7 @@ Vous pouvez alors évaluer le code JavaScript depuis 4D :
 
 ## Voir aussi 
 
-[WA EXECUTE JAVASCRIPT FUNCTION](wa-execute-javascript-function.md)  
+[WA EXECUTE JAVASCRIPT FUNCTION](wa-execute-javascript-function)  
 
 ## Propriétés
 

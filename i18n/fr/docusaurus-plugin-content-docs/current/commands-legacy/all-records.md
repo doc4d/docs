@@ -30,12 +30,12 @@ L'exemple suivant affiche tous les enregistrements de la table \[Personnes\] :
 
 ## Voir aussi 
 
-[DISPLAY SELECTION](display-selection.md)  
-[MODIFY SELECTION](modify-selection.md)  
-[ORDER BY](order-by.md)  
-[QUERY](query.md)  
-[Records in selection](records-in-selection.md)  
-[Records in table](records-in-table.md)  
+[DISPLAY SELECTION](display-selection)  
+[MODIFY SELECTION](modify-selection)  
+[ORDER BY](order-by)  
+[QUERY](query)  
+[Records in selection](records-in-selection)  
+[Records in table](records-in-table)  
 
 ## Propriétés
 

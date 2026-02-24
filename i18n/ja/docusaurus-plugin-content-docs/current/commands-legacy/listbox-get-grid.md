@@ -38,7 +38,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX SET GRID](listbox-set-grid.md)  
+[LISTBOX SET GRID](listbox-set-grid)  
 
 ## プロパティ
 

@@ -177,7 +177,7 @@ We want to copy *$sharedObj* in *$sharedColl* but since they belong to different
 
 ## See also 
 
-[OB Get](ob-get.md)  
+[OB Get](ob-get)  
 *Shared objects and shared collections*  
 
 ## Properties

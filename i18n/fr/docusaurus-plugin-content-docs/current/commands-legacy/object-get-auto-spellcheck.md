@@ -33,7 +33,7 @@ displayed_sidebar: docs
 
 Este comando admite objetos de tipo:
 
-- [input](../FormObjects/input_overview.md) de tipo texto solamente,
+- [input](../FormObjects/input_overview) de tipo texto solamente,
 - 4D Write Pro area](../FormObjects/writeProArea_overview.md).
 
 Si vous passez le paramètre optionnel *\**, vous indiquez que le paramètre *objet* est un nom d’objet (une chaîne). Si vous ne passez pas ce paramètre, vous indiquez que le paramètre *objet* est une variable ou un champ. Dans ce cas, vous ne passez pas une nom mais une référence.
@@ -42,7 +42,7 @@ La commande retourne **Vrai** si la correction automatique est activée pour l�
 
 ## Voir aussi 
 
-[OBJECT SET AUTO SPELLCHECK](object-set-auto-spellcheck.md)  
+[OBJECT SET AUTO SPELLCHECK](object-set-auto-spellcheck)  
 
 ## Propriétés
 

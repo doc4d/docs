@@ -33,7 +33,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.SELECTION RANGE TO ARRAY.Summary-->**SELECTION RANGE TO ARRAY** creates one or more arrays and copies data from the fields or record numbers from the current selection into the arrays.<!-- END REF--> 
 
-Unlike [SELECTION TO ARRAY](selection-to-array.md), which applies to the current selection in its entirety, **SELECTION RANGE TO ARRAY** only applies to the range of selected records specified by the parameters *start* and *end*.
+Unlike [SELECTION TO ARRAY](selection-to-array), which applies to the current selection in its entirety, **SELECTION RANGE TO ARRAY** only applies to the range of selected records specified by the parameters *start* and *end*.
 
 The command expects you to pass in *start* and *end* the selected record numbers complying with the formula *1 <= start <= end <= Records in selection (\[...\])*. 
 
@@ -45,13 +45,13 @@ If you pass incorrect selected record numbers, the command does the following:
 * If *start > end*, it returns values from the record whose selected record is *start* only.
 * If both parameters are inconsistent with the size of the selection, it returns empty arrays.
 
-Like [SELECTION TO ARRAY](selection-to-array.md), the **SELECTION RANGE TO ARRAY** command applies to the selection for the table specified in the first parameter.
+Like [SELECTION TO ARRAY](selection-to-array), the **SELECTION RANGE TO ARRAY** command applies to the selection for the table specified in the first parameter.
 
-Also like [SELECTION TO ARRAY](selection-to-array.md), **SELECTION RANGE TO ARRAY** can perform the following:
+Also like [SELECTION TO ARRAY](selection-to-array), **SELECTION RANGE TO ARRAY** can perform the following:
 
 * Load values from one or several fields.
 * Load Record numbers using the syntax *...;\[table\];Array;...*
-* Load values from related fields, if there is a Many to One automatic relation between the tables or if you have previously called [SET AUTOMATIC RELATIONS](set-automatic-relations.md) to change manual Many to One relations to automatic. In both cases, values can be loaded from tables through several levels of Many to One relations.
+* Load values from related fields, if there is a Many to One automatic relation between the tables or if you have previously called [SET AUTOMATIC RELATIONS](set-automatic-relations) to change manual Many to One relations to automatic. In both cases, values can be loaded from tables through several levels of Many to One relations.
 
 Each array is typed according to the field type. 
 
@@ -64,7 +64,7 @@ When you apply **SELECTION RANGE TO ARRAY** to a Time type field, it is importan
 
 If you load record numbers, they are copied into a Long Integer array.
 
-**Note:** You can call the **SELECTION RANGE TO ARRAY** command with just the *start* and *end* parameters. You use this special syntax to launch, on a limited selection, the execution of a deferred series of [SELECTION TO ARRAY](selection-to-array.md) commands using the *\** parameter (see example 4). 
+**Note:** You can call the **SELECTION RANGE TO ARRAY** command with just the *start* and *end* parameters. You use this special syntax to launch, on a limited selection, the execution of a deferred series of [SELECTION TO ARRAY](selection-to-array) commands using the *\** parameter (see example 4). 
 
 **4D Server**: **SELECTION RANGE TO ARRAY** is optimized for 4D Server. Each array is created on the server and then sent, in its entirety, to the client machine.
 
@@ -119,8 +119,8 @@ Use the first 50 current records of the \[Invoices\] table to load various array
 ## See also 
 
 [ON ERR CALL](on-err-call.md)  
-[SELECTION TO ARRAY](selection-to-array.md)  
-[SET AUTOMATIC RELATIONS](set-automatic-relations.md)  
+[SELECTION TO ARRAY](selection-to-array)  
+[SET AUTOMATIC RELATIONS](set-automatic-relations)  
 
 ## Properties
 

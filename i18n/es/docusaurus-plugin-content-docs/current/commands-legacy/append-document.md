@@ -49,8 +49,8 @@ El siguiente ejemplo abre un documento existente llamado Nota, añade la cadena 
 
 ## Ver también 
 
-[Create document](create-document.md)  
-[Open document](open-document.md)  
+[Create document](create-document)  
+[Open document](open-document)  
 
 ## Propiedades
 

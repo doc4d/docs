@@ -64,8 +64,8 @@ Usando um objeto com um map hash (sistema key/value) oferece um acesso rápido e
 
 ## Ver também 
 
-[OB Keys](ob-keys.md)  
-[OB Values](ob-values.md)  
+[OB Keys](ob-keys)  
+[OB Values](ob-values)  
 
 ## Propriedades
 

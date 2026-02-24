@@ -46,8 +46,8 @@ Ver el ejemplo del comando [WINDOW LIST](window-list.md "WINDOW LIST").
 
 ## Ver también 
 
-[CONVERT COORDINATES](convert-coordinates.md)  
-[SET WINDOW RECT](set-window-rect.md)  
+[CONVERT COORDINATES](convert-coordinates)  
+[SET WINDOW RECT](set-window-rect)  
 
 ## Propiedades
 

@@ -62,8 +62,8 @@ Si se pasa en tag un carácter inválido, se genera un error.
 
 ## Ver también 
 
-[SAX CLOSE XML ELEMENT](sax-close-xml-element.md)  
-[SAX OPEN XML ELEMENT ARRAYS](sax-open-xml-element-arrays.md)  
+[SAX CLOSE XML ELEMENT](sax-close-xml-element)  
+[SAX OPEN XML ELEMENT ARRAYS](sax-open-xml-element-arrays)  
 
 ## Propiedades
 

@@ -77,9 +77,9 @@ A seguinte instrução move o botão “botão\_1” as seguintes coordenadas (1
 
 ## Ver também 
 
-[OBJECT DUPLICATE](object-duplicate.md)  
-[OBJECT GET COORDINATES](object-get-coordinates.md)  
-[OBJECT SET COORDINATES](object-set-coordinates.md)  
+[OBJECT DUPLICATE](object-duplicate)  
+[OBJECT GET COORDINATES](object-get-coordinates)  
+[OBJECT SET COORDINATES](object-set-coordinates)  
 
 ## Propriedades
 

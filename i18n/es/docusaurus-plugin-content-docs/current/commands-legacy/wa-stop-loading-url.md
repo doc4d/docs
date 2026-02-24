@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 ## Ver también 
 
-[WA REFRESH CURRENT URL](wa-refresh-current-url.md)  
+[WA REFRESH CURRENT URL](wa-refresh-current-url)  
 
 ## Propiedades
 

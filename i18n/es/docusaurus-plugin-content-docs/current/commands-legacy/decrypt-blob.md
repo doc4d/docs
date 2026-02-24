@@ -44,8 +44,8 @@ Consulte los ejemplos dados por el comando [ENCRYPT BLOB](encrypt-blob.md "ENCRY
 
 ## Ver también 
 
-[ENCRYPT BLOB](encrypt-blob.md)  
-[GENERATE ENCRYPTION KEYPAIR](generate-encryption-keypair.md)  
+[ENCRYPT BLOB](encrypt-blob)  
+[GENERATE ENCRYPTION KEYPAIR](generate-encryption-keypair)  
 
 ## Propiedades
 

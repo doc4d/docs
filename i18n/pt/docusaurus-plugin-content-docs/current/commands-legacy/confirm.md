@@ -103,8 +103,8 @@ Mostrará a seguinte caixa de diálogo de confirmação (em Macintosh):
 
 ## Ver também 
 
-[ALERT](alert.md)  
-[Request](request.md)  
+[ALERT](alert)  
+[Request](request)  
 
 ## Propriedades
 

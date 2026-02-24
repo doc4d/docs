@@ -33,9 +33,9 @@ Si ninguna línea de menú ha sido seleccionada, el comando devuelve una cadena 
 
 ## Ver también 
 
-[Dynamic pop up menu](dynamic-pop-up-menu.md)  
-[Get menu item parameter](get-menu-item-parameter.md)  
-[SET MENU ITEM PARAMETER](set-menu-item-parameter.md)  
+[Dynamic pop up menu](dynamic-pop-up-menu)  
+[Get menu item parameter](get-menu-item-parameter)  
+[SET MENU ITEM PARAMETER](set-menu-item-parameter)  
 
 ## Propiedades
 

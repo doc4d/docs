@@ -53,8 +53,8 @@ O código a seguir apaga o elemento selecionado da lista *hList*. Se o elemento 
 
 ## Ver também 
 
-[CLEAR LIST](clear-list.md)  
-[GET LIST ITEM](get-list-item.md)  
+[CLEAR LIST](clear-list)  
+[GET LIST ITEM](get-list-item)  
 
 ## Propriedades
 

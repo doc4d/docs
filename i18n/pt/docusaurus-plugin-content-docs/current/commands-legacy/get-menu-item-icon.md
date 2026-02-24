@@ -45,7 +45,7 @@ Se nenhum ícone está associado a linha de menu, o comando devolve uma imagem v
 
 ## Ver também 
 
-[SET MENU ITEM ICON](set-menu-item-icon.md)  
+[SET MENU ITEM ICON](set-menu-item-icon)  
 
 ## Propriedades
 

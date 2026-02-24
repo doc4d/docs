@@ -19,7 +19,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.CLOSE DOCUMENT.Summary-->**CLOSE DOCUMENT** closes the document specified by *docRef*.<!-- END REF-->
 
-Closing a document is the only way to ensure that the data written to a file is saved. You must close all the documents you open with the commands [Open document](open-document.md), [Create document](create-document.md) or [Append document](append-document.md).
+Closing a document is the only way to ensure that the data written to a file is saved. You must close all the documents you open with the commands [Open document](open-document), [Create document](create-document) or [Append document](append-document).
 
 ## Example 
 
@@ -36,9 +36,9 @@ The following example lets the user create a new document, writes the string “
 
 ## See also 
 
-[Append document](append-document.md)  
-[Create document](create-document.md)  
-[Open document](open-document.md)  
+[Append document](append-document)  
+[Create document](create-document)  
+[Open document](open-document)  
 
 ## Properties
 

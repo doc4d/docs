@@ -114,8 +114,8 @@ En caso de error, no cambia la variable. Cuando ocurre un error en una variable 
 
 #### Ver también 
 
-[FONT LIST](font-list.md)  
-[ST GET ATTRIBUTES](st-get-attributes.md)  
+[FONT LIST](font-list)  
+[ST GET ATTRIBUTES](st-get-attributes)  
 
 #### Propiedades
 

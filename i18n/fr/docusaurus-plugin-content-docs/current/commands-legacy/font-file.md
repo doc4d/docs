@@ -60,7 +60,7 @@ Vous souhaitez vérifier que la police utilisée dans une zone de texte est int�
 
 ## Voir aussi 
 
-[OBJECT SET FONT](object-set-font.md)  
+[OBJECT SET FONT](object-set-font)  
 
 ## Propriétés
 

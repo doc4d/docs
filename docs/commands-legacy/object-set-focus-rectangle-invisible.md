@@ -48,7 +48,7 @@ Pass **True** in the *invisible* parameter to hide the focus rectangle and **Fal
 
 ## See also 
 
-[OBJECT Get focus rectangle invisible](object-get-focus-rectangle-invisible.md)  
+[OBJECT Get focus rectangle invisible](object-get-focus-rectangle-invisible)  
 
 ## Properties
 

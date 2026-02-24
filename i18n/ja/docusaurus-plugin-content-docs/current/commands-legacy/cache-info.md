@@ -64,7 +64,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[MEMORY STATISTICS](memory-statistics.md)  
+[MEMORY STATISTICS](memory-statistics)  
 
 ## プロパティ
 

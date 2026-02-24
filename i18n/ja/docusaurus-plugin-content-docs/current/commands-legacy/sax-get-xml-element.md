@@ -72,7 +72,7 @@ tAttrValues{3} には "333"が返されます。
 
 ## 参照 
 
-[SAX Get XML node](sax-get-xml-node.md)  
+[SAX Get XML node](sax-get-xml-node)  
 
 ## プロパティ
 

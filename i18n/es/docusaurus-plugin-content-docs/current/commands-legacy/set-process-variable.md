@@ -104,10 +104,10 @@ Este ejemplo escribe la instancia de las variables *v1*, *v2* y *v3* utilizando 
 
 ## Ver también 
 
-[GET PROCESS VARIABLE](get-process-variable.md)  
-[POST OUTSIDE CALL](post-outside-call.md)  
+[GET PROCESS VARIABLE](get-process-variable)  
+[POST OUTSIDE CALL](post-outside-call)  
 *Procesos*  
-[VARIABLE TO VARIABLE](variable-to-variable.md)  
+[VARIABLE TO VARIABLE](variable-to-variable)  
 
 ## Propiedades
 

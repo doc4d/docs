@@ -24,7 +24,7 @@ displayed_sidebar: docs
 
 **4D Server:** このコマンドは、On Validateフォームイベントにおいては、4Dローカルモードと4Dリモートモードで異なる値を返します。ローカルモードではレコード番号 (レコードは既に作成されていると扱われるため) を返します。リモートモードでは-3を返します。なぜならば、レコードは4D Server上に作成されていますが、クライアントにこの情報はまだ通知されていないためです。
 
-**注:** レコードが作成中であるかをテストする目的では、[Is new record](is-new-record.md)コマンドの利用をお勧めします。
+**注:** レコードが作成中であるかをテストする目的では、[Is new record](is-new-record)コマンドの利用をお勧めします。
 
 ## 例題 
 
@@ -40,10 +40,10 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GOTO RECORD](goto-record.md)  
-[Is new record](is-new-record.md)  
-[Selected record number](selected-record-number.md)  
-[Sequence number](sequence-number.md)  
+[GOTO RECORD](goto-record)  
+[Is new record](is-new-record)  
+[Selected record number](selected-record-number)  
+[Sequence number](sequence-number)  
 *レコード番号について*  
 
 ## プロパティ

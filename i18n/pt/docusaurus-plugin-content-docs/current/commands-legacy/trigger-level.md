@@ -33,8 +33,8 @@ Para maior informação sobre níveis de execução, consulte o tema triggers em
 
 ## Ver também 
 
-[Trigger event](trigger-event.md)  
-[TRIGGER PROPERTIES](trigger-properties.md)  
+[Trigger event](trigger-event)  
+[TRIGGER PROPERTIES](trigger-properties)  
 *Triggers*  
 
 ## Propriedades

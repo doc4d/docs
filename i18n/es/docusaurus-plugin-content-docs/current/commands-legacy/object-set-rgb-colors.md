@@ -117,8 +117,8 @@ Cambia a fondo transparente con un color de fuente claro:
 
 ## Ver también 
 
-[OBJECT GET RGB COLORS](object-get-rgb-colors.md)  
-[Select RGB color](select-rgb-color.md)  
+[OBJECT GET RGB COLORS](object-get-rgb-colors)  
+[Select RGB color](select-rgb-color)  
 
 ## Propiedades
 

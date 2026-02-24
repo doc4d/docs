@@ -40,7 +40,7 @@ The command returns the name of the 4D method as a character string (expression)
 
 ## See also 
 
-[SET MENU ITEM METHOD](set-menu-item-method.md)  
+[SET MENU ITEM METHOD](set-menu-item-method)  
 
 ## Properties
 

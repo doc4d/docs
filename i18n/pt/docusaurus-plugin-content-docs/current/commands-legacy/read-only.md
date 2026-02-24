@@ -25,8 +25,8 @@ Utilize READ ONLY quando não necessite modificar os registros.
 
 ## Ver também 
 
-[Read only state](read-only-state.md)  
-[READ WRITE](read-write.md)  
+[Read only state](read-only-state)  
+[READ WRITE](read-write)  
 *Record Locking*  
 
 ## Propriedades

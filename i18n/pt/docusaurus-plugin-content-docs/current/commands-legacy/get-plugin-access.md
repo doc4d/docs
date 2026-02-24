@@ -43,8 +43,8 @@ Passe no parâmetro *plugIn* o número do plug-in do que deseja conhecer o grupo
 
 ## Ver também 
 
-[SET GROUP ACCESS](set-group-access.md)  
-[SET PLUGIN ACCESS](set-plugin-access.md)  
+[SET GROUP ACCESS](set-group-access)  
+[SET PLUGIN ACCESS](set-plugin-access)  
 
 ## Propriedades
 

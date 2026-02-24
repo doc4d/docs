@@ -28,7 +28,7 @@ displayed_sidebar: docs
 
 ## Descripción 
 
-<!--REF #_command_.MESSAGE.Summary-->El comando MESSAGE generalmente se utiliza para informar al usuario sobre alguna actividad.<!-- END REF--> Muestra *mensaje* en la pantalla en una ventana de mensaje especial que se abre y cierra cada vez que usted llama a MESSAGE, a menos que usted trabaje con una ventana que abrió previamente utilizando [Open window](../commands/open-window.md) (ver los siguientes detalles). El mensaje es temporal y se borra tan pronto como se muestre un formulario o se detenga la ejecución del método. Si se ejecuta otro comando MESSAGE, el mensaje anterior se borra.
+<!--REF #_command_.MESSAGE.Summary-->El comando MESSAGE generalmente se utiliza para informar al usuario sobre alguna actividad.<!-- END REF--> Muestra *mensaje* en la pantalla en una ventana de mensaje especial que se abre y cierra cada vez que usted llama a MESSAGE, a menos que usted trabaje con una ventana que abrió previamente utilizando [Open window](../commands/open-window) (ver los siguientes detalles). El mensaje es temporal y se borra tan pronto como se muestre un formulario o se detenga la ejecución del método. Si se ejecuta otro comando MESSAGE, el mensaje anterior se borra.
 
 Si se abre una ventana con [Open window](../commands/open-window.md "Open window"), todas las llamadas posteriores al comando MESSAGE muestran los mensajes en esa ventana. La ventana se comporta como un terminal:
 
@@ -36,12 +36,12 @@ Si se abre una ventana con [Open window](../commands/open-window.md "Open window
 * Si un mensaje es más largo que la ventana, 4D inserta automáticamente un retorno a la línea.
 * Si un mensaje tiene más líneas que la ventana, 4D automáticamente desplaza el mensaje en la ventana.
 * Para controlar los saltos de línea automáticos, incluya retornos de carro, — **Char(13)** —, en su mensaje.
-* Para mostrar el texto en un lugar en particular de la ventana, llame [GOTO XY](goto-xy.md)..
-* Para borrar los contenidos de la ventana, llame [ERASE WINDOW](erase-window.md)..
+* Para mostrar el texto en un lugar en particular de la ventana, llame [GOTO XY](goto-xy)..
+* Para borrar los contenidos de la ventana, llame [ERASE WINDOW](erase-window)..
 * La ventana es sólo una ventana de salida y su contenido no puede ser rediseñado cuando otras ventanas se colocan sobre ella.
 * Puede modificar la fuente y el tamaño de los caracteres mostrados en la ventana a través de la página "Interfaz" en las Propiedades de la base.
 
-**Nota:** **MESSAGE** es compatible con el comando [Open form window](../commands/open-form-window.md); sin embargo, en este contexto, el segundo parámetro *\** de [Open form window](../commands/open-form-window.md), que guarda el tamaño y la posición de la ventana, no es compatible.
+**Nota:** **MESSAGE** es compatible con el comando [Open form window](../commands/open-form-window); sin embargo, en este contexto, el segundo parámetro *\** de [Open form window](../commands/open-form-window), que guarda el tamaño y la posición de la ventana, no es compatible.
 
 ## Ejemplo 1 
 
@@ -121,10 +121,10 @@ El resultado es el siguiente (en Windows):
 
 ## Ver también 
 
-[CLOSE WINDOW](close-window.md)  
-[ERASE WINDOW](erase-window.md)  
-[GOTO XY](goto-xy.md)  
-[Open window](../commands/open-window.md)  
+[CLOSE WINDOW](close-window)  
+[ERASE WINDOW](erase-window)  
+[GOTO XY](goto-xy)  
+[Open window](../commands/open-window)  
 
 ## Propiedades
 

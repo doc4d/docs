@@ -108,8 +108,8 @@ Using an object array element:
 
 ## See also 
 
-[OB Get type](ob-get-type.md)  
-[OB SET NULL](ob-set-null.md)  
+[OB Get type](ob-get-type)  
+[OB SET NULL](ob-set-null)  
 
 ## Properties
 

@@ -45,7 +45,7 @@ If you pass an invalid *property* value, the error -9852 will be generated.
 
 ## See also 
 
-[QR SET DOCUMENT PROPERTY](qr-set-document-property.md)  
+[QR SET DOCUMENT PROPERTY](qr-set-document-property)  
 
 ## Properties
 

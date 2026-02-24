@@ -28,9 +28,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[CLEAR NAMED SELECTION](clear-named-selection.md)  
-[COPY NAMED SELECTION](copy-named-selection.md)  
-[CUT NAMED SELECTION](cut-named-selection.md)  
+[CLEAR NAMED SELECTION](clear-named-selection)  
+[COPY NAMED SELECTION](copy-named-selection)  
+[CUT NAMED SELECTION](cut-named-selection)  
 
 ## プロパティ
 

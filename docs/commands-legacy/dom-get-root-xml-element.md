@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 ## See also 
 
-[DOM Get parent XML element](dom-get-parent-xml-element.md)  
+[DOM Get parent XML element](dom-get-parent-xml-element)  
 
 ## Properties
 

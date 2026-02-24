@@ -168,7 +168,7 @@ Se o comando for executado corretamente, a variável sistema OK retorna 1, do co
 
 ## Ver também 
 
-[SQL LOAD RECORD](sql-load-record.md)  
+[SQL LOAD RECORD](sql-load-record)  
 
 ## Propriedades
 

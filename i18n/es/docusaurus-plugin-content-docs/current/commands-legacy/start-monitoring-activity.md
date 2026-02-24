@@ -28,7 +28,7 @@ displayed_sidebar: docs
 
 ## Descripción 
 
-<!--REF #_command_.START MONITORING ACTIVITY.Summary-->El comando **START MONITORING ACTIVITY** registra las operaciones que excedan una *duracion* especificada en la memoria.<!-- END REF--> Se puede invocar y ejecutar en un 4D remoto, 4D Server y en aplicaciones 4D autonomas (si *fuente* no proviene de una actividad de red). Las actividades registradas se puede recuperar utilizando el comando [Monitored activity](monitored-activity.md). Llame a [STOP MONITORING ACTIVITY](stop-monitoring-activity.md) cuando desee detener la actividad de seguimiento.
+<!--REF #_command_.START MONITORING ACTIVITY.Summary-->El comando **START MONITORING ACTIVITY** registra las operaciones que excedan una *duracion* especificada en la memoria.<!-- END REF--> Se puede invocar y ejecutar en un 4D remoto, 4D Server y en aplicaciones 4D autonomas (si *fuente* no proviene de una actividad de red). Las actividades registradas se puede recuperar utilizando el comando [Monitored activity](monitored-activity). Llame a [STOP MONITORING ACTIVITY](stop-monitoring-activity) cuando desee detener la actividad de seguimiento.
 
 En el parámetro *duracion*, pase un número que defina un período de tiempo antes de que comience el inicio de sesión (en segundos, puede expresarse como un decimal) para la ejecución de una operación. Una vez que la ejecución de una operación excede la *duracion*, la operación se grabará en la memoria.
 
@@ -41,7 +41,7 @@ El parámetro opcional *fuente* define el tipo de actividad a monitorear. Valore
 | Activity network    | 2     | Operaciones de peticiones de red                      |
 | Activity operations | 4     | Operaciones de datos 4D                               |
 
-**Nota**: si los historiales de depuración se han detenido en el servidor 4D [Administration window](../ServerWindow/overview.md), **START MONITORING ACTIVITY** con Activity network reiniciará los historiales.
+**Nota**: si los historiales de depuración se han detenido en el servidor 4D [Administration window](../ServerWindow/overview), **START MONITORING ACTIVITY** con Activity network reiniciará los historiales.
 
 ## Ejemplo 
 
@@ -102,8 +102,8 @@ Desea iniciar/detener la supervisión y revisión de los datos 4D y las activida
 
 ## Ver también 
 
-[Monitored activity](monitored-activity.md)  
-[STOP MONITORING ACTIVITY](stop-monitoring-activity.md)  
+[Monitored activity](monitored-activity)  
+[STOP MONITORING ACTIVITY](stop-monitoring-activity)  
 
 ## Propiedades
 

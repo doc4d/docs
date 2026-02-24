@@ -20,12 +20,12 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Is a variable.Summary-->La fonction **Is a variable** retourne Vrai si le pointeur passé dans le paramètre *pointeur* référence une variable définie.<!-- END REF--> Elle retourne Faux dans tous les autres cas (pointeur vers un champ ou table, pointeur Nil, etc.).
 
-Si vous souhaitez connaître le nom de la variable pointée ou le numéro du champ, vous pouvez utiliser la commande [RESOLVE POINTER](resolve-pointer.md).
+Si vous souhaitez connaître le nom de la variable pointée ou le numéro du champ, vous pouvez utiliser la commande [RESOLVE POINTER](resolve-pointer).
 
 ## Voir aussi 
 
-[Is nil pointer](is-nil-pointer.md)  
-[RESOLVE POINTER](resolve-pointer.md)  
+[Is nil pointer](is-nil-pointer)  
+[RESOLVE POINTER](resolve-pointer)  
 
 ## Propriétés
 

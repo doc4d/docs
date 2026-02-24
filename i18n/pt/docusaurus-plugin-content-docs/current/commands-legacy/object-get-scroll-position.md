@@ -42,7 +42,7 @@ Se *objeto* designa uma imagem (variável ou campo), *vPosição* retorna o movi
 
 ## Ver também 
 
-[OBJECT SET SCROLL POSITION ](object-set-scroll-position.md)  
+[OBJECT SET SCROLL POSITION ](object-set-scroll-position)  
 
 ## Propriedades
 

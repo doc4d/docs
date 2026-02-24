@@ -63,7 +63,7 @@ If the file to be sent exists and if the timeout has not run out, OK is set to 1
 
 ## See also 
 
-[WEB SEND BLOB](web-send-blob.md)  
+[WEB SEND BLOB](web-send-blob)  
 
 ## Properties
 

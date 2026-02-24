@@ -56,7 +56,7 @@ Puis, dans une méthode, vous pouvez saisir :
 
 ## Voir aussi 
 
-[OB Class](ob-class.md)  
+[OB Class](ob-class)  
 
 ## Propriétés
 

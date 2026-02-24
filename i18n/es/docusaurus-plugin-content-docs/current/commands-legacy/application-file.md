@@ -51,8 +51,8 @@ Al iniciar su base de datos en Windows, necesita verificar si una librería DLL 
 
 ## Ver también 
 
-[Data file](data-file.md)  
-[Structure file](structure-file.md)  
+[Data file](data-file)  
+[Structure file](structure-file)  
 
 ## Propiedades
 

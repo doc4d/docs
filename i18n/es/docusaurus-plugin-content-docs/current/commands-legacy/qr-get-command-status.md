@@ -46,8 +46,8 @@ Si el parámetro *comando* es incorrecto, se genera el error -9852.
 
 ## Ver también 
 
-[QR EXECUTE COMMAND](qr-execute-command.md)  
-[QR ON COMMAND](qr-on-command.md)  
+[QR EXECUTE COMMAND](qr-execute-command)  
+[QR ON COMMAND](qr-on-command)  
 
 ## Propiedades
 

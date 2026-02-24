@@ -27,7 +27,7 @@ displayed_sidebar: docs
 
 :::info 互換性
 
-このコマンドは互換性のためだけに維持されています。現在は [`4D.HTTPRequest クラス`](../API/HTTPRequestClass.md) を使用することが推奨されています。
+このコマンドは互換性のためだけに維持されています。現在は [`4D.HTTPRequest クラス`](../API/HTTPRequestClass) を使用することが推奨されています。
 
 :::
 
@@ -46,13 +46,13 @@ displayed_sidebar: docs
 
 自動的に作成されます。
 
-このコマンドが実行されると新しいパスはその後に実行される[HTTP Request](http-request.md) などのコマンドに対し、直ちに有効になります(アプリケーションを再起動する必要はありません)。このコマンドはデータベースの全てのプロセスで使用されます。
+このコマンドが実行されると新しいパスはその後に実行される[HTTP Request](http-request) などのコマンドに対し、直ちに有効になります(アプリケーションを再起動する必要はありません)。このコマンドはデータベースの全てのプロセスで使用されます。
 
 指定されたフォルダが定義された場所にない場合、または*certificatesFolder* に渡したパス名が有効でない場合、エラーが生成されます。このエラーは [ON ERR CALL](on-err-call.md) によって実装されたエラーハンドリングメソッドによって割り込むことができます。
 
 ## SSL 証明書について 
 
-[このページで説明されているように](../Admin/tls.md)、4D によって管理されるSSL 証明書は**PEMフォーマット**でなければなりません。証明書のプロバイダー(例えば[startssl](https://www.startssl.com/) など)が証明書を .crt、 .pfx または .p12(フォーマットはブラウザによっても異なります)などのバイナリフォーマットで送ってきた場合、それを使用するためにはPEMフォーマットへと変換する必要があります。*sslshopper* などのようにこのような変換をオンライン上で行えるWeb サイトも存在します。
+[このページで説明されているように](../Admin/tls)、4D によって管理されるSSL 証明書は**PEMフォーマット**でなければなりません。証明書のプロバイダー(例えば[startssl](https://www.startssl.com/) など)が証明書を .crt、 .pfx または .p12(フォーマットはブラウザによっても異なります)などのバイナリフォーマットで送ってきた場合、それを使用するためにはPEMフォーマットへと変換する必要があります。*sslshopper* などのようにこのような変換をオンライン上で行えるWeb サイトも存在します。
 
 ## 例題 
 
@@ -68,8 +68,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GENERATE CERTIFICATE REQUEST](generate-certificate-request.md)  
-[HTTP Get certificates folder](http-get-certificates-folder.md)  
+[GENERATE CERTIFICATE REQUEST](generate-certificate-request)  
+[HTTP Get certificates folder](http-get-certificates-folder)  
 
 ## プロパティ
 

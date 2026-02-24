@@ -53,7 +53,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT GET DRAG AND DROP OPTIONS](object-get-drag-and-drop-options.md)  
+[OBJECT GET DRAG AND DROP OPTIONS](object-get-drag-and-drop-options)  
 
 ## プロパティ
 

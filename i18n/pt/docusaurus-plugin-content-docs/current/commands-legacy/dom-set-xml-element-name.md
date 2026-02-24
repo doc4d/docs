@@ -69,7 +69,7 @@ Um erro é gerado quando:
 
 ## Ver também 
 
-[DOM GET XML ELEMENT NAME](dom-get-xml-element-name.md)  
+[DOM GET XML ELEMENT NAME](dom-get-xml-element-name)  
 
 ## Propriedades
 

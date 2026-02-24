@@ -72,8 +72,8 @@ $typeArrと$textArr配列には以下の値が含まれます:
 
 ## 参照 
 
-[DOM Append XML child node](dom-append-xml-child-node.md)  
-[DOM Get XML document ref](dom-get-xml-document-ref.md)  
+[DOM Append XML child node](dom-append-xml-child-node)  
+[DOM Get XML document ref](dom-get-xml-document-ref)  
 
 ## プロパティ
 

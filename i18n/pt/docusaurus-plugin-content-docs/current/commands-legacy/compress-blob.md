@@ -49,9 +49,9 @@ Nos demais casos (isto é, o BLOB estiver danificado), o erro -10600 é gerado. 
 
 Depois que um BLOB foi compactado, você pode expandi-lo usando o comando [ON ERR CALL](on-err-call.md).
 
-Para detectar se o BLOB foi compactado, use o comando [BLOB PROPERTIES](blob-properties.md).
+Para detectar se o BLOB foi compactado, use o comando [BLOB PROPERTIES](blob-properties).
 
-Advertência: O BLOB comprimido ainda é um BLOB, então não há nada para impedi-lo de modificar o seu conteúdo. No entanto, se você fizer isso, o comando [EXPAND BLOB](expand-blob.md) não será capaz de descompactar o BLOB corretamente.
+Advertência: O BLOB comprimido ainda é um BLOB, então não há nada para impedi-lo de modificar o seu conteúdo. No entanto, se você fizer isso, o comando [EXPAND BLOB](expand-blob) não será capaz de descompactar o BLOB corretamente.
 
 ## Exemplo 1 
 
@@ -103,8 +103,8 @@ A variável OK é definida como 1 se o BLOB foi compactado com sucesso, caso con
 
 ## Ver também 
 
-[BLOB PROPERTIES](blob-properties.md)  
-[EXPAND BLOB](expand-blob.md)  
+[BLOB PROPERTIES](blob-properties)  
+[EXPAND BLOB](expand-blob)  
 
 ## Propriedades
 

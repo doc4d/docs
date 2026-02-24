@@ -30,9 +30,9 @@ O exemplo a seguir mostra o valor de Pi:
 
 ## Ver também 
 
-[Cos](cos.md)  
-[Sin](sin.md)  
-[Tan](tan.md)  
+[Cos](cos)  
+[Sin](sin)  
+[Tan](tan)  
 
 ## Propriedades
 

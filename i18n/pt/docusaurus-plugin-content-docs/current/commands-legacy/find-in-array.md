@@ -125,11 +125,11 @@ $o1:={a10;b"xyz"}
 
 ## Ver também 
 
-[Count in array](count-in-array.md)  
-[DELETE FROM ARRAY](delete-from-array.md)  
-[Find in sorted array](find-in-sorted-array.md)  
-[INSERT IN ARRAY](insert-in-array.md)  
-[Size of array](size-of-array.md)  
+[Count in array](count-in-array)  
+[DELETE FROM ARRAY](delete-from-array)  
+[Find in sorted array](find-in-sorted-array)  
+[INSERT IN ARRAY](insert-in-array)  
+[Size of array](size-of-array)  
 
 ## Propriedades
 

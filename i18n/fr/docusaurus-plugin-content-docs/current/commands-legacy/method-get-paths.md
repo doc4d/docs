@@ -90,12 +90,12 @@ Récupération des méthodes projet modifiées depuis le dernier backup :
 
 ## Exemple 4 
 
-Reportez-vous à l'exemple de la commande [METHOD SET CODE](method-set-code.md).
+Reportez-vous à l'exemple de la commande [METHOD SET CODE](method-set-code).
 
 ## Voir aussi 
 
-[Current method path](current-method-path.md)  
-[METHOD GET FOLDERS](method-get-folders.md)  
+[Current method path](current-method-path)  
+[METHOD GET FOLDERS](method-get-folders)  
 
 ## Propriétés
 

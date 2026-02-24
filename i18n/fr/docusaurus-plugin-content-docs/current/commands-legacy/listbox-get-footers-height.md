@@ -45,7 +45,7 @@ Par défaut, si vous omettez le paramètre *unité*, la hauteur de ligne retourn
 
 ## Voir aussi 
 
-[LISTBOX SET FOOTERS HEIGHT](listbox-set-footers-height.md)  
+[LISTBOX SET FOOTERS HEIGHT](listbox-set-footers-height)  
 
 ## Propriétés
 

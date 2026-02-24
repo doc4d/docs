@@ -25,8 +25,8 @@ This command is intended to be used in an automatic update process for a merged 
 
 ## See also 
 
-[RESTART 4D](restart-4d.md)  
-[SET UPDATE FOLDER](set-update-folder.md)  
+[RESTART 4D](restart-4d)  
+[SET UPDATE FOLDER](set-update-folder)  
 
 ## Properties
 

@@ -61,8 +61,8 @@ Mac OS
 
 ## Ver también 
 
-[MAXIMIZE WINDOW](maximize-window.md)  
-[REDUCE RESTORE WINDOW](reduce-restore-window.md)  
+[MAXIMIZE WINDOW](maximize-window)  
+[REDUCE RESTORE WINDOW](reduce-restore-window)  
 
 ## Propiedades
 

@@ -28,7 +28,7 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.EXPAND BLOB.Summary-->**EXPAND BLOB** décompresse le BLOB *blob* préalablement compressé à l'aide de la commande [COMPRESS BLOB](compress-blob.md).<!-- END REF-->
+<!--REF #_command_.EXPAND BLOB.Summary-->**EXPAND BLOB** décompresse le BLOB *blob* préalablement compressé à l'aide de la commande [COMPRESS BLOB](compress-blob).<!-- END REF-->
 
 Après l'appel de la commande, la variable système OK prend la valeur 1 si le BLOB a été correctement décompressé. 
 
@@ -36,7 +36,7 @@ Si la décompression n'a pas pu être effectuée, OK prend la valeur 0\.
 Dans ce cas, si l'erreur provient du fait que la mémoire disponible est insuffisante pour effectuer l'opération, aucune erreur n'est générée et la méthode poursuit son exécution.   
 En revanche, si l'erreur est causée par un problème plus important (le BLOB n'avait pas été compressé ou le BLOB est endommagé), l'erreur -10600 est générée. Cette erreur peut être interceptée à l'aide d'une méthode installée par la commande [ON ERR CALL](on-err-call.md). 
 
-De manière générale, il est préférable d'appeler la commande [BLOB PROPERTIES](blob-properties.md) pour savoir si le BLOB a été compressé avant d'exécuter **EXPAND BLOB**.
+De manière générale, il est préférable d'appeler la commande [BLOB PROPERTIES](blob-properties) pour savoir si le BLOB a été compressé avant d'exécuter **EXPAND BLOB**.
 
 ## Exemple 1 
 
@@ -76,8 +76,8 @@ La variable OK prend la valeur 1 si le BLOB a été correctement décompressé, 
 
 ## Voir aussi 
 
-[BLOB PROPERTIES](blob-properties.md)  
-[COMPRESS BLOB](compress-blob.md)  
+[BLOB PROPERTIES](blob-properties)  
+[COMPRESS BLOB](compress-blob)  
 
 ## Propriétés
 

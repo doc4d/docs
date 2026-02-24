@@ -143,7 +143,7 @@ displayed_sidebar: docs
 
 ## 例題 2 
 
-このコマンドを[Object to path](object-to-path.md) コマンドと組み合わせることでパスの中のファイルの名前を変更することができます:
+このコマンドを[Object to path](object-to-path) コマンドと組み合わせることでパスの中のファイルの名前を変更することができます:
 
 ```4d
  var $o : Object
@@ -178,12 +178,12 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Convert path POSIX to system](convert-path-posix-to-system.md)  
-[Convert path system to POSIX](convert-path-system-to-posix.md)  
-[File](../commands/file.md)    
-[Folder](../commands/folder.md)    
-[Object to path](object-to-path.md)  
-[Test path name](test-path-name.md)  
+[Convert path POSIX to system](convert-path-posix-to-system)  
+[Convert path system to POSIX](convert-path-system-to-posix)  
+[File](../commands/file)    
+[Folder](../commands/folder)    
+[Object to path](object-to-path)  
+[Test path name](test-path-name)  
 
 ## プロパティ
 

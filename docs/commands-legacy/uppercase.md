@@ -45,11 +45,11 @@ This example compares the results obtained according to whether or not the *\** 
 
 ## Example 2 
 
-See the example for [Lowercase](lowercase.md).
+See the example for [Lowercase](lowercase).
 
 ## See also 
 
-[Lowercase](lowercase.md)  
+[Lowercase](lowercase)  
 
 ## Properties
 

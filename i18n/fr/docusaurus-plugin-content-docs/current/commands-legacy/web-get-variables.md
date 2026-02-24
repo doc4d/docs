@@ -72,7 +72,7 @@ On obtient alors :
 
 ## Voir aussi 
 
-[WEB GET BODY PART](web-get-body-part.md)  
+[WEB GET BODY PART](web-get-body-part)  
 
 ## Propriétés
 

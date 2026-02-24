@@ -48,9 +48,9 @@ On souhaite mettre la valeur null dans la propriété "âge" de Léa :
 
 ## Voir aussi 
 
-[Null](null.md)  
-[OB GET PROPERTY NAMES](ob-get-property-names.md)  
-[OB SET](ob-set.md)  
+[Null](null)  
+[OB GET PROPERTY NAMES](ob-get-property-names)  
+[OB SET](ob-set)  
 
 ## Propriétés
 

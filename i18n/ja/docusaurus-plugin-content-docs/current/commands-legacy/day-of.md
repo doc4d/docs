@@ -35,9 +35,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Day number](day-number.md)  
-[Month of](month-of.md)  
-[Year of](year-of.md)  
+[Day number](day-number)  
+[Month of](month-of)  
+[Year of](year-of)  
 
 ## プロパティ
 

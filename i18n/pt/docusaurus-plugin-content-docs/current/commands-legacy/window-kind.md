@@ -44,13 +44,13 @@ Se omitir o parâmetro *janela*, Window kind devolve o tipo da janela do primeir
 
 ## Exemplo 
 
-Ver o exemplo do comando [WINDOW LIST](window-list.md).
+Ver o exemplo do comando [WINDOW LIST](window-list).
 
 ## Ver também 
 
-[GET WINDOW RECT](get-window-rect.md)  
-[Get window title](get-window-title.md)  
-[Window process](window-process.md)  
+[GET WINDOW RECT](get-window-rect)  
+[Get window title](get-window-title)  
+[Window process](window-process)  
 
 ## Propriedades
 

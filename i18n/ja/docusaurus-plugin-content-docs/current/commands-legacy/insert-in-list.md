@@ -62,8 +62,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[APPEND TO LIST](append-to-list.md)  
-[SET LIST ITEM PARAMETER](set-list-item-parameter.md)  
+[APPEND TO LIST](append-to-list)  
+[SET LIST ITEM PARAMETER](set-list-item-parameter)  
 
 ## プロパティ
 

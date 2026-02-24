@@ -55,7 +55,7 @@ S’il est passé, le paramètre *tabTitres* contient la liste des noms de fenê
 
 ## Voir aussi 
 
-[WA Create URL history menu](wa-create-url-history-menu.md)  
+[WA Create URL history menu](wa-create-url-history-menu)  
 
 ## Propriétés
 

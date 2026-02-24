@@ -36,8 +36,8 @@ Une erreur est générée lorsque la référence de l’élément n’est pas va
 
 ## Voir aussi 
 
-[DOM Create XML element](dom-create-xml-element.md)  
-[DOM REMOVE XML ATTRIBUTE](dom-remove-xml-attribute.md)  
+[DOM Create XML element](dom-create-xml-element)  
+[DOM REMOVE XML ATTRIBUTE](dom-remove-xml-attribute)  
 
 ## Propriétés
 

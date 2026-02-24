@@ -46,7 +46,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR SET SORTS](qr-set-sorts.md)  
+[QR SET SORTS](qr-set-sorts)  
 
 ## プロパティ
 

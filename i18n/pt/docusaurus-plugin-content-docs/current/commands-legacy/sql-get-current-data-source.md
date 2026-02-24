@@ -36,11 +36,11 @@ Este comando permite verificar a fonte de dados atual, geralmente antes de execu
 
 ## Ver também 
 
-[Begin SQL](begin-sql.md)  
-[End SQL](end-sql.md)  
-[SQL GET DATA SOURCE LIST](sql-get-data-source-list.md)  
-[SQL LOGIN](sql-login.md)  
-[SQL LOGOUT](sql-logout.md)  
+[Begin SQL](begin-sql)  
+[End SQL](end-sql)  
+[SQL GET DATA SOURCE LIST](sql-get-data-source-list)  
+[SQL LOGIN](sql-login)  
+[SQL LOGOUT](sql-logout)  
 
 ## Propriedades
 

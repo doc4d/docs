@@ -54,7 +54,7 @@ Este ejemplo autoriza un conjunto de métodos específicos para crear un informe
 
 ## Ver también 
 
-[SET ALLOWED METHODS](../commands/set-allowed-methods.md)  
+[SET ALLOWED METHODS](../commands/set-allowed-methods)  
 
 ## Propiedades
 

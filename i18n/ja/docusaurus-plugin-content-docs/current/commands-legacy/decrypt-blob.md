@@ -44,8 +44,8 @@ DECRYPT BLOBコマンドは、（意図的かどうかに関わらず）BLOB内�
 
 ## 参照 
 
-[ENCRYPT BLOB](encrypt-blob.md)  
-[GENERATE ENCRYPTION KEYPAIR](generate-encryption-keypair.md)  
+[ENCRYPT BLOB](encrypt-blob)  
+[GENERATE ENCRYPTION KEYPAIR](generate-encryption-keypair)  
 
 ## プロパティ
 

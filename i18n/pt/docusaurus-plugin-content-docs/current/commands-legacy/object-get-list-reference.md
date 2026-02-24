@@ -47,8 +47,8 @@ Se não há uma lista hierárquica associada ao objeto para o *tipoLista* defini
 
 ## Ver também 
 
-[OBJECT Get list name](object-get-list-name.md)  
-[OBJECT SET LIST BY REFERENCE](object-set-list-by-reference.md)  
+[OBJECT Get list name](object-get-list-name)  
+[OBJECT SET LIST BY REFERENCE](object-set-list-by-reference)  
 
 ## Propriedades
 

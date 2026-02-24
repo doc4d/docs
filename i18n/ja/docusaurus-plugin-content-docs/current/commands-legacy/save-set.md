@@ -42,7 +42,7 @@ SAVE SETコマンドは、時間のかかる検索の結果をディスクに保
 
 ## 参照 
 
-[LOAD SET](load-set.md)  
+[LOAD SET](load-set)  
 
 ## プロパティ
 

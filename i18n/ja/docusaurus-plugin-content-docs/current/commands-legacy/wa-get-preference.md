@@ -47,7 +47,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[WA SET PREFERENCE](wa-set-preference.md)  
+[WA SET PREFERENCE](wa-set-preference)  
 
 ## プロパティ
 

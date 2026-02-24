@@ -131,8 +131,8 @@ Você quer usar o número pequeno de versão da aplicação retornado pelo coman
 
 ## Ver também 
 
-[Application type](application-type.md)  
-[Version type](version-type.md)  
+[Application type](application-type)  
+[Version type](version-type)  
 
 ## Propriedades
 

@@ -46,7 +46,7 @@ Se passa um valor incorreto do parâmetro propriedade, se gera o erro -9852 ou -
 
 ## Ver também 
 
-[QR Get document property](qr-get-document-property.md)  
+[QR Get document property](qr-get-document-property)  
 
 ## Propriedades
 

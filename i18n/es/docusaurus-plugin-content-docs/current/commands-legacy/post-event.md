@@ -58,8 +58,8 @@ Si pasa el parámetro *proceso*, el evento se envía al proceso cuyo número se 
 
 ## Ver también 
 
-[POST CLICK](post-click.md)  
-[POST KEY](post-key.md)  
+[POST CLICK](post-click)  
+[POST KEY](post-key)  
 
 ## Propiedades
 

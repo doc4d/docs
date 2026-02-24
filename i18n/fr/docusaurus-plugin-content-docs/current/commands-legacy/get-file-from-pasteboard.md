@@ -52,7 +52,7 @@ L’exemple suivant permet de récupérer dans un tableau tous les chemins d’a
 
 ## Voir aussi 
 
-[SET FILE TO PASTEBOARD](set-file-to-pasteboard.md)  
+[SET FILE TO PASTEBOARD](set-file-to-pasteboard)  
 
 ## Propriétés
 

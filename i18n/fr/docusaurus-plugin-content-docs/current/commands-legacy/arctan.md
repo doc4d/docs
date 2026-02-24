@@ -30,9 +30,9 @@ Cet exemple permet d'afficher la valeur de Pi :
 
 ## Voir aussi 
 
-[Cos](cos.md)  
-[Sin](sin.md)  
-[Tan](tan.md)  
+[Cos](cos)  
+[Sin](sin)  
+[Tan](tan)  
 
 ## Propriétés
 

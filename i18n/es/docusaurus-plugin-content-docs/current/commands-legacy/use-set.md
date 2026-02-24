@@ -35,8 +35,8 @@ El siguiente ejemplo utiliza [LOAD SET](load-set.md "LOAD SET") para cargar un c
 
 #### Ver también 
 
-[CLEAR SET](clear-set.md)  
-[LOAD SET](load-set.md)  
+[CLEAR SET](clear-set)  
+[LOAD SET](load-set)  
 
 #### Propiedades
 

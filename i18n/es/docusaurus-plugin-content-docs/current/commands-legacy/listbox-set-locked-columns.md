@@ -41,8 +41,8 @@ Para eliminar el bloqueo de columnas, pase 0 o un valor negativo en *numColumnas
 
 ## Ver también 
 
-[LISTBOX Get locked columns](listbox-get-locked-columns.md)  
-[LISTBOX SET STATIC COLUMNS](listbox-set-static-columns.md)  
+[LISTBOX Get locked columns](listbox-get-locked-columns)  
+[LISTBOX SET STATIC COLUMNS](listbox-set-static-columns)  
 
 ## Propiedades
 

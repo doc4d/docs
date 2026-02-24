@@ -50,7 +50,7 @@ Vous souhaitez associer l’action standard de validation à un bouton :
 
 ## Voir aussi 
 
-[OBJECT Get action](object-get-action.md)  
+[OBJECT Get action](object-get-action)  
 
 ## Propriétés
 

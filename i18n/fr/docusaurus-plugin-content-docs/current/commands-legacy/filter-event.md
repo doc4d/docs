@@ -24,7 +24,7 @@ Cette commande vous permet d'effacer l'événement courant (i.e. clic, frappe cl
 
 **ATTENTION :** Evitez de créer une méthode de gestion d'événement appelant uniquement **FILTER EVENT** car TOUS les événements vont être ignorés par 4D. Si vous vous retrouvez dans un tel cas, vous pouvez sortir de la méthode en tapant **Ctrl**+**Maj**+**Retour Arrière** (sous Windows) ou **Commande**+**Option**+**Maj**+**Contrôle**+**Retour Arrière** (sous Mac OS). Dans ce cas, le process de gestion d'événement est converti en process normal n'interceptant plus aucun événement.
 
-**Cas particulier :** La commande **FILTER EVENT** peut également être utilisée au sein d’une méthode de formulaire sortie standard, lorsque le formulaire est affiché par l'intermédiaire des commandes [DISPLAY SELECTION](display-selection.md) ou [MODIFY SELECTION](modify-selection.md). Dans ce cas précis, la commande **FILTER EVENT** permet de filtrer les double-clics sur les enregistrements (et ainsi, exécuter d'autres actions que l'ouverture des enregistrements en mode page).  
+**Cas particulier :** La commande **FILTER EVENT** peut également être utilisée au sein d’une méthode de formulaire sortie standard, lorsque le formulaire est affiché par l'intermédiaire des commandes [DISPLAY SELECTION](display-selection) ou [MODIFY SELECTION](modify-selection). Dans ce cas précis, la commande **FILTER EVENT** permet de filtrer les double-clics sur les enregistrements (et ainsi, exécuter d'autres actions que l'ouverture des enregistrements en mode page).  
 Pour cela, il vous suffit de placer dans la méthode du formulaire sortie les lignes suivantes :
 
 ```4d

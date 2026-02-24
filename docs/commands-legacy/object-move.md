@@ -55,8 +55,8 @@ By default, the values *moveH*, *moveV*, *resizeH* and *resizeV* modify the coor
 This command works in the following contexts:
 
 * Data entering in Input forms,
-* Forms displayed using the [DIALOG](../commands/dialog.md) command,
-* Headers and footers of Output forms displayed with [MODIFY SELECTION](modify-selection.md) or [DISPLAY SELECTION](display-selection.md) commands,
+* Forms displayed using the [DIALOG](../commands/dialog) command,
+* Headers and footers of Output forms displayed with [MODIFY SELECTION](modify-selection) or [DISPLAY SELECTION](display-selection) commands,
 * Form printing events.
 
 ## Example 1 
@@ -78,9 +78,9 @@ The following statement moves “button\_1” to the following coordinates (10;2
 
 ## See also 
 
-[OBJECT DUPLICATE](object-duplicate.md)  
-[OBJECT GET COORDINATES](object-get-coordinates.md)  
-[OBJECT SET COORDINATES](object-set-coordinates.md)  
+[OBJECT DUPLICATE](object-duplicate)  
+[OBJECT GET COORDINATES](object-get-coordinates)  
+[OBJECT SET COORDINATES](object-set-coordinates)  
 
 ## Properties
 

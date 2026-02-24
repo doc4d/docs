@@ -94,7 +94,7 @@ Resolution of a path for an object of a table form method:
 
 ## See also 
 
-[METHOD Get path](method-get-path.md)  
+[METHOD Get path](method-get-path)  
 
 ## Properties
 

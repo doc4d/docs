@@ -56,9 +56,9 @@ Las siguientes imágenes demuestran las diferencias entre el tamaño de la panta
 
 ## Ver también 
 
-[Count screens](count-screens.md)  
-[Menu bar screen](menu-bar-screen.md)  
-[SCREEN DEPTH](screen-depth.md)  
+[Count screens](count-screens)  
+[Menu bar screen](menu-bar-screen)  
+[SCREEN DEPTH](screen-depth)  
 
 ## Propiedades
 

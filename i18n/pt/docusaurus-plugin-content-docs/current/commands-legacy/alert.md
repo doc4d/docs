@@ -77,9 +77,9 @@ Mostra a seguinte caixa de diálogo de alerta (em Windows):
 
 ## Ver também 
 
-[CONFIRM](confirm.md)  
-[DISPLAY NOTIFICATION](display-notification.md)  
-[Request](request.md)  
+[CONFIRM](confirm)  
+[DISPLAY NOTIFICATION](display-notification)  
+[Request](request)  
 
 ## Propriedades
 

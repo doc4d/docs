@@ -67,7 +67,7 @@ Esta macro cria um novo texto que será devolvido ao método que faz a chamada:
 
 ## Ver também 
 
-[GET MACRO PARAMETER](get-macro-parameter.md)  
+[GET MACRO PARAMETER](get-macro-parameter)  
 
 ## Propriedades
 

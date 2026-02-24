@@ -31,8 +31,8 @@ displayed_sidebar: docs
 
 ## Voir aussi 
 
-[METHOD Get path](method-get-path.md)  
-[METHOD GET PATHS](method-get-paths.md)  
+[METHOD Get path](method-get-path)  
+[METHOD GET PATHS](method-get-paths)  
 
 ## Propriétés
 

@@ -44,7 +44,7 @@ Si la commande a été correctement exécutée et si l’élément référencé 
 
 ## Voir aussi 
 
-[DOM Get next sibling XML element](dom-get-next-sibling-xml-element.md)  
+[DOM Get next sibling XML element](dom-get-next-sibling-xml-element)  
 
 ## Propriétés
 

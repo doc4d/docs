@@ -50,8 +50,8 @@ Este ejemplo añade registros al conjunto de mejores clientes. Los registros se 
 
 #### Ver también 
 
-[DIFFERENCE](difference.md)  
-[INTERSECTION](intersection.md)  
+[DIFFERENCE](difference)  
+[INTERSECTION](intersection)  
 
 #### Propiedades
 

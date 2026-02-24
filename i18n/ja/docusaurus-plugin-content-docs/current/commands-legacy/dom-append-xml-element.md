@@ -37,7 +37,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[DOM Insert XML element](dom-insert-xml-element.md)  
+[DOM Insert XML element](dom-insert-xml-element)  
 
 ## プロパティ
 

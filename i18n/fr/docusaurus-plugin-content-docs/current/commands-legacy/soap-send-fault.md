@@ -54,8 +54,8 @@ Pour reprendre l’exemple du Web Service “Racine\_carree” fourni dans la de
 
 ## Voir aussi 
 
-[SOAP DECLARATION](soap-declaration.md)  
-[SOAP Get info](soap-get-info.md)  
+[SOAP DECLARATION](soap-declaration)  
+[SOAP Get info](soap-get-info)  
 
 ## Propriétés
 

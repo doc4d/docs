@@ -48,7 +48,7 @@ Passe no parâmetro *valor* uma variável que receberá o valor atual da prefer�
 
 ## Ver também 
 
-[WA SET PREFERENCE](wa-set-preference.md)  
+[WA SET PREFERENCE](wa-set-preference)  
 
 ## Propriedades
 

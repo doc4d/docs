@@ -42,7 +42,7 @@ Sin embargo, la ejecución de este comando con campos no indexados será más le
 
 El array utilizado por **DISTINCT VALUES** debe ser del mismo tipo que el campo pasado como primer parámetro, de lo contrario el array se vuelve a digitar. Hay una excepción a esta regla:si el campo es de tipo Imagen (y está asociado a un índice de palabras claves), el array correspondiente debe ser de tipo Texto.
 
-Después del llamado, el tamaño del array es igual al número de valores distintos encontrados en la selección. El comando no cambia la selección actual ni el registro actual. El comando **DISTINCT VALUES** utiliza el índice del campo, de manera que los elementos en *array* se devuelven ordenados en orden ascendente. Si este es el orden que usted necesita, no es necesario llamar a [SORT ARRAY](sort-array.md) después de utilizar **DISTINCT VALUES**.
+Después del llamado, el tamaño del array es igual al número de valores distintos encontrados en la selección. El comando no cambia la selección actual ni el registro actual. El comando **DISTINCT VALUES** utiliza el índice del campo, de manera que los elementos en *array* se devuelven ordenados en orden ascendente. Si este es el orden que usted necesita, no es necesario llamar a [SORT ARRAY](sort-array) después de utilizar **DISTINCT VALUES**.
 
 **Nota:** cuando se ejecuta **DISTINCT VALUES** se ejecuta con un campo de texto o imagen asociado a un índice de palabras claves, el comando llena el array con las palabras claves del índice. A diferencia de otros tipos de datos, los valores devueltos difieren de acuerdo a la existencia del índice. El índice de palabras claves siempre se tiene en cuenta, incluso cuando el campo está asociado a un índice estándar. Si el campo texto o imagen no está asociado a un índice de palabras claves, el array se devuelve vacío. 
 
@@ -92,10 +92,10 @@ Para calcular las estadísticas, usted desea ordenar el número de valores disti
 ## Ver también 
 
   
-[GET TEXT KEYWORDS](get-text-keywords.md)  
+[GET TEXT KEYWORDS](get-text-keywords)  
 [ON ERR CALL](on-err-call.md)  
-[SELECTION RANGE TO ARRAY](selection-range-to-array.md)  
-[SELECTION TO ARRAY](selection-to-array.md)  
+[SELECTION RANGE TO ARRAY](selection-range-to-array)  
+[SELECTION TO ARRAY](selection-to-array)  
 
 ## Propiedades
 

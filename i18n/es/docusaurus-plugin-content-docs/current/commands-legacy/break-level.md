@@ -41,7 +41,7 @@ El segundo parámetro, opcional, *saltoPag*, se utiliza para provocar saltos de 
 
 ## Ejemplo 
 
-El siguiente ejemplo imprime un informe con dos niveles de ruptura. La selección es ordenada en cuatro niveles, pero el comando **BREAK LEVEL** especifica sólo dos niveles de ruptura. Un campo se acumula con el comando [ACCUMULATE](accumulate.md):
+El siguiente ejemplo imprime un informe con dos niveles de ruptura. La selección es ordenada en cuatro niveles, pero el comando **BREAK LEVEL** especifica sólo dos niveles de ruptura. Un campo se acumula con el comando [ACCUMULATE](accumulate):
 
 ```4d
  ORDER BY([Emp]Dept;>;[Emp]Title;>;[Emp]Apellido;>;[Emp]Nombre;>) // Ordenar en cuatro niveles
@@ -53,10 +53,10 @@ El siguiente ejemplo imprime un informe con dos niveles de ruptura. La selecció
 
 ## Ver también 
 
-[ACCUMULATE](accumulate.md)  
-[ORDER BY](order-by.md)  
-[PRINT SELECTION](print-selection.md)  
-[Subtotal](subtotal.md)  
+[ACCUMULATE](accumulate)  
+[ORDER BY](order-by)  
+[PRINT SELECTION](print-selection)  
+[Subtotal](subtotal)  
 
 ## Propiedades
 

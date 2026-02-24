@@ -54,7 +54,7 @@ To format Boolean fields:
 
 To format Date or Time fields or variables, you can use:
 
-* either a **predefined format** available though constants of the *Date Display Formats* or *Time Display Formats* theme (longint value). In this case, you must pass [Char](char.md)(n) in *displayFormat*, where *n* is the constant:  
+* either a **predefined format** available though constants of the *Date Display Formats* or *Time Display Formats* theme (longint value). In this case, you must pass [Char](char)(n) in *displayFormat*, where *n* is the constant:  
     
 Dates:
   
@@ -88,7 +88,7 @@ Times:
 | System time long             | 11    | 1:02:03 AM HNEC (Mac only)                                                                                                                                                                                                            |  
 | System time long abbreviated | 10    | 1•02•03 AM (Mac only)                                                                                                                                                                                                                 |  
 | System time short            | 9     | 01:02:03                                                                                                                                                                                                                              |
-* or a [customized format built upon a pattern](../Project/date-time-formats.md) (string value). For example:  
+* or a [customized format built upon a pattern](../Project/date-time-formats) (string value). For example:  
     
 ```4d  
  OBJECT SET FORMAT(*;"myDate";"dd/MM/yyyy")  
@@ -300,7 +300,7 @@ The following line of code formats the *\[Employee\]Date Hired* field to the fif
 
 ## Example 2 
 
-This example formats a date variable and a time variable using [customized formats](../Project/date-time-formats.md): 
+This example formats a date variable and a time variable using [customized formats](../Project/date-time-formats): 
 
 ```4d
  OBJECT SET FORMAT(*;"mydate";"(yyyy) MMM dd") // (2023) Dec 12
@@ -375,9 +375,9 @@ Switching a thermometer to "Barber shop" mode:
 ## See also 
 
 [Example database (v15 R5)](https://download.4d.com/Demos/4D%5Fv15%5FR5/HDI%5FListBox%5FOBJECT%5FSET%5FFORMAT.zip)  
-[GET SYSTEM FORMAT](get-system-format.md)  
-[OBJECT Get format](object-get-format.md)  
-[OBJECT SET FILTER](object-set-filter.md)  
+[GET SYSTEM FORMAT](get-system-format)  
+[OBJECT Get format](object-get-format)  
+[OBJECT SET FILTER](object-set-filter)  
 
 ## Properties
 

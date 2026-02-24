@@ -78,8 +78,8 @@ Criação da subpasta "\\Fevereiro\\" na atual pasta "C:\\Arquivos\\":
 
 ## Ver também 
 
-[FOLDER LIST](folder-list.md)  
-[Test path name](test-path-name.md)  
+[FOLDER LIST](folder-list)  
+[Test path name](test-path-name)  
 
 ## Propriedades
 

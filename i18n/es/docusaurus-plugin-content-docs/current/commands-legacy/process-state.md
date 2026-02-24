@@ -58,8 +58,8 @@ El siguiente ejemplo coloca el nombre y número de referencia para cada proceso 
 
 ## Ver también 
 
-[Count tasks](count-tasks.md)  
-[Process info](../commands/process-info.md)  
+[Count tasks](count-tasks)  
+[Process info](../commands/process-info)  
 
 ## Propiedades
 

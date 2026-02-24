@@ -41,8 +41,8 @@ Si vous passez 0 ou une valeur négative dans *nbColonnes*, le verrouillage des 
 
 ## Voir aussi 
 
-[LISTBOX Get locked columns](listbox-get-locked-columns.md)  
-[LISTBOX SET STATIC COLUMNS](listbox-set-static-columns.md)  
+[LISTBOX Get locked columns](listbox-get-locked-columns)  
+[LISTBOX SET STATIC COLUMNS](listbox-set-static-columns)  
 
 ## Propriétés
 

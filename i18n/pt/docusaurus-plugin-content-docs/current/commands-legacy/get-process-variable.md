@@ -125,10 +125,10 @@ Ver o exemplo do comando DRAG AND DROP PROPERTIES.
 ## Ver também 
 
 *Arrastar e Soltar*  
-[POST OUTSIDE CALL](post-outside-call.md)  
+[POST OUTSIDE CALL](post-outside-call)  
 *Processos*  
-[SET PROCESS VARIABLE](set-process-variable.md)  
-[VARIABLE TO VARIABLE](variable-to-variable.md)  
+[SET PROCESS VARIABLE](set-process-variable)  
+[VARIABLE TO VARIABLE](variable-to-variable)  
 
 ## Propriedades
 

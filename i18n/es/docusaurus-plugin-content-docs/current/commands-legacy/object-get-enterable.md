@@ -35,7 +35,7 @@ Si pasa el parámetro opcional *\**, indica que el parámetro objeto es un nombr
 
 ## Ver también 
 
-[OBJECT SET ENTERABLE](object-set-enterable.md)  
+[OBJECT SET ENTERABLE](object-set-enterable)  
 
 ## Propiedades
 

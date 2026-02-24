@@ -29,7 +29,7 @@ displayed_sidebar: docs
 ## Description 
 
 <!--REF #_command_.BLOB TO DOCUMENT.Summary-->**BLOB TO DOCUMENT** écrit le contenu de *document* en utilisant les données stockées dans *blob*.<!-- END REF-->   
-Vous pouvez passer dans *document* le nom d’un document existant ou non. Si le *document* n’existe pas, la commande le crée. Si vous passez le nom d’un document existant, assurez-vous qu'il n'est pas déjà ouvert, sinon une erreur est générée. Si vous voulez que l'utilisateur choisisse le document, appelez les routines [Open document](open-document.md) ou [Create document](create-document.md) et utilisez la variable système Document (cf. exemple ci-dessous). 
+Vous pouvez passer dans *document* le nom d’un document existant ou non. Si le *document* n’existe pas, la commande le crée. Si vous passez le nom d’un document existant, assurez-vous qu'il n'est pas déjà ouvert, sinon une erreur est générée. Si vous voulez que l'utilisateur choisisse le document, appelez les routines [Open document](open-document) ou [Create document](create-document) et utilisez la variable système Document (cf. exemple ci-dessous). 
 
 ## Exemple 
 
@@ -60,9 +60,9 @@ Dans tous les cas, vous pouvez gérer les erreurs en utilisant la commande [ON E
 
 ## Voir aussi 
 
-[Create document](create-document.md)  
-[DOCUMENT TO BLOB](document-to-blob.md)  
-[Open document](open-document.md)  
+[Create document](create-document)  
+[DOCUMENT TO BLOB](document-to-blob)  
+[Open document](open-document)  
 
 ## Propriétés
 

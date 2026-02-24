@@ -35,7 +35,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[System folder](system-folder.md)  
+[System folder](system-folder)  
 
 ## プロパティ
 

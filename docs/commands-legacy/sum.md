@@ -75,18 +75,18 @@ This example gets the sum of all the values placed in an array:
 
 ## Example 3 
 
-For an example of computing an object field attribute, please refer to the example 3 of the [Average](average.md) command description.
+For an example of computing an object field attribute, please refer to the example 3 of the [Average](average) command description.
 
 ## See also 
 
-[ACCUMULATE](accumulate.md)  
-[Average](average.md)  
-[BREAK LEVEL](break-level.md)  
-[Max](max.md)  
-[Min](min.md)  
-[ORDER BY](order-by.md)  
-[PRINT SELECTION](print-selection.md)  
-[Subtotal](subtotal.md)  
+[ACCUMULATE](accumulate)  
+[Average](average)  
+[BREAK LEVEL](break-level)  
+[Max](max)  
+[Min](min)  
+[ORDER BY](order-by)  
+[PRINT SELECTION](print-selection)  
+[Subtotal](subtotal)  
 
 ## Properties
 

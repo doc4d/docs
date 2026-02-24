@@ -95,10 +95,10 @@ The method returns theoretical coordinates. In cases where the list box has been
 
 ## See also 
 
-[CONVERT COORDINATES](convert-coordinates.md)  
-[LISTBOX GET CELL COORDINATES](listbox-get-cell-coordinates.md)  
-[OBJECT MOVE](object-move.md)  
-[OBJECT SET COORDINATES](object-set-coordinates.md)  
+[CONVERT COORDINATES](convert-coordinates)  
+[LISTBOX GET CELL COORDINATES](listbox-get-cell-coordinates)  
+[OBJECT MOVE](object-move)  
+[OBJECT SET COORDINATES](object-set-coordinates)  
 
 ## Properties
 

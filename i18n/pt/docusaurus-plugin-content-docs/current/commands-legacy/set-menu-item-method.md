@@ -46,7 +46,7 @@ Consulte o exemplo do comando [SET MENU BAR](set-menu-bar.md "SET MENU BAR").
 
 ## Ver também 
 
-[Get menu item method](get-menu-item-method.md)  
+[Get menu item method](get-menu-item-method)  
 
 ## Propriedades
 

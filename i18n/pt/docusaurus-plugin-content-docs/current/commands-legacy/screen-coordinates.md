@@ -56,9 +56,9 @@ As imagens abaixo demostram as diferenças entre o tamanho da tela e a área de 
 
 ## Ver também 
 
-[Count screens](count-screens.md)  
-[Menu bar screen](menu-bar-screen.md)  
-[SCREEN DEPTH](screen-depth.md)  
+[Count screens](count-screens)  
+[Menu bar screen](menu-bar-screen)  
+[SCREEN DEPTH](screen-depth)  
 
 ## Propriedades
 

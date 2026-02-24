@@ -39,7 +39,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[PICTURE CODEC LIST](picture-codec-list.md)  
+[PICTURE CODEC LIST](picture-codec-list)  
 
 ## プロパティ
 

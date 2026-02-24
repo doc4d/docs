@@ -49,7 +49,7 @@ En el parámetro *estiloBorde*, pase el valor del estilo de la línea fronteriza
 
 ## Ver también 
 
-[OBJECT Get border style](object-get-border-style.md)  
+[OBJECT Get border style](object-get-border-style)  
 
 ## Propiedades
 

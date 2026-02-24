@@ -106,7 +106,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[VOLUME LIST](volume-list.md)  
+[VOLUME LIST](volume-list)  
 
 ## プロパティ
 

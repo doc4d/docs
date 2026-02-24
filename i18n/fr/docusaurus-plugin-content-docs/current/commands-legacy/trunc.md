@@ -36,7 +36,7 @@ L'exemple suivant illustre la manière dont **Trunc** fonctionne dans différent
 
 ## Voir aussi 
 
-[Round](round.md)  
+[Round](round)  
 
 ## Propriétés
 

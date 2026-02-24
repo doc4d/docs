@@ -131,7 +131,7 @@ Os seguintes exemplos criam diferentes arquivos e pastas na pasta da base (exemp
 ## Ver também 
 
 *Documentos de Sistema*  
-[MOVE DOCUMENT](move-document.md)  
+[MOVE DOCUMENT](move-document)  
 
 ## Propriedades
 

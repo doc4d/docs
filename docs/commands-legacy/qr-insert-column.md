@@ -49,7 +49,7 @@ The following statement inserts (or creates) a first column in a Quick Report ar
 
 ## See also 
 
-[QR DELETE COLUMN](qr-delete-column.md)  
+[QR DELETE COLUMN](qr-delete-column)  
 
 ## Properties
 

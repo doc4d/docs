@@ -36,7 +36,7 @@ displayed_sidebar: docs
 
 :::info Compatibilidad
 
-Este comando se mantiene sólo por razones de compatibilidad. Ahora se recomienda utilizar [`4D.HTTPRequest class`](../API/HTTPRequestClass.md).
+Este comando se mantiene sólo por razones de compatibilidad. Ahora se recomienda utilizar [`4D.HTTPRequest class`](../API/HTTPRequestClass).
 
 :::
 
@@ -86,7 +86,7 @@ Después de la ejecución del comando, el parámetro *respuesta* recupera el res
 * Imagen: cuando el resultado se espera en forma de imagen.
 * Objeto: cuando el resultado esperado es un objeto.
 
-**Nota:** cuando se pasa una variable de texto en *respuesta*, 4D intentará decodificar los datos devueltos desde el servidor. 4D primero intenta recuperar el conjunto de caracteres del encabezado de *tipo de contenido*, luego del contenido utilizando un BOM y, finalmente, busca cualquier atributo *http-equiv charset* (en contenido html) o *codificación* (para xml). Si no se puede detectar ningún charset, 4D intentará decodificar la respuesta en ANSI. Si la conversión falla, el texto resultante quedará vacío. Si no está seguro de si el servidor devuelve una información charset o BOM, pero conoce la codificación, es más preciso pasar *respuesta* en BLOB y llamar al [Convert to text](convert-to-text.md).
+**Nota:** cuando se pasa una variable de texto en *respuesta*, 4D intentará decodificar los datos devueltos desde el servidor. 4D primero intenta recuperar el conjunto de caracteres del encabezado de *tipo de contenido*, luego del contenido utilizando un BOM y, finalmente, busca cualquier atributo *http-equiv charset* (en contenido html) o *codificación* (para xml). Si no se puede detectar ningún charset, 4D intentará decodificar la respuesta en ANSI. Si la conversión falla, el texto resultante quedará vacío. Si no está seguro de si el servidor devuelve una información charset o BOM, pero conoce la codificación, es más preciso pasar *respuesta* en BLOB y llamar al [Convert to text](convert-to-text).
 
 Si pasa una variable de tipo objeto en el parámetro *respuesta*, si la petición devuelve un resultado con el contenido tipo texto, 4D intenta analizar el contenido JSON y devuelve el resultado analizado como un objeto. En caso contrario, se devuelve un objeto *4D.Blob*.
 
@@ -136,7 +136,7 @@ Petición para añadir un registro en JSON a una base remota:
 
 ## Ver también 
 
-[HTTP Get](http-get.md)  
+[HTTP Get](http-get)  
 
 ## Propiedades
 

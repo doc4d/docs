@@ -61,15 +61,15 @@ Lorsque les paramètres *x* et *y* ne sont pas utilisés, cette commande peut ê
 
 Lorsqu’elle est appelée en dehors de ce contexte, **LISTBOX GET CELL POSITION** retourne 0 dans *colonne* et *ligne*. 
 
-Cette commande tient compte des actions de sélection ou de désélection effectuées via la souris, les touches du clavier et la commande [EDIT ITEM](edit-item.md) (qui génère l’événement On Getting Focus).
+Cette commande tient compte des actions de sélection ou de désélection effectuées via la souris, les touches du clavier et la commande [EDIT ITEM](edit-item) (qui génère l’événement On Getting Focus).
 
-Si la sélection est modifiée via les touches fléchées du clavier, *colonne* retourne 0. Dans ce cas, s’il est passé, le paramètre *varCol* retourne [Is nil pointer](is-nil-pointer.md). 
+Si la sélection est modifiée via les touches fléchées du clavier, *colonne* retourne 0. Dans ce cas, s’il est passé, le paramètre *varCol* retourne [Is nil pointer](is-nil-pointer). 
 
 
 ## Voir aussi 
 
-[LISTBOX GET CELL COORDINATES](listbox-get-cell-coordinates.md)  
-[LISTBOX SELECT BREAK](listbox-select-break.md)  
+[LISTBOX GET CELL COORDINATES](listbox-get-cell-coordinates)  
+[LISTBOX SELECT BREAK](listbox-select-break)  
 
 ## Propriétés
 

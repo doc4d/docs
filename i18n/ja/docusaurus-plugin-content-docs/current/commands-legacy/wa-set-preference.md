@@ -64,7 +64,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[WA GET PREFERENCE](wa-get-preference.md)  
+[WA GET PREFERENCE](wa-get-preference)  
 
 ## プロパティ
 

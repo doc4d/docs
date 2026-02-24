@@ -36,7 +36,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX DELETE COLUMN](listbox-delete-column.md)  
+[LISTBOX DELETE COLUMN](listbox-delete-column)  
 
 ## プロパティ
 

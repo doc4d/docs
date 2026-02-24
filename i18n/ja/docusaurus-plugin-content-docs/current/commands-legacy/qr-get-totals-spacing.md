@@ -47,7 +47,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR SET TOTALS SPACING](qr-set-totals-spacing.md)  
+[QR SET TOTALS SPACING](qr-set-totals-spacing)  
 
 ## プロパティ
 

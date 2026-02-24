@@ -60,7 +60,7 @@ Este ejemplo compara los resultados obtenidos de acuerdo a si se pasa o no el pa
 
 ## Ver también 
 
-[Uppercase](uppercase.md)  
+[Uppercase](uppercase)  
 
 ## Propiedades
 

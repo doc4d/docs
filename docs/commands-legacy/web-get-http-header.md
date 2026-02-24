@@ -129,8 +129,8 @@ The following method allows getting any HTTP request header field content:
 
 ## See also 
 
-[WEB GET HTTP BODY](web-get-http-body.md)  
-[WEB SET HTTP HEADER](web-set-http-header.md)  
+[WEB GET HTTP BODY](web-get-http-body)  
+[WEB SET HTTP HEADER](web-set-http-header)  
 
 ## Properties
 

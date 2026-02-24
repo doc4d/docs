@@ -34,9 +34,9 @@ displayed_sidebar: docs
 
 ## Voir aussi 
 
-[ADJUST BLOBS CACHE PRIORITY](adjust-blobs-cache-priority.md)  
+[ADJUST BLOBS CACHE PRIORITY](adjust-blobs-cache-priority)  
 *Gestion des priorités dans le cache de la base*  
-[SET BLOBS CACHE PRIORITY](set-blobs-cache-priority.md)  
+[SET BLOBS CACHE PRIORITY](set-blobs-cache-priority)  
 
 ## Propriétés
 

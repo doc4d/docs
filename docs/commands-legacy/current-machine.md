@@ -41,7 +41,7 @@ Even if you are not running with the Client/Server version of the 4D environment
 
 ## See also 
 
-[Current system user](current-system-user.md)  
+[Current system user](current-system-user)  
 
 ## Properties
 

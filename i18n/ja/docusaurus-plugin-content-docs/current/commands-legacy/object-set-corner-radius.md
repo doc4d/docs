@@ -78,7 +78,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT Get corner radius](object-get-corner-radius.md)  
+[OBJECT Get corner radius](object-get-corner-radius)  
 
 ## プロパティ
 

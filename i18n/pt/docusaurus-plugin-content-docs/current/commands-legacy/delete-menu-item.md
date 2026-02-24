@@ -44,8 +44,8 @@ Se omite o parâmetro *processo*, DELETE MENU ITEM é aplicado a barra de menus 
 
 ## Ver também 
 
-[APPEND MENU ITEM](append-menu-item.md)  
-[INSERT MENU ITEM](insert-menu-item.md)  
+[APPEND MENU ITEM](append-menu-item)  
+[INSERT MENU ITEM](insert-menu-item)  
 
 ## Propriedades
 

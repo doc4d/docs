@@ -59,7 +59,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT Get text orientation](object-get-text-orientation.md)  
+[OBJECT Get text orientation](object-get-text-orientation)  
 
 ## プロパティ
 

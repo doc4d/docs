@@ -75,8 +75,8 @@ BLOBが正しく解凍されるとOK変数は1に、そうでなければ0に設
 
 ## 参照 
 
-[BLOB PROPERTIES](blob-properties.md)  
-[COMPRESS BLOB](compress-blob.md)  
+[BLOB PROPERTIES](blob-properties)  
+[COMPRESS BLOB](compress-blob)  
 
 ## プロパティ
 

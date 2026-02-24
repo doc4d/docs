@@ -45,11 +45,11 @@ Las referencias a las variables 4D y etiquetas de tipo *4DSCRIPT* en la página 
 
 ## Ejemplo 
 
-Consulte el ejemplo de la rutina [PICTURE TO BLOB](picture-to-blob.md).
+Consulte el ejemplo de la rutina [PICTURE TO BLOB](picture-to-blob).
 
 ## Ver también 
 
-[WEB SEND FILE](web-send-file.md)  
+[WEB SEND FILE](web-send-file)  
 
 ## Propiedades
 

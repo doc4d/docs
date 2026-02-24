@@ -32,8 +32,8 @@ Para saber mais, consulte *Suspender as transações*.
 
 ## Ver também 
 
-[Active transaction](active-transaction.md)  
-[SUSPEND TRANSACTION](suspend-transaction.md)  
+[Active transaction](active-transaction)  
+[SUSPEND TRANSACTION](suspend-transaction)  
 *Suspender as transações*  
 
 ## Propriedades

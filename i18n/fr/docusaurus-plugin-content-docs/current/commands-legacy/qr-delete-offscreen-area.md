@@ -33,7 +33,7 @@ Si un numéro de *zone* invalide est passé, l’erreur -9850 est générée.
 
 ## Voir aussi 
 
-[QR New offscreen area](qr-new-offscreen-area.md)  
+[QR New offscreen area](qr-new-offscreen-area)  
 
 ## Propriétés
 

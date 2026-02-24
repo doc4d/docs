@@ -71,9 +71,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET USER PROPERTIES](get-user-properties.md)  
-[Set user properties](set-user-properties.md)  
-[WEB Validate digest](web-validate-digest.md)  
+[GET USER PROPERTIES](get-user-properties)  
+[Set user properties](set-user-properties)  
+[WEB Validate digest](web-validate-digest)  
 
 ## プロパティ
 

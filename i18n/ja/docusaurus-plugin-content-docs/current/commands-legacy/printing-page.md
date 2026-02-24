@@ -38,7 +38,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[PRINT SELECTION](print-selection.md)  
+[PRINT SELECTION](print-selection)  
 
 ## プロパティ
 

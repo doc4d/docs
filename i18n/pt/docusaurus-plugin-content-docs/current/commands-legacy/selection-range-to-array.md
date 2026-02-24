@@ -33,7 +33,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.SELECTION RANGE TO ARRAY.Summary-->**SELECTION RANGE TO ARRAY** cria um ou mais arrays e copia os dados dos campos ou números de registro da seleção atual para os arrays.<!-- END REF--> 
 
-Ao contrário [SELECTION TO ARRAY](selection-to-array.md), que se aplica à seleção atual em sua totalidade, **SELECTION RANGE TO ARRAY** só se aplica ao conjunto de registros selecionados especificado por parâmetros *início* e *fim*.
+Ao contrário [SELECTION TO ARRAY](selection-to-array), que se aplica à seleção atual em sua totalidade, **SELECTION RANGE TO ARRAY** só se aplica ao conjunto de registros selecionados especificado por parâmetros *início* e *fim*.
 
 O comando espera que você passe no início e no final os números de registros selecionados em conformidade com a fórmula *1 <= inicio <= fim <= Records in selection (\[...\]).*. 
 
@@ -45,13 +45,13 @@ Se você passar números incorretos de registros selecionados, o comando faz o s
 * Se *início > fim*, ele retorna valores do registro selecionado, cujo registro é *início*.
 * Se ambos os parâmetros são incompatíveis com o tamanho da seleção, ele retorna arrays vazios.
 
-Como [SELECTION TO ARRAY](selection-to-array.md), o comando **SELECTION RANGE TO ARRAY** aplica-se à seleção para o quadro especificado no primeiro parâmetro.
+Como [SELECTION TO ARRAY](selection-to-array), o comando **SELECTION RANGE TO ARRAY** aplica-se à seleção para o quadro especificado no primeiro parâmetro.
 
-Também como [SELECTION TO ARRAY](selection-to-array.md), **SELECTION RANGE TO ARRAY** pode realizar o seguinte:
+Também como [SELECTION TO ARRAY](selection-to-array), **SELECTION RANGE TO ARRAY** pode realizar o seguinte:
 
 * Carregar os valores de um ou vários campos
 * *Carregar número de registros utilizando a tabela ...;\[table\];Array;...*
-* Carregar valores de campos relacionados, se houver uma relação automática de Muitos para Um entre as tabelas ou se você tiver chamado anteriormente [SET AUTOMATIC RELATIONS](set-automatic-relations.md) para mudar manualmente as relações Muito para um para automática. Em ambos os casos, os valores podem ser carregados a partir de tabelas com vários níveis de relações Muitos para Um.
+* Carregar valores de campos relacionados, se houver uma relação automática de Muitos para Um entre as tabelas ou se você tiver chamado anteriormente [SET AUTOMATIC RELATIONS](set-automatic-relations) para mudar manualmente as relações Muito para um para automática. Em ambos os casos, os valores podem ser carregados a partir de tabelas com vários níveis de relações Muitos para Um.
 
 Cada array é digitado de acordo com o tipo de campo. Há duas exceções:
 
@@ -64,7 +64,7 @@ Cada array é digitado de acordo com o tipo de campo. Há duas exceções:
 
 Se você carregar um número de registros, eles são copiados para um array Inteiro longo.
 
-**Nota:** Você pode chamar o comando **SELECTION RANGE TO ARRAY** apenas com os parâmetros *início* e *fim*. Esta sintaxe especial possa ser usado para lançar, em uma seleção limitada, a execução de uma série de comandos [SELECTION TO ARRAY](selection-to-array.md) usando o parâmetro *\** (ver exemplo 4\]). 
+**Nota:** Você pode chamar o comando **SELECTION RANGE TO ARRAY** apenas com os parâmetros *início* e *fim*. Esta sintaxe especial possa ser usado para lançar, em uma seleção limitada, a execução de uma série de comandos [SELECTION TO ARRAY](selection-to-array) usando o parâmetro *\** (ver exemplo 4\]). 
 
 **4D Server:** **SELECTION RANGE TO ARRAY**é otimizado para 4D Server. Cada array é criado no servidor e, em seguida, enviado, na sua totalidade, para a máquina cliente. 
 
@@ -119,8 +119,8 @@ Use os 50 primeiros registros atuais da tabela \[facturas\] para carregar vário
 ## Ver também 
 
 [ON ERR CALL](on-err-call.md)  
-[SELECTION TO ARRAY](selection-to-array.md)  
-[SET AUTOMATIC RELATIONS](set-automatic-relations.md)  
+[SELECTION TO ARRAY](selection-to-array)  
+[SET AUTOMATIC RELATIONS](set-automatic-relations)  
 
 ## Propriedades
 

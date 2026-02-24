@@ -100,8 +100,8 @@ Se o comando for executado corretamente e se os registros relacionados forem car
 
 ## Ver também 
 
-[OLD RELATED ONE](old-related-one.md)  
-[RELATE MANY](relate-many.md)  
+[OLD RELATED ONE](old-related-one)  
+[RELATE MANY](relate-many)  
 
 ## Propriedades
 

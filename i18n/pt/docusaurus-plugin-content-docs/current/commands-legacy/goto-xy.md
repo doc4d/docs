@@ -59,7 +59,7 @@ Mostra a janela a seguir (em Macintosh) por 30 segundos:
 
 ## Ver também 
 
-[MESSAGE](message.md)  
+[MESSAGE](message)  
 
 ## Propriedades
 

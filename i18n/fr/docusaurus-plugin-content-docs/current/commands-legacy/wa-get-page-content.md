@@ -35,7 +35,7 @@ Cette commande retourne une chaîne vide si le contenu de la page courante n’e
 
 ## Voir aussi 
 
-[WA SET PAGE CONTENT](wa-set-page-content.md)  
+[WA SET PAGE CONTENT](wa-set-page-content)  
 
 ## Propriétés
 

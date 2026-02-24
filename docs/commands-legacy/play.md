@@ -68,7 +68,7 @@ The following example code plays a system sound on macOS:
 
 ## See also 
 
-[BEEP](beep.md)  
+[BEEP](beep)  
 
 ## Properties
 

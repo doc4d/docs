@@ -44,7 +44,7 @@ On souhaite afficher la langue du dictionnaire courant :
 
 ## Voir aussi 
 
-[SPELL SET CURRENT DICTIONARY](spell-set-current-dictionary.md)  
+[SPELL SET CURRENT DICTIONARY](spell-set-current-dictionary)  
 
 ## Propriétés
 

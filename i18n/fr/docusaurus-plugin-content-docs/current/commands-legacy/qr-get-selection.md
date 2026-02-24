@@ -47,7 +47,7 @@ Si un numéro de *zone* invalide est passé, l’erreur -9850 est générée.
 
 ## Voir aussi 
 
-[QR SET SELECTION](qr-set-selection.md)  
+[QR SET SELECTION](qr-set-selection)  
 
 ## Propriétés
 

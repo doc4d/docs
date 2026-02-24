@@ -111,14 +111,14 @@ Después de la ejecución este código:
 
 ## Ver también 
 
-[BLOB to integer](blob-to-integer.md)  
-[BLOB to longint](blob-to-longint.md)  
-[BLOB to real](blob-to-real.md)  
-[BLOB to text](blob-to-text.md)  
-[CONVERT FROM TEXT](convert-from-text.md)  
-[INTEGER TO BLOB](integer-to-blob.md)  
-[LONGINT TO BLOB](longint-to-blob.md)  
-[REAL TO BLOB](real-to-blob.md)  
+[BLOB to integer](blob-to-integer)  
+[BLOB to longint](blob-to-longint)  
+[BLOB to real](blob-to-real)  
+[BLOB to text](blob-to-text)  
+[CONVERT FROM TEXT](convert-from-text)  
+[INTEGER TO BLOB](integer-to-blob)  
+[LONGINT TO BLOB](longint-to-blob)  
+[REAL TO BLOB](real-to-blob)  
 
 ## Propiedades
 

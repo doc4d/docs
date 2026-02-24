@@ -51,9 +51,9 @@ Les objets de formulaire auxquels un alignement vertical peut être appliqué so
 
 ## Voir aussi 
 
-[OBJECT Get horizontal alignment](object-get-horizontal-alignment.md)  
-[OBJECT SET HORIZONTAL ALIGNMENT](object-set-horizontal-alignment.md)  
-[OBJECT SET VERTICAL ALIGNMENT](object-set-vertical-alignment.md)  
+[OBJECT Get horizontal alignment](object-get-horizontal-alignment)  
+[OBJECT SET HORIZONTAL ALIGNMENT](object-set-horizontal-alignment)  
+[OBJECT SET VERTICAL ALIGNMENT](object-set-vertical-alignment)  
 
 ## Propriétés
 

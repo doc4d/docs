@@ -18,11 +18,11 @@ displayed_sidebar: docs
 
 ## 説明 
 
-<!--REF #_command_.Before selection.Summary-->**Before selection** は、カレントレコードポインタが*aTable*のカレントセレクションの前にある場合にTRUEを返します。<!-- END REF-->は、一般に[PREVIOUS RECORD](previous-record.md) により、カレントレコードポインタが先頭レコードの前に移動したかどうかを調べるために使用します。カレントセレクションが空の場合、**Before selection** はTRUEを返します。
+<!--REF #_command_.Before selection.Summary-->**Before selection** は、カレントレコードポインタが*aTable*のカレントセレクションの前にある場合にTRUEを返します。<!-- END REF-->は、一般に[PREVIOUS RECORD](previous-record) により、カレントレコードポインタが先頭レコードの前に移動したかどうかを調べるために使用します。カレントセレクションが空の場合、**Before selection** はTRUEを返します。
 
-カレントレコードポインタをセレクションに内に戻すには、[FIRST RECORD](first-record.md)、[LAST RECORD](last-record.md) または [GOTO SELECTED RECORD](goto-selected-record.md) を使用します。[NEXT RECORD](next-record.md) ではポインタはセレクション内に戻りません。
+カレントレコードポインタをセレクションに内に戻すには、[FIRST RECORD](first-record)、[LAST RECORD](last-record) または [GOTO SELECTED RECORD](goto-selected-record) を使用します。[NEXT RECORD](next-record) ではポインタはセレクション内に戻りません。
 
-[PRINT SELECTION](print-selection.md) またはプリント...メニューを選択してレポートを印刷する場合も、**Before selection** は最初のヘッダでTRUEを返します。以下のステートメントを使用して最初のヘッダを判定し、先頭ページに特殊なヘッダを印刷することができます:
+[PRINT SELECTION](print-selection) またはプリント...メニューを選択してレポートを印刷する場合も、**Before selection** は最初のヘッダでTRUEを返します。以下のステートメントを使用して最初のヘッダを判定し、先頭ページに特殊なヘッダを印刷することができます:
 
 ```4d
   // レポート印刷に使用される出力フォームのメソッド
@@ -59,11 +59,11 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[End selection](end-selection.md)  
-[FIRST RECORD](first-record.md)  
-[Form event code](../commands/form-event-code.md)  
-[PREVIOUS RECORD](previous-record.md)  
-[PRINT SELECTION](print-selection.md)  
+[End selection](end-selection)  
+[FIRST RECORD](first-record)  
+[Form event code](../commands/form-event-code)  
+[PREVIOUS RECORD](previous-record)  
+[PRINT SELECTION](print-selection)  
 
 ## プロパティ
 

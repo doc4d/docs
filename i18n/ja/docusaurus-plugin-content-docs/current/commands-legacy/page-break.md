@@ -55,8 +55,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[CANCEL](cancel.md)  
-[Print form](../commands/print-form.md)  
+[CANCEL](cancel)  
+[Print form](../commands/print-form)  
 
 ## プロパティ
 

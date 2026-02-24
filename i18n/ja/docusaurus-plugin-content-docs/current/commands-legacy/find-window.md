@@ -40,8 +40,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Frontmost window](frontmost-window.md)  
-[Next window](next-window.md)  
+[Frontmost window](frontmost-window)  
+[Next window](next-window)  
 
 ## プロパティ
 

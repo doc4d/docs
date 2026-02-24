@@ -42,7 +42,7 @@ Cette méthode de maintenance permet de demander le compactage du fichier de don
 
 ## Voir aussi 
 
-[Compact data file](compact-data-file.md)  
+[Compact data file](compact-data-file)  
 
 ## Propriétés
 

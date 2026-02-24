@@ -22,9 +22,9 @@ displayed_sidebar: docs
 
 ## See also 
 
-[Arctan](arctan.md)  
-[Cos](cos.md)  
-[Sin](sin.md)  
+[Arctan](arctan)  
+[Cos](cos)  
+[Sin](sin)  
 
 ## Properties
 

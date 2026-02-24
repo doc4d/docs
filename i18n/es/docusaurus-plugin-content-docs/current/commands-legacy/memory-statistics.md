@@ -28,7 +28,7 @@ Después de ejecutar el comando, las estadísticas solicitadas se entregan en lo
 
 ## Ver también 
 
-[Cache info](cache-info.md)  
+[Cache info](cache-info)  
 
 ## Propiedades
 

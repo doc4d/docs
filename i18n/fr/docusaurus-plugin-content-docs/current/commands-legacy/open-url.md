@@ -94,7 +94,7 @@ Vous pouvez ouvrir un même fichier texte avec différentes applications en util
 
 ## Voir aussi 
 
-[LAUNCH EXTERNAL PROCESS](launch-external-process.md)  
+[LAUNCH EXTERNAL PROCESS](launch-external-process)  
 
 ## Propriétés
 

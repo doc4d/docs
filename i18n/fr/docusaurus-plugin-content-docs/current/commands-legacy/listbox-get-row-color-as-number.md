@@ -67,8 +67,8 @@ Soit la list box suivante :
 #### Voir aussi 
 
 *List box*  
-[LISTBOX Get row color](listbox-get-row-color.md)  
-[LISTBOX SET ROW COLOR](listbox-set-row-color.md)  
+[LISTBOX Get row color](listbox-get-row-color)  
+[LISTBOX SET ROW COLOR](listbox-set-row-color)  
 
 #### Propriétés
 

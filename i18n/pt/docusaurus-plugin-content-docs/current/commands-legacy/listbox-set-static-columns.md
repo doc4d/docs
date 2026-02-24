@@ -37,8 +37,8 @@ As colunas estáticas não podem mover-se no list box.
 
 ## Ver também 
 
-[LISTBOX Get static columns](listbox-get-static-columns.md)  
-[LISTBOX SET LOCKED COLUMNS](listbox-set-locked-columns.md)  
+[LISTBOX Get static columns](listbox-get-static-columns)  
+[LISTBOX SET LOCKED COLUMNS](listbox-set-locked-columns)  
 
 ## Propriedades
 

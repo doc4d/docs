@@ -52,7 +52,7 @@ Sob Windows, é mostrada a janela da mensagem se não se detecta atividade na m�
 
 ## Ver também 
 
-[ALERT](alert.md)  
+[ALERT](alert)  
 
 ## Propriedades
 

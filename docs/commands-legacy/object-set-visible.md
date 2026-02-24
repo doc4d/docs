@@ -69,8 +69,8 @@ or:
 
 ## See also 
 
-[OBJECT Get visible](object-get-visible.md)  
-[OBJECT SET ENTERABLE](object-set-enterable.md)  
+[OBJECT Get visible](object-get-visible)  
+[OBJECT SET ENTERABLE](object-set-enterable)  
 
 ## Properties
 

@@ -37,8 +37,8 @@ Les colonnes statiques (ou colonnes fixes) ne peuvent pas être déplacées dans
 
 ## Voir aussi 
 
-[LISTBOX Get static columns](listbox-get-static-columns.md)  
-[LISTBOX SET LOCKED COLUMNS](listbox-set-locked-columns.md)  
+[LISTBOX Get static columns](listbox-get-static-columns)  
+[LISTBOX SET LOCKED COLUMNS](listbox-set-locked-columns)  
 
 ## Propriétés
 

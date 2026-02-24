@@ -81,7 +81,7 @@ Os campos **Date** e **Content-Length** sempre são definidos por padrão por 4D
 
 ## Ver também 
 
-[WEB GET HTTP HEADER](web-get-http-header.md)  
+[WEB GET HTTP HEADER](web-get-http-header)  
 
 ## Propriedades
 

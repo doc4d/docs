@@ -67,8 +67,8 @@ L'exemple suivant autorise uniquement la saisie des lettres “a”, “b”, �
 
 ## Voir aussi 
 
-[OBJECT Get filter](object-get-filter.md)  
-[OBJECT SET FORMAT](object-set-format.md)  
+[OBJECT Get filter](object-get-filter)  
+[OBJECT SET FORMAT](object-set-format)  
 
 ## Propriétés
 

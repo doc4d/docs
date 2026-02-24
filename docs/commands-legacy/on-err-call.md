@@ -50,13 +50,13 @@ The *scope* of the command designates the execution context from where an error 
 Note also that a global error-handling method is useful on the server, where it can be handle errors in server-side functions.
 * if *scope* \= ek errors from components, only errors generated from the components installed in the application will call errorMethod. Note that, if an error-handling method is defined in a component, it is called in case of error in the component, and the ek errors from components error handler set in the host application is not called.
 
-**Note:** If **ON ERR CALL** is called from a process for which you requested preemptive execution (in compiled mode), the compiler checks whether *errorMethod* is thread-safe and returns errors if it is not compatible with the preemptive mode. For more information, refer to the [Preemptive processes](../Develop/preemptive.md) section.
+**Note:** If **ON ERR CALL** is called from a process for which you requested preemptive execution (in compiled mode), the compiler checks whether *errorMethod* is thread-safe and returns errors if it is not compatible with the preemptive mode. For more information, refer to the [Preemptive processes](../Develop/preemptive) section.
 
 To stop the trapping of errors, call **ON ERR CALL** again with the desired *scope* parameter (if any) and pass an empty string in *errorMethod*. 
 
 You can identify errors by reading the Error system variable, which contains the code number of the error. Error codes are listed in the *Error Codes* theme. For example, you can see the section *Syntax Errors (1 -> 81)*. The Error variable value is significant only within the error-handling method; if you need the error code within the method that provoked the error, copy the Error variable to your own process variable. You can also access the Error method, Error line and Error formula system variables which contain, respectively, the name of the method, the line number and the text of the formula where the error occurred (see [Handling errors within the method](../Concepts/error-handling.md#handling-errors-within-the-method)).
 
-You can use the [Last errors](../commands/last-errors.md) or [Last errors](../commands/last-errors.md)  command to obtain the error sequence (i.e., the error "stack") at the origin of the interruption.
+You can use the [Last errors](../commands/last-errors) or [Last errors](../commands/last-errors)  command to obtain the error sequence (i.e., the error "stack") at the origin of the interruption.
 
 The error-handling method should manage the error in an appropriate way or present an error message to the user. Errors can be generated during processing performed by:
 
@@ -64,7 +64,7 @@ The error-handling method should manage the error in an appropriate way or prese
 * The 4D environment; for example, when you do not have enough memory for allocating an array.
 * The operating system on which the database is run; for example, disk full or I/O errors.
 
-The [ABORT](abort.md) command can be used to terminate processing. If you don’t call [ABORT](abort.md) in the error-handling method, 4D returns to the interrupted method and continues to execute the method. Use the [ABORT](abort.md) command when an error cannot be recovered.
+The [ABORT](abort) command can be used to terminate processing. If you don’t call [ABORT](abort) in the error-handling method, 4D returns to the interrupted method and continues to execute the method. Use the [ABORT](abort) command when an error cannot be recovered.
 
 If an error occurs in the error-handling method itself, 4D takes over error handling. Therefore, you should make sure that the error-handling method cannot generate an error. Also, you cannot use **ON ERR CALL** inside the error-handling method.
 
@@ -189,11 +189,11 @@ The following error-handling method ignores the user interruptions and displays 
 
 ## See also 
 
-[ABORT](abort.md)  
+[ABORT](abort)  
 *Error Handler*  
-[Last errors](../commands/last-errors.md)   
-[Last errors](../commands/last-errors.md)  
-[Method called on error](method-called-on-error.md)  
+[Last errors](../commands/last-errors)   
+[Last errors](../commands/last-errors)  
+[Method called on error](method-called-on-error)  
 *System Variables*  
 
 ## Properties

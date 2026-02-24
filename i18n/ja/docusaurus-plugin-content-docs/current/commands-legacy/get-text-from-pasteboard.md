@@ -42,9 +42,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET PASTEBOARD DATA](get-pasteboard-data.md)  
-[GET PICTURE FROM PASTEBOARD](get-picture-from-pasteboard.md)  
-[Pasteboard data size](pasteboard-data-size.md)  
+[GET PASTEBOARD DATA](get-pasteboard-data)  
+[GET PICTURE FROM PASTEBOARD](get-picture-from-pasteboard)  
+[Pasteboard data size](pasteboard-data-size)  
 
 ## プロパティ
 

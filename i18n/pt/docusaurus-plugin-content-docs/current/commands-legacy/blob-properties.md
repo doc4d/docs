@@ -86,8 +86,8 @@ Depois que este método tenha sido adicionado à sua aplicação, você pode us�
 
 ## Ver também 
 
-[COMPRESS BLOB](compress-blob.md)  
-[EXPAND BLOB](expand-blob.md)  
+[COMPRESS BLOB](compress-blob)  
+[EXPAND BLOB](expand-blob)  
 
 ## Propriedades
 

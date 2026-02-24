@@ -96,8 +96,8 @@ Title="4  Stabat mater"/>
 
 ## 参照 
 
-[BASE64 DECODE](base64-decode.md)  
-[BASE64 ENCODE](base64-encode.md)  
+[BASE64 DECODE](base64-decode)  
+[BASE64 ENCODE](base64-encode)  
 
 ## プロパティ
 

@@ -42,7 +42,7 @@ Finalmente, pode passar \* em *refElem*: neste caso, o comando se aplicará ao e
 
 ## Ver também 
 
-[SET LIST ITEM FONT](set-list-item-font.md)  
+[SET LIST ITEM FONT](set-list-item-font)  
 
 ## Propriedades
 

@@ -40,7 +40,7 @@ Se executado este comando desde um componente, devolve por defeito os caminhos d
 
 ## Ver também 
 
-[METHOD GET PATHS](method-get-paths.md)  
+[METHOD GET PATHS](method-get-paths)  
 
 ## Propriedades
 

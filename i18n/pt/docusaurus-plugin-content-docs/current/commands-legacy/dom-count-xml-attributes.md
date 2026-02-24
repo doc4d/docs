@@ -64,7 +64,7 @@ Se o comando tiver sido executado corretamente, a variável sistema OK assume o 
 
 ## Ver também 
 
-[DOM Count XML elements](dom-count-xml-elements.md)  
+[DOM Count XML elements](dom-count-xml-elements)  
 
 ## Propriedades
 

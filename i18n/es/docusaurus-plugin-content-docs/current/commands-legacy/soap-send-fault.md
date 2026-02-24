@@ -54,8 +54,8 @@ Regresando al ejemplo del servicio Web “Raiz\_cuadrada” de la descripción d
 
 #### Ver también 
 
-[SOAP DECLARATION](soap-declaration.md)  
-[SOAP get info](soap-get-info.md)  
+[SOAP DECLARATION](soap-declaration)  
+[SOAP get info](soap-get-info)  
 
 #### Propiedades
 

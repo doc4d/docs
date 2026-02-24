@@ -33,8 +33,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Trigger event](trigger-event.md)  
-[TRIGGER PROPERTIES](trigger-properties.md)  
+[Trigger event](trigger-event)  
+[TRIGGER PROPERTIES](trigger-properties)  
 *トリガ*  
 
 ## プロパティ

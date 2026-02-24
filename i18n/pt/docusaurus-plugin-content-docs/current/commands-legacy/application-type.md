@@ -53,8 +53,8 @@ Em alguma parte do seu código, diferente do método de banco de dados *Método 
 
 ## Ver também 
 
-[Application version](application-version.md)  
-[Version type](version-type.md)  
+[Application version](application-version)  
+[Version type](version-type)  
 
 ## Propriedades
 

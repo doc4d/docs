@@ -106,7 +106,7 @@ Once this project method is added to your application, you can for instance writ
 
 ## See also 
 
-[VOLUME LIST](volume-list.md)  
+[VOLUME LIST](volume-list)  
 
 ## Properties
 

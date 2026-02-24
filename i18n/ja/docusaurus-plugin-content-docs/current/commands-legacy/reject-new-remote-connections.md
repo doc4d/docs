@@ -46,9 +46,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[DROP REMOTE USER](drop-remote-user.md)  
-[Application info](../commands/application-info.md)  
-[SOAP REJECT NEW REQUESTS](soap-reject-new-requests.md)  
+[DROP REMOTE USER](drop-remote-user)  
+[Application info](../commands/application-info)  
+[SOAP REJECT NEW REQUESTS](soap-reject-new-requests)  
 
 ## プロパティ
 

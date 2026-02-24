@@ -39,7 +39,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT Get focus rectangle invisible](object-get-focus-rectangle-invisible.md)  
+[OBJECT Get focus rectangle invisible](object-get-focus-rectangle-invisible)  
 
 ## プロパティ
 

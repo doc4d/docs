@@ -56,7 +56,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SAX GET XML PROCESSING INSTRUCTION](sax-get-xml-processing-instruction.md)  
+[SAX GET XML PROCESSING INSTRUCTION](sax-get-xml-processing-instruction)  
 
 ## プロパティ
 

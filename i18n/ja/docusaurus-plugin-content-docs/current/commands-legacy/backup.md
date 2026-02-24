@@ -45,9 +45,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[BACKUP INFO](backup-info.md)  
+[BACKUP INFO](backup-info)  
 *On Backup Startupデータベースメソッド*  
-[RESTORE](restore.md)  
+[RESTORE](restore)  
 
 ## プロパティ
 

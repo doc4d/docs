@@ -72,12 +72,12 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET LIST ITEM PROPERTIES](get-list-item-properties.md)  
-[List item parent](list-item-parent.md)  
-[List item position](list-item-position.md)  
-[Selected list items](selected-list-items.md)  
-[SET LIST ITEM](set-list-item.md)  
-[SET LIST ITEM PROPERTIES](set-list-item-properties.md)  
+[GET LIST ITEM PROPERTIES](get-list-item-properties)  
+[List item parent](list-item-parent)  
+[List item position](list-item-position)  
+[Selected list items](selected-list-items)  
+[SET LIST ITEM](set-list-item)  
+[SET LIST ITEM PROPERTIES](set-list-item-properties)  
 
 ## プロパティ
 

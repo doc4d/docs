@@ -44,7 +44,7 @@ Para maiores informações sobre componentes 4D, por favor consulte o Manual de 
 
 ## Ver também 
 
-[PLUGIN LIST](plugin-list.md)  
+[PLUGIN LIST](plugin-list)  
 
 ## Propriedades
 

@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 The template uses a set of tags to process the data in order to either retain a layout close to the original report or to adopt your own custom HTML.
 
-**Note:** You first need to call [QR SET DESTINATION](qr-set-destination.md) to set the output to HTML file.
+**Note:** You first need to call [QR SET DESTINATION](qr-set-destination) to set the output to HTML file.
 
 ## HTML Tags 
 
@@ -79,7 +79,7 @@ If you pass an invalid *area* number, the error -9850 will be generated.
 
 ## See also 
 
-[QR Get HTML template](qr-get-html-template.md)  
+[QR Get HTML template](qr-get-html-template)  
 
 ## Properties
 

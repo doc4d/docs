@@ -81,7 +81,7 @@ Sur un événement double-clic, vous vérifiez que vous êtes bien en présence 
 
 ## Voir aussi 
 
-[ST INSERT URL](st-insert-url.md)  
+[ST INSERT URL](st-insert-url)  
 
 ## Propriétés
 

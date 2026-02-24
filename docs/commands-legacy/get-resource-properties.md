@@ -40,7 +40,7 @@ The numeric value returned by **Get resource properties** must be seen as a bit 
 
 ## Example 
 
-See example for the [Get resource name](get-resource-name.md) command.
+See example for the [Get resource name](get-resource-name) command.
 
 ## System variables and sets 
 

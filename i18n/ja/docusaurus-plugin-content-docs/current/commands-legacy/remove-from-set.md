@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[ADD TO SET](add-to-set.md)  
+[ADD TO SET](add-to-set)  
 
 ## プロパティ
 

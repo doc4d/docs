@@ -62,8 +62,8 @@ O código a seguir insere um elemento (sem sub-lista associada) justo antes do e
 
 ## Ver também 
 
-[APPEND TO LIST](append-to-list.md)  
-[SET LIST ITEM PARAMETER](set-list-item-parameter.md)  
+[APPEND TO LIST](append-to-list)  
+[SET LIST ITEM PARAMETER](set-list-item-parameter)  
 
 ## Propriedades
 

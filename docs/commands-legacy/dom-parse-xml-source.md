@@ -67,7 +67,7 @@ If validation cannot be performed (no DTD or XSD, incorrect URL, etc.), an error
 
 The command returns a 16-character string (ElementRef) making up the reference in the memory of the document virtual structure. This reference should be used with other XML parsing commands. 
 
-**Important:** Once you no longer have any need for it, remember to call the [DOM CLOSE XML](dom-close-xml.md) command with this reference in order to free up the memory.
+**Important:** Once you no longer have any need for it, remember to call the [DOM CLOSE XML](dom-close-xml) command with this reference in order to free up the memory.
 
 ## Example 1 
 
@@ -107,8 +107,8 @@ If the command has been correctly executed, the system variable OK is set to 1\.
 
 ## See also 
 
-[DOM CLOSE XML](dom-close-xml.md)  
-[DOM Parse XML variable](dom-parse-xml-variable.md)  
+[DOM CLOSE XML](dom-close-xml)  
+[DOM Parse XML variable](dom-parse-xml-variable)  
 
 ## Properties
 

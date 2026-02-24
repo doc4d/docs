@@ -36,9 +36,9 @@ Les types de données scalaires incluent les types date/heure, numériques et al
 
 ## Voir aussi 
 
-[ADJUST TABLE CACHE PRIORITY](adjust-table-cache-priority.md)  
+[ADJUST TABLE CACHE PRIORITY](adjust-table-cache-priority)  
 *Gestion des priorités dans le cache de la base*  
-[SET TABLE CACHE PRIORITY](set-table-cache-priority.md)  
+[SET TABLE CACHE PRIORITY](set-table-cache-priority)  
 
 ## Propriétés
 

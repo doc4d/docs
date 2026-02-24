@@ -63,7 +63,7 @@ If *pictureObject* does not contain a valid SVG picture, the command returns an 
 
 ## See also 
 
-[SVG Find element IDs by rect](svg-find-element-ids-by-rect.md)  
+[SVG Find element IDs by rect](svg-find-element-ids-by-rect)  
 
 ## Properties
 

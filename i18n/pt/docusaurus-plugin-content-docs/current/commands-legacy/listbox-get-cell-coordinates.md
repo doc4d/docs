@@ -62,8 +62,8 @@ Você quer desenhar um retângulo vermelho arredor da célula selecionada de um 
 
 ## Ver também 
 
-[LISTBOX GET CELL POSITION](listbox-get-cell-position.md)  
-[OBJECT GET COORDINATES](object-get-coordinates.md)  
+[LISTBOX GET CELL POSITION](listbox-get-cell-position)  
+[OBJECT GET COORDINATES](object-get-coordinates)  
 
 ## Propriedades
 

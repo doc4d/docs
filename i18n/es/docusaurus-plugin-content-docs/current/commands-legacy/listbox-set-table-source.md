@@ -50,7 +50,7 @@ Si el list box ya contiene las columnas, sus contenidos se actualizarán despué
 
 ## Ver también 
 
-[LISTBOX GET TABLE SOURCE](listbox-get-table-source.md)  
+[LISTBOX GET TABLE SOURCE](listbox-get-table-source)  
 
 ## Propiedades
 

@@ -44,9 +44,9 @@ Si el cliente es dado de baja correctamente, la variable sistema OK toma el valo
 
 #### Ver también 
 
-[EXECUTE ON CLIENT](execute-on-client.md)  
-[GET REGISTERED CLIENTS](get-registered-clients.md)  
-[REGISTER CLIENT](register-client.md)  
+[EXECUTE ON CLIENT](execute-on-client)  
+[GET REGISTERED CLIENTS](get-registered-clients)  
+[REGISTER CLIENT](register-client)  
 
 #### Propiedades
 

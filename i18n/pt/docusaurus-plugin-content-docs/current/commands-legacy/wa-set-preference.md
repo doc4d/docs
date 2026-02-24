@@ -67,7 +67,7 @@ WA SET PREFERENCE( *;"myarea"; WA enable URL drop ; True)
 
 ## Ver também 
 
-[WA GET PREFERENCE](wa-get-preference.md)  
+[WA GET PREFERENCE](wa-get-preference)  
 
 ## Propriedades
 

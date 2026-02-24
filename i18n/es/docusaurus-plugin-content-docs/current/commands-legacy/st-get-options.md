@@ -45,7 +45,7 @@ Pase el código de la opción a leer en el parámetro *opcion*. El comando devue
 
 #### Ver también 
 
-[ST SET OPTIONS](st-set-options.md)  
+[ST SET OPTIONS](st-set-options)  
 
 #### Propiedades
 

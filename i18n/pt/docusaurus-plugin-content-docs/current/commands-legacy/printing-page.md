@@ -38,7 +38,7 @@ O exemplo a seguir muda a posição dos números de página em um relatório de 
 
 ## Ver também 
 
-[PRINT SELECTION](print-selection.md)  
+[PRINT SELECTION](print-selection)  
 
 ## Propriedades
 

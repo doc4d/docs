@@ -34,7 +34,7 @@ SQLサーバが起動していた場合、すべてのSQL接続が中断しま�
 
 ## 参照 
 
-[START SQL SERVER](start-sql-server.md)  
+[START SQL SERVER](start-sql-server)  
 
 ## プロパティ
 

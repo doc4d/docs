@@ -66,8 +66,8 @@ Queremos obter o tipo de valores padrão:
 
 ## Ver também 
 
-[OB GET PROPERTY NAMES](ob-get-property-names.md)  
-[Value type](value-type.md)  
+[OB GET PROPERTY NAMES](ob-get-property-names)  
+[Value type](value-type)  
 
 ## Propriedades
 

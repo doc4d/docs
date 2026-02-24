@@ -39,7 +39,7 @@ If you pass a valid resource file reference number in *resFile*, the resource is
 
 ## Example 
 
-See example for the [RESOURCE LIST](resource-list.md) command.
+See example for the [RESOURCE LIST](resource-list) command.
 
 ## System variables and sets 
 

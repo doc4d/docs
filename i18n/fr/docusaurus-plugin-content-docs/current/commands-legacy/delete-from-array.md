@@ -55,8 +55,8 @@ L'exemple suivant supprime le dernier élément d'un tableau, s'il existe :
 
 ## Voir aussi 
 
-[INSERT IN ARRAY](insert-in-array.md)  
-[Size of array](size-of-array.md)  
+[INSERT IN ARRAY](insert-in-array)  
+[Size of array](size-of-array)  
 
 ## Propriétés
 

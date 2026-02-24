@@ -41,8 +41,8 @@ If you pass the optional *\** parameter, you indicate that the *object* paramete
 
 ## See also 
 
-[LISTBOX DELETE ROWS](listbox-delete-rows.md)  
-[LISTBOX INSERT ROWS](listbox-insert-rows.md)  
+[LISTBOX DELETE ROWS](listbox-delete-rows)  
+[LISTBOX INSERT ROWS](listbox-insert-rows)  
 
 ## Properties
 

@@ -47,7 +47,7 @@ Se passa um número de *area* incorreto, se gera o erro -9850.
 
 ## Ver também 
 
-[QR SET DESTINATION](qr-set-destination.md)  
+[QR SET DESTINATION](qr-set-destination)  
 
 ## Propriedades
 

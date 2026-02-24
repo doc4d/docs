@@ -83,7 +83,7 @@ Este é um exemplo de corte de uma imagem (a imagem se mostra no formulário com
 
 ## Ver também 
 
-[COMBINE PICTURES](combine-pictures.md)  
+[COMBINE PICTURES](combine-pictures)  
 
 ## Propriedades
 

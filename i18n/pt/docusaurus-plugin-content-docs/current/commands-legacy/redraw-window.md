@@ -35,7 +35,7 @@ Se omitir o parâmetro *janela*, REDRAW WINDOW aplica à janela do primeiro plan
 
 ## Ver também 
 
-[ERASE WINDOW](erase-window.md)  
+[ERASE WINDOW](erase-window)  
 
 ## Propriedades
 

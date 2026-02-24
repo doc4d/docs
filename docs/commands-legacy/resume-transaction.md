@@ -26,14 +26,14 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.RESUME TRANSACTION.Summary-->The **RESUME TRANSACTION** command resumes the transaction that was paused using [SUSPEND TRANSACTION](suspend-transaction.md) at the corresponding level in the current process.<!-- END REF--> Any operations that are executed after this command are carried out under transaction control (except when several suspended transactions are nested). 
+<!--REF #_command_.RESUME TRANSACTION.Summary-->The **RESUME TRANSACTION** command resumes the transaction that was paused using [SUSPEND TRANSACTION](suspend-transaction) at the corresponding level in the current process.<!-- END REF--> Any operations that are executed after this command are carried out under transaction control (except when several suspended transactions are nested). 
 
 For more information, please refer to the [Suspending transactions](../Develop-legacy/transactions.md#suspending-transactions) section. 
 
 ## See also 
 
-[Active transaction](active-transaction.md)  
-[SUSPEND TRANSACTION](suspend-transaction.md)  
+[Active transaction](active-transaction)  
+[SUSPEND TRANSACTION](suspend-transaction)  
 [Suspending transactions](../Develop-legacy/transactions.md#suspending-transactions)
 
 ## Properties

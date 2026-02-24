@@ -34,9 +34,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[CLEAR LIST](clear-list.md)  
-[Load list](load-list.md)  
-[New list](new-list.md)  
+[CLEAR LIST](clear-list)  
+[Load list](load-list)  
+[New list](new-list)  
 
 ## プロパティ
 

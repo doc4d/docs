@@ -40,9 +40,9 @@ SET DOCUMENT POSITION コマンドは、引数*offset*に渡す、以下の読�
 
 ## 参照 
 
-[Get document position](get-document-position.md)  
-[RECEIVE PACKET](receive-packet.md)  
-[SEND PACKET](send-packet.md)  
+[Get document position](get-document-position)  
+[RECEIVE PACKET](receive-packet)  
+[SEND PACKET](send-packet)  
 
 ## プロパティ
 

@@ -55,7 +55,7 @@ You want to display "Search" as placeholder text in a combo box:
 
 ## See also 
 
-[OBJECT Get placeholder](object-get-placeholder.md)  
+[OBJECT Get placeholder](object-get-placeholder)  
 
 ## Properties
 

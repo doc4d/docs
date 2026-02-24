@@ -42,7 +42,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[ENABLE MENU ITEM](enable-menu-item.md)  
+[ENABLE MENU ITEM](enable-menu-item)  
 
 ## プロパティ
 

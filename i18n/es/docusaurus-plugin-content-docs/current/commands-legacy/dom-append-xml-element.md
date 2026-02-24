@@ -39,7 +39,7 @@ Ver el ejemplo del comando [DOM Insert XML element](dom-insert-xml-element.md "D
 
 ## Ver también 
 
-[DOM Insert XML element](dom-insert-xml-element.md)  
+[DOM Insert XML element](dom-insert-xml-element)  
 
 ## Propiedades
 

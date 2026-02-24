@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Frontmost window](frontmost-window.md)  
+[Frontmost window](frontmost-window)  
 
 ## プロパティ
 

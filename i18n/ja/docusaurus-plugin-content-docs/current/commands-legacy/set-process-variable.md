@@ -105,9 +105,9 @@ SET PROCESS VARIABLEは、任意のタイプの送り先プロセスまたはイ
 
 ## 参照 
 
-[GET PROCESS VARIABLE](get-process-variable.md)  
-[POST OUTSIDE CALL](post-outside-call.md)  
-[VARIABLE TO VARIABLE](variable-to-variable.md)  
+[GET PROCESS VARIABLE](get-process-variable)  
+[POST OUTSIDE CALL](post-outside-call)  
+[VARIABLE TO VARIABLE](variable-to-variable)  
 *プロセス*  
 
 ## プロパティ

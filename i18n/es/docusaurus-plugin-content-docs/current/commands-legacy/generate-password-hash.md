@@ -44,7 +44,7 @@ En el objeto *opciones*, pase las propiedades que se utilizarán al generar el h
 
 ### Gestión de errores 
 
-Se pueden devolver los siguientes errores. Puede revisar un error con los comandos [Last errors](../commands/last-errors.md)  y [ON ERR CALL](on-err-call.md).  
+Se pueden devolver los siguientes errores. Puede revisar un error con los comandos [Last errors](../commands/last-errors)  y [ON ERR CALL](on-err-call.md).  
 
 | **Número** | **Mensaje**                                                                         |
 | ---------- | ----------------------------------------------------------------------------------- |
@@ -72,13 +72,13 @@ Este ejemplo genera un hash de contraseña utilizando bcrypt con un factor de co
  SAVE RECORD([Users])
 ```
 
-**Nota**: múltiples pasadas de la misma contraseña darán lugar a cadenas hash diferentes. Este es un comportamiento estándar para algoritmos como bcrypt, ya que la mejor práctica es crear una nueva sal aleatoria para cada hash. Consulte la descripción [Verify password hash ](verify-password-hash.md) para ver un ejemplo de cómo comprobar las contraseñas.
+**Nota**: múltiples pasadas de la misma contraseña darán lugar a cadenas hash diferentes. Este es un comportamiento estándar para algoritmos como bcrypt, ya que la mejor práctica es crear una nueva sal aleatoria para cada hash. Consulte la descripción [Verify password hash ](verify-password-hash) para ver un ejemplo de cómo comprobar las contraseñas.
 
 ## Ver también 
 
   
-[Generate digest](generate-digest.md)  
-[Verify password hash ](verify-password-hash.md)  
+[Generate digest](generate-digest)  
+[Verify password hash ](verify-password-hash)  
 
 ## Propiedades
 

@@ -50,7 +50,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX GET TABLE SOURCE](listbox-get-table-source.md)  
+[LISTBOX GET TABLE SOURCE](listbox-get-table-source)  
 
 ## プロパティ
 

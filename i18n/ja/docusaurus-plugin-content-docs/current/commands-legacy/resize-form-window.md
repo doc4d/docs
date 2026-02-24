@@ -54,9 +54,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[FORM GET PROPERTIES](form-get-properties.md)  
-[FORM SET SIZE](form-set-size.md)  
-[SET WINDOW RECT](set-window-rect.md)  
+[FORM GET PROPERTIES](form-get-properties)  
+[FORM SET SIZE](form-set-size)  
+[SET WINDOW RECT](set-window-rect)  
 
 ## プロパティ
 

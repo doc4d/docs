@@ -105,8 +105,8 @@ DTDやXSDが存在しなかったりURLが正しくない場合など検証が�
 
 ## 参照 
 
-[DOM CLOSE XML](dom-close-xml.md)  
-[DOM Parse XML variable](dom-parse-xml-variable.md)  
+[DOM CLOSE XML](dom-close-xml)  
+[DOM Parse XML variable](dom-parse-xml-variable)  
 
 ## プロパティ
 

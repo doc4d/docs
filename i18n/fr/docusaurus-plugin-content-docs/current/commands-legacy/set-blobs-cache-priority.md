@@ -58,8 +58,8 @@ Dans la , vous souhaitez fixer une priorité très haute pour les "blobs" de la 
 
 ## Voir aussi 
 
-[ADJUST BLOBS CACHE PRIORITY](adjust-blobs-cache-priority.md)  
-[Get adjusted blobs cache priority](get-adjusted-blobs-cache-priority.md)  
+[ADJUST BLOBS CACHE PRIORITY](adjust-blobs-cache-priority)  
+[Get adjusted blobs cache priority](get-adjusted-blobs-cache-priority)  
 
 ## Propriétés
 

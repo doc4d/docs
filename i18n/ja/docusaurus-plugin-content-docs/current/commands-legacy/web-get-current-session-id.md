@@ -33,7 +33,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[WEB LEGACY GET SESSION EXPIRATION](web-legacy-get-session-expiration.md)  
+[WEB LEGACY GET SESSION EXPIRATION](web-legacy-get-session-expiration)  
 *Webセッション管理(旧式)*  
 
 ## プロパティ

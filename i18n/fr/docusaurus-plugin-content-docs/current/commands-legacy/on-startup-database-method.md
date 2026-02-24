@@ -33,7 +33,7 @@ La **On Startup database method** est l'emplacement idéal pour :
 * Initialiser les variables interprocess que vous utiliserez pendant toute la session de travail.
 * Démarrer automatiquement des process à l'ouverture de la base.
 * Charger des préférences ou des paramétrages sauvegardés dans ce but lors de la session de travail précédente.
-* Empêcher l'ouverture de la base si une condition n'est pas remplie (comme par exemple, une ressource système manquante) par l'appel explicite de la commande [QUIT 4D](quit-4d.md).
+* Empêcher l'ouverture de la base si une condition n'est pas remplie (comme par exemple, une ressource système manquante) par l'appel explicite de la commande [QUIT 4D](quit-4d).
 * Accomplir toute autre action que vous souhaitez exécuter automatiquement à chaque ouverture de la base.
 
 En revanche, il est fortement déconseillé de lancer des impressions depuis la **On Startup database method**. 
@@ -46,7 +46,7 @@ Reportez-vous à l'exemple de la section [On Exit database method](on-exit-datab
 
 [On Exit database method](on-exit-database-method.md)  
 *Présentation des méthodes base*  
-[QUIT 4D](quit-4d.md)  
+[QUIT 4D](quit-4d)  
 
 ## Propriétés
 

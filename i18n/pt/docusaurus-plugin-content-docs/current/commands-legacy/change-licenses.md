@@ -51,8 +51,8 @@ Desta forma um usuário pode ativar licenças sem ter que modificar a base.
 
 ## Ver também 
 
-[License info](../commands/license-info.md)  
-[Is license available](is-license-available.md)  
+[License info](../commands/license-info)  
+[Is license available](is-license-available)  
 
 ## Propriedades
 

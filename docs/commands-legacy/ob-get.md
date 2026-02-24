@@ -36,7 +36,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.OB Get.Summary-->The **OB Get** command returns the current value of the *property* of the *object*, optionally converted into the *type* specified.<!-- END REF-->can be an object varialble or a 4D object field.
 
-**Note:** This command supports attribute definitions in 4D Write Pro *objects*, like the [WP GET ATTRIBUTES]((../WritePro/commands/wp-get-attributes.md) command (see example 9). 
+**Note:** This command supports attribute definitions in 4D Write Pro *objects*, like the [WP GET ATTRIBUTES]((../WritePro/commands/wp-get-attributes) command (see example 9). 
 
 In the *property* parameter, pass the label of the property to be read. Note that the *property* parameter is case sensitive. 
 
@@ -58,14 +58,14 @@ By default, 4D returns the value of the property in its original type. You can "
 
 The command returns the value of the *property*. Several types of data are supported. Note that:
 
-* a pointer is returned as such; it can be evaluated using the [JSON Stringify](json-stringify.md) command.
+* a pointer is returned as such; it can be evaluated using the [JSON Stringify](json-stringify) command.
 * depending on your [database date settings](./set-database-parameter.md#dates-inside-objects-85), dates in object attributes are stored either with date type or text type. In order for **OB Get** to correctly interpret a date stored as a text, you need to use the `Is date` constant (see example 5).
 * in real values, the decimal separator is always a period "."
 * times are returned as a number. Times are stored in seconds by default in objects (see compatibility note below). Use the Is time constant to get a 4D formatted time value.
 
 **Compatibility Notes:**
 
-* In versions prior to v17, times were stored in milliseconds inside objects. For compatibility needs, this previous behavior can be restored using the Times inside objects selector of the [SET DATABASE PARAMETER](set-database-parameter.md) command. Whatever the setting, the result will be correct when the Is time constant is passed.
+* In versions prior to v17, times were stored in milliseconds inside objects. For compatibility needs, this previous behavior can be restored using the Times inside objects selector of the [SET DATABASE PARAMETER](set-database-parameter) command. Whatever the setting, the result will be correct when the Is time constant is passed.
 * (*4D Write Pro*) In versions prior to v16 R6, when *property* defined a 4D Write Pro image attribute (such as wk image), a text value containing a data URI was always returned. Starting with 4D v16 R6, 4D Write Pro image attributes are always returned as picture values. You must use a specific *property* like wk image url to get a data URI.
 * In versions prior to v16 R4, when *property* contains a null value and if the *type* parameter is not used, 4D returns an empty string. For 4D v16 R4 and higher versions, the Is null constant is returned in this case. To preserve compatibilty, this change takes effect only if the "Use object notation to access objects properties (Unicode required)" option is enabled in the database (see the *Compatibility page*).
 
@@ -232,8 +232,8 @@ You want to know the size of a picture stored in an object attribute:
 
 ## See also 
 
-[OB Copy](ob-copy.md)  
-[OB SET](ob-set.md)  
+[OB Copy](ob-copy)  
+[OB SET](ob-set)  
 
 ## Properties
 

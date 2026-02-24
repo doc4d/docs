@@ -64,7 +64,7 @@ Substringコマンドの使用例を次に示します。結果を変数 vsResul
 
 ## 参照 
 
-[Position](position.md)  
+[Position](position)  
 
 ## プロパティ
 

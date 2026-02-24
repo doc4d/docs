@@ -54,8 +54,8 @@ When you modify a page subform, the command can be executed at any time; current
 
 ## See also 
 
-[OBJECT GET SUBFORM](object-get-subform.md)  
-[OBJECT GET SUBFORM CONTAINER SIZE](object-get-subform-container-size.md)  
+[OBJECT GET SUBFORM](object-get-subform)  
+[OBJECT GET SUBFORM CONTAINER SIZE](object-get-subform-container-size)  
 
 ## Properties
 

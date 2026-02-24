@@ -41,9 +41,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET GROUP PROPERTIES](get-group-properties.md)  
-[GET USER LIST](get-user-list.md)  
-[Set group properties](set-group-properties.md)  
+[GET GROUP PROPERTIES](get-group-properties)  
+[GET USER LIST](get-user-list)  
+[Set group properties](set-group-properties)  
 
 ## プロパティ
 

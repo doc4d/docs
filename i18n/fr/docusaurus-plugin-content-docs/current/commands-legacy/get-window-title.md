@@ -34,11 +34,11 @@ Si vous omettez le paramètre *fenêtre*, **Get window title** retourne le titre
 
 ## Exemple 
 
-Reportez-vous à l'exemple de la commande [SET WINDOW TITLE](set-window-title.md).
+Reportez-vous à l'exemple de la commande [SET WINDOW TITLE](set-window-title).
 
 ## Voir aussi 
 
-[SET WINDOW TITLE](set-window-title.md)  
+[SET WINDOW TITLE](set-window-title)  
 
 ## Propriétés
 

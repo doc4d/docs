@@ -78,7 +78,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR SET BORDERS](qr-set-borders.md)  
+[QR SET BORDERS](qr-set-borders)  
 
 ## プロパティ
 

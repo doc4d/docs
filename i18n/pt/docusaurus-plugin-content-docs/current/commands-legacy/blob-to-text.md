@@ -51,9 +51,9 @@ O parâmetro *formatoTexto* corrige o formato interno e o conjunto de caracteres
 
 * As constantes "UTF8" podem ser usadas somente quando o aplicativo é executado no modo Unicode.
 * As constantes "Mac" não podem trabalhar com textos maiores que 32 KB.
-* Se você deseja trabalhar com outros conjuntos de caracteres além de UTF8, use o comando [Convert to text](convert-to-text.md) .
+* Se você deseja trabalhar com outros conjuntos de caracteres além de UTF8, use o comando [Convert to text](convert-to-text) .
 
-Para obter mais informações sobre essas constantes e os formatos que representam, consulte a descrição do comando [TEXT TO BLOB](text-to-blob.md). 
+Para obter mais informações sobre essas constantes e os formatos que representam, consulte a descrição do comando [TEXT TO BLOB](text-to-blob). 
 
 **Atención:** O número de caracteres a ser lido é determinado pelo parâmetro *formatoTexto*, EXCETO para os formatos Mac Text without length e UTF8 Text without length, para o qual você deve especificar o número de caracteres a ser lido no parâmetro compTexto. Para os outros formatos, *compText* é ignorado e você pode omiti-lo. 
 
@@ -65,14 +65,14 @@ Após a chamada, a variável é incrementada pelo número de bytes lidos. Portan
 
 ## Ver também 
 
-[BLOB to integer](blob-to-integer.md)  
-[BLOB to longint](blob-to-longint.md)  
-[BLOB to real](blob-to-real.md)  
-[Convert to text](convert-to-text.md)  
-[INTEGER TO BLOB](integer-to-blob.md)  
-[LONGINT TO BLOB](longint-to-blob.md)  
-[REAL TO BLOB](real-to-blob.md)  
-[TEXT TO BLOB](text-to-blob.md)  
+[BLOB to integer](blob-to-integer)  
+[BLOB to longint](blob-to-longint)  
+[BLOB to real](blob-to-real)  
+[Convert to text](convert-to-text)  
+[INTEGER TO BLOB](integer-to-blob)  
+[LONGINT TO BLOB](longint-to-blob)  
+[REAL TO BLOB](real-to-blob)  
+[TEXT TO BLOB](text-to-blob)  
 
 ## Propriedades
 

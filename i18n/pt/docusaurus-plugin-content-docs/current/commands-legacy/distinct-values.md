@@ -43,7 +43,7 @@ Entretanto, executar este comando com campos não indexáveis será um processo 
 
 Se criar o array antes da chamada, DISTINCT VALUES espera um tipo de array compatìvel com o campo que passar. De outra maneira, em modo interpretado, DISTINCT VALUES vai criar um array do tipo apropriado Há uma exceção a essa regra: se o campo é do tipo Imagem (e está associado com um índex de palavras-chave), o array correspondente deve ser do tipo Texto.
 
-Depois de acionado, o tamanho do array é igual ao número de valores distintos encontrados na seleção. O comando não muda a seleção atual nem o registro atual. O comando **DISTINCT VALUES** usa o index do campo, então os elementos no array são devolvidos ordenados em ordem ascendente. Se este é o comando que necessitam não é preciso acionar [SORT ARRAY](sort-array.md) depois de utilizar **DISTINCT VALUES**.
+Depois de acionado, o tamanho do array é igual ao número de valores distintos encontrados na seleção. O comando não muda a seleção atual nem o registro atual. O comando **DISTINCT VALUES** usa o index do campo, então os elementos no array são devolvidos ordenados em ordem ascendente. Se este é o comando que necessitam não é preciso acionar [SORT ARRAY](sort-array) depois de utilizar **DISTINCT VALUES**.
 
 **Nota:** quando **DISTINCT VALUES** é executado com um campo de texto associado com um índice de palavras chave, o comando preenche o array com as palavras chave do índice. Diferente de outros tipos de dados, os valores devolvidos diferem de acordo com a existência do índex. No caso de um campo de texto, o índex de palavras-chave é sempre tido em conta, mesmo quando o campo também é associado com um índice padrão. Se o campo texto ou imagem não está associado com um índice de palavras-chave, o array é retornado vazio.
 
@@ -93,10 +93,10 @@ Para calcular as estatísticas, se quiser ordenar o número de valores distintos
 ## Ver também 
 
   
-[GET TEXT KEYWORDS](get-text-keywords.md)  
+[GET TEXT KEYWORDS](get-text-keywords)  
 [ON ERR CALL](on-err-call.md)  
-[SELECTION RANGE TO ARRAY](selection-range-to-array.md)  
-[SELECTION TO ARRAY](selection-to-array.md)  
+[SELECTION RANGE TO ARRAY](selection-range-to-array)  
+[SELECTION TO ARRAY](selection-to-array)  
 
 ## Propriedades
 

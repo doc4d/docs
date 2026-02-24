@@ -51,8 +51,8 @@ Windows上で、4Dの起動時に、DLLライブラリが4D実行形式のファ
 
 ## 参照 
 
-[Data file](data-file.md)  
-[Structure file](structure-file.md)  
+[Data file](data-file)  
+[Structure file](structure-file)  
 
 ## プロパティ
 

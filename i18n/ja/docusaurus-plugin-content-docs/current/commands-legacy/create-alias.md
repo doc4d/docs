@@ -78,7 +78,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[RESOLVE ALIAS](resolve-alias.md)  
+[RESOLVE ALIAS](resolve-alias)  
 
 ## プロパティ
 

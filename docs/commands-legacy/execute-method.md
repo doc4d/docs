@@ -36,7 +36,7 @@ In *result*, you can pass a variable which will receive the result of the execut
 
 The execution context is preserved in the called method, which means that the current form and any current form event remain defined. 
 
-If you call this command from a component and pass a method name belonging to the host database in *methodName* (or vice versa), the method must have been shared (“Shared by components and host database” option, in the [Method properties](../Project/project-method-properties.md)).
+If you call this command from a component and pass a method name belonging to the host database in *methodName* (or vice versa), the method must have been shared (“Shared by components and host database” option, in the [Method properties](../Project/project-method-properties)).
 
 ## System variables and sets 
 
@@ -44,7 +44,7 @@ If this command is executed correctly, the system variable OK is set to 1; other
 
 ## See also 
 
-[EXECUTE FORMULA](execute-formula.md)  
+[EXECUTE FORMULA](execute-formula)  
 
 ## Properties
 

@@ -37,8 +37,8 @@ Um erro é gerado quando o elemento de referência for inválido
 
 ## Ver também 
 
-[DOM Create XML element](dom-create-xml-element.md)  
-[DOM REMOVE XML ATTRIBUTE](dom-remove-xml-attribute.md)  
+[DOM Create XML element](dom-create-xml-element)  
+[DOM REMOVE XML ATTRIBUTE](dom-remove-xml-attribute)  
 
 ## Propriedades
 

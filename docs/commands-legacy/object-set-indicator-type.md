@@ -45,7 +45,7 @@ In the *indicator* parameter, pass the type of indicator you want to display. Yo
 
 ## See also 
 
-[OBJECT Get indicator type](object-get-indicator-type.md)  
+[OBJECT Get indicator type](object-get-indicator-type)  
 
 ## Properties
 

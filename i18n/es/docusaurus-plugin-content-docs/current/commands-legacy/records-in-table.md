@@ -30,7 +30,7 @@ El siguiente ejemplo muestra una alerta que indica el número de registros en la
 
 ## Ver también 
 
-[Records in selection](records-in-selection.md)  
+[Records in selection](records-in-selection)  
 
 ## Propiedades
 

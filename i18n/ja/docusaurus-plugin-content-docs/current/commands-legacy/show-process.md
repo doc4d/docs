@@ -30,9 +30,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[BRING TO FRONT](bring-to-front.md)  
-[HIDE PROCESS](hide-process.md)  
-[Process state](process-state.md)  
+[BRING TO FRONT](bring-to-front)  
+[HIDE PROCESS](hide-process)  
+[Process state](process-state)  
 
 ## プロパティ
 

@@ -35,7 +35,7 @@ Si pasa el parámetro opcional *\**, indica que el parámetro objeto es un nombr
 
 ## Ver también 
 
-[OBJECT SET FILTER](object-set-filter.md)  
+[OBJECT SET FILTER](object-set-filter)  
 
 ## Propiedades
 

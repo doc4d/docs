@@ -43,7 +43,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Character code](character-code.md)  
+[Character code](character-code)  
 *Unicodeコード*  
 *文字参照記号*  
 

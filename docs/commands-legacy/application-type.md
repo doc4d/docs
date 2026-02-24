@@ -53,8 +53,8 @@ Somewhere in your code, other than in the *On Server Startup Database Method*, y
 
 ## See also 
 
-[Application version](application-version.md)  
-[Version type](version-type.md)  
+[Application version](application-version)  
+[Version type](version-type)  
 
 ## Properties
 

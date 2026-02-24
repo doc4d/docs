@@ -78,8 +78,8 @@ displayed_sidebar: docs
 ## 参照 
 
 *Design Object Access*  
-[METHOD Get attribute](method-get-attribute.md)  
-[METHOD SET ATTRIBUTES](method-set-attributes.md)  
+[METHOD Get attribute](method-get-attribute)  
+[METHOD SET ATTRIBUTES](method-set-attributes)  
 
 ## プロパティ
 

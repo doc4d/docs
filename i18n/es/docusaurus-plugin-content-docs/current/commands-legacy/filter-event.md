@@ -24,7 +24,7 @@ Este comando le permite remover el evento actual (por ejemplo, clic, digitación
 
 **Advertencia:** evite crear un método de gestión de eventos que sólo llame al comando **FILTER EVENT**, porque todos los eventos van a ser ignorados por 4D. En caso que tenga un método de gestión de eventos con el comando **FILTER EVENT**, digite Ctrl+Mayús+Retroceso (en Windows) o comando-Opción-Mayús-Control-Retroceso (en Macintosh). Esto convierte el proceso On Event Call en un proceso normal que no obtiene eventos.
 
-**Caso especial:** el comando **FILTER EVENT** puede igualmente utilizarse en un método de formulario estándar cuando el formulario se visualiza utilizando los comandos [DISPLAY SELECTION](display-selection.md) o [MODIFY SELECTION](modify-selection.md). En este caso específico, el comando **FILTER EVENT** le permite filtrar los doble clics en los registros (y de esta manera ejecutar acciones diferentes a las de apertura de los registros en modo página).
+**Caso especial:** el comando **FILTER EVENT** puede igualmente utilizarse en un método de formulario estándar cuando el formulario se visualiza utilizando los comandos [DISPLAY SELECTION](display-selection) o [MODIFY SELECTION](modify-selection). En este caso específico, el comando **FILTER EVENT** le permite filtrar los doble clics en los registros (y de esta manera ejecutar acciones diferentes a las de apertura de los registros en modo página).
 
 Para hacer esto, coloque las siguientes líneas en el método del formulario de salida:
 

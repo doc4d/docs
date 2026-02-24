@@ -58,12 +58,12 @@ You don't want any object of the form to have the focus:
 
 ## Example 3 
 
-See the example for the [REJECT](reject.md) command.
+See the example for the [REJECT](reject) command.
 
 ## See also 
 
-[CALL SUBFORM CONTAINER](call-subform-container.md)  
-[REJECT](reject.md)  
+[CALL SUBFORM CONTAINER](call-subform-container)  
+[REJECT](reject)  
 
 ## Properties
 

@@ -62,9 +62,9 @@ Para seleção de registro, list boxes do tipo coleção ou seleção de entidad
 
 ## Ver também 
 
-[LISTBOX Get array](listbox-get-array.md)  
-[LISTBOX Get property](../commands/listbox-get-property.md)  
-[LISTBOX SET ARRAY](listbox-set-array.md)  
+[LISTBOX Get array](listbox-get-array)  
+[LISTBOX Get property](../commands/listbox-get-property)  
+[LISTBOX SET ARRAY](listbox-set-array)  
 
 ## Propriedades
 

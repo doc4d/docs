@@ -17,7 +17,7 @@ displayed_sidebar: docs
 
 ## Descrição 
 
-<!--REF #_command_.Current default table.Summary-->Current default table retorna um ponteiro a tabela que foi passado na última chamada a [DEFAULT TABLE](default-table.md) para o processo atual.<!-- END REF-->
+<!--REF #_command_.Current default table.Summary-->Current default table retorna um ponteiro a tabela que foi passado na última chamada a [DEFAULT TABLE](default-table) para o processo atual.<!-- END REF-->
 
 ## Exemplo 
 
@@ -29,9 +29,9 @@ Desde que uma tabela padrão tenha sido estabelecida, a linha de código abaixo 
 
 ## Ver também 
 
-[DEFAULT TABLE](default-table.md)  
-[Table](table.md)  
-[Table name](table-name.md)  
+[DEFAULT TABLE](default-table)  
+[Table](table)  
+[Table name](table-name)  
 
 ## Propriedades
 

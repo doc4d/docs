@@ -50,7 +50,7 @@ La commande retourne **Vrai** si un attribut est sélectionné et **Faux** s’i
 
 ## Voir aussi 
 
-[METHOD SET ATTRIBUTE](method-set-attribute.md)  
+[METHOD SET ATTRIBUTE](method-set-attribute)  
 
 ## Propriétés
 

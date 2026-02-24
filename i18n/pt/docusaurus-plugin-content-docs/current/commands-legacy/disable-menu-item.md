@@ -42,7 +42,7 @@ Se o parâmetro *menuItem* designa um submenu hierárquico, todos os elementos d
 
 ## Ver também 
 
-[ENABLE MENU ITEM](enable-menu-item.md)  
+[ENABLE MENU ITEM](enable-menu-item)  
 
 ## Propriedades
 

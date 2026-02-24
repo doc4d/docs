@@ -28,7 +28,7 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.START MONITORING ACTIVITY.Summary-->La commande **START MONITORING ACTIVITY** enregistre les opérations qui dépassent une certaine *durée* dans la mémoire.<!-- END REF--> Elle peut être appelée et exécutée sur un 4D distant, 4D Server et sur des applications 4D autonomes (si *source* n'est pas issu d'une activité de réseau). Les activités enregistrées peuvent être récupérées à l'aide de la commande [Monitored activity](monitored-activity.md). Appelez [STOP MONITORING ACTIVITY](stop-monitoring-activity.md) lorsque vous souhaitez stopper le suivi.
+<!--REF #_command_.START MONITORING ACTIVITY.Summary-->La commande **START MONITORING ACTIVITY** enregistre les opérations qui dépassent une certaine *durée* dans la mémoire.<!-- END REF--> Elle peut être appelée et exécutée sur un 4D distant, 4D Server et sur des applications 4D autonomes (si *source* n'est pas issu d'une activité de réseau). Les activités enregistrées peuvent être récupérées à l'aide de la commande [Monitored activity](monitored-activity). Appelez [STOP MONITORING ACTIVITY](stop-monitoring-activity) lorsque vous souhaitez stopper le suivi.
 
 Dans le paramètre *durée*, passez un nombre définissant la durée d'exécution (en secondes, peut être exprimée sous forme décimale) d'une opération avant l'ouverture d'une session. Une fois que l'exécution d'une opération dépasse cette durée, l'opération est enregistrée dans la mémoire. 
 
@@ -41,7 +41,7 @@ Le paramètre optionnel *source* définit le type d'activité à suivre. Valeurs
 | Activity network    | 2      | Opérations de requêtes réseau.                      |
 | Activity operations | 4      | Opération de données 4D.                            |
 
-**Note** : Si le journal de débogage a été stoppé sur la [Administration window](../ServerWindow/overview.md) de 4D Server, la commande **START MONITORING ACTIVITY** relancera le journal avec Activity network.
+**Note** : Si le journal de débogage a été stoppé sur la [Administration window](../ServerWindow/overview) de 4D Server, la commande **START MONITORING ACTIVITY** relancera le journal avec Activity network.
 
 ## Exemple 
 
@@ -102,8 +102,8 @@ Vous souhaitez lancer/arrêter le suivi et revoir les activités de données 4D 
 
 ## Voir aussi 
 
-[Monitored activity](monitored-activity.md)  
-[STOP MONITORING ACTIVITY](stop-monitoring-activity.md)  
+[Monitored activity](monitored-activity)  
+[STOP MONITORING ACTIVITY](stop-monitoring-activity)  
 
 ## Propriétés
 

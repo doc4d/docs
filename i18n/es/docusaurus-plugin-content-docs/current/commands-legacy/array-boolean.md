@@ -61,7 +61,7 @@ Este ejemplo crea un array interproceso de 50 elementos de tipo [Booleano](# "Ca
 
 ## Ver también 
 
-[ARRAY INTEGER](array-integer.md)  
+[ARRAY INTEGER](array-integer)  
 
 ## Propiedades
 

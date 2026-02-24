@@ -45,7 +45,7 @@ El siguiente ejemplo se asegura de que el informe sea listado y borra la tercera
 
 ## Ver también 
 
-[QR INSERT COLUMN](qr-insert-column.md)  
+[QR INSERT COLUMN](qr-insert-column)  
 
 ## Propiedades
 

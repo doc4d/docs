@@ -69,7 +69,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[DOM GET XML ELEMENT NAME](dom-get-xml-element-name.md)  
+[DOM GET XML ELEMENT NAME](dom-get-xml-element-name)  
 
 ## プロパティ
 

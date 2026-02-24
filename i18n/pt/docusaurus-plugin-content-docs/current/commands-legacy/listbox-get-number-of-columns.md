@@ -36,7 +36,7 @@ Se passa o parâmetro opcional *\**, indica que o parâmetro *objeto* é um nome
 
 ## Ver também 
 
-[LISTBOX DELETE COLUMN](listbox-delete-column.md)  
+[LISTBOX DELETE COLUMN](listbox-delete-column)  
 
 ## Propriedades
 

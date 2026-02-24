@@ -39,7 +39,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Trunc](trunc.md)  
+[Trunc](trunc)  
 
 ## プロパティ
 

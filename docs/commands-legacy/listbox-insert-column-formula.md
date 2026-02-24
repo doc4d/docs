@@ -42,7 +42,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.LISTBOX INSERT COLUMN FORMULA.Summary-->The **LISTBOX INSERT COLUMN FORMULA** command inserts a column into the list box designated by the *object* and *\** parameters.<!-- END REF--> 
 
-The **LISTBOX INSERT COLUMN FORMULA** command is similar to the [LISTBOX INSERT COLUMN](listbox-insert-column.md) command except that it can be used to enter a formula as the contents of a column.
+The **LISTBOX INSERT COLUMN FORMULA** command is similar to the [LISTBOX INSERT COLUMN](listbox-insert-column) command except that it can be used to enter a formula as the contents of a column.
 
 This type of contents can only be used when the “Data Source” property of the list box is set to **Current Selection**, **Named Selection**, or **Collection or Entity Selection** (for more information about this, please refer to the *Managing List Box Objects* section).
 
@@ -63,7 +63,7 @@ The *formula* parameter can contain any valid expression, i.e.:
 
 At the moment the command is called, the *formula* is parsed then executed.
 
-**Note:** Use the [Command name](../commands/command-name.md) command in order to define formulas that are independent from the application language (when they call on 4D commands).
+**Note:** Use the [Command name](../commands/command-name) command in order to define formulas that are independent from the application language (when they call on 4D commands).
 
 The *dataType* parameter can be used to designate the type of data resulting from the execution of the formula. You must pass one of the following constants of the “*Field and Variable Types*” theme in this parameter:
 
@@ -133,7 +133,7 @@ The column is added to the list box:
 
 ## See also 
 
-[LISTBOX INSERT COLUMN](listbox-insert-column.md)  
+[LISTBOX INSERT COLUMN](listbox-insert-column)  
 
 ## Properties
 

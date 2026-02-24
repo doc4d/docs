@@ -37,12 +37,12 @@ For more information on bound variables and form/subform interaction, see *Manag
 
 ## Ejemplo 
 
-A detailed example is available in the [OBJECT Get subform container value](object-get-subform-container-value.md) section.
+A detailed example is available in the [OBJECT Get subform container value](object-get-subform-container-value) section.
 
 ## Ver también 
 
-[Form](../commands/form.md)  
-[OBJECT Get subform container value](object-get-subform-container-value.md)  
+[Form](../commands/form)  
+[OBJECT Get subform container value](object-get-subform-container-value)  
 
 ## Propiedades
 

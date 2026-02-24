@@ -36,7 +36,7 @@ Si une énumération de même nom existe déjà, son contenu est remplacé.
 
 ## Voir aussi 
 
-[Load list](load-list.md)  
+[Load list](load-list)  
 
 ## Propriétés
 

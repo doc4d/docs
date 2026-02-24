@@ -75,10 +75,10 @@ Si la commande a été exécutée correctement, la variable système OK prend la
 
 ## Voir aussi 
 
-[DOM GET XML ATTRIBUTE BY INDEX](dom-get-xml-attribute-by-index.md)  
-[DOM GET XML ATTRIBUTE BY NAME](dom-get-xml-attribute-by-name.md)  
-[DOM REMOVE XML ATTRIBUTE](dom-remove-xml-attribute.md)  
-[XML SET OPTIONS](xml-set-options.md)  
+[DOM GET XML ATTRIBUTE BY INDEX](dom-get-xml-attribute-by-index)  
+[DOM GET XML ATTRIBUTE BY NAME](dom-get-xml-attribute-by-name)  
+[DOM REMOVE XML ATTRIBUTE](dom-remove-xml-attribute)  
+[XML SET OPTIONS](xml-set-options)  
 
 ## Propriétés
 

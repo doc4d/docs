@@ -39,7 +39,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Record number](record-number.md)  
+[Record number](record-number)  
 *レコード番号について*  
 
 ## プロパティ

@@ -23,8 +23,8 @@ When executed on a 4D single-user application, **Count users** returns 1.
 
 ## See also 
 
-[Count tasks](count-tasks.md)  
-[Count user processes](count-user-processes.md)  
+[Count tasks](count-tasks)  
+[Count user processes](count-user-processes)  
 
 ## Properties
 

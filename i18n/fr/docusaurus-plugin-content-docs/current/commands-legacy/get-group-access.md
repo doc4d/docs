@@ -46,7 +46,7 @@ Vous souhaitez vérifier si l'utilisateur courant appartient au groupe "plugins"
 
 ## Voir aussi 
 
-[SET GROUP ACCESS](set-group-access.md)  
+[SET GROUP ACCESS](set-group-access)  
 
 ## Propriétés
 

@@ -39,8 +39,8 @@ La copia comienza en la posición (expresada con relación al comienzo del BLOB 
 
 ## Ver también 
 
-[DELETE FROM BLOB](delete-from-blob.md)  
-[INSERT IN BLOB](insert-in-blob.md)  
+[DELETE FROM BLOB](delete-from-blob)  
+[INSERT IN BLOB](insert-in-blob)  
 
 ## Propiedades
 

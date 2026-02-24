@@ -44,9 +44,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[FORM GET VERTICAL RESIZING](form-get-vertical-resizing.md)  
-[FORM SET HORIZONTAL RESIZING](form-set-horizontal-resizing.md)  
-[FORM SET SIZE](form-set-size.md)  
+[FORM GET VERTICAL RESIZING](form-get-vertical-resizing)  
+[FORM SET HORIZONTAL RESIZING](form-set-horizontal-resizing)  
+[FORM SET SIZE](form-set-size)  
 
 ## プロパティ
 

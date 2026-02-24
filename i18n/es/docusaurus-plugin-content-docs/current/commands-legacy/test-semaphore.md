@@ -52,8 +52,8 @@ El siguiente ejemplo le permite conocer el estado de un proceso (en nuestro caso
 
 ## Ver también 
 
-[CLEAR SEMAPHORE](clear-semaphore.md)  
-[Semaphore](semaphore.md)  
+[CLEAR SEMAPHORE](clear-semaphore)  
+[Semaphore](semaphore)  
 
 ## Propiedades
 

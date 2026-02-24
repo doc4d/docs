@@ -57,8 +57,8 @@ Luego puede arrastrar la ventana haciendo clic en cualquiera de los bordes.
 
 ## Ver también 
 
-[GET WINDOW RECT](get-window-rect.md)  
-[SET WINDOW RECT](set-window-rect.md)  
+[GET WINDOW RECT](get-window-rect)  
+[SET WINDOW RECT](set-window-rect)  
 
 ## Propiedades
 

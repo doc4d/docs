@@ -47,7 +47,7 @@ Adición de nombres propios al diccionario de usuario:
 
 #### Ver también 
 
-[SPELL CHECK TEXT](spell-check-text.md)  
+[SPELL CHECK TEXT](spell-check-text)  
 
 #### Propiedades
 

@@ -34,7 +34,7 @@ Si le serveur Web n'était pas lancé, la commande ne fait rien.
 
 ## Voir aussi 
 
-[WEB START SERVER](web-start-server.md)  
+[WEB START SERVER](web-start-server)  
 
 ## Propriétés
 

@@ -93,7 +93,7 @@ Résolution d’un chemin d’objet de méthode formulaire table :
 
 ## Voir aussi 
 
-[METHOD Get path](method-get-path.md)  
+[METHOD Get path](method-get-path)  
 
 ## Propriétés
 

@@ -34,7 +34,7 @@ Si l’expression est vraie, il ne se passe rien. Si l’expression est fausse, 
 
 Optionnellement, vous pouvez passer un paramètre *texteMessage* afin d'afficher un message d'erreur personnalisé au lieu du texte de l'assertion. 
 
-Une assertion est une instruction insérée dans le code d'une méthode et chargée de détecter des éventuelles anomalies au cours de son exécution. Le principe consiste à vérifier qu’une expression est vraie à un instant donné et, dans le cas contraire, produire une exception. Les assertions sont surtout utilisées pour détecter des cas qui ne devraient jamais arriver en temps normal. Elles servent donc essentiellement à détecter des bogues de programmation. Il est possible d’activer ou de désactiver globalement toutes les assertions d’une application (par exemple en fonction du type de version) via la commande [SET ASSERT ENABLED](set-assert-enabled.md). Pour plus d’informations sur les assertions en programmation, reportez-vous à l’article (en anglais) qui leur est consacré sur Wikipedia : [http://en.wikipedia.org/wiki/Assertion\_(computing)](http://en.wikipedia.org/wiki/Assertion%5F%28computing%29)
+Une assertion est une instruction insérée dans le code d'une méthode et chargée de détecter des éventuelles anomalies au cours de son exécution. Le principe consiste à vérifier qu’une expression est vraie à un instant donné et, dans le cas contraire, produire une exception. Les assertions sont surtout utilisées pour détecter des cas qui ne devraient jamais arriver en temps normal. Elles servent donc essentiellement à détecter des bogues de programmation. Il est possible d’activer ou de désactiver globalement toutes les assertions d’une application (par exemple en fonction du type de version) via la commande [SET ASSERT ENABLED](set-assert-enabled). Pour plus d’informations sur les assertions en programmation, reportez-vous à l’article (en anglais) qui leur est consacré sur Wikipedia : [http://en.wikipedia.org/wiki/Assertion\_(computing)](http://en.wikipedia.org/wiki/Assertion%5F%28computing%29)
 
 ## Exemple 1 
 
@@ -61,9 +61,9 @@ Une assertion peut permettre de tester les paramètres passés à une méthode p
 
 ## Voir aussi 
 
-[Asserted](asserted.md)  
-[Get assert enabled](get-assert-enabled.md)  
-[SET ASSERT ENABLED](set-assert-enabled.md)  
+[Asserted](asserted)  
+[Get assert enabled](get-assert-enabled)  
+[SET ASSERT ENABLED](set-assert-enabled)  
 
 ## Propriétés
 

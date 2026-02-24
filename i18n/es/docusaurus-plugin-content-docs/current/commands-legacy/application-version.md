@@ -132,8 +132,8 @@ Usted desea utilizar el valor de la versión corta de la aplicación devuelto po
 
 ## Ver también 
 
-[Application type](application-type.md)  
-[Version type](version-type.md)  
+[Application type](application-type)  
+[Version type](version-type)  
 
 ## Propiedades
 

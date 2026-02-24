@@ -87,11 +87,11 @@ BLOBに含まれるデータのタイプは *type* によって示されます�
 
 ## 例題 
 
-[PICTURE TO BLOB](picture-to-blob.md)のルーチンの例を参照してください。
+[PICTURE TO BLOB](picture-to-blob)のルーチンの例を参照してください。
 
 ## 参照 
 
-[WEB SEND FILE](web-send-file.md)  
+[WEB SEND FILE](web-send-file)  
 
 ## プロパティ
 

@@ -34,16 +34,16 @@ displayed_sidebar: docs
 
 ## Descrição 
 
-<!--REF #_command_.QUERY SELECTION BY ATTRIBUTE.Summary-->**QUERY SELECTION BY ATTRIBUTE** realiza as mesmas ações que [QUERY BY ATTRIBUTE](query-by-attribute.md).<!-- END REF--> A diferença entre os dois comandos é o alcance da pesquisa:
+<!--REF #_command_.QUERY SELECTION BY ATTRIBUTE.Summary-->**QUERY SELECTION BY ATTRIBUTE** realiza as mesmas ações que [QUERY BY ATTRIBUTE](query-by-attribute).<!-- END REF--> A diferença entre os dois comandos é o alcance da pesquisa:
 
-* [QUERY BY ATTRIBUTE](query-by-attribute.md) procura por registros entre todos os registros na tabela.
+* [QUERY BY ATTRIBUTE](query-by-attribute) procura por registros entre todos os registros na tabela.
 * **QUERY SELECTION BY ATTRIBUTE** procura por registros entre os registros atualmente selecionados na tabela.
 
 **QUERY SELECTION BY ATTRIBUTE** procura por registros em uma *umaTabela*. O comando **QUERY SELECTION BY ATTRIBUTE** muda a seleção de *tabela* para o processo atual e faz com que o primeiro reigstro da nova seleção vire o registro atual.
 
-Para saber mais, veja a descrição do comando [QUERY BY ATTRIBUTE](query-by-attribute.md).
+Para saber mais, veja a descrição do comando [QUERY BY ATTRIBUTE](query-by-attribute).
 
-O comando **QUERY SELECTION BY ATTRIBUTE** é útil quando uma pesquisa não pode ser definida usando uma combinação de [QUERY BY ATTRIBUTE](query-by-attribute.md) (e [QUERY](query.md)) pode ser unidos com o parâmetro \* . Tipicamente, é o caso quando quiser pesquisar uma seleção atual que não resulta de uma pesquisa anterior, mas de comandos tais como [USE SET](use-set.md). 
+O comando **QUERY SELECTION BY ATTRIBUTE** é útil quando uma pesquisa não pode ser definida usando uma combinação de [QUERY BY ATTRIBUTE](query-by-attribute) (e [QUERY](query)) pode ser unidos com o parâmetro \* . Tipicamente, é o caso quando quiser pesquisar uma seleção atual que não resulta de uma pesquisa anterior, mas de comandos tais como [USE SET](use-set). 
 
 ## Exemplo 
 
@@ -57,7 +57,7 @@ Se quiser encontrar pessoas com uma idade entre 20 e 30 nos registros que foram 
 
 ## Ver também 
 
-[QUERY BY ATTRIBUTE](query-by-attribute.md)  
+[QUERY BY ATTRIBUTE](query-by-attribute)  
 
 ## Propriedades
 

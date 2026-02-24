@@ -56,7 +56,7 @@ HIDE WINDOWコマンドで画したウィンドウを表示するには:
 
 ## 参照 
 
-[SHOW WINDOW](show-window.md)  
+[SHOW WINDOW](show-window)  
 
 ## プロパティ
 

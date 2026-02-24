@@ -42,7 +42,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.LISTBOX INSERT COLUMN FORMULA.Summary-->**LISTBOX INSERT COLUMN FORMULA**コマンドは、*object*引数および *\** で指定されたリストボックスに列を挿入します。<!-- END REF--> 
 
-**LISTBOX INSERT COLUMN FORMULA**コマンドは[LISTBOX INSERT COLUMN](listbox-insert-column.md)コマンドと同様の動作を行いますが、列のコンテンツとしてフォーミュラを指定可能な点が異なります。
+**LISTBOX INSERT COLUMN FORMULA**コマンドは[LISTBOX INSERT COLUMN](listbox-insert-column)コマンドと同様の動作を行いますが、列のコンテンツとしてフォーミュラを指定可能な点が異なります。
 
 このタイプのコンテンツはリストボックスの"データソース"プロパティが**カレントセレクション**、**命名セレクション**、あるいは**コレクションまたはエンティティセレクション**に設定されている場合にのみ使用できます (この点に関する詳細は*リストボックスオブジェクトの管理*を参照してください)。
 
@@ -63,7 +63,7 @@ displayed_sidebar: docs
 
 コマンドが呼び出される際、*formula*は解析・実行されます。
 
-**注:** フォーミュラが4Dコマンドを呼び出す場合、アプリケーションのローカライズの影響を受けないようにするため、[Command name](../commands/command-name.md)を使用してください。
+**注:** フォーミュラが4Dコマンドを呼び出す場合、アプリケーションのローカライズの影響を受けないようにするため、[Command name](../commands/command-name)を使用してください。
 
 *dataType* 引数は、フォーミュラを実行した結果の型を指定するために使用します。*Field and Variable Types*テーマの以下の定数の1つを渡さなければなりません:
 
@@ -134,7 +134,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX INSERT COLUMN](listbox-insert-column.md)  
+[LISTBOX INSERT COLUMN](listbox-insert-column)  
 
 ## プロパティ
 

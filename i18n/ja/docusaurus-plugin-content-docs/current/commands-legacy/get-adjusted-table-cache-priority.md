@@ -34,8 +34,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[ADJUST TABLE CACHE PRIORITY](adjust-table-cache-priority.md)  
-[SET TABLE CACHE PRIORITY](set-table-cache-priority.md)  
+[ADJUST TABLE CACHE PRIORITY](adjust-table-cache-priority)  
+[SET TABLE CACHE PRIORITY](set-table-cache-priority)  
 *データベースキャッシュ内の優先度を管理*  
 
 ## プロパティ

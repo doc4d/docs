@@ -28,40 +28,40 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.MESSAGES OFF.Summary-->Les commandes **MESSAGES OFF** et [MESSAGES ON](messages-on.md) suppriment ou font apparaître les thermomètres de progression affichés par 4D lorsque le programme exécute des opérations de longue durée.<!-- END REF--> Par défaut, les messages sont affichés. 
+<!--REF #_command_.MESSAGES OFF.Summary-->Les commandes **MESSAGES OFF** et [MESSAGES ON](messages-on) suppriment ou font apparaître les thermomètres de progression affichés par 4D lorsque le programme exécute des opérations de longue durée.<!-- END REF--> Par défaut, les messages sont affichés. 
 
 Voici la liste des opérations qui peuvent provoquer l'affichage d'un thermomètre de progression : Application d'une formule, Génération d'un état rapide, Export de données, Import de données, Tri, Génération d'un graphe, Recherche, Recherche par formulaire, Recherche par formule.
 
 Voici les commandes qui peuvent provoquer l'affichage d'un thermomètre de progression : 
 
-[APPLY TO SELECTION](apply-to-selection.md)   
-[QUERY](query.md)  
-[QUERY SELECTION](query-selection.md)  
-[QUERY BY EXAMPLE](query-by-example.md)  
-[QUERY BY FORMULA](query-by-formula.md)  
-[QUERY SELECTION BY FORMULA](query-selection-by-formula.md)  
-[EXPORT DIF](export-dif.md)  
-[EXPORT SYLK](export-sylk.md)  
-[EXPORT TEXT](export-text.md)  
-[BUILD APPLICATION](build-application.md)  
+[APPLY TO SELECTION](apply-to-selection)   
+[QUERY](query)  
+[QUERY SELECTION](query-selection)  
+[QUERY BY EXAMPLE](query-by-example)  
+[QUERY BY FORMULA](query-by-formula)  
+[QUERY SELECTION BY FORMULA](query-selection-by-formula)  
+[EXPORT DIF](export-dif)  
+[EXPORT SYLK](export-sylk)  
+[EXPORT TEXT](export-text)  
+[BUILD APPLICATION](build-application)  
   
-[IMPORT TEXT](import-text.md)  
-[RELATE ONE SELECTION](relate-one-selection.md)  
-[IMPORT DIF](import-dif.md)  
-[IMPORT SYLK](import-sylk.md)  
-[Max](max.md)  
-[Min](min.md)  
-[Average](average.md)   
-[QR REPORT](qr-report.md)  
-[REDUCE SELECTION](reduce-selection.md)  
-[SCAN INDEX](scan-index.md)  
-[RELATE MANY SELECTION](relate-many-selection.md)  
-[Sum](sum.md)  
-[ORDER BY](order-by.md)  
-[ORDER BY FORMULA](order-by-formula.md)  
-[DISTINCT VALUES](distinct-values.md) 
+[IMPORT TEXT](import-text)  
+[RELATE ONE SELECTION](relate-one-selection)  
+[IMPORT DIF](import-dif)  
+[IMPORT SYLK](import-sylk)  
+[Max](max)  
+[Min](min)  
+[Average](average)   
+[QR REPORT](qr-report)  
+[REDUCE SELECTION](reduce-selection)  
+[SCAN INDEX](scan-index)  
+[RELATE MANY SELECTION](relate-many-selection)  
+[Sum](sum)  
+[ORDER BY](order-by)  
+[ORDER BY FORMULA](order-by-formula)  
+[DISTINCT VALUES](distinct-values) 
 
-**Note 4D Server :** A compter de 4D Server v14 R3, les fenêtres de messages de progression ne sont plus affichées sur le serveur, ces opérations étant automatiquement listées dans la *Fenêtre d'administration de 4D Server* de la fenêtre d'administration. Si vous souhaitez forcer l'affichage de ces fenêtres de progression, vous devez appeler la commande [MESSAGES ON](messages-on.md) sur le serveur. 
+**Note 4D Server :** A compter de 4D Server v14 R3, les fenêtres de messages de progression ne sont plus affichées sur le serveur, ces opérations étant automatiquement listées dans la *Fenêtre d'administration de 4D Server* de la fenêtre d'administration. Si vous souhaitez forcer l'affichage de ces fenêtres de progression, vous devez appeler la commande [MESSAGES ON](messages-on) sur le serveur. 
 
 ## Exemple 
 
@@ -75,7 +75,7 @@ L'exemple suivant supprime les thermomètres de progression avant d'effectuer un
 
 ## Voir aussi 
 
-[MESSAGES ON](messages-on.md)  
+[MESSAGES ON](messages-on)  
 
 ## Propriétés
 

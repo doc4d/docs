@@ -68,8 +68,8 @@ Ejemplo de método de base On Web Authentication en modo Digest:
 
 ## Ver también 
 
-[Generate digest](generate-digest.md)  
-[Validate password](validate-password.md)  
+[Generate digest](generate-digest)  
+[Validate password](validate-password)  
 
 ## Propiedades
 

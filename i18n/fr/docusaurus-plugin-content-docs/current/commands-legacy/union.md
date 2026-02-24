@@ -50,8 +50,8 @@ L'exemple suivant ajoute des enregistrements à l'ensemble des meilleurs clients
 
 ## Voir aussi 
 
-[DIFFERENCE](difference.md)  
-[INTERSECTION](intersection.md)  
+[DIFFERENCE](difference)  
+[INTERSECTION](intersection)  
 
 ## Propriétés
 

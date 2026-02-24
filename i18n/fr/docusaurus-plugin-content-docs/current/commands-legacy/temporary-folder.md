@@ -31,11 +31,11 @@ displayed_sidebar: docs
 
 ## Exemple 
 
-Reportez-vous à l'exemple de la commande [APPEND DATA TO PASTEBOARD](append-data-to-pasteboard.md).
+Reportez-vous à l'exemple de la commande [APPEND DATA TO PASTEBOARD](append-data-to-pasteboard).
 
 ## Voir aussi 
 
-[System folder](system-folder.md)  
+[System folder](system-folder)  
 
 ## Propriétés
 

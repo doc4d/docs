@@ -43,8 +43,8 @@ If the command has been executed correctly, the system variable OK returns 1\. O
 
 ## See also 
 
-[SQL CANCEL LOAD](sql-cancel-load.md)  
-[SQL EXECUTE](sql-execute.md)  
+[SQL CANCEL LOAD](sql-cancel-load)  
+[SQL EXECUTE](sql-execute)  
 
 ## Properties
 

@@ -48,9 +48,9 @@ Utilizando un área de desplazamiento llamada *atVolumenes,* usted quiere mostra
 
 ## Ver también 
 
-[DOCUMENT LIST](document-list.md)  
-[FOLDER LIST](folder-list.md)  
-[VOLUME ATTRIBUTES](volume-attributes.md)  
+[DOCUMENT LIST](document-list)  
+[FOLDER LIST](folder-list)  
+[VOLUME ATTRIBUTES](volume-attributes)  
 
 ## Propiedades
 

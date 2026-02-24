@@ -45,7 +45,7 @@ Se passa um número de *area* incorreto, se gera o erro -9850.
 
 ## Ver também 
 
-[QR SET REPORT KIND](qr-set-report-kind.md)  
+[QR SET REPORT KIND](qr-set-report-kind)  
 
 ## Propriedades
 

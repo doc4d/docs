@@ -34,7 +34,7 @@ If the SQL server was launched, all the SQL connections are interrupted and the 
 
 ## See also 
 
-[START SQL SERVER](start-sql-server.md)  
+[START SQL SERVER](start-sql-server)  
 
 ## Properties
 

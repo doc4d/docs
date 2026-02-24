@@ -64,9 +64,9 @@ El siguiente método:
 
 ## Ver también 
 
-[SAX CLOSE XML ELEMENT](sax-close-xml-element.md)  
-[SAX OPEN XML ELEMENT](sax-open-xml-element.md)  
-[XML SET OPTIONS](xml-set-options.md)  
+[SAX CLOSE XML ELEMENT](sax-close-xml-element)  
+[SAX OPEN XML ELEMENT](sax-open-xml-element)  
+[XML SET OPTIONS](xml-set-options)  
 
 ## Propiedades
 

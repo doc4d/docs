@@ -36,7 +36,7 @@ Ver el ejemplo del comando [Current machine](current-machine.md "Current machine
 
 ## Ver también 
 
-[Current machine](current-machine.md)  
+[Current machine](current-machine)  
 
 ## Propiedades
 

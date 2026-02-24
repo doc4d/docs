@@ -41,7 +41,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[METHOD GET PATHS](method-get-paths.md)  
+[METHOD GET PATHS](method-get-paths)  
 
 ## プロパティ
 

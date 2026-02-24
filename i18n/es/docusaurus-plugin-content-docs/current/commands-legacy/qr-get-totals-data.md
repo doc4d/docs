@@ -82,7 +82,7 @@ Si el parámetro *numRuptura* es incorrecto, se genera el error -9853.
 
 ## Ver también 
 
-[QR SET TOTALS DATA](qr-set-totals-data.md)  
+[QR SET TOTALS DATA](qr-set-totals-data)  
 
 ## Propiedades
 

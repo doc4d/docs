@@ -54,7 +54,7 @@ Si la commande a été correctement exécutée, la variable système OK prend la
 
 ## Voir aussi 
 
-[DOM Get first child XML element](dom-get-first-child-xml-element.md)  
+[DOM Get first child XML element](dom-get-first-child-xml-element)  
 
 ## Propriétés
 

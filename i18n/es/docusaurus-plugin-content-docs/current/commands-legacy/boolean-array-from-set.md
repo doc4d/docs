@@ -43,7 +43,7 @@ Si no pasa el parámetro *conjunto*, el comando utilizará UserSet en el proceso
 
 ## Ver también 
 
-[CREATE SET FROM ARRAY](create-set-from-array.md)  
+[CREATE SET FROM ARRAY](create-set-from-array)  
 
 ## Propiedades
 

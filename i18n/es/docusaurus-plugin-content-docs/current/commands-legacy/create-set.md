@@ -32,8 +32,8 @@ El siguiente ejemplo crea un conjunto después de efectuar una búsqueda, de man
 
 ## Ver también 
 
-[CLEAR SET](clear-set.md)  
-[CREATE EMPTY SET](create-empty-set.md)  
+[CLEAR SET](clear-set)  
+[CREATE EMPTY SET](create-empty-set)  
 
 ## Propiedades
 

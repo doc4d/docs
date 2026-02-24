@@ -68,7 +68,7 @@ Windows上でのWAVファイルの再生方法を以下の例題で示します:
 
 ## 参照 
 
-[BEEP](beep.md)  
+[BEEP](beep)  
 
 ## プロパティ
 

@@ -38,18 +38,18 @@ Pour que les recherches soient de nouveau sans limite, appelez **SET QUERY LIMIT
 
 **SET QUERY LIMIT** modifie uniquement le comportement des commandes de recherche, c'est-à-dire :
 
-* [QUERY](query.md)
-* [QUERY SELECTION](query-selection.md)
-* [QUERY BY EXAMPLE](query-by-example.md)
-* [QUERY BY FORMULA](query-by-formula.md)
-* [QUERY SELECTION BY FORMULA](query-selection-by-formula.md)
-* [QUERY BY SQL](query-by-sql.md)
-* [QUERY WITH ARRAY](query-with-array.md)
-* [QUERY SELECTION WITH ARRAY](query-selection-with-array.md)
-* [QUERY BY ATTRIBUTE](query-by-attribute.md)
-* [QUERY SELECTION BY ATTRIBUTE](query-selection-by-attribute.md)
+* [QUERY](query)
+* [QUERY SELECTION](query-selection)
+* [QUERY BY EXAMPLE](query-by-example)
+* [QUERY BY FORMULA](query-by-formula)
+* [QUERY SELECTION BY FORMULA](query-selection-by-formula)
+* [QUERY BY SQL](query-by-sql)
+* [QUERY WITH ARRAY](query-with-array)
+* [QUERY SELECTION WITH ARRAY](query-selection-with-array)
+* [QUERY BY ATTRIBUTE](query-by-attribute)
+* [QUERY SELECTION BY ATTRIBUTE](query-selection-by-attribute)
 
-En revanche, **SET QUERY LIMIT** n'affecte pas les autres commandes qui modifient la sélection courante d'une table telles que [ALL RECORDS](all-records.md), [RELATE MANY](relate-many.md), etc.
+En revanche, **SET QUERY LIMIT** n'affecte pas les autres commandes qui modifient la sélection courante d'une table telles que [ALL RECORDS](all-records), [RELATE MANY](relate-many), etc.
 
 ## Exemple 1 
 
@@ -63,19 +63,19 @@ Pour effectuer une recherche qui correspond à la formule “...trouver dix clie
 
 ## Exemple 2 
 
-Référez-vous au deuxième exemple de la commande [SET QUERY DESTINATION](set-query-destination.md).
+Référez-vous au deuxième exemple de la commande [SET QUERY DESTINATION](set-query-destination).
 
 ## Voir aussi 
 
-[Get query limit](get-query-limit.md)  
-[QUERY](query.md)  
-[QUERY BY EXAMPLE](query-by-example.md)  
-[QUERY BY FORMULA](query-by-formula.md)  
-[QUERY BY SQL](query-by-sql.md)  
-[QUERY SELECTION](query-selection.md)  
-[QUERY SELECTION BY FORMULA](query-selection-by-formula.md)  
-[QUERY WITH ARRAY](query-with-array.md)  
-[SET QUERY DESTINATION](set-query-destination.md)  
+[Get query limit](get-query-limit)  
+[QUERY](query)  
+[QUERY BY EXAMPLE](query-by-example)  
+[QUERY BY FORMULA](query-by-formula)  
+[QUERY BY SQL](query-by-sql)  
+[QUERY SELECTION](query-selection)  
+[QUERY SELECTION BY FORMULA](query-selection-by-formula)  
+[QUERY WITH ARRAY](query-with-array)  
+[SET QUERY DESTINATION](set-query-destination)  
 
 ## Propriétés
 

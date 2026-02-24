@@ -42,7 +42,7 @@ Vous passez dans le paramètre *décalage* la position (relative à l'origine du
 
 ## Voir aussi 
 
-[DELETE FROM BLOB](delete-from-blob.md)  
+[DELETE FROM BLOB](delete-from-blob)  
 
 ## Propriétés
 

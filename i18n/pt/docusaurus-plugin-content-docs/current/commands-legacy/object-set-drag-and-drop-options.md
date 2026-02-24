@@ -53,7 +53,7 @@ Definição de uma área de texto em arrastar e soltar auto:
 
 ## Ver também 
 
-[OBJECT GET DRAG AND DROP OPTIONS](object-get-drag-and-drop-options.md)  
+[OBJECT GET DRAG AND DROP OPTIONS](object-get-drag-and-drop-options)  
 
 ## Propriedades
 

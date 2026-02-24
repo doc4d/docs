@@ -80,7 +80,7 @@ Pode executar o comando de uma componente, mas neste caso você deve passar o pa
 
 ## Ver também 
 
-[METHOD GET COMMENTS](method-get-comments.md)  
+[METHOD GET COMMENTS](method-get-comments)  
 
 ## Propriedades
 

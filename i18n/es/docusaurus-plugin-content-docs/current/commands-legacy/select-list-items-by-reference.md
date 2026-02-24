@@ -59,9 +59,9 @@ Si trabaja con los números de referencia de los elementos, asegúrese de constr
 
 ## Ver también 
 
-[EDIT ITEM](edit-item.md)  
-[SELECT LIST ITEMS BY POSITION](select-list-items-by-position.md)  
-[Selected list items](selected-list-items.md)  
+[EDIT ITEM](edit-item)  
+[SELECT LIST ITEMS BY POSITION](select-list-items-by-position)  
+[Selected list items](selected-list-items)  
 
 ## Propiedades
 

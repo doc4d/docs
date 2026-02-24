@@ -186,14 +186,14 @@ El método de formulario List\_Imp3 es el siguiente:
 
 ## Ver también 
 
-[Get print marker](get-print-marker.md)  
-[OBJECT GET BEST SIZE](object-get-best-size.md)  
-[OBJECT GET COORDINATES](object-get-coordinates.md)  
-[OBJECT MOVE](object-move.md)  
-[PAGE BREAK](page-break.md)  
-[Print form](../commands/print-form.md)  
-[PRINT RECORD](print-record.md)  
-[PRINT SELECTION](print-selection.md)  
+[Get print marker](get-print-marker)  
+[OBJECT GET BEST SIZE](object-get-best-size)  
+[OBJECT GET COORDINATES](object-get-coordinates)  
+[OBJECT MOVE](object-move)  
+[PAGE BREAK](page-break)  
+[Print form](../commands/print-form)  
+[PRINT RECORD](print-record)  
+[PRINT SELECTION](print-selection)  
 
 ## Propiedades
 

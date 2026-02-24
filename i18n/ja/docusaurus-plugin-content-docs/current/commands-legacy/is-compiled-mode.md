@@ -52,8 +52,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[IDLE](idle.md)  
-[Undefined](undefined.md)  
+[IDLE](idle)  
+[Undefined](undefined)  
 
 ## プロパティ
 

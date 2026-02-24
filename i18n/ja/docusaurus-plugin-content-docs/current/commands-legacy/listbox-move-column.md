@@ -51,7 +51,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX DUPLICATE COLUMN](listbox-duplicate-column.md)  
+[LISTBOX DUPLICATE COLUMN](listbox-duplicate-column)  
 
 ## プロパティ
 

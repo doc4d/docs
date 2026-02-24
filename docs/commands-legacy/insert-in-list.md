@@ -62,8 +62,8 @@ The following code inserts an item (with no attached sublist) just before the cu
 
 ## See also 
 
-[APPEND TO LIST](append-to-list.md)  
-[SET LIST ITEM PARAMETER](set-list-item-parameter.md)  
+[APPEND TO LIST](append-to-list)  
+[SET LIST ITEM PARAMETER](set-list-item-parameter)  
 
 ## Properties
 

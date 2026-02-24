@@ -30,18 +30,18 @@ The parameter *mouseButton* returns the state of the buttons, as listed previous
 
 ## Example 
 
-See the example for the [Pop up menu](pop-up-menu.md) command.
+See the example for the [Pop up menu](pop-up-menu) command.
 
 ## See also 
 
-[Caps lock down](caps-lock-down.md)  
-[Macintosh command down](macintosh-command-down.md)  
-[Macintosh control down](macintosh-control-down.md)  
-[Macintosh option down](macintosh-option-down.md)  
+[Caps lock down](caps-lock-down)  
+[Macintosh command down](macintosh-command-down)  
+[Macintosh control down](macintosh-control-down)  
+[Macintosh option down](macintosh-option-down)  
 [ON EVENT CALL](on-event-call.md)  
-[Shift down](shift-down.md)  
-[Windows Alt down](windows-alt-down.md)  
-[Windows Ctrl down](windows-ctrl-down.md)  
+[Shift down](shift-down)  
+[Windows Alt down](windows-alt-down)  
+[Windows Ctrl down](windows-ctrl-down)  
 
 ## Properties
 

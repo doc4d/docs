@@ -63,8 +63,8 @@ O exemplo abaixo pode ser utilizado para mostrar “Hello World” em uma imagem
 
 ## Ver também 
 
-[DOM EXPORT TO FILE](dom-export-to-file.md)  
-[DOM EXPORT TO VAR](dom-export-to-var.md)  
+[DOM EXPORT TO FILE](dom-export-to-file)  
+[DOM EXPORT TO VAR](dom-export-to-var)  
 
 ## Propriedades
 

@@ -45,7 +45,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[XML GET ERROR](xml-get-error.md)  
+[XML GET ERROR](xml-get-error)  
 
 ## プロパティ
 

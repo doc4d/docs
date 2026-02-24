@@ -36,8 +36,8 @@ Los filtros son instalados por el comando [WA SET URL FILTERS](wa-set-url-filter
 
 ## Ver también 
 
-[WA GET EXTERNAL LINKS FILTERS](wa-get-external-links-filters.md)  
-[WA SET URL FILTERS](wa-set-url-filters.md)  
+[WA GET EXTERNAL LINKS FILTERS](wa-get-external-links-filters)  
+[WA SET URL FILTERS](wa-set-url-filters)  
 
 ## Propiedades
 

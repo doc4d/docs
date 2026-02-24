@@ -62,7 +62,7 @@ aCountry、aRegion、そしてaCity配列をリストボックスの階層とし
 
 ## 参照 
 
-[LISTBOX GET HIERARCHY](listbox-get-hierarchy.md)  
+[LISTBOX GET HIERARCHY](listbox-get-hierarchy)  
 
 ## プロパティ
 

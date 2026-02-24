@@ -37,10 +37,10 @@ PLUGIN LIST leva todos os plug-ins em consideração, incluindo aqueles que est�
 
 ## Ver também 
 
-[COMPONENT LIST](component-list.md)  
-[Get plugin access](get-plugin-access.md)  
-[Is license available](is-license-available.md)  
-[SET PLUGIN ACCESS](set-plugin-access.md)  
+[COMPONENT LIST](component-list)  
+[Get plugin access](get-plugin-access)  
+[Is license available](is-license-available)  
+[SET PLUGIN ACCESS](set-plugin-access)  
 
 ## Propriedades
 

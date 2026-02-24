@@ -53,7 +53,7 @@ Définition d’une zone de texte en glisser-déposer auto :
 
 ## Voir aussi 
 
-[OBJECT GET DRAG AND DROP OPTIONS](object-get-drag-and-drop-options.md)  
+[OBJECT GET DRAG AND DROP OPTIONS](object-get-drag-and-drop-options)  
 
 ## Propriétés
 

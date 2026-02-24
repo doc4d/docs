@@ -39,9 +39,9 @@ En Macintosh, si no pasa el parámetro opcional *\**, se devuelve el tamaño del
 
 ## Ver también 
 
-[Get document position](get-document-position.md)  
-[SET DOCUMENT POSITION](set-document-position.md)  
-[SET DOCUMENT SIZE](set-document-size.md)  
+[Get document position](get-document-position)  
+[SET DOCUMENT POSITION](set-document-position)  
+[SET DOCUMENT SIZE](set-document-size)  
 
 ## Propiedades
 

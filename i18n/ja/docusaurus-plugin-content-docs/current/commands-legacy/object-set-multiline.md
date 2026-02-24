@@ -53,7 +53,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT Get multiline](object-get-multiline.md)  
+[OBJECT Get multiline](object-get-multiline)  
 
 ## プロパティ
 

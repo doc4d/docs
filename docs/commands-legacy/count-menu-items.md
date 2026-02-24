@@ -38,7 +38,7 @@ If you omit the *process* parameter, **Count menu items** applies to the menu ba
 
 ## See also 
 
-[Count menus](count-menus.md)  
+[Count menus](count-menus)  
 
 ## Properties
 

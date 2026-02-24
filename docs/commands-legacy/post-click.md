@@ -38,8 +38,8 @@ If you specify the *process* parameter, the click is sent to the process whose p
 
 ## See also 
 
-[POST EVENT](post-event.md)  
-[POST KEY](post-key.md)  
+[POST EVENT](post-event)  
+[POST KEY](post-key)  
 
 ## Properties
 

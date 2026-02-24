@@ -33,8 +33,8 @@ displayed_sidebar: docs
 
 Este comando pode ser utilizado nos dois contextos:
 
-* Durante o evento de formulário On Header, no contexto dos comandos [PRINT SELECTION](print-selection.md) e [PRINT RECORD](print-record.md)
-* Durante o evento de formulário On Printing Detail, no contexto do comando [Print form](../commands/print-form.md)
+* Durante o evento de formulário On Header, no contexto dos comandos [PRINT SELECTION](print-selection) e [PRINT RECORD](print-record)
+* Durante o evento de formulário On Printing Detail, no contexto do comando [Print form](../commands/print-form)
 Se devolvem as coordenadas em píxels (1 píxel = 1/72 polegadas). 
 
 Passe uma das constantes do tema *Área de formulário* no parâmetro *numeroMarc*:
@@ -67,12 +67,12 @@ Passe uma das constantes do tema *Área de formulário* no parâmetro *numeroMar
 
 ## Exemplo 
 
-Consulte o exemplo do comando [SET PRINT MARKER](set-print-marker.md). 
+Consulte o exemplo do comando [SET PRINT MARKER](set-print-marker). 
 
 ## Ver também 
 
-[OBJECT MOVE](object-move.md)  
-[SET PRINT MARKER](set-print-marker.md)  
+[OBJECT MOVE](object-move)  
+[SET PRINT MARKER](set-print-marker)  
 
 ## Propriedades
 

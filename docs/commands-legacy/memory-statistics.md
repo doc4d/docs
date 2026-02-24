@@ -28,7 +28,7 @@ After the command has been executed, the statistics are provided in the *arrName
 
 ## See also 
 
-[Cache info](cache-info.md)  
+[Cache info](cache-info)  
 
 ## Properties
 

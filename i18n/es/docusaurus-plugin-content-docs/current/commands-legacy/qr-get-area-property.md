@@ -45,7 +45,7 @@ Si el parámetro *propiedad* es incorrecto, se genera el error -9852.
 
 ## Ver también 
 
-[QR SET AREA PROPERTY](qr-set-area-property.md)  
+[QR SET AREA PROPERTY](qr-set-area-property)  
 
 ## Propiedades
 

@@ -35,8 +35,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[WA Back URL available](wa-back-url-available.md)  
-[WA OPEN FORWARD URL](wa-open-forward-url.md)  
+[WA Back URL available](wa-back-url-available)  
+[WA OPEN FORWARD URL](wa-open-forward-url)  
 
 ## プロパティ
 

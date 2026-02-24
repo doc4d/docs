@@ -59,7 +59,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT SET FONT](object-set-font.md)  
+[OBJECT SET FONT](object-set-font)  
 
 ## プロパティ
 

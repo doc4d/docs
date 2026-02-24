@@ -105,10 +105,10 @@ Se o usuário clicar em **Cancelar** na caixa de diálogo padrão de abrir arqui
 
 ## Ver também 
 
-[EXPORT DIF](export-dif.md)  
-[EXPORT SYLK](export-sylk.md)  
-[EXPORT TEXT](export-text.md)  
-[IMPORT DATA](import-data.md)  
+[EXPORT DIF](export-dif)  
+[EXPORT SYLK](export-sylk)  
+[EXPORT TEXT](export-text)  
+[IMPORT DATA](import-data)  
 
 ## Propriedades
 

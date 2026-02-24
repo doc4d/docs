@@ -60,7 +60,7 @@ El siguiente ejemplo es una función que devuelve el día actual como una cadena
 
 ## Ver también 
 
-[Day of](day-of.md)  
+[Day of](day-of)  
 
 ## Propiedades
 

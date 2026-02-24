@@ -30,7 +30,7 @@ displayed_sidebar: docs
 
 ## Nota de compatibilidade 
 
-<!--REF #_command_.SET INDEX.Summary-->**SET INDEX**, apesar de ser um comando herdado, ainda é compatível e pode permanecer em sua aplicação, não é necessário voltar a escrever o código existente.<!-- END REF--> Entretanto, é melhor usar [CREATE INDEX](create-index.md) y [DELETE INDEX](delete-index.md) para administrar os índices porque oferecem mais funcionalidades.
+<!--REF #_command_.SET INDEX.Summary-->**SET INDEX**, apesar de ser um comando herdado, ainda é compatível e pode permanecer em sua aplicação, não é necessário voltar a escrever o código existente.<!-- END REF--> Entretanto, é melhor usar [CREATE INDEX](create-index) y [DELETE INDEX](delete-index) para administrar os índices porque oferecem mais funcionalidades.
 
 ## Descrição 
 
@@ -62,9 +62,9 @@ O parâmetro opcional *\** indica uma indexação asincrônica (simultânea). Um
 
 **Notas:**
 
-* Os índices criados por este comando não têm nomes. Não podem ser apagados pelo comando [DELETE INDEX](delete-index.md) utilizando a sintaxe baseada no nome.
+* Os índices criados por este comando não têm nomes. Não podem ser apagados pelo comando [DELETE INDEX](delete-index) utilizando a sintaxe baseada no nome.
 * Este comando não permite criar ou apagar índices compostos.
-* Este comando não permite apagar um índice de palavras chaves criado pelo comando [CREATE INDEX](create-index.md)
+* Este comando não permite apagar um índice de palavras chaves criado pelo comando [CREATE INDEX](create-index)
 
 ## Nota para lançamento 
 
@@ -98,11 +98,11 @@ O exemplo abaixo indexa o campo *\[Clientes\]Num*:
 
 ## Ver também 
 
-[CREATE INDEX](create-index.md)  
-[DELETE INDEX](delete-index.md)  
-[GET FIELD PROPERTIES](get-field-properties.md)  
-[ORDER BY](order-by.md)  
-[QUERY](query.md)  
+[CREATE INDEX](create-index)  
+[DELETE INDEX](delete-index)  
+[GET FIELD PROPERTIES](get-field-properties)  
+[ORDER BY](order-by)  
+[QUERY](query)  
 
 ## Propriedades
 

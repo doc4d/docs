@@ -48,7 +48,7 @@ Ver exemplo para o comando [Get menu item mark](get-menu-item-mark.md "Get menu 
 
 ## Ver também 
 
-[Get menu item mark](get-menu-item-mark.md)  
+[Get menu item mark](get-menu-item-mark)  
 
 ## Propriedades
 

@@ -52,8 +52,8 @@ Ver o exemplo do comando [Current date](current-date.md "Current date").
 
 ## Ver também 
 
-[Day of](day-of.md)  
-[Year of](year-of.md)  
+[Day of](day-of)  
+[Year of](year-of)  
 
 ## Propriedades
 

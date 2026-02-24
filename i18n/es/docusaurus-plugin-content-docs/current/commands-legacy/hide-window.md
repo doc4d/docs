@@ -56,7 +56,7 @@ Este ejemplo corresponde a un método de un botón ubicado en un formulario de e
 
 ## Ver también 
 
-[SHOW WINDOW](show-window.md)  
+[SHOW WINDOW](show-window)  
 
 ## Propiedades
 

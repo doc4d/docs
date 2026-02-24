@@ -82,7 +82,7 @@ Here is an example of cropping a picture (the picture is displayed in the form w
 
 ## See also 
 
-[COMBINE PICTURES](combine-pictures.md)  
+[COMBINE PICTURES](combine-pictures)  
 
 ## Properties
 

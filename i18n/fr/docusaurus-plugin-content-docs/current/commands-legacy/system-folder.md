@@ -61,8 +61,8 @@ Vous passez dans *type* un code représentant le type de dossier. 4D fournit les
 
 ## Voir aussi 
 
-[Get 4D folder](get-4d-folder.md)  
-[Temporary folder](temporary-folder.md)  
+[Get 4D folder](get-4d-folder)  
+[Temporary folder](temporary-folder)  
 
 ## Propriétés
 

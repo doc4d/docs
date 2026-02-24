@@ -55,9 +55,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[ORDER BY](order-by.md)  
-[QUERY](query.md)  
-[SCAN INDEX](scan-index.md)  
+[ORDER BY](order-by)  
+[QUERY](query)  
+[SCAN INDEX](scan-index)  
 *セット*  
 
 ## プロパティ

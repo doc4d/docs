@@ -70,7 +70,7 @@ Your application displays many color graphics. Somewhere in your database, you c
 
 ## See also 
 
-[Count screens](count-screens.md)  
+[Count screens](count-screens)  
 
 
 ## Properties

@@ -35,9 +35,9 @@ En entornos multiusuario y multiprocesos, cuando necesite modificar un registro 
 
 ## Ver también 
 
-[Locked](locked.md)  
+[Locked](locked)  
 *Record Locking*  
-[UNLOAD RECORD](unload-record.md)  
+[UNLOAD RECORD](unload-record)  
 
 ## Propiedades
 

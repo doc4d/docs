@@ -60,8 +60,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Window kind](window-kind.md)  
-[Window process](window-process.md)  
+[Window kind](window-kind)  
+[Window process](window-process)  
 
 ## プロパティ
 

@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.WEB Get server info.Summary-->**WEB Get server info** コマンドは、4D Web サーバーのカレントのセッションの詳細なランタイム情報を格納したオブジェクトを返します。<!-- END REF-->返された情報にはSOPA サーバーのものも含まれます。
 
-**注:** このコマンドはランタイムの情報、つまりWeb サーバーで実際に使われているパラメーターを返します。これらのパラメーターは、[WEB GET OPTION](web-get-option.md) コマンドで返されたものとは異なる可能性があります。なぜならシステム設定や利用可能なリソースによって変化するためです。
+**注:** このコマンドはランタイムの情報、つまりWeb サーバーで実際に使われているパラメーターを返します。これらのパラメーターは、[WEB GET OPTION](web-get-option) コマンドで返されたものとは異なる可能性があります。なぜならシステム設定や利用可能なリソースによって変化するためです。
 
 デフォルトでは、コマンドは"cache"プロパティを返しません。そのサイズが大きくなりうるためです。しかしながら、キャッシュの中身を知りたい場合には、任意の*withCache* 引数にTrueを渡して下さい。
 
@@ -101,9 +101,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[License info](../commands/license-info.md)  
-[Process activity](../commands/process-activity.md)  
-[SOAP REJECT NEW REQUESTS](soap-reject-new-requests.md)  
+[License info](../commands/license-info)  
+[Process activity](../commands/process-activity)  
+[SOAP REJECT NEW REQUESTS](soap-reject-new-requests)  
 
 ## プロパティ
 

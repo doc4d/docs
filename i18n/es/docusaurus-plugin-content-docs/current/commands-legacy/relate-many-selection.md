@@ -43,9 +43,9 @@ Este ejemplo selecciona todas las facturas de clientes con crédito superior o i
 
 ## Ver también 
 
-[QUERY](query.md)  
-[RELATE ONE](relate-one.md)  
-[RELATE ONE SELECTION](relate-one-selection.md)  
+[QUERY](query)  
+[RELATE ONE](relate-one)  
+[RELATE ONE SELECTION](relate-one-selection)  
 
 ## Propiedades
 

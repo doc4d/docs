@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.WEB Get server info.Summary-->O comando **WEB Get server info** devolve um objeto que contèm informação do tempo de execução detalhada na sessão atual do servidor web 4D.<!-- END REF--> A informação devolvida inclui o servidor SOAP.
 
-**Nota:** Esse comando retorna runtime information, *ou seja.* Parâmetros atuais usados pelo servidor Web. Esses parâmetros podem ser diferentes daqueles retornados pelo comando [WEB GET OPTION](web-get-option.md) já que dependem de configurações de sistema, recursos disponíveis, etc. 
+**Nota:** Esse comando retorna runtime information, *ou seja.* Parâmetros atuais usados pelo servidor Web. Esses parâmetros podem ser diferentes daqueles retornados pelo comando [WEB GET OPTION](web-get-option) já que dependem de configurações de sistema, recursos disponíveis, etc. 
 
 De forma pré-determinada, o comando não devolve a propriedad e "caché", já que pode ser muito grande. Entretanto, se quiser conhecer o conteúdo da caché, passe True no parâmetro opcional *conCache*.
 
@@ -99,9 +99,9 @@ Depois de executar o código abaixo:
 
 ## Ver também 
 
-[License info](../commands/license-info.md)  
-[Process activity](../commands/process-activity.md)  
-[SOAP REJECT NEW REQUESTS](soap-reject-new-requests.md)  
+[License info](../commands/license-info)  
+[Process activity](../commands/process-activity)  
+[SOAP REJECT NEW REQUESTS](soap-reject-new-requests)  
 
 ## Propriedades
 

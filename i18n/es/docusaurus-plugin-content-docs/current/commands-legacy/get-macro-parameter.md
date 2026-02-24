@@ -45,7 +45,7 @@ Consulte el ejemplo del comando [SET MACRO PARAMETER](set-macro-parameter.md "SE
 
 ## Ver también 
 
-[SET MACRO PARAMETER](set-macro-parameter.md)  
+[SET MACRO PARAMETER](set-macro-parameter)  
 
 ## Propiedades
 

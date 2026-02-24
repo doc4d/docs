@@ -54,7 +54,7 @@ Pour restaurer la valeur originale d'un champ, assignez-lui la valeur retournée
 
 ## Voir aussi 
 
-[Modified](modified.md)  
+[Modified](modified)  
 
 ## Propriétés
 

@@ -49,7 +49,7 @@ Este comando pode ser aplicado aos seguintes tipos de objetos:
 
 ## Ver também 
 
-[OBJECT Get enabled](object-get-enabled.md)  
+[OBJECT Get enabled](object-get-enabled)  
 
 ## Propriedades
 

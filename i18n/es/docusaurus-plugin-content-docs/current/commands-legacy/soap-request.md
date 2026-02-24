@@ -25,4 +25,4 @@ Este comando puede utilizarse por razones de seguridad en el *Método de base On
 
 #### Ver también 
 
-[SOAP DECLARATION](soap-declaration.md)  
+[SOAP DECLARATION](soap-declaration)  

@@ -46,8 +46,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[FORM Get color scheme](form-get-color-scheme.md)  
-[Get Application color scheme](get-application-color-scheme.md)  
+[FORM Get color scheme](form-get-color-scheme)  
+[Get Application color scheme](get-application-color-scheme)  
 
 ## プロパティ
 

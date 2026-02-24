@@ -57,9 +57,9 @@ Usted crea una base para el mercado internacional y necesita cambiar a los difer
 
 ## Ver también 
 
-[CLEAR LIST](clear-list.md)  
-[Is a list](is-a-list.md)  
-[SAVE LIST](save-list.md)  
+[CLEAR LIST](clear-list)  
+[Is a list](is-a-list)  
+[SAVE LIST](save-list)  
 
 ## Propiedades
 

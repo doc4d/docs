@@ -48,7 +48,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OB SET](ob-set.md)  
+[OB SET](ob-set)  
 
 ## プロパティ
 

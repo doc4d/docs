@@ -57,7 +57,7 @@ En caso de error, el comando devuelve un error que puede interceptarse utilizand
 
 ## Ver también 
 
-[SAX ADD XML DOCTYPE](sax-add-xml-doctype.md)  
+[SAX ADD XML DOCTYPE](sax-add-xml-doctype)  
 
 ## Propiedades
 

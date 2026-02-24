@@ -94,7 +94,7 @@ Queremos obtener una array de todas las entradas que se encuentran en el atribut
 ## Ver también 
 
 *LDAP*  
-[LDAP SEARCH ALL](ldap-search-all.md)  
+[LDAP SEARCH ALL](ldap-search-all)  
 
 ## Propiedades
 

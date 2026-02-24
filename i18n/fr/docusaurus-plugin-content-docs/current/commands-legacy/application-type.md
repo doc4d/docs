@@ -53,8 +53,8 @@ Quelque part dans votre code, ailleurs que dans la *On Server Startup Database M
 
 ## Voir aussi 
 
-[Application version](application-version.md)  
-[Version type](version-type.md)  
+[Application version](application-version)  
+[Version type](version-type)  
 
 ## Propriétés
 

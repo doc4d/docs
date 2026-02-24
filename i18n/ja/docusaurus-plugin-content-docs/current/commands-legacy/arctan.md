@@ -32,9 +32,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Cos](cos.md)  
-[Sin](sin.md)  
-[Tan](tan.md)  
+[Cos](cos)  
+[Sin](sin)  
+[Tan](tan)  
 
 ## プロパティ
 

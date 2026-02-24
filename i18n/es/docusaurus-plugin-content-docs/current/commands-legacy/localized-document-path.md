@@ -66,7 +66,7 @@ Si el lenguaje actual es, por ejemplo, francés canadiense (fr-ca), el comando d
 
 ## Ver también 
 
-[Get database localization](get-database-localization.md)  
+[Get database localization](get-database-localization)  
 
 ## Propiedades
 

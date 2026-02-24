@@ -97,9 +97,9 @@ In *input\_output*, pass a value indicating whether the processed parameter is â
 
 * Outgoing parameters:  
    * Is XML indicates that the parameter contains an XML structure,  
-   * Is DOM reference indicates that the parameter contains the DOM reference of an XML structure. In this case, inserting the XML structure into the SOAP message is equivalent to executing the [DOM EXPORT TO VAR](dom-export-to-var.md) command.
+   * Is DOM reference indicates that the parameter contains the DOM reference of an XML structure. In this case, inserting the XML structure into the SOAP message is equivalent to executing the [DOM EXPORT TO VAR](dom-export-to-var) command.
 
-**Note:** In the case of DOM references used as outgoing parameters, it is recommended to use global references, created, for example, on startup and closed when the application is closed. In fact, a DOM reference created within the Web Service itself cannot be closed with [DOM CLOSE XML](dom-close-xml.md), otherwise the Web Service no longer returns anything. Multiple calls to the Web Service therefore involve creating multiple unclosed DOM references, which can lead to memory saturation
+**Note:** In the case of DOM references used as outgoing parameters, it is recommended to use global references, created, for example, on startup and closed when the application is closed. In fact, a DOM reference created within the Web Service itself cannot be closed with [DOM CLOSE XML](dom-close-xml), otherwise the Web Service no longer returns anything. Multiple calls to the Web Service therefore involve creating multiple unclosed DOM references, which can lead to memory saturation
 
 * Incoming parameters:  
    * Is XML indicates that the parameter must receive an XML argument sent by the SOAP client.  
@@ -193,9 +193,9 @@ This example illustrates the results of different types of declarations:
 
 ## See also 
 
-[Is data file locked](is-data-file-locked.md)  
-[SOAP Get info](soap-get-info.md)  
-[SOAP SEND FAULT](soap-send-fault.md)  
+[Is data file locked](is-data-file-locked)  
+[SOAP Get info](soap-get-info)  
+[SOAP SEND FAULT](soap-send-fault)  
 
 ## Properties
 

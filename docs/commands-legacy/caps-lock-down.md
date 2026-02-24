@@ -31,16 +31,16 @@ displayed_sidebar: docs
 
 ## Example 
 
-See example for the [Shift down](shift-down.md) command.
+See example for the [Shift down](shift-down) command.
 
 ## See also 
 
-[Macintosh command down](macintosh-command-down.md)  
-[Macintosh control down](macintosh-control-down.md)  
-[Macintosh option down](macintosh-option-down.md)  
-[Shift down](shift-down.md)  
-[Windows Alt down](windows-alt-down.md)  
-[Windows Ctrl down](windows-ctrl-down.md)  
+[Macintosh command down](macintosh-command-down)  
+[Macintosh control down](macintosh-control-down)  
+[Macintosh option down](macintosh-option-down)  
+[Shift down](shift-down)  
+[Windows Alt down](windows-alt-down)  
+[Windows Ctrl down](windows-ctrl-down)  
 
 ## Properties
 

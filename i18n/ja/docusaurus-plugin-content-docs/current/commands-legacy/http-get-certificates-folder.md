@@ -27,7 +27,7 @@ displayed_sidebar: docs
 
 :::info 互換性
 
-このコマンドは互換性のためだけに維持されています。現在は [`4D.HTTPRequest クラス`](../API/HTTPRequestClass.md) を使用することが推奨されています。
+このコマンドは互換性のためだけに維持されています。現在は [`4D.HTTPRequest クラス`](../API/HTTPRequestClass) を使用することが推奨されています。
 
 :::
 
@@ -36,7 +36,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.HTTP Get certificates folder.Summary-->**HTTP Get certificates folder**コマンドは、アクティブなクライアント証明書フォルダの完全なパス名を返します。<!-- END REF--> 
 
-デフォルトでは、4D はストラクチャーファイルのとなりに作成された "ClientCertificatesFolder" というフォルダを使用します(必要がある場合にのみ作成されます)。 [HTTP SET CERTIFICATES FOLDER](http-set-certificates-folder.md) コマンドを使用することによって、カレントプロセスにおいてユーザー定義のフォルダを作成することができます。
+デフォルトでは、4D はストラクチャーファイルのとなりに作成された "ClientCertificatesFolder" というフォルダを使用します(必要がある場合にのみ作成されます)。 [HTTP SET CERTIFICATES FOLDER](http-set-certificates-folder) コマンドを使用することによって、カレントプロセスにおいてユーザー定義のフォルダを作成することができます。
 
 ## 例題 
 
@@ -52,7 +52,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[HTTP SET CERTIFICATES FOLDER](http-set-certificates-folder.md)  
+[HTTP SET CERTIFICATES FOLDER](http-set-certificates-folder)  
 
 ## プロパティ
 

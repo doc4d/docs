@@ -47,7 +47,7 @@ Pase en el parámetro *valor* una variable que recibirá el valor actual de la p
 
 ## Ver también 
 
-[WA SET PREFERENCE](wa-set-preference.md)  
+[WA SET PREFERENCE](wa-set-preference)  
 
 ## Propiedades
 

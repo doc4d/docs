@@ -34,12 +34,12 @@ The NULL value is used by the SQL kernel of 4D. For more information, refer to t
 
 The value returned by this command is only meaningful if the "*Map NULL values to blank values*" option is not checked in the field definition of the Structure editor. Otherwise, it always returns **False**. 
 
-**Note:** This command cannot be used with objects and object properties. Null values in object fields are handled through the [Null](null.md) command. 
+**Note:** This command cannot be used with objects and object properties. Null values in object fields are handled through the [Null](null) command. 
 
 ## See also 
 
-[Null](null.md)  
-[SET FIELD VALUE NULL](set-field-value-null.md)  
+[Null](null)  
+[SET FIELD VALUE NULL](set-field-value-null)  
 
 ## Properties
 

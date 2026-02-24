@@ -32,8 +32,8 @@ displayed_sidebar: docs
 
 ## Voir aussi 
 
-[Is window maximized](is-window-maximized.md)  
-[REDUCE RESTORE WINDOW](reduce-restore-window.md)  
+[Is window maximized](is-window-maximized)  
+[REDUCE RESTORE WINDOW](reduce-restore-window)  
 
 ## Propriétés
 

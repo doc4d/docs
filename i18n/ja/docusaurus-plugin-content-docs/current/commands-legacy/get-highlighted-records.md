@@ -53,7 +53,7 @@ GET HIGHLIGHTED RECORDSコマンドはフォーム以外のコンテキストで
 
 ## 参照 
 
-[HIGHLIGHT RECORDS](highlight-records.md)  
+[HIGHLIGHT RECORDS](highlight-records)  
 
 ## プロパティ
 

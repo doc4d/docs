@@ -63,8 +63,8 @@ Queremos contar el número posible de errores en un texto:
 
 ## Ver también 
 
-[SPELL ADD TO USER DICTIONARY](spell-add-to-user-dictionary.md)  
-[SPELL CHECKING](spell-checking.md)  
+[SPELL ADD TO USER DICTIONARY](spell-add-to-user-dictionary)  
+[SPELL CHECKING](spell-checking)  
 
 ## Propiedades
 

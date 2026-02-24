@@ -42,7 +42,7 @@ If you pass a valid resource file reference number in *resFile*, the resource is
 
 ## Platform independence 
 
- Remember that you are working with macOS-based resources. No matter what the platform, internal resource data such as Long Integer is stored using Macintosh byte ordering. On Windows, the data for standard resources (such as string list and pictures resources) is automatically byte swapped when necessary. On the other hand, if you create and use your own internal data structures, it is up to you to byte swap the data you extract from the BLOB (i.e., passing Macintosh byte ordering to a command such as [BLOB to longint](blob-to-longint.md)).
+ Remember that you are working with macOS-based resources. No matter what the platform, internal resource data such as Long Integer is stored using Macintosh byte ordering. On Windows, the data for standard resources (such as string list and pictures resources) is automatically byte swapped when necessary. On the other hand, if you create and use your own internal data structures, it is up to you to byte swap the data you extract from the BLOB (i.e., passing Macintosh byte ordering to a command such as [BLOB to longint](blob-to-longint)).
 
 
 ## System variables and sets 

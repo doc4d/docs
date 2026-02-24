@@ -25,9 +25,9 @@ Ver el ejemplo del comando [USE SET](use-set.md "USE SET").
 
 ## Ver también 
 
-[CREATE EMPTY SET](create-empty-set.md)  
-[CREATE SET](create-set.md)  
-[LOAD SET](load-set.md)  
+[CREATE EMPTY SET](create-empty-set)  
+[CREATE SET](create-set)  
+[LOAD SET](load-set)  
 
 ## Propiedades
 

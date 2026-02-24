@@ -83,8 +83,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[POST CLICK](post-click.md)  
-[POST KEY](post-key.md)  
+[POST CLICK](post-click)  
+[POST KEY](post-key)  
 
 ## プロパティ
 

@@ -48,9 +48,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET WINDOW RECT](get-window-rect.md)  
-[Get window title](get-window-title.md)  
-[Window process](window-process.md)  
+[GET WINDOW RECT](get-window-rect)  
+[Get window title](get-window-title)  
+[Window process](window-process)  
 
 ## プロパティ
 

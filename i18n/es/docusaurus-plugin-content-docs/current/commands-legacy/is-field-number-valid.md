@@ -35,8 +35,8 @@ Este comando permite detectar las eventuales eliminaciones de campos, que crean 
 
 ## Ver también 
 
-[Last table number](last-table-number.md)  
-[Is table number valid](is-table-number-valid.md)  
+[Last table number](last-table-number)  
+[Is table number valid](is-table-number-valid)  
 
 ## Propiedades
 

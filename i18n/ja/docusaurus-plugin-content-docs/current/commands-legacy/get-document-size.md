@@ -39,9 +39,9 @@ Macintoshでは、任意の引数 *\** を渡さない場合、データフォ�
 
 ## 参照 
 
-[Get document position](get-document-position.md)  
-[SET DOCUMENT POSITION](set-document-position.md)  
-[SET DOCUMENT SIZE](set-document-size.md)  
+[Get document position](get-document-position)  
+[SET DOCUMENT POSITION](set-document-position)  
+[SET DOCUMENT SIZE](set-document-size)  
 
 ## プロパティ
 

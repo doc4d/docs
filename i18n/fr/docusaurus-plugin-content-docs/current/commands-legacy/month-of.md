@@ -48,12 +48,12 @@ L'exemple suivant illustre l'utilisation de **Month of**. Les valeurs retournée
 
 ## Exemple 2 
 
-Reportez-vous à l'exemple de la fonction [Current date](current-date.md).
+Reportez-vous à l'exemple de la fonction [Current date](current-date).
 
 ## Voir aussi 
 
-[Day of](day-of.md)  
-[Year of](year-of.md)  
+[Day of](day-of)  
+[Year of](year-of)  
 
 ## Propriétés
 

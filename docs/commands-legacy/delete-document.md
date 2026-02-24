@@ -51,7 +51,7 @@ The following example deletes the document named Note:
 
 ## Example 2 
 
-See example for the [APPEND DATA TO PASTEBOARD](append-data-to-pasteboard.md) command.
+See example for the [APPEND DATA TO PASTEBOARD](append-data-to-pasteboard) command.
 
 ## System variables and sets 
 
@@ -59,7 +59,7 @@ Deleting a document sets the OK system variable to 1\. If **DELETE DOCUMENT** ca
 
 ## See also 
 
-[Test path name](test-path-name.md)  
+[Test path name](test-path-name)  
 
 ## Properties
 

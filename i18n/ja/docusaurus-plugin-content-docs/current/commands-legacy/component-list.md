@@ -44,7 +44,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[PLUGIN LIST](plugin-list.md)  
+[PLUGIN LIST](plugin-list)  
 
 ## プロパティ
 

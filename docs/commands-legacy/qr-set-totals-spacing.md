@@ -48,7 +48,7 @@ If you pass an invalid *subtotal*, the error -9852 will be generated.
 
 ## See also 
 
-[QR GET TOTALS SPACING](qr-get-totals-spacing.md)  
+[QR GET TOTALS SPACING](qr-get-totals-spacing)  
 
 ## Properties
 

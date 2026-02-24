@@ -34,12 +34,12 @@ La valeur NULL est exploitée par le moteur SQL de 4D. Pour plus d’information
 
 La valeur retournée par cette commande n'a de sens que si l'option "*Traduire les NULL en valeurs vides*" n'est pas cochée dans la définition du champ en Structure. Dans le cas contraire, elle retourne toujours **Faux**.
 
-**Note :** Cette commande ne peut pas être utilisée avec des objets et des propriétés d'objets. Les valeurs Null contenues dans les champs objet sont gérées à l'aide de la commande [Null](null.md).
+**Note :** Cette commande ne peut pas être utilisée avec des objets et des propriétés d'objets. Les valeurs Null contenues dans les champs objet sont gérées à l'aide de la commande [Null](null).
 
 ## Voir aussi 
 
-[Null](null.md)  
-[SET FIELD VALUE NULL](set-field-value-null.md)  
+[Null](null)  
+[SET FIELD VALUE NULL](set-field-value-null)  
 
 ## Propriétés
 

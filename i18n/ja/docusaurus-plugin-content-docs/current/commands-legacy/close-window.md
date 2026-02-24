@@ -25,7 +25,7 @@ displayed_sidebar: docs
 
 ## 例題 
 
-以下の例題はフォームウィンドウを開き、[ADD RECORD](add-record.md) コマンドでレコードを追加します。処理が終了したら**CLOSE WINDOW** でウィンドウを閉じます:
+以下の例題はフォームウィンドウを開き、[ADD RECORD](add-record) コマンドでレコードを追加します。処理が終了したら**CLOSE WINDOW** でウィンドウを閉じます:
 
 ```4d
  FORM SET INPUT([Employees];"Entry")
@@ -38,8 +38,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Open form window](../commands/open-form-window.md)  
-[Open window](../commands/open-window.md)  
+[Open form window](../commands/open-form-window)  
+[Open window](../commands/open-window)  
 
 ## プロパティ
 

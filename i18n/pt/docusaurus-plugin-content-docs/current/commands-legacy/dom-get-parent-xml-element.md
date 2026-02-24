@@ -45,9 +45,9 @@ Se o comando for executado corretamente, a variável sistema OK assume o valor 1
 
 ## Ver também 
 
-[DOM Get first child XML element](dom-get-first-child-xml-element.md)  
-[DOM Get last child XML element](dom-get-last-child-xml-element.md)  
-[DOM Get root XML element](dom-get-root-xml-element.md)  
+[DOM Get first child XML element](dom-get-first-child-xml-element)  
+[DOM Get last child XML element](dom-get-last-child-xml-element)  
+[DOM Get root XML element](dom-get-root-xml-element)  
 
 ## Propriedades
 

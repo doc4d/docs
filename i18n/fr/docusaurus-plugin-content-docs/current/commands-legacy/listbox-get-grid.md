@@ -38,7 +38,7 @@ La commande retourne dans les paramètres *horizontal* et *vertical* la valeur *
 
 ## Voir aussi 
 
-[LISTBOX SET GRID](listbox-set-grid.md)  
+[LISTBOX SET GRID](listbox-set-grid)  
 
 ## Propriétés
 

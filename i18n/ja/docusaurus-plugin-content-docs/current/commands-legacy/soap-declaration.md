@@ -192,9 +192,9 @@ COMPILER\_WEBメソッドはWebサーバでも使用されます (参照)。
 
 ## 参照 
 
-[Is data file locked](is-data-file-locked.md)  
-[SOAP Get info](soap-get-info.md)  
-[SOAP SEND FAULT](soap-send-fault.md)  
+[Is data file locked](is-data-file-locked)  
+[SOAP Get info](soap-get-info)  
+[SOAP SEND FAULT](soap-send-fault)  
 
 ## プロパティ
 

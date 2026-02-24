@@ -55,7 +55,7 @@ Si se pasa, el parámetro *arrTitulos* contiene la lista de los nombres de venta
 
 ## Ver también 
 
-[WA Create URL history menu](wa-create-url-history-menu.md)  
+[WA Create URL history menu](wa-create-url-history-menu)  
 
 ## Propiedades
 

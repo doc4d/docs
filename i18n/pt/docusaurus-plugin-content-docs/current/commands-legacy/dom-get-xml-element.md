@@ -45,8 +45,8 @@ Se o comando tiver sido executado corretamente, a variável sistema OK assume o 
 
 ## Ver também 
 
-[DOM GET XML ELEMENT VALUE](dom-get-xml-element-value.md)  
-[XML SET OPTIONS](xml-set-options.md)  
+[DOM GET XML ELEMENT VALUE](dom-get-xml-element-value)  
+[XML SET OPTIONS](xml-set-options)  
 
 ## Propriedades
 

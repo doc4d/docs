@@ -57,7 +57,7 @@ Se não puder realizar a validação (não DTD ou XSD, URL incorreto, etc.), um 
   
 O comando retorna uma cadeia de caracteres (RefElement) que constitui a referência em memória da estrutura virtual da variável. Esta referência deve ser utilizada com outros comandos de análise XML.  
 
-**Importante**: quando não tiver mais necessidade dele, lembre de chamar o comando [DOM CLOSE XML](dom-close-xml.md) com essa referência para liberar memória.
+**Importante**: quando não tiver mais necessidade dele, lembre de chamar o comando [DOM CLOSE XML](dom-close-xml) com essa referência para liberar memória.
 
 ## Exemplo 1 
 
@@ -94,8 +94,8 @@ Se o comando tiver sido executado corretamente, a variável sistema Ok assume o 
 
 ## Ver também 
 
-[DOM CLOSE XML](dom-close-xml.md)  
-[DOM Parse XML source](dom-parse-xml-source.md)  
+[DOM CLOSE XML](dom-close-xml)  
+[DOM Parse XML source](dom-parse-xml-source)  
 
 ## Propriedades
 

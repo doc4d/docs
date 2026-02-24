@@ -61,10 +61,10 @@ Lorsqu'un **DELETE SELECTION** rencontre un enregistrement verrouillé, celui-ci
 
 ## Voir aussi 
 
-[DISPLAY SELECTION](display-selection.md)  
-[MODIFY SELECTION](modify-selection.md)  
+[DISPLAY SELECTION](display-selection)  
+[MODIFY SELECTION](modify-selection)  
 *Présentation des ensembles*  
-[TRUNCATE TABLE](truncate-table.md)  
+[TRUNCATE TABLE](truncate-table)  
 *Verrouillage d'enregistrements*  
 
 ## Propriétés

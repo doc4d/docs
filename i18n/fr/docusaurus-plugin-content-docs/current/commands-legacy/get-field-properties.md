@@ -85,9 +85,9 @@ L'exemple suivant récupère dans les variables *vType*, *vLong*, *vIndex*, *vUn
 
 ## Voir aussi 
 
-[Field](field.md)  
-[Field name](field-name.md)  
-[SET INDEX](set-index.md)  
+[Field](field)  
+[Field name](field-name)  
+[SET INDEX](set-index)  
 
 ## Propriétés
 

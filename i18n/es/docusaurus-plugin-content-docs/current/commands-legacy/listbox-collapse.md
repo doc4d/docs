@@ -61,7 +61,7 @@ Este ejemplo colapsa el primer nivel de líneas de ruptura de la selección en e
 
 ## Ver también 
 
-[LISTBOX EXPAND](listbox-expand.md)  
+[LISTBOX EXPAND](listbox-expand)  
 
 ## Propiedades
 

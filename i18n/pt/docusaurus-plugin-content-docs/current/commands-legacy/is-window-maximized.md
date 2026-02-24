@@ -44,8 +44,8 @@ Se quiser mudar entre o estado maximizado e o anterior:
 
 ## Ver também 
 
-[Is window reduced](is-window-reduced.md)  
-[MAXIMIZE WINDOW](maximize-window.md)  
+[Is window reduced](is-window-reduced)  
+[MAXIMIZE WINDOW](maximize-window)  
 
 ## Propriedades
 

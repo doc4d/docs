@@ -43,8 +43,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[System info](system-info.md)  
-[Is Windows](is-windows.md)  
+[System info](system-info)  
+[Is Windows](is-windows)  
 
 ## プロパティ
 

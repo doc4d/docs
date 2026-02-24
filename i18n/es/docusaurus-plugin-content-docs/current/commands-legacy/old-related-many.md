@@ -23,8 +23,8 @@ OLD RELATED MANY cambia la selección de la tabla relacionada y selecciona el pr
 
 ## Ver también 
 
-[OLD RELATED ONE](old-related-one.md)  
-[RELATE MANY](relate-many.md)  
+[OLD RELATED ONE](old-related-one)  
+[RELATE MANY](relate-many)  
 
 ## Propiedades
 

@@ -80,7 +80,7 @@ Lorsque vous utilisez le *sélecteur* Web debug log, vous pouvez récupérer une
 
 ## Voir aussi 
 
-[WEB SET OPTION](web-set-option.md)  
+[WEB SET OPTION](web-set-option)  
 
 ## Propriétés
 

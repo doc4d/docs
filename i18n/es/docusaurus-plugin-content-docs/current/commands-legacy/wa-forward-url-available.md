@@ -35,8 +35,8 @@ El comando devuelve [True](true.md "True") si existe un URL y de lo contrario [F
 
 ## Ver también 
 
-[WA Back URL available](wa-back-url-available.md)  
-[WA OPEN FORWARD URL](wa-open-forward-url.md)  
+[WA Back URL available](wa-back-url-available)  
+[WA OPEN FORWARD URL](wa-open-forward-url)  
 
 ## Propiedades
 

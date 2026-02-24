@@ -80,7 +80,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR Get HTML template](qr-get-html-template.md)  
+[QR Get HTML template](qr-get-html-template)  
 
 ## プロパティ
 

@@ -31,7 +31,7 @@ displayed_sidebar: docs
 
 ## Ver también 
 
-[MESSAGES OFF](messages-off.md)  
+[MESSAGES OFF](messages-off)  
 
 ## Propiedades
 

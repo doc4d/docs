@@ -72,8 +72,8 @@ Você deseja inserir um link ao web site de 4D para substituir o texto seleciona
 
 ## Ver também 
 
-[ST GET URL](st-get-url.md)  
-[ST INSERT EXPRESSION](st-insert-expression.md)  
+[ST GET URL](st-get-url)  
+[ST INSERT EXPRESSION](st-insert-expression)  
 
 ## Propriedades
 

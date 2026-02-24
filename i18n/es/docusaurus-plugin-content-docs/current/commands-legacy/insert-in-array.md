@@ -56,8 +56,8 @@ El siguiente ejemplo añade un elemento a un array:
 
 ## Ver también 
 
-[DELETE FROM ARRAY](delete-from-array.md)  
-[Size of array](size-of-array.md)  
+[DELETE FROM ARRAY](delete-from-array)  
+[Size of array](size-of-array)  
 
 ## Propiedades
 

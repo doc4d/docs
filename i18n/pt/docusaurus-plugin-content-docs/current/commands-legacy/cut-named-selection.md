@@ -35,9 +35,9 @@ O método seguinte vazia a seleção atual de uma tabela *\[Clientes\]*:
 
 ## Ver também 
 
-[CLEAR NAMED SELECTION](clear-named-selection.md)  
-[COPY NAMED SELECTION](copy-named-selection.md)  
-[USE NAMED SELECTION](use-named-selection.md)  
+[CLEAR NAMED SELECTION](clear-named-selection)  
+[COPY NAMED SELECTION](copy-named-selection)  
+[USE NAMED SELECTION](use-named-selection)  
 
 ## Propriedades
 

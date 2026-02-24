@@ -96,9 +96,9 @@ The following project method allows you to do so:
 
 ## See also 
 
-[Day of](day-of.md)  
-[Month of](month-of.md)  
-[Year of](year-of.md)  
+[Day of](day-of)  
+[Month of](month-of)  
+[Year of](year-of)  
 
 ## Properties
 

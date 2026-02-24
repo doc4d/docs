@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.SQL GET DATA SOURCE LIST.Summary-->La commande **SQL GET DATA SOURCE LIST** retourne dans les tableaux *tabNomsSources* et *tabPilotes* les noms et les pilotes des sources de données de type *typeSource* définies dans le gestionnaire ODBC du système d’exploitation.<!-- END REF-->
 
-4D vous permet de vous connecter directement via le langage à une source de données ODBC externe et d’exécuter des requêtes SQL au sein d’une structure [Begin SQL](begin-sql.md)/[End SQL](end-sql.md). Le principe d’utilisation est le suivant : la commande **SQL GET DATA SOURCE LIST** permet d’obtenir la liste des sources de données présentes sur le poste. La commande [SQL LOGIN](sql-login.md) permet alors de désigner la source à utiliser. Vous pouvez ensuite exécuter des requêtes SQL dans une structure [Begin SQL](begin-sql.md)/[End SQL](end-sql.md) sur la source “courante”. Pour effectuer à nouveau des requêtes sur le moteur interne de 4D, il suffit de passer la commande [SQL LOGOUT](sql-logout.md). Pour plus d’informations sur les commandes SQL dans l’éditeur de méthodes, reportez-vous au manuel Guide de référence 4D SQL.
+4D vous permet de vous connecter directement via le langage à une source de données ODBC externe et d’exécuter des requêtes SQL au sein d’une structure [Begin SQL](begin-sql)/[End SQL](end-sql). Le principe d’utilisation est le suivant : la commande **SQL GET DATA SOURCE LIST** permet d’obtenir la liste des sources de données présentes sur le poste. La commande [SQL LOGIN](sql-login) permet alors de désigner la source à utiliser. Vous pouvez ensuite exécuter des requêtes SQL dans une structure [Begin SQL](begin-sql)/[End SQL](end-sql) sur la source “courante”. Pour effectuer à nouveau des requêtes sur le moteur interne de 4D, il suffit de passer la commande [SQL LOGOUT](sql-logout). Pour plus d’informations sur les commandes SQL dans l’éditeur de méthodes, reportez-vous au manuel Guide de référence 4D SQL.
 
 Passez dans *typeSource* le type de source de données que vous souhaitez obtenir. Vous pouvez utiliser l’une des constantes suivantes, placées dans le thème “*SQL*” :
 
@@ -63,9 +63,9 @@ Si la commande est correctement exécutée, la variable système OK prend la val
 
 ## Voir aussi 
 
-[SQL Get current data source](sql-get-current-data-source.md)  
-[SQL LOGIN](sql-login.md)  
-[SQL LOGOUT](sql-logout.md)  
+[SQL Get current data source](sql-get-current-data-source)  
+[SQL LOGIN](sql-login)  
+[SQL LOGOUT](sql-logout)  
 
 ## Propriétés
 

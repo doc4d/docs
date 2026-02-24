@@ -47,9 +47,9 @@ Windowsでは、標準的なMac OSファイルタイプやファイル拡張子 
 
 Windowsでは、Windowsのファイル拡張子を渡すか、*\_o\_MAP FILE TYPES*メカニズムを通してマップされたMacintoshのファイルタイプを渡します。拡張子のないドキュメントや、複数の拡張子を含むドキュメント、そして3文字以上から成る拡張子を含むドキュメントを作成したい場合、引数*type* を使用せずに、完全な名前を*document*渡します(例2を参照) 。
 
-ドキュメントを作成してドキュメントを開くと、[RECEIVE PACKET](receive-packet.md)と[SEND PACKET](send-packet.md)コマンドを使用してドキュメントを読んだり書いたりできます。これらのコマンドに[Get document position](get-document-position.md)と[SET DOCUMENT POSITION](set-document-position.md)コマンドを組み合わせることができます。これにより、ドキュメントのあらゆる箇所に直接アクセスすることが可能となります。
+ドキュメントを作成してドキュメントを開くと、[RECEIVE PACKET](receive-packet)と[SEND PACKET](send-packet)コマンドを使用してドキュメントを読んだり書いたりできます。これらのコマンドに[Get document position](get-document-position)と[SET DOCUMENT POSITION](set-document-position)コマンドを組み合わせることができます。これにより、ドキュメントのあらゆる箇所に直接アクセスすることが可能となります。
 
-ドキュメントに対して、最後に[CLOSE DOCUMENT](close-document.md)を呼び出すことを忘れないでください。
+ドキュメントに対して、最後に[CLOSE DOCUMENT](close-document)を呼び出すことを忘れないでください。
 
 ## 例題 1 
 
@@ -80,8 +80,8 @@ Windowsでは、Windowsのファイル拡張子を渡すか、*\_o\_MAP FILE TYP
 
 ## 参照 
 
-[Append document](append-document.md)  
-[Open document](open-document.md)  
+[Append document](append-document)  
+[Open document](open-document)  
 
 ## プロパティ
 

@@ -49,9 +49,9 @@ L'exemple suivant envoie des lettres aux 50 plus mauvais clients puis aux 50 mei
 
 ## Voir aussi 
 
-[ORDER BY](order-by.md)  
-[QUERY](query.md)  
-[REDUCE SELECTION](reduce-selection.md)  
+[ORDER BY](order-by)  
+[QUERY](query)  
+[REDUCE SELECTION](reduce-selection)  
 
 ## Propriétés
 

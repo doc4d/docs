@@ -58,8 +58,8 @@ Cuando el usuario hace clic en el botón, aparece la caja de diálogo estándar 
 
 ## Ver también 
 
-[GET HIGHLIGHTED RECORDS](get-highlighted-records.md)  
-[OBJECT SET SCROLL POSITION ](object-set-scroll-position.md)  
+[GET HIGHLIGHTED RECORDS](get-highlighted-records)  
+[OBJECT SET SCROLL POSITION ](object-set-scroll-position)  
 
 ## Propiedades
 

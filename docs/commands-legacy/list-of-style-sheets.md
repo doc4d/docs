@@ -59,8 +59,8 @@ If you execute the following code:
 
 ## See also 
 
-[GET STYLE SHEET INFO](get-style-sheet-info.md)  
-[OBJECT SET STYLE SHEET](object-set-style-sheet.md)  
+[GET STYLE SHEET INFO](get-style-sheet-info)  
+[OBJECT SET STYLE SHEET](object-set-style-sheet)  
 
 ## Properties
 

@@ -48,7 +48,7 @@ Passe no parâmetro *nomFolhaEstilo*, o nome da folha de estilo a aplicar ao *ob
 
 Se uma folha de estilo já tinha sido associada ao objeto em modo Desenho, a chamada deste comando a substitui para o processo atual.
 
-Se durante a sessão, utiliza os comandos [ST SET ATTRIBUTES](st-set-attributes.md), [ST SET TEXT](st-set-text.md) ou [OBJECT SET FONT](object-set-font.md), [OBJECT SET FONT SIZE](object-set-font-size.md) no *objeto* com o propósito de modificar sua fonte ou o tamanho de fonte, a referência a folha de estilos se apaga automaticamente do objeto - inclusive se atribui os mesmos atributos que os da folha de estilos. No entanto, se modificar o estilo (negrito, cursiva, etc.), por exemplo com os comandos [ST SET ATTRIBUTES](st-set-attributes.md) ou [OBJECT SET FONT STYLE](object-set-font-style.md), se adicionam estas novas propriedades a folha de estilo pela duração da sessão.
+Se durante a sessão, utiliza os comandos [ST SET ATTRIBUTES](st-set-attributes), [ST SET TEXT](st-set-text) ou [OBJECT SET FONT](object-set-font), [OBJECT SET FONT SIZE](object-set-font-size) no *objeto* com o propósito de modificar sua fonte ou o tamanho de fonte, a referência a folha de estilos se apaga automaticamente do objeto - inclusive se atribui os mesmos atributos que os da folha de estilos. No entanto, se modificar o estilo (negrito, cursiva, etc.), por exemplo com os comandos [ST SET ATTRIBUTES](st-set-attributes) ou [OBJECT SET FONT STYLE](object-set-font-style), se adicionam estas novas propriedades a folha de estilo pela duração da sessão.
 
 ### Nota de compatibilidade 
 
@@ -58,9 +58,9 @@ Em **arquitetura de projeto**, só as três folhas de estilo automáticas são c
 ## Ver também 
 
 *Estilos de fonte*  
-[GET STYLE SHEET INFO](get-style-sheet-info.md)  
-[LIST OF STYLE SHEETS](list-of-style-sheets.md)  
-[OBJECT Get style sheet](object-get-style-sheet.md)  
+[GET STYLE SHEET INFO](get-style-sheet-info)  
+[LIST OF STYLE SHEETS](list-of-style-sheets)  
+[OBJECT Get style sheet](object-get-style-sheet)  
 
 ## Propriedades
 

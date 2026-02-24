@@ -35,7 +35,7 @@ displayed_sidebar: docs
 
 ## See also 
 
-[OBJECT SET VISIBLE](object-set-visible.md)  
+[OBJECT SET VISIBLE](object-set-visible)  
 
 ## Properties
 

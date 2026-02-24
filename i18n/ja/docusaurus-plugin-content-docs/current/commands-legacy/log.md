@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Exp](exp.md)  
+[Exp](exp)  
 
 ## プロパティ
 

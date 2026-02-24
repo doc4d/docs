@@ -45,11 +45,11 @@ Valeur courante des sources de données de l'objet de formulaire.
 
 ## Exemple 
 
-Voir l'exemple de la commande [OBJECT SET VALUE](object-set-value.md). 
+Voir l'exemple de la commande [OBJECT SET VALUE](object-set-value). 
 
 ## Voir aussi 
 
-[OBJECT SET VALUE](object-set-value.md)  
+[OBJECT SET VALUE](object-set-value)  
 
 ## Propriétés
 

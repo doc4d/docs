@@ -34,7 +34,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[PLAY](play.md)  
+[PLAY](play)  
 
 ## プロパティ
 

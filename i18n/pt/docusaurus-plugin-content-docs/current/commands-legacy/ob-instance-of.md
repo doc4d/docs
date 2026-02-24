@@ -63,7 +63,7 @@ Depois em um método, pode escrever:
 
 ## Ver também 
 
-[OB Class](ob-class.md)  
+[OB Class](ob-class)  
 
 ## Propriedades
 

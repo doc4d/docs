@@ -56,9 +56,9 @@ The following code waits up to 5 seconds for a locked record to become unlocked 
 
 ## See also 
 
-[Current time](current-time.md)  
-[Tickcount](tickcount.md)  
-[Timestamp](timestamp.md)  
+[Current time](current-time)  
+[Tickcount](tickcount)  
+[Timestamp](timestamp)  
 
 ## Properties
 

@@ -68,7 +68,7 @@ The *separator* parameter can be a multiple-character string:
 
 ## See also 
 
-[TEXT TO ARRAY](text-to-array.md)  
+[TEXT TO ARRAY](text-to-array)  
 
 ## Properties
 

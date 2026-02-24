@@ -35,8 +35,8 @@ The command returns **True** if a URL exists and **False** otherwise. More parti
 
 ## See also 
 
-[WA Back URL available](wa-back-url-available.md)  
-[WA OPEN FORWARD URL](wa-open-forward-url.md)  
+[WA Back URL available](wa-back-url-available)  
+[WA OPEN FORWARD URL](wa-open-forward-url)  
 
 ## Properties
 

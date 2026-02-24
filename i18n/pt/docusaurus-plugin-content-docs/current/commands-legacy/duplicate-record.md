@@ -36,7 +36,7 @@ DUPLICATE RECORD pode ser executado durante a entrada de dados. Isso permite dup
 
 ## Ver também 
 
-[SAVE RECORD](save-record.md)  
+[SAVE RECORD](save-record)  
 
 ## Propriedades
 

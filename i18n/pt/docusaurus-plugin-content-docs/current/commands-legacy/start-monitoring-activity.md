@@ -28,7 +28,7 @@ displayed_sidebar: docs
 
 ## Descrição 
 
-<!--REF #_command_.START MONITORING ACTIVITY.Summary-->**O comando START MONITORING ACTIVITY**grava operações que excedem uma *duração* especifica na memória.<!-- END REF--> Pode ser chamada e executada em 4D remote, 4D Server e aplicações standalone 4D (se *fonte* não for uma atividade de rede). Atividade registradas podem ser recuperadas usando o comando [Monitored activity](monitored-activity.md). Chame [STOP MONITORING ACTIVITY](stop-monitoring-activity.md) quando quiser parar a atividade de monitoração.
+<!--REF #_command_.START MONITORING ACTIVITY.Summary-->**O comando START MONITORING ACTIVITY**grava operações que excedem uma *duração* especifica na memória.<!-- END REF--> Pode ser chamada e executada em 4D remote, 4D Server e aplicações standalone 4D (se *fonte* não for uma atividade de rede). Atividade registradas podem ser recuperadas usando o comando [Monitored activity](monitored-activity). Chame [STOP MONITORING ACTIVITY](stop-monitoring-activity) quando quiser parar a atividade de monitoração.
 
 No parâmetro *duração*, passe um número definindo um período de tempo antes do loggin (em segundos, pode expresso como um decimal) para a execução das operações. Quando a execução de uma operação exceder a *duração,* a operação vai ser registrada na memória. 
 
@@ -41,7 +41,7 @@ O parâmetro opcional *fonte* define o tipo de atividade a monitorar. Valores po
 | Activity network    | 2     | Operações de petição de network              |
 | Activity operations | 4     | Operações de dados 4D                        |
 
-**Nota**: se os históricos de depuração tiverem sido parados no servidor 4D [Administration window](../ServerWindow/overview.md), **START MONITORING ACTIVITY** com Activity network reiniciará os históricos.
+**Nota**: se os históricos de depuração tiverem sido parados no servidor 4D [Administration window](../ServerWindow/overview), **START MONITORING ACTIVITY** com Activity network reiniciará os históricos.
 
 ## Exemplo 
 
@@ -102,8 +102,8 @@ Se quiser iniciar/parar o monitoramento e revisão de dados 4D e atividades de d
 
 ## Ver também 
 
-[Monitored activity](monitored-activity.md)  
-[STOP MONITORING ACTIVITY](stop-monitoring-activity.md)  
+[Monitored activity](monitored-activity)  
+[STOP MONITORING ACTIVITY](stop-monitoring-activity)  
 
 ## Propriedades
 

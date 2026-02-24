@@ -42,7 +42,7 @@ Este comando devolve uma cadeia vazia nos seguintes casos:
 
 ## Ver também 
 
-[SET EXTERNAL DATA PATH](set-external-data-path.md)  
+[SET EXTERNAL DATA PATH](set-external-data-path)  
 
 ## Propriedades
 

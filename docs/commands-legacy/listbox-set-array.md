@@ -76,8 +76,8 @@ You want to set a row height array for a list box:
 
 ## See also 
 
-[LISTBOX Get array](listbox-get-array.md)  
-[LISTBOX GET ARRAYS](listbox-get-arrays.md)  
+[LISTBOX Get array](listbox-get-array)  
+[LISTBOX GET ARRAYS](listbox-get-arrays)  
 
 ## Properties
 

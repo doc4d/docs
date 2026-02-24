@@ -42,11 +42,11 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[BLOB TO DOCUMENT](blob-to-document.md)  
-[BLOB TO VARIABLE](blob-to-variable.md)  
-[DOCUMENT TO BLOB](document-to-blob.md)  
-[RECEIVE VARIABLE](receive-variable.md)  
-[VARIABLE TO BLOB](variable-to-blob.md)  
+[BLOB TO DOCUMENT](blob-to-document)  
+[BLOB TO VARIABLE](blob-to-variable)  
+[DOCUMENT TO BLOB](document-to-blob)  
+[RECEIVE VARIABLE](receive-variable)  
+[VARIABLE TO BLOB](variable-to-blob)  
 
 ## プロパティ
 

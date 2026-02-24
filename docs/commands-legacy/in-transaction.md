@@ -27,7 +27,7 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.In transaction.Summary-->The `In transaction` command returns **TRUE** if the current process is in a [transaction](../Develop-legacy/transactions.md), otherwise it returns **FALSE**.<!-- END REF-->
+<!--REF #_command_.In transaction.Summary-->The `In transaction` command returns **TRUE** if the current process is in a [transaction](../Develop-legacy/transactions), otherwise it returns **FALSE**.<!-- END REF-->
 
 ## Example 
 
@@ -37,11 +37,11 @@ If you perform the operation from within a trigger or from a subroutine (that ca
 
 ## See also 
 
-[Active transaction](active-transaction.md)  
-[CANCEL TRANSACTION](cancel-transaction.md)  
-[START TRANSACTION](start-transaction.md)  
+[Active transaction](active-transaction)  
+[CANCEL TRANSACTION](cancel-transaction)  
+[START TRANSACTION](start-transaction)  
 *Triggers*  
-[VALIDATE TRANSACTION](validate-transaction.md)  
+[VALIDATE TRANSACTION](validate-transaction)  
 
 ## Properties
 

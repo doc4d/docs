@@ -27,8 +27,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Semaphore](semaphore.md)  
-[Test semaphore](test-semaphore.md)  
+[Semaphore](semaphore)  
+[Test semaphore](test-semaphore)  
 *セマフォーとシグナル*  
 
 ## プロパティ

@@ -38,8 +38,8 @@ La valeur NULL est exploitée par le moteur SQL de 4D. Pour plus d’information
 
 ## Voir aussi 
 
-[Is field value Null](is-field-value-null.md)  
-[Null](null.md)  
+[Is field value Null](is-field-value-null)  
+[Null](null)  
 
 ## Propriétés
 

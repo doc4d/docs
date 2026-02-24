@@ -29,7 +29,7 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.SAX GET XML PROCESSING INSTRUCTION.Summary-->La commande **SAX GET XML PROCESSING INSTRUCTION** retourne le *nom* et la *valeur* de l’instruction de traitement XML analysée dans le document XML référencé par *document*.<!-- END REF--> Cette commande doit être appelée dans le contexte d’un événement XML processing instruction. Pour plus d'informations sur les événements SAX, reportez-vous à la description de la commande [SAX Get XML node](sax-get-xml-node.md). 
+<!--REF #_command_.SAX GET XML PROCESSING INSTRUCTION.Summary-->La commande **SAX GET XML PROCESSING INSTRUCTION** retourne le *nom* et la *valeur* de l’instruction de traitement XML analysée dans le document XML référencé par *document*.<!-- END REF--> Cette commande doit être appelée dans le contexte d’un événement XML processing instruction. Pour plus d'informations sur les événements SAX, reportez-vous à la description de la commande [SAX Get XML node](sax-get-xml-node). 
 
 ## Exemple 
 
@@ -50,8 +50,8 @@ L’instruction suivante retournera “PI” dans *vNom* et “TextProcess” da
 
 ## Voir aussi 
 
-[SAX ADD PROCESSING INSTRUCTION](sax-add-processing-instruction.md)  
-[SAX Get XML node](sax-get-xml-node.md)  
+[SAX ADD PROCESSING INSTRUCTION](sax-add-processing-instruction)  
+[SAX Get XML node](sax-get-xml-node)  
 
 ## Propriétés
 

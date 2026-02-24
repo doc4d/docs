@@ -43,7 +43,7 @@ Se este comando é executado corretamente, a variável sistema OK toma o valor 1
 
 ## Ver também 
 
-[EXECUTE FORMULA](execute-formula.md)  
+[EXECUTE FORMULA](execute-formula)  
 
 ## Propriedades
 

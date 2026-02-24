@@ -33,9 +33,9 @@ Por defecto, las aserciones están activas pero pueden haber sido desactivadas u
 
 ## Ver también 
 
-[ASSERT](assert.md)  
-[Asserted](asserted.md)  
-[SET ASSERT ENABLED](set-assert-enabled.md)  
+[ASSERT](assert)  
+[Asserted](asserted)  
+[SET ASSERT ENABLED](set-assert-enabled)  
 
 ## Propiedades
 

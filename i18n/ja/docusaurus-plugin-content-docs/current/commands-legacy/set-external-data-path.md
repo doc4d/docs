@@ -70,8 +70,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Get external data path](get-external-data-path.md)  
-[RELOAD EXTERNAL DATA](reload-external-data.md)  
+[Get external data path](get-external-data-path)  
+[RELOAD EXTERNAL DATA](reload-external-data)  
 
 ## プロパティ
 

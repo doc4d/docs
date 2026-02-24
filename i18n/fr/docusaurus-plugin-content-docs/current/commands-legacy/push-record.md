@@ -44,7 +44,7 @@ L'exemple suivant empile l'enregistrement d'un client :
 
 ## Voir aussi 
 
-[POP RECORD](pop-record.md)  
+[POP RECORD](pop-record)  
 *Utiliser la pile d'enregistrements*  
 
 ## Propriétés

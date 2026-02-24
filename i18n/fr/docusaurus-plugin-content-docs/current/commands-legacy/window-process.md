@@ -34,7 +34,7 @@ Si vous omettez le paramètre *fenêtre*, **Window process** retourne le numéro
 
 ## Voir aussi 
 
-[Current process](current-process.md)  
+[Current process](current-process)  
 
 ## Propriétés
 

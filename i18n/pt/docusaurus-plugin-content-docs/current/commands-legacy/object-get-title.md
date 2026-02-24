@@ -41,7 +41,7 @@ Se passar o parâmetro opcional *\**, indica que o parâmetro *objeto é* um nom
 
 ## Ver também 
 
-[OBJECT SET TITLE](object-set-title.md)  
+[OBJECT SET TITLE](object-set-title)  
 
 ## Propriedades
 

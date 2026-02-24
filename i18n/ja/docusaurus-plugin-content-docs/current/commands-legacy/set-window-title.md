@@ -61,7 +61,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Get window title](get-window-title.md)  
+[Get window title](get-window-title)  
 
 ## プロパティ
 

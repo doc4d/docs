@@ -51,7 +51,7 @@ Para restaurar el valor original de un campo, asígnele el valor devuelto por Ol
 
 ## Ver también 
 
-[Modified](modified.md)  
+[Modified](modified)  
 
 ## Propiedades
 

@@ -61,8 +61,8 @@ ARRAY INTEGERを既存の配列に適用する場合、
 
 ## 参照 
 
-[ARRAY LONGINT](array-longint.md)  
-[ARRAY REAL](array-real.md)  
+[ARRAY LONGINT](array-longint)  
+[ARRAY REAL](array-real)  
 
 ## プロパティ
 

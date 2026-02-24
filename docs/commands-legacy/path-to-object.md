@@ -145,7 +145,7 @@ If the last portion of the path is ".something", it is considered as a file name
 
 ## Example 2 
 
-You can combine this command with the [Object to path](object-to-path.md) to rename a file in a path:
+You can combine this command with the [Object to path](object-to-path) to rename a file in a path:
 
 ```4d
  var $o : Object
@@ -180,12 +180,12 @@ You want to know the number of subfolders contained in a path:
 
 ## See also 
 
-[Convert path POSIX to system](convert-path-posix-to-system.md)  
-[Convert path system to POSIX](convert-path-system-to-posix.md)  
-[File](../commands/file.md)  
-[Folder](../commands/folder.md)  
-[Object to path](object-to-path.md)  
-[Test path name](test-path-name.md)  
+[Convert path POSIX to system](convert-path-posix-to-system)  
+[Convert path system to POSIX](convert-path-system-to-posix)  
+[File](../commands/file)  
+[Folder](../commands/folder)  
+[Object to path](object-to-path)  
+[Test path name](test-path-name)  
 
 ## Properties
 

@@ -50,7 +50,7 @@ Si especifica una ruta de acceso invalida, se generará un error del administrad
 
 ## Ver también 
 
-[Get 4D folder](get-4d-folder.md)  
+[Get 4D folder](get-4d-folder)  
 [ON ERR CALL](on-err-call.md)  
 
 ## Propiedades

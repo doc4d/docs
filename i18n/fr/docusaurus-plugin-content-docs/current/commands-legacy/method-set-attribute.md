@@ -78,8 +78,8 @@ Définition de plusieurs paires attribut/valeur :
 ## Voir aussi 
 
 *Accès objets développement*  
-[METHOD Get attribute](method-get-attribute.md)  
-[METHOD SET ATTRIBUTES](method-set-attributes.md)  
+[METHOD Get attribute](method-get-attribute)  
+[METHOD SET ATTRIBUTES](method-set-attributes)  
 
 ## Propriétés
 

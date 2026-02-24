@@ -34,7 +34,7 @@ displayed_sidebar: docs
 
 :::info Compatibilidad
 
-Este comando se mantiene sólo por razones de compatibilidad. Ahora se recomienda utilizar [`4D.HTTPRequest class`](../API/HTTPRequestClass.md).
+Este comando se mantiene sólo por razones de compatibilidad. Ahora se recomienda utilizar [`4D.HTTPRequest class`](../API/HTTPRequestClass).
 
 :::
 
@@ -66,7 +66,7 @@ Puede pasar variables de diferentes tipos en *respuesta*:
 * Imagen: cuando el resultado se espera en forma de imagen.
 * Objeto: cuando el resultado se espera en forma de objeto *C\_OBJECT*.
 
-**Nota:** cuando se pasa una variable de texto en *respuesta*, 4D intentará decodificar los datos devueltos desde el servidor. 4D primero intenta recuperar el conjunto de caracteres del encabezado de *tipo de contenido*, luego del contenido utilizando un BOM y, finalmente, busca cualquier atributo *http-equiv charset* (en contenido html) o *codificación* (para xml). Si no se puede detectar ningún charset, 4D intentará decodificar la respuesta en ANSI. Si la conversión falla, el texto resultante quedará vacío. Si no está seguro de si el servidor devuelve una información charset o BOM, pero conoce la codificación, es más preciso pasar *respuesta* en BLOB y llamar al [Convert to text](convert-to-text.md).
+**Nota:** cuando se pasa una variable de texto en *respuesta*, 4D intentará decodificar los datos devueltos desde el servidor. 4D primero intenta recuperar el conjunto de caracteres del encabezado de *tipo de contenido*, luego del contenido utilizando un BOM y, finalmente, busca cualquier atributo *http-equiv charset* (en contenido html) o *codificación* (para xml). Si no se puede detectar ningún charset, 4D intentará decodificar la respuesta en ANSI. Si la conversión falla, el texto resultante quedará vacío. Si no está seguro de si el servidor devuelve una información charset o BOM, pero conoce la codificación, es más preciso pasar *respuesta* en BLOB y llamar al [Convert to text](convert-to-text).
 
 Si pasa un BLOB, contendrá el texto, la imagen o todo tipo de contenido (.wav, .zip, etc.) devuelto por el servidor. A continuación, debe gestionar la recuperación de estos contenidos (los encabezados no están incluidos en el BLOB). Si pasa un objeto de tipo *C\_OBJECT*, si la petición devuelve un resultado con el contenido tipo texto, 4D intenta analizar el contenido JSON y devuelve el resultado analizado como un objeto, de lo contrario, se devuelve un objeto *4D.Blob*.
 
@@ -116,7 +116,7 @@ Recuperación de un vídeo:
 
 ## Ver también 
 
-[HTTP Request](http-request.md)  
+[HTTP Request](http-request)  
 
 ## Propiedades
 

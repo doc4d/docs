@@ -61,7 +61,7 @@ O método a seguir é chamado para imprimir os registros na seleção e ativar o
  PRINT SELECTION([Empregados])
 ```
 
-**Nota:** O parâmetro do comando [BREAK LEVEL](break-level.md) deve ser igual ao número de rupturas em seu relatório. Para maior informação sobre quebras, consulte *Imprimir*. 
+**Nota:** O parâmetro do comando [BREAK LEVEL](break-level) deve ser igual ao número de rupturas em seu relatório. Para maior informação sobre quebras, consulte *Imprimir*. 
 
 ## Exemplo 2 
 
@@ -97,14 +97,14 @@ Pode fazer os seguintes cálculos:
 
 ## Ver também 
 
-[ACCUMULATE](accumulate.md)  
-[BREAK LEVEL](break-level.md)  
-[Max](max.md)  
-[Min](min.md)  
-[ORDER BY](order-by.md)  
-[PRINT SELECTION](print-selection.md)  
-[Subtotal](subtotal.md)  
-[Sum](sum.md)  
+[ACCUMULATE](accumulate)  
+[BREAK LEVEL](break-level)  
+[Max](max)  
+[Min](min)  
+[ORDER BY](order-by)  
+[PRINT SELECTION](print-selection)  
+[Subtotal](subtotal)  
+[Sum](sum)  
 
 ## Propriedades
 

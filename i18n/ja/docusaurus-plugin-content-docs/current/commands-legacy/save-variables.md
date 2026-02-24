@@ -44,11 +44,11 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[BLOB TO DOCUMENT](blob-to-document.md)  
-[BLOB TO VARIABLE](blob-to-variable.md)  
-[DOCUMENT TO BLOB](document-to-blob.md)  
-[LOAD VARIABLES](load-variables.md)  
-[VARIABLE TO BLOB](variable-to-blob.md)  
+[BLOB TO DOCUMENT](blob-to-document)  
+[BLOB TO VARIABLE](blob-to-variable)  
+[DOCUMENT TO BLOB](document-to-blob)  
+[LOAD VARIABLES](load-variables)  
+[VARIABLE TO BLOB](variable-to-blob)  
 *システム変数*  
 
 ## プロパティ

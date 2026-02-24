@@ -41,8 +41,8 @@ displayed_sidebar: docs
 ## Ver también 
 
 *Conjuntos*  
-[DISPLAY SELECTION](display-selection.md)  
-[Form event code](../commands/form-event-code.md)  
+[DISPLAY SELECTION](display-selection)  
+[Form event code](../commands/form-event-code)  
 
 ## Propiedades
 

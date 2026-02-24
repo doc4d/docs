@@ -35,7 +35,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[ERASE WINDOW](erase-window.md)  
+[ERASE WINDOW](erase-window)  
 
 ## プロパティ
 

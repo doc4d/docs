@@ -34,9 +34,9 @@ Quando tiver terminado de utilizar a nova lista, chame a [CLEAR LIST](clear-list
 
 ## Ver também 
 
-[CLEAR LIST](clear-list.md)  
-[Load list](load-list.md)  
-[New list](new-list.md)  
+[CLEAR LIST](clear-list)  
+[Load list](load-list)  
+[New list](new-list)  
 
 ## Propriedades
 

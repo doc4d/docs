@@ -64,7 +64,7 @@ La méthode projet suivante ajoute au tableau de type texte ou alpha, dont le po
 
 ## Voir aussi 
 
-[Position](position.md)  
+[Position](position)  
 
 ## Propriétés
 

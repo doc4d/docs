@@ -47,7 +47,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX Get column width](listbox-get-column-width.md)  
+[LISTBOX Get column width](listbox-get-column-width)  
 
 ## プロパティ
 

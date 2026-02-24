@@ -65,9 +65,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET PICTURE FROM LIBRARY](get-picture-from-library.md)  
-[PICTURE LIBRARY LIST](picture-library-list.md)  
-[SET PICTURE TO LIBRARY](set-picture-to-library.md)  
+[GET PICTURE FROM LIBRARY](get-picture-from-library)  
+[PICTURE LIBRARY LIST](picture-library-list)  
+[SET PICTURE TO LIBRARY](set-picture-to-library)  
 
 ## プロパティ
 

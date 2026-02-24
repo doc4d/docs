@@ -42,7 +42,7 @@ Before launching the operation, the command checks the validity of the specified
 
 If you pass an empty string in *accessPath*, the command will re-open the database without changing the data file.
 
-**4D Server:** Beginning with 4D v13, this command can be executed with 4D Server. In this context, it makes an internal call to [QUIT 4D](quit-4d.md) on the server (which causes a dialog box to appear on each remote machine indicating that the server is in the process of quitting) before opening the designated file.
+**4D Server:** Beginning with 4D v13, this command can be executed with 4D Server. In this context, it makes an internal call to [QUIT 4D](quit-4d) on the server (which causes a dialog box to appear on each remote machine indicating that the server is in the process of quitting) before opening the designated file.
 
 ## Example 
 
@@ -66,7 +66,7 @@ In the context of deploying a merged application, you want to open or create the
 
 ## See also 
 
-[CREATE DATA FILE](create-data-file.md)  
+[CREATE DATA FILE](create-data-file)  
 
 ## Properties
 

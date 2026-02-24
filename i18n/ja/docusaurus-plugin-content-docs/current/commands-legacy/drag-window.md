@@ -57,8 +57,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET WINDOW RECT](get-window-rect.md)  
-[SET WINDOW RECT](set-window-rect.md)  
+[GET WINDOW RECT](get-window-rect)  
+[SET WINDOW RECT](set-window-rect)  
 
 ## プロパティ
 

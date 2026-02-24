@@ -33,7 +33,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[FORM SET HORIZONTAL RESIZING](form-set-horizontal-resizing.md)  
+[FORM SET HORIZONTAL RESIZING](form-set-horizontal-resizing)  
 
 ## プロパティ
 

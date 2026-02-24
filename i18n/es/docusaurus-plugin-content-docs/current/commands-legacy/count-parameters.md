@@ -92,7 +92,7 @@ o:
 ## Ver también 
 
 *Comandos del Compilador*  
-[Copy parameters](copy-parameters.md)  
+[Copy parameters](copy-parameters)  
 
 ## Propiedades
 

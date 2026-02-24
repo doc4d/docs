@@ -48,9 +48,9 @@ SCAN INDEXは、インデックスフィールドにのみ使用できます。�
 
 ## 参照 
 
-[ORDER BY](order-by.md)  
-[QUERY](query.md)  
-[REDUCE SELECTION](reduce-selection.md)  
+[ORDER BY](order-by)  
+[QUERY](query)  
+[REDUCE SELECTION](reduce-selection)  
 
 ## プロパティ
 

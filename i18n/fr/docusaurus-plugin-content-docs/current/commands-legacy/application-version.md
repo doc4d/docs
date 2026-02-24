@@ -130,8 +130,8 @@ Le code suivant reconstitue le numéro de version de l'application et permet de 
 
 ## Voir aussi 
 
-[Application type](application-type.md)  
-[Version type](version-type.md)  
+[Application type](application-type)  
+[Version type](version-type)  
 
 ## Propriétés
 

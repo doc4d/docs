@@ -43,8 +43,8 @@ Macintosh上
 
 ## 参照 
 
-[Application file](application-file.md)  
-[Structure file](structure-file.md)  
+[Application file](application-file)  
+[Structure file](structure-file)  
 
 ## プロパティ
 

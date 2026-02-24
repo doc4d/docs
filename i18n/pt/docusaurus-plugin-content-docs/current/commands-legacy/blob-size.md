@@ -40,7 +40,7 @@ A linha de código adiciona 100 bytes ao BLOB *meuBlob*:
 
 ## Ver também 
 
-[SET BLOB SIZE](set-blob-size.md)  
+[SET BLOB SIZE](set-blob-size)  
 
 ## Propriedades
 

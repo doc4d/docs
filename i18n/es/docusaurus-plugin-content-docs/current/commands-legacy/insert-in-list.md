@@ -60,8 +60,8 @@ El siguiente código inserta un elemento (sin sublista asociada) justo antes del
 
 ## Ver también 
 
-[APPEND TO LIST](append-to-list.md)  
-[SET LIST ITEM PARAMETER](set-list-item-parameter.md)  
+[APPEND TO LIST](append-to-list)  
+[SET LIST ITEM PARAMETER](set-list-item-parameter)  
 
 ## Propiedades
 

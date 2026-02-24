@@ -55,7 +55,7 @@ Você quer mostrar o texto "Buscar" um combo box:
 
 ## Ver também 
 
-[OBJECT Get placeholder](object-get-placeholder.md)  
+[OBJECT Get placeholder](object-get-placeholder)  
 
 ## Propriedades
 

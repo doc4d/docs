@@ -50,7 +50,7 @@ Se quiser o valor da data source de um objeto formulário, obtenha seu nome e es
 
 ## Ver também 
 
-[OBJECT Get value](object-get-value.md)  
+[OBJECT Get value](object-get-value)  
 
 ## Propriedades
 

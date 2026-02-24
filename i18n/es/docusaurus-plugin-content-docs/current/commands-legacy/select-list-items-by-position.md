@@ -82,9 +82,9 @@ Se seleccionan los elementos segundo, tercero y quinto de la lista jerárquica
 
 ## Ver también 
 
-[EDIT ITEM](edit-item.md)  
-[SELECT LIST ITEMS BY REFERENCE](select-list-items-by-reference.md)  
-[Selected list items](selected-list-items.md)  
+[EDIT ITEM](edit-item)  
+[SELECT LIST ITEMS BY REFERENCE](select-list-items-by-reference)  
+[Selected list items](selected-list-items)  
 
 ## Propiedades
 

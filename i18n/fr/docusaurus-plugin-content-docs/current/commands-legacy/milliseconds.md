@@ -56,8 +56,8 @@ Le code suivant attend jusqu'à 5 secondes qu'un enregistrement soit déverrouil
 
 ## Voir aussi 
 
-[Current time](current-time.md)  
-[Tickcount](tickcount.md)  
+[Current time](current-time)  
+[Tickcount](tickcount)  
 [Timestamp](../commands/timestamp)  
 
 ## Propriétés

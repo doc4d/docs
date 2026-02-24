@@ -35,7 +35,7 @@ If you pass the optional *\** parameter, this indicates that the *object* parame
 
 ## See also 
 
-[LISTBOX SET COLUMN FORMULA](listbox-set-column-formula.md)  
+[LISTBOX SET COLUMN FORMULA](listbox-set-column-formula)  
 
 ## Properties
 

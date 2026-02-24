@@ -52,7 +52,7 @@ Todos los elementos cuyo rectángulo circundante está en intersección con el r
 
 #### Ver también 
 
-[SVG Find element ID by coordinates](svg-find-element-id-by-coordinates.md)  
+[SVG Find element ID by coordinates](svg-find-element-id-by-coordinates)  
 
 #### Propiedades
 

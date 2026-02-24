@@ -59,7 +59,7 @@ You want to apply an orientation of 270° to a variable in your form:
 
 ## See also 
 
-[OBJECT Get text orientation](object-get-text-orientation.md)  
+[OBJECT Get text orientation](object-get-text-orientation)  
 
 ## Properties
 

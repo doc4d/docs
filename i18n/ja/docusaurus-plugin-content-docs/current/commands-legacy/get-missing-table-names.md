@@ -44,7 +44,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[REGENERATE MISSING TABLE](regenerate-missing-table.md)  
+[REGENERATE MISSING TABLE](regenerate-missing-table)  
 
 ## プロパティ
 

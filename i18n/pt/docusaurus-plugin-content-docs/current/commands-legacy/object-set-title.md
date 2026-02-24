@@ -79,7 +79,7 @@ Você quer inserir os títulos em duas linhas:
 
 ## Ver também 
 
-[OBJECT Get title](object-get-title.md)  
+[OBJECT Get title](object-get-title)  
 
 ## Propriedades
 

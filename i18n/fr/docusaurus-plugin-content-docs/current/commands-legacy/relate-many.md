@@ -60,8 +60,8 @@ Par exemple, la méthode suivante effectue une boucle sur chaque enregistrement 
 
 ## Voir aussi 
 
-[OLD RELATED MANY](old-related-many.md)  
-[RELATE ONE](relate-one.md)  
+[OLD RELATED MANY](old-related-many)  
+[RELATE ONE](relate-one)  
 
 ## Propriétés
 

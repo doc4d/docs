@@ -34,8 +34,8 @@ Si no hay un URL precedente, el comando no hace nada. Puede probar la disponibil
 
 ## Ver también 
 
-[WA OPEN FORWARD URL](wa-open-forward-url.md)  
-[WA OPEN URL](wa-open-url.md)  
+[WA OPEN FORWARD URL](wa-open-forward-url)  
+[WA OPEN URL](wa-open-url)  
 
 ## Propiedades
 

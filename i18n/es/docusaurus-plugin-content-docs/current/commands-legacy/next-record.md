@@ -27,11 +27,11 @@ Ver el ejemplo del comando [DISPLAY RECORD](display-record.md "DISPLAY RECORD").
 
 ## Ver también 
 
-[Before selection](before-selection.md)  
-[End selection](end-selection.md)  
-[FIRST RECORD](first-record.md)  
-[LAST RECORD](last-record.md)  
-[PREVIOUS RECORD](previous-record.md)  
+[Before selection](before-selection)  
+[End selection](end-selection)  
+[FIRST RECORD](first-record)  
+[LAST RECORD](last-record)  
+[PREVIOUS RECORD](previous-record)  
 
 ## Propiedades
 

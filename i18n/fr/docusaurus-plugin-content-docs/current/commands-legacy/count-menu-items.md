@@ -38,7 +38,7 @@ Si vous omettez le paramètre *process*, **Count menu items** s'applique à la b
 
 ## Voir aussi 
 
-[Count menus](count-menus.md)  
+[Count menus](count-menus)  
 
 ## Propriétés
 

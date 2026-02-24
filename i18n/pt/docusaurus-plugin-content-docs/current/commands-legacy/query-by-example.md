@@ -40,8 +40,8 @@ Se o usuário clicar no botão Aceitar, ou pressionar a tecla Enter, a variável
 
 ## Ver também 
 
-[ORDER BY](order-by.md)  
-[QUERY](query.md)  
+[ORDER BY](order-by)  
+[QUERY](query)  
 
 ## Propriedades
 

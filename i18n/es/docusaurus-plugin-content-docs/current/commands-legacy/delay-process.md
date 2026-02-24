@@ -49,8 +49,8 @@ Ver el ejemplo del comando [Process Number](process-number.md "Process Number").
 
 ## Ver también 
 
-[HIDE PROCESS](hide-process.md)  
-[PAUSE PROCESS](pause-process.md)  
+[HIDE PROCESS](hide-process)  
+[PAUSE PROCESS](pause-process)  
 
 ## Propiedades
 

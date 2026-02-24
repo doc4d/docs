@@ -54,7 +54,7 @@ The `Underline` style is not supported on Windows with [Fluent UI](../FormEditor
 
 ## See also 
 
-[Get menu item style](get-menu-item-style.md)  
+[Get menu item style](get-menu-item-style)  
 
 ## Properties
 

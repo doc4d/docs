@@ -27,7 +27,7 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.FORM LAST PAGE.Summary-->La commande **FORM LAST PAGE** change la page courante d'un formulaire pour afficher la dernière page du formulaire.<!-- END REF--> Si aucun formulaire n'est affiché ou chargé via la commande [FORM LOAD](../commands/form-load.md), ou si la dernière page du formulaire est déjà affichée, **FORM LAST PAGE** ne fait rien.
+<!--REF #_command_.FORM LAST PAGE.Summary-->La commande **FORM LAST PAGE** change la page courante d'un formulaire pour afficher la dernière page du formulaire.<!-- END REF--> Si aucun formulaire n'est affiché ou chargé via la commande [FORM LOAD](../commands/form-load), ou si la dernière page du formulaire est déjà affichée, **FORM LAST PAGE** ne fait rien.
 
 ## Exemple 
 
@@ -39,11 +39,11 @@ Cet exemple est une méthode appelée par une commande de menu. Elle affiche la 
 
 ## Voir aussi 
 
-[FORM FIRST PAGE](form-first-page.md)  
-[FORM Get current page](form-get-current-page.md)  
-[FORM GOTO PAGE](form-goto-page.md)  
-[FORM NEXT PAGE](form-next-page.md)  
-[FORM PREVIOUS PAGE](form-previous-page.md)  
+[FORM FIRST PAGE](form-first-page)  
+[FORM Get current page](form-get-current-page)  
+[FORM GOTO PAGE](form-goto-page)  
+[FORM NEXT PAGE](form-next-page)  
+[FORM PREVIOUS PAGE](form-previous-page)  
 
 ## Propriétés
 

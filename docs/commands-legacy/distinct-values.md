@@ -42,7 +42,7 @@ However, executing this command on unindexed fields will be slower. Also note th
 
 The array used by **DISTINCT VALUES** must be of the same type as the field passed as first parameter, otherwise the array is retyped. There is one exception to this rule: if the field is of the Picture type (and is associated with a keyword index), the corresponding array must be of the Text type.
 
-After the call, the size of the array is equal to the number of distinct values found in the selection. The command does not change the current selection or the current record. The **DISTINCT VALUES** command uses the index of the field, so the elements in *array* are returned sorted in ascending order. If this is the order you need, you do not need to call [SORT ARRAY](sort-array.md) after using **DISTINCT VALUES**.
+After the call, the size of the array is equal to the number of distinct values found in the selection. The command does not change the current selection or the current record. The **DISTINCT VALUES** command uses the index of the field, so the elements in *array* are returned sorted in ascending order. If this is the order you need, you do not need to call [SORT ARRAY](sort-array) after using **DISTINCT VALUES**.
 
 **Note:** When **DISTINCT VALUES** is executed with a text or picture field associated with a keyword index, the command fills the array with the keywords of the index. Unlike other types of data, the values returned differ according to the existence of the index. In the case of a Text field, the keyword index is always taken into account, even when the field is also associated with a standard index. If the Text or Picture field is not associated with a keyword index, the array is returned empty. 
 
@@ -92,10 +92,10 @@ To compute statistics, you want to sort the number of distinct values in a field
 ## See also 
 
   
-[GET TEXT KEYWORDS](get-text-keywords.md)  
+[GET TEXT KEYWORDS](get-text-keywords)  
 [ON ERR CALL](on-err-call.md)  
-[SELECTION RANGE TO ARRAY](selection-range-to-array.md)  
-[SELECTION TO ARRAY](selection-to-array.md)  
+[SELECTION RANGE TO ARRAY](selection-range-to-array)  
+[SELECTION TO ARRAY](selection-to-array)  
 
 ## Properties
 

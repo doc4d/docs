@@ -62,7 +62,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[TRANSFORM PICTURE](transform-picture.md)  
+[TRANSFORM PICTURE](transform-picture)  
 
 ## プロパティ
 

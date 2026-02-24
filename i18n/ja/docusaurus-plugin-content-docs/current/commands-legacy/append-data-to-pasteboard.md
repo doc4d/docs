@@ -229,9 +229,9 @@ GET RECORD FROM PASTEBOARDメソッドを使用して、このレコードイメ
 
 ## 参照 
 
-[CLEAR PASTEBOARD](clear-pasteboard.md)  
-[SET PICTURE TO PASTEBOARD](set-picture-to-pasteboard.md)  
-[SET TEXT TO PASTEBOARD](set-text-to-pasteboard.md)  
+[CLEAR PASTEBOARD](clear-pasteboard)  
+[SET PICTURE TO PASTEBOARD](set-picture-to-pasteboard)  
+[SET TEXT TO PASTEBOARD](set-text-to-pasteboard)  
 
 ## プロパティ
 

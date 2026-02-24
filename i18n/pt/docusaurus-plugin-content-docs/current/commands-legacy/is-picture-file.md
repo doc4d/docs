@@ -39,7 +39,7 @@ Se não passa o parâmetro *\**, o comando prova o arquivo buscando sua extensã
 
 ## Ver também 
 
-[PICTURE CODEC LIST](picture-codec-list.md)  
+[PICTURE CODEC LIST](picture-codec-list)  
 
 ## Propriedades
 

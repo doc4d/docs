@@ -91,7 +91,7 @@ ou :
 ## Voir aussi 
 
 *Commandes du thème Compilateur*  
-[Copy parameters](copy-parameters.md)  
+[Copy parameters](copy-parameters)  
 
 ## Propriétés
 

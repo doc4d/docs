@@ -42,7 +42,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX SET GRID COLOR](listbox-set-grid-color.md)  
+[LISTBOX SET GRID COLOR](listbox-set-grid-color)  
 
 ## プロパティ
 

@@ -46,8 +46,8 @@ SET QUERY LIMIT muda o comportamento dos comandos de pesquisa:
 * [QUERY SELECTION BY FORMULA](query-selection-by-formula.md "QUERY SELECTION BY FORMULA")
 * [QUERY SELECTION WITH ARRAY](query-selection-with-array.md "QUERY SELECTION WITH ARRAY")
 * [QUERY WITH ARRAY](query-with-array.md "QUERY WITH ARRAY")
-* [QUERY BY ATTRIBUTE](query-by-attribute.md)
-* [QUERY SELECTION BY ATTRIBUTE](query-selection-by-attribute.md)
+* [QUERY BY ATTRIBUTE](query-by-attribute)
+* [QUERY SELECTION BY ATTRIBUTE](query-selection-by-attribute)
 
 Por outro lado, SET QUERY LIMIT não afeta os outros comandos que possam modificar a seleção atual de uma tabela como [ALL RECORDS](all-records.md "ALL RECORDS"), [RELATE MANY](relate-many.md "RELATE MANY"), etc.
 
@@ -67,15 +67,15 @@ Ver o segundo exemplo do comando [SET QUERY DESTINATION](set-query-destination.m
 
 ## Ver também 
 
-[Get query limit](get-query-limit.md)  
-[QUERY](query.md)  
-[QUERY BY EXAMPLE](query-by-example.md)  
-[QUERY BY FORMULA](query-by-formula.md)  
-[QUERY BY SQL](query-by-sql.md)  
-[QUERY SELECTION](query-selection.md)  
-[QUERY SELECTION BY FORMULA](query-selection-by-formula.md)  
-[QUERY WITH ARRAY](query-with-array.md)  
-[SET QUERY DESTINATION](set-query-destination.md)  
+[Get query limit](get-query-limit)  
+[QUERY](query)  
+[QUERY BY EXAMPLE](query-by-example)  
+[QUERY BY FORMULA](query-by-formula)  
+[QUERY BY SQL](query-by-sql)  
+[QUERY SELECTION](query-selection)  
+[QUERY SELECTION BY FORMULA](query-selection-by-formula)  
+[QUERY WITH ARRAY](query-with-array)  
+[SET QUERY DESTINATION](set-query-destination)  
 
 ## Propriedades
 

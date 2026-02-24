@@ -36,7 +36,7 @@ Su contenido se reemplazará si ya hay una lista con el mismo nombre.
 
 ## Ver también 
 
-[Load list](load-list.md)  
+[Load list](load-list)  
 
 ## Propiedades
 

@@ -43,8 +43,8 @@ Pass the number of the plug-in for which you want to find out the associated gro
 
 ## See also 
 
-[SET GROUP ACCESS](set-group-access.md)  
-[SET PLUGIN ACCESS](set-plugin-access.md)  
+[SET GROUP ACCESS](set-group-access)  
+[SET PLUGIN ACCESS](set-plugin-access)  
 
 ## Properties
 

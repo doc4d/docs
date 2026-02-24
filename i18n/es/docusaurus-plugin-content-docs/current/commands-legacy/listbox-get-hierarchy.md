@@ -45,7 +45,7 @@ Si el list box está en modo jerárquico, el comando llena el array *jerarquia* 
 
 ## Ver también 
 
-[LISTBOX SET HIERARCHY](listbox-set-hierarchy.md)  
+[LISTBOX SET HIERARCHY](listbox-set-hierarchy)  
 
 ## Propiedades
 

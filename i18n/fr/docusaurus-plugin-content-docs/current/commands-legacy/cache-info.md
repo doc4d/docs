@@ -64,7 +64,7 @@ Vous souhaitez obtenir des informations sur la base courante et tous les composa
 
 ## Voir aussi 
 
-[MEMORY STATISTICS](memory-statistics.md)  
+[MEMORY STATISTICS](memory-statistics)  
 
 ## Propriétés
 

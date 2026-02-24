@@ -46,8 +46,8 @@ L'exemple suivant retourne le nombre de colonnes d'une ligne d'un tableau à deu
 
 ## Voir aussi 
 
-[DELETE FROM ARRAY](delete-from-array.md)  
-[INSERT IN ARRAY](insert-in-array.md)  
+[DELETE FROM ARRAY](delete-from-array)  
+[INSERT IN ARRAY](insert-in-array)  
 
 ## Propriétés
 

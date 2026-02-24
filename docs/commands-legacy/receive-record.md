@@ -17,26 +17,26 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.RECEIVE RECORD.Summary-->RECEIVE RECORD receives a record into *table* from the serial port or document opened by the [SET CHANNEL](set-channel.md) command.<!-- END REF--> The record must have been sent with [SEND RECORD](send-record.md). When you execute RECEIVE RECORD, a new record is automatically created for *table*. If the record is received correctly, you must then use [SAVE RECORD](save-record.md) to save the new record.
+<!--REF #_command_.RECEIVE RECORD.Summary-->RECEIVE RECORD receives a record into *table* from the serial port or document opened by the [SET CHANNEL](set-channel) command.<!-- END REF--> The record must have been sent with [SEND RECORD](send-record). When you execute RECEIVE RECORD, a new record is automatically created for *table*. If the record is received correctly, you must then use [SAVE RECORD](save-record) to save the new record.
 
 The complete record is received. This means that pictures and BLOBs stored in or with the record are also received.
 
-**Important:** When records are being sent and received using [SEND RECORD](send-record.md) and RECEIVE RECORD, the source table structure and the destination table structure must be compatible. If they are not, 4D will convert values according to the table definitions when RECEIVE RECORD is executed.
+**Important:** When records are being sent and received using [SEND RECORD](send-record) and RECEIVE RECORD, the source table structure and the destination table structure must be compatible. If they are not, 4D will convert values according to the table definitions when RECEIVE RECORD is executed.
 
 **Notes:**
 
-1. If you receive a record from a document using this command, the document must have been opened using the [SET CHANNEL](set-channel.md) command. You cannot use RECEIVE RECORD with a document opened with [Open document](open-document.md), [Create document](create-document.md) or [Append document](append-document.md).
+1. If you receive a record from a document using this command, the document must have been opened using the [SET CHANNEL](set-channel) command. You cannot use RECEIVE RECORD with a document opened with [Open document](open-document), [Create document](create-document) or [Append document](append-document).
 2. During the execution of RECEIVE RECORD, the user can interrupt the reception by pressing **Ctrl-Alt-Shift** (Windows) or **Command-Option-Shift** (Macintosh). This interruption generates an error -9994 that you can catch with an error-handling method installed using [ON ERR CALL](on-err-call.md). Usually, you only need to handle the interruption of a reception while communicating over a serial port.
 
 ## Example 
 
-A combined use of [SEND VARIABLE](send-variable.md), [SEND RECORD](send-record.md), [RECEIVE VARIABLE](receive-variable.md) and **RECEIVE RECORD** is ideal for archiving data or for exchanging data between identical single-user databases used in different places. You can exchange data between 4D databases using the import/export commands such as [EXPORT TEXT](export-text.md) and [IMPORT TEXT](import-text.md). However, if your data contains graphics and/or related tables, using [SEND RECORD](send-record.md) and RECEIVE RECORD is far more convenient.
+A combined use of [SEND VARIABLE](send-variable), [SEND RECORD](send-record), [RECEIVE VARIABLE](receive-variable) and **RECEIVE RECORD** is ideal for archiving data or for exchanging data between identical single-user databases used in different places. You can exchange data between 4D databases using the import/export commands such as [EXPORT TEXT](export-text) and [IMPORT TEXT](import-text). However, if your data contains graphics and/or related tables, using [SEND RECORD](send-record) and RECEIVE RECORD is far more convenient.
 
 For instance, consider a documentation system based on 4D and 4D Write. Since several writers in different locations wordwide work on it, we need a simple way to exchange data between the different databases. Here is a simplified view of the database structure:
 
 ![](../assets/en/commands/pict16652.en.png)
 
-The table *\[Commands\]* contains the description of each command or topic. The tables *\[CM US Params\]* and *\[CM FR Params\]* respectivily contain the parameter list for each command in English and in French. The table *\[CM See Also\]* contains the commands listed as reference (See Also section) for each command. Exchanging documentation between databases therefore consists in sending the *\[Commands\]* records and their related records. To do so, we use [SEND RECORD](send-record.md) and RECEIVE RECORD. In addition, we use [SEND VARIABLE](send-variable.md) and [SEND RECORD](send-record.md) in order to mark the import/export document with tags.
+The table *\[Commands\]* contains the description of each command or topic. The tables *\[CM US Params\]* and *\[CM FR Params\]* respectivily contain the parameter list for each command in English and in French. The table *\[CM See Also\]* contains the commands listed as reference (See Also section) for each command. Exchanging documentation between databases therefore consists in sending the *\[Commands\]* records and their related records. To do so, we use [SEND RECORD](send-record) and RECEIVE RECORD. In addition, we use [SEND VARIABLE](send-variable) and [SEND RECORD](send-record) in order to mark the import/export document with tags.
 
 Here is the (simplified) project method for exporting the documentation:
 
@@ -150,9 +150,9 @@ The OK system variable is set to 1 if the record is received. Otherwise, the OK 
 
 ## See also 
 
-[RECEIVE VARIABLE](receive-variable.md)  
-[SEND RECORD](send-record.md)  
-[SEND VARIABLE](send-variable.md)  
+[RECEIVE VARIABLE](receive-variable)  
+[SEND RECORD](send-record)  
+[SEND VARIABLE](send-variable)  
 
 ## Properties
 

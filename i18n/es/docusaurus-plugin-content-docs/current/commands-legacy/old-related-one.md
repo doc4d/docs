@@ -40,10 +40,10 @@ Si el comando se ejecuta correctamente y si los registros relacionados se han ca
 
 ## Ver también 
 
-[Old](old.md)  
-[OLD RELATED MANY](old-related-many.md)  
-[RELATE ONE](relate-one.md)  
-[SAVE RELATED ONE](save-related-one.md)  
+[Old](old)  
+[OLD RELATED MANY](old-related-many)  
+[RELATE ONE](relate-one)  
+[SAVE RELATED ONE](save-related-one)  
 
 ## Propiedades
 

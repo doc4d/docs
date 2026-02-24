@@ -52,7 +52,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SVG Find element ID by coordinates](svg-find-element-id-by-coordinates.md)  
+[SVG Find element ID by coordinates](svg-find-element-id-by-coordinates)  
 
 ## プロパティ
 

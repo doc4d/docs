@@ -56,8 +56,8 @@ Se quiser uma coleção com todos os nomes de propriedade de primeiro-nível de 
 
 ## Ver também 
 
-[OB Entries](ob-entries.md)  
-[OB Values](ob-values.md)  
+[OB Entries](ob-entries)  
+[OB Values](ob-values)  
 
 ## Propriedades
 

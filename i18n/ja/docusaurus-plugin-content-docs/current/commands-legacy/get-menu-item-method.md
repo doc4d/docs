@@ -39,7 +39,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SET MENU ITEM METHOD](set-menu-item-method.md)  
+[SET MENU ITEM METHOD](set-menu-item-method)  
 
 ## プロパティ
 

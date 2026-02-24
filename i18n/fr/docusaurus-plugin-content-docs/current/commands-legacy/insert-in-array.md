@@ -56,8 +56,8 @@ L'exemple suivant ajoute un élément à un tableau :
 
 ## Voir aussi 
 
-[DELETE FROM ARRAY](delete-from-array.md)  
-[Size of array](size-of-array.md)  
+[DELETE FROM ARRAY](delete-from-array)  
+[Size of array](size-of-array)  
 
 ## Propriétés
 

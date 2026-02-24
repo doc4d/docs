@@ -43,13 +43,13 @@ HTMLシンタックス (URLタイプ) 、またはシステムシンタックス
 **Notes:**
 
 * 新しいルートフォルダを考慮に入れるために、Webサーバの再起動が必要です。
-* [Get 4D folder](get-4d-folder.md)コマンドを使用すると、何時でも現在のルートフォルダの場所を探すことができます。
+* [Get 4D folder](get-4d-folder)コマンドを使用すると、何時でも現在のルートフォルダの場所を探すことができます。
 
 無効なパス名を指定すると、OS Fileマネージャエラーが生成されます。[ON ERR CALL](on-err-call.md)メソッドでこのエラーを検知できます。エラーメソッド内から警告またはメッセージを表示する場合、ブラウザ側で表示されます。
 
 ## 参照 
 
-[Get 4D folder](get-4d-folder.md)  
+[Get 4D folder](get-4d-folder)  
 [ON ERR CALL](on-err-call.md)  
 
 ## プロパティ

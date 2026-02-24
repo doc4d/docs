@@ -50,7 +50,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT Get value](object-get-value.md)  
+[OBJECT Get value](object-get-value)  
 
 ## プロパティ
 

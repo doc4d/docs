@@ -59,8 +59,8 @@ Este ejemplo crea un array interproceso de 50 elementos de tipo Real y asigna a 
 
 ## Ver también 
 
-[ARRAY INTEGER](array-integer.md)  
-[ARRAY LONGINT](array-longint.md)  
+[ARRAY INTEGER](array-integer)  
+[ARRAY LONGINT](array-longint)  
 
 ## Propiedades
 

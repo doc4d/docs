@@ -45,7 +45,7 @@ Vous pouvez intercepter ces erreurs à l’aide d’une méthode de gestion d’
 ## Voir aussi 
 
 *Erreurs du gestionnaire de sauvegarde (1401 -> 1421)*  
-[RESTORE](restore.md)  
+[RESTORE](restore)  
 
 ## Propriétés
 

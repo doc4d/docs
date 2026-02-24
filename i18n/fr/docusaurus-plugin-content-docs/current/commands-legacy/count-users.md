@@ -23,8 +23,8 @@ Dans le cas d'une version monoposte de 4D, **Count users** retourne 1.
 
 ## Voir aussi 
 
-[Count tasks](count-tasks.md)  
-[Count user processes](count-user-processes.md)  
+[Count tasks](count-tasks)  
+[Count user processes](count-user-processes)  
 
 ## Propriétés
 

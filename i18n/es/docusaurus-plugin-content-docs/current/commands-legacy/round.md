@@ -38,7 +38,7 @@ El siguiente ejemplo ilustra cómo Redondeo funciona con diferentes argumentos. 
 
 ## Ver también 
 
-[Trunc](trunc.md)  
+[Trunc](trunc)  
 
 ## Propiedades
 

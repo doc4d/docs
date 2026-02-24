@@ -39,8 +39,8 @@ Em *valorMax*, passe o novo valor máximo que deseja atribuir ao objeto para o p
 
 ## Ver também 
 
-[OBJECT GET MAXIMUM VALUE](object-get-maximum-value.md)  
-[OBJECT SET MINIMUM VALUE](object-set-minimum-value.md)  
+[OBJECT GET MAXIMUM VALUE](object-get-maximum-value)  
+[OBJECT SET MINIMUM VALUE](object-set-minimum-value)  
 
 ## Propriedades
 

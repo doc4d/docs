@@ -47,7 +47,7 @@ Se o parâmetro *subtotal* for incorreto, se gera o erro -9852.
 
 ## Ver também 
 
-[QR SET TOTALS SPACING](qr-set-totals-spacing.md)  
+[QR SET TOTALS SPACING](qr-set-totals-spacing)  
 
 ## Propriedades
 

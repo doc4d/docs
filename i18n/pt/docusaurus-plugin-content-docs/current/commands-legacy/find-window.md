@@ -39,8 +39,8 @@ O parâmetro *parteJanela*, devolve 3 se toca a janela, caso contrário 0\. (**N
 
 ## Ver também 
 
-[Frontmost window](frontmost-window.md)  
-[Next window](next-window.md)  
+[Frontmost window](frontmost-window)  
+[Next window](next-window)  
 
 ## Propriedades
 

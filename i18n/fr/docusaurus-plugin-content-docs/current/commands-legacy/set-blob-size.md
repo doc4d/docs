@@ -61,7 +61,7 @@ L'exemple suivant crée un BLOB de 16 Ko et remplit chaque octet avec la valeur 
 
 ## Voir aussi 
 
-[BLOB size](blob-size.md)  
+[BLOB size](blob-size)  
 
 ## Propriétés
 

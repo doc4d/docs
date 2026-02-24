@@ -103,8 +103,8 @@ will display the confirm dialog box (on Windows) shown here:
 
 ## See also 
 
-[ALERT](alert.md)  
-[Request](request.md)  
+[ALERT](alert)  
+[Request](request)  
 
 ## Properties
 

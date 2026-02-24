@@ -112,8 +112,8 @@ A noter qu’en cas d’erreur, la variable n’est pas modifiée. Lorsqu’une 
 
 ## Voir aussi 
 
-[FONT LIST](font-list.md)  
-[ST GET ATTRIBUTES](st-get-attributes.md)  
+[FONT LIST](font-list)  
+[ST GET ATTRIBUTES](st-get-attributes)  
 
 ## Propriétés
 

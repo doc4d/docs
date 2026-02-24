@@ -50,9 +50,9 @@ Se nenhuma lista estiver associada ao campo ou se o tipo do campo não permitir 
 
 ## Ver também 
 
-[GET FIELD PROPERTIES](get-field-properties.md)  
-[GET RELATION PROPERTIES](get-relation-properties.md)  
-[GET TABLE PROPERTIES](get-table-properties.md)  
+[GET FIELD PROPERTIES](get-field-properties)  
+[GET RELATION PROPERTIES](get-relation-properties)  
+[GET TABLE PROPERTIES](get-table-properties)  
 
 ## Propriedades
 

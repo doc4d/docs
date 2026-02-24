@@ -55,8 +55,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SOAP DECLARATION](soap-declaration.md)  
-[SOAP Get info](soap-get-info.md)  
+[SOAP DECLARATION](soap-declaration)  
+[SOAP Get info](soap-get-info)  
 
 ## プロパティ
 

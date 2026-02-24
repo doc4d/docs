@@ -68,7 +68,7 @@ O parâmetro *separador* pode ser uma string de múltiplos caracteres:
 
 ## Ver também 
 
-[TEXT TO ARRAY](text-to-array.md)  
+[TEXT TO ARRAY](text-to-array)  
 
 ## Propriedades
 

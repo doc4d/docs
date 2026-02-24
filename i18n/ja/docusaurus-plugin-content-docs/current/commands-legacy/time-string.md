@@ -36,8 +36,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[String](../commands/string.md)  
-[Time](time.md)  
+[String](../commands/string)  
+[Time](time)  
 
 ## プロパティ
 

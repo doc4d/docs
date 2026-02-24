@@ -57,19 +57,19 @@ La commande **SET FIELD TITLES** est utile dans les cas suivants :
 
 * **SET FIELD TITLES** n'annule pas l'effet de la propriété Invisible d'un champ. Si vous avez défini un champ en tant qu'invisible au niveau de la structure, il n'apparaîtra pas en mode Application même s'il est spécifié dans **SET FIELD TITLES**.
 * Les plug-ins accèdent toujours à la structure "virtuelle" telle que définie par cette commande.
-* Lorsque la commande [SET TABLE TITLES](set-table-titles.md) est appelée sans aucun paramètre, la structure "virtuelle" (incluant les noms personnalisés de tables et de champs) est retirée de l'environnement d'Application.
+* Lorsque la commande [SET TABLE TITLES](set-table-titles) est appelée sans aucun paramètre, la structure "virtuelle" (incluant les noms personnalisés de tables et de champs) est retirée de l'environnement d'Application.
 
 ## Exemple 
 
-Reportez-vous à l'exemple de la commande [SET TABLE TITLES](set-table-titles.md).
+Reportez-vous à l'exemple de la commande [SET TABLE TITLES](set-table-titles).
 
 ## Voir aussi 
 
-[Field name](field-name.md)  
-[GET FIELD TITLES](get-field-titles.md)  
-[Last field number](last-field-number.md)  
-[Parse formula](parse-formula.md)  
-[SET TABLE TITLES](set-table-titles.md)  
+[Field name](field-name)  
+[GET FIELD TITLES](get-field-titles)  
+[Last field number](last-field-number)  
+[Parse formula](parse-formula)  
+[SET TABLE TITLES](set-table-titles)  
 
 ## Propriétés
 

@@ -56,7 +56,7 @@ Se ou comando tiver sido executado corretamente, a variável sistema Ok assume o
 
 ## Ver também 
 
-[SAX GET XML PROCESSING INSTRUCTION](sax-get-xml-processing-instruction.md)  
+[SAX GET XML PROCESSING INSTRUCTION](sax-get-xml-processing-instruction)  
 
 ## Propriedades
 

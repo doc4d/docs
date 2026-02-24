@@ -24,9 +24,9 @@ displayed_sidebar: docs
 
 ## Voir aussi 
 
-[Arctan](arctan.md)  
-[Cos](cos.md)  
-[Tan](tan.md)  
+[Arctan](arctan)  
+[Cos](cos)  
+[Tan](tan)  
 
 ## Propriétés
 

@@ -31,8 +31,8 @@ displayed_sidebar: docs
 
 ## See also 
 
-[QR DELETE OFFSCREEN AREA](qr-delete-offscreen-area.md)  
-[QR NEW AREA](qr-new-area.md)  
+[QR DELETE OFFSCREEN AREA](qr-delete-offscreen-area)  
+[QR NEW AREA](qr-new-area)  
 
 ## Properties
 

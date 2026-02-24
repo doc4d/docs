@@ -48,9 +48,9 @@ Self が上記のコンテキスト以外で呼ばれた場合、Nilポインタ
 
 ## 参照 
 
-[OBJECT Get pointer](object-get-pointer.md)  
-[RESOLVE POINTER](resolve-pointer.md)  
-[This](../commands/this.md)  
+[OBJECT Get pointer](object-get-pointer)  
+[RESOLVE POINTER](resolve-pointer)  
+[This](../commands/this)  
 
 ## プロパティ
 

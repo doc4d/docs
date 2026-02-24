@@ -61,7 +61,7 @@ Result:
 
 ## See also 
 
-[TRANSFORM PICTURE](transform-picture.md)  
+[TRANSFORM PICTURE](transform-picture)  
 
 ## Properties
 

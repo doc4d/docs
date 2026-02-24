@@ -100,9 +100,9 @@ Ver el ejemplo del comando [APPEND DATA TO PASTEBOARD](append-data-to-pasteboard
 
 ## Ver también 
 
-[GET PASTEBOARD DATA](get-pasteboard-data.md)  
-[GET PICTURE FROM PASTEBOARD](get-picture-from-pasteboard.md)  
-[Get text from pasteboard](get-text-from-pasteboard.md)  
+[GET PASTEBOARD DATA](get-pasteboard-data)  
+[GET PICTURE FROM PASTEBOARD](get-picture-from-pasteboard)  
+[Get text from pasteboard](get-text-from-pasteboard)  
 *Portapapeles*  
 
 ## Propiedades

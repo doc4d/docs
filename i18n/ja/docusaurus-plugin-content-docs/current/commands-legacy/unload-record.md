@@ -29,7 +29,7 @@ UNLOAD RECORDはメモリからレコードをアンロードしますが、そ�
 
 ## 参照 
 
-[LOAD RECORD](load-record.md)  
+[LOAD RECORD](load-record)  
 *レコードのロック*  
 
 ## プロパティ

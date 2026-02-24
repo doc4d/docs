@@ -37,11 +37,11 @@ Si vous effectuez l'opération depuis un trigger ou une sous-routine pouvant êt
 
 ## Voir aussi 
 
-[Active transaction](active-transaction.md)  
-[CANCEL TRANSACTION](cancel-transaction.md)  
+[Active transaction](active-transaction)  
+[CANCEL TRANSACTION](cancel-transaction)  
 *Présentation des triggers*  
-[START TRANSACTION](start-transaction.md)  
-[VALIDATE TRANSACTION](validate-transaction.md)  
+[START TRANSACTION](start-transaction)  
+[VALIDATE TRANSACTION](validate-transaction)  
 
 ## Propriétés
 

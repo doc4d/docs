@@ -39,16 +39,16 @@ If you omit the *process* parameter, **SET MENU ITEM MARK** applies to the menu 
 
 If you pass an empty string, any mark is removed from the menu item. Otherwise:
 
-* On Macintosh, the first character of the string becomes the mark of the menu item. Usually, you will pass [Char](char.md)**(18)**, which is the check mark character for Macintosh menus.
+* On Macintosh, the first character of the string becomes the mark of the menu item. Usually, you will pass [Char](char)**(18)**, which is the check mark character for Macintosh menus.
 * On Windows, the menu item is assigned the standard check mark.
 
 ## Example 
 
-See example for the [Get menu item mark](get-menu-item-mark.md) command.
+See example for the [Get menu item mark](get-menu-item-mark) command.
 
 ## See also 
 
-[Get menu item mark](get-menu-item-mark.md)  
+[Get menu item mark](get-menu-item-mark)  
 
 ## Properties
 

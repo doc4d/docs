@@ -34,8 +34,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[DESCRIBE QUERY EXECUTION](describe-query-execution.md)  
-[Last query path](last-query-path.md)  
+[DESCRIBE QUERY EXECUTION](describe-query-execution)  
+[Last query path](last-query-path)  
 
 ## プロパティ
 

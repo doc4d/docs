@@ -35,8 +35,8 @@ Ver el ejemplo del comando [Milliseconds](milliseconds.md "Milliseconds").
 
 ## Ver también 
 
-[Current time](current-time.md)  
-[Milliseconds](milliseconds.md)  
+[Current time](current-time)  
+[Milliseconds](milliseconds)  
 
 ## Propiedades
 

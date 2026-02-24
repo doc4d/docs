@@ -50,8 +50,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[DIFFERENCE](difference.md)  
-[INTERSECTION](intersection.md)  
+[DIFFERENCE](difference)  
+[INTERSECTION](intersection)  
 
 ## プロパティ
 

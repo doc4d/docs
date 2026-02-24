@@ -60,7 +60,7 @@ Dado o seguinte list box:
 
 ## Ver também 
 
-[LISTBOX SET ROW FONT STYLE](listbox-set-row-font-style.md)  
+[LISTBOX SET ROW FONT STYLE](listbox-set-row-font-style)  
 
 ## Propriedades
 

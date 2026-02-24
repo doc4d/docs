@@ -43,8 +43,8 @@ Se você está trabalhando, por exemplo, com o banco na pasta Documentos:MeusCDs
 
 ## Ver também 
 
-[Application file](application-file.md)  
-[Structure file](structure-file.md)  
+[Application file](application-file)  
+[Structure file](structure-file)  
 
 ## Propriedades
 

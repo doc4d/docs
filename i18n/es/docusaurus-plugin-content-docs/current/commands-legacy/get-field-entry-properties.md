@@ -53,9 +53,9 @@ Si ninguna lista está asociada al campo o si el tipo del campo no permite la as
 
 ## Ver también 
 
-[GET FIELD PROPERTIES](get-field-properties.md)  
-[GET RELATION PROPERTIES](get-relation-properties.md)  
-[GET TABLE PROPERTIES](get-table-properties.md)  
+[GET FIELD PROPERTIES](get-field-properties)  
+[GET RELATION PROPERTIES](get-relation-properties)  
+[GET TABLE PROPERTIES](get-table-properties)  
 
 ## Propiedades
 

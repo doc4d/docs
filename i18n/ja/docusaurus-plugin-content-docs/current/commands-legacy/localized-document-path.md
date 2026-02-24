@@ -67,7 +67,7 @@ Resources フォルダの中身は以下のようになっています:
 
 ## 参照 
 
-[Get database localization](get-database-localization.md)  
+[Get database localization](get-database-localization)  
 
 ## プロパティ
 

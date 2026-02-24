@@ -18,7 +18,7 @@ displayed_sidebar: docs
 
 ## Descrição 
 
-<!--REF #_command_.FORM NEXT PAGE.Summary-->FORM NEXT PAGE modifica a página atual exibida do formulário para mostrar a página seguinte.<!-- END REF--> Se não é mostrado nenhum formulário ou for carregado pelo comando [FORM LOAD](../commands/form-load.md), ou se mostrar a última página do formulário, NEXT PAGE não faz nada.
+<!--REF #_command_.FORM NEXT PAGE.Summary-->FORM NEXT PAGE modifica a página atual exibida do formulário para mostrar a página seguinte.<!-- END REF--> Se não é mostrado nenhum formulário ou for carregado pelo comando [FORM LOAD](../commands/form-load), ou se mostrar a última página do formulário, NEXT PAGE não faz nada.
 
 ## Exemplo 
 
@@ -30,8 +30,8 @@ O seguinte exemplo é um método de uma linha, chamado por um comando de menu, o
 
 ## Ver também 
 
-[FORM FIRST PAGE](form-first-page.md)  
-[FORM Get current page](form-get-current-page.md)  
-[FORM GOTO PAGE](form-goto-page.md)  
-[FORM LAST PAGE](form-last-page.md)  
-[FORM PREVIOUS PAGE](form-previous-page.md)  
+[FORM FIRST PAGE](form-first-page)  
+[FORM Get current page](form-get-current-page)  
+[FORM GOTO PAGE](form-goto-page)  
+[FORM LAST PAGE](form-last-page)  
+[FORM PREVIOUS PAGE](form-previous-page)  

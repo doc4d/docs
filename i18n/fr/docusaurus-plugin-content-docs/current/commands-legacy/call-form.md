@@ -113,8 +113,8 @@ Vous pouvez alors ajouter d'autres messages en exécutant à nouveau la commande
 ## Voir aussi 
 
   
-[CALL WORKER](call-worker.md)  
-[DIALOG](../commands/dialog.md)  
+[CALL WORKER](call-worker)  
+[DIALOG](../commands/dialog)  
 
 ## Propriétés
 

@@ -80,7 +80,7 @@ Quando usar o seletor web debug log, pode receber uma das constantes abaixo no p
 
 ## Ver também 
 
-[WEB SET OPTION](web-set-option.md)  
+[WEB SET OPTION](web-set-option)  
 
 ## Propriedades
 

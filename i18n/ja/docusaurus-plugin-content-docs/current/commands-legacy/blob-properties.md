@@ -89,8 +89,8 @@ BLOBが圧縮された後、以下のプロジェクトメソッドは圧縮で�
 
 ## 参照 
 
-[COMPRESS BLOB](compress-blob.md)  
-[EXPAND BLOB](expand-blob.md)  
+[COMPRESS BLOB](compress-blob)  
+[EXPAND BLOB](expand-blob)  
 
 ## プロパティ
 

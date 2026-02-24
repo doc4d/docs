@@ -41,11 +41,11 @@ Si vous passez Full method text dans *sélecteur*, la totalité du texte de la m
 
 ## Exemple 
 
-Reportez-vous à l'exemple de [SET MACRO PARAMETER](set-macro-parameter.md).
+Reportez-vous à l'exemple de [SET MACRO PARAMETER](set-macro-parameter).
 
 ## Voir aussi 
 
-[SET MACRO PARAMETER](set-macro-parameter.md)  
+[SET MACRO PARAMETER](set-macro-parameter)  
 
 ## Propriétés
 

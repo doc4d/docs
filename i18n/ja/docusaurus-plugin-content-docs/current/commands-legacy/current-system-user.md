@@ -36,7 +36,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Current machine](current-machine.md)  
+[Current machine](current-machine)  
 
 ## プロパティ
 

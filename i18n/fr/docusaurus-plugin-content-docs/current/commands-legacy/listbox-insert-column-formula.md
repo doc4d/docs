@@ -41,7 +41,7 @@ displayed_sidebar: docs
 #### Description 
 
 <!--REF #_command_.LISTBOX INSERT COLUMN FORMULA.Summary-->La commande **LISTBOX INSERT COLUMN FORMULA** insère une colonne dans la list box désignée par les paramètres *objet* et *\** .<!-- END REF-->   
-La commande **LISTBOX INSERT COLUMN FORMULA** est semblable à la commande [LISTBOX INSERT COLUMN](listbox-insert-column.md), à la différence près qu’elle permet la saisie d’une formule comme contenu de la colonne.  
+La commande **LISTBOX INSERT COLUMN FORMULA** est semblable à la commande [LISTBOX INSERT COLUMN](listbox-insert-column), à la différence près qu’elle permet la saisie d’une formule comme contenu de la colonne.  
 Ce type de contenu ne peut être utilisé que lorsque la propriété “Source de données” de la list box est **Sélection courante**, **Sélection temporaire** ou **Collection ou entity selection** (pour plus d'informations sur ce point, reportez-vous à la section *Gestion programmée des objets de type List box*).
 
 **Note :** Cette commande ne fait rien si elle est appliquée à la première colonne d’une list box affichée en mode hiérarchique. 
@@ -61,7 +61,7 @@ Le paramètre *formule* peut contenir toute expression valide, soit :
 
 Au moment de l’appel de la commande, la *formule* est analysée puis exécutée.
 
-**Note :** Utilisez la commande [Command name](../commands/command-name.md) afin de définir des formules indépendantes de la langue de l’application (lorsqu’elles font appel à des commandes 4D).
+**Note :** Utilisez la commande [Command name](../commands/command-name) afin de définir des formules indépendantes de la langue de l’application (lorsqu’elles font appel à des commandes 4D).
 
 Le paramètre *typeDonnées* permet de désigner le type des données issues de l’exécution de la *formule*. Vous devez passer dans ce paramètre une des constantes du thème *Types champs et variables* suivantes :
 
@@ -131,7 +131,7 @@ La colonne est ajoutée à la list box :
 
 #### Voir aussi 
 
-[LISTBOX INSERT COLUMN](listbox-insert-column.md)  
+[LISTBOX INSERT COLUMN](listbox-insert-column)  
 
 #### Propriétés
 

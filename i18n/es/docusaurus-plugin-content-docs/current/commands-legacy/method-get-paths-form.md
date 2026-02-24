@@ -79,7 +79,7 @@ Lista de todos los objetos de los formularios "input" de la tabla \[Empleados\] 
 
 ## Ver también 
 
-[FORM GET NAMES](form-get-names.md)  
+[FORM GET NAMES](form-get-names)  
 
 ## Propiedades
 

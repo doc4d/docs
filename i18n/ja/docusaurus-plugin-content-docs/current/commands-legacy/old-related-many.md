@@ -25,8 +25,8 @@ OLD RELATED MANYはリレートテーブルのセレクションを変更し、�
 
 ## 参照 
 
-[OLD RELATED ONE](old-related-one.md)  
-[RELATE MANY](relate-many.md)  
+[OLD RELATED ONE](old-related-one)  
+[RELATE MANY](relate-many)  
 
 ## プロパティ
 

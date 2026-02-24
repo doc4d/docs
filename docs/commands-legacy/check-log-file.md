@@ -45,7 +45,7 @@ You can intercept these errors using an error-handling method installed with the
 ## See also 
 
 *Backup Manager Errors (1401 -> 1421)*  
-[RESTORE](restore.md)  
+[RESTORE](restore)  
 
 ## Properties
 

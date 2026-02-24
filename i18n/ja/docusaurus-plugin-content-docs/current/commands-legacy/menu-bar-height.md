@@ -38,9 +38,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[HIDE MENU BAR](hide-menu-bar.md)  
-[Menu bar screen](menu-bar-screen.md)  
-[SHOW MENU BAR](show-menu-bar.md)  
+[HIDE MENU BAR](hide-menu-bar)  
+[Menu bar screen](menu-bar-screen)  
+[SHOW MENU BAR](show-menu-bar)  
 
 ## プロパティ
 

@@ -65,8 +65,8 @@ You want to know if the copy action is available (i.e. if some data is selected)
 
 ## See also 
 
-[INVOKE ACTION](invoke-action.md)  
-[SET LIST ITEM PARAMETER](set-list-item-parameter.md)  
+[INVOKE ACTION](invoke-action)  
+[SET LIST ITEM PARAMETER](set-list-item-parameter)  
 
 ## Properties
 

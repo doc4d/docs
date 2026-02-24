@@ -44,7 +44,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SPELL SET CURRENT DICTIONARY](spell-set-current-dictionary.md)  
+[SPELL SET CURRENT DICTIONARY](spell-set-current-dictionary)  
 
 ## プロパティ
 

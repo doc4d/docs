@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.ARRAY TO LIST.Summary-->La commande **ARRAY TO LIST** crée ou remplace la liste hiérarchique ou l'énumération *liste* en utilisant les éléments du tableau *tableau*.<!-- END REF-->
 
-Vous pouvez passer dans le paramètre *liste* soit un nom d'énumération (une chaîne) soit une référence de liste hiérarchique ([RefListe](# "Expression de type Entier long identifiant de façon unique une liste hiérarchique")). Dans ce deuxième cas, la liste doit déjà avoir été créée (par exemple via la commande [New list](new-list.md)) pour que la commande fonctionne.
+Vous pouvez passer dans le paramètre *liste* soit un nom d'énumération (une chaîne) soit une référence de liste hiérarchique ([RefListe](# "Expression de type Entier long identifiant de façon unique une liste hiérarchique")). Dans ce deuxième cas, la liste doit déjà avoir été créée (par exemple via la commande [New list](new-list)) pour que la commande fonctionne.
 
 Le paramètre optionnel *réfEléments*, s'il est passé, doit être un tableau de type numérique synchronisé avec le tableau *tableau*. Chaque élément de ce tableau indique le numéro de référence de l'élément de la liste correspondant dans *tableau*. Si ce paramètre est omis, 4D affecte automatiquement aux éléments de la liste les numéros de référence 1, 2... N.
 
@@ -69,10 +69,10 @@ La commande **ARRAY TO LIST** génère l'erreur *\-9957* lorsqu'elle est appliqu
 
 ## Voir aussi 
 
-[LIST TO ARRAY](list-to-array.md)  
-[Load list](load-list.md)  
+[LIST TO ARRAY](list-to-array)  
+[Load list](load-list)  
 [ON ERR CALL](on-err-call.md)  
-[SAVE LIST](save-list.md)  
+[SAVE LIST](save-list)  
 
 ## Propriétés
 

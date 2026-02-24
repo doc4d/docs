@@ -39,8 +39,8 @@ Passez dans *valeurMaxi* la nouvelle valeur maximum à affecter à l’*objet* p
 
 ## Voir aussi 
 
-[OBJECT GET MAXIMUM VALUE](object-get-maximum-value.md)  
-[OBJECT SET MINIMUM VALUE](object-set-minimum-value.md)  
+[OBJECT GET MAXIMUM VALUE](object-get-maximum-value)  
+[OBJECT SET MINIMUM VALUE](object-set-minimum-value)  
 
 ## Propriétés
 

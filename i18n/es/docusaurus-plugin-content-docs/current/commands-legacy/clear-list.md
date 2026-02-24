@@ -62,9 +62,9 @@ Ver el ejemplo del comando [BLOB to list](blob-to-list.md "BLOB to list").
 
 ## Ver también 
 
-[BLOB to list](blob-to-list.md)  
-[Load list](load-list.md)  
-[New list](new-list.md)  
+[BLOB to list](blob-to-list)  
+[Load list](load-list)  
+[New list](new-list)  
 
 ## Propiedades
 

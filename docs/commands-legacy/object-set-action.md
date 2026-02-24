@@ -50,7 +50,7 @@ You want to associate the **Validate** standard action with a button:
 
 ## See also 
 
-[OBJECT Get action](object-get-action.md)  
+[OBJECT Get action](object-get-action)  
 
 ## Properties
 

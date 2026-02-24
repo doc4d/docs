@@ -32,7 +32,7 @@ Passe o tipo de informação a se obter em *seletor*. É possível utilizar uma 
 
 ## Ver também 
 
-[RESTORE](restore.md)  
+[RESTORE](restore)  
 
 ## Propriedades
 

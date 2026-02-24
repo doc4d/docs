@@ -56,9 +56,9 @@ Les images suivantes illustrent les différences entre la zone de l'écran et la
 
 ## Voir aussi 
 
-[Count screens](count-screens.md)  
-[Menu bar screen](menu-bar-screen.md)  
-[SCREEN DEPTH](screen-depth.md)  
+[Count screens](count-screens)  
+[Menu bar screen](menu-bar-screen)  
+[SCREEN DEPTH](screen-depth)  
 
 ## Propriétés
 

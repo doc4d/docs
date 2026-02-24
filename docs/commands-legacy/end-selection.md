@@ -18,11 +18,11 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.End selection.Summary-->**End selection** returns TRUE when the current record pointer is beyond the last record of the current selection of *aTable*.<!-- END REF-->**End selection** is commonly used to check whether or not [NEXT RECORD](next-record.md) has moved the current record pointer past the last record. If the current selection is empty, **End selection** returns TRUE.
+<!--REF #_command_.End selection.Summary-->**End selection** returns TRUE when the current record pointer is beyond the last record of the current selection of *aTable*.<!-- END REF-->**End selection** is commonly used to check whether or not [NEXT RECORD](next-record) has moved the current record pointer past the last record. If the current selection is empty, **End selection** returns TRUE.
 
-To move the current record pointer back into the selection, use [FIRST RECORD](first-record.md), [LAST RECORD](last-record.md) or [GOTO SELECTED RECORD](goto-selected-record.md). [PREVIOUS RECORD](previous-record.md) does not move the pointer back into the selection.
+To move the current record pointer back into the selection, use [FIRST RECORD](first-record), [LAST RECORD](last-record) or [GOTO SELECTED RECORD](goto-selected-record). [PREVIOUS RECORD](previous-record) does not move the pointer back into the selection.
 
-**End selection** also returns TRUE in the last footer when a report is being printed with [PRINT SELECTION](print-selection.md) or from the Print menu. You can use the following code to test for the last footer and print a special footer for the last page:
+**End selection** also returns TRUE in the last footer when a report is being printed with [PRINT SELECTION](print-selection) or from the Print menu. You can use the following code to test for the last footer and print a special footer for the last page:
 
 ```4d
   // Method of a form being used as output form for a summary report
@@ -58,11 +58,11 @@ This form method is used during the printing of a report. It sets the variable *
 
 ## See also 
 
-[Before selection](before-selection.md)  
-[Form event code](../commands/form-event-code.md)  
-[LAST RECORD](last-record.md)  
-[NEXT RECORD](next-record.md)  
-[PRINT SELECTION](print-selection.md)  
+[Before selection](before-selection)  
+[Form event code](../commands/form-event-code)  
+[LAST RECORD](last-record)  
+[NEXT RECORD](next-record)  
+[PRINT SELECTION](print-selection)  
 
 ## Properties
 

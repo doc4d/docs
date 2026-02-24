@@ -32,14 +32,14 @@ displayed_sidebar: docs
 
 <!--REF #_command_.PRINT RECORD.Summary-->**PRINT RECORD** imprime el registro actual de *tabla*, sin modificar la selección actual.<!-- END REF--> El formulario de salida actual se utiliza para la impresión. Si no hay registro actual para *tabla*, **PRINT RECORD** no hace nada.
 
-Puede imprimir subformularios y objetos externos con el comando **PRINT RECORD**. Esto no es posible con [Print form](../commands/print-form.md).
+Puede imprimir subformularios y objetos externos con el comando **PRINT RECORD**. Esto no es posible con [Print form](../commands/print-form).
 
 **Nota:** si hay modificaciones en el registro que no han sido guardadas, este comando imprime los valores de los campos modificados, no los valores en disco.
 
 Por defecto, **PRINT RECORD** muestra la caja de diálogo de trabajos de impresión antes de la impresión. Si el usuario cancela la cajas de diálogo, el comando se cancela y no se imprime el registro.  
 Puede suprimir esta caja de diálogo utilizando el parámetro opcional asterisco (*\**) o el parámetro opcional “mayor que” (*\>*):
 
-* El parámetro *\** produce un trabajo de impresión utilizando los parámetros de impresión actual (parámetros por defecto o definidos por los comandos *\_o\_PAGE SETUP* y/o [SET PRINT OPTION](set-print-option.md)).
+* El parámetro *\** produce un trabajo de impresión utilizando los parámetros de impresión actual (parámetros por defecto o definidos por los comandos *\_o\_PAGE SETUP* y/o [SET PRINT OPTION](set-print-option)).
 * Además, el parámetro *\>* produce un trabajo de impresión sin reinicializar los parámetros de impresión actual. Este parámetro es útil para ejecutar varias llamadas consecutivas a **PRINT RECORD** (por ejemplo al interior de un bucle) mientras mantiene los parámetros de impresión personalizados definidos previamente.
 
 **4D Server:** este comando puede ejecutarse en 4D Server dentro del marco de un procedimiento almacenado. En este contexto:
@@ -74,7 +74,7 @@ El siguiente ejemplo imprime el mismo registro actual en dos formularios diferen
 
 ## Ver también 
 
-[Print form](../commands/print-form.md)  
+[Print form](../commands/print-form)  
 
 ## Propiedades
 

@@ -93,7 +93,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[METHOD Get path](method-get-path.md)  
+[METHOD Get path](method-get-path)  
 
 ## プロパティ
 

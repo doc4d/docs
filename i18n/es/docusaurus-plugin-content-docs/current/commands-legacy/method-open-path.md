@@ -41,7 +41,7 @@ Puede ejecutar este comando desde un componente, pero en este caso, debe pasar e
 ## Ver también 
 
 *Comandos del tema Acceso objetos diseño*  
-[METHOD Get path](method-get-path.md)  
+[METHOD Get path](method-get-path)  
 
 ## Propiedades
 

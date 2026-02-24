@@ -31,16 +31,16 @@ displayed_sidebar: docs
 
 ## Example 
 
-See example for the [Shift down](shift-down.md) command.
+See example for the [Shift down](shift-down) command.
 
 ## See also 
 
-[Caps lock down](caps-lock-down.md)  
-[Macintosh command down](macintosh-command-down.md)  
-[Macintosh control down](macintosh-control-down.md)  
-[Shift down](shift-down.md)  
-[Windows Alt down](windows-alt-down.md)  
-[Windows Ctrl down](windows-ctrl-down.md)  
+[Caps lock down](caps-lock-down)  
+[Macintosh command down](macintosh-command-down)  
+[Macintosh control down](macintosh-control-down)  
+[Shift down](shift-down)  
+[Windows Alt down](windows-alt-down)  
+[Windows Ctrl down](windows-ctrl-down)  
 
 ## Properties
 

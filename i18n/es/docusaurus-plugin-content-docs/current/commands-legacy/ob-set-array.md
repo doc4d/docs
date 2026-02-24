@@ -142,8 +142,8 @@ Utilizando un array imagen:
 ## Ver también 
 
 *Conversiones de tipo entre las colecciones y los arrays 4D*  
-[OB GET ARRAY](ob-get-array.md)  
-[OB SET](ob-set.md)  
+[OB GET ARRAY](ob-get-array)  
+[OB SET](ob-set)  
 
 ## Propiedades
 

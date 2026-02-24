@@ -127,7 +127,7 @@ You want to export only project and database methods, and a log file:
 
 ## See also 
 
-[FORM Convert to dynamic](form-convert-to-dynamic.md)  
+[FORM Convert to dynamic](form-convert-to-dynamic)  
 
 ## Properties
 

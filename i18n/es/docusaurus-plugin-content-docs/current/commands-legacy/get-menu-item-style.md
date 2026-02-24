@@ -58,7 +58,7 @@ Para probar si un elemento de menú se muestra en negrita, escribe:
 
 ## Ver también 
 
-[SET MENU ITEM STYLE](set-menu-item-style.md)  
+[SET MENU ITEM STYLE](set-menu-item-style)  
 
 ## Propiedades
 

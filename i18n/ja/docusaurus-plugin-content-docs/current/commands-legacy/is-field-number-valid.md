@@ -35,8 +35,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Last table number](last-table-number.md)  
-[Is table number valid](is-table-number-valid.md)  
+[Last table number](last-table-number)  
+[Is table number valid](is-table-number-valid)  
 
 ## プロパティ
 

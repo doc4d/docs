@@ -50,7 +50,7 @@ If you pass an invalid *area* number, the error -9850 will be generated.
 
 ## See also 
 
-[QR GET SELECTION](qr-get-selection.md)  
+[QR GET SELECTION](qr-get-selection)  
 
 ## Properties
 

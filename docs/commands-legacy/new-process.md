@@ -51,7 +51,7 @@ If the process could not be created (for example, if there is not enough memory)
 
  In *method*, you pass the name of the process method for the new process. After 4D has set up the context for the new process, it starts executing this method, which therefore becomes the process method.
 
-If the execution context supports preemptive mode and if *method* is declared "thread-safe", the new 4D process will be executed in a preemptive thread when the application will run in compiled mode. For more information, please reter to the [Preemptive processes](../Develop/preemptive.md) page. 
+If the execution context supports preemptive mode and if *method* is declared "thread-safe", the new 4D process will be executed in a preemptive thread when the application will run in compiled mode. For more information, please reter to the [Preemptive processes](../Develop/preemptive) page. 
 
 ### Process Stack 
 
@@ -64,15 +64,15 @@ The *stack* parameter allows you to indicate the amount of memory allocated for 
 
 ### Process Name 
 
- You pass the name of the new process in *name*. This name will appear in the list of processes of the Runtime Explorer and will be returned by the [Process info](../commands/process-info.md) command when applied to this new process. You can omit this parameter; if you do so, the name of the process will be an empty string. 
+ You pass the name of the new process in *name*. This name will appear in the list of processes of the Runtime Explorer and will be returned by the [Process info](../commands/process-info) command when applied to this new process. You can omit this parameter; if you do so, the name of the process will be an empty string. 
 
 ### Parameters to Process Method 
 
- You can pass parameters to the process method using one or more *param* parameters. You pass parameters in the same way as you would pass them to a subroutine (see the [Parameters](../Concepts/parameters.md) section). Upon starting execution in the context of the new process, the process method receives the parameters values in its #DECLARE parameters. Remember that arrays cannot be passed as parameters to a method. Furthermore, these additional considerations are to be taken into account in the context of the **New process** command:
+ You can pass parameters to the process method using one or more *param* parameters. You pass parameters in the same way as you would pass them to a subroutine (see the [Parameters](../Concepts/parameters) section). Upon starting execution in the context of the new process, the process method receives the parameters values in its #DECLARE parameters. Remember that arrays cannot be passed as parameters to a method. Furthermore, these additional considerations are to be taken into account in the context of the **New process** command:
 
 * pointers to tables or fields are allowed.
 * pointers to variables, particularly local and process variables, are not recommended since these variables may be undefined at the time when they are being accessed by the process method.
-* standard object or collection type parameters are passed **by copy**, *i.e.* 4D will create a copy of the object or the collection in the destination process instead of a reference. If you want to pass an object or a collection parameter **by reference**, you must use a shared object or collection (see [Shared objects and shared collections](../Concepts/shared.md)).
+* standard object or collection type parameters are passed **by copy**, *i.e.* 4D will create a copy of the object or the collection in the destination process instead of a reference. If you want to pass an object or a collection parameter **by reference**, you must use a shared object or collection (see [Shared objects and shared collections](../Concepts/shared)).
 
 **Note:** If you pass parameters to the process method, you must pass the *name* parameter; it cannot be omitted in this case.
 
@@ -92,7 +92,7 @@ Given the following project method:
  Until(OK=0)
 ```
 
-If you attach this project method to a custom menu item **Menu Bar Editor** window whose **Start a New Process** property is set, 4D will automatically start a new process running that method. The call [SET MENU BAR](set-menu-bar.md)(1) adds a menu bar to the new process. In the absence of any window (that you could open with [Open window](../commands/open-window.md)), the call to [ADD RECORD](add-record.md) will automatically open one.
+If you attach this project method to a custom menu item **Menu Bar Editor** window whose **Start a New Process** property is set, 4D will automatically start a new process running that method. The call [SET MENU BAR](set-menu-bar)(1) adds a menu bar to the new process. In the absence of any window (that you could open with [Open window](../commands/open-window)), the call to [ADD RECORD](add-record) will automatically open one.
 
 To be able to start this Add Customers process when you click on a button in a custom control panel, you can write:
 
@@ -124,9 +124,9 @@ In the Menu Bar editor, you replace the method ADD CUSTOMERS with the method STA
 
 ## See also 
 
-[Execute on server](execute-on-server.md)  
-[Preemptive processes](../Develop/preemptive.md)  
-[Processes](../Develop/processes.md)  
+[Execute on server](execute-on-server)  
+[Preemptive processes](../Develop/preemptive)  
+[Processes](../Develop/processes)  
 
 ## Properties
 

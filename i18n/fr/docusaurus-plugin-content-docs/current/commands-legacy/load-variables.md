@@ -18,7 +18,7 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.LOAD VARIABLES.Summary-->La commande **LOAD VARIABLES** charge une ou plusieurs variable(s) depuis le document désigné par *document*.<!-- END REF--> Ce document doit avoir été créé à l'aide de la commande [SAVE VARIABLES](save-variables.md).
+<!--REF #_command_.LOAD VARIABLES.Summary-->La commande **LOAD VARIABLES** charge une ou plusieurs variable(s) depuis le document désigné par *document*.<!-- END REF--> Ce document doit avoir été créé à l'aide de la commande [SAVE VARIABLES](save-variables).
 
 Les variables *variable, variable2...variableN* sont soit créées, soit réécrites si elles existent déjà. 
 
@@ -42,11 +42,11 @@ La variable système OK prend la valeur 1 si les variables ont été correctemen
 
 ## Voir aussi 
 
-[BLOB TO DOCUMENT](blob-to-document.md)  
-[BLOB TO VARIABLE](blob-to-variable.md)  
-[DOCUMENT TO BLOB](document-to-blob.md)  
-[RECEIVE VARIABLE](receive-variable.md)  
-[VARIABLE TO BLOB](variable-to-blob.md)  
+[BLOB TO DOCUMENT](blob-to-document)  
+[BLOB TO VARIABLE](blob-to-variable)  
+[DOCUMENT TO BLOB](document-to-blob)  
+[RECEIVE VARIABLE](receive-variable)  
+[VARIABLE TO BLOB](variable-to-blob)  
 
 ## Propriétés
 

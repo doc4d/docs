@@ -156,8 +156,8 @@ Se o conteúdo de *valorFilho* não é válido, se devolve um erro.
 
 ## Ver também 
 
-[DOM GET XML CHILD NODES](dom-get-xml-child-nodes.md)  
-[DOM Get XML document ref](dom-get-xml-document-ref.md)  
+[DOM GET XML CHILD NODES](dom-get-xml-child-nodes)  
+[DOM Get XML document ref](dom-get-xml-document-ref)  
 
 ## Propriedades
 

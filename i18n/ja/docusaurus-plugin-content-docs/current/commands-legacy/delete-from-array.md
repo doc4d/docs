@@ -55,8 +55,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[INSERT IN ARRAY](insert-in-array.md)  
-[Size of array](size-of-array.md)  
+[INSERT IN ARRAY](insert-in-array)  
+[Size of array](size-of-array)  
 
 ## プロパティ
 

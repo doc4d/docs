@@ -45,7 +45,7 @@ Si la list box est en mode hiérarchique, la commande remplit le tableau *hiéra
 
 ## Voir aussi 
 
-[LISTBOX SET HIERARCHY](listbox-set-hierarchy.md)  
+[LISTBOX SET HIERARCHY](listbox-set-hierarchy)  
 
 ## Propriétés
 

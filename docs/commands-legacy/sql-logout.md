@@ -34,7 +34,7 @@ If the logout is performed properly, the system variable OK is set to 1; otherwi
 
 ## See also 
 
-[SQL LOGIN](sql-login.md)  
+[SQL LOGIN](sql-login)  
 
 ## Properties
 

@@ -51,7 +51,7 @@ You want to swap the 2nd and 3rd columns of the list box:
 
 ## See also 
 
-[LISTBOX DUPLICATE COLUMN](listbox-duplicate-column.md)  
+[LISTBOX DUPLICATE COLUMN](listbox-duplicate-column)  
 
 ## Properties
 

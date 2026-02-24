@@ -56,11 +56,11 @@ The following tests if the document “Journal” is present in the folder of th
 
 ## See also 
 
-[Convert path system to POSIX](convert-path-system-to-posix.md)  
-[Create document](create-document.md)  
-[CREATE FOLDER](create-folder.md)  
-[Object to path](object-to-path.md)  
-[Path to object](path-to-object.md)  
+[Convert path system to POSIX](convert-path-system-to-posix)  
+[Create document](create-document)  
+[CREATE FOLDER](create-folder)  
+[Object to path](object-to-path)  
+[Path to object](path-to-object)  
 
 ## Properties
 

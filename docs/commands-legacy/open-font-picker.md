@@ -53,7 +53,7 @@ Here is the button code:
 
 ## See also 
 
-[OPEN COLOR PICKER](open-color-picker.md)  
+[OPEN COLOR PICKER](open-color-picker)  
 
 ## Properties
 

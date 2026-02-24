@@ -53,7 +53,7 @@ Depois, em um método, pode escrever:
 
 ## Ver também 
 
-[OB Instance of](ob-instance-of.md)  
+[OB Instance of](ob-instance-of)  
 
 ## Propriedades
 

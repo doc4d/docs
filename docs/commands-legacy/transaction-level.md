@@ -31,9 +31,9 @@ displayed_sidebar: docs
 
 ## See also 
 
-[In transaction](in-transaction.md)  
-[START TRANSACTION](start-transaction.md)  
-[Transactions](../Develop-legacy/transactions.md)
+[In transaction](in-transaction)  
+[START TRANSACTION](start-transaction)  
+[Transactions](../Develop-legacy/transactions)
 
 ## Properties
 

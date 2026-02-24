@@ -57,8 +57,8 @@ Este ejemplo crea un array interproceso de 2 bytes de 50 elementos de tipo [Ente
 
 ## Ver también 
 
-[ARRAY LONGINT](array-longint.md)  
-[ARRAY REAL](array-real.md)  
+[ARRAY LONGINT](array-longint)  
+[ARRAY REAL](array-real)  
 
 ## Propiedades
 

@@ -57,16 +57,16 @@ For more information about user forms, refer to the *Overview of user forms* sec
 
 Input forms are displayed by a number of commands, which are generally used to allow the user to enter new data or modify old data. The following commands display an input form for data entry or query purposes:
 
-* [ADD RECORD](add-record.md)
-* [DISPLAY RECORD](display-record.md)
-* [MODIFY RECORD](modify-record.md)
-* [QUERY BY EXAMPLE](query-by-example.md)
+* [ADD RECORD](add-record)
+* [DISPLAY RECORD](display-record)
+* [MODIFY RECORD](modify-record)
+* [QUERY BY EXAMPLE](query-by-example)
 
-The [DISPLAY SELECTION](display-selection.md) and [MODIFY SELECTION](modify-selection.md) commands display a list of records using the output form. The user can double-click on a record in the list, which displays the input form.
+The [DISPLAY SELECTION](display-selection) and [MODIFY SELECTION](modify-selection) commands display a list of records using the output form. The user can double-click on a record in the list, which displays the input form.
 
-The import commands [IMPORT TEXT](import-text.md), [IMPORT SYLK](import-sylk.md) and [IMPORT DIF](import-dif.md) use the current input form for importing records.
+The import commands [IMPORT TEXT](import-text), [IMPORT SYLK](import-sylk) and [IMPORT DIF](import-dif) use the current input form for importing records.
 
-The optional *\** parameter is used in conjunction with the form properties you set in the Design environment's Form Properties window and the command [Open window](../commands/open-window.md). Specifying the \* parameter tells 4D to use the form properties to automatically resize the window for the next use of the form (as an input form or as a dialog box). See [Open window](../commands/open-window.md) for more information.
+The optional *\** parameter is used in conjunction with the form properties you set in the Design environment's Form Properties window and the command [Open window](../commands/open-window). Specifying the \* parameter tells 4D to use the form properties to automatically resize the window for the next use of the form (as an input form or as a dialog box). See [Open window](../commands/open-window) for more information.
 
 **Note:** Whether or not you pass the optional *\** parameter, **FORM SET INPUT** changes the input form for the table.
 
@@ -110,17 +110,17 @@ which displays:
 
 ## See also 
 
-[ADD RECORD](add-record.md)  
-[DISPLAY RECORD](display-record.md)  
-[DISPLAY SELECTION](display-selection.md)  
-[FORM SET OUTPUT](form-set-output.md)  
-[IMPORT DIF](import-dif.md)  
-[IMPORT SYLK](import-sylk.md)  
-[IMPORT TEXT](import-text.md)  
-[MODIFY RECORD](modify-record.md)  
-[MODIFY SELECTION](modify-selection.md)  
-[Open window](../commands/open-window.md)  
-[QUERY BY EXAMPLE](query-by-example.md)  
+[ADD RECORD](add-record)  
+[DISPLAY RECORD](display-record)  
+[DISPLAY SELECTION](display-selection)  
+[FORM SET OUTPUT](form-set-output)  
+[IMPORT DIF](import-dif)  
+[IMPORT SYLK](import-sylk)  
+[IMPORT TEXT](import-text)  
+[MODIFY RECORD](modify-record)  
+[MODIFY SELECTION](modify-selection)  
+[Open window](../commands/open-window)  
+[QUERY BY EXAMPLE](query-by-example)  
 
 ## Properties
 

@@ -42,9 +42,9 @@ Si omite el parámetro *proceso*, SET MENU ITEM se aplica a la barra de menús d
 
 ## Ver también 
 
-[APPEND MENU ITEM](append-menu-item.md)  
-[Get menu item](get-menu-item.md)  
-[SET MENU ITEM SHORTCUT](set-menu-item-shortcut.md)  
+[APPEND MENU ITEM](append-menu-item)  
+[Get menu item](get-menu-item)  
+[SET MENU ITEM SHORTCUT](set-menu-item-shortcut)  
 
 ## Propiedades
 

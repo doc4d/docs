@@ -62,7 +62,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Test path name](test-path-name.md)  
+[Test path name](test-path-name)  
 
 ## プロパティ
 

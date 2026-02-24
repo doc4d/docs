@@ -57,7 +57,7 @@ En caso de error, el comando devuelve un error que puede interceptarse utilizand
 
 ## Ver también 
 
-[SAX ADD XML COMMENT](sax-add-xml-comment.md)  
+[SAX ADD XML COMMENT](sax-add-xml-comment)  
 
 ## Propiedades
 

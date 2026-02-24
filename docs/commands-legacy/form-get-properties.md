@@ -51,9 +51,9 @@ The *title* parameter returns the title of the form's window as it was defined i
 
 ## See also 
 
-[FORM GET OBJECTS](form-get-objects.md)  
-[FORM SET SIZE](form-set-size.md)  
-[Open form window](../commands/open-form-window.md)  
+[FORM GET OBJECTS](form-get-objects)  
+[FORM SET SIZE](form-set-size)  
+[Open form window](../commands/open-form-window)  
 
 ## Properties
 

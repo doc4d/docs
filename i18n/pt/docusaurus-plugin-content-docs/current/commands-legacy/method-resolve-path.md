@@ -94,7 +94,7 @@ Resolução de uma rota de método de formulário tabela:
 
 ## Ver também 
 
-[METHOD Get path](method-get-path.md)  
+[METHOD Get path](method-get-path)  
 
 ## Propriedades
 

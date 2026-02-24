@@ -44,8 +44,8 @@ Nota: em um aplicativo 4D compilado e fusionado com 4D Volume Desktop, o comando
 
 ## Ver também 
 
-[BACKUP](backup.md)  
-[RESTORE INFO](restore-info.md)  
+[BACKUP](backup)  
+[RESTORE INFO](restore-info)  
 
 ## Propriedades
 

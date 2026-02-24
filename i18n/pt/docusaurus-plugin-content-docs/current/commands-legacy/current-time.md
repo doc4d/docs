@@ -48,9 +48,9 @@ O exemplo a seguir extrai as horas, minutos e segundos da hora atual:
 
 ## Ver também 
 
-[Milliseconds](milliseconds.md)  
-[String](../commands/string.md)  
-[Tickcount](tickcount.md)  
+[Milliseconds](milliseconds)  
+[String](../commands/string)  
+[Tickcount](tickcount)  
 
 ## Propriedades
 

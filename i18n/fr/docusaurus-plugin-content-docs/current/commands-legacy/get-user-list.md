@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 Le tableau *nomsUtil* est rempli avec les noms des utilisateurs, y compris ceux dont le compte est supprimé (les utilisateurs dont le nom apparaît en vert dans la fenêtre des mots de passe).
 
-**Note :** Utilisez la commande [Is user deleted](is-user-deleted.md) pour savoir si un compte utilisateur est supprimé.
+**Note :** Utilisez la commande [Is user deleted](is-user-deleted) pour savoir si un compte utilisateur est supprimé.
 
 Le tableau *réfsUtil*, synchronisé avec *nomsUtil*, est rempli avec les numéros de référence uniques des utilisateurs. 
 
@@ -44,9 +44,9 @@ Si vous n'avez pas les privilèges d'accès pour appeler la commande **GET USER 
 
 ## Voir aussi 
 
-[GET GROUP LIST](get-group-list.md)  
-[GET USER PROPERTIES](get-user-properties.md)  
-[Set user properties](set-user-properties.md)  
+[GET GROUP LIST](get-group-list)  
+[GET USER PROPERTIES](get-user-properties)  
+[Set user properties](set-user-properties)  
 
 ## Propriétés
 

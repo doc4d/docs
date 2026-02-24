@@ -51,7 +51,7 @@ If the listbox already contains columns, their contents will be updated after th
 
 ## See also 
 
-[LISTBOX GET TABLE SOURCE](listbox-get-table-source.md)  
+[LISTBOX GET TABLE SOURCE](listbox-get-table-source)  
 
 ## Properties
 

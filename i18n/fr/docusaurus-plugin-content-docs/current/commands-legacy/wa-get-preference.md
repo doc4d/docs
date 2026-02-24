@@ -50,7 +50,7 @@ Passez dans le paramètre *valeur* une variable devant recevoir la valeur couran
 
 ## Voir aussi 
 
-[WA SET PREFERENCE](wa-set-preference.md)  
+[WA SET PREFERENCE](wa-set-preference)  
 
 ## Propriétés
 

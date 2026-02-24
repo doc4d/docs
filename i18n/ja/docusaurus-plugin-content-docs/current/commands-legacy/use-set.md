@@ -35,8 +35,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[CLEAR SET](clear-set.md)  
-[LOAD SET](load-set.md)  
+[CLEAR SET](clear-set)  
+[LOAD SET](load-set)  
 
 ## プロパティ
 

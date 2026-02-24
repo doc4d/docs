@@ -32,8 +32,8 @@ Este exemplo atribui primeiro Verdadeiro a uma variável, logo muda o valor da v
 
 ## Ver também 
 
-[False](false.md)  
-[True](true.md)  
+[False](false)  
+[True](true)  
 
 ## Propriedades
 

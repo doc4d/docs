@@ -64,7 +64,7 @@ You want to get cache information for the database and all opened components:
 
 ## See also 
 
-[MEMORY STATISTICS](memory-statistics.md)  
+[MEMORY STATISTICS](memory-statistics)  
 
 ## Properties
 

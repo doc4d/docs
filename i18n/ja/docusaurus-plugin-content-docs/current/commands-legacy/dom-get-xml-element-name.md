@@ -50,9 +50,9 @@ XML要素名に関する詳細は*XML DOMコマンドの概要* の節を参照�
 
 ## 参照 
 
-[DOM Get XML element](dom-get-xml-element.md)  
-[DOM GET XML ELEMENT VALUE](dom-get-xml-element-value.md)  
-[DOM SET XML ELEMENT NAME](dom-set-xml-element-name.md)  
+[DOM Get XML element](dom-get-xml-element)  
+[DOM GET XML ELEMENT VALUE](dom-get-xml-element-value)  
+[DOM SET XML ELEMENT NAME](dom-set-xml-element-name)  
 
 ## プロパティ
 

@@ -28,7 +28,7 @@ displayed_sidebar: docs
 
 ## Descripción 
 
-<!--REF #_command_.RECEIVE BUFFER.Summary-->RECEIVE BUFFER lee los datos del puerto serial abierto previamente por el comando [SET CHANNEL](set-channel.md).<!-- END REF--> El puerto serial tiene un buffer que se llena con caracteres hasta que un comando los lee. RECEIVE BUFFER obtiene los caracteres del buffer serial, los coloca en la variable *varRecep* y luego limpia el buffer. Si no hay caracteres en el buffer, la variable *varRecep* estará vacía.
+<!--REF #_command_.RECEIVE BUFFER.Summary-->RECEIVE BUFFER lee los datos del puerto serial abierto previamente por el comando [SET CHANNEL](set-channel).<!-- END REF--> El puerto serial tiene un buffer que se llena con caracteres hasta que un comando los lee. RECEIVE BUFFER obtiene los caracteres del buffer serial, los coloca en la variable *varRecep* y luego limpia el buffer. Si no hay caracteres en el buffer, la variable *varRecep* estará vacía.
 
 **En Windows**  
 El buffer de puerto serial en Windows está limitado en tamaño a 10 Kbytes. Esto significa que el buffer puede saturarse. Cuando está lleno y se reciben nuevos caracteres, los nuevos caracteres se reemplazan los antiguos caracteres. Los antiguos caracteres se pierden; por lo tanto, es esencial que el buffer se lea rápidamente cuando se reciben nuevos caracteres.
@@ -36,7 +36,7 @@ El buffer de puerto serial en Windows está limitado en tamaño a 10 Kbytes. Est
 **En Mac OS**  
 El buffer del puerto serial en macOS tiene una capacidad en principio ilimitada (depende de la memoria disponible). Si el buffer está lleno y se reciben nuevos caracteres, los nuevos caracteres reemplazan los antiguos caracteres. Los antiguos caracteres se pierden; por lo tanto, es esencial que el buffer se lea rápidamente cuando se reciben nuevos caracteres. 
 
-El comando RECEIVE BUFFER es diferente de [RECEIVE PACKET](receive-packet.md) en la medida en que recupera todo lo que encuentra en el buffer y lo devuelve inmediatamente. [RECEIVE PACKET](receive-packet.md) espera hasta encontrar un carácter específico o un cierto número de caracteres en el buffer. 
+El comando RECEIVE BUFFER es diferente de [RECEIVE PACKET](receive-packet) en la medida en que recupera todo lo que encuentra en el buffer y lo devuelve inmediatamente. [RECEIVE PACKET](receive-packet) espera hasta encontrar un carácter específico o un cierto número de caracteres en el buffer. 
 
 Durante la ejecución de RECEIVE BUFFER, el usuario puede interrumpir la recepción presionando **Ctrl-Alt-Mayús** (Windows) o **Comando-Opción-Mayús** (Macintosh). Esta interrupción genera un error -9994 que puede interceptar con la ayuda de un método instalado por el comando [ON ERR CALL](on-err-call.md). 
 
@@ -72,10 +72,10 @@ Note que el acceso a la variable interproceso *vtBuffer* debe estar protegido po
 ## Ver también 
 
 [ON ERR CALL](on-err-call.md)  
-[RECEIVE PACKET](receive-packet.md)  
-[Semaphore](semaphore.md)  
-[SET CHANNEL](set-channel.md)  
-[USE CHARACTER SET](use-character-set.md)  
+[RECEIVE PACKET](receive-packet)  
+[Semaphore](semaphore)  
+[SET CHANNEL](set-channel)  
+[USE CHARACTER SET](use-character-set)  
 
 ## Propiedades
 

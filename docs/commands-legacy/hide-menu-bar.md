@@ -52,9 +52,9 @@ The following method displays a record in full-screen display (Macintosh) until 
 
 ## See also 
 
-[HIDE TOOL BAR](hide-tool-bar.md)  
-[SHOW MENU BAR](show-menu-bar.md)  
-[SHOW TOOL BAR](show-tool-bar.md)  
+[HIDE TOOL BAR](hide-tool-bar)  
+[SHOW MENU BAR](show-menu-bar)  
+[SHOW TOOL BAR](show-tool-bar)  
 
 ## Properties
 

@@ -21,12 +21,12 @@ displayed_sidebar: docs
 
 **In footer** 実行サイクルを生成させるには、デザインモードでそのフォームやオブジェクトでOn Printing footerイベントプロパティを必ず選択してください。
 
-**注:** このコマンドは、[Form event code](../commands/form-event-code.md) コマンドを用いてOn Printing footerイベントを返すかどうかをテストするのと同等と言えます。
+**注:** このコマンドは、[Form event code](../commands/form-event-code) コマンドを用いてOn Printing footerイベントを返すかどうかをテストするのと同等と言えます。
 
 ## 参照 
 
-[In break](in-break.md)  
-[In header](in-header.md)  
+[In break](in-break)  
+[In header](in-header)  
 
 ## プロパティ
 

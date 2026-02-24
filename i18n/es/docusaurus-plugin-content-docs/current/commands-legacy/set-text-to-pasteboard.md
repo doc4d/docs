@@ -48,8 +48,8 @@ Si el texto se coloca correctamente en el portapapeles, la variable OK toma el v
 
 ## Ver también 
 
-[APPEND DATA TO PASTEBOARD](append-data-to-pasteboard.md)  
-[Get text from pasteboard](get-text-from-pasteboard.md)  
+[APPEND DATA TO PASTEBOARD](append-data-to-pasteboard)  
+[Get text from pasteboard](get-text-from-pasteboard)  
 
 ## Propiedades
 

@@ -131,8 +131,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Application type](application-type.md)  
-[Version type](version-type.md)  
+[Application type](application-type)  
+[Version type](version-type)  
 
 ## プロパティ
 

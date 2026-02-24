@@ -55,7 +55,7 @@ Use of a picture located in the Resources folder of the database:
 
 ## See also 
 
-[GET MENU ITEM ICON](get-menu-item-icon.md)  
+[GET MENU ITEM ICON](get-menu-item-icon)  
 
 ## Properties
 

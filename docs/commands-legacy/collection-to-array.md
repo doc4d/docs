@@ -75,7 +75,7 @@ You want to copy different property values from a collection of objects in diffe
 
 ## See also 
 
-[ARRAY TO COLLECTION](array-to-collection.md)  
+[ARRAY TO COLLECTION](array-to-collection)  
 *Type conversions between collections and 4D arrays*  
 
 ## Properties

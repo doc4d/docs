@@ -52,7 +52,7 @@ The optional *userForm* parameter lets you specify a user form (coming from *for
 
 For more information about user forms, refer to the *Overview of user forms* section. 
 
-Output forms are used by three groups of commands. One group displays a list of records on screen, another group generates reports, and the third group exports data. The [DISPLAY SELECTION](display-selection.md) and [MODIFY SELECTION](modify-selection.md) commands display a list of records using an output form. You use the output form when creating reports with the [PRINT LABEL](print-label.md) and [PRINT SELECTION](print-selection.md) commands. Each of the export commands ([EXPORT DIF](export-dif.md), [EXPORT SYLK](export-sylk.md) and [EXPORT TEXT](export-text.md)) also uses the output form.
+Output forms are used by three groups of commands. One group displays a list of records on screen, another group generates reports, and the third group exports data. The [DISPLAY SELECTION](display-selection) and [MODIFY SELECTION](modify-selection) commands display a list of records using an output form. You use the output form when creating reports with the [PRINT LABEL](print-label) and [PRINT SELECTION](print-selection) commands. Each of the export commands ([EXPORT DIF](export-dif), [EXPORT SYLK](export-sylk) and [EXPORT TEXT](export-text)) also uses the output form.
 
 ## Example 1 
 
@@ -76,14 +76,14 @@ The following example uses the path to a .json form to print the records in an e
 
 ## See also 
 
-[DISPLAY SELECTION](display-selection.md)  
-[EXPORT DIF](export-dif.md)  
-[EXPORT SYLK](export-sylk.md)  
-[EXPORT TEXT](export-text.md)  
-[FORM SET INPUT](form-set-input.md)  
-[MODIFY SELECTION](modify-selection.md)  
-[PRINT LABEL](print-label.md)  
-[PRINT SELECTION](print-selection.md)  
+[DISPLAY SELECTION](display-selection)  
+[EXPORT DIF](export-dif)  
+[EXPORT SYLK](export-sylk)  
+[EXPORT TEXT](export-text)  
+[FORM SET INPUT](form-set-input)  
+[MODIFY SELECTION](modify-selection)  
+[PRINT LABEL](print-label)  
+[PRINT SELECTION](print-selection)  
 
 ## Properties
 

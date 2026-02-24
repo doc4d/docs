@@ -94,7 +94,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX SELECT ROW](listbox-select-row.md)  
+[LISTBOX SELECT ROW](listbox-select-row)  
 
 ## プロパティ
 

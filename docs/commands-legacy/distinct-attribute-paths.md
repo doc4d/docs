@@ -78,7 +78,7 @@ The *aTPaths* array receives the following elements:
 ## See also 
 
   
-[DISTINCT ATTRIBUTE VALUES](distinct-attribute-values.md)  
+[DISTINCT ATTRIBUTE VALUES](distinct-attribute-values)  
 
 ## Properties
 

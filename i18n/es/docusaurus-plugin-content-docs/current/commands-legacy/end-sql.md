@@ -32,7 +32,7 @@ Una secuencia de instrucciones SQL debe estar rodeada por las palabras claves [B
 
 ## Ver también 
 
-[Begin SQL](begin-sql.md)  
+[Begin SQL](begin-sql)  
 
 ## Propiedades
 

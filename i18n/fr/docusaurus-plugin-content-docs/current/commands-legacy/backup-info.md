@@ -32,7 +32,7 @@ Passez dans le paramètre *sélecteur* le type d’information à récupérer. L
 
 ## Voir aussi 
 
-[RESTORE](restore.md)  
+[RESTORE](restore)  
 
 ## Propriétés
 

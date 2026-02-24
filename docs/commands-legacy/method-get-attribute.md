@@ -50,7 +50,7 @@ The command returns **True** when an attribute is selected and **False** if it i
 
 ## See also 
 
-[METHOD SET ATTRIBUTE](method-set-attribute.md)  
+[METHOD SET ATTRIBUTE](method-set-attribute)  
 
 ## Properties
 

@@ -38,7 +38,7 @@ El siguiente ejemplo cambia la posición de los números de página en un inform
 
 ## Ver también 
 
-[PRINT SELECTION](print-selection.md)  
+[PRINT SELECTION](print-selection)  
 
 ## Propiedades
 

@@ -26,7 +26,7 @@ displayed_sidebar: docs
 
 ## Description 
 
-<!--REF #_command_.UNREGISTER CLIENT.Summary-->La commande **UNREGISTER CLIENT** “désinscrit” le client 4D de 4D Server.<!-- END REF--> Il doit avoir été préalablement inscrit à l’aide de la commande [REGISTER CLIENT](register-client.md). 
+<!--REF #_command_.UNREGISTER CLIENT.Summary-->La commande **UNREGISTER CLIENT** “désinscrit” le client 4D de 4D Server.<!-- END REF--> Il doit avoir été préalablement inscrit à l’aide de la commande [REGISTER CLIENT](register-client). 
 
 Si le poste client n’était pas inscrit ou si la commande est exécutée sur 4D en mode local, la commande ne fait rien. 
 
@@ -34,7 +34,7 @@ Si le poste client n’était pas inscrit ou si la commande est exécutée sur 4
 
 ## Exemple 
 
-Reportez-vous à l’exemple de la commande [REGISTER CLIENT](register-client.md).
+Reportez-vous à l’exemple de la commande [REGISTER CLIENT](register-client).
 
 ## Variables et ensembles système 
 
@@ -42,9 +42,9 @@ Si le client est correctement désinscrit, la variable système OK prend la vale
 
 ## Voir aussi 
 
-[EXECUTE ON CLIENT](execute-on-client.md)  
-[GET REGISTERED CLIENTS](get-registered-clients.md)  
-[REGISTER CLIENT](register-client.md)  
+[EXECUTE ON CLIENT](execute-on-client)  
+[GET REGISTERED CLIENTS](get-registered-clients)  
+[REGISTER CLIENT](register-client)  
 
 ## Propriétés
 

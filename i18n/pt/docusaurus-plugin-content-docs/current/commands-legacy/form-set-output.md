@@ -76,14 +76,14 @@ Os exemplos abaixo usam a rota a um formulário json para imprimir os registros 
 
 ## Ver também 
 
-[DISPLAY SELECTION](display-selection.md)  
-[EXPORT DIF](export-dif.md)  
-[EXPORT SYLK](export-sylk.md)  
-[EXPORT TEXT](export-text.md)  
-[FORM SET INPUT](form-set-input.md)  
-[MODIFY SELECTION](modify-selection.md)  
-[PRINT LABEL](print-label.md)  
-[PRINT SELECTION](print-selection.md)  
+[DISPLAY SELECTION](display-selection)  
+[EXPORT DIF](export-dif)  
+[EXPORT SYLK](export-sylk)  
+[EXPORT TEXT](export-text)  
+[FORM SET INPUT](form-set-input)  
+[MODIFY SELECTION](modify-selection)  
+[PRINT LABEL](print-label)  
+[PRINT SELECTION](print-selection)  
 
 ## Propriedades
 

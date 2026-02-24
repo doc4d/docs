@@ -92,10 +92,10 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET AUTOMATIC RELATIONS](get-automatic-relations.md)  
-[GET RELATION PROPERTIES](get-relation-properties.md)  
-[SET AUTOMATIC RELATIONS](set-automatic-relations.md)  
-[SET FIELD RELATION](set-field-relation.md)  
+[GET AUTOMATIC RELATIONS](get-automatic-relations)  
+[GET RELATION PROPERTIES](get-relation-properties)  
+[SET AUTOMATIC RELATIONS](set-automatic-relations)  
+[SET FIELD RELATION](set-field-relation)  
 
 ## プロパティ
 

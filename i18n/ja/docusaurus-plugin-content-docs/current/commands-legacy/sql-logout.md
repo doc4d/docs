@@ -34,7 +34,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SQL LOGIN](sql-login.md)  
+[SQL LOGIN](sql-login)  
 
 ## プロパティ
 

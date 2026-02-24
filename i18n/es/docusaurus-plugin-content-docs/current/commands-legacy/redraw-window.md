@@ -35,7 +35,7 @@ Si omite el parámetro *ventana*, REDRAW WINDOW aplica a la ventana del primer p
 
 ## Ver también 
 
-[ERASE WINDOW](erase-window.md)  
+[ERASE WINDOW](erase-window)  
 
 ## Propiedades
 

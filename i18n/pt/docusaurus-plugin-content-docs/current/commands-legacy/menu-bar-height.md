@@ -38,9 +38,9 @@ O comando retorna 0:
 
 ## Ver também 
 
-[HIDE MENU BAR](hide-menu-bar.md)  
-[Menu bar screen](menu-bar-screen.md)  
-[SHOW MENU BAR](show-menu-bar.md)  
+[HIDE MENU BAR](hide-menu-bar)  
+[Menu bar screen](menu-bar-screen)  
+[SHOW MENU BAR](show-menu-bar)  
 
 ## Propriedades
 

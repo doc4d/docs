@@ -46,8 +46,8 @@ You want to deny any new requests to your Web Services server:
 
 ## See also 
 
-[REJECT NEW REMOTE CONNECTIONS](reject-new-remote-connections.md)  
-[WEB Get server info](web-get-server-info.md)  
+[REJECT NEW REMOTE CONNECTIONS](reject-new-remote-connections)  
+[WEB Get server info](web-get-server-info)  
 
 ## Properties
 

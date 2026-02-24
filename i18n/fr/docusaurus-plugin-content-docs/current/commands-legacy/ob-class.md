@@ -50,7 +50,7 @@ Puis, dans une méthode, vous pouvez saisir :
 
 ## Voir aussi 
 
-[OB Instance of](ob-instance-of.md)  
+[OB Instance of](ob-instance-of)  
 
 ## Propriétés
 

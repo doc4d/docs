@@ -33,8 +33,8 @@ Ver el ejemplo para [BRING TO FRONT](bring-to-front.md "BRING TO FRONT").
 
 ## Ver también 
 
-[BRING TO FRONT](bring-to-front.md)  
-[WINDOW LIST](window-list.md)  
+[BRING TO FRONT](bring-to-front)  
+[WINDOW LIST](window-list)  
 
 ## Propiedades
 

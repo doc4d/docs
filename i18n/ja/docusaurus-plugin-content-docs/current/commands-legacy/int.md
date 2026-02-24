@@ -31,7 +31,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Dec](dec.md)  
+[Dec](dec)  
 
 ## プロパティ
 

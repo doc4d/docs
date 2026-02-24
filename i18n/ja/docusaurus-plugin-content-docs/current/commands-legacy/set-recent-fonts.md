@@ -52,7 +52,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[FONT LIST](font-list.md)  
+[FONT LIST](font-list)  
 
 ## プロパティ
 

@@ -20,12 +20,12 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Is a variable.Summary-->**Is a variable**コマンドは、*aPointer*が定義済み変数を参照する場合にはTrueを返します。<!-- END REF-->その他の場合（フィールドやテーブルへのポインター、Nilポインター等）、この関数はFalseを返します。
 
-参照されている変数の名前やフィールド番号を知りたい場合、[RESOLVE POINTER](resolve-pointer.md)コマンドを使用します。
+参照されている変数の名前やフィールド番号を知りたい場合、[RESOLVE POINTER](resolve-pointer)コマンドを使用します。
 
 ## 参照 
 
-[Is nil pointer](is-nil-pointer.md)  
-[RESOLVE POINTER](resolve-pointer.md)  
+[Is nil pointer](is-nil-pointer)  
+[RESOLVE POINTER](resolve-pointer)  
 
 ## プロパティ
 

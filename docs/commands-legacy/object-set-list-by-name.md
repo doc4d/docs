@@ -103,8 +103,8 @@ You want to remove the list associations:
 
 ## See also 
 
-[OBJECT Get list name](object-get-list-name.md)  
-[OBJECT SET LIST BY REFERENCE](object-set-list-by-reference.md)  
+[OBJECT Get list name](object-get-list-name)  
+[OBJECT SET LIST BY REFERENCE](object-set-list-by-reference)  
 
 ## Properties
 

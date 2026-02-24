@@ -47,7 +47,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR SET DESTINATION](qr-set-destination.md)  
+[QR SET DESTINATION](qr-set-destination)  
 
 ## プロパティ
 

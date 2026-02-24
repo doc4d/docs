@@ -39,8 +39,8 @@ Vous pouvez passer dans *événement* un des [événements formulaire 4D pris en
 
 ## Voir aussi 
 
-[Form event code](../commands/form-event-code.md)  
-[GOTO OBJECT](goto-object.md)  
+[Form event code](../commands/form-event-code)  
+[GOTO OBJECT](goto-object)  
 
 ## Propriétés
 

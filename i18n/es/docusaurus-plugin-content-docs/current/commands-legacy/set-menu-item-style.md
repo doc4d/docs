@@ -50,7 +50,7 @@ En el parámetro *itemEstilo* puede definir el estilo del elemento. Pase una com
 
 ## Ver también 
 
-[Get menu item style](get-menu-item-style.md)  
+[Get menu item style](get-menu-item-style)  
 
 ## Propiedades
 

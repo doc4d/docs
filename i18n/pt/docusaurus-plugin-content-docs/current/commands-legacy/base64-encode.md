@@ -47,10 +47,10 @@ Por padrão, se omitir o parâmetro *\**, o comando utiliza uma codificação Ba
 
 ## Ver também 
 
-[BASE64 DECODE](base64-decode.md)  
-[Generate digest](generate-digest.md)  
+[BASE64 DECODE](base64-decode)  
+[Generate digest](generate-digest)  
 *Visão Geral dos comandos XML DOM*  
-[XML DECODE](xml-decode.md)  
+[XML DECODE](xml-decode)  
 
 ## Propriedades
 

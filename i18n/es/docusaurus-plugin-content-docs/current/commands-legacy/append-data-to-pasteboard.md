@@ -225,9 +225,9 @@ Si los datos en el BLOB se añaden correctamente al portapapeles, la variable si
 
 ## Ver también 
 
-[CLEAR PASTEBOARD](clear-pasteboard.md)  
-[SET PICTURE TO PASTEBOARD](set-picture-to-pasteboard.md)  
-[SET TEXT TO PASTEBOARD](set-text-to-pasteboard.md)  
+[CLEAR PASTEBOARD](clear-pasteboard)  
+[SET PICTURE TO PASTEBOARD](set-picture-to-pasteboard)  
+[SET TEXT TO PASTEBOARD](set-text-to-pasteboard)  
 
 ## Propiedades
 

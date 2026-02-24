@@ -23,13 +23,13 @@ Note that the time is the total time allowed for the command to execute, not the
 
 The commands that are affected by the timeout setting are:
 
-* [RECEIVE PACKET](receive-packet.md)
-* [RECEIVE RECORD](receive-record.md)
-* [RECEIVE VARIABLE](receive-variable.md)
+* [RECEIVE PACKET](receive-packet)
+* [RECEIVE RECORD](receive-record)
+* [RECEIVE VARIABLE](receive-variable)
 
 ## Example 
 
-The following example sets the serial port to receive data. It then sets a time-out. The data is read with [RECEIVE PACKET](receive-packet.md). If the data is not received in time, an error occurs:
+The following example sets the serial port to receive data. It then sets a time-out. The data is read with [RECEIVE PACKET](receive-packet). If the data is not received in time, an error occurs:
 
 ```4d
  SET CHANNEL(MacOS serial port;Speed 9600+Data bits 8+Stop bits one+Parity none) // Open Serial Port
@@ -47,10 +47,10 @@ The following example sets the serial port to receive data. It then sets a time-
 ## See also 
 
 [ON ERR CALL](on-err-call.md)  
-[RECEIVE BUFFER](receive-buffer.md)  
-[RECEIVE PACKET](receive-packet.md)  
-[RECEIVE RECORD](receive-record.md)  
-[RECEIVE VARIABLE](receive-variable.md)  
+[RECEIVE BUFFER](receive-buffer)  
+[RECEIVE PACKET](receive-packet)  
+[RECEIVE RECORD](receive-record)  
+[RECEIVE VARIABLE](receive-variable)  
 
 ## Properties
 

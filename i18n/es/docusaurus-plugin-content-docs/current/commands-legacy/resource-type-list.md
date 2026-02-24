@@ -89,7 +89,7 @@ Una vez este método de proyecto se implementa en una base, puede escribir:
 
 ## Ver también 
 
-[RESOURCE LIST](resource-list.md)  
+[RESOURCE LIST](resource-list)  
 
 ## Propiedades
 

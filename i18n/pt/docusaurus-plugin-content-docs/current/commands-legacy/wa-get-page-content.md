@@ -35,7 +35,7 @@ Este comando retorna uma string vazia se o conteúdo da página atual não estiv
 
 ## Ver também 
 
-[WA SET PAGE CONTENT](wa-set-page-content.md)  
+[WA SET PAGE CONTENT](wa-set-page-content)  
 
 ## Propriedades
 

@@ -37,7 +37,7 @@ displayed_sidebar: docs
 
 ## See also 
 
-[INSERT IN BLOB](insert-in-blob.md)  
+[INSERT IN BLOB](insert-in-blob)  
 
 ## Properties
 

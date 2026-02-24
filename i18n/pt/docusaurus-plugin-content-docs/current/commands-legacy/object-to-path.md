@@ -42,7 +42,7 @@ Em *objRota*, passe um objeto que define a rota que deseja gerar. Deve conter as
 | extension       | Texto    | Extensão de nome final de arquivo ou pasta. Começa com "." (pode ser omitido). String vazia "" se não houver extensão.                                                                                                                                                               |
 | isFolder        | Booleano | True se o nome for um nome de pasta, do contrário, false (o valor pré-determinado for false)                                                                                                                                                                                         |
 
-Geralmente, *objRota* será gerado com o comando [Path to object ](path-to-object.md), entretanto, o objeto pode ser gerado com qualquer meio. Lembre que **Object to path** só maneja strings. Tampouco comprova se a rota é válida com respeito ao tipo de rota, nem a existência real de nenhum arquivo ou pasta.
+Geralmente, *objRota* será gerado com o comando [Path to object ](path-to-object), entretanto, o objeto pode ser gerado com qualquer meio. Lembre que **Object to path** só maneja strings. Tampouco comprova se a rota é válida com respeito ao tipo de rota, nem a existência real de nenhum arquivo ou pasta.
 
 ## Exemplo 
 
@@ -61,12 +61,12 @@ Se quisermos duplicar e mudar o nome de um arquivo em sua própria pasta
 
 ## Ver também 
 
-[Convert path POSIX to system](convert-path-posix-to-system.md)  
-[Convert path system to POSIX](convert-path-system-to-posix.md)  
-[File](../commands/file.md)    
-[Folder ](folder.md)  
-[Path to object ](path-to-object.md)  
-[Test path name](test-path-name.md)  
+[Convert path POSIX to system](convert-path-posix-to-system)  
+[Convert path system to POSIX](convert-path-system-to-posix)  
+[File](../commands/file)    
+[Folder ](folder)  
+[Path to object ](path-to-object)  
+[Test path name](test-path-name)  
 
 ## Propriedades
 

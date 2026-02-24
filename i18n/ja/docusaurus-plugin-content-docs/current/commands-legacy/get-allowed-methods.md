@@ -54,7 +54,7 @@ GET ALLOWED METHODSコマンドは、[SET ALLOWED METHODS](../commands/set-allow
 
 ## 参照 
 
-[SET ALLOWED METHODS](../commands/set-allowed-methods.md)  
+[SET ALLOWED METHODS](../commands/set-allowed-methods)  
 
 ## プロパティ
 

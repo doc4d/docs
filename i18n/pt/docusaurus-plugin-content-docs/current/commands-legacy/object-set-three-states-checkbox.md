@@ -41,7 +41,7 @@ No parâmetro *tresEsta*, passe **True** para ativar o modo "três estados", ou 
 
 ## Ver também 
 
-[OBJECT Get three states checkbox](object-get-three-states-checkbox.md)  
+[OBJECT Get three states checkbox](object-get-three-states-checkbox)  
 
 ## Propriedades
 

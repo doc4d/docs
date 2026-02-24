@@ -42,7 +42,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.LISTBOX INSERT COLUMN FORMULA.Summary-->O comando **LISTBOX INSERT COLUMN FORMULA** insere uma coluna no listbox designado pelos parâmetros *objeto* e *\**.<!-- END REF--> 
 
-O comando **LISTBOX INSERT COLUMN FORMULA** é similar ao comando [LISTBOX INSERT COLUMN](listbox-insert-column.md) exceto que pode ser utilizada para introduzir uma fórmula como conteúdo de uma coluna.
+O comando **LISTBOX INSERT COLUMN FORMULA** é similar ao comando [LISTBOX INSERT COLUMN](listbox-insert-column) exceto que pode ser utilizada para introduzir uma fórmula como conteúdo de uma coluna.
 
 Este tipo de conteúdo só pode ser utilizado quando a propriedade “Fonte de dados” do list box é **Seleção atual** ou **Seleção temporária ou Coleção ou Seleção de Entidade**(para maior informação a respeito, consulte a seção *Gestão de objetos List Box* *Licenses*).
 
@@ -63,7 +63,7 @@ O parâmetro *fórmula* pode conter qualquer expressão válida:
 
 No momento da chamada do comando, a *formula* é analizada e depois é executada.
 
-**Nota:** utilize o comando [Command name](../commands/command-name.md) para definir as fórmulas independentes da linguagem da aplicação (quando chamam a comandos 4D).
+**Nota:** utilize o comando [Command name](../commands/command-name) para definir as fórmulas independentes da linguagem da aplicação (quando chamam a comandos 4D).
 
 O parâmetro *tipoDados* pode ser utilizado para designar o tipo de dados resultantes da execução da *formula*. Deve passar neste parâmetro uma das seguintes constantes do tema *Tipos de campos e variáveis*:
 
@@ -133,7 +133,7 @@ A coluna é anexada à list box :
 
 ## Ver também 
 
-[LISTBOX INSERT COLUMN](listbox-insert-column.md)  
+[LISTBOX INSERT COLUMN](listbox-insert-column)  
 
 ## Propriedades
 

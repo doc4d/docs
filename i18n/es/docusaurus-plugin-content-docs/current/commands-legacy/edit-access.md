@@ -34,8 +34,8 @@ El siguiente ejemplo muestra al usuario la ventana de gestión de usuarios y gru
 
 ## Ver también 
 
-[CHANGE CURRENT USER](change-current-user.md)  
-[CHANGE PASSWORD](change-password.md)  
+[CHANGE CURRENT USER](change-current-user)  
+[CHANGE PASSWORD](change-password)  
 
 ## Propiedades
 

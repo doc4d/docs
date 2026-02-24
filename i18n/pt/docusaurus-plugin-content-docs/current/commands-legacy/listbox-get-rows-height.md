@@ -47,9 +47,9 @@ Por padrão, se omitir o parâmetro *unidade*, a altura da linha devolvida é ex
 
 ## Ver também 
 
-[LISTBOX Get auto row height ](listbox-get-auto-row-height.md)  
-[LISTBOX Get row height ](listbox-get-row-height.md)  
-[LISTBOX SET ROWS HEIGHT](listbox-set-rows-height.md)  
+[LISTBOX Get auto row height ](listbox-get-auto-row-height)  
+[LISTBOX Get row height ](listbox-get-row-height)  
+[LISTBOX SET ROWS HEIGHT](listbox-set-rows-height)  
 
 ## Propriedades
 

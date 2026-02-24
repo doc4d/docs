@@ -77,8 +77,8 @@ Usted desea definir un array de altura de línea para un list box:
 
 ## Ver también 
 
-[LISTBOX Get array](listbox-get-array.md)  
-[LISTBOX GET ARRAYS](listbox-get-arrays.md)  
+[LISTBOX Get array](listbox-get-array)  
+[LISTBOX GET ARRAYS](listbox-get-arrays)  
 
 ## Propiedades
 

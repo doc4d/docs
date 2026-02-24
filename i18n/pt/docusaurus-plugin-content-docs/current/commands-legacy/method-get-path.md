@@ -73,9 +73,9 @@ Se o comando for executado desde um componente, retorna como padrão as rotas do
 
 ## Ver também 
 
-[Current method path](current-method-path.md)  
-[METHOD OPEN PATH](method-open-path.md)  
-[METHOD RESOLVE PATH](method-resolve-path.md)  
+[Current method path](current-method-path)  
+[METHOD OPEN PATH](method-open-path)  
+[METHOD RESOLVE PATH](method-resolve-path)  
 
 ## Propriedades
 

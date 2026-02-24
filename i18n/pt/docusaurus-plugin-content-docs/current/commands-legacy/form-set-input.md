@@ -108,17 +108,17 @@ o que retorna:
 
 ## Ver também 
 
-[ADD RECORD](add-record.md)  
-[DISPLAY RECORD](display-record.md)  
-[DISPLAY SELECTION](display-selection.md)  
-[FORM SET OUTPUT](form-set-output.md)  
-[IMPORT DIF](import-dif.md)  
-[IMPORT SYLK](import-sylk.md)  
-[IMPORT TEXT](import-text.md)  
-[MODIFY RECORD](modify-record.md)  
-[MODIFY SELECTION](modify-selection.md)  
-[Open window](../commands/open-window.md)  
-[QUERY BY EXAMPLE](query-by-example.md)  
+[ADD RECORD](add-record)  
+[DISPLAY RECORD](display-record)  
+[DISPLAY SELECTION](display-selection)  
+[FORM SET OUTPUT](form-set-output)  
+[IMPORT DIF](import-dif)  
+[IMPORT SYLK](import-sylk)  
+[IMPORT TEXT](import-text)  
+[MODIFY RECORD](modify-record)  
+[MODIFY SELECTION](modify-selection)  
+[Open window](../commands/open-window)  
+[QUERY BY EXAMPLE](query-by-example)  
 
 ## Propriedades
 

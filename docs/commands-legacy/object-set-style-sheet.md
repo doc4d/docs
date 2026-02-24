@@ -48,7 +48,7 @@ In the *styleSheetName* parameter, you pass the name of the style sheet to be ap
 
 If a style sheet was already associated with the object in Design mode, calling this command replaces it for the current process. 
 
-During the session, if you use the [ST SET ATTRIBUTES](st-set-attributes.md), [ST SET TEXT](st-set-text.md), [OBJECT SET FONT](object-set-font.md) or [OBJECT SET FONT SIZE](object-set-font-size.md) commands on the *object* in order to modify its font or font size, the reference to the style sheet is automatically deleted from the object -- even if you assign the same attributes as those of the style sheet. However, if you modify the style (bold, italic, etc.), for example using the [ST SET ATTRIBUTES](st-set-attributes.md) or [OBJECT SET FONT STYLE](object-set-font-style.md) commands, these new properties are added to the style sheet for the duration of the session.
+During the session, if you use the [ST SET ATTRIBUTES](st-set-attributes), [ST SET TEXT](st-set-text), [OBJECT SET FONT](object-set-font) or [OBJECT SET FONT SIZE](object-set-font-size) commands on the *object* in order to modify its font or font size, the reference to the style sheet is automatically deleted from the object -- even if you assign the same attributes as those of the style sheet. However, if you modify the style (bold, italic, etc.), for example using the [ST SET ATTRIBUTES](st-set-attributes) or [OBJECT SET FONT STYLE](object-set-font-style) commands, these new properties are added to the style sheet for the duration of the session.
 
 ### Compatibility Note 
 
@@ -57,9 +57,9 @@ In **project architecture**, only the three automatic style sheets are supported
 ## See also 
 
 *Font Styles*  
-[GET STYLE SHEET INFO](get-style-sheet-info.md)  
-[LIST OF STYLE SHEETS](list-of-style-sheets.md)  
-[OBJECT Get style sheet](object-get-style-sheet.md)  
+[GET STYLE SHEET INFO](get-style-sheet-info)  
+[LIST OF STYLE SHEETS](list-of-style-sheets)  
+[OBJECT Get style sheet](object-get-style-sheet)  
 
 ## Properties
 

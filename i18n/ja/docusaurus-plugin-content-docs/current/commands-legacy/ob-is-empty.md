@@ -33,7 +33,7 @@ displayed_sidebar: docs
 
 ## 例題 
 
-[OB Is defined](ob-is-defined.md) コマンド同様、このコマンドもオブジェクトの中身によって異なる結果を返します:
+[OB Is defined](ob-is-defined) コマンド同様、このコマンドもオブジェクトの中身によって異なる結果を返します:
 
 ```4d
  var $ref : Object
@@ -53,7 +53,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OB Is defined](ob-is-defined.md)  
+[OB Is defined](ob-is-defined)  
 
 ## プロパティ
 

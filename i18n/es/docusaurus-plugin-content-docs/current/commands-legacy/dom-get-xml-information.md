@@ -54,7 +54,7 @@ Estas constantes indican la siguiente información:
 
 ## Ver también 
 
-[XML GET ERROR](xml-get-error.md)  
+[XML GET ERROR](xml-get-error)  
 
 ## Propiedades
 

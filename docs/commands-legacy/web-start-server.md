@@ -38,7 +38,7 @@ If the Web Server is successfully started, **OK** is set to 1; otherwise **OK** 
 
 ## See also 
 
-[WEB STOP SERVER](web-stop-server.md)  
+[WEB STOP SERVER](web-stop-server)  
 
 ## Properties
 

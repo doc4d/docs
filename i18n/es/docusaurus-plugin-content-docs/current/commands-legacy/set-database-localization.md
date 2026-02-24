@@ -80,7 +80,7 @@ La interfaz de su aplicación utiliza la cadena estática ":xliff:shopping". Los
 
 ## Ver también 
 
-[Get database localization](get-database-localization.md)  
+[Get database localization](get-database-localization)  
 
 ## Propiedades
 

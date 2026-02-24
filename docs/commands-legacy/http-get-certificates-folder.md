@@ -27,7 +27,7 @@ displayed_sidebar: docs
 
 :::info Compatibility
 
-This command is maintained for compatibility reasons only. It is now recommended to use the [`4D.HTTPRequest class`](../API/HTTPRequestClass.md).
+This command is maintained for compatibility reasons only. It is now recommended to use the [`4D.HTTPRequest class`](../API/HTTPRequestClass).
 
 :::
 
@@ -35,7 +35,7 @@ This command is maintained for compatibility reasons only. It is now recommended
 
 <!--REF #_command_.HTTP Get certificates folder.Summary-->The **HTTP Get certificates folder** command returns the complete pathname of the active client certificates folder.<!-- END REF-->
 
-By default, 4D uses the "ClientCertificatesFolder" folder that is created next to the structure file (folder only created if necessary). However, you can create a custom folder for the current process using the [HTTP SET CERTIFICATES FOLDER](http-set-certificates-folder.md) command.
+By default, 4D uses the "ClientCertificatesFolder" folder that is created next to the structure file (folder only created if necessary). However, you can create a custom folder for the current process using the [HTTP SET CERTIFICATES FOLDER](http-set-certificates-folder) command.
 
 ## Example 
 
@@ -51,7 +51,7 @@ You want to change certificates folder temporarily:
 
 ## See also 
 
-[HTTP SET CERTIFICATES FOLDER](http-set-certificates-folder.md)  
+[HTTP SET CERTIFICATES FOLDER](http-set-certificates-folder)  
 
 ## Properties
 

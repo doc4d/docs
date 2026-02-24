@@ -52,8 +52,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Modified record](modified-record.md)  
-[Record number](record-number.md)  
+[Modified record](modified-record)  
+[Record number](record-number)  
 
 ## プロパティ
 

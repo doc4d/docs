@@ -61,7 +61,7 @@ Mientras efectúa una entrada de datos en un formulario, usted hace clic en un b
 
 ## Ver también 
 
-[Get window title](get-window-title.md)  
+[Get window title](get-window-title)  
 
 ## Propiedades
 

@@ -35,8 +35,8 @@ L'exemple suivant teste le statut de la table \[Factures\]. Si elle est en lectu
 
 ## Voir aussi 
 
-[READ ONLY](read-only.md)  
-[READ WRITE](read-write.md)  
+[READ ONLY](read-only)  
+[READ WRITE](read-write)  
 *Verrouillage d'enregistrements*  
 
 ## Propriétés

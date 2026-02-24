@@ -72,7 +72,7 @@ Le code suivant vous permet de basculer le mode d’affichage de la zone :
 
 ## Voir aussi 
 
-[ST GET OPTIONS](st-get-options.md)  
+[ST GET OPTIONS](st-get-options)  
 
 ## Propriétés
 

@@ -124,8 +124,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[FOLDER LIST](folder-list.md)  
-[VOLUME LIST](volume-list.md)  
+[FOLDER LIST](folder-list)  
+[VOLUME LIST](volume-list)  
 
 ## プロパティ
 

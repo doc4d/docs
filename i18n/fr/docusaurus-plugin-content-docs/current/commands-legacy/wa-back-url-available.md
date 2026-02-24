@@ -35,8 +35,8 @@ La commande retourne Vrai si un URL existe et Faux sinon. Cette commande permet 
 
 ## Voir aussi 
 
-[WA Forward URL available](wa-forward-url-available.md)  
-[WA OPEN BACK URL](wa-open-back-url.md)  
+[WA Forward URL available](wa-forward-url-available)  
+[WA OPEN BACK URL](wa-open-back-url)  
 
 ## Propriétés
 

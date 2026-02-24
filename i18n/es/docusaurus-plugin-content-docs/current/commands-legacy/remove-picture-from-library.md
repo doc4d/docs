@@ -65,9 +65,9 @@ El siguiente ejemplo borra de la librería de imágenes toda imagen cuyo nombre 
 
 ## Ver también 
 
-[GET PICTURE FROM LIBRARY](get-picture-from-library.md)  
-[PICTURE LIBRARY LIST](picture-library-list.md)  
-[SET PICTURE TO LIBRARY](set-picture-to-library.md)  
+[GET PICTURE FROM LIBRARY](get-picture-from-library)  
+[PICTURE LIBRARY LIST](picture-library-list)  
+[SET PICTURE TO LIBRARY](set-picture-to-library)  
 
 ## Propiedades
 

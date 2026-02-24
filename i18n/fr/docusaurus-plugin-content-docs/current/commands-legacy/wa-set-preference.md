@@ -64,7 +64,7 @@ Vous souhaitez autoriser le déposer d'URLs dans la zone Web 'myarea' :
 
 ## Voir aussi 
 
-[WA GET PREFERENCE](wa-get-preference.md)  
+[WA GET PREFERENCE](wa-get-preference)  
 
 ## Propriétés
 

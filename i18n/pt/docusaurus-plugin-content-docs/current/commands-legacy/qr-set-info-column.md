@@ -116,9 +116,9 @@ Se o parâmetro *numColuna* for incorreto, se gera o erro -9852.
 
 ## Ver também 
 
-[QR GET INFO COLUMN](qr-get-info-column.md)  
-[QR Get info row](qr-get-info-row.md)  
-[QR SET INFO ROW](qr-set-info-row.md)  
+[QR GET INFO COLUMN](qr-get-info-column)  
+[QR Get info row](qr-get-info-row)  
+[QR SET INFO ROW](qr-set-info-row)  
 
 ## Propriedades
 

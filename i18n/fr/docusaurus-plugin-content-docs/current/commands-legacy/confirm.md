@@ -102,8 +102,8 @@ La ligne :
 
 ## Voir aussi 
 
-[ALERT](alert.md)  
-[Request](request.md)  
+[ALERT](alert)  
+[Request](request)  
 
 ## Propriétés
 

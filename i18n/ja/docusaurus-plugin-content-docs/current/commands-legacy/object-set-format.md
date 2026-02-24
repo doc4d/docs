@@ -267,7 +267,7 @@ displayed_sidebar: docs
 
 ## 例題 2 
 
-This example formats a date variable and a time variable using [customized formats](../Project/date-time-formats.md): 
+This example formats a date variable and a time variable using [customized formats](../Project/date-time-formats): 
 
 ```4d
  OBJECT SET FORMAT(*;"mydate";"(yyyy) MMM dd") // (2023) Dec 12
@@ -344,9 +344,9 @@ This example formats a date variable and a time variable using [customized forma
 ## 参照 
 
   
-[GET SYSTEM FORMAT](get-system-format.md)  
-[OBJECT Get format](object-get-format.md)  
-[OBJECT SET FILTER](object-set-filter.md)  
+[GET SYSTEM FORMAT](get-system-format)  
+[OBJECT Get format](object-get-format)  
+[OBJECT SET FILTER](object-set-filter)  
 
 ## プロパティ
 

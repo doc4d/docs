@@ -56,9 +56,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Count screens](count-screens.md)  
-[Menu bar screen](menu-bar-screen.md)  
-[SCREEN DEPTH](screen-depth.md)  
+[Count screens](count-screens)  
+[Menu bar screen](menu-bar-screen)  
+[SCREEN DEPTH](screen-depth)  
 
 ## プロパティ
 

@@ -42,7 +42,7 @@ In the *process* parameter, you can specify the worker using its process name or
 
 **Note:** The **main process**, created by 4D for the user interface and the application mode when a database is opened, is a worker process and can be called by **CALL WORKER**. However, since its name can vary depending on the 4D language, it is preferable to designate this process using its number (always 1) when you use **CALL WORKER**.
 
-The worker process appears in the list of processes of the Runtime Explorer and is returned by the [Process info](../commands/process-info.md) command when applied to this process.
+The worker process appears in the list of processes of the Runtime Explorer and is returned by the [Process info](../commands/process-info) command when applied to this process.
 
 In *formula*, you designate the 4D code to execute in the context of the worker process. You can pass either:
 
@@ -50,13 +50,13 @@ In *formula*, you designate the 4D code to execute in the context of the worker 
 * a **string** containing the name of a project method. You can pass an empty string; in this case, the worker executes the method that was originally used to start its process, if any (i.e., the startup method of the worker).  
 **Note:** It is not possible to pass an empty string in *formula* when the command calls the main process (process number 1) since it was not started using a project method. As a result, **CALL WORKER* (1;"")* does nothing.
 
-You can also pass parameters to the *formula* using one or more optional *param* parameters. You can use [sequential parameters ($1, $2...)](../API/FunctionClass.md#passing-parameters) or, if the formula expression is a function or a project method, [named parameters](../Concepts/parameters.md). Upon starting execution in the context of the process, the process formula receives the parameter values either in the named parameters, or in *$1*, *$2*, and so on. Remember that arrays cannot be passed as parameters. Furthermore, in the context of the **CALL WORKER** command, the following additional considerations need to be taken into account:
+You can also pass parameters to the *formula* using one or more optional *param* parameters. You can use [sequential parameters ($1, $2...)](../API/FunctionClass.md#passing-parameters) or, if the formula expression is a function or a project method, [named parameters](../Concepts/parameters). Upon starting execution in the context of the process, the process formula receives the parameter values either in the named parameters, or in *$1*, *$2*, and so on. Remember that arrays cannot be passed as parameters. Furthermore, in the context of the **CALL WORKER** command, the following additional considerations need to be taken into account:
 
 * Pointers to tables or fields are allowed.
 * Pointers to variables, particularly local and process variables, are not recommended since these variables may be undefined at the moment they are being accessed by the process method.
-* Standard object or collection type parameters are passed **by copy**, *i.e.* 4D will create a copy of the object or the collection in the destination process if the worker is in a process different from the one calling the **CALL WORKER** command. In this context, if you want to pass an object or collection parameter **by reference**, you must use a shared object or collection (see [Shared objects and shared collections](../Concepts/shared.md)).
+* Standard object or collection type parameters are passed **by copy**, *i.e.* 4D will create a copy of the object or the collection in the destination process if the worker is in a process different from the one calling the **CALL WORKER** command. In this context, if you want to pass an object or collection parameter **by reference**, you must use a shared object or collection (see [Shared objects and shared collections](../Concepts/shared)).
 
-A worker process remains alive until the application is closed or the [KILL WORKER](kill-worker.md) command is explicitly called for it. To free up memory, do not forget to call this command once a worker process is no longer needed.
+A worker process remains alive until the application is closed or the [KILL WORKER](kill-worker) command is explicitly called for it. To free up memory, do not forget to call this command once a worker process is no longer needed.
 
 ## Example 
 
@@ -87,9 +87,9 @@ The code of *workerMethod* is:
 ## See also 
 
 *About workers*  
-[CALL FORM](call-form.md)  
-[Current process name](current-process-name.md)  
-[KILL WORKER](kill-worker.md)  
+[CALL FORM](call-form)  
+[Current process name](current-process-name)  
+[KILL WORKER](kill-worker)  
 
 ## Properties
 

@@ -63,11 +63,11 @@ This example sets the font style to Plain for all form objects with names starti
 
 ## See also 
 
-[OBJECT Get font style](object-get-font-style.md)  
-[OBJECT SET FONT](object-set-font.md)  
-[OBJECT SET FONT SIZE](object-set-font-size.md)  
+[OBJECT Get font style](object-get-font-style)  
+[OBJECT SET FONT](object-set-font)  
+[OBJECT SET FONT SIZE](object-set-font-size)  
 *Programming Notes*  
-[SET LIST ITEM PROPERTIES](set-list-item-properties.md)  
+[SET LIST ITEM PROPERTIES](set-list-item-properties)  
 
 ## Properties
 

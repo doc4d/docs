@@ -55,8 +55,8 @@ En una de sus rutinas, usted incluyó el código de depuración de la base, úti
 
 ## Ver también 
 
-[IDLE](idle.md)  
-[Undefined](undefined.md)  
+[IDLE](idle)  
+[Undefined](undefined)  
 
 ## Propiedades
 

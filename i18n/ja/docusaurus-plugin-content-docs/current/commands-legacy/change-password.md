@@ -42,8 +42,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[CHANGE CURRENT USER](change-current-user.md)  
-[OBJECT SET FONT](object-set-font.md)  
+[CHANGE CURRENT USER](change-current-user)  
+[OBJECT SET FONT](object-set-font)  
 
 ## プロパティ
 

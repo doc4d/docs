@@ -169,7 +169,7 @@ If the command has been executed correctly, the system variable OK returns 1\. O
 
 ## See also 
 
-[SQL LOAD RECORD](sql-load-record.md)  
+[SQL LOAD RECORD](sql-load-record)  
 
 ## Properties
 

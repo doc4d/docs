@@ -47,7 +47,7 @@ Se o parâmetro *numFilas* excede o número de linhas de tabelas nas arrays do l
 
 ## Ver também 
 
-[LISTBOX DELETE ROWS](listbox-delete-rows.md)  
+[LISTBOX DELETE ROWS](listbox-delete-rows)  
 
 ## Propriedades
 

@@ -45,7 +45,7 @@ If you pass an invalid *property* parameter, the error -9852 will be generated.
 
 ## See also 
 
-[QR SET AREA PROPERTY](qr-set-area-property.md)  
+[QR SET AREA PROPERTY](qr-set-area-property)  
 
 ## Properties
 

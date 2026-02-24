@@ -32,8 +32,8 @@ Este ejemplo asigna primero Verdadero a una variable, luego cambia el valor de l
 
 ## Ver también 
 
-[False](false.md)  
-[True](true.md)  
+[False](false)  
+[True](true)  
 
 ## Propiedades
 

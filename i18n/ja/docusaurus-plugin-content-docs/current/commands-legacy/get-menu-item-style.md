@@ -58,7 +58,7 @@ Get menu item style はテーマの定義済み定数 (ひとつまたは和) �
 
 ## 参照 
 
-[SET MENU ITEM STYLE](set-menu-item-style.md)  
+[SET MENU ITEM STYLE](set-menu-item-style)  
 
 ## プロパティ
 

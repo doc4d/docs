@@ -76,7 +76,7 @@ Note that for text areas (as well as inputs), unlike for rectangles, the corner 
 
 ## Ver também 
 
-[OBJECT Get corner radius](object-get-corner-radius.md)  
+[OBJECT Get corner radius](object-get-corner-radius)  
 
 ## Propriedades
 

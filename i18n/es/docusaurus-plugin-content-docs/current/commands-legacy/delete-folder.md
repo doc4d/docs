@@ -54,7 +54,7 @@ Puede interceptar estos errores utilizando un método instalado por el comando [
 ## Ver también 
 
   
-[DELETE DOCUMENT](delete-document.md)  
+[DELETE DOCUMENT](delete-document)  
 
 ## Propiedades
 

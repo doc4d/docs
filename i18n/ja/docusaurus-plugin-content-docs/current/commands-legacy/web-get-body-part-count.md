@@ -31,11 +31,11 @@ displayed_sidebar: docs
 
 ## 例題 
 
-[WEB GET BODY PART](web-get-body-part.md) コマンドの例題を参照してください。 
+[WEB GET BODY PART](web-get-body-part) コマンドの例題を参照してください。 
 
 ## 参照 
 
-[WEB GET BODY PART](web-get-body-part.md)  
+[WEB GET BODY PART](web-get-body-part)  
 
 ## プロパティ
 

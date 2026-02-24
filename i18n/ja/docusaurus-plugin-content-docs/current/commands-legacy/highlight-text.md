@@ -74,7 +74,7 @@ HIGHLIGHT TEXT コマンドは、サブフォームのコンテキストにお�
 
 ## 参照 
 
-[GET HIGHLIGHT](get-highlight.md)  
+[GET HIGHLIGHT](get-highlight)  
 
 ## プロパティ
 

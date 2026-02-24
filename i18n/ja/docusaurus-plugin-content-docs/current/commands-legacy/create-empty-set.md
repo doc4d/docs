@@ -28,8 +28,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[CLEAR SET](clear-set.md)  
-[CREATE SET](create-set.md)  
+[CLEAR SET](clear-set)  
+[CREATE SET](create-set)  
 
 ## プロパティ
 

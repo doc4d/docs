@@ -116,9 +116,9 @@ You need to print in a 400-pixel wide area, a text with a maximum of 80 lines an
 
 ## See also 
 
-[Split string](split-string.md)  
-[ST Get plain text](st-get-plain-text.md)  
-[ST Get text](st-get-text.md)  
+[Split string](split-string)  
+[ST Get plain text](st-get-plain-text)  
+[ST Get text](st-get-text)  
 
 ## Properties
 

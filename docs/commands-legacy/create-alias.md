@@ -78,7 +78,7 @@ The OK system variable is set to 1 if the command execution was successful; othe
 
 ## See also 
 
-[RESOLVE ALIAS](resolve-alias.md)  
+[RESOLVE ALIAS](resolve-alias)  
 
 ## Properties
 

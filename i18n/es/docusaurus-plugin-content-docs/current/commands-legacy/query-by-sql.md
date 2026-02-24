@@ -170,7 +170,7 @@ Si el formato de la condición de búsqueda es correcto, la variable sistema OK 
 
 ## Ver también 
 
-[QUERY BY FORMULA](query-by-formula.md)  
+[QUERY BY FORMULA](query-by-formula)  
 
 ## Propiedades
 

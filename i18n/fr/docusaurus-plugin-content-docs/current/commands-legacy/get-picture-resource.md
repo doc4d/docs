@@ -39,7 +39,7 @@ Si vous passez un numéro de référence de fichier de ressources valide dans *r
 
 ## Exemple 
 
-Reportez-vous à l'exemple de la commande [RESOURCE LIST](resource-list.md).
+Reportez-vous à l'exemple de la commande [RESOURCE LIST](resource-list).
 
 ## Variables et ensembles système 
 

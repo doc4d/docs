@@ -43,8 +43,8 @@ Pase en el parámetro *plugIn* el número del plug-in del que quiere conocer el 
 
 ## Ver también 
 
-[SET GROUP ACCESS](set-group-access.md)  
-[SET PLUGIN ACCESS](set-plugin-access.md)  
+[SET GROUP ACCESS](set-group-access)  
+[SET PLUGIN ACCESS](set-plugin-access)  
 
 ## Propiedades
 

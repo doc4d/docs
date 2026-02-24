@@ -56,7 +56,7 @@ Utilisation d'une image se trouvant dans le dossier Resources de la base :
 
 ## Voir aussi 
 
-[GET MENU ITEM ICON](get-menu-item-icon.md)  
+[GET MENU ITEM ICON](get-menu-item-icon)  
 
 ## Propriétés
 

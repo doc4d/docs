@@ -41,7 +41,7 @@ If the command has been correctly executed, the system variable OK is set to 1\.
 
 ## See also 
 
-[DOM Get XML information](dom-get-xml-information.md)  
+[DOM Get XML information](dom-get-xml-information)  
 
 ## Properties
 

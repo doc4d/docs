@@ -78,7 +78,7 @@ O array *aTPaths* obtém os elementos abaixo:
 ## Ver também 
 
   
-[DISTINCT ATTRIBUTE VALUES](distinct-attribute-values.md)  
+[DISTINCT ATTRIBUTE VALUES](distinct-attribute-values)  
 
 ## Propriedades
 

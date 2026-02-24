@@ -38,7 +38,7 @@ El comando **SELECTION TO ARRAY** se aplica a la selección actual de la tabla d
 
 * Cargar los valores de uno o varios campos.
 * Cargar los números de los registros utilizando la sintaxis *\[tabla\];array*
-* Cargar los valores de los campos relacionados, si hay una relación automática Muchos a Uno entre las tablas o que haya llamado previamente el comando [SET AUTOMATIC RELATIONS](set-automatic-relations.md) para hacer automáticas las relaciones manuales Muchos a Uno. En ambos caso, los valores se cargan de tablas a través de varios niveles de relaciones Muchos a Uno.
+* Cargar los valores de los campos relacionados, si hay una relación automática Muchos a Uno entre las tablas o que haya llamado previamente el comando [SET AUTOMATIC RELATIONS](set-automatic-relations) para hacer automáticas las relaciones manuales Muchos a Uno. En ambos caso, los valores se cargan de tablas a través de varios niveles de relaciones Muchos a Uno.
 
 Cada array es definido de acuerdo al tipo de campo. 
 
@@ -52,13 +52,13 @@ Cuando aplica **SELECTION TO ARRAY** a un campo de tipo Hora, es importante nota
 Si carga los números de registro, se copian en un array de tipo [Entero largo](# "Entre -2 millardos y +2 millardos").
 
 Si pasa el parámetro *\**, 4D no ejecuta inmediatamente la línea de instrucción correspondiente pero la guarda en memoria; de esta forma puede apilar varias líneas que terminen en *\**. El conjunto de las líneas en espera es ejecutado por una instrucción **SELECTION TO ARRAY** final sin parámetro *\**. Por esta razón, ahora el comando puede llamarse sin parámetros. En este caso, los tipos de arrays se verifican al momento de la ejecución de la línea final (sin el parámetro *\**).  
-Como para el comando [QUERY](query.md), este principio permite romper una instrucción compleja en un conjunto de líneas, lo cual es más fácil de leer y mantener. También es posible insertar instrucciones intermedias o crear un array dentro de un bucle (ver el ejemplo 2 del comando [ARRAY TO SELECTION](array-to-selection.md)). 
+Como para el comando [QUERY](query), este principio permite romper una instrucción compleja en un conjunto de líneas, lo cual es más fácil de leer y mantener. También es posible insertar instrucciones intermedias o crear un array dentro de un bucle (ver el ejemplo 2 del comando [ARRAY TO SELECTION](array-to-selection)). 
 
 **4D Server:** el comando **SELECTION TO ARRAY** se optimiza para 4D Server. Cada array se crea en el servidor y luego se envía, en su totalidad, al equipo cliente. 
 
 **Advertencia:** el comando **SELECTION TO ARRAY** puede crear arrays grandes, dependiendo del tamaño de la selección actual y del tamaño de los datos a cargar. Los arrays residen en memoria, de tal manera que es una buena idea probar el resultado después de la ejecución del comando. Para hacer esto, pruebe el tamaño de cada array resultante o utilice un método de proyecto [ON ERR CALL](on-err-call.md).
 
-**Nota:** después de un llamado a **SELECTION TO ARRAY**, la selección y el registro actual no se modifican, pero el registro actual no se carga. Si necesita utilizar los valores de los campos del registro actual, utilice el comando [LOAD RECORD](load-record.md) después del comando **SELECTION TO ARRAY**.
+**Nota:** después de un llamado a **SELECTION TO ARRAY**, la selección y el registro actual no se modifican, pero el registro actual no se carga. Si necesita utilizar los valores de los campos del registro actual, utilice el comando [LOAD RECORD](load-record) después del comando **SELECTION TO ARRAY**.
 
 ## Ejemplo 1 
 
@@ -86,12 +86,12 @@ El mismo ejemplo puede escribirse:
 
 ## Ver también 
 
-[ARRAY TO SELECTION](array-to-selection.md)  
-[CREATE SELECTION FROM ARRAY](create-selection-from-array.md)  
-[MULTI SORT ARRAY](multi-sort-array.md)  
+[ARRAY TO SELECTION](array-to-selection)  
+[CREATE SELECTION FROM ARRAY](create-selection-from-array)  
+[MULTI SORT ARRAY](multi-sort-array)  
 [ON ERR CALL](on-err-call.md)  
-[SELECTION RANGE TO ARRAY](selection-range-to-array.md)  
-[SET AUTOMATIC RELATIONS](set-automatic-relations.md)  
+[SELECTION RANGE TO ARRAY](selection-range-to-array)  
+[SET AUTOMATIC RELATIONS](set-automatic-relations)  
 
 ## Propiedades
 

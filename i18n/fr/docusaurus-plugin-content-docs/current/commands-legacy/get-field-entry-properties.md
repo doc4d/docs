@@ -50,9 +50,9 @@ Si aucune énumération n’est associée au champ, ou si son type n’admet pas
 
 ## Voir aussi 
 
-[GET FIELD PROPERTIES](get-field-properties.md)  
-[GET RELATION PROPERTIES](get-relation-properties.md)  
-[GET TABLE PROPERTIES](get-table-properties.md)  
+[GET FIELD PROPERTIES](get-field-properties)  
+[GET RELATION PROPERTIES](get-relation-properties)  
+[GET TABLE PROPERTIES](get-table-properties)  
 
 ## Propriétés
 

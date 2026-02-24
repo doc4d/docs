@@ -157,19 +157,19 @@ Ver los ejemplos de los comandos [RECEIVE BUFFER](receive-buffer.md "RECEIVE BUF
 
 #### Ver también 
 
-[Append document](append-document.md)  
+[Append document](append-document)  
 *Comunicaciones*  
-[Create document](create-document.md)  
-[GET SERIAL PORT MAPPING](get-serial-port-mapping.md)  
-[Open document](open-document.md)  
-[RECEIVE BUFFER](receive-buffer.md)  
-[RECEIVE PACKET](receive-packet.md)  
-[RECEIVE RECORD](receive-record.md)  
-[RECEIVE VARIABLE](receive-variable.md)  
-[SEND PACKET](send-packet.md)  
-[SEND RECORD](send-record.md)  
-[SEND VARIABLE](send-variable.md)  
-[SET TIMEOUT](set-timeout.md)  
+[Create document](create-document)  
+[GET SERIAL PORT MAPPING](get-serial-port-mapping)  
+[Open document](open-document)  
+[RECEIVE BUFFER](receive-buffer)  
+[RECEIVE PACKET](receive-packet)  
+[RECEIVE RECORD](receive-record)  
+[RECEIVE VARIABLE](receive-variable)  
+[SEND PACKET](send-packet)  
+[SEND RECORD](send-record)  
+[SEND VARIABLE](send-variable)  
+[SET TIMEOUT](set-timeout)  
 
 #### Propiedades
 

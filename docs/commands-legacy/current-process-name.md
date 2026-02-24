@@ -42,8 +42,8 @@ You want to call a worker and pass the calling process name as parameter:
 ## See also 
 
 *About workers*  
-[CALL WORKER](call-worker.md)  
-[KILL WORKER](kill-worker.md)  
+[CALL WORKER](call-worker)  
+[KILL WORKER](kill-worker)  
 
 ## Properties
 

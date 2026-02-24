@@ -33,8 +33,8 @@ For more information on execution levels, see the topic *Cascading Triggers*.
 
 ## See also 
 
-[Trigger event](trigger-event.md)  
-[TRIGGER PROPERTIES](trigger-properties.md)  
+[Trigger event](trigger-event)  
+[TRIGGER PROPERTIES](trigger-properties)  
 *Triggers*  
 
 ## Properties

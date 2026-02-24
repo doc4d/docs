@@ -66,7 +66,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR GET HEADER AND FOOTER](qr-get-header-and-footer.md)  
+[QR GET HEADER AND FOOTER](qr-get-header-and-footer)  
 
 ## プロパティ
 

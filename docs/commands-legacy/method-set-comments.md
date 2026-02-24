@@ -72,7 +72,7 @@ Add a modification date to an existing trigger documentation:
 
 ## See also 
 
-[METHOD GET COMMENTS](method-get-comments.md)  
+[METHOD GET COMMENTS](method-get-comments)  
 
 ## Properties
 

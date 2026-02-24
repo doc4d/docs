@@ -45,7 +45,7 @@ Los parámetros opcionales *anchoMin* y *anchoMax* permiten definir los límites
 
 ## Ver también 
 
-[LISTBOX Get column width](listbox-get-column-width.md)  
+[LISTBOX Get column width](listbox-get-column-width)  
 
 ## Propiedades
 

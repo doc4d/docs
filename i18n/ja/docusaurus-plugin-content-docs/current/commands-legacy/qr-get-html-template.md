@@ -36,7 +36,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR SET HTML TEMPLATE](qr-set-html-template.md)  
+[QR SET HTML TEMPLATE](qr-set-html-template)  
 
 ## プロパティ
 

@@ -51,7 +51,7 @@ O exemplo a seguir exemplo inverte a marca de uma linha de menu:
 
 ## Ver também 
 
-[SET MENU ITEM MARK](set-menu-item-mark.md)  
+[SET MENU ITEM MARK](set-menu-item-mark)  
 
 ## Propriedades
 

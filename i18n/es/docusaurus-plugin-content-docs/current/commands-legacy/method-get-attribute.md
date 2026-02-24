@@ -50,7 +50,7 @@ El comando devuelve **True** si se selecciona un atributo y **False** si se dese
 
 ## Ver también 
 
-[METHOD SET ATTRIBUTE](method-set-attribute.md)  
+[METHOD SET ATTRIBUTE](method-set-attribute)  
 
 ## Propiedades
 

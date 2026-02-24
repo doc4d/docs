@@ -45,7 +45,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR SET AREA PROPERTY](qr-set-area-property.md)  
+[QR SET AREA PROPERTY](qr-set-area-property)  
 
 ## プロパティ
 

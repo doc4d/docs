@@ -39,7 +39,7 @@ Pass **True** in the *contextMenu* parameter to enable the context menu, and **F
 
 ## See also 
 
-[OBJECT Get context menu](object-get-context-menu.md)  
+[OBJECT Get context menu](object-get-context-menu)  
 
 ## Properties
 

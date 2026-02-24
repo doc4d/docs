@@ -39,7 +39,7 @@ O comando retorna como resultado a referência XML do elemento encontrado.
 
 ## Ver também 
 
-[DOM Find XML element](dom-find-xml-element.md)  
+[DOM Find XML element](dom-find-xml-element)  
 
 ## Propriedades
 

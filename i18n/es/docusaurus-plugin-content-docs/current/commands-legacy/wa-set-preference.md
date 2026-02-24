@@ -64,7 +64,7 @@ Para activar la URL suéltela en el área web 'myarea':
 
 ## Ver también 
 
-[WA GET PREFERENCE](wa-get-preference.md)  
+[WA GET PREFERENCE](wa-get-preference)  
 
 ## Propiedades
 

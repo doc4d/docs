@@ -98,7 +98,7 @@ You want to associate a different shortcut depending on the current language of 
 
 ## See also 
 
-[OBJECT GET SHORTCUT](object-get-shortcut.md)  
+[OBJECT GET SHORTCUT](object-get-shortcut)  
 
 ## Properties
 

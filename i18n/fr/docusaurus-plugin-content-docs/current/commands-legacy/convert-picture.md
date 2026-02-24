@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.CONVERT PICTURE.Summary-->La commande **CONVERT PICTURE** convertit *image* dans un nouveau type.<!-- END REF-->
 
-Le paramètre *codec* indique le type d’image à générer. Un codec peut être une extension (par exemple “.gif”) ou un type Mime (par exemple “image/jpg”). Vous pouvez obtenir la liste des codecs disponibles via la commande [PICTURE CODEC LIST](picture-codec-list.md).
+Le paramètre *codec* indique le type d’image à générer. Un codec peut être une extension (par exemple “.gif”) ou un type Mime (par exemple “image/jpg”). Vous pouvez obtenir la liste des codecs disponibles via la commande [PICTURE CODEC LIST](picture-codec-list).
 
 Si le champ ou la variable *image* est de type composé (si par exemple elle est issue d’un copier-coller), seules les informations correspondant au type *codec* sont conservées dans l’image résultante.
 
@@ -60,7 +60,7 @@ Conversion d’une image avec une qualité de 60 % :
 
 ## Voir aussi 
 
-[PICTURE CODEC LIST](picture-codec-list.md)  
+[PICTURE CODEC LIST](picture-codec-list)  
 
 ## Propriétés
 

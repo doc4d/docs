@@ -48,9 +48,9 @@ Si el recurso se encuentra, OK toma el valor 1, de lo contrario toma el valor 0 
 
 ## Ver también 
 
-[Get string resource](get-string-resource.md)  
-[Get text resource](get-text-resource.md)  
-[STRING LIST TO ARRAY](string-list-to-array.md)  
+[Get string resource](get-string-resource)  
+[Get text resource](get-text-resource)  
+[STRING LIST TO ARRAY](string-list-to-array)  
 
 ## Propiedades
 

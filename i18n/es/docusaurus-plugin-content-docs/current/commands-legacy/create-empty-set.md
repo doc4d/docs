@@ -28,8 +28,8 @@ Consulte el ejemplo de la sección *Conjuntos*.
 
 ## Ver también 
 
-[CLEAR SET](clear-set.md)  
-[CREATE SET](create-set.md)  
+[CLEAR SET](clear-set)  
+[CREATE SET](create-set)  
 
 ## Propiedades
 

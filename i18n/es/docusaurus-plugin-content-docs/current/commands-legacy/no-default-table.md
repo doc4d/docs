@@ -54,7 +54,7 @@ En una base que contiene un formulario de proyecto llamado “ElFormulario” y 
 
 ## Ver también 
 
-[DEFAULT TABLE](default-table.md)  
+[DEFAULT TABLE](default-table)  
 
 ## Propiedades
 

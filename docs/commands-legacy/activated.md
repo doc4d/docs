@@ -19,16 +19,16 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Activated.Summary-->The **Activated** command (obsolete) returns **True** in a form method when the window containing the form becomes the frontmost window of the frontmost process.<!-- END REF--> 
 
-**Note:** This command is equivalent to using [Form event code](../commands/form-event-code.md) and testing whether it returns the On Activate event.
+**Note:** This command is equivalent to using [Form event code](../commands/form-event-code) and testing whether it returns the On Activate event.
 
-**WARNING:** Do not place a command such as [TRACE](trace.md) or [ALERT](alert.md)in the **Activated** phase of the form, as this will cause an endless loop.
+**WARNING:** Do not place a command such as [TRACE](trace) or [ALERT](alert)in the **Activated** phase of the form, as this will cause an endless loop.
 
 **Note:** In order for the **Activated** execution cycle to be generated, make sure that the On Activate event property of the form has been selected in the Design environment.
 
 ## See also 
 
-[Deactivated](deactivated.md)  
-[Form event code](../commands/form-event-code.md)  
+[Deactivated](deactivated)  
+[Form event code](../commands/form-event-code)  
 
 ## Properties
 

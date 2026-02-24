@@ -30,9 +30,9 @@ El siguiente ejemplo muestra un proceso llamado Clientes, que se ha ocultado pre
 
 #### Ver también 
 
-[BRING TO FRONT](bring-to-front.md)  
-[HIDE PROCESS](hide-process.md)  
-[Process state](process-state.md)  
+[BRING TO FRONT](bring-to-front)  
+[HIDE PROCESS](hide-process)  
+[Process state](process-state)  
 
 #### Propiedades
 

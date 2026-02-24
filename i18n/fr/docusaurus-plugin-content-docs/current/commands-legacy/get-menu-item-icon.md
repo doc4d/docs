@@ -45,7 +45,7 @@ Si aucune icône n’est associée à la ligne, la commande retourne une valeur 
 
 ## Voir aussi 
 
-[SET MENU ITEM ICON](set-menu-item-icon.md)  
+[SET MENU ITEM ICON](set-menu-item-icon)  
 
 ## Propriétés
 

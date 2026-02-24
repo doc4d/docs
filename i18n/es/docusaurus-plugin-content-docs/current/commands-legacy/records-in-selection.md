@@ -34,7 +34,7 @@ El siguiente ejemplo muestra una técnica de bucle actualmente utilizada para mo
 
 ## Ver también 
 
-[Records in table](records-in-table.md)  
+[Records in table](records-in-table)  
 
 ## Propiedades
 

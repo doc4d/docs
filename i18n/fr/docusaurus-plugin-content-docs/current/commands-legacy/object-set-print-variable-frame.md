@@ -53,7 +53,7 @@ Le paramètre optionnel *fixeSousForm* vous permet de définir une option suppl�
 
 ## Voir aussi 
 
-[OBJECT GET PRINT VARIABLE FRAME](object-get-print-variable-frame.md)  
+[OBJECT GET PRINT VARIABLE FRAME](object-get-print-variable-frame)  
 
 ## Propriétés
 

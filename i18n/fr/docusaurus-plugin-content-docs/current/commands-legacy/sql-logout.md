@@ -34,7 +34,7 @@ Si la connexion a été correctement refermée, la variable système OK prend la
 
 ## Voir aussi 
 
-[SQL LOGIN](sql-login.md)  
+[SQL LOGIN](sql-login)  
 
 ## Propriétés
 

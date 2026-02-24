@@ -56,7 +56,7 @@ Para desinstalar un método de gestión de errores, llame a **ON ERR CALL** de n
 
 Puede identificar errores leyendo la variable sistema Error, la cual contiene el número de código del error. Los códigos de errores se listan en el tema *Códigos de error*. Por ejemplo, puede ver la sección *Errores de sintaxis*. El valor de la variable Error es significativo sólo en el método de gestión de errores; si necesita el código del error en el método que provocó el error, copie la variable Error en su propia variable proceso. También puede acceder a las variables sistema Error method, Error line y Error formula las cuales contienen respectivamente, el nombre del método, el número de línea y el texto de la fórmula donde ocurrió el error (ver [Gestión de errores dentro del método](../Concepts/error-handling.md#handling-errors-within-the-method)).
 
-Puede utilizar el comando [Last errors](../commands/last-errors.md) o [Last errors](../commands/last-errors.md)  para obtener la secuencia de errores (la "pila" de errores) en el origen de la interrupción.
+Puede utilizar el comando [Last errors](../commands/last-errors) o [Last errors](../commands/last-errors)  para obtener la secuencia de errores (la "pila" de errores) en el origen de la interrupción.
 
 El método de gestión de errores debe tratar los errores de manera apropiada o mostrar un mensaje de error al usuario. Los errores pueden ser generados durante los procesos efectuados por:
 
@@ -64,7 +64,7 @@ El método de gestión de errores debe tratar los errores de manera apropiada o 
 * El entorno de 4D; por ejemplo, cuando no tienen suficiente memoria parar llenar un array.
 * El sistema operativo en el cual se ejecuta la base; por ejemplo, disco lleno o errores de entrada/salida.
 
-El comando [ABORT](abort.md) puede utilizarse para terminar el proceso. Si no llama [ABORT](abort.md) en el método de gestión de errores, 4D devuelve el método interrumpido y continúa la ejecución del método. Utilice el comando [ABORT](abort.md) cuando un error no puede recuperarse.
+El comando [ABORT](abort) puede utilizarse para terminar el proceso. Si no llama [ABORT](abort) en el método de gestión de errores, 4D devuelve el método interrumpido y continúa la ejecución del método. Utilice el comando [ABORT](abort) cuando un error no puede recuperarse.
 
 Si ocurre un error en el método de gestión de errores, 4D retoma el control de la gestión de errores. Por lo tanto, debe asegurarse de que el método de gestión de errores no pueda generar un error. Igualmente, no puede utilizar ON ERR CALL dentro del método de gestión de errores.
 
@@ -193,11 +193,11 @@ El siguiente método de gestión de errores ignora las interrupciones del usuari
 
 ## Ver también 
 
-[ABORT](abort.md)  
+[ABORT](abort)  
 *Gestión de errores*  
-[Last errors](../commands/last-errors.md)   
-[Last errors](../commands/last-errors.md)  
-[Method called on error](method-called-on-error.md)  
+[Last errors](../commands/last-errors)   
+[Last errors](../commands/last-errors)  
+[Method called on error](method-called-on-error)  
 *Variables sistema*  
 
 ## Propiedades

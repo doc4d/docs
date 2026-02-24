@@ -46,7 +46,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SET GROUP ACCESS](set-group-access.md)  
+[SET GROUP ACCESS](set-group-access)  
 
 ## プロパティ
 

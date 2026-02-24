@@ -68,8 +68,8 @@ displayed_sidebar: docs
 ## 参照 
 
   
-[FILTER KEYSTROKE](filter-keystroke.md)  
-[Get edited text](get-edited-text.md)  
+[FILTER KEYSTROKE](filter-keystroke)  
+[Get edited text](get-edited-text)  
 
 ## プロパティ
 

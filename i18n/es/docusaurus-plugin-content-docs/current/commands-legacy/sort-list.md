@@ -67,7 +67,7 @@ La lista se ve de esta forma:
 
 #### Ver también 
 
-[Selected list items](selected-list-items.md)  
+[Selected list items](selected-list-items)  
 
 #### Propiedades
 

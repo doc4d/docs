@@ -61,7 +61,7 @@ Vous effectuez une saisie dans un formulaire et vous cliquez sur un bouton qui d
 
 ## Voir aussi 
 
-[Get window title](get-window-title.md)  
+[Get window title](get-window-title)  
 
 ## Propriétés
 

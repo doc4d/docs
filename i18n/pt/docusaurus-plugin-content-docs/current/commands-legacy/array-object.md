@@ -39,7 +39,7 @@ O parâmetro *tam2* é opcional. Se passar, este comando cria um array de duas d
   
 Quando se aplica o comando **ARRAY OBJECT** a um array existente:
 
-* Se amplia seu tamanho, os elementos existentes não se mudam e os novos elementos não estão definidos. Pode provar se um elemento se define utilizando o comando [OB Is defined](ob-is-defined.md).
+* Se amplia seu tamanho, os elementos existentes não se mudam e os novos elementos não estão definidos. Pode provar se um elemento se define utilizando o comando [OB Is defined](ob-is-defined).
 * Se reduzir seu tamanho, se eliminam e perdem os elementos ao "fundo" do array.
 
 ## Exemplo 1 

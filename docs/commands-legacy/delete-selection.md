@@ -60,11 +60,11 @@ If a locked record is encountered during the execution of **DELETE SELECTION**, 
 
 ## See also 
 
-[DISPLAY SELECTION](display-selection.md)  
-[MODIFY SELECTION](modify-selection.md)  
+[DISPLAY SELECTION](display-selection)  
+[MODIFY SELECTION](modify-selection)  
 *Record Locking*  
 *Sets*  
-[TRUNCATE TABLE](truncate-table.md)  
+[TRUNCATE TABLE](truncate-table)  
 
 ## Properties
 

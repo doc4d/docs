@@ -47,8 +47,8 @@ Si el último elemento abierto es *<Book>*, la siguiente instrucción:
 
 ## Ver también 
 
-[SAX OPEN XML ELEMENT](sax-open-xml-element.md)  
-[SAX OPEN XML ELEMENT ARRAYS](sax-open-xml-element-arrays.md)  
+[SAX OPEN XML ELEMENT](sax-open-xml-element)  
+[SAX OPEN XML ELEMENT ARRAYS](sax-open-xml-element-arrays)  
 
 ## Propiedades
 

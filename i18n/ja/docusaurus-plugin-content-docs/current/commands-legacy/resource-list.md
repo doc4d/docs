@@ -80,7 +80,7 @@ RESOURCE LISTを呼び出す前に配列を事前定義する場合は、*resIDs
 
 ## 参照 
 
-[RESOURCE TYPE LIST](resource-type-list.md)  
+[RESOURCE TYPE LIST](resource-type-list)  
 
 ## プロパティ
 

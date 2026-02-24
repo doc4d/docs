@@ -127,8 +127,8 @@ A titre indicatif, voici une liste non exhaustive des champs HTTP pouvant être 
 
 ## Voir aussi 
 
-[WEB GET HTTP BODY](web-get-http-body.md)  
-[WEB SET HTTP HEADER](web-set-http-header.md)  
+[WEB GET HTTP BODY](web-get-http-body)  
+[WEB SET HTTP HEADER](web-set-http-header)  
 
 ## Propriétés
 

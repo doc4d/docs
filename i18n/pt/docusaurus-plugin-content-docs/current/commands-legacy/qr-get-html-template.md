@@ -36,7 +36,7 @@ Se passa um número de *area* inválido, se gera o erro -9850.
 
 ## Ver também 
 
-[QR SET HTML TEMPLATE](qr-set-html-template.md)  
+[QR SET HTML TEMPLATE](qr-set-html-template)  
 
 ## Propriedades
 

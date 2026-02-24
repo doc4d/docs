@@ -77,9 +77,9 @@ displays the alert dialog box (on Windows) shown:
 
 ## See also 
 
-[CONFIRM](confirm.md)  
-[DISPLAY NOTIFICATION](display-notification.md)  
-[Request](request.md)  
+[CONFIRM](confirm)  
+[DISPLAY NOTIFICATION](display-notification)  
+[Request](request)  
 
 ## Properties
 

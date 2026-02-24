@@ -53,7 +53,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OPEN COLOR PICKER](open-color-picker.md)  
+[OPEN COLOR PICKER](open-color-picker)  
 
 ## プロパティ
 

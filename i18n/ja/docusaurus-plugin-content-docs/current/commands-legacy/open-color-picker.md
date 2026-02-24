@@ -39,7 +39,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OPEN FONT PICKER](open-font-picker.md)  
+[OPEN FONT PICKER](open-font-picker)  
 
 ## プロパティ
 

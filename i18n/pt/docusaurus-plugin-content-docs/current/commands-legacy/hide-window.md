@@ -33,10 +33,10 @@ A janela desaparece da tela mas permanece aberta. Mesmo assim é possível aplic
   
 Para mostrar uma janela oculta pelo comando HIDE WINDOW:
 
-* Utilize o comando [SHOW WINDOW](show-window.md) e passe o número de referência da janela.
+* Utilize o comando [SHOW WINDOW](show-window) e passe o número de referência da janela.
 * Utilize a página **Processo** do Explorador de execução. Selecione o processo no qual se manipula a janela, depois clique no botão **Mostrar**.
 
-Para ocultar todas as janelas de um processo, utilize o comando [HIDE PROCESS](hide-process.md).
+Para ocultar todas as janelas de um processo, utilize o comando [HIDE PROCESS](hide-process).
 
 ## Exemplo 
 
@@ -56,7 +56,7 @@ Este exemplo corresponde a um método de um botão localizado em um formulário 
 
 ## Ver também 
 
-[SHOW WINDOW](show-window.md)  
+[SHOW WINDOW](show-window)  
 
 ## Propriedades
 

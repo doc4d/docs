@@ -55,10 +55,10 @@ Le tableau suivant indique les valeurs que vous pouvez passer dans les paramètr
 
 ## Voir aussi 
 
-[LISTBOX Get property](../commands/listbox-get-property.md)  
-[LISTBOX SET GRID](listbox-set-grid.md)  
-[OBJECT GET SCROLLBAR](object-get-scrollbar.md)  
-[OBJECT SET VISIBLE](object-set-visible.md)  
+[LISTBOX Get property](../commands/listbox-get-property)  
+[LISTBOX SET GRID](listbox-set-grid)  
+[OBJECT GET SCROLLBAR](object-get-scrollbar)  
+[OBJECT SET VISIBLE](object-set-visible)  
 
 ## Propriétés
 

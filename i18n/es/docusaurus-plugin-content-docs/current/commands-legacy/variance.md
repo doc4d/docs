@@ -60,7 +60,7 @@ El siguiente método se llama para imprimir los registros en la selección y act
  PRINT SELECTION([Estudiantes])
 ```
 
-**Nota:** el parámetro del comando [BREAK LEVEL](break-level.md) debe ser igual al número de rupturas en su informe. Para mayor información sobre el proceso de rupturas, consulte *Impresión*.
+**Nota:** el parámetro del comando [BREAK LEVEL](break-level) debe ser igual al número de rupturas en su informe. Para mayor información sobre el proceso de rupturas, consulte *Impresión*.
 
 ## Ejemplo 2 
 
@@ -75,10 +75,10 @@ Este ejemplo permite obtener la varianza de valores ubicados en un array:
 
 ## Ver también 
 
-[Average](average.md)  
-[Std deviation](std-deviation.md)  
-[Sum](sum.md)  
-[Sum squares](sum-squares.md)  
+[Average](average)  
+[Std deviation](std-deviation)  
+[Sum](sum)  
+[Sum squares](sum-squares)  
 
 ## Propiedades
 

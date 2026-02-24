@@ -177,9 +177,9 @@ $curValue->:=$vtNewValue
 
 ## 参照 
 
-[FILTER KEYSTROKE](filter-keystroke.md)  
-[Form event code](../commands/form-event-code.md)  
-[Get edited text](get-edited-text.md)  
+[FILTER KEYSTROKE](filter-keystroke)  
+[Form event code](../commands/form-event-code)  
+[Get edited text](get-edited-text)  
 
 ## プロパティ
 

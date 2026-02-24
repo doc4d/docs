@@ -54,9 +54,9 @@ O seguinte exemplo pesquisa as estatísticas corretas para uma concorrência mun
 ## Ver também 
 
 *Conjuntos*  
-[ORDER BY](order-by.md)  
-[QUERY](query.md)  
-[SCAN INDEX](scan-index.md)  
+[ORDER BY](order-by)  
+[QUERY](query)  
+[SCAN INDEX](scan-index)  
 
 ## Propriedades
 

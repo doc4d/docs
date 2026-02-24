@@ -59,7 +59,7 @@ To test if a menu item is displayed in bold, you write:
 
 ## See also 
 
-[SET MENU ITEM STYLE](set-menu-item-style.md)  
+[SET MENU ITEM STYLE](set-menu-item-style)  
 
 ## Properties
 

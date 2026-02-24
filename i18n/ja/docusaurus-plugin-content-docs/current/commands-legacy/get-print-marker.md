@@ -72,8 +72,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT MOVE](object-move.md)  
-[SET PRINT MARKER](set-print-marker.md)  
+[OBJECT MOVE](object-move)  
+[SET PRINT MARKER](set-print-marker)  
 
 ## プロパティ
 

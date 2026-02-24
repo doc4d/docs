@@ -27,7 +27,7 @@ displayed_sidebar: docs
 
 :::info Compatibilidade
 
-Esse comando é mantido apenas por motivos de compatibilidade. Agora é recomendável usar [`4D.HTTPRequest class`](../API/HTTPRequestClass.md).
+Esse comando é mantido apenas por motivos de compatibilidade. Agora é recomendável usar [`4D.HTTPRequest class`](../API/HTTPRequestClass).
 
 :::
 
@@ -49,7 +49,7 @@ Você quer mudar temporalmente a pasta de certificados:
 
 ## Ver também 
 
-[HTTP SET CERTIFICATES FOLDER](http-set-certificates-folder.md)  
+[HTTP SET CERTIFICATES FOLDER](http-set-certificates-folder)  
 
 ## Propriedades
 

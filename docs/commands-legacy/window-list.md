@@ -60,8 +60,8 @@ The following project method tiles all the current open window, except floating 
 
 ## See also 
 
-[Window kind](window-kind.md)  
-[Window process](window-process.md)  
+[Window kind](window-kind)  
+[Window process](window-process)  
 
 ## Properties
 

@@ -95,7 +95,7 @@ Puede abrir un mismo archivo texto con diferentes aplicaciones utilizando el par
 
 ## Ver también 
 
-[LAUNCH EXTERNAL PROCESS](launch-external-process.md)  
+[LAUNCH EXTERNAL PROCESS](launch-external-process)  
 
 ## Propiedades
 

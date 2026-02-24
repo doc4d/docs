@@ -45,7 +45,7 @@ L'exemple suivant utilise la fonction **Char** pour insérer un retour chariot d
 
 ## Voir aussi 
 
-[Character code](character-code.md)  
+[Character code](character-code)  
 *Codes Unicode*  
 *Symboles d'indice de chaîne*  
 

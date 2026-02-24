@@ -59,8 +59,8 @@ This example creates an interprocess array of 50 Real elements and sets each ele
 
 ## See also 
 
-[ARRAY INTEGER](array-integer.md)  
-[ARRAY LONGINT](array-longint.md)  
+[ARRAY INTEGER](array-integer)  
+[ARRAY LONGINT](array-longint)  
 
 ## Properties
 

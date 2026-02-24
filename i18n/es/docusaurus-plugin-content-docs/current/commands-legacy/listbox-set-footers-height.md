@@ -46,7 +46,7 @@ Pase en el parámetro *altura* la altura a definir. Por defecto, si omite el par
 
 ## Ver también 
 
-[LISTBOX Get footers height](listbox-get-footers-height.md)  
+[LISTBOX Get footers height](listbox-get-footers-height)  
 
 ## Propiedades
 

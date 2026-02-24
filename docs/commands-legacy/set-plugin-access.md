@@ -52,9 +52,9 @@ Pass the name of the group whose users are authorized to use the plug-in in *gro
 
 ## See also 
 
-[Get plugin access](get-plugin-access.md)  
-[PLUGIN LIST](plugin-list.md)  
-[SET GROUP ACCESS](set-group-access.md)  
+[Get plugin access](get-plugin-access)  
+[PLUGIN LIST](plugin-list)  
+[SET GROUP ACCESS](set-group-access)  
 
 ## Properties
 

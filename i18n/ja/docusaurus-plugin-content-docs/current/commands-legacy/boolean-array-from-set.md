@@ -43,7 +43,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[CREATE SET FROM ARRAY](create-set-from-array.md)  
+[CREATE SET FROM ARRAY](create-set-from-array)  
 
 ## プロパティ
 

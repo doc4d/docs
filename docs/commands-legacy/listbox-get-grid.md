@@ -38,7 +38,7 @@ In *horizontal* and *vertical*, the command returns the value **True** or **Fals
 
 ## See also 
 
-[LISTBOX SET GRID](listbox-set-grid.md)  
+[LISTBOX SET GRID](listbox-set-grid)  
 
 ## Properties
 

@@ -91,7 +91,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Count parameters](count-parameters.md)  
+[Count parameters](count-parameters)  
 
 ## プロパティ
 

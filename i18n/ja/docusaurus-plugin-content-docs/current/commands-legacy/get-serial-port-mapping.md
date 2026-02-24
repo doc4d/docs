@@ -60,7 +60,7 @@ Mac OS Xでは、USBシリアルアダプターの使用時に、OSがポート�
 
 ## 参照 
 
-[SET CHANNEL](set-channel.md)  
+[SET CHANNEL](set-channel)  
 
 ## プロパティ
 

@@ -48,9 +48,9 @@ Using a scrollable area named *atVolumes* you want to display the list of the vo
 
 ## See also 
 
-[DOCUMENT LIST](document-list.md)  
-[FOLDER LIST](folder-list.md)  
-[VOLUME ATTRIBUTES](volume-attributes.md)  
+[DOCUMENT LIST](document-list)  
+[FOLDER LIST](folder-list)  
+[VOLUME ATTRIBUTES](volume-attributes)  
 
 ## Properties
 

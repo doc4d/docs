@@ -41,8 +41,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Form event code](../commands/form-event-code.md)  
-[LISTBOX MOVED ROW NUMBER](listbox-moved-row-number.md)  
+[Form event code](../commands/form-event-code)  
+[LISTBOX MOVED ROW NUMBER](listbox-moved-row-number)  
 
 ## プロパティ
 

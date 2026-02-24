@@ -36,7 +36,7 @@ The following example illustrates how Trunc works with different arguments. Each
 
 ## See also 
 
-[Round](round.md)  
+[Round](round)  
 
 ## Properties
 

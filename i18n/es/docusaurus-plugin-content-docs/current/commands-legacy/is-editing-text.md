@@ -68,8 +68,8 @@ Desea permitir que el usuario seleccione una línea que comience con la letra o 
 ## Ver también 
 
   
-[FILTER KEYSTROKE](filter-keystroke.md)  
-[Get edited text](get-edited-text.md)  
+[FILTER KEYSTROKE](filter-keystroke)  
+[Get edited text](get-edited-text)  
 
 ## Propiedades
 

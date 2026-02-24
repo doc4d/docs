@@ -60,7 +60,7 @@ displayed_sidebar: docs
 ## 参照 
 
   
-[New data key](new-data-key.md)  
+[New data key](new-data-key)  
 
 ## プロパティ
 

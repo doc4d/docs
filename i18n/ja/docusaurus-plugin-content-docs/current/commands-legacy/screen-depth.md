@@ -71,7 +71,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Count screens](count-screens.md)  
+[Count screens](count-screens)  
 
 ## プロパティ
 

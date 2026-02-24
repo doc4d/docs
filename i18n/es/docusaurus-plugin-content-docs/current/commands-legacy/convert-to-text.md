@@ -43,7 +43,7 @@ Si el comando se ejecuta correctamente, la variable OK toma el valor 1\. De lo c
 
 ## Ver también 
 
-[CONVERT FROM TEXT](convert-from-text.md)  
+[CONVERT FROM TEXT](convert-from-text)  
 
 ## Propiedades
 

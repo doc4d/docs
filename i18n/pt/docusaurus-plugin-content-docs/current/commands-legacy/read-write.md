@@ -29,8 +29,8 @@ Utilize READ WRITE quando tenha que modificar um registro e guardar as mudanças
 
 ## Ver também 
 
-[READ ONLY](read-only.md)  
-[Read only state](read-only-state.md)  
+[READ ONLY](read-only)  
+[Read only state](read-only-state)  
 *Record Locking*  
 
 ## Propriedades

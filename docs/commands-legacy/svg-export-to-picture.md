@@ -61,8 +61,8 @@ The following example can be used to display “Hello World” in a 4D picture:
 
 ## See also 
 
-[DOM EXPORT TO FILE](dom-export-to-file.md)  
-[DOM EXPORT TO VAR](dom-export-to-var.md)  
+[DOM EXPORT TO FILE](dom-export-to-file)  
+[DOM EXPORT TO VAR](dom-export-to-var)  
 
 ## Properties
 

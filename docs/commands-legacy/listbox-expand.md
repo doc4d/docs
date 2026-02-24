@@ -90,7 +90,7 @@ This example illustrates different ways of using the command. Given the followin
 
 ## See also 
 
-[LISTBOX COLLAPSE](listbox-collapse.md)  
+[LISTBOX COLLAPSE](listbox-collapse)  
 
 ## Properties
 

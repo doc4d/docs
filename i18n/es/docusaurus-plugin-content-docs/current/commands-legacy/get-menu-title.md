@@ -38,7 +38,7 @@ Si omite el parámetro *proceso*, Get menu title se aplica a la barra de menús 
 
 ## Ver también 
 
-[Count menus](count-menus.md)  
+[Count menus](count-menus)  
 
 ## Propiedades
 

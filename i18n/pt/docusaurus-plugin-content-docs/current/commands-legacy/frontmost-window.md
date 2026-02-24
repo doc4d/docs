@@ -32,8 +32,8 @@ displayed_sidebar: docs
 
 ## Ver também 
 
-[Frontmost process](frontmost-process.md)  
-[Next window](next-window.md)  
+[Frontmost process](frontmost-process)  
+[Next window](next-window)  
 
 ## Propriedades
 

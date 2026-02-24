@@ -32,7 +32,7 @@ La siguiente línea muestra 1:
 
 ## Ver también 
 
-[Exp](exp.md)  
+[Exp](exp)  
 
 ## Propiedades
 

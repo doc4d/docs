@@ -34,7 +34,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR SET REPORT TABLE](qr-set-report-table.md)  
+[QR SET REPORT TABLE](qr-set-report-table)  
 
 ## プロパティ
 

@@ -36,8 +36,8 @@ This command can be used to detect any field deletions, which create gaps in the
 
 ## See also 
 
-[Last table number](last-table-number.md)  
-[Is table number valid](is-table-number-valid.md)  
+[Last table number](last-table-number)  
+[Is table number valid](is-table-number-valid)  
 
 ## Properties
 

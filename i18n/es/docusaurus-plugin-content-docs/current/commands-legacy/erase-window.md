@@ -38,8 +38,8 @@ No confunda ERASE WINDOW, que borra el contenido de una ventana, con [CLOSE WIND
 
 ## Ver también 
 
-[GOTO XY](goto-xy.md)  
-[MESSAGE](message.md)  
+[GOTO XY](goto-xy)  
+[MESSAGE](message)  
 
 ## Propiedades
 

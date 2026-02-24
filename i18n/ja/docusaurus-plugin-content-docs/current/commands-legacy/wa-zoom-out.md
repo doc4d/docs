@@ -37,7 +37,7 @@ Windows では、このコマンドのスコープはグローバルです。4D 
 
 ## 参照 
 
-[WA ZOOM IN](wa-zoom-in.md)  
+[WA ZOOM IN](wa-zoom-in)  
 
 ## プロパティ
 

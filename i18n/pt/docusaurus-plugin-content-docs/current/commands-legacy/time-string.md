@@ -36,8 +36,8 @@ O exemplo a seguir mostra uma caixa de alerta com a mensagem, “46 800 segundos
 
 ## Ver também 
 
-[String](../commands/string.md)  
-[Time](time.md)  
+[String](../commands/string)  
+[Time](time)  
 
 ## Propriedades
 

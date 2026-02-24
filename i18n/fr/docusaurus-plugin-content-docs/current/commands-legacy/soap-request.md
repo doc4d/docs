@@ -34,7 +34,7 @@ Cette commande peut être utilisée pour des raisons de sécurité dans la *Mét
 
 ## Voir aussi 
 
-[SOAP DECLARATION](soap-declaration.md)  
+[SOAP DECLARATION](soap-declaration)  
 
 ## Propriétés
 

@@ -77,7 +77,7 @@ The vNAME variable contains ROBERT and the vCITY variable contains DALLAS.
 
 ## See also 
 
-[WEB GET BODY PART](web-get-body-part.md)  
+[WEB GET BODY PART](web-get-body-part)  
 
 ## Properties
 

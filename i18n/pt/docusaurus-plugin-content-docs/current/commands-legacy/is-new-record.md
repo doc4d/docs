@@ -50,8 +50,8 @@ As duas instruções a seguir são idênticas. A segunda é recomendada para que
 
 ## Ver também 
 
-[Modified record](modified-record.md)  
-[Record number](record-number.md)  
+[Modified record](modified-record)  
+[Record number](record-number)  
 
 ## Propriedades
 

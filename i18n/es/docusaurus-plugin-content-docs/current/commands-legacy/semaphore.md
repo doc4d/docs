@@ -157,9 +157,9 @@ Sintaxis:
 
 ## Ver también 
 
-[CLEAR SEMAPHORE](clear-semaphore.md)  
+[CLEAR SEMAPHORE](clear-semaphore)  
 *Semáforos y señales*  
-[Test semaphore](test-semaphore.md)  
+[Test semaphore](test-semaphore)  
 
 ## Propiedades
 

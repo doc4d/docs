@@ -31,7 +31,7 @@ displayed_sidebar: docs
 
 Each time returned by **Timestamp** is expressed according to the ISO 8601 standard. For more information about this standard, refer to: <https://en.wikipedia.org/wiki/ISO%5F8601>
 
-**Note:** This function is not suitable for timing purposes; you should use [Milliseconds](milliseconds.md) when you want to measure elapsed time.
+**Note:** This function is not suitable for timing purposes; you should use [Milliseconds](milliseconds) when you want to measure elapsed time.
 
 ## Example 
 
@@ -51,9 +51,9 @@ Result:
 
 ## See also 
 
-[Milliseconds](milliseconds.md)  
-[String](../commands/string.md)  
-[Time](time.md)  
+[Milliseconds](milliseconds)  
+[String](../commands/string)  
+[Time](time)  
 
 ## Properties
 

@@ -80,7 +80,7 @@ Cuando hay un evento de doble clic, se comprueba que no existe en realidad una U
 
 #### Ver también 
 
-[ST INSERT URL](st-insert-url.md)  
+[ST INSERT URL](st-insert-url)  
 
 #### Propiedades
 

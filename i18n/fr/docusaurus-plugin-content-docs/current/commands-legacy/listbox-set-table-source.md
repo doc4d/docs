@@ -49,7 +49,7 @@ Si la list box contenait déjà des colonnes, leur contenu est mis à jour à l�
 
 ## Voir aussi 
 
-[LISTBOX GET TABLE SOURCE](listbox-get-table-source.md)  
+[LISTBOX GET TABLE SOURCE](listbox-get-table-source)  
 
 ## Propriétés
 

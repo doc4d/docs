@@ -36,9 +36,9 @@ Scalar data field types include fields of date/hour, numeric, or string type.
 
 ## See also 
 
-[ADJUST TABLE CACHE PRIORITY](adjust-table-cache-priority.md)  
+[ADJUST TABLE CACHE PRIORITY](adjust-table-cache-priority)  
 *Managing priorities in database cache*  
-[SET TABLE CACHE PRIORITY](set-table-cache-priority.md)  
+[SET TABLE CACHE PRIORITY](set-table-cache-priority)  
 
 ## Properties
 

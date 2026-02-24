@@ -34,8 +34,8 @@ L'exemple suivant est la méthode objet d'un bouton testant si l'enregistrement 
 
 ## Voir aussi 
 
-[ADD TO SET](add-to-set.md)  
-[REMOVE FROM SET](remove-from-set.md)  
+[ADD TO SET](add-to-set)  
+[REMOVE FROM SET](remove-from-set)  
 
 ## Propriétés
 

@@ -68,8 +68,8 @@ Usted desea guardar el contenido de un archivo existente en el campo imagen, alm
 
 ## Ver también 
 
-[Get external data path](get-external-data-path.md)  
-[RELOAD EXTERNAL DATA](reload-external-data.md)  
+[Get external data path](get-external-data-path)  
+[RELOAD EXTERNAL DATA](reload-external-data)  
 
 ## Propiedades
 

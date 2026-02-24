@@ -32,8 +32,8 @@ displayed_sidebar: docs
 
 ## Ver también 
 
-[Count tasks](count-tasks.md)  
-[Count users](count-users.md)  
+[Count tasks](count-tasks)  
+[Count users](count-users)  
 
 ## Propiedades
 

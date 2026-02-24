@@ -33,8 +33,8 @@ O seguinte exemplo mostra um alerta indicando a porcentagem de clientes classifi
 
 ## Ver também 
 
-[Records in selection](records-in-selection.md)  
-[Records in table](records-in-table.md)  
+[Records in selection](records-in-selection)  
+[Records in table](records-in-table)  
 
 ## Propriedades
 

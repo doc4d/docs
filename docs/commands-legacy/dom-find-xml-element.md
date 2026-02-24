@@ -145,8 +145,8 @@ An error is generated when:
 
 ## See also 
 
-[DOM Count XML elements](dom-count-xml-elements.md)  
-[DOM Create XML element](dom-create-xml-element.md)  
+[DOM Count XML elements](dom-count-xml-elements)  
+[DOM Create XML element](dom-create-xml-element)  
 
 ## Properties
 

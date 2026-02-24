@@ -76,7 +76,7 @@ La méthode suivante affiche le contenu et la hauteur des libellés des en-tête
 
 ## Voir aussi 
 
-[QR SET HEADER AND FOOTER](qr-set-header-and-footer.md)  
+[QR SET HEADER AND FOOTER](qr-set-header-and-footer)  
 
 ## Propriétés
 

@@ -34,7 +34,7 @@ Se *boolExpression* for verdadeiro, nada acontece. Se for falso, o comando ativa
 
 Opcionalmente, pode pasar um parâmetro *messageText* para exibir uma mensagem de erro personalizada ao invés do texo da asserção. 
 
-Uma asserção é uma instrução inserida no código que é responsável por detectar qualquer anomalia durante sua execução. O princípio consiste em verificar que uma expressão seja verdadeira em um dado momento e, caso não seja verdadeira, causar uma exceção. Asserções são usadas principalmente para detectar casos que nunca deveriam acontecer, principalmente para detectar bugs de programação. É possível ativar ou desativar globalmente3 todas as asserções de um aplicativo (por exemplo de acordo com o tipo de versão) via o comando [SET ASSERT ENABLED](set-assert-enabled.md) . Para saber mais sobre asserções em programação, veja o artigo na Wikipedia: [http://en.wikipedia.org/wiki/Assertion\_(computing)](http://en.wikipedia.org/wiki/Assertion%5F%28computing%29)
+Uma asserção é uma instrução inserida no código que é responsável por detectar qualquer anomalia durante sua execução. O princípio consiste em verificar que uma expressão seja verdadeira em um dado momento e, caso não seja verdadeira, causar uma exceção. Asserções são usadas principalmente para detectar casos que nunca deveriam acontecer, principalmente para detectar bugs de programação. É possível ativar ou desativar globalmente3 todas as asserções de um aplicativo (por exemplo de acordo com o tipo de versão) via o comando [SET ASSERT ENABLED](set-assert-enabled) . Para saber mais sobre asserções em programação, veja o artigo na Wikipedia: [http://en.wikipedia.org/wiki/Assertion\_(computing)](http://en.wikipedia.org/wiki/Assertion%5F%28computing%29)
 
 ## Exemplo 1 
 
@@ -62,9 +62,9 @@ Uma asserção permite provar os parâmetros passados a um método de projeto pa
 
 ## Ver também 
 
-[Asserted](asserted.md)  
-[Get assert enabled](get-assert-enabled.md)  
-[SET ASSERT ENABLED](set-assert-enabled.md)  
+[Asserted](asserted)  
+[Get assert enabled](get-assert-enabled)  
+[SET ASSERT ENABLED](set-assert-enabled)  
 
 ## Propriedades
 

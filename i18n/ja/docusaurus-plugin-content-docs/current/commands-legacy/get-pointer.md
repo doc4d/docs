@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Get pointer.Summary-->**Get pointer** コマンドは、*varName*に渡した名前を持つ変数へのポインタを返します。<!-- END REF--> 
 
-フィールドへのポインタを取得するには[Field](field.md)を使用します。テーブルへのポインタを取得するには[Table](table.md)を使用します。
+フィールドへのポインタを取得するには[Field](field)を使用します。テーブルへのポインタを取得するには[Table](table)を使用します。
 
 **Note:** **Get pointer** は、例えば*ArrName+"{3}"* のような式や、二次元配列要素 (*ArrName+"{3}{5}"*) を受け入れます。  
 しかしながら変数要素参照(*ArrName+"{myVar}"*) は使用できません。
@@ -62,8 +62,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Field](field.md)  
-[Table](table.md)  
+[Field](field)  
+[Table](table)  
 
 ## プロパティ
 

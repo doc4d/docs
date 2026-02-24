@@ -98,7 +98,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT GET SHORTCUT](object-get-shortcut.md)  
+[OBJECT GET SHORTCUT](object-get-shortcut)  
 
 ## プロパティ
 

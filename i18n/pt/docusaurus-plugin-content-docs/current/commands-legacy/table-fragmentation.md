@@ -42,7 +42,7 @@ Este método lhe permite requisitar a compactação do arquivo de dados no caso 
 
 ## Ver também 
 
-[Compact data file](compact-data-file.md)  
+[Compact data file](compact-data-file)  
 
 ## Propriedades
 

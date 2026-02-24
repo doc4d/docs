@@ -35,9 +35,9 @@ displayed_sidebar: docs
 
 ## Ver também 
 
-[Locked](locked.md)  
+[Locked](locked)  
 *Record Locking*  
-[UNLOAD RECORD](unload-record.md)  
+[UNLOAD RECORD](unload-record)  
 
 ## Propriedades
 

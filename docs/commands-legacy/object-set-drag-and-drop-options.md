@@ -53,7 +53,7 @@ Setting a text area to automatic drag and drop:
 
 ## See also 
 
-[OBJECT GET DRAG AND DROP OPTIONS](object-get-drag-and-drop-options.md)  
+[OBJECT GET DRAG AND DROP OPTIONS](object-get-drag-and-drop-options)  
 
 ## Properties
 

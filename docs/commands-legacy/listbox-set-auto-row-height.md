@@ -67,9 +67,9 @@ You want to set the minimum and maximum heights for a list box with an automatic
 
 ## See also 
 
-[LISTBOX Get auto row height](listbox-get-auto-row-height.md)  
-[LISTBOX SET ROW HEIGHT](listbox-set-row-height.md)  
-[LISTBOX SET ROWS HEIGHT](listbox-set-rows-height.md)  
+[LISTBOX Get auto row height](listbox-get-auto-row-height)  
+[LISTBOX SET ROW HEIGHT](listbox-set-row-height)  
+[LISTBOX SET ROWS HEIGHT](listbox-set-rows-height)  
 
 ## Properties
 

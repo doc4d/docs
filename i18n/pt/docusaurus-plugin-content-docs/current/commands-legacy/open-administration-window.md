@@ -60,7 +60,7 @@ Se o comando foi executado corretamente, a variável de sistema OK é definida c
 
 ## Ver também 
 
-[OPEN SECURITY CENTER](open-security-center.md)  
+[OPEN SECURITY CENTER](open-security-center)  
 
 ## Propriedades
 

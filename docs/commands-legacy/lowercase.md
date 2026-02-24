@@ -60,7 +60,7 @@ This example compares the results obtained according to whether or not the *\** 
 
 ## See also 
 
-[Uppercase](uppercase.md)  
+[Uppercase](uppercase)  
 
 ## Properties
 

@@ -113,8 +113,8 @@ Depois pode adicionar outras mensagens executando o comando **CALL FORM** novame
 ## Ver também 
 
   
-[CALL WORKER](call-worker.md)  
-[DIALOG](../commands/dialog.md)  
+[CALL WORKER](call-worker)  
+[DIALOG](../commands/dialog)  
 
 ## Propriedades
 

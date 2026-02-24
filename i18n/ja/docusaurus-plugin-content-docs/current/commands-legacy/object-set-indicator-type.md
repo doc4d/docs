@@ -45,7 +45,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OBJECT Get indicator type](object-get-indicator-type.md)  
+[OBJECT Get indicator type](object-get-indicator-type)  
 
 ## プロパティ
 

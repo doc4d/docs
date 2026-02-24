@@ -89,7 +89,7 @@ RESOURCE TYPE LISTを呼び出す前に、*resTypes*配列を文字列配列ま�
 
 ## 参照 
 
-[RESOURCE LIST](resource-list.md)  
+[RESOURCE LIST](resource-list)  
 
 ## プロパティ
 

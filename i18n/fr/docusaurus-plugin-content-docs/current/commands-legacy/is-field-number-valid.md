@@ -35,8 +35,8 @@ Cette commande permet de détecter d’éventuelles suppressions de champs, ce q
 
 ## Voir aussi 
 
-[Last table number](last-table-number.md)  
-[Is table number valid](is-table-number-valid.md)  
+[Last table number](last-table-number)  
+[Is table number valid](is-table-number-valid)  
 
 ## Propriétés
 

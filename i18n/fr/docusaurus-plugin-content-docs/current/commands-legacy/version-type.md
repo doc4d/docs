@@ -56,8 +56,8 @@ Ce test permet d’exécuter du code différent selon que la version est une app
 
 ## Voir aussi 
 
-[Application type](application-type.md)  
-[Application version](application-version.md)  
+[Application type](application-type)  
+[Application version](application-version)  
 
 ## Propriétés
 

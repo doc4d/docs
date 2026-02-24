@@ -30,7 +30,7 @@ displayed_sidebar: docs
 * Os elementos de linguagem 4D podem ser convertidos a equivalentes de linguagem 4D tokenizados
 * Os equivalentes da linguagem 4D tokenizados podem ser convertidos a elementos de linguagem 4D
 
-**\*** **As estruturas virtuais são definidas utilizando os comandos [SET TABLE TITLES](set-table-titles.md) e [SET FIELD TITLES](set-field-titles.md) (\** **parâmetro requerido).* 
+**\*** **As estruturas virtuais são definidas utilizando os comandos [SET TABLE TITLES](set-table-titles) e [SET FIELD TITLES](set-field-titles) (\** **parâmetro requerido).* 
 
 **\*\*** **Os equivalentes tokenizados são elementos* **de estrutura* *e da linguagem 4D em texto sem formato expressos ​​com a sintaxe do token, como é mostrado abaixo (consulte também* *Usar tokens em fórmulas):* 
 
@@ -104,9 +104,9 @@ O parâmetro opcional *mensagemE* *rro* receberá uma mensagem de erro se houver
 
 ## Ver também 
 
-[Formula from string](../commands/formula-from-string.md)  
-[SET FIELD TITLES](set-field-titles.md)  
-[SET TABLE TITLES](set-table-titles.md)  
+[Formula from string](../commands/formula-from-string)  
+[SET FIELD TITLES](set-field-titles)  
+[SET TABLE TITLES](set-table-titles)  
 *Usar tokens em fórmulas*  
 
 ## Propriedades

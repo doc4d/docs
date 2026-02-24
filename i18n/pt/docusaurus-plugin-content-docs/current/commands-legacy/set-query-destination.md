@@ -82,7 +82,7 @@ Você especifica o destino da pesquisa no parâmetro opcional *destinoObjeto* de
 **Notas:**
 
 * Se a seleção temporária não existe de antemão, se criará automaticamente ao final da pesquisa.
-* Este comando administra as seleções temporárias como o comando [CUT NAMED SELECTION](cut-named-selection.md): só são conservadas as referências. Uma vez se utiliza a seleção temporal, já não existe.
+* Este comando administra as seleções temporárias como o comando [CUT NAMED SELECTION](cut-named-selection): só são conservadas as referências. Uma vez se utiliza a seleção temporal, já não existe.
 
  Com: 
 
@@ -98,24 +98,24 @@ Ou:
  SET QUERY DESTINATION(Into variable;"";->$vlResult)
 ```
 
-**Nota**: este segunda sintaxe facilita o uso conjunto do comando com [GET QUERY DESTINATION](get-query-destination.md).   
+**Nota**: este segunda sintaxe facilita o uso conjunto do comando com [GET QUERY DESTINATION](get-query-destination).   
   
 O número de registros encontrado pela pesquisa será localizado na variável *$vlResult*. A seleção atual e o registro atual para a tabela na que se realiza a pesquisa permanecem iguais.  
   
 **Advertência**: **SET QUERY DESTINATION** afeta todas as pesquisas seguintes no processo atual. Lembre sempre de compensar uma chamada a **SET QUERY DESTINATION**(onde *destinoTipe#0*) com uma chamada a **SET QUERY DESTINATION**(0) para restaurar o modo de pesquisa padrão.  
   
 **SET QUERY DESTINATION** muda apenas o comportamento dos comandos de pesquisa, ou seja:  
-* [QUERY](query.md)
-* [QUERY SELECTION](query-selection.md)
-* [QUERY BY EXAMPLE](query-by-example.md)
-* [QUERY BY FORMULA](query-by-formula.md)
-* [QUERY BY SQL](query-by-sql.md)
-* [QUERY SELECTION BY FORMULA](query-selection-by-formula.md)
-* [QUERY SELECTION WITH ARRAY](query-selection-with-array.md)
-* [QUERY WITH ARRAY](query-with-array.md)
-* [QUERY BY ATTRIBUTE](query-by-attribute.md)
-* [QUERY SELECTION BY ATTRIBUTE](query-selection-by-attribute.md)
-Por outro lado, **SET QUERY DESTINATION** não afeta outros comandos que modificam a seleção atual da tabela como [ALL RECORDS](all-records.md), [RELATE MANY](relate-many.md), etc.
+* [QUERY](query)
+* [QUERY SELECTION](query-selection)
+* [QUERY BY EXAMPLE](query-by-example)
+* [QUERY BY FORMULA](query-by-formula)
+* [QUERY BY SQL](query-by-sql)
+* [QUERY SELECTION BY FORMULA](query-selection-by-formula)
+* [QUERY SELECTION WITH ARRAY](query-selection-with-array)
+* [QUERY WITH ARRAY](query-with-array)
+* [QUERY BY ATTRIBUTE](query-by-attribute)
+* [QUERY SELECTION BY ATTRIBUTE](query-selection-by-attribute)
+Por outro lado, **SET QUERY DESTINATION** não afeta outros comandos que modificam a seleção atual da tabela como [ALL RECORDS](all-records), [RELATE MANY](relate-many), etc.
 
 ## Exemplo 1 
 
@@ -259,15 +259,15 @@ Depois de implementar este método de projeto em sua aplicação, pode escrever:
 
 ## Ver também 
 
-[GET QUERY DESTINATION](get-query-destination.md)  
-[QUERY](query.md)  
-[QUERY BY EXAMPLE](query-by-example.md)  
-[QUERY BY FORMULA](query-by-formula.md)  
-[QUERY BY SQL](query-by-sql.md)  
-[QUERY SELECTION](query-selection.md)  
-[QUERY SELECTION BY FORMULA](query-selection-by-formula.md)  
-[QUERY WITH ARRAY](query-with-array.md)  
-[SET QUERY LIMIT](set-query-limit.md)  
+[GET QUERY DESTINATION](get-query-destination)  
+[QUERY](query)  
+[QUERY BY EXAMPLE](query-by-example)  
+[QUERY BY FORMULA](query-by-formula)  
+[QUERY BY SQL](query-by-sql)  
+[QUERY SELECTION](query-selection)  
+[QUERY SELECTION BY FORMULA](query-selection-by-formula)  
+[QUERY WITH ARRAY](query-with-array)  
+[SET QUERY LIMIT](set-query-limit)  
 
 ## Propriedades
 

@@ -49,7 +49,7 @@ You want to add 100 MB to the current database cache size. You can write:
 
 ## See also 
 
-[Get cache size](get-cache-size.md)  
+[Get cache size](get-cache-size)  
 
 ## Properties
 

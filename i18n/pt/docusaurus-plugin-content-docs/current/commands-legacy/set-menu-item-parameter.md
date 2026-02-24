@@ -51,9 +51,9 @@ Este código oferece um menu que inclui os nomes das janelas abertas e permite r
 
 ## Ver também 
 
-[Dynamic pop up menu](dynamic-pop-up-menu.md)  
-[Get menu item parameter](get-menu-item-parameter.md)  
-[Get selected menu item parameter](get-selected-menu-item-parameter.md)  
+[Dynamic pop up menu](dynamic-pop-up-menu)  
+[Get menu item parameter](get-menu-item-parameter)  
+[Get selected menu item parameter](get-selected-menu-item-parameter)  
 
 ## Propriedades
 

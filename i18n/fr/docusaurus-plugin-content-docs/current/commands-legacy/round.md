@@ -38,7 +38,7 @@ L'exemple suivant illustre la manière dont Arrondi fonctionne dans différents 
 
 ## Voir aussi 
 
-[Trunc](trunc.md)  
+[Trunc](trunc)  
 
 ## Propriétés
 

@@ -64,10 +64,10 @@ This example is a template for a form method. It shows each of the possible even
 
 ## See also 
 
-[ACCUMULATE](accumulate.md)  
-[BREAK LEVEL](break-level.md)  
-[Form event code](../commands/form-event-code.md)  
-[PRINT SELECTION](print-selection.md)  
+[ACCUMULATE](accumulate)  
+[BREAK LEVEL](break-level)  
+[Form event code](../commands/form-event-code)  
+[PRINT SELECTION](print-selection)  
 
 ## Properties
 

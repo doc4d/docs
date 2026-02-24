@@ -57,7 +57,7 @@ Não podem ser combinados as duas sintaxes.
 Se passado um caminho de acesso não válida, o parâmetro *codigo* é deixado vazio e é gerado um erro.   
   
 No texto do *codigo* gerado por este comando: 
-* os nomes dos comandos são escritos em inglês, a não ser que se use uma versão francesa de 4D e tenha sido selecionada a preferência "Usar a linguagem francesa e parâmetros regionais de sistema" (ver [Is a list](is-a-list.md)). Quando utilizar o parâmetro *opção*, o código pode conter tokens da linguagem com o objetivo de que seja independente da linguagem de programação 4D e da versão  (ver mais adiante).
+* os nomes dos comandos são escritos em inglês, a não ser que se use uma versão francesa de 4D e tenha sido selecionada a preferência "Usar a linguagem francesa e parâmetros regionais de sistema" (ver [Is a list](is-a-list)). Quando utilizar o parâmetro *opção*, o código pode conter tokens da linguagem com o objetivo de que seja independente da linguagem de programação 4D e da versão  (ver mais adiante).
 * Para aumentar a legibilidade do código, o texto é indentado com os caracteres de tabulação em função das estruturas de programação, da mesma forma que no editor de métodos.
 * Uma linha é adicionada no cabeçalho do código gerado que contém os metadatos utilizados para a importação do código, por exemplo:  
 ```4d  
@@ -66,12 +66,12 @@ No texto do *codigo* gerado por este comando:
     
     
 Durante uma importação, esta linha não se importa, se utiliza para definir os atributos a aplicar (os atributos não especificados se reinicializam a seu valor como padrão). O atributo "lang" define a linguagem de exportação e impede uma importação em uma aplicação na linguagem diferente (neste caso, se gera um erro). O atributo "folder" contém o nome da pasta pai do método; não é mostrada quando o método não tem uma pasta pai.  
-Podem ser definidos atributos adicionais. Para saber mais, consulte o comando [METHOD SET ATTRIBUTES](method-set-attributes.md).
+Podem ser definidos atributos adicionais. Para saber mais, consulte o comando [METHOD SET ATTRIBUTES](method-set-attributes).
 
 O parâmetro *opção* lhe permite seleccionar o modo de exportação do código com respeito aos elementos da linguagem tokenizados dos métodos: 
 
 * Se passar 0 ou omitir o parâmetro *opção*, o código do método se exporta sem tokens, ou seja, da mesma forma que se mostra no editor de métodos.
-* Se passar 1 ou a constante Code with tokens, o código do método se exporta com tokens, ou seja, os elementos tokenizados são seguidos por sua referência interna no conteúdo do *código* exportado. Por exemplo, a expressão"[String](../commands/string.md)(a)" se exporta "[String](../commands/string.md):C10(a)", donde "C10" é a referência interna do comando [String](../commands/string.md).
+* Se passar 1 ou a constante Code with tokens, o código do método se exporta com tokens, ou seja, os elementos tokenizados são seguidos por sua referência interna no conteúdo do *código* exportado. Por exemplo, a expressão"[String](../commands/string)(a)" se exporta "[String](../commands/string):C10(a)", donde "C10" é a referência interna do comando [String](../commands/string).
 
 Os elementos tokenizados da linguagem incluem:
 
@@ -79,13 +79,13 @@ Os elementos tokenizados da linguagem incluem:
 * os nomes de tabelas e campos,
 * os comandos de plug-ins 4D.
 
-O código exportado com seus tokens faz com que seja independente da linguagem de programação 4D, e também de qualquer mudança de nome poesterior dos elmentos da linguagem. Graças aos tokens, o código proporcionado em forma de texto sempre será interpretado corretamente por 4D, por exemplo usando o comando [METHOD SET CODE](method-set-code.md) ou por copiar/colar. Para saber mais sobre a sintaxe tokens tokens 4D, consulte *Usar tokens em fórmulas*.
+O código exportado com seus tokens faz com que seja independente da linguagem de programação 4D, e também de qualquer mudança de nome poesterior dos elmentos da linguagem. Graças aos tokens, o código proporcionado em forma de texto sempre será interpretado corretamente por 4D, por exemplo usando o comando [METHOD SET CODE](method-set-code) ou por copiar/colar. Para saber mais sobre a sintaxe tokens tokens 4D, consulte *Usar tokens em fórmulas*.
 
 Se o comando for executado desde um componente, se aplica como padrão para os métodos do componente. Se passar o parâmetro *\**, acessa aos métodos do banco de dados local.
 
 ## Exemplo 1 
 
-Consulte o exemplo do comando [METHOD SET CODE](method-set-code.md).
+Consulte o exemplo do comando [METHOD SET CODE](method-set-code).
 
 ## Exemplo 2 
 
@@ -138,7 +138,7 @@ O documento resultante conterá:
 
 ## Ver também 
 
-[METHOD SET CODE](method-set-code.md)  
+[METHOD SET CODE](method-set-code)  
 *Usar tokens em fórmulas*  
 
 ## Propriedades

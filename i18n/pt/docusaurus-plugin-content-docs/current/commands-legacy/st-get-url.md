@@ -80,7 +80,7 @@ Quando há um evento de duplo clique, se comprova que não existe em realidade u
 
 ## Ver também 
 
-[ST INSERT URL](st-insert-url.md)  
+[ST INSERT URL](st-insert-url)  
 
 ## Propriedades
 

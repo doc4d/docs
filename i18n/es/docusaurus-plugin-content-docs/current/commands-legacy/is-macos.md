@@ -43,8 +43,8 @@ Usted desea determinar si el sistema operativo actual es macOS:
 
 ## Ver también 
 
-[System info](system-info.md)  
-[Is Windows](is-windows.md)  
+[System info](system-info)  
+[Is Windows](is-windows)  
 
 ## Propiedades
 

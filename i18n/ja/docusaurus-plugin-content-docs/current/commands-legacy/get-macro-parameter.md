@@ -45,7 +45,7 @@ Full method textを*selector*に渡すと、メソッドのテキストはすべ
 
 ## 参照 
 
-[SET MACRO PARAMETER](set-macro-parameter.md)  
+[SET MACRO PARAMETER](set-macro-parameter)  
 
 ## プロパティ
 

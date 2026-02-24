@@ -51,7 +51,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QUERY SELECTION WITH ARRAY](query-selection-with-array.md)  
+[QUERY SELECTION WITH ARRAY](query-selection-with-array)  
 
 ## プロパティ
 

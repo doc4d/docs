@@ -77,7 +77,7 @@ WEBFORMメソッド以下のように記述します。
 
 ## 参照 
 
-[WEB GET BODY PART](web-get-body-part.md)  
+[WEB GET BODY PART](web-get-body-part)  
 
 ## プロパティ
 

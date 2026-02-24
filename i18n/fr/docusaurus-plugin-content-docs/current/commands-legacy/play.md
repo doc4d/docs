@@ -68,7 +68,7 @@ Exemple de son système sous macOS :
 
 ## Voir aussi 
 
-[BEEP](beep.md)  
+[BEEP](beep)  
 
 ## Propriétés
 

@@ -49,8 +49,8 @@ At startup on Windows, you need to check if a DLL Library is correctly located a
 
 ## See also 
 
-[Data file](data-file.md)  
-[Structure file](structure-file.md)  
+[Data file](data-file)  
+[Structure file](structure-file)  
 
 ## Properties
 

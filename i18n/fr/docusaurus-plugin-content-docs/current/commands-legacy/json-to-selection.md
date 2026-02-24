@@ -79,7 +79,7 @@ Utilisation de la commande **JSON TO SELECTION** pour ajouter des enregistrement
 
 ## Voir aussi 
 
-[Selection to JSON](selection-to-json.md)  
+[Selection to JSON](selection-to-json)  
 
 ## Propriétés
 

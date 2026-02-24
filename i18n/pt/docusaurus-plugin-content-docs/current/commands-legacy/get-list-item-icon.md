@@ -48,8 +48,8 @@ Se nenhum ícone está associado ao elemento, a variável ícone seja retornada 
 
 ## Ver também 
 
-[GET LIST ITEM PROPERTIES](get-list-item-properties.md)  
-[SET LIST ITEM ICON](set-list-item-icon.md)  
+[GET LIST ITEM PROPERTIES](get-list-item-properties)  
+[SET LIST ITEM ICON](set-list-item-icon)  
 
 ## Propriedades
 

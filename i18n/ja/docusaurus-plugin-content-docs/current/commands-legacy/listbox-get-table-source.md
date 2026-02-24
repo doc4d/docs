@@ -44,7 +44,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX SET TABLE SOURCE](listbox-set-table-source.md)  
+[LISTBOX SET TABLE SOURCE](listbox-set-table-source)  
 
 ## プロパティ
 

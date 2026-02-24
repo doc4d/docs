@@ -91,7 +91,7 @@ MyMethod内でCount parametersを使用し、実際の引数の数を取得し�
 
 ## 参照 
 
-[Copy parameters](copy-parameters.md)  
+[Copy parameters](copy-parameters)  
 *コンパイラコマンド*  
 
 ## プロパティ

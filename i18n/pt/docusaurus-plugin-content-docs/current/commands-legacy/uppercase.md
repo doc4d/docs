@@ -49,7 +49,7 @@ Ver o exemplo para [Lowercase](lowercase.md "Lowercase").
 
 ## Ver também 
 
-[Lowercase](lowercase.md)  
+[Lowercase](lowercase)  
 
 ## Propriedades
 

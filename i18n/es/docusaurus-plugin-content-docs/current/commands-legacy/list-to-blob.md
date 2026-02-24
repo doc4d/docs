@@ -53,10 +53,10 @@ Ver el ejemplo del comando [BLOB to list](blob-to-list.md "BLOB to list").
 
 ## Ver también 
 
-[BLOB to list](blob-to-list.md)  
-[BLOB TO VARIABLE](blob-to-variable.md)  
-[SAVE LIST](save-list.md)  
-[VARIABLE TO BLOB](variable-to-blob.md)  
+[BLOB to list](blob-to-list)  
+[BLOB TO VARIABLE](blob-to-variable)  
+[SAVE LIST](save-list)  
+[VARIABLE TO BLOB](variable-to-blob)  
 
 ## Propiedades
 

@@ -38,7 +38,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Set user properties.Summary-->**Set user properties** vous permet de modifier et de mettre à jour les propriétés d'un compte actif d'utilisateur existant dont le numéro de référence est passé dans le paramètre *réfUtilisateur*, ou d'ajouter un nouvel utilisateur.<!-- END REF-->
 
-Si vous modifiez les propriétés d'un utilisateur existant, vous devez passer le numéro de référence qui vous est renvoyé par la commande [GET USER LIST](get-user-list.md).
+Si vous modifiez les propriétés d'un utilisateur existant, vous devez passer le numéro de référence qui vous est renvoyé par la commande [GET USER LIST](get-user-list).
 
 Pour ajouter un nouvel utilisateur, il faut passer -1 à *réfUtilisateur* (voir les notes ci-dessous pour les bases binaires).
 
@@ -50,7 +50,7 @@ Si le nouveau nom d'utilisateur passé dans *nom* n'est pas unique (un utilisate
 
 **Note :** Les paramètres *nbUtilisation* et *dernièreUtilisation* sont utilisés uniquement dans les bases binaires. lls sont ignorés dans les bases projets.
 
-Si vous ne voulez pas modifier toutes les propriétés de l'utilisateur (à part son groupe, voir ci-dessous), appelez au préalable [GET USER PROPERTIES](get-user-properties.md) et passez les valeurs retournées dans celles que vous ne voulez pas modifier. Si vous ne voulez pas modifier le mot de passe de l'utilisateur, passez \* dans le paramètre *motDePasse*. Cela vous permet de changer les autres propriétés du compte de l’utilisateur, sans changer le mot de passe de ce compte.
+Si vous ne voulez pas modifier toutes les propriétés de l'utilisateur (à part son groupe, voir ci-dessous), appelez au préalable [GET USER PROPERTIES](get-user-properties) et passez les valeurs retournées dans celles que vous ne voulez pas modifier. Si vous ne voulez pas modifier le mot de passe de l'utilisateur, passez \* dans le paramètre *motDePasse*. Cela vous permet de changer les autres propriétés du compte de l’utilisateur, sans changer le mot de passe de ce compte.
 
 Si vous ne passez pas le paramètre optionnel *adhésions*, les adhésions de l'utilisateur restent inchangées. Si vous ne passez pas ce paramètre en cas d'ajout d'un utilisateur, il ne fera partie d'aucun groupe.
 
@@ -66,12 +66,12 @@ Si vous n'avez pas les privilèges d'accès pour appeler **Set user properties**
 
 ## Voir aussi 
 
-[DELETE USER](delete-user.md)  
-[GET GROUP LIST](get-group-list.md)  
-[GET USER LIST](get-user-list.md)  
-[GET USER PROPERTIES](get-user-properties.md)  
-[Is user deleted](is-user-deleted.md)  
-[Validate password](validate-password.md)  
+[DELETE USER](delete-user)  
+[GET GROUP LIST](get-group-list)  
+[GET USER LIST](get-user-list)  
+[GET USER PROPERTIES](get-user-properties)  
+[Is user deleted](is-user-deleted)  
+[Validate password](validate-password)  
 
 ## Propriétés
 

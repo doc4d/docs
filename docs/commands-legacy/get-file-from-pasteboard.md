@@ -52,7 +52,7 @@ The following example can be used to retrieve in an array all the pathnames of t
 
 ## See also 
 
-[SET FILE TO PASTEBOARD](set-file-to-pasteboard.md)  
+[SET FILE TO PASTEBOARD](set-file-to-pasteboard)  
 
 ## Properties
 

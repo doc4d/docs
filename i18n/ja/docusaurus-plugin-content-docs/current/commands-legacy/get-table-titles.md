@@ -35,8 +35,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET FIELD TITLES](get-field-titles.md)  
-[SET TABLE TITLES](set-table-titles.md)  
+[GET FIELD TITLES](get-field-titles)  
+[SET TABLE TITLES](set-table-titles)  
 
 ## プロパティ
 

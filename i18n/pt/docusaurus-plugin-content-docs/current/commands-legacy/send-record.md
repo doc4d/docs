@@ -40,13 +40,13 @@ O registro completo é enviado. Isso significa que imagens e BLOBs armazenados o
 
 ## Exemplo 
 
- Veja o exemplo para o comando [RECEIVE RECORD](receive-record.md).
+ Veja o exemplo para o comando [RECEIVE RECORD](receive-record).
 
 ## Ver também 
 
-[RECEIVE RECORD](receive-record.md)  
-[RECEIVE VARIABLE](receive-variable.md)  
-[SEND VARIABLE](send-variable.md)  
+[RECEIVE RECORD](receive-record)  
+[RECEIVE VARIABLE](receive-variable)  
+[SEND VARIABLE](send-variable)  
 
 ## Propriedades
 

@@ -46,7 +46,7 @@ Le paramètre *titre* retourne l'intitulé de l'en-tête de la colonne.
 
 Le paramètre *objet* retourne le nom du champ ou la formule associé(e) à la colonne.
 
-**Note :** La commande ne tient pas compte de la structure virtuelle éventuellement définie via les commandes [SET TABLE TITLES](set-table-titles.md) et [SET FIELD TITLES](set-field-titles.md). Le nom réel des champs est retourné dans le paramètre *objet*. 
+**Note :** La commande ne tient pas compte de la structure virtuelle éventuellement définie via les commandes [SET TABLE TITLES](set-table-titles) et [SET FIELD TITLES](set-field-titles). Le nom réel des champs est retourné dans le paramètre *objet*. 
 
 Le paramètre *cachée* indique si la colonne est affichée ou masquée :
 
@@ -114,9 +114,9 @@ Vous pouvez écrire :
 
 ## Voir aussi 
 
-[QR Get info row](qr-get-info-row.md)  
-[QR SET INFO COLUMN](qr-set-info-column.md)  
-[QR SET INFO ROW](qr-set-info-row.md)  
+[QR Get info row](qr-get-info-row)  
+[QR SET INFO COLUMN](qr-set-info-column)  
+[QR SET INFO ROW](qr-set-info-row)  
 
 ## Propriétés
 

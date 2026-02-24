@@ -177,7 +177,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[OB Get](ob-get.md)  
+[OB Get](ob-get)  
 *共有オブジェクトと共有コレクション*  
 
 ## プロパティ

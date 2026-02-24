@@ -38,9 +38,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[DELETE USER](delete-user.md)  
-[GET USER PROPERTIES](get-user-properties.md)  
-[Set user properties](set-user-properties.md)  
+[DELETE USER](delete-user)  
+[GET USER PROPERTIES](get-user-properties)  
+[Set user properties](set-user-properties)  
 
 ## プロパティ
 

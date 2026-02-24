@@ -49,8 +49,8 @@ Lorsque vous démarrez votre base sous Windows, vous souhaitez vérifier qu'une 
 
 ## Voir aussi 
 
-[Data file](data-file.md)  
-[Structure file](structure-file.md)  
+[Data file](data-file)  
+[Structure file](structure-file)  
 
 ## Propriétés
 

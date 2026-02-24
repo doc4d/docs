@@ -59,7 +59,7 @@ You want to make sure the font used in a text area is available on the user syst
 
 ## Ver também 
 
-[OBJECT SET FONT](object-set-font.md)  
+[OBJECT SET FONT](object-set-font)  
 
 ## Propriedades
 

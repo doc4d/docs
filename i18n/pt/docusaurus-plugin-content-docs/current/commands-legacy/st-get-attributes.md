@@ -116,7 +116,7 @@ No caso de erro, não modifica a variável. Quando ocorre um erro em uma variáv
 
 ## Ver também 
 
-[ST SET ATTRIBUTES](st-set-attributes.md)  
+[ST SET ATTRIBUTES](st-set-attributes)  
 
 ## Propriedades
 

@@ -39,7 +39,7 @@ Si la couleur a été modifiée, l’événement formulaire On After Edit est g�
 
 ## Voir aussi 
 
-[OPEN FONT PICKER](open-font-picker.md)  
+[OPEN FONT PICKER](open-font-picker)  
 
 ## Propriétés
 

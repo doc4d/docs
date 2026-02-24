@@ -77,10 +77,10 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET LIST ITEM](get-list-item.md)  
-[List item position](list-item-position.md)  
-[SELECT LIST ITEMS BY REFERENCE](select-list-items-by-reference.md)  
-[SET LIST ITEM](set-list-item.md)  
+[GET LIST ITEM](get-list-item)  
+[List item position](list-item-position)  
+[SELECT LIST ITEMS BY REFERENCE](select-list-items-by-reference)  
+[SET LIST ITEM](set-list-item)  
 
 ## プロパティ
 

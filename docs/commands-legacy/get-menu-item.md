@@ -39,8 +39,8 @@ If you omit the *process* parameter, **Get menu item** applies to the menu bar f
 
 ## See also 
 
-[Get menu item key](get-menu-item-key.md)  
-[SET MENU ITEM](set-menu-item.md)  
+[Get menu item key](get-menu-item-key)  
+[SET MENU ITEM](set-menu-item)  
 
 ## Properties
 

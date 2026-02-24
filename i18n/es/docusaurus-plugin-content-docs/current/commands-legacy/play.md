@@ -67,7 +67,7 @@ El siguiente código de ejemplo reproduce un sonido del sistema en macOS:
 
 ## Ver también 
 
-[BEEP](beep.md)  
+[BEEP](beep)  
 
 ## Propiedades
 

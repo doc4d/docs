@@ -60,7 +60,7 @@ Este método de projeto pode ser usado para tratar a mesma porta serial (sem pro
 
 ## Ver também 
 
-[SET CHANNEL](set-channel.md)  
+[SET CHANNEL](set-channel)  
 
 ## Propriedades
 

@@ -61,7 +61,7 @@ El siguiente ejemplo crea un BLOB de 16K lleno de 0xFF:
 
 ## Ver también 
 
-[BLOB size](blob-size.md)  
+[BLOB size](blob-size)  
 
 ## Propiedades
 

@@ -45,7 +45,7 @@ The following example uses **Char** to insert a carriage return within the text 
 
 ## See also 
 
-[Character code](character-code.md)  
+[Character code](character-code)  
 *Character Reference Symbols*  
 *Unicode Codes*  
 

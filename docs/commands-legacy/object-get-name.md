@@ -48,7 +48,7 @@ After the execution of this object method, the *$btnName* variable contains the 
 ## See also 
 
 *Form Objects (Access)*  
-[OBJECT Get pointer](object-get-pointer.md)  
+[OBJECT Get pointer](object-get-pointer)  
 *Objects (Forms)*  
 
 ## Properties

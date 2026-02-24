@@ -28,7 +28,7 @@ displayed_sidebar: docs
 
 ## Note de compatibilité 
 
-<!--REF #_command_.Self.Summary-->Cette commande est conservée pour des raisons de compatibilité uniquement.<!-- END REF--> A compter de la version 12 de 4D, il est conseillé d'utiliser la commande [OBJECT Get pointer](object-get-pointer.md).
+<!--REF #_command_.Self.Summary-->Cette commande est conservée pour des raisons de compatibilité uniquement.<!-- END REF--> A compter de la version 12 de 4D, il est conseillé d'utiliser la commande [OBJECT Get pointer](object-get-pointer).
 
 ## Description 
 
@@ -36,7 +36,7 @@ displayed_sidebar: docs
 
 La fonction **Self** est utilisée pour référencer une variable dans sa propre méthode objet. Elle retourne un pointeur valide si elle est appelée dans une méthode objet ou dans une méthode projet appelée directement ou indirectement par un méthode objet. 
 
-Si **Self** est appelée en-dehors de ce contexte, elle retourne un pointeur [Is nil pointer](is-nil-pointer.md)(*\->\[\]*).
+Si **Self** est appelée en-dehors de ce contexte, elle retourne un pointeur [Is nil pointer](is-nil-pointer)(*\->\[\]*).
 
 **Conseil :** **Self** est très utile lorsque plusieurs objets d'un formulaire doivent effectuer la même action, opérée sur eux-mêmes.
 
@@ -44,13 +44,13 @@ Si **Self** est appelée en-dehors de ce contexte, elle retourne un pointeur [Is
 
 ## Exemple 
 
-Référez-vous à l'exemple de la commande [RESOLVE POINTER](resolve-pointer.md).
+Référez-vous à l'exemple de la commande [RESOLVE POINTER](resolve-pointer).
 
 ## Voir aussi 
 
-[OBJECT Get pointer](object-get-pointer.md)  
-[RESOLVE POINTER](resolve-pointer.md)  
-[This](../commands/this.md)  
+[OBJECT Get pointer](object-get-pointer)  
+[RESOLVE POINTER](resolve-pointer)  
+[This](../commands/this)  
 
 ## Propriétés
 

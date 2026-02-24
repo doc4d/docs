@@ -79,7 +79,7 @@ Uso do comando **JSON TO SELECTION** para adicionar os registros a tabela \[Comp
 
 ## Ver também 
 
-[Selection to JSON](selection-to-json.md)  
+[Selection to JSON](selection-to-json)  
 
 ## Propriedades
 

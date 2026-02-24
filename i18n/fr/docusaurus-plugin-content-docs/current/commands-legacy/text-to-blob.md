@@ -52,7 +52,7 @@ Si vous omettez le paramètre *formatTexte*, par défaut 4D utilise le format Ma
 
 * Les constantes “UTF8” sont utilisables uniquement lorsque l’application fonctionne en mode Unicode.
 * Les constantes “Mac” ne permettent pas de traiter des textes de plus de 32 ko.
-* Si vous souhaitez manipuler des jeux de caractères autres que UTF8, utilisez la commande [CONVERT FROM TEXT](convert-from-text.md).
+* Si vous souhaitez manipuler des jeux de caractères autres que UTF8, utilisez la commande [CONVERT FROM TEXT](convert-from-text).
 
 Le tableau suivant décrit chacun de ces formats :
 
@@ -110,14 +110,14 @@ Après l'exécution de ce code :
 
 ## Voir aussi 
 
-[BLOB to integer](blob-to-integer.md)  
-[BLOB to longint](blob-to-longint.md)  
-[BLOB to real](blob-to-real.md)  
-[BLOB to text](blob-to-text.md)  
-[CONVERT FROM TEXT](convert-from-text.md)  
-[INTEGER TO BLOB](integer-to-blob.md)  
-[LONGINT TO BLOB](longint-to-blob.md)  
-[REAL TO BLOB](real-to-blob.md)  
+[BLOB to integer](blob-to-integer)  
+[BLOB to longint](blob-to-longint)  
+[BLOB to real](blob-to-real)  
+[BLOB to text](blob-to-text)  
+[CONVERT FROM TEXT](convert-from-text)  
+[INTEGER TO BLOB](integer-to-blob)  
+[LONGINT TO BLOB](longint-to-blob)  
+[REAL TO BLOB](real-to-blob)  
 
 ## Propriétés
 

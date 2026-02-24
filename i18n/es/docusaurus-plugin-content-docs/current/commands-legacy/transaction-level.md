@@ -31,8 +31,8 @@ displayed_sidebar: docs
 
 #### Ver también 
 
-[In transaction](in-transaction.md)  
-[START TRANSACTION](start-transaction.md)  
+[In transaction](in-transaction)  
+[START TRANSACTION](start-transaction)  
 *Utilización de transacciones*  
 
 #### Propiedades

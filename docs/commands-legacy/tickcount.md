@@ -31,12 +31,12 @@ displayed_sidebar: docs
 
 ## Example 
 
-See example for the command [Milliseconds](milliseconds.md).
+See example for the command [Milliseconds](milliseconds).
 
 ## See also 
 
-[Current time](current-time.md)  
-[Milliseconds](milliseconds.md)  
+[Current time](current-time)  
+[Milliseconds](milliseconds)  
 
 ## Properties
 

@@ -47,7 +47,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[CREATE SELECTION FROM ARRAY](create-selection-from-array.md)  
+[CREATE SELECTION FROM ARRAY](create-selection-from-array)  
 
 ## プロパティ
 

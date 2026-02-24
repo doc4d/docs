@@ -108,8 +108,8 @@ Utilizando un elemento de array de objetos:
 
 ## Ver también 
 
-[OB Get type](ob-get-type.md)  
-[OB SET NULL](ob-set-null.md)  
+[OB Get type](ob-get-type)  
+[OB SET NULL](ob-set-null)  
 
 ## Propiedades
 

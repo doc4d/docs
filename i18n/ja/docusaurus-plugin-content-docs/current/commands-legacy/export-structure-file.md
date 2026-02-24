@@ -127,7 +127,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[FORM Convert to dynamic](form-convert-to-dynamic.md)  
+[FORM Convert to dynamic](form-convert-to-dynamic)  
 
 ## プロパティ
 

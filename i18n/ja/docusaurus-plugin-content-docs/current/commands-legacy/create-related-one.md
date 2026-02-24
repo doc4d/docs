@@ -25,7 +25,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SAVE RELATED ONE](save-related-one.md)  
+[SAVE RELATED ONE](save-related-one)  
 
 ## プロパティ
 

@@ -29,8 +29,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Not](not.md)  
-[True](true.md)  
+[Not](not)  
+[True](true)  
 
 ## プロパティ
 

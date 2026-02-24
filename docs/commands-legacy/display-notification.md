@@ -52,7 +52,7 @@ Under Windows, the message window remains displayed as long as no activity has b
 
 ## See also 
 
-[ALERT](alert.md)  
+[ALERT](alert)  
 
 ## Properties
 

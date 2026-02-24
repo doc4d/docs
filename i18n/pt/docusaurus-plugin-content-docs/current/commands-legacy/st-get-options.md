@@ -45,7 +45,7 @@ Passe o código da opção a ler no parâmetro *opcao*. O comando devolve em *va
 
 ## Ver também 
 
-[ST SET OPTIONS](st-set-options.md)  
+[ST SET OPTIONS](st-set-options)  
 
 ## Propriedades
 

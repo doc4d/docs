@@ -38,7 +38,7 @@ The following example changes the position of the page numbers on a report so th
 
 ## See also 
 
-[PRINT SELECTION](print-selection.md)  
+[PRINT SELECTION](print-selection)  
 
 ## Properties
 

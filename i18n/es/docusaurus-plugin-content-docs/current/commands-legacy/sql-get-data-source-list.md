@@ -63,9 +63,9 @@ Si el comando se ejecuta correctamente, la variable sistema OK toma el valor 1\.
 
 ## Ver también 
 
-[SQL Get current data source](sql-get-current-data-source.md)  
-[SQL LOGIN](sql-login.md)  
-[SQL LOGOUT](sql-logout.md)  
+[SQL Get current data source](sql-get-current-data-source)  
+[SQL LOGIN](sql-login)  
+[SQL LOGOUT](sql-logout)  
 
 ## Propiedades
 

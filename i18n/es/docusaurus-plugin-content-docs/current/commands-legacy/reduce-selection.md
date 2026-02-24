@@ -56,9 +56,9 @@ El siguiente ejemplo busca las estadísticas correctas para una competencia mund
 ## Ver también 
 
 *Conjuntos*  
-[ORDER BY](order-by.md)  
-[QUERY](query.md)  
-[SCAN INDEX](scan-index.md)  
+[ORDER BY](order-by)  
+[QUERY](query)  
+[SCAN INDEX](scan-index)  
 
 ## Propiedades
 

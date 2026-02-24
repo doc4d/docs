@@ -55,9 +55,9 @@ The following example first finds the correct statistics for a worldwide contest
 
 ## See also 
 
-[ORDER BY](order-by.md)  
-[QUERY](query.md)  
-[SCAN INDEX](scan-index.md)  
+[ORDER BY](order-by)  
+[QUERY](query)  
+[SCAN INDEX](scan-index)  
 *Sets*  
 
 ## Properties

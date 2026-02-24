@@ -23,14 +23,14 @@ Ce nombre inclut tous les process, qu'ils soient créés par vos soins ou par 4D
 
 ## Exemple 
 
-Référez-vous à l'exemple de [Process state](process-state.md) et [Semaphore](semaphore.md).
+Référez-vous à l'exemple de [Process state](process-state) et [Semaphore](semaphore).
 
 ## Voir aussi 
 
-[Count user processes](count-user-processes.md)  
-[Count users](count-users.md)  
-[Process info](../commands/process-info.md)  
-[Process state](process-state.md)  
+[Count user processes](count-user-processes)  
+[Count users](count-users)  
+[Process info](../commands/process-info)  
+[Process state](process-state)  
 
 ## Propriétés
 

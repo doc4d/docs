@@ -49,9 +49,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[CLEAR NAMED SELECTION](clear-named-selection.md)  
-[CUT NAMED SELECTION](cut-named-selection.md)  
-[USE NAMED SELECTION](use-named-selection.md)  
+[CLEAR NAMED SELECTION](clear-named-selection)  
+[CUT NAMED SELECTION](cut-named-selection)  
+[USE NAMED SELECTION](use-named-selection)  
 
 ## プロパティ
 

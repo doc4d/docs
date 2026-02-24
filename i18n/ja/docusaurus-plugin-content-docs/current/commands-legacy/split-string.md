@@ -68,7 +68,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[TEXT TO ARRAY](text-to-array.md)  
+[TEXT TO ARRAY](text-to-array)  
 
 ## プロパティ
 

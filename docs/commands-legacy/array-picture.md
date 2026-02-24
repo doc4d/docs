@@ -24,7 +24,7 @@ displayed_sidebar: docs
 
 While applying to an existing array:
 
-* If you enlarge the array size, the existing elements are left unchanged, and the new elements are initialized to empty pictures. This means that [Picture size](picture-size.md) applied to one of these elements will return *0*.
+* If you enlarge the array size, the existing elements are left unchanged, and the new elements are initialized to empty pictures. This means that [Picture size](picture-size) applied to one of these elements will return *0*.
 * If you reduce the array size, the last elements deleted from the array are lost.
 
 ## Example 1 

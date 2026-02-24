@@ -61,7 +61,7 @@ Este exemplo colapsa o primeiro nível de linhas de quebra da seleção no list 
 
 ## Ver também 
 
-[LISTBOX EXPAND](listbox-expand.md)  
+[LISTBOX EXPAND](listbox-expand)  
 
 ## Propriedades
 

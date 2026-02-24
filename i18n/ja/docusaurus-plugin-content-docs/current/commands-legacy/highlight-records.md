@@ -58,8 +58,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[GET HIGHLIGHTED RECORDS](get-highlighted-records.md)  
-[OBJECT SET SCROLL POSITION](object-set-scroll-position.md)  
+[GET HIGHLIGHTED RECORDS](get-highlighted-records)  
+[OBJECT SET SCROLL POSITION](object-set-scroll-position)  
 
 ## プロパティ
 

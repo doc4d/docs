@@ -62,10 +62,10 @@ Si se encuentra un registro bloqueado durante la ejecución de DELETE SELECTION,
 ## Ver también 
 
 *Conjuntos*  
-[DISPLAY SELECTION](display-selection.md)  
-[MODIFY SELECTION](modify-selection.md)  
+[DISPLAY SELECTION](display-selection)  
+[MODIFY SELECTION](modify-selection)  
 *Record Locking*  
-[TRUNCATE TABLE](truncate-table.md)  
+[TRUNCATE TABLE](truncate-table)  
 
 ## Propiedades
 

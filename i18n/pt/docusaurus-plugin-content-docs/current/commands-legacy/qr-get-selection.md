@@ -49,7 +49,7 @@ Se passa um número de *area* inválido, se gera o erro -9850.
 
 ## Ver também 
 
-[QR SET SELECTION](qr-set-selection.md)  
+[QR SET SELECTION](qr-set-selection)  
 
 ## Propriedades
 

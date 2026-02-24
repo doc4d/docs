@@ -94,7 +94,7 @@ To count words in a text:
 
 ## See also 
 
-[DISTINCT VALUES](distinct-values.md)  
+[DISTINCT VALUES](distinct-values)  
 
 ## Properties
 

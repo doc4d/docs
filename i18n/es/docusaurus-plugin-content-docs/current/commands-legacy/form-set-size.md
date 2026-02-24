@@ -132,8 +132,8 @@ El método de objeto asociado con este botón es el siguiente:
 
 ## Ver también 
 
-[FORM SET HORIZONTAL RESIZING](form-set-horizontal-resizing.md)  
-[FORM SET VERTICAL RESIZING](form-set-vertical-resizing.md)  
+[FORM SET HORIZONTAL RESIZING](form-set-horizontal-resizing)  
+[FORM SET VERTICAL RESIZING](form-set-vertical-resizing)  
 
 ## Propiedades
 

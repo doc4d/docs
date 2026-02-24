@@ -41,7 +41,7 @@ El siguiente ejemplo muestra una serie de registros como una presentación de di
 
 ## Ver también 
 
-[MESSAGE](message.md)  
+[MESSAGE](message)  
 
 ## Propiedades
 

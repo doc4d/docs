@@ -52,9 +52,9 @@ Pase en el parámetro *grupo* el nombre del grupo cuyos usuarios están autoriza
 
 ## Ver también 
 
-[Get plugin access](get-plugin-access.md)  
-[PLUGIN LIST](plugin-list.md)  
-[SET GROUP ACCESS](set-group-access.md)  
+[Get plugin access](get-plugin-access)  
+[PLUGIN LIST](plugin-list)  
+[SET GROUP ACCESS](set-group-access)  
 
 ## Propiedades
 

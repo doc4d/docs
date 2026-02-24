@@ -34,7 +34,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Records in table](records-in-table.md)  
+[Records in table](records-in-table)  
 
 ## プロパティ
 

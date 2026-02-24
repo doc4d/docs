@@ -37,7 +37,7 @@ SHOW WINDOWコマンドを使用するには、ウィンドウが[HIDE WINDOW](h
 
 ## 参照 
 
-[HIDE WINDOW](hide-window.md)  
+[HIDE WINDOW](hide-window)  
 
 ## プロパティ
 

@@ -44,9 +44,9 @@ Una vez executado o comando:
 
 ## Ver também 
 
-[GET FIELD ENTRY PROPERTIES](get-field-entry-properties.md)  
-[GET FIELD PROPERTIES](get-field-properties.md)  
-[GET RELATION PROPERTIES](get-relation-properties.md)  
+[GET FIELD ENTRY PROPERTIES](get-field-entry-properties)  
+[GET FIELD PROPERTIES](get-field-properties)  
+[GET RELATION PROPERTIES](get-relation-properties)  
 
 ## Propriedades
 

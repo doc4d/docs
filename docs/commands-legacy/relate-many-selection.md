@@ -43,9 +43,9 @@ This example selects all invoices made to the customers whose credit is greater 
 
 ## See also 
 
-[QUERY](query.md)  
-[RELATE ONE](relate-one.md)  
-[RELATE ONE SELECTION](relate-one-selection.md)  
+[QUERY](query)  
+[RELATE ONE](relate-one)  
+[RELATE ONE SELECTION](relate-one-selection)  
 
 ## Properties
 

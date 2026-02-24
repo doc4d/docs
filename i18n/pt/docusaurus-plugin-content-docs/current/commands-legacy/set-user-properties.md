@@ -38,7 +38,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Set user properties.Summary-->Set user properties permite modificar e atualizar as propriedades de uma conta ativa de usuário existente cujo número de referência se passa no parâmetro *refUsuario* ou para adicionar um novo usuário.<!-- END REF-->
 
-Se muda as propriedades de um usuário existente, deve passar o número de referência retornado pelo comando [GET USER LIST](get-user-list.md). Se a conta de usuário não existir ou se tiver sido apagada, o erro -9979 é gerado. Pode interceptar este erro com um método de gestão de erros instalado por [ON ERR CALL](on-err-call.md). De lo contrário, pode chamar [Is user deleted](is-user-deleted.md) para testar a conta de usuário antes de chamar Set user properties.  
+Se muda as propriedades de um usuário existente, deve passar o número de referência retornado pelo comando [GET USER LIST](get-user-list). Se a conta de usuário não existir ou se tiver sido apagada, o erro -9979 é gerado. Pode interceptar este erro com um método de gestão de erros instalado por [ON ERR CALL](on-err-call.md). De lo contrário, pode chamar [Is user deleted](is-user-deleted) para testar a conta de usuário antes de chamar Set user properties.  
   
 Os números de referência para os usuários podem ser os seguintes:
 
@@ -53,7 +53,7 @@ Se o novo nome de usuário passado em *nome* não for único (existe um usuário
 
 **Nota**: Os parâmetros numLogin e ultimoLogin são usados apenas em bancos de dados binários e são ignorados em bancos de dados projeto.
 
-Se não deseja mudar todas as propriedades do usuário (além de suas adesões, ver abaixo), primeiro chame [GET USER PROPERTIES](get-user-properties.md) e passe os valores retornados para as propriedades que não deseja mudar.
+Se não deseja mudar todas as propriedades do usuário (além de suas adesões, ver abaixo), primeiro chame [GET USER PROPERTIES](get-user-properties) e passe os valores retornados para as propriedades que não deseja mudar.
 
 Se não deseja modificar a senha de uma conta, passe o símbolo \* no parâmetro *senha*. Isto permite mudar outras propriedades da conta do usuário sem mudar a senha da conta.
 
@@ -70,12 +70,12 @@ Se você não tiver os acessos de privilégio para chamar Set user properties ou
 
 ## Ver também 
 
-[DELETE USER](delete-user.md)  
-[GET GROUP LIST](get-group-list.md)  
-[GET USER LIST](get-user-list.md)  
-[GET USER PROPERTIES](get-user-properties.md)  
-[Is user deleted](is-user-deleted.md)  
-[Validate password](validate-password.md)  
+[DELETE USER](delete-user)  
+[GET GROUP LIST](get-group-list)  
+[GET USER LIST](get-user-list)  
+[GET USER PROPERTIES](get-user-properties)  
+[Is user deleted](is-user-deleted)  
+[Validate password](validate-password)  
 
 ## Propriedades
 

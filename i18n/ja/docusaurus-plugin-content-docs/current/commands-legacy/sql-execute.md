@@ -168,7 +168,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SQL LOAD RECORD](sql-load-record.md)  
+[SQL LOAD RECORD](sql-load-record)  
 
 ## プロパティ
 

@@ -52,9 +52,9 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[HIDE TOOL BAR](hide-tool-bar.md)  
-[SHOW MENU BAR](show-menu-bar.md)  
-[SHOW TOOL BAR](show-tool-bar.md)  
+[HIDE TOOL BAR](hide-tool-bar)  
+[SHOW MENU BAR](show-menu-bar)  
+[SHOW TOOL BAR](show-tool-bar)  
 
 ## プロパティ
 

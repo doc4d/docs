@@ -56,7 +56,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Undefined](undefined.md)  
+[Undefined](undefined)  
 
 ## プロパティ
 

@@ -52,7 +52,7 @@ The following method is called to print the records in the selection and to acti
  PRINT SELECTION([Table1])
 ```
 
-**Note:** The parameter to the [BREAK LEVEL](break-level.md) command should be equal to the number of breaks in your report. For more information about break processing, refer to the printing commands.
+**Note:** The parameter to the [BREAK LEVEL](break-level) command should be equal to the number of breaks in your report. For more information about break processing, refer to the printing commands.
 
 ## Example 2 
 
@@ -67,10 +67,10 @@ This example gets the standard deviation of a series of values placed in an arra
 
 ## See also 
 
-[Average](average.md)  
-[Sum](sum.md)  
-[Sum squares](sum-squares.md)  
-[Variance](variance.md)  
+[Average](average)  
+[Sum](sum)  
+[Sum squares](sum-squares)  
+[Variance](variance)  
 
 ## Properties
 

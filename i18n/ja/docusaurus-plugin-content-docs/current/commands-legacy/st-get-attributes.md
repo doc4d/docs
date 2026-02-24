@@ -112,7 +112,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[ST SET ATTRIBUTES](st-set-attributes.md)  
+[ST SET ATTRIBUTES](st-set-attributes)  
 
 ## プロパティ
 

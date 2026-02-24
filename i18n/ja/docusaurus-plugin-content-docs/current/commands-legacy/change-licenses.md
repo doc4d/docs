@@ -50,8 +50,8 @@ CHANGE LICENSES は、顧客に配付されたコンパイル済みのシング�
 
 ## 参照 
 
-[License info](../commands/license-info.md)  
-[Is license available](is-license-available.md)  
+[License info](../commands/license-info)  
+[Is license available](is-license-available)  
 
 ## プロパティ
 

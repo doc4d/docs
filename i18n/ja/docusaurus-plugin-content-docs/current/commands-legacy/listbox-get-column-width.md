@@ -42,7 +42,7 @@ LISTBOX Get column width は列サイズ変更の制限値を *minWidth* と *ma
 
 ## 参照 
 
-[LISTBOX SET COLUMN WIDTH](listbox-set-column-width.md)  
+[LISTBOX SET COLUMN WIDTH](listbox-set-column-width)  
 
 ## プロパティ
 

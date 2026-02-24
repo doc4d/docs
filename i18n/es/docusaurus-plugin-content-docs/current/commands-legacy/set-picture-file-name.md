@@ -36,8 +36,8 @@ El nombre por defecto se utiliza como nombre de archivo cuando la imagen se expo
 
 ## Ver también 
 
-[Get picture file name](get-picture-file-name.md)  
-[WRITE PICTURE FILE](write-picture-file.md)  
+[Get picture file name](get-picture-file-name)  
+[WRITE PICTURE FILE](write-picture-file)  
 
 ## Propiedades
 

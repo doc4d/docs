@@ -44,8 +44,8 @@ The RESTORE command modifies the value of the *OK* and *Document* variables: if 
 
 ## See also 
 
-[BACKUP](backup.md)  
-[RESTORE INFO](restore-info.md)  
+[BACKUP](backup)  
+[RESTORE INFO](restore-info)  
 
 ## Properties
 

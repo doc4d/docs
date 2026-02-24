@@ -100,7 +100,7 @@ Vous voulez associer un équivalent clavier différent en fonction de la langue 
 
 ## Voir aussi 
 
-[OBJECT GET SHORTCUT](object-get-shortcut.md)  
+[OBJECT GET SHORTCUT](object-get-shortcut)  
 
 ## Propriétés
 

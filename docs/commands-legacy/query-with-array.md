@@ -51,7 +51,7 @@ The following example allows you to retrieve the records of both French and Amer
 
 ## See also 
 
-[QUERY SELECTION WITH ARRAY](query-selection-with-array.md)  
+[QUERY SELECTION WITH ARRAY](query-selection-with-array)  
 
 ## Properties
 

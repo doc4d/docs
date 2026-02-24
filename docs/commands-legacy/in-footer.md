@@ -21,12 +21,12 @@ displayed_sidebar: docs
 
 In order for the   **In footer** execution cycle to be generated, make sure that the On Printing Footer event property for the form and/or the objects has been selected in the Design environment.
 
-**Note:** This command is equivalent to using [Form event code](../commands/form-event-code.md) and testing whether it returns the On Printing Footer event.
+**Note:** This command is equivalent to using [Form event code](../commands/form-event-code) and testing whether it returns the On Printing Footer event.
 
 ## See also 
 
-[In break](in-break.md)  
-[In header](in-header.md)  
+[In break](in-break)  
+[In header](in-header)  
 
 ## Properties
 

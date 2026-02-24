@@ -52,7 +52,7 @@ O exemplo a seguir pode ser utilizado para recuperar em um array todas as rotas 
 
 ## Ver também 
 
-[SET FILE TO PASTEBOARD](set-file-to-pasteboard.md)  
+[SET FILE TO PASTEBOARD](set-file-to-pasteboard)  
 
 ## Propriedades
 

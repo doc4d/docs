@@ -43,8 +43,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[System info](system-info.md)  
-[Is macOS](is-macos.md)  
+[System info](system-info)  
+[Is macOS](is-macos)  
 
 ## プロパティ
 

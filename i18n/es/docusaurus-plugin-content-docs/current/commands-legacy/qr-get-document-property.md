@@ -56,7 +56,7 @@ Si pasa un valor incorrecto del parámetro *propiedad*, se genera el error -9852
 
 ## Ver también 
 
-[QR SET DOCUMENT PROPERTY](qr-set-document-property.md)  
+[QR SET DOCUMENT PROPERTY](qr-set-document-property)  
 
 ## Propiedades
 

@@ -22,7 +22,7 @@ displayed_sidebar: docs
 
 ## See also 
 
-[REMOVE FROM SET](remove-from-set.md)  
+[REMOVE FROM SET](remove-from-set)  
 
 ## Properties
 

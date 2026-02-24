@@ -17,7 +17,7 @@ displayed_sidebar: docs
 
 ## Descripción 
 
-<!--REF #_command_.SEND VARIABLE.Summary-->SEND VARIABLE envía *variable* al documento o puerto serial previamente abierto por [SET CHANNEL](set-channel.md "SET CHANNEL").<!-- END REF--> La variable se envía con un formato interno especial que puede ser leído sólo por [RECEIVE VARIABLE](receive-variable.md). SEND VARIABLE envía la variable completa (incluyendo su tipo y valor).
+<!--REF #_command_.SEND VARIABLE.Summary-->SEND VARIABLE envía *variable* al documento o puerto serial previamente abierto por [SET CHANNEL](set-channel.md "SET CHANNEL").<!-- END REF--> La variable se envía con un formato interno especial que puede ser leído sólo por [RECEIVE VARIABLE](receive-variable). SEND VARIABLE envía la variable completa (incluyendo su tipo y valor).
 
 **Notas:**
 
@@ -30,10 +30,10 @@ Ver el ejemplo del comando [RECEIVE RECORD](receive-record.md "RECEIVE RECORD").
 
 ## Ver también 
 
-[RECEIVE RECORD](receive-record.md)  
-[RECEIVE VARIABLE](receive-variable.md)  
-[SEND RECORD](send-record.md)  
-[SET CHANNEL](set-channel.md)  
+[RECEIVE RECORD](receive-record)  
+[RECEIVE VARIABLE](receive-variable)  
+[SEND RECORD](send-record)  
+[SET CHANNEL](set-channel)  
 
 ## Propiedades
 

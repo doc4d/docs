@@ -50,11 +50,11 @@ Les éventuelles références aux variables 4D et balises de type *4DSCRIPT* dan
 
 ## Exemple 
 
-Reportez-vous à l’exemple de la routine [PICTURE TO BLOB](picture-to-blob.md). 
+Reportez-vous à l’exemple de la routine [PICTURE TO BLOB](picture-to-blob). 
 
 ## Voir aussi 
 
-[WEB SEND FILE](web-send-file.md)  
+[WEB SEND FILE](web-send-file)  
 
 ## Propriétés
 

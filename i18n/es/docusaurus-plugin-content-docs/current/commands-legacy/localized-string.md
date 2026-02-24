@@ -55,7 +55,7 @@ Si el comando se ejecuta correctamente, la variable OK toma el valor 1\. Si *res
 
 ## Ver también 
 
-[Get database localization](get-database-localization.md)  
+[Get database localization](get-database-localization)  
 
 ## Propiedades
 

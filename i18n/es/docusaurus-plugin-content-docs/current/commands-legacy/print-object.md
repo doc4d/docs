@@ -35,13 +35,13 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Print object.Summary-->El comando **Print object** permite imprimir el o los objetos de formulario designado(s) por los parámetros *objeto* y *\**, en la ubicación definida por los parámetros *posX* y *posY*.<!-- END REF-->  
   
-Antes de llamar el comando **Print object**, debe designar el formulario tabla o proyecto que contiene los objetos a imprimir, utilizando el comando [FORM LOAD](../commands/form-load.md).   
+Antes de llamar el comando **Print object**, debe designar el formulario tabla o proyecto que contiene los objetos a imprimir, utilizando el comando [FORM LOAD](../commands/form-load).   
   
 Si pasa el parámetro opcional *\**, indica que el parámetro *objeto* es un nombre de objeto (cadena de caracteres). Si no pasa el parámetro *\**, está indicando que *objeto* es una variable. En este caso, se pasa una referencia de variable (tipo de objeto únicamente) en lugar de una cadena.  
   
 Los parámetros *posX* y *posY* especifican el punto de partida para la impresión del o de los objeto(s). Estos valores deben expresarse en píxeles. Si estos parámetros se omiten, el objeto se imprime de acuerdo a su ubicación en el formulario.   
   
-Los parámetros *ancho* y *alto* se utilizan para especificar el ancho y el alto del objeto de formulario. El comando **Print object** no trata objetos de tamaño variable. Debe utilizar el comando [OBJECT GET BEST SIZE](object-get-best-size.md) para manejar el tamaño de los objetos. También puede utilizar el comando [OBJECT GET BEST SIZE](object-get-best-size.md) para determinar el tamaño más adecuado para los objetos que contienen texto. Del mismo modo, **Print object** no provoca saltos de página automáticos. Debe manejarlos de acuerdo a sus necesidades.   
+Los parámetros *ancho* y *alto* se utilizan para especificar el ancho y el alto del objeto de formulario. El comando **Print object** no trata objetos de tamaño variable. Debe utilizar el comando [OBJECT GET BEST SIZE](object-get-best-size) para manejar el tamaño de los objetos. También puede utilizar el comando [OBJECT GET BEST SIZE](object-get-best-size) para determinar el tamaño más adecuado para los objetos que contienen texto. Del mismo modo, **Print object** no provoca saltos de página automáticos. Debe manejarlos de acuerdo a sus necesidades.   
   
 Puede utilizar los comandos de 4D para modificar rápidamente las propiedades del objeto (color, tamaño, etc).  
   
@@ -50,8 +50,8 @@ El comando devuelve True si el objeto se ha impreso completamente y False si est
 **Notas**:  
 
 * En la versión actual de 4D, sólo los objetos de tipo list box tienen este mecanismo (el comando siempre devuelve True para cualquier otro tipo de objeto).
-* El comando [LISTBOX GET PRINT INFORMATION](listbox-get-print-information.md) permite controlar el estado de la impresión durante la operación.
-El comando **Print object** sólo puede ser utilizado en el contexto de un trabajo de impresión abierto previamente con el comando [OPEN PRINTING JOB](open-printing-job.md). Si no se llama en este contexto, el comando no hace nada. Varios comandos **Print object** pueden llamarse en el mismo trabajo de impresión.  
+* El comando [LISTBOX GET PRINT INFORMATION](listbox-get-print-information) permite controlar el estado de la impresión durante la operación.
+El comando **Print object** sólo puede ser utilizado en el contexto de un trabajo de impresión abierto previamente con el comando [OPEN PRINTING JOB](open-printing-job). Si no se llama en este contexto, el comando no hace nada. Varios comandos **Print object** pueden llamarse en el mismo trabajo de impresión.  
   
 **Nota**: las listas jerárquicas, los subformularios y las áreas web no se pueden imprimir.
 
@@ -106,7 +106,7 @@ Ejemplo de impresión de un list box completo:
 
 ## Ver también 
 
-[FORM LOAD](../commands/form-load.md)  
+[FORM LOAD](../commands/form-load)  
 
 ## Propiedades
 

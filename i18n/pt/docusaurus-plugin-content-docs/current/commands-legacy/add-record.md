@@ -18,7 +18,7 @@ displayed_sidebar: docs
 
 ## Compatibilidade 
 
-<!--REF #_command_.ADD RECORD.Summary-->Esse comando foi implementado em 4D em lançamentos anteriores e é ainda útil para desenvolvimento básico ou protótipos.<!-- END REF--> Entretanto, para construir interfaces personalizadas e modernas, agora não é recomendado usar formulários genéricos baseados no comando *[DIALOG](../commands/dialog.md) que oferece propriedades avançadas e melhor controle sobre o fluxo de dados*
+<!--REF #_command_.ADD RECORD.Summary-->Esse comando foi implementado em 4D em lançamentos anteriores e é ainda útil para desenvolvimento básico ou protótipos.<!-- END REF--> Entretanto, para construir interfaces personalizadas e modernas, agora não é recomendado usar formulários genéricos baseados no comando *[DIALOG](../commands/dialog) que oferece propriedades avançadas e melhor controle sobre o fluxo de dados*
 
 ## Descrição 
 
@@ -34,9 +34,9 @@ O formulário aparece na janela do primeiro plano do processo. A janela tem barr
 
 ADD RECORD mostra o formulário até que o usuário aceita ou cancela o registro. Se o usuário está adicionando vários registros, o comando deve ser executado uma vez para cada registro. 
 
-O registro é guardado (aceito) se o usuário clicar no botão Aceitar ou ao pressionar a tecla Intro (teclado numérico), ou se o comando [ACCEPT](accept.md) for executado. 
+O registro é guardado (aceito) se o usuário clicar no botão Aceitar ou ao pressionar a tecla Intro (teclado numérico), ou se o comando [ACCEPT](accept) for executado. 
 
-O registro não é guardado (cancelado) se o usuário clicar no botão Cancelar ou ao pressionar a tecla de anulação Esc ou se for executado o comando [CANCEL](cancel.md).
+O registro não é guardado (cancelado) se o usuário clicar no botão Cancelar ou ao pressionar a tecla de anulação Esc ou se for executado o comando [CANCEL](cancel).
 
 **Nota**: este comando não exibe tabelas para estar em modo leitura/escrita. Pode ser utilizado mesmo se a tabela estiver em modo lectura unicamente (ver *Record Locking*). Depois de chamar a ADD RECORD, OK toma o valor 1 se for aceito o registro e 0 se for cancelado.
 
@@ -82,11 +82,11 @@ A variável sistema OK toma o valor 1 se aceitar o registro e 0 se o cancelar. A
 
 ## Ver também 
 
-[ACCEPT](accept.md)  
-[CANCEL](cancel.md)  
-[CREATE RECORD](create-record.md)  
-[MODIFY RECORD](modify-record.md)  
-[SAVE RECORD](save-record.md)  
+[ACCEPT](accept)  
+[CANCEL](cancel)  
+[CREATE RECORD](create-record)  
+[MODIFY RECORD](modify-record)  
+[SAVE RECORD](save-record)  
 
 ## Propriedades
 

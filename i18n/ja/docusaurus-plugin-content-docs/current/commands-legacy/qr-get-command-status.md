@@ -45,8 +45,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[QR EXECUTE COMMAND](qr-execute-command.md)  
-[QR ON COMMAND](qr-on-command.md)  
+[QR EXECUTE COMMAND](qr-execute-command)  
+[QR ON COMMAND](qr-on-command)  
 
 ## プロパティ
 

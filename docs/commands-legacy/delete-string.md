@@ -44,9 +44,9 @@ The following example illustrates the use of Delete string. The results are assi
 
 ## See also 
 
-[Change string](change-string.md)  
-[Insert string](insert-string.md)  
-[Replace string](replace-string.md)  
+[Change string](change-string)  
+[Insert string](insert-string)  
+[Replace string](replace-string)  
 
 ## Properties
 

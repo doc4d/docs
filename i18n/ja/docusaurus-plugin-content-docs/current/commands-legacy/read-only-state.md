@@ -35,8 +35,8 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[READ ONLY](read-only.md)  
-[READ WRITE](read-write.md)  
+[READ ONLY](read-only)  
+[READ WRITE](read-write)  
 *レコードのロック*  
 
 ## プロパティ

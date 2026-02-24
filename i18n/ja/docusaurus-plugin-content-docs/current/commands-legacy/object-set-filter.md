@@ -67,8 +67,8 @@ OBJECT SET FILTER は、入力フォームおよびダイアログ用フォー�
 
 ## 参照 
 
-[OBJECT Get filter](object-get-filter.md)  
-[OBJECT SET FORMAT](object-set-format.md)  
+[OBJECT Get filter](object-get-filter)  
+[OBJECT SET FORMAT](object-set-format)  
 
 ## プロパティ
 

@@ -34,7 +34,7 @@ Se o servidor SQL foi lançado, todas as conexões SQL são interrompidas e o se
 
 ## Ver também 
 
-[START SQL SERVER](start-sql-server.md)  
+[START SQL SERVER](start-sql-server)  
 
 ## Propriedades
 

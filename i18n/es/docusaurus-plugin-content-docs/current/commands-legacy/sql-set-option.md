@@ -58,7 +58,7 @@ Si el comando se ejecuta correctamente, la variable sistema OK devuelve 1\. De l
 
 #### Ver también 
 
-[SQL GET OPTION](sql-get-option.md)  
+[SQL GET OPTION](sql-get-option)  
 
 #### Propiedades
 

@@ -61,7 +61,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[LISTBOX Get footer calculation](listbox-get-footer-calculation.md)  
+[LISTBOX Get footer calculation](listbox-get-footer-calculation)  
 
 ## プロパティ
 

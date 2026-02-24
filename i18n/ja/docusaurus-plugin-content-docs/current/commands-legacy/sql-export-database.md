@@ -67,7 +67,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[SQL EXPORT SELECTION](sql-export-selection.md)  
+[SQL EXPORT SELECTION](sql-export-selection)  
 
 ## プロパティ
 

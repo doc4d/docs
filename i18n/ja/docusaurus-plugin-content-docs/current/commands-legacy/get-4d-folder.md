@@ -124,7 +124,7 @@ displayed_sidebar: docs
 
 ### Database Folder Unix Syntax 
 
-データベースストラクチャファイルを含むフォルダーです。 この定数は前述のフォルダーと同じものですが、パス名は/Users/...のようなUNIXシンタックス (POSIX) で表現されます。このシンタックスは主に、Mac OSで [LAUNCH EXTERNAL PROCESS](launch-external-process.md) コマンドを使用する場合に使用されます。
+データベースストラクチャファイルを含むフォルダーです。 この定数は前述のフォルダーと同じものですが、パス名は/Users/...のようなUNIXシンタックス (POSIX) で表現されます。このシンタックスは主に、Mac OSで [LAUNCH EXTERNAL PROCESS](launch-external-process) コマンドを使用する場合に使用されます。
 
 ### Current Resources folder 
 
@@ -149,12 +149,12 @@ displayed_sidebar: docs
 
 **注:**
 
-* system user preferences フォルダー (Active 4D Folder) にも追加の Logs フォルダーがあり、圧縮・検証・修復などのメンテナンスログファイルを保存します。これらのログファイルにアクセスするには、コマンド [Get 4D file](get-4d-file.md)(Compacting log file) を使うことが推奨されます。通常の Logs フォルダーに書き込みできない場合にも、このLogs フォルダーが使用されます。
+* system user preferences フォルダー (Active 4D Folder) にも追加の Logs フォルダーがあり、圧縮・検証・修復などのメンテナンスログファイルを保存します。これらのログファイルにアクセスするには、コマンド [Get 4D file](get-4d-file)(Compacting log file) を使うことが推奨されます。通常の Logs フォルダーに書き込みできない場合にも、このLogs フォルダーが使用されます。
 * データベースにLogsフォルダーが存在しない場合、**Get 4D folder**コマンドにLogs folder定数を渡して実行すると、フォルダーが適切な場所に作成されます。
 
 ### HTML Root Folder 
 
-データベースのカレントの HTML ルートフォルダ。返されるパス名は、プラットフォームの標準シンタックスで表現されます。HTMLルートフォルダーは、リクエストされたページやファイルを4D Webサーバが探すフォルダーです。デフォルトで、このフォルダーの名前は**WebFolder**で、ストラクチャーファイルと同階層 (またはリモートモードの4Dの場合、そのローカルコピー) に置かれます。この場所はデータベース設定のWeb/設定ページ、または[WEB SET ROOT FOLDER](web-set-root-folder.md) コマンドで動的に変更できます。
+データベースのカレントの HTML ルートフォルダ。返されるパス名は、プラットフォームの標準シンタックスで表現されます。HTMLルートフォルダーは、リクエストされたページやファイルを4D Webサーバが探すフォルダーです。デフォルトで、このフォルダーの名前は**WebFolder**で、ストラクチャーファイルと同階層 (またはリモートモードの4Dの場合、そのローカルコピー) に置かれます。この場所はデータベース設定のWeb/設定ページ、または[WEB SET ROOT FOLDER](web-set-root-folder) コマンドで動的に変更できます。
 
 **注:** Windows上では、組み込みクライアントプロジェクトにおいてはこのフォルダの位置は、*ShareLocalResourcesOnWindowsClient* BuildApp キーを使用していた場合、変更されます。
 
@@ -219,11 +219,11 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[COMPONENT LIST](component-list.md)  
-[System folder](system-folder.md)  
-[Temporary folder](temporary-folder.md)  
-[Test path name](test-path-name.md)  
-[WEB SET ROOT FOLDER](web-set-root-folder.md)  
+[COMPONENT LIST](component-list)  
+[System folder](system-folder)  
+[Temporary folder](temporary-folder)  
+[Test path name](test-path-name)  
+[WEB SET ROOT FOLDER](web-set-root-folder)  
 
 ## プロパティ
 

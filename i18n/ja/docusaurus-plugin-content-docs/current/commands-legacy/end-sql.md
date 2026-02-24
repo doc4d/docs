@@ -32,7 +32,7 @@ displayed_sidebar: docs
 
 ## 参照 
 
-[Begin SQL](begin-sql.md)  
+[Begin SQL](begin-sql)  
 
 ## プロパティ
 

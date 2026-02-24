@@ -28,11 +28,11 @@ displayed_sidebar: docs
 
 End SQL é uma palavra chave que indica o fim de uma sequência de comandos SQL no editor de métodos que deve ser interpretada pelo motor SQL integrado de 4D.  
 
-Uma sequência de instruções SQL deve estar rodeada pelas palavras chaves [Begin SQL](begin-sql.md) e End SQL. Para maior informação, por favor consulte a descrição da palavra chave [Begin SQL](begin-sql.md).  
+Uma sequência de instruções SQL deve estar rodeada pelas palavras chaves [Begin SQL](begin-sql) e End SQL. Para maior informação, por favor consulte a descrição da palavra chave [Begin SQL](begin-sql).  
 
 ## Ver também 
 
-[Begin SQL](begin-sql.md)  
+[Begin SQL](begin-sql)  
 
 ## Propriedades
 

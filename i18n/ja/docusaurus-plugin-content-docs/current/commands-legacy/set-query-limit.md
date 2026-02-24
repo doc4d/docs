@@ -46,8 +46,8 @@ SET QUERY LIMITは、下記のクエリコマンドの動作を変更します:
 * [QUERY BY SQL](query-by-sql.md "QUERY BY SQL")
 * [QUERY WITH ARRAY](query-with-array.md "QUERY WITH ARRAY")
 * [QUERY SELECTION WITH ARRAY](query-selection-with-array.md "QUERY SELECTION WITH ARRAY")
-* [QUERY BY ATTRIBUTE](query-by-attribute.md)
-* [QUERY SELECTION BY ATTRIBUTE](query-selection-by-attribute.md)
+* [QUERY BY ATTRIBUTE](query-by-attribute)
+* [QUERY SELECTION BY ATTRIBUTE](query-selection-by-attribute)
 
 これに対して、SET QUERY LIMITは、[ALL RECORDS](all-records.md "ALL RECORDS")や[RELATE MANY](relate-many.md "RELATE MANY")等、テーブルのカレントセレクションを変更する他のコマンドには影響を与えません。
 
@@ -67,15 +67,15 @@ SET QUERY LIMITは、下記のクエリコマンドの動作を変更します:
 
 ## 参照 
 
-[Get query limit](get-query-limit.md)  
-[QUERY](query.md)  
-[QUERY BY EXAMPLE](query-by-example.md)  
-[QUERY BY FORMULA](query-by-formula.md)  
-[QUERY BY SQL](query-by-sql.md)  
-[QUERY SELECTION](query-selection.md)  
-[QUERY SELECTION BY FORMULA](query-selection-by-formula.md)  
-[QUERY WITH ARRAY](query-with-array.md)  
-[SET QUERY DESTINATION](set-query-destination.md)  
+[Get query limit](get-query-limit)  
+[QUERY](query)  
+[QUERY BY EXAMPLE](query-by-example)  
+[QUERY BY FORMULA](query-by-formula)  
+[QUERY BY SQL](query-by-sql)  
+[QUERY SELECTION](query-selection)  
+[QUERY SELECTION BY FORMULA](query-selection-by-formula)  
+[QUERY WITH ARRAY](query-with-array)  
+[SET QUERY DESTINATION](set-query-destination)  
 
 ## プロパティ
 

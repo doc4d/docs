@@ -39,7 +39,7 @@ See the example of the [DOM Insert XML element](dom-insert-xml-element.md "DOM I
 
 ## See also 
 
-[DOM Insert XML element](dom-insert-xml-element.md)  
+[DOM Insert XML element](dom-insert-xml-element)  
 
 ## Properties
 

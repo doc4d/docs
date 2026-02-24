@@ -50,7 +50,7 @@ TRUNCATE TABLEコマンドは注意して使用しなければなりませんが
 
 ## 参照 
 
-[DELETE SELECTION](delete-selection.md)  
+[DELETE SELECTION](delete-selection)  
 
 ## プロパティ
 

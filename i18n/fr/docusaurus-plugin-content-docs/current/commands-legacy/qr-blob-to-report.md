@@ -54,7 +54,7 @@ L'instruction suivante affiche l'état stocké dans le champ ChampBlob dans la z
 
 ## Voir aussi 
 
-[QR REPORT TO BLOB](qr-report-to-blob.md)  
+[QR REPORT TO BLOB](qr-report-to-blob)  
 
 ## Propriétés
 

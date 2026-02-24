@@ -46,7 +46,7 @@ A página mostrada na URL "www.apple.com" e a página "www.4dhispano.com" está 
 
 ## Ver também 
 
-[WA OPEN URL](wa-open-url.md)  
+[WA OPEN URL](wa-open-url)  
 
 ## Propriedades
 

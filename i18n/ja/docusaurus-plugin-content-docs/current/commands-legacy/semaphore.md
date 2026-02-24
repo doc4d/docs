@@ -162,8 +162,8 @@ var $T_Sema_local;$T_Message : Text
 
 ## 参照 
 
-[CLEAR SEMAPHORE](clear-semaphore.md)  
-[Test semaphore](test-semaphore.md)  
+[CLEAR SEMAPHORE](clear-semaphore)  
+[Test semaphore](test-semaphore)  
 *セマフォーとシグナル*  
 
 ## プロパティ

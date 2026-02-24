@@ -52,8 +52,8 @@ Em uma de suas rotinas, você inclui a depuração do código apenas quando voc�
 
 ## Ver também 
 
-[IDLE](idle.md)  
-[Undefined](undefined.md)  
+[IDLE](idle)  
+[Undefined](undefined)  
 
 ## Propriedades
 
