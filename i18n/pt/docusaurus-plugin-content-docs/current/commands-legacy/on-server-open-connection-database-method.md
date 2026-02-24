@@ -37,7 +37,7 @@ O **On Server Open Connection database method** é chamado cada vez que:
 
 * um 4D remoto se conecta (inicio do processo principal)
 * um 4D remoto abre o entorno Desenho (inicio do processo de Desenho)
-* um 4D remoto inicia um processo global, (cujo nome começa por "$") o qual necessita da criação de um processo cooperativo no servidor **(\*)**. Este processo pode ser criado utilizando o comando [New process](new-process.md), um comando de menu ou caixa de diálogo "Executar um método".
+* um 4D remoto inicia um processo global, (cujo nome começa por "$") o qual necessita da criação de um processo cooperativo no servidor **(\*)**. Este processo pode ser criado utilizando o comando [New process](../commands/new-process.md), um comando de menu ou caixa de diálogo "Executar um método".
 
 Em cada caso com um 4D remoto, três processos são iniciados. Um na máquina cliente e outros dois no equipo servidor. Na máquina cliente, o processo executa o código e envia as petições a 4D Server. No equipo servidor, o **processo 4D Client** mantém o entorno da base de dados do processo cliente (as seleções atuais e o bloqueio de registros para o processo usuário) e responde aos pedidos enviadas pelo processo executado na máquina cliente. O **processo base 4D Client** está a cargo de controlar o processo 4D Client correspondente.
 
@@ -54,7 +54,7 @@ Em cada caso com um 4D remoto, três processos são iniciados. Um na máquina cl
 
 O On Server Open Connection database method é executado no equipo servidor no processo 4D Client que provocou a chamada do método. 
 
-Por exemplo, se um 4D remoto se conecta a uma base 4D Server interpretada, é iniciado o processo usuário, o processo de desenho e o processo de registro do cliente (por defeito). O On Server Open Connection database method se executa três vezes seguidas. A primeira vez dentro do processo principal, a segunda vez no processo de inscrição do cliente e a terceira vez no processo de desenhoo. Se os três processos são respectivamente o sexto, sétimo e oitavo processo a iniciar-se no equipo servidor, e é chamado [Current process](current-process.md) desde o On Server Open Connection database method, a primeira vez [Current process](current-process.md) devolve 6, a segunda vez 7 e a terceira 8.
+Por exemplo, se um 4D remoto se conecta a uma base 4D Server interpretada, é iniciado o processo usuário, o processo de desenho e o processo de registro do cliente (por defeito). O On Server Open Connection database method se executa três vezes seguidas. A primeira vez dentro do processo principal, a segunda vez no processo de inscrição do cliente e a terceira vez no processo de desenhoo. Se os três processos são respectivamente o sexto, sétimo e oitavo processo a iniciar-se no equipo servidor, e é chamado [Current process](../commands/current-process.md) desde o On Server Open Connection database method, a primeira vez [Current process](../commands/current-process.md) devolve 6, a segunda vez 7 e a terceira 8.
 
 Observe que o On Server Open Connection database method se executa no equipo servidor, ao interior do processo 4D Client no servidor, independente do processo executado no cliente. Além disso, no momento em que se invoca o método, o processo 4D Client ainda não foi nomeado ([Process info](../commands/process-info) não devolverá neste momento o nome do processo 4D Client).
 

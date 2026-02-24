@@ -33,20 +33,20 @@ The On Startup database method is the perfect place to:
 * Initialize interprocess variables that you will use during the whole working session.
 * Start processes automatically when a database is opened.
 * Load Preferences or Settings saved for this purpose during the previous working session.
-* Prevent the opening of the database if a condition is not met (i.e., missing system resources) by explicitly calling [QUIT 4D](quit-4d.md).
+* Prevent the opening of the database if a condition is not met (i.e., missing system resources) by explicitly calling [QUIT 4D](../commands/quit-4d.md).
 * Perform any other actions that you want to be performed automatically each time a database is opened.
 
 However, we strongly recommend that you do NOT launch print jobs from the **On Startup database method**. 
 
 ## Example 
 
-See the example in the [Semaphore](semaphore.md) section.  
+See the example in the [Semaphore](../commands/semaphore.md) section.  
 
 ## See also 
 
 *Database Methods*  
 [On Exit database method](on-exit-database-method.md)  
-[QUIT 4D](quit-4d.md)  
+[QUIT 4D](../commands/quit-4d.md)  
 
 ## Properties
 

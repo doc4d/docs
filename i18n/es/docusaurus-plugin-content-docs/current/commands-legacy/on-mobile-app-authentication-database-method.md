@@ -22,10 +22,10 @@ displayed_sidebar: docs
 
 <!--REF #_command_.On Mobile App Authentication database method.Summary-->**Documentación trasladada**
 
-La documentación de este método base ha sido actualizada y trasladada a [developer.<!-- END REF-->4d.com/go-mobile](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-authentication).
+La documentación de este método base ha sido actualizada y trasladada a [developer.<!-- END REF-->4d.com/go-mobile](../commands/https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-authentication).
 
 ## Ver también 
 
   
-[Método base On Mobile App Action](metodo-base-on-mobile-app-action.md)  
-[MOBILE APP REFRESH SESSIONS](mobile-app-refresh-sessions.md)  
+[Método base On Mobile App Action](../commands/metodo-base-on-mobile-app-action.md)  
+[MOBILE APP REFRESH SESSIONS](../commands/mobile-app-refresh-sessions.md)  

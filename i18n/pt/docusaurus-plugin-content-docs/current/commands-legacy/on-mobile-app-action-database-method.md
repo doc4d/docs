@@ -30,7 +30,7 @@ displayed_sidebar: docs
 
 <!--REF #_command_.On Mobile App Action database method.Summary-->**Documentação trasladada**<!-- END REF-->
 
-A documentação deste método base foi atualizada e trasladada a [developer.4d.com/go-mobile](https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-action).
+A documentação deste método base foi atualizada e trasladada a [developer.4d.com/go-mobile](../commands/https://developer.4d.com/go-mobile/docs/4d/on-mobile-app-action).
 
 ## Ver também 
 
