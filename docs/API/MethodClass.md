@@ -4,7 +4,13 @@ title: Method
 ---
 
 
-A **`4D.Method`** object contains a piece of code that can be created from text source and executed. `4D.Method` objects allow you to create and execute code dynamically from text expressions.
+A **`4D.Method`** object contains a piece of code that is created from text source and can be executed. Whether the project is launched interpreted, or compiled, this code will be executed in interpreted mode. `4D.Method` objects allow you to add and execute code dynamically in packed 4D projects, e.g. in a compiled and deployed application. 
+
+:::tip Related blog post
+
+[Execute Code from Text with 4D.Method](https://blog.4d.com/execute-code-from-text-with-4d-method)
+
+:::
 
 
 
@@ -33,7 +39,7 @@ A **`4D.Method`** object contains a piece of code that can be created from text 
 
 </details>
 
-<!-- REF #4D.Method.new().Syntax -->**4D.Method.new**( *source* : Text ) : 4D.Method<!-- END REF -->
+<!-- REF #4D.Method.new().Syntax -->**4D.Method.new**( *source* : Text {; name : Text } ) : 4D.Method<!-- END REF -->
 
 
 <!-- REF #4D.Method.new().Params -->
@@ -41,8 +47,9 @@ A **`4D.Method`** object contains a piece of code that can be created from text 
 
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|source|Text|->|4D source code of the method|
-|Result|4D.Method|<-|New Method object|
+|source|Text|->|Textual representation of a 4D method to be encapsuled as an object|
+|name|Text|->|Name of the method to display in the debugger. If omitted, the method name will be displayed as "anonymous"|
+|Result|4D.Method|<-|New Method shared object|
 </div>
 <!-- END REF -->
 
@@ -51,15 +58,25 @@ A **`4D.Method`** object contains a piece of code that can be created from text 
 
 The `4D.Method.new()` function <!-- REF #4D.Method.new().Summary -->creates and returns a new `4D.Method` object built from the *source* code<!-- END REF -->.
 
-In the *source* parameter, pass the 4D source code of the method as text. The source code is compiled and the resulting method object can be executed using [`.apply()`](#apply) or [`.call()`](#call).
+In the *source* parameter, pass the 4D source code of the method as text. 
+
+In the optional *name* parameter, pass the name of the method to be displayed in the 4D debugger and Runtime explorer. If you omit this parameter, the method name will appear as "anonymous". 
+
+The resulting 4D.Method object can be checked using [`checkSyntax()`](#checksyntax) and executed using [`.apply()`](#apply) or [`.call()`](#call).
 
 
 #### Example
 
 ```4d
- var $m : 4D.Method
- $m:=4D.Method.new("$1+$2")
- $result:=$m.call(Null;10;20) // returns 30
+var $myCode:="#DECLARE ($number1:integer;$number2:integer):integer\n"+\
+"return $number1*$number2"
+
+var $o:={}
+$o.multiplication:=4D.Method.new($myCode)
+
+var $result2:=$o.multiplication(2; 3) //6
+
+var $result3:=4D.Method.new($myCode).call(Null; 10; 5) //50
 ```
 
 
@@ -82,7 +99,7 @@ In the *source* parameter, pass the 4D source code of the method as text. The so
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
 |thisObj|Object|->|Object to be returned by the This command in the method|
-|methodParams|Collection|->|Collection of values to be passed as $1...$n when method is executed|
+|methodParams|Collection|->|Collection of values to be passed as parameters to the method when it is executed|
 |Result|any|<-|Value from method execution|
 </div>
 <!-- END REF -->
@@ -90,11 +107,11 @@ In the *source* parameter, pass the 4D source code of the method as text. The so
 
 #### Description
 
-The `.apply()` function <!-- REF #MethodClass.apply().Summary -->executes the `4D.Method` object to which it is applied and returns the resulting value<!-- END REF -->.
+The `.apply()` function <!-- REF #MethodClass.apply().Summary -->executes the `4D.Method` object to which it is applied, passing parameters as a collection, and returns the resulting value<!-- END REF -->.
 
-In the *thisObj* parameter, you can pass a reference to the object to be used as `This` within the method.
+In the *thisObj* parameter, you can pass a reference to the object to be used as `This` within the method. Pass Null if you do not want to use `This` but you want to send parameters.
 
-You can also pass a collection to be used as $1...$n parameters in the method using the optional *methodParams* parameter.
+You can also pass a collection to be used as parameters in the method using the optional *methodParams* parameter.
 
 Note that `.apply()` is similar to [`.call()`](#call) except that parameters are passed as a collection.
 
@@ -103,10 +120,12 @@ Note that `.apply()` is similar to [`.call()`](#call) except that parameters are
 
 ```4d
  var $m : 4D.Method
- $m:=4D.Method.new("$1+$2+$3")
+ var $myCode:="#DECLARE ($number1:integer;$number2:integer):integer\n"+\
+"return $number1*$number2"
 
- $c:=New collection(10;20;30)
- $result:=$m.apply(Null;$c) // returns 60
+$m:=4D.Method.new($myCode)
+var $result:=$m.call(Null; 10; 5) //50
+
 ```
 
 
@@ -129,7 +148,7 @@ Note that `.apply()` is similar to [`.call()`](#call) except that parameters are
 |Parameter|Type||Description|
 |---|---|---|---|
 |thisObj|Object|->|Object to be returned by the This command in the method|
-|params|any|->|Value(s) to be passed as $1...$n when method is executed|
+|params|any|->|Value(s) to be passed as parameter(s) when method is executed|
 |Result|any|<-|Value from method execution|
 </div>
 <!-- END REF -->
@@ -137,11 +156,11 @@ Note that `.apply()` is similar to [`.call()`](#call) except that parameters are
 
 #### Description
 
-The `.call()` function <!-- REF #MethodClass.call().Summary -->executes the `4D.Method` object to which it is applied and returns the resulting value<!-- END REF -->.
+The `.call()` function <!-- REF #MethodClass.call().Summary -->executes the `4D.Method` object to which it is applied, with one or more parameter(s) passed directly, and returns the resulting value<!-- END REF -->.
 
 In the *thisObj* parameter, you can pass a reference to the object to be used as `This` within the method.
 
-You can also pass values to be used as *$1...$n* parameters in the method using the optional *params* parameter(s).
+You can also pass values to be used as parameters in the method using the optional *params* parameter(s).
 
 Note that `.call()` is similar to [`.apply()`](#apply) except that parameters are passed directly.
 
