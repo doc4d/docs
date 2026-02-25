@@ -10,6 +10,12 @@ A **`4D.Function`** object contains a piece of code that can be executed from an
 - **user functions**, created in user [classes](Concepts/classes.md) using the [Function keyword](Concepts/classes.md#function).
 - **formula functions**, i.e. functions that can execute any 4D formula.  
 
+:::note 4D Methods
+
+As of 4D 21 R3, you can also create and execute interpreted **4D methods** as text from any environment (interpreted or compiled) using the [**4D.Method**](./MethodClass.md) class.  
+
+:::
+
 
 
 ### Formula objects
