@@ -17,9 +17,9 @@ title: VP IMPORT FROM BLOB
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                                            |
-| ----- | ------------------------------------------------------------- |
-| 20 R9 | Trigger of callback function after custom functions completed |
+| リリース  | 内容                          |
+| ----- | --------------------------- |
+| 20 R9 | カスタムの関数が完了した後のコールバック関数のトリガー |
 
 </details>
 
