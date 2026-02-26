@@ -49,7 +49,7 @@ In *paramObj*, you can pass the following property:
 | param2 |                               | Text    | Reserved for compatibility, this parameter is always empty |
 | param3 |                               | Object  | コマンドの *paramObj* 引数への参照                                    |
 | param4 |                               | Object  | メソッドから返されるステータスメッセージを格納したオブジェクト                            |
-|        | .success      | Boolean | `True` if import was successful, `False` otherwise         |
+|        | .success      | Boolean | 読み込みが成功した場合には`True`、それ以外の場合には`False`                       |
 |        | .errorCode    | Integer | エラーコード                                                     |
 |        | .errorMessage | Text    | エラーメッセージ                                                   |
 
