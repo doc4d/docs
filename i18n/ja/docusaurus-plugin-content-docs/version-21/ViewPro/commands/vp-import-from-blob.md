@@ -54,7 +54,7 @@ title: VP IMPORT FROM BLOB
 
 :::note
 
-The callback function specified in the `formula` attribute is triggered after all [4D custom functions](../formulas.md#4d-functions) within the imported content have completed their calculations. This ensures that any dependent processes, such as document modifications or exports, are performed only after all formula-based computations are fully resolved.
+属性で指定されたコールバック関数は、読み込まれたコンテンツ内の全ての[4D カスタムファンクション](../formulas.md#4dファンクション) がその計算を終えた後にトリガーされます。 これにより、ドキュメントの変更や書き出しなどの依存処理は、全てのフォーミュラベースの計算が完全に解決した後に初めて実行されることが保証されます。
 
 ::::
 
