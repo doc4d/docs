@@ -6,7 +6,9 @@ title: Method
 
 A `4D.Method` object contains a piece of code that is created from text source and can be executed. `4D.Method` methods always execute in interpreted mode, regardless of the project running mode (interpreted/compiled). This feature is especially designed to support dynamic, on-the-fly execution of code snippets.
 
-A `4D.Method` object is created with the `4D.Method.new()` function, which evaluates the provided source code and encapsulates it as a [callable function](./FunctionClass.md#formula-objects). You can:
+A `4D.Method` object is created with the `4D.Method.new()` function. 
+
+`4D.Method` objects inherit from the [`4D.Function`](./FunctionClass.md) class. Thus, to [execute the method object](./FunctionClass.md#executing-code-in-function-objects), you can:
 
 - store a `4D.Method` object in an object property and use the `()` operator after the property name,
 - or directly call the `4D.Method` object using the [`call()`](#call) or [`apply()`](#apply) function on it.
@@ -83,12 +85,11 @@ End if
 
 ||
 |---|
-|[<!-- INCLUDE #MethodClass.apply().Syntax -->](#apply)<br/><!-- INCLUDE #MethodClass.apply().Summary -->|
-|[<!-- INCLUDE #MethodClass.call().Syntax -->](#call)<br/><!-- INCLUDE #MethodClass.call().Summary -->|
+|[<!-- INCLUDE #FunctionClass.apply().Syntax -->](#apply)<br/><!-- INCLUDE #FunctionClass.apply().Summary -->|
+|[<!-- INCLUDE #FunctionClass.call().Syntax -->](#call)<br/><!-- INCLUDE #FunctionClass.call().Summary --> |
 |[<!-- INCLUDE #MethodClass.checkSyntax().Syntax -->](#checksyntax)<br/><!-- INCLUDE #MethodClass.checkSyntax().Summary -->|
 |[<!-- INCLUDE #MethodClass.name.Syntax -->](#name)<br/><!-- INCLUDE #MethodClass.name.Summary -->|
-|[<!-- INCLUDE #MethodClass.source.Syntax -->](#source)<br/><!-- INCLUDE #MethodClass.source.Summary -->|
-
+|[<!-- INCLUDE #FunctionClass.source.Syntax -->](#source)<br/><!-- INCLUDE #FunctionClass.source.Summary --> |
 
 
 
@@ -138,6 +139,13 @@ Giving a *name* to your method is recommended if you want to:
 The resulting 4D.Method object can be checked using [`checkSyntax()`](#checksyntax) and executed using `()`, [`.apply()`](#apply) or [`.call()`](#call).
 
 
+:::note
+
+Volatile method objects are not project methods, they cannot be called by commands such as [`EXECUTE METHOD`](../commands-legacy/execute-method.md). On the other hand, since they 
+
+:::
+
+
 #### Example
 
 ```4d
@@ -147,40 +155,7 @@ var $res:=$m.call(Null; "hello world")  //HELLO WORLD
 ```
 
 
-## .apply()
-
-<details><summary>History</summary>
-
-|Release|Changes|
-|---|---|
-|21 R3|Added|
-
-</details>
-
-<!-- REF #MethodClass.apply().Syntax -->**.apply**() : any<br/>**.apply**( *thisObj* : Object { ; *methodParams* : Collection } ) : any<!-- END REF -->
-
-
-<!-- REF #MethodClass.apply().Params -->
-<div class="no-index">
-
-|Parameter|Type||Description|
-|---------|--- |:---:|------|
-|thisObj|Object|->|Object to be returned by the This command in the method|
-|methodParams|Collection|->|Collection of values to be passed as parameters to the method when it is executed|
-|Result|any|<-|Value from method execution|
-</div>
-<!-- END REF -->
-
-
-#### Description
-
-The `.apply()` function <!-- REF #MethodClass.apply().Summary -->executes the `4D.Method` object to which it is applied, passing parameters as a collection, and returns the resulting value<!-- END REF -->.
-
-In the *thisObj* parameter, you can pass a reference to the object to be used as `This` within the method. Pass Null if you do not want to use `This` but you want to send parameters.
-
-You can also pass a collection to be used as parameters in the method using the optional *methodParams* parameter.
-
-Note that `.apply()` is similar to [`.call()`](#call) except that parameters are passed as a collection.
+[<!-- INCLUDE #FunctionClass.apply().Desc -->]
 
 
 #### Example
@@ -195,40 +170,9 @@ var $result:=$m.apply(Null; $coll) //20
 
 ```
 
-## .call()
 
-<details><summary>History</summary>
+[<!-- INCLUDE #FunctionClass.call().Desc -->]
 
-|Release|Changes|
-|---|---|
-|21 R3|Added|
-
-</details>
-
-<!-- REF #MethodClass.call().Syntax -->**.call**() : any<br/>**.call**( *thisObj* : Object { ; *...params* : any } ) : any<!-- END REF -->
-
-
-<!-- REF #MethodClass.call().Params -->
-<div class="no-index">
-
-|Parameter|Type||Description|
-|---|---|---|---|
-|thisObj|Object|->|Object to be returned by the This command in the method|
-|params|any|->|Value(s) to be passed as parameter(s) when method is executed|
-|Result|any|<-|Value from method execution|
-</div>
-<!-- END REF -->
-
-
-#### Description
-
-The `.call()` function <!-- REF #MethodClass.call().Summary -->executes the `4D.Method` object to which it is applied, with one or more parameter(s) passed directly, and returns the resulting value<!-- END REF -->.
-
-In the *thisObj* parameter, you can pass a reference to the object to be used as `This` within the method.
-
-You can also pass values to be used as parameters in the method using the optional *params* parameter(s).
-
-Note that `.call()` is similar to [`.apply()`](#apply) except that parameters are passed directly.
 
 #### Example
 
@@ -239,7 +183,6 @@ Note that `.call()` is similar to [`.apply()`](#apply) except that parameters ar
 
 $m:=4D.Method.new($myCode; "m_multiple")
 var $result:=$m.call(Null; 10; 5) //50
-
 ```
 
 
@@ -317,26 +260,7 @@ The `.name` property <!-- REF #MethodClass.name.Summary -->contains the name of 
 This property is **read-only**.
 
 
-## .source
-
-<details><summary>History</summary>
-
-|Release|Changes|
-|---|---|
-|21 R3|Added|
-
-</details>
-
-<!-- REF #MethodClass.source.Syntax -->**.source** : Text<!-- END REF -->
-
-
-#### Description
-
-The `.source` property <!-- REF #MethodClass.source.Summary -->contains the source code of the `4D.Method` object as text<!-- END REF -->.
-
-The returned value is the text passed to the `.new()` constructor but reformatted.
-
-This property is **read-only**.
+[<!-- INCLUDE #FunctionClass.source.Desc -->]
 
 #### Example
 
