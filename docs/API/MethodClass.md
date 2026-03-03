@@ -26,8 +26,7 @@ A `4D.Method` object is created with the `4D.Method.new()` function, which evalu
 var $myCode : Text
 $myCode:="#DECLARE ($number1:Integer;$number2:Integer):Integer"+Char(13)+"return $number1*$number2"
 
-var $o : 4D.Method
-$o:={}
+var $o:={}
 $o.multiplication:=4D.Method.new($myCode) //put object in a property
 var $result2:=$o.multiplication(2;3) // 6
 
@@ -37,32 +36,13 @@ var $result3:=4D.Method.new($myCode).call(Null; 10; 5) // 50
 #### Using `This` inside method code
 
 ```4d
-var $myCode : Text
-$myCode:="#DECLARE ($str1:text):text"+Char(13)+"return $str1+This.name"
+var $myCode:="#DECLARE ($str1:text):text"+Char(13)+"return $str1+This.name"
 
-var $o : 4D.Method
-$o:=New object("name"; "John")
+var $o:={name: "John"}
 $o.concat:=4D.Method.new($myCode)
 
 var $result : Text
 $result:=$o.concat("Hello ") // $result is "Hello John"
-```
-
-#### Using map & dynamic parameters
-
-```4d
-var $c; $c2 : Collection
-$c:=[1; 4; 9; 10; 20]
-
-var $source : Text
-$source:="#DECLARE ($param1;$param2)"+Char(13)
-$source:=$source+"if ($param1.value>0)"+Char(13)
-$source:=$source+"return Round(($param1.value/$param2)*100; 2)"+Char(13)
-$source:=$source+"else"+Char(13)
-$source:=$source+"return 0"+Char(13)
-$source:=$source+"End if"
-
-$c2:=$c.map(4D.Method.new($source); $c.sum())
 ```
 
 #### Using a text file with syntax checking
@@ -141,11 +121,21 @@ End if
 
 The `4D.Method.new()` function <!-- REF #4D.Method.new().Summary -->creates and returns a new `4D.Method` object built from the *source* code<!-- END REF -->.
 
-In the *source* parameter, pass the 4D source code of the method as text. 
+In the *source* parameter, pass the 4D source code of the method as text. All end-of-line characters are supported (LF, CR, CRLF) using the [`Char`](../commands-legacy/char.md) command or an [escape sequence](../Concepts/quick-tour.md#escape-sequences).  
 
 In the optional *name* parameter, pass the name of the method to be displayed in the 4D debugger or Runtime explorer. If you omit this parameter, the method name will appear as "anonymous". 
 
-The resulting 4D.Method object can be checked using [`checkSyntax()`](#checksyntax) and executed using [`.apply()`](#apply) or [`.call()`](#call).
+:::tip
+
+Giving a *name* to your method is recommended if you want to:
+
+- use persistent method name in the [Custom watch pane of the Debugger](../Debugging/debugger#custom-watch-pane) (anonymous methods are not persistent in the debugger).
+- handle the method as volatile method using commands such as [`Method get path`](../commands-legacy/method-get-path.md) and [`Method resolve path`](../commands-legacy/method-resolve-path.md) (anonymous methods don't have paths).
+
+:::
+
+
+The resulting 4D.Method object can be checked using [`checkSyntax()`](#checksyntax) and executed using `()`, [`.apply()`](#apply) or [`.call()`](#call).
 
 
 #### Example
@@ -196,19 +186,14 @@ Note that `.apply()` is similar to [`.call()`](#call) except that parameters are
 #### Example
 
 ```4d
-var $m : 4D.Method
-var $coll:=[1; 2; 3; 4]
-var $myCode:="#DECLARE (...:Integer):Integer\n"+\
-"var $number; $total : Integer\n"+\
-"For ($number; 1; Count parameters)\n"+\
-"$total+=${$number}\n"+\
-"End for \n"+\
-"return $total"
+var $coll:=[10; 2]
+var $myCode:="#DECLARE ($number1:Integer;$number2:Integer):Integer\n"+\
+"return $number1*$number2"
 
-$m:=4D.Method.new($myCode;"m_addition")
-var $result:=$m.apply(Null; $coll)  //10
+$m:=4D.Method.new($myCode; "m_multiple")
+var $result:=$m.apply(Null; $coll) //20
+
 ```
-
 
 ## .call()
 
@@ -348,6 +333,8 @@ This property is **read-only**.
 #### Description
 
 The `.source` property <!-- REF #MethodClass.source.Summary -->contains the source code of the `4D.Method` object as text<!-- END REF -->.
+
+The returned value is the text passed to the `.new()` constructor but reformatted.
 
 This property is **read-only**.
 
