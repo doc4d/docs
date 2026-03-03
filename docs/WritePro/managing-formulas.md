@@ -10,6 +10,8 @@ slug: /WritePro/formulas
 
 Inserting formulas in 4D Write Pro areas is done with the [**WP INSERT FORMULA**](commands/wp-insert-formula.md) command and can be read using the [**WP Get formulas**](commands-legacy/wp-get-formulas.md) command. They are also returned by the [**WP Get text**](commands-legacy/wp-get-text.md) command.
 
+### Formula evaluation
+
 Formulas are evaluated:
 
 - when they are inserted in a form object which displays computed values
@@ -56,24 +58,24 @@ You can insert special expressions related to document attributes in any documen
 
 | Properties         | Type    | Description|                                                                                                                                                     
 |--------------------|---------|--------------------|
-|[This](../commands/this.md).title|Text|Title defined in wk title attribute|                                                                                                                            
-|[This](../commands/this.md).author|Text|Author defined in wk author attribute|                                                                                                                           
-|[This](../commands/this.md).subject|Text|Subject defined in wk subject attribute|                                                                                                                          
-|[This](../commands/this.md).company|Text|Company defined in wk company attribute|                                                                                                                          
-|[This](../commands/this.md).notes|Text|Notes defined in wk notes attribute|                                                                                                                              
-|[This](../commands/this.md).dateCreation|Date|Date creation defined in wk date creation attribute|                                                                                                               
-|[This](../commands/this.md).dateModified|Date|Date modified defined in wk date modified attribute|                                                                                                               
-|[This](../commands/this.md).pageNumber (\*)|Number|Page number as it is defined:<li>- From the document start (default) or </li><li>- From the section page start if it is defined by section page start.</li> This formula is always dynamic; it is not affected by the [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md) command.|
-|[This](../commands/this.md).pageCount (\*)|Number|Page count: total count of pages.<br/> This formula is always dynamic; it is not affected by the [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md) command.|
-|[This](../commands/this.md).document|Object|4D Write Pro document|                                                                                                                                             
-|[This](../commands/this.md).data|Object|Data context of the 4D Write Pro document set by [**WP SET DATA CONTEXT**](commands-legacy/wp-set-data-context.md)|
-|[This](../commands/this.md).sectionIndex|Number|The Index of the section in the 4D Write Pro document starting from 1|                                                                                             
-|[This](../commands/this.md).pageIndex|Number|The actual page number in the 4D Write Pro document starting from 1 (regardless of the section page numbers)|
-|[This](../commands/this.md).sectionName|String|The name that the user gives to the section|                                                                                                                       
+|This.title|Text|Title defined in wk title attribute|                                                                                                                            
+|This.author|Text|Author defined in wk author attribute|                                                                                                                           
+|This.subject|Text|Subject defined in wk subject attribute|                                                                                                                          
+|This.company|Text|Company defined in wk company attribute|                                                                                                                          
+|This.notes|Text|Notes defined in wk notes attribute|     
+|This.dateCreation|Date|Date creation defined in wk date creation attribute|                                                                                                               
+|This.dateModified|Date|Date modified defined in wk date modified attribute|                                                                                                               
+|This.pageNumber (\*)|Number|Page number as it is defined:<li>- From the document start (default) or </li><li>- From the section page start if it is defined by section page start.</li> This formula is always dynamic; it is not affected by the [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md) command.|
+|This.pageCount (\*)|Number|Page count: total count of pages.<br/> This formula is always dynamic; it is not affected by the [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md) command.|
+|This.document|Object|4D Write Pro document|                
+|This.data|Object|Data context of the 4D Write Pro document set by [**WP SET DATA CONTEXT**](commands-legacy/wp-set-data-context.md)|
+|This.sectionIndex|Number|The Index of the section in the 4D Write Pro document starting from 1|                                                                                             
+|This.pageIndex|Number|The actual page number in the 4D Write Pro document starting from 1 (regardless of the section page numbers)|
+|This.sectionName|String|The name that the user gives to the section|                                                                                                                       
 
 :::note
 
-Additional context properties are available when you work with tables. See *Handling tables* for more information.
+[Additional context expressions](/user-legacy/handling-tables.md#table-formula-object) such as `This.item` are available when you work with tables.
 
 :::
 
@@ -90,25 +92,6 @@ For example, to insert the page number in the footer area:
   //Using Formula(myMethod) with myMethod processing This.pageNumber
   //would not work correctly
 ```
-
-## Table formula context object
-
-When used in a formula within the table, the **This** keyword gives access to different data according to the context:
-
-| **Context**     | **Expression**   | **Type** | **Returns**               | 
-|---------------- | ---------------- | -------- | ------------------------- |  
-|Anywhere         | [This](../commands/this.md).table       | Object   | Current table             |               
-|                 | [This](../commands/this.md).row         | Object   | Current table row element |
-|                 | [This](../commands/this.md).rowIndex    | Number   | Index of the current row, starting from 1  |
-|When a datasource has been defined for the table | [This](../commands/this.md).table.dataSource | Object (formula) | Datasource as a formula |
-|                 | [This](../commands/this.md).tableData   | Collection or Entity selection (usually) | Evaluated table.dataSource |  
-|In each data row when a table datasource returns a collection or an entity selection | [This](../commands/this.md).item.xxx | Any | Mapped to each item of the table datasource collection or entity selection, for example **This.item.firstName** if the associated entity has the *firstName* attribute   |
-|                 | [This](../commands/this.md).itemIndex   | Number   | Index of the current item in the collection or entity selection, starting from 0 |  
-| In any row (except header rows) when a table datasource returns a collection or an entity selection | [This](../commands/this.md).previousItems  | Collection or Entity selection | Items displayed on the pages before the bottom carry over row (if any) or before the row of the expression, including the page where is displayed the row containing the expression. <br/>This expression returns the same type of value as the **This.tableData** expression.  |
-| In a break row  | [This](../commands/this.md).breakItems  | Collection or Entity selection  | Items of the collection or entity selection displayed in the rows between:<br/><ul><li>the current break row and the previous break row of the same level (or the start of the table) if the break row(s) are displayed after the data row.</li><li>the current break and the next break row of the same level (or the end of the table) if the break row(s) are displayed before the data row.</li></ul>|  
-
-
-In any other contexts, these expressions will return *undefined*.
 
 :::note
 
