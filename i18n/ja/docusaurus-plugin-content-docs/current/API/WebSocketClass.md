@@ -15,6 +15,10 @@ WebSocketクライアント接続は、たとえばリアルタイムで財務�
 
 </details>
 
+### Aynchronous programming
+
+This class supports asynchronous programming in 4D as described in the [Asynchronous Execution](../Develop/async.md) page.
+
 ### 例題
 
 この例題では、基本的な WebSocketクライアントを作成します。
