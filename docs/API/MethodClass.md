@@ -13,6 +13,8 @@ A `4D.Method` object is created with the `4D.Method.new()` function.
 - store a `4D.Method` object in an object property and use the `()` operator after the property name,
 - or directly call the `4D.Method` object using the [`call()`](#call) or [`apply()`](#apply) function on it.
 
+See examples in the [Executing code in Function objects](../API/FunctionClass.md#executing-code-in-function-objects) paragraph.
+
 :::tip Related blog post
 
 [Execute Code from Text with 4D.Method](https://blog.4d.com/execute-code-from-text-with-4d-method)
@@ -131,7 +133,7 @@ In the optional *name* parameter, pass the name of the method to be displayed in
 Giving a *name* to your method is recommended if you want to:
 
 - use persistent method name in the [Custom watch pane of the Debugger](../Debugging/debugger#custom-watch-pane) (anonymous methods are not persistent in the debugger).
-- handle the method as volatile method using commands such as [`Method get path`](../commands-legacy/method-get-path.md) and [`Method resolve path`](../commands-legacy/method-resolve-path.md) (anonymous methods don't have paths).
+- handle the volatile method using commands such as [`Method get path`](../commands-legacy/method-get-path.md) and [`Method resolve path`](../commands-legacy/method-resolve-path.md) (anonymous methods don't have paths).
 
 :::
 
@@ -141,7 +143,7 @@ The resulting 4D.Method object can be checked using [`checkSyntax()`](#checksynt
 
 :::note
 
-Volatile method objects are not project methods, they cannot be called by commands such as [`EXECUTE METHOD`](../commands-legacy/execute-method.md). On the other hand, since they 
+Named volatile method objects are not project methods, they cannot be called by commands such as [`EXECUTE METHOD`](../commands-legacy/execute-method.md). On the other hand, since they inherit from the [`4D.Function`](./FunctionClass.md) class, they can be used anywhere a 4D.Funciton object is expected.  
 
 :::
 
@@ -171,7 +173,7 @@ var $result:=$m.apply(Null; $coll) //20
 ```
 
 
-[<!-- INCLUDE #FunctionClass.call().Desc -->]
+<!-- INCLUDE #FunctionClass.call().Desc -->
 
 
 #### Example
@@ -260,7 +262,7 @@ The `.name` property <!-- REF #MethodClass.name.Summary -->contains the name of 
 This property is **read-only**.
 
 
-[<!-- INCLUDE #FunctionClass.source.Desc -->]
+<!-- INCLUDE #FunctionClass.source.Desc -->
 
 #### Example
 

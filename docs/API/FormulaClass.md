@@ -4,14 +4,17 @@ title: Formula
 ---
 
 
-The [Formula](../commands/formula.md) and [Formula from string](../commands/formula-from-string.md) commands allow you to create [`4D.Formula` objects](#formula-objects) to execute any 4D expression or code expressed as single-line text.
+`4D.Formula` objects are created by the [Formula](../commands/formula.md) or [Formula from string](../commands/formula-from-string.md) commands and allow you execute any 4D expression or code expressed as single-line text.
 
-`4D.Formula` objects inherit from the [`4D.Function`](./FunctionClass.md) class. 
+`4D.Formula` class objects inherit from the [`4D.Function`](./FunctionClass.md) class. Thus, to execute the formula, you can:
+
 - store a `4D.Formula` object in an object property and use the `()` operator after the property name,
 - or directly call the `4D.Formula` object using the [`call()`](#call) or [`apply()`](#apply) function on it.
 
+See examples in the [Executing code in Function objects](../API/FunctionClass.md#executing-code-in-function-objects) paragraph.
 
-#### Passing parameters to formulas
+
+### Passing parameters to formulas
 
 You can pass parameters to your formulas using a sequential parameter syntax based upon `$1, $2,...,$n`. The numbering of the $ parameters represents the order in which they will be passed to the formula. For example, you can write:
 
@@ -67,7 +70,7 @@ Parameters are received within the method, in the order they are specified in th
 
 
 
-[<!-- INCLUDE #FunctionClass.apply().Desc -->]
+<!-- INCLUDE #FunctionClass.apply().Desc -->
 
 
 #### Example 1
@@ -95,7 +98,7 @@ Parameters are received within the method, in the order they are specified in th
  $calc.apply($robot) // $robot={name:Robot,price:543,quantity:2,total:1086}
 ```
 
-[<!-- INCLUDE #FunctionClass.call().Desc -->]
+<!-- INCLUDE #FunctionClass.call().Desc -->
 
 #### Example 1
 
@@ -114,7 +117,7 @@ Parameters are received within the method, in the order they are specified in th
 ```
 
 
-[<!-- INCLUDE #FunctionClass.source.Desc -->]
+<!-- INCLUDE #FunctionClass.source.Desc -->
 
 #### Example
 

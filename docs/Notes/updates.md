@@ -15,6 +15,7 @@ title: Release Notes
 #### Behavior changes
 
 - The [`JSON Validate`](../commands/json-validate.md) command now takes the *$schema* key into account and generates an error if a non-supported version is declared in the schema. 
+- For clarity, formula objects are now instances of a new [`4D.Formula`](../API/FormulaClass.md) class that inherits from the generic [`4D.Function`](../API/FunctionClass.md) class.
 
 
 ## 4D 21 R2

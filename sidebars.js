@@ -2219,6 +2219,7 @@ module.exports =
             "API/FileClass",
             "API/FileHandleClass",
             "API/FolderClass",
+            "API/FormulaClass",
             "API/FunctionClass",
             "API/HTTPAgentClass",
             "API/HTTPRequestClass",
