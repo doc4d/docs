@@ -5,8 +5,6 @@ title: HTTPRequest
 
 `HTTPRequest` クラスを使って、[`HTTPRequest オブジェクト`](#httprequest-オブジェクト) を扱うことができます。このオブジェクトは、HTTPサーバーへのリクエストの設定と送信、および HTTPサーバーのレスポンスを処理するのに使用します。
 
-`HTTPRequest` クラスは、`4D` クラスストアにて提供されています。   HTTPリクエストを作成・送信するには、[`HTTPRequest オブジェクト`](#httprequest-オブジェクト) を返す [4D.HTTPRequest.new()](#4dhttprequestnew) 関数を使用します。
-
 <details><summary>履歴</summary>
 
 | リリース  | 内容     |
@@ -14,6 +12,12 @@ title: HTTPRequest
 | 19 R6 | クラスを追加 |
 
 </details>
+
+`HTTPRequest` クラスは、`4D` クラスストアにて提供されています。   HTTPリクエストを作成・送信するには、[`HTTPRequest オブジェクト`](#httprequest-オブジェクト) を返す [4D.HTTPRequest.new()](#4dhttprequestnew) 関数を使用します。
+
+### Aynchronous programming
+
+This class supports asynchronous programming in 4D as described in the [Asynchronous Execution](../Develop/async.md) page.
 
 ### 例題
 
