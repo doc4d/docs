@@ -4,16 +4,16 @@ title: Session info
 displayed_sidebar: docs
 ---
 
-<!-- REF #_command_.Session info.Syntax -->**Session info** ( *sessionId* : Integer ) : Object<!-- END REF -->
+<!-- REF #_command_.Session info.Syntax -->**Session info** ( *sessionId* : Text ) : Object<!-- END REF -->
 
 <!-- REF #_command_.Session info.Params -->
 
 <div class="no-index">
 
-| Parámetros | Tipo    |                             | Descripción                 |
-| ---------- | ------- | :-------------------------: | --------------------------- |
-| sessionID  | Integer | &#8594; | ID de sesión                |
-| Resultado  | Object  | &#8592; | Información sobre la sesión |
+| Parámetros | Tipo   |                             | Descripción                 |
+| ---------- | ------ | :-------------------------: | --------------------------- |
+| sessionID  | Text   | &#8594; | ID de sesión                |
+| Resultado  | Object | &#8592; | Información sobre la sesión |
 
 </div>
 <!-- END REF -->
