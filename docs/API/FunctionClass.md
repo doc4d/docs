@@ -9,15 +9,12 @@ A **`4D.Function`** object contains a piece of code that can be executed from an
 
 ### Inheritance
 
-4D handles several kinds of `Function` objects, that inherit from the **4D.Function** class:
+4D handles several kinds of `Function` objects, inheriting from the **4D.Function** class:
 
 - **native functions**, i.e. built-in functions from various 4D classes such as [`collection.sort()`](./CollectionClass.md#sort) or [`file.copyTo()`](./FileClass.md#copyto).
-- **user functions**, created in [user classes](Concepts/classes.md) using the [Function keyword](Concepts/classes.md#function).
+- **user functions**, created in [user classes](Concepts/classes.md) using the [`Function` keyword](Concepts/classes.md#function).
 - **formula functions**, i.e. functions that can execute formula code stored in [4D.Formula](./FormulaClass.md) objects,
 - **method functions**, i.e. functions that can execute source code as text stored in [4D.Method](./MethodClass.md) objects. 
-
-- function objects of the `4D.Formula` type are created using the [`Formula`](../commands/formula) or [`Formula from string`](../commands/formula-from-string) commands.
-- function objects of the `4D.Method` type are created using the [`4D.Method.new()`](../commands/4d-method-new) constructor.
 
 
 ### Executing code in Function objects
@@ -25,9 +22,9 @@ A **`4D.Function`** object contains a piece of code that can be executed from an
 Function objects can be encapsulated in object properties:
 
 ```4d
- var $f : 4D.Formula
- $f:=New object
- $f.message:=Formula(ALERT("Hello world"))
+var $message : 4D.Function
+$message:=Formula(ALERT("Hello world"))
+$f:={message: $message}
 ```
 
 This property is an "object function", i.e. a function which is bound to its parent object. To execute a function stored in an object property, use the **()** operator after the property name, such as:
@@ -51,7 +48,7 @@ Note that, even if it does not have parameters (see below), an object function t
 You can also execute a function using the [`apply()`](#apply) and [`call()`](#call):
 
 ```4d
- $f.message.apply() //displays "Hello world"
+ $message.apply() //displays "Hello world"
 ```
 
 #### Passing parameters
@@ -59,16 +56,14 @@ You can also execute a function using the [`apply()`](#apply) and [`call()`](#ca
 You can pass parameters to your formulas using a sequential parameter syntax based upon `$1, $2,...,$n`. The numbering of the $ parameters represents the order in which they will be passed to the formula. For example, you can write:
 
 ```4d
- var $f : Object
- $f:=New object
- $f.message:=Formula(ALERT("Hello "+$2+", "+$1))
+ $f:={message:Formula(ALERT("Hello "+$2+", "+$1))}
  $f.message("John";"Smith") //displays "Hello Smith, John"
 ```
 
 Or using the [.call()](#call) function:
 
 ```4d
- var $f : Object
+ var $f : 4D.Function
  $f:=Formula($1+" "+$2)
  $text:=$f.call(Null;"Hello";"World") //returns "Hello World"
  $text:=$f.call(Null;"Welcome to";String(Year of(Current date))) //returns "Welcome to 2026" (for example)
@@ -148,7 +143,7 @@ In the *thisObj* parameter, you can pass a reference to the object to be used as
 You can pass a collection to be used as parameters in the function using the optional *params* parameter:
 
 - in `4D.Formula` objects, parameters are passed in $1...$n in the formula.
-- in `4D.Method` objects, parameters are passed in [declared method parameters](../Concepts/parameters.md). 
+- in other `4D.Function` objects such as `4D.Method` objects, parameters are passed in [declared method parameters](../Concepts/parameters.md). 
 
 Note that `.apply()` is similar to [`.call()`](#call) except that parameters are passed as a collection. This can be useful for passing calculated results.
 
