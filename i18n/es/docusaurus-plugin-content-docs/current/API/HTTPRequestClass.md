@@ -5,8 +5,6 @@ title: HTTPRequest
 
 La clase `HTTPRequest` permite manejar [objetos `HTTPRequest`](#httprequest-object) que se pueden utilizar para configurar y enviar solicitudes a un servidor HTTP, así como para procesar las respuestas del servidor HTTP.
 
-La clase `HTTPRequest` está disponible en el class store `4D`. Para crear y enviar peticiones HTTP se utiliza la función [4D.HTTPRequest.new()](#4dhttprequestnew), que devuelve un [objeto `HTTPRequest`](#httprequest-object).
-
 <details><summary>Historia</summary>
 
 | Lanzamiento | Modificaciones |
@@ -14,6 +12,12 @@ La clase `HTTPRequest` está disponible en el class store `4D`. Para crear y env
 | 19 R6       | Clase añadida  |
 
 </details>
+
+La clase `HTTPRequest` está disponible en el class store `4D`. Para crear y enviar peticiones HTTP se utiliza la función [4D.HTTPRequest.new()](#4dhttprequestnew), que devuelve un [objeto `HTTPRequest`](#httprequest-object).
+
+### Aynchronous programming
+
+This class supports asynchronous programming in 4D as described in the [Asynchronous Execution](../Develop/async.md) page.
 
 ### Ejemplo
 
