@@ -15,6 +15,10 @@ As ligações cliente WebSocket são úteis, por exemplo, para receber dados fin
 
 </details>
 
+### Aynchronous programming
+
+This class supports asynchronous programming in 4D as described in the [Asynchronous Execution](../Develop/async.md) page.
+
 ### Exemplo
 
 Neste exemplo, criamos um cliente WebSocket muito básico.
