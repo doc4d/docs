@@ -7,6 +7,10 @@ title: SystemWorker
 
 `SystemWorker` クラスは、`4D` クラスストアにて提供されています。
 
+### Aynchronous programming
+
+This class supports asynchronous programming in 4D as described in the [Asynchronous Execution](../Develop/async.md) page.
+
 ### 例題
 
 ```4d
