@@ -10,7 +10,7 @@ Webセッションでは、以下のことが可能です:
 - 同一のWebクライアントからの複数のリクエストを、無制限のプリエンプティブプロセスで同時に処理 (Webセッションは **スケーラブル**です)。
 - `Session` オブジェクトと [Session API](API/SessionClass.md) を介したセッションの管理。
 - セッションの [.storage](../API/SessionClass.md#storage) を使用して、Webクライアントのプロセス間でデータを保存および共有。
-- associate [privileges](../ORDA/privileges.md) to the user running the session.
+- セッションを実行しているユーザーに[権限](../ORDA/privileges.md) を割り当てる。
 
 :::tip 関連したblog 記事
 
@@ -20,7 +20,7 @@ Webセッションでは、以下のことが可能です:
 
 :::note
 
-Destkop applications (client/server and single-user) also provide 4D developers with [specific sessions](../Desktop/sessions.md).
+デスクトップアプリケーション(クライアント/サーバーまたはシングルユーザー)は4D 開発者に[特定のセッション](../Desktop/sessions.md)を提供します。
 
 :::
 
