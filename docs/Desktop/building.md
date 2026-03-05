@@ -64,7 +64,7 @@ Checking this file may help you saving time during the subsequent deployment ste
 
 > Use the `Get 4D file(Build application log file)` statement to get the log file location.
 
-### Application UUID and Access to External Resources
+### Access to External Resources
 
 Each stand‑alone or client/server built application is internally assigned a UUID. The OS uses this identifier to recognize the application and validate its credentials when it accesses external resources such as the network, document folders, or [HTTP certificate stored in the *keychain*](../API/HTTPRequestClass.md#4dhttprequestnew).
 
