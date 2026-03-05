@@ -66,30 +66,30 @@ Web サーバーがリクエストを受信すると、**すべての** URL パ�
 
 一部のヘッダーは追加、変更、削除ができません:
 
-| ヘッダー             | 追加 | 設定         | 削除 |
-| ---------------- | -- | ---------- | -- |
-| Date             | ×  | ×          | ×  |
-| Content-Length   | ×  | ×          | ×  |
-| Content-Encoding | ×  | ×          | ×  |
-| Vary             | ◯  | ×          | ×  |
-| Set-Cookie       | ◯  | Add cookie | ×  |
+| ヘッダー             | 追加 | 設定           | 削除 |
+| ---------------- | -- | ------------ | -- |
+| Date             | ×  | ×            | ×  |
+| Content-Length   | ×  | ×            | ×  |
+| Content-Encoding | ×  | ×            | ×  |
+| Vary             | ◯  | ×            | ×  |
+| Set-Cookie       | ◯  | Cookie を追加する | ×  |
 
-Unauthorized changes on these headers do not generate errors, however modifications will be ignored.
+これらのヘッダーに対する認証されていない変更はエラーを生成することはしませんが、それらの変更は無視されます。
 
-### Current rules
+### 現在のルール
 
-You can know the current rules using the [`.rules` property of the Web Server object](../API/WebServerClass.md#rules):
+[Web サーバーオブジェクトの`.rules` プロパティ](../API/WebServerClass.md#rules) を使用することで、現在のルールを知ることができます:
 
 ```
 var $rules : Collection
-$rules:=WEB Server.rules //current rules
+$rules:=WEB Server.rules //現在のルール
 ```
 
 ## 例題
 
-Rules can be set using a `HTTPRules.json` file or the *settings* parameter of the [`.start()`](../API/WebServerClass.md#start) web server function.
+ルールは、`HTTPRules.json` ファイルまたはWeb サーバー関数の[`.start()`](../API/WebServerClass.md#start) 関数の*settings* 引数を使用することで、設定することができます。
 
-### Using a HTTPRules.json file
+### HTTPRules.json ファイルを使用して設定する
 
 ```json
 
@@ -153,7 +153,7 @@ Rules can be set using a `HTTPRules.json` file or the *settings* parameter of th
 
 ```
 
-### Using a *settings* parameter
+### *settings* 引数を使用して設定する
 
 ```4d
 var $rule:={}
