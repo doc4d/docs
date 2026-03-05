@@ -75,7 +75,7 @@ You can insert special expressions related to document attributes in any documen
 
 :::note
 
-[Additional context expressions](/user-legacy/handling-tables.md#table-formula-object) such as `This.item` are available when you work with tables.
+When you **work with tables**, [additional context expressions](/user-legacy/handling-tables.md#table-formula-object) such as `This.item` are available.
 
 :::
 

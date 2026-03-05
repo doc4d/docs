@@ -205,31 +205,34 @@ If you designate more than five rows as header (or if it results from an inserti
 
 ## Table datasource 
 
-You can assign a [formula object](../../API/FunctionClass.md) as a **datasource** for a table and access the resulting value(s) from within the table using specific [expressions with `This`](#table-formula-object). The datasource formula is processed by 4D Write Pro when [formulas are evaluated](../managing-formulas.md#formula-evaluation) (e.g. when the document is opened, when the [WP COMPUTE FORMULAS](./commands/wp-compute-formulas) command is called, etc.). 
+You can assign a [formula object](../../API/FormulaClass.md) as a **datasource** for a table and access the resulting value(s) from within the table using specific [expressions with `This`](#table-formula-object). The datasource formula is processed by 4D Write Pro each time [formulas are evaluated](../managing-formulas.md#formula-evaluation) (e.g. when the document is opened, when the [WP COMPUTE FORMULAS](./commands/wp-compute-formulas) command is called, etc.). 
 
-To assign a datasource to a table, use the [WP SET ATTRIBUTES](./commands/wp-set-attributes) command with `wk datasource` as attribute and the datasource object as value. The datasource object can be:
+### Assigning a datasource
 
-- a [**4D formula**](../../API/FunctionClass.md). For example, to fill a table with a row for every person living in France:
+To assign a datasource to a table, use the [WP SET ATTRIBUTES](./commands/wp-set-attributes) command with the `wk datasource` constant as attribute and the datasource object as value. The datasource object can be:
+
+- a [**4D formula**](../../API/FormulaClass.md). For example, to fill a table with a row for every person living in France:
 
 ```4d
- $formula:=Formula(ds.people.query("country = :1";"France"))
+ var $formula:=Formula(ds.people.query("country = :1";"France"))
  WP SET ATTRIBUTES($table;wk datasource;$formula)
 ```
 
-- a **data context**, defined using the [WP SET DATA CONTEXT](./commands/wp-set-data-context) command for the whole document, and that can be assigned to the table using the `This.data` object. For example, to fill a table with an [entity selection](../../API/EntitySelectionClass.md) from orders:
+- a **data context**, defined using the [WP SET DATA CONTEXT](./commands/wp-set-data-context) command for the whole document. A data context can be assigned to a table through the `This.data` object. For example, to fill a table with an [entity selection](../../API/EntitySelectionClass.md) from orders:
 
 ```4d
-var $context:=New object
+var $context:={}
 $context.orders:=ds.Order.query("customerID=:1"; $customer.ID)
 var $doc:=WP New($template)
 WP SET DATA CONTEXT($doc; $context)
 WP SET ATTRIBUTES($table;wk datasource;This.data.orders)
 ```
 
+If the datasource formula object returns a (non empty) collection or entity selection, the table is automatically filled when the formula is computed: it contains at least as many rows as there are elements in the collection or entities in the entity selection. The first table row, called the data row, is used as a template row (excluding header row(s) and the possible break row(s)).
 
-* If the datasource formula object returns a (non empty) collection or entity selection, the table is automatically filled when the formula is computed: it contains at least as many rows as there are elements in the collection or entities in the entity selection. The first table row, called the data row, is used as a template row (excluding header row(s) and the possible break row(s)).
-* In the data row (and break row(s)), you can insert expressions that use [special keywords](#table-formula-object) such as `This.item.lastname`. Expressions are replaced during processing by data from the collection or entity selection. The data row will be duplicated so that the number of item rows is equal to the number of items in the collection or entity selection after formulas are computed.
-* If the datasource formula does not return a collection or a an entity selection, or if it returns an empty collection/entity selection, the table rows are not created automatically and all rows are treated as regular rows. You can define a placeholder row to be displayed in case of empty datasource.
+In the data row (and break row(s)), you can insert expressions that use [special keywords](#table-formula-object) such as `This.item.lastname`. Expressions are replaced during processing by data from the collection or entity selection. The data row will be duplicated so that the number of item rows is equal to the number of items in the collection or entity selection after formulas are computed.
+
+If the datasource formula does not return a collection or a an entity selection, or if it returns an empty collection/entity selection, the table rows are not created automatically and all rows are treated as regular rows. You can define a placeholder row to be displayed in case of empty datasource.
 
 To remove a datasource from a table, use the [WP RESET ATTRIBUTES](./commands/wp-reset-attributes) command. It will set the datasource attribute value to *null*:
 
@@ -316,7 +319,7 @@ To create break rows:
 
 ### Table formula object
 
-When used in a formula within the table, the [`This`](../commands/this.md) keyword gives access to additional [expressions using This](../managing-formulas.md#formula-context-object), according to the context:
+When used in a formula within the table, the [`This`](../commands/this.md) keyword gives access to additional [expressions](../managing-formulas.md#formula-context-object), according to the context:
 
 | **Context**     | **Expression**   | **Type** | **Returns**               | 
 |---------------- | ---------------- | -------- | ------------------------- |  
