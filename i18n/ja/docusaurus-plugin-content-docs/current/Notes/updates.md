@@ -8,11 +8,14 @@ title: リリースノート
 #### ハイライト
 
 - [`JSON Validate`](../commands/json-validate.md) コマンドは、JSON スキーマドラフト 2020-12 をサポートするようになりました。
+- 4D Write Pro now supports [hierarchical list style sheets](../user-legacy/stylesheets.md#hierarchical-list-style-sheets), enabling the creation and management of structured [multi-level lists](../WritePro/user-legacy/using-a-4d-write-pro-area.md#multi-level-lists) with automatic numbering.
 - [`HTTPRequest`](../API/HTTPRequestClass.md#4dhttprequestnew) および [`HTTPAgent`](../API/HTTPAgentClass.md#4dhttpagentnew) クラスにおいて、ローカル証明書フォルダの代わりにmacOS キーチェーンからのカスタムの証明書を使用できるようになりました。
+- New [`4D.Method` class](../API/MethodClass.md) to create and execute a 4D method code from text source. [`METHOD Get path`](../commands/method-get-path) and [`METHOD RESOLVE PATH`](../commands/method-resolve-path) commands support a new `path volatile method` constant (128).
 
 #### 動作の変更
 
 - [`JSON Validate`](../commands/json-validate.md) コマンドは *$schema* キーを考慮するようになり、スキーマ内でサポートされていないバージョンが宣言されたときにはエラーを生成するようになりました。
+- For clarity, formula objects are now instances of a new [`4D.Formula`](../API/FormulaClass.md) class that inherits from the generic [`4D.Function`](../API/FunctionClass.md) class.
 
 ## 4D 21 R2
 
