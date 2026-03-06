@@ -13,14 +13,14 @@ Les documents 4D Write Pro peuvent contenir des tableaux. Les tableaux 4D Write 
 
 ## Créer un tableau 
 
-Pour créer un tableau 4D Write Pro, vous devez appeler la commande [WP Inserer tableau](../commands/wp-inserer-tableau). Vous pouvez ensuite ajouter des lignes à l'aide de la commande [WP Tableau ajouter ligne](../commands/wp-tableau-ajouter-ligne).
+Pour créer un tableau 4D Write Pro, vous devez appeler la commande [WP Insert table](../commands/wp-insert-table). Vous pouvez ensuite ajouter des lignes à l'aide de la commande [WP Table append row](../commands/wp-table-append-row).
 
 **Note :** L'utilisateur peut créer un tableau par copier-coller d'une plage de cellules :   
 ![](../../assets/en/WritePro/pict3307941.en.png)
 
 ## Modifier les tableaux 
 
-Le contenu des cellules peut être ajouté par programmation à l'aide de la commande [WP Tableau ajouter ligne](../commands/wp-tableau-ajouter-ligne).
+Le contenu des cellules peut être ajouté par programmation à l'aide de la commande [WP Table insert rows](../commands/wp-table-insert-rows).
 
 Une fois qu'un tableau est créé, le contenu des cellulles peut également être modifié à l'exécution par l'utilisateur. Il peut cliquer dans les cellules, puis sélectionner, modifier, copier/coller ou supprimer le texte et les images comme dans tout paragraphe. Il peut naviguer parmi les cellules en appuyant sur la touche **Tabulation** (**Maj+Tabulation** pour se déplacer dans la direction inverse).
 
@@ -38,7 +38,7 @@ Les utilisateurs peuvent également sélectionner des colonnes, des lignes ou de
 
 (\*) Les colonnes n'ont pas d'équivalent en html. Dans 4D Write Pro, une plage de colonne est en réalité une plage de cellules, ce qui signifie que les colonnes ont la même priorité que les cellules (cf. ci-dessous).
 
-Une fois que vous avez sélectionné une plage, vous pouvez lui appliquer un attribut à l'aide de la commande [WP FIXER ATTRIBUTS](../commands/wp-fixer-attributs). A l'intérieur des cellules, les attributs sont appliqués aux paragraphes, caractères ou images, suivant leur contenu. Par exemple, vous pouvez définir la hauteur, la taille de police, la bordure, la marge intérieure etc. d'un tableau ou des cellules d'un tableau (pour plus d'informations, veuillez vous référer à la section *Attributs 4D Write Pro*).
+Une fois que vous avez sélectionné une plage, vous pouvez lui appliquer un attribut à l'aide de la commande [WP SET ATTRIBUTES](../commands/wp-set-attributes). A l'intérieur des cellules, les attributs sont appliqués aux paragraphes, caractères ou images, suivant leur contenu. Par exemple, vous pouvez définir la hauteur, la taille de police, la bordure, la marge intérieure etc. d'un tableau ou des cellules d'un tableau (pour plus d'informations, veuillez vous référer à la section *Attributs 4D Write Pro*).
 
 Lorsque des attributs différents sont appliqués à des éléments concurrents d'un tableau, l'ordre de priorité suivant est utilisé pour le rendu :
 
@@ -177,11 +177,11 @@ Les coupures de tableaux peuvent s'effectuer entre les lignes et les coupures de
 La pagination des tableaux peut également être contrôlée par programmation ou par l'utilisateur. Les actions disponibles incluent :
 
 * l'insertion d'un saut de page dans un tableau :  
-   * commande [WP INSERER RUPTURE](../commands/wp-inserer-rupture)  
+   * commande [WP INSERT BREAK](../commands/wp-insert-break)  
    * action standard *insertPageBreak*  
    * option **Insérer saut de page** du menu contextuel par défaut
 * l'insertion d'un saut de colonne dans un tableau :  
-   * commande [WP INSERER RUPTURE](../commands/wp-inserer-rupture)  
+   * commande [WP INSERT BREAK](../commands/wp-insert-break)  
    * action standard *insertColumnBreak*  
    * option **Insérer saut de colonne** du menu contextuel par défaut
 
@@ -214,7 +214,7 @@ Vous pouvez assigner un [objet formule](../../API/FormulaClass.md) comme **datas
 
 ### Assigner une datasource
 
-Pour affecter une datasource à un tableau, utilisez la commande [WP FIXER ATTRIBUTS](../commands/wp-fixer-attributs) avec la constante `wk datasource` comme attribut et l'objet datasource comme valeur. L'objet datasource peut être :
+Pour affecter une datasource à un tableau, utilisez la commande [WP SET ATTRIBUTES](../commands/wp-set-attributes) avec la constante `wk datasource` comme attribut et l'objet datasource comme valeur. L'objet datasource peut être :
 
 - une [**formule 4D**](../../API/FormulaClass.md). Par exemple, pour remplir un tableau avec une ligne pour chaque personne vivant en France :
 
@@ -223,7 +223,7 @@ Pour affecter une datasource à un tableau, utilisez la commande [WP FIXER ATTRI
  WP SET ATTRIBUTES($table;wk datasource;$formula)
 ```
 
-- un **contexte de données**, défini à l'aide de la commande [WP FIXER CONTEXTE DONNEES](../commands/wp-fixer-contexte-donnees) pour l'ensemble du document. Un contexte de données peut être assigné à un tableau via l'objet `This.data`. Par exemple, pour remplir un tableau avec une [sélection d'entités](../../API/EntitySelectionClass.md) depuis des commandes :
+- un **contexte de données**, défini à l'aide de la commande [WP SET DATA CONTEXT](../commands/wp-set-data-context) pour l'ensemble du document. Un contexte de données peut être assigné à un tableau via l'objet `This.data`. Par exemple, pour remplir un tableau avec une [entity selection](../../API/EntitySelectionClass.md) depuis des commandes :
 
 ```4d
 var $context:={}
@@ -239,7 +239,7 @@ Dans la ligne de données (et la ou les lignes de rupture), vous pouvez insérer
 
 Si la formule de la source de données ne renvoie pas de collection ou de sélection d'entités, ou si elle retourne une collection/sélection d'entités vide, les lignes du tableau ne sont pas créées automatiquement et toutes les lignes sont traitées comme des lignes normales. Vous pouvez définir une ligne de remplacement à afficher en cas de source de données vide.
 
-Pour supprimer une source de données d'un tableau, utilisez la commande [WP REINITIALISER ATTRIBUTS](../commands/wp-reinitialiser-attributs). La valeur de l'attribut de la source de données sera alors *null* :
+Pour supprimer une source de données d'un tableau, utilisez la commande [WP RESET ATTRIBUTES](../commands/wp-reset-attributes). La valeur de l'attribut de la source de données sera alors *null* :
 
 ```4d
  WP RESET ATTRIBUTES($table;wk datasource)
@@ -258,7 +258,7 @@ Un tableau fondé sur une datasource peut être composé des lignes suivantes:
 | ![](../../assets/en/WritePro/pict7014959.en.png)<br/> | ligne de remplacement   | 1          | \-            | La source de données doit être définie                         | La ligne de remplacement doit être affichée à la place de la ligne de données et des lignes de rupture (le cas échéant) lorsque la source de données est vide et que l'attribut "Show placeholder row" est défini sur le tableau via l'action standard *emptyDatasource* ou la constante *wk empty datasource*. La ligne de remplacement précède immédiatement les autres lignes.                                         |
 | |  Autres lignes                                              | illimité                | \-         | \-            | Lignes standard (non dupliquées)                               |                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
-Exemple (*Mode d'affichage des références*):
+Exemple (*Mode affichage des références*):
 
 ![](../../assets/en/WritePro/pict7148443.en.png)
 
@@ -293,7 +293,7 @@ Pour créer des carry-over rows :
 1. Dans le template de tableau, ajoutez une ligne juste après la ligne de données ou la (les) ligne(s) de rupture et insérez-y les formules nécessaires, en utilisant par exemple **This.previousItems**.
 2. Activer la fonctionnalité carry-over row pour votre document. Vous pouvez:  
 \- Utiliser l'action standard *bottomCarryOverRow* (voir *Utiliser les actions standard 4D Write Pro*), ou  
-\- Utiliser la commande [WP FIXER ATTRIBUTS](../commands/wp-fixer-attributs) avec le sélecteur d'attribut wk bottom carry over row *Tableaux*.
+\- Utiliser la commande [WP SET ATTRIBUTES](../commands/wp-set-attributes) avec le sélecteur d'attribut *Tableaux* wk bottom carry over row.
 
 **Remarque:** Les sauts de page à l'intérieur des lignes ne sont pas autorisés lorsque la fonctionnalité carry-over row est activée (voir *Pagination des tableaux*). Les options correspondantes, si elles sont définies, sont ignorées.
 
