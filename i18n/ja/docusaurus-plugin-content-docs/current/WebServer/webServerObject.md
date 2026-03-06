@@ -15,7 +15,7 @@ title: Webサーバーインスタンス
 
 メインアプリケーションの Webサーバーを含む、各 4D Webサーバーは、`4D.WebServer` クラスの **オブジェクト** として公開されます。 インスタンス化された Webサーバーオブジェクトは、[多数のプロパティや関数](API/WebServerClass.md) を使用して、カレントのアプリケーションまたは任意のコンポーネントから操作することができます。
 
-> The legacy [WEB commands](../commands/theme/Web_Server) of the 4D language are supported but cannot select the web server to which they apply (see below).
+> 4Dランゲージの従来の [WEB コマンド](../commands/theme/Web_Server) はサポートされていますが、その対象となる Webサーバーを選択することはできません (後述参照)。
 
 各 Webサーバー (ホストアプリケーションまたはコンポーネント) は、個別のコンテキストで使用できます。これには、以下が含まれます:
 
