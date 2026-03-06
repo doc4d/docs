@@ -162,6 +162,12 @@ Dans le paramètre *options*, passez un objet qui peut contenir les propriétés
 | timeout                | Real                                               | Timeout en secondes. undefined = pas de timeout                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | undefined          |
 | validateTLSCertificate | Boolean                                            | Si faux, 4D ne valide pas le certificat TLS et ne renvoie pas d'erreur s'il est invalide (c'est-à-dire expiré, auto-signé...). Important : dans l'implémentation actuelle, l'autorité de certification elle-même n'est pas vérifiée.                                                                                                                                                                                            | True               |
 
+:::note Keychain access on macOS
+
+On macOS, depending on your local configuration, a password can be required when your 4D application accesses the certificate in the *keychain* for the first time.
+
+:::
+
 #### Fonctions de callback
 
 Toutes les fonctions de callback reçoivent deux paramètres objet:
