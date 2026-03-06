@@ -65,7 +65,7 @@ You can insert special expressions related to document attributes in any documen
 |This.notes|Text|Notes defined in wk notes attribute|     
 |This.dateCreation|Date|Date creation defined in wk date creation attribute|                                                                                                               
 |This.dateModified|Date|Date modified defined in wk date modified attribute|                                                                                                               
-|This.pageNumber (\*)|Number|Page number as it is defined:<li>- From the document start (default) or </li><li>- From the section page start if it is defined by section page start.</li> This formula is always dynamic; it is not affected by the [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md) command.|
+|This.pageNumber (\*)|Number|Page number as it is defined:<ul><li>From the document start (default) or </li><li>From the section page start if it is defined by section page start.</li></ul>  This formula is always dynamic; it is not affected by the [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md) command.|
 |This.pageCount (\*)|Number|Page count: total count of pages.<br/> This formula is always dynamic; it is not affected by the [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md) command.|
 |This.document|Object|4D Write Pro document|                
 |This.data|Object|Data context of the 4D Write Pro document set by [**WP SET DATA CONTEXT**](commands-legacy/wp-set-data-context.md)|
