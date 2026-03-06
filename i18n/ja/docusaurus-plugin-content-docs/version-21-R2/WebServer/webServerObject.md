@@ -65,7 +65,7 @@ webServer:=WEB Server(Web server receiving request)
 
 ## Webサーバー関数
 
-A [web server class object](API/WebServerClass.md../commands/web-server.md-object) contains the following functions:
+[Webサーバークラスのオブジェクト](API/WebServerClass.md#webサーバーオブジェクト) には、以下の関数があります:
 
 | 関数                                       | 引数                                   | 戻り値                                | 説明            |
 | ---------------------------------------- | ------------------------------------ | ---------------------------------- | ------------- |
@@ -89,7 +89,7 @@ $status:=webServer.stop()
 
 ## Webサーバープロパティ
 
-A web server object contains [various properties](API/WebServerClass.md../commands/web-server.md-object) which configure the web server.
+Webサーバーオブジェクトには、Webサーバーを構成する [さまざまなプロパティ](API/WebServerClass.md#webサーバーオブジェクト) が含まれています。
 
 これらのプロパティは以下のように定義します:
 
