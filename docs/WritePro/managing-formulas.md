@@ -29,7 +29,7 @@ Formulas are not evaluated when a document is loaded (using [**WP New**](command
 
 Formulas become static values if you call the [**WP FREEZE FORMULAS**](commands-legacy/wp-freeze-formulas.md) command (except for page number and page count, see below).
 
-**Compatibility Note**: *Handling expressions using the [**ST INSERT EXPRESSION**](../commands-legacy/st-insert-expression.md), [**ST Get expression**](../commands-legacy/st-get-expression.md), [**ST COMPUTE EXPRESSIONS**](../commands-legacy/st-compute-expressions.md), and [**ST FREEZE EXPRESSIONS**](../commands-legacy/st-freeze-expressions.md) commands is deprecated, however, it is still supported in 4D Write Pro for compatibility*.
+**Compatibility Note**: *Handling expressions using the [**ST INSERT EXPRESSION**](../commands/st-insert-expression), [**ST Get expression**](../commands/st-get-expression), [**ST COMPUTE EXPRESSIONS**](../commands/st-compute-expressions), and [**ST FREEZE EXPRESSIONS**](../commands/st-freeze-expressions) commands is deprecated, however, it is still supported in 4D Write Pro for compatibility*.
 
 :::note
 
@@ -54,7 +54,7 @@ You want to replace the selection in a 4D Write Pro area with the contents of a 
 
 ## Formula context object
 
-You can insert special expressions related to document attributes in any document area (body, header, footer) using the [WP Insert formula](commands/wp-insert-formula.md) command. Within a formula, a formula context object is automatically exposed. You can use the properties of this object through [**This**](../commands/this.md):
+You can insert special expressions related to document attributes in any document area (body, header, footer) using the [WP Insert formula](commands/wp-insert-formula.md) command. Within a formula, a formula context object is automatically exposed. You can use the properties of this object through [**This**](../commands/this):
 
 | Properties         | Type    | Description|                                                                                                                                                     
 |--------------------|---------|--------------------|
@@ -95,7 +95,7 @@ For example, to insert the page number in the footer area:
 
 :::note
 
-For more information about formula insertion, see [WP INSERT FORMULA](./commands/wp-insert-formula).
+For more information about formula insertion, see [WP INSERT FORMULA](../commands/wp-insert-formula).
 
 :::
 
@@ -103,11 +103,11 @@ For more information about formula insertion, see [WP INSERT FORMULA](./commands
 
 **Date**
 
-When the [**Current date**](../commands-legacy/current-date.md) command, a date variable, or a method returning a date is inserted in a formula, it will automatically be transformed into text using the system date short format.
+When the [**Current date**](../commands/current-date) command, a date variable, or a method returning a date is inserted in a formula, it will automatically be transformed into text using the system date short format.
 
 **Time**
 
-When the [**Current time**](../commands-legacy/current-time.md) command, a time variable, or a method returning a time is inserted in a formula, it must be enclosed within a [**String**](../commands/string.md) command because time type is not supported in JSON. Consider the following examples of formulas:
+When the [**Current time**](../commands/current-time) command, a time variable, or a method returning a time is inserted in a formula, it must be enclosed within a [**String**](../commands/string) command because time type is not supported in JSON. Consider the following examples of formulas:
 
 
 ```4d
@@ -125,7 +125,7 @@ When the [**Current time**](../commands-legacy/current-time.md) command, a time 
 
 ## Support of virtual structure
 
-Table and field expressions inserted in 4D Write Pro documents support the virtual structure definition of the database. The virtual structure exposed to formulas is defined through [**SET FIELD TITLES**](../commands-legacy/set-field-titles.md)(...;\*) and [**SET TABLE TITLES**](../commands-legacy/set-table-titles.md)(...;\*) commands.
+Table and field expressions inserted in 4D Write Pro documents support the virtual structure definition of the database. The virtual structure exposed to formulas is defined through [**SET FIELD TITLES**](../commands/set-field-titles)(...;\*) and [**SET TABLE TITLES**](../commands/set-table-titles)(...;\*) commands.
 
 When a virtual structure is defined:
 
@@ -244,3 +244,4 @@ You can display the source text of the formula by pressing **Ctrl** (Windows) or
 
 [Download HDI database](http://download.4d.com/Demos/4D_v16/HDI_4DWP_Filter4DExpressions.zip)</br>
 *Using commands from the Styled Text theme*
+

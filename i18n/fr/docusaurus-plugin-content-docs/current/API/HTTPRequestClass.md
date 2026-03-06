@@ -5,8 +5,6 @@ title: HTTPRequest
 
 La classe `HTTPRequest` vous permet de manipuler des [`objets HTTPRequest`](#httprequest-object) qui peuvent être utilisés pour configurer et envoyer des requêtes à un serveur HTTP, ainsi que pour traiter les réponses du serveur HTTP.
 
-La classe `HTTPRequest` est disponible dans le class store `4D`. Vous créez et envoyez des requêtes HTTP à l'aide de la fonction [4D.HTTPRequest.new()](#4dhttprequestnew), qui renvoie un objet [`HTTPRequest`](#httprequest-object).
-
 <details><summary>Historique</summary>
 
 | Release | Modifications  |
@@ -14,6 +12,12 @@ La classe `HTTPRequest` est disponible dans le class store `4D`. Vous créez et 
 | 19 R6   | Classe ajoutée |
 
 </details>
+
+La classe `HTTPRequest` est disponible dans le class store `4D`. Vous créez et envoyez des requêtes HTTP à l'aide de la fonction [4D.HTTPRequest.new()](#4dhttprequestnew), qui renvoie un objet [`HTTPRequest`](#httprequest-object).
+
+### Aynchronous programming
+
+This class supports asynchronous programming in 4D as described in the [Asynchronous Execution](../Develop/async.md) page.
 
 ### Exemple
 
@@ -177,7 +181,7 @@ Voici la séquence des appels de callbacks :
 
 :::info
 
-Pour que les fonctions de rappel soient appelées lorsque vous n'utilisez pas [`wait()`](#wait) (appel asynchrone), le process doit être un [process worker](../Develop/processes.md#worker-processes) créé avec [`CALL WORKER`](../commands-legacy/call-worker.md), et NON [`New process`](../commands-legacy/new-process.md).
+Pour que les fonctions de rappel soient appelées lorsque vous n'utilisez pas [`wait()`](#wait) (appel asynchrone), le process doit être un [process worker](../Develop/processes.md#worker-processes) créé avec [`CALL WORKER`](../commands-legacy/call-worker), et NON [`New process`](../commands-legacy/new-process).
 
 :::
 
@@ -428,7 +432,7 @@ Si la réponse du serveur est déjà arrivée, la fonction rend la main immédia
 
 :::note
 
-Lors d'une exécution `.wait()`, les fonctions de rappel sont exécutées, que ce soit à partir d'autres instances `HTTPRequest` ou [`SystemWorker`](SystemWorkerClass.md), ou d'autres appels [`CALL WORKER`](../commands-legacy/call-worker.md) .  Vous pouvez sortir d'un `.wait()` en appelant [`terminate()`](#terminate) à partir d'une callback.
+Lors d'une exécution `.wait()`, les fonctions de rappel sont exécutées, que ce soit à partir d'autres instances `HTTPRequest` ou [`SystemWorker`](SystemWorkerClass.md), ou d'autres appels [`CALL WORKER`](../commands-legacy/call-worker) .  Vous pouvez sortir d'un `.wait()` en appelant [`terminate()`](#terminate) à partir d'une callback.
 
 :::
 
