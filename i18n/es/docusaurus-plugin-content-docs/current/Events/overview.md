@@ -5,7 +5,7 @@ title: Eventos formulario
 
 Los eventos formulario son eventos que pueden llevar a la ejecución del método de formulario y/o del o de los métodos objeto de formulario. Los eventos de formulario le permiten controlar el flujo de su aplicación y escribir código que se ejecuta sólo cuando ocurre un evento específico.
 
-En su código, usted controla los eventos utilizando el comando [`FORM Event`](../commands/form-event.md), que devuelve el evento accionado. Por ejemplo:
+En su código, usted controla los eventos utilizando el comando [`FORM Event`](../commands/form-event), que devuelve el evento accionado. Por ejemplo:
 
 ```4d
 //code of a button
@@ -18,7 +18,7 @@ End if
 
 ## Objeto evento
 
-Cada evento es devuelto como un objeto por el comando [`FORM Event`](../commands/form-event.md). Por defecto, contiene las siguientes propiedades:
+Cada evento es devuelto como un objeto por el comando [`FORM Event`](../commands/form-event). Por defecto, contiene las siguientes propiedades:
 
 | Propiedad   | Tipo         | Descripción                                                                                                |
 | ----------- | ------------ | ---------------------------------------------------------------------------------------------------------- |
@@ -28,7 +28,7 @@ Cada evento es devuelto como un objeto por el comando [`FORM Event`](../commands
 
 Se devuelven propiedades adicionales cuando el evento se produce en objetos específicos. En particular:
 
-- los [list boxes](FormObjects/listbox_overview.md#supported-form-events) y [columnas list box](FormObjects/listbox_overview.md#supported-form-events-1) devuelven [propiedades adicionales](FormObjects/listbox_overview.md#supported-form-events) como `columnName` o `isRowSelected`.
+- los [list boxes](FormObjects/listbox-object.md#supported-form-events) y [columnas list box](FormObjects/listbox-column.md#supported-form-events) devuelven [propiedades adicionales](FormObjects/listbox-object.md#supported-form-events) como `columnName` o `isRowSelected`.
 - Las [áreas de View Pro](FormObjects/viewProArea_overview.md) devuelven por ejemplo las propiedades `sheetName` o `action` en el objeto evento [On After Edit](onAfterEdit.md).
 
 ## Eventos y métodos

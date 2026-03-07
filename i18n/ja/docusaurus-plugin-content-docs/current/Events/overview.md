@@ -5,7 +5,7 @@ title: フォームイベント
 
 フォームイベントとは、フォームメソッドやフォームオブジェクトメソッドの実行につながるイベントのことです。 フォームイベントにより、アプリケーションの流れをコントロールしたり、特定のイベントが発生したときにのみ実行されるコードを書くことができます。
 
-コードの中では、トリガーされたイベントを返す [`FORM Event`](../commands/form-event.md) コマンドを使ってイベントを制御します。 例:
+コードの中では、トリガーされたイベントを返す [`FORM Event`](../commands/form-event) コマンドを使ってイベントを制御します。 例:
 
 ```4d
 // ボタンのコード
@@ -18,7 +18,7 @@ End if
 
 ## イベントオブジェクト
 
-それぞれのイベントは、[`FORM Event`](../commands/form-event.md) コマンドによってオブジェクトとして返されます。 デフォルトで、以下のプロパティが含まれています:
+それぞれのイベントは、[`FORM Event`](../commands/form-event) コマンドによってオブジェクトとして返されます。 デフォルトで、以下のプロパティが含まれています:
 
 | プロパティ       | 型       | 説明                                                                |
 | ----------- | ------- | ----------------------------------------------------------------- |
@@ -28,7 +28,7 @@ End if
 
 イベントが発生したオブジェクトによっては追加のプロパティが含まれていることがあります。 特に:
 
-- [リストボックス](FormObjects/listbox_overview.md#supported-form-events) および [リストボックス列](FormObjects/listbox_overview.md#supported-form-events-1) は、`columnName` や `isRowSelected` といった、[追加のプロパティ](FormObjects/listbox_overview.md#supported-form-events) を返します。
+- [リストボックス](FormObjects/listbox-object.md#supported-form-events) および [リストボックス列](FormObjects/listbox-column.md#supported-form-events) は、`columnName` や `isRowSelected` といった、[追加のプロパティ](FormObjects/listbox-object.md#supported-form-events) を返します。
 - [4D View Pro エリア](FormObjects/viewProArea_overview.md) は、`sheetName` や `action` といったプロパティを [On After Edit](onAfterEdit.md) イベントオブジェクトに返します。
 
 ## イベントとメソッド

@@ -170,33 +170,39 @@ L'instruction `return` met fin à l'exécution d'une fonction ou d'une méthode 
 Par exemple, la fonction suivante retourne le carré de son argument, $x, où $x est un nombre.
 
 ```4d
-Function square($x : Integer) -> $result : Integer
+Function square($x : Integer) : Integer
    return $x * $x
 ```
 
-:::note
-
-En interne, `return x` exécute `myReturnValue:=x`, et retourne à l'appelant. Si `return` est utilisé sans expression, la fonction ou la méthode retourne une valeur nulle du type de retour déclaré (le cas échéant), sinon elle est *undefined*.
-
-:::
-
-L'instruction `return` peut être utilisée avec la syntaxe standard pour les [valeurs retournées](#returned-value) (la valeur retournée doit être du type déclaré). Cependant, notez qu'elle met immédiatement fin à l'exécution du code. Par exemple :
+L'instruction `return` peut être utilisée avec la syntaxe standard pour les [valeurs retournées](#returned-value) (la valeur retournée doit être du type déclaré). When you have declared a return parameter (e.g. `myFunction() -> $myReturnValue : Text`), `return $x` implicitely executes `$myReturnValue:=$x`, and returns to the caller. Keep in mind that it ends immediately the code execution. Examine the following examples:
 
 ```4d
 Function getValue -> $v : Integer
 	$v:=10
+	return
+	// function returns 10
+	
+Function getValue -> $v : Integer
+	$v:=10
 	return 20
-	// returns 20
+	// function returns 20
 
 Function getValue -> $v : Integer
 	return 10
-	$v:=20 // jamais exécuté
-	// returns 10
+	$v:=20 // never executed
+	// function returns 10
+
+Function getValue -> $v : Integer
+	return "Hello" //error
+
+Function returnHello
+	return "Hello"
+	// function returns "Hello"
 ```
 
 ## Indirections sur les paramètres (${N})
 
-Les méthodes et fonctions 4D acceptent un nombre variable de paramètres. Vous pouvez traiter ces paramètres avec une boucle `For...End for`, la commande [`Count parameters`](../commands-legacy/count-parameters.md) et la **syntaxe d'indirection des paramètres**. Au sein de la méthode, une adresse d'indirection est formatée `${N}`, où `N` est une expression numérique.
+Les méthodes et fonctions 4D acceptent un nombre variable de paramètres. Vous pouvez traiter ces paramètres avec une boucle `For...End for`, la commande [`Count parameters`](../commands-legacy/count-parameters) et la **syntaxe d'indirection des paramètres**. Au sein de la méthode, une adresse d'indirection est formatée `${N}`, où `N` est une expression numérique.
 
 ### Utilisation des paramètres variadiques
 
@@ -220,7 +226,7 @@ Les paramètres de la méthode doivent être passés dans le bon ordre : le form
  Result:=MySum("000";1;2;200) //"203"
 ```
 
-Notez que même si vous avez déclaré 0, 1, ou plus paramètres, vous pouvez toujours passer le nombre de paramètres que vous voulez. Tous les paramètres sont accessibles dans le code appelé via la syntaxe `${N}` et le type des paramètres supplémentaires est [Variant](dt_variant.md) par défaut (vous pouvez les déclarer en utilisant la [notation variadique](#declaring-variadic-parameter)). Il suffit de s'assurer que les paramètres existent, grâce à la commande [`Count parameters`](../commands-legacy/count-parameters.md). Par exemple :
+Notez que même si vous avez déclaré 0, 1, ou plus paramètres, vous pouvez toujours passer le nombre de paramètres que vous voulez. Tous les paramètres sont accessibles dans le code appelé via la syntaxe `${N}` et le type des paramètres supplémentaires est [Variant](dt_variant.md) par défaut (vous pouvez les déclarer en utilisant la [notation variadique](#declaring-variadic-parameter)). Il suffit de s'assurer que les paramètres existent, grâce à la commande [`Count parameters`](../commands-legacy/count-parameters). Par exemple :
 
 ```4d
 //foo method
@@ -277,9 +283,9 @@ Nous avons ici une méthode appelée `SumNumbers` qui renvoie le total calculé 
 
 var $number; $total : Real
 
-For each ($number; 1; Count parameters)
+For ($number; 1; Count parameters)
 	$total+=${$number}
-End for each
+End for
 
 return $total
 

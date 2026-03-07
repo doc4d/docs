@@ -15,6 +15,10 @@ Les connexions clientes WebSocket sont utiles, par exemple, pour recevoir des do
 
 </details>
 
+### Aynchronous programming
+
+This class supports asynchronous programming in 4D as described in the [Asynchronous Execution](../Develop/async.md) page.
+
 ### Exemple
 
 Dans cet exemple, nous créons un client WebSocket très basique.
@@ -203,7 +207,7 @@ Les contenus suivants sont envoyés en fonction du type de *message* :
 | ------ | ----------------------------------------------------------------------------------------------------------------------- |
 | Text   | Texte en UTF-8                                                                                                          |
 | Blob   | Données binaires                                                                                                        |
-| Object | Texte en JSON UTF-8 (même résultat qu'avec [`JSON Stringify`](../commands-legacy/json-stringify.md)) |
+| Object | Texte en JSON UTF-8 (même résultat qu'avec [`JSON Stringify`](../commands-legacy/json-stringify)) |
 
 <!-- END REF -->
 

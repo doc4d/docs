@@ -5,7 +5,7 @@ title: Form Events
 
 Form events are events that can lead to the execution of the form method and/or form object method(s). Form events allow you to control the flow of your application and to write code that is executed only when a specific event occurs. 
 
-In your code, you control the events using the [`FORM Event`](../commands/form-event.md) command, that returns the triggered event. For example:
+In your code, you control the events using the [`FORM Event`](../commands/form-event) command, that returns the triggered event. For example:
 
 ```4d  
 //code of a button
@@ -19,7 +19,7 @@ End if
 
 ## Event object
 
-Each event is returned as an object by the [`FORM Event`](../commands/form-event.md) command. By default, it contains the following properties:
+Each event is returned as an object by the [`FORM Event`](../commands/form-event) command. By default, it contains the following properties:
 
 |Property|Type|Description|
 |---|---|---|
@@ -29,7 +29,7 @@ objectName|text|Name of the object triggering the event - Not included if the ev
 
 Additional properties are returned when the event occurs on specific objects. In particular:
 
-- [list boxes](FormObjects/listbox_overview.md#supported-form-events) and [list box columns](FormObjects/listbox_overview.md#supported-form-events-1) return [additional properties](FormObjects/listbox_overview.md#supported-form-events) such as `columnName` or `isRowSelected`.
+- [list boxes](FormObjects/listbox-object.md#supported-form-events) and [list box columns](FormObjects/listbox-column.md#supported-form-events) return [additional properties](FormObjects/listbox-object.md#supported-form-events) such as `columnName` or `isRowSelected`.
 - [4D View Pro areas](FormObjects/viewProArea_overview.md) return for example `sheetName` or `action` properties in the [On After Edit](onAfterEdit.md) event object.  
 
 
@@ -116,4 +116,5 @@ The following table summarizes how object and form methods are called for each e
 Always keep in mind that, for any event, the method of a form or an object is called if the corresponding event property is selected for the form or objects. The benefit of disabling events in the Design environment (using the Property List of the Form editor) is that you can reduce the number of calls to methods and therefore significantly optimize the execution speed of your forms.
 
 > WARNING: The [On Load](onLoad.md) and [On Unload](onUnload.md) events are generated for objects if they are enabled for both the objects and the form to which the objects belong. If the events are enabled for objects only, they will not occur; these two events must also be enabled at the form level.
+
 

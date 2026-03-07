@@ -14,7 +14,7 @@ displayed_sidebar: docs
 | -------------- | ----------------------- | --------------------------- | ---------------------------------------------------------------- |
 | targetObj      | Object                  | &#8594; | Rango o elemento o documento 4D Write Pro                        |
 | picture        | Picture                 | &#8594; | Campo imagen o variable, o ruta al archivo imagen en el disco    |
-| pictureFileObj | 4D.File | &#8594; | Un objeto File que representa un archivo imagen. |
+| pictureFileObj | [4D.File](../API/FileClass.md)  | &#8594; | Un objeto File que representa un archivo imagen. |
 | mode           | Integer                 | &#8594; | Modo de inserción                                                |
 | rangeUpdate    | Integer                 | &#8594; | Modo de actualización del rango                                  |
 | Resultado      | Object                  | &#8592; | Objeto que hace referencia a la imagen                           |
@@ -40,7 +40,7 @@ Para el segundo parámetro, puede pasar cualquiera de los dos:
     Si utiliza una cadena, puede pasar un nombre de ruta completo o un nombre de ruta relativo al archivo de estructura de la base de datos. También puede pasar un nombre de archivo, en cuyo caso el archivo debe estar situado junto al archivo de estructura de la base de datos. Si pasa un nombre de archivo, debe indicar la extensión del archivo.
 - En *pictureFileObj* : un objeto `File` que representa un archivo imagen.
 
-Todo formato imagen [soportado por 4D](../../FormEditor/pictures.md#native-formats-supported) puede ser usado. Puede obtener la lista de formatos de imagen disponibles usando el comando [PICTURE CODEC LIST](../../commands-legacy/picture-codec-list.md). Si la imagen encapsula varios formatos (codecs), 4D Write Pro solo mantiene un formato para la visualización y otro para la impresión (si son diferentes) en el documento; los "mejores" formatos se seleccionan automáticamente.
+Todo formato imagen [soportado por 4D](../../FormEditor/pictures.md#native-formats-supported) puede ser usado. Puede obtener la lista de formatos de imagen disponibles usando el comando [PICTURE CODEC LIST](../../commands/picture-codec-list). Si la imagen encapsula varios formatos (codecs), 4D Write Pro solo mantiene un formato para la visualización y otro para la impresión (si son diferentes) en el documento; los "mejores" formatos se seleccionan automáticamente.
 
 En el parámetro *mode*, pase una de las siguientes constantes para indicar el modo de inserción que se utilizará para la imagen en el documento:
 
@@ -110,4 +110,4 @@ $pictRef:=WP Insert picture(WParea; $file; wk replace)
 ## Ver también
 
 [WP Insert document body](wp-insert-document-body.md)</br>
-[WP Picture range](../commands-legacy/wp-picture-range.md)
+[WP Picture range](../commands-legacy/wp-picture-range)

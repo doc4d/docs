@@ -46,11 +46,11 @@ El campo contiene realmente "proportion". 4D acepta y almacena la entrada comple
 
 #### Objetos soportados
 
-[Lista desplegable](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns) - [Pie List Box](listbox_overview.md#list-box-footers)
+[Lista desplegable](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Columna List Box](listbox-column.md) - [Pie List Box](listbox-header-footer.md#footers)
 
 #### Comandos
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands-legacy/object-get-format) - [OBJECT SET FORMAT](../commands-legacy/object-set-format)
 
 ---
 
@@ -81,11 +81,11 @@ La siguiente tabla muestra las opciones disponibles:
 
 *(1)* Para evitar ambigüedades y de acuerdo con la práctica actual, los formatos de fecha abreviados muestran "jun" para junio y "jul" para julio. Esta particularidad sólo se aplica a las versiones francesas de 4D.
 
-*(2)* El año se muestra con dos dígitos cuando pertenece al intervalo (1930;2029), de lo contrario se mostrará con cuatro dígitos. Esto es por defecto, pero puede modificarse utilizando el comando [SET DEFAULT CENTURY](../commands-legacy/set-default-century.md).
+*(2)* El año se muestra con dos dígitos cuando pertenece al intervalo (1930;2029), de lo contrario se mostrará con cuatro dígitos. Esto es por defecto, pero puede modificarse utilizando el comando [SET DEFAULT CENTURY](../commands-legacy/set-default-century).
 
 *(3)* El formato `ISO Date Time` corresponde a la norma XML de representación de fecha y hora (ISO8601). Está pensado principalmente para ser utilizado al importar/exportar datos en formato XML y en Servicios Web.
 
-> Independientemente del formato de visualización, si el año se introduce con dos dígitos, 4D asume que el siglo es el 21 si el año pertenece al intervalo (00;29) y el 20 si pertenece al intervalo (30;99). Esta es la configuración por defecto, pero puede modificarse utilizando el comando [SET DEFAULT CENTURY](../commands-legacy/set-default-century.md).
+> Independientemente del formato de visualización, si el año se introduce con dos dígitos, 4D asume que el siglo es el 21 si el año pertenece al intervalo (00;29) y el 20 si pertenece al intervalo (30;99). Esta es la configuración por defecto, pero puede modificarse utilizando el comando [SET DEFAULT CENTURY](../commands-legacy/set-default-century).
 
 ### Formatos personalizados
 
@@ -105,17 +105,17 @@ Se pueden crear formatos de fecha personalizados utilizando varios patrones desc
 :::note blankIfNull
 
 - Por defecto, una [fecha nula](../Concepts/dt_date.md#date-literals) se muestra con ceros, por ejemplo, 00/00/00. Con la opción "blankIfNull", una fecha null se muestra como un área vacía. La cadena "blankIfNull" (distingue mayúsculas de minúsculas) debe combinarse con el valor de formato seleccionado. La cadena "blankIfNull" (distingue mayúsculas de minúsculas) debe combinarse con el valor de formato seleccionado.
-- Las [columnas list box](listbox_overview.md#list-box-columns) y los [pies List box](listbox_overview.md#list-box-footers) de tipo fecha utilizan siempre el comportamiento "blank if null" (no se puede desactivar).
+- Las [columnas list box](listbox-column.md) y los [pies List box](listbox-header-footer.md#footers) de tipo fecha utilizan siempre el comportamiento "blank if null" (no se puede desactivar).
 
 :::
 
 #### Objetos soportados
 
-[Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers)
+[Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Input](input_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers)
 
 #### Comandos
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands-legacy/object-get-format) - [OBJECT SET FORMAT](../commands-legacy/object-set-format)
 
 ---
 
@@ -276,11 +276,11 @@ La siguiente tabla muestra cómo afectan los distintos formatos a la visualizaci
 
 #### Objetos soportados
 
-[Combo Box](comboBox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Entrada](input_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns) - [Pie de List Box](listbox_overview.md#list-box-footers) - [Indicadores de progreso](progressIndicator.md)
+[Combo Box](comboBox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Entrada](input_overview.md) - [Columna List Box](listbox-column.md) - [Pie de List Box](listbox-header-footer.md#footers) - [Indicadores de progreso](progressIndicator.md)
 
 #### Comandos
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md) - [String](./commands/string)
+[OBJECT Get format](../commands-legacy/object-get-format) - [OBJECT SET FORMAT](../commands-legacy/object-set-format) - [String](../commands/string)
 
 ---
 
@@ -340,11 +340,11 @@ Si el campo se reduce a un tamaño menor que el de la imagen original, la imagen
 
 #### Objetos soportados
 
-[Entrada](input_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns) - [Pie List Box](listbox_overview.md#list-box-footers)
+[Entrada](input_overview.md) - [Columna List Box](listbox-column.md) - [Pie List Box](listbox-header-footer.md#footers)
 
 #### Comandos
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands-legacy/object-get-format) - [OBJECT SET FORMAT](../commands-legacy/object-set-format)
 
 ---
 
@@ -398,11 +398,11 @@ Por defecto, una hora null se muestra con ceros, por ejemplo "00:00:00". Con la 
 
 #### Objetos soportados
 
-[Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers)
+[Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Input](input_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers)
 
 #### Comandos
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands-legacy/object-get-format) - [OBJECT SET FORMAT](../commands-legacy/object-set-format)
 
 ---
 
@@ -411,7 +411,7 @@ Por defecto, una hora null se muestra con ceros, por ejemplo "00:00:00". Con la 
 Cuando una [expresión booleana](properties_Object.md#expression-type) se muestra como:
 
 - un texto en un [objeto de entrada](input_overview.md)
-- un "popup" [](properties_Display.md#display-type) en una [columna del list box](listbox_overview.md#list-box-columns),
+- un "popup" [](properties_Display.md#display-type) en una [columna del list box](listbox-column.md),
 
 ... puede seleccionar el texto que se mostrará para cada valor:
 
@@ -426,11 +426,11 @@ Cuando una [expresión booleana](properties_Object.md#expression-type) se muestr
 
 #### Objetos soportados
 
-[Columna List Box](listbox_overview.md#list-box-columns) - [Entrada](input_overview.md)
+[Columna List Box](listbox-column.md) - [Entrada](input_overview.md)
 
 #### Comandos
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands-legacy/object-get-format) - [OBJECT SET FORMAT](../commands-legacy/object-set-format)
 
 ---
 
@@ -450,11 +450,11 @@ Las columnas booleanas también pueden mostrarse como menús emergentes. En este
 
 #### Objetos soportados
 
-[Columna de list box](listbox_overview.md#list-box-columns)
+[Columna de list box](listbox-column.md)
 
 #### Comandos
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands-legacy/object-get-format) - [OBJECT SET FORMAT](../commands-legacy/object-set-format)
 
 ---
 
@@ -502,11 +502,11 @@ También en este caso, la propiedad [Título](#title) está disponible para que 
 
 #### Objetos soportados
 
-[Casilla de selección](checkbox_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns)
+[Casilla de selección](checkbox_overview.md) - [Columna List Box](listbox-column.md)
 
 #### Comandos
 
-[OBJECT Get three states checkbox](../commands-legacy/object-get-three-states-checkbox.md) - [OBJECT SET THREE STATES CHECKBOX](../commands-legacy/object-set-three-states-checkbox.md)
+[OBJECT Get three states checkbox](../commands-legacy/object-get-three-states-checkbox) - [OBJECT SET THREE STATES CHECKBOX](../commands-legacy/object-set-three-states-checkbox)
 
 ---
 
@@ -527,7 +527,7 @@ En ese caso, el título de la casilla de verificación puede introducirse utiliz
 
 #### Objetos soportados
 
-[Columna de list box](listbox_overview.md#list-box-columns)
+[Columna de list box](listbox-column.md)
 
 ---
 
@@ -564,11 +564,11 @@ La propiedad Truncar con elipsis puede aplicarse a columnas de tipo booleano; si
 
 #### Objetos soportados
 
-[Columna List Box](listbox_overview.md#list-box-columns) - [Pie List Box](listbox_overview.md#list-box-footers)
+[Columna List Box](listbox-column.md) - [Pie List Box](listbox-header-footer.md#footers)
 
 #### Comandos
 
-[`LISTBOX Get property`](../commands/listbox-get-property.md) - [`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md)
+[`LISTBOX Get property`](../commands/listbox-get-property) - [`LISTBOX SET PROPERTY`](../commands/listbox-set-property)
 
 ---
 
@@ -576,7 +576,7 @@ La propiedad Truncar con elipsis puede aplicarse a columnas de tipo booleano; si
 
 Esta propiedad permite ocultar el objeto en el entorno Aplicación.
 
-Puede manejar la propiedad Visibilidad para la mayoría de los objetos del formulario. Esta propiedad se utiliza principalmente para simplificar el desarrollo de interfaces dinámicas. En este contexto, a menudo es necesario ocultar objetos por programación durante el evento `On load` del formulario y luego mostrar determinados objetos. In this context, it is often necessary to hide objects programatically during the <code>On load</code> event of the form then to display certain objects afterwards. El desarrollador puede entonces programar su pantalla utilizando el comando [`OBJECT SET VISIBLE`](../commands-legacy/object-set-visible.md) cuando lo necesite.
+Puede manejar la propiedad Visibilidad para la mayoría de los objetos del formulario. Esta propiedad se utiliza principalmente para simplificar el desarrollo de interfaces dinámicas. En este contexto, a menudo es necesario ocultar objetos por programación durante el evento `On load` del formulario y luego mostrar determinados objetos. In this context, it is often necessary to hide objects programatically during the <code>On load</code> event of the form then to display certain objects afterwards. El desarrollador puede entonces programar su pantalla utilizando el comando [`OBJECT SET VISIBLE`](../commands-legacy/object-set-visible) cuando lo necesite.
 
 #### Visibilidad automática en los formularios lista
 
@@ -589,7 +589,7 @@ Esta propiedad sólo se utiliza cuando se dibujan objetos situados en el cuerpo 
 
 ![](../assets/en/FormObjects/select-row.png)
 
-4D no tiene en cuenta esta propiedad si el objeto se ocultó utilizando el comando [`OBJECT SET VISIBLE`](../commands-legacy/object-set-visible.md); en este caso, el objeto permanece invisible independientemente de si el registro está seleccionado o no.
+4D no tiene en cuenta esta propiedad si el objeto se ocultó utilizando el comando [`OBJECT SET VISIBLE`](../commands-legacy/object-set-visible); en este caso, el objeto permanece invisible independientemente de si el registro está seleccionado o no.
 
 #### Gramática JSON
 
@@ -599,11 +599,11 @@ Esta propiedad sólo se utiliza cuando se dibujan objetos situados en el cuerpo 
 
 #### Objetos soportados
 
-[Área 4D View Pro](viewProArea_overview.md) - [Área 4D Write Pro](writeProArea_overview.md) - [Botón](button_overview.md) - [Rejilla de botones](buttonGrid_overview.md) - [Casilla de verificación](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Lista jerárquica](list_overview.md) - [List Box](listbox_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns) - [Pie de List Box](listbox_overview.md#list-box-footers) - [Encabezado de List Box](listbox_overview.md#list-box-headers) - [Botón imagen](pictureButton_overview.md) - [Menú emergente con imagen](picturePopupMenu_overview.md) - [Área de Plug-in](pluginArea_overview.md) - [Indicador de progreso](progressIndicator.md) - [Botón de opción](radio_overview.md) - [Spinner](spinner.md) - [Separador](splitters.md) - [Imagen estática](staticPicture.md) - [Pasos](stepper.md) - [Subformulario](subform_overview.md) - [Control de pestañas](tabControl.md) - [Área de texto](text.md) - [Área web](webArea_overview.md)
+[4D View Pro area](viewProArea_overview.md) - [4D Write Pro area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Picture Button](pictureButton_overview.md) - [Picture Pop-up Menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md) - [Progress indicator](progressIndicator.md) - [Radio Button](radio_overview.md) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md)
 
 #### Comandos
 
-[OBJECT Get visible](../commands-legacy/object-get-visible.md) - [OBJECT SET VISIBLE](../commands-legacy/object-set-visible.md)
+[OBJECT Get visible](../commands-legacy/object-get-visible) - [OBJECT SET VISIBLE](../commands-legacy/object-set-visible)
 
 ---
 
@@ -658,8 +658,8 @@ Tenga en cuenta que, independientemente del valor de la opción Ajuste de texto,
 
 #### Objetos soportados
 
-[Entrada](input_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns) - [Pie List Box](listbox_overview.md#list-box-footers)
+[Entrada](input_overview.md) - [Columna List Box](listbox-column.md) - [Pie List Box](listbox-header-footer.md#footers)
 
 #### Comandos
 
-[`LISTBOX Get property`](../commands/listbox-get-property.md) - [`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md)
+[`LISTBOX Get property`](../commands/listbox-get-property) - [`LISTBOX SET PROPERTY`](../commands/listbox-set-property)

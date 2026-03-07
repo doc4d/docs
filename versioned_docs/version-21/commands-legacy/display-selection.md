@@ -49,7 +49,7 @@ The *selectMode* parameter is used to set the possibilities for selecting record
 
  If you do not pass the *selectMode* parameter, the “Multiple Selection” mode is used by default.   
 
-The *enterList* parameter lets you authorize the “Enter in List” mode for the displayed list. This lets the user select and modify the record values directly in the output form. Pass [True](true.md "True") to enable this mode or [False](false.md "False") to disable it. By default, if you do not pass the *enterList* parameter, the “Enter in List” mode is disabled.   
+The *enterList* parameter lets you authorize the “Enter in List” mode for the displayed list. This lets the user select and modify the record values directly in the output form. Pass [True](../commands/true) to enable this mode or [False](../commands/false) to disable it. By default, if you do not pass the *enterList* parameter, the “Enter in List” mode is disabled.   
 Keep in mind that with the **DISPLAY SELECTION** command, this parameter only allows the selection of the values in the list and not their modification. In fact, the **DISPLAY SELECTION** command loads the records of the current selection in Read only in the current process. Only the [MODIFY SELECTION](modify-selection.md) command allows the actual entry of values. 
 
 **Note:** The [OBJECT SET ENTERABLE](object-set-enterable.md) command can be used to enable or disable the Enter in list mode on the fly. 
@@ -65,10 +65,10 @@ During and after execution of **DISPLAY SELECTION**, the records that the user h
 The following example selects all the records in the \[People\] table. It then uses **DISPLAY SELECTION** to display the records, and allows the user to select the records to print. Finally, it selects the records with [USE SET](use-set.md), and prints them with [PRINT SELECTION](print-selection.md):
 
 ```4d
- ALL RECORDS([People]) // Select all records
- DISPLAY SELECTION([People];*) // Display the records
- USE SET("UserSet") // Use only records picked by user
- PRINT SELECTION([People]) // Print the records that the user picked
+ ALL RECORDS([People]) // Select all records
+ DISPLAY SELECTION([People];*) // Display the records
+ USE SET("UserSet") // Use only records picked by user
+ PRINT SELECTION([People]) // Print the records that the user picked
 ```
 
 ## Example 2 
@@ -86,17 +86,17 @@ b. Associate this menu bar (using the “Associated menu bar” menu in the form
 c. Associate the following project methods to your menu commands:
 
 ```4d
-  // M_SHOW_ALL (attached to menu item Show All)
- $vpCurTable:=Current form table
- ALL RECORDS($vpCurTable->)
- 
-  // M_QUERY (attached to menu item Query)
- $vpCurTable:=Current form table
- QUERY($vpCurTable->)
- 
-  // M_ORDER_BY (attached to menu item Order By)
- $vpCurTable:=Current form table
- ORDER BY($vpCurTable->)
+  // M_SHOW_ALL (attached to menu item Show All)
+ $vpCurTable:=Current form table
+ ALL RECORDS($vpCurTable->)
+ 
+  // M_QUERY (attached to menu item Query)
+ $vpCurTable:=Current form table
+ QUERY($vpCurTable->)
+ 
+  // M_ORDER_BY (attached to menu item Order By)
+ $vpCurTable:=Current form table
+ ORDER BY($vpCurTable->)
 ```
 
 You can also use other commands, such as [PRINT SELECTION](print-selection.md), [QR REPORT](qr-report.md), and so on, to provide all the “standard” menu options you may want each time you display or modify a selection in the Application environment. Thanks to the [Current form table](current-form-table.md) command, these methods are generic, and the menu bar they support can be attached to any output form of any table.

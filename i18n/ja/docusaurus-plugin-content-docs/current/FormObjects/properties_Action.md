@@ -32,7 +32,7 @@ title: 動作
 
 #### コマンド
 
-[OBJECT GET DRAG AND DROP OPTIONS](../commands-legacy/object-get-drag-and-drop-options.md) - [OBJECT SET DRAG AND DROP OPTIONS](../commands-legacy/object-set-drag-and-drop-options.md)
+[OBJECT GET DRAG AND DROP OPTIONS](../commands-legacy/object-get-drag-and-drop-options) - [OBJECT SET DRAG AND DROP OPTIONS](../commands-legacy/object-set-drag-and-drop-options)
 
 #### 参照
 
@@ -64,7 +64,7 @@ title: 動作
 
 #### コマンド
 
-[OBJECT GET DRAG AND DROP OPTIONS](../commands-legacy/object-get-drag-and-drop-options.md) - [OBJECT SET DRAG AND DROP OPTIONS](../commands-legacy/object-set-drag-and-drop-options.md)
+[OBJECT GET DRAG AND DROP OPTIONS](../commands-legacy/object-get-drag-and-drop-options) - [OBJECT SET DRAG AND DROP OPTIONS](../commands-legacy/object-set-drag-and-drop-options)
 
 #### 参照
 
@@ -114,30 +114,7 @@ title: 動作
 
 #### 対象オブジェクト
 
-[4D View Pro エリア](viewProArea_overview.md) -
-[4D Write Pro エリア](writeProArea_overview.md) -
-[ボタン](button_overview.md) -
-[ボタングリッド](buttonGrid_overview.md) -
-[チェックボックス](checkbox_overview.md) -
-[コンボボックス](comboBox_overview.md) -
-[ドロップダウンリスト](dropdownList_Overview.md) -
-[フォーム](FormEditor/forms.md) -
-[階層リスト](list_overview.md) -
-[入力](input_overview.md) -
-[リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[ピクチャーボタン](pictureButton_overview.md) -
-[ピクチャーポップアップメニュー](picturePopupMenu_overview.md) -
-[プラグインエリア](pluginArea_overview.md) -
-[進捗インジケーター](progressIndicator.md) -
-[ラジオボタン](radio_overview.md) -
-[ルーラー](ruler.md) -
-[スピナー](spinner.md) -
-[スプリッター](splitters.md) -
-[ステッパー](stepper.md) -
-[サブフォーム](subform_overview.md) -
-[タブコントロール](tabControl.md) -
-[Web エリア](webArea_overview.md)
+[4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Forms](FormEditor/forms.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Web Area](webArea_overview.md)
 
 ---
 
@@ -159,7 +136,7 @@ title: 動作
 
 #### コマンド
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -179,7 +156,7 @@ title: 動作
 
 #### コマンド
 
-[GET LIST PROPERTIES](../commands-legacy/get-list-properties.md) - [SET LIST PROPERTIES](../commands-legacy/set-list-properties.md)
+[GET LIST PROPERTIES](../commands-legacy/get-list-properties) - [SET LIST PROPERTIES](../commands-legacy/set-list-properties)
 
 ---
 
@@ -206,7 +183,7 @@ title: 動作
 
 #### コマンド
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -228,5 +205,5 @@ title: 動作
 
 #### コマンド
 
-[`OBJECT Get action`](../commands-legacy/object-get-action.md) - [`OBJECT SET ACTION`](../commands-legacy/object-set-action.md)
+[`OBJECT Get action`](../commands-legacy/object-get-action) - [`OBJECT SET ACTION`](../commands-legacy/object-set-action)
 

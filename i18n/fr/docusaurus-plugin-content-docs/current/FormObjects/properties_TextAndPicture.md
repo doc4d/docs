@@ -21,7 +21,7 @@ Le chemin d'accès à saisir est identique à celui de [la propriété Chemin d'
 
 #### Commandes
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands-legacy/object-get-format) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value) - [OBJECT SET FORMAT](../commands-legacy/object-set-format)
 
 ---
 
@@ -41,7 +41,7 @@ Aspect général du bouton. Le style du bouton joue également un rôle dans la 
 
 #### Commandes
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands-legacy/object-get-format) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value) - [OBJECT SET FORMAT](../commands-legacy/object-set-format)
 
 ---
 
@@ -70,7 +70,7 @@ Ce paramètre est utile, par exemple, lorsque l'image de fond contient des bordu
 
 #### Commandes
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands-legacy/object-get-format) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value) - [OBJECT SET FORMAT](../commands-legacy/object-set-format)
 
 ---
 
@@ -86,11 +86,11 @@ Désigne l'emplacement d'une icône par rapport à l'objet formulaire.
 
 #### Objets pris en charge
 
-[En-têtes de list box](listbox_overview.md#list-box-headers)
+[En-têtes de list box](listbox-header-footer.md#headers)
 
 #### Commandes
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands-legacy/object-get-format) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value) - [OBJECT SET FORMAT](../commands-legacy/object-set-format)
 
 ---
 
@@ -112,7 +112,7 @@ Le titre du bouton sera décalé vers la droite et vers le bas pour le nombre de
 
 #### Commandes
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands-legacy/object-get-format) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value) - [OBJECT SET FORMAT](../commands-legacy/object-set-format)
 
 ---
 
@@ -151,7 +151,7 @@ Chaque état est représenté par une image différente. Dans l'image source, le
 
 #### Commandes
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands-legacy/object-get-format) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value) - [OBJECT SET FORMAT](../commands-legacy/object-set-format)
 
 ---
 
@@ -171,11 +171,11 @@ Le chemin d'accès à saisir est identique à celui de [la propriété Chemin d'
 
 #### Objets pris en charge
 
-[Bouton](button_overview.md) (tous les styles sauf [Aide](button_overview.md#help)) - [Case à cocher](checkbox_overview.md) - [En-tête List box](listbox_overview.md#list-box-headers) - [Bouton radio](listbox_overview.md#list-box-headers)
+[Bouton](button_overview.md) (tous les styles sauf [Aide](button_overview.md#help)) - [Case à cocher](checkbox_overview.md) - [En-tête List box](listbox-header-footer.md#headers) - [Bouton radio](listbox_overview.md#list-box-headers)
 
 #### Commandes
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands-legacy/object-get-format) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value) - [OBJECT SET FORMAT](../commands-legacy/object-set-format)
 
 ---
 
@@ -205,7 +205,7 @@ Voici le résultat des différentes options de cette propriété :
 
 #### Commandes
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands-legacy/object-get-format) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value) - [OBJECT SET FORMAT](../commands-legacy/object-set-format)
 
 ---
 
@@ -231,7 +231,7 @@ Par défaut, lorsqu'un bouton contient un titre et une image, les éléments son
 
 #### Commandes
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands-legacy/object-get-format) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value) - [OBJECT SET FORMAT](../commands-legacy/object-set-format)
 
 ---
 
@@ -255,7 +255,7 @@ Ce paramètre est utile, par exemple, lorsque l'image de fond contient des bordu
 
 #### Commandes
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands-legacy/object-get-format) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value) - [OBJECT SET FORMAT](../commands-legacy/object-set-format)
 
 ---
 
@@ -290,19 +290,19 @@ Reportez-vous à la [description de l'événement `On Alternative Click`](../Eve
 
 ### Gestion du pop up menu
 
-Il est important de noter que la propriété “Avec pop up menu” gère uniquement l’aspect graphique du bouton. L'affichage du menu contextuel et de ses valeurs doit être entièrement géré par le développeur, plus particulièrement en utilisant les [événements formulaires](../Events/overview.md) et les commandes [`Dynamic pop up menu`](../commands-legacy/dynamic-pop-up-menu.md) et [`Pop up menu`](../commands-legacy/pop-up-menu.md).
+Il est important de noter que la propriété “Avec pop up menu” gère uniquement l’aspect graphique du bouton. L'affichage du menu contextuel et de ses valeurs doit être entièrement géré par le développeur, plus particulièrement en utilisant les [événements formulaires](../Events/overview.md) et les commandes [`Dynamic pop up menu`](../commands-legacy/dynamic-pop-up-menu) et [`Pop up menu`](../commands-legacy/pop-up-menu).
 
 #### Grammaire JSON
 
-| Nom            | Type de données | Valeurs possibles                                    |
-| :------------- | --------------- | ---------------------------------------------------- |
-| popupPlacement | string          | <li>"none"</li><li>"linked"</li><li>"separated"</li> |
+| Nom            | Type de données | Valeurs possibles                                             |
+| :------------- | --------------- | ------------------------------------------------------------- |
+| popupPlacement | string          | <ul><li>"none"</li><li>"linked"</li><li>"separated"</li></ul> |
 
 #### Objets pris en charge
 
-[Toolbar Button](button_overview.md#toolbar) - [Bevel Button](button_overview.md#bevel) - [Rounded Bevel Button](button_overview.md#rounded-bevel) - [OS X Gradient Button](button_overview.md#os-x-gradient) - [OS X Textured Button](button_overview.md#os-x-textured) - [Office XP Button](button_overview.md#office-xp) - [Circle Button](button_overview.md#circle) - [Custom](button_overview.md#custom)
+[Toolbar Button](button_overview.md#toolbar) - [Bevel Button](button_overview.md#bevel) - [Rounded Bevel Button](button_overview.md#rounded-bevel) - [OS X Gradient Button](button_overview.md#os-x-gradient) - [OS X Textured Button](button_overview.md#os-x-textured) - [Office XP Button](button_overview.md#office-xp) - [Custom](button_overview.md#custom)
 
 #### Commandes
 
-[OBJECT Get format](../commands-legacy/object-get-format.md) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value.md) - [OBJECT SET FORMAT](../commands-legacy/object-set-format.md)
+[OBJECT Get format](../commands-legacy/object-get-format) - [OBJECT Get minimum-value](../commands-legacy/object-get-minimum-value) - [OBJECT SET FORMAT](../commands-legacy/object-set-format)
 

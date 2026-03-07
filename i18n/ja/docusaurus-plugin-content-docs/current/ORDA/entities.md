@@ -246,7 +246,7 @@ $emp:=ds.Employee.get(2) // プライマリーキーが 2 の Employee エンテ
 
 - [データクラス](API/DataClassClass.md#query) または [既存のエンティティセレクション](API/EntitySelectionClass.md#query) のエンティティに対してクエリを実行する;
 - [`.all()`](API/DataClassClass.md#all) DataClassクラス関数を使用して、データクラス内の全エンティティを選択する;
-- [`Create entity selection`](../commands/create-entity-selection.md) コマンドあるいは [`.newSelection()`](API/DataClassClass.md#newselection) DataClassクラス関数を使用して空のエンティティコレクションオブジェクトを作成する;
+- [`Create entity selection`](../commands/create-entity-selection) コマンドあるいは [`.newSelection()`](API/DataClassClass.md#newselection) DataClassクラス関数を使用して空のエンティティコレクションオブジェクトを作成する;
 - [`.copy()`](API/EntitySelectionClass.md#copy) EntitySelectionクラス関数を使用して、既存のエンティティセレクションを複製する;
 - [EntitySelectionクラス](API/EntitySelectionClass.md) の様々な関数の中から、[`.or()`](API/EntitySelectionClass.md#or) のように新しいエンティティセレクションを返すものを使用する;
 - "リレートエンティティズ" 型のリレーション属性を使用する (以下参照)
@@ -442,7 +442,7 @@ $myInvoices:=$myParts.invoiceItems.invoice
 
 最後の行は、$myParts エンティティセレクション内のパーツにリレートされている請求項目が少なくとも1行含まれているすべての請求書のエンティティセレクションを、*$myInvoices* 内に返します。 エンティティセレクションのプロパティとしてリレーション属性が使用されると、返される結果は、たとえ返されるエンティティが一つだけだとしても、常に新しいエンティティセレクションとなります。 エンティティセレクションのプロパティとしてリレーション属性が使用された結果、エンティティが何も返ってこない場合には、返されるのは空のエンティティセレクションであり、null ではありません。
 
-## Restricting entity selections {#restricting-entity-selections}
+## エンティティセレクションを制限する {#restricting-entity-selections}
 
 ORDAでは、あらゆるデータクラスにおいて、エンティティへのアクセスを制限するフィルターを作成することができます。 一旦実装されると、データクラスのエンティティが **ORDAクラス関数** ([`all()`](../API/DataClassClass.md#all) や [`query()`](../API/EntitySelectionClass.md#query)など) または [**REST API**](../category/api-dataclass) ([Data Explorer](../Admin/dataExplorer.md) や [remote datastores](remoteDatastores.md)など) によってアクセスされるたびに、フィルターが自動的に適用されます。
 
@@ -540,7 +540,7 @@ Function event restrict() : cs.CustomersSelection
 | [entitySelection.query()](../API/EntitySelectionClass.md#query)       |                                                                                                                                                                    |
 | [entitySelection.attributeName](../API/EntitySelectionClass.md#attributename)            | *attributeName* が、制限されたデータクラスのリレートエンティティまたはリレートエンティティズの場合、フィルターが適用されます (エイリアスおよび計算属性も含む)                                                        |
 | [entity.attributeName](../API/EntityClass.md#attributename)                              | *attributeName* が、制限されたデータクラスのリレートエンティティズの場合、フィルターが適用されます (エイリアスおよび計算属性も含む)                                                                     |
-| [Create entity selection](../commands/create-entity-selection.md)                                        |                                                                                                                                                                    |
+| [Create entity selection](../commands/create-entity-selection)                                        |                                                                                                                                                                    |
 
 その他の ORDA関数によるデータアクセスはフィルターを直接的にトリガーしないものの、その恩恵を受けることがあります。 たとえば、[`entity.next()`](../API/EntityClass.md#next) 関数は、すでにフィルタリングされたエンティティセレクションにおける次のエンティティを返します。 一方、制限されていないエンティティセレクションの場合、[`entity.next()`](../API/EntityClass.md#next) はフィルタリングされていないエンティティ群に対して動作します。
 

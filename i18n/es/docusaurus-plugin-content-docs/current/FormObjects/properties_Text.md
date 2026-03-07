@@ -7,7 +7,7 @@ title: Text
 
 ## Autorizar selector fuente/color
 
-Cuando esta propiedad está activada, los comandos [OPEN FONT PICKER](../commands-legacy/open-font-picker.md) y [OPEN COLOR PICKER](../commands-legacy/open-color-picker.md) pueden ser invocados para mostrar las ventanas de selección de fuente y color del sistema. A través de estas ventanas, los usuarios pueden cambiar la fuente o el color de un objeto formulario que tenga el foco directamente haciendo clic. Cuando esta propiedad está desactivada (por defecto), los comandos del selector abierto no tienen efecto.
+Cuando esta propiedad está activada, los comandos [OPEN FONT PICKER](../commands-legacy/open-font-picker) y [OPEN COLOR PICKER](../commands-legacy/open-color-picker) pueden ser invocados para mostrar las ventanas de selección de fuente y color del sistema. A través de estas ventanas, los usuarios pueden cambiar la fuente o el color de un objeto formulario que tenga el foco directamente haciendo clic. Cuando esta propiedad está desactivada (por defecto), los comandos del selector abierto no tienen efecto.
 
 #### Gramática JSON
 
@@ -25,7 +25,7 @@ Cuando esta propiedad está activada, los comandos [OPEN FONT PICKER](../command
 
 Ajusta el texto seleccionado para que aparezca más oscuro y pesado.
 
-Puede definir esta propiedad utilizando el comando [**OBJECT SET FONT STYLE**](../commands-legacy/object-set-font-style.md).
+Puede definir esta propiedad utilizando el comando [**OBJECT SET FONT STYLE**](../commands-legacy/object-set-font-style).
 
 > Esto es texto normal.<br/>
 > **Esto es texto en negrita.**
@@ -38,11 +38,11 @@ Puede definir esta propiedad utilizando el comando [**OBJECT SET FONT STYLE**](.
 
 #### Objetos soportados
 
-[Botón](button_overview.md) - [Casilla de verificación](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Lista jerárquica](list_overview.md) - [Entrada](input_overview.md) - [List Box](listbox_overview.md) - [Columna de List Box](listbox_overview.md#list-box-columns) - [Pie de List Box](listbox_overview.md#list-box-footers) - [Encabezado de List Box](listbox_overview.md#list-box-headers) - [Botón de opción](radio_overview.md) - [Área de texto](text.md)
+[Botón](button_overview.md) - [Casilla de verificación](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Lista jerárquica](list_overview.md) - [Entrada](input_overview.md) - [List Box](listbox_overview.md) - [Columna de List Box](listbox-column.md) - [Pie de List Box](listbox-header-footer.md#footers) - [Encabezado de List Box](listbox-header-footer.md#headers) - [Botón de opción](radio_overview.md) - [Área de texto](text.md)
 
 #### Comandos
 
-[OBJECT Get font style](../commands-legacy/object-get-font-style.md) - [OBJECT SET FONT STYLE](../commands-legacy/object-set-font-style.md)
+[OBJECT Get font style](../commands-legacy/object-get-font-style) - [OBJECT SET FONT STYLE](../commands-legacy/object-set-font-style)
 
 ---
 
@@ -50,7 +50,7 @@ Puede definir esta propiedad utilizando el comando [**OBJECT SET FONT STYLE**](.
 
 Hace que el texto seleccionado se incline ligeramente hacia la derecha.
 
-También puede definir esta propiedad por medio del comando [**OBJECT SET FONT STYLE**](../commands-legacy/object-set-font-style.md).
+También puede definir esta propiedad por medio del comando [**OBJECT SET FONT STYLE**](../commands-legacy/object-set-font-style).
 
 > Esto es texto normal.<br/>
 > *Este es texto en cursiva.*
@@ -63,11 +63,11 @@ También puede definir esta propiedad por medio del comando [**OBJECT SET FONT S
 
 #### Objetos soportados
 
-[Botón](button_overview.md) - [Casilla de verificación](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Lista jerárquica](list_overview.md) - [Entrada](input_overview.md) - [List Box](listbox_overview.md) - [Columna de List Box](listbox_overview.md#list-box-columns) - [Pie de List Box](listbox_overview.md#list-box-footers) - [Encabezado de List Box](listbox_overview.md#list-box-headers) - [Botón de opción](radio_overview.md) - [Área de texto](text.md)
+[Botón](button_overview.md) - [Casilla de verificación](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Lista jerárquica](list_overview.md) - [Entrada](input_overview.md) - [List Box](listbox_overview.md) - [Columna de List Box](listbox-column.md) - [Pie de List Box](listbox-header-footer.md#footers) - [Encabezado de List Box](listbox-header-footer.md#headers) - [Botón de opción](radio_overview.md) - [Área de texto](text.md)
 
 #### Comandos
 
-[OBJECT Get font style](../commands-legacy/object-get-font-style.md) - [OBJECT SET FONT STYLE](../commands-legacy/object-set-font-style.md)
+[OBJECT Get font style](../commands-legacy/object-get-font-style) - [OBJECT SET FONT STYLE](../commands-legacy/object-set-font-style)
 
 ---
 
@@ -83,11 +83,11 @@ Hace que el texto tenga una línea por debajo.
 
 #### Objetos soportados
 
-[Botón](button_overview.md) - [Casilla de verificación](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Lista jerárquica](list_overview.md) - [Entrada](input_overview.md) - [List Box](listbox_overview.md) - [Columna de List Box](listbox_overview.md#list-box-columns) - [Pie de List Box](listbox_overview.md#list-box-footers) - [Encabezado de List Box](listbox_overview.md#list-box-headers) - [Botón de opción](radio_overview.md) - [Área de texto](text.md)
+[Botón](button_overview.md) - [Casilla de verificación](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Lista jerárquica](list_overview.md) - [Entrada](input_overview.md) - [List Box](listbox_overview.md) - [Columna de List Box](listbox-column.md) - [Pie de List Box](listbox-header-footer.md#footers) - [Encabezado de List Box](listbox-header-footer.md#headers) - [Botón de opción](radio_overview.md) - [Área de texto](text.md)
 
 #### Comandos
 
-[OBJECT Get font style](../commands-legacy/object-get-font-style.md) - [OBJECT SET FONT STYLE](../commands-legacy/object-set-font-style.md)
+[OBJECT Get font style](../commands-legacy/object-get-font-style) - [OBJECT SET FONT STYLE](../commands-legacy/object-set-font-style)
 
 ---
 
@@ -124,7 +124,7 @@ Hay tres temas de fuentes disponibles:
 
 #### Objetos soportados
 
-[Botón](button_overview.md) - [Casilla de verificación](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Lista jerárquica](list_overview.md) - [Entrada](input_overview.md) - [List Box](listbox_overview.md) - [Columna de List Box](listbox_overview.md#list-box-columns) - [Pie de List Box](listbox_overview.md#list-box-footers) - [Encabezado de List Box](listbox_overview.md#list-box-headers) - [Botón de opción](radio_overview.md) - [Área de texto](text.md)
+[Botón](button_overview.md) - [Casilla de verificación](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Lista jerárquica](list_overview.md) - [Entrada](input_overview.md) - [List Box](listbox_overview.md) - [Columna de List Box](listbox-column.md) - [Pie de List Box](listbox-header-footer.md#footers) - [Encabezado de List Box](listbox-header-footer.md#headers) - [Botón de opción](radio_overview.md) - [Área de texto](text.md)
 
 #### Comandos
 
@@ -137,7 +137,7 @@ Hay dos tipos de nombres de familias de fuentes:
 - *family-name:* El nombre de una familia de fuentes, como "times", "courier", "arial", etc.
 - *generic-family:* El nombre de una familia genérica, como "serif", "sans-serif", "cursive", "fantasy", "monospace".
 
-Puede configurarlo utilizando el comando [`OBJECT SET FONT`](../commands-legacy/object-set-font.md).
+Puede configurarlo utilizando el comando [`OBJECT SET FONT`](../commands-legacy/object-set-font).
 
 #### Gramática JSON
 
@@ -149,11 +149,11 @@ Puede configurarlo utilizando el comando [`OBJECT SET FONT`](../commands-legacy/
 
 #### Objetos soportados
 
-[Botón](button_overview.md) - [Casilla de verificación](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Lista jerárquica](list_overview.md) - [Entrada](input_overview.md) - [List Box](listbox_overview.md) - [Columna de List Box](listbox_overview.md#list-box-columns) - [Pie de List Box](listbox_overview.md#list-box-footers) - [Encabezado de List Box](listbox_overview.md#list-box-headers) - [Botón de opción](radio_overview.md) - [Área de texto](text.md)
+[Botón](button_overview.md) - [Casilla de verificación](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Lista jerárquica](list_overview.md) - [Entrada](input_overview.md) - [List Box](listbox_overview.md) - [Columna de List Box](listbox-column.md) - [Pie de List Box](listbox-header-footer.md#footers) - [Encabezado de List Box](listbox-header-footer.md#headers) - [Botón de opción](radio_overview.md) - [Área de texto](text.md)
 
 #### Comandos
 
-[OBJECT Get font](../commands-legacy/object-get-font.md) - [OBJECT SET FONT](../commands-legacy/object-set-font.md)
+[OBJECT Get font](../commands-legacy/object-get-font) - [OBJECT SET FONT](../commands-legacy/object-set-font)
 
 ## Tamaño fuente
 
@@ -167,11 +167,11 @@ Permite definir el tamaño de la fuente del objeto en puntos.
 
 #### Objetos soportados
 
-[Botón](button_overview.md) - [Casilla de verificación](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Lista jerárquica](list_overview.md) - [Entrada](input_overview.md) - [List Box](listbox_overview.md) - [Columna de List Box](listbox_overview.md#list-box-columns) - [Pie de List Box](listbox_overview.md#list-box-footers) - [Encabezado de List Box](listbox_overview.md#list-box-headers) - [Botón de opción](radio_overview.md) - [Área de texto](text.md)
+[Botón](button_overview.md) - [Casilla de verificación](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Lista jerárquica](list_overview.md) - [Entrada](input_overview.md) - [List Box](listbox_overview.md) - [Columna de List Box](listbox-column.md) - [Pie de List Box](listbox-header-footer.md#footers) - [Encabezado de List Box](listbox-header-footer.md#headers) - [Botón de opción](radio_overview.md) - [Área de texto](text.md)
 
 #### Comandos
 
-[OBJECT Get font size](../commands-legacy/object-get-font-size.md) - [OBJECT SET FONT SIZE](../commands-legacy/object-set-font-size.md)
+[OBJECT Get font size](../commands-legacy/object-get-font-size) - [OBJECT SET FONT SIZE](../commands-legacy/object-set-font-size)
 
 ---
 
@@ -187,7 +187,7 @@ El color puede ser especificado por:
 - un valor HEX - como "# ff0000"
 - un valor RVA - como "rgb (255,0,0)"
 
-También puede definir esta propiedad utilizando el comando [**OBJECT SET RGB COLORS**](../commands-legacy/object-set-rgb-colors.md).
+También puede definir esta propiedad utilizando el comando [**OBJECT SET RGB COLORS**](../commands-legacy/object-set-rgb-colors).
 
 #### Gramática JSON
 
@@ -197,11 +197,11 @@ También puede definir esta propiedad utilizando el comando [**OBJECT SET RGB CO
 
 #### Objetos soportados
 
-[Botón](button_overview.md) - [Casilla de verificación](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Lista desplegable](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Lista jerárquica](list_overview.md) - [Entrada](input_overview.md) - [List Box](listbox_overview.md) - [Columna de List Box](listbox_overview.md#list-box-columns) - [Pie de List Box](listbox_overview.md#list-box-footers) - [Encabezado de List Box](listbox_overview.md#list-box-headers) - [Indicadores de progreso](progressIndicator.md) - [Regla](ruler.md) - [Botón radio](radio_overview.md) - [Área de texto](text.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Progress Indicators](progressIndicator.md) - [Ruler](ruler.md) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
 #### Comandos
 
-[OBJECT GET RGB COLORS](../commands-legacy/object-get-rgb-colors.md) - [OBJECT SET RGB COLORS](../commands-legacy/object-set-rgb-colors.md)
+[OBJECT GET RGB COLORS](../commands-legacy/object-get-rgb-colors) - [OBJECT SET RGB COLORS](../commands-legacy/object-set-rgb-colors)
 
 ---
 
@@ -209,11 +209,11 @@ También puede definir esta propiedad utilizando el comando [**OBJECT SET RGB CO
 
 `List box de tipo colección/selección de entidades`
 
-Se utiliza para aplicar un color de fuente personalizado a cada línea del list box. Debe utilizar valores de color RGB. Para más información, consulte la descripción del comando [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md).
+Se utiliza para aplicar un color de fuente personalizado a cada línea del list box. Debe utilizar valores de color RGB. Para más información, consulte la descripción del comando [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors).
 
-Debe introducir una expresión o una variable (no se pueden utilizar variables de tipo array). La expresión o variable se evaluará para cada línea mostrada. Puede utilizar las constantes descritas en el comando [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md).
+Debe introducir una expresión o una variable (no se pueden utilizar variables de tipo array). La expresión o variable se evaluará para cada línea mostrada. Puede utilizar las constantes descritas en el comando [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors).
 
-También puede establecer esta propiedad utilizando el comando [`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md) con la constante `lk font color expression`.
+También puede establecer esta propiedad utilizando el comando [`LISTBOX SET PROPERTY`](../commands/listbox-set-property) con la constante `lk font color expression`.
 
 > Esta propiedad también puede definirse mediante una [Expresión Meta Info](properties_Text.md#meta-info-expression).
 
@@ -236,7 +236,7 @@ Foreground color;Dark shadow color)
 
 #### Comandos
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -246,7 +246,7 @@ Foreground color;Dark shadow color)
 
 Utilizado para aplicar un estilo de fuente personalizado a cada línea de list box o de cada celda de la columna.
 
-Debe introducir una expresión o una variable (no se pueden utilizar variables de tipo array). La expresión o variable se evaluará para cada línea mostrada (si se aplica al list box) o cada celda mostrada (si se aplica a una columna). Puede usar las constantes listadas en el comando [`LISTBOX SET ROW FONT STYLE`](../commands-legacy/listbox-set-row-font-style.md).
+Debe introducir una expresión o una variable (no se pueden utilizar variables de tipo array). La expresión o variable se evaluará para cada línea mostrada (si se aplica al list box) o cada celda mostrada (si se aplica a una columna). Puede usar las constantes listadas en el comando [`LISTBOX SET ROW FONT STYLE`](../commands-legacy/listbox-set-row-font-style).
 
 Ejemplo:
 
@@ -254,7 +254,7 @@ Ejemplo:
 Choose([Companies]ID;Bold;Plain;Italic;Underline)
 ```
 
-También puede establecer esta propiedad utilizando el comando [`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md) con la constante `lk font style expression`.
+También puede establecer esta propiedad utilizando el comando [`LISTBOX SET PROPERTY`](../commands/listbox-set-property) con la constante `lk font style expression`.
 
 > Esta propiedad también puede definirse mediante una [Expresión Meta Info](properties_Text.md#meta-info-expression).
 
@@ -266,11 +266,11 @@ También puede establecer esta propiedad utilizando el comando [`LISTBOX SET PRO
 
 #### Objetos soportados
 
-[List Box](listbox_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns)
+[List Box](listbox_overview.md) - [Columna List Box](listbox-column.md)
 
 #### Comandos
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -293,11 +293,11 @@ Ubicación horizontal del texto dentro del área que lo contiene.
 
 #### Objetos soportados
 
-[Botón](button_overview.md) - [Casilla de verificación](checkbox_overview.md) (todos los estilos excepto Regular y Plano) - [Combo Box](comboBox_overview.md) - [Lista desplegables](dropdownList_Overview.md) - [Caja de grupo](groupBox.md) - [Entrada](input_overview.md) - [List Box](listbox_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns) - [Encabezado List Box](listbox_overview.md#list-box-headers) - [Pie List Box](listbox_overview.md#list-box-footers) - [Botón de opción](radio_overview.md) (todos los estilos excepto Regular y Plano) - [Área de texto](text.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) (all styles except Regular and Flat) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Header](listbox-header-footer.md#headers) - [List Box Footer](listbox-header-footer.md#footers) - [Radio Button](radio_overview.md) (all styles except Regular and Flat) - [Text Area](text.md)
 
 #### Comandos
 
-[OBJECT Get horizontal alignment](../commands-legacy/object-get-horizontal-alignment.md) - [OBJECT SET HORIZONTAL ALIGNMENT](../commands-legacy/object-set-horizontal-alignment.md)
+[OBJECT Get horizontal alignment](../commands-legacy/object-get-horizontal-alignment) - [OBJECT SET HORIZONTAL ALIGNMENT](../commands-legacy/object-set-horizontal-alignment)
 
 ---
 
@@ -310,7 +310,7 @@ La opción **Predeterminado** (`automático` valor JSON) define la alineación s
 - `abajo` para todos los datos (excepto las imágenes) y
 - `arriba` para los datos del tipo imagen.
 
-Esta propiedad también puede ser manejada por los comandos [`OBJECT Get vertical alignment`](../commands-legacy/object-get-vertical-alignment.md) y [`OBJECT SET VERTICAL ALIGNMENT`](../commands-legacy/object-set-vertical-alignment.md).
+Esta propiedad también puede ser manejada por los comandos [`OBJECT Get vertical alignment`](../commands-legacy/object-get-vertical-alignment) y [`OBJECT SET VERTICAL ALIGNMENT`](../commands-legacy/object-set-vertical-alignment).
 
 #### Gramática JSON
 
@@ -320,11 +320,11 @@ Esta propiedad también puede ser manejada por los comandos [`OBJECT Get vertica
 
 #### Objetos soportados
 
-[List Box](listbox_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns) - [Pie de List Box](listbox_overview.md#list-box-footers) - [Encabezado List Box](listbox_overview.md#list-box-headers)
+[List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers)
 
 #### Comandos
 
-[`OBJECT Get vertical alignment`](../commands-legacy/object-get-vertical-alignment.md) - [`OBJECT SET VERTICAL ALIGNMENT`](../commands-legacy/object-set-vertical-alignment.md)
+[`OBJECT Get vertical alignment`](../commands-legacy/object-get-vertical-alignment) - [`OBJECT SET VERTICAL ALIGNMENT`](../commands-legacy/object-set-vertical-alignment)
 
 ---
 
@@ -412,7 +412,7 @@ Entonces, el método *Color* contendría:
 
 #### Comandos
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -430,11 +430,11 @@ Por defecto, esta opción no está activa.
 
 #### Objetos soportados
 
-[Área de entrada](input_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns)
+[Área de entrada](input_overview.md) - [Columna List Box](listbox-column.md)
 
 #### Comandos
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md) - [OBJECT Is styled text](../commands-legacy/object-is-styled-text.md) -
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property) - [OBJECT Is styled text](../commands-legacy/object-is-styled-text) -
 
 ---
 
@@ -463,7 +463,7 @@ Además de [áreas de texto estáticas](text.md), los objetos de texto de las [�
 
 #### Comandos
 
-[OBJECT Get text orientation](../commands-legacy/object-get-text-orientation.md) - [OBJECT SET TEXT ORIENTATION](../commands-legacy/object-set-text-orientation.md)
+[OBJECT Get text orientation](../commands-legacy/object-get-text-orientation) - [OBJECT SET TEXT ORIENTATION](../commands-legacy/object-set-text-orientation)
 
 ---
 
@@ -473,7 +473,7 @@ Además de [áreas de texto estáticas](text.md), los objetos de texto de las [�
 
 Permite definir un color de fuente personalizado para cada línea del list box o celda de la columna.
 
-Se debe utilizar el nombre de un array Entero largo. Cada elemento de este array corresponde a una línea del list box (si se aplica al list box) o a una celda de la columna (si se aplica a una columna), por lo que el array debe tener el mismo tamaño que el array asociado a la columna. Puede utilizar las constantes descritas en el comando [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md). Si desea que la celda herede el color de fondo definido en el nivel superior, pase el valor -255 al elemento del array correspondiente.
+Se debe utilizar el nombre de un array Entero largo. Cada elemento de este array corresponde a una línea del list box (si se aplica al list box) o a una celda de la columna (si se aplica a una columna), por lo que el array debe tener el mismo tamaño que el array asociado a la columna. Puede utilizar las constantes descritas en el comando [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors). Si desea que la celda herede el color de fondo definido en el nivel superior, pase el valor -255 al elemento del array correspondiente.
 
 #### Gramática JSON
 
@@ -483,11 +483,11 @@ Se debe utilizar el nombre de un array Entero largo. Cada elemento de este array
 
 #### Objetos soportados
 
-[List Box](listbox_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns)
+[List Box](listbox_overview.md) - [Columna List Box](listbox-column.md)
 
 #### Comandos
 
-[`LISTBOX Get array`](../commands-legacy/listbox-get-array.md) - [`LISTBOX GET ARRAYS`](../commands-legacy/listbox-get-arrays.md) - [`LISTBOX SET ARRAY`](../commands-legacy/listbox-set-array.md)
+[`LISTBOX Get array`](../commands-legacy/listbox-get-array) - [`LISTBOX GET ARRAYS`](../commands-legacy/listbox-get-arrays) - [`LISTBOX SET ARRAY`](../commands-legacy/listbox-set-array)
 
 ---
 
@@ -497,7 +497,7 @@ Se debe utilizar el nombre de un array Entero largo. Cada elemento de este array
 
 Permite definir un estilo de fuente personalizado para cada línea del list box o cada celda de la columna.
 
-Se debe utilizar el nombre de un array Entero largo. Cada elemento de este array corresponde a una línea del list box (si se aplica al list box) o a una celda de la columna (si se aplica a una columna), por lo que el array debe tener el mismo tamaño que el array asociado a la columna. Para llenar la matriz (utilizando un método), utilice las constantes enumeradas en el comando [`LISTBOX SET ROW FONT STYLE`](../commands-legacy/listbox-set-row-font-style.md). Se pueden añadir constantes para combinar estilos. Si desea que la celda herede el estilo definido en el nivel superior, pase el valor -255 al elemento del array correspondiente.
+Se debe utilizar el nombre de un array Entero largo. Cada elemento de este array corresponde a una línea del list box (si se aplica al list box) o a una celda de la columna (si se aplica a una columna), por lo que el array debe tener el mismo tamaño que el array asociado a la columna. Para llenar la matriz (utilizando un método), utilice las constantes enumeradas en el comando [`LISTBOX SET ROW FONT STYLE`](../commands-legacy/listbox-set-row-font-style). Se pueden añadir constantes para combinar estilos. Si desea que la celda herede el estilo definido en el nivel superior, pase el valor -255 al elemento del array correspondiente.
 
 #### Gramática JSON
 
@@ -507,11 +507,11 @@ Se debe utilizar el nombre de un array Entero largo. Cada elemento de este array
 
 #### Objetos soportados
 
-[List Box](listbox_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns)
+[List Box](listbox_overview.md) - [Columna List Box](listbox-column.md)
 
 #### Comandos
 
-[`LISTBOX Get array`](../commands-legacy/listbox-get-array.md) - [`LISTBOX GET ARRAYS`](../commands-legacy/listbox-get-arrays.md) - [`LISTBOX SET ARRAY`](../commands-legacy/listbox-set-array.md)
+[`LISTBOX Get array`](../commands-legacy/listbox-get-array) - [`LISTBOX GET ARRAYS`](../commands-legacy/listbox-get-arrays) - [`LISTBOX SET ARRAY`](../commands-legacy/listbox-set-array)
 
 ---
 

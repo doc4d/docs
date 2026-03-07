@@ -7,7 +7,7 @@ title: Text
 
 ## ピッカーの使用を許可
 
-このプロパティが有効化されている場合、[OPEN FONT PICKER](../commands-legacy/open-font-picker.md) および [OPEN COLOR PICKER](../commands-legacy/open-color-picker.md) コマンドを呼び出すことでシステムフォントウィンドウとカラーピッカーウィンドウを表示することができます。 これらのピッカーウィンドウを使用して、ユーザーはフォームオブジェクトのフォントやカラーをクリックによって変更できます。 このプロパティが無効になっていると (デフォルト)、ピッカーを開くコマンドは使用できません。
+このプロパティが有効化されている場合、[OPEN FONT PICKER](../commands-legacy/open-font-picker) および [OPEN COLOR PICKER](../commands-legacy/open-color-picker) コマンドを呼び出すことでシステムフォントウィンドウとカラーピッカーウィンドウを表示することができます。 これらのピッカーウィンドウを使用して、ユーザーはフォームオブジェクトのフォントやカラーをクリックによって変更できます。 このプロパティが無効になっていると (デフォルト)、ピッカーを開くコマンドは使用できません。
 
 #### JSON 文法
 
@@ -25,7 +25,7 @@ title: Text
 
 選択テキストの線を太くし、濃く見えるようにします。
 
-このプロパティは[**OBJECT SET FONT STYLE**](../commands-legacy/object-set-font-style.md) コマンドを使用しても設定することができます。
+このプロパティは[**OBJECT SET FONT STYLE**](../commands-legacy/object-set-font-style) コマンドを使用しても設定することができます。
 
 > これは通常のテキストです。<br/>
 > **これは太字のテキストです。**
@@ -38,23 +38,11 @@ title: Text
 
 #### 対象オブジェクト
 
-[ボタン](button_overview.md) -
-[チェックボックス](checkbox_overview.md) -
-[コンボボックス](comboBox_overview.md) -
-[ドロップダウンリスト](dropdownList_Overview.md) -
-[グループボックス](groupBox.md) -
-[階層リスト](list_overview.md) -
-[入力](input_overview.md) -
-[リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
-[ラジオボタン](radio_overview.md) -
-[テキストエリア](text.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
 #### コマンド
 
-[OBJECT Get font style](../commands-legacy/object-get-font-style.md) - [OBJECT SET FONT STYLE](../commands-legacy/object-set-font-style.md)
+[OBJECT Get font style](../commands-legacy/object-get-font-style) - [OBJECT SET FONT STYLE](../commands-legacy/object-set-font-style)
 
 ---
 
@@ -62,7 +50,7 @@ title: Text
 
 選択テキストの線を右斜めに傾けます。
 
-このプロパティは[**OBJECT SET FONT STYLE**](../commands-legacy/object-set-font-style.md) コマンドを使用しても設定することができます。
+このプロパティは[**OBJECT SET FONT STYLE**](../commands-legacy/object-set-font-style) コマンドを使用しても設定することができます。
 
 > これは通常のテキストです。<br/>
 > *これはイタリックのテキストです。*
@@ -75,23 +63,11 @@ title: Text
 
 #### 対象オブジェクト
 
-[ボタン](button_overview.md) -
-[チェックボックス](checkbox_overview.md) -
-[コンボボックス](comboBox_overview.md) -
-[ドロップダウンリスト](dropdownList_Overview.md) -
-[グループボックス](groupBox.md) -
-[階層リスト](list_overview.md) -
-[入力](input_overview.md) -
-[リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
-[ラジオボタン](radio_overview.md) -
-[テキストエリア](text.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
 #### コマンド
 
-[OBJECT Get font style](../commands-legacy/object-get-font-style.md) - [OBJECT SET FONT STYLE](../commands-legacy/object-set-font-style.md)
+[OBJECT Get font style](../commands-legacy/object-get-font-style) - [OBJECT SET FONT STYLE](../commands-legacy/object-set-font-style)
 
 ---
 
@@ -107,23 +83,11 @@ title: Text
 
 #### 対象オブジェクト
 
-[ボタン](button_overview.md) -
-[チェックボックス](checkbox_overview.md) -
-[コンボボックス](comboBox_overview.md) -
-[ドロップダウンリスト](dropdownList_Overview.md) -
-[グループボックス](groupBox.md) -
-[階層リスト](list_overview.md) -
-[入力](input_overview.md) -
-[リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
-[ラジオボタン](radio_overview.md) -
-[テキストエリア](text.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
 #### コマンド
 
-[OBJECT Get font style](../commands-legacy/object-get-font-style.md) - [OBJECT SET FONT STYLE](../commands-legacy/object-set-font-style.md)
+[OBJECT Get font style](../commands-legacy/object-get-font-style) - [OBJECT SET FONT STYLE](../commands-legacy/object-set-font-style)
 
 ---
 
@@ -160,19 +124,7 @@ title: Text
 
 #### 対象オブジェクト
 
-[ボタン](button_overview.md) -
-[チェックボックス](checkbox_overview.md) -
-[コンボボックス](comboBox_overview.md) -
-[ドロップダウンリスト](dropdownList_Overview.md) -
-[グループボックス](groupBox.md) -
-[階層リスト](list_overview.md) -
-[入力](input_overview.md) -
-[リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
-[ラジオボタン](radio_overview.md) -
-[テキストエリア](text.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
 #### コマンド
 
@@ -185,7 +137,7 @@ title: Text
 - *フォントファミリー:* "times", "courier", "arial" などのフォントファミリーの名称。
 - *総称ファミリー:* "serif", "sans-serif", "cursive", "fantasy", "monospace" などの汎用ファミリーの名称。
 
-これは、[`OBJECT SET FONT`](../commands-legacy/object-set-font.md) コマンドを使用しても設定することができます。
+これは、[`OBJECT SET FONT`](../commands-legacy/object-set-font) コマンドを使用しても設定することができます。
 
 #### JSON 文法
 
@@ -197,23 +149,11 @@ title: Text
 
 #### 対象オブジェクト
 
-[ボタン](button_overview.md) -
-[チェックボックス](checkbox_overview.md) -
-[コンボボックス](comboBox_overview.md) -
-[ドロップダウンリスト](dropdownList_Overview.md) -
-[グループボックス](groupBox.md) -
-[階層リスト](list_overview.md) -
-[入力](input_overview.md) -
-[リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
-[ラジオボタン](radio_overview.md) -
-[テキストエリア](text.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
 #### コマンド
 
-[OBJECT Get font](../commands-legacy/object-get-font.md) - [OBJECT SET FONT](../commands-legacy/object-set-font.md)
+[OBJECT Get font](../commands-legacy/object-get-font) - [OBJECT SET FONT](../commands-legacy/object-set-font)
 
 ## フォントサイズ
 
@@ -227,23 +167,11 @@ title: Text
 
 #### 対象オブジェクト
 
-[ボタン](button_overview.md) -
-[チェックボックス](checkbox_overview.md) -
-[コンボボックス](comboBox_overview.md) -
-[ドロップダウンリスト](dropdownList_Overview.md) -
-[グループボックス](groupBox.md) -
-[階層リスト](list_overview.md) -
-[入力](input_overview.md) -
-[リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
-[ラジオボタン](radio_overview.md) -
-[テキストエリア](text.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
 #### コマンド
 
-[OBJECT Get font size](../commands-legacy/object-get-font-size.md) - [OBJECT SET FONT SIZE](../commands-legacy/object-set-font-size.md)
+[OBJECT Get font size](../commands-legacy/object-get-font-size) - [OBJECT SET FONT SIZE](../commands-legacy/object-set-font-size)
 
 ---
 
@@ -259,7 +187,7 @@ title: Text
 - 16進数値 - 例: "#ff0000"
 - RGB値 - 例: "rgb(255,0,0)"
 
-このプロパティは[**OBJECT SET RGB COLORS**](../commands-legacy/object-set-rgb-colors.md) コマンドを使用しても設定することができます。
+このプロパティは[**OBJECT SET RGB COLORS**](../commands-legacy/object-set-rgb-colors) コマンドを使用しても設定することができます。
 
 #### JSON 文法
 
@@ -269,25 +197,11 @@ title: Text
 
 #### 対象オブジェクト
 
-[ボタン](button_overview.md) -
-[チェックボックス](checkbox_overview.md) -
-[コンボボックス](comboBox_overview.md) -
-[ドロップダウンリスト](dropdownList_Overview.md) -
-[グループボックス](groupBox.md) -
-[階層リスト](list_overview.md) -
-[入力](input_overview.md) -
-[リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
-[進捗インジケーター](progressIndicator.md) -
-[ルーラー](ruler.md) -
-[ラジオボタン](radio_overview.md) -
-[テキストエリア](text.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers) - [Progress Indicators](progressIndicator.md) - [Ruler](ruler.md) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
 #### コマンド
 
-[OBJECT GET RGB COLORS](../commands-legacy/object-get-rgb-colors.md) - [OBJECT SET RGB COLORS](../commands-legacy/object-set-rgb-colors.md)
+[OBJECT GET RGB COLORS](../commands-legacy/object-get-rgb-colors) - [OBJECT SET RGB COLORS](../commands-legacy/object-set-rgb-colors)
 
 ---
 
@@ -295,11 +209,11 @@ title: Text
 
 `セレクションおよびコレクション/エンティティセレクション型のリストボックス`
 
-リストボックスの各行にカスタマイズしたフォントカラーを適用するために使用します。 RGBカラーを使用しなければなりません。 この点の詳細については、[`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md) コマンドの詳細を参照してください。
+リストボックスの各行にカスタマイズしたフォントカラーを適用するために使用します。 RGBカラーを使用しなければなりません。 この点の詳細については、[`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors) コマンドの詳細を参照してください。
 
-式または変数 (配列を除く) を入力します。 表示される行ごとに式や変数は評価されます。 [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md) コマンドの章で説明されている定数を使用することができます。
+式または変数 (配列を除く) を入力します。 表示される行ごとに式や変数は評価されます。 [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors) コマンドの章で説明されている定数を使用することができます。
 
-このプロパティは[`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md) と `lk font color expression` 定数を組み合わせて使用しても設定することができます。
+このプロパティは[`LISTBOX SET PROPERTY`](../commands/listbox-set-property) と `lk font color expression` 定数を組み合わせて使用しても設定することができます。
 
 > このプロパティは [メタ情報式](properties_Text.md#メタ情報式) を使用しても設定することができます。
 
@@ -322,7 +236,7 @@ Foreground color;Dark shadow color)
 
 #### コマンド
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -332,7 +246,7 @@ Foreground color;Dark shadow color)
 
 リストボックスの各行にカスタマイズされた文字スタイルを適用するために使用します。
 
-式または変数 (配列を除く) を入力します。 式や変数は、表示行ごと (リストボックスのプロパティの場合) または表示セルごと (リストボックス列のプロパティの場合) に評価されます。 [`LISTBOX SET ROW FONT STYLE`](../commands-legacy/listbox-set-row-font-style.md) コマンドのページ内で提示されている定数を使用することができます。
+式または変数 (配列を除く) を入力します。 式や変数は、表示行ごと (リストボックスのプロパティの場合) または表示セルごと (リストボックス列のプロパティの場合) に評価されます。 [`LISTBOX SET ROW FONT STYLE`](../commands-legacy/listbox-set-row-font-style) コマンドのページ内で提示されている定数を使用することができます。
 
 例:
 
@@ -340,7 +254,7 @@ Foreground color;Dark shadow color)
 Choose([Companies]ID;Bold;Plain;Italic;Underline)
 ```
 
-このプロパティは[`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md) と `lk font style expression` 定数を組み合わせて使用しても設定することができます。
+このプロパティは[`LISTBOX SET PROPERTY`](../commands/listbox-set-property) と `lk font style expression` 定数を組み合わせて使用しても設定することができます。
 
 > このプロパティは [メタ情報式](properties_Text.md#メタ情報式) を使用しても設定することができます。
 
@@ -352,11 +266,11 @@ Choose([Companies]ID;Bold;Plain;Italic;Underline)
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列)
+[List Box](listbox_overview.md) - [List Box Column](listbox-column.md)
 
 #### コマンド
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -379,22 +293,11 @@ Choose([Companies]ID;Bold;Plain;Italic;Underline)
 
 #### 対象オブジェクト
 
-[ボタン](button_overview.md) -
-[チェックボックス](checkbox_overview.md) (通常とフラット以外のスタイル) -
-[コンボボックス](comboBox_overview.md) -
-[ドロップダウンリスト](dropdownList_Overview.md) -
-[グループボックス](groupBox.md) -
-[入力](input_overview.md) -
-[リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) -
-[リストボックスフッター](listbox_overview.md#リストボックスフッター) -
-[ラジオボタン](radio_overview.md) (通常とフラット以外のスタイル) -
-[テキストエリア](text.md)
+[Button](button_overview.md) - [Check Box](checkbox_overview.md) (all styles except Regular and Flat) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Header](listbox-header-footer.md#headers) - [List Box Footer](listbox-header-footer.md#footers) - [Radio Button](radio_overview.md) (all styles except Regular and Flat) - [Text Area](text.md)
 
 #### コマンド
 
-[OBJECT Get horizontal alignment](../commands-legacy/object-get-horizontal-alignment.md) - [OBJECT SET HORIZONTAL ALIGNMENT](../commands-legacy/object-set-horizontal-alignment.md)
+[OBJECT Get horizontal alignment](../commands-legacy/object-get-horizontal-alignment) - [OBJECT SET HORIZONTAL ALIGNMENT](../commands-legacy/object-set-horizontal-alignment)
 
 ---
 
@@ -407,7 +310,7 @@ Choose([Companies]ID;Bold;Plain;Italic;Underline)
 - ピクチャーを除き、すべて `下` です。
 - ピクチャーは `上` です。
 
-このプロパティは、[`OBJECT Get vertical alignment`](../commands-legacy/object-get-vertical-alignment.md) および [`OBJECT SET VERTICAL ALIGNMENT`](../commands-legacy/object-set-vertical-alignment.md) コマンドを使用しても管理することができます。
+このプロパティは、[`OBJECT Get vertical alignment`](../commands-legacy/object-get-vertical-alignment) および [`OBJECT SET VERTICAL ALIGNMENT`](../commands-legacy/object-set-vertical-alignment) コマンドを使用しても管理することができます。
 
 #### JSON 文法
 
@@ -417,13 +320,11 @@ Choose([Companies]ID;Bold;Plain;Italic;Underline)
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md)* [リストボックス列](listbox_overview.md#リストボックス列)
-* [リストボックスフッター](listbox_overview.md#リストボックスフッター)
-* [リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー)
+[List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [List Box Footer](listbox-header-footer.md#footers) - [List Box Header](listbox-header-footer.md#headers)
 
 #### コマンド
 
-[`OBJECT Get vertical alignment`](../commands-legacy/object-get-vertical-alignment.md) - [`OBJECT SET VERTICAL ALIGNMENT`](../commands-legacy/object-set-vertical-alignment.md)
+[`OBJECT Get vertical alignment`](../commands-legacy/object-get-vertical-alignment) - [`OBJECT SET VERTICAL ALIGNMENT`](../commands-legacy/object-set-vertical-alignment)
 
 ---
 
@@ -510,7 +411,7 @@ End if
 
 #### コマンド
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -528,11 +429,11 @@ End if
 
 #### 対象オブジェクト
 
-[入力](input_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列)
+[Input](input_overview.md) - [List Box Column](listbox-column.md)
 
 #### コマンド
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md) - [OBJECT Is styled text](../commands-legacy/object-is-styled-text.md) -
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property) - [OBJECT Is styled text](../commands-legacy/object-is-styled-text) -
 
 ---
 
@@ -561,7 +462,7 @@ End if
 
 #### コマンド
 
-[OBJECT Get text orientation](../commands-legacy/object-get-text-orientation.md) - [OBJECT SET TEXT ORIENTATION](../commands-legacy/object-set-text-orientation.md)
+[OBJECT Get text orientation](../commands-legacy/object-get-text-orientation) - [OBJECT SET TEXT ORIENTATION](../commands-legacy/object-set-text-orientation)
 
 ---
 
@@ -571,7 +472,7 @@ End if
 
 リストボックスの各行/セルにカスタマイズしたフォントカラーを適用するために使用します。
 
-倍長整数型の配列の名前を入力しなければなりません。 配列のそれぞれの要素はリストボックスの行 (あるいは列のセル) に対応します。つまりこの配列は、各列に関連づけられている配列と同じサイズでなければいけません。 [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors.md) コマンドの章で説明されている定数を使用することができます。 もし上のレベルで定義されている背景色をそのままセルに継承したい場合には、対応する配列の要素に -255 を渡します。
+倍長整数型の配列の名前を入力しなければなりません。 配列のそれぞれの要素はリストボックスの行 (あるいは列のセル) に対応します。つまりこの配列は、各列に関連づけられている配列と同じサイズでなければいけません。 [`OBJECT SET RGB COLORS`](../commands-legacy/object-set-rgb-colors) コマンドの章で説明されている定数を使用することができます。 もし上のレベルで定義されている背景色をそのままセルに継承したい場合には、対応する配列の要素に -255 を渡します。
 
 #### JSON 文法
 
@@ -581,11 +482,11 @@ End if
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列)
+[List Box](listbox_overview.md) - [List Box Column](listbox-column.md)
 
 #### コマンド
 
-[`LISTBOX Get array`](../commands-legacy/listbox-get-array.md) - [`LISTBOX GET ARRAYS`](../commands-legacy/listbox-get-arrays.md) - [`LISTBOX SET ARRAY`](../commands-legacy/listbox-set-array.md)
+[`LISTBOX Get array`](../commands-legacy/listbox-get-array) - [`LISTBOX GET ARRAYS`](../commands-legacy/listbox-get-arrays) - [`LISTBOX SET ARRAY`](../commands-legacy/listbox-set-array)
 
 ---
 
@@ -595,7 +496,7 @@ End if
 
 リストボックスの各行/セルにカスタマイズされた文字スタイルを適用するために使用します。
 
-倍長整数型の配列の名前を入力しなければなりません。 配列のそれぞれの要素はリストボックスの行 (あるいは列のセル) に対応します。つまりこの配列は、各列に関連づけられている配列と同じサイズでなければいけません。 メソッドを使用して配列を作成するためには、[`LISTBOX SET ROW FONT STYLE`](../commands-legacy/listbox-set-row-font-style.md) コマンドのページ内で提示されている定数を使用することができます。 定数同士を足し合わせてスタイルを組み合わせることもできます。 もし上のレベルで定義されているスタイルをそのままセルに継承したい場合には、対応する配列の要素に -255 を渡します。
+倍長整数型の配列の名前を入力しなければなりません。 配列のそれぞれの要素はリストボックスの行 (あるいは列のセル) に対応します。つまりこの配列は、各列に関連づけられている配列と同じサイズでなければいけません。 メソッドを使用して配列を作成するためには、[`LISTBOX SET ROW FONT STYLE`](../commands-legacy/listbox-set-row-font-style) コマンドのページ内で提示されている定数を使用することができます。 定数同士を足し合わせてスタイルを組み合わせることもできます。 もし上のレベルで定義されているスタイルをそのままセルに継承したい場合には、対応する配列の要素に -255 を渡します。
 
 #### JSON 文法
 
@@ -605,11 +506,11 @@ End if
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列)
+[List Box](listbox_overview.md) - [List Box Column](listbox-column.md)
 
 #### コマンド
 
-[`LISTBOX Get array`](../commands-legacy/listbox-get-array.md) - [`LISTBOX GET ARRAYS`](../commands-legacy/listbox-get-arrays.md) - [`LISTBOX SET ARRAY`](../commands-legacy/listbox-set-array.md)
+[`LISTBOX Get array`](../commands-legacy/listbox-get-array) - [`LISTBOX GET ARRAYS`](../commands-legacy/listbox-get-arrays) - [`LISTBOX SET ARRAY`](../commands-legacy/listbox-set-array)
 
 ---
 

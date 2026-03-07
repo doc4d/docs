@@ -21,7 +21,7 @@ La propriété Correction orthographique active la vérification orthographique 
 
 #### Commandes
 
-[`OBJECT Get auto spellcheck`](../commands-legacy/object-get-auto-spellcheck.md) - [`OBJECT SET AUTO SPELLCHECK`](../commands-legacy/object-set-auto-spellcheck.md) - [`WP Get view properties`](../WritePro/commands-legacy/wp-get-view-properties.md) - [`WP SET VIEW PROPERTIES`](../WritePro/commands-legacy/wp-set-view-properties.md)
+[`OBJECT Get auto spellcheck`](../commands-legacy/object-get-auto-spellcheck) - [`OBJECT SET AUTO SPELLCHECK`](../commands-legacy/object-set-auto-spellcheck) - [`WP Get view properties`](../WritePro/commands-legacy/wp-get-view-properties.md) - [`WP SET VIEW PROPERTIES`](../WritePro/commands-legacy/wp-set-view-properties.md)
 
 ---
 
@@ -31,14 +31,14 @@ Permet à l'utilisateur d'accéder à un menu contextuel standard dans l'objet l
 
 Pour une [zone de saisie](input_overview.md) de type image, en plus des commandes d'édition standard (Couper, Copier, Coller et Effacer), le menu contient la commande **Importer...**, qui peut être utilisée pour importer une image stockée dans un fichier, ainsi que la commande **Enregistrer sous...**, qui peut être utilisée pour enregistrer l'image sur le disque. Le menu peut également être utilisé pour modifier le format d'affichage de l'image : les options **Tronquée non centrée**, **Non tronquée** et **Proportionnelle centrée** sont proposées. La modification du [format d'affichage](properties_Display.md#picture-format) à l'aide de ce menu est temporaire ; elle n'est pas sauvegardée avec l'enregistrement.
 
-Pour une [zone de saisie](input_overview.md) ou une [colonne de list box](listbox_overview.md#list-box-columns) de texte [multi-style](properties_Text.md#multi-style), en plus des commandes d'édition standard, le menu contextuel fournit les commandes suivantes :
+Pour une [zone de saisie](input_overview.md) ou une [colonne de list box](listbox-column.md) de texte [multi-style](properties_Text.md#multi-style), en plus des commandes d'édition standard, le menu contextuel fournit les commandes suivantes :
 
 - **Polices...** : affiche la boîte de dialogue système de police
 - **Polices récentes** : affiche les noms des polices récentes sélectionnées au cours de la session. La liste peut stocker jusqu'à 10 polices (au-delà, la dernière police utilisée remplace la plus ancienne). Par défaut, cette liste est vide et l'option n'est pas affichée. Vous pouvez gérer cette liste en utilisant les commandes `SET RECENT FONTS` et `FONT LIST`.
 - commandes pour les modifications de style prises en charge : police, taille, style, couleur et couleur d'arrière-plan.
   Lorsque l'utilisateur modifie un attribut de style via ce menu déroulant, 4D génère l'événement formulaire `On After Edit`.
 
-Pour une [zone Web](webArea_overview.md), le contenu du menu dépend du moteur de rendu de la plate-forme. Il est possible de contrôler l'accès au menu contextuel via la commande [`WA SET PREFERENCE`](../commands-legacy/wa-set-preference.md).
+Pour une [zone Web](webArea_overview.md), le contenu du menu dépend du moteur de rendu de la plate-forme. Il est possible de contrôler l'accès au menu contextuel via la commande [`WA SET PREFERENCE`](../commands-legacy/wa-set-preference).
 
 #### Grammaire JSON
 
@@ -48,11 +48,11 @@ Pour une [zone Web](webArea_overview.md), le contenu du menu dépend du moteur d
 
 #### Objets pris en charge
 
-[Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [Web Area](webArea_overview.md) - [4D Write Pro areas](writeProArea_overview.md)
+[Input](input_overview.md) - [List Box Column](listbox-column.md) - [Web Area](webArea_overview.md) - [4D Write Pro areas](writeProArea_overview.md)
 
 #### Commandes
 
-[`OBJECT Get context menu`](../commands-legacy/object-get-context-menu.md) - [`OBJECT SET CONTEXT MENU`](../commands-legacy/object-set-context-menu.md) - [`WA GET PREFERENCE`](../commands-legacy/wa-get-preference.md) - [`WA SET PREFERENCE`](../commands-legacy/wa-set-preference.md)
+[`OBJECT Get context menu`](../commands-legacy/object-get-context-menu) - [`OBJECT SET CONTEXT MENU`](../commands-legacy/object-set-context-menu) - [`WA GET PREFERENCE`](../commands-legacy/wa-get-preference) - [`WA SET PREFERENCE`](../commands-legacy/wa-set-preference)
 
 ---
 
@@ -72,15 +72,15 @@ Lorsque cette propriété est désactivée, tous les pop-up menus associés à u
 
 #### Objets pris en charge
 
-[4D Write Pro areas](writeProArea_overview.md) - [Check Box](checkbox_overview.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [Progress Bar](progressIndicator.md) - [Ruler](ruler.md) - [Stepper](stepper.md)
+[4D Write Pro areas](writeProArea_overview.md) - [Check Box](checkbox_overview.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box Column](listbox-column.md) - [Progress Bar](progressIndicator.md) - [Ruler](ruler.md) - [Stepper](stepper.md)
 
 #### Commandes
 
-[`OBJECT Get enterable`](../commands-legacy/object-get-enterable.md) - [`OBJECT SET ENTERABLE`](../commands-legacy/object-set-enterable.md)
+[`OBJECT Get enterable`](../commands-legacy/object-get-enterable) - [`OBJECT SET ENTERABLE`](../commands-legacy/object-set-enterable)
 
 #### Voir également
 
-[`FORM GET ENTRY ORDER`](../commands-legacy/form-get-entry-order.md) - [`FORM SET ENTRY ORDER`](../commands-legacy/form-set-entry-order.md)
+[`FORM GET ENTRY ORDER`](../commands-legacy/form-get-entry-order) - [`FORM SET ENTRY ORDER`](../commands-legacy/form-set-entry-order)
 
 ---
 
@@ -134,13 +134,13 @@ Ce tableau explique chaque filtre présent dans la liste déroulante Filtre de s
 
 #### Objets pris en charge
 
-[Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Liste hiérarchique](list_overview.md) - [Zone de saisie](input_overview.md) - [Colonne List Box](listbox_overview.md#list-box-columns)
+[Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Liste hiérarchique](list_overview.md) - [Zone de saisie](input_overview.md) - [Colonne List Box](listbox-column.md)
 
 ---
 
 #### Commandes
 
-[`OBJECT Get filter`](../commands-legacy/object-get-filter.md) - [`OBJECT SET FILTER`](../commands-legacy/object-set-filter.md)
+[`OBJECT Get filter`](../commands-legacy/object-get-filter) - [`OBJECT SET FILTER`](../commands-legacy/object-set-filter)
 
 ## Focusable
 
@@ -166,7 +166,7 @@ Lorsque la propriété **Focusable** est sélectionnée pour un objet non saisis
 
 #### Commandes
 
-[`OBJECT Get enterable`](../commands-legacy/object-get-enterable.md) - [`OBJECT SET ENTERABLE`](../commands-legacy/object-set-enterable.md)
+[`OBJECT Get enterable`](../commands-legacy/object-get-enterable) - [`OBJECT SET ENTERABLE`](../commands-legacy/object-set-enterable)
 
 ---
 
@@ -190,7 +190,7 @@ Par défaut, la saisie utilise la configuration courante du clavier.
 
 #### Commandes
 
-[`OBJECT Get keyboard layout`](../commands-legacy/object-get-keyboard-layout.md) - [`OBJECT SET KEYBOARD LAYOUT`](../commands-legacy/object-set-keyboard-layout.md)
+[`OBJECT Get keyboard layout`](../commands-legacy/object-get-keyboard-layout) - [`OBJECT SET KEYBOARD LAYOUT`](../commands-legacy/object-set-keyboard-layout)
 
 ---
 
@@ -226,7 +226,7 @@ Lorsque cette valeur est sélectionnée, la propriété est gérée par l'option
 
 #### Commandes
 
-[`OBJECT Get multiline`](../commands-legacy/object-get-multiline.md) - [`OBJECT SET MULTILINE`](../commands-legacy/object-set-multiline.md)
+[`OBJECT Get multiline`](../commands-legacy/object-get-multiline) - [`OBJECT SET MULTILINE`](../commands-legacy/object-set-multiline)
 
 ---
 
@@ -251,7 +251,7 @@ Vous pouvez utiliser une référence XLIFF sous la forme ":xliff:resname" en tan
 
 Vous passez seulement la référence dans le champ "Texte exemple" ; il n'est pas possible de combiner une référence avec du texte statique.
 
-> Vous pouvez également écrire et lire le texte du placeholder en utilisant les commandes [`OBJET SET PLACEHOLDER`](../commands-legacy/object-set-placeholder.md) et [`OBJECT Get placeholder`](../commands-legacy/object-get-placeholder.md).
+> Vous pouvez également écrire et lire le texte du placeholder en utilisant les commandes [`OBJET SET PLACEHOLDER`](../commands-legacy/object-set-placeholder) et [`OBJECT Get placeholder`](../commands-legacy/object-get-placeholder).
 
 #### Grammaire JSON
 
@@ -269,7 +269,7 @@ Vous passez seulement la référence dans le champ "Texte exemple" ; il n'est pa
 
 #### Commandes
 
-[`OBJECT Get placeholder`](../commands-legacy/object-get-placeholder.md) - [`OBJECT SET PLACEHOLDER`](../commands-legacy/object-set-placeholder.md)
+[`OBJECT Get placeholder`](../commands-legacy/object-get-placeholder) - [`OBJECT SET PLACEHOLDER`](../commands-legacy/object-set-placeholder)
 
 ---
 
@@ -318,7 +318,7 @@ Pour afficher une liste de tous les raccourcis utilisés dans l'IDE de 4D, voir 
 
 #### Commandes
 
-[`OBJECT GET SHORTCUT`](../commands-legacy/object-get-shortcut.md) - [`OBJECT SET SHORTCUT`](../commands-legacy/object-set-shortcut.md)
+[`OBJECT GET SHORTCUT`](../commands-legacy/object-get-shortcut) - [`OBJECT SET SHORTCUT`](../commands-legacy/object-set-shortcut)
 
 ---
 
@@ -342,5 +342,5 @@ Lorsque cette option n'est pas activée, les utilisateurs doivent d'abord sélec
 
 #### Commandes
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 

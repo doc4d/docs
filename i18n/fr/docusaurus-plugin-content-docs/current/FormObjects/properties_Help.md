@@ -9,8 +9,8 @@ Cette propriété permet d'associer les messages d'aide aux objets actifs de vos
 
 ![](../assets/en/FormObjects/property_helpTip.png)
 
-> - Le délai d'affichage et la durée maximale des messages d'aide peuvent être contrôlés à l'aide des sélecteurs `Tips delay` et `Tips duration` de la commande **[SET DATABASE PARAMETER](../commands-legacy/set-database-parameter.md)**.
-> - Les info-bulles peuvent être globalement désactivées ou activées pour l'application en utilisant le sélecteur Tips enabled de la commande [**SET DATABASE PARAMETER**](../commands-legacy/set-database-parameter.md).
+> - Le délai d'affichage et la durée maximale des messages d'aide peuvent être contrôlés à l'aide des sélecteurs `Tips delay` et `Tips duration` de la commande **[SET DATABASE PARAMETER](../commands-legacy/set-database-parameter)**.
+> - Les info-bulles peuvent être globalement désactivées ou activées pour l'application en utilisant le sélecteur Tips enabled de la commande [**SET DATABASE PARAMETER**](../commands-legacy/set-database-parameter).
 
 Vous pouvez soit :
 
@@ -27,24 +27,24 @@ Vous pouvez soit :
 
 #### Objets pris en charge
 
-[Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md)  - [Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md) - [List Box Header](listbox_overview.md#list-box-headers) - [List Box Footer](listbox_overview.md#list-box-footers) - [Picture Button](pictureButton_overview.md) - [Picture Pop-up menu](picturePopupMenu_overview.md) - [Radio Button](radio_overview.md)
+[Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md)  - [Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md) - [List Box Header](listbox-header-footer.md#headers) - [List Box Footer](listbox-header-footer.md#footers) - [Picture Button](pictureButton_overview.md) - [Picture Pop-up menu](picturePopupMenu_overview.md) - [Radio Button](radio_overview.md)
 
 #### Autres fonctionnalités d'aide
 
 Vous pouvez aussi associer des messages d'aides aux objets formulaire de deux autres façons :
 
 - au niveau de la structure de la base (champs uniquement). Dans ce cas, le message d'aide du champ apparaîtra sur les autres formulaires. Pour plus d'informations, référez-vous à la section [Propriétés des champs](https://doc.4d.com/4Dv20/4D/20.2/Field-properties.300-6750280.en.html#3367486).
-- en utilisant la commande **[OBJECT SET HELP TIP](../commands-legacy/object-set-help-tip.md)**, pour le process courant.
+- en utilisant la commande **[OBJECT SET HELP TIP](../commands-legacy/object-set-help-tip)**, pour le process courant.
 
 Lorsque différentes astuces sont associées au même objet à plusieurs emplacements, l'ordre de priorité suivant est appliqué :
 
 1. structure (priorité la plus faible)
 2. éditeur de formulaire
-3. Commande **[OBJECT SET HELP TIP](../commands-legacy/object-set-help-tip.md)** (haute priorité)
+3. Commande **[OBJECT SET HELP TIP](../commands-legacy/object-set-help-tip)** (haute priorité)
 
 #### Commandes
 
-[`OBJECT Get help tip`](../commands-legacy/object-get-help-tip.md) - [`OBJECT SET HELP TIP`](../commands-legacy/object-set-help-tip.md)
+[`OBJECT Get help tip`](../commands-legacy/object-get-help-tip) - [`OBJECT SET HELP TIP`](../commands-legacy/object-set-help-tip)
 
 #### Voir également
 
