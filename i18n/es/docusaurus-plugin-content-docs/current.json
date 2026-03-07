@@ -52,7 +52,7 @@
     "description": "The label for category 'Web Administration' in sidebar 'docs'"
   },
   "sidebar.docs.category.Command Line Interface": {
-    "message": "Interfaz de línea de\n          comando",
+    "message": "Interfaz de línea de comando",
     "description": "The label for category Command Line Interface in sidebar docs"
   },
   "sidebar.docs.category.TLS Protocol": {
@@ -128,7 +128,7 @@
     "description": "The label for category 'Form Properties' in sidebar 'docs'"
   },
   "sidebar.docs.category.Form Objects": {
-    "message": "Objetos formularios",
+    "message": "Objetos de formularios",
     "description": "The label for category 'Form Objects' in sidebar 'docs'"
   },
   "sidebar.docs.category.Form Object Properties": {
@@ -216,7 +216,7 @@
     "description": "The generated-index page title for category Class Functions in sidebar docs"
   },
   "sidebar.docs.category.Class Functions.link.generated-index.description": {
-    "message": "Lista de clases 4D integradas",
+    "message": "Lista de clases 4D",
     "description": "The generated-index page description for category Class Functions in sidebar docs"
   },
   "sidebar.docs.category.Tags": {
@@ -228,7 +228,7 @@
     "description": "The generated-index page title for category 'Administration' in sidebar 'docs'"
   },
   "sidebar.docs.category.Administration.link.generated-index.description": {
-    "message": "Cómo supervisar sus aplicaciones 4D",
+    "message": "Cómo controlar sus aplicaciones 4D",
     "description": "The generated-index page description for category 'Administration' in sidebar 'docs'"
   },
   "sidebar.docs.category.Web Administration.link.generated-index.title": {
@@ -292,7 +292,7 @@
     "description": "The generated-index page description for category 'Access Rights' in sidebar 'docs'"
   },
   "sidebar.docs.doc.Command Line Interface": {
-    "message": "Interfaz de línea de\n          comando",
+    "message": "Interfaz de línea de comando",
     "description": "The label for the doc item 'Command Line Interface' in sidebar 'docs', linking to the doc Admin/cli"
   },
   "sidebar.docs.doc.TLS Protocol": {
@@ -352,7 +352,7 @@
     "description": "The generated-index page title for category Classes in sidebar docs"
   },
   "sidebar.docs.category.Classes.link.generated-index.description": {
-    "message": "Lista de clases 4D integradas",
+    "message": "Lista de clases 4D",
     "description": "The generated-index page description for category Classes in sidebar docs"
   },
   "sidebar.docs.category.Processes": {
@@ -480,31 +480,31 @@
     "description": "The generated-index page title for category Qodly Studio in sidebar docs"
   },
   "sidebar.docs.category.Qodly Studio.link.generated-index.description": {
-    "message": "Uso de Qodly Studio para crear poderosas interfaces web.",
+    "message": "Uso de Qodly Studio para crear  interfaces web poderosas.",
     "description": "The generated-index page description for category Qodly Studio in sidebar docs"
   },
   "sidebar.docs.category.REST API": {
-    "message": "REST API",
+    "message": "API REST",
     "description": "The label for category 'REST API' in sidebar 'docs'"
   },
   "sidebar.docs.category.REST API.link.generated-index.title": {
-    "message": "REST API",
+    "message": "API REST",
     "description": "The generated-index page title for category 'REST API' in sidebar 'docs'"
   },
   "sidebar.docs.category.REST API.link.generated-index.description": {
-    "message": "Exponiendo su datastore a REST y utilizando la API REST.",
+    "message": "Exponer su datastore en REST y utilizar la API REST.",
     "description": "The generated-index page description for category 'REST API' in sidebar 'docs'"
   },
   "sidebar.docs.category.Exposing your datastore in REST": {
-    "message": "Exponiendo su almacén de datos en REST",
+    "message": "Exponer su almacén de datos en REST",
     "description": "The label for category 'Exposing your datastore in REST' in sidebar 'docs'"
   },
   "sidebar.docs.category.Exposing your datastore in REST.link.generated-index.title": {
-    "message": "Exponiendo su almacén de datos en REST",
+    "message": "Exponer su almacén de datos en REST",
     "description": "The generated-index page title for category 'Exposing your datastore in REST' in sidebar 'docs'"
   },
   "sidebar.docs.category.Exposing your datastore in REST.link.generated-index.description": {
-    "message": "Configura su almacén de datos para acceso REST",
+    "message": "Configure su almacén de datos para el acceso REST",
     "description": "The generated-index page description for category 'Exposing your datastore in REST' in sidebar 'docs'"
   },
   "sidebar.docs.category.Language.link.generated-index.title": {
@@ -528,7 +528,7 @@
     "description": "The label for category 'BLOB' in sidebar 'docs'"
   },
   "sidebar.docs.category.Boolean": {
-    "message": "Boolean",
+    "message": "Booleanos",
     "description": "The label for category 'Boolean' in sidebar 'docs'"
   },
   "sidebar.docs.category.Cache Management": {
@@ -672,7 +672,7 @@
     "description": "The label for category 'Process (User Interface)' in sidebar 'docs'"
   },
   "sidebar.docs.category.Queries": {
-    "message": "Búsquedas",
+    "message": "Búsquedas y ordenaciones",
     "description": "The label for category 'Queries' in sidebar 'docs'"
   },
   "sidebar.docs.category.Quick Report": {
@@ -708,7 +708,7 @@
     "description": "The label for category 'Secured Protocol' in sidebar 'docs'"
   },
   "sidebar.docs.category.Selection": {
-    "message": "Selección",
+    "message": "Selecciones",
     "description": "The label for category 'Selection' in sidebar 'docs'"
   },
   "sidebar.docs.category.Sets": {
@@ -720,7 +720,7 @@
     "description": "The label for category 'Spell Checker' in sidebar 'docs'"
   },
   "sidebar.docs.category.String": {
-    "message": "String",
+    "message": "Cadenas de caracteres",
     "description": "The label for category 'String' in sidebar 'docs'"
   },
   "sidebar.docs.category.Structure Access": {
@@ -772,7 +772,7 @@
     "description": "The label for category 'Variables' in sidebar 'docs'"
   },
   "sidebar.docs.category.Web Area": {
-    "message": "Área Web",
+    "message": "Áreas Web",
     "description": "The label for category 'Web Area' in sidebar 'docs'"
   },
   "sidebar.docs.category.Web Services (Client)": {
@@ -832,7 +832,7 @@
     "description": "The generated-index page title for category BLOB in sidebar docs"
   },
   "sidebar.docs.category.Boolean.link.generated-index.title": {
-    "message": "Boolean",
+    "message": "Booleanos",
     "description": "The generated-index page title for category Boolean in sidebar docs"
   },
   "sidebar.docs.category.Cache Management.link.generated-index.title": {
@@ -996,7 +996,7 @@
     "description": "The generated-index page title for category Processes in sidebar docs"
   },
   "sidebar.docs.category.Queries.link.generated-index.title": {
-    "message": "Búsquedas",
+    "message": "Búsquedas y ordenaciones",
     "description": "The generated-index page title for category Queries in sidebar docs"
   },
   "sidebar.docs.category.Quick Report.link.generated-index.title": {
@@ -1032,7 +1032,7 @@
     "description": "The generated-index page title for category Secured Protocol in sidebar docs"
   },
   "sidebar.docs.category.Selection.link.generated-index.title": {
-    "message": "Selección",
+    "message": "Selecciones",
     "description": "The generated-index page title for category Selection in sidebar docs"
   },
   "sidebar.docs.category.Sets.link.generated-index.title": {
@@ -1096,7 +1096,7 @@
     "description": "The generated-index page title for category Variables in sidebar docs"
   },
   "sidebar.docs.category.Web Area.link.generated-index.title": {
-    "message": "Área Web",
+    "message": "Áreas Web",
     "description": "The generated-index page title for category Web Area in sidebar docs"
   },
   "sidebar.docs.category.Web Server.link.generated-index.title": {
@@ -1148,11 +1148,11 @@
     "description": "The label for the doc item 'Labels' in sidebar 'docs', linking to the doc Desktop/labels"
   },
   "sidebar.docs.category.Project & IDE": {
-    "message": "Project & IDE",
+    "message": "Proyecto e IDE",
     "description": "The label for category 'Project & IDE' in sidebar 'docs'"
   },
   "sidebar.docs.category.Project & IDE.link.generated-index.title": {
-    "message": "Project & IDE",
+    "message": "Proyecto e IDE",
     "description": "The generated-index page title for category 'Project & IDE' in sidebar 'docs'"
   },
   "sidebar.docs.category.Code & Methods": {
@@ -1208,7 +1208,7 @@
     "description": "The label for the doc item 'Log Files' in sidebar 'docs', linking to the doc Debugging/debugLogFiles"
   },
   "sidebar.docs.category.form-events-commands": {
-    "message": "Eventos formulario",
+    "message": "Eventos de formulario",
     "description": "The label for category 'Form Events' in sidebar 'docs'"
   },
   "sidebar.docs.category.form-commands": {
@@ -1216,7 +1216,7 @@
     "description": "The label for category 'Forms' in sidebar 'docs'"
   },
   "sidebar.docs.category.import-export-commands": {
-    "message": "Import-Export",
+    "message": "Importar y Exportar",
     "description": "The label for category 'Import and Export' in sidebar 'docs'"
   },
   "sidebar.docs.category.menus-commands": {
@@ -1240,7 +1240,7 @@
     "description": "The generated-index page title for category 'Classes' in sidebar 'docs'"
   },
   "sidebar.docs.category.4D-classes.link.generated-index.description": {
-    "message": "Lista de clases 4D integradas",
+    "message": "Lista de clases 4D",
     "description": "The generated-index page description for category 'Classes' in sidebar 'docs'"
   },
   "sidebar.docs.category.processes": {
@@ -1272,11 +1272,11 @@
     "description": "The label for category 'Commands' in sidebar 'docs'"
   },
   "sidebar.docs.category.import-export-writepro": {
-    "message": "Import-Export",
+    "message": "Importar y Exportar",
     "description": "The label for category 'Import and Export' in sidebar 'docs'"
   },
   "sidebar.docs.category.import-export-writepro.link.generated-index.title": {
-    "message": "Import-Export",
+    "message": "Importar y Exportar",
     "description": "The generated-index page title for category 'Import and Export' in sidebar 'docs'"
   },
   "sidebar.docs.category.WritePro-commands": {
@@ -1290,5 +1290,321 @@
   "sidebar.docs.doc.Sessions": {
     "message": "Sesiones",
     "description": "The label for the doc item 'Sessions' in sidebar 'docs', linking to the doc Desktop/desktop-sessions"
+  },
+  "sidebar.docs.category.4D-Environment-key": {
+    "message": "Entorno 4D",
+    "description": "The label for category '4D Environment' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Arrays-key": {
+    "message": "Arrays",
+    "description": "The label for category 'Arrays' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Backup-key": {
+    "message": "Copia de seguridad",
+    "description": "The label for category 'Backup' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.BLOB-key": {
+    "message": "BLOB",
+    "description": "The label for category 'BLOB' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Boolean-key": {
+    "message": "Booleanos",
+    "description": "The label for category 'Boolean' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Cache-Management-key": {
+    "message": "Gestión de caché",
+    "description": "The label for category 'Cache Management' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Collections-key": {
+    "message": "Colecciones",
+    "description": "The label for category 'Collections' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Communications-key": {
+    "message": "Comunicaciones",
+    "description": "The label for category 'Communications' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Compiler-key": {
+    "message": "Compilador",
+    "description": "The label for category 'Compiler' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Data-Entry-key": {
+    "message": "Entrada de datos",
+    "description": "The label for category 'Data Entry' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Data-Security-key": {
+    "message": "Seguridad de los datos",
+    "description": "The label for category 'Data Security' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Date-and-Time-key": {
+    "message": "Fecha y hora",
+    "description": "The label for category 'Date and Time' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Design-Object-Access-key": {
+    "message": "Acceso objetos diseño",
+    "description": "The label for category 'Design Object Access' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Drag-and-Drop-key": {
+    "message": "Arrastrar y soltar",
+    "description": "The label for category 'Drag and Drop' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Entry-Control-key": {
+    "message": "Control de entrada",
+    "description": "The label for category 'Entry Control' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.File-and-Folder-key": {
+    "message": "Archivo y carpeta",
+    "description": "The label for category 'File and Folder' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Form-Events-key": {
+    "message": "Eventos de formulario",
+    "description": "The label for category 'Form Events' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Forms-key": {
+    "message": "Formularios",
+    "description": "The label for category 'Forms' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Formulas-key": {
+    "message": "Fórmulas",
+    "description": "The label for category 'Formulas' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Graphs-key": {
+    "message": "Gráficos",
+    "description": "The label for category 'Graphs' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Hierarchical-Lists-key": {
+    "message": "Listas jerárquicas",
+    "description": "The label for category 'Hierarchical Lists' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.HTTP-key": {
+    "message": "Cliente HTTP",
+    "description": "The label for category 'HTTP' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Import-and-Export-key": {
+    "message": "Importar y Exportar",
+    "description": "The label for category 'Import and Export' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Interruptions-key": {
+    "message": "Interrupciones",
+    "description": "The label for category 'Interruptions' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.JSON-key": {
+    "message": "JSON",
+    "description": "The label for category 'JSON' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Language-key": {
+    "message": "Lenguaje",
+    "description": "The label for category 'Language' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.LDAP-key": {
+    "message": "LDAP",
+    "description": "The label for category 'LDAP' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Licenses-key": {
+    "message": "Licencias",
+    "description": "The label for category 'Licenses' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.List-Box-key": {
+    "message": "List Box",
+    "description": "The label for category 'List Box' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Mail-key": {
+    "message": "Mail",
+    "description": "The label for category 'Mail' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Math-key": {
+    "message": "Funciones matemáticas",
+    "description": "The label for category 'Math' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Menus-key": {
+    "message": "Menús",
+    "description": "The label for category 'Menus' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Messages-key": {
+    "message": "Mensajes",
+    "description": "The label for category 'Messages' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Named-Selections-key": {
+    "message": "Selecciones temporales",
+    "description": "The label for category 'Named Selections' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Objects-(Forms)-key": {
+    "message": "Objetos (formularios)",
+    "description": "The label for category 'Objects (Forms)' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Objects-(Language)-key": {
+    "message": "Objetos (lenguaje)",
+    "description": "The label for category 'Objects (Language)' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.On-a-Series-key": {
+    "message": "Funciones estadísticas",
+    "description": "The label for category 'On a Series' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Pasteboard-key": {
+    "message": "Portapapeles",
+    "description": "The label for category 'Pasteboard' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Pictures-key": {
+    "message": "Imágenes",
+    "description": "The label for category 'Pictures' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Printing-key": {
+    "message": "Impresiones",
+    "description": "The label for category 'Printing' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Process-(Communications)-key": {
+    "message": "Proceso (comunicaciones)",
+    "description": "The label for category 'Process (Communications)' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Process-(User-Interface)-key": {
+    "message": "Proceso (interfaz de usuario)",
+    "description": "The label for category 'Process (User Interface)' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Processes-key": {
+    "message": "Procesos",
+    "description": "The label for category 'Processes' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Queries-key": {
+    "message": "Búsquedas y ordenaciones",
+    "description": "The label for category 'Queries' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Quick-Report-key": {
+    "message": "Informes rápidos",
+    "description": "The label for category 'Quick Report' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Record-Locking-key": {
+    "message": "Bloqueo de registros",
+    "description": "The label for category 'Record Locking' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Records-key": {
+    "message": "Registros",
+    "description": "The label for category 'Records' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Relations-key": {
+    "message": "Relaciones",
+    "description": "The label for category 'Relations' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Resources-key": {
+    "message": "Recursos",
+    "description": "The label for category 'Resources' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Secured-Protocol-key": {
+    "message": "Protocolo seguro",
+    "description": "The label for category 'Secured Protocol' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Selection-key": {
+    "message": "Selecciones",
+    "description": "The label for category 'Selection' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Sets-key": {
+    "message": "Conjuntos",
+    "description": "The label for category 'Sets' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Spell-Checker-key": {
+    "message": "Corrector ortográfico",
+    "description": "The label for category 'Spell Checker' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.SQL-key": {
+    "message": "SQL",
+    "description": "The label for category 'SQL' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.String-key": {
+    "message": "Cadenas de caracteres",
+    "description": "The label for category 'String' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Structure-Access-key": {
+    "message": "Definición estructura",
+    "description": "The label for category 'Structure Access' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Styled-Text-key": {
+    "message": "Texto multiestilo",
+    "description": "The label for category 'Styled Text' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Subrecords-key": {
+    "message": "Subregistros",
+    "description": "The label for category 'Subrecords' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.SVG-key": {
+    "message": "SVG",
+    "description": "The label for category 'SVG' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.System-Documents-key": {
+    "message": "Documentos sistema",
+    "description": "The label for category 'System Documents' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.System-Environment-key": {
+    "message": "Entorno sistema",
+    "description": "The label for category 'System Environment' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Table-key": {
+    "message": "Tabla",
+    "description": "The label for category 'Table' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Tools-key": {
+    "message": "Herramientas",
+    "description": "The label for category 'Tools' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Transactions-key": {
+    "message": "Transacciones",
+    "description": "The label for category 'Transactions' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Triggers-key": {
+    "message": "Triggers",
+    "description": "The label for category 'Triggers' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.User-Interface-key": {
+    "message": "Interfaz de usuario",
+    "description": "The label for category 'User Interface' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Users-and-Groups-key": {
+    "message": "Usuarios y grupos",
+    "description": "The label for category 'Users and Groups' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Variables-key": {
+    "message": "Variables",
+    "description": "The label for category 'Variables' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Web-Area-key": {
+    "message": "Área Web",
+    "description": "The label for category 'Web Area' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Web-Server-key": {
+    "message": "Servidor Web",
+    "description": "The label for category 'Web Server' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Web-Services-(Client)-key": {
+    "message": "Web Services (cliente)",
+    "description": "The label for category 'Web Services (Client)' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Web-Services-(Server)-key": {
+    "message": "Web Services (servidor)",
+    "description": "The label for category 'Web Services (Server)' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Windows-key": {
+    "message": "Ventanas",
+    "description": "The label for category 'Windows' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.XML-key": {
+    "message": "XML",
+    "description": "The label for category 'XML' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.XML-DOM-key": {
+    "message": "XML DOM",
+    "description": "The label for category 'XML DOM' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.XML-SAX-key": {
+    "message": "XML SAX",
+    "description": "The label for category 'XML SAX' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.listbox-in-form": {
+    "message": "List Box",
+    "description": "The label for category 'List Box' in sidebar 'docs'"
+  },
+  "sidebar.docs.link.qodly-pro-link1": {
+    "message": "4D Qodly Pro",
+    "description": "The label for link '4D Qodly Pro' in sidebar 'docs', linking to 'https://developer.4d.com/qodly/'"
+  },
+  "sidebar.docs.link.qodly-pro-link2": {
+    "message": "4D Qodly Pro",
+    "description": "The label for link '4D Qodly Pro' in sidebar 'docs', linking to 'https://developer.4d.com/qodly/'"
   }
 }
