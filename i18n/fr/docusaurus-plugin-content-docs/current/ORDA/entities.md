@@ -160,7 +160,7 @@ La référence du fichier peut être :
 - un objet 4D.File
 - un chemin au format POSIX
 
-Voici un exemple :
+Exemple :
 
 ```4d
 Function createCompany($name : Text; $logo : 4D.File)
@@ -244,7 +244,7 @@ Vous pouvez créer un objet de type [entity selection](dsMapping.md#entity-selec
 
 - En lançant une requête sur les entités [dans une dataclass](API/DataClassClass.md#query) ou dans une [entity selection existante](API/EntitySelectionClass.md#query) ;
 - En utilisant la fonction [`.all()`](API/DataClassClass.md#all) pour sélectionner toutes les entités d'une dataclass ;
-- En utilisant la commande [`Create entity selection`](../commands/create-entity-selection.md) ou la fonction [`.newSelection()`](API/DataClassClass.md#newselection) de la classe data pour créer une entity selection vide ;
+- En utilisant la commande [`Create entity selection`](../commands/create-entity-selection) ou la fonction [`.newSelection()`](API/DataClassClass.md#newselection) de la classe data pour créer une entity selection vide ;
 - En utilisant la fonction [`.copy()`](API/EntitySelectionClass.md#copy) pour dupliquer une entity selection existante ;
 - En utilisant l'une des différentes fonctions de la [classe Entity selection](API/EntitySelectionClass.md) qui retourne une nouvelle entity selection, comme [`.or()`](API/EntitySelectionClass.md#or) ;
 - En utilisant un attribut de relation de type "related entities" (voir ci-dessous).
@@ -292,7 +292,7 @@ Une nouvelle entity selection est **partageable** dans les cas suivants :
 - la nouvelle entity selection est basée sur une relation [entity.*attributeName*](API/EntityClass.md#attributename) (par exemple, "company.employees") lorsque *attributeName* est un attribut lié 1-vers-N mais que l'entité n'appartient pas à une entity selection.
 - la nouvelle entity selection est explicitement copiée comme partageable avec [entitySelection.copy()](API/EntitySelectionClass.md#copy) ou `OB Copy` (c'est-à-dire avec l'option `ck shared`).
 
-Voici un exemple :
+Exemple :
 
 ```4d
 var $myComp : cs.CompanyEntity
@@ -306,7 +306,7 @@ Une nouvelle entity selection est **modifiable** dans les cas suivants :
 - nouvelle entity selection créée vide à l'aide de la fonction [dataClass.newSelection()](API/DataClassClass.md#newselection) ou de la commande `Create entity selection`,
 - nouvelle entity selection explicitement copiée comme modifiable avec [entitySelection.copy()](API/EntitySelectionClass.md#copy) ou `OB Copy` (c'est-à-dire sans l'option `ck shared`).
 
-Voici un exemple :
+Exemple :
 
 ```4d
 var $toModify : cs.CompanySelection
@@ -339,7 +339,7 @@ $comp2:=$lowSal.employer //$comp2 est modifiable car $lowSal est modifiable
 
 :::note Entity selections retournées depuis le serveur
 
-Dans l'architecture client/serveur, les entity selections renvoyées par le serveur sont toujours partageables sur le client, même si [`copy()`](API/EntitySelectionClass.md#copy) a été appelée sur le serveur. Pour rendre une telle entity selection modifiable côté client, vous devez exécuter [`copy()`](API/EntitySelectionClass.md#copy) côté client. Voici un exemple :
+Dans l'architecture client/serveur, les entity selections renvoyées par le serveur sont toujours partageables sur le client, même si [`copy()`](API/EntitySelectionClass.md#copy) a été appelée sur le serveur. Pour rendre une telle entity selection modifiable côté client, vous devez exécuter [`copy()`](API/EntitySelectionClass.md#copy) côté client. Exemple :
 
 ```4d
 	//une fonction est toujours exécutée sue le serveur
@@ -532,7 +532,7 @@ Les filtres ne s'appliquent pas aux sélections d'enregistrements classiques gé
 | [entitySelection.query()](../API/EntitySelectionClass.md#query)       |                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | [entitySelection.attributeName](../API/EntitySelectionClass.md#attributename)            | Filtre appliqué si *attributeName* est une entité liée ou des entités liées d'une dataclass filtrée (y compris alias ou attribut calculé)                                                                                                                                                                                                                                                                 |
 | [entity.attributeName](../API/EntityClass.md#attributename)                              | Filtre appliqué si *attributeName* correspond aux entités liées d'une dataclass filtrée (y compris alias ou attribut calculé)                                                                                                                                                                                                                                                                             |
-| [Create entity selection](../commands/create-entity-selection.md)                                        |                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| [Create entity selection](../commands/create-entity-selection)                                           |                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 Les autres fonctions ORDA accédant aux données ne déclenchent pas directement le filtre, mais elles en bénéficient néanmoins. Par exemple, la fonction [`entity.next()`](../API/EntityClass.md#next) renverra l'entité suivante dans l'entity selection déjà filtrée. En revanche, si l'entity selection n'est pas filtrée, [`entity.next()`](../API/EntityClass.md#next) fonctionnera sur les entités non filtrées.
 
@@ -615,3 +615,4 @@ Les **verrouillages de transaction** s'appliquent également aux commandes class
 
 - Exemple avec un verrou mis en place par une commande classique:<br/><br/>![](../assets/en/ORDA/concurrent2.png)
 - Exemple avec un verrou mis en place par une fonction ORDA:<br/><br/>![](../assets/en/ORDA/concurrent3.png)
+

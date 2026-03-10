@@ -9,11 +9,25 @@ displayed_sidebar: docs
 
 <!--REF #_command_.FORM Event.Params-->
 
+<div class="no-index">
+
 | Parámetros | Tipo   |                             | Descripción   |
 | ---------- | ------ | --------------------------- | ------------- |
 | Resultado  | Object | &#8592; | Objeto evento |
 
+</div>
 <!-- END REF-->
+
+<div class="no-index">
+<details><summary>Historia</summary>
+
+| Lanzamiento | Modificaciones |
+| ----------- | -------------- |
+| 18 R2       | Modificado     |
+| 18          | Created        |
+
+</details>
+</div>
 
 ## Descripción
 
@@ -37,7 +51,7 @@ Por ejemplo, en el caso de un clic en un botón, el objeto contiene las siguient
 
 El objeto evento puede contener propiedades adicionales, dependiendo del objeto para el que se produzca el evento. Para objetos *eventObj* generados en:
 
-- los objetos list box o columna de list box, ver [esta sección](../FormObjects/listbox_overview.md#supported-form-events).
+- los objetos list box o columna de list box, ver [esta sección](../FormObjects/listbox-object.md#supported-form-events).
 - áreas 4D View Pro, ver [On VP Ready form event](../Events/onVpReady.md).
 
 **Nota:** si no hay ningún evento actual, **FORM Event** devuelve un objeto null.
@@ -47,9 +61,9 @@ El objeto evento puede contener propiedades adicionales, dependiendo del objeto 
 Desea manejar el evento On Clicked en un botón:
 
 ```4d
- If(FORM Event.code=On Clicked)
-    ...
- End if
+ If(FORM Event.code=On Clicked)
+    ...
+ End if
 ```
 
 ## Ejemplo 2
@@ -61,13 +75,13 @@ Si define el nombre del objeto columna con un nombre de atributo real de una dat
 Puede ordenar la columna utilizando el evento On Header Click:
 
 ```4d
- Form.event:=FORM Event
- Case of
-    :(Form event code=On Header Click)
-       if(Form.event.columnName="lastname")
-          Form.employees:=Form.employees.orderBy(Form.event.columnName+", firstname")
-       End if
- End case
+ Form.event:=FORM Event
+ Case of
+    :(Form event code=On Header Click)
+       if(Form.event.columnName="lastname")
+          Form.employees:=Form.employees.orderBy(Form.event.columnName+", firstname")
+       End if
+ End case
 ```
 
 ## Ejemplo 3
@@ -79,17 +93,17 @@ Desea gestionar los detalles de visualización en un objeto list box con un mét
 El método *setColor*:
 
 ```4d
- var $event;$0;$meta : Object
- $event:=FORM Event
- $meta:=New object
- 
- Case of
-    :($event.code=On Display Detail)
-       If($event.isRowSelected)
-          $meta.fill:="lightblue"
-       End if
- End case
- $0:=$meta
+ var $event;$0;$meta : Object
+ $event:=FORM Event
+ $meta:=New object
+ 
+ Case of
+    :($event.code=On Display Detail)
+       If($event.isRowSelected)
+          $meta.fill:="lightblue"
+       End if
+ End case
+ $0:=$meta
 ```
 
 El list box resultante cuando se seleccionan líneas:

@@ -178,36 +178,42 @@ The `return` statement ends function or method execution and can be used to retu
 For example, the following function returns the square of its argument, $x, where $x is a number.
 
 ```4d
-Function square($x : Integer) -> $result : Integer
+Function square($x : Integer) : Integer
    return $x * $x
 ```
 
-:::note
-
-Internally, `return x` executes `myReturnValue:=x`, and returns to the caller. If `return` is used without an expression, the function or method returns a null value of the declared return type (if any), otherwise *undefined*.
-
-:::
-
-The `return` statement can be used along with the standard syntax for [returned values](#returned-value) (the returned value must be of the declared type). However, note that it ends immediately the code execution. For example:
+The `return` statement can be used along with the standard syntax for [returned values](#returned-value) (the returned value must be of the declared type). When you have declared a return parameter (e.g. `myFunction() -> $myReturnValue : Text`), `return $x` implicitely executes `$myReturnValue:=$x`, and returns to the caller. Keep in mind that it ends immediately the code execution. Examine the following examples:
 
 
 ```4d
 Function getValue -> $v : Integer
 	$v:=10
+	return
+	// function returns 10
+	
+Function getValue -> $v : Integer
+	$v:=10
 	return 20
-	// returns 20
+	// function returns 20
 
 Function getValue -> $v : Integer
 	return 10
 	$v:=20 // never executed
-	// returns 10
+	// function returns 10
+
+Function getValue -> $v : Integer
+	return "Hello" //error
+
+Function returnHello
+	return "Hello"
+	// function returns "Hello"
 ```
 
 
 
 ## Parameter indirection (${N})
 
-4D methods and functions accept a variable number of parameters. You can address those parameters with a `For...End for` loop, the [`Count parameters`](../commands-legacy/count-parameters.md) command and the **parameter indirection syntax**. Within the method, an indirection address is formatted `${N}`, where `N` is a numeric expression.
+4D methods and functions accept a variable number of parameters. You can address those parameters with a `For...End for` loop, the [`Count parameters`](../commands/count-parameters) command and the **parameter indirection syntax**. Within the method, an indirection address is formatted `${N}`, where `N` is a numeric expression.
 
 
 ### Using variadic parameters
@@ -232,7 +238,7 @@ The method's parameters must be passed in the correct order, first the format an
  Result:=MySum("000";1;2;200) //"203"
 ```
 
-Note that even if you declared 0, 1, or more parameters, you can always pass the number of parameters that you want. Parameters are all available within the called code through the `${N}` syntax and extra parameters type is [Variant](dt_variant.md) by default (you can declare them using the [variadic notation](#declaring-variadic-parameters)). You just need to make sure parameters exist, thanks to the [`Count parameters`](../commands-legacy/count-parameters.md) command. For example:
+Note that even if you declared 0, 1, or more parameters, you can always pass the number of parameters that you want. Parameters are all available within the called code through the `${N}` syntax and extra parameters type is [Variant](dt_variant.md) by default (you can declare them using the [variadic notation](#declaring-variadic-parameters)). You just need to make sure parameters exist, thanks to the [`Count parameters`](../commands/count-parameters) command. For example:
 
 ```4d
 //foo method
@@ -293,9 +299,9 @@ Here we have a method called `SumNumbers` that returns the calculated total for 
 
 var $number; $total : Real
 
-For each ($number; 1; Count parameters)
+For ($number; 1; Count parameters)
 	$total+=${$number}
-End for each
+End for
 
 return $total
 
@@ -565,3 +571,4 @@ When you execute the `CreatePerson` method, both alert boxes will read "50" sinc
 
 
 **4D Server:** When parameters are passed between methods that are not executed on the same machine (using for example the "Execute on Server" option), references are not usable. In these cases, copies of object and collection parameters are sent instead of references.
+

@@ -5,7 +5,7 @@ title: Collection
 
 The Collection class manages [Collection](Concepts/dt_collection.md) type expressions.
 
-Uma coleção é inicializada com os comandos [`New collection`](../commands/new-collection.md) ou [`New shared collection`](../commands/new-shared-collection.md).
+Uma coleção é inicializada com os comandos [`New collection`](../commands/new-collection) ou [`New shared collection`](../commands/new-shared-collection).
 
 ### Exemplo
 
@@ -2030,7 +2030,7 @@ Todas as coleções colsToSort devem ter o mesmo número de elementos, caso cont
 
 :::
 
-Se quiser classificar as coleções em outra ordem que não seja a ascendente, você deverá fornecer uma *fórmula* ([Formula object](../commands/formula.md) que defina a ordem de classificação. O valor de retorno deve ser um booleano que indica a ordem relativa dos dois elementos: **True** se *$1.value* for menor que *$1.value2*, **False** se *$1.value* for maior que *$1.value2*. Você pode fornecer parâmetros adicionais à fórmula, se necessário.
+Se quiser classificar as coleções em outra ordem que não seja a ascendente, você deverá fornecer uma *fórmula* ([Formula object](../commands/formula) que defina a ordem de classificação. O valor de retorno deve ser um booleano que indica a ordem relativa dos dois elementos: **True** se *$1.value* for menor que *$1.value2*, **False** se *$1.value* for maior que *$1.value2*. Você pode fornecer parâmetros adicionais à fórmula, se necessário.
 
 A fórmula recebe os seguintes parâmetros:
 
@@ -2272,7 +2272,7 @@ Ordenar com uma rota de propriedade:
 
 </details>
 
-<!-- REF #collection.orderByMethod().Syntax -->**.orderByMethod**( *formula* : 4D.Function { ; *...extraParam* : expression } ) : Collection<br/>**.orderByMethod**( *methodName* : Text { ; *...extraParam* : expression } ) : Collection<!-- END REF -->
+<!-- REF #collection.orderByMethod().Syntax -->**.orderByMethod**( *formula* : 4D.Function { ; *...extraParam* : Expression } ) : Collection<br/>**.orderByMethod**( *methodName* : Text { ; *...extraParam* : Expression } ) : Collection<!-- END REF -->
 
 <!-- REF #collection.orderByMethod().Params -->
 
@@ -2426,7 +2426,7 @@ O `.pop()`, usado em conjunto com [`.push()`](#push), pode ser usado para implem
 
 </details>
 
-<!-- REF #collection.push().Syntax -->**.push**( *element* : any { ;...*elementN* } ) : Collection <!-- END REF -->
+<!-- REF #collection.push().Syntax -->**.push**( *element* : any { ;...*elementN* : any } ) : Collection <!-- END REF -->
 
 <!-- REF #collection.push().Params -->
 
@@ -2876,7 +2876,7 @@ Com o seguinte método ***Flatten***:
 
 </details>
 
-<!-- REF #collection.reduceRight().Syntax -->**.reduceRight**( *formula* : 4D.Function { ; *initValue* : any { ; *...param* : expression }} ) : any<br/>**.reduceRight**( *methodName* : Text { ; *initValue* : any { ; *...param* : expression }} ) : any <!-- END REF -->
+<!-- REF #collection.reduceRight().Syntax -->**.reduceRight**( *formula* : 4D.Function { ; *initValue* : any { ; *...param* : Expression }} ) : any<br/>**.reduceRight**( *methodName* : Text { ; *initValue* : any { ; *...param* : Expression }} ) : any <!-- END REF -->
 
 <!-- REF #collection.reduceRight().Params -->
 
@@ -3500,3 +3500,4 @@ Se vários valores forem passados, são inseridos todos ao mesmo tempo, o que si
 ```
 
 <!-- END REF -->
+

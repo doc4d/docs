@@ -57,7 +57,7 @@ title: Settings
 
 4Dでは、プロジェクトの設定について 2つの運用モードが提供されています:
 
-- **Standard** mode: all settings are stored in the [*settings.4DSettings* file at the project level](../Project/architecture.md#sources) and are applied in all cases. これはデフォルトのモードで、開発段階 (すべてのアプリケーション) に適しています。
+- **標準** モード：すべての設定は、[プロジェクトレベルの *settings.4DSettings*](../Project/architecture.md#sources) ファイルに保存され、すべてのケースに適用されます。 これはデフォルトのモードで、開発段階 (すべてのアプリケーション) に適しています。
 
 - **ユーザー設定** モード：カスタム設定の一部は、[Settingsフォルダー](../Project/architecture.md#settings-ユーザー) (すべてのデータファイル用)、または [Dataフォルダー](../Project/architecture.md#settings-ユーザーデータ) (特定のデータファイル用) に置かれた *settings.4DSettings* ファイルに保存され、ストラクチャー設定の代わりに使用されます。 このモードは、デスクトップアプリケーションの運用段階に適しています。 このモードは、設定の [セキュリティページ](./security.md) にあるオプションを使用して有効にします。
 
@@ -90,7 +90,7 @@ title: Settings
 
 ![](../assets/en/settings/user-settings-dialog.png)
 
-これらのダイアログボックスは、[OPEN SETTINGS WINDOW](../commands-legacy/open-settings-window.md) コマンドに適切な *settingsType* セレクターを渡して使用することでもアクセスできます。
+これらのダイアログボックスは、[OPEN SETTINGS WINDOW](../commands/open-settings-window) コマンドに適切な *settingsType* セレクターを渡して使用することでもアクセスできます。
 
 ストラクチャー設定ダイアログボックスは、標準の設定ダイアログと同じで、そのすべてのプロパティにアクセスできます (これらの設定はユーザー設定によってオーバーライドできます)。
 
@@ -102,36 +102,36 @@ title: Settings
 
 **ユーザー設定** および **データファイル用のユーザー設定** ダイアログボックスに含まれる設定ページのリストと、標準設定との主な違いを以下の表にまとめます:
 
-| **ストラクチャー設定のページ**                                                                           | **ユーザー設定のページ**       | **データファイル用のユーザー設定のページ** |
-| ------------------------------------------------------------------------------------------- | -------------------- | ----------------------- |
-| [一般ページ](./general.md)                                                                       | N/a                  | N/a                     |
-| [インターフェースページ](./interface.md)                                                               | 標準設定と同じ              | 標準設定と同じ                 |
-| [コンパイラーページ](./compiler.md)                                                                  | N/a                  | N/a                     |
-| [Database/Data storage page](./database.md#data-storage-page)                               | N/a                  | N/a                     |
-| [Database/Memory page](./database.md#memory-page)                                           | 標準設定と同じ              | 標準設定と同じ                 |
-| [Backup/Scheduler page](./../Backup/settings.md#scheduler)                                  | N/a                  | 標準設定と同じ                 |
-| [Backup/Configuration page](./../Backup/settings.md#configuration)                          | N/a                  | 標準設定と同じ                 |
-| [Backup/Backup & Restore page](./../Backup/settings.md#backup--restore) | N/a                  | 標準設定と同じ                 |
-| [Client-server/Network options page](./client-server.md#network-options-page)               | 標準設定と同じ              | 標準設定と同じ                 |
-| [Client-server/IP configuration page](./client-server.md#ip-configuration-page)             | 標準設定と同じ              | 標準設定と同じ                 |
-| [Web/Configuration page](./web.md#configuration)                                            | 標準設定と同じ              | 標準設定と同じ                 |
-| [Web/Options (I) page](./web.md#options-i)                               | 標準設定と同じ              | 標準設定と同じ                 |
-| [Web/Options (II) page](./web.md#options-ii)                             | 標準設定と同じ              | 標準設定と同じ                 |
-| [Web/Log (type) page](./web.md#log-type)                                 | 標準設定と同じ              | 標準設定と同じ                 |
-| [Web/Log (backup) page](./web.md#log-backup)                             | 標準設定と同じ              | 標準設定と同じ                 |
-| [Web/Web Services page](./web.md#web-services)                                              | メソッドプリフィクスオプションは使用不可 | メソッドプリフィクスオプションは使用不可    |
-| [SQL ページ](./sql.md)                                                                         | 標準設定と同じ              | 標準設定と同じ                 |
-| [PHP ページ](./php.md)                                                                         | 標準設定と同じ              | 標準設定と同じ                 |
-| [セキュリティページ](./security.md)                                                                  | N/a                  | N/a                     |
-| [互換性ページ](./compatibility.md)                                                                | N/a                  | N/a                     |
+| **ストラクチャー設定のページ**                                               | **ユーザー設定のページ**       | **データファイル用のユーザー設定のページ** |
+| --------------------------------------------------------------- | -------------------- | ----------------------- |
+| [一般ページ](./general.md)                                           | N/a                  | N/a                     |
+| [インターフェースページ](./interface.md)                                   | 標準設定と同じ              | 標準設定と同じ                 |
+| [コンパイラーページ](./compiler.md)                                      | N/a                  | N/a                     |
+| [データベース/データストレージページ](./database.md#データストレージページ)                 | N/a                  | N/a                     |
+| [データベース/メモリページ](../database.md#メモリページ)                          | 標準設定と同じ              | 標準設定と同じ                 |
+| [バックアップ/スケジューラーページ](./../Backup/settings.md#スケジューラー)            | N/a                  | 標準設定と同じ                 |
+| [バックアップ/設定ページ](./../Backup/settings.md#設定)                      | N/a                  | 標準設定と同じ                 |
+| [バックアップ/バックアップ＆復旧ページ](./../Backup/settings.md#バックアップ復旧)         | N/a                  | 標準設定と同じ                 |
+| [クライアント-サーバー/ネットワークオプションページ](./client-server.md#ネットワークオプションページ) | 標準設定と同じ              | 標準設定と同じ                 |
+| [クライアント-サーバー/IP設定ページ](./client-server.md#ip設定ページ)               | 標準設定と同じ              | 標準設定と同じ                 |
+| [Web/設定ページ](./web.md#設定)                                        | 標準設定と同じ              | 標準設定と同じ                 |
+| [Web/オプション (I) ページ](./web.md#オプション-i)        | 標準設定と同じ              | 標準設定と同じ                 |
+| [Web/オプション (II) ページ](./web.md#オプション-ii)      | 標準設定と同じ              | 標準設定と同じ                 |
+| [Web/ログ (タイプ) ページ](./web.md#ログ-タイプ)          | 標準設定と同じ              | 標準設定と同じ                 |
+| [Web/ログ (バックアップ) ページ](./web.md#ログ-バックアップ)    | 標準設定と同じ              | 標準設定と同じ                 |
+| [Web/Webサービスページ](./web.md#webサービス)                              | メソッドプリフィクスオプションは使用不可 | メソッドプリフィクスオプションは使用不可    |
+| [SQL ページ](./sql.md)                                             | 標準設定と同じ              | 標準設定と同じ                 |
+| [PHP ページ](./php.md)                                             | 標準設定と同じ              | 標準設定と同じ                 |
+| [セキュリティページ](./security.md)                                      | N/a                  | N/a                     |
+| [互換性ページ](./compatibility.md)                                    | N/a                  | N/a                     |
 
 このダイアログボックスの設定を編集した場合、それらの変更は対応する *settings.4DSettings* ファイル (後述参照) または、*Backup.4DSettings* ファイル (詳細は [バックアップ設定](../Backup/settings.md) ページ参照) に自動的に保存されます。
 
 ### `SET DATABASE PARAMETER` とユーザー設定
 
-一部の設定は、[SET DATABASE PARAMETER](../commands-legacy/set-database-parameter.md) コマンドを通しても利用できます。 ユーザー設定は、**2セッション間で設定を保持** プロパティが **Yes** になっているパラメーターです。
+一部の設定は、[SET DATABASE PARAMETER](../commands/set-database-parameter) コマンドを通しても利用できます。 ユーザー設定は、**2セッション間で設定を保持** プロパティが **Yes** になっているパラメーターです。
 
-**ユーザー設定** 機能が有効化されている場合、[SET DATABASE PARAMETER](../commands-legacy/set-database-parameter.md) コマンドで編集されたユーザー設定はデータファイル用のユーザー設定に自動的に保存されます。
+**ユーザー設定** 機能が有効化されている場合、[SET DATABASE PARAMETER](../commands/set-database-parameter) コマンドで編集されたユーザー設定はデータファイル用のユーザー設定に自動的に保存されます。
 
 > `Table sequence number` は例外です。この設定値は常にデータファイル自身に保存されます。
 
@@ -179,3 +179,4 @@ title: Settings
 | 1 (高) | ユーザー設定 (カレントデータファイル)               | データファイルと同階層にある Settingsフォルダー内の ***settings.4DSettings*** ファイル                                                                                                     | ストラクチャー設定とユーザー設定を上書きします。 その設定とリンクされたデータファイルがアプリケーションによって使用されたときにのみ適用。 |
 
 ユーザー設定ファイルには関連した設定の一部しか含まれない一方、ストラクチャーファイルには、コア設定を含めたカスタム設定がすべて格納されているという点に注意してください。
+

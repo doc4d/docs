@@ -170,33 +170,39 @@ Function saveToFile($entity : cs.ShapesEntity; $file : 4D.File)
 たとえば、次の関数は引数 $x の 2乗を返します。 $x は数値です。
 
 ```4d
-Function square($x : Integer) -> $result : Integer
+Function square($x : Integer) : Integer
    return $x * $x
 ```
 
-:::note
-
-内部的に、`return x` は `myReturnValue:=x` を実行し、呼び出し元に戻ります。  `return` が式なしで使われた場合、関数またはメソッドは宣言された戻り値の型 (あれば) の null値を返し、それ以外の場合には *undefined* です。
-
-:::
-
-`return`文は、[戻り値](#戻り値) の標準的なシンタックスと併用することができます (戻り値は宣言された型でなくてはなりません)。  ただし、<code>return</code> はコードの実行を直ちに終了させることに注意が必要です。 例:
+`return`文は、[戻り値](#戻り値) の標準的なシンタックスと併用することができます (戻り値は宣言された型でなくてはなりません)。  When you have declared a return parameter (e.g. `myFunction() -> $myReturnValue : Text`), `return $x` implicitely executes `$myReturnValue:=$x`, and returns to the caller. Keep in mind that it ends immediately the code execution. Examine the following examples:
 
 ```4d
 Function getValue -> $v : Integer
 	$v:=10
+	return
+	// function returns 10
+	
+Function getValue -> $v : Integer
+	$v:=10
 	return 20
-	// 20 が返されます
+	// function returns 20
 
 Function getValue -> $v : Integer
 	return 10
-	$v:=20 // 実行されません
-	// 10 が返されます
+	$v:=20 // never executed
+	// function returns 10
+
+Function getValue -> $v : Integer
+	return "Hello" //error
+
+Function returnHello
+	return "Hello"
+	// function returns "Hello"
 ```
 
 ## 引数の間接参照 (${N})
 
-4Dメソッドおよび関数は、可変長の引数を受け取ることができます。 `For...End for` ループや [`Count parameters`](../commands-legacy/count-parameters.md) コマンド、**引数の間接参照シンタックス** を使って、これらの引数を扱うことができます。 メソッド内で、間接参照は `${N}` のように表示します。ここの `N` は数値式です。
+4Dメソッドおよび関数は、可変長の引数を受け取ることができます。 `For...End for` ループや [`Count parameters`](../commands/count-parameters) コマンド、**引数の間接参照シンタックス** を使って、これらの引数を扱うことができます。 メソッド内で、間接参照は `${N}` のように表示します。ここの `N` は数値式です。
 
 ### 可変長引数の使い方
 
@@ -220,7 +226,7 @@ Function getValue -> $v : Integer
  Result:=MySum("000";1;2;200) // "203"
 ```
 
-0、1、またはそれ以上のパラメーターを宣言してある場合でも、任意の数の引数を渡すことができます。 呼び出されたコード内では、`${N}` シンタックスを使って引数を利用でき、可変長引数の型はデフォルトで [バリアント](dt_variant.md) です ([可変長引数の記法](#可変長引数の宣言) を使ってこれらを宣言できます)。  [`Count parameters`](../commands-legacy/count-parameters.md) コマンドを使用して、パラメーターが存在することをあらかじめ確認しておく必要があります。 例:
+0、1、またはそれ以上のパラメーターを宣言してある場合でも、任意の数の引数を渡すことができます。 呼び出されたコード内では、`${N}` シンタックスを使って引数を利用でき、可変長引数の型はデフォルトで [バリアント](dt_variant.md) です ([可変長引数の記法](#可変長引数の宣言) を使ってこれらを宣言できます)。  [`Count parameters`](../commands/count-parameters) コマンドを使用して、パラメーターが存在することをあらかじめ確認しておく必要があります。 例:
 
 ```4d
 // foo メソッド
@@ -277,9 +283,9 @@ Function myfunction (var1: Integer ; ... : Text)
 
 var $number; $total : Real
 
-For each ($number; 1; Count parameters)
+For ($number; 1; Count parameters)
 	$total+=${$number}
-End for each
+End for
 
 return $total
 
@@ -536,3 +542,4 @@ ALERT($param->)
 `CreatePerson` メソッドを実行すると、サブルーチンにおいても同じオブジェクト参照が扱われているため、両方のアラートボックスにおいて ”50” と表示されます。
 
 **4D Server:** "サーバー上で実行" オプションが使用された場合など、同じマシン上で実行されないメソッド間で引数が渡される場合、参照渡しは利用できません。  このような場合には、参照の代わりにオブジェクトとコレクションのコピーが引数として渡されます。
+

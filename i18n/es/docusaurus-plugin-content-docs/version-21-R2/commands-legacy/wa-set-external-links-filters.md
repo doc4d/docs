@@ -18,6 +18,16 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>Historial</summary>
+
+|Versión|Cambios|
+|---|---|
+|11 SQL Release 2|Creado por|
+
+</details>
+</div>
+
 ## Descripción 
 
 <!--REF #_command_.WA SET EXTERNAL LINKS FILTERS.Summary-->El comando WA SET EXTERNAL LINKS FILTERS permite establecer uno o más filtros de enlaces externos para la zona web designada por los parámetros *\** y *objeto*.<!-- END REF--> Los filtros de enlaces externos determinan si un URL asociado a la página actual vía un enlace debe abrirse en el área web o en el navegador web por defecto del equipo. 
@@ -27,11 +37,11 @@ Cuando el usuario hace clic en un enlace en la página actual, 4D consulta la li
 Los arrays *arrFiltros* y *arrAutorizRechazar* deben estar sincronizados. 
 
 * Cada línea del array *arrFiltros* debe contener un URL a filtrar. Puede utilizar *\** como comodín para reemplazar uno o más caracteres.
-* Cada línea correspondiente en el array *arrAutorizRechazar* debe contener un booleano indicando si el URL debe ser abierto en el área web ([True](true.md "True")) o en el navegador web ([False](false.md "False")).
+* Cada línea correspondiente en el array *arrAutorizRechazar* debe contener un booleano indicando si el URL debe ser abierto en el área web ([True](../commands/true)) o en el navegador web ([False](../commands/false)).
 
 En caso de contradicción a nivel de los parámetros (autorización y rechazo de un mismo URL), se tiene en cuenta la última configuración.
 
-Para desactivar el filtro de los URL, llame el comando y pase los arrays vacío o pase, respectivamente los valores "*\**" y [True](true.md "True") en los últimos elementos de los arrays *arrFiltros* y *arrAutorizRechazar*.
+Para desactivar el filtro de los URL, llame el comando y pase los arrays vacío o pase, respectivamente los valores "*\**" y [True](../commands/true) en los últimos elementos de los arrays *arrFiltros* y *arrAutorizRechazar*.
 
 **Importante:** el filtro establecido por el comando [WA SET URL FILTERS](wa-set-url-filters.md "WA SET URL FILTERS") se tiene en cuenta antes que el del comando WA SET EXTERNAL LINKS FILTERS. Esto significa que si un URL es rechazado por un filtro del comando [WA SET URL FILTERS](wa-set-url-filters.md "WA SET URL FILTERS"), no podrá abrirse en el navegador incluso si es definido explícitamente por el comando WA SET EXTERNAL LINKS FILTERS (ver ejemplo 2).
 

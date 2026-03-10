@@ -16,6 +16,16 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>履歴</summary>
+
+|リリース|内容|
+|---|---|
+|11 SQL|初出|
+
+</details>
+</div>
+
 ## 説明 
 
 <!--REF #_command_.QUERY BY SQL.Summary-->4Dに統合されたSQLカーネルのメリットを利用ためにQUERY BY SQLコマンドを使用できます。<!-- END REF-->このコマンドで以下のような簡単なSELECTクエリを実行できます:
@@ -42,7 +52,7 @@ QUERY BY SQL コマンドは、[QUERY BY FORMULA](query-by-formula.md "QUERY BY 
 
 Note: QUERY BY SQL コマンドは、外部SQL接続のコンテクストでは使用されません。このリクエストは4Dの統合されたSQLエンジンに直接接続します。
 
-QUERY BY SQLは、テーブルセレクションの各レコードに*sqlFormula*を適用します。*sqlFormula*はブール式で、[True](true.md "True")または[False](false.md "False")を返さなければなりません。SQL標準では、検索条件は[True](true.md "True")、[False](false.md "False")または[NULL](null.md "NULL")を返します。検索条件が[True](true.md "True")を返す全てのレコード (行) が、新しいカレントセレクションに含まれます。
+QUERY BY SQLは、テーブルセレクションの各レコードに*sqlFormula*を適用します。*sqlFormula*はブール式で、[True](../commands/true)または[False](../commands/false)を返さなければなりません。SQL標準では、検索条件は[True](../commands/true)、[False](../commands/false)または[NULL](null.md "NULL")を返します。検索条件が[True](../commands/true)を返す全てのレコード (行) が、新しいカレントセレクションに含まれます。
 
 例えば、値とフィールド (カラム) と比較する場合、*sqlFormula*式は単純です。しかし演算などを実行したりすると、*sqlFormulaの*式は複雑になります。[QUERY BY FORMULA](query-by-formula.md "QUERY BY FORMULA")のように、QUERY BY SQLはリレートするテーブルの情報を評価できます (例題4を参照)。*sqlFormula*は有効なSQLステートメントでなければなりません。そしてそのステートメントは4Dの現在のSQLの実行規則の点においてSQL-2スタンダードに準じていなければなりません。4DのSQLのサポートについては、4D SQL Referenceマニュアルを参照してください。
 

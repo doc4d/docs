@@ -22,6 +22,17 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>Historial</summary>
+
+|Versión|Cambios|
+|---|---|
+|12|Renombrar|
+|6.5|Creado por|
+
+</details>
+</div>
+
 ## Descripción 
 
 <!--REF #_command_.FORM GET PROPERTIES.Summary-->El comando \[#current\_title devuelve las propiedades del formulario *nomForm*.<!-- END REF-->
@@ -34,7 +45,7 @@ Los parámetros *ancho* y *altura* devuelven el ancho y la altura del formulario
 
 El parámetro *numPags* devuelve el número de páginas en un formulario, excluyendo la página 0 (cero).
 
-Los parámetros *largoFijo* y *altoFijo* indican si el largo y el alto del formulario son redimensionables (el parámetro devuelve [False](false.md "False")) o fijos (el parámetro devuelve [True](true.md "True")).
+Los parámetros *largoFijo* y *altoFijo* indican si el largo y el alto del formulario son redimensionables (el parámetro devuelve [False](../commands/false)) o fijos (el parámetro devuelve [True](../commands/true)).
 
 El parámetro *título* devuelve el título de la ventana del formulario, tal como fue definido en la Lista de propiedades del editor de formularios. Si no se definió ningún nombre, el parámetro *título* devuelve una cadena vacía.
 

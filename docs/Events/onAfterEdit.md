@@ -5,7 +5,7 @@ title: On After Edit
 
 |Code|Can be called by|Definition|  
 |---|---|---|
-|45|[4D View Pro area](../FormObjects/viewProArea_overview.md) - [4D Write Pro area](../FormObjects/writeProArea_overview.md) - [Combo Box](FormObjects/comboBox_overview.md) - Form - [Input](FormObjects/input_overview.md) - [Hierarchical List](FormObjects/list_overview.md) - [List Box](FormObjects/listbox_overview.md) - [List Box Column](FormObjects/listbox_overview.md#list-box-columns)|The contents of the enterable object that has the focus has just been modified|
+|45|[4D View Pro area](../FormObjects/viewProArea_overview.md) - [4D Write Pro area](../FormObjects/writeProArea_overview.md) - [Combo Box](FormObjects/comboBox_overview.md) - Form - [Input](FormObjects/input_overview.md) - [Hierarchical List](FormObjects/list_overview.md) - [List Box](FormObjects/listbox-object.md) - [List Box Column](FormObjects/listbox-column.md)|The contents of the enterable object that has the focus has just been modified|
 
 ## Description
 
@@ -20,7 +20,7 @@ When it is used, this event is generated after each change made to the contents 
 - Any keyboard entry made by the user; in this case, the `On After Edit` event is generated after the [`On Before Keystroke`](onBeforeKeystroke.md) and [`On After Keystroke`](onAfterKeystroke.md) events, if they are used.
 - Any modification made using a language command that simulates a user action (i.e., `POST KEY`).
 
-Within the `On After Edit` event, text data being entered is returned by the [`Get edited text`](../commands-legacy/get-edited-text.md) command.  
+Within the `On After Edit` event, text data being entered is returned by the [`Get edited text`](../commands/get-edited-text) command.  
 
 ### 4D View Pro
 
@@ -112,3 +112,4 @@ The above example could generate an event object like this:
 "newValue":"jumped over the lazy dog";
 }
 ```
+

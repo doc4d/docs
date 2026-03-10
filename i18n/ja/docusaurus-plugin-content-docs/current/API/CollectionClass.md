@@ -5,7 +5,7 @@ title: Collection
 
 Collectionクラスは [コレクション](Concepts/dt_collection.md) 型の式を扱います。
 
-コレクションは [`New collection`](../commands/new-collection.md) または [`New shared collection`](../commands/new-shared-collection.md) コマンドで初期化されます。
+コレクションは [`New collection`](../commands/new-collection) または [`New shared collection`](../commands/new-shared-collection) コマンドで初期化されます。
 
 ### 例題
 
@@ -2059,7 +2059,7 @@ $c2:=$c.map(Formula(Round(($1.value/$2)*100; 2)); $c.sum())
 
 :::
 
-昇順以外の方法でコレクションをソートしたい場合には、ソート順を定義する *formula* ([Formula オブジェクト](../commands/formula.md)) を指定する必要があります。 戻り値は、二つの要素の相対的な順番を示すブール値です。*$1.value* が *$1.value2* より小さい場合に **true** を、*$1.value* が *$1.value2* より大きい場合に **false** を返します。 必要に応じて、 追加の引数をフォーミュラに渡せます。
+昇順以外の方法でコレクションをソートしたい場合には、ソート順を定義する *formula* ([Formula オブジェクト](../commands/formula)) を指定する必要があります。 戻り値は、二つの要素の相対的な順番を示すブール値です。*$1.value* が *$1.value2* より小さい場合に **true** を、*$1.value* が *$1.value2* より大きい場合に **false** を返します。 必要に応じて、 追加の引数をフォーミュラに渡せます。
 
 フォーミュラは以下の引数を受け取ります:
 
@@ -2302,7 +2302,7 @@ $name.multiSort(Formula($1.value.firstname<$1.value2.firstname); [$address])
 
 </details>
 
-<!-- REF #collection.orderByMethod().Syntax -->**.orderByMethod**( *formula* : 4D.Function { ; *...extraParam* : expression } ) : Collection<br/>**.orderByMethod**( *methodName* : Text { ; *...extraParam* : expression } ) : Collection<!-- END REF -->
+<!-- REF #collection.orderByMethod().Syntax -->**.orderByMethod**( *formula* : 4D.Function { ; *...extraParam* : Expression } ) : Collection<br/>**.orderByMethod**( *methodName* : Text { ; *...extraParam* : Expression } ) : Collection<!-- END REF -->
 
 <!-- REF #collection.orderByMethod().Params -->
 
@@ -2456,7 +2456,7 @@ $toSort.result:=(Compare strings($toSort.value;$toSort.value2;$option2)<0)
 
 </details>
 
-<!-- REF #collection.push().Syntax -->**.push**( *element* : any { ;...*elementN* } ) : Collection <!-- END REF -->
+<!-- REF #collection.push().Syntax -->**.push**( *element* : any { ;...*elementN* : any } ) : Collection <!-- END REF -->
 
 <!-- REF #collection.push().Params -->
 
@@ -2906,7 +2906,7 @@ $r:=$c.reduce(Formula($1.accumulator*=$1.value); 1)  // 戻り値は 86400 で�
 
 </details>
 
-<!-- REF #collection.reduceRight().Syntax -->**.reduceRight**( *formula* : 4D.Function { ; *initValue* : any { ; *...param* : expression }} ) : any<br/>**.reduceRight**( *methodName* : Text { ; *initValue* : any { ; *...param* : expression }} ) : any <!-- END REF -->
+<!-- REF #collection.reduceRight().Syntax -->**.reduceRight**( *formula* : 4D.Function { ; *initValue* : any { ; *...param* : Expression }} ) : any<br/>**.reduceRight**( *methodName* : Text { ; *initValue* : any { ; *...param* : Expression }} ) : any <!-- END REF -->
 
 <!-- REF #collection.reduceRight().Params -->
 
@@ -3529,3 +3529,4 @@ $col3:=$col.sort(Formula(String($1.value)<String($1.value2))) // アルファベ
 ```
 
 <!-- END REF -->
+

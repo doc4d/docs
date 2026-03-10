@@ -5,15 +5,29 @@ slug: /commands/set-allowed-methods
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET ALLOWED METHODS.Syntax-->**SET ALLOWED METHODS** ( *methodsArray* )<!-- END REF-->
+<!--REF #_command_.SET ALLOWED METHODS.Syntax-->**SET ALLOWED METHODS** ( *methodsArray* : Text array )<!-- END REF-->
 
 <!--REF #_command_.SET ALLOWED METHODS.Params-->
+
+<div class="no-index">
 
 | Paramètres   | Type       |                             | Description                 |
 | ------------ | ---------- | --------------------------- | --------------------------- |
 | methodsArray | Text array | &#8594; | Tableau de noms de méthodes |
 
+</div>
 <!-- END REF-->
+
+<div class="no-index">
+<details><summary>Historique</summary>
+
+| Release                     | Modifications |
+| --------------------------- | ------------- |
+| 17 R2                       | Modifié       |
+| <6 | Ajout         |
+
+</details>
+</div>
 
 ## Description
 
@@ -47,10 +61,10 @@ Cette commande ne filtre que la **saisie** des méthodes, pas leur **exécution*
 Cet exemple autorise la saisie de toutes les méthodes commençant par "formula" et de la méthode "Total_general" par l'utilisateur dans des contextes protégés :
 
 ```4d
- ARRAY TEXT(methodsArray;2)
- methodsArray{1}:="formula@"
- methodsArray{2}:="Total_general"
- SET ALLOWED METHODS(methodsArray)
+ ARRAY TEXT(methodsArray;2)
+ methodsArray{1}:="formula@"
+ methodsArray{2}:="Total_general"
+ SET ALLOWED METHODS(methodsArray)
 ```
 
 ## Voir également

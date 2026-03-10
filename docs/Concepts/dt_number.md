@@ -5,14 +5,14 @@ title: Number (Real, Integer)
 
 Number is a generic term that stands for:
 
-- Real field, variable or expression. The range for the Real data type is ±1.7e±308 (13 significant digits).
+- Real field, variable or expression. The range for the Real data type is ±1.7e±308 (following the [IEEE 754 standard for double-precision binary floating-point format](https://en.wikipedia.org/wiki/Double-precision_floating-point_format)).
 - Integer variable or expression. The range for the Integer data type is -2^31..(2^31)-1 (4-byte Integer, aka *Long* or *Longint*).
 
 :::info Compatibility
 
 Usually when working with Integers, you handle *Long* values (4-byte Integer). However, there are two cases where Integers are stored as *Shorts* values (2-byte Integer), i.e. in the range -32,768..32,767 (2^15..(2^15)-1):
 - Database fields with `Integer` type,
-- Elements of arrays declared with [`ARRAY INTEGER`](../commands-legacy/array-integer.md).
+- Elements of arrays declared with [`ARRAY INTEGER`](../commands/array-integer).
 
 These legacy data types are automatically converted in *Longs* when used in the 4D Language.
 
@@ -75,7 +75,7 @@ The modulo operator % divides the first number by the second number and returns 
 
 :::warning
 
-The modulo operator % returns significant values with numbers that are in the Long Integer range (from minus 2^31 to 2^31 minus one). To calculate the modulo with numbers outside of this range, use the [`Mod`](../commands-legacy/mod.md) command.
+The modulo operator % returns significant values with numbers that are in the Long Integer range (from minus 2^31 to 2^31 minus one). To calculate the modulo with numbers outside of this range, use the [`Mod`](../commands/mod) command.
 
 :::
 
@@ -85,11 +85,11 @@ The integer division operator divides one number by another and returns the whol
 
 ### Real comparison
 
-To compare two reals for equality, the 4D language actually compares the absolute value of the difference with *epsilon*. See the [`SET REAL COMPARISON LEVEL`](../commands-legacy/set-real-comparison-level.md) command.
+To compare two reals for equality, the 4D language actually compares the absolute value of the difference with *epsilon*. See the [`SET REAL COMPARISON LEVEL`](../commands/set-real-comparison-level) command.
 
 :::note
 
-For consistency, the 4D database engine always compares database fields of the real type using a 10^-6 value for *epsilon* and does not take the [`SET REAL COMPARISON LEVEL`](../commands-legacy/set-real-comparison-level.md) setting into account.
+For consistency, the 4D database engine always compares database fields of the real type using a 10^-6 value for *epsilon* and does not take the [`SET REAL COMPARISON LEVEL`](../commands/set-real-comparison-level) setting into account.
 
 :::
 
@@ -166,3 +166,4 @@ The following table lists the bitwise operators and their effects:
 |Bit Set|0x00000000 ?+ 16|0x00010000|
 |Bit Clear|0x00010000 ?- 16|0x00000000|
 |Bit Test|0x00010000 ?? 16|True|
+

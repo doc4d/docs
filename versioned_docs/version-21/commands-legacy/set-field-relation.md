@@ -18,6 +18,16 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|2004|Created|
+
+</details>
+</div>
+
 ## Description 
 
 <!--REF #_command_.SET FIELD RELATION.Summary-->The **SET FIELD RELATION** command sets the automatic/manual status of each relation of the database separately for the current process, regardless of its initial status as specified in the Relation properties window in the Design environment.<!-- END REF--> 
@@ -37,7 +47,7 @@ In the *one* and *many* parameters, pass the values indicating the changing of t
 
 **Note:** Changes made using this command only apply to the current process. The configuration of the relations set using the options in the Relation properties window is not modified. 
 
-**Note:** If you passed [True](true.md "True") to the [SET AUTOMATIC RELATIONS](set-automatic-relations.md) command during the same session, calls to **SET FIELD RELATION** are ignored, regardless of whether they are placed before or after [SET AUTOMATIC RELATIONS](set-automatic-relations.md). To "lock" the automatic mode and take calls to **SET FIELD RELATION** into account, pass [False](false.md "False") to [SET AUTOMATIC RELATIONS](set-automatic-relations.md).
+**Note:** If you passed [True](../commands/true) to the [SET AUTOMATIC RELATIONS](set-automatic-relations.md) command during the same session, calls to **SET FIELD RELATION** are ignored, regardless of whether they are placed before or after [SET AUTOMATIC RELATIONS](set-automatic-relations.md). To "lock" the automatic mode and take calls to **SET FIELD RELATION** into account, pass [False](../commands/false) to [SET AUTOMATIC RELATIONS](set-automatic-relations.md).
 
 ## Example 
 

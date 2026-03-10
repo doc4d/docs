@@ -5,7 +5,7 @@ title: Evénements formulaire
 
 Les événements formulaire sont des événements qui peuvent conduire à l'exécution de la méthode de formulaire et/ou de la ou des méthodes objet de formulaire. Les événements de formulaire vous permettent de contrôler le flux de votre application et d'écrire du code qui n'est exécuté que lorsqu'un événement spécifique se produit.
 
-Dans votre code, vous contrôlez les événements à l'aide de la commande [`FORM Event`](../commands/form-event.md), qui renvoie l'événement déclenché. Par exemple :
+Dans votre code, vous contrôlez les événements à l'aide de la commande [`FORM Event`](../commands/form-event), qui renvoie l'événement déclenché. Par exemple :
 
 ```4d
 //code d'un bouton
@@ -18,7 +18,7 @@ End if
 
 ## Objet événement
 
-Chaque événement est renvoyé sous forme d'objet par la commande [`FORM Event`](../commands/form-event.md). Par défaut, il contient les propriétés suivantes :
+Chaque événement est renvoyé sous forme d'objet par la commande [`FORM Event`](../commands/form-event). Par défaut, il contient les propriétés suivantes :
 
 | Propriété   | Type        | Description                                                                                                      |
 | ----------- | ----------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -28,7 +28,7 @@ Chaque événement est renvoyé sous forme d'objet par la commande [`FORM Event`
 
 Des propriétés supplémentaires sont retournées lorsque l'événement se produit sur des objets spécifiques. En particulier :
 
-- Les [list boxes](FormObjects/listbox_overview.md#supported-form-events) et les [colonnes de list box](FormObjects/listbox_overview.md#supported-form-events-1) retournent des [propriétés](FormObjects/listbox_overview.md#supported-form-events) telles que `columnName` ou `isRowSelected`.
+- Les [list boxes](FormObjects/listbox-object.md#supported-form-events) et les [colonnes de list box](FormObjects/listbox-column.md#supported-form-events) retournent des [propriétés](FormObjects/listbox-object.md#supported-form-events) telles que `columnName` ou `isRowSelected`.
 - Les [zones 4D View Pro](FormObjects/viewProArea_overview.md) retournent par exemple des propriétés `sheetName` ou `action` dans l'objet événement [On After Edit](onAfterEdit.md).
 
 ## Événements et méthodes
@@ -114,4 +114,5 @@ Le tableau suivant résume la manière dont les méthodes objet et formulaire so
 Gardez toujours à l'esprit que, pour tout événement, la méthode d'un formulaire ou d'un objet est appelée si la propriété d'événement correspondante est sélectionnée pour le formulaire ou les objets. L'avantage de la désactivation des événements dans l'environnement de développement (à l'aide de la liste des propriétés de l'éditeur de formulaires) est la réduction du nombre d'appels vers des méthodes et par conséquent l'optimisation de la vitesse d'exécution de vos formulaires.
 
 > ATTENTION : Les événements [On Load](onLoad.md) et [On Unload](onUnload.md) sont générés pour les objets s'ils sont activés à la fois pour les objets et pour le formulaire auquel appartiennent les objets. Si les événements sont activés pour les objets uniquement, ils ne se produiront pas; ces deux événements doivent également être activés au niveau du formulaire.
+
 

@@ -21,6 +21,16 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>Historial</summary>
+
+|Versión|Cambios|
+|---|---|
+|6.7|Creado por|
+
+</details>
+</div>
+
 ## Descripción 
 
 <!--REF #_command_.GET RELATION PROPERTIES.Summary-->El comando GET RELATION PROPERTIES devuelve las propiedades de la relación (si la hay) que comienza del campo fuente definido por *numTabla* y *numCamp* o por *ptrCamp*.<!-- END REF--> 
@@ -34,9 +44,9 @@ Una se haya ejecutado el comando:
 
 * Los parámetros *tablaUno* y *campoUno* contienen respectivamente el número de la tabla y del campo hacia los cuales apunta la relación (del campo fuente). Si ninguna relación comienza en el campo, este parámetro devuelve 0.
 * El parámetro *discriminante* contiene el número del campo discriminante (de la tabla objetivo) definido dentro de esta relación. Si no se ha definido un campo discriminante en esta relación, o si ninguna relación parte del campo fuente, este parámetro devuelve 0.
-* Los parámetro *autoUno* y *autoMuchos* devuelven [True](true.md "True") si, respectivamente, las opciones “Relación uno a muchos automática” y “Relación muchos a uno automática” se han seleccionado para esta relación; de lo contrario, devuelven [False](false.md "False").
+* Los parámetro *autoUno* y *autoMuchos* devuelven [True](../commands/true) si, respectivamente, las opciones “Relación uno a muchos automática” y “Relación muchos a uno automática” se han seleccionado para esta relación; de lo contrario, devuelven [False](../commands/false).
 
-**Nota:** los parámetros *autoUno* y *autoMuchos* también devolverán [True](true.md "True") si ninguna relación parte del campo fuente (en este caso devuelven valores no significativos.). El valor de los parámetros *tablaUno* y *campUno* permiten asegurarse de que una relación existe. 
+**Nota:** los parámetros *autoUno* y *autoMuchos* también devolverán [True](../commands/true) si ninguna relación parte del campo fuente (en este caso devuelven valores no significativos.). El valor de los parámetros *tablaUno* y *campUno* permiten asegurarse de que una relación existe. 
 
 ## Ver también 
 

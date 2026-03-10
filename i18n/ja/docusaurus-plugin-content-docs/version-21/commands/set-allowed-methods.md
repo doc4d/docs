@@ -5,15 +5,29 @@ slug: /commands/set-allowed-methods
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET ALLOWED METHODS.Syntax-->**SET ALLOWED METHODS** ( *methodsArray* )<!-- END REF-->
+<!--REF #_command_.SET ALLOWED METHODS.Syntax-->**SET ALLOWED METHODS** ( *methodsArray* : Text array )<!-- END REF-->
 
 <!--REF #_command_.SET ALLOWED METHODS.Params-->
+
+<div class="no-index">
 
 | 引数           | 型      |                             | 説明       |
 | ------------ | ------ | --------------------------- | -------- |
 | methodsArray | テキスト配列 | &#8594; | メソッド名の配列 |
 
+</div>
 <!-- END REF-->
+
+<div class="no-index">
+<details><summary>履歴</summary>
+
+| リリース                        | 内容 |
+| --------------------------- | -- |
+| 17 R2                       | 変更 |
+| <6 | 追加 |
+
+</details>
+</div>
 
 ## 説明
 
@@ -47,10 +61,10 @@ displayed_sidebar: docs
 この例は、名前が“formula”で始まるすべてのメソッドと、“Total\_general” メソッドを、保護されたコンテキスト下においてユーザーによって入力できるようにします:
 
 ```4d
- ARRAY TEXT(methodsArray;2)
- methodsArray{1}:="formula@"
- methodsArray{2}:="Total_general"
- SET ALLOWED METHODS(methodsArray)
+ ARRAY TEXT(methodsArray;2)
+ methodsArray{1}:="formula@"
+ methodsArray{2}:="Total_general"
+ SET ALLOWED METHODS(methodsArray)
 ```
 
 ## 参照

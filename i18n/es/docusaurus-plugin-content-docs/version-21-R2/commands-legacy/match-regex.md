@@ -22,6 +22,16 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>Historial</summary>
+
+|Versión|Cambios|
+|---|---|
+|11 SQL|Creado por|
+
+</details>
+</div>
+
 ## Descripción 
 
 <!--REF #_command_.Match regex.Summary-->El comando Match regex permite probar la conformidad de una cadena de caracteres con respecto a un conjunto de reglas sintetizadas por medio de un metalenguaje llamado “expresión regular” o “expresión racional.<!-- END REF-->” La abreviación regex es comúnmente empleada para indicar esto tipos de notaciones.
@@ -36,7 +46,7 @@ Si *pos\_encont.*y *long\_encont* son variables, el comando devuelve la posició
 
 El parámetro opcional *\** indica, cuando se pasa, que la búsqueda debe llevarse a cabo en la posición especificada por *inicio* sin buscar más allá en caso de falla.
 
-El comando devuelve [True](true.md "True") si la búsqueda encuentra una ocurrencia.
+El comando devuelve [True](../commands/true) si la búsqueda encuentra una ocurrencia.
 
 Para mayor información sobre regex, consulte la siguiente dirección:  
 *http://en.wikipedia.org/wiki/Regular\_expression*

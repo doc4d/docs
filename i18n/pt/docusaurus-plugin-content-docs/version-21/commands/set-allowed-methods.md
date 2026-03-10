@@ -5,15 +5,29 @@ slug: /commands/set-allowed-methods
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.SET ALLOWED METHODS.Syntax-->**SET ALLOWED METHODS** ( *methodsArray* )<!-- END REF-->
+<!--REF #_command_.SET ALLOWED METHODS.Syntax-->**SET ALLOWED METHODS** ( *methodsArray* : Text array )<!-- END REF-->
 
 <!--REF #_command_.SET ALLOWED METHODS.Params-->
+
+<div class="no-index">
 
 | Parâmetro    | Tipo       |                             | Descrição                 |
 | ------------ | ---------- | --------------------------- | ------------------------- |
 | methodsArray | Text array | &#8594; | Array de nomes de métodos |
 
+</div>
 <!-- END REF-->
+
+<div class="no-index">
+<details><summary>História</summary>
+
+| Release                     | Mudanças   |
+| --------------------------- | ---------- |
+| 17 R2                       | Modificado |
+| <6 | Adicionado |
+
+</details>
+</div>
 
 ## Descrição
 
@@ -47,10 +61,10 @@ Esse comando filtra apenas a **entrada** dos métodos, não sua **execução**. 
 This example authorizes all methods starting with “formula” and the “Total\_general” method to be entered by the user in protected contexts:
 
 ```4d
- ARRAY TEXT(methodsArray;2)
- methodsArray{1}:="formula@"
- methodsArray{2}:="Total_general"
- SET ALLOWED METHODS(methodsArray)
+ ARRAY TEXT(methodsArray;2)
+ methodsArray{1}:="formula@"
+ methodsArray{2}:="Total_general"
+ SET ALLOWED METHODS(methodsArray)
 ```
 
 ## Veja também

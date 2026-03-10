@@ -17,13 +17,24 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>Historial</summary>
+
+|Versión|Cambios|
+|---|---|
+|6|Creado por|
+|12|Renombrar|
+
+</details>
+</div>
+
 ## Descripción 
 
 <!--REF #_command_.OBJECT SET VISIBLE.Summary-->El comando OBJECT SET VISIBLE muestra u oculta los objetos especificados por *objeto*.<!-- END REF-->
 
 Si especifica el parámetro opcional *\**, indica que el parámetro *objeto* designa el nombre de un objeto (una cadena). Si no pasa el parámetro \*, indica que el parámetro *objeto* es un campo o una variable. En este caso, usted especifica una referencia de un campo o de una variable (campo o variable tipo objeto únicamente) en lugar de una cadena. Para mayor información sobre nombres de objetos, consulte la sección . 
 
-Si pasa *visible* igual a [TRUE](true.md "TRUE"), los objetos son mostrados. Si pasa *visible* igual a [FALSE](false.md "FALSE"), los objetos se ocultan. 
+Si pasa *visible* igual a [True](../commands/true), los objetos son mostrados. Si pasa *visible* igual a [False](../commands/false), los objetos se ocultan. 
 
 ## Ejemplo 
 

@@ -17,13 +17,24 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>履歴</summary>
+
+|リリース|内容|
+|---|---|
+|6|初出|
+|12|名称変更|
+
+</details>
+</div>
+
 ## 説明 
 
 <!--REF #_command_.OBJECT SET VISIBLE.Summary-->OBJECT SET VISIBLE コマンドは、*object*によって指定されるオブジェクトを表示、あるいは非表示にします。<!-- END REF--> 
 
 オプションの *\** 引数を指定した場合、*object*はオブジェクト名です (文字列) 。オプションの \* 引数を省略すると、*object*はフィールドまたは変数です。この場合、文字列ではなくフィールドまたは変数参照 (フィールドまたは変数のみ) を指定します。オブジェクト名に関する詳細はを参照してください。
 
-引数*visible*に[True](true.md "True")渡すとオブジェクトが表示されます。引数*visible*に[FALSE](false.md "FALSE")を渡すとオブジェクトが非表示になります。
+引数*visible*に[True](../commands/true)渡すとオブジェクトが表示されます。引数*visible*に[False](../commands/false)を渡すとオブジェクトが非表示になります。
 
 ## 例題 
 

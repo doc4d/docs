@@ -16,6 +16,16 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>履歴</summary>
+
+|リリース|内容|
+|---|---|
+|6.5|初出|
+
+</details>
+</div>
+
 ## 説明 
 
 <!--REF #_command_.BOOLEAN ARRAY FROM SET.Summary-->BOOLEAN ARRAY FROM SETコマンドは、テーブル内の各レコードが指定されたセットに含まれるか含まれないかを示すブール配列を作成します。<!-- END REF-->
@@ -27,7 +37,7 @@ displayed_sidebar: docs
 * 対応するレコードがセットに含まれる場合はTrue
 * 対応するレコードがセットに含まれない場合はFalse
 
-**警告：** *booleanArr*配列の総要素数に意味はありません。構造上の理由により、この数はテーブル上の実存のレコード数と異なっています。起こりうる余分の要素は[False](false.md "False")にセットされます。
+**警告：** *booleanArr*配列の総要素数に意味はありません。構造上の理由により、この数はテーブル上の実存のレコード数と異なっています。起こりうる余分の要素は[False](../commands/false)にセットされます。
 
 *set*引数を指定しない場合、コマンドはカレントプロセスのUserSetを使用します。
 

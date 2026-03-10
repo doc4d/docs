@@ -15,9 +15,19 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>履歴</summary>
+
+|リリース|内容|
+|---|---|
+|6|初出|
+
+</details>
+</div>
+
 ## 説明 
 
-<!--REF #_command_.Caps lock down.Summary-->Caps lock down はCaps Lock キーが押されていると[True](true.md "True")を返します。<!-- END REF-->
+<!--REF #_command_.Caps lock down.Summary-->Caps lock down はCaps Lock キーが押されていると[True](../commands/true)を返します。<!-- END REF-->
 
 ## 例題 
 

@@ -9,11 +9,25 @@ displayed_sidebar: docs
 
 <!--REF #_command_.FORM Event.Params-->
 
+<div class="no-index">
+
 | 引数  | 型      |                             | 説明         |
 | --- | ------ | --------------------------- | ---------- |
 | 戻り値 | Object | &#8592; | イベントオブジェクト |
 
+</div>
 <!-- END REF-->
+
+<div class="no-index">
+<details><summary>履歴</summary>
+
+| リリース  | 内容      |
+| ----- | ------- |
+| 18 R2 | 変更      |
+| 18    | Created |
+
+</details>
+</div>
 
 ## 説明
 
@@ -37,7 +51,7 @@ displayed_sidebar: docs
 
 イベントオブジェクトには、イベントが発生したオブジェクト によっては追加のプロパティが含まれていることがあります。  これは以下のオブジェクトで生成された *eventObj* オブジェクトが対象です:
 
-- リストボックスまたはリストボックスカラムオブジェクト。詳細は[こちらの章](../FormObjects/listbox_overview.md#supported-form-events)を参照してください。
+- リストボックスまたはリストボックスカラムオブジェクト。詳細は[こちらの章](../FormObjects/listbox-object.md#supported-form-events)を参照してください。
 - 4D View Pro エリア。詳細は[On VP Ready フォームイベント](../Events/onVpReady.md) を参照してください。
 
 ***注意:*** カレントのイベントが何もない場合、**FORM Event** はnull オブジェクトを返します。
@@ -47,9 +61,9 @@ displayed_sidebar: docs
 ボタン上でOn Clicked イベントを管理したい場合を考えます:
 
 ```4d
- If(FORM Event.code=On Clicked)
-    ...
- End if
+ If(FORM Event.code=On Clicked)
+    ...
+ End if
 ```
 
 ## 例題 2
@@ -61,13 +75,13 @@ displayed_sidebar: docs
 On Header Click イベントを使用してカラムをソートすることができます:
 
 ```4d
- Form.event:=FORM Event
- Case of
-    :(Form event code=On Header Click)
-       if(Form.event.columnName="lastname")
-          Form.employees:=Form.employees.orderBy(Form.event.columnName+", firstname")
-       End if
- End case
+ Form.event:=FORM Event
+ Case of
+    :(Form event code=On Header Click)
+       if(Form.event.columnName="lastname")
+          Form.employees:=Form.employees.orderBy(Form.event.columnName+", firstname")
+       End if
+ End case
 ```
 
 ## 例題 3
@@ -79,17 +93,17 @@ On Header Click イベントを使用してカラムをソートすることが�
 *setColor* メソッドの中身です:
 
 ```4d
- var $event;$0;$meta : Object
- $event:=FORM Event
- $meta:=New object
- 
- Case of
-    :($event.code=On Display Detail)
-       If($event.isRowSelected)
-          $meta.fill:="lightblue"
-       End if
- End case
- $0:=$meta
+ var $event;$0;$meta : Object
+ $event:=FORM Event
+ $meta:=New object
+ 
+ Case of
+    :($event.code=On Display Detail)
+       If($event.isRowSelected)
+          $meta.fill:="lightblue"
+       End if
+ End case
+ $0:=$meta
 ```
 
 その結果、行が選択された際のリストボックスは以下のようになります:

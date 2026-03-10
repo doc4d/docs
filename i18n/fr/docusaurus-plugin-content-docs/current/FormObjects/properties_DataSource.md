@@ -11,7 +11,7 @@ Lorsque l'option d'**insertion automatique** n'est pas définie (par défaut), l
 
 Cette propriété est prise en charge par :
 
-- les objets de formulaire [Combo box](comboBox_overview.md) et [colonnes de list box](listbox_overview.md#list-box-columns) associés à une énumération.
+- les objets de formulaire [Combo box](comboBox_overview.md) et [colonnes de list box](listbox-column.md) associés à une énumération.
 - les objets de formulaire [Combo box](comboBox_overview.md) dont la liste associée est remplie par leur tableau ou leur objet datasource.
 
 Par exemple, pour une énumération contenant "France, Allemagne, Italie" et associée à une liste déroulante "Pays" : si la propriété **insertion automatique** est activée et qu'un utilisateur saisit "Espagne", la valeur "Espagne" est automatiquement ajoutée à la liste en mémoire :
@@ -28,7 +28,7 @@ Par exemple, pour une énumération contenant "France, Allemagne, Italie" et ass
 
 #### Objets pris en charge
 
-[Combo Box](comboBox_overview.md) - [Colonne List Box](listbox_overview.md#list-box-columns)
+[Combo Box](comboBox_overview.md) - [Colonne List Box](listbox-column.md)
 
 ---
 
@@ -45,11 +45,11 @@ Associe une énumération à un objet. Il peut s'agir d'un nom d'énumération (
 
 #### Objets pris en charge
 
-[Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
+[Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md) - [List Box Column](listbox-column.md)
 
 #### Commandes
 
-[OBJECT Get list name](../commands-legacy/object-get-list-name.md) - [OBJECT Get list reference](../commands-legacy/object-get-list-reference.md) - [OBJECT SET LIST BY NAME](../commands-legacy/object-set-list-by-name.md) - [OBJECT SET LIST BY REFERENCE](../commands-legacy/object-set-list-by-reference.md)
+[OBJECT Get list name](../commands/object-get-list-name) - [OBJECT Get list reference](../commands/object-get-list-reference) - [OBJECT SET LIST BY NAME](../commands/object-set-list-by-name) - [OBJECT SET LIST BY REFERENCE](../commands/object-set-list-by-reference)
 
 ---
 
@@ -89,7 +89,7 @@ Indique une variable ou une expression qui se verra attribuer l'élément/l'enti
 
 #### Commandes
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -117,7 +117,7 @@ Indique une variable ou une expression qui se verra attribuer un entier long ind
 
 #### Commandes
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -125,7 +125,7 @@ Indique une variable ou une expression qui se verra attribuer un entier long ind
 
 Définit le type de données pour l'expression affichée. Cette propriété est utilisée avec :
 
-- les [colonnes de list box](listbox_overview.md#list-box-columns) de type sélection et collection.
+- les [colonnes de list box](listbox-column.md) de type sélection et collection.
 - les [listes déroulantes](dropdownList_Overview.md) associées à des objets ou des tableaux.
 
 Voir aussi la section [**Type d'expression**](properties_Object.md#expression-type).
@@ -138,7 +138,7 @@ Voir aussi la section [**Type d'expression**](properties_Object.md#expression-ty
 
 #### Objets pris en charge
 
-[Listes déroulantes](dropdownList_Overview.md) associées à des objets ou à des tableaux - [Colonne List Box](listbox_overview.md#list-box-columns)
+[Listes déroulantes](dropdownList_Overview.md) associées à des objets ou à des tableaux - [Colonne List Box](listbox-column.md)
 
 ---
 
@@ -153,7 +153,7 @@ Trois options sont disponibles :
 
 - **Référence de liste**: déclare que la liste déroulante est hiérarchique. Cela signifie que la liste déroulante peut afficher jusqu'à deux niveaux hiérarchiques et que son contenu peut être géré par les commandes du langage 4D du thème **Listes hiérarchiques**.
 - **Valeur de l'élément sélectionné** (par défaut) : la liste déroulante n'est pas hiérarchique et la valeur de l'élément choisi dans la liste par l'utilisateur est enregistrée directement. Par exemple, si l'utilisateur choisit la valeur "Bleu", cette valeur est enregistrée dans le champ.
-- **Référence de l'élément sélectionné**: la liste déroulante n'est pas hiérarchique et la référence de l'élément de la liste de choix est enregistrée dans l'objet. Cette référence est la valeur numérique associée à chaque élément, soit par l'intermédiaire du paramètre *itemRef* des commandes [`APPEND TO LIST`](../commands-legacy/append-to-list.md) ou [`SET LIST ITEM`](../commands-legacy/set-list-item.md), soit dans l'éditeur d'énumérations. Cette option permet d'optimiser l'utilisation de la mémoire : le stockage de valeurs numériques dans les champs occupe moins d'espace que le stockage de chaînes de caractères. Il facilite également la traduction des applications : il suffit de créer plusieurs listes dans différentes langues mais avec les mêmes références d'éléments, puis de charger la liste en fonction de la langue de l'application.
+- **Référence de l'élément sélectionné**: la liste déroulante n'est pas hiérarchique et la référence de l'élément de la liste de choix est enregistrée dans l'objet. Cette référence est la valeur numérique associée à chaque élément, soit par l'intermédiaire du paramètre *itemRef* des commandes [`APPEND TO LIST`](../commands/append-to-list) ou [`SET LIST ITEM`](../commands/set-list-item), soit dans l'éditeur d'énumérations. Cette option permet d'optimiser l'utilisation de la mémoire : le stockage de valeurs numériques dans les champs occupe moins d'espace que le stockage de chaînes de caractères. Il facilite également la traduction des applications : il suffit de créer plusieurs listes dans différentes langues mais avec les mêmes références d'éléments, puis de charger la liste en fonction de la langue de l'application.
 
 L'utilisation de l'option de **Référence élément sélectionné** nécessite le respect des principes suivants :
 
@@ -195,13 +195,13 @@ Vous devez saisir une liste de valeurs. Dans l'éditeur de formulaires, une boî
 
 #### Objets pris en charge
 
-[List Box Column (array type only)](listbox_overview.md#list-box-columns)
+[List Box Column (array type only)](listbox-column.md)
 
 ---
 
 ## Expression
 
-Cette description est spécifique aux colonnes de list box de type [sélection](listbox_overview.md#selection-list-boxes) et [ collection](listbox_overview.md#collection-or-entity-selection-list-boxes). Voir aussi la section **[Variable ou expression](properties_Object.md#variable-or-expression)**.
+Cette description est spécifique aux colonnes de list box de type [sélection](FormObjects/listbox-object.md#selection-list-boxes) et [ collection](../FormObjects/listbox-object.md#collection-or-entity-selection-list-boxes). Voir aussi la section **[Variable ou expression](properties_Object.md#variable-or-expression)**.
 
 Une expression 4D à associer à une colonne. Vous pouvez saisir :
 
@@ -226,7 +226,7 @@ Une expression 4D à associer à une colonne. Vous pouvez saisir :
   - Boolean
 
 Pour les listbox collection/entity selection, les types null ou non pris en charge sont affichés sous forme de chaînes vides.  
-Lorsque vous utilisez des collections ou des entity selections, vous déclarez généralement la propriété de l'élément ou l'attribut de l'entité associé(e) à une colonne dans une expression contenant [This](../commands/this.md). `This` est une commande 4D dédiée qui renvoie une référence à l'élément en cours de traitement. Par exemple, vous pouvez utiliser `This.<propertyPath>` où `\<propertyPath>` est le chemin d'une propriété dans la collection ou un chemin d'attribut d'entité pour accéder à la valeur courante de chaque élément/entité.
+Lorsque vous utilisez des collections ou des entity selections, vous déclarez généralement la propriété de l'élément ou l'attribut de l'entité associé(e) à une colonne dans une expression contenant [This](../commands/this). `This` est une commande 4D dédiée qui renvoie une référence à l'élément en cours de traitement. Par exemple, vous pouvez utiliser `This.<propertyPath>` où `\<propertyPath>` est le chemin d'une propriété dans la collection ou un chemin d'attribut d'entité pour accéder à la valeur courante de chaque élément/entité.
 Si vous utilisez une collection de valeurs scalaires, 4D créera un objet pour chaque élément de la collection avec une seule propriété (nommée "value"), remplie avec la valeur de l'élément. Dans ce cas, vous utiliserez `This.value` comme expression.
 
 Si une [expression non assignable](Concepts/quick-tour.md#expressions) est utilisée (par exemple `[Person]FirstName+" "+[Person]LastName`), la colonne n'est jamais saisissable, même si la propriété [Saisissable](properties_Entry.md#enterable) est activée.
@@ -241,7 +241,7 @@ Si un champ, une variable ou une expression assignable (*par exemple Person.last
 
 #### Objets pris en charge
 
-[Colonne de list box](listbox_overview.md#list-box-columns)
+[Colonne de list box](listbox-column.md)
 
 ---
 
@@ -265,7 +265,7 @@ Toutes les tables de la base de données peuvent être utilisées, que le formul
 
 #### Commandes
 
-[LISTBOX GET TABLE SOURCE](../commands-legacy/listbox-get-table-source.md) - [LISTBOX SET TABLE SOURCE](../commands-legacy/listbox-set-table-source.md)
+[LISTBOX GET TABLE SOURCE](../commands/listbox-get-table-source) - [LISTBOX SET TABLE SOURCE](../commands/listbox-set-table-source)
 
 ---
 
@@ -274,12 +274,12 @@ Toutes les tables de la base de données peuvent être utilisées, que le formul
 Cette propriété est disponible dans les conditions suivantes :
 
 - une [énumération](#choice-list) est associée à l'objet
-- pour les [zones de saisie](input_overview.md) et les [colonnes de listbox](listbox_overview.md#list-box-columns), une [énumération obligatoire](properties_RangeOfValues.md#required-list) est également définie pour l'objet (les deux options doivent généralement utiliser la même liste), de sorte que seules les valeurs de l'énumération peuvent être saisies par l'utilisateur.
+- pour les [zones de saisie](input_overview.md) et les [colonnes de listbox](listbox-column.md), une [énumération obligatoire](properties_RangeOfValues.md#required-list) est également définie pour l'objet (les deux options doivent généralement utiliser la même liste), de sorte que seules les valeurs de l'énumération peuvent être saisies par l'utilisateur.
 
 Cette propriété spécifie, dans le contexte d'un champ ou d'une variable associée à une liste de valeurs, le type de contenu à sauvegarder :
 
 - **Enregistrer comme valeur** (option par défaut) : la valeur de l'élément choisi dans la liste par l'utilisateur est enregistrée directement. Par exemple, si l'utilisateur choisit la valeur "Bleu", cette valeur est enregistrée dans le champ.
-- **Enregistrer comme référence** : la référence de l'élément de l'énumération est enregistrée dans l'objet. Cette référence est la valeur numérique associée à chaque élément, soit par l'intermédiaire du paramètre *itemRef* des commandes [`APPEND TO LIST`](../commands-legacy/append-to-list.md) ou [`SET LIST ITEM`](../commands-legacy/set-list-item.md), soit dans l'éditeur d'énumérations.
+- **Enregistrer comme référence** : la référence de l'élément de l'énumération est enregistrée dans l'objet. Cette référence est la valeur numérique associée à chaque élément, soit par l'intermédiaire du paramètre *itemRef* des commandes [`APPEND TO LIST`](../commands/append-to-list) ou [`SET LIST ITEM`](../commands/set-list-item), soit dans l'éditeur d'énumérations.
 
 Cette option permet d'optimiser l'utilisation de la mémoire : le stockage de valeurs numériques dans les champs occupe moins d'espace que le stockage de chaînes de caractères. Il facilite également la traduction des applications : il suffit de créer plusieurs listes dans différentes langues mais avec les mêmes références d'éléments, puis de charger la liste en fonction de la langue de l'application.
 
@@ -296,7 +296,7 @@ L'utilisation de cette propriété nécessite le respect des principes suivants 
 
 #### Objets pris en charge
 
-[Zone de saisie](input_overview.md) - [Colonne List Box](listbox_overview.md#list-box-columns)
+[Zone de saisie](input_overview.md) - [Colonne List Box](listbox-column.md)
 
 ---
 
@@ -323,7 +323,7 @@ Spécifie une variable ou une expression qui sera assignée aux éléments ou en
 
 #### Commandes
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -347,6 +347,7 @@ Spécifie la sélection temporaire à utiliser. Vous devez entrer le nom d'une s
 
 #### Commandes
 
-[LISTBOX GET TABLE SOURCE](../commands-legacy/listbox-get-table-source.md) - [LISTBOX SET TABLE SOURCE](../commands-legacy/listbox-set-table-source.md)
+[LISTBOX GET TABLE SOURCE](../commands/listbox-get-table-source) - [LISTBOX SET TABLE SOURCE](../commands/listbox-set-table-source)
+
 
 

@@ -20,6 +20,17 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>Histórico</summary>
+
+|Versão|Alterações|
+|---|---|
+|<6|Criado|
+|2004|Modificado|
+
+</details>
+</div>
+
 ## Descrição 
 
 <!--REF #_command_.DISPLAY SELECTION.Summary-->DISPLAY SELECTION mostra a seleção de *tabela*, utilizando o formulário de saída.<!-- END REF--> Os registros se mostram em uma lista pela qual pode ser deslocada similar ao do modo Desenho. Se o usuário fizer duplo clique em um registro, por padrão é mostrado o registro no formulário de entrada atual. A lista é mostrada na janela do primeiro plano.  
@@ -41,7 +52,7 @@ O parâmetro *modoSelecao* é utilizado para definir as possibilidades de seleç
   
 Se não passa o parâmetro *modoSelecao*, por padrão é utilizado o modo “Seleção múltipla”.  
   
-O parâmetro *entradaLista* lhe permite autorizar o modo “Entrada em lista” na lista mostrada. Este modo permite ao usuário selecionar e modificar diretamente os valores dos registros no formulário de saída. Passe [True](true.md "True") para ativar este modo ou [False](false.md "False") para desativá-lo. Por padrão, se não passar o parâmetro *entradaLista*, o modo “Entrada em lista” é desativado.  
+O parâmetro *entradaLista* lhe permite autorizar o modo “Entrada em lista” na lista mostrada. Este modo permite ao usuário selecionar e modificar diretamente os valores dos registros no formulário de saída. Passe [True](../commands/true) para ativar este modo ou [False](../commands/false) para desativá-lo. Por padrão, se não passar o parâmetro *entradaLista*, o modo “Entrada em lista” é desativado.  
   
 Lembre que com o comando DISPLAY SELECTION, este parâmetro apenas permite a seleção dos valores na lista e não sua modificação. De fato, o comando DISPLAY SELECTION carrega os registros da seleção atual em modo apenas leitura. Só o comando [MODIFY SELECTION](modify-selection.md) permite efetivamente a entrada de valores.   
   

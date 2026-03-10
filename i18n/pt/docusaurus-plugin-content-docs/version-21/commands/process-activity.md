@@ -4,9 +4,11 @@ title: Process activity
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Process activity.Syntax-->**Process activity** () : Object<br/>**Process activity** ( *options* ) : Object<br/>**Process activity** ( *sessionID* ) : Object<br/>**Process activity** ( *sessionID* ; *options* ) : Object<!-- END REF-->
+<!--REF #_command_.Process activity.Syntax-->**Process activity** () : Object<br/>**Process activity** ( *options* : Integer ) : Object<br/>**Process activity** ( *sessionID* : Text ) : Object<br/>**Process activity** ( *sessionID* : Text ; *options* : Integer ) : Object<!-- END REF-->
 
 <!--REF #_command_.Process activity.Params-->
+
+<div class="no-index">
 
 | Parâmetro | Tipo    |                             | Descrição                                                                                |
 | --------- | ------- | --------------------------- | ---------------------------------------------------------------------------------------- |
@@ -14,16 +16,19 @@ displayed_sidebar: docs
 | options   | Integer | &#8594; | Opções de retorno                                                                        |
 | Resultado | Object  | &#8592; | Snapshot de sessões de usuários em execução e/ou (apenas 4D Servidor) |
 
+</div>
 <!-- END REF-->
 
+<div class="no-index">
 <details><summary>História</summary>
 
-| Release | Mudanças                         |
-| ------- | -------------------------------- |
-| 20 R7   | Suporte do parâmetro *sessionID* |
-| 21      | Support of web user sessions     |
+| Release | Mudanças                                                                                  |
+| ------- | ----------------------------------------------------------------------------------------- |
+| 21      | Support of web user sessions                                                              |
+| 20 R7   | <ul><li>Support of *sessionID* parameter</li><li>Renamed (Get process activity)</li></ul> |
 
 </details>
+</div>
 
 ## Descrição
 
@@ -34,7 +39,7 @@ Por padrão quando usado sem quaisquer parâmetros, a **atividade de processo** 
 - "processos", uma coleção de todos os processos
 - "sessões" (apenas 4D Servidor), uma coleção de todas as sessões
 
-No Servidor 4D, você pode filtrar informações para serem retornadas usando os parâmetros opcionais *sessionID* e *opções*:
+No 4D Server, você pode filtrar informações para serem retornadas usando os parâmetros opcionais *sessionID* e *options*:
 
 - Se você passar um ID de sessão de usuário no parâmetro *sessionID*, o comando retorna somente informações relacionadas a esta sessão. Por padrão se o parâmetro *options* for omitido, o objeto retornado contém uma coleção com todos os processos relacionados à sessão e uma coleção com um único objeto descrevendo a sessão. Se você passar um ID de sessão inválido, um objeto **null** será retornado.
 - Você pode selecionar a(s) coleção(ões) a retornar passando uma das seguintes constantes no parâmetro *options*:
@@ -43,7 +48,7 @@ No Servidor 4D, você pode filtrar informações para serem retornadas usando os
 | ---------------------- | ----- | --------------------------------------------------------------------------- |
 | Processes and sessions | 0     | Retorna as listas "processos" e "sessões" (valor padrão) |
 | Processes only         | 1     | Retorna apenas a lista de "processos"                                       |
-| Somente sessões        | 2     | Retorna apenas a lista de "sessões"                                         |
+| Sessions only          | 2     | Retorna apenas a lista de "sessões"                                         |
 
 :::note
 
@@ -76,18 +81,18 @@ No servidor, o comando `Process activity` retorna uma propriedade adicional de "
 Se quiser obter a coleção de todas as sessões de usuários:
 
 ```4d
-  //Para ser executado no servidor
- 
- var $o : Object
- var $i : Integer
+  //To be executed on the server
+ 
+ var $o : Object
+ var $i : Integer
  var $processName;$userName : Text
 
- 
- $o:=Process activity //obter informação de processo e sessão
- For($i;0;($o.processes.length)-1) //Iterar sobre a coleção "processes" 
+ 
+ $o:=Process activity //Get process & session info
+ For($i;0;($o.processes.length)-1) //Iterate over the "processes" collection
     $processName:=$o.processes[$i].name
-    $userName:=String($o.processes[$i].session.userName) // Acesso fácil a  userName
-  //use String porque o objeto de sessão pode ser indefinido
+    $userName:=String($o.processes[$i].session.userName) // Easy access to userName
+  //use String because session object might be undefined
  End for
 ```
 

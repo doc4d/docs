@@ -5,7 +5,7 @@ title: EntitySelection
 
 エンティティセレクションとは、同じ [データクラス](ORDA/dsMapping.md#データクラス) に所属する一つ以上の[エンティティ](ORDA/dsMapping.md#エンティティ) への参照を格納しているオブジェクトのことです。 エンティティセレクションは、データクラスから 0個、1個、あるいは X個のエンティティを格納することができます (X はデータクラスに格納されているエンティティの総数です)。
 
-エンティティセレクションは、[`.all()`](DataClassClass.md#all)、[`.query()`](DataClassClass.md#query) などの [`DataClass` クラス](DataClassClass.md) の関数や、[`.and()`](#and)、[`orderBy()`](#orderby) など `EntitySelection` クラス自身の関数を用いて、既存のセレクションから作成することができます。 また、[`dataClass.newSelection()`](DataClassClass.md#newselection) 関数または [`Create entity selection`](../commands/create-entity-selection.md) コマンドを使用して、空のエンティティセレクションを作成することもできます。
+エンティティセレクションは、[`.all()`](DataClassClass.md#all)、[`.query()`](DataClassClass.md#query) などの [`DataClass` クラス](DataClassClass.md) の関数や、[`.and()`](#and)、[`orderBy()`](#orderby) など `EntitySelection` クラス自身の関数を用いて、既存のセレクションから作成することができます。 また、[`dataClass.newSelection()`](DataClassClass.md#newselection) 関数または [`Create entity selection`](../commands/create-entity-selection) コマンドを使用して、空のエンティティセレクションを作成することもできます。
 
 ### 概要
 
@@ -49,7 +49,7 @@ title: EntitySelection
 
 #### 参照
 
-[`USE ENTITY SELECTION`](../commands/use-entity-selection.md)
+[`USE ENTITY SELECTION`](../commands/use-entity-selection)
 
 <!-- REF EntitySelectionClass.index.Desc -->
 
@@ -1833,7 +1833,7 @@ pathObjects コレクションには必要な数だけオブジェクトを追�
 | ------------- | ---------------------------------- | :-------------------------: | ---------------------------------------------------------------------------------------------------- |
 | queryString   | Text                               |              ->             | 検索条件 (文字列)                                                                        |
 | formula       | Object                             |              ->             | 検索条件 (フォーミュラオブジェクト)                                                               |
-| value         | any                                |              ->             | プレースホルダー用の値                                                                                          |
+| value         | any                                |              ->             | 定数値 (プレースホルダーを使用しない)                                                              |
 | querySettings | Object                             |              ->             | クエリオプション: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan |
 | 戻り値           | 4D.EntitySelection | <- | *queryString* または *formula* に渡した検索条件に合致する、エンティティセレクション内のエンティティから構成された新しいエンティティセレクション\*               |
 
@@ -2729,3 +2729,4 @@ $employeesCollection:=$employees.toCollection("firstName, lastName, directReport
 ```
 
 <!-- END REF -->
+

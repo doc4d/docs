@@ -4,17 +4,21 @@ title: Session storage
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Session storage.Syntax-->**Session storage** ( *id* ) : Object<!-- END REF-->
+<!--REF #_command_.Session storage.Syntax-->**Session storage** ( *id* : Text ) : Object<!-- END REF-->
 
 <!--REF #_command_.Session storage.Params-->
+
+<div class="no-index">
 
 | Parámetros | Tipo   |                             | Descripción                                                |
 | ---------- | ------ | --------------------------- | ---------------------------------------------------------- |
 | id         | Text   | &#8594; | Identificador único (UUID) de la sesión |
 | Resultado  | Object | &#8592; | Objeto de almacenamiento de la sesión                      |
 
+</div>
 <!-- END REF-->
 
+<div class="no-index">
 <details><summary>Historia</summary>
 
 | Lanzamiento | Modificaciones                |
@@ -23,6 +27,7 @@ displayed_sidebar: docs
 | 20 R6       | Añadidos                      |
 
 </details>
+</div>
 
 ## Descripción
 
@@ -39,9 +44,9 @@ El objeto devuelto es la propiedad [**.storage**](../API/SessionClass.md#storage
 Este método modifica el valor de una propiedad "settings" almacenada en el objeto de almacenamiento de una sesión específica:
 
 ```4d
-//Configuración del almacenamiento de una sesión
-//Configuración de la propiedad del método "Ejecutar en el servidor"
-
+  //Set storage for a session
+  //The "Execute On Server" method property is set
+ 
  #DECLARE($id : Text; $text : Text)
  var $obj : Object
  

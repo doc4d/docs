@@ -15,9 +15,19 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>履歴</summary>
+
+|リリース|内容|
+|---|---|
+|6|初出|
+
+</details>
+</div>
+
 ## 説明 
 
-<!--REF #_command_.Windows Ctrl down.Summary-->Windows Ctrl down はWindowsのCtrlキーが押されていると[True](true.md "True")を返します。<!-- END REF-->Macintoshのプラットフォーム上で呼び出された場合は、 Macintoshのcommandキーが押されていると、Windows Ctrl down は[True](true.md "True")を返します。
+<!--REF #_command_.Windows Ctrl down.Summary-->Windows Ctrl down はWindowsのCtrlキーが押されていると[True](../commands/true)を返します。<!-- END REF-->Macintoshのプラットフォーム上で呼び出された場合は、 Macintoshのcommandキーが押されていると、Windows Ctrl down は[True](../commands/true)を返します。
 
 ## 例題 
 

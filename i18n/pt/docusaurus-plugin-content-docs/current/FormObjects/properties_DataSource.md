@@ -11,7 +11,7 @@ Quando a opção **inserção automática** não está definida (padrão), o val
 
 Esta propriedade é suportada por:
 
-- Objetos formulário [Combo box](comboBox_overview.md) e [coluna list box](listbox_overview.md#list-box-columns) associado para uma lista de seleção.
+- Objetos formulário [Combo box](comboBox_overview.md) e [coluna list box](listbox-column.md) associado para uma lista de seleção.
 - objetos de formulario [Combo box](comboBox_overview.md) cuya lista asociada se llena mediante su array o fuente de datos de objetos.
 
 Por exemplo, dada uma lista de opções contendo "França, Alemanha, Itália" que está associada a um combo box "Countries": se a propriedade **inserção automática** estiver definida e um usuário digitar "Espanha", o valor "Espanha" será automaticamente adicionado à lista na memória:
@@ -28,7 +28,7 @@ Por exemplo, dada uma lista de opções contendo "França, Alemanha, Itália" qu
 
 #### Objectos suportados
 
-[Combo Box](comboBox_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns)
+[Combo Box](comboBox_overview.md) - [Columna List Box](listbox-column.md)
 
 ---
 
@@ -45,11 +45,11 @@ Associa uma lista de opções a um objeto. Pode ser um nome da lista de opções
 
 #### Objectos suportados
 
-[Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
+[Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md) - [List Box Column](listbox-column.md)
 
 #### Comandos
 
-[OBJECT Get list name](../commands-legacy/object-get-list-name.md) - [OBJECT Get list reference](../commands-legacy/object-get-list-reference.md) - [OBJECT SET LIST BY NAME](../commands-legacy/object-set-list-by-name.md) - [OBJECT SET LIST BY REFERENCE](../commands-legacy/object-set-list-by-reference.md)
+[OBJECT Get list name](../commands/object-get-list-name) - [OBJECT Get list reference](../commands/object-get-list-reference) - [OBJECT SET LIST BY NAME](../commands/object-set-list-by-name) - [OBJECT SET LIST BY REFERENCE](../commands/object-set-list-by-reference)
 
 ---
 
@@ -89,7 +89,7 @@ Especifica uma variável ou expressão a que será atribuído o elemento/entidad
 
 #### Comandos
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -117,7 +117,7 @@ Especifica uma variável ou expressão a que será atribuída uma longa indicand
 
 #### Comandos
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -125,7 +125,7 @@ Especifica uma variável ou expressão a que será atribuída uma longa indicand
 
 Define o tipo de dados para a expressão apresentada. Esta propriedade é utilizada com:
 
-- [Colunas do List box](listbox_overview.md#list-box-columns) de tipo seleção e coleção.
+- [Colunas do List box](listbox-column.md) de tipo seleção e coleção.
 - [Listas suspensas](dropdownList_Overview.md) associadas a objetos ou arrays.
 
 Veja também [**Tipo de expressão**](properties_Object.md#expression-type).
@@ -138,7 +138,7 @@ Veja também [**Tipo de expressão**](properties_Object.md#expression-type).
 
 #### Objectos suportados
 
-[Listas desplegables](dropdownList_Overview.md) asociadas a objetos o arrays - [Columna List Box](listbox_overview.md#list-box-columns)
+[Listas desplegables](dropdownList_Overview.md) asociadas a objetos o arrays - [Columna List Box](listbox-column.md)
 
 ---
 
@@ -153,7 +153,7 @@ Estão disponíveis três opções:
 
 - **Referência de lista**: declara que a lista suspensa é hierárquica. Isso significa que a lista suspensa pode exibir até dois níveis hierárquicos e seu conteúdo pode ser gerenciado pelos comandos de linguagem 4D do tema **Listas hierárquicas**.
 - **Valor do item selecionado** (padrão): a lista suspensa não é hierárquica e o valor do item escolhido na lista pelo usuário é salvo diretamente. Por exemplo, se o usuário escolher o valor "Azul", esse valor será salvo no campo.
-- **Referência do item selecionado**: a lista suspensa não é hierárquica e a referência do item da lista de opções é salva no objeto. Essa referência é o valor numérico associado a cada item por meio do parâmetro *itemRef* dos comandos [`APPEND TO LIST`](../commands-legacy/append-to-list.md) ou [`SET LIST ITEM`](../commands-legacy/set-list-item.md), ou no editor de listas. Esta opção permite otimizar o uso de memória: armazenar valores numéricos em campos usa menos espaço do que armazenar frases. Também facilita traduzir aplicações: você apenas cria listas múltiplas em diferentes línguas, mas com referências do mesmo item, depois carregar a lista com base no idioma da aplicação.
+- **Referência do item selecionado**: a lista suspensa não é hierárquica e a referência do item da lista de opções é salva no objeto. Essa referência é o valor numérico associado a cada item por meio do parâmetro *itemRef* dos comandos [`APPEND TO LIST`](../commands/append-to-list) ou [`SET LIST ITEM`](../commands/set-list-item), ou no editor de listas. Esta opção permite otimizar o uso de memória: armazenar valores numéricos em campos usa menos espaço do que armazenar frases. Também facilita traduzir aplicações: você apenas cria listas múltiplas em diferentes línguas, mas com referências do mesmo item, depois carregar a lista com base no idioma da aplicação.
 
 O uso da opção **Referência de item selecionado** exige a conformidade com os seguintes princípios:
 
@@ -195,14 +195,14 @@ Lista de valores usados como valores padrão para a coluna do list box (somente 
 
 #### Objectos suportados
 
-[Coluna List Box (somente tipo array)](listbox_overview.md#list-box-columns)
+[Coluna List Box (somente tipo array)](listbox-column.md)
 
 ---
 
 ## Expression
 
-Essa descrição é específica para colunas de list box do tipo [seleção](listbox_overview.md#selection-list-boxes)
-e [collection](listbox_overview.md#collection-or-entity-selection-list-boxes). Consulte também a seção **[Variable or Expression](properties_Object.md#variable-or-expression)**.
+Essa descrição é específica para colunas de list box do tipo [seleção](FormObjects/listbox-object.md#selection-list-boxes)
+e [collection](../FormObjects/listbox-object.md#collection-or-entity-selection-list-boxes). Consulte também a seção **[Variable or Expression](properties_Object.md#variable-or-expression)**.
 
 Uma expressão 4D a associar a uma coluna. Você pode entrar:
 
@@ -227,7 +227,7 @@ Uma expressão 4D a associar a uma coluna. Você pode entrar:
 
 Nos list boxes coleção/entity selection, Null ou tipos sem suporte são exibidos como cadeias vazias.  
 Nos list boxes coleção/entity selection, Null ou tipos sem suporte são exibidos como cadeias vazias.\
-Ao usar coleções ou seleções de entidades, você geralmente declara a propriedade do elemento ou o atributo da entidade associado a uma coluna em uma expressão contendo [This](../commands/this.md). `This` es un comando 4D dedicado que devuelve una referencia al elemento actualmente procesado. Por ejemplo, puede utilizar `This.\<propertyPath>` donde `\<propertyPath>` es la ruta de una propiedad en la colección o una ruta de atributo de entidad para acceder al valor actual de cada elemento/entidad.
+Ao usar coleções ou seleções de entidades, você geralmente declara a propriedade do elemento ou o atributo da entidade associado a uma coluna em uma expressão contendo [This](../commands/this). `This` es un comando 4D dedicado que devuelve una referencia al elemento actualmente procesado. Por ejemplo, puede utilizar `This.\<propertyPath>` donde `\<propertyPath>` es la ruta de una propiedad en la colección o una ruta de atributo de entidad para acceder al valor actual de cada elemento/entidad.
 Se você usar uma coleção de valores escalares, o 4D criará um objeto para cada elemento da coleção com uma única propriedade (denominada "value"), preenchida com o valor do elemento. Nesse caso, você usará `This.value` como expressão.
 
 Si se utiliza una expresión no asignable [](Concepts/quick-tour.md#expressions) (por ejemplo, `[Person]FirstName+" "+[Person]LastName`), la columna nunca se podrá introducir aunque la propiedad [Editable](properties_Entry.md#enterable) esté activada.
@@ -242,7 +242,7 @@ Si se utiliza un campo, una variable o una expresión asignable (*por ejemplo Pe
 
 #### Objectos suportados
 
-[Coluna de list box](listbox_overview.md#list-box-columns)
+[Coluna de list box](listbox-column.md)
 
 ---
 
@@ -266,7 +266,7 @@ Todas as tabelas do banco de dados podem ser usadas, independentemente de o form
 
 #### Comandos
 
-[LISTBOX GET TABLE SOURCE](../commands-legacy/listbox-get-table-source.md) - [LISTBOX SET TABLE SOURCE](../commands-legacy/listbox-set-table-source.md)
+[LISTBOX GET TABLE SOURCE](../commands/listbox-get-table-source) - [LISTBOX SET TABLE SOURCE](../commands/listbox-set-table-source)
 
 ---
 
@@ -275,12 +275,12 @@ Todas as tabelas do banco de dados podem ser usadas, independentemente de o form
 Esta propriedade está disponível nas seguintes condições:
 
 - una [lista de selección](#choice-list) está asociada al objeto
-- for [inputs](input_overview.md) and [list box columns](listbox_overview.md#list-box-columns), a [required list](properties_RangeOfValues.md#required-list) is also defined for the object (both options should use usually the same list), so that only values from the list can be entered by the user.
+- for [inputs](input_overview.md) and [list box columns](listbox-column.md), a [required list](properties_RangeOfValues.md#required-list) is also defined for the object (both options should use usually the same list), so that only values from the list can be entered by the user.
 
 Essa propriedade específica, no contexto de um campo ou variável associado a uma lista de valores, o tipo de conteúdo a ser salvo:
 
 - **Guardar como valor** (opción por defecto): el valor del elemento elegido en la lista por el usuario se guarda directamente. Por exemplo, se o usuário escolher o valor "Azul", esse valor será salvo no campo.
-- **Guardar como referencia**: la referencia del elemento de la lista de opciones se guarda en el objeto. Essa referência é o valor numérico associado a cada item por meio do parâmetro *itemRef* dos comandos [`APPEND TO LIST`](../commands-legacy/append-to-list.md) ou [`SET LIST ITEM`](../commands-legacy/set-list-item.md), ou no editor de listas.
+- **Guardar como referencia**: la referencia del elemento de la lista de opciones se guarda en el objeto. Essa referência é o valor numérico associado a cada item por meio do parâmetro *itemRef* dos comandos [`APPEND TO LIST`](../commands/append-to-list) ou [`SET LIST ITEM`](../commands/set-list-item), ou no editor de listas.
 
 Esta opção permite otimizar o uso de memória: armazenar valores numéricos em campos usa menos espaço do que armazenar frases. Também facilita traduzir aplicações: você apenas cria listas múltiplas em diferentes línguas, mas com referências do mesmo item, depois carregar a lista com base no idioma da aplicação.
 
@@ -297,7 +297,7 @@ A utilização deste bem exige o cumprimento dos seguintes princípios:
 
 #### Objectos suportados
 
-[Área de entrada](input_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns)
+[Área de entrada](input_overview.md) - [Columna List Box](listbox-column.md)
 
 ---
 
@@ -324,7 +324,7 @@ Especifica uma variável ou expressão à qual serão atribuídos os elementos o
 
 #### Comandos
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -348,6 +348,7 @@ Especifica a seleção temporária a ser utilizada. Você deve inserir o nome de
 
 #### Comandos
 
-[LISTBOX GET TABLE SOURCE](../commands-legacy/listbox-get-table-source.md) - [LISTBOX SET TABLE SOURCE](../commands-legacy/listbox-set-table-source.md)
+[LISTBOX GET TABLE SOURCE](../commands/listbox-get-table-source) - [LISTBOX SET TABLE SOURCE](../commands/listbox-set-table-source)
+
 
 

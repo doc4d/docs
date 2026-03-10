@@ -4,9 +4,11 @@ title: FORM EDIT
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.FORM EDIT.Syntax-->**FORM EDIT** ( {*aTable* ;} *form* )<br/>**FORM EDIT** ( {*aTable* ;} *form* ; *object* )<!-- END REF-->
+<!--REF #_command_.FORM EDIT.Syntax-->**FORM EDIT** ( {*aTable* : Table ;} *form* : Text )<br/>**FORM EDIT** ( {*aTable* : Table ;} *form* : Text ; *object* : Text )<!-- END REF-->
 
 <!--REF #_command_.FORM EDIT.Params-->
+
+<div class="no-index">
 
 | Paramètres | Type  |                             | Description                                                                                                                 |
 | ---------- | ----- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
@@ -14,15 +16,19 @@ displayed_sidebar: docs
 | form       | Text  | &#8594; | Nom du formulaire                                                                                                           |
 | object     | Text  | &#8594; | Nom de l'objet du formulaire ou nom du groupe                                                                               |
 
+</div>
 <!-- END REF-->
 
+<div class="no-index">
 <details><summary>Historique</summary>
 
 | Release | Modifications                         |
 | ------- | ------------------------------------- |
 | 20 R8   | Prise en charge du paramètre *object* |
+| 18 R5   | Created                               |
 
 </details>
+</div>
 
 ## Description
 
@@ -45,19 +51,19 @@ Passez une chaîne vide dans *objet* pour désélectionner tous les objets dans 
 Pour ouvrir le formulaire *Address* de la table *Contacts* :
 
 ```4d
- FORM EDIT([Contacts];"Address")
+ FORM EDIT([Contacts];"Address")
 ```
 
 Pour ouvrir le formulaire projet *ContactList* :
 
 ```4d
- FORM EDIT("ContactList")
+ FORM EDIT("ContactList")
 ```
 
 Pour ouvrir le formulaire projet *ContactPage* avec l'objet "name-input" sélectionné :
 
 ```4d
- FORM EDIT("ContactList"; "name-input")
+ FORM EDIT("ContactList"; "name-input")
 ```
 
 ## Voir également

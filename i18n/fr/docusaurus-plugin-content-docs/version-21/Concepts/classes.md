@@ -107,9 +107,14 @@ Les classes disponibles sont accessibles depuis leurs class stores. Il existe de
 
 <!-- REF #_command_.cs.Params -->
 
-| Paramètres | Type   |                             | Description                                                         |                  |
-| ---------- | ------ | --------------------------- | ------------------------------------------------------------------- | ---------------- |
-| classStore | Object | &#8592; | Class store utilisateur utilisateurs pour le projet ou le composant | <!-- END REF --> |
+<div class="no-index">
+
+| Paramètres | Type   |                             | Description                                                         |
+| ---------- | ------ | --------------------------- | ------------------------------------------------------------------- |
+| classStore | Object | &#8592; | Class store utilisateur utilisateurs pour le projet ou le composant |
+
+</div>
+<!-- END REF -->
 
 La commande `cs` <!-- REF #_command_.cs.Summary -->retourne le class store utilisateur pour le projet ou le composant courant<!-- END REF -->. Elle retourne toutes les classes utilisateur [définies](#class-definition) dans le projet ou le composant ouvert. Par défaut, seules les [classes ORDA](ORDA/ordaClasses.md) du projet sont disponibles.
 
@@ -127,9 +132,14 @@ $instance:=cs.myClass.new()
 
 <!-- REF #_command_.4D.Params -->
 
-| Paramètres | Type   |                             | Description    |                  |
-| ---------- | ------ | --------------------------- | -------------- | ---------------- |
-| classStore | Object | &#8592; | Class store 4D | <!-- END REF --> |
+<div class="no-index">
+
+| Paramètres | Type   |                             | Description    |
+| ---------- | ------ | --------------------------- | -------------- |
+| classStore | Object | &#8592; | Class store 4D |
+
+</div>
+<!-- END REF -->
 
 La commande `4D` <!-- REF #_command_.4D.Summary -->retourne le class store des classes 4D intégrées disponibles<!-- END REF -->. Elle donne accès à des API spécifiques telles que [CryptoKey](API/CryptoKeyClass.md).
 
@@ -638,7 +648,7 @@ Pour plus de détails, voir la description de la commande [`Super`](../commands/
 
 La commande [`This`](../commands/this.md) renvoie une référence à l'objet en cours de traitement. Dans la plupart des cas, la valeur de `This` est déterminée par la manière dont une fonction de classe est appelée. Habituellement, `This` fait référence à l'objet sur lequel la fonction a été appelée, comme si la fonction était sur l'objet.
 
-Voici un exemple :
+Exemple :
 
 ```4d
 //Classe : ob

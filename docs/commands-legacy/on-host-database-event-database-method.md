@@ -15,6 +15,16 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|14|Created|
+
+</details>
+</div>
+
 ## Description 
 
 <!--REF #_command_.On Host Database Event database method.Summary-->The **On Host Database Event database method** allows 4D components to execute code when the host database is opened and closed.<!-- END REF-->
@@ -27,10 +37,10 @@ To process an event, you must test the value of the *$event* parameter inside th
 
 | Constant                        | Type    | Value | Comment                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ------------------------------- | ------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| On after host database exit     | Integer | 4     | The [On Exit database method](on-exit-database-method.md) of the host database has just finished running                                                                                                                                                                                                                                                                                                |
-| On after host database startup  | Integer | 2     | The [On Startup database method](on-startup-database-method.md) of the host database just finished running                                                                                                                                                                                                                                                                                              |
-| On before host database exit    | Integer | 3     | The host database is closing. The [On Exit database method](on-exit-database-method.md) of the host database has not yet been called. <br/>The [On Exit database method](on-exit-database-method.md) of the host database is not called while the [On Host Database Event database method](on-host-database-event-database-method.md) of the component is running                               |
-| On before host database startup | Integer | 1     | The host database has just been started. The [On Startup database method](on-startup-database-method.md) method of the host database has not yet been called. <br/>The [On Startup database method](on-startup-database-method.md) of the host database is not called while the [On Host Database Event database method](on-host-database-event-database-method.md) of the component is running |
+| On after host database exit     | Integer | 4     | The [On Exit database method](../commands/on-exit-database-method) of the host database has just finished running                                                                                                                                                                                                                                                                                                |
+| On after host database startup  | Integer | 2     | The [On Startup database method](../commands/on-startup-database-method) of the host database just finished running                                                                                                                                                                                                                                                                                              |
+| On before host database exit    | Integer | 3     | The host database is closing. The [On Exit database method](../commands/on-exit-database-method) of the host database has not yet been called. <br/>The [On Exit database method](../commands/on-exit-database-method) of the host database is not called while the [On Host Database Event database method](../commands/on-host-database-event-database-method) of the component is running                               |
+| On before host database startup | Integer | 1     | The host database has just been started. The [On Startup database method](../commands/on-startup-database-method) method of the host database has not yet been called. <br/>The [On Startup database method](../commands/on-startup-database-method) of the host database is not called while the [On Host Database Event database method](../commands/on-host-database-event-database-method) of the component is running |
 
 This allows 4D components to load and save preferences or user states related to the operation of the host database. 
 
@@ -56,3 +66,4 @@ Example of typical structure of an On Host Database Event database method:
   // database method of the host database
  End case
 ```
+

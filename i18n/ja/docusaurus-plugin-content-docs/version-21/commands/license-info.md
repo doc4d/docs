@@ -8,11 +8,26 @@ displayed_sidebar: docs
 
 <!--REF #_command_.License info.Params-->
 
+<div class="no-index">
+
 | 引数  | 型      |                             | 説明                |
 | --- | ------ | --------------------------- | ----------------- |
 | 戻り値 | Object | &#8592; | アクティブなライセンスに関する情報 |
 
+</div>
 <!-- END REF-->
+
+<div class="no-index">
+<details><summary>履歴</summary>
+
+| リリース  | 内容                                            |
+| ----- | --------------------------------------------- |
+| 20 R7 | Renamed (Get License info) |
+| 16 R6 | 変更                                            |
+| 16 R4 | Created                                       |
+
+</details>
+</div>
 
 ## 説明
 
@@ -25,7 +40,8 @@ displayed_sidebar: docs
 このコマンドはライセンスファイルをディスクからリロードし、それらが変更されていた場合には、関連する権限を更新します。
 
 :::
-The returned object contains the following properties:
+
+戻り値のオブジェクトには、以下のプロパティが格納されています:
 
 ```json
 {
@@ -93,44 +109,44 @@ The returned object contains the following properties:
 現在の4D Server ライセンスについての情報を取得した場合を考えます:
 
 ```4d
- var $obj : Object
- $obj:=License info
+ var $obj : Object
+ $obj:=License info
 ```
 
 *$obj* には、一例として以下のような内容が返されます:
 
 ```json
 {
-    "name": "4D Server v16 R3",
-    "key": 123456789,
-    "licenseNumber": "xxxx",
-    "version": "16R3",
-    "userName": "John DOE",
-    "userMail": "john.doe@alpha.com",
-    "companyName": "Alpha",
-    "platforms": ["macOS", "windows"],
-    "expirationDate": {"day":1, "month":1, "year":2018},
-    "products":[
-        {
-            "allowedCount": 15,
-            "id": 808464697,
-            "name": "4D Write - 4D Write Pro",
-            "rights": [
-                {
-                    "count": 5,
-                    "expirationDate": {"day":1, "month":2, "year":2018}
-                }, {
-                    "count": 10,
-                    "expirationDate": {"day":1, "month":11, "year":2017}
-                }, {
-                    "count": 10,
-                    "expirationDate": {"day":1, "month":11, "year":2015} //失効しているのでカウントされません
-                }
-            ],
-            "usedCount": 12
-        },
-        {...}
-    ]
+    "name": "4D Server v16 R3",
+    "key": 123456789,
+    "licenseNumber": "xxxx",
+    "version": "16R3",
+    "userName": "John DOE",
+    "userMail": "john.doe@alpha.com",
+    "companyName": "Alpha",
+    "platforms": ["macOS", "windows"],
+    "expirationDate": {"day":1, "month":1, "year":2018},
+    "products":[
+        {
+            "allowedCount": 15,
+            "id": 808464697,
+            "name": "4D Write - 4D Write Pro",
+            "rights": [
+                {
+                    "count": 5,
+                    "expirationDate": {"day":1, "month":2, "year":2018}
+                }, {
+                    "count": 10,
+                    "expirationDate": {"day":1, "month":11, "year":2017}
+                }, {
+                    "count": 10,
+                    "expirationDate": {"day":1, "month":11, "year":2015} //expired, not counted
+                }
+            ],
+            "usedCount": 12
+        },
+        {...}
+    ]
 }
 ```
 

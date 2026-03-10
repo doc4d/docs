@@ -17,13 +17,25 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>履歴</summary>
+
+|リリース|内容|
+|---|---|
+|2004|初出|
+|12|名称変更|
+|12|変更|
+
+</details>
+</div>
+
 ## 説明 
 
 <!--REF #_command_.SAX SET XML DECLARATION.Summary-->**SAX SET XML DECLARATION** コマンドは*document* で参照されるXMLドキュメントを、引数のエンコーディングを使用して初期化します。<!-- END REF-->オプションとして、*standalone* 引数を使用してスタンドアロン属性を設定することができます。
 
 * *encoding*: ドキュメントで使用される文字セットを指定するために使用します。コマンドが呼び出されない場合のデフォルトはUTF-8文字セットです。  
 **注:** 4D XMLコマンドによってサポートされていないエンコーディングを渡した場合、UTF-8が使用されます。サポートされている文字コードの一覧については*文字セット*を参照して下さい(ただし、多くの場合についてUTF-8が推奨されます)。
-* *standalone*: ドキュメントがスタンドアロンか ([True](true.md "True"))、あるいは他のファイルや外部リソースを必要とするか ([False](false.md "False")) を示します。コマンドが呼び出されないか引数が省略された場合のデフォルトは[False](false.md "False")です。
+* *standalone*: ドキュメントがスタンドアロンか ([True](../commands/true))、あるいは他のファイルや外部リソースを必要とするか ([False](../commands/false)) を示します。コマンドが呼び出されないか引数が省略された場合のデフォルトは[False](../commands/false)です。
 
 **注:** 何も書き込んでいない状態で[XML SET OPTIONS](xml-set-options.md) コマンドを使用することで、ドキュメントのインデントを指定することができます。
 

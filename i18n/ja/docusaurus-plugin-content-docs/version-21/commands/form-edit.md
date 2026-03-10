@@ -4,9 +4,11 @@ title: FORM EDIT
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.FORM EDIT.Syntax-->**FORM EDIT** ( {*aTable* ;} *form* )<br/>**FORM EDIT** ( {*aTable* ;} *form* ; *object* )<!-- END REF-->
+<!--REF #_command_.FORM EDIT.Syntax-->**FORM EDIT** ( {*aTable* : Table ;} *form* : Text )<br/>**FORM EDIT** ( {*aTable* : Table ;} *form* : Text ; *object* : Text )<!-- END REF-->
 
 <!--REF #_command_.FORM EDIT.Params-->
+
+<div class="no-index">
 
 | 引数     | 型     |                             | 説明                                                |
 | ------ | ----- | --------------------------- | ------------------------------------------------- |
@@ -14,15 +16,19 @@ displayed_sidebar: docs
 | form   | Text  | &#8594; | フォーム名                                             |
 | object | Text  | &#8594; | フォームオブジェクト名またはグループ名                               |
 
+</div>
 <!-- END REF-->
 
+<div class="no-index">
 <details><summary>履歴</summary>
 
 | リリース  | 内容               |
 | ----- | ---------------- |
 | 20 R8 | *object* 引数のサポート |
+| 18 R5 | Created          |
 
 </details>
+</div>
 
 ## 説明
 
@@ -45,19 +51,19 @@ displayed_sidebar: docs
 *Contacts* テーブルの*Address* フォームを開きたい場合を考えます:
 
 ```4d
- FORM EDIT([Contacts];"Address")
+ FORM EDIT([Contacts];"Address")
 ```
 
 *ContactList* プロジェクトフォームを開きたい場合を考えます:
 
 ```4d
- FORM EDIT("ContactList")
+ FORM EDIT("ContactList")
 ```
 
 *ContactPage* プロジェクトフォームを、"name-input" オブジェクトが選択された状態で開きたい場合を考えます:
 
 ```4d
- FORM EDIT("ContactList"; "name-input")
+ FORM EDIT("ContactList"; "name-input")
 ```
 
 ## 参照

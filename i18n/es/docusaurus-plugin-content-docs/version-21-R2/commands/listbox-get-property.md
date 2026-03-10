@@ -4,18 +4,33 @@ title: LISTBOX Get property
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.LISTBOX Get property.Syntax-->**LISTBOX Get property** ( * ; *object* : Text ; *property* : Integer ) : any<br/>**LISTBOX Get property** ( *object* : Field, Variable ; *property* : Integer ) : any<!-- END REF-->
+<!--REF #_command_.LISTBOX Get property.Syntax-->**LISTBOX Get property** ( * ; *object* : Text ; *property* : Integer ) : any<br/>**LISTBOX Get property** ( *object* : Variable ; *property* : Integer ) : any<!-- END REF-->
 
 <!--REF #_command_.LISTBOX Get property.Params-->
 
-| Parámetros | Tipo          |                             | Descripción                                                                                                                      |
-| ---------- | ------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| \*         | Operador      | &#8594; | Si se especifica, object es un nombre de objeto (cadena). Si se omite, object es una variable |
-| object     | any           | &#8594; | Nombre del objeto (si se especifica \*) o Variable (si se omite \*)                        |
-| property   | Integer       | &#8594; | Propiedad cuyo valor desea obtener                                                                                               |
-| Resultado  | Integer, Text | &#8592; | Valor actual                                                                                                                     |
+<div class="no-index">
 
+| Parámetros | Tipo           |                             | Descripción                                                                                                                      |
+| ---------- | -------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| \*         | Operador       | &#8594; | Si se especifica, object es un nombre de objeto (cadena). Si se omite, object es una variable |
+| object     | Text, Variable | &#8594; | Nombre del objeto del formulario (si se especifica \*) o Variable (si se omite \*)         |
+| property   | Integer        | &#8594; | Propiedad cuyo valor desea obtener                                                                                               |
+| Resultado  | any            | &#8592; | Current value (Integer, Text)                                                                                 |
+
+</div>
 <!-- END REF-->
+
+<div class="no-index">
+<details><summary>Historia</summary>
+
+| Lanzamiento                 | Modificaciones                                       |
+| --------------------------- | ---------------------------------------------------- |
+| 19 R6                       | Modificado                                           |
+| 16 R2                       | Renamed (Get Listbox information) |
+| <6 | Created                                              |
+
+</details>
+</div>
 
 ## Descripción
 
@@ -50,7 +65,7 @@ En el parámetro *property*, pase una constante que indique la propiedad cuyo va
 | lk hide selection highlight    | 16    | Propiedad **[Ocultar resaltado de selección](../FormObjects/properties_Appearance.md#hide-selection-highlight)** <br/>Se aplica a: List box<br/>Valores posibles: <br/>lk no (0) <br/>lk yes (1)                                                                                                                                                                                                                                                                 |
 | lk highlight set               | 27    | Propiedad **[Conjunto resaltado](../FormObjects/properties_ListBox.md#highlight-set)** para el list box de tipo selección<br/>Se aplica a: List box                                                                                                                                                                                                                                                                                                                                                                    |
 | lk hor scrollbar height        | 3     | Altura en píxeles (solo se puede leer)<br/>Aplica a: List box                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| lk meta expression             | 34    | **[Meta Info Expression](../FormObjects/properties_Text.md#meta-info-expression)** property for collection or entity selection type list boxes<br/>Applies to: List box                                                                                                                                                                                                                                                                                                                                                |
+| lk meta expression             | 34    | Propiedad **[Meta Info Expression](../FormObjects/properties_Text.md#meta-info-expression)** para los list box de tipo colección o entity selection<br/>Se aplica a: List box                                                                                                                                                                                                                                                                                                                                          |
 | lk movable rows                | 35    | **[Movable Rows](../FormObjects/properties_Action.md#movable-rows)** property for array type list box <br/>Applies to: List box (excluding hierarchical mode) <br/>Possible values:<br/> lk no (0): Rows cannot be moved at runtime <br/> lk yes (1): Rows can be moved at runtime (default)                                                                                               |
 | lk multi style                 | 30    | Propiedad **[Multi-estilo](../FormObjects/properties_Text.md#multi-style)** <br/>Se aplica a: columna \* <br/>Valores posibles:<br/>lk no (0) <br/>lk yes (1)                                                                                                                                                                                                                                                                                                    |
 | lk named selection             | 28    | Propiedad **[Named Selection](../FormObjects/properties_DataSource.md#selection-name)** para list box de tipo selección<br/>Se aplica a: List box                                                                                                                                                                                                                                                                                                                                                                      |

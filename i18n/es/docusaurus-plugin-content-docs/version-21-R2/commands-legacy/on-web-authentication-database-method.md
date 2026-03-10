@@ -21,6 +21,8 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+
+
 ## Descripción 
 
 <!--REF #_command_.On Web Authentication database method.Summary-->El Método base On Web Authenticationestá a cargo de administrar el acceso al motor del servidor web.<!-- END REF--> Es llamado automáticamente por 4D o 4D Server cuando una petición de un navegador web requiere la ejecución de un método 4D en el servidor (llamada de un método vía un URL *4DACTION* o  una etiqueta *4DSCRIPT*, etc.). 
@@ -86,8 +88,8 @@ Los parámetros $user y $pw reciben el nombre de usuario y contraseña introduci
   
  El Método base On Web Authentication devuelve un booleano en $result:
 
-   * Si $result es [True](true.md "True"), la conexión es aceptada.
-   * Si $result es [False](false.md "False"), la conexión es rechazada.
+   * Si $result es [True](../commands/true), la conexión es aceptada.
+   * Si $result es [False](../commands/false), la conexión es rechazada.
 
 El [Método base On Web Connection](metodo-base-on-web-connection.md) sólo se ejecuta si la conexión ha sido aceptada por **On Web Authentication**.
 

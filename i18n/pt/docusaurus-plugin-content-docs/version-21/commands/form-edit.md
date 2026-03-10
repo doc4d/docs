@@ -4,9 +4,11 @@ title: FORM EDIT
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.FORM EDIT.Syntax-->**FORM EDIT** ( {*aTable* ;} *form* )<br/>**FORM EDIT** ( {*aTable* ;} *form* ; *object* )<!-- END REF-->
+<!--REF #_command_.FORM EDIT.Syntax-->**FORM EDIT** ( {*aTable* : Table ;} *form* : Text )<br/>**FORM EDIT** ( {*aTable* : Table ;} *form* : Text ; *object* : Text )<!-- END REF-->
 
 <!--REF #_command_.FORM EDIT.Params-->
+
+<div class="no-index">
 
 | Parâmetro | Tipo   |                             | Descrição                                                                                               |
 | --------- | ------ | --------------------------- | ------------------------------------------------------------------------------------------------------- |
@@ -14,15 +16,19 @@ displayed_sidebar: docs
 | form      | Text   | &#8594; | Nome do formulario                                                                                      |
 | object    | Text   | &#8594; | Nome do objeto do formulário ou nome do grupo                                                           |
 
+</div>
 <!-- END REF-->
 
+<div class="no-index">
 <details><summary>História</summary>
 
 | Release | Mudanças                      |
 | ------- | ----------------------------- |
 | 20 R8   | Suporte ao parâmetro *objeto* |
+| 18 R5   | Created                       |
 
 </details>
+</div>
 
 ## Descrição
 
@@ -45,19 +51,19 @@ Passa uma seqüência de caracteres vazia em *objeto* para desmarcar todos os ob
 Para abrir o formulário *Contacts* da tabela *Address*:
 
 ```4d
-FORM EDIT([Contatos]; "Endereço")
+ FORM EDIT([Contacts];"Address")
 ```
 
 Para abrir o formulário do projeto *ContactList*:
 
 ```4d
- FORM EDIT("ContactList")
+ FORM EDIT("ContactList")
 ```
 
 Para abrir o formulário de projeto *ContatoPage* com o objeto "nome-entrada" selecionado:
 
 ```4d
- FORM EDIT("ContactList"; "name-input")
+ FORM EDIT("ContactList"; "name-input")
 ```
 
 ## Veja também

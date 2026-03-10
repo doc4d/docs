@@ -44,11 +44,11 @@ title: 座標とサイズ
 
 #### 対象オブジェクト
 
-[リストボックス列](listbox_overview.md#リストボックス列)
+[List Box Column](listbox-column.md)
 
 #### コマンド
 
-[`LISTBOX Get property`](../commands/listbox-get-property.md) - [`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md)
+[`LISTBOX Get property`](../commands/listbox-get-property) - [`LISTBOX SET PROPERTY`](../commands/listbox-set-property)
 
 ---
 
@@ -64,39 +64,11 @@ title: 座標とサイズ
 
 #### 対象オブジェクト
 
-[4D View Pro エリア](viewProArea_overview.md) -
-[4D Write Pro エリア](writeProArea_overview.md) -
-[ボタン](button_overview.md) -
-[ボタングリッド](buttonGrid_overview.md) -
-[チェックボックス](checkbox_overview.md) -
-[コンボボックス](comboBox_overview.md) -
-[ドロップダウンリスト](dropdownList_Overview.md) -
-[グループボックス](groupBox.md) -
-[階層リスト](list_overview.md) -
-[入力](input_overview.md) -
-[リストボックス](listbox_overview.md) -
-[線](shapes_overview.md#線) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[楕円](shapes_overview.md#楕円) -
-[ピクチャーボタン](pictureButton_overview.md) -
-[ピクチャーポップアップメニュー](picturePopupMenu_overview.md) -
-[プラグインエリア](pluginArea_overview.md) -
-[進捗インジケーター](progressIndicator.md) -
-[ラジオボタン](radio_overview.md) -
-[四角](shapes_overview.md#四角) -
-[ルーラー](ruler.md) -
-[スピナー](spinner.md) -
-[スプリッター](splitters.md) -
-[スタティックピクチャー](staticPicture.md) -
-[ステッパー](stepper.md) -
-[サブフォーム](subform_overview.md) -
-[タブコントロール](tabControl.md) -
-[テキストエリア](text.md) -
-[Web エリア](webArea_overview.md)
+[4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [Line](shapes_overview.md#line) - [List Box Column](listbox-column.md) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Rectangle](shapes_overview.md#rectangle) - [Ruler](ruler.md) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md)
 
 #### コマンド
 
-[OBJECT GET COORDINATES](../commands-legacy/object-get-coordinates.md) - [OBJECT MOVE](../commands-legacy/object-move.md) - [OBJECT SET COORDINATES](../commands-legacy/object-set-coordinates.md)
+[OBJECT GET COORDINATES](../commands/object-get-coordinates) - [OBJECT MOVE](../commands/object-move) - [OBJECT SET COORDINATES](../commands/object-set-coordinates)
 
 ---
 
@@ -112,39 +84,11 @@ title: 座標とサイズ
 
 #### 対象オブジェクト
 
-[4D View Pro エリア](viewProArea_overview.md) -
-[4D Write Pro エリア](writeProArea_overview.md) -
-[ボタン](button_overview.md) -
-[ボタングリッド](buttonGrid_overview.md) -
-[チェックボックス](checkbox_overview.md) -
-[コンボボックス](comboBox_overview.md) -
-[ドロップダウンリスト](dropdownList_Overview.md) -
-[グループボックス](groupBox.md) -
-[階層リスト](list_overview.md) -
-[入力](input_overview.md) -
-[リストボックス](listbox_overview.md) -
-[線](shapes_overview.md#線) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[楕円](shapes_overview.md#楕円) -
-[ピクチャーボタン](pictureButton_overview.md) -
-[ピクチャーポップアップメニュー](picturePopupMenu_overview.md) -
-[プラグインエリア](pluginArea_overview.md) -
-[進捗インジケーター](progressIndicator.md) -
-[ラジオボタン](radio_overview.md) -
-[ルーラー](ruler.md) -
-[四角](shapes_overview.md#四角) -
-[スピナー](spinner.md) -
-[スプリッター](splitters.md) -
-[スタティックピクチャー](staticPicture.md) -
-[ステッパー](stepper.md) -
-[サブフォーム](subform_overview.md) -
-[タブコントロール](tabControl.md) -
-[テキストエリア](text.md) -
-[Web エリア](webArea_overview.md)
+[4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [Line](shapes_overview.md#line) - [List Box Column](listbox-column.md) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md)
 
 #### コマンド
 
-[OBJECT GET COORDINATES](../commands-legacy/object-get-coordinates.md) - [OBJECT MOVE](../commands-legacy/object-move.md) - [OBJECT SET COORDINATES](../commands-legacy/object-set-coordinates.md)
+[OBJECT GET COORDINATES](../commands/object-get-coordinates) - [OBJECT MOVE](../commands/object-move) - [OBJECT SET COORDINATES](../commands/object-set-coordinates)
 
 ---
 
@@ -160,39 +104,11 @@ title: 座標とサイズ
 
 #### 対象オブジェクト
 
-[4D View Pro エリア](viewProArea_overview.md) -
-[4D Write Pro エリア](writeProArea_overview.md) -
-[ボタン](button_overview.md) -
-[ボタングリッド](buttonGrid_overview.md) -
-[チェックボックス](checkbox_overview.md) -
-[コンボボックス](comboBox_overview.md) -
-[ドロップダウンリスト](dropdownList_Overview.md) -
-[グループボックス](groupBox.md) -
-[階層リスト](list_overview.md) -
-[入力](input_overview.md) -
-[リストボックス](listbox_overview.md) -
-[線](shapes_overview.md#線) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[楕円](shapes_overview.md#楕円) -
-[ピクチャーボタン](pictureButton_overview.md) -
-[ピクチャーポップアップメニュー](picturePopupMenu_overview.md) -
-[プラグインエリア](pluginArea_overview.md) -
-[進捗インジケーター](progressIndicator.md) -
-[ラジオボタン](radio_overview.md) -
-[ルーラー](ruler.md) -
-[四角](shapes_overview.md#四角) -
-[スピナー](spinner.md) -
-[スプリッター](splitters.md) -
-[スタティックピクチャー](staticPicture.md) -
-[ステッパー](stepper.md) -
-[サブフォーム](subform_overview.md) -
-[タブコントロール](tabControl.md) -
-[テキストエリア](text.md) -
-[Web エリア](webArea_overview.md)
+[4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [Line](shapes_overview.md#line) - [List Box Column](listbox-column.md) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md)
 
 #### コマンド
 
-[OBJECT GET COORDINATES](../commands-legacy/object-get-coordinates.md) - [OBJECT MOVE](../commands-legacy/object-move.md) - [OBJECT SET COORDINATES](../commands-legacy/object-set-coordinates.md)
+[OBJECT GET COORDINATES](../commands/object-get-coordinates) - [OBJECT MOVE](../commands/object-move) - [OBJECT SET COORDINATES](../commands/object-set-coordinates)
 
 ---
 
@@ -208,39 +124,11 @@ title: 座標とサイズ
 
 #### 対象オブジェクト
 
-[4D View Pro エリア](viewProArea_overview.md) -
-[4D Write Pro エリア](writeProArea_overview.md) -
-[ボタン](button_overview.md) -
-[ボタングリッド](buttonGrid_overview.md) -
-[チェックボックス](checkbox_overview.md) -
-[コンボボックス](comboBox_overview.md) -
-[ドロップダウンリスト](dropdownList_Overview.md) -
-[グループボックス](groupBox.md) -
-[階層リスト](list_overview.md) -
-[入力](input_overview.md) -
-[リストボックス](listbox_overview.md) -
-[線](shapes_overview.md#線) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[楕円](shapes_overview.md#楕円) -
-[ピクチャーボタン](pictureButton_overview.md) -
-[ピクチャーポップアップメニュー](picturePopupMenu_overview.md) -
-[プラグインエリア](pluginArea_overview.md) -
-[進捗インジケーター](progressIndicator.md) -
-[ラジオボタン](radio_overview.md) -
-[ルーラー](ruler.md) -
-[四角](shapes_overview.md#四角) -
-[スピナー](spinner.md) -
-[スプリッター](splitters.md) -
-[スタティックピクチャー](staticPicture.md) -
-[ステッパー](stepper.md) -
-[サブフォーム](subform_overview.md) -
-[タブコントロール](tabControl.md) -
-[テキストエリア](text.md) -
-[Web エリア](webArea_overview.md)
+[4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [Line](shapes_overview.md#line) - [List Box Column](listbox-column.md) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md)
 
 #### コマンド
 
-[OBJECT GET COORDINATES](../commands-legacy/object-get-coordinates.md) - [OBJECT MOVE](../commands-legacy/object-move.md) - [OBJECT SET COORDINATES](../commands-legacy/object-set-coordinates.md)
+[OBJECT GET COORDINATES](../commands/object-get-coordinates) - [OBJECT MOVE](../commands/object-move) - [OBJECT SET COORDINATES](../commands/object-set-coordinates)
 
 ---
 
@@ -272,7 +160,7 @@ title: 座標とサイズ
 
 :::
 
-このプロパティは、[OBJECT Get corner radius](../commands-legacy/object-get-corner-radius.md) および [OBJECT SET CORNER RADIUS](../commands-legacy/object-set-corner-radius.md) コマンドを使用することでも設定できます。
+このプロパティは、[OBJECT Get corner radius](../commands/object-get-corner-radius) および [OBJECT SET CORNER RADIUS](../commands/object-set-corner-radius) コマンドを使用することでも設定できます。
 
 #### JSON 文法
 
@@ -286,7 +174,7 @@ title: 座標とサイズ
 
 #### コマンド
 
-[OBJECT GET CORNER RADIUS](../commands-legacy/object-get-corner-radius.md) - [OBJECT SET CORNER RADIUS](../commands-legacy/object-set-corner-radius.md)
+[OBJECT GET CORNER RADIUS](../commands/object-get-corner-radius) - [OBJECT SET CORNER RADIUS](../commands/object-set-corner-radius)
 
 ---
 
@@ -304,39 +192,11 @@ title: 座標とサイズ
 
 #### 対象オブジェクト
 
-[4D View Pro エリア](viewProArea_overview.md) -
-[4D Write Pro エリア](writeProArea_overview.md) -
-[ボタン](button_overview.md) -
-[ボタングリッド](buttonGrid_overview.md) -
-[チェックボックス](checkbox_overview.md) -
-[コンボボックス](comboBox_overview.md) -
-[ドロップダウンリスト](dropdownList_Overview.md) -
-[グループボックス](groupBox.md) -
-[階層リスト](list_overview.md) -
-[入力](input_overview.md) -
-[リストボックス](listbox_overview.md) -
-[線](shapes_overview.md#線) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[楕円](shapes_overview.md#楕円) -
-[ピクチャーボタン](pictureButton_overview.md) -
-[ピクチャーポップアップメニュー](picturePopupMenu_overview.md) -
-[プラグインエリア](pluginArea_overview.md) -
-[進捗インジケーター](progressIndicator.md) -
-[ラジオボタン](radio_overview.md) -
-[ルーラー](ruler.md) -
-[四角](shapes_overview.md#四角) -
-[スピナー](spinner.md) -
-[スプリッター](splitters.md) -
-[スタティックピクチャー](staticPicture.md) -
-[ステッパー](stepper.md) -
-[サブフォーム](subform_overview.md) -
-[タブコントロール](tabControl.md) -
-[テキストエリア](text.md) -
-[Web エリア](webArea_overview.md)
+[4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [List Box](listbox_overview.md) - [Line](shapes_overview.md#line) - [List Box Column](listbox-column.md) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md)
 
 #### コマンド
 
-[OBJECT GET COORDINATES](../commands-legacy/object-get-coordinates.md) - [OBJECT MOVE](../commands-legacy/object-move.md) - [OBJECT SET COORDINATES](../commands-legacy/object-set-coordinates.md)
+[OBJECT GET COORDINATES](../commands/object-get-coordinates) - [OBJECT MOVE](../commands/object-move) - [OBJECT SET COORDINATES](../commands/object-set-coordinates)
 
 ---
 
@@ -345,7 +205,7 @@ title: 座標とサイズ
 オブジェクトの横のサイズを指定します。
 
 > - オブジェクトによっては高さが規定されているものがあり、その場合は変更できません。
-> - [リストボックス列](listbox_overview.md#リストボックス列) に [サイズ変更可](properties_ResizingOptions.md#サイズ変更可) プロパティが設定されている場合には、ユーザーは手動でカラムサイズを変更することもできます。
+> - If the [Resizable](properties_ResizingOptions.md#resizable) property is used for a [list box column](listbox-column.md), the user can also manually resize the column.
 > - リストボックスの [横方向サイズ変更](properties_ResizingOptions.md#横方向サイズ変更) プロパティに "拡大" を設定している場合にフォームをリサイズすると、一番右のカラムの幅は必要に応じて最大幅を超えて拡大されます。
 
 #### JSON 文法
@@ -356,39 +216,11 @@ title: 座標とサイズ
 
 #### 対象オブジェクト
 
-[4D View Pro エリア](viewProArea_overview.md) -
-[4D Write Pro エリア](writeProArea_overview.md) -
-[ボタン](button_overview.md) -
-[ボタングリッド](buttonGrid_overview.md) -
-[チェックボックス](checkbox_overview.md) -
-[コンボボックス](comboBox_overview.md) -
-[ドロップダウンリスト](dropdownList_Overview.md) -
-[グループボックス](groupBox.md) -
-[階層リスト](list_overview.md) -
-[入力](input_overview.md) -
-[線](shapes_overview.md#線) -
-[リストボックス](listbox_overview.md) -
-[リストボックス列](listbox_overview.md#リストボックス列) -
-[楕円](shapes_overview.md#楕円) -
-[ピクチャーボタン](pictureButton_overview.md) -
-[ピクチャーポップアップメニュー](picturePopupMenu_overview.md) -
-[プラグインエリア](pluginArea_overview.md) -
-[進捗インジケーター](progressIndicator.md) -
-[ラジオボタン](radio_overview.md) -
-[ルーラー](ruler.md) -
-[四角](shapes_overview.md#四角) -
-[スピナー](spinner.md) -
-[スプリッター](splitters.md) -
-[スタティックピクチャー](staticPicture.md) -
-[ステッパー](stepper.md) -
-[サブフォーム](subform_overview.md) -
-[タブコントロール](tabControl.md) -
-[テキストエリア](text.md) -
-[Web エリア](webArea_overview.md)
+[4D View Pro Area](viewProArea_overview.md) - [4D Write Pro Area](writeProArea_overview.md) - [Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Dropdown list](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md) - [Input](input_overview.md) - [Line](shapes_overview.md#line) - [List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [Oval](shapes_overview.md#oval) - [Picture Button](pictureButton_overview.md) - [Picture Pop up menu](picturePopupMenu_overview.md) - [Plug-in Area](pluginArea_overview.md) - [Progress Indicators](progressIndicator.md) - [Radio Button](radio_overview.md) - [Ruler](ruler.md) - [Rectangle](shapes_overview.md#rectangle) - [Spinner](spinner.md) - [Splitter](splitters.md) - [Static Picture](staticPicture.md) - [Stepper](stepper.md) - [Subform](subform_overview.md) - [Tab control](tabControl.md) - [Text Area](text.md) - [Web Area](webArea_overview.md)
 
 #### コマンド
 
-[OBJECT GET COORDINATES](../commands-legacy/object-get-coordinates.md) - [OBJECT MOVE](../commands-legacy/object-move.md) - [OBJECT SET COORDINATES](../commands-legacy/object-set-coordinates.md)
+[OBJECT GET COORDINATES](../commands/object-get-coordinates) - [OBJECT MOVE](../commands/object-move) - [OBJECT SET COORDINATES](../commands/object-set-coordinates)
 
 ---
 
@@ -406,11 +238,11 @@ title: 座標とサイズ
 
 #### 対象オブジェクト
 
-[リストボックス列](listbox_overview.md#リストボックス列)
+[List Box Column](listbox-column.md)
 
 #### コマンド
 
-[LISTBOX Get column width](../commands-legacy/listbox-get-column-width.md) - [LISTBOX SET COLUMN WIDTH](../commands-legacy/listbox-set-column-width.md)
+[LISTBOX Get column width](../commands/listbox-get-column-width) - [LISTBOX SET COLUMN WIDTH](../commands/listbox-set-column-width)
 
 ---
 
@@ -428,11 +260,11 @@ title: 座標とサイズ
 
 #### 対象オブジェクト
 
-[リストボックス列](listbox_overview.md#リストボックス列)
+[List Box Column](listbox-column.md)
 
 #### コマンド
 
-[LISTBOX Get column width](../commands-legacy/listbox-get-column-width.md) - [LISTBOX SET COLUMN WIDTH](../commands-legacy/listbox-set-column-width.md)
+[LISTBOX Get column width](../commands/listbox-get-column-width) - [LISTBOX SET COLUMN WIDTH](../commands/listbox-set-column-width)
 
 ---
 
@@ -452,7 +284,7 @@ title: 座標とサイズ
 
 #### コマンド
 
-[LISTBOX Get row height](../commands-legacy/listbox-get-row-height.md) - [LISTBOX Get rows height](../commands-legacy/listbox-get-rows-height.md) - [LISTBOX SET ROW HEIGHT](../commands-legacy/listbox-set-row-height.md) - [LISTBOX SET ROWS HEIGHT](../commands-legacy/listbox-set-rows-height.md)
+[LISTBOX Get row height](../commands/listbox-get-row-height) - [LISTBOX Get rows height](../commands/listbox-get-rows-height) - [LISTBOX SET ROW HEIGHT](../commands/listbox-set-row-height) - [LISTBOX SET ROWS HEIGHT](../commands/listbox-set-rows-height)
 
 #### 参照
 
@@ -490,7 +322,7 @@ RowHeights{5}:=3
 
 #### コマンド
 
-[`LISTBOX Get array`](../commands-legacy/listbox-get-array.md) - [`LISTBOX GET ARRAYS`](../commands-legacy/listbox-get-arrays.md)
+[`LISTBOX Get array`](../commands/listbox-get-array) - [`LISTBOX GET ARRAYS`](../commands/listbox-get-arrays)
 
 #### 参照
 
@@ -512,11 +344,11 @@ RowHeights{5}:=3
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列) - [フッター](properties_Footers.md) - [ヘッダー](properties_Headers.md)
+[List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [Footers](properties_Footers.md) - [Headers](properties_Headers.md)
 
 #### コマンド
 
-[`LISTBOX Get property`](../commands/listbox-get-property.md) - [`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md)
+[`LISTBOX Get property`](../commands/listbox-get-property) - [`LISTBOX SET PROPERTY`](../commands/listbox-set-property)
 
 #### 参照
 
@@ -536,12 +368,13 @@ RowHeights{5}:=3
 
 #### 対象オブジェクト
 
-[リストボックス](listbox_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列) - [フッター](properties_Footers.md) - [ヘッダー](properties_Headers.md)
+[List Box](listbox_overview.md) - [List Box Column](listbox-column.md) - [Footers](properties_Footers.md) - [Headers](properties_Headers.md)
 
 #### コマンド
 
-[`LISTBOX Get property`](../commands/listbox-get-property.md) - [`LISTBOX SET PROPERTY`](../commands/listbox-set-property.md)
+[`LISTBOX Get property`](../commands/listbox-get-property) - [`LISTBOX SET PROPERTY`](../commands/listbox-set-property)
 
 #### 参照
 
 [横方向パディング](#横方向パディング)
+

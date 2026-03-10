@@ -16,13 +16,25 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>Historial</summary>
+
+|Versión|Cambios|
+|---|---|
+|<6|Creado|
+|2004|Modificado|
+|14 R3|Modificado|
+
+</details>
+</div>
+
 ## Descripción 
 
 <!--REF #_command_.Is license available.Summary-->El comando Is license available le permite conocer la disponibilidad de un plug-in.<!-- END REF--> Es útil, por ejemplo, para mostrar u ocultar funciones que necesitan de la presencia de un plug-in.
 
 El comando Is license available puede utilizarse de tres maneras diferentes:
 
-* El parámetro *licencia* se omite: en este caso, el comando devuelve [False](false.md "False") si la aplicación 4D está en modo demostración.
+* El parámetro *licencia* se omite: en este caso, el comando devuelve [False](../commands/false) si la aplicación 4D está en modo demostración.
 * Pase en el parámetro *licencia* una de la constantes del tema “*Licencia disponible*”:  
 
 | Constante              | Tipo         | Valor     |  
@@ -37,8 +49,8 @@ El comando Is license available puede utilizarse de tres maneras diferentes:
 | 4D Web license         | Entero largo | 808464945 |  
 | 4D Write license       | Entero largo | 808464697 |  
     
-En este caso, el comando devuelve [True](true.md "True") si el plug-in correspondiente tiene una licencia disponible. El comando tiene en cuenta las licencias efectuadas en modo Diseño o vía el comando [SET PLUGIN ACCESS](set-plugin-access.md).  
-Is license available devuelve [False](false.md "False") si el plug-in está funcionando en modo demostración.
+En este caso, el comando devuelve [True](../commands/true) si el plug-in correspondiente tiene una licencia disponible. El comando tiene en cuenta las licencias efectuadas en modo Diseño o vía el comando [SET PLUGIN ACCESS](set-plugin-access.md).  
+Is license available devuelve [False](../commands/false) si el plug-in está funcionando en modo demostración.
 * Pase en el parámetro *licencia* el número de identificación del recurso “4BNX” del plug-in. En este caso, el comando se comporta como se indicó anteriormente.
 
 ## Ver también 

@@ -6,7 +6,7 @@ title: Collection
 
 The Collection class manages [Collection](Concepts/dt_collection.md) type expressions.
 
-A collection is initialized with the [`New collection`](../commands/new-collection.md) or [`New shared collection`](../commands/new-shared-collection.md) commands.
+A collection is initialized with the [`New collection`](../commands/new-collection) or [`New shared collection`](../commands/new-shared-collection) commands.
 
 
 
@@ -2168,7 +2168,7 @@ All *colsToSort* collections must have the same number of elements, otherwise an
 
 :::
 
-If you want to sort the collections in some other order than ascending, you must supply a *formula* ([Formula object](../commands/formula.md) that defines the sort order. The return value should be a boolean that indicates the relative order of the two elements: **True** if *$1.value* is less than *$1.value2*, **False** if *$1.value* is greater than *$1.value2*. You can provide additional parameters to the formula if necessary.
+If you want to sort the collections in some other order than ascending, you must supply a *formula* ([Formula object](../commands/formula) that defines the sort order. The return value should be a boolean that indicates the relative order of the two elements: **True** if *$1.value* is less than *$1.value2*, **False** if *$1.value* is greater than *$1.value2*. You can provide additional parameters to the formula if necessary.
 
 The formula receives the following parameters:
 
@@ -2412,7 +2412,7 @@ Ordering with a property path:
 
 </details>
 
-<!-- REF #collection.orderByMethod().Syntax -->**.orderByMethod**( *formula* : 4D.Function { ; *...extraParam* : expression } ) : Collection<br/>**.orderByMethod**( *methodName* : Text { ; *...extraParam* : expression } ) : Collection<!-- END REF -->
+<!-- REF #collection.orderByMethod().Syntax -->**.orderByMethod**( *formula* : 4D.Function { ; *...extraParam* : Expression } ) : Collection<br/>**.orderByMethod**( *methodName* : Text { ; *...extraParam* : Expression } ) : Collection<!-- END REF -->
 
 
 
@@ -2576,7 +2576,7 @@ When applied to an empty collection, `.pop()` returns ***undefined***.
 
 </details>
 
-<!-- REF #collection.push().Syntax -->**.push**( *element* : any { ;...*elementN* } ) : Collection <!-- END REF -->
+<!-- REF #collection.push().Syntax -->**.push**( *element* : any { ;...*elementN* : any } ) : Collection <!-- END REF -->
 
 
 <!-- REF #collection.push().Params -->
@@ -3061,7 +3061,7 @@ With the following ***Flatten*** method:
 
 </details>
 
-<!-- REF #collection.reduceRight().Syntax -->**.reduceRight**( *formula* : 4D.Function { ; *initValue* : any { ; *...param* : expression }} ) : any<br/>**.reduceRight**( *methodName* : Text { ; *initValue* : any { ; *...param* : expression }} ) : any <!-- END REF -->
+<!-- REF #collection.reduceRight().Syntax -->**.reduceRight**( *formula* : 4D.Function { ; *initValue* : any { ; *...param* : Expression }} ) : any<br/>**.reduceRight**( *methodName* : Text { ; *initValue* : any { ; *...param* : Expression }} ) : any <!-- END REF -->
 
 
 <!-- REF #collection.reduceRight().Params -->
@@ -3730,3 +3730,4 @@ If several values are passed, they are inserted all at once, which means that th
 ```
 
 <!-- END REF -->
+

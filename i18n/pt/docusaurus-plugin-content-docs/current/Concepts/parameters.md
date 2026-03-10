@@ -170,33 +170,39 @@ A instrução `return` encerra a execução da função ou do método e pode ser
 Por exemplo, a seguinte função devolve o quadrado de seu argumento, $x, onde $x é um número.
 
 ```4d
-Function square($x : Integer) -> $result : Integer
+Function square($x : Integer) : Integer
    return $x * $x
 ```
 
-:::note
-
-Internamente, `return x` executa `myReturnValue:=x`, e retorna ao chamador. Se `return` for usado sem uma expressão, a função ou o método retornará um valor nulo do tipo de retorno declarado (se houver), caso contrário, *indefinido*.
-
-:::
-
-A instrução `return` pode ser usada junto com a sintaxe padrão para [valores retornados](#valorretornado) (o valor retornado deve ser do tipo declarado). Entretanto lembre que isso finaliza imediatamente a execução de código. Por exemplo:
+A instrução `return` pode ser usada junto com a sintaxe padrão para [valores retornados](#valorretornado) (o valor retornado deve ser do tipo declarado). When you have declared a return parameter (e.g. `myFunction() -> $myReturnValue : Text`), `return $x` implicitely executes `$myReturnValue:=$x`, and returns to the caller. Keep in mind that it ends immediately the code execution. Examine the following examples:
 
 ```4d
 Function getValue -> $v : Integer
 	$v:=10
+	return
+	// function returns 10
+	
+Function getValue -> $v : Integer
+	$v:=10
 	return 20
-	// retorna 20
+	// function returns 20
 
 Function getValue -> $v : Integer
 	return 10
 	$v:=20 // never executed
-	// retorna 10
+	// function returns 10
+
+Function getValue -> $v : Integer
+	return "Hello" //error
+
+Function returnHello
+	return "Hello"
+	// function returns "Hello"
 ```
 
 ## Indireção dos parâmetros
 
-Os métodos e funções 4D aceitam um número variável de parâmetros. Você pode abordar esses parâmetros com um loop `For...End for`, o comando [`Count parameters`](../commands-legacy/count-parameters.md) e a sintaxe de indireção de **parâmetro**. Dentro do método, um endereço de indireção é formatado `${N}`, onde `N` é uma expressão numérica.
+Os métodos e funções 4D aceitam um número variável de parâmetros. Você pode abordar esses parâmetros com um loop `For...End for`, o comando [`Count parameters`](../commands/count-parameters) e a sintaxe de indireção de **parâmetro**. Dentro do método, um endereço de indireção é formatado `${N}`, onde `N` é uma expressão numérica.
 
 ### Uso de parâmetros variáveis
 
@@ -220,7 +226,7 @@ Os parâmetros da função devem ser passados na ordem correta: primeiro o forma
  Result:=MySum("000";1;2;200) //"203"
 ```
 
-Observe que, mesmo que tenha declarado 0, 1 ou mais parâmetros, você sempre poderá passar o número de parâmetros que desejar. Os parâmetros estão todos disponíveis no código chamado por meio da sintaxe `${N}` e o tipo de parâmetros extras é [Variant](dt_variant.md) por padrão (você pode declará-los usando a [notação variadic](#declaring-variadic-parameters)). Você só precisa garantir que os parâmetros existam, graças ao comando [`Count parameters`](../commands-legacy/count-parameters.md). Por exemplo:
+Observe que, mesmo que tenha declarado 0, 1 ou mais parâmetros, você sempre poderá passar o número de parâmetros que desejar. Os parâmetros estão todos disponíveis no código chamado por meio da sintaxe `${N}` e o tipo de parâmetros extras é [Variant](dt_variant.md) por padrão (você pode declará-los usando a [notação variadic](#declaring-variadic-parameters)). Você só precisa garantir que os parâmetros existam, graças ao comando [`Count parameters`](../commands/count-parameters). Por exemplo:
 
 ```4d
 //método foo
@@ -277,9 +283,9 @@ Aqui temos um método chamado `SumNumbers` que retorna o total calculado para to
 
 var $number; $total : Real
 
-For each ($number; 1; Count parameters)
+For ($number; 1; Count parameters)
 	$total+=${$number}
-End for each
+End for
 
 return $total
 
@@ -533,3 +539,4 @@ O método `ChangeAge` adiciona 10 ao atributo Age do objeto recebido
 Quando você executar o método `CreatePerson`, ambas as caixas de alerta exibirão "50", pois a mesma referência de objeto é tratada por ambos os métodos.
 
 **4D Server:** Quando os parâmetros são passados entre métodos que não são executados na mesma máquina (usando, por exemplo, a opção "Execute on Server"), as referências não podem ser usadas. Nestes casos, são enviadas cópias dos parâmetros de objetos e coleções ao invés de referências.
+

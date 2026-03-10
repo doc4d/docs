@@ -16,6 +16,8 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+
+
 ## Descripción 
 
 <!--REF #_command_.On Mobile App Action database method.Summary-->**Documentación trasladada**.<!-- END REF-->
@@ -24,4 +26,4 @@ La documentación de este método base ha sido actualizada y trasladada a [devel
 
 ## Ver también 
 
-[Método base On Mobile App Authentication](metodo-base-on-mobile-app-authentication.md)  
+[Método base On Mobile App Authentication](../commands/metodo-base-on-mobile-app-authentication)  

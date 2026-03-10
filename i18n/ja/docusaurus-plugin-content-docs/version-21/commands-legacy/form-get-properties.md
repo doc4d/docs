@@ -22,6 +22,17 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>履歴</summary>
+
+|リリース|内容|
+|---|---|
+|12|名称変更|
+|6.5|初出|
+
+</details>
+</div>
+
 ## 説明 
 
 <!--REF #_command_.FORM GET PROPERTIES.Summary-->FORM GET PROPERTIES コマンドは*formName*フォームのプロパティを返します。<!-- END REF-->
@@ -34,7 +45,7 @@ displayed_sidebar: docs
 
 *numPages* 引数0ページを除いたフォーム内のページ数を返します。
 
-*fixedWidth* と *fixedHeight*には、フォームの幅と高さがサイズ変更可であるか ([False](false.md "False")) 、固定に設定されているか ([True](true.md "True")) を返します。
+*fixedWidth* と *fixedHeight*には、フォームの幅と高さがサイズ変更可であるか ([False](../commands/false)) 、固定に設定されているか ([True](../commands/true)) を返します。
 
 *title* 引数には、フォームエディターのプロパティリスト内で定義されているフォームのウインドウタイトルを返します。名前が定義されていないと*title*引数に空文字を返します。
 

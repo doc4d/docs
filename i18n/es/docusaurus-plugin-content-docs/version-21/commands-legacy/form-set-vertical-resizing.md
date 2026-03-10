@@ -17,17 +17,28 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>Historial</summary>
+
+|Versión|Cambios|
+|---|---|
+|12|Renombrar|
+|2004|Creado por|
+
+</details>
+</div>
+
 ## Descripción 
 
 <!--REF #_command_.FORM SET VERTICAL RESIZING.Summary-->El comando FORM SET VERTICAL RESIZING le permite modificar por programación las propiedades de redimensionamiento vertical del formulario actual.<!-- END REF--> Por defecto, estas propiedades son definidas en el editor de formularios en el entorno Diseño. Las nuevas propiedades son definidas para el proceso actual; no son almacenadas con el formulario.
 
 El parámetro *redimension* le permite definir si el formulario puede redimensionarse verticalmente; en otras palabras, si la altura es modificable (manualmente por el usuario o por programación). 
 
-Si pasa [True](true.md "True"), la altura del formulario puede ser modificada por el usuario; 4D utiliza como marcadores los valores pasados en *alturaMin* y *altura*Max. 
+Si pasa [True](../commands/true), la altura del formulario puede ser modificada por el usuario; 4D utiliza como marcadores los valores pasados en *alturaMin* y *altura*Max. 
 
-Si pasa [False](false.md "False"), no se puede modificar el largo del formulario actual; en este caso, no hay necesidad de pasar valores en los parámetros *alturaMin* y *altura*Max. 
+Si pasa [False](../commands/false), no se puede modificar el largo del formulario actual; en este caso, no hay necesidad de pasar valores en los parámetros *alturaMin* y *altura*Max. 
 
-Si ha pasado [True](true.md "True") en el primer parámetro, puede pasar en los parámetros opcionales *alturaMin* y *altura*Max las nuevas alturas, mínimas y máximas, del formulario (en píxeles). Si omite estos parámetros se utilizan los valores definidos en el entorno Diseño (si los hay).
+Si ha pasado [True](../commands/true) en el primer parámetro, puede pasar en los parámetros opcionales *alturaMin* y *altura*Max las nuevas alturas, mínimas y máximas, del formulario (en píxeles). Si omite estos parámetros se utilizan los valores definidos en el entorno Diseño (si los hay).
 
 ## Ejemplo 
 

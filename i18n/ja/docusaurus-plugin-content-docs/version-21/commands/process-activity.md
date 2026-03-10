@@ -4,9 +4,11 @@ title: Process activity
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Process activity.Syntax-->**Process activity** () : Object<br/>**Process activity** ( *options* ) : Object<br/>**Process activity** ( *sessionID* ) : Object<br/>**Process activity** ( *sessionID* ; *options* ) : Object<!-- END REF-->
+<!--REF #_command_.Process activity.Syntax-->**Process activity** () : Object<br/>**Process activity** ( *options* : Integer ) : Object<br/>**Process activity** ( *sessionID* : Text ) : Object<br/>**Process activity** ( *sessionID* : Text ; *options* : Integer ) : Object<!-- END REF-->
 
 <!--REF #_command_.Process activity.Params-->
+
+<div class="no-index">
 
 | 引数        | 型       |                             | 説明                                                             |
 | --------- | ------- | --------------------------- | -------------------------------------------------------------- |
@@ -14,16 +16,19 @@ displayed_sidebar: docs
 | options   | Integer | &#8594; | 返される情報を指定するオプション                                               |
 | 戻り値       | Object  | &#8592; | 実行中のプロセスまたはユーザーセッション(4D Serverのみ) のスナップショット |
 
+</div>
 <!-- END REF-->
 
+<div class="no-index">
 <details><summary>履歴</summary>
 
-| リリース  | 内容                  |
-| ----- | ------------------- |
-| 20 R7 | *sessionID* 引数のサポート |
-| 21    | Web ユーザーセッションのサポート  |
+| リリース  | 内容                                                                                        |
+| ----- | ----------------------------------------------------------------------------------------- |
+| 21    | Web ユーザーセッションのサポート                                                                        |
+| 20 R7 | <ul><li>Support of *sessionID* parameter</li><li>Renamed (Get process activity)</li></ul> |
 
 </details>
+</div>
 
 ## 説明
 
@@ -76,18 +81,18 @@ displayed_sidebar: docs
 全てのユーザーセッションのコレクションを取得したい場合を考えます:
 
 ```4d
-  // サーバー側で実行すること
- 
- var $o : Object
- var $i : Integer
+  //To be executed on the server
+ 
+ var $o : Object
+ var $i : Integer
  var $processName;$userName : Text
 
- 
- $o:=Process activity // プロセスとセッションの情報を取得
- For($i;0;($o.processes.length)-1) // "processes" コレクション内をループ
+ 
+ $o:=Process activity //Get process & session info
+ For($i;0;($o.processes.length)-1) //Iterate over the "processes" collection
     $processName:=$o.processes[$i].name
-    $userName:=String($o.processes[$i].session.userName) // userName へ簡単にアクセスする
-  // session オブジェクトがUndefined の場合があるのでString コマンドを必ず使用すること
+    $userName:=String($o.processes[$i].session.userName) // Easy access to userName
+  //use String because session object might be undefined
  End for
 ```
 

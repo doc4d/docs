@@ -16,6 +16,16 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>Historial</summary>
+
+|Versión|Cambios|
+|---|---|
+|6.5|Creado por|
+
+</details>
+</div>
+
 ## Descripción 
 
 <!--REF #_command_.BOOLEAN ARRAY FROM SET.Summary-->El comando BOOLEAN ARRAY FROM SET llena un array de booleanos indicando si cada registro en la tabla está o no en *conjunto*.<!-- END REF--> 
@@ -27,7 +37,7 @@ Cada elemento del array es:
 * Verdadero si el registro correspondiente pertenece al conjunto.
 * Falso si el registro correspondiente no pertenece al conjunto.
 
-**Advertencia:** el número total de elementos en el array *arrBool* no es significativo. Por razones estructurales, este número puede ser diferente del número de registros realmente presentes en la tabla. Los posibles elementos extras son definidos como [False](false.md "False").
+**Advertencia:** el número total de elementos en el array *arrBool* no es significativo. Por razones estructurales, este número puede ser diferente del número de registros realmente presentes en la tabla. Los posibles elementos extras son definidos como [False](../commands/false).
 
 Si no pasa el parámetro *conjunto*, el comando utilizará UserSet en el proceso actual.
 

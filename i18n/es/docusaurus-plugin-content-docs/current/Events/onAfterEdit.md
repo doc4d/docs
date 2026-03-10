@@ -3,9 +3,9 @@ id: onAfterEdit
 title: On After Edit
 ---
 
-| Code | Puede ser llamado por                                                                                                                                                                                                                                                                                                                                                                                                            | Definición                                                                     |
-| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| 45   | [Área 4D View Pro](../FormObjects/viewProArea_overview.md) - [Área 4D Write Pro](../FormObjects/writeProArea_overview.md) - [Combo Box](FormObjects/comboBox_overview.md) - Formulario - [Entrada](FormObjects/input_overview.md) - [Lista Jerárquica](FormObjects/list_overview.md) - [Lista de selección](FormObjects/listbox_overview.md) - [Columna de lista de selección](FormObjects/listbox_overview.md#list-box-columns) | El contenido del objeto introducible que tiene el foco acaba de ser modificado |
+| Code | Puede ser llamado por                                                                                                                                                                                                                                                                                                                                                                                       | Definición                                                                     |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| 45   | [Área 4D View Pro](../FormObjects/viewProArea_overview.md) - [Área 4D Write Pro](../FormObjects/writeProArea_overview.md) - [Combo Box](FormObjects/comboBox_overview.md) - Formulario - [Entrada](FormObjects/input_overview.md) - [Lista Jerárquica](FormObjects/list_overview.md) - [Lista de selección](FormObjects/listbox-object.md) - [Columna de lista de selección](FormObjects/listbox-column.md) | El contenido del objeto introducible que tiene el foco acaba de ser modificado |
 
 ## Descripción
 
@@ -20,7 +20,7 @@ Cuando se utiliza, este evento se genera después de cada cambio realizado en el
 - Toda entrada de teclado realizada por el usuario; en este caso, el evento `On After Edit` se genera después de los eventos [`On Before Keystroke`](onBeforeKeystroke. d) y [`On After Keystroke`](onAfterKeystroke.md), si se utilizan.
 - Cualquier modificación realizada mediante un comando del lenguaje que simule una acción del usuario (es decir, `POST KEY`).
 
-Dentro del evento `On After Edit`, los datos de texto que se ingresan son devueltos por el comando [`Get edited text`](../commands-legacy/get-edited-text.md).
+Dentro del evento `On After Edit`, los datos de texto que se ingresan son devueltos por el comando [`Get edited text`](../commands/get-edited-text).
 
 ### 4D View Pro
 
@@ -112,3 +112,4 @@ El ejemplo anterior podría generar un objeto evento como este:
 "newValue":"jumped over the lazy dog";
 }
 ```
+

@@ -340,7 +340,7 @@ GitHubでリリースが作成されると、そこに**タグ**と**バージ�
 
 このファイルは、依存関係・パス・url・読み込みエラー・その他の情報などをログに記録します。 これは、コンポーネントの読み込み管理やトラブルシューティングに役立ちます。
 
-## Monitoring Project Dependencies {#monitoring-project-dependencies}
+## プロジェクトの依存関係をモニタリング {#monitoring-project-dependencies}
 
 開かれているプロジェクトでは、**依存関係** パネルで依存関係の追加・削除・更新ができるほか、現在の読み込み状態に関する情報を取得することができます。
 
@@ -440,7 +440,7 @@ GitHubでリリースが作成されると、そこに**タグ**と**バージ�
 
 ![dependency-add](../assets/en/Project/dependency-add.png)
 
-Make sure the **Local** tab is selected and click on the *...*\*\* button. 標準の "ファイルを開く" ダイアログボックスが表示され、追加するコンポーネントを選択できます。 [**.4DZ**](../Desktop/building.md#コンポーネントをビルド) または [**.4DProject**](architecture.md#applicationname4dproject-ファイル) ファイルを選択できます。
+**ローカル** タブが選択されていることを確認し、**...** ボタンをクリックします。 標準の "ファイルを開く" ダイアログボックスが表示され、追加するコンポーネントを選択できます。 [**.4DZ**](../Desktop/building.md#コンポーネントをビルド) または [**.4DProject**](architecture.md#applicationname4dproject-ファイル) ファイルを選択できます。
 
 選択した項目が有効であれば、その名前と場所がダイアログボックスに表示されます。
 
@@ -501,11 +501,11 @@ GitHub 依存関係は[**dependencies.json**](#dependenciesjson) ファイル内
 
 ![dependency-git-tag](../assets/en/Project/dependency-git-tag.png)
 
-- **Follow 4D version** (default, recommended option): Download the latest component release that is compatible with the running 4D version. この依存関係ルールは、コンポーネントのリリースタグが適切な[命名規則](#4dバージョンタグの命名規則) に従っていた場合にのみ使用できます。 This option is **recommended**, especially for the [components developed by 4D](../Extensions/overview.md#components-developed-by-4d).
+- **4D のバージョンに追随する** (デフォルト、推奨されるオプション): 実行中の4D バージョンと互換性のある最新のコンポーネントリリースをダウンロードします。 この依存関係ルールは、コンポーネントのリリースタグが適切な[命名規則](#4dバージョンタグの命名規則) に従っていた場合にのみ使用できます。 このオプションは、特に[4D によって開発されたコンポーネント](../Extensions/overview.md#4d-によって開発されたコンポーネント) に対して推奨されます。
 - **メジャー更新の手前まで**: [セマンティックバージョニングの範囲](#タグとバージョン)を定義して、更新を次のメジャーバージョンの手前までに制限します。
 - **マイナー更新の手前まで**: 上と同様に、更新を次のマイナーバージョンの手前までに制限します。
 - **自動更新しない(タグ指定)**: 利用可能なリストから [特定のタグ](#セマンティックバージョン範囲]) を選択するか、手動で入力します。
-- **Latest**: Allows to download the release that is tagged as the latest version. **Warning:** While using this option can be convenient during early development, it is better to avoid it in production or shared projects since it automatically pulls in newer releases, including beta releases, which may lead to unexpected updates or breaking changes.
+- **自動更新する(latest)**: 最新(latest)としてタグづけされたリリースをダウンロードすることを許可します。 **警告:** このオプションを使用するのは開発の初期段階では便利かもしれませんが、ベータリリースを含め新しいリリースを自動的に取り込むため、予期せぬアップデートや変更を引き起こす可能性があります。そのため、製品環境や共有プロジェクトでは避けた方が賢明です。
 
 現在のGitHub 依存関係バージョンは、依存関係の項目の右側に表示されます:
 
@@ -603,7 +603,7 @@ GitHub アクセストークンを提供するには、次のいずれかを実�
 
 パーソナルアクセストークンは 1つしか入力できません。 入力されたトークンは編集することができます。
 
-提供されたトークンは、[アクティブな4Dフォルダー](../commands-legacy/get-4d-folder.md#active-4d-folder) 内の**github.json** ファイルに保存されます。
+提供されたトークンは、[アクティブな4Dフォルダー](../commands/get-4d-folder#active-4d-folder) 内の**github.json** ファイルに保存されます。
 
 ### 依存関係の削除
 
@@ -624,4 +624,5 @@ GitHub アクセストークンを提供するには、次のいずれかを実�
 #### 依存関係の使用に関する警告
 
 プロジェクト内の他の依存関係が必要とする一次依存関係を削除しようとした場合、その依存関係が使用されているという警告が表示されます。 そのまま削除した場合にはそれを必要としている依存関係コンポーネントが正常に動作しなくなる可能性があるため、システムはどの依存関係がそれを必要としているかを表示した上で、削除するかどうかの確認を求めます。
+
 

@@ -170,33 +170,39 @@ La instrucción `return` finaliza la ejecución de una función o de un método 
 Por ejemplo, la siguiente función devuelve el cuadrado de su argumento, $x, donde $x es un número.
 
 ```4d
-Function square($x : Integer) -> $result : Integer
+Function square($x : Integer) : Integer
    return $x * $x
 ```
 
-:::note
-
-Internamente, `return x` ejecuta `myReturnValue:=x`, y regresa al llamante. Si `return` se utiliza sin una expresión, la función o el método devuelve un valor nulo del tipo de retorno declarado (si lo hay), de lo contrario *undefined*.
-
-:::
-
-La instrucción `return` puede utilizarse junto con la sintaxis estándar para los [valores devueltos](#valor-devuelto) (el valor devuelto debe ser del tipo declarado). Sin embargo, hay que tener en cuenta que termina inmediatamente la ejecución del código. Por ejemplo:
+La instrucción `return` puede utilizarse junto con la sintaxis estándar para los [valores devueltos](#valor-devuelto) (el valor devuelto debe ser del tipo declarado). When you have declared a return parameter (e.g. `myFunction() -> $myReturnValue : Text`), `return $x` implicitely executes `$myReturnValue:=$x`, and returns to the caller. Keep in mind that it ends immediately the code execution. Examine the following examples:
 
 ```4d
 Function getValue -> $v : Integer
 	$v:=10
+	return
+	// function returns 10
+	
+Function getValue -> $v : Integer
+	$v:=10
 	return 20
-	// devuelve 20
+	// function returns 20
 
 Function getValue -> $v : Integer
 	return 10
-	$v:=20 // nunca ejecutado
-	// devuelve 10
+	$v:=20 // never executed
+	// function returns 10
+
+Function getValue -> $v : Integer
+	return "Hello" //error
+
+Function returnHello
+	return "Hello"
+	// function returns "Hello"
 ```
 
 ## Indirección de parámetros (${N})
 
-Los métodos y funciones 4D aceptan un número variable de parámetros. Puede dirigirse a esos parámetros con un bucle `For...End for`, el comando [`Count parameters`](../commands-legacy/count-parameters.md) y la **sintaxis de indirección de parámetros**. Dentro del método, una dirección de indirección tiene el formato `${N}`, donde `N` es una expresión numérica.
+Los métodos y funciones 4D aceptan un número variable de parámetros. Puede dirigirse a esos parámetros con un bucle `For...End for`, el comando [`Count parameters`](../commands/count-parameters) y la **sintaxis de indirección de parámetros**. Dentro del método, una dirección de indirección tiene el formato `${N}`, donde `N` es una expresión numérica.
 
 ### Utilización de parámetros variables
 
@@ -220,7 +226,7 @@ Los parámetros del método deben pasarse en el orden correcto, primero el forma
  Result:=MySum("000";1;2;200) //"203"
 ```
 
-Tenga en cuenta que aunque haya declarado 0, 1 o más parámetros, siempre puede pasar el número de parámetros que desee. Los parámetros están todos disponibles dentro del código llamado a través de la sintaxis `${N}` y el tipo de parámetros extra es [Variant](dt_variant.md) por defecto (puede declararlos utilizando la [notación variadic](#declaring-variadic-parameters)). Solo necesita asegurarse de que los parámetros existan, gracias al comando [`Count parameters`](../commands-legacy/count-parameters.md). Por ejemplo:
+Tenga en cuenta que aunque haya declarado 0, 1 o más parámetros, siempre puede pasar el número de parámetros que desee. Los parámetros están todos disponibles dentro del código llamado a través de la sintaxis `${N}` y el tipo de parámetros extra es [Variant](dt_variant.md) por defecto (puede declararlos utilizando la [notación variadic](#declaring-variadic-parameters)). Solo necesita asegurarse de que los parámetros existan, gracias al comando [`Count parameters`](../commands/count-parameters). Por ejemplo:
 
 ```4d
 //método foo
@@ -277,9 +283,9 @@ Aquí tenemos un método llamado `SumNumbers` que devuelve el total calculado pa
 
 var $number; $total : Real
 
-For each ($number; 1; Count parameters)
+For ($number; 1; Count parameters)
 	$total+=${$number}
-End for each
+End for
 
 return $total
 
@@ -536,3 +542,4 @@ El método `ChangeAge` añade 10 al atributo Age del objeto recibido
 Cuando se ejecuta el método `CreatePerson`, las dos cajas de alerta dirán "50" ya que la misma referencia de objeto es manejada por ambos métodos.
 
 **4D Server:** cuando se pasan parámetros entre métodos que no se ejecutan en la misma máquina (utilizando por ejemplo la opción "Ejecutar en el servidor"), las referencias no son utilizables. En estos casos, se envían copias de los parámetros de objetos y colecciones en lugar de referencias.
+

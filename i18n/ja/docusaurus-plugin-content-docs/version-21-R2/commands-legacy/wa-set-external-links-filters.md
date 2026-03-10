@@ -18,6 +18,16 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>履歴</summary>
+
+|リリース|内容|
+|---|---|
+|11 SQL Release 2|初出|
+
+</details>
+</div>
+
 ## 説明 
 
 <!--REF #_command_.WA SET EXTERNAL LINKS FILTERS.Summary-->WA SET EXTERNAL LINKS FILTERS コマンドを使用して、*\** と *object* 引数で指定したWebエリアの外部リンクフィルタを設定できます。<!-- END REF-->外部リンクフィルタは、リンクを使用して現在のページに関連付けられているURLをWebエリアで開くか、マシンのデフォルトWebブラウザで開くかどうか決定するために使用されます。
@@ -27,11 +37,11 @@ displayed_sidebar: docs
 *filtersArr* と *allowDenyArr* 配列は同期されていなければなりません。
 
 * *filtersArr* 配列のそれぞれの要素には、フィルタするURL が含まれます。1つ以上の文字を表すワイルドカードとして \* を使用できます。
-* *allowDenyArr*配列のそれぞれ対応する要素には、URL をWeb エリアで表示する ([True](true.md "True")) かWeb ブラウザで表示する ([False](false.md "False")) かを示すブール値が含まれます。
+* *allowDenyArr*配列のそれぞれ対応する要素には、URL をWeb エリアで表示する ([True](../commands/true)) かWeb ブラウザで表示する ([False](../commands/false)) かを示すブール値が含まれます。
 
 同じURL が許可および拒否されているなど、設定レベルで矛盾がある場合、最後の設定が考慮されます。
 
-フィルタを無効にするには、コマンドを呼び出す際に空の配列を渡すか、配列の最後の要素で、*filtersArr* 配列に"*\**" を、*allowDenyArr*配列に[True](true.md "True")を渡します。
+フィルタを無効にするには、コマンドを呼び出す際に空の配列を渡すか、配列の最後の要素で、*filtersArr* 配列に"*\**" を、*allowDenyArr*配列に[True](../commands/true)を渡します。
 
 **重要**: [WA SET URL FILTERS](wa-set-url-filters.md "WA SET URL FILTERS")コマンドで設定されたフィルタが、WA SET EXTERNAL LINKS FILTERSコマンドよりも前に評価されます。つまりURLが[WA SET URL FILTERS](wa-set-url-filters.md "WA SET URL FILTERS")コマンドフィルタの設定により拒否されると、WA SET EXTERNAL LINKS FILTERSコマンドで受け入れていても、そのURL をブラウザで開くことはできません (例2 参照)。
 

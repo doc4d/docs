@@ -15,6 +15,16 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>Histórico</summary>
+
+|Versão|Alterações|
+|---|---|
+|14|Criado por|
+
+</details>
+</div>
+
 ## Descrição 
 
 <!--REF #_command_.On Host Database Event database method.Summary-->O **On Host Database Event database method** permite aos recipientes 4D executar código quando se abre e fecha a base local.<!-- END REF-->  
@@ -27,10 +37,10 @@ Para processar um evento, deve provar o valor do parâmetro $1 no método, e com
   
 | Constante                       | Tipo          | Valor | Comentário                                                                                                                                                                                                                                                                                       |
 | ------------------------------- | ------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| On after host database exit     | Inteiro longo | 4     | O [Semaphore](semaphore.md) da base local acaba de terminar sua execução                                                                                                                                                                                                                         |
+| On after host database exit     | Inteiro longo | 4     | O [Semaphore](../commands/semaphore) da base local acaba de terminar sua execução                                                                                                                                                                                                                         |
 | On after host database startup  | Inteiro longo | 2     | O da base local acaba de terminar sua execução                                                                                                                                                                                                                                                   |
-| On before host database exit    | Inteiro longo | 3     | A base local está fechando. O [Semaphore](semaphore.md) da base local ainda não foi chamado. <br/>O [Semaphore](semaphore.md) da base local não é chamado enquanto o [On Host Database Event database method](on-host-database-event-database-method.md) do recipiente esteja executando |
-| On before host database startup | Inteiro longo | 1     | A base local foi iniciada. O da base local ainda não foi chamado. <br/>O método base On Startup da base local não é chamado enquanto o [On Host Database Event database method](on-host-database-event-database-method.md) do recipiente esteja executando                               |
+| On before host database exit    | Inteiro longo | 3     | A base local está fechando. O [Semaphore](../commands/semaphore) da base local ainda não foi chamado. <br/>O [Semaphore](../commands/semaphore) da base local não é chamado enquanto o [On Host Database Event database method](../commands/on-host-database-event-database-method) do recipiente esteja executando |
+| On before host database startup | Inteiro longo | 1     | A base local foi iniciada. O da base local ainda não foi chamado. <br/>O método base On Startup da base local não é chamado enquanto o [On Host Database Event database method](../commands/on-host-database-event-database-method) do recipiente esteja executando                               |
 
 Isto permite aos recipientes 4D carregar e guardar preferências ou estados de usuário relacionados com o funcionamento da base local.
 
@@ -56,3 +66,4 @@ Exemplo de estrutura tipo de um método base On Host Database Event:
   // da base local
  End case
 ```
+

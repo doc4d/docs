@@ -11,7 +11,7 @@ When the **automatic insertion** option is not set (default), the value entered 
 
 This property is supported by:
 
-- [Combo box](comboBox_overview.md) and [list box column](listbox_overview.md#list-box-columns) form objects associated to a choice list.
+- [Combo box](comboBox_overview.md) and [list box column](listbox-column.md) form objects associated to a choice list.
 - [Combo box](comboBox_overview.md) form objects whose associated list is filled by their array or object datasource.
 
 For example, given a choice list containing "France, Germany, Italy" that is associated with a "Countries" combo box: if the **automatic insertion** property is set and a user enters "Spain", then the value "Spain" is automatically added to the list in memory:
@@ -28,7 +28,7 @@ For example, given a choice list containing "France, Germany, Italy" that is ass
 
 #### Objects Supported
 
-[Combo Box](comboBox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
+[Combo Box](comboBox_overview.md) - [List Box Column](listbox-column.md)
 
 ---
 
@@ -47,11 +47,11 @@ Associates a choice list with an object. It can be a choice list name (a list re
 #### Objects Supported
 
 [Drop-down List](dropdownList_Overview.md) -
-[Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
+[Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md) - [List Box Column](listbox-column.md)
 
 #### Commands
 
-[OBJECT Get list name](../commands-legacy/object-get-list-name.md) - [OBJECT Get list reference](../commands-legacy/object-get-list-reference.md) - [OBJECT SET LIST BY NAME](../commands-legacy/object-set-list-by-name.md) - [OBJECT SET LIST BY REFERENCE](../commands-legacy/object-set-list-by-reference.md)
+[OBJECT Get list name](../commands/object-get-list-name) - [OBJECT Get list reference](../commands/object-get-list-reference) - [OBJECT SET LIST BY NAME](../commands/object-set-list-by-name) - [OBJECT SET LIST BY REFERENCE](../commands/object-set-list-by-reference)
 
 
 
@@ -94,7 +94,7 @@ Specifies a variable or expression that will be assigned the collection element/
 
 #### Commands
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -122,7 +122,7 @@ Specifies a variable or expression that will be assigned a longint indicating th
 
 #### Commands
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -130,7 +130,7 @@ Specifies a variable or expression that will be assigned a longint indicating th
 
 Defines the data type for the displayed expression. This property is used with:
 
-- [List box columns](listbox_overview.md#list-box-columns) of the selection and collection types.
+- [List box columns](listbox-column.md) of the selection and collection types.
 - [Drop-down lists](dropdownList_Overview.md) associated to objects or arrays.
 
 See also [**Expression Type**](properties_Object.md#expression-type) section.
@@ -143,7 +143,7 @@ See also [**Expression Type**](properties_Object.md#expression-type) section.
 
 #### Objects Supported
 
-[Drop-down Lists](dropdownList_Overview.md) associated to objects or arrays - [List Box column](listbox_overview.md#list-box-columns)
+[Drop-down Lists](dropdownList_Overview.md) associated to objects or arrays - [List Box column](listbox-column.md)
 
 ---
 
@@ -158,7 +158,7 @@ Three options are available:
 
 - **List reference**: declares that the drop-down list is hierarchical. It means that the drop-down list can display up to two hierarchical levels and its contents can be managed by the 4D language commands of the **Hierarchical Lists** theme.
 - **Selected item value** (default): the drop-down list is not hierarchical and the value of the item chosen in the list by the user is saved directly. For example, if the user chooses the value "Blue", then this value is saved in the field.
-- **Selected item reference**: the drop-down list is not hierarchical and the reference of the choice list item is saved in the object. This reference is the numeric value associated with each item either through the *itemRef* parameter of the [`APPEND TO LIST`](../commands-legacy/append-to-list.md) or [`SET LIST ITEM`](../commands-legacy/set-list-item.md) commands, or in the list editor. This option lets you optimize memory usage: storing numeric values in fields uses less space than storing strings. It also makes it easier to translate applications: you just create multiple lists in different languages but with the same item references, then load the list based on the language of the application.
+- **Selected item reference**: the drop-down list is not hierarchical and the reference of the choice list item is saved in the object. This reference is the numeric value associated with each item either through the *itemRef* parameter of the [`APPEND TO LIST`](../commands/append-to-list) or [`SET LIST ITEM`](../commands/set-list-item) commands, or in the list editor. This option lets you optimize memory usage: storing numeric values in fields uses less space than storing strings. It also makes it easier to translate applications: you just create multiple lists in different languages but with the same item references, then load the list based on the language of the application.
 
 Using the **Selected item reference** option requires compliance with the following principles:
 
@@ -200,14 +200,14 @@ You must enter a list of values. In the Form editor, a specific dialog box allow
 
 #### Objects Supported
 
-[List Box Column (array type only)](listbox_overview.md#list-box-columns)
+[List Box Column (array type only)](listbox-column.md)
 
 ---
 
 ## Expression
 
-This description is specific to [selection](listbox_overview.md#selection-list-boxes)
- and [collection](listbox_overview.md#collection-or-entity-selection-list-boxes) type list box columns. See also **[Variable or Expression](properties_Object.md#variable-or-expression)** section.
+This description is specific to [selection](FormObjects/listbox-object.md#selection-list-boxes)
+ and [collection](../FormObjects/listbox-object.md#collection-or-entity-selection-list-boxes) type list box columns. See also **[Variable or Expression](properties_Object.md#variable-or-expression)** section.
 
 A 4D expression to be associated with a column. You can enter:
 
@@ -232,7 +232,7 @@ The following expression types are supported:
   - Boolean
   
  For collection/entity selection list boxes, Null or unsupported types are displayed as empty strings.  
- When using collections or entity selections, you will usually declare the element property or entity attribute associated to a column within an expression containing [This](../commands/this.md). `This` is a dedicated 4D command that returns a reference to the currently processed element. For example, you can use `This.\<propertyPath>` where `\<propertyPath>` is the path of a property in the collection or an entity attribute path to access the current value of each element/entity.
+ When using collections or entity selections, you will usually declare the element property or entity attribute associated to a column within an expression containing [This](../commands/this). `This` is a dedicated 4D command that returns a reference to the currently processed element. For example, you can use `This.\<propertyPath>` where `\<propertyPath>` is the path of a property in the collection or an entity attribute path to access the current value of each element/entity.
  If you use a collection of scalar values, 4D will create an object for each collection element with a single property (named "value"), filled with the element value. In this case, you will use `This.value` as expression.
 
  If a [non-assignable expression](Concepts/quick-tour.md#expressions) is used (e.g. `[Person]FirstName+" "+[Person]LastName`), the column is never enterable even if the [Enterable](properties_Entry.md#enterable) property is enabled.
@@ -247,7 +247,7 @@ If a field, a variable, or an assignable expression (*e.g. Person.lastName*) is 
 
 #### Objects Supported
 
-[List Box Column](listbox_overview.md#list-box-columns)
+[List Box Column](listbox-column.md)
 
 ---
 
@@ -271,7 +271,7 @@ All database tables can be used, regardless of whether the form is related to a 
 
 #### Commands
 
-[LISTBOX GET TABLE SOURCE](../commands-legacy/listbox-get-table-source.md) - [LISTBOX SET TABLE SOURCE](../commands-legacy/listbox-set-table-source.md)
+[LISTBOX GET TABLE SOURCE](../commands/listbox-get-table-source) - [LISTBOX SET TABLE SOURCE](../commands/listbox-set-table-source)
 
 ---
 
@@ -280,12 +280,12 @@ All database tables can be used, regardless of whether the form is related to a 
 This property is available in the following conditions:
 
 - a [choice list](#choice-list) is associated with the object
-- for [inputs](input_overview.md) and [list box columns](listbox_overview.md#list-box-columns), a [required list](properties_RangeOfValues.md#required-list) is also defined for the object (both options should use usually the same list), so that only values from the list can be entered by the user.
+- for [inputs](input_overview.md) and [list box columns](listbox-column.md), a [required list](properties_RangeOfValues.md#required-list) is also defined for the object (both options should use usually the same list), so that only values from the list can be entered by the user.
 
 This property specifies, in the context of a field or variable associated with a list of values, the type of contents to save:
 
 - **Save as Value** (default option): the value of the item chosen in the list by the user is saved directly. For example, if the user chooses the value "Blue", then this value is saved in the field.
-- **Save as Reference**: the reference of the choice list item is saved in the object. This reference is the numeric value associated with each item either through the *itemRef* parameter of the [`APPEND TO LIST`](../commands-legacy/append-to-list.md) or [`SET LIST ITEM`](../commands-legacy/set-list-item.md) commands, or in the list editor.
+- **Save as Reference**: the reference of the choice list item is saved in the object. This reference is the numeric value associated with each item either through the *itemRef* parameter of the [`APPEND TO LIST`](../commands/append-to-list) or [`SET LIST ITEM`](../commands/set-list-item) commands, or in the list editor.
 
 This option lets you optimize memory usage: storing numeric values in fields uses less space than storing strings. It also makes it easier to translate applications: you just create multiple lists in different languages but with the same item references, then load the list based on the language of the application.
 
@@ -302,7 +302,7 @@ Using this property requires compliance with the following principles:
 
 #### Objects Supported
 
-[Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
+[Input](input_overview.md) - [List Box Column](listbox-column.md)
 
 ---
 
@@ -329,7 +329,7 @@ Specifies a variable or expression that will be assigned the elements or entitie
 
 #### Commands
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
 ---
 
@@ -353,6 +353,7 @@ Specifies the named selection to be used. You must enter the name of a valid nam
 
 #### Commands
 
-[LISTBOX GET TABLE SOURCE](../commands-legacy/listbox-get-table-source.md) - [LISTBOX SET TABLE SOURCE](../commands-legacy/listbox-set-table-source.md)
+[LISTBOX GET TABLE SOURCE](../commands/listbox-get-table-source) - [LISTBOX SET TABLE SOURCE](../commands/listbox-set-table-source)
+
 
 

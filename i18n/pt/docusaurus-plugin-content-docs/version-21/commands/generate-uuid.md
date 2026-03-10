@@ -5,24 +5,30 @@ slug: /commands/generate-uuid
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Generate UUID.Syntax-->**Generate UUID** : Text<br>**Generate UUID**( *version* ) : Text<!-- END REF-->
+<!--REF #_command_.Generate UUID.Syntax-->**Generate UUID** : Text<br/>**Generate UUID** ( *version* : Integer ) : Text<!-- END REF-->
 
 <!--REF #_command_.Generate UUID.Params-->
+
+<div class="no-index">
 
 | Parâmetro | Tipo    |                             | Descrição                                                         |
 | --------- | ------- | --------------------------- | ----------------------------------------------------------------- |
 | version   | Integer | &#8594; | UUID version: 4 (default) or 7 |
 | Resultado | Text    | &#8592; | New UUID as non-canonical text (32 characters) |
 
+</div>
 <!-- END REF-->
 
+<div class="no-index">
 <details><summary>História</summary>
 
 | Release | Mudanças                       |
 | ------- | ------------------------------ |
 | 20 R10  | Support of *version* parameter |
+| 12      | Created                        |
 
 </details>
+</div>
 
 ## Descrição
 
@@ -48,8 +54,8 @@ In 4D, UUID numbers can be stored in fields (see [UUID Format](https://doc.4d.co
 Generation of a UUID in a variable:
 
 ```4d
- var MyUUID : Text
- MyUUID:=Generate UUID
+ var MyUUID : Text
+ MyUUID:=Generate UUID
 ```
 
 ## Propriedades

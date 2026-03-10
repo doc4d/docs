@@ -21,7 +21,7 @@ La propiedad de corrección ortográfica automática activa la corrección ortog
 
 #### Comandos
 
-[`OBJECT Get auto spellcheck`](../commands-legacy/object-get-auto-spellcheck.md) - [`OBJECT SET AUTO SPELLCHECK`](../commands-legacy/object-set-auto-spellcheck.md) - [`WP Get view properties`](../WritePro/commands-legacy/wp-get-view-properties.md) - [`WP SET VIEW PROPERTIES`](../WritePro/commands-legacy/wp-set-view-properties.md)
+[`OBJECT Get auto spellcheck`](../commands/object-get-auto-spellcheck) - [`OBJECT SET AUTO SPELLCHECK`](../commands/object-set-auto-spellcheck) - [`WP Get view properties`](../WritePro/commands-legacy/wp-get-view-properties.md) - [`WP SET VIEW PROPERTIES`](../WritePro/commands-legacy/wp-set-view-properties.md)
 
 ---
 
@@ -31,14 +31,14 @@ Permite al usuario acceder a un menú contextual estándar en el objeto cuando s
 
 Para una imagen de tipo [entrada](input_overview.md), además de los comandos de edición estándar (Cortar, Copiar, Pegar y Borrar), el menú contiene el comando **Importar...**, que puede utilizarse para importar una imagen almacenada en un archivo, así como el comando **Guardar como...**, que puede utilizarse para guardar la imagen en el disco. El menú también permite modificar el formato de visualización de la imagen: se ofrecen las opciones **Truncado no centrado**, **Escalado para ajustar** y **Escalado para ajustar centrado prop.**. La modificación del [formato de visualización](properties_Display.md#picture-format) utilizando este menú es temporal; no se guarda con el registro.
 
-For a [multi-style](properties_Text.md#multi-style) text type [input](input_overview.md) or [listbox column](listbox_overview.md#list-box-columns), in addition to standard editing commands, the context menu provides the following commands:
+For a [multi-style](properties_Text.md#multi-style) text type [input](input_overview.md) or [listbox column](listbox-column.md), in addition to standard editing commands, the context menu provides the following commands:
 
 - **Fuentes...**: muestra el diálogo del sistema de fuentes
 - **Fuentes recientes**: muestra los nombres de las fuentes recientes seleccionadas durante la sesión. La lista puede almacenar hasta 10 fuentes (más allá, la última fuente utilizada sustituye a la más antigua). Por defecto, esta lista está vacía y la opción no se muestra. Puede gestionar esta lista utilizando los comandos `SET RECENT FONTS` y `FONT LIST`.
 - comandos para las modificaciones de estilo soportados: fuente, tamaño, estilo, color y color de fondo.
   Cuando el usuario modifica un atributo de estilo a través de este menú emergente, 4D genera el evento de formulario `On After Edit`.
 
-Para un [Área Web](webArea_overview.md), el contenido del menú depende del motor de renderizado de la plataforma. Es posible controlar el acceso al menú contextual mediante el comando [`WA SET PREFERENCE`](../commands-legacy/wa-set-preference.md).
+Para un [Área Web](webArea_overview.md), el contenido del menú depende del motor de renderizado de la plataforma. It is possible to control access to the context menu via the [`WA SET PREFERENCE`](../commands/wa-set-preference) command.
 
 #### Gramática JSON
 
@@ -48,11 +48,11 @@ Para un [Área Web](webArea_overview.md), el contenido del menú depende del mot
 
 #### Objetos soportados
 
-[Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [Web Area](webArea_overview.md) - [4D Write Pro areas](writeProArea_overview.md)
+[Input](input_overview.md) - [List Box Column](listbox-column.md) - [Web Area](webArea_overview.md) - [4D Write Pro areas](writeProArea_overview.md)
 
 #### Comandos
 
-[`OBJECT Get context menu`](../commands-legacy/object-get-context-menu.md) - [`OBJECT SET CONTEXT MENU`](../commands-legacy/object-set-context-menu.md) - [`WA GET PREFERENCE`](../commands-legacy/wa-get-preference.md) - [`WA SET PREFERENCE`](../commands-legacy/wa-set-preference.md)
+[`OBJECT Get context menu`](../commands/object-get-context-menu) - [`OBJECT SET CONTEXT MENU`](../commands/object-set-context-menu) - [`WA GET PREFERENCE`](../commands/wa-get-preference) - [`WA SET PREFERENCE`](../commands/wa-set-preference)
 
 ---
 
@@ -72,15 +72,15 @@ Cuando esta propiedad está desactivada, se desactiva todo menú emergente asoci
 
 #### Objetos soportados
 
-[Áreas 4D Write Pro](writeProArea_overview.md) - [Casilla de selección](checkbox_overview.md) - [Lista jerárquica](list_overview.md) - [Área de entrada](input_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns) - [Barra de progreso](progressIndicator.md) - [Regla](ruler.md) - [Contador](stepper.md)
+[Áreas 4D Write Pro](writeProArea_overview.md) - [Casilla de selección](checkbox_overview.md) - [Lista jerárquica](list_overview.md) - [Área de entrada](input_overview.md) - [Columna List Box](listbox-column.md) - [Barra de progreso](progressIndicator.md) - [Regla](ruler.md) - [Contador](stepper.md)
 
 #### Comandos
 
-[`OBJECT Get enterable`](../commands-legacy/object-get-enterable.md) - [`OBJECT SET ENTERABLE`](../commands-legacy/object-set-enterable.md)
+[`OBJECT Get enterable`](../commands/object-get-enterable) - [`OBJECT SET ENTERABLE`](../commands/object-set-enterable)
 
 #### Ver también
 
-[`FORM GET ENTRY ORDER`](../commands-legacy/form-get-entry-order.md) - [`FORM SET ENTRY ORDER`](../commands-legacy/form-set-entry-order.md)
+[`FORM GET ENTRY ORDER`](../commands/form-get-entry-order) - [`FORM SET ENTRY ORDER`](../commands/form-set-entry-order)
 
 ---
 
@@ -134,13 +134,13 @@ A continuación se presenta una tabla que explica cada una de las opciones de fi
 
 #### Objetos soportados
 
-[Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [ Lista jerárquica](list_overview.md) - [Área de entrada](input_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns)
+[Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [ Lista jerárquica](list_overview.md) - [Área de entrada](input_overview.md) - [Columna List Box](listbox-column.md)
 
 ---
 
 #### Comandos
 
-[`OBJECT Get filter`](../commands-legacy/object-get-filter.md) - [`OBJECT SET FILTER`](../commands-legacy/object-set-filter.md)
+[`OBJECT Get filter`](../commands/object-get-filter) - [`OBJECT SET FILTER`](../commands/object-set-filter)
 
 ## Focusable
 
@@ -166,7 +166,7 @@ Cuando se selecciona la propiedad **Enfocable** para un objeto no editable, el u
 
 #### Comandos
 
-[`OBJECT Get enterable`](../commands-legacy/object-get-enterable.md) - [`OBJECT SET ENTERABLE`](../commands-legacy/object-set-enterable.md)
+[`OBJECT Get enterable`](../commands/object-get-enterable) - [`OBJECT SET ENTERABLE`](../commands/object-set-enterable)
 
 ---
 
@@ -190,7 +190,7 @@ Por defecto, el objeto utiliza la disposición actual del teclado.
 
 #### Comandos
 
-[`OBJECT Get keyboard layout`](../commands-legacy/object-get-keyboard-layout.md) - [`OBJECT SET KEYBOARD LAYOUT`](../commands-legacy/object-set-keyboard-layout.md)
+[`OBJECT Get keyboard layout`](../commands/object-get-keyboard-layout) - [`OBJECT SET KEYBOARD LAYOUT`](../commands/object-set-keyboard-layout)
 
 ---
 
@@ -226,7 +226,7 @@ Cuando se selecciona este valor, la propiedad es gestionada por la opción [Reto
 
 #### Comandos
 
-[`OBJECT Get multiline`](../commands-legacy/object-get-multiline.md) - [`OBJECT SET MULTILINE`](../commands-legacy/object-set-multiline.md)
+[`OBJECT Get multiline`](../commands/object-get-multiline) - [`OBJECT SET MULTILINE`](../commands/object-set-multiline)
 
 ---
 
@@ -251,7 +251,7 @@ Puede utilizar una referencia XLIFF en la forma ":xliff:resname" como marcador d
 
 Sólo se pasa la referencia en el campo "Marcador de posición"; no es posible combinar una referencia con texto estático.
 
-> También puedes definir y obtener el texto del marcador de posición por programación utilizando los comandos [`OBJECT SET PLACEHOLDER`](../commands-legacy/object-set-placeholder.md) y [`OBJECT Get placeholder`](../commands-legacy/object-get-placeholder.md).
+> También puedes definir y obtener el texto del marcador de posición por programación utilizando los comandos [`OBJECT SET PLACEHOLDER`](../commands/object-set-placeholder) y [`OBJECT Get placeholder`](../commands/object-get-placeholder).
 
 #### Gramática JSON
 
@@ -269,7 +269,7 @@ Sólo se pasa la referencia en el campo "Marcador de posición"; no es posible c
 
 #### Comandos
 
-[`OBJECT Get placeholder`](../commands-legacy/object-get-placeholder.md) - [`OBJECT SET PLACEHOLDER`](../commands-legacy/object-set-placeholder.md)
+[`OBJECT Get placeholder`](../commands/object-get-placeholder) - [`OBJECT SET PLACEHOLDER`](../commands/object-set-placeholder)
 
 ---
 
@@ -318,7 +318,7 @@ Para ver una lista de todos los métodos abreviados utilizados en el entorno Dis
 
 #### Comandos
 
-[`OBJECT GET SHORTCUT`](../commands-legacy/object-get-shortcut.md) - [`OBJECT SET SHORTCUT`](../commands-legacy/object-set-shortcut.md)
+[`OBJECT GET SHORTCUT`](../commands/object-get-shortcut) - [`OBJECT SET SHORTCUT`](../commands/object-set-shortcut)
 
 ---
 
@@ -342,5 +342,6 @@ Cuando esta opción no está activa, los usuarios deben seleccionar primero la l
 
 #### Comandos
 
-[LISTBOX Get property](../commands/listbox-get-property.md) - [LISTBOX SET PROPERTY](../commands/listbox-set-property.md)
+[LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
+
 

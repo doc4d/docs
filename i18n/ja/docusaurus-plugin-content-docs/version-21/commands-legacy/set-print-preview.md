@@ -15,9 +15,20 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>履歴</summary>
+
+|リリース|内容|
+|---|---|
+|2004.5|変更|
+|<6|初出|
+
+</details>
+</div>
+
 ## 説明 
 
-<!--REF #_command_.SET PRINT PREVIEW.Summary-->**SET PRINT PREVIEW** は、プリントダイアログボックスのプレビュー設定のオン/オフをメソッドで切り替るためのものです。<!-- END REF-->*preview* に[True](true.md "True") を渡すとプレビューは有効になり、[False](false.md "False") を渡すと無効になります。この設定はプロセスに対してローカルであり、他のプロセスや他のユーザの印刷には影響を与えません。
+<!--REF #_command_.SET PRINT PREVIEW.Summary-->**SET PRINT PREVIEW** は、プリントダイアログボックスのプレビュー設定のオン/オフをメソッドで切り替るためのものです。<!-- END REF-->*preview* に[True](../commands/true) を渡すとプレビューは有効になり、[False](../commands/false) を渡すと無効になります。この設定はプロセスに対してローカルであり、他のプロセスや他のユーザの印刷には影響を与えません。
 
 **注意:** Windows では、 [SET PRINT OPTION](set-print-option.md) コマンドを使用することで印刷プレビューフォーマットを定義することができます。
 

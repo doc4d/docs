@@ -20,6 +20,17 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>Historial</summary>
+
+|Versión|Cambios|
+|---|---|
+|<6|Creado|
+|2004|Modificado|
+
+</details>
+</div>
+
 ## Descripción 
 
 <!--REF #_command_.DISPLAY SELECTION.Summary-->DISPLAY SELECTION muestra la selección de *tabla*, utilizando el formulario de salida.<!-- END REF--> Los registros se muestran en una lista por la cual se puede desplazar similar a la del modo Diseño. Si el usuario hace doble clic en un registro, por defecto se muestra el registro en el formulario de entrada actual. La lista se muestra en la ventana del primer plano. 
@@ -41,7 +52,7 @@ El parámetro *modoSeleccion* se utiliza para definir las posibilidades de selec
   
 Si no pasa el parámetro *modoSelección*, por defecto se utiliza el modo “Selección múltiple”.   
   
-El parámetro *entradaLista* le permite autorizar el modo “Entrada en lista” en la lista mostrada. Este modo permite al usuario seleccionar y modificar directamente los valores de los registros en el formulario de salida. Pase [True](true.md "True") para activar este modo o [False](false.md "False") para desactivarlo. Por defecto, si no pasa el parámetro *entradaLista*, el modo “Entrada en lista” se desactiva.  
+El parámetro *entradaLista* le permite autorizar el modo “Entrada en lista” en la lista mostrada. Este modo permite al usuario seleccionar y modificar directamente los valores de los registros en el formulario de salida. Pase [True](../commands/true) para activar este modo o [False](../commands/false) para desactivarlo. Por defecto, si no pasa el parámetro *entradaLista*, el modo “Entrada en lista” se desactiva.  
   
 Recuerde que con el comando DISPLAY SELECTION, este parámetro sólo permite la selección de los valores en la lista y no su modificación. De hecho, el comando DISPLAY SELECTION carga los registros de la selección actual en modo sólo lectura. Sólo el comando [MODIFY SELECTION](modify-selection.md) permite efectivamente la entrada de valores. 
 

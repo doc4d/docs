@@ -16,6 +16,16 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|6.5|Created|
+
+</details>
+</div>
+
 ## Description 
 
 <!--REF #_command_.BOOLEAN ARRAY FROM SET.Summary-->The BOOLEAN ARRAY FROM SET command fills an array of Booleans indicating if each record in the table is or is not in *set*.<!-- END REF--> 
@@ -24,8 +34,8 @@ The elements in the array are ordered in the order in which the records are crea
 
 Each element of the array is:
 
-* [True](true.md "True") if the corresponding record belongs to the set.
-* [False](false.md "False") if the corresponding record does not belong to the set.
+* [True](../commands/true) if the corresponding record belongs to the set.
+* [False](../commands/false) if the corresponding record does not belong to the set.
 
 **Warning:** The total number of elements in the *booleanArr* array is not significant. For structural reasons, this number can be different from the number of records actually present in the table. Possible extra elements are set to [False](false.md).
 

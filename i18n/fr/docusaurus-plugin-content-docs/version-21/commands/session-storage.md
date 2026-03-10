@@ -4,17 +4,21 @@ title: Session storage
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Session storage.Syntax-->**Session storage** ( *id* ) : Object<!-- END REF-->
+<!--REF #_command_.Session storage.Syntax-->**Session storage** ( *id* : Text ) : Object<!-- END REF-->
 
 <!--REF #_command_.Session storage.Params-->
+
+<div class="no-index">
 
 | Paramètres | Type   |                             | Description                                                |
 | ---------- | ------ | --------------------------- | ---------------------------------------------------------- |
 | id         | Text   | &#8594; | Identifiant unique (UUID) de la session |
 | Résultat   | Object | &#8592; | Objet de stockage de la session                            |
 
+</div>
 <!-- END REF-->
 
+<div class="no-index">
 <details><summary>Historique</summary>
 
 | Release | Modifications                          |
@@ -23,6 +27,7 @@ displayed_sidebar: docs
 | 20 R6   | Ajout                                  |
 
 </details>
+</div>
 
 ## Description
 
@@ -39,23 +44,23 @@ L'objet renvoyé est la propriété [**.storage**](../API/SessionClass.md#storag
 Cette méthode modifie la valeur d'une propriété "settings" stockée dans l'objet storage d'une session spécifique :
 
 ```4d
-  //Définition du storage d'une session
-  //La propriété de méthode "Execute On Server" est définie
- 
- #DECLARE($id : Text; $text : Text)
- var $obj : Object
- 
- $obj:=Session storage($id)
- 
- If($obj.settings=Null)
-    Use($obj)
-       $obj.settings:=New shared object("text";$text)
-    End use
- Else
-    Use($obj.settings)
-       $obj.settings.text:=$text
-    End use
- End if
+  //Set storage for a session
+  //The "Execute On Server" method property is set
+ 
+ #DECLARE($id : Text; $text : Text)
+ var $obj : Object
+ 
+ $obj:=Session storage($id)
+ 
+ If($obj.settings=Null)
+    Use($obj)
+       $obj.settings:=New shared object("text";$text)
+    End use
+ Else
+    Use($obj.settings)
+       $obj.settings.text:=$text
+    End use
+ End if
 ```
 
 ## Voir également

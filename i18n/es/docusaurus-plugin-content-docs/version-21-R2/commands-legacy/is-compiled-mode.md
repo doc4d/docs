@@ -16,6 +16,17 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>Historial</summary>
+
+|Versión|Cambios|
+|---|---|
+|<6|Creado|
+|11 SQL|Modificado|
+
+</details>
+</div>
+
 ## Descripción 
 
 <!--REF #_command_.Is compiled mode.Summary-->Is compiled mode prueba si la base se está ejecutando en modo compilado (True) o interpretado (False).<!-- END REF--> 
@@ -24,11 +35,11 @@ El parámetro opcional *\** es útil en caso de una arquitectura que utilice com
   
 • Cuando el comando se llama desde un componente:
 
-\- si se pasa el parámetro *\**, el comando devuelve [True](true.md "True") o [False](false.md "False") dependiendo del modo de ejecución de la base host, 
+\- si se pasa el parámetro *\**, el comando devuelve [True](../commands/true) o [False](../commands/false) dependiendo del modo de ejecución de la base host, 
 
-\- si no se pasa el parámetro *\**, el comando devuelve [True](true.md "True") o [False](false.md "False") dependiendo del modo de ejecución del componente.  
+\- si no se pasa el parámetro *\**, el comando devuelve [True](../commands/true) o [False](../commands/false) dependiendo del modo de ejecución del componente.  
   
-• Cuando el comando se llama desde un método de una base local, devuelve [True](true.md "True") o [False](false.md "False") dependiendo del modo de ejecución de la base local.
+• Cuando el comando se llama desde un método de una base local, devuelve [True](../commands/true) o [False](../commands/false) dependiendo del modo de ejecución de la base local.
 
 ## Ejemplo 
 

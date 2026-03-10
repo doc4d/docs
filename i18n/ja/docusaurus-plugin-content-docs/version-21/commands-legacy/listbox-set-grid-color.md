@@ -19,6 +19,17 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>履歴</summary>
+
+|リリース|内容|
+|---|---|
+|12|名称変更|
+|2004|初出|
+
+</details>
+</div>
+
 ## 説明 
 
 <!--REF #_command_.LISTBOX SET GRID COLOR.Summary-->**LISTBOX SET GRID COLOR** コマンドを使用し、 *object* 引数および *\** で指定されたリストボックスオブジェクト上のグリッドの色を変更することができます。<!-- END REF-->
@@ -29,8 +40,8 @@ displayed_sidebar: docs
 
 *horizontal* と*vertical* を使用し、カラーを適用するグリッドラインを指定することができます:
 
-* *horizontal* に[True](true.md "True") を渡した場合、水平グリッドラインにカラーが適用されます。False を渡すと、カラーは変更されません。
-* *vertical* に[True](true.md "True") を渡した場合、垂直グリッドラインにカラーが適用されます。[False](false.md "False") を渡すと、カラーは変更されません。
+* *horizontal* に[True](../commands/true) を渡した場合、水平グリッドラインにカラーが適用されます。False を渡すと、カラーは変更されません。
+* *vertical* に[True](../commands/true) を渡した場合、垂直グリッドラインにカラーが適用されます。[False](../commands/false) を渡すと、カラーは変更されません。
 
 ## 参照 
 

@@ -17,6 +17,17 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>Historial</summary>
+
+|Versión|Cambios|
+|---|---|
+|<6|Creado|
+|11 SQL|Modificado|
+
+</details>
+</div>
+
 ## Descripción 
 
 <!--REF #_command_.Semaphore.Summary-->Un semáforo es una bandera compartida entre estaciones de trabajo o entre procesos en la misma estación de trabajo.<!-- END REF--> Un semáforo simplemente existe o no existe. Los métodos que cada usuario ejecuta pueden probar la existencia de un semáforo. Un semáforo sólo puede ser eliminado por la estación de trabajo cliente o proceso que lo creó. Creando y probando semáforos, los métodos pueden comunicarse entre estaciones de trabajo. No utilice semáforos para proteger el acceso a los registros. Esto lo hace automáticamente 4D y 4D Server. Utilice los semáforos para evitar que varios usuarios realice la misma operación al mismo tiempo.
@@ -27,7 +38,7 @@ Semaphore devuelve FALSE si el semáforo no fue definido. También devuelve FALS
 
 Recuerde que los nombres de los semáforos son sensibles a las mayúsculas y minúsculas en 4D (por ejemplo, el programa considera que "MySemaphore" es diferente de "mysemaphore"
 
-El parámetro opcional *ticCont* le permite especificar un tiempo de espera (en tics) si *semaforo* ya está definido. En este caso, la función esperará o que el semáforo sea liberado o el tiempo de espera para terminar antes de devolver [True](true.md "True").
+El parámetro opcional *ticCont* le permite especificar un tiempo de espera (en tics) si *semaforo* ya está definido. En este caso, la función esperará o que el semáforo sea liberado o el tiempo de espera para terminar antes de devolver [True](../commands/true).
 
 Hay dos tipos de semáforos en 4D: semáforos locales y semáforos globales.  
   

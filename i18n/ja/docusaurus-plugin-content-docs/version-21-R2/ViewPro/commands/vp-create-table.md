@@ -19,12 +19,17 @@ title: VP CREATE TABLE
 
 <!-- REF #_method_.VP CREATE TABLE.Params -->
 
-| 引数        | 型                                                                                     |    | 説明                    |                  |
-| --------- | ------------------------------------------------------------------------------------- | -- | --------------------- | ---------------- |
-| rangeObj  | Object                                                                                | -> | レンジオブジェクト             |                  |
-| tableName | Text                                                                                  | -> | 表組みの名称                |                  |
-| source    | Text                                                                                  | -> | 表に表示するデータコンテキストプロパティ名 |                  |
-| options   | [cs.ViewPro.TableOptions](../classes.md#tableoptions) | -> | 追加のオプション              | <!-- END REF --> |
+<div class="no-index">
+
+| 引数        | 型                                                                                     |    | 説明                    |
+| --------- | ------------------------------------------------------------------------------------- | -- | --------------------- |
+| rangeObj  | Object                                                                                | -> | レンジオブジェクト             |
+| tableName | Text                                                                                  | -> | 表組みの名称                |
+| source    | Text                                                                                  | -> | 表に表示するデータコンテキストプロパティ名 |
+| options   | [cs.ViewPro.TableOptions](../classes.md#tableoptions) | -> | 追加のオプション              |
+
+</div>
+<!-- END REF -->
 
 ## 説明
 
@@ -75,7 +80,7 @@ title: VP CREATE TABLE
 データコンテキストを使用した表組みを作成します:
 
 ```4d
-// Set a data context
+// データコンテキストを設定
 var $data : Object
 
 $data:=New object()
@@ -86,7 +91,7 @@ $data.people.push(New object("firstName"; "Mary"; "lastName"; "Poppins"; "email"
 
 VP SET DATA CONTEXT("ViewProArea"; $data)
 
-// Define the columns for the table
+// 表に対してカラムを定義
 var $options : cs.ViewPro.TableOptions
 
 $options:=cs.ViewPro.TableOptions.new()
@@ -95,7 +100,7 @@ $options.tableColumns.push(cs.ViewPro.TableColumn.new("name"; "First name"; "dat
 $options.tableColumns.push(cs.ViewPro.TableColumn.new("name"; "Last name"; "dataField"; "lastName"))
 $options.tableColumns.push(cs.ViewPro.TableColumn.new("name"; "Email"; "dataField"; "email"))
 
-// Create a table from the "people" collection
+// "people" コレクションから表を作成
 VP CREATE TABLE(VP Cells("ViewProArea"; 1; 1; $options.tableColumns.length; 1); "ContextTable"; "people"; $options)
 ```
 

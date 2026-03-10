@@ -9,11 +9,25 @@ displayed_sidebar: docs
 
 <!--REF #_command_.FORM Event.Params-->
 
+<div class="no-index">
+
 | Parâmetro | Tipo   |                             | Descrição      |
 | --------- | ------ | --------------------------- | -------------- |
 | Resultado | Object | &#8592; | Objecto evento |
 
+</div>
 <!-- END REF-->
+
+<div class="no-index">
+<details><summary>História</summary>
+
+| Release | Mudanças   |
+| ------- | ---------- |
+| 18 R2   | Modificado |
+| 18      | Created    |
+
+</details>
+</div>
 
 ## Descrição
 
@@ -37,7 +51,7 @@ Por exemplo, no caso de um clique em um botão, o objeto contém as seguintes pr
 
 O objeto evento pode conter propriedades adicionais, dependendo do objeto para o qual o evento ocorre. Para os objetos *eventObj* gerados em:
 
-- dos objetos list box ou coluna de list box, consulte [esta seção](../FormObjects/listbox_overview.md#supported-form-events).
+- dos objetos list box ou coluna de list box, consulte [esta seção](../FormObjects/listbox-object.md#supported-form-events).
 - As areas 4D View Pro consulte no evento formulário [On VP Ready](../Events/onVpReady.md).
 
 **Nota:** se não houver um evento atual, **FORM Event** retornará um objeto null.
@@ -47,9 +61,9 @@ O objeto evento pode conter propriedades adicionais, dependendo do objeto para o
 Você deseja manipular o evento On Clicked em um botão:
 
 ```4d
- If(FORM Event.code=On Clicked)
-    ...
- End if
+ If(FORM Event.code=On Clicked)
+    ...
+ End if
 ```
 
 ## Exemplo 2
@@ -61,13 +75,13 @@ Se você definir o nome do objeto coluna com um nome de atributo real de uma dat
 Você pode classificar a coluna usando o evento On Header Click:
 
 ```4d
- Form.event:=FORM Event
- Case of
-    :(Form event code=On Header Click)
-       if(Form.event.columnName="lastname")
-          Form.employees:=Form.employees.orderBy(Form.event.columnName+", firstname")
-       End if
- End case
+ Form.event:=FORM Event
+ Case of
+    :(Form event code=On Header Click)
+       if(Form.event.columnName="lastname")
+          Form.employees:=Form.employees.orderBy(Form.event.columnName+", firstname")
+       End if
+ End case
 ```
 
 ## Exemplo 3
@@ -79,17 +93,17 @@ Você deseja tratar On Display Details em um objeto list box com um método defi
 O método *setColor*:
 
 ```4d
- var $event;$0;$meta : Object
- $event:=FORM Event
- $meta:=New object
- 
- Case of
-    :($event.code=On Display Detail)
-       If($event.isRowSelected)
-          $meta.fill:="lightblue"
-       End if
- End case
- $0:=$meta
+ var $event;$0;$meta : Object
+ $event:=FORM Event
+ $meta:=New object
+ 
+ Case of
+    :($event.code=On Display Detail)
+       If($event.isRowSelected)
+          $meta.fill:="lightblue"
+       End if
+ End case
+ $0:=$meta
 ```
 
 O list box resultante quando as linhas são selecionadas:

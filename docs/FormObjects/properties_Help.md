@@ -9,8 +9,8 @@ This property allows associating help messages with active objects in your forms
 
 ![](../assets/en/FormObjects/property_helpTip.png)
 
-> - The display delay and maximum duration of help tips can be controlled using the ``Tips delay`` and ``Tips duration`` selectors of the **[SET DATABASE PARAMETER](../commands-legacy/set-database-parameter.md)** command.
-> - Help tips can be globally disabled or enabled for the application using the Tips enabled selector of the [**SET DATABASE PARAMETER**](../commands-legacy/set-database-parameter.md) command.
+> - The display delay and maximum duration of help tips can be controlled using the ``Tips delay`` and ``Tips duration`` selectors of the **[SET DATABASE PARAMETER](../commands/set-database-parameter)** command.
+> - Help tips can be globally disabled or enabled for the application using the Tips enabled selector of the [**SET DATABASE PARAMETER**](../commands/set-database-parameter) command.
 
 You can either:
 
@@ -27,27 +27,28 @@ You can either:
 
 #### Objects Supported
 
-[Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md)  - [Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md) - [List Box Header](listbox_overview.md#list-box-headers) - [List Box Footer](listbox_overview.md#list-box-footers) - [Picture Button](pictureButton_overview.md) - [Picture Pop-up menu](picturePopupMenu_overview.md) - [Radio Button](radio_overview.md)
+[Button](button_overview.md) - [Button Grid](buttonGrid_overview.md) - [Check Box](checkbox_overview.md)  - [Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md) - [List Box Header](listbox-header-footer.md#headers) - [List Box Footer](listbox-header-footer.md#footers) - [Picture Button](pictureButton_overview.md) - [Picture Pop-up menu](picturePopupMenu_overview.md) - [Radio Button](radio_overview.md)
 
 #### Other help features
 
 You can also associate help messages with form objects in two other ways:
 
 - at the level of the database structure (fields only). In this case, the help tip of the field is displayed in every form where it appears. For more information, refer to “Help Tips” in [Field properties](https://doc.4d.com/4Dv20/4D/20.2/Field-properties.300-6750280.en.html#3367486).
-- using the **[OBJECT SET HELP TIP](../commands-legacy/object-set-help-tip.md)** command, for the current process.
+- using the **[OBJECT SET HELP TIP](../commands/object-set-help-tip)** command, for the current process.
 
 When different tips are associated with the same object in several locations, the following priority order is applied:
 
 1. structure level (lowest priority)
 2. form editor level
-3. **[OBJECT SET HELP TIP](../commands-legacy/object-set-help-tip.md)** command (highest priority)
+3. **[OBJECT SET HELP TIP](../commands/object-set-help-tip)** command (highest priority)
 
 
 #### Commands
 
-[`OBJECT Get help tip`](../commands-legacy/object-get-help-tip.md) - [`OBJECT SET HELP TIP`](../commands-legacy/object-set-help-tip.md)
+[`OBJECT Get help tip`](../commands/object-get-help-tip) - [`OBJECT SET HELP TIP`](../commands/object-set-help-tip)
 
 
 #### See also
 
 [Placeholder](properties_Entry.md#placeholder)
+

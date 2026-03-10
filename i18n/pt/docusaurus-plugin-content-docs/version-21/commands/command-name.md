@@ -5,9 +5,11 @@ slug: /commands/command-name
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Command name.Syntax-->**Command name** ( *command* {; *info* {; *theme*}} ) : Text<!-- END REF-->
+<!--REF #_command_.Command name.Syntax-->**Command name** ( *command* : Integer {; *info* : Integer {; *theme* : Text}} ) : Text<!-- END REF-->
 
 <!--REF #_command_.Command name.Params-->
+
+<div class="no-index">
 
 | Parâmetro | Tipo    |                             | Descrição                    |
 | --------- | ------- | --------------------------- | ---------------------------- |
@@ -16,8 +18,10 @@ displayed_sidebar: docs
 | theme     | Text    | &#8592; | Tema da linguagem do comando |
 | Resultado | Text    | &#8592; | Nome do comando              |
 
+</div>
 <!-- END REF-->
 
+<div class="no-index">
 <details><summary>História</summary>
 
 | Release | Mudanças                       |
@@ -25,6 +29,7 @@ displayed_sidebar: docs
 | 20 R9   | Support of deprecated property |
 
 </details>
+</div>
 
 ## Descrição
 
@@ -47,21 +52,21 @@ The **Command name** command sets the *OK* variable to 1 if *command* correspond
 The following code allows you to load all valid 4D commands in an array:
 
 ```4d
- var $Lon_id : Integer
- var $Txt_command : Text
- ARRAY LONGINT($tLon_Command_IDs;0)
- ARRAY TEXT($tTxt_commands;0)
- 
- Repeat
-    $Lon_id:=$Lon_id+1
-    $Txt_command:=Command name($Lon_id)
-    If(OK=1) //command number exists
-       If(Length($Txt_command)>0) //command is not disabled
-          APPEND TO ARRAY($tTxt_commands;$Txt_command)
-          APPEND TO ARRAY($tLon_Command_IDs;$Lon_id)
-       End if
-    End if
- Until(OK=0) //end of existing commands
+ var $Lon_id : Integer
+ var $Txt_command : Text
+ ARRAY LONGINT($tLon_Command_IDs;0)
+ ARRAY TEXT($tTxt_commands;0)
+ 
+ Repeat
+    $Lon_id:=$Lon_id+1
+    $Txt_command:=Command name($Lon_id)
+    If(OK=1) //command number exists
+       If(Length($Txt_command)>0) //command is not disabled
+          APPEND TO ARRAY($tTxt_commands;$Txt_command)
+          APPEND TO ARRAY($tLon_Command_IDs;$Lon_id)
+       End if
+    End if
+ Until(OK=0) //end of existing commands
 ```
 
 ## Exemplo 2
@@ -69,15 +74,15 @@ The following code allows you to load all valid 4D commands in an array:
 Em uma forma, você quer uma lista suspensa preenchida com os comandos básicos do relatório de resumo. In the object method for that drop-down list, you write:
 
 ```4d
- Case of
-    :(Form event code=On Before)
-       ARRAY TEXT(asCommand;4)
-       asCommand{1}:=Command name(1)
-       asCommand{2}:=Command name(2)
-       asCommand{3}:=Command name(4)
-       asCommand{4}:=Command name(3)
-  // ...
- End case
+ Case of
+    :(Form event code=On Before)
+       ARRAY TEXT(asCommand;4)
+       asCommand{1}:=Command name(1)
+       asCommand{2}:=Command name(2)
+       asCommand{3}:=Command name(4)
+       asCommand{4}:=Command name(3)
+  // ...
+ End case
 ```
 
 In the English version of 4D, the drop-down list will read: Sum, Average, Min, and Max. Na versão em francês\*, a lista suspensa será exibida: Somme, Moyenne, Min e Max.
@@ -89,23 +94,23 @@ In the English version of 4D, the drop-down list will read: Sum, Average, Min, a
 You want to create a method that returns **True** if the command, whose number is passed as parameter, is thread-safe, and **False** otherwise.
 
 ```4d
-  //Is_Thread_Safe project method
- #declare($command : Integer) : Boolean
- var $threadsafe : Integer
- var $name; $theme : Text
- $name:=Command name($command;$threadsafe;$theme)
- If($threadsafe ?? 0) //if the first bit is set to 1
-    return True
- Else
-    return False
- End if
+  //Is_Thread_Safe project method
+ #declare($command : Integer) : Boolean
+ var $threadsafe : Integer
+ var $name; $theme : Text
+ $name:=Command name($command;$threadsafe;$theme)
+ If($threadsafe ?? 0) //if the first bit is set to 1
+    return True
+ Else
+    return False
+ End if
 ```
 
 Then, for the "SAVE RECORD" command (53) for example, you can write:
 
 ```4d
- $isSafe:=Is_Thread_Safe(53)
-  // retorna True
+ $isSafe:=Is_Thread_Safe(53)
+  // returns True
 ```
 
 ## Exemplo
@@ -120,11 +125,11 @@ var $deprecated : Collection
 Repeat
     $Lon_id:=$Lon_id+1
     $Txt_command:=Command name($Lon_id;$info)
-    If($info ?? 1) //the second bit is set to 1
+    If($info ?? 1) //the second bit is set to 1
             //then the command is deprecated
         $deprecated.push($Txt_command)
     End if
-Until(OK=0) //end of existing commands
+Until(OK=0) //end of existing commands
 
 ```
 

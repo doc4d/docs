@@ -4,25 +4,30 @@ title: Session storage
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.Session storage.Syntax-->**Session storage** ( *id* ) : Object<!-- END REF-->
+<!--REF #_command_.Session storage.Syntax-->**Session storage** ( *id* : Text ) : Object<!-- END REF-->
 
 <!--REF #_command_.Session storage.Params-->
+
+<div class="no-index">
 
 | 引数  | 型      |                             | 説明                                  |
 | --- | ------ | --------------------------- | ----------------------------------- |
 | id  | Text   | &#8594; | セッションの固有ID(UUID) |
 | 戻り値 | Object | &#8592; | セッションのStorage オブジェクト                |
 
+</div>
 <!-- END REF-->
 
+<div class="no-index">
 <details><summary>履歴</summary>
 
-| リリース  | 内容                |
-| ----- | ----------------- |
-| 20 R8 | スタンドアロンセッションのサポート |
-| 20 R6 | 追加                |
+| リリース  | 内容                             |
+| ----- | ------------------------------ |
+| 20 R8 | Support of standalone sessions |
+| 20 R6 | 追加                             |
 
 </details>
+</div>
 
 ## 説明
 
@@ -39,23 +44,23 @@ displayed_sidebar: docs
 以下のメソッドは、特定のセッションのStorage オブジェクト内の"settings" プロパティの値を変更します:
 
 ```4d
-  // セッションに対してstorage を設定
-  // "サーバー上で実行" メソッドプロパティが設定されているものとする
- 
- #DECLARE($id : Text; $text : Text)
- var $obj : Object
- 
- $obj:=Session storage($id)
- 
- If($obj.settings=Null)
-    Use($obj)
-       $obj.settings:=New shared object("text";$text)
-    End use
- Else
-    Use($obj.settings)
-       $obj.settings.text:=$text
-    End use
- End if
+  //Set storage for a session
+  //The "Execute On Server" method property is set
+ 
+ #DECLARE($id : Text; $text : Text)
+ var $obj : Object
+ 
+ $obj:=Session storage($id)
+ 
+ If($obj.settings=Null)
+    Use($obj)
+       $obj.settings:=New shared object("text";$text)
+    End use
+ Else
+    Use($obj.settings)
+       $obj.settings.text:=$text
+    End use
+ End if
 ```
 
 ## 参照

@@ -15,9 +15,19 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>履歴</summary>
+
+|リリース|内容|
+|---|---|
+|6.8.1|初出|
+
+</details>
+</div>
+
 ## 説明 
 
-<!--REF #_command_.Right click.Summary-->Right click コマンドは、マウスの右ボタンがクリックされた場合に[True](true.md "True") を返します。<!-- END REF-->
+<!--REF #_command_.Right click.Summary-->Right click コマンドは、マウスの右ボタンがクリックされた場合に[True](../commands/true) を返します。<!-- END REF-->
 
 このコマンドはOn clickedフォームイベントのコンテキストで使用します。したがって、デザインモードにおいて、このイベントがフォームや特定のオブジェクトのプロパティで適切に選択されていることを確認する必要があります。
 

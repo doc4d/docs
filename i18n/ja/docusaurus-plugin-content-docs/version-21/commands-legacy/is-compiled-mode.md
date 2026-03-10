@@ -16,6 +16,17 @@ displayed_sidebar: docs
 </div>
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>履歴</summary>
+
+|リリース|内容|
+|---|---|
+|11 SQL|変更|
+|<6|初出|
+
+</details>
+</div>
+
 ## 説明 
 
 <!--REF #_command_.Is compiled mode.Summary-->Is compiled modeは、データベースがコンパイルモード（True）、ま たはインタプリタモード（False）のどちらで実行されているかをテストします。<!-- END REF-->  
@@ -23,9 +34,9 @@ displayed_sidebar: docs
 オプションの*\** 引数は、コンポーネントを使用するアーキテクチャで有用です。この引数は実行モードのテスト対象がホストデータベースか、コンポーネントかを指定するため に使用します。   
 
 * コマンドがコンポーネントから呼ばれた場合:  
-   * *\** 引数が渡されると、コマンドはホストデータベースの実行モードに応じて[True](true.md "True")または[False](false.md "False")を返します。  
-   * *\** 引数が渡されないと、コマンドはコンポーネントの実行モードに応じて[True](true.md "True")または[False](false.md "False")を 返します。
-* コマンドがホストデータベースから呼ばれた場合、コマンドはホストデータベースの実行モードに応じて[True](true.md "True")または[False](false.md "False")を返します。
+   * *\** 引数が渡されると、コマンドはホストデータベースの実行モードに応じて[True](../commands/true)または[False](../commands/false)を返します。  
+   * *\** 引数が渡されないと、コマンドはコンポーネントの実行モードに応じて[True](../commands/true)または[False](../commands/false)を 返します。
+* コマンドがホストデータベースから呼ばれた場合、コマンドはホストデータベースの実行モードに応じて[True](../commands/true)または[False](../commands/false)を返します。
 
 ## 例題 
 
