@@ -12,6 +12,7 @@ Session objects are returned by the [`Session`](../commands/session) command. Th
 - [Scalable sessions for advanced web applications](https://blog.4d.com/scalable-sessions-for-advanced-web-applications/)
 - [Permissions: Inspect Session Privileges for Easy Debugging](https://blog.4d.com/permissions-inspect-session-privileges-for-easy-debugging/)
 - [Generate, share and use web sessions One-Time Passcodes (OTP)](https://blog.4d.com/connect-your-web-apps-to-third-party-systems/)
+- [Client / server – Handle a session when working on a 4D client](https://blog.4d.com/client-server-handle-a-session-when-working-on-a-4d-client)
 
 :::
 
@@ -24,7 +25,7 @@ The following types of sessions are supported by this class:
 
 - [**Web user sessions**](WebServer/sessions.md): Web user sessions are available when [scalable sessions are enabled in your project](WebServer/sessions.md#enabling-web-sessions). They are used for Web connections (including REST access), and are controlled by assigned [privileges](../ORDA/privileges.md).
 - [**Desktop sessions**](../Desktop/sessions.md), which include: 
-   - [**Remote user sessions**](../Desktop/sessions.md#remote-user-sessions): In client/server applications, remote users have their own sessions managed on the server.
+   - [**Remote user sessions**](../Desktop/sessions.md#remote-user-sessions): In client/server applications, remote users have their own sessions, managed from the client and from the server.
    - [**Stored procedures sessions**](../Desktop/sessions.md#stored-procedure-sessions): Virtual user session for all stored procedures executed on the server.
    - [**Standalone sessions**](../Desktop/sessions.md#standalone-sessions): Local session object returned in single-user application (useful in development and test phases of client/server applications). 
 
@@ -90,19 +91,15 @@ All session types can handle privileges, but only the code executed in a **web c
 
 The `.clearPrivileges()` function <!-- REF #SessionClass.clearPrivileges().Summary -->removes all the privileges associated to the session (excluding promoted privileges) and returns **True** if the execution was successful<!-- END REF -->. 
 
+:::note Notes
 
-:::note
-
-This function does not remove **promoted privileges** from the web process, whether they are added through the [roles.json](../ORDA/privileges.md#rolesjson-file) file or the [`promote()`](#promote) function.
-
-:::
-
-
-:::note
-
-Keep in mind that privileges only apply to the code executed through web accesses, whatever the [session type](#session-types) on which this function is executed.
+- Keep in mind that privileges only apply to the code executed through web accesses, whatever the [session type](#session-types) on which this function is executed.
+- This function does not remove **promoted privileges** from the web process, whether they are added through the [roles.json](../ORDA/privileges.md#rolesjson-file) file or the [`promote()`](#promote) function.
+- For security reasons, this function cannot be called from the client side of a remote user session (an error is returned). 
 
 :::
+
+
 
 
 
@@ -202,9 +199,10 @@ If no privilege with *promoteId* was promoted using [`.promote()`](#promote) in 
 
 If several privileges have been added to the web process, the `demote()` function must be called for each one with the appropriate *promoteId*. Privileges are stacked in the order they have been added to the process, it is recommended to unstack privileges in a LIFO (*Last In, First Out*) order.
 
-:::note
+:::note Notes
 
-Keep in mind that privileges only apply to the code executed through web accesses, whatever the [session type](#session-types) on which this function is executed.
+- Keep in mind that privileges only apply to the code executed through web accesses, whatever the [session type](#session-types) on which this function is executed.
+- This function does nothing when called from the client side of a remote user session.
 
 :::
 
@@ -427,6 +425,7 @@ This function returns True for the *privilege* if called from a function that wa
 :::note
 
 Keep in mind that privileges only apply to the code executed through web accesses, whatever the [session type](#session-types) on which this function is executed.
+
 :::
 
 
@@ -465,7 +464,9 @@ End if
 
 #### Description
 
-The `.id` property contains <!-- REF #SessionClass.id.Summary -->the unique identifier (UUID) of the user session<!-- END REF -->. With 4D Server, this unique string is automatically assigned by the server for each session and allows you to identify its processes.
+The `.id` property contains <!-- REF #SessionClass.id.Summary -->the unique identifier (UUID) of the user session<!-- END REF -->. 
+
+With 4D Server, this unique string is automatically assigned by the server for each session and allows you to identify its processes. It is available in both the `Session` on the server side and on the client side. 
 
 
 :::tip
@@ -556,14 +557,14 @@ The `.info` object contains the following properties:
 |---|---|---|
 |type|Text|Session type: "remote", "storedProcedure", "standalone", "rest", "web"|
 |userName|Text|4D user name (same value as [`.userName`](#username))|
-|machineName|Text|Remote sessions: name of the remote machine. Stored procedures session: name of the server machine. Standalone session: name of the machine|
-|systemUserName|Text|Remote sessions: name of the system session opened on the remote machine.  |
-|IPAddress|Text|IP address of the remote machine|
-|hostType|Text|Host type: "windows" or "mac"|
-|creationDateTime|Date ISO 8601|Date and time of session creation. Standalone session: date and time of application startup|
+|machineName|Text|<ul><li>Remote sessions: name of the remote machine.</li><li>Client sessions: name of the local machine.</li><li>Stored procedures session: name of the server machine.</li><li> Standalone session: name of the machine</li></ul>|
+|systemUserName|Text|<ul><li>Remote sessions: name of the system session opened on the remote machine.</li><li>Client sessions: name of the local system session</li><ul> |
+|IPAddress|Text|<ul><li>Remote sessions: IP address of the remote machine.</li><li>Client sessions: IP address of the local machine.</li><li>Standalone session: "localhost"</li></ul>|
+|hostType|Text|Host type: "windows", "mac", or "browser"|
+|creationDateTime|Date ISO 8601|Date and time of session creation (standalone session: date and time of application startup)|
 |state|Text|Session state: "active", "postponed", "sleeping"|
 |ID|Text|Session UUID (same value as [`.id`](#id))|
-|persistentID|Text|Remote sessions: Session's persistent ID|
+|persistentID|Text|Remote/client sessions: Session's persistent ID|
 
 :::note
 
@@ -664,6 +665,8 @@ Dynamically adding privileges is useful when access rights depend on the executi
 The function does nothing and returns 0 if:
 - the *privilege* does not exist in the [`roles.json`](../ORDA/privileges.md#rolesjson-file) file,
 - the *privilege* is already assigned to the current process (using `.promote()` or through a static [promote action](../ORDA/privileges.md#permission-actions) declared for the calling function in the [`roles.json`](../ORDA/privileges.md#rolesjson-file) file). 
+- it is called from the client side of a remote user session.
+
 
 You can call the `promote()` function several times in the same process to add different privileges.
 
@@ -757,6 +760,11 @@ The function returns `false` if:
 
 In this case, the current web user session is left untouched (no session is restored). 
 
+:::note
+
+This function does nothing when called from the client side of a remote user session.
+
+:::
 
 :::note
 
@@ -841,7 +849,14 @@ The [`userName`](#username) property is available at session object level (read-
 
 :::note
 
+For security reasons, this function cannot be called from the client side of a remote user session (an error is returned). 
+
+:::
+
+:::note
+
 Keep in mind that privileges only apply to the code executed through web accesses, whatever the [session type](#session-types) on which this function is executed.
+
 :::
 
 
@@ -887,11 +902,19 @@ End if
 
 The `.storage` property contains <!-- REF #SessionClass.storage.Summary -->a shared object that can be used to store information available to all processes of the session<!-- END REF -->.
 
-When a `Session` object is created, the `.storage` property is empty. Since it is a shared object, this property will be available in the `Storage` object of the server. 
+When a `Session` object is created, the `.storage` property is empty. This property is **read only** itself but it returns a read-write object.
 
-> Like the `Storage` object of the server, the `.storage` property is always "single": adding a shared object or a shared collection to `.storage` does not create a shared group.
+::: note Notes
 
-This property is **read only** itself but it returns a read-write object.
+- Since it is a shared object, this property will be available in the `Storage` object of the machine (server or client). 
+- Like the `Storage` object of the machine, the `.storage` property is always "single": adding a shared object or a shared collection to `.storage` does not create a shared group.
+
+:::
+
+In client/server, the `.storage` of the remote session (on the server) is not the same as the `.storage` of the client session (on the client).
+
+When a desktop session and a web session are [shared using an OTP](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses), they also share the same `.storage` object on the server, event if the OTP was [created](#createotp) from the client session.
+
 
 :::tip
 
@@ -899,7 +922,6 @@ You can get the `.storage` property of a session using the [`Session storage`](.
 
 :::
 
-When a desktop session and a web session are [shared using an OTP](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses), they also share the same `.storage` object. 
 
 
 #### Web session example

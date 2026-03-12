@@ -16,7 +16,7 @@ You can nevertheless [**share** a desktop session with a web session](#sharing-a
 
 Desktop sessions include:
 
-- **Remote user sessions**: In client/server applications, the session that manages the user processes on the server.
+- **Remote user sessions**: In client/server applications, remote users have their own sessions, managed from the client and from the server.
 - **Stored procedures sessions**: In client/server applications, the unique virtual user session that manages all stored procedures executed on the server.
 - **Standalone sessions**: Local session object returned in single-user application (useful in development and test phases of client/server applications).
 
@@ -37,20 +37,47 @@ The following diagram shows the different session types and how they interact:
 
 ## Remote user sessions {#remote-user-sessions}
 
-On the server, in "user processes" (i.e. processes related to remote users), the [`Session`](../commands/session) command returns a `session` object describing the current user session. This object is handled through the functions and properties of the [`Session` class](../API/SessionClass.md).
+In client/server applications, when a user connects to the server, a **remote user session object** is created on both the server and the client, and is returned by the [`Session`](../commands/session) command on both machines.  
 
-:::note
+This object is handled through the functions and properties of the [`Session` class](../API/SessionClass.md).
 
-On a remote 4D, the [`Session`](../commands/session) command always returns null.
+### Availability
+ 
+#### Server-side
 
-:::
+On the server, the remote user `session` object is available from:
+
+- Project methods that have the [Execute on Server](../Project/project-method-properties.md#execute-on-server) attribute (they are executed in the "twinned" process of the client process),
+- Triggers,
+- ORDA [data model functions](../ORDA/ordaClasses.md) (except those declared with the [`local`](../ORDA/ordaClasses.md#local-functions) keyword), 
+- Database methods such as [`On Server Open Connection`](../commands/on-server-open-connection-database-method) and [`On Server Close Connection`](../commands/on-server-close-connection-database-method).
+
+#### Client-side
+
+On the client, the user `session` object is available from:
+
+- Project methods and all code executed locally,
+- ORDA [data model functions](../ORDA/ordaClasses.md) declared with the [`local`](../ORDA/ordaClasses.md#local-functions) keyword,
+- Database methods such as [On startup](../commands-legacy/on-startup-database-method.md).
+
+
+### Comparing server-side and client-side user session objects
+
+The user `session` object on the server and on the client **are similar**, except that:
+
+- their [`.storage`](../API/SessionClass.md#storage) properties are not the same object. A value stored in the `.storage` of the user session on the server will not be available in the `.storage` of the user session on the client and conversely.
+- for security reasons, functions that modify privileges cannot be executed on the client-side session ([`setPrivileges()`](../API/SessionClass.md#setprivileges), [`promote()`](../API/SessionClass.md#promote), [`demote()`](../API/SessionClass.md#demote), [`restore()`](../API/SessionClass.md#restore)). 
 
 
 :::tip Related blog posts
 
-[4D remote session object with Client/Server connection and Stored procedure](https://blog.4d.com/new-4D-remote-session-object-with-client-server-connection-and-stored-procedure).
+- [4D remote session object with Client/Server connection and Stored procedure](https://blog.4d.com/new-4D-remote-session-object-with-client-server-connection-and-stored-procedure).
+- [Client / server – Handle a session when working on a 4D client](https://blog.4d.com/client-server-handle-a-session-when-working-on-a-4d-client).
 
 :::
+
+
+
 
 ### Usage
 
@@ -58,17 +85,8 @@ The `session` object allows you to handle information and privileges for the rem
 
 You can share data between all processes of the user session using the [`session.storage`](../API/SessionClass.md#storage) shared object. For example, you can launch a user authentication and verification procedure when a client connects to the server, involving entering a code sent by e-mail or SMS into the application. You then add the user information to the session storage, enabling the server to identify the user. This way, the 4D server can access user information for all client processes, enabling customized code to be written according to the user's role.
 
-You can also assign privileges to a remote user session to control access when the session comes from Qodly pages running in web areas.     
+On the server, you can also assign privileges to a remote user session to control access when the session comes from Qodly pages running in web areas.     
 
-
-### Availability
- 
-The remote user `session` object is available from:
-
-- Project methods that have the [Execute on Server](../Project/project-method-properties.md#execute-on-server) attribute (they are executed in the "twinned" process of the client process),
-- Triggers,
-- ORDA [data model functions](../ORDA/ordaClasses.md) (except those declared with the [`local`](../ORDA/ordaClasses.md#local-functions) keyword), 
-- Database methods such as [`On Server Open Connection`](../commands/on-server-open-connection-database-method) and [`On Server Close Connection`](../commands/on-server-close-connection-database-method).
 
 
 ## Stored procedure sessions {#stored-procedure-sessions}
