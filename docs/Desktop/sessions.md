@@ -37,36 +37,39 @@ The following diagram shows the different session types and how they interact:
 
 ## Remote user sessions {#remote-user-sessions}
 
-In client/server applications, when a user connects to the server, a **remote user session object** is created on both the server and the client, and is returned by the [`Session`](../commands/session) command on both machines.  
+In client/server applications, when a user connects to the server, a **remote user session object** is created and available on both the server and the client. It is returned by the [`Session`](../commands/session) command on both machines.  
 
 This object is handled through the functions and properties of the [`Session` class](../API/SessionClass.md).
 
 ### Availability
- 
-#### Server-side
 
-On the server, the remote user `session` object is available from:
+The remote user `session` object is available in different contexts depending on the application side.
 
-- Project methods that have the [Execute on Server](../Project/project-method-properties.md#execute-on-server) attribute (they are executed in the "twinned" process of the client process),
-- Triggers,
-- ORDA [data model functions](../ORDA/ordaClasses.md) (except those declared with the [`local`](../ORDA/ordaClasses.md#local-functions) keyword), 
-- Database methods such as [`On Server Open Connection`](../commands/on-server-open-connection-database-method) and [`On Server Close Connection`](../commands/on-server-close-connection-database-method).
+|Available in|Server|Remote|
+|---|---|---|
+|Project methods|[with Execute on Server](../Project/project-method-properties.md#execute-on-server) attribute (they are executed in the "twinned" process of the client process)|executed locally|
+|ORDA [data model functions](../ORDA/ordaClasses.md)|without the [`local`](../ORDA/ordaClasses.md#local-functions) keyword|with the [`local`](../ORDA/ordaClasses.md#local-functions) keyword|
+|Triggers|yes|no|
+|Database methods|[On Server Open Connection](../commands/on-server-open-connection-database-method), [On Server Close Connection](../commands/on-server-close-connection-database-method),...|[On startup](../commands-legacy/on-startup-database-method.md), [On Exit](../commands-legacy/on-exit-database-method.md), |
+|Other code (object methods...)|no|yes|
 
-#### Client-side
+#### Comparing server-side and client-side user session objects
 
-On the client, the user `session` object is available from:
-
-- Project methods and all code executed locally,
-- ORDA [data model functions](../ORDA/ordaClasses.md) declared with the [`local`](../ORDA/ordaClasses.md#local-functions) keyword,
-- Database methods such as [On startup](../commands-legacy/on-startup-database-method.md).
-
-
-### Comparing server-side and client-side user session objects
-
-The user `session` object on the server and on the client **are similar**, except that:
+The user `session` object on the server and on the client are similar, except that:
 
 - their [`.storage`](../API/SessionClass.md#storage) properties are not the same object. A value stored in the `.storage` of the user session on the server will not be available in the `.storage` of the user session on the client and conversely.
-- for security reasons, functions that modify privileges cannot be executed on the client-side session ([`setPrivileges()`](../API/SessionClass.md#setprivileges), [`promote()`](../API/SessionClass.md#promote), [`demote()`](../API/SessionClass.md#demote), [`restore()`](../API/SessionClass.md#restore)). 
+- for security reasons, the client-side session cannot execute functions that modify [privileges](../ORDA/privileges.md) ([`setPrivileges()`](../API/SessionClass.md#setprivileges), [`promote()`](../API/SessionClass.md#promote), [`demote()`](../API/SessionClass.md#demote), [`restore()`](../API/SessionClass.md#restore)). 
+
+
+### Usage
+
+You use the remote user `session` object to manage and share session data.
+
+Within each environment, [session.`storage`](../API/SessionClass.md#storage) is shared across all processes of the same user session. For example on the server, you can launch a user authentication and verification procedure when a client connects to the server, involving entering a code sent by e-mail or SMS into the application. You then add the user information to the session storage, enabling the server to identify the user. This way, the 4D server can access user information for all client processes, enabling customized code to be written according to the user's role. 
+
+Within each environment, you can use the remote user `session` object to [create an OTP](../API/SessionClass.md#createotp) and [share the desktop session for web accesses](#sharing-a-desktop-session-for-web-accesses-sharing-a-desktop-session-for-web-accesses).  
+
+On the server, you can also assign privileges to a remote user session to control access when the session comes from [Qodly pages running in web areas](#sharing-a-desktop-session-for-web-accesses-sharing-a-desktop-session-for-web-accesses).     
 
 
 :::tip Related blog posts
@@ -75,17 +78,6 @@ The user `session` object on the server and on the client **are similar**, excep
 - [Client / server – Handle a session when working on a 4D client](https://blog.4d.com/client-server-handle-a-session-when-working-on-a-4d-client).
 
 :::
-
-
-
-
-### Usage
-
-The `session` object allows you to handle information and privileges for the remote user session. 
-
-You can share data between all processes of the user session using the [`session.storage`](../API/SessionClass.md#storage) shared object. For example, you can launch a user authentication and verification procedure when a client connects to the server, involving entering a code sent by e-mail or SMS into the application. You then add the user information to the session storage, enabling the server to identify the user. This way, the 4D server can access user information for all client processes, enabling customized code to be written according to the user's role.
-
-On the server, you can also assign privileges to a remote user session to control access when the session comes from Qodly pages running in web areas.     
 
 
 
@@ -124,9 +116,14 @@ The `session` object of a standalone is available from all methods and code exec
 
 Desktop sessions can be used to handle web accesses to the application by the same user and thus, manage their [privileges](../ORDA/privileges.md). This possibility is particularly useful for Client/Server applications where [Qodly pages](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/pageLoaderOverview) are used for the interface, running on remote machines. With this configuration, your applications have modern CSS-based web interfaces but still benefit from the power and simplicity of integrated client/server development. In such applications, Qodly pages are executed within standard 4D [Web areas](../FormObjects/webArea_overview.md). 
 
-To manage this configuration in production, you need to use remote user sessions. Actually, requests coming from both the remote 4D application and its Qodly pages loaded in Web areas need to work inside the same session. You just have to share the session between the remote client and its web pages so that you can have the same [session storage](../API/SessionClass.md#storage) and client license, wherever the request comes from (web or remote 4D).  
+To manage this configuration in production, you need to use remote user sessions. Actually, requests coming from both the remote 4D application and its Qodly pages loaded in Web areas need to work inside the same session. You just have to share the session on the server between the remote client and its web pages so that you can have the same [session storage](../API/SessionClass.md#storage) and client license, wherever the request comes from (web or remote 4D).  
 
-Note that [privileges](../ORDA/privileges.md) should be set in the session before executing a web request, so that the user automatically gets their privileges for web access (see example). Keep in mind that privileges **only apply to requests coming from the web**.
+Note that [privileges](../ORDA/privileges.md) should be set in the session before executing a web request, so that the user automatically gets their privileges for web access (see example). 
+
+Keep in mind that privileges:
+
+- only apply to requests coming from the web,
+- can only be set from the [remote user session on the server](#comparing-server-side-and-client-side-user-session-objects).
 
 
 You can develop this configuration in your 4D Developer application (single-user): you can use the [standalone session](#standalone-sessions) to code and test all features related to web access, whether your application is intended for single-user or client/server deployment. 
@@ -135,7 +132,7 @@ Shared sessions are handled through [OTP tokens](../WebServer/sessions.md#sessio
 
 :::note
 
-When creating an OTP token in client/server environment, you need to execute the [OTP creation code](../API/SessionClass.md#createotp) **on the server** (the `Session` object is Null on a remote 4D). You can use for example the [`On Server Open Connection`](../commands/on-server-open-connection-database-method) database method. 
+When creating an OTP token in client/server environment, you can execute the [OTP creation code](../API/SessionClass.md#createotp) from the server or from the client (on the server you can use for example the [`On Server Open Connection`](../commands/on-server-open-connection-database-method) database method). However, keep in mind that the web session `.storage` is always shared with the user session `.storage` **on the server** and privileges can only be set from the user session on the server. 
 
 :::
 
