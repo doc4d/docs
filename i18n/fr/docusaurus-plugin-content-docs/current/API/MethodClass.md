@@ -12,7 +12,7 @@ A `4D.Method` object is created with the `4D.Method.new()` function.
 - store a `4D.Method` object in an object property and use the `()` operator after the property name,
 - or directly call the `4D.Method` object using the [`call()`](#call) or [`apply()`](#apply) function on it.
 
-See examples in the [Executing code in Function objects](../API/FunctionClass.md#executing-code-in-function-objects) paragraph.
+Voir les exemples dans le paragraphe [Exécution du code dans les objets Function](../API/FunctionClass.md#executing-code-in-function-objects).
 
 :::tip Article(s) de blog sur le sujet
 
@@ -118,7 +118,7 @@ End if
 
 The `4D.Method.new()` function <!-- REF #4D.Method.new().Summary -->creates and returns a new `4D.Method` object built from the *source* code<!-- END REF -->.
 
-In the *source* parameter, pass the 4D source code of the method as text. All end-of-line characters are supported (LF, CR, CRLF) using the [`Char`](../commands-legacy/char.md) command or an [escape sequence](../Concepts/quick-tour.md#escape-sequences).
+In the *source* parameter, pass the 4D source code of the method as text. All end-of-line characters are supported (LF, CR, CRLF) using the [`Char`](../commands/char) command or an [escape sequence](../Concepts/quick-tour.md#escape-sequences).
 
 In the optional *name* parameter, pass the name of the method to be displayed in the 4D debugger or Runtime explorer. If you omit this parameter, the method name will appear as "anonymous".
 
@@ -127,7 +127,7 @@ In the optional *name* parameter, pass the name of the method to be displayed in
 Giving a *name* to your method is recommended if you want to:
 
 - use persistent method name in the [Custom watch pane of the Debugger](../Debugging/debugger#custom-watch-pane) (anonymous methods are not persistent in the debugger).
-- handle the volatile method using commands such as [`Method get path`](../commands-legacy/method-get-path.md) and [`Method resolve path`](../commands-legacy/method-resolve-path.md) (anonymous methods don't have paths).
+- handle the volatile method using commands such as [`Method get path`](../commands/method-get-path) and [`Method resolve path`](../commands/method-resolve-path) (anonymous methods don't have paths).
 
 :::
 
@@ -135,7 +135,7 @@ The resulting 4D.Method object can be checked using [`checkSyntax()`](#checksynt
 
 :::note
 
-Named volatile method objects are not project methods, they are not stored in disk files and cannot be called by commands such as [`EXECUTE METHOD`](../commands-legacy/execute-method.md). On the other hand, since they inherit from the [`4D.Function`](./FunctionClass.md) class, they can be used wherever a `4D.Function` object is expected.
+Named volatile method objects are not project methods, they are not stored in disk files and cannot be called by commands such as [`EXECUTE METHOD`](../commands/execute-method). On the other hand, since they inherit from the [`4D.Function`](./FunctionClass.md) class, they can be used wherever a `4D.Function` object is expected.
 
 :::
 

@@ -283,7 +283,7 @@ $c.combine($fruits;3) //[1,2,3,"Orange","Banana","Apple","Grape",4,5,6]
 
 </details>
 
-<!-- REF #collection.concat().Syntax -->**.concat**( *value* : any { ; *...valueN* } ) : Collection<!-- END REF -->
+<!-- REF #collection.concat().Syntax -->**.concat**( *value* : any { ; *...valueN* : any } ) : Collection<!-- END REF -->
 
 <!-- REF #collection.concat().Params -->
 
@@ -2611,7 +2611,7 @@ $o.parameters:={name:"Chicago")
 $c:=$myCol.query(":att=:name";$o)
 ```
 
-Vous pouvez combiner tous les types d'arguments dans *queryString*. A *queryString* can contain, for *propertyPath* and *value* parameters:
+Vous pouvez combiner tous les types d'arguments dans *queryString*. Une *queryString* peut contenir, pour les paramètres *propertyPath* et *value* :
 
 - des valeurs directes (pas de placeholders)
 - des placeholders indexés et/ou nommés.
