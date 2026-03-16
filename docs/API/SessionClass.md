@@ -4,7 +4,7 @@ title: Session
 ---
 
 
-Session objects are returned by the [`Session`](../commands/session) command. These objects provide the developer with an interface allowing to manage the current user session and execute actions such as store contextual data, share information between session processes, launch session-related preemptive processes, or (web context only) manage [privileges](../ORDA/privileges.md).
+Session objects are returned by the [`Session`](../commands/session) command. These objects provide the developer with an interface allowing to manage the current session and execute actions such as store contextual data, share information between session processes, launch session-related preemptive processes, or (web context only) manage [privileges](../ORDA/privileges.md).
 
 
 :::tip Related blog posts
@@ -24,10 +24,9 @@ Session objects are returned by the [`Session`](../commands/session) command. Th
 The following types of sessions are supported by this class:
 
 - [**Web user sessions**](WebServer/sessions.md): Web user sessions are available when [scalable sessions are enabled in your project](WebServer/sessions.md#enabling-web-sessions). They are used for Web connections (including REST access), and are controlled by assigned [privileges](../ORDA/privileges.md).
-- [**Desktop sessions**](../Desktop/sessions.md), which include: 
-   - [**Remote user sessions**](../Desktop/sessions.md#remote-user-sessions): In client/server applications, remote users have their own sessions, managed from the client and from the server.
-   - [**Stored procedures sessions**](../Desktop/sessions.md#stored-procedure-sessions): Virtual user session for all stored procedures executed on the server.
-   - [**Standalone sessions**](../Desktop/sessions.md#standalone-sessions): Local session object returned in single-user application (useful in development and test phases of client/server applications). 
+- [**Remote user sessions**](../Desktop/sessions.md#remote-user-sessions): In client/server applications, remote users have their own sessions, managed from the client and from the server.
+- [**Stored procedures sessions**](../Desktop/sessions.md#stored-procedure-sessions): Virtual user session for all stored procedures executed on the server.
+- [**Standalone sessions**](../Desktop/sessions.md#standalone-sessions): Local session object returned in single-user application (useful in development and test phases of client/server applications). 
 
 
 :::warning About session privileges
@@ -134,7 +133,7 @@ $isOK:=Session.clearPrivileges()
 
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|lifespan|Integer|->|Session token lifespan in seconds (web sessions only)|
+|lifespan|Integer|->|Session token lifespan in seconds|
 |Result|Text|<-|UUID of the token|
 </div>
 <!-- END REF -->
@@ -144,18 +143,18 @@ $isOK:=Session.clearPrivileges()
 
 The `.createOTP()` function <!-- REF #SessionClass.createOTP().Summary -->creates a new OTP (One Time Passcode) for the session and returns its token UUID<!-- END REF -->. This token is unique to the session in which it was generated.
 
+You can set a custom timeout by passing a value in seconds in *lifespan*. By default, if the *lifespan* parameter is omitted:
 
-For more information about the OTP tokens, please refer to [this section](../WebServer/sessions.md#session-token-otp).
-
-If an expired token is used to restore a session, it is ignored. 
-
-For web sessions, you can set a custom timeout by passing a value in seconds in *lifespan*. By default, if the *lifespan* parameter is omitted, the token is created with the same lifespan as the [`.idleTimeOut`](#idletimeout) of the session. 
-
-For desktop sessions, the token is created with a 10 seconds lifespan. 
+- for web sessions, the token is created with the same lifespan as the [`.idleTimeOut`](#idletimeout) of the session. 
+- for remote user sessions, the token is created with a 10 seconds lifespan. 
 
 The returned token can be used in exchanges with third-party applications or websites to securely identify the session. For example, the session OTP token can be used with a payment application. 
 
 The returned token can be used by 4D Server or 4D single-user application to identify requests coming from the web that [share the session](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses). 
+
+For more information about the OTP tokens, please refer to [this section](../WebServer/sessions.md#session-token-otp).
+
+If an expired token is used to restore a session, it is ignored. 
 
 
 #### Example
@@ -202,7 +201,7 @@ If several privileges have been added to the web process, the `demote()` functio
 :::note Notes
 
 - Keep in mind that privileges only apply to the code executed through web accesses, whatever the [session type](#session-types) on which this function is executed.
-- This function does nothing when called from the client side of a remote user session.
+- This function cannot be called from the client side of a remote user session (an error is returned). 
 
 :::
 
@@ -544,9 +543,9 @@ End if
 #### Description
 
 
-The `.info` property <!-- REF #SessionClass.info.Summary -->describes the desktop or web session<!-- END REF -->.
+The `.info` property <!-- REF #SessionClass.info.Summary -->describes the session<!-- END REF -->.
 
-- **Remote sessions** and **Stored procedure sessions**: The `.info` object is the same object as the one returned in the "session" property by the [`Process activity`](../commands/process-activity) command.
+- **Remote user sessions** and **Stored procedure sessions**: The `.info` object is the same object as the one returned in the "session" property by the [`Process activity`](../commands/process-activity) command.
 - **Standalone sessions**: The `.info` object is the same object as the one returned by the [`Session info`](../commands/session-info) command.
 - **Web user sessions**: The `.info` object contains properties available for web user sessions. 
 
@@ -603,7 +602,7 @@ Since `.info` is a computed property, it is recommended to call it once and then
 
 :::note
 
-This function always returns **False** with desktop sessions.
+This function always returns **False** with non-web sessions.
 
 :::
 
@@ -665,7 +664,6 @@ Dynamically adding privileges is useful when access rights depend on the executi
 The function does nothing and returns 0 if:
 - the *privilege* does not exist in the [`roles.json`](../ORDA/privileges.md#rolesjson-file) file,
 - the *privilege* is already assigned to the current process (using `.promote()` or through a static [promote action](../ORDA/privileges.md#permission-actions) declared for the calling function in the [`roles.json`](../ORDA/privileges.md#rolesjson-file) file). 
-- it is called from the client side of a remote user session.
 
 
 You can call the `promote()` function several times in the same process to add different privileges.
@@ -676,9 +674,11 @@ The returned id is incremented each time a privilege is dynamically added to the
 To remove a privilege dynamically, call the `demote()` function with the appropriate id. 
  
 
-:::note
+:::note Notes
 
-Keep in mind that privileges only apply to the code executed through web accesses, whatever the [session type](#session-types) on which this function is executed.
+- Keep in mind that privileges only apply to the code executed through web accesses, whatever the [session type](#session-types) on which this function is executed.
+- This function cannot be called from the client side of a remote user session (an error is returned). 
+
 :::
 
 
@@ -760,15 +760,10 @@ The function returns `false` if:
 
 In this case, the current web user session is left untouched (no session is restored). 
 
-:::note
+:::note Notes
 
-This function does nothing when called from the client side of a remote user session.
-
-:::
-
-:::note
-
-Keep in mind that privileges only apply to the code executed through web accesses, whatever the [session type](#session-types) on which this function is executed.
+- Keep in mind that privileges only apply to the code executed through web accesses, whatever the [session type](#session-types) on which this function is executed.
+- This function cannot be called from the client side of a remote user session (an error is returned). 
 
 :::
 
@@ -847,15 +842,10 @@ By default when no privilege or role is associated to the session, the session i
 
 The [`userName`](#username) property is available at session object level (read-only).
 
-:::note
+:::note Notes
 
-For security reasons, this function cannot be called from the client side of a remote user session (an error is returned). 
-
-:::
-
-:::note
-
-Keep in mind that privileges only apply to the code executed through web accesses, whatever the [session type](#session-types) on which this function is executed.
+- Keep in mind that privileges only apply to the code executed through web accesses, whatever the [session type](#session-types) on which this function is executed.
+- This function cannot be called from the client side of a remote user session (an error is returned). 
 
 :::
 
@@ -911,9 +901,9 @@ When a `Session` object is created, the `.storage` property is empty. This prope
 
 :::
 
-In client/server, the `.storage` of the remote session (on the server) is not the same as the `.storage` of the client session (on the client).
+In client/server, the `.storage` object of the remote user session is **not** the same on the server and on the client.
 
-When a desktop session and a web session are [shared using an OTP](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses), they also share the same `.storage` object on the server, event if the OTP was [created](#createotp) from the client session.
+When a remote user session and a web session are [shared using an OTP](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses), they also share the same `.storage` object on the server, even if the OTP was [created](#createotp) from the session on the client side.
 
 
 :::tip
