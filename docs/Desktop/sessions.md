@@ -50,7 +50,7 @@ The remote user `session` object is available in different contexts depending on
 |Project methods|[with Execute on Server](../Project/project-method-properties.md#execute-on-server) attribute (they are executed in the "twinned" process of the client process)|executed locally|
 |ORDA [data model functions](../ORDA/ordaClasses.md)|without the [`local`](../ORDA/ordaClasses.md#local-functions) keyword|with the [`local`](../ORDA/ordaClasses.md#local-functions) keyword|
 |Triggers|yes|no|
-|Database methods|[On Server Open Connection](../commands/on-server-open-connection-database-method), [On Server Close Connection](../commands/on-server-close-connection-database-method),...|[On startup](../commands-legacy/on-startup-database-method.md), [On Exit](../commands-legacy/on-exit-database-method.md), |
+|Database methods|[On Server Open Connection](../commands/on-server-open-connection-database-method), [On Server Close Connection](../commands/on-server-close-connection-database-method),...|[On startup](../commands-legacy/on-startup-database-method.md), [On Exit](../commands-legacy/on-exit-database-method.md),... |
 |Other code (object methods...)|no|yes|
 
 #### Comparing server-side and client-side user session objects
