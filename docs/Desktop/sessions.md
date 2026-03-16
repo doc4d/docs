@@ -45,7 +45,7 @@ This object is handled through the functions and properties of the [`Session` cl
 
 The remote user `session` object is available in different contexts depending on the application side.
 
-|Available in|Server|Remote|
+|Available in|Server|Client|
 |---|---|---|
 |Project methods|[with Execute on Server](../Project/project-method-properties.md#execute-on-server) attribute (they are executed in the "twinned" process of the client process)|executed locally|
 |ORDA [data model functions](../ORDA/ordaClasses.md)|without the [`local`](../ORDA/ordaClasses.md#local-functions) keyword|with the [`local`](../ORDA/ordaClasses.md#local-functions) keyword|
@@ -58,8 +58,13 @@ The remote user `session` object is available in different contexts depending on
 The user `session` object on the server and on the client are similar, except that:
 
 - their [`.storage`](../API/SessionClass.md#storage) properties are not the same object. A value stored in the `.storage` of the user session on the server will not be available in the `.storage` of the user session on the client and conversely.
-- for security reasons, the client-side session cannot execute functions that modify [privileges](../ORDA/privileges.md) ([`setPrivileges()`](../API/SessionClass.md#setprivileges), [`promote()`](../API/SessionClass.md#promote), [`demote()`](../API/SessionClass.md#demote), [`restore()`](../API/SessionClass.md#restore)). 
+- for security reasons, the client-side session cannot execute functions that **modify** [privileges](../ORDA/privileges.md) ([`setPrivileges()`](../API/SessionClass.md#setprivileges), [`clearPrivileges()`](../API/SessionClass.md#clearprivileges), [`promote()`](../API/SessionClass.md#promote), [`demote()`](../API/SessionClass.md#demote), [`restore()`](../API/SessionClass.md#restore)). 
 
+:::note
+
+Functions that read privileges can be called on both client and server sides ([`getPrivileges()`](../API/SessionClass.md#getprivileges), [`hasPrivileges()`](../API/SessionClass.md#hasprivileges), [`isGuest()`](../API/SessionClass.md#isguest))
+
+:::
 
 ### Usage
 
@@ -69,7 +74,17 @@ Within each environment, [session.`storage`](../API/SessionClass.md#storage) is 
 
 Within each environment, you can use the remote user `session` object to [create an OTP](../API/SessionClass.md#createotp) and [share the desktop session for web accesses](#sharing-a-desktop-session-for-web-accesses-sharing-a-desktop-session-for-web-accesses).  
 
-On the server, you can also assign privileges to a remote user session to control access when the session comes from [Qodly pages running in web areas](#sharing-a-desktop-session-for-web-accesses-sharing-a-desktop-session-for-web-accesses).     
+On the server, you can also assign privileges to a remote user session to control access when the session comes from [Qodly pages running in web areas](#sharing-a-desktop-session-for-web-accesses-sharing-a-desktop-session-for-web-accesses). 
+
+
+:::note
+
+On the client side, two distinct local storage objects are available:
+
+- the [`Storage`](../commands/storage) object of the client machine,
+- the [`session.storage`](../API/SessionClass.md#storage) object of the user remote session. 
+
+:::
 
 
 :::tip Related blog posts
@@ -123,7 +138,7 @@ Note that [privileges](../ORDA/privileges.md) should be set in the session befor
 Keep in mind that privileges:
 
 - only apply to requests coming from the web,
-- can only be set from the [remote user session on the server](#comparing-server-side-and-client-side-user-session-objects).
+- can only be **set** from the [remote user session on the server](#comparing-server-side-and-client-side-user-session-objects).
 
 
 You can develop this configuration in your 4D Developer application (single-user): you can use the [standalone session](#standalone-sessions) to code and test all features related to web access, whether your application is intended for single-user or client/server deployment. 
