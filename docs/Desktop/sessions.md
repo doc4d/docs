@@ -3,17 +3,9 @@ id: desktop-sessions
 title: Desktop Sessions
 ---
 
+## Overview
 
-A **desktop session** is a user-related execution context on 4D Server, 4D remote, or 4D single-user that does not result from any web or REST access.  
-
-Just like in a [**web user session**](../WebServer/sessions.md), the code executed in a desktop session has access to a [`Session`](../API/SessionClass.md) object which provides functions and properties allowing you to store session values and to share them between user processes, for example using the [`session.storage`](../API/SessionClass.md#storage) object.   
-
-However, unlike the code executed in web user sessions, the code executed in desktop sessions is not controlled by [roles and privileges](../ORDA/privileges.md). It can access any parts of the 4D application, including ORDA and data model classes. On 4D Server, [users and groups feature](../Users/handling_users_groups.md) can manage user accesses. Note also that desktop sessions do not require [scalable sessions](../WebServer/sessions.md#enabling-web-sessions) to be enabled. 
-
-
-You can nevertheless [**share** a remote session with a web session](#sharing-a-remote-session-for-web-accesses) so that a desktop application user can access your 4D application through a web interface, using for example **Qodly pages** and Web areas. 
-
-## Desktop session types {#desktop-session-types}
+A desktop session is a user-related execution context on 4D Server, 4D remote, or 4D single-user that **does not result from any web or REST access**.  
 
 Desktop sessions include:
 
@@ -27,6 +19,13 @@ The following diagram shows the different session types and how they interact:
 
 ![](../assets/en/Desktop/sessions.png)
 
+
+Just like in a [**web user session**](../WebServer/sessions.md), the code executed in a desktop session has access to a [`Session`](../API/SessionClass.md) object which provides functions and properties allowing you to store session values and to share them between user processes, for example using the [`session.storage`](../API/SessionClass.md#storage) object.   
+
+However, unlike the code executed in web user sessions, the code executed in desktop sessions is not controlled by [roles and privileges](../ORDA/privileges.md). It can access any parts of the 4D application, including ORDA and data model classes (on 4D Server, [users and groups feature](../Users/handling_users_groups.md) can manage user accesses). Note also that desktop sessions do not require [scalable sessions](../WebServer/sessions.md#enabling-web-sessions) to be enabled. 
+
+
+You can nevertheless [**share** a remote session with a web session](#sharing-a-remote-session-for-web-accesses) so that desktop application users can access your 4D application through a web interface, using in particular **Qodly pages** and Web areas. 
 
 
 
