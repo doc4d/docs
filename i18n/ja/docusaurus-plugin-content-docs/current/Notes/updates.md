@@ -11,6 +11,7 @@ title: リリースノート
 - 4D Write Pro は[階層リストスタイルシート](../WritePro/user-legacy/stylesheets.md#hierarchical-list-style-sheets) サポートするようになり、これにより自動ナンバリングつきの、構造化された[マルチレベルのリスト](../WritePro/user-legacy/using-a-4d-write-pro-area.md#multi-level-lists) の作成と管理が可能になりました。
 - [`HTTPRequest`](../API/HTTPRequestClass.md#4dhttprequestnew) および [`HTTPAgent`](../API/HTTPAgentClass.md#4dhttpagentnew) クラスにおいて、ローカル証明書フォルダの代わりにmacOS キーチェーンからのカスタムの証明書を使用できるようになりました。
 - テキストソースから4D メソッドを作成し実行するための[`4D.Method` クラス](../API/MethodClass.md)。 [`METHOD Get path`](../commands/method-get-path) および [`METHOD RESOLVE PATH`](../commands/method-resolve-path) コマンドは新しい`path volatile method` 定数 (128) をサポートするようになりました。
+- Remote [session](../API/SessionClass.md) objects are now [available client-side](../Desktop/sessions.md#availability).
 
 #### Support of Liquid glass on macOS
 
