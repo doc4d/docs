@@ -1,6 +1,6 @@
 ---
 id: ordering
-title: Ordering collections and objects
+title: Ordenando colecciones y objetos
 ---
 
 To sort a series of data, 4D compares each value against the others by applying comparison criteria defined according to the data type (see [sorting rules](#sorting-rules)). This process relies on a sorting algorithm that establishes a total order across all elements. When all data belongs to the same [data type](./data-types.md), the comparison rules are straightforward and well-defined.
@@ -28,19 +28,19 @@ Types are ordered according to the following sequence, with their respective com
 
 | Rank | Tipo           | Also includes                                                                                                          | Comparison rule                                                                                                                                     |
 | ---- | -------------- | ---------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1    | **null**       | pointers (null pointers only for collections)                                                       | no comparison criteria applicable                                                                                                                   |
+| 1    | **null**       | pointers (null pointers only for collections)                                                       | no se aplican criterios de comparación                                                                                                              |
 | 2    | **boolean**    |                                                                                                                        | orden lógico: false *antes que* true                                                                                                |
-| 3    | **string**     |                                                                                                                        | lexicographical order (e.g., "a" *before* "ab" *before* "b")                                     |
+| 3    | **string**     |                                                                                                                        | orden lexicográfico (por ejemplo, "a" *antes* "ab" *antes* "b")                                                                  |
 | 4    | **number**     | time (converted to milliseconds or seconds depending on the `Time inside objects` database setting) | standard algebraic order (numeric comparison)                                                                                    |
 | 5    | **object**     | blobs, pictures, non-null pointers (collections)                                                    | internal order (consistent for collection functions, see below)                                                                  |
 | 6    | **collection** |                                                                                                                        | internal order (consistent for collection functions, see below)                                                                  |
 | 7    | **date**       |                                                                                                                        | chronological order (older dates *before* newer dates, e.g., !1990-01-01! *before* !2000-01-01!) |
 
-### Special numeric values
+### Valores numéricos especiales
 
 Special floating-point values `+INF` (positive infinity), `-INF` (negative infinity), and `NaN` (Not-a-Number) present in collections and objects are ordered according to the following natural sequence: **NaN < -INF < finite values < +INF**.
 
-### Consistent ordering in collections
+### Ordenación coherente de las colecciones
 
 Collection sorting functions (see [Ordering functions](#ordering-functions) section above) implement a **consistent sort** for complex types such as objects and collections. By "consistent", we mean that successive calls to the same sorting function (e.g., `collection.orderBy()`) on the same collection produce identical ordering for complex type values. Formally, if a sort expression yields the same comparative result for two elements, the relative order of those elements is preserved.
 

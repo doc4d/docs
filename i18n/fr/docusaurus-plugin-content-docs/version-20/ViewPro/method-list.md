@@ -614,7 +614,7 @@ Dans le paramètre *4DViewDocument*, passez une variable ou un champ BLOB conten
 Vous souhaitez obtenir un objet 4D View Pro à partir d'une zone 4D View stockée dans un BLOB :
 
 ```4d
-C_OBJECT($vpObj)
+var $vpObj : Object
 $vpObj:=VP Convert from 4D View($pvblob)
 ```
 
@@ -669,10 +669,10 @@ La commande retourne une image au format SVG.
 Vous souhaitez convertir une zone 4D View Pro en SVG, prévisualiser le résultat et l'envoyer dans une variable image :
 
 ```4d
-C_OBJECT($vpAreaObj)
-C_PICTURE($vPict)
+var $vpAreaObj : Object
+var $vPict : Picture
 $vpAreaObj:=VP Export to object("ViewProArea")
-$vPict:=VP Convert to picture($vpAreaObj) //exporter toute la zone
+$vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 ```
 
 #### Voir également
@@ -1558,8 +1558,8 @@ La collection retournée contient les propriétés des colonnes, qu'elles aient 
 Le code suivant :
 
 ```4d
-C_OBJECT($range)
-C_COLLECTION($attr)
+var $range : Object
+var $attr: Collection
 
 $range:=VP Column("ViewProArea";1;2)
 $attr:=VP Get column attributes($range)
@@ -1602,7 +1602,7 @@ Vous pouvez définir où compter les colonnes à l'aide du paramètre optionnel 
 Le code suivant retourne le nombre de colonnes dans la zone 4D View Pro :
 
 ```4d
-C_INTEGER($colCount)
+var $colCount : Integer
 $colCount:=VP Get column count("ViewProarea")
 ```
 
@@ -1613,7 +1613,7 @@ $colCount:=VP Get column count("ViewProarea")
 ### VP Get current sheet
 
 <!-- REF #_method_.VP Get current sheet.Syntax -->
-**VP Get current sheet** ( *vpAreaName* : Text )<!-- END REF -->
+**VP Get current sheet** ( *vpAreaName* : Text ) : Integer<!-- END REF -->
 
 <!-- REF #_method_.VP Get current sheet.Params -->
 <div class="no-index">
@@ -4509,24 +4509,24 @@ Dans le paramètre *methodObj*, passez un objet dans lequel chaque propriété p
 Vous souhaitez autoriser deux méthodes dans vos zones 4D View Pro :
 
 ```4d
-C_OBJECT($allowed)
- $allowed:=New object //paramètre pour la commande
+var $allowed : Object
+$allowed:=New object //parameter for the command
 
- $allowed.Hello:=New object //crée une première fonction simple nommée "Hello"
- $allowed.Hello.method:="My_Hello_Method" //définit la méthode 4D
- $allowed.Hello.summary:="Hello prints hello world" 
+$allowed.Hello:=New object //create a first simple function named "Hello"
+$allowed.Hello.method:="My_Hello_Method" //sets the 4D method
+$allowed.Hello.summary:="Hello prints hello world"
 
- $allowed.Byebye:=New object //crée une deuxième fonction avec des paramètres nommée "Byebye" 
- $allowed.Byebye.method:="My_ByeBye_Method"
- $allowed.Byebye.parameters:=New collection
- $allowed.Byebye.parameters.push(New object("name";"Message";"type";Is text))
- $allowed.Byebye.parameters.push(New object("name";"Date";"type";Is date))
- $allowed.Byebye.parameters.push(New object("name";"Time";"type";Is time))
- $allowed.Byebye.summary:="Byebye prints a custom timestamp" 
- $allowed.Byebye.minParams:=3
- $allowed.Byebye.maxParams:=3
+$allowed.Byebye:=New object //create a second function with parameters named "Byebye"
+$allowed.Byebye.method:="My_ByeBye_Method"
+$allowed.Byebye.parameters:=New collection
+$allowed.Byebye.parameters.push(New object("name";"Message";"type";Is text))
+$allowed.Byebye.parameters.push(New object("name";"Date";"type";Is date))
+$allowed.Byebye.parameters.push(New object("name";"Time";"type";Is time))
+$allowed.Byebye.summary:="Byebye prints a custom timestamp"
+$allowed.Byebye.minParams:=3
+$allowed.Byebye.maxParams:=3
 
- VP SET ALLOWED METHODS($allowed)
+VP SET ALLOWED METHODS($allowed)
 ```
 
 Une fois ce code exécuté, les fonctions définies peuvent être utilisées dans des formules 4D View Pro :
@@ -4802,9 +4802,9 @@ Le paramètre *propertyObj* vous permet de renseigner les attributs à appliquer
 Pour modifier la taille de la deuxième colonne et définir un en-tête, le code suivant :
 
 ```4d
-C_OBJECT($column;$properties)
+var $column; $properties : Object
 
-$column:=VP Column("ViewProArea";1) //colonne B
+$column:=VP Column("ViewProArea";1) //column B
 $properties:=New object("width";100;"header";"Hello World")
 
 VP SET COLUMN ATTRIBUTES($column;$properties)
@@ -5471,7 +5471,7 @@ Dans le paramètre optionnel *sheet*, vous pouvez désigner une feuille spécifi
 Vous souhaitez figer les trois premières colonnes de gauche, deux colonnes de droite et la première ligne :
 
 ```4d
-C_OBJECT($panes)
+var $panes : Object
 
 $panes:=New object
 $panes.columnCount:=3
