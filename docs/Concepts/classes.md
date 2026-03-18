@@ -40,7 +40,7 @@ $hello:=$person.sayHello() //"Hello John Doe"
 
 ## Managing classes
 
-### Class definition
+### Architecture
 
 A user class in 4D is defined by a specific [method](methods.md) file (.4dm), stored in the `/Project/Sources/Classes/` folder. The name of the file is the class name.
 
@@ -59,14 +59,6 @@ Project folder
    Classes
     Polygon.4dm
 ```
-
-
-### Deleting a class
-
-To delete an existing class, you can:
-
-- on your disk, remove the .4dm class file from the "Classes" folder,
-- in the 4D Explorer, select the class and click ![](../assets/en/Users/MinussNew.png) or choose **Move to Trash** from the contextual menu.
 
 ### Using the 4D interface
 
@@ -100,6 +92,13 @@ In the various 4D windows (code editor, compiler, debugger, runtime explorer), c
   - **Search references** on class function declaration searches for the function used as object member; for example, "Function f" will find "$o.f()".
 - In the Runtime explorer and Debugger, class functions are displayed with the `<ClassName>` constructor or `<ClassName>.<FunctionName>` format.
 
+#### Deleting a class
+
+To delete an existing class, select it in the Explorer and click ![](../assets/en/Users/MinussNew.png) or choose **Move to Trash** from the contextual menu.
+
+You can also remove the .4dm class file from the "Classes" folder on your disk.
+
+
 ## Class stores
 
 Available classes are accessible from their class stores. Two class stores are available:
@@ -108,7 +107,7 @@ Available classes are accessible from their class stores. Two class stores are a
 - [`4D`](../commands/4d) for built-in class store
 
 
-### `cs`
+#### `cs`
 
 
 <!-- REF #_command_.cs.Syntax -->**cs** : Object<!-- END REF -->
@@ -133,7 +132,7 @@ You want to create a new instance of an object of `myClass`:
 $instance:=cs.myClass.new()
 ```
 
-### `4D`
+#### `4D`
 
 <!-- REF #_command_.4D.Syntax -->**4D** : Object <!-- END REF -->
 
@@ -159,7 +158,7 @@ $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 You want to list 4D built-in classes:
 
 ```4d
- var $keys : collection
+ var $keys : Collection
  $keys:=OB Keys(4D)
  ALERT("There are "+String($keys.length)+" built-in classes.")
 ```
@@ -203,7 +202,7 @@ Specific 4D keywords can be used in class definitions:
 #### Syntax
 
 ```4d
-{shared} Function <name>({$parameterName : type; ...}){->$parameterName : type}
+{local | server} {shared} Function <name>({$parameterName : type; ...}){->$parameterName : type}
 // code
 ```
 
@@ -214,6 +213,8 @@ There is no ending keyword for function code. The 4D language automatically dete
 :::
 
 Class functions are specific properties of the class. They are objects of the [4D.Function](API/FunctionClass.md) class. In the class definition file, function declarations use the `Function` keyword followed by the function name.
+
+In the context of a client/server application, the `local` or `server` keyword allows you to specify on which machine the function must be executed. These keywords can only be used with ORDA data model functions and shared/session singleton functions. For more information, refer to the [local/server functions](#local-server-functions) paragraph below. 
 
 If the function is declared in a [shared class](#shared-classes), you can use the `shared` keyword so that the function could be called without [`Use...End use` structure](shared.md#useend-use). For more information, refer to the [Shared functions](#shared-functions) paragraph below.
 
@@ -691,13 +692,6 @@ $val:=$o.f() //8
 
 For more details, see the [`This`](../commands/this) command description. 
 
-
-
-## Class commands
-
-
-Several commands of the 4D language allows you to handle class features.
-
 ### `OB Class`
 
 #### `OB Class ( object ) -> Object | Null`
@@ -926,7 +920,152 @@ $myList := cs.ItemInventory.me.itemList
 
 
 
-#### See also
+:::tip Related blog posts
 
-[Singletons in 4D](https://blog.4d.com/singletons-in-4d) (blog post) <br/> [Session Singletons](https://blog.4d.com/introducing-session-singletons) (blog post).
+[Singletons in 4D](https://blog.4d.com/singletons-in-4d)   
+[Session Singletons](https://blog.4d.com/introducing-session-singletons)   
 
+:::
+
+
+
+## `local` and `server`
+
+In [client/server architecture](../Desktop/clientServer.md), `local` and `server` keywords allow you to specify where you want the function to be executed: client-side, or server-side. It is useful for performance reasons or to implement business logic features. 
+
+The formal syntax is:
+
+```4d  
+// declare a function to execute on a client in client/server
+local Function <functionName>   
+```
+```4d  
+// declare a function to execute on the server in client/server
+server Function <functionName>   
+```
+
+
+### Contexts
+
+`local` and `server` keywords are only available with:  
+
+- [ORDA data model functions](../ORDA/ordaClasses.md)
+- [shared or session singleton functions](#singleton-classes)
+
+If `local` and `server` keywords are used in another context, they are ignored and an error is returned by the compiler.
+
+
+You can add the keyword to modify the execution location for a function, or to make the code more explicit. 
+
+|Functions|Default execution if no keyword|Execution keywords|
+|---|---|---|
+|[ORDA data model functions](../ORDA/ordaClasses.md)|Server|`server` (default), `local`|
+|[Shared or session singleton functions](#singleton-classes)|Client|`server`, `local` (default)|
+
+
+ 
+
+:::note
+
+For a detailed description of where code is actually executed in client/server, please refer to [this page].  
+
+::::
+
+### `local` 
+
+The `local` keyword specifies that the function must be executed **on the client side**. 
+
+#### Shared or session singleton functions
+
+The `local` keyword is useless for [shared or session singleton functions](#singleton-classes), which are executed on the client by default (but can be used for clarity).  
+
+#### ORDA data model functions
+
+By default, [ORDA data model functions](../ORDA/ordaClasses.md) are executed on the server. It usually provides the best performance since only the function request and the result are sent over the network.
+
+However, it could happen that a function is fully executable on the client side (e.g., when it processes data that's already in the local cache). In this case, you can save requests to the server and thus, enhance the application performance by using the `local` keyword. 
+
+Note that the function will work even if it eventually requires to access the server (for example if the ORDA cache is expired). However, it is highly recommended to make sure that the local function does not access data on the server, otherwise the local execution could not bring any performance benefit. A local function that generates many requests to the server is less efficient than a function executed on the server that would only return the resulting values. For example, consider the following function on the Schools entity class:
+
+```4d
+// Get the youngest students  
+// Inappropriate use of local keyword
+local Function getYoungest
+  var $0 : Object
+    $0:=This.students.query("birthDate >= :1"; !2000-01-01!).orderBy("birthDate desc").slice(0; 5)
+```
+- **without** the `local` keyword, the result is given using a single request
+- **with** the `local` keyword, 4 requests are necessary: one to get the Schools entity students, one for the `query()`, one for the `orderBy()`, and one for the `slice()`. In this example, using the `local` keyword is inappropriate.
+
+
+### `server`
+
+The `server` keyword specifies that the function must be executed **on the server side**. 
+
+#### Singleton functions
+
+By default, shared or session singleton functions are executed on the client. 
+
+In the context of [remote user sessions](../Desktop/sessions.md#remote-user-sessions), you can implement the business logic in a [session singleton](#shared-or-session-singleton-functions) to share it accross all the processes of the session, thus extending the functionalities of the [`Session`](../commands/session) command. In this case, you might want the relevant business logic to be executed **on the server** so that all the session information is gathered on the server.
+
+
+#### ORDA data model functions
+
+The `server` keyword is useless for [ORDA data model functions](../ORDA/ordaClasses.md), which are executed on the server by default (but can be used for clarity).  
+
+
+
+### Examples
+
+#### Calculating age
+
+Given an entity with a *birthDate* attribute, we want to define an `age()` function that would be called in a list box. This function can be executed on the client, which avoids triggering a request to the server for each line of the list box.
+
+On the *StudentsEntity* class:
+
+```4d
+Class extends Entity
+
+local Function age() -> $age: Variant
+
+If (This.birthDate#!00-00-00!)
+    $age:=Year of(Current date)-Year of(This.birthDate)
+Else
+    $age:=Null
+End if
+```
+
+#### Checking attributes
+
+We want to check the consistency of the attributes of an entity loaded on the client and updated by the user before requesting the server to save them.
+
+On the *StudentsEntity* class, the local `checkData()` function checks the Student's age:
+
+```4d
+Class extends Entity
+
+local Function checkData() -> $status : Object
+
+$status:=New object("success"; True)
+Case of
+    : (This.age()=Null)
+        $status.success:=False
+        $status.statusText:="The birthdate is missing"
+
+    :((This.age() <15) | (This.age()>30) )
+        $status.success:=False
+        $status.statusText:="The student must be between 15 and 30 - This one is "+String(This.age())
+End case
+```
+
+Calling code:
+
+```4d
+var $status : Object
+
+//Form.student is loaded with all its attributes and updated on a Form
+$status:=Form.student.checkData()
+If ($status.success)
+    $status:=Form.student.save() // call the server
+End if
+```
