@@ -10,10 +10,14 @@ para importar
 
 ## Listas
 
-4D Write Pro soporta dos tipos principales de listas:
+4D Write Pro supports flat lists (single-level) and hierarchical lists (multi-level).
+
+### Single-level lists
+
+4D Write Pro soporta dos tipos principales de listas de un solo nivel:
 
 - listas desordenadas: donde los elementos de la lista se marcan con viñetas, viñetas personalizadas o imágenes utilizadas como marcadores.
-- ordered lists: where list items are marked with numbers or letters
+- listas ordenadas: en las que los elementos de la lista se marcan con números o letras
 
 Pueden crearse utilizando:
 
@@ -27,10 +31,107 @@ Cuando se crea una lista utilizando una acción estándar (`listStyleType` o `li
 
 When the list is created using [the WP SET ATTRIBUTE command](../commands-legacy/4d-write-pro-attributes.md#lists), no specific margin is managed, by default the marker is added at the left boundary of the paragraph. El desarrollador puede añadir un margen personalizado si es necesario.
 
-:::info Entrada de blog relacionada
+añada una parte sobre el hecho de que usted define dónde empieza su lista ordenada.
+
+:::tip Entrada de blog relacionada
 
 [4D Write Pro – Adding a margin automatically when bullets are set using standard actions](https://blog.4d.com/4d-write-pro-adding-a-margin-automatically-when-bullets-are-set-using-standard-actions)
 
 :::
+and the level are managed with (standard actions)
+
+### Multi-level lists
+
+Multi-level lists are based on [hierarchical list style sheets](stylesheets.md#hierarchical-list-style-sheets). Las listas multinivel contienen una hoja de estilo de nivel raíz y una o más hojas de estilo de subnivel. Each level is attached to a hierarchical list style sheet and represents a depth in the list (level 1, level 2, level 3, etc.).
+
+Cuando se crea un nuevo subnivel, la numeración de niveles vuelve a empezar en 1. When you add or remove an element in your multi-level list, the numbers are automatically adjusted.
+
+![](../../assets/en/WritePro/multilevel-lists.png)
+
+Multi-level lists are created by applying a hierarchical list style sheet to a paragraph using [WP SET ATTRIBUTE](../commands/wp-set-attributes.md).
+
+Listas de varios niveles pueden ser gestionadas usando:
+
+- paragraph [style sheet attributes](../commands-legacy/4d-write-pro-attributes.md#style-sheets) (such as `wk list level index`, `wk list level count`, and `wk list concat string format`)
+- dedicated [standard actions](../user-legacy/standard-actions.md) for level management (`listLevelAppend`, `listLevelInc`, `listLevelDec`)
+- dedicated standard actions for numbering marker management (`listConcatString`, `listNumberFormat`).
+
+:::tip Entrada de blog relacionada
+
+[4D Write Pro – Creating Multi-level Bullet or Numbered Lists Using Hierarchical list Style Sheets](https://blog.4d.com/4d-write-pro-creating-multi-level-bullet-or-numbered-lists-using-hierarchical-paragraph-style-sheets)
+
+:::
 
 <!-- END REF -->
+
+<!-- REF hierarchical-list.Desc -->
+
+## Hojas de estilo de listas jerárquicas
+
+Las hojas de estilo de listas jerárquicas se utilizan para crear [listas multinivel](using-a-4d-write-pro-area.md#multi-level-lists).
+
+To create a hierarchical list style sheet, use [WP New style sheet](../commands/wp-new-style-sheet.md) and pass in *listLevelCount* the desired number of levels. You then define a hierarchy of related paragraph style sheets: one **root-level** style sheet and one or more **sub-level** style sheets linked to it. Cada nivel representa una profundidad en la lista (nivel 1, nivel 2, nivel 3, etc.) and is automatically named "root-level name + lvl + index", for example "Mylist lvl 2".
+
+To define and manage the hierarchy, the paragraph style sheet object can be customized using [style sheet attributes](../commands-legacy/4d-write-pro-attributes.md#style-sheets).
+
+Hierarchical list style sheets are fully supported by the following commands: [`WP Get style sheet`](../commands/wp-get-style-sheet.md), [`WP SET ATTRIBUTES`](../commands/wp-set-attributes.md), [`WP DELETE STYLE SHEET`](../commands/wp-delete-style-sheet.md).
+
+### Ejemplo
+
+The following example creates a three-level hierarchical list style sheet and applies it to paragraphs.
+
+```4d
+// Create 3 hierarchical list style sheets
+WP New style sheet(wpArea; wk type paragraph; "MyList"; 3)
+
+// Retrieve each level
+var $level1; $level2; $level3 : Object
+$level1:=WP Get style sheet(wpArea; "MyList"; 1) // Root level
+$level2:=WP Get style sheet(wpArea; "MyList"; 2) // 1st sub-level
+$level3:=WP Get style sheet(wpArea; "MyList"; 3) // 2nd sub-level
+
+// Customize styles
+WP SET ATTRIBUTES($level1; {listStyleType: wk upper latin; fontBold: wk true})
+WP SET ATTRIBUTES($level2; {listConcatStringFormat: True})
+WP SET ATTRIBUTES($level3; {listStringFormatLtr: "(#)"})
+
+// Apply hierarchical style sheets to paragraphs
+var $paragraphs : Collection
+$paragraphs:=WP Get elements(wpArea; wk type paragraph)
+
+WP SET ATTRIBUTES($paragraphs[0]; wk style sheet; $level1)
+WP SET ATTRIBUTES($paragraphs[1]; wk style sheet; $level2)
+WP SET ATTRIBUTES($paragraphs[2]; wk style sheet; $level3)
+```
+
+resultado:
+
+![](../../assets/en/WritePro/hierarchical-paragraph-stylesheets-1.png)
+
+To delete the first sub-leve:
+
+```4d
+WP DELETE STYLE SHEET(wpArea; "MyList"; 2)
+```
+
+resultado:
+
+![](../../assets/en/WritePro/hierarchical-paragraph-stylesheets-2.png)
+
+### Predefined attribute values
+
+Cuando se crean, las hojas de estilo de listas jerárquicas utilizan valores predefinidos:
+
+- `wk margen izquierdo` = 0,75 cm × (número de niveles anteriores)
+- `wk list type` = `wk decimal`
+- `wk name` is derived from the root style sheet name (Read-only for sub-levels)
+- `wk list level count` se fija en el valor especificado para todos los niveles
+
+  - Ejemplo:
+
+    - Root level: `"MyList"`
+    - Primer subnivel: `"MyList nivel 2"`
+    - Segundo subnivel: `"MyList lvl 3"`
+
+<!-- END REF -->
+

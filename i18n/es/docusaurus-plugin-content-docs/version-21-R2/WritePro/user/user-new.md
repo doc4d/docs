@@ -13,13 +13,13 @@ para importar
 4D Write Pro soporta dos tipos principales de listas:
 
 - listas desordenadas: donde los elementos de la lista se marcan con viñetas, viñetas personalizadas o imágenes utilizadas como marcadores.
-- ordered lists: where list items are marked with numbers or letters
+- listas ordenadas: en las que los elementos de la lista se marcan con números o letras
 
 Pueden crearse utilizando:
 
 - la barra de herramientas o la barra lateral de la [interfaz de 4D Write Pro](https://doc.4d.com/4Dv20/4D/20.2/Entry-areas.300-6750367.en.html#5865253)
 - las [acciones estándar](./standard-actions.md) `listStyleType` o `listStyleImage`,
-- o [por programación](../commands-legacy/4d-write-pro-attributes.md#lists) utilizando [WP SET ATTRIBUTE](../commands/wp-set-attributes).
+- o [por programación](../commands-legacy/4d-write-pro-attributes.md#lists) utilizando [WP SET ATTRIBUTE](./commands/wp-set-attributes).
 
 Cuando se crea una lista utilizando una acción estándar (`listStyleType` o `listStyleImage`) o la barra de herramientas/barra lateral, 4D Write Pro inserta automáticamente un margen antes del texto para que el marcador se sitúe en él. El valor del margen insertado corresponde al desplazamiento de la pestaña por defecto (`wk tab default`).
 
