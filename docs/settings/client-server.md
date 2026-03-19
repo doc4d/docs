@@ -67,8 +67,7 @@ When Single Sign On (SSO) is enabled (see above), you must fill in this field if
 #### Network Layer
 
 This drop-down box contains the available network layers, which are used to handle communications between 4D Server and remote 4D machines (clients).
--   **ServerNet** (only option available for binary databases): Enables the ServerNet network layer on the server.
--   **QUIC** (projects only, selected by default for new projects): Enables the QUIC network layer on the server.
+-   **QUIC** (projects only): Enables the QUIC network layer on the server.
 
  	 **Notes about QUIC**:
 	- You can know if a 4D application is running with the QUIC network layer using the [`Application info`](../commands/application-info) command.
@@ -78,6 +77,13 @@ This drop-down box contains the available network layers, which are used to hand
 		-	[Client-server Connections Timeout settings](#client-server-connections-timeout) are hidden
 		-	The [Encrypt Client-Server communication checkbox](#encrypt-client-server-communications) is hidden (QUIC communications are always in TLS, whatever your secured mode is).
 	- **Compatibility**: You need to deploy your client/server applications with 4D 20 or higher before switching to the QUIC network layer.
+-   **ServerNet** (only option available for binary databases): Enables the ServerNet network layer on the server.
+
+:::info
+
+Using QUIC network layer is **recommended** for projects.
+
+:::
 
 :::note
 

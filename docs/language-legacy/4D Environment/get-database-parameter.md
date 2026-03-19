@@ -23,7 +23,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
-|21 R3|Modified|
+|21 R3|Removed support of *Use legacy network layer*|
 |20 R6|Modified|
 |19 R5|Modified|
 |16 R4|Modified|
@@ -1035,11 +1035,6 @@ SET DATABASE PARAMETER(Log command list;"-1666;-323")
 **Possible values**: 
 - TLSv1\_2 (TLS 1.2, introduced in 2008)
 - TLSv1\_3 (TLS 1.3, introduced in 2018)
-
-**NOTES**: 
-- The 4D Internet Commands plugin uses a different network layer, therefore this selector will have no impact on its TLS version.
-- This setting is ignored for your client server connections if your 4D Server uses the legacy network layer.
-
 
 
 
