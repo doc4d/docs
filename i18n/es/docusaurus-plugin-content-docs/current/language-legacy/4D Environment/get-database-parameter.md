@@ -23,6 +23,7 @@ displayed_sidebar: docs
 
 |Versión|Cambios|
 |---|---|
+|21 R3|Modified|
 |20 R6|Modificado|
 |19 R5|Modificado|
 |16 R4|Modificado|
@@ -35,7 +36,7 @@ displayed_sidebar: docs
 </details>
 </div>
 
-## Descripción 
+<h2 data-noindex>Descripción</h2>
 
 <!--REF #_command_.Get database parameter.Summary-->El comando **Get database parameter** permite obtener el valor actual de un parámetro de la base 4D.<!-- END REF--> Cuando el valor del parámetro es una cadena de caracteres, se devuelve en el parámetro *valorAlfa*.
 
@@ -43,21 +44,13 @@ El parámetro *selector* designa el parámetro a obtener. 4D ofrece las siguient
 
 ### 4D Remote mode timeout (14)
 
-**Alcance**:equipo 4D remoto
+**Alcance** (legacy network layer únicamente): aplicación 4D si *value* es positivo
 
- **Se conserva entre dos sesiones**: no
+**Se conserva entre dos sesiones**: Sí si *value* es positivo
 
- **Valores posibles**: 0 (sin sincronización), 1 (auto sincronización) ó 2 (preguntar).
+**Descripción**: se utiliza en casos muy concretos. Valor del tiempo de espera concedido por el equipo 4D remoto al equipo 4D Server. El valor predeterminado del tiempo de espera utilizado por 4D en modo remoto se configura en la página "Opciones cliente-servidor/red" del cuadro de diálogo de configuración de la base de datos en el equipo remoto.
 
-**Descripción**: modo de sincronización dinámico de la carpeta *Resources* del equipo cliente 4D que ejecuta el comando con el servidor. 
-
-Cuando el contenido de la carpeta *Resources* en el servidor se ha modificado o un usuario ha solicitado la sincronización (por ejemplo vía el explorador de recursos o siguiendo la ejecución del comando [NOTIFY RESOURCES FOLDER MODIFICATION](notify-resources-folder-modification.md "NOTIFY RESOURCES FOLDER MODIFICATION")), el servidor notifica a los equipos cliente conectados. 
-
-Tres modos de sincronización son posibles del lado del cliente. El selector Auto Synchro Resources Folder se utiliza para especificar el modo a utilizar por el equipo cliente para la sesión actual:
-
-0 (valor por defecto): sin sincronización dinámica (la petición de sincronización se ignora) 1: sincronización dinámica automática2: visualización de una caja de diálogo en los equipos clientes, con la posibilidad de efectuar o rechazar la sincronización.El modo de sincronización también puede definirse globalmente en las Preferencias de la aplicación.
-
-
+El selector de tiempo de espera del modo remoto de 4D solo se tiene en cuenta si se utiliza la red heredada. Se ignora cuando se activa la capa *ServerNet*: esta configuración se gestiona íntegramente mediante el selector de tiempo de espera de 4D Server (13).
 
 
 
@@ -70,12 +63,13 @@ Tres modos de sincronización son posibles del lado del cliente. El selector Aut
 
 **Se conserva entre dos sesiones**: no
 
- **Valores posibles**: 0 ó de 1 a X (0 = no grabar, 1 a X = número secuencial, añadido al nombre del archivo).
+**Valores posibles**: 0 ó de 1 a X (0 = no grabar, 1 a X = número secuencial, añadido al nombre del archivo).
 
 **Descripción**: inicia o detiene la grabación de las peticiones estándar recibidas por 4D Server (excluyendo las peticiones web). Por defecto, el valor es 0 (no se graban las peticiones).
 
 4D Server le permite grabar cada petición recibida por el equipo servidor en un archivo de historial. Cuando este mecanismo está activo, el archivo de historial se crea junto al archivo de estructura de la base. Su nombre es "4DRequestsLog\_X," donde X es el número secuencial del historial. Una vez el archivo alcanza un tamaño de 10 MB, se cierra y se genera un nuevo archivo, con un número secuencial incrementado. Si existe un archivo con el mismo nombre, se reemplaza directamente. Puede definir el número de inicio de la secuencia utilizando el parámetro *valor*. 
 Este archivo texto almacena en formato tabulado simple diferente información sobre cada petición: hora, número de proceso, usuario, tamaño de la petición, duración del proceso, etc. Esta información puede ser útil particularmente durante la fase de afinamiento de la aplicación o con fines estadísticos. Por ejemplo puede importarse, en un software de hoja de cálculo para procesarse.
+
 
 
 ### 4D Server timeout (13)
@@ -101,9 +95,9 @@ Si pasa un valor **positivo** en el parámetro *valor*, define un timeout global
 
 **Alcance**:equipo 4D remoto
 
- **Se conserva entre dos sesiones**: no
+**Se conserva entre dos sesiones**: no
 
- **Valores posibles**: 0 (sin sincronización), 1 (auto sincronización) ó 2 (preguntar).
+**Valores posibles**: 0 (sin sincronización), 1 (auto sincronización) ó 2 (preguntar).
 
 **Descripción**: modo de sincronización dinámico de la carpeta *Resources* del equipo cliente 4D que ejecuta el comando con el servidor. 
 
@@ -160,8 +154,6 @@ Por defecto, si este selector no se utiliza, 4D descarga mínimo 10% de la cach�
 **Descripción:** constante obsoleta (se conserva por compatibilidad únicamente). Ahora recomendamos utilizar los comandos [WEB SET OPTION](../commands/web-set-option) y [WEB GET OPTION](../commands/web-get-option) para la configuración del servidor HTTP.
 
 
-**Descripción:** *constante obsoleta (se conserva por compatibilidad únicamente).* Ahora recomendamos utilizar los comandos [WEB SET OPTION](../commands/web-set-option) y [WEB GET OPTION](../commands/web-get-option) para la configuración del servidor HTTP.
-
 
 
 ### Circular log limitation (90)
@@ -213,9 +205,9 @@ Este selector funciona exactamente igual que el selector 39; sin embargo, aplica
 
 **Alcance**: equipo 4D remoto 
 
- **Se conserva entre dos sesiones**: no
+**Se conserva entre dos sesiones**: no
 
- **Valores posibles**: 0 ó de 1 a X (0 = no grabar, 1 a X = número secuencial, asociado al nombre del archivo). 
+**Valores posibles**: 0 ó de 1 a X (0 = no grabar, 1 a X = número secuencial, asociado al nombre del archivo). 
 
 **Descripción**: inicia o detiene la grabación de peticiones estándar efectuadas por el equipo cliente 4D que ejecutó el comando (excluyendo las peticiones web). Por defecto, el valor es 0 (no se graban las peticiones). 
 
@@ -301,7 +293,7 @@ Para más información sobre este formato y sobre el uso del archivo *4DDebugLog
 
 
 
-### Dates inside objects (85)
+### Dates inside objects (85) {#dates-inside-objects-85}
 
 **Alcance**: proceso actual
 
@@ -311,10 +303,15 @@ Para más información sobre este formato y sobre el uso del archivo *4DDebugLog
 
 **Descripción**: define la forma en que se almacenan las fechas dentro de los objetos, así como también cómo se importan / exportan en JSON.
 
-Cuando el valor del selector es Date type (valor predeterminado para las bases creadas con 4D v17 y superior), las fechas 4D se almacenan con el tipo de fecha dentro de los objetos, con respecto a la configuración de fecha local. Cuando se convierte a formato JSON, los atributos de fecha se convertirán en cadenas que no incluyen un tiempo. (**Nota:** esta configuración se puede definir mediante la opción "Utilizar tipo de fecha en lugar del formato de fecha ISO en objetos" que se encuentra en *Página Compatibilidad* de la configuración de la base).
+- `Date type` (valor predeterminado): las fechas 4D se almacenan con el tipo de fecha dentro de los objetos. Cuando se convierte a formato JSON, los atributos de fecha se convertirán en cadenas que no incluyen un tiempo.  
+- `String type with time zone`: convierte las fechas 4D en cadenas ISO y tendrá en cuenta la zona horaria local. Por ejemplo, la conversión de la fecha 23/08/2013 le da "2013-08-22T22: 00: 000Z" en formato JSON cuando la operación se realiza en Francia durante el horario de verano (GMT+ 2). Este principio se ajusta al funcionamiento estándar de JavaScript.
+- `String type without time zone`: Convierte las fechas 4D en cadenas ISO y no tiene en cuenta la zona horaria local. Tener en cuenta la zona horaria local (opción anterior) puede ser una fuente de errores cuando se desea enviar valores de fecha en formato JSON a alguien que se encuentra en una zona horaria diferente. Por ejemplo, cuando exporta una tabla usando [Selection to JSON](../commands/selection-to-json) en Francia que se debe reimportar en los EE. UU. utilizando [JSON TO SELECTION](../commands/json-to-selection). Dado que las fechas se vuelven a interpretar en cada zona horaria, los valores almacenados en la base de datos serán diferentes. En este caso, puede modificar el modo de conversión de las fechas para que no tengan en cuenta la zona horaria pasando String type without time zone en este selector. La conversión de la fecha 23/08/2013 le dará "2013-08-23T00: 00: 00Z" en todos los casos.
 
-Si pasa String type with time zone en este selector, convertirá las fechas 4D en cadenas ISO y tendrá en cuenta la zona horaria local. Por ejemplo, la conversión de la fecha 23/08/2013 le da "2013-08-22T22: 00: 000Z" en formato JSON cuando la operación se realiza en Francia durante el horario de verano (GMT+ 2). Este principio se ajusta al funcionamiento estándar de JavaScript. Esto puede ser una fuente de errores cuando desea enviar valores de fecha JSON a alguien en un huso horario diferente. Por ejemplo, cuando exporta una tabla usando [Selection to JSON](../commands/selection-to-json) en Francia que se debe reimportar en los EE. UU. utilizando [JSON TO SELECTION](../commands/json-to-selection). Dado que las fechas se vuelven a interpretar en cada zona horaria, los valores almacenados en la base de datos serán diferentes. En este caso, puede modificar el modo de conversión de las fechas para que no tengan en cuenta la zona horaria pasando String type without time zone en este selector. La conversión de la fecha 23/08/2013 le dará "2013-08-23T00: 00: 00Z" en todos los casos.
+:::note
 
+En el modo `Date type` (default), (predeterminado), solo las cadenas de fecha JSON en formato corto (por ejemplo, "2026-08-23") se importan como valores de fecha en los objetos 4D. Las cadenas de fecha JSON en formato de fecha y hora (por ejemplo "2026-08-23T00:00:00Z") se importan como valores de cadena.
+
+:::
 
 
 
@@ -329,7 +326,6 @@ Si pasa String type with time zone en este selector, convertirá las fechas 4D e
 **Descripción**: inicia o detiene la grabación secuencial de los eventos a nivel de programación de 4D en el archivo 4DDebugLog, que se ubica automáticamente en la subcarpeta Logs de la base de datos, junto al archivo de estructura. Un nuevo formato texto tabulado, más compacto se utiliza en el archivo de registro de eventos "4DDebugLog \[\_n\].txt" a partir de 4D v14 (donde \_n es el número de segmento del archivo y *Server* se añade al nombre del archivo cuando se genera en el servidor). Hay dos modos disponibles:
 
 - El modo estándar ofrece una vista básica de los eventos y el archivo se coloca automáticamente en la subcarpeta Logs de la base de datos, junto al archivo de estructura. Los tiempos de ejecución se expresan en milisegundos y se muestra el valor "< ms" cuando una operación dura menos de un milisegundo. 
-
 - El modo con pestañas ofrece información adicional y utiliza un formato más compacto con pestañas en el archivo. Los tiempos de ejecución se expresan en microsegundos.
 
 **Valores posibles**: entero largo contiene un campo de bits: valor = bit1(1)+bit2(2)+bit3(4)+bit4(8)+…). 
@@ -365,6 +361,7 @@ Este selector se ofrece únicamente con fines de depuración y debe utilizarse c
 
 
 
+
 ### Diagnostic log level (86)
 
 **Hilo seguro**: sí
@@ -380,6 +377,7 @@ Este selector se ofrece únicamente con fines de depuración y debe utilizarse c
 - Log debug: activa ERROR, WARN, INFO, DEBUG
 - Log info: activa ERROR, WARN, INFO (por defecto) Log warn: activates ERROR, WARN
 - Log error: activa ERROR (nivel menos detallado)
+
 
 
 
@@ -579,8 +577,6 @@ Para más información sobre los archivos 4DIMAPLog\_X.txt, consulte la sección
 **Descripción**: devuelve el número de versión de la librería libzip en la aplicación 4D en la máquina actual. (Sólo lectura)
 
 
-
-
 ### Log command list (80)
 
 **Alcance**: aplicación 4D
@@ -602,26 +598,8 @@ OR
 //Excluye los comandos SET USER ALIAS y DELAY PROCESS de ser grabados
 SET DATABASE PARAMETER(Log command list;"-1666;-323") 
 ```
-OR
-```4d
-//Excluye los comandos SET USER ALIAS y DELAY PROCESS de ser grabados
-SET DATABASE PARAMETER(Log command list;"-1666;-323") 
-```
-OR
-```4d
-//Excluye los comandos SET USER ALIAS y DELAY PROCESS de ser grabados
-SET DATABASE PARAMETER(Log command list;"-1666;-323") 
-```
 
 
- SET DATABASE PARAMETER(Log command list;"277;341") //Grabar solo los comandos QUERY y QUERY SELECTION O SET DATABASE PARAMETER(Log command list;"-1666;-323") //Excluir SET USER ALIAS y DELAY PROCESS commands from being recorded
- 
- 
-
-
- SET DATABASE PARAMETER(Log command list;"277;341") //Grabar solo los comandos QUERY y QUERY SELECTION O SET DATABASE PARAMETER(Log command list;"-1666;-323") //Excluir SET USER ALIAS y DELAY PROCESS commands from being recorded
- 
- 
 
 ### Max concurrent Web processes (18)
 
@@ -659,25 +637,61 @@ SET DATABASE PARAMETER(Log command list;"-1666;-323")
 - TLSv1\_2 (TLS 1.2, introducido en 2008)
 - TLSv1\_3 (TLS 1.3, introducido en 2018) 
 
-**NOTAS**: 
 
-- El plugin 4D Internet Commands utiliza una capa de red diferente, por lo que este selector no tendrá ningún impacto en su versión TLS.
-- Se ignorarán los intentos de aplicar TLS a la capa de red heredada. 
+:::note
+
+El plugin 4D Internet Commands utiliza una capa de red diferente, por lo que este selector no tendrá ningún impacto en su versión TLS.
+
+:::
+
 
 
 
 ### Number of formulas in cache (92)
 
-**Alcance**: aplicación 4D
+### Client character set (24)
 
-**Se conserva entre dos sesiones:** no
+**Scope**: All 4D remote machines
 
-**Valores posibles**: enteros largos positivos
+ **Kept between two** **sessions**: Yes
 
-**Valor por defecto**: 0 (sin caché) 
+ **Possible values**: See selector 17
 
-**Descripción**: establece u obtiene el número máximo de fórmulas a conservar en la memoria caché de fórmulas, que es utilizado por el comando [EXECUTE FORMULA](../commands/execute-formula). Este límite se aplica a todos los procesos, pero cada proceso tiene su propia caché de fórmulas. Ubicar las fórmulas en la caché acelera la ejecución del comando [EXECUTE FORMULA](../commands/execute-formula) en modo compilado, ya que cada fórmula en caché se tokeniza sólo una vez en este caso.Cuando se cambia el valor de la memoria caché, el contenido existente se restablecen incluso si el nuevo tamaño es más grande que el anterior. Una vez se alcanza el número máximo de fórmulas en la memoria caché, una nueva fórmula ejecutada borrará a la más antigua de la memoria caché (modo FIFO). Este parámetro sólo se tiene en cuenta en las bases o componentes compilados.
+**Description**: Used to specify this parameter for all the remote 4D machines used as Web servers. The values defined using these selectors are applied to all the remote machines used as Web servers. If you want to define values only for certain remote machines, use the Preferences dialog box of 4D in remote mode.
 
+
+
+
+### Client HTTPS port ID (40)
+
+**Scope**:All 4D remote machines
+
+**Kept between two** **sessions**: Yes
+
+**Possible values**: 0 to 65535
+
+**Description**: TCP port number used by the Web servers of the client machines for secure connections via SSL (HTTPS protocol). By default, the value is 443 (standard value).
+
+This selector can be used to modify by programming the TCP port used by the Web servers of the client machines for secure connections via SSL (HTTPS protocol). By default, the value is 443 (standard value).
+
+This selector operates exactly the same way as selector 39; however, it applies to all the 4D remote machines used as Web servers. If you only want to modify the value of certain specific client machines, use the Preferences dialog box of the remote 4D.
+
+
+
+
+### Client log recording (45)
+
+**Scope**: Remote 4D machine 
+
+**Kept between two sessions**: No
+
+**Possible values**: 0 or from 1 to X (0 = do not record, 1 to X = sequential number, attached to file name). 
+
+**Description**: Starts or stops recording of standard requests carried out by the 4D client machine that executed the command (excluding Web requests). By default, the value is 0 (no recording of requests). 
+
+4D lets you record the log of requests carried out by the client machine. When this mechanism is activated, two files are created on the client machine, in the Logs subfolder of the local folder of the database. They are named 4DRequestsLog\_X.txt and 4DRequestsLog\_ProcessInfo\_X.txt, where X is the sequential number of the log. Once the file 4DRequestsLog has reached a size of 10 MB, it is closed and a new one is generated, with an incremented sequential number. If a file with the same name already exists, it is directly replaced. You can set the starting number for the sequence using the value parameter.
+
+These text files store various information concerning each request in a simple tabbed format: time, process number, size of request, processing duration, etc. For more information on the 4DRequestsLog files, please refer to the *Description of log files* section.
 
 
 
@@ -709,7 +723,9 @@ Al utilizar una base en modo cliente-servidor, el comando [ORDER BY FORMULA](ord
 
 
 
+
 ### Pause logging (121)
+
 
 **Hilo seguro**: sí
 
@@ -1147,4 +1163,3 @@ En el [Método base On Startup](../commands/metodo-base-on-startup), usted escri
 | --- | --- |
 | Número de comando | 643 |
 | Hilo seguro | no |
-
