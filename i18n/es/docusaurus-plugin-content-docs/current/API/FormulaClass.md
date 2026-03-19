@@ -5,7 +5,7 @@ title: Formula
 
 `4D.Formula` objects are created by the [Formula](../commands/formula) or [Formula from string](../commands/formula-from-string) commands and allow you execute any 4D expression or code expressed as single-line text.
 
-`4D.Formula` class objects inherit from the [`4D.Function`](./FunctionClass.md) class. Thus, to execute the formula, you can:
+Los objetos de la clase `4D.Formula` heredan de la clase [`4D.Function`](./FunctionClass.md). Así, para ejecutar la fórmula, puede:
 
 - store a `4D.Formula` object in an object property and use the `()` operator after the property name,
 - or directly call the `4D.Formula` object using the [`call()`](#call) or [`apply()`](#apply) function on it.
@@ -17,8 +17,8 @@ See examples in the [Executing code in Function objects](../API/FunctionClass.md
 Puede pasar parámetros a sus fórmulas utilizando una sintaxis secuencial de parámetros basada en `$1, $2,...,$n`. La numeración de los parámetros $ representa el orden en que se pasarán a la fórmula. Por ejemplo, puede escribir:
 
 ```4d
- $f:={message: Formula(ALERT("Hello "+$2+", "+$1))}
- $f.message("John";"Smith") //displays "Hello Smith, John"
+ $f:={mensaje: Formula(ALERT("Hello "+$2+", "+$1))}
+ $f.message("Juan"; "Smith") //muestra "Hello Smith, Juan"
 ```
 
 O utilizando la función [.call()](#call):
@@ -70,7 +70,7 @@ Los parámetros se reciben en el método, en el orden en que se especifican en l
  $f:=Formula($1+$2+$3)
 
  $c:=New collection(10;20;30)
- $result:=$f.apply(Null;$c) // returns 60
+ $result:=$f.apply(Null;$c) // devuelve 60
 ```
 
 #### Ejemplo 2

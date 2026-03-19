@@ -36,15 +36,15 @@ displayed_sidebar: docs
 
 <!--REF #_command_.WP Get style sheet.Summary-->The **WP Get style sheet** command returns the style sheet object designated by the *styleSheetName* or by the style sheet name and the *listLevelIndex* in the case of a [hierarchical list style sheet](../user-legacy/stylesheets.md#hierarchical-list-style-sheets).<!-- END REF-->
 
-In *wpDoc*, pass the 4D Write Pro document that contains the style sheet.
+En *wpDoc*, pase el documento 4D Write Pro que contiene la hoja de estilo.
 
-The *styleSheetName* parameter allows you to specify the name of the style sheet to return. If the style sheet name does not exist in *wpDoc*, an null object is returned.
+El parámetro *styleSheetName* permite especificar el nombre de la hoja de estilo a devolver. If the style sheet name does not exist in *wpDoc*, an null object is returned.
 
 If the style sheet is part of a hierarchical list style sheet, you can optionally specify the *listLevelIndex* parameter to retrieve a specific level of the hierarchy.
 
-- *listLevelIndex* represents the level of the style sheet in the hierarchy (1 = root level, 2 = first sub-level, etc.).
-- If the parameter is omitted and the style sheet is hierarchical, the root-level style sheet is returned.
-- If the requested level does not exist, a null object is returned.
+- *listLevelIndex* representa el nivel de la hoja de estilo en la jerarquía (1 = nivel raíz, 2 = primer subnivel, etc.).
+- Si se omite el parámetro y la hoja de estilo es jerárquica, se devuelve la hoja de estilo del nivel raíz.
+- Si el nivel solicitado no existe, se devuelve un objeto null.
 - If the style sheet is not a hierarchical list style sheet and *listLevelIndex* is greater than 1, a null object is returned.
 
 ## Ejemplo 1
@@ -62,7 +62,7 @@ To retrieve the "Main title" style sheet:
 
 ## Ejemplo 2
 
-To retrieve a specific level of a hierarchical list style sheet:
+Para recuperar un nivel específico de una hoja de estilo de lista jerárquica:
 
 ```4d
 var $rootStyle : Object

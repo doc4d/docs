@@ -7,16 +7,16 @@ Un objeto **`4D.Function`** contiene un trozo de código que puede ser ejecutado
 
 ### Herencia
 
-4D handles several kinds of `Function` objects, inheriting from the **4D.Function** class:
+4D maneja varios tipos de objetos `Function`, que heredan de la clase **4D.Function**:
 
 - **native functions**, i.e. built-in functions from various 4D classes such as [`collection.sort()`](./CollectionClass.md#sort) or [`file.copyTo()`](./FileClass.md#copyto).
 - **user functions**, created in [user classes](Concepts/classes.md) using the [`Function` keyword](Concepts/classes.md#function).
-- **formula functions**, i.e. functions that can execute formula code stored in [4D.Formula](./FormulaClass.md) objects,
+- las **funciones de fórmula**, es decir, las funciones que pueden ejecutar un código de fórmula almacenado en los objetos [4D.Formula](./FormulaClass.md),
 - **method functions**, i.e. functions that can execute source code as text stored in [4D.Method](./MethodClass.md) objects.
 
 ### Ejecución del código en los objetos Function
 
-Function objects can be encapsulated in object properties:
+Los objetos Function pueden encapsularse en las propiedades de objeto:
 
 ```4d
 var $message : 4D.Formula
@@ -39,7 +39,7 @@ También se admite la sintaxis con paréntesis:
 Note that, even if it does not have parameters (see below), an object function to be executed must be called with `()` parenthesis. Llamar sólo a la propiedad del objeto devolverá una nueva referencia a la fórmula (y no la ejecutará):
 
 ```4d
- $o:=$f.message //returns the function object in $o
+ $o:=$f.message //devuelve el objeto función en $o
 ```
 
 You can also execute a function using the [`apply()`](#apply) and [`call()`](#call):
@@ -88,11 +88,11 @@ You can also execute a function using the [`apply()`](#apply) and [`call()`](#ca
 
 The `.apply()` function <!-- REF #FunctionClass.apply().Summary -->executes the function object to which it is applied, passing parameters as a collection, and returns the resulting value<!-- END REF -->.
 
-In the *thisObj* parameter, you can pass a reference to the object to be used as `This` within the function. Pasa Null si no quiere utilizar `This` pero quiere enviar parámetros.
+En el parámetro *thisObj*, puede pasar una referencia al objeto que se utilizará como `This` en la función. Pasa Null si no quiere utilizar `This` pero quiere enviar parámetros.
 
-You can pass a collection to be used as parameters in the function using the optional *params* parameter:
+Puede pasar una colección para utilizarla como parámetros en la función utilizando el parámetro opcional *params*:
 
-- in `4D.Formula` objects, parameters are passed in $1...$n in the formula.
+- en los objetos `4D.Formula`, los parámetros se pasan en $1...$n en la fórmula.
 - in other `4D.Function` objects such as `4D.Method` objects, parameters are passed in [declared method parameters](../Concepts/parameters.md).
 
 Tenga en cuenta que `.apply()` es similar a [`.call()`](#call) excepto que los parámetros se pasan como una colección. Esto puede ser útil para pasar los resultados calculados.
@@ -131,11 +131,11 @@ Tenga en cuenta que `.apply()` es similar a [`.call()`](#call) excepto que los p
 
 The `.call()` function <!-- REF #FunctionClass.call().Summary -->executes the function object to which it is applied, with one or more parameter(s) passed directly, and returns the resulting value<!-- END REF -->.
 
-In the *thisObj* parameter, you can pass a reference to the object to be used as `This` within the function.
+En el parámetro *thisObj*, puede pasar una referencia al objeto que se utilizará como `This` en la función.
 
 You can pass values to be used as parameters in the function using the optional *params* parameter:
 
-- in `4D.Formula` objects, parameters are passed in $1...$n in the formula.
+- en los objetos `4D.Formula`, los parámetros se pasan en $1...$n en la fórmula.
 - in `4D.Method` objects, parameters are passed in [declared method parameters](../Concepts/parameters.md).
 
 Tenga en cuenta que `.call()` es similar a [`.apply()`](#apply) excepto que los parámetros se pasan directamente.

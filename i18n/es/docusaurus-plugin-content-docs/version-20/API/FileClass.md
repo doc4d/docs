@@ -564,10 +564,10 @@ $fhandle:=$f.open("read")
 <!--REF #FileClass.rename().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|newName|Text|->|New full name for the file|
-|Result|4D.File|<-|Renamed file|
+|newName|Text|->|Nuevo nombre completo para el archivo|
+|Resultado|4D.Archivo|<-|Renamed file|
 </div>
 <!-- END REF -->
 
@@ -704,9 +704,9 @@ $infoPlistFile.setAppInfo($info)
 <!--REF #FileClass.setContent().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|content|BLOB|->|New contents for the file|
+|contenido|BLOB|->|Nuevo contenido para el archivo|
 </div>
 <!-- END REF -->
 

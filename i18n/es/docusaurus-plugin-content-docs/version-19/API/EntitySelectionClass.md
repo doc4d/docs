@@ -410,10 +410,10 @@ Queremos obtener una lista de empleados cuyo salario es superior al salario medi
 <!-- REF #EntitySelectionClass.contains().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|entity|4D.Entity|->|Entity to evaluate|
-|Result|Boolean|<-|True if the entity belongs to the entity selection, else False|
+|entity|4D.Entity|->|Entidad a evaluar|
+|Resultado|Boolean|<-|True if the entity belongs to the entity selection, else False|
 </div>
 <!-- END REF -->
 
@@ -1615,9 +1615,9 @@ Para más información, consulte el párrafo **querySettings** en la página [`.
 <!-- REF #EntitySelectionClass.refresh().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-||||Does not require any parameters|
+||||No requiere ningún parámetro|
 </div>
 <!-- END REF -->
 

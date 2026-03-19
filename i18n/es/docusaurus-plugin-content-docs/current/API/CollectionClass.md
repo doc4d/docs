@@ -3,7 +3,7 @@ id: CollectionClass
 title: Collection
 ---
 
-The Collection class manages [Collection](Concepts/dt_collection.md) type expressions.
+La clase Collection gestiona las expresiones de tipo [Collection](Concepts/dt_collection.md).
 
 Una colección es inicializada con los comandos [`New collection`](../commands/new-collection) o [`New shared collection`](../commands/new-shared-collection).
 
@@ -599,7 +599,7 @@ El parámetro opcional *propertyPath* permite contar valores dentro de una colec
 | ------------ | ---------- | :-------------------------: | ------------------------------------------------------- |
 | propertyPath | Text       |              ->             | Ruta del atributo cuyos valores distintos desea obtener |
 | options      | Integer    |              ->             | `ck diacritical`, `ck count values`                     |
-| Resultado    | Collection | <- | New collection with only distinct values                |
+| Resultado    | Collection | <- | Nueva colección con sólo valores distintos              |
 
 </div>
 <!-- END REF -->

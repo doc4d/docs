@@ -3,9 +3,9 @@ id: MethodClass
 title: Método
 ---
 
-A `4D.Method` object contains a piece of code that is created from text source and can be executed. `4D.Method` methods always execute in interpreted mode, regardless of the project running mode (interpreted/compiled). This feature is especially designed to support dynamic, on-the-fly execution of code snippets.
+A `4D.Method` object contains a piece of code that is created from text source and can be executed. Los métodos `4D.Method` siempre se ejecutan en modo interpretado, independientemente del modo de ejecución del proyecto (interpretado/compilado). Esta funcionalidad está especialmente diseñada para permitir la ejecución dinámica y sobre la marcha de fragmentos de código.
 
-A `4D.Method` object is created with the `4D.Method.new()` function.
+Un objeto `4D.Method` se crea con la función `4D.Method.new()`.
 
 `4D.Method` objects inherit from the [`4D.Function`](./FunctionClass.md) class. Thus, to execute the method object, you can:
 
@@ -47,7 +47,7 @@ var $result : Text
 $result:=$o.concat("Hello ") // $result is "Hello John"
 ```
 
-#### Using a text file with syntax checking
+#### Utilizar un archivo de texto con comprobación sintáctica
 
 ```text
 //4d method stored in a text file
@@ -79,7 +79,7 @@ End if
 
 ### Method Object
 
-4D.Method objects provide the following properties and functions:
+Los objetos 4D.Method ofrecen las siguientes propiedades y funciones:
 
 |                                                                                                                            |
 | -------------------------------------------------------------------------------------------------------------------------- |
@@ -105,11 +105,11 @@ End if
 
 <div class="no-index">
 
-| Parámetros | Tipo                      |                             | Descripción                                                                                                                 |
-| ---------- | ------------------------- | :-------------------------: | --------------------------------------------------------------------------------------------------------------------------- |
-| source     | Text                      |              ->             | Textual representation of a 4D method to be encapsuled as an object                                                         |
-| name       | Text                      |              ->             | Name of the method to display in the debugger. If omitted, the method name will be displayed as "anonymous" |
-| Resultado  | 4D.Method | <- | New Method shared object                                                                                                    |
+| Parámetros | Tipo                      |                             | Descripción                                                                                                                   |
+| ---------- | ------------------------- | :-------------------------: | ----------------------------------------------------------------------------------------------------------------------------- |
+| source     | Text                      |              ->             | Representación textual de un método 4D a encapsularse como un objeto                                                          |
+| name       | Text                      |              ->             | Name of the method to display in the debugger. Si se omite, el nombre del método se mostrará como "anonymous" |
+| Resultado  | 4D.Method | <- | Nuevo método objeto compartido                                                                                                |
 
 </div>
 <!-- END REF -->
@@ -118,9 +118,9 @@ End if
 
 The `4D.Method.new()` function <!-- REF #4D.Method.new().Summary -->creates and returns a new `4D.Method` object built from the *source* code<!-- END REF -->.
 
-In the *source* parameter, pass the 4D source code of the method as text. All end-of-line characters are supported (LF, CR, CRLF) using the [`Char`](../commands/char) command or an [escape sequence](../Concepts/quick-tour.md#escape-sequences).
+En el parámetro *source*, pase el código fuente 4D del método como texto. All end-of-line characters are supported (LF, CR, CRLF) using the [`Char`](../commands/char) command or an [escape sequence](../Concepts/quick-tour.md#escape-sequences).
 
-In the optional *name* parameter, pass the name of the method to be displayed in the 4D debugger or Runtime explorer. Si omite este parámetro, el nombre del método aparecerá como "anonymous".
+En el parámetro opcional *name*, pase el nombre del método que se mostrará en el depurador 4D o en el explorador Runtime. Si omite este parámetro, el nombre del método aparecerá como "anonymous".
 
 :::tip
 
@@ -208,7 +208,7 @@ The Result object contains the following properties:
 | success   |                                                                                   | Boolean              | True if no syntax error was detected, false otherwise                                                                  |
 | errors    |                                                                                   | Colección de objetos | **Disponible sólo en caso de error o de warning**. Collection of objects describing errors or warnings |
 |           | [].isError    | Boolean              | Error si es True, sino warning                                                                                         |
-|           | [].message    | Text                 | Error or warning message                                                                                               |
+|           | [].message    | Text                 | Mensaje de error o advertencia                                                                                         |
 |           | [].lineNumber | Integer              | Número de línea del error en el código                                                                                 |
 
 #### Ejemplo
@@ -237,7 +237,7 @@ End if
 
 #### Descripción
 
-The `.name` property <!-- REF #MethodClass.name.Summary -->contains the name of the `4D.Method` object, if it was declared in the *name* parameter of the `new()` constructor<!-- END REF -->. Otherwise, the property is not returned.
+The `.name` property <!-- REF #MethodClass.name.Summary -->contains the name of the `4D.Method` object, if it was declared in the *name* parameter of the `new()` constructor<!-- END REF -->. En caso contrario, no se devuelve la propiedad.
 
 Esta propiedad es de **solo lectura**.
 

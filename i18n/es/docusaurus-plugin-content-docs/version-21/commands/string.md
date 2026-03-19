@@ -83,7 +83,7 @@ El formato se especifica del mismo modo que se haría para una [entrada numéric
 | String(1/0)                                                      | "INF"                             | Número infinito positivo                           |
 | String(-1/0)                                                     | "-INF"                            | Número infinito negativo                           |
 
-(\*) The algorithm for converting [real values](../Concepts/dt_number.md) into text is based on 13 significant digits.
+(\*) El algoritmo de conversión de los [valores reales](../Concepts/dt_number.md) en texto se basa en 13 dígitos significativos.
 
 #### String(number;base)
 
@@ -181,7 +181,7 @@ Tenga en cuenta que el caracter "Z" al final indica el formato GMT.
 Si no se pasa el parámetro *addTime*, el comando devuelve la fecha a medianoche (hora local) expresada en hora GMT, lo que puede hacer que la fecha se adelante o se retrase dependiendo de la zona horaria local:
 
 ```4d
- $mydate:=String(!13/09/2010!;ISO Date GMT) // returns 2010-09-12T22:00:00Z in France  
+ $mydate:=String(!13/09/2010!;ISO Date GMT) // devuelve 2010-09-12T22:00:00Z en Francia  
 ```
 
 - El formato ISO Date es similar al formato ISO Date GMT, salvo que expresa la fecha y la hora sin tener en cuenta la zona horaria. Tenga en cuenta que, dado que este formato no cumple la norma ISO8601, su uso debe reservarse para fines muy específicos.
@@ -200,7 +200,7 @@ Si no se pasa el parámetro *addTime*, el comando devuelve la fecha a medianoche
 La hora expresada tiene en cuenta la zona horaria (zona GMT). Si solo pasa una fecha, el comando devuelve la fecha a medianoche (hora local) expresada en hora GMT, lo que puede hacer que la fecha se adelante o se atrase en función de la zona horaria local:
 
 ```4d
- $mydate:=String(!2010-09-09!;Date RFC 1123) // returns Wed, 08 Sep 2010 22:00:00 GMT  
+ $mydate:=String(!2010-09-09!;Date RFC 1123) // devuelve Wed, 08 Sep 2010 22:00:00 GMT  
 ```
 
 ### Expresiones de tipo hora

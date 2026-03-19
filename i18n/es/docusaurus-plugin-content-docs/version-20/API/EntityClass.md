@@ -671,9 +671,9 @@ Las llaves primarias pueden ser números (enteros) o cadenas. Puede "forzar" que
 <!-- REF #EntityClass.getRemoteContextAttributes().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
-|---|---|---|---|
-|result|Text|<-|Context attributes linked to the entity, separated by a comma|
+|Parámetro|Tipo||Descripción|
+|---|----|---|---|
+|Resultado|Text|<-|Context attributes linked to the entity, separated by a comma|
 </div>
 <!-- END REF -->
 
@@ -731,9 +731,9 @@ $info:=$address.getRemoteContextAttributes()
 <!-- REF #EntityClass.getSelection().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|Result|4D.EntitySelection|<-|Entity selection to which the entity belongs (Null if not found)|
+|Resultado|4D.EntitySelection|<-|Entity selection to which the entity belongs (Null if not found)|
 </div>
 <!-- END REF -->
 

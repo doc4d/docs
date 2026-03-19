@@ -407,7 +407,7 @@ Los elementos deben ser instalados:
 
 Para activar esta funcionalidad, añada las llaves `DatabaseToEmbedInClientWinFolder` y/o `DatabaseToEmbedInClientMacFolder` en el archivo de configuración *buildApp*. Cuando una de estas llaves está presente, el proceso de generación de la aplicación cliente genera una aplicación monopuesto: la estructura compilada, en lugar del archivo *EnginedServer.4Dlink*, se coloca en la carpeta "Database".
 
-- If a default data folder exists in the single-user application, a license is embedded.
+- Si existe una carpeta de datos por defecto en la aplicación monopuesto, se integra una licencia.
 - Si no existe una carpeta de datos por defecto en la aplicación monopuesto, ésta se ejecutará sin archivo de datos y sin licencia.
 
 El escenario básico es:
@@ -559,7 +559,7 @@ Seleccione esta opción para crear una aplicación lista para usar (independient
 
 Al seleccionar esta opción, se muestra una lista de licencias en la pestaña. Debe designar los archivos que contienen sus licencias. Estos archivos se generaron o actualizaron al adquirir la licencia *4D Developer Professional* y las licencias de despliegue. Su licencia actual *4D Developer Professional* se asocia automáticamente a cada licencia de despliegue que se vaya a utilizar en la aplicación creada. Puede añadir otro número 4D Developer Professional y sus licencias asociadas.
 
-Para eliminar o añadir una licencia, utilice los botones **[+]** y **[-]** de la parte inferior de la ventana. Al hacer clic en el botón \N-[+], aparece una caja de diálogo para abrir archivos que muestra por defecto el contenido de la carpeta *Licencias* de su máquina. For more information about the location of this folder, refer to the [Get 4D folder](../commands/get-4d-folder) command.
+Para eliminar o añadir una licencia, utilice los botones **[+]** y **[-]** de la parte inferior de la ventana. Al hacer clic en el botón \N-[+], aparece una caja de diálogo para abrir archivos que muestra por defecto el contenido de la carpeta *Licencias* de su máquina. Para obtener más información sobre la ubicación de esta carpeta, consulte el comando [Get 4D folder](../commands/get-4d-folder).
 
 Una vez seleccionado un archivo, la lista indicará las características de la licencia que contiene.
 

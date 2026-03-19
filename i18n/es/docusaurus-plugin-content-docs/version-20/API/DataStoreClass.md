@@ -263,9 +263,9 @@ Cada clase de datos de un almacén de datos está disponible como una propiedad 
 <!-- REF #DataStoreClass.cancelTransaction().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-||||Does not require any parameters|
+||||No requiere ningún parámetro|
 </div>
 <!-- END REF -->
 
@@ -299,9 +299,9 @@ Ver el ejemplo de la función [`.startTransaction()`](#starttransaction).
 <!-- REF #DataStoreClass.clearAllRemoteContexts().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-||||Does not require any parameters|
+||||No requiere ningún parámetro|
 </div>
 <!-- END REF -->
 
@@ -493,9 +493,9 @@ ds.unlock() //Nuestra copia ha terminado, ahora podemos desbloquear el datastore
 <!-- REF #DataStoreClass.getAllRemoteContexts().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|Result|Collection|<-|Collection of optimization context objects|
+|Resultado|Collection|<-|Collection of optimization context objects|
 </div>
 <!-- END REF -->
 
@@ -643,10 +643,10 @@ En un almacén de datos remoto:
 <!-- REF #DataStoreClass.getRemoteContextInfo().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|contextName|Text|->|Name of the context|
-|Result|Object|<-|Description of the optimization context|
+|contextName|Text|->|Nombre del contexto|
+|Resultado|Object|<-|Description of the optimization context|
 </div>
 <!-- END REF -->
 
@@ -815,9 +815,9 @@ La función también devolverá `True` si el datastore fue bloqueado por otra fu
 <!-- REF #DataStoreClass.makeSelectionsAlterable().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-||||Does not require any parameters|
+||||No requiere ningún parámetro|
 </div>
 <!-- END REF -->
 
@@ -1221,9 +1221,9 @@ SET DATABASE PARAMETER(4D Server Log Recording;0)
 <!-- REF #DataStoreClass.startTransaction().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
-|---|---|:---:|---|
-||||Does not require any parameters|
+|Parámetro|Tipo||Descripción|
+|---|-|:---:|---|
+||||No requiere ningún parámetro|
 </div>
 <!-- END REF -->
 
