@@ -11,9 +11,9 @@ displayed_sidebar: docs
 
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| tabla | Table | &#8594; | Tabla del parámetro o Tabla por defecto si se omite este parámetro |
+| table | Table | &#8594; | Tabla del parámetro o Tabla por defecto si se omite este parámetro |
 | selector | Integer | &#8594; | Código del parámetro de la base |
-| valor | Text | &#8592; | Valor alfa del parámetro |
+| value| Text | &#8592; | Valor alfa del parámetro |
 | Resultado | Real | &#8592; | Valor actual del parámetro |
 </div>
 <!-- END REF-->
@@ -974,7 +974,7 @@ Para obtener más información sobre el intérprete PHP, consulte el manual *Ref
 
 **Mantener entre sesiones:** n/a
 
-**Descripción:** Devuelve el número de versión de la librería libzip en la aplicación 4D instalada en el equipo actual. (Solo lectura)
+**Descripción:** devuelve el número de versión de la librería libzip en la aplicación 4D instalada en el equipo actual. (Solo lectura)
 
 
 
@@ -985,7 +985,7 @@ Para obtener más información sobre el intérprete PHP, consulte el manual *Ref
 
 **Mantener entre sesiones**: no
 
-**Valores posibles**: Cadena que contiene una lista de números de comando 4D que se van a registrar (separados por punto y coma), o «all» para registrar todos los comandos, o «» (cadena vacía) para no registrar ninguno, o precedida por «-» para excluir comandos específicos. 
+**Valores posibles**: cadena que contiene una lista de números de comando 4D que se van a registrar (separados por punto y coma), o «all» para registrar todos los comandos, o «» (cadena vacía) para no registrar ninguno, o precedida por «-» para excluir comandos específicos. 
 
 **Descripción**: lista de comandos 4D que se deben registrar o excluir del archivo de depuración (ver el selector 34, Debug Log Recording). Por defecto, se registran todos los comandos 4D.
 
@@ -1027,45 +1027,46 @@ SET DATABASE PARAMETER(Log command list;"-1666;-323")
 
 ### Min TLS version (105)
 
-**Alcance**: 4D Server, 4D Web Server and 4D SQL Server
+**Alcance**: 4D Server, 4D Web Server y 4D SQL Server
 
-**Mantener entre sesiones**: No
+**Mantener entre sesiones**: no
 
-**Descripción**: Used to specify the minimum Transport Layer Security (TLS) version, which provides data encryption and authentication between applications and servers. Connection attempts from clients supporting only versions below the minimum will be rejected. The setting is applied globally to the network layer. Once modified, the server must be restarted to use the new value. 
+**Descripción**: se utiliza para especificar la versión mínima de Transport Layer Security (TLS), que proporciona cifrado de datos y autenticación entre aplicaciones y servidores. Se rechazarán los intentos de conexión de clientes que solo admitan versiones inferiores a la mínima. La configuración se aplica de forma global a la capa de red. Una vez modificada, es necesario reiniciar el servidor para que se aplique el nuevo valor. 
 
 **Valor por defecto**: TLSv1\_3 
 
 **Valores posibles**: 
-- TLSv1\_2 (TLS 1.2, introduced in 2008)
-- TLSv1\_3 (TLS 1.3, introduced in 2018)
+- TLSv1\_2 (TLS 1.2, introducido en 2008)
+- TLSv1\_3 (TLS 1.3, introducido en 2018)
 
-**NOTES**: 
-- The 4D Internet Commands plugin uses a different network layer, therefore this selector will have no impact on its TLS version.
-- This setting is ignored for your client server connections if your 4D Server uses the legacy network layer.
+**NOTAS**: 
+- El plugin 4D Internet Commands utiliza una capa de red diferente, por lo que este selector no afectará a su versión de TLS.
+- Esta configuración se ignora en las conexiones entre el servidor y el cliente si 4D Server utiliza la capa de red heredada.
+
 
 
 
 
 ### Number of formulas in cache (92)
 
-**Alcance**: Aplicación 4D
+**Alcance**: aplicación 4D
 
-**Mantener entre sesiones**: No
+**Mantener entre sesiones**: no
 
-**Valores posibles**: Positive longints
+**Valores posibles**: números enteros positivos
 
 **Valor por defecto**: 0 (no cache) 
 
-**Descripción**: Sets or gets the maximum number of formulas to be kept in the cache of formulas, which is used by the [EXECUTE FORMULA](../commands/execute-formula) command. This limit is applied to all processes, but each process has its own formula cache. Caching formulas accelerates the [EXECUTE FORMULA](../commands/execute-formula) command execution in compiled mode since each cached formula is tokenized only once in this case. When you change the cache value, existing contents are reset even if the new size is larger than the previous one. Once the maximum number of formulas in the cache is reached, a new executed formula will erase the oldest one in the cache (FIFO mode). This parameter is only taken into account in compiled databases or compiled components.
+**Descripción**: Define u obtiene el número máximo de fórmulas que se pueden almacenar en la caché de fórmulas, utilizada por el comando [EXECUTE FORMULA](../commands/execute-formula). Este límite se aplica a todos los procesos, pero cada proceso tiene su propia caché de fórmulas. El almacenamiento en caché de fórmulas acelera la ejecución del comando [EXECUTE FORMULA](../commands/execute-formula) en modo compilado, ya que, en este caso, cada fórmula almacenada en caché se tokeniza solo una vez. Al cambiar el valor de la caché, se restablece el contenido existente, incluso si el nuevo tamaño es mayor que el anterior. Una vez alcanzado el número máximo de fórmulas en la caché, una nueva fórmula ejecutada borrará la más antigua de la caché (modo FIFO). Este parámetro solo se tiene en cuenta en bases de datos compiladas o componentes compilados.
 
 
 
 
 ### OpenSSL version (94)
 
-**Alcance**: all 4D machines*
+**Alcance**: todas las máquinas 4D*
 
-**Mantener entre sesiones**: No
+**Mantener entre sesiones**: no
 
 **Descripción**: Returns the version number of the OpenSSL library in use on the machine. (Read only)
 
