@@ -58,10 +58,10 @@ Los objetos IMAP Transporter se instancian con el comando [IMAP New transporter]
 <!-- REF #_command_.IMAP New transporter.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|server|Object|->|Mail server information|
-|Result|4D.IMAPTransporter|<-|[IMAP transporter object](#imap-transporter-object)|
+|server|Object|->|Información del servidor de correo|
+|Resultado|4D.IMAPTransporter|<-|[IMAP transporter object](#imap-transporter-object)|
 </div>
 <!-- END REF -->
 
@@ -118,10 +118,10 @@ End if
 <!-- REF #4D.IMAPTransporter.new().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|server|Object|->|Mail server information|
-|Result|4D.IMAPTransporter|<-|[IMAP transporter object](#imap-transporter-object)|
+|server|Object|->|Información del servidor de correo|
+|Resultado|4D.IMAPTransporter|<-|[IMAP transporter object](#imap-transporter-object)|
 </div>
 <!-- END REF -->
 
