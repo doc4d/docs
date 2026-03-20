@@ -948,23 +948,24 @@ local Function <functionName>
 server Function <functionName>   
 ```
 
-Note that [supported functions](#supported-functions) have a **default execution location** (server or client) when no location keyword is used. You can nevertheless insert a `local` or `server` keyword to modify the execution location, or to make the code more explicit.
+`local` and `server` keywords are only available for the functions of the [ORDA data model](../ORDA/ordaClasses.md) and [Shared or session singleton](#singleton-classes) classes.
 
-### Supported functions
 
-`local` and `server` keywords are only available with the following functions:
+### Overview
 
-|Functions|Default execution location|
-|---|---|
-|[ORDA data model functions](../ORDA/ordaClasses.md)|Server|
-|[Shared or session singleton functions](#singleton-classes)|Client|
+Supported functions have a **default execution location** when no location keyword is used. You can nevertheless insert a `local` or `server` keyword to modify the execution location, or to make the code more explicit.
+
+|Supported functions|Executed by default on|`local` keyword|`server` keyword|
+|---|---|---|---|
+|[ORDA data model](../ORDA/ordaClasses.md)|Server|*Supported*<br/>The function is executed on the client|Allowed to make the code more explicit but no impact|
+|[Shared or session singleton](#singleton-classes)|Client|Allowed to make the code more explicit but no impact|*Supported*<br/>The function is executed on the server on the instance of the singleton on the server. <br/>If there is no instance of the singleton on the server, it is created. |
 
 If `local` and `server` keywords are used in another context, they are ignored and an error is returned by the compiler.
  
 
 :::note
 
-For a overall description of where code is actually executed in client/server, please refer to [this page].  
+For a overall description of where code is actually executed in client/server, please refer to [this section](../Desktop/clientServer.md#code-execution-location).  
 
 ::::
 
@@ -972,15 +973,15 @@ For a overall description of where code is actually executed in client/server, p
 
 The `local` keyword specifies that the function must be executed **on the client side**. 
 
-#### Shared or session singleton functions
+:::note Reminder
 
-The `local` keyword is useless for [shared or session singleton functions](#singleton-classes), which are executed on the client by default (but can be used for clarity).  
+The `local` keyword is useless for [shared or session singleton functions](#singleton-classes), which are executed on the client by default, but can be added for clarity.  
 
-#### ORDA data model functions
+:::
 
 By default, [ORDA data model functions](../ORDA/ordaClasses.md) are executed on the server. It usually provides the best performance since only the function request and the result are sent over the network.
 
-However, it could happen that a function is fully executable on the client side (e.g., when it processes data that's already in the local cache). In this case, you can save requests to the server and thus, enhance the application performance by using the `local` keyword. 
+However, it could happen that a function is fully executable on the client side (e.g., when it processes data that's already in the local cache). In this case, you can send requests to the server and thus, enhance the application performance by using the `local` keyword. 
 
 Note that the function will work even if it eventually requires to access the server (for example if the ORDA cache is expired). However, it is highly recommended to make sure that the local function does not access data on the server, otherwise the local execution could not bring any performance benefit. A local function that generates many requests to the server is less efficient than a function executed on the server that would only return the resulting values. For example, consider the following function on the Schools entity class:
 
@@ -999,12 +1000,18 @@ local Function getYoungest
 
 The `server` keyword specifies that the function must be executed **on the server side**.
 
-`server` function parameters and result must be **streamable**, that is, they can be saved into a file or sent over a network. For example, [ORDA Data model](../ORDA/ordaClasses.md), [File handle](../API/FileHandleClass.md), or [WebServer](../API/WebServerClass.md) are non-streamable classes.
+
+:::note Reminder
+
+The `server` keyword is useless for [ORDA data model functions](../ORDA/ordaClasses.md), which are executed on the server by default, but it can be added for clarity.  
+
+:::
+
+
+`server` function parameters and result must be **streamable**, that is, they can be saved into a file or sent over a network. For example, [4D.Datastore](../API/DataStoreClass.md), [File handle](../API/FileHandleClass.md), or [WebServer](../API/WebServerClass.md) are non-streamable classes.
 
 This feature is particularly useful in the context of [remote user sessions](../Desktop/sessions.md#remote-user-sessions), allowing you to implement the business logic in a [session singleton](#shared-or-session-singleton-functions) to share it accross all the processes of the session, thus extending the functionalities of the [`Session`](../commands/session) command. In this case, you might want the relevant business logic to be executed **on the server** so that all the session information is gathered on the server.
 
-
-#### Shared or session singleton functions
 
 By default, shared or session singleton functions are executed on the client. Adding the `server` keyword in the class function definition makes 4D use the singleton instance on the server. Note that this can result of an instantiation of the singleton on the server if no instance exists yet.  
 
@@ -1017,16 +1024,47 @@ Note that when you declare a `server Function` in a shared singleton and:
 
 Since there is no instance of *S1* on the server at this moment, *S1* is instanciated on the server (the constructor is executed) and the *function()* is run on this server instance. As a consequence, you can have two instances of *S1* (client-side and server-side) with distincts property values. However in this case, *s1.property* is always accessed locally. It cannot be accessed on the server, for example in code running on the server,with a direct access using dot notation (an error is returned).
 
+For example:
 
+```4d
+// mySingleton class
 
+property executedOn : Integer
 
+shared singleton Class constructor
+  This.executedOn:=Application type()
 
+Function generateDataLocally() : Object
+  var $result:={}
+  $result.message:="I have been executed on "+String(This.executedOn)
+  return $result
+      
+server Function generateDataOnServer() : Object
+  var $result:={}
+  $result.message:="I have been executed on "+String(This.executedOn)
+return $result
+```
 
-#### ORDA data model functions
+Code running on the client:
 
-The `server` keyword is useless for [ORDA data model functions](../ORDA/ordaClasses.md), which are executed on the server by default (but can be used for clarity).  
+```4d
+var $singleton : cs.MySingleton
+var $info : Object
 
+ASSERT(Application type()=4D Remote mode)
+// The singleton is instanciated on the client
+$singleton:=cs.MySingleton.me
 
+// The generateDataLocally() function is executed locally
+$info:=$singleton.generateDataLocally()
+
+ASSERT($info.message="I have been executed on 4")
+
+// The generateDataOnServer() function is executed on the server
+// Thus an instance of the singleton is created on the server and the constructor is triggered
+$info:=$singleton.generateDataOnServer()
+ASSERT($info.message="I have been executed on 5")
+```
 
 ### Examples (ORDA data model functions)
 

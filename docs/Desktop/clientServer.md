@@ -128,3 +128,25 @@ This feature is designed for small-size development teams who are used to work o
 [Developing Concurrently on 4D Server in Project Mode](https://blog.4d.com/developing-concurrently-on-4d-server-in-project-mode/)
 
 :::
+
+
+## Code execution location 
+
+In a client/server application, it is important to know where your code will be actually executed: **server-side** or **client-side**. Execution location is crucial when you want to implement user session-related code, share information between processes, access data, etc. 
+
+The following table summarizes where the code is executed by default and how to switch its execution location (if allowed):
+
+|Code|Default execution|How to switch|Comment|
+|---|---|---|---|
+|[ORDA data model function](../ORDA/ordaClasses.md)|Server|use `local` keyword in function definition||
+|[User function](../Concepts/classes.md#function)|Client|-||
+|[Computed property function](../Concepts/classes.md#function-get-and-function-set)|Client|use `server` keyword in function definition||
+|[Shared or session singleton function](../Concepts/classes.md#singleton-classes)|Client|use `server` keyword in function definition||
+|Trigger|Server|-||
+|Project method called from a client|Client|*Execute on server* option|If on server, the code is executed in the twin process of the [user session process](./sessions.md#remote-user-sessions-remote-user-sessions)|
+|Project method called from a client|Client|[`Execute on server`](../commands/execute-on-server) command|If on server, the code is executed in the [Stored procedures session](./sessions.md#stored-procedure-sessions-stored-procedure-sessions) |
+|Project method called from a stored procedure on the server|Server|[`EXECUTE ON CLIENT`](../commands/execute-on-client) command|The target client must have been [registered](../commands/register-client) |
+|Object method|Client|-||
+|Database methods:<ul><li>On Server Startup</li><li>On Server Shutdown</li><li>On Server Open Connection</li><li>On Server Close Connection</li></ul>|Server|||
+|Database methods:<ul><li>On Web Authentication</li><li>On Web Connection</li><li>On SQL Authentication</li><li>On Backup Startup</li><li>On Backup Shutdown</li></ul>|Server or Client|-|Depends on the calling context|
+|Database methods:<ul><li>On Startup</li><li>On Exit</li><li>On Drop</li></ul>|Client|-||
