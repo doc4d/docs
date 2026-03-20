@@ -454,10 +454,10 @@ Para copiar todos los mensajes del buzón actual:
 <!-- REF #IMAPTransporterClass.createBox().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|name|Text|->|Name of the new mailbox|
-|Result|Object|<-|Status of the mailbox creation operation|
+|name|Text|->|Nombre del nuevo buzón|
+|Resultado|Object|<-|Status of the mailbox creation operation|
 </div>
 <!-- END REF -->
 
