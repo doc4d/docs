@@ -171,9 +171,9 @@ La función `4D.POP3Transporter.new()` <!-- REF #4D.POP3Transporter.new().Summar
 <!-- REF #POP3TransporterClass.delete().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|msgNumber|Integer|->|Number of the message to delete|
+|msgNumber|Integer|->|Número del mensaje a borrar|
 </div>
 <!-- END REF -->
 
