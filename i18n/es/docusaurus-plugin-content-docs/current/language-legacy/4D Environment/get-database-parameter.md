@@ -653,7 +653,7 @@ El plugin 4D Internet Commands utiliza una capa de red diferente, por lo que est
 
 **Alcance**: All 4D remote machines
 
- **Kept between two** **sessions**: Yes
+ **Mantener entre sesiones**: sí
 
  **Valores posibles**: See selector 17
 
@@ -664,11 +664,11 @@ El plugin 4D Internet Commands utiliza una capa de red diferente, por lo que est
 
 ### Client HTTPS port ID (40)
 
-**Alcance**:All 4D remote machines
+**Alcance**: todas las sesiones remotas
 
-**Kept between two** **sessions**: Yes
+**Mantener entre sesiones**: sí
 
-**Valores posibles**: 0 to 65535
+**Valores posibles**: 0 a 65535
 
 **Descripción**: TCP port number used by the Web servers of the client machines for secure connections via SSL (HTTPS protocol). By default, the value is 443 (standard value).
 
@@ -826,21 +826,21 @@ SET DATABASE PARAMETER(Log command list;"-1666;-323")
 
 ### Min TLS version (105)
 
-**Alcance**: 4D Server, 4D Web Server and 4D SQL Server
+**Alcance**: 4D Server, 4D Web Server y 4D SQL Server
 
-**Mantener entre sesiones**: No
+**Mantener entre sesiones**: no
 
-**Descripción**: Used to specify the minimum Transport Layer Security (TLS) version, which provides data encryption and authentication between applications and servers. Connection attempts from clients supporting only versions below the minimum will be rejected. The setting is applied globally to the network layer. Once modified, the server must be restarted to use the new value. 
+**Descripción**: se utiliza para especificar la versión mínima de Transport Layer Security (TLS), que proporciona cifrado de datos y autenticación entre aplicaciones y servidores. Se rechazarán los intentos de conexión de clientes que solo admitan versiones inferiores a la mínima. La configuración se aplica de forma global a la capa de red. Una vez modificada, es necesario reiniciar el servidor para que se aplique el nuevo valor. 
 
-**Default value**: TLSv1\_3 
+**Valor por defecto**: TLSv1\_3 
 
 **Valores posibles**: 
-- TLSv1\_2 (TLS 1.2, introduced in 2008)
-- TLSv1\_3 (TLS 1.3, introduced in 2018)
+- TLSv1\_2 (TLS 1.2, introducido en 2008)
+- TLSv1\_3 (TLS 1.3, introducido en 2018)
 
-**NOTES**: 
-- The 4D Internet Commands plugin uses a different network layer, therefore this selector will have no impact on its TLS version.
-- This setting is ignored for your client server connections if your 4D Server uses the legacy network layer.
+**NOTAS**: 
+- El plugin 4D Internet Commands utiliza una capa de red diferente, por lo que este selector no afectará a su versión de TLS.
+- Esta configuración se ignora en las conexiones entre el servidor y el cliente si 4D Server utiliza la capa de red heredada.
 
 
 
@@ -849,9 +849,9 @@ SET DATABASE PARAMETER(Log command list;"-1666;-323")
 
 ### Client character set (24)
 
-**Alcance**: All 4D remote machines
+**Alcance**: todos los equipos remotos 4D
 
- **Kept between two** **sessions**: Yes
+ **Mantener entre sesiones**: sí
 
  **Valores posibles**: See selector 17
 
@@ -862,9 +862,9 @@ SET DATABASE PARAMETER(Log command list;"-1666;-323")
 
 ### Client HTTPS port ID (40)
 
-**Alcance**:All 4D remote machines
+**Alcance**:Todas las sesiones remotas
 
-**Kept between two** **sessions**: Yes
+**Mantener entre sesiones**: sí
 
 **Valores posibles**: 0 to 65535
 
@@ -900,7 +900,7 @@ These text files store various information concerning each request in a simple t
 
 **Alcance**: All 4D remote machines
 
- **Kept between two** **sessions**: Yes
+ **Mantener entre sesiones**: sí
 
  **Valores posibles**: See selector 18
 
@@ -909,7 +909,7 @@ These text files store various information concerning each request in a simple t
 
 **Alcance**: Current table and process
 
-**Kept between two** **sessions**: No
+**Mantener entre sesiones**: No
 
 **Valores posibles**: 0 (use database configuration), 1 (execute on client) or 2 (execute on server)
 
@@ -1004,7 +1004,7 @@ SET DATABASE PARAMETER(Log command list;"-1666;-323")
 
 **Alcance**: 4D local, 4D Server
 
-**Mantener entre sesiones**: Yes
+**Mantener entre sesiones**: sí
 
 **Descripción**: *Constante obsoleta (se mantiene únicamente por motivos de compatibilidad).* We now recommend using the [WEB SET OPTION](../commands/web-set-option) and [WEB GET OPTION](../commands/web-get-option) commands for configuring the HTTP server.
 
@@ -1015,7 +1015,7 @@ SET DATABASE PARAMETER(Log command list;"-1666;-323")
 
 **Alcance**: 4D local, 4D Server
 
-**Mantener entre sesiones**: Yes
+**Mantener entre sesiones**: sí
 
 **Descripción**: *Constante obsoleta (se mantiene únicamente por motivos de compatibilidad).* We now recommend using the [WEB SET OPTION](../commands/web-set-option) and [WEB GET OPTION](../commands/web-get-option) commands for configuring the HTTP server.
 
@@ -1030,7 +1030,7 @@ SET DATABASE PARAMETER(Log command list;"-1666;-323")
 
 **Descripción**: Used to specify the minimum Transport Layer Security (TLS) version, which provides data encryption and authentication between applications and servers. Connection attempts from clients supporting only versions below the minimum will be rejected. The setting is applied globally to the network layer. Once modified, the server must be restarted to use the new value. 
 
-**Default value**: TLSv1\_3 
+**Valor por defecto**: TLSv1\_3 
 
 **Valores posibles**: 
 - TLSv1\_2 (TLS 1.2, introduced in 2008)
@@ -1051,7 +1051,7 @@ SET DATABASE PARAMETER(Log command list;"-1666;-323")
 
 **Valores posibles**: Positive longints
 
-**Default value**: 0 (no cache) 
+**Valor por defecto**: 0 (no cache) 
 
 **Descripción**: Sets or gets the maximum number of formulas to be kept in the cache of formulas, which is used by the [EXECUTE FORMULA](../commands/execute-formula) command. This limit is applied to all processes, but each process has its own formula cache. Caching formulas accelerates the [EXECUTE FORMULA](../commands/execute-formula) command execution in compiled mode since each cached formula is tokenized only once in this case. When you change the cache value, existing contents are reset even if the new size is larger than the previous one. Once the maximum number of formulas in the cache is reached, a new executed formula will erase the oldest one in the cache (FIFO mode). This parameter is only taken into account in compiled databases or compiled components.
 
@@ -1073,7 +1073,7 @@ SET DATABASE PARAMETER(Log command list;"-1666;-323")
 
 **Alcance**:Current table and process
 
-**Kept between two** **sessions**: No
+**Mantener entre sesiones**: No
 
 **Valores posibles**: 0 (use database configuration), 1 (execute on client) or 2 (execute on server)
 
@@ -1088,11 +1088,11 @@ When using a database in client-server mode, this command can be executed either
 
 ### Pause logging (121)
 
-**Thread-safe** : Yes
+**Thread-safe** : sí
 
 **Alcance**: Aplicación 4D
 
-**Kept between two** **sessions**: No
+**Mantener entre sesiones**: No
 
 **Valores posibles**: 0 (resume logs), 1 (pause logs)
 
