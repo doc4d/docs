@@ -1068,24 +1068,24 @@ SET DATABASE PARAMETER(Log command list;"-1666;-323")
 
 **Mantener entre sesiones**: no
 
-**Descripción**: Returns the version number of the OpenSSL library in use on the machine. (Read only)
+**Descripción**: devuelve el número de versión de la librería OpenSSL que se utiliza en el equipo. (Solo lectura)
 
 
 
 
 ### Order by formula on server (47)
 
-**Alcance**:Current table and process
+**Alcance**: tabla y proceso actuales
 
-**Mantener entre sesiones**: No
+**Mantener entre sesiones**: no
 
-**Valores posibles**: 0 (use database configuration), 1 (execute on client) or 2 (execute on server)
+**Valores posibles**: 0 (utilizar la configuración de la base de datos), 1 (ejecutar en el cliente) o 2 (ejecutar en el servidor)
 
-**Descripción** : Execution location of [ORDER BY FORMULA](../commands/order-by-formula) command for the table passed in the parameter. 
+**Descripción**: Ubicación de ejecución del comando [ORDER BY FORMULA](../commands/order-by-formula) para la tabla pasada en el parámetro. 
 
-When using a database in client-server mode, this command can be executed either on the server or on the client machine. This selector can be used to specify the execution location of this command (server or client). This mode can also be set in the database preferences. For more information, please refer to the description of selector 46, Query By Formula On Server.
+Cuando se utiliza una base de datos en modo cliente-servidor, este comando se puede ejecutar tanto en el servidor como en el equipo cliente. Este selector permite especificar la ubicación de ejecución de este comando (servidor o cliente). Este modo también se puede configurar en las preferencias de la base de datos. Para obtener más información, consulte la descripción del selector 46, Query By Formula On Server.
 
-**Note:** If you want to be able to enable "SQL type" joins (see the QUERY BY FORMULA Joins selector), you must always execute formulas on the server so that they have access to the records. Be careful, in this context, the formula must not contain any calls to a method, otherwise it will automatically be switched to the remote machine.
+**Nota:** si desea poder habilitar las uniones "SQL type" (ver el selector QUERY BY FORMULA Joins), Siempre debe ejecutar las fórmulas en el servidor para que tengan acceso a los registros. Tenga cuidado: en este contexto, la fórmula no debe contener ninguna llamada a un método; de lo contrario, se ejecutará automáticamente en la máquina remota.
 
 
 
@@ -1094,9 +1094,9 @@ When using a database in client-server mode, this command can be executed either
 
 **Thread-safe** : sí
 
-**Alcance**: Aplicación 4D
+**Alcance**: aplicación 4D
 
-**Mantener entre sesiones**: No
+**Mantener entre sesiones**: no
 
 **Valores posibles**: 0 (resume logs), 1 (pause logs)
 
@@ -1122,7 +1122,7 @@ For more information about the PHP interpreter, please refer to the *Design Refe
 
 ### PHP interpreter port (56)
 
-**Alcance**:Aplicación 4D
+**Alcance**: Aplicación 4D
 
 **Mantener entre sesiones**: No
 
