@@ -651,26 +651,26 @@ El plugin 4D Internet Commands utiliza una capa de red diferente, por lo que est
 
 ### Client character set (24)
 
-**Scope**: All 4D remote machines
+**Alcance**: All 4D remote machines
 
  **Kept between two** **sessions**: Yes
 
- **Possible values**: See selector 17
+ **Valores posibles**: See selector 17
 
-**Description**: Used to specify this parameter for all the remote 4D machines used as Web servers. The values defined using these selectors are applied to all the remote machines used as Web servers. If you want to define values only for certain remote machines, use the Preferences dialog box of 4D in remote mode.
+**Descripción**: Used to specify this parameter for all the remote 4D machines used as Web servers. The values defined using these selectors are applied to all the remote machines used as Web servers. If you want to define values only for certain remote machines, use the Preferences dialog box of 4D in remote mode.
 
 
 
 
 ### Client HTTPS port ID (40)
 
-**Scope**:All 4D remote machines
+**Alcance**:All 4D remote machines
 
 **Kept between two** **sessions**: Yes
 
-**Possible values**: 0 to 65535
+**Valores posibles**: 0 to 65535
 
-**Description**: TCP port number used by the Web servers of the client machines for secure connections via SSL (HTTPS protocol). By default, the value is 443 (standard value).
+**Descripción**: TCP port number used by the Web servers of the client machines for secure connections via SSL (HTTPS protocol). By default, the value is 443 (standard value).
 
 This selector can be used to modify by programming the TCP port used by the Web servers of the client machines for secure connections via SSL (HTTPS protocol). By default, the value is 443 (standard value).
 
@@ -681,17 +681,17 @@ This selector operates exactly the same way as selector 39; however, it applies 
 
 ### Client log recording (45)
 
-**Scope**: Remote 4D machine 
+**Alcance**: Remote 4D machine 
 
-**Kept between two sessions**: No
+**Mantener entre sesiones**: No
 
-**Possible values**: 0 or from 1 to X (0 = do not record, 1 to X = sequential number, attached to file name). 
+**Valores posibles**: 0 or from 1 to X (0 = do not record, 1 to X = sequential number, attached to file name). 
 
-**Description**: Starts or stops recording of standard requests carried out by the 4D client machine that executed the command (excluding Web requests). By default, the value is 0 (no recording of requests). 
+**Descripción**: Starts or stops recording of standard requests carried out by the 4D client machine that executed the command (excluding Web requests). By default, the value is 0 (no recording of requests). 
 
 4D lets you record the log of requests carried out by the client machine. When this mechanism is activated, two files are created on the client machine, in the Logs subfolder of the local folder of the database. They are named 4DRequestsLog\_X.txt and 4DRequestsLog\_ProcessInfo\_X.txt, where X is the sequential number of the log. Once the file 4DRequestsLog has reached a size of 10 MB, it is closed and a new one is generated, with an incremented sequential number. If a file with the same name already exists, it is directly replaced. You can set the starting number for the sequence using the value parameter.
 
-These text files store various information concerning each request in a simple tabbed format: time, process number, size of request, processing duration, etc. For more information on the 4DRequestsLog files, please refer to the *Description of log files* section.
+These text files store various information concerning each request in a simple tabbed format: time, process number, size of request, processing duration, etc. For more information on the 4DRequestsLog files, please refer to the *Descripción of log files* section.
 
 
 
@@ -727,15 +727,13 @@ Al utilizar una base en modo cliente-servidor, el comando [ORDER BY FORMULA](ord
 ### Pause logging (121)
 
 
-**Hilo seguro**: sí
-
 **Alcance**: aplicación 4D
 
 **Se mantiene entre dos sesiones**: no
 
 **Valores posibles**: 0 (reanudar historial), 1 (pausar historial)
 
-Este selector permite suspender/reanudar todas las operaciones de registro iniciadas en la aplicación (excepto los registros ORDA). Esta función puede ser útil para aligerar temporalmente las tareas de la aplicación 4D o programar las operaciones de registro.
+**Descripción:** Este selector permite suspender/reanudar todas las operaciones de registro iniciadas en la aplicación (excepto los registros ORDA). Esta función puede ser útil para aligerar temporalmente las tareas de la aplicación 4D o programar las operaciones de registro.
 
 
 
@@ -768,6 +766,369 @@ Para mayor información sobre el intérprete PHP, por favor consulte el manual d
 
 
 
+
+### Libzip version (120)
+
+**Alcance:** máquina 4D actual
+
+**Mantener entre sesiones:** n/a
+
+**Descripción:** devuelve el número de versión de la librería libzip en la aplicación 4D instalada en el equipo actual. (Solo lectura)
+
+
+
+
+### Log command list (80)
+
+**Alcance**: aplicación 4D
+
+**Mantener entre sesiones**: no
+
+**Valores posibles**: cadena que contiene una lista de números de comandos 4D que se van a registrar (separados por punto y coma), o "all" para registrar todos los comandos, o "" (cadena vacía) para no registrar ninguno, o precedida por "-" para excluir comandos específicos. 
+
+**Descripción**: lista de comandos 4D que se deben registrar o excluir del archivo de depuración (ver el selector 34, Debug Log Recording). Por defecto, se registran todos los comandos 4D.
+
+Este selector restringe la cantidad de información guardada en el archivo de depuración, limitando los comandos 4D cuya ejecución se desea registrar o excluir del registro. Por ejemplo, se puede escribir:
+
+```4d
+//Registra únicamente los comandos QUERY y QUERY SELECTION
+SET DATABASE PARAMETER(Log command list;"277;341") 
+```
+O
+```4d
+//Excluir los comandos SET USER ALIAS y DELAY PROCESS del registro
+SET DATABASE PARAMETER(Log command list;"-1666;-323") 
+```
+
+
+
+### Max concurrent Web processes (18)
+
+**Alcance**: 4D local, 4D Server
+
+**Mantener entre sesiones**: sí
+
+**Descripción**: *Constante obsoleta (se mantiene únicamente por motivos de compatibilidad).* Ahora recomendamos utilizar los comandos [WEB SET OPTION](../commands/web-set-option) y [WEB GET OPTION](../commands/web-get-option) para configurar el servidor HTTP.
+
+
+
+
+### Maximum Web requests size (27)
+
+**Alcance**: 4D local, 4D Server
+
+**Mantener entre sesiones**: sí
+
+**Descripción**: *Constante obsoleta (se mantiene únicamente por motivos de compatibilidad).* Ahora recomendamos utilizar los comandos [WEB SET OPTION](../commands/web-set-option) y [WEB GET OPTION](../commands/web-get-option) para configurar el servidor HTTP.
+
+
+
+
+### Min TLS version (105)
+
+**Alcance**: 4D Server, 4D Web Server and 4D SQL Server
+
+**Mantener entre sesiones**: No
+
+**Descripción**: Used to specify the minimum Transport Layer Security (TLS) version, which provides data encryption and authentication between applications and servers. Connection attempts from clients supporting only versions below the minimum will be rejected. The setting is applied globally to the network layer. Once modified, the server must be restarted to use the new value. 
+
+**Default value**: TLSv1\_3 
+
+**Valores posibles**: 
+- TLSv1\_2 (TLS 1.2, introduced in 2008)
+- TLSv1\_3 (TLS 1.3, introduced in 2018)
+
+**NOTES**: 
+- The 4D Internet Commands plugin uses a different network layer, therefore this selector will have no impact on its TLS version.
+- This setting is ignored for your client server connections if your 4D Server uses the legacy network layer.
+
+
+
+
+### Number of formulas in cache (92)
+
+### Client character set (24)
+
+**Alcance**: All 4D remote machines
+
+ **Kept between two** **sessions**: Yes
+
+ **Valores posibles**: See selector 17
+
+**Descripción**: Used to specify this parameter for all the remote 4D machines used as Web servers. The values defined using these selectors are applied to all the remote machines used as Web servers. If you want to define values only for certain remote machines, use the Preferences dialog box of 4D in remote mode.
+
+
+
+
+### Client HTTPS port ID (40)
+
+**Alcance**:All 4D remote machines
+
+**Kept between two** **sessions**: Yes
+
+**Valores posibles**: 0 to 65535
+
+**Descripción**: TCP port number used by the Web servers of the client machines for secure connections via SSL (HTTPS protocol). By default, the value is 443 (standard value).
+
+This selector can be used to modify by programming the TCP port used by the Web servers of the client machines for secure connections via SSL (HTTPS protocol). By default, the value is 443 (standard value).
+
+This selector operates exactly the same way as selector 39; however, it applies to all the 4D remote machines used as Web servers. If you only want to modify the value of certain specific client machines, use the Preferences dialog box of the remote 4D.
+
+
+
+
+### Client log recording (45)
+
+**Alcance**: Remote 4D machine 
+
+**Mantener entre sesiones**: No
+
+**Valores posibles**: 0 or from 1 to X (0 = do not record, 1 to X = sequential number, attached to file name). 
+
+**Descripción**: Starts or stops recording of standard requests carried out by the 4D client machine that executed the command (excluding Web requests). By default, the value is 0 (no recording of requests). 
+
+4D lets you record the log of requests carried out by the client machine. When this mechanism is activated, two files are created on the client machine, in the Logs subfolder of the local folder of the database. They are named 4DRequestsLog\_X.txt and 4DRequestsLog\_ProcessInfo\_X.txt, where X is the sequential number of the log. Once the file 4DRequestsLog has reached a size of 10 MB, it is closed and a new one is generated, with an incremented sequential number. If a file with the same name already exists, it is directly replaced. You can set the starting number for the sequence using the value parameter.
+
+These text files store various information concerning each request in a simple tabbed format: time, process number, size of request, processing duration, etc. For more information on the 4DRequestsLog files, please refer to the *Descripción of log files* section.
+
+
+
+### OpenSSL version (94)
+
+
+**Mantener entre sesiones**: No
+
+**Alcance**: All 4D remote machines
+
+ **Kept between two** **sessions**: Yes
+
+ **Valores posibles**: See selector 18
+
+
+### Order by formula on server (47)
+
+**Alcance**: Current table and process
+
+**Kept between two** **sessions**: No
+
+**Valores posibles**: 0 (use database configuration), 1 (execute on client) or 2 (execute on server)
+
+**Descripción** : Execution location of [ORDER BY FORMULA](../commands/order-by-formula) command for the table passed in the parameter. 
+
+When using a database in client-server mode, this command can be executed either on the server or on the client machine. This selector can be used to specify the execution location of this command (server or client). This mode can also be set in the database preferences. For more information, please refer to the description of selector 46, Query By Formula On Server.
+
+**Note:** If you want to be able to enable "SQL type" joins (see the QUERY BY FORMULA Joins selector), you must always execute formulas on the server so that they have access to the records. Be careful, in this context, the formula must not contain any calls to a method, otherwise it will automatically be switched to the remote machine.
+
+
+
+
+### Pause logging (121)
+
+
+**Alcance**: Aplicación 4D
+
+**Mantener entre dos sesiones**: No
+
+**Valores posibles**: 0 (resume logs), 1 (pause logs)
+
+**Descripción:** This selector allows to suspend/resume all logging operations started on the application (except ORDA logs). This feature can be useful to temporarily lighten the 4D application tasks or schedule logging operations.
+
+
+
+
+### PHP interpreter IP address (55)
+
+**Alcance**: aplicación 4D
+
+**Mantener entre sesiones**: No
+
+**Values**: Formatted string of the IPv4 type (for example "127.0.0.1") or IPv6 type (for example "2001:0db8:0000:0000:0000:ff00:0042:8329")
+
+**Descripción**: IP address used locally by 4D to communicate with the PHP interpreter via FastCGI. By default, the value is "127.0.0.1" (addresses in IPv6 format are supported starting with 4D v16R4). This address must correspond to the machine where 4D is located. This parameter can also be set globally for all the machines via the Database Settings.
+
+For more information about the PHP interpreter, please refer to the *Design Reference* manual.
+
+
+
+
+### PHP interpreter port (56)
+
+**Alcance**:Aplicación 4D
+
+**Mantener entre sesiones**: No
+
+**Values**: Positive long integer type value. By default, the value is 8002\. 
+
+**Descripción**: Number of the TCP port used by the PHP interpreter of 4D. This parameter can also be modified globally for all the machines via the Database Settings. For more information about the PHP interpreter, please refer to the *Design Reference* manual.
+
+
+
+
+
+### Libzip version (120)
+
+**Alcance:** Current 4D machine
+
+**Mantener entre sesiones:** n/a
+
+**Descripción:** Returns the version number of the libzip library in the 4D application on the current machine. (Read only)
+
+
+
+
+### Log command list (80)
+
+**Alcance**: Aplicación 4D
+
+**Mantener entre sesiones**: No
+
+**Valores posibles**: String containing a list of 4D command numbers to record (separated by semi-colons) or "all" to record all the commands or "" (empty string) to record none of them or prefixed by "-" to exclude specific commands. 
+
+**Descripción**: List of 4D commands to record in or exclude from the debugging file (see selector 34, Debug Log Recording). By default, all 4D commands are recorded.
+
+This selector restricts the quantity of information saved in the debugging file by limiting the 4D commands whose execution you want to record or exclude from recording. For example, you can write:
+
+```4d
+//Record only the QUERY and QUERY SELECTION commands
+SET DATABASE PARAMETER(Log command list;"277;341") 
+```
+OR
+```4d
+//Exclude the SET USER ALIAS and DELAY PROCESS commands from being recorded
+SET DATABASE PARAMETER(Log command list;"-1666;-323") 
+```
+
+
+
+### Max concurrent Web processes (18)
+
+**Alcance**: 4D local, 4D Server
+
+**Mantener entre sesiones**: Yes
+
+**Descripción**: *Constante obsoleta (se mantiene únicamente por motivos de compatibilidad).* We now recommend using the [WEB SET OPTION](../commands/web-set-option) and [WEB GET OPTION](../commands/web-get-option) commands for configuring the HTTP server.
+
+
+
+
+### Maximum Web requests size (27)
+
+**Alcance**: 4D local, 4D Server
+
+**Mantener entre sesiones**: Yes
+
+**Descripción**: *Constante obsoleta (se mantiene únicamente por motivos de compatibilidad).* We now recommend using the [WEB SET OPTION](../commands/web-set-option) and [WEB GET OPTION](../commands/web-get-option) commands for configuring the HTTP server.
+
+
+
+
+### Min TLS version (105)
+
+**Alcance**: 4D Server, 4D Web Server and 4D SQL Server
+
+**Mantener entre sesiones**: No
+
+**Descripción**: Used to specify the minimum Transport Layer Security (TLS) version, which provides data encryption and authentication between applications and servers. Connection attempts from clients supporting only versions below the minimum will be rejected. The setting is applied globally to the network layer. Once modified, the server must be restarted to use the new value. 
+
+**Default value**: TLSv1\_3 
+
+**Valores posibles**: 
+- TLSv1\_2 (TLS 1.2, introduced in 2008)
+- TLSv1\_3 (TLS 1.3, introduced in 2018)
+
+**NOTES**: 
+- The 4D Internet Commands plugin uses a different network layer, therefore this selector will have no impact on its TLS version.
+- This setting is ignored for your client server connections if your 4D Server uses the legacy network layer.
+
+
+
+
+### Number of formulas in cache (92)
+
+**Alcance**: Aplicación 4D
+
+**Mantener entre sesiones**: No
+
+**Valores posibles**: Positive longints
+
+**Default value**: 0 (no cache) 
+
+**Descripción**: Sets or gets the maximum number of formulas to be kept in the cache of formulas, which is used by the [EXECUTE FORMULA](../commands/execute-formula) command. This limit is applied to all processes, but each process has its own formula cache. Caching formulas accelerates the [EXECUTE FORMULA](../commands/execute-formula) command execution in compiled mode since each cached formula is tokenized only once in this case. When you change the cache value, existing contents are reset even if the new size is larger than the previous one. Once the maximum number of formulas in the cache is reached, a new executed formula will erase the oldest one in the cache (FIFO mode). This parameter is only taken into account in compiled databases or compiled components.
+
+
+
+
+### OpenSSL version (94)
+
+**Alcance**: all 4D machines*
+
+**Mantener entre sesiones**: No
+
+**Descripción**: Returns the version number of the OpenSSL library in use on the machine. (Read only)
+
+
+
+
+### Order by formula on server (47)
+
+**Alcance**:Current table and process
+
+**Kept between two** **sessions**: No
+
+**Valores posibles**: 0 (use database configuration), 1 (execute on client) or 2 (execute on server)
+
+**Descripción** : Execution location of [ORDER BY FORMULA](../commands/order-by-formula) command for the table passed in the parameter. 
+
+When using a database in client-server mode, this command can be executed either on the server or on the client machine. This selector can be used to specify the execution location of this command (server or client). This mode can also be set in the database preferences. For more information, please refer to the description of selector 46, Query By Formula On Server.
+
+**Note:** If you want to be able to enable "SQL type" joins (see the QUERY BY FORMULA Joins selector), you must always execute formulas on the server so that they have access to the records. Be careful, in this context, the formula must not contain any calls to a method, otherwise it will automatically be switched to the remote machine.
+
+
+
+
+### Pause logging (121)
+
+**Thread-safe** : Yes
+
+**Alcance**: Aplicación 4D
+
+**Kept between two** **sessions**: No
+
+**Valores posibles**: 0 (resume logs), 1 (pause logs)
+
+**Descripción:** This selector allows to suspend/resume all logging operations started on the application (except ORDA logs). This feature can be useful to temporarily lighten the 4D application tasks or schedule logging operations.
+
+
+
+
+### PHP interpreter IP address (55)
+
+**Alcance**:Aplicación 4D
+
+**Mantener entre sesiones**: No
+
+**Values**: Formatted string of the IPv4 type (for example "127.0.0.1") or IPv6 type (for example "2001:0db8:0000:0000:0000:ff00:0042:8329")
+
+**Descripción**: IP address used locally by 4D to communicate with the PHP interpreter via FastCGI. By default, the value is "127.0.0.1" (addresses in IPv6 format are supported starting with 4D v16R4). This address must correspond to the machine where 4D is located. This parameter can also be set globally for all the machines via the Database Settings.
+
+For more information about the PHP interpreter, please refer to the *Design Reference* manual.
+
+
+
+
+### PHP interpreter port (56)
+
+**Alcance**:Aplicación 4D
+
+**Mantener entre sesiones**: No
+
+**Values**: Positive long integer type value. By default, the value is 8002\. 
+
+**Descripción**: Number of the TCP port used by the PHP interpreter of 4D. This parameter can also be modified globally for all the machines via the Database Settings. For more information about the PHP interpreter, please refer to the *Design Reference* manual.
+
+
+
+
 ### POP3 Log (116)
 
 **Hilo seguro**: sí
@@ -791,7 +1152,7 @@ Para más información sobre los archivos 4DPOP3Log\_X.txt, consulte la sección
 
 **Se conserva entre dos sesiones**: no
 
-**Descripción**: Command SET DATABASE Número de puerto TCP utilizado por el servidor web 4D con 4D en modo local y 4D Server.  El valor por defecto, que puede ser definido en la página "Web/Configuración" de la caja de diálogo Preferencias, es 80. Puede utilizar las constantes del tema *Números de puerto TCP* para el parámetro *valor*.
+**Descripción**: el número de puerto TCP utilizado por el servidor web 4D con 4D en modo local y 4D Server.  El valor por defecto, que puede ser definido en la página "Web/Configuración" de la caja de diálogo Preferencias, es 80. Puede utilizar las constantes del tema *Números de puerto TCP* para el parámetro *valor*.
 
 El selector Port ID se utiliza en el marco de servidores web 4D compilados y fusionados con 4D Desktop (sin acceso al modo Diseño). Para mayor información sobre el número de puerto TCP, consulte la sección *Parámetros del servidor web*
 
@@ -1002,6 +1363,7 @@ Por defecto, este número único es definido por 4D y corresponde al orden de cr
 
 
 
+
 ### TCPUDP log recording (131)
 
 **Alcance:** aplicación 4D
@@ -1011,7 +1373,6 @@ Por defecto, este número único es definido por 4D y corresponde al orden de cr
 **Valores posibles:** `0`: Logging desactivado (por defecto), `1`: Logging activado. 
 
 **Descripción:** activa o desactiva el archivo `4DTCPUDPLog.txt` para registrar eventos TCP.
-
 
 
 
@@ -1074,22 +1435,6 @@ Tenga en cuenta que este parámetro define todos los consejos 4D, es decir, los 
 
 
 
-### Use legacy network layer (87)
-
-**Alcance:** 4D en modo local, 4D Server**
-
-**Se conserva entre dos sesiones:** sí
-
-**Descripción:** fija u obtiene el estado actual de la capa de red antigua para las conexiones cliente/servidor. La capa de red antigua es obsoleta a partir de 4D v14 R5 y debe ser reemplazada progresivamente en sus aplicaciones por la capa de red   *ServerNet*. *ServerNet* será requerida en próximas versiones 4D con el fin de beneficiarse de las futuras evoluciones de la red. Por razones de compatibilidad, la capa de red antigua aún se soporta para permitir una transición sin problemas para las aplicaciones existentes; (se usa por defecto en aplicaciones convertidas de una versión anterior a v14 R5). Pase 1 en este parámetro para utilizar la capa de red antigua (y desactivar *ServerNet*) para las conexiones cliente/servidor, y pase 0 para deshabilitar la red antigua (y utilizar *ServerNet*).
-
-Esta propiedad también se puede definir mediante la opción "Usar capa de red antigua " que se encuentran en *Página Compatibilidad* de las Propiedades de la base (ver *Opciones red y cliente-servidor*). En esta sección, también puede encontrar una discusión sobre la estrategia de migración. Le recomendamos que active *ServerNet* tan pronto como sea posible. Deberá reiniciar la aplicación para que este parámetro sea tenido en cuenta. No está disponible en 4D Server v14 R5 64-bit versión para macOS, que sólo soporta el *ServetNet*; (siempre devuelve 0).
-
-**Valores posibles:** 0 o 1 (0 = no utilizan capa de red antigua, 1 = uso capa de red antigua)
-
-**Valor por defecto:** 0 en bases de datos creadas con 4D v14 R5 o superior, 1 en bases de datos convertidas de 4D v14 R4 o anteriores.
-
-
-
 
 ### User param value (108)
 
@@ -1126,7 +1471,7 @@ El comando **Get database parameter** puede utilizarse en procesos apropiativos 
 * [Pause logging](#pause-logging-121)
 
 
-## Ejemplo 
+<h2 data-noindex>Ejemplo</h2> 
 
 Desea que su aplicación se reinicie después de un primer lanzamiento. La aplicación se inicia con, por ejemplo, una línea de comando en Windows:
 
