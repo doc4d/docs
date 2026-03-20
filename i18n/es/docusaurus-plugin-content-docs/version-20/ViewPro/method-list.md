@@ -1618,10 +1618,10 @@ $colCount:=VP Get column count("ViewProarea")
 <!-- REF #_method_.VP Get current sheet.Params -->
 <div class="no-index">
 
-|Parameter|Type| |Description|
+|Parámetro|Tipo| |Descripción|
 |---|---|---|---|
-|vpAreaName| Text|->|4D View Pro area form object name|
-|Function result|Integer|<-|Index of the current sheet|
+|vpAreaName| Text|->|Nombre del objeto 4D View Pro|
+|Resultado de la función|Integer|<-|Index of the current sheet|
 </div>
 <!-- END REF -->
 
@@ -2202,10 +2202,10 @@ $currentSelection:=VP Get selection("myVPArea")
 <!-- REF #_method_.VP Get sheet count.Params -->
 <div class="no-index">
 
-|Parameter|Type| |Description|
+|Parámetro|Tipo| |Descripción|
 |---|---|---|---|
-|vpAreaName| Text|->|4D View Pro area form object name|
-|Function result|Integer|<-|Number of sheets|
+|vpAreaName| Text|->|Nombre del objeto 4D View Pro|
+|Resultado de la función|Integer|<-|Number of sheets|
 </div>
 <!-- END REF -->
 
@@ -4124,10 +4124,10 @@ VP RESET SELECTION("myVPArea")
 <!-- REF #_method_.VP RESIZE TABLE.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|rangeObj|Object|->|New range for the table|
-|tableName|Text|->|Name of the table|
+|rangeObj|Object|->|Nuevo rango para la tabla|
+|tableName|Text|->|Nombre de la tabla|
 </div>
 <!-- END REF -->
 
@@ -6342,10 +6342,10 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";Null))
 <!-- REF #_method_.VP SET VALUES.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|rangeObj |Object|->|Range object|
-|valuesCol  |Collection|->|Collection of values|
+|rangeObj |Object|->|Objeto rango|
+|valuesCol |Collection|->|Colección de valores|
 </div>
 <!-- END REF -->
 
