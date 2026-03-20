@@ -651,13 +651,13 @@ El plugin 4D Internet Commands utiliza una capa de red diferente, por lo que est
 
 ### Client character set (24)
 
-**Alcance**: All 4D remote machines
+**Alcance**: todos los equipos remotos 4D
 
  **Mantener entre sesiones**: sí
 
- **Valores posibles**: See selector 17
+ **Valores posibles**: ver el selector 17
 
-**Descripción**: Used to specify this parameter for all the remote 4D machines used as Web servers. The values defined using these selectors are applied to all the remote machines used as Web servers. If you want to define values only for certain remote machines, use the Preferences dialog box of 4D in remote mode.
+**Descripción**: se utiliza para especificar este parámetro en todas las máquinas 4D remotas que se utilizan como servidores web. Los valores definidos mediante estos selectores se aplican a todas las máquinas remotas que se utilizan como servidores web. Si desea definir valores solo para determinadas máquinas remotas, utilice el cuadro de diálogo Preferencias de 4D en modo remoto.
 
 
 
@@ -670,28 +670,28 @@ El plugin 4D Internet Commands utiliza una capa de red diferente, por lo que est
 
 **Valores posibles**: 0 a 65535
 
-**Descripción**: TCP port number used by the Web servers of the client machines for secure connections via SSL (HTTPS protocol). By default, the value is 443 (standard value).
+**Descripción**: número de puerto TCP utilizado por los servidores web de los equipos cliente para realizar conexiones seguras a través de SSL (protocolo HTTPS). Por defecto, el valor es 443 (valor estándar).
 
-This selector can be used to modify by programming the TCP port used by the Web servers of the client machines for secure connections via SSL (HTTPS protocol). By default, the value is 443 (standard value).
+Este selector permite modificar, por  programación, el puerto TCP que utilizan los servidores web de los equipos cliente para las conexiones seguras a través de SSL (protocolo HTTPS). Por defecto, el valor es 443 (valor estándar).
 
-This selector operates exactly the same way as selector 39; however, it applies to all the 4D remote machines used as Web servers. If you only want to modify the value of certain specific client machines, use the Preferences dialog box of the remote 4D.
+Este selector funciona exactamente igual que el selector 39; sin embargo, se aplica a todos los equipos remotos 4D utilizados como servidores web. Si solo desea modificar el valor de determinados equipos cliente específicos, utilice el cuadro de diálogo Preferencias del 4D remoto.
 
 
 
 
 ### Client log recording (45)
 
-**Alcance**: Remote 4D machine 
+**Alcance**: máquina 4D remota 
 
-**Mantener entre sesiones**: No
+**Mantener entre sesiones**: no
 
-**Valores posibles**: 0 or from 1 to X (0 = do not record, 1 to X = sequential number, attached to file name). 
+**Valores posibles**: 0 o de 1 a X (0 = no grabar; 1 a X = número secuencial, añadido al nombre del archivo). 
 
-**Descripción**: Starts or stops recording of standard requests carried out by the 4D client machine that executed the command (excluding Web requests). By default, the value is 0 (no recording of requests). 
+**Descripción**: inicia o detiene el registro de las solicitudes estándar realizadas por el equipo cliente de 4D que ejecutó el comando (excluidas las solicitudes web). Por defecto, el valor es 0 (no se registran las solicitudes). 
 
-4D lets you record the log of requests carried out by the client machine. When this mechanism is activated, two files are created on the client machine, in the Logs subfolder of the local folder of the database. They are named 4DRequestsLog\_X.txt and 4DRequestsLog\_ProcessInfo\_X.txt, where X is the sequential number of the log. Once the file 4DRequestsLog has reached a size of 10 MB, it is closed and a new one is generated, with an incremented sequential number. If a file with the same name already exists, it is directly replaced. You can set the starting number for the sequence using the value parameter.
+4D permite registrar el historial de las solicitudes realizadas por el equipo cliente. Cuando se activa este mecanismo, se crean dos archivos en el equipo cliente, dentro de la subcarpeta «Logs» de la carpeta local de la base de datos. Se denominan 4DRequestsLog\_X.txt y 4DRequestsLog\_ProcessInfo\_X.txt, donde X es el número secuencial del registro. Una vez que el archivo 4DRequestsLog alcanza un tamaño de 10 MB, se cierra y se genera uno nuevo, con un número secuencial incrementado. Si ya existe un archivo con el mismo nombre, se sustituye directamente. Puede establecer el número inicial de la secuencia utilizando el parámetro value.
 
-These text files store various information concerning each request in a simple tabbed format: time, process number, size of request, processing duration, etc. For more information on the 4DRequestsLog files, please refer to the *Descripción of log files* section.
+Estos archivos de texto almacenan diversa información relativa a cada solicitud en un formato sencillo con tabulaciones: hora, número de proceso, tamaño de la solicitud, duración del procesamiento, etc. Para obtener más información sobre los archivos 4DRequestsLog, consulte la sección *Descripción de los archivos de registro*.
 
 
 
@@ -733,14 +733,14 @@ Al utilizar una base en modo cliente-servidor, el comando [ORDER BY FORMULA](ord
 
 **Valores posibles**: 0 (reanudar historial), 1 (pausar historial)
 
-**Descripción:** Este selector permite suspender/reanudar todas las operaciones de registro iniciadas en la aplicación (excepto los registros ORDA). Esta función puede ser útil para aligerar temporalmente las tareas de la aplicación 4D o programar las operaciones de registro.
+**Descripción:** este selector permite suspender/reanudar todas las operaciones de registro iniciadas en la aplicación (excepto los registros ORDA). Esta función puede ser útil para aligerar temporalmente las tareas de la aplicación 4D o programar las operaciones de registro.
 
 
 
 
 ### PHP interpreter IP address (55)
 
-**Alcance**: Aplicación 4D
+**Alcance**: aplicación 4D
 
 **Se conserva entre dos sesiones**: no
 
@@ -899,28 +899,28 @@ Estos archivos de texto almacenan diversa información relativa a cada solicitud
 ### OpenSSL version (94)
 
 
-**Mantener entre sesiones**: No
+**Mantener entre sesiones**: no
 
-**Alcance**: All 4D remote machines
+**Alcance**: todos los equipos remotos 4D
 
  **Mantener entre sesiones**: sí
 
- **Valores posibles**: See selector 18
+ **Valores posibles**: ver el selector 18
 
 
 ### Order by formula on server (47)
 
-**Alcance**: Current table and process
+**Alcance**: tabla y proceso actuales
 
-**Mantener entre sesiones**: No
+**Mantener entre sesiones**: no
 
 **Valores posibles**: 0 (use database configuration), 1 (execute on client) or 2 (execute on server)
 
-**Descripción** : Execution location of [ORDER BY FORMULA](../commands/order-by-formula) command for the table passed in the parameter. 
+**Descripción** : Ubicación de ejecución del comando [ORDER BY FORMULA](../commands/order-by-formula) para la tabla pasada en el parámetro. 
 
-When using a database in client-server mode, this command can be executed either on the server or on the client machine. This selector can be used to specify the execution location of this command (server or client). This mode can also be set in the database preferences. For more information, please refer to the description of selector 46, Query By Formula On Server.
+Cuando se utiliza una base de datos en modo cliente-servidor, este comando se puede ejecutar tanto en el servidor como en el equipo cliente. Este selector permite especificar la ubicación de ejecución de este comando (servidor o cliente). Este modo también se puede configurar en las preferencias de la base de datos. Para obtener más información, consulte la descripción del selector 46, Query By Formula On Server.
 
-**Note:** If you want to be able to enable "SQL type" joins (see the QUERY BY FORMULA Joins selector), you must always execute formulas on the server so that they have access to the records. Be careful, in this context, the formula must not contain any calls to a method, otherwise it will automatically be switched to the remote machine.
+**Nota:** si desea poder habilitar las uniones "SQL type" (ver el selector QUERY BY FORMULA Joins), debe ejecutar siempre las fórmulas en el servidor para que tengan acceso a los registros. Tenga cuidado, en este contexto, la fórmula no debe contener ninguna llamada a un método; de lo contrario, se transferirá automáticamente a la máquina remota.
 
 
 
@@ -928,13 +928,13 @@ When using a database in client-server mode, this command can be executed either
 ### Pause logging (121)
 
 
-**Alcance**: Aplicación 4D
+**Alcance**: aplicación 4D
 
-**Mantener entre dos sesiones**: No
+**Mantener entre dos sesiones**: no
 
 **Valores posibles**: 0 (resume logs), 1 (pause logs)
 
-**Descripción:** This selector allows to suspend/resume all logging operations started on the application (except ORDA logs). This feature can be useful to temporarily lighten the 4D application tasks or schedule logging operations.
+**Descripción:** este selector permite suspender o reanudar todas las operaciones de registro iniciadas en la aplicación (excepto los registros ORDA). Esta función puede resultar útil para aligerar temporalmente la carga de trabajo de la aplicación 4D o para programar operaciones de registro.
 
 
 
@@ -987,7 +987,7 @@ For more information about the PHP interpreter, please refer to the *Design Refe
 
 **Valores posibles**: String containing a list of 4D command numbers to record (separated by semi-colons) or "all" to record all the commands or "" (empty string) to record none of them or prefixed by "-" to exclude specific commands. 
 
-**Descripción**: List of 4D commands to record in or exclude from the debugging file (see selector 34, Debug Log Recording). By default, all 4D commands are recorded.
+**Descripción**: List of 4D commands to record in or exclude from the debugging file (Ver el selector 34, Debug Log Recording). By default, all 4D commands are recorded.
 
 This selector restricts the quantity of information saved in the debugging file by limiting the 4D commands whose execution you want to record or exclude from recording. For example, you can write:
 
