@@ -10,7 +10,7 @@ Un objeto **`4D.Function`** contiene un trozo de código que puede ser ejecutado
 4D maneja varios tipos de objetos `Function`, que heredan de la clase **4D.Function**:
 
 - **native functions**, i.e. built-in functions from various 4D classes such as [`collection.sort()`](./CollectionClass.md#sort) or [`file.copyTo()`](./FileClass.md#copyto).
-- **user functions**, created in [user classes](Concepts/classes.md) using the [`Function` keyword](Concepts/classes.md#function).
+- **funciones usuario**, creadas en las [clases usuario](Concepts/classes.md) utilizando la [palabra clave `Function`](Concepts/classes.md#function).
 - las **funciones de fórmula**, es decir, las funciones que pueden ejecutar un código de fórmula almacenado en los objetos [4D.Formula](./FormulaClass.md),
 - **method functions**, i.e. functions that can execute source code as text stored in [4D.Method](./MethodClass.md) objects.
 
@@ -136,7 +136,7 @@ En el parámetro *thisObj*, puede pasar una referencia al objeto que se utilizar
 You can pass values to be used as parameters in the function using the optional *params* parameter:
 
 - en los objetos `4D.Formula`, los parámetros se pasan en $1...$n en la fórmula.
-- in `4D.Method` objects, parameters are passed in [declared method parameters](../Concepts/parameters.md).
+- en los objetos `4D.Method`, los parámetros se pasan en [parámetros declarados](../Concepts/parameters.md).
 
 Tenga en cuenta que `.call()` es similar a [`.apply()`](#apply) excepto que los parámetros se pasan directamente.
 
@@ -177,7 +177,7 @@ Tenga en cuenta que `.call()` es similar a [`.apply()`](#apply) excepto que los 
 
 The `.source` property <!-- REF #FunctionClass.source.Summary -->contains the source code of the function as text<!-- END REF -->.
 
-The returned value is the original text used to create the 4D.Formula or 4D.Method object but reformatted.
+El valor devuelto es el texto original utilizado para crear el objeto 4D.Formula o 4D.Method pero reformateado.
 
 Esta propiedad es de **solo lectura**.
 
