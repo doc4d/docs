@@ -943,26 +943,26 @@ Cuando se utiliza una base de datos en modo cliente-servidor, este comando se pu
 
 **Alcance**: aplicación 4D
 
-**Mantener entre sesiones**: No
+**Mantener entre sesiones**: no
 
-**Values**: Formatted string of the IPv4 type (for example "127.0.0.1") or IPv6 type (for example "2001:0db8:0000:0000:0000:ff00:0042:8329")
+**Valores**: cadena formateada de tipo IPv4 (por ejemplo, «127.0.0.1») o de tipo IPv6 (por ejemplo, «2001:0db8:0000:0000:0000:ff00:0042:8329»)
 
-**Descripción**: IP address used locally by 4D to communicate with the PHP interpreter via FastCGI. By default, the value is "127.0.0.1" (addresses in IPv6 format are supported starting with 4D v16R4). This address must correspond to the machine where 4D is located. This parameter can also be set globally for all the machines via the Database Settings.
+**Descripción**: dirección IP utilizada localmente por 4D para comunicarse con el intérprete de PHP a través de FastCGI. Por defecto, el valor es "127.0.0.1" (a partir de la versión 4D v16R4 se admiten direcciones en formato IPv6). Esta dirección debe corresponder al equipo en el que se encuentra 4D. Este parámetro también se puede configurar de forma global para todos los equipos a través de la configuración de la base de datos.
 
-For more information about the PHP interpreter, please refer to the *Design Reference* manual.
+Para obtener más información sobre el intérprete PHP, consulte el manual *Referencia de diseño*.
 
 
 
 
 ### PHP interpreter port (56)
 
-**Alcance**:Aplicación 4D
+**Alcance**: aplicación 4D
 
-**Mantener entre sesiones**: No
+**Mantener entre sesiones**: no
 
-**Values**: Positive long integer type value. By default, the value is 8002\. 
+**Valores**: valor positivo de tipo entero largo. Por defecto, el valor es 8002\. 
 
-**Descripción**: Number of the TCP port used by the PHP interpreter of 4D. This parameter can also be modified globally for all the machines via the Database Settings. For more information about the PHP interpreter, please refer to the *Design Reference* manual.
+**Descripción**: número del puerto TCP utilizado por el intérprete PHP de 4D. Este parámetro también se puede modificar de forma global para todos los equipos a través de la configuración de la base de datos. Para obtener más información sobre el intérprete PHP, consulte el manual *Diseño*.
 
 
 
@@ -970,32 +970,32 @@ For more information about the PHP interpreter, please refer to the *Design Refe
 
 ### Libzip version (120)
 
-**Alcance:** Current 4D machine
+**Alcance:** máquina 4D actual
 
 **Mantener entre sesiones:** n/a
 
-**Descripción:** Returns the version number of the libzip library in the 4D application on the current machine. (Read only)
+**Descripción:** Devuelve el número de versión de la librería libzip en la aplicación 4D instalada en el equipo actual. (Solo lectura)
 
 
 
 
 ### Log command list (80)
 
-**Alcance**: Aplicación 4D
+**Alcance**: aplicación 4D
 
-**Mantener entre sesiones**: No
+**Mantener entre sesiones**: no
 
-**Valores posibles**: String containing a list of 4D command numbers to record (separated by semi-colons) or "all" to record all the commands or "" (empty string) to record none of them or prefixed by "-" to exclude specific commands. 
+**Valores posibles**: Cadena que contiene una lista de números de comando 4D que se van a registrar (separados por punto y coma), o «all» para registrar todos los comandos, o «» (cadena vacía) para no registrar ninguno, o precedida por «-» para excluir comandos específicos. 
 
-**Descripción**: List of 4D commands to record in or exclude from the debugging file (Ver el selector 34, Debug Log Recording). By default, all 4D commands are recorded.
+**Descripción**: lista de comandos 4D que se deben registrar o excluir del archivo de depuración (ver el selector 34, Debug Log Recording). Por defecto, se registran todos los comandos 4D.
 
-This selector restricts the quantity of information saved in the debugging file by limiting the 4D commands whose execution you want to record or exclude from recording. For example, you can write:
+Este selector restringe la cantidad de información guardada en el archivo de depuración, limitando los comandos 4D cuya ejecución se desea registrar o excluir del registro. Por ejemplo, se puede escribir:
 
 ```4d
 //Record only the QUERY and QUERY SELECTION commands
 SET DATABASE PARAMETER(Log command list;"277;341") 
 ```
-OR
+O
 ```4d
 //Exclude the SET USER ALIAS and DELAY PROCESS commands from being recorded
 SET DATABASE PARAMETER(Log command list;"-1666;-323") 
@@ -1009,7 +1009,7 @@ SET DATABASE PARAMETER(Log command list;"-1666;-323")
 
 **Mantener entre sesiones**: sí
 
-**Descripción**: *Constante obsoleta (se mantiene únicamente por motivos de compatibilidad).* We now recommend using the [WEB SET OPTION](../commands/web-set-option) and [WEB GET OPTION](../commands/web-get-option) commands for configuring the HTTP server.
+**Descripción**: *Constante obsoleta (se mantiene únicamente por motivos de compatibilidad).* Ahora recomendamos utilizar los comandos [WEB SET OPTION](../commands/web-set-option) y [WEB GET OPTION](../commands/web-get-option) para configurar el servidor HTTP.
 
 
 
@@ -1020,7 +1020,7 @@ SET DATABASE PARAMETER(Log command list;"-1666;-323")
 
 **Mantener entre sesiones**: sí
 
-**Descripción**: *Constante obsoleta (se mantiene únicamente por motivos de compatibilidad).* We now recommend using the [WEB SET OPTION](../commands/web-set-option) and [WEB GET OPTION](../commands/web-get-option) commands for configuring the HTTP server.
+**Descripción**: *Constante obsoleta (se mantiene únicamente por motivos de compatibilidad).* Ahora recomendamos utilizar los comandos [WEB SET OPTION](../commands/web-set-option) y [WEB GET OPTION](../commands/web-get-option) para configurar el servidor HTTP.
 
 
 
@@ -1110,7 +1110,7 @@ When using a database in client-server mode, this command can be executed either
 
 **Mantener entre sesiones**: No
 
-**Values**: Formatted string of the IPv4 type (for example "127.0.0.1") or IPv6 type (for example "2001:0db8:0000:0000:0000:ff00:0042:8329")
+**Valores**: Formatted string of the IPv4 type (for example "127.0.0.1") or IPv6 type (for example "2001:0db8:0000:0000:0000:ff00:0042:8329")
 
 **Descripción**: IP address used locally by 4D to communicate with the PHP interpreter via FastCGI. By default, the value is "127.0.0.1" (addresses in IPv6 format are supported starting with 4D v16R4). This address must correspond to the machine where 4D is located. This parameter can also be set globally for all the machines via the Database Settings.
 
@@ -1125,7 +1125,7 @@ For more information about the PHP interpreter, please refer to the *Design Refe
 
 **Mantener entre sesiones**: No
 
-**Values**: Positive long integer type value. By default, the value is 8002\. 
+**Valores**: Positive long integer type value. By default, the value is 8002\. 
 
 **Descripción**: Number of the TCP port used by the PHP interpreter of 4D. This parameter can also be modified globally for all the machines via the Database Settings. For more information about the PHP interpreter, please refer to the *Design Reference* manual.
 
