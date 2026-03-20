@@ -66,6 +66,7 @@ Also, object instances from ORDA data model user classes benefit from their pare
 
 |Release|Changes|
 |---|---|
+|21 R3|Support for the `server` keyword.
 |19 R4|Alias attributes in the Entity Class
 |19 R3|Computed attributes in the Entity Class
 |18 R5|Data model class functions are not exposed to REST by default. New `exposed` and `local` keywords.
@@ -303,7 +304,7 @@ When creating or editing data model classes, you must pay attention to the follo
 When compiled, data model class functions are executed:
 
 - in **preemptive or cooperative processes** (depending on the calling process) in single-user applications,
-- in **preemptive processes** in client/server applications (except if the [`local`](#local-functions) keyword is used, in which case it depends on the calling process like in single-user).
+- in **preemptive processes** in client/server applications (except if the [`local`](../Concepts/classes.md#local) keyword is used, in which case it depends on the calling process like in single-user).
 
 If your project is designed to run in client/server, make sure your data model class function code is thread-safe. If thread-unsafe code is called, an error will be thrown at runtime (no error will be thrown at compilation time since cooperative execution is supported in single-user applications).
 
@@ -369,9 +370,7 @@ The `Class constructor` function is triggered by the following commands and feat
 
 #### Remote configurations
 
-When using a remote configurations, you need to pay attention to the following principles:
-
-- In **client/server** the function can be called on the client or on the server, depending on the location of the calling code. When it is called on the client, it is not triggered again when the client attempts to save the new entity and sends an update request to the server to create in memory on the server.
+When using a remote configurations, you need to pay attention to the following principle: in **client/server** the function can be called on the client or on the server, depending on the location of the calling code. When it is called on the client, it is not triggered again when the client attempts to save the new entity and sends an update request to the server to create in memory on the server.
 
 :::warning
 
@@ -499,7 +498,7 @@ Within computed attribute functions, [`This`](Concepts/classes.md#this) designat
 
 > ORDA computed attributes are not [**exposed**](#exposed-vs-non-exposed-functions) by default. You expose a computed attribute by adding the `exposed` keyword to the **get function** definition.
 
-> **get and set functions** can have the [**local**](#local-functions) property to optimize client/server processing.
+> **get and set functions** can have the [`local`](../Concepts/classes.md#local) property to optimize client/server processing.
 
 
 ### `Function get <attributeName>`
@@ -507,7 +506,7 @@ Within computed attribute functions, [`This`](Concepts/classes.md#this) designat
 #### Syntax
 
 ```4d
-{local} {exposed} Function get <attributeName>({$event : Object}) -> $result : type
+{local | server} {exposed} Function get <attributeName>({$event : Object}) -> $result : type
 // code
 ```
 The *getter* function is mandatory to declare the *attributeName* computed attribute. Whenever the *attributeName* is accessed, 4D evaluates the `Function get` code and returns the *$result* value.
@@ -531,6 +530,12 @@ The *$event* parameter contains the following properties:
 |dataClassName|Text|Dataclass name|
 |kind|Text|"get"|
 |result|Variant|Optional. Add this property with Null value if you want a scalar attribute to return Null|
+
+:::note
+
+For more information about the `local` and `server` keywords, please refer to the [local and server](../Concepts/classes.md#local-and-server) section. 
+
+:::
 
 
 #### Examples
@@ -578,7 +583,7 @@ Function get coWorkers($event : Object)-> $result: cs.EmployeeSelection
 
 ```4d
 
-{local} Function set <attributeName>($value : type {; $event : Object})
+{local | server} Function set <attributeName>($value : type {; $event : Object})
 // code
 ```
 
@@ -594,6 +599,12 @@ The *$event* parameter contains the following properties:
 |dataClassName|Text|Dataclass name|
 |kind|Text|"set"|
 |value|Variant|Value to be handled by the computed attribute|
+
+:::note
+
+For more information about the `local` and `server` keywords, please refer to the [local and server](../Concepts/classes.md#local-and-server) section. 
+
+:::
 
 #### Example
 
