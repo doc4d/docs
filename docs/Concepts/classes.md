@@ -214,9 +214,10 @@ There is no ending keyword for function code. The 4D language automatically dete
 
 Class functions are specific properties of the class. They are objects of the [4D.Function](API/FunctionClass.md) class. In the class definition file, function declarations use the `Function` keyword followed by the function name.
 
-In the context of a client/server application, the `local` or `server` keyword allows you to specify on which machine the function must be executed. These keywords can only be used with ORDA data model functions and shared/session singleton functions. For more information, refer to the [local/server functions](#local-server-functions) paragraph below. 
-
 If the function is declared in a [shared class](#shared-classes), you can use the `shared` keyword so that the function could be called without [`Use...End use` structure](shared.md#useend-use). For more information, refer to the [Shared functions](#shared-functions) paragraph below.
+
+In the context of a client/server application, the `local` or `server` keyword allows you to specify on which machine the function must be executed. These keywords can only be used with ORDA data model functions and shared/session singleton functions. For more information, refer to the [local and server functions](#local-and-server) paragraph below. 
+
 
 The function name must be compliant with [object naming rules](Concepts/identifiers.md#object-properties).
 
@@ -525,12 +526,12 @@ $o.age:="Smith"  //error with check syntax
 #### Syntax
 
 ```4d
-{shared} Function get <name>()->$result : type
+{local | server} {shared} Function get <name>()->$result : type
 // code
 ```
 
 ```4d
-{shared} Function set <name>($parameterName : type)
+{local | server} {shared} Function set <name>($parameterName : type)
 // code
 ```
 
@@ -556,6 +557,9 @@ In the class definition file, computed property declarations use the `Function g
 When both functions are defined, the computed property is **read-write**. If only a `Function get` is defined, the computed property is **read-only**. In this case, an error is returned if the code tries to modify the property. If only a `Function set` is defined, 4D returns *undefined* when the property is read.
 
 If the functions are declared in a [shared class](#shared-classes), you can use the `shared` keyword with them so that they could be called without [`Use...End use` structure](shared.md#useend-use). For more information, refer to the [Shared functions](#shared-functions) paragraph below.
+
+In the context of a client/server application, the `local` or `server` keyword allows you to specify on which machine the function must be executed. These keywords can only be used with ORDA data model functions and shared/session singleton functions. For more information, refer to the [local and server functions](#local-and-server) paragraph below. 
+
 
 The type of the computed property is defined by the `$return` type declaration of the *getter*. It can be of any [valid property type](dt_object.md).
 
@@ -931,7 +935,7 @@ $myList := cs.ItemInventory.me.itemList
 
 ## `local` and `server`
 
-In [client/server architecture](../Desktop/clientServer.md), `local` and `server` keywords allow you to specify where you want the function to be executed: client-side, or server-side. It is useful for performance reasons or to implement business logic features. 
+In [client/server architecture](../Desktop/clientServer.md), `local` and `server` keywords allow you to specify where you want the function to be executed: client-side, or server-side. Controlling the execution location is useful for performance reasons or to implement business logic features. 
 
 The formal syntax is:
 
@@ -944,30 +948,23 @@ local Function <functionName>
 server Function <functionName>   
 ```
 
+Note that [supported functions](#supported-functions) have a **default execution location** (server or client) when no location keyword is used. You can nevertheless insert a `local` or `server` keyword to modify the execution location, or to make the code more explicit.
 
-### Contexts
+### Supported functions
 
-`local` and `server` keywords are only available with:  
+`local` and `server` keywords are only available with the following functions:
 
-- [ORDA data model functions](../ORDA/ordaClasses.md)
-- [shared or session singleton functions](#singleton-classes)
+|Functions|Default execution location|
+|---|---|
+|[ORDA data model functions](../ORDA/ordaClasses.md)|Server|
+|[Shared or session singleton functions](#singleton-classes)|Client|
 
 If `local` and `server` keywords are used in another context, they are ignored and an error is returned by the compiler.
-
-
-You can add the keyword to modify the execution location for a function, or to make the code more explicit. 
-
-|Functions|Default execution if no keyword|Execution keywords|
-|---|---|---|
-|[ORDA data model functions](../ORDA/ordaClasses.md)|Server|`server` (default), `local`|
-|[Shared or session singleton functions](#singleton-classes)|Client|`server`, `local` (default)|
-
-
  
 
 :::note
 
-For a detailed description of where code is actually executed in client/server, please refer to [this page].  
+For a overall description of where code is actually executed in client/server, please refer to [this page].  
 
 ::::
 
@@ -1000,13 +997,29 @@ local Function getYoungest
 
 ### `server`
 
-The `server` keyword specifies that the function must be executed **on the server side**. 
+The `server` keyword specifies that the function must be executed **on the server side**.
 
-#### Singleton functions
+`server` function parameters and result must be **streamable**, that is, they can be saved into a file or sent over a network. For example, [ORDA Data model](../ORDA/ordaClasses.md), [File handle](../API/FileHandleClass.md), or [WebServer](../API/WebServerClass.md) are non-streamable classes.
 
-By default, shared or session singleton functions are executed on the client. 
+This feature is particularly useful in the context of [remote user sessions](../Desktop/sessions.md#remote-user-sessions), allowing you to implement the business logic in a [session singleton](#shared-or-session-singleton-functions) to share it accross all the processes of the session, thus extending the functionalities of the [`Session`](../commands/session) command. In this case, you might want the relevant business logic to be executed **on the server** so that all the session information is gathered on the server.
 
-In the context of [remote user sessions](../Desktop/sessions.md#remote-user-sessions), you can implement the business logic in a [session singleton](#shared-or-session-singleton-functions) to share it accross all the processes of the session, thus extending the functionalities of the [`Session`](../commands/session) command. In this case, you might want the relevant business logic to be executed **on the server** so that all the session information is gathered on the server.
+
+#### Shared or session singleton functions
+
+By default, shared or session singleton functions are executed on the client. Adding the `server` keyword in the class function definition makes 4D use the singleton instance on the server. Note that this can result of an instantiation of the singleton on the server if no instance exists yet.  
+
+For [sessions singletons](#singleton-classes), the function is executed on the server on the corresponding singleton instance, i.e. the instance of the singleton for the current session.
+
+Note that when you declare a `server Function` in a shared singleton and:
+
+- instanciate singleton *S1* on the client (named *s1*)
+- run *s1.function()* on the client
+
+Since there is no instance of *S1* on the server at this moment, *S1* is instanciated on the server (the constructor is executed) and the *function()* is run on this server instance. As a consequence, you can have two instances of *S1* (client-side and server-side) with distincts property values. However in this case, *s1.property* is always accessed locally. It cannot be accessed on the server, for example in code running on the server,with a direct access using dot notation (an error is returned).
+
+
+
+
 
 
 #### ORDA data model functions
@@ -1015,7 +1028,7 @@ The `server` keyword is useless for [ORDA data model functions](../ORDA/ordaClas
 
 
 
-### Examples
+### Examples (ORDA data model functions)
 
 #### Calculating age
 
@@ -1068,4 +1081,51 @@ $status:=Form.student.checkData()
 If ($status.success)
     $status:=Form.student.save() // call the server
 End if
+```
+
+### Example (Shared or session singleton functions)
+
+In a client/server application, the *Authentication* session singleton is used to handle user session data:
+
+```4d
+// Authentication Class
+
+property _salesPeopleId : Integer
+
+session singleton Class constructor()
+	
+If (This._salesPeopleId=Null)
+	This.initSalesPeopleId()
+End if 
+	
+// Executed on the client (default location)
+shared Function initSalesPeopleId()
+	This._salesPeopleId:=ds.getSalesPeopleId() // Call to the server
+
+// Executed on the client
+Function get salesPeople() : cs.SalesPeopleEntity
+	return ds.SalesPeople.get(This._salesPeopleId)
+
+
+// Functions to be executed on the server
+
+server Function get sessionStorage() : Object
+		return Session.storage.clientData
+	
+server Function putInSessionStorage($content : Object)
+  var $prop : Text
+	  // $content is like: {"searchCritreria":{min: 10; max: 20}}
+  Use (Session.storage.clientData)
+	  For each ($prop; $content)
+		  Session.storage.clientData[$prop]:=OB Copy($content[$prop]; ck shared)
+	  End for each 
+  End use 
+
+server Function clearSession()
+	Session.clearPrivileges()
+	Use (Session.storage)
+		Session.storage.salesInfo:=New shared object()
+		Session.storage.clientData:=New shared object()
+	End use 
+
 ```
