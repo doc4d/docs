@@ -11,9 +11,9 @@ displayed_sidebar: docs
 
 | Parámetro | Tipo |  | Descripción |
 | --- | --- | --- | --- |
-| tabla | Table | &#8594; | Tabla para la cual definir el parámetro o Tabla por defecto si se omite este parámetro |
+| aTable | Table | &#8594; | Tabla para la cual definir el parámetro o Tabla por defecto si se omite este parámetro |
 | selector | Integer | &#8594; | Código del parámetro de la base a modificar |
-| valor | Real, Text | &#8594; | Valor del parámetro |
+| value | Real, Text | &#8594; | Valor del parámetro |
 </div>
 <!-- END REF-->
 
@@ -22,6 +22,7 @@ displayed_sidebar: docs
 
 |Versión|Cambios|
 |---|---|
+|21 R3|Modificado|
 |20 R6|Modificado|
 |20 R3|Modificado|
 |19 R5|Modificado|
@@ -246,47 +247,6 @@ Estos archivos texto almacenan en formato tabulado simple diferente información
 
 **Descripción**: permite especificar este parámetro para todos los equipos 4D remotos utilizados como servidores web. Los valores definidos utilizando estos selectores se aplican a todos los equipos remotos utilizados como servidores web. Si quiere definir valores sólo para ciertos equipos remotos, utilice la caja de diálogo de Preferencias de 4D en modo remoto.
 
-**Alcance**: todos los equipos 4D remotos
-
-**Se conserva entre dos sesiones**: sí
-
-**Valores posibles**: ver selector 18
-
-**Descripción**: permite especificar esta parámetro para las máquinas 4D remotas utilizadas como servidores web. Los valores definidos utilizando estos selectores se aplican a todos los equipos remotos utilizados como servidores web. Si quiere definir este valor sólo para ciertos equipos remotos, utilice la caja de diálogo de Preferencias de 4D en modo remoto.
-
-
-
-### Client port ID (22)
-
-**Alcance**: todos los equipos 4D remotos
-
- **Se conserva entre dos sesiones**: sí
-
- **Valores posibles**: ver selector 15
-
-**Descripción**: permite especificar este parámetro para todos los equipos 4D remotos utilizados como servidores web. Los valores definidos utilizando estos selectores se aplican a todos los equipos remotos utilizados como servidores web. Si quiere definir valores sólo para ciertos equipos remotos, utilice la caja de diálogo de Preferencias de 4D en modo remoto.
-
-**Alcance**: todos los equipos 4D remotos
-
-**Se conserva entre dos sesiones**: sí
-
-**Valores posibles**: ver selector 18
-
-**Descripción**: permite especificar esta parámetro para las máquinas 4D remotas utilizadas como servidores web. Los valores definidos utilizando estos selectores se aplican a todos los equipos remotos utilizados como servidores web. Si quiere definir este valor sólo para ciertos equipos remotos, utilice la caja de diálogo de Preferencias de 4D en modo remoto.
-
-
-
-### Client port ID (22)
-
-**Alcance**: todos los equipos 4D remotos
-
- **Se conserva entre dos sesiones**: sí
-
- **Valores posibles**: ver selector 15
-
-**Descripción**: permite especificar este parámetro para todos los equipos 4D remotos utilizados como servidores web. Los valores definidos utilizando estos selectores se aplican a todos los equipos remotos utilizados como servidores web. Si quiere definir valores sólo para ciertos equipos remotos, utilice la caja de diálogo de Preferencias de 4D en modo remoto.
-
-
 
 
 
@@ -339,7 +299,7 @@ Para más información sobre este formato y sobre el uso del archivo *4DDebugLog
 
 
 
-### Dates inside objects (85)
+### Dates inside objects (85) {#dates-inside-objects-85}
 
 **Alcance**: proceso actual
 
@@ -349,11 +309,15 @@ Para más información sobre este formato y sobre el uso del archivo *4DDebugLog
 
 **Descripción**: define la forma en que se almacenan las fechas dentro de los objetos, así como también cómo se importan / exportan en JSON.
 
-Cuando el valor del selector es Date type (valor predeterminado para las bases creadas con 4D v17 y superior), las fechas 4D se almacenan con el tipo de fecha dentro de los objetos, con respecto a la configuración de fecha local. Cuando se convierte a formato JSON, los atributos de fecha se convertirán en cadenas que no incluyen un tiempo. (**Nota:** esta configuración se puede definir mediante la opción "Utilizar tipo de fecha en lugar del formato de fecha ISO en objetos" que se encuentra en *Página Compatibilidad* de la configuración de la base).
+- `Date type` (por defecto): las fechas 4D se almacenan con el tipo de fecha dentro de los objetos. Cuando se convierte a formato JSON, los atributos de fecha se convertirán en cadenas que no incluyen un tiempo.
+- `String type with time zone`: convertirá las fechas 4D en cadenas ISO y tendrá en cuenta la zona horaria local. Por ejemplo, la conversión de la fecha 23/08/2013 le da "2013-08-22T22: 00: 000Z" en formato JSON cuando la operación se realiza en Francia durante el horario de verano (GMT+ 2). Este principio se ajusta al funcionamiento estándar de JavaScript.
+- `String type without time zone`: Convierte las fechas 4D en cadenas ISO y no tiene en cuenta la zona horaria local. Tener en cuenta la zona horaria local (opción anterior) puede ser una fuente de errores cuando se desea enviar valores de fecha en formato JSON a alguien que se encuentra en una zona horaria diferente. Este es el caso, por ejemplo, cuando se exporta una tabla utilizando [Selection to JSON](../commands/selection-to-json) en Francia con la intención de reimportarla en EE. UU. utilizando [JSON TO SELECTION](../commands/json-to-selection). Dado que las fechas se reinterpretan en cada zona horaria, los valores de hora almacenados en la base de datos serán diferentes.
 
-Si pasa String type with time zone en este selector, convertirá las fechas 4D en cadenas ISO y tendrá en cuenta la zona horaria local. Por ejemplo, la conversión de la fecha 23/08/2013 le da "2013-08-22T22: 00: 000Z" en formato JSON cuando la operación se realiza en Francia durante el horario de verano (GMT+ 2). Este principio se ajusta al funcionamiento estándar de JavaScript. Esto puede ser una fuente de errores cuando desea enviar valores de fecha JSON a alguien en un huso horario diferente. Por ejemplo, cuando exporta una tabla usando [Selection to JSON](../commands/selection-to-json) en Francia que se debe reimportar en los EE. UU. utilizando [JSON TO SELECTION](../commands/json-to-selection). Dado que las fechas se vuelven a interpretar en cada zona horaria, los valores almacenados en la base de datos serán diferentes. En este caso, puede modificar el modo de conversión de las fechas para que no tengan en cuenta la zona horaria pasando String type without time zone en este selector. La conversión de la fecha 23/08/2013 le dará "2013-08-23T00: 00: 00Z" en todos los casos.
+:::note
 
+En modo `Date type` (por defecto), solo las cadenas de fecha JSON en formato corto (por ejemplo "2026-08-23") se importan como valores de fecha en los objetos 4D. Las cadenas de fecha JSON en formato de fecha y hora (por ejemplo, "2026-08-23T00:00:00Z") se importan como valores cadena.
 
+:::
 
 
 ### Debug log recording (34)
@@ -418,6 +382,7 @@ Este selector se ofrece únicamente con fines de depuración y debe utilizarse c
 - Log debug: activa ERROR, WARN, INFO, DEBUG
 - Log info: activa ERROR, WARN, INFO (por defecto) Log warn: activa ERROR, WARN
 - Log error: activa ERROR (nivel menos detallado)
+
 
 
 
@@ -640,20 +605,8 @@ O
 //Excluye los comandos SET USER ALIAS y DELAY PROCESS de ser grabados
 SET DATABASE PARAMETER(Log command list;"-1666;-323") 
 ```
-O
-```4d
-//Excluye los comandos SET USER ALIAS y DELAY PROCESS de ser grabados
-SET DATABASE PARAMETER(Log command list;"-1666;-323") 
-```
 
- SET DATABASE PARAMETER(Log command list;"277;341") //Graba solo los comandos QUERY y QUERY SELECTION O SET DATABASE PARAMETER(Log command list;"-1666;-323") //Excluye los comandos SET USER ALIAS y DELAY PROCESS de ser grabados
- 
 
- SET DATABASE PARAMETER(Log command list;"277;341") //Graba solo los comandos QUERY y QUERY SELECTION O SET DATABASE PARAMETER(Log command list;"-1666;-323") //Excluye los comandos SET USER ALIAS y DELAY PROCESS de ser grabados
- 
-
- SET DATABASE PARAMETER(Log command list;"277;341") //Graba solo los comandos QUERY y QUERY SELECTION O SET DATABASE PARAMETER(Log command list;"-1666;-323") //Excluye los comandos SET USER ALIAS y DELAY PROCESS de ser grabados
- 
 
 ### Max concurrent Web processes (18)
 
