@@ -1100,35 +1100,35 @@ Cuando se utiliza una base de datos en modo cliente-servidor, este comando se pu
 
 **Valores posibles**: 0 (resume logs), 1 (pause logs)
 
-**Descripción:** This selector allows to suspend/resume all logging operations started on the application (except ORDA logs). This feature can be useful to temporarily lighten the 4D application tasks or schedule logging operations.
+**Descripción:** este selector permite suspender o reanudar todas las operaciones de registro iniciadas en la aplicación (excepto los registros ORDA). Esta función puede resultar útil para aligerar temporalmente la carga de trabajo de la aplicación 4D o para programar operaciones de registro.
 
 
 
 
 ### PHP interpreter IP address (55)
 
-**Alcance**:Aplicación 4D
+**Alcance**: aplicación 4D
 
-**Mantener entre sesiones**: No
+**Mantener entre sesiones**: no
 
-**Valores**: Formatted string of the IPv4 type (for example "127.0.0.1") or IPv6 type (for example "2001:0db8:0000:0000:0000:ff00:0042:8329")
+**Valores**: cadena formateada de tipo IPv4 (por ejemplo, "127.0.0.1") o de tipo IPv6 (por ejemplo "2001:0db8:0000:0000:0000:ff00:0042:8329")
 
-**Descripción**: IP address used locally by 4D to communicate with the PHP interpreter via FastCGI. By default, the value is "127.0.0.1" (addresses in IPv6 format are supported starting with 4D v16R4). This address must correspond to the machine where 4D is located. This parameter can also be set globally for all the machines via the Database Settings.
+**Descripción**: Dirección IP utilizada localmente por 4D para comunicarse con el intérprete de PHP a través de FastCGI. Por defecto, el valor es "127.0.0.1" (a partir de la versión 4D v16R4 se admiten direcciones en formato IPv6). Esta dirección debe corresponder al equipo en el que se encuentra 4D. Este parámetro también se puede configurar de forma global para todos los equipos a través de la configuración de la base de datos.
 
-For more information about the PHP interpreter, please refer to the *Design Reference* manual.
+Para obtener más información sobre el intérprete de PHP, consulte el manual *Referencia de diseño*.
 
 
 
 
 ### PHP interpreter port (56)
 
-**Alcance**: Aplicación 4D
+**Alcance**: aplicación 4D
 
-**Mantener entre sesiones**: No
+**Mantener entre sesiones**: no
 
-**Valores**: Positive long integer type value. By default, the value is 8002\. 
+**Valores**: valor positivo de tipo entero largo. Por defecto, el valor es 8002.  
 
-**Descripción**: Number of the TCP port used by the PHP interpreter of 4D. This parameter can also be modified globally for all the machines via the Database Settings. For more information about the PHP interpreter, please refer to the *Design Reference* manual.
+**Descripción**: número del puerto TCP utilizado por el intérprete PHP de 4D. Este parámetro también se puede modificar de forma global para todos los equipos a través de la configuración de la base de datos. Para obtener más información sobre el intérprete PHP, consulte el manual de *Diseño*.
 
 
 
@@ -1182,10 +1182,6 @@ El selector QUERY BY FORMULA Joins permite definir el modo de funcionamiento de 
 - 2 y superiores de 4D v11 SQL). En este modo, 4D establece "uniones SQL" para las búsquedas por fórmula cuando la fórmula se ajusta para ello (con dos excepciones, ver la descripción del comando [QUERY BY FORMULA](query-by-formula.md "QUERY BY FORMULA") o [QUERY SELECTION BY FORMULA](query-selection-by-formula.md "QUERY SELECTION BY FORMULA")).**Nota:** si quiere activar las uniones "tipo SQL" (consulte el selector QUERY BY FORMULA Joins selector), siempre debe ejecutar las fórmulas en el servidor de manera que tengan acceso a los registros. Atención, en este contexto, la fórmula no debe contener llamadas a un método, de lo contrario pasará automáticamente al equipo remoto.
 
 
-
-
-
-
 ### Query by formula on server (46)
 
 **Alcance**: tabla y procesos actuales
@@ -1198,7 +1194,7 @@ El selector QUERY BY FORMULA Joins permite definir el modo de funcionamiento de 
 
 Cuando se utiliza una base en modo cliente-servidor, los comandos de búsqueda "por fórmula" pueden ejecutarse en el servidor o en el equipo cliente:
 
-en bases creadas con 4D v11 SQL, estos comandos se ejecutan en el servidor.en bases convertidas, estos comandos se ejecutan en el equipo cliente, como en las versiones anteriores de 4D.en las bases convertidas, una preferencia específica permite modificar globalmente la ubicación de ejecución de estos comandos.Esta diferencia en ubicación de ejecución influye no sólo en el rendimiento de la aplicación (la ejecución en el servidor es generalmente más rápida) sino también en la programación. En efecto, el valor de los componentes de la fórmula (en particular las variables llamadas vía un método) varía de acuerdo al contexto de ejecución. Puede utilizar este selector para adaptar puntualmente el funcionamiento de su aplicación. 
+En bases creadas con 4D v11 SQL, estos comandos se ejecutan en el servidor.en bases convertidas, estos comandos se ejecutan en el equipo cliente, como en las versiones anteriores de 4D.en las bases convertidas, una preferencia específica permite modificar globalmente la ubicación de ejecución de estos comandos.Esta diferencia en ubicación de ejecución influye no sólo en el rendimiento de la aplicación (la ejecución en el servidor es generalmente más rápida) sino también en la programación. En efecto, el valor de los componentes de la fórmula (en particular las variables llamadas vía un método) varía de acuerdo al contexto de ejecución. Puede utilizar este selector para adaptar puntualmente el funcionamiento de su aplicación. 
 
 Si pasa 0 en el parámetro *valor*, la ubicación de ejecución de los comandos de búsqueda "por fórmula" dependerá de la configuración de la base: en bases creadas con 4D v11 SQL, estos comandos se ejecutarán en el servidor. En bases convertidas, se ejecutarán en el equipo cliente o en el servidor en función de las preferencias de la base. Pase 1 ó 2 en *valor* para "forzar" la ejecución de estos comandos respectivamente en el equipo cliente o en el servidor. 
 
