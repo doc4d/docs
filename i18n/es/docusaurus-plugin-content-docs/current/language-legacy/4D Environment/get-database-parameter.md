@@ -853,44 +853,47 @@ SET DATABASE PARAMETER(Log command list;"-1666;-323")
 
  **Mantener entre sesiones**: sí
 
- **Valores posibles**: See selector 17
+ **Valores posibles**: ver el selector 17
 
-**Descripción**: Used to specify this parameter for all the remote 4D machines used as Web servers. The values defined using these selectors are applied to all the remote machines used as Web servers. If you want to define values only for certain remote machines, use the Preferences dialog box of 4D in remote mode.
+**Descripción**: Se utiliza para especificar este parámetro en todas las máquinas 4D remotas que se utilizan como servidores web. Los valores definidos mediante estos selectores se aplican a todas las máquinas remotas que se utilizan como servidores web. Si desea definir valores solo para determinadas máquinas remotas, utilice el cuadro de diálogo Preferencias de 4D en modo remoto.
 
 
 
 
 ### Client HTTPS port ID (40)
 
-**Alcance**:Todas las sesiones remotas
+**Alcance**: todas las sesiones remotas
 
 **Mantener entre sesiones**: sí
 
-**Valores posibles**: 0 to 65535
+**Valores posibles**: 0 a 65535
 
-**Descripción**: TCP port number used by the Web servers of the client machines for secure connections via SSL (HTTPS protocol). By default, the value is 443 (standard value).
+**Descripción**: Número de puerto TCP utilizado por los servidores web de los equipos cliente para conexiones seguras a través de SSL (protocolo HTTPS). Por defecto, el valor es 443 (valor estándar).
 
-This selector can be used to modify by programming the TCP port used by the Web servers of the client machines for secure connections via SSL (HTTPS protocol). By default, the value is 443 (standard value).
+Este selector permite modificar por programación el puerto TCP utilizado por los servidores web de los equipos cliente para conexiones seguras a través de SSL (protocolo HTTPS). Por defecto, el valor es 443 (valor estándar).
 
-This selector operates exactly the same way as selector 39; however, it applies to all the 4D remote machines used as Web servers. If you only want to modify the value of certain specific client machines, use the Preferences dialog box of the remote 4D.
+Número de puerto TCP utilizado por los servidores web de los equipos cliente para conexiones seguras a través de SSL (protocolo HTTPS). Por defecto, el valor es 443 (valor estándar).
+
+Este selector permite modificar por programación el puerto TCP utilizado por los servidores web de los equipos cliente para conexiones seguras a través de SSL (protocolo HTTPS). Por defecto, el valor es 443 (valor estándar).
+
+Este selector funciona exactamente igual que el selector 39; sin embargo, se aplica a todas las máquinas remotas 4D utilizadas como servidores web. Si solo desea modificar el valor de determinadas máquinas cliente específicas, utilice el cuadro de diálogo Preferencias del 4D remoto.
 
 
 
 
 ### Client log recording (45)
 
-**Alcance**: Remote 4D machine 
+**Alcance**: Máquina 4D remota 
 
-**Mantener entre sesiones**: No
+**Mantener entre sesiones**: no
 
-**Valores posibles**: 0 or from 1 to X (0 = do not record, 1 to X = sequential number, attached to file name). 
+**Valores posibles**: 0 o de 1 a X (0 = no grabar, 1 a X = número secuencial, añadido al nombre del archivo). 
 
-**Descripción**: Starts or stops recording of standard requests carried out by the 4D client machine that executed the command (excluding Web requests). By default, the value is 0 (no recording of requests). 
+**Descripción**: SInicia o detiene el registro de las solicitudes estándar realizadas por el equipo cliente de 4D que ejecutó el comando (excluidas las solicitudes web). Por defecto, el valor es 0 (no se registran las solicitudes). 
 
-4D lets you record the log of requests carried out by the client machine. When this mechanism is activated, two files are created on the client machine, in the Logs subfolder of the local folder of the database. They are named 4DRequestsLog\_X.txt and 4DRequestsLog\_ProcessInfo\_X.txt, where X is the sequential number of the log. Once the file 4DRequestsLog has reached a size of 10 MB, it is closed and a new one is generated, with an incremented sequential number. If a file with the same name already exists, it is directly replaced. You can set the starting number for the sequence using the value parameter.
+4D permite registrar el historial de peticiones realizadas por el equipo cliente. Cuando se activa este mecanismo, se crean dos archivos en el equipo cliente, dentro de la subcarpeta Logs de la carpeta local de la base de datos. Se denominan 4DRequestsLog\_X.txt y 4DRequestsLog\_ProcessInfo\_X.txt, donde X es el número secuencial del registro. Una vez que el archivo 4DRequestsLog alcanza un tamaño de 10 MB, se cierra y se genera uno nuevo, con un número secuencial incrementado. Si ya existe un archivo con el mismo nombre, se sustituye directamente. Puede establecer el número inicial de la secuencia utilizando el parámetro value.
 
-These text files store various information concerning each request in a simple tabbed format: time, process number, size of request, processing duration, etc. For more information on the 4DRequestsLog files, please refer to the *Descripción of log files* section.
-
+Estos archivos de texto almacenan diversa información relativa a cada solicitud en un formato sencillo con separadores de tabulador: hora, número de proceso, tamaño de la solicitud, duración del procesamiento, etc. Para obtener más información sobre los archivos 4DRequestsLog, consulte la sección *Descripción de los archivos de registro*. 
 
 
 ### OpenSSL version (94)
