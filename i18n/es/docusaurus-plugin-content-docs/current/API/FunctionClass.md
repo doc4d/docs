@@ -36,7 +36,7 @@ También se admite la sintaxis con paréntesis:
  $f["message"]() //muestra "Hello world"
 ```
 
-Note that, even if it does not have parameters (see below), an object function to be executed must be called with `()` parenthesis. Llamar sólo a la propiedad del objeto devolverá una nueva referencia a la fórmula (y no la ejecutará):
+Tenga en cuenta que, aunque no tenga parámetros (ver arriba), una función objeto a ejecutar debe ser llamada con paréntesis `()`. Llamar sólo a la propiedad del objeto devolverá una nueva referencia a la fórmula (y no la ejecutará):
 
 ```4d
  $o:=$f.message //devuelve el objeto función en $o
@@ -175,7 +175,7 @@ Tenga en cuenta que `.call()` es similar a [`.apply()`](#apply) excepto que los 
 
 #### Descripción
 
-The `.source` property <!-- REF #FunctionClass.source.Summary -->contains the source code of the function as text<!-- END REF -->.
+La propiedad `.source` <!-- REF #FunctionClass.source.Summary -->contiene el código fuente de la función como texto<!-- END REF -->.
 
 El valor devuelto es el texto original utilizado para crear el objeto 4D.Formula o 4D.Method pero reformateado.
 
