@@ -33,27 +33,27 @@ module.exports =
       },
       items: [
         "GettingStarted/creating",
-        "Project/architecture",
-        "Develop/explorer",
         {
           type: "category",
-          label: "Dababase structure",
+          label: "Exploring Project",
+          items: [
+            "Project/architecture",
+            "Develop/explorer",
+            "Project/code-overview",
+            "Project/search-replace",
+            "Project/documentation",
+            "Project/design-object-access-commands"
+          ]
+        },
+        {
+          type: "category",
+          label: "Dababase",
           items: [
             "Develop/field-properties",
             "Develop-legacy/triggers"
           ]
         },
-        {
-          type: "category",
-          label: "Code & Methods",
-          items: [
-            "Project/code-overview",
-            "code-editor/write-class-method",
-            "Project/project-method-properties",
-            "Project/search-replace",
-            "Project/documentation"
-          ]
-        },
+        "code-editor/write-class-method",
           "Project/components",
           "Project/compiler",
         {
@@ -281,6 +281,7 @@ module.exports =
             "Develop/async"
           ]
         },
+        "Project/project-method-properties",
         {
           type: "category",
           label: "Database Methods",

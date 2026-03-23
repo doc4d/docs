@@ -1,6 +1,6 @@
 ---
 id: code-overview
-title: Creating Methods and classes
+title: Methods and classes
 ---
 
 
@@ -36,4 +36,5 @@ To delete an existing method or class, you can:
 - in the 4D Explorer, select the method or class and click ![](../assets/en/Users/MinussNew.png) or choose **Move to Trash** from the contextual menu. 
 
 > To delete an object method, choose **Clear Object Method** from the [Form editor](../FormEditor/formEditor.md) (**Object** menu or context menu).
+
 
