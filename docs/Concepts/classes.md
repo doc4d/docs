@@ -948,7 +948,7 @@ local Function <functionName>
 server Function <functionName>   
 ```
 
-`local` and `server` keywords are only available for the functions of the [ORDA data model](../ORDA/ordaClasses.md) and [Shared or session singleton](#singleton-classes) classes.
+`local` and `server` keywords are only available for the functions of the [ORDA data model](../ORDA/ordaClasses.md) and [shared or session singleton](#singleton-classes) classes.
 
 
 ### Overview
@@ -971,7 +971,7 @@ For a overall description of where code is actually executed in client/server, p
 
 ### `local` 
 
-The `local` keyword specifies that the function must be executed **on the client side**. 
+In a [client/server architecture](../Desktop/clientServer.md), the `local` keyword specifies that the function must be executed **on the client side**. 
 
 :::note Reminder
 
@@ -998,12 +998,12 @@ local Function getYoungest
 
 ### `server`
 
-The `server` keyword specifies that the function must be executed **on the server side**.
+In a [client/server architecture](../Desktop/clientServer.md), the `server` keyword specifies that the function must be executed **on the server side**.
 
 
 :::note Reminder
 
-The `server` keyword is useless for [ORDA data model functions](../ORDA/ordaClasses.md), which are executed on the server by default, but it can be added for clarity.  
+The `server` keyword is useless for [ORDA data model functions](../ORDA/ordaClasses.md), which are executed on the server by default, but it can be added for clarity.
 
 :::
 
@@ -1029,20 +1029,26 @@ For example:
 ```4d
 // mySingleton class
 
-property executedOn : Integer
+property instantiatedOn : Integer
 
 shared singleton Class constructor
-  This.executedOn:=Application type()
+	This.instantiatedOn:=Application type()
 
+//
 Function generateDataLocally() : Object
   var $result:={}
-  $result.message:="I have been executed on "+String(This.executedOn)
+
+  $result.message:="I have been executed on "+String(Application type())+\
+    " and instantiated on "+String(This.instantiatedOn)
   return $result
-      
+
+//
 server Function generateDataOnServer() : Object
   var $result:={}
-  $result.message:="I have been executed on "+String(This.executedOn)
-return $result
+
+  $result.message:="I have been executed on "+String(Application type())+\
+    " and instantiated on "+String(This.instantiatedOn)
+  return $result
 ```
 
 Code running on the client:
@@ -1058,12 +1064,12 @@ $singleton:=cs.MySingleton.me
 // The generateDataLocally() function is executed locally
 $info:=$singleton.generateDataLocally()
 
-ASSERT($info.message="I have been executed on 4")
+ASSERT($info.message="I have been executed on 4 and instantiated on 4")
 
 // The generateDataOnServer() function is executed on the server
-// Thus an instance of the singleton is created on the server and the constructor is triggered
+// Thus an instance of the singleton is created on the server
 $info:=$singleton.generateDataOnServer()
-ASSERT($info.message="I have been executed on 5")
+ASSERT($info.message="I have been executed on 5 and instantiated on 5")
 ```
 
 ### Examples (ORDA data model functions)
@@ -1121,7 +1127,7 @@ If ($status.success)
 End if
 ```
 
-### Example (Shared or session singleton functions)
+### Example (Session singleton function)
 
 In a client/server application, the *Authentication* session singleton is used to handle user session data:
 
