@@ -35,27 +35,63 @@ module.exports =
         "GettingStarted/creating",
         {
           type: "category",
-          label: "Exploring Project",
+          label: "Exploring Projects",
           items: [
             "Project/architecture",
             "Develop/explorer",
-            "Project/code-overview",
             "Project/search-replace",
-            "Project/documentation",
-            "Project/design-object-access-commands"
+            "Project/documentation"
           ]
         },
         {
           type: "category",
-          label: "Dababase",
+          label: "Database Structure",
           items: [
             "Develop/field-properties",
-            "Develop-legacy/triggers"
+          ]
+        },
+        {
+          type: "category",
+          label: "Methods & Classes",
+          items: [
+            "Project/code-overview",
+            "Project/project-method-properties",
+            "Develop-legacy/triggers",
+            {
+              type: "category",
+              label: "Database Methods",
+              link: {
+                type: "generated-index",
+                title: "Database Methods",
+                slug: "/category/database-methods",
+                image: "/img/docusaurus.png"
+              },
+              items: [
+              "commands-legacy/on-backup-shutdown-database-method",
+                    "commands-legacy/on-backup-startup-database-method",
+                    "commands-legacy/on-drop-database-method",
+                    "commands-legacy/on-exit-database-method",
+                    "commands-legacy/on-host-database-event-database-method",
+                    "commands-legacy/on-mobile-app-action-database-method",
+                    "commands-legacy/on-mobile-app-authentication-database-method",
+                    "commands-legacy/on-rest-authentication-database-method",
+                    "commands-legacy/on-server-close-connection-database-method",
+                    "commands-legacy/on-server-open-connection-database-method",
+                    "commands-legacy/on-server-shutdown-database-method",
+                    "commands-legacy/on-server-startup-database-method",
+                    "commands-legacy/on-sql-authentication-database-method",
+                    "commands-legacy/on-startup-database-method",
+                    "commands-legacy/on-system-event-database-method",
+                    "commands-legacy/on-web-authentication-database-method",
+                    "commands-legacy/on-web-connection-database-method",
+                    "commands-legacy/on-web-legacy-close-session-database-method"
+              ]
+            }
           ]
         },
         "code-editor/write-class-method",
-          "Project/components",
-          "Project/compiler",
+        "Project/components",
+        "Project/compiler",
         {
           type: "category",
           label: "Settings",
@@ -271,7 +307,7 @@ module.exports =
             title: "Processes",
             slug: "/category/processes",
             keywords: [
-              "feaprocessestures"
+              "process"
             ],
             image: "/img/docusaurus.png"
           },
@@ -279,37 +315,6 @@ module.exports =
             "Develop/processes",
             "Develop/preemptive-processes",
             "Develop/async"
-          ]
-        },
-        "Project/project-method-properties",
-        {
-          type: "category",
-          label: "Database Methods",
-          link: {
-            type: "generated-index",
-            title: "Database Methods",
-            slug: "/category/database-methods",
-            image: "/img/docusaurus.png"
-          },
-          items: [
-           "commands-legacy/on-backup-shutdown-database-method",
-                "commands-legacy/on-backup-startup-database-method",
-                "commands-legacy/on-drop-database-method",
-                "commands-legacy/on-exit-database-method",
-                "commands-legacy/on-host-database-event-database-method",
-                "commands-legacy/on-mobile-app-action-database-method",
-                "commands-legacy/on-mobile-app-authentication-database-method",
-                "commands-legacy/on-rest-authentication-database-method",
-                "commands-legacy/on-server-close-connection-database-method",
-                "commands-legacy/on-server-open-connection-database-method",
-                "commands-legacy/on-server-shutdown-database-method",
-                "commands-legacy/on-server-startup-database-method",
-                "commands-legacy/on-sql-authentication-database-method",
-                "commands-legacy/on-startup-database-method",
-                "commands-legacy/on-system-event-database-method",
-                "commands-legacy/on-web-authentication-database-method",
-                "commands-legacy/on-web-connection-database-method",
-                "commands-legacy/on-web-legacy-close-session-database-method"
           ]
         },
         "Develop-legacy/transactions",
