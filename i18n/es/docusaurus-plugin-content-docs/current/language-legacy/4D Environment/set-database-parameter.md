@@ -1043,23 +1043,6 @@ Tenga en cuenta que este parámetro define todos los consejos 4D, es decir, los 
 
 
 
-### Use legacy network layer (87)
-
-**Alcance:** 4D en modo local, 4D Server**
-
-**Se conserva entre dos sesiones:** sí
-
-**Descripción:** fija u obtiene el estado actual de la capa de red antigua para las conexiones cliente/servidor. La capa de red antigua es obsoleta a partir de 4D v14 R5 y debe ser reemplazada progresivamente en sus aplicaciones por la capa de red   *ServerNet*. *ServerNet* será requerida en próximas versiones 4D con el fin de beneficiarse de las futuras evoluciones de la red. Por razones de compatibilidad, la capa de red antigua aún se soporta para permitir una transición sin problemas para las aplicaciones existentes; (se usa por defecto en aplicaciones convertidas de una versión anterior a v14 R5). Pase 1 en este parámetro para utilizar la capa de red antigua (y desactivar *ServerNet*) para las conexiones cliente/servidor, y pase 0 para deshabilitar la red antigua (y utilizar *ServerNet*).
-
-Esta propiedad también se puede definir mediante la opción "Usar capa de red antigua " que se encuentran en *Página Compatibilidad* de las Propiedades de la base (ver *Opciones red y cliente-servidor*). En esta sección, también puede encontrar una discusión sobre la estrategia de migración. Le recomendamos que active *ServerNet* tan pronto como sea posible. Deberá reiniciar la aplicación para que este parámetro sea tenido en cuenta. No está disponible en 4D Server v14 R5 64-bit versión para macOS, que sólo soporta el *ServetNet*; (siempre devuelve 0).
-
-**Valores posibles:** 0 o 1 (0 = no utilizan capa de red antigua, 1 = uso capa de red antigua)
-
-**Valor por defecto:** 0 en bases de datos creadas con 4D v14 R5 o superior, 1 en bases de datos convertidas de 4D v14 R4 o anteriores.
-
-
-
-
 ### User param value (108)
 
 **Alcance**: 4D local, 4D Server
@@ -1077,7 +1060,7 @@ Cuando se utiliza con [SET DATABASE PARAMETER](../commands/set-database-paramete
 
 :::nota
 
-* El parámetro *tabla* sólo es utilizado por los selectores 31, 46 y 47\. En todos los demás casos, se ignora si se pasa.
+* El parámetro *table* sólo es utilizado por los selectores 31, 46 y 47\. En todos los demás casos, se ignora si se pasa.
 * Si no se mantiene una configuración constante entre sesiones, pero desea asegurarse de que se aplique, debe ejecutarla en o [Método base On Server Startup](../commands/metodo-base-on-server-startup).
 
 :::
@@ -1121,7 +1104,7 @@ Este ejemplo forza temporalmente la ejecución de un comando búsqueda por fórm
  SET DATABASE PARAMETER([table1];Query By Formula On Server;curVal) //Reestablece la configuración actual
 ```
 
-#### Ejemplo 3 
+#### Ejemplo 3
 
 Usted quiere exportar datos en JSON que contienen una fecha 4D convertida. Note que la conversión ocurre cuando la fecha se guarda en el objeto, debe llamar al comando [SET DATABASE PARAMETER](../commands/set-database-parameter) antes de llamar a [OB SET](../commands/ob-set): 
 
