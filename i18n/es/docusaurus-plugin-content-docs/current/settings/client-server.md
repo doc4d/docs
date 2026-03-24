@@ -51,8 +51,9 @@ Para actualizar las otras máquinas clientes que no estén conectadas, basta con
 
 - **SQL Server**: 19812 por defecto (puede modificarse a través de la página "SQL/Configuración" de las Preferencias).
 - **Servidor de aplicaciones**: 19813 por defecto (puede modificarse a través de la página "Cliente-Servidor/Configuración" de las Preferencias, ver arriba).
-- **Servidor DB4D** (servidor de base de datos): 19814 por defecto. Este número de puerto no se puede modificar directamente, pero siempre consiste en el número de puerto del servidor de aplicaciones + 1. Cuando un cliente 4D se conecta a 4D Server, utiliza el puerto TCP del servidor de aplicaciones (19813 o el puerto indicado después de los dos puntos ':' en la dirección IP mostrada en la caja de diálogo de conexión). La conexión a otros servidores a través de sus respectivos puertos es entonces automática; ya no es necesario especificarlos.\
-  Tenga en cuenta que en caso de acceso a través de un enrutador o un cortafuegos, los tres puertos TCP deben abrirse explícitamente.
+- **Servidor DB4D** (servidor de base de datos): 19814 por defecto. Este número de puerto no se puede modificar directamente, pero siempre consiste en el número de puerto del servidor de aplicaciones + 1.
+Cuando un cliente 4D se conecta a 4D Server, utiliza el puerto TCP del servidor de aplicaciones (19813 o el puerto indicado después de los dos puntos ':' en la dirección IP mostrada en la caja de diálogo de conexión). La conexión a otros servidores a través de sus respectivos puertos es entonces automática; ya no es necesario especificarlos.\
+Tenga en cuenta que en caso de acceso a través de un enrutador o un cortafuegos, los tres puertos TCP deben abrirse explícitamente.
 - [**Depurador remoto**](../Debugging/debugging-remote.md): 19815 por defecto. Este número de puerto no puede modificarse directamente, pero siempre consta del número de puerto del servidor de aplicaciones + 2.
 
 #### Autenticación del usuario con el servidor de dominio
@@ -66,25 +67,29 @@ Cuando la autenticación única (SSO) está activa (ver arriba), debe llenar est
 #### Capa de red
 
 Esta caja desplegable contiene 3 opciones de capa de red a elegir entre: **legacy**, **ServerNet** y **QUIC** (sólo en modo proyecto), que se utilizan para manejar las comunicaciones entre 4D Server y las máquinas 4D remotas (clientes).
-
-- **Legal**: esta antigua capa de red "Legal" sigue siendo soportada para garantizar la compatibilidad de las bases de datos creadas antes de la v15. Esta capa de red también puede habilitarse por programación utilizando el comando [SET DATABASE PARAMETER](../commands/set-database-parameter).
-- **ServerNet** (por defecto): activa la capa de red de ServerNet en el servidor (disponible desde 4D v15).
+- **ServerNet** (única opción disponible para bases de datos binarias): activa la capa de red de ServerNet en el servidor.
 - **QUIC** (disponible solo en modo proyecto): activa la capa de red QUIC en el servidor.
 
-  **Notas**:
-
-  - Al seleccionar esta opción, se anula la opción Utilizar capa de red heredada en caso de que se haya definido mediante el comando [SET DATABASE PARAMETER](../commands/set-database-parameter).
+  **Notas sobre QUIC**:
   - Puede saber si una aplicación 4D se está ejecutando con una capa de red QUIC utilizando el comando [Application info](../commands/application-info).
   - Dado que QUIC utiliza el protocolo UDP, asegúrese de que UDP está permitido en la configuración de seguridad de su red.
-  - QUIC se conecta automáticamente al puerto 19813 tanto para el servidor de aplicaciones como para el servidor DB4D.
+  - QUIC se conecta automáticamente al puerto 19813 tanto para el [servidor de aplicaciones como para el servidor DB4D](#4d-server-and-port-numbers).
   - Cuando se selecciona la opción de capa QUIC:
     - [los parámetros del tiempo de espera de las conexiones cliente-servidor](#client-server-connections-timeout) están ocultos
     - The [Encrypt Client-Server communication checkbox](#encrypt-client-server-communications) is hidden (QUIC communications are always in TLS, whatever your secured mode is).
-  - **Compatibility**: You need to deploy your client/server applications with 4D 20 or higher before switching to the QUIC network layer.
+  - **Compatibilidad**: Debe desplegar sus aplicaciones cliente/servidor con 4D 20 o una versión superior antes de cambiar a la capa de red QUIC.
 
 :::note
 
 En caso de modificación, deberá reiniciar la aplicación para que se tenga en cuenta el cambio. Toda aplicación cliente que estuviera conectada también debe reiniciarse para poder conectarse con la nueva capa de red.
+
+:::
+
+:::tip Publicaciones de blog relacionadas
+
+[QUIC Network Layer is Production Ready!](https://blog.4d.com/quic-network-layer-is-production-ready/)  
+[QUIC network layer: Automatic update and sleep mode](https://blog.4d.com/quic-network-layer-automatic-update-and-sleep-mode/)   
+[Work and Move with QUIC and Network Switching](https://blog.4d.com/work-and-move-with-quic-and-network-switching/)  
 
 :::
 
@@ -125,6 +130,7 @@ Este parámetro puede utilizarse para definir globalmente el modo de actualizaci
 - **Preguntar**: cuando la notificación es enviada por el servidor, se muestra una caja de diálogo en las máquinas cliente, indicando la modificación. A continuación, el usuario puede aceptar o rechazar la sincronización de la carpeta local **Resources**.\
   La carpeta **Resources** centraliza los archivos personalizados necesarios para la interfaz de la base (archivos de traducción, imágenes, etc.). Se pueden utilizar mecanismos automáticos o manuales para notificar a cada cliente cuándo se ha modificado el contenido de esta carpeta. Para más información, consulte la sección [Gestión de la carpeta Resources](https://doc.4d.com/4Dv20/4D/20/Managing-the-Resources-folder.300-6330534.en.html).
 
+
 ## Página Configuración IP
 
 ### Tabla de configuración Autorizar-Rechazar
@@ -143,4 +149,3 @@ El funcionamiento de la tabla de configuración es el siguiente:
   - Autorizar \* (y permitir todas las demás direcciones)
 
 Por defecto, 4D Server no aplica ninguna restricción de conexión: la primera línea de la tabla contiene la etiqueta Autorizar y el caracter \* (todas las direcciones).
-
