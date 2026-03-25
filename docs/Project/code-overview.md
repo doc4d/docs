@@ -46,7 +46,7 @@ To create a new class, you can:
 
 When naming classes, you should keep in mind the following rules:
 
-- A [class name](../Concepts/identifiers.md#classes) must be compliant with [property naming rules](../Concepts/iidentifiers.md#object-properties).
+- A [class name](../Concepts/identifiers.md#classes) must be compliant with [property naming rules](../Concepts/identifiers.md#object-properties).
 - Class names are case sensitive.
 - Giving the same name to a class and a database table is not recommended, in order to prevent any conflict.
 
