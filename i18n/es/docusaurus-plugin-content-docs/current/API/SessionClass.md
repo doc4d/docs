@@ -131,12 +131,12 @@ La función `.createOTP()` <!-- REF #SessionClass.createOTP().Summary -->crea un
 
 Puede definir un tiempo de espera personalizado pasando un valor en segundos en *lifespan*. Por defecto, si el parámetro *lifespan* se omite:
 
-- for web sessions, the token is created with the same lifespan as the [`.idleTimeOut`](#idletimeout) of the session.
+- para sesiones web, el token se crea con la misma duración que el [`.idleTimeOut`](#idletimeout) de la sesión.
 - para sesiones de usuarios remotos, el token se crea con una duración de 10 segundos.
 
 In web sessions, the returned token can be used in exchanges with third-party applications or websites to securely identify the session. Por ejemplo, el token OTP de sesión se puede utilizar con una aplicación de pago.
 
-In remote user sessions (and standalone sessions for test purposes), the returned token can be used by 4D to identify requests coming from the web that [share the session](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses).
+In remote user sessions (and standalone sessions for test purposes), the returned token can be used by 4D to identify requests coming from the web that [share the session](../Desktop/sessions.md#sharing-a-remote-session-for-web-accesses).
 
 Para más información sobre los tokens OTP, por favor consulte [esta sección](../WebServer/sessions.md#session-token-otp).
 
@@ -523,11 +523,11 @@ El objeto `.info` contiene las siguientes propiedades:
 | machineName      | Text          | <ul><li>Remote sessions: name of the remote machine.</li><li>Client sessions: name of the local machine.</li><li>Stored procedures session: name of the server machine.</li><li> Standalone session: name of the machine</li></ul> |
 | systemUserName   | Text          | <ul><li>Remote sessions: name of the system session opened on the remote machine.</li><li>Client sessions: name of the local system session</li><ul>                                                                               |
 | IPAddress        | Text          | <ul><li>Remote sessions: IP address of the remote machine.</li><li>Client sessions: IP address of the local machine.</li><li>Standalone session: "localhost"</li></ul>                                                             |
-| hostType         | Text          | Host type: "windows", "mac", or "browser"                                                                                                                                                                          |
+| hostType         | Text          | Tipo de host: "windows", "mac" o "browser"                                                                                                                                                                         |
 | creationDateTime | Date ISO 8601 | Fecha y hora de creación de la sesión (sesión autónoma: fecha y hora de inicio de la aplicación)                                                                                                |
 | state            | Text          | Estado de la sesión: "active", "postponed", "sleeping"                                                                                                                                                             |
 | ID               | Text          | UUID de sesión (el mismo valor que [`.id`](#id))                                                                                                                                                                |
-| persistentID     | Text          | Remote/client sessions: Session's persistent ID                                                                                                                                                                    |
+| persistentID     | Text          | Sesiones remotas servidor/clientes: ID persistente de la sesión                                                                                                                                                    |
 
 :::note
 
