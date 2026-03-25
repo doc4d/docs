@@ -56,11 +56,6 @@ End while
 
 ```
 
-### Properties
-
-- **Streamable**: no
-- **Sharable**: no
-
 
 ### FileHandle object
 
