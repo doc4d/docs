@@ -37,7 +37,7 @@ $person:=cs.Person.new("John";"Doe")
 $hello:=$person.sayHello() //"Hello John Doe"
 ```
 
-Class files are managed through the 4D Explorer (see [Creating classes](../Project/code-overview.md#creating-classes)).
+Les fichiers de classe sont gérés via l'Explorateur 4D (voir [Créer des classes](../Project/code-overview.md#creating-classes)).
 
 ## Class stores
 
