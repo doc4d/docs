@@ -35,15 +35,15 @@ The `IMAP New transporter` command <!-- REF #_command_.IMAP New transporter.Summ
 
 In the *parameter* parameter, pass an object containing the following properties:
 
-|*parameter*|Description|Default value (if omitted)|
-|---|---|---|
+|*parameter*| |Description|Default value (if omitted)|
+|---|---|---|---|
 |[<!-- INCLUDE #transporter.acceptUnsecureConnection.Syntax -->](../../API/IMAPTransporterClass.md#acceptunsecureconnection)| |<!-- INCLUDE #transporter.acceptUnsecureConnection.Summary -->|False|
 |.**accessTokenOAuth2**: Text<br/>.**accessTokenOAuth2**: Object| |Text string or token object representing OAuth2 authorization credentials. Used only with OAUTH2 `authenticationMode`. If `accessTokenOAuth2` is used but `authenticationMode` is omitted, the OAuth 2 protocol is used (if allowed by the server). Not returned in *[IMAP transporter](../../API/IMAPTransporterClass.md#imap-transporter-object)* object.|none|
 |[<!-- INCLUDE #transporter.authenticationMode.Syntax -->](../../API/IMAPTransporterClass.md#authenticationmode)| |<!-- INCLUDE #transporter.authenticationMode.Summary -->|the most secure authentication mode supported by the server is used|
 |[<!-- INCLUDE #IMAPTransporterClass.checkConnectionDelay.Syntax -->](../../API/IMAPTransporterClass.md#checkconnectiondelay)| |<!-- INCLUDE #IMAPTransporterClass.checkConnectionDelay.Summary -->|300|
 |[<!-- INCLUDE #transporter.connectionTimeOut.Syntax -->](../../API/IMAPTransporterClass.md#connectiontimeout)| |<!-- INCLUDE #transporter.connectionTimeOut.Summary -->|30|
-|[<!-- INCLUDE #transporter.host.Syntax -->](../../API/IMAPTransporterClass.md#host)| |<!-- INCLUDE #transporter.host.Summary -->|*mandatory*
-|**listener** : Object||Listener object used to handle IMAP IDLE notifications|none|
+|[<!-- INCLUDE #transporter.host.Syntax -->](../../API/IMAPTransporterClass.md#host)| |<!-- INCLUDE #transporter.host.Summary -->|*mandatory*|
+|[<!-- INCLUDE #transporter.listener.Syntax -->](../../API/IMAPTransporterClass.md#listener)||<!-- INCLUDE #transporter.listener.Summary -->|none|
 |                     |onMailCreated : 4D.function|Called when a new message is detected.|none|
 |                     |onMailDeleted : 4D.function|Called when a message is permanently deleted.|none|
 |                     |onFlagsModified : 4D.function|Called when message flags are modified.|none|

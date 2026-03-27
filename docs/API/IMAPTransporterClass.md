@@ -1160,39 +1160,23 @@ The optional *updateSeen* parameter allows you to specify if the message is mark
 <!-- REF IMAPTransporterClass.move().Desc -->
 
 
-## .listener()
+## .listener
 
 <details><summary>History</summary>
 
 |Release|Changes|
 |---|---|
-|20 R3|Added|
+|21 R3|Added|
 
 </details>
 
 <!-- REF #IMAPTransporterClass.listener.Syntax -->**.listener** : Object<!-- END REF -->
 
-<!-- REF #IMAPTransporterClass.listener.Params -->
-
-<div class="no-index">
-
-|Property|Type||Description|
-|----|--|--|---|
-|isStarted|Boolean|<-| Indicates whether the listener is started (`true`) or stopped (`false`) (read-only) |
-|.start()| 4D.function |->| Starts the notification subscription| 
-|.stop()| 4D.function |  -> | Stops the notification subscription|
-| Result| Object|  <- | Status of the operation|
-
-</div>
-<!-- END REF -->
-
 #### Description
 
-The `.listener` property <!-- REF #IMAPTransporterClass.listener.Summary -->allows you to receive IMAP IDLE notifications for the selected mailbox<!-- END REF -->.
+The `.listener` property <!-- REF #IMAPTransporterClass.listener.Summary -->allows you to handle IMAP IDLE notifications for the selected mailbox through callback functions.<!-- END REF -->.
 
-If the IMAP server supports the IDLE extension, the transporter receives notifications in real time without polling.
-
-Callback functions are defined in the `listener` object provided in the parameter of the `IMAP New transporter()` command.
+Callback functions are defined in the `listener` object provided in the *parameter* of the [`IMAP New transporter`](../commands/imap-new-transporter) command.
 
 The following callbacks are supported:
 
@@ -1203,7 +1187,32 @@ The following callbacks are supported:
 
 Callback functions are executed in the worker where `listener.start()` is called.
 
-### Event objects
+If the IMAP server supports the IDLE extension, the transporter receives notifications in real time without polling.
+
+### Listener object
+
+The listener object contains the following functions and properties:
+
+| Property | Type | | Description |
+|----------|------|:---:|-------------|
+|isStarted|Boolean|<-|Indicates whether the listener is started (`true`) or stopped (`false`) (read-only)|
+|start()|[4D.function](FunctionClass.md)|->|Starts the notification subscription|
+|stop()|[4D.function](FunctionClass.md)|->|Stops the notification subscription|
+
+#### Object returned by start and stop functions
+
+The `start()` and `stop()` functions return an object describing the IMAP operation status containing the following properties:
+
+|Property|| Type| Description|
+|---|---|---|---|
+|success||Boolean|True if the operation is successful, False otherwise|
+|statusText||Text|Status message returned by the IMAP server, or last error returned in the 4D error stack|
+|errors||Collection|4D error stack (not returned if a server response is received)|
+||\[].errcode|Number|4D error code|
+||\[].message|Text|Description of the error|
+||\[].componentSignature|Text|Signature of the component that returned the error|
+
+### Callback functions
 
 Each callback receives the following parameters:
 
@@ -1212,21 +1221,21 @@ Each callback receives the following parameters:
 | transporter | Object | Current IMAP transporter |
 | event       | Object | Event data               |
 
-#### onMailCreated
+#### onMailCreated(*transporter* : Object; *event* : Object)
 
 | Property        | Type    | Description                       |
 | --------------- | ------- | --------------------------------- |
 | event.type      | Text    | `"mailCreated"`                   |
 | event.mailCount | Integer | Number of messages in the mailbox |
 
-#### onMailDeleted
+#### onMailDeleted(*transporter* : Object; *event* : Object)
 
 | Property        | Type    | Description             |
 | --------------- | ------- | ----------------------- |
 | event.type      | Text    | `"mailDeleted"`         |
 | event.msgNumber | Integer | Message sequence number |
 
-#### onFlagsModified
+#### onFlagsModified(*transporter* : Object; *event* : Object)
 
 | Property        | Type       | Description             |
 | --------------- | ---------- | ----------------------- |
@@ -1234,7 +1243,7 @@ Each callback receives the following parameters:
 | event.msgNumber | Integer    | Message sequence number |
 | event.flags     | Collection | Updated flags           |
 
-#### onMailboxStateModified
+#### onMailboxStateModified(*transporter* : Object; *event* : Object)
 
 | Property          | Type    | Description                                                                            |
 | ----------------- | ------- | -------------------------------------------------------------------------------------- |
@@ -1243,31 +1252,77 @@ Each callback receives the following parameters:
 | state.unseen      | Integer | Number of unseen messages                                                              |
 | state.UIDValidity | Text    | Mailbox unique identifier. If this value changes, a full resynchronization is required |
 
-### Returned object (start/stop)
-
-The `start()` and `stop()` functions return an object describing the IMAP status containing the following properties:
-
-| Property | | Type | Description |
-|----|--|--|---|
-|success    | |Boolean| True if the operation is successful, False otherwise | 
-|statusText | | Text  | Status message returned by the IMAP server, or last error returned in the 4D error stack |
-|errors| | Collection | 4D error stack (not returned if a server response is received) |
-| |[].errcode| Number | 4D error code |
-| |[].message| Text | Description of the error |
-| |[].componentSignature| Text | Signature of the component that returned the error |
-
-### Example
+#### Example
+ 
+The following example shows how to use a project class to centralize IMAP listener callbacks:
 
 ```4d
-	var $param : Object:=InitTransporter()
+	// Class IMAPListener
+property myTransporter : 4D.IMAPTransporter
+
+Class constructor ($IMAPParameter : Object; $box : Text)
 	
-	$param.listener:={}
-	$param.listener.onMailCreated:=Formula(ALERT("new mail created!"))
-	$param.listener.onMailDeleted:=Formula(ALERT("Mail deleted!"))
+	// Initialize the listener object in the parameters
+	// This allows attaching event callbacks
+	$IMAPParameter.listener:=This
 	
-	Form.transporter:=IMAP New transporter($param)
+	// Create the IMAP transporter with the configured parameters
+	This.myTransporter:=IMAP New transporter($IMAPParameter)
 	
-	Form.transporter.listener.start()
+	// Select the mailbox to monitor (mandatory)
+	This.myTransporter.selectBox($box)
+	
+
+// Triggered when a new email is created on the server
+Function onMailCreated($transporter : 4D.IMAPTransporter; $event : Object)
+
+	ALERT("You have a new mail!")
+	
+// Triggered when an email is deleted
+Function onMailDeleted($transporter : 4D.IMAPTransporter; $event : Object)
+	
+	ALERT("Message deleted")
+
+// Triggered when message flags change (e.g., read/unread)
+Function onFlagsModified($transporter : 4D.IMAPTransporter; $event : Object)
+	
+	ALERT("Flag modified")
+	
+// Triggered when the mailbox global state changes
+Function onMailboxStateModified($transporter : 4D.IMAPTransporter; $event : Object)
+	
+	ALERT("Mailbox modified")
+
+// Starts IMAP listener (server-side IDLE mode)
+Function start()
+	
+	var $result:=This.myTransporter.listener.start()
+	
+	// Check if the operation succeeded
+	If (Not($result.success))
+		TRACE 
+	End if 
+
+// Stops IMAP listener
+Function stop()
+	
+	var $result:=This.myTransporter.listener.stop()
+	
+	// Check if the stop operation succeeded
+	If (Not($result.success))
+		TRACE
+	End if 
+```
+In this example, `InitIMAPParameters()` is a project method returning the IMAP connection parameters.
+
+Start the listener when needed in your code:
+
+```4d
+// Instanciate the IMAPlistener class
+var $IMAPlistener:=cs.IMAPlistener.new(InitIMAPParameters(); "INBOX")
+// Start the listeners
+$IMAPlistener.start()
+
 ```
 
 ## .move()
