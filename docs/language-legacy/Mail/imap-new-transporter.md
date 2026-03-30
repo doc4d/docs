@@ -44,14 +44,61 @@ In the *parameter* parameter, pass an object containing the following properties
 |[<!-- INCLUDE #transporter.connectionTimeOut.Syntax -->](../../API/IMAPTransporterClass.md#connectiontimeout)| |<!-- INCLUDE #transporter.connectionTimeOut.Summary -->|30|
 |[<!-- INCLUDE #transporter.host.Syntax -->](../../API/IMAPTransporterClass.md#host)| |<!-- INCLUDE #transporter.host.Summary -->|*mandatory*|
 |[<!-- INCLUDE #transporter.listener.Syntax -->](../../API/IMAPTransporterClass.md#listener)||<!-- INCLUDE #transporter.listener.Summary -->|none|
-|                     |onMailCreated : 4D.function|Called when a new message is detected.|none|
-|                     |onMailDeleted : 4D.function|Called when a message is permanently deleted.|none|
-|                     |onFlagsModified : 4D.function|Called when message flags are modified.|none|
-|                     |onMailboxStateModified : 4D.function|Called when the mailbox state is modified.|none|
+|                     |.onMailCreated : 4D.function|Called when a new message is detected.|none|
+|                     |.onMailDeleted : 4D.function|Called when a message is permanently deleted.|none|
+|                     |.onFlagsModified : 4D.function|Called when message flags are modified.|none|
+|                     |.onMailboxStateModified : 4D.function|Called when the mailbox state is modified.|none|
 |[<!-- INCLUDE #transporter.logFile.Syntax -->](../../API/IMAPTransporterClass.md#logfile)| |<!-- INCLUDE #transporter.logFile.Summary -->|none|
 |.**password** : Text| |User password for authentication on the server. Not returned in *[IMAP transporter](../../API/IMAPTransporterClass.md#imap-transporter-object)* object.|none|
 |[<!-- INCLUDE #transporter.port.Syntax -->](../../API/IMAPTransporterClass.md#port)| |<!-- INCLUDE #transporter.port.Summary -->|993|
 |[<!-- INCLUDE #transporter.user.Syntax -->](../../API/IMAPTransporterClass.md#user)| |<!-- INCLUDE #transporter.user.Summary -->|none|
+
+### listener callbacks
+
+When the `listener` property is provided in the *parameter* object, the following callback functions are supported:
+
+* `onMailCreated`: triggered when a new message is added to the mailbox
+* `onMailDeleted`: triggered when a message is permanently deleted
+* `onFlagsModified`: triggered when message flags are modified
+* `onMailboxStateModified`: triggered when the mailbox state changes
+
+Each callback receives the following parameters:
+
+|Parameter|Type|Description|
+|---|---|---|
+|transporter|Object|Current IMAP transporter|
+|event|Object|Event data|
+
+#### onMailCreated(*transporter* : Object; *event* : Object)
+
+|Property|Type|Description|
+|---|---|---|
+|event.type|Text|`"mailCreated"`|
+|event.mailCount|Integer|Number of messages in the mailbox|
+
+#### onMailDeleted(*transporter* : Object; *event* : Object)
+
+|Property|Type|Description|
+|---|---|---|
+|event.type|Text|`"mailDeleted"`|
+|event.msgNumber|Integer|Message sequence number|
+
+#### onFlagsModified(*transporter* : Object; *event* : Object)
+
+|Property|Type|Description|
+|---|---|---|
+|event.type|Text|`"FlagsModified"`|
+|event.msgNumber|Integer|Message sequence number|
+|event.flags|Collection|Updated flags|
+
+#### onMailboxStateModified(*transporter* : Object; *event* : Object)
+
+|Property|Type|Description|
+|---|---|---|
+|event.type|Text|`"MailboxStateModified"`|
+|event.state|Object|Mailbox state|
+|state.unseen|Integer|Number of unseen messages|
+|state.UIDValidity|Text|Mailbox unique identifier. If this value changes, a full resynchronization is required|
 
 >**Warning**: Make sure the defined timeout is lower than the server timeout, otherwise the client timeout will be useless.
 

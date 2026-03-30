@@ -1174,16 +1174,9 @@ The optional *updateSeen* parameter allows you to specify if the message is mark
 
 #### Description
 
-The `.listener` property <!-- REF #IMAPTransporterClass.listener.Summary -->allows you to handle IMAP IDLE notifications for the selected mailbox through callback functions.<!-- END REF -->.
+The `.listener` property <!-- REF #IMAPTransporterClass.listener.Summary -->allows you to handle IMAP IDLE notifications for the selected mailbox through callback functions.<!-- END REF -->
 
 Callback functions are defined in the `listener` object provided in the *parameter* of the [`IMAP New transporter`](../commands/imap-new-transporter) command.
-
-The following callbacks are supported:
-
-* `onMailCreated`: triggered when a new message is added to the mailbox
-* `onMailDeleted`: triggered when a message is permanently deleted
-* `onFlagsModified`: triggered when message flags are modified
-* `onMailboxStateModified`: triggered when the mailbox state changes
 
 Callback functions are executed in the worker where `listener.start()` is called.
 
@@ -1212,66 +1205,12 @@ The `start()` and `stop()` functions return an object describing the IMAP operat
 ||\[].message|Text|Description of the error|
 ||\[].componentSignature|Text|Signature of the component that returned the error|
 
-### Callback functions
-
-Each callback receives the following parameters:
-
-| Parameter   | Type   | Description              |
-| ----------- | ------ | ------------------------ |
-| transporter | Object | Current IMAP transporter |
-| event       | Object | Event data               |
-
-#### onMailCreated(*transporter* : Object; *event* : Object)
-
-| Property        | Type    | Description                       |
-| --------------- | ------- | --------------------------------- |
-| event.type      | Text    | `"mailCreated"`                   |
-| event.mailCount | Integer | Number of messages in the mailbox |
-
-#### onMailDeleted(*transporter* : Object; *event* : Object)
-
-| Property        | Type    | Description             |
-| --------------- | ------- | ----------------------- |
-| event.type      | Text    | `"mailDeleted"`         |
-| event.msgNumber | Integer | Message sequence number |
-
-#### onFlagsModified(*transporter* : Object; *event* : Object)
-
-| Property        | Type       | Description             |
-| --------------- | ---------- | ----------------------- |
-| event.type      | Text       | `"FlagsModified"`       |
-| event.msgNumber | Integer    | Message sequence number |
-| event.flags     | Collection | Updated flags           |
-
-#### onMailboxStateModified(*transporter* : Object; *event* : Object)
-
-| Property          | Type    | Description                                                                            |
-| ----------------- | ------- | -------------------------------------------------------------------------------------- |
-| event.type        | Text    | `"MailboxStateModified"`                                                               |
-| event.state       | Object  | Mailbox state                                                                          |
-| state.unseen      | Integer | Number of unseen messages                                                              |
-| state.UIDValidity | Text    | Mailbox unique identifier. If this value changes, a full resynchronization is required |
-
 #### Example
  
-The following example shows how to use a project class to centralize IMAP listener callbacks:
+The following example shows how to define a project class for IMAP listener callbacks:
 
 ```4d
 	// Class IMAPListener
-property myTransporter : 4D.IMAPTransporter
-
-Class constructor ($IMAPParameter : Object; $box : Text)
-	
-	// Initialize the listener object in the parameters
-	// This allows attaching event callbacks
-	$IMAPParameter.listener:=This
-	
-	// Create the IMAP transporter with the configured parameters
-	This.myTransporter:=IMAP New transporter($IMAPParameter)
-	
-	// Select the mailbox to monitor (mandatory)
-	This.myTransporter.selectBox($box)
-	
 
 // Triggered when a new email is created on the server
 Function onMailCreated($transporter : 4D.IMAPTransporter; $event : Object)
@@ -1292,36 +1231,24 @@ Function onFlagsModified($transporter : 4D.IMAPTransporter; $event : Object)
 Function onMailboxStateModified($transporter : 4D.IMAPTransporter; $event : Object)
 	
 	ALERT("Mailbox modified")
-
-// Starts IMAP listener (server-side IDLE mode)
-Function start()
-	
-	var $result:=This.myTransporter.listener.start()
-	
-	// Check if the operation succeeded
-	If (Not($result.success))
-		TRACE 
-	End if 
-
-// Stops IMAP listener
-Function stop()
-	
-	var $result:=This.myTransporter.listener.stop()
-	
-	// Check if the stop operation succeeded
-	If (Not($result.success))
-		TRACE
-	End if 
 ```
-In this example, `InitIMAPParameters()` is a project method returning the IMAP connection parameters.
 
-Start the listener when needed in your code:
+You can then start the listener when needed in your code:
 
 ```4d
-// Instanciate the IMAPlistener class
-var $IMAPlistener:=cs.IMAPlistener.new(InitIMAPParameters(); "INBOX")
+var $parameter:={}
+$parameter.authenticationMode:=IMAP authentication OAUTH2 // Using OAuth2 for authentication
+$parameter.host:="Outlook.office365.com" // IMAP server host
+$parameter.port:=993 // IMAP SSL port
+$parameter.accessTokenOAuth2 := $myToken // Token received from the OAuth server
+$parameter.user:="myadress@email.com" // User email address
+// listener Initialization 
+$parameter.listener :=cs.IMAPListener.new()
+
+// Instantiate the IMAPListener class
+var $myTransporter:=IMAP New transporter($parameter)
 // Start the listeners
-$IMAPlistener.start()
+$myTransporter.listener.start()
 
 ```
 
