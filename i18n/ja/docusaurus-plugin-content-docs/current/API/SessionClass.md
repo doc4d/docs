@@ -435,7 +435,7 @@ End if
 
 `.id` プロパティは、<!-- REF #SessionClass.id.Summary -->ユーザーセッションの固有のID を格納しています<!-- END REF -->。
 
-4D Server ではこの一意の文字列は、サーバーによって各セッションに対して自動的に割り当てられ、そのプロセスを識別することを可能にします。 It is available in both the `Session` on the server side and on the client side.
+4D Server ではこの一意の文字列は、サーバーによって各セッションに対して自動的に割り当てられ、そのプロセスを識別することを可能にします。 サーバー側とクライアント側の、両方の `Session` から利用可能です。
 
 :::tip
 
@@ -508,7 +508,7 @@ End if
 
 #### 説明
 
-The `.info` property <!-- REF #SessionClass.info.Summary -->describes the session<!-- END REF -->.
+`.info` プロパティは、<!-- REF #SessionClass.info.Summary -->セッションの情報を格納します<!-- END REF -->。
 
 - **Remote user sessions** and **Stored procedure sessions**: The `.info` object is the same object as the one returned in the "session" property by the [`Process activity`](../commands/process-activity) command.
 - **スタンドアロンセッションの場合**: `.info` オブジェクトは、[`Session info`](../commands/session-info) コマンドで返されるものと同じオブジェクトです。
