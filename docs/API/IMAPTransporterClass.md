@@ -1241,7 +1241,7 @@ $parameter.authenticationMode:=IMAP authentication OAUTH2 // Using OAuth2 for au
 $parameter.host:="Outlook.office365.com" // IMAP server host
 $parameter.port:=993 // IMAP SSL port
 $parameter.accessTokenOAuth2 := $myToken // Token received from the OAuth server
-$parameter.user:="myadress@email.com" // User email address
+$parameter.user:="myaddress@email.com" // User email address
 // listener Initialization 
 $parameter.listener :=cs.IMAPListener.new()
 
