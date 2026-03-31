@@ -29,10 +29,10 @@ Some data is also collected at regular intervals.
 |Data|Type|Notes|
 |---|----|---|
 | appServer | Object | Object containing application server information |
-| appServer.hits | Number | Number of requests from internal processes during the data collection |
-| appServer.bytesIn | Number | Bytes received by internal processes during the data collection |
-| appServer.bytesOut | Number | Bytes sent by internal processes during the data collection  |
-| appServer.executionTime | Number | CPU execution time for internal processes during the data collection  |
+| appServer.hits | Number | Number of requests from internal processes  |
+| appServer.bytesIn | Number | Bytes received by internal processes  |
+| appServer.bytesOut | Number | Bytes sent by internal processes   |
+| appServer.executionTime | Number | CPU execution time for internal processes  |
 |cacheMissBytes|Object|Number of bytes missed from cache |
 |cacheMissCount|Object|Number of reads missed in the cache |
 |cacheReadBytes|Object|Number of bytes read from cache|
@@ -56,15 +56,11 @@ Some data is also collected at regular intervals.
 |databases[].remoteDebugger4DRemoteAttachments|Number|Number of attachments to the remote debugger from a remote 4D|
 |databases[].remoteDebuggerQodlyAttachments|Number|Number of attachments to the remote debugger from Qodly|
 |databases[].remoteDebuggerVSCodeAttachments|Number|Number of attachments to the remote debugger from VS Code|
-|databases[].restMaxLicensedSessions|Number|Maximum number of REST web sessions on the server that use the REST license|
-|databases[].restMaxUnlicensedSessions|Number|Maximum number of other REST web sessions on the server|
 |databases[].structureHash|Text||
 |databases[].uniqueID|Text (hashed string)|Unique id associated to the database (*Polynomial Rolling hash of the database name*)|
 |databases[].uptime|Number|Time elapsed (in seconds) between two collection events|
 |databases[].uuid|Text|Database UUID|
 |databases[].webIPAddressesNumber|Number|Number of different IP addresses that made a request to 4D Server |
-|databases[].webMaxLicensedSessions|Number|Maximum number of non-REST web sessions on the server that use the webserver license|
-|databases[].webMaxUnlicensedSessions|Number|Maximum number of other non-REST web sessions on the server|
 |databases[].webMaxScalableSessions|Number|Maximum number of scalable sessions on the server |
 |databases[].webScalableSessions|Boolean|True if scalable sessions are activated |
 |dataSegment1.diskReadBytes|Object|Number of bytes read in the data file |
@@ -73,10 +69,10 @@ Some data is also collected at regular intervals.
 |dataSegment1.diskWriteCount|Object|Number of writes in the data file |
 |dataSize|Number|Data file size in bytes|
 | dbServer | Object | Object containing DB4D server information |
-| dbServer.hits | Number | Number of requests from internal processes during the data collection |
-| dbServer.bytesIn | Number | Bytes received by internal processes during the data collection |
-| dbServer.bytesOut | Number | Bytes sent by internal processes during the data collection |
-| dbServer.executionTime | Number | CPU execution time for internal processes during the data collection  |
+| dbServer.hits | Number | Number of requests from internal processes |
+| dbServer.bytesIn | Number | Bytes received by internal processes  |
+| dbServer.bytesOut | Number | Bytes sent by internal processes  |
+| dbServer.executionTime | Number | CPU execution time for internal processes |
 |encryptedConnections|Boolean|True if client/server connections are encrypted|
 |externalPHP|Boolean|True if the client performs a call to `PHP execute` and uses its own version of php |
 |general.buildNumber|Number|Build number of the 4D application|
@@ -110,36 +106,35 @@ Some data is also collected at regular intervals.
 |phpCall|Number|Number of calls to `PHP execute` |
 |QueryBySQL|Number|Number of calls to `QUERY BY SQL`|
 | restServer | Object | Object containing REST server information |
-| restServer.bytesIn | Number | Bytes received by the REST server during the data collection  |
-| restServer.bytesOut | Number | Bytes sent by the REST server during the data collection |
-| restServer.hits | Number | Number of hits on the REST server during the data collection |
-| restServer.executionTime | Number | CPU execution time on the REST WEB server during the data collection |
+| restServer.bytesIn | Number | Bytes received by the REST server   |
+| restServer.bytesOut | Number | Bytes sent by the REST server  |
+| restServer.hits | Number | Number of hits on the REST server  |
+| restServer.executionTime | Number | CPU execution time for  the REST WEB server  |
 | soapServer | Object | Object containing SOAP server information |
-| soapServer.bytesIn | Number | Bytes received by the SOAP server during the data collection |
-| soapServer.bytesOut | Number | Bytes sent by the SOAP server during the data collection |
-| soapServer.hits | Number | Number of hits on the SOAP server during the data collection |
-| soapServer.executionTime | Number | CPU execution time on the SOAP server during the data collection|
+| soapServer.bytesIn | Number | Bytes received by the SOAP server  |
+| soapServer.bytesOut | Number | Bytes sent by the SOAP server  |
+| soapServer.hits | Number | Number of hits on the SOAP server  |
+| soapServer.executionTime | Number | CPU execution time for the SOAP server |
 |SQLBeginEndStatement|Number|Number of uses of `Begin SQL` / `End SQL`|
 |SQLLoginInternal|Number|Number of calls to `SQL LOGIN` using SQL_INTERNAL|
-|SQLServer|Number|Number of SQL requests through the network|
 | sqlServer | Object | Object containing SQL server information |
-| sqlServer.hits | Number | Number of SQL queries executed during the data collection |
-| sqlServer.bytesIn | Number | Bytes received by the SQL engine during the data collection |
-| sqlServer.bytesOut | Number | Bytes sent by the SQL engine during the data collection |
-| sqlServer.executionTime | Number | CPU execution time for SQL queries during the data collection |
+| sqlServer.hits | Number | Number of SQL queries executed  |
+| sqlServer.bytesIn | Number | Bytes received by the SQL engine  |
+| sqlServer.bytesOut | Number | Bytes sent by the SQL engine  |
+| sqlServer.executionTime | Number | CPU execution time for SQL queries |
 |usingQUICNetworkLayer|Boolean|True if the database uses the QUIC network layer|
 | totalExecutionTime | Number | Total CPU execution time: sum of all request types |
 | totalRequests | Number | Total requests: sum of web, REST, SOAP, SQL, and internal traffic  |
 | webServer | Object | Object containing Web server information|
-| webServer.bytesIn | Number | Bytes received by the Web server during the data collection |
-| webServer.bytesOut | Number | Bytes sent by the Web server during the data collection  |
-| webServer.hits | Number | Number of hits on the Web server during the data collection |
-| webServer.executionTime | Number | CPU execution time on the Web server during the data collection  |
+| webServer.bytesIn | Number | Bytes received by the Web server  |
+| webServer.bytesOut | Number | Bytes sent by the Web server   |
+| webServer.hits | Number | Number of hits on the Web server  |
+| webServer.executionTime | Number | CPU execution time for the Web server   |
 | webStaticServer | Object | Object containing the static Web server information |
-| webStaticServer.bytesIn | Number | Bytes received by the static Web server during the data collection  |
-| webStaticServer.bytesOut | Number | Bytes sent by the static Web server during the data collection |
-| webStaticServer.hits | Number | Number of hits on the static Web server during the data collection  |
-| webStaticServer.executionTime | Number | CPU execution time on the static Web server during the data collection |
+| webStaticServer.bytesIn | Number | Bytes received by the static Web server   |
+| webStaticServer.bytesOut | Number | Bytes sent by the static Web server  |
+| webStaticServer.hits | Number | Number of hits on the static Web server   |
+| webStaticServer.executionTime | Number | CPU execution time for the static Web server  |
 
 
 
