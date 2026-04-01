@@ -5,7 +5,7 @@ title: Dependencies
 
 The 4D [project architecture](../Project/architecture.md) is modular. You can provide additional functionalities to your 4D projects by installing [**components**](Concepts/components.md) and [**plug-ins**](../Concepts/plug-ins.md). Components are made of 4D code, while plug-ins can be [built using any language](../Extensions/develop-plug-ins.md). 
 
-You can [develop](../Extensions/develop-components.md) and [build](../Desktop/building.md) your own 4D components, or download public components shared by the 4D community that [can be found on GitHub](https://github.com/topics/4d-component) or [GitLab](https://gitlab.com).
+You can [develop](../Extensions/develop-components.md) and [build](../Desktop/building.md) your own 4D components, or download public components shared by the 4D community that [can be found for example on GitHub](https://github.com/topics/4d-component).
 
 
 Once installed in your 4D environment, extensions are handled as **dependencies** with specific properties. 
@@ -13,9 +13,6 @@ Once installed in your 4D environment, extensions are handled as **dependencies*
 
 
 ## Interpreted and compiled components
-
-
-When developing in 4D, the component files can be transparently stored in your computer or on a Github repository.
 
 Components can be interpreted or [compiled](../Desktop/building.md). 
 
@@ -40,6 +37,7 @@ The "Contents" folder architecture is recommended for components if you want to 
 
 ## Component Locations
 
+When developing in 4D, the component files can be transparently stored in your computer or downloa external Github or GitLab repository.
 
 :::note
 
@@ -61,7 +59,7 @@ Components declared in the **dependencies.json** file can be stored at different
 
 - at the same level as your 4D project's package folder: this is the default location,
 - anywhere on your machine: the component path must be declared in the **environment4d.json** file
-- on a GitHub repository: the component path can be declared in the **dependencies.json** file or in the **environment4d.json** file, or in both files.
+- on a GitHub or GitLab repository: the component path can be declared in the **dependencies.json** file or in the **environment4d.json** file, or in both files (a [local cache](#local-cache-for-dependencies) is then handled automatically).
 
 If the same component is installed at different locations, a [priority order](#priority) is applied.  
 
@@ -78,7 +76,7 @@ The **dependencies.json** file references all components required in your 4D pro
 It can contain:
 
 - names of components [stored locally](#local-components) (default path or path defined in an **environment4d.json** file),
-- names of components [stored on GitHub repositories](#components-stored-on-github) (their path can be defined in this file or in an **environment4d.json** file).
+- names of components [stored on GitHub or GitLab repositories](#components-stored-on-git-hosting-platforms) (their path can be defined in this file or in an **environment4d.json** file).
 
 
 #### environment4d.json
@@ -88,7 +86,7 @@ The **environment4d.json** file is optional. It allows you to define **custom pa
 The main benefits of this architecture are the following:
 
 - you can store the **environment4d.json** file in a parent folder of your projects and decide not to commit it, allowing you to have your local component organization.
-- if you want to use the same GitHub repository for several of your projects, you can reference it in the **environment4d.json** file and declare it in the **dependencies.json** file.
+- if you want to use the same GitHub or GitLab repository for several of your projects, you can reference it in the **environment4d.json** file and declare it in the **dependencies.json** file.
 
 
 ### Priority
@@ -191,46 +189,75 @@ Absolute paths should only be used for components that are specific to one machi
 
 
 
-### Components stored on GitHub
+### Components stored on Git hosting platforms {#components-stored-on-git-hosting-platforms}
 
-4D components available as GitHub releases can be referenced and automatically loaded and updated in your 4D projects.
+4D components available as **releases** on GitHub and GitLab platforms can be referenced and automatically loaded and updated in your 4D projects.
 
 :::note
 
-Regarding components stored on GitHub, both [**dependencies.json**](#dependenciesjson) and [**environment4d.json**](#environment4djson) files support the same contents.
+Regarding components stored on GitHub or GitLab, both [**dependencies.json**](#dependenciesjson) and [**environment4d.json**](#environment4djson) files support the same contents.
 
 :::
 
+To be able to directly reference and use a 4D component stored on GitHub or GitLab, you need to configure the component's repository. 
 
-#### Configuring the GitHub repository
 
-To be able to directly reference and use a 4D component stored on GitHub, you need to configure the GitHub component's repository:
+#### Configuring a GitHub repository
 
-- Compress the component files in ZIP format.
-- Name this archive with the same name as the GitHub repository.
+1. Compress the component files in ZIP format.
+2. Name this archive with the same name as the GitHub repository. For example, for a "my-4D-Component" repository, the archive must be named "my-4D-Component.zip".
 - Integrate the archive into a [GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) of the repository.
 
 These steps can easily be automated, with 4D code or using GitHub Actions, for example.
+
+#### Configuring a GitLab repository
+
+Unlike GitHub, GitLab does not upload files in a release. Release assets are links (URLs), GitLab only stores the name and URL of assets. Every release automatically includes source code archives generated from the Git tag. You need to provide your component's zip file as a link to any location or by using the Package Registry (see note). 
+
+1. Upload the component's ZIP file somewhere.
+2. Create a [GitLab release](https://docs.gitlab.com/user/project/releases/) for your component, including the link to your component's file as release asset.
+
+The asset name is typically the project name or an artifact name.
+
+:::note Using the Package Registry
+
+The Package Registry allows you to host your files in GitLab itself. Its main advantages include an authenticated access, stable and versioned urls, and the ability to associate binairies with release tags. To use the Package Registry:
+1. Build your file (for example: MyComponent.zip)
+2. Upload it to the Generic Package Registry using a script (see [this example with 4D language](https://gist.github.com/e-marchand/b218af0cca0d23f9b0399f42f282221f))
+3. **Deploy** \> **Package Registry** to see the result. 
+4. Use the package URL as a release asset link.
+5. Associate it with the same Git tag.
+
+:::
+
 
 #### Declaring paths
 
 
 You declare a component stored on GitHub in the [**dependencies.json** file](#dependenciesjson) in the following way:
 
-```json
+```json title="dependencies.json"
 {
 	"dependencies": {
 		"myGitHubComponent1": {
 			"github" : "JohnSmith/myGitHubComponent1"
+		},
+		"myGitLabComponent1": {
+			"gitlab" : "JohnSmith/myGitLabComponent1"
+		},
+		"myPrivateGitLabComponent": {
+			"gitlab" : "JohnSmith/myPrivateGitLabComponent",
+			"host" : "https://myprivate.gitlab.com"
 		},
 		"myGitHubComponent2": {}
 	}
 }
 ```
 
-... where "myGitHubComponent1" is referenced and declared for the project, although "myGitHubComponent2" is only referenced. You need to declare it in the [**environment4d.json**](#environment4djson) file:
+- By default, "gitlab" indicates a GitLab repository hosted on https://gitlab.com. Add the "host" key to declare a private GitLab self-hosted instance. 
+- "myGitHubComponent1" is referenced and declared for the project, although "myGitHubComponent2" is only referenced. You need to declare it in the [**environment4d.json**](#environment4djson) file:
 
-```json
+```json title="environment4d.json"
 {
 	"dependencies": {
 		"myGitHubComponent2": {
@@ -242,9 +269,10 @@ You declare a component stored on GitHub in the [**dependencies.json** file](#de
 
 "myGitHubComponent2" can be used by several projects.
 
+
 #### Tags and versions
 
-When a release is created in GitHub, it is associated to a **tag** and a **version**. The Dependency manager uses these information to handle automatic availability of components.
+When a release is created in GitHub or GitLab, it is associated to a **tag** and a **version**. The Dependency manager uses these information to handle automatic availability of components.
 
 :::note
 
@@ -282,7 +310,8 @@ A range is defined by two semantic versions, a min and a max, with operators '\<
 
 Here are a few examples:
 
-- "latest": the version having the “latest” badge in GitHub releases.
+- "latest": the version having the "latest" badge in GitHub releases.
+- "highest": the version having the "highest" badge in GitLab releases.
 - "*": the latest version released.
 - "1.*": all version of major version 1.
 - "1.2.*": all patches of minor version 1.2.
@@ -294,15 +323,15 @@ Here are a few examples:
 - "1.0.0 – 1.2.3" or ">=1.0.0 <=1.2.3": version between 1.0.0 and 1.2.3.
 - "`<1.2.3 || >=2`": version that is not between 1.2.3 and 2.0.0.
 
-If you do not specify a tag or a version, 4D automatically retrieves the "latest" version.
+If you do not specify a tag or a version, 4D automatically retrieves the "latest"/"highest" version.
 
 
-The Dependency manager checks periodically if component updates are available on Github. If a new version is available for a component, an update indicator is then displayed for the component in the dependency list, [depending on your settings](#defining-a-github-dependency-version-range). 
+The Dependency manager checks periodically if component updates are available on the Git hosting platform. If a new version is available for a component, an update indicator is then displayed for the component in the dependency list, [depending on your settings](#defining-a-dependency-version-range). 
 
 
 #### Naming conventions for 4D version tags
 
-If you want to use the [**Follow 4D Version**](#defining-a-github-dependency-version-range) dependency rule, the tags for component releases on the Github repository must comply with specific conventions. 
+If you want to use the [**Follow 4D Version**](#defining-a-github-dependency-version-range) dependency rule, the tags for component releases must comply with specific conventions. 
 
 - **LTS versions**: `x.y.p` pattern, where `x.y` corresponds to the main 4D version to follow and `p` (optional) can be used for patch versions or additional updates. When a project specifies that it follows the 4D version for *x.y* LTS version, the Dependency Manager will resolve it as "the latest version x.*" if available or "version below x". If no such version exists, the user will be notified. For example, "20.4" will be resolved by the Dependency manager as "the latest component version 20.\* or version below 20". 
 
@@ -317,25 +346,25 @@ The component developer can define a minimum 4D version in the component's [`inf
 
 
 
-#### Private repositories
+#### Authentication and tokens
 
 If you want to integrate a component located in a private repository, you need to tell 4D to use a connection token to access it.
 
-To do this, in your GitHub account, create a **classic** token with access rights to **repo**.
+- for GitHub: in your [GitHub token interface](https://github.com/settings/tokens), create a token with the recommended following properties:
+	- type: **classic** 
+	- access rights: **repo**
 
-:::note
+- for GitLab: in your GitLab account, create a token with the following properties:
+	- type: **Project Access token** (recommended) or **Personal Access token**
+	- scopes: **read_api** and **read_repository**
 
-For more information, please refer to the [GitHub token interface](https://github.com/settings/tokens).
-
-:::
-
-You then need to [provide your connection token](#providing-your-github-access-token) to the Dependency manager. 
+You then need to [provide your connection token](#providing-your-access-token) to the Dependency manager. 
 
 #### Local cache for dependencies
 
-Referenced GitHub components are downloaded in a local cache folder then loaded in your environment. The local cache folder is stored at the following location:
+Referenced GitHub and GitLab components are downloaded in a local cache folder then loaded in your environment. The local cache folder is stored at the following location:
 
-- on macOs: `$HOME/Library/Caches/<app name>/Dependencies`
+- on macOS: `$HOME/Library/Caches/<app name>/Dependencies`
 - on Windows: `C:\Users\<username>\AppData\Local\<app name>\Dependencies`
 
 ...where `<app name>` can be "4D", "4D Server", or "tool4D".
@@ -343,14 +372,14 @@ Referenced GitHub components are downloaded in a local cache folder then loaded 
 
 ### Automatic dependency resolution
 
-When you add or update a component (whether [local](#local-components) or [from GitHub](#components-stored-on-github)), 4D automatically resolves and installs all dependencies required by that component. This includes:
+When you add or update a component (whether [local](#local-components) or [from a Git hosting platform](#components-stored-on-git-hosting-platforms)), 4D automatically resolves and installs all dependencies required by that component. This includes:
 
 - **Primary dependencies**: Components you explicitly declare in your `dependencies.json` file
 - **Secondary dependencies**: Components required by primary dependencies or other secondary dependencies, which are automatically resolved and installed
 
 The Dependency manager reads each component's own `dependencies.json` file and recursively installs all required dependencies, respecting version specifications whenever possible. This eliminates the need to manually identify and add nested dependencies one by one.
 
-- **Conflict resolution**: When multiple dependencies require [different versions](#defining-a-github-dependency-version-range) of the same component, the Dependency manager automatically attempts to resolve conflicts by finding a version that satisfies all overlapping version ranges. If a primary dependency conflicts with secondary dependencies, the primary dependency takes precedence.
+- **Conflict resolution**: When multiple dependencies require [different versions](#defining-a-dependency-version-range) of the same component, the Dependency manager automatically attempts to resolve conflicts by finding a version that satisfies all overlapping version ranges. If a primary dependency conflicts with secondary dependencies, the primary dependency takes precedence.
 
 :::note
 
@@ -426,9 +455,9 @@ The following status labels are available:
 - **Duplicated**: The dependency is not loaded because another dependency with the same name exists at the same location (and is loaded). 
 - **Available after restart**: The dependency reference has just been added or updated [using the interface](#monitoring-project-dependencies), it will be loaded once the application restarts.  
 - **Unloaded after restart**: The dependency reference has just been removed [using the interface](#removing-a-dependency), it will be unloaded once the application restarts.   
-- **Update available \<version\>**: A new version of the GitHub dependency matching your [component version configuration](#defining-a-github-dependency-version-range) has been detected.   
-- **Refreshed after restart**: The [component version configuration](#defining-a-github-dependency-version-range) of the GitHub dependency has been modified, it will be adjusted the next startup.   
-- **Recent update**: A new version of the GitHub dependency has been loaded at startup.  
+- **Update available \<version\>**: A new version of the dependency matching your [component version configuration](#defining-a-github-dependency-version-range) has been detected.   
+- **Refreshed after restart**: The [component version configuration](#defining-a-dependency-version-range) of the dependency has been modified, it will be adjusted at the next startup.   
+- **Recent update**: A new version of the dependency has been loaded at startup.  
 
 
 
@@ -468,7 +497,7 @@ This item is not displayed if the dependency is inactive because its files are n
 Component icon and location logo provide additional information:
 
 - The component logo indicates if it is provided by 4D or a third-party developer.
-- Local components can be differentiated from GitHub components by a small icon.
+- Local components can be differentiated from GitHub and GitLab components by a small icon.
 
 ![dependency-origin](../assets/en/Project/dependency-github.png)
 
@@ -504,15 +533,15 @@ If no [**environment4d.json**](#environment4djson) file is already defined for t
 The dependency is added to the [inactive dependency list](#dependency-status) with the **Available after restart** status. It will be loaded once the application restarts. 
 
 
-### Adding a GitHub dependency
+### Adding a GitHub or GitLab dependency
 
-To add a [GitHub dependency](#components-stored-on-github), click on the **+** button in the footer area of the panel and select the **GitHub** tab. 
+To add a [GitHub or GitLab dependency](#components-stored-on-git-hosting-platforms), click on the **+** button in the footer area of the panel and select the tab corresponding to your platform: **GitHub** or **GitLab**. 
 
 ![dependency-add-git](../assets/en/Project/dependency-add-git.png)
 
 :::note
 
-By default, [components developed by 4D](../Extensions/overview.md#components-developed-by-4d) are listed in the combo box, so that you can easily select and install these features in your environment: 
+By default, [components developed by 4D](../Extensions/overview.md#components-developed-by-4d) are listed in the GitHub combo box, so that you can easily select and install these features in your environment: 
 
 ![dependency-default-git](../assets/en/Project/dependency-default.png)
 
@@ -520,25 +549,30 @@ Components already installed are not listed.
 
 :::
 
-Enter the path of the GitHub repository of the dependency. It could be a **repository URL** or a **github-account/repository-name string**, for example:
+Enter the path of the GitHub or GitLab repository of the dependency. It could be:
+
+- a **repository URL** 
+- (GitLab only) a self-hosted instance private server URL (e.g. "https://git-my-server.com/4d/components/mycomponent")
+- a **user-account/repository-name string**
+ for example:
 
 ![dependency-add-git-2](../assets/en/Project/dependency-add-git-2.png)
 
-Once the connection is established, the GitHub icon ![dependency-gitlogo](../assets/en/Project/dependency-gitlogo.png) is displayed on the right side of the entry area. You can click on this icon to open the repository in your default browser. 
+Once the connection is established, the GitHub or GitLab icon ![dependency-gitlogo](../assets/en/Project/dependency-gitlogo.png) is displayed on the right side of the entry area. You can click on this icon to open the repository in your default browser. 
 
 :::note
 
-If the component is stored on a [private GitHub repository](#private-repositories) and your personal token is missing, an error message is displayed and a  **Add a personal access token...** button is displayed (see [Providing your GitHub access token](#providing-your-github-access-token)).
+If the component is stored on a [private repository](#private-repositories) and your personal token is missing, an error message is displayed and a **Add a personal access token...** button is displayed (see [Providing your access token](#providing-your-access-token)).
 
 :::
 
-Define the [dependency version range](#tags-and-versions) to use for this project. By defaut, "Latest" is selected, which means that the lastest version will be automatically used.  
+Define the [dependency version range](#tags-and-versions) to use for this project. By defaut, "Latest" (GitHub) or "Highest" (GitLab) is selected, which means that the most recent version will be automatically used.  
 
 Click on the **Add** button to add the dependency to the project. 
 
-The GitHub dependency is declared in the [**dependencies.json**](#dependenciesjson) file and added to the [inactive dependency list](#dependency-status) with the **Available at restart** status. It will be loaded once the application restarts.
+The dependency is declared in the [**dependencies.json**](#dependenciesjson) file and added to the [inactive dependency list](#dependency-status) with the **Available at restart** status. It will be loaded once the application restarts.
 
-#### Defining a GitHub dependency version range  
+#### Defining a dependency version range  
 
 You can define the [tag or version](#tags-and-versions) option for a dependency: 
 
@@ -548,23 +582,23 @@ You can define the [tag or version](#tags-and-versions) option for a dependency:
 - **Up to Next Major Version**: Define a [semantic version range](#tags-and-versions) to restrict updates to the next major version.
 - **Up to Next Minor Version**: Similarly, restrict updates to the next minor version.
 - **Exact Version (Tag)**: Select or manually enter a [specific tag](#tags-and-versions) from the available list.
-- **Latest**: Allows to download the release that is tagged as the latest version. **Warning:** While using this option can be convenient during early development, it is better to avoid it in production or shared projects since it automatically pulls in newer releases, including beta releases, which may lead to unexpected updates or breaking changes. 
+- **Latest** (GitHub) or **Highest** (GitLab): Allows to download the release that is tagged as the most recent version. **Warning:** While using this option can be convenient during early development, it is better to avoid it in production or shared projects since it automatically pulls in newer releases, including beta releases, which may lead to unexpected updates or breaking changes. 
 
-The current GitHub dependency version is displayed on the right side of the dependency item:
+The current dependency version is displayed on the right side of the dependency item:
 
 ![dependency-origin](../assets/en/Project/dependency-version.png)
 
 
 
-#### Modifying the GitHub dependency version range
+#### Modifying the dependency version range
 
-You can modify the [version setting](#defining-a-github-dependency-version-range) for a listed GitHub dependency: select the dependency to modify and select **Edit the dependency...** from the contextual menu. In the "Edit the dependency" dialog box, edit the Dependency Rule menu and click **Apply**. 
+You can modify the [version setting](#defining-a-dependency-version-range) for a listed dependency: select the dependency to modify and select **Edit the dependency...** from the contextual menu. In the "Edit the dependency" dialog box, edit the Dependency Rule menu and click **Apply**. 
 
 Modifying the version range is useful for example if you use the automatic update feature and want to lock a dependency to a specific version number. 
 
 
 
-### Updating GitHub dependencies
+### Updating dependencies
 
 The Dependency manager provides an integrated handling of updates on GitHub. The following features are supported:
 
@@ -635,7 +669,7 @@ When this option is unchecked, a new component version matching your [component 
 
 
 
-### Providing your GitHub access token
+### Providing your access token
 
 Registering your personal access token in the Dependency manager is:
 
