@@ -212,23 +212,21 @@ These steps can easily be automated, with 4D code or using GitHub Actions, for e
 
 #### Configuring a GitLab repository
 
-Unlike GitHub, GitLab does not upload files in a release. Release assets are links (URLs), GitLab only stores the name and URL of assets. Every release automatically includes source code archives generated from the Git tag. You need to provide your component's zip file as a link to any location or by using the Package Registry (see note). 
+Unlike GitHub, GitLab does not upload files in a release. Release assets are links (URLs), GitLab only stores the name and URL of assets. Every release automatically includes source code archives generated from the Git tag. You need to provide your component's zip file as a link. 
 
-1. Upload the component's ZIP file somewhere.
+1. Upload the component's ZIP file somewhere, i.e. either on an external server, or [using GitLab Package Registry](#using-the-package-registry) (generic package).
 2. Create a [GitLab release](https://docs.gitlab.com/user/project/releases/) for your component, including the link to your component's file as release asset.
 
 The asset name is typically the project name or an artifact name.
 
-:::note Using the Package Registry
+#### Using the Package Registry
 
-The Package Registry allows you to host your files in GitLab itself. Its main advantages include an authenticated access, stable and versioned urls, and the ability to associate binairies with release tags. To use the Package Registry:
+The [GitLab Package Registry](https://docs.gitlab.com/user/packages/package_registry/) allows you to host your files in GitLab itself. Its main advantages include an authenticated access, stable and versioned urls, and the ability to associate binairies with release tags. To use the Package Registry:
 1. Build your file (for example: MyComponent.zip)
-2. Upload it to the Generic Package Registry using a script (see [this example with 4D language](https://gist.github.com/e-marchand/b218af0cca0d23f9b0399f42f282221f))
+2. Upload it to the [generic packages repository](https://docs.gitlab.com/user/packages/generic_packages/) using a script (see [examples in the GitLab documentation](https://docs.gitlab.com/user/packages/generic_packages/#publish-a-single-file)). 
 3. **Deploy** \> **Package Registry** to see the result. 
 4. Use the package URL as a release asset link.
 5. Associate it with the same Git tag.
-
-:::
 
 
 #### Declaring paths
@@ -247,7 +245,7 @@ You declare a component stored on GitHub in the [**dependencies.json** file](#de
 		},
 		"myPrivateGitLabComponent": {
 			"gitlab" : "JohnSmith/myPrivateGitLabComponent",
-			"host" : "https://myprivate.gitlab.com"
+			"host" : "https://myprivate-gitlab.com"
 		},
 		"myGitHubComponent2": {}
 	}
@@ -310,8 +308,7 @@ A range is defined by two semantic versions, a min and a max, with operators '\<
 
 Here are a few examples:
 
-- "latest": the version having the "latest" badge in GitHub releases.
-- "highest": the version having the "highest" badge in GitLab releases.
+- "latest": the most recent version (in GitHub releases, has the "latest" badge).
 - "*": the latest version released.
 - "1.*": all version of major version 1.
 - "1.2.*": all patches of minor version 1.2.
@@ -323,7 +320,7 @@ Here are a few examples:
 - "1.0.0 – 1.2.3" or ">=1.0.0 <=1.2.3": version between 1.0.0 and 1.2.3.
 - "`<1.2.3 || >=2`": version that is not between 1.2.3 and 2.0.0.
 
-If you do not specify a tag or a version, 4D automatically retrieves the "latest"/"highest" version.
+If you do not specify a tag or a version, 4D automatically retrieves the "latest" version.
 
 
 The Dependency manager checks periodically if component updates are available on the Git hosting platform. If a new version is available for a component, an update indicator is then displayed for the component in the dependency list, [depending on your settings](#defining-a-dependency-version-range). 
@@ -355,7 +352,7 @@ If you want to integrate a component located in a private repository, you need t
 	- access rights: **repo**
 
 - for GitLab: in your GitLab account, create a token with the following properties:
-	- type: **Project Access token** (recommended) or **Personal Access token**
+	- type: **Personal Access token**
 	- scopes: **read_api** and **read_repository**
 
 You then need to [provide your connection token](#providing-your-access-token) to the Dependency manager. 
@@ -507,7 +504,7 @@ Component icon and location logo provide additional information:
 
 ### Adding a local dependency
 
-To add a local dependency, click on the **+** button in the footer area of the panel. The following dialog box is displayed:
+To add a local dependency, click on the **[+]** button in the footer area of the panel. The following dialog box is displayed:
 
 ![dependency-add](../assets/en/Project/dependency-add.png)
 
@@ -535,7 +532,9 @@ The dependency is added to the [inactive dependency list](#dependency-status) wi
 
 ### Adding a GitHub or GitLab dependency
 
-To add a [GitHub or GitLab dependency](#components-stored-on-git-hosting-platforms), click on the **+** button in the footer area of the panel and select the tab corresponding to your platform: **GitHub** or **GitLab**. 
+To add a [GitHub or GitLab dependency](#components-stored-on-git-hosting-platforms):
+
+1. Click on the **[+]** button in the footer area of the panel and select the tab corresponding to your platform: **GitHub** or **GitLab**. 
 
 ![dependency-add-git](../assets/en/Project/dependency-add-git.png)
 
@@ -549,16 +548,15 @@ Components already installed are not listed.
 
 :::
 
-Enter the path of the GitHub or GitLab repository of the dependency. It could be:
+2. Enter the path of the GitHub or GitLab repository of the dependency. It could be:
 
-- a **repository URL** 
+- a **repository URL** (e.g. "https://github.com/vdelachaux/UI-with-Classes")
 - (GitLab only) a self-hosted instance private server URL (e.g. "https://git-my-server.com/4d/components/mycomponent")
-- a **user-account/repository-name string**
- for example:
+- a **user-account/repository-name string**, for example:
 
 ![dependency-add-git-2](../assets/en/Project/dependency-add-git-2.png)
 
-Once the connection is established, the GitHub or GitLab icon ![dependency-gitlogo](../assets/en/Project/dependency-gitlogo.png) is displayed on the right side of the entry area. You can click on this icon to open the repository in your default browser. 
+Once the connection is established, an icon ![dependency-gitlogo](../assets/en/Project/dependency-gitlogo.png) is displayed on the right side of the entry area. You can click on this icon to open the repository in your default browser. 
 
 :::note
 
@@ -566,9 +564,9 @@ If the component is stored on a [private repository](#private-repositories) and 
 
 :::
 
-Define the [dependency version range](#tags-and-versions) to use for this project. By defaut, "Latest" (GitHub) or "Highest" (GitLab) is selected, which means that the most recent version will be automatically used.  
+3. Define the [dependency version range](#tags-and-versions) to use for this project. By defaut, "Latest" (GitHub) or "Highest" (GitLab) is selected, which means that the most recent version will be automatically used.  
 
-Click on the **Add** button to add the dependency to the project. 
+4. Click on the **Add** button to add the dependency to the project. 
 
 The dependency is declared in the [**dependencies.json**](#dependenciesjson) file and added to the [inactive dependency list](#dependency-status) with the **Available at restart** status. It will be loaded once the application restarts.
 
@@ -638,7 +636,7 @@ If you do not want to use a component update (for example you want to stay with 
 
 #### Updating dependencies
 
-**Updating a dependency** means downloading a new version of the dependency from GitHub and keeping it ready to be loaded the next time the project is started. 
+**Updating a dependency** means downloading a new version of the dependency from GitHub or GitLab and keeping it ready to be loaded the next time the project is started. 
 
 You can update dependencies at any moment, for a single dependency or for all dependencies:
 
@@ -655,13 +653,13 @@ In any cases, whatever the current dependency status, an automatic checking is d
 When you select an update command:
 
 - a dialog box is displayed and proposes to **restart the project**, so that the updated dependencies are immediately available. It is usually recommended to restart the project to evaluate updated dependencies. 
-- if you click Later, the update command is no longer available in the menu, meaning the action has been planned for the next startup.
+- if you click **Later**, the update command is no longer available in the menu, meaning the action has been planned for the next startup.
 
 #### Automatic update
 
 The **Automatic update** option is available in the **options** menu at the bottom of the Dependency manager window. 
 
-When this option is checked (default), new GitHub component versions matching your [component versioning configuration](#defining-a-github-dependency-version-range) are automatically updated for the next project startup. This option facilitates the day-to-day management of dependency updates, by eliminating the need to manually select updates. 
+When this option is checked (default), new GitHub or GitLab component versions matching your [component versioning configuration](#defining-a-github-dependency-version-range) are automatically updated for the next project startup. This option facilitates the day-to-day management of dependency updates, by eliminating the need to manually select updates. 
 
 When this option is unchecked, a new component version matching your [component versioning configuration](#defining-a-github-dependency-version-range) is only indicated as available and will require a [manual updating](#updating-dependencies). Unselect the **Automatic update** option if you want to monitor dependency updates precisely. 
 
@@ -671,23 +669,30 @@ When this option is unchecked, a new component version matching your [component 
 
 ### Providing your access token
 
-Registering your personal access token in the Dependency manager is:
+Registering your [personal access token](#authentication-and-tokens) in the Dependency manager is:
 
-- mandatory if the component is stored on a [private GitHub repository](#private-repositories),
-- recommended for a more frequent [checking of dependency updates](#updating-github-dependencies).
+- mandatory if the component is stored on a private repository,
+- recommended for a more frequent [checking of dependency updates](#updating-dependencies).
 
-To provide your GitHub access token, you can either:
+#### Adding a token 
 
-- click on **Add a personal access token...** button that is displayed in the "Add a dependency" dialog box after you entered a private GitHub repository path. 
-- or, select **Add a GitHub personal access token...** in the Dependency manager menu at any moment.
+To provide your GitHub or GitLab access token, you can either:
 
-![dependency-add-token](../assets/en/Project/dependency-add-token.png)
+- click on **Add a personal access token...** button that is displayed in the "Add a dependency" dialog box after you entered a private repository path.  
+
+![dependency-add-token](../assets/en/Project/dependency-add-token-button.png)  
+
+- or, select **Add a GitHub personal access token...** or **Add a GitLab personal access token...** in the Dependency manager menu at any moment. For GitLab access tokens, you can select the host:
+
+![dependency-add-token](../assets/en/Project/dependency-add-token.png)   
 
 You can then enter your personal access token:
 
 ![dependency-add-token-2](../assets/en/Project/dependency-add-token-2.png)
 
-You can only enter one personal access token. Once a token has been entered, you can edit it.  
+#### Editing a token 
+
+You can only enter one personal access token per host. Once a token has been entered, you can **edit** it.  
 
 The provided token is stored in a **github.json** file in the [active 4D folder](../commands/get-4d-folder#active-4d-folder). 
 
