@@ -362,7 +362,7 @@ Queremos tener una selección de empleados llamados "Jones" que vivan en Nueva Y
 | Parámetros | Tipo                      |                             | Descripción                     |
 | ---------- | ------------------------- | :-------------------------: | ------------------------------- |
 | index      | Integer                   |              ->             | Índice de la entidad a devolver |
-| Resultado  | 4D.Entity | <- | The entity at that index        |
+| Resultado  | 4D.Entity | <- | La entidad en ese índice        |
 
 </div>
 <!-- END REF -->
@@ -785,7 +785,7 @@ $jobs:=ds.Employee.all().distinct("jobName";dk count values)
 | Parámetros | Tipo       |                             | Descripción                                              |
 | ---------- | ---------- | :-------------------------: | -------------------------------------------------------- |
 | atributo   | Text       |              ->             | Nombre del atributo del objeto cuyas rutas desea obtener |
-| Resultado  | Collection | <- | New collection with distinct paths                       |
+| Resultado  | Collection | <- | Nueva colección con rutas distintas                      |
 
 </div>
 <!-- END REF -->

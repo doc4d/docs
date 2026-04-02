@@ -251,10 +251,10 @@ Esta función modifica la colección original.
 <!-- REF #collection.at().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|index|Integer|->|Index of element to return|
-|Result|any |<-|The element at that index|
+|index|Integer|->|Índice de elemento a regresar|
+|Resultado|cualquiera |<-|The element at that index|
 </div>
 <!-- END REF -->
 
@@ -458,7 +458,7 @@ $c.combine($fruits;3) //[1,2,3,"Orange","Banana","Apple","Grape",4,5,6]
 
 </details>
 
-<!-- REF #collection.concat().Syntax -->**.concat**( *value* : any { ; *...valueN* } ) : Collection<!-- END REF -->
+<!-- REF #collection.concat().Syntax -->**.concat**( *value* : any { ; *...valueN* : any } ) : Collection<!-- END REF -->
 
 
 <!-- REF #collection.concat().Params -->
@@ -1478,8 +1478,8 @@ $first:=$emptyCol.first() // devuelve Undefined
 
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|depth|Integer |->|How deep a nested collection structure should be flattened. Default=1|
-|Result|Collection |<-|Flattened collection|
+|depth|Integer |->|How deep a nested collection structure should be flattened. Por defecto=1|
+|Resultado|Colección |<-|Flattened collection|
 </div>
 <!-- END REF -->
 

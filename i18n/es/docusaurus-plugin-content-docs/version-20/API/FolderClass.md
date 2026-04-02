@@ -161,9 +161,9 @@ La función `4D.Folder.new()` <!-- REF #4D.Folder.new().Summary -->crea y devuel
 <!--REF #FolderClass.create().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
-|---|---|---|---|
-|Result|Boolean|<-|True if the folder was created successfully, false otherwise|
+|Parámetro|Tipo||Descripción|
+|---|-|-|-|-|
+|Resultado|Boolean|<-|True if the folder was created successfully, false otherwise|
 </div>
 <!-- END REF -->
 
@@ -280,9 +280,9 @@ $aliasFile:=$myFolder.createAlias(Folder("/PACKAGE");"Jan2019")
 <!-- REF #FolderClass.delete().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|----|---|---|
-|option |Integer|->|Folder deletion option|
+|opción |Integer|->|Opciones de eliminación de carpetas|
 </div>
 <!-- END REF -->
 
@@ -414,10 +414,10 @@ Quiere mover y renombrar una carpeta:
 <!--REF #FolderClass.rename().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|newName|Text|->|New full name for the folder|
-|Result|4D.Folder|<-|Renamed folder|
+|newName|Text|->|Nuevo nombre completo para la carpeta|
+|Resultado|4D.Folder|<-|Renamed folder|
 </div>
 <!-- END REF -->
 

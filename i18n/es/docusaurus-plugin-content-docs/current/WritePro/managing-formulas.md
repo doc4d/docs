@@ -10,7 +10,7 @@ Los documentos 4D Write Pro pueden contener referencias a fórmulas 4D como vari
 
 La inserción de fórmulas en las áreas de 4D Write Pro se realiza con el comando [**WP INSERT FORMULA**](commands/wp-insert-formula.md) y puede leerse utilizando el comando [**WP Get formulas**](commands-legacy/wp-get-formulas.md). También los devuelve el comando [**WP Get text**](commands-legacy/wp-get-text.md).
 
-### Formula evaluation
+### Evaluación de fórmulas
 
 Las fórmulas son evaluadas:
 
@@ -75,7 +75,7 @@ Puede insertar expresiones especiales relacionadas con los atributos del documen
 
 :::note
 
-When you **work with tables**, [additional context expressions](/user-legacy/handling-tables.md#table-formula-object) such as `This.item` are available.
+When you **work with tables**, [additional context expressions](./user-legacy/handling-tables.md#table-formula-object) such as `This.item` are available.
 
 :::
 

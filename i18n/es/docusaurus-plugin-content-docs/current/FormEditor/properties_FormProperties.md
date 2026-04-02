@@ -80,14 +80,14 @@ El nombre del formulario está definido por el nombre de la carpeta que contiene
 
 ---
 
-## Form Theme on Windows
+## Tema del formulario en Windows
 
 Esta propiedad le permite seleccionar explícitamente el tema de interfaz que desea que se utilice cuando el formulario se ejecute en Windows. By default, forms inherit from the [global project theme settings](../settings/interface.md) but you can override this setting for each form.
 
 Valores disponibles:
 
 - **heredado** (por defecto): hereda del tema del proyecto
-- **Classic**: use the Windows classic interface theme
+- **Classic**: utiliza el tema de interfaz clásico de Windows
 - **Fluent UI**: utilice el tema de interfaz [Fluent UI](../FormEditor/forms.md#fluent-ui-rendering) ([cuando esté disponible](../FormEditor/forms.md#requirements)).
 
 :::note
@@ -102,7 +102,7 @@ Esta propiedad se ignora en macOS.
 | -------- | -------------- | ---------------- |
 | fluentUI | boolean        | true, false      |
 
-If the property is not defined, the "inherited" option is selected.
+Si la propiedad no está definida, se selecciona la opción "inherited".
 
 ---
 

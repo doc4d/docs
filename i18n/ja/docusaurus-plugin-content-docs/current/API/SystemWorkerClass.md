@@ -7,9 +7,9 @@ title: SystemWorker
 
 `SystemWorker` クラスは、`4D` クラスストアにて提供されています。
 
-### Aynchronous programming
+### 非同期プログラミング
 
-This class supports asynchronous programming in 4D as described in the [Asynchronous Execution](../Develop/async.md) page.
+このクラスは、[非同期実行](../Develop/async.md) のページで説明されているように、4D 内での非同期プログライミングをサポートしています。
 
 ### 例題
 
@@ -328,7 +328,7 @@ $output:=$worker.response
 
 #### 説明
 
-The `.commandLine` property <!-- REF #SystemWorkerClass.commandLine.Summary -->contains the command line passed as parameter to the [`new()`](#4dsystemworkernew) function<!-- END REF -->.
+`.commandLine` プロパティは、<!-- REF #SystemWorkerClass.commandLine.Summary -->[`new()`](#4dsystemworkernew) 関数に引数として渡したコマンドライン<!-- END REF -->を格納します。
 
 このプロパティは **読み取り専用** です。
 

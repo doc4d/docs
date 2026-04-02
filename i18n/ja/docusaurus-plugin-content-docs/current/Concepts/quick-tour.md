@@ -359,7 +359,7 @@ $str:=String("hello"+\
 コメントの書き方は2通りあります:
 
 - `//` 記号の後はすべてコメントとして扱われるため、これを使って1行のコメントが書けます
-- `/...**/` for inline or multiline commnents.
+- `/...**/` はインラインコメントまたは複数行コメントに使用されます。
 
 これらの書き方は同時に使用できます。
 
@@ -428,7 +428,7 @@ End for
 
 4D ランゲージドキュメントでは、次の表記が使われています:
 
-- 中カッコ `{ }` は、任意のパラメーターを示します。 たとえば、`.delete( { option : Integer } )` という表記の場合、関数を呼び出す際に *option* パラメーターを省略することができます。
+- 中カッコ `{ }` は、任意のパラメーターを示します。 例えば、`.delete({ option : Integer })` は *option* 引数は関数を呼び出す際に省略可能であることを意味します。
 - `any` キーワードは、あらゆる型(数値、テキスト、ブール、日付、時間、オブジェクト、コレクション、など)が可能な引数に対して使用されます。
-- the `{; *...param* : Type}` notation indicates an unlimited number of parameters of the same type. たとえば、`.concat( value : any { ;...valueN : any } ) : Collection` という表記の場合、あらゆる型の引数を数に制限なく関数に渡すことができます。
-- `{; ...(*param* : Type ; *param2* : Type) }` という表記は、グループでのパラメーターの数に制限がないことを示します。 例えば、`COLLECTION TO ARRAY ( collection : Collection ; array : Array {; propertyName : Text}{; ...(array : Array ; propertyName : Text) } )` という表記は、値またはテキスト型配列のペアを無制限にコマンドに渡すことができるということを意味します。
+- `*...param* : Type` という表記は、同じ型の引数を 0 から無制限に受け付けることを意味します。 たとえば、`.concat( value : any { ;...valueN : any } ) : Collection` という表記の場合、あらゆる型の引数を数に制限なく関数に渡すことができます。
+- `...(*param* : Type ; *param2* : Type)` という表記は、グループの引数を1つから無制限に受け付けることを意味します。 例えば、`COLLECTION TO ARRAY ( collection : Collection ; array : Array {; propertyName : Text}{; ...(array : Array ; propertyName : Text) } )` という表記は、値またはテキスト型配列のペアを無制限にコマンドに渡すことができるということを意味します。

@@ -453,9 +453,9 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 <!-- REF #document.getContent().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|----|---|---|
-|Result | 4D.Blob |<-|File content|
+|Resultado | 4D.Blob |<-|File content|
 </div>
 <!-- END REF -->
 
@@ -497,10 +497,10 @@ Para guardar el contenido de un documento en un campo `BLOB`:
 <!-- REF #document.getIcon().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|----|---|---|
-|size|Integer|->|Side length for the returned picture (pixels)|
-|Result|Picture|<-|Icon|
+|size|Integer|->|Longitud lateral para la imagen devuelta (píxeles)|
+|Resultado|Image|<-|Icon|
 </div>
 <!-- END REF -->
 

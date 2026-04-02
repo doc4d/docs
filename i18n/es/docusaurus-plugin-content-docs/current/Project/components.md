@@ -340,7 +340,7 @@ Se crea un archivo `dependency-lock.json` en la carpeta [`userPreferences`](arch
 
 Este archivo registra información como el estado de las dependencias, rutas, urls, errores de carga, así como otra información. Podría ser útil para la gestión de la carga de componentes o la resolución de problemas.
 
-## Monitoring Project Dependencies {#monitoring-project-dependencies}
+## Monitoreo de dependencias del proyecto {#monitoring-project-dependencies}
 
 En un proyecto abierto, puede añadir, eliminar, actualizar y obtener información sobre las dependencias y su estado de carga actual en el panel **Dependencias**.
 
@@ -440,7 +440,7 @@ Para añadir una dependencia local, haga clic en el botón **+** en el área de 
 
 ![dependency-add](../assets/en/Project/dependency-add.png)
 
-Make sure the **Local** tab is selected and click on the *...*\*\* button. Aparece una caja de diálogo estándar Abrir archivo, que le permite seleccionar el componente que desea añadir. Puede seleccionar un [**.4DZ**](../Desktop/building.md#build-component) o un archivo [**.4DProject**](architecture.md#applicationname4dproject-file).
+Asegúrese de que la pestaña **Local** está seleccionada y haga clic en el botón *...*\*\*. Aparece una caja de diálogo estándar Abrir archivo, que le permite seleccionar el componente que desea añadir. Puede seleccionar un [**.4DZ**](../Desktop/building.md#build-component) o un archivo [**.4DProject**](architecture.md#applicationname4dproject-file).
 
 Si el elemento seleccionado es válido, su nombre y ubicación se muestran en la caja de diálogo.
 

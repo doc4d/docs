@@ -7,16 +7,16 @@ Un objeto **`4D.Function`** contiene un trozo de código que puede ser ejecutado
 
 ### Herencia
 
-4D handles several kinds of `Function` objects, inheriting from the **4D.Function** class:
+4D maneja varios tipos de objetos `Function`, que heredan de la clase **4D.Function**:
 
 - **native functions**, i.e. built-in functions from various 4D classes such as [`collection.sort()`](./CollectionClass.md#sort) or [`file.copyTo()`](./FileClass.md#copyto).
-- **user functions**, created in [user classes](Concepts/classes.md) using the [`Function` keyword](Concepts/classes.md#function).
-- **formula functions**, i.e. functions that can execute formula code stored in [4D.Formula](./FormulaClass.md) objects,
+- **funciones usuario**, creadas en las [clases usuario](Concepts/classes.md) utilizando la [palabra clave `Function`](Concepts/classes.md#function).
+- las **funciones de fórmula**, es decir, las funciones que pueden ejecutar un código de fórmula almacenado en los objetos [4D.Formula](./FormulaClass.md),
 - **method functions**, i.e. functions that can execute source code as text stored in [4D.Method](./MethodClass.md) objects.
 
-### Executing code in Function objects
+### Ejecución del código en los objetos Function
 
-Function objects can be encapsulated in object properties:
+Los objetos Function pueden encapsularse en las propiedades de objeto:
 
 ```4d
 var $message : 4D.Formula
@@ -36,10 +36,10 @@ También se admite la sintaxis con paréntesis:
  $f["message"]() //muestra "Hello world"
 ```
 
-Note that, even if it does not have parameters (see below), an object function to be executed must be called with `()` parenthesis. Llamar sólo a la propiedad del objeto devolverá una nueva referencia a la fórmula (y no la ejecutará):
+Tenga en cuenta que, aunque no tenga parámetros (ver arriba), una función objeto a ejecutar debe ser llamada con paréntesis `()`. Llamar sólo a la propiedad del objeto devolverá una nueva referencia a la fórmula (y no la ejecutará):
 
 ```4d
- $o:=$f.message //returns the function object in $o
+ $o:=$f.message //devuelve el objeto función en $o
 ```
 
 You can also execute a function using the [`apply()`](#apply) and [`call()`](#call):
@@ -75,11 +75,11 @@ You can also execute a function using the [`apply()`](#apply) and [`call()`](#ca
 
 <div class="no-index">
 
-| Parámetros | Tipo       |                             | Descripción                                                     |
-| ---------- | ---------- | :-------------------------: | --------------------------------------------------------------- |
-| thisObj    | Object     |              ->             | Object to be returned by the `This` command in the function     |
-| params     | Collection |              ->             | Collection of values to be passed as parameters to the function |
-| Resultado  | any        | <- | Valor de la ejecución de la función                             |
+| Parámetros | Tipo       |                             | Descripción                                                      |
+| ---------- | ---------- | :-------------------------: | ---------------------------------------------------------------- |
+| thisObj    | Object     |              ->             | Objeto a devolver por el comando `This` en la función            |
+| params     | Collection |              ->             | Colección de valores que se pasarán como parámetros a la función |
+| Resultado  | any        | <- | Valor de la ejecución de la función                              |
 
 </div>
 <!-- END REF -->
@@ -88,11 +88,11 @@ You can also execute a function using the [`apply()`](#apply) and [`call()`](#ca
 
 The `.apply()` function <!-- REF #FunctionClass.apply().Summary -->executes the function object to which it is applied, passing parameters as a collection, and returns the resulting value<!-- END REF -->.
 
-In the *thisObj* parameter, you can pass a reference to the object to be used as `This` within the function. Pass Null if you do not want to use `This` but you want to send parameters.
+En el parámetro *thisObj*, puede pasar una referencia al objeto que se utilizará como `This` en la función. Pasa Null si no quiere utilizar `This` pero quiere enviar parámetros.
 
-You can pass a collection to be used as parameters in the function using the optional *params* parameter:
+Puede pasar una colección para utilizarla como parámetros en la función utilizando el parámetro opcional *params*:
 
-- in `4D.Formula` objects, parameters are passed in $1...$n in the formula.
+- en los objetos `4D.Formula`, los parámetros se pasan en $1...$n en la fórmula.
 - in other `4D.Function` objects such as `4D.Method` objects, parameters are passed in [declared method parameters](../Concepts/parameters.md).
 
 Tenga en cuenta que `.apply()` es similar a [`.call()`](#call) excepto que los parámetros se pasan como una colección. Esto puede ser útil para pasar los resultados calculados.
@@ -118,11 +118,11 @@ Tenga en cuenta que `.apply()` es similar a [`.call()`](#call) excepto que los p
 
 <div class="no-index">
 
-| Parámetros | Tipo   |                             | Descripción                                                 |
-| ---------- | ------ | --------------------------- | ----------------------------------------------------------- |
-| thisObj    | Object | ->                          | Object to be returned by the `This` command in the function |
-| params     | any    | ->                          | Values to be passed as parameters to the function           |
-| Resultado  | any    | <- | Valor de la ejecución de la función                         |
+| Parámetros | Tipo   |                             | Descripción                                           |
+| ---------- | ------ | --------------------------- | ----------------------------------------------------- |
+| thisObj    | Object | ->                          | Objeto a devolver por el comando `This` en la función |
+| params     | any    | ->                          | Valores a pasar como parámetros a la función          |
+| Resultado  | any    | <- | Valor de la ejecución de la función                   |
 
 </div>
 <!-- END REF -->
@@ -131,12 +131,12 @@ Tenga en cuenta que `.apply()` es similar a [`.call()`](#call) excepto que los p
 
 The `.call()` function <!-- REF #FunctionClass.call().Summary -->executes the function object to which it is applied, with one or more parameter(s) passed directly, and returns the resulting value<!-- END REF -->.
 
-In the *thisObj* parameter, you can pass a reference to the object to be used as `This` within the function.
+En el parámetro *thisObj*, puede pasar una referencia al objeto que se utilizará como `This` en la función.
 
 You can pass values to be used as parameters in the function using the optional *params* parameter:
 
-- in `4D.Formula` objects, parameters are passed in $1...$n in the formula.
-- in `4D.Method` objects, parameters are passed in [declared method parameters](../Concepts/parameters.md).
+- en los objetos `4D.Formula`, los parámetros se pasan en $1...$n en la fórmula.
+- en los objetos `4D.Method`, los parámetros se pasan en [parámetros declarados](../Concepts/parameters.md).
 
 Tenga en cuenta que `.call()` es similar a [`.apply()`](#apply) excepto que los parámetros se pasan directamente.
 
@@ -175,9 +175,9 @@ Tenga en cuenta que `.call()` es similar a [`.apply()`](#apply) excepto que los 
 
 #### Descripción
 
-The `.source` property <!-- REF #FunctionClass.source.Summary -->contains the source code of the function as text<!-- END REF -->.
+La propiedad `.source` <!-- REF #FunctionClass.source.Summary -->contiene el código fuente de la función como texto<!-- END REF -->.
 
-The returned value is the original text used to create the 4D.Formula or 4D.Method object but reformatted.
+El valor devuelto es el texto original utilizado para crear el objeto 4D.Formula o 4D.Method pero reformateado.
 
 Esta propiedad es de **solo lectura**.
 
