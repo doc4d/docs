@@ -237,7 +237,7 @@ SET DATABASE PARAMETER(Current process debug log recording;2+4)
 
 ## 4DDiagnosticLog.txt
 
-このログファイルには、アプリケーションの内部オペレーションに関連した複数のイベントが、人間にも読めるように記録されます。 You can include custom information in this file using the [LOG EVENT](../commands/log-event) command.
+このログファイルには、アプリケーションの内部オペレーションに関連した複数のイベントが、人間にも読めるように記録されます。 このファイルには、[LOG EVENT](../commands/log-event) コマンドを使用してカスタムの情報を含めることができます。
 
 このログの開始方法:
 
@@ -253,7 +253,7 @@ SET DATABASE PARAMETER(Current process debug log recording;2+4)
 | timestamp          | ISO 8601フォーマットの日付と時間 (YYYY-MM-DDTHH:MM:SS.mmm) |
 | loggerID           | 任意                                                                                                                |
 | componentSignature | 任意 - 内部コンポーネント署名                                                                                                  |
-| messageLevel       | Trace, Debug, Info, Warning, Error, Fatal                                                                         |
+| messageLevel       | Trace、Debug、Info、警告、エラー、Fatal                                                                                     |
 | message            | ログエントリーの詳細                                                                                                        |
 
 イベントによって、タスク、ソケットなど様々な他のフィールドを記録に含めることができます。
@@ -262,7 +262,7 @@ SET DATABASE PARAMETER(Current process debug log recording;2+4)
 
 *4DDiagnosticLog.txt* ファイルは、`ERROR` (最も重要) から `TRACE` (あまり重要でない) まで、異なるレベルのメッセージをログに記録することができます。  デフォルトでは、`INFO` レベルが設定されており、エラーや予期せぬ結果などの重要なイベントのみを記録します (後述参照)。
 
-You can select the level of messages using the `Diagnostic log level` selector of the [SET DATABASE PARAMETER](../commands/set-database-parameter) command, depending on your needs. あるレベルを選択すると、その上のレベル (より重要なもの) も暗黙のうちに選択されます。 次のレベルが利用可能です:
+[SET DATABASE PARAMETER](../commands/set-database-parameter) コマンドの `Diagnostic log level` セレクターを使用して、必要に応じてメッセージのレベルを選択することができます。 あるレベルを選択すると、その上のレベル (より重要なもの) も暗黙のうちに選択されます。 次のレベルが利用可能です:
 
 | 定数          | 説明                                                                                                               | 選択時に次を含みます                                                    |
 | ----------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
@@ -670,9 +670,9 @@ SET DATABASE PARAMETER(4D Server log recording;0)
 
 :::note
 
-- The "state" property values are described in the corresponding commands: `[`WEB SET OPTION`](../commands/web-set-option) (`Web log recording`), [`HTTP SET OPTION`](../commands/http-set-option) (`HTTP client log`), [`SET DATABASE PARAMETER`](../commands/set-database-parameter) (`Client Web log recording`, `IMAP Log\`,...).
-- For httpDebugLogs, the "level" property corresponds to the `wdl` constant options described in the [`WEB SET OPTION`](../commands/web-set-option) command.
-- For diagnosticLogs, the "level" property corresponds to the `Diagnostic log level` constant values described in the [`SET DATABASE PARAMETER`](../commands/set-database-parameter) command.
+- "state" プロパティ値の詳細は対応するコマンド内にて説明されています: `[`WEB SET OPTION`](../commands/web-set-option) (`Web log recording`)、[`HTTP SET OPTION`](../commands/http-set-option) (`HTTP client log`)、[`SET DATABASE PARAMETER`](../commands/set-database-parameter) (`Client Web log recording`、 `IMAP Log\`,...)。
+- httpDebugLogs においては、"level" プロパティは[`WEB SET OPTION`](../commands/web-set-option) コマンドで説明されている`wdl` 定数オプションに対応します。
+- diagnosticLogs においては、"level" プロパティは[`SET DATABASE PARAMETER`](../commands/set-database-parameter) コマンドで説明されている`Diagnostic log level` 定数オプションに対応します。
 
 :::
 
