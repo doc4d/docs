@@ -16,7 +16,7 @@ displayed_sidebar: docs
 | styleSheetObj  | Object  | &#8594; | Objet feuille de style                           |
 | wpDoc          | Object  | &#8594; | Document 4D Write Pro                            |
 | listLevelIndex | Integer | &#8594; | Niveau de la feuille de style dans la hiérarchie |
-| styleSheetName | Text    | &#8594; | Name of style sheet                              |
+| styleSheetName | Text    | &#8594; | Nom de la feuille de style                       |
 
 </div>
 <!-- END REF-->
