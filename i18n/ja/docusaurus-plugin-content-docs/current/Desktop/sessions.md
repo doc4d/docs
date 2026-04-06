@@ -5,11 +5,11 @@ title: デスクトップセッション
 
 ## 概要
 
-A desktop session is a user-related execution context on 4D Server, 4D remote, or 4D single-user that **does not result from any web or REST access**.
+デスクトップセッションとは、4D Server、4D リモートまたは4D シングルユーザー版のユーザー関連の実行コンテキストのうち、**Web やREST アクセスに起因するものではないもの**です。
 
 デスクトップセッションには以下のような種類が含まれます:
 
-- **Remote user sessions**: In client/server applications, remote users have their own sessions, managed from the client and from the server.
+- **リモートユーザー セッション**: クライアント/サーバーアプリケーションでは、リモートユーザーは、クライアントおよびサーバーから管理される独自のセッションを持ちます。
 - **ストアドプロシージャーセッション**: クライアント/サーバーアプリケーションにおいては、サーバー上で実行される全てのストアドプロシージャーを管理する固有のバーチャルユーザーセッション。
 - **スタンドアロンセッション**: シングルユーザーアプリケーション内で返されるローカルセッションオブジェクト(クライアント/サーバーアプリケーションの開発およびテストフェーズにおいて有用です)。
 
@@ -19,7 +19,7 @@ A desktop session is a user-related execution context on 4D Server, 4D remote, o
 
 [**Web ユーザーセッション**](../WebServer/sessions.md) 同様、デスクトップセッションで実行されたコードは[`Session`](../API/SessionClass.md) オブジェクトへのアクセスが可能で、これによって提供される関数やプロパティによって(例えば[`session.storage`](../API/SessionClass.md#storage) オブジェクトを使用することによって)セッションの値を保存したりユーザープロセス間で共有することが可能になります。
 
-しかしながら、Web ユーザーセッション内で実行されたコードとは違い、デスクトップセッション内で実行されたコードは[ロールと権限](../ORDA/privileges.md)によっては管理されません。 It can access any parts of the 4D application, including ORDA and data model classes (on 4D Server, [users and groups feature](../Users/handling_users_groups.md) can manage user accesses). Note also that desktop sessions do not require [scalable sessions](../WebServer/sessions.md#enabling-web-sessions) to be enabled.
+しかしながら、Web ユーザーセッション内で実行されたコードとは違い、デスクトップセッション内で実行されたコードは[ロールと権限](../ORDA/privileges.md)によっては管理されません。 これはORDA やデータモデルクラスを含め、4D アプリケーションのあるゆる箇所にアクセスすることが可能です(4D Server では、[ユーザーとグループ機能](../Users/handling_users_groups.md) を使用してユーザーアクセスを管理することができます)。 また、デスクトップセッションは[スケーラブルセッション](../WebServer/sessions.md#enabling-web-sessions) を有効化する必要がないという点に注意してください。
 
 You can nevertheless [**share** a remote session with a web session](#sharing-a-remote-session-for-web-accesses) so that desktop application users can access your 4D application through a web interface, using in particular **Qodly pages** and Web areas.
 
