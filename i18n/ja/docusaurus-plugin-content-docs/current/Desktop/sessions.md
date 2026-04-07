@@ -21,7 +21,7 @@ title: デスクトップセッション
 
 しかしながら、Web ユーザーセッション内で実行されたコードとは違い、デスクトップセッション内で実行されたコードは[ロールと権限](../ORDA/privileges.md)によっては管理されません。 これはORDA やデータモデルクラスを含め、4D アプリケーションのあるゆる箇所にアクセスすることが可能です(4D Server では、[ユーザーとグループ機能](../Users/handling_users_groups.md) を使用してユーザーアクセスを管理することができます)。 また、デスクトップセッションは[スケーラブルセッション](../WebServer/sessions.md#enabling-web-sessions) を有効化する必要がないという点に注意してください。
 
-You can nevertheless [**share** a remote session with a web session](#sharing-a-remote-session-for-web-accesses) so that desktop application users can access your 4D application through a web interface, using in particular **Qodly pages** and Web areas.
+それでも、[リモートセッションをWeb セッションと**共有** すること](#sharing-a-remote-session-for-web-accesses) ことができ、これによってデスクトップアプリケーションのユーザーは、具体的には**Qodly ページ**とWeb エリアを使用して、Web インターフェースを通して4D アプリケーションへとアクセスすることができます。
 
 ## リモートユーザーセッション {#remote-user-sessions}
 
