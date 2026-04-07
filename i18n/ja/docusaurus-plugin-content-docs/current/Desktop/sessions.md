@@ -25,11 +25,11 @@ title: デスクトップセッション
 
 ## リモートユーザーセッション {#remote-user-sessions}
 
-In client/server applications, when a user connects to the server, a **remote user session object** is created and available on both the server and the client. It is returned by the [`Session`](../commands/session) command on both machines.
+クライアント/サーバーアプリケーションにおいては、ユーザーがサーバーに接続すると、**リモートユーザーセッションオブジェクト**が作成され、サーバーとクライアントの両方から利用可能になります。 これは両方のマシンにおいて [`Session`](../commands/session) コマンドで返されます。
 
 このオブジェクトを扱うには、[`Session` クラス](../API/SessionClass.md) の関数とプロパティを使用します。
 
-### Comparing server-side and client-side user session objects {#comparing-server-side-and-client-side-user-session-objects}
+### サーバー側とクライアント側のユーザーセッションオブジェクトの比較{#comparing-server-side-and-client-side-user-session-objects}
 
 Depending on where the code is executed, a server-side or a client-side user `session` object is available. Both objects are similar, except that:
 
