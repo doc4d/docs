@@ -37,11 +37,11 @@ The "Contents" folder architecture is recommended for components if you want to 
 
 ## Component Locations
 
-When developing in 4D, the component files can be transparently stored in your computer or downloa external Github or GitLab repository.
+When developing in 4D, the component files can be transparently stored in your computer or located on an external GitHub or GitLab repository.
 
 :::note
 
-This page describes how to work with components in the **4D** and **4D Server** environments. In other environments, components are managed differently:
+This section describes how to work with components in the **4D** and **4D Server** environments. In other environments, components are managed differently:
 
 - in [4D in remote mode](../Desktop/clientServer.md), components are loaded by the server and sent to the remote application.
 - in merged applications, components are [included at the build step](../Desktop/building.md#plugins--components-page).
@@ -163,9 +163,9 @@ Examples:
 ```json
 {
 	"dependencies": {
-		"myComponent1" : "MyComponent1",
-		"myComponent2" : "../MyComponent2",
-    "myComponent3" : "file:///Users/jean/MyComponent3"
+		"myComponent1" : "MyComponent1",  
+		"myComponent2" : "../MyComponent2",  
+ 		"myComponent3" : "file:///Users/jean/MyComponent3"  
     }
 }
 ```
@@ -182,9 +182,7 @@ Paths are expressed in POSIX syntax as described in [this paragraph](../Concepts
 
 Relative paths are relative to the [`environment4d.json`](#environment4djson) file. Absolute paths are linked to the user's machine.
 
-Using relative paths is **recommended** in most cases, since they provide flexibility and portability of the components architecture, especially if the project is hosted in a source control tool.
-
-Absolute paths should only be used for components that are specific to one machine and one user.   
+Using relative paths is **recommended** in most cases, since they provide flexibility and portability of the components architecture, especially if the project is hosted in a source control tool. Absolute paths should only be used for components that are specific to one machine and one user.   
 
 
 
@@ -212,17 +210,17 @@ These steps can easily be automated, with 4D code or using GitHub Actions, for e
 
 #### Configuring a GitLab repository
 
-Unlike GitHub, GitLab does not upload files in a release. Release assets are links (URLs), GitLab only stores the name and URL of assets. Every release automatically includes source code archives generated from the Git tag. You need to provide your component's zip file as a link. 
+GitLab releases only store the name and URL of assets, they do not contain uploaded files. You need to provide your component's zip file as a link. 
 
-1. Upload the component's ZIP file somewhere, i.e. either on an external server, or [using GitLab Package Registry](#using-the-package-registry) (generic package).
+1. Upload the component's ZIP file somewhere, i.e. either on an external server, or [using GitLab Package Registry](#using-the-gitlab-package-registry) (generic package).
 2. Create a [GitLab release](https://docs.gitlab.com/user/project/releases/) for your component, including the link to your component's file as release asset.
 
 The asset name is typically the project name or an artifact name.
 
-#### Using the Package Registry
+#### Using the GitLab Package Registry
 
 The [GitLab Package Registry](https://docs.gitlab.com/user/packages/package_registry/) allows you to host your files in GitLab itself. Its main advantages include an authenticated access, stable and versioned urls, and the ability to associate binairies with release tags. To use the Package Registry:
-1. Build your file (for example: MyComponent.zip)
+1. Build your component file (for example: *MyComponent.zip*)
 2. Upload it to the [generic packages repository](https://docs.gitlab.com/user/packages/generic_packages/) using a script (see [examples in the GitLab documentation](https://docs.gitlab.com/user/packages/generic_packages/#publish-a-single-file)). 
 3. **Deploy** \> **Package Registry** to see the result. 
 4. Use the package URL as a release asset link.
@@ -232,7 +230,7 @@ The [GitLab Package Registry](https://docs.gitlab.com/user/packages/package_regi
 #### Declaring paths
 
 
-You declare a component stored on GitHub in the [**dependencies.json** file](#dependenciesjson) in the following way:
+You declare components stored on GitHub and GitLab in the [**dependencies.json** file](#dependenciesjson) in the following way:
 
 ```json title="dependencies.json"
 {
@@ -278,9 +276,9 @@ If you select the [**Follow 4D Version**](#defining-a-github-dependency-version-
 
 :::
 
-- **Tags** are texts that uniquely reference a release. In the [**dependencies.json** file](#dependenciesjson) and [**environment4d.json**](#environment4djson) files, you can indicate the release tag you want to use in your project. For example :
+- **Tags** are texts that uniquely reference a release. In the [**dependencies.json**](#dependenciesjson) and [**environment4d.json**](#environment4djson) files, you can indicate the release tag you want to use in your project. For example :
 
-```json
+```json title="dependencies.json"
 {
 	"dependencies": {
 		"myFirstGitHubComponent": {
@@ -293,7 +291,7 @@ If you select the [**Follow 4D Version**](#defining-a-github-dependency-version-
 
 - A release is also identified by a **version**. The versioning system used is based on the [*Semantic Versioning*](https://regex101.com/r/Ly7O1x/3/) concept, which is the most commonly used. Each version number is identified as follows: `majorNumber.minorNumber.pathNumber`. In the same way as for tags, you can indicate the version of the component you wish to use in your project, as in this example:
 
-```json
+```json title="dependencies.json"
 {
 	"dependencies": {
 		"myFirstGitHubComponent": {
