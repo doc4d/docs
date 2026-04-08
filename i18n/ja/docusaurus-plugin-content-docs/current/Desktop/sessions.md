@@ -31,22 +31,22 @@ title: デスクトップセッション
 
 ### サーバー側とクライアント側のユーザーセッションオブジェクトの比較{#comparing-server-side-and-client-side-user-session-objects}
 
-Depending on where the code is executed, a server-side or a client-side user `session` object is available. Both objects are similar, except that:
+コードが実行される場所に応じて、サーバー側またはクライアント側の `session` オブジェクトが利用可能です。 どちらのオブジェクトも似ていますが、以下の点で異なります:
 
-- their [`.storage`](../API/SessionClass.md#storage) properties are not the same object. A value stored in the `.storage` of the user session on the server will not be available in the `.storage` of the user session on the client and conversely.
-- for security reasons, the client-side session cannot execute functions that **modify** [privileges](../ORDA/privileges.md) ([`setPrivileges()`](../API/SessionClass.md#setprivileges), [`clearPrivileges()`](../API/SessionClass.md#clearprivileges), [`promote()`](../API/SessionClass.md#promote), [`demote()`](../API/SessionClass.md#demote), [`restore()`](../API/SessionClass.md#restore)). Calling these functions on a client generates an error.
+- それぞれの[`.storage`](../API/SessionClass.md#storage) プロパティは同じオブジェクトではありません。 サーバー側のユーザーセッションの `.storage` で保管されている値は、クライアント側のユーザーセッションの `.storage` では利用できず、その逆もまた同様です。
+- セキュリティ上の理由から、クライアント側のセッションからは、[権限](../ORDA/privileges.md) を**変更**する関数は実行できません([`setPrivileges()`](../API/SessionClass.md#setprivileges)、 [`clearPrivileges()`](../API/SessionClass.md#clearprivileges)、 [`promote()`](../API/SessionClass.md#promote)、 [`demote()`](../API/SessionClass.md#demote)、 [`restore()`](../API/SessionClass.md#restore))。 クライアント側でこれらの関数を呼び出した場合、エラーが生成されます。
 
 :::note
 
-Functions that read privileges can be called on both client and server sides ([`getPrivileges()`](../API/SessionClass.md#getprivileges), [`hasPrivilege()`](../API/SessionClass.md#hasprivilege), [`isGuest()`](../API/SessionClass.md#isguest))
+権限を読み出す関数は、クライアント側とサーバー側の両方で呼び出すことが可能です([`getPrivileges()`](../API/SessionClass.md#getprivileges)、 [`hasPrivilege()`](../API/SessionClass.md#hasprivilege)、 [`isGuest()`](../API/SessionClass.md#isguest))
 
 :::
 
 ### 効果
 
-You use the remote user `session` object to manage and share session data.
+セッションのデータを管理して共有するには、リモートユーザー側の `session` オブジェクトを使用します。
 
-Within each environment, a [session `storage`](../API/SessionClass.md#storage) object is shared across all processes of the same user session. For example on the server, you can launch a user authentication and verification procedure when a client connects to the server, involving entering a code sent by e-mail or SMS into the application. 次に、ユーザー情報をセッションの storage に追加し、サーバーがユーザーを識別できるようにします。 この方法により、4Dサーバーはすべてのクライアントプロセスのユーザー情報にアクセスできるため、ユーザーの役割に応じてカスタマイズされたコードを用意することができます。
+それぞれの環境において、[セッションの `storage`](../API/SessionClass.md#storage) オブジェクトは同じユーザーセッションの全てのプロセス間で共有されます。 たとえばサーバー上では、クライアントがサーバーに接続する際にユーザー認証手続きを開始し、メールや SMS で送信されたコードをアプリケーションに入力させることができます。 次に、ユーザー情報をセッションの storage に追加し、サーバーがユーザーを識別できるようにします。 この方法により、4Dサーバーはすべてのクライアントプロセスのユーザー情報にアクセスできるため、ユーザーの役割に応じてカスタマイズされたコードを用意することができます。
 
 Within each environment, you can use the remote user `session` object to [create an OTP](../API/SessionClass.md#createotp) and [share the remote session for web accesses](#sharing-a-remote-session-for-web-accesses).
 
