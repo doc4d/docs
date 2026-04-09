@@ -97,9 +97,9 @@ Each worker (or form window for [`CALL FORM`](../commands-legacy/call-form.md)) 
 | CALL FORM                       | CALL FORM($win; "MyMethod"; $params)                               | MyMethod は $params の引数を渡して呼び出されます                             |
 | 4D.SystemWorker | 4D.SystemWorker.new(cmd; $options) | コールバック: onData、onResponse、onError、onTerminate |
 
-## Asynchronous programming with 4D classes
+## 4Dクラスによる非同期プログラミング
 
-Several 4D classes support asynchronous processing:
+複数の4D クラスが非同期処理をサポートしています:
 
 - [`HTTPRequest`](../API/HTTPRequestClass.md) – Handles asynchronous HTTP requests and responses.
 - [`SystemWorker`](../API/SystemWorkerClass.md) – Executes external processes asynchronously.
