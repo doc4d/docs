@@ -59,7 +59,7 @@ Components declared in the **dependencies.json** file can be stored at different
 
 - at the same level as your 4D project's package folder: this is the default location,
 - anywhere on your machine: the component path must be declared in the **environment4d.json** file
-- on a GitHub or GitLab repository: the component path can be declared in the **dependencies.json** file or in the **environment4d.json** file, or in both files (a [local cache](#local-cache-for-dependencies) is then handled automatically).
+- on a GitHub or [GitLab](https://blog.4d.com/integrate-4d-components-directly-from-gitlab) repository: the component path can be declared in the **dependencies.json** file or in the **environment4d.json** file, or in both files (a [local cache](#local-cache-for-dependencies) is then handled automatically).
 
 If the same component is installed at different locations, a [priority order](#priority) is applied.  
 
@@ -215,7 +215,7 @@ GitLab releases only store the name and URL of assets, they do not contain uploa
 1. Upload the component's ZIP file somewhere, i.e. either on an external server, or [using GitLab Package Registry](#using-the-gitlab-package-registry) (generic package).
 2. Create a [GitLab release](https://docs.gitlab.com/user/project/releases/) for your component, including the link to your component's file as release asset.
 
-The asset name is typically the project name or an artifact name.
+The asset name is typically an artifact link name (\<my-component\>.zip).
 
 #### Using the GitLab Package Registry
 
@@ -238,8 +238,8 @@ You declare components stored on GitHub and GitLab in the [**dependencies.json**
 		"myGitHubComponent1": {
 			"github" : "JohnSmith/myGitHubComponent1"
 		},
-		"myGitLabComponent1": {
-			"gitlab" : "JohnSmith/myGitLabComponent1"
+		"myGitLabComponent": {
+			"gitlab" : "JohnSmith/myGitLabComponent"
 		},
 		"myPrivateGitLabComponent": {
 			"gitlab" : "JohnSmith/myPrivateGitLabComponent",
@@ -250,7 +250,7 @@ You declare components stored on GitHub and GitLab in the [**dependencies.json**
 }
 ```
 
-- By default, "gitlab" indicates a GitLab repository hosted on https://gitlab.com. Add the "host" key to declare a private GitLab self-hosted instance. 
+- (GitLab dependencies only) Use the "host" property to declare a private GitLab self-hosted instance. Using only the "gitlab" property indicates a GitLab repository hosted on https://gitlab.com.
 - "myGitHubComponent1" is referenced and declared for the project, although "myGitHubComponent2" is only referenced. You need to declare it in the [**environment4d.json**](#environment4djson) file:
 
 ```json title="environment4d.json"
@@ -306,7 +306,8 @@ A range is defined by two semantic versions, a min and a max, with operators '\<
 
 Here are a few examples:
 
-- "latest": the most recent version (in GitHub releases, has the "latest" badge).
+- "latest" (GitHub only): the GitHub release with the "latest" badge (to be selected by the developer).
+- "highest" (GitLab only): the GitLab release with the highest semantic value.
 - "*": the latest version released.
 - "1.*": all version of major version 1.
 - "1.2.*": all patches of minor version 1.2.
@@ -454,7 +455,11 @@ The following status labels are available:
 - **Refreshed after restart**: The [component version configuration](#defining-a-dependency-version-range) of the dependency has been modified, it will be adjusted at the next startup.   
 - **Recent update**: A new version of the dependency has been loaded at startup.  
 
+:::tip
 
+When you click on the **Available after restart** label, a dialog box is displayed and allows you to restart immediately. 
+
+:::
 
 
 A tooltip is displayed when you hover over the dependency line, provding additional information about the status:
