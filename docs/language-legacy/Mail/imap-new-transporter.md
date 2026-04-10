@@ -43,11 +43,10 @@ In the *parameter* parameter, pass an object containing the following properties
 |[<!-- INCLUDE #IMAPTransporterClass.checkConnectionDelay.Syntax -->](../../API/IMAPTransporterClass.md#checkconnectiondelay)| |<!-- INCLUDE #IMAPTransporterClass.checkConnectionDelay.Summary -->|300|
 |[<!-- INCLUDE #transporter.connectionTimeOut.Syntax -->](../../API/IMAPTransporterClass.md#connectiontimeout)| |<!-- INCLUDE #transporter.connectionTimeOut.Summary -->|30|
 |[<!-- INCLUDE #transporter.host.Syntax -->](../../API/IMAPTransporterClass.md#host)| |<!-- INCLUDE #transporter.host.Summary -->|*mandatory*|
-|.**Listener**: Object||allows you to manage IMAP IDLE notifications for the selected mailbox through callback functions.|none|
-|                     |.onMailCreated : 4D.function|Called when a new message is detected.|none|
-|                     |.onMailDeleted : 4D.function|Called when a message is permanently deleted.|none|
-|                     |.onFlagsModified : 4D.function|Called when message flags are modified.|none|
-|                     |.onMailboxStateModified : 4D.function|Called when the mailbox state is modified.|none|
+|.**listener**: Object||allows you to manage IMAP IDLE notifications for the selected mailbox through callback functions.|none|
+|                     |.onMailCreated : [4D.Function](../../API/FunctionClass.md)|Called when a new message is detected.|none|
+|                     |.onMailDeleted : [4D.Function](../../API/FunctionClass.md)|Called when a message is permanently deleted.|none|
+|                     |.onFlagsModified : [4D.Function](../../API/FunctionClass.md)|Called when message flags are modified.|none|
 |[<!-- INCLUDE #transporter.logFile.Syntax -->](../../API/IMAPTransporterClass.md#logfile)| |<!-- INCLUDE #transporter.logFile.Summary -->|none|
 |.**password** : Text| |User password for authentication on the server. Not returned in *[IMAP transporter](../../API/IMAPTransporterClass.md#imap-transporter-object)* object.|none|
 |[<!-- INCLUDE #transporter.port.Syntax -->](../../API/IMAPTransporterClass.md#port)| |<!-- INCLUDE #transporter.port.Summary -->|993|

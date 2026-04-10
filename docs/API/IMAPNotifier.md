@@ -39,6 +39,11 @@ $transporter.selectBox("INBOX")
 
 $transporter.notifier.start()     
 ```      
+:::tip Related Blog post
+
+[Instant Email Notifications with IMAP Transporter](https://blog.4d.com/instant-email-notifications-with-imap-transporter)
+
+:::
 
 ## IMAPNotifier object
 
@@ -101,11 +106,9 @@ Callback functions are executed in the worker where `.start()` is called.
 
 :::note Notes
 
-IMAP IDLE notifications indicate that a change has occurred but do not provide updated mailbox data.  
-To refresh the mailbox state, it is recommended to stop the notifier, retrieve the updated data (for example using `getMail()`), and then restart it.
+* When the notifier is started, other transporter functions (such as `getMail()` or `send()`) are not available. You must call `.stop()` before using these functions, then call `.start()` again to resume notifications.
 
-When the notifier is started, other transporter functions (such as `getMail()` or `send()`) are not available. 
-You must call `.stop()` before using these functions, then call `.start()` again to resume notifications.
+* IMAP IDLE notifications indicate that a change has occurred but do not provide updated mailbox data. To refresh the mailbox state, you must stop the notifier, retrieve the updated data (for example using `getMail()`), and then restart it.
 
 :::
 
@@ -136,7 +139,7 @@ You must call `.stop()` before using these functions, then call `.start()` again
 
 #### Description
 
-The `.stop()` function <!-- REF #IMAPNotifier.stop().Summary -->stops the notification subscription<!-- END REF -->.
+The `.stop()` function <!-- REF #IMAPNotifier.stop().Summary -->stops the notification subscription<!-- END REF -->. Calling `.stop()` is required before using other transporter functions (such as `getMail()` or `send()`).
 
 #### Returned object
 
