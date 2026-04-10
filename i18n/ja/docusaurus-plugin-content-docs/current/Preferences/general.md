@@ -100,7 +100,7 @@ These items allow you to create binary databases (see [Creating a new database](
 
 > このオプションは、プロジェクトにのみ適用できます (バイナリデータベースでは常にトークンが含まれます)。
 
-> You can always get the code with tokens by calling [`METHOD GET CODE`](../commands-legacy/method-get-code.md) with 1 in the *option* parameter.
+> *option* パラメーターに 1 を指定して [`METHOD GET CODE`](../commands/method-get-code) を呼び出すと、 トークンを含むコードをいつでも取得することができます。
 
 #### 既存プロジェクトからトークンを除外する
 
@@ -161,3 +161,4 @@ These items allow you to create binary databases (see [Creating a new database](
 スタティックな HTMLドキュメントの場所を指定します。 デフォルトでこれは \Help\Command\language サブフォルダーに設定されています。 このエリアに割り当てられているメニューをクリックすると、場所を見ることができます。 このサブフォルダーが存在しない場合、場所は赤で表示されます。
 
 この場所は必要に応じて変更することができます。たとえば、アプリケーションの言語とは異なる言語でドキュメントを表示したい場合などです。 HTMLドキュメントは、異なるボリュームや Webサーバー上などに置くことも可能です。 他の場所を指定するには、メニューの隣の **[...]** ボタンをクリックし、ドキュメントのルートフォルダー (`fr`, `en`, `es`, `de` または `ja` などの言語に対応するフォルダー) を選択します。
+

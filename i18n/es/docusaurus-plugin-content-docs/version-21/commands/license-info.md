@@ -14,6 +14,18 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>Historia</summary>
+
+| Lanzamiento | Modificaciones                                   |
+| ----------- | ------------------------------------------------ |
+| 20 R7       | Renombrado (Get License info) |
+| 16 R6       | Modificado                                       |
+| 16 R4       | Created                                          |
+
+</details>
+</div>
+
 ## Descripción
 
 <!--REF #_command_.License info.Summary-->El comando **Licencia info** devuelve un objeto que suministra información detallada sobre la licencia activa.<!-- END REF-->
@@ -93,44 +105,44 @@ Cada objeto de la colección `products` puede tener las siguientes propiedades:
 Desea obtener información sobre su licencia actual de 4D Server:
 
 ```4d
- var $obj : Object
- $obj:=License info
+ var $obj : Object
+ $obj:=License info
 ```
 
 *$obj* puede contener, por ejemplo:
 
 ```json
 {
-    "name": "4D Server v16 R3",
-    "key": 123456789,
-    "licenseNumber": "xxxx",
-    "version": "16R3",
-    "userName": "John DOE",
-    "userMail": "john.doe@alpha.com",
-    "companyName": "Alpha",
-    "platforms": ["macOS", "windows"],
-    "expirationDate": {"day":1, "month":1, "year":2018},
-    "products":[
-        {
-            "allowedCount": 15,
-            "id": 808464697,
-            "name": "4D Write - 4D Write Pro",
-            "rights": [
-                {
-                    "count": 5,
-                    "expirationDate": {"day":1, "month":2, "year":2018}
-                }, {
-                    "count": 10,
-                    "expirationDate": {"day":1, "month":11, "year":2017}
-                }, {
-                    "count": 10,
-                    "expirationDate": {"day":1, "month":11, "year":2015} //expired, not counted
-                }
-            ],
-            "usedCount": 12
-        },
-        {...}
-    ]
+    "name": "4D Server v16 R3",
+    "key": 123456789,
+    "licenseNumber": "xxxx",
+    "version": "16R3",
+    "userName": "John DOE",
+    "userMail": "john.doe@alpha.com",
+    "companyName": "Alpha",
+    "platforms": ["macOS", "windows"],
+    "expirationDate": {"day":1, "month":1, "year":2018},
+    "products":[
+        {
+            "allowedCount": 15,
+            "id": 808464697,
+            "name": "4D Write - 4D Write Pro",
+            "rights": [
+                {
+                    "count": 5,
+                    "expirationDate": {"day":1, "month":2, "year":2018}
+                }, {
+                    "count": 10,
+                    "expirationDate": {"day":1, "month":11, "year":2017}
+                }, {
+                    "count": 10,
+                    "expirationDate": {"day":1, "month":11, "year":2015} //expirado, no contado
+                }
+            ],
+            "usedCount": 12
+        },
+        {...}
+    ]
 }
 ```
 

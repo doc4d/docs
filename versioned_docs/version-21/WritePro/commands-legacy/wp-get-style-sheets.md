@@ -33,14 +33,14 @@ The *type* parameter specifies the type of style sheet to return. The available 
 You want to retrieve a collection of all character style sheets:
 
 ```4d
- var $styleSheets : Collection
- $styleSheets:=WP Get style sheets(myDoc;wk type character)
+ var $styleSheets : Collection
+ $styleSheets:=WP Get style sheets(myDoc;wk type character)
 ```
 
 ## See also 
 
 *Accessing document contents by programming*  
-[WP DELETE STYLE SHEET](wp-delete-style-sheet.md)  
-[WP Get style sheet](wp-get-style-sheet.md)  
-[WP IMPORT STYLE SHEETS](wp-import-style-sheets.md)  
-[WP New style sheet](wp-new-style-sheet.md)  
+[WP DELETE STYLE SHEET](../WritePro/commands/wp-delete-style-sheet)  
+[WP Get style sheet](../WritePro/commands/wp-get-style-sheet)  
+[WP IMPORT STYLE SHEETS](../WritePro/commands/wp-import-style-sheet)  
+[WP New style sheet](../WritePro/commands/wp-new-style-sheet)  

@@ -13,7 +13,23 @@ displayed_sidebar: docs
 | ---------- | ------- | --------------------------- | ----------------------------- |
 | Résultat   | Integer | &#8592; | Numéro d'événement formulaire |
 
+| Paramètres | Type    |                             | Description                      |
+| ---------- | ------- | --------------------------- | -------------------------------- |
+| Résultat   | Integer | &#8592; | Numéro d'événement du formulaire |
+
+</div>
 <!-- END REF-->
+
+<div class="no-index">
+<details><summary>Historique</summary>
+
+| Release                     | Modifications                           |
+| --------------------------- | --------------------------------------- |
+| 18                          | Renommé (Form event) |
+| <6 | Created                                 |
+
+</details>
+</div>
 
 ## Description
 

@@ -7,11 +7,13 @@ title: OBJECT Get data source formula
 
 <!--REF #_command_.OBJECT Get data source formula.Params-->
 
-| Paramètres | Type                       |                             | Description                                                                                                             |
-| ---------- | -------------------------- | --------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| \*         | Opérateur                  | &#8594; | Si spécifié, *object* est un nom d'objet (chaîne)<br/>Si omis, *object* est un champ ou une variable |
-| object     | any                        | &#8594; | Nom d'objet (si \* est spécifié) ou<br/>Champ ou variable (si \* est omis)        |
-| formula    | 4D.Formula | &#8592; | Formule associée à l'objet de formulaire (`Null` si aucune formule n'est associée)                   |
+<div class="no-index">
+
+| Paramètres | Type                       |                             | Description                                                                                                                      |
+| ---------- | -------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| \*         | Opérateur                  | &#8594; | Si spécifié, object est un nom d'objet (chaîne) ; s'il est omis, object est une variable ou un champ          |
+| object     | Text, Variable, Field      | &#8594; | Nom de l'objet formulaire (si \* est spécifié) ou <br/> Champ ou variable (si \* est omis) |
+| Résultat   | 4D.Formula | &#8592; | Formule associée à l'objet de formulaire (`Null` si aucune formule n'est associée)                            |
 
 <!-- END REF-->
 

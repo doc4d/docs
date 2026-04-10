@@ -5,7 +5,7 @@ title: Collection
 
 La classe Collection gère les expressions de type [Collection](Concepts/dt_collection.md).
 
-Une collection est initialisée avec les commandes [`New collection`](../commands/new-collection.md) ou [`New shared collection`](../commands/new-shared-collection.md).
+Une collection est initialisée avec les commandes [`New collection`](../commands/new-collection) ou [`New shared collection`](../commands/new-shared-collection).
 
 ### Exemple
 
@@ -283,7 +283,7 @@ $c.combine($fruits;3) //[1,2,3,"Orange","Banana","Apple","Grape",4,5,6]
 
 </details>
 
-<!-- REF #collection.concat().Syntax -->**.concat**( *value* : any { ; *...valueN* } ) : Collection<!-- END REF -->
+<!-- REF #collection.concat().Syntax -->**.concat**( *value* : any { ; *...valueN* : any } ) : Collection<!-- END REF -->
 
 <!-- REF #collection.concat().Params -->
 
@@ -582,11 +582,11 @@ Comparaison
 
 <div class="no-index">
 
-| Paramètres   | Type       |                             | Description                                                             |
-| ------------ | ---------- | :-------------------------: | ----------------------------------------------------------------------- |
-| propertyPath | Text       |              ->             | Chemin de l'attribut dont vous souhaitez obtenir les valeurs distinctes |
-| options      | Integer    |              ->             | `ck diacritical`, `ck count values`                                     |
-| Résultat     | Collection | <- | Commentaire                                                             |
+| Paramètres   | Type       |                             | Description                                                     |
+| ------------ | ---------- | :-------------------------: | --------------------------------------------------------------- |
+| propertyPath | Text       |              ->             | Chemin de propriété d'objet à utiliser pour évaluer les valeurs |
+| options      | Integer    |              ->             | `ck diacritical`, `ck count values`                             |
+| Résultat     | Collection | <- | Nouvelle collection contenant uniquement les valeurs distinctes |
 
 </div>
 <!-- END REF -->
@@ -1880,7 +1880,7 @@ Exemple 3
 
 > Cette fonction ne modifie pas la collection d'origine.
 
-Ajout
+Si la collection contient différents [types de valeurs](../Concepts/data-types.md), ils seront triés selon les [principes de tri de 4D](../Concepts/ordering.md) et la fonction `.max()` renverra la valeur maximale du dernier type d'élément dans l'ordre de la liste des types.
 
 Modifications
 
@@ -1933,7 +1933,7 @@ Ajout
 
 > Cette fonction ne modifie pas la collection d'origine.
 
-Ajout
+Si la collection contient différents [types de valeurs](../Concepts/data-types.md), ils seront triés selon les [principes de tri de 4D](../Concepts/ordering.md) et la fonction `.min()` renverra la valeur minimale du premier type d'élément dans l'ordre de la liste des types.
 
 Modifications
 
@@ -1987,15 +1987,9 @@ Exemple 2
 
 > Exemple
 
-Exemple <summary>Historique</summary> Les types sont renvoyés dans l'ordre suivant :
+Si `.multiSort()` est appelé sans paramètres, la fonction a le même effet que la fonction [`.sort()`](#sort) : la collection est triée (uniquement les valeurs scalaires) par défaut dans l'ordre croissant, en fonction de leur type.
 
-1. Null
-2. booléens
-3. chaînes
-4. nombres
-5. objets
-6. collections
-7. dates
+Si la collection contient des éléments de différents [types](../Concepts/data-types.md), ils seront triés selon les [principes de tri de 4D](../Concepts/ordering.md).
 
 booléens
 
@@ -2007,7 +2001,7 @@ Cela permet l'utilisation de variables ou d'expressions dans les arguments de re
 
 :::
 
-Si vous souhaitez trier les collections dans un ordre autre que croissant, vous devez fournir *formula* ([objet Formula](../commands/formula.md)) qui définit l'ordre de tri. Nom de méthode Contrairement aux collections standard (non partagées), les collections partagées ne prennent pas en charge les images, les pointeurs et les objets ou collections non partagés.
+Si vous souhaitez trier les collections dans un ordre autre que croissant, vous devez fournir *formula* ([objet Formula](../commands/formula)) qui définit l'ordre de tri. La valeur de retour doit être un booléen qui indique l'ordre relatif des deux éléments : **True** si *$1.value* est inférieur à *$1.value2*, **False** si *$1.value* est supérieur à *$1.value2*. Vous pouvez passer des paramètres supplémentaires à la formule si nécessaire.
 
 Sinon, vous pouvez ajouter ou modifier des éléments ultérieurement par affectation.
 
@@ -2156,15 +2150,7 @@ Vous pouvez également passer des critères afin de configurer le tri des élém
 
   Cette syntaxe trie uniquement les valeurs scalaires de la collection (les autres types d'éléments comme les objets ou les collections sont retournés non triés).
 
-Si la collection contient des éléments de différents types, ils sont d'abord groupés par type et triés par la suite. Les types sont renvoyés dans l'ordre suivant :
-
-1. Null
-2. booléens
-3. chaînes
-4. nombres
-5. objets
-6. collections
-7. dates
+Si la collection contient des éléments de différents [types](../Concepts/data-types.md), ils seront triés selon les [principes de tri de 4D](../Concepts/ordering.md).
 
 #### Exemple 1
 
@@ -2249,7 +2235,7 @@ Tri avec un chemin de propriété :
 
 </details>
 
-<!-- REF #collection.orderByMethod().Syntax -->**.orderByMethod**( *formula* : 4D.Function { ; *...extraParam* : expression } ) : Collection<br/>**.orderByMethod**( *methodName* : Text { ; *...extraParam* : expression } ) : Collection<!-- END REF -->
+<!-- REF #collection.orderByMethod().Syntax -->**.orderByMethod**( *formula* : 4D.Function { ; *...extraParam* : Expression } ) : Collection<br/>**.orderByMethod**( *methodName* : Text { ; *...extraParam* : Expression } ) : Collection<!-- END REF -->
 
 <!-- REF #collection.orderByMethod().Params -->
 
@@ -2393,7 +2379,7 @@ Chemin ou nom de propriété cible
 
 </details>
 
-<!-- REF #collection.push().Syntax -->**.push**( *element* : any { ;...*elementN* } ) : Collection <!-- END REF -->
+<!-- REF #collection.push().Syntax -->**.push**( *element* : any { ;...*elementN* : any } ) : Collection <!-- END REF -->
 
 <!-- REF #collection.push().Params -->
 
@@ -2560,7 +2546,7 @@ $o.parameters:={name:"Chicago")
 $c:=$myCol.query(":att=:name";$o)
 ```
 
-Vous pouvez combiner tous les types d'arguments dans *queryString*. Vous pouvez combiner tous les types d'arguments dans *queryString*.
+Vous pouvez combiner tous les types d'arguments dans *queryString*. Une *queryString* peut contenir, pour les paramètres *propertyPath* et *value* :
 
 - des valeurs directes (pas de placeholders)
 - des placeholders indexés et/ou nommés.
@@ -2822,7 +2808,7 @@ Avec la méthode ***Flatten*** suivante :
 
 </details>
 
-<!-- REF #collection.reduceRight().Syntax -->**.reduceRight**( *formula* : 4D.Function { ; *initValue* : any { ; *...param* : expression }} ) : any<br/>**.reduceRight**( *methodName* : Text { ; *initValue* : any { ; *...param* : expression }} ) : any <!-- END REF -->
+<!-- REF #collection.reduceRight().Syntax -->**.reduceRight**( *formula* : 4D.Function { ; *initValue* : any { ; *...param* : Expression }} ) : any<br/>**.reduceRight**( *methodName* : Text { ; *initValue* : any { ; *...param* : Expression }} ) : any <!-- END REF -->
 
 <!-- REF #collection.reduceRight().Params -->
 
@@ -3028,7 +3014,7 @@ Par défaut, les nouveaux éléments sont remplis par des valeurs **null**. Vous
 
 </details>
 
-<!-- REF #collection.reverse().Syntax -->**.reverse( )** : Collection <!-- END REF -->
+<!-- REF #collection.reverse().Syntax -->**.reverse()** : Collection <!-- END REF -->
 
 <!-- REF #collection.reverse().Params -->
 
@@ -3043,7 +3029,7 @@ Par défaut, les nouveaux éléments sont remplis par des valeurs **null**. Vous
 
 #### Description
 
-La fonction `.reverse()` <!-- REF #collection.reverse().Summary-->retourne une copie profonde de la collection avec tous ses éléments dans l'ordre inverse<!-- END REF -->. Si la collection d'origine est une collection partagée, la collection retournée est également une collection partagée.
+The `.reverse()` function <!-- REF #collection.reverse().Summary -->returns a new collection with all elements of the original collection in reverse order<!-- END REF -->. Si la collection d'origine est une collection partagée, la collection retournée est également une collection partagée.
 
 > Cette fonction ne modifie pas la collection d'origine.
 
@@ -3285,15 +3271,7 @@ Vous pouvez également passer une des constantes suivantes dans le paramètre *a
 
 Cette syntaxe trie uniquement les valeurs scalaires de la collection (les autres types d'éléments comme les objets ou les collections sont retournés non triés).
 
-Si la collection contient des éléments de différents types, ils sont d'abord groupés par type et triés par la suite. Les types sont renvoyés dans l'ordre suivant :
-
-1. Null
-2. booléens
-3. chaînes
-4. nombres
-5. objets
-6. collections
-7. dates
+Si la collection contient des éléments de différents [types](../Concepts/data-types.md), ils seront triés selon les [principes de tri de 4D](../Concepts/ordering.md).
 
 Si vous souhaitez trier les éléments de la collection dans un autre ordre ou trier n'importe quel type d'élément, vous devez fournir dans \*formula \* ([objet Formula](FunctionClass.md)) ou *methodName* (Text) une callback qui définit l'ordre de tri. Nom de méthode Vous pouvez fournir des paramètres supplémentaires à la callback si nécessaire.
 
@@ -3445,3 +3423,4 @@ Si plusieurs valeurs sont passées, elles sont insérées toutes en même temps,
 ```
 
 <!-- END REF -->
+

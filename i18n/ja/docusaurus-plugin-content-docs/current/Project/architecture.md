@@ -198,7 +198,7 @@ Logs フォルダーには、プロジェクトが使用するすべてのログ
 - コマンドデバッグ
 - 4D Serverリクエスト (クライアントマシンおよびサーバー上で生成)
 
-> An additional Logs folder is available in the system user preferences folder (active 4D folder, see [Get 4D folder](../commands-legacy/get-4d-folder.md) command) for maintenance log files and in cases where data folder is read-only.
+> データフォルダーが読み取り専用モードの場合やメンテナンスログファイルの保存には、システムのユーザー設定フォルダー (Active 4D Folder のこと、詳しくは [Get 4D folder](../commands/get-4d-folder) コマンド参照) 内にある追加の Logs フォルダーが利用されます。
 
 ## `Settings` (ユーザー)
 
@@ -256,3 +256,4 @@ This folder contains [**user settings**](../settings/overview.md#user-settings) 
 ## `.gitignore` ファイル (任意)
 
 git が無視するファイルを指定します。 プロジェクトに gitignore ファイルを含めるには、環境設定 ＞ **一般** ページの **.gitignore ファイルを作成する** オプションを使用します。 このファイルの内容を設定するには、[.gitignore ファイルを作成する](Preferences/general.md#gitignore-ファイルを作成する) を参照ください。
+

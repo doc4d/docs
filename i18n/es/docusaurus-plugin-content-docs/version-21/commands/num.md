@@ -49,6 +49,7 @@ Hay tres caracteres reservados que **Num** trata de forma especial: el separador
 - El guión hace que el número o exponente sea negativo. El guión debe aparecer antes de todo carácter numérico negativo o después de la "e" para un exponente. Excepto en el caso del carácter "e", si se introduce un guión en una cadena numérica, se ignora la parte de la cadena que va después del guión. Por ejemplo, `Num("123-456")` devuelve 123, pero `Num("-9")` devuelve -9.
 - La e o E hace que todo caracter numérico a su derecha se interprete como la potencia de un exponente. La "e" debe estar incluida en una cadena numérica. Entonces, `Num("123e-2")` devuelve 1.23.  
   Tenga en cuenta que cuando la cadena incluye más de una "e", la conversión puede dar resultados diferentes en macOS y en Windows.
+- El algoritmo de conversión del texto en [valores reales](../Concepts/dt_number.md) se basa en 13 cifras significativas.
 
 #### Parámetro *separador*
 
@@ -94,12 +95,12 @@ Si la evaluación de *expression* da un valor indefinido, el comando devuelve 0 
 El siguiente ejemplo ilustra cómo funciona **Num** cuando se le pasa un único argumento de cadena:
 
 ```4d
-$result:=Num("ABCD") // 0
-$result:=Num("A1B2C3") // 123
-$result:=Num("123") // 123
-$result:=Num("123.4") // 123.4
-$result:=Num("–123") // –123
-$result:=Num("–123e2") // –12300
+$result:=Num("ABCD") // 0
+$result:=Num("A1B2C3") // 123
+$result:=Num("123") // 123
+$result:=Num("123.4") // 123.4
+$result:=Num("–123") // –123
+$result:=Num("–123e2") // –12300
 ```
 
 ## Ejemplo 2
@@ -108,7 +109,7 @@ Aquí, *\[Client\]Debt* se compara con *1000$*. El comando Num aplicado a estas 
 
 ```4d
   // Si el cliente debe menos de 1000, un buen riesgo.
-  // Si el cliente debe más de 1000, un riesgo malo.
+  //Si el cliente debe más de 1000, un riesgo malo.
  [Client]Risk:=("Good"*Num([Client]Debt<1000))+("Bad"*Num([Client]Debt>=1000))
 ```
 
@@ -117,12 +118,12 @@ Aquí, *\[Client\]Debt* se compara con *1000$*. El comando Num aplicado a estas 
 Este ejemplo compara los resultados obtenidos dependiendo del separador “actual”:
 
 ```4d
- $thestring:="33,333.33"
- $thenum:=Num($thestring)
-  // by default, $thenum equals 33,33333 on a French system
- $thenum:=Num($thestring;".")
-  // $thenum will be correctly evaluated regardless of the system;
-  // for example, 33 333,33 on a French system
+ $thestring:="33,333.33"
+ $thenum:=Num($thestring)
+  // por defecto, $thenum equivale a 33,33333 en un sistema francés
+ $thenum:=Num($thestring;".")
+  // $thenum se evaluará correctamente independientemente del sistema;
+  // por ejemplo, 33 333,33 en un sistema francés
 ```
 
 ## Ejemplo 4
@@ -130,13 +131,13 @@ Este ejemplo compara los resultados obtenidos dependiendo del separador “actua
 Este ejemplo ilustra el uso de la sintaxis *base*:
 
 ```4d
-$result:=Num("ff";16) // 255 (lower-case hexadecimal)
+$result:=Num("ff";16) // 255 (hexadecimal en minúsculas)
 $result:=Num("0xFF") // 0
 $result:=Num("0xFF";16) // 255
 $result:=Num("2";2) // 0
 $result:=Num("10.3";16) // 16
-$result:=Num("123.20") // 12320 (standard base 10 syntax)
-$result:=Num("123.20"; 10) // 123 (explicitly specify base 10)
+$result:=Num("123.20") // 12320 (sintaxis estándar en base 10)
+$result:=Num("123.20"; 10) // 123 (especificar explícitamente base 10)
 
 ```
 

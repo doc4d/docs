@@ -19,6 +19,11 @@ WebSocket client connections are useful, for example, to receive financial data 
 
 </details>
 
+### Aynchronous programming
+
+This class supports asynchronous programming in 4D as described in the [Asynchronous Execution](../Develop/async.md) page.
+
+
 
 ### Example
 
@@ -215,7 +220,7 @@ The following contents are sent depending on the *message* type:
 |---|---|
 |Text|Text in UTF-8|
 |Blob|Binary data|
-|Object|Text in JSON UTF-8 (same result as with [`JSON Stringify`](../commands-legacy/json-stringify.md))|
+|Object|Text in JSON UTF-8 (same result as with [`JSON Stringify`](../commands/json-stringify))|
 
 
 <!-- END REF -->
@@ -281,3 +286,4 @@ The `.url` property contains <!-- REF #WebSocketClass.url.Summary -->the URL to 
 This property is read-only.
 
 <!-- END REF -->
+

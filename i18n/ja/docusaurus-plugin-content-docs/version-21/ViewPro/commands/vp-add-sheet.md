@@ -9,11 +9,16 @@ title: VP ADD SHEET
 
 <!-- REF #_method_.VP ADD SHEET.Params -->
 
-| 引数         | 型       |    | 説明                      |                  |
-| ---------- | ------- | -- | ----------------------- | ---------------- |
-| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名 |                  |
-| index      | Integer | -> | 新しいシートのインデックス           |                  |
-| name       | Text    | -> | シート名                    | <!-- END REF --> |
+<div class="no-index">
+
+| 引数         | 型       |    | 説明                      |
+| ---------- | ------- | -- | ----------------------- |
+| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名 |
+| index      | Integer | -> | 新しいシートのインデックス           |
+| name       | Text    | -> | シート名                    |
+
+</div>
+<!-- END REF -->
 
 ## 説明
 
@@ -21,7 +26,7 @@ title: VP ADD SHEET
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
-In *index*, you can pass an index for the new sheet. 渡した *index* 引数が 0以下だった場合、コマンドは新しいシートを先頭に挿入します。 *index* 引数がシートの総数より多い場合、コマンドは既存のシートの後に新しいシートを挿入します。
+*index* 引数には、新しいシートのインデックスを渡します。 渡した *index* 引数が 0以下だった場合、コマンドは新しいシートを先頭に挿入します。 *index* 引数がシートの総数より多い場合、コマンドは既存のシートの後に新しいシートを挿入します。
 
 > インデックスは 0 起点です。
 

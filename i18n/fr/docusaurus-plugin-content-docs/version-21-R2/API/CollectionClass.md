@@ -283,7 +283,7 @@ $c.combine($fruits;3) //[1,2,3,"Orange","Banana","Apple","Grape",4,5,6]
 
 </details>
 
-<!-- REF #collection.concat().Syntax -->**.concat**( *value* : any { ; *...valueN* } ) : Collection<!-- END REF -->
+<!-- REF #collection.concat().Syntax -->**.concat**( *value* : any { ; *...valueN* : any } ) : Collection<!-- END REF -->
 
 <!-- REF #collection.concat().Params -->
 
@@ -582,11 +582,11 @@ Comparaison
 
 <div class="no-index">
 
-| Paramètres   | Type       |                             | Description                                                             |
-| ------------ | ---------- | :-------------------------: | ----------------------------------------------------------------------- |
-| propertyPath | Text       |              ->             | Chemin de l'attribut dont vous souhaitez obtenir les valeurs distinctes |
-| options      | Integer    |              ->             | `ck diacritical`, `ck count values`                                     |
-| Résultat     | Collection | <- | Commentaire                                                             |
+| Paramètres   | Type       |                             | Description                                                     |
+| ------------ | ---------- | :-------------------------: | --------------------------------------------------------------- |
+| propertyPath | Text       |              ->             | Chemin de propriété d'objet à utiliser pour évaluer les valeurs |
+| options      | Integer    |              ->             | `ck diacritical`, `ck count values`                             |
+| Résultat     | Collection | <- | Nouvelle collection contenant uniquement les valeurs distinctes |
 
 </div>
 <!-- END REF -->
@@ -2560,7 +2560,7 @@ $o.parameters:={name:"Chicago")
 $c:=$myCol.query(":att=:name";$o)
 ```
 
-Vous pouvez combiner tous les types d'arguments dans *queryString*. Vous pouvez combiner tous les types d'arguments dans *queryString*.
+Vous pouvez combiner tous les types d'arguments dans *queryString*. Une *queryString* peut contenir, pour les paramètres *propertyPath* et *value* :
 
 - des valeurs directes (pas de placeholders)
 - des placeholders indexés et/ou nommés.
@@ -3043,7 +3043,7 @@ Par défaut, les nouveaux éléments sont remplis par des valeurs **null**. Vous
 
 #### Description
 
-La fonction `.reverse()` <!-- REF #collection.reverse().Summary-->retourne une copie profonde de la collection avec tous ses éléments dans l'ordre inverse<!-- END REF -->. Si la collection d'origine est une collection partagée, la collection retournée est également une collection partagée.
+The `.reverse()` function <!-- REF #collection.reverse().Summary -->returns a new collection with all elements of the original collection in reverse order<!-- END REF -->. Si la collection d'origine est une collection partagée, la collection retournée est également une collection partagée.
 
 > Cette fonction ne modifie pas la collection d'origine.
 

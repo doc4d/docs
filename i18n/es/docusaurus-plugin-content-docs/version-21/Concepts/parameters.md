@@ -180,13 +180,7 @@ Function square($x : Integer) -> $result : Integer
    return $x * $x
 ```
 
-:::note
-
-Internamente, `return x` ejecuta `myReturnValue:=x`, y regresa al llamante. Si `return` se utiliza sin una expresión, la función o el método devuelve un valor nulo del tipo de retorno declarado (si lo hay), de lo contrario *undefined*.
-
-:::
-
-La instrucción `return` puede utilizarse junto con la sintaxis estándar para los [valores devueltos](#valor-devuelto) (el valor devuelto debe ser del tipo declarado). Sin embargo, hay que tener en cuenta que termina inmediatamente la ejecución del código. Por ejemplo:
+La instrucción `return` puede utilizarse junto con la sintaxis estándar para los [valores devueltos](#valor-devuelto) (el valor devuelto debe ser del tipo declarado). When you have declared a return parameter (e.g. `myFunction() -> $myReturnValue : Text`), `return $x` implicitely executes `$myReturnValue:=$x`, and returns to the caller. Tenga en cuenta que termina inmediatamente la ejecución del código. Examine los siguientes ejemplos:
 
 ```4d
 Function getValue -> $v : Integer
@@ -283,9 +277,9 @@ Aquí tenemos un método llamado `SumNumbers` que devuelve el total calculado pa
 
 var $number; $total : Real
 
-For each ($number; 1; Count parameters)
+For ($number; 1; Count parameters)
 	$total+=${$number}
-End for each
+End for
 
 return $total
 

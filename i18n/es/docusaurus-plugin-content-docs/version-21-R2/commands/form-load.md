@@ -17,6 +17,19 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>Historia</summary>
+
+| Lanzamiento | Modificaciones                                     |
+| ----------- | -------------------------------------------------- |
+| 20          | Modificado                                         |
+| 16 R6       | Modificado                                         |
+| 14          | Renombrado (OPEN PRINTING FORM) |
+| 12          | Created                                            |
+
+</details>
+</div>
+
 ## Descripción
 
 <!--REF #_command_.FORM LOAD.Summary-->El comando **FORM LOAD** se utiliza para cargar el *form* en memoria en el proceso actual junto con *formData* (opcional) para imprimir sus datos o analizar su contenido.<!-- END REF--> Sólo puede haber un formulario actual por proceso.

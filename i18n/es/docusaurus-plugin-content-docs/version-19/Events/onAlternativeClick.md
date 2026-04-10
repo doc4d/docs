@@ -26,4 +26,4 @@ Este evento se genera en columnas de [list boxes de tipo array de objetos](../Fo
 
 ![](../assets/en/FormObjects/listbox_column_objectArray_alternateButton.png)
 
-Ver la [descripción del atributo "alternateButton"](FormObjects/listbox_overview.md#alternatebutton).
+Ver la descripción [del atributo "alternateButton"](FormObjects/listbox-column.md#alternatebutton).

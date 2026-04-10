@@ -180,24 +180,30 @@ Function square($x : Integer) -> $result : Integer
    return $x * $x
 ```
 
-:::note
-
-内部的に、`return x` は `myReturnValue:=x` を実行し、呼び出し元に戻ります。  `return` が式なしで使われた場合、関数またはメソッドは宣言された戻り値の型 (あれば) の null値を返し、それ以外の場合には *undefined* です。
-
-:::
-
-`return`文は、[戻り値](#戻り値) の標準的なシンタックスと併用することができます (戻り値は宣言された型でなくてはなりません)。  ただし、<code>return</code> はコードの実行を直ちに終了させることに注意が必要です。 例:
+`return`文は、[戻り値](#戻り値) の標準的なシンタックスと併用することができます (戻り値は宣言された型でなくてはなりません)。  戻り値の宣言していた場合(例: `myFunction() -> $myReturnValue : Text`)、 `return $x` は暗示的に `$myReturnValue:=$x` を実行し、呼び出し元に戻ります。 この場合、コード実行は直ちに終了されるという点に注意してください。 以下の例で詳しく見てみましょう:
 
 ```4d
 Function getValue -> $v : Integer
 	$v:=10
+	return
+	// 関数は 10 を返す
+	
+Function getValue -> $v : Integer
+	$v:=10
 	return 20
-	// 20 が返されます
+	// 関数は 20 を返す
 
 Function getValue -> $v : Integer
 	return 10
-	$v:=20 // 実行されません
-	// 10 が返されます
+	$v:=20 // never executed
+	// 関数は 10 を返す
+
+Function getValue -> $v : Integer
+	return "Hello" // エラー
+
+Function returnHello
+	return "Hello"
+	// 関数は "Hello" を返す
 ```
 
 ## 引数の間接参照 (${N})
@@ -283,9 +289,9 @@ Function myfunction (var1: Integer ; ... : Text)
 
 var $number; $total : Real
 
-For each ($number; 1; Count parameters)
+For ($number; 1; Count parameters)
 	$total+=${$number}
-End for each
+End for
 
 return $total
 

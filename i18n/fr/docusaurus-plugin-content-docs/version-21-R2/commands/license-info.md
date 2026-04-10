@@ -14,6 +14,18 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>Historique</summary>
+
+| Release | Modifications                                 |
+| ------- | --------------------------------------------- |
+| 20 R7   | Renommé (Get License info) |
+| 16 R6   | Modifié                                       |
+| 16 R4   | Created                                       |
+
+</details>
+</div>
+
 ## Description
 
 <!--REF #_command_.License info.Summary-->La commande **License info** renvoie un objet fournissant des informations détaillées sur la licence active.<!-- END REF-->

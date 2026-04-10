@@ -13,11 +13,11 @@ title: 4D Write Pro Commands
 
 <a id="B"><b>B</b></a>
 
-[`WP Bookmark range`](../commands-legacy/wp-bookmark-range.md)
+[`WP Bookmark range`](../commands/wp-bookmark-range)
 
 <a id="C"><b>C</b></a>
 
-[`WP COMPUTE FORMULAS`](../commands-legacy/wp-compute-formulas.md)
+[`WP COMPUTE FORMULAS`](../commands/wp-compute-formulas)
 
 <a id="D"><b>D</b></a>
 
@@ -28,7 +28,7 @@ title: 4D Write Pro Commands
 [`WP DELETE SECTION`](wp-delete-section.md) ***New 4D 20 R7***<br/>
 [`WP DELETE STYLE SHEET`](wp-delete-style-sheet.md) ***Modified 4D 21 R3***<br/>
 [`WP DELETE SUBSECTION`](wp-delete-subsection.md) ***Modified 4D 20 R7***<br/>
-[`WP DELETE TEXT BOX`](../commands-legacy/wp-delete-text-box.md)
+[`WP DELETE TEXT BOX`](../commands/wp-delete-text-box)
 
 <a id="E"><b>E</b></a>
 
@@ -37,10 +37,10 @@ title: 4D Write Pro Commands
 
 <a id="F"><b>F</b></a>
 
-[`WP Find all`](../commands-legacy/wp-find-all.md)<br/>
-[`WP Find next`](../commands-legacy/wp-find-next.md)<br/>
-[`WP Find previous`](../commands-legacy/wp-find-previous.md)<br/>
-[`WP FREEZE FORMULAS`](../commands-legacy/wp-freeze-formulas.md)
+[`WP Find all`](../commands/wp-find-all)<br/>
+[`WP Find next`](../commands/wp-find-next)<br/>
+[`WP Find previous`](../commands/wp-find-previous)<br/>
+[`WP FREEZE FORMULAS`](../commands/wp-freeze-formulas)
 
 <a id="G"><b>G</b></a>
 
@@ -74,8 +74,8 @@ title: 4D Write Pro Commands
 [`WP Insert document body`](wp-insert-document-body.md) ***Modified 4D 20 R8***<br/>
 [`WP INSERT FORMULA`](wp-insert-formula.md) ***Modified 4D 20 R8***<br/>
 [`WP INSERT PICTURE`](wp-insert-picture.md) ***Modified 4D 20 R8***<br/>
-[`WP Insert table`](../commands-legacy/wp-insert-table.md)<br/>
-[`WP Is font style supported`](../commands-legacy/wp-is-font-style-supported.md)
+[`WP Insert table`](../commands/wp-insert-table)<br/>
+[`WP Is font style supported`](../commands/wp-is-font-style-supported)
 
 <a id="N"><b>N</b></a>
 
@@ -89,9 +89,9 @@ title: 4D Write Pro Commands
 
 <a id="P"><b>P</b></a>
 
-[`WP Paragraph range`](../commands-legacy/wp-paragraph-range.md)<br/>
-[`WP Picture range`](../commands-legacy/wp-picture-range.md)<br/>
-[`WP PRINT`](../commands-legacy/wp-print.md)
+[`WP Paragraph range`](../commands/wp-paragraph-range)<br/>
+[`WP Picture range`](../commands/wp-picture-range)<br/>
+[`WP PRINT`](../commands/wp-print)
 
 <a id="R"><b>R</b></a>
 
@@ -99,30 +99,30 @@ title: 4D Write Pro Commands
 
 <a id="S"><b>S</b></a>
 
-[`WP SELECT`](../commands-legacy/wp-select.md)<br/>
-[`WP Selection range`](../commands-legacy/wp-selection-range.md)<br/>
+[`WP SELECT`](../commands/wp-select)<br/>
+[`WP Selection range`](../commands/wp-selection-range)<br/>
 [`WP SET ATTRIBUTES`](wp-set-attributes.md) ***Modified 4D 20 R8***<br/>
-[`WP SET DATA CONTEXT`](../commands-legacy/wp-set-data-context.md)<br/>
-[`WP SET FRAME`](../commands-legacy/wp-set-frame.md)<br/>
-[`WP SET LINK`](../commands-legacy/wp-set-link.md)<br/>
-[`WP SET TEXT`](../commands-legacy/wp-set-text.md)<br/>
-[`WP SET VIEW PROPERTIES`](../commands-legacy/wp-set-view-properties.md)
+[`WP SET DATA CONTEXT`](../commands/wp-set-data-context)<br/>
+[`WP SET FRAME`](../commands/wp-set-frame)<br/>
+[`WP SET LINK`](../commands/wp-set-link)<br/>
+[`WP SET TEXT`](../commands/wp-set-text)<br/>
+[`WP SET VIEW PROPERTIES`](../commands/wp-set-view-properties)
 
 <a id="T"><b>T</b></a>
 
 [`WP Table append row`](wp-table-append-row.md) ***Modified 4D 20 R8***<br/>
-[`WP TABLE DELETE COLUMNS`](../commands-legacy/wp-table-delete-columns.md)<br/>
-[`WP TABLE DELETE ROWS`](../commands-legacy/wp-table-delete-rows.md)<br/>
-[`WP Table get cells`](../commands-legacy/wp-table-get-cells.md)<br/>
-[`WP Table get columns`](../commands-legacy/wp-table-get-columns.md)<br/>
-[`WP Table get rows`](../commands-legacy/wp-table-get-rows.md)<br/>
-[`WP Table insert columns`](../commands-legacy/wp-table-insert-columns.md)<br/>
-[`WP Table insert rows`](../commands-legacy/wp-table-insert-rows.md)<br/>
-[`WP TABLE MERGE CELLS`](../commands-legacy/wp-table-merge-cells.md)<br/>
-[`WP Table range`](../commands-legacy/wp-table-range.md)<br/>
-[`WP TABLE SPLIT CELLS`](../commands-legacy/wp-table-split-cells.md)<br/>
-[`WP Text range`](../commands-legacy/wp-text-range.md)
+[`WP TABLE DELETE COLUMNS`](../commands/wp-table-delete-columns)<br/>
+[`WP TABLE DELETE ROWS`](../commands/wp-table-delete-rows)<br/>
+[`WP Table get cells`](../commands/wp-table-get-cells)<br/>
+[`WP Table get columns`](../commands/wp-table-get-columns)<br/>
+[`WP Table get rows`](../commands/wp-table-get-rows)<br/>
+[`WP Table insert columns`](../commands/wp-table-insert-columns)<br/>
+[`WP Table insert rows`](../commands/wp-table-insert-rows)<br/>
+[`WP TABLE MERGE CELLS`](../commands/wp-table-merge-cells)<br/>
+[`WP Table range`](../commands/wp-table-range)<br/>
+[`WP TABLE SPLIT CELLS`](../commands/wp-table-split-cells)<br/>
+[`WP Text range`](../commands/wp-text-range)
 
 <a id="U"><b>U</b></a>
 
-[`WP USE PAGE SETUP`](../commands-legacy/wp-use-page-setup.md)<br/>
+[`WP USE PAGE SETUP`](../commands/wp-use-page-setup)<br/>

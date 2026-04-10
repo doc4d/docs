@@ -77,7 +77,7 @@ Le format est spécifié de la même manière que pour un [nombre saisi dans un 
 | String(1/0)                                                      | "INF"                             | Nombre infini positif                                 |
 | String(-1/0)                                                     | "-INF"                            | Nombre infini négatif                                 |
 
-(\*) L'algorithme de conversion des valeurs réelles en texte est basé sur 13 chiffres significatifs, voir [`SET REAL COMPARISON LEVEL`](../commands-legacy/set-real-comparison-level.md).
+(\*) L'algorithme de conversion des [valeurs réelles](../Concepts/dt_number.md) en texte est basé sur 13 chiffres significatifs.
 
 #### String(number;base)
 

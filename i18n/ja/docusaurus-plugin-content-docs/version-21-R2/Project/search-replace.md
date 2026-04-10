@@ -185,18 +185,18 @@ You can perform various actions using the options menu:
 
 ![](../assets/en/Project/result-window-menu.png)
 
-- **Remove from list**: removes selected item(s) from the results window. More specifically, this lets you keep only items targeted by a replacement operation in the contents or used for drag and drop between applications.
-- **Remove all items from list except selection**: clears everything from the results window except for the selected item(s).
-- [**Replace in content**](#replace-in-contents): replaces a character string within the selected item(s).
-- **Select >**: selects one type of item (project methods, object names, and so on) from among all the items found in the Results window. The hierarchical sub-menu also provides commands to select (All) or deselect (None) all the items at once.
-- **Collapse all/Expand all**: expands or collapses all the hierarchical items in the list of results.
-- **Export Results**: exports information about the search criteria and elements listed in the Results window. This text file can then be imported into a spreadsheet such as Excel, for example. For each item, the following information is exported as tab-separated values in a text file:
-  - Host project or component name
-  - Type (method, Class, formObject, trigger...)
-  - Path
-  - Property (if accurate): provides the property of the object that matches the criteria. For example, a string could be found in a variable name (variable property) and an object name (name property) within in the same form. This field is empty when the matching element is the object itself.
-  - Contents (if accurate): provides the contents that actually matches the criteria; for example, the code line that contains the requested string.
-  - Line number (for code) or page number (for form objects)
+- **リストから削除**: 選択された要素を結果ウィンドウから削除します。 具体的には、結果のリスト内に置換操作を行いたい要素だけを残すことや、アプリケーション間でドラッグ&ドロップを使用したい要素だけを残すことなどができます。
+- **選択された項目以外を全てリストから削除**: 選択された項目を除いて全てを結果ウィンドウをから消去します。
+- [**内容を置換**](#replace-in-content): 選択された項目の文字列を置き換えます。
+- **選択 >**: 結果ウィンドウ内の全ての項目から、一つのタイプ(プロジェクトメソッド、オブジェクト名、など)だけを選択します。 階層サブメニューには全ての項目を一度に選択する(すべて)か選択解除する(なし)かを実行するコマンドを提供しています。
+- **全てを折りたたむ/全てを展開する**: 結果の一覧内の全ての階層項目を展開するか折りたたみます。
+- **結果を書き出し**: 検索条件と結果ウィンドウに表示されている要素についての情報を書き出します。 このテキストファイルは例えばExcel などのスプレッドシートに読み込ませることができます。 各項目に対して、以下の情報がタブ区切りの値としてテキストファイル内に書き出されます:
+  - ホストプロジェクトまたはコンポーネント名
+  - タイプ (メソッド、クラス、フォームオブジェクト、トリガー、など)
+  - パス
+  - プロパティ(正確であれば): 検索条件に合致するオブジェクトのプロパティを提供します。 例えば、文字列は同じフォーム内においても変数名(変数 プロパティ)またはオブジェクト名(オブジェクト名 プロパティ)として見つかることがありえます。 このフィールドは、合致する要素がオブジェクト自身である場合には空です。
+  - コンテンツ (正確であれば): 検索条件に実際に合致するコンテンツを提供します。例えば、リクエストした文字列に合致するコード行などです。
+  - 行番号(コードに対して) またはページ番号 (フォームオブジェクト)
 
 ## コンテンツを置換
 

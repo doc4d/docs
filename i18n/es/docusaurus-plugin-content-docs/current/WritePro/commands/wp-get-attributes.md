@@ -4,7 +4,7 @@ title: WP Get attributes
 displayed_sidebar: docs
 ---
 
-<!--REF #_command_.WP Get attributes.Syntax-->**WP Get attributes** ( *targetObj* : Object ; *...attribName* : Text ; *...attribValue* : any ) : Object<br/>**WP Get attributes** ( *targetObj* : Object ; *attribColl* : Collection ) : Object<!-- END REF-->
+<!--REF #_command_.WP Get attributes.Syntax-->**WP Get attributes** ( *targetObj* : Object {; ...(*attribName* : Text {; *attribValue* : Variable })} ) : Object<br/>**WP Get attributes** ( *targetObj* : Object ; *attribColl* : Collection ) : Object<!-- END REF-->
 
 <!--REF #_command_.WP Get attributes.Params-->
 
@@ -14,7 +14,7 @@ displayed_sidebar: docs
 | ----------- | ---------- | --------------------------- | ------------------------------------------- |
 | targetObj   | Object     | &#8594; | Rango o elemento o documento 4D Write Pro   |
 | attribName  | Text       | &#8594; | Nombre del atributo a obtener               |
-| attribValue | any        | &#8592; | Valor actual del atributo para el objetivo  |
+| attribValue | Variable   | &#8592; | Valor actual del atributo para el objetivo  |
 | attribColl  | Collection | &#8594; | Colección de nombres de atributos a obtener |
 | Resultado   | Object     | &#8592; | Nombres y valores de los atributos          |
 
@@ -69,5 +69,5 @@ Desea obtener el tamaño de la fuente, el color de fondo y el estilo del borde d
 ## Ver también
 
 [4D Write Pro Attributes](../4d-write-pro-attributes)  
-[WP RESET ATTRIBUTES](../commands/wp-reset-attributes.md)  
+[WP RESET ATTRIBUTES](../commands/wp-reset-attributes)  
 [WP SET ATTRIBUTES](wp-set-attributes.md)

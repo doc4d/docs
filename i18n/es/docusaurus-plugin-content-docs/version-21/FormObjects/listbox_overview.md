@@ -29,10 +29,10 @@ El usuario puede seleccionar una o varias líneas utilizando los atajos estánda
 
 Un list box se compone de cuatro partes distintas:
 
-- el objeto list box en su totalidad,
-- las columnas,
-- los encabezados de las columnas, y
-- los pies de las columnas.
+- el [objeto list box](./listbox-object.md) en su totalidad,
+- [columnas](./listbox-column.md),
+- column [headers](./listbox-header-footer.md#headers), and
+- column [footers](./listbox-header-footer.md#footers).
 
 ![](../assets/en/FormObjects/listbox_parts.png)
 
@@ -789,16 +789,17 @@ Este principio se aplica a los arrays internos que se pueden utilizar para gesti
  ->MyListbox{3}:=True
 ```
 
-Representación no jerárquica:
+_Representación no jerárquica:\*  
 ![](../assets/en/FormObjects/hierarch7.png)
-Representación jerárquica:
+
+*Representación jerárquica:*  
 ![](../assets/en/FormObjects/hierarch8.png)
 
 > Si una o más líneas están ocultas porque sus padres están contraídos, ya no se seleccionan. Sólo se pueden seleccionar las líneas visibles (directamente o por desplazamiento). En otras palabras, las líneas no pueden estar ocultas y seleccionadas a la vez.
 
 Al igual que con las selecciones, el comando [`LISTBOX GET CELL POSITION`](../commands/listbox-get-cell-position) devolverá los mismos valores para un list box jerárquico que para un list box no jerárquico. Esto significa que en los dos ejemplos siguientes, [`LISTBOX GET CELL POSITION`](../commands/listbox-get-cell-position) devolverá la misma posición: (3;2).
 
-*Representación no jerárquica:*
+_Representación no jerárquica:\*  
 ![](../assets/en/FormObjects/hierarch9.png)
 
 *Representación jerárquica:*

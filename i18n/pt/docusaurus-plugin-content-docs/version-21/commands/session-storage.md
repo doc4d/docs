@@ -39,23 +39,23 @@ O objeto retornado é a propriedade [**.storage**](../API/SessionClass.md#storag
 This method modifies the value of a "settings" property stored in the storage object of a specific session:
 
 ```4d
-  //Definir armazenamento para uma sessão
-  //A propriedade do método "Execute On Server" está definida
- 
- #DECLARE($id : Text; $text : Text)
- var $obj : Object
- 
- $obj:=Session storage($id)
- 
- If($obj.settings=Null)
-    Use($obj)
-       $obj.settings:=New shared object("text";$text)
-    End use
- Else
-    Use($obj.settings)
-       $obj.settings.text:=$text
-    End use
- End if
+  //Set storage for a session
+  //The "Execute On Server" method property is set
+ 
+ #DECLARE($id : Text; $text : Text)
+ var $obj : Object
+ 
+ $obj:=Session storage($id)
+ 
+ If($obj.settings=Null)
+    Use($obj)
+       $obj.settings:=New shared object("text";$text)
+    End use
+ Else
+    Use($obj.settings)
+       $obj.settings.text:=$text
+    End use
+ End if
 ```
 
 ## Veja também

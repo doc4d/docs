@@ -14,6 +14,13 @@ displayed_sidebar: docs
 | object     | any                        | &#8594; | Nombre del objeto (si se especifica \*) o<br/>Campo o variable (si se omite \*)      |
 | formula    | 4D.Formula | &#8592; | Fórmula asociada al objeto formulario (`Null` si no hay fórmula asociada)                               |
 
+| Parámetros | Tipo                       |                             | Descripción                                                                                                                      |
+| ---------- | -------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| \*         | Operador                   | &#8594; | Si se especifica, object es un nombre de objeto (cadena) ; si se omite, object es una variable o un campo     |
+| object     | Text, Variable, Field      | &#8594; | Nombre del objeto formulario (si se especifica \*) o<br/>Campo o variable (si se omite \*) |
+| Resultado  | 4D.Formula | &#8592; | Fórmula asociada al objeto formulario (`Null` si no hay fórmula asociada)                                     |
+
+</div>
 <!-- END REF-->
 
 ## Descripción

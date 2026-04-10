@@ -31,19 +31,19 @@ In the *sourceDoc* parameter, pass the 4D Write Pro document containing the styl
 You want to import a template style sheet and receive a notification with the number for each type of style sheet imported:
 
 ```4d
- wpArea:=WP New
- $template:=WP Import document("Template.4wp")
- 
- WP IMPORT STYLE SHEETS(wpArea;$template)
- 
- $nb1:=WP Get style sheets(wpArea;wk type paragraph).length
- $nb2:=WP Get style sheets(wpArea;wk type character).length
- ALERT(String($nb1)+" paragraph style sheet(s) and "+string($nb2)+" character style sheet(s) imported))
+ wpArea:=WP New
+ $template:=WP Import document("Template.4wp")
+ 
+ WP IMPORT STYLE SHEETS(wpArea;$template)
+ 
+ $nb1:=WP Get style sheets(wpArea;wk type paragraph).length
+ $nb2:=WP Get style sheets(wpArea;wk type character).length
+ ALERT(String($nb1)+" paragraph style sheet(s) and "+string($nb2)+" character style sheet(s) imported))
 ```
 
 ## See also 
 
-[WP DELETE STYLE SHEET](wp-delete-style-sheet.md)  
-[WP Get style sheet](wp-get-style-sheet.md)  
+[WP DELETE STYLE SHEET](../WritePro/commands/wp-delete-style-sheet)  
+[WP Get style sheet](../WritePro/commands/wp-get-style-sheet)  
 [WP Get style sheets](wp-get-style-sheets.md)  
-[WP New style sheet](wp-new-style-sheet.md)  
+[WP New style sheet](../WritePro/commands/wp-new-style-sheet)  

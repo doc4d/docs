@@ -48,8 +48,8 @@ UUID バージョン7の詳細な情報については、 [こちらのblog記�
 変数内にUUID を生成します:
 
 ```4d
- var MyUUID : Text
- MyUUID:=Generate UUID
+ var MyUUID : Text
+ MyUUID:=Generate UUID
 ```
 
 ## プロパティ

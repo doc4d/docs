@@ -8,11 +8,13 @@ displayed_sidebar: docs
 
 <!--REF #_command_.OBJECT SET DATA SOURCE FORMULA.Params-->
 
-| Paramètres | Type                       |                             | Description                                                                                                             |
-| ---------- | -------------------------- | --------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| \*         | Opérateur                  | &#8594; | Si spécifié, *object* est un nom d'objet (chaîne)<br/>Si omis, *object* est un champ ou une variable |
-| object     | any                        | &#8594; | Nom d'objet (si \* est spécifié) ou<br/>Champ ou variable (si \* est omis)        |
-| formula    | 4D.Formula | &#8594; | Formule à assigner comme source de données                                                                              |
+<div class="no-index">
+
+| Paramètres | Type                       |                             | Description                                                                                                                      |
+| ---------- | -------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| \*         | Opérateur                  | &#8594; | Si spécifié, object est un nom d'objet (chaîne) ; s'il est omis, object est une variable ou un champ          |
+| object     | Text, Variable, Field      | &#8594; | Nom de l'objet formulaire (si \* est spécifié) ou <br/> Champ ou variable (si \* est omis) |
+| formula    | 4D.Formula | &#8594; | Formule à assigner comme source de données                                                                                       |
 
 <!-- END REF-->
 

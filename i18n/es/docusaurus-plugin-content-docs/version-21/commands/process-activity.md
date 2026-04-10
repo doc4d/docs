@@ -18,10 +18,10 @@ displayed_sidebar: docs
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones                    |
-| ----------- | --------------------------------- |
-| 20 R7       | Soporte del parámetro *sessionID* |
-| 21          | Soporte de sesiones usuario web   |
+| Lanzamiento | Modificaciones                                                                               |
+| ----------- | -------------------------------------------------------------------------------------------- |
+| 21          | Soporte de sesiones usuario web                                                              |
+| 20 R7       | <ul><li>Soporte del parámetro *sessionID</li><li>Renombrado (Get process activity)</li></ul> |
 
 </details>
 
@@ -76,13 +76,13 @@ En el servidor, el comando `Process activity` devuelve una propiedad adicional "
 Desea obtener la colección de todas las sesiones usuario:
 
 ```4d
-  //A ejecutar en el servidor
- 
- var $o : Object
- var $i : Integer
+  //A ejecutar en el servidor
+ 
+ var $o : Object
+ var $i : Integer
  var $processName;$userName : Text
 
- 
+ 
  $o:=Process activity //Obtener información de proceso y sesión
  For($i;0;($o.processes.length)-1) //Iterar sobre la colección "processes"
     $processName:=$o.processes[$i].name

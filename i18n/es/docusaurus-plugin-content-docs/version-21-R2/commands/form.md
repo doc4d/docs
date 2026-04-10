@@ -1,6 +1,6 @@
 ---
 id: form
-title: Formulario
+title: Form
 displayed_sidebar: docs
 ---
 
@@ -19,6 +19,7 @@ displayed_sidebar: docs
 | Lanzamiento | Modificaciones                       |
 | ----------- | ------------------------------------ |
 | 20 R8       | Soporte de las clases de formularios |
+| 16 R6       | Creado                               |
 
 </details>
 

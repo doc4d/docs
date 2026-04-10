@@ -8,9 +8,11 @@ displayed_sidebar: docs
 
 <!--REF #_command_.Session.Params-->
 
-| Parámetros | Tipo                       |                             | Descripción    |
-| ---------- | -------------------------- | --------------------------- | -------------- |
-| Resultado  | 4D.Session | &#8592; | Objeto Session |
+<div class="no-index">
+
+| Parámetros | Tipo                                                 |                             | Descripción    |
+| ---------- | ---------------------------------------------------- | --------------------------- | -------------- |
+| Resultado  | [4D.Session](../API/SessionClass.md) | &#8592; | Objeto Session |
 
 <!-- END REF-->
 

@@ -29,10 +29,10 @@ El usuario puede seleccionar una o varias líneas utilizando los atajos estánda
 
 Un list box se compone de cuatro partes distintas:
 
-- el objeto list box en su totalidad,
-- las columnas,
-- los encabezados de las columnas, y
-- los pies de las columnas.
+- el [objeto list box](./listbox-object.md) en su totalidad,
+- [columnas](./listbox-column.md),
+- column [headers](./listbox-header-footer.md#headers), and
+- column [footers](./listbox-header-footer.md#footers).
 
 ![](../assets/en/FormObjects/listbox_parts.png)
 
@@ -532,11 +532,11 @@ El soporte de ordenación estándar depende del tipo de list box:
 
 ### Ordenación personalizada
 
-El desarrollador puede configurar ordenaciones personalizadas, por ejemplo utilizando el comando [`LISTBOX SORT COLUMNS`](../commands-legacy/listbox-sort-columns.md) y/o combinando los eventos de formulario [`On Header Click`](../Events/onHeaderClick) y [`On After Sort`](../Events/onAfterSort) y los comandos 4D relevantes.
+El desarrollador puede configurar ordenaciones personalizadas, por ejemplo utilizando el comando [`LISTBOX SORT COLUMNS`](../commands/listbox-sort-columns) y/o combinando los eventos de formulario [`On Header Click`](../Events/onHeaderClick) y [`On After Sort`](../Events/onAfterSort) y los comandos 4D relevantes.
 
 Los ordenamientos personalizados le permiten:
 
-- realizar ordenaciones multinivel en varias columnas, gracias al comando [`LISTBOX SORT COLUMNS`](../commands-legacy/listbox-sort-columns.md),
+- realizar ordenaciones multinivel en varias columnas, gracias al comando [`LISTBOX SORT COLUMNS`](../commands/listbox-sort-columns),
 - utilizar funciones como [`collection.orderByMethod()`](../API/CollectionClass.md#orderbymethod) o [`entitySelection.orderByFormula()`](../API/EntitySelectionClass.md#orderbyformula) para ordenar columnas según criterios complejos.
 
 #### Ejemplo
@@ -578,7 +578,7 @@ El valor de la [variable asociada al encabezado de una columna](properties_Objec
 
 Puede definir el valor de la variable (por ejemplo, Header2:=2) para "forzar" la visualización de la flecha de ordenación. En este caso no se modifica la ordenación por columnas en sí, sino que es el desarrollador quien debe encargarse de ello.
 
-> El comando [`OBJECT SET FORMAT`](../commands-legacy/object-set-format.md) ofrece soporte específico para iconos en los encabezados de los list box, lo que puede ser útil cuando se desea trabajar con un icono de ordenación personalizado.
+> El comando [`OBJECT SET FORMAT`](../commands/object-set-format) ofrece soporte específico para iconos en los encabezados de los list box, lo que puede ser útil cuando se desea trabajar con un icono de ordenación personalizado.
 
 ## Gestión de los colores, estilos y visualización de las líneas
 
@@ -673,7 +673,7 @@ Para definir un list box jerárquico, existen varias posibilidades:
 
 - Configurar manualmente los elementos jerárquicos utilizando la lista de propiedades del editor de formularios (o editar el formulario JSON).
 - Generar visualmente la jerarquía utilizando el menú emergente de gestión de list box, en el editor de formularios.
-- Utilice los comandos [`LISTBOX SET HIERARCHY`](../commands-legacy/listbox-set-hierarchy.md) y [`LISTBOX GET HIERARCHY`](../commands-legacy/listbox-get-hierarchy.md).
+- Utilice los comandos [`LISTBOX SET HIERARCHY`](../commands/listbox-set-hierarchy) y [`LISTBOX GET HIERARCHY`](../commands/listbox-get-hierarchy).
 
 #### Propiedades del List Box jerárquico
 
@@ -789,16 +789,17 @@ Este principio se aplica a los arrays internos que se pueden utilizar para gesti
  ->MyListbox{3}:=True
 ```
 
-Representación no jerárquica:
+_Representación no jerárquica:\*  
 ![](../assets/en/FormObjects/hierarch7.png)
-Representación jerárquica:
+
+*Representación jerárquica:*  
 ![](../assets/en/FormObjects/hierarch8.png)
 
 > Si una o más líneas están ocultas porque sus padres están contraídos, ya no se seleccionan. Sólo se pueden seleccionar las líneas visibles (directamente o por desplazamiento). En otras palabras, las líneas no pueden estar ocultas y seleccionadas a la vez.
 
 Al igual que con las selecciones, el comando [`LISTBOX GET CELL POSITION`](../commands/listbox-get-cell-position) devolverá los mismos valores para un list box jerárquico que para un list box no jerárquico. Esto significa que en los dos ejemplos siguientes, [`LISTBOX GET CELL POSITION`](../commands/listbox-get-cell-position) devolverá la misma posición: (3;2).
 
-*Representación no jerárquica:*
+_Representación no jerárquica:\*  
 ![](../assets/en/FormObjects/hierarch9.png)
 
 *Representación jerárquica:*
@@ -859,364 +860,3 @@ En este caso, debe llenar y vaciar los arrays por código. Los principios que de
 
 Las columnas de list box pueden manejar arrays de objetos. Como los arrays de objetos pueden contener diferentes tipos de datos, esta nueva y poderosa funcionalidad permite mezclar diferentes tipos de entrada en las líneas de una misma columna, y mostrar también varios widgets. Por ejemplo, puede insertar una entrada de texto en la primera línea, una casilla de selección en la segunda y una lista desplegable en la tercera. Los arrays de objetos también dan acceso a nuevos tipos de widgets, como botones o selectores de color.
 
-El siguiente list box fue diseñado utilizando un array de objetos:
-
-![](../assets/en/FormObjects/listbox_column_objectArray.png)
-
-### Configurar una columna array de objetos
-
-Para asignar un array de objetos a una columna list box, basta con definir el nombre del array de objetos en la lista de propiedades (campo "Nombre de variable"), o utilizando el comando [LISTBOX INSERT COLUMN](../commands-legacy/listbox-insert-column.md), como para toda columna basada en arrays. En la lista de propiedades, ahora puede seleccionar Objeto como "Tipo de expresión" para la columna:
-
-![](../assets/en/FormObjects/listbox_column_objectArray_config.png)
-
-Las propiedades estándar relacionadas con las coordenadas, el tamaño y el estilo están disponibles para las columnas de tipo objeto. Puede definirlos utilizando la lista de Propiedades, o programando el estilo, el color de fuente, el color de fondo y la visibilidad para cada línea de una columna objeto del list box. Estos tipos de columnas también se pueden ocultar.
-
-Sin embargo, el tema Fuente de datos no está disponible para las columnas objeto del list box. De hecho, el contenido de cada celda de la columna se basa en los atributos presentes en el elemento correspondiente del array de objetos. Cada elemento de array puede definir:
-
-the value type (mandatory): text, color, event, etc. the value itself (optional): used for input/output.
-the cell content display (optional): button, list, etc. additional settings (optional): depend on the value type To define these properties, you need to set the appropriate attributes in the object (available attributes are listed below). Por ejemplo, puede escribir "¡Hola Mundo!" en una columna objeto utilizando este sencillo código:
-
-```4d
-ARRAY OBJECT(obColumn;0) //column array
- var $ob : Object //first element
- OB SET($ob;"valueType";"text") //defines the value type (mandatory)
- OB SET($ob;"value";"Hello World!") //defines the value
- APPEND TO ARRAY(obColumn;$ob)  
-```
-
-![](../assets/en/FormObjects/listbox_column_objectArray_helloWorld.png)
-
-> El formato de visualización y los filtros de entrada no pueden definirse para una columna de objetos. Dependen automáticamente del tipo de valor.
-
-#### valueType y visualización de datos
-
-Cuando una columna de list box está asociada a un array de objetos, la forma en que se muestra, introduce o edita una celda se basa en el atributo valueType del elemento del array. Los valores valueType soportados son:
-
-- "text": para un valor de texto
-- "real": para un valor numérico que puede incluir separadores como un `\<espacio>`, `<.>`, o `<,>`
-- "integer": para un valor entero
-- "boolean": para un valor True/False
-- "color": para definir un color de fondo
-- "event": para mostrar un botón con una etiqueta.
-
-4D utiliza widgets por defecto en función del valor "valueType" (es decir, un "text" se muestra como un widget de entrada de texto, un "boolean" como una casilla de selección), pero también están disponibles visualizaciones alternativas a través de opciones (*por ejemplo*, un real también se puede representar como un menú desplegable). La siguiente tabla muestra la visualización por defecto, así como las alternativas para cada tipo de valor:
-
-| valueType | Widget por defecto                                                     | Widget(s) alternativo(s)                                                                                       |
-| --------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| text      | entrada de texto                                                       | menú desplegable (lista obligatoria) o combo box (lista de selección)                                          |
-| real      | entrada de texto controlada (números y separadores) | menú desplegable (lista obligatoria) o combo box (lista de selección)                                          |
-| integer   | entrada de texto controlada (números únicamente)    | menú desplegable (lista obligatoria) o combo box (lista de opciones) o casilla de verificación de tres estados |
-| boolean   | casilla de selección                                                   | menú desplegable (lista requerida)                                                                                                |
-| color     | color de fondo                                                         | text                                                                                                                                                 |
-| evento    | botón con etiqueta                                                     |                                                                                                                                                      |
-|           |                                                                        | Todos los widgets pueden tener un botón adicional de alternancia de unidades o un botón de elipsis asociado a la celda.              |
-
-Usted define la visualización de la celda y las opciones utilizando atributos específicos en cada objeto (ver abajo).
-
-#### Formatos de visualización y filtros de entrada
-
-No se pueden definir formatos de visualización ni filtros de entrada para las columnas objeto de los list box. Se definen automáticamente en función del tipo de valor. Estos están listados en la siguiente tabla:
-
-| Tipo de valor | Formato por defecto                                                                                  | Control de entrada                          |
-| ------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------- |
-| text          | lo mismo que se define en el objeto                                                                  | cualquiera (sin control) |
-| real          | lo mismo que se define en el objeto (utilizando el separador decimal del sistema) | "0-9" y "." y "-"           |
-|               |                                                                                                      | "0-9" y "." si min>=0       |
-| integer       | lo mismo que se define en el objeto                                                                  | "0-9" y "-"                                 |
-|               |                                                                                                      | "0-9" si min>=0                             |
-| Boolean       | casilla de selección                                                                                 | N/A                                         |
-| color         | N/A                                                                                                  | N/A                                         |
-| evento        | N/A                                                                                                  | N/A                                         |
-
-### Atributos
-
-Cada elemento del array de objetos es un objeto que puede contener uno o más atributos que definirán el contenido de la celda y la visualización de los datos (ver el ejemplo anterior).
-
-El único atributo obligatorio es "valueType" y sus valores soportados son "text", "real", "integer", "boolean", "color" y "event". La siguiente tabla lista todos los atributos soportados en los arrays de objetos de los list box, en función del valor "valueType" (cualquier otro atributo se ignora). A continuación se detallan los formatos de visualización y se ofrecen ejemplos.
-
-|                       | valueType                                               | text | real | integer | boolean | color | evento |
-| --------------------- | ------------------------------------------------------- | ---- | ---- | ------- | ------- | ----- | ------ |
-| *Atributos*           | *Description*                                           |      |      |         |         |       |        |
-| value                 | valor de la celda (entrada o salida) | x    | x    | x       |         |       |        |
-| min                   | valor mínimo                                            |      | x    | x       |         |       |        |
-| max                   | valor máximo                                            |      | x    | x       |         |       |        |
-| behavior              | Valor "tres Estados"                                    |      |      | x       |         |       |        |
-| requiredList          | lista desplegable definida en objeto                    | x    | x    | x       |         |       |        |
-| choiceList            | combo box definido en objeto                            | x    | x    | x       |         |       |        |
-| requiredListReference | RefList 4D, depende del valor de "saveAs"               | x    | x    | x       |         |       |        |
-| requiredListName      | Nombre de la lista 4D, depende del valor "saveAs"       | x    | x    | x       |         |       |        |
-| saveAs                | "reference" o "value"                                   | x    | x    | x       |         |       |        |
-| choiceListReference   | RefList 4D, muestra un combo box                        | x    | x    | x       |         |       |        |
-| choiceListName        | Nombre de la lista 4D, mostrar combo box                | x    | x    | x       |         |       |        |
-| unitList              | array de X elementos                                    | x    | x    | x       |         |       |        |
-| unitReference         | índice del elemento seleccionado                        | x    | x    | x       |         |       |        |
-| unitsListReference    | Ver lista de unidades 4D                                | x    | x    | x       |         |       |        |
-| unitsListName         | 4D lista nombre de la unidad                            | x    | x    | x       |         |       |        |
-| alternateButton       | añadir un botón alternativo                             | x    | x    | x       | x       | x     |        |
-
-#### value
-
-Los valores de las celdas se almacenan en el atributo "value". Este atributo se utiliza tanto para la entrada como para la salida. También puede utilizarse para definir valores por defecto cuando se utilizan listas (ver a continuación).
-
-```4d
- ARRAY OBJECT(obColumn;0) //column array
- var $ob1;$ob2;$ob3 : Object
- var $entry:="Hello world!"
- OB SET($ob1;"valueType";"text")
- OB SET($ob1;"value";$entry) // if the user enters a new value, $entry will contain the edited value
-
- OB SET($ob2;"valueType";"real")
- OB SET($ob2;"value";2/3)
-
- OB SET($ob3;"valueType";"boolean")
- OB SET($ob3;"value";True)
-
- APPEND TO ARRAY(obColumn;$ob1)
- APPEND TO ARRAY(obColumn;$ob2)
- APPEND TO ARRAY(obColumn;$ob3)
-```
-
-![](../assets/en/FormObjects/listbox_column_objectArray_helloWorld_value.png)
-
-> Los valores null se soportan y dan como resultado una celda vacía.
-
-#### min y max
-
-Cuando el "valueType" es "real" o "integer", el objeto también acepta atributos min y max con valores apropiados (los valores deben ser del mismo tipo que el valueType).
-
-Estos atributos pueden utilizarse para controlar el rango de valores de entrada. Cuando se valida una celda (cuando pierde el foco), si el valor de entrada es menor que el valor mínimo o mayor que el valor máximo, entonces se rechaza. En este caso, se mantiene el valor anterior y un consejo muestra una explicación.
-
-```4d
- var $ob3 : Object
- var $entry3:=2015
- OB SET($ob3;"valueType";"integer")
- OB SET($ob3;"value";$entry3)
- OB SET($ob3;"min";2000)
- OB SET($ob3;"max";3000)
-```
-
-![](../assets/en/FormObjects/listbox_column_objectArray_helloWorld_minMax.png)
-
-#### behavior
-
-El atributo behavior ofrece variaciones a la representación estándar de los valores. En 4D v15, se ofrece una única variación:
-
-| Atributo | Valor(es) disponible(s) | valueType(s) | Descripción                                                                                                                                                                                                                                                      |
-| -------- | ------------------------------------------------------------- | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| behavior | threeStates                                                   | integer                         | Representa un valor numérico como una casilla de selección de tres estados.<br/> 2=intermediario, 1=seleccionado, 0=no seleccionado, -1=invisible, -2=no seleccionado desactivado, -3=seleccionado desactivado, -4=semi seleccionado desactivado |
-
-```4d
- var $ob3; $ob4 : Object
- OB SET($ob3;"valueType";"integer")
- OB SET($ob3;"value";-3)
- OB SET($ob4;"valueType";"integer")
- OB SET($ob4;"value";-3)
- OB SET($ob4;"behavior";"threeStates")
-```
-
-![](../assets/en/FormObjects/listbox_column_objectArray_helloWorld_behavior.png)
-
-#### requiredList y choiceList
-
-Cuando un atributo "choiceList" o "requiredList" está presente dentro del objeto, la entrada de texto se sustituye por una lista desplegable o un combo box, dependiendo del atributo:
-
-- Si el atributo es "choiceList", la celda se muestra como un combo box. Esto significa que el usuario puede seleccionar o escribir un valor.
-- Si el atributo es "requiredList", la celda se muestra como una lista desplegable y el usuario sólo puede seleccionar uno de los valores de la lista.
-
-En ambos casos, se puede utilizar un atributo "valor" para preseleccionar un valor en el widget.
-
-> Los valores del widget se definen a través de un array. Si quiere asociar el widget a una lista 4D existente, debe utilizar los atributos "requiredListReference", "requiredListName", "choiceListReference" o "choiceListName".
-
-Ejemplos:
-
-- Quiere mostrar una lista desplegable con sólo dos opciones: "Open" o "Closed". "Closed" debe estar preseleccionado:
-
-```4d
-	ARRAY TEXT($RequiredList;0)
-	APPEND TO ARRAY($RequiredList;"Open")
-	APPEND TO ARRAY($RequiredList;"Closed")
-	var $ob : Object
-	OB SET($ob;"valueType";"text")
-	OB SET($ob;"value";"Closed")
-	OB SET ARRAY($ob;"requiredList";$RequiredList)
-```
-
-![](../assets/en/FormObjects/listbox_column_objectArray_helloWorld_openClosed.png)
-
-- Quiere aceptar todo valor entero, pero mostrar un combo box para sugerir los valores más comunes:
-
-```4d
-	ARRAY LONGINT($ChoiceList;0)
-	APPEND TO ARRAY($ChoiceList;5)
-	APPEND TO ARRAY($ChoiceList;10)
-	APPEND TO ARRAY($ChoiceList;20)
-	APPEND TO ARRAY($ChoiceList;50)
-	APPEND TO ARRAY($ChoiceList;100)
-	var $ob : Object
-	OB SET($ob;"valueType";"integer")
-	OB SET($ob;"value";10) //10 as default value
-	OB SET ARRAY($ob;"choiceList";$ChoiceList)
-```
-
-![](../assets/en/FormObjects/listbox_column_objectArray_helloWorld_commonValues.png)
-
-#### requiredListName y requiredListReference
-
-Los atributos "requiredListName" y "requiredListReference" permiten utilizar, en una celda de list box, una lista definida en 4D, ya sea en modo Diseño (en el editor de Listas de la Caja de Herramientas) o por programación (utilizando el comando New list). La celda se mostrará entonces como una lista desplegable. Esto significa que el usuario sólo puede seleccionar uno de los valores proporcionados en la lista.
-
-Utilice "requiredListName" o "requiredListReference" en función del origen de la lista: si la lista procede de la caja de herramientas, pase un nombre; en caso contrario, si la lista se ha definido por programación, pase una referencia. En ambos casos, se puede utilizar un atributo "valor" para preseleccionar un valor en el widget.
-
-> - Si desea definir estos valores a través de un simple array, debe utilizar el atributo "requiredList".
-> - Si la lista contiene elementos de texto que representan valores reales, el separador decimal debe ser un punto ("."), independientemente de la configuración local, por ejemplo "17.6" "1234.456".
-
-Ejemplos:
-
-- Desea mostrar una lista desplegable basada en una lista de "colores" definida en la caja de herramientas (que contiene los valores "azul", "amarillo" y "verde"), guardarla como valor y mostrar "azul" por defecto:
-
-![](../assets/en/FormObjects/listbox_column_objectArray_colors.png)
-
-```4d
-	var $ob : Object
-	OB SET($ob;"valueType";"text")
-	OB SET($ob;"saveAs";"value")
-	OB SET($ob;"value";"blue")
-	OB SET($ob;"requiredListName";"colors")
-```
-
-![](../assets/en/FormObjects/listbox_column_objectArray_colorsResult.png)
-
-- Quiere mostrar una lista desplegable basada en una lista definida por programación y guardarla como referencia:
-
-```4d
-	<>List:=New list
-	APPEND TO LIST(<>List;"Paris";1)
-	APPEND TO LIST(<>List;"London";2)
-	APPEND TO LIST(<>List;"Berlin";3)
-	APPEND TO LIST(<>List;"Madrid";4)
-	var $ob : Object
-	OB SET($ob;"valueType";"integer")
-	OB SET($ob;"saveAs";"reference")
-	OB SET($ob;"value";2) //displays London by default
-	OB SET($ob;"requiredListReference";<>List)
-```
-
-![](../assets/en/FormObjects/listbox_column_objectArray_cities.png)
-
-#### choiceListName y choiceListReference
-
-Los atributos "choiceListName" and "choiceListReference" permiten utilizar, en una celda de list box, una lista definida en 4D, ya sea en modo Diseño (en el editor de Listas de la Caja de Herramientas) o por programación (utilizando el comando New list). La celda se muestra entonces como un combo box, lo que significa que el usuario puede seleccionar o escribir un valor.
-
-Utilice "choiceListName" o "choiceListReference" en función del origen de la lista: si la lista procede de la caja de herramientas, pase un nombre; en caso contrario, si la lista se ha definido por programación, pase una referencia. En ambos casos, se puede utilizar un atributo "valor" para preseleccionar un valor en el widget.
-
-> - Si desea definir estos valores a través de un simple array, debe utilizar el atributo "choiceList".
-> - Si la lista contiene elementos de texto que representan valores reales, el separador decimal debe ser un punto ("."), independientemente de la configuración local, por ejemplo "17.6" "1234.456".
-
-Ejemplo:
-
-Ejemplo:
-
-![](../assets/en/FormObjects/listbox_column_objectArray_colors.png)
-
-```4d
- var $ob : Object
- OB SET($ob;"valueType";"text")
-
- OB SET($ob;"value";"blue")
- OB SET($ob;"choiceListName";"colors")
-```
-
-![](../assets/en/FormObjects/listbox_column_objectArray_colorsResult.png)
-
-#### unitsList, unitsListName, unitsListReference y unitReference
-
-Puede utilizar atributos específicos para añadir unidades asociadas a los valores de las celdas (\*por ejemplo, \*: "10 cm", "20 píxeles", etc.). Para definir la lista de unidades, puede utilizar uno de los siguientes atributos:
-
-- "unitsList": un array que contiene los elementos x utilizados para definir las unidades disponibles (por ejemplo: "cm", "pulgadas", "km", "millas", etc.). Utilice este atributo para definir las unidades dentro del objeto.
-- "unitsListReference": una referencia a una lista 4D que contiene las unidades disponibles. Utilice este atributo para definir unidades con una lista 4D creada con el comando [`New list`](../commands-legacy/new-list.md).
-- "unitsListName": un nombre de una lista 4D basada en el diseño que contiene unidades disponibles. Utilice este atributo para definir las unidades con una lista 4D creada en la caja de herramientas.
-
-Independientemente de la forma en que se defina la lista de unidades, puede asociarse con el siguiente atributo:
-
-- "unitReference": un único valor que contiene el índice (de 1 a x) del elemento seleccionado en la lista de valores "unitList", "unitsListReference" o "unitsListName".
-
-Independientemente de la forma en que se defina la lista de unidades, puede asociarse con el siguiente atributo:
-
-Ejemplo:
-
-Queremos definir una entrada numérica seguida de dos posibles unidades: " líneas " o " píxeles ". El valor actual es "2" + "líneas". Utilizamos valores definidos directamente en el objeto (atributo "unitsList"):
-
-```4d
-ARRAY TEXT($_units;0)
-APPEND TO ARRAY($_units;"lines")
-APPEND TO ARRAY($_units;"pixels")
-var $ob : Object
-OB SET($ob;"valueType";"integer")
-OB SET($ob;"value";2) // 2 "units"
-OB SET($ob;"unitReference";1) //"lines"
-OB SET ARRAY($ob;"unitsList";$_units)
-```
-
-![](../assets/en/FormObjects/listbox_column_objectArray_unitList.png)
-
-#### alternateButton
-
-Si desea añadir un botón de elipsis [...] a una celda, basta con pasar el "alternateButton" con el valor True en el objeto. El botón se mostrará en la celda automáticamente.
-
-Cuando este botón es presionado por un usuario, se generará un evento `On Alternate Click`, y usted podrá manejarlo como quiera (vea el párrafo "Manejo de eventos" para más información).
-
-Ejemplo:
-
-```4d
-var $ob1 : Object
-var $entry:="Hello world!"
-OB SET($ob;"valueType";"text")
-OB SET($ob;"alternateButton";True)
-OB SET($ob;"value";$entry)
-```
-
-![](../assets/en/FormObjects/listbox_column_objectArray_alternateButton.png)
-
-#### valueType color
-
-El atributo valueType de valor "color" permite mostrar un color o un texto.
-
-- Si el valor es un número, se dibuja un rectángulo de color dentro de la celda. Ejemplo:
-
-  ```4d
-  var $ob4 : Object
-  OB SET($ob4;"valueType";"color")
-  OB SET($ob4;"value";0x00FF0000)
-  ```
-
-![](../assets/en/FormObjects/listbox_column_objectArray_colorValue.png)
-
-- Si el valor es un texto, entonces se muestra el texto (*por ejemplo*: "valor"; "Automatic").
-
-#### event valueType
-
-El "event" valueType muestra un botón que genera un evento `On Clicked` al ser presionado. No se puede pasar ni devolver ningún dato o valor.
-
-Opcionalmente, se puede pasar un atributo "label".
-
-Ejemplo:
-
-```4d
-var $ob : Object
-OB SET($ob;"valueType";"event")
-OB SET($ob;"label";"Edit...")
-```
-
-![](../assets/en/FormObjects/listbox_column_objectArray_eventValueType.png)
-
-### Gestión de eventos
-
-Se pueden manejar varios eventos mientras se utiliza un array list box de objetos:
-
-- **On Data Change**: un evento `On Data Change` se dispara cuando se ha modificado algún valor:
-  - en un área de entrada de texto
-  - en una lista desplegable
-  - en un área combo box
-  - en un botón de unidad (cambiar del valor x al valor x+1)
-  - en una casilla de selección (cambia entre marcado/desmarcado)
-- **On Clicked**: cuando el usuario haga clic en un botón instalado con el "event" atributo *valueType*, se generará un evento `On Clicked`. Este evento es gestionado por el programador.
-- **On Alternative Click**: cuando el usuario haga clic en un botón de elipsis (atributo "alternateButton"), se generará un evento `On Alternative Click`. Este evento es gestionado por el programador.

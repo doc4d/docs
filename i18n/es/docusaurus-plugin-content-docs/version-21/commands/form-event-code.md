@@ -15,6 +15,17 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>Historia</summary>
+
+| Lanzamiento                 | Modificaciones                             |
+| --------------------------- | ------------------------------------------ |
+| 18                          | Renombrado (Form event) |
+| <6 | Created                                    |
+
+</details>
+</div>
+
 ## Descripción
 
 **Form event code** devuelve un valor numérico que identifica el tipo de evento formulario que acaba de ocurrir. Por lo general, utilizará **Form event code** en un método formulario u objeto.
@@ -28,7 +39,7 @@ Para una descripción de los eventos, consulte la sección [**Form Events**](../
 Este ejemplo muestra cómo se utiliza el evento On Validate para asignar automáticamente (a un campo) la fecha de modificación del registro:
 
 ```4d
-  //Método formulario
+  //Method of a form
  Case of
   // ...
     :(Form event code=On Validate)
@@ -41,20 +52,20 @@ Este ejemplo muestra cómo se utiliza el evento On Validate para asignar automá
 En este ejemplo, la gestión completa de una lista desplegable (inicialización, clics del usuario y liberación del objeto) se encapsula en el método del objeto:
 
 ```4d
-  //Método Objeto lista desplegable asBurgerSize 
- Case of
-    :(Form event code=On Load)
-       ARRAY TEXT(asBurgerSize;3)
-       asBurgerSize{1}:="Small"
-       asBurgerSize{1}:="Medium"
-       asBurgerSize{1}:="Large"
-    :(Form event code=On Clicked)
-       If(asBurgerSize#0)
-          ALERT("You chose a "+asBurgerSize{asBurgerSize}+" burger.")
-       End if
-    :(Form event code=On Unload)
-       CLEAR VARIABLE(asBurgerSize)
- End case
+  //asBurgerSize Drop-down list Object Method
+ Case of
+    :(Form event code=On Load)
+       ARRAY TEXT(asBurgerSize;3)
+       asBurgerSize{1}:="Small"
+       asBurgerSize{1}:="Medium"
+       asBurgerSize{1}:="Large"
+    :(Form event code=On Clicked)
+       If(asBurgerSize#0)
+          ALERT("You chose a "+asBurgerSize{asBurgerSize}+" burger.")
+       End if
+    :(Form event code=On Unload)
+       CLEAR VARIABLE(asBurgerSize)
+ End case
 ```
 
 ## Ejemplo 3
@@ -62,7 +73,7 @@ En este ejemplo, la gestión completa de una lista desplegable (inicialización,
 Este ejemplo es un método formulario genérico. Muestra cada uno de los posibles eventos que pueden ocurrir cuando un formulario se utiliza como formulario de salida:
 
 ```4d
-  //Método de un formulario utilizado como formulario de salida para un informe resumen
+    //Método de un formulario utilizado como formulario de salida para un informe resumen
  $vpFormTable:=Current form table
  Case of
   //...
@@ -103,38 +114,38 @@ Este ejemplo es un método formulario genérico. Muestra cada uno de los posible
 Este ejemplo muestra la plantilla de un método de formulario que maneja los eventos que pueden ocurrir para un formulario mostrado usando los comandos [DISPLAY SELECTION](../commands-legacy/display-selection.md) o [MODIFY SELECTION](../commands-legacy/modify-selection.md). Con fines didácticos, muestra la naturaleza del evento en la barra de título de la ventana del formulario.
 
 ```4d
-//Un método formulario
- Case of
-    :(Form event code=On Load)
-       $vsTheEvent:="The form is about to be displayed"
-    :(Form event code=On Unload)
-       $vsTheEvent:="The output form has been exited and is about to disappear from the screen"
-    :(Form event code=On Display Detail)
-       $vsTheEvent:="Displaying record #"+String(Selected record number([TheTable]))
-    :(Form event code=On Menu Selected)
-       $vsTheEvent:="A menu item has been selected"
-    :(Form event code=On Header")
-       $vsTheEvent:="The header area is about to be drawn"
-    :(Form event code=On Clicked")
-       $vsTheEvent:="A record has been clicked"
-    :(Form event code=On Double Clicked")
-       $vsTheEvent:="A record has been double clicked"
-    :(Form event code=On Open Detail)
-       $vsTheEvent:="The record #"+String(Selected record number([TheTable]))+" is double-clicked"
-    :(Form event code=On Close Detail)
-       $vsTheEvent:="Going back to the output form"
-    :(Form event code=On Activate)
-       $vsTheEvent:="The form's window has just become the frontmost window"
-    :(Form event code=On Deactivate)
-       $vsTheEvent:="The form's window is no longer the frontmost window"
-    :(Form event code=On Menu Selected)
-       $vsTheEvent:="A menu item has been chosen"
-    :(Form event code=On Outside Call)
-       $vsTheEvent:="A call from another has been received"
-    Else
-       $vsTheEvent:="What's going on? Event #"+String(Form event)
- End case
- SET WINDOW TITLE($vsTheEvent)
+  //A form method
+ Case of
+    :(Form event code=On Load)
+       $vsTheEvent:="The form is about to be displayed"
+    :(Form event code=On Unload)
+       $vsTheEvent:="The output form has been exited and is about to disappear from the screen"
+    :(Form event code=On Display Detail)
+       $vsTheEvent:="Displaying record #"+String(Selected record number([TheTable]))
+    :(Form event code=On Menu Selected)
+       $vsTheEvent:="A menu item has been selected"
+    :(Form event code=On Header")
+       $vsTheEvent:="The header area is about to be drawn"
+    :(Form event code=On Clicked")
+       $vsTheEvent:="A record has been clicked"
+    :(Form event code=On Double Clicked")
+       $vsTheEvent:="A record has been double clicked"
+    :(Form event code=On Open Detail)
+       $vsTheEvent:="The record #"+String(Selected record number([TheTable]))+" is double-clicked"
+    :(Form event code=On Close Detail)
+       $vsTheEvent:="Going back to the output form"
+    :(Form event code=On Activate)
+       $vsTheEvent:="The form's window has just become the frontmost window"
+    :(Form event code=On Deactivate)
+       $vsTheEvent:="The form's window is no longer the frontmost window"
+    :(Form event code=On Menu Selected)
+       $vsTheEvent:="A menu item has been chosen"
+    :(Form event code=On Outside Call)
+       $vsTheEvent:="A call from another has been received"
+    Else
+       $vsTheEvent:="What's going on? Event #"+String(Form event)
+ End case
+ SET WINDOW TITLE($vsTheEvent)
 ```
 
 ## Ejemplo 5
@@ -146,14 +157,14 @@ Para ejemplos sobre cómo manejar los eventos [`On Before Keystroke`](../Events/
 Este ejemplo muestra cómo tratar de la misma manera los clics y los dobles clics en un área desplazable:
 
 ```4d
-  //Método objeto para el área de desplazamiento asChoices
- Case of
-    :(Form event code=On Load)
-       ARRAY TEXT(asChoices;...)
-  //...
-       asChoices:=0
-    :((Form event code=On Clicked)|(Form event code=On Double Clicked))
-       If(asChoices#0)
+    //Método objeto para el área de desplazamiento asChoices
+ Case of
+    :(Form event code=On Load)
+       ARRAY TEXT(asChoices;...)
+  //...
+       asChoices:=0
+    :((Form event code=On Clicked)|(Form event code=On Double Clicked))
+       If(asChoices#0)
   //Al hacer clic en un elemento, hacer algo aquí
   //...
        End if
@@ -166,7 +177,7 @@ Este ejemplo muestra cómo tratar de la misma manera los clics y los dobles clic
 Este ejemplo muestra cómo tratar los clics y los dobles clics utilizando una respuesta diferente. Tenga en cuenta el uso del elemento cero para realizar un seguimiento del elemento seleccionado:
 
 ```4d
-//Método objeto área de desplazamiento asChoices
+  //Método de objeto de área desplazable asChoices
  Case of
     :(Form event code=On Load)
        ARRAY TEXT(asChoices;...)
@@ -176,17 +187,17 @@ Este ejemplo muestra cómo tratar los clics y los dobles clics utilizando una re
     :(Form event code=On Clicked)
        If(asChoices#0)
           If(asChoices#Num(asChoices))
-//Un nuevo elemento ha sido presionado, hacer algo aquí
-//...
-//Guardar el nuevo elemento seleccionado para la próxima vez
-asChoices{0}:=String(asChoices)
-End if
-other
-Choices:=Num(asChoices{0})
-End if
-:(Form event code=On Double Clicked)
-Sif(asChoices#0)
-//Se hizo doble clic en un elemento, hacer algo diferente aquí
+  //Se ha hecho clic en un nuevo elemento, haga algo aquí
+  //...
+  //Guarda el nuevo elemento seleccionado para la próxima vez
+             asChoices{0}:=String(asChoices)
+          End if
+       Else
+          asChoices:=Num(asChoices{0})
+       End if
+    :(Form event code=On Double Clicked)
+       If(asChoices#0)
+  //An item has been double clicked, do something different here
        End if
   // ...
  End case
@@ -197,7 +208,7 @@ Sif(asChoices#0)
 Este ejemplo muestra cómo mantener un área de información de texto de estado desde dentro de un método de formulario, utilizando los eventos [`On Getting Focus`](../Events/onGettingFocus.md) y [`On Losing Focus`](../Events/onLosingFocus.md):
 
 ```4d
-//Método formulario [Contacts];"Data Entry"
+  //Método formulario [Contacts];"Data Entry" form method
  Case of
     :(Form event code=On Load)
        var vtStatusArea : Text
@@ -206,10 +217,10 @@ Este ejemplo muestra cómo mantener un área de información de texto de estado 
        RESOLVE POINTER(Focus object;$vsVarName;$vlTableNum;$vlFieldNum)
        If(($vlTableNum#0)&($vlFieldNum#0))
           Case of
-             :($vlFieldNum=1) //Campo Apellido
+             :($vlFieldNum=1) //Last name field
                 vtStatusArea:="Enter the Last name of the Contact; it will be capitalized automatically"
   //...
-             :($vlFieldNum=10) //Campo Código postal
+             :($vlFieldNum=10) //Zip Code field
                 vtStatusArea:="Enter a 5-digit zip code; it will be checked and validated automatically"
   //...
           End case
@@ -225,13 +236,13 @@ Este ejemplo muestra cómo mantener un área de información de texto de estado 
 Este ejemplo muestra cómo responder a un evento de cierre de ventana con un formulario utilizado para la entrada de datos de registro:
 
 ```4d
-//Método para un formulario de entrada
+  //Método para un formulario de entrada
  $vpFormTable:=Current form table
  Case of
   //...
     :(Form event code=On Close Box)
        If(Modified record($vpFormTable->))
-          CONFIRM("This record has been modified. Save Changes?")
+          CONFIRM("Este registro ha sido modificado. ¿Guardar cambios?")
           If(OK=1)
              ACCEPT
           Else
@@ -249,7 +260,7 @@ Este ejemplo muestra cómo responder a un evento de cierre de ventana con un for
 Este ejemplo muestra cómo poner en mayúsculas un campo de texto o alfanumérico cada vez que se modifica su valor:
 
 ```4d
-//Método objeto de [Contacts]First Name
+  //Método Objeto [Contacts]First Name
  Case of
   //...
     :(Form event code=On Data Change)
@@ -263,7 +274,7 @@ Este ejemplo muestra cómo poner en mayúsculas un campo de texto o alfanuméric
 El siguiente ejemplo ilustra cómo gestionar una acción de borrado en una lista jerárquica:
 
 ```4d
-... //método de lista jerárquica
+ ... //Método de lista jerárquica
 :(Form event code=On Delete Action)
  ARRAY LONGINT($itemsArray;0)
  $Ref:=Selected list items(<>HL;$itemsArray;*)
@@ -293,11 +304,11 @@ En este ejemplo, el evento formulario [`On Scroll`](../Events/onScroll.md) nos p
 ```4d
  Case of
     :(Form event code=On Scroll)
-// tomamos la posición de la imagen izquierda
+  // tomamos la posición de la imagen izquierda
        OBJECT GET SCROLL POSITION(*;"satellite";vPos;hPos)
 // y la aplicamos a la imagen derecha
-OBJECT SET SCROLL POSITION(*; "plan";vPos;hPos;*)
-End case
+       OBJECT SET SCROLL POSITION(*;"plan";vPos;hPos;*)
+ End case
 ```
 
 Resultado: https://www.youtube.com/watch?v=YIRfsW1BmHE
@@ -312,25 +323,25 @@ Desea dibujar un rectángulo rojo alrededor de la celda seleccionada de un list 
     :(Form event code=On Clicked)
        LISTBOX GET CELL POSITION(*;"LB1";$col;$raw)
        LISTBOX GET CELL COORDINATES(*;"LB1";$col;$raw;$x1;$y1;$x2;$y2)
-       OBJECT SET VISIBLE(*;"RedRect";True) //inicializar un rectángulo rojo
+       OBJECT SET VISIBLE(*;"RedRect";True) //initialize a red rectangle
        OBJECT SET COORDINATES(*;"RedRect";$x1;$y1;$x2;$y2)
-
+ 
     :(Form event code=On Scroll)
        LISTBOX GET CELL POSITION(*;"LB1";$col;$raw)
        LISTBOX GET CELL COORDINATES(*;"LB1";$col;$raw;$x1;$y1;$x2;$y2)
        OBJECT GET COORDINATES(*;"LB1";$xlb1;$ylb1;$xlb2;$ylb2)
-       $toAdd:=LISTBOX Get headers height(*;"LB1") //altura del encabezado para no solaparla
-If($ylb1+$toAdd<$y1)&($ylb2>$y2) //si estamos dentro del list box
+       $toAdd:=LISTBOX Get headers height(*;"LB1") //height of the header so as not to overlap it
+       If($ylb1+$toAdd<$y1)&($ylb2>$y2) //if we are inside the list box
 //para simplificar, sólo manejamos los encabezados
 //pero deberíamos manejar el recorte horizontal
 //así como las barras de desplazamiento
-OBJECT SET VISIBLE(*;"RedRect";True)
-OBJECT SET COORDINATES(*; "RedRect";$x1;$y1;$x2;$y2)
-Else
-OBJECT SET VISIBLE(*; "RedRect";False)
-End if
-
-End case
+          OBJECT SET VISIBLE(*;"RedRect";True)
+          OBJECT SET COORDINATES(*;"RedRect";$x1;$y1;$x2;$y2)
+       Else
+          OBJECT SET VISIBLE(*;"RedRect";False)
+       End if
+ 
+ End case
 ```
 
 Como resultado, el rectángulo rojo sigue el desplazamiento del list box:

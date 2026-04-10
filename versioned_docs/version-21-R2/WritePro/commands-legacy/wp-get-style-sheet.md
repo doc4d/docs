@@ -30,18 +30,18 @@ The *styleSheetName* parameter allows you to specify the name of the style sheet
 To retrieve the "Main title" style sheet:
 
 ```4d
- var $styleSheet : Object
- 
- $styleSheet:=WP Get style sheet(wpArea;"Main title")
- If($styleSheet=Null) // check if the style sheet exists//if not create it
-    $styleSheet:=WP New style sheet(wpArea;wk type paragraph;"Main title")
- End if
+ var $styleSheet : Object
+ 
+ $styleSheet:=WP Get style sheet(wpArea;"Main title")
+ If($styleSheet=Null) // check if the style sheet exists//if not create it
+    $styleSheet:=WP New style sheet(wpArea;wk type paragraph;"Main title")
+ End if
 ```
 
 ## See also 
 
 *Accessing document contents by programming*  
-[WP DELETE STYLE SHEET](wp-delete-style-sheet.md)  
+[WP DELETE STYLE SHEET](../WritePro/commands/wp-delete-style-sheet)  
 [WP Get style sheets](wp-get-style-sheets.md)  
-[WP IMPORT STYLE SHEETS](wp-import-style-sheets.md)  
-[WP New style sheet](wp-new-style-sheet.md)  
+[WP IMPORT STYLE SHEETS](../WritePro/commands/wp-import-style-sheet)  
+[WP New style sheet](../WritePro/commands/wp-new-style-sheet)  

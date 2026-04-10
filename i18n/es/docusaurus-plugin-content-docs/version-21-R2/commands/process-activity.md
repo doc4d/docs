@@ -18,10 +18,10 @@ displayed_sidebar: docs
 
 <details><summary>Historia</summary>
 
-| Lanzamiento | Modificaciones                    |
-| ----------- | --------------------------------- |
-| 20 R7       | Soporte del parámetro *sessionID* |
-| 21          | Soporte de sesiones usuario web   |
+| Lanzamiento | Modificaciones                                                                               |
+| ----------- | -------------------------------------------------------------------------------------------- |
+| 21          | Soporte de sesiones usuario web                                                              |
+| 20 R7       | <ul><li>Soporte del parámetro *sessionID</li><li>Renombrado (Get process activity)</li></ul> |
 
 </details>
 

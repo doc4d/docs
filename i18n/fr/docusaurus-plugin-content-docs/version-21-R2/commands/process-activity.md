@@ -18,10 +18,10 @@ displayed_sidebar: docs
 
 <details><summary>Historique</summary>
 
-| Release | Modifications                                |
-| ------- | -------------------------------------------- |
-| 20 R7   | Prise en charge du paramètre *sessionID*     |
-| 21      | Prise en charge des sessions utilisateur web |
+| Release | Modifications                                                                                     |
+| ------- | ------------------------------------------------------------------------------------------------- |
+| 21      | Prise en charge des sessions utilisateur web                                                      |
+| 20 R7   | <ul><li>Prise en charge du paramètre *sessionID*</li><li>Renommé (Get process activity)</li></ul> |
 
 </details>
 

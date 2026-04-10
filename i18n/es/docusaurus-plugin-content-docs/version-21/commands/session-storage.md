@@ -39,9 +39,9 @@ El objeto devuelto es la propiedad [**.storage**](../API/SessionClass.md#storage
 Este método modifica el valor de una propiedad "settings" almacenada en el objeto de almacenamiento de una sesión específica:
 
 ```4d
-//Configuración del almacenamiento de una sesión
-//Configuración de la propiedad del método "Ejecutar en el servidor"
-
+  //Configuración del almacenamiento de una sesión
+  //La propiedad del método "Execute On Server" está definida
+ 
  #DECLARE($id : Text; $text : Text)
  var $obj : Object
  

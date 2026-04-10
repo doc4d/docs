@@ -15,6 +15,17 @@ displayed_sidebar: docs
 
 <!-- END REF-->
 
+<div class="no-index">
+<details><summary>Historia</summary>
+
+| Lanzamiento                 | Modificaciones                             |
+| --------------------------- | ------------------------------------------ |
+| 18                          | Renombrado (Form event) |
+| <6 | Created                                    |
+
+</details>
+</div>
+
 ## Descripción
 
 **Form event code** devuelve un valor numérico que identifica el tipo de evento formulario que acaba de ocurrir. Por lo general, utilizará **Form event code** en un método formulario u objeto.
