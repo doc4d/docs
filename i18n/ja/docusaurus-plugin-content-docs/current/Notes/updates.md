@@ -8,7 +8,6 @@ title: リリースノート
 #### ハイライト
 
 - [`JSON Validate`](../commands/json-validate.md) コマンドは、JSON スキーマドラフト 2020-12 をサポートするようになりました。
-- [`HTTPRequest`](../API/HTTPRequestClass.md#4dhttprequestnew) および [`HTTPAgent`](../API/HTTPAgentClass.md#4dhttpagentnew) クラスにおいて、ローカル証明書フォルダの代わりにmacOS キーチェーンからのカスタムの証明書を使用できるようになりました。
 
 #### 動作の変更
 
