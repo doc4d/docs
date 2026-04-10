@@ -37,10 +37,9 @@ In *wpDoc*, pass the 4D Write Pro document that contains the style sheet.
 
 The *styleSheetName* parameter allows you to specify the name of the style sheet to return. If the style sheet name does not exist in *wpDoc*, an null object is returned.
 
-If the style sheet is part of a hierarchical list style sheet, you can optionally specify the *listLevelIndex* parameter to retrieve a specific level of the hierarchy.
+If the *styleSheetName* is the root-level name of a hierarchical list style sheet, you can optionally specify the *listLevelIndex* parameter to retrieve a specific level of the hierarchy.
 
-* *listLevelIndex* represents the level of the style sheet in the hierarchy (1 = root level, 2 = first sub-level, etc.).
-* If the parameter is omitted and the style sheet is hierarchical, the root-level style sheet is returned.
+* *listLevelIndex* represents the level of the style sheet in the hierarchy (1 = root-level, 2 = first sub-level, etc.).
 * If the requested level does not exist, a null object is returned.
 * If the style sheet is not a hierarchical list style sheet and *listLevelIndex* is greater than 1, a null object is returned.
 
