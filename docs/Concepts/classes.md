@@ -948,8 +948,16 @@ local Function <functionName>
 server Function <functionName>   
 ```
 
-`local` and `server` keywords are only available for the functions of the [ORDA data model](../ORDA/ordaClasses.md) and [shared or session singleton](#singleton-classes) classes.
+`local` and `server` keywords are only available for the functions of the following classes:
+- [ORDA data model](../ORDA/ordaClasses.md) classes
+- [shared or session singleton](#singleton-classes) classes.
 
+
+:::tip Related blog post
+
+[A new way to execute business logic on the server](https://blog.4d.com/a-new-way-to-execute-business-logic-on-the-server)
+
+:::
 
 ### Overview
 
@@ -996,85 +1004,7 @@ local Function getYoungest
 - **with** the `local` keyword, 4 requests are necessary: one to get the Schools entity students, one for the `query()`, one for the `orderBy()`, and one for the `slice()`. In this example, using the `local` keyword is inappropriate.
 
 
-### `server`
-
-In a [client/server architecture](../Desktop/clientServer.md), the `server` keyword specifies that the function must be executed **on the server side**.
-
-
-:::note Reminder
-
-The `server` keyword is useless for [ORDA data model functions](../ORDA/ordaClasses.md), which are executed on the server by default, but it can be added for clarity.
-
-:::
-
-
-`server` function parameters and result must be [**streamable**](./dt_object.md#streaming-support). For example, [4D.Datastore](../API/DataStoreClass.md), [File handle](../API/FileHandleClass.md), or [WebServer](../API/WebServerClass.md) are non-streamable classes but [4D.File](../API/FileClass.md) is streamable.
-
-This feature is particularly useful in the context of [remote user sessions](../Desktop/sessions.md#remote-user-sessions), allowing you to implement the business logic in a [session singleton](#shared-or-session-singleton-functions) to share it accross all the processes of the session, thus extending the functionalities of the [`Session`](../commands/session) command. In this case, you might want the relevant business logic to be executed **on the server** so that all the session information is gathered on the server.
-
-
-By default, shared or session singleton functions are executed on the client. Adding the `server` keyword in the class function definition makes 4D use the singleton instance on the server. Note that this can result of an instantiation of the singleton on the server if no instance exists yet.  
-
-For [sessions singletons](#singleton-classes), the function is executed on the server on the corresponding singleton instance, i.e. the instance of the singleton for the current session.
-
-Note that when you declare a `server Function` in a shared singleton and:
-
-- instanciate singleton *S1* on the client (named *s1*)
-- run *s1.function()* on the client
-
-Since there is no instance of *S1* on the server at this moment, *S1* is instanciated on the server (the constructor is executed) and the *function()* is run on this server instance. As a consequence, you can have two instances of *S1* (client-side and server-side) with distincts property values. However in this case, *s1.property* is always accessed locally. It cannot be accessed on the server, for example in code running on the server,with a direct access using dot notation (an error is returned).
-
-For example:
-
-```4d
-// mySingleton class
-
-property instantiatedOn : Integer
-
-shared singleton Class constructor
-	This.instantiatedOn:=Application type()
-
-//
-Function generateDataLocally() : Object
-  var $result:={}
-
-  $result.message:="I have been executed on "+String(Application type())+\
-    " and instantiated on "+String(This.instantiatedOn)
-  return $result
-
-//
-server Function generateDataOnServer() : Object
-  var $result:={}
-
-  $result.message:="I have been executed on "+String(Application type())+\
-    " and instantiated on "+String(This.instantiatedOn)
-  return $result
-```
-
-Code running on the client:
-
-```4d
-var $singleton : cs.MySingleton
-var $info : Object
-
-ASSERT(Application type()=4D Remote mode)
-// The singleton is instanciated on the client
-$singleton:=cs.MySingleton.me
-
-// The generateDataLocally() function is executed locally
-$info:=$singleton.generateDataLocally()
-
-ASSERT($info.message="I have been executed on 4 and instantiated on 4")
-
-// The generateDataOnServer() function is executed on the server
-// Thus an instance of the singleton is created on the server
-$info:=$singleton.generateDataOnServer()
-ASSERT($info.message="I have been executed on 5 and instantiated on 5")
-```
-
-### Examples (ORDA data model functions)
-
-#### Calculating age
+#### Example: Calculating age 
 
 Given an entity with a *birthDate* attribute, we want to define an `age()` function that would be called in a list box. This function can be executed on the client, which avoids triggering a request to the server for each line of the list box.
 
@@ -1092,7 +1022,7 @@ Else
 End if
 ```
 
-#### Checking attributes
+#### Example: Checking attributes
 
 We want to check the consistency of the attributes of an entity loaded on the client and updated by the user before requesting the server to save them.
 
@@ -1127,49 +1057,184 @@ If ($status.success)
 End if
 ```
 
-### Example (Session singleton function)
 
-In a client/server application, the *Authentication* session singleton is used to handle user session data:
+### `server`
+
+In a [client/server architecture](../Desktop/clientServer.md), the `server` keyword specifies that the function must be executed **on the server side**.
+
+
+:::note Reminder
+
+The `server` keyword is useless for [ORDA data model functions](../ORDA/ordaClasses.md), which are executed on the server by default, but it can be added for clarity.
+
+:::
+
+
+`server` function parameters and result must be [**streamable**](./dt_object.md#streaming-support). For example, [4D.Datastore](../API/DataStoreClass.md), [File handle](../API/FileHandleClass.md), or [WebServer](../API/WebServerClass.md) are non-streamable classes but [4D.File](../API/FileClass.md) is streamable.
+
+This feature is particularly useful in the context of [remote user sessions](../Desktop/sessions.md#remote-user-sessions), allowing you to implement the business logic in a [session singleton](#shared-or-session-singleton-functions) to share it accross all the processes of the session, thus extending the functionalities of the [`Session`](../commands/session) command. In this case, you might want the relevant business logic to be executed **on the server** so that all the session information is gathered on the server.
+
+
+By default, shared or session singleton functions are executed on the client. Adding the `server` keyword in the class function definition makes 4D use the singleton instance on the server. Note that this can result of an instantiation of the singleton on the server if no instance exists yet.  
+
+For [sessions singletons](#singleton-classes), the function is executed on the server on the corresponding singleton instance, i.e. the instance of the singleton for the current session.
+
+Note that when you declare a `server Function` in a shared singleton and:
+
+- instanciate singleton *S1* on the client (named *s1*)
+- run *s1.function()* on the client
+
+Since there is no instance of *S1* on the server at this moment, *S1* is instanciated on the server (the constructor is executed) and the *function()* is run on this server instance. As a consequence, you can have two instances of *S1* (client-side and server-side) with distincts property values. However in this case, *s1.property* is always accessed locally. It cannot be accessed on the server, for example in code running on the server,with a direct access using dot notation (an error is returned).
+
+#### Example: Administration singleton
+
+The *Administration* shared singleton has a "server" function running the [`Process activity`](../commands/process-activity) command. This singleton is instantiated on a remote 4D but the function returns the server activity on the server.
 
 ```4d
-// Authentication Class
+  // Administration class
 
-property _salesPeopleId : Integer
+shared singleton Class constructor
+
+  // This function is executed on the server
+server Function processActivity() : Object
+  return Process activity
+
+
+Function localProcessActivity() : Object
+  return Process activity
+```
+
+Code running on the client:
+
+```4d
+var $localActivity; $serverActivity : Object
+var $administration : cs.Administration
+
+// The Administration singleton is instantiated on the 4D Client
+$administration:=cs.Administration.me
+
+// Get processes running on the remote 4D
+$localActivity:=$administration.localProcessActivity()
+
+// Get processes and sessions running on 4D Server
+$serverActivity:=$administration.processActivity()
+
+```
+
+
+#### Example: ProductCreation shared singleton
+
+A shared singleton can be used to store in memory on the server the current number of products created since the application has been started. Because a shared singleton has a single instance on the 4D server, all the 4D clients will read and update the same property when creating products.
+
+```4d
+// ProductCreation shared singleton Class
+
+property _nbProducts : Integer
+
+shared singleton Class constructor()
+This._nbProducts:=0
+	
+
+// Get the current number of created products
+server Function get nbProducts() : Integer
+return This._nbProducts
+	
+// When a product is saved, the number of products is incremented on the server
+shared server Function saveProduct($product : cs.ProductsEntity) : Integer
+	
+var $status : Object
+	
+$status:=$product.save()
+	
+If ($status.success)
+	This._nbProducts+=1
+End if 
+	
+return This._nbProducts
+```
+
+Calling code on the remote 4D:
+
+```4d
+// The singleton is instanciated on the 4D Client
+Form.productCreation:=cs.ProductCreation.me
+
+// Starting creating a new product
+Form.product:=ds.Products.new()
+
+// ...Fill the product attributes
+
+Form.nbProducts:=Form.productCreation.saveProduct(Form.product)
+```
+
+#### Example: Session singleton
+
+In this example, the user creates products, which requires several steps. Each step needs to be validated to enter the next one.
+
+For each user, the current step of the product creation workflow is stored in memory on the server thanks to a session singleton.
+
+```4d
+// UserJourney session singleton class
+
+property _currentStep : Integer
 
 session singleton Class constructor()
 	
-If (This._salesPeopleId=Null)
-	This.initSalesPeopleId()
+shared server Function start() : Integer
+This._currentStep:=1
+return This._currentStep
+	
+shared server Function nextStep($product : cs.ProductsEntity) : Object
+var $result:={}
+	Case of 
+	: (This._currentStep=1)
+		If ($product.Name="")
+			$result.message:="The product name is mandatory"
+		Else 
+			If (ds.Products.query("Name = :1"; $product.Name).length>=1)
+				$result.message:="This product name already exists"
+			End if 
+		End if 
+	: (This._currentStep=2)
+		If ($product.RetailPrice=0)
+			$result.message:="The product retail price is mandatory"
+		End if
+	End case 
+	
+If ($result.message=Null)
+	This._currentStep+=1
 End if 
 	
-// Executed on the client (default location)
-shared Function initSalesPeopleId()
-	This._salesPeopleId:=ds.getSalesPeopleId() // Call to the server
-
-// Executed on the client
-Function get salesPeople() : cs.SalesPeopleEntity
-	return ds.SalesPeople.get(This._salesPeopleId)
-
-
-// Functions to be executed on the server
-
-server Function get sessionStorage() : Object
-		return Session.storage.clientData
+$result.currentStep:=This._currentStep
 	
-server Function putInSessionStorage($content : Object)
-  var $prop : Text
-	  // $content is like: {"searchCritreria":{min: 10; max: 20}}
-  Use (Session.storage.clientData)
-	  For each ($prop; $content)
-		  Session.storage.clientData[$prop]:=OB Copy($content[$prop]; ck shared)
-	  End for each 
-  End use 
+return $result
+```
 
-server Function clearSession()
-	Session.clearPrivileges()
-	Use (Session.storage)
-		Session.storage.salesInfo:=New shared object()
-		Session.storage.clientData:=New shared object()
-	End use 
+Code running on a remote 4D when the user starts creating a product:
+
+```4d
+// The session singleton is instanciated on the client
+Form.userJourney:=cs.UserJourney.me
+
+// Form.currentStep is 1
+Form.currentStep:=Form.userJourney.start()
+
+// ...going on with step #1	
+```
+
+Further, to complete the step #1, a check must be done on the server to prevent duplicate product names. This is done in the *nextStep()* function. Code running on a remote 4D when the user goes to the next step:
+
+```4d
+var $test : Object
+
+$test:=Form.userJourney.nextStep(Form.product)
+	
+If ($test.message=Null)
+    // Going on with the next step
+	Form.currentStep:=$test.currentStep
+Else 
+    // Error message - Stay on the current step
+	Form.message:=$test.message
+End if
 
 ```
