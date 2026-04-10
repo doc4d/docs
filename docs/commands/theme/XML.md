@@ -5,6 +5,14 @@ sidebar_label: XML
 slug: /commands/theme/XML
 ---
 
+||
+|---|
+|[<!-- INCLUDE #_command_.XML DECODE.Syntax -->](../../commands/xml-decode)<br/>|
+|[<!-- INCLUDE #_command_.XML GET ERROR.Syntax -->](../../commands/xml-get-error)<br/>|
+|[<!-- INCLUDE #_command_.XML GET OPTIONS.Syntax -->](../../commands/xml-get-options)<br/>|
+|[<!-- INCLUDE #_command_.XML SET OPTIONS.Syntax -->](../../commands/xml-set-options)<br/>|
+
+
 ## Overview of XML Commands
 
 :::note
@@ -18,7 +26,7 @@ For XML support, 4D uses a library named Xerces.dll developed by the Apache Foun
 
 The **XML** theme groups together the generic XML "utilities" commands of 4D. These are option- and error-management commands. 
 
-4D also offers two separate sets of XML commands: [DOM](../theme/XML_DOM.md) (Document Object Model) and [SAX](../theme/XML_SAX.md) (Simple API XML) are two different parsing modes for XML documents.
+4D also offers two separate sets of XML commands: [**DOM**](../theme/XML_DOM.md) (Document Object Model) and [**SAX**](../theme/XML_SAX.md) (Simple API XML) are two different parsing modes for XML documents.
 
 - The DOM mode parses an XML source and builds its structure (its "tree") in memory. Because of this, access to each element of the source is extremely fast. However, since the entire tree structure is stored in memory, the processing of large XML documents may lead to the memory capacity being exceeded and thus provoke errors.
 - The SAX mode does not build a tree structure in memory. In this mode, "events" (such as the start and end of an element) are generated when parsing the source. This mode lets you parse XML documents of any size, regardless of the amount of memory available.
@@ -65,10 +73,3 @@ This non-exhaustive list details the main XML concepts used by the commands and 
 - **XML**: eXtensible Markup Language. A computerized data exchange standard enabling the transfer of data as well as their structure. The XML language is based on the use of tags and a specific syntax, in keeping with the HTML language. However, unlike the latter, the XML language allows the definition of customized tags.
 - **XSL**: eXtensible Stylesheet Language. A language permitting the definition of style sheets used to process and display the contents of an XSL document.
 
-
-||
-|---|
-|[<!-- INCLUDE #_command_.XML DECODE.Syntax -->](../../commands/xml-decode)<br/>|
-|[<!-- INCLUDE #_command_.XML GET ERROR.Syntax -->](../../commands/xml-get-error)<br/>|
-|[<!-- INCLUDE #_command_.XML GET OPTIONS.Syntax -->](../../commands/xml-get-options)<br/>|
-|[<!-- INCLUDE #_command_.XML SET OPTIONS.Syntax -->](../../commands/xml-set-options)<br/>|

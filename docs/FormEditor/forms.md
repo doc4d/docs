@@ -67,6 +67,28 @@ You can add or modify 4D forms using the following elements:
 }
 ```
 
+## Using forms
+
+In your 4D desktop applications, forms are called using specific commands of the 4D Language. Basically to display a form, your code has to execute the following sequence:
+
+1. Open a window or select an already opened window.
+2. Select the form to be displayed in the window.
+3. Select the datasource of the form.
+
+All these steps require to use commands of both the [**Windows**](../commands/theme/Windows.md) and [**Forms**](../commands/theme/Forms.md) themes. 
+
+::note Compatibility
+
+All-in-one commands such as [`ADD RECORD`](../commands/add-record) or [`MODIFY RECORD`](../commands/add-record) merge all steps in a single call. These legacy commands can still be used for prototyping or basic developments but are not adapted to modern, fully controlled interfaces.
+
+:::
+
+### Opening a form window
+
+The main way to open a window for your form is to call the [`Open form window`](../commands/open-form-window) command. This command takes a form name as parameter, so that the window size will automatically fit the form size, taking its [size properties](../FormEditor/properties_FormSize.md) into account. For example:
+
+
+
 ## Project form and Table form
 
 There are two categories of forms:
