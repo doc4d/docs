@@ -43,7 +43,7 @@ In the *parameter* parameter, pass an object containing the following properties
 |[<!-- INCLUDE #IMAPTransporterClass.checkConnectionDelay.Syntax -->](../../API/IMAPTransporterClass.md#checkconnectiondelay)| |<!-- INCLUDE #IMAPTransporterClass.checkConnectionDelay.Summary -->|300|
 |[<!-- INCLUDE #transporter.connectionTimeOut.Syntax -->](../../API/IMAPTransporterClass.md#connectiontimeout)| |<!-- INCLUDE #transporter.connectionTimeOut.Summary -->|30|
 |[<!-- INCLUDE #transporter.host.Syntax -->](../../API/IMAPTransporterClass.md#host)| |<!-- INCLUDE #transporter.host.Summary -->|*mandatory*|
-|[<!-- INCLUDE #transporter.listener.Syntax -->](../../API/IMAPTransporterClass.md#listener)||<!-- INCLUDE #transporter.listener.Summary -->|none|
+|.**Listener**: Object||allows you to manage IMAP IDLE notifications for the selected mailbox through callback functions.|none|
 |                     |.onMailCreated : 4D.function|Called when a new message is detected.|none|
 |                     |.onMailDeleted : 4D.function|Called when a message is permanently deleted.|none|
 |                     |.onFlagsModified : 4D.function|Called when message flags are modified.|none|
@@ -53,14 +53,13 @@ In the *parameter* parameter, pass an object containing the following properties
 |[<!-- INCLUDE #transporter.port.Syntax -->](../../API/IMAPTransporterClass.md#port)| |<!-- INCLUDE #transporter.port.Summary -->|993|
 |[<!-- INCLUDE #transporter.user.Syntax -->](../../API/IMAPTransporterClass.md#user)| |<!-- INCLUDE #transporter.user.Summary -->|none|
 
-### listener callbacks
+### listener object
 
 When the `listener` property is provided in the *parameter* object, the following callback functions are supported:
 
 * `onMailCreated`: triggered when a new message is added to the mailbox
 * `onMailDeleted`: triggered when a message is permanently deleted
 * `onFlagsModified`: triggered when message flags are modified
-* `onMailboxStateModified`: triggered when the mailbox state changes
 
 Each callback receives the following parameters:
 
@@ -91,14 +90,6 @@ Each callback receives the following parameters:
 |event.msgNumber|Integer|Message sequence number|
 |event.flags|Collection|Updated flags|
 
-#### onMailboxStateModified(*transporter* : Object; *event* : Object)
-
-|Property|Type|Description|
-|---|---|---|
-|event.type|Text|`"MailboxStateModified"`|
-|event.state|Object|Mailbox state|
-|state.unseen|Integer|Number of unseen messages|
-|state.UIDValidity|Text|Mailbox unique identifier. If this value changes, a full resynchronization is required|
 
 >**Warning**: Make sure the defined timeout is lower than the server timeout, otherwise the client timeout will be useless.
 

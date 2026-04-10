@@ -31,7 +31,8 @@ IMAP Transporter objects are instantiated with the [IMAP New transporter](../com
 |[<!-- INCLUDE #IMAPTransporterClass.getMIMEAsBlob().Syntax -->](#getmimeasblob)<br/><!-- INCLUDE #IMAPTransporterClass.getMIMEAsBlob().Summary -->|
 |[<!-- INCLUDE #transporter.host.Syntax -->](#host)<br/><!-- INCLUDE #transporter.host.Summary -->|
 |[<!-- INCLUDE #transporter.logFile.Syntax -->](#logfile)<br/><!-- INCLUDE #transporter.logFile.Summary -->|
-|[<!-- INCLUDE #IMAPTransporterClass.move().Syntax -->](#move)<br/><!-- INCLUDE #IMAPTransporterClass.move().Summary -->|
+|[<!-- INCLUDE #IMAPTransporterClass.move().Syntax -->](#move)<br/><!-- INCLUDE #IMAPTransporterClass.move().Summary -->|  
+|[<!-- INCLUDE #IMAPTransporterClass.notifier.Syntax -->](#notifier)<br/><!-- INCLUDE #IMAPTransporterClass.notifier.Summary -->|
 |[<!-- INCLUDE #IMAPTransporterClass.numToID().Syntax -->](#numtoid)<br/><!-- INCLUDE #IMAPTransporterClass.numToID().Summary -->|
 |[<!-- INCLUDE #IMAPTransporterClass.removeFlags().Syntax -->](#removeflags)<br/><!-- INCLUDE #IMAPTransporterClass.removeFlags().Summary -->|
 |[<!-- INCLUDE #IMAPTransporterClass.renameBox().Syntax -->](#renamebox)<br/><!-- INCLUDE #IMAPTransporterClass.renameBox().Summary -->|
@@ -1159,99 +1160,6 @@ The optional *updateSeen* parameter allows you to specify if the message is mark
 
 <!-- REF IMAPTransporterClass.move().Desc -->
 
-
-## .listener
-
-<details><summary>History</summary>
-
-|Release|Changes|
-|---|---|
-|21 R3|Added|
-
-</details>
-
-<!-- REF #IMAPTransporterClass.listener.Syntax -->**.listener** : Object<!-- END REF -->
-
-#### Description
-
-The `.listener` property <!-- REF #IMAPTransporterClass.listener.Summary -->allows you to handle IMAP IDLE notifications for the selected mailbox through callback functions.<!-- END REF -->
-
-Callback functions are defined in the `listener` object provided in the *parameter* of the [`IMAP New transporter`](../commands/imap-new-transporter) command.
-
-Callback functions are executed in the worker where `listener.start()` is called.
-
-If the IMAP server supports the IDLE extension, the transporter receives notifications in real time without polling.
-
-### Listener object
-
-The listener object contains the following functions and properties:
-
-| Property | Type | | Description |
-|----------|------|:---:|-------------|
-|isStarted|Boolean|<-|Indicates whether the listener is started (`true`) or stopped (`false`) (read-only)|
-|start()|[4D.function](FunctionClass.md)|->|Starts the notification subscription|
-|stop()|[4D.function](FunctionClass.md)|->|Stops the notification subscription|
-
-#### Object returned by start and stop functions
-
-The `start()` and `stop()` functions return an object describing the IMAP operation status containing the following properties:
-
-|Property|| Type| Description|
-|---|---|---|---|
-|success||Boolean|True if the operation is successful, False otherwise|
-|statusText||Text|Status message returned by the IMAP server, or last error returned in the 4D error stack|
-|errors||Collection|4D error stack (not returned if a server response is received)|
-||\[].errcode|Number|4D error code|
-||\[].message|Text|Description of the error|
-||\[].componentSignature|Text|Signature of the component that returned the error|
-
-#### Example
- 
-The following example shows how to define a project class for IMAP listener callbacks:
-
-```4d
-	// Class IMAPListener
-
-// Triggered when a new email is created on the server
-Function onMailCreated($transporter : 4D.IMAPTransporter; $event : Object)
-
-	ALERT("You have a new mail!")
-	
-// Triggered when an email is deleted
-Function onMailDeleted($transporter : 4D.IMAPTransporter; $event : Object)
-	
-	ALERT("Message deleted")
-
-// Triggered when message flags change (e.g., read/unread)
-Function onFlagsModified($transporter : 4D.IMAPTransporter; $event : Object)
-	
-	ALERT("Flag modified")
-	
-// Triggered when the mailbox global state changes
-Function onMailboxStateModified($transporter : 4D.IMAPTransporter; $event : Object)
-	
-	ALERT("Mailbox modified")
-```
-
-You can then start the listener when needed in your code:
-
-```4d
-var $parameter:={}
-$parameter.authenticationMode:=IMAP authentication OAUTH2 // Using OAuth2 for authentication
-$parameter.host:="Outlook.office365.com" // IMAP server host
-$parameter.port:=993 // IMAP SSL port
-$parameter.accessTokenOAuth2 := $myToken // Token received from the OAuth server
-$parameter.user:="myaddress@email.com" // User email address
-// listener Initialization 
-$parameter.listener :=cs.IMAPListener.new()
-
-// Instantiate the IMAPListener class
-var $myTransporter:=IMAP New transporter($parameter)
-// Start the listeners
-$myTransporter.listener.start()
-
-```
-
 ## .move()
 
 <details><summary>History</summary>
@@ -1352,6 +1260,19 @@ To move all messages in the current mailbox:
   // move all messages in the current mailbox to the "documents" mailbox
  $status:=$transporter.move(IMAP all;"documents")
 ```
+
+<!-- END REF -->
+  
+  <!-- REF IMAPTransporterClass.notifier.Desc -->
+## .notifier
+
+<!-- REF #IMAPTransporterClass.notifier.Syntax -->**.notifier** : 4D.IMAPNotifier<!-- END REF -->
+
+#### Description
+
+The `.notifier` property <!-- REF #IMAPTransporterClass.notifier.Summary -->contains the IMAPNotifier object associated with the transporter<!-- END REF -->. This property is **read-only**.
+
+See [IMAPNotifier](./IMAPNotifierClass.md).
 
 <!-- END REF -->
 
