@@ -19,6 +19,12 @@ An `IMAPNotifier` object is associated with an [IMAP transporter](./IMAPTranspor
 
 All `IMAPNotifier` class functions are thread-safe.
 
+:::tip Related Blog post
+
+[Instant Email Notifications with IMAP Transporter](https://blog.4d.com/instant-email-notifications-with-imap-transporter)
+
+:::
+
 ### Example
 
 ```4d
@@ -38,12 +44,7 @@ $transporter:=IMAP New transporter($parameter)
 $transporter.selectBox("INBOX")
 
 $transporter.notifier.start()     
-```      
-:::tip Related Blog post
-
-[Instant Email Notifications with IMAP Transporter](https://blog.4d.com/instant-email-notifications-with-imap-transporter)
-
-:::
+```     
 
 ## IMAPNotifier object
 
