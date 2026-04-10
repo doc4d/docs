@@ -594,10 +594,10 @@ Quiere combinar los rangos de tipo celda, columna y línea en un nuevo rango dis
 <!-- REF #_method_.VP Convert from 4D View.Params -->
 <div class="no-index">
 
-|Parameter|Type| |Description|
+|Parámetro|Tipo| |Descripción|
 |---|---|---|---|
-|4DViewDocument| Blob|->|4D View document|
-|Result| Object|<-|4D View Pro object
+|4DViewDocument| Blob|->|Documento 4D View|
+|Resultado| Object|<-|4D View Pro object
 </div>
 <!-- END REF -->
 
@@ -613,7 +613,7 @@ En el parámetro *4DViewDocument*, pase una variable o un campo BLOB que conteng
 Quiere obtener un objeto 4D View Pro a partir de un área 4D View almacenada en un BLOB:
 
 ```4d
-C_OBJECT($vpObj)
+var $vpObj : Object
 $vpObj:=VP Convert from 4D View($pvblob)
 ```
 
@@ -668,10 +668,10 @@ El comando devuelve una imagen en formato SVG.
 Quiere convertir un área 4D View Pro en SVG, previsualizar el resultado y enviarlo a una variable imagen:
 
 ```4d
-C_OBJECT($vpAreaObj)
-C_PICTURE($vPict)
+var $vpAreaObj : Object
+var $vPict : Picture
 $vpAreaObj:=VP Export to object("ViewProArea")
-$vPict:=VP Convert to picture($vpAreaObj) //exportar toda el área
+$vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 ```
 
 #### Ver también
@@ -1538,10 +1538,10 @@ $cellStyle:=VP Get cell style(VP Get selection("myDoc"))
 <!-- REF #_method_.VP Get column attributes.Params -->
 <div class="no-index">
 
-|Parameter|Type| |Description|
+|Parámetro|Tipo| |Descripción|
 |---|---|---|---|
-|rangeObj  |Object|->|Range object|
-|Result  |Collection|<-|Collection of column properties|
+|rangoObj |Objeto|->|Rango objeto|
+|Resultado |Collection|<-|Collection of column properties|
 </div>
 <!-- END REF -->
 
@@ -1558,8 +1558,8 @@ La colección devuelta contiene todas las propiedades de las columnas, hayan sid
 El código siguiente:
 
 ```4d
-C_OBJECT($range)
-C_COLLECTION($attr)
+var $range : Object
+var $attr: Collection
 
 $range:=VP Column("ViewProArea";1;2)
 $attr:=VP Get column attributes($range)
@@ -1602,7 +1602,7 @@ Puede definir dónde obtener el número de columnas en el parámetro opcional *s
 El siguiente código devuelve el número de columnas en el área 4D View Pro:
 
 ```4d
-C_INTEGER($colCount)
+var $colCount : Integer
 $colCount:=VP Get column count("ViewProarea")
 ```
 
@@ -1613,15 +1613,15 @@ $colCount:=VP Get column count("ViewProarea")
 ### VP Get current sheet
 
 <!-- REF #_method_.VP Get current sheet.Syntax -->
-**VP Get current sheet** ( *vpAreaName* : Text )<!-- END REF -->
+**VP Get current sheet** ( *vpAreaName* : Text ) : Integer<!-- END REF -->
 
 <!-- REF #_method_.VP Get current sheet.Params -->
 <div class="no-index">
 
-|Parameter|Type| |Description|
+|Parámetro|Tipo| |Descripción|
 |---|---|---|---|
-|vpAreaName| Text|->|4D View Pro area form object name|
-|Function result|Integer|<-|Index of the current sheet|
+|vpAreaName| Text|->|Nombre del objeto 4D View Pro|
+|Resultado de la función|Integer|<-|Index of the current sheet|
 </div>
 <!-- END REF -->
 
@@ -1846,10 +1846,10 @@ $formula:=VP Get formula by name("ViewProArea";"Total")
 <!-- REF #_method_.VP Get formulas.Params -->
 <div class="no-index">
 
-|Parameter|Type| |Description|
+|Parámetro|Tipo| |Descripción|
 |---|---|---|---|
-|rangeObj  |Object|->|Range object|
-|Result  |Collection|<-|Collection of formula values|
+|rangoObj |Objeto|->|Rango objeto|
+|Resultado |Collection|<-|Collection of formula values|
 </div>
 <!-- END REF -->
 
@@ -2079,10 +2079,10 @@ zoomFactor:1
 <!-- REF #_method_.VP Get row attributes.Params -->
 <div class="no-index">
 
-|Parameter|Type| |Description|
+|Parámetro|Tipo| |Descripción|
 |---|---|---|---|
-|rangeObj  |Object|->|Range object|
-|Result  |Collection|<-|Collection of row properties|
+|rangoObj |Objeto|->|Rango objeto|
+|Resultado |Collection|<-|Collection of row properties|
 </div>
 <!-- END REF -->
 
@@ -2202,10 +2202,10 @@ $currentSelection:=VP Get selection("myVPArea")
 <!-- REF #_method_.VP Get sheet count.Params -->
 <div class="no-index">
 
-|Parameter|Type| |Description|
+|Parámetro|Tipo| |Descripción|
 |---|---|---|---|
-|vpAreaName| Text|->|4D View Pro area form object name|
-|Function result|Integer|<-|Number of sheets|
+|vpAreaName| Text|->|Nombre del objeto 4D View Pro|
+|Resultado de la función|Integer|<-|Number of sheets|
 </div>
 <!-- END REF -->
 
@@ -4124,10 +4124,10 @@ VP RESET SELECTION("myVPArea")
 <!-- REF #_method_.VP RESIZE TABLE.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|rangeObj|Object|->|New range for the table|
-|tableName|Text|->|Name of the table|
+|rangeObj|Object|->|Nuevo rango para la tabla|
+|tableName|Text|->|Nombre de la tabla|
 </div>
 <!-- END REF -->
 
@@ -4477,9 +4477,9 @@ VP SET ACTIVE CELL($activeCell)
 <!-- REF #_method_.VP SET ALLOWED METHODS.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|methodObj   |Object|->|Allowed methods in the 4D View Pro areas|
+|methodObj |Object|->|Métodos permitidos en las áreas 4D View Pro|
 </div>
 <!-- END REF -->
 
@@ -4512,14 +4512,14 @@ En el parámetro *methodObj*, pase un objeto en el que cada propiedad es el nomb
 Usted quiere autorizar dos métodos en sus áreas 4D View Pro:
 
 ```4d
-C_OBJECT($allowed)
-$allowed:=New object //parámetro para el comando
+var $allowed : Object
+$allowed:=New object //parameter for the command
 
-$allowed.Hello:=New object //crea una primera función simple llamada "Hello"
-$allowed.Hello.method:="My_Hello_Method" //define el método 4D
+$allowed.Hello:=New object //create a first simple function named "Hello"
+$allowed.Hello.method:="My_Hello_Method" //sets the 4D method
 $allowed.Hello.summary:="Hello prints hello world"
 
-$allowed.Byebye:=New object //crea una segunda función con parámetros llamada "Byebye"
+$allowed.Byebye:=New object //create a second function with parameters named "Byebye"
 $allowed.Byebye.method:="My_ByeBye_Method"
 $allowed.Byebye.parameters:=New collection
 $allowed.Byebye.parameters.push(New object("name";"Message";"type";Is text))
@@ -4805,7 +4805,7 @@ El parámetro *propertyObj* permite especificar los atributos que se aplicarán 
 Para cambiar el tamaño de la segunda columna y definir el encabezado, se escribe:
 
 ```4d
-C_OBJECT($column;$properties)
+var $column; $properties : Object
 
 $column:=VP Column("ViewProArea";1) //column B
 $properties:=New object("width";100;"header";"Hello World")
@@ -5476,7 +5476,7 @@ En el parámetro opcional *sheet*, puede designar una hoja específica donde se 
 Quiere congelar las tres primeras columnas de la izquierda, dos columnas de la derecha y la primera línea:
 
 ```4d
-C_OBJECT($panes)
+var $panes : Object
 
 $panes:=New object
 $panes.columnCount:=3
@@ -5709,9 +5709,9 @@ VP SET ROW COUNT("ViewProArea";5)
 <!-- REF #_method_.VP SET SELECTION.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|rangeObj |Object|->|Range object of cells|
+|rangeObj |Object|->|Objeto de rango de celdas|
 </div>
 <!-- END REF -->
 
@@ -6342,10 +6342,10 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";Null))
 <!-- REF #_method_.VP SET VALUES.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|rangeObj |Object|->|Range object|
-|valuesCol  |Collection|->|Collection of values|
+|rangeObj |Object|->|Objeto rango|
+|valuesCol |Collection|->|Colección de valores|
 </div>
 <!-- END REF -->
 

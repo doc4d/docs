@@ -459,9 +459,9 @@ Este ejemplo ilustra el uso de la propiedad *context*:
 <!-- REF #DataClassClass.getDataStore().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|Result|cs.DataStore|<-|Datastore of the dataclass|
+|Resultado|cs.DataStore|<-|Datastore of the dataclass|
 </div>
 <!-- END REF -->
 
@@ -514,9 +514,9 @@ El método de proyecto ***SearchDuplicate*** busca valores duplicados en cualqui
 <!-- REF #DataClassClass.getInfo().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción| 
 |---|---|---|---|
-|Result|Object|<-|Information on the dataclass|
+|Resultado|Object|<-|Information on the dataclass|
 </div>
 <!-- END REF -->
 
@@ -589,9 +589,9 @@ La función `.getInfo( )` <!-- REF #DataClassClass.getInfo().Summary -->devuelve
 <!-- REF #DataClassClass.new().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|Result|4D.Entity|<-|New entity matching the Dataclass|
+|Resultado|4D.Entity|<-|New entity matching the Dataclass|
 </div>
 <!-- END REF -->
 

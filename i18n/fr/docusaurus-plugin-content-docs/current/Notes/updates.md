@@ -11,11 +11,22 @@ title: Release Notes
 - 4D Write Pro now supports [hierarchical list style sheets](../WritePro/user-legacy/stylesheets.md#hierarchical-list-style-sheets), enabling the creation and management of structured [multi-level lists](../WritePro/user-legacy/using-a-4d-write-pro-area.md#multi-level-lists) with automatic numbering.
 - Ability to use a custom certificate from the macOS keychain instead of a local certificates folder in [`HTTPRequest`](../API/HTTPRequestClass.md#4dhttprequestnew) and [`HTTPAgent`](../API/HTTPAgentClass.md#4dhttpagentnew) classes.
 - New [`4D.Method` class](../API/MethodClass.md) to create and execute a 4D method code from text source. [`METHOD Get path`](../commands/method-get-path) and [`METHOD RESOLVE PATH`](../commands/method-resolve-path) commands support a new `path volatile method` constant (128).
+- Remote [session](../API/SessionClass.md) objects are now [available client-side](../Desktop/sessions.md#availability).
+- Dependencies: support of [components stored on GitLab repositories](../Project/components.md#configuring-a-gitlab-repository).
+
+#### Support of Liquid glass on macOS
+
+- Automatic support of [**Liquid glass** interface](https://www.apple.com/newsroom/2025/06/apple-introduces-a-delightful-and-elegant-new-software-design/) with 4D on macOS 26 Tahoe. See [this blog post](https://blog.4d.com/the-new-macos-tahoe-design-comes-to-your-4d-applications) for detailed information.
+- New values returned by the [`FORM Theme`](../commands/form-theme) command and [CSS Media queries](../FormEditor/createStylesheet.md#media-queries).
+- To help developers gradually adapt their interfaces, ability to **disable Liquid glass in 4D engine-based applications** via the "UIDesignRequiresCompatibility" key in the application's *Info.plist* file (see [Apple's documentation about this key](https://developer.apple.com/documentation/BundleResources/Information-Property-List/UIDesignRequiresCompatibility)).
 
 #### Changements de comportement
 
 - The [`JSON Validate`](../commands/json-validate) command now takes the *$schema* key into account and generates an error if a non-supported version is declared in the schema.
 - For clarity, formula objects are now instances of a new [`4D.Formula`](../API/FormulaClass.md) class that inherits from the generic [`4D.Function`](../API/FunctionClass.md) class.
+- In 4D 21 R3, new improvements to the [Code Live Checker](../code-editor/write-class-method.md#warnings-and-errors) apply to language commands (see [this blog post](https://blog.4d.com/enhancement-of-command-syntax-checking-in-the-editor)). Syntax errors that were previously undetected may now be flagged in your code.
+- The "PHP" page has been removed from the [Settings dialog box](../settings/overview.md). Use the [PHP selectors with the `SET DATABASE PARAMETER`](../commands/set-database-parameter#php-interpreter-ip-address-55) command to configure a PHP interpeter.
+- The **Legacy** network layer is no longer supported as of 4D 21 R3. Projects and binary databases that were using the Legacy network layer are automatically set to [**ServerNet**](../settings/client-server.md#network-layer) when upgraded to 4D 21 R3 and higher.
 
 ## 4D 21 R2
 
@@ -23,7 +34,7 @@ Read [**What’s new in 4D 21 R2**](https://blog.4d.com/whats-new-in-4d-21-r2/),
 
 #### Points forts
 
-- Le [Code Live Checker](../code-editor/write-class-method.md#warnings-and-errors) a été amélioré pour fournir une plus grande précision dans la détection des erreurs (voir [cet article de blog](https://blog.4d.com/better-error-handling-and-type-inference-for-4d-developers) pour plus d'informations).
+- The [Code Live Checker](../code-editor/write-class-method.md#warnings-and-errors) has been enhanced to provide greater precision in error detection (see [this blog post](https://blog.4d.com/better-error-handling-and-type-inference-for-4d-developers) for more information).
 - Les [actions standard de 4D Write Pro](../WritePro/user-legacy/standard-actions.md) qui s'appliquent aux [listes](../WritePro/user-legacy/using-a-4d-write-pro-area.md#lists) ajustent désormais automatiquement les marges des paragraphes pour que les marqueurs restent positionnés à l'intérieur de cette marge.
 - Prise en charge intégrée de `order by` dans les requêtes pour les recherches vectorielles IA en utilisant les fonctions [`query()`](../API/DataClassClass.md#query-by-vector-similarity) et l'[API REST](../REST/$orderby.md).
 - Vous pouvez désormais créer et ouvrir des pages Qodly à partir de l'[Explorateur](../Develop/explorer.md).

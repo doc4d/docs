@@ -14,7 +14,7 @@ displayed_sidebar: docs
 | ----------- | ------------------------------------------------------- | --------------------------- | ------------------------------------------------------------- |
 | targetObj   | Object                                                  | &#8594; | Rango o elemento o documento 4D Write Pro                     |
 | picture     | Picture                                                 | &#8594; | Campo imagen o variable, o ruta al archivo imagen en el disco |
-| pictureFile | [4D.File](../../API/FileClass.md), Text | &#8594; | A File object representing a picture file or a path           |
+| pictureFile | [4D.File](../../API/FileClass.md), Text | &#8594; | Un objeto File que representa un archivo de imagen o una ruta |
 | mode        | Integer                                                 | &#8594; | Modo de inserción                                             |
 | rangeUpdate | Integer                                                 | &#8594; | Modo de actualización del rango                               |
 | Resultado   | Object                                                  | &#8592; | Objeto que hace referencia a la imagen                        |
@@ -38,7 +38,7 @@ Para el segundo parámetro, puede pasar cualquiera de los dos:
   - Campo o variable de imagen
   - Cadena que contiene una ruta a un archivo de imagen almacenado en disco, en la sintaxis del sistema.
     Si utiliza una cadena, puede pasar un nombre de ruta completo o un nombre de ruta relativo al archivo de estructura de la base de datos. También puede pasar un nombre de archivo, en cuyo caso el archivo debe estar situado junto al archivo de estructura de la base de datos. Si pasa un nombre de archivo, debe indicar la extensión del archivo.
-- In *pictureFile* : a `File` object representing a picture file or a path.
+- En *pictureFile* : un objeto `File` que representa un archivo imagen o una ruta.
 
 Todo formato imagen [soportado por 4D](../../FormEditor/pictures.md#native-formats-supported) puede ser usado. Puede obtener la lista de formatos de imagen disponibles usando el comando [PICTURE CODEC LIST](../../commands/picture-codec-list). Si la imagen encapsula varios formatos (codecs), 4D Write Pro solo mantiene un formato para la visualización y otro para la impresión (si son diferentes) en el documento; los "mejores" formatos se seleccionan automáticamente.
 

@@ -16,9 +16,9 @@ Lea [**Novedades en 4D 21**](https://blog.4d.com/whats-new-in-4d-21lts/), la ent
   - posibilidad para definir los [gestores de peticiones HTTP](../WebServer/http-request-handler.md) utilizando una propiedad `handlers` en el parámetro *settings* de la función [`start()`](../API/WebServerClass.md#start) del servidor Web,
   - el objeto servidor Web contiene nuevas propiedades [`rules`](../API/WebServerClass.md#rules) y [`handlers`](../API/WebServerClass.md#handlers).
 - Nuevos [eventos ORDA sobre los datos](../ORDA/orda-events.md): validateSave, saving, afterSave, validateDrop, dropping, afterDrop.
-- Support of the new [`restrictedByDefault` property](../ORDA/privileges.md#restriction-modes) in the `roles.json` file to block access by default to all resources without explicit permission.
+- Soporte de la nueva propiedad [`restrictedByDefault`](../ORDA/privileges.md#restriction-modes) en el archivo `roles.json` para bloquear el acceso por defecto a todos los recursos sin permiso explícito.
 - Nueva opción que permite utilizar certificados de Windows Certificate Store en lugar de una carpeta local de certificados en las clases [`HTTPRequest`](../API/HTTPRequestClass.md#4dhttprequestnew) y [`HTTPAgent`](../API/HTTPAgentClass.md#4dhttpagentnew).
-- [Sessions API](../API/SessionClass.md) now supports all [desktop sessions](../Desktop/sessions.md) and you can [share a desktop session with a web access](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses), facilitating the development of applications using Qodly pages in Web areas.
+- La [API Sessions](../API/SessionClass.md) soporta ahora todas las [sesiones de escritorio](../Desktop/sessions.md) y se puede [compartir una sesión de escritorio con un acceso web](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses), facilitando el desarrollo de aplicaciones que utilicen páginas Qodly en áreas web.
 - La [capa red QUIC](../settings/client-server.md#network-layer) se ha mejorado para gestionar los cambios de interfaz de red de forma transparente, por ejemplo, cuando viajas co su ordenador portátil. Ver [esta entrada del blog](https://blog.4d.com/work-and-move-with-quic-and-network-switching).
 - Ahora puede [crear componentes directamente desde el proyecto local](../Extensions/develop-components.md#creating-components) y [editar su código desde una pestaña dedicada](../Extensions/develop-components.md#editing-all-component-code) en el Explorador 4D sin salir o reiniciar el proyecto.
 - La etapa de activación del producto 4D se ha simplificado y automatizado durante la [conexión](../GettingStarted/Installation.md#sign-in).
@@ -39,7 +39,7 @@ Lea [**Novedades en 4D 21**](https://blog.4d.com/whats-new-in-4d-21lts/), la ent
 
 - Servicios web (SOAP): cuando las [sesiones escalables](../WebServer/sessions.md#enabling-web-sessions) están activadas, los servicios web se ejecutan ahora en [**procesos apropiativos**](../Develop/preemptive.md) en modo compilado. Asegúrese de que su código SOAP sea hilo seguro y que la sesión en la que se ejecuta tiene los [privilegios] adecuados(../API/SessionClass.md#setprivileges).
 - Servidor web:
-  - the support of deprecated `4DSYNC/` and `4DCGI/` URLs is removed. Ya no se realiza ningún tratamiento específico en estas URL,
+  - se elimina el soporte de las URLs obsoletas `4DSYNC/` y `4DCGI/`. Ya no se realiza ningún tratamiento específico en estas URL,
   - los procesos web ya no se reciclan cuando la opción [sesiones escalables](../WebServer/sessions.md#enabling-web-sessions) está activada.
 - Las sesiones usuario web ahora son devueltas por [`Process activity`](../commands/process-activity.md).
 - Los comandos PHP están son [obsoletos](https://blog.4d.com/deprecation-of-php-commands-removal-of-4d-built-in-php-interpreter/) y ya no deberían ser utilizados en sus desarrollos.

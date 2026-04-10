@@ -42,9 +42,9 @@ Un [Datastore](ORDA/dsMapping.md#datastore) es el objeto de interfaz suministrad
 <!-- REF #_command_.ds.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|localID|Text|->|Local ID of the remote datastore to return|
+|localID|Text|->|ID local del datastore remoto a devolver|
 |Result |cs.DataStore|<-|Reference to the datastore|
 </div>
 <!-- END REF -->
@@ -255,9 +255,9 @@ Cada clase de datos de un almacén de datos está disponible como una propiedad 
 <!-- REF #DataStoreClass.cancelTransaction().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-||||Does not require any parameters|
+||||No requiere ningún parámetro|
 </div>
 <!-- END REF -->
 
@@ -481,9 +481,9 @@ Ver el ejemplo 2 de [`.startRequestLog()`](#startrequestlog).
 <!-- REF #DataStoreClass.isAdminProtected().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|Result|Boolean|<-|True if the Data Explorer access is disabled, False if it is enabled (default)|
+|Resultado|Boolean|<-|True if the Data Explorer access is disabled, False if it is enabled (default)|
 </div>
 <!-- END REF -->
 
@@ -516,9 +516,9 @@ Por defecto, el acceso al Explorador de Datos se concede para las sesiones `webA
 <!-- REF #DataStoreClass.makeSelectionsAlterable().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-||||Does not require any parameters|
+||||No requiere ningún parámetro|
 </div>
 <!-- END REF -->
 

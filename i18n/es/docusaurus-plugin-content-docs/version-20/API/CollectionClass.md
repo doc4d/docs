@@ -251,10 +251,10 @@ Esta función modifica la colección original.
 <!-- REF #collection.at().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|index|Integer|->|Index of element to return|
-|Result|any |<-|The element at that index|
+|index|Integer|->|Índice de elemento a regresar|
+|Resultado|cualquiera |<-|The element at that index|
 </div>
 <!-- END REF -->
 
@@ -1478,8 +1478,8 @@ $first:=$emptyCol.first() // devuelve Undefined
 
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|depth|Integer |->|How deep a nested collection structure should be flattened. Default=1|
-|Result|Collection |<-|Flattened collection|
+|depth|Integer |->|How deep a nested collection structure should be flattened. Por defecto=1|
+|Resultado|Colección |<-|Flattened collection|
 </div>
 <!-- END REF -->
 
@@ -3073,7 +3073,7 @@ Por defecto, los nuevos elementos se llenan con valores **null**. Puede especifi
 
 #### Descripción
 
-La función `.reverse()` <!-- REF #collection.reverse().Summary -->devuelve una copia profunda de la colección con todos sus elementos en orden inverso<!-- END REF -->. Si la colección original es una colección compartida, la colección devuelta es también una colección compartida.
+La función `.reverse()` <!-- REF #collection.reverse().Summary -->devuelve una nueva colección con todos los elementos de la colección original en orden inverso<!-- END REF -->. Si la colección original es una colección compartida, la colección devuelta es también una colección compartida.
 > Esta función no modifica la colección original.
 
 #### Ejemplo

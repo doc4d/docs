@@ -3,7 +3,7 @@ id: CollectionClass
 title: Collection
 ---
 
-The Collection class manages [Collection](Concepts/dt_collection.md) type expressions.
+La clase Collection gestiona las expresiones de tipo [Collection](Concepts/dt_collection.md).
 
 Una colección es inicializada con los comandos [`New collection`](../commands/new-collection) o [`New shared collection`](../commands/new-shared-collection).
 
@@ -599,7 +599,7 @@ El parámetro opcional *propertyPath* permite contar valores dentro de una colec
 | ------------ | ---------- | :-------------------------: | ------------------------------------------------------- |
 | propertyPath | Text       |              ->             | Ruta del atributo cuyos valores distintos desea obtener |
 | options      | Integer    |              ->             | `ck diacritical`, `ck count values`                     |
-| Resultado    | Collection | <- | New collection with only distinct values                |
+| Resultado    | Collection | <- | Nueva colección con sólo valores distintos              |
 
 </div>
 <!-- END REF -->
@@ -3084,7 +3084,7 @@ Por defecto, los nuevos elementos se llenan con valores **null**. Puede especifi
 
 </details>
 
-<!-- REF #collection.reverse().Syntax -->**.reverse( )** : Collection <!-- END REF -->
+<!-- REF #collection.reverse().Syntax -->**.reverse()** : Collection <!-- END REF -->
 
 <!-- REF #collection.reverse().Params -->
 
@@ -3099,7 +3099,7 @@ Por defecto, los nuevos elementos se llenan con valores **null**. Puede especifi
 
 #### Descripción
 
-La función `.reverse()` <!-- REF #collection.reverse().Summary --> devuelve una copia profunda de la colección con todos sus elementos en orden inverso<!-- END REF -->. Si la colección original es una colección compartida, la colección devuelta es también una colección compartida.
+The `.reverse()` function <!-- REF #collection.reverse().Summary -->returns a new collection with all elements of the original collection in reverse order<!-- END REF -->. Si la colección original es una colección compartida, la colección devuelta es también una colección compartida.
 
 > Esta función no modifica la colección original.
 

@@ -3,16 +3,16 @@ id: MethodClass
 title: Método
 ---
 
-A `4D.Method` object contains a piece of code that is created from text source and can be executed. `4D.Method` methods always execute in interpreted mode, regardless of the project running mode (interpreted/compiled). This feature is especially designed to support dynamic, on-the-fly execution of code snippets.
+A `4D.Method` object contains a piece of code that is created from text source and can be executed. Los métodos `4D.Method` siempre se ejecutan en modo interpretado, independientemente del modo de ejecución del proyecto (interpretado/compilado). Esta funcionalidad está especialmente diseñada para permitir la ejecución dinámica y sobre la marcha de fragmentos de código.
 
-A `4D.Method` object is created with the `4D.Method.new()` function.
+Un objeto `4D.Method` se crea con la función `4D.Method.new()`.
 
-`4D.Method` objects inherit from the [`4D.Function`](./FunctionClass.md) class. Thus, to execute the method object, you can:
+Los objetos `4D.Method` heredan de la clase [`4D.Function`](./FunctionClass.md). Así, para ejecutar el objeto método, puede:
 
 - store a `4D.Method` object in an object property and use the `()` operator after the property name,
-- or directly call the `4D.Method` object using the [`call()`](#call) or [`apply()`](#apply) function on it.
+- o llamar directamente al objeto `4D.Method` usando la función [`call()`](#call) o [`apply()`](#apply) en él.
 
-See examples in the [Executing code in Function objects](../API/FunctionClass.md#executing-code-in-function-objects) paragraph.
+Ver ejemplos en el párrafo [Ejecución de código en los objetos Function](../API/FunctionClass.md#executing-code-in-function-objects).
 
 :::tip Entrada de blog relacionada
 
@@ -35,7 +35,7 @@ var $result2:=$o.multiplication(2;3) // 6
 var $result3:=4D.Method.new($myCode).call(Null; 10; 5) // 50
 ```
 
-#### Using `This` inside method code
+#### Uso de `This` dentro del código del método
 
 ```4d
 var $myCode:="#DECLARE ($str1:text):text"+Char(13)+"return $str1+This.name"
@@ -47,7 +47,7 @@ var $result : Text
 $result:=$o.concat("Hello ") // $result is "Hello John"
 ```
 
-#### Using a text file with syntax checking
+#### Utilizar un archivo de texto con comprobación sintáctica
 
 ```text
 //4d method stored in a text file
@@ -77,9 +77,9 @@ If ($myMethod.checkSyntax().success)
 End if 
 ```
 
-### Method Object
+### Objeto Método
 
-4D.Method objects provide the following properties and functions:
+Los objetos 4D.Method ofrecen las siguientes propiedades y funciones:
 
 |                                                                                                                            |
 | -------------------------------------------------------------------------------------------------------------------------- |
@@ -107,9 +107,9 @@ End if
 
 | Parámetros | Tipo                      |                             | Descripción                                                                                                                 |
 | ---------- | ------------------------- | :-------------------------: | --------------------------------------------------------------------------------------------------------------------------- |
-| source     | Text                      |              ->             | Textual representation of a 4D method to be encapsuled as an object                                                         |
-| name       | Text                      |              ->             | Name of the method to display in the debugger. If omitted, the method name will be displayed as "anonymous" |
-| Resultado  | 4D.Method | <- | New Method shared object                                                                                                    |
+| source     | Text                      |              ->             | Representación textual de un método 4D a encapsularse como un objeto                                                        |
+| name       | Text                      |              ->             | Nombre del método a mostrar en el depurador. Si se omite, el nombre del método se mostrará como "anonymous" |
+| Resultado  | 4D.Method | <- | Nuevo método objeto compartido                                                                                              |
 
 </div>
 <!-- END REF -->
@@ -118,13 +118,13 @@ End if
 
 The `4D.Method.new()` function <!-- REF #4D.Method.new().Summary -->creates and returns a new `4D.Method` object built from the *source* code<!-- END REF -->.
 
-In the *source* parameter, pass the 4D source code of the method as text. All end-of-line characters are supported (LF, CR, CRLF) using the [`Char`](../commands/char) command or an [escape sequence](../Concepts/quick-tour.md#escape-sequences).
+En el parámetro *source*, pase el código fuente 4D del método como texto. All end-of-line characters are supported (LF, CR, CRLF) using the [`Char`](../commands/char) command or an [escape sequence](../Concepts/quick-tour.md#escape-sequences).
 
-In the optional *name* parameter, pass the name of the method to be displayed in the 4D debugger or Runtime explorer. Si omite este parámetro, el nombre del método aparecerá como "anonymous".
+En el parámetro opcional *name*, pase el nombre del método que se mostrará en el depurador 4D o en el explorador Runtime. Si omite este parámetro, el nombre del método aparecerá como "anonymous".
 
 :::tip
 
-Giving a *name* to your method is recommended if you want to:
+Se recomienda nombrar explícitamente su método si lo desea:
 
 - use persistent method name in the [Custom watch pane of the Debugger](../Debugging/debugger#custom-watch-pane) (anonymous methods are not persistent in the debugger).
 - handle the volatile method using commands such as [`Method get path`](../commands/method-get-path) and [`Method resolve path`](../commands/method-resolve-path) (anonymous methods don't have paths).
@@ -201,15 +201,15 @@ var $result:=$m.call(Null; 10; 5) //50
 
 The `.checkSyntax()` function <!-- REF #MethodClass.checkSyntax().Summary -->checks the syntax of the source code of the `4D.Method` object and returns a result object<!-- END REF -->.
 
-The Result object contains the following properties:
+El objeto devuelto contiene las siguientes propiedades:
 
-| Propiedad |                                                                                   | Tipo                 | Descripción                                                                                                            |
-| --------- | --------------------------------------------------------------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| success   |                                                                                   | Boolean              | True if no syntax error was detected, false otherwise                                                                  |
-| errors    |                                                                                   | Colección de objetos | **Disponible sólo en caso de error o de warning**. Collection of objects describing errors or warnings |
-|           | [].isError    | Boolean              | Error si es True, sino warning                                                                                         |
-|           | [].message    | Text                 | Error or warning message                                                                                               |
-|           | [].lineNumber | Integer              | Número de línea del error en el código                                                                                 |
+| Propiedad |                                                                                   | Tipo                 | Descripción                                                                                                                  |
+| --------- | --------------------------------------------------------------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| success   |                                                                                   | Boolean              | True si no se ha detectado ningún error de sintaxis, false en caso contrario                                                 |
+| errors    |                                                                                   | Colección de objetos | **Disponible sólo en caso de error o de warning**. Colección de objetos que describen errores o advertencias |
+|           | [].isError    | Boolean              | Error si es True, sino warning                                                                                               |
+|           | [].message    | Text                 | Mensaje de error o advertencia                                                                                               |
+|           | [].lineNumber | Integer              | Número de línea del error en el código                                                                                       |
 
 #### Ejemplo
 
@@ -237,7 +237,7 @@ End if
 
 #### Descripción
 
-The `.name` property <!-- REF #MethodClass.name.Summary -->contains the name of the `4D.Method` object, if it was declared in the *name* parameter of the `new()` constructor<!-- END REF -->. Otherwise, the property is not returned.
+The `.name` property <!-- REF #MethodClass.name.Summary -->contains the name of the `4D.Method` object, if it was declared in the *name* parameter of the `new()` constructor<!-- END REF -->. En caso contrario, no se devuelve la propiedad.
 
 Esta propiedad es de **solo lectura**.
 

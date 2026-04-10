@@ -58,10 +58,10 @@ Los objetos IMAP Transporter se instancian con el comando [IMAP New transporter]
 <!-- REF #_command_.IMAP New transporter.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|server|Object|->|Mail server information|
-|Result|4D.IMAPTransporter|<-|[IMAP transporter object](#imap-transporter-object)|
+|server|Object|->|Información del servidor de correo|
+|Resultado|4D.IMAPTransporter|<-|[IMAP transporter object](#imap-transporter-object)|
 </div>
 <!-- END REF -->
 
@@ -118,10 +118,10 @@ End if
 <!-- REF #4D.IMAPTransporter.new().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|server|Object|->|Mail server information|
-|Result|4D.IMAPTransporter|<-|[IMAP transporter object](#imap-transporter-object)|
+|server|Object|->|Información del servidor de correo|
+|Resultado|4D.IMAPTransporter|<-|[IMAP transporter object](#imap-transporter-object)|
 </div>
 <!-- END REF -->
 
@@ -459,10 +459,10 @@ Para copiar todos los mensajes del buzón actual:
 <!-- REF #IMAPTransporterClass.createBox().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|name|Text|->|Name of the new mailbox|
-|Result|Object|<-|Status of the mailbox creation operation|
+|name|Text|->|Nombre del nuevo buzón|
+|Resultado|Object|<-|Status of the mailbox creation operation|
 </div>
 <!-- END REF -->
 
@@ -641,10 +641,10 @@ Para eliminar todos los mensajes del buzón actual:
 <!-- REF #IMAPTransporterClass.deleteBox().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|name|Text|->|Name of the mailbox to delete|
-|Result|Object|<-|Status of the mailbox deletion operation|
+|name|Text|->|Nombre del buzón a eliminar|
+|Resultado|Object|<-|Status of the mailbox deletion operation|
 </div>
 <!-- END REF -->
 
@@ -795,10 +795,10 @@ $status:=$transporter.expunge()
 <!-- REF #IMAPTransporterClass.getBoxInfo().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|name|Text|->|Name of the mailbox|
-|Result|Object|<-|boxInfo object|
+|name|Text|->|Nombre del buzón|
+|Resultado|Object|<-|boxInfo object|
 </div>
 <!-- END REF -->
 
@@ -851,10 +851,10 @@ El objeto `boxInfo` devuelto contiene las siguientes propiedades:
 <!-- REF #IMAPTransporterClass.getBoxList().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetros|Tipo||Descripción|
 |---------|--- |:---:|------|
-|parameters|Object|->|Parameter object|
-|Result|Collection|<-|Collection of mailbox objects|
+|parameters|Object|->|Parámetros objeto|
+|Resultado|Colección|<-|Collection of mailbox objects|
 </div>
 <!-- END REF -->
 
@@ -918,9 +918,9 @@ Si la cuenta no contiene buzones, se devuelve una colección vacía.
 <!-- REF #IMAPTransporterClass.getDelimiter().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
-|-----|--- |:---:|------|
-|Result|Text|<-|Hierarchy delimiter character|
+|Parámetro|Tipo||Descripción|
+|---|--- |:---:|------|
+|Resultado|Text|<-|Hierarchy delimiter character|
 </div>
 <!-- END REF -->
 
@@ -1157,8 +1157,8 @@ Quiere recuperar los 20 correos electrónicos más recientes sin cambiar el esta
 |---------|--- |:---:|------|
 |msgNumber|Integer|-> |Sequence number of the message|
 |msgID|Text|-> |Unique ID of the message|
-|updateSeen|Boolean|->|If True, the message is marked "seen" in the mailbox. If False the message is left untouched.|
-|Result|BLOB|<-|Blob of the MIME string returned from the mail server|
+|updateSeen|Boolean|->|If True, the message is marked "seen" in the mailbox. Si es False el mensaje se deja intacto.|
+|Resultado|BLOB|<-|Blob of the MIME string returned from the mail server|
 </div>
 <!-- END REF -->
 
@@ -1575,10 +1575,10 @@ End if
 <!-- REF #IMAPTransporterClass.searchMails().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|searchCriteria|Text|-> |Search criteria|
-|Result|Collection|<-|Collection of message numbers|
+|searchCriteria|Text|-> |Criterios de búsqueda|
+|Resultado|Collection|<-|Collection of message numbers|
 </div>
 <!-- END REF -->
 
@@ -1793,10 +1793,10 @@ Si la cadena `permanentFlags` incluye la bandera especial \*, significa que el s
 <!-- REF #IMAPTransporterClass.subscribe().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|name|Text|-> |Name of the mailbox|
-|Result|Object|<-|Status of the subscribe operation|
+|name|Text|-> |Nombre del buzón|
+|Resultado|Object|<-|Status of the subscribe operation|
 </div>
 <!-- END REF -->
 
@@ -1871,10 +1871,10 @@ End if
 <!-- REF #IMAPTransporterClass.unsubscribe().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|name|Text|-> |Name of the mailbox|
-|Result|Object|<-|Status of the unsubscribe operation|
+|name|Text|-> |Nombre del buzón|
+|Resultado|Object|<-|Status of the unsubscribe operation|
 </div>
 <!-- END REF -->
 

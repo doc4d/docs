@@ -410,10 +410,10 @@ Queremos obtener una lista de empleados cuyo salario es superior al salario medi
 <!-- REF #EntitySelectionClass.contains().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|entity|4D.Entity|->|Entity to evaluate|
-|Result|Boolean|<-|True if the entity belongs to the entity selection, else False|
+|entity|4D.Entity|->|Entidad a evaluar|
+|Resultado|Boolean|<-|True if the entity belongs to the entity selection, else False|
 </div>
 <!-- END REF -->
 
@@ -912,9 +912,9 @@ El siguiente código genérico duplica todas las entidades de la entity selectio
 <!-- REF #EntitySelectionClass.isAlterable().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|Result|Boolean|<-|True if the entity selection is alterable, False otherwise|
+|Resultado|Boolean|<-|True if the entity selection is alterable, False otherwise|
 </div>
 <!-- END REF -->
 
@@ -955,9 +955,9 @@ Form.products.add(Form.product)
 <!-- REF #EntitySelectionClass.isOrdered().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|Result|Boolean|<-|True if the entity selection is ordered, False otherwise|
+|Resultado|Boolean|<-|True if the entity selection is ordered, False otherwise|
 </div>
 <!-- END REF -->
 
@@ -1007,9 +1007,9 @@ Para más información, consulte [Entity selection ordenadas o desordenadas](ORD
 <!-- REF #EntitySelectionClass.last().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|Result|4D.Entity |<-|Reference to the last entity of the entity selection (Null if empty entity selection)|
+|Resultado|4D.Entity |<-|Reference to the last entity of the entity selection (Null if empty entity selection)|
 </div>
 <!-- END REF -->
 
@@ -1615,9 +1615,9 @@ Para más información, consulte el párrafo **querySettings** en la página [`.
 <!-- REF #EntitySelectionClass.refresh().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-||||Does not require any parameters|
+||||No requiere ningún parámetro|
 </div>
 <!-- END REF -->
 
