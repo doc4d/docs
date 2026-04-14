@@ -35,39 +35,39 @@ displayed_sidebar: docs
 
 ## Descripción
 
-<!--REF #_command_.WP New style sheet.Summary-->The **WP New style sheet** command creates a new (empty) style sheet object for the designated *wpDoc*.<!-- END REF-->
+<!--REF #_command_.WP New style sheet.Summary-->El comando **WP New style sheet** crea un nuevo objeto (vacío) de hoja de estilo para el *wpDoc* designado.<!-- END REF-->
 
-In the *wpDoc* parameter, pass a 4D Write Pro document.
+En el parámetro *wpDoc*, pasa un documento 4D Write Pro.
 
 The *styleSheetType* parameter lets you designate the type of the style sheet, *i.e.* the part of the *wpDoc* that will be affected by the style sheet. Hay dos tipos disponibles:
 
-- wk type character: Applies style attributes to characters.
+- wk type character: aplica atributos de estilo a los caracteres.
 - wk type paragraph: Applies style attributes to paragraphs (required if you want to create [hierarchical list style sheets](#hierarchical-list-style-sheet)).
 
-Pase un nombre para la hoja de estilo en el parámetro *styleSheetName*. The style sheet's name is stored with the document and facilitates reusing or modifying the style. It can also be used with the [WP Get style sheet](../WritePro/commands/wp-get-style-sheet) and [WP DELETE STYLE SHEET](../WritePro/commands/wp-delete-style-sheet) commands. The style sheet name must comply with the following rules:
+Pase un nombre para la hoja de estilo en el parámetro *styleSheetName*. The style sheet's name is stored with the document and facilitates reusing or modifying the style. It can also be used with the [WP Get style sheet](../WritePro/commands/wp-get-style-sheet) and [WP DELETE STYLE SHEET](../WritePro/commands/wp-delete-style-sheet) commands. El nombre de la hoja de estilo debe cumplir las siguientes reglas:
 
 - debe empezar por una letra
-- it can then contain alphanumeric characters, space characters, "-" characters or unicode characters >= 128
+- puede contener caracteres alfanuméricos, espacios en blanco, caracteres "-" o caracteres unicode >= 128
 - debe ser único en el documento independientemente del tipo
-- it must not start with "section", which is reserved
+- no debe empezar por "section", que está reservado
 - el "\_" se sustituye por un espacio y se eliminan los espacios finales.
 
 You can specify the attributes of the style sheet using the [WP SET ATTRIBUTES](../commands/wp-set-attributes) command or the object notation (see [4D Write Pro Attributes](../commands-legacy/4d-write-pro-attributes.md)). For the list of available attributes, see the [Style sheet attributes](../commands-legacy/4d-write-pro-attributes.md#style-sheets) section.
 
 **Notas**:
 
-- A style sheet only modifies the display of a character or paragraph, not how it is stored in the document. Si se elimina una hoja de estilo, el texto volverá al estilo por defecto.
-- Any style attributes not defined in the new style sheet will automatically use the Normal style. For more information, see the [*Style sheets* page](../user-legacy/stylesheets.md).
+- Una hoja de estilo sólo modifica la visualización de un carácter o párrafo, no cómo se almacena en el documento. Si se elimina una hoja de estilo, el texto volverá al estilo por defecto.
+- Any style attributes not defined in the new style sheet will automatically use the Normal style. Para más información, consulte la página [*Hojas de estilo*](../user-legacy/stylesheets.md).
 
 ### Hierarchical list style sheet
 
 If the *styleSheetType* parameter is set to `wk type paragraph`, you can optionally pass the *listLevelCount* parameter to create a [hierarchical list style sheet](../user-legacy/stylesheets.md#hierarchical-list-style-sheets).
 
-The *listLevelCount* parameter defines the total number of levels in the hierarchy. When specified (value ≥ 1), the command automatically creates a root-level style sheet and the corresponding sub-level style sheets.
+El parámetro *listLevelCount* define el número total de niveles de la jerarquía. When specified (value ≥ 1), the command automatically creates a root-level style sheet and the corresponding sub-level style sheets.
 
-The following predefined values are applied:
+Se aplican los siguientes valores predefinidos:
 
-- `wk list style type` is set to `wk decimal`
+- `wk list style type` se establece en `wk decimal`
 - `wk list level index` is automatically assigned (1 for the root level, incremented for sub-levels)
 - `wk list level count` se fija en el valor especificado para todos los niveles
 - El margen izquierdo se calcula automáticamente (0,75 cm × índice de nivel)
@@ -76,7 +76,7 @@ If the parameter is omitted or set to 0, a standard (non-list) paragraph style s
 
 ## Ejemplo 1
 
-The following code creates and defines a paragraph style sheet:
+El siguiente código crea y define una hoja de estilo de párrafo:
 
 ```4d
  var $styleSheet : Object
@@ -119,10 +119,10 @@ Resultado:
   - `wk list style type` = `wk decimal`
 
 - Las hojas de estilo de los subniveles:
-  - have incremented `wk list level index` values (2 and 3)
+  - han incrementado los valores de `wk list level index` (2 y 3)
   - comparte la misma `wk list level count`
   - se indentarán automáticamente (0,75 cm × índice de nivel)
-  - reference the root style sheet through `wk root style`
+  - hacer referencia a la hoja de estilo raíz mediante `wk root style`
 
 ## Ver también
 

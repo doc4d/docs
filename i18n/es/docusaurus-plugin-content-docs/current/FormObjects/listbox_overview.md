@@ -511,17 +511,17 @@ Este principio se aplica a los arrays internos que se pueden utilizar para gesti
  ->MyListbox{3}:=True
 ```
 
-*Non-hierarchical representation:*  
+_Representación no jerárquica:\*  
 ![](../assets/en/FormObjects/hierarch7.png)
 
-*Hierarchical representation:*  
+*Representación jerárquica:*  
 ![](../assets/en/FormObjects/hierarch8.png)
 
 > Si una o más líneas están ocultas porque sus padres están contraídos, ya no se seleccionan. Sólo se pueden seleccionar las líneas visibles (directamente o por desplazamiento). En otras palabras, las líneas no pueden estar ocultas y seleccionadas a la vez.
 
 Al igual que con las selecciones, el comando [`LISTBOX GET CELL POSITION`](../commands/listbox-get-cell-position) devolverá los mismos valores para un list box jerárquico que para un list box no jerárquico. Esto significa que en los dos ejemplos siguientes, [`LISTBOX GET CELL POSITION`](../commands/listbox-get-cell-position) devolverá la misma posición: (3;2).
 
-*Non-hierarchical representation:*  
+_Representación no jerárquica:\*  
 ![](../assets/en/FormObjects/hierarch9.png)
 
 *Hierarchical representation:*  

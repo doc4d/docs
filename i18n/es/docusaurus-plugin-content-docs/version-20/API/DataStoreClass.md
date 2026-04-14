@@ -49,9 +49,9 @@ Un [Datastore](ORDA/dsMapping.md#datastore) es el objeto de interfaz suministrad
 <!-- REF #_command_.ds.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|localID|Text|->|Local ID of the remote datastore to return|
+|localID|Text|->|ID local del datastore remoto a devolver|
 |Result |cs.DataStore|<-|Reference to the datastore|
 </div>
 <!-- END REF -->
@@ -643,10 +643,10 @@ En un almacén de datos remoto:
 <!-- REF #DataStoreClass.getRemoteContextInfo().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|contextName|Text|->|Name of the context|
-|Result|Object|<-|Description of the optimization context|
+|contextName|Text|->|Nombre del contexto|
+|Resultado|Object|<-|Description of the optimization context|
 </div>
 <!-- END REF -->
 
@@ -737,9 +737,9 @@ Ver el ejemplo 2 de [`.startRequestLog()`](#startrequestlog).
 <!-- REF #DataStoreClass.isAdminProtected().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|Result|Boolean|<-|True if the Data Explorer access is disabled, False if it is enabled (default)|
+|Resultado|Boolean|<-|True if the Data Explorer access is disabled, False if it is enabled (default)|
 </div>
 <!-- END REF -->
 
@@ -773,9 +773,9 @@ Por defecto, el acceso al Explorador de Datos se concede para las sesiones `webA
 <!-- REF #DataStoreClass.locked().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
-|---|---|---|---|
-|Result|Boolean|<-|True if locked|
+|Parámetro|Tipo||Descripción|
+|---|-|-|-|-|
+|Resultado|Boolean|<-|True if locked|
 </div>
 <!-- END REF -->
 

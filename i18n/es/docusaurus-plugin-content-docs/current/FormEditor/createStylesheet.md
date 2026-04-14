@@ -206,7 +206,7 @@ text[text|=Hello]
 
 ### Consultas de medios
 
-Media queries allow you to apply styles based on specific conditions. 4D supports media queries for **color schemes** and **platform themes**.
+Las consultas de medios permiten aplicar estilos basados en condiciones específicas. 4D supports media queries for **color schemes** and **platform themes**.
 
 Una consulta de medios está formada por características y valores de medios (por ejemplo, `<media feature>:<value>`).
 
@@ -214,7 +214,7 @@ Available media features and values:
 
 | Media features         | Valores                                                                                                  | Descripción                                                                                                                                                       |
 | ---------------------- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `prefers-color-scheme` | <ul><li>**light**</li><li>**dark**</li></ul>                                                             | Color scheme to use                                                                                                                                               |
+| `prefers-color-scheme` | <ul><li>**light**</li><li>**dark**</li></ul>                                                             | Esquema de color a utilizar                                                                                                                                       |
 | `form-theme`           | <ul><li>**fluent-ui**</li><li>**win-classic**</li><li>**liquid-glass**</li><li>**mac-classic**</li></ul> | Platform theme to use. Para más información sobre el tema **fluent-ui**, consulte [esta sección](./forms.md#fluent-ui-rendering). |
 
 :::note

@@ -40,9 +40,9 @@ Para obtener información detallada sobre la implementación de la sesión, cons
 <!-- REF #_command_.Session.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|Result|4D.Session|<-|Session object|
+|Resultado|4D.Session|<-|Session object|
 </div>
 <!-- END REF -->
 
@@ -177,7 +177,7 @@ $expiration:=Session.expirationDate //eg "2021-11-05T17:10:42Z"
 <!-- REF #SessionClass.hasPrivilege().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
 |privilege|Text|<-|Name of the privilege to verify|
 |Result|Boolean|<-|True if session has *privilege*, False otherwise|
@@ -264,9 +264,9 @@ End if
 <!-- REF #SessionClass.isGuest().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|Result|Boolean|<-|True if session is a Guest one, False otherwise|
+|Resultado|Boolean|<-|True if session is a Guest one, False otherwise|
 </div>
 <!-- END REF -->
 

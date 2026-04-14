@@ -16,7 +16,7 @@ Web areas can be used to display [Qodly pages](https://developer.4d.com/qodly/4D
 
  You can embed a Qodly page inside a Web Area and then update [Qodly sources](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/qodlySources) from 4D by calling [`WA EXECUTE JAVASCRIPT FUNCTION`](../commands/wa-execute-javascript-function).
 
-In 4D client/server applications, Qodly pages inside Web areas can [share their session with the remote user](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses) for a high level of security. 
+In 4D client/server applications, Qodly pages inside Web areas can [share their session with the remote user](../Desktop/sessions.md#sharing-a-remote-session-for-web-accesses) for a high level of security. 
 
 :::tip Related blog post
 
@@ -254,6 +254,10 @@ When you have done the settings as described above, you then have new options su
 ## Supported Properties
 
 [Access 4D methods](properties_WebArea.md#access-4d-methods) - [Border Line Style](properties_BackgroundAndBorder.md#border-line-style) - [Bottom](properties_CoordinatesAndSizing.md#bottom) - [Class](properties_Object.md#css-class) - [Context Menu](properties_Entry.md#context-menu) - [Height](properties_CoordinatesAndSizing.md#height) - [Horizontal Sizing](properties_ResizingOptions.md#horizontal-sizing) - [Left](properties_CoordinatesAndSizing.md#left) - [Method](properties_Action.md#method) - [Object Name](properties_Object.md#object-name) - [Progression](properties_WebArea.md#progression) - [Right](properties_CoordinatesAndSizing.md#right) - [Top](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - [URL](properties_WebArea.md#url) - [Use embedded Web rendering engine](properties_WebArea.md#use-embedded-web-rendering-engine) - [Variable or Expression](properties_Object.md#variable-or-expression) - [Vertical Sizing](properties_ResizingOptions.md#vertical-sizing) - [Visibilty](properties_Display.md#visibility) - [Width](properties_CoordinatesAndSizing.md#width) 
+
+## Supported Events
+
+[On Begin URL Loading](../Events/onBeginUrlLoading.md) - [On End URL Loading](../Events/onEndUrlLoading.md) - [On Getting focus](../Events/onGettingFocus.md) - [On Load](../Events/onLoad.md) - [On Losing focus](../Events/onLosingFocus.md) - [On Open External Link](../Events/onOpenExternalLink.md) - [On Unload](../Events/onUnload.md) - [On URL Filtering](../Events/onUrlFiltering.md) - [On URL Loading Error](../Events/onUrlLoadingError.md) - [On URL Resource Loading](../Events/onUrlResourceLoading.md) - [On Window Opening Denied](../Events/onWindowOpeningDenied.md)
 
 ## 4DCEFParameters.json
 

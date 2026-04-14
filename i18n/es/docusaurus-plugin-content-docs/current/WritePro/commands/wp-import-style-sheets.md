@@ -11,19 +11,19 @@ displayed_sidebar: docs
 
 <div class="no-index">
 
-| Parámetros | Tipo   |                             | Descripción                                    |
-| ---------- | ------ | --------------------------- | ---------------------------------------------- |
-| targetDoc  | Object | &#8594; | 4D Write Pro document to receive style sheets  |
-| sourceDoc  | Object | &#8594; | 4D Write Pro document to get style sheets from |
+| Parámetros | Tipo   |                             | Descripción                                         |
+| ---------- | ------ | --------------------------- | --------------------------------------------------- |
+| targetDoc  | Object | &#8594; | Documento 4D Write Pro para recibir hojas de estilo |
+| sourceDoc  | Object | &#8594; | 4D Write Pro document to get style sheets from      |
 
 </div>
 <!-- END REF-->
 
 ## Descripción
 
-<!--REF #_command_.WP IMPORT STYLE SHEETS.Summary-->The **WP IMPORT STYLE SHEETS** command imports all of the style sheets from the *sourceDoc* into the *targetDoc*.<!-- END REF-->
+<!--REF #_command_.WP IMPORT STYLE SHEETS.Summary-->El comando **WP IMPORT STYLE SHEETS** importa todas las hojas de estilo del *sourceDoc* al *targetDoc*.<!-- END REF-->
 
-In the *targetDoc* parameter, pass the 4D Write Pro document that will receive the imported style sheets.
+En el parámetro *targetDoc*, pase el documento 4D Write Pro que recibirá las hojas de estilo importadas.
 
 In the *sourceDoc* parameter, pass the 4D Write Pro document containing the style sheets to import.
 

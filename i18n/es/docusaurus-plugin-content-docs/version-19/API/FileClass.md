@@ -170,9 +170,9 @@ La función `4D.File.new()` <!-- REF #4D.File.new().Summary -->crea y devuelve u
 <!--REF #FileClass.create().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
-|---|---|---|---|
-|Result|Boolean|<-|True if the file was created successfully, false otherwise|
+|Parámetro|Tipo||Descripción|
+|---|-|-|-|-|
+|Resultado|Boolean|<-|True if the file was created successfully, false otherwise|
 </div>
 <!-- END REF -->
 
@@ -330,9 +330,9 @@ Desea eliminar un archivo específico en la carpeta de la base de datos:
 <!--REF #FileClass.getAppInfo().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción| 
 |---|---|---|---|
-|Result|Object|<-|Contents of .exe/.dll version resource or .plist file|
+|Resultado|Object|<-|Contents of .exe/.dll version resource or .plist file|
 </div>
 <!-- END REF -->
 
@@ -476,10 +476,10 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 <!--REF #FileClass.rename().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|newName|Text|->|New full name for the file|
-|Result|4D.File|<-|Renamed file|
+|newName|Text|->|Nuevo nombre completo para el archivo|
+|Resultado|4D.Archivo|<-|Renamed file|
 </div>
 <!-- END REF -->
 
@@ -520,9 +520,9 @@ Quiere renombrar "ReadMe.txt" como "ReadMe_new.txt":
 <!--REF #FileClass.setAppInfo().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|info|Object|->|Properties to write in .exe/.dll version resource or .plist file|
+|info|Object|->|Propiedades para escribir en el recurso de versión .exe/.dll o archivo .plist|
 </div>
 <!-- END REF -->
 

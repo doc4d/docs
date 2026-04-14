@@ -13,10 +13,10 @@ Synchronous execution follows a **sequential** flow, a step-by-step where each i
 
 Synchronous execution is used when:
 
-- Task execution must follow a strict order.
-- Performance impact is minimal (e.g., quick operations).
+- La ejecución de las tareas debe seguir un orden estricto.
+- El impacto en el rendimiento es mínimo (por ejemplo, operaciones rápidas).
 - Se ejecuta en un contexto de un solo hilo donde el bloqueo es aceptable.
-- Synchronous execution blocks the UI and is best suited for quick, ordered tasks where blocking is acceptable.
+- La ejecución síncrona bloquea la interfaz de usuario y es más adecuada para tareas rápidas y ordenadas en las que el bloqueo es aceptable.
 
 #### Ejecución asíncrona
 
@@ -25,37 +25,37 @@ La ejecución asincrónica es **event-driiven** y permite que otras operaciones 
 La ejecución asíncrona se utiliza cuando:
 
 - Una operación tarda mucho tiempo (por ejemplo, esperando una respuesta del servidor).
-- Responsiveness is critical (e.g., UI interactions).
+- La capacidad de respuesta es fundamental (por ejemplo, las interacciones de la interfaz de usuario).
 - Realización de tareas en segundo plano, comunicación en red o procesamiento paralelo.
 
 Elegir entre ejecución síncrona y asíncrona:
 
-| Scenario                                               | Mejor enfoque    |
-| ------------------------------------------------------ | ---------------- |
-| Operaciones rápidas con un procesamiento mínimo        | **Síncrono**     |
-| Tareas que requieren un orden de ejecución estricto    | **Síncrono**     |
-| Tareas en segundo plano de larga duración              | **Asynchronous** |
-| Long-running UI interactions                           | **Asynchronous** |
-| Interacciones de interfaz de usuario de corta duración | **Síncrono**     |
-| High-performance, multi-threaded workloads             | **Asynchronous** |
+| Scenario                                               | Mejor enfoque |
+| ------------------------------------------------------ | ------------- |
+| Operaciones rápidas con un procesamiento mínimo        | **Síncrono**  |
+| Tareas que requieren un orden de ejecución estricto    | **Síncrono**  |
+| Tareas en segundo plano de larga duración              | **Asíncrono** |
+| Long-running UI interactions                           | **Asíncrono** |
+| Interacciones de interfaz de usuario de corta duración | **Síncrono**  |
+| Cargas de trabajo multihilo de alto rendimiento        | **Asíncrono** |
 
 ## Principios básicos
 
 4D ofrece capacidades integradas de **ejecución asíncrona** a través de varias clases y comandos. These allow background task execution, network communication, and large data processing, while waiting other operations to complete without blocking the current process.
 
-The general concept of asynchronous event management in 4D is based on an asynchronous messaging model using **workers** (processes that listen to events) and **callbacks** (functions or formulas automatically invoked when an event occurs). Instead of waiting for a result (synchronous mode), you provide a function that will be automatically called when the desired event occurs. Callbacks can be passed as class functions (recommended) or Formula objects.
+The general concept of asynchronous event management in 4D is based on an asynchronous messaging model using **workers** (processes that listen to events) and **callbacks** (functions or formulas automatically invoked when an event occurs). Instead of waiting for a result (synchronous mode), you provide a function that will be automatically called when the desired event occurs. Las retrollamadas se pueden pasar como funciones clase (recomendado) o como objetos Formula.
 
-This model is common to [`CALL WORKER`](../commands/call-worker), [`CALL FORM`](../commands/call-form), and [classes that support aynchronous execution](#asynchronous-programming-with-4d-classes). Todos estos comandos/clases inician una operación que se ejecuta en segundo plano. The statement that launches the operation returns immediately, without waiting for the operation to finish.
+This model is common to [`CALL WORKER`](../commands/call-worker), [`CALL FORM`](../commands/call-form), and [classes that support aynchronous execution](#asynchronous-programming-with-4d-classes). Todos estos comandos/clases inician una operación que se ejecuta en segundo plano. La sentencia que lanza la operación retorna inmediatamente, sin esperar a que la operación finalice.
 
 ### Workers
 
 Asynchronous programming relies on a system of [**workers**](../Develop/processes.md#worker-processes) (worker processes), which allows code to be executed in parallel without blocking the main process. This is particularly useful for long tasks (such as HTTP calls, executing external processes, background processing), while keeping the user interface responsive.
 
-Using worker processes in asynchronous programming **is mandatory** since "classic" processes automatically terminate their execution when the process method ends, thus using callbacks is not possible. A worker process stays alive and can **listen to events**.
+Using worker processes in asynchronous programming **is mandatory** since "classic" processes automatically terminate their execution when the process method ends, thus using callbacks is not possible. Un proceso worker permanece vivo y puede **escuchar eventos**.
 
 ### Event queue (mailbox)
 
-Each worker (or form window for [`CALL FORM`](../commands/call-form)) has its own message queue. [`CALL WORKER`](../commands/call-worker) or [`CALL FORM`](../commands/call-form) simply posts a message to this queue. El worker trata los mensajes uno a uno, en el orden en que llegan, dentro de su propio contexto. Process variables, current selections, etc. are preserved.
+Each worker (or form window for [`CALL FORM`](../commands/call-form)) has its own message queue. [`CALL WORKER`](../commands/call-worker) o [`CALL FORM`](../commands/call-form) simplemente envía un mensaje a esta cola. El worker trata los mensajes uno a uno, en el orden en que llegan, dentro de su propio contexto. Se conservan las variables de proceso, las selecciones actuales, etc.
 
 ### Comunicación bidireccional mediante mensajes
 
@@ -71,9 +71,9 @@ In the context of asynchronous execution, the following features place your code
 - [`CALL FORM`](../commands/call-form) abre un formulario y lo hace escuchar los mensajes entrantes de la cola de eventos.
 - a call for a `wait()` listens for `terminate()` or `shutdown()` in a callback from any other instance.
 
-### Event triggering
+### Activación de eventos
 
-Events are automatically triggered during the execution flow and passed to your corresponding callbacks. Se puede forzar la activación de eventos llamando a `terminate()` o `shutdown()` durante una `wait()`.
+Los eventos se activan automáticamente durante el flujo de ejecución y se pasan a sus retrollamadas correspondientes. Se puede forzar la activación de eventos llamando a `terminate()` o `shutdown()` durante una `wait()`.
 
 ### Contexto de ejecución de retrollamada
 
@@ -83,23 +83,23 @@ For callbacks to work properly in fully asynchronous mode, the operation should 
 
 ### Releasing an asynchronous object
 
-In 4D, all objects are released [when no more references](../Concepts/dt_object.md#resources) to them exist in memory. Esto suele ocurrir al final de la ejecución de un método para variables locales.
+En 4D, todos los objetos son liberados [cuando no existen más referencias](../Concepts/dt_object.md#resources) a ellos en memoria. Esto suele ocurrir al final de la ejecución de un método para variables locales.
 
-Para las clases asíncronas, 4D mantiene siempre una **referencia adicional** en el proceso que instanciaba el objeto. This reference is only released when the operation is finished, i.e. after the `onTerminate` event is triggered. This automatic referencing allows your object to survive even if you don't have referenced it specifically in a variable.
+Para las clases asíncronas, 4D mantiene siempre una **referencia adicional** en el proceso que instanciaba el objeto. Esta referencia sólo se libera cuando finaliza la operación, es decir, después de que se active el evento `onTerminate`. Esta referencia automática permite a su objeto sobrevivir aunque no lo haya mencionado específicamente en una variable.
 
 Si desea "forzar" la liberación de un objeto en cualquier momento, utilice un `. hutdown()` o función `terminate()`; desencadena el evento 'onTerminate\` así libera el objeto.
 
 ### Ejemplos que ilustran el concepto común
 
-| Feature                         | Async Launch                                                                          | Callback / Event Handling                                           |
-| ------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| CALL WORKER                     | CALL WORKER("wk"; "MyMethod"; $params)                             | MyMethod se llama con $params                                       |
-| CALL FORM                       | CALL FORM($win; "MyMethod"; $params)                               | MyMethod se llama con $params                                       |
-| 4D.SystemWorker | 4D.SystemWorker.new(cmd; $options) | Callbacks: onData, onResponse, onError, onTerminate |
+| Feature                         | Async Launch                                                                          | Callback / Event Handling                                               |
+| ------------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| CALL WORKER                     | CALL WORKER("wk"; "MyMethod"; $params)                             | MyMethod se llama con $params                                           |
+| CALL FORM                       | CALL FORM($win; "MyMethod"; $params)                               | MyMethod se llama con $params                                           |
+| 4D.SystemWorker | 4D.SystemWorker.new(cmd; $options) | Retrollamadas: onData, onResponse, onError, onTerminate |
 
 ## Programación asíncrona con clases 4D
 
-Several 4D classes support asynchronous processing:
+Varias clases 4D soportan el procesamiento asíncrono:
 
 - [`HTTPRequest`](../API/HTTPRequestClass.md) - Gestiona peticiones y respuestas HTTP asíncronas.
 - [`SystemWorker`](../API/SystemWorkerClass.md) - Ejecuta procesos externos de forma asíncrona.
@@ -114,8 +114,8 @@ Todas estas clases siguen las mismas reglas de ejecución asíncrona. Su constru
 Recomendamos la siguiente secuencia:
 
 1. You create the user class where you declare callback functions, for example a `cs.Params` with `onError()` and `onResponse()` functions.
-2. You instantiate the user class (in our example using `cs.Params.new()`) that will configure your asynchronous object.
-3. You call the constructor of the 4D class (for example `4D.SystemWorker.new()`) and pass the *options* object as parameter. It starts the operations passed immediately without delay.
+2. Instanciará la clase usuario (en nuestro ejemplo utilizando `cs.Params.new()`) que configurará su objeto asíncrono.
+3. You call the constructor of the 4D class (for example `4D.SystemWorker.new()`) and pass the *options* object as parameter. Inicia las operaciones pasadas inmediatamente sin demora.
 
 Here is a full example of implementation of an *options* object based upon a user class:
 
@@ -169,9 +169,9 @@ var $options.onResponse:=Formula(myMethod)
 
 :::
 
-## Synchronous execution in asynchronous code
+## Ejecución síncrona en código asíncrono
 
-Incluso cuando se utiliza código moderno y asíncrono, puede ser necesario introducir cierto grado de ejecución síncrona. Por ejemplo, puede querer que una función espere un cierto tiempo para obtener un resultado. It could be the case with guaranteed fast network connections or system workers. A continuación, puede forzar la ejecución sincrónica utilizando la función `wait()`.
+Incluso cuando se utiliza código moderno y asíncrono, puede ser necesario introducir cierto grado de ejecución síncrona. Por ejemplo, puede querer que una función espere un cierto tiempo para obtener un resultado. Podría ser el caso de conexiones de red rápidas garantizadas o workers del sistema. A continuación, puede forzar la ejecución sincrónica utilizando la función `wait()`.
 
 The **`.wait()`** function pauses execution of the current process and puts 4D in [event listening](#event-listening) mode. Keep in mind that it will trigger events received from any sources, not only from the object on which the `wait()` function was called.
 

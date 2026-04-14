@@ -12,7 +12,7 @@ para importar
 
 4D Write Pro supports flat lists (single-level) and hierarchical lists (multi-level).
 
-### Single-level lists
+### Listas de un solo nivel
 
 4D Write Pro soporta dos tipos principales de listas de un solo nivel:
 
@@ -31,18 +31,15 @@ Cuando se crea una lista utilizando una acción estándar (`listStyleType` o `li
 
 When the list is created using [the WP SET ATTRIBUTE command](../commands-legacy/4d-write-pro-attributes.md#lists), no specific margin is managed, by default the marker is added at the left boundary of the paragraph. El desarrollador puede añadir un margen personalizado si es necesario.
 
-añada una parte sobre el hecho de que usted define dónde empieza su lista ordenada.
-
 :::tip Entrada de blog relacionada
 
 [4D Write Pro – Adding a margin automatically when bullets are set using standard actions](https://blog.4d.com/4d-write-pro-adding-a-margin-automatically-when-bullets-are-set-using-standard-actions)
 
 :::
-and the level are managed with (standard actions)
 
-### Multi-level lists
+### Listas de múltiples niveles
 
-Multi-level lists are based on [hierarchical list style sheets](stylesheets.md#hierarchical-list-style-sheets). Las listas multinivel contienen una hoja de estilo de nivel raíz y una o más hojas de estilo de subnivel. Each level is attached to a hierarchical list style sheet and represents a depth in the list (level 1, level 2, level 3, etc.).
+Multi-level lists are based on [hierarchical list style sheets](stylesheets.md#hierarchical-list-style-sheets). Las listas multinivel contienen una hoja de estilo de nivel raíz y una o más hojas de estilo de subnivel. Cada nivel se adjunta a una hoja de estilo de lista jerárquica y representa una profundidad en la lista (nivel 1, nivel 2, nivel 3, etc.).
 
 Cuando se crea un nuevo subnivel, la numeración de niveles vuelve a empezar en 1. When you add or remove an element in your multi-level list, the numbers are automatically adjusted.
 
@@ -68,7 +65,7 @@ Listas de varios niveles pueden ser gestionadas usando:
 
 ## Hojas de estilo de listas jerárquicas
 
-Hierarchical list style sheets are used to create [multi-level lists](using-a-4d-write-pro-area.md#multi-level-lists).
+Las hojas de estilo de listas jerárquicas se utilizan para crear [listas multinivel](using-a-4d-write-pro-area.md#multi-level-lists).
 
 To create a hierarchical list style sheet, use [WP New style sheet](../commands/wp-new-style-sheet.md) and pass in *listLevelCount* the desired number of levels. You then define a hierarchy of related paragraph style sheets: one **root-level** style sheet and one or more **sub-level** style sheets linked to it. Cada nivel representa una profundidad en la lista (nivel 1, nivel 2, nivel 3, etc.) and is automatically named "root-level name + lvl + index", for example "Mylist lvl 2".
 
