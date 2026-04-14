@@ -3,22 +3,7 @@ id: ai
 title: AI page
 ---
 
-The AI page allows you to add, remove, or view the list of your AI provider(s) as well as your API keys. Registered AI providers can then be used in your code througout your 4D application, especially with the [**4D-AIKit component**](../aikit/overview.md) using the [**model aliases**](../aikit/provider-model-aliases.md) feature. 
-
-
-## Deployment with an API key
-
-When configuring an AI provider, you need to provide your own API key. It requires an external registration for getting API keys/credentials from AI providers. 
-
-Using the Settings dialog box, the 4D developer can create a **provider alias** (for example "open-ai-v1") and use this alias in the code. They can alsi test it using their API key. 
-
-When the 4D application is deployed with the [User settings enabled](../settings/overview.md#enabling-user-settings), the administrator can configure the User settings by using the **same AI provider name** ("open-ai-v1") and **customize the API key** to use the customer's key. Thanks to the [User settings priority rules](../settings/overview.md#priority-of-settings), the customer settings will automatically override the developer settings.
-
-:::warning 
-
-When using 4D in client/server mode, it is **strongly recommended** to execute AI-related code on the server side to protect API keys and credentials from exposure to remote machines.
-
-:::
+The AI page allows you to add, remove, or view the list of all your AI providers and their related model aliases, whether they come from local sources or internet-based services. Providers and model aliases can then be used in your code througout your 4D application, especially with the [**4D-AIKit component**](../aikit/overview.md) using the [**model aliases**](../aikit/provider-model-aliases.md) feature. 
 
 
 ## Managing providers
@@ -42,6 +27,8 @@ If the connection is successful, the number of available models is displayed on 
 If the connection test fails, an error message is displayed (e.g. "Request failed: Not found" or "Request failed: Unauthorized"). 
 
 4. Click **OK** to save the new provider, or **Cancel** to revert all modifications.  
+
+
 
 ### Editing a provider
 
@@ -81,6 +68,80 @@ The combo box lists the main providers, you can select a value to enter the prov
 
 (optional, OpenAI-specific) ID of the project. Each OpenAI API key is attached to a project. 
 
+### AIProviders.json
+
+The provider configuration is stored in a JSON file named *AIProviders.json* located next to the active *settings.4DSettings file*, [depending on your deployment configuration](./overview.md#enabling-user-settings).
 
 
 
+
+### Deployment with an API key
+
+When configuring an AI provider, you need to provide your own API key. It requires an external registration for getting API keys/credentials from AI providers. 
+
+Using the Settings dialog box, the 4D developer can define a custom **provider name** (for example "open-ai-v1") and use this custom name in the code. They can also test it using their API key. 
+
+When the 4D application is deployed with the [User settings enabled](../settings/overview.md#enabling-user-settings), the administrator can configure the User settings by using the **same AI provider name** ("open-ai-v1") and **customize the API key** to use the customer's key. Thanks to the [User settings priority rules](../settings/overview.md#priority-of-settings), the customer settings will automatically override the developer settings.
+
+:::warning 
+
+When using 4D in client/server mode, it is **strongly recommended** to execute AI-related code on the server side to protect API keys and credentials from exposure to remote machines.
+
+:::
+
+
+## Model Aliases
+
+The Model Aliases page allows you to list models from registered Providers that you want to use in your code and to name them with *aliases*. Thanks to model aliases, you avoid hardcoding model names, switch models without changing your code, and keep consistency across environments.
+
+When using a model alias:
+
+- The provider is automatically resolved (see [Model resolution](../aikit/Classes/OpenAIProviders.md#model-resolution) in the 4D-AIKit documentation).
+- The model ID is applied.
+- All credentials and endpoints are used.
+
+
+### Adding a model alias
+
+:::note
+
+To be able to add a model alias, you must have entered at least one valid provider in the **Providers** tab.
+
+:::
+
+To add a model alias:
+
+1. Click on the **+** button at the bottom of the model aliases list. 
+2. In the **Name** column, enter the name of the alias. 
+3. Click on the corresponding row in the **Provider** column to display the list of available providers ([provider names](#name) you entered in the Providers page), and select the name of the provider. 
+4. Click on the corresponding row in the **Model** column to display the list of available models exposed by the selected provider and select the model.
+5. Click **OK** to save the modifications, or **Cancel** to revert all modifications.
+
+ ![](../assets/en/settings/model-alias.png)
+
+### Editing a model alias
+
+To edit or remove an alias:
+
+1. Select a model alias in the list.
+2. Edit the alias information OR to remove a alias, click on the **-** button at the bottom of the list.
+3. Click **OK** to save the modifications, or **Cancel** to revert all modifications.
+
+
+### Using a model alias
+
+You can directly use the model alias name wherever a model name is required (provided that model aliases are supported). 
+
+For example, in 4D-AIKit, you can reference a model with the syntax: *{model:"ModelName"}*, where *ModelName* is a valid model defined in the Model Aliases tab:
+
+```4d
+var $client:=cs.AIKit.OpenAI.new()
+var $result := $client.chat.completions.create($messages; \
+    {model: "Chat Model"})
+```
+
+
+
+### See also
+
+["Provider & Model Aliases"](../aikit/provider-model-aliases.md) in the 4D-AIKity documentation.

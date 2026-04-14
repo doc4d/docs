@@ -18,25 +18,29 @@ This class enables multi-provider support by:
 - Loading provider configurations from a single JSON file
 - Loading named model aliases that map to providers and model IDs
 - Resolving `provider:model` syntax to full API configurations
-- Resolving `:modelAlias` syntax to full provider and model configurations
+- Resolving named model aliases by bare name to full provider + model configurations
 
 The `OpenAI` class automatically loads provider configurations when instantiated.
 
 ## Constructor
 
 ```4d
-var $providers := cs.OpenAIProviders.new()
+var $providers := cs.AIKit.OpenAIProviders.new()
 ```
 
-Creates a new instance that loads provider configuration from the relevant `AIProviders.json` file (see [**Configuration Files**](../provider-model-aliases.md#configuration-files) in the "Provider Model Aliases" page).
+Creates a new instance that loads provider configuration from the `AIProviders.json` file (see [**Configuration Files**](../provider-model-aliases.md#configuration-files) in the "Provider Model Aliases" page for details on file locations and format).
 
+**Important:**
+
+- Only the first existing file is loaded. There is no merging of multiple files.
+- The configuration is read once at instantiation time. If the `AIProviders.json` file is modified afterward, those changes will not be reflected in the existing instance. You must create a new instance of `OpenAIProviders` to reload the updated configuration.
 
 ## Usage
 
 ### Integration with OpenAI Class
 
 ```4d
-var $client := cs.OpenAI.new()
+var $client := cs.AIKit.OpenAI.new()
 
 // Use model aliases with provider:model syntax
 var $result := $client.chat.completions.create($messages; {model: "openai:gpt-5.1"})
@@ -47,11 +51,11 @@ var $result := $client.chat.completions.create($messages; {model: "local:llama3"
 ### Direct Provider Access
 
 ```4d
-var $providers := cs.OpenAIProviders.new()
+var $providers := cs.AIKit.OpenAIProviders.new()
 
 // Get a specific provider configuration
 var $config := $providers.get("openai")
-// Returns: {baseURL: "...", apiKey: "...", ...} or Null
+// Returns: {baseURL: "...", apiKey: "...", modelAliases: [...], ...} or Null
 
 // Get all provider names
 var $names := $providers.list()
@@ -79,7 +83,7 @@ If ($config # Null)
     // Use $config.baseURL, $config.apiKey, etc.
 
     // We could build a client with it
-    var $client:=cs.OpenAI.new($config)
+    var $client:=cs.AIKit.OpenAI.new($config)
 End if
 ```
 
@@ -104,9 +108,9 @@ For each ($name; $names)
 End for each
 ```
 
-### models()
+### modelAliases()
 
-**models**() : Collection
+**modelAliases**() : Collection
 
 Get all configured model aliases.
 
@@ -120,16 +124,15 @@ Each object in the collection contains:
 |----------|------|-------------|
 | `name` | Text | Model alias name |
 | `provider` | Text | Provider name |
-| `model` | Text | Model ID used by the provider |
-| `capabilities` | Object | Capability flags |
+| `model` | Text | Model ID to use with the provider |
 
 #### Example
 
 ```4d
-var $models := $providers.models()
+var $models := $providers.modelAliases()
 // Returns: [{name: "my-gpt", provider: "openai", model: "gpt-5.1", capabilities: {}}, ...]
 
-For each ($m; $models)
+For each ($model; $models)
     // $m.name, $m.provider, $m.model, $m.capabilities.supportsEmbedding
 End for each
 ```
@@ -146,7 +149,7 @@ Two syntaxes are supported for model resolution:
 Specify the provider and model name directly:
 
 ```4d
-var $client := cs.OpenAI.new()
+var $client := cs.AIKit.OpenAI.new()
 $client.chat.completions.create($messages; {model: "openai:gpt-5.1"})
 ```
 
@@ -163,9 +166,10 @@ This is resolved internally to:
 - `"local:llama3"` → Use local provider with llama3 model
 
 
-### Model alias (`:modelAlias`)
+### Model alias (bare name)
 
-Reference a named model from the `models` section of the configuration:
+
+Use a named model by its bare name from the `models` section of the configuration:
 
 ```4d
 var $client := cs.AIKit.OpenAI.new()
@@ -179,26 +183,6 @@ This is resolved internally to:
 4. Make the API request using the resolved configuration
 
 **Examples:**
-- `":my-gpt"` → Use the model alias "my-gpt" (resolves to its configured provider and model)
-- `":my-embedding"` → Use the model alias "my-embedding" for embedding operations
+- `"my-gpt"` → Use the model alias "my-gpt" (resolves to its configured provider and model)
+- `"my-embedding"` → Use the model alias "my-embedding" for embedding operations
 
-
-## Configuration Management
-
-### No Reload Capability
-
-Once a `OpenAIProviders` instance is created, it cannot be reloaded. If you need to pick up configuration changes, create a new instance:
-
-```4d
-// Configuration changed - create new instance
-var $providers := cs.OpenAIProviders.new()
-```
-
-### Management Options
-
-Provider configurations can be managed through [4D Settings](https://developer.4d.com/docs/settings/ai) or by directly editing JSON files.
-
-**To add or modify providers:**
-1. Use 4D Settings interface (recommended), or
-2. Edit the appropriate JSON file (userData, user, or structure)
-3. Create a new `OpenAIProviders` instance to load the changes
