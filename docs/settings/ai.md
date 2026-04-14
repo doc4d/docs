@@ -5,6 +5,14 @@ title: AI page
 
 The AI page allows you to add, remove, or view the list of all your AI providers and their related model aliases, whether they come from local sources or internet-based services. Providers and model aliases can then be used in your code througout your 4D application, especially with the [**4D-AIKit component**](../aikit/overview.md) using the [**model aliases**](../aikit/provider-model-aliases.md) feature. 
 
+:::tip Related blog post
+
+[Centralizing AI Providers and Model Aliases in 4D](https://blog.4d.com/centralizing-ai-providers-and-model-aliases-in-4d)
+
+:::
+
+
+
 
 ## Managing providers
 
@@ -144,4 +152,4 @@ var $result := $client.chat.completions.create($messages; \
 
 ### See also
 
-["Provider & Model Aliases"](../aikit/provider-model-aliases.md) in the 4D-AIKity documentation.
+["Provider & Model Aliases"](../aikit/provider-model-aliases.md) in the 4D AIKit documentation.
