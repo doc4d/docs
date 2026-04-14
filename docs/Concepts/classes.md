@@ -963,12 +963,12 @@ server Function <functionName>
 
 Supported functions have a **default execution location** when no location keyword is used. You can nevertheless insert a `local` or `server` keyword to modify the execution location, or to make the code more explicit.
 
-|Supported functions|Executed by default on|`local` keyword|`server` keyword|
+|Supported functions|Default execution|with `local` keyword|with `server` keyword|
 |---|---|---|---|
-|[ORDA data model](../ORDA/ordaClasses.md)|Server|*Supported*<br/>The function is executed on the client|Allowed to make the code more explicit but no impact|
-|[Shared or session singleton](#singleton-classes)|Client|Allowed to make the code more explicit but no impact|*Supported*<br/>The function is executed on the server on the instance of the singleton on the server. <br/>If there is no instance of the singleton on the server, it is created. |
+|[ORDA data model](../ORDA/ordaClasses.md)|on Server|The function is executed on the client if called on the client||
+|[Shared or session singleton](#singleton-classes)|Local||The function is executed on the server on the server instance of the singleton. <br/>If there is no instance of the singleton on the server, it is created. |
 
-If `local` and `server` keywords are used in another context, they are ignored and an error is returned by the compiler.
+If `local` and `server` keywords are used in another context, an error is returned.
  
 
 :::note
@@ -979,29 +979,16 @@ For a overall description of where code is actually executed in client/server, p
 
 ### `local` 
 
-In a [client/server architecture](../Desktop/clientServer.md), the `local` keyword specifies that the function must be executed **on the client side**. 
+In a [client/server architecture](../Desktop/clientServer.md), the `local` keyword specifies that the function must be executed **on the machine from where it is called**. 
 
 :::note Reminder
 
-The `local` keyword is useless for [shared or session singleton functions](#singleton-classes), which are executed on the client by default, but can be added for clarity.  
+The `local` keyword is useless for [shared or session singleton functions](#singleton-classes), which are executed locally by default.  
 
 :::
 
-By default, [ORDA data model functions](../ORDA/ordaClasses.md) are executed on the server. It usually provides the best performance since only the function request and the result are sent over the network.
+By default, [ORDA data model functions](../ORDA/ordaClasses.md) are executed on the server. It usually provides the best performance since only the function request and the result are sent over the network. However, [for optimization reasons](../ORDA/client-server-optimization.md#using-the-local-keyword), you could want to execute a data model function on client. You can then use the `local` keyword. 
 
-However, it could happen that a function is fully executable on the client side (e.g., when it processes data that's already in the local cache). In this case, you can send requests to the server and thus, enhance the application performance by using the `local` keyword. 
-
-Note that the function will work even if it eventually requires to access the server (for example if the ORDA cache is expired). However, it is highly recommended to make sure that the local function does not access data on the server, otherwise the local execution could not bring any performance benefit. A local function that generates many requests to the server is less efficient than a function executed on the server that would only return the resulting values. For example, consider the following function on the Schools entity class:
-
-```4d
-// Get the youngest students  
-// Inappropriate use of local keyword
-local Function getYoungest
-  var $0 : Object
-    $0:=This.students.query("birthDate >= :1"; !2000-01-01!).orderBy("birthDate desc").slice(0; 5)
-```
-- **without** the `local` keyword, the result is given using a single request
-- **with** the `local` keyword, 4 requests are necessary: one to get the Schools entity students, one for the `query()`, one for the `orderBy()`, and one for the `slice()`. In this example, using the `local` keyword is inappropriate.
 
 
 #### Example: Calculating age 
@@ -1022,40 +1009,6 @@ Else
 End if
 ```
 
-#### Example: Checking attributes
-
-We want to check the consistency of the attributes of an entity loaded on the client and updated by the user before requesting the server to save them.
-
-On the *StudentsEntity* class, the local `checkData()` function checks the Student's age:
-
-```4d
-Class extends Entity
-
-local Function checkData() -> $status : Object
-
-$status:=New object("success"; True)
-Case of
-    : (This.age()=Null)
-        $status.success:=False
-        $status.statusText:="The birthdate is missing"
-
-    :((This.age() <15) | (This.age()>30) )
-        $status.success:=False
-        $status.statusText:="The student must be between 15 and 30 - This one is "+String(This.age())
-End case
-```
-
-Calling code:
-
-```4d
-var $status : Object
-
-//Form.student is loaded with all its attributes and updated on a Form
-$status:=Form.student.checkData()
-If ($status.success)
-    $status:=Form.student.save() // call the server
-End if
-```
 
 
 ### `server`
@@ -1065,7 +1018,7 @@ In a [client/server architecture](../Desktop/clientServer.md), the `server` keyw
 
 :::note Reminder
 
-The `server` keyword is useless for [ORDA data model functions](../ORDA/ordaClasses.md), which are executed on the server by default, but it can be added for clarity.
+The `server` keyword is useless for [ORDA data model functions](../ORDA/ordaClasses.md), which are executed on the server by default.
 
 :::
 
@@ -1075,16 +1028,20 @@ The `server` keyword is useless for [ORDA data model functions](../ORDA/ordaClas
 This feature is particularly useful in the context of [remote user sessions](../Desktop/sessions.md#remote-user-sessions), allowing you to implement the business logic in a [session singleton](#shared-or-session-singleton-functions) to share it accross all the processes of the session, thus extending the functionalities of the [`Session`](../commands/session) command. In this case, you might want the relevant business logic to be executed **on the server** so that all the session information is gathered on the server.
 
 
-By default, shared or session singleton functions are executed on the client. Adding the `server` keyword in the class function definition makes 4D use the singleton instance on the server. Note that this can result of an instantiation of the singleton on the server if no instance exists yet.  
+By default, shared or session singleton functions are executed locally. Adding the `server` keyword in the class function definition makes 4D use the singleton instance on the server. Note that this can result of an instantiation of the singleton on the server if no instance exists yet.  
 
-For [sessions singletons](#singleton-classes), the function is executed on the server on the corresponding singleton instance, i.e. the instance of the singleton for the current session.
+For [sessions singletons](#singleton-classes), the function is executed on the server in the corresponding singleton instance, i.e. the instance of the singleton for the current session.
 
-Note that when you declare a `server Function` in a shared singleton and:
+:::note
 
-- instanciate singleton *S1* on the client (named *s1*)
-- run *s1.function()* on the client
+If you declare a `server Function` in a shared singleton, then:
 
-Since there is no instance of *S1* on the server at this moment, *S1* is instanciated on the server (the constructor is executed) and the *function()* is run on this server instance. As a consequence, you can have two instances of *S1* (client-side and server-side) with distincts property values. However in this case, *s1.property* is always accessed locally. It cannot be accessed on the server, for example in code running on the server,with a direct access using dot notation (an error is returned).
+- you instantiate a singleton *S1* on the client (named *s1*),
+- you run *s1.function()* on the client.
+
+If no instance of *S1* exists on the server at that moment, *S1* is instantiated on the server (the constructor is executed), and *function()* runs on that server instance. As a result, two instances of *S1* can coexist (client-side and server-side), with distinct property values. In this case, *s1.property* is always accessed locally. It cannot be accessed on the server, for example from server-side code using direct dot notation (an error is returned).
+
+:::
 
 #### Example: Administration singleton
 
@@ -1122,119 +1079,38 @@ $serverActivity:=$administration.processActivity()
 ```
 
 
-#### Example: ProductCreation shared singleton
-
-A shared singleton can be used to store in memory on the server the current number of products created since the application has been started. Because a shared singleton has a single instance on the 4D server, all the 4D clients will read and update the same property when creating products.
-
-```4d
-// ProductCreation shared singleton Class
-
-property _nbProducts : Integer
-
-shared singleton Class constructor()
-This._nbProducts:=0
-	
-
-// Get the current number of created products
-server Function get nbProducts() : Integer
-return This._nbProducts
-	
-// When a product is saved, the number of products is incremented on the server
-shared server Function saveProduct($product : cs.ProductsEntity) : Integer
-	
-var $status : Object
-	
-$status:=$product.save()
-	
-If ($status.success)
-	This._nbProducts+=1
-End if 
-	
-return This._nbProducts
-```
-
-Calling code on the remote 4D:
-
-```4d
-// The singleton is instanciated on the 4D Client
-Form.productCreation:=cs.ProductCreation.me
-
-// Starting creating a new product
-Form.product:=ds.Products.new()
-
-// ...Fill the product attributes
-
-Form.nbProducts:=Form.productCreation.saveProduct(Form.product)
-```
 
 #### Example: Session singleton
 
-In this example, the user creates products, which requires several steps. Each step needs to be validated to enter the next one.
-
-For each user, the current step of the product creation workflow is stored in memory on the server thanks to a session singleton.
+You store your users in a Users table and handle a custom authentication. You use a session singleton for the authentication:
 
 ```4d
-// UserJourney session singleton class
+// UserSession session singleton class
 
-property _currentStep : Integer
-
-session singleton Class constructor()
+server Function checkUser($credentials : Object) : Boolean
 	
-shared server Function start() : Integer
-This._currentStep:=1
-return This._currentStep
+var $user : cs.UsersEntity
+var $result:=False
 	
-shared server Function nextStep($product : cs.ProductsEntity) : Object
-var $result:={}
-	Case of 
-	: (This._currentStep=1)
-		If ($product.Name="")
-			$result.message:="The product name is mandatory"
-		Else 
-			If (ds.Products.query("Name = :1"; $product.Name).length>=1)
-				$result.message:="This product name already exists"
-			End if 
-		End if 
-	: (This._currentStep=2)
-		If ($product.RetailPrice=0)
-			$result.message:="The product retail price is mandatory"
-		End if
-	End case 
-	
-If ($result.message=Null)
-	This._currentStep+=1
+If ($credentials#Null)
+	$user:=ds.Users.query("Email === :1"; $credentials.identifier).first()
+		
+	If (($user#Null) && (Verify password hash($credentials.password; $user.Password)))
+		Use (Session.storage)
+			Session.storage.userInfo:=New shared object("userId"; $user.ID)
+		End use 
+			
+		$result:=True
+	End if 
 End if 
-	
-$result.currentStep:=This._currentStep
 	
 return $result
 ```
 
-Code running on a remote 4D when the user starts creating a product:
+To provide the current user to 4D clients, the singleton exposes a user computed property got from the server:
 
 ```4d
-// The session singleton is instanciated on the client
-Form.userJourney:=cs.UserJourney.me
-
-// Form.currentStep is 1
-Form.currentStep:=Form.userJourney.start()
-
-// ...going on with step #1	
+server Function get user() : cs.UsersEntity
+	return ds.Users.get(Session.storage.userInfo.userId)
 ```
 
-Further, to complete the step #1, a check must be done on the server to prevent duplicate product names. This is done in the *nextStep()* function. Code running on a remote 4D when the user goes to the next step:
-
-```4d
-var $test : Object
-
-$test:=Form.userJourney.nextStep(Form.product)
-	
-If ($test.message=Null)
-    // Going on with the next step
-	Form.currentStep:=$test.currentStep
-Else 
-    // Error message - Stay on the current step
-	Form.message:=$test.message
-End if
-
-```
