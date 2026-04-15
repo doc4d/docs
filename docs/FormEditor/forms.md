@@ -69,24 +69,55 @@ You can add or modify 4D forms using the following elements:
 
 ## Using forms
 
-In your 4D desktop applications, forms are called using specific commands of the 4D Language. Basically to display a form, your code has to execute the following sequence:
+In your 4D desktop applications, forms can be used in various ways, depending on their status within your interface needs. A form can be:
 
-1. Open a window or select an already opened window.
-2. Select the form to be displayed in the window.
-3. Select the datasource of the form.
+- used in its own window for data viewing, processing, editing, or to display on-screen information to the user,
+- used embedded in another form (subform),
+- used a template for printing.
 
-All these steps require to use commands of both the [**Windows**](../commands/theme/Windows.md) and [**Forms**](../commands/theme/Forms.md) themes. 
+
+### Using project forms in windows
+
+Forms are called using specific commands of the 4D Language. The straighforward steps to display a form on screen are:
+
+1. Call the [`Open form window`](../commands/open-form-window) command to open a window tailored for your project form.
+2. Call the [`DIALOG`](../commands/dialog) command to actually load the form in the window, ready for user interaction.
+3. (optional) Use the [`Form`](../commands/form) command from within the form context to access form data. You can also use [`CALL FORM`](../commands/call-form) to control the form execution.  
+
+Example:
+
+```4d
+var $win:=Open form window("Edit_Customer";Movable form dialog box)
+DIALOG("Edit_Children";$mydata) //displays dialog filled with values
+```
 
 ::note Compatibility
 
-All-in-one commands such as [`ADD RECORD`](../commands/add-record) or [`MODIFY RECORD`](../commands/add-record) merge all steps in a single call. These legacy commands can still be used for prototyping or basic developments but are not adapted to modern, fully controlled interfaces.
+All-in-one commands such as [`ADD RECORD`](../commands/add-record) or [`MODIFY RECORD`](../commands/add-record) merge all steps in a single call. These legacy commands can still be used for prototyping or basic developments but are not adapted to modern, fully controlled interfaces. They directly rely on the 4D database and legacy features such as [table forms](#project-form-and-table-form) and do not benefit from the power and flexibility of [ORDA features](../ORDA/overview.md). Unless specific needs, it is recommended to use project forms for your 4D desktop application interfaces. 
 
 :::
 
-### Opening a form window
+### Using forms to be printed
 
-The main way to open a window for your form is to call the [`Open form window`](../commands/open-form-window) command. This command takes a form name as parameter, so that the window size will automatically fit the form size, taking its [size properties](../FormEditor/properties_FormSize.md) into account. For example:
+You can use forms to print data, either as page or as list. To print a form in your 4D application:
 
+1. Call the [`Print form`](../commands/print-form) command.
+2. (optional) Use commands of the [Printing](../commands/theme/Printing.md) theme to control printing area and page breaks.
+
+### Using forms as subforms
+
+A form can be embedded within another form, in which case it becomes a subform. A subform is actually a [form object](../FormObjects/subform_overview.md) and follow specific rules. 
+
+A subform is automatically used when its parent form is [displayed in a window](#using-project-forms-in-windows).
+
+
+### Other form usages
+
+There are several other ways to use forms in the 4D applications, including:
+
+- a form can be [inherited](#inherited-forms) from another form,
+- a form can be [associated to a listbox](../FormObjects/properties_ListBox.md#detail-form-name) in response to a user action to display a row using an edit button or a double-click,
+- the [label editor can use a form](../Desktop/labels.md#form-to-use) as template to print labels.
 
 
 ## Project form and Table form
