@@ -69,8 +69,6 @@ The client automatically loads provider configurations from the first existing f
 |-------|------|----------|-------------|
 | `provider` | Text | Yes | Name of the provider (must exist in `providers`) |
 | `model` | Text | Yes | Model ID used by the provider |
-| `capabilities` | Object | No | Capability flags |
-| `capabilities.supportsEmbedding` | Boolean | No | Whether the model supports embedding generation |
 
 
 ### Example Configuration
@@ -104,8 +102,6 @@ The client automatically loads provider configurations from the first existing f
     "my-embedding": {
       "provider": "openai",
       "model": "text-embedding-3-small",
-      "capabilities": {
-        "supportsEmbedding": true
       }
     }
   }
