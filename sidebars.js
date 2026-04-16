@@ -231,6 +231,7 @@ module.exports =
             "API/FunctionClass",
             "API/HTTPAgentClass",
             "API/HTTPRequestClass",
+            "API/IMAPNotifierClass",
             "API/IMAPTransporterClass",
             "API/IncomingMessageClass",
             "API/MailAttachmentClass",
