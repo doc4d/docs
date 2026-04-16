@@ -72,8 +72,9 @@ You can add or modify 4D forms using the following elements:
 In your 4D desktop applications, forms can be used in various ways, depending on their status within your interface needs. A form can be:
 
 - used in its own window for data viewing, processing, editing, or to display on-screen information to the user,
+- used as template for printing,
 - used embedded in another form (subform),
-- used a template for printing.
+- or called by specific features like the Label editor. 
 
 
 ### Using project forms in windows
@@ -84,18 +85,39 @@ Forms are called using specific commands of the 4D Language. The straighforward 
 2. Call the [`DIALOG`](../commands/dialog) command to actually load the form in the window, ready for user interaction.
 3. (optional) Use the [`Form`](../commands/form) command from within the form context to access form data. You can also use [`CALL FORM`](../commands/call-form) to control the form execution.  
 
-Example:
-
-```4d
-var $win:=Open form window("Edit_Customer";Movable form dialog box)
-DIALOG("Edit_Children";$mydata) //displays dialog filled with values
-```
-
 ::note Compatibility
 
 All-in-one commands such as [`ADD RECORD`](../commands/add-record) or [`MODIFY RECORD`](../commands/add-record) merge all steps in a single call. These legacy commands can still be used for prototyping or basic developments but are not adapted to modern, fully controlled interfaces. They directly rely on the 4D database and legacy features such as [table forms](#project-form-and-table-form) and do not benefit from the power and flexibility of [ORDA features](../ORDA/overview.md). Unless specific needs, it is recommended to use project forms for your 4D desktop application interfaces. 
 
 :::
+
+
+#### Simple example
+
+You create the following form in the [Form editor](./formEditor.md):
+
+![](../assets/en/FormEditor/example-form-1.png)
+
+If you execute the following project method:
+
+```4d
+var $mydata:={name: "Smith"; age: 42}
+var $win:=Open form window("myForm"; Movable form dialog box)
+SET WINDOW TITLE("My First 4D Form")
+DIALOG("myForm"; $mydata)  //displays dialog filled with values
+```
+
+4D displays:
+
+![](../assets/en/FormEditor/example-form-1.png)
+
+
+### Using forms as subforms
+
+A form can be embedded within another form, in which case it becomes a [subform object](../FormObjects/subform_overview.md) which follows specific rules.  
+
+A subform is automatically used when its parent form is [displayed in a window](#using-project-forms-in-windows).
+
 
 ### Using forms to be printed
 
@@ -103,12 +125,6 @@ You can use forms to print data, either as page or as list. To print a form in y
 
 1. Call the [`Print form`](../commands/print-form) command.
 2. (optional) Use commands of the [Printing](../commands/theme/Printing.md) theme to control printing area and page breaks.
-
-### Using forms as subforms
-
-A form can be embedded within another form, in which case it becomes a subform. A subform is actually a [form object](../FormObjects/subform_overview.md) and follow specific rules. 
-
-A subform is automatically used when its parent form is [displayed in a window](#using-project-forms-in-windows).
 
 
 ### Other form usages
