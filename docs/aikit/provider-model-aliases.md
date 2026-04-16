@@ -111,10 +111,10 @@ The client automatically loads provider configurations from the first existing f
 
 Two syntaxes are supported:
 
-| Syntax | Description | Example |
-|--------|-------------|--------|
-| `provider:model_name` | Provider alias — specify provider and model directly | `"openai:gpt-5.1"` |
-| `:model_alias` | Model alias — reference a named model from the `models` configuration | `":my-gpt"` |
+| Syntax | Description |
+|--------|-------------|
+| `provider:model_name` | Provider alias — specify provider and model directly | 
+| `:model_alias` | Model alias — reference a named model from the `models` configuration by bare name |
 
 #### Provider alias syntax
 
@@ -139,7 +139,7 @@ var $result := $client.images.generate("prompt"; {model: "openai:dall-e-3"})
 
 #### Model alias syntax
 
-Use the `:model_alias` syntax to reference a named model defined in the `models` section of the configuration file. The provider, model ID, and credentials are resolved automatically:
+Use a bare model name to reference a named model defined in the `models` section of the configuration file. The provider, model ID, and credentials are resolved automatically:
 
 ```4d
 var $client := cs.AIKit.OpenAI.new()
@@ -148,7 +148,7 @@ var $client := cs.AIKit.OpenAI.new()
 var $result := $client.chat.completions.create($messages; {model: ":my-gpt"})
 var $result := $client.chat.completions.create($messages; {model: ":my-claude"})
 
-// Embeddings with a named model
+// Embeddings with a named model alias
 var $result := $client.embeddings.create("text"; ":my-embedding")
 ```
 
@@ -169,9 +169,9 @@ When you use the `provider:model` syntax, the client automatically:
    - Sends request to the provider's `baseURL` with the correct `apiKey`
 
 
-#### Model alias (`:modelAlias`)
+#### Model alias (bare name)
 
-When you use the `:modelAlias` syntax, the client automatically:
+When you use a bare model name that matches a configured alias, the client automatically:
 
 1. **Looks up** the model alias in the `models` section of the configuration
    - Example: `":my-gpt"` → finds entry with `provider: "openai"`, `model: "gpt-5.1"`
@@ -194,7 +194,7 @@ var $result := $client.chat.completions.create($messages; {model: "gpt-5.1"})
 // Override with provider alias
 var $result := $client.chat.completions.create($messages; {model: "anthropic:claude-3-opus"})
 
-// Override with model alias
+// Override with model alias (bare name)
 var $result := $client.chat.completions.create($messages; {model: ":my-gpt"})
 
 ```
@@ -216,17 +216,6 @@ var $result := $client.chat.completions.create($messages; {model: "anthropic:cla
 
 // Try local Ollama
 var $result := $client.chat.completions.create($messages; {model: "local:llama3.2"})
-```
-
-### Dynamic Provider Selection
-
-```4d
-var $client := cs.AIKit.OpenAI.new()
-var $provider := "openai"  // Could come from user preference
-
-// Build model string dynamically
-var $modelString := $provider + ":gpt-5.1"
-var $result := $client.chat.completions.create($messages; {model: $modelString})
 ```
 
 ### Embeddings with Multiple Providers
@@ -316,9 +305,6 @@ Define models once, use them everywhere by name:
     "embedding": {
       "provider": "openai",
       "model": "text-embedding-3-small",
-      "capabilities": {
-        "supportsEmbedding": true
-      }
     }
   }
 }
@@ -337,8 +323,8 @@ var $embedding := $client.embeddings.create("text"; ":embedding")
 
 ```4d
 var $providers := cs.AIKit.OpenAIProviders.new()
-var $models := $providers.models()
-// Returns: [{name: "chat", provider: "openai", model: "gpt-5.1", capabilities: {}}, ...]
+var $models := $providers.modelAliases()
+// Returns: [{name: "chat", provider: "openai", model: "gpt-5.1"}, ...]
 ```
 
 

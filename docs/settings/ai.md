@@ -78,7 +78,7 @@ The combo box lists the main providers, you can select a value to enter the prov
 
 ### AIProviders.json
 
-The provider configuration is stored in a JSON file named *AIProviders.json* located next to the active *settings.4DSettings file*, [depending on your deployment configuration](./overview.md#enabling-user-settings).
+The provider configuration is stored in a JSON file named *AIProviders.json* located next to the active *settings.4DSettings file* within the [project folder](../Project/architecture.md), [depending on your deployment configuration](./overview.md#enabling-user-settings).
 
 
 

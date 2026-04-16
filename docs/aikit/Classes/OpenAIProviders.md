@@ -130,10 +130,10 @@ Each object in the collection contains:
 
 ```4d
 var $models := $providers.modelAliases()
-// Returns: [{name: "my-gpt", provider: "openai", model: "gpt-5.1", capabilities: {}}, ...]
+// Returns: [{name: "my-gpt", provider: "openai", model: "gpt-5.1"}, ...]
 
 For each ($model; $models)
-    // $m.name, $m.provider, $m.model, $m.capabilities.supportsEmbedding
+    // $m.name, $m.provider, $m.model
 End for each
 ```
 
