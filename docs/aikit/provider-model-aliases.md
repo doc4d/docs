@@ -46,9 +46,6 @@ The client automatically loads provider configurations from the first existing f
     "model_alias_name": {
       "provider": "provider_name",
       "model": "actual-model-id",
-      "capabilities": {
-        "supportsEmbedding": false
-      }
     }
   }
 }
