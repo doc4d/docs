@@ -109,7 +109,7 @@ DIALOG("myForm"; $mydata)  //displays dialog filled with values
 
 4D displays:
 
-![](../assets/en/FormEditor/example-form-1.png)
+![](../assets/en/FormEditor/example-form-2.png)
 
 
 ### Using forms as subforms
