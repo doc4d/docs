@@ -4,7 +4,7 @@ title: Provider & Model Aliases
 ---
 
 
-# Provider Model Aliases
+# Provider & Model Aliases
 
 The OpenAI client supports provider and model aliases, allowing you to define provider configurations and named model aliases in JSON files and reference them using simple syntaxes.
 
@@ -13,9 +13,9 @@ The OpenAI client supports provider and model aliases, allowing you to define pr
 
 Instead of hard-coding API endpoints and credentials in your code, you can:
 - Define provider configurations in a JSON file
-- Define named model aliases that map to a provider and a model ID
 - Use the `provider:model` syntax to specify a provider and model directly
-- Use the `:modelAlias` syntax to reference a named model alias
+- Define named model aliases that map to a provider and a model ID
+- Use a named model alias by bare name (e.g., `my-gpt`)
 - Switch between providers (OpenAI, Anthropic, local Ollama, etc.) easily
 
 ## Configuration Files
