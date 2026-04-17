@@ -69,7 +69,7 @@ You can add or modify 4D forms using the following elements:
 
 ## Using forms
 
-In your 4D desktop applications, forms can be used in various ways, depending on their status within your interface needs. A form can be:
+Forms are called using specific commands of the 4D Language. In your 4D desktop applications, forms can be used in various ways, depending on their status within your interface needs. A form can be:
 
 - used in its own window for data viewing, processing, editing, or to display on-screen information to the user,
 - used as template for printing,
@@ -79,10 +79,10 @@ In your 4D desktop applications, forms can be used in various ways, depending on
 
 ### Using a project form in a window
 
-Forms are called using specific commands of the 4D Language. The straighforward steps to display a form on screen are:
+When you want to use a form as on-screen dialog, you need to (1) create a window and (2) load the form within the window, along with an event loop to process user actions. The straighforward steps to display a form on screen are:
 
-1. Call the [`Open form window`](../commands/open-form-window) command to configure a window tailored for your project form. Note that the command itself does not display anything.
-2. Call the [`DIALOG`](../commands/dialog) command to actually load the form in the form window, ready for user interaction. [`DIALOG`](../commands/dialog) loads form data and places your code in listening mode to user events (see also ["Event listening" paragraph](../Develop/async.md#event-listening).
+1. Call the [`Open form window`](../commands/open-form-window) command to create and preconfigure a window tailored for your form. Note that the command only draw aan empty window, it does not display anything.
+2. In the same method, call the [`DIALOG`](../commands/dialog) command to actually load the form in the opened form window, ready for user interaction. [`DIALOG`](../commands/dialog) loads form data and places your code in listening mode to user events. When you call this command without asterisk (\*), the dialog will stay on screen and the code execution is frozen until an event occurs (see also ["Event listening" paragraph](../Develop/async.md#event-listening)).
 3. (optional) Use the [`Form`](../commands/form) command from within the form context to access form data. 
 
 
@@ -99,10 +99,10 @@ You create the following basic form in the [Form editor](./formEditor.md):
 
 ![](../assets/en/FormEditor/example-form-1.png)
 
-The form is [associated with a "Person" class](./properties_FormProperties.md#form-class), defined as follow:
+The form is [associated with a "myForm" class](./properties_FormProperties.md#form-class), defined as follow:
 
 ```4d
-    //cs.Person
+    //cs.myForm
 property name : Text
 property age : Integer
 
@@ -111,17 +111,30 @@ Class constructor
   This.age:=0
 ```
 
-If you execute the following project method:
+The form class is automatically instantiated by 4D once the form is loaded. If you execute the following project method:
 
 ```4d
-var $mydata:={name: "Smith"; age: 42}
-var $win:=Open form window("myForm"; Movable form dialog box)
-DIALOG("myForm"; $mydata)  //displays dialog filled with values
+    // Instantiate a form object that will host form data and UI logic
+var $formObject:=cs.myForm.new()
+
+    //Prepare default value within the form object
+$formObject.name:="Smith"
+$formObject.age:=42
+
+    // Create an empty window with ad-hoc settings that fits the desired form dimensions, resizing properties,
+    // and window type (this does not render the form)
+var $win:=Open form window("myForm"; Movable form dialog box; Horizontally centered; Vertically centered)
+
+    //Render the form, and provide $formObject's data. Dialog also activates the form event loop
+DIALOG("myForm"; $formObject)
+
+    //Without asterisk to Dialog statement, the form waits for a closing action from the user 
+    //before executing the rest of the code. Calling Close window is just a good practice 
 CLOSE WINDOW($win) //releases reference
-If (OK=1)  //the user clicked OK
-	var $name : Text:=Form.name //gets data
-	var $age : Integer:=Form.age
-End if 
+
+    //Display data modified by the user, if any/
+ALERT($formObject.name+" is "+String($formObject.age)+" years old!")
+
 ```
 
 4D displays:
