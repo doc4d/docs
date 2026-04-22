@@ -18,12 +18,12 @@ title: Lista de los métodos
 <!-- REF #_method_.VP ADD FORMULA NAME.Params -->
 <div class="no-index">
 
-|Parameter|Type| |Description|
+|Parámetro|Tipo| |Descripción|
 |---|---|---|---|
-|vpAreaName| Text|->|4D View Pro area form object name|
+|vpAreaName| Text|->|Nombre del objeto de formulario del área 4D View Pro|
 |vpFormula|Text|-> |4D View Pro formula
-|name|Text|->|Name for the formula|
-|options|Object|->|Options for the named formula|
+|name|Text|->|Nombre para la fórmula|
+|options|Object|->|Opciones para la fórmula nombrada|
 </div>
 <!-- END REF -->
 
@@ -64,11 +64,11 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 <!-- REF #_method_.VP ADD RANGE NAME.Params -->
 <div class="no-index">
 
-|Parameter|Type| |Description|
-|---|---|---|---|
-|rangeObj| Object|->|Range object |
-|name|Text|->|Name for the fomula|
-|options|Object|->|Options for the named formula|
+|Parámetro|Tipo| |Descripción|
+|---|-|-|-|---|
+|rangeObj| Object|->|Objeto de rango |
+|name|Text|->|Nombre para la fórmula|
+|options|Object|->|Opciones para la fórmula nombrada||
 </div>
 <!-- END REF -->
 
@@ -152,11 +152,11 @@ Resultado:
 <!-- REF #_method_.VP ADD SHEET.Params -->
 <div class="no-index">
 
-|Parameter|Type| |Description|
+|Parámetro|Tipo| |Descripción|
 |---|---|---|---|
-|vpAreaName| Text|->|4D View Pro area form object name|
-|index|Integer|-> |Index of the new sheet|
-|name|Text|->|Sheet name|
+|vpAreaName| Text|->|Nombre del objeto de formulario del área 4D View Pro|
+|index|Integer|-> |Índice de la nueva hoja|
+|name|Text|->|Nombre de la hoja|
 </div>
 <!-- END REF -->
 
@@ -245,12 +245,12 @@ Para fusionar las celdas First quarter y Second quarter a través de las dos cel
 <!-- REF #_method_.VP ADD STYLESHEET.Params -->
 <div class="no-index">
 
-|Parameter|Type| |Description|
+|Parámetro|Tipo| |Descripción|
 |---|---|---|---|
-|vpAreaName| Text|->|4D View Pro area form object name|
-|styleName|Text|-> |Name of style|
-|styleObj|Object|->|Object defining attribute settings|
-|sheet|Integer|->|Sheet index (current sheet if omitted)|
+|vpAreaName| Text|->|Nombre del objeto del formulario del área 4D View Pro|
+|styleName|Text|-> |Nombre del estilo|
+|styleObj|Object|->|Objeto que define la configuración de atributos|
+|sheet|Integer|->|Índice de la hoja (hoja actual si se omite)|
 </div>
 <!-- END REF -->
 
@@ -320,10 +320,10 @@ creará y aplicará el siguiente objeto estilo llamado *GreenDashDotStyle*:
 <!-- REF #_method_.VP All.Params -->
 <div class="no-index">
 
-|Parameter|Type| |Description|
+|Parámetro|Tipo| |Descripción|
 |---|---|---|---|
-|vpAreaName| Text|->|4D View Pro area form object name|
-|sheet|Integer|->|Sheet index (current sheet if omitted)|
+|vpAreaName| Text|->|Nombre del objeto del formulario del área 4D View Pro|
+|sheet|Integer|->|Índice de la hoja (hoja actual si se omite)|
 |Result|Object|<-|Range object of all cells|
 </div>
 <!-- END REF -->
@@ -358,13 +358,13 @@ $all:=VP All("ViewProArea") // todas las celdas de la hoja actual
 <!-- REF #_method_.VP Cell.Params -->
 <div class="no-index">
 
-|Parameter|Type| |Description|
+|Parámetro|Tipo| |Descripción|
 |---|---|---|---|
-|vpAreaName| Text|->|4D View Pro area form object name|
-|column|Integer|->|Column index|
-|row|Integer|->|Row index|
-|sheet|Integer|->|Sheet index (current sheet if omitted)|
-|Result|Object|<-|Range object of a single cell|
+|vpAreaName| Text|->|Nombre del objeto formulario del área 4D View Pro|
+|column|Integer|->|Índice de columna|
+|row|Integer|->|Índice de fila|
+|sheet|Integer|->|Índice de hoja (hoja actual si se omite)|
+|Resultado|Object|<-|Range object of a single cell|
 </div>
 <!-- END REF -->
 
