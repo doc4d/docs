@@ -12,6 +12,7 @@ title: List Box Object
 > 配列タイプのリストボックスは、特別なメカニズムをもつ [階層モード](listbox_overview.md#階層リストボックス) で表示することができます。
 
 配列タイプのリストボックスでは、入力あるいは表示される値は 4Dランゲージで制御します。 列に [選択リスト](properties_DataSource.md#選択リスト) を割り当てて、データ入力を制御することもできます。
+配列タイプのリストボックスでは、入力あるいは表示される値は 4Dランゲージで制御します。 列に [選択リスト](properties_DataSource.md#選択リスト) を割り当てて、データ入力を制御することもできます。
 The values of columns are managed using high-level List box commands (such as [`LISTBOX INSERT ROWS`](../commands/listbox-insert-rows) or [`LISTBOX DELETE ROWS`](../commands-legacy/listbox-delete-rows.md)) as well as array manipulation commands. たとえば、列の内容を初期化するには、以下の命令を使用できます:
 
 ```4d
