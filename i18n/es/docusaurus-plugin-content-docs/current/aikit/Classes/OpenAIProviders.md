@@ -123,7 +123,7 @@ Each object in the collection contains:
 | Propiedad   | Tipo | Descripción                       |
 | ----------- | ---- | --------------------------------- |
 | `name`      | Text | Model alias name                  |
-| `proveedor` | Text | Provider name                     |
+| `proveedor` | Text | Nombre del proveedor              |
 | `model`     | Text | Model ID to use with the provider |
 
 #### Ejemplo
