@@ -2961,10 +2961,10 @@ End if
 <!-- REF #_method_.VP Get values.Params -->
 <div class="no-index">
 
-|Parameter|Type| |Description|
+|Parámetro|Tipo| |Descripción|
 |---|---|---|---|
-|rangeObj   |Object|->|Range object|
-|Result  |Collection|<-|Collection of values|
+|rangoObj |Object|->|Objeto Rango|
+|Resultado |Collection|<-|Collection of values|
 </div>
 <!-- END REF -->
 
@@ -3015,10 +3015,10 @@ $result:=VP Get values(VP Cells("ViewProArea";2;3;5;3))
 <!-- REF #_method_.VP Get workbook options.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|vpAreaName  |Text|->|4D View Pro area form object name|
-|Result |Object|<-|Object containing the workbook options|
+|vpAreaName |Text|->|Nombre del objeto formulario área 4d View Pro|
+|Resultado |Object|<-|Object containing the workbook options|
 </div>
 <!-- END REF -->
 
@@ -3524,9 +3524,9 @@ VP SET NUM VALUE($name;285;"$#,###.00")
 <!-- REF #_method_.VP NEW DOCUMENT.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo| |Descripción|
 |---|---|---|---|
-|vpAreaName   |Text|->|4D View Pro area form object name|
+|vpAreaName |Text|->|Nombre del objeto formulario del área 4D View Pro|
 </div>
 <!-- END REF -->
 
@@ -5832,11 +5832,11 @@ VP SET SHEET NAME("ViewProArea";"Total first quarter";2)
 <!-- REF #_method_.VP SET SHEET OPTIONS.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|vpAreaName |Text|->|4D View Pro area name|
-|sheetOptions |Object|->|Sheet option(s) to set|
-|sheet |Integer|->|Sheet index (current sheet if omitted)|
+|vpAreaName |Text|->|Nombre del área de 4D View Pro|
+|sheetOptions |Object|->|Opciones de hoja a configurar||
+|sheet |Integer|->|Índice de hojas (hoja actual si se omite)|
 </div>
 <!-- END REF -->
 
@@ -6395,10 +6395,10 @@ VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|vpAreaName  |Text|->|4D View Pro area form object name|
-|optionObj |Object|->|Object containing the workbook options to be set|
+|vpAreaName |Text|->|Nombre del objeto del formulario del área 4D View Pro|
+|optionObj |Object|->|Objeto que contiene las opciones del libro de trabajo a configurar|
 </div>
 <!-- END REF -->
 
@@ -6503,11 +6503,11 @@ VP SET WORKBOOK OPTIONS("ViewProArea";$workbookOptions)
 <!-- REF #_method_.VP SHOW CELL.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|rangeObj |Object|->|Range object|
-|vPos  |Integer|->|Vertical view position of cell or row|
-|hPos  |Integer|->|Horizontal view position of cell or row|
+|rangeObj |Object|->|Objeto rango|
+|vPos |Integer|->|Posición vertical de la celda o fila|
+|hPos |Integer|->|Posición horizontal de la celda o fila|
 </div>
 <!-- END REF -->
 
@@ -6567,9 +6567,9 @@ Resultado:
 <!-- REF #_method_.VP SUSPEND COMPUTING.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|vpAreaName |Text|->|4D View Pro area form object name|
+|vpAreaName |Text|->|4D View Pro nombre del objeto|
 </div>
 <!-- END REF -->
 
