@@ -67,6 +67,49 @@ You can add or modify 4D forms using the following elements:
 }
 ```
 
+## Printing forms
+
+In 4D desktop applications, forms can be printed using the various [commands of the **Printing** theme](../commands/theme/Printing). 
+
+### Print rendering engine
+
+4D uses a dedicated print rendering engine to generate outputs with a design adapted for printing. This engine is automatically used in the following contexts:
+
+- your application is rendered under [Fluent UI](#fluent-ui-rendering) (Windows) or [Liquid Glass](../Notes/updates.md#support-of-liquid-glass-on-macos) (macOS) interfaces,
+- your forms are printed using one of the following commands: [`Print form`](../commands/print-form), [`Print object`](../commands/print-object), [`PRINT RECORD`](../commands/print-record), or [`PRINT SELECTION`](../commands/print-selection).
+
+The print rendering engine includes the following main features:
+
+- Interactive widgets such as buttons, toggles, dropdowns, etc. and modern UI effects such as glass, blur, transparency, or shadow effects are converted into adapted static representations and flattened into printable styles, so that the document remains readable and professional once printed.
+- Layout structure, spacing, and alignment, are preserved so that the printed document reflects the logical structure of the on-screen form.
+
+For example, the following form:
+
+![](../assets/en/FormEditor/screen_rendering.png)
+
+... will be printed with this rendering:
+
+![](../assets/en/FormEditor/print_rendering.png)
+
+
+:::tip Related blog post
+
+[Printing Modern Interfaces with Clean, Consistent Output](https://blog.4d.com/printing-modern-interfaces-with-clean-consistent-output)
+
+:::
+
+### Legacy print renderer
+
+When your application is executed with the "Classic" interface on Windows or macOS, you can use the **legacy print renderer**. This renderer was the only available up to 4D 21 R3 and simply draws widgets as they appear on the screen using monochrome rendering. 
+
+For compatibility, this legacy renderer is **enabled by default**, so that forms designed with this renderer for Classic interfaces continue to be printed as expected in converted projects. You can however enable the *current print rendering engine* at any moment by:
+
+- unchecking the **Use legacy print rendering** option in the [Compatibility page of the Settings dialog box](../settings/compatibility.md) (permanent setting),
+- or executing [`SET DATABASE PARAMETER`](../commands/set-database-parameter) command with `Use legacy print rendering` selector set to 1 (volatile setting).
+
+
+
+
 ## Project form and Table form
 
 There are two categories of forms:
@@ -79,7 +122,7 @@ Typically, you select the form category when you create the form, but you can ch
 
 ## Form pages
 
-Each form has is made of at least two pages:
+Each form is made of at least two pages:
 
 - a page 1: a main page, displayed by default
 - a page 0: a background page, whose contents is displayed on every other page.
@@ -96,6 +139,8 @@ Multiple pages are a convenience used for input forms only. They are not for pri
 There are no restrictions on the number of pages a form can have. The same field can appear any number of times in a form and on as many pages as you want. However, the more pages you have in a form, the longer it will take to display it.
 
 A multi-page form has both a background page and several display pages. Objects that are placed on the background page may be visible on all display pages, but can be selected and edited only on the background page. In multi-page forms, you should put your button palette on the background page. You also need to include one or more objects on the background page that provide page navigation tools for the user.
+
+
 
 
 ## Fluent UI rendering

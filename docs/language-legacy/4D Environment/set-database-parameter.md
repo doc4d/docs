@@ -22,7 +22,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
-|21 R3|Removed support of *Use legacy network layer*|
+|21 R3|Removed support of *Use legacy network layer*, added *Use legacy print rendering* |
 |20 R6|Modified|
 |20 R3|Modified|
 |19 R5|Modified|
@@ -1035,6 +1035,15 @@ In previous releases, time values were converted and stored as number of millise
  Note that this parameter sets all 4D tips, i.e. form help messages and Design mode editor's tips.
 
 
+### Use legacy print rendering (136)
+
+**Scope:** 4D local, 4D Server
+
+**Kept between two sessions:** No
+
+**Possible values:** 0 = legacy print rendering disabled, 1 = legacy print rendering enabled
+
+**Description:** Sets or gets the current status of the [legacy print renderer](../../FormEditor/forms.md#legacy-print-rendering) when the "Classic" look is used in your forms on macOS or Windows. When the legacy print renderer is *disabled*, 4D’s [current print rendering engine](../../FormEditor/forms.md) — specifically designed to optimize the printing of forms created for the Liquid Glass and Fluent UI interfaces — is used. This parameter can also be set definitely using a [compatibility setting](../../settings/compatibility.md). 
 
 
 ### User param value (108)
