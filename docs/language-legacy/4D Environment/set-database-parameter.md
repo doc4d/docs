@@ -1043,7 +1043,7 @@ In previous releases, time values were converted and stored as number of millise
 
 **Possible values:** 0 = legacy print rendering disabled, 1 = legacy print rendering enabled
 
-**Description:** Sets or gets the current status of the [legacy print renderer](../../FormEditor/forms.md#legacy-print-rendering) when the "Classic" look is used in your forms on macOS or Windows. When the legacy print renderer is *disabled*, 4D’s [current print rendering engine](../../FormEditor/forms.md) — specifically designed to optimize the printing of forms created for the Liquid Glass and Fluent UI interfaces — is used. This parameter can also be set definitely using a [compatibility setting](../../settings/compatibility.md). 
+**Description:** Sets or gets the current status of the [legacy print renderer](../../FormEditor/forms.md#legacy-print-rendering) when the "Classic" look is used in your forms on macOS or Windows. When the legacy print renderer is *disabled*, 4D’s [current print rendering engine](../../FormEditor/forms.md) — specifically designed to optimize the printing of forms created for the Liquid Glass and Fluent UI interfaces — is used. This parameter can also be set permanently using a [compatibility setting](../../settings/compatibility.md). 
 
 
 ### User param value (108)
