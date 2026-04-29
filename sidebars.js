@@ -108,6 +108,7 @@ module.exports =
                 "settings/client-server",
                 "settings/web",
                 "settings/sql",
+                "settings/ai",
                 "settings/security",
                 "settings/compatibility"
               ]
@@ -208,6 +209,17 @@ module.exports =
               "dirName": "language-legacy",
             }
           ],
+          "link": 
+          {
+            "type": "generated-index",
+            "title": "Commands by theme",
+            "description": "4D commands by theme",
+            "slug": "/category/themes",
+            "keywords": [
+              "commands, themes"
+            ],
+            "image": "/img/docusaurus.png"
+          },
         },
         {
           type: "category",
@@ -230,6 +242,7 @@ module.exports =
             "API/FunctionClass",
             "API/HTTPAgentClass",
             "API/HTTPRequestClass",
+            "API/IMAPNotifierClass",
             "API/IMAPTransporterClass",
             "API/IncomingMessageClass",
             "API/MailAttachmentClass",

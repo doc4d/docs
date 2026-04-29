@@ -13,9 +13,9 @@ Varias [acciones estándar](#standard-actions) dedicadas, numerosos [comandos de
 
 Web areas can be used to display [Qodly pages](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/pageLoaderOverview) and provide 4D desktop application users with modern, CSS-based web interface.
 
-You can embed a Qodly page inside a Web Area and then update [Qodly sources](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/qodlySources) from 4D by calling [`WA EXECUTE JAVASCRIPT FUNCTION`](../commands-legacy/wa-execute-javascript-function.md).
+Puede integrar una página Qodly en un área Web y luego actualizar [las fuentes Qodly](https://developer.4d.com/qodly/4DQodlyPro/pageLoaders/qodlySources) desde 4D llamando a [`WA EXECUTE JAVASCRIPT FUNCTION`](../commands-legacy/wa-execute-javascript-function.md).
 
-In 4D client/server applications, Qodly pages inside Web areas can [share their session with the remote user](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses) for a high level of security.
+En las aplicaciones cliente/servidor 4D, las páginas Qodly en las áreas Web pueden [compartir su sesión con el usuario remoto](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses) para un alto nivel de seguridad.
 
 :::tip Entrada de blog relacionada
 
@@ -245,6 +245,10 @@ Cuando haya realizado los ajustes como se ha descrito anteriormente, entonces te
 
 [Access 4D methods](properties_WebArea.md#access-4d-methods) - [Border Line Style](properties_BackgroundAndBorder.md#border-line-style) - [Bottom](properties_CoordinatesAndSizing.md#bottom) - [Class](properties_Object.md#css-class) - [Context Menu](properties_Entry.md#context-menu) - [Height](properties_CoordinatesAndSizing.md#height) - [Horizontal Sizing](properties_ResizingOptions.md#horizontal-sizing) - [Left](properties_CoordinatesAndSizing.md#left) - [Method](properties_Action.md#method) - [Object Name](properties_Object.md#object-name) - [Progression](properties_WebArea.md#progression) - [Right](properties_CoordinatesAndSizing.md#right) - [Top](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - [URL](properties_WebArea.md#url) - [Use embedded Web rendering engine](properties_WebArea.md#use-embedded-web-rendering-engine) - [Variable or Expression](properties_Object.md#variable-or-expression) - [Vertical Sizing](properties_ResizingOptions.md#vertical-sizing) - [Visibilty](properties_Display.md#visibility) - [Width](properties_CoordinatesAndSizing.md#width)
 
+## Eventos soportados
+
+[On Begin URL Loading](../Events/onBeginUrlLoading.md) - [On End URL Loading](../Events/onEndUrlLoading.md) - [On Getting focus](../Events/onGettingFocus.md) - [On Load](../Events/onLoad.md) - [On Losing focus](../Events/onLosingFocus.md) - [On Open External Link](../Events/onOpenExternalLink.md) - [On Unload](../Events/onUnload.md) - [On URL Filtering](../Events/onUrlFiltering.md) - [On URL Loading Error](../Events/onUrlLoadingError.md) - [On URL Resource Loading](../Events/onUrlResourceLoading.md) - [On Window Opening Denied](../Events/onWindowOpeningDenied.md)
+
 ## 4DCEFParameters.json
 
 El 4DCEFParameters.json es un archivo de configuración que permite la personalización de los parámetros CEF para gestionar el comportamiento de las áreas web dentro de las aplicaciones 4D.
@@ -351,6 +355,7 @@ El archivo 4DCEFParameters.json por defecto contiene los siguientes cambios:
 [Parámetros personalizados para inicializar el área web integrada](https://blog.4d.com/custom-parameters-for-initializing-embedded-web-area/)
 
 :::
+
 
 
 

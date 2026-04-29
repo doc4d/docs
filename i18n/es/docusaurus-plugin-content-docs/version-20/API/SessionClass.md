@@ -40,9 +40,9 @@ Para obtener información detallada sobre la implementación de la sesión, cons
 <!-- REF #_command_.Session.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|Result|4D.Session|<-|Session object|
+|Resultado|4D.Session|<-|Session object|
 </div>
 <!-- END REF -->
 
@@ -71,10 +71,10 @@ IP:port/4DACTION/action_Session
 ```
 
 ```4d
-  //action_Session method
+  //método action_Session
  Case of
     :(Session#Null)
-       If(Session.hasPrivilege("WebAdmin")) //calling the hasPrivilege function
+       If(Session.hasPrivilege("WebAdmin")) //llamada de la función hasPrivilege
           WEB SEND TEXT("4DACTION --> Session is WebAdmin")
        Else
           WEB SEND TEXT("4DACTION --> Session is not WebAdmin")
@@ -307,11 +307,11 @@ End if
 <!-- REF #SessionClass.setPrivileges().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|privilege|Text|->|Privilege name|
-|privileges|Collection|->|Collection of privilege names|
-|settings|Object|->|Object with a "privileges" property (string or collection)|
+|privilege|Text|->|Nombre de privilegio|
+|privileges|Collection|->|Colección de nombres de privilegio|
+|settings|Object|->Objeto con una propiedad "privilegios" (cadena o colección)|
 </div>
 <!-- END REF -->
 

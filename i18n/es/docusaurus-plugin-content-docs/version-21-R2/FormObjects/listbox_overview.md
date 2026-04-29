@@ -31,8 +31,8 @@ Un list box se compone de cuatro partes distintas:
 
 - el [objeto list box](./listbox-object.md) en su totalidad,
 - [columnas](./listbox-column.md),
-- column [headers](./listbox-header-footer.md#headers), and
-- column [footers](./listbox-header-footer.md#footers).
+- [encabezados](./listbox-header-footer.md#headers) de columna y
+- [pies de página](./listbox-header-footer.md#footers) de columna.
 
 ![](../assets/en/FormObjects/listbox_parts.png)
 
@@ -59,7 +59,7 @@ Hay varios tipos de list box, con sus propios comportamientos y propiedades espe
 
 Se puede configurar completamente un objeto list box a través de sus propiedades, y también se puede gestionar dinámicamente por programación.
 
-The 4D Language includes a dedicated "List Box" theme for list box commands, but commands from various other themes, such as "Object properties" commands or [`EDIT ITEM`](../commands/edit-item), [`Displayed line number`](../commands/displayed-line-number) commands can also be used. Para mayor información consulte la página [List Box Commands Summary](https://doc.4d.com/4Dv20/4D/20.6/List-Box-Commands-Summary.300-7487600.en.html) del manual *Lenguaje 4D*.
+El Lenguaje 4D incluye un tema "List Box" dedicado para los comandos de List Box, pero también se pueden utilizar comandos de otros temas, como los comandos "Propiedades de objeto" o los comandos [`EDIT ITEM`](../commands/edit-item), [`Displayed line number`](../commands/displayed-line-number). Para mayor información consulte la página [resumen de comandos de List Box](https://doc.4d.com/4Dv20/4D/20.6/List-Box-Commands-Summary.300-7487600.en.html) del *manual de Lenguaje 4D*.
 
 ## Gestión de entrada
 
@@ -244,14 +244,14 @@ Puede activar o desactivar la ordenación usuario estándar desactivando la prop
 
 El soporte de ordenación estándar depende del tipo de list box:
 
-| Tipo de list box               | Soporte de ordenación estándar | Comentarios                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ------------------------------ | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Colección de objetos           | Sí                             | <ul><li>Las columnas "This.a" o "This.a.b" son ordenables.</li><li>La [propiedad source del list box](properties_Object.md#variable-or-expression) debe ser una [expresión asignable](../Concepts/quick-tour.md#assignable-vs-non-assignable-expressions).</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| Colección de valores escalares | No                             | Utilice la ordenación personalizada con la función [`orderBy()`](../API/CollectionClass.md#orderby)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| Entity selection               | Sí                             | <ul><li>The [list box source property](properties_Object.md#variable-or-expression) must be an [assignable expression](../Concepts/quick-tour.md#assignable-vs-non-assignable-expressions).</li><li>Soportado: ordena en las propiedades de atributos de objetos (por ejemplo, "This.data.city" cuando "data" es un atributo de objeto)</li><li>Soportado: ordena en atributos relacionados (por ejemplo, "This.company.name")</li><li>No soportado: ordena por propiedades de atributos de objeto a través de atributos relacionados (por ejemplo, "This.company.data.city"). For this, you need to use custom sort with [`orderByFormula()`](../API/EntitySelectionClass.md#orderbyformula) function (see example below)</li></ul> |
-| Selección actual               | Sí                             | Sólo se pueden ordenar las expresiones simples (por ejemplo, `[Table_1]Campo_2`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| Selección temporal             | No                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| Arrays                         | Sí                             | Las columnas vinculadas a arrays de imágenes y punteros no se pueden ordenar                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Tipo de list box               | Soporte de ordenación estándar | Comentarios                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ------------------------------ | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Colección de objetos           | Sí                             | <ul><li>Las columnas "This.a" o "This.a.b" son ordenables.</li><li>La [propiedad source del list box](properties_Object.md#variable-or-expression) debe ser una [expresión asignable](../Concepts/quick-tour.md#assignable-vs-non-assignable-expressions).</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| Colección de valores escalares | No                             | Utilice la ordenación personalizada con la función [`orderBy()`](../API/CollectionClass.md#orderby)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Entity selection               | Sí                             | <ul><li>La [propiedad source del list box](properties_Object.md#variable-or-expression) debe ser una [expresión asignable](../Concepts/quick-tour.md#assignable-vs-non-assignable-expressions).</li><li>Soportado: ordena en las propiedades de atributos de objetos (por ejemplo, "This.data.city" cuando "data" es un atributo de objeto)</li><li>Soportado: ordena en atributos relacionados (por ejemplo, "This.company.name")</li><li>No soportado: ordena por propiedades de atributos de objeto a través de atributos relacionados (por ejemplo, "This.company.data.city"). Para ello, debe utilizar la ordenación personalizada con la función [`orderByFormula()`](../API/EntitySelectionClass.md#orderbyformula) (ver el siguiente ejemplo)</li></ul> |
+| Selección actual               | Sí                             | Sólo se pueden ordenar las expresiones simples (por ejemplo, `[Table_1]Campo_2`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Selección temporal             | No                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Arrays                         | Sí                             | Las columnas vinculadas a arrays de imágenes y punteros no se pueden ordenar                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 ### Ordenación personalizada
 
@@ -316,12 +316,12 @@ Hay varias formas de definir los colores de fondo, los colores de fuente y los e
 
 Los principios de prioridad y de herencia se observan cuando la misma propiedad se define en más de un nivel.
 
-1. (highest priority) Cell (if multi-style text)
+1. (prioridad más alta) Celda (si es texto multiestilo)
 2. Arrays de columnas/métodos
 3. Arrays/métodos de Listbox
 4. Propiedades de la columna
 5. Propiedades de list box
-6. (lowest priority) Meta Info expression (for collection or entity selection list boxes)
+6. (prioridad más baja) Expresión Meta Info (para list boxes de tipo colección o selección de entidades)
 
 Por ejemplo, si define un estilo de fuente en las propiedades del list box y otro mediante un array de estilos para la columna, se tendrá en cuenta este último.
 
@@ -511,7 +511,7 @@ Este principio se aplica a los arrays internos que se pueden utilizar para gesti
  ->MyListbox{3}:=True
 ```
 
-*Non-hierarchical representation:*  
+_Representación no jerárquica:\*  
 ![](../assets/en/FormObjects/hierarch7.png)
 
 *Representación jerárquica:*  
@@ -521,10 +521,10 @@ Este principio se aplica a los arrays internos que se pueden utilizar para gesti
 
 Al igual que con las selecciones, el comando [`LISTBOX GET CELL POSITION`](../commands/listbox-get-cell-position) devolverá los mismos valores para un list box jerárquico que para un list box no jerárquico. Esto significa que en los dos ejemplos siguientes, [`LISTBOX GET CELL POSITION`](../commands/listbox-get-cell-position) devolverá la misma posición: (3;2).
 
-*Non-hierarchical representation:*  
+_Representación no jerárquica:\*  
 ![](../assets/en/FormObjects/hierarch9.png)
 
-*Hierarchical representation:*  
+*Representación jerárquica:*  
 ![](../assets/en/FormObjects/hierarch10.png)
 
 Cuando se ocultan todas las líneas de una subjerarquía, la línea de ruptura se oculta automáticamente. En el ejemplo anterior, si las líneas 1 a 3 están ocultas, la línea de ruptura "Bretaña" no aparecerá.
@@ -541,10 +541,10 @@ Las líneas de rotura no se tienen en cuenta en los arrays internos utilizados p
 
 El siguiente list box fue diseñado utilizando un array de objetos:
 
-*Non-hierarchical representation:*  
+_Representación no jerárquica:\*  
 ![](../assets/en/FormObjects/hierarch12.png)
 
-*Hierarchical representation:*  
+*Representación jerárquica:*  
 ![](../assets/en/FormObjects/hierarch13.png)
 
 En modo jerárquico, los niveles de ruptura no son tenidos en cuenta por los arrays de modificación de estilo denominados `tStyle` y `tColors`. Para modificar el color o el estilo de los niveles de ruptura, debe ejecutar las siguientes instrucciones:
@@ -570,7 +570,7 @@ El uso de los eventos de formulario `On Expand` y `On Collapse` puede superar es
 
 En este caso, debe llenar y vaciar los arrays por código. Los principios que deben aplicarse son:
 
-- Cuando se muestra el list box, sólo se debe llenar el primer array. However, you must create a second array with empty values so that the list box displays the expand/collapse buttons:  
+- Cuando se muestra el list box, sólo se debe llenar el primer array. Sin embargo, debe crear un segundo array con valores vacíos para que el list box muestre los botones desplegar/contraer:  
   ![](../assets/en/FormObjects/hierarch15.png)
 
 - Cuando un usuario hace clic en un botón de expandir, puede procesar el evento `On Expand`. El comando [`LISTBOX GET CELL POSITION`](../commands/listbox-get-cell-position) devuelve la celda en cuestión y permite construir la jerarquía adecuada: se llena el primer array con los valores repetidos y el segundo con los valores enviados desde el comando [`SELECTION TO ARRAY`](../commands/selection-to-array) y se insertan tantas líneas como sean necesarias en el list box mediante el comando [`LISTBOX INSERT ROWS`](../commands/listbox-insert-rows).  

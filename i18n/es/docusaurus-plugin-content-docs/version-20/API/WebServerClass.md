@@ -73,10 +73,10 @@ Ofrecen las siguientes propiedades y funciones:
 <!-- REF #_command_.WEB Server.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|----|---|
-|option|Integer|->|Web server to get (default if omitted = `Web server database`)|  
-|Result|4D.WebServer|<-|Web server object|
+|option|Integer|->|Servidor web a obtener (por defecto si se omite = `Web server database`)|  
+|Resultado|4D.WebServer|<-|Web server object|
 </div>
 <!-- END REF -->
 
@@ -693,10 +693,10 @@ El <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->validación de
 <!-- REF #WebServerClass.start().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|----|---|
-|settings|Object|->|Web server settings to set at startup|  
-|Result|Object|<-|Status of the web server startup|
+|settings|Object|->|Configuración del servidor web para establecer al inicio|  
+|Resultado|Object|<-|Status of the web server startup|
 </div>
 <!-- END REF -->
 
@@ -755,9 +755,9 @@ La función devuelve un objeto que describe el estado de lanzamiento del servido
 <!-- REF #WebServerClass.stop().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|----|---|
-||||Does not require any parameters|
+||||No requiere ningún parámetro|
 </div>
 <!-- END REF -->
 

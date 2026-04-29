@@ -64,7 +64,7 @@ On the client side, two distinct local storage objects are available:
 :::tip Related blog posts
 
 - [Objeto de sessão remota 4D com conexão de Cliente/Servidor e procedimento armazenado](https://blog.4d.com/new-4D-remote-session-object-with-client-server-connection-and-stored-procedure re).
-- [Client / server – Handle a session when working on a 4D client](https://blog.4d.com/client-server-handle-a-session-when-working-on-a-4d-client).
+- [Forget server-side wrappers, use 4D Sessions from the client](https://blog.4d.com/forget-server-side-wrappers-use-4d-sessions-from-the-client).
 
 :::
 
@@ -164,7 +164,7 @@ A standalone session is the single-user session running when you work locally wi
 
 ### Utilização
 
-The standalone session can be used to develop and test your client/server application and its interaction with web sessions and [OTP sharing](#sharing-a-desktop-session-for-web-accesses). You can use the `session` object in your code in standalone session just as the `session` object of the remote sessions.
+The standalone session can be used to develop and test your client/server application and its interaction with web sessions and [OTP sharing](#sharing-a-remote-session-for-web-accesses). You can use the `session` object in your code in standalone session just as the `session` object of the remote sessions.
 
 ### Disponibilidade
 

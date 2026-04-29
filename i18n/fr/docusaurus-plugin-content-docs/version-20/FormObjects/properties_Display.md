@@ -341,7 +341,7 @@ Le tableau ci-dessous montre les formats d'affichage du champ Heure et donne des
 Lorsqu'une [expression booléenne](properties_Object.md#expression-type) est affichée comme suit :
 
 * un texte dans un [objet de saisie](input_overview.md)
-* a ["popup"](properties_Display.md#display-type) in a [list box column](listbox-column.md),
+* une ["fenêtre contextuelle"](properties_Display.md#display-type) dans une [colonne List box](listbox-column.md),
 
 ... vous pouvez sélectionner le texte à afficher pour chaque valeur :
 
@@ -376,7 +376,7 @@ Les colonnes booléennes peuvent également être affichées sous forme de pop u
 
 #### Objets pris en charge
 
-[\[Colonne de list box\](listbox_overview.md#list-box-columns)](listbox-column.md)
+[Colonne de list box](listbox-column.md)
 
 ---
 
@@ -445,7 +445,7 @@ Dans ces cas, le titre de la case à cocher peut être saisi en utilisant cette 
 
 #### Objets pris en charge
 
-[\[Colonne de list box\](listbox_overview.md#list-box-columns)](listbox-column.md)
+[Colonne de list box](listbox-column.md)
 
 ---
 
