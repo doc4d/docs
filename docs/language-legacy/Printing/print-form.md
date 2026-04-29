@@ -131,15 +131,15 @@ The printer dialog boxes do not appear when you use **Print form**. The report d
 
 **Warning:** If the command is called in the context of a printing job opened with [OPEN PRINTING JOB](../commands/open-printing-job), you must NOT call [PAGE BREAK](../commands/page-break) for the last page because it is automatically printed by the [CLOSE PRINTING JOB](../commands/close-printing-job) command. If you call [PAGE BREAK](../commands/page-break) in this case, a blank page is printed.
 
-### Support of events and objects
+### Support of form events and form objects
 
 **Print form** only generates the [`On Printing Detail` event](../../Events/onPrintingDetail.md) in the form method.
 
-**Print form** prints fields and variables in a fixed size frame only. 
+**Print form** prints fields and variables in a [fixed size frame](../../FormObjects/properties_Print.md#print-frame) only. 
 
 **Print form** prints external areas and objects (for example, 4D Write or 4D View areas). The area is reset for each execution of the command.
 
-**Warning:** Subforms are not printed with **Print form**. To print only one form with such objects, use [PRINT RECORD](../commands/print-record) instead.
+[Subforms](../../FormObjects/subform_overview.md) are not printed with **Print form**. To print only one form with such objects, use [PRINT RECORD](../commands/print-record) instead.
 
 :::note 4D Server
 
