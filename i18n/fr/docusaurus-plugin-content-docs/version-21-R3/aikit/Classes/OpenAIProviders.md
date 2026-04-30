@@ -7,20 +7,20 @@ title: OpenAIProviders
 
 ## Sommaire
 
-The `OpenAIProviders` class manages AI provider configurations by loading configuration and handling resolution of model strings in the `provider:model` format.
+La classe `OpenAIProviders` gère les configurations de fournisseurs d'IA en chargeant la configuration et en gérant la résolution des chaînes de modèles au format `provider:model`.
 
-For complete usage documentation, see [Provider Model Aliases](../provider-model-aliases.md).
+Pour une documentation complète sur son utilisation, voir [Alias de modèles de fournisseurs](../provider-model-aliases.md).
 
 ## Description
 
-This class enables multi-provider support by:
+Cette classe permet la prise en charge de plusieurs fournisseurs via :
 
-- Loading provider configurations from a single JSON file
-- Loading named model aliases that map to providers and model IDs
-- Resolving `provider:model` syntax to full API configurations
-- Resolving named model aliases by bare name to full provider + model configurations
+- le chargement des configurations de fournisseurs à partir d'un seul fichier JSON
+- le chargement des alias de modèles nommés correspondant à des fournisseurs et à des identifiants de modèles
+- la résolution de la syntaxe `provider:model` en configuration complète de l'API
+- la résolution des alias de modèles nommés depuis un nom simple en nom du fournisseur complet + les configurations du modèle
 
-The `OpenAI` class automatically loads provider configurations when instantiated.
+La classe `OpenAI` charge automatiquement les configurations des fournisseurs lors de son instanciation.
 
 ## Constructeur
 
@@ -28,38 +28,38 @@ The `OpenAI` class automatically loads provider configurations when instantiated
 var $providers := cs.AIKit.OpenAIProviders.new()
 ```
 
-Creates a new instance that loads provider configuration from the `AIProviders.json` file (see [**Configuration Files**](../provider-model-aliases.md#configuration-files) in the "Provider Model Aliases" page for details on file locations and format).
+Crée une nouvelle instance qui charge la configuration du fournisseur à partir du fichier `AIProviders.json` (voir [**Fichiers de configuration**](../provider-model-aliases.md#configuration-files) dans la page "Alias de fournisseurs de modèles" pour plus de détails sur l'emplacement et le format des fichiers).
 
 **Important:**
 
-- Only the first existing file is loaded. There is no merging of multiple files.
-- The configuration is read once at instantiation time. If the `AIProviders.json` file is modified afterward, those changes will not be reflected in the existing instance. You must create a new instance of `OpenAIProviders` to reload the updated configuration.
+- Seul le premier fichier existant est chargé. Il n'y a pas de fusion de plusieurs fichiers.
+- La configuration est lue une fois au moment de l'instanciation. Si le fichier `AIProviders.json` est modifié par la suite, ces changements ne seront pas reflétés dans l'instance existante. Vous devez créer une nouvelle instance de `OpenAIProviders` pour recharger la configuration mise à jour.
 
 ## Utilisation
 
-### Integration with OpenAI Class
+### Intégration avec la classe OpenAI
 
 ```4d
 var $client := cs.AIKit.OpenAI.new()
 
-// Use model aliases with provider:model syntax
+// Utilisation d'alias de modèles avec syntaxe provider:model
 var $result := $client.chat.completions.create($messages; {model: "openai:gpt-5.1"})
 var $result := $client.chat.completions.create($messages; {model: "anthropic:claude-3-opus"})
 var $result := $client.chat.completions.create($messages; {model: "local:llama3"})
 ```
 
-### Direct Provider Access
+### Accès direct aux fournisseurs
 
 ```4d
 var $providers := cs.AIKit.OpenAIProviders.new()
 
-// Get a specific provider configuration
+// Obtenir une configuration de fournisseur spécifique
 var $config := $providers.get("openai")
-// Returns: {baseURL: "...", apiKey: "...", modelAliases: [...], ...} or Null
+// Renvoie : {baseURL : "...", apiKey : "...", modelAliases : [...], ...} ou Null
 
-// Get all provider names
+// Obtenir tous les noms de fournisseurs
 var $names := $providers.list()
-// Returns: ["openai", "anthropic", "mistral", "local"]
+// Renvoie : ["openai", "anthropic", "mistral", "local"]
 ```
 
 ## Fonctions
@@ -120,11 +120,11 @@ Get all configured model aliases.
 
 Each object in the collection contains:
 
-| Propriété     | Type | Description                       |
-| ------------- | ---- | --------------------------------- |
-| `name`        | Text | Model alias name                  |
-| `fournisseur` | Text | Provider name                     |
-| `model`       | Text | Model ID to use with the provider |
+| Propriété  | Type | Description                       |
+| ---------- | ---- | --------------------------------- |
+| `name`     | Text | Model alias name                  |
+| `provider` | Text | Provider name                     |
+| `model`    | Text | Model ID to use with the provider |
 
 #### Exemple
 
@@ -141,7 +141,7 @@ End for each
 
 Two syntaxes are supported for model resolution:
 
-### Provider alias (`provider:model`)
+### Alias de fournisseur (`provider:model`)
 
 Specify the provider and model name directly:
 
@@ -163,7 +163,7 @@ This is resolved internally to:
 - `"anthropic:claude-3-opus"` → Use Anthropic provider with claude-3-opus
 - `"local:llama3"` → Use local provider with llama3 model
 
-### Model alias (bare name)
+### Alias de modèle (nom simple)
 
 Use a named model by its bare name from the `models` section of the configuration:
 
