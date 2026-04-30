@@ -73,15 +73,11 @@ In 4D desktop applications, forms can be printed using the various [commands of 
 
 ### Print rendering engine
 
-4D uses a dedicated print rendering engine to generate outputs with a design adapted for printing. This engine is automatically used in the following contexts:
-
-- your application is rendered under [Fluent UI](#fluent-ui-rendering) (Windows) or [Liquid Glass](../Notes/updates.md#support-of-liquid-glass-on-macos) (macOS) interfaces,
-- your forms are printed using one of the following commands: [`Print form`](../commands/print-form), [`Print object`](../commands/print-object), [`PRINT RECORD`](../commands/print-record), or [`PRINT SELECTION`](../commands/print-selection).
-
-The print rendering engine includes the following main features:
+4D uses a dedicated print rendering engine to generate outputs with a design adapted for printing. It includes the following main features:
 
 - Interactive widgets such as buttons, toggles, dropdowns, etc. and modern UI effects such as glass, blur, transparency, or shadow effects are converted into adapted static representations and flattened into printable styles, so that the document remains readable and professional once printed.
 - Layout structure, spacing, and alignment, are preserved so that the printed document reflects the logical structure of the on-screen form.
+- The same output is produced, whether the form is printed from macOS or Windows.
 
 For example, the following form:
 
@@ -100,13 +96,18 @@ For example, the following form:
 
 ### Legacy print renderer
 
-When your application is executed with the "Classic" interface on Windows or macOS, you can use the **legacy print renderer**. This renderer was the only available up to 4D 21 R3 and simply draws widgets as they appear on the screen using monochrome rendering. 
+In releases prior to 4D 21 R3, another print renderer was used. This legacy renderer simply draws widgets as they appear on the screen. For compatibility, the legacy renderer is **enabled by default** in projects or databases converted from versions prior to 4D 21 R3, so that forms designed with this renderer continue to be printed as expected. 
 
-For compatibility, this legacy renderer is **enabled by default**, so that forms designed with this renderer for Classic interfaces continue to be printed as expected in converted projects. You can however enable the *current print rendering engine* at any moment by:
+You can however enable the modern print rendering engine at any moment by:
 
 - unchecking the **Use legacy print rendering** option in the [Compatibility page of the Settings dialog box](../settings/compatibility.md) (permanent setting),
 - or executing [`SET DATABASE PARAMETER`](../commands/set-database-parameter) command with `Use legacy print rendering` selector set to 1 (volatile setting).
 
+:::warning Limitation
+
+For technical reasons, the legacy print renderer is not available with forms displayed with [Fluent UI](#fluent-ui-rendering) on Windows or [Liquid Glass](../Notes/updates.md#support-of-liquid-glass-on-macos) on macOS. In these contexts, forms are **always printed with the modern print rendering engine**, whatever the compatibility option. 
+
+:::
 
 
 

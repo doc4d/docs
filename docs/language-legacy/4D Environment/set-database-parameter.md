@@ -1037,13 +1037,13 @@ In previous releases, time values were converted and stored as number of millise
 
 ### Use legacy print rendering (136)
 
-**Scope:** 4D local, 4D Server
+**Scope:** 4D application (current project and/or component)
 
 **Kept between two sessions:** No
 
 **Possible values:** 0 = legacy print rendering disabled, 1 = legacy print rendering enabled
 
-**Description:** Sets or gets the current status of the [legacy print renderer](../../FormEditor/forms.md#legacy-print-rendering) when the "Classic" look is used in your forms on macOS or Windows. When the legacy print renderer is *disabled*, 4D’s [current print rendering engine](../../FormEditor/forms.md) — specifically designed to optimize the printing of forms created for the Liquid Glass and Fluent UI interfaces — is used. This parameter can also be set permanently using a [compatibility setting](../../settings/compatibility.md). 
+**Description:** Sets or gets the current status of the [legacy print renderer](../../FormEditor/forms.md#legacy-print-rendering) on macOS or Windows. When the legacy print renderer is *disabled*, 4D’s [modern print rendering engine](../../FormEditor/forms.md) is used. Note that when forms are rendered under Liquid Glass (macOS) or Fluent UI (Windows) interfaces, this selector is ignored (in such contexts forms are always printed using the modern print renderer, see [this section](../../FormEditor/forms.md#legacy-print-rendering)). In converted projects, this parameter can also be set permanently using a [compatibility setting](../../settings/compatibility.md). 
 
 
 ### User param value (108)
@@ -1056,7 +1056,9 @@ In previous releases, time values were converted and stored as number of millise
 
 **Description:** Custom string passed from one session to the next one when the 4D application is restarted. This selector is useful in the context of automated unit tests that require applications to restart with different parameters. 
 
-When used with [SET DATABASE PARAMETER](../commands/set-database-parameter), defines a new value that will be available within the next opened database after 4D is restarted manually or using the [OPEN DATABASE](../commands/open-database)(\*), [OPEN DATA FILE](../commands/open-data-file), or [RESTART 4D](../commands/restart-4d) commands. When used with [Get database parameter](../commands/get-database-parameter), gets the currently available user parameter value, defined using a command line (see *Command Line Interface*), the .4DLink file (see *Using a 4DLink file*), or a call to [SET DATABASE PARAMETER](../commands/set-database-parameter) during the previous session. (\*) If [SET DATABASE PARAMETER](../commands/set-database-parameter) sets a User param value before a call to [OPEN DATABASE](../commands/open-database) with a .4DLink file that also contains a user-param xml attribute, 4D takes into account only the parameter provided by [SET DATABASE PARAMETER](../commands/set-database-parameter).
+When used with [SET DATABASE PARAMETER](../commands/set-database-parameter), defines a new value that will be available within the next opened database after 4D is restarted manually or using the [OPEN DATABASE](../commands/open-database)(\*), [OPEN DATA FILE](../commands/open-data-file), or [RESTART 4D](../commands/restart-4d) commands. When used with [Get database parameter](../commands/get-database-parameter), gets the currently available user parameter value, defined using a command line (see [Command Line Interface](../../Admin/cli.md)), the .4DLink file (see [Using a 4DLink file](../../GettingStarted/creating.md#opening-a-project-with-a-4dlink-file)), or a call to [SET DATABASE PARAMETER](../commands/set-database-parameter) during the previous session. 
+
+(\*) If [SET DATABASE PARAMETER](../commands/set-database-parameter) sets a User param value before a call to [OPEN DATABASE](../commands/open-database) with a .4DLink file that also contains a user-param xml attribute, 4D takes into account only the parameter provided by [SET DATABASE PARAMETER](../commands/set-database-parameter).
 
 
 
