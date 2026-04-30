@@ -1037,7 +1037,7 @@ In previous releases, time values were converted and stored as number of millise
 
 ### Use legacy print rendering (136)
 
-**Scope:** 4D application (current project and/or component)
+**Scope:** 4D application
 
 **Kept between two sessions:** No
 
