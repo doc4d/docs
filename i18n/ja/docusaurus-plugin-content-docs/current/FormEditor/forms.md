@@ -188,7 +188,7 @@ var $h:=Print form("Request_var";$formData;Form detail)
  CLOSE PRINTING JOB
 ```
 
-#### Print rendering engine
+#### 印刷レンダリングエンジン
 
 4D uses a dedicated print rendering engine to generate outputs with a design adapted for printing. It includes the following main features:
 
