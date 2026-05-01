@@ -68,21 +68,21 @@ var $names := $providers.list()
 
 **get**(*name* : Text) : Object
 
-Get a provider configuration by name.
+Obtenir la configuration d'un fournisseur par son nom.
 
-| Paramètres | Type   | Description                                           |
-| ---------- | ------ | ----------------------------------------------------- |
-| *name*     | Text   | The provider name                                     |
-| Résultat   | Object | Provider configuration object, or `Null` if not found |
+| Paramètres | Type   | Description                                                            |
+| ---------- | ------ | ---------------------------------------------------------------------- |
+| *name*     | Text   | Le nom du fournisseur                                                  |
+| Résultat   | Object | Objet de configuration du fournisseur, ou `Null` s'il n'est pas trouvé |
 
 #### Exemple
 
 ```4d
 var $config := $providers.get("openai")
 If ($config # Null)
-    // Use $config.baseURL, $config.apiKey, etc.
+    // Utiliser $config.baseURL, $config.apiKey, etc.
 
-    // We could build a client with it
+    // Nous pourrions construire un client avec
     var $client:=cs.AIKit.OpenAI.new($config)
 End if
 ```
@@ -91,17 +91,17 @@ End if
 
 **list**() : Collection
 
-Get all provider names.
+Obtenir les noms de tous les fournisseurs.
 
-| Paramètres | Type       | Description                  |
-| ---------- | ---------- | ---------------------------- |
-| Résultat   | Collection | Collection of provider names |
+| Paramètres | Type       | Description                        |
+| ---------- | ---------- | ---------------------------------- |
+| Résultat   | Collection | Collection de noms de fournisseurs |
 
 #### Exemple
 
 ```4d
 var $names := $providers.list()
-// Returns: ["openai", "anthropic", ...]
+// Retourne : ["openai", "anthropic", ...]
 
 For each ($name; $names)
     var $config := $providers.get($name)
@@ -112,75 +112,75 @@ End for each
 
 **modelAliases**() : Collection
 
-Get all configured model aliases.
+Récupère tous les alias de modèle configurés.
 
-| Paramètres | Type       | Description                       |
-| ---------- | ---------- | --------------------------------- |
-| Résultat   | Collection | Collection of model alias objects |
+| Paramètres | Type       | Description                            |
+| ---------- | ---------- | -------------------------------------- |
+| Résultat   | Collection | Collection d'objets d'alias de modèles |
 
-Each object in the collection contains:
+Chaque objet de la collection contient :
 
-| Propriété  | Type | Description                       |
-| ---------- | ---- | --------------------------------- |
-| `name`     | Text | Model alias name                  |
-| `provider` | Text | Provider name                     |
-| `model`    | Text | Model ID to use with the provider |
+| Propriété  | Type | Description                                 |
+| ---------- | ---- | ------------------------------------------- |
+| `name`     | Text | Nom de l'alias du modèle                    |
+| `provider` | Text | Nom du fournisseur                          |
+| `model`    | Text | ID du modèle à utiliser avec le fournisseur |
 
 #### Exemple
 
 ```4d
 var $models := $providers.modelAliases()
-// Returns: [{name: "my-gpt", provider: "openai", model: "gpt-5.1"}, ...]
+// Renvoie : [{name: "my-gpt", provider: "openai", model: "gpt-5.1"}, ...]
 
 For each ($model; $models)
     // $m.name, $m.provider, $m.model
 End for each
 ```
 
-## Model Resolution
+## Résolution du modèle
 
-Two syntaxes are supported for model resolution:
+Deux syntaxes sont prises en charge pour la résolution des modèles :
 
 ### Alias de fournisseur (`provider:model`)
 
-Specify the provider and model name directly:
+Spécifie directement le nom du fournisseur et du modèle :
 
 ```4d
 var $client := cs.AIKit.OpenAI.new()
 $client.chat.completions.create($messages; {model: "openai:gpt-5.1"})
 ```
 
-This is resolved internally to:
+Résolution en interne :
 
-1. Split `"openai:gpt-5.1"` into provider=`"openai"` and model=`"gpt-5.1"`
-2. Look up the `"openai"` provider configuration
-3. Extract `baseURL` and `apiKey`
-4. Make the API request using the resolved configuration
+1. Séparation `"openai:gpt-5.1"` en provider=`"openai"` et model=`"gpt-5.1"`
+2. Recherche de la configuration du fournisseur `"openai"`
+3. Extraction de `baseURL` et `apiKey`
+4. Requête API effectuée en utilisant la configuration résolue
 
 **Exemples :**
 
-- `"openai:gpt-5.1"` → Use OpenAI provider with gpt-5.1 model
-- `"anthropic:claude-3-opus"` → Use Anthropic provider with claude-3-opus
-- `"local:llama3"` → Use local provider with llama3 model
+- `"openai:gpt-5.1"` → Utiliser le fournisseur OpenAI avec le modèle gpt-5.1
+- `"anthropic:claude-3-opus"` → Utiliser le fournisseur Anthropic avec claude-3-opus
+- `"local:llama3"` → Utiliser un fournisseur local avec le modèle llama3
 
 ### Alias de modèle (nom simple)
 
-Use a named model by its bare name from the `models` section of the configuration:
+Utilise un modèle déclaré par son nom simple dans la section `models` de la configuration :
 
 ```4d
 var $client := cs.AIKit.OpenAI.new()
 $client.chat.completions.create($messages; {model: ":my-gpt"})
 ```
 
-This is resolved internally to:
+Résolution en interne :
 
-1. Look up `"my-gpt"` in the `models` configuration
-2. Find its `provider` (e.g., `"openai"`) and `model` (e.g., `"gpt-5.1"`)
-3. Resolve the provider to get `baseURL` and `apiKey`
-4. Make the API request using the resolved configuration
+1. Recherche de `"my-gpt"` dans la configuration `models`
+2. Récupération de son `provider` (par exemple, `"openai"`) et de son `model` (par exemple, `"gpt-5.1"`)
+3. Résolution du fournisseur pour obtenir `baseURL` et `apiKey`
+4. Requête API effectuée en utilisant la configuration résolue
 
 **Exemples :**
 
-- `"my-gpt"` → Use the model alias "my-gpt" (resolves to its configured provider and model)
-- `"my-embedding"` → Use the model alias "my-embedding" for embedding operations
+- `"my-gpt"` → Utiliser l'alias de modèle "my-gpt" (résolu par le fournisseur et le modèle configurés)
+- `"my-embedding"` → Utiliser l'alias de modèle "my-embedding" pour les opérations d'embedding
 
