@@ -70,7 +70,7 @@ title: Forms
 
 In 4D desktop applications, forms can be printed using the various [commands of the **Printing** theme](../commands/theme/Printing).
 
-### Print rendering engine
+### 印刷レンダリングエンジン
 
 4D uses a dedicated print rendering engine to generate outputs with a design adapted for printing. It includes the following main features:
 
