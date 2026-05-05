@@ -718,6 +718,53 @@ End if
 <!-- END REF -->
 
 
+<!-- REF SessionClass.quotas.Desc -->
+## .quotas
+
+<details><summary>History</summary>
+
+|Release|Changes|
+|---|---|
+|21 R4|Added|
+
+</details>
+
+<!-- REF #SessionClass.quotas.Syntax -->**.quotas** : 4D.QuotaManager<!-- END REF -->
+
+#### Description
+
+
+The `.quotas` property contains <!-- REF #SessionClass.quotas.Summary -->a `4D.QuotaManager` object with current values (read-only) and updatable values for server thresholds in the current session<!-- END REF -->. Server thresholds are used to control the requests to the server and help preventing excessive use of ORDA resources (see [`4D.QuotaManager` class](./QuotaManagerClass.md)).
+
+The following property values of the `4D.QuotaManager` object can be used:
+
+|Property||Type|Writable|Description|
+|---|---|---|---|---|
+|nbEntitySets||Integer|yes|Maximum allowed number of entity sets in memory for the session|
+|defaultEntitySetTimeout ||Integer|yes|Default inactivity timeout for entity sets in memory for the session (seconds)|
+|maxEntitySetTimeout ||Integer|yes|Maximum inactivity timeout for entity sets in memory for this session (seconds)|
+|currentValues||Object|no|Current values of thresholds for the session|
+||nbEntitySets|Integer|no||
+||defaultEntitySetTimeout|Integer|no||
+||maxEntitySetTimeout|Integer|no||
+
+
+
+
+
+#### Example
+
+```4d
+   //set the maximum number oy entity sets in memory
+   //for the session to 50
+Session.quotas.nbEntitySets:=50
+```
+
+<!-- END REF -->
+
+
+
+
 <!-- REF SessionClass.restore().Desc -->
 ## .restore()
 
