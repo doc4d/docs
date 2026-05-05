@@ -3,6 +3,17 @@ id: updates
 title: Release Notes
 ---
 
+## 4D 21 R4
+
+Read [**What’s new in 4D 21 R4**](https://blog.4d.com/whats-new-in-4d-21-r4/), the blog post that lists all new features and enhancements in 4D 21 R4.
+
+#### Highlights
+
+- New [`4D.QuotaManager`](../API/QuotaManagerClass.md) class to handle threshold objects for protecting the server.
+- New session `.quotas` property to configure thresholds for sessions. 
+- New [`$entityset/$release`](../REST/$entityset.md#entitysetrelease) REST request to delete entity sets from memory (the [previous syntax](../REST/$method.md#methodrelease) is deprecated).
+
+
 ## 4D 21 R3
 
 Read [**What’s new in 4D 21 R3**](https://blog.4d.com/whats-new-in-4d-21-r3/), the blog post that lists all new features and enhancements in 4D 21 R3.

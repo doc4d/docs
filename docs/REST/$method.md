@@ -11,11 +11,14 @@ This parameter allows you to define the operation to execute with the returned e
 |---|---|---|
 |[**$method=delete**](#methoddelete)|`POST /Employee?$filter="ID=11"& $method=delete`|Deletes the current entity, entity collection, or entity selection|
 |[**$method=entityset**](#methodentityset)|`GET /People/?$filter="ID>320"& $method=entityset& $timeout=600`|Creates an entity set in 4D Server's cache based on the collection of entities defined in the REST request|
-|[**$method=release**](#methodrelease)|`GET /Employee/$entityset/<entitySetID>?$method=release`|Releases an existing entity set stored in 4D Server's cache|
 |[**$method=subentityset**](#methodsubentityset)|`GET /Company(1)/staff?$expand=staff& $method=subentityset&   $subOrderby=lastName ASC`|Creates an entity set based on the collection of related entities defined in the REST request|
 |[**$method=update**](#methodupdate)|`POST /Person/?$method=update`|Updates and/or creates one or more entities|
 
+:::warning Deprecated
 
+As of 4D 21 R4, the **`GET /Employee/$entityset/<entitySetID>?$method=release`** syntax is **deprecated** and should no longer be used. You must now use [`/$entityset/$release` with a POST verb](./$entityset.md).
+
+:::
 
 
 
@@ -87,6 +90,14 @@ __ENTITYSET: "http://127.0.0.1:8081/rest/Employee/$entityset/9718A30BF61343C7963
 
 
 ## $method=release
+
+:::warning Deprecated
+
+As of 4D 21 R4, the **`GET /Employee/$entityset/<entitySetID>?$method=release`** syntax is **deprecated** and should no longer be used. You must now use [`/$entityset/$release` with a POST verb](./$entityset.md).
+
+:::
+
+
 
 Releases an existing entity set stored in 4D Server's cache.
 

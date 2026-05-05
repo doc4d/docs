@@ -53,6 +53,7 @@ All session types can handle privileges, but only the code executed in a **web c
 |[<!-- INCLUDE #SessionClass.info.Syntax -->](#info)<br/><!-- INCLUDE #SessionClass.info.Summary -->|
 |[<!-- INCLUDE #SessionClass.isGuest().Syntax -->](#isguest)<br/><!-- INCLUDE #SessionClass.isGuest().Summary -->|
 |[<!-- INCLUDE #SessionClass.promote().Syntax -->](#promote)<br/><!-- INCLUDE #SessionClass.promote().Summary -->|
+|[<!-- INCLUDE #SessionClass.quotas.Syntax -->](#quotas)<br/><!-- INCLUDE #SessionClass.quotas.Summary -->|
 |[<!-- INCLUDE #SessionClass.restore().Syntax -->](#restore)<br/><!-- INCLUDE #SessionClass.restore().Summary -->|
 |[<!-- INCLUDE #SessionClass.setPrivileges().Syntax -->](#setprivileges)<br/><!-- INCLUDE #SessionClass.setPrivileges().Summary -->|
 |[<!-- INCLUDE #SessionClass.storage.Syntax -->](#storage)<br/><!-- INCLUDE #SessionClass.storage.Summary -->|
@@ -571,6 +572,8 @@ Since `.info` is a computed property, it is recommended to call it once and then
 
 :::
 
+This property is **read only**.
+
 
 <!-- END REF -->
 
@@ -736,21 +739,21 @@ End if
 
 The `.quotas` property contains <!-- REF #SessionClass.quotas.Summary -->a `4D.QuotaManager` object with current values (read-only) and updatable values for server thresholds in the current session<!-- END REF -->. Server thresholds are used to control the requests to the server and help preventing excessive use of ORDA resources (see [`4D.QuotaManager` class](./QuotaManagerClass.md)).
 
-The following property values of the `4D.QuotaManager` object can be used:
+This property is **read only**.
+
+The following property values of the `4D.QuotaManager` object are available for the session:
 
 |Property||Type|Writable|Description|
 |---|---|---|---|---|
-|nbEntitySets||Integer|yes|Maximum allowed number of entity sets in memory for the session|
-|defaultEntitySetTimeout ||Integer|yes|Default inactivity timeout for entity sets in memory for the session (seconds)|
-|maxEntitySetTimeout ||Integer|yes|Maximum inactivity timeout for entity sets in memory for this session (seconds)|
+|nbEntitySets||Integer|yes|Maximum allowed number of entity sets in memory|
+|defaultEntitySetTimeout ||Integer|yes|Default inactivity timeout for entity sets in memory (seconds)|
+|maxEntitySetTimeout ||Integer|yes|Maximum inactivity timeout for entity sets in memory (seconds)|
 |currentValues||Object|no|Current values of thresholds for the session|
 ||nbEntitySets|Integer|no||
 ||defaultEntitySetTimeout|Integer|no||
 ||maxEntitySetTimeout|Integer|no||
 
-
-
-
+When you modify a value, it is immediately taken into account by the server and will be applied to sessions created afterwards. 
 
 #### Example
 

@@ -4,10 +4,10 @@ title: QuotaManager
 ---
 
 
-The `4D.QuotaManager` class provides you with an interface to configure and monitor the usage limits you apply to the server. Thresholds are useful for example to protect the server from poorly optimized requests or excessive use of server resources. 
+The `4D.QuotaManager` class provides you with an interface to configure and monitor the usage limits you apply to the server. Thresholds are useful for example to protect the server from poorly optimized requests or excessive use of server resources. Typically, the quota manager allows you to provide thresholds to ORDA resources a REST server session can access. 
 
-Typically, the quota manager allows you to provide thresholds to ORDA resources a REST server session can access.  
 
+`4D.QuotaManager` objects are instantiated by the [`quotas` property of a session](./SessionClass.md#quotas) object.
 
 
 <details><summary>History</summary>
@@ -25,167 +25,95 @@ Typically, the quota manager allows you to provide thresholds to ORDA resources 
 ### QuotaManager Object
 
 
-4D.QuotaManager objects provide the following properties and functions:
+4D.QuotaManager objects provide the following properties:
 
 ||
 |---|
-|[<!-- INCLUDE #OutgoingMessageClass.body.Syntax -->](#body)<br/><!-- INCLUDE #OutgoingMessageClass.body.Summary -->|
-|[<!-- INCLUDE #OutgoingMessageClass.headers.Syntax -->](#headers)<br/><!-- INCLUDE #OutgoingMessageClass.headers.Summary -->|
-|[<!-- INCLUDE #OutgoingMessageClass.setBody().Syntax -->](#setbody)<br/><!-- INCLUDE #OutgoingMessageClass.setBody().Summary -->|
-|[<!-- INCLUDE #OutgoingMessageClass.setHeader().Syntax -->](#setheader)<br/><!-- INCLUDE #OutgoingMessageClass.setHeader().Summary -->|
-|[<!-- INCLUDE #OutgoingMessageClass.setStatus().Syntax -->](#setstatus)<br/><!-- INCLUDE #OutgoingMessageClass.setStatus().Summary -->|
-|[<!-- INCLUDE #OutgoingMessageClass.status.Syntax -->](#status)<br/><!-- INCLUDE #OutgoingMessageClass.status.Summary -->|
+|[<!-- INCLUDE #QuotaManagerClass.defaultEntitySetTimeout.Syntax -->](#defaultentitysettimeout)<br/><!-- INCLUDE #QuotaManagerClass.defaultEntitySetTimeout.Summary -->|
+|[<!-- INCLUDE #QuotaManagerClass.maxEntitySetTimeout.Syntax -->](#maxentitysettimeout)<br/><!-- INCLUDE #QuotaManagerClass.maxEntitySetTimeout.Summary -->|
+|[<!-- INCLUDE #QuotaManagerClass.nbEntitySets.Syntax -->](#nbentitysets)<br/><!-- INCLUDE #QuotaManagerClass.nbEntitySets().Summary -->|
+
+
+
+
+<!-- REF QuotaManagerClass.defaultEntitySetTimeout.Desc -->
+## .defaultEntitySetTimeout
+
+<!-- REF #QuotaManagerClass.defaultEntitySetTimeout.Syntax -->**defaultEntitySetTimeout** : Integer<!-- END REF -->
+
+#### Description
+
+The `.defaultEntitySetTimeout` property contains <!-- REF #QuotaManagerClass.defaultEntitySetTimeout.Summary -->the default inactivity timeout for REST entity sets stored in memory during the current session (in seconds)<!-- END REF -->.
+
+By default, this value is 2 hours (7200 seconds). It can also be defined at the entity set creation using the [`$timeout` REST API](../REST/$timeout.md). 
+
+You can change this value dynamically using the [`quotas.defaultEntitySetTimeout` property of the Session](./SessionClass.md#quotas), so that it will be used for any entity set created afterward in the session (existing entity set default timeout values are not modified). 
 
 :::note
 
-A 4D.OutgoingMessage object is a [non-sharable](../Concepts/shared.md) object.
-
-:::
-
-
-
-
-
-<!-- REF OutgoingMessageClass.body.Desc -->
-## .body
-
-<!-- REF #OutgoingMessageClass.body.Syntax -->**body** : any<!-- END REF -->
-
-#### Description
-
-The `.body` property contains <!-- REF #OutgoingMessageClass.body.Summary -->the outgoing message body<!-- END REF -->. The following data types are supported in the `.body` property:
-
-- text
-- blob
-- object
-- image
-
-The `.body` property is read-write.
-
-You can also set the `.body` property using the [`setBody()`](#setbody) function, in which case the `content-type` header is automatically set. 
-
-<!-- END REF -->
-
-
-<!-- REF OutgoingMessageClass.headers.Desc -->
-## .headers
-
-<!-- REF #OutgoingMessageClass.headers.Syntax -->**headers** : Object<!-- END REF -->
-
-#### Description
-
-The `.headers` property contains <!-- REF #OutgoingMessageClass.headers.Summary -->the current headers of the outgoing message as key/value pairs<!-- END REF -->. 
-
-The `.headers` property is read-only. To set a header, use the [`setHeader()`](#setheader) function. 
-
-<!-- END REF -->
-
-
-<!-- REF OutgoingMessageClass.setBody().Desc -->
-## .setBody()
-
-<!-- REF #OutgoingMessageClass.setBody().Syntax -->**.setBody**( *body* : any )<!-- END REF -->
-
-
-<!-- REF #OutgoingMessageClass.setBody().Params -->
-<div class="no-index">
-
-|Parameter|Type||Description|
-|---|--- |---|------|
-|body|any |->|Body of the outgoing message|
-</div>
-<!-- END REF -->
-
-#### Description
-
-The `.setBody()` function <!-- REF #OutgoingMessageClass.setBody().Summary -->sets the outgoing message *body*<!-- END REF -->.
-
- The following data types are supported in the *body*:
-
-- Text
-- Blob
-- Object
-- Image
-
-When this function is used, the content-type header is automatically set depending on the *body* type:
-
-- Content-Type:text/plain if the body is a Text
-- Content-Type:application/octet-stream if body is a Blob
-- Content-Type:application/json if body is an Object
-- Content-Type:image/jpeg, image/gif... if body is an Image
-
-If *body* is not of a supported value type, an error is returned.
-
-<!-- END REF -->
-
-
-<!-- REF OutgoingMessageClass.setHeader().Desc -->
-## .setHeader()
-
-<!-- REF #OutgoingMessageClass.setHeader().Syntax -->**.setHeader**( *key* : Text ; *value* : Text )<!-- END REF -->
-
-
-<!-- REF #OutgoingMessageClass.setHeader().Params -->
-<div class="no-index">
-
-|Parameter|Type||Description|
-|---|--- |---|------|
-|key|Text|->|Header property to set|
-|value|Text|->|Value of the header property|
-</div>
-<!-- END REF -->
-
-#### Description
-
-The `.setHeader()` function <!-- REF #OutgoingMessageClass.setHeader().Summary -->sets the outgoing message header *key* with the provided *value*<!-- END REF -->. If both parameters are not Text values, an error is raised.
-
-When returning a 4D.OutgoingMessage object instance, 4D automatically sets some headers (e.g. `Set-Cookie` with `4DSID__ProjectName_=....`). 
-
-:::note
-
-If you set a *value* for the "Content-Type" header *key*, make sure you call this function after the call to [`setBody()`](#setbody), because `setBody()` automatically fills this header. For a list of "Content-Type" header values, please refer to the [`WEB SEND BLOB`](../commands/web-send-blob) documentation. 
+If you define a value higher than the `maxEntitySetTimeout` property value, it will be aligned with the `maxEntitySetTimeout` value. 
 
 :::
 
 
 <!-- END REF -->
 
-<!-- REF OutgoingMessageClass.setStatus().Desc -->
-## .setStatus()
 
-<!-- REF #OutgoingMessageClass.setStatus().Syntax -->**.setStatus**( *status* : Integer )<!-- END REF -->
+<!-- REF QuotaManagerClass.maxEntitySetTimeout.Desc -->
+## .maxEntitySetTimeout
 
-
-<!-- REF #OutgoingMessageClass.setStatus().Params -->
-<div class="no-index">
-
-|Parameter|Type||Description|
-|---|--- |---|------|
-|status|Integer|->|Status to set|
-</div>
-<!-- END REF -->
+<!-- REF #QuotaManagerClass.maxEntitySetTimeout.Syntax -->**maxEntitySetTimeout** : Integer<!-- END REF -->
 
 #### Description
 
-The `.setStatus()` function <!-- REF #OutgoingMessageClass.setStatus().Summary -->sets the `status` property with the given *status*<!-- END REF -->.
+The `.maxEntitySetTimeout` property contains <!-- REF #QuotaManagerClass.maxEntitySetTimeout.Summary -->the maximum inactivity timeout value for REST entity sets stored in memory during the current session (in seconds)<!-- END REF -->.
 
-If *status* is not an integer value, an error is raised.
+You can set this value using the [`quotas.maxEntitySetTimeout` property of the Session](./SessionClass.md#quotas), so that it will be used for any entity set created afterward in the session (existing entity set maximum timeout values are not modified). 
 
-For a list of HTTP status codes, please refer the [HTTP status code list on Wikipedia](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).  
+Once the `.maxEntitySetTimeout` property is set, any entity set created afterward in the session could not have a timeout value longer than the `.maxEntitySetTimeout` value.
+
+For example, assuming the maximum inactivity timeout is set to 40 minutes (2400 seconds), if an entity set is created with a required timeout which exceeds the maximum value:
+
+```
+http://127.0.0.1/rest/People?$filter=ID>=4&$method=entityset&$timeout=3000
+```
+
+then the timeout defined in the request is ignored and the entity set will be released after 40 minutes if not used during this period of time.
+
+#### Example
+
+In some 4D code in a REST process:
+
+```4d
+Session.quotas.maxEntitySetTimeout:=2400
+```
 
 
 <!-- END REF -->
 
 
+<!-- REF QuotaManagerClass.nbEntitySets.Desc -->
+## .nbEntitySets
 
-<!-- REF OutgoingMessageClass.status.Desc -->
-## .status
-
-<!-- REF #OutgoingMessageClass.status.Syntax -->**status** : Integer<!-- END REF -->
+<!-- REF #QuotaManagerClass.nbEntitySets.Syntax -->**nbEntitySets** : Integer<!-- END REF -->
 
 #### Description
 
-The `.status` property contains <!-- REF #OutgoingMessageClass.status.Summary -->the current status of the outgoing message<!-- END REF -->. This property can be set using the [`setStatus()`](setstatus) function.
+The `.nbEntitySets` property contains <!-- REF #QuotaManagerClass.nbEntitySets.Summary -->the maximum number of REST entity sets allowed in memory for the current session (in seconds)<!-- END REF -->.
+
+By default, there is no limit for entity sets stored in memory by REST requests (the value is 0). You can set a limit to control the server payload.
+
+#### Example
+
+In some 4D code in a REST process:
+
+```4d
+	//max 50 entity sets
+Session.quotas.nbEntitySets:=50
+```
 
 <!-- END REF -->
+
+
+
 
