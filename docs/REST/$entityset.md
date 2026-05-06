@@ -103,7 +103,7 @@ In the following example we create a new entity set that combines all the entiti
 
 ## $entityset/$release
 
-Releases on or more existing entity set(s) stored in [4D Server's cache](../ORDA/client-server-optimization.md#orda-cache).
+Releases on or more existing entity set(s) stored in [4D Server's cache](./$info.md).
 
 ### Description  
 
