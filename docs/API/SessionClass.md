@@ -737,28 +737,29 @@ End if
 #### Description
 
 
-The `.quotas` property contains <!-- REF #SessionClass.quotas.Summary -->a `4D.QuotaManager` object with current values (read-only) and updatable values for server thresholds in the current session<!-- END REF -->. Server thresholds are used to control the requests to the server and help preventing excessive use of ORDA resources (see [`4D.QuotaManager` class](./QuotaManagerClass.md)).
+The `.quotas` property contains <!-- REF #SessionClass.quotas.Summary -->a `4D.QuotaManager` object with current values (read-only) and default values (writable) for server thresholds in the current session<!-- END REF -->. Server thresholds are used to control the requests to the server and help preventing excessive use of ORDA resources (see [`4D.QuotaManager` class](./QuotaManagerClass.md)).
 
 This property is **read only**.
 
-The following property values of the `4D.QuotaManager` object are available for the session:
+The following properties of the `4D.QuotaManager` object are available for the session:
 
 |Property||Type|Writable|Description|
 |---|---|---|---|---|
-|nbEntitySets||Integer|yes|Maximum allowed number of entity sets in memory|
-|defaultEntitySetTimeout ||Integer|yes|Default inactivity timeout for entity sets in memory (seconds)|
-|maxEntitySetTimeout ||Integer|yes|Maximum inactivity timeout for entity sets in memory (seconds)|
-|currentValues||Object|no|Current values of thresholds for the session|
-||nbEntitySets|Integer|no||
-||defaultEntitySetTimeout|Integer|no||
-||maxEntitySetTimeout|Integer|no||
+|[nbEntitySets](./QuotaManagerClass.md#nbentitysets)||Integer|yes|Maximum allowed number of entity sets in memory|
+|[defaultEntitySetTimeout](./QuotaManagerClass.md#defaultentitysettimeout) ||Integer|yes|Default inactivity timeout for entity sets in memory (seconds)|
+|[maxEntitySetTimeout](./QuotaManagerClass.md#maxentitysettimeout) ||Integer|yes|Maximum inactivity timeout for entity sets in memory (seconds)|
+|currentValues||Object|no||
+||nbEntitySets|Integer|no|Number of entity sets [currently in cache](../REST/$info.md)|
+||defaultEntitySetTimeout|Integer|no|Default inactivity timeout|
+||maxEntitySetTimeout|Integer|no|Maximum inactivity timeout|
 
-When you modify a value, it is immediately taken into account by the server and will be applied to sessions created afterwards. 
+When you modify a value, it is immediately taken into account by the server (no need to restart) and will be applied to further REST requests. 
+
 
 #### Example
 
 ```4d
-   //set the maximum number oy entity sets in memory
+   //set the maximum number of entity sets in memory
    //for the session to 50
 Session.quotas.nbEntitySets:=50
 ```
