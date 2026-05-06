@@ -43,6 +43,12 @@ For more information, see the [Session types](../../API/SessionClass.md#session-
 
 The command returns *Null* if it is called in a web process and scalable sessions are disabled on the web server. 
 
+:::note
+
+There is always one REST session on the server, even if scalable sessions are disabled. Thus, the `Session` command always returns a REST session object when called in a REST process. 
+
+:::
+
 ### Web sessions
 
 The `Session` object of web sessions is available from any web process:
