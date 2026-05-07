@@ -4,17 +4,12 @@ title: ClassStore
 ---
 
 
-`4D.ClassStore` class properties are a current set of classes and class stores. 
+`4D.ClassStore` properties are available classes and class stores. 
 
-Depending on the class store class, properties can be:
+4D exposes two [class stores](../Concepts/classes.md#class-stores):
 
-- all exposed [`4D.Class`](./ClassClass.md) classes
-- all published `4D.ClassStore` classes from components. 
-
-By default, 4D exposes two [class stores](../Concepts/classes.md#class-stores):
-
-- [`cs`](../commands/cs) for user class store
-- [`4D`](../commands/4d) for built-in class store
+- [`cs`](../commands/cs) for user classes and component class stores
+- [`4D`](../commands/4d) for built-in classes
 
 
 ### Summary
