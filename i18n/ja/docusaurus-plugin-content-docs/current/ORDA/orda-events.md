@@ -135,7 +135,7 @@ ORDA [`constructor()`](./ordaClasses.md#class-constructor) 関数は必ずロー
 
 このイベントは4D Server / 4Dエンジンが属性値の変更を検知するとすぐにトリガーされます。この変更は、以下のようなアクションによって引き起こされます:
 
-- **[`local` キーワード](../ORDA/ordaClasses.md#local関数) を使用したクライアント/サーバー** あるいは **シングルユーザーモードの4D**:
+- in **client/server with the [`local` keyword](../Concepts/classes.md#local)** or in **4D single-user**:
   - ユーザーが4D フォーム上で値を設定した
   - 4D コードが `:=` 演算子によって代入を行った。 このイベントは自己代入の場合にもトリガーされます(`$entity.attribute:=$entity.attribute`)。
 - **`local` キーワード を使用しないクライアント/サーバー**: `:=` 演算子によって代入を行う一部の4D コードは、[サーバー上で実行されます](../commands/execute-on-server)。
