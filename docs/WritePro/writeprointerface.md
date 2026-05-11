@@ -418,3 +418,51 @@ The History area lists all your prompts sent to the AI. You can hide/show this a
 
 The Erase button allows you to reset the whole window and erase all interactions. It is equivalent to close/reopen the AI dialog box. 
 
+
+##  Multi-level (hierarchical) style sheets
+
+
+// screenshot : stylesheets panel
+
+These interfaces manages [hierarchical list style sheets](./user-legacy/stylesheets.md#hierarchical-list-style-sheets) for documents in the 4D Write Pro area.
+
+To enable hierarchical list style sheets management, click the multi-level list button:  
+
+// screenshot: multi-level list mode button in toolbar/sidebar
+
+When the multi-level list mode is enabled, the style sheet list displays hierarchical list style sheets and predefined templates for [multi-level lists](./user-legacy/using-a-4d-write-pro-area.md#multi-level-lists).
+
+// screenshot: hierarchical list style sheets panel with mode enabled
+
+The interface allows you to:
+
+- create new sub-levels,
+- increase or decrease the level of selected paragraphs,
+- modify numbering formats,
+- concatenate numbering between levels.
+
+// screenshot: level management and numbering buttons
+
+The style sheet list contains:
+
+- hierarchical list style sheets already defined in the document,
+- predefined hierarchical list templates.
+
+// screenshot: dropdown list showing document styles and predefined templates
+
+When multiple paragraphs are selected:
+
+- selecting an existing hierarchical list style sheet applies the selected style sheet to all paragraphs,
+- selecting a predefined template creates the corresponding root-level and sub-level style sheets, then applies the root-level style sheet to all selected paragraphs
+
+To create a new hierarchical list style sheet based on the current selection, select the paragraphs to use and click on the  button at the bottom of the panel.
+
+// screenshot: "New style sheet based on selection" button
+
+If the selected paragraph already contains list formatting, a new hierarchical list style sheet of one level is created based on the current formatting.
+
+If the selected paragraph already uses a hierarchical list style sheet, the complete hierarchy is duplicated, including all sub-level style sheets.
+
+// screenshot: resulting multi-level list in document
+
+For more information about hierarchical list style sheets, see [Hierarchical list style sheets](./user-legacy/stylesheets.md#hierarchical-list-style-sheets).

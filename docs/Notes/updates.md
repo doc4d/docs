@@ -3,6 +3,15 @@ id: updates
 title: Release Notes
 ---
 
+## 4D 21 R4
+
+Read [**What’s new in 4D 21 R4**](https://blog.4d.com/whats-new-in-4d-21-r4/), the blog post that lists all new features and enhancements in 4D 21 R4.
+
+#### Highlights
+
+- Multi-level list style sheets are now [supported in 4D Write Pro Interface](../WritePro/writeprointerface.md#managing-hierarchical-list-style-sheets), allowing users to create and manage structured multi-level lists directly from the toolbar and sidebar.
+
+
 ## 4D 21 R3
 
 Read [**What’s new in 4D 21 R3**](https://blog.4d.com/whats-new-in-4d-21-r3/), the blog post that lists all new features and enhancements in 4D 21 R3.
