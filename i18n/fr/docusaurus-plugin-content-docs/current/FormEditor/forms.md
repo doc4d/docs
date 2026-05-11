@@ -66,6 +66,173 @@ Vous pouvez ajouter ou modifier des formulaires 4D à l'aide des éléments suiv
 }
 ```
 
+## Utilisation des formulaires
+
+Les formulaires sont appelés à l'aide de commandes spécifiques du langage 4D. Dans vos applications de bureau 4D, les formulaires peuvent être utilisés de différentes manières, en fonction de leur statut par rapport à vos besoins d'interface. Un formulaire peut être :
+
+- used in its own window for data viewing, processing, editing, or to display on-screen information to the user,
+- used embedded in another form (subform),
+- used as template for printing,
+- or called by specific features like the Label editor.
+
+### Utilisation d'un formulaire de projet dans une fenêtre
+
+When you want to use a form as on-screen dialog, you need to (1) create a window and (2) load the form within the window, along with an event loop to process user actions. The straighforward steps to display a form on screen are:
+
+1. Call the [`Open form window`](../commands/open-form-window) command to create and preconfigure a window tailored for your form. Note that the command only draw aan empty window, it does not display anything.
+2. In the same method, call the [`DIALOG`](../commands/dialog) command to actually load the form in the opened form window, ready for user interaction. [`DIALOG`](../commands/dialog) loads form data and places your code in listening mode to user events. When you call this command without asterisk (\*), the dialog will stay on screen and the code execution is frozen until an event occurs (see also ["Event listening" paragraph](../Develop/async.md#event-listening)).
+3. (optional) Use the [`Form`](../commands/form) command from within the form context to access form data.
+
+::note Compatibilité
+
+All-in-one commands such as [`ADD RECORD`](../commands/add-record) or [`MODIFY RECORD`](../commands/add-record) merge all steps in a single call. These legacy commands can still be used for prototyping or basic developments but are not adapted to modern, fully controlled interfaces. They directly rely on the 4D database and legacy features such as [table forms](#project-form-and-table-form) and do not benefit from the power and flexibility of [ORDA features](../ORDA/overview.md). Unless specific needs, it is recommended to use project forms for your 4D desktop application interfaces.
+
+:::
+
+#### Exemple simple
+
+Vous créez le formulaire de base suivant dans l'[éditeur de formulaire] (./formEditor.md ) :
+
+![](../assets/en/FormEditor/example-form-1.png)
+
+Le formulaire est [associé à une classe "myForm"](./properties_FormProperties.md#form-class), défini comme suit :
+
+```4d
+    //cs.myForm
+property name : Text
+property age : Integer
+
+Class constructor
+  This.name:=""
+  This.age:=0
+```
+
+La classe de formulaire est automatiquement instanciée par 4D une fois que le formulaire est chargé. Si vous exécutez la méthode de projet suivante :
+
+```4d
+    // Instantiate a form object that will host form data and UI logic
+var $formObject:=cs.myForm.new()
+
+    //Prepare default value within the form object
+$formObject.name:="Smith"
+$formObject.age:=42
+
+    // Create an empty window with ad-hoc settings that fits the desired form dimensions, resizing properties,
+    // and window type (this does not render the form)
+var $win:=Open form window("myForm"; Movable form dialog box; Horizontally centered; Vertically centered)
+
+    //Render the form, and provide $formObject's data. Dialog also activates the form event loop
+DIALOG("myForm"; $formObject)
+
+    //Without asterisk to Dialog statement, the form waits for a closing action from the user 
+    //before executing the rest of the code. Calling Close window is just a good practice 
+CLOSE WINDOW($win) //releases reference
+
+    //Display data modified by the user, if any/
+ALERT($formObject.name+" is "+String($formObject.age)+" years old!")
+
+```
+
+4D affiche:
+
+![](../assets/en/FormEditor/example-form-2.png)
+
+### Utilisation de formulaires comme sous-formulaires
+
+Un formulaire peut être intégré dans un autre formulaire, auquel cas il devient un [objet sous-formulaire] (../FormObjects/subform_overview.md) qui suit des règles spécifiques. Un sous-formulaire est automatiquement utilisé lorsque son formulaire parent est [affiché dans une fenêtre] (#using-a-project-form-in-a-window).
+
+De la même manière que vous passez un objet à un formulaire avec la commande [`DIALOG`](../commands/dialog), vous pouvez également passer un objet à une zone de sous-formulaire en utilisant la liste des propriétés. Vous pouvez ensuite l'utiliser dans le sous-formulaire avec la commande [`Form`](../commands/form). Dans cet exemple, l'objet "InvoiceAddress" est lié au sous-formulaire :
+
+![](../assets/en/FormEditor/subform-example.png)
+
+### Utilisation des formulaires à imprimer
+
+Dans les applications de bureau 4D, les formulaires peuvent être imprimés à l'aide des différentes [commandes du thème **Imprimer**](../commands/theme/Printing).
+
+#### Exemples
+
+Vous pouvez utiliser les formulaires pour imprimer des données, soit sous forme de page, soit sous forme de liste.
+
+- Pour imprimer simplement une partie d'un formulaire, utilisez la commande [`Print form`](../commands/print-form). Par exemple :
+
+```4d
+var $formData:={}
+$formData.lastname:="Smith"
+$formData.firstname:="john"
+$formData.request:="I need more COFFEE"
+var $h:=Print form("Request_var";$formData;Form detail)
+```
+
+- Pour imprimer un formulaire dans une tâche d'impression pour traiter les données pendant l'impression, utilisez les commandes [`FORM LOAD`](../commands/form-load) et [`Print object`](../commands/print-object). Par exemple :
+
+```4d
+ var $formData : Object
+ var $over : Boolean
+ var $full : Boolean
+ 
+ OPEN PRINTING JOB
+ $formData:={}
+ $formData.LBcollection:=[]
+ ... //remplir la collection avec des données
+ 
+ FORM LOAD("GlobalForm";$formData) 
+ $over:=False
+ Repeat
+    $full:=Print object(*;"LB") // La source de données de cette list box "LB" est Form.LBcollection
+    LISTBOX GET PRINT INFORMATION(*;"LB";lk printing is over;$over)
+    If(Not($over))
+       PAGE BREAK
+    End if
+ Until($over)
+ FORM UNLOAD
+ CLOSE PRINTING JOB
+```
+
+#### Print rendering engine
+
+4D uses a dedicated print rendering engine to generate outputs with a design adapted for printing. It includes the following main features:
+
+- Interactive widgets such as buttons, toggles, dropdowns, etc. and modern UI effects such as glass, blur, transparency, or shadow effects are converted into adapted static representations and flattened into printable styles, so that the document remains readable and professional once printed.
+- Layout structure, spacing, and alignment, are preserved so that the printed document reflects the logical structure of the on-screen form.
+- The same output is produced, whether the form is printed from macOS or Windows.
+
+Par exemple, le formulaire suivant :
+
+![](../assets/en/FormEditor/screen_rendering.png)
+
+... sera imprimé avec ce rendu :
+
+![](../assets/en/FormEditor/print_rendering.png)
+
+:::tip Article(s) de blog sur le sujet
+
+[Printing Modern Interfaces with Clean, Consistent Output](https://blog.4d.com/printing-modern-interfaces-with-clean-consistent-output)
+
+:::
+
+#### Legacy print renderer
+
+In releases prior to 4D 21 R3, another print renderer was used. This legacy renderer simply draws widgets as they appear on the screen. For compatibility, the legacy renderer is **enabled by default** in projects or databases converted from versions prior to 4D 21 R3, so that forms designed with this renderer continue to be printed as expected.
+
+You can however enable the modern print rendering engine at any moment by:
+
+- unchecking the **Use legacy print rendering** option in the [Compatibility page of the Settings dialog box](../settings/compatibility.md) (permanent setting),
+- or executing [`SET DATABASE PARAMETER`](../commands/set-database-parameter) command with `Use legacy print rendering` selector set to 1 (volatile setting).
+
+:::warning Limitation
+
+For technical reasons, the legacy print renderer is not available with forms displayed with [Fluent UI](#fluent-ui-rendering) on Windows or [Liquid Glass](../Notes/updates.md#support-of-liquid-glass-on-macos) on macOS. In these contexts, forms are **always printed with the modern print rendering engine**, whatever the compatibility option.
+
+:::
+
+### Other form usages
+
+There are several other ways to use forms in the 4D applications, including:
+
+- a form can be [inherited](#inherited-forms) from another form,
+- a form can be [associated to a listbox](../FormObjects/properties_ListBox.md#detail-form-name) in response to a user action to display a row using an edit button or a double-click,
+- the [label editor can use a form](../Desktop/labels.md#form-to-use) as template to print labels.
+
 ## Formulaire projet et formulaire table
 
 Il existe deux catégories de formulaires :
@@ -78,7 +245,7 @@ En règle générale, vous sélectionnez la catégorie de formulaire lorsque vou
 
 ## Pages formulaire
 
-Chaque formulaire est composé d'au moins deux pages :
+Each form is made of at least two pages:
 
 - une page 1 : une page principale, affichée par défaut
 - une page 0 : une page de fond, dont le contenu est affiché sur une page sur deux.
@@ -212,3 +379,6 @@ Pour stopper l’héritage d’un formulaire, choisissez l’option `\<aucun>` d
 
 [Barre de menu associée](properties_Menu.md#associated-menu-bar) - [Hauteur fixe](properties_WindowSize.md#fixed-height) - [Largeur fixe](properties_WindowSize.md#fixed-width) - [Saut de formulaire](properties_Markers.md#form-break) - [Détail du formulaire](properties_Markers.md#form-detail) - [Pied de formulaire](properties_Markers.md#form-footer) - [En-tête de formulaire](properties_Markers.md#form-header) - [Nom du formulaire](properties_FormProperties.md#form-name) - [Type de formulaire](properties_FormProperties.md#form-type) - [Nom du formulaire hérité](properties_FormProperties.md#inherited-form-name) - [Tableau de formulaire hérité](properties_FormProperties.md#inherited-form-table) - [Hauteur maximale](properties_WindowSize.md#maximum-height-minimum-height) - [Largeur maximale](properties_WindowSize.md#maximum-width-minimum-width) - [Méthode](properties_Action.md#method) - [Hauteur minimale](properties_WindowSize.md#maximum-height-minimum-height) - [Largeur minimale](properties_WindowSize.md#maximum-width-minimum-width) - [Pages](properties_FormProperties.md#pages) - [Paramètres d'impression](properties_Print.md#settings) - [Publié en tant que sous-formulaire](properties_FormProperties.md#published-as-subform) - [Enregistrer la géométrie](properties_FormProperties.md#save-geometry) - [Titre de la fenêtre](properties_FormProperties.md#window-title)
 
+## Supported Events
+
+[On Activate](../Events/onActivate.md) - [On After Edit](../Events/onAfterEdit.md) - [On After Keystroke](../Events/onAfterKeystroke.md) - [On Before Keystroke](../Events/onBeforeKeystroke.md) - [On Begin Drag Over](../Events/onBeginDragOver.md) - [On Bound Variable Change](../Events/onBoundVariableChange.md) - [On Clicked](../Events/onClicked.md) - [On Close Box](../Events/onCloseBox.md) - [On Close Detail](../Events/onCloseDetail.md) - [On Data Change](../Events/onDataChange.md) - [On Deactivate](../Events/onDeactivate.md) - [On Display Detail](../Events/onDisplayDetail.md) - [On Double Clicked](../Events/onDoubleClicked.md) - [On Drop](../Events/onDrop.md) - [On Header](../Events/onHeader.md) - [On Load](../Events/onLoad.md) - [On Load Record](../Events/onLoadRecord.md) - [On Losing focus](../Events/onLosingFocus.md) - [On Menu Selected](../Events/onMenuSelected.md) - [On Mouse Enter](../Events/onMouseEnter.md) - [On Mouse Leave](../Events/onMouseLeave.md) - [On Mouse Move](../Events/onMouseMove.md) - [On Open Detail](../Events/onOpenDetail.md) - [On Outside Call](../Events/onOutsideCall.md) - [On Page Change](../Events/onPageChange.md) - [On Plug in Area](../Events/onPlugInArea.md) - [On Printing Break](../Events/onPrintingBreak.md) - [On Printing Detail](../Events/onPrintingDetail.md) - [On Printing Footer](../Events/onPrintingFooter.md) - [On Resize](../Events/onResize.md) - [On Selection Change](../Events/onSelectionChange.md) - [On Timer](../Events/onTimer.md) - [On Unload](../Events/onUnload.md) - [On Validate](../Events/onValidate.md)

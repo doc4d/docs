@@ -658,9 +658,6 @@
     "message": "Esta página es un borrador. Solo será visible en desarrollo y se excluirá de la versión de producción.",
     "description": "The draft content banner message"
   },
-  "homepage.sections.textensions.4D-Write-Pro-Reference-url": {
-    "message": "https://doc.4d.com/4Dv20R10/4D/20-R10/4D-Write-Pro-Reference.100-7615112.en.html"
-  },
   "4D AIKit": {
     "message": "4D AIKit"
   },
@@ -861,7 +858,7 @@
     "description": "The text before tool call"
   },
   "theme.SearchModal.askAiScreen.duringToolCallText": {
-    "message": "Searching for ",
+    "message": "Buscar por ",
     "description": "The text during tool call"
   },
   "theme.SearchModal.askAiScreen.afterToolCallText": {
@@ -873,7 +870,13 @@
     "description": "The submit question text for footer"
   },
   "theme.SearchModal.footer.backToSearchText": {
-    "message": "Back to search",
+    "message": "Volver a buscar",
     "description": "The back to search text for footer"
+  },
+  "REST API": {
+    "message": "API REST"
+  },
+  "4D Analyzer": {
+    "message": "4D Analyzer"
   }
 }

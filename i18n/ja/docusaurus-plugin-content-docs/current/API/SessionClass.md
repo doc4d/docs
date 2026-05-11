@@ -10,7 +10,7 @@ Session オブジェクトは [`Session`](../commands/session) コマンドに�
 - [高度な Webアプリケーションに対応したスケーラブルセッション](https://blog.4d.com/ja/scalable-sessions-for-advanced-web-applications/)
 - [Permissions: Inspect Session Privileges for Easy Debugging](https://blog.4d.com/permissions-inspect-session-privileges-for-easy-debugging/)
 - [Webセッションのワンタイムパスワード (OTP) の使い方](https://blog.4d.com/ja/connect-your-web-apps-to-third-party-systems/)
-- [Client / server – Handle a session when working on a 4D client](https://blog.4d.com/client-server-handle-a-session-when-working-on-a-4d-client)
+- [Forget server-side wrappers, use 4D Sessions from the client](https://blog.4d.com/forget-server-side-wrappers-use-4d-sessions-from-the-client)
 
 :::
 
@@ -855,7 +855,7 @@ End if
 
 クライアント/サーバーでは、リモートユーザーセッションの `.storage` オブジェクトは、サーバーまたはクライアントのものとは**同じではありません**。
 
-リモートユーザーセッションとWeb セッションが[OTP を使用して共有されていた](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses) 場合、これらはたとえOTP がクライアント側のセッションから[作成](#createotp) されていた場合でも、同じ`.storage` オブジェクトをサーバー上で共有します。
+リモートユーザーセッションとWeb セッションが[OTP を使用して共有されていた](../Desktop/sessions.md#sharing-a-remote-session-for-web-accesses) 場合、これらはたとえOTP がクライアント側のセッションから[作成](#createotp) されていた場合でも、同じ`.storage` オブジェクトをサーバー上で共有します。
 
 :::tip
 

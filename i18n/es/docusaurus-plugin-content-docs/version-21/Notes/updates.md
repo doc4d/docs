@@ -16,9 +16,9 @@ Lea [**Novedades en 4D 21**](https://blog.4d.com/whats-new-in-4d-21lts/), la ent
   - posibilidad para definir los [gestores de peticiones HTTP](../WebServer/http-request-handler.md) utilizando una propiedad `handlers` en el parámetro *settings* de la función [`start()`](../API/WebServerClass.md#start) del servidor Web,
   - el objeto servidor Web contiene nuevas propiedades [`rules`](../API/WebServerClass.md#rules) y [`handlers`](../API/WebServerClass.md#handlers).
 - Nuevos [eventos ORDA sobre los datos](../ORDA/orda-events.md): validateSave, saving, afterSave, validateDrop, dropping, afterDrop.
-- Support of the new [`restrictedByDefault` property](../ORDA/privileges.md#restriction-modes) in the `roles.json` file to block access by default to all resources without explicit permission.
+- Soporte de la nueva propiedad [`restrictedByDefault`](../ORDA/privileges.md#restriction-modes) en el archivo `roles.json` para bloquear el acceso por defecto a todos los recursos sin permiso explícito.
 - Nueva opción que permite utilizar certificados de Windows Certificate Store en lugar de una carpeta local de certificados en las clases [`HTTPRequest`](../API/HTTPRequestClass.md#4dhttprequestnew) y [`HTTPAgent`](../API/HTTPAgentClass.md#4dhttpagentnew).
-- [Sessions API](../API/SessionClass.md) now supports all [desktop sessions](../Desktop/sessions.md) and you can [share a desktop session with a web access](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses), facilitating the development of applications using Qodly pages in Web areas.
+- La [API Sessions](../API/SessionClass.md) soporta ahora todas las [sesiones de escritorio](../Desktop/sessions.md) y se puede [compartir una sesión de escritorio con un acceso web](../Desktop/sessions.md#sharing-a-desktop-session-for-web-accesses), facilitando el desarrollo de aplicaciones que utilicen páginas Qodly en áreas web.
 - La [capa red QUIC](../settings/client-server.md#network-layer) se ha mejorado para gestionar los cambios de interfaz de red de forma transparente, por ejemplo, cuando viajas co su ordenador portátil. Ver [esta entrada del blog](https://blog.4d.com/work-and-move-with-quic-and-network-switching).
 - Ahora puede [crear componentes directamente desde el proyecto local](../Extensions/develop-components.md#creating-components) y [editar su código desde una pestaña dedicada](../Extensions/develop-components.md#editing-all-component-code) en el Explorador 4D sin salir o reiniciar el proyecto.
 - La etapa de activación del producto 4D se ha simplificado y automatizado durante la [conexión](../GettingStarted/Installation.md#sign-in).
@@ -208,7 +208,7 @@ Lea [**Novedades en 4D 20 R5**](https://blog.4d.com/en-whats-new-in-4d-20-R5/), 
 - Soporte de [selecciones de entidades restringidas](../ORDA/entities.md#restricting-entity-selections).
 - Soporte de [clases compartidas](../Concepts/classes.md#shared-classes) y de [clases singleton](../Concepts/classes.md#singleton-classes). Nuevas propiedades de clase: [`isShared`](../API/ClassClass.md#isshared), [`isSingleton`](../API/ClassClass.md#issingleton), [`me`](../API/ClassClass.md#me).
 - Soporte para [inicializar una propiedad de clase en su línea de declaración](../Concepts/classes.md#initializing-the-property-in-the-declaration-line).
-- Nuevo modo [forzar login para peticiones REST](../REST/authUsers.md#force-login-mode) con un [soporte específico en Qodly Studio for 4D](\(developer.4d.com/qodly/4DQodlyPro/force-login\)).
+- Nuevo modo [forzar login para peticiones REST](../REST/authUsers.md#force-login-mode) con un [soporte específico en Qodly Studio for 4D]((developer.4d.com/qodly/4DQodlyPro/force-login)).
 - Nuevo parámetro REST [$format](../REST/$format.md).
 - El objeto [`Session`](../commands/session.md) está ahora disponible en sesiones de usuario remotas y en sesiones de procedimientos almacenados.
 - [**Lista de bugs corregidos**](https://bugs.4d.fr/fixedbugslist?version=20_R5): lista de todos los bugs que se han corregido en 4D 20 R5.

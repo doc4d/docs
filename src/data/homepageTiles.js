@@ -135,7 +135,7 @@ title: (
         <Link to="commands/command-index">
           <Translate>Commands by name</Translate>
         </Link>
-        <Link to="category/commands">
+        <Link to="category/themes">
           <Translate>Commands by theme</Translate>
         </Link>
        <Link to="category/class-API-reference" >

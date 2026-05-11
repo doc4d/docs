@@ -271,10 +271,10 @@ El objeto `boxInfo` devuelto contiene las siguientes propiedades:
 <!-- REF #POP3TransporterClass.getMail().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|msgNumber|Integer|->|Number of the message in the list |
-|headerOnly|Boolean|->|True to download only the email headers (default is False) |
+|msgNumber|Integer|->|Número del mensaje en la lista |
+|headerOnly|Boolean|->|True para descargar sólo los encabezados del correo electrónico (por defecto es False) |
 |Result|Object|<-|[Email object](EmailObjectClass.md#email-object)|
 </div>
 <!-- END REF -->
@@ -341,10 +341,10 @@ Quiere saber el remitente del primer correo del buzón:
 <!-- REF #POP3TransporterClass.getMailInfo().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|msgNumber|Integer|->|Number of the message in the list |
-|Result|Object|<-|mailInfo object|
+|msgNumber|Integer|->|Número del mensaje en la lista |
+|Resultado|Objeto|<-|mailInfo object|
 </div>
 <!-- END REF -->
 
@@ -480,7 +480,7 @@ Quiere saber el número total y el tamaño de los correos electrónicos en el bu
 
 ##### Descripción
 
-La función `.getMIMEAsBlob()` <!-- REF #POP3TransporterClass.getMIMEAsBlob().Summary -->The `.getMIMEAsBlob()` function<!-- END REF -->.
+La función `.getMIMEAsBlob()` <!-- REF #POP3TransporterClass.getMIMEAsBlob().Summary -->devuelve un BLOB que contiene el contenido MIME del mensaje correspondiente al *msgNumber* en el buzón designado por el parámetro [`POP3_transporter`](#pop3-transporter-object)<!-- END REF -->.
 
 En *msgNumber*, pase el número del mensaje a recuperar. Este número es devuelto en la propiedad number por el método [`.getMailInfoList()`](#getmailinfolist).
 

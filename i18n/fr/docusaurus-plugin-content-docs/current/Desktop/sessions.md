@@ -64,7 +64,7 @@ Côté client, deux objets "storage" locaux distincts sont disponibles :
 :::tip Articles de blog sur le sujet
 
 - [Objet session distante 4D avec connexion Client/Serveur et procédure stockée](https://blog.4d.com/new-4D-remote-session-object-with-client-server-connection-and-stored-procedure).
-- [Client / serveur - Gérer une session lorsque l'on travaille sur un client 4D](https://blog.4d.com/client-server-handle-a-session-when-working-on-a-4d-client).
+- [Oubliez les wrappers côté serveur, utilisez les sessions 4D à partir du client](https://blog.4d.com/forget-server-side-wrappers-use-4d-sessions-from-the-client).
 
 :::
 
@@ -164,7 +164,7 @@ Une session autonome est une session mono-utilisateur qui s'exécute lorsque vou
 
 ### Utilisation
 
-La session autonome peut être utilisée pour développer et tester votre application client/serveur et son interaction avec les sessions web et le [partage d'OTP](#sharing-a-desktop-session-for-web-accesses). Vous pouvez utiliser l'objet `session` dans votre code d'une session autonome tout comme l'objet `session` des sessions distantes.
+La session autonome peut être utilisée pour développer et tester votre application client/serveur et son interaction avec les sessions web et le [partage d'OTP](#sharing-a-remote-session-for-web-accesses). Vous pouvez utiliser l'objet `session` dans votre code d'une session autonome tout comme l'objet `session` des sessions distantes.
 
 ### Disponibilité
 

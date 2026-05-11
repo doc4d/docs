@@ -445,11 +445,11 @@ En este ejemplo, la primera entidad se creará y guardará pero la segunda falla
 <!-- REF #DataClassClass.get().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|primaryKey |Integer OR Text|->|Primary key value of the entity to retrieve|
-|settings  |Object|->|Build option: context|
-|Result|4D.Entity|<-|Entity matching the designated primary key|
+|primaryKey |Integer O Text|->|Valor de la llave primaria de la entidad a recuperar|
+|settings |Object|->|Opción de Build: contexto|
+|Resultado|4D.Entity|<-|Entity matching the designated primary key|
 </div>
 <!-- END REF -->
 
@@ -572,9 +572,9 @@ $number:=$ds.Persons.getCount()
 <!-- REF #DataClassClass.getDataStore().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---------|--- |:---:|------|
-|Result|cs.DataStore|<-|Datastore of the dataclass|
+|Resultado|cs.DataStore|<-|Datastore of the dataclass|
 </div>
 <!-- END REF -->
 
@@ -844,10 +844,10 @@ Este ejemplo crea una nueva entidad en la clase de datos "Log" y registra la inf
 <!-- REF #DataClassClass.newSelection().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|keepOrder |Integer |-> |`dk keep ordered`: creates an ordered entity selection,<br/>`dk non ordered`: creates an unordered entity selection (default if omitted) |
-|Result|4D.EntitySelection|<-|New blank entity selection related to the dataclass|
+|keepOrder |Integer |-> |`dk keep ordered`: crea una selección de entidades ordenada,<br/>`dk non ordered`: crea una selección de entidades desordenada (por defecto si se omitió) |
+|Resultado|4D.EntitySelection|<-|New blank entity selection related to the dataclass|
 </div>
 <!-- END REF -->
 
@@ -890,12 +890,12 @@ Cuando se crea, la selección de entidades no contiene ninguna entidad (`mySelec
 <!-- REF #DataClassClass.query().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|queryString |Text |-> |Search criteria as string|
-|formula |Object |-> |Search criteria as formula object|
-|value|any|->|Value(s) to use for indexed placeholder(s)|
-|querySettings|Object|->|Query options: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan|
+|queryString |Text |-> |Criterios de búsqueda como cadena|
+|formula |Object |-> |Criterios de búsqueda como objeto fórmula|
+|value|any|->|Valor(es) a utilizar para marcador(es) de posición indexado(s)|
+|querySettings|Object|->Opciones de consulta: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan|
 |Result|4D.EntitySelection|<-|New entity selection made up of entities from dataclass meeting the search criteria specified in *queryString* or *formula*|
 </div>
 <!-- END REF -->
@@ -1207,7 +1207,7 @@ La fórmula debe haber sido creada utilizando los comandos [`Formula`](FunctionC
 
 * *fórmula* se evalúa para cada entidad y debe devolver true o false. Durante la ejecución de la búsqueda, si el resultado de la fórmula no es un booleano, se considera como false.
 * dentro de la *fórmula*, la entidad está disponible a través del objeto `This`.
-* if the `Formula` object is **null**, the error 1626 ("Expecting a text or formula") is generated, that you can intercept using a method installed with `ON ERR CALL`.
+* si el objeto `Formula` es **null**, se genera el error 1626 ("Esperando un texto o una fórmula"), que puede interceptar utilizando un método instalado con `ON ERR CALL`.
 > Por razones de seguridad, las llamadas a fórmulas dentro de las funciones `query()` pueden ser desestimadas. Ver la descripción del parámetro *querySettings*.
 
 #### Pasar parámetros a fórmulas
@@ -1572,9 +1572,9 @@ Queremos desautorizar las fórmulas, por ejemplo, cuando el usuario introduce su
 <!-- REF #DataClassClass.setRemoteCacheSettings().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|Parámetro|Tipo||Descripción|
 |---|---|---|---|
-|settings|Object|->|Object that sets the timeout and maximum size of the ORDA cache for the dataclass.|
+|settings|Object|->|Objeto que define el tiempo de espera y el tamaño máximo de la caché ORDA para el nivel de datos.|
 </div>
 <!-- END REF -->
 

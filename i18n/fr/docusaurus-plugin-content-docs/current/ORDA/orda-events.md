@@ -44,11 +44,11 @@ Vous pouvez également définir le même événement au niveau de l'attribut et 
 
 En général, les événements ORDA sont exécutés sur le serveur.
 
-Cependant, dans une configuration client/serveur, la fonction d'événement `touched()` peut être exécutée sur **le serveur ou le client**, en fonction de l'utilisation du mot-clé [`local`](./ordaClasses.md#local-functions). Une implémentation spécifique côté client permet de déclencher l'événement sur le client.
+Cependant, dans une configuration client/serveur, la fonction d'événement `touched()` peut être exécutée sur **le serveur ou le client**, en fonction de l'utilisation du mot-clé [`local`](../Concepts/classes.md#local). Une implémentation spécifique côté client permet de déclencher l'événement sur le client.
 
 :::note
 
-Les fonctions ORDA [`constructor()`](./ordaClasses.md#class-constructor) sont toujours exécutées sur le client.
+ORDA [`constructor()`](./ordaClasses.md#class-constructor) functions are always executed locally.
 
 :::
 
@@ -58,21 +58,21 @@ Avec les autres configurations à distance (c'est-à-dire les [applications Qodl
 
 Le tableau suivant liste les événements d'entité ORDA ainsi que leurs règles.
 
-| Evénement                             | Niveau   | Nom de la fonction                                      |                 (C/S) Exécuté sur                | Peut arrêter l'action en renvoyant une erreur |
-| :------------------------------------ | :------- | :------------------------------------------------------ | :-----------------------------------------------------------------: | --------------------------------------------- |
-| Instanciation d'entité                | Entity   | [`constructor()`](./ordaClasses.md#class-constructor-1) |                                client                               | non                                           |
-| Attribut touched                      | Attribut | `event touched <attrName>()`                            | Dépend du mot-clé [`local`](../ORDA/ordaClasses.md#local-functions) | non                                           |
-|                                       | Entity   | `event touched()`                                       | Dépend du mot-clé [`local`](../ORDA/ordaClasses.md#local-functions) | non                                           |
-| Avant l'enregistrement d'une entité   | Attribut | `validateSave <attrName>()`                             |                               serveur                               | oui                                           |
-|                                       | Entity   | `validateSave()`                                        |                               serveur                               | oui                                           |
-| Pendant l'enregistrement d'une entité | Attribut | `saving <attrName>()`                                   |                               serveur                               | oui                                           |
-|                                       | Entity   | `saving()`                                              |                               serveur                               | oui                                           |
-| Après l'enregistrement d'une entité   | Entity   | `afterSave()`                                           |                               serveur                               | non                                           |
-| Avant la suppression d'une entité     | Attribut | `validateDrop <attrName>()`                             |                               serveur                               | oui                                           |
-|                                       | Entity   | `validateDrop()`                                        |                               serveur                               | oui                                           |
-| Pendant la suppression d'une entité   | Attribut | `dropping <attrName>()`                                 |                               serveur                               | oui                                           |
-|                                       | Entity   | `dropping()`                                            |                               serveur                               | oui                                           |
-| Après la suppression d'une entité     | Entity   | `afterDrop()`                                           |                               serveur                               | non                                           |
+| Evénement                             | Niveau   | Nom de la fonction                                      |             (C/S) Execution            | Peut arrêter l'action en renvoyant une erreur |
+| :------------------------------------ | :------- | :------------------------------------------------------ | :-------------------------------------------------------: | --------------------------------------------- |
+| Instanciation d'entité                | Entity   | [`constructor()`](./ordaClasses.md#class-constructor-1) |                           local                           | non                                           |
+| Attribut touched                      | Attribut | `event touched <attrName>()`                            | Dépend du mot-clé [`local`](../Concepts/classes.md#local) | non                                           |
+|                                       | Entity   | `event touched()`                                       | Dépend du mot-clé [`local`](../Concepts/classes.md#local) | non                                           |
+| Avant l'enregistrement d'une entité   | Attribut | `validateSave <attrName>()`                             |                          serveur                          | oui                                           |
+|                                       | Entity   | `validateSave()`                                        |                          serveur                          | oui                                           |
+| Pendant l'enregistrement d'une entité | Attribut | `saving <attrName>()`                                   |                          serveur                          | oui                                           |
+|                                       | Entity   | `saving()`                                              |                          serveur                          | oui                                           |
+| Après l'enregistrement d'une entité   | Entity   | `afterSave()`                                           |                          serveur                          | non                                           |
+| Avant la suppression d'une entité     | Attribut | `validateDrop <attrName>()`                             |                          serveur                          | oui                                           |
+|                                       | Entity   | `validateDrop()`                                        |                          serveur                          | oui                                           |
+| Pendant la suppression d'une entité   | Attribut | `dropping <attrName>()`                                 |                          serveur                          | oui                                           |
+|                                       | Entity   | `dropping()`                                            |                          serveur                          | oui                                           |
+| Après la suppression d'une entité     | Entity   | `afterDrop()`                                           |                          serveur                          | non                                           |
 
 :::note
 
@@ -135,7 +135,7 @@ Cet événement est déclenché chaque fois qu'une valeur est modifiée dans l'e
 
 Cet événement est déclenché dès que le moteur de 4D Server / 4D détecte une modification de la valeur de l'attribut qui peut être due aux actions suivantes :
 
-- en **client/serveur avec le [mot-clé `local`](../ORDA/ordaClasses.md#local-functions)** ou en **4D mono-utilisateur** :
+- en **client/serveur avec le [mot-clé `local`](../Concepts/classes.md#local)** ou en **4D mono-utilisateur** :
   - l'utilisateur saisit une valeur dans un formulaire 4D,
   - le code 4D effectue une assignation avec l'opérateur `:=`. L'événement est également déclenché en cas d'auto-assignation (`$entity.attribute:=$entity.attribute`).
 - en **client/serveur sans le mot-clé `local`** : du code 4D effectue une assignation avec l'opérateur `:=` est [exécuté sur le serveur](../commands/execute-on-server).
