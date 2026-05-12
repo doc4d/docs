@@ -112,8 +112,8 @@ Class extends Entity
 以下のような原則が実装されています:
 
 - 4D アプリケーション内のメソッドとフォームは、それぞれアドレスをパス名という形で持っています。 例えば、table_1 のトリガメソッドは "[trigger]/table_1" にあります。 それぞれのオブジェクトパス名はアプリケーション内で固有です。
-- You can access objects in the 4D application using the commands of the **"Design Object Access"** command theme, for example [`METHOD GET NAMES`](../commands/method-get-names) or [`METHOD GET PATHS`](../commands/method-get-paths).
-- Most of the commands in this theme work in both [interpreted and compiled](../Concepts/interpreted.md) mode. However, commands that modify properties or access contents executable from methods can only be used in interpreted mode (see the table below).
+- **デザインオブジェクトアクセス"** コマンドテーマのコマンド、例えば[`METHOD GET NAMES`](../commands/method-get-names) あるいは [`METHOD GET PATHS`](../commands/method-get-paths) などを使用することによって、4D アプリケーション内のオブジェクトにアクセスすることができます。
+- このテーマ内のほとんどのコマンドは、[インタープリタモードとコンパイルモード](../Concepts/interpreted.md) の両方で動作します。 However, commands that modify properties or access contents executable from methods can only be used in interpreted mode (see the table below).
 - You can use all the commands of this theme with 4D in local or remote mode. However, keep in mind that you cannot use certain commands in compiled mode: the purpose of this theme is to create custom development support tools. You must not use these commands to dynamically change the functioning of a database that is running. For example, you cannot use [`METHOD SET ATTRIBUTE`](../commands/method-set-attribute) to change a method attribute according to the status of the current user.
 - When a command of this theme is called from a [component](../Project/components.md), by default it accesses the component objects. In this case, to access objects of the host, you just pass a `*` as the last parameter.
 
