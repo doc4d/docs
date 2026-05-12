@@ -33,11 +33,11 @@ You can [develop](../Extensions/develop-components.md) and [build](../Desktop/bu
 
 ## コンポーネントの場所
 
-When developing in 4D, the component files can be transparently stored in your computer or located on an external GitHub or GitLab repository.
+4D で開発する際、コンポーネントファイルはコンピューター上または、Github あるいはGitLab リポジトリ上に、透過的に保存することができます。
 
 :::note
 
-This section describes how to work with components in the **4D** and **4D Server** environments. 他の環境では、コンポーネントの管理は異なります:
+この章では、**4D** と **4D Server** 環境でのコンポーネントの使用方法について説明します。 他の環境では、コンポーネントの管理は異なります。 他の環境では、コンポーネントの管理は異なります:
 
 - [リモートモードの 4D](../Desktop/clientServer.md) では、サーバーがコンポーネントを読み込み、リモートアプリケーションに送信します。
 - 統合されたアプリケーションでは、コンポーネントは [ビルドする際に組み込まれます](../Desktop/building.md#プラグインコンポーネントページ)。
@@ -49,13 +49,13 @@ This section describes how to work with components in the **4D** and **4D Server
 4Dプロジェクトにコンポーネントを読み込むには、以下の方法があります:
 
 - コンポーネントファイルを[プロジェクトの**Components**フォルダ](architecture.md#components)内にコピーする(インタープリタ版コンポーネントパッケージフォルダはフォルダ名の末尾が".4dbase" になっている必要があります、上記参照)。
-- or, declare the component in the **dependencies.json** file of your project; this is done automatically for local files when you [**add a dependency using the Dependency manager interface**](#adding-a-github-or-gitlab-dependency).
+- または、プロジェクトの **dependencies.json** ファイルでコンポーネントを宣言します。これは、[**依存関係インターフェースを使用して依存関係を追加**](#githubまたはgitlab依存関係の追加) するときに、ローカルファイルに対して自動的におこなわれます。
 
 **dependencies.json** ファイルで宣言されているコンポーネントは、異なる場所に保存できます:
 
 - 4Dプロジェクトのパッケージフォルダーと同じ階層 (デフォルトの場所です)
 - マシン上の任意の場所 (コンポーネントパスは **environment4d.json** ファイル内で宣言する必要があります)
-- on a GitHub or [GitLab](https://blog.4d.com/integrate-4d-components-directly-from-gitlab) repository: the component path can be declared in the **dependencies.json** file or in the **environment4d.json** file, or in both files (a [local cache](#local-cache-for-dependencies) is then handled automatically).
+- GitHub あるいは [GitLab](https://blog.4d.com/integrate-4d-components-directly-from-gitlab) レポジトリ: コンポーネントのパスは**dependencies.json** ファイルまたは**environment4d.json** ファイル、またはその両方のファイルで宣言することができます(その場合は[ローカルキャッシュ](#依存関係のローカルキャッシュ) が自動的に管理されます)。
 
 同じコンポーネントが異なる場所にインストールされている場合、[優先順位](#優先順位) が適用されます。
 
@@ -72,7 +72,7 @@ This section describes how to work with components in the **4D** and **4D Server
 このファイルには次の内容を含めることができます:
 
 - [ローカル保存されている](#ローカルコンポーネント) コンポーネントの名前(デフォルトパス、または **environment4d.json** ファイルで定義されたパス)。
-- names of components [stored on GitHub or GitLab repositories](#components-stored-on-git-hosting-platforms) (their path can be defined in this file or in an **environment4d.json** file).
+- [GitHub またはGitLab リポジトリ](#components-stored-on-git-hosting-platforms) に保存されているコンポーネントの名前 (パスはこのファイルまたは **environment4d.json** ファイルで定義できます)。
 
 #### environment4d.json
 
@@ -81,7 +81,7 @@ This section describes how to work with components in the **4D** and **4D Server
 このアーキテクチャーの主な利点は次のとおりです:
 
 - **environment4d.json** ファイルをプロジェクトの親フォルダーに保存することで、コミットしないように選択できることです。これにより、ローカルでのコンポーネントの管理が可能になります。
-- if you want to use the same GitHub or GitLab repository for several of your projects, you can reference it in the **environment4d.json** file and declare it in the **dependencies.json** file.
+- 複数のプロジェクトで同じ GitHubリポジトリまたはGitLabリポジトリを使用したい場合は、**dependencies.json** ファイルでそれを宣言し、**environment4d.json** ファイルで参照することができます。
 
 ### 優先順位
 
@@ -173,47 +173,47 @@ flowchart TB
 
 コンポーネントアーキテクチャーの柔軟性と移植性のため、ほとんどの場合、相対パスを使用することが **推奨** されます (特に、プロジェクトがソース管理ツールにホストされている場合)。 絶対パスは、1台のマシンと 1人のユーザーに特化したコンポーネントの場合にのみ使用すべきです。
 
-### Components stored on Git hosting platforms {#components-stored-on-git-hosting-platforms}
+### Gitホスティングプラットフォームに保存されたコンポーネント{#components-stored-on-git-hosting-platforms}
 
-4D components available as **releases** on GitHub and GitLab platforms can be referenced and automatically loaded and updated in your 4D projects.
+GitHub またはGitLab プラットフォーム上の**リリース**として利用可能な 4Dコンポーネントを参照して、4Dプロジェクトに自動で読み込んで更新することができます。
 
 :::note
 
-Regarding components stored on GitHub or GitLab, both [**dependencies.json**](#dependenciesjson) and [**environment4d.json**](#environment4djson) files support the same contents.
+GitHub またはGitLab に保存されているコンポーネントに関しては、[**dependencies.json**](#dependenciesjson) ファイルと [**environment4d.json**](#environment4djson) ファイルの両方で同じ内容をサポートしています。
 
 :::
 
-To be able to directly reference and use a 4D component stored on GitHub or GitLab, you need to configure the component's repository.
+GitHub またはGitLab に保存された 4Dコンポーネントを直接参照して使用するには、コンポーネントのリポジトリを設定する必要があります。
 
-#### Configuring a GitHub repository
+#### GitHubリポジトリの設定
 
 1. ZIP形式でコンポーネントファイルを圧縮します。
-2. GitHubリポジトリと同じ名前をこのアーカイブに付けます。 For example, for a "my-4D-Component" repository, the archive must be named "my-4D-Component.zip".
+2. GitHubリポジトリと同じ名前をこのアーカイブに付けます。 例えば、"my-4D-Component" というレポジトリに対しては、アーカイブは"my-4D-Component.zip" という名前をつけなければなりません。
 
 - このリポジトリの [GitHubリリース](https://docs.github.com/ja/repositories/releasing-projects-on-github/managing-releases-in-a-repository) にアーカイブを統合します。
 
 これらのステップは、4Dコードや GitHubアクションを使用することで簡単に自動化できます。
 
-#### Configuring a GitLab repository
+#### GitLabリポジトリの設定
 
-GitLab releases only store the name and URL of assets, they do not contain uploaded files. You need to provide your component's zip file as a link.
+GitLab リリースは対象の名前とURL のみを保存するため、アップロードされたファイルは含みません。 コンポーネントのzip ファイルをリンクとして提供する必要があります。
 
-1. Upload the component's ZIP file somewhere, i.e. either on an external server, or [using GitLab Package Registry](#using-the-gitlab-package-registry) (generic package).
-2. Create a [GitLab release](https://docs.gitlab.com/user/project/releases/) for your component, including the link to your component's file as release asset.
+1. コンポーネントのzip ファイルをどこか(外部サーバー、またはを[GitLab パッケージレジストリ](#gitlabパッケージレジストリを使用) (汎用パッケージ)を使用して)アップロードします。
+2. コンポーネントに対して[GitLab リリース](https://docs.gitlab.com/user/project/releases/) を作成し、そこにコンポーネントのファイルへのリンクをリリースアセットとして含めます。
 
-The asset name is typically an artifact link name (\<my-component\>.zip).
+アセットの名前は通常、アーティファクトリンク名です(\<my-component\>.zip)。
 
-#### Using the GitLab Package Registry
+#### Gitlabパッケージレジストリを使用
 
-The [GitLab Package Registry](https://docs.gitlab.com/user/packages/package_registry/) allows you to host your files in GitLab itself. Its main advantages include an authenticated access, stable and versioned urls, and the ability to associate binairies with release tags. To use the Package Registry:
+[GitLab パッケージレジストリ](https://docs.gitlab.com/user/packages/package_registry/) を使用すると、ファイルをGitLab 自身にファイルをホストすることができるようになります。 主な利点は、認証されたアクセス、安全かつバージョン分けされたURL、またリリースタグにバイナリーを割り当てることができる機能などです。 パッケージレジストリを使用するには:
 
-1. Build your component file (for example: *MyComponent.zip*)
-2. Upload it to the [generic packages repository](https://docs.gitlab.com/user/packages/generic_packages/) using a script (see [examples in the GitLab documentation](https://docs.gitlab.com/user/packages/generic_packages/#publish-a-single-file)).
-3. **Deploy** \> **Package Registry** to see the result.
-4. Use the package URL as a release asset link.
-5. Associate it with the same Git tag.
+1. コンポーネントファイルをビルドします(例: *MyComponent.zip*)
+2. それをスクリプトを使用して[汎用パッケージリポジトリ](https://docs.gitlab.com/user/packages/generic_packages/) へとアップロードします([GitLab ドキュメンテーション内の例題](https://docs.gitlab.com/user/packages/generic_packages/#publish-a-single-file))。
+3. **Deploy** \> **Package Registry** を選択して結果を見ることができます。
+4. パッケージURL をリリースアセットリンクとして使用します。
+5. それに同じGit タグを割り当てます。
 
-:::tip Tutorial: Create and Use a 4D Component Release with Gitlab
+:::tip チュートリアル: GitLab で4D コンポーネントリリースを作成して使用する
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Zgx7MHWh9EE?si=K4oV-M2kzk6v2VSm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -221,7 +221,7 @@ The [GitLab Package Registry](https://docs.gitlab.com/user/packages/package_regi
 
 #### パスの宣言
 
-You declare components stored on GitHub and GitLab in the [**dependencies.json** file](#dependenciesjson) in the following way:
+GitHub およびGitLab に保存されているコンポーネントは [**dependencies.json**ファイル](#dependenciesjson) にて次のように宣言します:
 
 ```json title="dependencies.json"
 {
