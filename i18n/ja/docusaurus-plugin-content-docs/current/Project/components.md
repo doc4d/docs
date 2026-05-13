@@ -5,7 +5,7 @@ title: 依存関係
 
 4D [プロジェクトアーキテクチャー](../Project/architecture.md) はモジュール式です。 [**コンポーネント**](../Concepts/components.md) や [**プラグイン**](../Concepts/plug-ins.md) をインストールすることで、4Dプロジェクトに追加機能を持たせることができます。 コンポーネントは4D コードで書かれていますが、プラグインは[あらゆる言語を使用してビルドすることができます](../Extensions/develop-plug-ins.md)。
 
-You can [develop](../Extensions/develop-components.md) and [build](../Desktop/building.md) your own 4D components, or download public components shared by the 4D community that [can be found for example on GitHub](https://github.com/topics/4d-component).
+独自の 4Dコンポーネントを [開発](../Extensions/develop-components.md) し、[ビルド](../Desktop/building.md) することもできますし、4Dコミュニティによって共有されているパブリックコンポーネントを [例えばGitHubなどで見つけて](https://github.com/topics/4d-component) ダウンロードすることもできます。
 
 4D 環境にインストールされると、拡張機能は特別なプロパティを持つ**依存関係** として扱われます。
 
@@ -241,8 +241,8 @@ GitHub およびGitLab に保存されているコンポーネントは [**depen
 }
 ```
 
-- (GitLab dependencies only) Use the "host" property to declare a private GitLab self-hosted instance. Using only the "gitlab" property indicates a GitLab repository hosted on https://gitlab.com.
-- "myGitHubComponent1" is referenced and declared for the project, although "myGitHubComponent2" is only referenced. **environment4d.json** ファイルは必須ではありません。 このファイルは、**dependencies.json** ファイル内で宣言された一部またはすべてのコンポーネントのついて、**カスタムパス** を定義するのに使用します。 このファイルは、プロジェクトパッケージフォルダーまたはその親フォルダーのいずれかに保存することができます (ルートまでの任意のレベル)。
+- (GitLab 依存関係のみ) "host" プロパティを使用してプライベートなGitLab のセルフホストインスタンスを宣言します。 "gitlab" プロパティのみを使用する場合、それはhttps://gitlab.com にホストされているGitLab レポジトリであるということを意味します。
+- "myGitHubComponent1" は宣言とパス定義の両方がされていますが、"myComponent2" は宣言されているだけです。 そのため、[**environment4d.json**](#environment4djson) ファイルにパスを定義する必要があります:
 
 ```json title="environment4d.json"
 {
@@ -258,7 +258,7 @@ GitHub およびGitLab に保存されているコンポーネントは [**depen
 
 #### タグとバージョン
 
-When a release is created in GitHub or GitLab, it is associated to a **tag** and a **version**. 依存関係マネージャーはこれらの情報を使用してコンポーネントの自動利用可能性を管理します。
+GitHubでリリースが作成されると、そこに**タグ** と**バージョン** が関連づけられます。 依存関係マネージャーはこれらの情報を使用してコンポーネントの自動利用可能性を管理します。
 
 :::note
 
@@ -266,7 +266,7 @@ When a release is created in GitHub or GitLab, it is associated to a **tag** and
 
 :::
 
-- **タグ** はリリースを一意に参照するテキストです。 In the [**dependencies.json**](#dependenciesjson) and [**environment4d.json**](#environment4djson) files, you can indicate the release tag you want to use in your project. たとえば:
+- **タグ** はリリースを一意に参照するテキストです。 [**dependencies.json** ファイル](#dependenciesjson) および [**environment4d.json**](#environment4djson) ファイルでは、プロジェクトで使用するリリースタグを指定することができます。 たとえば:
 
 ```json title="dependencies.json"
 {
@@ -296,8 +296,8 @@ When a release is created in GitHub or GitLab, it is associated to a **tag** and
 
 以下にいくつかの例を示します:
 
-- "latest" (GitHub only): the GitHub release with the "latest" badge (to be selected by the developer).
-- "highest" (GitLab only): the GitLab release with the highest semantic value.
+- "latest" (GitHub のみ): "latest" バッジを持ったGitHub リリース(デベロッパーによって選択されます)。
+- "highest" (GitLab のみ): 最もセマンティック値が高いGitLab リリース。
 - "`*`": リリースされている最新バージョン。
 - "`1.*`": メジャーバージョン 1 の全バージョン。
 - "`1.2.*`": マイナーバージョン 1.2 のすべてのパッチ。
@@ -311,7 +311,7 @@ When a release is created in GitHub or GitLab, it is associated to a **tag** and
 
 タグやバージョンを指定しない場合、4D は自動的に "latest" バージョンを取得します。
 
-The Dependency manager checks periodically if component updates are available on the Git hosting platform. If a new version is available for a component, an update indicator is then displayed for the component in the dependency list, [depending on your settings](#defining-a-dependency-version-range).
+依存関係マネージャーはコンポーネントの更新がGitHub上で利用可能かどうかを定期的にチェックします。 コンポーネントに対して新しいバージョンが利用可能だった場合、[設定に応じて](#依存関係バージョン範囲)依存関係一覧の中で更新マークが表示されます。
 
 #### 4Dバージョンタグの命名規則
 
