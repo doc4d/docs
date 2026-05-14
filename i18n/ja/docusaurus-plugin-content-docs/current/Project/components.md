@@ -526,7 +526,7 @@ GitHubでリリースが作成されると、そこに**タグ** と**バージ�
 
 ![dependency-add-git-2](../assets/en/Project/dependency-add-git-2.png)
 
-Once the connection is established, an icon ![dependency-gitlogo](../assets/en/Project/dependency-gitlogo.png) is displayed on the right side of the entry area. このアイコンをクリックすると、既定のブラウザーでリポジトリを開くことができます。
+接続が確立されると、入力エリアの右側にアイコン ![dependency-gitlogo](../assets/en/Project/dependency-gitlogo.png) が表示されます。 このアイコンをクリックすると、既定のブラウザでリポジトリを開くことができます。
 
 :::note
 
