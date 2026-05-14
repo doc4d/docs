@@ -3,7 +3,7 @@ id: project-method-properties
 title: プロジェクトメソッド
 ---
 
-## Roles
+## ロール
 
 その実行方法や使用方法に応じて、プロジェクトメソッドは次のような役割を果たします:
 
@@ -12,7 +12,7 @@ title: プロジェクトメソッド
 - メニューメソッド
 - プロセスメソッド
 - イベントまたはエラー処理メソッド
-- APIs to be called from the web server, transformation tags, extensions...
+- Web サーバー、変換タグ、拡張機能などから呼び出されるAPI
 - また、テスト目的などで、プロジェクトメソッドを手動で実行することもできます。
 
 ### サブルーチン
@@ -66,7 +66,7 @@ title: プロジェクトメソッド
 
 プロジェクトメソッドは、**フォーミュラ** オブジェクトにカプセル化して、オブジェクトから呼び出すことができます。
 
-The [`Formula`](../commands/formula) or [`Formula from string`](../commands/formula-from-string) commands allow you to create [native formula objects](../API/FormulaClass.md) that you can encapsulate in object properties. つまり、カスタムなオブジェクトメソッドを実装することが可能です。
+[`Formula`](../commands/formula) または [`Formula from string`](../commands/formula-from-string) コマンドを使用すると、オブジェクトプロパティにカプセル化可能な[ネイティブなフォーミュラオブジェクト](../API/FormulaClass.md) を作成することができます。 つまり、カスタムなオブジェクトメソッドを実装することが可能です。
 
 オブジェクトプロパティに保存されているメソッドを実行するには、プロパティ名のあとに **()** をつけます。 例:
 
@@ -89,15 +89,15 @@ $o.custom_Alert() // "Hello world!" と表示します
 $o["custom_Alert"]() // "Hello world!" と表示します
 ```
 
-For more information, see the [`4D.Formula` class description](../API/FormulaClass.md) and the [Using object properties as named parameters](../Concepts/parameters.md#using-object-properties-as-named-parameters) paragraph.
+詳細な情報については、[`4D.Formula` クラスの詳細](../API/FormulaClass.md) および [オブジェクトプロパティを名前付き引数として使用する](../Concepts/parameters.md#オブジェクトプロパティを名前付き引数として使用する) の章を参照してください。
 
 ### メニューメソッド
 
-メニューメソッドは、カスタムメニューから呼び出されるプロジェクトメソッドです。 You assign the method to the menu command using the Menu editor or a [command of the "Menus" theme](../commands/theme/Menus.md). メニューが選択されると、それに対応するメニューメソッドが実行されます。 特定の処理を実行するメニューメソッドを割り当てたカスタムメニューを作成することで、デスクトップアプリケーションのユーザーインターフェースをカスタマイズすることができます。
+メニューメソッドは、カスタムメニューから呼び出されるプロジェクトメソッドです。 メニューエディターまたは["メニュー" テーマのコマンド](../commands/theme/Menus.md) を使用して、メニューにメソッドを割り当てます。 メニューが選択されると、それに対応するメニューメソッドが実行されます。 特定の処理を実行するメニューメソッドを割り当てたカスタムメニューを作成することで、デスクトップアプリケーションのユーザーインターフェースをカスタマイズすることができます。
 
-メニューメソッドにより、単一または複数の処理を実行することができます。 For example, a menu command for entering records might call a method that performs two tasks: displaying the appropriate input form, and calling the [`ADD RECORD`(../commands/add-record)] command until the user cancels the data entry activity.
+メニューメソッドにより、単一または複数の処理を実行することができます。 メニューメソッドにより、単一または複数の処理を実行することができます。 たとえば、データ入力のメニューに、以下の2つの処理を実行するメソッドを割り当てられます。まず適切な入力フォームを表示し、次にユーザーがキャンセルするまでの間[`ADD RECORD`](../commands/add-record) コマンドによるデータ入力を繰り返します。
 
-Automating sequences of activities is a very powerful capability of the 4D programming language. カスタムメニューを使用することで処理を自動化することができ、アプリケーションのユーザーにより多くのガイダンスを提供することができます。
+連続した処理の自動化は、4D プログラミング言語の強力な機能の一つです。 カスタムメニューを使用することで処理を自動化することができ、アプリケーションのユーザーにより多くのガイダンスを提供することができます。
 
 ### プロセスメソッド
 
