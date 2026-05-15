@@ -101,23 +101,23 @@ $o["custom_Alert"]() // "Hello world!" と表示します
 
 ### プロセスメソッド
 
-**プロセスメソッド** とは、プロセスの開始時に呼び出されるプロジェクトメソッドのことです。 The process lasts only as long as the process method continues to execute, except if it is a [Worker process](../Develop/processes.md#worker-processes). Note that a menu method attached to a menu command with [*Start a New Process*](../Menus/properties.md#start-a-new-process) property is also the process method for the newly started process.
+**プロセスメソッド** とは、プロセスの開始時に呼び出されるプロジェクトメソッドのことです。 [ワーカープロセス](../Develop/processes.md#worker-processes) の場合を除いて、プロセスはプロセスメソッドが実行されている間だけ存続します。 メニューに属するメニューメソッドのプロパティとして [*新規プロセス開始*](../Menus/properties.md#start-a-new-process) をチェックしている場合、そのメニューメソッドは新規プロセスのプロセスメソッドでもあります。
 
 ### イベント・エラー処理メソッド
 
-**イベント処理メソッド** は、イベントを処理するプロセスメソッドとして、分離されたプロセス内で実行されます。 通常、開発者はイベント管理の大部分を 4Dに任せます。 たとえば、データ入力中にキーストロークやクリックを検出した 4Dは、正しいオブジェクトとフォームメソッドを呼び出します。このため開発者は、これらのメソッド内でイベントに対し適切に応答できるのです。 For more information, see the description of the command [`ON EVENT CALL`](../commands/on-event-call).
+**イベント処理メソッド** は、イベントを処理するプロセスメソッドとして、分離されたプロセス内で実行されます。 通常、開発者はイベント管理の大部分を 4Dに任せます。 たとえば、データ入力中にキーストロークやクリックを検出した 4Dは、正しいオブジェクトとフォームメソッドを呼び出します。このため開発者は、これらのメソッド内でイベントに対し適切に応答できるのです。 詳細については[`ON EVENT CALL`](../commands/on-event-call) コマンドの説明を参照してください。
 
 **エラー処理メソッド** は、割り込みを実行するプロジェクトメソッドです。 エラーや例外が発生するたびに呼び出されます。 詳細については、[エラー処理](../Concepts/error-handling.md) を参照ください。
 
-### API Methods
+### APIメソッド
 
-Project methods can be called from external contexts such as other applications, web apps, processed files, etc., in which case they can be seen as API. Such calls include:
+プロジェクトメソッドは、他のアプリケーション、Web アプリ、処理されたファイル、などの外部コンテキストから呼び出し可能です。その場合、これらはAPI としてみなすことができます。 このような呼び出しには以下のようなものが含まれます:
 
-- calls to the web server through [http request handlers](../WebServer/http-request-handler.md) or [`4DACTION` URLs](../WebServer/httpRequests.md#4daction),
-- [tag processing](../Tags/transformation-tags.md)
-- expressions called from extensions ([4D Write Pro](../WritePro/commands/wp-insert-formula.md), [4D View Pro](../ViewPro/formulas.md) or form objects (e.g. [`ST INSERT EXPRESSION`](../commands/st-insert-expression)).
+- [http リクエストハンドラー](../WebServer/http-request-handler.md) または [`4DACTION` URL](../WebServer/httpRequests.md#4daction) を通したWeb サーバーへの呼び出し。
+- [タグ処理](../Tags/transformation-tags.md)
+- 拡張機能([4D Write Pro](../WritePro/commands/wp-insert-formula.md)、 [4D View Pro](../ViewPro/formulas.md)) またはフォームオブジェクト(例: [`ST INSERT EXPRESSION`](../commands/st-insert-expression))から呼び出された式。
 
-External calls to project methods must be allowed in the [project method properties](../Project/project-method-properties.md).
+プロジェクトメソッドへの外部呼び出しは、[プロジェクトメソッドプロパティ](../Project/project-method-properties.md) で許可されている必要があります。
 
 ### 手動での実行
 
@@ -235,7 +235,7 @@ External calls to project methods must be allowed in the [project method propert
 4D内での再帰呼び出しの代表的な使用方法は以下のとおりです:
 
 - 例題と同じく、互いに関連するテーブル内でのレコードの取り扱い。
-- Browsing documents and folders on your disk, using the commands [`FOLDER LIST`](../commands/folder-list) and [`DOCUMENT LIST`](document-list). フォルダーにはフォルダーとドキュメントが含まれており、サブフォルダーはまたフォルダーとドキュメントを含むことができます。
+- [`FOLDER LIST`](../commands/folder-list) および [`DOCUMENT LIST`](document-list) などのコマンドを使用して、ディスク上のドキュメントやフォルダをブラウズする。 フォルダーにはフォルダーとドキュメントが含まれており、サブフォルダーはまたフォルダーとドキュメントを含むことができます。
 
 :::warning
 
