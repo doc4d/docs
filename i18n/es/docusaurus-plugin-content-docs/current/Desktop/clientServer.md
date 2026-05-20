@@ -125,7 +125,7 @@ Esta funcionalidad está diseñada para equipos de desarrollo de tamaño pequeñ
 
 :::
 
-## Code execution location
+## Lugar de ejecución del código
 
 In a client/server application, it is important to know where your code will be actually executed: **server-side** or **client-side**. Execution location is crucial when you want to implement user session-related code, share information between processes, access data, etc.
 
