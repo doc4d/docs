@@ -1,9 +1,9 @@
 ---
 id: provider-model-aliases
-title: Provider & Model Aliases
+title: Alias de proveedores y modelos
 ---
 
-# Provider & Model Aliases
+# Alias de proveedores y modelos
 
 The OpenAI client supports provider and model aliases, allowing you to define provider configurations and named model aliases in JSON files and reference them using simple syntaxes.
 
@@ -29,7 +29,7 @@ The client automatically loads provider configurations from the first existing f
 
 **Important:** Only the **first existing file** is loaded. There is no merging of multiple files.
 
-### Configuration File Format
+### Formato del archivo de configuración
 
 ```json
 {
@@ -50,12 +50,12 @@ The client automatically loads provider configurations from the first existing f
 }
 ```
 
-### Provider Fields
+### Campos del proveedor
 
 | Campo          | Tipo | Requerido | Descripción                                                    |
 | -------------- | ---- | --------- | -------------------------------------------------------------- |
-| `baseURL`      | Text | Sí        | API endpoint URL                                               |
-| `apiKey`       | Text | No        | API key value                                                  |
+| `baseURL`      | Text | Sí        | URL del punto de terminación de la API                         |
+| `apiKey`       | Text | No        | Valor de la llave API                                          |
 | `organization` | Text | No        | Organization ID (optional, OpenAI-specific) |
 | `project`      | Text | No        | Project ID (optional, OpenAI-specific)      |
 
@@ -64,7 +64,7 @@ The client automatically loads provider configurations from the first existing f
 | Campo       | Tipo | Requerido | Descripción                                                         |
 | ----------- | ---- | --------- | ------------------------------------------------------------------- |
 | `proveedor` | Text | Sí        | Name of the provider (must exist in `providers`) |
-| `model`     | Text | Sí        | Model ID used by the provider                                       |
+| `model`     | Text | Sí        | ID del modelo utilizado por el proveedor                            |
 
 ### Example Configuration
 
@@ -105,7 +105,7 @@ The client automatically loads provider configurations from the first existing f
 
 ## Usage in API Calls
 
-### Model Parameter Formats
+### Formatos de parámetro del modelo
 
 Two syntaxes are supported:
 
@@ -151,7 +151,7 @@ var $result := $client.embeddings.create("text"; ":my-embedding")
 
 ### How It Works
 
-#### Provider alias (`provider:model`)
+#### Alias de proveedor (`provider:model`)
 
 When you use the `provider:model` syntax, the client automatically:
 
@@ -164,7 +164,7 @@ When you use the `provider:model` syntax, the client automatically:
 3. **Makes the API request** using the resolved configuration
    - Sends request to the provider's `baseURL` with the correct `apiKey`
 
-#### Model alias (bare name)
+#### Alias de modelo (nombre simple)
 
 When you use a bare model name that matches a configured alias, the client automatically:
 
@@ -175,7 +175,7 @@ When you use a bare model name that matches a configured alias, the client autom
 
 3. **Makes the API request** using the provider's endpoint and the stored model ID
 
-### Using Plain Model Names
+### Uso de nombres de modelos sencillos
 
 If you specify a model name **without** a provider prefix or `:` prefix, the client uses the configuration from its constructor:
 
@@ -224,7 +224,7 @@ var $embedding1 := $client.embeddings.create($text; "openai:text-embedding-3-sma
 var $embedding2 := $client.embeddings.create($text; "local:nomic-embed-text")
 ```
 
-## Configuration Management
+## Gestión de configuraciones
 
 Provider configurations can be managed through [4D Settings](https://developer.4d.com/docs/settings/ai) or by directly editing JSON files.
 
@@ -234,27 +234,27 @@ Provider configurations can be managed through [4D Settings](https://developer.4
 2. Edit the appropriate JSON file (userData, user, or structure)
 3. Restart your application or create a new OpenAI client instance to load changes
 
-**Recommended file location:**
+**Ubicación del archivo recomendado:**
 
 - **For user-specific configs:** `<data folder>/Settings/AIProviders.json`
 - **For application defaults:** `/SOURCES/AIProviders.json`
 
 ### No Reload Capability
 
-Once a client is instantiated, it cannot reload provider configurations. To pick up configuration changes:
+Once a client is instantiated, it cannot reload provider configurations. Para recoger los cambios de configuración:
 
 ```4d
 // Configuration changed - create new client
 var $client := cs.AIKit.OpenAI.new()
 ```
 
-## Security Considerations
+## Consideraciones de seguridad
 
 When using 4D in client/server mode, it is **strongly recommended** to execute AI-related code on the server side to protect API tokens and credentials from exposure to client machines.
 
-## Common Use Cases
+## Casos de uso comunes
 
-### Local Development with Ollama
+### Desarrollo local con Ollama
 
 ```json
 {
