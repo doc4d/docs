@@ -37,7 +37,7 @@ Creates a new instance that loads provider configuration from the `AIProviders.j
 
 ## Utilización
 
-### Integration with OpenAI Class
+### Integración con la clase OpenAI
 
 ```4d
 var $client := cs.AIKit.OpenAI.new()
@@ -48,7 +48,7 @@ var $result := $client.chat.completions.create($messages; {model: "anthropic:cla
 var $result := $client.chat.completions.create($messages; {model: "local:llama3"})
 ```
 
-### Direct Provider Access
+### Acceso directo de proveedores
 
 ```4d
 var $providers := cs.AIKit.OpenAIProviders.new()
@@ -72,7 +72,7 @@ Get a provider configuration by name.
 
 | Parámetros | Tipo   | Descripción                                           |
 | ---------- | ------ | ----------------------------------------------------- |
-| *name*     | Text   | The provider name                                     |
+| *name*     | Text   | El nombre del proveedor                               |
 | Resultado  | Object | Provider configuration object, or `Null` if not found |
 
 #### Ejemplo
@@ -91,11 +91,11 @@ End if
 
 **list**() : Collection
 
-Get all provider names.
+Obtener todos los nombres de proveedores.
 
-| Parámetros | Tipo       | Descripción                  |
-| ---------- | ---------- | ---------------------------- |
-| Resultado  | Collection | Collection of provider names |
+| Parámetros | Tipo       | Descripción                         |
+| ---------- | ---------- | ----------------------------------- |
+| Resultado  | Collection | Colección de nombres de proveedores |
 
 #### Ejemplo
 
@@ -112,19 +112,19 @@ End for each
 
 **modelAliases**() : Collection
 
-Get all configured model aliases.
+Recuperar todos los alias de modelo configurados.
 
-| Parámetros | Tipo       | Descripción                       |
-| ---------- | ---------- | --------------------------------- |
-| Resultado  | Collection | Collection of model alias objects |
+| Parámetros | Tipo       | Descripción                              |
+| ---------- | ---------- | ---------------------------------------- |
+| Resultado  | Collection | Colección de objetos de alias de modelos |
 
 Each object in the collection contains:
 
-| Propiedad   | Tipo | Descripción                       |
-| ----------- | ---- | --------------------------------- |
-| `name`      | Text | Model alias name                  |
-| `proveedor` | Text | Nombre del proveedor              |
-| `model`     | Text | Model ID to use with the provider |
+| Propiedad   | Tipo | Descripción                               |
+| ----------- | ---- | ----------------------------------------- |
+| `name`      | Text | Nombre del alias del modelo               |
+| `proveedor` | Text | Nombre del proveedor                      |
+| `model`     | Text | ID del modelo a utilizar con el proveedor |
 
 #### Ejemplo
 
@@ -137,11 +137,11 @@ For each ($model; $models)
 End for each
 ```
 
-## Model Resolution
+## Resolución del modelo
 
 Two syntaxes are supported for model resolution:
 
-### Provider alias (`provider:model`)
+### Alias de proveedor (`provider:model`)
 
 Specify the provider and model name directly:
 
@@ -154,7 +154,7 @@ Esto se resuelve internamente:
 
 1. Split `"openai:gpt-5.1"` into provider=`"openai"` and model=`"gpt-5.1"`
 2. Look up the `"openai"` provider configuration
-3. Extract `baseURL` and `apiKey`
+3. Extracción de `baseURL` y `apiKey`
 4. Make the API request using the resolved configuration
 
 **Ejemplos:**
@@ -163,7 +163,7 @@ Esto se resuelve internamente:
 - `"anthropic:claude-3-opus"` → Use Anthropic provider with claude-3-opus
 - `"local:llama3"` → Use local provider with llama3 model
 
-### Model alias (bare name)
+### Alias de modelo (nombre simple)
 
 Use a named model by its bare name from the `models` section of the configuration:
 
