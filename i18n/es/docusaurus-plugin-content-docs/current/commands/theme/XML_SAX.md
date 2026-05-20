@@ -48,7 +48,7 @@ Closing an XML document must be carried out using the [`CLOSE DOCUMENT`](../../c
 When writing SAX documents, 4D uses the following default settings for end-of-line characters and BOM (byte order mask) usage:
 
 - CRLF characters on Windows and LF on macOS for end-of-line characters
-- files are written without BOM.
+- archivos escritos sin BOM.
 
 :::note Compatibilidad
 
