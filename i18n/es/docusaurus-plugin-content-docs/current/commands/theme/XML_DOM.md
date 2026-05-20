@@ -55,7 +55,7 @@ Many commands then let you read, parse and write the elements and attributes. Er
 
 Note about use of XML BLOB parameters: For historical reasons, XML commands such as [`DOM Parse XML variable`](../../commands/dom-parse-xml-variable) accept BLOB type parameters. However, it is highly recommended to store XML structures as Text. The use of BLOBs is reserved for processing binary data. In conformity with XML specifications, binary data are automatically encoded in Base64, even when the BLOB contains text.
 
-### Support of XPath notation
+### Soporte de la notación XPath
 
 Several XML DOM commands ([`DOM Create XML element`](../../commands/dom-create-xml-element), [`DOM Find XML element`](../../commands/dom-find-xml-element), [`DOM Create XML element arrays`](../../commands/dom-create-xml-element-arrays) and [`DOM SET XML ELEMENT VALUE`](../../commands/dom-set-xml-element-value)) support some XPath expressions for accessing XML elements.
 
