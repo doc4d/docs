@@ -892,7 +892,7 @@ For a overall description of where code is actually executed in client/server, p
 
 In a [client/server architecture](../Desktop/clientServer.md), the `local` keyword specifies that the function must be executed **on the machine from where it is called**.
 
-:::note Reminder
+:::note Recordatorio
 
 The `local` keyword is useless for [shared or session singleton functions](#singleton-classes), which are executed locally by default.
 
@@ -900,7 +900,7 @@ The `local` keyword is useless for [shared or session singleton functions](#sing
 
 By default, [ORDA data model functions](../ORDA/ordaClasses.md) are executed on the server. Suele ofrecer el mejor rendimiento, ya que sólo se envían por la red la petición de función y el resultado. However, [for optimization reasons](../ORDA/client-server-optimization.md#using-the-local-keyword), you could want to execute a data model function on client. You can then use the `local` keyword.
 
-#### Example: Calculating age
+#### Ejemplo: cálculo de la edad
 
 Dada una entidad con un atributo *birthDate*, queremos definir una función `age()` que sería llamada en un list box. Esta función puede ejecutarse en el cliente, lo que evita lanzar una petición al servidor para cada línea del list box.
 
@@ -947,7 +947,7 @@ If no instance of *S1* exists on the server at that moment, *S1* is instantiated
 
 :::
 
-#### Example: Administration singleton
+#### Ejemplo: singleton Administration
 
 The *Administration* shared singleton has a "server" function running the [`Process activity`](../commands/process-activity) command. This singleton is instantiated on a remote 4D but the function returns the server activity on the server.
 
