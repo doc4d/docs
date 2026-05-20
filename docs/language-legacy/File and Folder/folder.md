@@ -26,6 +26,7 @@ displayed_sidebar: docs
 
 |Release|Changes|
 |---|---|
+|21 R4|Support of `fk downloads folder`, `fk temporary folder`, `fk cache folder`, `fk pictures folder`, `fk music folder`, `fk videos folder`, `fk fonts folder`|
 |19 R8 |Support of `fk home folder`|
 |17 R5|Added|
 
@@ -57,18 +58,25 @@ In the *folderConstant* parameter, pass a 4D built-in or system folder, using on
 |Constant|Value|Comment|
 |---|---|---|
 |fk applications folder|116||
+|fk cache folder|121|User cache folder. On macOS: `~/Library/Caches`, on Windows: `%LOCALAPPDATA%`, on Linux: `~/.cache`|
 |fk data folder|9|Associated filesystem: "/DATA"|
 |fk database folder|4|Associated filesystem: "/PACKAGE"|
 |fk desktop folder|115||
 |fk documents folder|117|Document folder of the user|
+|fk downloads folder|119|User Downloads folder. On macOS: `~/Downloads`, on Windows: Downloads folder, on Linux: `$XDG_DOWNLOAD_DIR`|
+|fk fonts folder|101|System fonts folder. On macOS: `/Library/Fonts`, on Windows: `Fonts`, on Linux: `/usr/share/fonts`|
 |fk home folder|118|Current home folder of the user (usually `/Users/<username>/`)|
 |fk licenses folder|1|Folder containing the machine's 4D license files|
 |fk logs folder|7|Associated filesystem: "/LOGS"|
 |fk mobileApps folder|10||
+|fk music folder|123|User Music folder. On macOS: `~/Music`, on Windows: `My Music`, on Linux: `$XDG_MUSIC_DIR`|
+|fk pictures folder|122|User Pictures folder. On macOS: `~/Pictures`, on Windows: `My Pictures`, on Linux: `$XDG_PICTURES_DIR`|
 |fk remote database folder|3|4D database folder created on each 4D remote machine|
 |fk resources folder|6|Associated filesystem: "/RESOURCES"|
 |fk system folder|100||
+|fk temporary folder|120|System temporary folder. On macOS: value returned by `NSTemporaryDirectory()`, on Windows: value returned by `GetTempPath()`, on Linux: `/tmp`|
 |fk user preferences folder|0|4D folder that stores user preference files within the user home folder|
+|fk videos folder|124|User Videos folder. On macOS: `~/Movies`, on Windows: `My Videos`, on Linux: `$XDG_VIDEOS_DIR`|
 |fk web root folder|8|Current Web root folder of the database: if within the package "/PACKAGE/path", otherwise full path|
 
 If the command is called from a component, pass the optional `*` parameter to get the path of the host database. Otherwise, if you omit the `*` parameter, a null object is always returned.  

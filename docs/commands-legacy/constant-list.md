@@ -531,17 +531,22 @@ sidebar_position: 50
 | Finnish Markka | Mark finlandais |
 | fk alias link | fk lien alias |
 | fk applications folder | fk dossier applications |
+| fk cache folder | fk dossier cache |
 | fk data folder | fk dossier données |
 | fk database folder | fk dossier base de données |
 | fk desktop folder | fk dossier bureau |
 | fk documents folder | fk dossier documents |
+| fk downloads folder | fk dossier téléchargements |
 | fk editor theme folder | fk dossier des thèmes éditeur |
+| fk fonts folder | fk dossier polices |
 | fk home folder | fk dossier personnel |
 | fk ignore invisible | fk ignorer invisibles |
 | fk licenses folder | fk dossier licences |
 | fk logs folder | fk dossier fichiers historique |
 | fk mobileApps folder | fk dossier mobileApps |
+| fk music folder | fk dossier musique |
 | fk overwrite | fk écraser |
+| fk pictures folder | fk dossier images |
 | fk platform path | fk chemin plateforme |
 | fk posix path | fk chemin posix |
 | fk recursive | fk récursif |
@@ -549,7 +554,9 @@ sidebar_position: 50
 | fk resources folder | fk dossier ressources |
 | fk symbolic link | fk lien symbolique |
 | fk system folder | fk dossier système |
+| fk temporary folder | fk dossier temporaire |
 | fk user preferences folder | fk dossier préférence utilisateur |
+| fk videos folder | fk dossier vidéos |
 | fk web root folder | fk dossier racine web |
 | Flip horizontally | Miroir horizontal |
 | Flip vertically | Miroir vertical |
