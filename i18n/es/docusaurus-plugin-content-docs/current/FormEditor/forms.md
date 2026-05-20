@@ -78,11 +78,11 @@ Normalmente, se selecciona la categoría del formulario al crearlo, pero se pued
 
 ## Uso de formularios
 
-Forms are called using specific commands of the 4D Language. In your 4D desktop applications, forms can be used in various ways, depending on their status within your interface needs. A form can be:
+Forms are called using specific commands of the 4D Language. In your 4D desktop applications, forms can be used in various ways, depending on their status within your interface needs. Un formulario puede ser:
 
 - used in its own window for data viewing, processing, editing, or to display on-screen information to the user,
 - used embedded in another form (subform),
-- used as template for printing,
+- utilizado como plantilla para la impresión,
 - or called by specific features like the Label editor.
 
 ### Using a project form in a window
@@ -99,7 +99,7 @@ All-in-one commands such as [`ADD RECORD`](../commands/add-record) or [`MODIFY R
 
 :::
 
-#### Simple example
+#### Ejemplo simple
 
 You create the following basic form in the [Form editor](./formEditor.md):
 
@@ -147,7 +147,7 @@ ALERT($formObject.name+" is "+String($formObject.age)+" years old!")
 
 ![](../assets/en/FormEditor/example-form-2.png)
 
-### Using forms as subforms
+### Utilizar formularios como subformularios
 
 A form can be embedded within another form, in which case it becomes a [subform object](../FormObjects/subform_overview.md) which follows specific rules. A subform is automatically used when its parent form is [displayed in a window](#using-a-project-form-in-a-window).
 
@@ -155,7 +155,7 @@ In the same way that you pass an object to a form with the [`DIALOG`](../command
 
 ![](../assets/en/FormEditor/subform-example.png)
 
-### Using forms to be printed
+### Utilizar formularios para imprimir
 
 In 4D desktop applications, forms can be printed using the various [commands of the **Printing** theme](../commands/theme/Printing).
 
@@ -235,7 +235,7 @@ For technical reasons, the legacy print renderer is not available with forms dis
 
 :::
 
-### Other form usages
+### Otros usos de formularios
 
 There are several other ways to use forms in the 4D applications, including:
 
