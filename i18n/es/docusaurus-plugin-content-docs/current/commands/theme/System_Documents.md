@@ -47,7 +47,7 @@ Legacy commands from this theme can usually be usefully replaced by commands of 
 
 :::
 
-## Document reference number
+## Número de referencia del documento
 
 You open a document with the [`Open document`](../../commands/open-document), [`Create document`](../../commands/create-document) and [`Append document`](../../commands/append-document) commands. Once a document is open, you can read and write characters from and to the document using commands such as [`RECEIVE PACKET`](../../commands/receive-packet) and [`SEND PACKET`](../../commands/send-packet). When you are finished with the document, you usually close it using the `CLOSE DOCUMENT` command.
 
@@ -65,7 +65,7 @@ When it is called from a [preemptive process](../../Develop/preemptive.md), a *D
 
 `Open document`, `Create document`, `Append document` and `Select document` enable you to access a document using the standard Open or Save file dialog boxes. When you access a document through a standard dialog, 4D returns the full pathname of the document in the [`Document` system variable](../../Concepts/variables.md#system-variables). This system variable has to be distinguished from the *document* parameter that appears in the parameter list of the commands.
 
-## Absolute or relative pathname
+## Ruta absoluta o relativa
 
 Most of the routines of this section accept document names, relative pathnames or absolute pathnames:
 
