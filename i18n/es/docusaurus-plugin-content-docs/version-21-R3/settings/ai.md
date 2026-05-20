@@ -17,9 +17,9 @@ The AI page allows you to add, remove, or view the list of all your AI providers
 
 By default, the Providers list is empty.
 
-### Adding a provider
+### Añadir un proveedor
 
-To add an AI provider:
+Para añadir un proveedor de IA:
 
 1. Click on the **+** button at the bottom of the Providers list.
 2. Enter the required [provider's configuration fields](#provider-properties), including credentials.
@@ -35,7 +35,7 @@ If the connection test fails, an error message is displayed (e.g. "Request faile
 
 ### Editing a provider
 
-To edit or remove a provider:
+Para editar o eliminar un proveedor:
 
 1. Select a registered provider in the list.
 2. Edit the provider's information OR to remove a provider, click on the **-** button at the bottom of the Providers list.
@@ -94,7 +94,7 @@ The Model Aliases page allows you to list models from registered Providers that 
 When using a model alias:
 
 - The provider is automatically resolved (see [Model resolution](../aikit/Classes/OpenAIProviders.md#model-resolution) in the 4D-AIKit documentation).
-- The model ID is applied.
+- Se aplica el ID del modelo.
 - All credentials and endpoints are used.
 
 ### Adding a model alias
@@ -119,7 +119,7 @@ To add a model alias:
 
 To edit or remove an alias:
 
-1. Select a model alias in the list.
+1. Seleccione un alias de modelo en la lista.
 2. Edit the alias information OR to remove a alias, click on the **-** button at the bottom of the list.
 3. Click **OK** to save the modifications, or **Cancel** to revert all modifications.
 
