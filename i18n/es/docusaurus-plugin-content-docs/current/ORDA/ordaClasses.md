@@ -60,7 +60,7 @@ Además, las instancias de objeto de clases usuario de los modelos de datos ORDA
 
 | Lanzamiento | Modificaciones                                                                                                                                              |
 | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 21 R3       | Support for the `server` keyword.                                                                                                           |
+| 21 R3       | Soporte para la palabra clave `server`.                                                                                                     |
 | 19 R4       | Atributos alias en la Entity Class                                                                                                                          |
 | 19 R3       | Atributos calculados en la Entity Class                                                                                                                     |
 | 18 R5       | Las funciones de clase de modelo de datos no están expuestas a REST por defecto. Nuevas palabras clave `exposed` y `local`. |
