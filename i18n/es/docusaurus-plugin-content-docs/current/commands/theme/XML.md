@@ -12,7 +12,7 @@ slug: /commands/theme/XML
 | [<!-- INCLUDE #_command_.XML GET OPTIONS.Syntax -->](../../commands/xml-get-options)<br/> |
 | [<!-- INCLUDE #_command_.XML SET OPTIONS.Syntax -->](../../commands/xml-set-options)<br/> |
 
-## Overview of XML Commands
+## Visión general de los comandos XML
 
 :::note
 
@@ -20,7 +20,7 @@ For XML support, 4D uses a library named Xerces.dll developed by the Apache Foun
 
 :::
 
-### XML, DOM, and SAX
+### XML, DOM y SAX
 
 The **XML** theme groups together the generic XML "utilities" commands of 4D. These are option- and error-management commands.
 
@@ -47,7 +47,7 @@ The following character sets are supported by the XML DOM and XML SAX commands o
 - UTF-16 (Big/Small Endian)
 - UCS4 (Big/Small Endian)
 - EBCDIC code pages IBM037, IBM1047 and IBM1140 encodings,
-- ISO-8859-1 (or Latin1)
+- ISO-8859-1 (o Latin1)
 - Windows-1252.
 
 ### Glosario
