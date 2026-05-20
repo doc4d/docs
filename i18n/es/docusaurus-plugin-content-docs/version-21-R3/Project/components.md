@@ -185,7 +185,7 @@ Regarding components stored on GitHub or GitLab, both [**dependencies.json**](#d
 
 To be able to directly reference and use a 4D component stored on GitHub or GitLab, you need to configure the component's repository.
 
-#### Configuring a GitHub repository
+#### Configuración de un repositorio GitHub
 
 1. Comprima los archivos componentes en formato ZIP.
 2. Nombre este archivo con el mismo nombre que el repositorio GitHub. For example, for a "my-4D-Component" repository, the archive must be named "my-4D-Component.zip".
@@ -194,7 +194,7 @@ To be able to directly reference and use a 4D component stored on GitHub or GitL
 
 Estos pasos pueden automatizarse fácilmente, con código 4D o utilizando GitHub Actions, por ejemplo.
 
-#### Configuring a GitLab repository
+#### Configuración de un repositorio GitLab
 
 GitLab releases only store the name and URL of assets, they do not contain uploaded files. Debe ofrecer el archivo zip de su componente como enlace.
 
@@ -332,7 +332,7 @@ El desarrollador del componente puede definir una versión mínima de 4D en el a
 Si quiere integrar un componente ubicado en un repositorio privado, necesita decirle a 4D que utilice un token de conexión para acceder a él.
 
 - for GitHub: in your [GitHub token interface](https://github.com/settings/tokens), create a token with the recommended following properties:
-  - type: **classic**
+  - tipo: **classic**
   - derechos de acceso: **repo**
 
 - para GitLab: en su cuenta de GitLab, cree un token con las siguientes propiedades:
