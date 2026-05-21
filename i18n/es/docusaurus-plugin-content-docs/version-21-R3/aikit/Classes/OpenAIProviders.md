@@ -16,8 +16,8 @@ For complete usage documentation, see [Provider Model Aliases](../provider-model
 This class enables multi-provider support by:
 
 - Loading provider configurations from a single JSON file
-- Loading named model aliases that map to providers and model IDs
-- Resolving `provider:model` syntax to full API configurations
+- la carga de los alias de modelos con nombre que se asignan a proveedores y a los identificadores de modelos
+- la resolución de la sintaxis `provider:model` en configuración completa de la API
 - Resolving named model aliases by bare name to full provider + model configurations
 
 The `OpenAI` class automatically loads provider configurations when instantiated.
@@ -33,7 +33,7 @@ Creates a new instance that loads provider configuration from the `AIProviders.j
 **Important:**
 
 - Only the first existing file is loaded. There is no merging of multiple files.
-- The configuration is read once at instantiation time. If the `AIProviders.json` file is modified afterward, those changes will not be reflected in the existing instance. You must create a new instance of `OpenAIProviders` to reload the updated configuration.
+- La configuración se lee una vez en el momento de la instanciación. If the `AIProviders.json` file is modified afterward, those changes will not be reflected in the existing instance. Debe crear una nueva instancia de `OpenAIProviders` para recargar la configuración actualizada.
 
 ## Utilización
 
@@ -70,10 +70,10 @@ var $names := $providers.list()
 
 Get a provider configuration by name.
 
-| Parámetros | Tipo   | Descripción                                           |
-| ---------- | ------ | ----------------------------------------------------- |
-| *name*     | Text   | El nombre del proveedor                               |
-| Resultado  | Object | Provider configuration object, or `Null` if not found |
+| Parámetros | Tipo   | Descripción                                                        |
+| ---------- | ------ | ------------------------------------------------------------------ |
+| *name*     | Text   | El nombre del proveedor                                            |
+| Resultado  | Object | Objeto de configuración del proveedor, o `Null` si no se encuentra |
 
 #### Ejemplo
 
@@ -152,15 +152,15 @@ $client.chat.completions.create($messages; {model: "openai:gpt-5.1"})
 
 Esto se resuelve internamente:
 
-1. Split `"openai:gpt-5.1"` into provider=`"openai"` and model=`"gpt-5.1"`
+1. Separación `"openai:gpt-5.1"` en provider=`"openai"` y model=`"gpt-5.1"`.
 2. Look up the `"openai"` provider configuration
 3. Extracción de `baseURL` y `apiKey`
-4. Make the API request using the resolved configuration
+4. Haga la solicitud de API utilizando la configuración resuelta
 
 **Ejemplos:**
 
-- `"openai:gpt-5.1"` → Use OpenAI provider with gpt-5.1 model
-- `"anthropic:claude-3-opus"` → Use Anthropic provider with claude-3-opus
+- `"openai:gpt-5.1"` → Utilizar el proveedor OpenAI con el modelo gpt-5.1
+- `"anthropic:claude-3-opus"` → Utiliza el proveedor Anthropic con claude-3-opus
 - `"local:llama3"` → Use local provider with llama3 model
 
 ### Alias de modelo (nombre simple)
@@ -175,12 +175,12 @@ $client.chat.completions.create($messages; {model: ":my-gpt"})
 Esto se resuelve internamente:
 
 1. Look up `"my-gpt"` in the `models` configuration
-2. Find its `provider` (e.g., `"openai"`) and `model` (e.g., `"gpt-5.1"`)
-3. Resolve the provider to get `baseURL` and `apiKey`
-4. Make the API request using the resolved configuration
+2. Recuperación de su `provider` (por ejemplo, `"openai"`) y de su `model` (por ejemplo, `"gpt-5.1"`)
+3. Resolución del proveedor para obtener `baseURL` y `apiKey`
+4. Haga la solicitud de API utilizando la configuración resuelta
 
 **Ejemplos:**
 
-- `"my-gpt"` → Use the model alias "my-gpt" (resolves to its configured provider and model)
-- `"my-embedding"` → Use the model alias "my-embedding" for embedding operations
+- `"my-gpt"` → Utilizar el alias de modelo "my-gpt" (resuelve a su proveedor y modelo configurados)
+- `"my-embedding"` → Usar el alias del modelo "my-embedding" para las operaciones de embebido
 
