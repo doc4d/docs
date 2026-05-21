@@ -267,7 +267,7 @@ $doc:=Null // liberar recursos ocupados por $doc
 
 Los objetos pueden pertenecer a clases. Using a class allows to predefine an object behaviour and structure with associated properties and functions.
 
-The 4D language proposes several [native classes](../category/class-API-reference/) that you can use to handle objects. You can also define and use your own [user classes](./classes.md) to organize your code.
+The 4D language proposes several [native classes](../category/class-API-reference/) that you can use to handle objects. También puede definir y utilizar sus propias [clases de usuario](./classes.md) para organizar su código.
 
 ## Soporte de streaming
 
@@ -275,7 +275,7 @@ A streamable class (or *serializable* class) is a class whose objects can be con
 
 ### Transmisión de texto (`JSON Stringify`)
 
-JSON commands that stringify contents such as [`JSON Stringify`](../commands/json-stringify) and the [`Execute on server`](../commands/execute-on-server) command allow you to convert objects to json (text). They support objects, collections, and user classes.
+JSON commands that stringify contents such as [`JSON Stringify`](../commands/json-stringify) and the [`Execute on server`](../commands/execute-on-server) command allow you to convert objects to json (text). Soportan objetos, colecciones y clases de usuarios.
 
 However, text streaming of objects has the following limitations:
 
