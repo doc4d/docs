@@ -137,7 +137,7 @@ Se recomienda nombrar explícitamente su método si lo desea:
 
 :::
 
-The resulting 4D.Method object can be checked using [`checkSyntax()`](#checksyntax) and executed using `()`, [`.apply()`](#apply) or [`.call()`](#call).
+El objeto 4D.Method resultante puede ser verificado utilizando [`checkSyntax()`](#checksyntax) y ejecutado utilizando `()`, [`.apply()`](#apply) o [`.call()`](#call).
 
 :::note
 
