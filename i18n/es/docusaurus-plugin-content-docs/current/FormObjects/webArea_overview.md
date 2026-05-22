@@ -225,8 +225,8 @@ Para mostrar el inspector Web, puede ejecutar el comando `WA OPEN WEB INSPECTOR`
 - **Execute the `WA OPEN WEB INSPECTOR` command**<br/>
   This command can be used directly with onscreen (form object) and offscreen web areas.
 
-- **Use the web area context menu**<br/>
-  This feature can only be used with onscreen web areas and requires that the following conditions are met:
+- **Utilizar el menú contextual del área web**<br/>
+  Esta función sólo puede utilizarse con áreas web en pantalla y requiere que se cumplan las siguientes condiciones:
   - el [menú contextual](properties_Entry.md#context-menu) del área web está activado
   - el uso del inspector está expresamente autorizado en el área mediante la siguiente declaración:
   ```4d
