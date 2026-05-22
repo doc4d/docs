@@ -93,7 +93,7 @@ The Model Aliases page allows you to list models from registered Providers that 
 
 When using a model alias:
 
-- The provider is automatically resolved (see [Model resolution](../aikit/Classes/OpenAIProviders.md#model-resolution) in the 4D-AIKit documentation).
+- El proveedor se resuelve automáticamente (ver [Model resolution](../aikit/Classes/OpenAIProviders.md#model-resolution) en la documentación de 4D-AIKit).
 - Se aplica el ID del modelo.
 - All credentials and endpoints are used.
 
