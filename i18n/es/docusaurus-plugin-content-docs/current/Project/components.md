@@ -198,7 +198,7 @@ Estos pasos pueden automatizarse fácilmente, con código 4D o utilizando GitHub
 
 Las versiones de GitLab sólo almacenan el nombre y la URL de los activos, no contienen los archivos subidos. Debe ofrecer el archivo zip de su componente como enlace.
 
-1. Upload the component's ZIP file somewhere, i.e. either on an external server, or [using GitLab Package Registry](#using-the-gitlab-package-registry) (generic package).
+1. Suba el archivo ZIP del componente en algún lugar, es decir, en un servidor externo, o [usando GitLab Package Registry](#using-the-gitlab-package-registry) (paquete genérico).
 2. Cree una [versión de GitLab](https://docs.gitlab.com/user/project/releases/) para su componente, incluyendo el enlace al archivo de su componente como activo de la versión.
 
 The asset name is typically an artifact link name (\<my-component\>.zip).
