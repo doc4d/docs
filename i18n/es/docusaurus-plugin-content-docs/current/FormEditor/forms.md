@@ -173,7 +173,7 @@ $formData.request:="I need more COFFEE"
 var $h:=Print form("Request_var";$formData;Form detail)
 ```
 
-- To print a form within a printing job to process data during printing, use [`FORM LOAD`](../commands/form-load) and [`Print object`](../commands/print-object) commands. Por ejemplo:
+- Para imprimir un formulario en una tarea de impresión para procesar datos durante la impresión, utilice los comandos [`FORM LOAD`](../commands/form-load) y [`Print object`](../commands/print-object). Por ejemplo:
 
 ```4d
  var $formData : Object
