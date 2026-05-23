@@ -132,7 +132,7 @@ En el parámetro opcional *name*, pase el nombre del método que se mostrará en
 
 Se recomienda nombrar explícitamente su método si lo desea:
 
-- use persistent method name in the [Custom watch pane of the Debugger](../Debugging/debugger#custom-watch-pane) (anonymous methods are not persistent in the debugger).
+- utilizar nombre de método persistente en la [ventana de evaluación del depurador](../Debugging/debugger#custom-watch-pane) (los métodos anónimos no son persistentes en el depurador).
 - handle the volatile method using commands such as [`Method get path`](../commands/method-get-path) and [`Method resolve path`](../commands/method-resolve-path) (anonymous methods don't have paths).
 
 :::
