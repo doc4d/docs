@@ -91,7 +91,7 @@ When using 4D in client/server mode, it is **strongly recommended** to execute A
 
 The Model Aliases page allows you to list models from registered Providers that you want to use in your code and to name them with *aliases*. Thanks to model aliases, you avoid hardcoding model names, switch models without changing your code, and keep consistency across environments.
 
-When using a model alias:
+Cuando se utiliza un alias de modelo:
 
 - El proveedor se resuelve automáticamente (ver [Model resolution](../aikit/Classes/OpenAIProviders.md#model-resolution) en la documentación de 4D-AIKit).
 - Se aplica el ID del modelo.
@@ -105,7 +105,7 @@ To be able to add a model alias, you must have entered at least one valid provid
 
 :::
 
-To add a model alias:
+Para añadir un alias de modelo:
 
 1. Click on the **+** button at the bottom of the model aliases list.
 2. En la columna **Nombre**, introduzca el nombre del alias.
@@ -115,7 +115,7 @@ To add a model alias:
 
 ![](../assets/en/settings/model-alias.png)
 
-### Editing a model alias
+### Edición de un alias de modelo
 
 To edit or remove an alias:
 
