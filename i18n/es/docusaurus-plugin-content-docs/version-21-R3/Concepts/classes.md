@@ -875,7 +875,7 @@ server Function <functionName>
 
 Supported functions have a **default execution location** when no location keyword is used. No obstante, puede insertar una palabra clave `local` o `server` para modificar la ubicación de ejecución, o para hacer el código más explícito.
 
-| Supported functions                               | Ejecución por defecto | with `local` keyword                                          | with `server` keyword                                                                                                                                                                       |
+| Supported functions                               | Ejecución por defecto | with `local` keyword                                          | con la palabra clave `server`                                                                                                                                                               |
 | ------------------------------------------------- | --------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [ORDA data model](../ORDA/ordaClasses.md)         | en el servidor        | La función se ejecuta en el cliente si se llama en el cliente |                                                                                                                                                                                             |
 | [Shared or session singleton](#singleton-classes) | Local                 |                                                               | La función se ejecuta en el servidor en la instancia de servidor del singleton. <br/>If there is no instance of the singleton on the server, it is created. |
@@ -982,7 +982,7 @@ $serverActivity:=$administration.processActivity()
 
 ```
 
-#### Example: Session singleton
+#### Ejemplo: singleton de sesión
 
 You store your users in a Users table and handle a custom authentication. Utiliza un singleton de sesión para la autenticación:
 
