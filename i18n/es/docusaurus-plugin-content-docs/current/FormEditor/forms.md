@@ -143,7 +143,7 @@ ALERT($formObject.name+" is "+String($formObject.age)+" years old!")
 
 ```
 
-4D displays:
+4D muestra:
 
 ![](../assets/en/FormEditor/example-form-2.png)
 
