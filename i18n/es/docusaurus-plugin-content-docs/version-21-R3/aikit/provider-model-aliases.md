@@ -66,7 +66,7 @@ El cliente carga automáticamente las configuraciones del proveedor a partir del
 | `proveedor` | Text | Sí        | Name of the provider (must exist in `providers`) |
 | `model`     | Text | Sí        | ID del modelo utilizado por el proveedor                            |
 
-### Example Configuration
+### Ejemplo de configuración
 
 ```json
 {
@@ -114,7 +114,7 @@ Two syntaxes are supported:
 | `provider:model_name` | Alias de proveedor: especifique directamente el proveedor y el modelo |
 | `:model_alias`        | Model alias — reference a named model from the `models` configuration by bare name    |
 
-#### Provider alias syntax
+#### Sintaxis alias de proveedor
 
 Utilice la sintaxis `provider:model_name` en toda llamada a la API que acepte un modelo en parámetro:
 
@@ -149,7 +149,7 @@ var $result := $client.chat.completions.create($messages; {model: ":my-claude"})
 var $result := $client.embeddings.create("text"; ":my-embedding")
 ```
 
-### How It Works
+### Cómo funciona
 
 #### Alias de proveedor (`provider:model`)
 
