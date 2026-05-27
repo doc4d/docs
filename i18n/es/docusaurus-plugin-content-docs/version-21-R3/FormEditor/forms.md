@@ -66,7 +66,7 @@ Puede añadir o modificar formularios 4D utilizando los siguientes elementos:
 }
 ```
 
-## Printing forms
+## Impresión de formularios
 
 En las aplicaciones de escritorio 4D, los formularios pueden imprimirse utilizando los diferentes [comandos del tema **Imprimir**](../commands/theme/Printing).
 
