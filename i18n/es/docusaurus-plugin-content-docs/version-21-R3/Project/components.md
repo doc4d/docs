@@ -336,7 +336,7 @@ Si quiere integrar un componente ubicado en un repositorio privado, necesita dec
   - derechos de acceso: **repo**
 
 - para GitLab: en su cuenta de GitLab, cree un token con las siguientes propiedades:
-  - type: **Personal Access token**
+  - tipo: **Personal Access token**
   - alcances: **read_api** y **read_repository**
 
 A continuación, deberá [suministrar su token de conexión](#providing-your-access-token) al gestor de dependencias.
