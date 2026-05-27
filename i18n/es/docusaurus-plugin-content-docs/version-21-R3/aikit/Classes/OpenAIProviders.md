@@ -7,7 +7,7 @@ title: OpenAIProviders
 
 ## Resumen
 
-The `OpenAIProviders` class manages AI provider configurations by loading configuration and handling resolution of model strings in the `provider:model` format.
+La clase `OpenAIProviders` gestiona las configuraciones de los proveedores de IA cargando la configuración y gestionando la resolución de cadenas de modelos en el formato `provider:model`.
 
 For complete usage documentation, see [Provider Model Aliases](../provider-model-aliases.md).
 
@@ -30,7 +30,7 @@ var $providers := cs.AIKit.OpenAIProviders.new()
 
 Creates a new instance that loads provider configuration from the `AIProviders.json` file (see [**Configuration Files**](../provider-model-aliases.md#configuration-files) in the "Provider Model Aliases" page for details on file locations and format).
 
-**Important:**
+**Importante:**
 
 - Only the first existing file is loaded. There is no merging of multiple files.
 - La configuración se lee una vez en el momento de la instanciación. Si el archivo `AIProviders.json` se modifica posteriormente, esos cambios no se reflejarán en la instancia existente. Debe crear una nueva instancia de `OpenAIProviders` para recargar la configuración actualizada.
