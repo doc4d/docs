@@ -59,7 +59,7 @@ The combo box lists the main providers, you can select a value to enter the prov
 
 ### API Key
 
-(optional) API key for the provider. For instructions on generating an API key, please refer to your AI provider’s official documentation. Algunos proveedores de IA también pueden exigir credenciales específicas adicionales.
+(opcional) Llave API para el proveedor. For instructions on generating an API key, please refer to your AI provider’s official documentation. Algunos proveedores de IA también pueden exigir credenciales específicas adicionales.
 
 ### Organization
 
@@ -95,7 +95,7 @@ Cuando se utiliza un alias de modelo:
 
 - El proveedor se resuelve automáticamente (ver [Model resolution](../aikit/Classes/OpenAIProviders.md#model-resolution) en la documentación de 4D-AIKit).
 - Se aplica el ID del modelo.
-- All credentials and endpoints are used.
+- Se utilizan todas las credenciales y puntos finales.
 
 ### Adding a model alias
 
