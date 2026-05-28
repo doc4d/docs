@@ -498,35 +498,26 @@ You can insert any tag in plain text, for example `<img src="http://doc.4d.com/p
 
 This paragraph lists the attributes of \<SPAN> tags that are supported by 4D in rich text areas. You can use these tags to implement custom style handling. Only the tags listed below are supported by 4D for style variations.
 
-Font name  
-<SPAN STYLE="font-family: DESDEMONA"> ... </SPAN>
+- Font name: `<SPAN STYLE="font-family: DESDEMONA"> ... </SPAN>`
+- Font size: `<SPAN STYLE="font-size: 20pt"> ... </SPAN>`
+- Font style: 
+    - Bold `<SPAN STYLE="font-weight: bold"> ... </SPAN>`
+    - Italic `<SPAN STYLE="font-style: italic"> ... </SPAN>`
+    - Normal `<SPAN STYLE="font-style: normal"> ... </SPAN>`
+    - Underline `<SPAN STYLE="text-decoration: underline"> ... </SPAN>`
+    - Strikethrough `<SPAN STYLE="text-decoration:line-through">...</SPAN>`
 
-Font size  
-<SPAN STYLE="font-size: 20pt"> ... </SPAN>
+*Note: The "strikethrough" style is not supported under macOS, but this tag can still be managed by programming.*
 
-Font style  
-Bold
-<SPAN STYLE="font-weight: bold"> ... </SPAN>
-Italic or normal
-<SPAN STYLE="font-style: italic"> ... </SPAN>
-<SPAN STYLE="font-style: normal"> ... </SPAN>
-Underline
-<SPAN STYLE="text-decoration: underline"> ... </SPAN>
-Strikethrough
-<SPAN STYLE="text-decoration:line-through">...</SPAN>
-Note : The "strikethrough" style is not supported under Mac OS, but this tag can still be managed by programming.
-Font colors  
-<SPAN STYLE="color:green"> ... </SPAN> 
-or
-<SPAN STYLE="color:#006CCC">...</SPAN>
+- Font colors: `<SPAN STYLE="color:green"> ... </SPAN>` or `<SPAN STYLE="color:#006CCC">...</SPAN>`
+- Background colors: `<SPAN STYLE="background-color:green"> ... </SPAN>` or `<SPAN STYLE="background-color:#006CCC">...</SPAN>`
 
-Background colors  
-<SPAN STYLE="background-color:green"> ... </SPAN>
-or
-<SPAN STYLE="background-color:#006CCC">...</SPAN>
+#### Color values
 
-Color values  
 For font color and background color attributes, the color value can be either the hexadecimal code for an RGB color, or the name of one of the 16 HTML colors defined for standard CSS by the W3C: 
+
+![](../assets/en/FormObjects/colors1.png)
+![](../assets/en/FormObjects/colors2.png)
 
 
 
