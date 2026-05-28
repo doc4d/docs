@@ -71,13 +71,13 @@ AI プロバイダーを追加するには:
 
 ### AIProviders.json
 
-The provider configuration is stored in a JSON file named *AIProviders.json* located next to the active *settings.4DSettings file* within the [project folder](../Project/architecture.md), [depending on your deployment configuration](./overview.md#enabling-user-settings).
+プロバイダーの設定は *AIProviders.json* という名前のJSON ファイル内に保存されています。このファイルは[運用設定に応じて](./overview.md#enabling-user-settings)、[project フォルダ](../Project/architecture.md) 内の、アクティブな *settings.4DSettings ファイル* の隣に置かれています。
 
-### Deployment with an API key
+### APIキーを使用した運用
 
-When configuring an AI provider, you need to provide your own API key. It requires an external registration for getting API keys/credentials from AI providers.
+AI プロバイダーを設定しているときには、自分のAPI キーを提供する必要があります。 AI プロバイダーからAPI キー/資格情報を取得するためには外部登録が必要になります。
 
-Using the Settings dialog box, the 4D developer can define a custom **provider name** (for example "open-ai-v1") and use this custom name in the code. They can also test it using their API key.
+設定ダイアログボックスを使用することで、4D デベロッパーはカスタムの**プロバイダー名** (例えば"open-ai-v1" など)を定義し、そのカスタムの名前をコード内で使用することができます。 ここではAPI キーを使用してテストを行うこともできます。
 
 When the 4D application is deployed with the [User settings enabled](../settings/overview.md#enabling-user-settings), the administrator can configure the User settings by using the **same AI provider name** ("open-ai-v1") and **customize the API key** to use the customer's key. Thanks to the [User settings priority rules](../settings/overview.md#priority-of-settings), the customer settings will automatically override the developer settings.
 
