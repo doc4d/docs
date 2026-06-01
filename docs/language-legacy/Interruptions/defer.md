@@ -52,13 +52,11 @@ Behind the scenes, the command works as follows: every time a `defer` is called,
 
 As for all [formulas](../../commands/formula), if the *exitFormula* expression uses local variables, their current values are copied and stored in the formula object returned **when it is put in the *deferred stack***. When executed, the formula uses these copied values rather than the current values of the local variables. Note that the use of arrays as local variables is not supported.
 
+:::note
 
-Local variables and ORDA values at the expressio
+Keep in mind that local variables store **references** for [object](../../Concepts/dt_object.md#assignment) and [collection](../../Concepts/dt_collection.md#assignment) values.  
 
-Thus, the *exitFormula* formula is evaluated with the following current values:
-
-- local variables and ORDA values at the expression deferring call (i.e. when the expression is put in the *deferred stack*),
-- process and interprocess variables as well as database field values at the method or function end. 
+:::
 
 If the *exitFormula* expression throws an error, it is automatically caught without any interruption and the execution flow continues as it runs with a [`Try`](../../Concepts/error-handling.md#tryexpression) expression. 
 
