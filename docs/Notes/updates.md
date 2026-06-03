@@ -9,7 +9,7 @@ Read [**What’s new in 4D 21 R4**](https://blog.4d.com/whats-new-in-4d-21-r4/),
 
 #### Highlights
 
-- Multi-level list style sheets are now [supported in 4D Write Pro Interface](../WritePro/writeprointerface.md#managing-multi-level-list-style-sheets), allowing users to create and manage structured multi-level lists directly from the toolbar and sidebar.
+- Multi-level list style sheets are now [supported in 4D Write Pro Interface](../WritePro/writeprointerface.md#multi-level-style-sheets), allowing users to create and manage structured multi-level lists directly from the toolbar and sidebar.
 
 
 ## 4D 21 R3
