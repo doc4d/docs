@@ -457,7 +457,7 @@ Once a multi-level list style sheet is selected, the panel provides also tools t
 
 To create a new multi-level list style sheet based on the current selection, select the paragraphs to use and click the ![](../assets/en/WritePro/wp-multi-level-list-button1.png) button. The selected paragraph must already belong to a list and use a list marker.
 
-If the selected paragraph already contains list formatting, a new one-level multi-level list style sheet is created based on the current formatting.
+If the selected paragraph uses a list marker, a new multi-level list style sheet made of one level is created based on the current formatting.
 
 If the selected paragraph already uses a multi-level list style sheet, the complete hierarchy is duplicated, including all sub-level style sheets.
 
@@ -516,6 +516,48 @@ Level 4: □ (Hollow Square),
 Level 5: ● (Disc),
 Level 6: ○ (Circle),
 Level 7: – (Dash)
+
+### Customizing predefined templates
+
+The predefined multi-level list templates are defined in a JSON file named `multiLevelStyles.json`.
+
+By default, this file is located in the 4D Write Pro Interface Resources folder.
+
+You can customize the available templates by adding your own `multiLevelStyles.json` file in either:
+
+* the database's local Resources folder directly,
+* a `4D WritePro Interface` folder located within the database Resources folder.
+
+Each template definition includes:
+
+* a template name,
+* one or more list levels,
+* the 4D Write Pro attributes applied to each level. Any 4D Write Pro attribute can be used in a template definition.
+
+For better readability, you can use either the actual attribute values or the corresponding 4D Write Pro constants.
+
+For example, the following definitions are equivalent:
+
+* `"listStyleType": "wk upper roman"`
+* `"listStyleType": 17`
+
+#### Example
+
+Example of a customized JSON file:
+
+```json
+{
+  "predefinedMultiLevelLists": [
+    {
+      "name": "Technical Blue Print Updated",
+      "levels": [
+        { "listStyleType": "wk decimal", "color": "Blue" },
+        { "listStyleType": "wk decimal", "listConcatStringFormat": true }
+      ]
+    }
+  ]
+}
+```
 
 ### See also 
 * [Related blog post: Multi-Level Style Sheets in 4D Write Pro: Now With a Dedicated UI](https://blog.4d.com/multi-level-style-sheets-in-4d-write-pro-now-with-a-dedicated-ui)
