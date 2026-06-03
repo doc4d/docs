@@ -29,7 +29,6 @@ displayed_sidebar: docs
 
 <!--REF #_command_.defer.Summary-->The `defer` command declares an *exitFormula* expression that will always be executed when the method or function exits, even if an error has been thrown or a `return` has been executed<!-- END REF-->. Using a `defer` command allows you to ensure that a method or function ends correctly by executing completion code on exit. In addition, this command saves you from having to duplicate the same exit code for every return or catch block.
 
-
 :::tip Related blog post
 
 [Streamline Your Clean-Up Code with the “defer” Command](https://blog.4d.com/streamline-your-clean-up-code-with-the-defer-command)
