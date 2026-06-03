@@ -423,22 +423,33 @@ The Erase button allows you to reset the whole window and erase all interactions
 
 4D Write Pro Interface allows users to create and manage [multi-level lists](./user-legacy/using-a-4d-write-pro-area.md#multi-level-lists) directly from both the toolbar and widget sidebar.
 
-// screenshot : toolbar and sidebar controls
+* toolbar:
 
-To manage multi-level list style sheets, select the multi-level list button  // screenshot : multi-level list mode button
+![](../assets/en/WritePro/wp-multi-level-list-stylesheets1.png)
+
+* sidebar:
+
+![](../assets/en/WritePro/wp-multi-level-list-stylesheets2.png)
+
+To manage multi-level list style sheets, select the multi-level list button ![](../assets/en/WritePro/wp-multi-level-list-button.png) 
 
 When the multi-level list mode is enabled, the style sheet list displays [multi-level list style sheets](./user-legacy/stylesheets.md#multi-level-list-style-sheets) defined in the document as well as predefined templates.
 
-When the multi-level list mode is enabled, the style sheet list displays multi-level list style sheets and predefined templates for [multi-level lists](./user-legacy/using-a-4d-write-pro-area.md#multi-level-lists).
+![](../assets/en/WritePro/wp-multi-level-list-panel.png)
 
-// screenshot: multi-level list style sheets panel with mode enabled
+The Style Sheet panel allows you to:
 
-The interface allows you to:
+- ![](../assets/en/WritePro/wp-multi-level-list-button.png)   add New style sheet
+- ![](../assets/en/WritePro/wp-multi-level-list-button.png)   delete New style sheet
+- ![](../assets/en/WritePro/wp-multi-level-list-button.png)   Update style sheet 
 
-- create new sub-levels,
-- increase or decrease the level of selected paragraphs,
-- modify numbering formats,
-- concatenate numbering between levels.
+And once the mutli-level Syle Sheet is seleceted, the panel allows you as well to:
+
+- ![](../assets/en/WritePro/wp-multi-level-list-button4.png)  increase the list level of selected paragraphs,
+- ![](../assets/en/WritePro/wp-multi-level-list-button5.png)  decrease the list level of selected paragraphs,
+- ![](../assets/en/WritePro/wp-multi-level-list-button6.png)  append level to list and create new sub-level,
+- ![](../assets/en/WritePro/wp-multi-level-list7.png)  modify numbering formats,
+- ![](../assets/en/WritePro/wp-multi-level-list-button8.png)  concatenate numbering between levels.
 
 When multiple paragraphs are selected:
 
