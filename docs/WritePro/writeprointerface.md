@@ -478,41 +478,41 @@ The interface provides the following predefined multi-level list templates:
 
 **Technical Blueprint**
 
-Level 1: 1
-Level 2: 1.1
-Level 3: 1.1.1
-Level 4: 1.1.1.1
+Level 1: 1,
+Level 2: 1.1,
+Level 3: 1.1.1,
+Level 4: 1.1.1.1,
 Level 5: 1.1.1.1.1
 
 **Legal & Governance**
 
-Level 1: I.
-Level 2: A.
-Level 3: 1.
-Level 4: a)
-Level 5: (1)
-Level 6: (a)
+Level 1: I.,
+Level 2: A.,
+Level 3: 1.,
+Level 4: a),
+Level 5: (1),
+Level 6: (a),
 Level 7: (i)
 
 **Educational Material**
 
-Level 1: I.
-Level 2: 1.
-Level 3: 1.1.
-Level 4: a.
+Level 1: I.,
+Level 2: 1.,
+Level 3: 1.1.,
+Level 4: a.,
 Level 5: ●
 
 **Meeting Minutes**
 
-Level 1: 1.
+Level 1: 1.,
 Level 2: ●
 
 **Visual Hierarchy**
 
-Level 1: ♣ (Club)
-Level 2: ♦ (Diamond)
-Level 3: ■ (Square)
-Level 4: □ (Hollow Square)
-Level 5: ● (Disc)
-Level 6: ○ (Circle)
+Level 1: ♣ (Club),
+Level 2: ♦ (Diamond),
+Level 3: ■ (Square),
+Level 4: □ (Hollow Square),
+Level 5: ● (Disc),
+Level 6: ○ (Circle),
 Level 7: – (Dash)
