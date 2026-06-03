@@ -516,3 +516,8 @@ Level 4: □ (Hollow Square),
 Level 5: ● (Disc),
 Level 6: ○ (Circle),
 Level 7: – (Dash)
+
+### See also 
+* [Related blog post: Multi-Level Style Sheets in 4D Write Pro: Now With a Dedicated UI](https://blog.4d.com/multi-level-style-sheets-in-4d-write-pro-now-with-a-dedicated-ui)
+* [multi-level list style sheets](./user-legacy/stylesheets.md#multi-level-list-style-sheets)
+* [multi-level lists](.user-legacy/using-a-4d-write-pro-area.md#multi-level-lists)
