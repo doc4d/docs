@@ -263,9 +263,9 @@ ALERT("They are "+String($foreignStudents.Students.all().length)+" foreign stude
 <!-- REF #DataStoreClass.cancelTransaction().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---------|--- |:---:|------|
-||||Does not require any parameters|
+||||引数を必要としません|
 </div>
 <!-- END REF -->
 
@@ -299,9 +299,9 @@ ALERT("They are "+String($foreignStudents.Students.all().length)+" foreign stude
 <!-- REF #DataStoreClass.clearAllRemoteContexts().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---------|--- |:---:|------|
-||||Does not require any parameters|
+||||引数を必要としません|
 </div>
 <!-- END REF -->
 
@@ -812,9 +812,9 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 <!-- REF #DataStoreClass.makeSelectionsAlterable().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---------|--- |:---:|------|
-||||Does not require any parameters|
+||||引数を必要としません|
 </div>
 <!-- END REF -->
 
