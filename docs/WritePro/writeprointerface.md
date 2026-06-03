@@ -419,7 +419,7 @@ The History area lists all your prompts sent to the AI. You can hide/show this a
 The Erase button allows you to reset the whole window and erase all interactions. It is equivalent to close/reopen the AI dialog box. 
 
 
-## Multi-level style sheets
+## Multi-level list style sheets
 
 4D Write Pro Interface allows users to create and manage [multi-level lists](./user-legacy/using-a-4d-write-pro-area.md#multi-level-lists) directly from both the toolbar and widget sidebar.
 
@@ -453,7 +453,7 @@ Once a multi-level list style sheet is selected, the panel provides also tools t
 * ![](../assets/en/WritePro/wp-multi-level-list7.png) Modify numbering formats.
 * ![](../assets/en/WritePro/wp-multi-level-list-button8.png) Concatenate numbering markers between levels.
 
-### Creating a style sheet from a selection
+### Creating a style sheet
 
 To create a new multi-level list style sheet based on the current selection, select the paragraphs to use and click the ![](../assets/en/WritePro/wp-multi-level-list-button1.png) button. The selected paragraph must already belong to a list and use a list marker.
 
@@ -461,16 +461,18 @@ If the selected paragraph uses a list marker, a new multi-level list style sheet
 
 If the selected paragraph already uses a multi-level list style sheet, the complete hierarchy is duplicated, including all sub-level style sheets.
 
-For more information about multi-level list style sheets, see [Multi-level list style sheets](./user-legacy/stylesheets.md#multi-level-list-style-sheets).
+:::note 
+
+For detailled information about creating and configuring multi-level list style sheets by programming, see [Multi-level list style sheets](./user-legacy/stylesheets.md#multi-level-list-style-sheets).
+
+:::
 
 ### Applying a multi-level list
 
-You can apply either an [existing multi-level list style sheet](#creating-a-style-sheet-from-a-selection) or one of the [predefined templates](#predefined-templates) to the selected paragraphs.
+You can apply either a multi-level list style sheet defined in the document or one of the predefined templates to the selected paragraphs using the Style Sheets panel:
 
-When multiple paragraphs are selected:
+![](../assets/en/WritePro/wp-multi-level-list-panel2.png)
 
-* selecting an existing multi-level list style sheet applies the selected style sheet to all selected paragraphs,
-* selecting a predefined template creates the corresponding root-level and sub-level style sheets, then applies the root-level style sheet to all selected paragraphs.
 
 ### Predefined templates
 
@@ -478,10 +480,10 @@ The interface provides the following predefined multi-level list templates:
 
 **Technical Blueprint**
 
-Level 1: 1,
-Level 2: 1.1,
-Level 3: 1.1.1,
-Level 4: 1.1.1.1,
+Level 1: 1
+Level 2: 1.1
+Level 3: 1.1.1
+Level 4: 1.1.1.1
 Level 5: 1.1.1.1.1
 
 **Legal & Governance**
@@ -519,14 +521,14 @@ Level 7: – (Dash)
 
 ### Customizing predefined templates
 
-The predefined multi-level list templates are defined in a JSON file named `multiLevelStyles.json`.
+You can customize the available templates to provide users with predefined multi-level lists that match the needs of your application.
 
-By default, this file is located in the 4D Write Pro Interface Resources folder.
+The predefined multi-level list templates are defined in a JSON file named `multiLevelStyles.json`. This file is located in the 4D Write Pro Interface component Resources folder.
 
 You can customize the available templates by adding your own `multiLevelStyles.json` file in either:
 
-* the database's local Resources folder directly,
-* a `4D WritePro Interface` folder located within the database Resources folder.
+* the project's local Resources folder directly,
+* a `4D WritePro Interface` folder located within the project Resources folder.
 
 Each template definition includes:
 
@@ -534,12 +536,11 @@ Each template definition includes:
 * one or more list levels,
 * the 4D Write Pro attributes applied to each level. Any 4D Write Pro attribute can be used in a template definition.
 
-For better readability, you can use either the actual attribute values or the corresponding 4D Write Pro constants.
-
+You can use either the attribute names or the corresponding 4D Write Pro constants as JSON keys and values.
 For example, the following definitions are equivalent:
 
 * `"listStyleType": "wk upper roman"`
-* `"listStyleType": 17`
+* `"wk list style type": "wk upper roman"`
 
 #### Example
 
@@ -551,7 +552,7 @@ Example of a customized JSON file:
     {
       "name": "Technical Blue Print Updated",
       "levels": [
-        { "listStyleType": "wk decimal", "color": "Blue" },
+        { "listStyleType": "wk decimal" },
         { "listStyleType": "wk decimal", "listConcatStringFormat": true }
       ]
     }
