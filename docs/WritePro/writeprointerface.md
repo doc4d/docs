@@ -419,51 +419,100 @@ The History area lists all your prompts sent to the AI. You can hide/show this a
 The Erase button allows you to reset the whole window and erase all interactions. It is equivalent to close/reopen the AI dialog box. 
 
 
-##  Multi-level style sheets
+## Multi-level style sheets
 
 4D Write Pro Interface allows users to create and manage [multi-level lists](./user-legacy/using-a-4d-write-pro-area.md#multi-level-lists) directly from both the toolbar and widget sidebar.
 
-* toolbar:
+**Toolbar:**
 
 ![](../assets/en/WritePro/wp-multi-level-list-stylesheets1.png)
 
-* sidebar:
+**Sidebar:**
 
 ![](../assets/en/WritePro/wp-multi-level-list-stylesheets2.png)
 
-To manage multi-level list style sheets, select the multi-level list button ![](../assets/en/WritePro/wp-multi-level-list-button.png) 
+To manage multi-level list style sheets, click the ![](../assets/en/WritePro/wp-multi-level-list-button.png) multi-level list button.
 
-When the multi-level list mode is enabled, the style sheet list displays [multi-level list style sheets](./user-legacy/stylesheets.md#multi-level-list-style-sheets) defined in the document as well as predefined templates.
+When the multi-level list mode is enabled, the Style Sheets panel displays the [multi-level list style sheets](./user-legacy/stylesheets.md#multi-level-list-style-sheets) defined in the document as well as [predefined templates](#predefined-templates).
 
 ![](../assets/en/WritePro/wp-multi-level-list-panel.png)
 
-The Style Sheet panel allows you to:
+### Managing multi-level style sheets
 
-- ![](../assets/en/WritePro/wp-multi-level-list-button.png)   add New style sheet
-- ![](../assets/en/WritePro/wp-multi-level-list-button.png)   delete New style sheet
-- ![](../assets/en/WritePro/wp-multi-level-list-button.png)   Update style sheet 
+The Style Sheets panel allows you in general to:
 
-And once the mutli-level Syle Sheet is seleceted, the panel allows you as well to:
+* ![](../assets/en/WritePro/wp-multi-level-list-button1.png) Create a new style sheet.
+* ![](../assets/en/WritePro/wp-multi-level-list-button2.png) Delete a style sheet.
+* ![](../assets/en/WritePro/wp-multi-level-list-button3.png) Update a style sheet.
 
-- ![](../assets/en/WritePro/wp-multi-level-list-button4.png)  increase the list level of selected paragraphs,
-- ![](../assets/en/WritePro/wp-multi-level-list-button5.png)  decrease the list level of selected paragraphs,
-- ![](../assets/en/WritePro/wp-multi-level-list-button6.png)  append level to list and create new sub-level,
-- ![](../assets/en/WritePro/wp-multi-level-list7.png)  modify numbering formats,
-- ![](../assets/en/WritePro/wp-multi-level-list-button8.png)  concatenate numbering between levels.
+Once a multi-level list style sheet is selected, the panel provides also tools to manage the hierarchy and numbering of the list:
 
-When multiple paragraphs are selected:
+* ![](../assets/en/WritePro/wp-multi-level-list-button4.png) Increase the list level of selected paragraphs.
+* ![](../assets/en/WritePro/wp-multi-level-list-button5.png) Decrease the list level of selected paragraphs.
+* ![](../assets/en/WritePro/wp-multi-level-list-button6.png) Append a level to the list and create a new sub-level.
+* ![](../assets/en/WritePro/wp-multi-level-list7.png) Modify numbering formats.
+* ![](../assets/en/WritePro/wp-multi-level-list-button8.png) Concatenate numbering markers between levels.
 
-- selecting an existing multi-level list style sheet applies the selected style sheet to all paragraphs,
-- selecting a predefined template creates the corresponding root-level and sub-level style sheets, then applies the root-level style sheet to all selected paragraphs
+### Creating a style sheet from a selection
 
-To create a new multi-level list style sheet based on the current selection, select the paragraphs to use and click on the  button at the bottom of the panel.
+To create a new multi-level list style sheet based on the current selection, select the paragraphs to use and click the ![](../assets/en/WritePro/wp-multi-level-list-button1.png) button. The selected paragraph must already belong to a list and use a list marker.
 
-// screenshot: "New style sheet based on selection" button
-
-If the selected paragraph already contains list formatting, a new multi-level list style sheet of one level is created based on the current formatting.
+If the selected paragraph already contains list formatting, a new one-level multi-level list style sheet is created based on the current formatting.
 
 If the selected paragraph already uses a multi-level list style sheet, the complete hierarchy is duplicated, including all sub-level style sheets.
 
-// screenshot: resulting multi-level list in document
+For more information about multi-level list style sheets, see [Multi-level list style sheets](./user-legacy/stylesheets.md#multi-level-list-style-sheets).
 
-For more information about multi-level list style sheets, see [multi-level list style sheets](./user-legacy/stylesheets.md#multi-level-list-style-sheets).
+### Applying a multi-level list
+
+You can apply either an [existing multi-level list style sheet](#creating-a-style-sheet-from-a-selection) or one of the [predefined templates](#predefined-templates) to the selected paragraphs.
+
+When multiple paragraphs are selected:
+
+* selecting an existing multi-level list style sheet applies the selected style sheet to all selected paragraphs,
+* selecting a predefined template creates the corresponding root-level and sub-level style sheets, then applies the root-level style sheet to all selected paragraphs.
+
+### Predefined templates
+
+The interface provides the following predefined multi-level list templates:
+
+**Technical Blueprint**
+
+Level 1: 1
+Level 2: 1.1
+Level 3: 1.1.1
+Level 4: 1.1.1.1
+Level 5: 1.1.1.1.1
+
+**Legal & Governance**
+
+Level 1: I.
+Level 2: A.
+Level 3: 1.
+Level 4: a)
+Level 5: (1)
+Level 6: (a)
+Level 7: (i)
+
+**Educational Material**
+
+Level 1: I.
+Level 2: 1.
+Level 3: 1.1.
+Level 4: a.
+Level 5: ●
+
+**Meeting Minutes**
+
+Level 1: 1.
+Level 2: ●
+
+**Visual Hierarchy**
+
+Level 1: ♣ (Club)
+Level 2: ♦ (Diamond)
+Level 3: ■ (Square)
+Level 4: □ (Hollow Square)
+Level 5: ● (Disc)
+Level 6: ○ (Circle)
+Level 7: – (Dash)
