@@ -49,10 +49,10 @@ title: DataStore
 <!-- REF #_command_.ds.Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---|---|---|---|
-|localID|Text|->|Local ID of the remote datastore to return|
-|Result |cs.DataStore|<-|Reference to the datastore|
+|localID|Text|->|参照を取得したいリモートデータストアのローカルID|
+|戻り値|cs.DataStore|<-|Reference to the datastore|
 </div>
 <!-- END REF -->
 
