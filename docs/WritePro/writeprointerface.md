@@ -455,15 +455,19 @@ Once a multi-level list style sheet is selected, the panel provides also tools t
 
 ### Creating a style sheet
 
-To create a new multi-level list style sheet based on the current selection, select the paragraphs to use and click the ![](../assets/en/WritePro/wp-multi-level-list-button1.png) button. The selected paragraph must already belong to a list and use a list marker.
+To create a multi-level list style sheet you can either:
 
-If the selected paragraph uses a list marker, a new multi-level list style sheet made of one level is created based on the current formatting.
+* Select and apply one of the predefined templates to the paragraph(s), the selected template and all it sub-levels are then displayed on the top part of the sytle sheets panel. You can customize its levels and formatting (such as numbering styles, colors, fonts, or hierarchy), and then create a new style sheet based on the resulting selection.
 
-If the selected paragraph already uses a multi-level list style sheet, the complete hierarchy is duplicated, including all sub-level style sheets.
+* Duplicate one of the existing style sheets via the Duplicate option in the ![](../assets/en/WritePro/wp-multi-level-list-button1.png) bottom menu.
+
+* Click the ![](../assets/en/WritePro/wp-multi-level-list-button1.png) button and then "New style sheet based on selection" after having selected paragraph(s) to use for the style sheet according to the following:
+    * If the selected paragraph(s) use(s) a list marker, a new multi-level list style sheet made of one level is created based on the current formatting.
+    * If the selected paragraph(s) already use(s) a root-level or a sub-level of a multi-level list style sheet, the complete hierarchy is duplicated.
 
 :::note 
 
-For detailled information about creating and configuring multi-level list style sheets by programming, see [Multi-level list style sheets](./user-legacy/stylesheets.md#multi-level-list-style-sheets).
+For detailed information about creating and configuring multi-level list style sheets by programming, see [Multi-level list style sheets](./user-legacy/stylesheets.md#multi-level-list-style-sheets).
 
 :::
 
@@ -529,6 +533,8 @@ You can customize the available templates by adding your own `multiLevelStyles.j
 
 * the project's local Resources folder directly,
 * a `4D WritePro Interface` folder located within the project Resources folder.
+
+If a `multiLevelStyles.json` file is present in both locations, the file located in the `4D WritePro Interface` folder takes precedence.
 
 Each template definition includes:
 
