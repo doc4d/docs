@@ -159,6 +159,14 @@ $flags["$seen"]:=True
 $status:=$transporter.addFlags(IMAP all;$flags)
 ```
 
+#### Voir également
+
+[`.removeFlags()`](#removeflags)
+
+#### Voir également
+
+[`.removeFlags()`](#removeflags)
+
 <!-- END REF -->
 
 <!-- REF IMAPTransporterClass.append().Desc -->
@@ -1462,6 +1470,10 @@ If ($status.success)
  End if
 End if
 ```
+
+#### Voir également
+
+[`.addFlags()`](#addflags)
 
 <!-- END REF -->
 

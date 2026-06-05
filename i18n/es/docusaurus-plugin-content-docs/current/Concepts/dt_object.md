@@ -28,7 +28,7 @@ Tenga en cuenta que los nombres de las propiedades distinguen entre mayúsculas 
 
 :::
 
-Las variables, campos o expresiones de tipo Objeto se gestionan utilizando la [notación de objetos](#properties) estándar o los comandos disponibles en el tema **Objetos (Lenguaje)**. Tenga en cuenta que comandos específicos del tema **Búsquedas**, como `QUERY BY ATTRIBUTE`, `QUERY SELECTION BY ATTRIBUTE` o `ORDER BY ATTRIBUTE`, se pueden utilizar para llevar a cabo el procesamiento en los campos objeto.
+Las variables, campos o expresiones de tipo Objeto se gestionan utilizando la [notación de objetos](#properties) estándar o los comandos disponibles en el tema **Objetos (Lenguaje)**.
 
 Cada valor de propiedad al que se accede a través de la notación de objeto se considera una expresión. Puede utilizar estos valores siempre que se esperen expresiones 4D:
 
@@ -113,6 +113,36 @@ Puede crear dos tipos de objetos:
 - los objetos ordinarios (no compartidos), utilizando el comando [`New object`](../commands/new-object) o la sintaxis literal de los objetos (`{}`). Estos objetos pueden ser editados sin ningún control de acceso específico, pero no pueden ser compartidos entre procesos.
 - objetos compartidos, utilizando el comando [`New shared object`](../commands/new-shared-object). Estos objetos pueden ser compartidos entre procesos, incluidos los hilos apropiativos. Estos objetos pueden ser compartidos entre procesos, incluidos los hilos apropiativos.
   Para más información, consulte la sección [Objetos y colecciones compartidos](shared.md).
+
+## Assignment
+
+Object and [collection](./dt_collection.md) data types are handled in the 4D language through **references** (i.e., internal pointers), unlike scalar data types (integer, date, etc.). As a result, when assigning an object or a collection to a variable (e.g. `$myVar:={ a:2 }`), it is the **reference** that is assigned, not the value itself. Any subsequent modification of the *$myVar* variable will therefore be reflected everywhere the original object is referenced. This follows the same principle as [pointers](./dt_collection.md), except that the *$myVar* variable does not need to be dereferenced.
+
+Por ejemplo:
+
+```4d
+var $o1; $o2 : Object
+var $col : Collection
+
+$col:=[1;2;3] //a reference to the collection is created
+$o1:={ a:2 ; b:$col } //a reference to the object is created
+$o2:=$o1 //both variables $o1 and $o2 share the reference to the same object
+
+$o1.a:=10 //$o2 = {"a":10,"b":[1,2,3]}
+$o2.a:=20 //$o1 = {"a":20,"b":[1,2,3]}
+$col.push(4) 
+//$o1 = {"a":20,"b":[1,2,3,4]}
+//$o2 = {"a":20,"b":[1,2,3,4]}
+ASSERT($o1=$o2) //True
+```
+
+This principle applies wherever objects or collections are used, including in [parameters](./parameters.md) or [formula](../commands/formula) expressions.
+
+:::note
+
+If you want to create a **deep copy** of an object, use the [`OB COPY`](../commands/ob-copy) command.
+
+:::
 
 ## Propiedades {#properties}
 
@@ -265,32 +295,32 @@ $doc:=Null // liberar recursos ocupados por $doc
 
 ## Clases
 
-Objects can belong to classes. Using a class allows to predefine an object behaviour and structure with associated properties and functions.
+Los objetos pueden pertenecer a clases. El uso de una clase permite predefinir el comportamiento y la estructura de un objeto con propiedades y funciones asociadas.
 
-The 4D language proposes several [native classes](../category/class-API-reference/) that you can use to handle objects. You can also define and use your own [user classes](./classes.md) to organize your code.
+The 4D language proposes several [native classes](../category/class-API-reference/) that you can use to handle objects. También puede definir y utilizar sus propias [clases de usuario](./classes.md) para organizar su código.
 
-## Streaming support
+## Soporte de streaming
 
 A streamable class (or *serializable* class) is a class whose objects can be converted into a sequence of bytes (text or binary) in order to write them in a file, to send them as parameters, or to be able to store and rebuild them afterwards.
 
-### Text streaming (`JSON Stringify`)
+### Transmisión de texto (`JSON Stringify`)
 
-JSON commands that stringify contents such as [`JSON Stringify`](../commands/json-stringify) and the [`Execute on server`](../commands/execute-on-server) command allow you to convert objects to json (text). They support objects, collections, and user classes.
+JSON commands that stringify contents such as [`JSON Stringify`](../commands/json-stringify) and the [`Execute on server`](../commands/execute-on-server) command allow you to convert objects to json (text). Soportan objetos, colecciones y clases de usuarios.
 
 However, text streaming of objects has the following limitations:
 
-- circular references (i.e. objects containing themselves as a property) are not supported and return an error,
+- las referencias circulares (es decir, los objetos que se contienen a sí mismos como propiedad) no son compatibles y devuelven un error,
 - a class object loses its class when it is stringified,
 - native 4D class objects such as [Entity](../API/EntityClass.md) cannot be represented as JSON and are returned as "[object \<class>]", for example "[object Entity]".
 
-### Binary streaming (`VARIABLE TO BLOB`)
+### Serialización binaria (`VARIABLE TO BLOB`)
 
-4D also implements a built-in binary streaming feature through the [`VARIABLE TO BLOB`](../commands/variable-to-blob) command. This feature allows you to get rid of most of text streaming limitations regarding objects (see above):
+4D también implementa una función de flujo binario a través del comando [`VARIABLE TO BLOB`](../commands/variable-to-blob). Esta función le permite librarse de la mayoría de las limitaciones de transmisión de texto relativas a los objetos (ver arriba):
 
-- circular references are supported,
-- objects keep their class,
+- las referencias circulares son soportadas,
+- los objetos mantienen su clase,
 - an extended range of objects are streamable: [4D Write Pro](../WritePro/user-legacy/presentation.md) documents, pictures as objects, [blobs as objects](dt_blob.md#blob-types), and pointers as objects,
-- several native 4D class objects can be streamed, for example [`File`](../API/FileClass.md), [`Folder`](../API/FolderClass.md), or [`Vector`](../API/VectorClass.md). However, only a few native 4D classes are streamable. Unless explicitely stated that "This class is **streamable** in binary", consider that a native 4D class is NOT streamable.
+- se pueden transmitir varios objetos nativos de la clase 4D, por ejemplo [`File`](../API/FileClass.md), [`Folder`](../API/FolderClass.md), o [`Vector`](../API/VectorClass.md). However, only a few native 4D classes are streamable. Unless explicitely stated that "This class is **streamable** in binary", consider that a native 4D class is NOT streamable.
 
 ## Ejemplos
 

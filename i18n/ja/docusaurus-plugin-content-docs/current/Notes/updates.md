@@ -3,6 +3,14 @@ id: updates
 title: リリースノート
 ---
 
+## 4D 21 R4
+
+Read [**What’s new in 4D 21 R4**](https://blog.4d.com/whats-new-in-4d-21-r4/), the blog post that lists all new features and enhancements in 4D 21 R4.
+
+#### ハイライト
+
+- New [`defer`](../commands/defer) command to declare some code to be always executed at method or function exit.
+
 ## 4D 21 R3
 
 [**4D 21 R3 の新機能**](https://blog.4d.com/ja/whats-new-in-4d-21-r3/): 4D 21 R3 の新機能と拡張機能をすべてリストアップしたブログ記事です。
@@ -77,7 +85,7 @@ title: リリースノート
 | libZip    | 1.11.4 | 21             | Zip クラス、4D Write Pro、svg および serverNet コンポーネントによって使用。                                                                                                |
 | LZMA      | 5.8.1  | 21             |                                                                                                                                                      |
 | ngtcp2    | 1.22.1 | **21 R4**      | QUIC に使用                                                                                                                                             |
-| OpenSSL   | 3.5.2  | 21             |                                                                                                                                                      |
+| OpenSSL   | 4.0                    | **21 R4**      |                                                                                                                                                      |
 | PDFWriter | 4.7.0  | 21             | [`WP Export document`](../WritePro/commands/wp-export-document.md) および [`WP Export variable`](../WritePro/commands/wp-export-variable.md) において使用されます |
 | SpreadJS  | 18.2.0 | 21 R2          | 新機能の概要については、 [このブログ記事](https://blog.4d.com/4d-view-pro-whats-new-in-4d-21-r2/) を参照してください。                                                            |
 | webKit    | WKWebView                              | 19             |                                                                                                                                                      |

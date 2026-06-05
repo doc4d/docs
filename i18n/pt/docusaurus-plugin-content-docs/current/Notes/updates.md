@@ -3,6 +3,14 @@ id: updates
 title: Notas de lançamento
 ---
 
+## 4D 21 R4
+
+Leia [**O que há de novo no 4D v21 R4**](https://blog.4d.com/whats-new-in-4d-21-r4/), o post do blog que lista todos os novos recursos e aprimoramentos em 4D v21 R4.
+
+#### Destaques
+
+- New [`defer`](../commands/defer) command to declare some code to be always executed at method or function exit.
+
 ## 4D 21 R3
 
 Leia [**O que há de novo no 4D v21 R3**](https://blog.4d.com/whats-new-in-4d-21-r3/), o post do blog que lista todos os novos recursos e aprimoramentos em 4D v21 R3.
@@ -77,7 +85,7 @@ Leia [**O que há de novo no 4D v21 R2**](https://blog.4d.com/whats-new-in-4d-21
 | libZip     | 1.11.4 | 21               | Utilizado pelos componentes zip class, 4D Write Pro, svg e serverNet                                                                               |
 | LZMA       | 5.8.1  | 21               |                                                                                                                                                    |
 | ngtcp2     | 1.22.1 | **21 R4**        | Usado para QUIC                                                                                                                                    |
-| OpenSSL    | 3.5.2  | 21               |                                                                                                                                                    |
+| OpenSSL    | 4.0                    | **21 R4**        |                                                                                                                                                    |
 | PDFWriter  | 4.7.0  | 21               | Used for [`WP Export document`](../WritePro/commands/wp-export-document.md) and [`WP Export variable`](../WritePro/commands/wp-export-variable.md) |
 | SpreadJS   | 18.2.0 | 21 R2            | Veja [este post de blog](https://blog.4d.com/4d-view-pro-whats-new-in-4d-21-r2/) para uma visão geral dos novos recursos                           |
 | webKit     | WKWebView                              | 19               |                                                                                                                                                    |

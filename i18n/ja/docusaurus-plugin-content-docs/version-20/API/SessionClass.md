@@ -103,9 +103,9 @@ IP:port/4DACTION/action_Session
 <!-- REF #SessionClass.clearPrivileges().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---------|--- |:---:|------|
-||||Does not require any parameters|
+||||引数を必要としません|
 </div>
 <!-- END REF -->
 
@@ -264,9 +264,9 @@ End if
 <!-- REF #SessionClass.isGuest().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---------|--- |:---:|------|
-|Result|Boolean|<-|True if session is a Guest one, False otherwise|
+|戻り値|Boolean|<-|True if session is a Guest one, False otherwise|
 </div>
 <!-- END REF -->
 

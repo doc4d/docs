@@ -43,25 +43,25 @@ slug: /commands/theme/XML-DOM
 | [<!-- INCLUDE #_command_.DOM SET XML ELEMENT NAME.Syntax -->](../../commands/dom-set-xml-element-name)<br/>                         |
 | [<!-- INCLUDE #_command_.DOM SET XML ELEMENT VALUE.Syntax -->](../../commands/dom-set-xml-element-value)<br/>                       |
 
-## Overview of XML DOM Commands
+## Visión general de los comandos XML DOM
 
-See [XML, DOM, and SAX](../theme/XML.md#xml-dom-and-sax) section for a definition of XML DOM.
+Consulte la sección [XML, DOM y SAX](../theme/XML.md#xml-dom-and-sax) para obtener una definición de XML DOM.
 
-### Creating, opening and closing XML documents via DOM
+### Creación, apertura y cierre de documentos XML mediante DOM
 
-Objects created, modified or parsed by the 4D DOM commands can be text, URLs, documents or BLOBs. The DOM commands used for opening XML objects in 4D are [`DOM Parse XML source`](../../commands/dom-parse-xml-source) and [`DOM Parse XML variable`](../../commands/dom-parse-xml-variable).
+Los objetos creados, modificados o analizados por los comandos DOM de 4D pueden ser texto, URLs, documentos o BLOBs. Los comandos DOM utilizados para abrir objetos XML en 4D son [`DOM Parse XML source`](../../commands/dom-parse-xml-source) y [`DOM Parse XML variable`](../../commands/dom-parse-xml-variable).
 
-Many commands then let you read, parse and write the elements and attributes. Errors are recovered using the [`XML GET ERROR`](../../commands/xml-get-error) command. Do not forget to call the [`DOM CLOSE XML`](../../commands/dom-close-xml) command to close the source in the end.
+Muchos comandos permiten leer, analizar y escribir los elementos y atributos. Los errores se recuperan utilizando el comando [`XML GET ERROR`](../../commands/xml-get-error). No olvide llamar al comando [`DOM CLOSE XML`](../../commands/dom-close-xml) para cerrar la fuente al final.
 
-Note about use of XML BLOB parameters: For historical reasons, XML commands such as [`DOM Parse XML variable`](../../commands/dom-parse-xml-variable) accept BLOB type parameters. However, it is highly recommended to store XML structures as Text. The use of BLOBs is reserved for processing binary data. In conformity with XML specifications, binary data are automatically encoded in Base64, even when the BLOB contains text.
+Nota sobre el uso de parámetros BLOB XML: por razones históricas, los comandos XML como [`DOM Parse XML variable`](../../commands/dom-parse-xml-variable) aceptan parámetros de tipo BLOB. Sin embargo, se recomienda encarecidamente almacenar las estructuras XML como texto. El uso de BLOBs está reservado al tratamiento de datos binarios. Conforme con las especificaciones XML, los datos binarios se codifican automáticamente en Base64, incluso cuando el BLOB contiene texto.
 
-### Support of XPath notation
+### Soporte de la notación XPath
 
-Several XML DOM commands ([`DOM Create XML element`](../../commands/dom-create-xml-element), [`DOM Find XML element`](../../commands/dom-find-xml-element), [`DOM Create XML element arrays`](../../commands/dom-create-xml-element-arrays) and [`DOM SET XML ELEMENT VALUE`](../../commands/dom-set-xml-element-value)) support some XPath expressions for accessing XML elements.
+Varios comandos XML DOM ([`DOM Create XML element`](../../commands/dom-create-xml-element), [`DOM Find XML element`](../../commands/dom-find-xml-element), [`DOM Create XML element arrays`](../../commands/dom-create-xml-element-arrays) y [`DOM SET XML ELEMENT VALUE`](../../commands/dom-set-xml-element-value)) soportan algunas expresiones XPath para acceder a elementos XML.
 
-XPath notation comes from the XPath language, designed to navigate within XML structures. It allows the setting of elements directly within an XML structure via a "pathname" type syntax, without necessarily having to indicate the complete pathname in order to reach it.
+La notación XPath procede del lenguaje XPath, diseñado para navegar dentro de estructuras XML. Permite fijar elementos directamente dentro de una estructura XML mediante una sintaxis de tipo "pathname", sin tener que indicar necesariamente la ruta completa para llegar a ella.
 
-For example, given the following structure:
+Por ejemplo, dada la siguiente estructura:
 
 ```xml
    <RootElement>
@@ -73,9 +73,9 @@ For example, given the following structure:
    </RootElement>
 ```
 
-XPath notation allows you to access element 3 using the */RootElement/Elem1/Elem2/Elem3* syntax.
+La notación XPath permite acceder al elemento 3 utilizando la sintaxis */RootElement/Elem1/Elem2/Elem3*.
 
-4D also accepts indexed XPath elements using the *Element[ElementNum]* syntax. For example, given the following structure:
+4D también acepta elementos XPath indexados utilizando la sintaxis *Element[ElementNum]*. Por ejemplo, dada la siguiente estructura:
 
 ```xml
    <RootElement>
@@ -87,19 +87,19 @@ XPath notation allows you to access element 3 using the */RootElement/Elem1/Elem
    </RootElement>
 ```
 
-XPath notation allows you to access the "ccc" value using the */RootElement/Elem1/Elem2[3]* syntax.
+La notación XPath permite acceder al valor "ccc" utilizando la sintaxis */RootElement/Elem1/Elem2[3]*.
 
-For a comprehensive list of supported XPath expressions, refer to the [`DOM Find XML element`](../../commands/dom-find-xml-element) command description.
+Para una lista completa de expresiones XPath soportadas, consulte la descripción del comando [`DOM Find XML`](../../commands/dom-find-xml-element).
 
 :::note Compatibilidad
 
-Starting with 4D 18 R3, the XPath implementation has been modified to be more compliant and to support a wider set of expressions. If you want to benefit from the extended features in your converted databases, you need to select the **Use standard XPath** option of the [Compatibility page](../../settings/compatibility.md).
+A partir de 4D 18 R3, la implementación de XPath ha sido modificada para ser más compatible y soportar un conjunto más amplio de expresiones. Si desea beneficiarse de las funciones extendidas en sus bases de datos convertidas, deberá seleccionar la opción **Utilizar XPath estándar** de la [Página de compatibilidad](../../settings/compatibility.md).
 
 :::
 
-### Error Handling
+### Gestión de errores
 
-Many functions in this theme return an XML element reference. If an error occurs during function execution (for example, if the root element reference is not valid), the *OK* variable is set to 0 and an error is generated.
+Muchas funciones de este tema devuelven una referencia a un elemento XML. Si se produce un error durante la ejecución de la función (por ejemplo, si la referencia al elemento raíz no es válida), la variable *OK* se pone en 0 y se genera un error.
 
 In addition, the reference returned in this case is a sequence of 32 zero "0" characters.
 
