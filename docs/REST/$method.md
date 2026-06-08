@@ -14,12 +14,6 @@ This parameter allows you to define the operation to execute with the returned e
 |[**$method=subentityset**](#methodsubentityset)|`GET /Company(1)/staff?$expand=staff& $method=subentityset&   $subOrderby=lastName ASC`|Creates an entity set based on the collection of related entities defined in the REST request|
 |[**$method=update**](#methodupdate)|`POST /Person/?$method=update`|Updates and/or creates one or more entities|
 
-:::warning Deprecated
-
-As of 4D 21 R4, the **`GET /Employee/$entityset/<entitySetID>?$method=release`** syntax is **deprecated** and should no longer be used. You must now use [`/$entityset/$release` with a POST verb](./$entityset.md).
-
-:::
-
 
 
 ## $method=delete
@@ -94,49 +88,6 @@ __ENTITYSET: "http://127.0.0.1:8081/rest/Employee/$entityset/9718A30BF61343C7963
 ```
 
 
-
-## $method=release
-
-:::warning Deprecated
-
-As of 4D 21 R4, the **`GET /Employee/$entityset/<entitySetID>?$method=release`** syntax is **deprecated** and should no longer be used. You must now use [`/$entityset/$release` with a POST verb](./$entityset.md).
-
-:::
-
-
-
-Releases an existing entity set stored in 4D Server's cache.
-
-### Description  
-
-You can release an entity set, which you created using [`$method=entityset`](#methodentityset), from 4D Server's cache.
-
-### Example  
-
-Release an existing entity set:
-
-`GET  /rest/Employee/$entityset/4C51204DD8184B65AC7D79F09A077F24?$method=release`
-
-#### Response:
-
-If the request was successful, the following response is returned:
-
-```json
-{
-    "ok": true
-}
-If the entity set wasn't found, an error is returned:
-
-{
-    "__ERROR": [
-        {
-            "message": "Error code: 1802\nEntitySet  \"4C51204DD8184B65AC7D79F09A077F24\" cannot be found\ncomponent:  'dbmg'\ntask 22, name: 'HTTP connection handler'\n",
-            "componentSignature": "dbmg",
-            "errCode": 1802
-        }
-    ]
-}
-```
 
 
 ## $method=subentityset

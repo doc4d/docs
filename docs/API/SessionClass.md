@@ -737,7 +737,7 @@ End if
 #### Description
 
 
-The `.quotas` property contains <!-- REF #SessionClass.quotas.Summary -->a `4D.QuotaManager` object with current values (read-only) and default values (writable) for server thresholds in the current session<!-- END REF -->. Server thresholds are used to control the requests to the server and help preventing excessive use of ORDA resources (see [`4D.QuotaManager` class](./QuotaManagerClass.md)).
+The `.quotas` property contains <!-- REF #SessionClass.quotas.Summary -->a `4D.QuotaManager` object with current values and set values for server thresholds in the current session<!-- END REF -->. Server thresholds are used to control the requests to the server and help preventing excessive use of resources (see [`4D.QuotaManager` class](./QuotaManagerClass.md)).
 
 This property is **read only**.
 
@@ -745,16 +745,19 @@ The following properties of the `4D.QuotaManager` object are available for the s
 
 |Property||Type|Writable|Description|
 |---|---|---|---|---|
-|[nbEntitySets](./QuotaManagerClass.md#nbentitysets)||Integer|yes|Maximum allowed number of entity sets in memory|
+|[nbEntitySets](./QuotaManagerClass.md#nbentitysets)||Integer|yes|Maximum allowed number of entity sets in server's memory|
 |[defaultEntitySetTimeout](./QuotaManagerClass.md#defaultentitysettimeout) ||Integer|yes|Default inactivity timeout for entity sets in memory (seconds)|
 |[maxEntitySetTimeout](./QuotaManagerClass.md#maxentitysettimeout) ||Integer|yes|Maximum inactivity timeout for entity sets in memory (seconds)|
 |currentValues||Object|no||
-||nbEntitySets|Integer|no|Number of entity sets [currently in cache](../REST/$info.md)|
-||defaultEntitySetTimeout|Integer|no|Default inactivity timeout|
-||maxEntitySetTimeout|Integer|no|Maximum inactivity timeout|
+||nbEntitySets|Integer|no|Number of entity sets currently in memory|
 
 When you modify a value, it is immediately taken into account by the server (no need to restart) and will be applied to further REST requests. 
 
+:::tip Related blog post
+
+[Make your REST server at the top of its game ... Forget throttling or crashing and tune yourself the memory usage](https://blog.4d.com/make-your-rest-server-at-the-top-of-its-game-forget-throttling-or-crashing-and-tune-yourself-the-memory-usage).
+
+:::
 
 #### Example
 
@@ -766,6 +769,10 @@ Session.quotas.nbEntitySets:=50
 
 <!-- END REF -->
 
+
+#### See also
+
+[QuotaManager class](./QuotaManagerClass.md)
 
 
 

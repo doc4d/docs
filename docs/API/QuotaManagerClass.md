@@ -4,10 +4,10 @@ title: QuotaManager
 ---
 
 
-The `4D.QuotaManager` class provides you with an interface to configure and monitor the usage limits you apply to the REST server. Thresholds are useful for example to protect the server from poorly optimized requests or excessive use of server resources. Typically, the quota manager allows you to provide thresholds to ORDA resources a REST server session can access. 
+The `4D.QuotaManager` class provides you with an interface to configure and monitor some usage limits you apply to your 4D application. Thresholds are useful for example to protect the server from poorly optimized requests or excessive use of server resources. Typically, the quota manager allows you to provide thresholds to ORDA resources a REST server session can access. 
 
 
-`4D.QuotaManager` objects are instantiated by the [`quotas` property of a session](./SessionClass.md#quotas) object.
+`4D.QuotaManager` objects can be instantiated by the [`quotas` property of a session](./SessionClass.md#quotas) object.
 
 
 <details><summary>History</summary>
@@ -17,8 +17,6 @@ The `4D.QuotaManager` class provides you with an interface to configure and moni
 |21 R4|Class added|
 
 </details>
-
-### Example
 
 
 
@@ -43,7 +41,7 @@ The `4D.QuotaManager` class provides you with an interface to configure and moni
 
 #### Description
 
-The `.currentValues` property contains <!-- REF #QuotaManagerClass.currentValues.Summary -->the current values related to the defined quotas properties<!-- END REF -->.
+The `.currentValues` property contains <!-- REF #QuotaManagerClass.currentValues.Summary -->the current values related to the defined quotas properties<!-- END REF -->. This object is automatically updated by the server. 
 
 
 <!-- END REF -->
@@ -60,13 +58,16 @@ The `.defaultEntitySetTimeout` property contains <!-- REF #QuotaManagerClass.def
 
 By default, this value is 2 hours (7200 seconds). It can also be defined at the entity set creation using the [`$timeout` REST API](../REST/$timeout.md). 
 
-You can change this value dynamically using the [`quotas.defaultEntitySetTimeout` property of the Session](./SessionClass.md#quotas), so that it will be used for any entity set created afterward in the session (existing entity set default timeout values are not modified). 
+You can change this value dynamically using the [`quotas.defaultEntitySetTimeout` property of the Session](./SessionClass.md#quotas), so that it will be used for any entity set created afterwards in the session (existing entity set default timeout values are not modified). 
 
 :::note
 
 If you define a value higher than the `maxEntitySetTimeout` property value, it will be aligned with the `maxEntitySetTimeout` value. 
 
 :::
+
+You cannot pass a value <=0 (an error is generated in this case). To reset the property value for the session, pass *undefined*. 
+
 
 #### Example
 
@@ -101,6 +102,8 @@ http://127.0.0.1/rest/People?$filter=ID>=4&$method=entityset&$timeout=3000
 
 ... then the timeout defined in the request is ignored and the entity set will be released after 40 minutes if not used during this period of time.
 
+You cannot pass a value <=0 (an error is generated in this case). To reset the property value for the session, pass *undefined*. 
+
 #### Example
 
 In some 4D code in a REST process:
@@ -125,6 +128,9 @@ The `.nbEntitySets` property contains <!-- REF #QuotaManagerClass.nbEntitySets.S
 By default, there is no limit for entity sets [stored in memory by REST requests](../REST/$info.md) (the value is 0). You can set a limit to control the server payload for a specific session.
 
 When the maximum number of allowed entity sets is reached, a REST request that need to create an entity set will get a [**429** HTTP status code and an error response](../REST/REST_requests.md#rest-status-and-response), until at least one entity set is released. You can release an entity set from the cache using the [`$release` REST command](../REST/$entityset.md#entitysetrelease). 
+
+You cannot pass a value <=0 (an error is generated in this case). To reset the property value for the session, pass *undefined*. 
+
 
 #### Example
 
