@@ -3,6 +3,8 @@ id: components
 title: Dependencies
 ---
 
+
+
 The 4D [project architecture](../Project/architecture.md) is modular. You can provide additional functionalities to your 4D projects by installing [**components**](Concepts/components.md) and [**plug-ins**](../Concepts/plug-ins.md). Components are made of 4D code, while plug-ins can be [built using any language](../Extensions/develop-plug-ins.md). 
 
 You can [develop](../Extensions/develop-components.md) and [build](../Desktop/building.md) your own 4D components, or download public components shared by the 4D community that [can be found for example on GitHub](https://github.com/topics/4d-component).
@@ -226,6 +228,12 @@ The [GitLab Package Registry](https://docs.gitlab.com/user/packages/package_regi
 4. Use the package URL as a release asset link.
 5. Associate it with the same Git tag.
 
+:::tip Tutorial: Create and Use a 4D Component Release with Gitlab
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Zgx7MHWh9EE?si=K4oV-M2kzk6v2VSm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+:::
+
 
 #### Declaring paths
 
@@ -327,7 +335,7 @@ The Dependency manager checks periodically if component updates are available on
 
 #### Naming conventions for 4D version tags
 
-If you want to use the [**Follow 4D Version**](#defining-a-github-dependency-version-range) dependency rule, the tags for component releases must comply with specific conventions. 
+If you want to use the [**Follow 4D Version**](#defining-a-dependency-version-range) dependency rule, the tags for component releases must comply with specific conventions. 
 
 - **LTS versions**: `x.y.p` pattern, where `x.y` corresponds to the main 4D version to follow and `p` (optional) can be used for patch versions or additional updates. When a project specifies that it follows the 4D version for *x.y* LTS version, the Dependency Manager will resolve it as "the latest version x.*" if available or "version below x". If no such version exists, the user will be notified. For example, "20.4" will be resolved by the Dependency manager as "the latest component version 20.\* or version below 20". 
 
@@ -451,7 +459,7 @@ The following status labels are available:
 - **Duplicated**: The dependency is not loaded because another dependency with the same name exists at the same location (and is loaded). 
 - **Available after restart**: The dependency reference has just been added or updated [using the interface](#monitoring-project-dependencies), it will be loaded once the application restarts.  
 - **Unloaded after restart**: The dependency reference has just been removed [using the interface](#removing-a-dependency), it will be unloaded once the application restarts.   
-- **Update available \<version\>**: A new version of the dependency matching your [component version configuration](#defining-a-github-dependency-version-range) has been detected.   
+- **Update available \<version\>**: A new version of the dependency matching your [component version configuration](#defining-a-dependency-version-range) has been detected.   
 - **Refreshed after restart**: The [component version configuration](#defining-a-dependency-version-range) of the dependency has been modified, it will be adjusted at the next startup.   
 - **Recent update**: A new version of the dependency has been loaded at startup.  
 
@@ -629,7 +637,7 @@ In addition, you can check for updates at any moment, for a single dependency or
 ![check components](../assets/en/Project/check-component-all.png)
 
 
-If a new component version matching your [component versioning configuration](#defining-a-github-dependency-version-range) is detected on GitHub, a specific dependency status is displayed: 
+If a new component version matching your [component versioning configuration](#defining-a-dependency-version-range) is detected on GitHub, a specific dependency status is displayed: 
 
 ![dependency-new-version](../assets/en/Project/dependency-available.png)
 

@@ -66,36 +66,46 @@ Vous pouvez ajouter ou modifier des formulaires 4D à l'aide des éléments suiv
 }
 ```
 
-## Using forms
+### Formulaire projet et formulaire table
 
-Forms are called using specific commands of the 4D Language. In your 4D desktop applications, forms can be used in various ways, depending on their status within your interface needs. A form can be:
+Il existe deux catégories de formulaires :
+
+- **Les formulaires projet** - Formulaires indépendants qui ne sont rattachés à aucune table. Ils sont destinés plus particulièrement à la création de boîtes de dialogue d'interface et de composants. Les formulaires projet peuvent être utilisés pour créer des interfaces facilement conformes aux normes du système d'exploitation.
+
+- **Les formulaires table** - Rattachés à des tables spécifiques et bénéficient ainsi de fonctions automatiques utiles pour développer des applications basées sur des bases de données. En règle générale, une table possède des formulaires d'entrée et de sortie séparés.
+
+En règle générale, vous sélectionnez la catégorie de formulaire lorsque vous créez le formulaire, mais vous pouvez la modifier par la suite.
+
+## Utilisation des formulaires
+
+Les formulaires sont appelés à l'aide de commandes spécifiques du langage 4D. Dans vos applications de bureau 4D, les formulaires peuvent être utilisés de différentes manières, en fonction de leur statut par rapport à vos besoins d'interface. Un formulaire peut être :
 
 - used in its own window for data viewing, processing, editing, or to display on-screen information to the user,
 - used embedded in another form (subform),
 - used as template for printing,
 - or called by specific features like the Label editor.
 
-### Using a project form in a window
+### Utilisation d'un formulaire de projet dans une fenêtre
 
 When you want to use a form as on-screen dialog, you need to (1) create a window and (2) load the form within the window, along with an event loop to process user actions. The straighforward steps to display a form on screen are:
 
-1. Call the [`Open form window`](../commands/open-form-window) command to create and preconfigure a window tailored for your form. Note that the command only draw aan empty window, it does not display anything.
-2. In the same method, call the [`DIALOG`](../commands/dialog) command to actually load the form in the opened form window, ready for user interaction. [`DIALOG`](../commands/dialog) loads form data and places your code in listening mode to user events. When you call this command without asterisk (\*), the dialog will stay on screen and the code execution is frozen until an event occurs (see also ["Event listening" paragraph](../Develop/async.md#event-listening)).
+1. Call the [`Open form window`](../commands/open-form-window) command to create and preconfigure a window tailored for your form. Note that the command only draws an empty window, it does **not** display anything.
+2. In the same method, call the [`DIALOG`](../commands/dialog) command to actually load the form in the opened form window, ready for user interaction. [`DIALOG`](../commands/dialog) loads form data and places your code in [listening mode to user events](../Develop/async.md#event-listening). When you call this command without asterisk (\*), the dialog will stay on screen and the code execution is frozen until an event occurs.
 3. (optional) Use the [`Form`](../commands/form) command from within the form context to access form data.
 
-::note Compatibilité
+:::note Compatibilité
 
 All-in-one commands such as [`ADD RECORD`](../commands/add-record) or [`MODIFY RECORD`](../commands/add-record) merge all steps in a single call. These legacy commands can still be used for prototyping or basic developments but are not adapted to modern, fully controlled interfaces. They directly rely on the 4D database and legacy features such as [table forms](#project-form-and-table-form) and do not benefit from the power and flexibility of [ORDA features](../ORDA/overview.md). Unless specific needs, it is recommended to use project forms for your 4D desktop application interfaces.
 
 :::
 
-#### Simple example
+#### Exemple simple
 
-You create the following basic form in the [Form editor](./formEditor.md):
+Vous créez le formulaire de base suivant dans l'[éditeur de formulaire] (./formEditor.md ) :
 
 ![](../assets/en/FormEditor/example-form-1.png)
 
-The form is [associated with a "myForm" class](./properties_FormProperties.md#form-class), defined as follow:
+Le formulaire est [associé à une classe "myForm"](./properties_FormProperties.md#form-class), défini comme suit :
 
 ```4d
     //cs.myForm
@@ -107,7 +117,7 @@ Class constructor
   This.age:=0
 ```
 
-The form class is automatically instantiated by 4D once the form is loaded. If you execute the following project method:
+La classe de formulaire est automatiquement instanciée par 4D une fois que le formulaire est chargé. Si vous exécutez la méthode de projet suivante :
 
 ```4d
     // Instantiate a form object that will host form data and UI logic
@@ -133,27 +143,27 @@ ALERT($formObject.name+" is "+String($formObject.age)+" years old!")
 
 ```
 
-4D displays:
+4D affiche:
 
 ![](../assets/en/FormEditor/example-form-2.png)
 
-### Using forms as subforms
+### Utilisation de formulaires comme sous-formulaires
 
-A form can be embedded within another form, in which case it becomes a [subform object](../FormObjects/subform_overview.md) which follows specific rules. A subform is automatically used when its parent form is [displayed in a window](#using-a-project-form-in-a-window).
+Un formulaire peut être intégré dans un autre formulaire, auquel cas il devient un [objet sous-formulaire] (../FormObjects/subform_overview.md) qui suit des règles spécifiques. Un sous-formulaire est automatiquement utilisé lorsque son formulaire parent est [affiché dans une fenêtre] (#using-a-project-form-in-a-window).
 
-In the same way that you pass an object to a form with the [`DIALOG`](../commands/dialog) command, you can also pass an object to a subform area using the property list. Then, you can use it in the subform with the [`Form`](../commands/form) command. In this example, the "InvoiceAddress" object is bound to the subform:
+De la même manière que vous passez un objet à un formulaire avec la commande [`DIALOG`](../commands/dialog), vous pouvez également passer un objet à une zone de sous-formulaire en utilisant la liste des propriétés. Vous pouvez ensuite l'utiliser dans le sous-formulaire avec la commande [`Form`](../commands/form). Dans cet exemple, l'objet "InvoiceAddress" est lié au sous-formulaire :
 
 ![](../assets/en/FormEditor/subform-example.png)
 
-### Using forms to be printed
+### Utilisation des formulaires à imprimer
 
-In 4D desktop applications, forms can be printed using the various [commands of the **Printing** theme](../commands/theme/Printing).
+Dans les applications de bureau 4D, les formulaires peuvent être imprimés à l'aide des différentes [commandes du thème **Imprimer**](../commands/theme/Printing).
 
 #### Exemples
 
-You can use forms to print data, either as page or as list.
+Vous pouvez utiliser les formulaires pour imprimer des données, soit sous forme de page, soit sous forme de liste.
 
-- To simply print some part of a form, use the [`Print form`](../commands/print-form) command. Par exemple :
+- Pour imprimer simplement une partie d'un formulaire, utilisez la commande [`Print form`](../commands/print-form). Par exemple :
 
 ```4d
 var $formData:={}
@@ -163,7 +173,7 @@ $formData.request:="I need more COFFEE"
 var $h:=Print form("Request_var";$formData;Form detail)
 ```
 
-- To print a form within a printing job to process data during printing, use [`FORM LOAD`](../commands/form-load) and [`Print object`](../commands/print-object) commands. Par exemple :
+- Pour imprimer un formulaire dans une tâche d'impression pour traiter les données pendant l'impression, utilisez les commandes [`FORM LOAD`](../commands/form-load) et [`Print object`](../commands/print-object). Par exemple :
 
 ```4d
  var $formData : Object
@@ -173,12 +183,12 @@ var $h:=Print form("Request_var";$formData;Form detail)
  OPEN PRINTING JOB
  $formData:={}
  $formData.LBcollection:=[]
- ... //fill the collection with data
+ ... //remplir la collection avec des données
  
  FORM LOAD("GlobalForm";$formData) 
  $over:=False
  Repeat
-    $full:=Print object(*;"LB") // the datasource of this "LB" listbox is Form.LBcollection
+    $full:=Print object(*;"LB") // La source de données de cette list box "LB" est Form.LBcollection
     LISTBOX GET PRINT INFORMATION(*;"LB";lk printing is over;$over)
     If(Not($over))
        PAGE BREAK
@@ -196,11 +206,11 @@ var $h:=Print form("Request_var";$formData;Form detail)
 - Layout structure, spacing, and alignment, are preserved so that the printed document reflects the logical structure of the on-screen form.
 - The same output is produced, whether the form is printed from macOS or Windows.
 
-For example, the following form:
+Par exemple, le formulaire suivant :
 
 ![](../assets/en/FormEditor/screen_rendering.png)
 
-... will be printed with this rendering:
+... sera imprimé avec ce rendu :
 
 ![](../assets/en/FormEditor/print_rendering.png)
 
@@ -232,16 +242,6 @@ There are several other ways to use forms in the 4D applications, including:
 - a form can be [inherited](#inherited-forms) from another form,
 - a form can be [associated to a listbox](../FormObjects/properties_ListBox.md#detail-form-name) in response to a user action to display a row using an edit button or a double-click,
 - the [label editor can use a form](../Desktop/labels.md#form-to-use) as template to print labels.
-
-## Formulaire projet et formulaire table
-
-Il existe deux catégories de formulaires :
-
-- **Les formulaires projet** - Formulaires indépendants qui ne sont rattachés à aucune table. Ils sont destinés plus particulièrement à la création de boîtes de dialogue d'interface et de composants. Les formulaires projet peuvent être utilisés pour créer des interfaces facilement conformes aux normes du système d'exploitation.
-
-- **Les formulaires table** - Rattachés à des tables spécifiques et bénéficient ainsi de fonctions automatiques utiles pour développer des applications basées sur des bases de données. En règle générale, une table possède des formulaires d'entrée et de sortie séparés.
-
-En règle générale, vous sélectionnez la catégorie de formulaire lorsque vous créez le formulaire, mais vous pouvez la modifier par la suite.
 
 ## Pages formulaire
 
