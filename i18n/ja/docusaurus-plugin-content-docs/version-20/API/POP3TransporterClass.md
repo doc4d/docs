@@ -215,9 +215,9 @@ POP3 Transporter オブジェクトは [POP3 New transporter](#pop3-new-transpor
 <!-- REF #POP3TransporterClass.getBoxInfo().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---------|--- |:---:|------|
-|Result|Object|<-|boxInfo object|
+|戻り値|Object|<-|boxInfo object|
 </div>
 <!-- END REF -->
 
@@ -399,9 +399,9 @@ POP3 Transporter オブジェクトは [POP3 New transporter](#pop3-new-transpor
 <!-- REF #POP3TransporterClass.getMailInfoList().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---------|--- |:---:|------|
-|Result|Collection|<-|Collection of `mailInfo` objects|
+|戻り値|Collection|<-|Collection of `mailInfo` objects|
 </div>
 <!-- END REF -->
 
@@ -533,9 +533,9 @@ POP3 Transporter オブジェクトは [POP3 New transporter](#pop3-new-transpor
 <!-- REF #POP3TransporterClass.undeleteAll().Params -->
 <div class="no-index">
 
-|Parameter|Type||Description|
+|引数|型||説明|
 |---------|--- |:---:|------|
-||||Does not require any parameters|
+||||引数を必要としません|
 </div>
 <!-- END REF -->
 

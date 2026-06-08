@@ -3,6 +3,15 @@ id: updates
 title: Notas de lançamento
 ---
 
+## 4D 21 R4
+
+Leia [**O que há de novo no 4D v21 R4**](https://blog.4d.com/whats-new-in-4d-21-r4/), o post do blog que lista todos os novos recursos e aprimoramentos em 4D v21 R4.
+
+#### Destaques
+
+- Multi-level list style sheets are now [supported in 4D Write Pro Interface](../WritePro/writeprointerface.md#multi-level-style-sheets), allowing users to create and manage structured multi-level lists directly from the toolbar and sidebar.
+- New [`defer`](../commands/defer) command to declare some code to be always executed at method or function exit; new [`Deferred formulas`](../commands/deferred-formulas) command to get the list of deferred formulas.
+
 ## 4D 21 R3
 
 Leia [**O que há de novo no 4D v21 R3**](https://blog.4d.com/whats-new-in-4d-21-r3/), o post do blog que lista todos os novos recursos e aprimoramentos em 4D v21 R3.
@@ -10,7 +19,7 @@ Leia [**O que há de novo no 4D v21 R3**](https://blog.4d.com/whats-new-in-4d-21
 #### Destaques
 
 - The [`JSON Validate`](../commands/json-validate) command now supports of JSON Schema draft 2020-12.
-- 4D Write Pro now supports [hierarchical list style sheets](../WritePro/user-legacy/stylesheets.md#hierarchical-list-style-sheets), enabling the creation and management of structured [multi-level lists](../WritePro/user-legacy/using-a-4d-write-pro-area.md#multi-level-lists) with automatic numbering.
+- 4D Write Pro now supports [multi-level list style sheets](../WritePro/user-legacy/stylesheets.md#multi-level-list-style-sheets), enabling the creation and management of structured [multi-level lists](../WritePro/user-legacy/using-a-4d-write-pro-area.md#multi-level-lists) with automatic numbering.
 - Ability to use a custom certificate from the macOS keychain instead of a local certificates folder in [`HTTPRequest`](../API/HTTPRequestClass.md#4dhttprequestnew) and [`HTTPAgent`](../API/HTTPAgentClass.md#4dhttpagentnew) classes.
 - New [`4D.Method` class](../API/MethodClass.md) to create and execute a 4D method code from text source. [`METHOD Get path`](../commands/method-get-path) and [`METHOD RESOLVE PATH`](../commands/method-resolve-path) commands support a new `path volatile method` constant (128).
 - IMAP transporter now supports mailbox event notifications using the IDLE protocol through a [notifier object](../API/IMAPTransporterClass.md#notifier) of the [4D.IMAPNotifier](../API/IMAPNotifierClass.md) class, configurable via the `listener` property of [IMAP New transporter](../commands/imap-new-transporter).
@@ -77,7 +86,7 @@ Leia [**O que há de novo no 4D v21 R2**](https://blog.4d.com/whats-new-in-4d-21
 | libZip     | 1.11.4 | 21               | Utilizado pelos componentes zip class, 4D Write Pro, svg e serverNet                                                                               |
 | LZMA       | 5.8.1  | 21               |                                                                                                                                                    |
 | ngtcp2     | 1.22.1 | **21 R4**        | Usado para QUIC                                                                                                                                    |
-| OpenSSL    | 3.5.2  | 21               |                                                                                                                                                    |
+| OpenSSL    | 4.0                    | **21 R4**        |                                                                                                                                                    |
 | PDFWriter  | 4.7.0  | 21               | Used for [`WP Export document`](../WritePro/commands/wp-export-document.md) and [`WP Export variable`](../WritePro/commands/wp-export-variable.md) |
 | SpreadJS   | 18.2.0 | 21 R2            | Veja [este post de blog](https://blog.4d.com/4d-view-pro-whats-new-in-4d-21-r2/) para uma visão geral dos novos recursos                           |
 | webKit     | WKWebView                              | 19               |                                                                                                                                                    |
