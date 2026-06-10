@@ -1175,6 +1175,18 @@ The QUERY BY FORMULA Joins selector lets you specify the operating mode of the q
 **Note:** With 4D in remote mode, "SQL joins" can only be used if the formulas are executed on the server (they must have access to the records). To configure where formulas are to be executed, please refer to selectors 46 and 47.
 
 
+### QUIC session timeout (135)
+
+**Scope**: 4D Server application
+
+**Kept between two sessions**: No
+
+**Possible values**: Positive integer. Default value = 15, minimum value = 1. 
+
+**Description**: Timeout in minutes for client/server sessions in the event of an unexpected disconnection from the QUIC network layer. This timeout is the period of time allowed for a session during which the connection between the server and the client can be automatically reestablished following an unintended disconnection. If, at the end of this timeout, the connection has not been reestablished. 
+
+This setting can only be set on 4D Server and applies to all new 4D remote sessions (existing sessions timeout value is untouched). 
+
 
 
 ### Query by formula on server (46)

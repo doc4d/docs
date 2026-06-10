@@ -153,3 +153,46 @@ The following table summarizes where the code is executed by default and how to 
 |Object method|local|n/a|
 |Database methods:<ul><li>On Backup Shutdown</li><li>On Backup Startup</li><li>On Server Close Connection</li><li>On Server Open Connection</li><li>On Server Shutdown</li><li>On Server Startup</li><li>On SQL Authentication</li><li>On Web Authentication</li><li>On Web Connection</li></ul>|server|n/a|
 |Database methods:<ul><li>On Startup</li><li>On Exit</li><li>On Drop</li></ul>|client|n/a|
+
+
+## Management of unreachable peer
+
+When the [QUIC network layer is used](../settings/client-server.md#network-layer), client/server sessions benefit from an **automatic reconnection feature** in case of unexpected disconnections. Unexpected disconnections include for example:
+
+- LAN cable unplug/plug,
+- Handover with a mobile connection,
+- Switch reboot,
+- Small network error.
+
+This feature supports both server-side and client-side management in the event of a lost connection with a peer, and includes configurable timeouts and real-time information.
+
+### Unreachable event 
+
+The QUIC network layer automatically emits an "Unreachable" event to 4D Server when a 4D remote unexpectedly stops responding; conversely, it automatically emits an "Unreachable" event to 4D remote when 4D Server unexpectedly stops responding. When the "Unreachable" event is received on either side, it is immediately reflected in the interface and in the machine's [`Session`](./sessions.md) object. 
+
+#### Remote stops responding
+
+When a 4D remote unexpectedly stops responding, on the [Server administration window](../ServerWindow/overview.md), the [remote client status](../ServerWindow/users.md#list-of-users) is set to **Unreachable**.
+
+#### Server stops responding
+
+If 4D Server unexpectedly stops responding, an reconnection dialog box is displayed on the remote machine:
+
+![](../assets/en/Desktop/server-not-responding.png)
+
+#### Session object updated
+
+When the "Unreachable" event is received on either side, an [`info.unreachableSince`](../API/SessionClass.md#info) property is created in the session on the machine receiving the event, and it starts counting seconds since the last communication. You can use this property to implement your own disconnection interface.  
+
+### Restoring or closing connection
+
+The QUIC session timeout is automatically used to monitor disconnections:
+
+- If the connection is restored before the QUIC session timeout is reached, the [`info.unreachableSince`](../API/SessionClass.md#info) property is automatically removed from the session. 
+- If the connection is not restored before the QUIC session timeout is reached, the session is closed.
+  - In case of a remote session closed from the server, a warning entry is written in the [diagnostic log](../Debugging/debugLogFiles.md#4ddiagnosticlogtxt).
+  - In case of a server session closed from a remote machine, a warning dialog box is displayed so that the user can restart the remote application or quit:
+  ![](../assets/en/Desktop/remote-not-responding.png)
+
+
+The QUIC session timeout is 15 seconds by default, it can be modified using the `QUIC session timeout` selector of the [`SET DATABASE PARAMETER`](../commands/set-database-parameter) command. 
