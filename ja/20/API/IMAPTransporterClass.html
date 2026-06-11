@@ -1,4 +1,4 @@
-<!doctype html><html lang=ja dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-20 docs-doc-page docs-doc-id-API/IMAPTransporterClass" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.9.2"><title data-rh=true>IMAPTransporter | 4D Docs</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=robots content="noindex, nofollow"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://developer.4d.com/docs/ja/20/API/IMAPTransporterClass /><meta data-rh=true property=og:locale content=ja /><meta data-rh=true property=og:locale:alternate content=en /><meta data-rh=true property=og:locale:alternate content=fr /><meta data-rh=true property=og:locale:alternate content=es /><meta data-rh=true property=og:locale:alternate content=pt /><meta data-rh=true name=docusaurus_locale content=ja /><meta data-rh=true name=docsearch:language content=ja /><meta data-rh=true name=docusaurus_version content=20 /><meta data-rh=true name=docusaurus_tag content=docs-default-20 /><meta data-rh=true name=docsearch:version content=20 /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-20 /><meta data-rh=true property=og:title content="IMAPTransporter | 4D Docs"/><meta data-rh=true name=description content="IMAPTransporter クラスを使って、IMAP メールサーバーからメッセージを取得することができます。"/><meta data-rh=true property=og:description content="IMAPTransporter クラスを使って、IMAP メールサーバーからメッセージを取得することができます。"/><link data-rh=true rel=icon href=/docs/ja/img/favicon/4d.gif /><link data-rh=true rel=canonical href=https://developer.4d.com/docs/ja/20/API/IMAPTransporterClass /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/20/API/IMAPTransporterClass hreflang=en /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/fr/20/API/IMAPTransporterClass hreflang=fr /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/es/20/API/IMAPTransporterClass hreflang=es /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/ja/20/API/IMAPTransporterClass hreflang=ja /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/pt/20/API/IMAPTransporterClass hreflang=pt /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/20/API/IMAPTransporterClass hreflang=x-default /><link data-rh=true rel=preconnect href=https://OJ04C0M3CU-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/20/category/core-development","name":"コア開発","position":1},{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/20/category/class-API-reference","name":"クラス関数","position":2},{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/20/API/IMAPTransporterClass","name":"IMAPTransporter","position":3}]}</script><link rel=search type=application/opensearchdescription+xml title="4D Docs" href=/docs/ja/opensearch.xml><script src=https://kit.fontawesome.com/daeacc3fc4.js crossorigin=anonymous></script><link rel=stylesheet href=/docs/ja/assets/css/styles.8f88df23.css /><script src=/docs/ja/assets/js/runtime~main.e6155137.js defer></script><script src=/docs/ja/assets/js/main.cc8c476e.js defer></script></head><body class=navigation-with-keyboard><svg style="display: none;"><defs>
+<!doctype html><html lang=ja dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-20 docs-doc-page docs-doc-id-API/IMAPTransporterClass" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.9.2"><title data-rh=true>IMAPTransporter | 4D Docs</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=robots content="noindex, nofollow"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:url content=https://developer.4d.com/docs/ja/20/API/IMAPTransporterClass /><meta data-rh=true property=og:locale content=ja /><meta data-rh=true property=og:locale:alternate content=en /><meta data-rh=true property=og:locale:alternate content=fr /><meta data-rh=true property=og:locale:alternate content=es /><meta data-rh=true property=og:locale:alternate content=pt /><meta data-rh=true name=docusaurus_locale content=ja /><meta data-rh=true name=docsearch:language content=ja /><meta data-rh=true name=docusaurus_version content=20 /><meta data-rh=true name=docusaurus_tag content=docs-default-20 /><meta data-rh=true name=docsearch:version content=20 /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-20 /><meta data-rh=true property=og:title content="IMAPTransporter | 4D Docs"/><meta data-rh=true name=description content="IMAPTransporter クラスを使って、IMAP メールサーバーからメッセージを取得することができます。"/><meta data-rh=true property=og:description content="IMAPTransporter クラスを使って、IMAP メールサーバーからメッセージを取得することができます。"/><link data-rh=true rel=icon href=/docs/ja/img/favicon/4d.gif /><link data-rh=true rel=canonical href=https://developer.4d.com/docs/ja/20/API/IMAPTransporterClass /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/20/API/IMAPTransporterClass hreflang=en /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/fr/20/API/IMAPTransporterClass hreflang=fr /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/es/20/API/IMAPTransporterClass hreflang=es /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/ja/20/API/IMAPTransporterClass hreflang=ja /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/pt/20/API/IMAPTransporterClass hreflang=pt /><link data-rh=true rel=alternate href=https://developer.4d.com/docs/20/API/IMAPTransporterClass hreflang=x-default /><link data-rh=true rel=preconnect href=https://OJ04C0M3CU-dsn.algolia.net crossorigin=anonymous /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/20/category/core-development","name":"コア開発","position":1},{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/20/category/class-API-reference","name":"クラス関数","position":2},{"@type":"ListItem","item":"https://developer.4d.com/docs/ja/20/API/IMAPTransporterClass","name":"IMAPTransporter","position":3}]}</script><link rel=search type=application/opensearchdescription+xml title="4D Docs" href=/docs/ja/opensearch.xml><script src=https://kit.fontawesome.com/daeacc3fc4.js crossorigin=anonymous></script><link rel=stylesheet href=/docs/ja/assets/css/styles.8f88df23.css /><script src=/docs/ja/assets/js/runtime~main.50c9507d.js defer></script><script src=/docs/ja/assets/js/main.cc8c476e.js defer></script></head><body class=navigation-with-keyboard><svg style="display: none;"><defs>
 <symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
 <script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/docs/ja/img/logohome.png /><div role=region aria-label=メインコンテンツまでスキップ><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>メインコンテンツまでスキップ</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top navbarHideable_m1mJ"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label=ナビゲーションバーの切り替え aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/docs/ja/><div class=navbar__logo><img src=/docs/ja/img/logohome.png alt="4D ロゴ" class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/docs/ja/img/logohome.png alt="4D ロゴ" class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">4D ドキュメンテーション</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current=page class="navbar__link active" aria-haspopup=true aria-expanded=false role=button href=/docs/ja/20/API/IMAPTransporterClass>20</a><ul class=dropdown__menu><li><a class=dropdown__link href=/docs/ja/next/API/IMAPTransporterClass>次へ</a><li><a class=dropdown__link href=/docs/ja/API/IMAPTransporterClass>21 R3 BETA</a><li><a class=dropdown__link href=/docs/ja/21-R2/API/IMAPTransporterClass>21 R2</a><li><a class=dropdown__link href=/docs/ja/21/API/IMAPTransporterClass>21</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/docs/ja/20/API/IMAPTransporterClass>20</a><li><a class=dropdown__link href=/docs/ja/19/API/IMAPTransporterClass>19</a><li class=""><hr class=version-separator><li><a class="dropdown__link version-unavailable" title="Page not available in this version
@@ -146,7 +146,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>server<td>Object<td style=text-align:center>-><td>Mail server information<tr><td>Result<td>4D.IMAPTransporter<td style=text-align:center>&lt;-<td><a href=#imap-transporter-object class="">IMAP transporter object</a></table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>server<td>Object<td style=text-align:center>-><td>メールサーバー情報<tr><td>戻り値<td>4D.IMAPTransporter<td style=text-align:center>&lt;-<td><a href=#imap-transporter-object class="">IMAP transporter object</a></table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明>説明<a href=#説明 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>IMAP New transporter</code> コマンドは、 新規の IMAP接続を設定します 。この IMAP接続は、<em>server</em> 引数の指定に応じてを設定され、コマンドの戻り値は新しい <em>IMAP transporter</em> オブジェクトです。 返される transporter オブジェクトは通常、メールの受信に使用されます。</p>
@@ -237,7 +237,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>server<td>Object<td style=text-align:center>-><td>Mail server information<tr><td>Result<td>4D.IMAPTransporter<td style=text-align:center>&lt;-<td><a href=#imap-transporter-object class="">IMAP transporter object</a></table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>server<td>Object<td style=text-align:center>-><td>メールサーバー情報<tr><td>戻り値<td>4D.IMAPTransporter<td style=text-align:center>&lt;-<td><a href=#imap-transporter-object class="">IMAP transporter object</a></table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-1>説明<a href=#説明-1 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>4D.IMAPTransporter.new()</code> 関数は、 <code>4D.IMAPTransporter</code> 型の新しいオブジェクトを作成して返します。 この関数の機能は、<a href=#imap-new-transporter class=""><code>IMAP New transporter</code></a> コマンドと同一です。</p>
@@ -338,7 +338,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>msgIDs<td>any<td style=text-align:center>-><td>Collection of strings: Message unique IDs (text)<br/>Text: Unique ID of a message<br/>Longint (IMAP all): All messages in the selected mailbox<tr><td>keywords<td>Object<td style=text-align:center>-><td>Keyword flags to add<tr><td>Result<td>Object<td style=text-align:center>&lt;-<td>Status of the addFlags operation</table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>msgIDs<td>any<td style=text-align:center>-><td>文字列のコレクション: メッセージの固有ID (テキスト型)<br/>テキスト: メッセージの固有ID<br/>倍長整数 (IMAP all): 選択されたメールボックス内の全メッセージ<tr><td>keywords<td>Object<td style=text-align:center>-><td>追加するキーワードフラグ<tr><td>戻り値<td>Object<td style=text-align:center>&lt;-<td>Status of the addFlags operation</table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-3>説明<a href=#説明-3 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.addFlags()</code> 関数は、 <code>msgIDs</code> のメッセージに対して、<code>keywords</code> で指定したフラグを追加します。</p>
@@ -521,7 +521,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>mailObj<td>Object<td style=text-align:center>-><td>Email object<tr><td>destinationBox<td>Text<td style=text-align:center>-><td>Mailbox to receive Email object<tr><td>options<td>Object<td style=text-align:center>-><td>Object containing charset info<tr><td>Result<td>Object<td style=text-align:center>&lt;-<td>Status of the append operation</table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>mailObj<td>Object<td style=text-align:center>-><td>Eメールオブジェクト<tr><td>destinationBox<td>Text<td style=text-align:center>-><td>Eメールオブジェクトを取得するメールボックス<tr><td>options<td>Object<td style=text-align:center>-><td>文字セット情報を格納したオブジェクト<tr><td>戻り値<td>Object<td style=text-align:center>&lt;-<td>Status of the append operation</table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-4>説明<a href=#説明-4 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.append()</code> 関数は、 <code>destinationBox</code> に指定したメールボックスに、<code>mailObj</code> のメールを追加します。</p>
@@ -880,7 +880,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>msgsIDs<td>Collection<td style=text-align:center>-><td>Collection of message unique IDs (strings)<tr><td>allMsgs<td>Integer<td style=text-align:center>-><td><code>IMAP all</code>: All messages in the selected mailbox<tr><td>destinationBox<td>Text<td style=text-align:center>-><td>Mailbox to receive copied messages<tr><td>Result<td>Object<td style=text-align:center>&lt;-<td>Status of the copy operation</table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>msgsIDs<td>Collection<td style=text-align:center>-><td>文字列のコレクション: メッセージの固有ID (テキスト型)<tr><td>allMsgs<td>Integer<td style=text-align:center>-><td><code>IMAP all</code>: 選択されたメールボックス内の全メッセージ<tr><td>destinationBox<td>Text<td style=text-align:center>-><td>コピーされたメッセージを受け取るメールボックス<tr><td>戻り値<td>Object<td style=text-align:center>&lt;-<td>Status of the copy operation</table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-9>説明<a href=#説明-9 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.copy()</code> 関数は、 <em>msgsIDs</em> または <em>allMsgs</em> で定義されたメッセージを IMAP サーバーの <em>destinationBox</em> へとコピーします。</p>
@@ -988,7 +988,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>name<td>Text<td style=text-align:center>-><td>Name of the new mailbox<tr><td>Result<td>Object<td style=text-align:center>&lt;-<td>Status of the mailbox creation operation</table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>name<td>Text<td style=text-align:center>-><td>新しいメールボックスの名前<tr><td>戻り値<td>Object<td style=text-align:center>&lt;-<td>Status of the mailbox creation operation</table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-10>説明<a href=#説明-10 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.createBox()</code> 関数は、 <code>name</code> に指定した名称の新規メールボックスを作成します。 IMAPサーバーの階層区切り文字がメールボックス名内に含まれる場合、IMAPサーバーは指定のメールボックスを作成するのに必要な親階層を作成します。</p>
@@ -1100,7 +1100,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>msgsIDs<td>Collection<td style=text-align:center>-><td>Collection of message unique IDs (strings)<tr><td>allMsgs<td>Integer<td style=text-align:center>-><td><code>IMAP all</code>: All messages in the selected mailbox<tr><td>Result<td>Object<td style=text-align:center>&lt;-<td>Status of the delete operation</table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>msgsIDs<td>Collection<td style=text-align:center>-><td>メッセージの固有ID のコレクション (テキスト)<tr><td>allMsgs<td>Integer<td style=text-align:center>-><td><code>IMAP all</code>: 選択されたメールボックスの全メッセージ<tr><td>戻り値<td>Object<td style=text-align:center>&lt;-<td>Status of the delete operation</table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-11>説明<a href=#説明-11 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.delete()</code> 関数は、 <code>msgsIDs</code> または <code>allMsgs</code> が指定するメッセージに対して "削除済み" フラグを設定します。</p>
@@ -1208,7 +1208,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>name<td>Text<td style=text-align:center>-><td>Name of the mailbox to delete<tr><td>Result<td>Object<td style=text-align:center>&lt;-<td>Status of the mailbox deletion operation</table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>name<td>Text<td style=text-align:center>-><td>削除するメールボックスの名前<tr><td>戻り値<td>Object<td style=text-align:center>&lt;-<td>Status of the mailbox deletion operation</table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-12>説明<a href=#説明-12 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.deleteBox()</code> 関数は、 <code>name</code> に指定した名称の新規メールボックスを IMAPサーバーから完全に削除します。 存在しないメールボックス、または INBOX を削除しようとして場合には、エラーが生成されます。</p>
@@ -1415,7 +1415,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>name<td>Text<td style=text-align:center>-><td>Name of the mailbox<tr><td>Result<td>Object<td style=text-align:center>&lt;-<td>boxInfo object</table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>name<td>Text<td style=text-align:center>-><td>メールボックスの名前<tr><td>戻り値<td>Object<td style=text-align:center>&lt;-<td>boxInfo object</table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-14>説明<a href=#説明-14 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.getBoxInfo()</code> 関数は、 カレントメールボックス、または <em>name</em> が指定するメールボックスに対応する <code>boxInfo</code> オブジェクトを返します。 この関数は、<a href=#selectbox class=""><code>.selectBox()</code></a> と同じ情報を返しますが、カレントメールボックスは変えません。</p>
@@ -1502,7 +1502,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>parameters<td>Object<td style=text-align:center>-><td>Parameter object<tr><td>Result<td>Collection<td style=text-align:center>&lt;-<td>Collection of mailbox objects</table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>parameters<td>Object<td style=text-align:center>-><td>パラメーターオブジェクト<tr><td>戻り値<td>Collection<td style=text-align:center>&lt;-<td>Collection of mailbox objects</table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-15>説明<a href=#説明-15 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.getBoxList()</code> 関数は、 利用可能なメールボックスの情報を mailbox オブジェクトのコレクションとしてを返します。 この関数を使用すると、IMAPメールサーバー上にあるメッセージの一覧をローカルで管理することができるようになります。</p>
@@ -1601,7 +1601,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>Result<td>Text<td style=text-align:center>&lt;-<td>Hierarchy delimiter character</table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>戻り値<td>Text<td style=text-align:center>&lt;-<td>Hierarchy delimiter character</table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-16>説明<a href=#説明-16 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.getDelimiter()</code> 関数は、 メールボックス名で階層レベルを区切るのに使用される文字を返します。</p>
@@ -1674,7 +1674,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>msgNumber<td>Integer<td style=text-align:center>-><td>Sequence number of the message<tr><td>msgID<td>Text<td style=text-align:center>-><td>Unique ID of the message<tr><td>options<td>Object<td style=text-align:center>-><td>Message handling instructions<tr><td>Result<td>Object<td style=text-align:center>&lt;-<td><a class="" href=/docs/ja/20/API/EmailObjectClass#email-object>Email object</a></table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>msgNumber<td>Integer<td style=text-align:center>-><td>メッセージのシーケンス番号<tr><td>msgID<td>Text<td style=text-align:center>-><td>メッセージの固有ID<tr><td>options<td>Object<td style=text-align:center>-><td>メッセージの管理の指示<tr><td>戻り値<td>Object<td style=text-align:center>&lt;-<td><a class="" href=/docs/ja/20/API/EmailObjectClass#email-object>Email object</a></table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-17>説明<a href=#説明-17 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.getMail()</code> 関数は、 <code>IMAP_transporter</code> が指定するメールボックス内の、<em>msgNumber</em> または <em>msgID</em> に対応するメールを <code>Email</code> オブジェクトとして返します。 この関すを使用すると、メールのコンテンツをローカルで管理できるようになります。</p>
@@ -1777,7 +1777,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>ids<td>Collection<td style=text-align:center>-><td>Collection of message ID<tr><td>startMsg<td>Integer<td style=text-align:center>-><td>Sequence number of the first message<tr><td>endMsg<td>Integer<td style=text-align:center>-><td>Sequence number of the last message<tr><td>options<td>Object<td style=text-align:center>-><td>Message handling instructions<tr><td>Result<td>Object<td style=text-align:center>&lt;-<td>Object containing:<br/><ul><li class=""><a class="" href=/docs/ja/20/API/EmailObjectClass#email-%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88>Email オブジェクト</a> のコレクション<li class="">見つからなかったメッセージの ID または番号のコレクション</ul></table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>ids<td>Collection<td style=text-align:center>-><td>メッセージID のコレクション<tr><td>startMsg<td>Integer<td style=text-align:center>-><td>先頭メッセージのシーケンス番号<tr><td>endMsg<td>Integer<td style=text-align:center>-><td>最後のメッセージのシーケンス番号<tr><td>options<td>Object<td style=text-align:center>-><td>メッセージの管理の指示<tr><td>戻り値<td>Object<td style=text-align:center>&lt;-<td>Object containing:<br/><ul><li class=""><a class="" href=/docs/ja/20/API/EmailObjectClass#email-%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88>Email オブジェクト</a> のコレクション<li class="">見つからなかったメッセージの ID または番号のコレクション</ul></table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-18>説明<a href=#説明-18 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.getMails()</code> 関数は、 <code>Email</code> オブジェクトのコレクションを格納したオブジェクトを返します。</p>
@@ -1900,7 +1900,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>msgNumber<td>Integer<td style=text-align:center>-><td>Sequence number of the message<tr><td>msgID<td>Text<td style=text-align:center>-><td>Unique ID of the message<tr><td>updateSeen<td>Boolean<td style=text-align:center>-><td>If True, the message is marked "seen" in the mailbox. If False the message is left untouched.<tr><td>Result<td>BLOB<td style=text-align:center>&lt;-<td>Blob of the MIME string returned from the mail server</table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>msgNumber<td>Integer<td style=text-align:center>-><td>メッセージのシーケンス番号<tr><td>msgID<td>Text<td style=text-align:center>-><td>メッセージの固有ID<tr><td>updateSeen<td>Boolean<td style=text-align:center>-><td>true 時には、メールボックス内でメッセージを "既読" にします。 false 時にはメッセージの状態は変化しません。<tr><td>戻り値<td>BLOB<td style=text-align:center>&lt;-<td>Blob of the MIME string returned from the mail server</table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-19>説明<a href=#説明-19 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.getMIMEAsBlob()</code> 関数は、 <code>IMAP_transporter</code> が指定するメールボックス内の、<em>msgNumber</em> または <em>msgID</em> に対応するメッセージの MIMEコンテンツを格納した BLOB を返します。</p>
@@ -2025,7 +2025,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>msgsIDs<td>Collection<td style=text-align:center>-><td>Collection of message unique IDs (strings)<tr><td>allMsgs<td>Integer<td style=text-align:center>-><td><code>IMAP all</code>: All messages in the selected mailbox<tr><td>destinationBox<td>Text<td style=text-align:center>-><td>Mailbox to receive moved messages<tr><td>Result<td>Object<td style=text-align:center>&lt;-<td>Status of the move operation</table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>msgsIDs<td>Collection<td style=text-align:center>-><td>メッセージの固有ID のコレクション (文字列)<tr><td>allMsgs<td>Integer<td style=text-align:center>-><td><code>IMAP all</code>: 選択されたメールボックスの全メッセージ<tr><td>destinationBox<td>Text<td style=text-align:center>-><td>メッセージの移動先のメールボックス<tr><td>戻り値<td>Object<td style=text-align:center>&lt;-<td>Status of the move operation</table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-22>説明<a href=#説明-22 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.move()</code> 関数は、 <em>msgsIDs</em> または <em>allMsgs</em> で定義されたメッセージを IMAP サーバーの <em>destinationBox</em> へと移動します。</p>
@@ -2142,7 +2142,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>startMsg<td>Integer<td style=text-align:center>-><td>Sequence number of the first message<tr><td>endMsg<td>Integer<td style=text-align:center>-><td>Sequence number of the last message<tr><td>Result<td>Collection<td style=text-align:center>&lt;-<td>Collection of unique IDs</table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>startMsg<td>Integer<td style=text-align:center>-><td>先頭メッセージのシーケンス番号<tr><td>endMsg<td>Integer<td style=text-align:center>-><td>最後のメッセージのシーケンス番号<tr><td>戻り値<td>Collection<td style=text-align:center>&lt;-<td>Collection of unique IDs</table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-23>説明<a href=#説明-23 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.numToID()</code> 関数は、 <em>startMsg</em> および <em>endMsg</em> で指定された連続した範囲のメッセージのシーケンス番号を IMAP固有IDへと変換します 。対象となるのは、現在選択されているメールボックスのメッセージです。</p>
@@ -2204,7 +2204,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>msgIDs<td>any<td style=text-align:center>-><td>Collection of strings: Message unique IDs (text)<br/>Text: Unique ID of a message<br/>Longint (IMAP all): All messages in the selected mailbox<tr><td>keywords<td>Object<td style=text-align:center>-><td>Keyword flags to remove<tr><td>Result<td>Object<td style=text-align:center>&lt;-<td>Status of the removeFlags operation</table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>msgIDs<td>any<td style=text-align:center>-><td>文字列のコレクション: メッセージの固有ID (テキスト型)<br/>テキスト: メッセージの固有ID<br/>倍長整数 (IMAP all): 選択されたメールボックス内の全メッセージ<tr><td>keywords<td>Object<td style=text-align:center>-><td>削除するキーワードフラグ<tr><td>戻り値<td>Object<td style=text-align:center>&lt;-<td>Status of the removeFlags operation</table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-24>説明<a href=#説明-24 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.removeFlags()</code> 関数は、 <code>msgIDs</code> のメッセージに対して、<code>keywords</code> で指定したフラグを削除します。</p>
@@ -2378,7 +2378,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>currentName<td>Text<td style=text-align:center>-><td>Name of the current mailbox<tr><td>newName<td>Text<td style=text-align:center>-><td>New mailbox name<tr><td>Result<td>Object<td style=text-align:center>&lt;-<td>Status of the renaming operation</table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>currentName<td>Text<td style=text-align:center>-><td>カレントメールボックスの名称<tr><td>newName<td>Text<td style=text-align:center>-><td>新しいメールボックス名<tr><td>戻り値<td>Object<td style=text-align:center>&lt;-<td>Status of the renaming operation</table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-25>説明<a href=#説明-25 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.renameBox()</code> 関数は、 IMAPサーバー上でメールボックスの名称を変更します。 存在しないメールボックスの名称を変更しようとしたり、すでに使われているメールボックス名に変更しようとしたりすると、エラーが生成されます。</p>
@@ -2504,7 +2504,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>searchCriteria<td>Text<td style=text-align:center>-><td>Search criteria<tr><td>Result<td>Collection<td style=text-align:center>&lt;-<td>Collection of message numbers</table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>searchCriteria<td>Text<td style=text-align:center>-><td>検索条件<tr><td>戻り値<td>Collection<td style=text-align:center>&lt;-<td>Collection of message numbers</table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-27>説明<a href=#説明-27 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <blockquote>
@@ -2646,7 +2646,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>name<td>Text<td style=text-align:center>-><td>Name of the mailbox<tr><td>state<td>Integer<td style=text-align:center>-><td>Mailbox access status<tr><td>Result<td>Object<td style=text-align:center>&lt;-<td>boxInfo object</table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>name<td>Text<td style=text-align:center>-><td>メールボックスの名称<tr><td>state<td>Integer<td style=text-align:center>-><td>メールボックスのアクセス状態<tr><td>戻り値<td>Object<td style=text-align:center>&lt;-<td>boxInfo object</table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-28>説明<a href=#説明-28 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.selectBox()</code> 関数は、 <em>name</em> に指定したメールボックスをカレントメールボックスとして選択します。 この関数を使用するとメールボックスに関する情報を取得することができます。</p>
@@ -2771,7 +2771,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>name<td>Text<td style=text-align:center>-><td>Name of the mailbox<tr><td>Result<td>Object<td style=text-align:center>&lt;-<td>Status of the subscribe operation</table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>name<td>Text<td style=text-align:center>-><td>メールボックスの名称<tr><td>戻り値<td>Object<td style=text-align:center>&lt;-<td>Status of the subscribe operation</table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-29>説明<a href=#説明-29 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.subscribe()</code> 関数は、 IMAPサーバーの購読メールボックスとして任意のメールボックスを追加・削除します。 利用可能なメールボックスが大量にある場合、すべてを取得するのを避けるため、確認したいメールボックスだけを購読することができます。</p>
@@ -2871,7 +2871,7 @@ Opening the default page instead" href=/docs/ja/18/GettingStarted/installation>1
 
 
 
-<table><thead><tr><th>Parameter<th>Type<th style=text-align:center><th>Description<tbody><tr><td>name<td>Text<td style=text-align:center>-><td>Name of the mailbox<tr><td>Result<td>Object<td style=text-align:center>&lt;-<td>Status of the unsubscribe operation</table>
+<table><thead><tr><th>引数<th>型<th style=text-align:center><th>説明<tbody><tr><td>name<td>Text<td style=text-align:center>-><td>メールボックスの名称<tr><td>戻り値<td>Object<td style=text-align:center>&lt;-<td>Status of the unsubscribe operation</table>
 </div>
 <h4 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id=説明-30>説明<a href=#説明-30 class=hash-link aria-label=見出しへの直接リンク title=見出しへの直接リンク translate=no>​</a></h4>
 <p><code>.unsubscribe()</code> 関数は、 指定したメールボックスを購読メールボックスから削除します。 これにより、確認するメールボックスの数を減らせます。</p>
