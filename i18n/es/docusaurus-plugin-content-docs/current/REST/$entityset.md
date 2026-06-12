@@ -3,7 +3,7 @@ id: entityset
 title: $entityset
 ---
 
-After [creating an entity set](./$method.md#methodentityset) by using `$method=entityset`, you can then use it subsequently.
+Después de [crear un conjunto de entidades]($method.md#methodentityset) mediante el uso de `$method=entityset`, puede utilizarlo posteriormente.
 
 ## Sintaxis disponible
 
@@ -42,7 +42,7 @@ Cree otro conjunto de entidades basado en conjuntos de entidades creados anterio
 
 ### Descripción
 
-Después de crear un conjunto de entidades (conjunto de entidades nº 1) con `$method=entityset`, puede crear otro conjunto de entidades con `$entityset/\{entitySetID\}?$logicOperator... &$otherCollection`, la propiedad$logicOperator`(cuyos valores se muestran a continuación), y otro entity set (entity set #2) definido por la propiedad`$otherCollection\`. Los dos conjuntos de entidades deben estar en la misma clase de datos.
+&$otherCollection`, la propiedad$logicOperator`(cuyos valores se muestran a continuación), y otro entity set (entity set #2) definido por la propiedad`$otherCollection\`. Después de crear un conjunto de entidades (conjunto de entidades nº 1) con `$method=entityset`, puede crear otro conjunto de entidades con \`$entityset/\{entitySetID\}?$logicOperator... Los dos conjuntos de entidades deben estar en la misma clase de datos.
 
 A continuación, puede crear otro conjunto de entidades que contenga los resultados de esta llamada utilizando el `$method=entityset` al final de la petición REST.
 
@@ -97,7 +97,7 @@ Releases on or more existing entity set(s) stored in [4D Server's cache](./$info
 
 ### Descripción
 
-You can use this command to release a collection of entity sets, which you created using [`$method=entityset`](./$method.md#methodentityset), from 4D Server's cache.
+You can use this command to release a collection of entity sets, which you created using [`$method=entityset`](#methodentityset), from 4D Server's cache.
 
 ### Ejemplo
 
