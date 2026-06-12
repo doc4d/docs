@@ -44,7 +44,7 @@ Le paramètre *styleSheetType* vous permet d'indiquer le type de la feuille de s
 - wk type character: Applique les attributs de style aux caractères.
 - wk type paragraph: Applique les attributs de style aux paragraphes (nécessaire si vous souhaitez créer des [feuilles de style de liste hiérarchique](#hierarchical-list-style-sheet)).
 
-Passez un nom pour la feuille de style dans le paramètre *styleSheetName*. Le nom de la feuille de style est stocké avec le document et facilite la réutilisation ou la modification du style. Il peut également être utilisé avec les commandes [WP Get style sheet](../WritePro/commands/wp-get-style-sheet) et [WP DELETE STYLE SHEET](../WritePro/commands/wp-delete-style-sheet). Le nom de la feuille de style doit respecter les règles suivantes :
+Passez un nom pour la feuille de style dans le paramètre *styleSheetName*. Le nom de la feuille de style est stocké avec le document et facilite la réutilisation ou la modification du style. Le nom de la feuille de style doit respecter les règles suivantes : Il peut également être utilisé avec les commandes [WP Get style sheet](../WritePro/commands/wp-get-style-sheet) et [WP DELETE STYLE SHEET](../WritePro/commands/wp-delete-style-sheet).
 
 - il doit commencer par une lettre
 - il peut alors contenir des caractères alphanumériques, des caractères d'espacement, des caractères "-" ou des caractères unicode >= 128
@@ -61,7 +61,7 @@ Vous pouvez spécifier les attributs de la feuille de style en utilisant la comm
 
 ### Feuille de style de liste hiérarchique
 
-If the *styleSheetType* parameter is set to `wk type paragraph`, you can optionally pass the *listLevelCount* parameter to create a [multi-level list style sheet](../user-legacy/stylesheets.md#multi-level-list-style-sheets).
+Si le paramètre *styleSheetType* est défini sur `wk type paragraph`, vous pouvez optionnellement passer le paramètre *listLevelCount* pour créer une [feuille de style liste hiérarchique](../user-legacy/stylesheets.md#hierarchical-list-style-sheets).
 
 Le paramètre *listLevelCount* définit le nombre total de niveaux dans la hiérarchie. Lorsqu'elle est spécifiée (valeur ≥ 1), la commande crée automatiquement une feuille de style de niveau racine et les feuilles de style de niveau inférieur correspondantes.
 
