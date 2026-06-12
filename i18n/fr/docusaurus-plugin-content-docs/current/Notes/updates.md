@@ -17,7 +17,7 @@ Read [**What’s new in 4D 21 R4**](https://blog.4d.com/whats-new-in-4d-21-r4/),
 
 #### Changements de comportement
 
-- The **`GET /Employee/$entityset/<entitySetID>?$method=release`** REST syntax is **deprecated** and should no longer be used. To delete entity sets, you must now use [`/$entityset/$release` with a POST verb](../REST/$entityset.md).
+- The **`GET /Employee/$entityset/<entitySetID>?$method=release`** REST syntax is **deprecated** and should no longer be used. To delete entity sets, you must now use [`/$entityset/$release` with a POST verb](./$entityset.md).
 
 ## 4D 21 R3
 
@@ -97,7 +97,7 @@ Lisez [**Les nouveautés de 4D 21 R2**](https://blog.4d.com/fr-whats-new-in-4d-2
 | PDFWriter       | 4.7.0  | 21                  | Utilisé pour [`WP Export document`](../WritePro/commands/wp-export-document.md) et [`WP Export variable`](../WritePro/commands/wp-export-variable.md) |
 | SpreadJS        | 18.2.0 | 21 R2               | Voir [ce blog post](https://blog.4d.com/4d-view-pro-whats-new-in-4d-21-r2/) pour un aperçu des nouvelles fonctionnalités.             |
 | webKit          | WKWebView                              | 19                  |                                                                                                                                                       |
-| Windows App SDK | 2.0.1  | **21 R4**           | Used for [Fluent UI rendering](../FormEditor/forms.md#fluent-ui-rendering)                                                                            |
+| Windows App SDK | 2                                      | **21 R4**           | Used for [Fluent UI rendering](../FormEditor/forms.md#fluent-ui-rendering)                                                                            |
 | Xerces          | 3.3.0  | 21                  | Utilisé pour les commandes XML                                                                                                                        |
 | Zlib            | 1.3.1  | 21                  |                                                                                                                                                       |
 
