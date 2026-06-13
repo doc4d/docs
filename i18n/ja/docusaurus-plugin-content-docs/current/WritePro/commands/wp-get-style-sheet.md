@@ -34,11 +34,11 @@ displayed_sidebar: docs
 
 ## 説明
 
-<!--REF #_command_.WP Get style sheet.Summary-->The **WP Get style sheet** command returns the style sheet object designated by the *styleSheetName* or by the style sheet name and the *listLevelIndex* in the case of a [multi-level list style sheet](../user-legacy/stylesheets.md#multi-level-list-style-sheets).<!-- END REF-->
+<!--REF #_command_.WP Get style sheet.Summary-->**WP Get style sheet** コマンドは、*styleSheetName* 引数で指定したスタイルシート、または[階層リストスタイルシート](../user-legacy/stylesheets.md#hierarchical-list-style-sheets) の場合にはスタイルシート名と*listLevelIndex* 引数のインデックスで指定したスタイルシートのスタイルシートオブジェクトを返します。<!-- END REF-->
 
 *wpDoc* 引数には、スタイルシートを持った4D Write Pro ドキュメントを渡します。
 
-*styleSheetName* 引数を使用すると、返すスタイルシートの名前を指定することができます。 *wpDoc* 引数のドキュメント内のそのスタイルシート名が存在しない場合、null オブジェクトが返されます。
+*styleSheetName* 引数を使用すると、返すスタイルシートの名前を指定することができます。 *styleSheetName* 引数を使用すると、返すスタイルシートの名前を指定することができます。 *wpDoc* 引数のドキュメント内のそのスタイルシート名が存在しない場合、null オブジェクトが返されます。
 
 *styleSheetName* で名前を指定したスタイルシートが改装リストスタイルシートのルートレベルの名前である場合、オプションの *listLevelIndex* 引数で階層レベルを指定することで階層内の特定のレベルを取得することができます。
 
