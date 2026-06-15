@@ -228,7 +228,7 @@ Choose([Companies]ID;Bold;Plain;Italic;Underline)
 
 #### 対象オブジェクト
 
-[List Box](listbox_overview.md) - [List Box Column](listbox-column.md)
+[リストボックス](listbox_overview.md) - [リストボックスカラム](listbox-column.md)
 
 ---
 
@@ -378,7 +378,7 @@ End if
 
 #### 対象オブジェクト
 
-[Input](input_overview.md) - [List Box Column](listbox-column.md)
+[入力](input_overview.md) - [リストボックスカラム](listbox-column.md)
 
 ---
 
@@ -423,7 +423,7 @@ End if
 
 #### 対象オブジェクト
 
-[List Box](listbox_overview.md) - [List Box Column](listbox-column.md)
+[リストボックス](listbox_overview.md) - [リストボックスカラム](listbox-column.md)
 
 ---
 
@@ -443,7 +443,7 @@ End if
 
 #### 対象オブジェクト
 
-[List Box](listbox_overview.md) - [List Box Column](listbox-column.md)
+[リストボックス](listbox_overview.md) - [リストボックスカラム](listbox-column.md)
 
 ---
 
