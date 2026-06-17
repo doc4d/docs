@@ -78,7 +78,7 @@ Normalmente, se selecciona la categoría del formulario al crearlo, pero se pued
 
 ## Uso de formularios
 
-Los formularios se llaman usando comandos específicos del lenguaje 4D. In your 4D desktop applications, forms can be used in various ways, depending on their status within your interface needs. Un formulario puede ser:
+Los formularios se llaman usando comandos específicos del lenguaje 4D. En sus aplicaciones de escritorio 4D, los formularios se pueden utilizar de varias maneras, dependiendo del estado de su interfaz. Un formulario puede ser:
 
 - utilizado en su propia ventana para la visualización de datos, procesamiento, edición, o para mostrar información en pantalla al usuario,
 - utilizado integrado en otro formulario (subformulario),
