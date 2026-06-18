@@ -356,4 +356,42 @@ When this option is not enabled, users must first select the cell row and then c
 
 [LISTBOX Get property](../commands/listbox-get-property) - [LISTBOX SET PROPERTY](../commands/listbox-set-property)
 
+---
+
+## Writing Tools
+
+On macOS, this property lets end users apply Apple Intelligence **Writing Tools** to the text of [input](input_overview.md) and [4D Write Pro](writeProArea_overview.md) form objects. Writing Tools use a local AI to proofread, rewrite, summarize, or change the tone of text directly within your 4D application, without the data leaving the computer.
+
+When the property is enabled and the form is executed, a **Show Writing Tools** menu item is added to the [context menu](#context-menu) of the object. When the user selects an action in the Writing Tools, the text is replaced with the returned modification:
+
+- if some text is selected, only the selection is replaced,
+- if there is no selection, the whole contents of the area is used (for a [4D Write Pro](writeProArea_overview.md) area, the whole contents of the current container).
+
+For a [4D Write Pro](writeProArea_overview.md) area, the context used by the Writing Tools is the container in which the cursor is located (header, footer, body, or text box) along with the current selection.
+
+The Writing Tools can also be displayed through the **WritingTools** [standard action](properties_Action.md#standard-action), which can be assigned to a button or a menu item. The writing quality and the preservation of [4D Write Pro formulas](../WritePro/managing-formulas.md) can be controlled using the **bestWritingQuality** standard action (see [4D Write Pro standard actions](../WritePro/user-legacy/standard-actions.md)).
+
+:::note
+
+The Writing Tools feature relies on **Apple Intelligence** and is only available on compatible macOS computers when *Apple Intelligence & Siri* is enabled in the System Settings. On Windows, or when Apple Intelligence is not enabled, the property remains available in the Property List but the feature and the associated **WritingTools** standard action are deactivated at runtime (if the action is invoked by programming, it does nothing).
+
+:::
+
+The availability and default value of the property depend on the object type:
+
+|Object|Availability in the Property List|Default value|
+|---|---|---|
+|[Input](input_overview.md)|Only when the [Multiline](#multiline) property is set to "Yes" or "Automatic"|False|
+|[4D Write Pro area](writeProArea_overview.md)|Always displayed|True|
+
+#### JSON Grammar
+
+|Name|Data Type|Possible Values|
+|---|---|---|
+|writingTools|boolean |true, false|
+
+#### Objects Supported
+
+[4D Write Pro area](writeProArea_overview.md) - [Input](input_overview.md) (multiline or [multi-style](properties_Text.md#multi-style))
+
 
