@@ -20,7 +20,7 @@ Puede crear [varios tipos de métodos](../Concepts/methods.md#method-types):
 
 ## Crear las clases
 
-### User classes
+### Clases de usuario
 
 Una clase usuario en 4D está definida por un archivo de método específico (**.4dm**), almacenado en la carpeta [`/Project/Sources/Classes/`](../Project/architecture.md#sources). El nombre del archivo es el nombre de la clase. El nombre del archivo es el nombre de la clase.
 
@@ -45,9 +45,9 @@ Al nombrar las clases, debe tener en cuenta las siguientes reglas:
 - .
 - No se recomienda dar el mismo nombre a una clase y a una tabla de la base, para evitar conflictos.
 
-### ORDA classes
+### Clases ORDA
 
-[ORDA data model user classes](../ORDA/ordaClasses.md) are high-level class functions created above the data model.
+Las [clases de usuario del modelo de datos ORDA](../ORDA/ordaClasses.md) son funciones de clase de alto nivel creadas sobre el modelo de datos.
 
 An ORDA data model class is defined by adding, at the same location as regular class files (*i.e.* in the `/Sources/Classes` folder of the project folder), a .4dm file with the name of the class. Por ejemplo, una clase de entidad para la dataclass `Utilities` se definirá a través de un archivo `UtilitiesEntity.4dm`.
 
