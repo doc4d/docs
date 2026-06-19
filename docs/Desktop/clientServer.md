@@ -166,6 +166,12 @@ When the [QUIC network layer is used](../settings/client-server.md#network-layer
 
 This feature supports both server-side and client-side management in the event of a lost connection with a peer, and includes configurable timeouts and real-time information.
 
+:::tip Related blog post
+
+[Tired of network errors disrupting your users? 4D 21 R4 has the answer](https://blog.4d.com/tired-of-network-errors-disrupting-your-users-4d-21-r4-has-the-answer)
+
+:::
+
 ### Unreachable event 
 
 The QUIC network layer automatically emits an "Unreachable" event to 4D Server when a remote 4D unexpectedly stops responding; conversely, it automatically emits an "Unreachable" event to a remote 4D when the 4D Server unexpectedly stops responding. When the "Unreachable" event is received on either side, it is immediately reflected in the interface and in the machine's [`Session`](./sessions.md) object. 
@@ -198,4 +204,4 @@ The QUIC session timeout is automatically used to monitor disconnections:
   ![](../assets/en/Desktop/remote-not-responding.png)
 
 
-The QUIC session timeout is 15 minutes by default, it can be modified using the `QUIC session timeout` selector of the [`SET DATABASE PARAMETER`](../commands/set-database-parameter) command. 
+The QUIC session timeout is 900 seconds (15 minutes) by default, it can be modified using the `QUIC session timeout` selector of the [`SET DATABASE PARAMETER`](../commands/set-database-parameter) command. 
