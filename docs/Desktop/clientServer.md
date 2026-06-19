@@ -182,7 +182,7 @@ If 4D Server unexpectedly stops responding, an reconnection dialog box is displa
 
 #### Session object updated
 
-When the "Unreachable" event is received on either side, an [`info.unreachableSince`](../API/SessionClass.md#info) property is created in the session on the machine receiving the event, and it starts counting seconds since the last communication. You can use this property to implement your own disconnection interface.  
+When the "Unreachable" event is received on either side, an [`info.unreachableSince`](../API/SessionClass.md#info) property is created in the session on the machine receiving the event (on the server, it is readable through the [`Process activity.sessions`](../commands/process-activity) property), and it starts counting seconds since the last communication. You can use this property to implement your own disconnection interface.  
 
 ### Restoring or closing connection
 
