@@ -9,7 +9,7 @@ Read [**What’s new in 4D 21 R4**](https://blog.4d.com/whats-new-in-4d-21-r4/),
 
 #### Highlights
 
-- Local AI: on macOS, end users can apply Apple Intelligence **Writing Tools** to the text of [input](../FormObjects/input_overview.md) and [4D Write Pro](../FormObjects/writeProArea_overview.md) form objects, thanks to the new [**Writing Tools**](../FormObjects/properties_Entry.md#writing-tools) property and the `writingTools` and `bestWritingQuality` [standard actions](../WritePro/user-legacy/standard-actions.md).
+- Local AI: on macOS, end users can apply Apple Intelligence **Writing Tools** to the text of [input](../FormObjects/input_overview.md) and [4D Write Pro](../FormObjects/writeProArea_overview.md) form objects, thanks to the new [**Writing Tools**](../FormObjects/properties_Entry.md#writing-tools) property and the `writingTools` [standard action](../WritePro/user-legacy/standard-actions.md).
 - Multi-level list style sheets are now [supported in 4D Write Pro Interface](../WritePro/writeprointerface#multi-level-list-style-sheets), allowing users to create and manage structured multi-level lists directly from the toolbar and sidebar.
 - New [`defer`](../commands/defer) command to declare some code to be always executed at method or function exit; new [`Deferred formulas`](../commands/deferred-formulas) command to get the list of deferred formulas. 
 - New session `.quotas` property to configure thresholds for sessions. 

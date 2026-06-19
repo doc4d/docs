@@ -360,7 +360,7 @@ When this option is not enabled, users must first select the cell row and then c
 
 ## Writing Tools
 
-On macOS, this property lets end users apply Apple Intelligence **Writing Tools** to the text of [input](input_overview.md) and [4D Write Pro](writeProArea_overview.md) form objects. Writing Tools use a local AI to proofread, rewrite, summarize, or change the tone of text directly within your 4D application, without the data leaving the computer.
+On macOS, this property lets end users apply Apple Intelligence **Writing Tools** to the text of [input](input_overview.md) (with [multiline](#multiline) support) and [4D Write Pro](writeProArea_overview.md) form objects. Writing Tools use a local AI to proofread, rewrite, summarize, or change the tone of text directly within your 4D application, without the data leaving the computer.
 
 When the property is enabled and the form is executed, a **Show Writing Tools** menu item is added to the [context menu](#context-menu) of the object. When the user selects an action in the Writing Tools, the text is replaced with the returned modification:
 
@@ -369,7 +369,7 @@ When the property is enabled and the form is executed, a **Show Writing Tools** 
 
 For a [4D Write Pro](writeProArea_overview.md) area, the context used by the Writing Tools is the container in which the cursor is located (header, footer, body, or text box) along with the current selection.
 
-The Writing Tools can also be displayed through the **WritingTools** [standard action](properties_Action.md#standard-action), which can be assigned to a button or a menu item. The writing quality and the preservation of [4D Write Pro formulas](../WritePro/managing-formulas.md) can be controlled using the **bestWritingQuality** standard action (see [4D Write Pro standard actions](../WritePro/user-legacy/standard-actions.md)).
+The Writing Tools can also be displayed through the **WritingTools** [standard action](properties_Action.md#standard-action), which can be assigned to a button or a menu item.
 
 :::note
 
@@ -392,6 +392,6 @@ The availability and default value of the property depend on the object type:
 
 #### Objects Supported
 
-[4D Write Pro area](writeProArea_overview.md) - [Input](input_overview.md) (multiline or [multi-style](properties_Text.md#multi-style))
+[4D Write Pro area](writeProArea_overview.md) - [Input](input_overview.md) ([multiline](#multiline))
 
 

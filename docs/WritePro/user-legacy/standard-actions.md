@@ -53,7 +53,6 @@ The following standard actions are available with 4D Write Pro areas.
 | backgroundRepeat | {doc \| paragraph \| image \| textBox \| section \| header \| footer \| table \| row \| column \| cell/}backgroundRepeat?value={no-repeat \| repeat \| repeat-x \| repeat-y} | Document, Paragraph, Image, TextBox, Section, Header, Footer, Table, Row, Column, Cell, Submenu | Changes target background image repeat mode. (default target is paragraph) | 
 | backgroundSizeH | {doc \| paragraph \| image \| textBox \| section \| header \| footer \| table \| row \| column \| cell/}backgroundSizeH?value={<Css_length> \| <Css_percentage> \| auto \| cover \| contain} | Document, Paragraph, Image, TextBox, Section, Header,  Footer, Table, Row, Column, Cell, Submenu | Changes target background image width (default target is paragraph).  Ex: paragraph/backgroundSizeH?value=100%. section/backgroundSizeH?value=cover | 
 | backgroundSizeV | {doc \| paragraph \| image \| textBox \| section \| header \| footer \| table \| row \| column \| cell}/backgroundSizeV?value={<Css_length> \| <Css_percentage> \| auto} | Document, Paragraph, Image, TextBox, Section, Header,  Footer, Table, Row, Column, Cell, Submenu | Changes target background image height (default target is paragraph).  Ex: paragraph/backgroundSizeV?value=50%. Ex: section/backgroundSizeV?value=40pt | 
-| bestWritingQuality | bestWritingQuality | Document | Toggles the writing quality used by the [Writing Tools](../../FormObjects/properties_Entry.md#writing-tools). When checked, the rewriting quality is favored but some formulas may not be preserved; when unchecked, formulas are protected and preserved (unless the text is replaced from an external text preview). Can be used with a check box or a menu item. This is the action used in the context menus of [4D Write Pro](../../FormObjects/writeProArea_overview.md) areas and [multi-style inputs](../../FormObjects/properties_Text.md#multi-style). *macOS only* | 
 | bookmark | bookmark?index=<number> | Submenu | Selects the Nth bookmark.  Ex: bookmark?index=2 // selects the second bookmark | 
 | borderCollapse | borderCollapse | Paragraph | Collapses selected paragraph borders and interior margins. | 
 | borderColor | {doc \| paragraph \| image \| textBox \| section \| header \| footer \| table \| row \| column \| cell/}{inside \| outside/}{borderColor \| borderColorLeft \| borderColorRight \| borderColorTop \| borderColorBottom \| borderColorLeftRight \| borderColorTopBottom}?value=<Css_color> | Document, Paragraph, Image, TextBox, Section, Header,  Footer, Table, Row, Column, Cell, Submenu, showDialog | Changes target border color (default target is paragraph).  Ex: paragraph/borderColorLeft?value=green | 
@@ -179,9 +178,9 @@ The following standard actions are available with 4D Write Pro areas.
   
 ### Other actions 
 
-[Several other standard actions](https://doc.4d.com/4Dv20/4D/20.2/Standard-actions.300-6750239.en.html) are available in 4D forms and can be used in 4D Write Pro areas:
+[Several other standard actions](https://doc.4d.com/4Dv21/4D/21/Standard-actions.300-7676722.en.html) are available in 4D forms and can be used in 4D Write Pro areas:
 
 * *Edit actions*, such as copy/paste actions.
 * *Font* actions, such as fontBold or fontSize.
-* *Dynamic expressions* actions, allowing to handle inserted expressions..
+* *Dynamic expressions* actions, allowing to handle inserted expressions.
 * *Spellchecking* actions.
