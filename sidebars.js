@@ -697,6 +697,11 @@ module.exports =
             }
           ]
         },
+        {
+          type: "doc",
+          label: "Standard actions",
+          id: "Desktop-legacy/standard-actions"
+        },
          {
           type: "doc",
           label: "Labels",
@@ -736,11 +741,6 @@ module.exports =
             "Users/overview",
             "Users/editing"
           ]
-        },
-        {
-          type: "doc",
-          label: "Standard actions",
-          id: "Desktop-legacy/standard-actions"
         }
       ]
     },

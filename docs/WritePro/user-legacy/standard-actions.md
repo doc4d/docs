@@ -13,12 +13,12 @@ The user interface of 4D Write Pro areas can be handled through a wide set of **
 * buttons, check boxes,
 * or executed by the [INVOKE ACTION](../../commands/invoke-action) command.
 
-When assigned to interface objects, standard actions handle the activation/disabling of the object depending on the context. For more information, please refer to the *Standard actions* section.
+When assigned to interface objects, standard actions handle the activation/disabling of the object depending on the context. For more information, please refer to the [Standard actions](../../Desktop/standard-actions) main section.
 
 Two kinds of actions are available for 4D Write Pro areas:
 
 * 4D Write Pro specific actions, that can be used only with 4D Write Pro areas,
-* [Other actions](#other-actions), including fonts, expressions, spell check, and editing actions, that can be used with 4D Write Pro areas and other 4D areas (see *Standard actions*).
+* Other actions, including fonts, expressions, spell check, and editing actions, that can be used with 4D Write Pro areas and other 4D areas (see [Standard actions](../../Desktop/standard-actions) main section).
 
 ### 4D Write Pro actions 
 
@@ -172,15 +172,6 @@ The following standard actions are available with 4D Write Pro areas.
 | visibleTableBorders | visibleTableBorders | Document | Shows/hides internal and external table borders as dashed lines where no borders are defined. | 
 | widowAndOrphanControlEnabled | widowAndOrphanControlEnabled | Paragraph | Toggles between widow and orphan control mode. | 
 | width | {paragraph \| image \| textBox \| column/}width?value=<Css_length> \| auto | Paragraph, Image, TextBox, Column, Submenu | Target width (default target is paragraph). Auto value not available for text boxes (converted to 8 cm) and columns.   Ex: image/width?value=50pt | 
-| writingTools | writingTools | Document | Displays the [Writing Tools](../../FormObjects/properties_Entry.md#writing-tools) for the area, using the container where the cursor is located and the current selection as context. The selected text (or the whole container if there is no selection) is replaced with the returned modification. The action is deactivated if the area is not enterable or not enabled, on Windows, or when Apple Intelligence is disabled. Can be assigned to a button or a menu item. *macOS only* | 
 | zoom | zoom?value={25% <= percentage in Css <= 400%} | Document, Submenu | Changes document view zoom.  Ex: zoom?value=120% | 
 
   
-### Other actions 
-
-[Several other standard actions](/Desktop/standard-actions) are available in 4D forms and can be used in 4D Write Pro areas:
-
-* *Edit actions*, such as copy/paste actions.
-* *Font* actions, such as fontBold or fontSize.
-* *Dynamic expressions* actions, allowing to handle inserted expressions.
-* *Spellchecking* actions.
