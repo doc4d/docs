@@ -141,7 +141,7 @@ Although its name does not begin with the character "$", the `UserSet` system se
 
 :::
 
-There is only one `UserSet` for a process. Each table does not have its own `UserSet`. `UserSet` becomes "owned" by a table when a selection of records is displayed for the table.
+There is only one `UserSet` for a [process](../Develop/processes.md). Each table does not have its own `UserSet`. `UserSet` becomes "owned" by a table when a selection of records is displayed for the table.
 
 4D manages the `UserSet` set for list forms displayed in Design mode or using the [`MODIFY SELECTION`](../commands/modify-selection) or [`DISPLAY SELECTION`](../commands/display-selection) commands. However, this mechanism is not active for [subforms](../FormObjects/subform_overview.md).
 
@@ -163,6 +163,6 @@ The following method illustrates how you can display records, allow the user to 
 
 The [`APPLY TO SELECTION`], [`DELETE SELECTION`], [`ARRAY TO SELECTION`] and [`JSON TO SELECTION`] commands create a set named `LockedSet` when used in a multi-processing environment.
 
-Query commands also create a `LockedSet` system set when they find locked records in the 'query and lock' context (see the `SET QUERY AND LOCK` command).
+Query commands also create a `LockedSet` system set when they find locked records in the 'query and lock' context (see the [`SET QUERY AND LOCK`](../commands/set-query-and-lock) command).
 
 `LockedSet` indicates which records were locked during the execution of the command.

@@ -331,6 +331,24 @@ module.exports =
             "Develop/async"
           ]
         },
+        {
+            type: "category",
+            label: "Records & selections",
+            link: {
+              type: "generated-index",
+            title: "Records & selections",
+            description: "Legacy development objects and concepts for 4D databases",
+            slug: "/category/records-selections",
+            keywords: [
+              "records",
+              "selections"
+            ],
+            image: "/img/docusaurus.png"              },
+              items: [
+                  "Develop-legacy/sets",
+                  "Develop-legacy/records"
+          ]
+        },
         "Develop-legacy/transactions",
         "Tags/transformation-tags",
         "Project/date-time-formats"
