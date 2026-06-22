@@ -44,6 +44,7 @@ Tous les types de session peuvent gérer des privilèges, mais seul le code exé
 | [<!-- INCLUDE #SessionClass.info.Syntax -->](#info)<br/><!-- INCLUDE #SessionClass.info.Summary -->                                      |
 | [<!-- INCLUDE #SessionClass.isGuest().Syntax -->](#isguest)<br/><!-- INCLUDE #SessionClass.isGuest().Summary -->                         |
 | [<!-- INCLUDE #SessionClass.promote().Syntax -->](#promote)<br/><!-- INCLUDE #SessionClass.promote().Summary -->                         |
+| [<!-- INCLUDE #SessionClass.quotas.Syntax -->](#quotas)<br/><!-- INCLUDE #SessionClass.quotas.Summary -->                                |
 | [<!-- INCLUDE #SessionClass.restore().Syntax -->](#restore)<br/><!-- INCLUDE #SessionClass.restore().Summary -->                         |
 | [<!-- INCLUDE #SessionClass.setPrivileges().Syntax -->](#setprivileges)<br/><!-- INCLUDE #SessionClass.setPrivileges().Summary -->       |
 | [<!-- INCLUDE #SessionClass.storage.Syntax -->](#storage)<br/><!-- INCLUDE #SessionClass.storage.Summary -->                             |
@@ -242,7 +243,7 @@ Cette propriété est uniquement disponible avec les sessions web.
 
 La propriété `.expirationDate` contient <!-- REF #SessionClass.expirationDate.Summary -->la date et l'heure d'expiration du cookie de session<!-- END REF -->. La valeur est exprimée sous forme de texte au format ISO 8601 : `YYYY-MM-DDTHH:MM:SS.mmmZ`.
 
-Cette propriété est en **lecture seule**. Elle est automatiquement recalculée si la valeur de la propriété [`.idleTimeout`](#idletimeout) est modifiée.
+Cette propriété est en **lecture seule**. Lorsqu'un objet `Session` est créé, la propriété `.storage` est vide.
 
 #### Exemple
 
@@ -498,9 +499,10 @@ End if
 
 <details><summary>Historique</summary>
 
-| Release | Modifications |
-| ------- | ------------- |
-| 20 R5   | Ajout         |
+| Release | Modifications                   |
+| ------- | ------------------------------- |
+| 21 R4   | New *unreachableSince* property |
+| 20 R5   | Ajout                           |
 
 </details>
 
@@ -528,12 +530,15 @@ L'objet `.info` contient les propriétés suivantes:
 | state            | Text          | État de la session : "active", "postponed", "sleeping"                                                                                                                                                                                      |
 | ID               | Text          | UUID de session (même valeur que [`.id`](#id))                                                                                                                                                                                           |
 | persistentID     | Text          | Sessions distantes server/clients : ID persistant de la session                                                                                                                                                                             |
+| unreachableSince | Integer       | Remote sessions: Number of seconds since the peer is unreachable. On 4D Server, this attribute is readable in the [`Process activity.sessions`](../commands/process-activity) property.                     |
 
 :::note
 
 `.info` étant une propriété calculée, il est recommandé de l'appeler une fois et de la stocker dans une variable locale si vous souhaitez effectuer un traitement sur ses propriétés.
 
 :::
+
+Cette propriété est en **lecture seule**.
 
 <!-- END REF -->
 
@@ -672,6 +677,58 @@ End if
 [`.demote()`](#demote)<br/>[`hasPrivilege()`](#hasprivilege)
 
 <!-- END REF -->
+
+<!-- REF SessionClass.quotas.Desc -->
+
+## .quotas
+
+<details><summary>Historique</summary>
+
+| Release | Modifications |
+| ------- | ------------- |
+| 21 R4   | Ajout         |
+
+</details>
+
+<!-- REF #SessionClass.quotas.Syntax -->**.quotas** : 4D.QuotaManager<!-- END REF -->
+
+#### Description
+
+The `.quotas` property contains <!-- REF #SessionClass.quotas.Summary -->a `4D.QuotaManager` object with current values and set values for server thresholds in the current session<!-- END REF -->. Server thresholds are used to control the requests to the server and help preventing excessive use of resources (see [`4D.QuotaManager` class](./QuotaManagerClass.md)).
+
+Cette propriété est en **lecture seule**.
+
+The following properties of the `4D.QuotaManager` object are available for the session:
+
+| Propriété                                                                 |              | Type    | Writable | Description                                                                                               |
+| ------------------------------------------------------------------------- | ------------ | ------- | -------- | --------------------------------------------------------------------------------------------------------- |
+| [nbEntitySets](./QuotaManagerClass.md#nbentitysets)                       |              | Integer | oui      | Maximum allowed number of entity sets in server's memory. *Undefined* = no quotas applied |
+| [defaultEntitySetTimeout](./QuotaManagerClass.md#defaultentitysettimeout) |              | Integer | oui      | Default inactivity timeout for entity sets in memory (seconds)                         |
+| [maxEntitySetTimeout](./QuotaManagerClass.md#maxentitysettimeout)         |              | Integer | oui      | Maximum inactivity timeout for entity sets in memory (seconds)                         |
+| currentValues                                                             |              | Object  | non      |                                                                                                           |
+|                                                                           | nbEntitySets | Integer | non      | Number of entity sets currently in memory. *Undefined* = no entity set in memory          |
+
+When you modify a value, it is immediately taken into account by the server (no need to restart) and will be applied to further REST requests.
+
+:::tip Article(s) de blog sur le sujet
+
+[Keep your rest server performing at its best](https://blog.4d.com/keep-your-rest-server-performing-at-its-best).
+
+:::
+
+#### Exemple
+
+```4d
+   //set the maximum number of entity sets in memory
+   //for the session to 50
+Session.quotas.nbEntitySets:=50
+```
+
+<!-- END REF -->
+
+#### Voir également
+
+[QuotaManager class](./QuotaManagerClass.md)
 
 <!-- REF SessionClass.restore().Desc -->
 
@@ -844,7 +901,7 @@ End if
 
 La propriété `.storage` contient <!-- REF #SessionClass.storage.Summary -->un objet partagé qui peut être utilisé pour stocker des informations disponibles pour tous les process de la session<!-- END REF -->.
 
-Lorsqu'un objet `Session` est créé, la propriété `.storage` est vide. Cette propriété est elle-même en **lecture seulement** mais elle retourne un objet en lecture-écriture.
+Lorsqu'un objet `Session` est créé, la propriété `.storage` est vide. Cette propriété est en **lecture seule**.
 
 :::note Notes
 

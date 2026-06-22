@@ -1,8 +1,8 @@
-d---
+---
 id: writeprointerface
 title: 4D Write Pro Interface
 slug: /WritePro/write-pro-interface
----------------------------------------------------
+---
 
 L'interface de 4D Write Pro offre un ensemble de palettes, qui permettent aux utilisateurs de personnaliser facilement un document 4D Write Pro.
 
@@ -15,7 +15,7 @@ Un développeur 4D peut facilement implémenter ces palettes dans leur applicati
 La documentation principale de l'[interface 4D Write Pro](https://doc.4d.com/4Dv20/4D/20/Entry-areas.300-6263967.en.html) se trouve dans le *4D - Mode Développement*. Vous trouverez ci-dessous :
 
 - la documentation de configuration de l'assistant de table,
-- I.A intégrée documentation.
+- I.A intégrée documentation. documentation.
 
 ## Assistant de table
 
@@ -469,11 +469,11 @@ You can apply either a multi-level list style sheet defined in the document or o
 
 ![](../assets/en/WritePro/wp-multi-level-list-panel2.png)
 
-### Predefined templates
+### Modèles prédéfinis
 
-The interface provides the following predefined multi-level list templates:
+L'interface fournit les modèles de listes à niveaux multiples prédéfinis suivants :
 
-**Technical Blueprint**
+**Structure technique**
 
 Level 1: 1  
 Level 2: 1.1  
@@ -481,7 +481,7 @@ Level 3: 1.1.1
 Level 4: 1.1.1.1  
 Level 5: 1.1.1.1.1
 
-**Legal & Governance**
+**Cadre juridique et gouvernance**
 
 Level 1: I.  
 Level 2: A.  
@@ -491,7 +491,7 @@ Level 5: (1)
 Level 6: (a)  
 Level 7: (i)
 
-**Educational Material**
+**Contenu pédagogique**
 
 Level 1: I.  
 Level 2: 1.  
@@ -499,12 +499,12 @@ Level 3: 1.1.
 Level 4: a.  
 Level 5: ●
 
-**Meeting Minutes**
+**Compte rendu de réunion**
 
 Level 1: 1.  
 Level 2: ●
 
-**Visual Hierarchy**
+**Hiérarchie visuelle**
 
 Level 1: ♣ (Club)  
 Level 2: ♦ (Diamond)  
@@ -533,15 +533,15 @@ Each template definition includes:
 - one or more list levels,
 - the 4D Write Pro attributes applied to each level. Any 4D Write Pro attribute can be used in a template definition.
 
-You can use either the attribute names or the corresponding 4D Write Pro constants as JSON keys and values.
-For example, the following definitions are equivalent:
+Vous pouvez utiliser soit les noms d'attributs, soit les constantes 4D Write Pro correspondantes comme clés et valeurs JSON.
+Par exemple, les définitions suivantes sont équivalentes :
 
 - `"listStyleType": "wk upper roman"`
 - `"wk list style type": "wk upper roman"`
 
 #### Exemple
 
-Example of a customized JSON file:
+Exemple d'un fichier JSON personnalisé :
 
 ```json
 {
@@ -559,6 +559,6 @@ Example of a customized JSON file:
 
 ### Voir également
 
-- [Related blog post: Multi-Level Style Sheets in 4D Write Pro: Now With a Dedicated UI](https://blog.4d.com/multi-level-style-sheets-in-4d-write-pro-now-with-a-dedicated-ui)
+- [Article de blog associé : Feuilles de style à plusieurs niveaux dans 4D Write Pro : désormais avec une interface utilisateur dédiée](https://blog.4d.com/multi-level-style-sheets-in-4d-write-pro-now-with-a-dedicated-ui)
 - [multi-level list style sheets](./user-legacy/stylesheets.md#multi-level-list-style-sheets)
-- [multi-level lists](.user-legacy/using-a-4d-write-pro-area.md#multi-level-lists)
+- [multi-level lists](./user-legacy/using-a-4d-write-pro-area.md#multi-level-lists)

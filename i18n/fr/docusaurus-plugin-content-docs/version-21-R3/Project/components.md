@@ -49,7 +49,7 @@ This section describes how to work with components in the **4D** and **4D Server
 Pour charger un composant dans votre projet 4D, vous pouvez soit :
 
 - copier les fichiers des composants dans le [dossier **Components** de votre projet](architecture.md#components) (les dossiers des composants interprétés doivent être suffixés avec ".4dbase", voir ci-dessus),
-- ou déclarer le composant dans le fichier **dependencies.json** de votre projet ; ceci est fait automatiquement pour les fichiers locaux lorsque vous [**ajoutez une dépendance en utilisant l'interface du Gestionnaire de dépendances**](#adding-a-github-dependency).
+- ou déclarer le composant dans le fichier **dependencies.json** de votre projet ; ceci est fait automatiquement pour les fichiers locaux lorsque vous [**ajoutez une dépendance en utilisant l'interface du Gestionnaire de dépendances**](#adding-a-github-or-gitlab-dependency).
 
 Les composants déclarés dans le fichier **dependencies.json** peuvent être stockés à différents endroits :
 
@@ -530,7 +530,7 @@ Once the connection is established, an icon ![dependency-gitlogo](../assets/en/P
 
 :::note
 
-Si le composant est stocké dans un [référentiel privé](#private-repositories) et que votre jeton personnel est manquant, un message d'erreur s'affiche et un bouton **Ajouter un jeton d'accès personnel...** apparaît (voir [Fournir votre jeton d'accès](#providing-your-access-token)).
+If the component is stored on a [private repository](#authentication-and-tokens) and your personal token is missing, an error message is displayed and a **Add a personal access token...** button is displayed (see [Providing your access token](#providing-your-access-token)).
 
 :::
 
@@ -546,7 +546,7 @@ Vous pouvez définir l'option [règle de dépendance](#tags-and-versions) pour u
 
 ![dependency-git-tag](../assets/en/Project/dependency-git-tag.png)
 
-- **Suivre la version de 4D** (option par défaut, recommandée) : Télécharge la dernière version du composant compatible avec la version courante de 4D. Vous ne pouvez utiliser cette règle de dépendance que si les tags de release des composants respectent la [convention de nommage](#naming-conventions-for-4d-version-tags) appropriée. Cette option est **recommandée**, en particulier pour les [composants développés par 4D](../Extensions/overview.md#components-developed-by-4d).
+- Vous ne pouvez utiliser cette règle de dépendance que si les tags de release des composants respectent la [convention de nommage](#naming-conventions-for-4d-version-tags) appropriée. **Suivre la version de 4D** (option par défaut, recommandée) : Télécharge la dernière version du composant compatible avec la version courante de 4D. Cette option est **recommandée**, en particulier pour les [composants développés par 4D](../Extensions/overview.md#components-developed-by-4d).
 - **Jusqu'à la version majeure suivante** : Définit une [plage sémantique de versions](#tags-and-versions) pour limiter les mises à jour à la version majeure suivante.
 - **Jusqu'à la prochaine version mineure** : De même, limite les mises à jour à la version mineure suivante.
 - **Version exacte (balise)** : Sélectionnez ou saisissez manuellement un [tag spécifique](#tags-and-versions) dans la liste disponible.
@@ -558,7 +558,7 @@ The current dependency version is displayed on the right side of the dependency 
 
 #### Modifying the dependency version range
 
-You can modify the [version setting](#defining-a-dependency-version-range) for a listed dependency: select the dependency to modify and select **Edit the dependency...** from the contextual menu. Dans la boîte de dialogue "Editer la dépendance", modifiez le menu Règle de dépendance et cliquez sur **Appliquer**.
+Dans la boîte de dialogue "Editer la dépendance", modifiez le menu Règle de dépendance et cliquez sur **Appliquer**. You can modify the [version setting](#defining-a-dependency-version-range) for a listed dependency: select the dependency to modify and select **Edit the dependency...** from the contextual menu.
 
 La modification de la plage de versions est utile par exemple si vous utilisez la fonction de mise à jour automatique et que vous souhaitez verrouiller une dépendance à un numéro de version spécifique.
 
@@ -577,7 +577,7 @@ Les mises à jour des dépendances sont régulièrement vérifiées sur GitHub. 
 
 :::note
 
-Si vous fournissez un [token d'accès](#providing-your-github-access-token), les vérifications sont effectuées plus fréquemment, car GitHub autorise alors une plus grande fréquence de requêtes aux dépôts.
+Si vous fournissez un [token d'accès](#providing-your-access-token), les vérifications sont effectuées plus fréquemment, car GitHub autorise alors une plus grande fréquence de requêtes aux dépôts.
 
 :::
 
@@ -591,7 +591,7 @@ En outre, vous pouvez vérifier les mises à jour à tout moment, pour une seule
 
 ![check components](../assets/en/Project/check-component-all.png)
 
-Si une nouvelle version de composant correspondant à votre [règle de version des dépendances](#defining-a-github-dependency-version-range) est détectée sur GitHub, un statut de dépendance spécifique est affiché :
+Si une nouvelle version de composant correspondant à votre [règle de version des dépendances](#defining-a-dependency-version-range) est détectée sur GitHub, un statut de dépendance spécifique est affiché :
 
 ![dependency-new-version](../assets/en/Project/dependency-available.png)
 
@@ -613,7 +613,7 @@ Vous pouvez mettre à jour les dépendances à tout moment, pour une seule dépe
 
 ![check components](../assets/en/Project/update-component-all.png)
 
-Dans tous les cas, quel que soit le statut courant de la dépendance, une vérification automatique est effectuée sur GitHub avant de mettre à jour la dépendance, afin de s'assurer que la version la plus récente est récupérée, [en fonction de la règle de version de votre composant](#defining-a-github-dependency-version-range).
+Dans tous les cas, quel que soit le statut courant de la dépendance, une vérification automatique est effectuée sur GitHub avant de mettre à jour la dépendance, afin de s'assurer que la version la plus récente est récupérée, [en fonction de la règle de version de votre composant](#defining-a-dependency-version-range).
 
 Lorsque vous sélectionnez une commande de mise à jour :
 
@@ -624,9 +624,9 @@ Lorsque vous sélectionnez une commande de mise à jour :
 
 L'option **Mise à jour automatique** est disponible dans le menu **options** en bas de la fenêtre du gestionnaire de dépendances.
 
-When this option is checked (default), new GitHub or GitLab component versions matching your [component versioning configuration](#defining-a-github-dependency-version-range) are automatically updated for the next project startup. Cette option facilite la gestion quotidienne des mises à jour des dépendances, en éliminant la nécessité de sélectionner manuellement les mises à jour.
+When this option is checked (default), new GitHub or GitLab component versions matching your [component versioning configuration](#defining-a-dependency-version-range) are automatically updated for the next project startup. Cette option facilite la gestion quotidienne des mises à jour des dépendances, en éliminant la nécessité de sélectionner manuellement les mises à jour.
 
-Lorsque cette option n'est pas cochée, une nouvelle version de composant correspondant à votre [règle de version des composants](#defining-a-github-dependency-version-range) n'est indiquée que comme disponible et nécessitera une [mise à jour manuelle](#updating-dependencies). Désélectionnez l'option **Mise à jour automatique** si vous souhaitez contrôler précisément les mises à jour des dépendances.
+Lorsque cette option n'est pas cochée, une nouvelle version de composant correspondant à votre [règle de version des composants](#defining-a-dependency-version-range) n'est indiquée que comme disponible et nécessitera une [mise à jour manuelle](#updating-dependencies). Désélectionnez l'option **Mise à jour automatique** si vous souhaitez contrôler précisément les mises à jour des dépendances.
 
 ### Providing your access token
 
