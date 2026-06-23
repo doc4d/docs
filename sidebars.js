@@ -331,13 +331,17 @@ module.exports =
             "Develop/async"
           ]
         },
+        "Develop-legacy/transactions",
+        "Tags/transformation-tags",
+        "Project/date-time-formats",
+        "Develop-legacy/xml",
         {
             type: "category",
-            label: "Records & selections",
+            label: "Records & Selections (legacy data access)",
             link: {
               type: "generated-index",
-            title: "Records & selections",
-            description: "Legacy development objects and concepts for 4D databases",
+            title: "Records & Selections (legacy data access)",
+            description: "Legacy data access based upon records, selections, sets",
             slug: "/category/records-selections",
             keywords: [
               "records",
@@ -345,13 +349,10 @@ module.exports =
             ],
             image: "/img/docusaurus.png"              },
               items: [
-                  "Develop-legacy/sets",
-                  "Develop-legacy/records"
+                "Develop-legacy/records",
+                "Develop-legacy/sets"
           ]
-        },
-        "Develop-legacy/transactions",
-        "Tags/transformation-tags",
-        "Project/date-time-formats"
+        }
       ]
     },
     {
@@ -734,6 +735,11 @@ module.exports =
             "Menus/bars",
             "Menus/sdi"
           ]
+        },
+        {
+          type: "doc",
+          label: "Drag and Drop",
+          id: "Desktop/drag-and-drop"
         },
         {
           type: "category",
