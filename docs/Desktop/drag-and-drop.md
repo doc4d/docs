@@ -60,9 +60,12 @@ Your implementation will be based upon the following scenario:
 
 1. In the [`On Begin Drag Over`](../Events/onBeginDragOver.md) event of the source object (with ["Custom" **Draggable** property](../FormObjects/properties_Action.md#draggable)), put appropriate data in the pasteboard using [`APPEND DATA TO PASTEBOARD`](../commands/append-data-to-pasteboard), [`SET FILE TO PASTEBOARD`](../commands/set-file-to-pasteboard) or other commands from the [Pasteboard theme](../commands/theme/Pasteboard.md). You can also define a specific cursor icon using [`SET DRAG ICON`](../commands/set-drag-icon) command.
 2. In the [`On Drag Over`](../Events/onDragOver.md) event of the destination object (with ["Custom" **Droppable** property](../FormObjects/properties_Action.md#droppable)), get the data types or data signatures found in the pasteboard using [`GET PASTEBOARD DATA TYPE`](../commands/get-pasteboard-data-type) or [`GET PASTEBOARD DATA`](../commands/get-pasteboard-data) and check if they are compatible with the destination object.
-The [`Drop position`](../commands/drop-position) command returns the element number or the item position of the target element or list item, if the destination object is an array (i.e., scrollable area), a hierarchical list, a text or a combo box, as well as the column number if the object is a list box.
-If the destination object or element is compatible, return **0** to accept the drop, otherwise **-1** in its [object method](../Concepts/methods.md#method-types).
-3. In the [`On Drop`](../Events/onDrop.md) event of the destination object (with ["Custom" **Droppable** property](../FormObjects/properties_Action.md#droppable)), execute any action in response to the drop. If the drag-and-drop operation is intended to copy the dragged data, you simply assign the data to destination object. If the drag and drop is not intended to move data, but is instead a user interface metaphor for a particular operation, you can perform whatever you want, for example getting file paths using [`Get file from pasteboard`](../commands/get-file-from-pasteboard) command.
+The [`Drop position`](../commands/drop-position) command returns the element number or the item position of the target element or list item, if the destination object is an array (i.e., scrollable area), a hierarchical list, a text or a combo box, as well as the column number if the object is a list box. 
+3. The [object method](../Concepts/methods.md#method-types) of the destination object or element must return 0 or -1 to accept or reject the action:
+   - If it is compatible, return **0** to accept the drop and execute the [`On Drop`](../Events/onDrop.md) event when the mouse button is released. 
+   - Otherwise, return **-1** to reject the drop.  
+4D automatically handles the interface aspect of this interaction by displaying a cursor depending on whether the drop is accepted or rejected.
+4. In the [`On Drop`](../Events/onDrop.md) event of the destination object (with ["Custom" **Droppable** property](../FormObjects/properties_Action.md#droppable)), execute any action in response to the drop. If the drag-and-drop operation is intended to copy the dragged data, you simply assign the data to destination object. If the drag and drop is not intended to move data, but is instead a user interface metaphor for a particular operation, you can perform whatever you want, for example getting file paths using [`Get file from pasteboard`](../commands/get-file-from-pasteboard) command.
 
 
 Note that the [`On Begin Drag Over`](../Events/onBeginDragOver.md) event is generated **in the context of the source object of the drag** while [`On Drag Over`](../Events/onDragOver.md) and [`On Drop`](../Events/onDrop.md) events are only sent to the destination object.
@@ -94,7 +97,7 @@ In the case of data other than text or pictures (another 4D object, file, etc.) 
 
 ## Examples
 
-### Example: Array based list box to input text area 
+### Array based list box to input text area 
 
 
 In this simple example, we want to fill an input text area with data dragged from an array-based list box:
@@ -127,7 +130,7 @@ If(Form event code=On Drop) //Requires Droppable Action enabled from Property Li
 ```
 
 
-### Example: Selection based list box to input text area
+### Selection based list box to input text area
 
 Combining custom and automatic drag and drop features allows simple and powerful interfaces. In this example, we want to fill an input text area with data dragged from a list box:
 
@@ -153,7 +156,7 @@ Moving and formatting data is done through drag and drop:
 ![](../assets/en/Desktop/dragdrop5.png)
 
 
-### Example: File path to text area  
+### File path to text area  
 
 
 You want the user to select a file on the disk, then drag and drop it on an enterable variable (of type object) so that it displays a json description of the file.
@@ -184,7 +187,7 @@ In the object method of the variable, you just write:
 ```
 
 
-### Example: File paths to list box  
+### File paths to list box  
 
 You want the user to select files on the disk, then drag and drop them on a list box so that it displays file paths.
 
@@ -221,3 +224,53 @@ In the list box object method, you just write:
 
 
 ## Pasteboard commands
+
+The [commands of the "Pasteboard" theme](../commands/theme/Pasteboard.md) can be used both for managing copy/paste actions (**Clipboard management**), as well as inter-application drag and drop actions.
+
+4D uses two data pasteboards: one for copied (or cut) data, which is the clipboard, and the other for data being dragged and dropped.
+These two pasteboards are managed using the same commands. You access one or the other depending on the context:
+
+- The drag and drop pasteboard can only be accessed within the [`On Begin Drag Over`](../Events/onBeginDragOver.md), [`On Drag over`](../Events/onDragOver.md) or [`On Drop`](../Events/onDrop.md) form events and in the [**On Drop** database method](../commands-legacy/on-drop-database-method.md). Outside of these contexts, the drag and drop pasteboard is not available.  
+- The copy/paste pasteboard can be accessed in all other cases. Unlike the drag and drop pasteboard, it keeps the data that are placed in it during the entire session, so long as they are not cleared or reused.
+
+### Types of Data  
+
+During drag and drop actions, different types of data can be placed on and read from the pasteboard. You can access a data type in several ways:
+
+- Via its 4D signature: The 4D signature is a character string indicating a data type referenced by the 4D application. The use of 4D signatures facilitates the development of multi-platform applications since these signatures are identical under Mac OS and Windows. You will find the list of 4D signatures below.  
+- Via a UTI (Uniform Type Identifier, macos only): The UTI standard, specified by Apple, associates a character string with each type of native object. For example, GIF pictures have the UTI type "com.apple.gif". UTI types are published in Apple documentations as well as by the editors concerned.  
+- Via its number or its format name (Windows only): Under Windows, each native data type is referenced by its number ("3", "12", and so on) and a name ("Rich Text Edit"). By default, Microsoft specifies several native types called standard data formats. In addition, third-party editors can "save" format names in the system, which then attributes them a number in return. For more information about this and about native types, please refer to the Microsoft developer documentation (more particularly at http://msdn2.microsoft.com/en-us/library/ms649013.aspx).
+
+:::note
+
+In 4D commands, the Windows format numbers are handled as text.
+
+:::
+
+All the [commands of the "Pasteboard" theme](../commands/theme/Pasteboard.md) can work with each one of these data types. You can find out which data types are present in the pasteboard in each of these formats using the [`GET PASTEBOARD DATA TYPE`](../commands/get-pasteboard-data-type) command.
+
+:::note
+
+4-character types (TEXT, PICT or custom types) are supported for compatibility with prior versions of 4D.
+
+:::
+
+
+### 4D Signatures  
+
+Here is the list of standard 4D signatures as well as their description:
+
+|Signature|Description|
+|----|----|
+|"com.4d.private.text.native"|Text in native character set|
+|"com.4d.private.text.utf16"|Text in Unicode character set|
+|"com.4d.private.text.rtf"|Enriched text|
+|"com.4d.private.picture.pict"|PICT picture format|
+|"com.4d.private.picture.png"|PNG picture format|
+|"com.4d.private.picture.gif"|GIF picture format|
+|"com.4d.private.picture.jfif"|JPEG picture format|
+|"com.4d.private.picture.emf"|EMF picture format|
+|"com.4d.private.picture.bitmap"|BITMAP picture format|
+|"com.4d.private.picture.tiff"|TIFF picture format|
+|"com.4d.private.picture.pdf"|PDF document|
+|"com.4d.private.file.url"|File pathname|
