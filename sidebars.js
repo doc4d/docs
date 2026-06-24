@@ -350,7 +350,8 @@ module.exports =
             image: "/img/docusaurus.png"              },
               items: [
                 "Develop-legacy/records",
-                "Develop-legacy/sets"
+                "Develop-legacy/sets",
+                "Develop-legacy/named-selections"
           ]
         }
       ]
