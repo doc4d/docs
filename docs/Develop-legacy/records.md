@@ -306,3 +306,65 @@ Here is a list of these commands and their actions when a locked record is encou
 - [`ARRAY TO SELECTION`](../commands/array-to-selection): Does not save any locked records. If the command encounters a locked record, the record is put into the [`LockedSet` system set](./sets.md#the-lockedset-system-set).
 - [`GOTO RECORD`](../commands/goto-record): Records in a multi-user/multi-process database may be deleted and added by other users, therefore the record numbers may change. Use caution when directly referencing a record by number in a multi-user database.
 - [**Sets**](./sets.md): Take special care with sets, as the information that the set was based on may be changed by another user or process.
+
+
+## Records and Relations
+
+Commands in the [Relations theme](../commands/theme/Relations.md), in particular [`RELATE ONE`](../commands/relate-one) and [`RELATE MANY`](../commands/relate-many), establish and manage the automatic and non-automatic relations between tables. Before using any of the commands in this theme, refer to the 4D Design Reference manual for information about creating relations between tables.
+
+### Using Automatic Table Relations with Commands 
+
+Two tables can be related with automatic table relations. In general, when an automatic table relation is established, it loads or selects the related records in a related table. Many operations cause the relation to be established.
+
+These operations include:
+
+- Data entry
+- Listing records on the screen in output forms
+- Reporting
+- Operations on a selection of records, such as queries, sorts, and applying a formula
+
+To optimize performance, when 4D establishes automatic relations, only one record becomes the current record for a table. For each of the operations listed above, the related record is loaded according to the following principles:
+
+- If a relation selects only one record of a related table, that record is loaded from disk.
+- If a relation selects more than one record of a related table, a new selection of records is created for that table, and the first record in that selection is loaded from disk.
+
+For example, using the database structure displayed here, if a record for the [Employees] table is loaded and displayed for data entry, the related record from the [Companies] table is selected and is loaded. Similarly, if a record for the [Companies] table is loaded and displayed for data entry, the related records from the [Employees] table are selected.
+
+![](../assets/en/Develop/relations.png)
+
+
+In this database structure, the [Employees] table is referred to as the **Many table**, and the [Companies] table is referred to as the **One table**. To remember this concept, think of "there are many employees related to one company" and "each company has many employees".
+
+Similarly, the Company field in the [Employees] table is referred to as the **Many field**, and the Name field in the [Companies] table is referred to as the **One** field. It is not always possible to have the related field be unique. For example, the [Companies]Name field may have several company records containing the same value. This non-unique situation can be easily handled by creating a relation, which will always be unique, on another field in the related table. This field could be a company ID field.
+
+The following table lists commands that use automatic relations to load related records during operation of the command. All of the commands will use existing automatic Many-to-One relations. Only those commands with Yes in the One-to-Many established column below will use automatic One-to-Many relations.
+
+|Command|One-to-Many established|
+|--|--|
+|[`ADD RECORD`](../commands/add-record)	|Yes|
+|[`APPLY TO SELECTION`](../commands/apply-to-selection)|	No|
+|[`DISPLAY SELECTION`](../commands/display-selection)|	No|
+|[`EXPORT DIF`](../commands/export-dif)|	No|
+|[`EXPORT SYLK`](../commands/export-sylk)|	No|
+|[`EXPORT TEXT`](../commands/export-text)|	No|
+|[`EXPORT DATA`](../commands/export-data)|	No|
+|[`MODIFY RECORD`](../commands/modify-record)|	Yes|
+|[`MODIFY SELECTION`](../commands/modify-selection)|	Yes (in data entry)|
+|[`ORDER BY`](../commands/order-by)|	No|
+|[`ORDER BY FORMULA`](../commands/order-by-formula)|	No|
+|[`QUERY BY FORMULA`](../commands/query-by-formula)|	Yes|
+|[`QUERY SELECTION`](../commands/query-selection)|	Yes|
+|[`QUERY`](../commands/query)|	Yes|
+|[`PRINT LABEL`](../commands/print-label)|	No|
+|[`PRINT SELECTION`](../commands/print-selection)|	Yes|
+|[`QR REPORT`](../commands/qr-report)|	No|
+|[`SELECTION TO ARRAY`](../commands/selection-to-array)|	No|
+|[`SELECTION RANGE TO ARRAY`](../commands/selection-range-to-array)|	No|
+
+
+### Using Commands to Establish Table Relations  
+
+Automatic relations do not mean that the related record or records for a table will be selected simply because a command loads a record. In some cases, after using a command that loads a record, you must explicitly select the related records by using [`RELATE ONE`](../commands/relate-one) or [`RELATE MANY`](../commands/relate-many) if you need to access the related data.
+
+Some of the commands listed in the previous table (such as the query commands) load a current record after the task is completed. In this case, the record that is loaded does not automatically select the records related to it. Again, if you need to access the related data, you must explicitly select the related records by using [`RELATE ONE`](../commands/relate-one) or [`RELATE MANY`](../commands/relate-many).
+
