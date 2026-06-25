@@ -334,7 +334,9 @@ module.exports =
         "Develop-legacy/transactions",
         "Tags/transformation-tags",
         "Project/date-time-formats",
-        "Develop-legacy/xml",
+        "Develop-legacy/xml"
+        /*
+        // not ready yet, needs imports from Design ref for records and selection concepts,
         {
             type: "category",
             label: "Records & Selections (legacy data access)",
@@ -353,7 +355,7 @@ module.exports =
                 "Develop-legacy/sets",
                 "Develop-legacy/named-selections"
           ]
-        }
+        } */
       ]
     },
     {
