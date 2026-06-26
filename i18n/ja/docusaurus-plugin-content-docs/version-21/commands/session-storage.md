@@ -44,8 +44,8 @@ displayed_sidebar: docs
 以下のメソッドは、特定のセッションのStorage オブジェクト内の"settings" プロパティの値を変更します:
 
 ```4d
-  //Set storage for a session
-  //The "Execute On Server" method property is set
+  // セッションに対してstorage を設定
+  // "サーバー上で実行" メソッドプロパティが設定されているものとする
  
  #DECLARE($id : Text; $text : Text)
  var $obj : Object
