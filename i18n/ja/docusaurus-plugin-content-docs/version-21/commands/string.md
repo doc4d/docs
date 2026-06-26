@@ -91,12 +91,12 @@ displayed_sidebar: docs
 
 *base* 引数には、*expression* 引数の基数の数字を渡します。 ここには2 から36 までの任意の整数値を渡すことができます。 ここには2 から36 までの任意の整数値を渡すことができます。
 
-*base* 引数に0 を渡した場合、コマンドは*expression* 引数の値に応じて基数を決定します。 *expression* の値が"0x" で始まる場合、16 進数が使用されます。 それ以外の場合、10 進数が使用されます。 *expression* の値が"0x" で始まる場合、16 進数が使用されます。 それ以外の場合、10 進数が使用されます。
+*base* 引数に0 を渡した場合、コマンドは*expression* 引数の値に応じて基数を決定します。 *expression* の値が"0x" で始まる場合、16 進数が使用されます。 それ以外の場合、10 進数が使用されます。
 
 :::info
 
 - このシンタックスは[基数の取扱に関する`toString` EcmaScript 仕様](https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-number.prototype.tostring) に厳密に従います。
-- *base*=10 のシンタックスを使用した場合、 *base* 引数を使用しなかったシンタックスと全く同じ結果は返しません。 例えば、ECMAScript 仕様に従えば、底として所属しない文字はセパレータとしてみなされます(例題を参照してください)。 例えば、指定された数値が数字でなかった場合、 "NaN" の文字列が返されます。
+- *base*=10 のシンタックスを使用した場合、 *base* 引数を使用しなかったシンタックスと全く同じ結果は返しません。 例えば、指定された数値が数字でなかった場合、 "NaN" の文字列が返されます。
 
 :::
 
@@ -141,15 +141,15 @@ displayed_sidebar: docs
 ```4d
  $vsResult:=String(!2023-11-27!) //"11/27/2023"  
  $vsResult:=String(!2023-11-27!;Internal date long) // "November 27, 2023"  
- $vsResult:=String(!2023-11-27!;ISO Date GMT) // "2023-11-26T23:00:00Z" in French timezone  
+ $vsResult:=String(!2023-11-27!;ISO Date GMT) // フランス時間では "2023-11-26T23:00:00Z"
 ```
 
 - あるいは[パターンに基づいてビルドされたカスタマイズされたフォーマット](../Project/date-time-formats.md) (文字列値)  
   例:
 
 ```4d
- $vsResult:=String(!2023-11-27!;"EEEE d MMMM y GGGG") //"Monday 27 November 2023 Anno Domini"  
- $vsResult:=String(!2023-11-27!;"E dd/MM/yyyy zzzz") //"Mon 27/11/2023 GMT+01:00" in French timezone  
+ $vsResult:=String(!2023-11-27!;"EEEE d MMMM y GGGG") // "Monday 27 November 2023 Anno Domini"  
+ $vsResult:=String(!2023-11-27!;"E dd/MM/yyyy zzzz") // フランス時間では "Mon 27/11/2023 GMT+01:00"
 ```
 
 :::note
@@ -174,33 +174,33 @@ displayed_sidebar: docs
 - ISO Date GMTフォーマットはISO8601標準に対応します。日付と時間を含みタイムゾーン (GMT) を考慮します。
 
 ```4d
- $mydate:=String(Current date;ISO Date GMT;Current time) // returns, for instance, 2010-09-13T16:11:53Z  
+ $mydate:=String(Current date;ISO Date GMT;Current time) // 例えば、 2010-09-13T16:11:53Z  を返します
 ```
 
 上記の例の最後の"Z"はGMTフォーマットを表します。  
 *addTime* 引数を渡さなかった場合、このコマンドはローカルタイムの午前0時をGMT 標準時で表現したものを返します。そのためローカルの時間帯に応じて日付が前後することがあります:
 
 ```4d
- $mydate:=String(!13/09/2010!;ISO Date GMT) // returns 2010-09-12T22:00:00Z in France  
+ $mydate:=String(!13/09/2010!;ISO Date GMT) // フランスでは 2010-09-12T22:00:00Z を返す
 ```
 
 - ISO DateフォーマットはISO Date GMTフォーマットと同様に日付と時間を含みますが、タイムゾーンを考慮しません。 当初よりこのフォーマットはISO8601標準に準拠しておらず、非常に特殊な目的のために予約されたものです。 当初よりこのフォーマットはISO8601標準に準拠しておらず、非常に特殊な目的のために予約されたものです。
 
 ```4d
- $mydate:=String(!13/09/2010!;ISO Date) // returns 2010-09-13T00:00:00 regardless of the time zone  
- $mydate:=String(Current date;ISO Date;Current time) // returns 2010-09-13T18:11:53  
+ $mydate:=String(!13/09/2010!;ISO Date) // タイムゾーンに関係なく 2010-09-13T00:00:00 を返す
+ $mydate:=String(Current date;ISO Date;Current time) // 2010-09-13T18:11:53 を返す
 ```
 
 - Date RFC 1123フォーマットは日付と時間の組み合わせをRFC 822 と1123 で定義された標準に基づきフォーマットします。 このフォーマットはたとえばHTTPヘッダーでcookieの有効期限を設定する際に必要となります。 このフォーマットはたとえばHTTPヘッダーでcookieの有効期限を設定する際に必要となります。
 
 ```4d
- $mydate:=String(Current date;Date RFC 1123;Current time) // returns, for example Fri, 10 Sep 2010 13:07:20 GMT  
+ $mydate:=String(Current date;Date RFC 1123;Current time) // 例えば、 Fri, 10 Sep 2010 13:07:20 GMT を返します
 ```
 
 表現される日時は、タイムゾーンが考慮されるためローカルのタイムゾーンにより日付が前後にずれることになります。 表現される日時は、タイムゾーンが考慮されるためローカルのタイムゾーンにより日付が前後にずれることになります。 日付のみを渡すと、コマンドはローカルタイムの00:00をGMT時間で表現して返します:
 
 ```4d
- $mydate:=String(!2010-09-09!;Date RFC 1123) // returns Wed, 08 Sep 2010 22:00:00 GMT  
+ $mydate:=String(!2010-09-09!;Date RFC 1123) // Wed, 08 Sep 2010 22:00:00 GMT を返します
 ```
 
 ### 時間式
@@ -230,7 +230,7 @@ displayed_sidebar: docs
 
 ```4d
  $vsResult:=String(?17:30:45?;HH MM AM PM) //"5:30 PM"  
- $vsResult:=String(?17:30:45?;Hour Min Sec) //"17 hours 30 minutes 45 seconds"  
+ $vsResult:=String(?17:30:45?;Hour Min Sec) //"17時 30分 45秒"
 ```
 
 - あるいは[パターンに基づいてビルドされたカスタマイズされたフォーマット](../Project/date-time-formats.md) (文字列値)  
