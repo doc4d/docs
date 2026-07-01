@@ -13,7 +13,7 @@ The "Processes" button indicates, in parentheses, the total number of processes 
 
 You can change the order of the columns by simply dragging and dropping the column header areas. You can also sort the list of column values by clicking on its header.
 
-Like the Users page, this page contains a dynamic [search/filtering area](users.md#searchfiltering-area) that can be used to reduce the number of rows displayed in the list to those that correspond to the text entered in the search area. The search/filtering is carried out in the Session and Process name columns.
+Like the Sessions page, this page contains a dynamic [search/filtering area](sessions.md#search-and-filtering) that can be used to reduce the number of rows displayed in the list to those that correspond to the text entered in the search area. The search/filtering is carried out in the Session and Process name columns.
 
 There are also three shortcut buttons that can be used to filter by the type of process displayed in the window:
 
@@ -96,6 +96,6 @@ The page also has five control buttons that act on the selected process(es). Not
 
 > You can also debug a process directly without displaying the confirmation dialog box by holding down the **Alt** key while clicking on this button.
 
-- **Watch users**: used to display, on the [Users page](users.md), all the processes of the selected user(s). This button is active when at least one user process is selected.
+- **Watch sessions**: used to display, on the [Sessions page](sessions.md), all the processes of the selected session(s). This button is active when at least one user process is selected.
 
 
