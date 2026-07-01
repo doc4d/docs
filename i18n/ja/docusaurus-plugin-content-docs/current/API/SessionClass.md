@@ -499,9 +499,10 @@ End if
 
 <details><summary>履歴</summary>
 
-| リリース  | 内容 |
-| ----- | -- |
-| 20 R5 | 追加 |
+| リリース  | 内容                              |
+| ----- | ------------------------------- |
+| 21 R4 | New *unreachableSince* property |
+| 20 R5 | 追加                              |
 
 </details>
 
@@ -517,18 +518,19 @@ End if
 
 `.info` オブジェクトには、次のプロパティが格納されています:
 
-| プロパティ            | 型                                | 説明                                                                                                                                           |
-| ---------------- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| type             | Text                             | セッションのタイプ: "remote"、"storedProcedure"、"standalone"、"rest"、"web"                                                              |
-| userName         | Text                             | 4Dユーザー名 ([`.userName`](#username) と同じ値)                                                                                   |
-| machineName      | Text                             | <ul><li>リモートセッション: リモートマシンの名前。</li><li>クライアントセッション: ローカルマシンの名前。</li><li>ストアドプロシージャーセッション: サーバーマシンの名前。</li><li>スタンドアロンセッション: マシンの名前</li></ul> |
-| systemUserName   | Text                             | <ul><li>リモートセッション: リモートマシン上で開かれたシステムセッションの名前</li><li>クライアントセッション: ローカルシステムセッションの名前</li><ul>                                                  |
-| IPAddress        | Text                             | <ul><li>リモートセッション: リモートマシンのIP アドレス。</li><li>クライアントセッション: ローカルマシンのIP アドレス。</li><li>スタンドアロンセッション: "localhost"</li></ul>                        |
-| hostType         | Text                             | ホストのタイプ: "windows"、"mac"、あるいは "browser"                                                                                      |
-| creationDateTime | 日付 (ISO 8601) | セッション作成の日時(スタンドアロンセッション: アプリケーションのスタートアップの日時)                                                             |
-| state            | Text                             | セッションの状態: "active", "postponed", "sleeping"                                                                                  |
-| ID               | Text                             | セッションUUID ([`.id`](#id) と同じ値))                                                                                            |
-| persistentID     | Text                             | リモート/クライアントセッション: セッションの永続的なID                                                                                               |
+| プロパティ            | 型                                | 説明                                                                                                                                                                                                                                      |
+| ---------------- | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type             | Text                             | セッションのタイプ: "remote"、"storedProcedure"、"standalone"、"rest"、"web"                                                                                                                                                         |
+| userName         | Text                             | 4Dユーザー名 ([`.userName`](#username) と同じ値)                                                                                                                                                                              |
+| machineName      | Text                             | <ul><li>リモートセッション: リモートマシンの名前。</li><li>クライアントセッション: ローカルマシンの名前。</li><li>ストアドプロシージャーセッション: サーバーマシンの名前。</li><li>スタンドアロンセッション: マシンの名前</li></ul>                                                                                            |
+| systemUserName   | Text                             | <ul><li>リモートセッション: リモートマシン上で開かれたシステムセッションの名前</li><li>クライアントセッション: ローカルシステムセッションの名前</li><ul>                                                                                                                                             |
+| IPAddress        | Text                             | <ul><li>リモートセッション: リモートマシンのIP アドレス。</li><li>クライアントセッション: ローカルマシンのIP アドレス。</li><li>スタンドアロンセッション: "localhost"</li></ul>                                                                                                                   |
+| hostType         | Text                             | ホストのタイプ: "windows"、"mac"、あるいは "browser"                                                                                                                                                                                 |
+| creationDateTime | 日付 (ISO 8601) | セッション作成の日時(スタンドアロンセッション: アプリケーションのスタートアップの日時)                                                                                                                                                        |
+| state            | Text                             | セッションの状態: "active", "postponed", "sleeping"                                                                                                                                                                             |
+| ID               | Text                             | セッションUUID ([`.id`](#id) と同じ値))                                                                                                                                                                                       |
+| persistentID     | Text                             | リモート/クライアントセッション: セッションの永続的なID                                                                                                                                                                                          |
+| unreachableSince | Integer                          | Remote sessions: Number of seconds since the peer is unreachable. On 4D Server, this attribute is readable in the [`Process activity.sessions`](../commands/process-activity) property. |
 
 :::note
 
@@ -698,19 +700,19 @@ The `.quotas` property contains <!-- REF #SessionClass.quotas.Summary -->a `4D.Q
 
 The following properties of the `4D.QuotaManager` object are available for the session:
 
-| プロパティ                                                                     |              | 型       | Writable | 説明                                                                                |
-| ------------------------------------------------------------------------- | ------------ | ------- | -------- | --------------------------------------------------------------------------------- |
-| [nbEntitySets](./QuotaManagerClass.md#nbentitysets)                       |              | Integer | ◯        | Maximum allowed number of entity sets in server's memory                          |
-| [defaultEntitySetTimeout](./QuotaManagerClass.md#defaultentitysettimeout) |              | Integer | ◯        | Default inactivity timeout for entity sets in memory (seconds) |
-| [maxEntitySetTimeout](./QuotaManagerClass.md#maxentitysettimeout)         |              | Integer | ◯        | Maximum inactivity timeout for entity sets in memory (seconds) |
-| currentValues                                                             |              | Object  | ×        |                                                                                   |
-|                                                                           | nbEntitySets | Integer | ×        | Number of entity sets currently in memory                                         |
+| プロパティ                                                                     |              | 型       | Writable | 説明                                                                                                        |
+| ------------------------------------------------------------------------- | ------------ | ------- | -------- | --------------------------------------------------------------------------------------------------------- |
+| [nbEntitySets](./QuotaManagerClass.md#nbentitysets)                       |              | Integer | ◯        | Maximum allowed number of entity sets in server's memory. *Undefined* = no quotas applied |
+| [defaultEntitySetTimeout](./QuotaManagerClass.md#defaultentitysettimeout) |              | Integer | ◯        | Default inactivity timeout for entity sets in memory (seconds)                         |
+| [maxEntitySetTimeout](./QuotaManagerClass.md#maxentitysettimeout)         |              | Integer | ◯        | Maximum inactivity timeout for entity sets in memory (seconds)                         |
+| currentValues                                                             |              | Object  | ×        |                                                                                                           |
+|                                                                           | nbEntitySets | Integer | ×        | Number of entity sets currently in memory. *Undefined* = no entity set in memory          |
 
 When you modify a value, it is immediately taken into account by the server (no need to restart) and will be applied to further REST requests.
 
 :::tip 関連したblog 記事
 
-[Make your REST server at the top of its game ... Forget throttling or crashing and tune yourself the memory usage](https://blog.4d.com/make-your-rest-server-at-the-top-of-its-game-forget-throttling-or-crashing-and-tune-yourself-the-memory-usage).
+[Keep your rest server performing at its best](https://blog.4d.com/keep-your-rest-server-performing-at-its-best).
 
 :::
 
