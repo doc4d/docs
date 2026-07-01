@@ -367,7 +367,7 @@ When this option is not enabled, users must first select the cell row and then c
 
 ## Writing Tools
 
-On macOS, this property lets end users apply Apple Intelligence **Writing Tools** to the text of [4D Write Pro](writeProArea_overview.md) and [input](input_overview.md) (with [multiline](#multiline) support) form objects. Writing Tools use AI to proofread, rewrite, summarize, or change the tone of text directly within your 4D application.
+On macOS, this property lets end users apply [Apple Intelligence **Writing Tools**](https://support.apple.com/guide/mac-help/find-the-right-words-with-writing-tools-mchldcd6c260/mac) to the text of [4D Write Pro](writeProArea_overview.md) and [input](input_overview.md) (with [multiline](#multiline) support) form objects. Writing Tools use AI to proofread, rewrite, summarize, or change the tone of text directly within your 4D application.
 
 ![](../assets/en/FormObjects/writing-tools.png)
 
@@ -384,15 +384,15 @@ When the property is enabled and the form is executed, a **Show Writing Tools** 
 
 :::note
 
-Styles are usually preserved when using Writing Tools, howver some features mighr replace them.  
+Styles are usually preserved when using Writing Tools, however with some AI features they might be replaced.  
 
 :::
 
-The Writing Tools can also be displayed through the **WritingTools** [standard action](properties_Action.md#standard-action), which can be assigned to a button or a menu item.
+The Writing Tools can also be displayed through the **writingTools** [standard action](properties_Action.md#standard-action), which can be assigned to a button or a menu item.
 
 :::note
 
-The Writing Tools feature relies on [**Apple Intelligence**](https://www.apple.com/apple-intelligence/) and is only available on compatible macOS computers when *Apple Intelligence & Siri* is enabled in the System Settings. On Windows, or when Apple Intelligence is not enabled, the property remains available in the Property List but the feature and the associated **WritingTools** standard action are deactivated at runtime (if the action is invoked by programming, it does nothing).
+The Writing Tools feature relies on **Apple Intelligence** and is only available on compatible macOS computers when *Apple Intelligence & Siri* is enabled in the System Settings. On Windows, or when Apple Intelligence is not enabled, the property remains available in the Property List but the feature and the associated **WritingTools** standard action are deactivated at runtime (if the action is invoked by programming, it does nothing).
 
 :::
 
