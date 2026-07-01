@@ -362,6 +362,12 @@ When this option is not enabled, users must first select the cell row and then c
 
 On macOS, this property lets end users apply Apple Intelligence **Writing Tools** to the text of [input](input_overview.md) (with [multiline](#multiline) support) and [4D Write Pro](writeProArea_overview.md) form objects. Writing Tools use a local AI to proofread, rewrite, summarize, or change the tone of text directly within your 4D application, without the data leaving the computer.
 
+:::tip Related blog post
+
+Refer to [Apple Writing Tools – Now Available in 4D Write Pro and Text Input]() blog post to **see Writing Tools in action**. 
+
+:::
+
 When the property is enabled and the form is executed, a **Show Writing Tools** menu item is added to the [context menu](#context-menu) of the object. When the user selects an action in the Writing Tools, the text is replaced with the returned modification:
 
 - if some text is selected, only the selection is replaced,
@@ -373,7 +379,7 @@ The Writing Tools can also be displayed through the **WritingTools** [standard a
 
 :::note
 
-The Writing Tools feature relies on **Apple Intelligence** and is only available on compatible macOS computers when *Apple Intelligence & Siri* is enabled in the System Settings. On Windows, or when Apple Intelligence is not enabled, the property remains available in the Property List but the feature and the associated **WritingTools** standard action are deactivated at runtime (if the action is invoked by programming, it does nothing).
+The Writing Tools feature relies on [**Apple Intelligence**](https://www.apple.com/apple-intelligence/) and is only available on compatible macOS computers when *Apple Intelligence & Siri* is enabled in the System Settings. On Windows, or when Apple Intelligence is not enabled, the property remains available in the Property List but the feature and the associated **WritingTools** standard action are deactivated at runtime (if the action is invoked by programming, it does nothing).
 
 :::
 
