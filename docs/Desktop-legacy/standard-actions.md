@@ -666,7 +666,7 @@ Displays all dynamic expressions as references.
 |---|---|---|
 |-| *macOS only* | Buttons, Menu commands |
 
-For 4D Write Pro documents and Input form objects. Displays the [Writing Tools](../../FormObjects/properties_Entry.md#writing-tools) for the area, using the container where the cursor is located and the current selection as context. The selected text (or the whole container if there is no selection) is replaced with the returned modification. The action is deactivated if the area is not enterable or not enabled, on Windows, or when Apple Intelligence is disabled. 
+For [4D Write Pro documents](../category/4d-write-pro) and [Input form objects](../FormObjects/input_overview.md). Displays the [Writing Tools](../FormObjects/properties_Entry.md#writing-tools) for the area, using the container where the cursor is located and the current selection as context. The selected text (or the whole container if there is no selection) is replaced with the returned modification. The action is deactivated if the area is not enterable or not enabled, on Windows, or when Apple Intelligence is disabled. 
 
 
 ## See also
