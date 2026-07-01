@@ -178,7 +178,7 @@ The QUIC network layer automatically emits an "Unreachable" event to 4D Server w
 
 #### Remote stops responding
 
-When a remote 4D unexpectedly stops responding, on the [Server administration window](../ServerWindow/overview.md), the [remote session status](../ServerWindow/users.md#list-of-users) is set to **Unreachable**.
+When a remote 4D unexpectedly stops responding, on the [Server administration window](../ServerWindow/overview.md), the [remote session status](../ServerWindow/sessions.md#list-of-sessions) is set to **Unreachable**.
 
 ![](../assets/en/Desktop/unreachable-status.png)
 
