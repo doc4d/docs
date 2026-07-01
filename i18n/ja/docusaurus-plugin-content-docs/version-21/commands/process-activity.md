@@ -22,10 +22,10 @@ displayed_sidebar: docs
 <div class="no-index">
 <details><summary>履歴</summary>
 
-| リリース  | 内容                                                                                        |
-| ----- | ----------------------------------------------------------------------------------------- |
-| 21    | Web ユーザーセッションのサポート                                                                        |
-| 20 R7 | <ul><li>Support of *sessionID* parameter</li><li>Renamed (Get process activity)</li></ul> |
+| リリース  | 内容                                                                         |
+| ----- | -------------------------------------------------------------------------- |
+| 21    | Web ユーザーセッションのサポート                                                         |
+| 20 R7 | <ul><li>*sessionID* 引数のサポート</li><li>名称変更(旧 Get process activity)</li></ul> |
 
 </details>
 </div>
@@ -41,7 +41,7 @@ displayed_sidebar: docs
 
 4D Server では、オプションの*sessionID* および *options* 引数を使用することで、返される情報をフィルターすることができます:
 
-- *sessionID* 引数にユーザーセッションID を渡した場合、コマンドはそのセッションに関連した情報のみを返します。  *options* 引数が省略された場合、デフォルトで返されるオブジェクトには、セッションに関連した全てのプロセスのコレクションと、セッションの詳細を説明した単一のオブジェクトを格納したコレクションが格納されています。 無効なセッションID を渡した場合、**null** オブジェクトが返されます。 *options* 引数が省略された場合、デフォルトで返されるオブジェクトには、セッションに関連した全てのプロセスのコレクションと、セッションの詳細を説明した単一のオブジェクトを格納したコレクションが格納されています。 無効なセッションID を渡した場合、**null** オブジェクトが返されます。
+- *sessionID* 引数にユーザーセッションID を渡した場合、コマンドはそのセッションに関連した情報のみを返します。  *options* 引数が省略された場合、デフォルトで返されるオブジェクトには、セッションに関連した全てのプロセスのコレクションと、セッションの詳細を説明した単一のオブジェクトを格納したコレクションが格納されています。 無効なセッションID を渡した場合、**null** オブジェクトが返されます。
 - *options* 引数に以下の定数のいづれか一つを渡すことで、返されるコレクションを選択することができます:
 
 | 定数                     | 値 | 説明                                                                 |
@@ -58,7 +58,7 @@ displayed_sidebar: docs
 
 **Sessions**
 
-"sessions" プロパティには、サーバーで実行中の全てのユーザーセッション を記述するオブジェクトのコレクションが格納されます。 セッションオブジェクトのプロパティの詳細については、[`Session info`](session-info.md) コマンドを参照してください。 セッションオブジェクトのプロパティの詳細については、[`Session info`](session-info.md) コマンドを参照してください。
+"sessions" プロパティには、サーバーで実行中の全てのユーザーセッション を記述するオブジェクトのコレクションが格納されます。 セッションオブジェクトのプロパティの詳細については、[`Session info`](session-info.md) コマンドを参照してください。
 
 :::note
 
@@ -68,31 +68,31 @@ displayed_sidebar: docs
 
 **Processes**
 
-"process" プロパティには、サーバーで実行中の全てのプロセスを記述するオブジェクトのコレクションが格納されます。 プロセスオブジェクトのプロパティの詳細な情報については、[`Process info`](process-info.md) コマンドを参照してください。 プロセスオブジェクトのプロパティの詳細な情報については、[`Process info`](process-info.md) コマンドを参照してください。
+"process" プロパティには、サーバーで実行中の全てのプロセスを記述するオブジェクトのコレクションが格納されます。 プロセスオブジェクトのプロパティの詳細な情報については、[`Process info`](process-info.md) コマンドを参照してください。
 
 サーバー上では、`Process activity` コマンドは追加の"session" プロパティを返します:
 
-| 追加のプロパティ | 型      | 説明                                                                                                                                            |   |
-| -------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------- | - |
-| session  | Object | プロセスが実行中のセッションの [`.info`](../API/SessionClass.md#info) プロパティ。 `Processes only` 引数が渡されていた場合には未定義となります。 `Processes only` 引数が渡されていた場合には未定義となります。 |   |
+| 追加のプロパティ | 型      | 説明                                                                                                    |   |
+| -------- | ------ | ----------------------------------------------------------------------------------------------------- | - |
+| session  | Object | プロセスが実行中のセッションの [`.info`](../API/SessionClass.md#info) プロパティ。 `Processes only` 引数が渡されていた場合には未定義となります。 |   |
 
 ## 例題 1
 
 全てのユーザーセッションのコレクションを取得したい場合を考えます:
 
 ```4d
-  //To be executed on the server
+  // サーバー側で実行すること
  
  var $o : Object
  var $i : Integer
  var $processName;$userName : Text
 
  
- $o:=Process activity //Get process & session info
- For($i;0;($o.processes.length)-1) //Iterate over the "processes" collection
+ $o:=Process activity // プロセスとセッションの情報を取得
+ For($i;0;($o.processes.length)-1) // "processes" コレクション内をループ
     $processName:=$o.processes[$i].name
-    $userName:=String($o.processes[$i].session.userName) // Easy access to userName
-  //use String because session object might be undefined
+    $userName:=String($o.processes[$i].session.userName) // userName へ簡単にアクセスする
+  // session オブジェクトがUndefined の場合があるのでString コマンドを必ず使用すること
  End for
 ```
 

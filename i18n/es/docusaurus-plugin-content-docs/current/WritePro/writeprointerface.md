@@ -411,19 +411,19 @@ El área Historial enumera todos los avisos enviados a la IA. Puede ocultar/most
 
 El botón Borrar permite reiniciar toda la ventana y borrar todas las interacciones. Es equivalente a cerrar/reabrir el cuadro de diálogo de IA.
 
-## Multi-level list style sheets
+## Hojas de estilo para listas de varios niveles
 
-4D Write Pro Interface allows users to create and manage [multi-level lists](./user-legacy/using-a-4d-write-pro-area.md#multi-level-lists) directly from both the toolbar and widget sidebar.
+La interfaz de 4D Write Pro permite a los usuarios crear y gestionar [listas de varios niveles](./user-legacy/using-a-4d-write-pro-area.md#multi-level-lists) directamente tanto desde la barra de herramientas como desde la barra lateral de widgets.
 
-**Toolbar:**
+**Barra de herramientas:**
 
 ![](../assets/en/WritePro/wp-multi-level-list-stylesheets1.png)
 
-**Sidebar:**
+**Nota al margen:**
 
 ![](../assets/en/WritePro/wp-multi-level-list-stylesheets2.png)
 
-To manage multi-level list style sheets, click the ![](../assets/en/WritePro/wp-multi-level-list-button.png) multi-level list button.
+Para gestionar las hojas de estilo de listas de varios niveles, haga clic en el botón de listas de varios niveles ![](../assets/en/WritePro/wp-multi-level-list-button.png).
 
 When the multi-level list mode is enabled, the Style Sheets panel displays the [multi-level list style sheets](./user-legacy/stylesheets.md#multi-level-list-style-sheets) defined in the document as well as [predefined templates](#predefined-templates).
 
@@ -473,7 +473,7 @@ You can apply either a multi-level list style sheet defined in the document or o
 
 The interface provides the following predefined multi-level list templates:
 
-**Technical Blueprint**
+**Estructura técnica**
 
 Level 1: 1  
 Level 2: 1.1  
@@ -491,7 +491,7 @@ Level 5: (1)
 Level 6: (a)  
 Level 7: (i)
 
-**Educational Material**
+**Contenido educativo**
 
 Level 1: I.  
 Level 2: 1.  
@@ -527,10 +527,10 @@ You can customize the available templates by adding your own `multiLevelStyles.j
 
 If a `multiLevelStyles.json` file is present in both locations, the file located in the `4D WritePro Interface` folder takes precedence.
 
-Each template definition includes:
+Cada definición de plantilla incluye:
 
 - a template name,
-- one or more list levels,
+- uno o más niveles de lista,
 - the 4D Write Pro attributes applied to each level. Any 4D Write Pro attribute can be used in a template definition.
 
 You can use either the attribute names or the corresponding 4D Write Pro constants as JSON keys and values.
@@ -541,7 +541,7 @@ For example, the following definitions are equivalent:
 
 #### Ejemplo
 
-Example of a customized JSON file:
+Ejemplo de un archivo JSON personalizado:
 
 ```json
 {
