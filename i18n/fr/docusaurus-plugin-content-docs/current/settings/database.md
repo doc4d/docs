@@ -114,13 +114,39 @@ Utilisez les paramètres de cet onglet pour configurer la mémoire cache de la b
 
 - **Calcul du cache adaptatif non cochée** :  dans ce mode, vous définissez vous-même la taille de la mémoire cache pour la base. 4D affiche alors une zone de saisie permettant de définir la mémoire cache à utiliser ainsi que les informations relatives à la mémoire physique (mémoire RAM disponible sur la machine), le cache actuel et le cache après redémarrage (tenant compte de vos modifications).
 
-  La taille de mémoire cache que vous saisissez sera réservée pour la base 4D, quel que soit l’état des ressources de la machine. Ce paramétrage peut être utilisé dans certaines configurations spécifiques, ou lorsque la base est destinée à fonctionner sur des systèmes disparates en termes de mémoire. Dans la plupart des cas, le cache adaptatif est plus performant.
+La taille de mémoire cache que vous saisissez sera réservée pour la base 4D, quel que soit l’état des ressources de la machine. Ce paramétrage peut être utilisé dans certaines configurations spécifiques, ou lorsque la base est destinée à fonctionner sur des systèmes disparates en termes de mémoire. Dans la plupart des cas, le cache adaptatif est plus performant.
 
 - **Ecriture cache toutes les… Minutes/secondes** : spécifie la fréquence de sauvegarde automatique du cache de données, c’est-à-dire son écriture sur le disque.
-  4D écrit les données placées dans le cache à intervalles fixes. Vous pouvez définir tout intervalle compris entre 1 seconde et 500 minutes. Par défaut, 4D stocke vos données toutes les 20 secondes. L’application écrit aussi vos données sur disque lorsque vous changez de mode ou quittez l’application. Vous pouvez également appeler la commande [FLUSH CACHE](../commands/flush-cache) pour déclencher l'écriture à tout moment.
+  4D écrit les données placées dans le cache à intervalles fixes. Vous pouvez définir tout intervalle compris entre 1 seconde et 500 minutes. Par défaut, 4D stocke vos données toutes les 20 secondes. L’application écrit aussi vos données sur disque lorsque vous changez de mode ou quittez l’application. You can also call the [`FLUSH CACHE`](../commands/flush-cache) command to trigger the flush at any moment.
 
-  Quand vous prévoyez de saisir beaucoup de données, il est souhaitable de fixer un intervalle court. En effet, en cas de coupure de courant, vous ne perdriez que les données saisies depuis la dernière écriture (si la base fonctionne sans fichier d’historique).
+Quand vous prévoyez de saisir beaucoup de données, il est souhaitable de fixer un intervalle court. En effet, en cas de coupure de courant, vous ne perdriez que les données saisies depuis la dernière écriture (si la base fonctionne sans fichier d’historique).
 
-  Si chaque opération d’écriture du cache est accompagnée d’un fort ralentissement de la base de données, il faut ajuster la fréquence. Ce symptôme signifie une sauvegarde massive d’enregistrements. Dans ce cas, une fréquence d’écriture plus élevée, donc plus rapide, est plus efficace.
+Si chaque opération d’écriture du cache est accompagnée d’un fort ralentissement de la base de données, il faut ajuster la fréquence. Ce symptôme signifie une sauvegarde massive d’enregistrements. Dans ce cas, une fréquence d’écriture plus élevée, donc plus rapide, est plus efficace.
 
-  Par défaut, 4D affiche une petite fenêtre lors de l'écriture du cache. Si vous ne voulez pas ce rappel visuel, vous pouvez désélectionner l'option **Ecriture du cache** dans la [Page Interface](./interface.md).
+Par défaut, 4D affiche une petite fenêtre lors de l'écriture du cache. Si vous ne voulez pas ce rappel visuel, vous pouvez désélectionner l'option **Ecriture du cache** dans la [Page Interface](./interface.md).
+
+:::note
+
+You can modify temporary the cache flush frequency using the [`Cache flush periodicity` selector of the `SET DATABASE PARAMETER` command](../commands/set-database-parameter#cache-flush-periodicity-95).
+
+:::
+
+### Managing priorities in database cache
+
+The 4D database cache includes an automatic priority management mechanism that provides a high level of efficiency and performance for data access. Thanks to this mechanism, when space is needed to load new data in the cache, low priority cached data are released first, while higher priority cached data remain loaded.
+
+This mechanism is fully automatic and usually, you will not have to worry about it. However, for specific cases it can be customized using a [set of dedicated commands from the "Cache Management" theme](../commands/theme/Cache_Management.md), which allow changing the priority of objects for the entire time the database is running, or temporarily for the current process. Note that these commands must be used carefully since they affect database performance.
+
+#### Priority management overview
+
+The Cache manager selects data to remove from the cache as necessary using a priority system. The three kinds of objects that can be loaded in the cache have a different priority:
+
+- **tables**: all standard field data (numeric, dates, etc.), excluding blobs (see below). Default priority is medium.
+- **blobs**: all binary field data (text, picture, object and blobs) stored in the data file. Default priority is the lowest.
+- **indexes**: all field indexes, including keyword indexes and composite indexes. Since indexes are frequently accessed, they have a special status in the cache. Default priority is the highest.
+
+Default priorities usually provide the best performances. However, for specific cases you can customize the cache priorities using two sets of 4D commands:
+
+- Commands that change the priorities for the whole session and all processes: [`SET TABLE CACHE PRIORITY`](../commands/set-table-cache-priority), [`SET INDEX CACHE PRIORITY`](../commands/set-index-cache-priority), and [`SET BLOBS CACHE PRIORITY`](../commands/set-blobs-cache-priority). These commands should be used in a startup database method.
+- Commands that change the priorities only for the current process: [`ADJUST TABLE CACHE PRIORITY`](../commands/adjust-table-cache-priority), [`ADJUST INDEX CACHE PRIORITY`](../commands/adjust-index-cache-priority), and [`ADJUST BLOBS CACHE PRIORITY`](../commands/adjust-blobs-cache-priority). Use these commands to improve the performance of a temporary operation on your database and go back to initial priorities after the operation is finished. These commands are available only on 4D Server or 4D in local mode.
+
