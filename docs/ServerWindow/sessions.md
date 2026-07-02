@@ -40,7 +40,7 @@ Selecting a session displays additional information in the lower panel.
 The following information is available:
 
 - **System username**: Name of the operating system session opened on the remote machine.
-- **IP address**: IP address of the User's machine that opened the session.
+- **IP address**: IP address of the remote machine that opened the session.
 - **Machine name**: Name of the remote machine.
 - **4D Write Pro**: Indicates whether the session has access to 4D Write Pro.
 - **4D View Pro**: Indicates whether the session has access to 4D View Pro.
@@ -51,7 +51,7 @@ The detail panel displays information such as:
 
 - **Guest status**: Indicates whether the session is a Guest session. Guest sessions are unauthenticated Web sessions.
 - **Privileges**: List of privileges associated with the session.
-- **IP address**: IP address of the User's machine that opened the session
+- **IP address**: IP address of the remote machine that opened the session.
 - **User agent**: dentifies the client application, browser, or service that initiated the session.
 
 ### IP Lookup button
