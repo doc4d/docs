@@ -102,6 +102,6 @@ The page also has five control buttons that act on the selected process(es). Not
 
 > You can also debug a process directly without displaying the confirmation dialog box by holding down the **Alt** key while clicking on this button.
 
-- **Watch sessions**: used to display, on the [Sessions page](sessions.md), all the processes of the selected session(s). This button is active when at least one user process is selected.
+- **Watch session**: used to display, on the [Sessions page](sessions.md), all the processes of the selected session(s). This button is active when at least one user process is selected.
 
 

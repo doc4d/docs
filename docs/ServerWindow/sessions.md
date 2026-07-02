@@ -21,15 +21,17 @@ Each row represents one active session.
 
 The list provides the following information:
 
+- Icon representing the type of session (Apple for macOS Client sessions, Windows for Windows Client sessions, globe for Web, REST, and SOAP sessions). And an additional visual indicator shows whether the session is authenticated.
 - **Type**: Type of session (Client, Web, REST, or SOAP).
-- **4D User**: Name of the connected 4D user, or the alias defined using the [`SET USER ALIAS`](../commands/set-user-alias) command when applicable.
-- **Login date**: Date and time when the session was established.
+- **User Name**: Name of the connected 4D user, or the alias defined using the [`SET USER ALIAS`](../commands/set-user-alias) command when applicable.
+- **Login Date**: Date and time when the session was established.
 - **CPU Time**: CPU time consumed by the session since it was created.
 - **Activity**: Percentage of server activity currently devoted to the session (dynamic value).
+- **Status**: Status of the session. For Client sessions, this can be **Online** or **Sleeping** if the remote machine has switched to sleep mode.
 
 Additional information is available in the detail panel when a session is selected.
 
-### Session Details
+## Session detail panel
 
 Selecting a session displays additional information in the lower panel.
 
@@ -38,99 +40,83 @@ For **Client** sessions, the following information is available:
 - Operating system session name
 - IP address
 - Machine name
-- 4D user
-- Session UUID
-- Additional client-specific information
+- Write Pro indicator
+- 4D View Pro indicator
+- IP lookup button
 
 For **REST**, **Web**, and **SOAP** sessions, the detail panel displays information such as:
 
 - Guest status
 - Privileges
 - IP address
-- User information
-- Session UUID
-- Additional session properties
+- User agent
+- IP lookup button
 
-When an IP address is displayed, you can click the lookup button to retrieve geolocation information.
+When an IP address is displayed, click the **IP Lookup** button to retrieve its geolocation.
 
-If the lookup succeeds, the location is displayed below the IP address.
+If the lookup succeeds, the location is displayed below the IP address text and the IP Lookup button in the format **City, Country**.
 
 If no information is available, **Not found** is displayed.
 
-## Managing Sleeping Client Sessions
-
-4D Server specifically handles cases where a machine running a 4D remote application switches to sleep mode while its connection to the server remains active.
-
-In this case, the remote application notifies 4D Server before entering sleep mode. The corresponding client session changes to the **Sleeping** status.
-
-![](../assets/en/Admin/server-sleep.png)
-
-This status frees server resources while preserving the session context.
-
-When the remote machine wakes up, the application automatically reconnects and restores the existing session.
-
-A sleeping client session is automatically dropped after 48 hours of inactivity.
-
-You can modify this timeout using the [`SET DATABASE PARAMETER`](../commands/set-database-parameter) command with the `Remote connection sleep timeout` selector.
-
 ## Search and Filtering
 
-The search field filters the displayed sessions in real time.
+### Search bar
 
-Depending on the available columns, searches are performed on values such as:
+The search field can be used to reduce the number of rows displayed in the list to those that correspond to the text entered. The search is performed on the **User Name**, **Machine name**, **Session name**, and **IP address** columns.
 
-- 4D User
-- Machine name
-- Session name
-- IP address
+The list is updated in real time as you enter text.
 
-Multiple search terms can be entered by separating them with semicolons (`;`).
+You can search for multiple values by separating them with a semicolon (`;`). In this case, the values are combined using the **OR** operator.
 
-For example:
+For example, if you enter:
 
 ```
 John;Mary;REST
 ```
 
-displays every session matching **John**, **Mary**, or **REST**.
+only rows containing **John**, **Mary**, or **REST** in the searchable columns are displayed.
 
 ### Session Type Filters
 
-Four filters are available to quickly display only specific session types:
+The Sessions page also provides quick filters to display only specific session types.
 
-- Counted sessions
-- Client sessions
-- Web sessions
-- REST sessions
+The following filters are available:
 
-Filters can be combined.
+- **Counted sessions**:  includes only sessions counted for floating license consumption.
+- **Clients**: includes only Client sessions.
+- **Web**: includes only Web and SOAP sessions.
+- **REST**: includes only REST sessions.
+
+Filters can be enabled or disabled independently, or combined with other filters, and are applied immediately to the session list.
 
 ## Administration Buttons
 
-The available administration buttons depend on the selected session(s).
+There are three administration buttons. **Watch Processes** and **Drop User** are available when one or more sessions are selected. **Send Message** is available when one or more Client sessions are selected.
+You can select several rows by holding down the **Shift** key for an adjacent selection or the **Ctrl** (Windows) / **Command** (macOS) key for a non-adjacent selection.
 
-### Send Message
+### Send message
 
-Available only when one or more **Client** sessions are selected.
+This button can be used to send a message to the selected **Client** session(s). If no Client session is selected, the button is not active. When you click this button, a dialog box appears that lets you enter the message. The dialog box also indicates the number of Client sessions that will receive the message:
 
-Clicking this button opens a dialog where you can enter a message that will be displayed on the corresponding remote machines.
+![](../assets/en/Admin/server-message.png)
 
-> You can perform the same action programmatically using the [`SEND MESSAGE TO REMOTE USER`](../commands/send-message-to-remote-user) command.
+The message is displayed as an alert on the corresponding remote machines.
+
+You can perform the same action programmatically using the [`SEND MESSAGE TO REMOTE USER`](../commands/send-message-to-remote-user) command.
+
 
 ### Watch Processes
 
-Displays the processes associated with the selected session on the [**Processes** page](processes.md).
+This button can used to directly show the processes associated with the selected session on the [**Processes** page](processes.md).
 
 The process list is automatically filtered using the selected session UUID.
 
 When multiple sessions are selected, this button is disabled.
 
-### Drop User
+### Drop session
 
-Disconnects the selected Client session.
+This button can be used to force the selected Client session(s) to disconnect.
 
-A confirmation dialog is displayed before the session is disconnected.
+A confirmation dialog is displayed before the session is disconnected to confirm or cancel this operation (Hold down the **Alt** key while clicking **Drop user** to disconnect immediately without displaying the confirmation dialog).
 
-Hold down the **Alt** key while clicking **Drop user** to disconnect immediately without displaying the confirmation dialog.
-
-> You can perform the same action programmatically using the [`DROP REMOTE USER`](../commands/drop-remote-user) command.
+You can perform the same action programmatically using the [`DROP REMOTE USER`](../commands/drop-remote-user) command.
