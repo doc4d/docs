@@ -766,7 +766,7 @@ module.exports =
           },
           items: [
             "ServerWindow/monitor",
-            "ServerWindow/users",
+            "ServerWindow/sessions",
             "ServerWindow/processes",
             "ServerWindow/maintenance",
             "ServerWindow/application-server",
