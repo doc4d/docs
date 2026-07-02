@@ -250,6 +250,7 @@ module.exports =
             "API/MethodClass",
             "API/OutgoingMessageClass",
             "API/POP3TransporterClass",
+            "API/QuotaManagerClass",
             "API/SessionClass",
             "API/SignalClass",
             "API/SMTPTransporterClass",
@@ -718,6 +719,11 @@ module.exports =
               ]
             }
           ]
+        },
+        {
+          type: "doc",
+          label: "Standard actions",
+          id: "Desktop-legacy/standard-actions"
         },
          {
           type: "doc",
