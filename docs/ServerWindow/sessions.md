@@ -91,7 +91,7 @@ Filters can be enabled or disabled independently, or combined with other filters
 
 ## Administration Buttons
 
-There are three administration buttons: **Send Message** is available when one or more Client sessions are selected. **Watch Processes** and **Drop User** are available when one or more sessions are selected, whatever their type. 
+There are three administration buttons: **Send Message** is available when one or more Client sessions are selected. **Watch Processes** is available when a single session of any type is selected, and **Drop User** is available when one or more sessions of any type are selected.
 You can select several rows by holding down the **Shift** key for an adjacent selection or the **Ctrl** (Windows) / **Command** (macOS) key for a non-adjacent selection.
 
 ### Send message
