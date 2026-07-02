@@ -42,8 +42,8 @@ The following information is available:
 - **System username**: Name of the operating system session opened on the remote machine.
 - **IP address**: IP address of the remote machine that opened the session.
 - **Machine name**: Name of the remote machine.
-- **4D Write Pro**: Indicates whether the session has access to 4D Write Pro.
-- **4D View Pro**: Indicates whether the session has access to 4D View Pro.
+- **4D Write Pro**: Indicates whether the session user belongs to a group that grants access to 4D Write Pro.
+- **4D View Pro**: Indicates whether the session user belongs to a group that grants access to 4D View Pro.
 
 ### REST, Web, and SOAP sessions
 
