@@ -90,7 +90,7 @@ Similar icons and process types are used in the [Process page of the Runtime Exp
 
 The page also has five control buttons that act on the selected process(es). Note that only user processes can be acted upon.
 
-![](../assets/en/Admin/server-process-actions.png)
+![](../assets/en/Admin/server-process-actions-1.png)
 
 - **Abort Process**: can be used to abort the selected process(es). When you click on this button, a warning dialog box appears so that you can confirm or cancel the operation.
 

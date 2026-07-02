@@ -154,6 +154,21 @@ The following table summarizes where the code is executed by default and how to 
 |Database methods:<ul><li>On Backup Shutdown</li><li>On Backup Startup</li><li>On Server Close Connection</li><li>On Server Open Connection</li><li>On Server Shutdown</li><li>On Server Startup</li><li>On SQL Authentication</li><li>On Web Authentication</li><li>On Web Connection</li></ul>|server|n/a|
 |Database methods:<ul><li>On Startup</li><li>On Exit</li><li>On Drop</li></ul>|client|n/a|
 
+## Management of sleeping client sessions
+
+4D Server specifically handles cases where a machine running a 4D remote application switches to sleep mode while its connection to the server remains active.
+
+In this case, the remote application notifies 4D Server before entering sleep mode. The corresponding client session changes to the **Sleeping** status.
+
+![](../assets/en/Admin/server-sleep.png)
+
+This status frees server resources while preserving the session context.
+
+When the remote machine wakes up, the application automatically reconnects and restores the existing session.
+
+A sleeping client session is automatically dropped after 48 hours of inactivity.
+
+You can modify this timeout using the [`SET DATABASE PARAMETER`](../commands/set-database-parameter) command with the `Remote connection sleep timeout` selector.
 
 ## Management of unreachable peer
 
@@ -192,22 +207,6 @@ If 4D Server unexpectedly stops responding, a reconnection dialog box is display
 #### Session object updated
 
 When the "Unreachable" event is received on either side, an [`info.unreachableSince`](../API/SessionClass.md#info) property is created in the session on the machine receiving the event (on the server, it is readable through the [`Process activity.sessions`](../commands/process-activity) property), and it starts counting seconds since the last communication. You can use this property to implement your own disconnection interface.  
-
-### Managing sleeping client sessions
-
-4D Server specifically handles cases where a machine running a 4D remote application switches to sleep mode while its connection to the server remains active.
-
-In this case, the remote application notifies 4D Server before entering sleep mode. The corresponding client session changes to the **Sleeping** status.
-
-![](../assets/en/Admin/server-sleep.png)
-
-This status frees server resources while preserving the session context.
-
-When the remote machine wakes up, the application automatically reconnects and restores the existing session.
-
-A sleeping client session is automatically dropped after 48 hours of inactivity.
-
-You can modify this timeout using the [`SET DATABASE PARAMETER`](../commands/set-database-parameter) command with the `Remote connection sleep timeout` selector.
 
 ### Restoring or closing connection
 

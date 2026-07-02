@@ -23,11 +23,11 @@ The list provides the following information:
 
 - Icon representing the type of session (Apple for macOS Client sessions, Windows for Windows Client sessions, globe for Web, REST, and SOAP sessions). And an additional visual indicator shows whether the session is authenticated.
 - **Origin**: Type of session (Client, Web, REST, or SOAP).
-- **User Name**: Name of the connected 4D user, or the alias defined using the [`SET USER ALIAS`](../commands/set-user-alias) command when applicable.
+- **User Name**: Name of the connected 4D user, or the alias defined using the [`SET USER ALIAS`](../commands/set-user-alias) command when applicable. For Web, REST, or SOAP sessions, no user name is displayed unless one has been associated with the session using the `userName` property of the [`setPrivileges()`](../API/SessionClass.md#setprivileges) function.
 - **Login Date**: Date and time when the session was established.
 - **CPU Time**: CPU time consumed by the session since it was created.
 - **Activity**: Percentage of server activity currently devoted to the session (dynamic value).
-- **Status**: Status of the session. For Client sessions, this can be **Online** or **Sleeping** if the remote machine has switched to sleep mode.
+- **Status**: Status of the session. Client sessions can be **Online**, **[Sleeping]**(clientServer.md#management-of-sleeping-client-sessions), or **[Unreachable]**(clientServer.md#management-of-unreachable-peer). Web, REST, and SOAP sessions always have the **Online** status.
 
 Additional information is available in the detail panel when a session is selected.
 
@@ -35,28 +35,30 @@ Additional information is available in the detail panel when a session is select
 
 Selecting a session displays additional information in the lower panel.
 
-For **Client** sessions, the following information is available:
+### Client sessions
 
-- System username
-- IP address
-- Machine name
-- Write Pro indicator (means that the user belongs to a group that grants access to 4D Write Pro)
-- 4D View Pro indicator (means that the user belongs to a group that grants access to 4D View Pro)
-- IP lookup button
+The following information is available:
 
-For **REST**, **Web**, and **SOAP** sessions, the detail panel displays information such as:
+- **System username**: Name of the operating system session opened on the remote machine.
+- **IP address**: IP address of the User's machine that opened the session.
+- **Machine name**: Name of the remote machine.
+- **4D Write Pro**: Indicates whether the session has access to 4D Write Pro.
+- **4D View Pro**: Indicates whether the session has access to 4D View Pro.
 
-- Guest status
-- Privileges (list of privileges associated with the session)
-- IP address
-- User agent
-- IP lookup button
+### REST, Web, and SOAP sessions
 
-When an IP address is displayed, click the **IP Lookup** button to retrieve its geolocation.
+The detail panel displays information such as:
 
-If the lookup succeeds, the location is displayed below the IP address text and the IP Lookup button in the format **City, Country**.
+- **Guest status**: Indicates whether the session is a Guest session. Guest sessions are unauthenticated Web sessions.
+- **Privileges**: List of privileges associated with the session.
+- **IP address**: IP address of the User's machine that opened the session
+- **User agent**: dentifies the client application, browser, or service that initiated the session.
 
-If no information is available, **Not found** is displayed.
+### IP Lookup button
+
+IP Lookup button is enabled when a public IP address is displayed. You can click on the button to retrieve the geolocation of the selected session.
+
+If the information is available, the location is displayed next to the IP Lookup button in the format **City, Country**. Otherwise **Not found** is displayed.
 
 ## Search and Filtering
 
@@ -91,7 +93,7 @@ Filters can be enabled or disabled independently, or combined with other filters
 
 ## Administration Buttons
 
-There are three administration buttons: **Send Message** is available when one or more Client sessions are selected. **Watch Processes** is available when a single session of any type is selected, and **Drop User** is available when one or more sessions of any type are selected.
+There are three administration buttons: **Send message** is available when one or more Client sessions are selected. **Watch Processes** is available when a single session of any type is selected, and **Drop session** is available when one or more sessions of any type are selected.
 You can select several rows by holding down the **Shift** key for an adjacent selection or the **Ctrl** (Windows) / **Command** (macOS) key for a non-adjacent selection.
 
 ### Send message
